@@ -10,8 +10,7 @@ replace (
 )
 
 require (
-	github.com/pulumi/pulumi-terraform-bridge/v3 v3.21.0
-	github.com/pulumi/pulumi/sdk/v3 v3.30.0
+	github.com/pulumi/pulumi-terraform-bridge/v3 v3.19.0
 	github.com/terraform-providers/terraform-provider-oci/shim v0.0.0
 )
 
@@ -137,7 +136,8 @@ require (
 	github.com/pkg/term v1.1.0 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/posener/complete v1.2.1 // indirect
-	github.com/pulumi/pulumi/pkg/v3 v3.30.0 // indirect
+	github.com/pulumi/pulumi/pkg/v3 v3.29.0 // indirect
+	github.com/pulumi/pulumi/sdk/v3 v3.29.0 // indirect
 	github.com/pulumi/terraform-diff-reader v0.0.0-20201211191010-ad4715e9285e // indirect
 	github.com/rivo/uniseg v0.2.0 // indirect
 	github.com/rjeczalik/notify v0.9.2 // indirect

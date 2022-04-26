@@ -15,7 +15,7 @@ builds:
 - binary: pulumi-resource-oci
   dir: provider
   env:
-  - CGO_ENABLED=0
+  - CGO_ENABLED=1
   - GO111MODULE=on
   goarch:
   - amd64

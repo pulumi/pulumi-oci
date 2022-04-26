@@ -235,7 +235,7 @@ jobs:
   publish:
     name: publish
     needs: test
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
     - name: Checkout Repo
       uses: actions/checkout@v2

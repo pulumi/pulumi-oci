@@ -235,7 +235,7 @@ jobs:
   publish:
     name: publish
     needs: test
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
     - name: Checkout Repo
       uses: actions/checkout@v2
@@ -267,8 +267,8 @@ jobs:
     - name: Run GoReleaser
       uses: goreleaser/goreleaser-action@v2
       with:
-        args: -p 2 -f .goreleaser.prerelease.yml --rm-dist --skip-validate --timeout
-          60m0s
+        args: -p 1 -f .goreleaser.prerelease.yml --rm-dist --skip-validate --timeout
+          90m0s
         version: latest
     - if: failure() && github.event_name == 'push'
       name: Notify Slack

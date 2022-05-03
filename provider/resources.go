@@ -129,7 +129,7 @@ func Provider() tfbridge.ProviderInfo {
 		Name: "oci",
 		// DisplayName is a way to be able to change the casing of the provider
 		// name when being displayed on the Pulumi registry
-		DisplayName: "Oracle Cloud (OCI)",
+		DisplayName: "Oracle Cloud Infrastructure",
 		// The default publisher for all packages is Pulumi.
 		// Change this to your personal name (or a company name) that you
 		// would like to be shown in the Pulumi Registry if this package is published
@@ -141,8 +141,8 @@ func Provider() tfbridge.ProviderInfo {
 		// You may host a logo on a domain you control or add an SVG logo for your package
 		// in your repository and use the raw content URL for that file as your logo URL.
 		LogoURL:     "",
-		Description: "A Pulumi package for creating and managing oci cloud resources.",
-		Keywords:    []string{"pulumi", "oci", "category/cloud"},
+		Description: "A Pulumi package for creating and managing Oracle Cloud Infrastructure resources.",
+		Keywords:    []string{"pulumi", "oci", "oracle", "category/cloud"},
 		License:     "Apache-2.0",
 		Homepage:    "https://www.pulumi.com",
 		Repository:  "https://github.com/pulumi/pulumi-oci",

@@ -39,13 +39,13 @@ def readme():
 
 setup(name='pulumi_oci',
       version=VERSION,
-      description="A Pulumi package for creating and managing oci cloud resources.",
+      description="A Pulumi package for creating and managing Oracle Cloud Infrastructure resources.",
       long_description=readme(),
       long_description_content_type='text/markdown',
       cmdclass={
           'install': InstallPluginCommand,
       },
-      keywords='pulumi oci category/cloud',
+      keywords='pulumi oci oracle category/cloud',
       url='https://www.pulumi.com',
       project_urls={
           'Repository': 'https://github.com/pulumi/pulumi-oci'

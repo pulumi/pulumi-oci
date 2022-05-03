@@ -4,7 +4,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Pulumi</Authors>
     <Company>Pulumi</Company>
-    <Description>A Pulumi package for creating and managing oci cloud resources.</Description>
+    <Description>A Pulumi package for creating and managing Oracle Cloud Infrastructure resources.</Description>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <PackageProjectUrl>https://www.pulumi.com</PackageProjectUrl>
     <RepositoryUrl>https://github.com/pulumi/pulumi-oci</RepositoryUrl>

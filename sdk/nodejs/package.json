@@ -1,10 +1,11 @@
 {
     "name": "@pulumi/oci",
     "version": "${VERSION}",
-    "description": "A Pulumi package for creating and managing oci cloud resources.",
+    "description": "A Pulumi package for creating and managing Oracle Cloud Infrastructure resources.",
     "keywords": [
         "pulumi",
         "oci",
+        "oracle",
         "category/cloud"
     ],
     "homepage": "https://www.pulumi.com",

@@ -92,7 +92,7 @@ jobs:
         dotnetversion:
         - 3.1.301
         goversion:
-        - 1.17.x
+        - 1.18.x
         language:
         - nodejs
         - python
@@ -171,7 +171,7 @@ jobs:
         dotnetversion:
         - 3.1.301
         goversion:
-        - 1.17.x
+        - 1.18.x
         nodeversion:
         - 14.x
         pythonversion:
@@ -211,8 +211,8 @@ jobs:
     - name: Run GoReleaser
       uses: goreleaser/goreleaser-action@v2
       with:
-        args: -p 3 -f .goreleaser.prerelease.yml --rm-dist --skip-validate --timeout
-          60m0s
+        args: -p 1 -f .goreleaser.prerelease.yml --rm-dist --skip-validate --timeout
+          90m0s
         version: latest
     - if: failure() && github.event_name == 'push'
       name: Notify Slack
@@ -227,7 +227,7 @@ jobs:
         dotnetversion:
         - 3.1.301
         goversion:
-        - 1.17.x
+        - 1.18.x
         nodeversion:
         - 14.x
         pythonversion:
@@ -311,7 +311,7 @@ jobs:
         dotnetversion:
         - 3.1.301
         goversion:
-        - 1.17.x
+        - 1.18.x
         nodeversion:
         - 14.x
         pythonversion:
@@ -401,7 +401,7 @@ jobs:
         dotnetversion:
         - 3.1.301
         goversion:
-        - 1.17.x
+        - 1.18.x
         language:
         - nodejs
         - python

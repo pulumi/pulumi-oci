@@ -5,8 +5,11 @@ package com.pulumi.oci.DataScience.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.DataScience.inputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs extends com.pulumi.resources.ResourceArgs {
@@ -28,10 +31,26 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
         return this.instanceShapeName;
     }
 
+    /**
+     * (Updatable) Details for the model-deployment instance shape configuration.
+     * 
+     */
+    @Import(name="modelDeploymentInstanceShapeConfigDetails")
+    private @Nullable Output<ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs> modelDeploymentInstanceShapeConfigDetails;
+
+    /**
+     * @return (Updatable) Details for the model-deployment instance shape configuration.
+     * 
+     */
+    public Optional<Output<ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs>> modelDeploymentInstanceShapeConfigDetails() {
+        return Optional.ofNullable(this.modelDeploymentInstanceShapeConfigDetails);
+    }
+
     private ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs() {}
 
     private ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs $) {
         this.instanceShapeName = $.instanceShapeName;
+        this.modelDeploymentInstanceShapeConfigDetails = $.modelDeploymentInstanceShapeConfigDetails;
     }
 
     public static Builder builder() {
@@ -71,6 +90,27 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
          */
         public Builder instanceShapeName(String instanceShapeName) {
             return instanceShapeName(Output.of(instanceShapeName));
+        }
+
+        /**
+         * @param modelDeploymentInstanceShapeConfigDetails (Updatable) Details for the model-deployment instance shape configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder modelDeploymentInstanceShapeConfigDetails(@Nullable Output<ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs> modelDeploymentInstanceShapeConfigDetails) {
+            $.modelDeploymentInstanceShapeConfigDetails = modelDeploymentInstanceShapeConfigDetails;
+            return this;
+        }
+
+        /**
+         * @param modelDeploymentInstanceShapeConfigDetails (Updatable) Details for the model-deployment instance shape configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder modelDeploymentInstanceShapeConfigDetails(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs modelDeploymentInstanceShapeConfigDetails) {
+            return modelDeploymentInstanceShapeConfigDetails(Output.of(modelDeploymentInstanceShapeConfigDetails));
         }
 
         public ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs build() {

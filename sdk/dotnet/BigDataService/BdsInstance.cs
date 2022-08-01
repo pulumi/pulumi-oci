@@ -12,7 +12,7 @@ namespace Pulumi.Oci.BigDataService
     /// <summary>
     /// This resource provides the Bds Instance resource in Oracle Cloud Infrastructure Big Data Service service.
     /// 
-    /// Creates a Big Data Service cluster.
+    /// Creates a new BDS instance.
     /// 
     /// ## Example Usage
     /// 
@@ -39,6 +39,11 @@ namespace Pulumi.Oci.BigDataService
     ///                 SubnetId = oci_core_subnet.Test_subnet.Id,
     ///                 BlockVolumeSizeInGbs = @var.Bds_instance_nodes_block_volume_size_in_gbs,
     ///                 NumberOfNodes = @var.Bds_instance_number_of_nodes,
+    ///                 ShapeConfig = new Oci.BigDataService.Inputs.BdsInstanceMasterNodeShapeConfigArgs
+    ///                 {
+    ///                     MemoryInGbs = @var.Bds_instance_nodes_shape_config_memory_in_gbs,
+    ///                     Ocpus = @var.Bds_instance_nodes_shape_config_ocpus,
+    ///                 },
     ///             },
     ///             UtilNode = new Oci.BigDataService.Inputs.BdsInstanceUtilNodeArgs
     ///             {
@@ -46,6 +51,11 @@ namespace Pulumi.Oci.BigDataService
     ///                 SubnetId = oci_core_subnet.Test_subnet.Id,
     ///                 BlockVolumeSizeInGbs = @var.Bds_instance_nodes_block_volume_size_in_gbs,
     ///                 NumberOfNodes = @var.Bds_instance_number_of_nodes,
+    ///                 ShapeConfig = new Oci.BigDataService.Inputs.BdsInstanceUtilNodeShapeConfigArgs
+    ///                 {
+    ///                     MemoryInGbs = @var.Bds_instance_nodes_shape_config_memory_in_gbs,
+    ///                     Ocpus = @var.Bds_instance_nodes_shape_config_ocpus,
+    ///                 },
     ///             },
     ///             WorkerNode = new Oci.BigDataService.Inputs.BdsInstanceWorkerNodeArgs
     ///             {
@@ -53,9 +63,28 @@ namespace Pulumi.Oci.BigDataService
     ///                 SubnetId = oci_core_subnet.Test_subnet.Id,
     ///                 BlockVolumeSizeInGbs = @var.Bds_instance_nodes_block_volume_size_in_gbs,
     ///                 NumberOfNodes = @var.Bds_instance_number_of_nodes,
+    ///                 ShapeConfig = new Oci.BigDataService.Inputs.BdsInstanceWorkerNodeShapeConfigArgs
+    ///                 {
+    ///                     MemoryInGbs = @var.Bds_instance_nodes_shape_config_memory_in_gbs,
+    ///                     Ocpus = @var.Bds_instance_nodes_shape_config_ocpus,
+    ///                 },
     ///             },
+    ///             ComputeOnlyWorkerNode = new Oci.BigDataService.Inputs.BdsInstanceComputeOnlyWorkerNodeArgs
+    ///             {
+    ///                 Shape = @var.Bds_instance_nodes_shape,
+    ///                 SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///                 BlockVolumeSizeInGbs = @var.Bds_instance_nodes_block_volume_size_in_gbs,
+    ///                 NumberOfNodes = @var.Bds_instance_number_of_nodes,
+    ///                 ShapeConfig = new Oci.BigDataService.Inputs.BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs
+    ///                 {
+    ///                     MemoryInGbs = @var.Bds_instance_nodes_shape_config_memory_in_gbs,
+    ///                     Ocpus = @var.Bds_instance_nodes_shape_config_ocpus,
+    ///                 },
+    ///             },
+    ///             BootstrapScriptUrl = @var.Bds_instance_bootstrap_script_url,
     ///             DefinedTags = @var.Bds_instance_defined_tags,
     ///             FreeformTags = @var.Bds_instance_freeform_tags,
+    ///             KerberosRealmName = @var.Bds_instance_kerberos_realm_name,
     ///             NetworkConfig = new Oci.BigDataService.Inputs.BdsInstanceNetworkConfigArgs
     ///             {
     ///                 CidrBlock = @var.Bds_instance_network_config_cidr_block,
@@ -79,13 +108,19 @@ namespace Pulumi.Oci.BigDataService
     public partial class BdsInstance : Pulumi.CustomResource
     {
         /// <summary>
-        /// The information about added Cloud SQL capability
+        /// (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
+        /// </summary>
+        [Output("bootstrapScriptUrl")]
+        public Output<string> BootstrapScriptUrl { get; private set; } = null!;
+
+        /// <summary>
+        /// -(Optional) The information about added Cloud SQL capability
         /// </summary>
         [Output("cloudSqlDetails")]
         public Output<ImmutableArray<Outputs.BdsInstanceCloudSqlDetail>> CloudSqlDetails { get; private set; } = null!;
 
         /// <summary>
-        /// Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+        /// Base-64 encoded password for Cloudera Manager admin user
         /// </summary>
         [Output("clusterAdminPassword")]
         public Output<string> ClusterAdminPassword { get; private set; } = null!;
@@ -103,98 +138,113 @@ namespace Pulumi.Oci.BigDataService
         public Output<string> ClusterPublicKey { get; private set; } = null!;
 
         /// <summary>
-        /// Version of the Hadoop distribution.
+        /// Version of the Hadoop distribution
         /// </summary>
         [Output("clusterVersion")]
         public Output<string> ClusterVersion { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The OCID of the compartment.
+        /// (Updatable) The OCID of the compartment
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
 
+        [Output("computeOnlyWorkerNode")]
+        public Output<Outputs.BdsInstanceComputeOnlyWorkerNode?> ComputeOnlyWorkerNode { get; private set; } = null!;
+
         /// <summary>
-        /// The user who created the cluster.
+        /// The user who created the BDS instance.
         /// </summary>
         [Output("createdBy")]
         public Output<string> CreatedBy { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example, `{"foo-namespace": {"bar-key": "value"}}`
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Name of the Big Data Service cluster.
+        /// (Updatable) Name of the BDS instance
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{"bar-key": "value"}`
+        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// Boolean flag specifying whether or not Cloud SQL should be configured.
+        /// -(Optional) (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
         /// </summary>
         [Output("isCloudSqlConfigured")]
         public Output<bool> IsCloudSqlConfigured { get; private set; } = null!;
 
         /// <summary>
-        /// Boolean flag specifying whether or not the cluster is highly available (HA).
+        /// Boolean flag specifying whether or not the cluster is HA
         /// </summary>
         [Output("isHighAvailability")]
         public Output<bool> IsHighAvailability { get; private set; } = null!;
 
         /// <summary>
-        /// Boolean flag specifying whether or not the cluster should be set up as secure.
+        /// Boolean flag specifying whether or not the cluster should be setup as secure.
         /// </summary>
         [Output("isSecure")]
         public Output<bool> IsSecure { get; private set; } = null!;
 
+        /// <summary>
+        /// The user-defined kerberos realm name.
+        /// </summary>
+        [Output("kerberosRealmName")]
+        public Output<string> KerberosRealmName { get; private set; } = null!;
+
+        /// <summary>
+        /// The master node in the BDS instance
+        /// </summary>
         [Output("masterNode")]
         public Output<Outputs.BdsInstanceMasterNode> MasterNode { get; private set; } = null!;
 
         /// <summary>
-        /// Additional configuration of the user's network.
+        /// Additional configuration of customer's network.
         /// </summary>
         [Output("networkConfig")]
         public Output<Outputs.BdsInstanceNetworkConfig> NetworkConfig { get; private set; } = null!;
 
         /// <summary>
-        /// The list of nodes in the Big Data Service cluster.
+        /// The list of nodes in the BDS instance
         /// </summary>
         [Output("nodes")]
         public Output<ImmutableArray<Outputs.BdsInstanceNode>> Nodes { get; private set; } = null!;
 
         /// <summary>
-        /// The number of nodes that form the cluster.
+        /// The amount of worker nodes should be created
         /// </summary>
         [Output("numberOfNodes")]
         public Output<int> NumberOfNodes { get; private set; } = null!;
 
         /// <summary>
-        /// The state of the cluster.
+        /// The state of the BDS instance
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
 
         /// <summary>
-        /// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+        /// The time the BDS instance was created. An RFC3339 formatted datetime string
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
 
         /// <summary>
-        /// The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
+        /// The time the BDS instance was updated. An RFC3339 formatted datetime string
         /// </summary>
         [Output("timeUpdated")]
         public Output<string> TimeUpdated { get; private set; } = null!;
 
+        /// <summary>
+        /// The utility node in the BDS instance
+        /// </summary>
         [Output("utilNode")]
         public Output<Outputs.BdsInstanceUtilNode> UtilNode { get; private set; } = null!;
 
@@ -247,11 +297,17 @@ namespace Pulumi.Oci.BigDataService
 
     public sealed class BdsInstanceArgs : Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
+        /// </summary>
+        [Input("bootstrapScriptUrl")]
+        public Input<string>? BootstrapScriptUrl { get; set; }
+
         [Input("cloudSqlDetails")]
         private InputList<Inputs.BdsInstanceCloudSqlDetailArgs>? _cloudSqlDetails;
 
         /// <summary>
-        /// The information about added Cloud SQL capability
+        /// -(Optional) The information about added Cloud SQL capability
         /// </summary>
         public InputList<Inputs.BdsInstanceCloudSqlDetailArgs> CloudSqlDetails
         {
@@ -260,7 +316,7 @@ namespace Pulumi.Oci.BigDataService
         }
 
         /// <summary>
-        /// Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+        /// Base-64 encoded password for Cloudera Manager admin user
         /// </summary>
         [Input("clusterAdminPassword", required: true)]
         public Input<string> ClusterAdminPassword { get; set; } = null!;
@@ -272,22 +328,25 @@ namespace Pulumi.Oci.BigDataService
         public Input<string> ClusterPublicKey { get; set; } = null!;
 
         /// <summary>
-        /// Version of the Hadoop distribution.
+        /// Version of the Hadoop distribution
         /// </summary>
         [Input("clusterVersion", required: true)]
         public Input<string> ClusterVersion { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The OCID of the compartment.
+        /// (Updatable) The OCID of the compartment
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
+
+        [Input("computeOnlyWorkerNode")]
+        public Input<Inputs.BdsInstanceComputeOnlyWorkerNodeArgs>? ComputeOnlyWorkerNode { get; set; }
 
         [Input("definedTags")]
         private InputMap<object>? _definedTags;
 
         /// <summary>
-        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example, `{"foo-namespace": {"bar-key": "value"}}`
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         public InputMap<object> DefinedTags
         {
@@ -296,7 +355,7 @@ namespace Pulumi.Oci.BigDataService
         }
 
         /// <summary>
-        /// (Updatable) Name of the Big Data Service cluster.
+        /// (Updatable) Name of the BDS instance
         /// </summary>
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
@@ -305,7 +364,7 @@ namespace Pulumi.Oci.BigDataService
         private InputMap<object>? _freeformTags;
 
         /// <summary>
-        /// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{"bar-key": "value"}`
+        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         public InputMap<object> FreeformTags
         {
@@ -314,32 +373,44 @@ namespace Pulumi.Oci.BigDataService
         }
 
         /// <summary>
-        /// Boolean flag specifying whether or not Cloud SQL should be configured.
+        /// -(Optional) (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
         /// </summary>
         [Input("isCloudSqlConfigured")]
         public Input<bool>? IsCloudSqlConfigured { get; set; }
 
         /// <summary>
-        /// Boolean flag specifying whether or not the cluster is highly available (HA).
+        /// Boolean flag specifying whether or not the cluster is HA
         /// </summary>
         [Input("isHighAvailability", required: true)]
         public Input<bool> IsHighAvailability { get; set; } = null!;
 
         /// <summary>
-        /// Boolean flag specifying whether or not the cluster should be set up as secure.
+        /// Boolean flag specifying whether or not the cluster should be setup as secure.
         /// </summary>
         [Input("isSecure", required: true)]
         public Input<bool> IsSecure { get; set; } = null!;
 
+        /// <summary>
+        /// The user-defined kerberos realm name.
+        /// </summary>
+        [Input("kerberosRealmName")]
+        public Input<string>? KerberosRealmName { get; set; }
+
+        /// <summary>
+        /// The master node in the BDS instance
+        /// </summary>
         [Input("masterNode", required: true)]
         public Input<Inputs.BdsInstanceMasterNodeArgs> MasterNode { get; set; } = null!;
 
         /// <summary>
-        /// Additional configuration of the user's network.
+        /// Additional configuration of customer's network.
         /// </summary>
         [Input("networkConfig")]
         public Input<Inputs.BdsInstanceNetworkConfigArgs>? NetworkConfig { get; set; }
 
+        /// <summary>
+        /// The utility node in the BDS instance
+        /// </summary>
         [Input("utilNode", required: true)]
         public Input<Inputs.BdsInstanceUtilNodeArgs> UtilNode { get; set; } = null!;
 
@@ -353,11 +424,17 @@ namespace Pulumi.Oci.BigDataService
 
     public sealed class BdsInstanceState : Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
+        /// </summary>
+        [Input("bootstrapScriptUrl")]
+        public Input<string>? BootstrapScriptUrl { get; set; }
+
         [Input("cloudSqlDetails")]
         private InputList<Inputs.BdsInstanceCloudSqlDetailGetArgs>? _cloudSqlDetails;
 
         /// <summary>
-        /// The information about added Cloud SQL capability
+        /// -(Optional) The information about added Cloud SQL capability
         /// </summary>
         public InputList<Inputs.BdsInstanceCloudSqlDetailGetArgs> CloudSqlDetails
         {
@@ -366,7 +443,7 @@ namespace Pulumi.Oci.BigDataService
         }
 
         /// <summary>
-        /// Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+        /// Base-64 encoded password for Cloudera Manager admin user
         /// </summary>
         [Input("clusterAdminPassword")]
         public Input<string>? ClusterAdminPassword { get; set; }
@@ -390,19 +467,22 @@ namespace Pulumi.Oci.BigDataService
         public Input<string>? ClusterPublicKey { get; set; }
 
         /// <summary>
-        /// Version of the Hadoop distribution.
+        /// Version of the Hadoop distribution
         /// </summary>
         [Input("clusterVersion")]
         public Input<string>? ClusterVersion { get; set; }
 
         /// <summary>
-        /// (Updatable) The OCID of the compartment.
+        /// (Updatable) The OCID of the compartment
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
 
+        [Input("computeOnlyWorkerNode")]
+        public Input<Inputs.BdsInstanceComputeOnlyWorkerNodeGetArgs>? ComputeOnlyWorkerNode { get; set; }
+
         /// <summary>
-        /// The user who created the cluster.
+        /// The user who created the BDS instance.
         /// </summary>
         [Input("createdBy")]
         public Input<string>? CreatedBy { get; set; }
@@ -411,7 +491,7 @@ namespace Pulumi.Oci.BigDataService
         private InputMap<object>? _definedTags;
 
         /// <summary>
-        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example, `{"foo-namespace": {"bar-key": "value"}}`
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         public InputMap<object> DefinedTags
         {
@@ -420,7 +500,7 @@ namespace Pulumi.Oci.BigDataService
         }
 
         /// <summary>
-        /// (Updatable) Name of the Big Data Service cluster.
+        /// (Updatable) Name of the BDS instance
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -429,7 +509,7 @@ namespace Pulumi.Oci.BigDataService
         private InputMap<object>? _freeformTags;
 
         /// <summary>
-        /// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{"bar-key": "value"}`
+        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         public InputMap<object> FreeformTags
         {
@@ -438,28 +518,37 @@ namespace Pulumi.Oci.BigDataService
         }
 
         /// <summary>
-        /// Boolean flag specifying whether or not Cloud SQL should be configured.
+        /// -(Optional) (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
         /// </summary>
         [Input("isCloudSqlConfigured")]
         public Input<bool>? IsCloudSqlConfigured { get; set; }
 
         /// <summary>
-        /// Boolean flag specifying whether or not the cluster is highly available (HA).
+        /// Boolean flag specifying whether or not the cluster is HA
         /// </summary>
         [Input("isHighAvailability")]
         public Input<bool>? IsHighAvailability { get; set; }
 
         /// <summary>
-        /// Boolean flag specifying whether or not the cluster should be set up as secure.
+        /// Boolean flag specifying whether or not the cluster should be setup as secure.
         /// </summary>
         [Input("isSecure")]
         public Input<bool>? IsSecure { get; set; }
 
+        /// <summary>
+        /// The user-defined kerberos realm name.
+        /// </summary>
+        [Input("kerberosRealmName")]
+        public Input<string>? KerberosRealmName { get; set; }
+
+        /// <summary>
+        /// The master node in the BDS instance
+        /// </summary>
         [Input("masterNode")]
         public Input<Inputs.BdsInstanceMasterNodeGetArgs>? MasterNode { get; set; }
 
         /// <summary>
-        /// Additional configuration of the user's network.
+        /// Additional configuration of customer's network.
         /// </summary>
         [Input("networkConfig")]
         public Input<Inputs.BdsInstanceNetworkConfigGetArgs>? NetworkConfig { get; set; }
@@ -468,7 +557,7 @@ namespace Pulumi.Oci.BigDataService
         private InputList<Inputs.BdsInstanceNodeGetArgs>? _nodes;
 
         /// <summary>
-        /// The list of nodes in the Big Data Service cluster.
+        /// The list of nodes in the BDS instance
         /// </summary>
         public InputList<Inputs.BdsInstanceNodeGetArgs> Nodes
         {
@@ -477,29 +566,32 @@ namespace Pulumi.Oci.BigDataService
         }
 
         /// <summary>
-        /// The number of nodes that form the cluster.
+        /// The amount of worker nodes should be created
         /// </summary>
         [Input("numberOfNodes")]
         public Input<int>? NumberOfNodes { get; set; }
 
         /// <summary>
-        /// The state of the cluster.
+        /// The state of the BDS instance
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
 
         /// <summary>
-        /// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+        /// The time the BDS instance was created. An RFC3339 formatted datetime string
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
+        /// The time the BDS instance was updated. An RFC3339 formatted datetime string
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }
 
+        /// <summary>
+        /// The utility node in the BDS instance
+        /// </summary>
         [Input("utilNode")]
         public Input<Inputs.BdsInstanceUtilNodeGetArgs>? UtilNode { get; set; }
 

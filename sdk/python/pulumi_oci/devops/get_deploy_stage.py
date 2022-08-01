@@ -21,7 +21,7 @@ class GetDeployStageResult:
     """
     A collection of values returned by getDeployStage.
     """
-    def __init__(__self__, approval_policies=None, blue_backend_ips=None, blue_green_strategies=None, canary_strategies=None, compartment_id=None, compute_instance_group_blue_green_deployment_deploy_stage_id=None, compute_instance_group_canary_deploy_stage_id=None, compute_instance_group_canary_traffic_shift_deploy_stage_id=None, compute_instance_group_deploy_environment_id=None, config=None, defined_tags=None, deploy_artifact_id=None, deploy_artifact_ids=None, deploy_environment_id_a=None, deploy_environment_id_b=None, deploy_pipeline_id=None, deploy_stage_id=None, deploy_stage_predecessor_collections=None, deploy_stage_type=None, deployment_spec_deploy_artifact_id=None, description=None, display_name=None, docker_image_deploy_artifact_id=None, failure_policies=None, freeform_tags=None, function_deploy_environment_id=None, function_timeout_in_seconds=None, green_backend_ips=None, id=None, is_async=None, is_validation_enabled=None, kubernetes_manifest_deploy_artifact_ids=None, lifecycle_details=None, load_balancer_configs=None, max_memory_in_mbs=None, namespace=None, oke_blue_green_deploy_stage_id=None, oke_canary_deploy_stage_id=None, oke_canary_traffic_shift_deploy_stage_id=None, oke_cluster_deploy_environment_id=None, production_load_balancer_configs=None, project_id=None, rollback_policies=None, rollout_policies=None, state=None, system_tags=None, test_load_balancer_configs=None, time_created=None, time_updated=None, traffic_shift_target=None, wait_criterias=None):
+    def __init__(__self__, approval_policies=None, blue_backend_ips=None, blue_green_strategies=None, canary_strategies=None, compartment_id=None, compute_instance_group_blue_green_deployment_deploy_stage_id=None, compute_instance_group_canary_deploy_stage_id=None, compute_instance_group_canary_traffic_shift_deploy_stage_id=None, compute_instance_group_deploy_environment_id=None, config=None, defined_tags=None, deploy_artifact_id=None, deploy_artifact_ids=None, deploy_environment_id_a=None, deploy_environment_id_b=None, deploy_pipeline_id=None, deploy_stage_id=None, deploy_stage_predecessor_collections=None, deploy_stage_type=None, deployment_spec_deploy_artifact_id=None, description=None, display_name=None, docker_image_deploy_artifact_id=None, failure_policies=None, freeform_tags=None, function_deploy_environment_id=None, function_timeout_in_seconds=None, green_backend_ips=None, helm_chart_deploy_artifact_id=None, id=None, is_async=None, is_validation_enabled=None, kubernetes_manifest_deploy_artifact_ids=None, lifecycle_details=None, load_balancer_configs=None, max_memory_in_mbs=None, namespace=None, oke_blue_green_deploy_stage_id=None, oke_canary_deploy_stage_id=None, oke_canary_traffic_shift_deploy_stage_id=None, oke_cluster_deploy_environment_id=None, production_load_balancer_configs=None, project_id=None, release_name=None, rollback_policies=None, rollout_policies=None, state=None, system_tags=None, test_load_balancer_configs=None, time_created=None, time_updated=None, timeout_in_seconds=None, traffic_shift_target=None, values_artifact_ids=None, wait_criterias=None):
         if approval_policies and not isinstance(approval_policies, list):
             raise TypeError("Expected argument 'approval_policies' to be a list")
         pulumi.set(__self__, "approval_policies", approval_policies)
@@ -106,6 +106,9 @@ class GetDeployStageResult:
         if green_backend_ips and not isinstance(green_backend_ips, list):
             raise TypeError("Expected argument 'green_backend_ips' to be a list")
         pulumi.set(__self__, "green_backend_ips", green_backend_ips)
+        if helm_chart_deploy_artifact_id and not isinstance(helm_chart_deploy_artifact_id, str):
+            raise TypeError("Expected argument 'helm_chart_deploy_artifact_id' to be a str")
+        pulumi.set(__self__, "helm_chart_deploy_artifact_id", helm_chart_deploy_artifact_id)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -148,6 +151,9 @@ class GetDeployStageResult:
         if project_id and not isinstance(project_id, str):
             raise TypeError("Expected argument 'project_id' to be a str")
         pulumi.set(__self__, "project_id", project_id)
+        if release_name and not isinstance(release_name, str):
+            raise TypeError("Expected argument 'release_name' to be a str")
+        pulumi.set(__self__, "release_name", release_name)
         if rollback_policies and not isinstance(rollback_policies, list):
             raise TypeError("Expected argument 'rollback_policies' to be a list")
         pulumi.set(__self__, "rollback_policies", rollback_policies)
@@ -169,9 +175,15 @@ class GetDeployStageResult:
         if time_updated and not isinstance(time_updated, str):
             raise TypeError("Expected argument 'time_updated' to be a str")
         pulumi.set(__self__, "time_updated", time_updated)
+        if timeout_in_seconds and not isinstance(timeout_in_seconds, int):
+            raise TypeError("Expected argument 'timeout_in_seconds' to be a int")
+        pulumi.set(__self__, "timeout_in_seconds", timeout_in_seconds)
         if traffic_shift_target and not isinstance(traffic_shift_target, str):
             raise TypeError("Expected argument 'traffic_shift_target' to be a str")
         pulumi.set(__self__, "traffic_shift_target", traffic_shift_target)
+        if values_artifact_ids and not isinstance(values_artifact_ids, list):
+            raise TypeError("Expected argument 'values_artifact_ids' to be a list")
+        pulumi.set(__self__, "values_artifact_ids", values_artifact_ids)
         if wait_criterias and not isinstance(wait_criterias, list):
             raise TypeError("Expected argument 'wait_criterias' to be a list")
         pulumi.set(__self__, "wait_criterias", wait_criterias)
@@ -398,6 +410,14 @@ class GetDeployStageResult:
         return pulumi.get(self, "green_backend_ips")
 
     @property
+    @pulumi.getter(name="helmChartDeployArtifactId")
+    def helm_chart_deploy_artifact_id(self) -> str:
+        """
+        Helm chart artifact OCID.
+        """
+        return pulumi.get(self, "helm_chart_deploy_artifact_id")
+
+    @property
     @pulumi.getter
     def id(self) -> str:
         """
@@ -510,6 +530,14 @@ class GetDeployStageResult:
         return pulumi.get(self, "project_id")
 
     @property
+    @pulumi.getter(name="releaseName")
+    def release_name(self) -> str:
+        """
+        Release name of the Helm chart.
+        """
+        return pulumi.get(self, "release_name")
+
+    @property
     @pulumi.getter(name="rollbackPolicies")
     def rollback_policies(self) -> Sequence['outputs.GetDeployStageRollbackPolicyResult']:
         """
@@ -566,12 +594,28 @@ class GetDeployStageResult:
         return pulumi.get(self, "time_updated")
 
     @property
+    @pulumi.getter(name="timeoutInSeconds")
+    def timeout_in_seconds(self) -> int:
+        """
+        Time to wait for execution of a helm stage. Defaults to 300 seconds.
+        """
+        return pulumi.get(self, "timeout_in_seconds")
+
+    @property
     @pulumi.getter(name="trafficShiftTarget")
     def traffic_shift_target(self) -> str:
         """
         Specifies the target or destination backend set.
         """
         return pulumi.get(self, "traffic_shift_target")
+
+    @property
+    @pulumi.getter(name="valuesArtifactIds")
+    def values_artifact_ids(self) -> Sequence[str]:
+        """
+        List of values.yaml file artifact OCIDs.
+        """
+        return pulumi.get(self, "values_artifact_ids")
 
     @property
     @pulumi.getter(name="waitCriterias")
@@ -616,6 +660,7 @@ class AwaitableGetDeployStageResult(GetDeployStageResult):
             function_deploy_environment_id=self.function_deploy_environment_id,
             function_timeout_in_seconds=self.function_timeout_in_seconds,
             green_backend_ips=self.green_backend_ips,
+            helm_chart_deploy_artifact_id=self.helm_chart_deploy_artifact_id,
             id=self.id,
             is_async=self.is_async,
             is_validation_enabled=self.is_validation_enabled,
@@ -630,6 +675,7 @@ class AwaitableGetDeployStageResult(GetDeployStageResult):
             oke_cluster_deploy_environment_id=self.oke_cluster_deploy_environment_id,
             production_load_balancer_configs=self.production_load_balancer_configs,
             project_id=self.project_id,
+            release_name=self.release_name,
             rollback_policies=self.rollback_policies,
             rollout_policies=self.rollout_policies,
             state=self.state,
@@ -637,7 +683,9 @@ class AwaitableGetDeployStageResult(GetDeployStageResult):
             test_load_balancer_configs=self.test_load_balancer_configs,
             time_created=self.time_created,
             time_updated=self.time_updated,
+            timeout_in_seconds=self.timeout_in_seconds,
             traffic_shift_target=self.traffic_shift_target,
+            values_artifact_ids=self.values_artifact_ids,
             wait_criterias=self.wait_criterias)
 
 
@@ -697,6 +745,7 @@ def get_deploy_stage(deploy_stage_id: Optional[str] = None,
         function_deploy_environment_id=__ret__.function_deploy_environment_id,
         function_timeout_in_seconds=__ret__.function_timeout_in_seconds,
         green_backend_ips=__ret__.green_backend_ips,
+        helm_chart_deploy_artifact_id=__ret__.helm_chart_deploy_artifact_id,
         id=__ret__.id,
         is_async=__ret__.is_async,
         is_validation_enabled=__ret__.is_validation_enabled,
@@ -711,6 +760,7 @@ def get_deploy_stage(deploy_stage_id: Optional[str] = None,
         oke_cluster_deploy_environment_id=__ret__.oke_cluster_deploy_environment_id,
         production_load_balancer_configs=__ret__.production_load_balancer_configs,
         project_id=__ret__.project_id,
+        release_name=__ret__.release_name,
         rollback_policies=__ret__.rollback_policies,
         rollout_policies=__ret__.rollout_policies,
         state=__ret__.state,
@@ -718,7 +768,9 @@ def get_deploy_stage(deploy_stage_id: Optional[str] = None,
         test_load_balancer_configs=__ret__.test_load_balancer_configs,
         time_created=__ret__.time_created,
         time_updated=__ret__.time_updated,
+        timeout_in_seconds=__ret__.timeout_in_seconds,
         traffic_shift_target=__ret__.traffic_shift_target,
+        values_artifact_ids=__ret__.values_artifact_ids,
         wait_criterias=__ret__.wait_criterias)
 
 

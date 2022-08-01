@@ -29,13 +29,13 @@ type DetectorRecipe struct {
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
-	// (Updatable) DetectorRecipe Description
+	// (Updatable) Detector recipe description.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// detector for the rule
 	Detector pulumi.StringOutput `pulumi:"detector"`
 	// (Updatable) Detector Rules to override from source detector recipe
 	DetectorRules DetectorRecipeDetectorRuleArrayOutput `pulumi:"detectorRules"`
-	// (Updatable) DetectorRecipe Display Name
+	// (Updatable) Detector recipe display name.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// List of effective detector rules for the detector type for recipe after applying defaults
 	EffectiveDetectorRules DetectorRecipeEffectiveDetectorRuleArrayOutput `pulumi:"effectiveDetectorRules"`
@@ -97,13 +97,13 @@ type detectorRecipeState struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// (Updatable) DetectorRecipe Description
+	// (Updatable) Detector recipe description.
 	Description *string `pulumi:"description"`
 	// detector for the rule
 	Detector *string `pulumi:"detector"`
 	// (Updatable) Detector Rules to override from source detector recipe
 	DetectorRules []DetectorRecipeDetectorRule `pulumi:"detectorRules"`
-	// (Updatable) DetectorRecipe Display Name
+	// (Updatable) Detector recipe display name.
 	DisplayName *string `pulumi:"displayName"`
 	// List of effective detector rules for the detector type for recipe after applying defaults
 	EffectiveDetectorRules []DetectorRecipeEffectiveDetectorRule `pulumi:"effectiveDetectorRules"`
@@ -128,13 +128,13 @@ type DetectorRecipeState struct {
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
-	// (Updatable) DetectorRecipe Description
+	// (Updatable) Detector recipe description.
 	Description pulumi.StringPtrInput
 	// detector for the rule
 	Detector pulumi.StringPtrInput
 	// (Updatable) Detector Rules to override from source detector recipe
 	DetectorRules DetectorRecipeDetectorRuleArrayInput
-	// (Updatable) DetectorRecipe Display Name
+	// (Updatable) Detector recipe display name.
 	DisplayName pulumi.StringPtrInput
 	// List of effective detector rules for the detector type for recipe after applying defaults
 	EffectiveDetectorRules DetectorRecipeEffectiveDetectorRuleArrayInput
@@ -163,11 +163,11 @@ type detectorRecipeArgs struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// (Updatable) DetectorRecipe Description
+	// (Updatable) Detector recipe description.
 	Description *string `pulumi:"description"`
 	// (Updatable) Detector Rules to override from source detector recipe
 	DetectorRules []DetectorRecipeDetectorRule `pulumi:"detectorRules"`
-	// (Updatable) DetectorRecipe Display Name
+	// (Updatable) Detector recipe display name.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
@@ -181,11 +181,11 @@ type DetectorRecipeArgs struct {
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
-	// (Updatable) DetectorRecipe Description
+	// (Updatable) Detector recipe description.
 	Description pulumi.StringPtrInput
 	// (Updatable) Detector Rules to override from source detector recipe
 	DetectorRules DetectorRecipeDetectorRuleArrayInput
-	// (Updatable) DetectorRecipe Display Name
+	// (Updatable) Detector recipe display name.
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput

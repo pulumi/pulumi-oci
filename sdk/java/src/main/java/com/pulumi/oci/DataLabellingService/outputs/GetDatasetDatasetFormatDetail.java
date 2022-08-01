@@ -4,28 +4,45 @@
 package com.pulumi.oci.DataLabellingService.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.DataLabellingService.outputs.GetDatasetDatasetFormatDetailTextFileTypeMetadata;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
 public final class GetDatasetDatasetFormatDetail {
     /**
-     * @return Format type. DOCUMENT format is for record contents that are PDFs or TIFFs. IMAGE format is for record contents that are JPEGs or PNGs. TEXT format is for record contents that are txt files.
+     * @return It defines the format type of text files.
      * 
      */
     private final String formatType;
+    /**
+     * @return Metadata for files with text content.
+     * 
+     */
+    private final List<GetDatasetDatasetFormatDetailTextFileTypeMetadata> textFileTypeMetadatas;
 
     @CustomType.Constructor
-    private GetDatasetDatasetFormatDetail(@CustomType.Parameter("formatType") String formatType) {
+    private GetDatasetDatasetFormatDetail(
+        @CustomType.Parameter("formatType") String formatType,
+        @CustomType.Parameter("textFileTypeMetadatas") List<GetDatasetDatasetFormatDetailTextFileTypeMetadata> textFileTypeMetadatas) {
         this.formatType = formatType;
+        this.textFileTypeMetadatas = textFileTypeMetadatas;
     }
 
     /**
-     * @return Format type. DOCUMENT format is for record contents that are PDFs or TIFFs. IMAGE format is for record contents that are JPEGs or PNGs. TEXT format is for record contents that are txt files.
+     * @return It defines the format type of text files.
      * 
      */
     public String formatType() {
         return this.formatType;
+    }
+    /**
+     * @return Metadata for files with text content.
+     * 
+     */
+    public List<GetDatasetDatasetFormatDetailTextFileTypeMetadata> textFileTypeMetadatas() {
+        return this.textFileTypeMetadatas;
     }
 
     public static Builder builder() {
@@ -38,6 +55,7 @@ public final class GetDatasetDatasetFormatDetail {
 
     public static final class Builder {
         private String formatType;
+        private List<GetDatasetDatasetFormatDetailTextFileTypeMetadata> textFileTypeMetadatas;
 
         public Builder() {
     	      // Empty
@@ -46,13 +64,21 @@ public final class GetDatasetDatasetFormatDetail {
         public Builder(GetDatasetDatasetFormatDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.formatType = defaults.formatType;
+    	      this.textFileTypeMetadatas = defaults.textFileTypeMetadatas;
         }
 
         public Builder formatType(String formatType) {
             this.formatType = Objects.requireNonNull(formatType);
             return this;
+        }
+        public Builder textFileTypeMetadatas(List<GetDatasetDatasetFormatDetailTextFileTypeMetadata> textFileTypeMetadatas) {
+            this.textFileTypeMetadatas = Objects.requireNonNull(textFileTypeMetadatas);
+            return this;
+        }
+        public Builder textFileTypeMetadatas(GetDatasetDatasetFormatDetailTextFileTypeMetadata... textFileTypeMetadatas) {
+            return textFileTypeMetadatas(List.of(textFileTypeMetadatas));
         }        public GetDatasetDatasetFormatDetail build() {
-            return new GetDatasetDatasetFormatDetail(formatType);
+            return new GetDatasetDatasetFormatDetail(formatType, textFileTypeMetadatas);
         }
     }
 }

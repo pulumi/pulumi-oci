@@ -14,25 +14,33 @@ __all__ = ['EsxiHostArgs', 'EsxiHost']
 class EsxiHostArgs:
     def __init__(__self__, *,
                  sddc_id: pulumi.Input[str],
+                 capacity_reservation_id: Optional[pulumi.Input[str]] = None,
                  compute_availability_domain: Optional[pulumi.Input[str]] = None,
                  current_sku: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  failed_esxi_host_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 host_ocpu_count: Optional[pulumi.Input[float]] = None,
+                 host_shape_name: Optional[pulumi.Input[str]] = None,
                  next_sku: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a EsxiHost resource.
         :param pulumi.Input[str] sddc_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to.
+        :param pulumi.Input[str] capacity_reservation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
         :param pulumi.Input[str] compute_availability_domain: The availability domain to create the ESXi host in. If keep empty, for AD-specific SDDC, new ESXi host will be created in the same availability domain; for multi-AD SDDC, new ESXi host will be auto assigned to the next availability domain following evenly distribution strategy.
         :param pulumi.Input[str] current_sku: The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the SDDC.
-        :param pulumi.Input[str] failed_esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be udpated in the newly created Esxi host.
+        :param pulumi.Input[str] failed_esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is failed. It is an optional param, when user supplies this param, new Esxi Host will be created to replace the failed one, and failedEsxiHostId field will be udpated in the newly created EsxiHost.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[float] host_ocpu_count: The OCPU count of the ESXi host.
+        :param pulumi.Input[str] host_shape_name: The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
         :param pulumi.Input[str] next_sku: (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
         """
         pulumi.set(__self__, "sddc_id", sddc_id)
+        if capacity_reservation_id is not None:
+            pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         if compute_availability_domain is not None:
             pulumi.set(__self__, "compute_availability_domain", compute_availability_domain)
         if current_sku is not None:
@@ -45,6 +53,10 @@ class EsxiHostArgs:
             pulumi.set(__self__, "failed_esxi_host_id", failed_esxi_host_id)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if host_ocpu_count is not None:
+            pulumi.set(__self__, "host_ocpu_count", host_ocpu_count)
+        if host_shape_name is not None:
+            pulumi.set(__self__, "host_shape_name", host_shape_name)
         if next_sku is not None:
             pulumi.set(__self__, "next_sku", next_sku)
 
@@ -59,6 +71,18 @@ class EsxiHostArgs:
     @sddc_id.setter
     def sddc_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "sddc_id", value)
+
+    @property
+    @pulumi.getter(name="capacityReservationId")
+    def capacity_reservation_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+        """
+        return pulumi.get(self, "capacity_reservation_id")
+
+    @capacity_reservation_id.setter
+    def capacity_reservation_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "capacity_reservation_id", value)
 
     @property
     @pulumi.getter(name="computeAvailabilityDomain")
@@ -112,7 +136,7 @@ class EsxiHostArgs:
     @pulumi.getter(name="failedEsxiHostId")
     def failed_esxi_host_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be udpated in the newly created Esxi host.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is failed. It is an optional param, when user supplies this param, new Esxi Host will be created to replace the failed one, and failedEsxiHostId field will be udpated in the newly created EsxiHost.
         """
         return pulumi.get(self, "failed_esxi_host_id")
 
@@ -133,6 +157,30 @@ class EsxiHostArgs:
         pulumi.set(self, "freeform_tags", value)
 
     @property
+    @pulumi.getter(name="hostOcpuCount")
+    def host_ocpu_count(self) -> Optional[pulumi.Input[float]]:
+        """
+        The OCPU count of the ESXi host.
+        """
+        return pulumi.get(self, "host_ocpu_count")
+
+    @host_ocpu_count.setter
+    def host_ocpu_count(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "host_ocpu_count", value)
+
+    @property
+    @pulumi.getter(name="hostShapeName")
+    def host_shape_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+        """
+        return pulumi.get(self, "host_shape_name")
+
+    @host_shape_name.setter
+    def host_shape_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "host_shape_name", value)
+
+    @property
     @pulumi.getter(name="nextSku")
     def next_sku(self) -> Optional[pulumi.Input[str]]:
         """
@@ -149,6 +197,7 @@ class EsxiHostArgs:
 class _EsxiHostState:
     def __init__(__self__, *,
                  billing_contract_end_date: Optional[pulumi.Input[str]] = None,
+                 capacity_reservation_id: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  compute_availability_domain: Optional[pulumi.Input[str]] = None,
                  compute_instance_id: Optional[pulumi.Input[str]] = None,
@@ -158,6 +207,8 @@ class _EsxiHostState:
                  failed_esxi_host_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  grace_period_end_date: Optional[pulumi.Input[str]] = None,
+                 host_ocpu_count: Optional[pulumi.Input[float]] = None,
+                 host_shape_name: Optional[pulumi.Input[str]] = None,
                  next_sku: Optional[pulumi.Input[str]] = None,
                  replacement_esxi_host_id: Optional[pulumi.Input[str]] = None,
                  sddc_id: Optional[pulumi.Input[str]] = None,
@@ -167,15 +218,18 @@ class _EsxiHostState:
         """
         Input properties used for looking up and filtering EsxiHost resources.
         :param pulumi.Input[str] billing_contract_end_date: Current billing cycle end date. If the value in `currentSku` and `nextSku` are different, the value specified in `nextSku` becomes the new `currentSKU` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
+        :param pulumi.Input[str] capacity_reservation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
         :param pulumi.Input[str] compute_availability_domain: The availability domain to create the ESXi host in. If keep empty, for AD-specific SDDC, new ESXi host will be created in the same availability domain; for multi-AD SDDC, new ESXi host will be auto assigned to the next availability domain following evenly distribution strategy.
         :param pulumi.Input[str] compute_instance_id: In terms of implementation, an ESXi host is a Compute instance that is configured with the chosen bundle of VMware software. The `computeInstanceId` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that Compute instance.
         :param pulumi.Input[str] current_sku: The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the SDDC.
-        :param pulumi.Input[str] failed_esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be udpated in the newly created Esxi host.
+        :param pulumi.Input[str] failed_esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is failed. It is an optional param, when user supplies this param, new Esxi Host will be created to replace the failed one, and failedEsxiHostId field will be udpated in the newly created EsxiHost.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] grace_period_end_date: The date and time when the new esxi host should start billing cycle. [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2021-07-25T21:10:29.600Z`
+        :param pulumi.Input[float] host_ocpu_count: The OCPU count of the ESXi host.
+        :param pulumi.Input[str] host_shape_name: The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
         :param pulumi.Input[str] next_sku: (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
         :param pulumi.Input[str] replacement_esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
         :param pulumi.Input[str] sddc_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to.
@@ -185,6 +239,8 @@ class _EsxiHostState:
         """
         if billing_contract_end_date is not None:
             pulumi.set(__self__, "billing_contract_end_date", billing_contract_end_date)
+        if capacity_reservation_id is not None:
+            pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if compute_availability_domain is not None:
@@ -203,6 +259,10 @@ class _EsxiHostState:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if grace_period_end_date is not None:
             pulumi.set(__self__, "grace_period_end_date", grace_period_end_date)
+        if host_ocpu_count is not None:
+            pulumi.set(__self__, "host_ocpu_count", host_ocpu_count)
+        if host_shape_name is not None:
+            pulumi.set(__self__, "host_shape_name", host_shape_name)
         if next_sku is not None:
             pulumi.set(__self__, "next_sku", next_sku)
         if replacement_esxi_host_id is not None:
@@ -227,6 +287,18 @@ class _EsxiHostState:
     @billing_contract_end_date.setter
     def billing_contract_end_date(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "billing_contract_end_date", value)
+
+    @property
+    @pulumi.getter(name="capacityReservationId")
+    def capacity_reservation_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+        """
+        return pulumi.get(self, "capacity_reservation_id")
+
+    @capacity_reservation_id.setter
+    def capacity_reservation_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "capacity_reservation_id", value)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -304,7 +376,7 @@ class _EsxiHostState:
     @pulumi.getter(name="failedEsxiHostId")
     def failed_esxi_host_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be udpated in the newly created Esxi host.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is failed. It is an optional param, when user supplies this param, new Esxi Host will be created to replace the failed one, and failedEsxiHostId field will be udpated in the newly created EsxiHost.
         """
         return pulumi.get(self, "failed_esxi_host_id")
 
@@ -335,6 +407,30 @@ class _EsxiHostState:
     @grace_period_end_date.setter
     def grace_period_end_date(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "grace_period_end_date", value)
+
+    @property
+    @pulumi.getter(name="hostOcpuCount")
+    def host_ocpu_count(self) -> Optional[pulumi.Input[float]]:
+        """
+        The OCPU count of the ESXi host.
+        """
+        return pulumi.get(self, "host_ocpu_count")
+
+    @host_ocpu_count.setter
+    def host_ocpu_count(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "host_ocpu_count", value)
+
+    @property
+    @pulumi.getter(name="hostShapeName")
+    def host_shape_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+        """
+        return pulumi.get(self, "host_shape_name")
+
+    @host_shape_name.setter
+    def host_shape_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "host_shape_name", value)
 
     @property
     @pulumi.getter(name="nextSku")
@@ -414,12 +510,15 @@ class EsxiHost(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 capacity_reservation_id: Optional[pulumi.Input[str]] = None,
                  compute_availability_domain: Optional[pulumi.Input[str]] = None,
                  current_sku: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  failed_esxi_host_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 host_ocpu_count: Optional[pulumi.Input[float]] = None,
+                 host_shape_name: Optional[pulumi.Input[str]] = None,
                  next_sku: Optional[pulumi.Input[str]] = None,
                  sddc_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -443,12 +542,15 @@ class EsxiHost(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[str] capacity_reservation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
         :param pulumi.Input[str] compute_availability_domain: The availability domain to create the ESXi host in. If keep empty, for AD-specific SDDC, new ESXi host will be created in the same availability domain; for multi-AD SDDC, new ESXi host will be auto assigned to the next availability domain following evenly distribution strategy.
         :param pulumi.Input[str] current_sku: The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the SDDC.
-        :param pulumi.Input[str] failed_esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be udpated in the newly created Esxi host.
+        :param pulumi.Input[str] failed_esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is failed. It is an optional param, when user supplies this param, new Esxi Host will be created to replace the failed one, and failedEsxiHostId field will be udpated in the newly created EsxiHost.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[float] host_ocpu_count: The OCPU count of the ESXi host.
+        :param pulumi.Input[str] host_shape_name: The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
         :param pulumi.Input[str] next_sku: (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
         :param pulumi.Input[str] sddc_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to.
         """
@@ -491,12 +593,15 @@ class EsxiHost(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 capacity_reservation_id: Optional[pulumi.Input[str]] = None,
                  compute_availability_domain: Optional[pulumi.Input[str]] = None,
                  current_sku: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  failed_esxi_host_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 host_ocpu_count: Optional[pulumi.Input[float]] = None,
+                 host_shape_name: Optional[pulumi.Input[str]] = None,
                  next_sku: Optional[pulumi.Input[str]] = None,
                  sddc_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -511,12 +616,15 @@ class EsxiHost(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = EsxiHostArgs.__new__(EsxiHostArgs)
 
+            __props__.__dict__["capacity_reservation_id"] = capacity_reservation_id
             __props__.__dict__["compute_availability_domain"] = compute_availability_domain
             __props__.__dict__["current_sku"] = current_sku
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["failed_esxi_host_id"] = failed_esxi_host_id
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["host_ocpu_count"] = host_ocpu_count
+            __props__.__dict__["host_shape_name"] = host_shape_name
             __props__.__dict__["next_sku"] = next_sku
             if sddc_id is None and not opts.urn:
                 raise TypeError("Missing required property 'sddc_id'")
@@ -540,6 +648,7 @@ class EsxiHost(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             billing_contract_end_date: Optional[pulumi.Input[str]] = None,
+            capacity_reservation_id: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             compute_availability_domain: Optional[pulumi.Input[str]] = None,
             compute_instance_id: Optional[pulumi.Input[str]] = None,
@@ -549,6 +658,8 @@ class EsxiHost(pulumi.CustomResource):
             failed_esxi_host_id: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             grace_period_end_date: Optional[pulumi.Input[str]] = None,
+            host_ocpu_count: Optional[pulumi.Input[float]] = None,
+            host_shape_name: Optional[pulumi.Input[str]] = None,
             next_sku: Optional[pulumi.Input[str]] = None,
             replacement_esxi_host_id: Optional[pulumi.Input[str]] = None,
             sddc_id: Optional[pulumi.Input[str]] = None,
@@ -563,15 +674,18 @@ class EsxiHost(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] billing_contract_end_date: Current billing cycle end date. If the value in `currentSku` and `nextSku` are different, the value specified in `nextSku` becomes the new `currentSKU` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
+        :param pulumi.Input[str] capacity_reservation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
         :param pulumi.Input[str] compute_availability_domain: The availability domain to create the ESXi host in. If keep empty, for AD-specific SDDC, new ESXi host will be created in the same availability domain; for multi-AD SDDC, new ESXi host will be auto assigned to the next availability domain following evenly distribution strategy.
         :param pulumi.Input[str] compute_instance_id: In terms of implementation, an ESXi host is a Compute instance that is configured with the chosen bundle of VMware software. The `computeInstanceId` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that Compute instance.
         :param pulumi.Input[str] current_sku: The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the SDDC.
-        :param pulumi.Input[str] failed_esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be udpated in the newly created Esxi host.
+        :param pulumi.Input[str] failed_esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is failed. It is an optional param, when user supplies this param, new Esxi Host will be created to replace the failed one, and failedEsxiHostId field will be udpated in the newly created EsxiHost.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] grace_period_end_date: The date and time when the new esxi host should start billing cycle. [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2021-07-25T21:10:29.600Z`
+        :param pulumi.Input[float] host_ocpu_count: The OCPU count of the ESXi host.
+        :param pulumi.Input[str] host_shape_name: The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
         :param pulumi.Input[str] next_sku: (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
         :param pulumi.Input[str] replacement_esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
         :param pulumi.Input[str] sddc_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to.
@@ -584,6 +698,7 @@ class EsxiHost(pulumi.CustomResource):
         __props__ = _EsxiHostState.__new__(_EsxiHostState)
 
         __props__.__dict__["billing_contract_end_date"] = billing_contract_end_date
+        __props__.__dict__["capacity_reservation_id"] = capacity_reservation_id
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["compute_availability_domain"] = compute_availability_domain
         __props__.__dict__["compute_instance_id"] = compute_instance_id
@@ -593,6 +708,8 @@ class EsxiHost(pulumi.CustomResource):
         __props__.__dict__["failed_esxi_host_id"] = failed_esxi_host_id
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["grace_period_end_date"] = grace_period_end_date
+        __props__.__dict__["host_ocpu_count"] = host_ocpu_count
+        __props__.__dict__["host_shape_name"] = host_shape_name
         __props__.__dict__["next_sku"] = next_sku
         __props__.__dict__["replacement_esxi_host_id"] = replacement_esxi_host_id
         __props__.__dict__["sddc_id"] = sddc_id
@@ -608,6 +725,14 @@ class EsxiHost(pulumi.CustomResource):
         Current billing cycle end date. If the value in `currentSku` and `nextSku` are different, the value specified in `nextSku` becomes the new `currentSKU` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "billing_contract_end_date")
+
+    @property
+    @pulumi.getter(name="capacityReservationId")
+    def capacity_reservation_id(self) -> pulumi.Output[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+        """
+        return pulumi.get(self, "capacity_reservation_id")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -661,7 +786,7 @@ class EsxiHost(pulumi.CustomResource):
     @pulumi.getter(name="failedEsxiHostId")
     def failed_esxi_host_id(self) -> pulumi.Output[str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be udpated in the newly created Esxi host.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is failed. It is an optional param, when user supplies this param, new Esxi Host will be created to replace the failed one, and failedEsxiHostId field will be udpated in the newly created EsxiHost.
         """
         return pulumi.get(self, "failed_esxi_host_id")
 
@@ -680,6 +805,22 @@ class EsxiHost(pulumi.CustomResource):
         The date and time when the new esxi host should start billing cycle. [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2021-07-25T21:10:29.600Z`
         """
         return pulumi.get(self, "grace_period_end_date")
+
+    @property
+    @pulumi.getter(name="hostOcpuCount")
+    def host_ocpu_count(self) -> pulumi.Output[float]:
+        """
+        The OCPU count of the ESXi host.
+        """
+        return pulumi.get(self, "host_ocpu_count")
+
+    @property
+    @pulumi.getter(name="hostShapeName")
+    def host_shape_name(self) -> pulumi.Output[str]:
+        """
+        The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+        """
+        return pulumi.get(self, "host_shape_name")
 
     @property
     @pulumi.getter(name="nextSku")

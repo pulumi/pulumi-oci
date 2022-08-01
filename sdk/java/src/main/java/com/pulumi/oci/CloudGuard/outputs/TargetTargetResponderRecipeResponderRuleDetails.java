@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class TargetTargetResponderRecipeResponderRuleDetails {
     /**
-     * @return (Updatable)
+     * @return (Updatable) Base condition object
      * 
      */
     private final @Nullable String condition;
@@ -48,7 +48,7 @@ public final class TargetTargetResponderRecipeResponderRuleDetails {
     }
 
     /**
-     * @return (Updatable)
+     * @return (Updatable) Base condition object
      * 
      */
     public Optional<String> condition() {

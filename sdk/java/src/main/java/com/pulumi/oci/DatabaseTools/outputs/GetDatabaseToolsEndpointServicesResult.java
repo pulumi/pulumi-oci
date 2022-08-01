@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetDatabaseToolsEndpointServicesResult {
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools Endpoint Service.
      * 
      */
     private final String compartmentId;
@@ -41,7 +41,7 @@ public final class GetDatabaseToolsEndpointServicesResult {
      */
     private final @Nullable String name;
     /**
-     * @return The current state of the DatabaseToolsEndpointService.
+     * @return The current state of the Database Tools Endpoint Service.
      * 
      */
     private final @Nullable String state;
@@ -65,7 +65,7 @@ public final class GetDatabaseToolsEndpointServicesResult {
     }
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools Endpoint Service.
      * 
      */
     public String compartmentId() {
@@ -103,7 +103,7 @@ public final class GetDatabaseToolsEndpointServicesResult {
         return Optional.ofNullable(this.name);
     }
     /**
-     * @return The current state of the DatabaseToolsEndpointService.
+     * @return The current state of the Database Tools Endpoint Service.
      * 
      */
     public Optional<String> state() {

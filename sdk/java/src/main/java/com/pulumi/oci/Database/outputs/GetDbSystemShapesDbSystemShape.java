@@ -120,6 +120,11 @@ public final class GetDbSystemShapesDbSystemShape {
      * 
      */
     private final String shapeFamily;
+    /**
+     * @return The shape type for the virtual machine DB system. Shape type is determined by CPU hardware. Valid values are `AMD` and `INTEL`.
+     * 
+     */
+    private final String shapeType;
 
     @CustomType.Constructor
     private GetDbSystemShapesDbSystemShape(
@@ -143,7 +148,8 @@ public final class GetDbSystemShapesDbSystemShape {
         @CustomType.Parameter("minimumNodeCount") Integer minimumNodeCount,
         @CustomType.Parameter("name") String name,
         @CustomType.Parameter("shape") String shape,
-        @CustomType.Parameter("shapeFamily") String shapeFamily) {
+        @CustomType.Parameter("shapeFamily") String shapeFamily,
+        @CustomType.Parameter("shapeType") String shapeType) {
         this.availableCoreCount = availableCoreCount;
         this.availableCoreCountPerNode = availableCoreCountPerNode;
         this.availableDataStorageInTbs = availableDataStorageInTbs;
@@ -165,6 +171,7 @@ public final class GetDbSystemShapesDbSystemShape {
         this.name = name;
         this.shape = shape;
         this.shapeFamily = shapeFamily;
+        this.shapeType = shapeType;
     }
 
     /**
@@ -318,6 +325,13 @@ public final class GetDbSystemShapesDbSystemShape {
     public String shapeFamily() {
         return this.shapeFamily;
     }
+    /**
+     * @return The shape type for the virtual machine DB system. Shape type is determined by CPU hardware. Valid values are `AMD` and `INTEL`.
+     * 
+     */
+    public String shapeType() {
+        return this.shapeType;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -349,6 +363,7 @@ public final class GetDbSystemShapesDbSystemShape {
         private String name;
         private String shape;
         private String shapeFamily;
+        private String shapeType;
 
         public Builder() {
     	      // Empty
@@ -377,6 +392,7 @@ public final class GetDbSystemShapesDbSystemShape {
     	      this.name = defaults.name;
     	      this.shape = defaults.shape;
     	      this.shapeFamily = defaults.shapeFamily;
+    	      this.shapeType = defaults.shapeType;
         }
 
         public Builder availableCoreCount(Integer availableCoreCount) {
@@ -462,8 +478,12 @@ public final class GetDbSystemShapesDbSystemShape {
         public Builder shapeFamily(String shapeFamily) {
             this.shapeFamily = Objects.requireNonNull(shapeFamily);
             return this;
+        }
+        public Builder shapeType(String shapeType) {
+            this.shapeType = Objects.requireNonNull(shapeType);
+            return this;
         }        public GetDbSystemShapesDbSystemShape build() {
-            return new GetDbSystemShapesDbSystemShape(availableCoreCount, availableCoreCountPerNode, availableDataStorageInTbs, availableDataStoragePerServerInTbs, availableDbNodePerNodeInGbs, availableDbNodeStorageInGbs, availableMemoryInGbs, availableMemoryPerNodeInGbs, coreCountIncrement, maxStorageCount, maximumNodeCount, minCoreCountPerNode, minDataStorageInTbs, minDbNodeStoragePerNodeInGbs, minMemoryPerNodeInGbs, minStorageCount, minimumCoreCount, minimumNodeCount, name, shape, shapeFamily);
+            return new GetDbSystemShapesDbSystemShape(availableCoreCount, availableCoreCountPerNode, availableDataStorageInTbs, availableDataStoragePerServerInTbs, availableDbNodePerNodeInGbs, availableDbNodeStorageInGbs, availableMemoryInGbs, availableMemoryPerNodeInGbs, coreCountIncrement, maxStorageCount, maximumNodeCount, minCoreCountPerNode, minDataStorageInTbs, minDbNodeStoragePerNodeInGbs, minMemoryPerNodeInGbs, minStorageCount, minimumCoreCount, minimumNodeCount, name, shape, shapeFamily, shapeType);
         }
     }
 }

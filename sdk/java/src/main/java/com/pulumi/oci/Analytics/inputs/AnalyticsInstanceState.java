@@ -140,6 +140,21 @@ public final class AnalyticsInstanceState extends com.pulumi.resources.ResourceA
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. &#34;&#34;) indicates to use Oracle managed default encryption.
+     * 
+     */
+    @Import(name="kmsKeyId")
+    private @Nullable Output<String> kmsKeyId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. &#34;&#34;) indicates to use Oracle managed default encryption.
+     * 
+     */
+    public Optional<Output<String>> kmsKeyId() {
+        return Optional.ofNullable(this.kmsKeyId);
+    }
+
+    /**
      * (Updatable) The license used for the service.
      * 
      */
@@ -182,21 +197,6 @@ public final class AnalyticsInstanceState extends com.pulumi.resources.ResourceA
      */
     public Optional<Output<AnalyticsInstanceNetworkEndpointDetailsArgs>> networkEndpointDetails() {
         return Optional.ofNullable(this.networkEndpointDetails);
-    }
-
-    /**
-     * Map of PrivateAccessChannel unique identifier key as KEY and PrivateAccessChannel Object as VALUE.
-     * 
-     */
-    @Import(name="privateAccessChannels")
-    private @Nullable Output<Map<String,Object>> privateAccessChannels;
-
-    /**
-     * @return Map of PrivateAccessChannel unique identifier key as KEY and PrivateAccessChannel Object as VALUE.
-     * 
-     */
-    public Optional<Output<Map<String,Object>>> privateAccessChannels() {
-        return Optional.ofNullable(this.privateAccessChannels);
     }
 
     /**
@@ -259,21 +259,6 @@ public final class AnalyticsInstanceState extends com.pulumi.resources.ResourceA
         return Optional.ofNullable(this.timeUpdated);
     }
 
-    /**
-     * Map of VanityUrl unique identifier key as KEY and VanityUrl Object as VALUE.
-     * 
-     */
-    @Import(name="vanityUrlDetails")
-    private @Nullable Output<Map<String,Object>> vanityUrlDetails;
-
-    /**
-     * @return Map of VanityUrl unique identifier key as KEY and VanityUrl Object as VALUE.
-     * 
-     */
-    public Optional<Output<Map<String,Object>>> vanityUrlDetails() {
-        return Optional.ofNullable(this.vanityUrlDetails);
-    }
-
     private AnalyticsInstanceState() {}
 
     private AnalyticsInstanceState(AnalyticsInstanceState $) {
@@ -285,15 +270,14 @@ public final class AnalyticsInstanceState extends com.pulumi.resources.ResourceA
         this.featureSet = $.featureSet;
         this.freeformTags = $.freeformTags;
         this.idcsAccessToken = $.idcsAccessToken;
+        this.kmsKeyId = $.kmsKeyId;
         this.licenseType = $.licenseType;
         this.name = $.name;
         this.networkEndpointDetails = $.networkEndpointDetails;
-        this.privateAccessChannels = $.privateAccessChannels;
         this.serviceUrl = $.serviceUrl;
         this.state = $.state;
         this.timeCreated = $.timeCreated;
         this.timeUpdated = $.timeUpdated;
-        this.vanityUrlDetails = $.vanityUrlDetails;
     }
 
     public static Builder builder() {
@@ -483,6 +467,27 @@ public final class AnalyticsInstanceState extends com.pulumi.resources.ResourceA
         }
 
         /**
+         * @param kmsKeyId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. &#34;&#34;) indicates to use Oracle managed default encryption.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder kmsKeyId(@Nullable Output<String> kmsKeyId) {
+            $.kmsKeyId = kmsKeyId;
+            return this;
+        }
+
+        /**
+         * @param kmsKeyId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. &#34;&#34;) indicates to use Oracle managed default encryption.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder kmsKeyId(String kmsKeyId) {
+            return kmsKeyId(Output.of(kmsKeyId));
+        }
+
+        /**
          * @param licenseType (Updatable) The license used for the service.
          * 
          * @return builder
@@ -543,27 +548,6 @@ public final class AnalyticsInstanceState extends com.pulumi.resources.ResourceA
          */
         public Builder networkEndpointDetails(AnalyticsInstanceNetworkEndpointDetailsArgs networkEndpointDetails) {
             return networkEndpointDetails(Output.of(networkEndpointDetails));
-        }
-
-        /**
-         * @param privateAccessChannels Map of PrivateAccessChannel unique identifier key as KEY and PrivateAccessChannel Object as VALUE.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder privateAccessChannels(@Nullable Output<Map<String,Object>> privateAccessChannels) {
-            $.privateAccessChannels = privateAccessChannels;
-            return this;
-        }
-
-        /**
-         * @param privateAccessChannels Map of PrivateAccessChannel unique identifier key as KEY and PrivateAccessChannel Object as VALUE.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder privateAccessChannels(Map<String,Object> privateAccessChannels) {
-            return privateAccessChannels(Output.of(privateAccessChannels));
         }
 
         /**
@@ -648,27 +632,6 @@ public final class AnalyticsInstanceState extends com.pulumi.resources.ResourceA
          */
         public Builder timeUpdated(String timeUpdated) {
             return timeUpdated(Output.of(timeUpdated));
-        }
-
-        /**
-         * @param vanityUrlDetails Map of VanityUrl unique identifier key as KEY and VanityUrl Object as VALUE.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder vanityUrlDetails(@Nullable Output<Map<String,Object>> vanityUrlDetails) {
-            $.vanityUrlDetails = vanityUrlDetails;
-            return this;
-        }
-
-        /**
-         * @param vanityUrlDetails Map of VanityUrl unique identifier key as KEY and VanityUrl Object as VALUE.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder vanityUrlDetails(Map<String,Object> vanityUrlDetails) {
-            return vanityUrlDetails(Output.of(vanityUrlDetails));
         }
 
         public AnalyticsInstanceState build() {

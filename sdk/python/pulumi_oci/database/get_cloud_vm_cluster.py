@@ -21,7 +21,7 @@ class GetCloudVmClusterResult:
     """
     A collection of values returned by getCloudVmCluster.
     """
-    def __init__(__self__, availability_domain=None, backup_network_nsg_ids=None, backup_subnet_id=None, cloud_exadata_infrastructure_id=None, cloud_vm_cluster_id=None, cluster_name=None, compartment_id=None, cpu_core_count=None, create_async=None, data_storage_percentage=None, defined_tags=None, disk_redundancy=None, display_name=None, domain=None, freeform_tags=None, gi_version=None, hostname=None, id=None, iorm_config_caches=None, is_local_backup_enabled=None, is_sparse_diskgroup_enabled=None, last_update_history_entry_id=None, license_model=None, lifecycle_details=None, listener_port=None, node_count=None, nsg_ids=None, ocpu_count=None, scan_dns_name=None, scan_dns_record_id=None, scan_ip_ids=None, scan_listener_port_tcp=None, scan_listener_port_tcp_ssl=None, shape=None, ssh_public_keys=None, state=None, storage_size_in_gbs=None, subnet_id=None, system_version=None, time_created=None, time_zone=None, vip_ids=None, zone_id=None):
+    def __init__(__self__, availability_domain=None, backup_network_nsg_ids=None, backup_subnet_id=None, cloud_exadata_infrastructure_id=None, cloud_vm_cluster_id=None, cluster_name=None, compartment_id=None, cpu_core_count=None, create_async=None, data_collection_options=None, data_storage_percentage=None, defined_tags=None, disk_redundancy=None, display_name=None, domain=None, freeform_tags=None, gi_version=None, hostname=None, id=None, iorm_config_caches=None, is_local_backup_enabled=None, is_sparse_diskgroup_enabled=None, last_update_history_entry_id=None, license_model=None, lifecycle_details=None, listener_port=None, node_count=None, nsg_ids=None, ocpu_count=None, scan_dns_name=None, scan_dns_record_id=None, scan_ip_ids=None, scan_listener_port_tcp=None, scan_listener_port_tcp_ssl=None, shape=None, ssh_public_keys=None, state=None, storage_size_in_gbs=None, subnet_id=None, system_version=None, time_created=None, time_zone=None, vip_ids=None, zone_id=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -49,6 +49,9 @@ class GetCloudVmClusterResult:
         if create_async and not isinstance(create_async, bool):
             raise TypeError("Expected argument 'create_async' to be a bool")
         pulumi.set(__self__, "create_async", create_async)
+        if data_collection_options and not isinstance(data_collection_options, list):
+            raise TypeError("Expected argument 'data_collection_options' to be a list")
+        pulumi.set(__self__, "data_collection_options", data_collection_options)
         if data_storage_percentage and not isinstance(data_storage_percentage, int):
             raise TypeError("Expected argument 'data_storage_percentage' to be a int")
         pulumi.set(__self__, "data_storage_percentage", data_storage_percentage)
@@ -219,6 +222,14 @@ class GetCloudVmClusterResult:
         return pulumi.get(self, "create_async")
 
     @property
+    @pulumi.getter(name="dataCollectionOptions")
+    def data_collection_options(self) -> Sequence['outputs.GetCloudVmClusterDataCollectionOptionResult']:
+        """
+        Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+        """
+        return pulumi.get(self, "data_collection_options")
+
+    @property
     @pulumi.getter(name="dataStoragePercentage")
     def data_storage_percentage(self) -> int:
         """
@@ -358,8 +369,8 @@ class GetCloudVmClusterResult:
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Sequence[str]:
         """
-        A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+        The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+        * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         """
         return pulumi.get(self, "nsg_ids")
 
@@ -507,6 +518,7 @@ class AwaitableGetCloudVmClusterResult(GetCloudVmClusterResult):
             compartment_id=self.compartment_id,
             cpu_core_count=self.cpu_core_count,
             create_async=self.create_async,
+            data_collection_options=self.data_collection_options,
             data_storage_percentage=self.data_storage_percentage,
             defined_tags=self.defined_tags,
             disk_redundancy=self.disk_redundancy,
@@ -580,6 +592,7 @@ def get_cloud_vm_cluster(cloud_vm_cluster_id: Optional[str] = None,
         compartment_id=__ret__.compartment_id,
         cpu_core_count=__ret__.cpu_core_count,
         create_async=__ret__.create_async,
+        data_collection_options=__ret__.data_collection_options,
         data_storage_percentage=__ret__.data_storage_percentage,
         defined_tags=__ret__.defined_tags,
         disk_redundancy=__ret__.disk_redundancy,

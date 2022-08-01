@@ -5,6 +5,7 @@ package com.pulumi.oci.Mysql.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Mysql.inputs.MysqlDbSystemBackupPolicyPitrPolicyArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
@@ -50,18 +51,33 @@ public final class MysqlDbSystemBackupPolicyArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * (Updatable) Specifies if automatic backups are enabled.
+     * (Updatable) Specifies if PITR is enabled or disabled.
      * 
      */
     @Import(name="isEnabled")
     private @Nullable Output<Boolean> isEnabled;
 
     /**
-     * @return (Updatable) Specifies if automatic backups are enabled.
+     * @return (Updatable) Specifies if PITR is enabled or disabled.
      * 
      */
     public Optional<Output<Boolean>> isEnabled() {
         return Optional.ofNullable(this.isEnabled);
+    }
+
+    /**
+     * (Updatable) The PITR policy for the DB System.
+     * 
+     */
+    @Import(name="pitrPolicy")
+    private @Nullable Output<MysqlDbSystemBackupPolicyPitrPolicyArgs> pitrPolicy;
+
+    /**
+     * @return (Updatable) The PITR policy for the DB System.
+     * 
+     */
+    public Optional<Output<MysqlDbSystemBackupPolicyPitrPolicyArgs>> pitrPolicy() {
+        return Optional.ofNullable(this.pitrPolicy);
     }
 
     /**
@@ -100,6 +116,7 @@ public final class MysqlDbSystemBackupPolicyArgs extends com.pulumi.resources.Re
         this.definedTags = $.definedTags;
         this.freeformTags = $.freeformTags;
         this.isEnabled = $.isEnabled;
+        this.pitrPolicy = $.pitrPolicy;
         this.retentionInDays = $.retentionInDays;
         this.windowStartTime = $.windowStartTime;
     }
@@ -165,7 +182,7 @@ public final class MysqlDbSystemBackupPolicyArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param isEnabled (Updatable) Specifies if automatic backups are enabled.
+         * @param isEnabled (Updatable) Specifies if PITR is enabled or disabled.
          * 
          * @return builder
          * 
@@ -176,13 +193,34 @@ public final class MysqlDbSystemBackupPolicyArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param isEnabled (Updatable) Specifies if automatic backups are enabled.
+         * @param isEnabled (Updatable) Specifies if PITR is enabled or disabled.
          * 
          * @return builder
          * 
          */
         public Builder isEnabled(Boolean isEnabled) {
             return isEnabled(Output.of(isEnabled));
+        }
+
+        /**
+         * @param pitrPolicy (Updatable) The PITR policy for the DB System.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pitrPolicy(@Nullable Output<MysqlDbSystemBackupPolicyPitrPolicyArgs> pitrPolicy) {
+            $.pitrPolicy = pitrPolicy;
+            return this;
+        }
+
+        /**
+         * @param pitrPolicy (Updatable) The PITR policy for the DB System.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pitrPolicy(MysqlDbSystemBackupPolicyPitrPolicyArgs pitrPolicy) {
+            return pitrPolicy(Output.of(pitrPolicy));
         }
 
         /**

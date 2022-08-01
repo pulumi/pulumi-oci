@@ -15,6 +15,7 @@ import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -62,14 +63,14 @@ public class DbHome extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="database", type=DbHomeDatabase.class, parameters={})
-    private Output<DbHomeDatabase> database;
+    private Output</* @Nullable */ DbHomeDatabase> database;
 
     /**
      * @return (Updatable) Details for creating a database.
      * 
      */
-    public Output<DbHomeDatabase> database() {
-        return this.database;
+    public Output<Optional<DbHomeDatabase>> database() {
+        return Codegen.optional(this.database);
     }
     /**
      * The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
@@ -308,7 +309,7 @@ public class DbHome extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public DbHome(String name, DbHomeArgs args) {
+    public DbHome(String name, @Nullable DbHomeArgs args) {
         this(name, args, null);
     }
     /**
@@ -317,7 +318,7 @@ public class DbHome extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public DbHome(String name, DbHomeArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public DbHome(String name, @Nullable DbHomeArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Database/dbHome:DbHome", name, args == null ? DbHomeArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
     }
 

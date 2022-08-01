@@ -23,15 +23,15 @@ public final class DbHomeArgs extends com.pulumi.resources.ResourceArgs {
      * (Updatable) Details for creating a database.
      * 
      */
-    @Import(name="database", required=true)
-    private Output<DbHomeDatabaseArgs> database;
+    @Import(name="database")
+    private @Nullable Output<DbHomeDatabaseArgs> database;
 
     /**
      * @return (Updatable) Details for creating a database.
      * 
      */
-    public Output<DbHomeDatabaseArgs> database() {
-        return this.database;
+    public Optional<Output<DbHomeDatabaseArgs>> database() {
+        return Optional.ofNullable(this.database);
     }
 
     /**
@@ -240,7 +240,7 @@ public final class DbHomeArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder database(Output<DbHomeDatabaseArgs> database) {
+        public Builder database(@Nullable Output<DbHomeDatabaseArgs> database) {
             $.database = database;
             return this;
         }
@@ -487,7 +487,6 @@ public final class DbHomeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public DbHomeArgs build() {
-            $.database = Objects.requireNonNull($.database, "expected parameter 'database' to be non-null");
             return $;
         }
     }

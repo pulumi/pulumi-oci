@@ -134,6 +134,20 @@ public class NatGateway extends com.pulumi.resources.CustomResource {
         return this.publicIpId;
     }
     /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
+     * 
+     */
+    @Export(name="routeTableId", type=String.class, parameters={})
+    private Output<String> routeTableId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
+     * 
+     */
+    public Output<String> routeTableId() {
+        return this.routeTableId;
+    }
+    /**
      * The NAT gateway&#39;s current state.
      * 
      */

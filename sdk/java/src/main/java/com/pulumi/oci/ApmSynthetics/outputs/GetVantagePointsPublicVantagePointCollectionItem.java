@@ -12,17 +12,17 @@ import java.util.Objects;
 @CustomType
 public final class GetVantagePointsPublicVantagePointCollectionItem {
     /**
-     * @return A filter to return only resources that match the entire display name given.
+     * @return A filter to return only the resources that match the entire display name.
      * 
      */
     private final String displayName;
     /**
-     * @return Geographic summary about a vantage point.
+     * @return Geographic summary of a vantage point.
      * 
      */
     private final List<GetVantagePointsPublicVantagePointCollectionItemGeo> geos;
     /**
-     * @return A filter to return only resources that match the entire name given.
+     * @return A filter to return only the resources that match the entire name.
      * 
      */
     private final String name;
@@ -38,21 +38,21 @@ public final class GetVantagePointsPublicVantagePointCollectionItem {
     }
 
     /**
-     * @return A filter to return only resources that match the entire display name given.
+     * @return A filter to return only the resources that match the entire display name.
      * 
      */
     public String displayName() {
         return this.displayName;
     }
     /**
-     * @return Geographic summary about a vantage point.
+     * @return Geographic summary of a vantage point.
      * 
      */
     public List<GetVantagePointsPublicVantagePointCollectionItemGeo> geos() {
         return this.geos;
     }
     /**
-     * @return A filter to return only resources that match the entire name given.
+     * @return A filter to return only the resources that match the entire name.
      * 
      */
     public String name() {

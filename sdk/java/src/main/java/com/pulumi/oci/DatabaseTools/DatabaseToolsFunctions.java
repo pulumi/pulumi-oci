@@ -32,7 +32,7 @@ public final class DatabaseToolsFunctions {
     /**
      * This data source provides details about a specific Database Tools Connection resource in Oracle Cloud Infrastructure Database Tools service.
      * 
-     * Gets a DatabaseToolsConnection by identifier
+     * Gets details of the specified Database Tools connection.
      * 
      * ## Example Usage
      * 
@@ -43,7 +43,7 @@ public final class DatabaseToolsFunctions {
     /**
      * This data source provides details about a specific Database Tools Connection resource in Oracle Cloud Infrastructure Database Tools service.
      * 
-     * Gets a DatabaseToolsConnection by identifier
+     * Gets details of the specified Database Tools connection.
      * 
      * ## Example Usage
      * 
@@ -54,7 +54,7 @@ public final class DatabaseToolsFunctions {
     /**
      * This data source provides details about a specific Database Tools Connection resource in Oracle Cloud Infrastructure Database Tools service.
      * 
-     * Gets a DatabaseToolsConnection by identifier
+     * Gets details of the specified Database Tools connection.
      * 
      * ## Example Usage
      * 
@@ -65,7 +65,7 @@ public final class DatabaseToolsFunctions {
     /**
      * This data source provides details about a specific Database Tools Connection resource in Oracle Cloud Infrastructure Database Tools service.
      * 
-     * Gets a DatabaseToolsConnection by identifier
+     * Gets details of the specified Database Tools connection.
      * 
      * ## Example Usage
      * 
@@ -76,7 +76,7 @@ public final class DatabaseToolsFunctions {
     /**
      * This data source provides the list of Database Tools Connections in Oracle Cloud Infrastructure Database Tools service.
      * 
-     * Returns a list of DatabaseToolsConnections.
+     * Returns a list of Database Tools connections.
      * 
      * ## Example Usage
      * 
@@ -87,7 +87,7 @@ public final class DatabaseToolsFunctions {
     /**
      * This data source provides the list of Database Tools Connections in Oracle Cloud Infrastructure Database Tools service.
      * 
-     * Returns a list of DatabaseToolsConnections.
+     * Returns a list of Database Tools connections.
      * 
      * ## Example Usage
      * 
@@ -98,7 +98,7 @@ public final class DatabaseToolsFunctions {
     /**
      * This data source provides the list of Database Tools Connections in Oracle Cloud Infrastructure Database Tools service.
      * 
-     * Returns a list of DatabaseToolsConnections.
+     * Returns a list of Database Tools connections.
      * 
      * ## Example Usage
      * 
@@ -109,7 +109,7 @@ public final class DatabaseToolsFunctions {
     /**
      * This data source provides the list of Database Tools Connections in Oracle Cloud Infrastructure Database Tools service.
      * 
-     * Returns a list of DatabaseToolsConnections.
+     * Returns a list of Database Tools connections.
      * 
      * ## Example Usage
      * 
@@ -120,7 +120,7 @@ public final class DatabaseToolsFunctions {
     /**
      * This data source provides details about a specific Database Tools Endpoint Service resource in Oracle Cloud Infrastructure Database Tools service.
      * 
-     * Gets a DatabaseToolsEndpointService by identifier
+     * Gets details for the specified Database Tools endpoint service.
      * 
      * ## Example Usage
      * 
@@ -131,7 +131,7 @@ public final class DatabaseToolsFunctions {
     /**
      * This data source provides details about a specific Database Tools Endpoint Service resource in Oracle Cloud Infrastructure Database Tools service.
      * 
-     * Gets a DatabaseToolsEndpointService by identifier
+     * Gets details for the specified Database Tools endpoint service.
      * 
      * ## Example Usage
      * 
@@ -142,7 +142,7 @@ public final class DatabaseToolsFunctions {
     /**
      * This data source provides details about a specific Database Tools Endpoint Service resource in Oracle Cloud Infrastructure Database Tools service.
      * 
-     * Gets a DatabaseToolsEndpointService by identifier
+     * Gets details for the specified Database Tools endpoint service.
      * 
      * ## Example Usage
      * 
@@ -153,7 +153,7 @@ public final class DatabaseToolsFunctions {
     /**
      * This data source provides details about a specific Database Tools Endpoint Service resource in Oracle Cloud Infrastructure Database Tools service.
      * 
-     * Gets a DatabaseToolsEndpointService by identifier
+     * Gets details for the specified Database Tools endpoint service.
      * 
      * ## Example Usage
      * 
@@ -164,7 +164,7 @@ public final class DatabaseToolsFunctions {
     /**
      * This data source provides the list of Database Tools Endpoint Services in Oracle Cloud Infrastructure Database Tools service.
      * 
-     * Returns a list of DatabaseToolsEndpointServices.
+     * Returns a list of Database Tools endpoint services.
      * 
      * ## Example Usage
      * 
@@ -175,7 +175,7 @@ public final class DatabaseToolsFunctions {
     /**
      * This data source provides the list of Database Tools Endpoint Services in Oracle Cloud Infrastructure Database Tools service.
      * 
-     * Returns a list of DatabaseToolsEndpointServices.
+     * Returns a list of Database Tools endpoint services.
      * 
      * ## Example Usage
      * 
@@ -186,7 +186,7 @@ public final class DatabaseToolsFunctions {
     /**
      * This data source provides the list of Database Tools Endpoint Services in Oracle Cloud Infrastructure Database Tools service.
      * 
-     * Returns a list of DatabaseToolsEndpointServices.
+     * Returns a list of Database Tools endpoint services.
      * 
      * ## Example Usage
      * 
@@ -197,7 +197,7 @@ public final class DatabaseToolsFunctions {
     /**
      * This data source provides the list of Database Tools Endpoint Services in Oracle Cloud Infrastructure Database Tools service.
      * 
-     * Returns a list of DatabaseToolsEndpointServices.
+     * Returns a list of Database Tools endpoint services.
      * 
      * ## Example Usage
      * 
@@ -208,7 +208,7 @@ public final class DatabaseToolsFunctions {
     /**
      * This data source provides details about a specific Database Tools Private Endpoint resource in Oracle Cloud Infrastructure Database Tools service.
      * 
-     * Gets a DatabaseToolsPrivateEndpoint by identifier
+     * Gets details of a specified Database Tools private endpoint.
      * 
      * ## Example Usage
      * 
@@ -219,7 +219,7 @@ public final class DatabaseToolsFunctions {
     /**
      * This data source provides details about a specific Database Tools Private Endpoint resource in Oracle Cloud Infrastructure Database Tools service.
      * 
-     * Gets a DatabaseToolsPrivateEndpoint by identifier
+     * Gets details of a specified Database Tools private endpoint.
      * 
      * ## Example Usage
      * 
@@ -230,7 +230,7 @@ public final class DatabaseToolsFunctions {
     /**
      * This data source provides details about a specific Database Tools Private Endpoint resource in Oracle Cloud Infrastructure Database Tools service.
      * 
-     * Gets a DatabaseToolsPrivateEndpoint by identifier
+     * Gets details of a specified Database Tools private endpoint.
      * 
      * ## Example Usage
      * 
@@ -241,7 +241,7 @@ public final class DatabaseToolsFunctions {
     /**
      * This data source provides details about a specific Database Tools Private Endpoint resource in Oracle Cloud Infrastructure Database Tools service.
      * 
-     * Gets a DatabaseToolsPrivateEndpoint by identifier
+     * Gets details of a specified Database Tools private endpoint.
      * 
      * ## Example Usage
      * 
@@ -252,7 +252,7 @@ public final class DatabaseToolsFunctions {
     /**
      * This data source provides the list of Database Tools Private Endpoints in Oracle Cloud Infrastructure Database Tools service.
      * 
-     * Returns a list of DatabaseToolsPrivateEndpoints.
+     * Returns a list of Database Tools private endpoints.
      * 
      * ## Example Usage
      * 
@@ -263,7 +263,7 @@ public final class DatabaseToolsFunctions {
     /**
      * This data source provides the list of Database Tools Private Endpoints in Oracle Cloud Infrastructure Database Tools service.
      * 
-     * Returns a list of DatabaseToolsPrivateEndpoints.
+     * Returns a list of Database Tools private endpoints.
      * 
      * ## Example Usage
      * 
@@ -274,7 +274,7 @@ public final class DatabaseToolsFunctions {
     /**
      * This data source provides the list of Database Tools Private Endpoints in Oracle Cloud Infrastructure Database Tools service.
      * 
-     * Returns a list of DatabaseToolsPrivateEndpoints.
+     * Returns a list of Database Tools private endpoints.
      * 
      * ## Example Usage
      * 
@@ -285,7 +285,7 @@ public final class DatabaseToolsFunctions {
     /**
      * This data source provides the list of Database Tools Private Endpoints in Oracle Cloud Infrastructure Database Tools service.
      * 
-     * Returns a list of DatabaseToolsPrivateEndpoints.
+     * Returns a list of Database Tools private endpoints.
      * 
      * ## Example Usage
      * 

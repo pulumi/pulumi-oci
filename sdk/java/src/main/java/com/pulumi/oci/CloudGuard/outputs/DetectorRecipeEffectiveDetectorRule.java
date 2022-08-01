@@ -20,7 +20,7 @@ public final class DetectorRecipeEffectiveDetectorRule {
      */
     private final @Nullable List<DetectorRecipeEffectiveDetectorRuleCandidateResponderRule> candidateResponderRules;
     /**
-     * @return (Updatable) DetectorRecipe Description
+     * @return (Updatable) Detector recipe description.
      * 
      */
     private final @Nullable String description;
@@ -40,7 +40,7 @@ public final class DetectorRecipeEffectiveDetectorRule {
      */
     private final @Nullable String detectorRuleId;
     /**
-     * @return (Updatable) DetectorRecipe Display Name
+     * @return (Updatable) Detector recipe display name.
      * 
      */
     private final @Nullable String displayName;
@@ -125,7 +125,7 @@ public final class DetectorRecipeEffectiveDetectorRule {
         return this.candidateResponderRules == null ? List.of() : this.candidateResponderRules;
     }
     /**
-     * @return (Updatable) DetectorRecipe Description
+     * @return (Updatable) Detector recipe description.
      * 
      */
     public Optional<String> description() {
@@ -153,7 +153,7 @@ public final class DetectorRecipeEffectiveDetectorRule {
         return Optional.ofNullable(this.detectorRuleId);
     }
     /**
-     * @return (Updatable) DetectorRecipe Display Name
+     * @return (Updatable) Detector recipe display name.
      * 
      */
     public Optional<String> displayName() {

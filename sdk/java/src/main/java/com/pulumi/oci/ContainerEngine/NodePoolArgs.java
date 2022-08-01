@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.ContainerEngine.inputs.NodePoolInitialNodeLabelArgs;
 import com.pulumi.oci.ContainerEngine.inputs.NodePoolNodeConfigDetailsArgs;
+import com.pulumi.oci.ContainerEngine.inputs.NodePoolNodeEvictionNodePoolSettingsArgs;
 import com.pulumi.oci.ContainerEngine.inputs.NodePoolNodeShapeConfigArgs;
 import com.pulumi.oci.ContainerEngine.inputs.NodePoolNodeSourceDetailsArgs;
 import java.lang.Integer;
@@ -102,15 +103,15 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
      * (Updatable) The version of Kubernetes to install on the nodes in the node pool.
      * 
      */
-    @Import(name="kubernetesVersion", required=true)
-    private Output<String> kubernetesVersion;
+    @Import(name="kubernetesVersion")
+    private @Nullable Output<String> kubernetesVersion;
 
     /**
      * @return (Updatable) The version of Kubernetes to install on the nodes in the node pool.
      * 
      */
-    public Output<String> kubernetesVersion() {
-        return this.kubernetesVersion;
+    public Optional<Output<String>> kubernetesVersion() {
+        return Optional.ofNullable(this.kubernetesVersion);
     }
 
     /**
@@ -141,6 +142,21 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<NodePoolNodeConfigDetailsArgs>> nodeConfigDetails() {
         return Optional.ofNullable(this.nodeConfigDetails);
+    }
+
+    /**
+     * (Updatable) Node Eviction Details configuration
+     * 
+     */
+    @Import(name="nodeEvictionNodePoolSettings")
+    private @Nullable Output<NodePoolNodeEvictionNodePoolSettingsArgs> nodeEvictionNodePoolSettings;
+
+    /**
+     * @return (Updatable) Node Eviction Details configuration
+     * 
+     */
+    public Optional<Output<NodePoolNodeEvictionNodePoolSettingsArgs>> nodeEvictionNodePoolSettings() {
+        return Optional.ofNullable(this.nodeEvictionNodePoolSettings);
     }
 
     /**
@@ -305,6 +321,7 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
         this.kubernetesVersion = $.kubernetesVersion;
         this.name = $.name;
         this.nodeConfigDetails = $.nodeConfigDetails;
+        this.nodeEvictionNodePoolSettings = $.nodeEvictionNodePoolSettings;
         this.nodeImageId = $.nodeImageId;
         this.nodeImageName = $.nodeImageName;
         this.nodeMetadata = $.nodeMetadata;
@@ -455,7 +472,7 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder kubernetesVersion(Output<String> kubernetesVersion) {
+        public Builder kubernetesVersion(@Nullable Output<String> kubernetesVersion) {
             $.kubernetesVersion = kubernetesVersion;
             return this;
         }
@@ -510,6 +527,27 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder nodeConfigDetails(NodePoolNodeConfigDetailsArgs nodeConfigDetails) {
             return nodeConfigDetails(Output.of(nodeConfigDetails));
+        }
+
+        /**
+         * @param nodeEvictionNodePoolSettings (Updatable) Node Eviction Details configuration
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nodeEvictionNodePoolSettings(@Nullable Output<NodePoolNodeEvictionNodePoolSettingsArgs> nodeEvictionNodePoolSettings) {
+            $.nodeEvictionNodePoolSettings = nodeEvictionNodePoolSettings;
+            return this;
+        }
+
+        /**
+         * @param nodeEvictionNodePoolSettings (Updatable) Node Eviction Details configuration
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nodeEvictionNodePoolSettings(NodePoolNodeEvictionNodePoolSettingsArgs nodeEvictionNodePoolSettings) {
+            return nodeEvictionNodePoolSettings(Output.of(nodeEvictionNodePoolSettings));
         }
 
         /**
@@ -730,7 +768,6 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
         public NodePoolArgs build() {
             $.clusterId = Objects.requireNonNull($.clusterId, "expected parameter 'clusterId' to be non-null");
             $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.kubernetesVersion = Objects.requireNonNull($.kubernetesVersion, "expected parameter 'kubernetesVersion' to be non-null");
             $.nodeShape = Objects.requireNonNull($.nodeShape, "expected parameter 'nodeShape' to be non-null");
             return $;
         }

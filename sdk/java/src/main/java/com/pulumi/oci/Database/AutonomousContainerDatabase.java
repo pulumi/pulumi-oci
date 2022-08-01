@@ -16,6 +16,7 @@ import com.pulumi.oci.Database.outputs.AutonomousContainerDatabaseMaintenanceWin
 import com.pulumi.oci.Database.outputs.AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
+import java.lang.Double;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -43,14 +44,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:Database/autonomousContainerDatabase:AutonomousContainerDatabase")
 public class AutonomousContainerDatabase extends com.pulumi.resources.CustomResource {
     /**
-     * The OCID of the Autonomous Exadata Infrastructure. Please use cloud_autonomous_vm_cluster_id instead.
+     * **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
      * 
      */
     @Export(name="autonomousExadataInfrastructureId", type=String.class, parameters={})
     private Output<String> autonomousExadataInfrastructureId;
 
     /**
-     * @return The OCID of the Autonomous Exadata Infrastructure. Please use cloud_autonomous_vm_cluster_id instead.
+     * @return **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
      * 
      */
     public Output<String> autonomousExadataInfrastructureId() {
@@ -83,6 +84,20 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      */
     public Output<String> availabilityDomain() {
         return this.availabilityDomain;
+    }
+    /**
+     * Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
+     * 
+     */
+    @Export(name="availableCpus", type=Double.class, parameters={})
+    private Output<Double> availableCpus;
+
+    /**
+     * @return Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
+     * 
+     */
+    public Output<Double> availableCpus() {
+        return this.availableCpus;
     }
     /**
      * (Updatable) Backup options for the Autonomous Container Database.
@@ -419,14 +434,14 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
         return this.peerAutonomousContainerDatabaseDisplayName;
     }
     /**
-     * The OCID of the peer Autonomous Exadata Infrastructure for autonomous dataguard. Please use peer_cloud_autonomous_vm_cluster_id instead.
+     * *No longer used.* This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `peerCloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
      * 
      */
     @Export(name="peerAutonomousExadataInfrastructureId", type=String.class, parameters={})
     private Output<String> peerAutonomousExadataInfrastructureId;
 
     /**
-     * @return The OCID of the peer Autonomous Exadata Infrastructure for autonomous dataguard. Please use peer_cloud_autonomous_vm_cluster_id instead.
+     * @return *No longer used.* This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `peerCloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
      * 
      */
     public Output<String> peerAutonomousExadataInfrastructureId() {
@@ -481,14 +496,42 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
         return this.protectionMode;
     }
     /**
-     * The role of the dataguard enabled Autonomous Container Database.
+     * An array of CPU values that can be used to successfully provision a single Autonomous Database.
+     * 
+     */
+    @Export(name="provisionableCpuses", type=List.class, parameters={Double.class})
+    private Output<List<Double>> provisionableCpuses;
+
+    /**
+     * @return An array of CPU values that can be used to successfully provision a single Autonomous Database.
+     * 
+     */
+    public Output<List<Double>> provisionableCpuses() {
+        return this.provisionableCpuses;
+    }
+    /**
+     * CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+     * 
+     */
+    @Export(name="reclaimableCpus", type=Double.class, parameters={})
+    private Output<Double> reclaimableCpus;
+
+    /**
+     * @return CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+     * 
+     */
+    public Output<Double> reclaimableCpus() {
+        return this.reclaimableCpus;
+    }
+    /**
+     * The role of the Autonomous Data Guard-enabled Autonomous Container Database.
      * 
      */
     @Export(name="role", type=String.class, parameters={})
     private Output<String> role;
 
     /**
-     * @return The role of the dataguard enabled Autonomous Container Database.
+     * @return The role of the Autonomous Data Guard-enabled Autonomous Container Database.
      * 
      */
     public Output<String> role() {
@@ -563,6 +606,20 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      */
     public Output<String> timeCreated() {
         return this.timeCreated;
+    }
+    /**
+     * The number of CPU cores allocated to the Autonomous VM cluster.
+     * 
+     */
+    @Export(name="totalCpus", type=Integer.class, parameters={})
+    private Output<Integer> totalCpus;
+
+    /**
+     * @return The number of CPU cores allocated to the Autonomous VM cluster.
+     * 
+     */
+    public Output<Integer> totalCpus() {
+        return this.totalCpus;
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).

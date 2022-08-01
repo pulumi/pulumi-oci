@@ -85,6 +85,21 @@ public final class GetGuardTargetsPlainArgs extends com.pulumi.resources.InvokeA
     }
 
     /**
+     * Default is false. When set to true, only the targets that would be deleted as part of security zone creation will be returned.
+     * 
+     */
+    @Import(name="isNonSecurityZoneTargetsOnlyQuery")
+    private @Nullable Boolean isNonSecurityZoneTargetsOnlyQuery;
+
+    /**
+     * @return Default is false. When set to true, only the targets that would be deleted as part of security zone creation will be returned.
+     * 
+     */
+    public Optional<Boolean> isNonSecurityZoneTargetsOnlyQuery() {
+        return Optional.ofNullable(this.isNonSecurityZoneTargetsOnlyQuery);
+    }
+
+    /**
      * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      * 
      */
@@ -107,6 +122,7 @@ public final class GetGuardTargetsPlainArgs extends com.pulumi.resources.InvokeA
         this.compartmentIdInSubtree = $.compartmentIdInSubtree;
         this.displayName = $.displayName;
         this.filters = $.filters;
+        this.isNonSecurityZoneTargetsOnlyQuery = $.isNonSecurityZoneTargetsOnlyQuery;
         this.state = $.state;
     }
 
@@ -179,6 +195,17 @@ public final class GetGuardTargetsPlainArgs extends com.pulumi.resources.InvokeA
 
         public Builder filters(GetGuardTargetsFilter... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param isNonSecurityZoneTargetsOnlyQuery Default is false. When set to true, only the targets that would be deleted as part of security zone creation will be returned.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isNonSecurityZoneTargetsOnlyQuery(@Nullable Boolean isNonSecurityZoneTargetsOnlyQuery) {
+            $.isNonSecurityZoneTargetsOnlyQuery = isNonSecurityZoneTargetsOnlyQuery;
+            return this;
         }
 
         /**

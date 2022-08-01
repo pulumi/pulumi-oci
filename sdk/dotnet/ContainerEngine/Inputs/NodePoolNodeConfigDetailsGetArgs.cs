@@ -48,6 +48,12 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         [Input("kmsKeyId")]
         public Input<string>? KmsKeyId { get; set; }
 
+        /// <summary>
+        /// (Updatable) The CNI related configuration of pods in the node pool.
+        /// </summary>
+        [Input("nodePoolPodNetworkOptionDetails")]
+        public Input<Inputs.NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsGetArgs>? NodePoolPodNetworkOptionDetails { get; set; }
+
         [Input("nsgIds")]
         private InputList<string>? _nsgIds;
 

@@ -91,6 +91,8 @@ type LookupExternalPluggableDatabaseResult struct {
 	OperationsInsightsConfigs []GetExternalPluggableDatabaseOperationsInsightsConfig `pulumi:"operationsInsightsConfigs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the the non-container database that was converted to a pluggable database to create this resource.
 	SourceId string `pulumi:"sourceId"`
+	// The configuration of Stack Monitoring for the external database.
+	StackMonitoringConfigs []GetExternalPluggableDatabaseStackMonitoringConfig `pulumi:"stackMonitoringConfigs"`
 	// The current state of the Oracle Cloud Infrastructure external database resource.
 	State string `pulumi:"state"`
 	// The date and time the database was created.
@@ -233,6 +235,13 @@ func (o LookupExternalPluggableDatabaseResultOutput) OperationsInsightsConfigs()
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the the non-container database that was converted to a pluggable database to create this resource.
 func (o LookupExternalPluggableDatabaseResultOutput) SourceId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExternalPluggableDatabaseResult) string { return v.SourceId }).(pulumi.StringOutput)
+}
+
+// The configuration of Stack Monitoring for the external database.
+func (o LookupExternalPluggableDatabaseResultOutput) StackMonitoringConfigs() GetExternalPluggableDatabaseStackMonitoringConfigArrayOutput {
+	return o.ApplyT(func(v LookupExternalPluggableDatabaseResult) []GetExternalPluggableDatabaseStackMonitoringConfig {
+		return v.StackMonitoringConfigs
+	}).(GetExternalPluggableDatabaseStackMonitoringConfigArrayOutput)
 }
 
 // The current state of the Oracle Cloud Infrastructure external database resource.

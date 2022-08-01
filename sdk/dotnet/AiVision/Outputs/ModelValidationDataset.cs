@@ -25,6 +25,9 @@ namespace Pulumi.Oci.AiVision.Outputs
         /// Type of the Dataset.
         /// </summary>
         public readonly string DatasetType;
+        /// <summary>
+        /// The namespace name of the ObjectStorage bucket that contains the input data file.
+        /// </summary>
         public readonly string? NamespaceName;
         /// <summary>
         /// The object name of the input data file.

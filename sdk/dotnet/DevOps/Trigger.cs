@@ -153,7 +153,7 @@ namespace Pulumi.Oci.DevOps
         public Output<string> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Source of the trigger. Allowed values are, GITHUB and GITLAB.
+        /// (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
         /// </summary>
         [Output("triggerSource")]
         public Output<string> TriggerSource { get; private set; } = null!;
@@ -271,7 +271,7 @@ namespace Pulumi.Oci.DevOps
         public Input<string>? RepositoryId { get; set; }
 
         /// <summary>
-        /// (Updatable) Source of the trigger. Allowed values are, GITHUB and GITLAB.
+        /// (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
         /// </summary>
         [Input("triggerSource", required: true)]
         public Input<string> TriggerSource { get; set; } = null!;
@@ -386,7 +386,7 @@ namespace Pulumi.Oci.DevOps
         public Input<string>? TimeUpdated { get; set; }
 
         /// <summary>
-        /// (Updatable) Source of the trigger. Allowed values are, GITHUB and GITLAB.
+        /// (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
         /// </summary>
         [Input("triggerSource")]
         public Input<string>? TriggerSource { get; set; }

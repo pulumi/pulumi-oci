@@ -156,6 +156,10 @@ export interface GetDeployStageResult {
      */
     readonly greenBackendIps: outputs.DevOps.GetDeployStageGreenBackendIp[];
     /**
+     * Helm chart artifact OCID.
+     */
+    readonly helmChartDeployArtifactId: string;
+    /**
      * Unique identifier that is immutable on creation.
      */
     readonly id: string;
@@ -212,6 +216,10 @@ export interface GetDeployStageResult {
      */
     readonly projectId: string;
     /**
+     * Release name of the Helm chart.
+     */
+    readonly releaseName: string;
+    /**
      * Specifies the rollback policy. This is initiated on the failure of certain stage types.
      */
     readonly rollbackPolicies: outputs.DevOps.GetDeployStageRollbackPolicy[];
@@ -240,9 +248,17 @@ export interface GetDeployStageResult {
      */
     readonly timeUpdated: string;
     /**
+     * Time to wait for execution of a helm stage. Defaults to 300 seconds.
+     */
+    readonly timeoutInSeconds: number;
+    /**
      * Specifies the target or destination backend set.
      */
     readonly trafficShiftTarget: string;
+    /**
+     * List of values.yaml file artifact OCIDs.
+     */
+    readonly valuesArtifactIds: string[];
     /**
      * Specifies wait criteria for the Wait stage.
      */

@@ -46,7 +46,7 @@ public final class GetScriptsScriptCollectionItem {
      */
     private final Map<String,Object> definedTags;
     /**
-     * @return A filter to return only resources that match the entire display name given.
+     * @return A filter to return only the resources that match the entire display name.
      * 
      */
     private final String displayName;
@@ -81,7 +81,7 @@ public final class GetScriptsScriptCollectionItem {
      */
     private final String timeUpdated;
     /**
-     * @return The time when the script was uploaded.
+     * @return The time the script was uploaded.
      * 
      */
     private final String timeUploaded;
@@ -161,7 +161,7 @@ public final class GetScriptsScriptCollectionItem {
         return this.definedTags;
     }
     /**
-     * @return A filter to return only resources that match the entire display name given.
+     * @return A filter to return only the resources that match the entire display name.
      * 
      */
     public String displayName() {
@@ -210,7 +210,7 @@ public final class GetScriptsScriptCollectionItem {
         return this.timeUpdated;
     }
     /**
-     * @return The time when the script was uploaded.
+     * @return The time the script was uploaded.
      * 
      */
     public String timeUploaded() {

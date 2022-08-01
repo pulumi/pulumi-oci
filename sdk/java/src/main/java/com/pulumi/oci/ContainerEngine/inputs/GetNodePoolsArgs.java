@@ -69,6 +69,21 @@ public final class GetNodePoolsArgs extends com.pulumi.resources.InvokeArgs {
         return Optional.ofNullable(this.name);
     }
 
+    /**
+     * A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
+     * 
+     */
+    @Import(name="states")
+    private @Nullable Output<List<String>> states;
+
+    /**
+     * @return A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
+     * 
+     */
+    public Optional<Output<List<String>>> states() {
+        return Optional.ofNullable(this.states);
+    }
+
     private GetNodePoolsArgs() {}
 
     private GetNodePoolsArgs(GetNodePoolsArgs $) {
@@ -76,6 +91,7 @@ public final class GetNodePoolsArgs extends com.pulumi.resources.InvokeArgs {
         this.compartmentId = $.compartmentId;
         this.filters = $.filters;
         this.name = $.name;
+        this.states = $.states;
     }
 
     public static Builder builder() {
@@ -170,6 +186,37 @@ public final class GetNodePoolsArgs extends com.pulumi.resources.InvokeArgs {
          */
         public Builder name(String name) {
             return name(Output.of(name));
+        }
+
+        /**
+         * @param states A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
+         * 
+         * @return builder
+         * 
+         */
+        public Builder states(@Nullable Output<List<String>> states) {
+            $.states = states;
+            return this;
+        }
+
+        /**
+         * @param states A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
+         * 
+         * @return builder
+         * 
+         */
+        public Builder states(List<String> states) {
+            return states(Output.of(states));
+        }
+
+        /**
+         * @param states A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
+         * 
+         * @return builder
+         * 
+         */
+        public Builder states(String... states) {
+            return states(List.of(states));
         }
 
         public GetNodePoolsArgs build() {

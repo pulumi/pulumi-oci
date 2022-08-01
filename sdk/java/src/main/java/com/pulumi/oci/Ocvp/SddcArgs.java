@@ -6,6 +6,7 @@ package com.pulumi.oci.Ocvp;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Boolean;
+import java.lang.Double;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -19,6 +20,21 @@ import javax.annotation.Nullable;
 public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final SddcArgs Empty = new SddcArgs();
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+     * 
+     */
+    @Import(name="capacityReservationId")
+    private @Nullable Output<String> capacityReservationId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+     * 
+     */
+    public Optional<Output<String>> capacityReservationId() {
+        return Optional.ofNullable(this.capacityReservationId);
+    }
 
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the SDDC.
@@ -138,6 +154,36 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> hcxVlanId() {
         return Optional.ofNullable(this.hcxVlanId);
+    }
+
+    /**
+     * The initial OCPU count of the SDDC&#39;s ESXi hosts.
+     * 
+     */
+    @Import(name="initialHostOcpuCount")
+    private @Nullable Output<Double> initialHostOcpuCount;
+
+    /**
+     * @return The initial OCPU count of the SDDC&#39;s ESXi hosts.
+     * 
+     */
+    public Optional<Output<Double>> initialHostOcpuCount() {
+        return Optional.ofNullable(this.initialHostOcpuCount);
+    }
+
+    /**
+     * The initial compute shape of the SDDC&#39;s ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+     * 
+     */
+    @Import(name="initialHostShapeName")
+    private @Nullable Output<String> initialHostShapeName;
+
+    /**
+     * @return The initial compute shape of the SDDC&#39;s ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+     * 
+     */
+    public Optional<Output<String>> initialHostShapeName() {
+        return Optional.ofNullable(this.initialHostShapeName);
     }
 
     /**
@@ -428,6 +474,7 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
     private SddcArgs() {}
 
     private SddcArgs(SddcArgs $) {
+        this.capacityReservationId = $.capacityReservationId;
         this.compartmentId = $.compartmentId;
         this.computeAvailabilityDomain = $.computeAvailabilityDomain;
         this.definedTags = $.definedTags;
@@ -436,6 +483,8 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
         this.freeformTags = $.freeformTags;
         this.hcxAction = $.hcxAction;
         this.hcxVlanId = $.hcxVlanId;
+        this.initialHostOcpuCount = $.initialHostOcpuCount;
+        this.initialHostShapeName = $.initialHostShapeName;
         this.initialSku = $.initialSku;
         this.instanceDisplayNamePrefix = $.instanceDisplayNamePrefix;
         this.isHcxEnabled = $.isHcxEnabled;
@@ -473,6 +522,27 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
 
         public Builder(SddcArgs defaults) {
             $ = new SddcArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param capacityReservationId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder capacityReservationId(@Nullable Output<String> capacityReservationId) {
+            $.capacityReservationId = capacityReservationId;
+            return this;
+        }
+
+        /**
+         * @param capacityReservationId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder capacityReservationId(String capacityReservationId) {
+            return capacityReservationId(Output.of(capacityReservationId));
         }
 
         /**
@@ -641,6 +711,48 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder hcxVlanId(String hcxVlanId) {
             return hcxVlanId(Output.of(hcxVlanId));
+        }
+
+        /**
+         * @param initialHostOcpuCount The initial OCPU count of the SDDC&#39;s ESXi hosts.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder initialHostOcpuCount(@Nullable Output<Double> initialHostOcpuCount) {
+            $.initialHostOcpuCount = initialHostOcpuCount;
+            return this;
+        }
+
+        /**
+         * @param initialHostOcpuCount The initial OCPU count of the SDDC&#39;s ESXi hosts.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder initialHostOcpuCount(Double initialHostOcpuCount) {
+            return initialHostOcpuCount(Output.of(initialHostOcpuCount));
+        }
+
+        /**
+         * @param initialHostShapeName The initial compute shape of the SDDC&#39;s ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder initialHostShapeName(@Nullable Output<String> initialHostShapeName) {
+            $.initialHostShapeName = initialHostShapeName;
+            return this;
+        }
+
+        /**
+         * @param initialHostShapeName The initial compute shape of the SDDC&#39;s ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder initialHostShapeName(String initialHostShapeName) {
+            return initialHostShapeName(Output.of(initialHostShapeName));
         }
 
         /**

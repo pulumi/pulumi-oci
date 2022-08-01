@@ -30,6 +30,7 @@ namespace Pulumi.Oci.Database
     ///             CompartmentId = @var.Compartment_id,
     ///             DisplayName = @var.Cloud_autonomous_vm_cluster_display_name,
     ///             SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///             ClusterTimeZone = @var.Cloud_autonomous_vm_cluster_cluster_time_zone,
     ///             DefinedTags = @var.Cloud_autonomous_vm_cluster_defined_tags,
     ///             Description = @var.Cloud_autonomous_vm_cluster_description,
     ///             FreeformTags = 
@@ -56,16 +57,46 @@ namespace Pulumi.Oci.Database
     public partial class CloudAutonomousVmCluster : Pulumi.CustomResource
     {
         /// <summary>
+        /// The data disk group size allocated for Autonomous Databases, in TBs.
+        /// </summary>
+        [Output("autonomousDataStorageSizeInTbs")]
+        public Output<double> AutonomousDataStorageSizeInTbs { get; private set; } = null!;
+
+        /// <summary>
         /// The name of the availability domain that the cloud Autonomous VM cluster is located in.
         /// </summary>
         [Output("availabilityDomain")]
         public Output<string> AvailabilityDomain { get; private set; } = null!;
 
         /// <summary>
+        /// The data disk group size available for Autonomous Databases, in TBs.
+        /// </summary>
+        [Output("availableAutonomousDataStorageSizeInTbs")]
+        public Output<double> AvailableAutonomousDataStorageSizeInTbs { get; private set; } = null!;
+
+        /// <summary>
+        /// The number of Autonomous Container Databases that can be created with the currently available local storage.
+        /// </summary>
+        [Output("availableContainerDatabases")]
+        public Output<int> AvailableContainerDatabases { get; private set; } = null!;
+
+        /// <summary>
+        /// CPU cores available for allocation to Autonomous Databases.
+        /// </summary>
+        [Output("availableCpus")]
+        public Output<double> AvailableCpus { get; private set; } = null!;
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure.
         /// </summary>
         [Output("cloudExadataInfrastructureId")]
         public Output<string> CloudExadataInfrastructureId { get; private set; } = null!;
+
+        /// <summary>
+        /// The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+        /// </summary>
+        [Output("clusterTimeZone")]
+        public Output<string> ClusterTimeZone { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -90,6 +121,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("dataStorageSizeInTbs")]
         public Output<double> DataStorageSizeInTbs { get; private set; } = null!;
+
+        /// <summary>
+        /// The local node storage allocated in GBs.
+        /// </summary>
+        [Output("dbNodeStorageSizeInGbs")]
+        public Output<int> DbNodeStorageSizeInGbs { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -152,6 +189,12 @@ namespace Pulumi.Oci.Database
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
+        /// The amount of memory (in GBs) enabled per each OCPU core.
+        /// </summary>
+        [Output("memoryPerOracleComputeUnitInGbs")]
+        public Output<int> MemoryPerOracleComputeUnitInGbs { get; private set; } = null!;
+
+        /// <summary>
         /// The memory allocated in GBs.
         /// </summary>
         [Output("memorySizeInGbs")]
@@ -170,8 +213,8 @@ namespace Pulumi.Oci.Database
         public Output<int> NodeCount { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        /// * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+        /// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+        /// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         /// </summary>
         [Output("nsgIds")]
         public Output<ImmutableArray<string>> NsgIds { get; private set; } = null!;
@@ -181,6 +224,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("ocpuCount")]
         public Output<double> OcpuCount { get; private set; } = null!;
+
+        /// <summary>
+        /// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+        /// </summary>
+        [Output("reclaimableCpus")]
+        public Output<double> ReclaimableCpus { get; private set; } = null!;
 
         [Output("rotateOrdsCertsTrigger")]
         public Output<bool?> RotateOrdsCertsTrigger { get; private set; } = null!;
@@ -217,6 +266,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("timeUpdated")]
         public Output<string> TimeUpdated { get; private set; } = null!;
+
+        /// <summary>
+        /// The total number of Autonomous Container Databases that can be created with the allocated local storage.
+        /// </summary>
+        [Output("totalContainerDatabases")]
+        public Output<int> TotalContainerDatabases { get; private set; } = null!;
 
 
         /// <summary>
@@ -271,6 +326,12 @@ namespace Pulumi.Oci.Database
         public Input<string> CloudExadataInfrastructureId { get; set; } = null!;
 
         /// <summary>
+        /// The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+        /// </summary>
+        [Input("clusterTimeZone")]
+        public Input<string>? ClusterTimeZone { get; set; }
+
+        /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         [Input("compartmentId", required: true)]
@@ -322,8 +383,8 @@ namespace Pulumi.Oci.Database
         private InputList<string>? _nsgIds;
 
         /// <summary>
-        /// (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        /// * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+        /// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+        /// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         /// </summary>
         public InputList<string> NsgIds
         {
@@ -351,16 +412,46 @@ namespace Pulumi.Oci.Database
     public sealed class CloudAutonomousVmClusterState : Pulumi.ResourceArgs
     {
         /// <summary>
+        /// The data disk group size allocated for Autonomous Databases, in TBs.
+        /// </summary>
+        [Input("autonomousDataStorageSizeInTbs")]
+        public Input<double>? AutonomousDataStorageSizeInTbs { get; set; }
+
+        /// <summary>
         /// The name of the availability domain that the cloud Autonomous VM cluster is located in.
         /// </summary>
         [Input("availabilityDomain")]
         public Input<string>? AvailabilityDomain { get; set; }
 
         /// <summary>
+        /// The data disk group size available for Autonomous Databases, in TBs.
+        /// </summary>
+        [Input("availableAutonomousDataStorageSizeInTbs")]
+        public Input<double>? AvailableAutonomousDataStorageSizeInTbs { get; set; }
+
+        /// <summary>
+        /// The number of Autonomous Container Databases that can be created with the currently available local storage.
+        /// </summary>
+        [Input("availableContainerDatabases")]
+        public Input<int>? AvailableContainerDatabases { get; set; }
+
+        /// <summary>
+        /// CPU cores available for allocation to Autonomous Databases.
+        /// </summary>
+        [Input("availableCpus")]
+        public Input<double>? AvailableCpus { get; set; }
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure.
         /// </summary>
         [Input("cloudExadataInfrastructureId")]
         public Input<string>? CloudExadataInfrastructureId { get; set; }
+
+        /// <summary>
+        /// The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+        /// </summary>
+        [Input("clusterTimeZone")]
+        public Input<string>? ClusterTimeZone { get; set; }
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -385,6 +476,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("dataStorageSizeInTbs")]
         public Input<double>? DataStorageSizeInTbs { get; set; }
+
+        /// <summary>
+        /// The local node storage allocated in GBs.
+        /// </summary>
+        [Input("dbNodeStorageSizeInGbs")]
+        public Input<int>? DbNodeStorageSizeInGbs { get; set; }
 
         [Input("definedTags")]
         private InputMap<object>? _definedTags;
@@ -459,6 +556,12 @@ namespace Pulumi.Oci.Database
         public Input<string>? LifecycleDetails { get; set; }
 
         /// <summary>
+        /// The amount of memory (in GBs) enabled per each OCPU core.
+        /// </summary>
+        [Input("memoryPerOracleComputeUnitInGbs")]
+        public Input<int>? MemoryPerOracleComputeUnitInGbs { get; set; }
+
+        /// <summary>
         /// The memory allocated in GBs.
         /// </summary>
         [Input("memorySizeInGbs")]
@@ -480,8 +583,8 @@ namespace Pulumi.Oci.Database
         private InputList<string>? _nsgIds;
 
         /// <summary>
-        /// (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        /// * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+        /// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+        /// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         /// </summary>
         public InputList<string> NsgIds
         {
@@ -494,6 +597,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("ocpuCount")]
         public Input<double>? OcpuCount { get; set; }
+
+        /// <summary>
+        /// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+        /// </summary>
+        [Input("reclaimableCpus")]
+        public Input<double>? ReclaimableCpus { get; set; }
 
         [Input("rotateOrdsCertsTrigger")]
         public Input<bool>? RotateOrdsCertsTrigger { get; set; }
@@ -530,6 +639,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }
+
+        /// <summary>
+        /// The total number of Autonomous Container Databases that can be created with the allocated local storage.
+        /// </summary>
+        [Input("totalContainerDatabases")]
+        public Input<int>? TotalContainerDatabases { get; set; }
 
         public CloudAutonomousVmClusterState()
         {

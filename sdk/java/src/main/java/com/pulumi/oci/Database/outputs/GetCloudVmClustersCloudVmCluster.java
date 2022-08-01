@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Database.outputs.GetCloudVmClustersCloudVmClusterDataCollectionOption;
 import com.pulumi.oci.Database.outputs.GetCloudVmClustersCloudVmClusterIormConfigCach;
 import java.lang.Boolean;
 import java.lang.Double;
@@ -52,6 +53,11 @@ public final class GetCloudVmClustersCloudVmCluster {
      */
     private final Integer cpuCoreCount;
     private final Boolean createAsync;
+    /**
+     * @return Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+     * 
+     */
+    private final List<GetCloudVmClustersCloudVmClusterDataCollectionOption> dataCollectionOptions;
     /**
      * @return The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
      * 
@@ -134,8 +140,8 @@ public final class GetCloudVmClustersCloudVmCluster {
      */
     private final Integer nodeCount;
     /**
-     * @return A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-     * * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+     * @return The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+     * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      * 
      */
     private final List<String> nsgIds;
@@ -230,6 +236,7 @@ public final class GetCloudVmClustersCloudVmCluster {
         @CustomType.Parameter("compartmentId") String compartmentId,
         @CustomType.Parameter("cpuCoreCount") Integer cpuCoreCount,
         @CustomType.Parameter("createAsync") Boolean createAsync,
+        @CustomType.Parameter("dataCollectionOptions") List<GetCloudVmClustersCloudVmClusterDataCollectionOption> dataCollectionOptions,
         @CustomType.Parameter("dataStoragePercentage") Integer dataStoragePercentage,
         @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
         @CustomType.Parameter("diskRedundancy") String diskRedundancy,
@@ -272,6 +279,7 @@ public final class GetCloudVmClustersCloudVmCluster {
         this.compartmentId = compartmentId;
         this.cpuCoreCount = cpuCoreCount;
         this.createAsync = createAsync;
+        this.dataCollectionOptions = dataCollectionOptions;
         this.dataStoragePercentage = dataStoragePercentage;
         this.definedTags = definedTags;
         this.diskRedundancy = diskRedundancy;
@@ -359,6 +367,13 @@ public final class GetCloudVmClustersCloudVmCluster {
     }
     public Boolean createAsync() {
         return this.createAsync;
+    }
+    /**
+     * @return Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+     * 
+     */
+    public List<GetCloudVmClustersCloudVmClusterDataCollectionOption> dataCollectionOptions() {
+        return this.dataCollectionOptions;
     }
     /**
      * @return The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
@@ -476,8 +491,8 @@ public final class GetCloudVmClustersCloudVmCluster {
         return this.nodeCount;
     }
     /**
-     * @return A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-     * * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+     * @return The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+     * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      * 
      */
     public List<String> nsgIds() {
@@ -613,6 +628,7 @@ public final class GetCloudVmClustersCloudVmCluster {
         private String compartmentId;
         private Integer cpuCoreCount;
         private Boolean createAsync;
+        private List<GetCloudVmClustersCloudVmClusterDataCollectionOption> dataCollectionOptions;
         private Integer dataStoragePercentage;
         private Map<String,Object> definedTags;
         private String diskRedundancy;
@@ -662,6 +678,7 @@ public final class GetCloudVmClustersCloudVmCluster {
     	      this.compartmentId = defaults.compartmentId;
     	      this.cpuCoreCount = defaults.cpuCoreCount;
     	      this.createAsync = defaults.createAsync;
+    	      this.dataCollectionOptions = defaults.dataCollectionOptions;
     	      this.dataStoragePercentage = defaults.dataStoragePercentage;
     	      this.definedTags = defaults.definedTags;
     	      this.diskRedundancy = defaults.diskRedundancy;
@@ -732,6 +749,13 @@ public final class GetCloudVmClustersCloudVmCluster {
         public Builder createAsync(Boolean createAsync) {
             this.createAsync = Objects.requireNonNull(createAsync);
             return this;
+        }
+        public Builder dataCollectionOptions(List<GetCloudVmClustersCloudVmClusterDataCollectionOption> dataCollectionOptions) {
+            this.dataCollectionOptions = Objects.requireNonNull(dataCollectionOptions);
+            return this;
+        }
+        public Builder dataCollectionOptions(GetCloudVmClustersCloudVmClusterDataCollectionOption... dataCollectionOptions) {
+            return dataCollectionOptions(List.of(dataCollectionOptions));
         }
         public Builder dataStoragePercentage(Integer dataStoragePercentage) {
             this.dataStoragePercentage = Objects.requireNonNull(dataStoragePercentage);
@@ -884,7 +908,7 @@ public final class GetCloudVmClustersCloudVmCluster {
             this.zoneId = Objects.requireNonNull(zoneId);
             return this;
         }        public GetCloudVmClustersCloudVmCluster build() {
-            return new GetCloudVmClustersCloudVmCluster(availabilityDomain, backupNetworkNsgIds, backupSubnetId, cloudExadataInfrastructureId, clusterName, compartmentId, cpuCoreCount, createAsync, dataStoragePercentage, definedTags, diskRedundancy, displayName, domain, freeformTags, giVersion, hostname, id, iormConfigCaches, isLocalBackupEnabled, isSparseDiskgroupEnabled, lastUpdateHistoryEntryId, licenseModel, lifecycleDetails, listenerPort, nodeCount, nsgIds, ocpuCount, scanDnsName, scanDnsRecordId, scanIpIds, scanListenerPortTcp, scanListenerPortTcpSsl, shape, sshPublicKeys, state, storageSizeInGbs, subnetId, systemVersion, timeCreated, timeZone, vipIds, zoneId);
+            return new GetCloudVmClustersCloudVmCluster(availabilityDomain, backupNetworkNsgIds, backupSubnetId, cloudExadataInfrastructureId, clusterName, compartmentId, cpuCoreCount, createAsync, dataCollectionOptions, dataStoragePercentage, definedTags, diskRedundancy, displayName, domain, freeformTags, giVersion, hostname, id, iormConfigCaches, isLocalBackupEnabled, isSparseDiskgroupEnabled, lastUpdateHistoryEntryId, licenseModel, lifecycleDetails, listenerPort, nodeCount, nsgIds, ocpuCount, scanDnsName, scanDnsRecordId, scanIpIds, scanListenerPortTcp, scanListenerPortTcpSsl, shape, sshPublicKeys, state, storageSizeInGbs, subnetId, systemVersion, timeCreated, timeZone, vipIds, zoneId);
         }
     }
 }

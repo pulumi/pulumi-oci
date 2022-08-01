@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerEngine.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.ContainerEngine.outputs.NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails;
 import com.pulumi.oci.ContainerEngine.outputs.NodePoolNodeConfigDetailsPlacementConfig;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -38,6 +39,11 @@ public final class NodePoolNodeConfigDetails {
      */
     private final @Nullable String kmsKeyId;
     /**
+     * @return (Updatable) The CNI related configuration of pods in the node pool.
+     * 
+     */
+    private final @Nullable NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails nodePoolPodNetworkOptionDetails;
+    /**
      * @return (Updatable) The OCIDs of the Network Security Group(s) to associate nodes for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
      * 
      */
@@ -59,6 +65,7 @@ public final class NodePoolNodeConfigDetails {
         @CustomType.Parameter("freeformTags") @Nullable Map<String,Object> freeformTags,
         @CustomType.Parameter("isPvEncryptionInTransitEnabled") @Nullable Boolean isPvEncryptionInTransitEnabled,
         @CustomType.Parameter("kmsKeyId") @Nullable String kmsKeyId,
+        @CustomType.Parameter("nodePoolPodNetworkOptionDetails") @Nullable NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails nodePoolPodNetworkOptionDetails,
         @CustomType.Parameter("nsgIds") @Nullable List<String> nsgIds,
         @CustomType.Parameter("placementConfigs") List<NodePoolNodeConfigDetailsPlacementConfig> placementConfigs,
         @CustomType.Parameter("size") Integer size) {
@@ -66,6 +73,7 @@ public final class NodePoolNodeConfigDetails {
         this.freeformTags = freeformTags;
         this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
         this.kmsKeyId = kmsKeyId;
+        this.nodePoolPodNetworkOptionDetails = nodePoolPodNetworkOptionDetails;
         this.nsgIds = nsgIds;
         this.placementConfigs = placementConfigs;
         this.size = size;
@@ -98,6 +106,13 @@ public final class NodePoolNodeConfigDetails {
      */
     public Optional<String> kmsKeyId() {
         return Optional.ofNullable(this.kmsKeyId);
+    }
+    /**
+     * @return (Updatable) The CNI related configuration of pods in the node pool.
+     * 
+     */
+    public Optional<NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails> nodePoolPodNetworkOptionDetails() {
+        return Optional.ofNullable(this.nodePoolPodNetworkOptionDetails);
     }
     /**
      * @return (Updatable) The OCIDs of the Network Security Group(s) to associate nodes for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
@@ -134,6 +149,7 @@ public final class NodePoolNodeConfigDetails {
         private @Nullable Map<String,Object> freeformTags;
         private @Nullable Boolean isPvEncryptionInTransitEnabled;
         private @Nullable String kmsKeyId;
+        private @Nullable NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails nodePoolPodNetworkOptionDetails;
         private @Nullable List<String> nsgIds;
         private List<NodePoolNodeConfigDetailsPlacementConfig> placementConfigs;
         private Integer size;
@@ -148,6 +164,7 @@ public final class NodePoolNodeConfigDetails {
     	      this.freeformTags = defaults.freeformTags;
     	      this.isPvEncryptionInTransitEnabled = defaults.isPvEncryptionInTransitEnabled;
     	      this.kmsKeyId = defaults.kmsKeyId;
+    	      this.nodePoolPodNetworkOptionDetails = defaults.nodePoolPodNetworkOptionDetails;
     	      this.nsgIds = defaults.nsgIds;
     	      this.placementConfigs = defaults.placementConfigs;
     	      this.size = defaults.size;
@@ -169,6 +186,10 @@ public final class NodePoolNodeConfigDetails {
             this.kmsKeyId = kmsKeyId;
             return this;
         }
+        public Builder nodePoolPodNetworkOptionDetails(@Nullable NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails nodePoolPodNetworkOptionDetails) {
+            this.nodePoolPodNetworkOptionDetails = nodePoolPodNetworkOptionDetails;
+            return this;
+        }
         public Builder nsgIds(@Nullable List<String> nsgIds) {
             this.nsgIds = nsgIds;
             return this;
@@ -187,7 +208,7 @@ public final class NodePoolNodeConfigDetails {
             this.size = Objects.requireNonNull(size);
             return this;
         }        public NodePoolNodeConfigDetails build() {
-            return new NodePoolNodeConfigDetails(definedTags, freeformTags, isPvEncryptionInTransitEnabled, kmsKeyId, nsgIds, placementConfigs, size);
+            return new NodePoolNodeConfigDetails(definedTags, freeformTags, isPvEncryptionInTransitEnabled, kmsKeyId, nodePoolPodNetworkOptionDetails, nsgIds, placementConfigs, size);
         }
     }
 }

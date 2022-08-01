@@ -14,11 +14,11 @@ namespace Pulumi.Oci.Core.Outputs
     public sealed class GetShapesShapeOcpuOptionResult
     {
         /// <summary>
-        /// The maximum number of OCPUs.
+        /// The maximum allowed percentage of cores enabled.
         /// </summary>
         public readonly double Max;
         /// <summary>
-        /// The minimum number of OCPUs.
+        /// The minimum allowed percentage of cores enabled.
         /// </summary>
         public readonly double Min;
 

@@ -20,6 +20,7 @@ import * as utilities from "../utilities";
  *     compartmentId: _var.compartment_id,
  *     clusterId: oci_containerengine_cluster.test_cluster.id,
  *     name: _var.node_pool_name,
+ *     states: _var.node_pool_state,
  * });
  * ```
  */
@@ -34,6 +35,7 @@ export function getNodePools(args: GetNodePoolsArgs, opts?: pulumi.InvokeOptions
         "compartmentId": args.compartmentId,
         "filters": args.filters,
         "name": args.name,
+        "states": args.states,
     }, opts);
 }
 
@@ -54,6 +56,10 @@ export interface GetNodePoolsArgs {
      * The name to filter on.
      */
     name?: string;
+    /**
+     * A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
+     */
+    states?: string[];
 }
 
 /**
@@ -81,6 +87,10 @@ export interface GetNodePoolsResult {
      * The list of node_pools.
      */
     readonly nodePools: outputs.ContainerEngine.GetNodePoolsNodePool[];
+    /**
+     * The state of the nodepool.
+     */
+    readonly states?: string[];
 }
 
 export function getNodePoolsOutput(args: GetNodePoolsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNodePoolsResult> {
@@ -104,4 +114,8 @@ export interface GetNodePoolsOutputArgs {
      * The name to filter on.
      */
     name?: pulumi.Input<string>;
+    /**
+     * A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
+     */
+    states?: pulumi.Input<pulumi.Input<string>[]>;
 }

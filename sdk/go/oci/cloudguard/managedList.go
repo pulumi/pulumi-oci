@@ -29,9 +29,9 @@ type ManagedList struct {
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
-	// (Updatable) ManagedList description
+	// (Updatable) Managed list description.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// (Updatable) ManagedList display name
+	// (Updatable) Managed list display name.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// provider of the feed
 	FeedProvider pulumi.StringOutput `pulumi:"feedProvider"`
@@ -96,9 +96,9 @@ type managedListState struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// (Updatable) ManagedList description
+	// (Updatable) Managed list description.
 	Description *string `pulumi:"description"`
-	// (Updatable) ManagedList display name
+	// (Updatable) Managed list display name.
 	DisplayName *string `pulumi:"displayName"`
 	// provider of the feed
 	FeedProvider *string `pulumi:"feedProvider"`
@@ -129,9 +129,9 @@ type ManagedListState struct {
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
-	// (Updatable) ManagedList description
+	// (Updatable) Managed list description.
 	Description pulumi.StringPtrInput
-	// (Updatable) ManagedList display name
+	// (Updatable) Managed list display name.
 	DisplayName pulumi.StringPtrInput
 	// provider of the feed
 	FeedProvider pulumi.StringPtrInput
@@ -166,9 +166,9 @@ type managedListArgs struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// (Updatable) ManagedList description
+	// (Updatable) Managed list description.
 	Description *string `pulumi:"description"`
-	// (Updatable) ManagedList display name
+	// (Updatable) Managed list display name.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
@@ -186,9 +186,9 @@ type ManagedListArgs struct {
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
-	// (Updatable) ManagedList description
+	// (Updatable) Managed list description.
 	Description pulumi.StringPtrInput
-	// (Updatable) ManagedList display name
+	// (Updatable) Managed list display name.
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput

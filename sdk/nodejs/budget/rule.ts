@@ -70,7 +70,7 @@ export class Rule extends pulumi.CustomResource {
     }
 
     /**
-     * The unique Budget OCID
+     * The unique budget OCID.
      */
     public readonly budgetId!: pulumi.Output<string>;
     /**
@@ -82,7 +82,7 @@ export class Rule extends pulumi.CustomResource {
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * (Updatable) The name of the alert rule.
+     * (Updatable) The name of the alert rule. Avoid entering confidential information.
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
@@ -90,11 +90,11 @@ export class Rule extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * (Updatable) The message to be sent to the recipients when alert rule is triggered.
+     * (Updatable) The message to be sent to the recipients when the alert rule is triggered.
      */
     public readonly message!: pulumi.Output<string>;
     /**
-     * (Updatable) The audience that will receive the alert when it triggers. An empty string is interpreted as null.
+     * (Updatable) The audience that receives the alert when it triggers. An empty string is interpreted as null.
      */
     public readonly recipients!: pulumi.Output<string | undefined>;
     /**
@@ -102,7 +102,7 @@ export class Rule extends pulumi.CustomResource {
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
-     * (Updatable) The threshold for triggering the alert expressed as a whole number or decimal value. If thresholdType is ABSOLUTE, threshold can have at most 12 digits before the decimal point and up to 2 digits after the decimal point. If thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to 2 digits after the decimal point.
+     * (Updatable) The threshold for triggering the alert, expressed as a whole number or decimal value. If the thresholdType is ABSOLUTE, the threshold can have at most 12 digits before the decimal point, and up to two digits after the decimal point. If the thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to two digits after the decimal point.
      */
     public readonly threshold!: pulumi.Output<number>;
     /**
@@ -110,19 +110,19 @@ export class Rule extends pulumi.CustomResource {
      */
     public readonly thresholdType!: pulumi.Output<string>;
     /**
-     * Time when budget was created
+     * The time when the budget was created.
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
-     * Time when budget was updated
+     * The time when the budget was updated.
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
     /**
-     * (Updatable) Type of alert. Valid values are ACTUAL (the alert will trigger based on actual usage) or FORECAST (the alert will trigger based on predicted usage).
+     * (Updatable) The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
      */
     public readonly type!: pulumi.Output<string>;
     /**
-     * Version of the alert rule. Starts from 1 and increments by 1.
+     * The version of the alert rule. Starts from 1 and increments by 1.
      */
     public /*out*/ readonly version!: pulumi.Output<number>;
 
@@ -192,7 +192,7 @@ export class Rule extends pulumi.CustomResource {
  */
 export interface RuleState {
     /**
-     * The unique Budget OCID
+     * The unique budget OCID.
      */
     budgetId?: pulumi.Input<string>;
     /**
@@ -204,7 +204,7 @@ export interface RuleState {
      */
     description?: pulumi.Input<string>;
     /**
-     * (Updatable) The name of the alert rule.
+     * (Updatable) The name of the alert rule. Avoid entering confidential information.
      */
     displayName?: pulumi.Input<string>;
     /**
@@ -212,11 +212,11 @@ export interface RuleState {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) The message to be sent to the recipients when alert rule is triggered.
+     * (Updatable) The message to be sent to the recipients when the alert rule is triggered.
      */
     message?: pulumi.Input<string>;
     /**
-     * (Updatable) The audience that will receive the alert when it triggers. An empty string is interpreted as null.
+     * (Updatable) The audience that receives the alert when it triggers. An empty string is interpreted as null.
      */
     recipients?: pulumi.Input<string>;
     /**
@@ -224,7 +224,7 @@ export interface RuleState {
      */
     state?: pulumi.Input<string>;
     /**
-     * (Updatable) The threshold for triggering the alert expressed as a whole number or decimal value. If thresholdType is ABSOLUTE, threshold can have at most 12 digits before the decimal point and up to 2 digits after the decimal point. If thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to 2 digits after the decimal point.
+     * (Updatable) The threshold for triggering the alert, expressed as a whole number or decimal value. If the thresholdType is ABSOLUTE, the threshold can have at most 12 digits before the decimal point, and up to two digits after the decimal point. If the thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to two digits after the decimal point.
      */
     threshold?: pulumi.Input<number>;
     /**
@@ -232,19 +232,19 @@ export interface RuleState {
      */
     thresholdType?: pulumi.Input<string>;
     /**
-     * Time when budget was created
+     * The time when the budget was created.
      */
     timeCreated?: pulumi.Input<string>;
     /**
-     * Time when budget was updated
+     * The time when the budget was updated.
      */
     timeUpdated?: pulumi.Input<string>;
     /**
-     * (Updatable) Type of alert. Valid values are ACTUAL (the alert will trigger based on actual usage) or FORECAST (the alert will trigger based on predicted usage).
+     * (Updatable) The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
      */
     type?: pulumi.Input<string>;
     /**
-     * Version of the alert rule. Starts from 1 and increments by 1.
+     * The version of the alert rule. Starts from 1 and increments by 1.
      */
     version?: pulumi.Input<number>;
 }
@@ -254,7 +254,7 @@ export interface RuleState {
  */
 export interface RuleArgs {
     /**
-     * The unique Budget OCID
+     * The unique budget OCID.
      */
     budgetId: pulumi.Input<string>;
     /**
@@ -266,7 +266,7 @@ export interface RuleArgs {
      */
     description?: pulumi.Input<string>;
     /**
-     * (Updatable) The name of the alert rule.
+     * (Updatable) The name of the alert rule. Avoid entering confidential information.
      */
     displayName?: pulumi.Input<string>;
     /**
@@ -274,15 +274,15 @@ export interface RuleArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) The message to be sent to the recipients when alert rule is triggered.
+     * (Updatable) The message to be sent to the recipients when the alert rule is triggered.
      */
     message?: pulumi.Input<string>;
     /**
-     * (Updatable) The audience that will receive the alert when it triggers. An empty string is interpreted as null.
+     * (Updatable) The audience that receives the alert when it triggers. An empty string is interpreted as null.
      */
     recipients?: pulumi.Input<string>;
     /**
-     * (Updatable) The threshold for triggering the alert expressed as a whole number or decimal value. If thresholdType is ABSOLUTE, threshold can have at most 12 digits before the decimal point and up to 2 digits after the decimal point. If thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to 2 digits after the decimal point.
+     * (Updatable) The threshold for triggering the alert, expressed as a whole number or decimal value. If the thresholdType is ABSOLUTE, the threshold can have at most 12 digits before the decimal point, and up to two digits after the decimal point. If the thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to two digits after the decimal point.
      */
     threshold: pulumi.Input<number>;
     /**
@@ -290,7 +290,7 @@ export interface RuleArgs {
      */
     thresholdType: pulumi.Input<string>;
     /**
-     * (Updatable) Type of alert. Valid values are ACTUAL (the alert will trigger based on actual usage) or FORECAST (the alert will trigger based on predicted usage).
+     * (Updatable) The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
      */
     type: pulumi.Input<string>;
 }

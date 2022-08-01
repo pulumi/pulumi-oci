@@ -18,6 +18,7 @@ import * as utilities from "../utilities";
  *
  * const testManagementAgentPlugins = oci.ManagementAgent.getManagementAgentPlugins({
  *     compartmentId: _var.compartment_id,
+ *     agentId: _var.management_agent_id,
  *     displayName: _var.management_agent_plugin_display_name,
  *     platformTypes: _var.management_agent_plugin_platform_type,
  *     state: _var.management_agent_plugin_state,
@@ -31,6 +32,7 @@ export function getManagementAgentPlugins(args: GetManagementAgentPluginsArgs, o
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
     return pulumi.runtime.invoke("oci:ManagementAgent/getManagementAgentPlugins:getManagementAgentPlugins", {
+        "agentId": args.agentId,
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
         "filters": args.filters,
@@ -44,6 +46,10 @@ export function getManagementAgentPlugins(args: GetManagementAgentPluginsArgs, o
  */
 export interface GetManagementAgentPluginsArgs {
     /**
+     * The ManagementAgentID of the agent from which the Management Agents to be filtered.
+     */
+    agentId?: string;
+    /**
      * The OCID of the compartment to which a request will be scoped.
      */
     compartmentId: string;
@@ -53,7 +59,7 @@ export interface GetManagementAgentPluginsArgs {
     displayName?: string;
     filters?: inputs.ManagementAgent.GetManagementAgentPluginsFilter[];
     /**
-     * Filter to return only results having the particular platform type.
+     * Array of PlatformTypes to return only results having the particular platform types. Example: ["LINUX"]
      */
     platformTypes?: string[];
     /**
@@ -66,6 +72,7 @@ export interface GetManagementAgentPluginsArgs {
  * A collection of values returned by getManagementAgentPlugins.
  */
 export interface GetManagementAgentPluginsResult {
+    readonly agentId?: string;
     readonly compartmentId: string;
     /**
      * Management Agent Plugin Display Name
@@ -96,6 +103,10 @@ export function getManagementAgentPluginsOutput(args: GetManagementAgentPluginsO
  */
 export interface GetManagementAgentPluginsOutputArgs {
     /**
+     * The ManagementAgentID of the agent from which the Management Agents to be filtered.
+     */
+    agentId?: pulumi.Input<string>;
+    /**
      * The OCID of the compartment to which a request will be scoped.
      */
     compartmentId: pulumi.Input<string>;
@@ -105,7 +116,7 @@ export interface GetManagementAgentPluginsOutputArgs {
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.ManagementAgent.GetManagementAgentPluginsFilterArgs>[]>;
     /**
-     * Filter to return only results having the particular platform type.
+     * Array of PlatformTypes to return only results having the particular platform types. Example: ["LINUX"]
      */
     platformTypes?: pulumi.Input<pulumi.Input<string>[]>;
     /**

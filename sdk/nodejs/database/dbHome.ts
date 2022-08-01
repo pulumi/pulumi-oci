@@ -113,7 +113,7 @@ export class DbHome extends pulumi.CustomResource {
     /**
      * (Updatable) Details for creating a database.
      */
-    public readonly database!: pulumi.Output<outputs.Database.DbHomeDatabase>;
+    public readonly database!: pulumi.Output<outputs.Database.DbHomeDatabase | undefined>;
     /**
      * The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      */
@@ -186,7 +186,7 @@ export class DbHome extends pulumi.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param opts A bag of options that control this resource's behavior.
      */
-    constructor(name: string, args: DbHomeArgs, opts?: pulumi.CustomResourceOptions)
+    constructor(name: string, args?: DbHomeArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: DbHomeArgs | DbHomeState, opts?: pulumi.CustomResourceOptions) {
         let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
@@ -212,9 +212,6 @@ export class DbHome extends pulumi.CustomResource {
             resourceInputs["vmClusterId"] = state ? state.vmClusterId : undefined;
         } else {
             const args = argsOrState as DbHomeArgs | undefined;
-            if ((!args || args.database === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'database'");
-            }
             resourceInputs["database"] = args ? args.database : undefined;
             resourceInputs["databaseSoftwareImageId"] = args ? args.databaseSoftwareImageId : undefined;
             resourceInputs["dbSystemId"] = args ? args.dbSystemId : undefined;
@@ -324,7 +321,7 @@ export interface DbHomeArgs {
     /**
      * (Updatable) Details for creating a database.
      */
-    database: pulumi.Input<inputs.Database.DbHomeDatabase>;
+    database?: pulumi.Input<inputs.Database.DbHomeDatabase>;
     /**
      * The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      */

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Ocvp.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import java.lang.Double;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -16,6 +17,11 @@ public final class GetExsiHostsEsxiHostCollection {
      * 
      */
     private final String billingContractEndDate;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+     * 
+     */
+    private final String capacityReservationId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
      * 
@@ -62,6 +68,16 @@ public final class GetExsiHostsEsxiHostCollection {
      */
     private final String gracePeriodEndDate;
     /**
+     * @return The OCPU count of the ESXi host.
+     * 
+     */
+    private final Double hostOcpuCount;
+    /**
+     * @return The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+     * 
+     */
+    private final String hostShapeName;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host.
      * 
      */
@@ -100,6 +116,7 @@ public final class GetExsiHostsEsxiHostCollection {
     @CustomType.Constructor
     private GetExsiHostsEsxiHostCollection(
         @CustomType.Parameter("billingContractEndDate") String billingContractEndDate,
+        @CustomType.Parameter("capacityReservationId") String capacityReservationId,
         @CustomType.Parameter("compartmentId") String compartmentId,
         @CustomType.Parameter("computeAvailabilityDomain") String computeAvailabilityDomain,
         @CustomType.Parameter("computeInstanceId") String computeInstanceId,
@@ -109,6 +126,8 @@ public final class GetExsiHostsEsxiHostCollection {
         @CustomType.Parameter("failedEsxiHostId") String failedEsxiHostId,
         @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
         @CustomType.Parameter("gracePeriodEndDate") String gracePeriodEndDate,
+        @CustomType.Parameter("hostOcpuCount") Double hostOcpuCount,
+        @CustomType.Parameter("hostShapeName") String hostShapeName,
         @CustomType.Parameter("id") String id,
         @CustomType.Parameter("nextSku") String nextSku,
         @CustomType.Parameter("replacementEsxiHostId") String replacementEsxiHostId,
@@ -117,6 +136,7 @@ public final class GetExsiHostsEsxiHostCollection {
         @CustomType.Parameter("timeCreated") String timeCreated,
         @CustomType.Parameter("timeUpdated") String timeUpdated) {
         this.billingContractEndDate = billingContractEndDate;
+        this.capacityReservationId = capacityReservationId;
         this.compartmentId = compartmentId;
         this.computeAvailabilityDomain = computeAvailabilityDomain;
         this.computeInstanceId = computeInstanceId;
@@ -126,6 +146,8 @@ public final class GetExsiHostsEsxiHostCollection {
         this.failedEsxiHostId = failedEsxiHostId;
         this.freeformTags = freeformTags;
         this.gracePeriodEndDate = gracePeriodEndDate;
+        this.hostOcpuCount = hostOcpuCount;
+        this.hostShapeName = hostShapeName;
         this.id = id;
         this.nextSku = nextSku;
         this.replacementEsxiHostId = replacementEsxiHostId;
@@ -141,6 +163,13 @@ public final class GetExsiHostsEsxiHostCollection {
      */
     public String billingContractEndDate() {
         return this.billingContractEndDate;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+     * 
+     */
+    public String capacityReservationId() {
+        return this.capacityReservationId;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
@@ -206,6 +235,20 @@ public final class GetExsiHostsEsxiHostCollection {
         return this.gracePeriodEndDate;
     }
     /**
+     * @return The OCPU count of the ESXi host.
+     * 
+     */
+    public Double hostOcpuCount() {
+        return this.hostOcpuCount;
+    }
+    /**
+     * @return The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+     * 
+     */
+    public String hostShapeName() {
+        return this.hostShapeName;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host.
      * 
      */
@@ -265,6 +308,7 @@ public final class GetExsiHostsEsxiHostCollection {
 
     public static final class Builder {
         private String billingContractEndDate;
+        private String capacityReservationId;
         private String compartmentId;
         private String computeAvailabilityDomain;
         private String computeInstanceId;
@@ -274,6 +318,8 @@ public final class GetExsiHostsEsxiHostCollection {
         private String failedEsxiHostId;
         private Map<String,Object> freeformTags;
         private String gracePeriodEndDate;
+        private Double hostOcpuCount;
+        private String hostShapeName;
         private String id;
         private String nextSku;
         private String replacementEsxiHostId;
@@ -289,6 +335,7 @@ public final class GetExsiHostsEsxiHostCollection {
         public Builder(GetExsiHostsEsxiHostCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.billingContractEndDate = defaults.billingContractEndDate;
+    	      this.capacityReservationId = defaults.capacityReservationId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.computeAvailabilityDomain = defaults.computeAvailabilityDomain;
     	      this.computeInstanceId = defaults.computeInstanceId;
@@ -298,6 +345,8 @@ public final class GetExsiHostsEsxiHostCollection {
     	      this.failedEsxiHostId = defaults.failedEsxiHostId;
     	      this.freeformTags = defaults.freeformTags;
     	      this.gracePeriodEndDate = defaults.gracePeriodEndDate;
+    	      this.hostOcpuCount = defaults.hostOcpuCount;
+    	      this.hostShapeName = defaults.hostShapeName;
     	      this.id = defaults.id;
     	      this.nextSku = defaults.nextSku;
     	      this.replacementEsxiHostId = defaults.replacementEsxiHostId;
@@ -309,6 +358,10 @@ public final class GetExsiHostsEsxiHostCollection {
 
         public Builder billingContractEndDate(String billingContractEndDate) {
             this.billingContractEndDate = Objects.requireNonNull(billingContractEndDate);
+            return this;
+        }
+        public Builder capacityReservationId(String capacityReservationId) {
+            this.capacityReservationId = Objects.requireNonNull(capacityReservationId);
             return this;
         }
         public Builder compartmentId(String compartmentId) {
@@ -347,6 +400,14 @@ public final class GetExsiHostsEsxiHostCollection {
             this.gracePeriodEndDate = Objects.requireNonNull(gracePeriodEndDate);
             return this;
         }
+        public Builder hostOcpuCount(Double hostOcpuCount) {
+            this.hostOcpuCount = Objects.requireNonNull(hostOcpuCount);
+            return this;
+        }
+        public Builder hostShapeName(String hostShapeName) {
+            this.hostShapeName = Objects.requireNonNull(hostShapeName);
+            return this;
+        }
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
@@ -375,7 +436,7 @@ public final class GetExsiHostsEsxiHostCollection {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }        public GetExsiHostsEsxiHostCollection build() {
-            return new GetExsiHostsEsxiHostCollection(billingContractEndDate, compartmentId, computeAvailabilityDomain, computeInstanceId, currentSku, definedTags, displayName, failedEsxiHostId, freeformTags, gracePeriodEndDate, id, nextSku, replacementEsxiHostId, sddcId, state, timeCreated, timeUpdated);
+            return new GetExsiHostsEsxiHostCollection(billingContractEndDate, capacityReservationId, compartmentId, computeAvailabilityDomain, computeInstanceId, currentSku, definedTags, displayName, failedEsxiHostId, freeformTags, gracePeriodEndDate, hostOcpuCount, hostShapeName, id, nextSku, replacementEsxiHostId, sddcId, state, timeCreated, timeUpdated);
         }
     }
 }

@@ -19,14 +19,14 @@ public final class DatabaseToolsPrivateEndpointArgs extends com.pulumi.resources
     public static final DatabaseToolsPrivateEndpointArgs Empty = new DatabaseToolsPrivateEndpointArgs();
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools private endpoint.
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools private endpoint.
      * 
      */
     public Output<String> compartmentId() {
@@ -49,14 +49,14 @@ public final class DatabaseToolsPrivateEndpointArgs extends com.pulumi.resources
     }
 
     /**
-     * (Updatable) A description of the DatabaseToolsPrivateEndpoint.
+     * (Updatable) A description of the Database Tools private endpoint.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) A description of the DatabaseToolsPrivateEndpoint.
+     * @return (Updatable) A description of the Database Tools private endpoint.
      * 
      */
     public Optional<Output<String>> description() {
@@ -79,14 +79,14 @@ public final class DatabaseToolsPrivateEndpointArgs extends com.pulumi.resources
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsEndpointService.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `DatabaseToolsEndpointService`.
      * 
      */
     @Import(name="endpointServiceId", required=true)
     private Output<String> endpointServiceId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsEndpointService.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `DatabaseToolsEndpointService`.
      * 
      */
     public Output<String> endpointServiceId() {
@@ -186,7 +186,7 @@ public final class DatabaseToolsPrivateEndpointArgs extends com.pulumi.resources
         }
 
         /**
-         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools private endpoint.
          * 
          * @return builder
          * 
@@ -197,7 +197,7 @@ public final class DatabaseToolsPrivateEndpointArgs extends com.pulumi.resources
         }
 
         /**
-         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools private endpoint.
          * 
          * @return builder
          * 
@@ -228,7 +228,7 @@ public final class DatabaseToolsPrivateEndpointArgs extends com.pulumi.resources
         }
 
         /**
-         * @param description (Updatable) A description of the DatabaseToolsPrivateEndpoint.
+         * @param description (Updatable) A description of the Database Tools private endpoint.
          * 
          * @return builder
          * 
@@ -239,7 +239,7 @@ public final class DatabaseToolsPrivateEndpointArgs extends com.pulumi.resources
         }
 
         /**
-         * @param description (Updatable) A description of the DatabaseToolsPrivateEndpoint.
+         * @param description (Updatable) A description of the Database Tools private endpoint.
          * 
          * @return builder
          * 
@@ -270,7 +270,7 @@ public final class DatabaseToolsPrivateEndpointArgs extends com.pulumi.resources
         }
 
         /**
-         * @param endpointServiceId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsEndpointService.
+         * @param endpointServiceId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `DatabaseToolsEndpointService`.
          * 
          * @return builder
          * 
@@ -281,7 +281,7 @@ public final class DatabaseToolsPrivateEndpointArgs extends com.pulumi.resources
         }
 
         /**
-         * @param endpointServiceId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsEndpointService.
+         * @param endpointServiceId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `DatabaseToolsEndpointService`.
          * 
          * @return builder
          * 

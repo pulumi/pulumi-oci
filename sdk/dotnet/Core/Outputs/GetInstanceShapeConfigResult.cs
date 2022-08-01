@@ -49,6 +49,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// The networking bandwidth available to the instance, in gigabits per second.
         /// </summary>
         public readonly double NetworkingBandwidthInGbps;
+        public readonly int Nvmes;
         /// <summary>
         /// The total number of OCPUs available to the instance.
         /// </summary>
@@ -78,6 +79,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             double networkingBandwidthInGbps,
 
+            int nvmes,
+
             double ocpus,
 
             string processorDescription)
@@ -91,6 +94,7 @@ namespace Pulumi.Oci.Core.Outputs
             MaxVnicAttachments = maxVnicAttachments;
             MemoryInGbs = memoryInGbs;
             NetworkingBandwidthInGbps = networkingBandwidthInGbps;
+            Nvmes = nvmes;
             Ocpus = ocpus;
             ProcessorDescription = processorDescription;
         }

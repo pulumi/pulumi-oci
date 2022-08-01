@@ -14,7 +14,7 @@ namespace Pulumi.Oci.ApmConfig.Outputs
     public sealed class ConfigRule
     {
         /// <summary>
-        /// (Updatable) A user-friendly name that provides a short description this rule.
+        /// (Updatable) The name by which a configuration entity is displayed to the end user.
         /// </summary>
         public readonly string? DisplayName;
         /// <summary>
@@ -22,11 +22,11 @@ namespace Pulumi.Oci.ApmConfig.Outputs
         /// </summary>
         public readonly string? FilterText;
         /// <summary>
-        /// (Updatable) If true, the rule will compute the actual Apdex score for spans that have been marked as errors. If false, the rule will always set the Apdex for error spans to frustrating, regardless of the configured thresholds. Default is false.
+        /// (Updatable) Specifies whether an Apdex score should be computed for error spans. Setting it to "true" means that the Apdex score is computed in the usual way. Setting it to "false" skips the Apdex computation and sets the Apdex score to "frustrating" regardless of the configured thresholds. The default is "false".
         /// </summary>
         public readonly bool? IsApplyToErrorSpans;
         /// <summary>
-        /// (Updatable) Specifies if the Apdex rule will be computed for spans matching the rule. Can be used to make sure certain spans don't get an Apdex score. The default is "true".
+        /// (Updatable) Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable Apdex score for spans that do not need or require it. The default is "true".
         /// </summary>
         public readonly bool? IsEnabled;
         /// <summary>
@@ -34,11 +34,11 @@ namespace Pulumi.Oci.ApmConfig.Outputs
         /// </summary>
         public readonly int? Priority;
         /// <summary>
-        /// (Updatable) The maximum response time in milliseconds that will be considered satisfactory for the end user.
+        /// (Updatable) The maximum response time in milliseconds that is considered "satisfactory" for the end user.
         /// </summary>
         public readonly int? SatisfiedResponseTime;
         /// <summary>
-        /// (Updatable) The maximum response time in milliseconds that will be considered tolerable for the end user. Response times beyond this threshold will be considered frustrating. This value cannot be lower than "satisfiedResponseTime".
+        /// (Updatable) The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime".
         /// </summary>
         public readonly int? ToleratingResponseTime;
 

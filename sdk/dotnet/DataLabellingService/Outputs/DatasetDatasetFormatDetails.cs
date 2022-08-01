@@ -14,14 +14,22 @@ namespace Pulumi.Oci.DataLabellingService.Outputs
     public sealed class DatasetDatasetFormatDetails
     {
         /// <summary>
-        /// Format type. DOCUMENT format is for record contents that are PDFs or TIFFs. IMAGE format is for record contents that are JPEGs or PNGs. TEXT format is for record contents that are txt files.
+        /// It defines the format type of text files.
         /// </summary>
         public readonly string FormatType;
+        /// <summary>
+        /// Metadata for files with text content.
+        /// </summary>
+        public readonly Outputs.DatasetDatasetFormatDetailsTextFileTypeMetadata? TextFileTypeMetadata;
 
         [OutputConstructor]
-        private DatasetDatasetFormatDetails(string formatType)
+        private DatasetDatasetFormatDetails(
+            string formatType,
+
+            Outputs.DatasetDatasetFormatDetailsTextFileTypeMetadata? textFileTypeMetadata)
         {
             FormatType = formatType;
+            TextFileTypeMetadata = textFileTypeMetadata;
         }
     }
 }

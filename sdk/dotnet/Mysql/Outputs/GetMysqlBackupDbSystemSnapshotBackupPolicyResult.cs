@@ -22,9 +22,13 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// If automated backups are enabled or disabled.
+        /// Specifies if PITR is enabled or disabled.
         /// </summary>
         public readonly bool IsEnabled;
+        /// <summary>
+        /// The PITR policy for the DB System.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyResult> PitrPolicies;
         /// <summary>
         /// Number of days to retain this backup.
         /// </summary>
@@ -42,6 +46,8 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             bool isEnabled,
 
+            ImmutableArray<Outputs.GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyResult> pitrPolicies,
+
             int retentionInDays,
 
             string windowStartTime)
@@ -49,6 +55,7 @@ namespace Pulumi.Oci.Mysql.Outputs
             DefinedTags = definedTags;
             FreeformTags = freeformTags;
             IsEnabled = isEnabled;
+            PitrPolicies = pitrPolicies;
             RetentionInDays = retentionInDays;
             WindowStartTime = windowStartTime;
         }

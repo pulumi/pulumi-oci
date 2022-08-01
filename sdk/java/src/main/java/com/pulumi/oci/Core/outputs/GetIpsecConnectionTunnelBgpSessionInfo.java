@@ -9,6 +9,7 @@ import java.util.Objects;
 
 @CustomType
 public final class GetIpsecConnectionTunnelBgpSessionInfo {
+    private final String bgpIpv6state;
     /**
      * @return the state of the BGP.
      * 
@@ -37,11 +38,13 @@ public final class GetIpsecConnectionTunnelBgpSessionInfo {
 
     @CustomType.Constructor
     private GetIpsecConnectionTunnelBgpSessionInfo(
+        @CustomType.Parameter("bgpIpv6state") String bgpIpv6state,
         @CustomType.Parameter("bgpState") String bgpState,
         @CustomType.Parameter("customerBgpAsn") String customerBgpAsn,
         @CustomType.Parameter("customerInterfaceIp") String customerInterfaceIp,
         @CustomType.Parameter("oracleBgpAsn") String oracleBgpAsn,
         @CustomType.Parameter("oracleInterfaceIp") String oracleInterfaceIp) {
+        this.bgpIpv6state = bgpIpv6state;
         this.bgpState = bgpState;
         this.customerBgpAsn = customerBgpAsn;
         this.customerInterfaceIp = customerInterfaceIp;
@@ -49,6 +52,9 @@ public final class GetIpsecConnectionTunnelBgpSessionInfo {
         this.oracleInterfaceIp = oracleInterfaceIp;
     }
 
+    public String bgpIpv6state() {
+        return this.bgpIpv6state;
+    }
     /**
      * @return the state of the BGP.
      * 
@@ -94,6 +100,7 @@ public final class GetIpsecConnectionTunnelBgpSessionInfo {
     }
 
     public static final class Builder {
+        private String bgpIpv6state;
         private String bgpState;
         private String customerBgpAsn;
         private String customerInterfaceIp;
@@ -106,6 +113,7 @@ public final class GetIpsecConnectionTunnelBgpSessionInfo {
 
         public Builder(GetIpsecConnectionTunnelBgpSessionInfo defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.bgpIpv6state = defaults.bgpIpv6state;
     	      this.bgpState = defaults.bgpState;
     	      this.customerBgpAsn = defaults.customerBgpAsn;
     	      this.customerInterfaceIp = defaults.customerInterfaceIp;
@@ -113,6 +121,10 @@ public final class GetIpsecConnectionTunnelBgpSessionInfo {
     	      this.oracleInterfaceIp = defaults.oracleInterfaceIp;
         }
 
+        public Builder bgpIpv6state(String bgpIpv6state) {
+            this.bgpIpv6state = Objects.requireNonNull(bgpIpv6state);
+            return this;
+        }
         public Builder bgpState(String bgpState) {
             this.bgpState = Objects.requireNonNull(bgpState);
             return this;
@@ -133,7 +145,7 @@ public final class GetIpsecConnectionTunnelBgpSessionInfo {
             this.oracleInterfaceIp = Objects.requireNonNull(oracleInterfaceIp);
             return this;
         }        public GetIpsecConnectionTunnelBgpSessionInfo build() {
-            return new GetIpsecConnectionTunnelBgpSessionInfo(bgpState, customerBgpAsn, customerInterfaceIp, oracleBgpAsn, oracleInterfaceIp);
+            return new GetIpsecConnectionTunnelBgpSessionInfo(bgpIpv6state, bgpState, customerBgpAsn, customerInterfaceIp, oracleBgpAsn, oracleInterfaceIp);
         }
     }
 }

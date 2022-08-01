@@ -23,6 +23,7 @@ import * as utilities from "../utilities";
  *     device: _var.volume_attachment_device,
  *     displayName: _var.volume_attachment_display_name,
  *     encryptionInTransitType: _var.volume_attachment_encryption_in_transit_type,
+ *     isAgentAutoIscsiLoginEnabled: _var.volume_attachment_is_agent_auto_iscsi_login_enabled,
  *     isPvEncryptionInTransitEnabled: _var.volume_attachment_is_pv_encryption_in_transit_enabled,
  *     isReadOnly: _var.volume_attachment_is_read_only,
  *     isShareable: _var.volume_attachment_is_shareable,
@@ -113,6 +114,10 @@ export class VolumeAttachment extends pulumi.CustomResource {
      */
     public /*out*/ readonly iqn!: pulumi.Output<string>;
     /**
+     * Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
+     */
+    public readonly isAgentAutoIscsiLoginEnabled!: pulumi.Output<boolean>;
+    /**
      * Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.
      */
     public /*out*/ readonly isMultipath!: pulumi.Output<boolean>;
@@ -181,6 +186,7 @@ export class VolumeAttachment extends pulumi.CustomResource {
             resourceInputs["instanceId"] = state ? state.instanceId : undefined;
             resourceInputs["ipv4"] = state ? state.ipv4 : undefined;
             resourceInputs["iqn"] = state ? state.iqn : undefined;
+            resourceInputs["isAgentAutoIscsiLoginEnabled"] = state ? state.isAgentAutoIscsiLoginEnabled : undefined;
             resourceInputs["isMultipath"] = state ? state.isMultipath : undefined;
             resourceInputs["isPvEncryptionInTransitEnabled"] = state ? state.isPvEncryptionInTransitEnabled : undefined;
             resourceInputs["isReadOnly"] = state ? state.isReadOnly : undefined;
@@ -209,6 +215,7 @@ export class VolumeAttachment extends pulumi.CustomResource {
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["encryptionInTransitType"] = args ? args.encryptionInTransitType : undefined;
             resourceInputs["instanceId"] = args ? args.instanceId : undefined;
+            resourceInputs["isAgentAutoIscsiLoginEnabled"] = args ? args.isAgentAutoIscsiLoginEnabled : undefined;
             resourceInputs["isPvEncryptionInTransitEnabled"] = args ? args.isPvEncryptionInTransitEnabled : undefined;
             resourceInputs["isReadOnly"] = args ? args.isReadOnly : undefined;
             resourceInputs["isShareable"] = args ? args.isShareable : undefined;
@@ -281,6 +288,10 @@ export interface VolumeAttachmentState {
      * The target volume's iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).  Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`
      */
     iqn?: pulumi.Input<string>;
+    /**
+     * Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
+     */
+    isAgentAutoIscsiLoginEnabled?: pulumi.Input<boolean>;
     /**
      * Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.
      */
@@ -357,6 +368,10 @@ export interface VolumeAttachmentArgs {
      * The OCID of the instance.
      */
     instanceId: pulumi.Input<string>;
+    /**
+     * Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
+     */
+    isAgentAutoIscsiLoginEnabled?: pulumi.Input<boolean>;
     /**
      * Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
      */

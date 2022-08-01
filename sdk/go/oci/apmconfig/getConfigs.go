@@ -12,7 +12,7 @@ import (
 
 // This data source provides the list of Configs in Oracle Cloud Infrastructure Apm Config service.
 //
-// Returns all configured items optionally filtered by configuration type
+// Returns all configuration items, which can optionally be filtered by configuration type.
 //
 // ## Example Usage
 //
@@ -27,9 +27,14 @@ import (
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		_, err := ApmConfig.GetConfigs(ctx, &apmconfig.GetConfigsArgs{
-// 			ApmDomainId: oci_apm_apm_domain.Test_apm_domain.Id,
-// 			ConfigType:  pulumi.StringRef(_var.Config_config_type),
-// 			DisplayName: pulumi.StringRef(_var.Config_display_name),
+// 			ApmDomainId:       oci_apm_apm_domain.Test_apm_domain.Id,
+// 			ConfigType:        pulumi.StringRef(_var.Config_config_type),
+// 			DefinedTagEquals:  _var.Config_defined_tag_equals,
+// 			DefinedTagExists:  _var.Config_defined_tag_exists,
+// 			DisplayName:       pulumi.StringRef(_var.Config_display_name),
+// 			FreeformTagEquals: _var.Config_freeform_tag_equals,
+// 			FreeformTagExists: _var.Config_freeform_tag_exists,
+// 			OptionsGroup:      pulumi.StringRef(_var.Config_options_group),
 // 		}, nil)
 // 		if err != nil {
 // 			return err
@@ -49,13 +54,23 @@ func GetConfigs(ctx *pulumi.Context, args *GetConfigsArgs, opts ...pulumi.Invoke
 
 // A collection of arguments for invoking getConfigs.
 type GetConfigsArgs struct {
-	// The APM Domain Id the request is intended for.
+	// The APM Domain ID the request is intended for.
 	ApmDomainId string `pulumi:"apmDomainId"`
-	// A filter to match only configuration items of the given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
+	// A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
 	ConfigType *string `pulumi:"configType"`
-	// A filter to return only resources that match the entire display name given.
+	// A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned. Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+	DefinedTagEquals []string `pulumi:"definedTagEquals"`
+	// A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned. Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag) or "{namespace}.true".  All inputs are case-insensitive. Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+	DefinedTagExists []string `pulumi:"definedTagExists"`
+	// A filter to return resources that match the given display name.
 	DisplayName *string            `pulumi:"displayName"`
 	Filters     []GetConfigsFilter `pulumi:"filters"`
+	// A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned. The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive. Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
+	FreeformTagEquals []string `pulumi:"freeformTagEquals"`
+	// A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned. The key for each tag is "{tagName}.true".  All inputs are case-insensitive. Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported. Multiple values for different tag names are interpreted as "AND".
+	FreeformTagExists []string `pulumi:"freeformTagExists"`
+	// A filter to return OPTIONS resources that match the given group.
+	OptionsGroup *string `pulumi:"optionsGroup"`
 }
 
 // A collection of values returned by getConfigs.
@@ -63,13 +78,18 @@ type GetConfigsResult struct {
 	ApmDomainId string `pulumi:"apmDomainId"`
 	// The list of config_collection.
 	ConfigCollections []GetConfigsConfigCollection `pulumi:"configCollections"`
-	// The type of configuration item
-	ConfigType *string `pulumi:"configType"`
-	// A user-friendly name that provides a short description this rule.
-	DisplayName *string            `pulumi:"displayName"`
-	Filters     []GetConfigsFilter `pulumi:"filters"`
+	// The type of configuration item.
+	ConfigType       *string  `pulumi:"configType"`
+	DefinedTagEquals []string `pulumi:"definedTagEquals"`
+	DefinedTagExists []string `pulumi:"definedTagExists"`
+	// The name by which a configuration entity is displayed to the end user.
+	DisplayName       *string            `pulumi:"displayName"`
+	Filters           []GetConfigsFilter `pulumi:"filters"`
+	FreeformTagEquals []string           `pulumi:"freeformTagEquals"`
+	FreeformTagExists []string           `pulumi:"freeformTagExists"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id           string  `pulumi:"id"`
+	OptionsGroup *string `pulumi:"optionsGroup"`
 }
 
 func GetConfigsOutput(ctx *pulumi.Context, args GetConfigsOutputArgs, opts ...pulumi.InvokeOption) GetConfigsResultOutput {
@@ -87,13 +107,23 @@ func GetConfigsOutput(ctx *pulumi.Context, args GetConfigsOutputArgs, opts ...pu
 
 // A collection of arguments for invoking getConfigs.
 type GetConfigsOutputArgs struct {
-	// The APM Domain Id the request is intended for.
+	// The APM Domain ID the request is intended for.
 	ApmDomainId pulumi.StringInput `pulumi:"apmDomainId"`
-	// A filter to match only configuration items of the given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
+	// A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
 	ConfigType pulumi.StringPtrInput `pulumi:"configType"`
-	// A filter to return only resources that match the entire display name given.
+	// A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned. Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+	DefinedTagEquals pulumi.StringArrayInput `pulumi:"definedTagEquals"`
+	// A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned. Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag) or "{namespace}.true".  All inputs are case-insensitive. Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+	DefinedTagExists pulumi.StringArrayInput `pulumi:"definedTagExists"`
+	// A filter to return resources that match the given display name.
 	DisplayName pulumi.StringPtrInput      `pulumi:"displayName"`
 	Filters     GetConfigsFilterArrayInput `pulumi:"filters"`
+	// A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned. The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive. Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
+	FreeformTagEquals pulumi.StringArrayInput `pulumi:"freeformTagEquals"`
+	// A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned. The key for each tag is "{tagName}.true".  All inputs are case-insensitive. Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported. Multiple values for different tag names are interpreted as "AND".
+	FreeformTagExists pulumi.StringArrayInput `pulumi:"freeformTagExists"`
+	// A filter to return OPTIONS resources that match the given group.
+	OptionsGroup pulumi.StringPtrInput `pulumi:"optionsGroup"`
 }
 
 func (GetConfigsOutputArgs) ElementType() reflect.Type {
@@ -124,12 +154,20 @@ func (o GetConfigsResultOutput) ConfigCollections() GetConfigsConfigCollectionAr
 	return o.ApplyT(func(v GetConfigsResult) []GetConfigsConfigCollection { return v.ConfigCollections }).(GetConfigsConfigCollectionArrayOutput)
 }
 
-// The type of configuration item
+// The type of configuration item.
 func (o GetConfigsResultOutput) ConfigType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetConfigsResult) *string { return v.ConfigType }).(pulumi.StringPtrOutput)
 }
 
-// A user-friendly name that provides a short description this rule.
+func (o GetConfigsResultOutput) DefinedTagEquals() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetConfigsResult) []string { return v.DefinedTagEquals }).(pulumi.StringArrayOutput)
+}
+
+func (o GetConfigsResultOutput) DefinedTagExists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetConfigsResult) []string { return v.DefinedTagExists }).(pulumi.StringArrayOutput)
+}
+
+// The name by which a configuration entity is displayed to the end user.
 func (o GetConfigsResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetConfigsResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -138,9 +176,21 @@ func (o GetConfigsResultOutput) Filters() GetConfigsFilterArrayOutput {
 	return o.ApplyT(func(v GetConfigsResult) []GetConfigsFilter { return v.Filters }).(GetConfigsFilterArrayOutput)
 }
 
+func (o GetConfigsResultOutput) FreeformTagEquals() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetConfigsResult) []string { return v.FreeformTagEquals }).(pulumi.StringArrayOutput)
+}
+
+func (o GetConfigsResultOutput) FreeformTagExists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetConfigsResult) []string { return v.FreeformTagExists }).(pulumi.StringArrayOutput)
+}
+
 // The provider-assigned unique ID for this managed resource.
 func (o GetConfigsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigsResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetConfigsResultOutput) OptionsGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConfigsResult) *string { return v.OptionsGroup }).(pulumi.StringPtrOutput)
 }
 
 func init() {

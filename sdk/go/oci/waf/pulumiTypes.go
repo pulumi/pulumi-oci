@@ -708,6 +708,10 @@ func (o AppFirewallPolicyRequestAccessControlRuleArrayOutput) Index(i pulumi.Int
 }
 
 type AppFirewallPolicyRequestProtection struct {
+	// (Updatable) References action by name from actions defined in WebAppFirewallPolicy. Executed if HTTP message body size exceeds limit set in field `bodyInspectionSizeLimitInBytes`.
+	BodyInspectionSizeLimitExceededActionName *string `pulumi:"bodyInspectionSizeLimitExceededActionName"`
+	// (Updatable) Maximum size of inspected HTTP message body in bytes. Actions to take if this limit is exceeded are defined in `bodyInspectionSizeLimitExceededActionName`.
+	BodyInspectionSizeLimitInBytes *int `pulumi:"bodyInspectionSizeLimitInBytes"`
 	// (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
 	Rules []AppFirewallPolicyRequestProtectionRule `pulumi:"rules"`
 }
@@ -724,6 +728,10 @@ type AppFirewallPolicyRequestProtectionInput interface {
 }
 
 type AppFirewallPolicyRequestProtectionArgs struct {
+	// (Updatable) References action by name from actions defined in WebAppFirewallPolicy. Executed if HTTP message body size exceeds limit set in field `bodyInspectionSizeLimitInBytes`.
+	BodyInspectionSizeLimitExceededActionName pulumi.StringPtrInput `pulumi:"bodyInspectionSizeLimitExceededActionName"`
+	// (Updatable) Maximum size of inspected HTTP message body in bytes. Actions to take if this limit is exceeded are defined in `bodyInspectionSizeLimitExceededActionName`.
+	BodyInspectionSizeLimitInBytes pulumi.IntPtrInput `pulumi:"bodyInspectionSizeLimitInBytes"`
 	// (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
 	Rules AppFirewallPolicyRequestProtectionRuleArrayInput `pulumi:"rules"`
 }
@@ -805,6 +813,16 @@ func (o AppFirewallPolicyRequestProtectionOutput) ToAppFirewallPolicyRequestProt
 	}).(AppFirewallPolicyRequestProtectionPtrOutput)
 }
 
+// (Updatable) References action by name from actions defined in WebAppFirewallPolicy. Executed if HTTP message body size exceeds limit set in field `bodyInspectionSizeLimitInBytes`.
+func (o AppFirewallPolicyRequestProtectionOutput) BodyInspectionSizeLimitExceededActionName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AppFirewallPolicyRequestProtection) *string { return v.BodyInspectionSizeLimitExceededActionName }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Maximum size of inspected HTTP message body in bytes. Actions to take if this limit is exceeded are defined in `bodyInspectionSizeLimitExceededActionName`.
+func (o AppFirewallPolicyRequestProtectionOutput) BodyInspectionSizeLimitInBytes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AppFirewallPolicyRequestProtection) *int { return v.BodyInspectionSizeLimitInBytes }).(pulumi.IntPtrOutput)
+}
+
 // (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
 func (o AppFirewallPolicyRequestProtectionOutput) Rules() AppFirewallPolicyRequestProtectionRuleArrayOutput {
 	return o.ApplyT(func(v AppFirewallPolicyRequestProtection) []AppFirewallPolicyRequestProtectionRule { return v.Rules }).(AppFirewallPolicyRequestProtectionRuleArrayOutput)
@@ -834,6 +852,26 @@ func (o AppFirewallPolicyRequestProtectionPtrOutput) Elem() AppFirewallPolicyReq
 	}).(AppFirewallPolicyRequestProtectionOutput)
 }
 
+// (Updatable) References action by name from actions defined in WebAppFirewallPolicy. Executed if HTTP message body size exceeds limit set in field `bodyInspectionSizeLimitInBytes`.
+func (o AppFirewallPolicyRequestProtectionPtrOutput) BodyInspectionSizeLimitExceededActionName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AppFirewallPolicyRequestProtection) *string {
+		if v == nil {
+			return nil
+		}
+		return v.BodyInspectionSizeLimitExceededActionName
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Maximum size of inspected HTTP message body in bytes. Actions to take if this limit is exceeded are defined in `bodyInspectionSizeLimitExceededActionName`.
+func (o AppFirewallPolicyRequestProtectionPtrOutput) BodyInspectionSizeLimitInBytes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AppFirewallPolicyRequestProtection) *int {
+		if v == nil {
+			return nil
+		}
+		return v.BodyInspectionSizeLimitInBytes
+	}).(pulumi.IntPtrOutput)
+}
+
 // (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
 func (o AppFirewallPolicyRequestProtectionPtrOutput) Rules() AppFirewallPolicyRequestProtectionRuleArrayOutput {
 	return o.ApplyT(func(v *AppFirewallPolicyRequestProtection) []AppFirewallPolicyRequestProtectionRule {
@@ -852,9 +890,11 @@ type AppFirewallPolicyRequestProtectionRule struct {
 	// (Updatable) The language used to parse condition from field `condition`. Available languages:
 	// * **JMESPATH** an extended JMESPath language syntax.
 	ConditionLanguage *string `pulumi:"conditionLanguage"`
+	// (Updatable) Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
+	IsBodyInspectionEnabled *bool `pulumi:"isBodyInspectionEnabled"`
 	// (Updatable) Rule name. Must be unique within the module.
 	Name string `pulumi:"name"`
-	// (Updatable) An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are executed in order of appearance. The array cannot contain entries with the same pair of capability key and version more than once.
+	// (Updatable) An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
 	ProtectionCapabilities []AppFirewallPolicyRequestProtectionRuleProtectionCapability `pulumi:"protectionCapabilities"`
 	// (Updatable) Settings for protection capabilities
 	ProtectionCapabilitySettings *AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettings `pulumi:"protectionCapabilitySettings"`
@@ -881,9 +921,11 @@ type AppFirewallPolicyRequestProtectionRuleArgs struct {
 	// (Updatable) The language used to parse condition from field `condition`. Available languages:
 	// * **JMESPATH** an extended JMESPath language syntax.
 	ConditionLanguage pulumi.StringPtrInput `pulumi:"conditionLanguage"`
+	// (Updatable) Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
+	IsBodyInspectionEnabled pulumi.BoolPtrInput `pulumi:"isBodyInspectionEnabled"`
 	// (Updatable) Rule name. Must be unique within the module.
 	Name pulumi.StringInput `pulumi:"name"`
-	// (Updatable) An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are executed in order of appearance. The array cannot contain entries with the same pair of capability key and version more than once.
+	// (Updatable) An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
 	ProtectionCapabilities AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArrayInput `pulumi:"protectionCapabilities"`
 	// (Updatable) Settings for protection capabilities
 	ProtectionCapabilitySettings AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsPtrInput `pulumi:"protectionCapabilitySettings"`
@@ -958,12 +1000,17 @@ func (o AppFirewallPolicyRequestProtectionRuleOutput) ConditionLanguage() pulumi
 	return o.ApplyT(func(v AppFirewallPolicyRequestProtectionRule) *string { return v.ConditionLanguage }).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
+func (o AppFirewallPolicyRequestProtectionRuleOutput) IsBodyInspectionEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v AppFirewallPolicyRequestProtectionRule) *bool { return v.IsBodyInspectionEnabled }).(pulumi.BoolPtrOutput)
+}
+
 // (Updatable) Rule name. Must be unique within the module.
 func (o AppFirewallPolicyRequestProtectionRuleOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v AppFirewallPolicyRequestProtectionRule) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// (Updatable) An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are executed in order of appearance. The array cannot contain entries with the same pair of capability key and version more than once.
+// (Updatable) An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
 func (o AppFirewallPolicyRequestProtectionRuleOutput) ProtectionCapabilities() AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArrayOutput {
 	return o.ApplyT(func(v AppFirewallPolicyRequestProtectionRule) []AppFirewallPolicyRequestProtectionRuleProtectionCapability {
 		return v.ProtectionCapabilities
@@ -2483,9 +2530,11 @@ type AppFirewallPolicyResponseProtectionRule struct {
 	// (Updatable) The language used to parse condition from field `condition`. Available languages:
 	// * **JMESPATH** an extended JMESPath language syntax.
 	ConditionLanguage *string `pulumi:"conditionLanguage"`
+	// (Updatable) Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
+	IsBodyInspectionEnabled *bool `pulumi:"isBodyInspectionEnabled"`
 	// (Updatable) Rule name. Must be unique within the module.
 	Name string `pulumi:"name"`
-	// (Updatable) An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are executed in order of appearance. The array cannot contain entries with the same pair of capability key and version more than once.
+	// (Updatable) An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
 	ProtectionCapabilities []AppFirewallPolicyResponseProtectionRuleProtectionCapability `pulumi:"protectionCapabilities"`
 	// (Updatable) Settings for protection capabilities
 	ProtectionCapabilitySettings *AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettings `pulumi:"protectionCapabilitySettings"`
@@ -2512,9 +2561,11 @@ type AppFirewallPolicyResponseProtectionRuleArgs struct {
 	// (Updatable) The language used to parse condition from field `condition`. Available languages:
 	// * **JMESPATH** an extended JMESPath language syntax.
 	ConditionLanguage pulumi.StringPtrInput `pulumi:"conditionLanguage"`
+	// (Updatable) Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
+	IsBodyInspectionEnabled pulumi.BoolPtrInput `pulumi:"isBodyInspectionEnabled"`
 	// (Updatable) Rule name. Must be unique within the module.
 	Name pulumi.StringInput `pulumi:"name"`
-	// (Updatable) An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are executed in order of appearance. The array cannot contain entries with the same pair of capability key and version more than once.
+	// (Updatable) An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
 	ProtectionCapabilities AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArrayInput `pulumi:"protectionCapabilities"`
 	// (Updatable) Settings for protection capabilities
 	ProtectionCapabilitySettings AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsPtrInput `pulumi:"protectionCapabilitySettings"`
@@ -2589,12 +2640,17 @@ func (o AppFirewallPolicyResponseProtectionRuleOutput) ConditionLanguage() pulum
 	return o.ApplyT(func(v AppFirewallPolicyResponseProtectionRule) *string { return v.ConditionLanguage }).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
+func (o AppFirewallPolicyResponseProtectionRuleOutput) IsBodyInspectionEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v AppFirewallPolicyResponseProtectionRule) *bool { return v.IsBodyInspectionEnabled }).(pulumi.BoolPtrOutput)
+}
+
 // (Updatable) Rule name. Must be unique within the module.
 func (o AppFirewallPolicyResponseProtectionRuleOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v AppFirewallPolicyResponseProtectionRule) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// (Updatable) An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are executed in order of appearance. The array cannot contain entries with the same pair of capability key and version more than once.
+// (Updatable) An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
 func (o AppFirewallPolicyResponseProtectionRuleOutput) ProtectionCapabilities() AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArrayOutput {
 	return o.ApplyT(func(v AppFirewallPolicyResponseProtectionRule) []AppFirewallPolicyResponseProtectionRuleProtectionCapability {
 		return v.ProtectionCapabilities
@@ -6306,6 +6362,10 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccess
 }
 
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtection struct {
+	// References action by name from actions defined in WebAppFirewallPolicy. Executed if HTTP message body size exceeds limit set in field `bodyInspectionSizeLimitInBytes`.
+	BodyInspectionSizeLimitExceededActionName string `pulumi:"bodyInspectionSizeLimitExceededActionName"`
+	// Maximum size of inspected HTTP message body in bytes. Actions to take if this limit is exceeded are defined in `bodyInspectionSizeLimitExceededActionName`.
+	BodyInspectionSizeLimitInBytes int `pulumi:"bodyInspectionSizeLimitInBytes"`
 	// Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
 	Rules []GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRule `pulumi:"rules"`
 }
@@ -6322,6 +6382,10 @@ type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectio
 }
 
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionArgs struct {
+	// References action by name from actions defined in WebAppFirewallPolicy. Executed if HTTP message body size exceeds limit set in field `bodyInspectionSizeLimitInBytes`.
+	BodyInspectionSizeLimitExceededActionName pulumi.StringInput `pulumi:"bodyInspectionSizeLimitExceededActionName"`
+	// Maximum size of inspected HTTP message body in bytes. Actions to take if this limit is exceeded are defined in `bodyInspectionSizeLimitExceededActionName`.
+	BodyInspectionSizeLimitInBytes pulumi.IntInput `pulumi:"bodyInspectionSizeLimitInBytes"`
 	// Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
 	Rules GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleArrayInput `pulumi:"rules"`
 }
@@ -6377,6 +6441,20 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtec
 	return o
 }
 
+// References action by name from actions defined in WebAppFirewallPolicy. Executed if HTTP message body size exceeds limit set in field `bodyInspectionSizeLimitInBytes`.
+func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionOutput) BodyInspectionSizeLimitExceededActionName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtection) string {
+		return v.BodyInspectionSizeLimitExceededActionName
+	}).(pulumi.StringOutput)
+}
+
+// Maximum size of inspected HTTP message body in bytes. Actions to take if this limit is exceeded are defined in `bodyInspectionSizeLimitExceededActionName`.
+func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionOutput) BodyInspectionSizeLimitInBytes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtection) int {
+		return v.BodyInspectionSizeLimitInBytes
+	}).(pulumi.IntOutput)
+}
+
 // Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionOutput) Rules() GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleArrayOutput {
 	return o.ApplyT(func(v GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtection) []GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRule {
@@ -6412,9 +6490,11 @@ type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectio
 	// The language used to parse condition from field `condition`. Available languages:
 	// * **JMESPATH** an extended JMESPath language syntax.
 	ConditionLanguage string `pulumi:"conditionLanguage"`
+	// Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
+	IsBodyInspectionEnabled bool `pulumi:"isBodyInspectionEnabled"`
 	// Rule name. Must be unique within the module.
 	Name string `pulumi:"name"`
-	// An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are executed in order of appearance. The array cannot contain entries with the same pair of capability key and version more than once.
+	// An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
 	ProtectionCapabilities []GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapability `pulumi:"protectionCapabilities"`
 	// Settings for protection capabilities
 	ProtectionCapabilitySettings []GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySetting `pulumi:"protectionCapabilitySettings"`
@@ -6441,9 +6521,11 @@ type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectio
 	// The language used to parse condition from field `condition`. Available languages:
 	// * **JMESPATH** an extended JMESPath language syntax.
 	ConditionLanguage pulumi.StringInput `pulumi:"conditionLanguage"`
+	// Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
+	IsBodyInspectionEnabled pulumi.BoolInput `pulumi:"isBodyInspectionEnabled"`
 	// Rule name. Must be unique within the module.
 	Name pulumi.StringInput `pulumi:"name"`
-	// An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are executed in order of appearance. The array cannot contain entries with the same pair of capability key and version more than once.
+	// An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
 	ProtectionCapabilities GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityArrayInput `pulumi:"protectionCapabilities"`
 	// Settings for protection capabilities
 	ProtectionCapabilitySettings GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySettingArrayInput `pulumi:"protectionCapabilitySettings"`
@@ -6524,6 +6606,13 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtec
 	}).(pulumi.StringOutput)
 }
 
+// Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
+func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleOutput) IsBodyInspectionEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRule) bool {
+		return v.IsBodyInspectionEnabled
+	}).(pulumi.BoolOutput)
+}
+
 // Rule name. Must be unique within the module.
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRule) string {
@@ -6531,7 +6620,7 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtec
 	}).(pulumi.StringOutput)
 }
 
-// An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are executed in order of appearance. The array cannot contain entries with the same pair of capability key and version more than once.
+// An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleOutput) ProtectionCapabilities() GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityArrayOutput {
 	return o.ApplyT(func(v GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRule) []GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapability {
 		return v.ProtectionCapabilities
@@ -7829,9 +7918,11 @@ type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtecti
 	// The language used to parse condition from field `condition`. Available languages:
 	// * **JMESPATH** an extended JMESPath language syntax.
 	ConditionLanguage string `pulumi:"conditionLanguage"`
+	// Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
+	IsBodyInspectionEnabled bool `pulumi:"isBodyInspectionEnabled"`
 	// Rule name. Must be unique within the module.
 	Name string `pulumi:"name"`
-	// An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are executed in order of appearance. The array cannot contain entries with the same pair of capability key and version more than once.
+	// An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
 	ProtectionCapabilities []GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapability `pulumi:"protectionCapabilities"`
 	// Settings for protection capabilities
 	ProtectionCapabilitySettings []GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySetting `pulumi:"protectionCapabilitySettings"`
@@ -7858,9 +7949,11 @@ type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtecti
 	// The language used to parse condition from field `condition`. Available languages:
 	// * **JMESPATH** an extended JMESPath language syntax.
 	ConditionLanguage pulumi.StringInput `pulumi:"conditionLanguage"`
+	// Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
+	IsBodyInspectionEnabled pulumi.BoolInput `pulumi:"isBodyInspectionEnabled"`
 	// Rule name. Must be unique within the module.
 	Name pulumi.StringInput `pulumi:"name"`
-	// An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are executed in order of appearance. The array cannot contain entries with the same pair of capability key and version more than once.
+	// An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
 	ProtectionCapabilities GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityArrayInput `pulumi:"protectionCapabilities"`
 	// Settings for protection capabilities
 	ProtectionCapabilitySettings GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySettingArrayInput `pulumi:"protectionCapabilitySettings"`
@@ -7941,6 +8034,13 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProte
 	}).(pulumi.StringOutput)
 }
 
+// Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
+func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleOutput) IsBodyInspectionEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRule) bool {
+		return v.IsBodyInspectionEnabled
+	}).(pulumi.BoolOutput)
+}
+
 // Rule name. Must be unique within the module.
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRule) string {
@@ -7948,7 +8048,7 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProte
 	}).(pulumi.StringOutput)
 }
 
-// An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are executed in order of appearance. The array cannot contain entries with the same pair of capability key and version more than once.
+// An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleOutput) ProtectionCapabilities() GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityArrayOutput {
 	return o.ApplyT(func(v GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRule) []GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapability {
 		return v.ProtectionCapabilities
@@ -9113,6 +9213,10 @@ func (o GetWebAppFirewallPolicyRequestAccessControlRuleArrayOutput) Index(i pulu
 }
 
 type GetWebAppFirewallPolicyRequestProtection struct {
+	// References action by name from actions defined in WebAppFirewallPolicy. Executed if HTTP message body size exceeds limit set in field `bodyInspectionSizeLimitInBytes`.
+	BodyInspectionSizeLimitExceededActionName string `pulumi:"bodyInspectionSizeLimitExceededActionName"`
+	// Maximum size of inspected HTTP message body in bytes. Actions to take if this limit is exceeded are defined in `bodyInspectionSizeLimitExceededActionName`.
+	BodyInspectionSizeLimitInBytes int `pulumi:"bodyInspectionSizeLimitInBytes"`
 	// Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
 	Rules []GetWebAppFirewallPolicyRequestProtectionRule `pulumi:"rules"`
 }
@@ -9129,6 +9233,10 @@ type GetWebAppFirewallPolicyRequestProtectionInput interface {
 }
 
 type GetWebAppFirewallPolicyRequestProtectionArgs struct {
+	// References action by name from actions defined in WebAppFirewallPolicy. Executed if HTTP message body size exceeds limit set in field `bodyInspectionSizeLimitInBytes`.
+	BodyInspectionSizeLimitExceededActionName pulumi.StringInput `pulumi:"bodyInspectionSizeLimitExceededActionName"`
+	// Maximum size of inspected HTTP message body in bytes. Actions to take if this limit is exceeded are defined in `bodyInspectionSizeLimitExceededActionName`.
+	BodyInspectionSizeLimitInBytes pulumi.IntInput `pulumi:"bodyInspectionSizeLimitInBytes"`
 	// Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
 	Rules GetWebAppFirewallPolicyRequestProtectionRuleArrayInput `pulumi:"rules"`
 }
@@ -9184,6 +9292,18 @@ func (o GetWebAppFirewallPolicyRequestProtectionOutput) ToGetWebAppFirewallPolic
 	return o
 }
 
+// References action by name from actions defined in WebAppFirewallPolicy. Executed if HTTP message body size exceeds limit set in field `bodyInspectionSizeLimitInBytes`.
+func (o GetWebAppFirewallPolicyRequestProtectionOutput) BodyInspectionSizeLimitExceededActionName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWebAppFirewallPolicyRequestProtection) string {
+		return v.BodyInspectionSizeLimitExceededActionName
+	}).(pulumi.StringOutput)
+}
+
+// Maximum size of inspected HTTP message body in bytes. Actions to take if this limit is exceeded are defined in `bodyInspectionSizeLimitExceededActionName`.
+func (o GetWebAppFirewallPolicyRequestProtectionOutput) BodyInspectionSizeLimitInBytes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetWebAppFirewallPolicyRequestProtection) int { return v.BodyInspectionSizeLimitInBytes }).(pulumi.IntOutput)
+}
+
 // Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
 func (o GetWebAppFirewallPolicyRequestProtectionOutput) Rules() GetWebAppFirewallPolicyRequestProtectionRuleArrayOutput {
 	return o.ApplyT(func(v GetWebAppFirewallPolicyRequestProtection) []GetWebAppFirewallPolicyRequestProtectionRule {
@@ -9219,9 +9339,11 @@ type GetWebAppFirewallPolicyRequestProtectionRule struct {
 	// The language used to parse condition from field `condition`. Available languages:
 	// * **JMESPATH** an extended JMESPath language syntax.
 	ConditionLanguage string `pulumi:"conditionLanguage"`
+	// Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
+	IsBodyInspectionEnabled bool `pulumi:"isBodyInspectionEnabled"`
 	// Rule name. Must be unique within the module.
 	Name string `pulumi:"name"`
-	// An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are executed in order of appearance. The array cannot contain entries with the same pair of capability key and version more than once.
+	// An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
 	ProtectionCapabilities []GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapability `pulumi:"protectionCapabilities"`
 	// Settings for protection capabilities
 	ProtectionCapabilitySettings []GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySetting `pulumi:"protectionCapabilitySettings"`
@@ -9248,9 +9370,11 @@ type GetWebAppFirewallPolicyRequestProtectionRuleArgs struct {
 	// The language used to parse condition from field `condition`. Available languages:
 	// * **JMESPATH** an extended JMESPath language syntax.
 	ConditionLanguage pulumi.StringInput `pulumi:"conditionLanguage"`
+	// Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
+	IsBodyInspectionEnabled pulumi.BoolInput `pulumi:"isBodyInspectionEnabled"`
 	// Rule name. Must be unique within the module.
 	Name pulumi.StringInput `pulumi:"name"`
-	// An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are executed in order of appearance. The array cannot contain entries with the same pair of capability key and version more than once.
+	// An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
 	ProtectionCapabilities GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityArrayInput `pulumi:"protectionCapabilities"`
 	// Settings for protection capabilities
 	ProtectionCapabilitySettings GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingArrayInput `pulumi:"protectionCapabilitySettings"`
@@ -9325,12 +9449,17 @@ func (o GetWebAppFirewallPolicyRequestProtectionRuleOutput) ConditionLanguage() 
 	return o.ApplyT(func(v GetWebAppFirewallPolicyRequestProtectionRule) string { return v.ConditionLanguage }).(pulumi.StringOutput)
 }
 
+// Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
+func (o GetWebAppFirewallPolicyRequestProtectionRuleOutput) IsBodyInspectionEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetWebAppFirewallPolicyRequestProtectionRule) bool { return v.IsBodyInspectionEnabled }).(pulumi.BoolOutput)
+}
+
 // Rule name. Must be unique within the module.
 func (o GetWebAppFirewallPolicyRequestProtectionRuleOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetWebAppFirewallPolicyRequestProtectionRule) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are executed in order of appearance. The array cannot contain entries with the same pair of capability key and version more than once.
+// An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
 func (o GetWebAppFirewallPolicyRequestProtectionRuleOutput) ProtectionCapabilities() GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityArrayOutput {
 	return o.ApplyT(func(v GetWebAppFirewallPolicyRequestProtectionRule) []GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapability {
 		return v.ProtectionCapabilities
@@ -10596,9 +10725,11 @@ type GetWebAppFirewallPolicyResponseProtectionRule struct {
 	// The language used to parse condition from field `condition`. Available languages:
 	// * **JMESPATH** an extended JMESPath language syntax.
 	ConditionLanguage string `pulumi:"conditionLanguage"`
+	// Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
+	IsBodyInspectionEnabled bool `pulumi:"isBodyInspectionEnabled"`
 	// Rule name. Must be unique within the module.
 	Name string `pulumi:"name"`
-	// An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are executed in order of appearance. The array cannot contain entries with the same pair of capability key and version more than once.
+	// An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
 	ProtectionCapabilities []GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapability `pulumi:"protectionCapabilities"`
 	// Settings for protection capabilities
 	ProtectionCapabilitySettings []GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySetting `pulumi:"protectionCapabilitySettings"`
@@ -10625,9 +10756,11 @@ type GetWebAppFirewallPolicyResponseProtectionRuleArgs struct {
 	// The language used to parse condition from field `condition`. Available languages:
 	// * **JMESPATH** an extended JMESPath language syntax.
 	ConditionLanguage pulumi.StringInput `pulumi:"conditionLanguage"`
+	// Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
+	IsBodyInspectionEnabled pulumi.BoolInput `pulumi:"isBodyInspectionEnabled"`
 	// Rule name. Must be unique within the module.
 	Name pulumi.StringInput `pulumi:"name"`
-	// An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are executed in order of appearance. The array cannot contain entries with the same pair of capability key and version more than once.
+	// An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
 	ProtectionCapabilities GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityArrayInput `pulumi:"protectionCapabilities"`
 	// Settings for protection capabilities
 	ProtectionCapabilitySettings GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingArrayInput `pulumi:"protectionCapabilitySettings"`
@@ -10702,12 +10835,17 @@ func (o GetWebAppFirewallPolicyResponseProtectionRuleOutput) ConditionLanguage()
 	return o.ApplyT(func(v GetWebAppFirewallPolicyResponseProtectionRule) string { return v.ConditionLanguage }).(pulumi.StringOutput)
 }
 
+// Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
+func (o GetWebAppFirewallPolicyResponseProtectionRuleOutput) IsBodyInspectionEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetWebAppFirewallPolicyResponseProtectionRule) bool { return v.IsBodyInspectionEnabled }).(pulumi.BoolOutput)
+}
+
 // Rule name. Must be unique within the module.
 func (o GetWebAppFirewallPolicyResponseProtectionRuleOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetWebAppFirewallPolicyResponseProtectionRule) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are executed in order of appearance. The array cannot contain entries with the same pair of capability key and version more than once.
+// An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
 func (o GetWebAppFirewallPolicyResponseProtectionRuleOutput) ProtectionCapabilities() GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityArrayOutput {
 	return o.ApplyT(func(v GetWebAppFirewallPolicyResponseProtectionRule) []GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapability {
 		return v.ProtectionCapabilities

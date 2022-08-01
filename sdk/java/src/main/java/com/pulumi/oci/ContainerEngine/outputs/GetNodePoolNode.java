@@ -74,7 +74,7 @@ public final class GetNodePoolNode {
      */
     private final String publicIp;
     /**
-     * @return The state of the node.
+     * @return The state of the nodepool.
      * 
      */
     private final String state;
@@ -201,7 +201,7 @@ public final class GetNodePoolNode {
         return this.publicIp;
     }
     /**
-     * @return The state of the node.
+     * @return The state of the nodepool.
      * 
      */
     public String state() {

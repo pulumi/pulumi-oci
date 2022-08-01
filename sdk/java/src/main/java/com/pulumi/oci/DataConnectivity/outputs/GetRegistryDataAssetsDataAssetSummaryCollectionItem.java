@@ -11,6 +11,7 @@ import com.pulumi.oci.DataConnectivity.outputs.GetRegistryDataAssetsDataAssetSum
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -31,6 +32,11 @@ public final class GetRegistryDataAssetsDataAssetSummaryCollectionItem {
      * 
      */
     private final String description;
+    /**
+     * @return The list of endpoints with which this data asset is associated.
+     * 
+     */
+    private final List<String> endPoints;
     /**
      * @return The external key for the object.
      * 
@@ -107,6 +113,7 @@ public final class GetRegistryDataAssetsDataAssetSummaryCollectionItem {
         @CustomType.Parameter("assetProperties") Map<String,Object> assetProperties,
         @CustomType.Parameter("defaultConnection") GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnection defaultConnection,
         @CustomType.Parameter("description") String description,
+        @CustomType.Parameter("endPoints") List<String> endPoints,
         @CustomType.Parameter("externalKey") String externalKey,
         @CustomType.Parameter("identifier") String identifier,
         @CustomType.Parameter("key") String key,
@@ -124,6 +131,7 @@ public final class GetRegistryDataAssetsDataAssetSummaryCollectionItem {
         this.assetProperties = assetProperties;
         this.defaultConnection = defaultConnection;
         this.description = description;
+        this.endPoints = endPoints;
         this.externalKey = externalKey;
         this.identifier = identifier;
         this.key = key;
@@ -160,6 +168,13 @@ public final class GetRegistryDataAssetsDataAssetSummaryCollectionItem {
      */
     public String description() {
         return this.description;
+    }
+    /**
+     * @return The list of endpoints with which this data asset is associated.
+     * 
+     */
+    public List<String> endPoints() {
+        return this.endPoints;
     }
     /**
      * @return The external key for the object.
@@ -272,6 +287,7 @@ public final class GetRegistryDataAssetsDataAssetSummaryCollectionItem {
         private Map<String,Object> assetProperties;
         private GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnection defaultConnection;
         private String description;
+        private List<String> endPoints;
         private String externalKey;
         private String identifier;
         private String key;
@@ -296,6 +312,7 @@ public final class GetRegistryDataAssetsDataAssetSummaryCollectionItem {
     	      this.assetProperties = defaults.assetProperties;
     	      this.defaultConnection = defaults.defaultConnection;
     	      this.description = defaults.description;
+    	      this.endPoints = defaults.endPoints;
     	      this.externalKey = defaults.externalKey;
     	      this.identifier = defaults.identifier;
     	      this.key = defaults.key;
@@ -323,6 +340,13 @@ public final class GetRegistryDataAssetsDataAssetSummaryCollectionItem {
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
+        }
+        public Builder endPoints(List<String> endPoints) {
+            this.endPoints = Objects.requireNonNull(endPoints);
+            return this;
+        }
+        public Builder endPoints(String... endPoints) {
+            return endPoints(List.of(endPoints));
         }
         public Builder externalKey(String externalKey) {
             this.externalKey = Objects.requireNonNull(externalKey);
@@ -380,7 +404,7 @@ public final class GetRegistryDataAssetsDataAssetSummaryCollectionItem {
             this.type = Objects.requireNonNull(type);
             return this;
         }        public GetRegistryDataAssetsDataAssetSummaryCollectionItem build() {
-            return new GetRegistryDataAssetsDataAssetSummaryCollectionItem(assetProperties, defaultConnection, description, externalKey, identifier, key, metadata, modelType, modelVersion, name, nativeTypeSystem, objectStatus, objectVersion, properties, registryId, registryMetadata, type);
+            return new GetRegistryDataAssetsDataAssetSummaryCollectionItem(assetProperties, defaultConnection, description, endPoints, externalKey, identifier, key, metadata, modelType, modelVersion, name, nativeTypeSystem, objectStatus, objectVersion, properties, registryId, registryMetadata, type);
         }
     }
 }

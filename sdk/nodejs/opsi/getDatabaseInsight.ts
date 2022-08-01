@@ -91,6 +91,7 @@ export interface GetDatabaseInsightResult {
      * The version of the database.
      */
     readonly databaseVersion: string;
+    readonly dbmPrivateEndpointId: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */

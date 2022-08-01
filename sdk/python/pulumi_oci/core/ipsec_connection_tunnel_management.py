@@ -20,6 +20,7 @@ class IpsecConnectionTunnelManagementArgs:
                  tunnel_id: pulumi.Input[str],
                  bgp_session_infos: Optional[pulumi.Input[Sequence[pulumi.Input['IpsecConnectionTunnelManagementBgpSessionInfoArgs']]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 dpd_configs: Optional[pulumi.Input[Sequence[pulumi.Input['IpsecConnectionTunnelManagementDpdConfigArgs']]]] = None,
                  encryption_domain_config: Optional[pulumi.Input['IpsecConnectionTunnelManagementEncryptionDomainConfigArgs']] = None,
                  ike_version: Optional[pulumi.Input[str]] = None,
                  shared_secret: Optional[pulumi.Input[str]] = None):
@@ -41,6 +42,8 @@ class IpsecConnectionTunnelManagementArgs:
             pulumi.set(__self__, "bgp_session_infos", bgp_session_infos)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if dpd_configs is not None:
+            pulumi.set(__self__, "dpd_configs", dpd_configs)
         if encryption_domain_config is not None:
             pulumi.set(__self__, "encryption_domain_config", encryption_domain_config)
         if ike_version is not None:
@@ -109,6 +112,15 @@ class IpsecConnectionTunnelManagementArgs:
         pulumi.set(self, "display_name", value)
 
     @property
+    @pulumi.getter(name="dpdConfigs")
+    def dpd_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IpsecConnectionTunnelManagementDpdConfigArgs']]]]:
+        return pulumi.get(self, "dpd_configs")
+
+    @dpd_configs.setter
+    def dpd_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IpsecConnectionTunnelManagementDpdConfigArgs']]]]):
+        pulumi.set(self, "dpd_configs", value)
+
+    @property
     @pulumi.getter(name="encryptionDomainConfig")
     def encryption_domain_config(self) -> Optional[pulumi.Input['IpsecConnectionTunnelManagementEncryptionDomainConfigArgs']]:
         """
@@ -152,6 +164,7 @@ class _IpsecConnectionTunnelManagementState:
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  cpe_ip: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 dpd_configs: Optional[pulumi.Input[Sequence[pulumi.Input['IpsecConnectionTunnelManagementDpdConfigArgs']]]] = None,
                  dpd_mode: Optional[pulumi.Input[str]] = None,
                  dpd_timeout_in_sec: Optional[pulumi.Input[int]] = None,
                  encryption_domain_config: Optional[pulumi.Input['IpsecConnectionTunnelManagementEncryptionDomainConfigArgs']] = None,
@@ -195,6 +208,8 @@ class _IpsecConnectionTunnelManagementState:
             pulumi.set(__self__, "cpe_ip", cpe_ip)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if dpd_configs is not None:
+            pulumi.set(__self__, "dpd_configs", dpd_configs)
         if dpd_mode is not None:
             pulumi.set(__self__, "dpd_mode", dpd_mode)
         if dpd_timeout_in_sec is not None:
@@ -277,6 +292,15 @@ class _IpsecConnectionTunnelManagementState:
     @display_name.setter
     def display_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="dpdConfigs")
+    def dpd_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IpsecConnectionTunnelManagementDpdConfigArgs']]]]:
+        return pulumi.get(self, "dpd_configs")
+
+    @dpd_configs.setter
+    def dpd_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IpsecConnectionTunnelManagementDpdConfigArgs']]]]):
+        pulumi.set(self, "dpd_configs", value)
 
     @property
     @pulumi.getter(name="dpdMode")
@@ -472,6 +496,7 @@ class IpsecConnectionTunnelManagement(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  bgp_session_infos: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IpsecConnectionTunnelManagementBgpSessionInfoArgs']]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 dpd_configs: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IpsecConnectionTunnelManagementDpdConfigArgs']]]]] = None,
                  encryption_domain_config: Optional[pulumi.Input[pulumi.InputType['IpsecConnectionTunnelManagementEncryptionDomainConfigArgs']]] = None,
                  ike_version: Optional[pulumi.Input[str]] = None,
                  ipsec_id: Optional[pulumi.Input[str]] = None,
@@ -599,6 +624,7 @@ class IpsecConnectionTunnelManagement(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  bgp_session_infos: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IpsecConnectionTunnelManagementBgpSessionInfoArgs']]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 dpd_configs: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IpsecConnectionTunnelManagementDpdConfigArgs']]]]] = None,
                  encryption_domain_config: Optional[pulumi.Input[pulumi.InputType['IpsecConnectionTunnelManagementEncryptionDomainConfigArgs']]] = None,
                  ike_version: Optional[pulumi.Input[str]] = None,
                  ipsec_id: Optional[pulumi.Input[str]] = None,
@@ -619,6 +645,7 @@ class IpsecConnectionTunnelManagement(pulumi.CustomResource):
 
             __props__.__dict__["bgp_session_infos"] = bgp_session_infos
             __props__.__dict__["display_name"] = display_name
+            __props__.__dict__["dpd_configs"] = dpd_configs
             __props__.__dict__["encryption_domain_config"] = encryption_domain_config
             __props__.__dict__["ike_version"] = ike_version
             if ipsec_id is None and not opts.urn:
@@ -658,6 +685,7 @@ class IpsecConnectionTunnelManagement(pulumi.CustomResource):
             compartment_id: Optional[pulumi.Input[str]] = None,
             cpe_ip: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
+            dpd_configs: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IpsecConnectionTunnelManagementDpdConfigArgs']]]]] = None,
             dpd_mode: Optional[pulumi.Input[str]] = None,
             dpd_timeout_in_sec: Optional[pulumi.Input[int]] = None,
             encryption_domain_config: Optional[pulumi.Input[pulumi.InputType['IpsecConnectionTunnelManagementEncryptionDomainConfigArgs']]] = None,
@@ -706,6 +734,7 @@ class IpsecConnectionTunnelManagement(pulumi.CustomResource):
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["cpe_ip"] = cpe_ip
         __props__.__dict__["display_name"] = display_name
+        __props__.__dict__["dpd_configs"] = dpd_configs
         __props__.__dict__["dpd_mode"] = dpd_mode
         __props__.__dict__["dpd_timeout_in_sec"] = dpd_timeout_in_sec
         __props__.__dict__["encryption_domain_config"] = encryption_domain_config
@@ -756,6 +785,11 @@ class IpsecConnectionTunnelManagement(pulumi.CustomResource):
         A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="dpdConfigs")
+    def dpd_configs(self) -> pulumi.Output[Optional[Sequence['outputs.IpsecConnectionTunnelManagementDpdConfig']]]:
+        return pulumi.get(self, "dpd_configs")
 
     @property
     @pulumi.getter(name="dpdMode")

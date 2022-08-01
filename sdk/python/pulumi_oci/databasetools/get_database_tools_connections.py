@@ -49,7 +49,7 @@ class GetDatabaseToolsConnectionsResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -86,7 +86,7 @@ class GetDatabaseToolsConnectionsResult:
     @pulumi.getter
     def state(self) -> Optional[str]:
         """
-        The current state of the DatabaseToolsConnection.
+        The current state of the Database Tools connection.
         """
         return pulumi.get(self, "state")
 
@@ -94,7 +94,7 @@ class GetDatabaseToolsConnectionsResult:
     @pulumi.getter
     def types(self) -> Optional[Sequence[str]]:
         """
-        The DatabaseToolsConnection type.
+        The Database Tools connection type.
         """
         return pulumi.get(self, "types")
 
@@ -123,7 +123,7 @@ def get_database_tools_connections(compartment_id: Optional[str] = None,
     """
     This data source provides the list of Database Tools Connections in Oracle Cloud Infrastructure Database Tools service.
 
-    Returns a list of DatabaseToolsConnections.
+    Returns a list of Database Tools connections.
 
     ## Example Usage
 
@@ -139,9 +139,9 @@ def get_database_tools_connections(compartment_id: Optional[str] = None,
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
-    :param Sequence[str] types: A filter to return only resources their endpointServiceId matches the given endpointServiceId.
+    :param str display_name: A filter to return only resources that match the entire specified display name.
+    :param str state: A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
+    :param Sequence[str] types: A filter to return only resources their type matches the specified type.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -175,7 +175,7 @@ def get_database_tools_connections_output(compartment_id: Optional[pulumi.Input[
     """
     This data source provides the list of Database Tools Connections in Oracle Cloud Infrastructure Database Tools service.
 
-    Returns a list of DatabaseToolsConnections.
+    Returns a list of Database Tools connections.
 
     ## Example Usage
 
@@ -191,8 +191,8 @@ def get_database_tools_connections_output(compartment_id: Optional[pulumi.Input[
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
-    :param Sequence[str] types: A filter to return only resources their endpointServiceId matches the given endpointServiceId.
+    :param str display_name: A filter to return only resources that match the entire specified display name.
+    :param str state: A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
+    :param Sequence[str] types: A filter to return only resources their type matches the specified type.
     """
     ...

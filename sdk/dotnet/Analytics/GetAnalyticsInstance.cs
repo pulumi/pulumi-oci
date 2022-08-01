@@ -142,6 +142,10 @@ namespace Pulumi.Oci.Analytics
         public readonly string Id;
         public readonly string IdcsAccessToken;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+        /// </summary>
+        public readonly string KmsKeyId;
+        /// <summary>
         /// The license used for the service.
         /// </summary>
         public readonly string LicenseType;
@@ -153,10 +157,6 @@ namespace Pulumi.Oci.Analytics
         /// Base representation of a network endpoint.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAnalyticsInstanceNetworkEndpointDetailResult> NetworkEndpointDetails;
-        /// <summary>
-        /// Map of PrivateAccessChannel unique identifier key as KEY and PrivateAccessChannel Object as VALUE.
-        /// </summary>
-        public readonly ImmutableDictionary<string, object> PrivateAccessChannels;
         /// <summary>
         /// URL of the Analytics service.
         /// </summary>
@@ -173,10 +173,6 @@ namespace Pulumi.Oci.Analytics
         /// The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
         /// </summary>
         public readonly string TimeUpdated;
-        /// <summary>
-        /// Map of VanityUrl unique identifier key as KEY and VanityUrl Object as VALUE.
-        /// </summary>
-        public readonly ImmutableDictionary<string, object> VanityUrlDetails;
 
         [OutputConstructor]
         private GetAnalyticsInstanceResult(
@@ -200,13 +196,13 @@ namespace Pulumi.Oci.Analytics
 
             string idcsAccessToken,
 
+            string kmsKeyId,
+
             string licenseType,
 
             string name,
 
             ImmutableArray<Outputs.GetAnalyticsInstanceNetworkEndpointDetailResult> networkEndpointDetails,
-
-            ImmutableDictionary<string, object> privateAccessChannels,
 
             string serviceUrl,
 
@@ -214,9 +210,7 @@ namespace Pulumi.Oci.Analytics
 
             string timeCreated,
 
-            string timeUpdated,
-
-            ImmutableDictionary<string, object> vanityUrlDetails)
+            string timeUpdated)
         {
             AnalyticsInstanceId = analyticsInstanceId;
             Capacities = capacities;
@@ -228,15 +222,14 @@ namespace Pulumi.Oci.Analytics
             FreeformTags = freeformTags;
             Id = id;
             IdcsAccessToken = idcsAccessToken;
+            KmsKeyId = kmsKeyId;
             LicenseType = licenseType;
             Name = name;
             NetworkEndpointDetails = networkEndpointDetails;
-            PrivateAccessChannels = privateAccessChannels;
             ServiceUrl = serviceUrl;
             State = state;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
-            VanityUrlDetails = vanityUrlDetails;
         }
     }
 }

@@ -18,7 +18,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string? CompartmentId;
         /// <summary>
-        /// (Updatable) ResponderRecipe Description
+        /// (Updatable) Responder recipe description.
         /// </summary>
         public readonly string? Description;
         /// <summary>
@@ -26,7 +26,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly Outputs.ResponderRecipeResponderRuleDetails Details;
         /// <summary>
-        /// (Updatable) ResponderRecipe Display Name
+        /// (Updatable) Responder recipe display name.
         /// </summary>
         public readonly string? DisplayName;
         /// <summary>

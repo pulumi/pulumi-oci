@@ -12,7 +12,7 @@ import (
 
 // This data source provides the list of Database Tools Private Endpoints in Oracle Cloud Infrastructure Database Tools service.
 //
-// Returns a list of DatabaseToolsPrivateEndpoints.
+// Returns a list of Database Tools private endpoints.
 //
 // ## Example Usage
 //
@@ -53,31 +53,31 @@ func GetDatabaseToolsPrivateEndpoints(ctx *pulumi.Context, args *GetDatabaseTool
 type GetDatabaseToolsPrivateEndpointsArgs struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
-	// A filter to return only resources that match the entire display name given.
+	// A filter to return only resources that match the entire specified display name.
 	DisplayName *string `pulumi:"displayName"`
-	// A filter to return only resources their type matches the given type.
+	// A filter to return only resources their `endpointServiceId` matches the specified `endpointServiceId`.
 	EndpointServiceId *string                                  `pulumi:"endpointServiceId"`
 	Filters           []GetDatabaseToolsPrivateEndpointsFilter `pulumi:"filters"`
-	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	// A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
 	State *string `pulumi:"state"`
-	// A filter to return only resources their subnetId matches the given subnetId.
+	// A filter to return only resources their `subnetId` matches the specified `subnetId`.
 	SubnetId *string `pulumi:"subnetId"`
 }
 
 // A collection of values returned by getDatabaseToolsPrivateEndpoints.
 type GetDatabaseToolsPrivateEndpointsResult struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools private endpoint.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The list of database_tools_private_endpoint_collection.
 	DatabaseToolsPrivateEndpointCollections []GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollection `pulumi:"databaseToolsPrivateEndpointCollections"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsEndpointService.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Endpoint Service.
 	EndpointServiceId *string                                  `pulumi:"endpointServiceId"`
 	Filters           []GetDatabaseToolsPrivateEndpointsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
-	// The current state of the DatabaseToolsPrivateEndpoint.
+	// The current state of the Database Tools private endpoint.
 	State *string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that the private endpoint belongs to.
 	SubnetId *string `pulumi:"subnetId"`
@@ -100,14 +100,14 @@ func GetDatabaseToolsPrivateEndpointsOutput(ctx *pulumi.Context, args GetDatabas
 type GetDatabaseToolsPrivateEndpointsOutputArgs struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// A filter to return only resources that match the entire display name given.
+	// A filter to return only resources that match the entire specified display name.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
-	// A filter to return only resources their type matches the given type.
+	// A filter to return only resources their `endpointServiceId` matches the specified `endpointServiceId`.
 	EndpointServiceId pulumi.StringPtrInput                            `pulumi:"endpointServiceId"`
 	Filters           GetDatabaseToolsPrivateEndpointsFilterArrayInput `pulumi:"filters"`
-	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	// A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
 	State pulumi.StringPtrInput `pulumi:"state"`
-	// A filter to return only resources their subnetId matches the given subnetId.
+	// A filter to return only resources their `subnetId` matches the specified `subnetId`.
 	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 }
 
@@ -130,7 +130,7 @@ func (o GetDatabaseToolsPrivateEndpointsResultOutput) ToGetDatabaseToolsPrivateE
 	return o
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools private endpoint.
 func (o GetDatabaseToolsPrivateEndpointsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseToolsPrivateEndpointsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -147,7 +147,7 @@ func (o GetDatabaseToolsPrivateEndpointsResultOutput) DisplayName() pulumi.Strin
 	return o.ApplyT(func(v GetDatabaseToolsPrivateEndpointsResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsEndpointService.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Endpoint Service.
 func (o GetDatabaseToolsPrivateEndpointsResultOutput) EndpointServiceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDatabaseToolsPrivateEndpointsResult) *string { return v.EndpointServiceId }).(pulumi.StringPtrOutput)
 }
@@ -163,7 +163,7 @@ func (o GetDatabaseToolsPrivateEndpointsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseToolsPrivateEndpointsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The current state of the DatabaseToolsPrivateEndpoint.
+// The current state of the Database Tools private endpoint.
 func (o GetDatabaseToolsPrivateEndpointsResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDatabaseToolsPrivateEndpointsResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }

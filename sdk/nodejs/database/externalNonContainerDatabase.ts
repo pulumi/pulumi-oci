@@ -123,6 +123,10 @@ export class ExternalNonContainerDatabase extends pulumi.CustomResource {
      */
     public /*out*/ readonly operationsInsightsConfigs!: pulumi.Output<outputs.Database.ExternalNonContainerDatabaseOperationsInsightsConfig[]>;
     /**
+     * The configuration of Stack Monitoring for the external database.
+     */
+    public /*out*/ readonly stackMonitoringConfigs!: pulumi.Output<outputs.Database.ExternalNonContainerDatabaseStackMonitoringConfig[]>;
+    /**
      * The current state of the Oracle Cloud Infrastructure external database resource.
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
@@ -163,6 +167,7 @@ export class ExternalNonContainerDatabase extends pulumi.CustomResource {
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["ncharacterSet"] = state ? state.ncharacterSet : undefined;
             resourceInputs["operationsInsightsConfigs"] = state ? state.operationsInsightsConfigs : undefined;
+            resourceInputs["stackMonitoringConfigs"] = state ? state.stackMonitoringConfigs : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeZone"] = state ? state.timeZone : undefined;
@@ -189,6 +194,7 @@ export class ExternalNonContainerDatabase extends pulumi.CustomResource {
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["ncharacterSet"] = undefined /*out*/;
             resourceInputs["operationsInsightsConfigs"] = undefined /*out*/;
+            resourceInputs["stackMonitoringConfigs"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeZone"] = undefined /*out*/;
@@ -262,6 +268,10 @@ export interface ExternalNonContainerDatabaseState {
      * The configuration of Operations Insights for the external database
      */
     operationsInsightsConfigs?: pulumi.Input<pulumi.Input<inputs.Database.ExternalNonContainerDatabaseOperationsInsightsConfig>[]>;
+    /**
+     * The configuration of Stack Monitoring for the external database.
+     */
+    stackMonitoringConfigs?: pulumi.Input<pulumi.Input<inputs.Database.ExternalNonContainerDatabaseStackMonitoringConfig>[]>;
     /**
      * The current state of the Oracle Cloud Infrastructure external database resource.
      */

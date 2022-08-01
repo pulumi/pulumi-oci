@@ -6,6 +6,7 @@ package com.pulumi.oci.BigDataService.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.BigDataService.inputs.AutoScalingConfigurationPolicyArgs;
+import com.pulumi.oci.BigDataService.inputs.AutoScalingConfigurationPolicyDetailsArgs;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -78,14 +79,14 @@ public final class AutoScalingConfigurationState extends com.pulumi.resources.Re
     }
 
     /**
-     * A node type that is managed by an autoscale configuration. The only supported type is WORKER.
+     * A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
      * 
      */
     @Import(name="nodeType")
     private @Nullable Output<String> nodeType;
 
     /**
-     * @return A node type that is managed by an autoscale configuration. The only supported type is WORKER.
+     * @return A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
      * 
      */
     public Optional<Output<String>> nodeType() {
@@ -93,18 +94,33 @@ public final class AutoScalingConfigurationState extends com.pulumi.resources.Re
     }
 
     /**
-     * (Updatable) Policy definitions for the autoscale configuration.
+     * (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
      * 
      */
     @Import(name="policy")
     private @Nullable Output<AutoScalingConfigurationPolicyArgs> policy;
 
     /**
-     * @return (Updatable) Policy definitions for the autoscale configuration.
+     * @return (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
      * 
      */
     public Optional<Output<AutoScalingConfigurationPolicyArgs>> policy() {
         return Optional.ofNullable(this.policy);
+    }
+
+    /**
+     * (Updatable) Policy definition for the autoscale configuration.
+     * 
+     */
+    @Import(name="policyDetails")
+    private @Nullable Output<AutoScalingConfigurationPolicyDetailsArgs> policyDetails;
+
+    /**
+     * @return (Updatable) Policy definition for the autoscale configuration.
+     * 
+     */
+    public Optional<Output<AutoScalingConfigurationPolicyDetailsArgs>> policyDetails() {
+        return Optional.ofNullable(this.policyDetails);
     }
 
     /**
@@ -161,6 +177,7 @@ public final class AutoScalingConfigurationState extends com.pulumi.resources.Re
         this.isEnabled = $.isEnabled;
         this.nodeType = $.nodeType;
         this.policy = $.policy;
+        this.policyDetails = $.policyDetails;
         this.state = $.state;
         this.timeCreated = $.timeCreated;
         this.timeUpdated = $.timeUpdated;
@@ -269,7 +286,7 @@ public final class AutoScalingConfigurationState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param nodeType A node type that is managed by an autoscale configuration. The only supported type is WORKER.
+         * @param nodeType A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
          * 
          * @return builder
          * 
@@ -280,7 +297,7 @@ public final class AutoScalingConfigurationState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param nodeType A node type that is managed by an autoscale configuration. The only supported type is WORKER.
+         * @param nodeType A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
          * 
          * @return builder
          * 
@@ -290,7 +307,7 @@ public final class AutoScalingConfigurationState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param policy (Updatable) Policy definitions for the autoscale configuration.
+         * @param policy (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
          * 
          * @return builder
          * 
@@ -301,13 +318,34 @@ public final class AutoScalingConfigurationState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param policy (Updatable) Policy definitions for the autoscale configuration.
+         * @param policy (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
          * 
          * @return builder
          * 
          */
         public Builder policy(AutoScalingConfigurationPolicyArgs policy) {
             return policy(Output.of(policy));
+        }
+
+        /**
+         * @param policyDetails (Updatable) Policy definition for the autoscale configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder policyDetails(@Nullable Output<AutoScalingConfigurationPolicyDetailsArgs> policyDetails) {
+            $.policyDetails = policyDetails;
+            return this;
+        }
+
+        /**
+         * @param policyDetails (Updatable) Policy definition for the autoscale configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder policyDetails(AutoScalingConfigurationPolicyDetailsArgs policyDetails) {
+            return policyDetails(Output.of(policyDetails));
         }
 
         /**

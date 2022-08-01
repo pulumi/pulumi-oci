@@ -117,7 +117,7 @@ export class DatabaseSoftwareImage extends pulumi.CustomResource {
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
     /**
-     * output from lsinventory which will get passed as a string
+     * The output from the OPatch lsInventory command, which is passed as a string.
      */
     public readonly lsInventory!: pulumi.Output<string>;
     /**
@@ -251,7 +251,7 @@ export interface DatabaseSoftwareImageState {
      */
     lifecycleDetails?: pulumi.Input<string>;
     /**
-     * output from lsinventory which will get passed as a string
+     * The output from the OPatch lsInventory command, which is passed as a string.
      */
     lsInventory?: pulumi.Input<string>;
     /**
@@ -309,7 +309,7 @@ export interface DatabaseSoftwareImageArgs {
      */
     imageType?: pulumi.Input<string>;
     /**
-     * output from lsinventory which will get passed as a string
+     * The output from the OPatch lsInventory command, which is passed as a string.
      */
     lsInventory?: pulumi.Input<string>;
     /**

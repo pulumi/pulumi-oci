@@ -9262,6 +9262,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemResult(dict):
                  asset_properties: Mapping[str, Any],
                  default_connection: 'outputs.GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionResult',
                  description: str,
+                 end_points: Sequence[str],
                  external_key: str,
                  identifier: str,
                  key: str,
@@ -9280,6 +9281,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemResult(dict):
         :param Mapping[str, Any] asset_properties: Additional properties for the data asset.
         :param 'GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionArgs' default_connection: The default connection key.
         :param str description: A user defined description for the object.
+        :param Sequence[str] end_points: The list of endpoints with which this data asset is associated.
         :param str external_key: The external key for the object.
         :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
         :param str key: The identifying key for the object.
@@ -9298,6 +9300,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemResult(dict):
         pulumi.set(__self__, "asset_properties", asset_properties)
         pulumi.set(__self__, "default_connection", default_connection)
         pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "end_points", end_points)
         pulumi.set(__self__, "external_key", external_key)
         pulumi.set(__self__, "identifier", identifier)
         pulumi.set(__self__, "key", key)
@@ -9336,6 +9339,14 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemResult(dict):
         A user defined description for the object.
         """
         return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="endPoints")
+    def end_points(self) -> Sequence[str]:
+        """
+        The list of endpoints with which this data asset is associated.
+        """
+        return pulumi.get(self, "end_points")
 
     @property
     @pulumi.getter(name="externalKey")

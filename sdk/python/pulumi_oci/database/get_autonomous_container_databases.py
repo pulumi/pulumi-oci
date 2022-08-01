@@ -72,7 +72,7 @@ class GetAutonomousContainerDatabasesResult:
     @pulumi.getter(name="autonomousExadataInfrastructureId")
     def autonomous_exadata_infrastructure_id(self) -> Optional[str]:
         """
-        The OCID of the Autonomous Exadata Infrastructure.
+        **No longer used.** For Autonomous Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
         """
         return pulumi.get(self, "autonomous_exadata_infrastructure_id")
 

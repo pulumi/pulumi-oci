@@ -17,6 +17,11 @@ public final class InstanceSourceDetails {
      */
     private final @Nullable String bootVolumeSizeInGbs;
     /**
+     * @return The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service&#39;s elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+     * 
+     */
+    private final @Nullable String bootVolumeVpusPerGb;
+    /**
      * @return The OCID of the Key Management key to assign as the master encryption key for the boot volume.
      * 
      */
@@ -35,10 +40,12 @@ public final class InstanceSourceDetails {
     @CustomType.Constructor
     private InstanceSourceDetails(
         @CustomType.Parameter("bootVolumeSizeInGbs") @Nullable String bootVolumeSizeInGbs,
+        @CustomType.Parameter("bootVolumeVpusPerGb") @Nullable String bootVolumeVpusPerGb,
         @CustomType.Parameter("kmsKeyId") @Nullable String kmsKeyId,
         @CustomType.Parameter("sourceId") String sourceId,
         @CustomType.Parameter("sourceType") String sourceType) {
         this.bootVolumeSizeInGbs = bootVolumeSizeInGbs;
+        this.bootVolumeVpusPerGb = bootVolumeVpusPerGb;
         this.kmsKeyId = kmsKeyId;
         this.sourceId = sourceId;
         this.sourceType = sourceType;
@@ -50,6 +57,13 @@ public final class InstanceSourceDetails {
      */
     public Optional<String> bootVolumeSizeInGbs() {
         return Optional.ofNullable(this.bootVolumeSizeInGbs);
+    }
+    /**
+     * @return The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service&#39;s elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+     * 
+     */
+    public Optional<String> bootVolumeVpusPerGb() {
+        return Optional.ofNullable(this.bootVolumeVpusPerGb);
     }
     /**
      * @return The OCID of the Key Management key to assign as the master encryption key for the boot volume.
@@ -83,6 +97,7 @@ public final class InstanceSourceDetails {
 
     public static final class Builder {
         private @Nullable String bootVolumeSizeInGbs;
+        private @Nullable String bootVolumeVpusPerGb;
         private @Nullable String kmsKeyId;
         private String sourceId;
         private String sourceType;
@@ -94,6 +109,7 @@ public final class InstanceSourceDetails {
         public Builder(InstanceSourceDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bootVolumeSizeInGbs = defaults.bootVolumeSizeInGbs;
+    	      this.bootVolumeVpusPerGb = defaults.bootVolumeVpusPerGb;
     	      this.kmsKeyId = defaults.kmsKeyId;
     	      this.sourceId = defaults.sourceId;
     	      this.sourceType = defaults.sourceType;
@@ -101,6 +117,10 @@ public final class InstanceSourceDetails {
 
         public Builder bootVolumeSizeInGbs(@Nullable String bootVolumeSizeInGbs) {
             this.bootVolumeSizeInGbs = bootVolumeSizeInGbs;
+            return this;
+        }
+        public Builder bootVolumeVpusPerGb(@Nullable String bootVolumeVpusPerGb) {
+            this.bootVolumeVpusPerGb = bootVolumeVpusPerGb;
             return this;
         }
         public Builder kmsKeyId(@Nullable String kmsKeyId) {
@@ -115,7 +135,7 @@ public final class InstanceSourceDetails {
             this.sourceType = Objects.requireNonNull(sourceType);
             return this;
         }        public InstanceSourceDetails build() {
-            return new InstanceSourceDetails(bootVolumeSizeInGbs, kmsKeyId, sourceId, sourceType);
+            return new InstanceSourceDetails(bootVolumeSizeInGbs, bootVolumeVpusPerGb, kmsKeyId, sourceId, sourceType);
         }
     }
 }

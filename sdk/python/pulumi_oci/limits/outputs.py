@@ -7,17 +7,94 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
+from . import outputs
 
 __all__ = [
+    'QuotaLock',
     'GetLimitDefinitionsFilterResult',
     'GetLimitDefinitionsLimitDefinitionResult',
     'GetLimitValuesFilterResult',
     'GetLimitValuesLimitValueResult',
+    'GetQuotaLockResult',
     'GetQuotasFilterResult',
     'GetQuotasQuotaResult',
+    'GetQuotasQuotaLockResult',
     'GetServicesFilterResult',
     'GetServicesServiceResult',
 ]
+
+@pulumi.output_type
+class QuotaLock(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "relatedResourceId":
+            suggest = "related_resource_id"
+        elif key == "timeCreated":
+            suggest = "time_created"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in QuotaLock. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        QuotaLock.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        QuotaLock.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 type: str,
+                 message: Optional[str] = None,
+                 related_resource_id: Optional[str] = None,
+                 time_created: Optional[str] = None):
+        """
+        :param str type: Lock type.
+        :param str message: A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+        :param str related_resource_id: The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+        :param str time_created: Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
+        """
+        pulumi.set(__self__, "type", type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Lock type.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def message(self) -> Optional[str]:
+        """
+        A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[str]:
+        """
+        The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[str]:
+        """
+        Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
 
 @pulumi.output_type
 class GetLimitDefinitionsFilterResult(dict):
@@ -243,6 +320,57 @@ class GetLimitValuesLimitValueResult(dict):
 
 
 @pulumi.output_type
+class GetQuotaLockResult(dict):
+    def __init__(__self__, *,
+                 message: str,
+                 related_resource_id: str,
+                 time_created: str,
+                 type: str):
+        """
+        :param str message: A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+        :param str related_resource_id: The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+        :param str time_created: Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
+        :param str type: Lock type.
+        """
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def message(self) -> str:
+        """
+        A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> str:
+        """
+        The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Lock type.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
 class GetQuotasFilterResult(dict):
     def __init__(__self__, *,
                  name: str,
@@ -283,6 +411,8 @@ class GetQuotasQuotaResult(dict):
                  description: str,
                  freeform_tags: Mapping[str, Any],
                  id: str,
+                 is_lock_override: bool,
+                 locks: Sequence['outputs.GetQuotasQuotaLockResult'],
                  name: str,
                  state: str,
                  statements: Sequence[str],
@@ -293,6 +423,7 @@ class GetQuotasQuotaResult(dict):
         :param str description: The description you assign to the quota.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: The OCID of the quota.
+        :param Sequence['GetQuotasQuotaLockArgs'] locks: Locks associated with this resource.
         :param str name: name
         :param str state: Filters returned quotas based on the given state.
         :param Sequence[str] statements: An array of one or more quota statements written in the declarative quota statement language.
@@ -303,6 +434,8 @@ class GetQuotasQuotaResult(dict):
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_lock_override", is_lock_override)
+        pulumi.set(__self__, "locks", locks)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "statements", statements)
@@ -349,6 +482,19 @@ class GetQuotasQuotaResult(dict):
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> bool:
+        return pulumi.get(self, "is_lock_override")
+
+    @property
+    @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetQuotasQuotaLockResult']:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @property
     @pulumi.getter
     def name(self) -> str:
         """
@@ -379,6 +525,57 @@ class GetQuotasQuotaResult(dict):
         Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
+class GetQuotasQuotaLockResult(dict):
+    def __init__(__self__, *,
+                 message: str,
+                 related_resource_id: str,
+                 time_created: str,
+                 type: str):
+        """
+        :param str message: A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+        :param str related_resource_id: The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+        :param str time_created: Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
+        :param str type: Lock type.
+        """
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def message(self) -> str:
+        """
+        A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> str:
+        """
+        The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Lock type.
+        """
+        return pulumi.get(self, "type")
 
 
 @pulumi.output_type

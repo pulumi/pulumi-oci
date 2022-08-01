@@ -36,6 +36,18 @@ namespace Pulumi.Oci.Sch.Inputs
             set => _logSources = value;
         }
 
+        [Input("monitoringSources")]
+        private InputList<Inputs.ConnectorSourceMonitoringSourceGetArgs>? _monitoringSources;
+
+        /// <summary>
+        /// (Updatable) The list of metric namespaces to retrieve data from.
+        /// </summary>
+        public InputList<Inputs.ConnectorSourceMonitoringSourceGetArgs> MonitoringSources
+        {
+            get => _monitoringSources ?? (_monitoringSources = new InputList<Inputs.ConnectorSourceMonitoringSourceGetArgs>());
+            set => _monitoringSources = value;
+        }
+
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
         /// </summary>

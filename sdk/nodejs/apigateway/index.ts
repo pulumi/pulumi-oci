@@ -20,12 +20,20 @@ export * from "./getDeployment";
 export * from "./getDeployments";
 export * from "./getGateway";
 export * from "./getGateways";
+export * from "./getSubscriber";
+export * from "./getSubscribers";
+export * from "./getUsagePlan";
+export * from "./getUsagePlans";
+export * from "./subscriber";
+export * from "./usagePlan";
 
 // Import resources to register:
 import { Api } from "./api";
 import { Certificate } from "./certificate";
 import { Deployment } from "./deployment";
 import { Gateway } from "./gateway";
+import { Subscriber } from "./subscriber";
+import { UsagePlan } from "./usagePlan";
 
 const _module = {
     version: utilities.getVersion(),
@@ -39,6 +47,10 @@ const _module = {
                 return new Deployment(name, <any>undefined, { urn })
             case "oci:ApiGateway/gateway:Gateway":
                 return new Gateway(name, <any>undefined, { urn })
+            case "oci:ApiGateway/subscriber:Subscriber":
+                return new Subscriber(name, <any>undefined, { urn })
+            case "oci:ApiGateway/usagePlan:UsagePlan":
+                return new UsagePlan(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -48,3 +60,5 @@ pulumi.runtime.registerResourceModule("oci", "ApiGateway/api", _module)
 pulumi.runtime.registerResourceModule("oci", "ApiGateway/certificate", _module)
 pulumi.runtime.registerResourceModule("oci", "ApiGateway/deployment", _module)
 pulumi.runtime.registerResourceModule("oci", "ApiGateway/gateway", _module)
+pulumi.runtime.registerResourceModule("oci", "ApiGateway/subscriber", _module)
+pulumi.runtime.registerResourceModule("oci", "ApiGateway/usagePlan", _module)

@@ -34,6 +34,7 @@ from .get_deployment import *
 from .get_deployments import *
 from .get_project import *
 from .get_projects import *
+from .get_repo_file_line import *
 from .get_repositories import *
 from .get_repository import *
 from .get_repository_archive_content import *

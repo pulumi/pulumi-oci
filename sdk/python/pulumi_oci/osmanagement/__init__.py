@@ -9,8 +9,13 @@ from .get_managed_instance import *
 from .get_managed_instance_event_report import *
 from .get_managed_instance_group import *
 from .get_managed_instance_groups import *
+from .get_managed_instance_module_streams import *
+from .get_managed_instance_stream_profile import *
 from .get_managed_instances import *
 from .get_software_source import *
+from .get_software_source_module_stream import *
+from .get_software_source_module_stream_profile import *
+from .get_software_source_stream_profile import *
 from .get_software_sources import *
 from .managed_instance import *
 from .managed_instance_group import *

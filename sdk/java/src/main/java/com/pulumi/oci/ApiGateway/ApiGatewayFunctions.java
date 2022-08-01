@@ -29,6 +29,14 @@ import com.pulumi.oci.ApiGateway.inputs.GetGatewayArgs;
 import com.pulumi.oci.ApiGateway.inputs.GetGatewayPlainArgs;
 import com.pulumi.oci.ApiGateway.inputs.GetGatewaysArgs;
 import com.pulumi.oci.ApiGateway.inputs.GetGatewaysPlainArgs;
+import com.pulumi.oci.ApiGateway.inputs.GetSubscriberArgs;
+import com.pulumi.oci.ApiGateway.inputs.GetSubscriberPlainArgs;
+import com.pulumi.oci.ApiGateway.inputs.GetSubscribersArgs;
+import com.pulumi.oci.ApiGateway.inputs.GetSubscribersPlainArgs;
+import com.pulumi.oci.ApiGateway.inputs.GetUsagePlanArgs;
+import com.pulumi.oci.ApiGateway.inputs.GetUsagePlanPlainArgs;
+import com.pulumi.oci.ApiGateway.inputs.GetUsagePlansArgs;
+import com.pulumi.oci.ApiGateway.inputs.GetUsagePlansPlainArgs;
 import com.pulumi.oci.ApiGateway.outputs.GetApiContentResult;
 import com.pulumi.oci.ApiGateway.outputs.GetApiDeploymentSpecificationResult;
 import com.pulumi.oci.ApiGateway.outputs.GetApiResult;
@@ -40,6 +48,10 @@ import com.pulumi.oci.ApiGateway.outputs.GetDeploymentResult;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentsResult;
 import com.pulumi.oci.ApiGateway.outputs.GetGatewayResult;
 import com.pulumi.oci.ApiGateway.outputs.GetGatewaysResult;
+import com.pulumi.oci.ApiGateway.outputs.GetSubscriberResult;
+import com.pulumi.oci.ApiGateway.outputs.GetSubscribersResult;
+import com.pulumi.oci.ApiGateway.outputs.GetUsagePlanResult;
+import com.pulumi.oci.ApiGateway.outputs.GetUsagePlansResult;
 import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
 
@@ -527,5 +539,181 @@ public final class ApiGatewayFunctions {
      */
     public static CompletableFuture<GetGatewaysResult> getGatewaysPlain(GetGatewaysPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ApiGateway/getGateways:getGateways", TypeShape.of(GetGatewaysResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Subscriber resource in Oracle Cloud Infrastructure API Gateway service.
+     * 
+     * Gets a subscriber by identifier.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetSubscriberResult> getSubscriber(GetSubscriberArgs args) {
+        return getSubscriber(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Subscriber resource in Oracle Cloud Infrastructure API Gateway service.
+     * 
+     * Gets a subscriber by identifier.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetSubscriberResult> getSubscriberPlain(GetSubscriberPlainArgs args) {
+        return getSubscriberPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Subscriber resource in Oracle Cloud Infrastructure API Gateway service.
+     * 
+     * Gets a subscriber by identifier.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetSubscriberResult> getSubscriber(GetSubscriberArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ApiGateway/getSubscriber:getSubscriber", TypeShape.of(GetSubscriberResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Subscriber resource in Oracle Cloud Infrastructure API Gateway service.
+     * 
+     * Gets a subscriber by identifier.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetSubscriberResult> getSubscriberPlain(GetSubscriberPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:ApiGateway/getSubscriber:getSubscriber", TypeShape.of(GetSubscriberResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Subscribers in Oracle Cloud Infrastructure API Gateway service.
+     * 
+     * Returns a list of subscribers.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetSubscribersResult> getSubscribers(GetSubscribersArgs args) {
+        return getSubscribers(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Subscribers in Oracle Cloud Infrastructure API Gateway service.
+     * 
+     * Returns a list of subscribers.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetSubscribersResult> getSubscribersPlain(GetSubscribersPlainArgs args) {
+        return getSubscribersPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Subscribers in Oracle Cloud Infrastructure API Gateway service.
+     * 
+     * Returns a list of subscribers.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetSubscribersResult> getSubscribers(GetSubscribersArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ApiGateway/getSubscribers:getSubscribers", TypeShape.of(GetSubscribersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Subscribers in Oracle Cloud Infrastructure API Gateway service.
+     * 
+     * Returns a list of subscribers.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetSubscribersResult> getSubscribersPlain(GetSubscribersPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:ApiGateway/getSubscribers:getSubscribers", TypeShape.of(GetSubscribersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Usage Plan resource in Oracle Cloud Infrastructure API Gateway service.
+     * 
+     * Gets a usage plan by identifier.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetUsagePlanResult> getUsagePlan(GetUsagePlanArgs args) {
+        return getUsagePlan(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Usage Plan resource in Oracle Cloud Infrastructure API Gateway service.
+     * 
+     * Gets a usage plan by identifier.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetUsagePlanResult> getUsagePlanPlain(GetUsagePlanPlainArgs args) {
+        return getUsagePlanPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Usage Plan resource in Oracle Cloud Infrastructure API Gateway service.
+     * 
+     * Gets a usage plan by identifier.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetUsagePlanResult> getUsagePlan(GetUsagePlanArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ApiGateway/getUsagePlan:getUsagePlan", TypeShape.of(GetUsagePlanResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Usage Plan resource in Oracle Cloud Infrastructure API Gateway service.
+     * 
+     * Gets a usage plan by identifier.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetUsagePlanResult> getUsagePlanPlain(GetUsagePlanPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:ApiGateway/getUsagePlan:getUsagePlan", TypeShape.of(GetUsagePlanResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Usage Plans in Oracle Cloud Infrastructure API Gateway service.
+     * 
+     * Returns a list of usage plans.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetUsagePlansResult> getUsagePlans(GetUsagePlansArgs args) {
+        return getUsagePlans(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Usage Plans in Oracle Cloud Infrastructure API Gateway service.
+     * 
+     * Returns a list of usage plans.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetUsagePlansResult> getUsagePlansPlain(GetUsagePlansPlainArgs args) {
+        return getUsagePlansPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Usage Plans in Oracle Cloud Infrastructure API Gateway service.
+     * 
+     * Returns a list of usage plans.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetUsagePlansResult> getUsagePlans(GetUsagePlansArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ApiGateway/getUsagePlans:getUsagePlans", TypeShape.of(GetUsagePlansResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Usage Plans in Oracle Cloud Infrastructure API Gateway service.
+     * 
+     * Returns a list of usage plans.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetUsagePlansResult> getUsagePlansPlain(GetUsagePlansPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:ApiGateway/getUsagePlans:getUsagePlans", TypeShape.of(GetUsagePlansResult.class), args, Utilities.withVersion(options));
     }
 }

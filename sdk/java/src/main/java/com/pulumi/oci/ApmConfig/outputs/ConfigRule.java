@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ConfigRule {
     /**
-     * @return (Updatable) A user-friendly name that provides a short description this rule.
+     * @return (Updatable) The name by which a configuration entity is displayed to the end user.
      * 
      */
     private final @Nullable String displayName;
@@ -24,12 +24,12 @@ public final class ConfigRule {
      */
     private final @Nullable String filterText;
     /**
-     * @return (Updatable) If true, the rule will compute the actual Apdex score for spans that have been marked as errors. If false, the rule will always set the Apdex for error spans to frustrating, regardless of the configured thresholds. Default is false.
+     * @return (Updatable) Specifies whether an Apdex score should be computed for error spans. Setting it to &#34;true&#34; means that the Apdex score is computed in the usual way. Setting it to &#34;false&#34; skips the Apdex computation and sets the Apdex score to &#34;frustrating&#34; regardless of the configured thresholds. The default is &#34;false&#34;.
      * 
      */
     private final @Nullable Boolean isApplyToErrorSpans;
     /**
-     * @return (Updatable) Specifies if the Apdex rule will be computed for spans matching the rule. Can be used to make sure certain spans don&#39;t get an Apdex score. The default is &#34;true&#34;.
+     * @return (Updatable) Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable Apdex score for spans that do not need or require it. The default is &#34;true&#34;.
      * 
      */
     private final @Nullable Boolean isEnabled;
@@ -39,12 +39,12 @@ public final class ConfigRule {
      */
     private final @Nullable Integer priority;
     /**
-     * @return (Updatable) The maximum response time in milliseconds that will be considered satisfactory for the end user.
+     * @return (Updatable) The maximum response time in milliseconds that is considered &#34;satisfactory&#34; for the end user.
      * 
      */
     private final @Nullable Integer satisfiedResponseTime;
     /**
-     * @return (Updatable) The maximum response time in milliseconds that will be considered tolerable for the end user. Response times beyond this threshold will be considered frustrating. This value cannot be lower than &#34;satisfiedResponseTime&#34;.
+     * @return (Updatable) The maximum response time in milliseconds that is considered &#34;tolerable&#34; for the end user. A response time beyond this threshold is considered &#34;frustrating&#34;. This value cannot be lower than &#34;satisfiedResponseTime&#34;.
      * 
      */
     private final @Nullable Integer toleratingResponseTime;
@@ -68,7 +68,7 @@ public final class ConfigRule {
     }
 
     /**
-     * @return (Updatable) A user-friendly name that provides a short description this rule.
+     * @return (Updatable) The name by which a configuration entity is displayed to the end user.
      * 
      */
     public Optional<String> displayName() {
@@ -82,14 +82,14 @@ public final class ConfigRule {
         return Optional.ofNullable(this.filterText);
     }
     /**
-     * @return (Updatable) If true, the rule will compute the actual Apdex score for spans that have been marked as errors. If false, the rule will always set the Apdex for error spans to frustrating, regardless of the configured thresholds. Default is false.
+     * @return (Updatable) Specifies whether an Apdex score should be computed for error spans. Setting it to &#34;true&#34; means that the Apdex score is computed in the usual way. Setting it to &#34;false&#34; skips the Apdex computation and sets the Apdex score to &#34;frustrating&#34; regardless of the configured thresholds. The default is &#34;false&#34;.
      * 
      */
     public Optional<Boolean> isApplyToErrorSpans() {
         return Optional.ofNullable(this.isApplyToErrorSpans);
     }
     /**
-     * @return (Updatable) Specifies if the Apdex rule will be computed for spans matching the rule. Can be used to make sure certain spans don&#39;t get an Apdex score. The default is &#34;true&#34;.
+     * @return (Updatable) Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable Apdex score for spans that do not need or require it. The default is &#34;true&#34;.
      * 
      */
     public Optional<Boolean> isEnabled() {
@@ -103,14 +103,14 @@ public final class ConfigRule {
         return Optional.ofNullable(this.priority);
     }
     /**
-     * @return (Updatable) The maximum response time in milliseconds that will be considered satisfactory for the end user.
+     * @return (Updatable) The maximum response time in milliseconds that is considered &#34;satisfactory&#34; for the end user.
      * 
      */
     public Optional<Integer> satisfiedResponseTime() {
         return Optional.ofNullable(this.satisfiedResponseTime);
     }
     /**
-     * @return (Updatable) The maximum response time in milliseconds that will be considered tolerable for the end user. Response times beyond this threshold will be considered frustrating. This value cannot be lower than &#34;satisfiedResponseTime&#34;.
+     * @return (Updatable) The maximum response time in milliseconds that is considered &#34;tolerable&#34; for the end user. A response time beyond this threshold is considered &#34;frustrating&#34;. This value cannot be lower than &#34;satisfiedResponseTime&#34;.
      * 
      */
     public Optional<Integer> toleratingResponseTime() {

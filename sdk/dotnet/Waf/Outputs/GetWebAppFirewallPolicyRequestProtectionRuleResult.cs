@@ -27,11 +27,15 @@ namespace Pulumi.Oci.Waf.Outputs
         /// </summary>
         public readonly string ConditionLanguage;
         /// <summary>
+        /// Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
+        /// </summary>
+        public readonly bool IsBodyInspectionEnabled;
+        /// <summary>
         /// Rule name. Must be unique within the module.
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are executed in order of appearance. The array cannot contain entries with the same pair of capability key and version more than once.
+        /// An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityResult> ProtectionCapabilities;
         /// <summary>
@@ -51,6 +55,8 @@ namespace Pulumi.Oci.Waf.Outputs
 
             string conditionLanguage,
 
+            bool isBodyInspectionEnabled,
+
             string name,
 
             ImmutableArray<Outputs.GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityResult> protectionCapabilities,
@@ -62,6 +68,7 @@ namespace Pulumi.Oci.Waf.Outputs
             ActionName = actionName;
             Condition = condition;
             ConditionLanguage = conditionLanguage;
+            IsBodyInspectionEnabled = isBodyInspectionEnabled;
             Name = name;
             ProtectionCapabilities = protectionCapabilities;
             ProtectionCapabilitySettings = protectionCapabilitySettings;

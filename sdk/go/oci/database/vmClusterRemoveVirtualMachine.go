@@ -57,6 +57,8 @@ type VmClusterRemoveVirtualMachine struct {
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The number of enabled CPU cores.
 	CpusEnabled pulumi.IntOutput `pulumi:"cpusEnabled"`
+	// Indicates user preferences for the various diagnostic collection options for the VM cluster.
+	DataCollectionOptions VmClusterRemoveVirtualMachineDataCollectionOptionArrayOutput `pulumi:"dataCollectionOptions"`
 	// Size, in terabytes, of the DATA disk group.
 	DataStorageSizeInTbs pulumi.Float64Output `pulumi:"dataStorageSizeInTbs"`
 	// The local node storage allocated in GBs.
@@ -142,6 +144,8 @@ type vmClusterRemoveVirtualMachineState struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The number of enabled CPU cores.
 	CpusEnabled *int `pulumi:"cpusEnabled"`
+	// Indicates user preferences for the various diagnostic collection options for the VM cluster.
+	DataCollectionOptions []VmClusterRemoveVirtualMachineDataCollectionOption `pulumi:"dataCollectionOptions"`
 	// Size, in terabytes, of the DATA disk group.
 	DataStorageSizeInTbs *float64 `pulumi:"dataStorageSizeInTbs"`
 	// The local node storage allocated in GBs.
@@ -193,6 +197,8 @@ type VmClusterRemoveVirtualMachineState struct {
 	CompartmentId pulumi.StringPtrInput
 	// The number of enabled CPU cores.
 	CpusEnabled pulumi.IntPtrInput
+	// Indicates user preferences for the various diagnostic collection options for the VM cluster.
+	DataCollectionOptions VmClusterRemoveVirtualMachineDataCollectionOptionArrayInput
 	// Size, in terabytes, of the DATA disk group.
 	DataStorageSizeInTbs pulumi.Float64PtrInput
 	// The local node storage allocated in GBs.

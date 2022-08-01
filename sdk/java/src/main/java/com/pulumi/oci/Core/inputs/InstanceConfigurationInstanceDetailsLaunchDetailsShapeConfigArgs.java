@@ -6,6 +6,7 @@ package com.pulumi.oci.Core.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Double;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -47,6 +48,21 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigA
     }
 
     /**
+     * The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+     * 
+     */
+    @Import(name="nvmes")
+    private @Nullable Output<Integer> nvmes;
+
+    /**
+     * @return The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+     * 
+     */
+    public Optional<Output<Integer>> nvmes() {
+        return Optional.ofNullable(this.nvmes);
+    }
+
+    /**
      * The total number of OCPUs available to the instance.
      * 
      */
@@ -66,6 +82,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigA
     private InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigArgs(InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigArgs $) {
         this.baselineOcpuUtilization = $.baselineOcpuUtilization;
         this.memoryInGbs = $.memoryInGbs;
+        this.nvmes = $.nvmes;
         this.ocpus = $.ocpus;
     }
 
@@ -127,6 +144,27 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigA
          */
         public Builder memoryInGbs(Double memoryInGbs) {
             return memoryInGbs(Output.of(memoryInGbs));
+        }
+
+        /**
+         * @param nvmes The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nvmes(@Nullable Output<Integer> nvmes) {
+            $.nvmes = nvmes;
+            return this;
+        }
+
+        /**
+         * @param nvmes The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nvmes(Integer nvmes) {
+            return nvmes(Output.of(nvmes));
         }
 
         /**

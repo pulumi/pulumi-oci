@@ -240,7 +240,7 @@ class GetManagedDatabaseUserResult:
     @pulumi.getter
     def profile(self) -> str:
         """
-        The User resource profile name.
+        The profile name of the user.
         """
         return pulumi.get(self, "profile")
 
@@ -296,7 +296,7 @@ class GetManagedDatabaseUserResult:
     @pulumi.getter(name="timeLocked")
     def time_locked(self) -> str:
         """
-        The date the account was locked if account status was LOCKED.
+        The date the account was locked, if the status of the account is LOCKED.
         """
         return pulumi.get(self, "time_locked")
 

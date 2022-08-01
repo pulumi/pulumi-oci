@@ -22,14 +22,14 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
     public static final ConfigArgs Empty = new ConfigArgs();
 
     /**
-     * (Updatable) The APM Domain Id the request is intended for.
+     * (Updatable) The APM Domain ID the request is intended for.
      * 
      */
     @Import(name="apmDomainId", required=true)
     private Output<String> apmDomainId;
 
     /**
-     * @return (Updatable) The APM Domain Id the request is intended for.
+     * @return (Updatable) The APM Domain ID the request is intended for.
      * 
      */
     public Output<String> apmDomainId() {
@@ -37,14 +37,14 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The type of configuration item
+     * (Updatable) The type of configuration item.
      * 
      */
     @Import(name="configType", required=true)
     private Output<String> configType;
 
     /**
-     * @return (Updatable) The type of configuration item
+     * @return (Updatable) The type of configuration item.
      * 
      */
     public Output<String> configType() {
@@ -67,14 +67,14 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) A description of the metric
+     * (Updatable) A description of the metric.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) A description of the metric
+     * @return (Updatable) A description of the metric.
      * 
      */
     public Optional<Output<String>> description() {
@@ -82,14 +82,14 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) A list of dimensions for this metric. Must be NULL at the moment.
+     * (Updatable) A list of dimensions for the metric. This variable should not be used.
      * 
      */
     @Import(name="dimensions")
     private @Nullable Output<List<ConfigDimensionArgs>> dimensions;
 
     /**
-     * @return (Updatable) A list of dimensions for this metric. Must be NULL at the moment.
+     * @return (Updatable) A list of dimensions for the metric. This variable should not be used.
      * 
      */
     public Optional<Output<List<ConfigDimensionArgs>>> dimensions() {
@@ -97,14 +97,14 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) A user-friendly name that provides a short description this rule.
+     * (Updatable) The name by which a configuration entity is displayed to the end user.
      * 
      */
     @Import(name="displayName", required=true)
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) A user-friendly name that provides a short description this rule.
+     * @return (Updatable) The name by which a configuration entity is displayed to the end user.
      * 
      */
     public Output<String> displayName() {
@@ -112,14 +112,14 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId will be generated when a Span Filter is created.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
      * 
      */
     @Import(name="filterId")
     private @Nullable Output<String> filterId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId will be generated when a Span Filter is created.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
      * 
      */
     public Optional<Output<String>> filterId() {
@@ -157,14 +157,29 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable)
+     * (Updatable) A string that specifies the group that an OPTIONS item belongs to.
+     * 
+     */
+    @Import(name="group")
+    private @Nullable Output<String> group;
+
+    /**
+     * @return (Updatable) A string that specifies the group that an OPTIONS item belongs to.
+     * 
+     */
+    public Optional<Output<String>> group() {
+        return Optional.ofNullable(this.group);
+    }
+
+    /**
+     * (Updatable) The list of metrics in this group.
      * 
      */
     @Import(name="metrics")
     private @Nullable Output<List<ConfigMetricArgs>> metrics;
 
     /**
-     * @return (Updatable)
+     * @return (Updatable) The list of metrics in this group.
      * 
      */
     public Optional<Output<List<ConfigMetricArgs>>> metrics() {
@@ -172,14 +187,14 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The namespace to write the metrics to
+     * (Updatable) The namespace to which the metrics are published. It must be one of several predefined namespaces.
      * 
      */
     @Import(name="namespace")
     private @Nullable Output<String> namespace;
 
     /**
-     * @return (Updatable) The namespace to write the metrics to
+     * @return (Updatable) The namespace to which the metrics are published. It must be one of several predefined namespaces.
      * 
      */
     public Optional<Output<String>> namespace() {
@@ -187,18 +202,33 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Indicates that this request is a dry-run. If set to &#34;true&#34;, nothing will be modified, only the validation will be performed.
+     * (Updatable) Indicates that the request is a dry run, if set to &#34;true&#34;. A dry run request does not modify the configuration item details and is used only to perform validation on the submitted data.
      * 
      */
     @Import(name="opcDryRun")
     private @Nullable Output<String> opcDryRun;
 
     /**
-     * @return (Updatable) Indicates that this request is a dry-run. If set to &#34;true&#34;, nothing will be modified, only the validation will be performed.
+     * @return (Updatable) Indicates that the request is a dry run, if set to &#34;true&#34;. A dry run request does not modify the configuration item details and is used only to perform validation on the submitted data.
      * 
      */
     public Optional<Output<String>> opcDryRun() {
         return Optional.ofNullable(this.opcDryRun);
+    }
+
+    /**
+     * (Updatable) The options are stored here as JSON.
+     * 
+     */
+    @Import(name="options")
+    private @Nullable Output<String> options;
+
+    /**
+     * @return (Updatable) The options are stored here as JSON.
+     * 
+     */
+    public Optional<Output<String>> options() {
+        return Optional.ofNullable(this.options);
     }
 
     /**
@@ -228,9 +258,11 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
         this.filterId = $.filterId;
         this.filterText = $.filterText;
         this.freeformTags = $.freeformTags;
+        this.group = $.group;
         this.metrics = $.metrics;
         this.namespace = $.namespace;
         this.opcDryRun = $.opcDryRun;
+        this.options = $.options;
         this.rules = $.rules;
     }
 
@@ -253,7 +285,7 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param apmDomainId (Updatable) The APM Domain Id the request is intended for.
+         * @param apmDomainId (Updatable) The APM Domain ID the request is intended for.
          * 
          * @return builder
          * 
@@ -264,7 +296,7 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param apmDomainId (Updatable) The APM Domain Id the request is intended for.
+         * @param apmDomainId (Updatable) The APM Domain ID the request is intended for.
          * 
          * @return builder
          * 
@@ -274,7 +306,7 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param configType (Updatable) The type of configuration item
+         * @param configType (Updatable) The type of configuration item.
          * 
          * @return builder
          * 
@@ -285,7 +317,7 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param configType (Updatable) The type of configuration item
+         * @param configType (Updatable) The type of configuration item.
          * 
          * @return builder
          * 
@@ -316,7 +348,7 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description (Updatable) A description of the metric
+         * @param description (Updatable) A description of the metric.
          * 
          * @return builder
          * 
@@ -327,7 +359,7 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description (Updatable) A description of the metric
+         * @param description (Updatable) A description of the metric.
          * 
          * @return builder
          * 
@@ -337,7 +369,7 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dimensions (Updatable) A list of dimensions for this metric. Must be NULL at the moment.
+         * @param dimensions (Updatable) A list of dimensions for the metric. This variable should not be used.
          * 
          * @return builder
          * 
@@ -348,7 +380,7 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dimensions (Updatable) A list of dimensions for this metric. Must be NULL at the moment.
+         * @param dimensions (Updatable) A list of dimensions for the metric. This variable should not be used.
          * 
          * @return builder
          * 
@@ -358,7 +390,7 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dimensions (Updatable) A list of dimensions for this metric. Must be NULL at the moment.
+         * @param dimensions (Updatable) A list of dimensions for the metric. This variable should not be used.
          * 
          * @return builder
          * 
@@ -368,7 +400,7 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) A user-friendly name that provides a short description this rule.
+         * @param displayName (Updatable) The name by which a configuration entity is displayed to the end user.
          * 
          * @return builder
          * 
@@ -379,7 +411,7 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) A user-friendly name that provides a short description this rule.
+         * @param displayName (Updatable) The name by which a configuration entity is displayed to the end user.
          * 
          * @return builder
          * 
@@ -389,7 +421,7 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param filterId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId will be generated when a Span Filter is created.
+         * @param filterId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
          * 
          * @return builder
          * 
@@ -400,7 +432,7 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param filterId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId will be generated when a Span Filter is created.
+         * @param filterId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
          * 
          * @return builder
          * 
@@ -452,7 +484,28 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param metrics (Updatable)
+         * @param group (Updatable) A string that specifies the group that an OPTIONS item belongs to.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder group(@Nullable Output<String> group) {
+            $.group = group;
+            return this;
+        }
+
+        /**
+         * @param group (Updatable) A string that specifies the group that an OPTIONS item belongs to.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder group(String group) {
+            return group(Output.of(group));
+        }
+
+        /**
+         * @param metrics (Updatable) The list of metrics in this group.
          * 
          * @return builder
          * 
@@ -463,7 +516,7 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param metrics (Updatable)
+         * @param metrics (Updatable) The list of metrics in this group.
          * 
          * @return builder
          * 
@@ -473,7 +526,7 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param metrics (Updatable)
+         * @param metrics (Updatable) The list of metrics in this group.
          * 
          * @return builder
          * 
@@ -483,7 +536,7 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param namespace (Updatable) The namespace to write the metrics to
+         * @param namespace (Updatable) The namespace to which the metrics are published. It must be one of several predefined namespaces.
          * 
          * @return builder
          * 
@@ -494,7 +547,7 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param namespace (Updatable) The namespace to write the metrics to
+         * @param namespace (Updatable) The namespace to which the metrics are published. It must be one of several predefined namespaces.
          * 
          * @return builder
          * 
@@ -504,7 +557,7 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param opcDryRun (Updatable) Indicates that this request is a dry-run. If set to &#34;true&#34;, nothing will be modified, only the validation will be performed.
+         * @param opcDryRun (Updatable) Indicates that the request is a dry run, if set to &#34;true&#34;. A dry run request does not modify the configuration item details and is used only to perform validation on the submitted data.
          * 
          * @return builder
          * 
@@ -515,13 +568,34 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param opcDryRun (Updatable) Indicates that this request is a dry-run. If set to &#34;true&#34;, nothing will be modified, only the validation will be performed.
+         * @param opcDryRun (Updatable) Indicates that the request is a dry run, if set to &#34;true&#34;. A dry run request does not modify the configuration item details and is used only to perform validation on the submitted data.
          * 
          * @return builder
          * 
          */
         public Builder opcDryRun(String opcDryRun) {
             return opcDryRun(Output.of(opcDryRun));
+        }
+
+        /**
+         * @param options (Updatable) The options are stored here as JSON.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder options(@Nullable Output<String> options) {
+            $.options = options;
+            return this;
+        }
+
+        /**
+         * @param options (Updatable) The options are stored here as JSON.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder options(String options) {
+            return options(Output.of(options));
         }
 
         /**

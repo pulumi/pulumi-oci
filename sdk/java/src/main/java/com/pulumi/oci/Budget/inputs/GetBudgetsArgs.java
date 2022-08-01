@@ -33,14 +33,14 @@ public final class GetBudgetsArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
+     * A user-friendly name. This does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
+     * @return A user-friendly name. This does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -70,7 +70,7 @@ public final class GetBudgetsArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * The type of target to filter by.
+     * The type of target to filter by:
      * * ALL - List all budgets
      * * COMPARTMENT - List all budgets with targetType == &#34;COMPARTMENT&#34;
      * * TAG - List all budgets with targetType == &#34;TAG&#34;
@@ -80,7 +80,7 @@ public final class GetBudgetsArgs extends com.pulumi.resources.InvokeArgs {
     private @Nullable Output<String> targetType;
 
     /**
-     * @return The type of target to filter by.
+     * @return The type of target to filter by:
      * * ALL - List all budgets
      * * COMPARTMENT - List all budgets with targetType == &#34;COMPARTMENT&#34;
      * * TAG - List all budgets with targetType == &#34;TAG&#34;
@@ -140,7 +140,7 @@ public final class GetBudgetsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param displayName A user-friendly name. Does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
+         * @param displayName A user-friendly name. This does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
          * 
          * @return builder
          * 
@@ -151,7 +151,7 @@ public final class GetBudgetsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param displayName A user-friendly name. Does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
+         * @param displayName A user-friendly name. This does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
          * 
          * @return builder
          * 
@@ -195,7 +195,7 @@ public final class GetBudgetsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param targetType The type of target to filter by.
+         * @param targetType The type of target to filter by:
          * * ALL - List all budgets
          * * COMPARTMENT - List all budgets with targetType == &#34;COMPARTMENT&#34;
          * * TAG - List all budgets with targetType == &#34;TAG&#34;
@@ -209,7 +209,7 @@ public final class GetBudgetsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param targetType The type of target to filter by.
+         * @param targetType The type of target to filter by:
          * * ALL - List all budgets
          * * COMPARTMENT - List all budgets with targetType == &#34;COMPARTMENT&#34;
          * * TAG - List all budgets with targetType == &#34;TAG&#34;

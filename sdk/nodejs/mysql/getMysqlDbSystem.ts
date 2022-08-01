@@ -85,7 +85,7 @@ export interface GetMysqlDbSystemResult {
      */
     readonly dataStorageSizeInGb: number;
     /**
-     * The OCID of the source DB System.
+     * The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
      */
     readonly dbSystemId: string;
     /**
@@ -141,7 +141,7 @@ export interface GetMysqlDbSystemResult {
      */
     readonly isHeatWaveClusterAttached: boolean;
     /**
-     * If the policy is to enable high availability of the instance, by maintaining secondary/failover capacity as necessary.
+     * Specifies if the DB System is highly available.
      */
     readonly isHighlyAvailable: boolean;
     /**
@@ -154,10 +154,12 @@ export interface GetMysqlDbSystemResult {
     readonly maintenances: outputs.Mysql.GetMysqlDbSystemMaintenance[];
     /**
      * Name of the MySQL Version in use for the DB System.
-     *
-     * @deprecated The 'mysql_version' field has been deprecated and may be removed in a future version. Do not use this field.
      */
     readonly mysqlVersion: string;
+    /**
+     * Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
+     */
+    readonly pointInTimeRecoveryDetails: outputs.Mysql.GetMysqlDbSystemPointInTimeRecoveryDetail[];
     /**
      * The port for primary endpoint of the DB System to listen on.
      */

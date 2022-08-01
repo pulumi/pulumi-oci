@@ -22,14 +22,14 @@ public final class BootVolumeState extends com.pulumi.resources.ResourceArgs {
     public static final BootVolumeState Empty = new BootVolumeState();
 
     /**
-     * The number of Volume Performance Units per GB that this volume is effectively tuned to when it&#39;s idle.
+     * The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it&#39;s idle.
      * 
      */
     @Import(name="autoTunedVpusPerGb")
     private @Nullable Output<String> autoTunedVpusPerGb;
 
     /**
-     * @return The number of Volume Performance Units per GB that this volume is effectively tuned to when it&#39;s idle.
+     * @return The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it&#39;s idle.
      * 
      */
     public Optional<Output<String>> autoTunedVpusPerGb() {
@@ -373,7 +373,7 @@ public final class BootVolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param autoTunedVpusPerGb The number of Volume Performance Units per GB that this volume is effectively tuned to when it&#39;s idle.
+         * @param autoTunedVpusPerGb The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it&#39;s idle.
          * 
          * @return builder
          * 
@@ -384,7 +384,7 @@ public final class BootVolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param autoTunedVpusPerGb The number of Volume Performance Units per GB that this volume is effectively tuned to when it&#39;s idle.
+         * @param autoTunedVpusPerGb The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it&#39;s idle.
          * 
          * @return builder
          * 

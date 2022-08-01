@@ -16,7 +16,7 @@ import javax.annotation.Nullable;
 public final class GetDataMaskRulesResult {
     private final @Nullable String accessLevel;
     /**
-     * @return Compartment Identifier where the resource is created
+     * @return Compartment Identifier where the resource is created.
      * 
      */
     private final String compartmentId;
@@ -31,7 +31,7 @@ public final class GetDataMaskRulesResult {
      */
     private final @Nullable String dataMaskRuleStatus;
     /**
-     * @return Data Mask Rule Identifier, can be renamed
+     * @return Data Mask Rule Identifier, can be renamed.
      * 
      */
     private final @Nullable String displayName;
@@ -84,7 +84,7 @@ public final class GetDataMaskRulesResult {
         return Optional.ofNullable(this.accessLevel);
     }
     /**
-     * @return Compartment Identifier where the resource is created
+     * @return Compartment Identifier where the resource is created.
      * 
      */
     public String compartmentId() {
@@ -105,7 +105,7 @@ public final class GetDataMaskRulesResult {
         return Optional.ofNullable(this.dataMaskRuleStatus);
     }
     /**
-     * @return Data Mask Rule Identifier, can be renamed
+     * @return Data Mask Rule Identifier, can be renamed.
      * 
      */
     public Optional<String> displayName() {

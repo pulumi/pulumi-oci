@@ -57,13 +57,13 @@ type GetGuardTargetResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// ResponderRule Description
+	// ResponderRule description.
 	Description string `pulumi:"description"`
-	// ResponderRule Display Name
+	// ResponderRule display name.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// Unique identifier of TargetResponderRecipe that is immutable on creation
+	// Unique identifier of TargetResponderRecipe that can't be changed after creation.
 	Id string `pulumi:"id"`
 	// List of inherited compartments
 	InheritedByCompartments []string `pulumi:"inheritedByCompartments"`
@@ -75,6 +75,8 @@ type GetGuardTargetResult struct {
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// Details specific to the target type.
+	TargetDetails []GetGuardTargetTargetDetail `pulumi:"targetDetails"`
 	// List of detector recipes associated with target
 	TargetDetectorRecipes []GetGuardTargetTargetDetectorRecipe `pulumi:"targetDetectorRecipes"`
 	TargetId              string                               `pulumi:"targetId"`
@@ -138,12 +140,12 @@ func (o GetGuardTargetResultOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetGuardTargetResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// ResponderRule Description
+// ResponderRule description.
 func (o GetGuardTargetResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// ResponderRule Display Name
+// ResponderRule display name.
 func (o GetGuardTargetResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -153,7 +155,7 @@ func (o GetGuardTargetResultOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetGuardTargetResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// Unique identifier of TargetResponderRecipe that is immutable on creation
+// Unique identifier of TargetResponderRecipe that can't be changed after creation.
 func (o GetGuardTargetResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetResult) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -181,6 +183,11 @@ func (o GetGuardTargetResultOutput) State() pulumi.StringOutput {
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 func (o GetGuardTargetResultOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetGuardTargetResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+}
+
+// Details specific to the target type.
+func (o GetGuardTargetResultOutput) TargetDetails() GetGuardTargetTargetDetailArrayOutput {
+	return o.ApplyT(func(v GetGuardTargetResult) []GetGuardTargetTargetDetail { return v.TargetDetails }).(GetGuardTargetTargetDetailArrayOutput)
 }
 
 // List of detector recipes associated with target

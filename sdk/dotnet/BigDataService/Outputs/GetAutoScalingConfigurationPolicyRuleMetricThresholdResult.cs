@@ -14,7 +14,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
     public sealed class GetAutoScalingConfigurationPolicyRuleMetricThresholdResult
     {
         /// <summary>
-        /// This value is the minimum period of time the metric value meets or exceeds the threshold value before the action is triggered. The value is in minutes.
+        /// This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
         /// </summary>
         public readonly int DurationInMinutes;
         /// <summary>

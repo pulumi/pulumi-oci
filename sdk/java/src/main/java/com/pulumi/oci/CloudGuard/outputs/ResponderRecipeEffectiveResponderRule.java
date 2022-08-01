@@ -19,7 +19,7 @@ public final class ResponderRecipeEffectiveResponderRule {
      */
     private final @Nullable String compartmentId;
     /**
-     * @return (Updatable) ResponderRecipe Description
+     * @return (Updatable) Responder recipe description.
      * 
      */
     private final @Nullable String description;
@@ -29,7 +29,7 @@ public final class ResponderRecipeEffectiveResponderRule {
      */
     private final @Nullable List<ResponderRecipeEffectiveResponderRuleDetail> details;
     /**
-     * @return (Updatable) ResponderRecipe Display Name
+     * @return (Updatable) Responder recipe display name.
      * 
      */
     private final @Nullable String displayName;
@@ -110,7 +110,7 @@ public final class ResponderRecipeEffectiveResponderRule {
         return Optional.ofNullable(this.compartmentId);
     }
     /**
-     * @return (Updatable) ResponderRecipe Description
+     * @return (Updatable) Responder recipe description.
      * 
      */
     public Optional<String> description() {
@@ -124,7 +124,7 @@ public final class ResponderRecipeEffectiveResponderRule {
         return this.details == null ? List.of() : this.details;
     }
     /**
-     * @return (Updatable) ResponderRecipe Display Name
+     * @return (Updatable) Responder recipe display name.
      * 
      */
     public Optional<String> displayName() {

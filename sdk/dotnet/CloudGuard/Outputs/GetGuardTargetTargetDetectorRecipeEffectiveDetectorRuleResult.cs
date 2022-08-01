@@ -14,7 +14,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
     public sealed class GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleResult
     {
         /// <summary>
-        /// ResponderRule Description
+        /// ResponderRule description.
         /// </summary>
         public readonly string Description;
         /// <summary>
@@ -26,11 +26,11 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string Detector;
         /// <summary>
-        /// The unique identifier of the detector rule
+        /// The unique identifier of the detector rule.
         /// </summary>
         public readonly string DetectorRuleId;
         /// <summary>
-        /// ResponderRule Display Name
+        /// ResponderRule display name.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>

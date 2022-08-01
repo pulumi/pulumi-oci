@@ -20,7 +20,7 @@ class GetBudgetResult:
     """
     A collection of values returned by getBudget.
     """
-    def __init__(__self__, actual_spend=None, alert_rule_count=None, amount=None, budget_id=None, budget_processing_period_start_offset=None, compartment_id=None, defined_tags=None, description=None, display_name=None, forecasted_spend=None, freeform_tags=None, id=None, reset_period=None, state=None, target_compartment_id=None, target_type=None, targets=None, time_created=None, time_spend_computed=None, time_updated=None, version=None):
+    def __init__(__self__, actual_spend=None, alert_rule_count=None, amount=None, budget_id=None, budget_processing_period_start_offset=None, compartment_id=None, defined_tags=None, description=None, display_name=None, forecasted_spend=None, freeform_tags=None, id=None, processing_period_type=None, reset_period=None, state=None, target_compartment_id=None, target_type=None, targets=None, time_created=None, time_spend_computed=None, time_updated=None, version=None):
         if actual_spend and not isinstance(actual_spend, float):
             raise TypeError("Expected argument 'actual_spend' to be a float")
         pulumi.set(__self__, "actual_spend", actual_spend)
@@ -57,6 +57,9 @@ class GetBudgetResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if processing_period_type and not isinstance(processing_period_type, str):
+            raise TypeError("Expected argument 'processing_period_type' to be a str")
+        pulumi.set(__self__, "processing_period_type", processing_period_type)
         if reset_period and not isinstance(reset_period, str):
             raise TypeError("Expected argument 'reset_period' to be a str")
         pulumi.set(__self__, "reset_period", reset_period)
@@ -93,7 +96,7 @@ class GetBudgetResult:
     @pulumi.getter(name="actualSpend")
     def actual_spend(self) -> float:
         """
-        The actual spend in currency for the current budget cycle
+        The actual spend in currency for the current budget cycle.
         """
         return pulumi.get(self, "actual_spend")
 
@@ -101,7 +104,7 @@ class GetBudgetResult:
     @pulumi.getter(name="alertRuleCount")
     def alert_rule_count(self) -> int:
         """
-        Total number of alert rules in the budget
+        The total number of alert rules in the budget.
         """
         return pulumi.get(self, "alert_rule_count")
 
@@ -109,7 +112,7 @@ class GetBudgetResult:
     @pulumi.getter
     def amount(self) -> int:
         """
-        The amount of the budget expressed in the currency of the customer's rate card.
+        The amount of the budget, expressed in the currency of the customer's rate card.
         """
         return pulumi.get(self, "amount")
 
@@ -130,7 +133,7 @@ class GetBudgetResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        The OCID of the tenancy
+        The OCID of the compartment.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -154,7 +157,7 @@ class GetBudgetResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        The display name of the budget.
+        The display name of the budget. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -162,7 +165,7 @@ class GetBudgetResult:
     @pulumi.getter(name="forecastedSpend")
     def forecasted_spend(self) -> float:
         """
-        The forecasted spend in currency by the end of the current budget cycle
+        The forecasted spend in currency by the end of the current budget cycle.
         """
         return pulumi.get(self, "forecasted_spend")
 
@@ -178,9 +181,17 @@ class GetBudgetResult:
     @pulumi.getter
     def id(self) -> str:
         """
-        The OCID of the budget
+        The OCID of the budget.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="processingPeriodType")
+    def processing_period_type(self) -> str:
+        """
+        The type of the budget processing period. Valid values are INVOICE and MONTH.
+        """
+        return pulumi.get(self, "processing_period_type")
 
     @property
     @pulumi.getter(name="resetPeriod")
@@ -202,7 +213,7 @@ class GetBudgetResult:
     @pulumi.getter(name="targetCompartmentId")
     def target_compartment_id(self) -> str:
         """
-        This is DEPRECATED. For backwards compatability, the property will be populated when targetType is "COMPARTMENT" AND targets contains EXACT ONE target compartment ocid. For all other scenarios, this property will be left empty.
+        This is DEPRECATED. For backwards compatability, the property is populated when the targetType is "COMPARTMENT", and targets contain the specific target compartment OCID. For all other scenarios, this property will be left empty.
         """
         return pulumi.get(self, "target_compartment_id")
 
@@ -218,7 +229,7 @@ class GetBudgetResult:
     @pulumi.getter
     def targets(self) -> Sequence[str]:
         """
-        The list of targets on which the budget is applied. If targetType is "COMPARTMENT", targets contains list of compartment OCIDs. If targetType is "TAG", targets contains list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}".
+        The list of targets on which the budget is applied. If the targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If the targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}".
         """
         return pulumi.get(self, "targets")
 
@@ -226,7 +237,7 @@ class GetBudgetResult:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        Time that budget was created
+        The time that the budget was created.
         """
         return pulumi.get(self, "time_created")
 
@@ -234,7 +245,7 @@ class GetBudgetResult:
     @pulumi.getter(name="timeSpendComputed")
     def time_spend_computed(self) -> str:
         """
-        The time that the budget spend was last computed
+        The time that the budget spend was last computed.
         """
         return pulumi.get(self, "time_spend_computed")
 
@@ -242,7 +253,7 @@ class GetBudgetResult:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
-        Time that budget was updated
+        The time that the budget was updated.
         """
         return pulumi.get(self, "time_updated")
 
@@ -250,7 +261,7 @@ class GetBudgetResult:
     @pulumi.getter
     def version(self) -> int:
         """
-        Version of the budget. Starts from 1 and increments by 1.
+        The version of the budget. Starts from 1 and increments by 1.
         """
         return pulumi.get(self, "version")
 
@@ -273,6 +284,7 @@ class AwaitableGetBudgetResult(GetBudgetResult):
             forecasted_spend=self.forecasted_spend,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            processing_period_type=self.processing_period_type,
             reset_period=self.reset_period,
             state=self.state,
             target_compartment_id=self.target_compartment_id,
@@ -289,7 +301,7 @@ def get_budget(budget_id: Optional[str] = None,
     """
     This data source provides details about a specific Budget resource in Oracle Cloud Infrastructure Budget service.
 
-    Gets a Budget by identifier
+    Gets a budget by the identifier.
 
     ## Example Usage
 
@@ -301,7 +313,7 @@ def get_budget(budget_id: Optional[str] = None,
     ```
 
 
-    :param str budget_id: The unique Budget OCID
+    :param str budget_id: The unique budget OCID.
     """
     __args__ = dict()
     __args__['budgetId'] = budget_id
@@ -324,6 +336,7 @@ def get_budget(budget_id: Optional[str] = None,
         forecasted_spend=__ret__.forecasted_spend,
         freeform_tags=__ret__.freeform_tags,
         id=__ret__.id,
+        processing_period_type=__ret__.processing_period_type,
         reset_period=__ret__.reset_period,
         state=__ret__.state,
         target_compartment_id=__ret__.target_compartment_id,
@@ -341,7 +354,7 @@ def get_budget_output(budget_id: Optional[pulumi.Input[str]] = None,
     """
     This data source provides details about a specific Budget resource in Oracle Cloud Infrastructure Budget service.
 
-    Gets a Budget by identifier
+    Gets a budget by the identifier.
 
     ## Example Usage
 
@@ -353,6 +366,6 @@ def get_budget_output(budget_id: Optional[pulumi.Input[str]] = None,
     ```
 
 
-    :param str budget_id: The unique Budget OCID
+    :param str budget_id: The unique budget OCID.
     """
     ...

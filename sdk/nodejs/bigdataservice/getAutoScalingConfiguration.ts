@@ -65,13 +65,17 @@ export interface GetAutoScalingConfigurationResult {
     readonly id: string;
     readonly isEnabled: boolean;
     /**
-     * A node type that is managed by an autoscale configuration. The only supported type is WORKER.
+     * A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
      */
     readonly nodeType: string;
     /**
-     * Policy definitions for the autoscale configuration.
+     * This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
      */
     readonly policies: outputs.BigDataService.GetAutoScalingConfigurationPolicy[];
+    /**
+     * Details of an autoscale policy.
+     */
+    readonly policyDetails: outputs.BigDataService.GetAutoScalingConfigurationPolicyDetail[];
     /**
      * The state of the autoscale configuration.
      */

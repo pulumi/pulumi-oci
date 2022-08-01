@@ -82,7 +82,7 @@ public final class GetMonitorConfiguration {
      */
     private final String verifyResponseContent;
     /**
-     * @return Verify all the search strings present in response. If any search string is not present in the response, then it will be considered as a failure.
+     * @return Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
      * 
      */
     private final List<GetMonitorConfigurationVerifyText> verifyTexts;
@@ -211,7 +211,7 @@ public final class GetMonitorConfiguration {
         return this.verifyResponseContent;
     }
     /**
-     * @return Verify all the search strings present in response. If any search string is not present in the response, then it will be considered as a failure.
+     * @return Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
      * 
      */
     public List<GetMonitorConfigurationVerifyText> verifyTexts() {

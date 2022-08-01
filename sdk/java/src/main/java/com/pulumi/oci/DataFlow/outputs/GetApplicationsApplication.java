@@ -4,6 +4,8 @@
 package com.pulumi.oci.DataFlow.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.DataFlow.outputs.GetApplicationsApplicationDriverShapeConfig;
+import com.pulumi.oci.DataFlow.outputs.GetApplicationsApplicationExecutorShapeConfig;
 import com.pulumi.oci.DataFlow.outputs.GetApplicationsApplicationParameter;
 import java.lang.Integer;
 import java.lang.Object;
@@ -60,6 +62,11 @@ public final class GetApplicationsApplication {
      */
     private final String driverShape;
     /**
+     * @return This is used to configure the shape of the driver or executor if a flexible shape is used.
+     * 
+     */
+    private final List<GetApplicationsApplicationDriverShapeConfig> driverShapeConfigs;
+    /**
      * @return The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
      * 
      */
@@ -69,6 +76,11 @@ public final class GetApplicationsApplication {
      * 
      */
     private final String executorShape;
+    /**
+     * @return This is used to configure the shape of the driver or executor if a flexible shape is used.
+     * 
+     */
+    private final List<GetApplicationsApplicationExecutorShapeConfig> executorShapeConfigs;
     /**
      * @return An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      * 
@@ -166,8 +178,10 @@ public final class GetApplicationsApplication {
         @CustomType.Parameter("description") String description,
         @CustomType.Parameter("displayName") String displayName,
         @CustomType.Parameter("driverShape") String driverShape,
+        @CustomType.Parameter("driverShapeConfigs") List<GetApplicationsApplicationDriverShapeConfig> driverShapeConfigs,
         @CustomType.Parameter("execute") String execute,
         @CustomType.Parameter("executorShape") String executorShape,
+        @CustomType.Parameter("executorShapeConfigs") List<GetApplicationsApplicationExecutorShapeConfig> executorShapeConfigs,
         @CustomType.Parameter("fileUri") String fileUri,
         @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
         @CustomType.Parameter("id") String id,
@@ -194,8 +208,10 @@ public final class GetApplicationsApplication {
         this.description = description;
         this.displayName = displayName;
         this.driverShape = driverShape;
+        this.driverShapeConfigs = driverShapeConfigs;
         this.execute = execute;
         this.executorShape = executorShape;
+        this.executorShapeConfigs = executorShapeConfigs;
         this.fileUri = fileUri;
         this.freeformTags = freeformTags;
         this.id = id;
@@ -279,6 +295,13 @@ public final class GetApplicationsApplication {
         return this.driverShape;
     }
     /**
+     * @return This is used to configure the shape of the driver or executor if a flexible shape is used.
+     * 
+     */
+    public List<GetApplicationsApplicationDriverShapeConfig> driverShapeConfigs() {
+        return this.driverShapeConfigs;
+    }
+    /**
      * @return The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
      * 
      */
@@ -291,6 +314,13 @@ public final class GetApplicationsApplication {
      */
     public String executorShape() {
         return this.executorShape;
+    }
+    /**
+     * @return This is used to configure the shape of the driver or executor if a flexible shape is used.
+     * 
+     */
+    public List<GetApplicationsApplicationExecutorShapeConfig> executorShapeConfigs() {
+        return this.executorShapeConfigs;
     }
     /**
      * @return An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
@@ -430,8 +460,10 @@ public final class GetApplicationsApplication {
         private String description;
         private String displayName;
         private String driverShape;
+        private List<GetApplicationsApplicationDriverShapeConfig> driverShapeConfigs;
         private String execute;
         private String executorShape;
+        private List<GetApplicationsApplicationExecutorShapeConfig> executorShapeConfigs;
         private String fileUri;
         private Map<String,Object> freeformTags;
         private String id;
@@ -465,8 +497,10 @@ public final class GetApplicationsApplication {
     	      this.description = defaults.description;
     	      this.displayName = defaults.displayName;
     	      this.driverShape = defaults.driverShape;
+    	      this.driverShapeConfigs = defaults.driverShapeConfigs;
     	      this.execute = defaults.execute;
     	      this.executorShape = defaults.executorShape;
+    	      this.executorShapeConfigs = defaults.executorShapeConfigs;
     	      this.fileUri = defaults.fileUri;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
@@ -525,6 +559,13 @@ public final class GetApplicationsApplication {
             this.driverShape = Objects.requireNonNull(driverShape);
             return this;
         }
+        public Builder driverShapeConfigs(List<GetApplicationsApplicationDriverShapeConfig> driverShapeConfigs) {
+            this.driverShapeConfigs = Objects.requireNonNull(driverShapeConfigs);
+            return this;
+        }
+        public Builder driverShapeConfigs(GetApplicationsApplicationDriverShapeConfig... driverShapeConfigs) {
+            return driverShapeConfigs(List.of(driverShapeConfigs));
+        }
         public Builder execute(String execute) {
             this.execute = Objects.requireNonNull(execute);
             return this;
@@ -532,6 +573,13 @@ public final class GetApplicationsApplication {
         public Builder executorShape(String executorShape) {
             this.executorShape = Objects.requireNonNull(executorShape);
             return this;
+        }
+        public Builder executorShapeConfigs(List<GetApplicationsApplicationExecutorShapeConfig> executorShapeConfigs) {
+            this.executorShapeConfigs = Objects.requireNonNull(executorShapeConfigs);
+            return this;
+        }
+        public Builder executorShapeConfigs(GetApplicationsApplicationExecutorShapeConfig... executorShapeConfigs) {
+            return executorShapeConfigs(List.of(executorShapeConfigs));
         }
         public Builder fileUri(String fileUri) {
             this.fileUri = Objects.requireNonNull(fileUri);
@@ -604,7 +652,7 @@ public final class GetApplicationsApplication {
             this.warehouseBucketUri = Objects.requireNonNull(warehouseBucketUri);
             return this;
         }        public GetApplicationsApplication build() {
-            return new GetApplicationsApplication(archiveUri, arguments, className, compartmentId, configuration, definedTags, description, displayName, driverShape, execute, executorShape, fileUri, freeformTags, id, language, logsBucketUri, metastoreId, numExecutors, ownerPrincipalId, ownerUserName, parameters, privateEndpointId, sparkVersion, state, timeCreated, timeUpdated, type, warehouseBucketUri);
+            return new GetApplicationsApplication(archiveUri, arguments, className, compartmentId, configuration, definedTags, description, displayName, driverShape, driverShapeConfigs, execute, executorShape, executorShapeConfigs, fileUri, freeformTags, id, language, logsBucketUri, metastoreId, numExecutors, ownerPrincipalId, ownerUserName, parameters, privateEndpointId, sparkVersion, state, timeCreated, timeUpdated, type, warehouseBucketUri);
         }
     }
 }

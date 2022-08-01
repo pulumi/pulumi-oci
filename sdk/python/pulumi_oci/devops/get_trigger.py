@@ -195,7 +195,7 @@ class GetTriggerResult:
     @pulumi.getter(name="triggerSource")
     def trigger_source(self) -> str:
         """
-        Source of the trigger. Allowed values are, GITHUB, GITLAB and DEVOPS_CODE_REPOSITORY.
+        Source of the trigger. Allowed values are, GITHUB and GITLAB.
         """
         return pulumi.get(self, "trigger_source")
 

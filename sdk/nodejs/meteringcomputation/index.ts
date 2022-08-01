@@ -11,12 +11,18 @@ export * from "./getCustomTable";
 export * from "./getCustomTables";
 export * from "./getQueries";
 export * from "./getQuery";
+export * from "./getSchedule";
+export * from "./getScheduledRun";
+export * from "./getScheduledRuns";
+export * from "./getSchedules";
 export * from "./query";
+export * from "./schedule";
 export * from "./usage";
 
 // Import resources to register:
 import { CustomTable } from "./customTable";
 import { Query } from "./query";
+import { Schedule } from "./schedule";
 import { Usage } from "./usage";
 
 const _module = {
@@ -27,6 +33,8 @@ const _module = {
                 return new CustomTable(name, <any>undefined, { urn })
             case "oci:MeteringComputation/query:Query":
                 return new Query(name, <any>undefined, { urn })
+            case "oci:MeteringComputation/schedule:Schedule":
+                return new Schedule(name, <any>undefined, { urn })
             case "oci:MeteringComputation/usage:Usage":
                 return new Usage(name, <any>undefined, { urn })
             default:
@@ -36,4 +44,5 @@ const _module = {
 };
 pulumi.runtime.registerResourceModule("oci", "MeteringComputation/customTable", _module)
 pulumi.runtime.registerResourceModule("oci", "MeteringComputation/query", _module)
+pulumi.runtime.registerResourceModule("oci", "MeteringComputation/schedule", _module)
 pulumi.runtime.registerResourceModule("oci", "MeteringComputation/usage", _module)

@@ -25,7 +25,7 @@ namespace Pulumi.Oci.MeteringComputation.Inputs
         public Input<string>? DateRangeName { get; set; }
 
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) The filter object for query usage.
         /// </summary>
         [Input("filter")]
         public Input<string>? Filter { get; set; }

@@ -22,7 +22,7 @@ class GetMonitorsResult:
     """
     A collection of values returned by getMonitors.
     """
-    def __init__(__self__, apm_domain_id=None, display_name=None, filters=None, id=None, monitor_collections=None, monitor_type=None, script_id=None, status=None):
+    def __init__(__self__, apm_domain_id=None, display_name=None, filters=None, id=None, monitor_collections=None, monitor_type=None, script_id=None, status=None, vantage_point=None):
         if apm_domain_id and not isinstance(apm_domain_id, str):
             raise TypeError("Expected argument 'apm_domain_id' to be a str")
         pulumi.set(__self__, "apm_domain_id", apm_domain_id)
@@ -47,6 +47,9 @@ class GetMonitorsResult:
         if status and not isinstance(status, str):
             raise TypeError("Expected argument 'status' to be a str")
         pulumi.set(__self__, "status", status)
+        if vantage_point and not isinstance(vantage_point, str):
+            raise TypeError("Expected argument 'vantage_point' to be a str")
+        pulumi.set(__self__, "vantage_point", vantage_point)
 
     @property
     @pulumi.getter(name="apmDomainId")
@@ -106,6 +109,11 @@ class GetMonitorsResult:
         """
         return pulumi.get(self, "status")
 
+    @property
+    @pulumi.getter(name="vantagePoint")
+    def vantage_point(self) -> Optional[str]:
+        return pulumi.get(self, "vantage_point")
+
 
 class AwaitableGetMonitorsResult(GetMonitorsResult):
     # pylint: disable=using-constant-test
@@ -120,7 +128,8 @@ class AwaitableGetMonitorsResult(GetMonitorsResult):
             monitor_collections=self.monitor_collections,
             monitor_type=self.monitor_type,
             script_id=self.script_id,
-            status=self.status)
+            status=self.status,
+            vantage_point=self.vantage_point)
 
 
 def get_monitors(apm_domain_id: Optional[str] = None,
@@ -129,6 +138,7 @@ def get_monitors(apm_domain_id: Optional[str] = None,
                  monitor_type: Optional[str] = None,
                  script_id: Optional[str] = None,
                  status: Optional[str] = None,
+                 vantage_point: Optional[str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMonitorsResult:
     """
     This data source provides the list of Monitors in Oracle Cloud Infrastructure Apm Synthetics service.
@@ -145,15 +155,17 @@ def get_monitors(apm_domain_id: Optional[str] = None,
         display_name=var["monitor_display_name"],
         monitor_type=var["monitor_monitor_type"],
         script_id=oci_apm_synthetics_script["test_script"]["id"],
-        status=var["monitor_status"])
+        status=var["monitor_status"],
+        vantage_point=var["monitor_vantage_point"])
     ```
 
 
     :param str apm_domain_id: The APM domain ID the request is intended for.
-    :param str display_name: A filter to return only resources that match the entire display name given.
+    :param str display_name: A filter to return only the resources that match the entire display name.
     :param str monitor_type: A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST and REST.
     :param str script_id: A filter to return only monitors using scriptId.
     :param str status: A filter to return only monitors that match the status given.
+    :param str vantage_point: The name of the public or dedicated vantage point.
     """
     __args__ = dict()
     __args__['apmDomainId'] = apm_domain_id
@@ -162,6 +174,7 @@ def get_monitors(apm_domain_id: Optional[str] = None,
     __args__['monitorType'] = monitor_type
     __args__['scriptId'] = script_id
     __args__['status'] = status
+    __args__['vantagePoint'] = vantage_point
     if opts is None:
         opts = pulumi.InvokeOptions()
     if opts.version is None:
@@ -176,7 +189,8 @@ def get_monitors(apm_domain_id: Optional[str] = None,
         monitor_collections=__ret__.monitor_collections,
         monitor_type=__ret__.monitor_type,
         script_id=__ret__.script_id,
-        status=__ret__.status)
+        status=__ret__.status,
+        vantage_point=__ret__.vantage_point)
 
 
 @_utilities.lift_output_func(get_monitors)
@@ -186,6 +200,7 @@ def get_monitors_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
                         monitor_type: Optional[pulumi.Input[Optional[str]]] = None,
                         script_id: Optional[pulumi.Input[Optional[str]]] = None,
                         status: Optional[pulumi.Input[Optional[str]]] = None,
+                        vantage_point: Optional[pulumi.Input[Optional[str]]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMonitorsResult]:
     """
     This data source provides the list of Monitors in Oracle Cloud Infrastructure Apm Synthetics service.
@@ -202,14 +217,16 @@ def get_monitors_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
         display_name=var["monitor_display_name"],
         monitor_type=var["monitor_monitor_type"],
         script_id=oci_apm_synthetics_script["test_script"]["id"],
-        status=var["monitor_status"])
+        status=var["monitor_status"],
+        vantage_point=var["monitor_vantage_point"])
     ```
 
 
     :param str apm_domain_id: The APM domain ID the request is intended for.
-    :param str display_name: A filter to return only resources that match the entire display name given.
+    :param str display_name: A filter to return only the resources that match the entire display name.
     :param str monitor_type: A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST and REST.
     :param str script_id: A filter to return only monitors using scriptId.
     :param str status: A filter to return only monitors that match the status given.
+    :param str vantage_point: The name of the public or dedicated vantage point.
     """
     ...

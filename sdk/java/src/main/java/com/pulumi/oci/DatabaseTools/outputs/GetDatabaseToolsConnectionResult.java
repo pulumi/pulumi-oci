@@ -16,17 +16,17 @@ import java.util.Objects;
 @CustomType
 public final class GetDatabaseToolsConnectionResult {
     /**
-     * @return Advanced connection properties key-value pair (e.g., oracle.net.ssl_server_dn_match).
+     * @return The advanced connection properties key-value pair (for example, `oracle.net.ssl_server_dn_match`).
      * 
      */
     private final Map<String,Object> advancedProperties;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
      * 
      */
     private final String compartmentId;
     /**
-     * @return Connect descriptor or Easy Connect Naming method to connect to the database.
+     * @return The connect descriptor or Easy Connect Naming method used to connect to the database.
      * 
      */
     private final String connectionString;
@@ -47,22 +47,22 @@ public final class GetDatabaseToolsConnectionResult {
      */
     private final Map<String,Object> freeformTags;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsConnection.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools connection.
      * 
      */
     private final String id;
     /**
-     * @return Oracle wallet or Java Keystores containing trusted certificates for authenticating the server&#39;s public certificate and the client private key and associated certificates required for client authentication.
+     * @return The Oracle wallet or Java Keystores containing trusted certificates for authenticating the server&#39;s public certificate and the client private key and associated certificates required for client authentication.
      * 
      */
     private final List<GetDatabaseToolsConnectionKeyStore> keyStores;
     /**
-     * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * @return A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
      * 
      */
     private final String lifecycleDetails;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsPrivateEndpoint used to access the database in the Customer VCN.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
      * 
      */
     private final String privateEndpointId;
@@ -72,7 +72,7 @@ public final class GetDatabaseToolsConnectionResult {
      */
     private final List<GetDatabaseToolsConnectionRelatedResource> relatedResources;
     /**
-     * @return The current state of the DatabaseToolsConnection.
+     * @return The current state of the Database Tools connection.
      * 
      */
     private final String state;
@@ -82,22 +82,22 @@ public final class GetDatabaseToolsConnectionResult {
      */
     private final Map<String,Object> systemTags;
     /**
-     * @return The time the DatabaseToolsConnection was created. An RFC3339 formatted datetime string
+     * @return The time the Database Tools connection was created. An RFC3339 formatted datetime string.
      * 
      */
     private final String timeCreated;
     /**
-     * @return The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string
+     * @return The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
      * 
      */
     private final String timeUpdated;
     /**
-     * @return The DatabaseToolsConnection type.
+     * @return The Database Tools connection type.
      * 
      */
     private final String type;
     /**
-     * @return Database user name.
+     * @return The database user name.
      * 
      */
     private final String userName;
@@ -150,21 +150,21 @@ public final class GetDatabaseToolsConnectionResult {
     }
 
     /**
-     * @return Advanced connection properties key-value pair (e.g., oracle.net.ssl_server_dn_match).
+     * @return The advanced connection properties key-value pair (for example, `oracle.net.ssl_server_dn_match`).
      * 
      */
     public Map<String,Object> advancedProperties() {
         return this.advancedProperties;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
      * 
      */
     public String compartmentId() {
         return this.compartmentId;
     }
     /**
-     * @return Connect descriptor or Easy Connect Naming method to connect to the database.
+     * @return The connect descriptor or Easy Connect Naming method used to connect to the database.
      * 
      */
     public String connectionString() {
@@ -195,28 +195,28 @@ public final class GetDatabaseToolsConnectionResult {
         return this.freeformTags;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsConnection.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools connection.
      * 
      */
     public String id() {
         return this.id;
     }
     /**
-     * @return Oracle wallet or Java Keystores containing trusted certificates for authenticating the server&#39;s public certificate and the client private key and associated certificates required for client authentication.
+     * @return The Oracle wallet or Java Keystores containing trusted certificates for authenticating the server&#39;s public certificate and the client private key and associated certificates required for client authentication.
      * 
      */
     public List<GetDatabaseToolsConnectionKeyStore> keyStores() {
         return this.keyStores;
     }
     /**
-     * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * @return A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
      * 
      */
     public String lifecycleDetails() {
         return this.lifecycleDetails;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsPrivateEndpoint used to access the database in the Customer VCN.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
      * 
      */
     public String privateEndpointId() {
@@ -230,7 +230,7 @@ public final class GetDatabaseToolsConnectionResult {
         return this.relatedResources;
     }
     /**
-     * @return The current state of the DatabaseToolsConnection.
+     * @return The current state of the Database Tools connection.
      * 
      */
     public String state() {
@@ -244,28 +244,28 @@ public final class GetDatabaseToolsConnectionResult {
         return this.systemTags;
     }
     /**
-     * @return The time the DatabaseToolsConnection was created. An RFC3339 formatted datetime string
+     * @return The time the Database Tools connection was created. An RFC3339 formatted datetime string.
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string
+     * @return The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
      * 
      */
     public String timeUpdated() {
         return this.timeUpdated;
     }
     /**
-     * @return The DatabaseToolsConnection type.
+     * @return The Database Tools connection type.
      * 
      */
     public String type() {
         return this.type;
     }
     /**
-     * @return Database user name.
+     * @return The database user name.
      * 
      */
     public String userName() {

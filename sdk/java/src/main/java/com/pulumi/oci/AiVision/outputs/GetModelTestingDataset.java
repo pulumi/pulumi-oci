@@ -24,6 +24,10 @@ public final class GetModelTestingDataset {
      * 
      */
     private final String datasetType;
+    /**
+     * @return The namespace name of the ObjectStorage bucket that contains the input data file.
+     * 
+     */
     private final String namespaceName;
     /**
      * @return The object name of the input data file.
@@ -66,6 +70,10 @@ public final class GetModelTestingDataset {
     public String datasetType() {
         return this.datasetType;
     }
+    /**
+     * @return The namespace name of the ObjectStorage bucket that contains the input data file.
+     * 
+     */
     public String namespaceName() {
         return this.namespaceName;
     }

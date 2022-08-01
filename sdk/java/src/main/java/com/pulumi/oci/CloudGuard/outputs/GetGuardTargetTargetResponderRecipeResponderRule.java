@@ -17,7 +17,7 @@ public final class GetGuardTargetTargetResponderRecipeResponderRule {
      */
     private final String compartmentId;
     /**
-     * @return ResponderRule Description
+     * @return ResponderRule description.
      * 
      */
     private final String description;
@@ -27,7 +27,7 @@ public final class GetGuardTargetTargetResponderRecipeResponderRule {
      */
     private final List<GetGuardTargetTargetResponderRecipeResponderRuleDetail> details;
     /**
-     * @return ResponderRule Display Name
+     * @return ResponderRule display name.
      * 
      */
     private final String displayName;
@@ -42,7 +42,7 @@ public final class GetGuardTargetTargetResponderRecipeResponderRule {
      */
     private final List<String> policies;
     /**
-     * @return Identifier for ResponderRule.
+     * @return Unique ResponderRule identifier.
      * 
      */
     private final String responderRuleId;
@@ -108,7 +108,7 @@ public final class GetGuardTargetTargetResponderRecipeResponderRule {
         return this.compartmentId;
     }
     /**
-     * @return ResponderRule Description
+     * @return ResponderRule description.
      * 
      */
     public String description() {
@@ -122,7 +122,7 @@ public final class GetGuardTargetTargetResponderRecipeResponderRule {
         return this.details;
     }
     /**
-     * @return ResponderRule Display Name
+     * @return ResponderRule display name.
      * 
      */
     public String displayName() {
@@ -143,7 +143,7 @@ public final class GetGuardTargetTargetResponderRecipeResponderRule {
         return this.policies;
     }
     /**
-     * @return Identifier for ResponderRule.
+     * @return Unique ResponderRule identifier.
      * 
      */
     public String responderRuleId() {

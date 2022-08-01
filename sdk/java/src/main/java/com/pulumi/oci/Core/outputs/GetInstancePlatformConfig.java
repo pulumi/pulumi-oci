@@ -5,23 +5,44 @@ package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 
 @CustomType
 public final class GetInstancePlatformConfig {
     /**
+     * @return Whether virtualization instructions are available.
+     * 
+     */
+    private final Boolean areVirtualInstructionsEnabled;
+    /**
+     * @return Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device passthrough.
+     * 
+     */
+    private final Boolean isAccessControlServiceEnabled;
+    /**
+     * @return Whether the input-output memory management unit is enabled.
+     * 
+     */
+    private final Boolean isInputOutputMemoryManagementUnitEnabled;
+    /**
      * @return Whether the Measured Boot is to be enabled on the instance
      * 
      */
     private final Boolean isMeasuredBootEnabled;
     /**
-     * @return Whether the Secure Boot is to be enabled on the instance
+     * @return Whether the Secure Boot is to be enabled on the instance.
      * 
      */
     private final Boolean isSecureBootEnabled;
     /**
-     * @return Whether the Trusted Platform Module (TPM) is to be enabled on the instance
+     * @return Whether symmetric multi-threading is enabled on the instance.
+     * 
+     */
+    private final Boolean isSymmetricMultiThreadingEnabled;
+    /**
+     * @return Whether the Trusted Platform Module (TPM) is to be enabled on the instance.
      * 
      */
     private final Boolean isTrustedPlatformModuleEnabled;
@@ -31,6 +52,11 @@ public final class GetInstancePlatformConfig {
      */
     private final String numaNodesPerSocket;
     /**
+     * @return The percentage of cores enabled.
+     * 
+     */
+    private final Integer percentageOfCoresEnabled;
+    /**
      * @return (Required) The type of action to run when the instance is interrupted for eviction.
      * 
      */
@@ -38,18 +64,49 @@ public final class GetInstancePlatformConfig {
 
     @CustomType.Constructor
     private GetInstancePlatformConfig(
+        @CustomType.Parameter("areVirtualInstructionsEnabled") Boolean areVirtualInstructionsEnabled,
+        @CustomType.Parameter("isAccessControlServiceEnabled") Boolean isAccessControlServiceEnabled,
+        @CustomType.Parameter("isInputOutputMemoryManagementUnitEnabled") Boolean isInputOutputMemoryManagementUnitEnabled,
         @CustomType.Parameter("isMeasuredBootEnabled") Boolean isMeasuredBootEnabled,
         @CustomType.Parameter("isSecureBootEnabled") Boolean isSecureBootEnabled,
+        @CustomType.Parameter("isSymmetricMultiThreadingEnabled") Boolean isSymmetricMultiThreadingEnabled,
         @CustomType.Parameter("isTrustedPlatformModuleEnabled") Boolean isTrustedPlatformModuleEnabled,
         @CustomType.Parameter("numaNodesPerSocket") String numaNodesPerSocket,
+        @CustomType.Parameter("percentageOfCoresEnabled") Integer percentageOfCoresEnabled,
         @CustomType.Parameter("type") String type) {
+        this.areVirtualInstructionsEnabled = areVirtualInstructionsEnabled;
+        this.isAccessControlServiceEnabled = isAccessControlServiceEnabled;
+        this.isInputOutputMemoryManagementUnitEnabled = isInputOutputMemoryManagementUnitEnabled;
         this.isMeasuredBootEnabled = isMeasuredBootEnabled;
         this.isSecureBootEnabled = isSecureBootEnabled;
+        this.isSymmetricMultiThreadingEnabled = isSymmetricMultiThreadingEnabled;
         this.isTrustedPlatformModuleEnabled = isTrustedPlatformModuleEnabled;
         this.numaNodesPerSocket = numaNodesPerSocket;
+        this.percentageOfCoresEnabled = percentageOfCoresEnabled;
         this.type = type;
     }
 
+    /**
+     * @return Whether virtualization instructions are available.
+     * 
+     */
+    public Boolean areVirtualInstructionsEnabled() {
+        return this.areVirtualInstructionsEnabled;
+    }
+    /**
+     * @return Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device passthrough.
+     * 
+     */
+    public Boolean isAccessControlServiceEnabled() {
+        return this.isAccessControlServiceEnabled;
+    }
+    /**
+     * @return Whether the input-output memory management unit is enabled.
+     * 
+     */
+    public Boolean isInputOutputMemoryManagementUnitEnabled() {
+        return this.isInputOutputMemoryManagementUnitEnabled;
+    }
     /**
      * @return Whether the Measured Boot is to be enabled on the instance
      * 
@@ -58,14 +115,21 @@ public final class GetInstancePlatformConfig {
         return this.isMeasuredBootEnabled;
     }
     /**
-     * @return Whether the Secure Boot is to be enabled on the instance
+     * @return Whether the Secure Boot is to be enabled on the instance.
      * 
      */
     public Boolean isSecureBootEnabled() {
         return this.isSecureBootEnabled;
     }
     /**
-     * @return Whether the Trusted Platform Module (TPM) is to be enabled on the instance
+     * @return Whether symmetric multi-threading is enabled on the instance.
+     * 
+     */
+    public Boolean isSymmetricMultiThreadingEnabled() {
+        return this.isSymmetricMultiThreadingEnabled;
+    }
+    /**
+     * @return Whether the Trusted Platform Module (TPM) is to be enabled on the instance.
      * 
      */
     public Boolean isTrustedPlatformModuleEnabled() {
@@ -77,6 +141,13 @@ public final class GetInstancePlatformConfig {
      */
     public String numaNodesPerSocket() {
         return this.numaNodesPerSocket;
+    }
+    /**
+     * @return The percentage of cores enabled.
+     * 
+     */
+    public Integer percentageOfCoresEnabled() {
+        return this.percentageOfCoresEnabled;
     }
     /**
      * @return (Required) The type of action to run when the instance is interrupted for eviction.
@@ -95,10 +166,15 @@ public final class GetInstancePlatformConfig {
     }
 
     public static final class Builder {
+        private Boolean areVirtualInstructionsEnabled;
+        private Boolean isAccessControlServiceEnabled;
+        private Boolean isInputOutputMemoryManagementUnitEnabled;
         private Boolean isMeasuredBootEnabled;
         private Boolean isSecureBootEnabled;
+        private Boolean isSymmetricMultiThreadingEnabled;
         private Boolean isTrustedPlatformModuleEnabled;
         private String numaNodesPerSocket;
+        private Integer percentageOfCoresEnabled;
         private String type;
 
         public Builder() {
@@ -107,19 +183,40 @@ public final class GetInstancePlatformConfig {
 
         public Builder(GetInstancePlatformConfig defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.areVirtualInstructionsEnabled = defaults.areVirtualInstructionsEnabled;
+    	      this.isAccessControlServiceEnabled = defaults.isAccessControlServiceEnabled;
+    	      this.isInputOutputMemoryManagementUnitEnabled = defaults.isInputOutputMemoryManagementUnitEnabled;
     	      this.isMeasuredBootEnabled = defaults.isMeasuredBootEnabled;
     	      this.isSecureBootEnabled = defaults.isSecureBootEnabled;
+    	      this.isSymmetricMultiThreadingEnabled = defaults.isSymmetricMultiThreadingEnabled;
     	      this.isTrustedPlatformModuleEnabled = defaults.isTrustedPlatformModuleEnabled;
     	      this.numaNodesPerSocket = defaults.numaNodesPerSocket;
+    	      this.percentageOfCoresEnabled = defaults.percentageOfCoresEnabled;
     	      this.type = defaults.type;
         }
 
+        public Builder areVirtualInstructionsEnabled(Boolean areVirtualInstructionsEnabled) {
+            this.areVirtualInstructionsEnabled = Objects.requireNonNull(areVirtualInstructionsEnabled);
+            return this;
+        }
+        public Builder isAccessControlServiceEnabled(Boolean isAccessControlServiceEnabled) {
+            this.isAccessControlServiceEnabled = Objects.requireNonNull(isAccessControlServiceEnabled);
+            return this;
+        }
+        public Builder isInputOutputMemoryManagementUnitEnabled(Boolean isInputOutputMemoryManagementUnitEnabled) {
+            this.isInputOutputMemoryManagementUnitEnabled = Objects.requireNonNull(isInputOutputMemoryManagementUnitEnabled);
+            return this;
+        }
         public Builder isMeasuredBootEnabled(Boolean isMeasuredBootEnabled) {
             this.isMeasuredBootEnabled = Objects.requireNonNull(isMeasuredBootEnabled);
             return this;
         }
         public Builder isSecureBootEnabled(Boolean isSecureBootEnabled) {
             this.isSecureBootEnabled = Objects.requireNonNull(isSecureBootEnabled);
+            return this;
+        }
+        public Builder isSymmetricMultiThreadingEnabled(Boolean isSymmetricMultiThreadingEnabled) {
+            this.isSymmetricMultiThreadingEnabled = Objects.requireNonNull(isSymmetricMultiThreadingEnabled);
             return this;
         }
         public Builder isTrustedPlatformModuleEnabled(Boolean isTrustedPlatformModuleEnabled) {
@@ -130,11 +227,15 @@ public final class GetInstancePlatformConfig {
             this.numaNodesPerSocket = Objects.requireNonNull(numaNodesPerSocket);
             return this;
         }
+        public Builder percentageOfCoresEnabled(Integer percentageOfCoresEnabled) {
+            this.percentageOfCoresEnabled = Objects.requireNonNull(percentageOfCoresEnabled);
+            return this;
+        }
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
         }        public GetInstancePlatformConfig build() {
-            return new GetInstancePlatformConfig(isMeasuredBootEnabled, isSecureBootEnabled, isTrustedPlatformModuleEnabled, numaNodesPerSocket, type);
+            return new GetInstancePlatformConfig(areVirtualInstructionsEnabled, isAccessControlServiceEnabled, isInputOutputMemoryManagementUnitEnabled, isMeasuredBootEnabled, isSecureBootEnabled, isSymmetricMultiThreadingEnabled, isTrustedPlatformModuleEnabled, numaNodesPerSocket, percentageOfCoresEnabled, type);
         }
     }
 }

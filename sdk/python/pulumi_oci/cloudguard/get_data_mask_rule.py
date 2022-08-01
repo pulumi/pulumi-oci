@@ -75,7 +75,7 @@ class GetDataMaskRuleResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        Compartment Identifier where the resource is created
+        Compartment Identifier where the resource is created.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -120,7 +120,7 @@ class GetDataMaskRuleResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        Data Mask Rule Identifier, can be renamed
+        Data Mask Rule Identifier, can be renamed.
         """
         return pulumi.get(self, "display_name")
 

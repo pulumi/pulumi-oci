@@ -60,7 +60,7 @@ namespace Pulumi.Oci.Budget
     public partial class Rule : Pulumi.CustomResource
     {
         /// <summary>
-        /// The unique Budget OCID
+        /// The unique budget OCID.
         /// </summary>
         [Output("budgetId")]
         public Output<string> BudgetId { get; private set; } = null!;
@@ -78,7 +78,7 @@ namespace Pulumi.Oci.Budget
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The name of the alert rule.
+        /// (Updatable) The name of the alert rule. Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
@@ -90,13 +90,13 @@ namespace Pulumi.Oci.Budget
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The message to be sent to the recipients when alert rule is triggered.
+        /// (Updatable) The message to be sent to the recipients when the alert rule is triggered.
         /// </summary>
         [Output("message")]
         public Output<string> Message { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The audience that will receive the alert when it triggers. An empty string is interpreted as null.
+        /// (Updatable) The audience that receives the alert when it triggers. An empty string is interpreted as null.
         /// </summary>
         [Output("recipients")]
         public Output<string?> Recipients { get; private set; } = null!;
@@ -108,7 +108,7 @@ namespace Pulumi.Oci.Budget
         public Output<string> State { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The threshold for triggering the alert expressed as a whole number or decimal value. If thresholdType is ABSOLUTE, threshold can have at most 12 digits before the decimal point and up to 2 digits after the decimal point. If thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to 2 digits after the decimal point.
+        /// (Updatable) The threshold for triggering the alert, expressed as a whole number or decimal value. If the thresholdType is ABSOLUTE, the threshold can have at most 12 digits before the decimal point, and up to two digits after the decimal point. If the thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to two digits after the decimal point.
         /// </summary>
         [Output("threshold")]
         public Output<double> Threshold { get; private set; } = null!;
@@ -120,25 +120,25 @@ namespace Pulumi.Oci.Budget
         public Output<string> ThresholdType { get; private set; } = null!;
 
         /// <summary>
-        /// Time when budget was created
+        /// The time when the budget was created.
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
 
         /// <summary>
-        /// Time when budget was updated
+        /// The time when the budget was updated.
         /// </summary>
         [Output("timeUpdated")]
         public Output<string> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Type of alert. Valid values are ACTUAL (the alert will trigger based on actual usage) or FORECAST (the alert will trigger based on predicted usage).
+        /// (Updatable) The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
         /// </summary>
         [Output("type")]
         public Output<string> Type { get; private set; } = null!;
 
         /// <summary>
-        /// Version of the alert rule. Starts from 1 and increments by 1.
+        /// The version of the alert rule. Starts from 1 and increments by 1.
         /// </summary>
         [Output("version")]
         public Output<int> Version { get; private set; } = null!;
@@ -190,7 +190,7 @@ namespace Pulumi.Oci.Budget
     public sealed class RuleArgs : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The unique Budget OCID
+        /// The unique budget OCID.
         /// </summary>
         [Input("budgetId", required: true)]
         public Input<string> BudgetId { get; set; } = null!;
@@ -214,7 +214,7 @@ namespace Pulumi.Oci.Budget
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) The name of the alert rule.
+        /// (Updatable) The name of the alert rule. Avoid entering confidential information.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -232,19 +232,19 @@ namespace Pulumi.Oci.Budget
         }
 
         /// <summary>
-        /// (Updatable) The message to be sent to the recipients when alert rule is triggered.
+        /// (Updatable) The message to be sent to the recipients when the alert rule is triggered.
         /// </summary>
         [Input("message")]
         public Input<string>? Message { get; set; }
 
         /// <summary>
-        /// (Updatable) The audience that will receive the alert when it triggers. An empty string is interpreted as null.
+        /// (Updatable) The audience that receives the alert when it triggers. An empty string is interpreted as null.
         /// </summary>
         [Input("recipients")]
         public Input<string>? Recipients { get; set; }
 
         /// <summary>
-        /// (Updatable) The threshold for triggering the alert expressed as a whole number or decimal value. If thresholdType is ABSOLUTE, threshold can have at most 12 digits before the decimal point and up to 2 digits after the decimal point. If thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to 2 digits after the decimal point.
+        /// (Updatable) The threshold for triggering the alert, expressed as a whole number or decimal value. If the thresholdType is ABSOLUTE, the threshold can have at most 12 digits before the decimal point, and up to two digits after the decimal point. If the thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to two digits after the decimal point.
         /// </summary>
         [Input("threshold", required: true)]
         public Input<double> Threshold { get; set; } = null!;
@@ -256,7 +256,7 @@ namespace Pulumi.Oci.Budget
         public Input<string> ThresholdType { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Type of alert. Valid values are ACTUAL (the alert will trigger based on actual usage) or FORECAST (the alert will trigger based on predicted usage).
+        /// (Updatable) The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
@@ -269,7 +269,7 @@ namespace Pulumi.Oci.Budget
     public sealed class RuleState : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The unique Budget OCID
+        /// The unique budget OCID.
         /// </summary>
         [Input("budgetId")]
         public Input<string>? BudgetId { get; set; }
@@ -293,7 +293,7 @@ namespace Pulumi.Oci.Budget
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) The name of the alert rule.
+        /// (Updatable) The name of the alert rule. Avoid entering confidential information.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -311,13 +311,13 @@ namespace Pulumi.Oci.Budget
         }
 
         /// <summary>
-        /// (Updatable) The message to be sent to the recipients when alert rule is triggered.
+        /// (Updatable) The message to be sent to the recipients when the alert rule is triggered.
         /// </summary>
         [Input("message")]
         public Input<string>? Message { get; set; }
 
         /// <summary>
-        /// (Updatable) The audience that will receive the alert when it triggers. An empty string is interpreted as null.
+        /// (Updatable) The audience that receives the alert when it triggers. An empty string is interpreted as null.
         /// </summary>
         [Input("recipients")]
         public Input<string>? Recipients { get; set; }
@@ -329,7 +329,7 @@ namespace Pulumi.Oci.Budget
         public Input<string>? State { get; set; }
 
         /// <summary>
-        /// (Updatable) The threshold for triggering the alert expressed as a whole number or decimal value. If thresholdType is ABSOLUTE, threshold can have at most 12 digits before the decimal point and up to 2 digits after the decimal point. If thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to 2 digits after the decimal point.
+        /// (Updatable) The threshold for triggering the alert, expressed as a whole number or decimal value. If the thresholdType is ABSOLUTE, the threshold can have at most 12 digits before the decimal point, and up to two digits after the decimal point. If the thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to two digits after the decimal point.
         /// </summary>
         [Input("threshold")]
         public Input<double>? Threshold { get; set; }
@@ -341,25 +341,25 @@ namespace Pulumi.Oci.Budget
         public Input<string>? ThresholdType { get; set; }
 
         /// <summary>
-        /// Time when budget was created
+        /// The time when the budget was created.
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// Time when budget was updated
+        /// The time when the budget was updated.
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }
 
         /// <summary>
-        /// (Updatable) Type of alert. Valid values are ACTUAL (the alert will trigger based on actual usage) or FORECAST (the alert will trigger based on predicted usage).
+        /// (Updatable) The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
 
         /// <summary>
-        /// Version of the alert rule. Starts from 1 and increments by 1.
+        /// The version of the alert rule. Starts from 1 and increments by 1.
         /// </summary>
         [Input("version")]
         public Input<int>? Version { get; set; }

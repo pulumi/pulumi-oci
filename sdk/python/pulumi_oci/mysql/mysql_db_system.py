@@ -108,9 +108,6 @@ class MysqlDbSystemArgs:
         if maintenance is not None:
             pulumi.set(__self__, "maintenance", maintenance)
         if mysql_version is not None:
-            warnings.warn("""The 'mysql_version' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
-            pulumi.log.warn("""mysql_version is deprecated: The 'mysql_version' field has been deprecated and may be removed in a future version. Do not use this field.""")
-        if mysql_version is not None:
             pulumi.set(__self__, "mysql_version", mysql_version)
         if port is not None:
             pulumi.set(__self__, "port", port)
@@ -467,6 +464,7 @@ class _MysqlDbSystemState:
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  maintenance: Optional[pulumi.Input['MysqlDbSystemMaintenanceArgs']] = None,
                  mysql_version: Optional[pulumi.Input[str]] = None,
+                 point_in_time_recovery_details: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemPointInTimeRecoveryDetailArgs']]]] = None,
                  port: Optional[pulumi.Input[int]] = None,
                  port_x: Optional[pulumi.Input[int]] = None,
                  shape_name: Optional[pulumi.Input[str]] = None,
@@ -505,6 +503,7 @@ class _MysqlDbSystemState:
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycleState.
         :param pulumi.Input['MysqlDbSystemMaintenanceArgs'] maintenance: (Updatable) The Maintenance Policy for the DB System. `maintenance` and `backup_policy` cannot be updated in the same request.
         :param pulumi.Input[str] mysql_version: Name of the MySQL Version in use for the DB System.
+        :param pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemPointInTimeRecoveryDetailArgs']]] point_in_time_recovery_details: Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
         :param pulumi.Input[int] port: The port for primary endpoint of the DB System to listen on.
         :param pulumi.Input[int] port_x: The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
         :param pulumi.Input[str] shape_name: The name of the shape. The shape determines the resources allocated
@@ -569,10 +568,9 @@ class _MysqlDbSystemState:
         if maintenance is not None:
             pulumi.set(__self__, "maintenance", maintenance)
         if mysql_version is not None:
-            warnings.warn("""The 'mysql_version' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
-            pulumi.log.warn("""mysql_version is deprecated: The 'mysql_version' field has been deprecated and may be removed in a future version. Do not use this field.""")
-        if mysql_version is not None:
             pulumi.set(__self__, "mysql_version", mysql_version)
+        if point_in_time_recovery_details is not None:
+            pulumi.set(__self__, "point_in_time_recovery_details", point_in_time_recovery_details)
         if port is not None:
             pulumi.set(__self__, "port", port)
         if port_x is not None:
@@ -917,6 +915,18 @@ class _MysqlDbSystemState:
         pulumi.set(self, "mysql_version", value)
 
     @property
+    @pulumi.getter(name="pointInTimeRecoveryDetails")
+    def point_in_time_recovery_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemPointInTimeRecoveryDetailArgs']]]]:
+        """
+        Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
+        """
+        return pulumi.get(self, "point_in_time_recovery_details")
+
+    @point_in_time_recovery_details.setter
+    def point_in_time_recovery_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemPointInTimeRecoveryDetailArgs']]]]):
+        pulumi.set(self, "point_in_time_recovery_details", value)
+
+    @property
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[int]]:
         """
@@ -1084,6 +1094,9 @@ class MysqlDbSystem(pulumi.CustomResource):
                     "bar-key": "value",
                 },
                 is_enabled=var["mysql_db_system_backup_policy_is_enabled"],
+                pitr_policy=oci.mysql.MysqlDbSystemBackupPolicyPitrPolicyArgs(
+                    is_enabled=var["mysql_db_system_backup_policy_pitr_policy_is_enabled"],
+                ),
                 retention_in_days=var["mysql_db_system_backup_policy_retention_in_days"],
                 window_start_time=var["mysql_db_system_backup_policy_window_start_time"],
             ),
@@ -1188,6 +1201,9 @@ class MysqlDbSystem(pulumi.CustomResource):
                     "bar-key": "value",
                 },
                 is_enabled=var["mysql_db_system_backup_policy_is_enabled"],
+                pitr_policy=oci.mysql.MysqlDbSystemBackupPolicyPitrPolicyArgs(
+                    is_enabled=var["mysql_db_system_backup_policy_pitr_policy_is_enabled"],
+                ),
                 retention_in_days=var["mysql_db_system_backup_policy_retention_in_days"],
                 window_start_time=var["mysql_db_system_backup_policy_window_start_time"],
             ),
@@ -1305,9 +1321,6 @@ class MysqlDbSystem(pulumi.CustomResource):
             __props__.__dict__["ip_address"] = ip_address
             __props__.__dict__["is_highly_available"] = is_highly_available
             __props__.__dict__["maintenance"] = maintenance
-            if mysql_version is not None and not opts.urn:
-                warnings.warn("""The 'mysql_version' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
-                pulumi.log.warn("""mysql_version is deprecated: The 'mysql_version' field has been deprecated and may be removed in a future version. Do not use this field.""")
             __props__.__dict__["mysql_version"] = mysql_version
             __props__.__dict__["port"] = port
             __props__.__dict__["port_x"] = port_x
@@ -1328,6 +1341,7 @@ class MysqlDbSystem(pulumi.CustomResource):
             __props__.__dict__["is_analytics_cluster_attached"] = None
             __props__.__dict__["is_heat_wave_cluster_attached"] = None
             __props__.__dict__["lifecycle_details"] = None
+            __props__.__dict__["point_in_time_recovery_details"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_updated"] = None
         super(MysqlDbSystem, __self__).__init__(
@@ -1367,6 +1381,7 @@ class MysqlDbSystem(pulumi.CustomResource):
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             maintenance: Optional[pulumi.Input[pulumi.InputType['MysqlDbSystemMaintenanceArgs']]] = None,
             mysql_version: Optional[pulumi.Input[str]] = None,
+            point_in_time_recovery_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MysqlDbSystemPointInTimeRecoveryDetailArgs']]]]] = None,
             port: Optional[pulumi.Input[int]] = None,
             port_x: Optional[pulumi.Input[int]] = None,
             shape_name: Optional[pulumi.Input[str]] = None,
@@ -1410,6 +1425,7 @@ class MysqlDbSystem(pulumi.CustomResource):
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycleState.
         :param pulumi.Input[pulumi.InputType['MysqlDbSystemMaintenanceArgs']] maintenance: (Updatable) The Maintenance Policy for the DB System. `maintenance` and `backup_policy` cannot be updated in the same request.
         :param pulumi.Input[str] mysql_version: Name of the MySQL Version in use for the DB System.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MysqlDbSystemPointInTimeRecoveryDetailArgs']]]] point_in_time_recovery_details: Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
         :param pulumi.Input[int] port: The port for primary endpoint of the DB System to listen on.
         :param pulumi.Input[int] port_x: The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
         :param pulumi.Input[str] shape_name: The name of the shape. The shape determines the resources allocated
@@ -1452,6 +1468,7 @@ class MysqlDbSystem(pulumi.CustomResource):
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["maintenance"] = maintenance
         __props__.__dict__["mysql_version"] = mysql_version
+        __props__.__dict__["point_in_time_recovery_details"] = point_in_time_recovery_details
         __props__.__dict__["port"] = port
         __props__.__dict__["port_x"] = port_x
         __props__.__dict__["shape_name"] = shape_name
@@ -1678,6 +1695,14 @@ class MysqlDbSystem(pulumi.CustomResource):
         Name of the MySQL Version in use for the DB System.
         """
         return pulumi.get(self, "mysql_version")
+
+    @property
+    @pulumi.getter(name="pointInTimeRecoveryDetails")
+    def point_in_time_recovery_details(self) -> pulumi.Output[Sequence['outputs.MysqlDbSystemPointInTimeRecoveryDetail']]:
+        """
+        Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
+        """
+        return pulumi.get(self, "point_in_time_recovery_details")
 
     @property
     @pulumi.getter

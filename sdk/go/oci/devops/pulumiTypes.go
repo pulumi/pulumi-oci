@@ -642,7 +642,7 @@ func (o BuildPipelineStageBuildSourceCollectionPtrOutput) Items() BuildPipelineS
 type BuildPipelineStageBuildSourceCollectionItem struct {
 	// (Updatable) Branch name.
 	Branch *string `pulumi:"branch"`
-	// (Updatable) Connection identifier pertinent to GitHub source provider.
+	// (Updatable) Connection identifier pertinent to Bitbucket Cloud source provider
 	ConnectionId *string `pulumi:"connectionId"`
 	// (Updatable) The type of source provider.
 	ConnectionType string `pulumi:"connectionType"`
@@ -668,7 +668,7 @@ type BuildPipelineStageBuildSourceCollectionItemInput interface {
 type BuildPipelineStageBuildSourceCollectionItemArgs struct {
 	// (Updatable) Branch name.
 	Branch pulumi.StringPtrInput `pulumi:"branch"`
-	// (Updatable) Connection identifier pertinent to GitHub source provider.
+	// (Updatable) Connection identifier pertinent to Bitbucket Cloud source provider
 	ConnectionId pulumi.StringPtrInput `pulumi:"connectionId"`
 	// (Updatable) The type of source provider.
 	ConnectionType pulumi.StringInput `pulumi:"connectionType"`
@@ -736,7 +736,7 @@ func (o BuildPipelineStageBuildSourceCollectionItemOutput) Branch() pulumi.Strin
 	return o.ApplyT(func(v BuildPipelineStageBuildSourceCollectionItem) *string { return v.Branch }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Connection identifier pertinent to GitHub source provider.
+// (Updatable) Connection identifier pertinent to Bitbucket Cloud source provider
 func (o BuildPipelineStageBuildSourceCollectionItemOutput) ConnectionId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BuildPipelineStageBuildSourceCollectionItem) *string { return v.ConnectionId }).(pulumi.StringPtrOutput)
 }
@@ -1189,6 +1189,8 @@ type BuildRunBuildOutput struct {
 	DeliveredArtifacts []BuildRunBuildOutputDeliveredArtifact `pulumi:"deliveredArtifacts"`
 	// Specifies list of exported variables.
 	ExportedVariables []BuildRunBuildOutputExportedVariable `pulumi:"exportedVariables"`
+	// List of vulnerability audit summary.
+	VulnerabilityAuditSummaryCollections []BuildRunBuildOutputVulnerabilityAuditSummaryCollection `pulumi:"vulnerabilityAuditSummaryCollections"`
 }
 
 // BuildRunBuildOutputInput is an input type that accepts BuildRunBuildOutputArgs and BuildRunBuildOutputOutput values.
@@ -1209,6 +1211,8 @@ type BuildRunBuildOutputArgs struct {
 	DeliveredArtifacts BuildRunBuildOutputDeliveredArtifactArrayInput `pulumi:"deliveredArtifacts"`
 	// Specifies list of exported variables.
 	ExportedVariables BuildRunBuildOutputExportedVariableArrayInput `pulumi:"exportedVariables"`
+	// List of vulnerability audit summary.
+	VulnerabilityAuditSummaryCollections BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayInput `pulumi:"vulnerabilityAuditSummaryCollections"`
 }
 
 func (BuildRunBuildOutputArgs) ElementType() reflect.Type {
@@ -1277,6 +1281,13 @@ func (o BuildRunBuildOutputOutput) DeliveredArtifacts() BuildRunBuildOutputDeliv
 // Specifies list of exported variables.
 func (o BuildRunBuildOutputOutput) ExportedVariables() BuildRunBuildOutputExportedVariableArrayOutput {
 	return o.ApplyT(func(v BuildRunBuildOutput) []BuildRunBuildOutputExportedVariable { return v.ExportedVariables }).(BuildRunBuildOutputExportedVariableArrayOutput)
+}
+
+// List of vulnerability audit summary.
+func (o BuildRunBuildOutputOutput) VulnerabilityAuditSummaryCollections() BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayOutput {
+	return o.ApplyT(func(v BuildRunBuildOutput) []BuildRunBuildOutputVulnerabilityAuditSummaryCollection {
+		return v.VulnerabilityAuditSummaryCollections
+	}).(BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayOutput)
 }
 
 type BuildRunBuildOutputArrayOutput struct{ *pulumi.OutputState }
@@ -1982,6 +1993,222 @@ func (o BuildRunBuildOutputExportedVariableItemArrayOutput) Index(i pulumi.IntIn
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) BuildRunBuildOutputExportedVariableItem {
 		return vs[0].([]BuildRunBuildOutputExportedVariableItem)[vs[1].(int)]
 	}).(BuildRunBuildOutputExportedVariableItemOutput)
+}
+
+type BuildRunBuildOutputVulnerabilityAuditSummaryCollection struct {
+	// List of arguments provided at the time of running the build.
+	Items []BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItem `pulumi:"items"`
+}
+
+// BuildRunBuildOutputVulnerabilityAuditSummaryCollectionInput is an input type that accepts BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArgs and BuildRunBuildOutputVulnerabilityAuditSummaryCollectionOutput values.
+// You can construct a concrete instance of `BuildRunBuildOutputVulnerabilityAuditSummaryCollectionInput` via:
+//
+//          BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArgs{...}
+type BuildRunBuildOutputVulnerabilityAuditSummaryCollectionInput interface {
+	pulumi.Input
+
+	ToBuildRunBuildOutputVulnerabilityAuditSummaryCollectionOutput() BuildRunBuildOutputVulnerabilityAuditSummaryCollectionOutput
+	ToBuildRunBuildOutputVulnerabilityAuditSummaryCollectionOutputWithContext(context.Context) BuildRunBuildOutputVulnerabilityAuditSummaryCollectionOutput
+}
+
+type BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArgs struct {
+	// List of arguments provided at the time of running the build.
+	Items BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BuildRunBuildOutputVulnerabilityAuditSummaryCollection)(nil)).Elem()
+}
+
+func (i BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArgs) ToBuildRunBuildOutputVulnerabilityAuditSummaryCollectionOutput() BuildRunBuildOutputVulnerabilityAuditSummaryCollectionOutput {
+	return i.ToBuildRunBuildOutputVulnerabilityAuditSummaryCollectionOutputWithContext(context.Background())
+}
+
+func (i BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArgs) ToBuildRunBuildOutputVulnerabilityAuditSummaryCollectionOutputWithContext(ctx context.Context) BuildRunBuildOutputVulnerabilityAuditSummaryCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BuildRunBuildOutputVulnerabilityAuditSummaryCollectionOutput)
+}
+
+// BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayInput is an input type that accepts BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArray and BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayOutput values.
+// You can construct a concrete instance of `BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayInput` via:
+//
+//          BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArray{ BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArgs{...} }
+type BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayInput interface {
+	pulumi.Input
+
+	ToBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayOutput() BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayOutput
+	ToBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayOutputWithContext(context.Context) BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayOutput
+}
+
+type BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArray []BuildRunBuildOutputVulnerabilityAuditSummaryCollectionInput
+
+func (BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]BuildRunBuildOutputVulnerabilityAuditSummaryCollection)(nil)).Elem()
+}
+
+func (i BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArray) ToBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayOutput() BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayOutput {
+	return i.ToBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArray) ToBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayOutputWithContext(ctx context.Context) BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayOutput)
+}
+
+type BuildRunBuildOutputVulnerabilityAuditSummaryCollectionOutput struct{ *pulumi.OutputState }
+
+func (BuildRunBuildOutputVulnerabilityAuditSummaryCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BuildRunBuildOutputVulnerabilityAuditSummaryCollection)(nil)).Elem()
+}
+
+func (o BuildRunBuildOutputVulnerabilityAuditSummaryCollectionOutput) ToBuildRunBuildOutputVulnerabilityAuditSummaryCollectionOutput() BuildRunBuildOutputVulnerabilityAuditSummaryCollectionOutput {
+	return o
+}
+
+func (o BuildRunBuildOutputVulnerabilityAuditSummaryCollectionOutput) ToBuildRunBuildOutputVulnerabilityAuditSummaryCollectionOutputWithContext(ctx context.Context) BuildRunBuildOutputVulnerabilityAuditSummaryCollectionOutput {
+	return o
+}
+
+// List of arguments provided at the time of running the build.
+func (o BuildRunBuildOutputVulnerabilityAuditSummaryCollectionOutput) Items() BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayOutput {
+	return o.ApplyT(func(v BuildRunBuildOutputVulnerabilityAuditSummaryCollection) []BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItem {
+		return v.Items
+	}).(BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayOutput)
+}
+
+type BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]BuildRunBuildOutputVulnerabilityAuditSummaryCollection)(nil)).Elem()
+}
+
+func (o BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayOutput) ToBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayOutput() BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayOutput) ToBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayOutputWithContext(ctx context.Context) BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayOutput) Index(i pulumi.IntInput) BuildRunBuildOutputVulnerabilityAuditSummaryCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) BuildRunBuildOutputVulnerabilityAuditSummaryCollection {
+		return vs[0].([]BuildRunBuildOutputVulnerabilityAuditSummaryCollection)[vs[1].(int)]
+	}).(BuildRunBuildOutputVulnerabilityAuditSummaryCollectionOutput)
+}
+
+type BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItem struct {
+	// Build stage OCID where scan was configured.
+	BuildStageId *string `pulumi:"buildStageId"`
+	// Commit hash pertinent to the repository URL and the specified branch.
+	CommitHash *string `pulumi:"commitHash"`
+	// The OCID of the vulnerability audit.
+	VulnerabilityAuditId *string `pulumi:"vulnerabilityAuditId"`
+}
+
+// BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemInput is an input type that accepts BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArgs and BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemOutput values.
+// You can construct a concrete instance of `BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemInput` via:
+//
+//          BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArgs{...}
+type BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemInput interface {
+	pulumi.Input
+
+	ToBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemOutput() BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemOutput
+	ToBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemOutputWithContext(context.Context) BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemOutput
+}
+
+type BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArgs struct {
+	// Build stage OCID where scan was configured.
+	BuildStageId pulumi.StringPtrInput `pulumi:"buildStageId"`
+	// Commit hash pertinent to the repository URL and the specified branch.
+	CommitHash pulumi.StringPtrInput `pulumi:"commitHash"`
+	// The OCID of the vulnerability audit.
+	VulnerabilityAuditId pulumi.StringPtrInput `pulumi:"vulnerabilityAuditId"`
+}
+
+func (BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArgs) ToBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemOutput() BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemOutput {
+	return i.ToBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemOutputWithContext(context.Background())
+}
+
+func (i BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArgs) ToBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemOutputWithContext(ctx context.Context) BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemOutput)
+}
+
+// BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayInput is an input type that accepts BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArray and BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayOutput values.
+// You can construct a concrete instance of `BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayInput` via:
+//
+//          BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArray{ BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArgs{...} }
+type BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayOutput() BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayOutput
+	ToBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayOutputWithContext(context.Context) BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayOutput
+}
+
+type BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArray []BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemInput
+
+func (BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArray) ToBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayOutput() BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayOutput {
+	return i.ToBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArray) ToBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayOutputWithContext(ctx context.Context) BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayOutput)
+}
+
+type BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemOutput) ToBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemOutput() BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemOutput {
+	return o
+}
+
+func (o BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemOutput) ToBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemOutputWithContext(ctx context.Context) BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemOutput {
+	return o
+}
+
+// Build stage OCID where scan was configured.
+func (o BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemOutput) BuildStageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItem) *string { return v.BuildStageId }).(pulumi.StringPtrOutput)
+}
+
+// Commit hash pertinent to the repository URL and the specified branch.
+func (o BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemOutput) CommitHash() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItem) *string { return v.CommitHash }).(pulumi.StringPtrOutput)
+}
+
+// The OCID of the vulnerability audit.
+func (o BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemOutput) VulnerabilityAuditId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItem) *string {
+		return v.VulnerabilityAuditId
+	}).(pulumi.StringPtrOutput)
+}
+
+type BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayOutput) ToBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayOutput() BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayOutput) ToBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayOutputWithContext(ctx context.Context) BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItem {
+		return vs[0].([]BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItem)[vs[1].(int)]
+	}).(BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemOutput)
 }
 
 type BuildRunBuildRunArguments struct {
@@ -3088,8 +3315,10 @@ func (o BuildRunCommitInfoPtrOutput) RepositoryUrl() pulumi.StringPtrOutput {
 }
 
 type DeployArtifactDeployArtifactSource struct {
-	// (Updatable) base64 Encoded String
+	// (Updatable) Specifies content for the inline artifact.
 	Base64encodedContent *string `pulumi:"base64encodedContent"`
+	// (Updatable) The URL of an OCIR repository.
+	ChartUrl *string `pulumi:"chartUrl"`
 	// (Updatable) Specifies the artifact path in the repository.
 	DeployArtifactPath *string `pulumi:"deployArtifactPath"`
 	// (Updatable) Specifies types of artifact sources.
@@ -3116,8 +3345,10 @@ type DeployArtifactDeployArtifactSourceInput interface {
 }
 
 type DeployArtifactDeployArtifactSourceArgs struct {
-	// (Updatable) base64 Encoded String
+	// (Updatable) Specifies content for the inline artifact.
 	Base64encodedContent pulumi.StringPtrInput `pulumi:"base64encodedContent"`
+	// (Updatable) The URL of an OCIR repository.
+	ChartUrl pulumi.StringPtrInput `pulumi:"chartUrl"`
 	// (Updatable) Specifies the artifact path in the repository.
 	DeployArtifactPath pulumi.StringPtrInput `pulumi:"deployArtifactPath"`
 	// (Updatable) Specifies types of artifact sources.
@@ -3209,9 +3440,14 @@ func (o DeployArtifactDeployArtifactSourceOutput) ToDeployArtifactDeployArtifact
 	}).(DeployArtifactDeployArtifactSourcePtrOutput)
 }
 
-// (Updatable) base64 Encoded String
+// (Updatable) Specifies content for the inline artifact.
 func (o DeployArtifactDeployArtifactSourceOutput) Base64encodedContent() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DeployArtifactDeployArtifactSource) *string { return v.Base64encodedContent }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The URL of an OCIR repository.
+func (o DeployArtifactDeployArtifactSourceOutput) ChartUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeployArtifactDeployArtifactSource) *string { return v.ChartUrl }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Specifies the artifact path in the repository.
@@ -3268,13 +3504,23 @@ func (o DeployArtifactDeployArtifactSourcePtrOutput) Elem() DeployArtifactDeploy
 	}).(DeployArtifactDeployArtifactSourceOutput)
 }
 
-// (Updatable) base64 Encoded String
+// (Updatable) Specifies content for the inline artifact.
 func (o DeployArtifactDeployArtifactSourcePtrOutput) Base64encodedContent() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DeployArtifactDeployArtifactSource) *string {
 		if v == nil {
 			return nil
 		}
 		return v.Base64encodedContent
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The URL of an OCIR repository.
+func (o DeployArtifactDeployArtifactSourcePtrOutput) ChartUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeployArtifactDeployArtifactSource) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ChartUrl
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -9218,7 +9464,7 @@ type TriggerActionFilter struct {
 	Events []string `pulumi:"events"`
 	// (Updatable) Attributes to filter DevOps code repository events.
 	Include *TriggerActionFilterInclude `pulumi:"include"`
-	// (Updatable) Source of the trigger. Allowed values are, GITHUB and GITLAB.
+	// (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
 	TriggerSource string `pulumi:"triggerSource"`
 }
 
@@ -9238,7 +9484,7 @@ type TriggerActionFilterArgs struct {
 	Events pulumi.StringArrayInput `pulumi:"events"`
 	// (Updatable) Attributes to filter DevOps code repository events.
 	Include TriggerActionFilterIncludePtrInput `pulumi:"include"`
-	// (Updatable) Source of the trigger. Allowed values are, GITHUB and GITLAB.
+	// (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
 	TriggerSource pulumi.StringInput `pulumi:"triggerSource"`
 }
 
@@ -9329,7 +9575,7 @@ func (o TriggerActionFilterOutput) Include() TriggerActionFilterIncludePtrOutput
 	return o.ApplyT(func(v TriggerActionFilter) *TriggerActionFilterInclude { return v.Include }).(TriggerActionFilterIncludePtrOutput)
 }
 
-// (Updatable) Source of the trigger. Allowed values are, GITHUB and GITLAB.
+// (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
 func (o TriggerActionFilterOutput) TriggerSource() pulumi.StringOutput {
 	return o.ApplyT(func(v TriggerActionFilter) string { return v.TriggerSource }).(pulumi.StringOutput)
 }
@@ -9378,7 +9624,7 @@ func (o TriggerActionFilterPtrOutput) Include() TriggerActionFilterIncludePtrOut
 	}).(TriggerActionFilterIncludePtrOutput)
 }
 
-// (Updatable) Source of the trigger. Allowed values are, GITHUB and GITLAB.
+// (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
 func (o TriggerActionFilterPtrOutput) TriggerSource() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *TriggerActionFilter) *string {
 		if v == nil {
@@ -10056,7 +10302,7 @@ func (o GetBuildPipelineStageBuildSourceCollectionArrayOutput) Index(i pulumi.In
 type GetBuildPipelineStageBuildSourceCollectionItem struct {
 	// Branch name.
 	Branch string `pulumi:"branch"`
-	// Connection identifier pertinent to GitHub source provider.
+	// Connection identifier pertinent to Bitbucket Cloud source provider
 	ConnectionId string `pulumi:"connectionId"`
 	// The type of source provider.
 	ConnectionType string `pulumi:"connectionType"`
@@ -10082,7 +10328,7 @@ type GetBuildPipelineStageBuildSourceCollectionItemInput interface {
 type GetBuildPipelineStageBuildSourceCollectionItemArgs struct {
 	// Branch name.
 	Branch pulumi.StringInput `pulumi:"branch"`
-	// Connection identifier pertinent to GitHub source provider.
+	// Connection identifier pertinent to Bitbucket Cloud source provider
 	ConnectionId pulumi.StringInput `pulumi:"connectionId"`
 	// The type of source provider.
 	ConnectionType pulumi.StringInput `pulumi:"connectionType"`
@@ -10150,7 +10396,7 @@ func (o GetBuildPipelineStageBuildSourceCollectionItemOutput) Branch() pulumi.St
 	return o.ApplyT(func(v GetBuildPipelineStageBuildSourceCollectionItem) string { return v.Branch }).(pulumi.StringOutput)
 }
 
-// Connection identifier pertinent to GitHub source provider.
+// Connection identifier pertinent to Bitbucket Cloud source provider
 func (o GetBuildPipelineStageBuildSourceCollectionItemOutput) ConnectionId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBuildPipelineStageBuildSourceCollectionItem) string { return v.ConnectionId }).(pulumi.StringOutput)
 }
@@ -11191,7 +11437,7 @@ func (o GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollect
 type GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItem struct {
 	// Branch name.
 	Branch string `pulumi:"branch"`
-	// Connection identifier pertinent to GitHub source provider.
+	// Connection identifier pertinent to Bitbucket Cloud source provider
 	ConnectionId string `pulumi:"connectionId"`
 	// The type of source provider.
 	ConnectionType string `pulumi:"connectionType"`
@@ -11217,7 +11463,7 @@ type GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollection
 type GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItemArgs struct {
 	// Branch name.
 	Branch pulumi.StringInput `pulumi:"branch"`
-	// Connection identifier pertinent to GitHub source provider.
+	// Connection identifier pertinent to Bitbucket Cloud source provider
 	ConnectionId pulumi.StringInput `pulumi:"connectionId"`
 	// The type of source provider.
 	ConnectionType pulumi.StringInput `pulumi:"connectionType"`
@@ -11287,7 +11533,7 @@ func (o GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollect
 	}).(pulumi.StringOutput)
 }
 
-// Connection identifier pertinent to GitHub source provider.
+// Connection identifier pertinent to Bitbucket Cloud source provider
 func (o GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItemOutput) ConnectionId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItem) string {
 		return v.ConnectionId
@@ -12318,6 +12564,8 @@ type GetBuildRunBuildOutput struct {
 	DeliveredArtifacts []GetBuildRunBuildOutputDeliveredArtifact `pulumi:"deliveredArtifacts"`
 	// Specifies list of exported variables.
 	ExportedVariables []GetBuildRunBuildOutputExportedVariable `pulumi:"exportedVariables"`
+	// List of vulnerability audit summary.
+	VulnerabilityAuditSummaryCollections []GetBuildRunBuildOutputVulnerabilityAuditSummaryCollection `pulumi:"vulnerabilityAuditSummaryCollections"`
 }
 
 // GetBuildRunBuildOutputInput is an input type that accepts GetBuildRunBuildOutputArgs and GetBuildRunBuildOutputOutput values.
@@ -12338,6 +12586,8 @@ type GetBuildRunBuildOutputArgs struct {
 	DeliveredArtifacts GetBuildRunBuildOutputDeliveredArtifactArrayInput `pulumi:"deliveredArtifacts"`
 	// Specifies list of exported variables.
 	ExportedVariables GetBuildRunBuildOutputExportedVariableArrayInput `pulumi:"exportedVariables"`
+	// List of vulnerability audit summary.
+	VulnerabilityAuditSummaryCollections GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayInput `pulumi:"vulnerabilityAuditSummaryCollections"`
 }
 
 func (GetBuildRunBuildOutputArgs) ElementType() reflect.Type {
@@ -12406,6 +12656,13 @@ func (o GetBuildRunBuildOutputOutput) DeliveredArtifacts() GetBuildRunBuildOutpu
 // Specifies list of exported variables.
 func (o GetBuildRunBuildOutputOutput) ExportedVariables() GetBuildRunBuildOutputExportedVariableArrayOutput {
 	return o.ApplyT(func(v GetBuildRunBuildOutput) []GetBuildRunBuildOutputExportedVariable { return v.ExportedVariables }).(GetBuildRunBuildOutputExportedVariableArrayOutput)
+}
+
+// List of vulnerability audit summary.
+func (o GetBuildRunBuildOutputOutput) VulnerabilityAuditSummaryCollections() GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayOutput {
+	return o.ApplyT(func(v GetBuildRunBuildOutput) []GetBuildRunBuildOutputVulnerabilityAuditSummaryCollection {
+		return v.VulnerabilityAuditSummaryCollections
+	}).(GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayOutput)
 }
 
 type GetBuildRunBuildOutputArrayOutput struct{ *pulumi.OutputState }
@@ -13113,6 +13370,222 @@ func (o GetBuildRunBuildOutputExportedVariableItemArrayOutput) Index(i pulumi.In
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBuildRunBuildOutputExportedVariableItem {
 		return vs[0].([]GetBuildRunBuildOutputExportedVariableItem)[vs[1].(int)]
 	}).(GetBuildRunBuildOutputExportedVariableItemOutput)
+}
+
+type GetBuildRunBuildOutputVulnerabilityAuditSummaryCollection struct {
+	// List of exported variables.
+	Items []GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItem `pulumi:"items"`
+}
+
+// GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionInput is an input type that accepts GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArgs and GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionOutput values.
+// You can construct a concrete instance of `GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionInput` via:
+//
+//          GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArgs{...}
+type GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionInput interface {
+	pulumi.Input
+
+	ToGetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionOutput() GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionOutput
+	ToGetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionOutputWithContext(context.Context) GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionOutput
+}
+
+type GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArgs struct {
+	// List of exported variables.
+	Items GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBuildRunBuildOutputVulnerabilityAuditSummaryCollection)(nil)).Elem()
+}
+
+func (i GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArgs) ToGetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionOutput() GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionOutput {
+	return i.ToGetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionOutputWithContext(context.Background())
+}
+
+func (i GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArgs) ToGetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionOutputWithContext(ctx context.Context) GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionOutput)
+}
+
+// GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayInput is an input type that accepts GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArray and GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayOutput values.
+// You can construct a concrete instance of `GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayInput` via:
+//
+//          GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArray{ GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArgs{...} }
+type GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayOutput() GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayOutput
+	ToGetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayOutputWithContext(context.Context) GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayOutput
+}
+
+type GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArray []GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionInput
+
+func (GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBuildRunBuildOutputVulnerabilityAuditSummaryCollection)(nil)).Elem()
+}
+
+func (i GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArray) ToGetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayOutput() GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayOutput {
+	return i.ToGetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArray) ToGetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayOutputWithContext(ctx context.Context) GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayOutput)
+}
+
+type GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBuildRunBuildOutputVulnerabilityAuditSummaryCollection)(nil)).Elem()
+}
+
+func (o GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionOutput) ToGetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionOutput() GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionOutput {
+	return o
+}
+
+func (o GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionOutput) ToGetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionOutputWithContext(ctx context.Context) GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionOutput {
+	return o
+}
+
+// List of exported variables.
+func (o GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionOutput) Items() GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetBuildRunBuildOutputVulnerabilityAuditSummaryCollection) []GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItem {
+		return v.Items
+	}).(GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayOutput)
+}
+
+type GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBuildRunBuildOutputVulnerabilityAuditSummaryCollection)(nil)).Elem()
+}
+
+func (o GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayOutput) ToGetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayOutput() GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayOutput) ToGetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayOutputWithContext(ctx context.Context) GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBuildRunBuildOutputVulnerabilityAuditSummaryCollection {
+		return vs[0].([]GetBuildRunBuildOutputVulnerabilityAuditSummaryCollection)[vs[1].(int)]
+	}).(GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionOutput)
+}
+
+type GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItem struct {
+	// Build stage OCID where scan was configured.
+	BuildStageId string `pulumi:"buildStageId"`
+	// Commit hash pertinent to the repository URL and the specified branch.
+	CommitHash string `pulumi:"commitHash"`
+	// The OCID of the vulnerability audit.
+	VulnerabilityAuditId string `pulumi:"vulnerabilityAuditId"`
+}
+
+// GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemInput is an input type that accepts GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArgs and GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemOutput values.
+// You can construct a concrete instance of `GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemInput` via:
+//
+//          GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArgs{...}
+type GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemOutput() GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemOutput
+	ToGetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemOutputWithContext(context.Context) GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemOutput
+}
+
+type GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArgs struct {
+	// Build stage OCID where scan was configured.
+	BuildStageId pulumi.StringInput `pulumi:"buildStageId"`
+	// Commit hash pertinent to the repository URL and the specified branch.
+	CommitHash pulumi.StringInput `pulumi:"commitHash"`
+	// The OCID of the vulnerability audit.
+	VulnerabilityAuditId pulumi.StringInput `pulumi:"vulnerabilityAuditId"`
+}
+
+func (GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArgs) ToGetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemOutput() GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemOutput {
+	return i.ToGetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArgs) ToGetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemOutputWithContext(ctx context.Context) GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemOutput)
+}
+
+// GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayInput is an input type that accepts GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArray and GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayInput` via:
+//
+//          GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArray{ GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArgs{...} }
+type GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayOutput() GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayOutput
+	ToGetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayOutputWithContext(context.Context) GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayOutput
+}
+
+type GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArray []GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemInput
+
+func (GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArray) ToGetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayOutput() GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayOutput {
+	return i.ToGetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArray) ToGetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayOutput)
+}
+
+type GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemOutput) ToGetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemOutput() GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemOutput {
+	return o
+}
+
+func (o GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemOutput) ToGetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemOutputWithContext(ctx context.Context) GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemOutput {
+	return o
+}
+
+// Build stage OCID where scan was configured.
+func (o GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemOutput) BuildStageId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItem) string { return v.BuildStageId }).(pulumi.StringOutput)
+}
+
+// Commit hash pertinent to the repository URL and the specified branch.
+func (o GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemOutput) CommitHash() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItem) string { return v.CommitHash }).(pulumi.StringOutput)
+}
+
+// The OCID of the vulnerability audit.
+func (o GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemOutput) VulnerabilityAuditId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItem) string {
+		return v.VulnerabilityAuditId
+	}).(pulumi.StringOutput)
+}
+
+type GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayOutput) ToGetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayOutput() GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayOutput) ToGetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItem {
+		return vs[0].([]GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItem)[vs[1].(int)]
+	}).(GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemOutput)
 }
 
 type GetBuildRunBuildRunArgument struct {
@@ -15584,6 +16057,8 @@ func (o GetConnectionsConnectionCollectionArrayOutput) Index(i pulumi.IntInput) 
 type GetConnectionsConnectionCollectionItem struct {
 	// The OCID of personal access token saved in secret store.
 	AccessToken string `pulumi:"accessToken"`
+	// OCID of personal Bitbucket Cloud AppPassword saved in secret store
+	AppPassword string `pulumi:"appPassword"`
 	// The OCID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// A filter to return only resources that match the given connection type.
@@ -15608,6 +16083,8 @@ type GetConnectionsConnectionCollectionItem struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the connection was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeUpdated string `pulumi:"timeUpdated"`
+	// Public Bitbucket Cloud Username in plain text
+	Username string `pulumi:"username"`
 }
 
 // GetConnectionsConnectionCollectionItemInput is an input type that accepts GetConnectionsConnectionCollectionItemArgs and GetConnectionsConnectionCollectionItemOutput values.
@@ -15624,6 +16101,8 @@ type GetConnectionsConnectionCollectionItemInput interface {
 type GetConnectionsConnectionCollectionItemArgs struct {
 	// The OCID of personal access token saved in secret store.
 	AccessToken pulumi.StringInput `pulumi:"accessToken"`
+	// OCID of personal Bitbucket Cloud AppPassword saved in secret store
+	AppPassword pulumi.StringInput `pulumi:"appPassword"`
 	// The OCID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// A filter to return only resources that match the given connection type.
@@ -15648,6 +16127,8 @@ type GetConnectionsConnectionCollectionItemArgs struct {
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time the connection was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// Public Bitbucket Cloud Username in plain text
+	Username pulumi.StringInput `pulumi:"username"`
 }
 
 func (GetConnectionsConnectionCollectionItemArgs) ElementType() reflect.Type {
@@ -15704,6 +16185,11 @@ func (o GetConnectionsConnectionCollectionItemOutput) ToGetConnectionsConnection
 // The OCID of personal access token saved in secret store.
 func (o GetConnectionsConnectionCollectionItemOutput) AccessToken() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.AccessToken }).(pulumi.StringOutput)
+}
+
+// OCID of personal Bitbucket Cloud AppPassword saved in secret store
+func (o GetConnectionsConnectionCollectionItemOutput) AppPassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.AppPassword }).(pulumi.StringOutput)
 }
 
 // The OCID of the compartment in which to list resources.
@@ -15764,6 +16250,11 @@ func (o GetConnectionsConnectionCollectionItemOutput) TimeCreated() pulumi.Strin
 // The time the connection was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 func (o GetConnectionsConnectionCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// Public Bitbucket Cloud Username in plain text
+func (o GetConnectionsConnectionCollectionItemOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.Username }).(pulumi.StringOutput)
 }
 
 type GetConnectionsConnectionCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -15893,8 +16384,10 @@ func (o GetConnectionsFilterArrayOutput) Index(i pulumi.IntInput) GetConnections
 }
 
 type GetDeployArtifactDeployArtifactSource struct {
-	// base64 Encoded String
+	// Specifies content for the inline artifact.
 	Base64encodedContent string `pulumi:"base64encodedContent"`
+	// The URL of an OCIR repository.
+	ChartUrl string `pulumi:"chartUrl"`
 	// Specifies the artifact path in the repository.
 	DeployArtifactPath string `pulumi:"deployArtifactPath"`
 	// Specifies types of artifact sources.
@@ -15921,8 +16414,10 @@ type GetDeployArtifactDeployArtifactSourceInput interface {
 }
 
 type GetDeployArtifactDeployArtifactSourceArgs struct {
-	// base64 Encoded String
+	// Specifies content for the inline artifact.
 	Base64encodedContent pulumi.StringInput `pulumi:"base64encodedContent"`
+	// The URL of an OCIR repository.
+	ChartUrl pulumi.StringInput `pulumi:"chartUrl"`
 	// Specifies the artifact path in the repository.
 	DeployArtifactPath pulumi.StringInput `pulumi:"deployArtifactPath"`
 	// Specifies types of artifact sources.
@@ -15988,9 +16483,14 @@ func (o GetDeployArtifactDeployArtifactSourceOutput) ToGetDeployArtifactDeployAr
 	return o
 }
 
-// base64 Encoded String
+// Specifies content for the inline artifact.
 func (o GetDeployArtifactDeployArtifactSourceOutput) Base64encodedContent() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeployArtifactDeployArtifactSource) string { return v.Base64encodedContent }).(pulumi.StringOutput)
+}
+
+// The URL of an OCIR repository.
+func (o GetDeployArtifactDeployArtifactSourceOutput) ChartUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeployArtifactDeployArtifactSource) string { return v.ChartUrl }).(pulumi.StringOutput)
 }
 
 // Specifies the artifact path in the repository.
@@ -16365,8 +16865,10 @@ func (o GetDeployArtifactsDeployArtifactCollectionItemArrayOutput) Index(i pulum
 }
 
 type GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSource struct {
-	// base64 Encoded String
+	// Specifies content for the inline artifact.
 	Base64encodedContent string `pulumi:"base64encodedContent"`
+	// The URL of an OCIR repository.
+	ChartUrl string `pulumi:"chartUrl"`
 	// Specifies the artifact path in the repository.
 	DeployArtifactPath string `pulumi:"deployArtifactPath"`
 	// Specifies types of artifact sources.
@@ -16393,8 +16895,10 @@ type GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceInput int
 }
 
 type GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceArgs struct {
-	// base64 Encoded String
+	// Specifies content for the inline artifact.
 	Base64encodedContent pulumi.StringInput `pulumi:"base64encodedContent"`
+	// The URL of an OCIR repository.
+	ChartUrl pulumi.StringInput `pulumi:"chartUrl"`
 	// Specifies the artifact path in the repository.
 	DeployArtifactPath pulumi.StringInput `pulumi:"deployArtifactPath"`
 	// Specifies types of artifact sources.
@@ -16460,11 +16964,16 @@ func (o GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceOutput
 	return o
 }
 
-// base64 Encoded String
+// Specifies content for the inline artifact.
 func (o GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceOutput) Base64encodedContent() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSource) string {
 		return v.Base64encodedContent
 	}).(pulumi.StringOutput)
+}
+
+// The URL of an OCIR repository.
+func (o GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceOutput) ChartUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSource) string { return v.ChartUrl }).(pulumi.StringOutput)
 }
 
 // Specifies the artifact path in the repository.
@@ -22066,6 +22575,8 @@ type GetDeployStagesDeployStageCollectionItem struct {
 	FunctionTimeoutInSeconds int `pulumi:"functionTimeoutInSeconds"`
 	// Collection of backend environment IP addresses.
 	GreenBackendIps []GetDeployStagesDeployStageCollectionItemGreenBackendIp `pulumi:"greenBackendIps"`
+	// Helm chart artifact OCID.
+	HelmChartDeployArtifactId string `pulumi:"helmChartDeployArtifactId"`
 	// Unique identifier or OCID for listing a single resource by ID.
 	Id string `pulumi:"id"`
 	// A boolean flag specifies whether this stage executes asynchronously.
@@ -22094,6 +22605,8 @@ type GetDeployStagesDeployStageCollectionItem struct {
 	ProductionLoadBalancerConfigs []GetDeployStagesDeployStageCollectionItemProductionLoadBalancerConfig `pulumi:"productionLoadBalancerConfigs"`
 	// The OCID of a project.
 	ProjectId string `pulumi:"projectId"`
+	// Release name of the Helm chart.
+	ReleaseName string `pulumi:"releaseName"`
 	// Specifies the rollback policy. This is initiated on the failure of certain stage types.
 	RollbackPolicies []GetDeployStagesDeployStageCollectionItemRollbackPolicy `pulumi:"rollbackPolicies"`
 	// Description of rollout policy for load balancer traffic shift stage.
@@ -22108,8 +22621,12 @@ type GetDeployStagesDeployStageCollectionItem struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// Time the deployment stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeUpdated string `pulumi:"timeUpdated"`
+	// Time to wait for execution of a helm stage. Defaults to 300 seconds.
+	TimeoutInSeconds int `pulumi:"timeoutInSeconds"`
 	// Specifies the target or destination backend set.
 	TrafficShiftTarget string `pulumi:"trafficShiftTarget"`
+	// List of values.yaml file artifact OCIDs.
+	ValuesArtifactIds []string `pulumi:"valuesArtifactIds"`
 	// Specifies wait criteria for the Wait stage.
 	WaitCriterias []GetDeployStagesDeployStageCollectionItemWaitCriteria `pulumi:"waitCriterias"`
 }
@@ -22180,6 +22697,8 @@ type GetDeployStagesDeployStageCollectionItemArgs struct {
 	FunctionTimeoutInSeconds pulumi.IntInput `pulumi:"functionTimeoutInSeconds"`
 	// Collection of backend environment IP addresses.
 	GreenBackendIps GetDeployStagesDeployStageCollectionItemGreenBackendIpArrayInput `pulumi:"greenBackendIps"`
+	// Helm chart artifact OCID.
+	HelmChartDeployArtifactId pulumi.StringInput `pulumi:"helmChartDeployArtifactId"`
 	// Unique identifier or OCID for listing a single resource by ID.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A boolean flag specifies whether this stage executes asynchronously.
@@ -22208,6 +22727,8 @@ type GetDeployStagesDeployStageCollectionItemArgs struct {
 	ProductionLoadBalancerConfigs GetDeployStagesDeployStageCollectionItemProductionLoadBalancerConfigArrayInput `pulumi:"productionLoadBalancerConfigs"`
 	// The OCID of a project.
 	ProjectId pulumi.StringInput `pulumi:"projectId"`
+	// Release name of the Helm chart.
+	ReleaseName pulumi.StringInput `pulumi:"releaseName"`
 	// Specifies the rollback policy. This is initiated on the failure of certain stage types.
 	RollbackPolicies GetDeployStagesDeployStageCollectionItemRollbackPolicyArrayInput `pulumi:"rollbackPolicies"`
 	// Description of rollout policy for load balancer traffic shift stage.
@@ -22222,8 +22743,12 @@ type GetDeployStagesDeployStageCollectionItemArgs struct {
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// Time the deployment stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// Time to wait for execution of a helm stage. Defaults to 300 seconds.
+	TimeoutInSeconds pulumi.IntInput `pulumi:"timeoutInSeconds"`
 	// Specifies the target or destination backend set.
 	TrafficShiftTarget pulumi.StringInput `pulumi:"trafficShiftTarget"`
+	// List of values.yaml file artifact OCIDs.
+	ValuesArtifactIds pulumi.StringArrayInput `pulumi:"valuesArtifactIds"`
 	// Specifies wait criteria for the Wait stage.
 	WaitCriterias GetDeployStagesDeployStageCollectionItemWaitCriteriaArrayInput `pulumi:"waitCriterias"`
 }
@@ -22436,6 +22961,11 @@ func (o GetDeployStagesDeployStageCollectionItemOutput) GreenBackendIps() GetDep
 	}).(GetDeployStagesDeployStageCollectionItemGreenBackendIpArrayOutput)
 }
 
+// Helm chart artifact OCID.
+func (o GetDeployStagesDeployStageCollectionItemOutput) HelmChartDeployArtifactId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItem) string { return v.HelmChartDeployArtifactId }).(pulumi.StringOutput)
+}
+
 // Unique identifier or OCID for listing a single resource by ID.
 func (o GetDeployStagesDeployStageCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItem) string { return v.Id }).(pulumi.StringOutput)
@@ -22512,6 +23042,11 @@ func (o GetDeployStagesDeployStageCollectionItemOutput) ProjectId() pulumi.Strin
 	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItem) string { return v.ProjectId }).(pulumi.StringOutput)
 }
 
+// Release name of the Helm chart.
+func (o GetDeployStagesDeployStageCollectionItemOutput) ReleaseName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItem) string { return v.ReleaseName }).(pulumi.StringOutput)
+}
+
 // Specifies the rollback policy. This is initiated on the failure of certain stage types.
 func (o GetDeployStagesDeployStageCollectionItemOutput) RollbackPolicies() GetDeployStagesDeployStageCollectionItemRollbackPolicyArrayOutput {
 	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItem) []GetDeployStagesDeployStageCollectionItemRollbackPolicy {
@@ -22553,9 +23088,19 @@ func (o GetDeployStagesDeployStageCollectionItemOutput) TimeUpdated() pulumi.Str
 	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
+// Time to wait for execution of a helm stage. Defaults to 300 seconds.
+func (o GetDeployStagesDeployStageCollectionItemOutput) TimeoutInSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItem) int { return v.TimeoutInSeconds }).(pulumi.IntOutput)
+}
+
 // Specifies the target or destination backend set.
 func (o GetDeployStagesDeployStageCollectionItemOutput) TrafficShiftTarget() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItem) string { return v.TrafficShiftTarget }).(pulumi.StringOutput)
+}
+
+// List of values.yaml file artifact OCIDs.
+func (o GetDeployStagesDeployStageCollectionItemOutput) ValuesArtifactIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItem) []string { return v.ValuesArtifactIds }).(pulumi.StringArrayOutput)
 }
 
 // Specifies wait criteria for the Wait stage.
@@ -28117,6 +28662,112 @@ func (o GetProjectsProjectCollectionItemNotificationConfigArrayOutput) Index(i p
 	}).(GetProjectsProjectCollectionItemNotificationConfigOutput)
 }
 
+type GetRepoFileLineLine struct {
+	// The content of the line.
+	LineContent string `pulumi:"lineContent"`
+	// The line number.
+	LineNumber int `pulumi:"lineNumber"`
+}
+
+// GetRepoFileLineLineInput is an input type that accepts GetRepoFileLineLineArgs and GetRepoFileLineLineOutput values.
+// You can construct a concrete instance of `GetRepoFileLineLineInput` via:
+//
+//          GetRepoFileLineLineArgs{...}
+type GetRepoFileLineLineInput interface {
+	pulumi.Input
+
+	ToGetRepoFileLineLineOutput() GetRepoFileLineLineOutput
+	ToGetRepoFileLineLineOutputWithContext(context.Context) GetRepoFileLineLineOutput
+}
+
+type GetRepoFileLineLineArgs struct {
+	// The content of the line.
+	LineContent pulumi.StringInput `pulumi:"lineContent"`
+	// The line number.
+	LineNumber pulumi.IntInput `pulumi:"lineNumber"`
+}
+
+func (GetRepoFileLineLineArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRepoFileLineLine)(nil)).Elem()
+}
+
+func (i GetRepoFileLineLineArgs) ToGetRepoFileLineLineOutput() GetRepoFileLineLineOutput {
+	return i.ToGetRepoFileLineLineOutputWithContext(context.Background())
+}
+
+func (i GetRepoFileLineLineArgs) ToGetRepoFileLineLineOutputWithContext(ctx context.Context) GetRepoFileLineLineOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRepoFileLineLineOutput)
+}
+
+// GetRepoFileLineLineArrayInput is an input type that accepts GetRepoFileLineLineArray and GetRepoFileLineLineArrayOutput values.
+// You can construct a concrete instance of `GetRepoFileLineLineArrayInput` via:
+//
+//          GetRepoFileLineLineArray{ GetRepoFileLineLineArgs{...} }
+type GetRepoFileLineLineArrayInput interface {
+	pulumi.Input
+
+	ToGetRepoFileLineLineArrayOutput() GetRepoFileLineLineArrayOutput
+	ToGetRepoFileLineLineArrayOutputWithContext(context.Context) GetRepoFileLineLineArrayOutput
+}
+
+type GetRepoFileLineLineArray []GetRepoFileLineLineInput
+
+func (GetRepoFileLineLineArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRepoFileLineLine)(nil)).Elem()
+}
+
+func (i GetRepoFileLineLineArray) ToGetRepoFileLineLineArrayOutput() GetRepoFileLineLineArrayOutput {
+	return i.ToGetRepoFileLineLineArrayOutputWithContext(context.Background())
+}
+
+func (i GetRepoFileLineLineArray) ToGetRepoFileLineLineArrayOutputWithContext(ctx context.Context) GetRepoFileLineLineArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRepoFileLineLineArrayOutput)
+}
+
+type GetRepoFileLineLineOutput struct{ *pulumi.OutputState }
+
+func (GetRepoFileLineLineOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRepoFileLineLine)(nil)).Elem()
+}
+
+func (o GetRepoFileLineLineOutput) ToGetRepoFileLineLineOutput() GetRepoFileLineLineOutput {
+	return o
+}
+
+func (o GetRepoFileLineLineOutput) ToGetRepoFileLineLineOutputWithContext(ctx context.Context) GetRepoFileLineLineOutput {
+	return o
+}
+
+// The content of the line.
+func (o GetRepoFileLineLineOutput) LineContent() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRepoFileLineLine) string { return v.LineContent }).(pulumi.StringOutput)
+}
+
+// The line number.
+func (o GetRepoFileLineLineOutput) LineNumber() pulumi.IntOutput {
+	return o.ApplyT(func(v GetRepoFileLineLine) int { return v.LineNumber }).(pulumi.IntOutput)
+}
+
+type GetRepoFileLineLineArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRepoFileLineLineArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRepoFileLineLine)(nil)).Elem()
+}
+
+func (o GetRepoFileLineLineArrayOutput) ToGetRepoFileLineLineArrayOutput() GetRepoFileLineLineArrayOutput {
+	return o
+}
+
+func (o GetRepoFileLineLineArrayOutput) ToGetRepoFileLineLineArrayOutputWithContext(ctx context.Context) GetRepoFileLineLineArrayOutput {
+	return o
+}
+
+func (o GetRepoFileLineLineArrayOutput) Index(i pulumi.IntInput) GetRepoFileLineLineOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRepoFileLineLine {
+		return vs[0].([]GetRepoFileLineLine)[vs[1].(int)]
+	}).(GetRepoFileLineLineOutput)
+}
+
 type GetRepositoriesFilter struct {
 	// A filter to return only resources that match the entire name given.
 	Name   string   `pulumi:"name"`
@@ -32818,7 +33469,7 @@ type GetTriggerActionFilter struct {
 	Events []string `pulumi:"events"`
 	// Attributes to filter DevOps code repository events.
 	Includes []GetTriggerActionFilterInclude `pulumi:"includes"`
-	// Source of the trigger. Allowed values are, GITHUB, GITLAB and DEVOPS_CODE_REPOSITORY.
+	// Source of the trigger. Allowed values are, GITHUB and GITLAB.
 	TriggerSource string `pulumi:"triggerSource"`
 }
 
@@ -32838,7 +33489,7 @@ type GetTriggerActionFilterArgs struct {
 	Events pulumi.StringArrayInput `pulumi:"events"`
 	// Attributes to filter DevOps code repository events.
 	Includes GetTriggerActionFilterIncludeArrayInput `pulumi:"includes"`
-	// Source of the trigger. Allowed values are, GITHUB, GITLAB and DEVOPS_CODE_REPOSITORY.
+	// Source of the trigger. Allowed values are, GITHUB and GITLAB.
 	TriggerSource pulumi.StringInput `pulumi:"triggerSource"`
 }
 
@@ -32903,7 +33554,7 @@ func (o GetTriggerActionFilterOutput) Includes() GetTriggerActionFilterIncludeAr
 	return o.ApplyT(func(v GetTriggerActionFilter) []GetTriggerActionFilterInclude { return v.Includes }).(GetTriggerActionFilterIncludeArrayOutput)
 }
 
-// Source of the trigger. Allowed values are, GITHUB, GITLAB and DEVOPS_CODE_REPOSITORY.
+// Source of the trigger. Allowed values are, GITHUB and GITLAB.
 func (o GetTriggerActionFilterOutput) TriggerSource() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTriggerActionFilter) string { return v.TriggerSource }).(pulumi.StringOutput)
 }
@@ -33263,7 +33914,7 @@ type GetTriggersTriggerCollectionItem struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the trigger was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeUpdated string `pulumi:"timeUpdated"`
-	// Source of the trigger. Allowed values are, GITHUB, GITLAB and DEVOPS_CODE_REPOSITORY.
+	// Source of the trigger. Allowed values are, GITHUB and GITLAB.
 	TriggerSource string `pulumi:"triggerSource"`
 	// The endpoint that listens to trigger events.
 	TriggerUrl string `pulumi:"triggerUrl"`
@@ -33309,7 +33960,7 @@ type GetTriggersTriggerCollectionItemArgs struct {
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time the trigger was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
-	// Source of the trigger. Allowed values are, GITHUB, GITLAB and DEVOPS_CODE_REPOSITORY.
+	// Source of the trigger. Allowed values are, GITHUB and GITLAB.
 	TriggerSource pulumi.StringInput `pulumi:"triggerSource"`
 	// The endpoint that listens to trigger events.
 	TriggerUrl pulumi.StringInput `pulumi:"triggerUrl"`
@@ -33436,7 +34087,7 @@ func (o GetTriggersTriggerCollectionItemOutput) TimeUpdated() pulumi.StringOutpu
 	return o.ApplyT(func(v GetTriggersTriggerCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// Source of the trigger. Allowed values are, GITHUB, GITLAB and DEVOPS_CODE_REPOSITORY.
+// Source of the trigger. Allowed values are, GITHUB and GITLAB.
 func (o GetTriggersTriggerCollectionItemOutput) TriggerSource() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTriggersTriggerCollectionItem) string { return v.TriggerSource }).(pulumi.StringOutput)
 }
@@ -33588,7 +34239,7 @@ type GetTriggersTriggerCollectionItemActionFilter struct {
 	Events []string `pulumi:"events"`
 	// Attributes to filter DevOps code repository events.
 	Includes []GetTriggersTriggerCollectionItemActionFilterInclude `pulumi:"includes"`
-	// Source of the trigger. Allowed values are, GITHUB, GITLAB and DEVOPS_CODE_REPOSITORY.
+	// Source of the trigger. Allowed values are, GITHUB and GITLAB.
 	TriggerSource string `pulumi:"triggerSource"`
 }
 
@@ -33608,7 +34259,7 @@ type GetTriggersTriggerCollectionItemActionFilterArgs struct {
 	Events pulumi.StringArrayInput `pulumi:"events"`
 	// Attributes to filter DevOps code repository events.
 	Includes GetTriggersTriggerCollectionItemActionFilterIncludeArrayInput `pulumi:"includes"`
-	// Source of the trigger. Allowed values are, GITHUB, GITLAB and DEVOPS_CODE_REPOSITORY.
+	// Source of the trigger. Allowed values are, GITHUB and GITLAB.
 	TriggerSource pulumi.StringInput `pulumi:"triggerSource"`
 }
 
@@ -33675,7 +34326,7 @@ func (o GetTriggersTriggerCollectionItemActionFilterOutput) Includes() GetTrigge
 	}).(GetTriggersTriggerCollectionItemActionFilterIncludeArrayOutput)
 }
 
-// Source of the trigger. Allowed values are, GITHUB, GITLAB and DEVOPS_CODE_REPOSITORY.
+// Source of the trigger. Allowed values are, GITHUB and GITLAB.
 func (o GetTriggersTriggerCollectionItemActionFilterOutput) TriggerSource() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTriggersTriggerCollectionItemActionFilter) string { return v.TriggerSource }).(pulumi.StringOutput)
 }
@@ -33839,6 +34490,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*BuildRunBuildOutputExportedVariableArrayInput)(nil)).Elem(), BuildRunBuildOutputExportedVariableArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BuildRunBuildOutputExportedVariableItemInput)(nil)).Elem(), BuildRunBuildOutputExportedVariableItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BuildRunBuildOutputExportedVariableItemArrayInput)(nil)).Elem(), BuildRunBuildOutputExportedVariableItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BuildRunBuildOutputVulnerabilityAuditSummaryCollectionInput)(nil)).Elem(), BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayInput)(nil)).Elem(), BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemInput)(nil)).Elem(), BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayInput)(nil)).Elem(), BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BuildRunBuildRunArgumentsInput)(nil)).Elem(), BuildRunBuildRunArgumentsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BuildRunBuildRunArgumentsPtrInput)(nil)).Elem(), BuildRunBuildRunArgumentsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BuildRunBuildRunArgumentsItemInput)(nil)).Elem(), BuildRunBuildRunArgumentsItemArgs{})
@@ -34010,6 +34665,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildRunBuildOutputExportedVariableArrayInput)(nil)).Elem(), GetBuildRunBuildOutputExportedVariableArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildRunBuildOutputExportedVariableItemInput)(nil)).Elem(), GetBuildRunBuildOutputExportedVariableItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildRunBuildOutputExportedVariableItemArrayInput)(nil)).Elem(), GetBuildRunBuildOutputExportedVariableItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionInput)(nil)).Elem(), GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayInput)(nil)).Elem(), GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemInput)(nil)).Elem(), GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayInput)(nil)).Elem(), GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildRunBuildRunArgumentInput)(nil)).Elem(), GetBuildRunBuildRunArgumentArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildRunBuildRunArgumentArrayInput)(nil)).Elem(), GetBuildRunBuildRunArgumentArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildRunBuildRunArgumentItemInput)(nil)).Elem(), GetBuildRunBuildRunArgumentItemArgs{})
@@ -34260,6 +34919,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsProjectCollectionItemArrayInput)(nil)).Elem(), GetProjectsProjectCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsProjectCollectionItemNotificationConfigInput)(nil)).Elem(), GetProjectsProjectCollectionItemNotificationConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsProjectCollectionItemNotificationConfigArrayInput)(nil)).Elem(), GetProjectsProjectCollectionItemNotificationConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRepoFileLineLineInput)(nil)).Elem(), GetRepoFileLineLineArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRepoFileLineLineArrayInput)(nil)).Elem(), GetRepoFileLineLineArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRepositoriesFilterInput)(nil)).Elem(), GetRepositoriesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRepositoriesFilterArrayInput)(nil)).Elem(), GetRepositoriesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRepositoriesRepositoryCollectionInput)(nil)).Elem(), GetRepositoriesRepositoryCollectionArgs{})
@@ -34384,6 +35045,10 @@ func init() {
 	pulumi.RegisterOutputType(BuildRunBuildOutputExportedVariableArrayOutput{})
 	pulumi.RegisterOutputType(BuildRunBuildOutputExportedVariableItemOutput{})
 	pulumi.RegisterOutputType(BuildRunBuildOutputExportedVariableItemArrayOutput{})
+	pulumi.RegisterOutputType(BuildRunBuildOutputVulnerabilityAuditSummaryCollectionOutput{})
+	pulumi.RegisterOutputType(BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayOutput{})
+	pulumi.RegisterOutputType(BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemOutput{})
+	pulumi.RegisterOutputType(BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(BuildRunBuildRunArgumentsOutput{})
 	pulumi.RegisterOutputType(BuildRunBuildRunArgumentsPtrOutput{})
 	pulumi.RegisterOutputType(BuildRunBuildRunArgumentsItemOutput{})
@@ -34555,6 +35220,10 @@ func init() {
 	pulumi.RegisterOutputType(GetBuildRunBuildOutputExportedVariableArrayOutput{})
 	pulumi.RegisterOutputType(GetBuildRunBuildOutputExportedVariableItemOutput{})
 	pulumi.RegisterOutputType(GetBuildRunBuildOutputExportedVariableItemArrayOutput{})
+	pulumi.RegisterOutputType(GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionOutput{})
+	pulumi.RegisterOutputType(GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetBuildRunBuildRunArgumentOutput{})
 	pulumi.RegisterOutputType(GetBuildRunBuildRunArgumentArrayOutput{})
 	pulumi.RegisterOutputType(GetBuildRunBuildRunArgumentItemOutput{})
@@ -34805,6 +35474,8 @@ func init() {
 	pulumi.RegisterOutputType(GetProjectsProjectCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetProjectsProjectCollectionItemNotificationConfigOutput{})
 	pulumi.RegisterOutputType(GetProjectsProjectCollectionItemNotificationConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetRepoFileLineLineOutput{})
+	pulumi.RegisterOutputType(GetRepoFileLineLineArrayOutput{})
 	pulumi.RegisterOutputType(GetRepositoriesFilterOutput{})
 	pulumi.RegisterOutputType(GetRepositoriesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetRepositoriesRepositoryCollectionOutput{})

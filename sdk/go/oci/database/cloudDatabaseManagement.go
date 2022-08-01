@@ -18,6 +18,41 @@ import (
 // Database Management requires `USER_NAME`, `PASSWORD_SECRET_ID` and `PRIVATE_END_POINT_ID`.
 // `database.0.database_management_config` is updated to appropriate managementType and managementStatus for the specified Oracle Database instance.
 //
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+// 	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
+// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+// )
+//
+// func main() {
+// 	pulumi.Run(func(ctx *pulumi.Context) error {
+// 		_, err := Database.NewCloudDatabaseManagement(ctx, "test", &Database.CloudDatabaseManagementArgs{
+// 			DatabaseId:        pulumi.Any(oci_database_database.Test_database.Id),
+// 			ManagementType:    pulumi.Any(_var.Database_cloud_database_management_details_management_type),
+// 			PrivateEndPointId: pulumi.Any(_var.Database_cloud_database_management_details_private_end_point_id),
+// 			ServiceName:       pulumi.Any(_var.Database_cloud_database_management_details_service_name),
+// 			Credentialdetails: &database.CloudDatabaseManagementCredentialdetailsArgs{
+// 				UserName:         pulumi.Any(_var.Database_cloud_database_management_details_user_name),
+// 				PasswordSecretId: pulumi.Any(_var.Database_cloud_database_management_details_password_secret_id),
+// 			},
+// 			EnableManagement: pulumi.Any(_var.Database_cloud_database_management_details_enable_management),
+// 			Port:             pulumi.Any(_var.Cloud_database_management_port),
+// 			Protocol:         pulumi.Any(_var.Cloud_database_management_protocol),
+// 			Role:             pulumi.Any(_var.Cloud_database_management_role),
+// 			SslSecretId:      pulumi.Any(oci_vault_secret.Test_secret.Id),
+// 		})
+// 		if err != nil {
+// 			return err
+// 		}
+// 		return nil
+// 	})
+// }
+// ```
+//
 // ## Import
 //
 // Import is not supported for this resource.
@@ -29,39 +64,23 @@ type CloudDatabaseManagement struct {
 	DatabaseId pulumi.StringOutput `pulumi:"databaseId"`
 	// (Updatable) Use this flag to enable/disable database management
 	EnableManagement pulumi.BoolOutput `pulumi:"enableManagement"`
-	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-	KmsKeyId pulumi.StringOutput `pulumi:"kmsKeyId"`
-	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-	KmsKeyVersionId pulumi.StringOutput `pulumi:"kmsKeyVersionId"`
-	// The date and time when the latest database backup was created.
-	LastBackupTimestamp pulumi.StringOutput `pulumi:"lastBackupTimestamp"`
-	// Additional information about the current lifecycle state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) Specifies database management type
 	// enum:
 	// - `BASIC`
 	// - `ADVANCED`
 	ManagementType pulumi.StringOutput `pulumi:"managementType"`
-	// The national character set for the database.
-	NcharacterSet pulumi.StringOutput `pulumi:"ncharacterSet"`
-	// The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
-	PdbName pulumi.StringOutput `pulumi:"pdbName"`
-	// (Updatable) The private end point [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	// The port used to connect to the database.
+	Port pulumi.IntPtrOutput `pulumi:"port"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
 	PrivateEndPointId pulumi.StringOutput `pulumi:"privateEndPointId"`
-	// (Updatable) Database service name
+	// Protocol used by the database connection.
+	Protocol pulumi.StringPtrOutput `pulumi:"protocol"`
+	// The role of the user that will be connecting to the database.
+	Role pulumi.StringPtrOutput `pulumi:"role"`
+	// The name of the Oracle Database service that will be used to connect to the database.
 	ServiceName pulumi.StringOutput `pulumi:"serviceName"`
-	// Specifies a prefix for the `Oracle SID` of the database to be created.
-	SidPrefix pulumi.StringOutput `pulumi:"sidPrefix"`
-	// Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
-	SourceDatabasePointInTimeRecoveryTimestamp pulumi.StringOutput `pulumi:"sourceDatabasePointInTimeRecoveryTimestamp"`
-	// The current state of the database.
-	State pulumi.StringOutput `pulumi:"state"`
-	// The date and time the database was created.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-	VaultId pulumi.StringOutput `pulumi:"vaultId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
-	VmClusterId pulumi.StringOutput `pulumi:"vmClusterId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+	SslSecretId pulumi.StringPtrOutput `pulumi:"sslSecretId"`
 }
 
 // NewCloudDatabaseManagement registers a new resource with the given unique name, arguments, and options.
@@ -76,6 +95,9 @@ func NewCloudDatabaseManagement(ctx *pulumi.Context,
 	}
 	if args.DatabaseId == nil {
 		return nil, errors.New("invalid value for required argument 'DatabaseId'")
+	}
+	if args.EnableManagement == nil {
+		return nil, errors.New("invalid value for required argument 'EnableManagement'")
 	}
 	if args.ManagementType == nil {
 		return nil, errors.New("invalid value for required argument 'ManagementType'")
@@ -113,39 +135,23 @@ type cloudDatabaseManagementState struct {
 	DatabaseId *string `pulumi:"databaseId"`
 	// (Updatable) Use this flag to enable/disable database management
 	EnableManagement *bool `pulumi:"enableManagement"`
-	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-	KmsKeyId *string `pulumi:"kmsKeyId"`
-	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-	KmsKeyVersionId *string `pulumi:"kmsKeyVersionId"`
-	// The date and time when the latest database backup was created.
-	LastBackupTimestamp *string `pulumi:"lastBackupTimestamp"`
-	// Additional information about the current lifecycle state.
-	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// (Updatable) Specifies database management type
 	// enum:
 	// - `BASIC`
 	// - `ADVANCED`
 	ManagementType *string `pulumi:"managementType"`
-	// The national character set for the database.
-	NcharacterSet *string `pulumi:"ncharacterSet"`
-	// The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
-	PdbName *string `pulumi:"pdbName"`
-	// (Updatable) The private end point [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	// The port used to connect to the database.
+	Port *int `pulumi:"port"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
 	PrivateEndPointId *string `pulumi:"privateEndPointId"`
-	// (Updatable) Database service name
+	// Protocol used by the database connection.
+	Protocol *string `pulumi:"protocol"`
+	// The role of the user that will be connecting to the database.
+	Role *string `pulumi:"role"`
+	// The name of the Oracle Database service that will be used to connect to the database.
 	ServiceName *string `pulumi:"serviceName"`
-	// Specifies a prefix for the `Oracle SID` of the database to be created.
-	SidPrefix *string `pulumi:"sidPrefix"`
-	// Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
-	SourceDatabasePointInTimeRecoveryTimestamp *string `pulumi:"sourceDatabasePointInTimeRecoveryTimestamp"`
-	// The current state of the database.
-	State *string `pulumi:"state"`
-	// The date and time the database was created.
-	TimeCreated *string `pulumi:"timeCreated"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-	VaultId *string `pulumi:"vaultId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
-	VmClusterId *string `pulumi:"vmClusterId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+	SslSecretId *string `pulumi:"sslSecretId"`
 }
 
 type CloudDatabaseManagementState struct {
@@ -154,39 +160,23 @@ type CloudDatabaseManagementState struct {
 	DatabaseId pulumi.StringPtrInput
 	// (Updatable) Use this flag to enable/disable database management
 	EnableManagement pulumi.BoolPtrInput
-	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-	KmsKeyId pulumi.StringPtrInput
-	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-	KmsKeyVersionId pulumi.StringPtrInput
-	// The date and time when the latest database backup was created.
-	LastBackupTimestamp pulumi.StringPtrInput
-	// Additional information about the current lifecycle state.
-	LifecycleDetails pulumi.StringPtrInput
 	// (Updatable) Specifies database management type
 	// enum:
 	// - `BASIC`
 	// - `ADVANCED`
 	ManagementType pulumi.StringPtrInput
-	// The national character set for the database.
-	NcharacterSet pulumi.StringPtrInput
-	// The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
-	PdbName pulumi.StringPtrInput
-	// (Updatable) The private end point [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	// The port used to connect to the database.
+	Port pulumi.IntPtrInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
 	PrivateEndPointId pulumi.StringPtrInput
-	// (Updatable) Database service name
+	// Protocol used by the database connection.
+	Protocol pulumi.StringPtrInput
+	// The role of the user that will be connecting to the database.
+	Role pulumi.StringPtrInput
+	// The name of the Oracle Database service that will be used to connect to the database.
 	ServiceName pulumi.StringPtrInput
-	// Specifies a prefix for the `Oracle SID` of the database to be created.
-	SidPrefix pulumi.StringPtrInput
-	// Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
-	SourceDatabasePointInTimeRecoveryTimestamp pulumi.StringPtrInput
-	// The current state of the database.
-	State pulumi.StringPtrInput
-	// The date and time the database was created.
-	TimeCreated pulumi.StringPtrInput
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-	VaultId pulumi.StringPtrInput
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
-	VmClusterId pulumi.StringPtrInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+	SslSecretId pulumi.StringPtrInput
 }
 
 func (CloudDatabaseManagementState) ElementType() reflect.Type {
@@ -197,15 +187,25 @@ type cloudDatabaseManagementArgs struct {
 	Credentialdetails CloudDatabaseManagementCredentialdetails `pulumi:"credentialdetails"`
 	// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DatabaseId string `pulumi:"databaseId"`
+	// (Updatable) Use this flag to enable/disable database management
+	EnableManagement bool `pulumi:"enableManagement"`
 	// (Updatable) Specifies database management type
 	// enum:
 	// - `BASIC`
 	// - `ADVANCED`
 	ManagementType string `pulumi:"managementType"`
-	// (Updatable) The private end point [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	// The port used to connect to the database.
+	Port *int `pulumi:"port"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
 	PrivateEndPointId string `pulumi:"privateEndPointId"`
-	// (Updatable) Database service name
+	// Protocol used by the database connection.
+	Protocol *string `pulumi:"protocol"`
+	// The role of the user that will be connecting to the database.
+	Role *string `pulumi:"role"`
+	// The name of the Oracle Database service that will be used to connect to the database.
 	ServiceName string `pulumi:"serviceName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+	SslSecretId *string `pulumi:"sslSecretId"`
 }
 
 // The set of arguments for constructing a CloudDatabaseManagement resource.
@@ -213,15 +213,25 @@ type CloudDatabaseManagementArgs struct {
 	Credentialdetails CloudDatabaseManagementCredentialdetailsInput
 	// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DatabaseId pulumi.StringInput
+	// (Updatable) Use this flag to enable/disable database management
+	EnableManagement pulumi.BoolInput
 	// (Updatable) Specifies database management type
 	// enum:
 	// - `BASIC`
 	// - `ADVANCED`
 	ManagementType pulumi.StringInput
-	// (Updatable) The private end point [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	// The port used to connect to the database.
+	Port pulumi.IntPtrInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
 	PrivateEndPointId pulumi.StringInput
-	// (Updatable) Database service name
+	// Protocol used by the database connection.
+	Protocol pulumi.StringPtrInput
+	// The role of the user that will be connecting to the database.
+	Role pulumi.StringPtrInput
+	// The name of the Oracle Database service that will be used to connect to the database.
 	ServiceName pulumi.StringInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+	SslSecretId pulumi.StringPtrInput
 }
 
 func (CloudDatabaseManagementArgs) ElementType() reflect.Type {

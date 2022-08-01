@@ -66,14 +66,14 @@ public class Dataset extends com.pulumi.resources.CustomResource {
         return this.compartmentId;
     }
     /**
-     * Specifies how to process the data. Supported formats include IMAGE and TEXT.
+     * It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
      * 
      */
     @Export(name="datasetFormatDetails", type=DatasetDatasetFormatDetails.class, parameters={})
     private Output<DatasetDatasetFormatDetails> datasetFormatDetails;
 
     /**
-     * @return Specifies how to process the data. Supported formats include IMAGE and TEXT.
+     * @return It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
      * 
      */
     public Output<DatasetDatasetFormatDetails> datasetFormatDetails() {
@@ -150,42 +150,42 @@ public class Dataset extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
-     * Initial Generate Records configuration, generates records from the Dataset&#39;s source.
+     * The initial generate records configuration. It generates records from the dataset&#39;s source.
      * 
      */
     @Export(name="initialRecordGenerationConfiguration", type=DatasetInitialRecordGenerationConfiguration.class, parameters={})
     private Output<DatasetInitialRecordGenerationConfiguration> initialRecordGenerationConfiguration;
 
     /**
-     * @return Initial Generate Records configuration, generates records from the Dataset&#39;s source.
+     * @return The initial generate records configuration. It generates records from the dataset&#39;s source.
      * 
      */
     public Output<DatasetInitialRecordGenerationConfiguration> initialRecordGenerationConfiguration() {
         return this.initialRecordGenerationConfiguration;
     }
     /**
-     * An ordered collection of Labels that are unique by name.
+     * An ordered collection of labels that are unique by name.
      * 
      */
     @Export(name="labelSet", type=DatasetLabelSet.class, parameters={})
     private Output<DatasetLabelSet> labelSet;
 
     /**
-     * @return An ordered collection of Labels that are unique by name.
+     * @return An ordered collection of labels that are unique by name.
      * 
      */
     public Output<DatasetLabelSet> labelSet() {
         return this.labelSet;
     }
     /**
-     * The labeling instructions for human labelers in rich text format
+     * (Updatable) The labeling instructions for human labelers in rich text format
      * 
      */
     @Export(name="labelingInstructions", type=String.class, parameters={})
     private Output<String> labelingInstructions;
 
     /**
-     * @return The labeling instructions for human labelers in rich text format
+     * @return (Updatable) The labeling instructions for human labelers in rich text format
      * 
      */
     public Output<String> labelingInstructions() {

@@ -10,6 +10,7 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.BigDataService.AutoScalingConfigurationArgs;
 import com.pulumi.oci.BigDataService.inputs.AutoScalingConfigurationState;
 import com.pulumi.oci.BigDataService.outputs.AutoScalingConfigurationPolicy;
+import com.pulumi.oci.BigDataService.outputs.AutoScalingConfigurationPolicyDetails;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.String;
@@ -90,32 +91,46 @@ public class AutoScalingConfiguration extends com.pulumi.resources.CustomResourc
         return this.isEnabled;
     }
     /**
-     * A node type that is managed by an autoscale configuration. The only supported type is WORKER.
+     * A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
      * 
      */
     @Export(name="nodeType", type=String.class, parameters={})
     private Output<String> nodeType;
 
     /**
-     * @return A node type that is managed by an autoscale configuration. The only supported type is WORKER.
+     * @return A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
      * 
      */
     public Output<String> nodeType() {
         return this.nodeType;
     }
     /**
-     * (Updatable) Policy definitions for the autoscale configuration.
+     * (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
      * 
      */
     @Export(name="policy", type=AutoScalingConfigurationPolicy.class, parameters={})
     private Output<AutoScalingConfigurationPolicy> policy;
 
     /**
-     * @return (Updatable) Policy definitions for the autoscale configuration.
+     * @return (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
      * 
      */
     public Output<AutoScalingConfigurationPolicy> policy() {
         return this.policy;
+    }
+    /**
+     * (Updatable) Policy definition for the autoscale configuration.
+     * 
+     */
+    @Export(name="policyDetails", type=AutoScalingConfigurationPolicyDetails.class, parameters={})
+    private Output<AutoScalingConfigurationPolicyDetails> policyDetails;
+
+    /**
+     * @return (Updatable) Policy definition for the autoscale configuration.
+     * 
+     */
+    public Output<AutoScalingConfigurationPolicyDetails> policyDetails() {
+        return this.policyDetails;
     }
     /**
      * The state of the autoscale configuration.

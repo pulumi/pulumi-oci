@@ -35,6 +35,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the route rule's target. For information about the type of targets you can specify, see [Route Tables](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm).
         /// </summary>
         public readonly string NetworkEntityId;
+        public readonly string? RouteType;
 
         [OutputConstructor]
         private RouteTableRouteRule(
@@ -46,13 +47,16 @@ namespace Pulumi.Oci.Core.Outputs
 
             string? destinationType,
 
-            string networkEntityId)
+            string networkEntityId,
+
+            string? routeType)
         {
             CidrBlock = cidrBlock;
             Description = description;
             Destination = destination;
             DestinationType = destinationType;
             NetworkEntityId = networkEntityId;
+            RouteType = routeType;
         }
     }
 }

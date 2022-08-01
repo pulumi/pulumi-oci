@@ -26,6 +26,10 @@ public final class ModelValidationDataset {
      * 
      */
     private final String datasetType;
+    /**
+     * @return The namespace name of the ObjectStorage bucket that contains the input data file.
+     * 
+     */
     private final @Nullable String namespaceName;
     /**
      * @return The object name of the input data file.
@@ -68,6 +72,10 @@ public final class ModelValidationDataset {
     public String datasetType() {
         return this.datasetType;
     }
+    /**
+     * @return The namespace name of the ObjectStorage bucket that contains the input data file.
+     * 
+     */
     public Optional<String> namespaceName() {
         return Optional.ofNullable(this.namespaceName);
     }

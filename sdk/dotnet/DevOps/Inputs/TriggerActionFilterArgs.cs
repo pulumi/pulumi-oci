@@ -31,7 +31,7 @@ namespace Pulumi.Oci.DevOps.Inputs
         public Input<Inputs.TriggerActionFilterIncludeArgs>? Include { get; set; }
 
         /// <summary>
-        /// (Updatable) Source of the trigger. Allowed values are, GITHUB and GITLAB.
+        /// (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
         /// </summary>
         [Input("triggerSource", required: true)]
         public Input<string> TriggerSource { get; set; } = null!;

@@ -23,7 +23,7 @@ public final class GetGuardTargetsResult {
     private final String compartmentId;
     private final @Nullable Boolean compartmentIdInSubtree;
     /**
-     * @return ResponderRule Display Name
+     * @return ResponderRule display name.
      * 
      */
     private final @Nullable String displayName;
@@ -33,6 +33,7 @@ public final class GetGuardTargetsResult {
      * 
      */
     private final String id;
+    private final @Nullable Boolean isNonSecurityZoneTargetsOnlyQuery;
     /**
      * @return The current state of the ResponderRule.
      * 
@@ -52,6 +53,7 @@ public final class GetGuardTargetsResult {
         @CustomType.Parameter("displayName") @Nullable String displayName,
         @CustomType.Parameter("filters") @Nullable List<GetGuardTargetsFilter> filters,
         @CustomType.Parameter("id") String id,
+        @CustomType.Parameter("isNonSecurityZoneTargetsOnlyQuery") @Nullable Boolean isNonSecurityZoneTargetsOnlyQuery,
         @CustomType.Parameter("state") @Nullable String state,
         @CustomType.Parameter("targetCollections") List<GetGuardTargetsTargetCollection> targetCollections) {
         this.accessLevel = accessLevel;
@@ -60,6 +62,7 @@ public final class GetGuardTargetsResult {
         this.displayName = displayName;
         this.filters = filters;
         this.id = id;
+        this.isNonSecurityZoneTargetsOnlyQuery = isNonSecurityZoneTargetsOnlyQuery;
         this.state = state;
         this.targetCollections = targetCollections;
     }
@@ -78,7 +81,7 @@ public final class GetGuardTargetsResult {
         return Optional.ofNullable(this.compartmentIdInSubtree);
     }
     /**
-     * @return ResponderRule Display Name
+     * @return ResponderRule display name.
      * 
      */
     public Optional<String> displayName() {
@@ -93,6 +96,9 @@ public final class GetGuardTargetsResult {
      */
     public String id() {
         return this.id;
+    }
+    public Optional<Boolean> isNonSecurityZoneTargetsOnlyQuery() {
+        return Optional.ofNullable(this.isNonSecurityZoneTargetsOnlyQuery);
     }
     /**
      * @return The current state of the ResponderRule.
@@ -124,6 +130,7 @@ public final class GetGuardTargetsResult {
         private @Nullable String displayName;
         private @Nullable List<GetGuardTargetsFilter> filters;
         private String id;
+        private @Nullable Boolean isNonSecurityZoneTargetsOnlyQuery;
         private @Nullable String state;
         private List<GetGuardTargetsTargetCollection> targetCollections;
 
@@ -139,6 +146,7 @@ public final class GetGuardTargetsResult {
     	      this.displayName = defaults.displayName;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
+    	      this.isNonSecurityZoneTargetsOnlyQuery = defaults.isNonSecurityZoneTargetsOnlyQuery;
     	      this.state = defaults.state;
     	      this.targetCollections = defaults.targetCollections;
         }
@@ -170,6 +178,10 @@ public final class GetGuardTargetsResult {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        public Builder isNonSecurityZoneTargetsOnlyQuery(@Nullable Boolean isNonSecurityZoneTargetsOnlyQuery) {
+            this.isNonSecurityZoneTargetsOnlyQuery = isNonSecurityZoneTargetsOnlyQuery;
+            return this;
+        }
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
@@ -181,7 +193,7 @@ public final class GetGuardTargetsResult {
         public Builder targetCollections(GetGuardTargetsTargetCollection... targetCollections) {
             return targetCollections(List.of(targetCollections));
         }        public GetGuardTargetsResult build() {
-            return new GetGuardTargetsResult(accessLevel, compartmentId, compartmentIdInSubtree, displayName, filters, id, state, targetCollections);
+            return new GetGuardTargetsResult(accessLevel, compartmentId, compartmentIdInSubtree, displayName, filters, id, isNonSecurityZoneTargetsOnlyQuery, state, targetCollections);
         }
     }
 }

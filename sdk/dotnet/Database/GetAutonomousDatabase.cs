@@ -142,6 +142,10 @@ namespace Pulumi.Oci.Database
         /// Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousDatabaseBackupConfigResult> BackupConfigs;
+        /// <summary>
+        /// The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
+        /// </summary>
+        public readonly string CharacterSet;
         public readonly string CloneType;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -240,7 +244,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly bool IsAutoScalingForStorageEnabled;
         /// <summary>
-        /// Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to  Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        /// **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         /// </summary>
         public readonly bool IsDataGuardEnabled;
         /// <summary>
@@ -251,6 +255,10 @@ namespace Pulumi.Oci.Database
         /// Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
         /// </summary>
         public readonly bool IsFreeTier;
+        /// <summary>
+        /// Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        /// </summary>
+        public readonly bool IsLocalDataGuardEnabled;
         /// <summary>
         /// Indicates whether the Autonomous Database requires mTLS connections.
         /// </summary>
@@ -268,6 +276,10 @@ namespace Pulumi.Oci.Database
         /// Indicates whether the Autonomous Database is a refreshable clone.
         /// </summary>
         public readonly bool IsRefreshableClone;
+        /// <summary>
+        /// Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        /// </summary>
+        public readonly bool IsRemoteDataGuardEnabled;
         public readonly bool IsShrinkOnly;
         /// <summary>
         /// Key History Entry.
@@ -302,6 +314,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
+        /// Autonomous Data Guard standby database details.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetAutonomousDatabaseLocalStandbyDbResult> LocalStandbyDbs;
+        /// <summary>
         /// The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
         /// </summary>
         public readonly int MaxCpuCoreCount;
@@ -310,8 +326,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly int MemoryPerOracleComputeUnitInGbs;
         /// <summary>
-        /// A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        /// * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+        /// The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
+        /// </summary>
+        public readonly string NcharacterSet;
+        /// <summary>
+        /// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+        /// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         /// </summary>
         public readonly ImmutableArray<string> NsgIds;
         /// <summary>
@@ -347,6 +367,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string PrivateEndpointLabel;
         /// <summary>
+        /// An array of CPU values that an Autonomous Database can be scaled to.
+        /// </summary>
+        public readonly ImmutableArray<double> ProvisionableCpuses;
+        /// <summary>
         /// The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
         /// </summary>
         public readonly string RefreshableMode;
@@ -373,7 +397,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string SourceId;
         /// <summary>
-        /// Autonomous Data Guard standby database details.
+        /// **Deprecated** Autonomous Data Guard standby database details.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousDatabaseStandbyDbResult> StandbyDbs;
         /// <summary>
@@ -488,6 +512,8 @@ namespace Pulumi.Oci.Database
 
             ImmutableArray<Outputs.GetAutonomousDatabaseBackupConfigResult> backupConfigs,
 
+            string characterSet,
+
             string cloneType,
 
             string compartmentId,
@@ -542,6 +568,8 @@ namespace Pulumi.Oci.Database
 
             bool isFreeTier,
 
+            bool isLocalDataGuardEnabled,
+
             bool isMtlsConnectionRequired,
 
             bool isPreview,
@@ -551,6 +579,8 @@ namespace Pulumi.Oci.Database
             bool isReconnectCloneEnabled,
 
             bool isRefreshableClone,
+
+            bool isRemoteDataGuardEnabled,
 
             bool isShrinkOnly,
 
@@ -570,9 +600,13 @@ namespace Pulumi.Oci.Database
 
             string lifecycleDetails,
 
+            ImmutableArray<Outputs.GetAutonomousDatabaseLocalStandbyDbResult> localStandbyDbs,
+
             int maxCpuCoreCount,
 
             int memoryPerOracleComputeUnitInGbs,
+
+            string ncharacterSet,
 
             ImmutableArray<string> nsgIds,
 
@@ -591,6 +625,8 @@ namespace Pulumi.Oci.Database
             string privateEndpointIp,
 
             string privateEndpointLabel,
+
+            ImmutableArray<double> provisionableCpuses,
 
             string refreshableMode,
 
@@ -669,6 +705,7 @@ namespace Pulumi.Oci.Database
             AutonomousMaintenanceScheduleType = autonomousMaintenanceScheduleType;
             AvailableUpgradeVersions = availableUpgradeVersions;
             BackupConfigs = backupConfigs;
+            CharacterSet = characterSet;
             CloneType = cloneType;
             CompartmentId = compartmentId;
             ConnectionStrings = connectionStrings;
@@ -696,11 +733,13 @@ namespace Pulumi.Oci.Database
             IsDataGuardEnabled = isDataGuardEnabled;
             IsDedicated = isDedicated;
             IsFreeTier = isFreeTier;
+            IsLocalDataGuardEnabled = isLocalDataGuardEnabled;
             IsMtlsConnectionRequired = isMtlsConnectionRequired;
             IsPreview = isPreview;
             IsPreviewVersionWithServiceTermsAccepted = isPreviewVersionWithServiceTermsAccepted;
             IsReconnectCloneEnabled = isReconnectCloneEnabled;
             IsRefreshableClone = isRefreshableClone;
+            IsRemoteDataGuardEnabled = isRemoteDataGuardEnabled;
             IsShrinkOnly = isShrinkOnly;
             KeyHistoryEntries = keyHistoryEntries;
             KeyStoreId = keyStoreId;
@@ -710,8 +749,10 @@ namespace Pulumi.Oci.Database
             KmsKeyVersionId = kmsKeyVersionId;
             LicenseModel = licenseModel;
             LifecycleDetails = lifecycleDetails;
+            LocalStandbyDbs = localStandbyDbs;
             MaxCpuCoreCount = maxCpuCoreCount;
             MemoryPerOracleComputeUnitInGbs = memoryPerOracleComputeUnitInGbs;
+            NcharacterSet = ncharacterSet;
             NsgIds = nsgIds;
             OcpuCount = ocpuCount;
             OpenMode = openMode;
@@ -721,6 +762,7 @@ namespace Pulumi.Oci.Database
             PrivateEndpoint = privateEndpoint;
             PrivateEndpointIp = privateEndpointIp;
             PrivateEndpointLabel = privateEndpointLabel;
+            ProvisionableCpuses = provisionableCpuses;
             RefreshableMode = refreshableMode;
             RefreshableStatus = refreshableStatus;
             Role = role;

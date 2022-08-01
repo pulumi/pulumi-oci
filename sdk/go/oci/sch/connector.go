@@ -61,6 +61,22 @@ import (
 // 						LogId:         pulumi.Any(oci_logging_log.Test_log.Id),
 // 					},
 // 				},
+// 				MonitoringSources: sch.ConnectorSourceMonitoringSourceArray{
+// 					&sch.ConnectorSourceMonitoringSourceArgs{
+// 						CompartmentId: pulumi.Any(_var.Compartment_id),
+// 						NamespaceDetails: &sch.ConnectorSourceMonitoringSourceNamespaceDetailsArgs{
+// 							Kind: pulumi.Any(_var.Service_connector_source_monitoring_sources_namespace_details_kind),
+// 							Namespaces: sch.ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArray{
+// 								&sch.ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs{
+// 									Metrics: &sch.ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgs{
+// 										Kind: pulumi.Any(_var.Service_connector_source_monitoring_sources_namespace_details_namespaces_metrics_kind),
+// 									},
+// 									Namespace: pulumi.Any(_var.Service_connector_source_monitoring_sources_namespace_details_namespaces_namespace),
+// 								},
+// 							},
+// 						},
+// 					},
+// 				},
 // 				StreamId: pulumi.Any(oci_streaming_stream.Test_stream.Id),
 // 			},
 // 			Target: &sch.ConnectorTargetArgs{

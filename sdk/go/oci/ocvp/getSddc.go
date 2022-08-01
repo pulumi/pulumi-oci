@@ -55,6 +55,8 @@ type LookupSddcArgs struct {
 type LookupSddcResult struct {
 	// The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC.
 	ActualEsxiHostsCount int `pulumi:"actualEsxiHostsCount"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+	CapacityReservationId string `pulumi:"capacityReservationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The availability domain the ESXi hosts are running in. For Multi-AD SDDC, it is `multi-AD`.  Example: `Uocm:PHX-AD-1`, `multi-AD`
@@ -82,6 +84,10 @@ type LookupSddcResult struct {
 	HcxVlanId string `pulumi:"hcxVlanId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
 	Id string `pulumi:"id"`
+	// The initial OCPU count of the SDDC's ESXi hosts.
+	InitialHostOcpuCount float64 `pulumi:"initialHostOcpuCount"`
+	// The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+	InitialHostShapeName string `pulumi:"initialHostShapeName"`
 	// The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
 	InitialSku string `pulumi:"initialSku"`
 	// A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
@@ -198,6 +204,11 @@ func (o LookupSddcResultOutput) ActualEsxiHostsCount() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupSddcResult) int { return v.ActualEsxiHostsCount }).(pulumi.IntOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+func (o LookupSddcResultOutput) CapacityReservationId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupSddcResult) string { return v.CapacityReservationId }).(pulumi.StringOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
 func (o LookupSddcResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSddcResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -265,6 +276,16 @@ func (o LookupSddcResultOutput) HcxVlanId() pulumi.StringOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
 func (o LookupSddcResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSddcResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The initial OCPU count of the SDDC's ESXi hosts.
+func (o LookupSddcResultOutput) InitialHostOcpuCount() pulumi.Float64Output {
+	return o.ApplyT(func(v LookupSddcResult) float64 { return v.InitialHostOcpuCount }).(pulumi.Float64Output)
+}
+
+// The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+func (o LookupSddcResultOutput) InitialHostShapeName() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupSddcResult) string { return v.InitialHostShapeName }).(pulumi.StringOutput)
 }
 
 // The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).

@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DataLabellingService.Outputs
     public sealed class DatasetLabelSet
     {
         /// <summary>
-        /// An ordered collection of Labels that are unique by name.
+        /// An ordered collection of labels that are unique by name.
         /// </summary>
         public readonly ImmutableArray<Outputs.DatasetLabelSetItem> Items;
 

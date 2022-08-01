@@ -2,6 +2,7 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import { input as inputs, output as outputs } from "../types";
 import * as utilities from "../utilities";
 
 /**
@@ -23,6 +24,9 @@ import * as utilities from "../utilities";
  *     giVersion: _var.vm_cluster_gi_version,
  *     sshPublicKeys: _var.vm_cluster_ssh_public_keys,
  *     vmClusterNetworkId: oci_database_vm_cluster_network.test_vm_cluster_network.id,
+ *     dataCollectionOptions: {
+ *         isDiagnosticsEventsEnabled: _var.vm_cluster_data_collection_options_is_diagnostics_events_enabled,
+ *     },
  *     dataStorageSizeInTbs: _var.vm_cluster_data_storage_size_in_tbs,
  *     dbNodeStorageSizeInGbs: _var.vm_cluster_db_node_storage_size_in_gbs,
  *     dbServers: _var.vm_cluster_db_servers,
@@ -83,6 +87,10 @@ export class VmCluster extends pulumi.CustomResource {
      * The number of enabled CPU cores.
      */
     public /*out*/ readonly cpusEnabled!: pulumi.Output<number>;
+    /**
+     * (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster.
+     */
+    public readonly dataCollectionOptions!: pulumi.Output<outputs.Database.VmClusterDataCollectionOptions>;
     public readonly dataStorageSizeInGb!: pulumi.Output<number>;
     /**
      * (Updatable) The data disk group size to be allocated in TBs.
@@ -187,6 +195,7 @@ export class VmCluster extends pulumi.CustomResource {
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["cpuCoreCount"] = state ? state.cpuCoreCount : undefined;
             resourceInputs["cpusEnabled"] = state ? state.cpusEnabled : undefined;
+            resourceInputs["dataCollectionOptions"] = state ? state.dataCollectionOptions : undefined;
             resourceInputs["dataStorageSizeInGb"] = state ? state.dataStorageSizeInGb : undefined;
             resourceInputs["dataStorageSizeInTbs"] = state ? state.dataStorageSizeInTbs : undefined;
             resourceInputs["dbNodeStorageSizeInGbs"] = state ? state.dbNodeStorageSizeInGbs : undefined;
@@ -236,6 +245,7 @@ export class VmCluster extends pulumi.CustomResource {
             }
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["cpuCoreCount"] = args ? args.cpuCoreCount : undefined;
+            resourceInputs["dataCollectionOptions"] = args ? args.dataCollectionOptions : undefined;
             resourceInputs["dataStorageSizeInGb"] = args ? args.dataStorageSizeInGb : undefined;
             resourceInputs["dataStorageSizeInTbs"] = args ? args.dataStorageSizeInTbs : undefined;
             resourceInputs["dbNodeStorageSizeInGbs"] = args ? args.dbNodeStorageSizeInGbs : undefined;
@@ -280,6 +290,10 @@ export interface VmClusterState {
      * The number of enabled CPU cores.
      */
     cpusEnabled?: pulumi.Input<number>;
+    /**
+     * (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster.
+     */
+    dataCollectionOptions?: pulumi.Input<inputs.Database.VmClusterDataCollectionOptions>;
     dataStorageSizeInGb?: pulumi.Input<number>;
     /**
      * (Updatable) The data disk group size to be allocated in TBs.
@@ -378,6 +392,10 @@ export interface VmClusterArgs {
      */
     compartmentId: pulumi.Input<string>;
     cpuCoreCount: pulumi.Input<number>;
+    /**
+     * (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster.
+     */
+    dataCollectionOptions?: pulumi.Input<inputs.Database.VmClusterDataCollectionOptions>;
     dataStorageSizeInGb?: pulumi.Input<number>;
     /**
      * (Updatable) The data disk group size to be allocated in TBs.

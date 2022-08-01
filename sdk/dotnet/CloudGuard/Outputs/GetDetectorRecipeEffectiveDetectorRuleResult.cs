@@ -18,7 +18,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleResult> CandidateResponderRules;
         /// <summary>
-        /// Description for DetectorRecipeDetectorRule
+        /// Description for DetectorRecipeDetectorRule.
         /// </summary>
         public readonly string Description;
         /// <summary>
@@ -30,11 +30,11 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string Detector;
         /// <summary>
-        /// The unique identifier of the detector rule
+        /// The unique identifier of the detector rule.
         /// </summary>
         public readonly string DetectorRuleId;
         /// <summary>
-        /// displayName
+        /// Display name for DetectorRecipeDetectorRule.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>

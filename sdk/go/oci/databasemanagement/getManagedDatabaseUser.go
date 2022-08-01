@@ -89,7 +89,7 @@ type GetManagedDatabaseUserResult struct {
 	OracleMaintained string `pulumi:"oracleMaintained"`
 	// The list of existing versions of the password hashes (also known as "verifiers") for the account.
 	PasswordVersions string `pulumi:"passwordVersions"`
-	// The User resource profile name.
+	// The profile name of the user.
 	Profile string `pulumi:"profile"`
 	// Indicates whether a user can connect directly (N) or whether the account can only be proxied (Y) by users who have proxy privileges for this account (that is, by users who have been granted the "connect through" privilege for this account).
 	ProxyConnect string `pulumi:"proxyConnect"`
@@ -103,7 +103,7 @@ type GetManagedDatabaseUserResult struct {
 	TimeExpiring string `pulumi:"timeExpiring"`
 	// The date and time of the last user login. This column is not populated when a user connects to the database with administrative privileges, that is, AS { SYSASM | SYSBACKUP | SYSDBA | SYSDG | SYSOPER | SYSRAC | SYSKM }.
 	TimeLastLogin string `pulumi:"timeLastLogin"`
-	// The date the account was locked if account status was LOCKED.
+	// The date the account was locked, if the status of the account is LOCKED.
 	TimeLocked string `pulumi:"timeLocked"`
 	// The date and time when the user password was last set. This column is populated only when the value of the AUTHENTICATION_TYPE column is PASSWORD. Otherwise, this column is null.
 	TimePasswordChanged string `pulumi:"timePasswordChanged"`
@@ -234,7 +234,7 @@ func (o GetManagedDatabaseUserResultOutput) PasswordVersions() pulumi.StringOutp
 	return o.ApplyT(func(v GetManagedDatabaseUserResult) string { return v.PasswordVersions }).(pulumi.StringOutput)
 }
 
-// The User resource profile name.
+// The profile name of the user.
 func (o GetManagedDatabaseUserResultOutput) Profile() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedDatabaseUserResult) string { return v.Profile }).(pulumi.StringOutput)
 }
@@ -269,7 +269,7 @@ func (o GetManagedDatabaseUserResultOutput) TimeLastLogin() pulumi.StringOutput 
 	return o.ApplyT(func(v GetManagedDatabaseUserResult) string { return v.TimeLastLogin }).(pulumi.StringOutput)
 }
 
-// The date the account was locked if account status was LOCKED.
+// The date the account was locked, if the status of the account is LOCKED.
 func (o GetManagedDatabaseUserResultOutput) TimeLocked() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedDatabaseUserResult) string { return v.TimeLocked }).(pulumi.StringOutput)
 }

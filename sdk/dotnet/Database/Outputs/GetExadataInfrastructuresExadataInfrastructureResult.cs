@@ -100,6 +100,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string InfiniBandNetworkCidr;
         /// <summary>
+        /// Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
+        /// </summary>
+        public readonly bool IsCpsOfflineReportEnabled;
+        /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
         public readonly string LifecycleDetails;
@@ -212,6 +216,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string infiniBandNetworkCidr,
 
+            bool isCpsOfflineReportEnabled,
+
             string lifecycleDetails,
 
             string maintenanceSloStatus,
@@ -267,6 +273,7 @@ namespace Pulumi.Oci.Database.Outputs
             Gateway = gateway;
             Id = id;
             InfiniBandNetworkCidr = infiniBandNetworkCidr;
+            IsCpsOfflineReportEnabled = isCpsOfflineReportEnabled;
             LifecycleDetails = lifecycleDetails;
             MaintenanceSloStatus = maintenanceSloStatus;
             MaintenanceWindows = maintenanceWindows;

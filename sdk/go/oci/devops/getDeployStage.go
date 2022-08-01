@@ -108,6 +108,8 @@ type LookupDeployStageResult struct {
 	FunctionTimeoutInSeconds int `pulumi:"functionTimeoutInSeconds"`
 	// Collection of backend environment IP addresses.
 	GreenBackendIps []GetDeployStageGreenBackendIp `pulumi:"greenBackendIps"`
+	// Helm chart artifact OCID.
+	HelmChartDeployArtifactId string `pulumi:"helmChartDeployArtifactId"`
 	// Unique identifier that is immutable on creation.
 	Id string `pulumi:"id"`
 	// A boolean flag specifies whether this stage executes asynchronously.
@@ -136,6 +138,8 @@ type LookupDeployStageResult struct {
 	ProductionLoadBalancerConfigs []GetDeployStageProductionLoadBalancerConfig `pulumi:"productionLoadBalancerConfigs"`
 	// The OCID of a project.
 	ProjectId string `pulumi:"projectId"`
+	// Release name of the Helm chart.
+	ReleaseName string `pulumi:"releaseName"`
 	// Specifies the rollback policy. This is initiated on the failure of certain stage types.
 	RollbackPolicies []GetDeployStageRollbackPolicy `pulumi:"rollbackPolicies"`
 	// Description of rollout policy for load balancer traffic shift stage.
@@ -150,8 +154,12 @@ type LookupDeployStageResult struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// Time the deployment stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeUpdated string `pulumi:"timeUpdated"`
+	// Time to wait for execution of a helm stage. Defaults to 300 seconds.
+	TimeoutInSeconds int `pulumi:"timeoutInSeconds"`
 	// Specifies the target or destination backend set.
 	TrafficShiftTarget string `pulumi:"trafficShiftTarget"`
+	// List of values.yaml file artifact OCIDs.
+	ValuesArtifactIds []string `pulumi:"valuesArtifactIds"`
 	// Specifies wait criteria for the Wait stage.
 	WaitCriterias []GetDeployStageWaitCriteria `pulumi:"waitCriterias"`
 }
@@ -335,6 +343,11 @@ func (o LookupDeployStageResultOutput) GreenBackendIps() GetDeployStageGreenBack
 	return o.ApplyT(func(v LookupDeployStageResult) []GetDeployStageGreenBackendIp { return v.GreenBackendIps }).(GetDeployStageGreenBackendIpArrayOutput)
 }
 
+// Helm chart artifact OCID.
+func (o LookupDeployStageResultOutput) HelmChartDeployArtifactId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) string { return v.HelmChartDeployArtifactId }).(pulumi.StringOutput)
+}
+
 // Unique identifier that is immutable on creation.
 func (o LookupDeployStageResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeployStageResult) string { return v.Id }).(pulumi.StringOutput)
@@ -407,6 +420,11 @@ func (o LookupDeployStageResultOutput) ProjectId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeployStageResult) string { return v.ProjectId }).(pulumi.StringOutput)
 }
 
+// Release name of the Helm chart.
+func (o LookupDeployStageResultOutput) ReleaseName() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) string { return v.ReleaseName }).(pulumi.StringOutput)
+}
+
 // Specifies the rollback policy. This is initiated on the failure of certain stage types.
 func (o LookupDeployStageResultOutput) RollbackPolicies() GetDeployStageRollbackPolicyArrayOutput {
 	return o.ApplyT(func(v LookupDeployStageResult) []GetDeployStageRollbackPolicy { return v.RollbackPolicies }).(GetDeployStageRollbackPolicyArrayOutput)
@@ -444,9 +462,19 @@ func (o LookupDeployStageResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeployStageResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
+// Time to wait for execution of a helm stage. Defaults to 300 seconds.
+func (o LookupDeployStageResultOutput) TimeoutInSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) int { return v.TimeoutInSeconds }).(pulumi.IntOutput)
+}
+
 // Specifies the target or destination backend set.
 func (o LookupDeployStageResultOutput) TrafficShiftTarget() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeployStageResult) string { return v.TrafficShiftTarget }).(pulumi.StringOutput)
+}
+
+// List of values.yaml file artifact OCIDs.
+func (o LookupDeployStageResultOutput) ValuesArtifactIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) []string { return v.ValuesArtifactIds }).(pulumi.StringArrayOutput)
 }
 
 // Specifies wait criteria for the Wait stage.

@@ -116,6 +116,10 @@ namespace Pulumi.Oci.Database
         /// The number of enabled CPU cores.
         /// </summary>
         public readonly int CpusEnabled;
+        /// <summary>
+        /// Indicates user preferences for the various diagnostic collection options for the VM cluster.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetVmClusterDataCollectionOptionResult> DataCollectionOptions;
         public readonly double DataStorageSizeInGb;
         /// <summary>
         /// Size, in terabytes, of the DATA disk group.
@@ -217,6 +221,8 @@ namespace Pulumi.Oci.Database
 
             int cpusEnabled,
 
+            ImmutableArray<Outputs.GetVmClusterDataCollectionOptionResult> dataCollectionOptions,
+
             double dataStorageSizeInGb,
 
             double dataStorageSizeInTbs,
@@ -272,6 +278,7 @@ namespace Pulumi.Oci.Database
             CompartmentId = compartmentId;
             CpuCoreCount = cpuCoreCount;
             CpusEnabled = cpusEnabled;
+            DataCollectionOptions = dataCollectionOptions;
             DataStorageSizeInGb = dataStorageSizeInGb;
             DataStorageSizeInTbs = dataStorageSizeInTbs;
             DbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;

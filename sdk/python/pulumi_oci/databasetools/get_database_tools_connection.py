@@ -84,7 +84,7 @@ class GetDatabaseToolsConnectionResult:
     @pulumi.getter(name="advancedProperties")
     def advanced_properties(self) -> Mapping[str, Any]:
         """
-        Advanced connection properties key-value pair (e.g., oracle.net.ssl_server_dn_match).
+        The advanced connection properties key-value pair (for example, `oracle.net.ssl_server_dn_match`).
         """
         return pulumi.get(self, "advanced_properties")
 
@@ -92,7 +92,7 @@ class GetDatabaseToolsConnectionResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -100,7 +100,7 @@ class GetDatabaseToolsConnectionResult:
     @pulumi.getter(name="connectionString")
     def connection_string(self) -> str:
         """
-        Connect descriptor or Easy Connect Naming method to connect to the database.
+        The connect descriptor or Easy Connect Naming method used to connect to the database.
         """
         return pulumi.get(self, "connection_string")
 
@@ -137,7 +137,7 @@ class GetDatabaseToolsConnectionResult:
     @pulumi.getter
     def id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsConnection.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools connection.
         """
         return pulumi.get(self, "id")
 
@@ -145,7 +145,7 @@ class GetDatabaseToolsConnectionResult:
     @pulumi.getter(name="keyStores")
     def key_stores(self) -> Sequence['outputs.GetDatabaseToolsConnectionKeyStoreResult']:
         """
-        Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
+        The Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
         """
         return pulumi.get(self, "key_stores")
 
@@ -153,7 +153,7 @@ class GetDatabaseToolsConnectionResult:
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> str:
         """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
 
@@ -161,7 +161,7 @@ class GetDatabaseToolsConnectionResult:
     @pulumi.getter(name="privateEndpointId")
     def private_endpoint_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsPrivateEndpoint used to access the database in the Customer VCN.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
         """
         return pulumi.get(self, "private_endpoint_id")
 
@@ -177,7 +177,7 @@ class GetDatabaseToolsConnectionResult:
     @pulumi.getter
     def state(self) -> str:
         """
-        The current state of the DatabaseToolsConnection.
+        The current state of the Database Tools connection.
         """
         return pulumi.get(self, "state")
 
@@ -193,7 +193,7 @@ class GetDatabaseToolsConnectionResult:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The time the DatabaseToolsConnection was created. An RFC3339 formatted datetime string
+        The time the Database Tools connection was created. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
@@ -201,7 +201,7 @@ class GetDatabaseToolsConnectionResult:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
-        The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string
+        The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
 
@@ -209,7 +209,7 @@ class GetDatabaseToolsConnectionResult:
     @pulumi.getter
     def type(self) -> str:
         """
-        The DatabaseToolsConnection type.
+        The Database Tools connection type.
         """
         return pulumi.get(self, "type")
 
@@ -217,7 +217,7 @@ class GetDatabaseToolsConnectionResult:
     @pulumi.getter(name="userName")
     def user_name(self) -> str:
         """
-        Database user name.
+        The database user name.
         """
         return pulumi.get(self, "user_name")
 
@@ -262,7 +262,7 @@ def get_database_tools_connection(database_tools_connection_id: Optional[str] = 
     """
     This data source provides details about a specific Database Tools Connection resource in Oracle Cloud Infrastructure Database Tools service.
 
-    Gets a DatabaseToolsConnection by identifier
+    Gets details of the specified Database Tools connection.
 
     ## Example Usage
 
@@ -274,7 +274,7 @@ def get_database_tools_connection(database_tools_connection_id: Optional[str] = 
     ```
 
 
-    :param str database_tools_connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a DatabaseToolsConnection.
+    :param str database_tools_connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools connection.
     """
     __args__ = dict()
     __args__['databaseToolsConnectionId'] = database_tools_connection_id
@@ -312,7 +312,7 @@ def get_database_tools_connection_output(database_tools_connection_id: Optional[
     """
     This data source provides details about a specific Database Tools Connection resource in Oracle Cloud Infrastructure Database Tools service.
 
-    Gets a DatabaseToolsConnection by identifier
+    Gets details of the specified Database Tools connection.
 
     ## Example Usage
 
@@ -324,6 +324,6 @@ def get_database_tools_connection_output(database_tools_connection_id: Optional[
     ```
 
 
-    :param str database_tools_connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a DatabaseToolsConnection.
+    :param str database_tools_connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools connection.
     """
     ...

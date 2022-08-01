@@ -19,7 +19,7 @@ namespace Pulumi.Oci.Core
         /// VCN route table.
         /// 
         /// The LIST API lists DRG attachments by attachment type. It will default to list VCN attachments,
-        /// but you may request to list ALL attachments of ALL types. 
+        /// but you may request to list ALL attachments of ALL types.
         /// 
         /// 
         /// {{% examples %}}
@@ -63,7 +63,7 @@ namespace Pulumi.Oci.Core
         /// VCN route table.
         /// 
         /// The LIST API lists DRG attachments by attachment type. It will default to list VCN attachments,
-        /// but you may request to list ALL attachments of ALL types. 
+        /// but you may request to list ALL attachments of ALL types.
         /// 
         /// 
         /// {{% examples %}}

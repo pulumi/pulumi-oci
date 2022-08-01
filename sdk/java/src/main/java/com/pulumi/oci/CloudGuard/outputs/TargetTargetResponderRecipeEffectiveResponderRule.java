@@ -29,7 +29,7 @@ public final class TargetTargetResponderRecipeEffectiveResponderRule {
      */
     private final @Nullable List<TargetTargetResponderRecipeEffectiveResponderRuleDetail> details;
     /**
-     * @return (Updatable) DetectorTemplate Identifier
+     * @return (Updatable) DetectorTemplate identifier.
      * 
      */
     private final @Nullable String displayName;
@@ -124,7 +124,7 @@ public final class TargetTargetResponderRecipeEffectiveResponderRule {
         return this.details == null ? List.of() : this.details;
     }
     /**
-     * @return (Updatable) DetectorTemplate Identifier
+     * @return (Updatable) DetectorTemplate identifier.
      * 
      */
     public Optional<String> displayName() {

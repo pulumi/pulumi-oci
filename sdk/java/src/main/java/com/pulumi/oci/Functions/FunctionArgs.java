@@ -5,6 +5,7 @@ package com.pulumi.oci.Functions;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Functions.inputs.FunctionProvisionedConcurrencyConfigArgs;
 import com.pulumi.oci.Functions.inputs.FunctionTraceConfigArgs;
 import java.lang.Integer;
 import java.lang.Object;
@@ -140,6 +141,21 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Define the strategy for provisioned concurrency for the function.
+     * 
+     */
+    @Import(name="provisionedConcurrencyConfig")
+    private @Nullable Output<FunctionProvisionedConcurrencyConfigArgs> provisionedConcurrencyConfig;
+
+    /**
+     * @return (Updatable) Define the strategy for provisioned concurrency for the function.
+     * 
+     */
+    public Optional<Output<FunctionProvisionedConcurrencyConfigArgs>> provisionedConcurrencyConfig() {
+        return Optional.ofNullable(this.provisionedConcurrencyConfig);
+    }
+
+    /**
      * (Updatable) Timeout for executions of the function. Value in seconds.
      * 
      */
@@ -180,6 +196,7 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
         this.image = $.image;
         this.imageDigest = $.imageDigest;
         this.memoryInMbs = $.memoryInMbs;
+        this.provisionedConcurrencyConfig = $.provisionedConcurrencyConfig;
         this.timeoutInSeconds = $.timeoutInSeconds;
         this.traceConfig = $.traceConfig;
     }
@@ -368,6 +385,27 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder memoryInMbs(String memoryInMbs) {
             return memoryInMbs(Output.of(memoryInMbs));
+        }
+
+        /**
+         * @param provisionedConcurrencyConfig (Updatable) Define the strategy for provisioned concurrency for the function.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder provisionedConcurrencyConfig(@Nullable Output<FunctionProvisionedConcurrencyConfigArgs> provisionedConcurrencyConfig) {
+            $.provisionedConcurrencyConfig = provisionedConcurrencyConfig;
+            return this;
+        }
+
+        /**
+         * @param provisionedConcurrencyConfig (Updatable) Define the strategy for provisioned concurrency for the function.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder provisionedConcurrencyConfig(FunctionProvisionedConcurrencyConfigArgs provisionedConcurrencyConfig) {
+            return provisionedConcurrencyConfig(Output.of(provisionedConcurrencyConfig));
         }
 
         /**

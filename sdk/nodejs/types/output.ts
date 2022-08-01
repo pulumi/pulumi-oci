@@ -4,6 +4,373 @@
 import * as pulumi from "@pulumi/pulumi";
 import { input as inputs, output as outputs } from "../types";
 
+export namespace Adm {
+    export interface GetKnowledgebasesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetKnowledgebasesKnowledgeBaseCollection {
+        items: outputs.Adm.GetKnowledgebasesKnowledgeBaseCollectionItem[];
+    }
+
+    export interface GetKnowledgebasesKnowledgeBaseCollectionItem {
+        /**
+         * A filter to return only resources that belong to the specified compartment identifier.
+         */
+        compartmentId: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+         */
+        definedTags: {[key: string]: any};
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
+        displayName: string;
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+         */
+        freeformTags: {[key: string]: any};
+        /**
+         * A filter to return only resources that match the specified identifier.
+         */
+        id: string;
+        /**
+         * A filter to return only Knowledge Bases that match the specified lifecycleState.
+         */
+        state: string;
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: any};
+        /**
+         * The creation date and time of the Knowledge Base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         */
+        timeCreated: string;
+        /**
+         * The date and time the Knowledge Base was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         */
+        timeUpdated: string;
+    }
+
+    export interface GetVulnerabilityAuditApplicationDependency {
+        applicationDependencyNodeIds: string[];
+        gav: string;
+        nodeId: string;
+    }
+
+    export interface GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollection {
+        /**
+         * List of Vulnerability Audit summaries.
+         */
+        items: outputs.Adm.GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItem[];
+    }
+
+    export interface GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItem {
+        /**
+         * List of Vulnerability Audit summaries.
+         */
+        items: outputs.Adm.GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemItem[];
+    }
+
+    export interface GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemItem {
+        /**
+         * List of (Application Dependencies) node identifiers on which this node depends.
+         */
+        applicationDependencyNodeIds: string[];
+        /**
+         * A filter to return only resources that match the entire GAV (Group Artifact Version) identifier given.
+         */
+        gav: string;
+        /**
+         * Indicates if the artifact is found in the knowledge base.
+         */
+        isFoundInKnowledgeBase: boolean;
+        /**
+         * Unique identifier of an Application Dependency node.
+         */
+        nodeId: string;
+        /**
+         * List of vulnerabilities for the Application Dependency.
+         */
+        vulnerabilities: outputs.Adm.GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemItemVulnerability[];
+    }
+
+    export interface GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemItemVulnerability {
+        /**
+         * Common Vulnerability Scoring System (CVSS) Version 2.
+         */
+        cvssV2score: number;
+        /**
+         * Common Vulnerability Scoring System (CVSS) Version 3.
+         */
+        cvssV3score: number;
+        /**
+         * Unique vulnerability identifier.
+         */
+        id: string;
+        /**
+         * Indicates if the vulnerability was ignored according to the audit configuration.
+         */
+        isIgnored: boolean;
+    }
+
+    export interface GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetVulnerabilityAuditApplicationDependencyVulnerabilityItem {
+        /**
+         * List of (Application Dependencies) node identifiers on which this node depends.
+         */
+        applicationDependencyNodeIds: string[];
+        /**
+         * A filter to return only resources that match the entire GAV (Group Artifact Version) identifier given.
+         */
+        gav: string;
+        /**
+         * Indicates if the artifact is found in the knowledge base.
+         */
+        isFoundInKnowledgeBase: boolean;
+        /**
+         * Unique identifier of an Application Dependency node.
+         */
+        nodeId: string;
+        /**
+         * List of vulnerabilities for the Application Dependency.
+         */
+        vulnerabilities: outputs.Adm.GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerability[];
+    }
+
+    export interface GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerability {
+        /**
+         * Common Vulnerability Scoring System (CVSS) Version 2.
+         */
+        cvssV2score: number;
+        /**
+         * Common Vulnerability Scoring System (CVSS) Version 3.
+         */
+        cvssV3score: number;
+        /**
+         * Unique vulnerability identifier.
+         */
+        id: string;
+        /**
+         * Indicates if the vulnerability was ignored according to the audit configuration.
+         */
+        isIgnored: boolean;
+    }
+
+    export interface GetVulnerabilityAuditConfiguration {
+        /**
+         * Pattern to exclude artifacts from audit.
+         */
+        exclusions: string[];
+        /**
+         * The minimum CVSS V2 score for a vulnerability to be considered by the audit as failed.
+         */
+        maxPermissibleCvssV2score: number;
+        /**
+         * The minimum CVSS V3 score for a vulnerability to be considered by the audit as failed.
+         */
+        maxPermissibleCvssV3score: number;
+    }
+
+    export interface GetVulnerabilityAuditVulnerability {
+        /**
+         * Common Vulnerability Scoring System (CVSS) Version 2.
+         */
+        cvssV2score: number;
+        /**
+         * Common Vulnerability Scoring System (CVSS) Version 3.
+         */
+        cvssV3score: number;
+        /**
+         * Unique vulnerability identifier.
+         */
+        id: string;
+        /**
+         * Indicates if the vulnerability was ignored according to the audit configuration.
+         */
+        isIgnored: boolean;
+    }
+
+    export interface GetVulnerabilityAuditsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetVulnerabilityAuditsVulnerabilityAuditCollection {
+        items: outputs.Adm.GetVulnerabilityAuditsVulnerabilityAuditCollectionItem[];
+    }
+
+    export interface GetVulnerabilityAuditsVulnerabilityAuditCollectionItem {
+        applicationDependencies: outputs.Adm.GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependency[];
+        /**
+         * The type of the build tool.
+         */
+        buildType: string;
+        /**
+         * A filter to return only resources that belong to the specified compartment identifier.
+         */
+        compartmentId: string;
+        /**
+         * Configuration for a Vulnerability Audit type: object
+         */
+        configurations: outputs.Adm.GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfiguration[];
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+         */
+        definedTags: {[key: string]: any};
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
+        displayName: string;
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+         */
+        freeformTags: {[key: string]: any};
+        /**
+         * A filter to return only resources that match the specified identifier.
+         */
+        id: string;
+        /**
+         * A filter to return only successful or failed Vulnerability Audits.
+         */
+        isSuccess: boolean;
+        /**
+         * A filter to return only Vulnerability Audits that were created against the specified knowledge base.
+         */
+        knowledgeBaseId: string;
+        /**
+         * Maximum Common Vulnerability Scoring System Version 2 score of vulnerabilities.
+         */
+        maxObservedCvssV2score: number;
+        /**
+         * Maximum Common Vulnerability Scoring System Version 3 score of vulnerabilities.
+         */
+        maxObservedCvssV3score: number;
+        /**
+         * A filter to return only Vulnerability Audits that match the specified lifecycleState.
+         */
+        state: string;
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: any};
+        /**
+         * The creation date and time of the Vulnerability Audit (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         */
+        timeCreated: string;
+        /**
+         * The update date and time of the Vulnerability Audit (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         */
+        timeUpdated: string;
+        /**
+         * List of vulnerabilities found in the Vulnerability Audit.
+         */
+        vulnerabilities: outputs.Adm.GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerability[];
+        /**
+         * Count of vulnerable artifacts.
+         */
+        vulnerableArtifactsCount: number;
+    }
+
+    export interface GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependency {
+        applicationDependencyNodeIds: string[];
+        gav: string;
+        nodeId: string;
+    }
+
+    export interface GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfiguration {
+        /**
+         * Pattern to exclude artifacts from audit.
+         */
+        exclusions: string[];
+        /**
+         * The minimum CVSS V2 score for a vulnerability to be considered by the audit as failed.
+         */
+        maxPermissibleCvssV2score: number;
+        /**
+         * The minimum CVSS V3 score for a vulnerability to be considered by the audit as failed.
+         */
+        maxPermissibleCvssV3score: number;
+    }
+
+    export interface GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerability {
+        /**
+         * Common Vulnerability Scoring System (CVSS) Version 2.
+         */
+        cvssV2score: number;
+        /**
+         * Common Vulnerability Scoring System (CVSS) Version 3.
+         */
+        cvssV3score: number;
+        /**
+         * A filter to return only resources that match the specified identifier.
+         */
+        id: string;
+        /**
+         * Indicates if the vulnerability was ignored according to the audit configuration.
+         */
+        isIgnored: boolean;
+    }
+
+    export interface VulnerabilityAuditApplicationDependency {
+        /**
+         * List of (Application Dependencies) node identifiers on which this node depends.
+         */
+        applicationDependencyNodeIds: string[];
+        /**
+         * Unique Group Artifact Version (GAV) identifier (Group:Artifact:Version).
+         */
+        gav: string;
+        /**
+         * Unique identifier of an Application Dependency node.
+         */
+        nodeId: string;
+    }
+
+    export interface VulnerabilityAuditConfiguration {
+        /**
+         * Pattern to exclude artifacts from audit.
+         */
+        exclusions: string[];
+        /**
+         * The minimum CVSS V2 score for a vulnerability to be considered by the audit as failed.
+         */
+        maxPermissibleCvssV2score: number;
+        /**
+         * The minimum CVSS V3 score for a vulnerability to be considered by the audit as failed.
+         */
+        maxPermissibleCvssV3score: number;
+    }
+
+    export interface VulnerabilityAuditVulnerability {
+        /**
+         * Common Vulnerability Scoring System (CVSS) Version 2.
+         */
+        cvssV2score: number;
+        /**
+         * Common Vulnerability Scoring System (CVSS) Version 3.
+         */
+        cvssV3score: number;
+        /**
+         * Unique vulnerability identifier.
+         */
+        id: string;
+        /**
+         * Indicates if the vulnerability was ignored according to the audit configuration.
+         */
+        isIgnored: boolean;
+    }
+
+}
+
 export namespace AiAnomalyDetection {
     export interface DataAssetDataSourceDetails {
         /**
@@ -893,6 +1260,9 @@ export namespace AiVision {
          * Type of the Dataset.
          */
         datasetType: string;
+        /**
+         * The namespace name of the ObjectStorage bucket that contains the input data file.
+         */
         namespaceName: string;
         /**
          * The object name of the input data file.
@@ -913,6 +1283,9 @@ export namespace AiVision {
          * Type of the Dataset.
          */
         datasetType: string;
+        /**
+         * The namespace name of the ObjectStorage bucket that contains the input data file.
+         */
         namespaceName: string;
         /**
          * The object name of the input data file.
@@ -933,6 +1306,9 @@ export namespace AiVision {
          * Type of the Dataset.
          */
         datasetType: string;
+        /**
+         * The namespace name of the ObjectStorage bucket that contains the input data file.
+         */
         namespaceName: string;
         /**
          * The object name of the input data file.
@@ -1191,6 +1567,9 @@ export namespace AiVision {
          * Type of the Dataset.
          */
         datasetType: string;
+        /**
+         * The namespace name of the ObjectStorage bucket that contains the input data file.
+         */
         namespaceName: string;
         /**
          * The object name of the input data file.
@@ -1211,6 +1590,9 @@ export namespace AiVision {
          * Type of the Dataset.
          */
         datasetType: string;
+        /**
+         * The namespace name of the ObjectStorage bucket that contains the input data file.
+         */
         namespaceName: string;
         /**
          * The object name of the input data file.
@@ -1231,6 +1613,9 @@ export namespace AiVision {
          * Type of the Dataset.
          */
         datasetType: string;
+        /**
+         * The namespace name of the ObjectStorage bucket that contains the input data file.
+         */
         namespaceName: string;
         /**
          * The object name of the input data file.
@@ -1387,6 +1772,10 @@ export namespace Analytics {
         id: string;
         idcsAccessToken: string;
         /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+         */
+        kmsKeyId: string;
+        /**
          * The license used for the service.
          */
         licenseType: string;
@@ -1398,10 +1787,6 @@ export namespace Analytics {
          * Base representation of a network endpoint.
          */
         networkEndpointDetails: outputs.Analytics.GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetail[];
-        /**
-         * Map of PrivateAccessChannel unique identifier key as KEY and PrivateAccessChannel Object as VALUE.
-         */
-        privateAccessChannels: {[key: string]: any};
         /**
          * URL of the Analytics service.
          */
@@ -1418,10 +1803,6 @@ export namespace Analytics {
          * The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
          */
         timeUpdated: string;
-        /**
-         * Map of VanityUrl unique identifier key as KEY and VanityUrl Object as VALUE.
-         */
-        vanityUrlDetails: {[key: string]: any};
     }
 
     export interface GetAnalyticsInstancesAnalyticsInstanceCapacity {
@@ -1553,6 +1934,10 @@ export namespace ApiGateway {
          * (Updatable) Limit the number of requests that should be handled for the specified window using a specfic key.
          */
         rateLimiting: outputs.ApiGateway.DeploymentSpecificationRequestPoliciesRateLimiting;
+        /**
+         * (Updatable) Usage plan policies for this deployment
+         */
+        usagePlans: outputs.ApiGateway.DeploymentSpecificationRequestPoliciesUsagePlans;
     }
 
     export interface DeploymentSpecificationRequestPoliciesAuthentication {
@@ -1726,6 +2111,17 @@ export namespace ApiGateway {
          * (Updatable) The key used to group requests together.
          */
         rateKey: string;
+    }
+
+    export interface DeploymentSpecificationRequestPoliciesUsagePlans {
+        /**
+         * (Updatable) A list of context variables specifying where API tokens may be located in a request. Example locations:
+         * * "request.headers[token]"
+         * * "request.query[token]"
+         * * "request.auth[Token]"
+         * * "request.path[TOKEN]"
+         */
+        tokenLocations: string[];
     }
 
     export interface DeploymentSpecificationRoute {
@@ -2359,6 +2755,10 @@ export namespace ApiGateway {
          * Limit the number of requests that should be handled for the specified window using a specfic key.
          */
         rateLimitings: outputs.ApiGateway.GetApiDeploymentSpecificationRequestPolicyRateLimiting[];
+        /**
+         * Usage plan policies for this deployment
+         */
+        usagePlans: outputs.ApiGateway.GetApiDeploymentSpecificationRequestPolicyUsagePlan[];
     }
 
     export interface GetApiDeploymentSpecificationRequestPolicyAuthentication {
@@ -2532,6 +2932,17 @@ export namespace ApiGateway {
          * The key used to group requests together.
          */
         rateKey: string;
+    }
+
+    export interface GetApiDeploymentSpecificationRequestPolicyUsagePlan {
+        /**
+         * A list of context variables specifying where API tokens may be located in a request. Example locations:
+         * * "request.headers[token]"
+         * * "request.query[token]"
+         * * "request.auth[Token]"
+         * * "request.path[TOKEN]"
+         */
+        tokenLocations: string[];
     }
 
     export interface GetApiDeploymentSpecificationRoute {
@@ -3286,6 +3697,10 @@ export namespace ApiGateway {
          * Limit the number of requests that should be handled for the specified window using a specfic key.
          */
         rateLimitings: outputs.ApiGateway.GetDeploymentSpecificationRequestPolicyRateLimiting[];
+        /**
+         * Usage plan policies for this deployment
+         */
+        usagePlans: outputs.ApiGateway.GetDeploymentSpecificationRequestPolicyUsagePlan[];
     }
 
     export interface GetDeploymentSpecificationRequestPolicyAuthentication {
@@ -3459,6 +3874,17 @@ export namespace ApiGateway {
          * The key used to group requests together.
          */
         rateKey: string;
+    }
+
+    export interface GetDeploymentSpecificationRequestPolicyUsagePlan {
+        /**
+         * A list of context variables specifying where API tokens may be located in a request. Example locations:
+         * * "request.headers[token]"
+         * * "request.query[token]"
+         * * "request.auth[Token]"
+         * * "request.path[TOKEN]"
+         */
+        tokenLocations: string[];
     }
 
     export interface GetDeploymentSpecificationRoute {
@@ -4078,6 +4504,10 @@ export namespace ApiGateway {
          * Limit the number of requests that should be handled for the specified window using a specfic key.
          */
         rateLimitings: outputs.ApiGateway.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyRateLimiting[];
+        /**
+         * Usage plan policies for this deployment
+         */
+        usagePlans: outputs.ApiGateway.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlan[];
     }
 
     export interface GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication {
@@ -4251,6 +4681,17 @@ export namespace ApiGateway {
          * The key used to group requests together.
          */
         rateKey: string;
+    }
+
+    export interface GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlan {
+        /**
+         * A list of context variables specifying where API tokens may be located in a request. Example locations:
+         * * "request.headers[token]"
+         * * "request.query[token]"
+         * * "request.auth[Token]"
+         * * "request.path[TOKEN]"
+         */
+        tokenLocations: string[];
     }
 
     export interface GetDeploymentsDeploymentCollectionSpecificationRoute {
@@ -4987,6 +5428,334 @@ export namespace ApiGateway {
         port: number;
     }
 
+    export interface GetSubscriberClient {
+        /**
+         * The name of the client. Must be unique within a subscriber.
+         */
+        name: string;
+        /**
+         * The token for the client. Must be unique within a tenancy.
+         */
+        token: string;
+    }
+
+    export interface GetSubscribersFilter {
+        /**
+         * The name of the client. Must be unique within a subscriber.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSubscribersSubscriberCollection {
+        items: outputs.ApiGateway.GetSubscribersSubscriberCollectionItem[];
+    }
+
+    export interface GetSubscribersSubscriberCollectionItem {
+        /**
+         * The clients belonging to this subscriber.
+         */
+        clients: outputs.ApiGateway.GetSubscribersSubscriberCollectionItemClient[];
+        /**
+         * The ocid of the compartment in which to list resources.
+         */
+        compartmentId: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+         */
+        definedTags: {[key: string]: any};
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+         */
+        displayName: string;
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+         */
+        freeformTags: {[key: string]: any};
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
+         */
+        id: string;
+        /**
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
+         */
+        lifecycleDetails: string;
+        /**
+         * A filter to return only resources that match the given lifecycle state. Example: `ACTIVE`
+         */
+        state: string;
+        /**
+         * The time this resource was created. An RFC3339 formatted datetime string.
+         */
+        timeCreated: string;
+        /**
+         * The time this resource was last updated. An RFC3339 formatted datetime string.
+         */
+        timeUpdated: string;
+        /**
+         * An array of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of usage plan resources.
+         */
+        usagePlans: string[];
+    }
+
+    export interface GetSubscribersSubscriberCollectionItemClient {
+        /**
+         * The name of the client. Must be unique within a subscriber.
+         */
+        name: string;
+        /**
+         * The token for the client. Must be unique within a tenancy.
+         */
+        token: string;
+    }
+
+    export interface GetUsagePlanEntitlement {
+        /**
+         * A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
+         */
+        description: string;
+        /**
+         * An entitlement name, unique within a usage plan.
+         */
+        name: string;
+        /**
+         * Quota policy for a usage plan.
+         */
+        quotas: outputs.ApiGateway.GetUsagePlanEntitlementQuota[];
+        /**
+         * Rate-limiting policy for a usage plan.
+         */
+        rateLimits: outputs.ApiGateway.GetUsagePlanEntitlementRateLimit[];
+        /**
+         * A collection of targeted deployments that the entitlement will be applied to.
+         */
+        targets: outputs.ApiGateway.GetUsagePlanEntitlementTarget[];
+    }
+
+    export interface GetUsagePlanEntitlementQuota {
+        /**
+         * What the usage plan will do when a quota is breached: `REJECT` will allow no further requests `ALLOW` will continue to allow further requests
+         */
+        operationOnBreach: string;
+        /**
+         * The policy that controls when quotas will reset. Example: `CALENDAR`
+         */
+        resetPolicy: string;
+        /**
+         * The unit of time over which rate limits are calculated. Example: `SECOND`
+         */
+        unit: string;
+        /**
+         * The number of requests that can be made per time period.
+         */
+        value: number;
+    }
+
+    export interface GetUsagePlanEntitlementRateLimit {
+        /**
+         * The unit of time over which rate limits are calculated. Example: `SECOND`
+         */
+        unit: string;
+        /**
+         * The number of requests that can be made per time period.
+         */
+        value: number;
+    }
+
+    export interface GetUsagePlanEntitlementTarget {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a deployment resource.
+         */
+        deploymentId: string;
+    }
+
+    export interface GetUsagePlansFilter {
+        /**
+         * An entitlement name, unique within a usage plan.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetUsagePlansUsagePlanCollection {
+        items: outputs.ApiGateway.GetUsagePlansUsagePlanCollectionItem[];
+    }
+
+    export interface GetUsagePlansUsagePlanCollectionItem {
+        /**
+         * The ocid of the compartment in which to list resources.
+         */
+        compartmentId: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+         */
+        definedTags: {[key: string]: any};
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+         */
+        displayName: string;
+        /**
+         * A collection of entitlements currently assigned to the usage plan.
+         */
+        entitlements: outputs.ApiGateway.GetUsagePlansUsagePlanCollectionItemEntitlement[];
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+         */
+        freeformTags: {[key: string]: any};
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a usage plan resource.
+         */
+        id: string;
+        /**
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
+         */
+        lifecycleDetails: string;
+        /**
+         * A filter to return only resources that match the given lifecycle state. Example: `ACTIVE`
+         */
+        state: string;
+        /**
+         * The time this resource was created. An RFC3339 formatted datetime string.
+         */
+        timeCreated: string;
+        /**
+         * The time this resource was last updated. An RFC3339 formatted datetime string.
+         */
+        timeUpdated: string;
+    }
+
+    export interface GetUsagePlansUsagePlanCollectionItemEntitlement {
+        /**
+         * A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
+         */
+        description: string;
+        /**
+         * An entitlement name, unique within a usage plan.
+         */
+        name: string;
+        /**
+         * Quota policy for a usage plan.
+         */
+        quotas: outputs.ApiGateway.GetUsagePlansUsagePlanCollectionItemEntitlementQuota[];
+        /**
+         * Rate-limiting policy for a usage plan.
+         */
+        rateLimits: outputs.ApiGateway.GetUsagePlansUsagePlanCollectionItemEntitlementRateLimit[];
+        /**
+         * A collection of targeted deployments that the entitlement will be applied to.
+         */
+        targets: outputs.ApiGateway.GetUsagePlansUsagePlanCollectionItemEntitlementTarget[];
+    }
+
+    export interface GetUsagePlansUsagePlanCollectionItemEntitlementQuota {
+        /**
+         * What the usage plan will do when a quota is breached: `REJECT` will allow no further requests `ALLOW` will continue to allow further requests
+         */
+        operationOnBreach: string;
+        /**
+         * The policy that controls when quotas will reset. Example: `CALENDAR`
+         */
+        resetPolicy: string;
+        /**
+         * The unit of time over which rate limits are calculated. Example: `SECOND`
+         */
+        unit: string;
+        /**
+         * The number of requests that can be made per time period.
+         */
+        value: number;
+    }
+
+    export interface GetUsagePlansUsagePlanCollectionItemEntitlementRateLimit {
+        /**
+         * The unit of time over which rate limits are calculated. Example: `SECOND`
+         */
+        unit: string;
+        /**
+         * The number of requests that can be made per time period.
+         */
+        value: number;
+    }
+
+    export interface GetUsagePlansUsagePlanCollectionItemEntitlementTarget {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a deployment resource.
+         */
+        deploymentId: string;
+    }
+
+    export interface SubscriberClient {
+        /**
+         * (Updatable) The name of the client. Must be unique within a subscriber.
+         */
+        name: string;
+        /**
+         * (Updatable) The token for the client. Must be unique within a tenancy.
+         */
+        token: string;
+    }
+
+    export interface UsagePlanEntitlement {
+        /**
+         * (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
+         */
+        description: string;
+        /**
+         * (Updatable) An entitlement name, unique within a usage plan.
+         */
+        name: string;
+        /**
+         * (Updatable) Quota policy for a usage plan.
+         */
+        quota: outputs.ApiGateway.UsagePlanEntitlementQuota;
+        /**
+         * (Updatable) Rate-limiting policy for a usage plan.
+         */
+        rateLimit: outputs.ApiGateway.UsagePlanEntitlementRateLimit;
+        /**
+         * (Updatable) A collection of targeted deployments that the entitlement will be applied to.
+         */
+        targets: outputs.ApiGateway.UsagePlanEntitlementTarget[];
+    }
+
+    export interface UsagePlanEntitlementQuota {
+        /**
+         * (Updatable) What the usage plan will do when a quota is breached: `REJECT` will allow no further requests `ALLOW` will continue to allow further requests
+         */
+        operationOnBreach: string;
+        /**
+         * (Updatable) The policy that controls when quotas will reset. Example: `CALENDAR`
+         */
+        resetPolicy: string;
+        /**
+         * (Updatable) The unit of time over which rate limits are calculated. Example: `SECOND`
+         */
+        unit: string;
+        /**
+         * (Updatable) The number of requests that can be made per time period.
+         */
+        value: number;
+    }
+
+    export interface UsagePlanEntitlementRateLimit {
+        /**
+         * (Updatable) The unit of time over which rate limits are calculated. Example: `SECOND`
+         */
+        unit: string;
+        /**
+         * (Updatable) The number of requests that can be made per time period.
+         */
+        value: number;
+    }
+
+    export interface UsagePlanEntitlementTarget {
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a deployment resource.
+         */
+        deploymentId: string;
+    }
 }
 
 export namespace Apm {
@@ -5072,37 +5841,37 @@ export namespace Apm {
 export namespace ApmConfig {
     export interface ConfigDimension {
         /**
-         * (Updatable) The name of the metric
+         * (Updatable) The name of the metric. This must be a known metric name.
          */
         name: string;
         /**
-         * (Updatable) Must be NULL at the moment, and "name" must be a known metric.
+         * (Updatable) This must not be set.
          */
         valueSource: string;
     }
 
     export interface ConfigMetric {
         /**
-         * (Updatable) A description of the metric
+         * (Updatable) A description of the metric.
          */
         description: string;
         /**
-         * (Updatable) The name of the metric
+         * (Updatable) The name of the metric. This must be a known metric name.
          */
         name: string;
         /**
-         * (Updatable) The unit of the metric
+         * (Updatable) The unit of the metric.
          */
         unit: string;
         /**
-         * (Updatable) Must be NULL at the moment, and "name" must be a known metric.
+         * (Updatable) This must not be set.
          */
         valueSource: string;
     }
 
     export interface ConfigRule {
         /**
-         * (Updatable) A user-friendly name that provides a short description this rule.
+         * (Updatable) The name by which a configuration entity is displayed to the end user.
          */
         displayName: string;
         /**
@@ -5110,11 +5879,11 @@ export namespace ApmConfig {
          */
         filterText: string;
         /**
-         * (Updatable) If true, the rule will compute the actual Apdex score for spans that have been marked as errors. If false, the rule will always set the Apdex for error spans to frustrating, regardless of the configured thresholds. Default is false.
+         * (Updatable) Specifies whether an Apdex score should be computed for error spans. Setting it to "true" means that the Apdex score is computed in the usual way. Setting it to "false" skips the Apdex computation and sets the Apdex score to "frustrating" regardless of the configured thresholds. The default is "false".
          */
         isApplyToErrorSpans: boolean;
         /**
-         * (Updatable) Specifies if the Apdex rule will be computed for spans matching the rule. Can be used to make sure certain spans don't get an Apdex score. The default is "true".
+         * (Updatable) Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable Apdex score for spans that do not need or require it. The default is "true".
          */
         isEnabled: boolean;
         /**
@@ -5122,48 +5891,48 @@ export namespace ApmConfig {
          */
         priority: number;
         /**
-         * (Updatable) The maximum response time in milliseconds that will be considered satisfactory for the end user.
+         * (Updatable) The maximum response time in milliseconds that is considered "satisfactory" for the end user.
          */
         satisfiedResponseTime: number;
         /**
-         * (Updatable) The maximum response time in milliseconds that will be considered tolerable for the end user. Response times beyond this threshold will be considered frustrating. This value cannot be lower than "satisfiedResponseTime".
+         * (Updatable) The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime".
          */
         toleratingResponseTime: number;
     }
 
     export interface GetConfigDimension {
         /**
-         * The name of the metric
+         * The name of the metric. This must be a known metric name.
          */
         name: string;
         /**
-         * Must be NULL at the moment, and "name" must be a known metric.
+         * This must not be set.
          */
         valueSource: string;
     }
 
     export interface GetConfigMetric {
         /**
-         * A description of the metric
+         * A description of the metric.
          */
         description: string;
         /**
-         * The name of the metric
+         * The name of the metric. This must be a known metric name.
          */
         name: string;
         /**
-         * The unit of the metric
+         * The unit of the metric.
          */
         unit: string;
         /**
-         * Must be NULL at the moment, and "name" must be a known metric.
+         * This must not be set.
          */
         valueSource: string;
     }
 
     export interface GetConfigRule {
         /**
-         * A user-friendly name that provides a short description this rule.
+         * The name by which a configuration entity is displayed to the end user.
          */
         displayName: string;
         /**
@@ -5171,11 +5940,11 @@ export namespace ApmConfig {
          */
         filterText: string;
         /**
-         * If true, the rule will compute the actual Apdex score for spans that have been marked as errors. If false, the rule will always set the Apdex for error spans to frustrating, regardless of the configured thresholds. Default is false.
+         * Specifies whether an Apdex score should be computed for error spans. Setting it to "true" means that the Apdex score is computed in the usual way. Setting it to "false" skips the Apdex computation and sets the Apdex score to "frustrating" regardless of the configured thresholds. The default is "false".
          */
         isApplyToErrorSpans: boolean;
         /**
-         * Specifies if the Apdex rule will be computed for spans matching the rule. Can be used to make sure certain spans don't get an Apdex score. The default is "true".
+         * Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable Apdex score for spans that do not need or require it. The default is "true".
          */
         isEnabled: boolean;
         /**
@@ -5183,11 +5952,11 @@ export namespace ApmConfig {
          */
         priority: number;
         /**
-         * The maximum response time in milliseconds that will be considered satisfactory for the end user.
+         * The maximum response time in milliseconds that is considered "satisfactory" for the end user.
          */
         satisfiedResponseTime: number;
         /**
-         * The maximum response time in milliseconds that will be considered tolerable for the end user. Response times beyond this threshold will be considered frustrating. This value cannot be lower than "satisfiedResponseTime".
+         * The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime".
          */
         toleratingResponseTime: number;
     }
@@ -5198,11 +5967,11 @@ export namespace ApmConfig {
 
     export interface GetConfigsConfigCollectionItem {
         /**
-         * The APM Domain Id the request is intended for.
+         * The APM Domain ID the request is intended for.
          */
         apmDomainId: string;
         /**
-         * A filter to match only configuration items of the given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
+         * A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
          */
         configType: string;
         /**
@@ -5210,19 +5979,19 @@ export namespace ApmConfig {
          */
         definedTags: {[key: string]: any};
         /**
-         * A description of the metric
+         * A description of the metric.
          */
         description: string;
         /**
-         * A list of dimensions for this metric
+         * A list of dimensions for the metric. This variable should not be used.
          */
         dimensions: outputs.ApmConfig.GetConfigsConfigCollectionItemDimension[];
         /**
-         * A filter to return only resources that match the entire display name given.
+         * A filter to return resources that match the given display name.
          */
         displayName: string;
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId will be generated when a Span Filter is created.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
          */
         filterId: string;
         /**
@@ -5234,15 +6003,26 @@ export namespace ApmConfig {
          */
         freeformTags: {[key: string]: any};
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID will be generated when the item is created.
+         * A string that specifies the group that an OPTIONS item belongs to.
+         */
+        group: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
          */
         id: string;
+        /**
+         * The list of metrics in this group.
+         */
         metrics: outputs.ApmConfig.GetConfigsConfigCollectionItemMetric[];
         /**
-         * The namespace to write the metrics to
+         * The namespace to which the metrics are published. It must be one of several predefined namespaces.
          */
         namespace: string;
         opcDryRun: string;
+        /**
+         * The options are stored here as JSON.
+         */
+        options: string;
         rules: outputs.ApmConfig.GetConfigsConfigCollectionItemRule[];
         /**
          * The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
@@ -5256,37 +6036,37 @@ export namespace ApmConfig {
 
     export interface GetConfigsConfigCollectionItemDimension {
         /**
-         * The name of the metric
+         * The name of the metric. This must be a known metric name.
          */
         name: string;
         /**
-         * Must be NULL at the moment, and "name" must be a known metric.
+         * This must not be set.
          */
         valueSource: string;
     }
 
     export interface GetConfigsConfigCollectionItemMetric {
         /**
-         * A description of the metric
+         * A description of the metric.
          */
         description: string;
         /**
-         * The name of the metric
+         * The name of the metric. This must be a known metric name.
          */
         name: string;
         /**
-         * The unit of the metric
+         * The unit of the metric.
          */
         unit: string;
         /**
-         * Must be NULL at the moment, and "name" must be a known metric.
+         * This must not be set.
          */
         valueSource: string;
     }
 
     export interface GetConfigsConfigCollectionItemRule {
         /**
-         * A filter to return only resources that match the entire display name given.
+         * A filter to return resources that match the given display name.
          */
         displayName: string;
         /**
@@ -5294,11 +6074,11 @@ export namespace ApmConfig {
          */
         filterText: string;
         /**
-         * If true, the rule will compute the actual Apdex score for spans that have been marked as errors. If false, the rule will always set the Apdex for error spans to frustrating, regardless of the configured thresholds. Default is false.
+         * Specifies whether an Apdex score should be computed for error spans. Setting it to "true" means that the Apdex score is computed in the usual way. Setting it to "false" skips the Apdex computation and sets the Apdex score to "frustrating" regardless of the configured thresholds. The default is "false".
          */
         isApplyToErrorSpans: boolean;
         /**
-         * Specifies if the Apdex rule will be computed for spans matching the rule. Can be used to make sure certain spans don't get an Apdex score. The default is "true".
+         * Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable Apdex score for spans that do not need or require it. The default is "true".
          */
         isEnabled: boolean;
         /**
@@ -5306,18 +6086,18 @@ export namespace ApmConfig {
          */
         priority: number;
         /**
-         * The maximum response time in milliseconds that will be considered satisfactory for the end user.
+         * The maximum response time in milliseconds that is considered "satisfactory" for the end user.
          */
         satisfiedResponseTime: number;
         /**
-         * The maximum response time in milliseconds that will be considered tolerable for the end user. Response times beyond this threshold will be considered frustrating. This value cannot be lower than "satisfiedResponseTime".
+         * The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime".
          */
         toleratingResponseTime: number;
     }
 
     export interface GetConfigsFilter {
         /**
-         * The name of the metric
+         * The name of the metric. This must be a known metric name.
          */
         name: string;
         regex?: boolean;
@@ -5381,7 +6161,7 @@ export namespace ApmSynthetics {
          */
         verifyResponseContent: string;
         /**
-         * (Updatable) Verify all the search strings present in response. If any search string is not present in the response, then it will be considered as a failure.
+         * (Updatable) Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
          */
         verifyTexts: outputs.ApmSynthetics.ConfigConfigurationVerifyText[];
     }
@@ -5518,6 +6298,184 @@ export namespace ApmSynthetics {
         paramValue: string;
     }
 
+    export interface DedicatedVantagePointDvpStackDetails {
+        /**
+         * (Updatable) Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+         */
+        dvpStackId: string;
+        /**
+         * (Updatable) Type of stack.
+         */
+        dvpStackType: string;
+        /**
+         * (Updatable) Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+         */
+        dvpStreamId: string;
+        /**
+         * (Updatable) Version of DVP.
+         */
+        dvpVersion: string;
+    }
+
+    export interface DedicatedVantagePointMonitorStatusCountMap {
+        /**
+         * Number of disabled monitors using the script.
+         */
+        disabled: number;
+        /**
+         * Number of enabled monitors using the script.
+         */
+        enabled: number;
+        /**
+         * Number of invalid monitors using the script.
+         */
+        invalid: number;
+        /**
+         * Total number of monitors using the script.
+         */
+        total: number;
+    }
+
+    export interface GetDedicatedVantagePointDvpStackDetail {
+        /**
+         * Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+         */
+        dvpStackId: string;
+        /**
+         * Type of stack.
+         */
+        dvpStackType: string;
+        /**
+         * Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+         */
+        dvpStreamId: string;
+        /**
+         * Version of DVP.
+         */
+        dvpVersion: string;
+    }
+
+    export interface GetDedicatedVantagePointMonitorStatusCountMap {
+        /**
+         * Number of disabled monitors using the script.
+         */
+        disabled: number;
+        /**
+         * Number of enabled monitors using the script.
+         */
+        enabled: number;
+        /**
+         * Number of invalid monitors using the script.
+         */
+        invalid: number;
+        /**
+         * Total number of monitors using the script.
+         */
+        total: number;
+    }
+
+    export interface GetDedicatedVantagePointsDedicatedVantagePointCollection {
+        items: outputs.ApmSynthetics.GetDedicatedVantagePointsDedicatedVantagePointCollectionItem[];
+    }
+
+    export interface GetDedicatedVantagePointsDedicatedVantagePointCollectionItem {
+        /**
+         * The APM domain ID the request is intended for.
+         */
+        apmDomainId: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+         */
+        definedTags: {[key: string]: any};
+        /**
+         * A filter to return only the resources that match the entire display name.
+         */
+        displayName: string;
+        /**
+         * Details of DVP Stack.
+         */
+        dvpStackDetails: outputs.ApmSynthetics.GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail[];
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+         */
+        freeformTags: {[key: string]: any};
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated vantage point.
+         */
+        id: string;
+        /**
+         * Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
+         */
+        monitorStatusCountMaps: outputs.ApmSynthetics.GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMap[];
+        /**
+         * A filter to return only the resources that match the entire name.
+         */
+        name: string;
+        /**
+         * Name of the region.
+         */
+        region: string;
+        /**
+         * A filter to return only the dedicated vantage points that match a given status.
+         */
+        status: string;
+        /**
+         * The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+         */
+        timeCreated: string;
+        /**
+         * The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
+         */
+        timeUpdated: string;
+    }
+
+    export interface GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail {
+        /**
+         * Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+         */
+        dvpStackId: string;
+        /**
+         * Type of stack.
+         */
+        dvpStackType: string;
+        /**
+         * Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+         */
+        dvpStreamId: string;
+        /**
+         * Version of DVP.
+         */
+        dvpVersion: string;
+    }
+
+    export interface GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMap {
+        /**
+         * Number of disabled monitors using the script.
+         */
+        disabled: number;
+        /**
+         * Number of enabled monitors using the script.
+         */
+        enabled: number;
+        /**
+         * Number of invalid monitors using the script.
+         */
+        invalid: number;
+        /**
+         * Total number of monitors using the script.
+         */
+        total: number;
+    }
+
+    export interface GetDedicatedVantagePointsFilter {
+        /**
+         * A filter to return only the resources that match the entire name.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
     export interface GetMonitorConfiguration {
         /**
          * Type of configuration.
@@ -5572,7 +6530,7 @@ export namespace ApmSynthetics {
          */
         verifyResponseContent: string;
         /**
-         * Verify all the search strings present in response. If any search string is not present in the response, then it will be considered as a failure.
+         * Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
          */
         verifyTexts: outputs.ApmSynthetics.GetMonitorConfigurationVerifyText[];
     }
@@ -5736,7 +6694,7 @@ export namespace ApmSynthetics {
          */
         definedTags: {[key: string]: any};
         /**
-         * A filter to return only resources that match the entire display name given.
+         * A filter to return only the resources that match the entire display name.
          */
         displayName: string;
         /**
@@ -5756,7 +6714,7 @@ export namespace ApmSynthetics {
          */
         monitorType: string;
         /**
-         * Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds.
+         * Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
          */
         repeatIntervalInSeconds: number;
         /**
@@ -5788,7 +6746,7 @@ export namespace ApmSynthetics {
          */
         timeUpdated: string;
         /**
-         * Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+         * Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
          */
         timeoutInSeconds: number;
         /**
@@ -5796,7 +6754,7 @@ export namespace ApmSynthetics {
          */
         vantagePointCount: number;
         /**
-         * List of vantage points from where monitor is running.
+         * List of public and dedicated vantage points where the monitor is running.
          */
         vantagePoints: string[];
     }
@@ -5855,7 +6813,7 @@ export namespace ApmSynthetics {
          */
         verifyResponseContent: string;
         /**
-         * Verify all the search strings present in response. If any search string is not present in the response, then it will be considered as a failure.
+         * Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
          */
         verifyTexts: outputs.ApmSynthetics.GetMonitorsMonitorCollectionItemConfigurationVerifyText[];
     }
@@ -6104,7 +7062,7 @@ export namespace ApmSynthetics {
          */
         definedTags: {[key: string]: any};
         /**
-         * A filter to return only resources that match the entire display name given.
+         * A filter to return only the resources that match the entire display name.
          */
         displayName: string;
         /**
@@ -6132,7 +7090,7 @@ export namespace ApmSynthetics {
          */
         timeUpdated: string;
         /**
-         * The time when the script was uploaded.
+         * The time the script was uploaded.
          */
         timeUploaded: string;
     }
@@ -6196,15 +7154,15 @@ export namespace ApmSynthetics {
 
     export interface GetVantagePointItem {
         /**
-         * A filter to return only resources that match the entire display name given.
+         * A filter to return only the resources that match the entire display name.
          */
         displayName: string;
         /**
-         * Geographic summary about a vantage point.
+         * Geographic summary of a vantage point.
          */
         geos: outputs.ApmSynthetics.GetVantagePointItemGeo[];
         /**
-         * A filter to return only resources that match the entire name given.
+         * A filter to return only the resources that match the entire name.
          */
         name: string;
     }
@@ -6238,7 +7196,7 @@ export namespace ApmSynthetics {
 
     export interface GetVantagePointsFilter {
         /**
-         * A filter to return only resources that match the entire name given.
+         * A filter to return only the resources that match the entire name.
          */
         name: string;
         regex?: boolean;
@@ -6254,15 +7212,15 @@ export namespace ApmSynthetics {
 
     export interface GetVantagePointsPublicVantagePointCollectionItem {
         /**
-         * A filter to return only resources that match the entire display name given.
+         * A filter to return only the resources that match the entire display name.
          */
         displayName: string;
         /**
-         * Geographic summary about a vantage point.
+         * Geographic summary of a vantage point.
          */
         geos: outputs.ApmSynthetics.GetVantagePointsPublicVantagePointCollectionItemGeo[];
         /**
-         * A filter to return only resources that match the entire name given.
+         * A filter to return only the resources that match the entire name.
          */
         name: string;
     }
@@ -6350,7 +7308,6 @@ export namespace ApmSynthetics {
          */
         paramValue: string;
     }
-
 }
 
 export namespace ApmTraces {
@@ -7971,13 +8928,277 @@ export namespace Bastion {
 export namespace BigDataService {
     export interface AutoScalingConfigurationPolicy {
         /**
-         * (Updatable) Types of autoscale policies. Options are SCHEDULE-BASED or THRESHOLD-BASED. (Only THRESHOLD-BASED is supported in this release.)
+         * Type of autoscaling policy.
          */
         policyType: string;
         /**
          * (Updatable) The list of rules for autoscaling. If an action has multiple rules, the last rule in the array will be applied.
          */
         rules: outputs.BigDataService.AutoScalingConfigurationPolicyRule[];
+    }
+
+    export interface AutoScalingConfigurationPolicyDetails {
+        /**
+         * The type of autoscaling action to take.
+         */
+        actionType: string;
+        /**
+         * Type of autoscaling policy.
+         */
+        policyType: string;
+        /**
+         * (Updatable) Configration for a metric based vertical scale-down policy.
+         */
+        scaleDownConfig: outputs.BigDataService.AutoScalingConfigurationPolicyDetailsScaleDownConfig;
+        /**
+         * (Updatable) Configration for a metric based horizontal scale-in policy.
+         */
+        scaleInConfig: outputs.BigDataService.AutoScalingConfigurationPolicyDetailsScaleInConfig;
+        /**
+         * (Updatable) Configration for a metric based horizontal scale-out policy.
+         */
+        scaleOutConfig: outputs.BigDataService.AutoScalingConfigurationPolicyDetailsScaleOutConfig;
+        /**
+         * (Updatable) Configration for a metric based vertical scale-up policy.
+         */
+        scaleUpConfig: outputs.BigDataService.AutoScalingConfigurationPolicyDetailsScaleUpConfig;
+        /**
+         * (Updatable)
+         */
+        scheduleDetails: outputs.BigDataService.AutoScalingConfigurationPolicyDetailsScheduleDetail[];
+        /**
+         * (Updatable) The time zone of the execution schedule, in IANA time zone database name format
+         */
+        timezone: string;
+        /**
+         * The type of autoscaling trigger.
+         */
+        triggerType: string;
+    }
+
+    export interface AutoScalingConfigurationPolicyDetailsScaleDownConfig {
+        /**
+         * (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+         */
+        memoryStepSize: number;
+        /**
+         * (Updatable) Metric and threshold details for triggering an autoscale action.
+         */
+        metric: outputs.BigDataService.AutoScalingConfigurationPolicyDetailsScaleDownConfigMetric;
+        /**
+         * (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the minimum memory in GBs each node can be scaled-down to. This value is not used for nodes with fixed compute shapes.
+         */
+        minMemoryPerNode: number;
+        /**
+         * (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the minimum number of OCPUs each node can be scaled-down to. This value is not used for nodes with fixed compute shapes.
+         */
+        minOcpusPerNode: number;
+        /**
+         * (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+         */
+        ocpuStepSize: number;
+    }
+
+    export interface AutoScalingConfigurationPolicyDetailsScaleDownConfigMetric {
+        /**
+         * (Updatable) Allowed value is CPU_UTILIZATION.
+         */
+        metricType: string;
+        /**
+         * (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
+         */
+        threshold: outputs.BigDataService.AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThreshold;
+    }
+
+    export interface AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThreshold {
+        /**
+         * (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
+         */
+        durationInMinutes: number;
+        /**
+         * (Updatable) The comparison operator to use. Options are greater than (GT) or less than (LT).
+         */
+        operator: string;
+        /**
+         * (Updatable) Integer non-negative value. 0 < value < 100
+         */
+        value: number;
+    }
+
+    export interface AutoScalingConfigurationPolicyDetailsScaleInConfig {
+        /**
+         * (Updatable) Metric and threshold details for triggering an autoscale action.
+         */
+        metric: outputs.BigDataService.AutoScalingConfigurationPolicyDetailsScaleInConfigMetric;
+        /**
+         * (Updatable) This value is the minimum number of nodes the cluster can be scaled-in to.
+         */
+        minNodeCount: number;
+        /**
+         * (Updatable) This value is the number of nodes to add during a scale-out event.
+         */
+        stepSize: number;
+    }
+
+    export interface AutoScalingConfigurationPolicyDetailsScaleInConfigMetric {
+        /**
+         * (Updatable) Allowed value is CPU_UTILIZATION.
+         */
+        metricType: string;
+        /**
+         * (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
+         */
+        threshold: outputs.BigDataService.AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThreshold;
+    }
+
+    export interface AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThreshold {
+        /**
+         * (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
+         */
+        durationInMinutes: number;
+        /**
+         * (Updatable) The comparison operator to use. Options are greater than (GT) or less than (LT).
+         */
+        operator: string;
+        /**
+         * (Updatable) Integer non-negative value. 0 < value < 100
+         */
+        value: number;
+    }
+
+    export interface AutoScalingConfigurationPolicyDetailsScaleOutConfig {
+        /**
+         * (Updatable) This value is the maximum number of nodes the cluster can be scaled-out to.
+         */
+        maxNodeCount: number;
+        /**
+         * (Updatable) Metric and threshold details for triggering an autoscale action.
+         */
+        metric: outputs.BigDataService.AutoScalingConfigurationPolicyDetailsScaleOutConfigMetric;
+        /**
+         * (Updatable) This value is the number of nodes to add during a scale-out event.
+         */
+        stepSize: number;
+    }
+
+    export interface AutoScalingConfigurationPolicyDetailsScaleOutConfigMetric {
+        /**
+         * (Updatable) Allowed value is CPU_UTILIZATION.
+         */
+        metricType: string;
+        /**
+         * (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
+         */
+        threshold: outputs.BigDataService.AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThreshold;
+    }
+
+    export interface AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThreshold {
+        /**
+         * (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
+         */
+        durationInMinutes: number;
+        /**
+         * (Updatable) The comparison operator to use. Options are greater than (GT) or less than (LT).
+         */
+        operator: string;
+        /**
+         * (Updatable) Integer non-negative value. 0 < value < 100
+         */
+        value: number;
+    }
+
+    export interface AutoScalingConfigurationPolicyDetailsScaleUpConfig {
+        /**
+         * (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the maximum memory in GBs each node can be scaled-up to. This value is not used for nodes with fixed compute shapes.
+         */
+        maxMemoryPerNode: number;
+        /**
+         * (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the maximum number of OCPUs each node can be scaled-up to. This value is not used for nodes with fixed compute shapes.
+         */
+        maxOcpusPerNode: number;
+        /**
+         * (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+         */
+        memoryStepSize: number;
+        /**
+         * (Updatable) Metric and threshold details for triggering an autoscale action.
+         */
+        metric: outputs.BigDataService.AutoScalingConfigurationPolicyDetailsScaleUpConfigMetric;
+        /**
+         * (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+         */
+        ocpuStepSize: number;
+    }
+
+    export interface AutoScalingConfigurationPolicyDetailsScaleUpConfigMetric {
+        /**
+         * (Updatable) Allowed value is CPU_UTILIZATION.
+         */
+        metricType: string;
+        /**
+         * (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
+         */
+        threshold: outputs.BigDataService.AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThreshold;
+    }
+
+    export interface AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThreshold {
+        /**
+         * (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
+         */
+        durationInMinutes: number;
+        /**
+         * (Updatable) The comparison operator to use. Options are greater than (GT) or less than (LT).
+         */
+        operator: string;
+        /**
+         * (Updatable) Integer non-negative value. 0 < value < 100
+         */
+        value: number;
+    }
+
+    export interface AutoScalingConfigurationPolicyDetailsScheduleDetail {
+        /**
+         * (Updatable) The type of schedule.
+         */
+        scheduleType: string;
+        /**
+         * (Updatable)
+         */
+        timeAndHorizontalScalingConfigs: outputs.BigDataService.AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfig[];
+        /**
+         * (Updatable)
+         */
+        timeAndVerticalScalingConfigs: outputs.BigDataService.AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfig[];
+    }
+
+    export interface AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfig {
+        /**
+         * (Updatable) This value is the desired number of nodes in the cluster.
+         */
+        targetNodeCount: number;
+        /**
+         * (Updatable) Day/time recurrence (specified following RFC 5545) at which to trigger autoscaling action. Currently only WEEKLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR and BYMINUTE fields. Other fields are not supported.
+         */
+        timeRecurrence: string;
+    }
+
+    export interface AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfig {
+        /**
+         * (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired memory in GBs on each node. This value is not used for nodes with fixed compute shapes.
+         */
+        targetMemoryPerNode: number;
+        /**
+         * (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired OCPUs count on each node. This value is not used for nodes with fixed compute shapes.
+         */
+        targetOcpusPerNode: number;
+        /**
+         * (Updatable) For nodes with [fixed compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired shape of each node. This value is not used for nodes with flexible compute shapes.
+         */
+        targetShape: string;
+        /**
+         * (Updatable) Day/time recurrence (specified following RFC 5545) at which to trigger autoscaling action. Currently only WEEKLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR and BYMINUTE fields. Other fields are not supported.
+         */
+        timeRecurrence: string;
     }
 
     export interface AutoScalingConfigurationPolicyRule {
@@ -7997,14 +9218,14 @@ export namespace BigDataService {
          */
         metricType: string;
         /**
-         * (Updatable) An autoscale action is triggered when a performance metric meets or exceeds a threshold.
+         * (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
          */
         threshold: outputs.BigDataService.AutoScalingConfigurationPolicyRuleMetricThreshold;
     }
 
     export interface AutoScalingConfigurationPolicyRuleMetricThreshold {
         /**
-         * (Updatable) This value is the minimum period of time the metric value meets or exceeds the threshold value before the action is triggered. The value is in minutes.
+         * (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
          */
         durationInMinutes: number;
         /**
@@ -8019,23 +9240,23 @@ export namespace BigDataService {
 
     export interface BdsInstanceCloudSqlDetail {
         /**
-         * The size of block volume in GB to be attached to a given node. All the details needed for attaching the block volume are managed by service itself.
+         * The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
          */
         blockVolumeSizeInGbs: string;
         /**
-         * IP address of the node.
+         * IP address of the node
          */
         ipAddress: string;
         /**
-         * Boolean flag specifying whether or not Kerberos principals are mapped to database users.
+         * Boolean flag specifying whether or not are Kerberos principals mapped to database users.
          */
         isKerberosMappedToDatabaseUsers: boolean;
         /**
-         * Details about the Kerberos principals.
+         * Details about Kerberos principals
          */
         kerberosDetails: outputs.BigDataService.BdsInstanceCloudSqlDetailKerberosDetail[];
         /**
-         * (Updatable) Shape of the node.
+         * Shape of the node
          */
         shape: string;
     }
@@ -8046,18 +9267,15 @@ export namespace BigDataService {
          */
         keytabFile: string;
         /**
-         * Name of the Kerberos principal.
+         * Name of the Kerberos principal
          */
         principalName: string;
     }
 
     export interface BdsInstanceClusterDetail {
-        /**
-         * The URL of Ambari
-         */
         ambariUrl: string;
         /**
-         * Cloud SQL cell version.
+         * Cloud SQL cell version
          */
         bdCellVersion: string;
         /**
@@ -8065,64 +9283,117 @@ export namespace BigDataService {
          */
         bdaVersion: string;
         /**
-         * Big Data Manager version installed in the cluster.
+         * Big Data Manager version installed in the cluster
          */
         bdmVersion: string;
         /**
-         * Big Data Service version installed in the cluster.
+         * Big Data Service version installed in the cluster
          */
         bdsVersion: string;
         /**
-         * The URL of Big Data Manager.
+         * The URL of a Big Data Manager
          */
         bigDataManagerUrl: string;
         /**
-         * The URL of Cloudera Manager
+         * The URL of a Cloudera Manager
          */
         clouderaManagerUrl: string;
         /**
-         * Big Data SQL version.
+         * Big Data SQL version
          */
         csqlCellVersion: string;
         /**
-         * Cloud SQL query server database version.
+         * Query Server Database version
          */
         dbVersion: string;
         /**
-         * The URL of the Hue server.
+         * The URL of a Hue Server
          */
         hueServerUrl: string;
         /**
-         * Oracle Linux version installed in the cluster.
+         * The URL of the Jupyterhub.
+         */
+        jupyterHubUrl: string;
+        /**
+         * Oracle Linux version installed in the cluster
          */
         osVersion: string;
         /**
-         * The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+         * The time the BDS instance was created. An RFC3339 formatted datetime string
          */
         timeCreated: string;
         /**
-         * The time the cluster was automatically or manually refreshed, shown as an RFC 3339 formatted datetime string.
+         * The time the BDS instance was automatically, or manually refreshed. An RFC3339 formatted datetime string
          */
         timeRefreshed: string;
     }
 
-    export interface BdsInstanceMasterNode {
+    export interface BdsInstanceComputeOnlyWorkerNode {
         /**
-         * The size of block volume in GB to be attached to a given node. All the details needed for attaching the block volume are managed by service itself.
+         * The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
          */
         blockVolumeSizeInGbs: string;
         /**
-         * The number of nodes that form the cluster.
+         * The amount of worker nodes should be created
          */
         numberOfNodes: number;
         /**
-         * (Updatable) Shape of the node.
+         * Shape of the node
          */
         shape: string;
         /**
-         * The OCID of the subnet in which the node will be created.
+         * The shape configuration requested for the node.
+         */
+        shapeConfig?: outputs.BigDataService.BdsInstanceComputeOnlyWorkerNodeShapeConfig;
+        /**
+         * The OCID of the subnet in which the node should be created
          */
         subnetId: string;
+    }
+
+    export interface BdsInstanceComputeOnlyWorkerNodeShapeConfig {
+        /**
+         * The total amount of memory available to the node, in gigabytes
+         */
+        memoryInGbs?: number;
+        /**
+         * The total number of OCPUs available to the node.
+         */
+        ocpus?: number;
+    }
+
+    export interface BdsInstanceMasterNode {
+        /**
+         * The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+         */
+        blockVolumeSizeInGbs: string;
+        /**
+         * The amount of worker nodes should be created
+         */
+        numberOfNodes: number;
+        /**
+         * Shape of the node
+         */
+        shape: string;
+        /**
+         * The shape configuration requested for the node.
+         */
+        shapeConfig?: outputs.BigDataService.BdsInstanceMasterNodeShapeConfig;
+        /**
+         * The OCID of the subnet in which the node should be created
+         */
+        subnetId: string;
+    }
+
+    export interface BdsInstanceMasterNodeShapeConfig {
+        /**
+         * The total amount of memory available to the node, in gigabytes
+         */
+        memoryInGbs?: number;
+        /**
+         * The total number of OCPUs available to the node.
+         */
+        ocpus?: number;
     }
 
     export interface BdsInstanceNetworkConfig {
@@ -8142,55 +9413,63 @@ export namespace BigDataService {
          */
         attachedBlockVolumes: outputs.BigDataService.BdsInstanceNodeAttachedBlockVolume[];
         /**
-         * The name of the availability domain in which the node is running.
+         * The name of the availability domain the node is running in
          */
         availabilityDomain: string;
         /**
-         * (Updatable) Name of the Big Data Service cluster.
+         * (Updatable) Name of the BDS instance
          */
         displayName: string;
         /**
-         * The name of the fault domain in which the node is running.
+         * The name of the fault domain the node is running in
          */
         faultDomain: string;
         /**
-         * The fully-qualified hostname (FQDN) of the node.
+         * The fully-qualified hostname (FQDN) of the node
          */
         hostname: string;
         /**
-         * The OCID of the image from which the node was created.
+         * The OCID of the image from which the node was created
          */
         imageId: string;
         /**
-         * The OCID of the underlying Oracle Cloud Infrastructure Compute instance.
+         * The OCID of the underlying compute instance
          */
         instanceId: string;
         /**
-         * IP address of the node.
+         * IP address of the node
          */
         ipAddress: string;
         /**
-         * The Big Data Service cluster node type.
+         * The total amount of memory available to the node, in gigabytes
+         */
+        memoryInGbs: number;
+        /**
+         * BDS instance node type
          */
         nodeType: string;
         /**
-         * (Updatable) Shape of the node.
+         * The total number of OCPUs available to the node.
+         */
+        ocpus: number;
+        /**
+         * Shape of the node
          */
         shape: string;
         /**
-         * The fingerprint of the SSH key used for node access.
+         * The fingerprint of the SSH key used for node access
          */
         sshFingerprint: string;
         /**
-         * The state of the cluster.
+         * The state of the BDS instance
          */
         state: string;
         /**
-         * The OCID of the subnet in which the node will be created.
+         * The OCID of the subnet in which the node should be created
          */
         subnetId: string;
         /**
-         * The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+         * The time the BDS instance was created. An RFC3339 formatted datetime string
          */
         timeCreated: string;
     }
@@ -8208,51 +9487,336 @@ export namespace BigDataService {
 
     export interface BdsInstanceUtilNode {
         /**
-         * The size of block volume in GB to be attached to a given node. All the details needed for attaching the block volume are managed by service itself.
+         * The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
          */
         blockVolumeSizeInGbs: string;
         /**
-         * The number of nodes that form the cluster.
+         * The amount of worker nodes should be created
          */
         numberOfNodes: number;
         /**
-         * (Updatable) Shape of the node.
+         * Shape of the node
          */
         shape: string;
         /**
-         * The OCID of the subnet in which the node will be created.
+         * The shape configuration requested for the node.
+         */
+        shapeConfig?: outputs.BigDataService.BdsInstanceUtilNodeShapeConfig;
+        /**
+         * The OCID of the subnet in which the node should be created
          */
         subnetId: string;
+    }
+
+    export interface BdsInstanceUtilNodeShapeConfig {
+        /**
+         * The total amount of memory available to the node, in gigabytes
+         */
+        memoryInGbs?: number;
+        /**
+         * The total number of OCPUs available to the node.
+         */
+        ocpus?: number;
     }
 
     export interface BdsInstanceWorkerNode {
         /**
-         * The size of block volume in GB to be attached to a given node. All the details needed for attaching the block volume are managed by service itself.
+         * The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
          */
         blockVolumeSizeInGbs: string;
         /**
-         * The number of nodes that form the cluster.
+         * The amount of worker nodes should be created
          */
         numberOfNodes: number;
         /**
-         * (Updatable) Shape of the node.
+         * Shape of the node
          */
         shape: string;
         /**
-         * The OCID of the subnet in which the node will be created.
+         * The shape configuration requested for the node.
+         */
+        shapeConfig?: outputs.BigDataService.BdsInstanceWorkerNodeShapeConfig;
+        /**
+         * The OCID of the subnet in which the node should be created
          */
         subnetId: string;
     }
 
+    export interface BdsInstanceWorkerNodeShapeConfig {
+        /**
+         * The total amount of memory available to the node, in gigabytes
+         */
+        memoryInGbs?: number;
+        /**
+         * The total number of OCPUs available to the node.
+         */
+        ocpus?: number;
+    }
+
     export interface GetAutoScalingConfigurationPolicy {
         /**
-         * Types of autoscale policies. Options are SCHEDULE-BASED or THRESHOLD-BASED. (Only THRESHOLD-BASED is supported in this release.)
+         * Type of autoscaling policy.
          */
         policyType: string;
         /**
          * The list of rules for autoscaling. If an action has multiple rules, the last rule in the array will be applied.
          */
         rules: outputs.BigDataService.GetAutoScalingConfigurationPolicyRule[];
+    }
+
+    export interface GetAutoScalingConfigurationPolicyDetail {
+        /**
+         * The type of autoscaling action to take.
+         */
+        actionType: string;
+        /**
+         * Type of autoscaling policy.
+         */
+        policyType: string;
+        /**
+         * Configration for a metric based vertical scale-down policy.
+         */
+        scaleDownConfigs: outputs.BigDataService.GetAutoScalingConfigurationPolicyDetailScaleDownConfig[];
+        /**
+         * Configration for a metric based horizontal scale-in policy.
+         */
+        scaleInConfigs: outputs.BigDataService.GetAutoScalingConfigurationPolicyDetailScaleInConfig[];
+        /**
+         * Configration for a metric based horizontal scale-out policy.
+         */
+        scaleOutConfigs: outputs.BigDataService.GetAutoScalingConfigurationPolicyDetailScaleOutConfig[];
+        /**
+         * Configration for a metric based vertical scale-up policy.
+         */
+        scaleUpConfigs: outputs.BigDataService.GetAutoScalingConfigurationPolicyDetailScaleUpConfig[];
+        scheduleDetails: outputs.BigDataService.GetAutoScalingConfigurationPolicyDetailScheduleDetail[];
+        /**
+         * The time zone of the execution schedule, in IANA time zone database name format
+         */
+        timezone: string;
+        /**
+         * The type of autoscaling trigger.
+         */
+        triggerType: string;
+    }
+
+    export interface GetAutoScalingConfigurationPolicyDetailScaleDownConfig {
+        /**
+         * For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+         */
+        memoryStepSize: number;
+        /**
+         * Metric and threshold details for triggering an autoscale action.
+         */
+        metrics: outputs.BigDataService.GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetric[];
+        /**
+         * For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the minimum memory in GBs each node can be scaled-down to. This value is not used for nodes with fixed compute shapes.
+         */
+        minMemoryPerNode: number;
+        /**
+         * For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the minimum number of OCPUs each node can be scaled-down to. This value is not used for nodes with fixed compute shapes.
+         */
+        minOcpusPerNode: number;
+        /**
+         * For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+         */
+        ocpuStepSize: number;
+    }
+
+    export interface GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetric {
+        /**
+         * Allowed value is CPU_UTILIZATION.
+         */
+        metricType: string;
+        /**
+         * An autoscale action is triggered when a performance metric exceeds a threshold.
+         */
+        thresholds: outputs.BigDataService.GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThreshold[];
+    }
+
+    export interface GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThreshold {
+        /**
+         * This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
+         */
+        durationInMinutes: number;
+        /**
+         * The comparison operator to use. Options are greater than (GT) or less than (LT).
+         */
+        operator: string;
+        /**
+         * Integer non-negative value. 0 < value < 100
+         */
+        value: number;
+    }
+
+    export interface GetAutoScalingConfigurationPolicyDetailScaleInConfig {
+        /**
+         * Metric and threshold details for triggering an autoscale action.
+         */
+        metrics: outputs.BigDataService.GetAutoScalingConfigurationPolicyDetailScaleInConfigMetric[];
+        /**
+         * This value is the minimum number of nodes the cluster can be scaled-in to.
+         */
+        minNodeCount: number;
+        /**
+         * This value is the number of nodes to add during a scale-out event.
+         */
+        stepSize: number;
+    }
+
+    export interface GetAutoScalingConfigurationPolicyDetailScaleInConfigMetric {
+        /**
+         * Allowed value is CPU_UTILIZATION.
+         */
+        metricType: string;
+        /**
+         * An autoscale action is triggered when a performance metric exceeds a threshold.
+         */
+        thresholds: outputs.BigDataService.GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold[];
+    }
+
+    export interface GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold {
+        /**
+         * This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
+         */
+        durationInMinutes: number;
+        /**
+         * The comparison operator to use. Options are greater than (GT) or less than (LT).
+         */
+        operator: string;
+        /**
+         * Integer non-negative value. 0 < value < 100
+         */
+        value: number;
+    }
+
+    export interface GetAutoScalingConfigurationPolicyDetailScaleOutConfig {
+        /**
+         * This value is the maximum number of nodes the cluster can be scaled-out to.
+         */
+        maxNodeCount: number;
+        /**
+         * Metric and threshold details for triggering an autoscale action.
+         */
+        metrics: outputs.BigDataService.GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetric[];
+        /**
+         * This value is the number of nodes to add during a scale-out event.
+         */
+        stepSize: number;
+    }
+
+    export interface GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetric {
+        /**
+         * Allowed value is CPU_UTILIZATION.
+         */
+        metricType: string;
+        /**
+         * An autoscale action is triggered when a performance metric exceeds a threshold.
+         */
+        thresholds: outputs.BigDataService.GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThreshold[];
+    }
+
+    export interface GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThreshold {
+        /**
+         * This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
+         */
+        durationInMinutes: number;
+        /**
+         * The comparison operator to use. Options are greater than (GT) or less than (LT).
+         */
+        operator: string;
+        /**
+         * Integer non-negative value. 0 < value < 100
+         */
+        value: number;
+    }
+
+    export interface GetAutoScalingConfigurationPolicyDetailScaleUpConfig {
+        /**
+         * For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the maximum memory in GBs each node can be scaled-up to. This value is not used for nodes with fixed compute shapes.
+         */
+        maxMemoryPerNode: number;
+        /**
+         * For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the maximum number of OCPUs each node can be scaled-up to. This value is not used for nodes with fixed compute shapes.
+         */
+        maxOcpusPerNode: number;
+        /**
+         * For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+         */
+        memoryStepSize: number;
+        /**
+         * Metric and threshold details for triggering an autoscale action.
+         */
+        metrics: outputs.BigDataService.GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetric[];
+        /**
+         * For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+         */
+        ocpuStepSize: number;
+    }
+
+    export interface GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetric {
+        /**
+         * Allowed value is CPU_UTILIZATION.
+         */
+        metricType: string;
+        /**
+         * An autoscale action is triggered when a performance metric exceeds a threshold.
+         */
+        thresholds: outputs.BigDataService.GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold[];
+    }
+
+    export interface GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold {
+        /**
+         * This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
+         */
+        durationInMinutes: number;
+        /**
+         * The comparison operator to use. Options are greater than (GT) or less than (LT).
+         */
+        operator: string;
+        /**
+         * Integer non-negative value. 0 < value < 100
+         */
+        value: number;
+    }
+
+    export interface GetAutoScalingConfigurationPolicyDetailScheduleDetail {
+        /**
+         * The type of schedule.
+         */
+        scheduleType: string;
+        timeAndHorizontalScalingConfigs: outputs.BigDataService.GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig[];
+        timeAndVerticalScalingConfigs: outputs.BigDataService.GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig[];
+    }
+
+    export interface GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig {
+        /**
+         * This value is the desired number of nodes in the cluster.
+         */
+        targetNodeCount: number;
+        /**
+         * Day/time recurrence (specified following RFC 5545) at which to trigger autoscaling action. Currently only WEEKLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR and BYMINUTE fields. Other fields are not supported.
+         */
+        timeRecurrence: string;
+    }
+
+    export interface GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig {
+        /**
+         * For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired memory in GBs on each node. This value is not used for nodes with fixed compute shapes.
+         */
+        targetMemoryPerNode: number;
+        /**
+         * For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired OCPUs count on each node. This value is not used for nodes with fixed compute shapes.
+         */
+        targetOcpusPerNode: number;
+        /**
+         * For nodes with [fixed compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired shape of each node. This value is not used for nodes with flexible compute shapes.
+         */
+        targetShape: string;
+        /**
+         * Day/time recurrence (specified following RFC 5545) at which to trigger autoscaling action. Currently only WEEKLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR and BYMINUTE fields. Other fields are not supported.
+         */
+        timeRecurrence: string;
     }
 
     export interface GetAutoScalingConfigurationPolicyRule {
@@ -8272,14 +9836,14 @@ export namespace BigDataService {
          */
         metricType: string;
         /**
-         * An autoscale action is triggered when a performance metric meets or exceeds a threshold.
+         * An autoscale action is triggered when a performance metric exceeds a threshold.
          */
         thresholds: outputs.BigDataService.GetAutoScalingConfigurationPolicyRuleMetricThreshold[];
     }
 
     export interface GetAutoScalingConfigurationPolicyRuleMetricThreshold {
         /**
-         * This value is the minimum period of time the metric value meets or exceeds the threshold value before the action is triggered. The value is in minutes.
+         * This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
          */
         durationInMinutes: number;
         /**
@@ -8300,6 +9864,7 @@ export namespace BigDataService {
         isEnabled: boolean;
         nodeType: string;
         policies: outputs.BigDataService.GetAutoScalingConfigurationsAutoScalingConfigurationPolicy[];
+        policyDetails: outputs.BigDataService.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail[];
         state: string;
         timeCreated: string;
         timeUpdated: string;
@@ -8308,6 +9873,108 @@ export namespace BigDataService {
     export interface GetAutoScalingConfigurationsAutoScalingConfigurationPolicy {
         policyType: string;
         rules: outputs.BigDataService.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRule[];
+    }
+
+    export interface GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail {
+        actionType: string;
+        policyType: string;
+        scaleDownConfigs: outputs.BigDataService.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfig[];
+        scaleInConfigs: outputs.BigDataService.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfig[];
+        scaleOutConfigs: outputs.BigDataService.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfig[];
+        scaleUpConfigs: outputs.BigDataService.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfig[];
+        scheduleDetails: outputs.BigDataService.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetail[];
+        timezone: string;
+        triggerType: string;
+    }
+
+    export interface GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfig {
+        memoryStepSize: number;
+        metrics: outputs.BigDataService.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetric[];
+        minMemoryPerNode: number;
+        minOcpusPerNode: number;
+        ocpuStepSize: number;
+    }
+
+    export interface GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetric {
+        metricType: string;
+        thresholds: outputs.BigDataService.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThreshold[];
+    }
+
+    export interface GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThreshold {
+        durationInMinutes: number;
+        operator: string;
+        value: number;
+    }
+
+    export interface GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfig {
+        metrics: outputs.BigDataService.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetric[];
+        minNodeCount: number;
+        stepSize: number;
+    }
+
+    export interface GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetric {
+        metricType: string;
+        thresholds: outputs.BigDataService.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold[];
+    }
+
+    export interface GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold {
+        durationInMinutes: number;
+        operator: string;
+        value: number;
+    }
+
+    export interface GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfig {
+        maxNodeCount: number;
+        metrics: outputs.BigDataService.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetric[];
+        stepSize: number;
+    }
+
+    export interface GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetric {
+        metricType: string;
+        thresholds: outputs.BigDataService.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThreshold[];
+    }
+
+    export interface GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThreshold {
+        durationInMinutes: number;
+        operator: string;
+        value: number;
+    }
+
+    export interface GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfig {
+        maxMemoryPerNode: number;
+        maxOcpusPerNode: number;
+        memoryStepSize: number;
+        metrics: outputs.BigDataService.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetric[];
+        ocpuStepSize: number;
+    }
+
+    export interface GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetric {
+        metricType: string;
+        thresholds: outputs.BigDataService.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold[];
+    }
+
+    export interface GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold {
+        durationInMinutes: number;
+        operator: string;
+        value: number;
+    }
+
+    export interface GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetail {
+        scheduleType: string;
+        timeAndHorizontalScalingConfigs: outputs.BigDataService.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig[];
+        timeAndVerticalScalingConfigs: outputs.BigDataService.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig[];
+    }
+
+    export interface GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig {
+        targetNodeCount: number;
+        timeRecurrence: string;
+    }
+
+    export interface GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig {
+        targetMemoryPerNode: number;
+        targetOcpusPerNode: number;
+        targetShape: string;
+        timeRecurrence: string;
     }
 
     export interface GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRule {
@@ -8458,6 +10125,10 @@ export namespace BigDataService {
          */
         hueServerUrl: string;
         /**
+         * The URL of the Jupyterhub.
+         */
+        jupyterHubUrl: string;
+        /**
          * Oracle Linux version installed in the cluster.
          */
         osVersion: string;
@@ -8469,6 +10140,37 @@ export namespace BigDataService {
          * The time the cluster was automatically or manually refreshed, shown as an RFC 3339 formatted datetime string.
          */
         timeRefreshed: string;
+    }
+
+    export interface GetBdsInstanceComputeOnlyWorkerNode {
+        /**
+         * The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+         */
+        blockVolumeSizeInGbs: string;
+        /**
+         * The number of nodes that form the cluster.
+         */
+        numberOfNodes: number;
+        /**
+         * Shape of the node.
+         */
+        shape: string;
+        shapeConfigs: outputs.BigDataService.GetBdsInstanceComputeOnlyWorkerNodeShapeConfig[];
+        /**
+         * The OCID of the subnet in which the node is to be created.
+         */
+        subnetId: string;
+    }
+
+    export interface GetBdsInstanceComputeOnlyWorkerNodeShapeConfig {
+        /**
+         * The total amount of memory available to the node, in gigabytes.
+         */
+        memoryInGbs: number;
+        /**
+         * The total number of OCPUs available to the node.
+         */
+        ocpus: number;
     }
 
     export interface GetBdsInstanceMasterNode {
@@ -8484,10 +10186,22 @@ export namespace BigDataService {
          * Shape of the node.
          */
         shape: string;
+        shapeConfigs: outputs.BigDataService.GetBdsInstanceMasterNodeShapeConfig[];
         /**
          * The OCID of the subnet in which the node is to be created.
          */
         subnetId: string;
+    }
+
+    export interface GetBdsInstanceMasterNodeShapeConfig {
+        /**
+         * The total amount of memory available to the node, in gigabytes.
+         */
+        memoryInGbs: number;
+        /**
+         * The total number of OCPUs available to the node.
+         */
+        ocpus: number;
     }
 
     export interface GetBdsInstanceMetastoreConfigsBdsMetastoreConfiguration {
@@ -8583,9 +10297,17 @@ export namespace BigDataService {
          */
         ipAddress: string;
         /**
+         * The total amount of memory available to the node, in gigabytes.
+         */
+        memoryInGbs: number;
+        /**
          * Cluster node type.
          */
         nodeType: string;
+        /**
+         * The total number of OCPUs available to the node.
+         */
+        ocpus: number;
         /**
          * Shape of the node.
          */
@@ -8632,10 +10354,22 @@ export namespace BigDataService {
          * Shape of the node.
          */
         shape: string;
+        shapeConfigs: outputs.BigDataService.GetBdsInstanceUtilNodeShapeConfig[];
         /**
          * The OCID of the subnet in which the node is to be created.
          */
         subnetId: string;
+    }
+
+    export interface GetBdsInstanceUtilNodeShapeConfig {
+        /**
+         * The total amount of memory available to the node, in gigabytes.
+         */
+        memoryInGbs: number;
+        /**
+         * The total number of OCPUs available to the node.
+         */
+        ocpus: number;
     }
 
     export interface GetBdsInstanceWorkerNode {
@@ -8651,13 +10385,29 @@ export namespace BigDataService {
          * Shape of the node.
          */
         shape: string;
+        shapeConfigs: outputs.BigDataService.GetBdsInstanceWorkerNodeShapeConfig[];
         /**
          * The OCID of the subnet in which the node is to be created.
          */
         subnetId: string;
     }
 
+    export interface GetBdsInstanceWorkerNodeShapeConfig {
+        /**
+         * The total amount of memory available to the node, in gigabytes.
+         */
+        memoryInGbs: number;
+        /**
+         * The total number of OCPUs available to the node.
+         */
+        ocpus: number;
+    }
+
     export interface GetBdsInstancesBdsInstance {
+        /**
+         * pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
+         */
+        bootstrapScriptUrl: string;
         /**
          * The information about added Cloud SQL capability
          */
@@ -8676,6 +10426,7 @@ export namespace BigDataService {
          * The OCID of the compartment.
          */
         compartmentId: string;
+        computeOnlyWorkerNodes: outputs.BigDataService.GetBdsInstancesBdsInstanceComputeOnlyWorkerNode[];
         /**
          * The user who created the cluster.
          */
@@ -8708,6 +10459,7 @@ export namespace BigDataService {
          * Boolean flag specifying whether or not the cluster should be set up as secure.
          */
         isSecure: boolean;
+        kerberosRealmName: string;
         masterNodes: outputs.BigDataService.GetBdsInstancesBdsInstanceMasterNode[];
         /**
          * Additional configuration of the user's network.
@@ -8813,6 +10565,10 @@ export namespace BigDataService {
          */
         hueServerUrl: string;
         /**
+         * The URL of the Jupyterhub.
+         */
+        jupyterHubUrl: string;
+        /**
          * Oracle Linux version installed in the cluster.
          */
         osVersion: string;
@@ -8824,6 +10580,37 @@ export namespace BigDataService {
          * The time the cluster was automatically or manually refreshed, shown as an RFC 3339 formatted datetime string.
          */
         timeRefreshed: string;
+    }
+
+    export interface GetBdsInstancesBdsInstanceComputeOnlyWorkerNode {
+        /**
+         * The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+         */
+        blockVolumeSizeInGbs: string;
+        /**
+         * The number of nodes that form the cluster.
+         */
+        numberOfNodes: number;
+        /**
+         * Shape of the node.
+         */
+        shape: string;
+        shapeConfigs: outputs.BigDataService.GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfig[];
+        /**
+         * The OCID of the subnet in which the node is to be created.
+         */
+        subnetId: string;
+    }
+
+    export interface GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfig {
+        /**
+         * The total amount of memory available to the node, in gigabytes.
+         */
+        memoryInGbs: number;
+        /**
+         * The total number of OCPUs available to the node.
+         */
+        ocpus: number;
     }
 
     export interface GetBdsInstancesBdsInstanceMasterNode {
@@ -8839,10 +10626,22 @@ export namespace BigDataService {
          * Shape of the node.
          */
         shape: string;
+        shapeConfigs: outputs.BigDataService.GetBdsInstancesBdsInstanceMasterNodeShapeConfig[];
         /**
          * The OCID of the subnet in which the node is to be created.
          */
         subnetId: string;
+    }
+
+    export interface GetBdsInstancesBdsInstanceMasterNodeShapeConfig {
+        /**
+         * The total amount of memory available to the node, in gigabytes.
+         */
+        memoryInGbs: number;
+        /**
+         * The total number of OCPUs available to the node.
+         */
+        ocpus: number;
     }
 
     export interface GetBdsInstancesBdsInstanceNetworkConfig {
@@ -8890,9 +10689,17 @@ export namespace BigDataService {
          */
         ipAddress: string;
         /**
+         * The total amount of memory available to the node, in gigabytes.
+         */
+        memoryInGbs: number;
+        /**
          * Cluster node type.
          */
         nodeType: string;
+        /**
+         * The total number of OCPUs available to the node.
+         */
+        ocpus: number;
         /**
          * Shape of the node.
          */
@@ -8939,10 +10746,22 @@ export namespace BigDataService {
          * Shape of the node.
          */
         shape: string;
+        shapeConfigs: outputs.BigDataService.GetBdsInstancesBdsInstanceUtilNodeShapeConfig[];
         /**
          * The OCID of the subnet in which the node is to be created.
          */
         subnetId: string;
+    }
+
+    export interface GetBdsInstancesBdsInstanceUtilNodeShapeConfig {
+        /**
+         * The total amount of memory available to the node, in gigabytes.
+         */
+        memoryInGbs: number;
+        /**
+         * The total number of OCPUs available to the node.
+         */
+        ocpus: number;
     }
 
     export interface GetBdsInstancesBdsInstanceWorkerNode {
@@ -8958,10 +10777,22 @@ export namespace BigDataService {
          * Shape of the node.
          */
         shape: string;
+        shapeConfigs: outputs.BigDataService.GetBdsInstancesBdsInstanceWorkerNodeShapeConfig[];
         /**
          * The OCID of the subnet in which the node is to be created.
          */
         subnetId: string;
+    }
+
+    export interface GetBdsInstancesBdsInstanceWorkerNodeShapeConfig {
+        /**
+         * The total amount of memory available to the node, in gigabytes.
+         */
+        memoryInGbs: number;
+        /**
+         * The total number of OCPUs available to the node.
+         */
+        ocpus: number;
     }
 
     export interface GetBdsInstancesFilter {
@@ -9567,7 +11398,7 @@ export namespace Blockchain {
 export namespace Budget {
     export interface GetAlertRulesAlertRule {
         /**
-         * The unique Budget OCID
+         * The unique budget OCID.
          */
         budgetId: string;
         /**
@@ -9579,7 +11410,7 @@ export namespace Budget {
          */
         description: string;
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+         * A user-friendly name. This does not have to be unique, and it's changeable.  Example: `My new resource`
          */
         displayName: string;
         /**
@@ -9587,15 +11418,15 @@ export namespace Budget {
          */
         freeformTags: {[key: string]: any};
         /**
-         * The OCID of the alert rule
+         * The OCID of the alert rule.
          */
         id: string;
         /**
-         * Custom message that will be sent when alert is triggered
+         * The custom message that will be sent when the alert is triggered.
          */
         message: string;
         /**
-         * Delimited list of email addresses to receive the alert when it triggers. Delimiter character can be comma, space, TAB, or semicolon.
+         * The delimited list of email addresses to receive the alert when it triggers. Delimiter characters can be a comma, space, TAB, or semicolon.
          */
         recipients: string;
         /**
@@ -9603,7 +11434,7 @@ export namespace Budget {
          */
         state: string;
         /**
-         * The threshold for triggering the alert. If thresholdType is PERCENTAGE, the maximum value is 10000.
+         * The threshold for triggering the alert. If the thresholdType is PERCENTAGE, the maximum value is 10000.
          */
         threshold: number;
         /**
@@ -9611,19 +11442,19 @@ export namespace Budget {
          */
         thresholdType: string;
         /**
-         * Time when budget was created
+         * The time when the budget was created.
          */
         timeCreated: string;
         /**
-         * Time when budget was updated
+         * The time when the budget was updated.
          */
         timeUpdated: string;
         /**
-         * The type of alert. Valid values are ACTUAL (the alert will trigger based on actual usage) or FORECAST (the alert will trigger based on predicted usage).
+         * The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
          */
         type: string;
         /**
-         * Version of the alert rule. Starts from 1 and increments by 1.
+         * The version of the alert rule. Starts from 1 and increments by 1.
          */
         version: number;
     }
@@ -9636,15 +11467,15 @@ export namespace Budget {
 
     export interface GetBudgetsBudget {
         /**
-         * The actual spend in currency for the current budget cycle
+         * The actual spend in currency for the current budget cycle.
          */
         actualSpend: number;
         /**
-         * Total number of alert rules in the budget
+         * The total number of alert rules in the budget.
          */
         alertRuleCount: number;
         /**
-         * The amount of the budget expressed in the currency of the customer's rate card.
+         * The amount of the budget, expressed in the currency of the customer's rate card.
          */
         amount: number;
         /**
@@ -9664,11 +11495,11 @@ export namespace Budget {
          */
         description: string;
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+         * A user-friendly name. This does not have to be unique, and it's changeable.  Example: `My new resource`
          */
         displayName: string;
         /**
-         * The forecasted spend in currency by the end of the current budget cycle
+         * The forecasted spend in currency by the end of the current budget cycle.
          */
         forecastedSpend: number;
         /**
@@ -9676,9 +11507,13 @@ export namespace Budget {
          */
         freeformTags: {[key: string]: any};
         /**
-         * The OCID of the budget
+         * The OCID of the budget.
          */
         id: string;
+        /**
+         * The type of the budget processing period. Valid values are INVOICE and MONTH.
+         */
+        processingPeriodType: string;
         /**
          * The reset period for the budget.
          */
@@ -9688,36 +11523,36 @@ export namespace Budget {
          */
         state: string;
         /**
-         * This is DEPRECATED. For backwards compatability, the property will be populated when targetType is "COMPARTMENT" AND targets contains EXACT ONE target compartment ocid. For all other scenarios, this property will be left empty.
+         * This is DEPRECATED. For backwards compatability, the property is populated when the targetType is "COMPARTMENT", and targets contain the specific target compartment OCID. For all other scenarios, this property will be left empty.
          *
          * @deprecated The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead.
          */
         targetCompartmentId: string;
         /**
-         * The type of target to filter by.
+         * The type of target to filter by:
          * * ALL - List all budgets
          * * COMPARTMENT - List all budgets with targetType == "COMPARTMENT"
          * * TAG - List all budgets with targetType == "TAG"
          */
         targetType: string;
         /**
-         * The list of targets on which the budget is applied. If targetType is "COMPARTMENT", targets contains list of compartment OCIDs. If targetType is "TAG", targets contains list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}".
+         * The list of targets on which the budget is applied. If the targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If the targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}".
          */
         targets: string[];
         /**
-         * Time that budget was created
+         * The time that the budget was created.
          */
         timeCreated: string;
         /**
-         * The time that the budget spend was last computed
+         * The time that the budget spend was last computed.
          */
         timeSpendComputed: string;
         /**
-         * Time that budget was updated
+         * The time that the budget was updated.
          */
         timeUpdated: string;
         /**
-         * Version of the budget. Starts from 1 and increments by 1.
+         * The version of the budget. Starts from 1 and increments by 1.
          */
         version: number;
     }
@@ -12101,7 +13936,7 @@ export namespace CloudGuard {
          */
         candidateResponderRules: outputs.CloudGuard.DetectorRecipeDetectorRuleCandidateResponderRule[];
         /**
-         * (Updatable) DetectorRecipe Description
+         * (Updatable) Detector recipe description.
          */
         description: string;
         /**
@@ -12117,7 +13952,7 @@ export namespace CloudGuard {
          */
         detectorRuleId: string;
         /**
-         * (Updatable) DetectorRecipe Display Name
+         * (Updatable) Detector recipe display name.
          */
         displayName: string;
         /**
@@ -12156,7 +13991,7 @@ export namespace CloudGuard {
 
     export interface DetectorRecipeDetectorRuleCandidateResponderRule {
         /**
-         * (Updatable) DetectorRecipe Display Name
+         * (Updatable) Detector recipe display name.
          */
         displayName: string;
         /**
@@ -12171,7 +14006,7 @@ export namespace CloudGuard {
 
     export interface DetectorRecipeDetectorRuleDetails {
         /**
-         * (Updatable)
+         * (Updatable) Base condition object
          */
         condition: string;
         /**
@@ -12240,7 +14075,7 @@ export namespace CloudGuard {
          */
         candidateResponderRules: outputs.CloudGuard.DetectorRecipeEffectiveDetectorRuleCandidateResponderRule[];
         /**
-         * (Updatable) DetectorRecipe Description
+         * (Updatable) Detector recipe description.
          */
         description: string;
         /**
@@ -12256,7 +14091,7 @@ export namespace CloudGuard {
          */
         detectorRuleId: string;
         /**
-         * (Updatable) DetectorRecipe Display Name
+         * (Updatable) Detector recipe display name.
          */
         displayName: string;
         /**
@@ -12295,7 +14130,7 @@ export namespace CloudGuard {
 
     export interface DetectorRecipeEffectiveDetectorRuleCandidateResponderRule {
         /**
-         * (Updatable) DetectorRecipe Display Name
+         * (Updatable) Detector recipe display name.
          */
         displayName: string;
         /**
@@ -12310,7 +14145,7 @@ export namespace CloudGuard {
 
     export interface DetectorRecipeEffectiveDetectorRuleDetail {
         /**
-         * (Updatable)
+         * (Updatable) Base condition object
          */
         condition: string;
         /**
@@ -12477,7 +14312,7 @@ export namespace CloudGuard {
          */
         candidateResponderRules: outputs.CloudGuard.GetDetectorRecipeDetectorRuleCandidateResponderRule[];
         /**
-         * Description for DetectorRecipeDetectorRule
+         * Description for DetectorRecipeDetectorRule.
          */
         description: string;
         /**
@@ -12489,11 +14324,11 @@ export namespace CloudGuard {
          */
         detector: string;
         /**
-         * The unique identifier of the detector rule
+         * The unique identifier of the detector rule.
          */
         detectorRuleId: string;
         /**
-         * displayName
+         * Display name for DetectorRecipeDetectorRule.
          */
         displayName: string;
         /**
@@ -12532,7 +14367,7 @@ export namespace CloudGuard {
 
     export interface GetDetectorRecipeDetectorRuleCandidateResponderRule {
         /**
-         * displayName
+         * Display name for DetectorRecipeDetectorRule.
          */
         displayName: string;
         /**
@@ -12546,6 +14381,9 @@ export namespace CloudGuard {
     }
 
     export interface GetDetectorRecipeDetectorRuleDetail {
+        /**
+         * Base condition object
+         */
         condition: string;
         /**
          * Configuration details
@@ -12613,7 +14451,7 @@ export namespace CloudGuard {
          */
         candidateResponderRules: outputs.CloudGuard.GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRule[];
         /**
-         * Description for DetectorRecipeDetectorRule
+         * Description for DetectorRecipeDetectorRule.
          */
         description: string;
         /**
@@ -12625,11 +14463,11 @@ export namespace CloudGuard {
          */
         detector: string;
         /**
-         * The unique identifier of the detector rule
+         * The unique identifier of the detector rule.
          */
         detectorRuleId: string;
         /**
-         * displayName
+         * Display name for DetectorRecipeDetectorRule.
          */
         displayName: string;
         /**
@@ -12668,7 +14506,7 @@ export namespace CloudGuard {
 
     export interface GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRule {
         /**
-         * displayName
+         * Display name for DetectorRecipeDetectorRule.
          */
         displayName: string;
         /**
@@ -12682,6 +14520,9 @@ export namespace CloudGuard {
     }
 
     export interface GetDetectorRecipeEffectiveDetectorRuleDetail {
+        /**
+         * Base condition object
+         */
         condition: string;
         /**
          * Configuration details
@@ -12757,7 +14598,7 @@ export namespace CloudGuard {
          */
         definedTags: {[key: string]: any};
         /**
-         * Description for DetectorRecipeDetectorRule
+         * Description for DetectorRecipeDetectorRule.
          */
         description: string;
         /**
@@ -12816,7 +14657,7 @@ export namespace CloudGuard {
          */
         candidateResponderRules: outputs.CloudGuard.GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRule[];
         /**
-         * Description for DetectorRecipeDetectorRule
+         * Description for DetectorRecipeDetectorRule.
          */
         description: string;
         /**
@@ -12828,7 +14669,7 @@ export namespace CloudGuard {
          */
         detector: string;
         /**
-         * The unique identifier of the detector rule
+         * The unique identifier of the detector rule.
          */
         detectorRuleId: string;
         /**
@@ -12885,6 +14726,9 @@ export namespace CloudGuard {
     }
 
     export interface GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetail {
+        /**
+         * Base condition object
+         */
         condition: string;
         /**
          * Configuration details
@@ -12952,7 +14796,7 @@ export namespace CloudGuard {
          */
         candidateResponderRules: outputs.CloudGuard.GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRule[];
         /**
-         * Description for DetectorRecipeDetectorRule
+         * Description for DetectorRecipeDetectorRule.
          */
         description: string;
         /**
@@ -12964,7 +14808,7 @@ export namespace CloudGuard {
          */
         detector: string;
         /**
-         * The unique identifier of the detector rule
+         * The unique identifier of the detector rule.
          */
         detectorRuleId: string;
         /**
@@ -13021,6 +14865,9 @@ export namespace CloudGuard {
     }
 
     export interface GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetail {
+        /**
+         * Base condition object
+         */
         condition: string;
         /**
          * Configuration details
@@ -13094,13 +14941,87 @@ export namespace CloudGuard {
         values: string[];
     }
 
+    export interface GetGuardTargetTargetDetail {
+        /**
+         * The name of the security zone to associate this compartment with.
+         */
+        securityZoneDisplayName: string;
+        /**
+         * The OCID of the security zone to associate this compartment with.
+         */
+        securityZoneId: string;
+        /**
+         * possible type of targets
+         */
+        targetResourceType: string;
+        /**
+         * The list of security zone recipes to associate this compartment with.
+         */
+        targetSecurityZoneRecipes: outputs.CloudGuard.GetGuardTargetTargetDetailTargetSecurityZoneRecipe[];
+    }
+
+    export interface GetGuardTargetTargetDetailTargetSecurityZoneRecipe {
+        /**
+         * Compartment Identifier
+         */
+        compartmentId: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+         */
+        definedTags: {[key: string]: any};
+        /**
+         * ResponderRule description.
+         */
+        description: string;
+        /**
+         * ResponderRule display name.
+         */
+        displayName: string;
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+         */
+        freeformTags: {[key: string]: any};
+        /**
+         * Unique identifier of TargetResponderRecipe that can't be changed after creation.
+         */
+        id: string;
+        /**
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         */
+        lifecycleDetails: string;
+        /**
+         * Owner of ResponderRecipe
+         */
+        owner: string;
+        /**
+         * The list of `SecurityPolicy` ids that are included in the recipe
+         */
+        securityPolicies: string[];
+        /**
+         * The current state of the ResponderRule.
+         */
+        state: string;
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: any};
+        /**
+         * The date and time the target was created. Format defined by RFC3339.
+         */
+        timeCreated: string;
+        /**
+         * The date and time the target was updated. Format defined by RFC3339.
+         */
+        timeUpdated: string;
+    }
+
     export interface GetGuardTargetTargetDetectorRecipe {
         /**
          * Compartment Identifier
          */
         compartmentId: string;
         /**
-         * ResponderRule Description
+         * ResponderRule description.
          */
         description: string;
         /**
@@ -13116,7 +15037,7 @@ export namespace CloudGuard {
          */
         detectorRules: outputs.CloudGuard.GetGuardTargetTargetDetectorRecipeDetectorRule[];
         /**
-         * ResponderRule Display Name
+         * ResponderRule display name.
          */
         displayName: string;
         /**
@@ -13124,7 +15045,7 @@ export namespace CloudGuard {
          */
         effectiveDetectorRules: outputs.CloudGuard.GetGuardTargetTargetDetectorRecipeEffectiveDetectorRule[];
         /**
-         * Unique identifier of TargetResponderRecipe that is immutable on creation
+         * Unique identifier of TargetResponderRecipe that can't be changed after creation.
          */
         id: string;
         /**
@@ -13147,7 +15068,7 @@ export namespace CloudGuard {
 
     export interface GetGuardTargetTargetDetectorRecipeDetectorRule {
         /**
-         * ResponderRule Description
+         * ResponderRule description.
          */
         description: string;
         /**
@@ -13159,11 +15080,11 @@ export namespace CloudGuard {
          */
         detector: string;
         /**
-         * The unique identifier of the detector rule
+         * The unique identifier of the detector rule.
          */
         detectorRuleId: string;
         /**
-         * ResponderRule Display Name
+         * ResponderRule display name.
          */
         displayName: string;
         /**
@@ -13232,6 +15153,9 @@ export namespace CloudGuard {
          * Compartment Identifier
          */
         compartmentId: string;
+        /**
+         * Base condition object
+         */
         condition: string;
     }
 
@@ -13275,7 +15199,7 @@ export namespace CloudGuard {
 
     export interface GetGuardTargetTargetDetectorRecipeEffectiveDetectorRule {
         /**
-         * ResponderRule Description
+         * ResponderRule description.
          */
         description: string;
         /**
@@ -13287,11 +15211,11 @@ export namespace CloudGuard {
          */
         detector: string;
         /**
-         * The unique identifier of the detector rule
+         * The unique identifier of the detector rule.
          */
         detectorRuleId: string;
         /**
-         * ResponderRule Display Name
+         * ResponderRule display name.
          */
         displayName: string;
         /**
@@ -13360,6 +15284,9 @@ export namespace CloudGuard {
          * Compartment Identifier
          */
         compartmentId: string;
+        /**
+         * Base condition object
+         */
         condition: string;
     }
 
@@ -13407,11 +15334,11 @@ export namespace CloudGuard {
          */
         compartmentId: string;
         /**
-         * ResponderRule Description
+         * ResponderRule description.
          */
         description: string;
         /**
-         * ResponderRule Display Name
+         * ResponderRule display name.
          */
         displayName: string;
         /**
@@ -13419,7 +15346,7 @@ export namespace CloudGuard {
          */
         effectiveResponderRules: outputs.CloudGuard.GetGuardTargetTargetResponderRecipeEffectiveResponderRule[];
         /**
-         * Unique identifier of TargetResponderRecipe that is immutable on creation
+         * Unique identifier of TargetResponderRecipe that can't be changed after creation.
          */
         id: string;
         /**
@@ -13427,7 +15354,7 @@ export namespace CloudGuard {
          */
         owner: string;
         /**
-         * Unique identifier for Responder Recipe of which this is an extension
+         * Unique identifier for Responder Recipe of which this is an extension.
          */
         responderRecipeId: string;
         /**
@@ -13450,7 +15377,7 @@ export namespace CloudGuard {
          */
         compartmentId: string;
         /**
-         * ResponderRule Description
+         * ResponderRule description.
          */
         description: string;
         /**
@@ -13458,7 +15385,7 @@ export namespace CloudGuard {
          */
         details: outputs.CloudGuard.GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetail[];
         /**
-         * ResponderRule Display Name
+         * ResponderRule display name.
          */
         displayName: string;
         /**
@@ -13470,7 +15397,7 @@ export namespace CloudGuard {
          */
         policies: string[];
         /**
-         * Identifier for ResponderRule.
+         * Unique ResponderRule identifier.
          */
         responderRuleId: string;
         /**
@@ -13496,6 +15423,9 @@ export namespace CloudGuard {
     }
 
     export interface GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetail {
+        /**
+         * Base condition object
+         */
         condition: string;
         /**
          * ResponderRule configurations
@@ -13532,7 +15462,7 @@ export namespace CloudGuard {
          */
         compartmentId: string;
         /**
-         * ResponderRule Description
+         * ResponderRule description.
          */
         description: string;
         /**
@@ -13540,7 +15470,7 @@ export namespace CloudGuard {
          */
         details: outputs.CloudGuard.GetGuardTargetTargetResponderRecipeResponderRuleDetail[];
         /**
-         * ResponderRule Display Name
+         * ResponderRule display name.
          */
         displayName: string;
         /**
@@ -13552,7 +15482,7 @@ export namespace CloudGuard {
          */
         policies: string[];
         /**
-         * Identifier for ResponderRule.
+         * Unique ResponderRule identifier.
          */
         responderRuleId: string;
         /**
@@ -13578,6 +15508,9 @@ export namespace CloudGuard {
     }
 
     export interface GetGuardTargetTargetResponderRecipeResponderRuleDetail {
+        /**
+         * Base condition object
+         */
         condition: string;
         /**
          * ResponderRule configurations
@@ -13634,7 +15567,7 @@ export namespace CloudGuard {
          */
         definedTags: {[key: string]: any};
         /**
-         * ResponderRule Description
+         * ResponderRule description.
          */
         description: string;
         /**
@@ -13646,7 +15579,7 @@ export namespace CloudGuard {
          */
         freeformTags: {[key: string]: any};
         /**
-         * Unique identifier of TargetResponderRecipe that is immutable on creation
+         * Unique identifier of TargetResponderRecipe that can't be changed after creation.
          */
         id: string;
         /**
@@ -13669,6 +15602,10 @@ export namespace CloudGuard {
          * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
          */
         systemTags: {[key: string]: any};
+        /**
+         * Details specific to the target type.
+         */
+        targetDetails: outputs.CloudGuard.GetGuardTargetsTargetCollectionItemTargetDetail[];
         /**
          * List of detector recipes associated with target
          */
@@ -13695,13 +15632,87 @@ export namespace CloudGuard {
         timeUpdated: string;
     }
 
+    export interface GetGuardTargetsTargetCollectionItemTargetDetail {
+        /**
+         * The name of the security zone to associate this compartment with.
+         */
+        securityZoneDisplayName: string;
+        /**
+         * The OCID of the security zone to associate this compartment with.
+         */
+        securityZoneId: string;
+        /**
+         * possible type of targets
+         */
+        targetResourceType: string;
+        /**
+         * The list of security zone recipes to associate this compartment with.
+         */
+        targetSecurityZoneRecipes: outputs.CloudGuard.GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipe[];
+    }
+
+    export interface GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipe {
+        /**
+         * The ID of the compartment in which to list resources.
+         */
+        compartmentId: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+         */
+        definedTags: {[key: string]: any};
+        /**
+         * ResponderRule description.
+         */
+        description: string;
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
+        displayName: string;
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+         */
+        freeformTags: {[key: string]: any};
+        /**
+         * Unique identifier of TargetResponderRecipe that can't be changed after creation.
+         */
+        id: string;
+        /**
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         */
+        lifecycleDetails: string;
+        /**
+         * Owner of ResponderRecipe
+         */
+        owner: string;
+        /**
+         * The list of `SecurityPolicy` ids that are included in the recipe
+         */
+        securityPolicies: string[];
+        /**
+         * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+         */
+        state: string;
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: any};
+        /**
+         * The date and time the target was created. Format defined by RFC3339.
+         */
+        timeCreated: string;
+        /**
+         * The date and time the target was updated. Format defined by RFC3339.
+         */
+        timeUpdated: string;
+    }
+
     export interface GetGuardTargetsTargetCollectionItemTargetDetectorRecipe {
         /**
          * The ID of the compartment in which to list resources.
          */
         compartmentId: string;
         /**
-         * ResponderRule Description
+         * ResponderRule description.
          */
         description: string;
         /**
@@ -13725,7 +15736,7 @@ export namespace CloudGuard {
          */
         effectiveDetectorRules: outputs.CloudGuard.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRule[];
         /**
-         * Unique identifier of TargetResponderRecipe that is immutable on creation
+         * Unique identifier of TargetResponderRecipe that can't be changed after creation.
          */
         id: string;
         /**
@@ -13748,7 +15759,7 @@ export namespace CloudGuard {
 
     export interface GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRule {
         /**
-         * ResponderRule Description
+         * ResponderRule description.
          */
         description: string;
         /**
@@ -13760,7 +15771,7 @@ export namespace CloudGuard {
          */
         detector: string;
         /**
-         * The unique identifier of the detector rule
+         * The unique identifier of the detector rule.
          */
         detectorRuleId: string;
         /**
@@ -13833,6 +15844,9 @@ export namespace CloudGuard {
          * The ID of the compartment in which to list resources.
          */
         compartmentId: string;
+        /**
+         * Base condition object
+         */
         condition: string;
     }
 
@@ -13876,7 +15890,7 @@ export namespace CloudGuard {
 
     export interface GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRule {
         /**
-         * ResponderRule Description
+         * ResponderRule description.
          */
         description: string;
         /**
@@ -13888,7 +15902,7 @@ export namespace CloudGuard {
          */
         detector: string;
         /**
-         * The unique identifier of the detector rule
+         * The unique identifier of the detector rule.
          */
         detectorRuleId: string;
         /**
@@ -13961,6 +15975,9 @@ export namespace CloudGuard {
          * The ID of the compartment in which to list resources.
          */
         compartmentId: string;
+        /**
+         * Base condition object
+         */
         condition: string;
     }
 
@@ -14008,7 +16025,7 @@ export namespace CloudGuard {
          */
         compartmentId: string;
         /**
-         * ResponderRule Description
+         * ResponderRule description.
          */
         description: string;
         /**
@@ -14020,7 +16037,7 @@ export namespace CloudGuard {
          */
         effectiveResponderRules: outputs.CloudGuard.GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRule[];
         /**
-         * Unique identifier of TargetResponderRecipe that is immutable on creation
+         * Unique identifier of TargetResponderRecipe that can't be changed after creation.
          */
         id: string;
         /**
@@ -14028,7 +16045,7 @@ export namespace CloudGuard {
          */
         owner: string;
         /**
-         * Unique identifier for Responder Recipe of which this is an extension
+         * Unique identifier for Responder Recipe of which this is an extension.
          */
         responderRecipeId: string;
         /**
@@ -14051,7 +16068,7 @@ export namespace CloudGuard {
          */
         compartmentId: string;
         /**
-         * ResponderRule Description
+         * ResponderRule description.
          */
         description: string;
         /**
@@ -14071,7 +16088,7 @@ export namespace CloudGuard {
          */
         policies: string[];
         /**
-         * Identifier for ResponderRule.
+         * Unique ResponderRule identifier.
          */
         responderRuleId: string;
         /**
@@ -14097,6 +16114,9 @@ export namespace CloudGuard {
     }
 
     export interface GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetail {
+        /**
+         * Base condition object
+         */
         condition: string;
         /**
          * ResponderRule configurations
@@ -14133,7 +16153,7 @@ export namespace CloudGuard {
          */
         compartmentId: string;
         /**
-         * ResponderRule Description
+         * ResponderRule description.
          */
         description: string;
         /**
@@ -14153,7 +16173,7 @@ export namespace CloudGuard {
          */
         policies: string[];
         /**
-         * Identifier for ResponderRule.
+         * Unique ResponderRule identifier.
          */
         responderRuleId: string;
         /**
@@ -14179,6 +16199,9 @@ export namespace CloudGuard {
     }
 
     export interface GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetail {
+        /**
+         * Base condition object
+         */
         condition: string;
         /**
          * ResponderRule configurations
@@ -14229,7 +16252,7 @@ export namespace CloudGuard {
          */
         definedTags: {[key: string]: any};
         /**
-         * ManagedList description
+         * ManagedList description.
          */
         description: string;
         /**
@@ -14292,7 +16315,7 @@ export namespace CloudGuard {
          */
         compartmentId: string;
         /**
-         * ResponderRule Description
+         * ResponderRule description.
          */
         description: string;
         /**
@@ -14300,7 +16323,7 @@ export namespace CloudGuard {
          */
         details: outputs.CloudGuard.GetResponderRecipeEffectiveResponderRuleDetail[];
         /**
-         * ResponderRule Display Name
+         * ResponderRule display name.
          */
         displayName: string;
         /**
@@ -14338,6 +16361,9 @@ export namespace CloudGuard {
     }
 
     export interface GetResponderRecipeEffectiveResponderRuleDetail {
+        /**
+         * Base condition object
+         */
         condition: string;
         /**
          * ResponderRule configurations
@@ -14374,7 +16400,7 @@ export namespace CloudGuard {
          */
         compartmentId: string;
         /**
-         * ResponderRule Description
+         * ResponderRule description.
          */
         description: string;
         /**
@@ -14382,7 +16408,7 @@ export namespace CloudGuard {
          */
         details: outputs.CloudGuard.GetResponderRecipeResponderRuleDetail[];
         /**
-         * ResponderRule Display Name
+         * ResponderRule display name.
          */
         displayName: string;
         /**
@@ -14420,6 +16446,9 @@ export namespace CloudGuard {
     }
 
     export interface GetResponderRecipeResponderRuleDetail {
+        /**
+         * Base condition object
+         */
         condition: string;
         /**
          * ResponderRule configurations
@@ -14473,7 +16502,7 @@ export namespace CloudGuard {
          */
         definedTags: {[key: string]: any};
         /**
-         * ResponderRule Description
+         * ResponderRule description.
          */
         description: string;
         /**
@@ -14532,7 +16561,7 @@ export namespace CloudGuard {
          */
         compartmentId: string;
         /**
-         * ResponderRule Description
+         * ResponderRule description.
          */
         description: string;
         /**
@@ -14578,6 +16607,9 @@ export namespace CloudGuard {
     }
 
     export interface GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetail {
+        /**
+         * Base condition object
+         */
         condition: string;
         /**
          * ResponderRule configurations
@@ -14614,7 +16646,7 @@ export namespace CloudGuard {
          */
         compartmentId: string;
         /**
-         * ResponderRule Description
+         * ResponderRule description.
          */
         description: string;
         /**
@@ -14660,6 +16692,9 @@ export namespace CloudGuard {
     }
 
     export interface GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetail {
+        /**
+         * Base condition object
+         */
         condition: string;
         /**
          * ResponderRule configurations
@@ -14690,13 +16725,220 @@ export namespace CloudGuard {
         value: string;
     }
 
+    export interface GetSecurityPoliciesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSecurityPoliciesSecurityPolicyCollection {
+        items: outputs.CloudGuard.GetSecurityPoliciesSecurityPolicyCollectionItem[];
+    }
+
+    export interface GetSecurityPoliciesSecurityPolicyCollectionItem {
+        /**
+         * The category of security policy
+         */
+        category: string;
+        /**
+         * The ID of the compartment in which to list resources.
+         */
+        compartmentId: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+         */
+        definedTags: {[key: string]: any};
+        /**
+         * The security policy's description
+         */
+        description: string;
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
+        displayName: string;
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+         */
+        freeformTags: {[key: string]: any};
+        /**
+         * A shorter version of the security policy's name
+         */
+        friendlyName: string;
+        /**
+         * The unique identifier of the security zone policy (`SecurityPolicy`)
+         */
+        id: string;
+        /**
+         * A message describing the current state in more detail. For example, this can be used to provide actionable information for a resource in a `Failed` state.
+         */
+        lifecycleDetails: string;
+        /**
+         * The owner of the security policy
+         */
+        owner: string;
+        /**
+         * The list of services that the security policy protects
+         */
+        services: string[];
+        /**
+         * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+         */
+        state: string;
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: any};
+        /**
+         * The time the security policy was created. An RFC3339 formatted datetime string.
+         */
+        timeCreated: string;
+        /**
+         * The time the security policy was last updated. An RFC3339 formatted datetime string.
+         */
+        timeUpdated: string;
+    }
+
+    export interface GetSecurityRecipesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSecurityRecipesSecurityRecipeCollection {
+        items: outputs.CloudGuard.GetSecurityRecipesSecurityRecipeCollectionItem[];
+    }
+
+    export interface GetSecurityRecipesSecurityRecipeCollectionItem {
+        /**
+         * The ID of the compartment in which to list resources.
+         */
+        compartmentId: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+         */
+        definedTags: {[key: string]: any};
+        /**
+         * The recipe's description
+         */
+        description: string;
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
+        displayName: string;
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+         */
+        freeformTags: {[key: string]: any};
+        /**
+         * The unique identifier of the security zone recipe (`SecurityRecipe`)
+         */
+        id: string;
+        /**
+         * A message describing the current state in more detail. For example, this can be used to provide actionable information for a recipe in the `Failed` state.
+         */
+        lifecycleDetails: string;
+        /**
+         * The owner of the recipe
+         */
+        owner: string;
+        /**
+         * The list of `SecurityPolicy` ids that are included in the recipe
+         */
+        securityPolicies: string[];
+        /**
+         * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+         */
+        state: string;
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: any};
+        /**
+         * The time the recipe was created. An RFC3339 formatted datetime string.
+         */
+        timeCreated: string;
+        /**
+         * The time the recipe was last updated. An RFC3339 formatted datetime string.
+         */
+        timeUpdated: string;
+    }
+
+    export interface GetSecurityZonesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSecurityZonesSecurityZoneCollection {
+        items: outputs.CloudGuard.GetSecurityZonesSecurityZoneCollectionItem[];
+    }
+
+    export interface GetSecurityZonesSecurityZoneCollectionItem {
+        /**
+         * The ID of the compartment in which to list resources.
+         */
+        compartmentId: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+         */
+        definedTags: {[key: string]: any};
+        /**
+         * The security zone's description
+         */
+        description: string;
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
+        displayName: string;
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+         */
+        freeformTags: {[key: string]: any};
+        /**
+         * The unique identifier of the security zone (`SecurityZone`)
+         */
+        id: string;
+        /**
+         * List of inherited compartments
+         */
+        inheritedByCompartments: string[];
+        /**
+         * A message describing the current state in more detail. For example, this can be used to provide actionable information for a zone in the `Failed` state.
+         */
+        lifecycleDetails: string;
+        /**
+         * The OCID of the recipe (`SecurityRecipe`) for the security zone
+         */
+        securityZoneRecipeId: string;
+        /**
+         * The OCID of the target associated with the security zone
+         */
+        securityZoneTargetId: string;
+        /**
+         * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+         */
+        state: string;
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: any};
+        /**
+         * The time the security zone was created. An RFC3339 formatted datetime string.
+         */
+        timeCreated: string;
+        /**
+         * The time the security zone was last updated. An RFC3339 formatted datetime string.
+         */
+        timeUpdated: string;
+    }
+
     export interface ResponderRecipeEffectiveResponderRule {
         /**
          * (Updatable) Compartment Identifier
          */
         compartmentId: string;
         /**
-         * (Updatable) ResponderRecipe Description
+         * (Updatable) Responder recipe description.
          */
         description: string;
         /**
@@ -14704,7 +16946,7 @@ export namespace CloudGuard {
          */
         details: outputs.CloudGuard.ResponderRecipeEffectiveResponderRuleDetail[];
         /**
-         * (Updatable) ResponderRecipe Display Name
+         * (Updatable) Responder recipe display name.
          */
         displayName: string;
         /**
@@ -14742,6 +16984,9 @@ export namespace CloudGuard {
     }
 
     export interface ResponderRecipeEffectiveResponderRuleDetail {
+        /**
+         * Base condition object
+         */
         condition: string;
         /**
          * ResponderRule configurations
@@ -14778,7 +17023,7 @@ export namespace CloudGuard {
          */
         compartmentId: string;
         /**
-         * (Updatable) ResponderRecipe Description
+         * (Updatable) Responder recipe description.
          */
         description: string;
         /**
@@ -14786,7 +17031,7 @@ export namespace CloudGuard {
          */
         details: outputs.CloudGuard.ResponderRecipeResponderRuleDetails;
         /**
-         * (Updatable) ResponderRecipe Display Name
+         * (Updatable) Responder recipe display name.
          */
         displayName: string;
         /**
@@ -14824,6 +17069,9 @@ export namespace CloudGuard {
     }
 
     export interface ResponderRecipeResponderRuleDetails {
+        /**
+         * Base condition object
+         */
         condition: string;
         /**
          * ResponderRule configurations
@@ -14854,6 +17102,80 @@ export namespace CloudGuard {
         value: string;
     }
 
+    export interface TargetTargetDetail {
+        /**
+         * The name of the security zone to associate this compartment with.
+         */
+        securityZoneDisplayName: string;
+        /**
+         * The OCID of the security zone to associate this compartment with.
+         */
+        securityZoneId: string;
+        /**
+         * possible type of targets(compartment/HCMCloud/ERPCloud)
+         */
+        targetResourceType: string;
+        /**
+         * The list of security zone recipes to associate this compartment with.
+         */
+        targetSecurityZoneRecipes: outputs.CloudGuard.TargetTargetDetailTargetSecurityZoneRecipe[];
+    }
+
+    export interface TargetTargetDetailTargetSecurityZoneRecipe {
+        /**
+         * (Updatable) compartment associated with condition
+         */
+        compartmentId: string;
+        /**
+         * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+         */
+        definedTags: {[key: string]: any};
+        /**
+         * The target description.
+         */
+        description: string;
+        /**
+         * (Updatable) DetectorTemplate identifier.
+         */
+        displayName: string;
+        /**
+         * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+         */
+        freeformTags: {[key: string]: any};
+        /**
+         * Unique identifier of TargetResponderRecipe that can't be changed after creation.
+         */
+        id: string;
+        /**
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         */
+        lifecycleDetails: string;
+        /**
+         * Owner of ResponderRecipe
+         */
+        owner: string;
+        /**
+         * The list of `SecurityPolicy` ids that are included in the recipe
+         */
+        securityPolicies: string[];
+        /**
+         * (Updatable) The current state of the DetectorRule.
+         */
+        state: string;
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: any};
+        /**
+         * The date and time the target was created. Format defined by RFC3339.
+         */
+        timeCreated: string;
+        /**
+         * The date and time the target was updated. Format defined by RFC3339.
+         */
+        timeUpdated: string;
+    }
+
     export interface TargetTargetDetectorRecipe {
         /**
          * (Updatable) compartment associated with condition
@@ -14876,7 +17198,7 @@ export namespace CloudGuard {
          */
         detectorRules: outputs.CloudGuard.TargetTargetDetectorRecipeDetectorRule[];
         /**
-         * (Updatable) DetectorTemplate Identifier
+         * (Updatable) DetectorTemplate identifier.
          */
         displayName: string;
         /**
@@ -14884,7 +17206,7 @@ export namespace CloudGuard {
          */
         effectiveDetectorRules: outputs.CloudGuard.TargetTargetDetectorRecipeEffectiveDetectorRule[];
         /**
-         * Unique identifier of TargetResponderRecipe that is immutable on creation
+         * Unique identifier of TargetResponderRecipe that can't be changed after creation.
          */
         id: string;
         /**
@@ -14923,7 +17245,7 @@ export namespace CloudGuard {
          */
         detectorRuleId: string;
         /**
-         * (Updatable) DetectorTemplate Identifier
+         * (Updatable) DetectorTemplate identifier.
          */
         displayName: string;
         /**
@@ -14993,7 +17315,7 @@ export namespace CloudGuard {
          */
         compartmentId: string;
         /**
-         * (Updatable)
+         * (Updatable) Base condition object
          */
         condition: string;
     }
@@ -15054,7 +17376,7 @@ export namespace CloudGuard {
          */
         detectorRuleId: string;
         /**
-         * (Updatable) DetectorTemplate Identifier
+         * (Updatable) DetectorTemplate identifier.
          */
         displayName: string;
         /**
@@ -15124,7 +17446,7 @@ export namespace CloudGuard {
          */
         compartmentId: string;
         /**
-         * (Updatable)
+         * (Updatable) Base condition object
          */
         condition: string;
     }
@@ -15177,7 +17499,7 @@ export namespace CloudGuard {
          */
         description: string;
         /**
-         * (Updatable) DetectorTemplate Identifier
+         * (Updatable) DetectorTemplate identifier.
          */
         displayName: string;
         /**
@@ -15185,7 +17507,7 @@ export namespace CloudGuard {
          */
         effectiveResponderRules: outputs.CloudGuard.TargetTargetResponderRecipeEffectiveResponderRule[];
         /**
-         * Unique identifier of TargetResponderRecipe that is immutable on creation
+         * Unique identifier of TargetResponderRecipe that can't be changed after creation.
          */
         id: string;
         /**
@@ -15224,7 +17546,7 @@ export namespace CloudGuard {
          */
         details: outputs.CloudGuard.TargetTargetResponderRecipeEffectiveResponderRuleDetail[];
         /**
-         * (Updatable) DetectorTemplate Identifier
+         * (Updatable) DetectorTemplate identifier.
          */
         displayName: string;
         /**
@@ -15263,7 +17585,7 @@ export namespace CloudGuard {
 
     export interface TargetTargetResponderRecipeEffectiveResponderRuleDetail {
         /**
-         * (Updatable)
+         * (Updatable) Base condition object
          */
         condition: string;
         /**
@@ -15309,7 +17631,7 @@ export namespace CloudGuard {
          */
         details: outputs.CloudGuard.TargetTargetResponderRecipeResponderRuleDetails;
         /**
-         * (Updatable) DetectorTemplate Identifier
+         * (Updatable) DetectorTemplate identifier.
          */
         displayName: string;
         /**
@@ -15348,7 +17670,7 @@ export namespace CloudGuard {
 
     export interface TargetTargetResponderRecipeResponderRuleDetails {
         /**
-         * (Updatable)
+         * (Updatable) Base condition object
          */
         condition: string;
         /**
@@ -15441,6 +17763,13 @@ export namespace ComputeInstanceAgent {
 }
 
 export namespace ContainerEngine {
+    export interface ClusterClusterPodNetworkOption {
+        /**
+         * The CNI used by the node pools of this cluster
+         */
+        cniType: string;
+    }
+
     export interface ClusterEndpoint {
         /**
          * The non-native networking Kubernetes API server endpoint.
@@ -15610,11 +17939,22 @@ export namespace ContainerEngine {
         freeformTags: {[key: string]: any};
     }
 
+    export interface GetClusterOptionClusterPodNetworkOption {
+        /**
+         * The CNI used by the node pools of this cluster
+         */
+        cniType: string;
+    }
+
     export interface GetClustersCluster {
         /**
          * Available Kubernetes versions to which the clusters masters may be upgraded.
          */
         availableKubernetesUpgrades: string[];
+        /**
+         * Available CNIs and network options for existing and new node pools of the cluster
+         */
+        clusterPodNetworkOptions: outputs.ContainerEngine.GetClustersClusterClusterPodNetworkOption[];
         /**
          * The OCID of the compartment.
          */
@@ -15675,6 +18015,13 @@ export namespace ContainerEngine {
          * The OCID of the virtual cloud network (VCN) in which the cluster exists.
          */
         vcnId: string;
+    }
+
+    export interface GetClustersClusterClusterPodNetworkOption {
+        /**
+         * The CNI used by the node pools of this cluster
+         */
+        cniType: string;
     }
 
     export interface GetClustersClusterEndpoint {
@@ -15916,7 +18263,7 @@ export namespace ContainerEngine {
          */
         publicIp: string;
         /**
-         * The state of the node.
+         * The state of the nodepool.
          */
         state: string;
         /**
@@ -15943,6 +18290,10 @@ export namespace ContainerEngine {
          */
         kmsKeyId: string;
         /**
+         * The CNI related configuration of pods in the node pool.
+         */
+        nodePoolPodNetworkOptionDetails: outputs.ContainerEngine.GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail[];
+        /**
          * The OCIDs of the Network Security Group(s) to associate nodes for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
          */
         nsgIds: string[];
@@ -15956,6 +18307,25 @@ export namespace ContainerEngine {
         size: number;
     }
 
+    export interface GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail {
+        /**
+         * The CNI plugin used by this node pool
+         */
+        cniType: string;
+        /**
+         * The max number of pods per node in the node pool. This value will be limited by the number of VNICs attachable to the node pool shape
+         */
+        maxPodsPerNode: number;
+        /**
+         * The OCIDs of the Network Security Group(s) to associate pods for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+         */
+        podNsgIds: string[];
+        /**
+         * The OCIDs of the subnets in which to place pods for this node pool. This can be one of the node pool subnet IDs
+         */
+        podSubnetIds: string[];
+    }
+
     export interface GetNodePoolNodeConfigDetailPlacementConfig {
         /**
          * The name of the availability domain in which this node is placed.
@@ -15965,6 +18335,10 @@ export namespace ContainerEngine {
          * The OCID of the compute capacity reservation in which to place the compute instance.
          */
         capacityReservationId: string;
+        /**
+         * A list of fault domains in which to place nodes.
+         */
+        faultDomains: string[];
         /**
          * The OCID of the subnet in which this node is placed.
          */
@@ -15984,6 +18358,17 @@ export namespace ContainerEngine {
          * The status of the HTTP response encountered in the upstream error.
          */
         status: string;
+    }
+
+    export interface GetNodePoolNodeEvictionNodePoolSetting {
+        /**
+         * Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
+         */
+        evictionGraceDuration: string;
+        /**
+         * If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
+         */
+        isForceDeleteAfterGraceDuration: boolean;
     }
 
     export interface GetNodePoolNodeShapeConfig {
@@ -16081,6 +18466,10 @@ export namespace ContainerEngine {
          */
         kubernetesVersion: string;
         /**
+         * Details about the state of the node.
+         */
+        lifecycleDetails: string;
+        /**
          * The name to filter on.
          */
         name: string;
@@ -16088,6 +18477,10 @@ export namespace ContainerEngine {
          * The configuration of nodes in the node pool.
          */
         nodeConfigDetails: outputs.ContainerEngine.GetNodePoolsNodePoolNodeConfigDetail[];
+        /**
+         * Node Eviction Details configuration
+         */
+        nodeEvictionNodePoolSettings: outputs.ContainerEngine.GetNodePoolsNodePoolNodeEvictionNodePoolSetting[];
         /**
          * Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
          *
@@ -16136,6 +18529,10 @@ export namespace ContainerEngine {
          * The SSH public key on each node in the node pool on launch.
          */
         sshPublicKey: string;
+        /**
+         * A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
+         */
+        state: string;
         /**
          * The OCIDs of the subnets in which to place nodes for this node pool.
          */
@@ -16203,7 +18600,7 @@ export namespace ContainerEngine {
          */
         publicIp: string;
         /**
-         * The state of the node.
+         * A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
          */
         state: string;
         /**
@@ -16230,6 +18627,10 @@ export namespace ContainerEngine {
          */
         kmsKeyId: string;
         /**
+         * The CNI related configuration of pods in the node pool.
+         */
+        nodePoolPodNetworkOptionDetails: outputs.ContainerEngine.GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail[];
+        /**
          * The OCIDs of the Network Security Group(s) to associate nodes for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
          */
         nsgIds: string[];
@@ -16243,6 +18644,25 @@ export namespace ContainerEngine {
         size: number;
     }
 
+    export interface GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail {
+        /**
+         * The CNI plugin used by this node pool
+         */
+        cniType: string;
+        /**
+         * The max number of pods per node in the node pool. This value will be limited by the number of VNICs attachable to the node pool shape
+         */
+        maxPodsPerNode: number;
+        /**
+         * The OCIDs of the Network Security Group(s) to associate pods for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+         */
+        podNsgIds: string[];
+        /**
+         * The OCIDs of the subnets in which to place pods for this node pool. This can be one of the node pool subnet IDs
+         */
+        podSubnetIds: string[];
+    }
+
     export interface GetNodePoolsNodePoolNodeConfigDetailPlacementConfig {
         /**
          * The name of the availability domain in which this node is placed.
@@ -16252,6 +18672,10 @@ export namespace ContainerEngine {
          * The OCID of the compute capacity reservation in which to place the compute instance.
          */
         capacityReservationId: string;
+        /**
+         * A list of fault domains in which to place nodes.
+         */
+        faultDomains: string[];
         /**
          * The OCID of the subnet in which this node is placed.
          */
@@ -16271,6 +18695,17 @@ export namespace ContainerEngine {
          * The status of the HTTP response encountered in the upstream error.
          */
         status: string;
+    }
+
+    export interface GetNodePoolsNodePoolNodeEvictionNodePoolSetting {
+        /**
+         * Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
+         */
+        evictionGraceDuration: string;
+        /**
+         * If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
+         */
+        isForceDeleteAfterGraceDuration: boolean;
     }
 
     export interface GetNodePoolsNodePoolNodeShapeConfig {
@@ -16473,7 +18908,7 @@ export namespace ContainerEngine {
          */
         publicIp: string;
         /**
-         * The state of the node.
+         * The state of the nodepool.
          */
         state: string;
         /**
@@ -16500,6 +18935,10 @@ export namespace ContainerEngine {
          */
         kmsKeyId: string;
         /**
+         * (Updatable) The CNI related configuration of pods in the node pool.
+         */
+        nodePoolPodNetworkOptionDetails: outputs.ContainerEngine.NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails;
+        /**
          * (Updatable) The OCIDs of the Network Security Group(s) to associate nodes for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
          */
         nsgIds: string[];
@@ -16513,6 +18952,25 @@ export namespace ContainerEngine {
         size: number;
     }
 
+    export interface NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails {
+        /**
+         * (Updatable) The CNI plugin used by this node pool
+         */
+        cniType: string;
+        /**
+         * (Updatable) The max number of pods per node in the node pool. This value will be limited by the number of VNICs attachable to the node pool shape
+         */
+        maxPodsPerNode: number;
+        /**
+         * (Updatable) The OCIDs of the Network Security Group(s) to associate pods for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+         */
+        podNsgIds: string[];
+        /**
+         * (Updatable) The OCIDs of the subnets in which to place pods for this node pool. This can be one of the node pool subnet IDs
+         */
+        podSubnetIds: string[];
+    }
+
     export interface NodePoolNodeConfigDetailsPlacementConfig {
         /**
          * (Updatable) The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
@@ -16522,6 +18980,10 @@ export namespace ContainerEngine {
          * (Updatable) The OCID of the compute capacity reservation in which to place the compute instance.
          */
         capacityReservationId: string;
+        /**
+         * (Updatable) A list of fault domains in which to place nodes.
+         */
+        faultDomains: string[];
         /**
          * (Updatable) The OCID of the subnet in which to place nodes.
          */
@@ -16541,6 +19003,17 @@ export namespace ContainerEngine {
          * The status of the HTTP response encountered in the upstream error.
          */
         status: string;
+    }
+
+    export interface NodePoolNodeEvictionNodePoolSettings {
+        /**
+         * (Updatable) Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
+         */
+        evictionGraceDuration: string;
+        /**
+         * (Updatable) If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
+         */
+        isForceDeleteAfterGraceDuration: boolean;
     }
 
     export interface NodePoolNodeShapeConfig {
@@ -16622,6 +19095,123 @@ export namespace Core {
          * The type can be one of these values: `bootVolume`, `bootVolumeBackup`, `bootVolumeReplica`
          */
         type: string;
+    }
+
+    export interface CaptureFilterVtapCaptureFilterRule {
+        /**
+         * (Updatable) Traffic sent to this CIDR block through the VTAP source will be mirrored to the VTAP target.
+         */
+        destinationCidr: string;
+        /**
+         * (Updatable) Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
+         * * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
+         * * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
+         */
+        icmpOptions: outputs.Core.CaptureFilterVtapCaptureFilterRuleIcmpOptions;
+        /**
+         * (Updatable) The transport protocol used in the filter. If do not choose a protocol, all protocols will be used in the filter. Supported options are:
+         * * 1 = ICMP
+         * * 6 = TCP
+         * * 17 = UDP
+         */
+        protocol: string;
+        /**
+         * (Updatable) Include or exclude packets meeting this definition from mirrored traffic.
+         */
+        ruleAction: string;
+        /**
+         * (Updatable) Traffic from this CIDR block to the VTAP source will be mirrored to the VTAP target.
+         */
+        sourceCidr: string;
+        /**
+         * (Updatable) Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
+         */
+        tcpOptions: outputs.Core.CaptureFilterVtapCaptureFilterRuleTcpOptions;
+        /**
+         * (Updatable) The traffic direction the VTAP is configured to mirror.
+         */
+        trafficDirection: string;
+        /**
+         * (Updatable) Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
+         */
+        udpOptions: outputs.Core.CaptureFilterVtapCaptureFilterRuleUdpOptions;
+    }
+
+    export interface CaptureFilterVtapCaptureFilterRuleIcmpOptions {
+        /**
+         * (Updatable) The ICMP code (optional).
+         */
+        code: number;
+        /**
+         * (Updatable) The ICMP type.
+         */
+        type: number;
+    }
+
+    export interface CaptureFilterVtapCaptureFilterRuleTcpOptions {
+        /**
+         * (Updatable)
+         */
+        destinationPortRange: outputs.Core.CaptureFilterVtapCaptureFilterRuleTcpOptionsDestinationPortRange;
+        /**
+         * (Updatable)
+         */
+        sourcePortRange: outputs.Core.CaptureFilterVtapCaptureFilterRuleTcpOptionsSourcePortRange;
+    }
+
+    export interface CaptureFilterVtapCaptureFilterRuleTcpOptionsDestinationPortRange {
+        /**
+         * (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+         */
+        max: number;
+        /**
+         * (Updatable) The minimum port number, which must not be greater than the maximum port number.
+         */
+        min: number;
+    }
+
+    export interface CaptureFilterVtapCaptureFilterRuleTcpOptionsSourcePortRange {
+        /**
+         * (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+         */
+        max: number;
+        /**
+         * (Updatable) The minimum port number, which must not be greater than the maximum port number.
+         */
+        min: number;
+    }
+
+    export interface CaptureFilterVtapCaptureFilterRuleUdpOptions {
+        /**
+         * (Updatable)
+         */
+        destinationPortRange: outputs.Core.CaptureFilterVtapCaptureFilterRuleUdpOptionsDestinationPortRange;
+        /**
+         * (Updatable)
+         */
+        sourcePortRange: outputs.Core.CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRange;
+    }
+
+    export interface CaptureFilterVtapCaptureFilterRuleUdpOptionsDestinationPortRange {
+        /**
+         * (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+         */
+        max: number;
+        /**
+         * (Updatable) The minimum port number, which must not be greater than the maximum port number.
+         */
+        min: number;
+    }
+
+    export interface CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRange {
+        /**
+         * (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+         */
+        max: number;
+        /**
+         * (Updatable) The minimum port number, which must not be greater than the maximum port number.
+         */
+        min: number;
     }
 
     export interface ClusterNetworkInstancePool {
@@ -16876,6 +19466,7 @@ export namespace Core {
         destination: string;
         destinationType: string;
         networkEntityId: string;
+        routeType: string;
     }
 
     export interface DefaultSecurityListEgressSecurityRule {
@@ -17014,7 +19605,7 @@ export namespace Core {
          */
         type: string;
         /**
-         * (Updatable) Indicates whether the VCN CIDR(s) or the individual Subnet CIDR(s) are imported from the attachment.  Routes from the VCN Ingress Route Table are always imported. It can be one of these values: `VCN_CIDRS` , `SUBNET_CIDRS`
+         * (Updatable) Indicates whether the VCN CIDRs or the individual subnet CIDRs are imported from the attachment. Routes from the VCN ingress route table are always imported.
          */
         vcnRouteType: string;
     }
@@ -17479,7 +20070,7 @@ export namespace Core {
 
     export interface GetBootVolumesBootVolume {
         /**
-         * The number of Volume Performance Units per GB that this volume is effectively tuned to when it's idle.
+         * The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it's idle.
          */
         autoTunedVpusPerGb: string;
         /**
@@ -17557,7 +20148,7 @@ export namespace Core {
          */
         volumeGroupId: string;
         /**
-         * The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+         * The number of volume performance units (VPUs) that will be applied to this boot volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
          */
         vpusPerGb: string;
     }
@@ -17724,6 +20315,261 @@ export namespace Core {
     }
 
     export interface GetByoipRangesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetCaptureFilterVtapCaptureFilterRule {
+        /**
+         * Traffic sent to this CIDR block through the VTAP source will be mirrored to the VTAP target.
+         */
+        destinationCidr: string;
+        /**
+         * Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
+         * * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
+         * * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
+         */
+        icmpOptions: outputs.Core.GetCaptureFilterVtapCaptureFilterRuleIcmpOption[];
+        /**
+         * The transport protocol used in the filter. If do not choose a protocol, all protocols will be used in the filter. Supported options are:
+         * * 1 = ICMP
+         * * 6 = TCP
+         * * 17 = UDP
+         */
+        protocol: string;
+        /**
+         * Include or exclude packets meeting this definition from mirrored traffic.
+         */
+        ruleAction: string;
+        /**
+         * Traffic from this CIDR block to the VTAP source will be mirrored to the VTAP target.
+         */
+        sourceCidr: string;
+        /**
+         * Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
+         */
+        tcpOptions: outputs.Core.GetCaptureFilterVtapCaptureFilterRuleTcpOption[];
+        /**
+         * The traffic direction the VTAP is configured to mirror.
+         */
+        trafficDirection: string;
+        /**
+         * Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
+         */
+        udpOptions: outputs.Core.GetCaptureFilterVtapCaptureFilterRuleUdpOption[];
+    }
+
+    export interface GetCaptureFilterVtapCaptureFilterRuleIcmpOption {
+        /**
+         * The ICMP code (optional).
+         */
+        code: number;
+        /**
+         * The ICMP type.
+         */
+        type: number;
+    }
+
+    export interface GetCaptureFilterVtapCaptureFilterRuleTcpOption {
+        destinationPortRanges: outputs.Core.GetCaptureFilterVtapCaptureFilterRuleTcpOptionDestinationPortRange[];
+        sourcePortRanges: outputs.Core.GetCaptureFilterVtapCaptureFilterRuleTcpOptionSourcePortRange[];
+    }
+
+    export interface GetCaptureFilterVtapCaptureFilterRuleTcpOptionDestinationPortRange {
+        /**
+         * The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+         */
+        max: number;
+        /**
+         * The minimum port number, which must not be greater than the maximum port number.
+         */
+        min: number;
+    }
+
+    export interface GetCaptureFilterVtapCaptureFilterRuleTcpOptionSourcePortRange {
+        /**
+         * The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+         */
+        max: number;
+        /**
+         * The minimum port number, which must not be greater than the maximum port number.
+         */
+        min: number;
+    }
+
+    export interface GetCaptureFilterVtapCaptureFilterRuleUdpOption {
+        destinationPortRanges: outputs.Core.GetCaptureFilterVtapCaptureFilterRuleUdpOptionDestinationPortRange[];
+        sourcePortRanges: outputs.Core.GetCaptureFilterVtapCaptureFilterRuleUdpOptionSourcePortRange[];
+    }
+
+    export interface GetCaptureFilterVtapCaptureFilterRuleUdpOptionDestinationPortRange {
+        /**
+         * The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+         */
+        max: number;
+        /**
+         * The minimum port number, which must not be greater than the maximum port number.
+         */
+        min: number;
+    }
+
+    export interface GetCaptureFilterVtapCaptureFilterRuleUdpOptionSourcePortRange {
+        /**
+         * The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+         */
+        max: number;
+        /**
+         * The minimum port number, which must not be greater than the maximum port number.
+         */
+        min: number;
+    }
+
+    export interface GetCaptureFiltersCaptureFilter {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         */
+        compartmentId: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+         */
+        definedTags: {[key: string]: any};
+        /**
+         * A filter to return only resources that match the given display name exactly.
+         */
+        displayName: string;
+        /**
+         * Indicates which service will use this capture filter
+         */
+        filterType: string;
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+         */
+        freeformTags: {[key: string]: any};
+        /**
+         * The capture filter's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+         */
+        id: string;
+        /**
+         * A filter to return only resources that match the given capture filter lifecycle state. The state value is case-insensitive.
+         */
+        state: string;
+        /**
+         * The date and time the capture filter was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2021-08-25T21:10:29.600Z`
+         */
+        timeCreated: string;
+        /**
+         * The set of rules governing what traffic a VTAP mirrors.
+         */
+        vtapCaptureFilterRules: outputs.Core.GetCaptureFiltersCaptureFilterVtapCaptureFilterRule[];
+    }
+
+    export interface GetCaptureFiltersCaptureFilterVtapCaptureFilterRule {
+        /**
+         * Traffic sent to this CIDR block through the VTAP source will be mirrored to the VTAP target.
+         */
+        destinationCidr: string;
+        /**
+         * Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
+         * * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
+         * * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
+         */
+        icmpOptions: outputs.Core.GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleIcmpOption[];
+        /**
+         * The transport protocol used in the filter. If do not choose a protocol, all protocols will be used in the filter. Supported options are:
+         * * 1 = ICMP
+         * * 6 = TCP
+         * * 17 = UDP
+         */
+        protocol: string;
+        /**
+         * Include or exclude packets meeting this definition from mirrored traffic.
+         */
+        ruleAction: string;
+        /**
+         * Traffic from this CIDR block to the VTAP source will be mirrored to the VTAP target.
+         */
+        sourceCidr: string;
+        /**
+         * Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
+         */
+        tcpOptions: outputs.Core.GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOption[];
+        /**
+         * The traffic direction the VTAP is configured to mirror.
+         */
+        trafficDirection: string;
+        /**
+         * Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
+         */
+        udpOptions: outputs.Core.GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleUdpOption[];
+    }
+
+    export interface GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleIcmpOption {
+        /**
+         * The ICMP code (optional).
+         */
+        code: number;
+        /**
+         * The ICMP type.
+         */
+        type: number;
+    }
+
+    export interface GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOption {
+        destinationPortRanges: outputs.Core.GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOptionDestinationPortRange[];
+        sourcePortRanges: outputs.Core.GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOptionSourcePortRange[];
+    }
+
+    export interface GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOptionDestinationPortRange {
+        /**
+         * The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+         */
+        max: number;
+        /**
+         * The minimum port number, which must not be greater than the maximum port number.
+         */
+        min: number;
+    }
+
+    export interface GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOptionSourcePortRange {
+        /**
+         * The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+         */
+        max: number;
+        /**
+         * The minimum port number, which must not be greater than the maximum port number.
+         */
+        min: number;
+    }
+
+    export interface GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleUdpOption {
+        destinationPortRanges: outputs.Core.GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleUdpOptionDestinationPortRange[];
+        sourcePortRanges: outputs.Core.GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleUdpOptionSourcePortRange[];
+    }
+
+    export interface GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleUdpOptionDestinationPortRange {
+        /**
+         * The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+         */
+        max: number;
+        /**
+         * The minimum port number, which must not be greater than the maximum port number.
+         */
+        min: number;
+    }
+
+    export interface GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleUdpOptionSourcePortRange {
+        /**
+         * The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+         */
+        max: number;
+        /**
+         * The minimum port number, which must not be greater than the maximum port number.
+         */
+        min: number;
+    }
+
+    export interface GetCaptureFiltersFilter {
         name: string;
         regex?: boolean;
         values: string[];
@@ -19157,7 +22003,7 @@ export namespace Core {
          */
         type: string;
         /**
-         * Indicates whether the VCN CIDR(s) or the individual Subnet CIDR(s) are imported from the attachment.  Routes from the VCN Ingress Route Table are always imported. It can be one of these values: `VCN_CIDRS` , `SUBNET_CIDRS`
+         * Indicates whether the VCN CIDRs or the individual subnet CIDRs are imported from the attachment. Routes from the VCN ingress route table are always imported.
          */
         vcnRouteType: string;
     }
@@ -20091,6 +22937,18 @@ export namespace Core {
 
     export interface GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfig {
         /**
+         * Whether virtualization instructions are available.
+         */
+        areVirtualInstructionsEnabled: boolean;
+        /**
+         * Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device passthrough.
+         */
+        isAccessControlServiceEnabled: boolean;
+        /**
+         * Whether the input-output memory management unit is enabled.
+         */
+        isInputOutputMemoryManagementUnitEnabled: boolean;
+        /**
          * Whether the Measured Boot feature is enabled on the instance.
          */
         isMeasuredBootEnabled: boolean;
@@ -20099,6 +22957,10 @@ export namespace Core {
          */
         isSecureBootEnabled: boolean;
         /**
+         * Whether symmetric multi-threading is enabled on the instance.
+         */
+        isSymmetricMultiThreadingEnabled: boolean;
+        /**
          * Whether the Trusted Platform Module (TPM) is enabled on the instance.
          */
         isTrustedPlatformModuleEnabled: boolean;
@@ -20106,6 +22968,10 @@ export namespace Core {
          * The number of NUMA nodes per socket (NPS).
          */
         numaNodesPerSocket: string;
+        /**
+         * The percentage of cores enabled.
+         */
+        percentageOfCoresEnabled: number;
         /**
          * The type of action to run when the instance is interrupted for eviction.
          */
@@ -20140,6 +23006,10 @@ export namespace Core {
          */
         memoryInGbs: number;
         /**
+         * The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+         */
+        nvmes: number;
+        /**
          * The total number of OCPUs available to the instance.
          */
         ocpus: number;
@@ -20154,6 +23024,10 @@ export namespace Core {
          * The size of the boot volume in GBs. The minimum value is 50 GB and the maximum value is 32,768 GB (32 TB).
          */
         bootVolumeSizeInGbs: string;
+        /**
+         * The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+         */
+        bootVolumeVpusPerGb: string;
         /**
          * The OCID of the image used to boot the instance.
          */
@@ -20587,6 +23461,18 @@ export namespace Core {
 
     export interface GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfig {
         /**
+         * Whether virtualization instructions are available.
+         */
+        areVirtualInstructionsEnabled: boolean;
+        /**
+         * Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device passthrough.
+         */
+        isAccessControlServiceEnabled: boolean;
+        /**
+         * Whether the input-output memory management unit is enabled.
+         */
+        isInputOutputMemoryManagementUnitEnabled: boolean;
+        /**
          * Whether the Measured Boot feature is enabled on the instance.
          */
         isMeasuredBootEnabled: boolean;
@@ -20595,6 +23481,10 @@ export namespace Core {
          */
         isSecureBootEnabled: boolean;
         /**
+         * Whether symmetric multi-threading is enabled on the instance.
+         */
+        isSymmetricMultiThreadingEnabled: boolean;
+        /**
          * Whether the Trusted Platform Module (TPM) is enabled on the instance.
          */
         isTrustedPlatformModuleEnabled: boolean;
@@ -20602,6 +23492,10 @@ export namespace Core {
          * The number of NUMA nodes per socket (NPS).
          */
         numaNodesPerSocket: string;
+        /**
+         * The percentage of cores enabled.
+         */
+        percentageOfCoresEnabled: number;
         /**
          * The type of action to run when the instance is interrupted for eviction.
          */
@@ -20636,6 +23530,10 @@ export namespace Core {
          */
         memoryInGbs: number;
         /**
+         * The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+         */
+        nvmes: number;
+        /**
          * The total number of OCPUs available to the instance.
          */
         ocpus: number;
@@ -20650,6 +23548,10 @@ export namespace Core {
          * The size of the boot volume in GBs. The minimum value is 50 GB and the maximum value is 32,768 GB (32 TB).
          */
         bootVolumeSizeInGbs: string;
+        /**
+         * The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+         */
+        bootVolumeVpusPerGb: string;
         /**
          * The OCID of the image used to boot the instance.
          */
@@ -20894,21 +23796,41 @@ export namespace Core {
 
     export interface GetInstancePlatformConfig {
         /**
+         * Whether virtualization instructions are available.
+         */
+        areVirtualInstructionsEnabled: boolean;
+        /**
+         * Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device passthrough.
+         */
+        isAccessControlServiceEnabled: boolean;
+        /**
+         * Whether the input-output memory management unit is enabled.
+         */
+        isInputOutputMemoryManagementUnitEnabled: boolean;
+        /**
          * Whether the Measured Boot is to be enabled on the instance
          */
         isMeasuredBootEnabled: boolean;
         /**
-         * Whether the Secure Boot is to be enabled on the instance
+         * Whether the Secure Boot is to be enabled on the instance.
          */
         isSecureBootEnabled: boolean;
         /**
-         * Whether the Trusted Platform Module (TPM) is to be enabled on the instance
+         * Whether symmetric multi-threading is enabled on the instance.
+         */
+        isSymmetricMultiThreadingEnabled: boolean;
+        /**
+         * Whether the Trusted Platform Module (TPM) is to be enabled on the instance.
          */
         isTrustedPlatformModuleEnabled: boolean;
         /**
          * The number of NUMA nodes per socket (NPS).
          */
         numaNodesPerSocket: string;
+        /**
+         * The percentage of cores enabled.
+         */
+        percentageOfCoresEnabled: number;
         /**
          * (Required) The type of action to run when the instance is interrupted for eviction.
          */
@@ -21229,6 +24151,7 @@ export namespace Core {
          * The networking bandwidth available to the instance, in gigabits per second.
          */
         networkingBandwidthInGbps: number;
+        nvmes: number;
         /**
          * The total number of OCPUs available to the instance.
          */
@@ -21244,6 +24167,10 @@ export namespace Core {
          * The size of the boot volume in GBs. Minimum value is 50 GB and maximum value is 32,768 GB (32 TB).
          */
         bootVolumeSizeInGbs: string;
+        /**
+         * The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+         */
+        bootVolumeVpusPerGb: string;
         /**
          * The OCID of the Key Management key to assign as the master encryption key for the boot volume.
          */
@@ -21505,21 +24432,41 @@ export namespace Core {
 
     export interface GetInstancesInstancePlatformConfig {
         /**
-         * Whether the Measured Boot is to be enabled on the instance
+         * Whether virtualization instructions are available.
+         */
+        areVirtualInstructionsEnabled: boolean;
+        /**
+         * Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device passthrough.
+         */
+        isAccessControlServiceEnabled: boolean;
+        /**
+         * Whether the input-output memory management unit is enabled.
+         */
+        isInputOutputMemoryManagementUnitEnabled: boolean;
+        /**
+         * Whether the Measured Boot is to be enabled on the instance.
          */
         isMeasuredBootEnabled: boolean;
         /**
-         * Whether the Secure Boot is to be enabled on the instance
+         * Whether the Secure Boot is to be enabled on the instance.
          */
         isSecureBootEnabled: boolean;
         /**
-         * Whether the Trusted Platform Module (TPM) is to be enabled on the instance
+         * Whether symmetric multi-threading is enabled on the instance.
+         */
+        isSymmetricMultiThreadingEnabled: boolean;
+        /**
+         * Whether the Trusted Platform Module (TPM) is to be enabled on the instance.
          */
         isTrustedPlatformModuleEnabled: boolean;
         /**
          * The number of NUMA nodes per socket (NPS).
          */
         numaNodesPerSocket: string;
+        /**
+         * The percentage of cores enabled.
+         */
+        percentageOfCoresEnabled: number;
         /**
          * (Required) The type of action to run when the instance is interrupted for eviction.
          */
@@ -21581,6 +24528,7 @@ export namespace Core {
          * The networking bandwidth available to the instance, in gigabits per second.
          */
         networkingBandwidthInGbps: number;
+        nvmes: number;
         /**
          * The total number of OCPUs available to the instance.
          */
@@ -21596,6 +24544,10 @@ export namespace Core {
          * The size of the boot volume in GBs. Minimum value is 50 GB and maximum value is 32,768 GB (32 TB).
          */
         bootVolumeSizeInGbs: string;
+        /**
+         * The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+         */
+        bootVolumeVpusPerGb: string;
         /**
          * The OCID of the Key Management key to assign as the master encryption key for the boot volume.
          */
@@ -21641,6 +24593,10 @@ export namespace Core {
          * The internet gateway's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
          */
         id: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the Internet Gateway is using.
+         */
+        routeTableId: string;
         /**
          * A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
          */
@@ -21737,6 +24693,7 @@ export namespace Core {
     }
 
     export interface GetIpsecConnectionTunnelBgpSessionInfo {
+        bgpIpv6state: string;
         /**
          * the state of the BGP.
          */
@@ -21954,7 +24911,7 @@ export namespace Core {
         /**
          * The total configured lifetime of the IKE security association.
          */
-        lifetime: string;
+        lifetime: number;
         /**
          * The negotiated phase two authentication algorithm.
          */
@@ -22005,7 +24962,7 @@ export namespace Core {
         /**
          * The total configured lifetime of the IKE security association.
          */
-        lifetime: string;
+        lifetime: number;
         /**
          * The negotiated phase two authentication algorithm.
          */
@@ -22285,6 +25242,10 @@ export namespace Core {
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP address associated with the NAT gateway.
          */
         publicIpId: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
+         */
+        routeTableId: string;
         /**
          * A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
          */
@@ -22824,6 +25785,7 @@ export namespace Core {
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the route rule's target. For information about the type of targets you can specify, see [Route Tables](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm).
          */
         networkEntityId: string;
+        routeType: string;
     }
 
     export interface GetSecurityListsFilter {
@@ -23225,11 +26187,26 @@ export namespace Core {
     }
 
     export interface GetShapeShapePlatformConfigOption {
+        accessControlServiceOptions: outputs.Core.GetShapeShapePlatformConfigOptionAccessControlServiceOption[];
+        inputOutputMemoryManagementUnitOptions: outputs.Core.GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOption[];
         measuredBootOptions: outputs.Core.GetShapeShapePlatformConfigOptionMeasuredBootOption[];
         numaNodesPerSocketPlatformOptions: outputs.Core.GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOption[];
+        percentageOfCoresEnabledOptions: outputs.Core.GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOption[];
         secureBootOptions: outputs.Core.GetShapeShapePlatformConfigOptionSecureBootOption[];
+        symmetricMultiThreadingOptions: outputs.Core.GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOption[];
         trustedPlatformModuleOptions: outputs.Core.GetShapeShapePlatformConfigOptionTrustedPlatformModuleOption[];
         type: string;
+        virtualInstructionsOptions: outputs.Core.GetShapeShapePlatformConfigOptionVirtualInstructionsOption[];
+    }
+
+    export interface GetShapeShapePlatformConfigOptionAccessControlServiceOption {
+        allowedValues: boolean[];
+        isDefaultEnabled: boolean;
+    }
+
+    export interface GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOption {
+        allowedValues: boolean[];
+        isDefaultEnabled: boolean;
     }
 
     export interface GetShapeShapePlatformConfigOptionMeasuredBootOption {
@@ -23242,12 +26219,28 @@ export namespace Core {
         defaultValue: string;
     }
 
+    export interface GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOption {
+        defaultValue: number;
+        max: number;
+        min: number;
+    }
+
     export interface GetShapeShapePlatformConfigOptionSecureBootOption {
         allowedValues: boolean[];
         isDefaultEnabled: boolean;
     }
 
+    export interface GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOption {
+        allowedValues: boolean[];
+        isDefaultEnabled: boolean;
+    }
+
     export interface GetShapeShapePlatformConfigOptionTrustedPlatformModuleOption {
+        allowedValues: boolean[];
+        isDefaultEnabled: boolean;
+    }
+
+    export interface GetShapeShapePlatformConfigOptionVirtualInstructionsOption {
         allowedValues: boolean[];
         isDefaultEnabled: boolean;
     }
@@ -23390,11 +26383,11 @@ export namespace Core {
          */
         defaultPerOcpu: number;
         /**
-         * The maximum number of OCPUs.
+         * The maximum allowed percentage of cores enabled.
          */
         max: number;
         /**
-         * The minimum number of OCPUs.
+         * The minimum allowed percentage of cores enabled.
          */
         min: number;
     }
@@ -23439,78 +26432,157 @@ export namespace Core {
 
     export interface GetShapesShapeOcpuOption {
         /**
-         * The maximum number of OCPUs.
+         * The maximum allowed percentage of cores enabled.
          */
         max: number;
         /**
-         * The minimum number of OCPUs.
+         * The minimum allowed percentage of cores enabled.
          */
         min: number;
     }
 
     export interface GetShapesShapePlatformConfigOption {
         /**
-         * Available and default options for Measured Boot configuration
+         * Configuration options for the Access Control Service.
+         */
+        accessControlServiceOptions: outputs.Core.GetShapesShapePlatformConfigOptionAccessControlServiceOption[];
+        /**
+         * Configuration options for the input-output memory management unit.
+         */
+        inputOutputMemoryManagementUnitOptions: outputs.Core.GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOption[];
+        /**
+         * Configuration options for the Measured Boot feature.
          */
         measuredBootOptions: outputs.Core.GetShapesShapePlatformConfigOptionMeasuredBootOption[];
         /**
-         * Available and default options for NUMA Nodes Per Socket configuration
+         * Configuration options for NUMA nodes per socket.
          */
         numaNodesPerSocketPlatformOptions: outputs.Core.GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOption[];
         /**
-         * Available and default options for Secure Boot configuration
+         * Configuration options for the percentage of cores enabled.
+         */
+        percentageOfCoresEnabledOptions: outputs.Core.GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOption[];
+        /**
+         * Configuration options for Secure Boot.
          */
         secureBootOptions: outputs.Core.GetShapesShapePlatformConfigOptionSecureBootOption[];
         /**
-         * Available and default options for Trusted Platform Module (TPM) configuration
+         * Configuration options for symmetric multi-threading.
+         */
+        symmetricMultiThreadingOptions: outputs.Core.GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOption[];
+        /**
+         * Configuration options for the Trusted Platform Module (TPM).
          */
         trustedPlatformModuleOptions: outputs.Core.GetShapesShapePlatformConfigOptionTrustedPlatformModuleOption[];
         /**
-         * The type of platform being configured. (Supported types=[INTEL_VM, AMD_MILAN_BM, AMD_ROME_BM, INTEL_SKYLAKE_BM])
+         * The type of platform being configured. (Supported types=[INTEL_VM, AMD_MILAN_BM, AMD_ROME_BM, AMD_ROME_BM_GPU, INTEL_ICELAKE_BM, INTEL_SKYLAKE_BM])
          */
         type: string;
+        /**
+         * Configuration options for the virtualization instructions.
+         */
+        virtualInstructionsOptions: outputs.Core.GetShapesShapePlatformConfigOptionVirtualInstructionsOption[];
+    }
+
+    export interface GetShapesShapePlatformConfigOptionAccessControlServiceOption {
+        /**
+         * Whether virtualization instructions can be enabled.
+         */
+        allowedValues: boolean[];
+        /**
+         * Whether virtualization instructions are enabled by default.
+         */
+        isDefaultEnabled: boolean;
+    }
+
+    export interface GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOption {
+        /**
+         * Whether virtualization instructions can be enabled.
+         */
+        allowedValues: boolean[];
+        /**
+         * Whether virtualization instructions are enabled by default.
+         */
+        isDefaultEnabled: boolean;
     }
 
     export interface GetShapesShapePlatformConfigOptionMeasuredBootOption {
         /**
-         * Possible boolean values indicating whether Trusted Platform Module (TPM) can be enabled or disabled
+         * Whether virtualization instructions can be enabled.
          */
         allowedValues: boolean[];
         /**
-         * Indicates whether Trusted Platform Module is to be enabled by default
+         * Whether virtualization instructions are enabled by default.
          */
         isDefaultEnabled: boolean;
     }
 
     export interface GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOption {
         /**
-         * Possible boolean values indicating whether Trusted Platform Module (TPM) can be enabled or disabled
+         * Whether virtualization instructions can be enabled.
          */
         allowedValues: string[];
         /**
-         * Indicates the default NUMA Nodes Per Socket configuration
+         * The default percentage of cores enabled.
          */
         defaultValue: string;
     }
 
+    export interface GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOption {
+        /**
+         * The default percentage of cores enabled.
+         */
+        defaultValue: number;
+        /**
+         * The maximum allowed percentage of cores enabled.
+         */
+        max: number;
+        /**
+         * The minimum allowed percentage of cores enabled.
+         */
+        min: number;
+    }
+
     export interface GetShapesShapePlatformConfigOptionSecureBootOption {
         /**
-         * Possible boolean values indicating whether Trusted Platform Module (TPM) can be enabled or disabled
+         * Whether virtualization instructions can be enabled.
          */
         allowedValues: boolean[];
         /**
-         * Indicates whether Trusted Platform Module is to be enabled by default
+         * Whether virtualization instructions are enabled by default.
+         */
+        isDefaultEnabled: boolean;
+    }
+
+    export interface GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOption {
+        /**
+         * Whether virtualization instructions can be enabled.
+         */
+        allowedValues: boolean[];
+        /**
+         * Whether virtualization instructions are enabled by default.
          */
         isDefaultEnabled: boolean;
     }
 
     export interface GetShapesShapePlatformConfigOptionTrustedPlatformModuleOption {
         /**
-         * Possible boolean values indicating whether Trusted Platform Module (TPM) can be enabled or disabled
+         * Whether virtualization instructions can be enabled.
          */
         allowedValues: boolean[];
         /**
-         * Indicates whether Trusted Platform Module is to be enabled by default
+         * Whether virtualization instructions are enabled by default.
+         */
+        isDefaultEnabled: boolean;
+    }
+
+    export interface GetShapesShapePlatformConfigOptionVirtualInstructionsOption {
+        /**
+         * Whether virtualization instructions can be enabled.
+         */
+        allowedValues: boolean[];
+        /**
+         * Whether virtualization instructions are enabled by default.
          */
         isDefaultEnabled: boolean;
     }
@@ -23822,7 +26894,7 @@ export namespace Core {
          */
         bandwidthShapeName: string;
         /**
-         * Set to ENABLED to activate the  bgp session of virtual circuit, DISABLED to deactivate.
+         * Set to `ENABLED` (the default) to activate the BGP session of the virtual circuit, set to `DISABLED` to deactivate the virtual circuit.
          */
         bgpAdminState: string;
         /**
@@ -23882,7 +26954,7 @@ export namespace Core {
          */
         ipMtu: string;
         /**
-         * Set to true to enable BFD for ipv4 Bgp Peering, false to disable. If not set, default is false
+         * Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
          */
         isBfdEnabled: boolean;
         /**
@@ -24204,6 +27276,10 @@ export namespace Core {
          * The target volume's iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).  Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`
          */
         iqn: string;
+        /**
+         * Whether Oracle Cloud Agent is enabled perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
+         */
+        isAgentAutoIscsiLoginEnabled: boolean;
         /**
          * Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.
          */
@@ -24803,7 +27879,7 @@ export namespace Core {
          */
         id: string;
         /**
-         * Specifies whether the auto-tune performance is enabled for this boot volume.
+         * Specifies whether the auto-tune performance is enabled for this volume.
          */
         isAutoTuneEnabled: boolean;
         /**
@@ -24872,6 +27948,105 @@ export namespace Core {
          * The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`
          */
         type: string;
+    }
+
+    export interface GetVtapsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetVtapsVtap {
+        /**
+         * The capture filter's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+         */
+        captureFilterId: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         */
+        compartmentId: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+         */
+        definedTags: {[key: string]: any};
+        /**
+         * A filter to return only resources that match the given display name exactly.
+         */
+        displayName: string;
+        /**
+         * Defines an encapsulation header type for the VTAP's mirrored traffic.
+         */
+        encapsulationProtocol: string;
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+         */
+        freeformTags: {[key: string]: any};
+        /**
+         * The VTAP's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+         */
+        id: string;
+        /**
+         * Indicates whether to list all VTAPs or only running VTAPs.
+         * * When `FALSE`, lists ALL running and stopped VTAPs.
+         * * When `TRUE`, lists only running VTAPs (VTAPs where isVtapEnabled = `TRUE`).
+         */
+        isVtapEnabled: boolean;
+        /**
+         * The VTAP's current running state.
+         */
+        lifecycleStateDetails: string;
+        /**
+         * The maximum size of the packets to be included in the filter.
+         */
+        maxPacketSize: number;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source point where packets are captured.
+         */
+        sourceId: string;
+        /**
+         * The IP Address of the source private endpoint.
+         */
+        sourcePrivateEndpointIp: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that source private endpoint belongs to.
+         */
+        sourcePrivateEndpointSubnetId: string;
+        /**
+         * The source type for the VTAP.
+         */
+        sourceType: string;
+        /**
+         * A filter to return only resources that match the given VTAP administrative lifecycle state. The state value is case-insensitive.
+         */
+        state: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VTAP target.
+         */
+        targetId: string;
+        /**
+         * The IP address of the VTAP target.
+         */
+        targetIp: string;
+        /**
+         * The target type for the VTAP.
+         */
+        targetType: string;
+        /**
+         * The date and time the VTAP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2020-08-25T21:10:29.600Z`
+         */
+        timeCreated: string;
+        /**
+         * Used to control the priority of traffic. It is an optional field. If it not passed, the value is DEFAULT
+         */
+        trafficMode: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+         */
+        vcnId: string;
+        /**
+         * The virtual extensible LAN (VXLAN) network identifier (or VXLAN segment ID) that uniquely identifies the VXLAN.
+         */
+        vxlanNetworkIdentifier: string;
     }
 
     export interface ImageAgentFeature {
@@ -25312,6 +28487,18 @@ export namespace Core {
 
     export interface InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfig {
         /**
+         * Whether virtualization instructions are available.
+         */
+        areVirtualInstructionsEnabled: boolean;
+        /**
+         * Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device passthrough.
+         */
+        isAccessControlServiceEnabled: boolean;
+        /**
+         * Whether the input-output memory management unit is enabled.
+         */
+        isInputOutputMemoryManagementUnitEnabled: boolean;
+        /**
          * Whether the Measured Boot feature is enabled on the instance.
          */
         isMeasuredBootEnabled: boolean;
@@ -25320,6 +28507,10 @@ export namespace Core {
          */
         isSecureBootEnabled: boolean;
         /**
+         * Whether symmetric multi-threading is enabled on the instance.
+         */
+        isSymmetricMultiThreadingEnabled: boolean;
+        /**
          * Whether the Trusted Platform Module (TPM) is enabled on the instance.
          */
         isTrustedPlatformModuleEnabled: boolean;
@@ -25327,6 +28518,10 @@ export namespace Core {
          * The number of NUMA nodes per socket (NPS).
          */
         numaNodesPerSocket: string;
+        /**
+         * The percentage of cores enabled.
+         */
+        percentageOfCoresEnabled: number;
         /**
          * The type of action to run when the instance is interrupted for eviction.
          */
@@ -25361,6 +28556,10 @@ export namespace Core {
          */
         memoryInGbs: number;
         /**
+         * The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+         */
+        nvmes: number;
+        /**
          * The total number of OCPUs available to the instance.
          */
         ocpus: number;
@@ -25375,6 +28574,10 @@ export namespace Core {
          * The size of the boot volume in GBs. The minimum value is 50 GB and the maximum value is 32,768 GB (32 TB).
          */
         bootVolumeSizeInGbs: string;
+        /**
+         * The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+         */
+        bootVolumeVpusPerGb: string;
         /**
          * The OCID of the image used to boot the instance.
          */
@@ -25526,6 +28729,18 @@ export namespace Core {
 
     export interface InstancePlatformConfig {
         /**
+         * Whether virtualization instructions are available.
+         */
+        areVirtualInstructionsEnabled: boolean;
+        /**
+         * Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device passthrough.
+         */
+        isAccessControlServiceEnabled: boolean;
+        /**
+         * Whether the input-output memory management unit is enabled.
+         */
+        isInputOutputMemoryManagementUnitEnabled: boolean;
+        /**
          * Whether the Measured Boot feature is enabled on the instance.
          */
         isMeasuredBootEnabled: boolean;
@@ -25534,6 +28749,10 @@ export namespace Core {
          */
         isSecureBootEnabled: boolean;
         /**
+         * Whether symmetric multi-threading is enabled on the instance.
+         */
+        isSymmetricMultiThreadingEnabled: boolean;
+        /**
          * Whether the Trusted Platform Module (TPM) is enabled on the instance.
          */
         isTrustedPlatformModuleEnabled: boolean;
@@ -25541,6 +28760,10 @@ export namespace Core {
          * The number of NUMA nodes per socket (NPS).
          */
         numaNodesPerSocket: string;
+        /**
+         * The percentage of cores enabled.
+         */
+        percentageOfCoresEnabled: number;
         /**
          * The type of action to run when the instance is interrupted for eviction.
          */
@@ -25687,6 +28910,10 @@ export namespace Core {
          */
         networkingBandwidthInGbps: number;
         /**
+         * (Updatable) The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+         */
+        nvmes: number;
+        /**
          * (Updatable) The total number of OCPUs available to the instance.
          */
         ocpus: number;
@@ -25702,6 +28929,10 @@ export namespace Core {
          */
         bootVolumeSizeInGbs: string;
         /**
+         * The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+         */
+        bootVolumeVpusPerGb: string;
+        /**
          * The OCID of the Key Management key to assign as the master encryption key for the boot volume.
          */
         kmsKeyId: string;
@@ -25716,6 +28947,7 @@ export namespace Core {
     }
 
     export interface IpsecConnectionTunnelManagementBgpSessionInfo {
+        bgpIpv6state: string;
         /**
          * the state of the BGP.
          */
@@ -25738,6 +28970,11 @@ export namespace Core {
         oracleInterfaceIp: string;
     }
 
+    export interface IpsecConnectionTunnelManagementDpdConfig {
+        dpdMode?: string;
+        dpdTimeoutInSec?: number;
+    }
+
     export interface IpsecConnectionTunnelManagementEncryptionDomainConfig {
         /**
          * Lists IPv4 or IPv6-enabled subnets in your on-premises network.
@@ -25755,7 +28992,7 @@ export namespace Core {
         customEncryptionAlgorithm: string;
         isCustomPhaseOneConfig: boolean;
         isIkeEstablished: boolean;
-        lifetime: string;
+        lifetime: number;
         negotiatedAuthenticationAlgorithm: string;
         negotiatedDhGroup: string;
         negotiatedEncryptionAlgorithm: string;
@@ -25770,7 +29007,7 @@ export namespace Core {
         isCustomPhaseTwoConfig: boolean;
         isEspEstablished: boolean;
         isPfsEnabled: boolean;
-        lifetime: string;
+        lifetime: number;
         negotiatedAuthenticationAlgorithm: string;
         negotiatedDhGroup: string;
         negotiatedEncryptionAlgorithm: string;
@@ -25868,6 +29105,7 @@ export namespace Core {
          * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the route rule's target. For information about the type of targets you can specify, see [Route Tables](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm).
          */
         networkEntityId: string;
+        routeType: string;
     }
 
     export interface SecurityListEgressSecurityRule {
@@ -26338,6 +29576,7 @@ export namespace Core {
          */
         type: string;
     }
+
 }
 
 export namespace DataCatalog {
@@ -28044,6 +31283,10 @@ export namespace DataConnectivity {
          * A user defined description for the object.
          */
         description: string;
+        /**
+         * The list of endpoints with which this data asset is associated.
+         */
+        endPoints: string[];
         /**
          * The external key for the object.
          */
@@ -31857,6 +35100,28 @@ export namespace DataConnectivity {
 }
 
 export namespace DataFlow {
+    export interface ApplicationDriverShapeConfig {
+        /**
+         * (Updatable) The amount of memory used for the driver or executors.
+         */
+        memoryInGbs: number;
+        /**
+         * (Updatable) The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+         */
+        ocpus: number;
+    }
+
+    export interface ApplicationExecutorShapeConfig {
+        /**
+         * (Updatable) The amount of memory used for the driver or executors.
+         */
+        memoryInGbs: number;
+        /**
+         * (Updatable) The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+         */
+        ocpus: number;
+    }
+
     export interface ApplicationParameter {
         /**
          * (Updatable) The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "inputFile"
@@ -31866,6 +35131,28 @@ export namespace DataFlow {
          * (Updatable) The value of the parameter. It must be a string of 0 or more characters of any kind. Examples: "" (empty string), "10", "mydata.xml", "${x}"
          */
         value: string;
+    }
+
+    export interface GetApplicationDriverShapeConfig {
+        /**
+         * The amount of memory used for the driver or executors.
+         */
+        memoryInGbs: number;
+        /**
+         * The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+         */
+        ocpus: number;
+    }
+
+    export interface GetApplicationExecutorShapeConfig {
+        /**
+         * The amount of memory used for the driver or executors.
+         */
+        memoryInGbs: number;
+        /**
+         * The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+         */
+        ocpus: number;
     }
 
     export interface GetApplicationParameter {
@@ -31917,6 +35204,10 @@ export namespace DataFlow {
          */
         driverShape: string;
         /**
+         * This is used to configure the shape of the driver or executor if a flexible shape is used.
+         */
+        driverShapeConfigs: outputs.DataFlow.GetApplicationsApplicationDriverShapeConfig[];
+        /**
          * The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
          */
         execute: string;
@@ -31924,6 +35215,10 @@ export namespace DataFlow {
          * The VM shape for the executors. Sets the executor cores and memory.
          */
         executorShape: string;
+        /**
+         * This is used to configure the shape of the driver or executor if a flexible shape is used.
+         */
+        executorShapeConfigs: outputs.DataFlow.GetApplicationsApplicationExecutorShapeConfig[];
         /**
          * An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
          */
@@ -31994,6 +35289,28 @@ export namespace DataFlow {
         warehouseBucketUri: string;
     }
 
+    export interface GetApplicationsApplicationDriverShapeConfig {
+        /**
+         * The amount of memory used for the driver or executors.
+         */
+        memoryInGbs: number;
+        /**
+         * The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+         */
+        ocpus: number;
+    }
+
+    export interface GetApplicationsApplicationExecutorShapeConfig {
+        /**
+         * The amount of memory used for the driver or executors.
+         */
+        memoryInGbs: number;
+        /**
+         * The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+         */
+        ocpus: number;
+    }
+
     export interface GetApplicationsApplicationParameter {
         /**
          * The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "inputFile"
@@ -32012,6 +35329,28 @@ export namespace DataFlow {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetInvokeRunDriverShapeConfig {
+        /**
+         * The amount of memory used for the driver or executors.
+         */
+        memoryInGbs: number;
+        /**
+         * The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+         */
+        ocpus: number;
+    }
+
+    export interface GetInvokeRunExecutorShapeConfig {
+        /**
+         * The amount of memory used for the driver or executors.
+         */
+        memoryInGbs: number;
+        /**
+         * The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+         */
+        ocpus: number;
     }
 
     export interface GetInvokeRunParameter {
@@ -32081,6 +35420,10 @@ export namespace DataFlow {
          */
         driverShape: string;
         /**
+         * This is used to configure the shape of the driver or executor if a flexible shape is used.
+         */
+        driverShapeConfigs: outputs.DataFlow.GetInvokeRunsRunDriverShapeConfig[];
+        /**
          * The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
          */
         execute: string;
@@ -32088,6 +35431,10 @@ export namespace DataFlow {
          * The VM shape for the executors. Sets the executor cores and memory.
          */
         executorShape: string;
+        /**
+         * This is used to configure the shape of the driver or executor if a flexible shape is used.
+         */
+        executorShapeConfigs: outputs.DataFlow.GetInvokeRunsRunExecutorShapeConfig[];
         /**
          * An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
          */
@@ -32188,6 +35535,28 @@ export namespace DataFlow {
          * An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
          */
         warehouseBucketUri: string;
+    }
+
+    export interface GetInvokeRunsRunDriverShapeConfig {
+        /**
+         * The amount of memory used for the driver or executors.
+         */
+        memoryInGbs: number;
+        /**
+         * The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+         */
+        ocpus: number;
+    }
+
+    export interface GetInvokeRunsRunExecutorShapeConfig {
+        /**
+         * The amount of memory used for the driver or executors.
+         */
+        memoryInGbs: number;
+        /**
+         * The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+         */
+        ocpus: number;
     }
 
     export interface GetInvokeRunsRunParameter {
@@ -32296,6 +35665,28 @@ export namespace DataFlow {
         type: string;
     }
 
+    export interface InvokeRunDriverShapeConfig {
+        /**
+         * The amount of memory used for the driver or executors.
+         */
+        memoryInGbs: number;
+        /**
+         * The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+         */
+        ocpus: number;
+    }
+
+    export interface InvokeRunExecutorShapeConfig {
+        /**
+         * The amount of memory used for the driver or executors.
+         */
+        memoryInGbs: number;
+        /**
+         * The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+         */
+        ocpus: number;
+    }
+
     export interface InvokeRunParameter {
         /**
          * The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "inputFile"
@@ -32389,26 +35780,57 @@ export namespace DataIntegration {
 export namespace DataLabellingService {
     export interface DatasetDatasetFormatDetails {
         /**
-         * Format type. DOCUMENT format is for record contents that are PDFs or TIFFs. IMAGE format is for record contents that are JPEGs or PNGs. TEXT format is for record contents that are txt files.
+         * It defines the format type of text files.
          */
         formatType: string;
+        /**
+         * Metadata for files with text content.
+         */
+        textFileTypeMetadata: outputs.DataLabellingService.DatasetDatasetFormatDetailsTextFileTypeMetadata;
+    }
+
+    export interface DatasetDatasetFormatDetailsTextFileTypeMetadata {
+        /**
+         * A column delimiter
+         */
+        columnDelimiter: string;
+        /**
+         * The index of a selected column. This is a zero-based index.
+         */
+        columnIndex: number;
+        /**
+         * The name of a selected column.
+         */
+        columnName: string;
+        /**
+         * An escape character.
+         */
+        escapeCharacter: string;
+        /**
+         * It defines the format type of text files.
+         */
+        formatType: string;
+        /**
+         * A line delimiter.
+         */
+        lineDelimiter: string;
     }
 
     export interface DatasetDatasetSourceDetails {
         /**
-         * The object storage bucket that contains the dataset data source
+         * The object storage bucket that contains the dataset data source.
          */
         bucket: string;
         /**
-         * Namespace of the bucket that contains the dataset data source
+         * The namespace of the bucket that contains the dataset data source.
          */
         namespace: string;
         /**
-         * A common path prefix shared by the objects that make up the dataset. Records will not be generated for objects whose name match exactly with prefix.
+         * A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
          */
         prefix: string;
         /**
-         * Source type.  OBJECT_STORAGE allows the customer to describe where the dataset is in object storage.
+         * The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
          */
         sourceType: string;
     }
@@ -32418,7 +35840,7 @@ export namespace DataLabellingService {
 
     export interface DatasetLabelSet {
         /**
-         * An ordered collection of Labels that are unique by name.
+         * An ordered collection of labels that are unique by name.
          */
         items: outputs.DataLabellingService.DatasetLabelSetItem[];
     }
@@ -32462,26 +35884,57 @@ export namespace DataLabellingService {
 
     export interface GetDatasetDatasetFormatDetail {
         /**
-         * Format type. DOCUMENT format is for record contents that are PDFs or TIFFs. IMAGE format is for record contents that are JPEGs or PNGs. TEXT format is for record contents that are txt files.
+         * It defines the format type of text files.
          */
         formatType: string;
+        /**
+         * Metadata for files with text content.
+         */
+        textFileTypeMetadatas: outputs.DataLabellingService.GetDatasetDatasetFormatDetailTextFileTypeMetadata[];
+    }
+
+    export interface GetDatasetDatasetFormatDetailTextFileTypeMetadata {
+        /**
+         * A column delimiter
+         */
+        columnDelimiter: string;
+        /**
+         * The index of a selected column. This is a zero-based index.
+         */
+        columnIndex: number;
+        /**
+         * The name of a selected column.
+         */
+        columnName: string;
+        /**
+         * An escape character.
+         */
+        escapeCharacter: string;
+        /**
+         * It defines the format type of text files.
+         */
+        formatType: string;
+        /**
+         * A line delimiter.
+         */
+        lineDelimiter: string;
     }
 
     export interface GetDatasetDatasetSourceDetail {
         /**
-         * The object storage bucket that contains the dataset data source
+         * The object storage bucket that contains the dataset data source.
          */
         bucket: string;
         /**
-         * Namespace of the bucket that contains the dataset data source
+         * The namespace of the bucket that contains the dataset data source.
          */
         namespace: string;
         /**
-         * A common path prefix shared by the objects that make up the dataset. Records will not be generated for objects whose name match exactly with prefix.
+         * A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
          */
         prefix: string;
         /**
-         * Source type.  OBJECT_STORAGE allows the customer to describe where the dataset is in object storage.
+         * The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
          */
         sourceType: string;
     }
@@ -32491,7 +35944,7 @@ export namespace DataLabellingService {
 
     export interface GetDatasetLabelSet {
         /**
-         * An ordered collection of Labels that are unique by name.
+         * An ordered collection of labels that are unique by name.
          */
         items: outputs.DataLabellingService.GetDatasetLabelSetItem[];
     }
@@ -32505,7 +35958,7 @@ export namespace DataLabellingService {
 
     export interface GetDatasetsDatasetCollection {
         /**
-         * An ordered collection of Labels that are unique by name.
+         * An ordered collection of labels that are unique by name.
          */
         items: outputs.DataLabellingService.GetDatasetsDatasetCollectionItem[];
     }
@@ -32520,7 +35973,7 @@ export namespace DataLabellingService {
          */
         compartmentId: string;
         /**
-         * Specifies how to process the data. Supported formats include DOCUMENT, IMAGE and TEXT.
+         * It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
          */
         datasetFormatDetails: outputs.DataLabellingService.GetDatasetsDatasetCollectionItemDatasetFormatDetail[];
         /**
@@ -32548,11 +36001,11 @@ export namespace DataLabellingService {
          */
         id: string;
         /**
-         * Initial Generate Records configuration, generates records from the Dataset's source.
+         * The initial generate records configuration. It generates records from the dataset's source.
          */
         initialRecordGenerationConfigurations: outputs.DataLabellingService.GetDatasetsDatasetCollectionItemInitialRecordGenerationConfiguration[];
         /**
-         * An ordered collection of Labels that are unique by name.
+         * An ordered collection of labels that are unique by name.
          */
         labelSets: outputs.DataLabellingService.GetDatasetsDatasetCollectionItemLabelSet[];
         /**
@@ -32579,26 +36032,57 @@ export namespace DataLabellingService {
 
     export interface GetDatasetsDatasetCollectionItemDatasetFormatDetail {
         /**
-         * Format type. DOCUMENT format is for record contents that are PDFs or TIFFs. IMAGE format is for record contents that are JPEGs or PNGs. TEXT format is for record contents that are txt files.
+         * It defines the format type of text files.
          */
         formatType: string;
+        /**
+         * Metadata for files with text content.
+         */
+        textFileTypeMetadatas: outputs.DataLabellingService.GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadata[];
+    }
+
+    export interface GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadata {
+        /**
+         * A column delimiter
+         */
+        columnDelimiter: string;
+        /**
+         * The index of a selected column. This is a zero-based index.
+         */
+        columnIndex: number;
+        /**
+         * The name of a selected column.
+         */
+        columnName: string;
+        /**
+         * An escape character.
+         */
+        escapeCharacter: string;
+        /**
+         * It defines the format type of text files.
+         */
+        formatType: string;
+        /**
+         * A line delimiter.
+         */
+        lineDelimiter: string;
     }
 
     export interface GetDatasetsDatasetCollectionItemDatasetSourceDetail {
         /**
-         * The object storage bucket that contains the dataset data source
+         * The object storage bucket that contains the dataset data source.
          */
         bucket: string;
         /**
-         * Namespace of the bucket that contains the dataset data source
+         * The namespace of the bucket that contains the dataset data source.
          */
         namespace: string;
         /**
-         * A common path prefix shared by the objects that make up the dataset. Records will not be generated for objects whose name match exactly with prefix.
+         * A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
          */
         prefix: string;
         /**
-         * Source type.  OBJECT_STORAGE allows the customer to describe where the dataset is in object storage.
+         * The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
          */
         sourceType: string;
     }
@@ -32608,7 +36092,7 @@ export namespace DataLabellingService {
 
     export interface GetDatasetsDatasetCollectionItemLabelSet {
         /**
-         * An ordered collection of Labels that are unique by name.
+         * An ordered collection of labels that are unique by name.
          */
         items: outputs.DataLabellingService.GetDatasetsDatasetCollectionItemLabelSetItem[];
     }
@@ -39600,6 +43084,21 @@ export namespace DataScience {
          * The shape used to launch the model deployment instances.
          */
         instanceShapeName: string;
+        /**
+         * Details for the model-deployment instance shape configuration.
+         */
+        modelDeploymentInstanceShapeConfigDetails: outputs.DataScience.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetail[];
+    }
+
+    export interface GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetail {
+        /**
+         * A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 and 512 GB and VM.Optimized3.Flex memory range is between 6 and 256 GB.
+         */
+        memoryInGbs: number;
+        /**
+         * A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 and 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
+         */
+        ocpus: number;
     }
 
     export interface GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicy {
@@ -39635,6 +43134,10 @@ export namespace DataScience {
          * The name of the model deployment shape.
          */
         name: string;
+        /**
+         * The family that the compute shape belongs to.
+         */
+        shapeSeries: string;
     }
 
     export interface GetModelDeploymentsFilter {
@@ -39770,6 +43273,21 @@ export namespace DataScience {
          * The shape used to launch the model deployment instances.
          */
         instanceShapeName: string;
+        /**
+         * Details for the model-deployment instance shape configuration.
+         */
+        modelDeploymentInstanceShapeConfigDetails: outputs.DataScience.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetail[];
+    }
+
+    export interface GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetail {
+        /**
+         * A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 and 512 GB and VM.Optimized3.Flex memory range is between 6 and 256 GB.
+         */
+        memoryInGbs: number;
+        /**
+         * A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 and 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
+         */
+        ocpus: number;
     }
 
     export interface GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicy {
@@ -40401,6 +43919,21 @@ export namespace DataScience {
          * (Updatable) The shape used to launch the model deployment instances.
          */
         instanceShapeName: string;
+        /**
+         * (Updatable) Details for the model-deployment instance shape configuration.
+         */
+        modelDeploymentInstanceShapeConfigDetails: outputs.DataScience.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails;
+    }
+
+    export interface ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails {
+        /**
+         * (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 and 512 GB and VM.Optimized3.Flex memory range is between 6 and 256 GB.
+         */
+        memoryInGbs: number;
+        /**
+         * (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 and 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
+         */
+        ocpus: number;
     }
 
     export interface ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicy {
@@ -40800,6 +44333,25 @@ export namespace Database {
         vaultId: string;
     }
 
+    export interface AutonomousDatabaseLocalStandbyDb {
+        /**
+         * The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
+         */
+        lagTimeInSeconds: number;
+        /**
+         * Additional information about the current lifecycle state.
+         */
+        lifecycleDetails: string;
+        /**
+         * (Updatable) The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
+         */
+        state: string;
+        /**
+         * The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+         */
+        timeDataGuardRoleChanged: string;
+    }
+
     export interface AutonomousDatabaseScheduledOperation {
         /**
          * (Updatable) Day of the week.
@@ -40950,6 +44502,7 @@ export namespace Database {
     }
 
     export interface AutonomousVmClusterMaintenanceWindow {
+        customActionTimeoutInMins: number;
         /**
          * (Updatable) Days during the week when maintenance should be performed.
          */
@@ -40959,6 +44512,7 @@ export namespace Database {
          * * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
          */
         hoursOfDays: number[];
+        isCustomActionTimeoutEnabled: boolean;
         /**
          * (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
          */
@@ -40967,6 +44521,7 @@ export namespace Database {
          * (Updatable) Months during the year when maintenance should be performed.
          */
         months: outputs.Database.AutonomousVmClusterMaintenanceWindowMonth[];
+        patchingMode: string;
         /**
          * (Updatable) The maintenance window scheduling preference.
          */
@@ -40985,6 +44540,7 @@ export namespace Database {
     }
 
     export interface AutonomousVmClusterMaintenanceWindowDetail {
+        customActionTimeoutInMins: number;
         /**
          * (Updatable) Days during the week when maintenance should be performed.
          */
@@ -40994,6 +44550,7 @@ export namespace Database {
          * * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
          */
         hoursOfDays: number[];
+        isCustomActionTimeoutEnabled: boolean;
         /**
          * (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
          */
@@ -41002,6 +44559,7 @@ export namespace Database {
          * (Updatable) Months during the year when maintenance should be performed.
          */
         months: outputs.Database.AutonomousVmClusterMaintenanceWindowDetailMonth[];
+        patchingMode: string;
         /**
          * (Updatable) The maintenance window scheduling preference.
          */
@@ -41133,6 +44691,13 @@ export namespace Database {
          * (Updatable) Name of the month of the year.
          */
         name: string;
+    }
+
+    export interface CloudVmClusterDataCollectionOptions {
+        /**
+         * (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+         */
+        isDiagnosticsEventsEnabled: boolean;
     }
 
     export interface CloudVmClusterIormConfigCach {
@@ -41894,6 +45459,89 @@ export namespace Database {
         name: string;
     }
 
+    export interface DbSystemsUpgradeDbSystemOption {
+        /**
+         * The storage option used in DB system. ASM - Automatic storage management LVM - Logical Volume management
+         */
+        storageManagement: string;
+    }
+
+    export interface DbSystemsUpgradeIormConfigCach {
+        /**
+         * An array of IORM settings for all the database in the Exadata DB system.
+         */
+        dbPlans: outputs.Database.DbSystemsUpgradeIormConfigCachDbPlan[];
+        /**
+         * Additional information about the current lifecycle state.
+         */
+        lifecycleDetails: string;
+        /**
+         * The current value for the IORM objective. The default is `AUTO`.
+         */
+        objective: string;
+        /**
+         * The current state of the DB system.
+         */
+        state: string;
+    }
+
+    export interface DbSystemsUpgradeIormConfigCachDbPlan {
+        /**
+         * The database name. For the default `DbPlan`, the `dbName` is `default`.
+         */
+        dbName: string;
+        /**
+         * The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
+         */
+        flashCacheLimit: string;
+        /**
+         * The relative priority of this database.
+         */
+        share: number;
+    }
+
+    export interface DbSystemsUpgradeMaintenanceWindow {
+        /**
+         * Days during the week when maintenance should be performed.
+         */
+        daysOfWeeks: outputs.Database.DbSystemsUpgradeMaintenanceWindowDaysOfWeek[];
+        /**
+         * The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+         * * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+         */
+        hoursOfDays: number[];
+        /**
+         * Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+         */
+        leadTimeInWeeks: number;
+        /**
+         * Months during the year when maintenance should be performed.
+         */
+        months: outputs.Database.DbSystemsUpgradeMaintenanceWindowMonth[];
+        /**
+         * The maintenance window scheduling preference.
+         */
+        preference: string;
+        /**
+         * Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+         */
+        weeksOfMonths: number[];
+    }
+
+    export interface DbSystemsUpgradeMaintenanceWindowDaysOfWeek {
+        /**
+         * Name of the month of the year.
+         */
+        name: string;
+    }
+
+    export interface DbSystemsUpgradeMaintenanceWindowMonth {
+        /**
+         * Name of the month of the year.
+         */
+        name: string;
+    }
+
     export interface ExadataInfrastructureContact {
         /**
          * (Updatable) The email for the Exadata Infrastructure contact.
@@ -42026,6 +45674,17 @@ export namespace Database {
         licenseModel: string;
     }
 
+    export interface ExternalContainerDatabaseStackMonitoringConfig {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+         */
+        stackMonitoringConnectorId: string;
+        /**
+         * The status of Stack Monitoring.
+         */
+        stackMonitoringStatus: string;
+    }
+
     export interface ExternalDatabaseConnectorConnectionCredentials {
         /**
          * (Updatable) The name of the credential information that used to connect to the database. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
@@ -42043,6 +45702,10 @@ export namespace Database {
          * (Updatable) The role of the user that will be connecting to the database.
          */
         role: string;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         */
+        sslSecretId: string;
         /**
          * (Updatable) The username that will be used to connect to the database.
          */
@@ -42094,6 +45757,17 @@ export namespace Database {
         operationsInsightsStatus: string;
     }
 
+    export interface ExternalNonContainerDatabaseStackMonitoringConfig {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+         */
+        stackMonitoringConnectorId: string;
+        /**
+         * The status of Stack Monitoring.
+         */
+        stackMonitoringStatus: string;
+    }
+
     export interface ExternalPluggableDatabaseDatabaseManagementConfig {
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
@@ -42118,6 +45792,33 @@ export namespace Database {
          * The status of Operations Insights
          */
         operationsInsightsStatus: string;
+    }
+
+    export interface ExternalPluggableDatabaseStackMonitoringConfig {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+         */
+        stackMonitoringConnectorId: string;
+        /**
+         * The status of Stack Monitoring.
+         */
+        stackMonitoringStatus: string;
+    }
+
+    export interface GetAutonomousCharacterSetsAutonomousDatabaseCharacterSet {
+        /**
+         * A valid Oracle character set.
+         */
+        name: string;
+    }
+
+    export interface GetAutonomousCharacterSetsFilter {
+        /**
+         * A valid Oracle character set.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetAutonomousContainerDatabaseBackupConfig {
@@ -42407,6 +46108,10 @@ export namespace Database {
          */
         availabilityDomain: string;
         /**
+         * Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
+         */
+        availableCpus: number;
+        /**
          * Backup options for the Autonomous Container Database.
          */
         backupConfigs: outputs.Database.GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfig[];
@@ -42498,7 +46203,15 @@ export namespace Database {
         peerDbUniqueName: string;
         protectionMode: string;
         /**
-         * The role of the dataguard enabled Autonomous Container Database.
+         * An array of CPU values that can be used to successfully provision a single Autonomous Database.
+         */
+        provisionableCpuses: number[];
+        /**
+         * CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+         */
+        reclaimableCpus: number;
+        /**
+         * The role of the Autonomous Data Guard-enabled Autonomous Container Database.
          */
         role: string;
         rotateKeyTrigger: boolean;
@@ -42518,6 +46231,10 @@ export namespace Database {
          * The date and time the Autonomous Container Database was created.
          */
         timeCreated: string;
+        /**
+         * The number of CPU cores allocated to the Autonomous VM cluster.
+         */
+        totalCpus: number;
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
          */
@@ -43056,6 +46773,25 @@ export namespace Database {
         vaultId: string;
     }
 
+    export interface GetAutonomousDatabaseLocalStandbyDb {
+        /**
+         * The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
+         */
+        lagTimeInSeconds: number;
+        /**
+         * Additional information about the current lifecycle state.
+         */
+        lifecycleDetails: string;
+        /**
+         * The current state of the Autonomous Database.
+         */
+        state: string;
+        /**
+         * The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+         */
+        timeDataGuardRoleChanged: string;
+    }
+
     export interface GetAutonomousDatabaseScheduledOperation {
         /**
          * Day of the week.
@@ -43130,6 +46866,10 @@ export namespace Database {
          * Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
          */
         backupConfigs: outputs.Database.GetAutonomousDatabasesAutonomousDatabaseBackupConfig[];
+        /**
+         * The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
+         */
+        characterSet: string;
         cloneType: string;
         /**
          * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -43236,6 +46976,10 @@ export namespace Database {
          */
         isFreeTier: boolean;
         /**
+         * Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+         */
+        isLocalDataGuardEnabled: boolean;
+        /**
          * Indicates whether the Autonomous Database requires mTLS connections.
          */
         isMtlsConnectionRequired: boolean;
@@ -43252,6 +46996,10 @@ export namespace Database {
          * Filter on the value of the resource's 'isRefreshableClone' property. A value of `true` returns only refreshable clones. A value of `false` excludes refreshable clones from the returned results. Omitting this parameter returns both refreshable clones and databases that are not refreshable clones.
          */
         isRefreshableClone: boolean;
+        /**
+         * Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+         */
+        isRemoteDataGuardEnabled: boolean;
         isShrinkOnly: boolean;
         /**
          * Key History Entry.
@@ -43286,6 +47034,10 @@ export namespace Database {
          */
         lifecycleDetails: string;
         /**
+         * Autonomous Data Guard standby database details.
+         */
+        localStandbyDbs: outputs.Database.GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDb[];
+        /**
          * The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
          */
         maxCpuCoreCount: number;
@@ -43294,8 +47046,12 @@ export namespace Database {
          */
         memoryPerOracleComputeUnitInGbs: number;
         /**
-         * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-         * * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+         * The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
+         */
+        ncharacterSet: string;
+        /**
+         * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+         * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
          */
         nsgIds: string[];
         /**
@@ -43331,6 +47087,10 @@ export namespace Database {
          */
         privateEndpointLabel: string;
         /**
+         * An array of CPU values that an Autonomous Database can be scaled to.
+         */
+        provisionableCpuses: number[];
+        /**
          * The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
          */
         refreshableMode: string;
@@ -43357,7 +47117,7 @@ export namespace Database {
          */
         sourceId: string;
         /**
-         * Autonomous Data Guard standby database details.
+         * **Deprecated** Autonomous Data Guard standby database details.
          */
         standbyDbs: outputs.Database.GetAutonomousDatabasesAutonomousDatabaseStandbyDb[];
         /**
@@ -43579,6 +47339,25 @@ export namespace Database {
         vaultId: string;
     }
 
+    export interface GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDb {
+        /**
+         * The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
+         */
+        lagTimeInSeconds: number;
+        /**
+         * Additional information about the current lifecycle state.
+         */
+        lifecycleDetails: string;
+        /**
+         * A filter to return only resources that match the given lifecycle state exactly.
+         */
+        state: string;
+        /**
+         * The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+         */
+        timeDataGuardRoleChanged: string;
+    }
+
     export interface GetAutonomousDatabasesAutonomousDatabaseScheduledOperation {
         /**
          * Day of the week.
@@ -43653,6 +47432,10 @@ export namespace Database {
          * Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
          */
         backupConfigs: outputs.Database.GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfig[];
+        /**
+         * The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
+         */
+        characterSet: string;
         /**
          * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
@@ -43750,7 +47533,7 @@ export namespace Database {
          */
         isAutoScalingForStorageEnabled: boolean;
         /**
-         * Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to  Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+         * **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
          */
         isDataGuardEnabled: boolean;
         /**
@@ -43761,6 +47544,10 @@ export namespace Database {
          * Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
          */
         isFreeTier: boolean;
+        /**
+         * Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+         */
+        isLocalDataGuardEnabled: boolean;
         /**
          * Indicates whether the Autonomous Database requires mTLS connections.
          */
@@ -43777,6 +47564,10 @@ export namespace Database {
          * Indicates whether the Autonomous Database is a refreshable clone.
          */
         isRefreshableClone: boolean;
+        /**
+         * Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+         */
+        isRemoteDataGuardEnabled: boolean;
         /**
          * Key History Entry.
          */
@@ -43810,6 +47601,10 @@ export namespace Database {
          */
         lifecycleDetails: string;
         /**
+         * Autonomous Data Guard standby database details.
+         */
+        localStandbyDbs: outputs.Database.GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDb[];
+        /**
          * The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
          */
         maxCpuCoreCount: number;
@@ -43818,8 +47613,12 @@ export namespace Database {
          */
         memoryPerOracleComputeUnitInGbs: number;
         /**
-         * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-         * * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+         * The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
+         */
+        ncharacterSet: string;
+        /**
+         * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+         * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
          */
         nsgIds: string[];
         /**
@@ -43847,6 +47646,10 @@ export namespace Database {
          */
         privateEndpointLabel: string;
         /**
+         * An array of CPU values that an Autonomous Database can be scaled to.
+         */
+        provisionableCpuses: number[];
+        /**
          * The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
          */
         refreshableMode: string;
@@ -43871,7 +47674,7 @@ export namespace Database {
          */
         sourceId: string;
         /**
-         * Autonomous Data Guard standby database details.
+         * **Deprecated** Autonomous Data Guard standby database details.
          */
         standbyDbs: outputs.Database.GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDb[];
         /**
@@ -44087,6 +47890,25 @@ export namespace Database {
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
          */
         vaultId: string;
+    }
+
+    export interface GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDb {
+        /**
+         * The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
+         */
+        lagTimeInSeconds: number;
+        /**
+         * Additional information about the current lifecycle state.
+         */
+        lifecycleDetails: string;
+        /**
+         * A filter to return only resources that match the given lifecycle state exactly.
+         */
+        state: string;
+        /**
+         * The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+         */
+        timeDataGuardRoleChanged: string;
     }
 
     export interface GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperation {
@@ -44435,8 +48257,8 @@ export namespace Database {
          */
         nextMaintenanceRunId: string;
         /**
-         * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-         * * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+         * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+         * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
          */
         nsgIds: string[];
         /**
@@ -44583,6 +48405,7 @@ export namespace Database {
     }
 
     export interface GetAutonomousVmClusterMaintenanceWindow {
+        customActionTimeoutInMins: number;
         /**
          * Days during the week when maintenance should be performed.
          */
@@ -44592,6 +48415,7 @@ export namespace Database {
          * * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
          */
         hoursOfDays: number[];
+        isCustomActionTimeoutEnabled: boolean;
         /**
          * Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
          */
@@ -44600,6 +48424,7 @@ export namespace Database {
          * Months during the year when maintenance should be performed.
          */
         months: outputs.Database.GetAutonomousVmClusterMaintenanceWindowMonth[];
+        patchingMode: string;
         /**
          * The maintenance window scheduling preference.
          */
@@ -44618,6 +48443,7 @@ export namespace Database {
     }
 
     export interface GetAutonomousVmClusterMaintenanceWindowDetail {
+        customActionTimeoutInMins: number;
         /**
          * Days during the week when maintenance should be performed.
          */
@@ -44627,6 +48453,7 @@ export namespace Database {
          * * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
          */
         hoursOfDays: number[];
+        isCustomActionTimeoutEnabled: boolean;
         /**
          * Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
          */
@@ -44635,6 +48462,7 @@ export namespace Database {
          * Months during the year when maintenance should be performed.
          */
         months: outputs.Database.GetAutonomousVmClusterMaintenanceWindowDetailMonth[];
+        patchingMode: string;
         /**
          * The maintenance window scheduling preference.
          */
@@ -44672,11 +48500,19 @@ export namespace Database {
          */
         autonomousDataStorageSizeInTbs: number;
         /**
+         * The data disk group size available for Autonomous Databases, in TBs.
+         */
+        availableAutonomousDataStorageSizeInTbs: number;
+        /**
+         * The number of Autonomous Container Databases that can be created with the currently available local storage.
+         */
+        availableContainerDatabases: number;
+        /**
          * The numnber of CPU cores available.
          */
         availableCpus: number;
         /**
-         * The data storage available in TBs
+         * **Deprecated.** Use `availableAutonomousDataStorageSizeInTBs` for Autonomous Databases' data storage availability in TBs.
          */
         availableDataStorageSizeInTbs: number;
         /**
@@ -44761,6 +48597,10 @@ export namespace Database {
          */
         ocpusEnabled: number;
         /**
+         * CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+         */
+        reclaimableCpus: number;
+        /**
          * A filter to return only resources that match the given lifecycle state exactly.
          */
         state: string;
@@ -44783,6 +48623,7 @@ export namespace Database {
     }
 
     export interface GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindow {
+        customActionTimeoutInMins: number;
         /**
          * Days during the week when maintenance should be performed.
          */
@@ -44792,6 +48633,7 @@ export namespace Database {
          * * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
          */
         hoursOfDays: number[];
+        isCustomActionTimeoutEnabled: boolean;
         /**
          * Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
          */
@@ -44800,6 +48642,7 @@ export namespace Database {
          * Months during the year when maintenance should be performed.
          */
         months: outputs.Database.GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonth[];
+        patchingMode: string;
         /**
          * The maintenance window scheduling preference.
          */
@@ -44818,6 +48661,7 @@ export namespace Database {
     }
 
     export interface GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetail {
+        customActionTimeoutInMins: number;
         /**
          * Days during the week when maintenance should be performed.
          */
@@ -44827,6 +48671,7 @@ export namespace Database {
          * * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
          */
         hoursOfDays: number[];
+        isCustomActionTimeoutEnabled: boolean;
         /**
          * Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
          */
@@ -44835,6 +48680,7 @@ export namespace Database {
          * Months during the year when maintenance should be performed.
          */
         months: outputs.Database.GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonth[];
+        patchingMode: string;
         /**
          * The maintenance window scheduling preference.
          */
@@ -45084,13 +48930,33 @@ export namespace Database {
 
     export interface GetCloudAutonomousVmClustersCloudAutonomousVmCluster {
         /**
+         * The data disk group size allocated for Autonomous Databases, in TBs.
+         */
+        autonomousDataStorageSizeInTbs: number;
+        /**
          * A filter to return only resources that match the given availability domain exactly.
          */
         availabilityDomain: string;
         /**
+         * The data disk group size available for Autonomous Databases, in TBs.
+         */
+        availableAutonomousDataStorageSizeInTbs: number;
+        /**
+         * The number of Autonomous Container Databases that can be created with the currently available local storage.
+         */
+        availableContainerDatabases: number;
+        /**
+         * CPU cores available for allocation to Autonomous Databases.
+         */
+        availableCpus: number;
+        /**
          * If provided, filters the results for the specified cloud Exadata infrastructure.
          */
         cloudExadataInfrastructureId: string;
+        /**
+         * The time zone of the Cloud Autonomous VM Cluster.
+         */
+        clusterTimeZone: string;
         /**
          * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
@@ -45107,6 +48973,10 @@ export namespace Database {
          * The total data storage allocated, in terabytes (TB).
          */
         dataStorageSizeInTbs: number;
+        /**
+         * The local node storage allocated in GBs.
+         */
+        dbNodeStorageSizeInGbs: number;
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          */
@@ -45152,6 +49022,10 @@ export namespace Database {
          */
         lifecycleDetails: string;
         /**
+         * The amount of memory (in GBs) enabled per each OCPU core.
+         */
+        memoryPerOracleComputeUnitInGbs: number;
+        /**
          * The memory allocated in GBs.
          */
         memorySizeInGbs: number;
@@ -45164,14 +49038,18 @@ export namespace Database {
          */
         nodeCount: number;
         /**
-         * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-         * * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+         * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+         * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
          */
         nsgIds: string[];
         /**
          * The number of CPU cores enabled on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
          */
         ocpuCount: number;
+        /**
+         * CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+         */
+        reclaimableCpus: number;
         rotateOrdsCertsTrigger: boolean;
         rotateSslCertsTrigger: boolean;
         /**
@@ -45194,6 +49072,10 @@ export namespace Database {
          * The last date and time that the cloud Autonomous VM cluster was updated.
          */
         timeUpdated: string;
+        /**
+         * The total number of Autonomous Container Databases that can be created with the allocated local storage.
+         */
+        totalContainerDatabases: number;
     }
 
     export interface GetCloudAutonomousVmClustersFilter {
@@ -45408,6 +49290,13 @@ export namespace Database {
         values: string[];
     }
 
+    export interface GetCloudVmClusterDataCollectionOption {
+        /**
+         * Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+         */
+        isDiagnosticsEventsEnabled: boolean;
+    }
+
     export interface GetCloudVmClusterIormConfigCach {
         /**
          * An array of IORM settings for all the database in the Exadata DB system.
@@ -45488,6 +49377,10 @@ export namespace Database {
         cpuCoreCount: number;
         createAsync: boolean;
         /**
+         * Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+         */
+        dataCollectionOptions: outputs.Database.GetCloudVmClustersCloudVmClusterDataCollectionOption[];
+        /**
          * The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
          */
         dataStoragePercentage: number;
@@ -45553,8 +49446,8 @@ export namespace Database {
          */
         nodeCount: number;
         /**
-         * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-         * * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+         * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+         * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
          */
         nsgIds: string[];
         /**
@@ -45623,6 +49516,13 @@ export namespace Database {
         zoneId: string;
     }
 
+    export interface GetCloudVmClustersCloudVmClusterDataCollectionOption {
+        /**
+         * Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+         */
+        isDiagnosticsEventsEnabled: boolean;
+    }
+
     export interface GetCloudVmClustersCloudVmClusterIormConfigCach {
         dbPlans: outputs.Database.GetCloudVmClustersCloudVmClusterIormConfigCachDbPlan[];
         /**
@@ -45659,16 +49559,22 @@ export namespace Database {
         applyRate: string;
         availabilityDomain: string;
         backupNetworkNsgIds: string[];
+        cpuCoreCount: number;
         createAsync: boolean;
         creationType: string;
         databaseAdminPassword: string;
+        databaseDefinedTags: {[key: string]: any};
+        databaseFreeformTags: {[key: string]: any};
         /**
          * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         databaseId: string;
         databaseSoftwareImageId: string;
+        dbSystemDefinedTags: {[key: string]: any};
+        dbSystemFreeformTags: {[key: string]: any};
         deleteStandbyDbHomeOnDelete: string;
         displayName: string;
+        faultDomains: string[];
         hostname: string;
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Data Guard association.
@@ -45678,10 +49584,12 @@ export namespace Database {
          * True if active Data Guard is enabled.
          */
         isActiveDataGuardEnabled: boolean;
+        licenseModel: string;
         /**
          * Additional information about the current lifecycleState, if available.
          */
         lifecycleDetails: string;
+        nodeCount: number;
         nsgIds: string[];
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer database's Data Guard association.
@@ -45706,6 +49614,7 @@ export namespace Database {
         peerRole: string;
         peerSidPrefix: string;
         peerVmClusterId: string;
+        privateIp: string;
         /**
          * The protection mode of this Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
          */
@@ -45719,11 +49628,13 @@ export namespace Database {
          * The current state of the Data Guard association.
          */
         state: string;
+        storageVolumePerformanceMode: string;
         subnetId: string;
         /**
          * The date and time the Data Guard association was created.
          */
         timeCreated: string;
+        timeZone: string;
         /**
          * The redo transport type used by this Data Guard association.  For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
          */
@@ -45999,7 +49910,7 @@ export namespace Database {
          */
         lifecycleDetails: string;
         /**
-         * output from lsinventory which will get passed as a string
+         * The output from the OPatch lsInventory command, which is passed as a string.
          */
         lsInventory: string;
         /**
@@ -46704,7 +50615,7 @@ export namespace Database {
          */
         additionalDetails: string;
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IP address associated with the database node.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IP address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
          */
         backupIpId: string;
         /**
@@ -46737,7 +50648,7 @@ export namespace Database {
          */
         faultDomain: string;
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node. Use this OCID with either the  [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
          */
         hostIpId: string;
         /**
@@ -46911,6 +50822,46 @@ export namespace Database {
         values: string[];
     }
 
+    export interface GetDbSystemComputePerformancesDbSystemComputePerformance {
+        /**
+         * List of Compute performance details for the specified DB system shape.
+         */
+        computePerformanceLists: outputs.Database.GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList[];
+        /**
+         * The shape of the DB system.
+         */
+        shape: string;
+    }
+
+    export interface GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList {
+        /**
+         * The number of OCPU cores available.
+         */
+        cpuCoreCount: number;
+        /**
+         * The amount of memory allocated for the VMDB System.
+         */
+        memoryInGbs: number;
+        /**
+         * The network bandwidth of the VMDB system in gbps.
+         */
+        networkBandwidthInGbps: number;
+        /**
+         * IOPS for the VMDB System.
+         */
+        networkIops: number;
+        /**
+         * Network throughput for the VMDB System.
+         */
+        networkThroughputInMbps: number;
+    }
+
+    export interface GetDbSystemComputePerformancesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
     export interface GetDbSystemHistoryEntriesFilter {
         name: string;
         regex?: boolean;
@@ -47076,12 +51027,111 @@ export namespace Database {
          * The family of the shape used for the DB system.
          */
         shapeFamily: string;
+        /**
+         * The shape type for the virtual machine DB system. Shape type is determined by CPU hardware. Valid values are `AMD` and `INTEL`.
+         */
+        shapeType: string;
     }
 
     export interface GetDbSystemShapesFilter {
         /**
          * The name of the shape used for the DB system.
          */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDbSystemStoragePerformancesDbSystemStoragePerformance {
+        /**
+         * List of storage performance for the DATA disks
+         */
+        dataStoragePerformanceLists: outputs.Database.GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceList[];
+        /**
+         * List of storage performance for the RECO disks
+         */
+        recoStoragePerformanceLists: outputs.Database.GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceList[];
+        /**
+         * Optional. Filters the performance results by shape type.
+         */
+        shapeType: string;
+    }
+
+    export interface GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceList {
+        /**
+         * Representation of disk performance detail parameters.
+         */
+        balancedDiskPerformances: outputs.Database.GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformance[];
+        /**
+         * Representation of disk performance detail parameters.
+         */
+        highDiskPerformances: outputs.Database.GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformance[];
+        /**
+         * Size in GBs.
+         */
+        sizeInGbs: number;
+    }
+
+    export interface GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformance {
+        /**
+         * Disk IOPS in thousands.
+         */
+        diskIops: number;
+        /**
+         * Disk Throughput in Mbps.
+         */
+        diskThroughputInMbps: number;
+    }
+
+    export interface GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformance {
+        /**
+         * Disk IOPS in thousands.
+         */
+        diskIops: number;
+        /**
+         * Disk Throughput in Mbps.
+         */
+        diskThroughputInMbps: number;
+    }
+
+    export interface GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceList {
+        /**
+         * Representation of disk performance detail parameters.
+         */
+        balancedDiskPerformances: outputs.Database.GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformance[];
+        /**
+         * Representation of disk performance detail parameters.
+         */
+        highDiskPerformances: outputs.Database.GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformance[];
+        /**
+         * Size in GBs.
+         */
+        sizeInGbs: number;
+    }
+
+    export interface GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformance {
+        /**
+         * Disk IOPS in thousands.
+         */
+        diskIops: number;
+        /**
+         * Disk Throughput in Mbps.
+         */
+        diskThroughputInMbps: number;
+    }
+
+    export interface GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformance {
+        /**
+         * Disk IOPS in thousands.
+         */
+        diskIops: number;
+        /**
+         * Disk Throughput in Mbps.
+         */
+        diskThroughputInMbps: number;
+    }
+
+    export interface GetDbSystemStoragePerformancesFilter {
         name: string;
         regex?: boolean;
         values: string[];
@@ -47193,6 +51243,10 @@ export namespace Database {
          */
         maintenanceWindows: outputs.Database.GetDbSystemsDbSystemMaintenanceWindow[];
         /**
+         * Memory allocated to the DB system, in gigabytes.
+         */
+        memorySizeInGbs: number;
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
          */
         nextMaintenanceRunId: string;
@@ -47201,8 +51255,8 @@ export namespace Database {
          */
         nodeCount: number;
         /**
-         * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-         * * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+         * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+         * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
          */
         nsgIds: string[];
         /**
@@ -47249,6 +51303,10 @@ export namespace Database {
          * A filter to return only resources that match the given lifecycle state exactly.
          */
         state: string;
+        /**
+         * The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
+         */
+        storageVolumePerformanceMode: string;
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
          */
@@ -47532,6 +51590,51 @@ export namespace Database {
         values: string[];
     }
 
+    export interface GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry {
+        /**
+         * The operating system upgrade action.
+         */
+        action: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the upgrade history entry.
+         */
+        id: string;
+        /**
+         * A descriptive text associated with the lifecycleState. Typically contains additional displayable text.
+         */
+        lifecycleDetails: string;
+        /**
+         * A valid Oracle Grid Infrastructure (GI) software version.
+         */
+        newGiVersion: string;
+        /**
+         * A valid Oracle Grid Infrastructure (GI) software version.
+         */
+        oldGiVersion: string;
+        /**
+         * The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
+         */
+        snapshotRetentionPeriodInDays: number;
+        /**
+         * A filter to return only upgrade history entries that match the given lifecycle state exactly.
+         */
+        state: string;
+        /**
+         * The date and time when the upgrade action completed
+         */
+        timeEnded: string;
+        /**
+         * The date and time when the upgrade action started.
+         */
+        timeStarted: string;
+    }
+
+    export interface GetDbSystemsUpgradeHistoryEntriesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
     export interface GetDbVersionsDbVersion {
         /**
          * True if this version of the Oracle Database software is the latest version for a release.
@@ -47726,6 +51829,10 @@ export namespace Database {
          */
         infiniBandNetworkCidr: string;
         /**
+         * Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
+         */
+        isCpsOfflineReportEnabled: boolean;
+        /**
          * Additional information about the current lifecycle state.
          */
         lifecycleDetails: string;
@@ -47907,6 +52014,17 @@ export namespace Database {
         licenseModel: string;
     }
 
+    export interface GetExternalContainerDatabaseStackMonitoringConfig {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+         */
+        stackMonitoringConnectorId: string;
+        /**
+         * The status of Stack Monitoring.
+         */
+        stackMonitoringStatus: string;
+    }
+
     export interface GetExternalContainerDatabasesExternalContainerDatabase {
         /**
          * The character set of the external database.
@@ -47969,6 +52087,10 @@ export namespace Database {
          */
         ncharacterSet: string;
         /**
+         * The configuration of Stack Monitoring for the external database.
+         */
+        stackMonitoringConfigs: outputs.Database.GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfig[];
+        /**
          * A filter to return only resources that match the specified lifecycle state.
          */
         state: string;
@@ -47997,6 +52119,17 @@ export namespace Database {
         licenseModel: string;
     }
 
+    export interface GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfig {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+         */
+        stackMonitoringConnectorId: string;
+        /**
+         * The status of Stack Monitoring.
+         */
+        stackMonitoringStatus: string;
+    }
+
     export interface GetExternalContainerDatabasesFilter {
         name: string;
         regex?: boolean;
@@ -48020,6 +52153,10 @@ export namespace Database {
          * The role of the user that will be connecting to the database.
          */
         role: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         */
+        sslSecretId: string;
         /**
          * The username that will be used to connect to the database.
          */
@@ -48126,6 +52263,10 @@ export namespace Database {
          */
         role: string;
         /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         */
+        sslSecretId: string;
+        /**
          * The username that will be used to connect to the database.
          */
         username: string;
@@ -48180,6 +52321,17 @@ export namespace Database {
          * The status of Operations Insights
          */
         operationsInsightsStatus: string;
+    }
+
+    export interface GetExternalNonContainerDatabaseStackMonitoringConfig {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+         */
+        stackMonitoringConnectorId: string;
+        /**
+         * The status of Stack Monitoring.
+         */
+        stackMonitoringStatus: string;
     }
 
     export interface GetExternalNonContainerDatabasesExternalNonContainerDatabase {
@@ -48248,6 +52400,10 @@ export namespace Database {
          */
         operationsInsightsConfigs: outputs.Database.GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfig[];
         /**
+         * The configuration of Stack Monitoring for the external database.
+         */
+        stackMonitoringConfigs: outputs.Database.GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfig[];
+        /**
          * A filter to return only resources that match the specified lifecycle state.
          */
         state: string;
@@ -48287,6 +52443,17 @@ export namespace Database {
         operationsInsightsStatus: string;
     }
 
+    export interface GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfig {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+         */
+        stackMonitoringConnectorId: string;
+        /**
+         * The status of Stack Monitoring.
+         */
+        stackMonitoringStatus: string;
+    }
+
     export interface GetExternalNonContainerDatabasesFilter {
         name: string;
         regex?: boolean;
@@ -48317,6 +52484,17 @@ export namespace Database {
          * The status of Operations Insights
          */
         operationsInsightsStatus: string;
+    }
+
+    export interface GetExternalPluggableDatabaseStackMonitoringConfig {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+         */
+        stackMonitoringConnectorId: string;
+        /**
+         * The status of Stack Monitoring.
+         */
+        stackMonitoringStatus: string;
     }
 
     export interface GetExternalPluggableDatabasesExternalPluggableDatabase {
@@ -48393,6 +52571,10 @@ export namespace Database {
          */
         sourceId: string;
         /**
+         * The configuration of Stack Monitoring for the external database.
+         */
+        stackMonitoringConfigs: outputs.Database.GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig[];
+        /**
          * A filter to return only resources that match the specified lifecycle state.
          */
         state: string;
@@ -48430,6 +52612,17 @@ export namespace Database {
          * The status of Operations Insights
          */
         operationsInsightsStatus: string;
+    }
+
+    export interface GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+         */
+        stackMonitoringConnectorId: string;
+        /**
+         * The status of Stack Monitoring.
+         */
+        stackMonitoringStatus: string;
     }
 
     export interface GetExternalPluggableDatabasesFilter {
@@ -48851,6 +53044,13 @@ export namespace Database {
          * An IP-based PDB connection string.
          */
         pdbIpDefault: string;
+    }
+
+    export interface GetVmClusterDataCollectionOption {
+        /**
+         * Indicates whether diagnostic collection is enabled for the VM cluster. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+         */
+        isDiagnosticsEventsEnabled: boolean;
     }
 
     export interface GetVmClusterNetworkScan {
@@ -49337,6 +53537,10 @@ export namespace Database {
          * The number of enabled CPU cores.
          */
         cpusEnabled: number;
+        /**
+         * Indicates user preferences for the various diagnostic collection options for the VM cluster.
+         */
+        dataCollectionOptions: outputs.Database.GetVmClustersVmClusterDataCollectionOption[];
         dataStorageSizeInGb: number;
         /**
          * Size, in terabytes, of the DATA disk group.
@@ -49428,6 +53632,13 @@ export namespace Database {
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
          */
         vmClusterNetworkId: string;
+    }
+
+    export interface GetVmClustersVmClusterDataCollectionOption {
+        /**
+         * Indicates whether diagnostic collection is enabled for the VM cluster. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+         */
+        isDiagnosticsEventsEnabled: boolean;
     }
 
     export interface KeyStoreAssociatedDatabase {
@@ -49528,11 +53739,25 @@ export namespace Database {
         pdbIpDefault: string;
     }
 
+    export interface VmClusterAddVirtualNetworkDataCollectionOption {
+        /**
+         * Indicates whether diagnostic collection is enabled for the VM cluster. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+         */
+        isDiagnosticsEventsEnabled: boolean;
+    }
+
     export interface VmClusterAddVirtualNetworkDbServer {
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exacc Db server.
          */
         dbServerId: string;
+    }
+
+    export interface VmClusterDataCollectionOptions {
+        /**
+         * (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+         */
+        isDiagnosticsEventsEnabled: boolean;
     }
 
     export interface VmClusterNetworkScan {
@@ -49602,6 +53827,13 @@ export namespace Database {
          * (Updatable) The node virtual IP (VIP) host name.
          */
         vipHostname: string;
+    }
+
+    export interface VmClusterRemoveVirtualMachineDataCollectionOption {
+        /**
+         * Indicates whether diagnostic collection is enabled for the VM cluster. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+         */
+        isDiagnosticsEventsEnabled: boolean;
     }
 
     export interface VmClusterRemoveVirtualMachineDbServer {
@@ -49764,6 +53996,191 @@ export namespace DatabaseManagement {
          * The status of the job execution.
          */
         status: string;
+    }
+
+    export interface GetManagedDatabaseAddmTaskItem {
+        /**
+         * The ID number of the beginning AWR snapshot.
+         */
+        beginSnapshotId: string;
+        /**
+         * The database user who owns the ADDM task.
+         */
+        dbUser: string;
+        /**
+         * The description of the ADDM task.
+         */
+        description: string;
+        /**
+         * The ID number of the ending AWR snapshot.
+         */
+        endSnapshotId: string;
+        /**
+         * The timestamp of the ending AWR snapshot used in the ADDM task as defined by date-time RFC3339 format.
+         */
+        endSnapshotTime: string;
+        /**
+         * The number of ADDM findings.
+         */
+        findings: string;
+        /**
+         * A description of how the task was created.
+         */
+        howCreated: string;
+        /**
+         * The timestamp of the beginning AWR snapshot used in the ADDM task as defined by date-time RFC3339 format.
+         */
+        startSnapshotTime: string;
+        /**
+         * The status of the ADDM task.
+         */
+        status: string;
+        /**
+         * The ID number of the ADDM task.
+         */
+        taskId: string;
+        /**
+         * The name of the ADDM task.
+         */
+        taskName: string;
+        /**
+         * The creation date of the ADDM task.
+         */
+        timeCreated: string;
+    }
+
+    export interface GetManagedDatabaseAddmTasksAddmTasksCollection {
+        /**
+         * The list of ADDM task metadata.
+         */
+        items: outputs.DatabaseManagement.GetManagedDatabaseAddmTasksAddmTasksCollectionItem[];
+    }
+
+    export interface GetManagedDatabaseAddmTasksAddmTasksCollectionItem {
+        /**
+         * The ID number of the beginning AWR snapshot.
+         */
+        beginSnapshotId: string;
+        /**
+         * The database user who owns the ADDM task.
+         */
+        dbUser: string;
+        /**
+         * The description of the ADDM task.
+         */
+        description: string;
+        /**
+         * The ID number of the ending AWR snapshot.
+         */
+        endSnapshotId: string;
+        /**
+         * The timestamp of the ending AWR snapshot used in the ADDM task as defined by date-time RFC3339 format.
+         */
+        endSnapshotTime: string;
+        /**
+         * The number of ADDM findings.
+         */
+        findings: string;
+        /**
+         * A description of how the task was created.
+         */
+        howCreated: string;
+        /**
+         * The timestamp of the beginning AWR snapshot used in the ADDM task as defined by date-time RFC3339 format.
+         */
+        startSnapshotTime: string;
+        /**
+         * The status of the ADDM task.
+         */
+        status: string;
+        /**
+         * The ID number of the ADDM task.
+         */
+        taskId: string;
+        /**
+         * The name of the ADDM task.
+         */
+        taskName: string;
+        /**
+         * The creation date of the ADDM task.
+         */
+        timeCreated: string;
+    }
+
+    export interface GetManagedDatabaseAddmTasksFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetManagedDatabaseAlertLogCountItem {
+        /**
+         * The category of different alert logs.
+         */
+        category: string;
+        /**
+         * The count of alert logs with specific category.
+         */
+        count: number;
+    }
+
+    export interface GetManagedDatabaseAlertLogCountsAlertLogCountsCollection {
+        /**
+         * An array of the counts of different urgency or type of alert logs.
+         */
+        items: outputs.DatabaseManagement.GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItem[];
+    }
+
+    export interface GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItem {
+        /**
+         * The category of different alert logs.
+         */
+        category: string;
+        /**
+         * The count of alert logs with specific category.
+         */
+        count: number;
+    }
+
+    export interface GetManagedDatabaseAlertLogCountsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetManagedDatabaseAttentionLogCountItem {
+        /**
+         * The category of different attention logs.
+         */
+        category: string;
+        /**
+         * The count of attention logs with specific category.
+         */
+        count: number;
+    }
+
+    export interface GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollection {
+        /**
+         * An array of the counts of different urgency or type of attention logs.
+         */
+        items: outputs.DatabaseManagement.GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItem[];
+    }
+
+    export interface GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItem {
+        /**
+         * The category of different attention logs.
+         */
+        category: string;
+        /**
+         * The count of attention logs with specific category.
+         */
+        count: number;
+    }
+
+    export interface GetManagedDatabaseAttentionLogCountsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetManagedDatabaseGroupManagedDatabase {
@@ -50158,6 +54575,10 @@ export namespace DatabaseManagement {
          */
         implementActionSql: string;
         /**
+         * Indicates whether a SQL Profile recommendation uses parallel execution.
+         */
+        isParallelExecution: boolean;
+        /**
          * Describes the reasoning behind the recommendation and how it relates to the finding.
          */
         rationale: string;
@@ -50209,6 +54630,10 @@ export namespace DatabaseManagement {
          * Action sql to be implemented based on the recommendation result.
          */
         implementActionSql: string;
+        /**
+         * Indicates whether a SQL Profile recommendation uses parallel execution.
+         */
+        isParallelExecution: boolean;
         /**
          * Describes the reasoning behind the recommendation and how it relates to the finding.
          */
@@ -50581,6 +55006,60 @@ export namespace DatabaseManagement {
         timeStarted: string;
     }
 
+    export interface GetManagedDatabaseSqlTuningSetItem {
+        /**
+         * The description of the SQL tuning set.
+         */
+        description: string;
+        /**
+         * The name of the SQL tuning set.
+         */
+        name: string;
+        /**
+         * The owner of the SQL tuning set.
+         */
+        owner: string;
+        /**
+         * The number of SQL statements in the SQL tuning set.
+         */
+        statementCounts: number;
+    }
+
+    export interface GetManagedDatabaseSqlTuningSetsFilter {
+        /**
+         * The name of the SQL tuning set.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetManagedDatabaseSqlTuningSetsSqlTuningSetCollection {
+        /**
+         * The details in the SQL tuning set summary.
+         */
+        items: outputs.DatabaseManagement.GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem[];
+    }
+
+    export interface GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem {
+        /**
+         * The description of the SQL tuning set.
+         */
+        description: string;
+        /**
+         * The name of the SQL tuning set.
+         */
+        name: string;
+        /**
+         * The owner of the SQL tuning set.
+         */
+        owner: string;
+        /**
+         * The number of SQL statements in the SQL tuning set.
+         */
+        statementCounts: number;
+    }
+
     export interface GetManagedDatabaseUserConsumerGroupPrivilegeItem {
         /**
          * Indicates whether the privilege is granted with the GRANT option (YES) or not (NO).
@@ -50942,7 +55421,7 @@ export namespace DatabaseManagement {
          */
         passwordVersions: string;
         /**
-         * The User resource profile name.
+         * The profile name of the user.
          */
         profile: string;
         /**
@@ -50970,7 +55449,7 @@ export namespace DatabaseManagement {
          */
         timeLastLogin: string;
         /**
-         * The date the account was locked if account status was LOCKED.
+         * The date the account was locked, if the status of the account is LOCKED.
          */
         timeLocked: string;
         /**
@@ -53404,7 +57883,7 @@ export namespace DatabaseTools {
 
     export interface GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem {
         /**
-         * Advanced connection properties key-value pair (e.g., oracle.net.ssl_server_dn_match).
+         * The advanced connection properties key-value pair (for example, `oracle.net.ssl_server_dn_match`).
          */
         advancedProperties: {[key: string]: any};
         /**
@@ -53412,7 +57891,7 @@ export namespace DatabaseTools {
          */
         compartmentId: string;
         /**
-         * Connect descriptor or Easy Connect Naming method to connect to the database.
+         * The connect descriptor or Easy Connect Naming method used to connect to the database.
          */
         connectionString: string;
         /**
@@ -53420,7 +57899,7 @@ export namespace DatabaseTools {
          */
         definedTags: {[key: string]: any};
         /**
-         * A filter to return only resources that match the entire display name given.
+         * A filter to return only resources that match the entire specified display name.
          */
         displayName: string;
         /**
@@ -53428,19 +57907,19 @@ export namespace DatabaseTools {
          */
         freeformTags: {[key: string]: any};
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsConnection.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools connection.
          */
         id: string;
         /**
-         * Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
+         * The Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
          */
         keyStores: outputs.DatabaseTools.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStore[];
         /**
-         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         * A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
          */
         lifecycleDetails: string;
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsPrivateEndpoint used to access the database in the Customer VCN.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
          */
         privateEndpointId: string;
         /**
@@ -53448,7 +57927,7 @@ export namespace DatabaseTools {
          */
         relatedResources: outputs.DatabaseTools.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResource[];
         /**
-         * A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
          */
         state: string;
         /**
@@ -53456,19 +57935,19 @@ export namespace DatabaseTools {
          */
         systemTags: {[key: string]: any};
         /**
-         * The time the DatabaseToolsConnection was created. An RFC3339 formatted datetime string
+         * The time the Database Tools connection was created. An RFC3339 formatted datetime string.
          */
         timeCreated: string;
         /**
-         * The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string
+         * The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
          */
         timeUpdated: string;
         /**
-         * A filter to return only resources their endpointServiceId matches the given endpointServiceId.
+         * A filter to return only resources their type matches the specified type.
          */
         type: string;
         /**
-         * Database user name.
+         * The database user name.
          */
         userName: string;
         /**
@@ -53556,11 +58035,11 @@ export namespace DatabaseTools {
          */
         definedTags: {[key: string]: any};
         /**
-         * A description of the DatabaseToolsEndpointService.
+         * A description of the Database Tools Endpoint Service.
          */
         description: string;
         /**
-         * A filter to return only resources that match the entire display name given.
+         * A filter to return only resources that match the entire specified display name.
          */
         displayName: string;
         /**
@@ -53568,7 +58047,7 @@ export namespace DatabaseTools {
          */
         freeformTags: {[key: string]: any};
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsEndpointService.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Endpoint Service.
          */
         id: string;
         /**
@@ -53576,11 +58055,11 @@ export namespace DatabaseTools {
          */
         lifecycleDetails: string;
         /**
-         * A filter to return only resources that match the entire name given.
+         * A filter to return only resources that match the entire specified name.
          */
         name: string;
         /**
-         * A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
          */
         state: string;
         /**
@@ -53588,18 +58067,18 @@ export namespace DatabaseTools {
          */
         systemTags: {[key: string]: any};
         /**
-         * The time the DatabaseToolsEndpointService was created. An RFC3339 formatted datetime string
+         * The time the Database Tools Endpoint Service was created. An RFC3339 formatted datetime string
          */
         timeCreated: string;
         /**
-         * The time the DatabaseToolsEndpointService was updated. An RFC3339 formatted datetime string
+         * The time the Database Tools Endpoint Service was updated. An RFC3339 formatted datetime string
          */
         timeUpdated: string;
     }
 
     export interface GetDatabaseToolsEndpointServicesFilter {
         /**
-         * A filter to return only resources that match the entire name given.
+         * A filter to return only resources that match the entire specified name.
          */
         name: string;
         regex?: boolean;
@@ -53638,11 +58117,11 @@ export namespace DatabaseTools {
          */
         definedTags: {[key: string]: any};
         /**
-         * A description of the DatabaseToolsPrivateEndpoint.
+         * A description of the Database Tools private endpoint.
          */
         description: string;
         /**
-         * A filter to return only resources that match the entire display name given.
+         * A filter to return only resources that match the entire specified display name.
          */
         displayName: string;
         /**
@@ -53650,7 +58129,7 @@ export namespace DatabaseTools {
          */
         endpointFqdn: string;
         /**
-         * A filter to return only resources their type matches the given type.
+         * A filter to return only resources their `endpointServiceId` matches the specified `endpointServiceId`.
          */
         endpointServiceId: string;
         /**
@@ -53658,7 +58137,7 @@ export namespace DatabaseTools {
          */
         freeformTags: {[key: string]: any};
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsPrivateEndpoint.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint.
          */
         id: string;
         /**
@@ -53678,15 +58157,15 @@ export namespace DatabaseTools {
          */
         privateEndpointVnicId: string;
         /**
-         * Reverse connection configuration details of Private Endpoint.
+         * Reverse connection configuration details of the private endpoint.
          */
         reverseConnectionConfigurations: outputs.DatabaseTools.GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfiguration[];
         /**
-         * A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
          */
         state: string;
         /**
-         * A filter to return only resources their subnetId matches the given subnetId.
+         * A filter to return only resources their `subnetId` matches the specified `subnetId`.
          */
         subnetId: string;
         /**
@@ -53694,11 +58173,11 @@ export namespace DatabaseTools {
          */
         systemTags: {[key: string]: any};
         /**
-         * The time the DatabaseToolsPrivateEndpoint was created. An RFC3339 formatted datetime string
+         * The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
          */
         timeCreated: string;
         /**
-         * The time the DatabaseToolsPrivateEndpoint was updated. An RFC3339 formatted datetime string
+         * The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
          */
         timeUpdated: string;
         /**
@@ -53779,7 +58258,7 @@ export namespace DevOps {
          */
         branch: string;
         /**
-         * (Updatable) Connection identifier pertinent to GitHub source provider.
+         * (Updatable) Connection identifier pertinent to Bitbucket Cloud source provider
          */
         connectionId: string;
         /**
@@ -53842,6 +58321,10 @@ export namespace DevOps {
          * Specifies list of exported variables.
          */
         exportedVariables: outputs.DevOps.BuildRunBuildOutputExportedVariable[];
+        /**
+         * List of vulnerability audit summary.
+         */
+        vulnerabilityAuditSummaryCollections: outputs.DevOps.BuildRunBuildOutputVulnerabilityAuditSummaryCollection[];
     }
 
     export interface BuildRunBuildOutputArtifactOverrideParameter {
@@ -53928,6 +58411,28 @@ export namespace DevOps {
          * Value of the argument.
          */
         value: string;
+    }
+
+    export interface BuildRunBuildOutputVulnerabilityAuditSummaryCollection {
+        /**
+         * List of arguments provided at the time of running the build.
+         */
+        items: outputs.DevOps.BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItem[];
+    }
+
+    export interface BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItem {
+        /**
+         * Build stage OCID where scan was configured.
+         */
+        buildStageId: string;
+        /**
+         * Commit hash pertinent to the repository URL and the specified branch.
+         */
+        commitHash: string;
+        /**
+         * The OCID of the vulnerability audit.
+         */
+        vulnerabilityAuditId: string;
     }
 
     export interface BuildRunBuildRunArguments {
@@ -54051,9 +58556,13 @@ export namespace DevOps {
 
     export interface DeployArtifactDeployArtifactSource {
         /**
-         * (Updatable) base64 Encoded String
+         * (Updatable) Specifies content for the inline artifact.
          */
         base64encodedContent: string;
+        /**
+         * (Updatable) The URL of an OCIR repository.
+         */
+        chartUrl: string;
         /**
          * (Updatable) Specifies the artifact path in the repository.
          */
@@ -54593,7 +59102,7 @@ export namespace DevOps {
          */
         branch: string;
         /**
-         * Connection identifier pertinent to GitHub source provider.
+         * Connection identifier pertinent to Bitbucket Cloud source provider
          */
         connectionId: string;
         /**
@@ -54780,7 +59289,7 @@ export namespace DevOps {
          */
         branch: string;
         /**
-         * Connection identifier pertinent to GitHub source provider.
+         * Connection identifier pertinent to Bitbucket Cloud source provider
          */
         connectionId: string;
         /**
@@ -54945,6 +59454,10 @@ export namespace DevOps {
          * Specifies list of exported variables.
          */
         exportedVariables: outputs.DevOps.GetBuildRunBuildOutputExportedVariable[];
+        /**
+         * List of vulnerability audit summary.
+         */
+        vulnerabilityAuditSummaryCollections: outputs.DevOps.GetBuildRunBuildOutputVulnerabilityAuditSummaryCollection[];
     }
 
     export interface GetBuildRunBuildOutputArtifactOverrideParameter {
@@ -55031,6 +59544,28 @@ export namespace DevOps {
          * Value of the argument.
          */
         value: string;
+    }
+
+    export interface GetBuildRunBuildOutputVulnerabilityAuditSummaryCollection {
+        /**
+         * List of exported variables.
+         */
+        items: outputs.DevOps.GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItem[];
+    }
+
+    export interface GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItem {
+        /**
+         * Build stage OCID where scan was configured.
+         */
+        buildStageId: string;
+        /**
+         * Commit hash pertinent to the repository URL and the specified branch.
+         */
+        commitHash: string;
+        /**
+         * The OCID of the vulnerability audit.
+         */
+        vulnerabilityAuditId: string;
     }
 
     export interface GetBuildRunBuildRunArgument {
@@ -55357,6 +59892,10 @@ export namespace DevOps {
          */
         accessToken: string;
         /**
+         * OCID of personal Bitbucket Cloud AppPassword saved in secret store
+         */
+        appPassword: string;
+        /**
          * The OCID of the compartment in which to list resources.
          */
         compartmentId: string;
@@ -55404,6 +59943,10 @@ export namespace DevOps {
          * The time the connection was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
          */
         timeUpdated: string;
+        /**
+         * Public Bitbucket Cloud Username in plain text
+         */
+        username: string;
     }
 
     export interface GetConnectionsFilter {
@@ -55414,9 +59957,13 @@ export namespace DevOps {
 
     export interface GetDeployArtifactDeployArtifactSource {
         /**
-         * base64 Encoded String
+         * Specifies content for the inline artifact.
          */
         base64encodedContent: string;
+        /**
+         * The URL of an OCIR repository.
+         */
+        chartUrl: string;
         /**
          * Specifies the artifact path in the repository.
          */
@@ -55512,9 +60059,13 @@ export namespace DevOps {
 
     export interface GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSource {
         /**
-         * base64 Encoded String
+         * Specifies content for the inline artifact.
          */
         base64encodedContent: string;
+        /**
+         * The URL of an OCIR repository.
+         */
+        chartUrl: string;
         /**
          * Specifies the artifact path in the repository.
          */
@@ -56299,6 +60850,10 @@ export namespace DevOps {
          */
         greenBackendIps: outputs.DevOps.GetDeployStagesDeployStageCollectionItemGreenBackendIp[];
         /**
+         * Helm chart artifact OCID.
+         */
+        helmChartDeployArtifactId: string;
+        /**
          * Unique identifier or OCID for listing a single resource by ID.
          */
         id: string;
@@ -56355,6 +60910,10 @@ export namespace DevOps {
          */
         projectId: string;
         /**
+         * Release name of the Helm chart.
+         */
+        releaseName: string;
+        /**
          * Specifies the rollback policy. This is initiated on the failure of certain stage types.
          */
         rollbackPolicies: outputs.DevOps.GetDeployStagesDeployStageCollectionItemRollbackPolicy[];
@@ -56383,9 +60942,17 @@ export namespace DevOps {
          */
         timeUpdated: string;
         /**
+         * Time to wait for execution of a helm stage. Defaults to 300 seconds.
+         */
+        timeoutInSeconds: number;
+        /**
          * Specifies the target or destination backend set.
          */
         trafficShiftTarget: string;
+        /**
+         * List of values.yaml file artifact OCIDs.
+         */
+        valuesArtifactIds: string[];
         /**
          * Specifies wait criteria for the Wait stage.
          */
@@ -57033,6 +61600,17 @@ export namespace DevOps {
          * The topic ID for notifications.
          */
         topicId: string;
+    }
+
+    export interface GetRepoFileLineLine {
+        /**
+         * The content of the line.
+         */
+        lineContent: string;
+        /**
+         * The line number.
+         */
+        lineNumber: number;
     }
 
     export interface GetRepositoriesFilter {
@@ -57693,7 +62271,7 @@ export namespace DevOps {
          */
         includes: outputs.DevOps.GetTriggerActionFilterInclude[];
         /**
-         * Source of the trigger. Allowed values are, GITHUB, GITLAB and DEVOPS_CODE_REPOSITORY.
+         * Source of the trigger. Allowed values are, GITHUB and GITLAB.
          */
         triggerSource: string;
     }
@@ -57777,7 +62355,7 @@ export namespace DevOps {
          */
         timeUpdated: string;
         /**
-         * Source of the trigger. Allowed values are, GITHUB, GITLAB and DEVOPS_CODE_REPOSITORY.
+         * Source of the trigger. Allowed values are, GITHUB and GITLAB.
          */
         triggerSource: string;
         /**
@@ -57811,7 +62389,7 @@ export namespace DevOps {
          */
         includes: outputs.DevOps.GetTriggersTriggerCollectionItemActionFilterInclude[];
         /**
-         * Source of the trigger. Allowed values are, GITHUB, GITLAB and DEVOPS_CODE_REPOSITORY.
+         * Source of the trigger. Allowed values are, GITHUB and GITLAB.
          */
         triggerSource: string;
     }
@@ -57885,7 +62463,7 @@ export namespace DevOps {
          */
         include: outputs.DevOps.TriggerActionFilterInclude;
         /**
-         * (Updatable) Source of the trigger. Allowed values are, GITHUB and GITLAB.
+         * (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
          */
         triggerSource: string;
     }
@@ -57900,6 +62478,7 @@ export namespace DevOps {
          */
         headRef: string;
     }
+
 }
 
 export namespace Dns {
@@ -58974,6 +63553,215 @@ export namespace Dns {
     }
 }
 
+export namespace EmWarehouse {
+    export interface GetEmWarehousesEmWarehouseCollection {
+        items: outputs.EmWarehouse.GetEmWarehousesEmWarehouseCollectionItem[];
+    }
+
+    export interface GetEmWarehousesEmWarehouseCollectionItem {
+        /**
+         * The ID of the compartment in which to list resources.
+         */
+        compartmentId: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+         */
+        definedTags: {[key: string]: any};
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
+        displayName: string;
+        /**
+         * EMBridge Identifier
+         */
+        emBridgeId: string;
+        /**
+         * Type of the EmWarehouse.
+         */
+        emWarehouseType: string;
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+         */
+        freeformTags: {[key: string]: any};
+        /**
+         * unique EmWarehouse identifier
+         */
+        id: string;
+        /**
+         * Data Flow Run Status Message
+         */
+        latestEtlRunMessage: string;
+        /**
+         * Data Flow Run Status
+         */
+        latestEtlRunStatus: string;
+        /**
+         * Data Flow Run Total Time
+         */
+        latestEtlRunTime: string;
+        /**
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         */
+        lifecycleDetails: string;
+        /**
+         * unique operationsInsightsWarehouseId identifier
+         */
+        operationsInsightsWarehouseId: string;
+        /**
+         * A filter to return only resources their lifecycleState matches the given lifecycleState.
+         */
+        state: string;
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: any};
+        /**
+         * The time the the EmWarehouse was created. An RFC3339 formatted datetime string
+         */
+        timeCreated: string;
+        /**
+         * The time the EmWarehouse was updated. An RFC3339 formatted datetime string
+         */
+        timeUpdated: string;
+    }
+
+    export interface GetEmWarehousesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetEtlRunItem {
+        /**
+         * The ID of the compartment in which to list resources.
+         */
+        compartmentId: string;
+        /**
+         * Data read by the dataflow run
+         */
+        dataReadInBytes: string;
+        /**
+         * Data written by the dataflow run
+         */
+        dataWritten: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+         */
+        definedTags: {[key: string]: any};
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
+        displayName: string;
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+         */
+        freeformTags: {[key: string]: any};
+        /**
+         * Details of the lifecycle state
+         */
+        lifecycleDetails: string;
+        /**
+         * Dataflow run duration
+         */
+        runDurationInMilliseconds: string;
+        /**
+         * The current state of the etlRun.
+         */
+        state: string;
+        /**
+         * Time when the dataflow run was created
+         */
+        timeCreated: string;
+        /**
+         * Time when the dataflow run was updated
+         */
+        timeUpdated: string;
+    }
+
+    export interface GetEtlRunsEtlRunCollection {
+        /**
+         * List of runs
+         */
+        items: outputs.EmWarehouse.GetEtlRunsEtlRunCollectionItem[];
+    }
+
+    export interface GetEtlRunsEtlRunCollectionItem {
+        /**
+         * List of runs
+         */
+        items: outputs.EmWarehouse.GetEtlRunsEtlRunCollectionItemItem[];
+    }
+
+    export interface GetEtlRunsEtlRunCollectionItemItem {
+        /**
+         * The ID of the compartment in which to list resources.
+         */
+        compartmentId: string;
+        /**
+         * Data read by the dataflow run
+         */
+        dataReadInBytes: string;
+        /**
+         * Data written by the dataflow run
+         */
+        dataWritten: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+         */
+        definedTags: {[key: string]: any};
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
+        displayName: string;
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+         */
+        freeformTags: {[key: string]: any};
+        /**
+         * Details of the lifecycle state
+         */
+        lifecycleDetails: string;
+        /**
+         * Dataflow run duration
+         */
+        runDurationInMilliseconds: string;
+        /**
+         * The current state of the etlRun.
+         */
+        state: string;
+        /**
+         * Time when the dataflow run was created
+         */
+        timeCreated: string;
+        /**
+         * Time when the dataflow run was updated
+         */
+        timeUpdated: string;
+    }
+
+    export interface GetEtlRunsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetResourceUsageEmInstance {
+        /**
+         * emHost name
+         */
+        emHost: string;
+        /**
+         * operations Insights Warehouse Identifier
+         */
+        emId: string;
+        /**
+         * EmInstance Target count
+         */
+        targetsCount: number;
+    }
+
+}
+
 export namespace Email {
     export interface GetDkimsDkimCollection {
         items: outputs.Email.GetDkimsDkimCollectionItem[];
@@ -59786,6 +64574,17 @@ export namespace Functions {
         isEnabled: boolean;
     }
 
+    export interface FunctionProvisionedConcurrencyConfig {
+        /**
+         * (Updatable)
+         */
+        count: number;
+        /**
+         * (Updatable) The strategy for provisioned concurrency to be used.
+         */
+        strategy: string;
+    }
+
     export interface FunctionTraceConfig {
         /**
          * (Updatable) Define if tracing is enabled for the resource.
@@ -59916,6 +64715,14 @@ export namespace Functions {
         values: string[];
     }
 
+    export interface GetFunctionProvisionedConcurrencyConfig {
+        count: number;
+        /**
+         * The strategy for provisioned concurrency to be used.
+         */
+        strategy: string;
+    }
+
     export interface GetFunctionTraceConfig {
         /**
          * Define if tracing is enabled for the resource.
@@ -59975,6 +64782,10 @@ export namespace Functions {
          */
         memoryInMbs: string;
         /**
+         * Define the strategy for provisioned concurrency for the function.
+         */
+        provisionedConcurrencyConfigs: outputs.Functions.GetFunctionsFunctionProvisionedConcurrencyConfig[];
+        /**
          * A filter to return only functions that match the lifecycle state in this parameter. Example: `Creating`
          */
         state: string;
@@ -59994,6 +64805,14 @@ export namespace Functions {
          * Define the tracing configuration for a function.
          */
         traceConfigs: outputs.Functions.GetFunctionsFunctionTraceConfig[];
+    }
+
+    export interface GetFunctionsFunctionProvisionedConcurrencyConfig {
+        count: number;
+        /**
+         * The strategy for provisioned concurrency to be used.
+         */
+        strategy: string;
     }
 
     export interface GetFunctionsFunctionTraceConfig {
@@ -63932,6 +68751,383 @@ export namespace Kms {
 
 }
 
+export namespace LicenseManager {
+    export interface GetLicenseRecordsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetLicenseRecordsLicenseRecordCollection {
+        items: outputs.LicenseManager.GetLicenseRecordsLicenseRecordCollectionItem[];
+    }
+
+    export interface GetLicenseRecordsLicenseRecordCollectionItem {
+        /**
+         * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the license record is created.
+         */
+        compartmentId: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+         */
+        definedTags: {[key: string]: any};
+        /**
+         * The license record display name. Avoid entering confidential information.
+         */
+        displayName: string;
+        /**
+         * The license record end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
+         */
+        expirationDate: string;
+        /**
+         * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+         */
+        freeformTags: {[key: string]: any};
+        /**
+         * The license record [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         */
+        id: string;
+        /**
+         * Specifies if the license record term is perpertual.
+         */
+        isPerpetual: boolean;
+        /**
+         * Specifies if the license count is unlimited.
+         */
+        isUnlimited: boolean;
+        /**
+         * The number of license units added by the user for the given license record. Default 1
+         */
+        licenseCount: number;
+        /**
+         * The product license unit.
+         */
+        licenseUnit: string;
+        /**
+         * The license record product ID.
+         */
+        productId: string;
+        /**
+         * The product license name with which the license record is associated.
+         */
+        productLicense: string;
+        /**
+         * Unique product license identifier.
+         */
+        productLicenseId: string;
+        /**
+         * The current license record state.
+         */
+        state: string;
+        /**
+         * The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
+         */
+        supportEndDate: string;
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: any};
+        /**
+         * The time the license record was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
+         */
+        timeCreated: string;
+        /**
+         * The time the license record was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
+         */
+        timeUpdated: string;
+    }
+
+    export interface GetProductLicenseConsumersItem {
+        /**
+         * Specifies if all options are available.
+         */
+        areAllOptionsAvailable: boolean;
+        /**
+         * Specifies if the base license is available.
+         */
+        isBaseLicenseAvailable: boolean;
+        /**
+         * The product license unit.
+         */
+        licenseUnitType: string;
+        /**
+         * Number of license units consumed by the resource.
+         */
+        licenseUnitsConsumed: number;
+        /**
+         * Collection of missing product licenses.
+         */
+        missingProducts: outputs.LicenseManager.GetProductLicenseConsumersItemMissingProduct[];
+        /**
+         * The resource product name.
+         */
+        productName: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the resource.
+         */
+        resourceCompartmentId: string;
+        /**
+         * The display name of the compartment that contains the resource.
+         */
+        resourceCompartmentName: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
+         */
+        resourceId: string;
+        /**
+         * The display name of the resource.
+         */
+        resourceName: string;
+        /**
+         * Number of units of the resource
+         */
+        resourceUnitCount: number;
+        /**
+         * The unit type for the resource.
+         */
+        resourceUnitType: string;
+    }
+
+    export interface GetProductLicenseConsumersItemMissingProduct {
+        /**
+         * Product category base or option.
+         */
+        category: string;
+        /**
+         * Units required for the missing product.
+         */
+        count: number;
+        /**
+         * Name of the product.
+         */
+        name: string;
+    }
+
+    export interface GetProductLicenseImage {
+        /**
+         * The image ID associated with the product license.
+         */
+        id: string;
+        /**
+         * The image listing ID.
+         */
+        listingId: string;
+        /**
+         * The listing name associated with the product license.
+         */
+        listingName: string;
+        /**
+         * The image package version.
+         */
+        packageVersion: string;
+        /**
+         * The image publisher.
+         */
+        publisher: string;
+    }
+
+    export interface GetProductLicensesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetProductLicensesProductLicenseCollection {
+        items: outputs.LicenseManager.GetProductLicensesProductLicenseCollectionItem[];
+    }
+
+    export interface GetProductLicensesProductLicenseCollectionItem {
+        /**
+         * The number of active license records associated with the product license.
+         */
+        activeLicenseRecordCount: number;
+        /**
+         * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
+         */
+        compartmentId: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+         */
+        definedTags: {[key: string]: any};
+        /**
+         * License record name
+         */
+        displayName: string;
+        /**
+         * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+         */
+        freeformTags: {[key: string]: any};
+        /**
+         * The image ID associated with the product license.
+         */
+        id: string;
+        /**
+         * The images associated with the product license.
+         */
+        images: outputs.LicenseManager.GetProductLicensesProductLicenseCollectionItemImage[];
+        /**
+         * Specifies whether or not the product license is oversubscribed.
+         */
+        isOverSubscribed: boolean;
+        /**
+         * Specifies if the license unit count is unlimited.
+         */
+        isUnlimited: boolean;
+        /**
+         * Specifies whether the vendor is Oracle or a third party.
+         */
+        isVendorOracle: boolean;
+        /**
+         * The product license unit.
+         */
+        licenseUnit: string;
+        /**
+         * The current product license state.
+         */
+        state: string;
+        /**
+         * The current product license status.
+         */
+        status: string;
+        /**
+         * Status description for the current product license status.
+         */
+        statusDescription: string;
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: any};
+        /**
+         * The time the product license was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
+         */
+        timeCreated: string;
+        /**
+         * The time the product license was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
+         */
+        timeUpdated: string;
+        /**
+         * The total number of licenses available for the product license, calculated by adding up all the license counts for active license records associated with the product license.
+         */
+        totalActiveLicenseUnitCount: number;
+        /**
+         * The number of license records associated with the product license.
+         */
+        totalLicenseRecordCount: number;
+        /**
+         * The number of license units consumed. Updated after each allocation run.
+         */
+        totalLicenseUnitsConsumed: number;
+        /**
+         * The vendor of the ProductLicense
+         */
+        vendorName: string;
+    }
+
+    export interface GetProductLicensesProductLicenseCollectionItemImage {
+        /**
+         * The image ID associated with the product license.
+         */
+        id: string;
+        /**
+         * The image listing ID.
+         */
+        listingId: string;
+        /**
+         * The listing name associated with the product license.
+         */
+        listingName: string;
+        /**
+         * The image package version.
+         */
+        packageVersion: string;
+        /**
+         * The image publisher.
+         */
+        publisher: string;
+    }
+
+    export interface GetTopUtilizedProductLicensesItem {
+        /**
+         * Specifies if the license unit count is unlimited.
+         */
+        isUnlimited: boolean;
+        /**
+         * The product license [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         */
+        productLicenseId: string;
+        /**
+         * The product type.
+         */
+        productType: string;
+        /**
+         * The current product license status.
+         */
+        status: string;
+        /**
+         * Total number of license units in the product license provided by the user.
+         */
+        totalLicenseUnitCount: number;
+        /**
+         * Number of license units consumed.
+         */
+        totalUnitsConsumed: number;
+        /**
+         * The product license unit.
+         */
+        unitType: string;
+    }
+
+    export interface GetTopUtilizedResourcesItem {
+        /**
+         * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that contains the resource.
+         */
+        resourceCompartmentId: string;
+        /**
+         * The display name of the compartment that contains the resource.
+         */
+        resourceCompartmentName: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
+         */
+        resourceId: string;
+        /**
+         * Resource canonical name.
+         */
+        resourceName: string;
+        /**
+         * Number of license units consumed by the resource.
+         */
+        totalUnits: number;
+        /**
+         * The resource unit.
+         */
+        unitType: string;
+    }
+
+    export interface ProductLicenseImage {
+        /**
+         * The image ID associated with the product license.
+         */
+        id: string;
+        /**
+         * (Updatable) Marketplace image listing ID.
+         */
+        listingId: string;
+        /**
+         * The listing name associated with the product license.
+         */
+        listingName: string;
+        /**
+         * (Updatable) Image package version.
+         */
+        packageVersion: string;
+        /**
+         * The image publisher.
+         */
+        publisher: string;
+    }
+}
+
 export namespace Limits {
     export interface GetLimitDefinitionsFilter {
         /**
@@ -64009,6 +69205,25 @@ export namespace Limits {
         value: string;
     }
 
+    export interface GetQuotaLock {
+        /**
+         * A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+         */
+        message: string;
+        /**
+         * The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+         */
+        relatedResourceId: string;
+        /**
+         * Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
+         */
+        timeCreated: string;
+        /**
+         * Lock type.
+         */
+        type: string;
+    }
+
     export interface GetQuotasFilter {
         /**
          * name
@@ -64039,6 +69254,11 @@ export namespace Limits {
          * The OCID of the quota.
          */
         id: string;
+        isLockOverride: boolean;
+        /**
+         * Locks associated with this resource.
+         */
+        locks: outputs.Limits.GetQuotasQuotaLock[];
         /**
          * name
          */
@@ -64055,6 +69275,25 @@ export namespace Limits {
          * Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
          */
         timeCreated: string;
+    }
+
+    export interface GetQuotasQuotaLock {
+        /**
+         * A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+         */
+        message: string;
+        /**
+         * The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+         */
+        relatedResourceId: string;
+        /**
+         * Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
+         */
+        timeCreated: string;
+        /**
+         * Lock type.
+         */
+        type: string;
     }
 
     export interface GetServicesFilter {
@@ -64077,6 +69316,24 @@ export namespace Limits {
         name: string;
     }
 
+    export interface QuotaLock {
+        /**
+         * A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+         */
+        message: string;
+        /**
+         * The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+         */
+        relatedResourceId: string;
+        /**
+         * Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
+         */
+        timeCreated: string;
+        /**
+         * Lock type.
+         */
+        type: string;
+    }
 }
 
 export namespace LoadBalancer {
@@ -67085,6 +72342,14 @@ export namespace ManagementAgent {
          */
         pluginName: string;
         /**
+         * Plugin Status
+         */
+        pluginStatus: string;
+        /**
+         * Status message of the Plugin
+         */
+        pluginStatusMessage: string;
+        /**
          * Plugin Version
          */
         pluginVersion: string;
@@ -67204,7 +72469,7 @@ export namespace ManagementAgent {
          */
         platformName: string;
         /**
-         * Filter to return only results having the particular platform type.
+         * Array of PlatformTypes to return only results having the particular platform types. Example: ["LINUX"]
          */
         platformType: string;
         /**
@@ -67236,7 +72501,7 @@ export namespace ManagementAgent {
          */
         timeUpdated: string;
         /**
-         * Filter to return only Management Agents having the particular agent version.
+         * Array of versions to return only Management Agents having the particular agent versions. Example: ["202020.0101","210201.0513"]
          */
         version: string;
     }
@@ -67255,9 +72520,17 @@ export namespace ManagementAgent {
          */
         pluginId: string;
         /**
-         * Filter to return only Management Agents having the particular Plugin installed. A special pluginName of 'None' can be provided and this will return only Management Agents having no plugin installed.
+         * Array of pluginName to return only Management Agents having the particular Plugins installed. A special pluginName of 'None' can be provided and this will return only Management Agents having no plugin installed. Example: ["PluginA"]
          */
         pluginName: string;
+        /**
+         * Plugin Status
+         */
+        pluginStatus: string;
+        /**
+         * Status message of the Plugin
+         */
+        pluginStatusMessage: string;
         /**
          * Plugin Version
          */
@@ -67281,6 +72554,14 @@ export namespace ManagementAgent {
          * Management Agent Plugin Name
          */
         pluginName: string;
+        /**
+         * Plugin Status
+         */
+        pluginStatus: string;
+        /**
+         * Status message of the Plugin
+         */
+        pluginStatusMessage: string;
         /**
          * Plugin Version
          */
@@ -68650,6 +73931,9 @@ export namespace MeteringComputation {
          * The UI date range, for example, LAST_THREE_MONTHS. Conflicts with timeUsageStarted and timeUsageEnded.
          */
         dateRangeName: string;
+        /**
+         * The filter object for query usage.
+         */
         filter: string;
         /**
          * Forecast configuration of usage/cost.
@@ -68758,6 +74042,9 @@ export namespace MeteringComputation {
          * The UI date range, for example, LAST_THREE_MONTHS. Conflicts with timeUsageStarted and timeUsageEnded.
          */
         dateRangeName: string;
+        /**
+         * The filter object for query usage.
+         */
         filter: string;
         /**
          * Forecast configuration of usage/cost.
@@ -68827,6 +74114,277 @@ export namespace MeteringComputation {
         value: string;
     }
 
+    export interface GetScheduleQueryProperty {
+        /**
+         * The depth level of the compartment.
+         */
+        compartmentDepth: number;
+        /**
+         * Static or dynamic date range `dateRangeType`, which corresponds with type-specific characteristics.
+         */
+        dateRanges: outputs.MeteringComputation.GetScheduleQueryPropertyDateRange[];
+        /**
+         * The filter object for query usage.
+         */
+        filter: string;
+        /**
+         * The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.   Allowed values are: DAILY MONTHLY
+         */
+        granularity: string;
+        /**
+         * Aggregate the result by. For example: [ "tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName" ]
+         */
+        groupBies: string[];
+        /**
+         * GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: [ { "namespace": "oracle", "key": "createdBy" ]
+         */
+        groupByTags: outputs.MeteringComputation.GetScheduleQueryPropertyGroupByTag[];
+        /**
+         * Specifies whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+         */
+        isAggregateByTime: boolean;
+        /**
+         * The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data.  Allowed values are: USAGE COST USAGE_AND_COST
+         */
+        queryType: string;
+    }
+
+    export interface GetScheduleQueryPropertyDateRange {
+        /**
+         * Defines whether the schedule date range is STATIC or DYNAMIC
+         */
+        dateRangeType: string;
+        dynamicDateRangeType: string;
+        /**
+         * The usage end time.
+         */
+        timeUsageEnded: string;
+        /**
+         * The usage start time.
+         */
+        timeUsageStarted: string;
+    }
+
+    export interface GetScheduleQueryPropertyGroupByTag {
+        /**
+         * The tag key.
+         */
+        key: string;
+        /**
+         * The namespace needed to determine object storage bucket.
+         */
+        namespace: string;
+        /**
+         * The tag value.
+         */
+        value: string;
+    }
+
+    export interface GetScheduleResultLocation {
+        /**
+         * The bucket name where usage/cost CSVs will be uploaded
+         */
+        bucket: string;
+        /**
+         * Defines the type of location where the usage/cost CSVs will be stored
+         */
+        locationType: string;
+        /**
+         * The namespace needed to determine object storage bucket.
+         */
+        namespace: string;
+        /**
+         * The destination Object Store Region specified by customer
+         */
+        region: string;
+    }
+
+    export interface GetScheduledRunsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetScheduledRunsScheduledRunCollection {
+        items: outputs.MeteringComputation.GetScheduledRunsScheduledRunCollectionItem[];
+    }
+
+    export interface GetScheduledRunsScheduledRunCollectionItem {
+        /**
+         * The ocid representing unique shedule run
+         */
+        id: string;
+        /**
+         * Additional details about scheduled run failure
+         */
+        lifecycleDetails: string;
+        /**
+         * The unique ID of a schedule.
+         */
+        scheduleId: string;
+        /**
+         * Specifies if the schedule job was run successfully or not.
+         */
+        state: string;
+        /**
+         * The time when schedule started executing
+         */
+        timeCreated: string;
+        /**
+         * The time when schedule finished executing
+         */
+        timeFinished: string;
+    }
+
+    export interface GetSchedulesFilter {
+        /**
+         * Query parameter for filtering by name
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSchedulesScheduleCollection {
+        items: outputs.MeteringComputation.GetSchedulesScheduleCollectionItem[];
+    }
+
+    export interface GetSchedulesScheduleCollectionItem {
+        /**
+         * The compartment ID in which to list resources.
+         */
+        compartmentId: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
+         */
+        definedTags: {[key: string]: any};
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+         */
+        freeformTags: {[key: string]: any};
+        /**
+         * The OCID representing unique shedule
+         */
+        id: string;
+        /**
+         * Query parameter for filtering by name
+         */
+        name: string;
+        /**
+         * The query properties.
+         */
+        queryProperties: outputs.MeteringComputation.GetSchedulesScheduleCollectionItemQueryProperty[];
+        /**
+         * The location where usage/cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
+         */
+        resultLocations: outputs.MeteringComputation.GetSchedulesScheduleCollectionItemResultLocation[];
+        /**
+         * In x-obmcs-recurring-time format shown here: https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10 Describes the frequency of when the schedule will be run
+         */
+        scheduleRecurrences: string;
+        /**
+         * The lifecycle state of the schedule
+         */
+        state: string;
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: any};
+        /**
+         * The date and time of when the schedule was created
+         */
+        timeCreated: string;
+        /**
+         * The date and time of the first time job execution
+         */
+        timeScheduled: string;
+    }
+
+    export interface GetSchedulesScheduleCollectionItemQueryProperty {
+        /**
+         * The depth level of the compartment.
+         */
+        compartmentDepth: number;
+        /**
+         * Static or dynamic date range `dateRangeType`, which corresponds with type-specific characteristics.
+         */
+        dateRanges: outputs.MeteringComputation.GetSchedulesScheduleCollectionItemQueryPropertyDateRange[];
+        /**
+         * The filter object for query usage.
+         */
+        filter: string;
+        /**
+         * The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.   Allowed values are: DAILY MONTHLY
+         */
+        granularity: string;
+        /**
+         * Aggregate the result by. For example: [ "tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName" ]
+         */
+        groupBies: string[];
+        /**
+         * GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: [ { "namespace": "oracle", "key": "createdBy" ]
+         */
+        groupByTags: outputs.MeteringComputation.GetSchedulesScheduleCollectionItemQueryPropertyGroupByTag[];
+        /**
+         * Specifies whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+         */
+        isAggregateByTime: boolean;
+        /**
+         * The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data.  Allowed values are: USAGE COST USAGE_AND_COST
+         */
+        queryType: string;
+    }
+
+    export interface GetSchedulesScheduleCollectionItemQueryPropertyDateRange {
+        /**
+         * Defines whether the schedule date range is STATIC or DYNAMIC
+         */
+        dateRangeType: string;
+        dynamicDateRangeType: string;
+        /**
+         * The usage end time.
+         */
+        timeUsageEnded: string;
+        /**
+         * The usage start time.
+         */
+        timeUsageStarted: string;
+    }
+
+    export interface GetSchedulesScheduleCollectionItemQueryPropertyGroupByTag {
+        /**
+         * The tag key.
+         */
+        key: string;
+        /**
+         * The namespace needed to determine object storage bucket.
+         */
+        namespace: string;
+        /**
+         * The tag value.
+         */
+        value: string;
+    }
+
+    export interface GetSchedulesScheduleCollectionItemResultLocation {
+        /**
+         * The bucket name where usage/cost CSVs will be uploaded
+         */
+        bucket: string;
+        /**
+         * Defines the type of location where the usage/cost CSVs will be stored
+         */
+        locationType: string;
+        /**
+         * The namespace needed to determine object storage bucket.
+         */
+        namespace: string;
+        /**
+         * The destination Object Store Region specified by customer
+         */
+        region: string;
+    }
+
     export interface QueryQueryDefinition {
         /**
          * (Updatable) The common fields for Cost Analysis UI rendering.
@@ -68867,7 +74425,7 @@ export namespace MeteringComputation {
          */
         dateRangeName: string;
         /**
-         * (Updatable)
+         * (Updatable) The filter object for query usage.
          */
         filter: string;
         /**
@@ -68936,6 +74494,91 @@ export namespace MeteringComputation {
          * (Updatable) The tag value.
          */
         value: string;
+    }
+
+    export interface ScheduleQueryProperties {
+        /**
+         * The depth level of the compartment.
+         */
+        compartmentDepth: number;
+        /**
+         * Static or dynamic date range `dateRangeType`, which corresponds with type-specific characteristics.
+         */
+        dateRange: outputs.MeteringComputation.ScheduleQueryPropertiesDateRange;
+        /**
+         * The filter object for query usage.
+         */
+        filter: string;
+        /**
+         * The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.   Allowed values are: DAILY MONTHLY
+         */
+        granularity: string;
+        /**
+         * Aggregate the result by. For example: [ "tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName" ]
+         */
+        groupBies: string[];
+        /**
+         * GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: [ { "namespace": "oracle", "key": "createdBy" ]
+         */
+        groupByTags: outputs.MeteringComputation.ScheduleQueryPropertiesGroupByTag[];
+        /**
+         * Specifies whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+         */
+        isAggregateByTime: boolean;
+        /**
+         * The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data.  Allowed values are: USAGE COST USAGE_AND_COST
+         */
+        queryType: string;
+    }
+
+    export interface ScheduleQueryPropertiesDateRange {
+        /**
+         * Defines whether the schedule date range is STATIC or DYNAMIC
+         */
+        dateRangeType: string;
+        dynamicDateRangeType: string;
+        /**
+         * The usage end time.
+         */
+        timeUsageEnded: string;
+        /**
+         * The usage start time.
+         */
+        timeUsageStarted: string;
+    }
+
+    export interface ScheduleQueryPropertiesGroupByTag {
+        /**
+         * The tag key.
+         */
+        key: string;
+        /**
+         * The namespace needed to determine object storage bucket.
+         */
+        namespace: string;
+        /**
+         * The tag value.
+         */
+        value: string;
+    }
+
+    export interface ScheduleResultLocation {
+        /**
+         * The bucket name where usage/cost CSVs will be uploaded
+         */
+        bucket: string;
+        /**
+         * Defines the type of location where the usage/cost CSVs will be stored
+         */
+        locationType: string;
+        /**
+         * The namespace needed to determine object storage bucket.
+         */
+        namespace: string;
+        /**
+         * The destination Object Store Region specified by customer
+         */
+        region: string;
     }
 
     export interface UsageForecast {
@@ -69793,7 +75436,7 @@ export namespace Mysql {
          */
         ipAddress: string;
         /**
-         * If the policy is to enable high availability of the instance, by maintaining secondary/failover capacity as necessary.
+         * Specifies if the DB System is highly available.
          */
         isHighlyAvailable: boolean;
         /**
@@ -69832,9 +75475,13 @@ export namespace Mysql {
          */
         freeformTags: {[key: string]: any};
         /**
-         * If automated backups are enabled or disabled.
+         * Specifies if PITR is enabled or disabled.
          */
         isEnabled: boolean;
+        /**
+         * The PITR policy for the DB System.
+         */
+        pitrPolicies: outputs.Mysql.GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy[];
         /**
          * Number of days to retain this backup.
          */
@@ -69843,6 +75490,13 @@ export namespace Mysql {
          * The start time of the maintenance window.
          */
         windowStartTime: string;
+    }
+
+    export interface GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy {
+        /**
+         * Specifies if PITR is enabled or disabled.
+         */
+        isEnabled: boolean;
     }
 
     export interface GetMysqlBackupDbSystemSnapshotDeletionPolicy {
@@ -70047,7 +75701,7 @@ export namespace Mysql {
          */
         ipAddress: string;
         /**
-         * If the policy is to enable high availability of the instance, by maintaining secondary/failover capacity as necessary.
+         * Specifies if the DB System is highly available.
          */
         isHighlyAvailable: boolean;
         /**
@@ -70086,9 +75740,13 @@ export namespace Mysql {
          */
         freeformTags: {[key: string]: any};
         /**
-         * If automated backups are enabled or disabled.
+         * Specifies if PITR is enabled or disabled.
          */
         isEnabled: boolean;
+        /**
+         * The PITR policy for the DB System.
+         */
+        pitrPolicies: outputs.Mysql.GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy[];
         /**
          * Number of days to retain this backup.
          */
@@ -70097,6 +75755,13 @@ export namespace Mysql {
          * The start time of the maintenance window.
          */
         windowStartTime: string;
+    }
+
+    export interface GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy {
+        /**
+         * Specifies if PITR is enabled or disabled.
+         */
+        isEnabled: boolean;
     }
 
     export interface GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy {
@@ -70702,6 +76367,10 @@ export namespace Mysql {
          */
         isEnabled: boolean;
         /**
+         * The PITR policy for the DB System.
+         */
+        pitrPolicies: outputs.Mysql.GetMysqlDbSystemBackupPolicyPitrPolicy[];
+        /**
          * The number of days automated backups are retained.
          */
         retentionInDays: number;
@@ -70709,6 +76378,13 @@ export namespace Mysql {
          * The start time of the maintenance window.
          */
         windowStartTime: string;
+    }
+
+    export interface GetMysqlDbSystemBackupPolicyPitrPolicy {
+        /**
+         * Whether the Channel has been enabled by the user.
+         */
+        isEnabled: boolean;
     }
 
     export interface GetMysqlDbSystemChannel {
@@ -70906,11 +76582,30 @@ export namespace Mysql {
         windowStartTime: string;
     }
 
+    export interface GetMysqlDbSystemPointInTimeRecoveryDetail {
+        /**
+         * Earliest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+         */
+        timeEarliestRecoveryPoint: string;
+        /**
+         * Latest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+         */
+        timeLatestRecoveryPoint: string;
+    }
+
     export interface GetMysqlDbSystemSource {
         /**
          * The OCID of the backup to be used as the source for the new DB System.
          */
         backupId: string;
+        /**
+         * The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         */
+        dbSystemId: string;
+        /**
+         * The date and time, as per RFC 3339, of the change up to which the new DB System shall be restored to, using a backup and logs from the original DB System. In case no point in time is specified, then this new DB System shall be restored up to the latest change recorded for the original DB System.
+         */
+        recoveryPoint: string;
         /**
          * The specific source identifier.
          */
@@ -71009,7 +76704,7 @@ export namespace Mysql {
          */
         isHeatWaveClusterAttached: boolean;
         /**
-         * If the policy is to enable high availability of the instance, by maintaining secondary/failover capacity as necessary.
+         * Specifies if the DB System is highly available.
          */
         isHighlyAvailable: boolean;
         /**
@@ -71022,10 +76717,12 @@ export namespace Mysql {
         maintenances: outputs.Mysql.GetMysqlDbSystemsDbSystemMaintenance[];
         /**
          * Name of the MySQL Version in use for the DB System.
-         *
-         * @deprecated The 'mysql_version' field has been deprecated and may be removed in a future version. Do not use this field.
          */
         mysqlVersion: string;
+        /**
+         * Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
+         */
+        pointInTimeRecoveryDetails: outputs.Mysql.GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail[];
         /**
          * The port for primary endpoint of the DB System to listen on.
          */
@@ -71098,6 +76795,10 @@ export namespace Mysql {
          */
         isEnabled: boolean;
         /**
+         * The PITR policy for the DB System.
+         */
+        pitrPolicies: outputs.Mysql.GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicy[];
+        /**
          * The number of days automated backups are retained.
          */
         retentionInDays: number;
@@ -71105,6 +76806,13 @@ export namespace Mysql {
          * The start time of the maintenance window.
          */
         windowStartTime: string;
+    }
+
+    export interface GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicy {
+        /**
+         * Whether the Channel has been enabled by the user.
+         */
+        isEnabled: boolean;
     }
 
     export interface GetMysqlDbSystemsDbSystemChannel {
@@ -71302,11 +77010,30 @@ export namespace Mysql {
         windowStartTime: string;
     }
 
+    export interface GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail {
+        /**
+         * Earliest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+         */
+        timeEarliestRecoveryPoint: string;
+        /**
+         * Latest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+         */
+        timeLatestRecoveryPoint: string;
+    }
+
     export interface GetMysqlDbSystemsDbSystemSource {
         /**
          * The OCID of the backup to be used as the source for the new DB System.
          */
         backupId: string;
+        /**
+         * The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         */
+        dbSystemId: string;
+        /**
+         * The date and time, as per RFC 3339, of the change up to which the new DB System shall be restored to, using a backup and logs from the original DB System. In case no point in time is specified, then this new DB System shall be restored up to the latest change recorded for the original DB System.
+         */
+        recoveryPoint: string;
         /**
          * The specific source identifier.
          */
@@ -71464,7 +77191,7 @@ export namespace Mysql {
          */
         ipAddress: string;
         /**
-         * If the policy is to enable high availability of the instance, by maintaining secondary/failover capacity as necessary.
+         * Specifies if the DB System is highly available.
          */
         isHighlyAvailable: boolean;
         /**
@@ -71503,9 +77230,13 @@ export namespace Mysql {
          */
         freeformTags: {[key: string]: any};
         /**
-         * If automated backups are enabled or disabled.
+         * Specifies if PITR is enabled or disabled.
          */
         isEnabled: boolean;
+        /**
+         * The PITR policy for the DB System.
+         */
+        pitrPolicies: outputs.Mysql.MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy[];
         /**
          * (Updatable) Number of days to retain this backup.
          */
@@ -71514,6 +77245,13 @@ export namespace Mysql {
          * The start time of the maintenance window.
          */
         windowStartTime: string;
+    }
+
+    export interface MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy {
+        /**
+         * Specifies if PITR is enabled or disabled.
+         */
+        isEnabled: boolean;
     }
 
     export interface MysqlBackupDbSystemSnapshotDeletionPolicy {
@@ -71603,9 +77341,13 @@ export namespace Mysql {
          */
         freeformTags: {[key: string]: any};
         /**
-         * (Updatable) Specifies if automatic backups are enabled.
+         * (Updatable) Specifies if PITR is enabled or disabled.
          */
         isEnabled: boolean;
+        /**
+         * (Updatable) The PITR policy for the DB System.
+         */
+        pitrPolicy: outputs.Mysql.MysqlDbSystemBackupPolicyPitrPolicy;
         /**
          * (Updatable) Number of days to retain an automatic backup.
          */
@@ -71614,6 +77356,13 @@ export namespace Mysql {
          * (Updatable) The start of the 2 hour maintenance window.
          */
         windowStartTime: string;
+    }
+
+    export interface MysqlDbSystemBackupPolicyPitrPolicy {
+        /**
+         * (Updatable) Specifies if PITR is enabled or disabled.
+         */
+        isEnabled: boolean;
     }
 
     export interface MysqlDbSystemChannel {
@@ -71638,7 +77387,7 @@ export namespace Mysql {
          */
         id: string;
         /**
-         * (Updatable) Specifies if automatic backups are enabled.
+         * (Updatable) Specifies if PITR is enabled or disabled.
          */
         isEnabled: boolean;
         /**
@@ -71715,7 +77464,7 @@ export namespace Mysql {
          */
         channelName: string;
         /**
-         * The OCID of the source DB System.
+         * The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
          */
         dbSystemId: string;
         /**
@@ -71812,16 +77561,731 @@ export namespace Mysql {
         windowStartTime: string;
     }
 
+    export interface MysqlDbSystemPointInTimeRecoveryDetail {
+        /**
+         * Earliest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+         */
+        timeEarliestRecoveryPoint: string;
+        /**
+         * Latest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+         */
+        timeLatestRecoveryPoint: string;
+    }
+
     export interface MysqlDbSystemSource {
         /**
          * The OCID of the backup to be used as the source for the new DB System.
          */
         backupId: string;
         /**
+         * The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
+         */
+        dbSystemId: string;
+        /**
+         * The date and time, as per RFC 3339, of the change up to which the new DB System shall be restored to, using a backup and logs from the original DB System. In case no point in time is specified, then this new DB System shall be restored up to the latest change recorded for the original DB System.
+         */
+        recoveryPoint: string;
+        /**
          * The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup.
          */
         sourceType: string;
     }
+}
+
+export namespace NetworkFirewall {
+    export interface GetNetworkFirewallPoliciesFilter {
+        /**
+         * Name for the Security rule, must be unique within the policy.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollection {
+        items: outputs.NetworkFirewall.GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItem[];
+    }
+
+    export interface GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItem {
+        /**
+         * Map defining application lists of the policy. The value of an entry is a list of "applications", each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
+         */
+        applicationLists: outputs.NetworkFirewall.GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationList[];
+        /**
+         * The ID of the compartment in which to list resources.
+         */
+        compartmentId: string;
+        /**
+         * Map defining decryption profiles of the policy. The value of an entry is a decryption profile. The associated key is the identifier by which the decryption profile is referenced.
+         */
+        decryptionProfiles: outputs.NetworkFirewall.GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfile[];
+        /**
+         * List of Decryption Rules defining the behavior of the policy. The first rule with a matching condition determines the action taken upon network traffic.
+         */
+        decryptionRules: outputs.NetworkFirewall.GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRule[];
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+         */
+        definedTags: {[key: string]: any};
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
+        displayName: string;
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+         */
+        freeformTags: {[key: string]: any};
+        /**
+         * Unique Network Firewall Policy identifier
+         */
+        id: string;
+        /**
+         * Map defining IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
+         */
+        ipAddressLists: outputs.NetworkFirewall.GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressList[];
+        /**
+         * To determine if any Network Firewall is associated with this Network Firewall Policy.
+         */
+        isFirewallAttached: boolean;
+        /**
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         */
+        lifecycleDetails: string;
+        /**
+         * Map defining secrets of the policy. The value of an entry is a "mapped secret" consisting of a purpose and source. The associated key is the identifier by which the mapped secret is referenced.
+         */
+        mappedSecrets: outputs.NetworkFirewall.GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecret[];
+        /**
+         * List of Security Rules defining the behavior of the policy. The first rule with a matching condition determines the action taken upon network traffic.
+         */
+        securityRules: outputs.NetworkFirewall.GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRule[];
+        /**
+         * A filter to return only resources with a lifecycleState matching the given value.
+         */
+        state: string;
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: any};
+        /**
+         * The time instant at which the Network Firewall Policy was created in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+         */
+        timeCreated: string;
+        /**
+         * The time instant at which the Network Firewall Policy was updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+         */
+        timeUpdated: string;
+        /**
+         * Map defining URL pattern lists of the policy. The value of an entry is a list of URL patterns. The associated key is the identifier by which the URL pattern list is referenced.
+         */
+        urlLists: outputs.NetworkFirewall.GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlList[];
+    }
+
+    export interface GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationList {
+        icmpCode: number;
+        icmpType: number;
+        key: string;
+        maximumPort: number;
+        minimumPort: number;
+        /**
+         * Type of the secrets mapped based on the policy.
+         * * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
+         * * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+         */
+        type: string;
+    }
+
+    export interface GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfile {
+        /**
+         * Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
+         */
+        areCertificateExtensionsRestricted: boolean;
+        /**
+         * Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
+         */
+        isAutoIncludeAltName: boolean;
+        /**
+         * Whether to block sessions if server's certificate is expired.
+         */
+        isExpiredCertificateBlocked: boolean;
+        /**
+         * Whether to block sessions if the firewall is temporarily unable to decrypt their traffic.
+         */
+        isOutOfCapacityBlocked: boolean;
+        /**
+         * Whether to block sessions if the revocation status check for server's certificate does not succeed within the maximum allowed time (defaulting to 5 seconds).
+         */
+        isRevocationStatusTimeoutBlocked: boolean;
+        /**
+         * Whether to block sessions if the revocation status check for server's certificate results in "unknown".
+         */
+        isUnknownRevocationStatusBlocked: boolean;
+        /**
+         * Whether to block sessions if SSL cipher suite is not supported.
+         */
+        isUnsupportedCipherBlocked: boolean;
+        /**
+         * Whether to block sessions if SSL version is not supported.
+         */
+        isUnsupportedVersionBlocked: boolean;
+        /**
+         * Whether to block sessions if server's certificate is issued by an untrusted certificate authority (CA).
+         */
+        isUntrustedIssuerBlocked: boolean;
+        key: string;
+        /**
+         * Type of the secrets mapped based on the policy.
+         * * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
+         * * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+         */
+        type: string;
+    }
+
+    export interface GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRule {
+        /**
+         * Types of Action on the Traffic flow.
+         * * ALLOW - Allows the traffic.
+         * * DROP - Silently drops the traffic, e.g. without sending a TCP reset.
+         * * REJECT - Rejects the traffic, sending a TCP reset to client and/or server as applicable.
+         * * INSPECT - Inspects traffic for vulnerability as specified in `inspection`, which may result in rejection.
+         */
+        action: string;
+        /**
+         * Criteria to evaluate against network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic.
+         */
+        conditions: outputs.NetworkFirewall.GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleCondition[];
+        /**
+         * The name of the decryption profile to use.
+         */
+        decryptionProfile: string;
+        /**
+         * Name for the Security rule, must be unique within the policy.
+         */
+        name: string;
+        /**
+         * The name of a mapped secret. Its `type` must match that of the specified decryption profile.
+         */
+        secret: string;
+    }
+
+    export interface GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleCondition {
+        /**
+         * An array of IP address list names to be evaluated against the traffic destination address.
+         */
+        destinations: string[];
+        /**
+         * An array of IP address list names to be evaluated against the traffic source address.
+         */
+        sources: string[];
+    }
+
+    export interface GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressList {
+        ipAddressListName: string;
+        ipAddressListValues: string[];
+    }
+
+    export interface GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecret {
+        key: string;
+        /**
+         * Type of the secrets mapped based on the policy.
+         * * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
+         * * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+         */
+        type: string;
+        /**
+         * OCID for the Vault Secret to be used.
+         */
+        vaultSecretId: string;
+        /**
+         * Version number of the secret to be used.
+         */
+        versionNumber: number;
+    }
+
+    export interface GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRule {
+        /**
+         * Types of Action on the Traffic flow.
+         * * ALLOW - Allows the traffic.
+         * * DROP - Silently drops the traffic, e.g. without sending a TCP reset.
+         * * REJECT - Rejects the traffic, sending a TCP reset to client and/or server as applicable.
+         * * INSPECT - Inspects traffic for vulnerability as specified in `inspection`, which may result in rejection.
+         */
+        action: string;
+        /**
+         * Criteria to evaluate against network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic.
+         */
+        conditions: outputs.NetworkFirewall.GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleCondition[];
+        /**
+         * Type of inspection to affect the Traffic flow. This is only applicable if action is INSPECT.
+         * * INTRUSION_DETECTION - Intrusion Detection.
+         * * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
+         */
+        inspection: string;
+        /**
+         * Name for the Security rule, must be unique within the policy.
+         */
+        name: string;
+    }
+
+    export interface GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleCondition {
+        /**
+         * An array of application list names to be evaluated against the traffic protocol and protocol-specific parameters.
+         */
+        applications: string[];
+        /**
+         * An array of IP address list names to be evaluated against the traffic destination address.
+         */
+        destinations: string[];
+        /**
+         * An array of IP address list names to be evaluated against the traffic source address.
+         */
+        sources: string[];
+        /**
+         * An array of URL pattern list names to be evaluated against the HTTP(S) request target.
+         */
+        urls: string[];
+    }
+
+    export interface GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlList {
+        key: string;
+        pattern: string;
+        /**
+         * Type of the secrets mapped based on the policy.
+         * * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
+         * * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+         */
+        type: string;
+    }
+
+    export interface GetNetworkFirewallPolicyApplicationList {
+        icmpCode: number;
+        icmpType: number;
+        key: string;
+        maximumPort: number;
+        minimumPort: number;
+        /**
+         * Type of the secrets mapped based on the policy.
+         * * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
+         * * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+         */
+        type: string;
+    }
+
+    export interface GetNetworkFirewallPolicyDecryptionProfile {
+        /**
+         * Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
+         */
+        areCertificateExtensionsRestricted: boolean;
+        /**
+         * Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
+         */
+        isAutoIncludeAltName: boolean;
+        /**
+         * Whether to block sessions if server's certificate is expired.
+         */
+        isExpiredCertificateBlocked: boolean;
+        /**
+         * Whether to block sessions if the firewall is temporarily unable to decrypt their traffic.
+         */
+        isOutOfCapacityBlocked: boolean;
+        /**
+         * Whether to block sessions if the revocation status check for server's certificate does not succeed within the maximum allowed time (defaulting to 5 seconds).
+         */
+        isRevocationStatusTimeoutBlocked: boolean;
+        /**
+         * Whether to block sessions if the revocation status check for server's certificate results in "unknown".
+         */
+        isUnknownRevocationStatusBlocked: boolean;
+        /**
+         * Whether to block sessions if SSL cipher suite is not supported.
+         */
+        isUnsupportedCipherBlocked: boolean;
+        /**
+         * Whether to block sessions if SSL version is not supported.
+         */
+        isUnsupportedVersionBlocked: boolean;
+        /**
+         * Whether to block sessions if server's certificate is issued by an untrusted certificate authority (CA).
+         */
+        isUntrustedIssuerBlocked: boolean;
+        key: string;
+        /**
+         * Type of the secrets mapped based on the policy.
+         * * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
+         * * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+         */
+        type: string;
+    }
+
+    export interface GetNetworkFirewallPolicyDecryptionRule {
+        /**
+         * Types of Action on the Traffic flow.
+         * * ALLOW - Allows the traffic.
+         * * DROP - Silently drops the traffic, e.g. without sending a TCP reset.
+         * * REJECT - Rejects the traffic, sending a TCP reset to client and/or server as applicable.
+         * * INSPECT - Inspects traffic for vulnerability as specified in `inspection`, which may result in rejection.
+         */
+        action: string;
+        /**
+         * Criteria to evaluate against network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic.
+         */
+        conditions: outputs.NetworkFirewall.GetNetworkFirewallPolicyDecryptionRuleCondition[];
+        /**
+         * The name of the decryption profile to use.
+         */
+        decryptionProfile: string;
+        /**
+         * Name for the Security rule, must be unique within the policy.
+         */
+        name: string;
+        /**
+         * The name of a mapped secret. Its `type` must match that of the specified decryption profile.
+         */
+        secret: string;
+    }
+
+    export interface GetNetworkFirewallPolicyDecryptionRuleCondition {
+        /**
+         * An array of IP address list names to be evaluated against the traffic destination address.
+         */
+        destinations: string[];
+        /**
+         * An array of IP address list names to be evaluated against the traffic source address.
+         */
+        sources: string[];
+    }
+
+    export interface GetNetworkFirewallPolicyIpAddressList {
+        ipAddressListName: string;
+        ipAddressListValues: string[];
+    }
+
+    export interface GetNetworkFirewallPolicyMappedSecret {
+        key: string;
+        /**
+         * Type of the secrets mapped based on the policy.
+         * * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
+         * * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+         */
+        type: string;
+        /**
+         * OCID for the Vault Secret to be used.
+         */
+        vaultSecretId: string;
+        /**
+         * Version number of the secret to be used.
+         */
+        versionNumber: number;
+    }
+
+    export interface GetNetworkFirewallPolicySecurityRule {
+        /**
+         * Types of Action on the Traffic flow.
+         * * ALLOW - Allows the traffic.
+         * * DROP - Silently drops the traffic, e.g. without sending a TCP reset.
+         * * REJECT - Rejects the traffic, sending a TCP reset to client and/or server as applicable.
+         * * INSPECT - Inspects traffic for vulnerability as specified in `inspection`, which may result in rejection.
+         */
+        action: string;
+        /**
+         * Criteria to evaluate against network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic.
+         */
+        conditions: outputs.NetworkFirewall.GetNetworkFirewallPolicySecurityRuleCondition[];
+        /**
+         * Type of inspection to affect the Traffic flow. This is only applicable if action is INSPECT.
+         * * INTRUSION_DETECTION - Intrusion Detection.
+         * * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
+         */
+        inspection: string;
+        /**
+         * Name for the Security rule, must be unique within the policy.
+         */
+        name: string;
+    }
+
+    export interface GetNetworkFirewallPolicySecurityRuleCondition {
+        /**
+         * An array of application list names to be evaluated against the traffic protocol and protocol-specific parameters.
+         */
+        applications: string[];
+        /**
+         * An array of IP address list names to be evaluated against the traffic destination address.
+         */
+        destinations: string[];
+        /**
+         * An array of IP address list names to be evaluated against the traffic source address.
+         */
+        sources: string[];
+        /**
+         * An array of URL pattern list names to be evaluated against the HTTP(S) request target.
+         */
+        urls: string[];
+    }
+
+    export interface GetNetworkFirewallPolicyUrlList {
+        key: string;
+        pattern: string;
+        /**
+         * Type of the secrets mapped based on the policy.
+         * * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
+         * * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+         */
+        type: string;
+    }
+
+    export interface GetNetworkFirewallsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetNetworkFirewallsNetworkFirewallCollection {
+        items: outputs.NetworkFirewall.GetNetworkFirewallsNetworkFirewallCollectionItem[];
+    }
+
+    export interface GetNetworkFirewallsNetworkFirewallCollectionItem {
+        /**
+         * A filter to return only resources that are present within the specified availability domain. To get a list of availability domains for a tenancy, use [ListAvailabilityDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/AvailabilityDomain/ListAvailabilityDomains) operation. Example: `kIdk:PHX-AD-1`
+         */
+        availabilityDomain: string;
+        /**
+         * The ID of the compartment in which to list resources.
+         */
+        compartmentId: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+         */
+        definedTags: {[key: string]: any};
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
+        displayName: string;
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+         */
+        freeformTags: {[key: string]: any};
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall resource.
+         */
+        id: string;
+        /**
+         * IPv4 address for the Network Firewall.
+         */
+        ipv4address: string;
+        /**
+         * IPv6 address for the Network Firewall.
+         */
+        ipv6address: string;
+        /**
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         */
+        lifecycleDetails: string;
+        /**
+         * A filter to return only resources that match the entire networkFirewallPolicyId given.
+         */
+        networkFirewallPolicyId: string;
+        /**
+         * An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
+         */
+        networkSecurityGroupIds: string[];
+        /**
+         * A filter to return only resources with a lifecycleState matching the given value.
+         */
+        state: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Network Firewall.
+         */
+        subnetId: string;
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: any};
+        /**
+         * The time instant at which the Network Firewall was created in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+         */
+        timeCreated: string;
+        /**
+         * The time instant at which the Network Firewall was updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+         */
+        timeUpdated: string;
+    }
+
+    export interface NetworkFirewallPolicyApplicationList {
+        icmpCode: number;
+        icmpType: number;
+        key: string;
+        maximumPort: number;
+        minimumPort: number;
+        /**
+         * (Updatable) Type of the secrets mapped based on the policy.
+         * * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
+         * * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+         */
+        type: string;
+    }
+
+    export interface NetworkFirewallPolicyDecryptionProfile {
+        /**
+         * (Updatable) Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
+         */
+        areCertificateExtensionsRestricted?: boolean;
+        /**
+         * (Updatable) Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
+         */
+        isAutoIncludeAltName?: boolean;
+        /**
+         * (Updatable) Whether to block sessions if server's certificate is expired.
+         */
+        isExpiredCertificateBlocked?: boolean;
+        /**
+         * (Updatable) Whether to block sessions if the firewall is temporarily unable to decrypt their traffic.
+         */
+        isOutOfCapacityBlocked?: boolean;
+        /**
+         * (Updatable) Whether to block sessions if the revocation status check for server's certificate does not succeed within the maximum allowed time (defaulting to 5 seconds).
+         */
+        isRevocationStatusTimeoutBlocked?: boolean;
+        /**
+         * (Updatable) Whether to block sessions if the revocation status check for server's certificate results in "unknown".
+         */
+        isUnknownRevocationStatusBlocked?: boolean;
+        /**
+         * (Updatable) Whether to block sessions if SSL cipher suite is not supported.
+         */
+        isUnsupportedCipherBlocked?: boolean;
+        /**
+         * (Updatable) Whether to block sessions if SSL version is not supported.
+         */
+        isUnsupportedVersionBlocked?: boolean;
+        /**
+         * (Updatable) Whether to block sessions if server's certificate is issued by an untrusted certificate authority (CA).
+         */
+        isUntrustedIssuerBlocked?: boolean;
+        key: string;
+        /**
+         * (Updatable) Type of the secrets mapped based on the policy.
+         * * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
+         * * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+         */
+        type: string;
+    }
+
+    export interface NetworkFirewallPolicyDecryptionRule {
+        /**
+         * (Updatable) Types of Action on the Traffic flow.
+         * * ALLOW - Allows the traffic.
+         * * DROP - Silently drops the traffic, e.g. without sending a TCP reset.
+         * * REJECT - Rejects the traffic, sending a TCP reset to client and/or server as applicable.
+         * * INSPECT - Inspects traffic for vulnerability as specified in `inspection`, which may result in rejection.
+         */
+        action: string;
+        /**
+         * (Updatable) Criteria to evaluate against network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic.
+         */
+        condition: outputs.NetworkFirewall.NetworkFirewallPolicyDecryptionRuleCondition;
+        /**
+         * (Updatable) The name of the decryption profile to use.
+         */
+        decryptionProfile: string;
+        /**
+         * (Updatable) Name for the Security rule, must be unique within the policy.
+         */
+        name: string;
+        /**
+         * (Updatable) The name of a mapped secret. Its `type` must match that of the specified decryption profile.
+         */
+        secret: string;
+    }
+
+    export interface NetworkFirewallPolicyDecryptionRuleCondition {
+        /**
+         * (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
+         */
+        destinations: string[];
+        /**
+         * (Updatable) An array of IP address list names to be evaluated against the traffic source address.
+         */
+        sources: string[];
+    }
+
+    export interface NetworkFirewallPolicyIpAddressList {
+        ipAddressListName: string;
+        ipAddressListValues: string[];
+    }
+
+    export interface NetworkFirewallPolicyMappedSecret {
+        key: string;
+        /**
+         * (Updatable) Type of the secrets mapped based on the policy.
+         * * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
+         * * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+         */
+        type: string;
+        /**
+         * (Updatable) OCID for the Vault Secret to be used.
+         */
+        vaultSecretId?: string;
+        /**
+         * (Updatable) Version number of the secret to be used.
+         */
+        versionNumber?: number;
+    }
+
+    export interface NetworkFirewallPolicySecurityRule {
+        /**
+         * (Updatable) Types of Action on the Traffic flow.
+         * * ALLOW - Allows the traffic.
+         * * DROP - Silently drops the traffic, e.g. without sending a TCP reset.
+         * * REJECT - Rejects the traffic, sending a TCP reset to client and/or server as applicable.
+         * * INSPECT - Inspects traffic for vulnerability as specified in `inspection`, which may result in rejection.
+         */
+        action: string;
+        /**
+         * (Updatable) Criteria to evaluate against network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic.
+         */
+        condition: outputs.NetworkFirewall.NetworkFirewallPolicySecurityRuleCondition;
+        /**
+         * (Updatable) Type of inspection to affect the Traffic flow. This is only applicable if action is INSPECT.
+         * * INTRUSION_DETECTION - Intrusion Detection.
+         * * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
+         */
+        inspection: string;
+        /**
+         * (Updatable) Name for the Security rule, must be unique within the policy.
+         */
+        name: string;
+    }
+
+    export interface NetworkFirewallPolicySecurityRuleCondition {
+        /**
+         * (Updatable) An array of application list names to be evaluated against the traffic protocol and protocol-specific parameters.
+         */
+        applications: string[];
+        /**
+         * (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
+         */
+        destinations: string[];
+        /**
+         * (Updatable) An array of IP address list names to be evaluated against the traffic source address.
+         */
+        sources: string[];
+        /**
+         * (Updatable) An array of URL pattern list names to be evaluated against the HTTP(S) request target.
+         */
+        urls: string[];
+    }
+
+    export interface NetworkFirewallPolicyUrlList {
+        key: string;
+        pattern: string;
+        /**
+         * (Updatable) Type of the secrets mapped based on the policy.
+         * * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
+         * * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+         */
+        type: string;
+    }
+
 }
 
 export namespace NetworkLoadBalancer {
@@ -72415,6 +78879,84 @@ export namespace NetworkLoadBalancer {
          * OCID of the reserved public IP address created with the virtual cloud network.
          */
         id: string;
+    }
+
+    export interface NetworkLoadBalancersBackendSetsUnifiedBackend {
+        /**
+         * (Updatable) The IP address of the backend server.  Example: `10.0.0.3`
+         */
+        ipAddress: string;
+        /**
+         * (Updatable) Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
+         */
+        isBackup: boolean;
+        /**
+         * (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no  incoming traffic.  Example: `false`
+         */
+        isDrain: boolean;
+        /**
+         * (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
+         */
+        isOffline: boolean;
+        /**
+         * A user-friendly name for the backend set that must be unique and cannot be changed.
+         */
+        name: string;
+        /**
+         * (Updatable) The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
+         */
+        port: number;
+        /**
+         * (Updatable) The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
+         */
+        targetId: string;
+        /**
+         * (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+         */
+        weight: number;
+    }
+
+    export interface NetworkLoadBalancersBackendSetsUnifiedHealthChecker {
+        /**
+         * (Updatable) The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
+         */
+        intervalInMillis: number;
+        /**
+         * (Updatable) The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
+         */
+        port: number;
+        /**
+         * (Updatable) The protocol the health check must use; either HTTP or HTTPS, or UDP or TCP.  Example: `HTTP`
+         */
+        protocol: string;
+        /**
+         * (Updatable) Base64 encoded pattern to be sent as UDP or TCP health check probe.
+         */
+        requestData: string;
+        /**
+         * (Updatable) A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|\s)*$`
+         */
+        responseBodyRegex: string;
+        /**
+         * (Updatable) Base64 encoded pattern to be validated as UDP or TCP health check probe response.
+         */
+        responseData: string;
+        /**
+         * (Updatable) The number of retries to attempt before a backend server is considered "unhealthy". This number also applies when recovering a server to the "healthy" state. The default value is 3.  Example: `3`
+         */
+        retries: number;
+        /**
+         * (Updatable) The status code a healthy backend server should return. If you configure the health check policy to use the HTTP protocol, then you can use common HTTP status codes such as "200".  Example: `200`
+         */
+        returnCode: number;
+        /**
+         * (Updatable) The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply returns within this timeout period. The default value is 3000 (3 seconds).  Example: `3000`
+         */
+        timeoutInMillis: number;
+        /**
+         * (Updatable) The path against which to run the health check.  Example: `/healthcheck`
+         */
+        urlPath: string;
     }
 }
 
@@ -73422,6 +79964,10 @@ export namespace Ocvp {
          */
         billingContractEndDate: string;
         /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+         */
+        capacityReservationId: string;
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
          */
         compartmentId: string;
@@ -73457,6 +80003,14 @@ export namespace Ocvp {
          * The date and time when the new esxi host should start billing cycle. [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2021-07-25T21:10:29.600Z`
          */
         gracePeriodEndDate: string;
+        /**
+         * The OCPU count of the ESXi host.
+         */
+        hostOcpuCount: number;
+        /**
+         * The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+         */
+        hostShapeName: string;
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host.
          */
@@ -73520,6 +80074,10 @@ export namespace Ocvp {
          */
         actualEsxiHostsCount: number;
         /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+         */
+        capacityReservationId: string;
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          */
         compartmentId: string;
@@ -73572,6 +80130,14 @@ export namespace Ocvp {
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
          */
         id: string;
+        /**
+         * The initial OCPU count of the SDDC's ESXi hosts.
+         */
+        initialHostOcpuCount: number;
+        /**
+         * The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+         */
+        initialHostShapeName: string;
         /**
          * The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
          */
@@ -73769,6 +80335,10 @@ export namespace Ocvp {
          * The supported SDDC types for the shape.
          */
         supportedSddcTypes: string[];
+        /**
+         * The VMware software versions supported by the shape.
+         */
+        supportedVmwareSoftwareVersions: string[];
     }
 
     export interface GetSupportedSkusFilter {
@@ -73821,6 +80391,17 @@ export namespace Ocvp {
 }
 
 export namespace Oda {
+    export interface GetOdaInstanceRestrictedOperation {
+        /**
+         * Name of the restricted operation.
+         */
+        operationName: string;
+        /**
+         * Name of the service restricting the operation.
+         */
+        restrictingService: string;
+    }
+
     export interface GetOdaInstancesFilter {
         name: string;
         regex?: boolean;
@@ -73828,6 +80409,14 @@ export namespace Oda {
     }
 
     export interface GetOdaInstancesOdaInstance {
+        /**
+         * A list of attachment identifiers for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+         */
+        attachmentIds: string[];
+        /**
+         * A list of attachment types for this instance (if any). Use attachmentIds to get the details of the attachments.
+         */
+        attachmentTypes: string[];
         /**
          * List the Digital Assistant instances that belong to this compartment.
          */
@@ -73849,7 +80438,7 @@ export namespace Oda {
          */
         displayName: string;
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+         * Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
          */
         freeformTags: {[key: string]: any};
         /**
@@ -73857,9 +80446,37 @@ export namespace Oda {
          */
         id: string;
         /**
+         * If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.
+         */
+        identityAppConsoleUrl: string;
+        /**
+         * If isRoleBasedAccess is set to true, this property specifies the GUID of the Identity Application instance Digital Assistant has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this Digital Assistant instance for users within the identity domain.
+         */
+        identityAppGuid: string;
+        /**
+         * If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
+         */
+        identityDomain: string;
+        /**
+         * A list of package ids imported into this instance (if any). Use GetImportedPackage to get the details of the imported packages.
+         */
+        importedPackageIds: string[];
+        /**
+         * A list of package names imported into this instance (if any). Use importedPackageIds field to get the details of the imported packages.
+         */
+        importedPackageNames: string[];
+        /**
+         * Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
+         */
+        isRoleBasedAccess: boolean;
+        /**
          * The current sub-state of the Digital Assistant instance.
          */
         lifecycleSubState: string;
+        /**
+         * A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+         */
+        restrictedOperations: outputs.Oda.GetOdaInstancesOdaInstanceRestrictedOperation[];
         /**
          * Shape or size of the instance.
          */
@@ -73884,6 +80501,3488 @@ export namespace Oda {
          * URL for the Digital Assistant web application that's associated with the instance.
          */
         webAppUrl: string;
+    }
+
+    export interface GetOdaInstancesOdaInstanceRestrictedOperation {
+        /**
+         * Name of the restricted operation.
+         */
+        operationName: string;
+        /**
+         * Name of the service restricting the operation.
+         */
+        restrictingService: string;
+    }
+
+    export interface OdaInstanceRestrictedOperation {
+        /**
+         * Name of the restricted operation.
+         */
+        operationName: string;
+        /**
+         * Name of the service restricting the operation.
+         */
+        restrictingService: string;
+    }
+
+}
+
+export namespace OneSubsription {
+    export interface GetAggregatedComputedUsagesAggregatedComputedUsage {
+        /**
+         * Aggregation of computed usages for the subscribed service.
+         */
+        aggregatedComputedUsages: outputs.OneSubsription.GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage[];
+        /**
+         * Currency code
+         */
+        currencyCode: string;
+        /**
+         * Product part number for subscribed service line, called parent product.
+         */
+        parentProducts: outputs.OneSubsription.GetAggregatedComputedUsagesAggregatedComputedUsageParentProduct[];
+        /**
+         * Subscribed service line parent id
+         */
+        parentSubscribedServiceId: string;
+        /**
+         * Subscribed service asociated subscription plan number.
+         */
+        planNumber: string;
+        /**
+         * Subscribed services pricing model
+         */
+        pricingModel: string;
+        /**
+         * Inernal SPM Ratecard Id at line level
+         */
+        rateCardId: string;
+        /**
+         * Subscription Id is an identifier associated to the service used for filter the Computed Usage in SPM.
+         */
+        subscriptionId: string;
+        /**
+         * Subscribed services contract line end date, expressed in RFC 3339 timestamp format.
+         */
+        timeEnd: string;
+        /**
+         * Subscribed services contract line start date, expressed in RFC 3339 timestamp format.
+         */
+        timeStart: string;
+    }
+
+    export interface GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage {
+        /**
+         * Sum of Computed Line Amount rounded
+         */
+        cost: string;
+        /**
+         * Sum of Computed Line Amount unrounded
+         */
+        costUnrounded: string;
+        /**
+         * Data Center Attribute as sent by MQS to SPM.
+         */
+        dataCenter: string;
+        /**
+         * Net Unit Price for the product in consideration.
+         */
+        netUnitPrice: string;
+        /**
+         * Product description
+         */
+        products: outputs.OneSubsription.GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProduct[];
+        /**
+         * Total Quantity that was used for computation
+         */
+        quantity: string;
+        /**
+         * Metered Service date , expressed in RFC 3339 timestamp format.
+         */
+        timeMeteredOn: string;
+        /**
+         * Usage compute type in SPM.
+         */
+        type: string;
+    }
+
+    export interface GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProduct {
+        /**
+         * Metered service billing category
+         */
+        billingCategory: string;
+        /**
+         * Product name
+         */
+        name: string;
+        /**
+         * Product part number
+         */
+        partNumber: string;
+        /**
+         * Product category
+         */
+        productCategory: string;
+        /**
+         * Product provisioning group
+         */
+        provisioningGroup: string;
+        /**
+         * Rate card part type of Product
+         */
+        ucmRateCardPartType: string;
+        /**
+         * Unit of Measure
+         */
+        unitOfMeasure: string;
+    }
+
+    export interface GetAggregatedComputedUsagesAggregatedComputedUsageParentProduct {
+        /**
+         * Metered service billing category
+         */
+        billingCategory: string;
+        /**
+         * Product name
+         */
+        name: string;
+        /**
+         * Product part number
+         */
+        partNumber: string;
+        /**
+         * Product category
+         */
+        productCategory: string;
+        /**
+         * Product provisioning group
+         */
+        provisioningGroup: string;
+        /**
+         * Rate card part type of Product
+         */
+        ucmRateCardPartType: string;
+        /**
+         * Unit of Measure
+         */
+        unitOfMeasure: string;
+    }
+
+    export interface GetAggregatedComputedUsagesFilter {
+        /**
+         * Product name
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetBillingSchedulesBillingSchedule {
+        /**
+         * Billing schedule line net amount
+         */
+        amount: string;
+        /**
+         * Indicates the associated AR Customer transaction id a unique identifier existing on AR.
+         */
+        arCustomerTransactionId: string;
+        /**
+         * Indicates the associated AR Invoice Number
+         */
+        arInvoiceNumber: string;
+        /**
+         * Billing frequency
+         */
+        billingFrequency: string;
+        /**
+         * Billing schedule invoice status
+         */
+        invoiceStatus: string;
+        /**
+         * Billing schedule net unit price
+         */
+        netUnitPrice: string;
+        /**
+         * Order number associated with the Subscribed Service
+         */
+        orderNumber: string;
+        /**
+         * Product description
+         */
+        products: outputs.OneSubsription.GetBillingSchedulesBillingScheduleProduct[];
+        /**
+         * Billing schedule quantity
+         */
+        quantity: string;
+        /**
+         * This param is used to get only the billing schedules for a particular Subscribed Service
+         */
+        subscribedServiceId: string;
+        /**
+         * Billing schedule end date
+         */
+        timeEnd: string;
+        /**
+         * Billing schedule invoicing date
+         */
+        timeInvoicing: string;
+        /**
+         * Billing schedule start date
+         */
+        timeStart: string;
+    }
+
+    export interface GetBillingSchedulesBillingScheduleProduct {
+        /**
+         * Product name
+         */
+        name: string;
+        /**
+         * Indicates the associated AR Invoice Number
+         */
+        partNumber: string;
+    }
+
+    export interface GetBillingSchedulesFilter {
+        /**
+         * Product name
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetCommitmentsCommitment {
+        /**
+         * Commitment available amount
+         */
+        availableAmount: string;
+        /**
+         * Funded Allocation line value example: 12000.00
+         */
+        fundedAllocationValue: string;
+        /**
+         * SPM internal Commitment ID
+         */
+        id: string;
+        /**
+         * Commitment quantity
+         */
+        quantity: string;
+        /**
+         * This param is used to get the commitments for a particular subscribed service
+         */
+        subscribedServiceId: string;
+        /**
+         * Commitment end date
+         */
+        timeEnd: string;
+        /**
+         * Commitment start date
+         */
+        timeStart: string;
+        /**
+         * Commitment used amount
+         */
+        usedAmount: string;
+    }
+
+    export interface GetCommitmentsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetComputedUsageParentProduct {
+        /**
+         * Metered service billing category
+         */
+        billingCategory: string;
+        /**
+         * Product name
+         */
+        name: string;
+        /**
+         * Product part number
+         */
+        partNumber: string;
+        /**
+         * Product category
+         */
+        productCategory: string;
+        /**
+         * Product provisioning group
+         */
+        provisioningGroup: string;
+        /**
+         * Rate card part type of Product
+         */
+        ucmRateCardPartType: string;
+        /**
+         * Unit of Messure
+         */
+        unitOfMeasure: string;
+    }
+
+    export interface GetComputedUsageProduct {
+        /**
+         * Metered service billing category
+         */
+        billingCategory: string;
+        /**
+         * Product name
+         */
+        name: string;
+        /**
+         * Product part number
+         */
+        partNumber: string;
+        /**
+         * Product category
+         */
+        productCategory: string;
+        /**
+         * Product provisioning group
+         */
+        provisioningGroup: string;
+        /**
+         * Rate card part type of Product
+         */
+        ucmRateCardPartType: string;
+        /**
+         * Unit of Messure
+         */
+        unitOfMeasure: string;
+    }
+
+    export interface GetComputedUsagesComputedUsage {
+        /**
+         * Subscribed service commitmentId.
+         */
+        commitmentServiceId: string;
+        /**
+         * SPM Internal compute records source .
+         */
+        computeSource: string;
+        computedUsageId: string;
+        /**
+         * Computed Line Amount not rounded
+         */
+        cost: string;
+        /**
+         * Computed Line Amount rounded.
+         */
+        costRounded: string;
+        /**
+         * Currency code
+         */
+        currencyCode: string;
+        /**
+         * Data Center Attribute as sent by MQS to SPM.
+         */
+        dataCenter: string;
+        /**
+         * SPM Internal computed usage Id , 32 character string
+         */
+        id: string;
+        /**
+         * Invoicing status for the aggregated compute usage
+         */
+        isInvoiced: boolean;
+        /**
+         * MQS Identfier send to SPM , SPM does not transform this attribute and is received as is.
+         */
+        mqsMessageId: string;
+        /**
+         * Net Unit Price for the product in consideration, price actual.
+         */
+        netUnitPrice: string;
+        /**
+         * SPM Internal Original usage Line number identifier in SPM coming from Metered Services entity.
+         */
+        originalUsageNumber: string;
+        /**
+         * Product part number for subscribed service line, called parent product.
+         */
+        parentProducts: outputs.OneSubsription.GetComputedUsagesComputedUsageParentProduct[];
+        /**
+         * Subscribed service line parent id
+         */
+        parentSubscribedServiceId: string;
+        /**
+         * Subscription plan number
+         */
+        planNumber: string;
+        /**
+         * Product description
+         */
+        products: outputs.OneSubsription.GetComputedUsagesComputedUsageProduct[];
+        /**
+         * Total Quantity that was used for computation
+         */
+        quantity: string;
+        /**
+         * Ratecard Id at subscribed service level
+         */
+        rateCardId: string;
+        /**
+         * References the tier in the ratecard for that usage (OCI will be using the same reference to cross-reference for correctness on the usage csv report), comes from Entity OBSCNTR_IPT_PRODUCTTIER.
+         */
+        rateCardTierdId: string;
+        /**
+         * Computed Usage created time, expressed in RFC 3339 timestamp format.
+         */
+        timeCreated: string;
+        /**
+         * Metered Service date, expressed in RFC 3339 timestamp format.
+         */
+        timeMeteredOn: string;
+        /**
+         * Usae computation date, expressed in RFC 3339 timestamp format.
+         */
+        timeOfArrival: string;
+        /**
+         * Computed Usage updated time, expressed in RFC 3339 timestamp format.
+         */
+        timeUpdated: string;
+        /**
+         * Usage compute type in SPM.
+         */
+        type: string;
+        /**
+         * Unit of Messure
+         */
+        unitOfMeasure: string;
+        /**
+         * SPM Internal usage Line number identifier in SPM coming from Metered Services entity.
+         */
+        usageNumber: string;
+    }
+
+    export interface GetComputedUsagesComputedUsageParentProduct {
+        /**
+         * Metered service billing category
+         */
+        billingCategory: string;
+        /**
+         * Product name
+         */
+        name: string;
+        /**
+         * Product part number
+         */
+        partNumber: string;
+        /**
+         * Product category
+         */
+        productCategory: string;
+        /**
+         * Product provisioning group
+         */
+        provisioningGroup: string;
+        /**
+         * Rate card part type of Product
+         */
+        ucmRateCardPartType: string;
+        /**
+         * Unit of Messure
+         */
+        unitOfMeasure: string;
+    }
+
+    export interface GetComputedUsagesComputedUsageProduct {
+        /**
+         * Metered service billing category
+         */
+        billingCategory: string;
+        /**
+         * Product name
+         */
+        name: string;
+        /**
+         * Product part number
+         */
+        partNumber: string;
+        /**
+         * Product category
+         */
+        productCategory: string;
+        /**
+         * Product provisioning group
+         */
+        provisioningGroup: string;
+        /**
+         * Rate card part type of Product
+         */
+        ucmRateCardPartType: string;
+        /**
+         * Unit of Messure
+         */
+        unitOfMeasure: string;
+    }
+
+    export interface GetComputedUsagesFilter {
+        /**
+         * Product name
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetInvoiceLineComputedUsagesFilter {
+        /**
+         * Product name
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetInvoiceLineComputedUsagesInvoicelineComputedUsage {
+        /**
+         * Sum of Usage/Service Billing Line net Amount
+         */
+        cost: number;
+        /**
+         * Computed Line Amount rounded.
+         */
+        costRounded: number;
+        /**
+         * Net Unit Price for the product in consideration, price actual.
+         */
+        netUnitPrice: number;
+        /**
+         * Product description
+         */
+        parentProducts: outputs.OneSubsription.GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProduct[];
+        /**
+         * Product description
+         */
+        products: outputs.OneSubsription.GetInvoiceLineComputedUsagesInvoicelineComputedUsageProduct[];
+        /**
+         * Total Quantity that was used for computation
+         */
+        quantity: number;
+        /**
+         * Metered Service date.
+         */
+        timeMeteredOn: string;
+        /**
+         * Usage compute type in SPM.
+         */
+        type: string;
+    }
+
+    export interface GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProduct {
+        /**
+         * Metered service billing category
+         */
+        billingCategory: string;
+        /**
+         * Product name
+         */
+        name: string;
+        /**
+         * Product part number
+         */
+        partNumber: string;
+        /**
+         * Product category
+         */
+        productCategory: string;
+        /**
+         * Rate card part type of Product
+         */
+        ucmRateCardPartType: string;
+        /**
+         * Unit of Measure
+         */
+        unitOfMeasure: string;
+    }
+
+    export interface GetInvoiceLineComputedUsagesInvoicelineComputedUsageProduct {
+        /**
+         * Metered service billing category
+         */
+        billingCategory: string;
+        /**
+         * Product name
+         */
+        name: string;
+        /**
+         * Product part number
+         */
+        partNumber: string;
+        /**
+         * Product category
+         */
+        productCategory: string;
+        /**
+         * Rate card part type of Product
+         */
+        ucmRateCardPartType: string;
+        /**
+         * Unit of Measure
+         */
+        unitOfMeasure: string;
+    }
+
+    export interface GetInvoicesFilter {
+        /**
+         * Payment Term name
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetInvoicesInvoice {
+        /**
+         * AR Invoice Numbers comma separated under one invoice
+         */
+        arInvoices: string;
+        /**
+         * Address.
+         */
+        billToAddresses: outputs.OneSubsription.GetInvoicesInvoiceBillToAddress[];
+        /**
+         * User.
+         */
+        billToContacts: outputs.OneSubsription.GetInvoicesInvoiceBillToContact[];
+        /**
+         * Business partner.
+         */
+        billToCustomers: outputs.OneSubsription.GetInvoicesInvoiceBillToCustomer[];
+        /**
+         * User that created the Payment term
+         */
+        createdBy: string;
+        /**
+         * Currency details
+         */
+        currencies: outputs.OneSubsription.GetInvoicesInvoiceCurrency[];
+        /**
+         * Invoice Lines under particular invoice.
+         */
+        invoiceLines: outputs.OneSubsription.GetInvoicesInvoiceInvoiceLine[];
+        /**
+         * Organization details
+         */
+        organizations: outputs.OneSubsription.GetInvoicesInvoiceOrganization[];
+        /**
+         * Payment Method
+         */
+        paymentMethod: string;
+        /**
+         * Payment Term details
+         */
+        paymentTerms: outputs.OneSubsription.GetInvoicesInvoicePaymentTerm[];
+        /**
+         * Receipt Method of Payment Mode
+         */
+        receiptMethod: string;
+        /**
+         * SPM Document Number is an functional identifier for invoice in SPM
+         */
+        spmInvoiceNumber: string;
+        /**
+         * Document Status in SPM which depicts current state of invoice
+         */
+        status: string;
+        /**
+         * Invoice associated subscription plan number.
+         */
+        subscriptionNumber: string;
+        /**
+         * SPM Invocie creation date
+         */
+        timeCreated: string;
+        /**
+         * Invoice Date
+         */
+        timeInvoiceDate: string;
+        /**
+         * SPM Invoice updated date
+         */
+        timeUpdated: string;
+        /**
+         * Document Type in SPM like SPM Invoice,SPM Credit Memo etc.,
+         */
+        type: string;
+        /**
+         * User that updated SPM Invoice
+         */
+        updatedBy: string;
+    }
+
+    export interface GetInvoicesInvoiceBillToAddress {
+        /**
+         * Bill to site use Id.
+         */
+        billSiteUseId: string;
+        /**
+         * Identify as the customer's billing address.
+         */
+        isBillTo: boolean;
+        /**
+         * Identify as the customer's shipping address.
+         */
+        isShipTo: boolean;
+        /**
+         * Address location.
+         */
+        locations: outputs.OneSubsription.GetInvoicesInvoiceBillToAddressLocation[];
+        /**
+         * Payment Term name
+         */
+        name: string;
+        /**
+         * Phone.
+         */
+        phone: string;
+        /**
+         * Service to site use Id.
+         */
+        service2siteUseId: string;
+        /**
+         * TCA customer account site Id.
+         */
+        tcaCustAcctSiteId: string;
+        /**
+         * Party site number.
+         */
+        tcaPartySiteNumber: string;
+    }
+
+    export interface GetInvoicesInvoiceBillToAddressLocation {
+        /**
+         * Address first line.
+         */
+        address1: string;
+        /**
+         * Address second line.
+         */
+        address2: string;
+        /**
+         * City.
+         */
+        city: string;
+        /**
+         * Country.
+         */
+        country: string;
+        /**
+         * Postal code.
+         */
+        postalCode: string;
+        /**
+         * Region.
+         */
+        region: string;
+        /**
+         * TCA Location identifier.
+         */
+        tcaLocationId: string;
+    }
+
+    export interface GetInvoicesInvoiceBillToContact {
+        /**
+         * Email.
+         */
+        email: string;
+        /**
+         * First name.
+         */
+        firstName: string;
+        /**
+         * Last name.
+         */
+        lastName: string;
+        /**
+         * Payment Term name
+         */
+        name: string;
+        /**
+         * TCA contact ID.
+         */
+        tcaContactId: string;
+        /**
+         * TCA customer account site ID.
+         */
+        tcaCustAccntSiteId: string;
+        /**
+         * TCA party ID.
+         */
+        tcaPartyId: string;
+        /**
+         * userName.
+         */
+        userName: string;
+    }
+
+    export interface GetInvoicesInvoiceBillToCustomer {
+        /**
+         * Customer chain type.
+         */
+        customerChainType: string;
+        /**
+         * The business partner is chain customer or not.
+         */
+        isChainCustomer: boolean;
+        /**
+         * The business partner is part of the public sector or not.
+         */
+        isPublicSector: boolean;
+        /**
+         * Payment Term name
+         */
+        name: string;
+        /**
+         * Phonetic name.
+         */
+        namePhonetic: string;
+        /**
+         * TCA customer account ID.
+         */
+        tcaCustomerAccountId: string;
+        /**
+         * TCA customer account number.
+         */
+        tcaCustomerAccountNumber: string;
+        /**
+         * TCA party ID.
+         */
+        tcaPartyId: string;
+        /**
+         * TCA party number.
+         */
+        tcaPartyNumber: string;
+    }
+
+    export interface GetInvoicesInvoiceCurrency {
+        /**
+         * Currency Code
+         */
+        isoCode: string;
+        /**
+         * Payment Term name
+         */
+        name: string;
+        /**
+         * Standard Precision of the Currency
+         */
+        stdPrecision: string;
+    }
+
+    export interface GetInvoicesInvoiceInvoiceLine {
+        /**
+         * AR Invoice Number for Invoice Line
+         */
+        arInvoiceNumber: string;
+        /**
+         * Data Center Attribute.
+         */
+        dataCenter: string;
+        /**
+         * SPM Invoice Line internal identifier
+         */
+        id: string;
+        /**
+         * Product description
+         */
+        products: outputs.OneSubsription.GetInvoicesInvoiceInvoiceLineProduct[];
+        /**
+         * Usage end time
+         */
+        timeEnd: string;
+        /**
+         * Usage start time
+         */
+        timeStart: string;
+    }
+
+    export interface GetInvoicesInvoiceInvoiceLineProduct {
+        /**
+         * Metered service billing category
+         */
+        billingCategory: string;
+        /**
+         * Payment Term name
+         */
+        name: string;
+        /**
+         * Product part number
+         */
+        partNumber: string;
+        /**
+         * Product category
+         */
+        productCategory: string;
+        /**
+         * Rate card part type of Product
+         */
+        ucmRateCardPartType: string;
+        /**
+         * Unit of Measure
+         */
+        unitOfMeasure: string;
+    }
+
+    export interface GetInvoicesInvoiceOrganization {
+        /**
+         * Payment Term name
+         */
+        name: string;
+        /**
+         * Organization ID
+         */
+        number: number;
+    }
+
+    export interface GetInvoicesInvoicePaymentTerm {
+        /**
+         * User that created the Payment term
+         */
+        createdBy: string;
+        /**
+         * Payment term Description
+         */
+        description: string;
+        /**
+         * Payment term active flag
+         */
+        isActive: boolean;
+        /**
+         * Payment Term name
+         */
+        name: string;
+        /**
+         * SPM Invocie creation date
+         */
+        timeCreated: string;
+        /**
+         * SPM Invoice updated date
+         */
+        timeUpdated: string;
+        /**
+         * User that updated SPM Invoice
+         */
+        updatedBy: string;
+        /**
+         * Payment Term value
+         */
+        value: string;
+    }
+
+    export interface GetOrganizationSubscriptionsFilter {
+        /**
+         * Currency name
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetOrganizationSubscriptionsOrganizationSubscription {
+        /**
+         * Currency details
+         */
+        currencies: outputs.OneSubsription.GetOrganizationSubscriptionsOrganizationSubscriptionCurrency[];
+        /**
+         * SPM internal Subscription ID
+         */
+        id: string;
+        /**
+         * Customer friendly service name provided by PRG
+         */
+        serviceName: string;
+        /**
+         * Status of the plan
+         */
+        status: string;
+        /**
+         * Represents the date when the last service of the subscription ends
+         */
+        timeEnd: string;
+        /**
+         * Represents the date when the first service of the subscription was activated
+         */
+        timeStart: string;
+        /**
+         * Total aggregate TCLV of all lines for the subscription including expired, active, and signed
+         */
+        totalValue: string;
+        /**
+         * Subscription Type i.e. IAAS,SAAS,PAAS
+         */
+        type: string;
+    }
+
+    export interface GetOrganizationSubscriptionsOrganizationSubscriptionCurrency {
+        /**
+         * Currency Code
+         */
+        isoCode: string;
+        /**
+         * Currency name
+         */
+        name: string;
+        /**
+         * Standard Precision of the Currency
+         */
+        stdPrecision: string;
+    }
+
+    export interface GetRatecardsFilter {
+        /**
+         * Product name
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetRatecardsRateCard {
+        /**
+         * Currency details
+         */
+        currencies: outputs.OneSubsription.GetRatecardsRateCardCurrency[];
+        /**
+         * Rate card discretionary discount percentage
+         */
+        discretionaryDiscountPercentage: string;
+        /**
+         * Rate card price tier flag
+         */
+        isTier: boolean;
+        /**
+         * Rate card tier net unit price
+         */
+        netUnitPrice: string;
+        /**
+         * Rate card tier overage price
+         */
+        overagePrice: string;
+        /**
+         * Product description
+         */
+        products: outputs.OneSubsription.GetRatecardsRateCardProduct[];
+        /**
+         * List of tiered rate card prices
+         */
+        rateCardTiers: outputs.OneSubsription.GetRatecardsRateCardRateCardTier[];
+        /**
+         * SPM internal Subscribed Service ID
+         */
+        subscribedServiceId: string;
+        /**
+         * Rate card end date
+         */
+        timeEnd: string;
+        /**
+         * Rate card start date
+         */
+        timeStart: string;
+    }
+
+    export interface GetRatecardsRateCardCurrency {
+        /**
+         * Currency Code
+         */
+        isoCode: string;
+        /**
+         * Product name
+         */
+        name: string;
+        /**
+         * Standard Precision of the Currency
+         */
+        stdPrecision: string;
+    }
+
+    export interface GetRatecardsRateCardProduct {
+        /**
+         * Metered service billing category
+         */
+        billingCategory: string;
+        /**
+         * Product name
+         */
+        name: string;
+        /**
+         * This param is used to get the rate card(s) filterd by the partNumber
+         */
+        partNumber: string;
+        /**
+         * Product category
+         */
+        productCategory: string;
+        /**
+         * Rate card part type of Product
+         */
+        ucmRateCardPartType: string;
+        /**
+         * Unit of measure
+         */
+        unitOfMeasure: string;
+    }
+
+    export interface GetRatecardsRateCardRateCardTier {
+        /**
+         * Rate card tier net unit price
+         */
+        netUnitPrice: string;
+        /**
+         * Rate card tier overage price
+         */
+        overagePrice: string;
+        /**
+         * Rate card tier quantity range
+         */
+        upToQuantity: string;
+    }
+
+    export interface GetSubscribedServiceBillToAddress {
+        /**
+         * Bill to site use Id.
+         */
+        billSiteUseId: string;
+        /**
+         * Identify as the customer shipping address.
+         */
+        isBillTo: boolean;
+        /**
+         * Identify as the customer invoicing address.
+         */
+        isShipTo: boolean;
+        /**
+         * Address location.
+         */
+        locations: outputs.OneSubsription.GetSubscribedServiceBillToAddressLocation[];
+        /**
+         * Commercial name also called customer name.
+         */
+        name: string;
+        /**
+         * Phone.
+         */
+        phone: string;
+        /**
+         * Service to site use Id.
+         */
+        service2siteUseId: string;
+        /**
+         * TCA customer account site Id.
+         */
+        tcaCustAcctSiteId: string;
+        /**
+         * Party site number.
+         */
+        tcaPartySiteNumber: string;
+    }
+
+    export interface GetSubscribedServiceBillToAddressLocation {
+        /**
+         * Address first line.
+         */
+        address1: string;
+        /**
+         * Address second line.
+         */
+        address2: string;
+        /**
+         * City.
+         */
+        city: string;
+        /**
+         * Country.
+         */
+        country: string;
+        /**
+         * Postal code.
+         */
+        postalCode: string;
+        /**
+         * Region.
+         */
+        region: string;
+        /**
+         * Region.
+         */
+        tcaLocationId: string;
+    }
+
+    export interface GetSubscribedServiceBillToContact {
+        /**
+         * Email.
+         */
+        email: string;
+        /**
+         * First name.
+         */
+        firstName: string;
+        /**
+         * Last name.
+         */
+        lastName: string;
+        /**
+         * Commercial name also called customer name.
+         */
+        name: string;
+        /**
+         * TCA contact ID.
+         */
+        tcaContactId: string;
+        /**
+         * TCA customer account site ID.
+         */
+        tcaCustAccntSiteId: string;
+        /**
+         * TCA party ID.
+         */
+        tcaPartyId: string;
+        /**
+         * Username.
+         */
+        username: string;
+    }
+
+    export interface GetSubscribedServiceBillToCustomer {
+        /**
+         * Customer chain type.
+         */
+        customerChainType: string;
+        /**
+         * The business partner is chain customer or not.
+         */
+        isChainCustomer: boolean;
+        /**
+         * The business partner is part of the public sector or not.
+         */
+        isPublicSector: boolean;
+        /**
+         * Commercial name also called customer name.
+         */
+        name: string;
+        /**
+         * Phonetic name.
+         */
+        namePhonetic: string;
+        /**
+         * TCA customer account number.
+         */
+        tcaCustAccountNumber: string;
+        /**
+         * TCA customer account ID.
+         */
+        tcaCustomerAccountId: string;
+        /**
+         * TCA party ID.
+         */
+        tcaPartyId: string;
+        /**
+         * TCA party number.
+         */
+        tcaPartyNumber: string;
+    }
+
+    export interface GetSubscribedServiceCommitmentService {
+        /**
+         * Commitment available amount
+         */
+        availableAmount: string;
+        /**
+         * Funded Allocation line value example: 12000.00
+         */
+        fundedAllocationValue: string;
+        /**
+         * Subscribed service line net amount
+         */
+        lineNetAmount: string;
+        /**
+         * Subscribed service quantity
+         */
+        quantity: string;
+        /**
+         * Subscribed service end date
+         */
+        timeEnd: string;
+        /**
+         * Subscribed service start date
+         */
+        timeStart: string;
+    }
+
+    export interface GetSubscribedServiceEndUserAddress {
+        /**
+         * Bill to site use Id.
+         */
+        billSiteUseId: string;
+        /**
+         * Identify as the customer shipping address.
+         */
+        isBillTo: boolean;
+        /**
+         * Identify as the customer invoicing address.
+         */
+        isShipTo: boolean;
+        /**
+         * Address location.
+         */
+        locations: outputs.OneSubsription.GetSubscribedServiceEndUserAddressLocation[];
+        /**
+         * Commercial name also called customer name.
+         */
+        name: string;
+        /**
+         * Phone.
+         */
+        phone: string;
+        /**
+         * Service to site use Id.
+         */
+        service2siteUseId: string;
+        /**
+         * TCA customer account site Id.
+         */
+        tcaCustAcctSiteId: string;
+        /**
+         * Party site number.
+         */
+        tcaPartySiteNumber: string;
+    }
+
+    export interface GetSubscribedServiceEndUserAddressLocation {
+        /**
+         * Address first line.
+         */
+        address1: string;
+        /**
+         * Address second line.
+         */
+        address2: string;
+        /**
+         * City.
+         */
+        city: string;
+        /**
+         * Country.
+         */
+        country: string;
+        /**
+         * Postal code.
+         */
+        postalCode: string;
+        /**
+         * Region.
+         */
+        region: string;
+        /**
+         * Region.
+         */
+        tcaLocationId: string;
+    }
+
+    export interface GetSubscribedServiceEndUserContact {
+        /**
+         * Email.
+         */
+        email: string;
+        /**
+         * First name.
+         */
+        firstName: string;
+        /**
+         * Last name.
+         */
+        lastName: string;
+        /**
+         * Commercial name also called customer name.
+         */
+        name: string;
+        /**
+         * TCA contact ID.
+         */
+        tcaContactId: string;
+        /**
+         * TCA customer account site ID.
+         */
+        tcaCustAccntSiteId: string;
+        /**
+         * TCA party ID.
+         */
+        tcaPartyId: string;
+        /**
+         * Username.
+         */
+        username: string;
+    }
+
+    export interface GetSubscribedServiceEndUserCustomer {
+        /**
+         * Customer chain type.
+         */
+        customerChainType: string;
+        /**
+         * The business partner is chain customer or not.
+         */
+        isChainCustomer: boolean;
+        /**
+         * The business partner is part of the public sector or not.
+         */
+        isPublicSector: boolean;
+        /**
+         * Commercial name also called customer name.
+         */
+        name: string;
+        /**
+         * Phonetic name.
+         */
+        namePhonetic: string;
+        /**
+         * TCA customer account number.
+         */
+        tcaCustAccountNumber: string;
+        /**
+         * TCA customer account ID.
+         */
+        tcaCustomerAccountId: string;
+        /**
+         * TCA party ID.
+         */
+        tcaPartyId: string;
+        /**
+         * TCA party number.
+         */
+        tcaPartyNumber: string;
+    }
+
+    export interface GetSubscribedServicePaymentTerm {
+        /**
+         * User that created the Payment term
+         */
+        createdBy: string;
+        /**
+         * Payment term Description
+         */
+        description: string;
+        /**
+         * Payment term active flag
+         */
+        isActive: boolean;
+        /**
+         * Commercial name also called customer name.
+         */
+        name: string;
+        /**
+         * Subscribed service creation date
+         */
+        timeCreated: string;
+        /**
+         * Subscribed service last update date
+         */
+        timeUpdated: string;
+        /**
+         * User that updated the subscribed service
+         */
+        updatedBy: string;
+        /**
+         * Payment Term value
+         */
+        value: string;
+    }
+
+    export interface GetSubscribedServiceProduct {
+        /**
+         * Metered service billing category
+         */
+        billingCategory: string;
+        /**
+         * Commercial name also called customer name.
+         */
+        name: string;
+        /**
+         * Product part numner
+         */
+        partNumber: string;
+        /**
+         * Product category
+         */
+        productCategory: string;
+        /**
+         * Rate card part type of Product
+         */
+        ucmRateCardPartType: string;
+        /**
+         * Unit of measure
+         */
+        unitOfMeasure: string;
+    }
+
+    export interface GetSubscribedServiceRateCard {
+        /**
+         * Currency details
+         */
+        currencies: outputs.OneSubsription.GetSubscribedServiceRateCardCurrency[];
+        /**
+         * Rate card discretionary discount percentage
+         */
+        discretionaryDiscountPercentage: string;
+        /**
+         * Rate card price tier flag
+         */
+        isTier: boolean;
+        /**
+         * Rate card tier net unit price
+         */
+        netUnitPrice: string;
+        /**
+         * Rate card tier overage price
+         */
+        overagePrice: string;
+        /**
+         * Product description
+         */
+        products: outputs.OneSubsription.GetSubscribedServiceRateCardProduct[];
+        /**
+         * List of tiered rate card prices
+         */
+        rateCardTiers: outputs.OneSubsription.GetSubscribedServiceRateCardRateCardTier[];
+        /**
+         * The Subscribed Service Id
+         */
+        subscribedServiceId: string;
+        /**
+         * Subscribed service end date
+         */
+        timeEnd: string;
+        /**
+         * Subscribed service start date
+         */
+        timeStart: string;
+    }
+
+    export interface GetSubscribedServiceRateCardCurrency {
+        /**
+         * Currency Code
+         */
+        isoCode: string;
+        /**
+         * Commercial name also called customer name.
+         */
+        name: string;
+        /**
+         * Standard Precision of the Currency
+         */
+        stdPrecision: string;
+    }
+
+    export interface GetSubscribedServiceRateCardProduct {
+        /**
+         * Metered service billing category
+         */
+        billingCategory: string;
+        /**
+         * Commercial name also called customer name.
+         */
+        name: string;
+        /**
+         * Product part numner
+         */
+        partNumber: string;
+        /**
+         * Product category
+         */
+        productCategory: string;
+        /**
+         * Rate card part type of Product
+         */
+        ucmRateCardPartType: string;
+        /**
+         * Unit of measure
+         */
+        unitOfMeasure: string;
+    }
+
+    export interface GetSubscribedServiceRateCardRateCardTier {
+        /**
+         * Rate card tier net unit price
+         */
+        netUnitPrice: string;
+        /**
+         * Rate card tier overage price
+         */
+        overagePrice: string;
+        /**
+         * Rate card tier quantity range
+         */
+        upToQuantity: string;
+    }
+
+    export interface GetSubscribedServiceResellerAddress {
+        /**
+         * Bill to site use Id.
+         */
+        billSiteUseId: string;
+        /**
+         * Identify as the customer shipping address.
+         */
+        isBillTo: boolean;
+        /**
+         * Identify as the customer invoicing address.
+         */
+        isShipTo: boolean;
+        /**
+         * Address location.
+         */
+        locations: outputs.OneSubsription.GetSubscribedServiceResellerAddressLocation[];
+        /**
+         * Commercial name also called customer name.
+         */
+        name: string;
+        /**
+         * Phone.
+         */
+        phone: string;
+        /**
+         * Service to site use Id.
+         */
+        service2siteUseId: string;
+        /**
+         * TCA customer account site Id.
+         */
+        tcaCustAcctSiteId: string;
+        /**
+         * Party site number.
+         */
+        tcaPartySiteNumber: string;
+    }
+
+    export interface GetSubscribedServiceResellerAddressLocation {
+        /**
+         * Address first line.
+         */
+        address1: string;
+        /**
+         * Address second line.
+         */
+        address2: string;
+        /**
+         * City.
+         */
+        city: string;
+        /**
+         * Country.
+         */
+        country: string;
+        /**
+         * Postal code.
+         */
+        postalCode: string;
+        /**
+         * Region.
+         */
+        region: string;
+        /**
+         * Region.
+         */
+        tcaLocationId: string;
+    }
+
+    export interface GetSubscribedServiceResellerContact {
+        /**
+         * Email.
+         */
+        email: string;
+        /**
+         * First name.
+         */
+        firstName: string;
+        /**
+         * Last name.
+         */
+        lastName: string;
+        /**
+         * Commercial name also called customer name.
+         */
+        name: string;
+        /**
+         * TCA contact ID.
+         */
+        tcaContactId: string;
+        /**
+         * TCA customer account site ID.
+         */
+        tcaCustAccntSiteId: string;
+        /**
+         * TCA party ID.
+         */
+        tcaPartyId: string;
+        /**
+         * Username.
+         */
+        username: string;
+    }
+
+    export interface GetSubscribedServiceResellerCustomer {
+        /**
+         * Customer chain type.
+         */
+        customerChainType: string;
+        /**
+         * The business partner is chain customer or not.
+         */
+        isChainCustomer: boolean;
+        /**
+         * The business partner is part of the public sector or not.
+         */
+        isPublicSector: boolean;
+        /**
+         * Commercial name also called customer name.
+         */
+        name: string;
+        /**
+         * Phonetic name.
+         */
+        namePhonetic: string;
+        /**
+         * TCA customer account number.
+         */
+        tcaCustAccountNumber: string;
+        /**
+         * TCA customer account ID.
+         */
+        tcaCustomerAccountId: string;
+        /**
+         * TCA party ID.
+         */
+        tcaPartyId: string;
+        /**
+         * TCA party number.
+         */
+        tcaPartyNumber: string;
+    }
+
+    export interface GetSubscribedServiceServiceToAddress {
+        /**
+         * Bill to site use Id.
+         */
+        billSiteUseId: string;
+        /**
+         * Identify as the customer shipping address.
+         */
+        isBillTo: boolean;
+        /**
+         * Identify as the customer invoicing address.
+         */
+        isShipTo: boolean;
+        /**
+         * Address location.
+         */
+        locations: outputs.OneSubsription.GetSubscribedServiceServiceToAddressLocation[];
+        /**
+         * Commercial name also called customer name.
+         */
+        name: string;
+        /**
+         * Phone.
+         */
+        phone: string;
+        /**
+         * Service to site use Id.
+         */
+        service2siteUseId: string;
+        /**
+         * TCA customer account site Id.
+         */
+        tcaCustAcctSiteId: string;
+        /**
+         * Party site number.
+         */
+        tcaPartySiteNumber: string;
+    }
+
+    export interface GetSubscribedServiceServiceToAddressLocation {
+        /**
+         * Address first line.
+         */
+        address1: string;
+        /**
+         * Address second line.
+         */
+        address2: string;
+        /**
+         * City.
+         */
+        city: string;
+        /**
+         * Country.
+         */
+        country: string;
+        /**
+         * Postal code.
+         */
+        postalCode: string;
+        /**
+         * Region.
+         */
+        region: string;
+        /**
+         * Region.
+         */
+        tcaLocationId: string;
+    }
+
+    export interface GetSubscribedServiceServiceToContact {
+        /**
+         * Email.
+         */
+        email: string;
+        /**
+         * First name.
+         */
+        firstName: string;
+        /**
+         * Last name.
+         */
+        lastName: string;
+        /**
+         * Commercial name also called customer name.
+         */
+        name: string;
+        /**
+         * TCA contact ID.
+         */
+        tcaContactId: string;
+        /**
+         * TCA customer account site ID.
+         */
+        tcaCustAccntSiteId: string;
+        /**
+         * TCA party ID.
+         */
+        tcaPartyId: string;
+        /**
+         * Username.
+         */
+        username: string;
+    }
+
+    export interface GetSubscribedServiceServiceToCustomer {
+        /**
+         * Customer chain type.
+         */
+        customerChainType: string;
+        /**
+         * The business partner is chain customer or not.
+         */
+        isChainCustomer: boolean;
+        /**
+         * The business partner is part of the public sector or not.
+         */
+        isPublicSector: boolean;
+        /**
+         * Commercial name also called customer name.
+         */
+        name: string;
+        /**
+         * Phonetic name.
+         */
+        namePhonetic: string;
+        /**
+         * TCA customer account number.
+         */
+        tcaCustAccountNumber: string;
+        /**
+         * TCA customer account ID.
+         */
+        tcaCustomerAccountId: string;
+        /**
+         * TCA party ID.
+         */
+        tcaPartyId: string;
+        /**
+         * TCA party number.
+         */
+        tcaPartyNumber: string;
+    }
+
+    export interface GetSubscribedServiceSoldToContact {
+        /**
+         * Email.
+         */
+        email: string;
+        /**
+         * First name.
+         */
+        firstName: string;
+        /**
+         * Last name.
+         */
+        lastName: string;
+        /**
+         * Commercial name also called customer name.
+         */
+        name: string;
+        /**
+         * TCA contact ID.
+         */
+        tcaContactId: string;
+        /**
+         * TCA customer account site ID.
+         */
+        tcaCustAccntSiteId: string;
+        /**
+         * TCA party ID.
+         */
+        tcaPartyId: string;
+        /**
+         * Username.
+         */
+        username: string;
+    }
+
+    export interface GetSubscribedServiceSoldToCustomer {
+        /**
+         * Customer chain type.
+         */
+        customerChainType: string;
+        /**
+         * The business partner is chain customer or not.
+         */
+        isChainCustomer: boolean;
+        /**
+         * The business partner is part of the public sector or not.
+         */
+        isPublicSector: boolean;
+        /**
+         * Commercial name also called customer name.
+         */
+        name: string;
+        /**
+         * Phonetic name.
+         */
+        namePhonetic: string;
+        /**
+         * TCA customer account number.
+         */
+        tcaCustAccountNumber: string;
+        /**
+         * TCA customer account ID.
+         */
+        tcaCustomerAccountId: string;
+        /**
+         * TCA party ID.
+         */
+        tcaPartyId: string;
+        /**
+         * TCA party number.
+         */
+        tcaPartyNumber: string;
+    }
+
+    export interface GetSubscribedServicesFilter {
+        /**
+         * Commercial name also called customer name.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSubscribedServicesSubscribedService {
+        /**
+         * Subscribed service admin email id
+         */
+        adminEmail: string;
+        /**
+         * Subscribed service agreement ID
+         */
+        agreementId: string;
+        /**
+         * Subscribed service agrrement name
+         */
+        agreementName: string;
+        /**
+         * Subscribed service agrrement type
+         */
+        agreementType: string;
+        /**
+         * Commitment available amount
+         */
+        availableAmount: string;
+        /**
+         * Address.
+         */
+        billToAddresses: outputs.OneSubsription.GetSubscribedServicesSubscribedServiceBillToAddress[];
+        /**
+         * User.
+         */
+        billToContacts: outputs.OneSubsription.GetSubscribedServicesSubscribedServiceBillToContact[];
+        /**
+         * Business partner.
+         */
+        billToCustomers: outputs.OneSubsription.GetSubscribedServicesSubscribedServiceBillToCustomer[];
+        /**
+         * Subscribed service invoice frequency
+         */
+        billingFrequency: string;
+        /**
+         * Booking Opportunity Number of Subscribed Service
+         */
+        bookingOptyNumber: string;
+        /**
+         * Subscribed service buyer email id
+         */
+        buyerEmail: string;
+        /**
+         * Subscribed service commitment schedule Id
+         */
+        commitmentScheduleId: string;
+        /**
+         * List of Commitment services of a line
+         */
+        commitmentServices: outputs.OneSubsription.GetSubscribedServicesSubscribedServiceCommitmentService[];
+        /**
+         * User that created the Payment term
+         */
+        createdBy: string;
+        /**
+         * Subscribed service credit percentage
+         */
+        creditPercentage: string;
+        /**
+         * Subscribed service CSI number
+         */
+        csi: string;
+        /**
+         * Identifier for a customer's transactions for purchase of ay oracle services
+         */
+        customerTransactionReference: string;
+        /**
+         * Subscribed service data center
+         */
+        dataCenter: string;
+        /**
+         * Subscribed service data center region
+         */
+        dataCenterRegion: string;
+        /**
+         * Subscribed service eligible to renew field
+         */
+        eligibleToRenew: string;
+        /**
+         * Address.
+         */
+        endUserAddresses: outputs.OneSubsription.GetSubscribedServicesSubscribedServiceEndUserAddress[];
+        /**
+         * User.
+         */
+        endUserContacts: outputs.OneSubsription.GetSubscribedServicesSubscribedServiceEndUserContact[];
+        /**
+         * Business partner.
+         */
+        endUserCustomers: outputs.OneSubsription.GetSubscribedServicesSubscribedServiceEndUserCustomer[];
+        /**
+         * Subscribed service fulfillment set
+         */
+        fulfillmentSet: string;
+        /**
+         * Funded Allocation line value example: 12000.00
+         */
+        fundedAllocationValue: string;
+        /**
+         * SPM internal Subscribed Service ID
+         */
+        id: string;
+        /**
+         * Indicates if a service can recieve usages and consequently have available amounts computed
+         */
+        isAllowance: boolean;
+        /**
+         * If true compares rate between ratecard and the active pricelist and minimum rate would be fetched
+         */
+        isCapToPriceList: boolean;
+        /**
+         * Used in context of service credit lines
+         */
+        isCreditEnabled: boolean;
+        /**
+         * Indicator on whether or not there has been usage for the subscribed service
+         */
+        isHavingUsage: boolean;
+        /**
+         * Subscribed service intent to pay flag
+         */
+        isIntentToPay: boolean;
+        /**
+         * Subscribed service payg flag
+         */
+        isPayg: boolean;
+        /**
+         * Indicates if the Subscribed service has a single ratecard
+         */
+        isSingleRateCard: boolean;
+        /**
+         * Indicates if the commitment lines can have different quantities
+         */
+        isVariableCommitment: boolean;
+        /**
+         * Subscribed service line net amount
+         */
+        lineNetAmount: string;
+        /**
+         * Subscribed service Major Set
+         */
+        majorSet: string;
+        /**
+         * Rate card tier net unit price
+         */
+        netUnitPrice: string;
+        /**
+         * Subscribed service operation type
+         */
+        operationType: string;
+        /**
+         * Sales Order Header associated to the subscribed service
+         */
+        orderHeaderId: string;
+        /**
+         * Order Line identifier at subscribed service level . This identifier is originated in Order Management module. Default is null.
+         */
+        orderLineId: string;
+        /**
+         * Sales Order Line Number associated to the subscribed service
+         */
+        orderLineNumber: number;
+        /**
+         * Sales Order Number associated to the subscribed service
+         */
+        orderNumber: string;
+        /**
+         * Order Type of Subscribed Service
+         */
+        orderType: string;
+        /**
+         * Subscribed service Promotion Amount
+         */
+        originalPromoAmount: string;
+        /**
+         * Overage Bill To of Subscribed Service
+         */
+        overageBillTo: string;
+        /**
+         * Subscribed service Overage Discount Percentage
+         */
+        overageDiscountPercentage: string;
+        /**
+         * Overage Policy of Subscribed Service
+         */
+        overagePolicy: string;
+        /**
+         * Subscribed service partner credit amount
+         */
+        partnerCreditAmount: string;
+        /**
+         * This field contains the name of the partner to which the subscription belongs - depending on which the invoicing may differ
+         */
+        partnerTransactionType: string;
+        /**
+         * Pay As You Go policy of Subscribed Service (Can be null - indicating no payg policy)
+         */
+        paygPolicy: string;
+        /**
+         * Payment Method of Subscribed Service
+         */
+        paymentMethod: string;
+        /**
+         * Payment Number of Subscribed Service
+         */
+        paymentNumber: string;
+        /**
+         * Payment Term details
+         */
+        paymentTerms: outputs.OneSubsription.GetSubscribedServicesSubscribedServicePaymentTerm[];
+        /**
+         * Indicates the period for which the commitment amount can be utilised exceeding which the amount lapses. Also used in calculation of total contract line value
+         */
+        pricePeriod: string;
+        /**
+         * Subscribed service pricing model
+         */
+        pricingModel: string;
+        /**
+         * Product description
+         */
+        products: outputs.OneSubsription.GetSubscribedServicesSubscribedServiceProduct[];
+        /**
+         * Subscribed service program type
+         */
+        programType: string;
+        /**
+         * Not null if this service has an associated promotion line in SPM. Contains the line identifier from Order Management of  the associated promo line.
+         */
+        promoOrderLineId: string;
+        /**
+         * Subscribed service promotion type
+         */
+        promoType: string;
+        /**
+         * Promotion Pricing Type of Subscribed Service (Can be null - indicating no promotion pricing)
+         */
+        promotionPricingType: string;
+        /**
+         * Subscribed service provisioning source
+         */
+        provisioningSource: string;
+        /**
+         * Subscribed service quantity
+         */
+        quantity: string;
+        /**
+         * Subscribed service Rate Card Discount Percentage
+         */
+        rateCardDiscountPercentage: string;
+        /**
+         * List of Rate Cards of a Subscribed Service
+         */
+        rateCards: outputs.OneSubsription.GetSubscribedServicesSubscribedServiceRateCard[];
+        /**
+         * SPM Ratecard Type
+         */
+        ratecardType: string;
+        /**
+         * Subscribed service Opportunity Id
+         */
+        renewalOptyId: string;
+        /**
+         * Renewal Opportunity Number of Subscribed Service
+         */
+        renewalOptyNumber: string;
+        /**
+         * Renewal Opportunity Type of Subscribed Service
+         */
+        renewalOptyType: string;
+        /**
+         * SPM renewed Subscription ID
+         */
+        renewedSubscribedServiceId: string;
+        /**
+         * Address.
+         */
+        resellerAddresses: outputs.OneSubsription.GetSubscribedServicesSubscribedServiceResellerAddress[];
+        /**
+         * User.
+         */
+        resellerContacts: outputs.OneSubsription.GetSubscribedServicesSubscribedServiceResellerContact[];
+        /**
+         * Business partner.
+         */
+        resellerCustomers: outputs.OneSubsription.GetSubscribedServicesSubscribedServiceResellerCustomer[];
+        /**
+         * Subscribed service Revenue Line Id
+         */
+        revenueLineId: string;
+        /**
+         * Revenue Line NUmber of Subscribed Service
+         */
+        revenueLineNumber: string;
+        /**
+         * Subscribed service Revised ARR
+         */
+        revisedArrInLc: string;
+        /**
+         * Subscribed service Revised ARR in Standard Currency
+         */
+        revisedArrInSc: string;
+        /**
+         * Subscribed service sales account party id
+         */
+        salesAccountPartyId: string;
+        /**
+         * Sales Channel of Subscribed Service
+         */
+        salesChannel: string;
+        /**
+         * Subscribed service line number
+         */
+        serialNumber: string;
+        /**
+         * Address.
+         */
+        serviceToAddresses: outputs.OneSubsription.GetSubscribedServicesSubscribedServiceServiceToAddress[];
+        /**
+         * User.
+         */
+        serviceToContacts: outputs.OneSubsription.GetSubscribedServicesSubscribedServiceServiceToContact[];
+        /**
+         * Business partner.
+         */
+        serviceToCustomers: outputs.OneSubsription.GetSubscribedServicesSubscribedServiceServiceToCustomer[];
+        /**
+         * User.
+         */
+        soldToContacts: outputs.OneSubsription.GetSubscribedServicesSubscribedServiceSoldToContact[];
+        /**
+         * Business partner.
+         */
+        soldToCustomers: outputs.OneSubsription.GetSubscribedServicesSubscribedServiceSoldToCustomer[];
+        /**
+         * Subscribed service start date type
+         */
+        startDateType: string;
+        /**
+         * This param is used to filter subscribed services based on its status
+         */
+        status: string;
+        /**
+         * Line level Subscription Id
+         */
+        subscriptionId: string;
+        /**
+         * Subscribed service source
+         */
+        subscriptionSource: string;
+        /**
+         * Subscribed service System ARR
+         */
+        systemArrInLc: string;
+        /**
+         * Subscribed service System ARR in Standard Currency
+         */
+        systemArrInSc: string;
+        /**
+         * Subscribed service System ATR-ARR
+         */
+        systemAtrArrInLc: string;
+        /**
+         * Subscribed service System ATR-ARR in Standard Currency
+         */
+        systemAtrArrInSc: string;
+        /**
+         * Term value in Months
+         */
+        termValue: string;
+        /**
+         * Term value UOM
+         */
+        termValueUom: string;
+        /**
+         * Subscribed service agrrement end date
+         */
+        timeAgreementEnd: string;
+        /**
+         * Subscribed service creation date
+         */
+        timeCreated: string;
+        /**
+         * Subscribed service customer config date
+         */
+        timeCustomerConfig: string;
+        /**
+         * Subscribed service end date
+         */
+        timeEnd: string;
+        /**
+         * Subscribed service Major Set End date
+         */
+        timeMajorsetEnd: string;
+        /**
+         * Subscribed service Major Set Start date
+         */
+        timeMajorsetStart: string;
+        /**
+         * Subscribed service payment expiry date
+         */
+        timePaymentExpiry: string;
+        /**
+         * Subscribed service provisioning date
+         */
+        timeProvisioned: string;
+        /**
+         * Subscribed service service configuration email sent date
+         */
+        timeServiceConfigurationEmailSent: string;
+        /**
+         * Subscribed service start date
+         */
+        timeStart: string;
+        /**
+         * Subscribed service last update date
+         */
+        timeUpdated: string;
+        /**
+         * Subscribed service welcome email sent date
+         */
+        timeWelcomeEmailSent: string;
+        /**
+         * Subscribed service total value
+         */
+        totalValue: string;
+        /**
+         * Subscribed service Transaction Extension Id
+         */
+        transactionExtensionId: string;
+        /**
+         * Subscribed Service line type
+         */
+        type: string;
+        /**
+         * User that updated the subscribed service
+         */
+        updatedBy: string;
+        /**
+         * Subscribed service used amount
+         */
+        usedAmount: string;
+    }
+
+    export interface GetSubscribedServicesSubscribedServiceBillToAddress {
+        /**
+         * Bill to site use Id.
+         */
+        billSiteUseId: string;
+        /**
+         * Identify as the customer shipping address.
+         */
+        isBillTo: boolean;
+        /**
+         * Identify as the customer invoicing address.
+         */
+        isShipTo: boolean;
+        /**
+         * Address location.
+         */
+        locations: outputs.OneSubsription.GetSubscribedServicesSubscribedServiceBillToAddressLocation[];
+        /**
+         * Commercial name also called customer name.
+         */
+        name: string;
+        /**
+         * Phone.
+         */
+        phone: string;
+        /**
+         * Service to site use Id.
+         */
+        service2siteUseId: string;
+        /**
+         * TCA customer account site Id.
+         */
+        tcaCustAcctSiteId: string;
+        /**
+         * Party site number.
+         */
+        tcaPartySiteNumber: string;
+    }
+
+    export interface GetSubscribedServicesSubscribedServiceBillToAddressLocation {
+        /**
+         * Address first line.
+         */
+        address1: string;
+        /**
+         * Address second line.
+         */
+        address2: string;
+        /**
+         * City.
+         */
+        city: string;
+        /**
+         * Country.
+         */
+        country: string;
+        /**
+         * Postal code.
+         */
+        postalCode: string;
+        /**
+         * Region.
+         */
+        region: string;
+        /**
+         * Region.
+         */
+        tcaLocationId: string;
+    }
+
+    export interface GetSubscribedServicesSubscribedServiceBillToContact {
+        /**
+         * Email.
+         */
+        email: string;
+        /**
+         * First name.
+         */
+        firstName: string;
+        /**
+         * Last name.
+         */
+        lastName: string;
+        /**
+         * Commercial name also called customer name.
+         */
+        name: string;
+        /**
+         * TCA contact ID.
+         */
+        tcaContactId: string;
+        /**
+         * TCA customer account site ID.
+         */
+        tcaCustAccntSiteId: string;
+        /**
+         * TCA party ID.
+         */
+        tcaPartyId: string;
+        /**
+         * Username.
+         */
+        username: string;
+    }
+
+    export interface GetSubscribedServicesSubscribedServiceBillToCustomer {
+        /**
+         * Customer chain type.
+         */
+        customerChainType: string;
+        /**
+         * The business partner is chain customer or not.
+         */
+        isChainCustomer: boolean;
+        /**
+         * The business partner is part of the public sector or not.
+         */
+        isPublicSector: boolean;
+        /**
+         * Commercial name also called customer name.
+         */
+        name: string;
+        /**
+         * Phonetic name.
+         */
+        namePhonetic: string;
+        /**
+         * TCA customer account number.
+         */
+        tcaCustAccountNumber: string;
+        /**
+         * TCA customer account ID.
+         */
+        tcaCustomerAccountId: string;
+        /**
+         * TCA party ID.
+         */
+        tcaPartyId: string;
+        /**
+         * TCA party number.
+         */
+        tcaPartyNumber: string;
+    }
+
+    export interface GetSubscribedServicesSubscribedServiceCommitmentService {
+        /**
+         * Commitment available amount
+         */
+        availableAmount: string;
+        /**
+         * Funded Allocation line value example: 12000.00
+         */
+        fundedAllocationValue: string;
+        /**
+         * Subscribed service line net amount
+         */
+        lineNetAmount: string;
+        /**
+         * Subscribed service quantity
+         */
+        quantity: string;
+        /**
+         * Subscribed service end date
+         */
+        timeEnd: string;
+        /**
+         * Subscribed service start date
+         */
+        timeStart: string;
+    }
+
+    export interface GetSubscribedServicesSubscribedServiceEndUserAddress {
+        /**
+         * Bill to site use Id.
+         */
+        billSiteUseId: string;
+        /**
+         * Identify as the customer shipping address.
+         */
+        isBillTo: boolean;
+        /**
+         * Identify as the customer invoicing address.
+         */
+        isShipTo: boolean;
+        /**
+         * Address location.
+         */
+        locations: outputs.OneSubsription.GetSubscribedServicesSubscribedServiceEndUserAddressLocation[];
+        /**
+         * Commercial name also called customer name.
+         */
+        name: string;
+        /**
+         * Phone.
+         */
+        phone: string;
+        /**
+         * Service to site use Id.
+         */
+        service2siteUseId: string;
+        /**
+         * TCA customer account site Id.
+         */
+        tcaCustAcctSiteId: string;
+        /**
+         * Party site number.
+         */
+        tcaPartySiteNumber: string;
+    }
+
+    export interface GetSubscribedServicesSubscribedServiceEndUserAddressLocation {
+        /**
+         * Address first line.
+         */
+        address1: string;
+        /**
+         * Address second line.
+         */
+        address2: string;
+        /**
+         * City.
+         */
+        city: string;
+        /**
+         * Country.
+         */
+        country: string;
+        /**
+         * Postal code.
+         */
+        postalCode: string;
+        /**
+         * Region.
+         */
+        region: string;
+        /**
+         * Region.
+         */
+        tcaLocationId: string;
+    }
+
+    export interface GetSubscribedServicesSubscribedServiceEndUserContact {
+        /**
+         * Email.
+         */
+        email: string;
+        /**
+         * First name.
+         */
+        firstName: string;
+        /**
+         * Last name.
+         */
+        lastName: string;
+        /**
+         * Commercial name also called customer name.
+         */
+        name: string;
+        /**
+         * TCA contact ID.
+         */
+        tcaContactId: string;
+        /**
+         * TCA customer account site ID.
+         */
+        tcaCustAccntSiteId: string;
+        /**
+         * TCA party ID.
+         */
+        tcaPartyId: string;
+        /**
+         * Username.
+         */
+        username: string;
+    }
+
+    export interface GetSubscribedServicesSubscribedServiceEndUserCustomer {
+        /**
+         * Customer chain type.
+         */
+        customerChainType: string;
+        /**
+         * The business partner is chain customer or not.
+         */
+        isChainCustomer: boolean;
+        /**
+         * The business partner is part of the public sector or not.
+         */
+        isPublicSector: boolean;
+        /**
+         * Commercial name also called customer name.
+         */
+        name: string;
+        /**
+         * Phonetic name.
+         */
+        namePhonetic: string;
+        /**
+         * TCA customer account number.
+         */
+        tcaCustAccountNumber: string;
+        /**
+         * TCA customer account ID.
+         */
+        tcaCustomerAccountId: string;
+        /**
+         * TCA party ID.
+         */
+        tcaPartyId: string;
+        /**
+         * TCA party number.
+         */
+        tcaPartyNumber: string;
+    }
+
+    export interface GetSubscribedServicesSubscribedServicePaymentTerm {
+        /**
+         * User that created the Payment term
+         */
+        createdBy: string;
+        /**
+         * Payment term Description
+         */
+        description: string;
+        /**
+         * Payment term active flag
+         */
+        isActive: boolean;
+        /**
+         * Commercial name also called customer name.
+         */
+        name: string;
+        /**
+         * Subscribed service creation date
+         */
+        timeCreated: string;
+        /**
+         * Subscribed service last update date
+         */
+        timeUpdated: string;
+        /**
+         * User that updated the subscribed service
+         */
+        updatedBy: string;
+        /**
+         * Payment Term value
+         */
+        value: string;
+    }
+
+    export interface GetSubscribedServicesSubscribedServiceProduct {
+        /**
+         * Metered service billing category
+         */
+        billingCategory: string;
+        /**
+         * Commercial name also called customer name.
+         */
+        name: string;
+        /**
+         * Product part numner
+         */
+        partNumber: string;
+        /**
+         * Product category
+         */
+        productCategory: string;
+        /**
+         * Rate card part type of Product
+         */
+        ucmRateCardPartType: string;
+        /**
+         * Unit of measure
+         */
+        unitOfMeasure: string;
+    }
+
+    export interface GetSubscribedServicesSubscribedServiceRateCard {
+        /**
+         * Currency details
+         */
+        currencies: outputs.OneSubsription.GetSubscribedServicesSubscribedServiceRateCardCurrency[];
+        /**
+         * Rate card discretionary discount percentage
+         */
+        discretionaryDiscountPercentage: string;
+        /**
+         * Rate card price tier flag
+         */
+        isTier: boolean;
+        /**
+         * Rate card tier net unit price
+         */
+        netUnitPrice: string;
+        /**
+         * Rate card tier overage price
+         */
+        overagePrice: string;
+        /**
+         * Product description
+         */
+        products: outputs.OneSubsription.GetSubscribedServicesSubscribedServiceRateCardProduct[];
+        /**
+         * List of tiered rate card prices
+         */
+        rateCardTiers: outputs.OneSubsription.GetSubscribedServicesSubscribedServiceRateCardRateCardTier[];
+        /**
+         * SPM internal Subscribed Service ID
+         */
+        subscribedServiceId: string;
+        /**
+         * Subscribed service end date
+         */
+        timeEnd: string;
+        /**
+         * Subscribed service start date
+         */
+        timeStart: string;
+    }
+
+    export interface GetSubscribedServicesSubscribedServiceRateCardCurrency {
+        /**
+         * Currency Code
+         */
+        isoCode: string;
+        /**
+         * Commercial name also called customer name.
+         */
+        name: string;
+        /**
+         * Standard Precision of the Currency
+         */
+        stdPrecision: string;
+    }
+
+    export interface GetSubscribedServicesSubscribedServiceRateCardProduct {
+        /**
+         * Metered service billing category
+         */
+        billingCategory: string;
+        /**
+         * Commercial name also called customer name.
+         */
+        name: string;
+        /**
+         * Product part numner
+         */
+        partNumber: string;
+        /**
+         * Product category
+         */
+        productCategory: string;
+        /**
+         * Rate card part type of Product
+         */
+        ucmRateCardPartType: string;
+        /**
+         * Unit of measure
+         */
+        unitOfMeasure: string;
+    }
+
+    export interface GetSubscribedServicesSubscribedServiceRateCardRateCardTier {
+        /**
+         * Rate card tier net unit price
+         */
+        netUnitPrice: string;
+        /**
+         * Rate card tier overage price
+         */
+        overagePrice: string;
+        /**
+         * Rate card tier quantity range
+         */
+        upToQuantity: string;
+    }
+
+    export interface GetSubscribedServicesSubscribedServiceResellerAddress {
+        /**
+         * Bill to site use Id.
+         */
+        billSiteUseId: string;
+        /**
+         * Identify as the customer shipping address.
+         */
+        isBillTo: boolean;
+        /**
+         * Identify as the customer invoicing address.
+         */
+        isShipTo: boolean;
+        /**
+         * Address location.
+         */
+        locations: outputs.OneSubsription.GetSubscribedServicesSubscribedServiceResellerAddressLocation[];
+        /**
+         * Commercial name also called customer name.
+         */
+        name: string;
+        /**
+         * Phone.
+         */
+        phone: string;
+        /**
+         * Service to site use Id.
+         */
+        service2siteUseId: string;
+        /**
+         * TCA customer account site Id.
+         */
+        tcaCustAcctSiteId: string;
+        /**
+         * Party site number.
+         */
+        tcaPartySiteNumber: string;
+    }
+
+    export interface GetSubscribedServicesSubscribedServiceResellerAddressLocation {
+        /**
+         * Address first line.
+         */
+        address1: string;
+        /**
+         * Address second line.
+         */
+        address2: string;
+        /**
+         * City.
+         */
+        city: string;
+        /**
+         * Country.
+         */
+        country: string;
+        /**
+         * Postal code.
+         */
+        postalCode: string;
+        /**
+         * Region.
+         */
+        region: string;
+        /**
+         * Region.
+         */
+        tcaLocationId: string;
+    }
+
+    export interface GetSubscribedServicesSubscribedServiceResellerContact {
+        /**
+         * Email.
+         */
+        email: string;
+        /**
+         * First name.
+         */
+        firstName: string;
+        /**
+         * Last name.
+         */
+        lastName: string;
+        /**
+         * Commercial name also called customer name.
+         */
+        name: string;
+        /**
+         * TCA contact ID.
+         */
+        tcaContactId: string;
+        /**
+         * TCA customer account site ID.
+         */
+        tcaCustAccntSiteId: string;
+        /**
+         * TCA party ID.
+         */
+        tcaPartyId: string;
+        /**
+         * Username.
+         */
+        username: string;
+    }
+
+    export interface GetSubscribedServicesSubscribedServiceResellerCustomer {
+        /**
+         * Customer chain type.
+         */
+        customerChainType: string;
+        /**
+         * The business partner is chain customer or not.
+         */
+        isChainCustomer: boolean;
+        /**
+         * The business partner is part of the public sector or not.
+         */
+        isPublicSector: boolean;
+        /**
+         * Commercial name also called customer name.
+         */
+        name: string;
+        /**
+         * Phonetic name.
+         */
+        namePhonetic: string;
+        /**
+         * TCA customer account number.
+         */
+        tcaCustAccountNumber: string;
+        /**
+         * TCA customer account ID.
+         */
+        tcaCustomerAccountId: string;
+        /**
+         * TCA party ID.
+         */
+        tcaPartyId: string;
+        /**
+         * TCA party number.
+         */
+        tcaPartyNumber: string;
+    }
+
+    export interface GetSubscribedServicesSubscribedServiceServiceToAddress {
+        /**
+         * Bill to site use Id.
+         */
+        billSiteUseId: string;
+        /**
+         * Identify as the customer shipping address.
+         */
+        isBillTo: boolean;
+        /**
+         * Identify as the customer invoicing address.
+         */
+        isShipTo: boolean;
+        /**
+         * Address location.
+         */
+        locations: outputs.OneSubsription.GetSubscribedServicesSubscribedServiceServiceToAddressLocation[];
+        /**
+         * Commercial name also called customer name.
+         */
+        name: string;
+        /**
+         * Phone.
+         */
+        phone: string;
+        /**
+         * Service to site use Id.
+         */
+        service2siteUseId: string;
+        /**
+         * TCA customer account site Id.
+         */
+        tcaCustAcctSiteId: string;
+        /**
+         * Party site number.
+         */
+        tcaPartySiteNumber: string;
+    }
+
+    export interface GetSubscribedServicesSubscribedServiceServiceToAddressLocation {
+        /**
+         * Address first line.
+         */
+        address1: string;
+        /**
+         * Address second line.
+         */
+        address2: string;
+        /**
+         * City.
+         */
+        city: string;
+        /**
+         * Country.
+         */
+        country: string;
+        /**
+         * Postal code.
+         */
+        postalCode: string;
+        /**
+         * Region.
+         */
+        region: string;
+        /**
+         * Region.
+         */
+        tcaLocationId: string;
+    }
+
+    export interface GetSubscribedServicesSubscribedServiceServiceToContact {
+        /**
+         * Email.
+         */
+        email: string;
+        /**
+         * First name.
+         */
+        firstName: string;
+        /**
+         * Last name.
+         */
+        lastName: string;
+        /**
+         * Commercial name also called customer name.
+         */
+        name: string;
+        /**
+         * TCA contact ID.
+         */
+        tcaContactId: string;
+        /**
+         * TCA customer account site ID.
+         */
+        tcaCustAccntSiteId: string;
+        /**
+         * TCA party ID.
+         */
+        tcaPartyId: string;
+        /**
+         * Username.
+         */
+        username: string;
+    }
+
+    export interface GetSubscribedServicesSubscribedServiceServiceToCustomer {
+        /**
+         * Customer chain type.
+         */
+        customerChainType: string;
+        /**
+         * The business partner is chain customer or not.
+         */
+        isChainCustomer: boolean;
+        /**
+         * The business partner is part of the public sector or not.
+         */
+        isPublicSector: boolean;
+        /**
+         * Commercial name also called customer name.
+         */
+        name: string;
+        /**
+         * Phonetic name.
+         */
+        namePhonetic: string;
+        /**
+         * TCA customer account number.
+         */
+        tcaCustAccountNumber: string;
+        /**
+         * TCA customer account ID.
+         */
+        tcaCustomerAccountId: string;
+        /**
+         * TCA party ID.
+         */
+        tcaPartyId: string;
+        /**
+         * TCA party number.
+         */
+        tcaPartyNumber: string;
+    }
+
+    export interface GetSubscribedServicesSubscribedServiceSoldToContact {
+        /**
+         * Email.
+         */
+        email: string;
+        /**
+         * First name.
+         */
+        firstName: string;
+        /**
+         * Last name.
+         */
+        lastName: string;
+        /**
+         * Commercial name also called customer name.
+         */
+        name: string;
+        /**
+         * TCA contact ID.
+         */
+        tcaContactId: string;
+        /**
+         * TCA customer account site ID.
+         */
+        tcaCustAccntSiteId: string;
+        /**
+         * TCA party ID.
+         */
+        tcaPartyId: string;
+        /**
+         * Username.
+         */
+        username: string;
+    }
+
+    export interface GetSubscribedServicesSubscribedServiceSoldToCustomer {
+        /**
+         * Customer chain type.
+         */
+        customerChainType: string;
+        /**
+         * The business partner is chain customer or not.
+         */
+        isChainCustomer: boolean;
+        /**
+         * The business partner is part of the public sector or not.
+         */
+        isPublicSector: boolean;
+        /**
+         * Commercial name also called customer name.
+         */
+        name: string;
+        /**
+         * Phonetic name.
+         */
+        namePhonetic: string;
+        /**
+         * TCA customer account number.
+         */
+        tcaCustAccountNumber: string;
+        /**
+         * TCA customer account ID.
+         */
+        tcaCustomerAccountId: string;
+        /**
+         * TCA party ID.
+         */
+        tcaPartyId: string;
+        /**
+         * TCA party number.
+         */
+        tcaPartyNumber: string;
+    }
+
+    export interface GetSubscriptionsFilter {
+        /**
+         * Product name
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSubscriptionsSubscription {
+        /**
+         * Currency details
+         */
+        currencies: outputs.OneSubsription.GetSubscriptionsSubscriptionCurrency[];
+        /**
+         * Hold reason of the plan
+         */
+        holdReason: string;
+        /**
+         * Customer friendly service name provided by PRG
+         */
+        serviceName: string;
+        /**
+         * Subscribed service status
+         */
+        status: string;
+        /**
+         * List of Subscribed Services of the plan
+         */
+        subscribedServices: outputs.OneSubsription.GetSubscriptionsSubscriptionSubscribedService[];
+        /**
+         * Represents the date when the last service of the subscription ends
+         */
+        timeEnd: string;
+        /**
+         * Represents the date of the hold release
+         */
+        timeHoldReleaseEta: string;
+        /**
+         * Represents the date when the first service of the subscription was activated
+         */
+        timeStart: string;
+    }
+
+    export interface GetSubscriptionsSubscriptionCurrency {
+        /**
+         * Currency Code
+         */
+        isoCode: string;
+        /**
+         * Product name
+         */
+        name: string;
+        /**
+         * Standard Precision of the Currency
+         */
+        stdPrecision: string;
+    }
+
+    export interface GetSubscriptionsSubscriptionSubscribedService {
+        /**
+         * Commitment available amount
+         */
+        availableAmount: string;
+        /**
+         * Booking Opportunity Number of Subscribed Service
+         */
+        bookingOptyNumber: string;
+        /**
+         * List of Commitment services of a line
+         */
+        commitmentServices: outputs.OneSubsription.GetSubscriptionsSubscriptionSubscribedServiceCommitmentService[];
+        /**
+         * Subscribed service CSI number
+         */
+        csi: string;
+        /**
+         * Subscribed service data center region
+         */
+        dataCenterRegion: string;
+        /**
+         * Funded Allocation line value example: 12000.00
+         */
+        fundedAllocationValue: string;
+        /**
+         * SPM internal Subscribed Service ID
+         */
+        id: string;
+        /**
+         * Subscribed service intent to pay flag
+         */
+        isIntentToPay: boolean;
+        /**
+         * Subscribed service net unit price
+         */
+        netUnitPrice: string;
+        /**
+         * Subscribed service operation type
+         */
+        operationType: string;
+        /**
+         * Sales Order Number associated to the subscribed service
+         */
+        orderNumber: string;
+        /**
+         * Subscribed service Promotion Amount
+         */
+        originalPromoAmount: string;
+        /**
+         * This field contains the name of the partner to which the subscription belongs - depending on which the invoicing may differ
+         */
+        partnerTransactionType: string;
+        /**
+         * Subscribed service pricing model
+         */
+        pricingModel: string;
+        /**
+         * Product description
+         */
+        products: outputs.OneSubsription.GetSubscriptionsSubscriptionSubscribedServiceProduct[];
+        /**
+         * Subscribed service program type
+         */
+        programType: string;
+        /**
+         * Subscribed service promotion type
+         */
+        promoType: string;
+        /**
+         * Subscribed service quantity
+         */
+        quantity: string;
+        /**
+         * Subscribed service status
+         */
+        status: string;
+        /**
+         * Term value in Months
+         */
+        termValue: string;
+        /**
+         * Term value UOM
+         */
+        termValueUom: string;
+        /**
+         * Represents the date when the last service of the subscription ends
+         */
+        timeEnd: string;
+        /**
+         * Represents the date when the first service of the subscription was activated
+         */
+        timeStart: string;
+        /**
+         * Subscribed service total value
+         */
+        totalValue: string;
+        /**
+         * Subscribed service used amount
+         */
+        usedAmount: string;
+    }
+
+    export interface GetSubscriptionsSubscriptionSubscribedServiceCommitmentService {
+        /**
+         * Commitment available amount
+         */
+        availableAmount: string;
+        /**
+         * Funded Allocation line value example: 12000.00
+         */
+        fundedAllocationValue: string;
+        /**
+         * Commitment line net amount
+         */
+        lineNetAmount: string;
+        /**
+         * Subscribed service quantity
+         */
+        quantity: string;
+        /**
+         * Represents the date when the last service of the subscription ends
+         */
+        timeEnd: string;
+        /**
+         * Represents the date when the first service of the subscription was activated
+         */
+        timeStart: string;
+    }
+
+    export interface GetSubscriptionsSubscriptionSubscribedServiceProduct {
+        /**
+         * Product name
+         */
+        name: string;
+        /**
+         * Product part numner
+         */
+        partNumber: string;
+        /**
+         * Product provisioning group
+         */
+        provisioningGroup: string;
+        /**
+         * Unit of measure
+         */
+        unitOfMeasure: string;
     }
 
 }
@@ -74855,6 +84954,7 @@ export namespace Opsi {
          * The version of the database.
          */
         databaseVersion: string;
+        dbmPrivateEndpointId: string;
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
          */
@@ -76651,6 +86751,62 @@ export namespace OsManagement {
         id: string;
     }
 
+    export interface GetManagedInstanceModuleStreamsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance {
+        /**
+         * The name of a module.  This parameter is required if a streamName is specified.
+         */
+        moduleName: string;
+        /**
+         * The set of profiles that the module stream contains.
+         */
+        profiles: outputs.OsManagement.GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile[];
+        /**
+         * The OCID of the software source that provides this module stream.
+         */
+        softwareSourceId: string;
+        /**
+         * The status of the stream
+         */
+        status: string;
+        /**
+         * The name of the stream of the containing module.  This parameter is required if a profileName is specified.
+         */
+        streamName: string;
+        /**
+         * The date and time of the last status change for this profile, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         */
+        timeModified: string;
+    }
+
+    export interface GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile {
+        /**
+         * The name of a module.  This parameter is required if a streamName is specified.
+         */
+        moduleName: string;
+        /**
+         * The name of the profile
+         */
+        profileName: string;
+        /**
+         * The status of the stream
+         */
+        status: string;
+        /**
+         * The name of the stream of the containing module.  This parameter is required if a profileName is specified.
+         */
+        streamName: string;
+        /**
+         * The date and time of the last status change for this profile, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         */
+        timeModified: string;
+    }
+
     export interface GetManagedInstanceParentSoftwareSource {
         /**
          * software source identifier
@@ -76660,6 +86816,35 @@ export namespace OsManagement {
          * software source name
          */
         name: string;
+    }
+
+    export interface GetManagedInstanceStreamProfileFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance {
+        /**
+         * The name of a module.  This parameter is required if a streamName is specified.
+         */
+        moduleName: string;
+        /**
+         * The name of the profile of the containing module stream
+         */
+        profileName: string;
+        /**
+         * The status of the profile.
+         */
+        status: string;
+        /**
+         * The name of the stream of the containing module.  This parameter is required if a profileName is specified.
+         */
+        streamName: string;
+        /**
+         * The date and time of the last status change for this profile, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         */
+        timeModified: string;
     }
 
     export interface GetManagedInstancesFilter {
@@ -76828,6 +87013,27 @@ export namespace OsManagement {
          * OCID for the Software Source
          */
         id: string;
+    }
+
+    export interface GetSoftwareSourceStreamProfileFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSoftwareSourceStreamProfileModuleStreamProfile {
+        /**
+         * The name of a module.  This parameter is required if a streamName is specified.
+         */
+        moduleName: string;
+        /**
+         * The name of the profile of the containing module stream
+         */
+        profileName: string;
+        /**
+         * The name of the stream of the containing module.  This parameter is required if a profileName is specified.
+         */
+        streamName: string;
     }
 
     export interface GetSoftwareSourcesFilter {
@@ -79609,6 +89815,75 @@ export namespace OsubUsage {
 }
 
 export namespace ResourceManager {
+    export interface GetPrivateEndpointsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetPrivateEndpointsPrivateEndpointCollection {
+        items: outputs.ResourceManager.GetPrivateEndpointsPrivateEndpointCollectionItem[];
+    }
+
+    export interface GetPrivateEndpointsPrivateEndpointCollectionItem {
+        /**
+         * A filter to return only resources that exist in the compartment, identified by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         */
+        compartmentId: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+         */
+        definedTags: {[key: string]: any};
+        /**
+         * Description of the private endpoint. Avoid entering confidential information.
+         */
+        description: string;
+        /**
+         * A filter to return only resources that match the given display name exactly. Use this filter to list a resource by name. Requires `sortBy` set to `DISPLAYNAME`. Alternatively, when you know the resource OCID, use the related Get operation.
+         */
+        displayName: string;
+        /**
+         * DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
+         */
+        dnsZones: string[];
+        /**
+         * Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+         */
+        freeformTags: {[key: string]: any};
+        /**
+         * Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the private endpoint details.
+         */
+        id: string;
+        /**
+         * When `true`, allows the private endpoint to be used with a configuration source provider.
+         */
+        isUsedWithConfigurationSourceProvider: boolean;
+        /**
+         * An array of network security groups (NSG) that the customer can optionally provide.
+         */
+        nsgIdLists: string[];
+        /**
+         * The source IPs which resource manager service will use to connect to customer's network. Automatically assigned by Resource Manager Service.
+         */
+        sourceIps: string[];
+        /**
+         * The current lifecycle state of the private endpoint.
+         */
+        state: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet within the VCN for the private endpoint.
+         */
+        subnetId: string;
+        /**
+         * The date and time at which the private endpoint was created. Format is defined by RFC3339. Example: `2020-11-25T21:10:29.600Z`
+         */
+        timeCreated: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+         */
+        vcnId: string;
+    }
+
     export interface GetStackConfigSource {
         configSourceType: string;
         workingDirectory: string;
@@ -79681,6 +89956,10 @@ export namespace Sch {
          */
         logSources: outputs.Sch.ConnectorSourceLogSource[];
         /**
+         * (Updatable) The list of metric namespaces to retrieve data from.
+         */
+        monitoringSources: outputs.Sch.ConnectorSourceMonitoringSource[];
+        /**
          * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
          */
         streamId: string;
@@ -79706,6 +89985,46 @@ export namespace Sch {
          * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
          */
         logId: string;
+    }
+
+    export interface ConnectorSourceMonitoringSource {
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
+         */
+        compartmentId: string;
+        /**
+         * (Updatable) Discriminator for namespaces in the compartment-specific list.
+         */
+        namespaceDetails: outputs.Sch.ConnectorSourceMonitoringSourceNamespaceDetails;
+    }
+
+    export interface ConnectorSourceMonitoringSourceNamespaceDetails {
+        /**
+         * (Updatable) The type descriminator.
+         */
+        kind: string;
+        /**
+         * (Updatable) The namespaces for the compartment-specific list.
+         */
+        namespaces: outputs.Sch.ConnectorSourceMonitoringSourceNamespaceDetailsNamespace[];
+    }
+
+    export interface ConnectorSourceMonitoringSourceNamespaceDetailsNamespace {
+        /**
+         * (Updatable) The metrics to query for the specified metric namespace.
+         */
+        metrics: outputs.Sch.ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetrics;
+        /**
+         * (Updatable) The namespace.
+         */
+        namespace: string;
+    }
+
+    export interface ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetrics {
+        /**
+         * (Updatable) The type descriminator.
+         */
+        kind: string;
     }
 
     export interface ConnectorTarget {
@@ -79788,7 +90107,7 @@ export namespace Sch {
          */
         kind: string;
         /**
-         * (Updatable) The location to use for deriving the dimension value (evaluated). The path must start with `logContent` in an acceptable notation style with supported [JMESPath selectors](https://jmespath.org/specification.html): expression with dot and index operator (`.`, and `[]`). Example with dot notation: `logContent.data` Example with index notation: `logContent.data[0].content` For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). The returned value depends on the results of evaluation. If the evaluated value is valid, then the evaluated value is returned without double quotes. (Any front or trailing double quotes are trimmed before returning the value. For example, the evaluated value `"compartmentId"` is returned as `compartmentId`.) If the evaluated value is invalid, then the returned value is `SCH_EVAL_INVALID_VALUE`. If the evaluated value is empty, then the returned value is `SCH_EVAL_VALUE_EMPTY`.
+         * (Updatable) The location to use for deriving the dimension value (evaluated). The path must start with `logContent` in an acceptable notation style with supported [JMESPath selectors](https://jmespath.org/specification.html): expression with dot and index operator (`.` and `[]`). Example with dot notation: `logContent.data` Example with index notation: `logContent.data[0].content` For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). The returned value depends on the results of evaluation. If the evaluated value is valid, then the evaluated value is returned without double quotes. (Any front or trailing double quotes are trimmed before returning the value. For example, the evaluated value `"compartmentId"` is returned as `compartmentId`.) If the evaluated value is invalid, then the returned value is `SCH_EVAL_INVALID_VALUE`. If the evaluated value is empty, then the returned value is `SCH_EVAL_VALUE_EMPTY`.
          */
         path: string;
         /**
@@ -79834,6 +90153,10 @@ export namespace Sch {
          */
         logSources: outputs.Sch.GetServiceConnectorSourceLogSource[];
         /**
+         * The list of metric namespaces to retrieve data from.
+         */
+        monitoringSources: outputs.Sch.GetServiceConnectorSourceMonitoringSource[];
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
          */
         streamId: string;
@@ -79859,6 +90182,46 @@ export namespace Sch {
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
          */
         logId: string;
+    }
+
+    export interface GetServiceConnectorSourceMonitoringSource {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
+         */
+        compartmentId: string;
+        /**
+         * Discriminator for namespaces in the compartment-specific list.
+         */
+        namespaceDetails: outputs.Sch.GetServiceConnectorSourceMonitoringSourceNamespaceDetail[];
+    }
+
+    export interface GetServiceConnectorSourceMonitoringSourceNamespaceDetail {
+        /**
+         * The type descriminator.
+         */
+        kind: string;
+        /**
+         * The namespaces for the compartment-specific list.
+         */
+        namespaces: outputs.Sch.GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespace[];
+    }
+
+    export interface GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespace {
+        /**
+         * The metrics to query for the specified metric namespace.
+         */
+        metrics: outputs.Sch.GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetric[];
+        /**
+         * The namespace.
+         */
+        namespace: string;
+    }
+
+    export interface GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetric {
+        /**
+         * The type descriminator.
+         */
+        kind: string;
     }
 
     export interface GetServiceConnectorTarget {
@@ -79941,7 +90304,7 @@ export namespace Sch {
          */
         kind: string;
         /**
-         * The location to use for deriving the dimension value (evaluated). The path must start with `logContent` in an acceptable notation style with supported [JMESPath selectors](https://jmespath.org/specification.html): expression with dot and index operator (`.`, and `[]`). Example with dot notation: `logContent.data` Example with index notation: `logContent.data[0].content` For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). The returned value depends on the results of evaluation. If the evaluated value is valid, then the evaluated value is returned without double quotes. (Any front or trailing double quotes are trimmed before returning the value. For example, the evaluated value `"compartmentId"` is returned as `compartmentId`.) If the evaluated value is invalid, then the returned value is `SCH_EVAL_INVALID_VALUE`. If the evaluated value is empty, then the returned value is `SCH_EVAL_VALUE_EMPTY`.
+         * The location to use for deriving the dimension value (evaluated). The path must start with `logContent` in an acceptable notation style with supported [JMESPath selectors](https://jmespath.org/specification.html): expression with dot and index operator (`.` and `[]`). Example with dot notation: `logContent.data` Example with index notation: `logContent.data[0].content` For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). The returned value depends on the results of evaluation. If the evaluated value is valid, then the evaluated value is returned without double quotes. (Any front or trailing double quotes are trimmed before returning the value. For example, the evaluated value `"compartmentId"` is returned as `compartmentId`.) If the evaluated value is invalid, then the returned value is `SCH_EVAL_INVALID_VALUE`. If the evaluated value is empty, then the returned value is `SCH_EVAL_VALUE_EMPTY`.
          */
         path: string;
         /**
@@ -80059,6 +90422,10 @@ export namespace Sch {
          */
         logSources: outputs.Sch.GetServiceConnectorsServiceConnectorCollectionItemSourceLogSource[];
         /**
+         * The list of metric namespaces to retrieve data from.
+         */
+        monitoringSources: outputs.Sch.GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource[];
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
          */
         streamId: string;
@@ -80084,6 +90451,46 @@ export namespace Sch {
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
          */
         logId: string;
+    }
+
+    export interface GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this request.
+         */
+        compartmentId: string;
+        /**
+         * Discriminator for namespaces in the compartment-specific list.
+         */
+        namespaceDetails: outputs.Sch.GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetail[];
+    }
+
+    export interface GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetail {
+        /**
+         * The type descriminator.
+         */
+        kind: string;
+        /**
+         * The namespaces for the compartment-specific list.
+         */
+        namespaces: outputs.Sch.GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespace[];
+    }
+
+    export interface GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespace {
+        /**
+         * The metrics to query for the specified metric namespace.
+         */
+        metrics: outputs.Sch.GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetric[];
+        /**
+         * The namespace.
+         */
+        namespace: string;
+    }
+
+    export interface GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetric {
+        /**
+         * The type descriminator.
+         */
+        kind: string;
     }
 
     export interface GetServiceConnectorsServiceConnectorCollectionItemTarget {
@@ -80166,7 +90573,7 @@ export namespace Sch {
          */
         kind: string;
         /**
-         * The location to use for deriving the dimension value (evaluated). The path must start with `logContent` in an acceptable notation style with supported [JMESPath selectors](https://jmespath.org/specification.html): expression with dot and index operator (`.`, and `[]`). Example with dot notation: `logContent.data` Example with index notation: `logContent.data[0].content` For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). The returned value depends on the results of evaluation. If the evaluated value is valid, then the evaluated value is returned without double quotes. (Any front or trailing double quotes are trimmed before returning the value. For example, the evaluated value `"compartmentId"` is returned as `compartmentId`.) If the evaluated value is invalid, then the returned value is `SCH_EVAL_INVALID_VALUE`. If the evaluated value is empty, then the returned value is `SCH_EVAL_VALUE_EMPTY`.
+         * The location to use for deriving the dimension value (evaluated). The path must start with `logContent` in an acceptable notation style with supported [JMESPath selectors](https://jmespath.org/specification.html): expression with dot and index operator (`.` and `[]`). Example with dot notation: `logContent.data` Example with index notation: `logContent.data[0].content` For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). The returned value depends on the results of evaluation. If the evaluated value is valid, then the evaluated value is returned without double quotes. (Any front or trailing double quotes are trimmed before returning the value. For example, the evaluated value `"compartmentId"` is returned as `compartmentId`.) If the evaluated value is invalid, then the returned value is `SCH_EVAL_INVALID_VALUE`. If the evaluated value is empty, then the returned value is `SCH_EVAL_VALUE_EMPTY`.
          */
         path: string;
         /**
@@ -80610,6 +91017,1549 @@ export namespace ServiceManagerProxy {
          * Service environment instance URL.
          */
         url: string;
+    }
+
+}
+
+export namespace ServiceMesh {
+    export interface AccessPolicyRule {
+        /**
+         * (Updatable) Action for the traffic between the source and the destination.
+         */
+        action: string;
+        /**
+         * (Updatable) Target of the access policy. This can either be the source or the destination of the traffic.
+         */
+        destination: outputs.ServiceMesh.AccessPolicyRuleDestination;
+        /**
+         * (Updatable) Target of the access policy. This can either be the source or the destination of the traffic.
+         */
+        source: outputs.ServiceMesh.AccessPolicyRuleSource;
+    }
+
+    export interface AccessPolicyRuleDestination {
+        /**
+         * (Updatable) The hostnames of the external service. Only applicable for HTTP and HTTPS protocols. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are "www.example.com", "*.example.com", "*.com", "*". Hostname "*" can be used to allow all hosts.
+         */
+        hostnames: string[];
+        /**
+         * (Updatable) The OCID of the ingress gateway resource.
+         */
+        ingressGatewayId: string;
+        /**
+         * (Updatable) The ipAddresses of the external service in CIDR notation. Only applicable for TCP protocol. All requests matching the given CIDR notation will pass through. In case a wildcard CIDR "0.0.0.0/0" is provided, the same port cannot be used for a virtual service communication.
+         */
+        ipAddresses: string[];
+        /**
+         * (Updatable) Ports exposed by an external service. If left empty all ports will be allowed.
+         */
+        ports: number[];
+        /**
+         * (Updatable) Protocol of the external service
+         */
+        protocol: string;
+        /**
+         * (Updatable) Traffic type of the target.
+         */
+        type: string;
+        /**
+         * (Updatable) The OCID of the virtual service resource.
+         */
+        virtualServiceId: string;
+    }
+
+    export interface AccessPolicyRuleSource {
+        /**
+         * (Updatable) The hostnames of the external service. Only applicable for HTTP and HTTPS protocols. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are "www.example.com", "*.example.com", "*.com", "*". Hostname "*" can be used to allow all hosts.
+         */
+        hostnames: string[];
+        /**
+         * (Updatable) The OCID of the ingress gateway resource.
+         */
+        ingressGatewayId: string;
+        /**
+         * (Updatable) The ipAddresses of the external service in CIDR notation. Only applicable for TCP protocol. All requests matching the given CIDR notation will pass through. In case a wildcard CIDR "0.0.0.0/0" is provided, the same port cannot be used for a virtual service communication.
+         */
+        ipAddresses: string[];
+        /**
+         * (Updatable) Ports exposed by an external service. If left empty all ports will be allowed.
+         */
+        ports: number[];
+        /**
+         * (Updatable) Protocol of the external service
+         */
+        protocol: string;
+        /**
+         * (Updatable) Traffic type of the target.
+         */
+        type: string;
+        /**
+         * (Updatable) The OCID of the virtual service resource.
+         */
+        virtualServiceId: string;
+    }
+
+    export interface GetAccessPoliciesAccessPolicyCollection {
+        items: outputs.ServiceMesh.GetAccessPoliciesAccessPolicyCollectionItem[];
+    }
+
+    export interface GetAccessPoliciesAccessPolicyCollectionItem {
+        /**
+         * The ID of the compartment in which to list resources.
+         */
+        compartmentId: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+         */
+        definedTags: {[key: string]: any};
+        /**
+         * Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
+         */
+        description: string;
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+         */
+        freeformTags: {[key: string]: any};
+        /**
+         * Unique AccessPolicy identifier.
+         */
+        id: string;
+        /**
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
+         */
+        lifecycleDetails: string;
+        /**
+         * Unique Mesh identifier.
+         */
+        meshId: string;
+        /**
+         * A filter to return only resources that match the entire name given.
+         */
+        name: string;
+        /**
+         * List of applicable rules.
+         */
+        rules: outputs.ServiceMesh.GetAccessPoliciesAccessPolicyCollectionItemRule[];
+        /**
+         * A filter to return only resources that match the life cycle state given.
+         */
+        state: string;
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: any};
+        /**
+         * The time when this resource was created in an RFC3339 formatted datetime string.
+         */
+        timeCreated: string;
+        /**
+         * The time when this resource was updated in an RFC3339 formatted datetime string.
+         */
+        timeUpdated: string;
+    }
+
+    export interface GetAccessPoliciesAccessPolicyCollectionItemRule {
+        /**
+         * Action for the traffic between the source and the destination.
+         */
+        action: string;
+        /**
+         * Target of the access policy. This can either be the source or the destination of the traffic.
+         */
+        destinations: outputs.ServiceMesh.GetAccessPoliciesAccessPolicyCollectionItemRuleDestination[];
+        /**
+         * Target of the access policy. This can either be the source or the destination of the traffic.
+         */
+        sources: outputs.ServiceMesh.GetAccessPoliciesAccessPolicyCollectionItemRuleSource[];
+    }
+
+    export interface GetAccessPoliciesAccessPolicyCollectionItemRuleDestination {
+        /**
+         * The hostnames of the external service. Only applicable for HTTP and HTTPS protocols. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are "www.example.com", "*.example.com", "*.com", "*". Hostname "*" can be used to allow all hosts.
+         */
+        hostnames: string[];
+        /**
+         * The OCID of the ingress gateway resource.
+         */
+        ingressGatewayId: string;
+        /**
+         * The ipAddresses of the external service in CIDR notation. Only applicable for TCP protocol. All requests matching the given CIDR notation will pass through. In case a wildcard CIDR "0.0.0.0/0" is provided, the same port cannot be used for a virtual service communication.
+         */
+        ipAddresses: string[];
+        /**
+         * Ports exposed by an external service. If left empty all ports will be allowed.
+         */
+        ports: number[];
+        /**
+         * Protocol of the external service
+         */
+        protocol: string;
+        /**
+         * Traffic type of the target.
+         */
+        type: string;
+        /**
+         * The OCID of the virtual service resource.
+         */
+        virtualServiceId: string;
+    }
+
+    export interface GetAccessPoliciesAccessPolicyCollectionItemRuleSource {
+        /**
+         * The hostnames of the external service. Only applicable for HTTP and HTTPS protocols. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are "www.example.com", "*.example.com", "*.com", "*". Hostname "*" can be used to allow all hosts.
+         */
+        hostnames: string[];
+        /**
+         * The OCID of the ingress gateway resource.
+         */
+        ingressGatewayId: string;
+        /**
+         * The ipAddresses of the external service in CIDR notation. Only applicable for TCP protocol. All requests matching the given CIDR notation will pass through. In case a wildcard CIDR "0.0.0.0/0" is provided, the same port cannot be used for a virtual service communication.
+         */
+        ipAddresses: string[];
+        /**
+         * Ports exposed by an external service. If left empty all ports will be allowed.
+         */
+        ports: number[];
+        /**
+         * Protocol of the external service
+         */
+        protocol: string;
+        /**
+         * Traffic type of the target.
+         */
+        type: string;
+        /**
+         * The OCID of the virtual service resource.
+         */
+        virtualServiceId: string;
+    }
+
+    export interface GetAccessPoliciesFilter {
+        /**
+         * A filter to return only resources that match the entire name given.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetAccessPolicyRule {
+        /**
+         * Action for the traffic between the source and the destination.
+         */
+        action: string;
+        /**
+         * Target of the access policy. This can either be the source or the destination of the traffic.
+         */
+        destinations: outputs.ServiceMesh.GetAccessPolicyRuleDestination[];
+        /**
+         * Target of the access policy. This can either be the source or the destination of the traffic.
+         */
+        sources: outputs.ServiceMesh.GetAccessPolicyRuleSource[];
+    }
+
+    export interface GetAccessPolicyRuleDestination {
+        /**
+         * The hostnames of the external service. Only applicable for HTTP and HTTPS protocols. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are "www.example.com", "*.example.com", "*.com", "*". Hostname "*" can be used to allow all hosts.
+         */
+        hostnames: string[];
+        /**
+         * The OCID of the ingress gateway resource.
+         */
+        ingressGatewayId: string;
+        /**
+         * The ipAddresses of the external service in CIDR notation. Only applicable for TCP protocol. All requests matching the given CIDR notation will pass through. In case a wildcard CIDR "0.0.0.0/0" is provided, the same port cannot be used for a virtual service communication.
+         */
+        ipAddresses: string[];
+        /**
+         * Ports exposed by an external service. If left empty all ports will be allowed.
+         */
+        ports: number[];
+        /**
+         * Protocol of the external service
+         */
+        protocol: string;
+        /**
+         * Traffic type of the target.
+         */
+        type: string;
+        /**
+         * The OCID of the virtual service resource.
+         */
+        virtualServiceId: string;
+    }
+
+    export interface GetAccessPolicyRuleSource {
+        /**
+         * The hostnames of the external service. Only applicable for HTTP and HTTPS protocols. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are "www.example.com", "*.example.com", "*.com", "*". Hostname "*" can be used to allow all hosts.
+         */
+        hostnames: string[];
+        /**
+         * The OCID of the ingress gateway resource.
+         */
+        ingressGatewayId: string;
+        /**
+         * The ipAddresses of the external service in CIDR notation. Only applicable for TCP protocol. All requests matching the given CIDR notation will pass through. In case a wildcard CIDR "0.0.0.0/0" is provided, the same port cannot be used for a virtual service communication.
+         */
+        ipAddresses: string[];
+        /**
+         * Ports exposed by an external service. If left empty all ports will be allowed.
+         */
+        ports: number[];
+        /**
+         * Protocol of the external service
+         */
+        protocol: string;
+        /**
+         * Traffic type of the target.
+         */
+        type: string;
+        /**
+         * The OCID of the virtual service resource.
+         */
+        virtualServiceId: string;
+    }
+
+    export interface GetIngressGatewayAccessLogging {
+        /**
+         * Determines if the logging configuration is enabled.
+         */
+        isEnabled: boolean;
+    }
+
+    export interface GetIngressGatewayHost {
+        /**
+         * Hostnames of the host. Applicable only for HTTP and TLS_PASSTHROUGH listeners. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are "www.example.com", "*.example.com", "*.com".
+         */
+        hostnames: string[];
+        /**
+         * The listeners for the ingress gateway.
+         */
+        listeners: outputs.ServiceMesh.GetIngressGatewayHostListener[];
+        /**
+         * A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
+         */
+        name: string;
+    }
+
+    export interface GetIngressGatewayHostListener {
+        /**
+         * Port on which ingress gateway is listening.
+         */
+        port: number;
+        /**
+         * Type of protocol used.
+         */
+        protocol: string;
+        /**
+         * TLS enforcement config for the ingress listener.
+         */
+        tls: outputs.ServiceMesh.GetIngressGatewayHostListenerTl[];
+    }
+
+    export interface GetIngressGatewayHostListenerTl {
+        /**
+         * Resource representing the TLS configuration used for validating client certificates.
+         */
+        clientValidations: outputs.ServiceMesh.GetIngressGatewayHostListenerTlClientValidation[];
+        /**
+         * DISABLED: Connection can only be plaintext. PERMISSIVE: Connection can be either plaintext or TLS/mTLS. If the clientValidation.trustedCaBundle property is configured for the listener, mTLS is performed and the client's certificates are validated by the gateway. TLS: Connection can only be TLS.  MUTUAL_TLS: Connection can only be MTLS.
+         */
+        mode: string;
+        /**
+         * Resource representing the location of the TLS certificate.
+         */
+        serverCertificates: outputs.ServiceMesh.GetIngressGatewayHostListenerTlServerCertificate[];
+    }
+
+    export interface GetIngressGatewayHostListenerTlClientValidation {
+        /**
+         * A list of alternate names to verify the subject identity in the certificate presented by the client.
+         */
+        subjectAlternateNames: string[];
+        /**
+         * Resource representing the CA bundle.
+         */
+        trustedCaBundles: outputs.ServiceMesh.GetIngressGatewayHostListenerTlClientValidationTrustedCaBundle[];
+    }
+
+    export interface GetIngressGatewayHostListenerTlClientValidationTrustedCaBundle {
+        /**
+         * The OCID of the CA Bundle resource.
+         */
+        caBundleId: string;
+        /**
+         * Name of the secret. For Kubernetes this is the name of the Kubernetes secret of type tls. For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
+         */
+        secretName: string;
+        /**
+         * Type of certificate.
+         */
+        type: string;
+    }
+
+    export interface GetIngressGatewayHostListenerTlServerCertificate {
+        /**
+         * The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
+         */
+        certificateId: string;
+        /**
+         * Name of the secret. For Kubernetes this is the name of the Kubernetes secret of type tls. For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
+         */
+        secretName: string;
+        /**
+         * Type of certificate.
+         */
+        type: string;
+    }
+
+    export interface GetIngressGatewayMtl {
+        /**
+         * The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
+         */
+        certificateId: string;
+        /**
+         * The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration  for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days will be renewed every 30 days.
+         */
+        maximumValidity: number;
+    }
+
+    export interface GetIngressGatewayRouteTableRouteRule {
+        /**
+         * The destination of the request.
+         */
+        destinations: outputs.ServiceMesh.GetIngressGatewayRouteTableRouteRuleDestination[];
+        /**
+         * The ingress gateway host to which the route rule attaches. If not specified, the route rule gets attached to all hosts on the ingress gateway.
+         */
+        ingressGatewayHosts: outputs.ServiceMesh.GetIngressGatewayRouteTableRouteRuleIngressGatewayHost[];
+        /**
+         * If true, the rule will check that the content-type header has a application/grpc or one of the various application/grpc+ values.
+         */
+        isGrpc: boolean;
+        /**
+         * If true, the hostname will be rewritten to the target virtual deployment's DNS hostname.
+         */
+        isHostRewriteEnabled: boolean;
+        /**
+         * If true, the matched path prefix will be rewritten to '/' before being directed to the target virtual deployment.
+         */
+        isPathRewriteEnabled: boolean;
+        /**
+         * Route to match
+         */
+        path: string;
+        /**
+         * Match type for the route
+         */
+        pathType: string;
+        /**
+         * Type of protocol.
+         */
+        type: string;
+    }
+
+    export interface GetIngressGatewayRouteTableRouteRuleDestination {
+        /**
+         * The port of the ingress gateway host listener. Leave empty to match all ports for the host.
+         */
+        port: number;
+        /**
+         * The OCID of the virtual service where the request will be routed.
+         */
+        virtualServiceId: string;
+        /**
+         * Weight of traffic target.
+         */
+        weight: number;
+    }
+
+    export interface GetIngressGatewayRouteTableRouteRuleIngressGatewayHost {
+        /**
+         * Name of the ingress gateway host that this route should apply to.
+         */
+        name: string;
+        /**
+         * The port of the ingress gateway host listener. Leave empty to match all ports for the host.
+         */
+        port: number;
+    }
+
+    export interface GetIngressGatewayRouteTablesFilter {
+        /**
+         * A filter to return only resources that match the entire name given.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetIngressGatewayRouteTablesIngressGatewayRouteTableCollection {
+        items: outputs.ServiceMesh.GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItem[];
+    }
+
+    export interface GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItem {
+        /**
+         * The ID of the compartment in which to list resources.
+         */
+        compartmentId: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+         */
+        definedTags: {[key: string]: any};
+        /**
+         * Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
+         */
+        description: string;
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+         */
+        freeformTags: {[key: string]: any};
+        /**
+         * Unique IngressGatewayRouteTable identifier.
+         */
+        id: string;
+        /**
+         * Unique IngressGateway identifier.
+         */
+        ingressGatewayId: string;
+        /**
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
+         */
+        lifecycleDetails: string;
+        /**
+         * A filter to return only resources that match the entire name given.
+         */
+        name: string;
+        /**
+         * The priority of the route table. A lower value means a higher priority. The routes are declared based on the priority.
+         */
+        priority: number;
+        /**
+         * The route rules for the ingress gateway.
+         */
+        routeRules: outputs.ServiceMesh.GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRule[];
+        /**
+         * A filter to return only resources that match the life cycle state given.
+         */
+        state: string;
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: any};
+        /**
+         * The time when this resource was created in an RFC3339 formatted datetime string.
+         */
+        timeCreated: string;
+        /**
+         * The time when this resource was updated in an RFC3339 formatted datetime string.
+         */
+        timeUpdated: string;
+    }
+
+    export interface GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRule {
+        /**
+         * The destination of the request.
+         */
+        destinations: outputs.ServiceMesh.GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestination[];
+        /**
+         * The ingress gateway host to which the route rule attaches. If not specified, the route rule gets attached to all hosts on the ingress gateway.
+         */
+        ingressGatewayHosts: outputs.ServiceMesh.GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHost[];
+        /**
+         * If true, the rule will check that the content-type header has a application/grpc or one of the various application/grpc+ values.
+         */
+        isGrpc: boolean;
+        /**
+         * If true, the hostname will be rewritten to the target virtual deployment's DNS hostname.
+         */
+        isHostRewriteEnabled: boolean;
+        /**
+         * If true, the matched path prefix will be rewritten to '/' before being directed to the target virtual deployment.
+         */
+        isPathRewriteEnabled: boolean;
+        /**
+         * Route to match
+         */
+        path: string;
+        /**
+         * Match type for the route
+         */
+        pathType: string;
+        /**
+         * Type of protocol.
+         */
+        type: string;
+    }
+
+    export interface GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestination {
+        /**
+         * The port of the ingress gateway host listener. Leave empty to match all ports for the host.
+         */
+        port: number;
+        /**
+         * The OCID of the virtual service where the request will be routed.
+         */
+        virtualServiceId: string;
+        /**
+         * Weight of traffic target.
+         */
+        weight: number;
+    }
+
+    export interface GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHost {
+        /**
+         * A filter to return only resources that match the entire name given.
+         */
+        name: string;
+        /**
+         * The port of the ingress gateway host listener. Leave empty to match all ports for the host.
+         */
+        port: number;
+    }
+
+    export interface GetIngressGatewaysFilter {
+        /**
+         * A filter to return only resources that match the entire name given.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetIngressGatewaysIngressGatewayCollection {
+        items: outputs.ServiceMesh.GetIngressGatewaysIngressGatewayCollectionItem[];
+    }
+
+    export interface GetIngressGatewaysIngressGatewayCollectionItem {
+        /**
+         * This configuration determines if logging is enabled and where the logs will be output.
+         */
+        accessLoggings: outputs.ServiceMesh.GetIngressGatewaysIngressGatewayCollectionItemAccessLogging[];
+        /**
+         * The ID of the compartment in which to list resources.
+         */
+        compartmentId: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+         */
+        definedTags: {[key: string]: any};
+        /**
+         * Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
+         */
+        description: string;
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+         */
+        freeformTags: {[key: string]: any};
+        /**
+         * Array of hostnames and their listener configuration that this gateway will bind to.
+         */
+        hosts: outputs.ServiceMesh.GetIngressGatewaysIngressGatewayCollectionItemHost[];
+        /**
+         * Unique IngressGateway identifier.
+         */
+        id: string;
+        /**
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
+         */
+        lifecycleDetails: string;
+        /**
+         * Unique Mesh identifier.
+         */
+        meshId: string;
+        /**
+         * Mutual TLS settings used when sending requests to virtual services within the mesh.
+         */
+        mtls: outputs.ServiceMesh.GetIngressGatewaysIngressGatewayCollectionItemMtl[];
+        /**
+         * A filter to return only resources that match the entire name given.
+         */
+        name: string;
+        /**
+         * A filter to return only resources that match the life cycle state given.
+         */
+        state: string;
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: any};
+        /**
+         * The time when this resource was created in an RFC3339 formatted datetime string.
+         */
+        timeCreated: string;
+        /**
+         * The time when this resource was updated in an RFC3339 formatted datetime string.
+         */
+        timeUpdated: string;
+    }
+
+    export interface GetIngressGatewaysIngressGatewayCollectionItemAccessLogging {
+        /**
+         * Determines if the logging configuration is enabled.
+         */
+        isEnabled: boolean;
+    }
+
+    export interface GetIngressGatewaysIngressGatewayCollectionItemHost {
+        /**
+         * Hostnames of the host. Applicable only for HTTP and TLS_PASSTHROUGH listeners. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are "www.example.com", "*.example.com", "*.com".
+         */
+        hostnames: string[];
+        /**
+         * The listeners for the ingress gateway.
+         */
+        listeners: outputs.ServiceMesh.GetIngressGatewaysIngressGatewayCollectionItemHostListener[];
+        /**
+         * A filter to return only resources that match the entire name given.
+         */
+        name: string;
+    }
+
+    export interface GetIngressGatewaysIngressGatewayCollectionItemHostListener {
+        /**
+         * Port on which ingress gateway is listening.
+         */
+        port: number;
+        /**
+         * Type of protocol used.
+         */
+        protocol: string;
+        /**
+         * TLS enforcement config for the ingress listener.
+         */
+        tls: outputs.ServiceMesh.GetIngressGatewaysIngressGatewayCollectionItemHostListenerTl[];
+    }
+
+    export interface GetIngressGatewaysIngressGatewayCollectionItemHostListenerTl {
+        /**
+         * Resource representing the TLS configuration used for validating client certificates.
+         */
+        clientValidations: outputs.ServiceMesh.GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidation[];
+        /**
+         * DISABLED: Connection can only be plaintext. PERMISSIVE: Connection can be either plaintext or TLS/mTLS. If the clientValidation.trustedCaBundle property is configured for the listener, mTLS is performed and the client's certificates are validated by the gateway. TLS: Connection can only be TLS.  MUTUAL_TLS: Connection can only be MTLS.
+         */
+        mode: string;
+        /**
+         * Resource representing the location of the TLS certificate.
+         */
+        serverCertificates: outputs.ServiceMesh.GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificate[];
+    }
+
+    export interface GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidation {
+        /**
+         * A list of alternate names to verify the subject identity in the certificate presented by the client.
+         */
+        subjectAlternateNames: string[];
+        /**
+         * Resource representing the CA bundle.
+         */
+        trustedCaBundles: outputs.ServiceMesh.GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundle[];
+    }
+
+    export interface GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundle {
+        /**
+         * The OCID of the CA Bundle resource.
+         */
+        caBundleId: string;
+        /**
+         * Name of the secret. For Kubernetes this is the name of the Kubernetes secret of type tls. For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
+         */
+        secretName: string;
+        /**
+         * Type of certificate.
+         */
+        type: string;
+    }
+
+    export interface GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificate {
+        /**
+         * The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
+         */
+        certificateId: string;
+        /**
+         * Name of the secret. For Kubernetes this is the name of the Kubernetes secret of type tls. For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
+         */
+        secretName: string;
+        /**
+         * Type of certificate.
+         */
+        type: string;
+    }
+
+    export interface GetIngressGatewaysIngressGatewayCollectionItemMtl {
+        /**
+         * The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
+         */
+        certificateId: string;
+        /**
+         * The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration  for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days will be renewed every 30 days.
+         */
+        maximumValidity: number;
+    }
+
+    export interface GetMeshCertificateAuthority {
+        /**
+         * Unique identifier that is immutable on creation.
+         */
+        id: string;
+    }
+
+    export interface GetMeshMtl {
+        /**
+         * DISABLED: No minimum virtual services within this mesh can use any mTLS authentication mode. PERMISSIVE: Virtual services within this mesh can use either PERMISSIVE or STRICT modes. STRICT: All virtual services within this mesh must use STRICT mode.
+         */
+        minimum: string;
+    }
+
+    export interface GetMeshesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetMeshesMeshCollection {
+        items: outputs.ServiceMesh.GetMeshesMeshCollectionItem[];
+    }
+
+    export interface GetMeshesMeshCollectionItem {
+        /**
+         * A list of certificate authority resources to use for creating leaf certificates for mTLS authentication. Currently we only support one certificate authority, but this may expand in future releases.
+         */
+        certificateAuthorities: outputs.ServiceMesh.GetMeshesMeshCollectionItemCertificateAuthority[];
+        /**
+         * The ID of the compartment in which to list resources.
+         */
+        compartmentId: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+         */
+        definedTags: {[key: string]: any};
+        /**
+         * Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
+         */
+        description: string;
+        /**
+         * A filter to return only resources that match the entire displayName given.
+         */
+        displayName: string;
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+         */
+        freeformTags: {[key: string]: any};
+        /**
+         * Unique Mesh identifier.
+         */
+        id: string;
+        /**
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
+         */
+        lifecycleDetails: string;
+        /**
+         * Sets a minimum level of mTLS authentication for all virtual services within the mesh.
+         */
+        mtls: outputs.ServiceMesh.GetMeshesMeshCollectionItemMtl[];
+        /**
+         * A filter to return only resources that match the life cycle state given.
+         */
+        state: string;
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: any};
+        /**
+         * The time when this resource was created in an RFC3339 formatted datetime string.
+         */
+        timeCreated: string;
+        /**
+         * The time when this resource was updated in an RFC3339 formatted datetime string.
+         */
+        timeUpdated: string;
+    }
+
+    export interface GetMeshesMeshCollectionItemCertificateAuthority {
+        /**
+         * Unique Mesh identifier.
+         */
+        id: string;
+    }
+
+    export interface GetMeshesMeshCollectionItemMtl {
+        /**
+         * DISABLED: No minimum virtual services within this mesh can use any mTLS authentication mode. PERMISSIVE: Virtual services within this mesh can use either PERMISSIVE or STRICT modes. STRICT: All virtual services within this mesh must use STRICT mode.
+         */
+        minimum: string;
+    }
+
+    export interface GetVirtualDeploymentAccessLogging {
+        /**
+         * Determines if the logging configuration is enabled.
+         */
+        isEnabled: boolean;
+    }
+
+    export interface GetVirtualDeploymentListener {
+        /**
+         * Port in which virtual deployment is running.
+         */
+        port: number;
+        /**
+         * Type of protocol used in virtual deployment.
+         */
+        protocol: string;
+    }
+
+    export interface GetVirtualDeploymentServiceDiscovery {
+        /**
+         * The hostname of the virtual deployments.
+         */
+        hostname: string;
+        /**
+         * Type of service discovery.
+         */
+        type: string;
+    }
+
+    export interface GetVirtualDeploymentsFilter {
+        /**
+         * A filter to return only resources that match the entire name given.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetVirtualDeploymentsVirtualDeploymentCollection {
+        items: outputs.ServiceMesh.GetVirtualDeploymentsVirtualDeploymentCollectionItem[];
+    }
+
+    export interface GetVirtualDeploymentsVirtualDeploymentCollectionItem {
+        /**
+         * This configuration determines if logging is enabled and where the logs will be output.
+         */
+        accessLoggings: outputs.ServiceMesh.GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLogging[];
+        /**
+         * The ID of the compartment in which to list resources.
+         */
+        compartmentId: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+         */
+        definedTags: {[key: string]: any};
+        /**
+         * Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
+         */
+        description: string;
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+         */
+        freeformTags: {[key: string]: any};
+        /**
+         * Unique VirtualDeployment identifier.
+         */
+        id: string;
+        /**
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
+         */
+        lifecycleDetails: string;
+        /**
+         * The listeners for the virtual deployment
+         */
+        listeners: outputs.ServiceMesh.GetVirtualDeploymentsVirtualDeploymentCollectionItemListener[];
+        /**
+         * A filter to return only resources that match the entire name given.
+         */
+        name: string;
+        /**
+         * Service Discovery configuration for virtual deployments.
+         */
+        serviceDiscoveries: outputs.ServiceMesh.GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscovery[];
+        /**
+         * A filter to return only resources that match the life cycle state given.
+         */
+        state: string;
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: any};
+        /**
+         * The time when this resource was created in an RFC3339 formatted datetime string.
+         */
+        timeCreated: string;
+        /**
+         * The time when this resource was updated in an RFC3339 formatted datetime string.
+         */
+        timeUpdated: string;
+        /**
+         * Unique VirtualService identifier.
+         */
+        virtualServiceId: string;
+    }
+
+    export interface GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLogging {
+        /**
+         * Determines if the logging configuration is enabled.
+         */
+        isEnabled: boolean;
+    }
+
+    export interface GetVirtualDeploymentsVirtualDeploymentCollectionItemListener {
+        /**
+         * Port in which virtual deployment is running.
+         */
+        port: number;
+        /**
+         * Type of protocol used in virtual deployment.
+         */
+        protocol: string;
+    }
+
+    export interface GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscovery {
+        /**
+         * The hostname of the virtual deployments.
+         */
+        hostname: string;
+        /**
+         * Type of service discovery.
+         */
+        type: string;
+    }
+
+    export interface GetVirtualServiceDefaultRoutingPolicy {
+        /**
+         * Type of the virtual service routing policy.
+         */
+        type: string;
+    }
+
+    export interface GetVirtualServiceMtl {
+        /**
+         * The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
+         */
+        certificateId: string;
+        /**
+         * The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration  for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days will be renewed every 30 days.
+         */
+        maximumValidity: number;
+        /**
+         * DISABLED: Connection is not tunneled. PERMISSIVE: Connection can be either plaintext or an mTLS tunnel. STRICT: Connection is an mTLS tunnel.  Clients without a valid certificate will be rejected.
+         */
+        mode: string;
+    }
+
+    export interface GetVirtualServiceRouteTableRouteRule {
+        /**
+         * The destination of the request.
+         */
+        destinations: outputs.ServiceMesh.GetVirtualServiceRouteTableRouteRuleDestination[];
+        /**
+         * If true, the rule will check that the content-type header has a application/grpc or one of the various application/grpc+ values.
+         */
+        isGrpc: boolean;
+        /**
+         * Route to match
+         */
+        path: string;
+        /**
+         * Match type for the route
+         */
+        pathType: string;
+        /**
+         * Type of protocol.
+         */
+        type: string;
+    }
+
+    export interface GetVirtualServiceRouteTableRouteRuleDestination {
+        /**
+         * Port on virtual deployment to target. If port is missing, the rule will target all ports on the virtual deployment.
+         */
+        port: number;
+        /**
+         * The OCID of the virtual deployment where the request will be routed.
+         */
+        virtualDeploymentId: string;
+        /**
+         * Weight of traffic target.
+         */
+        weight: number;
+    }
+
+    export interface GetVirtualServiceRouteTablesFilter {
+        /**
+         * A filter to return only resources that match the entire name given.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetVirtualServiceRouteTablesVirtualServiceRouteTableCollection {
+        items: outputs.ServiceMesh.GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItem[];
+    }
+
+    export interface GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItem {
+        /**
+         * The ID of the compartment in which to list resources.
+         */
+        compartmentId: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+         */
+        definedTags: {[key: string]: any};
+        /**
+         * Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
+         */
+        description: string;
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+         */
+        freeformTags: {[key: string]: any};
+        /**
+         * Unique VirtualServiceRouteTable identifier.
+         */
+        id: string;
+        /**
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
+         */
+        lifecycleDetails: string;
+        /**
+         * A filter to return only resources that match the entire name given.
+         */
+        name: string;
+        /**
+         * The priority of the route table. Lower value means higher priority. The routes are declared based on the priority.
+         */
+        priority: number;
+        /**
+         * The route rules for the virtual service.
+         */
+        routeRules: outputs.ServiceMesh.GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRule[];
+        /**
+         * A filter to return only resources that match the life cycle state given.
+         */
+        state: string;
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: any};
+        /**
+         * The time when this resource was created in an RFC3339 formatted datetime string.
+         */
+        timeCreated: string;
+        /**
+         * The time when this resource was updated in an RFC3339 formatted datetime string.
+         */
+        timeUpdated: string;
+        /**
+         * Unique VirtualService identifier.
+         */
+        virtualServiceId: string;
+    }
+
+    export interface GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRule {
+        /**
+         * The destination of the request.
+         */
+        destinations: outputs.ServiceMesh.GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestination[];
+        /**
+         * If true, the rule will check that the content-type header has a application/grpc or one of the various application/grpc+ values.
+         */
+        isGrpc: boolean;
+        /**
+         * Route to match
+         */
+        path: string;
+        /**
+         * Match type for the route
+         */
+        pathType: string;
+        /**
+         * Type of protocol.
+         */
+        type: string;
+    }
+
+    export interface GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestination {
+        /**
+         * Port on virtual deployment to target. If port is missing, the rule will target all ports on the virtual deployment.
+         */
+        port: number;
+        /**
+         * The OCID of the virtual deployment where the request will be routed.
+         */
+        virtualDeploymentId: string;
+        /**
+         * Weight of traffic target.
+         */
+        weight: number;
+    }
+
+    export interface GetVirtualServicesFilter {
+        /**
+         * A filter to return only resources that match the entire name given.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetVirtualServicesVirtualServiceCollection {
+        items: outputs.ServiceMesh.GetVirtualServicesVirtualServiceCollectionItem[];
+    }
+
+    export interface GetVirtualServicesVirtualServiceCollectionItem {
+        /**
+         * The ID of the compartment in which to list resources.
+         */
+        compartmentId: string;
+        /**
+         * Routing policy for the virtual service.
+         */
+        defaultRoutingPolicies: outputs.ServiceMesh.GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicy[];
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+         */
+        definedTags: {[key: string]: any};
+        /**
+         * Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
+         */
+        description: string;
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+         */
+        freeformTags: {[key: string]: any};
+        /**
+         * The DNS hostnames of the virtual service that is used by its callers. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are "www.example.com", "*.example.com", "*.com". Can be omitted if the virtual service will only have TCP virtual deployments.
+         */
+        hosts: string[];
+        /**
+         * Unique VirtualService identifier.
+         */
+        id: string;
+        /**
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
+         */
+        lifecycleDetails: string;
+        /**
+         * Unique Mesh identifier.
+         */
+        meshId: string;
+        /**
+         * Mutual TLS settings used when communicating with other virtual services or ingress gateways within the mesh.
+         */
+        mtls: outputs.ServiceMesh.GetVirtualServicesVirtualServiceCollectionItemMtl[];
+        /**
+         * A filter to return only resources that match the entire name given.
+         */
+        name: string;
+        /**
+         * A filter to return only resources that match the life cycle state given.
+         */
+        state: string;
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: any};
+        /**
+         * The time when this resource was created in an RFC3339 formatted datetime string.
+         */
+        timeCreated: string;
+        /**
+         * The time when this resource was updated in an RFC3339 formatted datetime string.
+         */
+        timeUpdated: string;
+    }
+
+    export interface GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicy {
+        /**
+         * Type of the virtual service routing policy.
+         */
+        type: string;
+    }
+
+    export interface GetVirtualServicesVirtualServiceCollectionItemMtl {
+        /**
+         * The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
+         */
+        certificateId: string;
+        /**
+         * The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration  for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days will be renewed every 30 days.
+         */
+        maximumValidity: number;
+        /**
+         * DISABLED: Connection is not tunneled. PERMISSIVE: Connection can be either plaintext or an mTLS tunnel. STRICT: Connection is an mTLS tunnel.  Clients without a valid certificate will be rejected.
+         */
+        mode: string;
+    }
+
+    export interface IngressGatewayAccessLogging {
+        /**
+         * (Updatable) Determines if the logging configuration is enabled.
+         */
+        isEnabled: boolean;
+    }
+
+    export interface IngressGatewayHost {
+        /**
+         * (Updatable) Hostnames of the host. Applicable only for HTTP and TLS_PASSTHROUGH listeners. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are "www.example.com", "*.example.com", "*.com".
+         */
+        hostnames: string[];
+        /**
+         * (Updatable) The listeners for the ingress gateway.
+         */
+        listeners: outputs.ServiceMesh.IngressGatewayHostListener[];
+        /**
+         * A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
+         */
+        name: string;
+    }
+
+    export interface IngressGatewayHostListener {
+        /**
+         * (Updatable) Port on which ingress gateway is listening.
+         */
+        port: number;
+        /**
+         * (Updatable) Type of protocol used.
+         */
+        protocol: string;
+        /**
+         * (Updatable) TLS enforcement config for the ingress listener.
+         */
+        tls: outputs.ServiceMesh.IngressGatewayHostListenerTls;
+    }
+
+    export interface IngressGatewayHostListenerTls {
+        /**
+         * (Updatable) Resource representing the TLS configuration used for validating client certificates.
+         */
+        clientValidation: outputs.ServiceMesh.IngressGatewayHostListenerTlsClientValidation;
+        /**
+         * (Updatable) DISABLED: Connection can only be plaintext. PERMISSIVE: Connection can be either plaintext or TLS/mTLS. If the clientValidation.trustedCaBundle property is configured for the listener, mTLS is performed and the client's certificates are validated by the gateway. TLS: Connection can only be TLS.  MUTUAL_TLS: Connection can only be MTLS.
+         */
+        mode: string;
+        /**
+         * (Updatable) Resource representing the location of the TLS certificate.
+         */
+        serverCertificate: outputs.ServiceMesh.IngressGatewayHostListenerTlsServerCertificate;
+    }
+
+    export interface IngressGatewayHostListenerTlsClientValidation {
+        /**
+         * (Updatable) A list of alternate names to verify the subject identity in the certificate presented by the client.
+         */
+        subjectAlternateNames: string[];
+        /**
+         * (Updatable) Resource representing the CA bundle.
+         */
+        trustedCaBundle: outputs.ServiceMesh.IngressGatewayHostListenerTlsClientValidationTrustedCaBundle;
+    }
+
+    export interface IngressGatewayHostListenerTlsClientValidationTrustedCaBundle {
+        /**
+         * (Updatable) The OCID of the CA Bundle resource.
+         */
+        caBundleId: string;
+        /**
+         * (Updatable) Name of the secret. For Kubernetes this is the name of the Kubernetes secret of type tls. For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
+         */
+        secretName: string;
+        /**
+         * (Updatable) Type of certificate.
+         */
+        type: string;
+    }
+
+    export interface IngressGatewayHostListenerTlsServerCertificate {
+        /**
+         * (Updatable) The OCID of the leaf certificate resource.
+         */
+        certificateId: string;
+        /**
+         * (Updatable) Name of the secret. For Kubernetes this is the name of the Kubernetes secret of type tls. For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
+         */
+        secretName: string;
+        /**
+         * (Updatable) Type of certificate.
+         */
+        type: string;
+    }
+
+    export interface IngressGatewayMtls {
+        /**
+         * (Updatable) The OCID of the leaf certificate resource.
+         */
+        certificateId: string;
+        /**
+         * (Updatable) The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration  for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days will be renewed every 30 days.
+         */
+        maximumValidity: number;
+    }
+
+    export interface IngressGatewayRouteTableRouteRule {
+        /**
+         * (Updatable) The destination of the request.
+         */
+        destinations: outputs.ServiceMesh.IngressGatewayRouteTableRouteRuleDestination[];
+        /**
+         * (Updatable) The ingress gateway host to which the route rule attaches. If not specified, the route rule gets attached to all hosts on the ingress gateway.
+         */
+        ingressGatewayHost: outputs.ServiceMesh.IngressGatewayRouteTableRouteRuleIngressGatewayHost;
+        /**
+         * (Updatable) If true, the rule will check that the content-type header has a application/grpc or one of the various application/grpc+ values.
+         */
+        isGrpc: boolean;
+        /**
+         * (Updatable) If true, the hostname will be rewritten to the target virtual deployment's DNS hostname.
+         */
+        isHostRewriteEnabled: boolean;
+        /**
+         * (Updatable) If true, the matched path prefix will be rewritten to '/' before being directed to the target virtual deployment.
+         */
+        isPathRewriteEnabled: boolean;
+        /**
+         * (Updatable) Route to match
+         */
+        path: string;
+        /**
+         * (Updatable) Match type for the route
+         */
+        pathType: string;
+        /**
+         * (Updatable) Type of protocol.
+         */
+        type: string;
+    }
+
+    export interface IngressGatewayRouteTableRouteRuleDestination {
+        /**
+         * (Updatable) The port of the ingress gateway host listener. Leave empty to match all ports for the host.
+         */
+        port: number;
+        /**
+         * (Updatable) The OCID of the virtual service where the request will be routed.
+         */
+        virtualServiceId: string;
+        /**
+         * (Updatable) Weight of traffic target.
+         */
+        weight: number;
+    }
+
+    export interface IngressGatewayRouteTableRouteRuleIngressGatewayHost {
+        /**
+         * (Updatable) Name of the ingress gateway host that this route should apply to.
+         */
+        name: string;
+        /**
+         * (Updatable) The port of the ingress gateway host listener. Leave empty to match all ports for the host.
+         */
+        port: number;
+    }
+
+    export interface MeshCertificateAuthority {
+        /**
+         * The OCID of the certificate authority resource.
+         */
+        id: string;
+    }
+
+    export interface MeshMtls {
+        /**
+         * (Updatable) DISABLED: No minimum virtual services within this mesh can use any mTLS authentication mode. PERMISSIVE: Virtual services within this mesh can use either PERMISSIVE or STRICT modes. STRICT: All virtual services within this mesh must use STRICT mode.
+         */
+        minimum: string;
+    }
+
+    export interface VirtualDeploymentAccessLogging {
+        /**
+         * (Updatable) Determines if the logging configuration is enabled.
+         */
+        isEnabled: boolean;
+    }
+
+    export interface VirtualDeploymentListener {
+        /**
+         * (Updatable) Port in which virtual deployment is running.
+         */
+        port: number;
+        /**
+         * (Updatable) Type of protocol used in virtual deployment.
+         */
+        protocol: string;
+    }
+
+    export interface VirtualDeploymentServiceDiscovery {
+        /**
+         * (Updatable) The hostname of the virtual deployments.
+         */
+        hostname: string;
+        /**
+         * (Updatable) Type of service discovery.
+         */
+        type: string;
+    }
+
+    export interface VirtualServiceDefaultRoutingPolicy {
+        /**
+         * (Updatable) Type of the virtual service routing policy.
+         */
+        type: string;
+    }
+
+    export interface VirtualServiceMtls {
+        /**
+         * The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
+         */
+        certificateId: string;
+        /**
+         * (Updatable) The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration  for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days will be renewed every 30 days.
+         */
+        maximumValidity: number;
+        /**
+         * (Updatable) DISABLED: Connection is not tunneled. PERMISSIVE: Connection can be either plaintext or an mTLS tunnel. STRICT: Connection is an mTLS tunnel.  Clients without a valid certificate will be rejected.
+         */
+        mode: string;
+    }
+
+    export interface VirtualServiceRouteTableRouteRule {
+        /**
+         * (Updatable) The destination of the request.
+         */
+        destinations: outputs.ServiceMesh.VirtualServiceRouteTableRouteRuleDestination[];
+        /**
+         * (Updatable) If true, the rule will check that the content-type header has a application/grpc or one of the various application/grpc+ values.
+         */
+        isGrpc: boolean;
+        /**
+         * (Updatable) Route to match
+         */
+        path: string;
+        /**
+         * (Updatable) Match type for the route
+         */
+        pathType: string;
+        /**
+         * (Updatable) Type of protocol.
+         */
+        type: string;
+    }
+
+    export interface VirtualServiceRouteTableRouteRuleDestination {
+        /**
+         * (Updatable) Port on virtual deployment to target. If port is missing, the rule will target all ports on the virtual deployment.
+         */
+        port: number;
+        /**
+         * (Updatable) The OCID of the virtual deployment where the request will be routed.
+         */
+        virtualDeploymentId: string;
+        /**
+         * (Updatable) Weight of traffic target.
+         */
+        weight: number;
     }
 
 }
@@ -82229,6 +94179,536 @@ export namespace VisualBuilder {
     }
 }
 
+export namespace VnMonitoring {
+    export interface GetPathAnalyzerTestDestinationEndpoint {
+        /**
+         * The IPv4 address of the COMPUTE_INSTANCE-type `Endpoint` object.
+         */
+        address: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute instance.
+         */
+        instanceId: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer listener.
+         */
+        listenerId: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's load balancer.
+         */
+        loadBalancerId: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's network load balancer.
+         */
+        networkLoadBalancerId: string;
+        /**
+         * The current state of the `PathAnalyzerTest` resource.
+         */
+        state: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address. This can be used to disambiguate which subnet is intended, in case the IP address is used in more than one subnet (when there are subnets with overlapping IP ranges).
+         */
+        subnetId: string;
+        /**
+         * The type of the `Endpoint`.
+         */
+        type: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN containing the IP address. This can be used to disambiguate which VLAN is queried, in case the endpoint IP address belongs to more than one VLAN (when there are VLANs with overlapping IP ranges).
+         */
+        vlanId: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance.
+         */
+        vnicId: string;
+    }
+
+    export interface GetPathAnalyzerTestProtocolParameter {
+        /**
+         * The destination port to use in a `PathAnalyzerTest` resource.
+         */
+        destinationPort: number;
+        /**
+         * The [ICMP](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml) code.
+         */
+        icmpCode: number;
+        /**
+         * The [ICMP](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml) type.
+         */
+        icmpType: number;
+        /**
+         * The source port to use in a `PathAnalyzerTest` resource.
+         */
+        sourcePort: number;
+        /**
+         * The type of the `Endpoint`.
+         */
+        type: string;
+    }
+
+    export interface GetPathAnalyzerTestQueryOption {
+        /**
+         * If true, a path analysis is done for both the forward and reverse routes.
+         */
+        isBiDirectionalAnalysis: boolean;
+    }
+
+    export interface GetPathAnalyzerTestSourceEndpoint {
+        /**
+         * The IPv4 address of the COMPUTE_INSTANCE-type `Endpoint` object.
+         */
+        address: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute instance.
+         */
+        instanceId: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer listener.
+         */
+        listenerId: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's load balancer.
+         */
+        loadBalancerId: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's network load balancer.
+         */
+        networkLoadBalancerId: string;
+        /**
+         * The current state of the `PathAnalyzerTest` resource.
+         */
+        state: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address. This can be used to disambiguate which subnet is intended, in case the IP address is used in more than one subnet (when there are subnets with overlapping IP ranges).
+         */
+        subnetId: string;
+        /**
+         * The type of the `Endpoint`.
+         */
+        type: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN containing the IP address. This can be used to disambiguate which VLAN is queried, in case the endpoint IP address belongs to more than one VLAN (when there are VLANs with overlapping IP ranges).
+         */
+        vlanId: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance.
+         */
+        vnicId: string;
+    }
+
+    export interface GetPathAnalyzerTestsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetPathAnalyzerTestsPathAnalyzerTestCollection {
+        items: outputs.VnMonitoring.GetPathAnalyzerTestsPathAnalyzerTestCollectionItem[];
+    }
+
+    export interface GetPathAnalyzerTestsPathAnalyzerTestCollectionItem {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         */
+        compartmentId: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+         */
+        definedTags: {[key: string]: any};
+        /**
+         * Information describing a source or destination in a `PathAnalyzerTest` resource.
+         */
+        destinationEndpoints: outputs.VnMonitoring.GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpoint[];
+        /**
+         * A filter that returns only resources that match the entire display name given.
+         */
+        displayName: string;
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+         */
+        freeformTags: {[key: string]: any};
+        /**
+         * A unique identifier established when the resource is created. The identifier can't be changed later.
+         */
+        id: string;
+        /**
+         * The IP protocol to use for the `PathAnalyzerTest` resource.
+         */
+        protocol: number;
+        /**
+         * Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
+         */
+        protocolParameters: outputs.VnMonitoring.GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameter[];
+        /**
+         * Defines the query options required for a `PathAnalyzerTest` resource.
+         */
+        queryOptions: outputs.VnMonitoring.GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOption[];
+        /**
+         * Information describing a source or destination in a `PathAnalyzerTest` resource.
+         */
+        sourceEndpoints: outputs.VnMonitoring.GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpoint[];
+        /**
+         * A filter that returns only resources whose `lifecycleState` matches the given `lifecycleState`.
+         */
+        state: string;
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: any};
+        /**
+         * The date and time the `PathAnalyzerTest` resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         */
+        timeCreated: string;
+        /**
+         * The date and time the `PathAnalyzerTest` resource was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         */
+        timeUpdated: string;
+    }
+
+    export interface GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpoint {
+        /**
+         * The IPv4 address of the COMPUTE_INSTANCE-type `Endpoint` object.
+         */
+        address: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute instance.
+         */
+        instanceId: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer listener.
+         */
+        listenerId: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's load balancer.
+         */
+        loadBalancerId: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's network load balancer.
+         */
+        networkLoadBalancerId: string;
+        /**
+         * A filter that returns only resources whose `lifecycleState` matches the given `lifecycleState`.
+         */
+        state: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address. This can be used to disambiguate which subnet is intended, in case the IP address is used in more than one subnet (when there are subnets with overlapping IP ranges).
+         */
+        subnetId: string;
+        /**
+         * The type of the `Endpoint`.
+         */
+        type: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN containing the IP address. This can be used to disambiguate which VLAN is queried, in case the endpoint IP address belongs to more than one VLAN (when there are VLANs with overlapping IP ranges).
+         */
+        vlanId: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance.
+         */
+        vnicId: string;
+    }
+
+    export interface GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameter {
+        /**
+         * The destination port to use in a `PathAnalyzerTest` resource.
+         */
+        destinationPort: number;
+        /**
+         * The [ICMP](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml) code.
+         */
+        icmpCode: number;
+        /**
+         * The [ICMP](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml) type.
+         */
+        icmpType: number;
+        /**
+         * The source port to use in a `PathAnalyzerTest` resource.
+         */
+        sourcePort: number;
+        /**
+         * The type of the `Endpoint`.
+         */
+        type: string;
+    }
+
+    export interface GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOption {
+        /**
+         * If true, a path analysis is done for both the forward and reverse routes.
+         */
+        isBiDirectionalAnalysis: boolean;
+    }
+
+    export interface GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpoint {
+        /**
+         * The IPv4 address of the COMPUTE_INSTANCE-type `Endpoint` object.
+         */
+        address: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute instance.
+         */
+        instanceId: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer listener.
+         */
+        listenerId: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's load balancer.
+         */
+        loadBalancerId: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's network load balancer.
+         */
+        networkLoadBalancerId: string;
+        /**
+         * A filter that returns only resources whose `lifecycleState` matches the given `lifecycleState`.
+         */
+        state: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address. This can be used to disambiguate which subnet is intended, in case the IP address is used in more than one subnet (when there are subnets with overlapping IP ranges).
+         */
+        subnetId: string;
+        /**
+         * The type of the `Endpoint`.
+         */
+        type: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN containing the IP address. This can be used to disambiguate which VLAN is queried, in case the endpoint IP address belongs to more than one VLAN (when there are VLANs with overlapping IP ranges).
+         */
+        vlanId: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance.
+         */
+        vnicId: string;
+    }
+
+    export interface PathAnalysiDestinationEndpoint {
+        /**
+         * The IPv4 address of the COMPUTE_INSTANCE-type `Endpoint` object.
+         */
+        address: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute instance.
+         */
+        instanceId: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer listener.
+         */
+        listenerId: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's load balancer.
+         */
+        loadBalancerId: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's network load balancer.
+         */
+        networkLoadBalancerId: string;
+        state: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address. This can be used to disambiguate which subnet is intended, in case the IP address is used in more than one subnet (when there are subnets with overlapping IP ranges).
+         */
+        subnetId: string;
+        /**
+         * The type of the `PathAnalysis` query.
+         */
+        type: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN containing the IP address. This can be used to disambiguate which VLAN is queried, in case the endpoint IP address belongs to more than one VLAN (when there are VLANs with overlapping IP ranges).
+         */
+        vlanId: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance.
+         */
+        vnicId: string;
+    }
+
+    export interface PathAnalysiProtocolParameters {
+        /**
+         * The destination port to use in a `PathAnalyzerTest` resource.
+         */
+        destinationPort: number;
+        /**
+         * The [ICMP](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml) code.
+         */
+        icmpCode: number;
+        /**
+         * The [ICMP](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml) type.
+         */
+        icmpType: number;
+        /**
+         * The source port to use in a `PathAnalyzerTest` resource.
+         */
+        sourcePort: number;
+        /**
+         * The type of the `PathAnalysis` query.
+         */
+        type: string;
+    }
+
+    export interface PathAnalysiQueryOptions {
+        /**
+         * If true, a path analysis is done for both the forward and reverse routes.
+         */
+        isBiDirectionalAnalysis: boolean;
+    }
+
+    export interface PathAnalysiSourceEndpoint {
+        /**
+         * The IPv4 address of the COMPUTE_INSTANCE-type `Endpoint` object.
+         */
+        address: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute instance.
+         */
+        instanceId: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer listener.
+         */
+        listenerId: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's load balancer.
+         */
+        loadBalancerId: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's network load balancer.
+         */
+        networkLoadBalancerId: string;
+        state: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address. This can be used to disambiguate which subnet is intended, in case the IP address is used in more than one subnet (when there are subnets with overlapping IP ranges).
+         */
+        subnetId: string;
+        /**
+         * The type of the `PathAnalysis` query.
+         */
+        type: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN containing the IP address. This can be used to disambiguate which VLAN is queried, in case the endpoint IP address belongs to more than one VLAN (when there are VLANs with overlapping IP ranges).
+         */
+        vlanId: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance.
+         */
+        vnicId: string;
+    }
+
+    export interface PathAnalyzerTestDestinationEndpoint {
+        /**
+         * (Updatable) The IPv4 address of the COMPUTE_INSTANCE-type `Endpoint` object.
+         */
+        address: string;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute instance.
+         */
+        instanceId: string;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer listener.
+         */
+        listenerId: string;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's load balancer.
+         */
+        loadBalancerId: string;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's network load balancer.
+         */
+        networkLoadBalancerId: string;
+        /**
+         * The current state of the `PathAnalyzerTest` resource.
+         */
+        state: string;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address. This can be used to disambiguate which subnet is intended, in case the IP address is used in more than one subnet (when there are subnets with overlapping IP ranges).
+         */
+        subnetId: string;
+        /**
+         * (Updatable) The type of the `Endpoint`.
+         */
+        type: string;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN containing the IP address. This can be used to disambiguate which VLAN is queried, in case the endpoint IP address belongs to more than one VLAN (when there are VLANs with overlapping IP ranges).
+         */
+        vlanId: string;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance.
+         */
+        vnicId: string;
+    }
+
+    export interface PathAnalyzerTestProtocolParameters {
+        /**
+         * (Updatable) The destination port to use in a `PathAnalyzerTest` resource.
+         */
+        destinationPort: number;
+        /**
+         * (Updatable) The [ICMP](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml) code.
+         */
+        icmpCode: number;
+        /**
+         * (Updatable) The [ICMP](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml) type.
+         */
+        icmpType: number;
+        /**
+         * (Updatable) The source port to use in a `PathAnalyzerTest` resource.
+         */
+        sourcePort: number;
+        /**
+         * (Updatable) The type of the `Endpoint`.
+         */
+        type: string;
+    }
+
+    export interface PathAnalyzerTestQueryOptions {
+        /**
+         * (Updatable) If true, a path analysis is done for both the forward and reverse routes.
+         */
+        isBiDirectionalAnalysis: boolean;
+    }
+
+    export interface PathAnalyzerTestSourceEndpoint {
+        /**
+         * (Updatable) The IPv4 address of the COMPUTE_INSTANCE-type `Endpoint` object.
+         */
+        address: string;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute instance.
+         */
+        instanceId: string;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer listener.
+         */
+        listenerId: string;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's load balancer.
+         */
+        loadBalancerId: string;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the listener's network load balancer.
+         */
+        networkLoadBalancerId: string;
+        /**
+         * The current state of the `PathAnalyzerTest` resource.
+         */
+        state: string;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address. This can be used to disambiguate which subnet is intended, in case the IP address is used in more than one subnet (when there are subnets with overlapping IP ranges).
+         */
+        subnetId: string;
+        /**
+         * (Updatable) The type of the `Endpoint`.
+         */
+        type: string;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN containing the IP address. This can be used to disambiguate which VLAN is queried, in case the endpoint IP address belongs to more than one VLAN (when there are VLANs with overlapping IP ranges).
+         */
+        vlanId: string;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance.
+         */
+        vnicId: string;
+    }
+
+}
+
 export namespace VulnerabilityScanning {
     export interface ContainerScanRecipeScanSettings {
         /**
@@ -82466,6 +94946,32 @@ export namespace VulnerabilityScanning {
         scanLevel: string;
     }
 
+    export interface GetHostScanRecipeApplicationSetting {
+        /**
+         * Scan recurrences in RFC-5545 section 3.3.10 format. Only supported input are weekly, biweekly, monthly listed below FREQ=WEEKLY;WKST=<weekday>;INTERVAL=1 - This weekly scan on the specified weekday (e.g. SU for Sunday) FREQ=WEEKLY;WKST=<weekday>;INTERVAL=2 - This bi-weekly scan on the specified weekday (e.g. SU for Sunday) FREQ=MONTHLY;WKST=<weekday>;INTERVAL=1 - This monthly scan on the specified weekday (e.g. SU for Sunday, starting from the next such weekday based on the time of setting creation)
+         */
+        applicationScanRecurrence: string;
+        /**
+         * List of folders selected for scanning
+         */
+        foldersToScans: outputs.VulnerabilityScanning.GetHostScanRecipeApplicationSettingFoldersToScan[];
+        /**
+         * Enable or disable application scan
+         */
+        isEnabled: boolean;
+    }
+
+    export interface GetHostScanRecipeApplicationSettingFoldersToScan {
+        /**
+         * Folder to be scanned in the corresponding operating system
+         */
+        folder: string;
+        /**
+         * Operating system type
+         */
+        operatingsystem: string;
+    }
+
     export interface GetHostScanRecipePortSetting {
         /**
          * The scan level
@@ -82499,6 +95005,10 @@ export namespace VulnerabilityScanning {
          * Agent scan settings for a host scan
          */
         agentSettings: outputs.VulnerabilityScanning.GetHostScanRecipesHostScanRecipeSummaryCollectionItemAgentSetting[];
+        /**
+         * Agent scan settings for an application scan (as a part of a host scan)
+         */
+        applicationSettings: outputs.VulnerabilityScanning.GetHostScanRecipesHostScanRecipeSummaryCollectionItemApplicationSetting[];
         /**
          * The ID of the compartment in which to list resources.
          */
@@ -82583,6 +95093,32 @@ export namespace VulnerabilityScanning {
          * The scan level
          */
         scanLevel: string;
+    }
+
+    export interface GetHostScanRecipesHostScanRecipeSummaryCollectionItemApplicationSetting {
+        /**
+         * Scan recurrences in RFC-5545 section 3.3.10 format. Only supported input are weekly, biweekly, monthly listed below FREQ=WEEKLY;WKST=<weekday>;INTERVAL=1 - This weekly scan on the specified weekday (e.g. SU for Sunday) FREQ=WEEKLY;WKST=<weekday>;INTERVAL=2 - This bi-weekly scan on the specified weekday (e.g. SU for Sunday) FREQ=MONTHLY;WKST=<weekday>;INTERVAL=1 - This monthly scan on the specified weekday (e.g. SU for Sunday, starting from the next such weekday based on the time of setting creation)
+         */
+        applicationScanRecurrence: string;
+        /**
+         * List of folders selected for scanning
+         */
+        foldersToScans: outputs.VulnerabilityScanning.GetHostScanRecipesHostScanRecipeSummaryCollectionItemApplicationSettingFoldersToScan[];
+        /**
+         * Enable or disable application scan
+         */
+        isEnabled: boolean;
+    }
+
+    export interface GetHostScanRecipesHostScanRecipeSummaryCollectionItemApplicationSettingFoldersToScan {
+        /**
+         * Folder to be scanned in the corresponding operating system
+         */
+        folder: string;
+        /**
+         * Operating system type
+         */
+        operatingsystem: string;
     }
 
     export interface GetHostScanRecipesHostScanRecipeSummaryCollectionItemPortSetting {
@@ -82708,6 +95244,32 @@ export namespace VulnerabilityScanning {
         scanLevel: string;
     }
 
+    export interface HostScanRecipeApplicationSettings {
+        /**
+         * (Updatable) Scan recurrences in RFC-5545 section 3.3.10 format. Only supported input are weekly, biweekly, monthly listed below FREQ=WEEKLY;WKST=<weekday>;INTERVAL=1 - This weekly scan on the specified weekday (e.g. SU for Sunday) FREQ=WEEKLY;WKST=<weekday>;INTERVAL=2 - This bi-weekly scan on the specified weekday (e.g. SU for Sunday) FREQ=MONTHLY;WKST=<weekday>;INTERVAL=1 - This monthly scan on the specified weekday (e.g. SU for Sunday, starting from the next such weekday based on the time of setting creation)
+         */
+        applicationScanRecurrence: string;
+        /**
+         * (Updatable) List of folders selected for scanning
+         */
+        foldersToScans: outputs.VulnerabilityScanning.HostScanRecipeApplicationSettingsFoldersToScan[];
+        /**
+         * (Updatable) Enable or disable application scan
+         */
+        isEnabled: boolean;
+    }
+
+    export interface HostScanRecipeApplicationSettingsFoldersToScan {
+        /**
+         * (Updatable) Folder to be scanned in the corresponding operating system
+         */
+        folder: string;
+        /**
+         * (Updatable) Operating system type
+         */
+        operatingsystem: string;
+    }
+
     export interface HostScanRecipePortSettings {
         /**
          * (Updatable) The scan level
@@ -82724,6 +95286,198 @@ export namespace VulnerabilityScanning {
          * (Updatable) How often the scan occurs
          */
         type: string;
+    }
+
+}
+
+export namespace Waa {
+    export interface AppAccelerationPolicyResponseCachingPolicy {
+        /**
+         * (Updatable) When false, responses will not be cached by the backend based on response headers.
+         */
+        isResponseHeaderBasedCachingEnabled: boolean;
+    }
+
+    export interface AppAccelerationPolicyResponseCompressionPolicy {
+        /**
+         * (Updatable) An object that specifies the gzip compression policy.
+         */
+        gzipCompression: outputs.Waa.AppAccelerationPolicyResponseCompressionPolicyGzipCompression;
+    }
+
+    export interface AppAccelerationPolicyResponseCompressionPolicyGzipCompression {
+        /**
+         * (Updatable) When true, support for gzip compression is enabled. HTTP responses will be compressed with gzip only if the client indicates support for gzip via the "Accept-Encoding: gzip" request header.
+         */
+        isEnabled: boolean;
+    }
+
+    export interface GetAppAccelerationPoliciesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetAppAccelerationPoliciesWebAppAccelerationPolicyCollection {
+        items: outputs.Waa.GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem[];
+    }
+
+    export interface GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+         */
+        compartmentId: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+         */
+        definedTags: {[key: string]: any};
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
+        displayName: string;
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+         */
+        freeformTags: {[key: string]: any};
+        /**
+         * A filter to return only the WebAppAccelerationPolicy with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         */
+        id: string;
+        /**
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
+         */
+        lifecycleDetails: string;
+        /**
+         * An object that specifies an HTTP response caching policy.
+         */
+        responseCachingPolicies: outputs.Waa.GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicy[];
+        /**
+         * An object that specifies a compression policy for HTTP response from ENABLEMENT POINT to the client.
+         */
+        responseCompressionPolicies: outputs.Waa.GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicy[];
+        /**
+         * A filter to return only resources that match the given lifecycleState.
+         */
+        state: string;
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: any};
+        /**
+         * The time the WebAppAccelerationPolicy was created. An RFC3339 formatted datetime string.
+         */
+        timeCreated: string;
+        /**
+         * The time the WebAppAccelerationPolicy was updated. An RFC3339 formatted datetime string.
+         */
+        timeUpdated: string;
+    }
+
+    export interface GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicy {
+        /**
+         * When false, responses will not be cached by the backend based on response headers.
+         */
+        isResponseHeaderBasedCachingEnabled: boolean;
+    }
+
+    export interface GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicy {
+        /**
+         * An object that specifies the gzip compression policy.
+         */
+        gzipCompressions: outputs.Waa.GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompression[];
+    }
+
+    export interface GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompression {
+        /**
+         * When true, support for gzip compression is enabled. HTTP responses will be compressed with gzip only if the client indicates support for gzip via the "Accept-Encoding: gzip" request header.
+         */
+        isEnabled: boolean;
+    }
+
+    export interface GetAppAccelerationPolicyResponseCachingPolicy {
+        /**
+         * When false, responses will not be cached by the backend based on response headers.
+         */
+        isResponseHeaderBasedCachingEnabled: boolean;
+    }
+
+    export interface GetAppAccelerationPolicyResponseCompressionPolicy {
+        /**
+         * An object that specifies the gzip compression policy.
+         */
+        gzipCompressions: outputs.Waa.GetAppAccelerationPolicyResponseCompressionPolicyGzipCompression[];
+    }
+
+    export interface GetAppAccelerationPolicyResponseCompressionPolicyGzipCompression {
+        /**
+         * When true, support for gzip compression is enabled. HTTP responses will be compressed with gzip only if the client indicates support for gzip via the "Accept-Encoding: gzip" request header.
+         */
+        isEnabled: boolean;
+    }
+
+    export interface GetAppAccelerationsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetAppAccelerationsWebAppAccelerationCollection {
+        items: outputs.Waa.GetAppAccelerationsWebAppAccelerationCollectionItem[];
+    }
+
+    export interface GetAppAccelerationsWebAppAccelerationCollectionItem {
+        /**
+         * Type of the WebAppFirewall, as example LOAD_BALANCER.
+         */
+        backendType: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+         */
+        compartmentId: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+         */
+        definedTags: {[key: string]: any};
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
+        displayName: string;
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+         */
+        freeformTags: {[key: string]: any};
+        /**
+         * A filter to return only the WebAppAcceleration with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         */
+        id: string;
+        /**
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
+         */
+        lifecycleDetails: string;
+        /**
+         * LoadBalancer [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to which the WebAppAccelerationPolicy is attached to.
+         */
+        loadBalancerId: string;
+        /**
+         * A filter to return only resources that match the given lifecycleState.
+         */
+        state: string;
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: any};
+        /**
+         * The time the WebAppAcceleration was created. An RFC3339 formatted datetime string.
+         */
+        timeCreated: string;
+        /**
+         * The time the WebAppAcceleration was updated. An RFC3339 formatted datetime string.
+         */
+        timeUpdated: string;
+        /**
+         * A filter to return only the WebAppAcceleration with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of related WebAppAccelerationPolicy.
+         */
+        webAppAccelerationPolicyId: string;
     }
 
 }
@@ -86090,6 +98844,14 @@ export namespace Waf {
 
     export interface AppFirewallPolicyRequestProtection {
         /**
+         * (Updatable) References action by name from actions defined in WebAppFirewallPolicy. Executed if HTTP message body size exceeds limit set in field `bodyInspectionSizeLimitInBytes`.
+         */
+        bodyInspectionSizeLimitExceededActionName: string;
+        /**
+         * (Updatable) Maximum size of inspected HTTP message body in bytes. Actions to take if this limit is exceeded are defined in `bodyInspectionSizeLimitExceededActionName`.
+         */
+        bodyInspectionSizeLimitInBytes?: number;
+        /**
          * (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
          */
         rules: outputs.Waf.AppFirewallPolicyRequestProtectionRule[];
@@ -86110,11 +98872,15 @@ export namespace Waf {
          */
         conditionLanguage: string;
         /**
+         * (Updatable) Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
+         */
+        isBodyInspectionEnabled: boolean;
+        /**
          * (Updatable) Rule name. Must be unique within the module.
          */
         name: string;
         /**
-         * (Updatable) An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are executed in order of appearance. The array cannot contain entries with the same pair of capability key and version more than once.
+         * (Updatable) An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
          */
         protectionCapabilities: outputs.Waf.AppFirewallPolicyRequestProtectionRuleProtectionCapability[];
         /**
@@ -86184,23 +98950,23 @@ export namespace Waf {
         /**
          * (Updatable) Maximum allowed length of headers in an HTTP request. Used in protection capability: 9200024: Limit length of request header size.
          */
-        maxHttpRequestHeaderLength: number;
+        maxHttpRequestHeaderLength?: number;
         /**
          * (Updatable) Maximum number of headers allowed in an HTTP request. Used in protection capability 9200014: Limit Number of Request Headers.
          */
-        maxHttpRequestHeaders: number;
+        maxHttpRequestHeaders?: number;
         /**
          * (Updatable) Maximum number of arguments allowed. Used in protection capability 920380: Number of Arguments Limits.
          */
-        maxNumberOfArguments: number;
+        maxNumberOfArguments?: number;
         /**
          * (Updatable) Maximum allowed length of a single argument. Used in protection capability 920370: Limit argument value length.
          */
-        maxSingleArgumentLength: number;
+        maxSingleArgumentLength?: number;
         /**
          * (Updatable) Maximum allowed total length of all arguments. Used in protection capability 920390: Limit arguments total length.
          */
-        maxTotalArgumentLength: number;
+        maxTotalArgumentLength?: number;
     }
 
     export interface AppFirewallPolicyRequestRateLimiting {
@@ -86306,11 +99072,15 @@ export namespace Waf {
          */
         conditionLanguage: string;
         /**
+         * (Updatable) Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
+         */
+        isBodyInspectionEnabled: boolean;
+        /**
          * (Updatable) Rule name. Must be unique within the module.
          */
         name: string;
         /**
-         * (Updatable) An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are executed in order of appearance. The array cannot contain entries with the same pair of capability key and version more than once.
+         * (Updatable) An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
          */
         protectionCapabilities: outputs.Waf.AppFirewallPolicyResponseProtectionRuleProtectionCapability[];
         /**
@@ -86380,23 +99150,23 @@ export namespace Waf {
         /**
          * (Updatable) Maximum allowed length of headers in an HTTP request. Used in protection capability: 9200024: Limit length of request header size.
          */
-        maxHttpRequestHeaderLength: number;
+        maxHttpRequestHeaderLength?: number;
         /**
          * (Updatable) Maximum number of headers allowed in an HTTP request. Used in protection capability 9200014: Limit Number of Request Headers.
          */
-        maxHttpRequestHeaders: number;
+        maxHttpRequestHeaders?: number;
         /**
          * (Updatable) Maximum number of arguments allowed. Used in protection capability 920380: Number of Arguments Limits.
          */
-        maxNumberOfArguments: number;
+        maxNumberOfArguments?: number;
         /**
          * (Updatable) Maximum allowed length of a single argument. Used in protection capability 920370: Limit argument value length.
          */
-        maxSingleArgumentLength: number;
+        maxSingleArgumentLength?: number;
         /**
          * (Updatable) Maximum allowed total length of all arguments. Used in protection capability 920390: Limit arguments total length.
          */
-        maxTotalArgumentLength: number;
+        maxTotalArgumentLength?: number;
     }
 
     export interface GetFirewallsFilter {
@@ -86805,6 +99575,14 @@ export namespace Waf {
 
     export interface GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtection {
         /**
+         * References action by name from actions defined in WebAppFirewallPolicy. Executed if HTTP message body size exceeds limit set in field `bodyInspectionSizeLimitInBytes`.
+         */
+        bodyInspectionSizeLimitExceededActionName: string;
+        /**
+         * Maximum size of inspected HTTP message body in bytes. Actions to take if this limit is exceeded are defined in `bodyInspectionSizeLimitExceededActionName`.
+         */
+        bodyInspectionSizeLimitInBytes: number;
+        /**
          * Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
          */
         rules: outputs.Waf.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRule[];
@@ -86825,11 +99603,15 @@ export namespace Waf {
          */
         conditionLanguage: string;
         /**
+         * Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
+         */
+        isBodyInspectionEnabled: boolean;
+        /**
          * Rule name. Must be unique within the module.
          */
         name: string;
         /**
-         * An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are executed in order of appearance. The array cannot contain entries with the same pair of capability key and version more than once.
+         * An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
          */
         protectionCapabilities: outputs.Waf.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapability[];
         /**
@@ -87021,11 +99803,15 @@ export namespace Waf {
          */
         conditionLanguage: string;
         /**
+         * Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
+         */
+        isBodyInspectionEnabled: boolean;
+        /**
          * Rule name. Must be unique within the module.
          */
         name: string;
         /**
-         * An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are executed in order of appearance. The array cannot contain entries with the same pair of capability key and version more than once.
+         * An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
          */
         protectionCapabilities: outputs.Waf.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapability[];
         /**
@@ -87198,6 +99984,14 @@ export namespace Waf {
 
     export interface GetWebAppFirewallPolicyRequestProtection {
         /**
+         * References action by name from actions defined in WebAppFirewallPolicy. Executed if HTTP message body size exceeds limit set in field `bodyInspectionSizeLimitInBytes`.
+         */
+        bodyInspectionSizeLimitExceededActionName: string;
+        /**
+         * Maximum size of inspected HTTP message body in bytes. Actions to take if this limit is exceeded are defined in `bodyInspectionSizeLimitExceededActionName`.
+         */
+        bodyInspectionSizeLimitInBytes: number;
+        /**
          * Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
          */
         rules: outputs.Waf.GetWebAppFirewallPolicyRequestProtectionRule[];
@@ -87218,11 +100012,15 @@ export namespace Waf {
          */
         conditionLanguage: string;
         /**
+         * Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
+         */
+        isBodyInspectionEnabled: boolean;
+        /**
          * Rule name. Must be unique within the module.
          */
         name: string;
         /**
-         * An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are executed in order of appearance. The array cannot contain entries with the same pair of capability key and version more than once.
+         * An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
          */
         protectionCapabilities: outputs.Waf.GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapability[];
         /**
@@ -87414,11 +100212,15 @@ export namespace Waf {
          */
         conditionLanguage: string;
         /**
+         * Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
+         */
+        isBodyInspectionEnabled: boolean;
+        /**
          * Rule name. Must be unique within the module.
          */
         name: string;
         /**
-         * An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are executed in order of appearance. The array cannot contain entries with the same pair of capability key and version more than once.
+         * An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
          */
         protectionCapabilities: outputs.Waf.GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapability[];
         /**

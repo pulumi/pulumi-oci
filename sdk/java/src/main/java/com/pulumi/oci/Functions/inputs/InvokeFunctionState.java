@@ -54,14 +54,14 @@ public final class InvokeFunctionState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * Indicates whether the functions platform should execute the request directly and return the result (&#39;sync&#39;) or whether the platform should enqueue the request for later processing and acknowledge that it has been processed (&#39;detached&#39;).
+     * Indicates whether Oracle Functions should execute the request and return the result (&#39;sync&#39;) of the execution,  or whether Oracle Functions should return as soon as processing has begun (&#39;detached&#39;) and leave result handling to the function.
      * 
      */
     @Import(name="fnInvokeType")
     private @Nullable Output<String> fnInvokeType;
 
     /**
-     * @return Indicates whether the functions platform should execute the request directly and return the result (&#39;sync&#39;) or whether the platform should enqueue the request for later processing and acknowledge that it has been processed (&#39;detached&#39;).
+     * @return Indicates whether Oracle Functions should execute the request and return the result (&#39;sync&#39;) of the execution,  or whether Oracle Functions should return as soon as processing has begun (&#39;detached&#39;) and leave result handling to the function.
      * 
      */
     public Optional<Output<String>> fnInvokeType() {
@@ -211,7 +211,7 @@ public final class InvokeFunctionState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param fnInvokeType Indicates whether the functions platform should execute the request directly and return the result (&#39;sync&#39;) or whether the platform should enqueue the request for later processing and acknowledge that it has been processed (&#39;detached&#39;).
+         * @param fnInvokeType Indicates whether Oracle Functions should execute the request and return the result (&#39;sync&#39;) of the execution,  or whether Oracle Functions should return as soon as processing has begun (&#39;detached&#39;) and leave result handling to the function.
          * 
          * @return builder
          * 
@@ -222,7 +222,7 @@ public final class InvokeFunctionState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param fnInvokeType Indicates whether the functions platform should execute the request directly and return the result (&#39;sync&#39;) or whether the platform should enqueue the request for later processing and acknowledge that it has been processed (&#39;detached&#39;).
+         * @param fnInvokeType Indicates whether Oracle Functions should execute the request and return the result (&#39;sync&#39;) of the execution,  or whether Oracle Functions should return as soon as processing has begun (&#39;detached&#39;) and leave result handling to the function.
          * 
          * @return builder
          * 

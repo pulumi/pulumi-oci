@@ -12,6 +12,18 @@ namespace Pulumi.Oci.Waf.Inputs
 
     public sealed class AppFirewallPolicyRequestProtectionArgs : Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// (Updatable) References action by name from actions defined in WebAppFirewallPolicy. Executed if HTTP message body size exceeds limit set in field `bodyInspectionSizeLimitInBytes`.
+        /// </summary>
+        [Input("bodyInspectionSizeLimitExceededActionName")]
+        public Input<string>? BodyInspectionSizeLimitExceededActionName { get; set; }
+
+        /// <summary>
+        /// (Updatable) Maximum size of inspected HTTP message body in bytes. Actions to take if this limit is exceeded are defined in `bodyInspectionSizeLimitExceededActionName`.
+        /// </summary>
+        [Input("bodyInspectionSizeLimitInBytes")]
+        public Input<int>? BodyInspectionSizeLimitInBytes { get; set; }
+
         [Input("rules")]
         private InputList<Inputs.AppFirewallPolicyRequestProtectionRuleArgs>? _rules;
 

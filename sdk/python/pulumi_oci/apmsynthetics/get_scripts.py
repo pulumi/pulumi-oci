@@ -123,7 +123,7 @@ def get_scripts(apm_domain_id: Optional[str] = None,
 
     :param str apm_domain_id: The APM domain ID the request is intended for.
     :param str content_type: A filter to return only resources that match the content type given.
-    :param str display_name: A filter to return only resources that match the entire display name given.
+    :param str display_name: A filter to return only the resources that match the entire display name.
     """
     __args__ = dict()
     __args__['apmDomainId'] = apm_domain_id
@@ -170,6 +170,6 @@ def get_scripts_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
 
     :param str apm_domain_id: The APM domain ID the request is intended for.
     :param str content_type: A filter to return only resources that match the content type given.
-    :param str display_name: A filter to return only resources that match the entire display name given.
+    :param str display_name: A filter to return only the resources that match the entire display name.
     """
     ...

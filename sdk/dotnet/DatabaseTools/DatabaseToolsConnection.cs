@@ -12,7 +12,7 @@ namespace Pulumi.Oci.DatabaseTools
     /// <summary>
     /// This resource provides the Database Tools Connection resource in Oracle Cloud Infrastructure Database Tools service.
     /// 
-    /// Creates a new DatabaseToolsConnection.
+    /// Creates a new Database Tools connection.
     /// 
     /// ## Example Usage
     /// 
@@ -65,8 +65,8 @@ namespace Pulumi.Oci.DatabaseTools
     ///             UserName = oci_identity_user.Test_user.Name,
     ///             UserPassword = new Oci.DatabaseTools.Inputs.DatabaseToolsConnectionUserPasswordArgs
     ///             {
-    ///                 ValueType = @var.Database_tools_connection_user_password_value_type,
     ///                 SecretId = oci_vault_secret.Test_secret.Id,
+    ///                 ValueType = @var.Database_tools_connection_user_password_value_type,
     ///             },
     ///         });
     ///     }
@@ -86,19 +86,19 @@ namespace Pulumi.Oci.DatabaseTools
     public partial class DatabaseToolsConnection : Pulumi.CustomResource
     {
         /// <summary>
-        /// (Updatable) Advanced connection properties key-value pair (e.g., oracle.net.ssl_server_dn_match).
+        /// (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
         /// </summary>
         [Output("advancedProperties")]
         public Output<ImmutableDictionary<string, object>> AdvancedProperties { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Connect descriptor or Easy Connect Naming method to connect to the database.
+        /// (Updatable) The connect descriptor or Easy Connect Naming method use to connect to the database.
         /// </summary>
         [Output("connectionString")]
         public Output<string> ConnectionString { get; private set; } = null!;
@@ -128,13 +128,13 @@ namespace Pulumi.Oci.DatabaseTools
         public Output<ImmutableArray<Outputs.DatabaseToolsConnectionKeyStore>> KeyStores { get; private set; } = null!;
 
         /// <summary>
-        /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        /// A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
         /// </summary>
         [Output("lifecycleDetails")]
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsPrivateEndpoint used to access the database in the Customer VCN.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
         /// </summary>
         [Output("privateEndpointId")]
         public Output<string> PrivateEndpointId { get; private set; } = null!;
@@ -146,7 +146,7 @@ namespace Pulumi.Oci.DatabaseTools
         public Output<Outputs.DatabaseToolsConnectionRelatedResource> RelatedResource { get; private set; } = null!;
 
         /// <summary>
-        /// The current state of the DatabaseToolsConnection.
+        /// The current state of the Database Tools connection.
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
@@ -158,13 +158,13 @@ namespace Pulumi.Oci.DatabaseTools
         public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
 
         /// <summary>
-        /// The time the DatabaseToolsConnection was created. An RFC3339 formatted datetime string
+        /// The time the Database Tools connection was created. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
 
         /// <summary>
-        /// The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string
+        /// The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeUpdated")]
         public Output<string> TimeUpdated { get; private set; } = null!;
@@ -176,7 +176,7 @@ namespace Pulumi.Oci.DatabaseTools
         public Output<string> Type { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Database user name.
+        /// (Updatable) The database user name.
         /// </summary>
         [Output("userName")]
         public Output<string> UserName { get; private set; } = null!;
@@ -237,7 +237,7 @@ namespace Pulumi.Oci.DatabaseTools
         private InputMap<object>? _advancedProperties;
 
         /// <summary>
-        /// (Updatable) Advanced connection properties key-value pair (e.g., oracle.net.ssl_server_dn_match).
+        /// (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
         /// </summary>
         public InputMap<object> AdvancedProperties
         {
@@ -246,13 +246,13 @@ namespace Pulumi.Oci.DatabaseTools
         }
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Connect descriptor or Easy Connect Naming method to connect to the database.
+        /// (Updatable) The connect descriptor or Easy Connect Naming method use to connect to the database.
         /// </summary>
         [Input("connectionString")]
         public Input<string>? ConnectionString { get; set; }
@@ -300,7 +300,7 @@ namespace Pulumi.Oci.DatabaseTools
         }
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsPrivateEndpoint used to access the database in the Customer VCN.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
         /// </summary>
         [Input("privateEndpointId")]
         public Input<string>? PrivateEndpointId { get; set; }
@@ -318,7 +318,7 @@ namespace Pulumi.Oci.DatabaseTools
         public Input<string> Type { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Database user name.
+        /// (Updatable) The database user name.
         /// </summary>
         [Input("userName")]
         public Input<string>? UserName { get; set; }
@@ -340,7 +340,7 @@ namespace Pulumi.Oci.DatabaseTools
         private InputMap<object>? _advancedProperties;
 
         /// <summary>
-        /// (Updatable) Advanced connection properties key-value pair (e.g., oracle.net.ssl_server_dn_match).
+        /// (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
         /// </summary>
         public InputMap<object> AdvancedProperties
         {
@@ -349,13 +349,13 @@ namespace Pulumi.Oci.DatabaseTools
         }
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// (Updatable) Connect descriptor or Easy Connect Naming method to connect to the database.
+        /// (Updatable) The connect descriptor or Easy Connect Naming method use to connect to the database.
         /// </summary>
         [Input("connectionString")]
         public Input<string>? ConnectionString { get; set; }
@@ -403,13 +403,13 @@ namespace Pulumi.Oci.DatabaseTools
         }
 
         /// <summary>
-        /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        /// A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
         /// </summary>
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsPrivateEndpoint used to access the database in the Customer VCN.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
         /// </summary>
         [Input("privateEndpointId")]
         public Input<string>? PrivateEndpointId { get; set; }
@@ -421,7 +421,7 @@ namespace Pulumi.Oci.DatabaseTools
         public Input<Inputs.DatabaseToolsConnectionRelatedResourceGetArgs>? RelatedResource { get; set; }
 
         /// <summary>
-        /// The current state of the DatabaseToolsConnection.
+        /// The current state of the Database Tools connection.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -439,13 +439,13 @@ namespace Pulumi.Oci.DatabaseTools
         }
 
         /// <summary>
-        /// The time the DatabaseToolsConnection was created. An RFC3339 formatted datetime string
+        /// The time the Database Tools connection was created. An RFC3339 formatted datetime string.
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string
+        /// The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }
@@ -457,7 +457,7 @@ namespace Pulumi.Oci.DatabaseTools
         public Input<string>? Type { get; set; }
 
         /// <summary>
-        /// (Updatable) Database user name.
+        /// (Updatable) The database user name.
         /// </summary>
         [Input("userName")]
         public Input<string>? UserName { get; set; }

@@ -156,9 +156,9 @@ def get_db_versions(compartment_id: Optional[str] = None,
     :param str db_system_shape: If provided, filters the results to the set of database versions which are supported for the given shape.
     :param bool is_database_software_image_supported: If true, filters the results to the set of Oracle Database versions that are supported for Oracle Cloud Infrastructure database software images.
     :param bool is_upgrade_supported: If provided, filters the results to the set of database versions which are supported for Upgrade.
-    :param str storage_management: The DB system storage management option. Used to list database versions available for that storage manager. Valid values are:
-           * ASM - Automatic storage management
-           * LVM - Logical volume management
+    :param str storage_management: The DB system storage management option. Used to list database versions available for that storage manager. Valid values are `ASM` and `LVM`.
+           * ASM specifies Oracle Automatic Storage Management
+           * LVM specifies logical volume manager, sometimes called logical disk manager.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -220,8 +220,8 @@ def get_db_versions_output(compartment_id: Optional[pulumi.Input[str]] = None,
     :param str db_system_shape: If provided, filters the results to the set of database versions which are supported for the given shape.
     :param bool is_database_software_image_supported: If true, filters the results to the set of Oracle Database versions that are supported for Oracle Cloud Infrastructure database software images.
     :param bool is_upgrade_supported: If provided, filters the results to the set of database versions which are supported for Upgrade.
-    :param str storage_management: The DB system storage management option. Used to list database versions available for that storage manager. Valid values are:
-           * ASM - Automatic storage management
-           * LVM - Logical volume management
+    :param str storage_management: The DB system storage management option. Used to list database versions available for that storage manager. Valid values are `ASM` and `LVM`.
+           * ASM specifies Oracle Automatic Storage Management
+           * LVM specifies logical volume manager, sometimes called logical disk manager.
     """
     ...

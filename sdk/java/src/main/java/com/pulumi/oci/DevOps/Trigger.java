@@ -218,14 +218,14 @@ public class Trigger extends com.pulumi.resources.CustomResource {
         return this.timeUpdated;
     }
     /**
-     * (Updatable) Source of the trigger. Allowed values are, GITHUB and GITLAB.
+     * (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
      * 
      */
     @Export(name="triggerSource", type=String.class, parameters={})
     private Output<String> triggerSource;
 
     /**
-     * @return (Updatable) Source of the trigger. Allowed values are, GITHUB and GITLAB.
+     * @return (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
      * 
      */
     public Output<String> triggerSource() {

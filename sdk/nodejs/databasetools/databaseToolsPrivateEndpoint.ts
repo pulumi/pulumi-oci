@@ -8,7 +8,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Database Tools Private Endpoint resource in Oracle Cloud Infrastructure Database Tools service.
  *
- * Creates a new DatabaseToolsPrivateEndpoint.
+ * Creates a new Database Tools private endpoint.
  *
  * ## Example Usage
  *
@@ -74,7 +74,7 @@ export class DatabaseToolsPrivateEndpoint extends pulumi.CustomResource {
      */
     public /*out*/ readonly additionalFqdns!: pulumi.Output<string[]>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools private endpoint.
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
@@ -82,7 +82,7 @@ export class DatabaseToolsPrivateEndpoint extends pulumi.CustomResource {
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * (Updatable) A description of the DatabaseToolsPrivateEndpoint.
+     * (Updatable) A description of the Database Tools private endpoint.
      */
     public readonly description!: pulumi.Output<string>;
     /**
@@ -94,7 +94,7 @@ export class DatabaseToolsPrivateEndpoint extends pulumi.CustomResource {
      */
     public /*out*/ readonly endpointFqdn!: pulumi.Output<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsEndpointService.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `DatabaseToolsEndpointService`.
      */
     public readonly endpointServiceId!: pulumi.Output<string>;
     /**
@@ -118,11 +118,11 @@ export class DatabaseToolsPrivateEndpoint extends pulumi.CustomResource {
      */
     public /*out*/ readonly privateEndpointVnicId!: pulumi.Output<string>;
     /**
-     * Reverse connection configuration details of Private Endpoint.
+     * Reverse connection configuration details of the private endpoint.
      */
     public /*out*/ readonly reverseConnectionConfigurations!: pulumi.Output<outputs.DatabaseTools.DatabaseToolsPrivateEndpointReverseConnectionConfiguration[]>;
     /**
-     * The current state of the DatabaseToolsPrivateEndpoint.
+     * The current state of the Database Tools private endpoint.
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
@@ -134,11 +134,11 @@ export class DatabaseToolsPrivateEndpoint extends pulumi.CustomResource {
      */
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * The time the DatabaseToolsPrivateEndpoint was created. An RFC3339 formatted datetime string
+     * The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
-     * The time the DatabaseToolsPrivateEndpoint was updated. An RFC3339 formatted datetime string
+     * The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
     /**
@@ -226,7 +226,7 @@ export interface DatabaseToolsPrivateEndpointState {
      */
     additionalFqdns?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools private endpoint.
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -234,7 +234,7 @@ export interface DatabaseToolsPrivateEndpointState {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) A description of the DatabaseToolsPrivateEndpoint.
+     * (Updatable) A description of the Database Tools private endpoint.
      */
     description?: pulumi.Input<string>;
     /**
@@ -246,7 +246,7 @@ export interface DatabaseToolsPrivateEndpointState {
      */
     endpointFqdn?: pulumi.Input<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsEndpointService.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `DatabaseToolsEndpointService`.
      */
     endpointServiceId?: pulumi.Input<string>;
     /**
@@ -270,11 +270,11 @@ export interface DatabaseToolsPrivateEndpointState {
      */
     privateEndpointVnicId?: pulumi.Input<string>;
     /**
-     * Reverse connection configuration details of Private Endpoint.
+     * Reverse connection configuration details of the private endpoint.
      */
     reverseConnectionConfigurations?: pulumi.Input<pulumi.Input<inputs.DatabaseTools.DatabaseToolsPrivateEndpointReverseConnectionConfiguration>[]>;
     /**
-     * The current state of the DatabaseToolsPrivateEndpoint.
+     * The current state of the Database Tools private endpoint.
      */
     state?: pulumi.Input<string>;
     /**
@@ -286,11 +286,11 @@ export interface DatabaseToolsPrivateEndpointState {
      */
     systemTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The time the DatabaseToolsPrivateEndpoint was created. An RFC3339 formatted datetime string
+     * The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
      */
     timeCreated?: pulumi.Input<string>;
     /**
-     * The time the DatabaseToolsPrivateEndpoint was updated. An RFC3339 formatted datetime string
+     * The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
      */
     timeUpdated?: pulumi.Input<string>;
     /**
@@ -304,7 +304,7 @@ export interface DatabaseToolsPrivateEndpointState {
  */
 export interface DatabaseToolsPrivateEndpointArgs {
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools private endpoint.
      */
     compartmentId: pulumi.Input<string>;
     /**
@@ -312,7 +312,7 @@ export interface DatabaseToolsPrivateEndpointArgs {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) A description of the DatabaseToolsPrivateEndpoint.
+     * (Updatable) A description of the Database Tools private endpoint.
      */
     description?: pulumi.Input<string>;
     /**
@@ -320,7 +320,7 @@ export interface DatabaseToolsPrivateEndpointArgs {
      */
     displayName: pulumi.Input<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsEndpointService.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `DatabaseToolsEndpointService`.
      */
     endpointServiceId: pulumi.Input<string>;
     /**

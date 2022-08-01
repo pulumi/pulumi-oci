@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DetectorRecipeEffectiveDetectorRuleDetail {
     /**
-     * @return (Updatable)
+     * @return (Updatable) Base condition object
      * 
      */
     private final @Nullable String condition;
@@ -62,7 +62,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetail {
     }
 
     /**
-     * @return (Updatable)
+     * @return (Updatable) Base condition object
      * 
      */
     public Optional<String> condition() {

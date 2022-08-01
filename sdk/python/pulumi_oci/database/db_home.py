@@ -15,7 +15,7 @@ __all__ = ['DbHomeArgs', 'DbHome']
 @pulumi.input_type
 class DbHomeArgs:
     def __init__(__self__, *,
-                 database: pulumi.Input['DbHomeDatabaseArgs'],
+                 database: Optional[pulumi.Input['DbHomeDatabaseArgs']] = None,
                  database_software_image_id: Optional[pulumi.Input[str]] = None,
                  db_system_id: Optional[pulumi.Input[str]] = None,
                  db_version: Optional[pulumi.Input[str]] = None,
@@ -42,7 +42,8 @@ class DbHomeArgs:
         :param pulumi.Input[str] source: The source of database: NONE for creating a new database. DB_BACKUP for creating a new database by restoring from a database backup. VM_CLUSTER_NEW for creating a database for VM Cluster.
         :param pulumi.Input[str] vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
         """
-        pulumi.set(__self__, "database", database)
+        if database is not None:
+            pulumi.set(__self__, "database", database)
         if database_software_image_id is not None:
             pulumi.set(__self__, "database_software_image_id", database_software_image_id)
         if db_system_id is not None:
@@ -68,14 +69,14 @@ class DbHomeArgs:
 
     @property
     @pulumi.getter
-    def database(self) -> pulumi.Input['DbHomeDatabaseArgs']:
+    def database(self) -> Optional[pulumi.Input['DbHomeDatabaseArgs']]:
         """
         (Updatable) Details for creating a database.
         """
         return pulumi.get(self, "database")
 
     @database.setter
-    def database(self, value: pulumi.Input['DbHomeDatabaseArgs']):
+    def database(self, value: Optional[pulumi.Input['DbHomeDatabaseArgs']]):
         pulumi.set(self, "database", value)
 
     @property
@@ -616,7 +617,7 @@ class DbHome(pulumi.CustomResource):
     @overload
     def __init__(__self__,
                  resource_name: str,
-                 args: DbHomeArgs,
+                 args: Optional[DbHomeArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         This resource provides the Db Home resource in Oracle Cloud Infrastructure Database service.
@@ -729,8 +730,6 @@ class DbHome(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = DbHomeArgs.__new__(DbHomeArgs)
 
-            if database is None and not opts.urn:
-                raise TypeError("Missing required property 'database'")
             __props__.__dict__["database"] = database
             __props__.__dict__["database_software_image_id"] = database_software_image_id
             __props__.__dict__["db_system_id"] = db_system_id
@@ -837,7 +836,7 @@ class DbHome(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def database(self) -> pulumi.Output['outputs.DbHomeDatabase']:
+    def database(self) -> pulumi.Output[Optional['outputs.DbHomeDatabase']]:
         """
         (Updatable) Details for creating a database.
         """

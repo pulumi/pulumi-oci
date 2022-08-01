@@ -17,7 +17,7 @@ public final class GetResponderRecipesResponderRecipeCollectionItemEffectiveResp
      */
     private final String compartmentId;
     /**
-     * @return ResponderRule Description
+     * @return ResponderRule description.
      * 
      */
     private final String description;
@@ -108,7 +108,7 @@ public final class GetResponderRecipesResponderRecipeCollectionItemEffectiveResp
         return this.compartmentId;
     }
     /**
-     * @return ResponderRule Description
+     * @return ResponderRule description.
      * 
      */
     public String description() {

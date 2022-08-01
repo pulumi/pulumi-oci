@@ -17,14 +17,14 @@ public final class GetAlertRulesPlainArgs extends com.pulumi.resources.InvokeArg
     public static final GetAlertRulesPlainArgs Empty = new GetAlertRulesPlainArgs();
 
     /**
-     * The unique Budget OCID
+     * The unique budget OCID.
      * 
      */
     @Import(name="budgetId", required=true)
     private String budgetId;
 
     /**
-     * @return The unique Budget OCID
+     * @return The unique budget OCID.
      * 
      */
     public String budgetId() {
@@ -32,14 +32,14 @@ public final class GetAlertRulesPlainArgs extends com.pulumi.resources.InvokeArg
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
+     * A user-friendly name. This does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
      * 
      */
     @Import(name="displayName")
     private @Nullable String displayName;
 
     /**
-     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
+     * @return A user-friendly name. This does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
      * 
      */
     public Optional<String> displayName() {
@@ -96,7 +96,7 @@ public final class GetAlertRulesPlainArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param budgetId The unique Budget OCID
+         * @param budgetId The unique budget OCID.
          * 
          * @return builder
          * 
@@ -107,7 +107,7 @@ public final class GetAlertRulesPlainArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param displayName A user-friendly name. Does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
+         * @param displayName A user-friendly name. This does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
          * 
          * @return builder
          * 

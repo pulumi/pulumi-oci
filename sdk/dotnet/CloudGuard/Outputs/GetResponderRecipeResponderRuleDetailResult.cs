@@ -13,6 +13,9 @@ namespace Pulumi.Oci.CloudGuard.Outputs
     [OutputType]
     public sealed class GetResponderRecipeResponderRuleDetailResult
     {
+        /// <summary>
+        /// Base condition object
+        /// </summary>
         public readonly string Condition;
         /// <summary>
         /// ResponderRule configurations

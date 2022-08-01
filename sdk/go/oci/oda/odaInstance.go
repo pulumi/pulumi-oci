@@ -16,7 +16,7 @@ import (
 // Starts an asynchronous job to create a Digital Assistant instance.
 //
 // To monitor the status of the job, take the `opc-work-request-id` response
-// header value and use it to call `GET /workRequests/{workRequestID}`.
+// header value and use it to call `GET /workRequests/{workRequestId}`.
 //
 // ## Example Usage
 //
@@ -41,6 +41,8 @@ import (
 // 			FreeformTags: pulumi.AnyMap{
 // 				"bar-key": pulumi.Any("value"),
 // 			},
+// 			IdentityDomain:    pulumi.Any(_var.Oda_instance_identity_domain),
+// 			IsRoleBasedAccess: pulumi.Any(_var.Oda_instance_is_role_based_access),
 // 		})
 // 		if err != nil {
 // 			return err
@@ -60,6 +62,10 @@ import (
 type OdaInstance struct {
 	pulumi.CustomResourceState
 
+	// A list of attachment identifiers for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+	AttachmentIds pulumi.StringArrayOutput `pulumi:"attachmentIds"`
+	// A list of attachment types for this instance (if any). Use attachmentIds to get the details of the attachments.
+	AttachmentTypes pulumi.StringArrayOutput `pulumi:"attachmentTypes"`
 	// (Updatable) Identifier of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// URL for the connector's endpoint.
@@ -70,10 +76,24 @@ type OdaInstance struct {
 	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) User-friendly name for the instance. Avoid entering confidential information. You can change this value anytime.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
-	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	// If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.
+	IdentityAppConsoleUrl pulumi.StringOutput `pulumi:"identityAppConsoleUrl"`
+	// If isRoleBasedAccess is set to true, this property specifies the GUID of the Identity Application instance Digital Assistant has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this Digital Assistant instance for users within the identity domain.
+	IdentityAppGuid pulumi.StringOutput `pulumi:"identityAppGuid"`
+	// If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
+	IdentityDomain pulumi.StringOutput `pulumi:"identityDomain"`
+	// A list of package ids imported into this instance (if any). Use GetImportedPackage to get the details of the imported packages.
+	ImportedPackageIds pulumi.StringArrayOutput `pulumi:"importedPackageIds"`
+	// A list of package names imported into this instance (if any). Use importedPackageIds field to get the details of the imported packages.
+	ImportedPackageNames pulumi.StringArrayOutput `pulumi:"importedPackageNames"`
+	// Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
+	IsRoleBasedAccess pulumi.BoolOutput `pulumi:"isRoleBasedAccess"`
 	// The current sub-state of the Digital Assistant instance.
 	LifecycleSubState pulumi.StringOutput `pulumi:"lifecycleSubState"`
+	// A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+	RestrictedOperations OdaInstanceRestrictedOperationArrayOutput `pulumi:"restrictedOperations"`
 	// Shape or size of the instance.
 	ShapeName pulumi.StringOutput `pulumi:"shapeName"`
 	// The current state of the Digital Assistant instance.
@@ -123,6 +143,10 @@ func GetOdaInstance(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering OdaInstance resources.
 type odaInstanceState struct {
+	// A list of attachment identifiers for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+	AttachmentIds []string `pulumi:"attachmentIds"`
+	// A list of attachment types for this instance (if any). Use attachmentIds to get the details of the attachments.
+	AttachmentTypes []string `pulumi:"attachmentTypes"`
 	// (Updatable) Identifier of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// URL for the connector's endpoint.
@@ -133,10 +157,24 @@ type odaInstanceState struct {
 	Description *string `pulumi:"description"`
 	// (Updatable) User-friendly name for the instance. Avoid entering confidential information. You can change this value anytime.
 	DisplayName *string `pulumi:"displayName"`
-	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.
+	IdentityAppConsoleUrl *string `pulumi:"identityAppConsoleUrl"`
+	// If isRoleBasedAccess is set to true, this property specifies the GUID of the Identity Application instance Digital Assistant has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this Digital Assistant instance for users within the identity domain.
+	IdentityAppGuid *string `pulumi:"identityAppGuid"`
+	// If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
+	IdentityDomain *string `pulumi:"identityDomain"`
+	// A list of package ids imported into this instance (if any). Use GetImportedPackage to get the details of the imported packages.
+	ImportedPackageIds []string `pulumi:"importedPackageIds"`
+	// A list of package names imported into this instance (if any). Use importedPackageIds field to get the details of the imported packages.
+	ImportedPackageNames []string `pulumi:"importedPackageNames"`
+	// Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
+	IsRoleBasedAccess *bool `pulumi:"isRoleBasedAccess"`
 	// The current sub-state of the Digital Assistant instance.
 	LifecycleSubState *string `pulumi:"lifecycleSubState"`
+	// A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+	RestrictedOperations []OdaInstanceRestrictedOperation `pulumi:"restrictedOperations"`
 	// Shape or size of the instance.
 	ShapeName *string `pulumi:"shapeName"`
 	// The current state of the Digital Assistant instance.
@@ -152,6 +190,10 @@ type odaInstanceState struct {
 }
 
 type OdaInstanceState struct {
+	// A list of attachment identifiers for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+	AttachmentIds pulumi.StringArrayInput
+	// A list of attachment types for this instance (if any). Use attachmentIds to get the details of the attachments.
+	AttachmentTypes pulumi.StringArrayInput
 	// (Updatable) Identifier of the compartment.
 	CompartmentId pulumi.StringPtrInput
 	// URL for the connector's endpoint.
@@ -162,10 +204,24 @@ type OdaInstanceState struct {
 	Description pulumi.StringPtrInput
 	// (Updatable) User-friendly name for the instance. Avoid entering confidential information. You can change this value anytime.
 	DisplayName pulumi.StringPtrInput
-	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
+	// If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.
+	IdentityAppConsoleUrl pulumi.StringPtrInput
+	// If isRoleBasedAccess is set to true, this property specifies the GUID of the Identity Application instance Digital Assistant has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this Digital Assistant instance for users within the identity domain.
+	IdentityAppGuid pulumi.StringPtrInput
+	// If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
+	IdentityDomain pulumi.StringPtrInput
+	// A list of package ids imported into this instance (if any). Use GetImportedPackage to get the details of the imported packages.
+	ImportedPackageIds pulumi.StringArrayInput
+	// A list of package names imported into this instance (if any). Use importedPackageIds field to get the details of the imported packages.
+	ImportedPackageNames pulumi.StringArrayInput
+	// Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
+	IsRoleBasedAccess pulumi.BoolPtrInput
 	// The current sub-state of the Digital Assistant instance.
 	LifecycleSubState pulumi.StringPtrInput
+	// A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+	RestrictedOperations OdaInstanceRestrictedOperationArrayInput
 	// Shape or size of the instance.
 	ShapeName pulumi.StringPtrInput
 	// The current state of the Digital Assistant instance.
@@ -193,8 +249,12 @@ type odaInstanceArgs struct {
 	Description *string `pulumi:"description"`
 	// (Updatable) User-friendly name for the instance. Avoid entering confidential information. You can change this value anytime.
 	DisplayName *string `pulumi:"displayName"`
-	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
+	IdentityDomain *string `pulumi:"identityDomain"`
+	// Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
+	IsRoleBasedAccess *bool `pulumi:"isRoleBasedAccess"`
 	// Shape or size of the instance.
 	ShapeName string `pulumi:"shapeName"`
 	// The current state of the Digital Assistant instance.
@@ -211,8 +271,12 @@ type OdaInstanceArgs struct {
 	Description pulumi.StringPtrInput
 	// (Updatable) User-friendly name for the instance. Avoid entering confidential information. You can change this value anytime.
 	DisplayName pulumi.StringPtrInput
-	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
+	// If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
+	IdentityDomain pulumi.StringPtrInput
+	// Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
+	IsRoleBasedAccess pulumi.BoolPtrInput
 	// Shape or size of the instance.
 	ShapeName pulumi.StringInput
 	// The current state of the Digital Assistant instance.

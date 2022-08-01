@@ -19,7 +19,7 @@ public final class GetDatabaseToolsPrivateEndpointResult {
      */
     private final List<String> additionalFqdns;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools private endpoint.
      * 
      */
     private final String compartmentId;
@@ -30,7 +30,7 @@ public final class GetDatabaseToolsPrivateEndpointResult {
      */
     private final Map<String,Object> definedTags;
     /**
-     * @return A description of the DatabaseToolsPrivateEndpoint.
+     * @return A description of the Database Tools private endpoint.
      * 
      */
     private final String description;
@@ -45,7 +45,7 @@ public final class GetDatabaseToolsPrivateEndpointResult {
      */
     private final String endpointFqdn;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsEndpointService.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Endpoint Service.
      * 
      */
     private final String endpointServiceId;
@@ -55,7 +55,7 @@ public final class GetDatabaseToolsPrivateEndpointResult {
      */
     private final Map<String,Object> freeformTags;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsPrivateEndpoint.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint.
      * 
      */
     private final String id;
@@ -80,12 +80,12 @@ public final class GetDatabaseToolsPrivateEndpointResult {
      */
     private final String privateEndpointVnicId;
     /**
-     * @return Reverse connection configuration details of Private Endpoint.
+     * @return Reverse connection configuration details of the private endpoint.
      * 
      */
     private final List<GetDatabaseToolsPrivateEndpointReverseConnectionConfiguration> reverseConnectionConfigurations;
     /**
-     * @return The current state of the DatabaseToolsPrivateEndpoint.
+     * @return The current state of the Database Tools private endpoint.
      * 
      */
     private final String state;
@@ -100,12 +100,12 @@ public final class GetDatabaseToolsPrivateEndpointResult {
      */
     private final Map<String,Object> systemTags;
     /**
-     * @return The time the DatabaseToolsPrivateEndpoint was created. An RFC3339 formatted datetime string
+     * @return The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
      * 
      */
     private final String timeCreated;
     /**
-     * @return The time the DatabaseToolsPrivateEndpoint was updated. An RFC3339 formatted datetime string
+     * @return The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
      * 
      */
     private final String timeUpdated;
@@ -169,7 +169,7 @@ public final class GetDatabaseToolsPrivateEndpointResult {
         return this.additionalFqdns;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools private endpoint.
      * 
      */
     public String compartmentId() {
@@ -186,7 +186,7 @@ public final class GetDatabaseToolsPrivateEndpointResult {
         return this.definedTags;
     }
     /**
-     * @return A description of the DatabaseToolsPrivateEndpoint.
+     * @return A description of the Database Tools private endpoint.
      * 
      */
     public String description() {
@@ -207,7 +207,7 @@ public final class GetDatabaseToolsPrivateEndpointResult {
         return this.endpointFqdn;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsEndpointService.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Endpoint Service.
      * 
      */
     public String endpointServiceId() {
@@ -221,7 +221,7 @@ public final class GetDatabaseToolsPrivateEndpointResult {
         return this.freeformTags;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsPrivateEndpoint.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint.
      * 
      */
     public String id() {
@@ -256,14 +256,14 @@ public final class GetDatabaseToolsPrivateEndpointResult {
         return this.privateEndpointVnicId;
     }
     /**
-     * @return Reverse connection configuration details of Private Endpoint.
+     * @return Reverse connection configuration details of the private endpoint.
      * 
      */
     public List<GetDatabaseToolsPrivateEndpointReverseConnectionConfiguration> reverseConnectionConfigurations() {
         return this.reverseConnectionConfigurations;
     }
     /**
-     * @return The current state of the DatabaseToolsPrivateEndpoint.
+     * @return The current state of the Database Tools private endpoint.
      * 
      */
     public String state() {
@@ -284,14 +284,14 @@ public final class GetDatabaseToolsPrivateEndpointResult {
         return this.systemTags;
     }
     /**
-     * @return The time the DatabaseToolsPrivateEndpoint was created. An RFC3339 formatted datetime string
+     * @return The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return The time the DatabaseToolsPrivateEndpoint was updated. An RFC3339 formatted datetime string
+     * @return The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
      * 
      */
     public String timeUpdated() {

@@ -17,7 +17,7 @@ public final class GetAutoScalingConfigurationPolicyRuleMetric {
      */
     private final String metricType;
     /**
-     * @return An autoscale action is triggered when a performance metric meets or exceeds a threshold.
+     * @return An autoscale action is triggered when a performance metric exceeds a threshold.
      * 
      */
     private final List<GetAutoScalingConfigurationPolicyRuleMetricThreshold> thresholds;
@@ -38,7 +38,7 @@ public final class GetAutoScalingConfigurationPolicyRuleMetric {
         return this.metricType;
     }
     /**
-     * @return An autoscale action is triggered when a performance metric meets or exceeds a threshold.
+     * @return An autoscale action is triggered when a performance metric exceeds a threshold.
      * 
      */
     public List<GetAutoScalingConfigurationPolicyRuleMetricThreshold> thresholds() {

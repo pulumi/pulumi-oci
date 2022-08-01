@@ -32,14 +32,14 @@ public final class GetMonitorsPlainArgs extends com.pulumi.resources.InvokeArgs 
     }
 
     /**
-     * A filter to return only resources that match the entire display name given.
+     * A filter to return only the resources that match the entire display name.
      * 
      */
     @Import(name="displayName")
     private @Nullable String displayName;
 
     /**
-     * @return A filter to return only resources that match the entire display name given.
+     * @return A filter to return only the resources that match the entire display name.
      * 
      */
     public Optional<String> displayName() {
@@ -98,6 +98,21 @@ public final class GetMonitorsPlainArgs extends com.pulumi.resources.InvokeArgs 
         return Optional.ofNullable(this.status);
     }
 
+    /**
+     * The name of the public or dedicated vantage point.
+     * 
+     */
+    @Import(name="vantagePoint")
+    private @Nullable String vantagePoint;
+
+    /**
+     * @return The name of the public or dedicated vantage point.
+     * 
+     */
+    public Optional<String> vantagePoint() {
+        return Optional.ofNullable(this.vantagePoint);
+    }
+
     private GetMonitorsPlainArgs() {}
 
     private GetMonitorsPlainArgs(GetMonitorsPlainArgs $) {
@@ -107,6 +122,7 @@ public final class GetMonitorsPlainArgs extends com.pulumi.resources.InvokeArgs 
         this.monitorType = $.monitorType;
         this.scriptId = $.scriptId;
         this.status = $.status;
+        this.vantagePoint = $.vantagePoint;
     }
 
     public static Builder builder() {
@@ -139,7 +155,7 @@ public final class GetMonitorsPlainArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param displayName A filter to return only resources that match the entire display name given.
+         * @param displayName A filter to return only the resources that match the entire display name.
          * 
          * @return builder
          * 
@@ -188,6 +204,17 @@ public final class GetMonitorsPlainArgs extends com.pulumi.resources.InvokeArgs 
          */
         public Builder status(@Nullable String status) {
             $.status = status;
+            return this;
+        }
+
+        /**
+         * @param vantagePoint The name of the public or dedicated vantage point.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vantagePoint(@Nullable String vantagePoint) {
+            $.vantagePoint = vantagePoint;
             return this;
         }
 

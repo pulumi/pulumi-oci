@@ -14,11 +14,11 @@ namespace Pulumi.Oci.ApmConfig.Outputs
     public sealed class GetConfigsConfigCollectionItemResult
     {
         /// <summary>
-        /// The APM Domain Id the request is intended for.
+        /// The APM Domain ID the request is intended for.
         /// </summary>
         public readonly string ApmDomainId;
         /// <summary>
-        /// A filter to match only configuration items of the given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
+        /// A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
         /// </summary>
         public readonly string ConfigType;
         /// <summary>
@@ -26,19 +26,19 @@ namespace Pulumi.Oci.ApmConfig.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
         /// <summary>
-        /// A description of the metric
+        /// A description of the metric.
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// A list of dimensions for this metric
+        /// A list of dimensions for the metric. This variable should not be used.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetConfigsConfigCollectionItemDimensionResult> Dimensions;
         /// <summary>
-        /// A filter to return only resources that match the entire display name given.
+        /// A filter to return resources that match the given display name.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId will be generated when a Span Filter is created.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
         /// </summary>
         public readonly string FilterId;
         /// <summary>
@@ -50,15 +50,26 @@ namespace Pulumi.Oci.ApmConfig.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID will be generated when the item is created.
+        /// A string that specifies the group that an OPTIONS item belongs to.
+        /// </summary>
+        public readonly string Group;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// The list of metrics in this group.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetConfigsConfigCollectionItemMetricResult> Metrics;
         /// <summary>
-        /// The namespace to write the metrics to
+        /// The namespace to which the metrics are published. It must be one of several predefined namespaces.
         /// </summary>
         public readonly string Namespace;
         public readonly string OpcDryRun;
+        /// <summary>
+        /// The options are stored here as JSON.
+        /// </summary>
+        public readonly string Options;
         public readonly ImmutableArray<Outputs.GetConfigsConfigCollectionItemRuleResult> Rules;
         /// <summary>
         /// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
@@ -89,6 +100,8 @@ namespace Pulumi.Oci.ApmConfig.Outputs
 
             ImmutableDictionary<string, object> freeformTags,
 
+            string group,
+
             string id,
 
             ImmutableArray<Outputs.GetConfigsConfigCollectionItemMetricResult> metrics,
@@ -96,6 +109,8 @@ namespace Pulumi.Oci.ApmConfig.Outputs
             string @namespace,
 
             string opcDryRun,
+
+            string options,
 
             ImmutableArray<Outputs.GetConfigsConfigCollectionItemRuleResult> rules,
 
@@ -112,10 +127,12 @@ namespace Pulumi.Oci.ApmConfig.Outputs
             FilterId = filterId;
             FilterText = filterText;
             FreeformTags = freeformTags;
+            Group = group;
             Id = id;
             Metrics = metrics;
             Namespace = @namespace;
             OpcDryRun = opcDryRun;
+            Options = options;
             Rules = rules;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;

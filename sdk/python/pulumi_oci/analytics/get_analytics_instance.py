@@ -21,7 +21,7 @@ class GetAnalyticsInstanceResult:
     """
     A collection of values returned by getAnalyticsInstance.
     """
-    def __init__(__self__, analytics_instance_id=None, capacities=None, compartment_id=None, defined_tags=None, description=None, email_notification=None, feature_set=None, freeform_tags=None, id=None, idcs_access_token=None, license_type=None, name=None, network_endpoint_details=None, private_access_channels=None, service_url=None, state=None, time_created=None, time_updated=None, vanity_url_details=None):
+    def __init__(__self__, analytics_instance_id=None, capacities=None, compartment_id=None, defined_tags=None, description=None, email_notification=None, feature_set=None, freeform_tags=None, id=None, idcs_access_token=None, kms_key_id=None, license_type=None, name=None, network_endpoint_details=None, service_url=None, state=None, time_created=None, time_updated=None):
         if analytics_instance_id and not isinstance(analytics_instance_id, str):
             raise TypeError("Expected argument 'analytics_instance_id' to be a str")
         pulumi.set(__self__, "analytics_instance_id", analytics_instance_id)
@@ -52,6 +52,9 @@ class GetAnalyticsInstanceResult:
         if idcs_access_token and not isinstance(idcs_access_token, str):
             raise TypeError("Expected argument 'idcs_access_token' to be a str")
         pulumi.set(__self__, "idcs_access_token", idcs_access_token)
+        if kms_key_id and not isinstance(kms_key_id, str):
+            raise TypeError("Expected argument 'kms_key_id' to be a str")
+        pulumi.set(__self__, "kms_key_id", kms_key_id)
         if license_type and not isinstance(license_type, str):
             raise TypeError("Expected argument 'license_type' to be a str")
         pulumi.set(__self__, "license_type", license_type)
@@ -61,9 +64,6 @@ class GetAnalyticsInstanceResult:
         if network_endpoint_details and not isinstance(network_endpoint_details, list):
             raise TypeError("Expected argument 'network_endpoint_details' to be a list")
         pulumi.set(__self__, "network_endpoint_details", network_endpoint_details)
-        if private_access_channels and not isinstance(private_access_channels, dict):
-            raise TypeError("Expected argument 'private_access_channels' to be a dict")
-        pulumi.set(__self__, "private_access_channels", private_access_channels)
         if service_url and not isinstance(service_url, str):
             raise TypeError("Expected argument 'service_url' to be a str")
         pulumi.set(__self__, "service_url", service_url)
@@ -76,9 +76,6 @@ class GetAnalyticsInstanceResult:
         if time_updated and not isinstance(time_updated, str):
             raise TypeError("Expected argument 'time_updated' to be a str")
         pulumi.set(__self__, "time_updated", time_updated)
-        if vanity_url_details and not isinstance(vanity_url_details, dict):
-            raise TypeError("Expected argument 'vanity_url_details' to be a dict")
-        pulumi.set(__self__, "vanity_url_details", vanity_url_details)
 
     @property
     @pulumi.getter(name="analyticsInstanceId")
@@ -155,6 +152,14 @@ class GetAnalyticsInstanceResult:
         return pulumi.get(self, "idcs_access_token")
 
     @property
+    @pulumi.getter(name="kmsKeyId")
+    def kms_key_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+        """
+        return pulumi.get(self, "kms_key_id")
+
+    @property
     @pulumi.getter(name="licenseType")
     def license_type(self) -> str:
         """
@@ -177,14 +182,6 @@ class GetAnalyticsInstanceResult:
         Base representation of a network endpoint.
         """
         return pulumi.get(self, "network_endpoint_details")
-
-    @property
-    @pulumi.getter(name="privateAccessChannels")
-    def private_access_channels(self) -> Mapping[str, Any]:
-        """
-        Map of PrivateAccessChannel unique identifier key as KEY and PrivateAccessChannel Object as VALUE.
-        """
-        return pulumi.get(self, "private_access_channels")
 
     @property
     @pulumi.getter(name="serviceUrl")
@@ -218,14 +215,6 @@ class GetAnalyticsInstanceResult:
         """
         return pulumi.get(self, "time_updated")
 
-    @property
-    @pulumi.getter(name="vanityUrlDetails")
-    def vanity_url_details(self) -> Mapping[str, Any]:
-        """
-        Map of VanityUrl unique identifier key as KEY and VanityUrl Object as VALUE.
-        """
-        return pulumi.get(self, "vanity_url_details")
-
 
 class AwaitableGetAnalyticsInstanceResult(GetAnalyticsInstanceResult):
     # pylint: disable=using-constant-test
@@ -243,15 +232,14 @@ class AwaitableGetAnalyticsInstanceResult(GetAnalyticsInstanceResult):
             freeform_tags=self.freeform_tags,
             id=self.id,
             idcs_access_token=self.idcs_access_token,
+            kms_key_id=self.kms_key_id,
             license_type=self.license_type,
             name=self.name,
             network_endpoint_details=self.network_endpoint_details,
-            private_access_channels=self.private_access_channels,
             service_url=self.service_url,
             state=self.state,
             time_created=self.time_created,
-            time_updated=self.time_updated,
-            vanity_url_details=self.vanity_url_details)
+            time_updated=self.time_updated)
 
 
 def get_analytics_instance(analytics_instance_id: Optional[str] = None,
@@ -292,15 +280,14 @@ def get_analytics_instance(analytics_instance_id: Optional[str] = None,
         freeform_tags=__ret__.freeform_tags,
         id=__ret__.id,
         idcs_access_token=__ret__.idcs_access_token,
+        kms_key_id=__ret__.kms_key_id,
         license_type=__ret__.license_type,
         name=__ret__.name,
         network_endpoint_details=__ret__.network_endpoint_details,
-        private_access_channels=__ret__.private_access_channels,
         service_url=__ret__.service_url,
         state=__ret__.state,
         time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated,
-        vanity_url_details=__ret__.vanity_url_details)
+        time_updated=__ret__.time_updated)
 
 
 @_utilities.lift_output_func(get_analytics_instance)

@@ -66,14 +66,14 @@ public final class TargetArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) DetectorTemplate Identifier
+     * (Updatable) DetectorTemplate identifier.
      * 
      */
     @Import(name="displayName", required=true)
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) DetectorTemplate Identifier
+     * @return (Updatable) DetectorTemplate identifier.
      * 
      */
     public Output<String> displayName() {
@@ -267,7 +267,7 @@ public final class TargetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) DetectorTemplate Identifier
+         * @param displayName (Updatable) DetectorTemplate identifier.
          * 
          * @return builder
          * 
@@ -278,7 +278,7 @@ public final class TargetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) DetectorTemplate Identifier
+         * @param displayName (Updatable) DetectorTemplate identifier.
          * 
          * @return builder
          * 

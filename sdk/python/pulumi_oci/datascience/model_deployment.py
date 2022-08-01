@@ -393,6 +393,10 @@ class ModelDeployment(pulumi.CustomResource):
                 model_configuration_details=oci.data.science.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs(
                     instance_configuration=oci.data.science.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs(
                         instance_shape_name=oci_core_shape["test_shape"]["name"],
+                        model_deployment_instance_shape_config_details=oci.data.science.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs(
+                            memory_in_gbs=var["model_deployment_model_deployment_configuration_details_model_configuration_details_instance_configuration_model_deployment_instance_shape_config_details_memory_in_gbs"],
+                            ocpus=var["model_deployment_model_deployment_configuration_details_model_configuration_details_instance_configuration_model_deployment_instance_shape_config_details_ocpus"],
+                        ),
                     ),
                     model_id=oci_datascience_model["test_model"]["id"],
                     bandwidth_mbps=var["model_deployment_model_deployment_configuration_details_model_configuration_details_bandwidth_mbps"],
@@ -466,6 +470,10 @@ class ModelDeployment(pulumi.CustomResource):
                 model_configuration_details=oci.data.science.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs(
                     instance_configuration=oci.data.science.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs(
                         instance_shape_name=oci_core_shape["test_shape"]["name"],
+                        model_deployment_instance_shape_config_details=oci.data.science.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs(
+                            memory_in_gbs=var["model_deployment_model_deployment_configuration_details_model_configuration_details_instance_configuration_model_deployment_instance_shape_config_details_memory_in_gbs"],
+                            ocpus=var["model_deployment_model_deployment_configuration_details_model_configuration_details_instance_configuration_model_deployment_instance_shape_config_details_ocpus"],
+                        ),
                     ),
                     model_id=oci_datascience_model["test_model"]["id"],
                     bandwidth_mbps=var["model_deployment_model_deployment_configuration_details_model_configuration_details_bandwidth_mbps"],

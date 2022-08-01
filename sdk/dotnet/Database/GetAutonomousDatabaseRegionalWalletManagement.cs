@@ -45,6 +45,7 @@ namespace Pulumi.Oci.Database
     [OutputType]
     public sealed class GetAutonomousDatabaseRegionalWalletManagementResult
     {
+        public readonly int GracePeriod;
         public readonly string Id;
         public readonly bool ShouldRotate;
         /// <summary>
@@ -58,6 +59,8 @@ namespace Pulumi.Oci.Database
 
         [OutputConstructor]
         private GetAutonomousDatabaseRegionalWalletManagementResult(
+            int gracePeriod,
+
             string id,
 
             bool shouldRotate,
@@ -66,6 +69,7 @@ namespace Pulumi.Oci.Database
 
             string timeRotated)
         {
+            GracePeriod = gracePeriod;
             Id = id;
             ShouldRotate = shouldRotate;
             State = state;

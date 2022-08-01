@@ -95,7 +95,7 @@ export class BootVolume extends pulumi.CustomResource {
     }
 
     /**
-     * The number of Volume Performance Units per GB that this volume is effectively tuned to when it's idle.
+     * The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it's idle.
      */
     public /*out*/ readonly autoTunedVpusPerGb!: pulumi.Output<string>;
     /**
@@ -252,7 +252,7 @@ export class BootVolume extends pulumi.CustomResource {
  */
 export interface BootVolumeState {
     /**
-     * The number of Volume Performance Units per GB that this volume is effectively tuned to when it's idle.
+     * The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it's idle.
      */
     autoTunedVpusPerGb?: pulumi.Input<string>;
     /**

@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Database.outputs.GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfig;
+import com.pulumi.oci.Database.outputs.GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfig;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -89,6 +90,11 @@ public final class GetExternalContainerDatabasesExternalContainerDatabase {
      */
     private final String ncharacterSet;
     /**
+     * @return The configuration of Stack Monitoring for the external database.
+     * 
+     */
+    private final List<GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfig> stackMonitoringConfigs;
+    /**
      * @return A filter to return only resources that match the specified lifecycle state.
      * 
      */
@@ -121,6 +127,7 @@ public final class GetExternalContainerDatabasesExternalContainerDatabase {
         @CustomType.Parameter("id") String id,
         @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
         @CustomType.Parameter("ncharacterSet") String ncharacterSet,
+        @CustomType.Parameter("stackMonitoringConfigs") List<GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfig> stackMonitoringConfigs,
         @CustomType.Parameter("state") String state,
         @CustomType.Parameter("timeCreated") String timeCreated,
         @CustomType.Parameter("timeZone") String timeZone) {
@@ -139,6 +146,7 @@ public final class GetExternalContainerDatabasesExternalContainerDatabase {
         this.id = id;
         this.lifecycleDetails = lifecycleDetails;
         this.ncharacterSet = ncharacterSet;
+        this.stackMonitoringConfigs = stackMonitoringConfigs;
         this.state = state;
         this.timeCreated = timeCreated;
         this.timeZone = timeZone;
@@ -250,6 +258,13 @@ public final class GetExternalContainerDatabasesExternalContainerDatabase {
         return this.ncharacterSet;
     }
     /**
+     * @return The configuration of Stack Monitoring for the external database.
+     * 
+     */
+    public List<GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfig> stackMonitoringConfigs() {
+        return this.stackMonitoringConfigs;
+    }
+    /**
      * @return A filter to return only resources that match the specified lifecycle state.
      * 
      */
@@ -295,6 +310,7 @@ public final class GetExternalContainerDatabasesExternalContainerDatabase {
         private String id;
         private String lifecycleDetails;
         private String ncharacterSet;
+        private List<GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfig> stackMonitoringConfigs;
         private String state;
         private String timeCreated;
         private String timeZone;
@@ -320,6 +336,7 @@ public final class GetExternalContainerDatabasesExternalContainerDatabase {
     	      this.id = defaults.id;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.ncharacterSet = defaults.ncharacterSet;
+    	      this.stackMonitoringConfigs = defaults.stackMonitoringConfigs;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeZone = defaults.timeZone;
@@ -388,6 +405,13 @@ public final class GetExternalContainerDatabasesExternalContainerDatabase {
             this.ncharacterSet = Objects.requireNonNull(ncharacterSet);
             return this;
         }
+        public Builder stackMonitoringConfigs(List<GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfig> stackMonitoringConfigs) {
+            this.stackMonitoringConfigs = Objects.requireNonNull(stackMonitoringConfigs);
+            return this;
+        }
+        public Builder stackMonitoringConfigs(GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfig... stackMonitoringConfigs) {
+            return stackMonitoringConfigs(List.of(stackMonitoringConfigs));
+        }
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
@@ -400,7 +424,7 @@ public final class GetExternalContainerDatabasesExternalContainerDatabase {
             this.timeZone = Objects.requireNonNull(timeZone);
             return this;
         }        public GetExternalContainerDatabasesExternalContainerDatabase build() {
-            return new GetExternalContainerDatabasesExternalContainerDatabase(characterSet, compartmentId, databaseConfiguration, databaseEdition, databaseManagementConfigs, databaseVersion, dbId, dbPacks, dbUniqueName, definedTags, displayName, freeformTags, id, lifecycleDetails, ncharacterSet, state, timeCreated, timeZone);
+            return new GetExternalContainerDatabasesExternalContainerDatabase(characterSet, compartmentId, databaseConfiguration, databaseEdition, databaseManagementConfigs, databaseVersion, dbId, dbPacks, dbUniqueName, definedTags, displayName, freeformTags, id, lifecycleDetails, ncharacterSet, stackMonitoringConfigs, state, timeCreated, timeZone);
         }
     }
 }

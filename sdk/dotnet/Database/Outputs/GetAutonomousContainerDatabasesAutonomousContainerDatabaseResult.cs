@@ -26,6 +26,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string AvailabilityDomain;
         /// <summary>
+        /// Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
+        /// </summary>
+        public readonly double AvailableCpus;
+        /// <summary>
         /// Backup options for the Autonomous Container Database.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigResult> BackupConfigs;
@@ -117,7 +121,15 @@ namespace Pulumi.Oci.Database.Outputs
         public readonly string PeerDbUniqueName;
         public readonly string ProtectionMode;
         /// <summary>
-        /// The role of the dataguard enabled Autonomous Container Database.
+        /// An array of CPU values that can be used to successfully provision a single Autonomous Database.
+        /// </summary>
+        public readonly ImmutableArray<double> ProvisionableCpuses;
+        /// <summary>
+        /// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+        /// </summary>
+        public readonly double ReclaimableCpus;
+        /// <summary>
+        /// The role of the Autonomous Data Guard-enabled Autonomous Container Database.
         /// </summary>
         public readonly string Role;
         public readonly bool RotateKeyTrigger;
@@ -138,6 +150,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
+        /// The number of CPU cores allocated to the Autonomous VM cluster.
+        /// </summary>
+        public readonly int TotalCpus;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         /// </summary>
         public readonly string VaultId;
@@ -149,6 +165,8 @@ namespace Pulumi.Oci.Database.Outputs
             string autonomousVmClusterId,
 
             string availabilityDomain,
+
+            double availableCpus,
 
             ImmutableArray<Outputs.GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigResult> backupConfigs,
 
@@ -212,6 +230,10 @@ namespace Pulumi.Oci.Database.Outputs
 
             string protectionMode,
 
+            ImmutableArray<double> provisionableCpuses,
+
+            double reclaimableCpus,
+
             string role,
 
             bool rotateKeyTrigger,
@@ -224,11 +246,14 @@ namespace Pulumi.Oci.Database.Outputs
 
             string timeCreated,
 
+            int totalCpus,
+
             string vaultId)
         {
             AutonomousExadataInfrastructureId = autonomousExadataInfrastructureId;
             AutonomousVmClusterId = autonomousVmClusterId;
             AvailabilityDomain = availabilityDomain;
+            AvailableCpus = availableCpus;
             BackupConfigs = backupConfigs;
             CloudAutonomousVmClusterId = cloudAutonomousVmClusterId;
             CompartmentId = compartmentId;
@@ -260,12 +285,15 @@ namespace Pulumi.Oci.Database.Outputs
             PeerCloudAutonomousVmClusterId = peerCloudAutonomousVmClusterId;
             PeerDbUniqueName = peerDbUniqueName;
             ProtectionMode = protectionMode;
+            ProvisionableCpuses = provisionableCpuses;
+            ReclaimableCpus = reclaimableCpus;
             Role = role;
             RotateKeyTrigger = rotateKeyTrigger;
             ServiceLevelAgreementType = serviceLevelAgreementType;
             StandbyMaintenanceBufferInDays = standbyMaintenanceBufferInDays;
             State = state;
             TimeCreated = timeCreated;
+            TotalCpus = totalCpus;
             VaultId = vaultId;
         }
     }

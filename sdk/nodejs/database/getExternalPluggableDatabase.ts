@@ -121,6 +121,10 @@ export interface GetExternalPluggableDatabaseResult {
      */
     readonly sourceId: string;
     /**
+     * The configuration of Stack Monitoring for the external database.
+     */
+    readonly stackMonitoringConfigs: outputs.Database.GetExternalPluggableDatabaseStackMonitoringConfig[];
+    /**
      * The current state of the Oracle Cloud Infrastructure external database resource.
      */
     readonly state: string;

@@ -28,9 +28,10 @@ import (
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		_, err := DevOps.NewConnection(ctx, "testConnection", &DevOps.ConnectionArgs{
-// 			AccessToken:    pulumi.Any(_var.Connection_access_token),
 // 			ConnectionType: pulumi.Any(_var.Connection_connection_type),
 // 			ProjectId:      pulumi.Any(oci_devops_project.Test_project.Id),
+// 			AccessToken:    pulumi.Any(_var.Connection_access_token),
+// 			AppPassword:    pulumi.Any(_var.Connection_app_password),
 // 			DefinedTags: pulumi.AnyMap{
 // 				"foo-namespace.bar-key": pulumi.Any("value"),
 // 			},
@@ -39,6 +40,7 @@ import (
 // 			FreeformTags: pulumi.AnyMap{
 // 				"bar-key": pulumi.Any("value"),
 // 			},
+// 			Username: pulumi.Any(_var.Connection_username),
 // 		})
 // 		if err != nil {
 // 			return err
@@ -60,6 +62,8 @@ type Connection struct {
 
 	// (Updatable) The OCID of personal access token saved in secret store.
 	AccessToken pulumi.StringOutput `pulumi:"accessToken"`
+	// (Updatable) OCID of personal Bitbucket Cloud AppPassword saved in secret store
+	AppPassword pulumi.StringOutput `pulumi:"appPassword"`
 	// The OCID of the compartment containing the connection.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) The type of connection.
@@ -82,6 +86,8 @@ type Connection struct {
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the connection was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	// (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
+	Username pulumi.StringOutput `pulumi:"username"`
 }
 
 // NewConnection registers a new resource with the given unique name, arguments, and options.
@@ -91,9 +97,6 @@ func NewConnection(ctx *pulumi.Context,
 		return nil, errors.New("missing one or more required arguments")
 	}
 
-	if args.AccessToken == nil {
-		return nil, errors.New("invalid value for required argument 'AccessToken'")
-	}
 	if args.ConnectionType == nil {
 		return nil, errors.New("invalid value for required argument 'ConnectionType'")
 	}
@@ -124,6 +127,8 @@ func GetConnection(ctx *pulumi.Context,
 type connectionState struct {
 	// (Updatable) The OCID of personal access token saved in secret store.
 	AccessToken *string `pulumi:"accessToken"`
+	// (Updatable) OCID of personal Bitbucket Cloud AppPassword saved in secret store
+	AppPassword *string `pulumi:"appPassword"`
 	// The OCID of the compartment containing the connection.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) The type of connection.
@@ -146,11 +151,15 @@ type connectionState struct {
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the connection was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeUpdated *string `pulumi:"timeUpdated"`
+	// (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
+	Username *string `pulumi:"username"`
 }
 
 type ConnectionState struct {
 	// (Updatable) The OCID of personal access token saved in secret store.
 	AccessToken pulumi.StringPtrInput
+	// (Updatable) OCID of personal Bitbucket Cloud AppPassword saved in secret store
+	AppPassword pulumi.StringPtrInput
 	// The OCID of the compartment containing the connection.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) The type of connection.
@@ -173,6 +182,8 @@ type ConnectionState struct {
 	TimeCreated pulumi.StringPtrInput
 	// The time the connection was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeUpdated pulumi.StringPtrInput
+	// (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
+	Username pulumi.StringPtrInput
 }
 
 func (ConnectionState) ElementType() reflect.Type {
@@ -181,7 +192,9 @@ func (ConnectionState) ElementType() reflect.Type {
 
 type connectionArgs struct {
 	// (Updatable) The OCID of personal access token saved in secret store.
-	AccessToken string `pulumi:"accessToken"`
+	AccessToken *string `pulumi:"accessToken"`
+	// (Updatable) OCID of personal Bitbucket Cloud AppPassword saved in secret store
+	AppPassword *string `pulumi:"appPassword"`
 	// (Updatable) The type of connection.
 	ConnectionType string `pulumi:"connectionType"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
@@ -194,12 +207,16 @@ type connectionArgs struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the DevOps project.
 	ProjectId string `pulumi:"projectId"`
+	// (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
+	Username *string `pulumi:"username"`
 }
 
 // The set of arguments for constructing a Connection resource.
 type ConnectionArgs struct {
 	// (Updatable) The OCID of personal access token saved in secret store.
-	AccessToken pulumi.StringInput
+	AccessToken pulumi.StringPtrInput
+	// (Updatable) OCID of personal Bitbucket Cloud AppPassword saved in secret store
+	AppPassword pulumi.StringPtrInput
 	// (Updatable) The type of connection.
 	ConnectionType pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
@@ -212,6 +229,8 @@ type ConnectionArgs struct {
 	FreeformTags pulumi.MapInput
 	// The OCID of the DevOps project.
 	ProjectId pulumi.StringInput
+	// (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
+	Username pulumi.StringPtrInput
 }
 
 func (ConnectionArgs) ElementType() reflect.Type {

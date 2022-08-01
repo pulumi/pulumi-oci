@@ -55,7 +55,7 @@ type LookupVirtualCircuitArgs struct {
 type LookupVirtualCircuitResult struct {
 	// The provisioned data rate of the connection. To get a list of the available bandwidth levels (that is, shapes), see [ListFastConnectProviderServiceVirtualCircuitBandwidthShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderVirtualCircuitBandwidthShapes).  Example: `10 Gbps`
 	BandwidthShapeName string `pulumi:"bandwidthShapeName"`
-	// Set to ENABLED to activate the  bgp session of virtual circuit, DISABLED to deactivate.
+	// Set to `ENABLED` (the default) to activate the BGP session of the virtual circuit, set to `DISABLED` to deactivate the virtual circuit.
 	BgpAdminState string `pulumi:"bgpAdminState"`
 	// The state of the Ipv6 BGP session associated with the virtual circuit.
 	BgpIpv6sessionState string `pulumi:"bgpIpv6sessionState"`
@@ -87,7 +87,7 @@ type LookupVirtualCircuitResult struct {
 	Id string `pulumi:"id"`
 	// The layer 3 IP MTU to use on this virtual circuit.
 	IpMtu string `pulumi:"ipMtu"`
-	// Set to true to enable BFD for ipv4 Bgp Peering, false to disable. If not set, default is false
+	// Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
 	IsBfdEnabled bool `pulumi:"isBfdEnabled"`
 	// The Oracle BGP ASN.
 	OracleBgpAsn int `pulumi:"oracleBgpAsn"`
@@ -159,7 +159,7 @@ func (o LookupVirtualCircuitResultOutput) BandwidthShapeName() pulumi.StringOutp
 	return o.ApplyT(func(v LookupVirtualCircuitResult) string { return v.BandwidthShapeName }).(pulumi.StringOutput)
 }
 
-// Set to ENABLED to activate the  bgp session of virtual circuit, DISABLED to deactivate.
+// Set to `ENABLED` (the default) to activate the BGP session of the virtual circuit, set to `DISABLED` to deactivate the virtual circuit.
 func (o LookupVirtualCircuitResultOutput) BgpAdminState() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVirtualCircuitResult) string { return v.BgpAdminState }).(pulumi.StringOutput)
 }
@@ -235,7 +235,7 @@ func (o LookupVirtualCircuitResultOutput) IpMtu() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVirtualCircuitResult) string { return v.IpMtu }).(pulumi.StringOutput)
 }
 
-// Set to true to enable BFD for ipv4 Bgp Peering, false to disable. If not set, default is false
+// Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
 func (o LookupVirtualCircuitResultOutput) IsBfdEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupVirtualCircuitResult) bool { return v.IsBfdEnabled }).(pulumi.BoolOutput)
 }

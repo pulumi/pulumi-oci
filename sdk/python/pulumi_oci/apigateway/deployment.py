@@ -18,31 +18,30 @@ class DeploymentArgs:
                  compartment_id: pulumi.Input[str],
                  gateway_id: pulumi.Input[str],
                  path_prefix: pulumi.Input[str],
+                 specification: pulumi.Input['DeploymentSpecificationArgs'],
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 specification: Optional[pulumi.Input['DeploymentSpecificationArgs']] = None):
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
         The set of arguments for constructing a Deployment resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
         :param pulumi.Input[str] gateway_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
         :param pulumi.Input[str] path_prefix: A path on which to deploy all routes contained in the API deployment specification. For more information, see [Deploying an API on an API Gateway by Creating an API Deployment](https://docs.cloud.oracle.com/iaas/Content/APIGateway/Tasks/apigatewaycreatingdeployment.htm).
+        :param pulumi.Input['DeploymentSpecificationArgs'] specification: (Updatable) The logical configuration of the API exposed by a deployment.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input['DeploymentSpecificationArgs'] specification: (Updatable) The logical configuration of the API exposed by a deployment.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "gateway_id", gateway_id)
         pulumi.set(__self__, "path_prefix", path_prefix)
+        pulumi.set(__self__, "specification", specification)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
-        if specification is not None:
-            pulumi.set(__self__, "specification", specification)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -81,6 +80,18 @@ class DeploymentArgs:
         pulumi.set(self, "path_prefix", value)
 
     @property
+    @pulumi.getter
+    def specification(self) -> pulumi.Input['DeploymentSpecificationArgs']:
+        """
+        (Updatable) The logical configuration of the API exposed by a deployment.
+        """
+        return pulumi.get(self, "specification")
+
+    @specification.setter
+    def specification(self, value: pulumi.Input['DeploymentSpecificationArgs']):
+        pulumi.set(self, "specification", value)
+
+    @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
@@ -115,18 +126,6 @@ class DeploymentArgs:
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "freeform_tags", value)
-
-    @property
-    @pulumi.getter
-    def specification(self) -> Optional[pulumi.Input['DeploymentSpecificationArgs']]:
-        """
-        (Updatable) The logical configuration of the API exposed by a deployment.
-        """
-        return pulumi.get(self, "specification")
-
-    @specification.setter
-    def specification(self, value: Optional[pulumi.Input['DeploymentSpecificationArgs']]):
-        pulumi.set(self, "specification", value)
 
 
 @pulumi.input_type
@@ -357,13 +356,6 @@ class Deployment(pulumi.CustomResource):
             compartment_id=var["compartment_id"],
             gateway_id=oci_apigateway_gateway["test_gateway"]["id"],
             path_prefix=var["deployment_path_prefix"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=var["deployment_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            },
             specification=oci.api.gateway.DeploymentSpecificationArgs(
                 logging_policies=oci.api.gateway.DeploymentSpecificationLoggingPoliciesArgs(
                     access_log=oci.api.gateway.DeploymentSpecificationLoggingPoliciesAccessLogArgs(
@@ -423,6 +415,9 @@ class Deployment(pulumi.CustomResource):
                     rate_limiting=oci.api.gateway.DeploymentSpecificationRequestPoliciesRateLimitingArgs(
                         rate_in_requests_per_second=var["deployment_specification_request_policies_rate_limiting_rate_in_requests_per_second"],
                         rate_key=var["deployment_specification_request_policies_rate_limiting_rate_key"],
+                    ),
+                    usage_plans=oci.api.gateway.DeploymentSpecificationRequestPoliciesUsagePlansArgs(
+                        token_locations=var["deployment_specification_request_policies_usage_plans_token_locations"],
                     ),
                 ),
                 routes=[oci.api.gateway.DeploymentSpecificationRouteArgs(
@@ -564,7 +559,14 @@ class Deployment(pulumi.CustomResource):
                         ),
                     ),
                 )],
-            ))
+            ),
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            display_name=var["deployment_display_name"],
+            freeform_tags={
+                "Department": "Finance",
+            })
         ```
 
         ## Import
@@ -606,13 +608,6 @@ class Deployment(pulumi.CustomResource):
             compartment_id=var["compartment_id"],
             gateway_id=oci_apigateway_gateway["test_gateway"]["id"],
             path_prefix=var["deployment_path_prefix"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=var["deployment_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            },
             specification=oci.api.gateway.DeploymentSpecificationArgs(
                 logging_policies=oci.api.gateway.DeploymentSpecificationLoggingPoliciesArgs(
                     access_log=oci.api.gateway.DeploymentSpecificationLoggingPoliciesAccessLogArgs(
@@ -672,6 +667,9 @@ class Deployment(pulumi.CustomResource):
                     rate_limiting=oci.api.gateway.DeploymentSpecificationRequestPoliciesRateLimitingArgs(
                         rate_in_requests_per_second=var["deployment_specification_request_policies_rate_limiting_rate_in_requests_per_second"],
                         rate_key=var["deployment_specification_request_policies_rate_limiting_rate_key"],
+                    ),
+                    usage_plans=oci.api.gateway.DeploymentSpecificationRequestPoliciesUsagePlansArgs(
+                        token_locations=var["deployment_specification_request_policies_usage_plans_token_locations"],
                     ),
                 ),
                 routes=[oci.api.gateway.DeploymentSpecificationRouteArgs(
@@ -813,7 +811,14 @@ class Deployment(pulumi.CustomResource):
                         ),
                     ),
                 )],
-            ))
+            ),
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            display_name=var["deployment_display_name"],
+            freeform_tags={
+                "Department": "Finance",
+            })
         ```
 
         ## Import
@@ -870,6 +875,8 @@ class Deployment(pulumi.CustomResource):
             if path_prefix is None and not opts.urn:
                 raise TypeError("Missing required property 'path_prefix'")
             __props__.__dict__["path_prefix"] = path_prefix
+            if specification is None and not opts.urn:
+                raise TypeError("Missing required property 'specification'")
             __props__.__dict__["specification"] = specification
             __props__.__dict__["endpoint"] = None
             __props__.__dict__["lifecycle_details"] = None

@@ -125,6 +125,11 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
      */
     private final String infiniBandNetworkCidr;
     /**
+     * @return Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
+     * 
+     */
+    private final Boolean isCpsOfflineReportEnabled;
+    /**
      * @return Additional information about the current lifecycle state.
      * 
      */
@@ -230,6 +235,7 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
         @CustomType.Parameter("gateway") String gateway,
         @CustomType.Parameter("id") String id,
         @CustomType.Parameter("infiniBandNetworkCidr") String infiniBandNetworkCidr,
+        @CustomType.Parameter("isCpsOfflineReportEnabled") Boolean isCpsOfflineReportEnabled,
         @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
         @CustomType.Parameter("maintenanceSloStatus") String maintenanceSloStatus,
         @CustomType.Parameter("maintenanceWindows") List<GetExadataInfrastructuresExadataInfrastructureMaintenanceWindow> maintenanceWindows,
@@ -269,6 +275,7 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
         this.gateway = gateway;
         this.id = id;
         this.infiniBandNetworkCidr = infiniBandNetworkCidr;
+        this.isCpsOfflineReportEnabled = isCpsOfflineReportEnabled;
         this.lifecycleDetails = lifecycleDetails;
         this.maintenanceSloStatus = maintenanceSloStatus;
         this.maintenanceWindows = maintenanceWindows;
@@ -441,6 +448,13 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
         return this.infiniBandNetworkCidr;
     }
     /**
+     * @return Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
+     * 
+     */
+    public Boolean isCpsOfflineReportEnabled() {
+        return this.isCpsOfflineReportEnabled;
+    }
+    /**
      * @return Additional information about the current lifecycle state.
      * 
      */
@@ -585,6 +599,7 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
         private String gateway;
         private String id;
         private String infiniBandNetworkCidr;
+        private Boolean isCpsOfflineReportEnabled;
         private String lifecycleDetails;
         private String maintenanceSloStatus;
         private List<GetExadataInfrastructuresExadataInfrastructureMaintenanceWindow> maintenanceWindows;
@@ -631,6 +646,7 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
     	      this.gateway = defaults.gateway;
     	      this.id = defaults.id;
     	      this.infiniBandNetworkCidr = defaults.infiniBandNetworkCidr;
+    	      this.isCpsOfflineReportEnabled = defaults.isCpsOfflineReportEnabled;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.maintenanceSloStatus = defaults.maintenanceSloStatus;
     	      this.maintenanceWindows = defaults.maintenanceWindows;
@@ -747,6 +763,10 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
             this.infiniBandNetworkCidr = Objects.requireNonNull(infiniBandNetworkCidr);
             return this;
         }
+        public Builder isCpsOfflineReportEnabled(Boolean isCpsOfflineReportEnabled) {
+            this.isCpsOfflineReportEnabled = Objects.requireNonNull(isCpsOfflineReportEnabled);
+            return this;
+        }
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
@@ -817,7 +837,7 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
             this.timeZone = Objects.requireNonNull(timeZone);
             return this;
         }        public GetExadataInfrastructuresExadataInfrastructure build() {
-            return new GetExadataInfrastructuresExadataInfrastructure(activatedStorageCount, activationFile, additionalStorageCount, adminNetworkCidr, cloudControlPlaneServer1, cloudControlPlaneServer2, compartmentId, computeCount, contacts, corporateProxy, cpusEnabled, createAsync, csiNumber, dataStorageSizeInTbs, dbNodeStorageSizeInGbs, dbServerVersion, definedTags, displayName, dnsServers, freeformTags, gateway, id, infiniBandNetworkCidr, lifecycleDetails, maintenanceSloStatus, maintenanceWindows, maxCpuCount, maxDataStorageInTbs, maxDbNodeStorageInGbs, maxMemoryInGbs, memorySizeInGbs, netmask, ntpServers, shape, state, storageCount, storageServerVersion, timeCreated, timeZone);
+            return new GetExadataInfrastructuresExadataInfrastructure(activatedStorageCount, activationFile, additionalStorageCount, adminNetworkCidr, cloudControlPlaneServer1, cloudControlPlaneServer2, compartmentId, computeCount, contacts, corporateProxy, cpusEnabled, createAsync, csiNumber, dataStorageSizeInTbs, dbNodeStorageSizeInGbs, dbServerVersion, definedTags, displayName, dnsServers, freeformTags, gateway, id, infiniBandNetworkCidr, isCpsOfflineReportEnabled, lifecycleDetails, maintenanceSloStatus, maintenanceWindows, maxCpuCount, maxDataStorageInTbs, maxDbNodeStorageInGbs, maxMemoryInGbs, memorySizeInGbs, netmask, ntpServers, shape, state, storageCount, storageServerVersion, timeCreated, timeZone);
         }
     }
 }

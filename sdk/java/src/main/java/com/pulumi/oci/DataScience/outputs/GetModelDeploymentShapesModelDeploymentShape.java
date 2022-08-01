@@ -25,15 +25,22 @@ public final class GetModelDeploymentShapesModelDeploymentShape {
      * 
      */
     private final String name;
+    /**
+     * @return The family that the compute shape belongs to.
+     * 
+     */
+    private final String shapeSeries;
 
     @CustomType.Constructor
     private GetModelDeploymentShapesModelDeploymentShape(
         @CustomType.Parameter("coreCount") Integer coreCount,
         @CustomType.Parameter("memoryInGbs") Integer memoryInGbs,
-        @CustomType.Parameter("name") String name) {
+        @CustomType.Parameter("name") String name,
+        @CustomType.Parameter("shapeSeries") String shapeSeries) {
         this.coreCount = coreCount;
         this.memoryInGbs = memoryInGbs;
         this.name = name;
+        this.shapeSeries = shapeSeries;
     }
 
     /**
@@ -57,6 +64,13 @@ public final class GetModelDeploymentShapesModelDeploymentShape {
     public String name() {
         return this.name;
     }
+    /**
+     * @return The family that the compute shape belongs to.
+     * 
+     */
+    public String shapeSeries() {
+        return this.shapeSeries;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -70,6 +84,7 @@ public final class GetModelDeploymentShapesModelDeploymentShape {
         private Integer coreCount;
         private Integer memoryInGbs;
         private String name;
+        private String shapeSeries;
 
         public Builder() {
     	      // Empty
@@ -80,6 +95,7 @@ public final class GetModelDeploymentShapesModelDeploymentShape {
     	      this.coreCount = defaults.coreCount;
     	      this.memoryInGbs = defaults.memoryInGbs;
     	      this.name = defaults.name;
+    	      this.shapeSeries = defaults.shapeSeries;
         }
 
         public Builder coreCount(Integer coreCount) {
@@ -93,8 +109,12 @@ public final class GetModelDeploymentShapesModelDeploymentShape {
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
+        }
+        public Builder shapeSeries(String shapeSeries) {
+            this.shapeSeries = Objects.requireNonNull(shapeSeries);
+            return this;
         }        public GetModelDeploymentShapesModelDeploymentShape build() {
-            return new GetModelDeploymentShapesModelDeploymentShape(coreCount, memoryInGbs, name);
+            return new GetModelDeploymentShapesModelDeploymentShape(coreCount, memoryInGbs, name, shapeSeries);
         }
     }
 }

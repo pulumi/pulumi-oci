@@ -60,6 +60,11 @@ public final class GetBdsInstanceClusterDetail {
      */
     private final String hueServerUrl;
     /**
+     * @return The URL of the Jupyterhub.
+     * 
+     */
+    private final String jupyterHubUrl;
+    /**
      * @return Oracle Linux version installed in the cluster.
      * 
      */
@@ -87,6 +92,7 @@ public final class GetBdsInstanceClusterDetail {
         @CustomType.Parameter("csqlCellVersion") String csqlCellVersion,
         @CustomType.Parameter("dbVersion") String dbVersion,
         @CustomType.Parameter("hueServerUrl") String hueServerUrl,
+        @CustomType.Parameter("jupyterHubUrl") String jupyterHubUrl,
         @CustomType.Parameter("osVersion") String osVersion,
         @CustomType.Parameter("timeCreated") String timeCreated,
         @CustomType.Parameter("timeRefreshed") String timeRefreshed) {
@@ -100,6 +106,7 @@ public final class GetBdsInstanceClusterDetail {
         this.csqlCellVersion = csqlCellVersion;
         this.dbVersion = dbVersion;
         this.hueServerUrl = hueServerUrl;
+        this.jupyterHubUrl = jupyterHubUrl;
         this.osVersion = osVersion;
         this.timeCreated = timeCreated;
         this.timeRefreshed = timeRefreshed;
@@ -176,6 +183,13 @@ public final class GetBdsInstanceClusterDetail {
         return this.hueServerUrl;
     }
     /**
+     * @return The URL of the Jupyterhub.
+     * 
+     */
+    public String jupyterHubUrl() {
+        return this.jupyterHubUrl;
+    }
+    /**
      * @return Oracle Linux version installed in the cluster.
      * 
      */
@@ -216,6 +230,7 @@ public final class GetBdsInstanceClusterDetail {
         private String csqlCellVersion;
         private String dbVersion;
         private String hueServerUrl;
+        private String jupyterHubUrl;
         private String osVersion;
         private String timeCreated;
         private String timeRefreshed;
@@ -236,6 +251,7 @@ public final class GetBdsInstanceClusterDetail {
     	      this.csqlCellVersion = defaults.csqlCellVersion;
     	      this.dbVersion = defaults.dbVersion;
     	      this.hueServerUrl = defaults.hueServerUrl;
+    	      this.jupyterHubUrl = defaults.jupyterHubUrl;
     	      this.osVersion = defaults.osVersion;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeRefreshed = defaults.timeRefreshed;
@@ -281,6 +297,10 @@ public final class GetBdsInstanceClusterDetail {
             this.hueServerUrl = Objects.requireNonNull(hueServerUrl);
             return this;
         }
+        public Builder jupyterHubUrl(String jupyterHubUrl) {
+            this.jupyterHubUrl = Objects.requireNonNull(jupyterHubUrl);
+            return this;
+        }
         public Builder osVersion(String osVersion) {
             this.osVersion = Objects.requireNonNull(osVersion);
             return this;
@@ -293,7 +313,7 @@ public final class GetBdsInstanceClusterDetail {
             this.timeRefreshed = Objects.requireNonNull(timeRefreshed);
             return this;
         }        public GetBdsInstanceClusterDetail build() {
-            return new GetBdsInstanceClusterDetail(ambariUrl, bdCellVersion, bdaVersion, bdmVersion, bdsVersion, bigDataManagerUrl, clouderaManagerUrl, csqlCellVersion, dbVersion, hueServerUrl, osVersion, timeCreated, timeRefreshed);
+            return new GetBdsInstanceClusterDetail(ambariUrl, bdCellVersion, bdaVersion, bdmVersion, bdsVersion, bigDataManagerUrl, clouderaManagerUrl, csqlCellVersion, dbVersion, hueServerUrl, jupyterHubUrl, osVersion, timeCreated, timeRefreshed);
         }
     }
 }

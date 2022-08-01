@@ -46,14 +46,14 @@ public final class MysqlDbSystemChannelTargetArgs extends com.pulumi.resources.R
     }
 
     /**
-     * The OCID of the source DB System.
+     * The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
      * 
      */
     @Import(name="dbSystemId")
     private @Nullable Output<String> dbSystemId;
 
     /**
-     * @return The OCID of the source DB System.
+     * @return The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
      * 
      */
     public Optional<Output<String>> dbSystemId() {
@@ -145,7 +145,7 @@ public final class MysqlDbSystemChannelTargetArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param dbSystemId The OCID of the source DB System.
+         * @param dbSystemId The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
          * 
          * @return builder
          * 
@@ -156,7 +156,7 @@ public final class MysqlDbSystemChannelTargetArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param dbSystemId The OCID of the source DB System.
+         * @param dbSystemId The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
          * 
          * @return builder
          * 

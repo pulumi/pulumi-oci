@@ -74,6 +74,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string NcharacterSet;
         /// <summary>
+        /// The configuration of Stack Monitoring for the external database.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigResult> StackMonitoringConfigs;
+        /// <summary>
         /// A filter to return only resources that match the specified lifecycle state.
         /// </summary>
         public readonly string State;
@@ -118,6 +122,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string ncharacterSet,
 
+            ImmutableArray<Outputs.GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigResult> stackMonitoringConfigs,
+
             string state,
 
             string timeCreated,
@@ -139,6 +145,7 @@ namespace Pulumi.Oci.Database.Outputs
             Id = id;
             LifecycleDetails = lifecycleDetails;
             NcharacterSet = ncharacterSet;
+            StackMonitoringConfigs = stackMonitoringConfigs;
             State = state;
             TimeCreated = timeCreated;
             TimeZone = timeZone;

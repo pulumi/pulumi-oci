@@ -57,7 +57,7 @@ type LookupDatasetResult struct {
 	AnnotationFormat string `pulumi:"annotationFormat"`
 	// The OCID of the compartment of the resource.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Specifies how to process the data. Supported formats include DOCUMENT, IMAGE and TEXT.
+	// It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
 	DatasetFormatDetails []GetDatasetDatasetFormatDetail `pulumi:"datasetFormatDetails"`
 	DatasetId            string                          `pulumi:"datasetId"`
 	// This allows the customer to specify the source of the dataset.
@@ -72,9 +72,9 @@ type LookupDatasetResult struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the Dataset.
 	Id string `pulumi:"id"`
-	// Initial Generate Records configuration, generates records from the Dataset's source.
+	// The initial generate records configuration. It generates records from the dataset's source.
 	InitialRecordGenerationConfigurations []GetDatasetInitialRecordGenerationConfiguration `pulumi:"initialRecordGenerationConfigurations"`
-	// An ordered collection of Labels that are unique by name.
+	// An ordered collection of labels that are unique by name.
 	LabelSets []GetDatasetLabelSet `pulumi:"labelSets"`
 	// The labeling instructions for human labelers in rich text format
 	LabelingInstructions string `pulumi:"labelingInstructions"`
@@ -136,7 +136,7 @@ func (o LookupDatasetResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatasetResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Specifies how to process the data. Supported formats include DOCUMENT, IMAGE and TEXT.
+// It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
 func (o LookupDatasetResultOutput) DatasetFormatDetails() GetDatasetDatasetFormatDetailArrayOutput {
 	return o.ApplyT(func(v LookupDatasetResult) []GetDatasetDatasetFormatDetail { return v.DatasetFormatDetails }).(GetDatasetDatasetFormatDetailArrayOutput)
 }
@@ -175,14 +175,14 @@ func (o LookupDatasetResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatasetResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Initial Generate Records configuration, generates records from the Dataset's source.
+// The initial generate records configuration. It generates records from the dataset's source.
 func (o LookupDatasetResultOutput) InitialRecordGenerationConfigurations() GetDatasetInitialRecordGenerationConfigurationArrayOutput {
 	return o.ApplyT(func(v LookupDatasetResult) []GetDatasetInitialRecordGenerationConfiguration {
 		return v.InitialRecordGenerationConfigurations
 	}).(GetDatasetInitialRecordGenerationConfigurationArrayOutput)
 }
 
-// An ordered collection of Labels that are unique by name.
+// An ordered collection of labels that are unique by name.
 func (o LookupDatasetResultOutput) LabelSets() GetDatasetLabelSetArrayOutput {
 	return o.ApplyT(func(v LookupDatasetResult) []GetDatasetLabelSet { return v.LabelSets }).(GetDatasetLabelSetArrayOutput)
 }

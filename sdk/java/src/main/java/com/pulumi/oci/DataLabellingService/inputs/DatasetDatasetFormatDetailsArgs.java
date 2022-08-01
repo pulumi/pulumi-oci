@@ -5,8 +5,11 @@ package com.pulumi.oci.DataLabellingService.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.DataLabellingService.inputs.DatasetDatasetFormatDetailsTextFileTypeMetadataArgs;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class DatasetDatasetFormatDetailsArgs extends com.pulumi.resources.ResourceArgs {
@@ -14,24 +17,40 @@ public final class DatasetDatasetFormatDetailsArgs extends com.pulumi.resources.
     public static final DatasetDatasetFormatDetailsArgs Empty = new DatasetDatasetFormatDetailsArgs();
 
     /**
-     * Format type. DOCUMENT format is for record contents that are PDFs or TIFFs. IMAGE format is for record contents that are JPEGs or PNGs. TEXT format is for record contents that are txt files.
+     * It defines the format type of text files.
      * 
      */
     @Import(name="formatType", required=true)
     private Output<String> formatType;
 
     /**
-     * @return Format type. DOCUMENT format is for record contents that are PDFs or TIFFs. IMAGE format is for record contents that are JPEGs or PNGs. TEXT format is for record contents that are txt files.
+     * @return It defines the format type of text files.
      * 
      */
     public Output<String> formatType() {
         return this.formatType;
     }
 
+    /**
+     * Metadata for files with text content.
+     * 
+     */
+    @Import(name="textFileTypeMetadata")
+    private @Nullable Output<DatasetDatasetFormatDetailsTextFileTypeMetadataArgs> textFileTypeMetadata;
+
+    /**
+     * @return Metadata for files with text content.
+     * 
+     */
+    public Optional<Output<DatasetDatasetFormatDetailsTextFileTypeMetadataArgs>> textFileTypeMetadata() {
+        return Optional.ofNullable(this.textFileTypeMetadata);
+    }
+
     private DatasetDatasetFormatDetailsArgs() {}
 
     private DatasetDatasetFormatDetailsArgs(DatasetDatasetFormatDetailsArgs $) {
         this.formatType = $.formatType;
+        this.textFileTypeMetadata = $.textFileTypeMetadata;
     }
 
     public static Builder builder() {
@@ -53,7 +72,7 @@ public final class DatasetDatasetFormatDetailsArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param formatType Format type. DOCUMENT format is for record contents that are PDFs or TIFFs. IMAGE format is for record contents that are JPEGs or PNGs. TEXT format is for record contents that are txt files.
+         * @param formatType It defines the format type of text files.
          * 
          * @return builder
          * 
@@ -64,13 +83,34 @@ public final class DatasetDatasetFormatDetailsArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param formatType Format type. DOCUMENT format is for record contents that are PDFs or TIFFs. IMAGE format is for record contents that are JPEGs or PNGs. TEXT format is for record contents that are txt files.
+         * @param formatType It defines the format type of text files.
          * 
          * @return builder
          * 
          */
         public Builder formatType(String formatType) {
             return formatType(Output.of(formatType));
+        }
+
+        /**
+         * @param textFileTypeMetadata Metadata for files with text content.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder textFileTypeMetadata(@Nullable Output<DatasetDatasetFormatDetailsTextFileTypeMetadataArgs> textFileTypeMetadata) {
+            $.textFileTypeMetadata = textFileTypeMetadata;
+            return this;
+        }
+
+        /**
+         * @param textFileTypeMetadata Metadata for files with text content.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder textFileTypeMetadata(DatasetDatasetFormatDetailsTextFileTypeMetadataArgs textFileTypeMetadata) {
+            return textFileTypeMetadata(Output.of(textFileTypeMetadata));
         }
 
         public DatasetDatasetFormatDetailsArgs build() {

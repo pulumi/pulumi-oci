@@ -18,14 +18,14 @@ public final class GetVantagePointsFilterArgs extends com.pulumi.resources.Resou
     public static final GetVantagePointsFilterArgs Empty = new GetVantagePointsFilterArgs();
 
     /**
-     * A filter to return only resources that match the entire name given.
+     * A filter to return only the resources that match the entire name.
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return A filter to return only resources that match the entire name given.
+     * @return A filter to return only the resources that match the entire name.
      * 
      */
     public Output<String> name() {
@@ -73,7 +73,7 @@ public final class GetVantagePointsFilterArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param name A filter to return only resources that match the entire name given.
+         * @param name A filter to return only the resources that match the entire name.
          * 
          * @return builder
          * 
@@ -84,7 +84,7 @@ public final class GetVantagePointsFilterArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param name A filter to return only resources that match the entire name given.
+         * @param name A filter to return only the resources that match the entire name.
          * 
          * @return builder
          * 

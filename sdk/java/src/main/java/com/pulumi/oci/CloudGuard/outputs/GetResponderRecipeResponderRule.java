@@ -17,7 +17,7 @@ public final class GetResponderRecipeResponderRule {
      */
     private final String compartmentId;
     /**
-     * @return ResponderRule Description
+     * @return ResponderRule description.
      * 
      */
     private final String description;
@@ -27,7 +27,7 @@ public final class GetResponderRecipeResponderRule {
      */
     private final List<GetResponderRecipeResponderRuleDetail> details;
     /**
-     * @return ResponderRule Display Name
+     * @return ResponderRule display name.
      * 
      */
     private final String displayName;
@@ -108,7 +108,7 @@ public final class GetResponderRecipeResponderRule {
         return this.compartmentId;
     }
     /**
-     * @return ResponderRule Description
+     * @return ResponderRule description.
      * 
      */
     public String description() {
@@ -122,7 +122,7 @@ public final class GetResponderRecipeResponderRule {
         return this.details;
     }
     /**
-     * @return ResponderRule Display Name
+     * @return ResponderRule display name.
      * 
      */
     public String displayName() {

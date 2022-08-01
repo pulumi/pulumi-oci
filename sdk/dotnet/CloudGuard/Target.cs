@@ -129,7 +129,7 @@ namespace Pulumi.Oci.CloudGuard
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) DetectorTemplate Identifier
+        /// (Updatable) DetectorTemplate identifier.
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
@@ -169,6 +169,12 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         [Output("systemTags")]
         public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+
+        /// <summary>
+        /// Details specific to the target type.
+        /// </summary>
+        [Output("targetDetails")]
+        public Output<ImmutableArray<Outputs.TargetTargetDetail>> TargetDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) List of detector recipes to associate with target
@@ -277,7 +283,7 @@ namespace Pulumi.Oci.CloudGuard
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) DetectorTemplate Identifier
+        /// (Updatable) DetectorTemplate identifier.
         /// </summary>
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
@@ -368,7 +374,7 @@ namespace Pulumi.Oci.CloudGuard
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) DetectorTemplate Identifier
+        /// (Updatable) DetectorTemplate identifier.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -425,6 +431,18 @@ namespace Pulumi.Oci.CloudGuard
         {
             get => _systemTags ?? (_systemTags = new InputMap<object>());
             set => _systemTags = value;
+        }
+
+        [Input("targetDetails")]
+        private InputList<Inputs.TargetTargetDetailGetArgs>? _targetDetails;
+
+        /// <summary>
+        /// Details specific to the target type.
+        /// </summary>
+        public InputList<Inputs.TargetTargetDetailGetArgs> TargetDetails
+        {
+            get => _targetDetails ?? (_targetDetails = new InputList<Inputs.TargetTargetDetailGetArgs>());
+            set => _targetDetails = value;
         }
 
         [Input("targetDetectorRecipes")]

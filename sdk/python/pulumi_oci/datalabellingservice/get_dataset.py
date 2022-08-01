@@ -94,7 +94,7 @@ class GetDatasetResult:
     @pulumi.getter(name="datasetFormatDetails")
     def dataset_format_details(self) -> Sequence['outputs.GetDatasetDatasetFormatDetailResult']:
         """
-        Specifies how to process the data. Supported formats include DOCUMENT, IMAGE and TEXT.
+        It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
         """
         return pulumi.get(self, "dataset_format_details")
 
@@ -155,7 +155,7 @@ class GetDatasetResult:
     @pulumi.getter(name="initialRecordGenerationConfigurations")
     def initial_record_generation_configurations(self) -> Sequence['outputs.GetDatasetInitialRecordGenerationConfigurationResult']:
         """
-        Initial Generate Records configuration, generates records from the Dataset's source.
+        The initial generate records configuration. It generates records from the dataset's source.
         """
         return pulumi.get(self, "initial_record_generation_configurations")
 
@@ -163,7 +163,7 @@ class GetDatasetResult:
     @pulumi.getter(name="labelSets")
     def label_sets(self) -> Sequence['outputs.GetDatasetLabelSetResult']:
         """
-        An ordered collection of Labels that are unique by name.
+        An ordered collection of labels that are unique by name.
         """
         return pulumi.get(self, "label_sets")
 

@@ -194,6 +194,20 @@ public class VolumeAttachment extends com.pulumi.resources.CustomResource {
         return this.iqn;
     }
     /**
+     * Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
+     * 
+     */
+    @Export(name="isAgentAutoIscsiLoginEnabled", type=Boolean.class, parameters={})
+    private Output<Boolean> isAgentAutoIscsiLoginEnabled;
+
+    /**
+     * @return Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
+     * 
+     */
+    public Output<Boolean> isAgentAutoIscsiLoginEnabled() {
+        return this.isAgentAutoIscsiLoginEnabled;
+    }
+    /**
      * Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.
      * 
      */

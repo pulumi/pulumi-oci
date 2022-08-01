@@ -24,12 +24,16 @@ class ManagementAgentPluginListArgs:
                  plugin_display_name: Optional[pulumi.Input[str]] = None,
                  plugin_id: Optional[pulumi.Input[str]] = None,
                  plugin_name: Optional[pulumi.Input[str]] = None,
+                 plugin_status: Optional[pulumi.Input[str]] = None,
+                 plugin_status_message: Optional[pulumi.Input[str]] = None,
                  plugin_version: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[bool] is_enabled: flag indicating whether the plugin is in enabled mode or disabled mode.
         :param pulumi.Input[str] plugin_display_name: Management Agent Plugin Identifier, can be renamed
         :param pulumi.Input[str] plugin_id: Plugin Id
         :param pulumi.Input[str] plugin_name: Management Agent Plugin Name
+        :param pulumi.Input[str] plugin_status: Plugin Status
+        :param pulumi.Input[str] plugin_status_message: Status message of the Plugin
         :param pulumi.Input[str] plugin_version: Plugin Version
         """
         if is_enabled is not None:
@@ -40,6 +44,10 @@ class ManagementAgentPluginListArgs:
             pulumi.set(__self__, "plugin_id", plugin_id)
         if plugin_name is not None:
             pulumi.set(__self__, "plugin_name", plugin_name)
+        if plugin_status is not None:
+            pulumi.set(__self__, "plugin_status", plugin_status)
+        if plugin_status_message is not None:
+            pulumi.set(__self__, "plugin_status_message", plugin_status_message)
         if plugin_version is not None:
             pulumi.set(__self__, "plugin_version", plugin_version)
 
@@ -90,6 +98,30 @@ class ManagementAgentPluginListArgs:
     @plugin_name.setter
     def plugin_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "plugin_name", value)
+
+    @property
+    @pulumi.getter(name="pluginStatus")
+    def plugin_status(self) -> Optional[pulumi.Input[str]]:
+        """
+        Plugin Status
+        """
+        return pulumi.get(self, "plugin_status")
+
+    @plugin_status.setter
+    def plugin_status(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "plugin_status", value)
+
+    @property
+    @pulumi.getter(name="pluginStatusMessage")
+    def plugin_status_message(self) -> Optional[pulumi.Input[str]]:
+        """
+        Status message of the Plugin
+        """
+        return pulumi.get(self, "plugin_status_message")
+
+    @plugin_status_message.setter
+    def plugin_status_message(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "plugin_status_message", value)
 
     @property
     @pulumi.getter(name="pluginVersion")

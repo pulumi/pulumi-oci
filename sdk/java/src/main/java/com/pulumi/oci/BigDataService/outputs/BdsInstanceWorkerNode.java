@@ -4,29 +4,37 @@
 package com.pulumi.oci.BigDataService.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.BigDataService.outputs.BdsInstanceWorkerNodeShapeConfig;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class BdsInstanceWorkerNode {
     /**
-     * @return The size of block volume in GB to be attached to a given node. All the details needed for attaching the block volume are managed by service itself.
+     * @return The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
      * 
      */
     private final String blockVolumeSizeInGbs;
     /**
-     * @return The number of nodes that form the cluster.
+     * @return The amount of worker nodes should be created
      * 
      */
     private final Integer numberOfNodes;
     /**
-     * @return (Updatable) Shape of the node.
+     * @return Shape of the node
      * 
      */
     private final String shape;
     /**
-     * @return The OCID of the subnet in which the node will be created.
+     * @return The shape configuration requested for the node.
+     * 
+     */
+    private final @Nullable BdsInstanceWorkerNodeShapeConfig shapeConfig;
+    /**
+     * @return The OCID of the subnet in which the node should be created
      * 
      */
     private final String subnetId;
@@ -36,36 +44,45 @@ public final class BdsInstanceWorkerNode {
         @CustomType.Parameter("blockVolumeSizeInGbs") String blockVolumeSizeInGbs,
         @CustomType.Parameter("numberOfNodes") Integer numberOfNodes,
         @CustomType.Parameter("shape") String shape,
+        @CustomType.Parameter("shapeConfig") @Nullable BdsInstanceWorkerNodeShapeConfig shapeConfig,
         @CustomType.Parameter("subnetId") String subnetId) {
         this.blockVolumeSizeInGbs = blockVolumeSizeInGbs;
         this.numberOfNodes = numberOfNodes;
         this.shape = shape;
+        this.shapeConfig = shapeConfig;
         this.subnetId = subnetId;
     }
 
     /**
-     * @return The size of block volume in GB to be attached to a given node. All the details needed for attaching the block volume are managed by service itself.
+     * @return The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
      * 
      */
     public String blockVolumeSizeInGbs() {
         return this.blockVolumeSizeInGbs;
     }
     /**
-     * @return The number of nodes that form the cluster.
+     * @return The amount of worker nodes should be created
      * 
      */
     public Integer numberOfNodes() {
         return this.numberOfNodes;
     }
     /**
-     * @return (Updatable) Shape of the node.
+     * @return Shape of the node
      * 
      */
     public String shape() {
         return this.shape;
     }
     /**
-     * @return The OCID of the subnet in which the node will be created.
+     * @return The shape configuration requested for the node.
+     * 
+     */
+    public Optional<BdsInstanceWorkerNodeShapeConfig> shapeConfig() {
+        return Optional.ofNullable(this.shapeConfig);
+    }
+    /**
+     * @return The OCID of the subnet in which the node should be created
      * 
      */
     public String subnetId() {
@@ -84,6 +101,7 @@ public final class BdsInstanceWorkerNode {
         private String blockVolumeSizeInGbs;
         private Integer numberOfNodes;
         private String shape;
+        private @Nullable BdsInstanceWorkerNodeShapeConfig shapeConfig;
         private String subnetId;
 
         public Builder() {
@@ -95,6 +113,7 @@ public final class BdsInstanceWorkerNode {
     	      this.blockVolumeSizeInGbs = defaults.blockVolumeSizeInGbs;
     	      this.numberOfNodes = defaults.numberOfNodes;
     	      this.shape = defaults.shape;
+    	      this.shapeConfig = defaults.shapeConfig;
     	      this.subnetId = defaults.subnetId;
         }
 
@@ -110,11 +129,15 @@ public final class BdsInstanceWorkerNode {
             this.shape = Objects.requireNonNull(shape);
             return this;
         }
+        public Builder shapeConfig(@Nullable BdsInstanceWorkerNodeShapeConfig shapeConfig) {
+            this.shapeConfig = shapeConfig;
+            return this;
+        }
         public Builder subnetId(String subnetId) {
             this.subnetId = Objects.requireNonNull(subnetId);
             return this;
         }        public BdsInstanceWorkerNode build() {
-            return new BdsInstanceWorkerNode(blockVolumeSizeInGbs, numberOfNodes, shape, subnetId);
+            return new BdsInstanceWorkerNode(blockVolumeSizeInGbs, numberOfNodes, shape, shapeConfig, subnetId);
         }
     }
 }

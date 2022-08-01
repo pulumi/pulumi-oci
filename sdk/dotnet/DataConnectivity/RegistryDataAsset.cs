@@ -133,6 +133,7 @@ namespace Pulumi.Oci.DataConnectivity
     ///                 Type = @var.Registry_data_asset_default_connection_type,
     ///             },
     ///             Description = @var.Registry_data_asset_description,
+    ///             EndPoints = @var.Registry_data_asset_end_points,
     ///             ExternalKey = @var.Registry_data_asset_external_key,
     ///             Key = @var.Registry_data_asset_key,
     ///             Metadata = new Oci.DataConnectivity.Inputs.RegistryDataAssetMetadataArgs
@@ -271,6 +272,12 @@ namespace Pulumi.Oci.DataConnectivity
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The list of endpoints with which this data asset is associated.
+        /// </summary>
+        [Output("endPoints")]
+        public Output<ImmutableArray<string>> EndPoints { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The external key for the object.
@@ -426,6 +433,18 @@ namespace Pulumi.Oci.DataConnectivity
         [Input("description")]
         public Input<string>? Description { get; set; }
 
+        [Input("endPoints")]
+        private InputList<string>? _endPoints;
+
+        /// <summary>
+        /// (Updatable) The list of endpoints with which this data asset is associated.
+        /// </summary>
+        public InputList<string> EndPoints
+        {
+            get => _endPoints ?? (_endPoints = new InputList<string>());
+            set => _endPoints = value;
+        }
+
         /// <summary>
         /// (Updatable) The external key for the object.
         /// </summary>
@@ -546,6 +565,18 @@ namespace Pulumi.Oci.DataConnectivity
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
+
+        [Input("endPoints")]
+        private InputList<string>? _endPoints;
+
+        /// <summary>
+        /// (Updatable) The list of endpoints with which this data asset is associated.
+        /// </summary>
+        public InputList<string> EndPoints
+        {
+            get => _endPoints ?? (_endPoints = new InputList<string>());
+            set => _endPoints = value;
+        }
 
         /// <summary>
         /// (Updatable) The external key for the object.

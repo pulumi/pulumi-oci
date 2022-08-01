@@ -15,8 +15,8 @@ namespace Pulumi.Oci.DatabaseTools.Inputs
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
         /// </summary>
-        [Input("secretId")]
-        public Input<string>? SecretId { get; set; }
+        [Input("secretId", required: true)]
+        public Input<string> SecretId { get; set; } = null!;
 
         /// <summary>
         /// (Updatable) The value type of the user password.

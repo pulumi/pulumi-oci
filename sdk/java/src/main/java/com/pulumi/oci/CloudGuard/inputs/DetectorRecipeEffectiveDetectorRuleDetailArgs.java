@@ -19,14 +19,14 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailArgs extends com.pul
     public static final DetectorRecipeEffectiveDetectorRuleDetailArgs Empty = new DetectorRecipeEffectiveDetectorRuleDetailArgs();
 
     /**
-     * (Updatable)
+     * (Updatable) Base condition object
      * 
      */
     @Import(name="condition")
     private @Nullable Output<String> condition;
 
     /**
-     * @return (Updatable)
+     * @return (Updatable) Base condition object
      * 
      */
     public Optional<Output<String>> condition() {
@@ -138,7 +138,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailArgs extends com.pul
         }
 
         /**
-         * @param condition (Updatable)
+         * @param condition (Updatable) Base condition object
          * 
          * @return builder
          * 
@@ -149,7 +149,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailArgs extends com.pul
         }
 
         /**
-         * @param condition (Updatable)
+         * @param condition (Updatable) Base condition object
          * 
          * @return builder
          * 

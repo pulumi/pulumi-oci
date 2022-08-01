@@ -30,6 +30,7 @@ import (
 // 			CompartmentId: _var.Compartment_id,
 // 			ClusterId:     pulumi.StringRef(oci_containerengine_cluster.Test_cluster.Id),
 // 			Name:          pulumi.StringRef(_var.Node_pool_name),
+// 			States:        _var.Node_pool_state,
 // 		}, nil)
 // 		if err != nil {
 // 			return err
@@ -56,6 +57,8 @@ type GetNodePoolsArgs struct {
 	Filters       []GetNodePoolsFilter `pulumi:"filters"`
 	// The name to filter on.
 	Name *string `pulumi:"name"`
+	// A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
+	States []string `pulumi:"states"`
 }
 
 // A collection of values returned by getNodePools.
@@ -71,6 +74,8 @@ type GetNodePoolsResult struct {
 	Name *string `pulumi:"name"`
 	// The list of node_pools.
 	NodePools []GetNodePoolsNodePool `pulumi:"nodePools"`
+	// The state of the nodepool.
+	States []string `pulumi:"states"`
 }
 
 func GetNodePoolsOutput(ctx *pulumi.Context, args GetNodePoolsOutputArgs, opts ...pulumi.InvokeOption) GetNodePoolsResultOutput {
@@ -95,6 +100,8 @@ type GetNodePoolsOutputArgs struct {
 	Filters       GetNodePoolsFilterArrayInput `pulumi:"filters"`
 	// The name to filter on.
 	Name pulumi.StringPtrInput `pulumi:"name"`
+	// A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
+	States pulumi.StringArrayInput `pulumi:"states"`
 }
 
 func (GetNodePoolsOutputArgs) ElementType() reflect.Type {
@@ -143,6 +150,11 @@ func (o GetNodePoolsResultOutput) Name() pulumi.StringPtrOutput {
 // The list of node_pools.
 func (o GetNodePoolsResultOutput) NodePools() GetNodePoolsNodePoolArrayOutput {
 	return o.ApplyT(func(v GetNodePoolsResult) []GetNodePoolsNodePool { return v.NodePools }).(GetNodePoolsNodePoolArrayOutput)
+}
+
+// The state of the nodepool.
+func (o GetNodePoolsResultOutput) States() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNodePoolsResult) []string { return v.States }).(pulumi.StringArrayOutput)
 }
 
 func init() {

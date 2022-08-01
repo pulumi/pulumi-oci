@@ -76,7 +76,7 @@ namespace Pulumi.Oci.ManagementAgent.Outputs
         /// </summary>
         public readonly string PlatformName;
         /// <summary>
-        /// Filter to return only results having the particular platform type.
+        /// Array of PlatformTypes to return only results having the particular platform types. Example: ["LINUX"]
         /// </summary>
         public readonly string PlatformType;
         /// <summary>
@@ -108,7 +108,7 @@ namespace Pulumi.Oci.ManagementAgent.Outputs
         /// </summary>
         public readonly string TimeUpdated;
         /// <summary>
-        /// Filter to return only Management Agents having the particular agent version.
+        /// Array of versions to return only Management Agents having the particular agent versions. Example: ["202020.0101","210201.0513"]
         /// </summary>
         public readonly string Version;
 

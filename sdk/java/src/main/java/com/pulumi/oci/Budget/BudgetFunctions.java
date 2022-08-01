@@ -26,7 +26,7 @@ public final class BudgetFunctions {
     /**
      * This data source provides details about a specific Alert Rule resource in Oracle Cloud Infrastructure Budget service.
      * 
-     * Gets an Alert Rule for a specified Budget.
+     * Gets an Alert Rule for a specified budget.
      * 
      * ## Example Usage
      * 
@@ -37,7 +37,7 @@ public final class BudgetFunctions {
     /**
      * This data source provides details about a specific Alert Rule resource in Oracle Cloud Infrastructure Budget service.
      * 
-     * Gets an Alert Rule for a specified Budget.
+     * Gets an Alert Rule for a specified budget.
      * 
      * ## Example Usage
      * 
@@ -48,7 +48,7 @@ public final class BudgetFunctions {
     /**
      * This data source provides details about a specific Alert Rule resource in Oracle Cloud Infrastructure Budget service.
      * 
-     * Gets an Alert Rule for a specified Budget.
+     * Gets an Alert Rule for a specified budget.
      * 
      * ## Example Usage
      * 
@@ -59,7 +59,7 @@ public final class BudgetFunctions {
     /**
      * This data source provides details about a specific Alert Rule resource in Oracle Cloud Infrastructure Budget service.
      * 
-     * Gets an Alert Rule for a specified Budget.
+     * Gets an Alert Rule for a specified budget.
      * 
      * ## Example Usage
      * 
@@ -70,7 +70,7 @@ public final class BudgetFunctions {
     /**
      * This data source provides the list of Alert Rules in Oracle Cloud Infrastructure Budget service.
      * 
-     * Returns a list of Alert Rules for a specified Budget.
+     * Returns a list of Alert Rules for a specified budget.
      * 
      * ## Example Usage
      * 
@@ -81,7 +81,7 @@ public final class BudgetFunctions {
     /**
      * This data source provides the list of Alert Rules in Oracle Cloud Infrastructure Budget service.
      * 
-     * Returns a list of Alert Rules for a specified Budget.
+     * Returns a list of Alert Rules for a specified budget.
      * 
      * ## Example Usage
      * 
@@ -92,7 +92,7 @@ public final class BudgetFunctions {
     /**
      * This data source provides the list of Alert Rules in Oracle Cloud Infrastructure Budget service.
      * 
-     * Returns a list of Alert Rules for a specified Budget.
+     * Returns a list of Alert Rules for a specified budget.
      * 
      * ## Example Usage
      * 
@@ -103,7 +103,7 @@ public final class BudgetFunctions {
     /**
      * This data source provides the list of Alert Rules in Oracle Cloud Infrastructure Budget service.
      * 
-     * Returns a list of Alert Rules for a specified Budget.
+     * Returns a list of Alert Rules for a specified budget.
      * 
      * ## Example Usage
      * 
@@ -114,7 +114,7 @@ public final class BudgetFunctions {
     /**
      * This data source provides details about a specific Budget resource in Oracle Cloud Infrastructure Budget service.
      * 
-     * Gets a Budget by identifier
+     * Gets a budget by the identifier.
      * 
      * ## Example Usage
      * 
@@ -125,7 +125,7 @@ public final class BudgetFunctions {
     /**
      * This data source provides details about a specific Budget resource in Oracle Cloud Infrastructure Budget service.
      * 
-     * Gets a Budget by identifier
+     * Gets a budget by the identifier.
      * 
      * ## Example Usage
      * 
@@ -136,7 +136,7 @@ public final class BudgetFunctions {
     /**
      * This data source provides details about a specific Budget resource in Oracle Cloud Infrastructure Budget service.
      * 
-     * Gets a Budget by identifier
+     * Gets a budget by the identifier.
      * 
      * ## Example Usage
      * 
@@ -147,7 +147,7 @@ public final class BudgetFunctions {
     /**
      * This data source provides details about a specific Budget resource in Oracle Cloud Infrastructure Budget service.
      * 
-     * Gets a Budget by identifier
+     * Gets a budget by the identifier.
      * 
      * ## Example Usage
      * 
@@ -158,16 +158,14 @@ public final class BudgetFunctions {
     /**
      * This data source provides the list of Budgets in Oracle Cloud Infrastructure Budget service.
      * 
-     * Gets a list of Budgets in a compartment.
+     * Gets a list of budgets in a compartment.
      * 
-     * By default, ListBudgets returns budgets of &#39;COMPARTMENT&#39; target type and the budget records with only ONE target compartment OCID.
+     * By default, ListBudgets returns budgets of the &#39;COMPARTMENT&#39; target type, and the budget records with only one target compartment OCID.
      * 
-     * To list ALL budgets, set the targetType query parameter to ALL.
-     * Example:
-     *   &#39;targetType=ALL&#39;
+     * To list all budgets, set the targetType query parameter to ALL (for example: &#39;targetType=ALL&#39;).
      * 
-     * Additional targetTypes would be available in future releases. Clients should ignore new targetType
-     * or upgrade to latest version of client SDK to handle new targetType.
+     * Additional targetTypes would be available in future releases. Clients should ignore new targetTypes,
+     * or upgrade to the latest version of the client SDK to handle new targetTypes.
      * 
      * ## Example Usage
      * 
@@ -178,16 +176,14 @@ public final class BudgetFunctions {
     /**
      * This data source provides the list of Budgets in Oracle Cloud Infrastructure Budget service.
      * 
-     * Gets a list of Budgets in a compartment.
+     * Gets a list of budgets in a compartment.
      * 
-     * By default, ListBudgets returns budgets of &#39;COMPARTMENT&#39; target type and the budget records with only ONE target compartment OCID.
+     * By default, ListBudgets returns budgets of the &#39;COMPARTMENT&#39; target type, and the budget records with only one target compartment OCID.
      * 
-     * To list ALL budgets, set the targetType query parameter to ALL.
-     * Example:
-     *   &#39;targetType=ALL&#39;
+     * To list all budgets, set the targetType query parameter to ALL (for example: &#39;targetType=ALL&#39;).
      * 
-     * Additional targetTypes would be available in future releases. Clients should ignore new targetType
-     * or upgrade to latest version of client SDK to handle new targetType.
+     * Additional targetTypes would be available in future releases. Clients should ignore new targetTypes,
+     * or upgrade to the latest version of the client SDK to handle new targetTypes.
      * 
      * ## Example Usage
      * 
@@ -198,16 +194,14 @@ public final class BudgetFunctions {
     /**
      * This data source provides the list of Budgets in Oracle Cloud Infrastructure Budget service.
      * 
-     * Gets a list of Budgets in a compartment.
+     * Gets a list of budgets in a compartment.
      * 
-     * By default, ListBudgets returns budgets of &#39;COMPARTMENT&#39; target type and the budget records with only ONE target compartment OCID.
+     * By default, ListBudgets returns budgets of the &#39;COMPARTMENT&#39; target type, and the budget records with only one target compartment OCID.
      * 
-     * To list ALL budgets, set the targetType query parameter to ALL.
-     * Example:
-     *   &#39;targetType=ALL&#39;
+     * To list all budgets, set the targetType query parameter to ALL (for example: &#39;targetType=ALL&#39;).
      * 
-     * Additional targetTypes would be available in future releases. Clients should ignore new targetType
-     * or upgrade to latest version of client SDK to handle new targetType.
+     * Additional targetTypes would be available in future releases. Clients should ignore new targetTypes,
+     * or upgrade to the latest version of the client SDK to handle new targetTypes.
      * 
      * ## Example Usage
      * 
@@ -218,16 +212,14 @@ public final class BudgetFunctions {
     /**
      * This data source provides the list of Budgets in Oracle Cloud Infrastructure Budget service.
      * 
-     * Gets a list of Budgets in a compartment.
+     * Gets a list of budgets in a compartment.
      * 
-     * By default, ListBudgets returns budgets of &#39;COMPARTMENT&#39; target type and the budget records with only ONE target compartment OCID.
+     * By default, ListBudgets returns budgets of the &#39;COMPARTMENT&#39; target type, and the budget records with only one target compartment OCID.
      * 
-     * To list ALL budgets, set the targetType query parameter to ALL.
-     * Example:
-     *   &#39;targetType=ALL&#39;
+     * To list all budgets, set the targetType query parameter to ALL (for example: &#39;targetType=ALL&#39;).
      * 
-     * Additional targetTypes would be available in future releases. Clients should ignore new targetType
-     * or upgrade to latest version of client SDK to handle new targetType.
+     * Additional targetTypes would be available in future releases. Clients should ignore new targetTypes,
+     * or upgrade to the latest version of the client SDK to handle new targetTypes.
      * 
      * ## Example Usage
      * 

@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -17,7 +18,7 @@ public final class IpsecConnectionTunnelManagementPhaseOneDetail {
     private final @Nullable String customEncryptionAlgorithm;
     private final @Nullable Boolean isCustomPhaseOneConfig;
     private final @Nullable Boolean isIkeEstablished;
-    private final @Nullable String lifetime;
+    private final @Nullable Integer lifetime;
     private final @Nullable String negotiatedAuthenticationAlgorithm;
     private final @Nullable String negotiatedDhGroup;
     private final @Nullable String negotiatedEncryptionAlgorithm;
@@ -31,7 +32,7 @@ public final class IpsecConnectionTunnelManagementPhaseOneDetail {
         @CustomType.Parameter("customEncryptionAlgorithm") @Nullable String customEncryptionAlgorithm,
         @CustomType.Parameter("isCustomPhaseOneConfig") @Nullable Boolean isCustomPhaseOneConfig,
         @CustomType.Parameter("isIkeEstablished") @Nullable Boolean isIkeEstablished,
-        @CustomType.Parameter("lifetime") @Nullable String lifetime,
+        @CustomType.Parameter("lifetime") @Nullable Integer lifetime,
         @CustomType.Parameter("negotiatedAuthenticationAlgorithm") @Nullable String negotiatedAuthenticationAlgorithm,
         @CustomType.Parameter("negotiatedDhGroup") @Nullable String negotiatedDhGroup,
         @CustomType.Parameter("negotiatedEncryptionAlgorithm") @Nullable String negotiatedEncryptionAlgorithm,
@@ -65,7 +66,7 @@ public final class IpsecConnectionTunnelManagementPhaseOneDetail {
     public Optional<Boolean> isIkeEstablished() {
         return Optional.ofNullable(this.isIkeEstablished);
     }
-    public Optional<String> lifetime() {
+    public Optional<Integer> lifetime() {
         return Optional.ofNullable(this.lifetime);
     }
     public Optional<String> negotiatedAuthenticationAlgorithm() {
@@ -98,7 +99,7 @@ public final class IpsecConnectionTunnelManagementPhaseOneDetail {
         private @Nullable String customEncryptionAlgorithm;
         private @Nullable Boolean isCustomPhaseOneConfig;
         private @Nullable Boolean isIkeEstablished;
-        private @Nullable String lifetime;
+        private @Nullable Integer lifetime;
         private @Nullable String negotiatedAuthenticationAlgorithm;
         private @Nullable String negotiatedDhGroup;
         private @Nullable String negotiatedEncryptionAlgorithm;
@@ -144,7 +145,7 @@ public final class IpsecConnectionTunnelManagementPhaseOneDetail {
             this.isIkeEstablished = isIkeEstablished;
             return this;
         }
-        public Builder lifetime(@Nullable String lifetime) {
+        public Builder lifetime(@Nullable Integer lifetime) {
             this.lifetime = lifetime;
             return this;
         }

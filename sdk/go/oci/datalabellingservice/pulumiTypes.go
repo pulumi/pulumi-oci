@@ -11,8 +11,10 @@ import (
 )
 
 type DatasetDatasetFormatDetails struct {
-	// Format type. DOCUMENT format is for record contents that are PDFs or TIFFs. IMAGE format is for record contents that are JPEGs or PNGs. TEXT format is for record contents that are txt files.
+	// It defines the format type of text files.
 	FormatType string `pulumi:"formatType"`
+	// Metadata for files with text content.
+	TextFileTypeMetadata *DatasetDatasetFormatDetailsTextFileTypeMetadata `pulumi:"textFileTypeMetadata"`
 }
 
 // DatasetDatasetFormatDetailsInput is an input type that accepts DatasetDatasetFormatDetailsArgs and DatasetDatasetFormatDetailsOutput values.
@@ -27,8 +29,10 @@ type DatasetDatasetFormatDetailsInput interface {
 }
 
 type DatasetDatasetFormatDetailsArgs struct {
-	// Format type. DOCUMENT format is for record contents that are PDFs or TIFFs. IMAGE format is for record contents that are JPEGs or PNGs. TEXT format is for record contents that are txt files.
+	// It defines the format type of text files.
 	FormatType pulumi.StringInput `pulumi:"formatType"`
+	// Metadata for files with text content.
+	TextFileTypeMetadata DatasetDatasetFormatDetailsTextFileTypeMetadataPtrInput `pulumi:"textFileTypeMetadata"`
 }
 
 func (DatasetDatasetFormatDetailsArgs) ElementType() reflect.Type {
@@ -108,9 +112,16 @@ func (o DatasetDatasetFormatDetailsOutput) ToDatasetDatasetFormatDetailsPtrOutpu
 	}).(DatasetDatasetFormatDetailsPtrOutput)
 }
 
-// Format type. DOCUMENT format is for record contents that are PDFs or TIFFs. IMAGE format is for record contents that are JPEGs or PNGs. TEXT format is for record contents that are txt files.
+// It defines the format type of text files.
 func (o DatasetDatasetFormatDetailsOutput) FormatType() pulumi.StringOutput {
 	return o.ApplyT(func(v DatasetDatasetFormatDetails) string { return v.FormatType }).(pulumi.StringOutput)
+}
+
+// Metadata for files with text content.
+func (o DatasetDatasetFormatDetailsOutput) TextFileTypeMetadata() DatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutput {
+	return o.ApplyT(func(v DatasetDatasetFormatDetails) *DatasetDatasetFormatDetailsTextFileTypeMetadata {
+		return v.TextFileTypeMetadata
+	}).(DatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutput)
 }
 
 type DatasetDatasetFormatDetailsPtrOutput struct{ *pulumi.OutputState }
@@ -137,7 +148,7 @@ func (o DatasetDatasetFormatDetailsPtrOutput) Elem() DatasetDatasetFormatDetails
 	}).(DatasetDatasetFormatDetailsOutput)
 }
 
-// Format type. DOCUMENT format is for record contents that are PDFs or TIFFs. IMAGE format is for record contents that are JPEGs or PNGs. TEXT format is for record contents that are txt files.
+// It defines the format type of text files.
 func (o DatasetDatasetFormatDetailsPtrOutput) FormatType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DatasetDatasetFormatDetails) *string {
 		if v == nil {
@@ -147,14 +158,256 @@ func (o DatasetDatasetFormatDetailsPtrOutput) FormatType() pulumi.StringPtrOutpu
 	}).(pulumi.StringPtrOutput)
 }
 
+// Metadata for files with text content.
+func (o DatasetDatasetFormatDetailsPtrOutput) TextFileTypeMetadata() DatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutput {
+	return o.ApplyT(func(v *DatasetDatasetFormatDetails) *DatasetDatasetFormatDetailsTextFileTypeMetadata {
+		if v == nil {
+			return nil
+		}
+		return v.TextFileTypeMetadata
+	}).(DatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutput)
+}
+
+type DatasetDatasetFormatDetailsTextFileTypeMetadata struct {
+	// A column delimiter
+	ColumnDelimiter *string `pulumi:"columnDelimiter"`
+	// The index of a selected column. This is a zero-based index.
+	ColumnIndex int `pulumi:"columnIndex"`
+	// The name of a selected column.
+	ColumnName *string `pulumi:"columnName"`
+	// An escape character.
+	EscapeCharacter *string `pulumi:"escapeCharacter"`
+	// It defines the format type of text files.
+	FormatType string `pulumi:"formatType"`
+	// A line delimiter.
+	LineDelimiter *string `pulumi:"lineDelimiter"`
+}
+
+// DatasetDatasetFormatDetailsTextFileTypeMetadataInput is an input type that accepts DatasetDatasetFormatDetailsTextFileTypeMetadataArgs and DatasetDatasetFormatDetailsTextFileTypeMetadataOutput values.
+// You can construct a concrete instance of `DatasetDatasetFormatDetailsTextFileTypeMetadataInput` via:
+//
+//          DatasetDatasetFormatDetailsTextFileTypeMetadataArgs{...}
+type DatasetDatasetFormatDetailsTextFileTypeMetadataInput interface {
+	pulumi.Input
+
+	ToDatasetDatasetFormatDetailsTextFileTypeMetadataOutput() DatasetDatasetFormatDetailsTextFileTypeMetadataOutput
+	ToDatasetDatasetFormatDetailsTextFileTypeMetadataOutputWithContext(context.Context) DatasetDatasetFormatDetailsTextFileTypeMetadataOutput
+}
+
+type DatasetDatasetFormatDetailsTextFileTypeMetadataArgs struct {
+	// A column delimiter
+	ColumnDelimiter pulumi.StringPtrInput `pulumi:"columnDelimiter"`
+	// The index of a selected column. This is a zero-based index.
+	ColumnIndex pulumi.IntInput `pulumi:"columnIndex"`
+	// The name of a selected column.
+	ColumnName pulumi.StringPtrInput `pulumi:"columnName"`
+	// An escape character.
+	EscapeCharacter pulumi.StringPtrInput `pulumi:"escapeCharacter"`
+	// It defines the format type of text files.
+	FormatType pulumi.StringInput `pulumi:"formatType"`
+	// A line delimiter.
+	LineDelimiter pulumi.StringPtrInput `pulumi:"lineDelimiter"`
+}
+
+func (DatasetDatasetFormatDetailsTextFileTypeMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatasetDatasetFormatDetailsTextFileTypeMetadata)(nil)).Elem()
+}
+
+func (i DatasetDatasetFormatDetailsTextFileTypeMetadataArgs) ToDatasetDatasetFormatDetailsTextFileTypeMetadataOutput() DatasetDatasetFormatDetailsTextFileTypeMetadataOutput {
+	return i.ToDatasetDatasetFormatDetailsTextFileTypeMetadataOutputWithContext(context.Background())
+}
+
+func (i DatasetDatasetFormatDetailsTextFileTypeMetadataArgs) ToDatasetDatasetFormatDetailsTextFileTypeMetadataOutputWithContext(ctx context.Context) DatasetDatasetFormatDetailsTextFileTypeMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatasetDatasetFormatDetailsTextFileTypeMetadataOutput)
+}
+
+func (i DatasetDatasetFormatDetailsTextFileTypeMetadataArgs) ToDatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutput() DatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutput {
+	return i.ToDatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutputWithContext(context.Background())
+}
+
+func (i DatasetDatasetFormatDetailsTextFileTypeMetadataArgs) ToDatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutputWithContext(ctx context.Context) DatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatasetDatasetFormatDetailsTextFileTypeMetadataOutput).ToDatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutputWithContext(ctx)
+}
+
+// DatasetDatasetFormatDetailsTextFileTypeMetadataPtrInput is an input type that accepts DatasetDatasetFormatDetailsTextFileTypeMetadataArgs, DatasetDatasetFormatDetailsTextFileTypeMetadataPtr and DatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutput values.
+// You can construct a concrete instance of `DatasetDatasetFormatDetailsTextFileTypeMetadataPtrInput` via:
+//
+//          DatasetDatasetFormatDetailsTextFileTypeMetadataArgs{...}
+//
+//  or:
+//
+//          nil
+type DatasetDatasetFormatDetailsTextFileTypeMetadataPtrInput interface {
+	pulumi.Input
+
+	ToDatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutput() DatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutput
+	ToDatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutputWithContext(context.Context) DatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutput
+}
+
+type datasetDatasetFormatDetailsTextFileTypeMetadataPtrType DatasetDatasetFormatDetailsTextFileTypeMetadataArgs
+
+func DatasetDatasetFormatDetailsTextFileTypeMetadataPtr(v *DatasetDatasetFormatDetailsTextFileTypeMetadataArgs) DatasetDatasetFormatDetailsTextFileTypeMetadataPtrInput {
+	return (*datasetDatasetFormatDetailsTextFileTypeMetadataPtrType)(v)
+}
+
+func (*datasetDatasetFormatDetailsTextFileTypeMetadataPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DatasetDatasetFormatDetailsTextFileTypeMetadata)(nil)).Elem()
+}
+
+func (i *datasetDatasetFormatDetailsTextFileTypeMetadataPtrType) ToDatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutput() DatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutput {
+	return i.ToDatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutputWithContext(context.Background())
+}
+
+func (i *datasetDatasetFormatDetailsTextFileTypeMetadataPtrType) ToDatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutputWithContext(ctx context.Context) DatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutput)
+}
+
+type DatasetDatasetFormatDetailsTextFileTypeMetadataOutput struct{ *pulumi.OutputState }
+
+func (DatasetDatasetFormatDetailsTextFileTypeMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatasetDatasetFormatDetailsTextFileTypeMetadata)(nil)).Elem()
+}
+
+func (o DatasetDatasetFormatDetailsTextFileTypeMetadataOutput) ToDatasetDatasetFormatDetailsTextFileTypeMetadataOutput() DatasetDatasetFormatDetailsTextFileTypeMetadataOutput {
+	return o
+}
+
+func (o DatasetDatasetFormatDetailsTextFileTypeMetadataOutput) ToDatasetDatasetFormatDetailsTextFileTypeMetadataOutputWithContext(ctx context.Context) DatasetDatasetFormatDetailsTextFileTypeMetadataOutput {
+	return o
+}
+
+func (o DatasetDatasetFormatDetailsTextFileTypeMetadataOutput) ToDatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutput() DatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutput {
+	return o.ToDatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutputWithContext(context.Background())
+}
+
+func (o DatasetDatasetFormatDetailsTextFileTypeMetadataOutput) ToDatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutputWithContext(ctx context.Context) DatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DatasetDatasetFormatDetailsTextFileTypeMetadata) *DatasetDatasetFormatDetailsTextFileTypeMetadata {
+		return &v
+	}).(DatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutput)
+}
+
+// A column delimiter
+func (o DatasetDatasetFormatDetailsTextFileTypeMetadataOutput) ColumnDelimiter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatasetDatasetFormatDetailsTextFileTypeMetadata) *string { return v.ColumnDelimiter }).(pulumi.StringPtrOutput)
+}
+
+// The index of a selected column. This is a zero-based index.
+func (o DatasetDatasetFormatDetailsTextFileTypeMetadataOutput) ColumnIndex() pulumi.IntOutput {
+	return o.ApplyT(func(v DatasetDatasetFormatDetailsTextFileTypeMetadata) int { return v.ColumnIndex }).(pulumi.IntOutput)
+}
+
+// The name of a selected column.
+func (o DatasetDatasetFormatDetailsTextFileTypeMetadataOutput) ColumnName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatasetDatasetFormatDetailsTextFileTypeMetadata) *string { return v.ColumnName }).(pulumi.StringPtrOutput)
+}
+
+// An escape character.
+func (o DatasetDatasetFormatDetailsTextFileTypeMetadataOutput) EscapeCharacter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatasetDatasetFormatDetailsTextFileTypeMetadata) *string { return v.EscapeCharacter }).(pulumi.StringPtrOutput)
+}
+
+// It defines the format type of text files.
+func (o DatasetDatasetFormatDetailsTextFileTypeMetadataOutput) FormatType() pulumi.StringOutput {
+	return o.ApplyT(func(v DatasetDatasetFormatDetailsTextFileTypeMetadata) string { return v.FormatType }).(pulumi.StringOutput)
+}
+
+// A line delimiter.
+func (o DatasetDatasetFormatDetailsTextFileTypeMetadataOutput) LineDelimiter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatasetDatasetFormatDetailsTextFileTypeMetadata) *string { return v.LineDelimiter }).(pulumi.StringPtrOutput)
+}
+
+type DatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutput struct{ *pulumi.OutputState }
+
+func (DatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DatasetDatasetFormatDetailsTextFileTypeMetadata)(nil)).Elem()
+}
+
+func (o DatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutput) ToDatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutput() DatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutput {
+	return o
+}
+
+func (o DatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutput) ToDatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutputWithContext(ctx context.Context) DatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutput {
+	return o
+}
+
+func (o DatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutput) Elem() DatasetDatasetFormatDetailsTextFileTypeMetadataOutput {
+	return o.ApplyT(func(v *DatasetDatasetFormatDetailsTextFileTypeMetadata) DatasetDatasetFormatDetailsTextFileTypeMetadata {
+		if v != nil {
+			return *v
+		}
+		var ret DatasetDatasetFormatDetailsTextFileTypeMetadata
+		return ret
+	}).(DatasetDatasetFormatDetailsTextFileTypeMetadataOutput)
+}
+
+// A column delimiter
+func (o DatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutput) ColumnDelimiter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatasetDatasetFormatDetailsTextFileTypeMetadata) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ColumnDelimiter
+	}).(pulumi.StringPtrOutput)
+}
+
+// The index of a selected column. This is a zero-based index.
+func (o DatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutput) ColumnIndex() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DatasetDatasetFormatDetailsTextFileTypeMetadata) *int {
+		if v == nil {
+			return nil
+		}
+		return &v.ColumnIndex
+	}).(pulumi.IntPtrOutput)
+}
+
+// The name of a selected column.
+func (o DatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutput) ColumnName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatasetDatasetFormatDetailsTextFileTypeMetadata) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ColumnName
+	}).(pulumi.StringPtrOutput)
+}
+
+// An escape character.
+func (o DatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutput) EscapeCharacter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatasetDatasetFormatDetailsTextFileTypeMetadata) *string {
+		if v == nil {
+			return nil
+		}
+		return v.EscapeCharacter
+	}).(pulumi.StringPtrOutput)
+}
+
+// It defines the format type of text files.
+func (o DatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutput) FormatType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatasetDatasetFormatDetailsTextFileTypeMetadata) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.FormatType
+	}).(pulumi.StringPtrOutput)
+}
+
+// A line delimiter.
+func (o DatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutput) LineDelimiter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatasetDatasetFormatDetailsTextFileTypeMetadata) *string {
+		if v == nil {
+			return nil
+		}
+		return v.LineDelimiter
+	}).(pulumi.StringPtrOutput)
+}
+
 type DatasetDatasetSourceDetails struct {
-	// The object storage bucket that contains the dataset data source
+	// The object storage bucket that contains the dataset data source.
 	Bucket string `pulumi:"bucket"`
-	// Namespace of the bucket that contains the dataset data source
+	// The namespace of the bucket that contains the dataset data source.
 	Namespace string `pulumi:"namespace"`
-	// A common path prefix shared by the objects that make up the dataset. Records will not be generated for objects whose name match exactly with prefix.
+	// A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
 	Prefix *string `pulumi:"prefix"`
-	// Source type.  OBJECT_STORAGE allows the customer to describe where the dataset is in object storage.
+	// The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
 	SourceType string `pulumi:"sourceType"`
 }
 
@@ -170,13 +423,13 @@ type DatasetDatasetSourceDetailsInput interface {
 }
 
 type DatasetDatasetSourceDetailsArgs struct {
-	// The object storage bucket that contains the dataset data source
+	// The object storage bucket that contains the dataset data source.
 	Bucket pulumi.StringInput `pulumi:"bucket"`
-	// Namespace of the bucket that contains the dataset data source
+	// The namespace of the bucket that contains the dataset data source.
 	Namespace pulumi.StringInput `pulumi:"namespace"`
-	// A common path prefix shared by the objects that make up the dataset. Records will not be generated for objects whose name match exactly with prefix.
+	// A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
 	Prefix pulumi.StringPtrInput `pulumi:"prefix"`
-	// Source type.  OBJECT_STORAGE allows the customer to describe where the dataset is in object storage.
+	// The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
 	SourceType pulumi.StringInput `pulumi:"sourceType"`
 }
 
@@ -257,22 +510,22 @@ func (o DatasetDatasetSourceDetailsOutput) ToDatasetDatasetSourceDetailsPtrOutpu
 	}).(DatasetDatasetSourceDetailsPtrOutput)
 }
 
-// The object storage bucket that contains the dataset data source
+// The object storage bucket that contains the dataset data source.
 func (o DatasetDatasetSourceDetailsOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v DatasetDatasetSourceDetails) string { return v.Bucket }).(pulumi.StringOutput)
 }
 
-// Namespace of the bucket that contains the dataset data source
+// The namespace of the bucket that contains the dataset data source.
 func (o DatasetDatasetSourceDetailsOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v DatasetDatasetSourceDetails) string { return v.Namespace }).(pulumi.StringOutput)
 }
 
-// A common path prefix shared by the objects that make up the dataset. Records will not be generated for objects whose name match exactly with prefix.
+// A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
 func (o DatasetDatasetSourceDetailsOutput) Prefix() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DatasetDatasetSourceDetails) *string { return v.Prefix }).(pulumi.StringPtrOutput)
 }
 
-// Source type.  OBJECT_STORAGE allows the customer to describe where the dataset is in object storage.
+// The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
 func (o DatasetDatasetSourceDetailsOutput) SourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v DatasetDatasetSourceDetails) string { return v.SourceType }).(pulumi.StringOutput)
 }
@@ -301,7 +554,7 @@ func (o DatasetDatasetSourceDetailsPtrOutput) Elem() DatasetDatasetSourceDetails
 	}).(DatasetDatasetSourceDetailsOutput)
 }
 
-// The object storage bucket that contains the dataset data source
+// The object storage bucket that contains the dataset data source.
 func (o DatasetDatasetSourceDetailsPtrOutput) Bucket() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DatasetDatasetSourceDetails) *string {
 		if v == nil {
@@ -311,7 +564,7 @@ func (o DatasetDatasetSourceDetailsPtrOutput) Bucket() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// Namespace of the bucket that contains the dataset data source
+// The namespace of the bucket that contains the dataset data source.
 func (o DatasetDatasetSourceDetailsPtrOutput) Namespace() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DatasetDatasetSourceDetails) *string {
 		if v == nil {
@@ -321,7 +574,7 @@ func (o DatasetDatasetSourceDetailsPtrOutput) Namespace() pulumi.StringPtrOutput
 	}).(pulumi.StringPtrOutput)
 }
 
-// A common path prefix shared by the objects that make up the dataset. Records will not be generated for objects whose name match exactly with prefix.
+// A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
 func (o DatasetDatasetSourceDetailsPtrOutput) Prefix() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DatasetDatasetSourceDetails) *string {
 		if v == nil {
@@ -331,7 +584,7 @@ func (o DatasetDatasetSourceDetailsPtrOutput) Prefix() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// Source type.  OBJECT_STORAGE allows the customer to describe where the dataset is in object storage.
+// The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
 func (o DatasetDatasetSourceDetailsPtrOutput) SourceType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DatasetDatasetSourceDetails) *string {
 		if v == nil {
@@ -460,7 +713,7 @@ func (o DatasetInitialRecordGenerationConfigurationPtrOutput) Elem() DatasetInit
 }
 
 type DatasetLabelSet struct {
-	// An ordered collection of Labels that are unique by name.
+	// An ordered collection of labels that are unique by name.
 	Items []DatasetLabelSetItem `pulumi:"items"`
 }
 
@@ -476,7 +729,7 @@ type DatasetLabelSetInput interface {
 }
 
 type DatasetLabelSetArgs struct {
-	// An ordered collection of Labels that are unique by name.
+	// An ordered collection of labels that are unique by name.
 	Items DatasetLabelSetItemArrayInput `pulumi:"items"`
 }
 
@@ -557,7 +810,7 @@ func (o DatasetLabelSetOutput) ToDatasetLabelSetPtrOutputWithContext(ctx context
 	}).(DatasetLabelSetPtrOutput)
 }
 
-// An ordered collection of Labels that are unique by name.
+// An ordered collection of labels that are unique by name.
 func (o DatasetLabelSetOutput) Items() DatasetLabelSetItemArrayOutput {
 	return o.ApplyT(func(v DatasetLabelSet) []DatasetLabelSetItem { return v.Items }).(DatasetLabelSetItemArrayOutput)
 }
@@ -586,7 +839,7 @@ func (o DatasetLabelSetPtrOutput) Elem() DatasetLabelSetOutput {
 	}).(DatasetLabelSetOutput)
 }
 
-// An ordered collection of Labels that are unique by name.
+// An ordered collection of labels that are unique by name.
 func (o DatasetLabelSetPtrOutput) Items() DatasetLabelSetItemArrayOutput {
 	return o.ApplyT(func(v *DatasetLabelSet) []DatasetLabelSetItem {
 		if v == nil {
@@ -1096,8 +1349,10 @@ func (o GetAnnotationFormatsFilterArrayOutput) Index(i pulumi.IntInput) GetAnnot
 }
 
 type GetDatasetDatasetFormatDetail struct {
-	// Format type. DOCUMENT format is for record contents that are PDFs or TIFFs. IMAGE format is for record contents that are JPEGs or PNGs. TEXT format is for record contents that are txt files.
+	// It defines the format type of text files.
 	FormatType string `pulumi:"formatType"`
+	// Metadata for files with text content.
+	TextFileTypeMetadatas []GetDatasetDatasetFormatDetailTextFileTypeMetadata `pulumi:"textFileTypeMetadatas"`
 }
 
 // GetDatasetDatasetFormatDetailInput is an input type that accepts GetDatasetDatasetFormatDetailArgs and GetDatasetDatasetFormatDetailOutput values.
@@ -1112,8 +1367,10 @@ type GetDatasetDatasetFormatDetailInput interface {
 }
 
 type GetDatasetDatasetFormatDetailArgs struct {
-	// Format type. DOCUMENT format is for record contents that are PDFs or TIFFs. IMAGE format is for record contents that are JPEGs or PNGs. TEXT format is for record contents that are txt files.
+	// It defines the format type of text files.
 	FormatType pulumi.StringInput `pulumi:"formatType"`
+	// Metadata for files with text content.
+	TextFileTypeMetadatas GetDatasetDatasetFormatDetailTextFileTypeMetadataArrayInput `pulumi:"textFileTypeMetadatas"`
 }
 
 func (GetDatasetDatasetFormatDetailArgs) ElementType() reflect.Type {
@@ -1167,9 +1424,16 @@ func (o GetDatasetDatasetFormatDetailOutput) ToGetDatasetDatasetFormatDetailOutp
 	return o
 }
 
-// Format type. DOCUMENT format is for record contents that are PDFs or TIFFs. IMAGE format is for record contents that are JPEGs or PNGs. TEXT format is for record contents that are txt files.
+// It defines the format type of text files.
 func (o GetDatasetDatasetFormatDetailOutput) FormatType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatasetDatasetFormatDetail) string { return v.FormatType }).(pulumi.StringOutput)
+}
+
+// Metadata for files with text content.
+func (o GetDatasetDatasetFormatDetailOutput) TextFileTypeMetadatas() GetDatasetDatasetFormatDetailTextFileTypeMetadataArrayOutput {
+	return o.ApplyT(func(v GetDatasetDatasetFormatDetail) []GetDatasetDatasetFormatDetailTextFileTypeMetadata {
+		return v.TextFileTypeMetadatas
+	}).(GetDatasetDatasetFormatDetailTextFileTypeMetadataArrayOutput)
 }
 
 type GetDatasetDatasetFormatDetailArrayOutput struct{ *pulumi.OutputState }
@@ -1192,14 +1456,156 @@ func (o GetDatasetDatasetFormatDetailArrayOutput) Index(i pulumi.IntInput) GetDa
 	}).(GetDatasetDatasetFormatDetailOutput)
 }
 
+type GetDatasetDatasetFormatDetailTextFileTypeMetadata struct {
+	// A column delimiter
+	ColumnDelimiter string `pulumi:"columnDelimiter"`
+	// The index of a selected column. This is a zero-based index.
+	ColumnIndex int `pulumi:"columnIndex"`
+	// The name of a selected column.
+	ColumnName string `pulumi:"columnName"`
+	// An escape character.
+	EscapeCharacter string `pulumi:"escapeCharacter"`
+	// It defines the format type of text files.
+	FormatType string `pulumi:"formatType"`
+	// A line delimiter.
+	LineDelimiter string `pulumi:"lineDelimiter"`
+}
+
+// GetDatasetDatasetFormatDetailTextFileTypeMetadataInput is an input type that accepts GetDatasetDatasetFormatDetailTextFileTypeMetadataArgs and GetDatasetDatasetFormatDetailTextFileTypeMetadataOutput values.
+// You can construct a concrete instance of `GetDatasetDatasetFormatDetailTextFileTypeMetadataInput` via:
+//
+//          GetDatasetDatasetFormatDetailTextFileTypeMetadataArgs{...}
+type GetDatasetDatasetFormatDetailTextFileTypeMetadataInput interface {
+	pulumi.Input
+
+	ToGetDatasetDatasetFormatDetailTextFileTypeMetadataOutput() GetDatasetDatasetFormatDetailTextFileTypeMetadataOutput
+	ToGetDatasetDatasetFormatDetailTextFileTypeMetadataOutputWithContext(context.Context) GetDatasetDatasetFormatDetailTextFileTypeMetadataOutput
+}
+
+type GetDatasetDatasetFormatDetailTextFileTypeMetadataArgs struct {
+	// A column delimiter
+	ColumnDelimiter pulumi.StringInput `pulumi:"columnDelimiter"`
+	// The index of a selected column. This is a zero-based index.
+	ColumnIndex pulumi.IntInput `pulumi:"columnIndex"`
+	// The name of a selected column.
+	ColumnName pulumi.StringInput `pulumi:"columnName"`
+	// An escape character.
+	EscapeCharacter pulumi.StringInput `pulumi:"escapeCharacter"`
+	// It defines the format type of text files.
+	FormatType pulumi.StringInput `pulumi:"formatType"`
+	// A line delimiter.
+	LineDelimiter pulumi.StringInput `pulumi:"lineDelimiter"`
+}
+
+func (GetDatasetDatasetFormatDetailTextFileTypeMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatasetDatasetFormatDetailTextFileTypeMetadata)(nil)).Elem()
+}
+
+func (i GetDatasetDatasetFormatDetailTextFileTypeMetadataArgs) ToGetDatasetDatasetFormatDetailTextFileTypeMetadataOutput() GetDatasetDatasetFormatDetailTextFileTypeMetadataOutput {
+	return i.ToGetDatasetDatasetFormatDetailTextFileTypeMetadataOutputWithContext(context.Background())
+}
+
+func (i GetDatasetDatasetFormatDetailTextFileTypeMetadataArgs) ToGetDatasetDatasetFormatDetailTextFileTypeMetadataOutputWithContext(ctx context.Context) GetDatasetDatasetFormatDetailTextFileTypeMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetDatasetFormatDetailTextFileTypeMetadataOutput)
+}
+
+// GetDatasetDatasetFormatDetailTextFileTypeMetadataArrayInput is an input type that accepts GetDatasetDatasetFormatDetailTextFileTypeMetadataArray and GetDatasetDatasetFormatDetailTextFileTypeMetadataArrayOutput values.
+// You can construct a concrete instance of `GetDatasetDatasetFormatDetailTextFileTypeMetadataArrayInput` via:
+//
+//          GetDatasetDatasetFormatDetailTextFileTypeMetadataArray{ GetDatasetDatasetFormatDetailTextFileTypeMetadataArgs{...} }
+type GetDatasetDatasetFormatDetailTextFileTypeMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetDatasetDatasetFormatDetailTextFileTypeMetadataArrayOutput() GetDatasetDatasetFormatDetailTextFileTypeMetadataArrayOutput
+	ToGetDatasetDatasetFormatDetailTextFileTypeMetadataArrayOutputWithContext(context.Context) GetDatasetDatasetFormatDetailTextFileTypeMetadataArrayOutput
+}
+
+type GetDatasetDatasetFormatDetailTextFileTypeMetadataArray []GetDatasetDatasetFormatDetailTextFileTypeMetadataInput
+
+func (GetDatasetDatasetFormatDetailTextFileTypeMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatasetDatasetFormatDetailTextFileTypeMetadata)(nil)).Elem()
+}
+
+func (i GetDatasetDatasetFormatDetailTextFileTypeMetadataArray) ToGetDatasetDatasetFormatDetailTextFileTypeMetadataArrayOutput() GetDatasetDatasetFormatDetailTextFileTypeMetadataArrayOutput {
+	return i.ToGetDatasetDatasetFormatDetailTextFileTypeMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatasetDatasetFormatDetailTextFileTypeMetadataArray) ToGetDatasetDatasetFormatDetailTextFileTypeMetadataArrayOutputWithContext(ctx context.Context) GetDatasetDatasetFormatDetailTextFileTypeMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetDatasetFormatDetailTextFileTypeMetadataArrayOutput)
+}
+
+type GetDatasetDatasetFormatDetailTextFileTypeMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetDatasetDatasetFormatDetailTextFileTypeMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatasetDatasetFormatDetailTextFileTypeMetadata)(nil)).Elem()
+}
+
+func (o GetDatasetDatasetFormatDetailTextFileTypeMetadataOutput) ToGetDatasetDatasetFormatDetailTextFileTypeMetadataOutput() GetDatasetDatasetFormatDetailTextFileTypeMetadataOutput {
+	return o
+}
+
+func (o GetDatasetDatasetFormatDetailTextFileTypeMetadataOutput) ToGetDatasetDatasetFormatDetailTextFileTypeMetadataOutputWithContext(ctx context.Context) GetDatasetDatasetFormatDetailTextFileTypeMetadataOutput {
+	return o
+}
+
+// A column delimiter
+func (o GetDatasetDatasetFormatDetailTextFileTypeMetadataOutput) ColumnDelimiter() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatasetDatasetFormatDetailTextFileTypeMetadata) string { return v.ColumnDelimiter }).(pulumi.StringOutput)
+}
+
+// The index of a selected column. This is a zero-based index.
+func (o GetDatasetDatasetFormatDetailTextFileTypeMetadataOutput) ColumnIndex() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatasetDatasetFormatDetailTextFileTypeMetadata) int { return v.ColumnIndex }).(pulumi.IntOutput)
+}
+
+// The name of a selected column.
+func (o GetDatasetDatasetFormatDetailTextFileTypeMetadataOutput) ColumnName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatasetDatasetFormatDetailTextFileTypeMetadata) string { return v.ColumnName }).(pulumi.StringOutput)
+}
+
+// An escape character.
+func (o GetDatasetDatasetFormatDetailTextFileTypeMetadataOutput) EscapeCharacter() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatasetDatasetFormatDetailTextFileTypeMetadata) string { return v.EscapeCharacter }).(pulumi.StringOutput)
+}
+
+// It defines the format type of text files.
+func (o GetDatasetDatasetFormatDetailTextFileTypeMetadataOutput) FormatType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatasetDatasetFormatDetailTextFileTypeMetadata) string { return v.FormatType }).(pulumi.StringOutput)
+}
+
+// A line delimiter.
+func (o GetDatasetDatasetFormatDetailTextFileTypeMetadataOutput) LineDelimiter() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatasetDatasetFormatDetailTextFileTypeMetadata) string { return v.LineDelimiter }).(pulumi.StringOutput)
+}
+
+type GetDatasetDatasetFormatDetailTextFileTypeMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatasetDatasetFormatDetailTextFileTypeMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatasetDatasetFormatDetailTextFileTypeMetadata)(nil)).Elem()
+}
+
+func (o GetDatasetDatasetFormatDetailTextFileTypeMetadataArrayOutput) ToGetDatasetDatasetFormatDetailTextFileTypeMetadataArrayOutput() GetDatasetDatasetFormatDetailTextFileTypeMetadataArrayOutput {
+	return o
+}
+
+func (o GetDatasetDatasetFormatDetailTextFileTypeMetadataArrayOutput) ToGetDatasetDatasetFormatDetailTextFileTypeMetadataArrayOutputWithContext(ctx context.Context) GetDatasetDatasetFormatDetailTextFileTypeMetadataArrayOutput {
+	return o
+}
+
+func (o GetDatasetDatasetFormatDetailTextFileTypeMetadataArrayOutput) Index(i pulumi.IntInput) GetDatasetDatasetFormatDetailTextFileTypeMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatasetDatasetFormatDetailTextFileTypeMetadata {
+		return vs[0].([]GetDatasetDatasetFormatDetailTextFileTypeMetadata)[vs[1].(int)]
+	}).(GetDatasetDatasetFormatDetailTextFileTypeMetadataOutput)
+}
+
 type GetDatasetDatasetSourceDetail struct {
-	// The object storage bucket that contains the dataset data source
+	// The object storage bucket that contains the dataset data source.
 	Bucket string `pulumi:"bucket"`
-	// Namespace of the bucket that contains the dataset data source
+	// The namespace of the bucket that contains the dataset data source.
 	Namespace string `pulumi:"namespace"`
-	// A common path prefix shared by the objects that make up the dataset. Records will not be generated for objects whose name match exactly with prefix.
+	// A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
 	Prefix string `pulumi:"prefix"`
-	// Source type.  OBJECT_STORAGE allows the customer to describe where the dataset is in object storage.
+	// The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
 	SourceType string `pulumi:"sourceType"`
 }
 
@@ -1215,13 +1621,13 @@ type GetDatasetDatasetSourceDetailInput interface {
 }
 
 type GetDatasetDatasetSourceDetailArgs struct {
-	// The object storage bucket that contains the dataset data source
+	// The object storage bucket that contains the dataset data source.
 	Bucket pulumi.StringInput `pulumi:"bucket"`
-	// Namespace of the bucket that contains the dataset data source
+	// The namespace of the bucket that contains the dataset data source.
 	Namespace pulumi.StringInput `pulumi:"namespace"`
-	// A common path prefix shared by the objects that make up the dataset. Records will not be generated for objects whose name match exactly with prefix.
+	// A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
 	Prefix pulumi.StringInput `pulumi:"prefix"`
-	// Source type.  OBJECT_STORAGE allows the customer to describe where the dataset is in object storage.
+	// The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
 	SourceType pulumi.StringInput `pulumi:"sourceType"`
 }
 
@@ -1276,22 +1682,22 @@ func (o GetDatasetDatasetSourceDetailOutput) ToGetDatasetDatasetSourceDetailOutp
 	return o
 }
 
-// The object storage bucket that contains the dataset data source
+// The object storage bucket that contains the dataset data source.
 func (o GetDatasetDatasetSourceDetailOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatasetDatasetSourceDetail) string { return v.Bucket }).(pulumi.StringOutput)
 }
 
-// Namespace of the bucket that contains the dataset data source
+// The namespace of the bucket that contains the dataset data source.
 func (o GetDatasetDatasetSourceDetailOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatasetDatasetSourceDetail) string { return v.Namespace }).(pulumi.StringOutput)
 }
 
-// A common path prefix shared by the objects that make up the dataset. Records will not be generated for objects whose name match exactly with prefix.
+// A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
 func (o GetDatasetDatasetSourceDetailOutput) Prefix() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatasetDatasetSourceDetail) string { return v.Prefix }).(pulumi.StringOutput)
 }
 
-// Source type.  OBJECT_STORAGE allows the customer to describe where the dataset is in object storage.
+// The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
 func (o GetDatasetDatasetSourceDetailOutput) SourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatasetDatasetSourceDetail) string { return v.SourceType }).(pulumi.StringOutput)
 }
@@ -1405,7 +1811,7 @@ func (o GetDatasetInitialRecordGenerationConfigurationArrayOutput) Index(i pulum
 }
 
 type GetDatasetLabelSet struct {
-	// An ordered collection of Labels that are unique by name.
+	// An ordered collection of labels that are unique by name.
 	Items []GetDatasetLabelSetItem `pulumi:"items"`
 }
 
@@ -1421,7 +1827,7 @@ type GetDatasetLabelSetInput interface {
 }
 
 type GetDatasetLabelSetArgs struct {
-	// An ordered collection of Labels that are unique by name.
+	// An ordered collection of labels that are unique by name.
 	Items GetDatasetLabelSetItemArrayInput `pulumi:"items"`
 }
 
@@ -1476,7 +1882,7 @@ func (o GetDatasetLabelSetOutput) ToGetDatasetLabelSetOutputWithContext(ctx cont
 	return o
 }
 
-// An ordered collection of Labels that are unique by name.
+// An ordered collection of labels that are unique by name.
 func (o GetDatasetLabelSetOutput) Items() GetDatasetLabelSetItemArrayOutput {
 	return o.ApplyT(func(v GetDatasetLabelSet) []GetDatasetLabelSetItem { return v.Items }).(GetDatasetLabelSetItemArrayOutput)
 }
@@ -1599,7 +2005,7 @@ func (o GetDatasetLabelSetItemArrayOutput) Index(i pulumi.IntInput) GetDatasetLa
 }
 
 type GetDatasetsDatasetCollection struct {
-	// An ordered collection of Labels that are unique by name.
+	// An ordered collection of labels that are unique by name.
 	Items []GetDatasetsDatasetCollectionItem `pulumi:"items"`
 }
 
@@ -1615,7 +2021,7 @@ type GetDatasetsDatasetCollectionInput interface {
 }
 
 type GetDatasetsDatasetCollectionArgs struct {
-	// An ordered collection of Labels that are unique by name.
+	// An ordered collection of labels that are unique by name.
 	Items GetDatasetsDatasetCollectionItemArrayInput `pulumi:"items"`
 }
 
@@ -1670,7 +2076,7 @@ func (o GetDatasetsDatasetCollectionOutput) ToGetDatasetsDatasetCollectionOutput
 	return o
 }
 
-// An ordered collection of Labels that are unique by name.
+// An ordered collection of labels that are unique by name.
 func (o GetDatasetsDatasetCollectionOutput) Items() GetDatasetsDatasetCollectionItemArrayOutput {
 	return o.ApplyT(func(v GetDatasetsDatasetCollection) []GetDatasetsDatasetCollectionItem { return v.Items }).(GetDatasetsDatasetCollectionItemArrayOutput)
 }
@@ -1700,7 +2106,7 @@ type GetDatasetsDatasetCollectionItem struct {
 	AnnotationFormat string `pulumi:"annotationFormat"`
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Specifies how to process the data. Supported formats include DOCUMENT, IMAGE and TEXT.
+	// It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
 	DatasetFormatDetails []GetDatasetsDatasetCollectionItemDatasetFormatDetail `pulumi:"datasetFormatDetails"`
 	// This allows the customer to specify the source of the dataset.
 	DatasetSourceDetails []GetDatasetsDatasetCollectionItemDatasetSourceDetail `pulumi:"datasetSourceDetails"`
@@ -1714,9 +2120,9 @@ type GetDatasetsDatasetCollectionItem struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique Dataset OCID
 	Id string `pulumi:"id"`
-	// Initial Generate Records configuration, generates records from the Dataset's source.
+	// The initial generate records configuration. It generates records from the dataset's source.
 	InitialRecordGenerationConfigurations []GetDatasetsDatasetCollectionItemInitialRecordGenerationConfiguration `pulumi:"initialRecordGenerationConfigurations"`
-	// An ordered collection of Labels that are unique by name.
+	// An ordered collection of labels that are unique by name.
 	LabelSets []GetDatasetsDatasetCollectionItemLabelSet `pulumi:"labelSets"`
 	// The labeling instructions for human labelers in rich text format
 	LabelingInstructions string `pulumi:"labelingInstructions"`
@@ -1746,7 +2152,7 @@ type GetDatasetsDatasetCollectionItemArgs struct {
 	AnnotationFormat pulumi.StringInput `pulumi:"annotationFormat"`
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// Specifies how to process the data. Supported formats include DOCUMENT, IMAGE and TEXT.
+	// It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
 	DatasetFormatDetails GetDatasetsDatasetCollectionItemDatasetFormatDetailArrayInput `pulumi:"datasetFormatDetails"`
 	// This allows the customer to specify the source of the dataset.
 	DatasetSourceDetails GetDatasetsDatasetCollectionItemDatasetSourceDetailArrayInput `pulumi:"datasetSourceDetails"`
@@ -1760,9 +2166,9 @@ type GetDatasetsDatasetCollectionItemArgs struct {
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Unique Dataset OCID
 	Id pulumi.StringInput `pulumi:"id"`
-	// Initial Generate Records configuration, generates records from the Dataset's source.
+	// The initial generate records configuration. It generates records from the dataset's source.
 	InitialRecordGenerationConfigurations GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationArrayInput `pulumi:"initialRecordGenerationConfigurations"`
-	// An ordered collection of Labels that are unique by name.
+	// An ordered collection of labels that are unique by name.
 	LabelSets GetDatasetsDatasetCollectionItemLabelSetArrayInput `pulumi:"labelSets"`
 	// The labeling instructions for human labelers in rich text format
 	LabelingInstructions pulumi.StringInput `pulumi:"labelingInstructions"`
@@ -1837,7 +2243,7 @@ func (o GetDatasetsDatasetCollectionItemOutput) CompartmentId() pulumi.StringOut
 	return o.ApplyT(func(v GetDatasetsDatasetCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Specifies how to process the data. Supported formats include DOCUMENT, IMAGE and TEXT.
+// It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
 func (o GetDatasetsDatasetCollectionItemOutput) DatasetFormatDetails() GetDatasetsDatasetCollectionItemDatasetFormatDetailArrayOutput {
 	return o.ApplyT(func(v GetDatasetsDatasetCollectionItem) []GetDatasetsDatasetCollectionItemDatasetFormatDetail {
 		return v.DatasetFormatDetails
@@ -1876,14 +2282,14 @@ func (o GetDatasetsDatasetCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatasetsDatasetCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Initial Generate Records configuration, generates records from the Dataset's source.
+// The initial generate records configuration. It generates records from the dataset's source.
 func (o GetDatasetsDatasetCollectionItemOutput) InitialRecordGenerationConfigurations() GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationArrayOutput {
 	return o.ApplyT(func(v GetDatasetsDatasetCollectionItem) []GetDatasetsDatasetCollectionItemInitialRecordGenerationConfiguration {
 		return v.InitialRecordGenerationConfigurations
 	}).(GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationArrayOutput)
 }
 
-// An ordered collection of Labels that are unique by name.
+// An ordered collection of labels that are unique by name.
 func (o GetDatasetsDatasetCollectionItemOutput) LabelSets() GetDatasetsDatasetCollectionItemLabelSetArrayOutput {
 	return o.ApplyT(func(v GetDatasetsDatasetCollectionItem) []GetDatasetsDatasetCollectionItemLabelSet {
 		return v.LabelSets
@@ -1936,8 +2342,10 @@ func (o GetDatasetsDatasetCollectionItemArrayOutput) Index(i pulumi.IntInput) Ge
 }
 
 type GetDatasetsDatasetCollectionItemDatasetFormatDetail struct {
-	// Format type. DOCUMENT format is for record contents that are PDFs or TIFFs. IMAGE format is for record contents that are JPEGs or PNGs. TEXT format is for record contents that are txt files.
+	// It defines the format type of text files.
 	FormatType string `pulumi:"formatType"`
+	// Metadata for files with text content.
+	TextFileTypeMetadatas []GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadata `pulumi:"textFileTypeMetadatas"`
 }
 
 // GetDatasetsDatasetCollectionItemDatasetFormatDetailInput is an input type that accepts GetDatasetsDatasetCollectionItemDatasetFormatDetailArgs and GetDatasetsDatasetCollectionItemDatasetFormatDetailOutput values.
@@ -1952,8 +2360,10 @@ type GetDatasetsDatasetCollectionItemDatasetFormatDetailInput interface {
 }
 
 type GetDatasetsDatasetCollectionItemDatasetFormatDetailArgs struct {
-	// Format type. DOCUMENT format is for record contents that are PDFs or TIFFs. IMAGE format is for record contents that are JPEGs or PNGs. TEXT format is for record contents that are txt files.
+	// It defines the format type of text files.
 	FormatType pulumi.StringInput `pulumi:"formatType"`
+	// Metadata for files with text content.
+	TextFileTypeMetadatas GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArrayInput `pulumi:"textFileTypeMetadatas"`
 }
 
 func (GetDatasetsDatasetCollectionItemDatasetFormatDetailArgs) ElementType() reflect.Type {
@@ -2007,9 +2417,16 @@ func (o GetDatasetsDatasetCollectionItemDatasetFormatDetailOutput) ToGetDatasets
 	return o
 }
 
-// Format type. DOCUMENT format is for record contents that are PDFs or TIFFs. IMAGE format is for record contents that are JPEGs or PNGs. TEXT format is for record contents that are txt files.
+// It defines the format type of text files.
 func (o GetDatasetsDatasetCollectionItemDatasetFormatDetailOutput) FormatType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatasetsDatasetCollectionItemDatasetFormatDetail) string { return v.FormatType }).(pulumi.StringOutput)
+}
+
+// Metadata for files with text content.
+func (o GetDatasetsDatasetCollectionItemDatasetFormatDetailOutput) TextFileTypeMetadatas() GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArrayOutput {
+	return o.ApplyT(func(v GetDatasetsDatasetCollectionItemDatasetFormatDetail) []GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadata {
+		return v.TextFileTypeMetadatas
+	}).(GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArrayOutput)
 }
 
 type GetDatasetsDatasetCollectionItemDatasetFormatDetailArrayOutput struct{ *pulumi.OutputState }
@@ -2032,14 +2449,168 @@ func (o GetDatasetsDatasetCollectionItemDatasetFormatDetailArrayOutput) Index(i 
 	}).(GetDatasetsDatasetCollectionItemDatasetFormatDetailOutput)
 }
 
+type GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadata struct {
+	// A column delimiter
+	ColumnDelimiter string `pulumi:"columnDelimiter"`
+	// The index of a selected column. This is a zero-based index.
+	ColumnIndex int `pulumi:"columnIndex"`
+	// The name of a selected column.
+	ColumnName string `pulumi:"columnName"`
+	// An escape character.
+	EscapeCharacter string `pulumi:"escapeCharacter"`
+	// It defines the format type of text files.
+	FormatType string `pulumi:"formatType"`
+	// A line delimiter.
+	LineDelimiter string `pulumi:"lineDelimiter"`
+}
+
+// GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataInput is an input type that accepts GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArgs and GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataOutput values.
+// You can construct a concrete instance of `GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataInput` via:
+//
+//          GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArgs{...}
+type GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataInput interface {
+	pulumi.Input
+
+	ToGetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataOutput() GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataOutput
+	ToGetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataOutputWithContext(context.Context) GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataOutput
+}
+
+type GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArgs struct {
+	// A column delimiter
+	ColumnDelimiter pulumi.StringInput `pulumi:"columnDelimiter"`
+	// The index of a selected column. This is a zero-based index.
+	ColumnIndex pulumi.IntInput `pulumi:"columnIndex"`
+	// The name of a selected column.
+	ColumnName pulumi.StringInput `pulumi:"columnName"`
+	// An escape character.
+	EscapeCharacter pulumi.StringInput `pulumi:"escapeCharacter"`
+	// It defines the format type of text files.
+	FormatType pulumi.StringInput `pulumi:"formatType"`
+	// A line delimiter.
+	LineDelimiter pulumi.StringInput `pulumi:"lineDelimiter"`
+}
+
+func (GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadata)(nil)).Elem()
+}
+
+func (i GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArgs) ToGetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataOutput() GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataOutput {
+	return i.ToGetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataOutputWithContext(context.Background())
+}
+
+func (i GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArgs) ToGetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataOutputWithContext(ctx context.Context) GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataOutput)
+}
+
+// GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArrayInput is an input type that accepts GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArray and GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArrayOutput values.
+// You can construct a concrete instance of `GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArrayInput` via:
+//
+//          GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArray{ GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArgs{...} }
+type GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArrayOutput() GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArrayOutput
+	ToGetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArrayOutputWithContext(context.Context) GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArrayOutput
+}
+
+type GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArray []GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataInput
+
+func (GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadata)(nil)).Elem()
+}
+
+func (i GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArray) ToGetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArrayOutput() GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArrayOutput {
+	return i.ToGetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArray) ToGetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArrayOutputWithContext(ctx context.Context) GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArrayOutput)
+}
+
+type GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadata)(nil)).Elem()
+}
+
+func (o GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataOutput) ToGetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataOutput() GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataOutput {
+	return o
+}
+
+func (o GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataOutput) ToGetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataOutputWithContext(ctx context.Context) GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataOutput {
+	return o
+}
+
+// A column delimiter
+func (o GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataOutput) ColumnDelimiter() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadata) string {
+		return v.ColumnDelimiter
+	}).(pulumi.StringOutput)
+}
+
+// The index of a selected column. This is a zero-based index.
+func (o GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataOutput) ColumnIndex() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadata) int {
+		return v.ColumnIndex
+	}).(pulumi.IntOutput)
+}
+
+// The name of a selected column.
+func (o GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataOutput) ColumnName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadata) string {
+		return v.ColumnName
+	}).(pulumi.StringOutput)
+}
+
+// An escape character.
+func (o GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataOutput) EscapeCharacter() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadata) string {
+		return v.EscapeCharacter
+	}).(pulumi.StringOutput)
+}
+
+// It defines the format type of text files.
+func (o GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataOutput) FormatType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadata) string {
+		return v.FormatType
+	}).(pulumi.StringOutput)
+}
+
+// A line delimiter.
+func (o GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataOutput) LineDelimiter() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadata) string {
+		return v.LineDelimiter
+	}).(pulumi.StringOutput)
+}
+
+type GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadata)(nil)).Elem()
+}
+
+func (o GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArrayOutput) ToGetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArrayOutput() GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArrayOutput {
+	return o
+}
+
+func (o GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArrayOutput) ToGetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArrayOutputWithContext(ctx context.Context) GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArrayOutput {
+	return o
+}
+
+func (o GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArrayOutput) Index(i pulumi.IntInput) GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadata {
+		return vs[0].([]GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadata)[vs[1].(int)]
+	}).(GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataOutput)
+}
+
 type GetDatasetsDatasetCollectionItemDatasetSourceDetail struct {
-	// The object storage bucket that contains the dataset data source
+	// The object storage bucket that contains the dataset data source.
 	Bucket string `pulumi:"bucket"`
-	// Namespace of the bucket that contains the dataset data source
+	// The namespace of the bucket that contains the dataset data source.
 	Namespace string `pulumi:"namespace"`
-	// A common path prefix shared by the objects that make up the dataset. Records will not be generated for objects whose name match exactly with prefix.
+	// A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
 	Prefix string `pulumi:"prefix"`
-	// Source type.  OBJECT_STORAGE allows the customer to describe where the dataset is in object storage.
+	// The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
 	SourceType string `pulumi:"sourceType"`
 }
 
@@ -2055,13 +2626,13 @@ type GetDatasetsDatasetCollectionItemDatasetSourceDetailInput interface {
 }
 
 type GetDatasetsDatasetCollectionItemDatasetSourceDetailArgs struct {
-	// The object storage bucket that contains the dataset data source
+	// The object storage bucket that contains the dataset data source.
 	Bucket pulumi.StringInput `pulumi:"bucket"`
-	// Namespace of the bucket that contains the dataset data source
+	// The namespace of the bucket that contains the dataset data source.
 	Namespace pulumi.StringInput `pulumi:"namespace"`
-	// A common path prefix shared by the objects that make up the dataset. Records will not be generated for objects whose name match exactly with prefix.
+	// A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
 	Prefix pulumi.StringInput `pulumi:"prefix"`
-	// Source type.  OBJECT_STORAGE allows the customer to describe where the dataset is in object storage.
+	// The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
 	SourceType pulumi.StringInput `pulumi:"sourceType"`
 }
 
@@ -2116,22 +2687,22 @@ func (o GetDatasetsDatasetCollectionItemDatasetSourceDetailOutput) ToGetDatasets
 	return o
 }
 
-// The object storage bucket that contains the dataset data source
+// The object storage bucket that contains the dataset data source.
 func (o GetDatasetsDatasetCollectionItemDatasetSourceDetailOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatasetsDatasetCollectionItemDatasetSourceDetail) string { return v.Bucket }).(pulumi.StringOutput)
 }
 
-// Namespace of the bucket that contains the dataset data source
+// The namespace of the bucket that contains the dataset data source.
 func (o GetDatasetsDatasetCollectionItemDatasetSourceDetailOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatasetsDatasetCollectionItemDatasetSourceDetail) string { return v.Namespace }).(pulumi.StringOutput)
 }
 
-// A common path prefix shared by the objects that make up the dataset. Records will not be generated for objects whose name match exactly with prefix.
+// A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
 func (o GetDatasetsDatasetCollectionItemDatasetSourceDetailOutput) Prefix() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatasetsDatasetCollectionItemDatasetSourceDetail) string { return v.Prefix }).(pulumi.StringOutput)
 }
 
-// Source type.  OBJECT_STORAGE allows the customer to describe where the dataset is in object storage.
+// The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
 func (o GetDatasetsDatasetCollectionItemDatasetSourceDetailOutput) SourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatasetsDatasetCollectionItemDatasetSourceDetail) string { return v.SourceType }).(pulumi.StringOutput)
 }
@@ -2245,7 +2816,7 @@ func (o GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationArra
 }
 
 type GetDatasetsDatasetCollectionItemLabelSet struct {
-	// An ordered collection of Labels that are unique by name.
+	// An ordered collection of labels that are unique by name.
 	Items []GetDatasetsDatasetCollectionItemLabelSetItem `pulumi:"items"`
 }
 
@@ -2261,7 +2832,7 @@ type GetDatasetsDatasetCollectionItemLabelSetInput interface {
 }
 
 type GetDatasetsDatasetCollectionItemLabelSetArgs struct {
-	// An ordered collection of Labels that are unique by name.
+	// An ordered collection of labels that are unique by name.
 	Items GetDatasetsDatasetCollectionItemLabelSetItemArrayInput `pulumi:"items"`
 }
 
@@ -2316,7 +2887,7 @@ func (o GetDatasetsDatasetCollectionItemLabelSetOutput) ToGetDatasetsDatasetColl
 	return o
 }
 
-// An ordered collection of Labels that are unique by name.
+// An ordered collection of labels that are unique by name.
 func (o GetDatasetsDatasetCollectionItemLabelSetOutput) Items() GetDatasetsDatasetCollectionItemLabelSetItemArrayOutput {
 	return o.ApplyT(func(v GetDatasetsDatasetCollectionItemLabelSet) []GetDatasetsDatasetCollectionItemLabelSetItem {
 		return v.Items
@@ -2552,6 +3123,8 @@ func (o GetDatasetsFilterArrayOutput) Index(i pulumi.IntInput) GetDatasetsFilter
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DatasetDatasetFormatDetailsInput)(nil)).Elem(), DatasetDatasetFormatDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatasetDatasetFormatDetailsPtrInput)(nil)).Elem(), DatasetDatasetFormatDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatasetDatasetFormatDetailsTextFileTypeMetadataInput)(nil)).Elem(), DatasetDatasetFormatDetailsTextFileTypeMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatasetDatasetFormatDetailsTextFileTypeMetadataPtrInput)(nil)).Elem(), DatasetDatasetFormatDetailsTextFileTypeMetadataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatasetDatasetSourceDetailsInput)(nil)).Elem(), DatasetDatasetSourceDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatasetDatasetSourceDetailsPtrInput)(nil)).Elem(), DatasetDatasetSourceDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatasetInitialRecordGenerationConfigurationInput)(nil)).Elem(), DatasetInitialRecordGenerationConfigurationArgs{})
@@ -2570,6 +3143,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAnnotationFormatsFilterArrayInput)(nil)).Elem(), GetAnnotationFormatsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatasetDatasetFormatDetailInput)(nil)).Elem(), GetDatasetDatasetFormatDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatasetDatasetFormatDetailArrayInput)(nil)).Elem(), GetDatasetDatasetFormatDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatasetDatasetFormatDetailTextFileTypeMetadataInput)(nil)).Elem(), GetDatasetDatasetFormatDetailTextFileTypeMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatasetDatasetFormatDetailTextFileTypeMetadataArrayInput)(nil)).Elem(), GetDatasetDatasetFormatDetailTextFileTypeMetadataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatasetDatasetSourceDetailInput)(nil)).Elem(), GetDatasetDatasetSourceDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatasetDatasetSourceDetailArrayInput)(nil)).Elem(), GetDatasetDatasetSourceDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatasetInitialRecordGenerationConfigurationInput)(nil)).Elem(), GetDatasetInitialRecordGenerationConfigurationArgs{})
@@ -2584,6 +3159,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatasetsDatasetCollectionItemArrayInput)(nil)).Elem(), GetDatasetsDatasetCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatasetsDatasetCollectionItemDatasetFormatDetailInput)(nil)).Elem(), GetDatasetsDatasetCollectionItemDatasetFormatDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatasetsDatasetCollectionItemDatasetFormatDetailArrayInput)(nil)).Elem(), GetDatasetsDatasetCollectionItemDatasetFormatDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataInput)(nil)).Elem(), GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArrayInput)(nil)).Elem(), GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatasetsDatasetCollectionItemDatasetSourceDetailInput)(nil)).Elem(), GetDatasetsDatasetCollectionItemDatasetSourceDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatasetsDatasetCollectionItemDatasetSourceDetailArrayInput)(nil)).Elem(), GetDatasetsDatasetCollectionItemDatasetSourceDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationInput)(nil)).Elem(), GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationArgs{})
@@ -2596,6 +3173,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatasetsFilterArrayInput)(nil)).Elem(), GetDatasetsFilterArray{})
 	pulumi.RegisterOutputType(DatasetDatasetFormatDetailsOutput{})
 	pulumi.RegisterOutputType(DatasetDatasetFormatDetailsPtrOutput{})
+	pulumi.RegisterOutputType(DatasetDatasetFormatDetailsTextFileTypeMetadataOutput{})
+	pulumi.RegisterOutputType(DatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutput{})
 	pulumi.RegisterOutputType(DatasetDatasetSourceDetailsOutput{})
 	pulumi.RegisterOutputType(DatasetDatasetSourceDetailsPtrOutput{})
 	pulumi.RegisterOutputType(DatasetInitialRecordGenerationConfigurationOutput{})
@@ -2614,6 +3193,8 @@ func init() {
 	pulumi.RegisterOutputType(GetAnnotationFormatsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetDatasetDatasetFormatDetailOutput{})
 	pulumi.RegisterOutputType(GetDatasetDatasetFormatDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDatasetDatasetFormatDetailTextFileTypeMetadataOutput{})
+	pulumi.RegisterOutputType(GetDatasetDatasetFormatDetailTextFileTypeMetadataArrayOutput{})
 	pulumi.RegisterOutputType(GetDatasetDatasetSourceDetailOutput{})
 	pulumi.RegisterOutputType(GetDatasetDatasetSourceDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetDatasetInitialRecordGenerationConfigurationOutput{})
@@ -2628,6 +3209,8 @@ func init() {
 	pulumi.RegisterOutputType(GetDatasetsDatasetCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetDatasetsDatasetCollectionItemDatasetFormatDetailOutput{})
 	pulumi.RegisterOutputType(GetDatasetsDatasetCollectionItemDatasetFormatDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataOutput{})
+	pulumi.RegisterOutputType(GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArrayOutput{})
 	pulumi.RegisterOutputType(GetDatasetsDatasetCollectionItemDatasetSourceDetailOutput{})
 	pulumi.RegisterOutputType(GetDatasetsDatasetCollectionItemDatasetSourceDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationOutput{})

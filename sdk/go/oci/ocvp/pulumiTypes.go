@@ -128,6 +128,8 @@ func (o SddcHcxOnPremLicenseArrayOutput) Index(i pulumi.IntInput) SddcHcxOnPremL
 type GetExsiHostsEsxiHostCollection struct {
 	// Current billing cycle end date. If the value in `currentSku` and `nextSku` are different, the value specified in `nextSku` becomes the new `currentSKU` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
 	BillingContractEndDate string `pulumi:"billingContractEndDate"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+	CapacityReservationId string `pulumi:"capacityReservationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The availability domain of the ESXi host.
@@ -146,6 +148,10 @@ type GetExsiHostsEsxiHostCollection struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The date and time when the new esxi host should start billing cycle. [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2021-07-25T21:10:29.600Z`
 	GracePeriodEndDate string `pulumi:"gracePeriodEndDate"`
+	// The OCPU count of the ESXi host.
+	HostOcpuCount float64 `pulumi:"hostOcpuCount"`
+	// The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+	HostShapeName string `pulumi:"hostShapeName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host.
 	Id string `pulumi:"id"`
 	// The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
@@ -176,6 +182,8 @@ type GetExsiHostsEsxiHostCollectionInput interface {
 type GetExsiHostsEsxiHostCollectionArgs struct {
 	// Current billing cycle end date. If the value in `currentSku` and `nextSku` are different, the value specified in `nextSku` becomes the new `currentSKU` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
 	BillingContractEndDate pulumi.StringInput `pulumi:"billingContractEndDate"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+	CapacityReservationId pulumi.StringInput `pulumi:"capacityReservationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The availability domain of the ESXi host.
@@ -194,6 +202,10 @@ type GetExsiHostsEsxiHostCollectionArgs struct {
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The date and time when the new esxi host should start billing cycle. [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2021-07-25T21:10:29.600Z`
 	GracePeriodEndDate pulumi.StringInput `pulumi:"gracePeriodEndDate"`
+	// The OCPU count of the ESXi host.
+	HostOcpuCount pulumi.Float64Input `pulumi:"hostOcpuCount"`
+	// The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+	HostShapeName pulumi.StringInput `pulumi:"hostShapeName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
@@ -266,6 +278,11 @@ func (o GetExsiHostsEsxiHostCollectionOutput) BillingContractEndDate() pulumi.St
 	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.BillingContractEndDate }).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+func (o GetExsiHostsEsxiHostCollectionOutput) CapacityReservationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.CapacityReservationId }).(pulumi.StringOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
 func (o GetExsiHostsEsxiHostCollectionOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -309,6 +326,16 @@ func (o GetExsiHostsEsxiHostCollectionOutput) FreeformTags() pulumi.MapOutput {
 // The date and time when the new esxi host should start billing cycle. [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2021-07-25T21:10:29.600Z`
 func (o GetExsiHostsEsxiHostCollectionOutput) GracePeriodEndDate() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.GracePeriodEndDate }).(pulumi.StringOutput)
+}
+
+// The OCPU count of the ESXi host.
+func (o GetExsiHostsEsxiHostCollectionOutput) HostOcpuCount() pulumi.Float64Output {
+	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) float64 { return v.HostOcpuCount }).(pulumi.Float64Output)
+}
+
+// The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+func (o GetExsiHostsEsxiHostCollectionOutput) HostShapeName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.HostShapeName }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host.
@@ -696,6 +723,8 @@ func (o GetSddcsFilterArrayOutput) Index(i pulumi.IntInput) GetSddcsFilterOutput
 type GetSddcsSddcCollection struct {
 	// The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC.
 	ActualEsxiHostsCount int `pulumi:"actualEsxiHostsCount"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+	CapacityReservationId string `pulumi:"capacityReservationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The name of the availability domain that the Compute instances are running in.  Example: `Uocm:PHX-AD-1`
@@ -723,6 +752,10 @@ type GetSddcsSddcCollection struct {
 	HcxVlanId string `pulumi:"hcxVlanId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
 	Id string `pulumi:"id"`
+	// The initial OCPU count of the SDDC's ESXi hosts.
+	InitialHostOcpuCount float64 `pulumi:"initialHostOcpuCount"`
+	// The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+	InitialHostShapeName string `pulumi:"initialHostShapeName"`
 	// The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
 	InitialSku string `pulumi:"initialSku"`
 	// A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
@@ -809,6 +842,8 @@ type GetSddcsSddcCollectionInput interface {
 type GetSddcsSddcCollectionArgs struct {
 	// The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC.
 	ActualEsxiHostsCount pulumi.IntInput `pulumi:"actualEsxiHostsCount"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+	CapacityReservationId pulumi.StringInput `pulumi:"capacityReservationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The name of the availability domain that the Compute instances are running in.  Example: `Uocm:PHX-AD-1`
@@ -836,6 +871,10 @@ type GetSddcsSddcCollectionArgs struct {
 	HcxVlanId pulumi.StringInput `pulumi:"hcxVlanId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
 	Id pulumi.StringInput `pulumi:"id"`
+	// The initial OCPU count of the SDDC's ESXi hosts.
+	InitialHostOcpuCount pulumi.Float64Input `pulumi:"initialHostOcpuCount"`
+	// The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+	InitialHostShapeName pulumi.StringInput `pulumi:"initialHostShapeName"`
 	// The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
 	InitialSku pulumi.StringInput `pulumi:"initialSku"`
 	// A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
@@ -964,6 +1003,11 @@ func (o GetSddcsSddcCollectionOutput) ActualEsxiHostsCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) int { return v.ActualEsxiHostsCount }).(pulumi.IntOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+func (o GetSddcsSddcCollectionOutput) CapacityReservationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.CapacityReservationId }).(pulumi.StringOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 func (o GetSddcsSddcCollectionOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -1031,6 +1075,16 @@ func (o GetSddcsSddcCollectionOutput) HcxVlanId() pulumi.StringOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
 func (o GetSddcsSddcCollectionOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The initial OCPU count of the SDDC's ESXi hosts.
+func (o GetSddcsSddcCollectionOutput) InitialHostOcpuCount() pulumi.Float64Output {
+	return o.ApplyT(func(v GetSddcsSddcCollection) float64 { return v.InitialHostOcpuCount }).(pulumi.Float64Output)
+}
+
+// The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+func (o GetSddcsSddcCollectionOutput) InitialHostShapeName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.InitialHostShapeName }).(pulumi.StringOutput)
 }
 
 // The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
@@ -1472,6 +1526,8 @@ type GetSupportedHostShapesItem struct {
 	SupportedOperations []string `pulumi:"supportedOperations"`
 	// The supported SDDC types for the shape.
 	SupportedSddcTypes []string `pulumi:"supportedSddcTypes"`
+	// The VMware software versions supported by the shape.
+	SupportedVmwareSoftwareVersions []string `pulumi:"supportedVmwareSoftwareVersions"`
 }
 
 // GetSupportedHostShapesItemInput is an input type that accepts GetSupportedHostShapesItemArgs and GetSupportedHostShapesItemOutput values.
@@ -1502,6 +1558,8 @@ type GetSupportedHostShapesItemArgs struct {
 	SupportedOperations pulumi.StringArrayInput `pulumi:"supportedOperations"`
 	// The supported SDDC types for the shape.
 	SupportedSddcTypes pulumi.StringArrayInput `pulumi:"supportedSddcTypes"`
+	// The VMware software versions supported by the shape.
+	SupportedVmwareSoftwareVersions pulumi.StringArrayInput `pulumi:"supportedVmwareSoftwareVersions"`
 }
 
 func (GetSupportedHostShapesItemArgs) ElementType() reflect.Type {
@@ -1593,6 +1651,11 @@ func (o GetSupportedHostShapesItemOutput) SupportedOperations() pulumi.StringArr
 // The supported SDDC types for the shape.
 func (o GetSupportedHostShapesItemOutput) SupportedSddcTypes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetSupportedHostShapesItem) []string { return v.SupportedSddcTypes }).(pulumi.StringArrayOutput)
+}
+
+// The VMware software versions supported by the shape.
+func (o GetSupportedHostShapesItemOutput) SupportedVmwareSoftwareVersions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSupportedHostShapesItem) []string { return v.SupportedVmwareSoftwareVersions }).(pulumi.StringArrayOutput)
 }
 
 type GetSupportedHostShapesItemArrayOutput struct{ *pulumi.OutputState }

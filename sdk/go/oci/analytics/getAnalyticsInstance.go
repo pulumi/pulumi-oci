@@ -71,14 +71,14 @@ type LookupAnalyticsInstanceResult struct {
 	// The Virtual Cloud Network OCID.
 	Id              string `pulumi:"id"`
 	IdcsAccessToken string `pulumi:"idcsAccessToken"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+	KmsKeyId string `pulumi:"kmsKeyId"`
 	// The license used for the service.
 	LicenseType string `pulumi:"licenseType"`
 	// The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
 	Name string `pulumi:"name"`
 	// Base representation of a network endpoint.
 	NetworkEndpointDetails []GetAnalyticsInstanceNetworkEndpointDetail `pulumi:"networkEndpointDetails"`
-	// Map of PrivateAccessChannel unique identifier key as KEY and PrivateAccessChannel Object as VALUE.
-	PrivateAccessChannels map[string]interface{} `pulumi:"privateAccessChannels"`
 	// URL of the Analytics service.
 	ServiceUrl string `pulumi:"serviceUrl"`
 	// The current state of an instance.
@@ -87,8 +87,6 @@ type LookupAnalyticsInstanceResult struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
 	TimeUpdated string `pulumi:"timeUpdated"`
-	// Map of VanityUrl unique identifier key as KEY and VanityUrl Object as VALUE.
-	VanityUrlDetails map[string]interface{} `pulumi:"vanityUrlDetails"`
 }
 
 func LookupAnalyticsInstanceOutput(ctx *pulumi.Context, args LookupAnalyticsInstanceOutputArgs, opts ...pulumi.InvokeOption) LookupAnalyticsInstanceResultOutput {
@@ -177,6 +175,11 @@ func (o LookupAnalyticsInstanceResultOutput) IdcsAccessToken() pulumi.StringOutp
 	return o.ApplyT(func(v LookupAnalyticsInstanceResult) string { return v.IdcsAccessToken }).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+func (o LookupAnalyticsInstanceResultOutput) KmsKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAnalyticsInstanceResult) string { return v.KmsKeyId }).(pulumi.StringOutput)
+}
+
 // The license used for the service.
 func (o LookupAnalyticsInstanceResultOutput) LicenseType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAnalyticsInstanceResult) string { return v.LicenseType }).(pulumi.StringOutput)
@@ -192,11 +195,6 @@ func (o LookupAnalyticsInstanceResultOutput) NetworkEndpointDetails() GetAnalyti
 	return o.ApplyT(func(v LookupAnalyticsInstanceResult) []GetAnalyticsInstanceNetworkEndpointDetail {
 		return v.NetworkEndpointDetails
 	}).(GetAnalyticsInstanceNetworkEndpointDetailArrayOutput)
-}
-
-// Map of PrivateAccessChannel unique identifier key as KEY and PrivateAccessChannel Object as VALUE.
-func (o LookupAnalyticsInstanceResultOutput) PrivateAccessChannels() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupAnalyticsInstanceResult) map[string]interface{} { return v.PrivateAccessChannels }).(pulumi.MapOutput)
 }
 
 // URL of the Analytics service.
@@ -217,11 +215,6 @@ func (o LookupAnalyticsInstanceResultOutput) TimeCreated() pulumi.StringOutput {
 // The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
 func (o LookupAnalyticsInstanceResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAnalyticsInstanceResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
-}
-
-// Map of VanityUrl unique identifier key as KEY and VanityUrl Object as VALUE.
-func (o LookupAnalyticsInstanceResultOutput) VanityUrlDetails() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupAnalyticsInstanceResult) map[string]interface{} { return v.VanityUrlDetails }).(pulumi.MapOutput)
 }
 
 func init() {

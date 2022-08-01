@@ -22,7 +22,7 @@ class GetGuardTargetsResult:
     """
     A collection of values returned by getGuardTargets.
     """
-    def __init__(__self__, access_level=None, compartment_id=None, compartment_id_in_subtree=None, display_name=None, filters=None, id=None, state=None, target_collections=None):
+    def __init__(__self__, access_level=None, compartment_id=None, compartment_id_in_subtree=None, display_name=None, filters=None, id=None, is_non_security_zone_targets_only_query=None, state=None, target_collections=None):
         if access_level and not isinstance(access_level, str):
             raise TypeError("Expected argument 'access_level' to be a str")
         pulumi.set(__self__, "access_level", access_level)
@@ -41,6 +41,9 @@ class GetGuardTargetsResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_non_security_zone_targets_only_query and not isinstance(is_non_security_zone_targets_only_query, bool):
+            raise TypeError("Expected argument 'is_non_security_zone_targets_only_query' to be a bool")
+        pulumi.set(__self__, "is_non_security_zone_targets_only_query", is_non_security_zone_targets_only_query)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -70,7 +73,7 @@ class GetGuardTargetsResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        ResponderRule Display Name
+        ResponderRule display name.
         """
         return pulumi.get(self, "display_name")
 
@@ -86,6 +89,11 @@ class GetGuardTargetsResult:
         The provider-assigned unique ID for this managed resource.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isNonSecurityZoneTargetsOnlyQuery")
+    def is_non_security_zone_targets_only_query(self) -> Optional[bool]:
+        return pulumi.get(self, "is_non_security_zone_targets_only_query")
 
     @property
     @pulumi.getter
@@ -116,6 +124,7 @@ class AwaitableGetGuardTargetsResult(GetGuardTargetsResult):
             display_name=self.display_name,
             filters=self.filters,
             id=self.id,
+            is_non_security_zone_targets_only_query=self.is_non_security_zone_targets_only_query,
             state=self.state,
             target_collections=self.target_collections)
 
@@ -125,6 +134,7 @@ def get_guard_targets(access_level: Optional[str] = None,
                       compartment_id_in_subtree: Optional[bool] = None,
                       display_name: Optional[str] = None,
                       filters: Optional[Sequence[pulumi.InputType['GetGuardTargetsFilterArgs']]] = None,
+                      is_non_security_zone_targets_only_query: Optional[bool] = None,
                       state: Optional[str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetGuardTargetsResult:
     """
@@ -155,6 +165,7 @@ def get_guard_targets(access_level: Optional[str] = None,
         access_level=var["target_access_level"],
         compartment_id_in_subtree=var["target_compartment_id_in_subtree"],
         display_name=var["target_display_name"],
+        is_non_security_zone_targets_only_query=var["target_is_non_security_zone_targets_only_query"],
         state=var["target_state"])
     ```
 
@@ -163,6 +174,7 @@ def get_guard_targets(access_level: Optional[str] = None,
     :param str compartment_id: The ID of the compartment in which to list resources.
     :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
     :param str display_name: A filter to return only resources that match the entire display name given.
+    :param bool is_non_security_zone_targets_only_query: Default is false. When set to true, only the targets that would be deleted as part of security zone creation will be returned.
     :param str state: The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
     """
     __args__ = dict()
@@ -171,6 +183,7 @@ def get_guard_targets(access_level: Optional[str] = None,
     __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
     __args__['displayName'] = display_name
     __args__['filters'] = filters
+    __args__['isNonSecurityZoneTargetsOnlyQuery'] = is_non_security_zone_targets_only_query
     __args__['state'] = state
     if opts is None:
         opts = pulumi.InvokeOptions()
@@ -185,6 +198,7 @@ def get_guard_targets(access_level: Optional[str] = None,
         display_name=__ret__.display_name,
         filters=__ret__.filters,
         id=__ret__.id,
+        is_non_security_zone_targets_only_query=__ret__.is_non_security_zone_targets_only_query,
         state=__ret__.state,
         target_collections=__ret__.target_collections)
 
@@ -195,6 +209,7 @@ def get_guard_targets_output(access_level: Optional[pulumi.Input[Optional[str]]]
                              compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
                              display_name: Optional[pulumi.Input[Optional[str]]] = None,
                              filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetGuardTargetsFilterArgs']]]]] = None,
+                             is_non_security_zone_targets_only_query: Optional[pulumi.Input[Optional[bool]]] = None,
                              state: Optional[pulumi.Input[Optional[str]]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetGuardTargetsResult]:
     """
@@ -225,6 +240,7 @@ def get_guard_targets_output(access_level: Optional[pulumi.Input[Optional[str]]]
         access_level=var["target_access_level"],
         compartment_id_in_subtree=var["target_compartment_id_in_subtree"],
         display_name=var["target_display_name"],
+        is_non_security_zone_targets_only_query=var["target_is_non_security_zone_targets_only_query"],
         state=var["target_state"])
     ```
 
@@ -233,6 +249,7 @@ def get_guard_targets_output(access_level: Optional[pulumi.Input[Optional[str]]]
     :param str compartment_id: The ID of the compartment in which to list resources.
     :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
     :param str display_name: A filter to return only resources that match the entire display name given.
+    :param bool is_non_security_zone_targets_only_query: Default is false. When set to true, only the targets that would be deleted as part of security zone creation will be returned.
     :param str state: The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
     """
     ...

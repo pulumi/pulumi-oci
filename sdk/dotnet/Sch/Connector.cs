@@ -63,6 +63,28 @@ namespace Pulumi.Oci.Sch
     ///                         LogId = oci_logging_log.Test_log.Id,
     ///                     },
     ///                 },
+    ///                 MonitoringSources = 
+    ///                 {
+    ///                     new Oci.Sch.Inputs.ConnectorSourceMonitoringSourceArgs
+    ///                     {
+    ///                         CompartmentId = @var.Compartment_id,
+    ///                         NamespaceDetails = new Oci.Sch.Inputs.ConnectorSourceMonitoringSourceNamespaceDetailsArgs
+    ///                         {
+    ///                             Kind = @var.Service_connector_source_monitoring_sources_namespace_details_kind,
+    ///                             Namespaces = 
+    ///                             {
+    ///                                 new Oci.Sch.Inputs.ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs
+    ///                                 {
+    ///                                     Metrics = new Oci.Sch.Inputs.ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgs
+    ///                                     {
+    ///                                         Kind = @var.Service_connector_source_monitoring_sources_namespace_details_namespaces_metrics_kind,
+    ///                                     },
+    ///                                     Namespace = @var.Service_connector_source_monitoring_sources_namespace_details_namespaces_namespace,
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                 },
     ///                 StreamId = oci_streaming_stream.Test_stream.Id,
     ///             },
     ///             Target = new Oci.Sch.Inputs.ConnectorTargetArgs

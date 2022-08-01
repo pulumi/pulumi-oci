@@ -14,7 +14,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
     public sealed class TargetTargetResponderRecipeEffectiveResponderRuleDetail
     {
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) Base condition object
         /// </summary>
         public readonly string? Condition;
         /// <summary>

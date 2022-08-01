@@ -283,10 +283,6 @@ public final class OcvpFunctions {
         return Deployment.getInstance().invokeAsync("oci:Ocvp/getSddcs:getSddcs", TypeShape.of(GetSddcsResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides the list of Supported Host Shapes in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
-     * 
-     * Lists supported compute shapes for ESXi hosts.
-     * 
      * ## Example Usage
      * 
      */
@@ -294,10 +290,6 @@ public final class OcvpFunctions {
         return getSupportedHostShapes(args, InvokeOptions.Empty);
     }
     /**
-     * This data source provides the list of Supported Host Shapes in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
-     * 
-     * Lists supported compute shapes for ESXi hosts.
-     * 
      * ## Example Usage
      * 
      */
@@ -305,10 +297,6 @@ public final class OcvpFunctions {
         return getSupportedHostShapesPlain(args, InvokeOptions.Empty);
     }
     /**
-     * This data source provides the list of Supported Host Shapes in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
-     * 
-     * Lists supported compute shapes for ESXi hosts.
-     * 
      * ## Example Usage
      * 
      */
@@ -316,10 +304,6 @@ public final class OcvpFunctions {
         return Deployment.getInstance().invoke("oci:Ocvp/getSupportedHostShapes:getSupportedHostShapes", TypeShape.of(GetSupportedHostShapesResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides the list of Supported Host Shapes in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
-     * 
-     * Lists supported compute shapes for ESXi hosts.
-     * 
      * ## Example Usage
      * 
      */

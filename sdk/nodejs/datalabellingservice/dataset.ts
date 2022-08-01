@@ -21,6 +21,14 @@ import * as utilities from "../utilities";
  *     compartmentId: _var.compartment_id,
  *     datasetFormatDetails: {
  *         formatType: _var.dataset_dataset_format_details_format_type,
+ *         textFileTypeMetadata: {
+ *             columnIndex: _var.dataset_dataset_format_details_text_file_type_metadata_column_index,
+ *             formatType: _var.dataset_dataset_format_details_text_file_type_metadata_format_type,
+ *             columnDelimiter: _var.dataset_dataset_format_details_text_file_type_metadata_column_delimiter,
+ *             columnName: _var.dataset_dataset_format_details_text_file_type_metadata_column_name,
+ *             escapeCharacter: _var.dataset_dataset_format_details_text_file_type_metadata_escape_character,
+ *             lineDelimiter: _var.dataset_dataset_format_details_text_file_type_metadata_line_delimiter,
+ *         },
  *     },
  *     datasetSourceDetails: {
  *         bucket: _var.dataset_dataset_source_details_bucket,
@@ -87,7 +95,7 @@ export class Dataset extends pulumi.CustomResource {
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
-     * Specifies how to process the data. Supported formats include IMAGE and TEXT.
+     * It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
      */
     public readonly datasetFormatDetails!: pulumi.Output<outputs.DataLabellingService.DatasetDatasetFormatDetails>;
     /**
@@ -111,15 +119,15 @@ export class Dataset extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * Initial Generate Records configuration, generates records from the Dataset's source.
+     * The initial generate records configuration. It generates records from the dataset's source.
      */
     public readonly initialRecordGenerationConfiguration!: pulumi.Output<outputs.DataLabellingService.DatasetInitialRecordGenerationConfiguration>;
     /**
-     * An ordered collection of Labels that are unique by name.
+     * An ordered collection of labels that are unique by name.
      */
     public readonly labelSet!: pulumi.Output<outputs.DataLabellingService.DatasetLabelSet>;
     /**
-     * The labeling instructions for human labelers in rich text format
+     * (Updatable) The labeling instructions for human labelers in rich text format
      */
     public readonly labelingInstructions!: pulumi.Output<string>;
     /**
@@ -218,7 +226,7 @@ export interface DatasetState {
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * Specifies how to process the data. Supported formats include IMAGE and TEXT.
+     * It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
      */
     datasetFormatDetails?: pulumi.Input<inputs.DataLabellingService.DatasetDatasetFormatDetails>;
     /**
@@ -242,15 +250,15 @@ export interface DatasetState {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * Initial Generate Records configuration, generates records from the Dataset's source.
+     * The initial generate records configuration. It generates records from the dataset's source.
      */
     initialRecordGenerationConfiguration?: pulumi.Input<inputs.DataLabellingService.DatasetInitialRecordGenerationConfiguration>;
     /**
-     * An ordered collection of Labels that are unique by name.
+     * An ordered collection of labels that are unique by name.
      */
     labelSet?: pulumi.Input<inputs.DataLabellingService.DatasetLabelSet>;
     /**
-     * The labeling instructions for human labelers in rich text format
+     * (Updatable) The labeling instructions for human labelers in rich text format
      */
     labelingInstructions?: pulumi.Input<string>;
     /**
@@ -284,7 +292,7 @@ export interface DatasetArgs {
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * Specifies how to process the data. Supported formats include IMAGE and TEXT.
+     * It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
      */
     datasetFormatDetails: pulumi.Input<inputs.DataLabellingService.DatasetDatasetFormatDetails>;
     /**
@@ -308,15 +316,15 @@ export interface DatasetArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * Initial Generate Records configuration, generates records from the Dataset's source.
+     * The initial generate records configuration. It generates records from the dataset's source.
      */
     initialRecordGenerationConfiguration?: pulumi.Input<inputs.DataLabellingService.DatasetInitialRecordGenerationConfiguration>;
     /**
-     * An ordered collection of Labels that are unique by name.
+     * An ordered collection of labels that are unique by name.
      */
     labelSet: pulumi.Input<inputs.DataLabellingService.DatasetLabelSet>;
     /**
-     * The labeling instructions for human labelers in rich text format
+     * (Updatable) The labeling instructions for human labelers in rich text format
      */
     labelingInstructions?: pulumi.Input<string>;
 }

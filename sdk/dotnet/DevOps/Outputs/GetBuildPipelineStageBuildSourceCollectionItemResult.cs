@@ -18,7 +18,7 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// </summary>
         public readonly string Branch;
         /// <summary>
-        /// Connection identifier pertinent to GitHub source provider.
+        /// Connection identifier pertinent to Bitbucket Cloud source provider
         /// </summary>
         public readonly string ConnectionId;
         /// <summary>

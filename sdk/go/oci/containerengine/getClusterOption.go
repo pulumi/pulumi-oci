@@ -56,8 +56,10 @@ type GetClusterOptionArgs struct {
 
 // A collection of values returned by getClusterOption.
 type GetClusterOptionResult struct {
-	ClusterOptionId string  `pulumi:"clusterOptionId"`
-	CompartmentId   *string `pulumi:"compartmentId"`
+	ClusterOptionId string `pulumi:"clusterOptionId"`
+	// Available CNIs and network options for existing and new node pools of the cluster
+	ClusterPodNetworkOptions []GetClusterOptionClusterPodNetworkOption `pulumi:"clusterPodNetworkOptions"`
+	CompartmentId            *string                                   `pulumi:"compartmentId"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// Available Kubernetes versions.
@@ -106,6 +108,13 @@ func (o GetClusterOptionResultOutput) ToGetClusterOptionResultOutputWithContext(
 
 func (o GetClusterOptionResultOutput) ClusterOptionId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterOptionResult) string { return v.ClusterOptionId }).(pulumi.StringOutput)
+}
+
+// Available CNIs and network options for existing and new node pools of the cluster
+func (o GetClusterOptionResultOutput) ClusterPodNetworkOptions() GetClusterOptionClusterPodNetworkOptionArrayOutput {
+	return o.ApplyT(func(v GetClusterOptionResult) []GetClusterOptionClusterPodNetworkOption {
+		return v.ClusterPodNetworkOptions
+	}).(GetClusterOptionClusterPodNetworkOptionArrayOutput)
 }
 
 func (o GetClusterOptionResultOutput) CompartmentId() pulumi.StringPtrOutput {

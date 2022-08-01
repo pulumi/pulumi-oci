@@ -26,6 +26,10 @@ namespace Pulumi.Oci.Sch.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetServiceConnectorSourceLogSourceResult> LogSources;
         /// <summary>
+        /// The list of metric namespaces to retrieve data from.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetServiceConnectorSourceMonitoringSourceResult> MonitoringSources;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
         /// </summary>
         public readonly string StreamId;
@@ -38,11 +42,14 @@ namespace Pulumi.Oci.Sch.Outputs
 
             ImmutableArray<Outputs.GetServiceConnectorSourceLogSourceResult> logSources,
 
+            ImmutableArray<Outputs.GetServiceConnectorSourceMonitoringSourceResult> monitoringSources,
+
             string streamId)
         {
             Cursors = cursors;
             Kind = kind;
             LogSources = logSources;
+            MonitoringSources = monitoringSources;
             StreamId = streamId;
         }
     }

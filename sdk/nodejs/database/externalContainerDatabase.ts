@@ -119,6 +119,10 @@ export class ExternalContainerDatabase extends pulumi.CustomResource {
      */
     public /*out*/ readonly ncharacterSet!: pulumi.Output<string>;
     /**
+     * The configuration of Stack Monitoring for the external database.
+     */
+    public /*out*/ readonly stackMonitoringConfigs!: pulumi.Output<outputs.Database.ExternalContainerDatabaseStackMonitoringConfig[]>;
+    /**
      * The current state of the Oracle Cloud Infrastructure external database resource.
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
@@ -158,6 +162,7 @@ export class ExternalContainerDatabase extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["ncharacterSet"] = state ? state.ncharacterSet : undefined;
+            resourceInputs["stackMonitoringConfigs"] = state ? state.stackMonitoringConfigs : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeZone"] = state ? state.timeZone : undefined;
@@ -183,6 +188,7 @@ export class ExternalContainerDatabase extends pulumi.CustomResource {
             resourceInputs["dbUniqueName"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["ncharacterSet"] = undefined /*out*/;
+            resourceInputs["stackMonitoringConfigs"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeZone"] = undefined /*out*/;
@@ -252,6 +258,10 @@ export interface ExternalContainerDatabaseState {
      * The national character of the external database.
      */
     ncharacterSet?: pulumi.Input<string>;
+    /**
+     * The configuration of Stack Monitoring for the external database.
+     */
+    stackMonitoringConfigs?: pulumi.Input<pulumi.Input<inputs.Database.ExternalContainerDatabaseStackMonitoringConfig>[]>;
     /**
      * The current state of the Oracle Cloud Infrastructure external database resource.
      */

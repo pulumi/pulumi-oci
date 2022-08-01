@@ -280,14 +280,14 @@ public final class MysqlBackupDbSystemSnapshotArgs extends com.pulumi.resources.
     }
 
     /**
-     * If the policy is to enable high availability of the instance, by maintaining secondary/failover capacity as necessary.
+     * Specifies if the DB System is highly available.
      * 
      */
     @Import(name="isHighlyAvailable")
     private @Nullable Output<Boolean> isHighlyAvailable;
 
     /**
-     * @return If the policy is to enable high availability of the instance, by maintaining secondary/failover capacity as necessary.
+     * @return Specifies if the DB System is highly available.
      * 
      */
     public Optional<Output<Boolean>> isHighlyAvailable() {
@@ -819,7 +819,7 @@ public final class MysqlBackupDbSystemSnapshotArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param isHighlyAvailable If the policy is to enable high availability of the instance, by maintaining secondary/failover capacity as necessary.
+         * @param isHighlyAvailable Specifies if the DB System is highly available.
          * 
          * @return builder
          * 
@@ -830,7 +830,7 @@ public final class MysqlBackupDbSystemSnapshotArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param isHighlyAvailable If the policy is to enable high availability of the instance, by maintaining secondary/failover capacity as necessary.
+         * @param isHighlyAvailable Specifies if the DB System is highly available.
          * 
          * @return builder
          * 

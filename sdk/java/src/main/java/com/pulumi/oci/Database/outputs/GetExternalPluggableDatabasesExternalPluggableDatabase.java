@@ -6,6 +6,7 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Database.outputs.GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfig;
 import com.pulumi.oci.Database.outputs.GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfig;
+import com.pulumi.oci.Database.outputs.GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -105,6 +106,11 @@ public final class GetExternalPluggableDatabasesExternalPluggableDatabase {
      */
     private final String sourceId;
     /**
+     * @return The configuration of Stack Monitoring for the external database.
+     * 
+     */
+    private final List<GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig> stackMonitoringConfigs;
+    /**
      * @return A filter to return only resources that match the specified lifecycle state.
      * 
      */
@@ -140,6 +146,7 @@ public final class GetExternalPluggableDatabasesExternalPluggableDatabase {
         @CustomType.Parameter("ncharacterSet") String ncharacterSet,
         @CustomType.Parameter("operationsInsightsConfigs") List<GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfig> operationsInsightsConfigs,
         @CustomType.Parameter("sourceId") String sourceId,
+        @CustomType.Parameter("stackMonitoringConfigs") List<GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig> stackMonitoringConfigs,
         @CustomType.Parameter("state") String state,
         @CustomType.Parameter("timeCreated") String timeCreated,
         @CustomType.Parameter("timeZone") String timeZone) {
@@ -161,6 +168,7 @@ public final class GetExternalPluggableDatabasesExternalPluggableDatabase {
         this.ncharacterSet = ncharacterSet;
         this.operationsInsightsConfigs = operationsInsightsConfigs;
         this.sourceId = sourceId;
+        this.stackMonitoringConfigs = stackMonitoringConfigs;
         this.state = state;
         this.timeCreated = timeCreated;
         this.timeZone = timeZone;
@@ -293,6 +301,13 @@ public final class GetExternalPluggableDatabasesExternalPluggableDatabase {
         return this.sourceId;
     }
     /**
+     * @return The configuration of Stack Monitoring for the external database.
+     * 
+     */
+    public List<GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig> stackMonitoringConfigs() {
+        return this.stackMonitoringConfigs;
+    }
+    /**
      * @return A filter to return only resources that match the specified lifecycle state.
      * 
      */
@@ -341,6 +356,7 @@ public final class GetExternalPluggableDatabasesExternalPluggableDatabase {
         private String ncharacterSet;
         private List<GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfig> operationsInsightsConfigs;
         private String sourceId;
+        private List<GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig> stackMonitoringConfigs;
         private String state;
         private String timeCreated;
         private String timeZone;
@@ -369,6 +385,7 @@ public final class GetExternalPluggableDatabasesExternalPluggableDatabase {
     	      this.ncharacterSet = defaults.ncharacterSet;
     	      this.operationsInsightsConfigs = defaults.operationsInsightsConfigs;
     	      this.sourceId = defaults.sourceId;
+    	      this.stackMonitoringConfigs = defaults.stackMonitoringConfigs;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeZone = defaults.timeZone;
@@ -452,6 +469,13 @@ public final class GetExternalPluggableDatabasesExternalPluggableDatabase {
             this.sourceId = Objects.requireNonNull(sourceId);
             return this;
         }
+        public Builder stackMonitoringConfigs(List<GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig> stackMonitoringConfigs) {
+            this.stackMonitoringConfigs = Objects.requireNonNull(stackMonitoringConfigs);
+            return this;
+        }
+        public Builder stackMonitoringConfigs(GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig... stackMonitoringConfigs) {
+            return stackMonitoringConfigs(List.of(stackMonitoringConfigs));
+        }
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
@@ -464,7 +488,7 @@ public final class GetExternalPluggableDatabasesExternalPluggableDatabase {
             this.timeZone = Objects.requireNonNull(timeZone);
             return this;
         }        public GetExternalPluggableDatabasesExternalPluggableDatabase build() {
-            return new GetExternalPluggableDatabasesExternalPluggableDatabase(characterSet, compartmentId, databaseConfiguration, databaseEdition, databaseManagementConfigs, databaseVersion, dbId, dbPacks, dbUniqueName, definedTags, displayName, externalContainerDatabaseId, freeformTags, id, lifecycleDetails, ncharacterSet, operationsInsightsConfigs, sourceId, state, timeCreated, timeZone);
+            return new GetExternalPluggableDatabasesExternalPluggableDatabase(characterSet, compartmentId, databaseConfiguration, databaseEdition, databaseManagementConfigs, databaseVersion, dbId, dbPacks, dbUniqueName, definedTags, displayName, externalContainerDatabaseId, freeformTags, id, lifecycleDetails, ncharacterSet, operationsInsightsConfigs, sourceId, stackMonitoringConfigs, state, timeCreated, timeZone);
         }
     }
 }

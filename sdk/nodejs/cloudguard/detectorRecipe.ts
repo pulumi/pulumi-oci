@@ -55,7 +55,7 @@ export class DetectorRecipe extends pulumi.CustomResource {
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * (Updatable) DetectorRecipe Description
+     * (Updatable) Detector recipe description.
      */
     public readonly description!: pulumi.Output<string>;
     /**
@@ -67,7 +67,7 @@ export class DetectorRecipe extends pulumi.CustomResource {
      */
     public readonly detectorRules!: pulumi.Output<outputs.CloudGuard.DetectorRecipeDetectorRule[]>;
     /**
-     * (Updatable) DetectorRecipe Display Name
+     * (Updatable) Detector recipe display name.
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
@@ -174,7 +174,7 @@ export interface DetectorRecipeState {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) DetectorRecipe Description
+     * (Updatable) Detector recipe description.
      */
     description?: pulumi.Input<string>;
     /**
@@ -186,7 +186,7 @@ export interface DetectorRecipeState {
      */
     detectorRules?: pulumi.Input<pulumi.Input<inputs.CloudGuard.DetectorRecipeDetectorRule>[]>;
     /**
-     * (Updatable) DetectorRecipe Display Name
+     * (Updatable) Detector recipe display name.
      */
     displayName?: pulumi.Input<string>;
     /**
@@ -236,7 +236,7 @@ export interface DetectorRecipeArgs {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) DetectorRecipe Description
+     * (Updatable) Detector recipe description.
      */
     description?: pulumi.Input<string>;
     /**
@@ -244,7 +244,7 @@ export interface DetectorRecipeArgs {
      */
     detectorRules?: pulumi.Input<pulumi.Input<inputs.CloudGuard.DetectorRecipeDetectorRule>[]>;
     /**
-     * (Updatable) DetectorRecipe Display Name
+     * (Updatable) Detector recipe display name.
      */
     displayName: pulumi.Input<string>;
     /**

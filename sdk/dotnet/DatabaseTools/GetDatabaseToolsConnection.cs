@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DatabaseTools
         /// <summary>
         /// This data source provides details about a specific Database Tools Connection resource in Oracle Cloud Infrastructure Database Tools service.
         /// 
-        /// Gets a DatabaseToolsConnection by identifier
+        /// Gets details of the specified Database Tools connection.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -45,7 +45,7 @@ namespace Pulumi.Oci.DatabaseTools
         /// <summary>
         /// This data source provides details about a specific Database Tools Connection resource in Oracle Cloud Infrastructure Database Tools service.
         /// 
-        /// Gets a DatabaseToolsConnection by identifier
+        /// Gets details of the specified Database Tools connection.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -78,7 +78,7 @@ namespace Pulumi.Oci.DatabaseTools
     public sealed class GetDatabaseToolsConnectionArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a DatabaseToolsConnection.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools connection.
         /// </summary>
         [Input("databaseToolsConnectionId", required: true)]
         public string DatabaseToolsConnectionId { get; set; } = null!;
@@ -91,7 +91,7 @@ namespace Pulumi.Oci.DatabaseTools
     public sealed class GetDatabaseToolsConnectionInvokeArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a DatabaseToolsConnection.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools connection.
         /// </summary>
         [Input("databaseToolsConnectionId", required: true)]
         public Input<string> DatabaseToolsConnectionId { get; set; } = null!;
@@ -106,15 +106,15 @@ namespace Pulumi.Oci.DatabaseTools
     public sealed class GetDatabaseToolsConnectionResult
     {
         /// <summary>
-        /// Advanced connection properties key-value pair (e.g., oracle.net.ssl_server_dn_match).
+        /// The advanced connection properties key-value pair (for example, `oracle.net.ssl_server_dn_match`).
         /// </summary>
         public readonly ImmutableDictionary<string, object> AdvancedProperties;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// Connect descriptor or Easy Connect Naming method to connect to the database.
+        /// The connect descriptor or Easy Connect Naming method used to connect to the database.
         /// </summary>
         public readonly string ConnectionString;
         public readonly string DatabaseToolsConnectionId;
@@ -131,19 +131,19 @@ namespace Pulumi.Oci.DatabaseTools
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsConnection.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools connection.
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
+        /// The Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDatabaseToolsConnectionKeyStoreResult> KeyStores;
         /// <summary>
-        /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        /// A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsPrivateEndpoint used to access the database in the Customer VCN.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
         /// </summary>
         public readonly string PrivateEndpointId;
         /// <summary>
@@ -151,7 +151,7 @@ namespace Pulumi.Oci.DatabaseTools
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDatabaseToolsConnectionRelatedResourceResult> RelatedResources;
         /// <summary>
-        /// The current state of the DatabaseToolsConnection.
+        /// The current state of the Database Tools connection.
         /// </summary>
         public readonly string State;
         /// <summary>
@@ -159,19 +159,19 @@ namespace Pulumi.Oci.DatabaseTools
         /// </summary>
         public readonly ImmutableDictionary<string, object> SystemTags;
         /// <summary>
-        /// The time the DatabaseToolsConnection was created. An RFC3339 formatted datetime string
+        /// The time the Database Tools connection was created. An RFC3339 formatted datetime string.
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string
+        /// The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
         /// </summary>
         public readonly string TimeUpdated;
         /// <summary>
-        /// The DatabaseToolsConnection type.
+        /// The Database Tools connection type.
         /// </summary>
         public readonly string Type;
         /// <summary>
-        /// Database user name.
+        /// The database user name.
         /// </summary>
         public readonly string UserName;
         /// <summary>

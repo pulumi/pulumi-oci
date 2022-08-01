@@ -79,7 +79,7 @@ public final class GetDatabaseSoftwareImagesDatabaseSoftwareImage {
      */
     private final String lifecycleDetails;
     /**
-     * @return output from lsinventory which will get passed as a string
+     * @return The output from the OPatch lsInventory command, which is passed as a string.
      * 
      */
     private final String lsInventory;
@@ -232,7 +232,7 @@ public final class GetDatabaseSoftwareImagesDatabaseSoftwareImage {
         return this.lifecycleDetails;
     }
     /**
-     * @return output from lsinventory which will get passed as a string
+     * @return The output from the OPatch lsInventory command, which is passed as a string.
      * 
      */
     public String lsInventory() {

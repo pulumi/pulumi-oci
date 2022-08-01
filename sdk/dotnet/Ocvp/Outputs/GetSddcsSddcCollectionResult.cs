@@ -18,6 +18,10 @@ namespace Pulumi.Oci.Ocvp.Outputs
         /// </summary>
         public readonly int ActualEsxiHostsCount;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+        /// </summary>
+        public readonly string CapacityReservationId;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         public readonly string CompartmentId;
@@ -70,6 +74,14 @@ namespace Pulumi.Oci.Ocvp.Outputs
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// The initial OCPU count of the SDDC's ESXi hosts.
+        /// </summary>
+        public readonly double InitialHostOcpuCount;
+        /// <summary>
+        /// The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+        /// </summary>
+        public readonly string InitialHostShapeName;
         /// <summary>
         /// The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
         /// </summary>
@@ -213,6 +225,8 @@ namespace Pulumi.Oci.Ocvp.Outputs
         private GetSddcsSddcCollectionResult(
             int actualEsxiHostsCount,
 
+            string capacityReservationId,
+
             string compartmentId,
 
             string computeAvailabilityDomain,
@@ -240,6 +254,10 @@ namespace Pulumi.Oci.Ocvp.Outputs
             string hcxVlanId,
 
             string id,
+
+            double initialHostOcpuCount,
+
+            string initialHostShapeName,
 
             string initialSku,
 
@@ -314,6 +332,7 @@ namespace Pulumi.Oci.Ocvp.Outputs
             string workloadNetworkCidr)
         {
             ActualEsxiHostsCount = actualEsxiHostsCount;
+            CapacityReservationId = capacityReservationId;
             CompartmentId = compartmentId;
             ComputeAvailabilityDomain = computeAvailabilityDomain;
             DefinedTags = definedTags;
@@ -328,6 +347,8 @@ namespace Pulumi.Oci.Ocvp.Outputs
             HcxPrivateIpId = hcxPrivateIpId;
             HcxVlanId = hcxVlanId;
             Id = id;
+            InitialHostOcpuCount = initialHostOcpuCount;
+            InitialHostShapeName = initialHostShapeName;
             InitialSku = initialSku;
             InstanceDisplayNamePrefix = instanceDisplayNamePrefix;
             IsHcxEnabled = isHcxEnabled;

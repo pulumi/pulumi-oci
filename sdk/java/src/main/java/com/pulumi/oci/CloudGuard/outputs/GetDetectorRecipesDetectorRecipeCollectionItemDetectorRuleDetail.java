@@ -12,6 +12,10 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetail {
+    /**
+     * @return Base condition object
+     * 
+     */
     private final String condition;
     /**
      * @return Configuration details
@@ -55,6 +59,10 @@ public final class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDet
         this.riskLevel = riskLevel;
     }
 
+    /**
+     * @return Base condition object
+     * 
+     */
     public String condition() {
         return this.condition;
     }

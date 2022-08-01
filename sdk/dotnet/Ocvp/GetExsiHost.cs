@@ -110,6 +110,10 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         public readonly string BillingContractEndDate;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+        /// </summary>
+        public readonly string CapacityReservationId;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
         /// </summary>
         public readonly string CompartmentId;
@@ -147,6 +151,14 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         public readonly string GracePeriodEndDate;
         /// <summary>
+        /// The OCPU count of the ESXi host.
+        /// </summary>
+        public readonly double HostOcpuCount;
+        /// <summary>
+        /// The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+        /// </summary>
+        public readonly string HostShapeName;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host.
         /// </summary>
         public readonly string Id;
@@ -179,6 +191,8 @@ namespace Pulumi.Oci.Ocvp
         private GetExsiHostResult(
             string billingContractEndDate,
 
+            string capacityReservationId,
+
             string compartmentId,
 
             string computeAvailabilityDomain,
@@ -199,6 +213,10 @@ namespace Pulumi.Oci.Ocvp
 
             string gracePeriodEndDate,
 
+            double hostOcpuCount,
+
+            string hostShapeName,
+
             string id,
 
             string nextSku,
@@ -214,6 +232,7 @@ namespace Pulumi.Oci.Ocvp
             string timeUpdated)
         {
             BillingContractEndDate = billingContractEndDate;
+            CapacityReservationId = capacityReservationId;
             CompartmentId = compartmentId;
             ComputeAvailabilityDomain = computeAvailabilityDomain;
             ComputeInstanceId = computeInstanceId;
@@ -224,6 +243,8 @@ namespace Pulumi.Oci.Ocvp
             FailedEsxiHostId = failedEsxiHostId;
             FreeformTags = freeformTags;
             GracePeriodEndDate = gracePeriodEndDate;
+            HostOcpuCount = hostOcpuCount;
+            HostShapeName = hostShapeName;
             Id = id;
             NextSku = nextSku;
             ReplacementEsxiHostId = replacementEsxiHostId;

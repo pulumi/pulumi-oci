@@ -14,19 +14,23 @@ namespace Pulumi.Oci.BigDataService.Outputs
     public sealed class BdsInstanceWorkerNode
     {
         /// <summary>
-        /// The size of block volume in GB to be attached to a given node. All the details needed for attaching the block volume are managed by service itself.
+        /// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
         /// </summary>
         public readonly string BlockVolumeSizeInGbs;
         /// <summary>
-        /// The number of nodes that form the cluster.
+        /// The amount of worker nodes should be created
         /// </summary>
         public readonly int NumberOfNodes;
         /// <summary>
-        /// (Updatable) Shape of the node.
+        /// Shape of the node
         /// </summary>
         public readonly string Shape;
         /// <summary>
-        /// The OCID of the subnet in which the node will be created.
+        /// The shape configuration requested for the node.
+        /// </summary>
+        public readonly Outputs.BdsInstanceWorkerNodeShapeConfig? ShapeConfig;
+        /// <summary>
+        /// The OCID of the subnet in which the node should be created
         /// </summary>
         public readonly string SubnetId;
 
@@ -38,11 +42,14 @@ namespace Pulumi.Oci.BigDataService.Outputs
 
             string shape,
 
+            Outputs.BdsInstanceWorkerNodeShapeConfig? shapeConfig,
+
             string subnetId)
         {
             BlockVolumeSizeInGbs = blockVolumeSizeInGbs;
             NumberOfNodes = numberOfNodes;
             Shape = shape;
+            ShapeConfig = shapeConfig;
             SubnetId = subnetId;
         }
     }

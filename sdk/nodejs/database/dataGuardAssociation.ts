@@ -31,18 +31,29 @@ import * as utilities from "../utilities";
  *     transportType: _var.data_guard_association_transport_type,
  *     availabilityDomain: _var.data_guard_association_availability_domain,
  *     backupNetworkNsgIds: _var.data_guard_association_backup_network_nsg_ids,
+ *     cpuCoreCount: _var.data_guard_association_cpu_core_count,
+ *     databaseDefinedTags: _var.data_guard_association_database_defined_tags,
+ *     databaseFreeformTags: _var.data_guard_association_database_freeform_tags,
  *     databaseSoftwareImageId: oci_database_database_software_image.test_database_software_image.id,
+ *     dbSystemDefinedTags: _var.data_guard_association_db_system_defined_tags,
+ *     dbSystemFreeformTags: _var.data_guard_association_db_system_freeform_tags,
  *     displayName: _var.data_guard_association_display_name,
+ *     faultDomains: _var.data_guard_association_fault_domains,
  *     hostname: _var.data_guard_association_hostname,
  *     isActiveDataGuardEnabled: _var.data_guard_association_is_active_data_guard_enabled,
+ *     licenseModel: _var.data_guard_association_license_model,
+ *     nodeCount: _var.data_guard_association_node_count,
  *     nsgIds: _var.data_guard_association_nsg_ids,
  *     peerDbHomeId: oci_database_db_home.test_db_home.id,
  *     peerDbSystemId: oci_database_db_system.test_db_system.id,
  *     peerDbUniqueName: _var.data_guard_association_peer_db_unique_name,
  *     peerSidPrefix: _var.data_guard_association_peer_sid_prefix,
  *     peerVmClusterId: oci_database_vm_cluster.test_vm_cluster.id,
+ *     privateIp: _var.data_guard_association_private_ip,
  *     shape: _var.data_guard_association_shape,
+ *     storageVolumePerformanceMode: _var.data_guard_association_storage_volume_performance_mode,
  *     subnetId: oci_core_subnet.test_subnet.id,
+ *     timeZone: _var.data_guard_association_time_zone,
  * });
  * ```
  *
@@ -94,6 +105,10 @@ export class DataGuardAssociation extends pulumi.CustomResource {
      * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
      */
     public readonly backupNetworkNsgIds!: pulumi.Output<string[] | undefined>;
+    /**
+     * The number of OCPU cores available for AMD-based virtual machine DB systems.
+     */
+    public readonly cpuCoreCount!: pulumi.Output<number>;
     public readonly createAsync!: pulumi.Output<boolean | undefined>;
     /**
      * Specifies whether to create the peer database in an existing DB system or in a new DB system.
@@ -104,6 +119,14 @@ export class DataGuardAssociation extends pulumi.CustomResource {
      */
     public readonly databaseAdminPassword!: pulumi.Output<string>;
     /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    public readonly databaseDefinedTags!: pulumi.Output<{[key: string]: any} | undefined>;
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+     */
+    public readonly databaseFreeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
+    /**
      * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public readonly databaseId!: pulumi.Output<string>;
@@ -111,11 +134,23 @@ export class DataGuardAssociation extends pulumi.CustomResource {
      * The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Applicable only when creationType=`ExistingDbSystem` and when the existing database has Exadata shape.
      */
     public readonly databaseSoftwareImageId!: pulumi.Output<string | undefined>;
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    public readonly dbSystemDefinedTags!: pulumi.Output<{[key: string]: any} | undefined>;
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+     */
+    public readonly dbSystemFreeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     public readonly deleteStandbyDbHomeOnDelete!: pulumi.Output<string>;
     /**
      * The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
      */
     public readonly displayName!: pulumi.Output<string>;
+    /**
+     * A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
+     */
+    public readonly faultDomains!: pulumi.Output<string[] | undefined>;
     /**
      * The hostname for the DB node.
      */
@@ -125,12 +160,20 @@ export class DataGuardAssociation extends pulumi.CustomResource {
      */
     public readonly isActiveDataGuardEnabled!: pulumi.Output<boolean>;
     /**
+     * The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED.
+     */
+    public readonly licenseModel!: pulumi.Output<string | undefined>;
+    /**
      * Additional information about the current lifecycleState, if available.
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
     /**
-     * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-     * * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+     * The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
+     */
+    public readonly nodeCount!: pulumi.Output<number | undefined>;
+    /**
+     * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+     * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      */
     public readonly nsgIds!: pulumi.Output<string[] | undefined>;
     /**
@@ -166,6 +209,10 @@ export class DataGuardAssociation extends pulumi.CustomResource {
      */
     public readonly peerVmClusterId!: pulumi.Output<string>;
     /**
+     * The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
+     */
+    public readonly privateIp!: pulumi.Output<string | undefined>;
+    /**
      * (Updatable) The protection mode to set up between the primary and standby databases. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
      */
     public readonly protectionMode!: pulumi.Output<string>;
@@ -182,6 +229,10 @@ export class DataGuardAssociation extends pulumi.CustomResource {
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
+     * The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
+     */
+    public readonly storageVolumePerformanceMode!: pulumi.Output<string>;
+    /**
      * The OCID of the subnet the DB system is associated with. **Subnet Restrictions:**
      * * For 1- and 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.16.16/28
      */
@@ -190,6 +241,10 @@ export class DataGuardAssociation extends pulumi.CustomResource {
      * The date and time the Data Guard association was created.
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    /**
+     * The time zone of the dataguard standby DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+     */
+    public readonly timeZone!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
      * * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
@@ -215,16 +270,24 @@ export class DataGuardAssociation extends pulumi.CustomResource {
             resourceInputs["applyRate"] = state ? state.applyRate : undefined;
             resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
             resourceInputs["backupNetworkNsgIds"] = state ? state.backupNetworkNsgIds : undefined;
+            resourceInputs["cpuCoreCount"] = state ? state.cpuCoreCount : undefined;
             resourceInputs["createAsync"] = state ? state.createAsync : undefined;
             resourceInputs["creationType"] = state ? state.creationType : undefined;
             resourceInputs["databaseAdminPassword"] = state ? state.databaseAdminPassword : undefined;
+            resourceInputs["databaseDefinedTags"] = state ? state.databaseDefinedTags : undefined;
+            resourceInputs["databaseFreeformTags"] = state ? state.databaseFreeformTags : undefined;
             resourceInputs["databaseId"] = state ? state.databaseId : undefined;
             resourceInputs["databaseSoftwareImageId"] = state ? state.databaseSoftwareImageId : undefined;
+            resourceInputs["dbSystemDefinedTags"] = state ? state.dbSystemDefinedTags : undefined;
+            resourceInputs["dbSystemFreeformTags"] = state ? state.dbSystemFreeformTags : undefined;
             resourceInputs["deleteStandbyDbHomeOnDelete"] = state ? state.deleteStandbyDbHomeOnDelete : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
+            resourceInputs["faultDomains"] = state ? state.faultDomains : undefined;
             resourceInputs["hostname"] = state ? state.hostname : undefined;
             resourceInputs["isActiveDataGuardEnabled"] = state ? state.isActiveDataGuardEnabled : undefined;
+            resourceInputs["licenseModel"] = state ? state.licenseModel : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
+            resourceInputs["nodeCount"] = state ? state.nodeCount : undefined;
             resourceInputs["nsgIds"] = state ? state.nsgIds : undefined;
             resourceInputs["peerDataGuardAssociationId"] = state ? state.peerDataGuardAssociationId : undefined;
             resourceInputs["peerDatabaseId"] = state ? state.peerDatabaseId : undefined;
@@ -234,12 +297,15 @@ export class DataGuardAssociation extends pulumi.CustomResource {
             resourceInputs["peerRole"] = state ? state.peerRole : undefined;
             resourceInputs["peerSidPrefix"] = state ? state.peerSidPrefix : undefined;
             resourceInputs["peerVmClusterId"] = state ? state.peerVmClusterId : undefined;
+            resourceInputs["privateIp"] = state ? state.privateIp : undefined;
             resourceInputs["protectionMode"] = state ? state.protectionMode : undefined;
             resourceInputs["role"] = state ? state.role : undefined;
             resourceInputs["shape"] = state ? state.shape : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
+            resourceInputs["storageVolumePerformanceMode"] = state ? state.storageVolumePerformanceMode : undefined;
             resourceInputs["subnetId"] = state ? state.subnetId : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["timeZone"] = state ? state.timeZone : undefined;
             resourceInputs["transportType"] = state ? state.transportType : undefined;
         } else {
             const args = argsOrState as DataGuardAssociationArgs | undefined;
@@ -263,24 +329,35 @@ export class DataGuardAssociation extends pulumi.CustomResource {
             }
             resourceInputs["availabilityDomain"] = args ? args.availabilityDomain : undefined;
             resourceInputs["backupNetworkNsgIds"] = args ? args.backupNetworkNsgIds : undefined;
+            resourceInputs["cpuCoreCount"] = args ? args.cpuCoreCount : undefined;
             resourceInputs["createAsync"] = args ? args.createAsync : undefined;
             resourceInputs["creationType"] = args ? args.creationType : undefined;
             resourceInputs["databaseAdminPassword"] = args ? args.databaseAdminPassword : undefined;
+            resourceInputs["databaseDefinedTags"] = args ? args.databaseDefinedTags : undefined;
+            resourceInputs["databaseFreeformTags"] = args ? args.databaseFreeformTags : undefined;
             resourceInputs["databaseId"] = args ? args.databaseId : undefined;
             resourceInputs["databaseSoftwareImageId"] = args ? args.databaseSoftwareImageId : undefined;
+            resourceInputs["dbSystemDefinedTags"] = args ? args.dbSystemDefinedTags : undefined;
+            resourceInputs["dbSystemFreeformTags"] = args ? args.dbSystemFreeformTags : undefined;
             resourceInputs["deleteStandbyDbHomeOnDelete"] = args ? args.deleteStandbyDbHomeOnDelete : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
+            resourceInputs["faultDomains"] = args ? args.faultDomains : undefined;
             resourceInputs["hostname"] = args ? args.hostname : undefined;
             resourceInputs["isActiveDataGuardEnabled"] = args ? args.isActiveDataGuardEnabled : undefined;
+            resourceInputs["licenseModel"] = args ? args.licenseModel : undefined;
+            resourceInputs["nodeCount"] = args ? args.nodeCount : undefined;
             resourceInputs["nsgIds"] = args ? args.nsgIds : undefined;
             resourceInputs["peerDbHomeId"] = args ? args.peerDbHomeId : undefined;
             resourceInputs["peerDbSystemId"] = args ? args.peerDbSystemId : undefined;
             resourceInputs["peerDbUniqueName"] = args ? args.peerDbUniqueName : undefined;
             resourceInputs["peerSidPrefix"] = args ? args.peerSidPrefix : undefined;
             resourceInputs["peerVmClusterId"] = args ? args.peerVmClusterId : undefined;
+            resourceInputs["privateIp"] = args ? args.privateIp : undefined;
             resourceInputs["protectionMode"] = args ? args.protectionMode : undefined;
             resourceInputs["shape"] = args ? args.shape : undefined;
+            resourceInputs["storageVolumePerformanceMode"] = args ? args.storageVolumePerformanceMode : undefined;
             resourceInputs["subnetId"] = args ? args.subnetId : undefined;
+            resourceInputs["timeZone"] = args ? args.timeZone : undefined;
             resourceInputs["transportType"] = args ? args.transportType : undefined;
             resourceInputs["applyLag"] = undefined /*out*/;
             resourceInputs["applyRate"] = undefined /*out*/;
@@ -317,6 +394,10 @@ export interface DataGuardAssociationState {
      * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
      */
     backupNetworkNsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * The number of OCPU cores available for AMD-based virtual machine DB systems.
+     */
+    cpuCoreCount?: pulumi.Input<number>;
     createAsync?: pulumi.Input<boolean>;
     /**
      * Specifies whether to create the peer database in an existing DB system or in a new DB system.
@@ -327,6 +408,14 @@ export interface DataGuardAssociationState {
      */
     databaseAdminPassword?: pulumi.Input<string>;
     /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    databaseDefinedTags?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+     */
+    databaseFreeformTags?: pulumi.Input<{[key: string]: any}>;
+    /**
      * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     databaseId?: pulumi.Input<string>;
@@ -334,11 +423,23 @@ export interface DataGuardAssociationState {
      * The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Applicable only when creationType=`ExistingDbSystem` and when the existing database has Exadata shape.
      */
     databaseSoftwareImageId?: pulumi.Input<string>;
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    dbSystemDefinedTags?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+     */
+    dbSystemFreeformTags?: pulumi.Input<{[key: string]: any}>;
     deleteStandbyDbHomeOnDelete?: pulumi.Input<string>;
     /**
      * The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
      */
     displayName?: pulumi.Input<string>;
+    /**
+     * A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
+     */
+    faultDomains?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * The hostname for the DB node.
      */
@@ -348,12 +449,20 @@ export interface DataGuardAssociationState {
      */
     isActiveDataGuardEnabled?: pulumi.Input<boolean>;
     /**
+     * The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED.
+     */
+    licenseModel?: pulumi.Input<string>;
+    /**
      * Additional information about the current lifecycleState, if available.
      */
     lifecycleDetails?: pulumi.Input<string>;
     /**
-     * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-     * * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+     * The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
+     */
+    nodeCount?: pulumi.Input<number>;
+    /**
+     * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+     * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      */
     nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -389,6 +498,10 @@ export interface DataGuardAssociationState {
      */
     peerVmClusterId?: pulumi.Input<string>;
     /**
+     * The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
+     */
+    privateIp?: pulumi.Input<string>;
+    /**
      * (Updatable) The protection mode to set up between the primary and standby databases. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
      */
     protectionMode?: pulumi.Input<string>;
@@ -405,6 +518,10 @@ export interface DataGuardAssociationState {
      */
     state?: pulumi.Input<string>;
     /**
+     * The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
+     */
+    storageVolumePerformanceMode?: pulumi.Input<string>;
+    /**
      * The OCID of the subnet the DB system is associated with. **Subnet Restrictions:**
      * * For 1- and 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.16.16/28
      */
@@ -413,6 +530,10 @@ export interface DataGuardAssociationState {
      * The date and time the Data Guard association was created.
      */
     timeCreated?: pulumi.Input<string>;
+    /**
+     * The time zone of the dataguard standby DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+     */
+    timeZone?: pulumi.Input<string>;
     /**
      * (Updatable) The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
      * * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
@@ -434,6 +555,10 @@ export interface DataGuardAssociationArgs {
      * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
      */
     backupNetworkNsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * The number of OCPU cores available for AMD-based virtual machine DB systems.
+     */
+    cpuCoreCount?: pulumi.Input<number>;
     createAsync?: pulumi.Input<boolean>;
     /**
      * Specifies whether to create the peer database in an existing DB system or in a new DB system.
@@ -444,6 +569,14 @@ export interface DataGuardAssociationArgs {
      */
     databaseAdminPassword: pulumi.Input<string>;
     /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    databaseDefinedTags?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+     */
+    databaseFreeformTags?: pulumi.Input<{[key: string]: any}>;
+    /**
      * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     databaseId: pulumi.Input<string>;
@@ -451,11 +584,23 @@ export interface DataGuardAssociationArgs {
      * The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Applicable only when creationType=`ExistingDbSystem` and when the existing database has Exadata shape.
      */
     databaseSoftwareImageId?: pulumi.Input<string>;
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    dbSystemDefinedTags?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+     */
+    dbSystemFreeformTags?: pulumi.Input<{[key: string]: any}>;
     deleteStandbyDbHomeOnDelete: pulumi.Input<string>;
     /**
      * The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
      */
     displayName?: pulumi.Input<string>;
+    /**
+     * A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
+     */
+    faultDomains?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * The hostname for the DB node.
      */
@@ -465,8 +610,16 @@ export interface DataGuardAssociationArgs {
      */
     isActiveDataGuardEnabled?: pulumi.Input<boolean>;
     /**
-     * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-     * * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+     * The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED.
+     */
+    licenseModel?: pulumi.Input<string>;
+    /**
+     * The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
+     */
+    nodeCount?: pulumi.Input<number>;
+    /**
+     * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+     * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      */
     nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -490,6 +643,10 @@ export interface DataGuardAssociationArgs {
      */
     peerVmClusterId?: pulumi.Input<string>;
     /**
+     * The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
+     */
+    privateIp?: pulumi.Input<string>;
+    /**
      * (Updatable) The protection mode to set up between the primary and standby databases. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
      */
     protectionMode: pulumi.Input<string>;
@@ -498,10 +655,18 @@ export interface DataGuardAssociationArgs {
      */
     shape?: pulumi.Input<string>;
     /**
+     * The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
+     */
+    storageVolumePerformanceMode?: pulumi.Input<string>;
+    /**
      * The OCID of the subnet the DB system is associated with. **Subnet Restrictions:**
      * * For 1- and 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.16.16/28
      */
     subnetId?: pulumi.Input<string>;
+    /**
+     * The time zone of the dataguard standby DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+     */
+    timeZone?: pulumi.Input<string>;
     /**
      * (Updatable) The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
      * * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC

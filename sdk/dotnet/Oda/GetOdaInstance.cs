@@ -106,6 +106,14 @@ namespace Pulumi.Oci.Oda
     public sealed class GetOdaInstanceResult
     {
         /// <summary>
+        /// A list of attachment identifiers for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+        /// </summary>
+        public readonly ImmutableArray<string> AttachmentIds;
+        /// <summary>
+        /// A list of attachment types for this instance (if any). Use attachmentIds to get the details of the attachments.
+        /// </summary>
+        public readonly ImmutableArray<string> AttachmentTypes;
+        /// <summary>
         /// Identifier of the compartment that the instance belongs to.
         /// </summary>
         public readonly string CompartmentId;
@@ -126,7 +134,7 @@ namespace Pulumi.Oci.Oda
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
@@ -134,10 +142,38 @@ namespace Pulumi.Oci.Oda
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.
+        /// </summary>
+        public readonly string IdentityAppConsoleUrl;
+        /// <summary>
+        /// If isRoleBasedAccess is set to true, this property specifies the GUID of the Identity Application instance Digital Assistant has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this Digital Assistant instance for users within the identity domain.
+        /// </summary>
+        public readonly string IdentityAppGuid;
+        /// <summary>
+        /// If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
+        /// </summary>
+        public readonly string IdentityDomain;
+        /// <summary>
+        /// A list of package ids imported into this instance (if any). Use GetImportedPackage to get the details of the imported packages.
+        /// </summary>
+        public readonly ImmutableArray<string> ImportedPackageIds;
+        /// <summary>
+        /// A list of package names imported into this instance (if any). Use importedPackageIds field to get the details of the imported packages.
+        /// </summary>
+        public readonly ImmutableArray<string> ImportedPackageNames;
+        /// <summary>
+        /// Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
+        /// </summary>
+        public readonly bool IsRoleBasedAccess;
+        /// <summary>
         /// The current sub-state of the Digital Assistant instance.
         /// </summary>
         public readonly string LifecycleSubState;
         public readonly string OdaInstanceId;
+        /// <summary>
+        /// A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetOdaInstanceRestrictedOperationResult> RestrictedOperations;
         /// <summary>
         /// Shape or size of the instance.
         /// </summary>
@@ -165,6 +201,10 @@ namespace Pulumi.Oci.Oda
 
         [OutputConstructor]
         private GetOdaInstanceResult(
+            ImmutableArray<string> attachmentIds,
+
+            ImmutableArray<string> attachmentTypes,
+
             string compartmentId,
 
             string connectorUrl,
@@ -179,9 +219,23 @@ namespace Pulumi.Oci.Oda
 
             string id,
 
+            string identityAppConsoleUrl,
+
+            string identityAppGuid,
+
+            string identityDomain,
+
+            ImmutableArray<string> importedPackageIds,
+
+            ImmutableArray<string> importedPackageNames,
+
+            bool isRoleBasedAccess,
+
             string lifecycleSubState,
 
             string odaInstanceId,
+
+            ImmutableArray<Outputs.GetOdaInstanceRestrictedOperationResult> restrictedOperations,
 
             string shapeName,
 
@@ -195,6 +249,8 @@ namespace Pulumi.Oci.Oda
 
             string webAppUrl)
         {
+            AttachmentIds = attachmentIds;
+            AttachmentTypes = attachmentTypes;
             CompartmentId = compartmentId;
             ConnectorUrl = connectorUrl;
             DefinedTags = definedTags;
@@ -202,8 +258,15 @@ namespace Pulumi.Oci.Oda
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;
+            IdentityAppConsoleUrl = identityAppConsoleUrl;
+            IdentityAppGuid = identityAppGuid;
+            IdentityDomain = identityDomain;
+            ImportedPackageIds = importedPackageIds;
+            ImportedPackageNames = importedPackageNames;
+            IsRoleBasedAccess = isRoleBasedAccess;
             LifecycleSubState = lifecycleSubState;
             OdaInstanceId = odaInstanceId;
+            RestrictedOperations = restrictedOperations;
             ShapeName = shapeName;
             State = state;
             StateMessage = stateMessage;

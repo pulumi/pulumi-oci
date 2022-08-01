@@ -48,6 +48,7 @@ namespace Pulumi.Oci.CloudGuard
         ///             AccessLevel = @var.Target_access_level,
         ///             CompartmentIdInSubtree = @var.Target_compartment_id_in_subtree,
         ///             DisplayName = @var.Target_display_name,
+        ///             IsNonSecurityZoneTargetsOnlyQuery = @var.Target_is_non_security_zone_targets_only_query,
         ///             State = @var.Target_state,
         ///         }));
         ///     }
@@ -97,6 +98,7 @@ namespace Pulumi.Oci.CloudGuard
         ///             AccessLevel = @var.Target_access_level,
         ///             CompartmentIdInSubtree = @var.Target_compartment_id_in_subtree,
         ///             DisplayName = @var.Target_display_name,
+        ///             IsNonSecurityZoneTargetsOnlyQuery = @var.Target_is_non_security_zone_targets_only_query,
         ///             State = @var.Target_state,
         ///         }));
         ///     }
@@ -146,6 +148,12 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
+        /// Default is false. When set to true, only the targets that would be deleted as part of security zone creation will be returned.
+        /// </summary>
+        [Input("isNonSecurityZoneTargetsOnlyQuery")]
+        public bool? IsNonSecurityZoneTargetsOnlyQuery { get; set; }
+
+        /// <summary>
         /// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
         /// </summary>
         [Input("state")]
@@ -191,6 +199,12 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
+        /// Default is false. When set to true, only the targets that would be deleted as part of security zone creation will be returned.
+        /// </summary>
+        [Input("isNonSecurityZoneTargetsOnlyQuery")]
+        public Input<bool>? IsNonSecurityZoneTargetsOnlyQuery { get; set; }
+
+        /// <summary>
         /// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
         /// </summary>
         [Input("state")]
@@ -212,7 +226,7 @@ namespace Pulumi.Oci.CloudGuard
         public readonly string CompartmentId;
         public readonly bool? CompartmentIdInSubtree;
         /// <summary>
-        /// ResponderRule Display Name
+        /// ResponderRule display name.
         /// </summary>
         public readonly string? DisplayName;
         public readonly ImmutableArray<Outputs.GetGuardTargetsFilterResult> Filters;
@@ -220,6 +234,7 @@ namespace Pulumi.Oci.CloudGuard
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        public readonly bool? IsNonSecurityZoneTargetsOnlyQuery;
         /// <summary>
         /// The current state of the ResponderRule.
         /// </summary>
@@ -243,6 +258,8 @@ namespace Pulumi.Oci.CloudGuard
 
             string id,
 
+            bool? isNonSecurityZoneTargetsOnlyQuery,
+
             string? state,
 
             ImmutableArray<Outputs.GetGuardTargetsTargetCollectionResult> targetCollections)
@@ -253,6 +270,7 @@ namespace Pulumi.Oci.CloudGuard
             DisplayName = displayName;
             Filters = filters;
             Id = id;
+            IsNonSecurityZoneTargetsOnlyQuery = isNonSecurityZoneTargetsOnlyQuery;
             State = state;
             TargetCollections = targetCollections;
         }

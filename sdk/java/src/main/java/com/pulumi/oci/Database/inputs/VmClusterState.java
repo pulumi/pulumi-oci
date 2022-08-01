@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Database.inputs.VmClusterDataCollectionOptionsArgs;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Integer;
@@ -56,6 +57,21 @@ public final class VmClusterState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<Integer>> cpusEnabled() {
         return Optional.ofNullable(this.cpusEnabled);
+    }
+
+    /**
+     * (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster.
+     * 
+     */
+    @Import(name="dataCollectionOptions")
+    private @Nullable Output<VmClusterDataCollectionOptionsArgs> dataCollectionOptions;
+
+    /**
+     * @return (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster.
+     * 
+     */
+    public Optional<Output<VmClusterDataCollectionOptionsArgs>> dataCollectionOptions() {
+        return Optional.ofNullable(this.dataCollectionOptions);
     }
 
     @Import(name="dataStorageSizeInGb")
@@ -400,6 +416,7 @@ public final class VmClusterState extends com.pulumi.resources.ResourceArgs {
         this.compartmentId = $.compartmentId;
         this.cpuCoreCount = $.cpuCoreCount;
         this.cpusEnabled = $.cpusEnabled;
+        this.dataCollectionOptions = $.dataCollectionOptions;
         this.dataStorageSizeInGb = $.dataStorageSizeInGb;
         this.dataStorageSizeInTbs = $.dataStorageSizeInTbs;
         this.dbNodeStorageSizeInGbs = $.dbNodeStorageSizeInGbs;
@@ -493,6 +510,27 @@ public final class VmClusterState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder cpusEnabled(Integer cpusEnabled) {
             return cpusEnabled(Output.of(cpusEnabled));
+        }
+
+        /**
+         * @param dataCollectionOptions (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataCollectionOptions(@Nullable Output<VmClusterDataCollectionOptionsArgs> dataCollectionOptions) {
+            $.dataCollectionOptions = dataCollectionOptions;
+            return this;
+        }
+
+        /**
+         * @param dataCollectionOptions (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataCollectionOptions(VmClusterDataCollectionOptionsArgs dataCollectionOptions) {
+            return dataCollectionOptions(Output.of(dataCollectionOptions));
         }
 
         public Builder dataStorageSizeInGb(@Nullable Output<Double> dataStorageSizeInGb) {

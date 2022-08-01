@@ -19,7 +19,6 @@ import * as utilities from "../utilities";
  * const testNodePool = new oci.containerengine.NodePool("testNodePool", {
  *     clusterId: oci_containerengine_cluster.test_cluster.id,
  *     compartmentId: _var.compartment_id,
- *     kubernetesVersion: _var.node_pool_kubernetes_version,
  *     nodeShape: _var.node_pool_node_shape,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
@@ -31,15 +30,23 @@ import * as utilities from "../utilities";
  *         key: _var.node_pool_initial_node_labels_key,
  *         value: _var.node_pool_initial_node_labels_value,
  *     }],
+ *     kubernetesVersion: _var.node_pool_kubernetes_version,
  *     nodeConfigDetails: {
  *         placementConfigs: [{
  *             availabilityDomain: _var.node_pool_node_config_details_placement_configs_availability_domain,
  *             subnetId: oci_core_subnet.test_subnet.id,
  *             capacityReservationId: oci_containerengine_capacity_reservation.test_capacity_reservation.id,
+ *             faultDomains: _var.node_pool_node_config_details_placement_configs_fault_domains,
  *         }],
  *         size: _var.node_pool_node_config_details_size,
  *         isPvEncryptionInTransitEnabled: _var.node_pool_node_config_details_is_pv_encryption_in_transit_enabled,
  *         kmsKeyId: oci_kms_key.test_key.id,
+ *         nodePoolPodNetworkOptionDetails: {
+ *             cniType: _var.node_pool_node_config_details_node_pool_pod_network_option_details_cni_type,
+ *             maxPodsPerNode: _var.node_pool_node_config_details_node_pool_pod_network_option_details_max_pods_per_node,
+ *             podNsgIds: _var.node_pool_node_config_details_node_pool_pod_network_option_details_pod_nsg_ids,
+ *             podSubnetIds: _var.node_pool_node_config_details_node_pool_pod_network_option_details_pod_subnet_ids,
+ *         },
  *         definedTags: {
  *             "Operations.CostCenter": "42",
  *         },
@@ -47,6 +54,10 @@ import * as utilities from "../utilities";
  *             Department: "Finance",
  *         },
  *         nsgIds: _var.node_pool_node_config_details_nsg_ids,
+ *     },
+ *     nodeEvictionNodePoolSettings: {
+ *         evictionGraceDuration: _var.node_pool_node_eviction_node_pool_settings_eviction_grace_duration,
+ *         isForceDeleteAfterGraceDuration: _var.node_pool_node_eviction_node_pool_settings_is_force_delete_after_grace_duration,
  *     },
  *     nodeImageName: oci_core_image.test_image.name,
  *     nodeMetadata: _var.node_pool_node_metadata,
@@ -126,6 +137,10 @@ export class NodePool extends pulumi.CustomResource {
      */
     public readonly kubernetesVersion!: pulumi.Output<string>;
     /**
+     * Details about the state of the node.
+     */
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    /**
      * (Updatable) The name of the node pool. Avoid entering confidential information.
      */
     public readonly name!: pulumi.Output<string>;
@@ -133,6 +148,10 @@ export class NodePool extends pulumi.CustomResource {
      * (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
      */
     public readonly nodeConfigDetails!: pulumi.Output<outputs.ContainerEngine.NodePoolNodeConfigDetails>;
+    /**
+     * (Updatable) Node Eviction Details configuration
+     */
+    public readonly nodeEvictionNodePoolSettings!: pulumi.Output<outputs.ContainerEngine.NodePoolNodeEvictionNodePoolSettings>;
     /**
      * Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
      *
@@ -178,6 +197,10 @@ export class NodePool extends pulumi.CustomResource {
      */
     public readonly sshPublicKey!: pulumi.Output<string>;
     /**
+     * The state of the nodepool.
+     */
+    public /*out*/ readonly state!: pulumi.Output<string>;
+    /**
      * (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
      */
     public readonly subnetIds!: pulumi.Output<string[]>;
@@ -201,8 +224,10 @@ export class NodePool extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["initialNodeLabels"] = state ? state.initialNodeLabels : undefined;
             resourceInputs["kubernetesVersion"] = state ? state.kubernetesVersion : undefined;
+            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["nodeConfigDetails"] = state ? state.nodeConfigDetails : undefined;
+            resourceInputs["nodeEvictionNodePoolSettings"] = state ? state.nodeEvictionNodePoolSettings : undefined;
             resourceInputs["nodeImageId"] = state ? state.nodeImageId : undefined;
             resourceInputs["nodeImageName"] = state ? state.nodeImageName : undefined;
             resourceInputs["nodeMetadata"] = state ? state.nodeMetadata : undefined;
@@ -213,6 +238,7 @@ export class NodePool extends pulumi.CustomResource {
             resourceInputs["nodes"] = state ? state.nodes : undefined;
             resourceInputs["quantityPerSubnet"] = state ? state.quantityPerSubnet : undefined;
             resourceInputs["sshPublicKey"] = state ? state.sshPublicKey : undefined;
+            resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["subnetIds"] = state ? state.subnetIds : undefined;
         } else {
             const args = argsOrState as NodePoolArgs | undefined;
@@ -221,9 +247,6 @@ export class NodePool extends pulumi.CustomResource {
             }
             if ((!args || args.compartmentId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
-            }
-            if ((!args || args.kubernetesVersion === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'kubernetesVersion'");
             }
             if ((!args || args.nodeShape === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'nodeShape'");
@@ -236,6 +259,7 @@ export class NodePool extends pulumi.CustomResource {
             resourceInputs["kubernetesVersion"] = args ? args.kubernetesVersion : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["nodeConfigDetails"] = args ? args.nodeConfigDetails : undefined;
+            resourceInputs["nodeEvictionNodePoolSettings"] = args ? args.nodeEvictionNodePoolSettings : undefined;
             resourceInputs["nodeImageId"] = args ? args.nodeImageId : undefined;
             resourceInputs["nodeImageName"] = args ? args.nodeImageName : undefined;
             resourceInputs["nodeMetadata"] = args ? args.nodeMetadata : undefined;
@@ -245,8 +269,10 @@ export class NodePool extends pulumi.CustomResource {
             resourceInputs["quantityPerSubnet"] = args ? args.quantityPerSubnet : undefined;
             resourceInputs["sshPublicKey"] = args ? args.sshPublicKey : undefined;
             resourceInputs["subnetIds"] = args ? args.subnetIds : undefined;
+            resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["nodeSources"] = undefined /*out*/;
             resourceInputs["nodes"] = undefined /*out*/;
+            resourceInputs["state"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(NodePool.__pulumiType, name, resourceInputs, opts);
@@ -282,6 +308,10 @@ export interface NodePoolState {
      */
     kubernetesVersion?: pulumi.Input<string>;
     /**
+     * Details about the state of the node.
+     */
+    lifecycleDetails?: pulumi.Input<string>;
+    /**
      * (Updatable) The name of the node pool. Avoid entering confidential information.
      */
     name?: pulumi.Input<string>;
@@ -289,6 +319,10 @@ export interface NodePoolState {
      * (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
      */
     nodeConfigDetails?: pulumi.Input<inputs.ContainerEngine.NodePoolNodeConfigDetails>;
+    /**
+     * (Updatable) Node Eviction Details configuration
+     */
+    nodeEvictionNodePoolSettings?: pulumi.Input<inputs.ContainerEngine.NodePoolNodeEvictionNodePoolSettings>;
     /**
      * Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
      *
@@ -334,6 +368,10 @@ export interface NodePoolState {
      */
     sshPublicKey?: pulumi.Input<string>;
     /**
+     * The state of the nodepool.
+     */
+    state?: pulumi.Input<string>;
+    /**
      * (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
      */
     subnetIds?: pulumi.Input<pulumi.Input<string>[]>;
@@ -366,7 +404,7 @@ export interface NodePoolArgs {
     /**
      * (Updatable) The version of Kubernetes to install on the nodes in the node pool.
      */
-    kubernetesVersion: pulumi.Input<string>;
+    kubernetesVersion?: pulumi.Input<string>;
     /**
      * (Updatable) The name of the node pool. Avoid entering confidential information.
      */
@@ -375,6 +413,10 @@ export interface NodePoolArgs {
      * (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
      */
     nodeConfigDetails?: pulumi.Input<inputs.ContainerEngine.NodePoolNodeConfigDetails>;
+    /**
+     * (Updatable) Node Eviction Details configuration
+     */
+    nodeEvictionNodePoolSettings?: pulumi.Input<inputs.ContainerEngine.NodePoolNodeEvictionNodePoolSettings>;
     /**
      * Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
      *

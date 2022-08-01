@@ -66,6 +66,10 @@ export interface GetRegistryDataAssetResult {
      */
     readonly description: string;
     /**
+     * The list of endpoints with which this data asset is associated.
+     */
+    readonly endPoints: string[];
+    /**
      * The external key for the object.
      */
     readonly externalKey: string;

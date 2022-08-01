@@ -22,7 +22,7 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// </summary>
         public readonly Outputs.TriggerActionFilterInclude? Include;
         /// <summary>
-        /// (Updatable) Source of the trigger. Allowed values are, GITHUB and GITLAB.
+        /// (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
         /// </summary>
         public readonly string TriggerSource;
 

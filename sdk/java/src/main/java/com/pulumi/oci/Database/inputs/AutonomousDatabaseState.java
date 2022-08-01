@@ -11,6 +11,7 @@ import com.pulumi.oci.Database.inputs.AutonomousDatabaseConnectionStringArgs;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseConnectionUrlArgs;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseCustomerContactArgs;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseKeyHistoryEntryArgs;
+import com.pulumi.oci.Database.inputs.AutonomousDatabaseLocalStandbyDbArgs;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseScheduledOperationArgs;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseStandbyDbArgs;
 import java.lang.Boolean;
@@ -192,6 +193,21 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
      */
     public Optional<Output<List<AutonomousDatabaseBackupConfigArgs>>> backupConfigs() {
         return Optional.ofNullable(this.backupConfigs);
+    }
+
+    /**
+     * The character set for the autonomous database.  The default is AL32UTF8. Allowed values for an Autonomous Database on shared infrastructure as as returned by [List Autonomous Database Character Sets](https://www.terraform.io/autonomousDatabaseCharacterSets)
+     * 
+     */
+    @Import(name="characterSet")
+    private @Nullable Output<String> characterSet;
+
+    /**
+     * @return The character set for the autonomous database.  The default is AL32UTF8. Allowed values for an Autonomous Database on shared infrastructure as as returned by [List Autonomous Database Character Sets](https://www.terraform.io/autonomousDatabaseCharacterSets)
+     * 
+     */
+    public Optional<Output<String>> characterSet() {
+        return Optional.ofNullable(this.characterSet);
     }
 
     /**
@@ -593,6 +609,21 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
     }
 
     /**
+     * (Updatable) Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+     * 
+     */
+    @Import(name="isLocalDataGuardEnabled")
+    private @Nullable Output<Boolean> isLocalDataGuardEnabled;
+
+    /**
+     * @return (Updatable) Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+     * 
+     */
+    public Optional<Output<Boolean>> isLocalDataGuardEnabled() {
+        return Optional.ofNullable(this.isLocalDataGuardEnabled);
+    }
+
+    /**
      * (Updatable) Indicates whether the Autonomous Database requires mTLS connections.
      * 
      */
@@ -665,6 +696,21 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
      */
     public Optional<Output<Boolean>> isRefreshableClone() {
         return Optional.ofNullable(this.isRefreshableClone);
+    }
+
+    /**
+     * Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+     * 
+     */
+    @Import(name="isRemoteDataGuardEnabled")
+    private @Nullable Output<Boolean> isRemoteDataGuardEnabled;
+
+    /**
+     * @return Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+     * 
+     */
+    public Optional<Output<Boolean>> isRemoteDataGuardEnabled() {
+        return Optional.ofNullable(this.isRemoteDataGuardEnabled);
     }
 
     /**
@@ -803,6 +849,21 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
     }
 
     /**
+     * Autonomous Data Guard standby database details.
+     * 
+     */
+    @Import(name="localStandbyDbs")
+    private @Nullable Output<List<AutonomousDatabaseLocalStandbyDbArgs>> localStandbyDbs;
+
+    /**
+     * @return Autonomous Data Guard standby database details.
+     * 
+     */
+    public Optional<Output<List<AutonomousDatabaseLocalStandbyDbArgs>>> localStandbyDbs() {
+        return Optional.ofNullable(this.localStandbyDbs);
+    }
+
+    /**
      * (Updatable) The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
      * 
      */
@@ -833,16 +894,31 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
     }
 
     /**
-     * (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-     * * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+     * The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
+     * 
+     */
+    @Import(name="ncharacterSet")
+    private @Nullable Output<String> ncharacterSet;
+
+    /**
+     * @return The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
+     * 
+     */
+    public Optional<Output<String>> ncharacterSet() {
+        return Optional.ofNullable(this.ncharacterSet);
+    }
+
+    /**
+     * (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+     * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      * 
      */
     @Import(name="nsgIds")
     private @Nullable Output<List<String>> nsgIds;
 
     /**
-     * @return (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-     * * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+     * @return (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+     * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      * 
      */
     public Optional<Output<List<String>>> nsgIds() {
@@ -970,6 +1046,21 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
     }
 
     /**
+     * An array of CPU values that an Autonomous Database can be scaled to.
+     * 
+     */
+    @Import(name="provisionableCpuses")
+    private @Nullable Output<List<Double>> provisionableCpuses;
+
+    /**
+     * @return An array of CPU values that an Autonomous Database can be scaled to.
+     * 
+     */
+    public Optional<Output<List<Double>>> provisionableCpuses() {
+        return Optional.ofNullable(this.provisionableCpuses);
+    }
+
+    /**
      * (Updatable) The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
      * 
      */
@@ -1090,14 +1181,14 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
     }
 
     /**
-     * Autonomous Data Guard standby database details.
+     * **Deprecated** Autonomous Data Guard standby database details.
      * 
      */
     @Import(name="standbyDbs")
     private @Nullable Output<List<AutonomousDatabaseStandbyDbArgs>> standbyDbs;
 
     /**
-     * @return Autonomous Data Guard standby database details.
+     * @return **Deprecated** Autonomous Data Guard standby database details.
      * 
      */
     public Optional<Output<List<AutonomousDatabaseStandbyDbArgs>>> standbyDbs() {
@@ -1478,6 +1569,7 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
         this.autonomousMaintenanceScheduleType = $.autonomousMaintenanceScheduleType;
         this.availableUpgradeVersions = $.availableUpgradeVersions;
         this.backupConfigs = $.backupConfigs;
+        this.characterSet = $.characterSet;
         this.cloneType = $.cloneType;
         this.compartmentId = $.compartmentId;
         this.connectionStrings = $.connectionStrings;
@@ -1504,11 +1596,13 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
         this.isDataGuardEnabled = $.isDataGuardEnabled;
         this.isDedicated = $.isDedicated;
         this.isFreeTier = $.isFreeTier;
+        this.isLocalDataGuardEnabled = $.isLocalDataGuardEnabled;
         this.isMtlsConnectionRequired = $.isMtlsConnectionRequired;
         this.isPreview = $.isPreview;
         this.isPreviewVersionWithServiceTermsAccepted = $.isPreviewVersionWithServiceTermsAccepted;
         this.isReconnectCloneEnabled = $.isReconnectCloneEnabled;
         this.isRefreshableClone = $.isRefreshableClone;
+        this.isRemoteDataGuardEnabled = $.isRemoteDataGuardEnabled;
         this.isShrinkOnly = $.isShrinkOnly;
         this.keyHistoryEntries = $.keyHistoryEntries;
         this.keyStoreId = $.keyStoreId;
@@ -1518,8 +1612,10 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
         this.kmsKeyVersionId = $.kmsKeyVersionId;
         this.licenseModel = $.licenseModel;
         this.lifecycleDetails = $.lifecycleDetails;
+        this.localStandbyDbs = $.localStandbyDbs;
         this.maxCpuCoreCount = $.maxCpuCoreCount;
         this.memoryPerOracleComputeUnitInGbs = $.memoryPerOracleComputeUnitInGbs;
+        this.ncharacterSet = $.ncharacterSet;
         this.nsgIds = $.nsgIds;
         this.ocpuCount = $.ocpuCount;
         this.openMode = $.openMode;
@@ -1529,6 +1625,7 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
         this.privateEndpoint = $.privateEndpoint;
         this.privateEndpointIp = $.privateEndpointIp;
         this.privateEndpointLabel = $.privateEndpointLabel;
+        this.provisionableCpuses = $.provisionableCpuses;
         this.refreshableMode = $.refreshableMode;
         this.refreshableStatus = $.refreshableStatus;
         this.role = $.role;
@@ -1841,6 +1938,27 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
          */
         public Builder backupConfigs(AutonomousDatabaseBackupConfigArgs... backupConfigs) {
             return backupConfigs(List.of(backupConfigs));
+        }
+
+        /**
+         * @param characterSet The character set for the autonomous database.  The default is AL32UTF8. Allowed values for an Autonomous Database on shared infrastructure as as returned by [List Autonomous Database Character Sets](https://www.terraform.io/autonomousDatabaseCharacterSets)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder characterSet(@Nullable Output<String> characterSet) {
+            $.characterSet = characterSet;
+            return this;
+        }
+
+        /**
+         * @param characterSet The character set for the autonomous database.  The default is AL32UTF8. Allowed values for an Autonomous Database on shared infrastructure as as returned by [List Autonomous Database Character Sets](https://www.terraform.io/autonomousDatabaseCharacterSets)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder characterSet(String characterSet) {
+            return characterSet(Output.of(characterSet));
         }
 
         /**
@@ -2428,6 +2546,27 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
         }
 
         /**
+         * @param isLocalDataGuardEnabled (Updatable) Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isLocalDataGuardEnabled(@Nullable Output<Boolean> isLocalDataGuardEnabled) {
+            $.isLocalDataGuardEnabled = isLocalDataGuardEnabled;
+            return this;
+        }
+
+        /**
+         * @param isLocalDataGuardEnabled (Updatable) Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isLocalDataGuardEnabled(Boolean isLocalDataGuardEnabled) {
+            return isLocalDataGuardEnabled(Output.of(isLocalDataGuardEnabled));
+        }
+
+        /**
          * @param isMtlsConnectionRequired (Updatable) Indicates whether the Autonomous Database requires mTLS connections.
          * 
          * @return builder
@@ -2530,6 +2669,27 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
          */
         public Builder isRefreshableClone(Boolean isRefreshableClone) {
             return isRefreshableClone(Output.of(isRefreshableClone));
+        }
+
+        /**
+         * @param isRemoteDataGuardEnabled Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isRemoteDataGuardEnabled(@Nullable Output<Boolean> isRemoteDataGuardEnabled) {
+            $.isRemoteDataGuardEnabled = isRemoteDataGuardEnabled;
+            return this;
+        }
+
+        /**
+         * @param isRemoteDataGuardEnabled Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isRemoteDataGuardEnabled(Boolean isRemoteDataGuardEnabled) {
+            return isRemoteDataGuardEnabled(Output.of(isRemoteDataGuardEnabled));
         }
 
         /**
@@ -2732,6 +2892,37 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
         }
 
         /**
+         * @param localStandbyDbs Autonomous Data Guard standby database details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder localStandbyDbs(@Nullable Output<List<AutonomousDatabaseLocalStandbyDbArgs>> localStandbyDbs) {
+            $.localStandbyDbs = localStandbyDbs;
+            return this;
+        }
+
+        /**
+         * @param localStandbyDbs Autonomous Data Guard standby database details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder localStandbyDbs(List<AutonomousDatabaseLocalStandbyDbArgs> localStandbyDbs) {
+            return localStandbyDbs(Output.of(localStandbyDbs));
+        }
+
+        /**
+         * @param localStandbyDbs Autonomous Data Guard standby database details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder localStandbyDbs(AutonomousDatabaseLocalStandbyDbArgs... localStandbyDbs) {
+            return localStandbyDbs(List.of(localStandbyDbs));
+        }
+
+        /**
          * @param maxCpuCoreCount (Updatable) The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
          * 
          * @return builder
@@ -2774,8 +2965,29 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param nsgIds (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-         * * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+         * @param ncharacterSet The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ncharacterSet(@Nullable Output<String> ncharacterSet) {
+            $.ncharacterSet = ncharacterSet;
+            return this;
+        }
+
+        /**
+         * @param ncharacterSet The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ncharacterSet(String ncharacterSet) {
+            return ncharacterSet(Output.of(ncharacterSet));
+        }
+
+        /**
+         * @param nsgIds (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+         * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
          * 
          * @return builder
          * 
@@ -2786,8 +2998,8 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param nsgIds (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-         * * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+         * @param nsgIds (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+         * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
          * 
          * @return builder
          * 
@@ -2797,8 +3009,8 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param nsgIds (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-         * * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+         * @param nsgIds (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+         * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
          * 
          * @return builder
          * 
@@ -2986,6 +3198,37 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
         }
 
         /**
+         * @param provisionableCpuses An array of CPU values that an Autonomous Database can be scaled to.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder provisionableCpuses(@Nullable Output<List<Double>> provisionableCpuses) {
+            $.provisionableCpuses = provisionableCpuses;
+            return this;
+        }
+
+        /**
+         * @param provisionableCpuses An array of CPU values that an Autonomous Database can be scaled to.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder provisionableCpuses(List<Double> provisionableCpuses) {
+            return provisionableCpuses(Output.of(provisionableCpuses));
+        }
+
+        /**
+         * @param provisionableCpuses An array of CPU values that an Autonomous Database can be scaled to.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder provisionableCpuses(Double... provisionableCpuses) {
+            return provisionableCpuses(List.of(provisionableCpuses));
+        }
+
+        /**
          * @param refreshableMode (Updatable) The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
          * 
          * @return builder
@@ -3164,7 +3407,7 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param standbyDbs Autonomous Data Guard standby database details.
+         * @param standbyDbs **Deprecated** Autonomous Data Guard standby database details.
          * 
          * @return builder
          * 
@@ -3175,7 +3418,7 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param standbyDbs Autonomous Data Guard standby database details.
+         * @param standbyDbs **Deprecated** Autonomous Data Guard standby database details.
          * 
          * @return builder
          * 
@@ -3185,7 +3428,7 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param standbyDbs Autonomous Data Guard standby database details.
+         * @param standbyDbs **Deprecated** Autonomous Data Guard standby database details.
          * 
          * @return builder
          * 

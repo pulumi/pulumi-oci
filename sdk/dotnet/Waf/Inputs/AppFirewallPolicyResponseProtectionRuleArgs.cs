@@ -32,6 +32,12 @@ namespace Pulumi.Oci.Waf.Inputs
         public Input<string>? ConditionLanguage { get; set; }
 
         /// <summary>
+        /// (Updatable) Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
+        /// </summary>
+        [Input("isBodyInspectionEnabled")]
+        public Input<bool>? IsBodyInspectionEnabled { get; set; }
+
+        /// <summary>
         /// (Updatable) Rule name. Must be unique within the module.
         /// </summary>
         [Input("name", required: true)]
@@ -41,7 +47,7 @@ namespace Pulumi.Oci.Waf.Inputs
         private InputList<Inputs.AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArgs>? _protectionCapabilities;
 
         /// <summary>
-        /// (Updatable) An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are executed in order of appearance. The array cannot contain entries with the same pair of capability key and version more than once.
+        /// (Updatable) An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
         /// </summary>
         public InputList<Inputs.AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArgs> ProtectionCapabilities
         {

@@ -14,19 +14,19 @@ namespace Pulumi.Oci.ApmConfig.Outputs
     public sealed class ConfigMetric
     {
         /// <summary>
-        /// (Updatable) A description of the metric
+        /// (Updatable) A description of the metric.
         /// </summary>
         public readonly string? Description;
         /// <summary>
-        /// (Updatable) The name of the metric
+        /// (Updatable) The name of the metric. This must be a known metric name.
         /// </summary>
         public readonly string? Name;
         /// <summary>
-        /// (Updatable) The unit of the metric
+        /// (Updatable) The unit of the metric.
         /// </summary>
         public readonly string? Unit;
         /// <summary>
-        /// (Updatable) Must be NULL at the moment, and "name" must be a known metric.
+        /// (Updatable) This must not be set.
         /// </summary>
         public readonly string? ValueSource;
 

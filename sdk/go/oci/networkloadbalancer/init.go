@@ -29,6 +29,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &Listener{}
 	case "oci:NetworkLoadBalancer/networkLoadBalancer:NetworkLoadBalancer":
 		r = &NetworkLoadBalancer{}
+	case "oci:NetworkLoadBalancer/networkLoadBalancersBackendSetsUnified:NetworkLoadBalancersBackendSetsUnified":
+		r = &NetworkLoadBalancersBackendSetsUnified{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -60,6 +62,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"NetworkLoadBalancer/networkLoadBalancer",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"NetworkLoadBalancer/networkLoadBalancersBackendSetsUnified",
 		&module{version},
 	)
 }

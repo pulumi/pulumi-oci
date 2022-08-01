@@ -16,12 +16,12 @@ public final class GetShapesShapeMaxVnicAttachmentOption {
      */
     private final Double defaultPerOcpu;
     /**
-     * @return The maximum number of OCPUs.
+     * @return The maximum allowed percentage of cores enabled.
      * 
      */
     private final Double max;
     /**
-     * @return The minimum number of OCPUs.
+     * @return The minimum allowed percentage of cores enabled.
      * 
      */
     private final Integer min;
@@ -44,14 +44,14 @@ public final class GetShapesShapeMaxVnicAttachmentOption {
         return this.defaultPerOcpu;
     }
     /**
-     * @return The maximum number of OCPUs.
+     * @return The maximum allowed percentage of cores enabled.
      * 
      */
     public Double max() {
         return this.max;
     }
     /**
-     * @return The minimum number of OCPUs.
+     * @return The minimum allowed percentage of cores enabled.
      * 
      */
     public Integer min() {

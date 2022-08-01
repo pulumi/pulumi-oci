@@ -46,14 +46,34 @@ export interface GetCloudAutonomousVmClusterArgs {
  */
 export interface GetCloudAutonomousVmClusterResult {
     /**
+     * The data disk group size allocated for Autonomous Databases, in TBs.
+     */
+    readonly autonomousDataStorageSizeInTbs: number;
+    /**
      * The name of the availability domain that the cloud Autonomous VM cluster is located in.
      */
     readonly availabilityDomain: string;
+    /**
+     * The data disk group size available for Autonomous Databases, in TBs.
+     */
+    readonly availableAutonomousDataStorageSizeInTbs: number;
+    /**
+     * The number of Autonomous Container Databases that can be created with the currently available local storage.
+     */
+    readonly availableContainerDatabases: number;
+    /**
+     * CPU cores available for allocation to Autonomous Databases.
+     */
+    readonly availableCpus: number;
     readonly cloudAutonomousVmClusterId: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure.
      */
     readonly cloudExadataInfrastructureId: string;
+    /**
+     * The time zone of the Cloud Autonomous VM Cluster.
+     */
+    readonly clusterTimeZone: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -70,6 +90,10 @@ export interface GetCloudAutonomousVmClusterResult {
      * The total data storage allocated, in terabytes (TB).
      */
     readonly dataStorageSizeInTbs: number;
+    /**
+     * The local node storage allocated in GBs.
+     */
+    readonly dbNodeStorageSizeInGbs: number;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
@@ -115,6 +139,10 @@ export interface GetCloudAutonomousVmClusterResult {
      */
     readonly lifecycleDetails: string;
     /**
+     * The amount of memory (in GBs) enabled per each OCPU core.
+     */
+    readonly memoryPerOracleComputeUnitInGbs: number;
+    /**
      * The memory allocated in GBs.
      */
     readonly memorySizeInGbs: number;
@@ -127,14 +155,18 @@ export interface GetCloudAutonomousVmClusterResult {
      */
     readonly nodeCount: number;
     /**
-     * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-     * * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+     * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+     * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      */
     readonly nsgIds: string[];
     /**
      * The number of CPU cores enabled on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
      */
     readonly ocpuCount: number;
+    /**
+     * CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+     */
+    readonly reclaimableCpus: number;
     readonly rotateOrdsCertsTrigger: boolean;
     readonly rotateSslCertsTrigger: boolean;
     /**
@@ -157,6 +189,10 @@ export interface GetCloudAutonomousVmClusterResult {
      * The last date and time that the cloud Autonomous VM cluster was updated.
      */
     readonly timeUpdated: string;
+    /**
+     * The total number of Autonomous Container Databases that can be created with the allocated local storage.
+     */
+    readonly totalContainerDatabases: number;
 }
 
 export function getCloudAutonomousVmClusterOutput(args: GetCloudAutonomousVmClusterOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudAutonomousVmClusterResult> {

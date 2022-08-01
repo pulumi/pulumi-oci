@@ -15,7 +15,7 @@ public final class GetBuildPipelineStageBuildSourceCollectionItem {
      */
     private final String branch;
     /**
-     * @return Connection identifier pertinent to GitHub source provider.
+     * @return Connection identifier pertinent to Bitbucket Cloud source provider
      * 
      */
     private final String connectionId;
@@ -64,7 +64,7 @@ public final class GetBuildPipelineStageBuildSourceCollectionItem {
         return this.branch;
     }
     /**
-     * @return Connection identifier pertinent to GitHub source provider.
+     * @return Connection identifier pertinent to Bitbucket Cloud source provider
      * 
      */
     public String connectionId() {

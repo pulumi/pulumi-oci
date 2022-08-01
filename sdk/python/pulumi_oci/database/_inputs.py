@@ -27,6 +27,7 @@ __all__ = [
     'AutonomousDatabaseConnectionUrlArgs',
     'AutonomousDatabaseCustomerContactArgs',
     'AutonomousDatabaseKeyHistoryEntryArgs',
+    'AutonomousDatabaseLocalStandbyDbArgs',
     'AutonomousDatabaseScheduledOperationArgs',
     'AutonomousDatabaseScheduledOperationDayOfWeekArgs',
     'AutonomousDatabaseStandbyDbArgs',
@@ -49,6 +50,7 @@ __all__ = [
     'CloudExadataInfrastructureMaintenanceWindowArgs',
     'CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs',
     'CloudExadataInfrastructureMaintenanceWindowMonthArgs',
+    'CloudVmClusterDataCollectionOptionsArgs',
     'CloudVmClusterIormConfigCachArgs',
     'CloudVmClusterIormConfigCachDbPlanArgs',
     'CloudVmClusterIormConfigDbPlanArgs',
@@ -81,6 +83,12 @@ __all__ = [
     'DbSystemMaintenanceWindowDetailsDaysOfWeekArgs',
     'DbSystemMaintenanceWindowDetailsMonthArgs',
     'DbSystemMaintenanceWindowMonthArgs',
+    'DbSystemsUpgradeDbSystemOptionArgs',
+    'DbSystemsUpgradeIormConfigCachArgs',
+    'DbSystemsUpgradeIormConfigCachDbPlanArgs',
+    'DbSystemsUpgradeMaintenanceWindowArgs',
+    'DbSystemsUpgradeMaintenanceWindowDaysOfWeekArgs',
+    'DbSystemsUpgradeMaintenanceWindowMonthArgs',
     'ExadataInfrastructureContactArgs',
     'ExadataInfrastructureMaintenanceWindowArgs',
     'ExadataInfrastructureMaintenanceWindowDaysOfWeekArgs',
@@ -91,23 +99,30 @@ __all__ = [
     'ExadataInfrastructureStorageMaintenanceWindowMonthArgs',
     'ExadataIormConfigDbPlanArgs',
     'ExternalContainerDatabaseDatabaseManagementConfigArgs',
+    'ExternalContainerDatabaseStackMonitoringConfigArgs',
     'ExternalDatabaseConnectorConnectionCredentialsArgs',
     'ExternalDatabaseConnectorConnectionStringArgs',
     'ExternalNonContainerDatabaseDatabaseManagementConfigArgs',
     'ExternalNonContainerDatabaseOperationsInsightsConfigArgs',
+    'ExternalNonContainerDatabaseStackMonitoringConfigArgs',
     'ExternalPluggableDatabaseDatabaseManagementConfigArgs',
     'ExternalPluggableDatabaseOperationsInsightsConfigArgs',
+    'ExternalPluggableDatabaseStackMonitoringConfigArgs',
     'KeyStoreAssociatedDatabaseArgs',
     'KeyStoreTypeDetailsArgs',
     'MaintenanceRunEstimatedPatchingTimeArgs',
     'PluggableDatabaseConnectionStringArgs',
     'PluggableDatabasesLocalCloneConnectionStringArgs',
     'PluggableDatabasesRemoteCloneConnectionStringArgs',
+    'VmClusterAddVirtualNetworkDataCollectionOptionArgs',
     'VmClusterAddVirtualNetworkDbServerArgs',
+    'VmClusterDataCollectionOptionsArgs',
     'VmClusterNetworkScanArgs',
     'VmClusterNetworkVmNetworkArgs',
     'VmClusterNetworkVmNetworkNodeArgs',
+    'VmClusterRemoveVirtualMachineDataCollectionOptionArgs',
     'VmClusterRemoveVirtualMachineDbServerArgs',
+    'GetAutonomousCharacterSetsFilterArgs',
     'GetAutonomousContainerDatabaseDataguardAssociationsFilterArgs',
     'GetAutonomousContainerDatabasesFilterArgs',
     'GetAutonomousContainerPatchesFilterArgs',
@@ -136,10 +151,13 @@ __all__ = [
     'GetDbNodeConsoleConnectionsFilterArgs',
     'GetDbNodesFilterArgs',
     'GetDbServersFilterArgs',
+    'GetDbSystemComputePerformancesFilterArgs',
     'GetDbSystemHistoryEntriesFilterArgs',
     'GetDbSystemPatchesFilterArgs',
     'GetDbSystemShapesFilterArgs',
+    'GetDbSystemStoragePerformancesFilterArgs',
     'GetDbSystemsFilterArgs',
+    'GetDbSystemsUpgradeHistoryEntriesFilterArgs',
     'GetDbVersionsFilterArgs',
     'GetExadataInfrastructuresFilterArgs',
     'GetExternalContainerDatabasesFilterArgs',
@@ -1358,6 +1376,77 @@ class AutonomousDatabaseKeyHistoryEntryArgs:
 
 
 @pulumi.input_type
+class AutonomousDatabaseLocalStandbyDbArgs:
+    def __init__(__self__, *,
+                 lag_time_in_seconds: Optional[pulumi.Input[int]] = None,
+                 lifecycle_details: Optional[pulumi.Input[str]] = None,
+                 state: Optional[pulumi.Input[str]] = None,
+                 time_data_guard_role_changed: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[int] lag_time_in_seconds: The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
+        :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
+        :param pulumi.Input[str] state: (Updatable) The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
+        :param pulumi.Input[str] time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+        """
+        if lag_time_in_seconds is not None:
+            pulumi.set(__self__, "lag_time_in_seconds", lag_time_in_seconds)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_data_guard_role_changed is not None:
+            pulumi.set(__self__, "time_data_guard_role_changed", time_data_guard_role_changed)
+
+    @property
+    @pulumi.getter(name="lagTimeInSeconds")
+    def lag_time_in_seconds(self) -> Optional[pulumi.Input[int]]:
+        """
+        The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
+        """
+        return pulumi.get(self, "lag_time_in_seconds")
+
+    @lag_time_in_seconds.setter
+    def lag_time_in_seconds(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "lag_time_in_seconds", value)
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
+        """
+        Additional information about the current lifecycle state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @lifecycle_details.setter
+    def lifecycle_details(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "lifecycle_details", value)
+
+    @property
+    @pulumi.getter
+    def state(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
+        """
+        return pulumi.get(self, "state")
+
+    @state.setter
+    def state(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "state", value)
+
+    @property
+    @pulumi.getter(name="timeDataGuardRoleChanged")
+    def time_data_guard_role_changed(self) -> Optional[pulumi.Input[str]]:
+        """
+        The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+        """
+        return pulumi.get(self, "time_data_guard_role_changed")
+
+    @time_data_guard_role_changed.setter
+    def time_data_guard_role_changed(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_data_guard_role_changed", value)
+
+
+@pulumi.input_type
 class AutonomousDatabaseScheduledOperationArgs:
     def __init__(__self__, *,
                  day_of_week: pulumi.Input['AutonomousDatabaseScheduledOperationDayOfWeekArgs'],
@@ -1902,10 +1991,13 @@ class AutonomousExadataInfrastructureMaintenanceWindowMonthArgs:
 @pulumi.input_type
 class AutonomousVmClusterMaintenanceWindowArgs:
     def __init__(__self__, *,
+                 custom_action_timeout_in_mins: Optional[pulumi.Input[int]] = None,
                  days_of_weeks: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousVmClusterMaintenanceWindowDaysOfWeekArgs']]]] = None,
                  hours_of_days: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
+                 is_custom_action_timeout_enabled: Optional[pulumi.Input[bool]] = None,
                  lead_time_in_weeks: Optional[pulumi.Input[int]] = None,
                  months: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousVmClusterMaintenanceWindowMonthArgs']]]] = None,
+                 patching_mode: Optional[pulumi.Input[str]] = None,
                  preference: Optional[pulumi.Input[str]] = None,
                  weeks_of_months: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None):
         """
@@ -1917,18 +2009,33 @@ class AutonomousVmClusterMaintenanceWindowArgs:
         :param pulumi.Input[str] preference: (Updatable) The maintenance window scheduling preference.
         :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
+        if custom_action_timeout_in_mins is not None:
+            pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
         if days_of_weeks is not None:
             pulumi.set(__self__, "days_of_weeks", days_of_weeks)
         if hours_of_days is not None:
             pulumi.set(__self__, "hours_of_days", hours_of_days)
+        if is_custom_action_timeout_enabled is not None:
+            pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
         if lead_time_in_weeks is not None:
             pulumi.set(__self__, "lead_time_in_weeks", lead_time_in_weeks)
         if months is not None:
             pulumi.set(__self__, "months", months)
+        if patching_mode is not None:
+            pulumi.set(__self__, "patching_mode", patching_mode)
         if preference is not None:
             pulumi.set(__self__, "preference", preference)
         if weeks_of_months is not None:
             pulumi.set(__self__, "weeks_of_months", weeks_of_months)
+
+    @property
+    @pulumi.getter(name="customActionTimeoutInMins")
+    def custom_action_timeout_in_mins(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "custom_action_timeout_in_mins")
+
+    @custom_action_timeout_in_mins.setter
+    def custom_action_timeout_in_mins(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "custom_action_timeout_in_mins", value)
 
     @property
     @pulumi.getter(name="daysOfWeeks")
@@ -1956,6 +2063,15 @@ class AutonomousVmClusterMaintenanceWindowArgs:
         pulumi.set(self, "hours_of_days", value)
 
     @property
+    @pulumi.getter(name="isCustomActionTimeoutEnabled")
+    def is_custom_action_timeout_enabled(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "is_custom_action_timeout_enabled")
+
+    @is_custom_action_timeout_enabled.setter
+    def is_custom_action_timeout_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_custom_action_timeout_enabled", value)
+
+    @property
     @pulumi.getter(name="leadTimeInWeeks")
     def lead_time_in_weeks(self) -> Optional[pulumi.Input[int]]:
         """
@@ -1978,6 +2094,15 @@ class AutonomousVmClusterMaintenanceWindowArgs:
     @months.setter
     def months(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousVmClusterMaintenanceWindowMonthArgs']]]]):
         pulumi.set(self, "months", value)
+
+    @property
+    @pulumi.getter(name="patchingMode")
+    def patching_mode(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "patching_mode")
+
+    @patching_mode.setter
+    def patching_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "patching_mode", value)
 
     @property
     @pulumi.getter
@@ -2031,10 +2156,13 @@ class AutonomousVmClusterMaintenanceWindowDaysOfWeekArgs:
 class AutonomousVmClusterMaintenanceWindowDetailArgs:
     def __init__(__self__, *,
                  preference: pulumi.Input[str],
+                 custom_action_timeout_in_mins: Optional[pulumi.Input[int]] = None,
                  days_of_weeks: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs']]]] = None,
                  hours_of_days: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
+                 is_custom_action_timeout_enabled: Optional[pulumi.Input[bool]] = None,
                  lead_time_in_weeks: Optional[pulumi.Input[int]] = None,
                  months: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousVmClusterMaintenanceWindowDetailMonthArgs']]]] = None,
+                 patching_mode: Optional[pulumi.Input[str]] = None,
                  weeks_of_months: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None):
         """
         :param pulumi.Input[str] preference: (Updatable) The maintenance window scheduling preference.
@@ -2046,14 +2174,20 @@ class AutonomousVmClusterMaintenanceWindowDetailArgs:
         :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         pulumi.set(__self__, "preference", preference)
+        if custom_action_timeout_in_mins is not None:
+            pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
         if days_of_weeks is not None:
             pulumi.set(__self__, "days_of_weeks", days_of_weeks)
         if hours_of_days is not None:
             pulumi.set(__self__, "hours_of_days", hours_of_days)
+        if is_custom_action_timeout_enabled is not None:
+            pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
         if lead_time_in_weeks is not None:
             pulumi.set(__self__, "lead_time_in_weeks", lead_time_in_weeks)
         if months is not None:
             pulumi.set(__self__, "months", months)
+        if patching_mode is not None:
+            pulumi.set(__self__, "patching_mode", patching_mode)
         if weeks_of_months is not None:
             pulumi.set(__self__, "weeks_of_months", weeks_of_months)
 
@@ -2068,6 +2202,15 @@ class AutonomousVmClusterMaintenanceWindowDetailArgs:
     @preference.setter
     def preference(self, value: pulumi.Input[str]):
         pulumi.set(self, "preference", value)
+
+    @property
+    @pulumi.getter(name="customActionTimeoutInMins")
+    def custom_action_timeout_in_mins(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "custom_action_timeout_in_mins")
+
+    @custom_action_timeout_in_mins.setter
+    def custom_action_timeout_in_mins(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "custom_action_timeout_in_mins", value)
 
     @property
     @pulumi.getter(name="daysOfWeeks")
@@ -2095,6 +2238,15 @@ class AutonomousVmClusterMaintenanceWindowDetailArgs:
         pulumi.set(self, "hours_of_days", value)
 
     @property
+    @pulumi.getter(name="isCustomActionTimeoutEnabled")
+    def is_custom_action_timeout_enabled(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "is_custom_action_timeout_enabled")
+
+    @is_custom_action_timeout_enabled.setter
+    def is_custom_action_timeout_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_custom_action_timeout_enabled", value)
+
+    @property
     @pulumi.getter(name="leadTimeInWeeks")
     def lead_time_in_weeks(self) -> Optional[pulumi.Input[int]]:
         """
@@ -2117,6 +2269,15 @@ class AutonomousVmClusterMaintenanceWindowDetailArgs:
     @months.setter
     def months(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousVmClusterMaintenanceWindowDetailMonthArgs']]]]):
         pulumi.set(self, "months", value)
+
+    @property
+    @pulumi.getter(name="patchingMode")
+    def patching_mode(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "patching_mode")
+
+    @patching_mode.setter
+    def patching_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "patching_mode", value)
 
     @property
     @pulumi.getter(name="weeksOfMonths")
@@ -2561,6 +2722,29 @@ class CloudExadataInfrastructureMaintenanceWindowMonthArgs:
     @name.setter
     def name(self, value: pulumi.Input[str]):
         pulumi.set(self, "name", value)
+
+
+@pulumi.input_type
+class CloudVmClusterDataCollectionOptionsArgs:
+    def __init__(__self__, *,
+                 is_diagnostics_events_enabled: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[bool] is_diagnostics_events_enabled: (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+        """
+        if is_diagnostics_events_enabled is not None:
+            pulumi.set(__self__, "is_diagnostics_events_enabled", is_diagnostics_events_enabled)
+
+    @property
+    @pulumi.getter(name="isDiagnosticsEventsEnabled")
+    def is_diagnostics_events_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+        """
+        return pulumi.get(self, "is_diagnostics_events_enabled")
+
+    @is_diagnostics_events_enabled.setter
+    def is_diagnostics_events_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_diagnostics_events_enabled", value)
 
 
 @pulumi.input_type
@@ -5541,6 +5725,306 @@ class DbSystemMaintenanceWindowMonthArgs:
 
 
 @pulumi.input_type
+class DbSystemsUpgradeDbSystemOptionArgs:
+    def __init__(__self__, *,
+                 storage_management: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] storage_management: The storage option used in DB system. ASM - Automatic storage management LVM - Logical Volume management
+        """
+        if storage_management is not None:
+            pulumi.set(__self__, "storage_management", storage_management)
+
+    @property
+    @pulumi.getter(name="storageManagement")
+    def storage_management(self) -> Optional[pulumi.Input[str]]:
+        """
+        The storage option used in DB system. ASM - Automatic storage management LVM - Logical Volume management
+        """
+        return pulumi.get(self, "storage_management")
+
+    @storage_management.setter
+    def storage_management(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "storage_management", value)
+
+
+@pulumi.input_type
+class DbSystemsUpgradeIormConfigCachArgs:
+    def __init__(__self__, *,
+                 db_plans: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemsUpgradeIormConfigCachDbPlanArgs']]]] = None,
+                 lifecycle_details: Optional[pulumi.Input[str]] = None,
+                 objective: Optional[pulumi.Input[str]] = None,
+                 state: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['DbSystemsUpgradeIormConfigCachDbPlanArgs']]] db_plans: An array of IORM settings for all the database in the Exadata DB system.
+        :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
+        :param pulumi.Input[str] objective: The current value for the IORM objective. The default is `AUTO`.
+        :param pulumi.Input[str] state: The current state of the DB system.
+        """
+        if db_plans is not None:
+            pulumi.set(__self__, "db_plans", db_plans)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if objective is not None:
+            pulumi.set(__self__, "objective", objective)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+
+    @property
+    @pulumi.getter(name="dbPlans")
+    def db_plans(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemsUpgradeIormConfigCachDbPlanArgs']]]]:
+        """
+        An array of IORM settings for all the database in the Exadata DB system.
+        """
+        return pulumi.get(self, "db_plans")
+
+    @db_plans.setter
+    def db_plans(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemsUpgradeIormConfigCachDbPlanArgs']]]]):
+        pulumi.set(self, "db_plans", value)
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
+        """
+        Additional information about the current lifecycle state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @lifecycle_details.setter
+    def lifecycle_details(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "lifecycle_details", value)
+
+    @property
+    @pulumi.getter
+    def objective(self) -> Optional[pulumi.Input[str]]:
+        """
+        The current value for the IORM objective. The default is `AUTO`.
+        """
+        return pulumi.get(self, "objective")
+
+    @objective.setter
+    def objective(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "objective", value)
+
+    @property
+    @pulumi.getter
+    def state(self) -> Optional[pulumi.Input[str]]:
+        """
+        The current state of the DB system.
+        """
+        return pulumi.get(self, "state")
+
+    @state.setter
+    def state(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "state", value)
+
+
+@pulumi.input_type
+class DbSystemsUpgradeIormConfigCachDbPlanArgs:
+    def __init__(__self__, *,
+                 db_name: Optional[pulumi.Input[str]] = None,
+                 flash_cache_limit: Optional[pulumi.Input[str]] = None,
+                 share: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[str] db_name: The database name. For the default `DbPlan`, the `dbName` is `default`.
+        :param pulumi.Input[str] flash_cache_limit: The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
+        :param pulumi.Input[int] share: The relative priority of this database.
+        """
+        if db_name is not None:
+            pulumi.set(__self__, "db_name", db_name)
+        if flash_cache_limit is not None:
+            pulumi.set(__self__, "flash_cache_limit", flash_cache_limit)
+        if share is not None:
+            pulumi.set(__self__, "share", share)
+
+    @property
+    @pulumi.getter(name="dbName")
+    def db_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The database name. For the default `DbPlan`, the `dbName` is `default`.
+        """
+        return pulumi.get(self, "db_name")
+
+    @db_name.setter
+    def db_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "db_name", value)
+
+    @property
+    @pulumi.getter(name="flashCacheLimit")
+    def flash_cache_limit(self) -> Optional[pulumi.Input[str]]:
+        """
+        The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
+        """
+        return pulumi.get(self, "flash_cache_limit")
+
+    @flash_cache_limit.setter
+    def flash_cache_limit(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "flash_cache_limit", value)
+
+    @property
+    @pulumi.getter
+    def share(self) -> Optional[pulumi.Input[int]]:
+        """
+        The relative priority of this database.
+        """
+        return pulumi.get(self, "share")
+
+    @share.setter
+    def share(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "share", value)
+
+
+@pulumi.input_type
+class DbSystemsUpgradeMaintenanceWindowArgs:
+    def __init__(__self__, *,
+                 days_of_weeks: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemsUpgradeMaintenanceWindowDaysOfWeekArgs']]]] = None,
+                 hours_of_days: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
+                 lead_time_in_weeks: Optional[pulumi.Input[int]] = None,
+                 months: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemsUpgradeMaintenanceWindowMonthArgs']]]] = None,
+                 preference: Optional[pulumi.Input[str]] = None,
+                 weeks_of_months: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['DbSystemsUpgradeMaintenanceWindowDaysOfWeekArgs']]] days_of_weeks: Days during the week when maintenance should be performed.
+        :param pulumi.Input[Sequence[pulumi.Input[int]]] hours_of_days: The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+               * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        :param pulumi.Input[int] lead_time_in_weeks: Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+        :param pulumi.Input[Sequence[pulumi.Input['DbSystemsUpgradeMaintenanceWindowMonthArgs']]] months: Months during the year when maintenance should be performed.
+        :param pulumi.Input[str] preference: The maintenance window scheduling preference.
+        :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+        """
+        if days_of_weeks is not None:
+            pulumi.set(__self__, "days_of_weeks", days_of_weeks)
+        if hours_of_days is not None:
+            pulumi.set(__self__, "hours_of_days", hours_of_days)
+        if lead_time_in_weeks is not None:
+            pulumi.set(__self__, "lead_time_in_weeks", lead_time_in_weeks)
+        if months is not None:
+            pulumi.set(__self__, "months", months)
+        if preference is not None:
+            pulumi.set(__self__, "preference", preference)
+        if weeks_of_months is not None:
+            pulumi.set(__self__, "weeks_of_months", weeks_of_months)
+
+    @property
+    @pulumi.getter(name="daysOfWeeks")
+    def days_of_weeks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemsUpgradeMaintenanceWindowDaysOfWeekArgs']]]]:
+        """
+        Days during the week when maintenance should be performed.
+        """
+        return pulumi.get(self, "days_of_weeks")
+
+    @days_of_weeks.setter
+    def days_of_weeks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemsUpgradeMaintenanceWindowDaysOfWeekArgs']]]]):
+        pulumi.set(self, "days_of_weeks", value)
+
+    @property
+    @pulumi.getter(name="hoursOfDays")
+    def hours_of_days(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
+        """
+        The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+        * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        """
+        return pulumi.get(self, "hours_of_days")
+
+    @hours_of_days.setter
+    def hours_of_days(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]):
+        pulumi.set(self, "hours_of_days", value)
+
+    @property
+    @pulumi.getter(name="leadTimeInWeeks")
+    def lead_time_in_weeks(self) -> Optional[pulumi.Input[int]]:
+        """
+        Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+        """
+        return pulumi.get(self, "lead_time_in_weeks")
+
+    @lead_time_in_weeks.setter
+    def lead_time_in_weeks(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "lead_time_in_weeks", value)
+
+    @property
+    @pulumi.getter
+    def months(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemsUpgradeMaintenanceWindowMonthArgs']]]]:
+        """
+        Months during the year when maintenance should be performed.
+        """
+        return pulumi.get(self, "months")
+
+    @months.setter
+    def months(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemsUpgradeMaintenanceWindowMonthArgs']]]]):
+        pulumi.set(self, "months", value)
+
+    @property
+    @pulumi.getter
+    def preference(self) -> Optional[pulumi.Input[str]]:
+        """
+        The maintenance window scheduling preference.
+        """
+        return pulumi.get(self, "preference")
+
+    @preference.setter
+    def preference(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "preference", value)
+
+    @property
+    @pulumi.getter(name="weeksOfMonths")
+    def weeks_of_months(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
+        """
+        Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+        """
+        return pulumi.get(self, "weeks_of_months")
+
+    @weeks_of_months.setter
+    def weeks_of_months(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]):
+        pulumi.set(self, "weeks_of_months", value)
+
+
+@pulumi.input_type
+class DbSystemsUpgradeMaintenanceWindowDaysOfWeekArgs:
+    def __init__(__self__, *,
+                 name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] name: Name of the month of the year.
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of the month of the year.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+
+@pulumi.input_type
+class DbSystemsUpgradeMaintenanceWindowMonthArgs:
+    def __init__(__self__, *,
+                 name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] name: Name of the month of the year.
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of the month of the year.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+
+@pulumi.input_type
 class ExadataInfrastructureContactArgs:
     def __init__(__self__, *,
                  email: pulumi.Input[str],
@@ -6099,18 +6583,59 @@ class ExternalContainerDatabaseDatabaseManagementConfigArgs:
 
 
 @pulumi.input_type
+class ExternalContainerDatabaseStackMonitoringConfigArgs:
+    def __init__(__self__, *,
+                 stack_monitoring_connector_id: Optional[pulumi.Input[str]] = None,
+                 stack_monitoring_status: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] stack_monitoring_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+        :param pulumi.Input[str] stack_monitoring_status: The status of Stack Monitoring.
+        """
+        if stack_monitoring_connector_id is not None:
+            pulumi.set(__self__, "stack_monitoring_connector_id", stack_monitoring_connector_id)
+        if stack_monitoring_status is not None:
+            pulumi.set(__self__, "stack_monitoring_status", stack_monitoring_status)
+
+    @property
+    @pulumi.getter(name="stackMonitoringConnectorId")
+    def stack_monitoring_connector_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+        """
+        return pulumi.get(self, "stack_monitoring_connector_id")
+
+    @stack_monitoring_connector_id.setter
+    def stack_monitoring_connector_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "stack_monitoring_connector_id", value)
+
+    @property
+    @pulumi.getter(name="stackMonitoringStatus")
+    def stack_monitoring_status(self) -> Optional[pulumi.Input[str]]:
+        """
+        The status of Stack Monitoring.
+        """
+        return pulumi.get(self, "stack_monitoring_status")
+
+    @stack_monitoring_status.setter
+    def stack_monitoring_status(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "stack_monitoring_status", value)
+
+
+@pulumi.input_type
 class ExternalDatabaseConnectorConnectionCredentialsArgs:
     def __init__(__self__, *,
                  credential_name: Optional[pulumi.Input[str]] = None,
                  credential_type: Optional[pulumi.Input[str]] = None,
                  password: Optional[pulumi.Input[str]] = None,
                  role: Optional[pulumi.Input[str]] = None,
+                 ssl_secret_id: Optional[pulumi.Input[str]] = None,
                  username: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] credential_name: (Updatable) The name of the credential information that used to connect to the database. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
         :param pulumi.Input[str] credential_type: (Updatable) The type of credential used to connect to the database.
         :param pulumi.Input[str] password: (Updatable) The password that will be used to connect to the database.
         :param pulumi.Input[str] role: (Updatable) The role of the user that will be connecting to the database.
+        :param pulumi.Input[str] ssl_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         :param pulumi.Input[str] username: (Updatable) The username that will be used to connect to the database.
         """
         if credential_name is not None:
@@ -6121,6 +6646,8 @@ class ExternalDatabaseConnectorConnectionCredentialsArgs:
             pulumi.set(__self__, "password", password)
         if role is not None:
             pulumi.set(__self__, "role", role)
+        if ssl_secret_id is not None:
+            pulumi.set(__self__, "ssl_secret_id", ssl_secret_id)
         if username is not None:
             pulumi.set(__self__, "username", username)
 
@@ -6171,6 +6698,18 @@ class ExternalDatabaseConnectorConnectionCredentialsArgs:
     @role.setter
     def role(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "role", value)
+
+    @property
+    @pulumi.getter(name="sslSecretId")
+    def ssl_secret_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        """
+        return pulumi.get(self, "ssl_secret_id")
+
+    @ssl_secret_id.setter
+    def ssl_secret_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ssl_secret_id", value)
 
     @property
     @pulumi.getter
@@ -6347,6 +6886,45 @@ class ExternalNonContainerDatabaseOperationsInsightsConfigArgs:
 
 
 @pulumi.input_type
+class ExternalNonContainerDatabaseStackMonitoringConfigArgs:
+    def __init__(__self__, *,
+                 stack_monitoring_connector_id: Optional[pulumi.Input[str]] = None,
+                 stack_monitoring_status: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] stack_monitoring_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+        :param pulumi.Input[str] stack_monitoring_status: The status of Stack Monitoring.
+        """
+        if stack_monitoring_connector_id is not None:
+            pulumi.set(__self__, "stack_monitoring_connector_id", stack_monitoring_connector_id)
+        if stack_monitoring_status is not None:
+            pulumi.set(__self__, "stack_monitoring_status", stack_monitoring_status)
+
+    @property
+    @pulumi.getter(name="stackMonitoringConnectorId")
+    def stack_monitoring_connector_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+        """
+        return pulumi.get(self, "stack_monitoring_connector_id")
+
+    @stack_monitoring_connector_id.setter
+    def stack_monitoring_connector_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "stack_monitoring_connector_id", value)
+
+    @property
+    @pulumi.getter(name="stackMonitoringStatus")
+    def stack_monitoring_status(self) -> Optional[pulumi.Input[str]]:
+        """
+        The status of Stack Monitoring.
+        """
+        return pulumi.get(self, "stack_monitoring_status")
+
+    @stack_monitoring_status.setter
+    def stack_monitoring_status(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "stack_monitoring_status", value)
+
+
+@pulumi.input_type
 class ExternalPluggableDatabaseDatabaseManagementConfigArgs:
     def __init__(__self__, *,
                  database_management_connection_id: Optional[pulumi.Input[str]] = None,
@@ -6438,6 +7016,45 @@ class ExternalPluggableDatabaseOperationsInsightsConfigArgs:
     @operations_insights_status.setter
     def operations_insights_status(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "operations_insights_status", value)
+
+
+@pulumi.input_type
+class ExternalPluggableDatabaseStackMonitoringConfigArgs:
+    def __init__(__self__, *,
+                 stack_monitoring_connector_id: Optional[pulumi.Input[str]] = None,
+                 stack_monitoring_status: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] stack_monitoring_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+        :param pulumi.Input[str] stack_monitoring_status: The status of Stack Monitoring.
+        """
+        if stack_monitoring_connector_id is not None:
+            pulumi.set(__self__, "stack_monitoring_connector_id", stack_monitoring_connector_id)
+        if stack_monitoring_status is not None:
+            pulumi.set(__self__, "stack_monitoring_status", stack_monitoring_status)
+
+    @property
+    @pulumi.getter(name="stackMonitoringConnectorId")
+    def stack_monitoring_connector_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+        """
+        return pulumi.get(self, "stack_monitoring_connector_id")
+
+    @stack_monitoring_connector_id.setter
+    def stack_monitoring_connector_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "stack_monitoring_connector_id", value)
+
+    @property
+    @pulumi.getter(name="stackMonitoringStatus")
+    def stack_monitoring_status(self) -> Optional[pulumi.Input[str]]:
+        """
+        The status of Stack Monitoring.
+        """
+        return pulumi.get(self, "stack_monitoring_status")
+
+    @stack_monitoring_status.setter
+    def stack_monitoring_status(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "stack_monitoring_status", value)
 
 
 @pulumi.input_type
@@ -6798,6 +7415,29 @@ class PluggableDatabasesRemoteCloneConnectionStringArgs:
 
 
 @pulumi.input_type
+class VmClusterAddVirtualNetworkDataCollectionOptionArgs:
+    def __init__(__self__, *,
+                 is_diagnostics_events_enabled: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[bool] is_diagnostics_events_enabled: Indicates whether diagnostic collection is enabled for the VM cluster. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+        """
+        if is_diagnostics_events_enabled is not None:
+            pulumi.set(__self__, "is_diagnostics_events_enabled", is_diagnostics_events_enabled)
+
+    @property
+    @pulumi.getter(name="isDiagnosticsEventsEnabled")
+    def is_diagnostics_events_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether diagnostic collection is enabled for the VM cluster. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+        """
+        return pulumi.get(self, "is_diagnostics_events_enabled")
+
+    @is_diagnostics_events_enabled.setter
+    def is_diagnostics_events_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_diagnostics_events_enabled", value)
+
+
+@pulumi.input_type
 class VmClusterAddVirtualNetworkDbServerArgs:
     def __init__(__self__, *,
                  db_server_id: pulumi.Input[str]):
@@ -6817,6 +7457,29 @@ class VmClusterAddVirtualNetworkDbServerArgs:
     @db_server_id.setter
     def db_server_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "db_server_id", value)
+
+
+@pulumi.input_type
+class VmClusterDataCollectionOptionsArgs:
+    def __init__(__self__, *,
+                 is_diagnostics_events_enabled: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[bool] is_diagnostics_events_enabled: (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+        """
+        if is_diagnostics_events_enabled is not None:
+            pulumi.set(__self__, "is_diagnostics_events_enabled", is_diagnostics_events_enabled)
+
+    @property
+    @pulumi.getter(name="isDiagnosticsEventsEnabled")
+    def is_diagnostics_events_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+        """
+        return pulumi.get(self, "is_diagnostics_events_enabled")
+
+    @is_diagnostics_events_enabled.setter
+    def is_diagnostics_events_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_diagnostics_events_enabled", value)
 
 
 @pulumi.input_type
@@ -7070,6 +7733,29 @@ class VmClusterNetworkVmNetworkNodeArgs:
 
 
 @pulumi.input_type
+class VmClusterRemoveVirtualMachineDataCollectionOptionArgs:
+    def __init__(__self__, *,
+                 is_diagnostics_events_enabled: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[bool] is_diagnostics_events_enabled: Indicates whether diagnostic collection is enabled for the VM cluster. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+        """
+        if is_diagnostics_events_enabled is not None:
+            pulumi.set(__self__, "is_diagnostics_events_enabled", is_diagnostics_events_enabled)
+
+    @property
+    @pulumi.getter(name="isDiagnosticsEventsEnabled")
+    def is_diagnostics_events_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether diagnostic collection is enabled for the VM cluster. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+        """
+        return pulumi.get(self, "is_diagnostics_events_enabled")
+
+    @is_diagnostics_events_enabled.setter
+    def is_diagnostics_events_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_diagnostics_events_enabled", value)
+
+
+@pulumi.input_type
 class VmClusterRemoveVirtualMachineDbServerArgs:
     def __init__(__self__, *,
                  db_server_id: pulumi.Input[str]):
@@ -7089,6 +7775,51 @@ class VmClusterRemoveVirtualMachineDbServerArgs:
     @db_server_id.setter
     def db_server_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "db_server_id", value)
+
+
+@pulumi.input_type
+class GetAutonomousCharacterSetsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: A valid Oracle character set.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        A valid Oracle character set.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
 
 
 @pulumi.input_type
@@ -8226,6 +8957,45 @@ class GetDbServersFilterArgs:
 
 
 @pulumi.input_type
+class GetDbSystemComputePerformancesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
 class GetDbSystemHistoryEntriesFilterArgs:
     def __init__(__self__, *,
                  name: str,
@@ -8349,6 +9119,45 @@ class GetDbSystemShapesFilterArgs:
 
 
 @pulumi.input_type
+class GetDbSystemStoragePerformancesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
 class GetDbSystemsFilterArgs:
     def __init__(__self__, *,
                  name: str,
@@ -8368,6 +9177,45 @@ class GetDbSystemsFilterArgs:
         """
         Name of the month of the year.
         """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetDbSystemsUpgradeHistoryEntriesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
         return pulumi.get(self, "name")
 
     @name.setter

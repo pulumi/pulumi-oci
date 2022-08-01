@@ -21,7 +21,7 @@ class GetMysqlDbSystemResult:
     """
     A collection of values returned by getMysqlDbSystem.
     """
-    def __init__(__self__, admin_password=None, admin_username=None, analytics_clusters=None, availability_domain=None, backup_policies=None, channels=None, compartment_id=None, configuration_id=None, crash_recovery=None, current_placements=None, data_storage_size_in_gb=None, db_system_id=None, defined_tags=None, deletion_policies=None, description=None, display_name=None, endpoints=None, fault_domain=None, freeform_tags=None, heat_wave_clusters=None, hostname_label=None, id=None, ip_address=None, is_analytics_cluster_attached=None, is_heat_wave_cluster_attached=None, is_highly_available=None, lifecycle_details=None, maintenances=None, mysql_version=None, port=None, port_x=None, shape_name=None, shutdown_type=None, sources=None, state=None, subnet_id=None, time_created=None, time_updated=None):
+    def __init__(__self__, admin_password=None, admin_username=None, analytics_clusters=None, availability_domain=None, backup_policies=None, channels=None, compartment_id=None, configuration_id=None, crash_recovery=None, current_placements=None, data_storage_size_in_gb=None, db_system_id=None, defined_tags=None, deletion_policies=None, description=None, display_name=None, endpoints=None, fault_domain=None, freeform_tags=None, heat_wave_clusters=None, hostname_label=None, id=None, ip_address=None, is_analytics_cluster_attached=None, is_heat_wave_cluster_attached=None, is_highly_available=None, lifecycle_details=None, maintenances=None, mysql_version=None, point_in_time_recovery_details=None, port=None, port_x=None, shape_name=None, shutdown_type=None, sources=None, state=None, subnet_id=None, time_created=None, time_updated=None):
         if admin_password and not isinstance(admin_password, str):
             raise TypeError("Expected argument 'admin_password' to be a str")
         pulumi.set(__self__, "admin_password", admin_password)
@@ -108,11 +108,10 @@ class GetMysqlDbSystemResult:
         pulumi.set(__self__, "maintenances", maintenances)
         if mysql_version and not isinstance(mysql_version, str):
             raise TypeError("Expected argument 'mysql_version' to be a str")
-        if mysql_version is not None:
-            warnings.warn("""The 'mysql_version' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
-            pulumi.log.warn("""mysql_version is deprecated: The 'mysql_version' field has been deprecated and may be removed in a future version. Do not use this field.""")
-
         pulumi.set(__self__, "mysql_version", mysql_version)
+        if point_in_time_recovery_details and not isinstance(point_in_time_recovery_details, list):
+            raise TypeError("Expected argument 'point_in_time_recovery_details' to be a list")
+        pulumi.set(__self__, "point_in_time_recovery_details", point_in_time_recovery_details)
         if port and not isinstance(port, int):
             raise TypeError("Expected argument 'port' to be a int")
         pulumi.set(__self__, "port", port)
@@ -227,7 +226,7 @@ class GetMysqlDbSystemResult:
     @pulumi.getter(name="dbSystemId")
     def db_system_id(self) -> str:
         """
-        The OCID of the source DB System.
+        The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
         """
         return pulumi.get(self, "db_system_id")
 
@@ -339,7 +338,7 @@ class GetMysqlDbSystemResult:
     @pulumi.getter(name="isHighlyAvailable")
     def is_highly_available(self) -> bool:
         """
-        If the policy is to enable high availability of the instance, by maintaining secondary/failover capacity as necessary.
+        Specifies if the DB System is highly available.
         """
         return pulumi.get(self, "is_highly_available")
 
@@ -366,6 +365,14 @@ class GetMysqlDbSystemResult:
         Name of the MySQL Version in use for the DB System.
         """
         return pulumi.get(self, "mysql_version")
+
+    @property
+    @pulumi.getter(name="pointInTimeRecoveryDetails")
+    def point_in_time_recovery_details(self) -> Sequence['outputs.GetMysqlDbSystemPointInTimeRecoveryDetailResult']:
+        """
+        Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
+        """
+        return pulumi.get(self, "point_in_time_recovery_details")
 
     @property
     @pulumi.getter
@@ -472,6 +479,7 @@ class AwaitableGetMysqlDbSystemResult(GetMysqlDbSystemResult):
             lifecycle_details=self.lifecycle_details,
             maintenances=self.maintenances,
             mysql_version=self.mysql_version,
+            point_in_time_recovery_details=self.point_in_time_recovery_details,
             port=self.port,
             port_x=self.port_x,
             shape_name=self.shape_name,
@@ -540,6 +548,7 @@ def get_mysql_db_system(db_system_id: Optional[str] = None,
         lifecycle_details=__ret__.lifecycle_details,
         maintenances=__ret__.maintenances,
         mysql_version=__ret__.mysql_version,
+        point_in_time_recovery_details=__ret__.point_in_time_recovery_details,
         port=__ret__.port,
         port_x=__ret__.port_x,
         shape_name=__ret__.shape_name,

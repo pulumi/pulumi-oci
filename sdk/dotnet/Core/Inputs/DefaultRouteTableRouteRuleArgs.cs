@@ -27,6 +27,9 @@ namespace Pulumi.Oci.Core.Inputs
         [Input("networkEntityId", required: true)]
         public Input<string> NetworkEntityId { get; set; } = null!;
 
+        [Input("routeType")]
+        public Input<string>? RouteType { get; set; }
+
         public DefaultRouteTableRouteRuleArgs()
         {
         }

@@ -98,7 +98,7 @@ class GetDatabaseToolsPrivateEndpointResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools private endpoint.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -119,7 +119,7 @@ class GetDatabaseToolsPrivateEndpointResult:
     @pulumi.getter
     def description(self) -> str:
         """
-        A description of the DatabaseToolsPrivateEndpoint.
+        A description of the Database Tools private endpoint.
         """
         return pulumi.get(self, "description")
 
@@ -143,7 +143,7 @@ class GetDatabaseToolsPrivateEndpointResult:
     @pulumi.getter(name="endpointServiceId")
     def endpoint_service_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsEndpointService.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Endpoint Service.
         """
         return pulumi.get(self, "endpoint_service_id")
 
@@ -159,7 +159,7 @@ class GetDatabaseToolsPrivateEndpointResult:
     @pulumi.getter
     def id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsPrivateEndpoint.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint.
         """
         return pulumi.get(self, "id")
 
@@ -199,7 +199,7 @@ class GetDatabaseToolsPrivateEndpointResult:
     @pulumi.getter(name="reverseConnectionConfigurations")
     def reverse_connection_configurations(self) -> Sequence['outputs.GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationResult']:
         """
-        Reverse connection configuration details of Private Endpoint.
+        Reverse connection configuration details of the private endpoint.
         """
         return pulumi.get(self, "reverse_connection_configurations")
 
@@ -207,7 +207,7 @@ class GetDatabaseToolsPrivateEndpointResult:
     @pulumi.getter
     def state(self) -> str:
         """
-        The current state of the DatabaseToolsPrivateEndpoint.
+        The current state of the Database Tools private endpoint.
         """
         return pulumi.get(self, "state")
 
@@ -231,7 +231,7 @@ class GetDatabaseToolsPrivateEndpointResult:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The time the DatabaseToolsPrivateEndpoint was created. An RFC3339 formatted datetime string
+        The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
         """
         return pulumi.get(self, "time_created")
 
@@ -239,7 +239,7 @@ class GetDatabaseToolsPrivateEndpointResult:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
-        The time the DatabaseToolsPrivateEndpoint was updated. An RFC3339 formatted datetime string
+        The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
         """
         return pulumi.get(self, "time_updated")
 
@@ -286,7 +286,7 @@ def get_database_tools_private_endpoint(database_tools_private_endpoint_id: Opti
     """
     This data source provides details about a specific Database Tools Private Endpoint resource in Oracle Cloud Infrastructure Database Tools service.
 
-    Gets a DatabaseToolsPrivateEndpoint by identifier
+    Gets details of a specified Database Tools private endpoint.
 
     ## Example Usage
 
@@ -298,7 +298,7 @@ def get_database_tools_private_endpoint(database_tools_private_endpoint_id: Opti
     ```
 
 
-    :param str database_tools_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a DatabaseToolsPrivateEndpoint.
+    :param str database_tools_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools private endpoint.
     """
     __args__ = dict()
     __args__['databaseToolsPrivateEndpointId'] = database_tools_private_endpoint_id
@@ -338,7 +338,7 @@ def get_database_tools_private_endpoint_output(database_tools_private_endpoint_i
     """
     This data source provides details about a specific Database Tools Private Endpoint resource in Oracle Cloud Infrastructure Database Tools service.
 
-    Gets a DatabaseToolsPrivateEndpoint by identifier
+    Gets details of a specified Database Tools private endpoint.
 
     ## Example Usage
 
@@ -350,6 +350,6 @@ def get_database_tools_private_endpoint_output(database_tools_private_endpoint_i
     ```
 
 
-    :param str database_tools_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a DatabaseToolsPrivateEndpoint.
+    :param str database_tools_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools private endpoint.
     """
     ...

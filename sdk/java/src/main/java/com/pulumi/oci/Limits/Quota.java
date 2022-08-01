@@ -9,7 +9,9 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Limits.QuotaArgs;
 import com.pulumi.oci.Limits.inputs.QuotaState;
+import com.pulumi.oci.Limits.outputs.QuotaLock;
 import com.pulumi.oci.Utilities;
+import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -89,6 +91,34 @@ public class Quota extends com.pulumi.resources.CustomResource {
      */
     public Output<Map<String,Object>> freeformTags() {
         return this.freeformTags;
+    }
+    /**
+     * this is a computed field which is set to true if any lock is present`
+     * 
+     */
+    @Export(name="isLockOverride", type=Boolean.class, parameters={})
+    private Output<Boolean> isLockOverride;
+
+    /**
+     * @return this is a computed field which is set to true if any lock is present`
+     * 
+     */
+    public Output<Boolean> isLockOverride() {
+        return this.isLockOverride;
+    }
+    /**
+     * Locks associated with this resource.
+     * 
+     */
+    @Export(name="locks", type=List.class, parameters={QuotaLock.class})
+    private Output<List<QuotaLock>> locks;
+
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public Output<List<QuotaLock>> locks() {
+        return this.locks;
     }
     /**
      * The name you assign to the quota during creation. The name must be unique across all quotas in the tenancy and cannot be changed.

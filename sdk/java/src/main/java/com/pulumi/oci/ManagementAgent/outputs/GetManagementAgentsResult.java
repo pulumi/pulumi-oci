@@ -15,6 +15,7 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagementAgentsResult {
+    private final @Nullable String accessLevel;
     /**
      * @return The current availability status of managementAgent
      * 
@@ -25,6 +26,7 @@ public final class GetManagementAgentsResult {
      * 
      */
     private final String compartmentId;
+    private final @Nullable Boolean compartmentIdInSubtree;
     /**
      * @return Management Agent Name
      * 
@@ -79,8 +81,10 @@ public final class GetManagementAgentsResult {
 
     @CustomType.Constructor
     private GetManagementAgentsResult(
+        @CustomType.Parameter("accessLevel") @Nullable String accessLevel,
         @CustomType.Parameter("availabilityStatus") @Nullable String availabilityStatus,
         @CustomType.Parameter("compartmentId") String compartmentId,
+        @CustomType.Parameter("compartmentIdInSubtree") @Nullable Boolean compartmentIdInSubtree,
         @CustomType.Parameter("displayName") @Nullable String displayName,
         @CustomType.Parameter("filters") @Nullable List<GetManagementAgentsFilter> filters,
         @CustomType.Parameter("hostId") @Nullable String hostId,
@@ -92,8 +96,10 @@ public final class GetManagementAgentsResult {
         @CustomType.Parameter("pluginNames") @Nullable List<String> pluginNames,
         @CustomType.Parameter("state") @Nullable String state,
         @CustomType.Parameter("versions") @Nullable List<String> versions) {
+        this.accessLevel = accessLevel;
         this.availabilityStatus = availabilityStatus;
         this.compartmentId = compartmentId;
+        this.compartmentIdInSubtree = compartmentIdInSubtree;
         this.displayName = displayName;
         this.filters = filters;
         this.hostId = hostId;
@@ -107,6 +113,9 @@ public final class GetManagementAgentsResult {
         this.versions = versions;
     }
 
+    public Optional<String> accessLevel() {
+        return Optional.ofNullable(this.accessLevel);
+    }
     /**
      * @return The current availability status of managementAgent
      * 
@@ -120,6 +129,9 @@ public final class GetManagementAgentsResult {
      */
     public String compartmentId() {
         return this.compartmentId;
+    }
+    public Optional<Boolean> compartmentIdInSubtree() {
+        return Optional.ofNullable(this.compartmentIdInSubtree);
     }
     /**
      * @return Management Agent Name
@@ -204,8 +216,10 @@ public final class GetManagementAgentsResult {
     }
 
     public static final class Builder {
+        private @Nullable String accessLevel;
         private @Nullable String availabilityStatus;
         private String compartmentId;
+        private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable String displayName;
         private @Nullable List<GetManagementAgentsFilter> filters;
         private @Nullable String hostId;
@@ -224,8 +238,10 @@ public final class GetManagementAgentsResult {
 
         public Builder(GetManagementAgentsResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.accessLevel = defaults.accessLevel;
     	      this.availabilityStatus = defaults.availabilityStatus;
     	      this.compartmentId = defaults.compartmentId;
+    	      this.compartmentIdInSubtree = defaults.compartmentIdInSubtree;
     	      this.displayName = defaults.displayName;
     	      this.filters = defaults.filters;
     	      this.hostId = defaults.hostId;
@@ -239,12 +255,20 @@ public final class GetManagementAgentsResult {
     	      this.versions = defaults.versions;
         }
 
+        public Builder accessLevel(@Nullable String accessLevel) {
+            this.accessLevel = accessLevel;
+            return this;
+        }
         public Builder availabilityStatus(@Nullable String availabilityStatus) {
             this.availabilityStatus = availabilityStatus;
             return this;
         }
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
+            return this;
+        }
+        public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
+            this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         public Builder displayName(@Nullable String displayName) {
@@ -306,7 +330,7 @@ public final class GetManagementAgentsResult {
         public Builder versions(String... versions) {
             return versions(List.of(versions));
         }        public GetManagementAgentsResult build() {
-            return new GetManagementAgentsResult(availabilityStatus, compartmentId, displayName, filters, hostId, id, installType, isCustomerDeployed, managementAgents, platformTypes, pluginNames, state, versions);
+            return new GetManagementAgentsResult(accessLevel, availabilityStatus, compartmentId, compartmentIdInSubtree, displayName, filters, hostId, id, installType, isCustomerDeployed, managementAgents, platformTypes, pluginNames, state, versions);
         }
     }
 }

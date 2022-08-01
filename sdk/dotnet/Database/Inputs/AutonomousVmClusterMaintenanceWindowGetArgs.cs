@@ -12,6 +12,9 @@ namespace Pulumi.Oci.Database.Inputs
 
     public sealed class AutonomousVmClusterMaintenanceWindowGetArgs : Pulumi.ResourceArgs
     {
+        [Input("customActionTimeoutInMins")]
+        public Input<int>? CustomActionTimeoutInMins { get; set; }
+
         [Input("daysOfWeeks")]
         private InputList<Inputs.AutonomousVmClusterMaintenanceWindowDaysOfWeekGetArgs>? _daysOfWeeks;
 
@@ -37,6 +40,9 @@ namespace Pulumi.Oci.Database.Inputs
             set => _hoursOfDays = value;
         }
 
+        [Input("isCustomActionTimeoutEnabled")]
+        public Input<bool>? IsCustomActionTimeoutEnabled { get; set; }
+
         /// <summary>
         /// (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
         /// </summary>
@@ -54,6 +60,9 @@ namespace Pulumi.Oci.Database.Inputs
             get => _months ?? (_months = new InputList<Inputs.AutonomousVmClusterMaintenanceWindowMonthGetArgs>());
             set => _months = value;
         }
+
+        [Input("patchingMode")]
+        public Input<string>? PatchingMode { get; set; }
 
         /// <summary>
         /// (Updatable) The maintenance window scheduling preference.

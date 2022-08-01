@@ -5,8 +5,11 @@ package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
+import java.lang.Integer;
+import java.lang.Object;
 import java.lang.String;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 @CustomType
@@ -23,17 +26,23 @@ public final class GetDataGuardAssociationsDataGuardAssociation {
     private final String applyRate;
     private final String availabilityDomain;
     private final List<String> backupNetworkNsgIds;
+    private final Integer cpuCoreCount;
     private final Boolean createAsync;
     private final String creationType;
     private final String databaseAdminPassword;
+    private final Map<String,Object> databaseDefinedTags;
+    private final Map<String,Object> databaseFreeformTags;
     /**
      * @return The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     private final String databaseId;
     private final String databaseSoftwareImageId;
+    private final Map<String,Object> dbSystemDefinedTags;
+    private final Map<String,Object> dbSystemFreeformTags;
     private final String deleteStandbyDbHomeOnDelete;
     private final String displayName;
+    private final List<String> faultDomains;
     private final String hostname;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Data Guard association.
@@ -45,11 +54,13 @@ public final class GetDataGuardAssociationsDataGuardAssociation {
      * 
      */
     private final Boolean isActiveDataGuardEnabled;
+    private final String licenseModel;
     /**
      * @return Additional information about the current lifecycleState, if available.
      * 
      */
     private final String lifecycleDetails;
+    private final Integer nodeCount;
     private final List<String> nsgIds;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer database&#39;s Data Guard association.
@@ -79,6 +90,7 @@ public final class GetDataGuardAssociationsDataGuardAssociation {
     private final String peerRole;
     private final String peerSidPrefix;
     private final String peerVmClusterId;
+    private final String privateIp;
     /**
      * @return The protection mode of this Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
      * 
@@ -95,12 +107,14 @@ public final class GetDataGuardAssociationsDataGuardAssociation {
      * 
      */
     private final String state;
+    private final String storageVolumePerformanceMode;
     private final String subnetId;
     /**
      * @return The date and time the Data Guard association was created.
      * 
      */
     private final String timeCreated;
+    private final String timeZone;
     /**
      * @return The redo transport type used by this Data Guard association.  For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
      * 
@@ -113,17 +127,25 @@ public final class GetDataGuardAssociationsDataGuardAssociation {
         @CustomType.Parameter("applyRate") String applyRate,
         @CustomType.Parameter("availabilityDomain") String availabilityDomain,
         @CustomType.Parameter("backupNetworkNsgIds") List<String> backupNetworkNsgIds,
+        @CustomType.Parameter("cpuCoreCount") Integer cpuCoreCount,
         @CustomType.Parameter("createAsync") Boolean createAsync,
         @CustomType.Parameter("creationType") String creationType,
         @CustomType.Parameter("databaseAdminPassword") String databaseAdminPassword,
+        @CustomType.Parameter("databaseDefinedTags") Map<String,Object> databaseDefinedTags,
+        @CustomType.Parameter("databaseFreeformTags") Map<String,Object> databaseFreeformTags,
         @CustomType.Parameter("databaseId") String databaseId,
         @CustomType.Parameter("databaseSoftwareImageId") String databaseSoftwareImageId,
+        @CustomType.Parameter("dbSystemDefinedTags") Map<String,Object> dbSystemDefinedTags,
+        @CustomType.Parameter("dbSystemFreeformTags") Map<String,Object> dbSystemFreeformTags,
         @CustomType.Parameter("deleteStandbyDbHomeOnDelete") String deleteStandbyDbHomeOnDelete,
         @CustomType.Parameter("displayName") String displayName,
+        @CustomType.Parameter("faultDomains") List<String> faultDomains,
         @CustomType.Parameter("hostname") String hostname,
         @CustomType.Parameter("id") String id,
         @CustomType.Parameter("isActiveDataGuardEnabled") Boolean isActiveDataGuardEnabled,
+        @CustomType.Parameter("licenseModel") String licenseModel,
         @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
+        @CustomType.Parameter("nodeCount") Integer nodeCount,
         @CustomType.Parameter("nsgIds") List<String> nsgIds,
         @CustomType.Parameter("peerDataGuardAssociationId") String peerDataGuardAssociationId,
         @CustomType.Parameter("peerDatabaseId") String peerDatabaseId,
@@ -133,28 +155,39 @@ public final class GetDataGuardAssociationsDataGuardAssociation {
         @CustomType.Parameter("peerRole") String peerRole,
         @CustomType.Parameter("peerSidPrefix") String peerSidPrefix,
         @CustomType.Parameter("peerVmClusterId") String peerVmClusterId,
+        @CustomType.Parameter("privateIp") String privateIp,
         @CustomType.Parameter("protectionMode") String protectionMode,
         @CustomType.Parameter("role") String role,
         @CustomType.Parameter("shape") String shape,
         @CustomType.Parameter("state") String state,
+        @CustomType.Parameter("storageVolumePerformanceMode") String storageVolumePerformanceMode,
         @CustomType.Parameter("subnetId") String subnetId,
         @CustomType.Parameter("timeCreated") String timeCreated,
+        @CustomType.Parameter("timeZone") String timeZone,
         @CustomType.Parameter("transportType") String transportType) {
         this.applyLag = applyLag;
         this.applyRate = applyRate;
         this.availabilityDomain = availabilityDomain;
         this.backupNetworkNsgIds = backupNetworkNsgIds;
+        this.cpuCoreCount = cpuCoreCount;
         this.createAsync = createAsync;
         this.creationType = creationType;
         this.databaseAdminPassword = databaseAdminPassword;
+        this.databaseDefinedTags = databaseDefinedTags;
+        this.databaseFreeformTags = databaseFreeformTags;
         this.databaseId = databaseId;
         this.databaseSoftwareImageId = databaseSoftwareImageId;
+        this.dbSystemDefinedTags = dbSystemDefinedTags;
+        this.dbSystemFreeformTags = dbSystemFreeformTags;
         this.deleteStandbyDbHomeOnDelete = deleteStandbyDbHomeOnDelete;
         this.displayName = displayName;
+        this.faultDomains = faultDomains;
         this.hostname = hostname;
         this.id = id;
         this.isActiveDataGuardEnabled = isActiveDataGuardEnabled;
+        this.licenseModel = licenseModel;
         this.lifecycleDetails = lifecycleDetails;
+        this.nodeCount = nodeCount;
         this.nsgIds = nsgIds;
         this.peerDataGuardAssociationId = peerDataGuardAssociationId;
         this.peerDatabaseId = peerDatabaseId;
@@ -164,12 +197,15 @@ public final class GetDataGuardAssociationsDataGuardAssociation {
         this.peerRole = peerRole;
         this.peerSidPrefix = peerSidPrefix;
         this.peerVmClusterId = peerVmClusterId;
+        this.privateIp = privateIp;
         this.protectionMode = protectionMode;
         this.role = role;
         this.shape = shape;
         this.state = state;
+        this.storageVolumePerformanceMode = storageVolumePerformanceMode;
         this.subnetId = subnetId;
         this.timeCreated = timeCreated;
+        this.timeZone = timeZone;
         this.transportType = transportType;
     }
 
@@ -193,6 +229,9 @@ public final class GetDataGuardAssociationsDataGuardAssociation {
     public List<String> backupNetworkNsgIds() {
         return this.backupNetworkNsgIds;
     }
+    public Integer cpuCoreCount() {
+        return this.cpuCoreCount;
+    }
     public Boolean createAsync() {
         return this.createAsync;
     }
@@ -201,6 +240,12 @@ public final class GetDataGuardAssociationsDataGuardAssociation {
     }
     public String databaseAdminPassword() {
         return this.databaseAdminPassword;
+    }
+    public Map<String,Object> databaseDefinedTags() {
+        return this.databaseDefinedTags;
+    }
+    public Map<String,Object> databaseFreeformTags() {
+        return this.databaseFreeformTags;
     }
     /**
      * @return The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -212,11 +257,20 @@ public final class GetDataGuardAssociationsDataGuardAssociation {
     public String databaseSoftwareImageId() {
         return this.databaseSoftwareImageId;
     }
+    public Map<String,Object> dbSystemDefinedTags() {
+        return this.dbSystemDefinedTags;
+    }
+    public Map<String,Object> dbSystemFreeformTags() {
+        return this.dbSystemFreeformTags;
+    }
     public String deleteStandbyDbHomeOnDelete() {
         return this.deleteStandbyDbHomeOnDelete;
     }
     public String displayName() {
         return this.displayName;
+    }
+    public List<String> faultDomains() {
+        return this.faultDomains;
     }
     public String hostname() {
         return this.hostname;
@@ -235,12 +289,18 @@ public final class GetDataGuardAssociationsDataGuardAssociation {
     public Boolean isActiveDataGuardEnabled() {
         return this.isActiveDataGuardEnabled;
     }
+    public String licenseModel() {
+        return this.licenseModel;
+    }
     /**
      * @return Additional information about the current lifecycleState, if available.
      * 
      */
     public String lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    public Integer nodeCount() {
+        return this.nodeCount;
     }
     public List<String> nsgIds() {
         return this.nsgIds;
@@ -289,6 +349,9 @@ public final class GetDataGuardAssociationsDataGuardAssociation {
     public String peerVmClusterId() {
         return this.peerVmClusterId;
     }
+    public String privateIp() {
+        return this.privateIp;
+    }
     /**
      * @return The protection mode of this Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
      * 
@@ -313,6 +376,9 @@ public final class GetDataGuardAssociationsDataGuardAssociation {
     public String state() {
         return this.state;
     }
+    public String storageVolumePerformanceMode() {
+        return this.storageVolumePerformanceMode;
+    }
     public String subnetId() {
         return this.subnetId;
     }
@@ -322,6 +388,9 @@ public final class GetDataGuardAssociationsDataGuardAssociation {
      */
     public String timeCreated() {
         return this.timeCreated;
+    }
+    public String timeZone() {
+        return this.timeZone;
     }
     /**
      * @return The redo transport type used by this Data Guard association.  For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
@@ -344,17 +413,25 @@ public final class GetDataGuardAssociationsDataGuardAssociation {
         private String applyRate;
         private String availabilityDomain;
         private List<String> backupNetworkNsgIds;
+        private Integer cpuCoreCount;
         private Boolean createAsync;
         private String creationType;
         private String databaseAdminPassword;
+        private Map<String,Object> databaseDefinedTags;
+        private Map<String,Object> databaseFreeformTags;
         private String databaseId;
         private String databaseSoftwareImageId;
+        private Map<String,Object> dbSystemDefinedTags;
+        private Map<String,Object> dbSystemFreeformTags;
         private String deleteStandbyDbHomeOnDelete;
         private String displayName;
+        private List<String> faultDomains;
         private String hostname;
         private String id;
         private Boolean isActiveDataGuardEnabled;
+        private String licenseModel;
         private String lifecycleDetails;
+        private Integer nodeCount;
         private List<String> nsgIds;
         private String peerDataGuardAssociationId;
         private String peerDatabaseId;
@@ -364,12 +441,15 @@ public final class GetDataGuardAssociationsDataGuardAssociation {
         private String peerRole;
         private String peerSidPrefix;
         private String peerVmClusterId;
+        private String privateIp;
         private String protectionMode;
         private String role;
         private String shape;
         private String state;
+        private String storageVolumePerformanceMode;
         private String subnetId;
         private String timeCreated;
+        private String timeZone;
         private String transportType;
 
         public Builder() {
@@ -382,17 +462,25 @@ public final class GetDataGuardAssociationsDataGuardAssociation {
     	      this.applyRate = defaults.applyRate;
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.backupNetworkNsgIds = defaults.backupNetworkNsgIds;
+    	      this.cpuCoreCount = defaults.cpuCoreCount;
     	      this.createAsync = defaults.createAsync;
     	      this.creationType = defaults.creationType;
     	      this.databaseAdminPassword = defaults.databaseAdminPassword;
+    	      this.databaseDefinedTags = defaults.databaseDefinedTags;
+    	      this.databaseFreeformTags = defaults.databaseFreeformTags;
     	      this.databaseId = defaults.databaseId;
     	      this.databaseSoftwareImageId = defaults.databaseSoftwareImageId;
+    	      this.dbSystemDefinedTags = defaults.dbSystemDefinedTags;
+    	      this.dbSystemFreeformTags = defaults.dbSystemFreeformTags;
     	      this.deleteStandbyDbHomeOnDelete = defaults.deleteStandbyDbHomeOnDelete;
     	      this.displayName = defaults.displayName;
+    	      this.faultDomains = defaults.faultDomains;
     	      this.hostname = defaults.hostname;
     	      this.id = defaults.id;
     	      this.isActiveDataGuardEnabled = defaults.isActiveDataGuardEnabled;
+    	      this.licenseModel = defaults.licenseModel;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.nodeCount = defaults.nodeCount;
     	      this.nsgIds = defaults.nsgIds;
     	      this.peerDataGuardAssociationId = defaults.peerDataGuardAssociationId;
     	      this.peerDatabaseId = defaults.peerDatabaseId;
@@ -402,12 +490,15 @@ public final class GetDataGuardAssociationsDataGuardAssociation {
     	      this.peerRole = defaults.peerRole;
     	      this.peerSidPrefix = defaults.peerSidPrefix;
     	      this.peerVmClusterId = defaults.peerVmClusterId;
+    	      this.privateIp = defaults.privateIp;
     	      this.protectionMode = defaults.protectionMode;
     	      this.role = defaults.role;
     	      this.shape = defaults.shape;
     	      this.state = defaults.state;
+    	      this.storageVolumePerformanceMode = defaults.storageVolumePerformanceMode;
     	      this.subnetId = defaults.subnetId;
     	      this.timeCreated = defaults.timeCreated;
+    	      this.timeZone = defaults.timeZone;
     	      this.transportType = defaults.transportType;
         }
 
@@ -430,6 +521,10 @@ public final class GetDataGuardAssociationsDataGuardAssociation {
         public Builder backupNetworkNsgIds(String... backupNetworkNsgIds) {
             return backupNetworkNsgIds(List.of(backupNetworkNsgIds));
         }
+        public Builder cpuCoreCount(Integer cpuCoreCount) {
+            this.cpuCoreCount = Objects.requireNonNull(cpuCoreCount);
+            return this;
+        }
         public Builder createAsync(Boolean createAsync) {
             this.createAsync = Objects.requireNonNull(createAsync);
             return this;
@@ -442,12 +537,28 @@ public final class GetDataGuardAssociationsDataGuardAssociation {
             this.databaseAdminPassword = Objects.requireNonNull(databaseAdminPassword);
             return this;
         }
+        public Builder databaseDefinedTags(Map<String,Object> databaseDefinedTags) {
+            this.databaseDefinedTags = Objects.requireNonNull(databaseDefinedTags);
+            return this;
+        }
+        public Builder databaseFreeformTags(Map<String,Object> databaseFreeformTags) {
+            this.databaseFreeformTags = Objects.requireNonNull(databaseFreeformTags);
+            return this;
+        }
         public Builder databaseId(String databaseId) {
             this.databaseId = Objects.requireNonNull(databaseId);
             return this;
         }
         public Builder databaseSoftwareImageId(String databaseSoftwareImageId) {
             this.databaseSoftwareImageId = Objects.requireNonNull(databaseSoftwareImageId);
+            return this;
+        }
+        public Builder dbSystemDefinedTags(Map<String,Object> dbSystemDefinedTags) {
+            this.dbSystemDefinedTags = Objects.requireNonNull(dbSystemDefinedTags);
+            return this;
+        }
+        public Builder dbSystemFreeformTags(Map<String,Object> dbSystemFreeformTags) {
+            this.dbSystemFreeformTags = Objects.requireNonNull(dbSystemFreeformTags);
             return this;
         }
         public Builder deleteStandbyDbHomeOnDelete(String deleteStandbyDbHomeOnDelete) {
@@ -457,6 +568,13 @@ public final class GetDataGuardAssociationsDataGuardAssociation {
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
+        }
+        public Builder faultDomains(List<String> faultDomains) {
+            this.faultDomains = Objects.requireNonNull(faultDomains);
+            return this;
+        }
+        public Builder faultDomains(String... faultDomains) {
+            return faultDomains(List.of(faultDomains));
         }
         public Builder hostname(String hostname) {
             this.hostname = Objects.requireNonNull(hostname);
@@ -470,8 +588,16 @@ public final class GetDataGuardAssociationsDataGuardAssociation {
             this.isActiveDataGuardEnabled = Objects.requireNonNull(isActiveDataGuardEnabled);
             return this;
         }
+        public Builder licenseModel(String licenseModel) {
+            this.licenseModel = Objects.requireNonNull(licenseModel);
+            return this;
+        }
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            return this;
+        }
+        public Builder nodeCount(Integer nodeCount) {
+            this.nodeCount = Objects.requireNonNull(nodeCount);
             return this;
         }
         public Builder nsgIds(List<String> nsgIds) {
@@ -513,6 +639,10 @@ public final class GetDataGuardAssociationsDataGuardAssociation {
             this.peerVmClusterId = Objects.requireNonNull(peerVmClusterId);
             return this;
         }
+        public Builder privateIp(String privateIp) {
+            this.privateIp = Objects.requireNonNull(privateIp);
+            return this;
+        }
         public Builder protectionMode(String protectionMode) {
             this.protectionMode = Objects.requireNonNull(protectionMode);
             return this;
@@ -529,6 +659,10 @@ public final class GetDataGuardAssociationsDataGuardAssociation {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        public Builder storageVolumePerformanceMode(String storageVolumePerformanceMode) {
+            this.storageVolumePerformanceMode = Objects.requireNonNull(storageVolumePerformanceMode);
+            return this;
+        }
         public Builder subnetId(String subnetId) {
             this.subnetId = Objects.requireNonNull(subnetId);
             return this;
@@ -537,11 +671,15 @@ public final class GetDataGuardAssociationsDataGuardAssociation {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        public Builder timeZone(String timeZone) {
+            this.timeZone = Objects.requireNonNull(timeZone);
+            return this;
+        }
         public Builder transportType(String transportType) {
             this.transportType = Objects.requireNonNull(transportType);
             return this;
         }        public GetDataGuardAssociationsDataGuardAssociation build() {
-            return new GetDataGuardAssociationsDataGuardAssociation(applyLag, applyRate, availabilityDomain, backupNetworkNsgIds, createAsync, creationType, databaseAdminPassword, databaseId, databaseSoftwareImageId, deleteStandbyDbHomeOnDelete, displayName, hostname, id, isActiveDataGuardEnabled, lifecycleDetails, nsgIds, peerDataGuardAssociationId, peerDatabaseId, peerDbHomeId, peerDbSystemId, peerDbUniqueName, peerRole, peerSidPrefix, peerVmClusterId, protectionMode, role, shape, state, subnetId, timeCreated, transportType);
+            return new GetDataGuardAssociationsDataGuardAssociation(applyLag, applyRate, availabilityDomain, backupNetworkNsgIds, cpuCoreCount, createAsync, creationType, databaseAdminPassword, databaseDefinedTags, databaseFreeformTags, databaseId, databaseSoftwareImageId, dbSystemDefinedTags, dbSystemFreeformTags, deleteStandbyDbHomeOnDelete, displayName, faultDomains, hostname, id, isActiveDataGuardEnabled, licenseModel, lifecycleDetails, nodeCount, nsgIds, peerDataGuardAssociationId, peerDatabaseId, peerDbHomeId, peerDbSystemId, peerDbUniqueName, peerRole, peerSidPrefix, peerVmClusterId, privateIp, protectionMode, role, shape, state, storageVolumePerformanceMode, subnetId, timeCreated, timeZone, transportType);
         }
     }
 }

@@ -112,6 +112,7 @@ import * as utilities from "../utilities";
  *         type: _var.registry_data_asset_default_connection_type,
  *     },
  *     description: _var.registry_data_asset_description,
+ *     endPoints: _var.registry_data_asset_end_points,
  *     externalKey: _var.registry_data_asset_external_key,
  *     key: _var.registry_data_asset_key,
  *     metadata: {
@@ -252,6 +253,10 @@ export class RegistryDataAsset extends pulumi.CustomResource {
      */
     public readonly description!: pulumi.Output<string>;
     /**
+     * (Updatable) The list of endpoints with which this data asset is associated.
+     */
+    public readonly endPoints!: pulumi.Output<string[]>;
+    /**
      * (Updatable) The external key for the object.
      */
     public readonly externalKey!: pulumi.Output<string>;
@@ -324,6 +329,7 @@ export class RegistryDataAsset extends pulumi.CustomResource {
             resourceInputs["assetProperties"] = state ? state.assetProperties : undefined;
             resourceInputs["defaultConnection"] = state ? state.defaultConnection : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
+            resourceInputs["endPoints"] = state ? state.endPoints : undefined;
             resourceInputs["externalKey"] = state ? state.externalKey : undefined;
             resourceInputs["identifier"] = state ? state.identifier : undefined;
             resourceInputs["key"] = state ? state.key : undefined;
@@ -358,6 +364,7 @@ export class RegistryDataAsset extends pulumi.CustomResource {
             resourceInputs["assetProperties"] = args ? args.assetProperties : undefined;
             resourceInputs["defaultConnection"] = args ? args.defaultConnection : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
+            resourceInputs["endPoints"] = args ? args.endPoints : undefined;
             resourceInputs["externalKey"] = args ? args.externalKey : undefined;
             resourceInputs["identifier"] = args ? args.identifier : undefined;
             resourceInputs["key"] = args ? args.key : undefined;
@@ -394,6 +401,10 @@ export interface RegistryDataAssetState {
      * (Updatable) A user defined description for the object.
      */
     description?: pulumi.Input<string>;
+    /**
+     * (Updatable) The list of endpoints with which this data asset is associated.
+     */
+    endPoints?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * (Updatable) The external key for the object.
      */
@@ -468,6 +479,10 @@ export interface RegistryDataAssetArgs {
      * (Updatable) A user defined description for the object.
      */
     description?: pulumi.Input<string>;
+    /**
+     * (Updatable) The list of endpoints with which this data asset is associated.
+     */
+    endPoints?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * (Updatable) The external key for the object.
      */

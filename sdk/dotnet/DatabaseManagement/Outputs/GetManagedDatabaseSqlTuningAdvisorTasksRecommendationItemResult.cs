@@ -26,6 +26,10 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly string ImplementActionSql;
         /// <summary>
+        /// Indicates whether a SQL Profile recommendation uses parallel execution.
+        /// </summary>
+        public readonly bool IsParallelExecution;
+        /// <summary>
         /// Describes the reasoning behind the recommendation and how it relates to the finding.
         /// </summary>
         public readonly string Rationale;
@@ -58,6 +62,8 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
 
             string implementActionSql,
 
+            bool isParallelExecution,
+
             string rationale,
 
             string recommendation,
@@ -73,6 +79,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
             Benefit = benefit;
             Finding = finding;
             ImplementActionSql = implementActionSql;
+            IsParallelExecution = isParallelExecution;
             Rationale = rationale;
             Recommendation = recommendation;
             RecommendationKey = recommendationKey;

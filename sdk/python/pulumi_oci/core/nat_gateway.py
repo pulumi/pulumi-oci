@@ -19,7 +19,8 @@ class NatGatewayArgs:
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 public_ip_id: Optional[pulumi.Input[str]] = None):
+                 public_ip_id: Optional[pulumi.Input[str]] = None,
+                 route_table_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a NatGateway resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the NAT gateway.
@@ -29,6 +30,7 @@ class NatGatewayArgs:
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] public_ip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP address associated with the NAT gateway.
+        :param pulumi.Input[str] route_table_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "vcn_id", vcn_id)
@@ -42,6 +44,8 @@ class NatGatewayArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if public_ip_id is not None:
             pulumi.set(__self__, "public_ip_id", public_ip_id)
+        if route_table_id is not None:
+            pulumi.set(__self__, "route_table_id", route_table_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -127,6 +131,18 @@ class NatGatewayArgs:
     def public_ip_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "public_ip_id", value)
 
+    @property
+    @pulumi.getter(name="routeTableId")
+    def route_table_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
+        """
+        return pulumi.get(self, "route_table_id")
+
+    @route_table_id.setter
+    def route_table_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "route_table_id", value)
+
 
 @pulumi.input_type
 class _NatGatewayState:
@@ -138,6 +154,7 @@ class _NatGatewayState:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  nat_ip: Optional[pulumi.Input[str]] = None,
                  public_ip_id: Optional[pulumi.Input[str]] = None,
+                 route_table_id: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  vcn_id: Optional[pulumi.Input[str]] = None):
@@ -150,6 +167,7 @@ class _NatGatewayState:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] nat_ip: The IP address associated with the NAT gateway.
         :param pulumi.Input[str] public_ip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP address associated with the NAT gateway.
+        :param pulumi.Input[str] route_table_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
         :param pulumi.Input[str] state: The NAT gateway's current state.
         :param pulumi.Input[str] time_created: The date and time the NAT gateway was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[str] vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the gateway belongs to.
@@ -168,6 +186,8 @@ class _NatGatewayState:
             pulumi.set(__self__, "nat_ip", nat_ip)
         if public_ip_id is not None:
             pulumi.set(__self__, "public_ip_id", public_ip_id)
+        if route_table_id is not None:
+            pulumi.set(__self__, "route_table_id", route_table_id)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if time_created is not None:
@@ -260,6 +280,18 @@ class _NatGatewayState:
         pulumi.set(self, "public_ip_id", value)
 
     @property
+    @pulumi.getter(name="routeTableId")
+    def route_table_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
+        """
+        return pulumi.get(self, "route_table_id")
+
+    @route_table_id.setter
+    def route_table_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "route_table_id", value)
+
+    @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
@@ -307,6 +339,7 @@ class NatGateway(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  public_ip_id: Optional[pulumi.Input[str]] = None,
+                 route_table_id: Optional[pulumi.Input[str]] = None,
                  vcn_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -332,7 +365,8 @@ class NatGateway(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            public_ip_id=oci_core_public_ip["test_public_ip"]["id"])
+            public_ip_id=oci_core_public_ip["test_public_ip"]["id"],
+            route_table_id=oci_core_route_table["test_route_table"]["id"])
         ```
 
         ## Import
@@ -351,6 +385,7 @@ class NatGateway(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] public_ip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP address associated with the NAT gateway.
+        :param pulumi.Input[str] route_table_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
         :param pulumi.Input[str] vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the gateway belongs to.
         """
         ...
@@ -382,7 +417,8 @@ class NatGateway(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            public_ip_id=oci_core_public_ip["test_public_ip"]["id"])
+            public_ip_id=oci_core_public_ip["test_public_ip"]["id"],
+            route_table_id=oci_core_route_table["test_route_table"]["id"])
         ```
 
         ## Import
@@ -414,6 +450,7 @@ class NatGateway(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  public_ip_id: Optional[pulumi.Input[str]] = None,
+                 route_table_id: Optional[pulumi.Input[str]] = None,
                  vcn_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         if opts is None:
@@ -435,6 +472,7 @@ class NatGateway(pulumi.CustomResource):
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["public_ip_id"] = public_ip_id
+            __props__.__dict__["route_table_id"] = route_table_id
             if vcn_id is None and not opts.urn:
                 raise TypeError("Missing required property 'vcn_id'")
             __props__.__dict__["vcn_id"] = vcn_id
@@ -458,6 +496,7 @@ class NatGateway(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             nat_ip: Optional[pulumi.Input[str]] = None,
             public_ip_id: Optional[pulumi.Input[str]] = None,
+            route_table_id: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             vcn_id: Optional[pulumi.Input[str]] = None) -> 'NatGateway':
@@ -475,6 +514,7 @@ class NatGateway(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] nat_ip: The IP address associated with the NAT gateway.
         :param pulumi.Input[str] public_ip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP address associated with the NAT gateway.
+        :param pulumi.Input[str] route_table_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
         :param pulumi.Input[str] state: The NAT gateway's current state.
         :param pulumi.Input[str] time_created: The date and time the NAT gateway was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[str] vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the gateway belongs to.
@@ -490,6 +530,7 @@ class NatGateway(pulumi.CustomResource):
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["nat_ip"] = nat_ip
         __props__.__dict__["public_ip_id"] = public_ip_id
+        __props__.__dict__["route_table_id"] = route_table_id
         __props__.__dict__["state"] = state
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["vcn_id"] = vcn_id
@@ -550,6 +591,14 @@ class NatGateway(pulumi.CustomResource):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP address associated with the NAT gateway.
         """
         return pulumi.get(self, "public_ip_id")
+
+    @property
+    @pulumi.getter(name="routeTableId")
+    def route_table_id(self) -> pulumi.Output[str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
+        """
+        return pulumi.get(self, "route_table_id")
 
     @property
     @pulumi.getter

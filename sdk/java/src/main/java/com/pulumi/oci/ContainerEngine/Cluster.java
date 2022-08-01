@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.ContainerEngine.ClusterArgs;
 import com.pulumi.oci.ContainerEngine.inputs.ClusterState;
+import com.pulumi.oci.ContainerEngine.outputs.ClusterClusterPodNetworkOption;
 import com.pulumi.oci.ContainerEngine.outputs.ClusterEndpoint;
 import com.pulumi.oci.ContainerEngine.outputs.ClusterEndpointConfig;
 import com.pulumi.oci.ContainerEngine.outputs.ClusterImagePolicyConfig;
@@ -51,6 +52,20 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      */
     public Output<List<String>> availableKubernetesUpgrades() {
         return this.availableKubernetesUpgrades;
+    }
+    /**
+     * Available CNIs and network options for existing and new node pools of the cluster
+     * 
+     */
+    @Export(name="clusterPodNetworkOptions", type=List.class, parameters={ClusterClusterPodNetworkOption.class})
+    private Output<List<ClusterClusterPodNetworkOption>> clusterPodNetworkOptions;
+
+    /**
+     * @return Available CNIs and network options for existing and new node pools of the cluster
+     * 
+     */
+    public Output<List<ClusterClusterPodNetworkOption>> clusterPodNetworkOptions() {
+        return this.clusterPodNetworkOptions;
     }
     /**
      * The OCID of the compartment in which to create the cluster.

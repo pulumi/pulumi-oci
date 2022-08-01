@@ -33,14 +33,14 @@ public final class GetDatabaseToolsPrivateEndpointsArgs extends com.pulumi.resou
     }
 
     /**
-     * A filter to return only resources that match the entire display name given.
+     * A filter to return only resources that match the entire specified display name.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return A filter to return only resources that match the entire display name given.
+     * @return A filter to return only resources that match the entire specified display name.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -48,14 +48,14 @@ public final class GetDatabaseToolsPrivateEndpointsArgs extends com.pulumi.resou
     }
 
     /**
-     * A filter to return only resources their type matches the given type.
+     * A filter to return only resources their `endpointServiceId` matches the specified `endpointServiceId`.
      * 
      */
     @Import(name="endpointServiceId")
     private @Nullable Output<String> endpointServiceId;
 
     /**
-     * @return A filter to return only resources their type matches the given type.
+     * @return A filter to return only resources their `endpointServiceId` matches the specified `endpointServiceId`.
      * 
      */
     public Optional<Output<String>> endpointServiceId() {
@@ -70,14 +70,14 @@ public final class GetDatabaseToolsPrivateEndpointsArgs extends com.pulumi.resou
     }
 
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * @return A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
      * 
      */
     public Optional<Output<String>> state() {
@@ -85,14 +85,14 @@ public final class GetDatabaseToolsPrivateEndpointsArgs extends com.pulumi.resou
     }
 
     /**
-     * A filter to return only resources their subnetId matches the given subnetId.
+     * A filter to return only resources their `subnetId` matches the specified `subnetId`.
      * 
      */
     @Import(name="subnetId")
     private @Nullable Output<String> subnetId;
 
     /**
-     * @return A filter to return only resources their subnetId matches the given subnetId.
+     * @return A filter to return only resources their `subnetId` matches the specified `subnetId`.
      * 
      */
     public Optional<Output<String>> subnetId() {
@@ -150,7 +150,7 @@ public final class GetDatabaseToolsPrivateEndpointsArgs extends com.pulumi.resou
         }
 
         /**
-         * @param displayName A filter to return only resources that match the entire display name given.
+         * @param displayName A filter to return only resources that match the entire specified display name.
          * 
          * @return builder
          * 
@@ -161,7 +161,7 @@ public final class GetDatabaseToolsPrivateEndpointsArgs extends com.pulumi.resou
         }
 
         /**
-         * @param displayName A filter to return only resources that match the entire display name given.
+         * @param displayName A filter to return only resources that match the entire specified display name.
          * 
          * @return builder
          * 
@@ -171,7 +171,7 @@ public final class GetDatabaseToolsPrivateEndpointsArgs extends com.pulumi.resou
         }
 
         /**
-         * @param endpointServiceId A filter to return only resources their type matches the given type.
+         * @param endpointServiceId A filter to return only resources their `endpointServiceId` matches the specified `endpointServiceId`.
          * 
          * @return builder
          * 
@@ -182,7 +182,7 @@ public final class GetDatabaseToolsPrivateEndpointsArgs extends com.pulumi.resou
         }
 
         /**
-         * @param endpointServiceId A filter to return only resources their type matches the given type.
+         * @param endpointServiceId A filter to return only resources their `endpointServiceId` matches the specified `endpointServiceId`.
          * 
          * @return builder
          * 
@@ -205,7 +205,7 @@ public final class GetDatabaseToolsPrivateEndpointsArgs extends com.pulumi.resou
         }
 
         /**
-         * @param state A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * @param state A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
          * 
          * @return builder
          * 
@@ -216,7 +216,7 @@ public final class GetDatabaseToolsPrivateEndpointsArgs extends com.pulumi.resou
         }
 
         /**
-         * @param state A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * @param state A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
          * 
          * @return builder
          * 
@@ -226,7 +226,7 @@ public final class GetDatabaseToolsPrivateEndpointsArgs extends com.pulumi.resou
         }
 
         /**
-         * @param subnetId A filter to return only resources their subnetId matches the given subnetId.
+         * @param subnetId A filter to return only resources their `subnetId` matches the specified `subnetId`.
          * 
          * @return builder
          * 
@@ -237,7 +237,7 @@ public final class GetDatabaseToolsPrivateEndpointsArgs extends com.pulumi.resou
         }
 
         /**
-         * @param subnetId A filter to return only resources their subnetId matches the given subnetId.
+         * @param subnetId A filter to return only resources their `subnetId` matches the specified `subnetId`.
          * 
          * @return builder
          * 

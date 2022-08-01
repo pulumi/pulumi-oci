@@ -48,6 +48,10 @@ export interface GetBdsInstanceArgs {
 export interface GetBdsInstanceResult {
     readonly bdsInstanceId: string;
     /**
+     * pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
+     */
+    readonly bootstrapScriptUrl: string;
+    /**
      * The information about added Cloud SQL capability
      */
     readonly cloudSqlDetails: outputs.BigDataService.GetBdsInstanceCloudSqlDetail[];
@@ -65,6 +69,7 @@ export interface GetBdsInstanceResult {
      * The OCID of the compartment.
      */
     readonly compartmentId: string;
+    readonly computeOnlyWorkerNodes: outputs.BigDataService.GetBdsInstanceComputeOnlyWorkerNode[];
     /**
      * The user who created the cluster.
      */
@@ -97,6 +102,7 @@ export interface GetBdsInstanceResult {
      * Boolean flag specifying whether or not the cluster should be set up as secure.
      */
     readonly isSecure: boolean;
+    readonly kerberosRealmName: string;
     readonly masterNodes: outputs.BigDataService.GetBdsInstanceMasterNode[];
     /**
      * Additional configuration of the user's network.

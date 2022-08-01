@@ -28,6 +28,7 @@ __all__ = [
     'AutonomousDatabaseConnectionUrl',
     'AutonomousDatabaseCustomerContact',
     'AutonomousDatabaseKeyHistoryEntry',
+    'AutonomousDatabaseLocalStandbyDb',
     'AutonomousDatabaseScheduledOperation',
     'AutonomousDatabaseScheduledOperationDayOfWeek',
     'AutonomousDatabaseStandbyDb',
@@ -50,6 +51,7 @@ __all__ = [
     'CloudExadataInfrastructureMaintenanceWindow',
     'CloudExadataInfrastructureMaintenanceWindowDaysOfWeek',
     'CloudExadataInfrastructureMaintenanceWindowMonth',
+    'CloudVmClusterDataCollectionOptions',
     'CloudVmClusterIormConfigCach',
     'CloudVmClusterIormConfigCachDbPlan',
     'CloudVmClusterIormConfigDbPlan',
@@ -82,6 +84,12 @@ __all__ = [
     'DbSystemMaintenanceWindowDetailsDaysOfWeek',
     'DbSystemMaintenanceWindowDetailsMonth',
     'DbSystemMaintenanceWindowMonth',
+    'DbSystemsUpgradeDbSystemOption',
+    'DbSystemsUpgradeIormConfigCach',
+    'DbSystemsUpgradeIormConfigCachDbPlan',
+    'DbSystemsUpgradeMaintenanceWindow',
+    'DbSystemsUpgradeMaintenanceWindowDaysOfWeek',
+    'DbSystemsUpgradeMaintenanceWindowMonth',
     'ExadataInfrastructureContact',
     'ExadataInfrastructureMaintenanceWindow',
     'ExadataInfrastructureMaintenanceWindowDaysOfWeek',
@@ -92,23 +100,31 @@ __all__ = [
     'ExadataInfrastructureStorageMaintenanceWindowMonth',
     'ExadataIormConfigDbPlan',
     'ExternalContainerDatabaseDatabaseManagementConfig',
+    'ExternalContainerDatabaseStackMonitoringConfig',
     'ExternalDatabaseConnectorConnectionCredentials',
     'ExternalDatabaseConnectorConnectionString',
     'ExternalNonContainerDatabaseDatabaseManagementConfig',
     'ExternalNonContainerDatabaseOperationsInsightsConfig',
+    'ExternalNonContainerDatabaseStackMonitoringConfig',
     'ExternalPluggableDatabaseDatabaseManagementConfig',
     'ExternalPluggableDatabaseOperationsInsightsConfig',
+    'ExternalPluggableDatabaseStackMonitoringConfig',
     'KeyStoreAssociatedDatabase',
     'KeyStoreTypeDetails',
     'MaintenanceRunEstimatedPatchingTime',
     'PluggableDatabaseConnectionString',
     'PluggableDatabasesLocalCloneConnectionString',
     'PluggableDatabasesRemoteCloneConnectionString',
+    'VmClusterAddVirtualNetworkDataCollectionOption',
     'VmClusterAddVirtualNetworkDbServer',
+    'VmClusterDataCollectionOptions',
     'VmClusterNetworkScan',
     'VmClusterNetworkVmNetwork',
     'VmClusterNetworkVmNetworkNode',
+    'VmClusterRemoveVirtualMachineDataCollectionOption',
     'VmClusterRemoveVirtualMachineDbServer',
+    'GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetResult',
+    'GetAutonomousCharacterSetsFilterResult',
     'GetAutonomousContainerDatabaseBackupConfigResult',
     'GetAutonomousContainerDatabaseBackupConfigBackupDestinationDetailResult',
     'GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociationResult',
@@ -148,6 +164,7 @@ __all__ = [
     'GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssociationResult',
     'GetAutonomousDatabaseDataguardAssociationsFilterResult',
     'GetAutonomousDatabaseKeyHistoryEntryResult',
+    'GetAutonomousDatabaseLocalStandbyDbResult',
     'GetAutonomousDatabaseScheduledOperationResult',
     'GetAutonomousDatabaseScheduledOperationDayOfWeekResult',
     'GetAutonomousDatabaseStandbyDbResult',
@@ -159,6 +176,7 @@ __all__ = [
     'GetAutonomousDatabasesAutonomousDatabaseConnectionUrlResult',
     'GetAutonomousDatabasesAutonomousDatabaseCustomerContactResult',
     'GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntryResult',
+    'GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbResult',
     'GetAutonomousDatabasesAutonomousDatabaseScheduledOperationResult',
     'GetAutonomousDatabasesAutonomousDatabaseScheduledOperationDayOfWeekResult',
     'GetAutonomousDatabasesAutonomousDatabaseStandbyDbResult',
@@ -170,6 +188,7 @@ __all__ = [
     'GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrlResult',
     'GetAutonomousDatabasesClonesAutonomousDatabaseCustomerContactResult',
     'GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntryResult',
+    'GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbResult',
     'GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationResult',
     'GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationDayOfWeekResult',
     'GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbResult',
@@ -230,10 +249,12 @@ __all__ = [
     'GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekResult',
     'GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthResult',
     'GetCloudExadataInfrastructuresFilterResult',
+    'GetCloudVmClusterDataCollectionOptionResult',
     'GetCloudVmClusterIormConfigCachResult',
     'GetCloudVmClusterIormConfigCachDbPlanResult',
     'GetCloudVmClusterIormConfigDbPlanResult',
     'GetCloudVmClustersCloudVmClusterResult',
+    'GetCloudVmClustersCloudVmClusterDataCollectionOptionResult',
     'GetCloudVmClustersCloudVmClusterIormConfigCachResult',
     'GetCloudVmClustersCloudVmClusterIormConfigCachDbPlanResult',
     'GetCloudVmClustersFilterResult',
@@ -283,12 +304,23 @@ __all__ = [
     'GetDbServersDbServerResult',
     'GetDbServersDbServerDbServerPatchingDetailResult',
     'GetDbServersFilterResult',
+    'GetDbSystemComputePerformancesDbSystemComputePerformanceResult',
+    'GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListResult',
+    'GetDbSystemComputePerformancesFilterResult',
     'GetDbSystemHistoryEntriesFilterResult',
     'GetDbSystemHistoryEntriesPatchHistoryEntryResult',
     'GetDbSystemPatchesFilterResult',
     'GetDbSystemPatchesPatchResult',
     'GetDbSystemShapesDbSystemShapeResult',
     'GetDbSystemShapesFilterResult',
+    'GetDbSystemStoragePerformancesDbSystemStoragePerformanceResult',
+    'GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListResult',
+    'GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceResult',
+    'GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceResult',
+    'GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListResult',
+    'GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceResult',
+    'GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceResult',
+    'GetDbSystemStoragePerformancesFilterResult',
     'GetDbSystemsDbSystemResult',
     'GetDbSystemsDbSystemDbHomeResult',
     'GetDbSystemsDbSystemDbHomeDatabaseResult',
@@ -305,6 +337,8 @@ __all__ = [
     'GetDbSystemsDbSystemMaintenanceWindowDetailMonthResult',
     'GetDbSystemsDbSystemMaintenanceWindowMonthResult',
     'GetDbSystemsFilterResult',
+    'GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryResult',
+    'GetDbSystemsUpgradeHistoryEntriesFilterResult',
     'GetDbVersionsDbVersionResult',
     'GetDbVersionsFilterResult',
     'GetExadataInfrastructureContactResult',
@@ -319,8 +353,10 @@ __all__ = [
     'GetExadataInfrastructuresFilterResult',
     'GetExadataIormConfigDbPlanResult',
     'GetExternalContainerDatabaseDatabaseManagementConfigResult',
+    'GetExternalContainerDatabaseStackMonitoringConfigResult',
     'GetExternalContainerDatabasesExternalContainerDatabaseResult',
     'GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigResult',
+    'GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigResult',
     'GetExternalContainerDatabasesFilterResult',
     'GetExternalDatabaseConnectorConnectionCredentialResult',
     'GetExternalDatabaseConnectorConnectionStringResult',
@@ -330,15 +366,19 @@ __all__ = [
     'GetExternalDatabaseConnectorsFilterResult',
     'GetExternalNonContainerDatabaseDatabaseManagementConfigResult',
     'GetExternalNonContainerDatabaseOperationsInsightsConfigResult',
+    'GetExternalNonContainerDatabaseStackMonitoringConfigResult',
     'GetExternalNonContainerDatabasesExternalNonContainerDatabaseResult',
     'GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigResult',
     'GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigResult',
+    'GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigResult',
     'GetExternalNonContainerDatabasesFilterResult',
     'GetExternalPluggableDatabaseDatabaseManagementConfigResult',
     'GetExternalPluggableDatabaseOperationsInsightsConfigResult',
+    'GetExternalPluggableDatabaseStackMonitoringConfigResult',
     'GetExternalPluggableDatabasesExternalPluggableDatabaseResult',
     'GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigResult',
     'GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigResult',
+    'GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigResult',
     'GetExternalPluggableDatabasesFilterResult',
     'GetFlexComponentsFilterResult',
     'GetFlexComponentsFlexComponentCollectionResult',
@@ -359,6 +399,7 @@ __all__ = [
     'GetPluggableDatabasesFilterResult',
     'GetPluggableDatabasesPluggableDatabaseResult',
     'GetPluggableDatabasesPluggableDatabaseConnectionStringResult',
+    'GetVmClusterDataCollectionOptionResult',
     'GetVmClusterNetworkScanResult',
     'GetVmClusterNetworkVmNetworkResult',
     'GetVmClusterNetworkVmNetworkNodeResult',
@@ -381,6 +422,7 @@ __all__ = [
     'GetVmClusterUpdatesVmClusterUpdateResult',
     'GetVmClustersFilterResult',
     'GetVmClustersVmClusterResult',
+    'GetVmClustersVmClusterDataCollectionOptionResult',
 ]
 
 @pulumi.output_type
@@ -1598,6 +1640,82 @@ class AutonomousDatabaseKeyHistoryEntry(dict):
 
 
 @pulumi.output_type
+class AutonomousDatabaseLocalStandbyDb(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "lagTimeInSeconds":
+            suggest = "lag_time_in_seconds"
+        elif key == "lifecycleDetails":
+            suggest = "lifecycle_details"
+        elif key == "timeDataGuardRoleChanged":
+            suggest = "time_data_guard_role_changed"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AutonomousDatabaseLocalStandbyDb. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AutonomousDatabaseLocalStandbyDb.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AutonomousDatabaseLocalStandbyDb.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 lag_time_in_seconds: Optional[int] = None,
+                 lifecycle_details: Optional[str] = None,
+                 state: Optional[str] = None,
+                 time_data_guard_role_changed: Optional[str] = None):
+        """
+        :param int lag_time_in_seconds: The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
+        :param str lifecycle_details: Additional information about the current lifecycle state.
+        :param str state: (Updatable) The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
+        :param str time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+        """
+        if lag_time_in_seconds is not None:
+            pulumi.set(__self__, "lag_time_in_seconds", lag_time_in_seconds)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_data_guard_role_changed is not None:
+            pulumi.set(__self__, "time_data_guard_role_changed", time_data_guard_role_changed)
+
+    @property
+    @pulumi.getter(name="lagTimeInSeconds")
+    def lag_time_in_seconds(self) -> Optional[int]:
+        """
+        The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
+        """
+        return pulumi.get(self, "lag_time_in_seconds")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> Optional[str]:
+        """
+        Additional information about the current lifecycle state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def state(self) -> Optional[str]:
+        """
+        (Updatable) The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeDataGuardRoleChanged")
+    def time_data_guard_role_changed(self) -> Optional[str]:
+        """
+        The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+        """
+        return pulumi.get(self, "time_data_guard_role_changed")
+
+
+@pulumi.output_type
 class AutonomousDatabaseScheduledOperation(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -2124,12 +2242,18 @@ class AutonomousVmClusterMaintenanceWindow(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "daysOfWeeks":
+        if key == "customActionTimeoutInMins":
+            suggest = "custom_action_timeout_in_mins"
+        elif key == "daysOfWeeks":
             suggest = "days_of_weeks"
         elif key == "hoursOfDays":
             suggest = "hours_of_days"
+        elif key == "isCustomActionTimeoutEnabled":
+            suggest = "is_custom_action_timeout_enabled"
         elif key == "leadTimeInWeeks":
             suggest = "lead_time_in_weeks"
+        elif key == "patchingMode":
+            suggest = "patching_mode"
         elif key == "weeksOfMonths":
             suggest = "weeks_of_months"
 
@@ -2145,10 +2269,13 @@ class AutonomousVmClusterMaintenanceWindow(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 custom_action_timeout_in_mins: Optional[int] = None,
                  days_of_weeks: Optional[Sequence['outputs.AutonomousVmClusterMaintenanceWindowDaysOfWeek']] = None,
                  hours_of_days: Optional[Sequence[int]] = None,
+                 is_custom_action_timeout_enabled: Optional[bool] = None,
                  lead_time_in_weeks: Optional[int] = None,
                  months: Optional[Sequence['outputs.AutonomousVmClusterMaintenanceWindowMonth']] = None,
+                 patching_mode: Optional[str] = None,
                  preference: Optional[str] = None,
                  weeks_of_months: Optional[Sequence[int]] = None):
         """
@@ -2160,18 +2287,29 @@ class AutonomousVmClusterMaintenanceWindow(dict):
         :param str preference: (Updatable) The maintenance window scheduling preference.
         :param Sequence[int] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
+        if custom_action_timeout_in_mins is not None:
+            pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
         if days_of_weeks is not None:
             pulumi.set(__self__, "days_of_weeks", days_of_weeks)
         if hours_of_days is not None:
             pulumi.set(__self__, "hours_of_days", hours_of_days)
+        if is_custom_action_timeout_enabled is not None:
+            pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
         if lead_time_in_weeks is not None:
             pulumi.set(__self__, "lead_time_in_weeks", lead_time_in_weeks)
         if months is not None:
             pulumi.set(__self__, "months", months)
+        if patching_mode is not None:
+            pulumi.set(__self__, "patching_mode", patching_mode)
         if preference is not None:
             pulumi.set(__self__, "preference", preference)
         if weeks_of_months is not None:
             pulumi.set(__self__, "weeks_of_months", weeks_of_months)
+
+    @property
+    @pulumi.getter(name="customActionTimeoutInMins")
+    def custom_action_timeout_in_mins(self) -> Optional[int]:
+        return pulumi.get(self, "custom_action_timeout_in_mins")
 
     @property
     @pulumi.getter(name="daysOfWeeks")
@@ -2191,6 +2329,11 @@ class AutonomousVmClusterMaintenanceWindow(dict):
         return pulumi.get(self, "hours_of_days")
 
     @property
+    @pulumi.getter(name="isCustomActionTimeoutEnabled")
+    def is_custom_action_timeout_enabled(self) -> Optional[bool]:
+        return pulumi.get(self, "is_custom_action_timeout_enabled")
+
+    @property
     @pulumi.getter(name="leadTimeInWeeks")
     def lead_time_in_weeks(self) -> Optional[int]:
         """
@@ -2205,6 +2348,11 @@ class AutonomousVmClusterMaintenanceWindow(dict):
         (Updatable) Months during the year when maintenance should be performed.
         """
         return pulumi.get(self, "months")
+
+    @property
+    @pulumi.getter(name="patchingMode")
+    def patching_mode(self) -> Optional[str]:
+        return pulumi.get(self, "patching_mode")
 
     @property
     @pulumi.getter
@@ -2247,12 +2395,18 @@ class AutonomousVmClusterMaintenanceWindowDetail(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "daysOfWeeks":
+        if key == "customActionTimeoutInMins":
+            suggest = "custom_action_timeout_in_mins"
+        elif key == "daysOfWeeks":
             suggest = "days_of_weeks"
         elif key == "hoursOfDays":
             suggest = "hours_of_days"
+        elif key == "isCustomActionTimeoutEnabled":
+            suggest = "is_custom_action_timeout_enabled"
         elif key == "leadTimeInWeeks":
             suggest = "lead_time_in_weeks"
+        elif key == "patchingMode":
+            suggest = "patching_mode"
         elif key == "weeksOfMonths":
             suggest = "weeks_of_months"
 
@@ -2269,10 +2423,13 @@ class AutonomousVmClusterMaintenanceWindowDetail(dict):
 
     def __init__(__self__, *,
                  preference: str,
+                 custom_action_timeout_in_mins: Optional[int] = None,
                  days_of_weeks: Optional[Sequence['outputs.AutonomousVmClusterMaintenanceWindowDetailDaysOfWeek']] = None,
                  hours_of_days: Optional[Sequence[int]] = None,
+                 is_custom_action_timeout_enabled: Optional[bool] = None,
                  lead_time_in_weeks: Optional[int] = None,
                  months: Optional[Sequence['outputs.AutonomousVmClusterMaintenanceWindowDetailMonth']] = None,
+                 patching_mode: Optional[str] = None,
                  weeks_of_months: Optional[Sequence[int]] = None):
         """
         :param str preference: (Updatable) The maintenance window scheduling preference.
@@ -2284,14 +2441,20 @@ class AutonomousVmClusterMaintenanceWindowDetail(dict):
         :param Sequence[int] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         pulumi.set(__self__, "preference", preference)
+        if custom_action_timeout_in_mins is not None:
+            pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
         if days_of_weeks is not None:
             pulumi.set(__self__, "days_of_weeks", days_of_weeks)
         if hours_of_days is not None:
             pulumi.set(__self__, "hours_of_days", hours_of_days)
+        if is_custom_action_timeout_enabled is not None:
+            pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
         if lead_time_in_weeks is not None:
             pulumi.set(__self__, "lead_time_in_weeks", lead_time_in_weeks)
         if months is not None:
             pulumi.set(__self__, "months", months)
+        if patching_mode is not None:
+            pulumi.set(__self__, "patching_mode", patching_mode)
         if weeks_of_months is not None:
             pulumi.set(__self__, "weeks_of_months", weeks_of_months)
 
@@ -2302,6 +2465,11 @@ class AutonomousVmClusterMaintenanceWindowDetail(dict):
         (Updatable) The maintenance window scheduling preference.
         """
         return pulumi.get(self, "preference")
+
+    @property
+    @pulumi.getter(name="customActionTimeoutInMins")
+    def custom_action_timeout_in_mins(self) -> Optional[int]:
+        return pulumi.get(self, "custom_action_timeout_in_mins")
 
     @property
     @pulumi.getter(name="daysOfWeeks")
@@ -2321,6 +2489,11 @@ class AutonomousVmClusterMaintenanceWindowDetail(dict):
         return pulumi.get(self, "hours_of_days")
 
     @property
+    @pulumi.getter(name="isCustomActionTimeoutEnabled")
+    def is_custom_action_timeout_enabled(self) -> Optional[bool]:
+        return pulumi.get(self, "is_custom_action_timeout_enabled")
+
+    @property
     @pulumi.getter(name="leadTimeInWeeks")
     def lead_time_in_weeks(self) -> Optional[int]:
         """
@@ -2335,6 +2508,11 @@ class AutonomousVmClusterMaintenanceWindowDetail(dict):
         (Updatable) Months during the year when maintenance should be performed.
         """
         return pulumi.get(self, "months")
+
+    @property
+    @pulumi.getter(name="patchingMode")
+    def patching_mode(self) -> Optional[str]:
+        return pulumi.get(self, "patching_mode")
 
     @property
     @pulumi.getter(name="weeksOfMonths")
@@ -2771,6 +2949,42 @@ class CloudExadataInfrastructureMaintenanceWindowMonth(dict):
         (Updatable) Name of the month of the year.
         """
         return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class CloudVmClusterDataCollectionOptions(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "isDiagnosticsEventsEnabled":
+            suggest = "is_diagnostics_events_enabled"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudVmClusterDataCollectionOptions. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudVmClusterDataCollectionOptions.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudVmClusterDataCollectionOptions.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 is_diagnostics_events_enabled: Optional[bool] = None):
+        """
+        :param bool is_diagnostics_events_enabled: (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+        """
+        if is_diagnostics_events_enabled is not None:
+            pulumi.set(__self__, "is_diagnostics_events_enabled", is_diagnostics_events_enabled)
+
+    @property
+    @pulumi.getter(name="isDiagnosticsEventsEnabled")
+    def is_diagnostics_events_enabled(self) -> Optional[bool]:
+        """
+        (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+        """
+        return pulumi.get(self, "is_diagnostics_events_enabled")
 
 
 @pulumi.output_type
@@ -5721,6 +5935,320 @@ class DbSystemMaintenanceWindowMonth(dict):
 
 
 @pulumi.output_type
+class DbSystemsUpgradeDbSystemOption(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "storageManagement":
+            suggest = "storage_management"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DbSystemsUpgradeDbSystemOption. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DbSystemsUpgradeDbSystemOption.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DbSystemsUpgradeDbSystemOption.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 storage_management: Optional[str] = None):
+        """
+        :param str storage_management: The storage option used in DB system. ASM - Automatic storage management LVM - Logical Volume management
+        """
+        if storage_management is not None:
+            pulumi.set(__self__, "storage_management", storage_management)
+
+    @property
+    @pulumi.getter(name="storageManagement")
+    def storage_management(self) -> Optional[str]:
+        """
+        The storage option used in DB system. ASM - Automatic storage management LVM - Logical Volume management
+        """
+        return pulumi.get(self, "storage_management")
+
+
+@pulumi.output_type
+class DbSystemsUpgradeIormConfigCach(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dbPlans":
+            suggest = "db_plans"
+        elif key == "lifecycleDetails":
+            suggest = "lifecycle_details"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DbSystemsUpgradeIormConfigCach. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DbSystemsUpgradeIormConfigCach.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DbSystemsUpgradeIormConfigCach.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 db_plans: Optional[Sequence['outputs.DbSystemsUpgradeIormConfigCachDbPlan']] = None,
+                 lifecycle_details: Optional[str] = None,
+                 objective: Optional[str] = None,
+                 state: Optional[str] = None):
+        """
+        :param Sequence['DbSystemsUpgradeIormConfigCachDbPlanArgs'] db_plans: An array of IORM settings for all the database in the Exadata DB system.
+        :param str lifecycle_details: Additional information about the current lifecycle state.
+        :param str objective: The current value for the IORM objective. The default is `AUTO`.
+        :param str state: The current state of the DB system.
+        """
+        if db_plans is not None:
+            pulumi.set(__self__, "db_plans", db_plans)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if objective is not None:
+            pulumi.set(__self__, "objective", objective)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+
+    @property
+    @pulumi.getter(name="dbPlans")
+    def db_plans(self) -> Optional[Sequence['outputs.DbSystemsUpgradeIormConfigCachDbPlan']]:
+        """
+        An array of IORM settings for all the database in the Exadata DB system.
+        """
+        return pulumi.get(self, "db_plans")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> Optional[str]:
+        """
+        Additional information about the current lifecycle state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def objective(self) -> Optional[str]:
+        """
+        The current value for the IORM objective. The default is `AUTO`.
+        """
+        return pulumi.get(self, "objective")
+
+    @property
+    @pulumi.getter
+    def state(self) -> Optional[str]:
+        """
+        The current state of the DB system.
+        """
+        return pulumi.get(self, "state")
+
+
+@pulumi.output_type
+class DbSystemsUpgradeIormConfigCachDbPlan(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dbName":
+            suggest = "db_name"
+        elif key == "flashCacheLimit":
+            suggest = "flash_cache_limit"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DbSystemsUpgradeIormConfigCachDbPlan. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DbSystemsUpgradeIormConfigCachDbPlan.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DbSystemsUpgradeIormConfigCachDbPlan.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 db_name: Optional[str] = None,
+                 flash_cache_limit: Optional[str] = None,
+                 share: Optional[int] = None):
+        """
+        :param str db_name: The database name. For the default `DbPlan`, the `dbName` is `default`.
+        :param str flash_cache_limit: The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
+        :param int share: The relative priority of this database.
+        """
+        if db_name is not None:
+            pulumi.set(__self__, "db_name", db_name)
+        if flash_cache_limit is not None:
+            pulumi.set(__self__, "flash_cache_limit", flash_cache_limit)
+        if share is not None:
+            pulumi.set(__self__, "share", share)
+
+    @property
+    @pulumi.getter(name="dbName")
+    def db_name(self) -> Optional[str]:
+        """
+        The database name. For the default `DbPlan`, the `dbName` is `default`.
+        """
+        return pulumi.get(self, "db_name")
+
+    @property
+    @pulumi.getter(name="flashCacheLimit")
+    def flash_cache_limit(self) -> Optional[str]:
+        """
+        The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
+        """
+        return pulumi.get(self, "flash_cache_limit")
+
+    @property
+    @pulumi.getter
+    def share(self) -> Optional[int]:
+        """
+        The relative priority of this database.
+        """
+        return pulumi.get(self, "share")
+
+
+@pulumi.output_type
+class DbSystemsUpgradeMaintenanceWindow(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "daysOfWeeks":
+            suggest = "days_of_weeks"
+        elif key == "hoursOfDays":
+            suggest = "hours_of_days"
+        elif key == "leadTimeInWeeks":
+            suggest = "lead_time_in_weeks"
+        elif key == "weeksOfMonths":
+            suggest = "weeks_of_months"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DbSystemsUpgradeMaintenanceWindow. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DbSystemsUpgradeMaintenanceWindow.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DbSystemsUpgradeMaintenanceWindow.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 days_of_weeks: Optional[Sequence['outputs.DbSystemsUpgradeMaintenanceWindowDaysOfWeek']] = None,
+                 hours_of_days: Optional[Sequence[int]] = None,
+                 lead_time_in_weeks: Optional[int] = None,
+                 months: Optional[Sequence['outputs.DbSystemsUpgradeMaintenanceWindowMonth']] = None,
+                 preference: Optional[str] = None,
+                 weeks_of_months: Optional[Sequence[int]] = None):
+        """
+        :param Sequence['DbSystemsUpgradeMaintenanceWindowDaysOfWeekArgs'] days_of_weeks: Days during the week when maintenance should be performed.
+        :param Sequence[int] hours_of_days: The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+               * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        :param int lead_time_in_weeks: Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+        :param Sequence['DbSystemsUpgradeMaintenanceWindowMonthArgs'] months: Months during the year when maintenance should be performed.
+        :param str preference: The maintenance window scheduling preference.
+        :param Sequence[int] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+        """
+        if days_of_weeks is not None:
+            pulumi.set(__self__, "days_of_weeks", days_of_weeks)
+        if hours_of_days is not None:
+            pulumi.set(__self__, "hours_of_days", hours_of_days)
+        if lead_time_in_weeks is not None:
+            pulumi.set(__self__, "lead_time_in_weeks", lead_time_in_weeks)
+        if months is not None:
+            pulumi.set(__self__, "months", months)
+        if preference is not None:
+            pulumi.set(__self__, "preference", preference)
+        if weeks_of_months is not None:
+            pulumi.set(__self__, "weeks_of_months", weeks_of_months)
+
+    @property
+    @pulumi.getter(name="daysOfWeeks")
+    def days_of_weeks(self) -> Optional[Sequence['outputs.DbSystemsUpgradeMaintenanceWindowDaysOfWeek']]:
+        """
+        Days during the week when maintenance should be performed.
+        """
+        return pulumi.get(self, "days_of_weeks")
+
+    @property
+    @pulumi.getter(name="hoursOfDays")
+    def hours_of_days(self) -> Optional[Sequence[int]]:
+        """
+        The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+        * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        """
+        return pulumi.get(self, "hours_of_days")
+
+    @property
+    @pulumi.getter(name="leadTimeInWeeks")
+    def lead_time_in_weeks(self) -> Optional[int]:
+        """
+        Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+        """
+        return pulumi.get(self, "lead_time_in_weeks")
+
+    @property
+    @pulumi.getter
+    def months(self) -> Optional[Sequence['outputs.DbSystemsUpgradeMaintenanceWindowMonth']]:
+        """
+        Months during the year when maintenance should be performed.
+        """
+        return pulumi.get(self, "months")
+
+    @property
+    @pulumi.getter
+    def preference(self) -> Optional[str]:
+        """
+        The maintenance window scheduling preference.
+        """
+        return pulumi.get(self, "preference")
+
+    @property
+    @pulumi.getter(name="weeksOfMonths")
+    def weeks_of_months(self) -> Optional[Sequence[int]]:
+        """
+        Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+        """
+        return pulumi.get(self, "weeks_of_months")
+
+
+@pulumi.output_type
+class DbSystemsUpgradeMaintenanceWindowDaysOfWeek(dict):
+    def __init__(__self__, *,
+                 name: Optional[str] = None):
+        """
+        :param str name: Name of the month of the year.
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        Name of the month of the year.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class DbSystemsUpgradeMaintenanceWindowMonth(dict):
+    def __init__(__self__, *,
+                 name: Optional[str] = None):
+        """
+        :param str name: Name of the month of the year.
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        Name of the month of the year.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
 class ExadataInfrastructureContact(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -6273,6 +6801,56 @@ class ExternalContainerDatabaseDatabaseManagementConfig(dict):
 
 
 @pulumi.output_type
+class ExternalContainerDatabaseStackMonitoringConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "stackMonitoringConnectorId":
+            suggest = "stack_monitoring_connector_id"
+        elif key == "stackMonitoringStatus":
+            suggest = "stack_monitoring_status"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ExternalContainerDatabaseStackMonitoringConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ExternalContainerDatabaseStackMonitoringConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ExternalContainerDatabaseStackMonitoringConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 stack_monitoring_connector_id: Optional[str] = None,
+                 stack_monitoring_status: Optional[str] = None):
+        """
+        :param str stack_monitoring_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+        :param str stack_monitoring_status: The status of Stack Monitoring.
+        """
+        if stack_monitoring_connector_id is not None:
+            pulumi.set(__self__, "stack_monitoring_connector_id", stack_monitoring_connector_id)
+        if stack_monitoring_status is not None:
+            pulumi.set(__self__, "stack_monitoring_status", stack_monitoring_status)
+
+    @property
+    @pulumi.getter(name="stackMonitoringConnectorId")
+    def stack_monitoring_connector_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+        """
+        return pulumi.get(self, "stack_monitoring_connector_id")
+
+    @property
+    @pulumi.getter(name="stackMonitoringStatus")
+    def stack_monitoring_status(self) -> Optional[str]:
+        """
+        The status of Stack Monitoring.
+        """
+        return pulumi.get(self, "stack_monitoring_status")
+
+
+@pulumi.output_type
 class ExternalDatabaseConnectorConnectionCredentials(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -6281,6 +6859,8 @@ class ExternalDatabaseConnectorConnectionCredentials(dict):
             suggest = "credential_name"
         elif key == "credentialType":
             suggest = "credential_type"
+        elif key == "sslSecretId":
+            suggest = "ssl_secret_id"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in ExternalDatabaseConnectorConnectionCredentials. Access the value via the '{suggest}' property getter instead.")
@@ -6298,12 +6878,14 @@ class ExternalDatabaseConnectorConnectionCredentials(dict):
                  credential_type: Optional[str] = None,
                  password: Optional[str] = None,
                  role: Optional[str] = None,
+                 ssl_secret_id: Optional[str] = None,
                  username: Optional[str] = None):
         """
         :param str credential_name: (Updatable) The name of the credential information that used to connect to the database. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
         :param str credential_type: (Updatable) The type of credential used to connect to the database.
         :param str password: (Updatable) The password that will be used to connect to the database.
         :param str role: (Updatable) The role of the user that will be connecting to the database.
+        :param str ssl_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         :param str username: (Updatable) The username that will be used to connect to the database.
         """
         if credential_name is not None:
@@ -6314,6 +6896,8 @@ class ExternalDatabaseConnectorConnectionCredentials(dict):
             pulumi.set(__self__, "password", password)
         if role is not None:
             pulumi.set(__self__, "role", role)
+        if ssl_secret_id is not None:
+            pulumi.set(__self__, "ssl_secret_id", ssl_secret_id)
         if username is not None:
             pulumi.set(__self__, "username", username)
 
@@ -6348,6 +6932,14 @@ class ExternalDatabaseConnectorConnectionCredentials(dict):
         (Updatable) The role of the user that will be connecting to the database.
         """
         return pulumi.get(self, "role")
+
+    @property
+    @pulumi.getter(name="sslSecretId")
+    def ssl_secret_id(self) -> Optional[str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        """
+        return pulumi.get(self, "ssl_secret_id")
 
     @property
     @pulumi.getter
@@ -6524,6 +7116,56 @@ class ExternalNonContainerDatabaseOperationsInsightsConfig(dict):
 
 
 @pulumi.output_type
+class ExternalNonContainerDatabaseStackMonitoringConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "stackMonitoringConnectorId":
+            suggest = "stack_monitoring_connector_id"
+        elif key == "stackMonitoringStatus":
+            suggest = "stack_monitoring_status"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ExternalNonContainerDatabaseStackMonitoringConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ExternalNonContainerDatabaseStackMonitoringConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ExternalNonContainerDatabaseStackMonitoringConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 stack_monitoring_connector_id: Optional[str] = None,
+                 stack_monitoring_status: Optional[str] = None):
+        """
+        :param str stack_monitoring_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+        :param str stack_monitoring_status: The status of Stack Monitoring.
+        """
+        if stack_monitoring_connector_id is not None:
+            pulumi.set(__self__, "stack_monitoring_connector_id", stack_monitoring_connector_id)
+        if stack_monitoring_status is not None:
+            pulumi.set(__self__, "stack_monitoring_status", stack_monitoring_status)
+
+    @property
+    @pulumi.getter(name="stackMonitoringConnectorId")
+    def stack_monitoring_connector_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+        """
+        return pulumi.get(self, "stack_monitoring_connector_id")
+
+    @property
+    @pulumi.getter(name="stackMonitoringStatus")
+    def stack_monitoring_status(self) -> Optional[str]:
+        """
+        The status of Stack Monitoring.
+        """
+        return pulumi.get(self, "stack_monitoring_status")
+
+
+@pulumi.output_type
 class ExternalPluggableDatabaseDatabaseManagementConfig(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -6635,6 +7277,56 @@ class ExternalPluggableDatabaseOperationsInsightsConfig(dict):
         The status of Operations Insights
         """
         return pulumi.get(self, "operations_insights_status")
+
+
+@pulumi.output_type
+class ExternalPluggableDatabaseStackMonitoringConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "stackMonitoringConnectorId":
+            suggest = "stack_monitoring_connector_id"
+        elif key == "stackMonitoringStatus":
+            suggest = "stack_monitoring_status"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ExternalPluggableDatabaseStackMonitoringConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ExternalPluggableDatabaseStackMonitoringConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ExternalPluggableDatabaseStackMonitoringConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 stack_monitoring_connector_id: Optional[str] = None,
+                 stack_monitoring_status: Optional[str] = None):
+        """
+        :param str stack_monitoring_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+        :param str stack_monitoring_status: The status of Stack Monitoring.
+        """
+        if stack_monitoring_connector_id is not None:
+            pulumi.set(__self__, "stack_monitoring_connector_id", stack_monitoring_connector_id)
+        if stack_monitoring_status is not None:
+            pulumi.set(__self__, "stack_monitoring_status", stack_monitoring_status)
+
+    @property
+    @pulumi.getter(name="stackMonitoringConnectorId")
+    def stack_monitoring_connector_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+        """
+        return pulumi.get(self, "stack_monitoring_connector_id")
+
+    @property
+    @pulumi.getter(name="stackMonitoringStatus")
+    def stack_monitoring_status(self) -> Optional[str]:
+        """
+        The status of Stack Monitoring.
+        """
+        return pulumi.get(self, "stack_monitoring_status")
 
 
 @pulumi.output_type
@@ -7041,6 +7733,42 @@ class PluggableDatabasesRemoteCloneConnectionString(dict):
 
 
 @pulumi.output_type
+class VmClusterAddVirtualNetworkDataCollectionOption(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "isDiagnosticsEventsEnabled":
+            suggest = "is_diagnostics_events_enabled"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in VmClusterAddVirtualNetworkDataCollectionOption. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        VmClusterAddVirtualNetworkDataCollectionOption.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        VmClusterAddVirtualNetworkDataCollectionOption.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 is_diagnostics_events_enabled: Optional[bool] = None):
+        """
+        :param bool is_diagnostics_events_enabled: Indicates whether diagnostic collection is enabled for the VM cluster. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+        """
+        if is_diagnostics_events_enabled is not None:
+            pulumi.set(__self__, "is_diagnostics_events_enabled", is_diagnostics_events_enabled)
+
+    @property
+    @pulumi.getter(name="isDiagnosticsEventsEnabled")
+    def is_diagnostics_events_enabled(self) -> Optional[bool]:
+        """
+        Indicates whether diagnostic collection is enabled for the VM cluster. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+        """
+        return pulumi.get(self, "is_diagnostics_events_enabled")
+
+
+@pulumi.output_type
 class VmClusterAddVirtualNetworkDbServer(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -7073,6 +7801,42 @@ class VmClusterAddVirtualNetworkDbServer(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exacc Db server.
         """
         return pulumi.get(self, "db_server_id")
+
+
+@pulumi.output_type
+class VmClusterDataCollectionOptions(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "isDiagnosticsEventsEnabled":
+            suggest = "is_diagnostics_events_enabled"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in VmClusterDataCollectionOptions. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        VmClusterDataCollectionOptions.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        VmClusterDataCollectionOptions.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 is_diagnostics_events_enabled: Optional[bool] = None):
+        """
+        :param bool is_diagnostics_events_enabled: (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+        """
+        if is_diagnostics_events_enabled is not None:
+            pulumi.set(__self__, "is_diagnostics_events_enabled", is_diagnostics_events_enabled)
+
+    @property
+    @pulumi.getter(name="isDiagnosticsEventsEnabled")
+    def is_diagnostics_events_enabled(self) -> Optional[bool]:
+        """
+        (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+        """
+        return pulumi.get(self, "is_diagnostics_events_enabled")
 
 
 @pulumi.output_type
@@ -7323,6 +8087,42 @@ class VmClusterNetworkVmNetworkNode(dict):
 
 
 @pulumi.output_type
+class VmClusterRemoveVirtualMachineDataCollectionOption(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "isDiagnosticsEventsEnabled":
+            suggest = "is_diagnostics_events_enabled"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in VmClusterRemoveVirtualMachineDataCollectionOption. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        VmClusterRemoveVirtualMachineDataCollectionOption.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        VmClusterRemoveVirtualMachineDataCollectionOption.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 is_diagnostics_events_enabled: Optional[bool] = None):
+        """
+        :param bool is_diagnostics_events_enabled: Indicates whether diagnostic collection is enabled for the VM cluster. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+        """
+        if is_diagnostics_events_enabled is not None:
+            pulumi.set(__self__, "is_diagnostics_events_enabled", is_diagnostics_events_enabled)
+
+    @property
+    @pulumi.getter(name="isDiagnosticsEventsEnabled")
+    def is_diagnostics_events_enabled(self) -> Optional[bool]:
+        """
+        Indicates whether diagnostic collection is enabled for the VM cluster. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+        """
+        return pulumi.get(self, "is_diagnostics_events_enabled")
+
+
+@pulumi.output_type
 class VmClusterRemoveVirtualMachineDbServer(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -7355,6 +8155,57 @@ class VmClusterRemoveVirtualMachineDbServer(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exacc Db server.
         """
         return pulumi.get(self, "db_server_id")
+
+
+@pulumi.output_type
+class GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetResult(dict):
+    def __init__(__self__, *,
+                 name: str):
+        """
+        :param str name: A valid Oracle character set.
+        """
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        A valid Oracle character set.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetAutonomousCharacterSetsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: A valid Oracle character set.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        A valid Oracle character set.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
 
 
 @pulumi.output_type
@@ -8112,6 +8963,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
                  autonomous_exadata_infrastructure_id: str,
                  autonomous_vm_cluster_id: str,
                  availability_domain: str,
+                 available_cpus: float,
                  backup_configs: Sequence['outputs.GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigResult'],
                  cloud_autonomous_vm_cluster_id: str,
                  compartment_id: str,
@@ -8143,17 +8995,21 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
                  peer_cloud_autonomous_vm_cluster_id: str,
                  peer_db_unique_name: str,
                  protection_mode: str,
+                 provisionable_cpuses: Sequence[float],
+                 reclaimable_cpus: float,
                  role: str,
                  rotate_key_trigger: bool,
                  service_level_agreement_type: str,
                  standby_maintenance_buffer_in_days: int,
                  state: str,
                  time_created: str,
+                 total_cpus: int,
                  vault_id: str):
         """
         :param str autonomous_exadata_infrastructure_id: The Autonomous Exadata Infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str autonomous_vm_cluster_id: The Autonomous VM Cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str availability_domain: A filter to return only resources that match the given availability domain exactly.
+        :param float available_cpus: Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
         :param Sequence['GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigArgs'] backup_configs: Backup options for the Autonomous Container Database.
         :param str cloud_autonomous_vm_cluster_id: The cloud Autonomous VM Cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -8174,16 +9030,20 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         :param str next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         :param str patch_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
         :param str patch_model: Database patch model preference.
-        :param str role: The role of the dataguard enabled Autonomous Container Database.
+        :param Sequence[float] provisionable_cpuses: An array of CPU values that can be used to successfully provision a single Autonomous Database.
+        :param float reclaimable_cpus: CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+        :param str role: The role of the Autonomous Data Guard-enabled Autonomous Container Database.
         :param str service_level_agreement_type: A filter to return only resources that match the given service level agreement type exactly.
         :param int standby_maintenance_buffer_in_days: The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
         :param str state: A filter to return only resources that match the given lifecycle state exactly.
         :param str time_created: The date and time the Autonomous Container Database was created.
+        :param int total_cpus: The number of CPU cores allocated to the Autonomous VM cluster.
         :param str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
         pulumi.set(__self__, "autonomous_exadata_infrastructure_id", autonomous_exadata_infrastructure_id)
         pulumi.set(__self__, "autonomous_vm_cluster_id", autonomous_vm_cluster_id)
         pulumi.set(__self__, "availability_domain", availability_domain)
+        pulumi.set(__self__, "available_cpus", available_cpus)
         pulumi.set(__self__, "backup_configs", backup_configs)
         pulumi.set(__self__, "cloud_autonomous_vm_cluster_id", cloud_autonomous_vm_cluster_id)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -8215,12 +9075,15 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         pulumi.set(__self__, "peer_cloud_autonomous_vm_cluster_id", peer_cloud_autonomous_vm_cluster_id)
         pulumi.set(__self__, "peer_db_unique_name", peer_db_unique_name)
         pulumi.set(__self__, "protection_mode", protection_mode)
+        pulumi.set(__self__, "provisionable_cpuses", provisionable_cpuses)
+        pulumi.set(__self__, "reclaimable_cpus", reclaimable_cpus)
         pulumi.set(__self__, "role", role)
         pulumi.set(__self__, "rotate_key_trigger", rotate_key_trigger)
         pulumi.set(__self__, "service_level_agreement_type", service_level_agreement_type)
         pulumi.set(__self__, "standby_maintenance_buffer_in_days", standby_maintenance_buffer_in_days)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "total_cpus", total_cpus)
         pulumi.set(__self__, "vault_id", vault_id)
 
     @property
@@ -8246,6 +9109,14 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         A filter to return only resources that match the given availability domain exactly.
         """
         return pulumi.get(self, "availability_domain")
+
+    @property
+    @pulumi.getter(name="availableCpus")
+    def available_cpus(self) -> float:
+        """
+        Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
+        """
+        return pulumi.get(self, "available_cpus")
 
     @property
     @pulumi.getter(name="backupConfigs")
@@ -8463,10 +9334,26 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         return pulumi.get(self, "protection_mode")
 
     @property
+    @pulumi.getter(name="provisionableCpuses")
+    def provisionable_cpuses(self) -> Sequence[float]:
+        """
+        An array of CPU values that can be used to successfully provision a single Autonomous Database.
+        """
+        return pulumi.get(self, "provisionable_cpuses")
+
+    @property
+    @pulumi.getter(name="reclaimableCpus")
+    def reclaimable_cpus(self) -> float:
+        """
+        CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+        """
+        return pulumi.get(self, "reclaimable_cpus")
+
+    @property
     @pulumi.getter
     def role(self) -> str:
         """
-        The role of the dataguard enabled Autonomous Container Database.
+        The role of the Autonomous Data Guard-enabled Autonomous Container Database.
         """
         return pulumi.get(self, "role")
 
@@ -8506,6 +9393,14 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         The date and time the Autonomous Container Database was created.
         """
         return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="totalCpus")
+    def total_cpus(self) -> int:
+        """
+        The number of CPU cores allocated to the Autonomous VM cluster.
+        """
+        return pulumi.get(self, "total_cpus")
 
     @property
     @pulumi.getter(name="vaultId")
@@ -9992,6 +10887,57 @@ class GetAutonomousDatabaseKeyHistoryEntryResult(dict):
 
 
 @pulumi.output_type
+class GetAutonomousDatabaseLocalStandbyDbResult(dict):
+    def __init__(__self__, *,
+                 lag_time_in_seconds: int,
+                 lifecycle_details: str,
+                 state: str,
+                 time_data_guard_role_changed: str):
+        """
+        :param int lag_time_in_seconds: The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
+        :param str lifecycle_details: Additional information about the current lifecycle state.
+        :param str state: The current state of the Autonomous Database.
+        :param str time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+        """
+        pulumi.set(__self__, "lag_time_in_seconds", lag_time_in_seconds)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_data_guard_role_changed", time_data_guard_role_changed)
+
+    @property
+    @pulumi.getter(name="lagTimeInSeconds")
+    def lag_time_in_seconds(self) -> int:
+        """
+        The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
+        """
+        return pulumi.get(self, "lag_time_in_seconds")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Additional information about the current lifecycle state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The current state of the Autonomous Database.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeDataGuardRoleChanged")
+    def time_data_guard_role_changed(self) -> str:
+        """
+        The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+        """
+        return pulumi.get(self, "time_data_guard_role_changed")
+
+
+@pulumi.output_type
 class GetAutonomousDatabaseScheduledOperationResult(dict):
     def __init__(__self__, *,
                  day_of_weeks: Sequence['outputs.GetAutonomousDatabaseScheduledOperationDayOfWeekResult'],
@@ -10114,6 +11060,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
                  autonomous_maintenance_schedule_type: str,
                  available_upgrade_versions: Sequence[str],
                  backup_configs: Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseBackupConfigResult'],
+                 character_set: str,
                  clone_type: str,
                  compartment_id: str,
                  connection_strings: Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseConnectionStringResult'],
@@ -10141,11 +11088,13 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
                  is_data_guard_enabled: bool,
                  is_dedicated: bool,
                  is_free_tier: bool,
+                 is_local_data_guard_enabled: bool,
                  is_mtls_connection_required: bool,
                  is_preview: bool,
                  is_preview_version_with_service_terms_accepted: bool,
                  is_reconnect_clone_enabled: bool,
                  is_refreshable_clone: bool,
+                 is_remote_data_guard_enabled: bool,
                  is_shrink_only: bool,
                  key_history_entries: Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntryResult'],
                  key_store_id: str,
@@ -10155,8 +11104,10 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
                  kms_key_version_id: str,
                  license_model: str,
                  lifecycle_details: str,
+                 local_standby_dbs: Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbResult'],
                  max_cpu_core_count: int,
                  memory_per_oracle_compute_unit_in_gbs: int,
+                 ncharacter_set: str,
                  nsg_ids: Sequence[str],
                  ocpu_count: float,
                  open_mode: str,
@@ -10166,6 +11117,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
                  private_endpoint: str,
                  private_endpoint_ip: str,
                  private_endpoint_label: str,
+                 provisionable_cpuses: Sequence[float],
                  refreshable_mode: str,
                  refreshable_status: str,
                  role: str,
@@ -10207,6 +11159,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param str autonomous_maintenance_schedule_type: The maintenance schedule type of the Autonomous Database on shared Exadata infrastructure. The EARLY maintenance schedule of this Autonomous Database follows a schedule that applies patches prior to the REGULAR schedule.The REGULAR maintenance schedule of this Autonomous Database follows the normal cycle.
         :param Sequence[str] available_upgrade_versions: List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseBackupConfigArgs'] backup_configs: Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
+        :param str character_set: The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseConnectionStringArgs'] connection_strings: The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseConnectionUrlArgs'] connection_urls: The URLs for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN. Note that these URLs are provided by the console only for databases on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).  Example: `{"sqlDevWebUrl": "https://<hostname>/ords...", "apexUrl", "https://<hostname>/ords..."}`
@@ -10233,10 +11186,12 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param bool is_data_guard_enabled: A filter to return only resources that have Data Guard enabled.
         :param bool is_dedicated: True if the database uses [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
         :param bool is_free_tier: Filter on the value of the resource's 'isFreeTier' property. A value of `true` returns only Always Free resources. A value of `false` excludes Always Free resources from the returned results. Omitting this parameter returns both Always Free and paid resources.
+        :param bool is_local_data_guard_enabled: Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         :param bool is_mtls_connection_required: Indicates whether the Autonomous Database requires mTLS connections.
         :param bool is_preview: Indicates if the Autonomous Database version is a preview version.
         :param bool is_reconnect_clone_enabled: Indicates if the refreshable clone can be reconnected to its source database.
         :param bool is_refreshable_clone: Filter on the value of the resource's 'isRefreshableClone' property. A value of `true` returns only refreshable clones. A value of `false` excludes refreshable clones from the returned results. Omitting this parameter returns both refreshable clones and databases that are not refreshable clones.
+        :param bool is_remote_data_guard_enabled: Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntryArgs'] key_history_entries: Key History Entry.
         :param str key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
         :param str key_store_wallet_name: The wallet name for Oracle Key Vault.
@@ -10245,10 +11200,12 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
         :param str license_model: The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
         :param str lifecycle_details: Additional information about the current lifecycle state.
+        :param Sequence['GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArgs'] local_standby_dbs: Autonomous Data Guard standby database details.
         :param int max_cpu_core_count: The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
         :param int memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
-        :param Sequence[str] nsg_ids: A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-               * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+        :param str ncharacter_set: The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
+        :param Sequence[str] nsg_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+               * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         :param float ocpu_count: The number of OCPU cores to be made available to the database.
         :param str open_mode: The `DATABASE OPEN` mode. You can open the database in `READ_ONLY` or `READ_WRITE` mode.
         :param str operations_insights_status: Status of Operations Insights for this Autonomous Database.
@@ -10257,13 +11214,14 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param str private_endpoint: The private endpoint for the resource.
         :param str private_endpoint_ip: The private endpoint Ip address for the resource.
         :param str private_endpoint_label: The private endpoint label for the resource.
+        :param Sequence[float] provisionable_cpuses: An array of CPU values that an Autonomous Database can be scaled to.
         :param str refreshable_mode: The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
         :param str refreshable_status: The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
         :param str role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseScheduledOperationArgs'] scheduled_operations: list of scheduled operations
         :param str service_console_url: The URL of the Service Console for the Autonomous Database.
         :param str source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that was cloned to create the current Autonomous Database.
-        :param Sequence['GetAutonomousDatabasesAutonomousDatabaseStandbyDbArgs'] standby_dbs: Autonomous Data Guard standby database details.
+        :param Sequence['GetAutonomousDatabasesAutonomousDatabaseStandbyDbArgs'] standby_dbs: **Deprecated** Autonomous Data Guard standby database details.
         :param Sequence[str] standby_whitelisted_ips: The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
         :param str state: A filter to return only resources that match the given lifecycle state exactly.
         :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
@@ -10297,6 +11255,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "autonomous_maintenance_schedule_type", autonomous_maintenance_schedule_type)
         pulumi.set(__self__, "available_upgrade_versions", available_upgrade_versions)
         pulumi.set(__self__, "backup_configs", backup_configs)
+        pulumi.set(__self__, "character_set", character_set)
         pulumi.set(__self__, "clone_type", clone_type)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "connection_strings", connection_strings)
@@ -10324,11 +11283,13 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "is_data_guard_enabled", is_data_guard_enabled)
         pulumi.set(__self__, "is_dedicated", is_dedicated)
         pulumi.set(__self__, "is_free_tier", is_free_tier)
+        pulumi.set(__self__, "is_local_data_guard_enabled", is_local_data_guard_enabled)
         pulumi.set(__self__, "is_mtls_connection_required", is_mtls_connection_required)
         pulumi.set(__self__, "is_preview", is_preview)
         pulumi.set(__self__, "is_preview_version_with_service_terms_accepted", is_preview_version_with_service_terms_accepted)
         pulumi.set(__self__, "is_reconnect_clone_enabled", is_reconnect_clone_enabled)
         pulumi.set(__self__, "is_refreshable_clone", is_refreshable_clone)
+        pulumi.set(__self__, "is_remote_data_guard_enabled", is_remote_data_guard_enabled)
         pulumi.set(__self__, "is_shrink_only", is_shrink_only)
         pulumi.set(__self__, "key_history_entries", key_history_entries)
         pulumi.set(__self__, "key_store_id", key_store_id)
@@ -10338,8 +11299,10 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
         pulumi.set(__self__, "license_model", license_model)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "local_standby_dbs", local_standby_dbs)
         pulumi.set(__self__, "max_cpu_core_count", max_cpu_core_count)
         pulumi.set(__self__, "memory_per_oracle_compute_unit_in_gbs", memory_per_oracle_compute_unit_in_gbs)
+        pulumi.set(__self__, "ncharacter_set", ncharacter_set)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "ocpu_count", ocpu_count)
         pulumi.set(__self__, "open_mode", open_mode)
@@ -10349,6 +11312,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "private_endpoint", private_endpoint)
         pulumi.set(__self__, "private_endpoint_ip", private_endpoint_ip)
         pulumi.set(__self__, "private_endpoint_label", private_endpoint_label)
+        pulumi.set(__self__, "provisionable_cpuses", provisionable_cpuses)
         pulumi.set(__self__, "refreshable_mode", refreshable_mode)
         pulumi.set(__self__, "refreshable_status", refreshable_status)
         pulumi.set(__self__, "role", role)
@@ -10458,6 +11422,14 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
         """
         return pulumi.get(self, "backup_configs")
+
+    @property
+    @pulumi.getter(name="characterSet")
+    def character_set(self) -> str:
+        """
+        The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
+        """
+        return pulumi.get(self, "character_set")
 
     @property
     @pulumi.getter(name="cloneType")
@@ -10673,6 +11645,14 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         return pulumi.get(self, "is_free_tier")
 
     @property
+    @pulumi.getter(name="isLocalDataGuardEnabled")
+    def is_local_data_guard_enabled(self) -> bool:
+        """
+        Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        """
+        return pulumi.get(self, "is_local_data_guard_enabled")
+
+    @property
     @pulumi.getter(name="isMtlsConnectionRequired")
     def is_mtls_connection_required(self) -> bool:
         """
@@ -10708,6 +11688,14 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         Filter on the value of the resource's 'isRefreshableClone' property. A value of `true` returns only refreshable clones. A value of `false` excludes refreshable clones from the returned results. Omitting this parameter returns both refreshable clones and databases that are not refreshable clones.
         """
         return pulumi.get(self, "is_refreshable_clone")
+
+    @property
+    @pulumi.getter(name="isRemoteDataGuardEnabled")
+    def is_remote_data_guard_enabled(self) -> bool:
+        """
+        Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        """
+        return pulumi.get(self, "is_remote_data_guard_enabled")
 
     @property
     @pulumi.getter(name="isShrinkOnly")
@@ -10779,6 +11767,14 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter(name="localStandbyDbs")
+    def local_standby_dbs(self) -> Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbResult']:
+        """
+        Autonomous Data Guard standby database details.
+        """
+        return pulumi.get(self, "local_standby_dbs")
+
+    @property
     @pulumi.getter(name="maxCpuCoreCount")
     def max_cpu_core_count(self) -> int:
         """
@@ -10795,11 +11791,19 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
 
     @property
+    @pulumi.getter(name="ncharacterSet")
+    def ncharacter_set(self) -> str:
+        """
+        The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
+        """
+        return pulumi.get(self, "ncharacter_set")
+
+    @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Sequence[str]:
         """
-        A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+        The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+        * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         """
         return pulumi.get(self, "nsg_ids")
 
@@ -10868,6 +11872,14 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         return pulumi.get(self, "private_endpoint_label")
 
     @property
+    @pulumi.getter(name="provisionableCpuses")
+    def provisionable_cpuses(self) -> Sequence[float]:
+        """
+        An array of CPU values that an Autonomous Database can be scaled to.
+        """
+        return pulumi.get(self, "provisionable_cpuses")
+
+    @property
     @pulumi.getter(name="refreshableMode")
     def refreshable_mode(self) -> str:
         """
@@ -10929,7 +11941,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="standbyDbs")
     def standby_dbs(self) -> Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseStandbyDbResult']:
         """
-        Autonomous Data Guard standby database details.
+        **Deprecated** Autonomous Data Guard standby database details.
         """
         return pulumi.get(self, "standby_dbs")
 
@@ -11466,6 +12478,57 @@ class GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntryResult(dict):
 
 
 @pulumi.output_type
+class GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbResult(dict):
+    def __init__(__self__, *,
+                 lag_time_in_seconds: int,
+                 lifecycle_details: str,
+                 state: str,
+                 time_data_guard_role_changed: str):
+        """
+        :param int lag_time_in_seconds: The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
+        :param str lifecycle_details: Additional information about the current lifecycle state.
+        :param str state: A filter to return only resources that match the given lifecycle state exactly.
+        :param str time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+        """
+        pulumi.set(__self__, "lag_time_in_seconds", lag_time_in_seconds)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_data_guard_role_changed", time_data_guard_role_changed)
+
+    @property
+    @pulumi.getter(name="lagTimeInSeconds")
+    def lag_time_in_seconds(self) -> int:
+        """
+        The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
+        """
+        return pulumi.get(self, "lag_time_in_seconds")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Additional information about the current lifecycle state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return only resources that match the given lifecycle state exactly.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeDataGuardRoleChanged")
+    def time_data_guard_role_changed(self) -> str:
+        """
+        The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+        """
+        return pulumi.get(self, "time_data_guard_role_changed")
+
+
+@pulumi.output_type
 class GetAutonomousDatabasesAutonomousDatabaseScheduledOperationResult(dict):
     def __init__(__self__, *,
                  day_of_weeks: Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseScheduledOperationDayOfWeekResult'],
@@ -11585,6 +12648,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
                  autonomous_maintenance_schedule_type: str,
                  available_upgrade_versions: Sequence[str],
                  backup_configs: Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfigResult'],
+                 character_set: str,
                  compartment_id: str,
                  connection_strings: Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringResult'],
                  connection_urls: Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrlResult'],
@@ -11611,10 +12675,12 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
                  is_data_guard_enabled: bool,
                  is_dedicated: bool,
                  is_free_tier: bool,
+                 is_local_data_guard_enabled: bool,
                  is_mtls_connection_required: bool,
                  is_preview: bool,
                  is_reconnect_clone_enabled: bool,
                  is_refreshable_clone: bool,
+                 is_remote_data_guard_enabled: bool,
                  key_history_entries: Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntryResult'],
                  key_store_id: str,
                  key_store_wallet_name: str,
@@ -11623,8 +12689,10 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
                  kms_key_version_id: str,
                  license_model: str,
                  lifecycle_details: str,
+                 local_standby_dbs: Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbResult'],
                  max_cpu_core_count: int,
                  memory_per_oracle_compute_unit_in_gbs: int,
+                 ncharacter_set: str,
                  nsg_ids: Sequence[str],
                  ocpu_count: float,
                  open_mode: str,
@@ -11632,6 +12700,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
                  private_endpoint: str,
                  private_endpoint_ip: str,
                  private_endpoint_label: str,
+                 provisionable_cpuses: Sequence[float],
                  refreshable_mode: str,
                  refreshable_status: str,
                  role: str,
@@ -11669,6 +12738,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         :param str autonomous_maintenance_schedule_type: The maintenance schedule type of the Autonomous Database on shared Exadata infrastructure. The EARLY maintenance schedule of this Autonomous Database follows a schedule that applies patches prior to the REGULAR schedule.The REGULAR maintenance schedule of this Autonomous Database follows the normal cycle.
         :param Sequence[str] available_upgrade_versions: List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfigArgs'] backup_configs: Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
+        :param str character_set: The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringArgs'] connection_strings: The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrlArgs'] connection_urls: The URLs for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN. Note that these URLs are provided by the console only for databases on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).  Example: `{"sqlDevWebUrl": "https://<hostname>/ords...", "apexUrl", "https://<hostname>/ords..."}`
@@ -11696,13 +12766,15 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         :param bool is_access_control_enabled: Indicates if the database-level access control is enabled. If disabled, database access is defined by the network security rules. If enabled, database access is restricted to the IP addresses defined by the rules specified with the `whitelistedIps` property. While specifying `whitelistedIps` rules is optional, if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the `UpdateAutonomousDatabase` API operation or edit option in console. When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
         :param bool is_auto_scaling_enabled: Indicates if auto scaling is enabled for the Autonomous Database CPU core count.
         :param bool is_auto_scaling_for_storage_enabled: Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
-        :param bool is_data_guard_enabled: Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to  Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        :param bool is_data_guard_enabled: **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         :param bool is_dedicated: True if the database uses [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
         :param bool is_free_tier: Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
+        :param bool is_local_data_guard_enabled: Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         :param bool is_mtls_connection_required: Indicates whether the Autonomous Database requires mTLS connections.
         :param bool is_preview: Indicates if the Autonomous Database version is a preview version.
         :param bool is_reconnect_clone_enabled: Indicates if the refreshable clone can be reconnected to its source database.
         :param bool is_refreshable_clone: Indicates whether the Autonomous Database is a refreshable clone.
+        :param bool is_remote_data_guard_enabled: Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntryArgs'] key_history_entries: Key History Entry.
         :param str key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
         :param str key_store_wallet_name: The wallet name for Oracle Key Vault.
@@ -11711,23 +12783,26 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         :param str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
         :param str license_model: The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
         :param str lifecycle_details: Additional information about the current lifecycle state.
+        :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArgs'] local_standby_dbs: Autonomous Data Guard standby database details.
         :param int max_cpu_core_count: The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
         :param int memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
-        :param Sequence[str] nsg_ids: A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-               * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+        :param str ncharacter_set: The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
+        :param Sequence[str] nsg_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+               * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         :param float ocpu_count: The number of OCPU cores to be made available to the database.
         :param str open_mode: The `DATABASE OPEN` mode. You can open the database in `READ_ONLY` or `READ_WRITE` mode.
         :param Sequence[str] peer_db_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for shared Exadata infrastructure, standby databases located in the same region as the source primary database do not have OCIDs.
         :param str private_endpoint: The private endpoint for the resource.
         :param str private_endpoint_ip: The private endpoint Ip address for the resource.
         :param str private_endpoint_label: The private endpoint label for the resource. Setting this to an empty string, after the private endpoint database gets created, will change the same private endpoint database to the public endpoint database.
+        :param Sequence[float] provisionable_cpuses: An array of CPU values that an Autonomous Database can be scaled to.
         :param str refreshable_mode: The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
         :param str refreshable_status: The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
         :param str role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationArgs'] scheduled_operations: list of scheduled operations
         :param str service_console_url: The URL of the Service Console for the Autonomous Database.
         :param str source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that was cloned to create the current Autonomous Database.
-        :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbArgs'] standby_dbs: Autonomous Data Guard standby database details.
+        :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbArgs'] standby_dbs: **Deprecated** Autonomous Data Guard standby database details.
         :param Sequence[str] standby_whitelisted_ips: The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
         :param str state: A filter to return only resources that match the given lifecycle state exactly.
         :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
@@ -11758,6 +12833,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "autonomous_maintenance_schedule_type", autonomous_maintenance_schedule_type)
         pulumi.set(__self__, "available_upgrade_versions", available_upgrade_versions)
         pulumi.set(__self__, "backup_configs", backup_configs)
+        pulumi.set(__self__, "character_set", character_set)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "connection_strings", connection_strings)
         pulumi.set(__self__, "connection_urls", connection_urls)
@@ -11784,10 +12860,12 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "is_data_guard_enabled", is_data_guard_enabled)
         pulumi.set(__self__, "is_dedicated", is_dedicated)
         pulumi.set(__self__, "is_free_tier", is_free_tier)
+        pulumi.set(__self__, "is_local_data_guard_enabled", is_local_data_guard_enabled)
         pulumi.set(__self__, "is_mtls_connection_required", is_mtls_connection_required)
         pulumi.set(__self__, "is_preview", is_preview)
         pulumi.set(__self__, "is_reconnect_clone_enabled", is_reconnect_clone_enabled)
         pulumi.set(__self__, "is_refreshable_clone", is_refreshable_clone)
+        pulumi.set(__self__, "is_remote_data_guard_enabled", is_remote_data_guard_enabled)
         pulumi.set(__self__, "key_history_entries", key_history_entries)
         pulumi.set(__self__, "key_store_id", key_store_id)
         pulumi.set(__self__, "key_store_wallet_name", key_store_wallet_name)
@@ -11796,8 +12874,10 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
         pulumi.set(__self__, "license_model", license_model)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "local_standby_dbs", local_standby_dbs)
         pulumi.set(__self__, "max_cpu_core_count", max_cpu_core_count)
         pulumi.set(__self__, "memory_per_oracle_compute_unit_in_gbs", memory_per_oracle_compute_unit_in_gbs)
+        pulumi.set(__self__, "ncharacter_set", ncharacter_set)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "ocpu_count", ocpu_count)
         pulumi.set(__self__, "open_mode", open_mode)
@@ -11805,6 +12885,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "private_endpoint", private_endpoint)
         pulumi.set(__self__, "private_endpoint_ip", private_endpoint_ip)
         pulumi.set(__self__, "private_endpoint_label", private_endpoint_label)
+        pulumi.set(__self__, "provisionable_cpuses", provisionable_cpuses)
         pulumi.set(__self__, "refreshable_mode", refreshable_mode)
         pulumi.set(__self__, "refreshable_status", refreshable_status)
         pulumi.set(__self__, "role", role)
@@ -11897,6 +12978,14 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
         """
         return pulumi.get(self, "backup_configs")
+
+    @property
+    @pulumi.getter(name="characterSet")
+    def character_set(self) -> str:
+        """
+        The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
+        """
+        return pulumi.get(self, "character_set")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -12090,7 +13179,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="isDataGuardEnabled")
     def is_data_guard_enabled(self) -> bool:
         """
-        Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to  Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         """
         return pulumi.get(self, "is_data_guard_enabled")
 
@@ -12109,6 +13198,14 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
         """
         return pulumi.get(self, "is_free_tier")
+
+    @property
+    @pulumi.getter(name="isLocalDataGuardEnabled")
+    def is_local_data_guard_enabled(self) -> bool:
+        """
+        Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        """
+        return pulumi.get(self, "is_local_data_guard_enabled")
 
     @property
     @pulumi.getter(name="isMtlsConnectionRequired")
@@ -12141,6 +13238,14 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         Indicates whether the Autonomous Database is a refreshable clone.
         """
         return pulumi.get(self, "is_refreshable_clone")
+
+    @property
+    @pulumi.getter(name="isRemoteDataGuardEnabled")
+    def is_remote_data_guard_enabled(self) -> bool:
+        """
+        Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        """
+        return pulumi.get(self, "is_remote_data_guard_enabled")
 
     @property
     @pulumi.getter(name="keyHistoryEntries")
@@ -12207,6 +13312,14 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter(name="localStandbyDbs")
+    def local_standby_dbs(self) -> Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbResult']:
+        """
+        Autonomous Data Guard standby database details.
+        """
+        return pulumi.get(self, "local_standby_dbs")
+
+    @property
     @pulumi.getter(name="maxCpuCoreCount")
     def max_cpu_core_count(self) -> int:
         """
@@ -12223,11 +13336,19 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
 
     @property
+    @pulumi.getter(name="ncharacterSet")
+    def ncharacter_set(self) -> str:
+        """
+        The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
+        """
+        return pulumi.get(self, "ncharacter_set")
+
+    @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Sequence[str]:
         """
-        A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+        The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+        * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         """
         return pulumi.get(self, "nsg_ids")
 
@@ -12278,6 +13399,14 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         The private endpoint label for the resource. Setting this to an empty string, after the private endpoint database gets created, will change the same private endpoint database to the public endpoint database.
         """
         return pulumi.get(self, "private_endpoint_label")
+
+    @property
+    @pulumi.getter(name="provisionableCpuses")
+    def provisionable_cpuses(self) -> Sequence[float]:
+        """
+        An array of CPU values that an Autonomous Database can be scaled to.
+        """
+        return pulumi.get(self, "provisionable_cpuses")
 
     @property
     @pulumi.getter(name="refreshableMode")
@@ -12331,7 +13460,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="standbyDbs")
     def standby_dbs(self) -> Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbResult']:
         """
-        Autonomous Data Guard standby database details.
+        **Deprecated** Autonomous Data Guard standby database details.
         """
         return pulumi.get(self, "standby_dbs")
 
@@ -12848,6 +13977,57 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntryResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
         return pulumi.get(self, "vault_id")
+
+
+@pulumi.output_type
+class GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbResult(dict):
+    def __init__(__self__, *,
+                 lag_time_in_seconds: int,
+                 lifecycle_details: str,
+                 state: str,
+                 time_data_guard_role_changed: str):
+        """
+        :param int lag_time_in_seconds: The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
+        :param str lifecycle_details: Additional information about the current lifecycle state.
+        :param str state: A filter to return only resources that match the given lifecycle state exactly.
+        :param str time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+        """
+        pulumi.set(__self__, "lag_time_in_seconds", lag_time_in_seconds)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_data_guard_role_changed", time_data_guard_role_changed)
+
+    @property
+    @pulumi.getter(name="lagTimeInSeconds")
+    def lag_time_in_seconds(self) -> int:
+        """
+        The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
+        """
+        return pulumi.get(self, "lag_time_in_seconds")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Additional information about the current lifecycle state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return only resources that match the given lifecycle state exactly.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeDataGuardRoleChanged")
+    def time_data_guard_role_changed(self) -> str:
+        """
+        The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+        """
+        return pulumi.get(self, "time_data_guard_role_changed")
 
 
 @pulumi.output_type
@@ -13706,8 +14886,8 @@ class GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureResult(d
         :param str lifecycle_details: Additional information about the current lifecycle state of the Autonomous Exadata Infrastructure.
         :param Sequence['GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowArgs'] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param str next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
-        :param Sequence[str] nsg_ids: A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-               * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+        :param Sequence[str] nsg_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+               * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         :param str scan_dns_name: The FQDN of the DNS record for the SCAN IP addresses that are associated with the Autonomous Exadata Infrastructure.
         :param str shape: The shape of the Autonomous Exadata Infrastructure. The shape determines resources to allocate to the Autonomous Exadata Infrastructure (CPU cores, memory and storage).
         :param str state: A filter to return only resources that match the given lifecycle state exactly.
@@ -13856,8 +15036,8 @@ class GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureResult(d
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Sequence[str]:
         """
-        A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+        The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+        * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         """
         return pulumi.get(self, "nsg_ids")
 
@@ -14234,10 +15414,13 @@ class GetAutonomousExadataInfrastructuresFilterResult(dict):
 @pulumi.output_type
 class GetAutonomousVmClusterMaintenanceWindowResult(dict):
     def __init__(__self__, *,
+                 custom_action_timeout_in_mins: int,
                  days_of_weeks: Sequence['outputs.GetAutonomousVmClusterMaintenanceWindowDaysOfWeekResult'],
                  hours_of_days: Sequence[int],
+                 is_custom_action_timeout_enabled: bool,
                  lead_time_in_weeks: int,
                  months: Sequence['outputs.GetAutonomousVmClusterMaintenanceWindowMonthResult'],
+                 patching_mode: str,
                  preference: str,
                  weeks_of_months: Sequence[int]):
         """
@@ -14249,12 +15432,20 @@ class GetAutonomousVmClusterMaintenanceWindowResult(dict):
         :param str preference: The maintenance window scheduling preference.
         :param Sequence[int] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
+        pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
         pulumi.set(__self__, "days_of_weeks", days_of_weeks)
         pulumi.set(__self__, "hours_of_days", hours_of_days)
+        pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
         pulumi.set(__self__, "lead_time_in_weeks", lead_time_in_weeks)
         pulumi.set(__self__, "months", months)
+        pulumi.set(__self__, "patching_mode", patching_mode)
         pulumi.set(__self__, "preference", preference)
         pulumi.set(__self__, "weeks_of_months", weeks_of_months)
+
+    @property
+    @pulumi.getter(name="customActionTimeoutInMins")
+    def custom_action_timeout_in_mins(self) -> int:
+        return pulumi.get(self, "custom_action_timeout_in_mins")
 
     @property
     @pulumi.getter(name="daysOfWeeks")
@@ -14274,6 +15465,11 @@ class GetAutonomousVmClusterMaintenanceWindowResult(dict):
         return pulumi.get(self, "hours_of_days")
 
     @property
+    @pulumi.getter(name="isCustomActionTimeoutEnabled")
+    def is_custom_action_timeout_enabled(self) -> bool:
+        return pulumi.get(self, "is_custom_action_timeout_enabled")
+
+    @property
     @pulumi.getter(name="leadTimeInWeeks")
     def lead_time_in_weeks(self) -> int:
         """
@@ -14288,6 +15484,11 @@ class GetAutonomousVmClusterMaintenanceWindowResult(dict):
         Months during the year when maintenance should be performed.
         """
         return pulumi.get(self, "months")
+
+    @property
+    @pulumi.getter(name="patchingMode")
+    def patching_mode(self) -> str:
+        return pulumi.get(self, "patching_mode")
 
     @property
     @pulumi.getter
@@ -14327,10 +15528,13 @@ class GetAutonomousVmClusterMaintenanceWindowDaysOfWeekResult(dict):
 @pulumi.output_type
 class GetAutonomousVmClusterMaintenanceWindowDetailResult(dict):
     def __init__(__self__, *,
+                 custom_action_timeout_in_mins: int,
                  days_of_weeks: Sequence['outputs.GetAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekResult'],
                  hours_of_days: Sequence[int],
+                 is_custom_action_timeout_enabled: bool,
                  lead_time_in_weeks: int,
                  months: Sequence['outputs.GetAutonomousVmClusterMaintenanceWindowDetailMonthResult'],
+                 patching_mode: str,
                  preference: str,
                  weeks_of_months: Sequence[int]):
         """
@@ -14342,12 +15546,20 @@ class GetAutonomousVmClusterMaintenanceWindowDetailResult(dict):
         :param str preference: The maintenance window scheduling preference.
         :param Sequence[int] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
+        pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
         pulumi.set(__self__, "days_of_weeks", days_of_weeks)
         pulumi.set(__self__, "hours_of_days", hours_of_days)
+        pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
         pulumi.set(__self__, "lead_time_in_weeks", lead_time_in_weeks)
         pulumi.set(__self__, "months", months)
+        pulumi.set(__self__, "patching_mode", patching_mode)
         pulumi.set(__self__, "preference", preference)
         pulumi.set(__self__, "weeks_of_months", weeks_of_months)
+
+    @property
+    @pulumi.getter(name="customActionTimeoutInMins")
+    def custom_action_timeout_in_mins(self) -> int:
+        return pulumi.get(self, "custom_action_timeout_in_mins")
 
     @property
     @pulumi.getter(name="daysOfWeeks")
@@ -14367,6 +15579,11 @@ class GetAutonomousVmClusterMaintenanceWindowDetailResult(dict):
         return pulumi.get(self, "hours_of_days")
 
     @property
+    @pulumi.getter(name="isCustomActionTimeoutEnabled")
+    def is_custom_action_timeout_enabled(self) -> bool:
+        return pulumi.get(self, "is_custom_action_timeout_enabled")
+
+    @property
     @pulumi.getter(name="leadTimeInWeeks")
     def lead_time_in_weeks(self) -> int:
         """
@@ -14381,6 +15598,11 @@ class GetAutonomousVmClusterMaintenanceWindowDetailResult(dict):
         Months during the year when maintenance should be performed.
         """
         return pulumi.get(self, "months")
+
+    @property
+    @pulumi.getter(name="patchingMode")
+    def patching_mode(self) -> str:
+        return pulumi.get(self, "patching_mode")
 
     @property
     @pulumi.getter
@@ -14457,6 +15679,8 @@ class GetAutonomousVmClusterMaintenanceWindowMonthResult(dict):
 class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
     def __init__(__self__, *,
                  autonomous_data_storage_size_in_tbs: float,
+                 available_autonomous_data_storage_size_in_tbs: float,
+                 available_container_databases: int,
                  available_cpus: int,
                  available_data_storage_size_in_tbs: float,
                  compartment_id: str,
@@ -14480,6 +15704,7 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
                  memory_size_in_gbs: int,
                  next_maintenance_run_id: str,
                  ocpus_enabled: float,
+                 reclaimable_cpus: int,
                  state: str,
                  time_created: str,
                  time_zone: str,
@@ -14487,8 +15712,10 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
                  vm_cluster_network_id: str):
         """
         :param float autonomous_data_storage_size_in_tbs: The data disk group size allocated for Autonomous Databases, in TBs.
+        :param float available_autonomous_data_storage_size_in_tbs: The data disk group size available for Autonomous Databases, in TBs.
+        :param int available_container_databases: The number of Autonomous Container Databases that can be created with the currently available local storage.
         :param int available_cpus: The numnber of CPU cores available.
-        :param float available_data_storage_size_in_tbs: The data storage available in TBs
+        :param float available_data_storage_size_in_tbs: **Deprecated.** Use `availableAutonomousDataStorageSizeInTBs` for Autonomous Databases' data storage availability in TBs.
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param int cpu_core_count_per_node: The number of OCPU cores enabled per VM cluster node.
         :param int cpus_enabled: The number of enabled CPU cores.
@@ -14509,6 +15736,7 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
         :param int memory_size_in_gbs: The memory allocated in GBs.
         :param str next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         :param float ocpus_enabled: The number of enabled OCPU cores.
+        :param int reclaimable_cpus: CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
         :param str state: A filter to return only resources that match the given lifecycle state exactly.
         :param str time_created: The date and time that the Autonomous VM cluster was created.
         :param str time_zone: The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
@@ -14516,6 +15744,8 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
         :param str vm_cluster_network_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
         """
         pulumi.set(__self__, "autonomous_data_storage_size_in_tbs", autonomous_data_storage_size_in_tbs)
+        pulumi.set(__self__, "available_autonomous_data_storage_size_in_tbs", available_autonomous_data_storage_size_in_tbs)
+        pulumi.set(__self__, "available_container_databases", available_container_databases)
         pulumi.set(__self__, "available_cpus", available_cpus)
         pulumi.set(__self__, "available_data_storage_size_in_tbs", available_data_storage_size_in_tbs)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -14539,6 +15769,7 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
         pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
         pulumi.set(__self__, "next_maintenance_run_id", next_maintenance_run_id)
         pulumi.set(__self__, "ocpus_enabled", ocpus_enabled)
+        pulumi.set(__self__, "reclaimable_cpus", reclaimable_cpus)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_zone", time_zone)
@@ -14554,6 +15785,22 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
         return pulumi.get(self, "autonomous_data_storage_size_in_tbs")
 
     @property
+    @pulumi.getter(name="availableAutonomousDataStorageSizeInTbs")
+    def available_autonomous_data_storage_size_in_tbs(self) -> float:
+        """
+        The data disk group size available for Autonomous Databases, in TBs.
+        """
+        return pulumi.get(self, "available_autonomous_data_storage_size_in_tbs")
+
+    @property
+    @pulumi.getter(name="availableContainerDatabases")
+    def available_container_databases(self) -> int:
+        """
+        The number of Autonomous Container Databases that can be created with the currently available local storage.
+        """
+        return pulumi.get(self, "available_container_databases")
+
+    @property
     @pulumi.getter(name="availableCpus")
     def available_cpus(self) -> int:
         """
@@ -14565,7 +15812,7 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
     @pulumi.getter(name="availableDataStorageSizeInTbs")
     def available_data_storage_size_in_tbs(self) -> float:
         """
-        The data storage available in TBs
+        **Deprecated.** Use `availableAutonomousDataStorageSizeInTBs` for Autonomous Databases' data storage availability in TBs.
         """
         return pulumi.get(self, "available_data_storage_size_in_tbs")
 
@@ -14735,6 +15982,14 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
         return pulumi.get(self, "ocpus_enabled")
 
     @property
+    @pulumi.getter(name="reclaimableCpus")
+    def reclaimable_cpus(self) -> int:
+        """
+        CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+        """
+        return pulumi.get(self, "reclaimable_cpus")
+
+    @property
     @pulumi.getter
     def state(self) -> str:
         """
@@ -14778,10 +16033,13 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
 @pulumi.output_type
 class GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowResult(dict):
     def __init__(__self__, *,
+                 custom_action_timeout_in_mins: int,
                  days_of_weeks: Sequence['outputs.GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDaysOfWeekResult'],
                  hours_of_days: Sequence[int],
+                 is_custom_action_timeout_enabled: bool,
                  lead_time_in_weeks: int,
                  months: Sequence['outputs.GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthResult'],
+                 patching_mode: str,
                  preference: str,
                  weeks_of_months: Sequence[int]):
         """
@@ -14793,12 +16051,20 @@ class GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowResult(dict):
         :param str preference: The maintenance window scheduling preference.
         :param Sequence[int] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
+        pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
         pulumi.set(__self__, "days_of_weeks", days_of_weeks)
         pulumi.set(__self__, "hours_of_days", hours_of_days)
+        pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
         pulumi.set(__self__, "lead_time_in_weeks", lead_time_in_weeks)
         pulumi.set(__self__, "months", months)
+        pulumi.set(__self__, "patching_mode", patching_mode)
         pulumi.set(__self__, "preference", preference)
         pulumi.set(__self__, "weeks_of_months", weeks_of_months)
+
+    @property
+    @pulumi.getter(name="customActionTimeoutInMins")
+    def custom_action_timeout_in_mins(self) -> int:
+        return pulumi.get(self, "custom_action_timeout_in_mins")
 
     @property
     @pulumi.getter(name="daysOfWeeks")
@@ -14818,6 +16084,11 @@ class GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowResult(dict):
         return pulumi.get(self, "hours_of_days")
 
     @property
+    @pulumi.getter(name="isCustomActionTimeoutEnabled")
+    def is_custom_action_timeout_enabled(self) -> bool:
+        return pulumi.get(self, "is_custom_action_timeout_enabled")
+
+    @property
     @pulumi.getter(name="leadTimeInWeeks")
     def lead_time_in_weeks(self) -> int:
         """
@@ -14832,6 +16103,11 @@ class GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowResult(dict):
         Months during the year when maintenance should be performed.
         """
         return pulumi.get(self, "months")
+
+    @property
+    @pulumi.getter(name="patchingMode")
+    def patching_mode(self) -> str:
+        return pulumi.get(self, "patching_mode")
 
     @property
     @pulumi.getter
@@ -14871,10 +16147,13 @@ class GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDaysOfWeekResul
 @pulumi.output_type
 class GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailResult(dict):
     def __init__(__self__, *,
+                 custom_action_timeout_in_mins: int,
                  days_of_weeks: Sequence['outputs.GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekResult'],
                  hours_of_days: Sequence[int],
+                 is_custom_action_timeout_enabled: bool,
                  lead_time_in_weeks: int,
                  months: Sequence['outputs.GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthResult'],
+                 patching_mode: str,
                  preference: str,
                  weeks_of_months: Sequence[int]):
         """
@@ -14886,12 +16165,20 @@ class GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailResult(di
         :param str preference: The maintenance window scheduling preference.
         :param Sequence[int] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
+        pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
         pulumi.set(__self__, "days_of_weeks", days_of_weeks)
         pulumi.set(__self__, "hours_of_days", hours_of_days)
+        pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
         pulumi.set(__self__, "lead_time_in_weeks", lead_time_in_weeks)
         pulumi.set(__self__, "months", months)
+        pulumi.set(__self__, "patching_mode", patching_mode)
         pulumi.set(__self__, "preference", preference)
         pulumi.set(__self__, "weeks_of_months", weeks_of_months)
+
+    @property
+    @pulumi.getter(name="customActionTimeoutInMins")
+    def custom_action_timeout_in_mins(self) -> int:
+        return pulumi.get(self, "custom_action_timeout_in_mins")
 
     @property
     @pulumi.getter(name="daysOfWeeks")
@@ -14911,6 +16198,11 @@ class GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailResult(di
         return pulumi.get(self, "hours_of_days")
 
     @property
+    @pulumi.getter(name="isCustomActionTimeoutEnabled")
+    def is_custom_action_timeout_enabled(self) -> bool:
+        return pulumi.get(self, "is_custom_action_timeout_enabled")
+
+    @property
     @pulumi.getter(name="leadTimeInWeeks")
     def lead_time_in_weeks(self) -> int:
         """
@@ -14925,6 +16217,11 @@ class GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailResult(di
         Months during the year when maintenance should be performed.
         """
         return pulumi.get(self, "months")
+
+    @property
+    @pulumi.getter(name="patchingMode")
+    def patching_mode(self) -> str:
+        return pulumi.get(self, "patching_mode")
 
     @property
     @pulumi.getter
@@ -15623,12 +16920,18 @@ class GetBackupsFilterResult(dict):
 @pulumi.output_type
 class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
     def __init__(__self__, *,
+                 autonomous_data_storage_size_in_tbs: float,
                  availability_domain: str,
+                 available_autonomous_data_storage_size_in_tbs: float,
+                 available_container_databases: int,
+                 available_cpus: float,
                  cloud_exadata_infrastructure_id: str,
+                 cluster_time_zone: str,
                  compartment_id: str,
                  cpu_core_count: int,
                  data_storage_size_in_gb: float,
                  data_storage_size_in_tbs: float,
+                 db_node_storage_size_in_gbs: int,
                  defined_tags: Mapping[str, Any],
                  description: str,
                  display_name: str,
@@ -15640,25 +16943,34 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
                  last_update_history_entry_id: str,
                  license_model: str,
                  lifecycle_details: str,
+                 memory_per_oracle_compute_unit_in_gbs: int,
                  memory_size_in_gbs: int,
                  next_maintenance_run_id: str,
                  node_count: int,
                  nsg_ids: Sequence[str],
                  ocpu_count: float,
+                 reclaimable_cpus: float,
                  rotate_ords_certs_trigger: bool,
                  rotate_ssl_certs_trigger: bool,
                  shape: str,
                  state: str,
                  subnet_id: str,
                  time_created: str,
-                 time_updated: str):
+                 time_updated: str,
+                 total_container_databases: int):
         """
+        :param float autonomous_data_storage_size_in_tbs: The data disk group size allocated for Autonomous Databases, in TBs.
         :param str availability_domain: A filter to return only resources that match the given availability domain exactly.
+        :param float available_autonomous_data_storage_size_in_tbs: The data disk group size available for Autonomous Databases, in TBs.
+        :param int available_container_databases: The number of Autonomous Container Databases that can be created with the currently available local storage.
+        :param float available_cpus: CPU cores available for allocation to Autonomous Databases.
         :param str cloud_exadata_infrastructure_id: If provided, filters the results for the specified cloud Exadata infrastructure.
+        :param str cluster_time_zone: The time zone of the Cloud Autonomous VM Cluster.
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param int cpu_core_count: The number of CPU cores enabled on the cloud Autonomous VM cluster.
         :param float data_storage_size_in_gb: The total data storage allocated, in gigabytes (GB).
         :param float data_storage_size_in_tbs: The total data storage allocated, in terabytes (TB).
+        :param int db_node_storage_size_in_gbs: The local node storage allocated in GBs.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str description: User defined description of the cloud Autonomous VM cluster.
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
@@ -15670,24 +16982,33 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         :param str last_update_history_entry_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history. This value is updated when a maintenance update starts.
         :param str license_model: The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
         :param str lifecycle_details: Additional information about the current lifecycle state.
+        :param int memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per each OCPU core.
         :param int memory_size_in_gbs: The memory allocated in GBs.
         :param str next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         :param int node_count: The number of database servers in the cloud VM cluster.
-        :param Sequence[str] nsg_ids: A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-               * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+        :param Sequence[str] nsg_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+               * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         :param float ocpu_count: The number of CPU cores enabled on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
+        :param float reclaimable_cpus: CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
         :param str shape: The model name of the Exadata hardware running the cloud Autonomous VM cluster.
         :param str state: A filter to return only resources that match the given lifecycle state exactly.
         :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
         :param str time_created: The date and time that the cloud Autonomous VM cluster was created.
         :param str time_updated: The last date and time that the cloud Autonomous VM cluster was updated.
+        :param int total_container_databases: The total number of Autonomous Container Databases that can be created with the allocated local storage.
         """
+        pulumi.set(__self__, "autonomous_data_storage_size_in_tbs", autonomous_data_storage_size_in_tbs)
         pulumi.set(__self__, "availability_domain", availability_domain)
+        pulumi.set(__self__, "available_autonomous_data_storage_size_in_tbs", available_autonomous_data_storage_size_in_tbs)
+        pulumi.set(__self__, "available_container_databases", available_container_databases)
+        pulumi.set(__self__, "available_cpus", available_cpus)
         pulumi.set(__self__, "cloud_exadata_infrastructure_id", cloud_exadata_infrastructure_id)
+        pulumi.set(__self__, "cluster_time_zone", cluster_time_zone)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "cpu_core_count", cpu_core_count)
         pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
         pulumi.set(__self__, "data_storage_size_in_tbs", data_storage_size_in_tbs)
+        pulumi.set(__self__, "db_node_storage_size_in_gbs", db_node_storage_size_in_gbs)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "display_name", display_name)
@@ -15699,11 +17020,13 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         pulumi.set(__self__, "last_update_history_entry_id", last_update_history_entry_id)
         pulumi.set(__self__, "license_model", license_model)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "memory_per_oracle_compute_unit_in_gbs", memory_per_oracle_compute_unit_in_gbs)
         pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
         pulumi.set(__self__, "next_maintenance_run_id", next_maintenance_run_id)
         pulumi.set(__self__, "node_count", node_count)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "ocpu_count", ocpu_count)
+        pulumi.set(__self__, "reclaimable_cpus", reclaimable_cpus)
         pulumi.set(__self__, "rotate_ords_certs_trigger", rotate_ords_certs_trigger)
         pulumi.set(__self__, "rotate_ssl_certs_trigger", rotate_ssl_certs_trigger)
         pulumi.set(__self__, "shape", shape)
@@ -15711,6 +17034,15 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "total_container_databases", total_container_databases)
+
+    @property
+    @pulumi.getter(name="autonomousDataStorageSizeInTbs")
+    def autonomous_data_storage_size_in_tbs(self) -> float:
+        """
+        The data disk group size allocated for Autonomous Databases, in TBs.
+        """
+        return pulumi.get(self, "autonomous_data_storage_size_in_tbs")
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -15721,12 +17053,44 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         return pulumi.get(self, "availability_domain")
 
     @property
+    @pulumi.getter(name="availableAutonomousDataStorageSizeInTbs")
+    def available_autonomous_data_storage_size_in_tbs(self) -> float:
+        """
+        The data disk group size available for Autonomous Databases, in TBs.
+        """
+        return pulumi.get(self, "available_autonomous_data_storage_size_in_tbs")
+
+    @property
+    @pulumi.getter(name="availableContainerDatabases")
+    def available_container_databases(self) -> int:
+        """
+        The number of Autonomous Container Databases that can be created with the currently available local storage.
+        """
+        return pulumi.get(self, "available_container_databases")
+
+    @property
+    @pulumi.getter(name="availableCpus")
+    def available_cpus(self) -> float:
+        """
+        CPU cores available for allocation to Autonomous Databases.
+        """
+        return pulumi.get(self, "available_cpus")
+
+    @property
     @pulumi.getter(name="cloudExadataInfrastructureId")
     def cloud_exadata_infrastructure_id(self) -> str:
         """
         If provided, filters the results for the specified cloud Exadata infrastructure.
         """
         return pulumi.get(self, "cloud_exadata_infrastructure_id")
+
+    @property
+    @pulumi.getter(name="clusterTimeZone")
+    def cluster_time_zone(self) -> str:
+        """
+        The time zone of the Cloud Autonomous VM Cluster.
+        """
+        return pulumi.get(self, "cluster_time_zone")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -15759,6 +17123,14 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         The total data storage allocated, in terabytes (TB).
         """
         return pulumi.get(self, "data_storage_size_in_tbs")
+
+    @property
+    @pulumi.getter(name="dbNodeStorageSizeInGbs")
+    def db_node_storage_size_in_gbs(self) -> int:
+        """
+        The local node storage allocated in GBs.
+        """
+        return pulumi.get(self, "db_node_storage_size_in_gbs")
 
     @property
     @pulumi.getter(name="definedTags")
@@ -15849,6 +17221,14 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
+    def memory_per_oracle_compute_unit_in_gbs(self) -> int:
+        """
+        The amount of memory (in GBs) enabled per each OCPU core.
+        """
+        return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
+
+    @property
     @pulumi.getter(name="memorySizeInGbs")
     def memory_size_in_gbs(self) -> int:
         """
@@ -15876,8 +17256,8 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Sequence[str]:
         """
-        A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+        The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+        * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         """
         return pulumi.get(self, "nsg_ids")
 
@@ -15888,6 +17268,14 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         The number of CPU cores enabled on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
         """
         return pulumi.get(self, "ocpu_count")
+
+    @property
+    @pulumi.getter(name="reclaimableCpus")
+    def reclaimable_cpus(self) -> float:
+        """
+        CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+        """
+        return pulumi.get(self, "reclaimable_cpus")
 
     @property
     @pulumi.getter(name="rotateOrdsCertsTrigger")
@@ -15938,6 +17326,14 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         The last date and time that the cloud Autonomous VM cluster was updated.
         """
         return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="totalContainerDatabases")
+    def total_container_databases(self) -> int:
+        """
+        The total number of Autonomous Container Databases that can be created with the allocated local storage.
+        """
+        return pulumi.get(self, "total_container_databases")
 
 
 @pulumi.output_type
@@ -16530,6 +17926,24 @@ class GetCloudExadataInfrastructuresFilterResult(dict):
 
 
 @pulumi.output_type
+class GetCloudVmClusterDataCollectionOptionResult(dict):
+    def __init__(__self__, *,
+                 is_diagnostics_events_enabled: bool):
+        """
+        :param bool is_diagnostics_events_enabled: Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+        """
+        pulumi.set(__self__, "is_diagnostics_events_enabled", is_diagnostics_events_enabled)
+
+    @property
+    @pulumi.getter(name="isDiagnosticsEventsEnabled")
+    def is_diagnostics_events_enabled(self) -> bool:
+        """
+        Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+        """
+        return pulumi.get(self, "is_diagnostics_events_enabled")
+
+
+@pulumi.output_type
 class GetCloudVmClusterIormConfigCachResult(dict):
     def __init__(__self__, *,
                  db_plans: Sequence['outputs.GetCloudVmClusterIormConfigCachDbPlanResult'],
@@ -16671,6 +18085,7 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
                  compartment_id: str,
                  cpu_core_count: int,
                  create_async: bool,
+                 data_collection_options: Sequence['outputs.GetCloudVmClustersCloudVmClusterDataCollectionOptionResult'],
                  data_storage_percentage: int,
                  defined_tags: Mapping[str, Any],
                  disk_redundancy: str,
@@ -16713,6 +18128,7 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
         :param str cluster_name: The cluster name for cloud VM cluster. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param int cpu_core_count: The number of CPU cores enabled on the cloud VM cluster.
+        :param Sequence['GetCloudVmClustersCloudVmClusterDataCollectionOptionArgs'] data_collection_options: Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param int data_storage_percentage: The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str disk_redundancy: The type of redundancy configured for the cloud Vm cluster. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
@@ -16729,8 +18145,8 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param str listener_port: The port number configured for the listener on the cloud VM cluster.
         :param int node_count: The number of nodes in the cloud VM cluster.
-        :param Sequence[str] nsg_ids: A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-               * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+        :param Sequence[str] nsg_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+               * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         :param float ocpu_count: The number of OCPU cores to enable on the cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
         :param str scan_dns_name: The FQDN of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
         :param str scan_dns_record_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
@@ -16756,6 +18172,7 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "cpu_core_count", cpu_core_count)
         pulumi.set(__self__, "create_async", create_async)
+        pulumi.set(__self__, "data_collection_options", data_collection_options)
         pulumi.set(__self__, "data_storage_percentage", data_storage_percentage)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "disk_redundancy", disk_redundancy)
@@ -16851,6 +18268,14 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
     @pulumi.getter(name="createAsync")
     def create_async(self) -> bool:
         return pulumi.get(self, "create_async")
+
+    @property
+    @pulumi.getter(name="dataCollectionOptions")
+    def data_collection_options(self) -> Sequence['outputs.GetCloudVmClustersCloudVmClusterDataCollectionOptionResult']:
+        """
+        Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+        """
+        return pulumi.get(self, "data_collection_options")
 
     @property
     @pulumi.getter(name="dataStoragePercentage")
@@ -16989,8 +18414,8 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Sequence[str]:
         """
-        A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+        The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+        * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         """
         return pulumi.get(self, "nsg_ids")
 
@@ -17124,6 +18549,24 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
 
 
 @pulumi.output_type
+class GetCloudVmClustersCloudVmClusterDataCollectionOptionResult(dict):
+    def __init__(__self__, *,
+                 is_diagnostics_events_enabled: bool):
+        """
+        :param bool is_diagnostics_events_enabled: Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+        """
+        pulumi.set(__self__, "is_diagnostics_events_enabled", is_diagnostics_events_enabled)
+
+    @property
+    @pulumi.getter(name="isDiagnosticsEventsEnabled")
+    def is_diagnostics_events_enabled(self) -> bool:
+        """
+        Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+        """
+        return pulumi.get(self, "is_diagnostics_events_enabled")
+
+
+@pulumi.output_type
 class GetCloudVmClustersCloudVmClusterIormConfigCachResult(dict):
     def __init__(__self__, *,
                  db_plans: Sequence['outputs.GetCloudVmClustersCloudVmClusterIormConfigCachDbPlanResult'],
@@ -17226,17 +18669,25 @@ class GetDataGuardAssociationsDataGuardAssociationResult(dict):
                  apply_rate: str,
                  availability_domain: str,
                  backup_network_nsg_ids: Sequence[str],
+                 cpu_core_count: int,
                  create_async: bool,
                  creation_type: str,
                  database_admin_password: str,
+                 database_defined_tags: Mapping[str, Any],
+                 database_freeform_tags: Mapping[str, Any],
                  database_id: str,
                  database_software_image_id: str,
+                 db_system_defined_tags: Mapping[str, Any],
+                 db_system_freeform_tags: Mapping[str, Any],
                  delete_standby_db_home_on_delete: str,
                  display_name: str,
+                 fault_domains: Sequence[str],
                  hostname: str,
                  id: str,
                  is_active_data_guard_enabled: bool,
+                 license_model: str,
                  lifecycle_details: str,
+                 node_count: int,
                  nsg_ids: Sequence[str],
                  peer_data_guard_association_id: str,
                  peer_database_id: str,
@@ -17246,12 +18697,15 @@ class GetDataGuardAssociationsDataGuardAssociationResult(dict):
                  peer_role: str,
                  peer_sid_prefix: str,
                  peer_vm_cluster_id: str,
+                 private_ip: str,
                  protection_mode: str,
                  role: str,
                  shape: str,
                  state: str,
+                 storage_volume_performance_mode: str,
                  subnet_id: str,
                  time_created: str,
+                 time_zone: str,
                  transport_type: str):
         """
         :param str apply_lag: The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `9 seconds`
@@ -17275,17 +18729,25 @@ class GetDataGuardAssociationsDataGuardAssociationResult(dict):
         pulumi.set(__self__, "apply_rate", apply_rate)
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "backup_network_nsg_ids", backup_network_nsg_ids)
+        pulumi.set(__self__, "cpu_core_count", cpu_core_count)
         pulumi.set(__self__, "create_async", create_async)
         pulumi.set(__self__, "creation_type", creation_type)
         pulumi.set(__self__, "database_admin_password", database_admin_password)
+        pulumi.set(__self__, "database_defined_tags", database_defined_tags)
+        pulumi.set(__self__, "database_freeform_tags", database_freeform_tags)
         pulumi.set(__self__, "database_id", database_id)
         pulumi.set(__self__, "database_software_image_id", database_software_image_id)
+        pulumi.set(__self__, "db_system_defined_tags", db_system_defined_tags)
+        pulumi.set(__self__, "db_system_freeform_tags", db_system_freeform_tags)
         pulumi.set(__self__, "delete_standby_db_home_on_delete", delete_standby_db_home_on_delete)
         pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "fault_domains", fault_domains)
         pulumi.set(__self__, "hostname", hostname)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_active_data_guard_enabled", is_active_data_guard_enabled)
+        pulumi.set(__self__, "license_model", license_model)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "node_count", node_count)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "peer_data_guard_association_id", peer_data_guard_association_id)
         pulumi.set(__self__, "peer_database_id", peer_database_id)
@@ -17295,12 +18757,15 @@ class GetDataGuardAssociationsDataGuardAssociationResult(dict):
         pulumi.set(__self__, "peer_role", peer_role)
         pulumi.set(__self__, "peer_sid_prefix", peer_sid_prefix)
         pulumi.set(__self__, "peer_vm_cluster_id", peer_vm_cluster_id)
+        pulumi.set(__self__, "private_ip", private_ip)
         pulumi.set(__self__, "protection_mode", protection_mode)
         pulumi.set(__self__, "role", role)
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "storage_volume_performance_mode", storage_volume_performance_mode)
         pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_zone", time_zone)
         pulumi.set(__self__, "transport_type", transport_type)
 
     @property
@@ -17330,6 +18795,11 @@ class GetDataGuardAssociationsDataGuardAssociationResult(dict):
         return pulumi.get(self, "backup_network_nsg_ids")
 
     @property
+    @pulumi.getter(name="cpuCoreCount")
+    def cpu_core_count(self) -> int:
+        return pulumi.get(self, "cpu_core_count")
+
+    @property
     @pulumi.getter(name="createAsync")
     def create_async(self) -> bool:
         return pulumi.get(self, "create_async")
@@ -17345,6 +18815,16 @@ class GetDataGuardAssociationsDataGuardAssociationResult(dict):
         return pulumi.get(self, "database_admin_password")
 
     @property
+    @pulumi.getter(name="databaseDefinedTags")
+    def database_defined_tags(self) -> Mapping[str, Any]:
+        return pulumi.get(self, "database_defined_tags")
+
+    @property
+    @pulumi.getter(name="databaseFreeformTags")
+    def database_freeform_tags(self) -> Mapping[str, Any]:
+        return pulumi.get(self, "database_freeform_tags")
+
+    @property
     @pulumi.getter(name="databaseId")
     def database_id(self) -> str:
         """
@@ -17358,6 +18838,16 @@ class GetDataGuardAssociationsDataGuardAssociationResult(dict):
         return pulumi.get(self, "database_software_image_id")
 
     @property
+    @pulumi.getter(name="dbSystemDefinedTags")
+    def db_system_defined_tags(self) -> Mapping[str, Any]:
+        return pulumi.get(self, "db_system_defined_tags")
+
+    @property
+    @pulumi.getter(name="dbSystemFreeformTags")
+    def db_system_freeform_tags(self) -> Mapping[str, Any]:
+        return pulumi.get(self, "db_system_freeform_tags")
+
+    @property
     @pulumi.getter(name="deleteStandbyDbHomeOnDelete")
     def delete_standby_db_home_on_delete(self) -> str:
         return pulumi.get(self, "delete_standby_db_home_on_delete")
@@ -17366,6 +18856,11 @@ class GetDataGuardAssociationsDataGuardAssociationResult(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="faultDomains")
+    def fault_domains(self) -> Sequence[str]:
+        return pulumi.get(self, "fault_domains")
 
     @property
     @pulumi.getter
@@ -17389,12 +18884,22 @@ class GetDataGuardAssociationsDataGuardAssociationResult(dict):
         return pulumi.get(self, "is_active_data_guard_enabled")
 
     @property
+    @pulumi.getter(name="licenseModel")
+    def license_model(self) -> str:
+        return pulumi.get(self, "license_model")
+
+    @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> str:
         """
         Additional information about the current lifecycleState, if available.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="nodeCount")
+    def node_count(self) -> int:
+        return pulumi.get(self, "node_count")
 
     @property
     @pulumi.getter(name="nsgIds")
@@ -17457,6 +18962,11 @@ class GetDataGuardAssociationsDataGuardAssociationResult(dict):
         return pulumi.get(self, "peer_vm_cluster_id")
 
     @property
+    @pulumi.getter(name="privateIp")
+    def private_ip(self) -> str:
+        return pulumi.get(self, "private_ip")
+
+    @property
     @pulumi.getter(name="protectionMode")
     def protection_mode(self) -> str:
         """
@@ -17486,6 +18996,11 @@ class GetDataGuardAssociationsDataGuardAssociationResult(dict):
         return pulumi.get(self, "state")
 
     @property
+    @pulumi.getter(name="storageVolumePerformanceMode")
+    def storage_volume_performance_mode(self) -> str:
+        return pulumi.get(self, "storage_volume_performance_mode")
+
+    @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> str:
         return pulumi.get(self, "subnet_id")
@@ -17497,6 +19012,11 @@ class GetDataGuardAssociationsDataGuardAssociationResult(dict):
         The date and time the Data Guard association was created.
         """
         return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeZone")
+    def time_zone(self) -> str:
+        return pulumi.get(self, "time_zone")
 
     @property
     @pulumi.getter(name="transportType")
@@ -18166,7 +19686,7 @@ class GetDatabaseSoftwareImagesDatabaseSoftwareImageResult(dict):
         :param str included_patches_summary: The patches included in the image and the version of the image
         :param bool is_upgrade_supported: If provided, filters the results to the set of database versions which are supported for Upgrade.
         :param str lifecycle_details: Detailed message for the lifecycle state.
-        :param str ls_inventory: output from lsinventory which will get passed as a string
+        :param str ls_inventory: The output from the OPatch lsInventory command, which is passed as a string.
         :param str patch_set: The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
         :param str state: A filter to return only resources that match the given lifecycle state exactly.
         :param str time_created: The date and time the database software image was created.
@@ -18298,7 +19818,7 @@ class GetDatabaseSoftwareImagesDatabaseSoftwareImageResult(dict):
     @pulumi.getter(name="lsInventory")
     def ls_inventory(self) -> str:
         """
-        output from lsinventory which will get passed as a string
+        The output from the OPatch lsInventory command, which is passed as a string.
         """
         return pulumi.get(self, "ls_inventory")
 
@@ -20550,7 +22070,7 @@ class GetDbNodesDbNodeResult(dict):
                  vnic_id: str):
         """
         :param str additional_details: Additional information about the planned maintenance.
-        :param str backup_ip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IP address associated with the database node.
+        :param str backup_ip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IP address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
         :param str backup_vnic2id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second backup VNIC.
         :param str backup_vnic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup VNIC.
         :param int cpu_core_count: The number of CPU cores enabled on the Db node.
@@ -20558,7 +22078,7 @@ class GetDbNodesDbNodeResult(dict):
         :param str db_server_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exacc Db server.
         :param str db_system_id: The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). If provided, filters the results to the set of database versions which are supported for the DB system.
         :param str fault_domain: The name of the Fault Domain the instance is contained in.
-        :param str host_ip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node.
+        :param str host_ip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node. Use this OCID with either the  [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
         :param str hostname: The host name for the database node.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database node.
         :param str maintenance_type: The type of database node maintenance.
@@ -20606,7 +22126,7 @@ class GetDbNodesDbNodeResult(dict):
     @pulumi.getter(name="backupIpId")
     def backup_ip_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IP address associated with the database node.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IP address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
         """
         return pulumi.get(self, "backup_ip_id")
 
@@ -20675,7 +22195,7 @@ class GetDbNodesDbNodeResult(dict):
     @pulumi.getter(name="hostIpId")
     def host_ip_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node. Use this OCID with either the  [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
         """
         return pulumi.get(self, "host_ip_id")
 
@@ -21130,6 +22650,124 @@ class GetDbServersFilterResult(dict):
 
 
 @pulumi.output_type
+class GetDbSystemComputePerformancesDbSystemComputePerformanceResult(dict):
+    def __init__(__self__, *,
+                 compute_performance_lists: Sequence['outputs.GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListResult'],
+                 shape: str):
+        """
+        :param Sequence['GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArgs'] compute_performance_lists: List of Compute performance details for the specified DB system shape.
+        :param str shape: The shape of the DB system.
+        """
+        pulumi.set(__self__, "compute_performance_lists", compute_performance_lists)
+        pulumi.set(__self__, "shape", shape)
+
+    @property
+    @pulumi.getter(name="computePerformanceLists")
+    def compute_performance_lists(self) -> Sequence['outputs.GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListResult']:
+        """
+        List of Compute performance details for the specified DB system shape.
+        """
+        return pulumi.get(self, "compute_performance_lists")
+
+    @property
+    @pulumi.getter
+    def shape(self) -> str:
+        """
+        The shape of the DB system.
+        """
+        return pulumi.get(self, "shape")
+
+
+@pulumi.output_type
+class GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListResult(dict):
+    def __init__(__self__, *,
+                 cpu_core_count: int,
+                 memory_in_gbs: float,
+                 network_bandwidth_in_gbps: float,
+                 network_iops: float,
+                 network_throughput_in_mbps: float):
+        """
+        :param int cpu_core_count: The number of OCPU cores available.
+        :param float memory_in_gbs: The amount of memory allocated for the VMDB System.
+        :param float network_bandwidth_in_gbps: The network bandwidth of the VMDB system in gbps.
+        :param float network_iops: IOPS for the VMDB System.
+        :param float network_throughput_in_mbps: Network throughput for the VMDB System.
+        """
+        pulumi.set(__self__, "cpu_core_count", cpu_core_count)
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "network_bandwidth_in_gbps", network_bandwidth_in_gbps)
+        pulumi.set(__self__, "network_iops", network_iops)
+        pulumi.set(__self__, "network_throughput_in_mbps", network_throughput_in_mbps)
+
+    @property
+    @pulumi.getter(name="cpuCoreCount")
+    def cpu_core_count(self) -> int:
+        """
+        The number of OCPU cores available.
+        """
+        return pulumi.get(self, "cpu_core_count")
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> float:
+        """
+        The amount of memory allocated for the VMDB System.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter(name="networkBandwidthInGbps")
+    def network_bandwidth_in_gbps(self) -> float:
+        """
+        The network bandwidth of the VMDB system in gbps.
+        """
+        return pulumi.get(self, "network_bandwidth_in_gbps")
+
+    @property
+    @pulumi.getter(name="networkIops")
+    def network_iops(self) -> float:
+        """
+        IOPS for the VMDB System.
+        """
+        return pulumi.get(self, "network_iops")
+
+    @property
+    @pulumi.getter(name="networkThroughputInMbps")
+    def network_throughput_in_mbps(self) -> float:
+        """
+        Network throughput for the VMDB System.
+        """
+        return pulumi.get(self, "network_throughput_in_mbps")
+
+
+@pulumi.output_type
+class GetDbSystemComputePerformancesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
 class GetDbSystemHistoryEntriesFilterResult(dict):
     def __init__(__self__, *,
                  name: str,
@@ -21385,7 +23023,8 @@ class GetDbSystemShapesDbSystemShapeResult(dict):
                  minimum_node_count: int,
                  name: str,
                  shape: str,
-                 shape_family: str):
+                 shape_family: str,
+                 shape_type: str):
         """
         :param int available_core_count: The maximum number of CPU cores that can be enabled on the DB system for this shape.
         :param int available_core_count_per_node: The maximum number of CPU cores per database node that can be enabled for this shape. Only applicable to the flex Exadata shape and ExaCC Elastic shapes.
@@ -21408,6 +23047,7 @@ class GetDbSystemShapesDbSystemShapeResult(dict):
         :param str name: The name of the shape used for the DB system.
         :param str shape: Deprecated. Use `name` instead of `shape`.
         :param str shape_family: The family of the shape used for the DB system.
+        :param str shape_type: The shape type for the virtual machine DB system. Shape type is determined by CPU hardware. Valid values are `AMD` and `INTEL`.
         """
         pulumi.set(__self__, "available_core_count", available_core_count)
         pulumi.set(__self__, "available_core_count_per_node", available_core_count_per_node)
@@ -21430,6 +23070,7 @@ class GetDbSystemShapesDbSystemShapeResult(dict):
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "shape_family", shape_family)
+        pulumi.set(__self__, "shape_type", shape_type)
 
     @property
     @pulumi.getter(name="availableCoreCount")
@@ -21599,6 +23240,14 @@ class GetDbSystemShapesDbSystemShapeResult(dict):
         """
         return pulumi.get(self, "shape_family")
 
+    @property
+    @pulumi.getter(name="shapeType")
+    def shape_type(self) -> str:
+        """
+        The shape type for the virtual machine DB system. Shape type is determined by CPU hardware. Valid values are `AMD` and `INTEL`.
+        """
+        return pulumi.get(self, "shape_type")
+
 
 @pulumi.output_type
 class GetDbSystemShapesFilterResult(dict):
@@ -21620,6 +23269,269 @@ class GetDbSystemShapesFilterResult(dict):
         """
         The name of the shape used for the DB system.
         """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetDbSystemStoragePerformancesDbSystemStoragePerformanceResult(dict):
+    def __init__(__self__, *,
+                 data_storage_performance_lists: Sequence['outputs.GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListResult'],
+                 reco_storage_performance_lists: Sequence['outputs.GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListResult'],
+                 shape_type: str):
+        """
+        :param Sequence['GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArgs'] data_storage_performance_lists: List of storage performance for the DATA disks
+        :param Sequence['GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArgs'] reco_storage_performance_lists: List of storage performance for the RECO disks
+        :param str shape_type: Optional. Filters the performance results by shape type.
+        """
+        pulumi.set(__self__, "data_storage_performance_lists", data_storage_performance_lists)
+        pulumi.set(__self__, "reco_storage_performance_lists", reco_storage_performance_lists)
+        pulumi.set(__self__, "shape_type", shape_type)
+
+    @property
+    @pulumi.getter(name="dataStoragePerformanceLists")
+    def data_storage_performance_lists(self) -> Sequence['outputs.GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListResult']:
+        """
+        List of storage performance for the DATA disks
+        """
+        return pulumi.get(self, "data_storage_performance_lists")
+
+    @property
+    @pulumi.getter(name="recoStoragePerformanceLists")
+    def reco_storage_performance_lists(self) -> Sequence['outputs.GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListResult']:
+        """
+        List of storage performance for the RECO disks
+        """
+        return pulumi.get(self, "reco_storage_performance_lists")
+
+    @property
+    @pulumi.getter(name="shapeType")
+    def shape_type(self) -> str:
+        """
+        Optional. Filters the performance results by shape type.
+        """
+        return pulumi.get(self, "shape_type")
+
+
+@pulumi.output_type
+class GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListResult(dict):
+    def __init__(__self__, *,
+                 balanced_disk_performances: Sequence['outputs.GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceResult'],
+                 high_disk_performances: Sequence['outputs.GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceResult'],
+                 size_in_gbs: int):
+        """
+        :param Sequence['GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArgs'] balanced_disk_performances: Representation of disk performance detail parameters.
+        :param Sequence['GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArgs'] high_disk_performances: Representation of disk performance detail parameters.
+        :param int size_in_gbs: Size in GBs.
+        """
+        pulumi.set(__self__, "balanced_disk_performances", balanced_disk_performances)
+        pulumi.set(__self__, "high_disk_performances", high_disk_performances)
+        pulumi.set(__self__, "size_in_gbs", size_in_gbs)
+
+    @property
+    @pulumi.getter(name="balancedDiskPerformances")
+    def balanced_disk_performances(self) -> Sequence['outputs.GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceResult']:
+        """
+        Representation of disk performance detail parameters.
+        """
+        return pulumi.get(self, "balanced_disk_performances")
+
+    @property
+    @pulumi.getter(name="highDiskPerformances")
+    def high_disk_performances(self) -> Sequence['outputs.GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceResult']:
+        """
+        Representation of disk performance detail parameters.
+        """
+        return pulumi.get(self, "high_disk_performances")
+
+    @property
+    @pulumi.getter(name="sizeInGbs")
+    def size_in_gbs(self) -> int:
+        """
+        Size in GBs.
+        """
+        return pulumi.get(self, "size_in_gbs")
+
+
+@pulumi.output_type
+class GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceResult(dict):
+    def __init__(__self__, *,
+                 disk_iops: float,
+                 disk_throughput_in_mbps: float):
+        """
+        :param float disk_iops: Disk IOPS in thousands.
+        :param float disk_throughput_in_mbps: Disk Throughput in Mbps.
+        """
+        pulumi.set(__self__, "disk_iops", disk_iops)
+        pulumi.set(__self__, "disk_throughput_in_mbps", disk_throughput_in_mbps)
+
+    @property
+    @pulumi.getter(name="diskIops")
+    def disk_iops(self) -> float:
+        """
+        Disk IOPS in thousands.
+        """
+        return pulumi.get(self, "disk_iops")
+
+    @property
+    @pulumi.getter(name="diskThroughputInMbps")
+    def disk_throughput_in_mbps(self) -> float:
+        """
+        Disk Throughput in Mbps.
+        """
+        return pulumi.get(self, "disk_throughput_in_mbps")
+
+
+@pulumi.output_type
+class GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceResult(dict):
+    def __init__(__self__, *,
+                 disk_iops: float,
+                 disk_throughput_in_mbps: float):
+        """
+        :param float disk_iops: Disk IOPS in thousands.
+        :param float disk_throughput_in_mbps: Disk Throughput in Mbps.
+        """
+        pulumi.set(__self__, "disk_iops", disk_iops)
+        pulumi.set(__self__, "disk_throughput_in_mbps", disk_throughput_in_mbps)
+
+    @property
+    @pulumi.getter(name="diskIops")
+    def disk_iops(self) -> float:
+        """
+        Disk IOPS in thousands.
+        """
+        return pulumi.get(self, "disk_iops")
+
+    @property
+    @pulumi.getter(name="diskThroughputInMbps")
+    def disk_throughput_in_mbps(self) -> float:
+        """
+        Disk Throughput in Mbps.
+        """
+        return pulumi.get(self, "disk_throughput_in_mbps")
+
+
+@pulumi.output_type
+class GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListResult(dict):
+    def __init__(__self__, *,
+                 balanced_disk_performances: Sequence['outputs.GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceResult'],
+                 high_disk_performances: Sequence['outputs.GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceResult'],
+                 size_in_gbs: int):
+        """
+        :param Sequence['GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArgs'] balanced_disk_performances: Representation of disk performance detail parameters.
+        :param Sequence['GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArgs'] high_disk_performances: Representation of disk performance detail parameters.
+        :param int size_in_gbs: Size in GBs.
+        """
+        pulumi.set(__self__, "balanced_disk_performances", balanced_disk_performances)
+        pulumi.set(__self__, "high_disk_performances", high_disk_performances)
+        pulumi.set(__self__, "size_in_gbs", size_in_gbs)
+
+    @property
+    @pulumi.getter(name="balancedDiskPerformances")
+    def balanced_disk_performances(self) -> Sequence['outputs.GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceResult']:
+        """
+        Representation of disk performance detail parameters.
+        """
+        return pulumi.get(self, "balanced_disk_performances")
+
+    @property
+    @pulumi.getter(name="highDiskPerformances")
+    def high_disk_performances(self) -> Sequence['outputs.GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceResult']:
+        """
+        Representation of disk performance detail parameters.
+        """
+        return pulumi.get(self, "high_disk_performances")
+
+    @property
+    @pulumi.getter(name="sizeInGbs")
+    def size_in_gbs(self) -> int:
+        """
+        Size in GBs.
+        """
+        return pulumi.get(self, "size_in_gbs")
+
+
+@pulumi.output_type
+class GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceResult(dict):
+    def __init__(__self__, *,
+                 disk_iops: float,
+                 disk_throughput_in_mbps: float):
+        """
+        :param float disk_iops: Disk IOPS in thousands.
+        :param float disk_throughput_in_mbps: Disk Throughput in Mbps.
+        """
+        pulumi.set(__self__, "disk_iops", disk_iops)
+        pulumi.set(__self__, "disk_throughput_in_mbps", disk_throughput_in_mbps)
+
+    @property
+    @pulumi.getter(name="diskIops")
+    def disk_iops(self) -> float:
+        """
+        Disk IOPS in thousands.
+        """
+        return pulumi.get(self, "disk_iops")
+
+    @property
+    @pulumi.getter(name="diskThroughputInMbps")
+    def disk_throughput_in_mbps(self) -> float:
+        """
+        Disk Throughput in Mbps.
+        """
+        return pulumi.get(self, "disk_throughput_in_mbps")
+
+
+@pulumi.output_type
+class GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceResult(dict):
+    def __init__(__self__, *,
+                 disk_iops: float,
+                 disk_throughput_in_mbps: float):
+        """
+        :param float disk_iops: Disk IOPS in thousands.
+        :param float disk_throughput_in_mbps: Disk Throughput in Mbps.
+        """
+        pulumi.set(__self__, "disk_iops", disk_iops)
+        pulumi.set(__self__, "disk_throughput_in_mbps", disk_throughput_in_mbps)
+
+    @property
+    @pulumi.getter(name="diskIops")
+    def disk_iops(self) -> float:
+        """
+        Disk IOPS in thousands.
+        """
+        return pulumi.get(self, "disk_iops")
+
+    @property
+    @pulumi.getter(name="diskThroughputInMbps")
+    def disk_throughput_in_mbps(self) -> float:
+        """
+        Disk Throughput in Mbps.
+        """
+        return pulumi.get(self, "disk_throughput_in_mbps")
+
+
+@pulumi.output_type
+class GetDbSystemStoragePerformancesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
         return pulumi.get(self, "name")
 
     @property
@@ -21665,6 +23577,7 @@ class GetDbSystemsDbSystemResult(dict):
                  listener_port: int,
                  maintenance_window_details: Sequence['outputs.GetDbSystemsDbSystemMaintenanceWindowDetailResult'],
                  maintenance_windows: Sequence['outputs.GetDbSystemsDbSystemMaintenanceWindowResult'],
+                 memory_size_in_gbs: int,
                  next_maintenance_run_id: str,
                  node_count: int,
                  nsg_ids: Sequence[str],
@@ -21680,6 +23593,7 @@ class GetDbSystemsDbSystemResult(dict):
                  sparse_diskgroup: bool,
                  ssh_public_keys: Sequence[str],
                  state: str,
+                 storage_volume_performance_mode: str,
                  subnet_id: str,
                  time_created: str,
                  time_zone: str,
@@ -21712,10 +23626,11 @@ class GetDbSystemsDbSystemResult(dict):
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param int listener_port: The port number configured for the listener on the DB system.
         :param Sequence['GetDbSystemsDbSystemMaintenanceWindowArgs'] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+        :param int memory_size_in_gbs: Memory allocated to the DB system, in gigabytes.
         :param str next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         :param int node_count: The number of nodes in the DB system. For RAC DB systems, the value is greater than 1.
-        :param Sequence[str] nsg_ids: A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-               * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+        :param Sequence[str] nsg_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+               * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         :param str point_in_time_data_disk_clone_timestamp: The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param int reco_storage_size_in_gb: The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
         :param str scan_dns_name: The FQDN of the DNS record for the SCAN IP addresses that are associated with the DB system.
@@ -21728,6 +23643,7 @@ class GetDbSystemsDbSystemResult(dict):
         :param bool sparse_diskgroup: True, if Sparse Diskgroup is configured for Exadata dbsystem, False, if Sparse diskgroup was not configured. Only applied for Exadata shape.
         :param Sequence[str] ssh_public_keys: The public key portion of one or more key pairs used for SSH access to the DB system.
         :param str state: A filter to return only resources that match the given lifecycle state exactly.
+        :param str storage_volume_performance_mode: The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
         :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
         :param str time_created: The date and time the DB system was created.
         :param str time_zone: The time zone of the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
@@ -21764,6 +23680,7 @@ class GetDbSystemsDbSystemResult(dict):
         pulumi.set(__self__, "listener_port", listener_port)
         pulumi.set(__self__, "maintenance_window_details", maintenance_window_details)
         pulumi.set(__self__, "maintenance_windows", maintenance_windows)
+        pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
         pulumi.set(__self__, "next_maintenance_run_id", next_maintenance_run_id)
         pulumi.set(__self__, "node_count", node_count)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
@@ -21779,6 +23696,7 @@ class GetDbSystemsDbSystemResult(dict):
         pulumi.set(__self__, "sparse_diskgroup", sparse_diskgroup)
         pulumi.set(__self__, "ssh_public_keys", ssh_public_keys)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "storage_volume_performance_mode", storage_volume_performance_mode)
         pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_zone", time_zone)
@@ -22007,6 +23925,14 @@ class GetDbSystemsDbSystemResult(dict):
         return pulumi.get(self, "maintenance_windows")
 
     @property
+    @pulumi.getter(name="memorySizeInGbs")
+    def memory_size_in_gbs(self) -> int:
+        """
+        Memory allocated to the DB system, in gigabytes.
+        """
+        return pulumi.get(self, "memory_size_in_gbs")
+
+    @property
     @pulumi.getter(name="nextMaintenanceRunId")
     def next_maintenance_run_id(self) -> str:
         """
@@ -22026,8 +23952,8 @@ class GetDbSystemsDbSystemResult(dict):
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Sequence[str]:
         """
-        A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+        The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+        * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         """
         return pulumi.get(self, "nsg_ids")
 
@@ -22122,6 +24048,14 @@ class GetDbSystemsDbSystemResult(dict):
         A filter to return only resources that match the given lifecycle state exactly.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="storageVolumePerformanceMode")
+    def storage_volume_performance_mode(self) -> str:
+        """
+        The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
+        """
+        return pulumi.get(self, "storage_volume_performance_mode")
 
     @property
     @pulumi.getter(name="subnetId")
@@ -23016,6 +24950,139 @@ class GetDbSystemsFilterResult(dict):
 
 
 @pulumi.output_type
+class GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryResult(dict):
+    def __init__(__self__, *,
+                 action: str,
+                 id: str,
+                 lifecycle_details: str,
+                 new_gi_version: str,
+                 old_gi_version: str,
+                 snapshot_retention_period_in_days: int,
+                 state: str,
+                 time_ended: str,
+                 time_started: str):
+        """
+        :param str action: The operating system upgrade action.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the upgrade history entry.
+        :param str lifecycle_details: A descriptive text associated with the lifecycleState. Typically contains additional displayable text.
+        :param str new_gi_version: A valid Oracle Grid Infrastructure (GI) software version.
+        :param str old_gi_version: A valid Oracle Grid Infrastructure (GI) software version.
+        :param int snapshot_retention_period_in_days: The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
+        :param str state: A filter to return only upgrade history entries that match the given lifecycle state exactly.
+        :param str time_ended: The date and time when the upgrade action completed
+        :param str time_started: The date and time when the upgrade action started.
+        """
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "new_gi_version", new_gi_version)
+        pulumi.set(__self__, "old_gi_version", old_gi_version)
+        pulumi.set(__self__, "snapshot_retention_period_in_days", snapshot_retention_period_in_days)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_ended", time_ended)
+        pulumi.set(__self__, "time_started", time_started)
+
+    @property
+    @pulumi.getter
+    def action(self) -> str:
+        """
+        The operating system upgrade action.
+        """
+        return pulumi.get(self, "action")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the upgrade history entry.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        A descriptive text associated with the lifecycleState. Typically contains additional displayable text.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="newGiVersion")
+    def new_gi_version(self) -> str:
+        """
+        A valid Oracle Grid Infrastructure (GI) software version.
+        """
+        return pulumi.get(self, "new_gi_version")
+
+    @property
+    @pulumi.getter(name="oldGiVersion")
+    def old_gi_version(self) -> str:
+        """
+        A valid Oracle Grid Infrastructure (GI) software version.
+        """
+        return pulumi.get(self, "old_gi_version")
+
+    @property
+    @pulumi.getter(name="snapshotRetentionPeriodInDays")
+    def snapshot_retention_period_in_days(self) -> int:
+        """
+        The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
+        """
+        return pulumi.get(self, "snapshot_retention_period_in_days")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return only upgrade history entries that match the given lifecycle state exactly.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeEnded")
+    def time_ended(self) -> str:
+        """
+        The date and time when the upgrade action completed
+        """
+        return pulumi.get(self, "time_ended")
+
+    @property
+    @pulumi.getter(name="timeStarted")
+    def time_started(self) -> str:
+        """
+        The date and time when the upgrade action started.
+        """
+        return pulumi.get(self, "time_started")
+
+
+@pulumi.output_type
+class GetDbSystemsUpgradeHistoryEntriesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
 class GetDbVersionsDbVersionResult(dict):
     def __init__(__self__, *,
                  is_latest_for_major_version: bool,
@@ -23336,6 +25403,7 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
                  gateway: str,
                  id: str,
                  infini_band_network_cidr: str,
+                 is_cps_offline_report_enabled: bool,
                  lifecycle_details: str,
                  maintenance_slo_status: str,
                  maintenance_windows: Sequence['outputs.GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowResult'],
@@ -23374,6 +25442,7 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
         :param str gateway: The gateway for the control plane network.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
         :param str infini_band_network_cidr: The CIDR block for the Exadata InfiniBand interconnect.
+        :param bool is_cps_offline_report_enabled: Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param str maintenance_slo_status: A field to capture ‘Maintenance SLO Status’ for the Exadata infrastructure with values ‘OK’, ‘DEGRADED’. Default is ‘OK’ when the infrastructure is provisioned.
         :param Sequence['GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowArgs'] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
@@ -23414,6 +25483,7 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
         pulumi.set(__self__, "gateway", gateway)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "infini_band_network_cidr", infini_band_network_cidr)
+        pulumi.set(__self__, "is_cps_offline_report_enabled", is_cps_offline_report_enabled)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "maintenance_slo_status", maintenance_slo_status)
         pulumi.set(__self__, "maintenance_windows", maintenance_windows)
@@ -23608,6 +25678,14 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
         The CIDR block for the Exadata InfiniBand interconnect.
         """
         return pulumi.get(self, "infini_band_network_cidr")
+
+    @property
+    @pulumi.getter(name="isCpsOfflineReportEnabled")
+    def is_cps_offline_report_enabled(self) -> bool:
+        """
+        Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
+        """
+        return pulumi.get(self, "is_cps_offline_report_enabled")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -24058,6 +26136,35 @@ class GetExternalContainerDatabaseDatabaseManagementConfigResult(dict):
 
 
 @pulumi.output_type
+class GetExternalContainerDatabaseStackMonitoringConfigResult(dict):
+    def __init__(__self__, *,
+                 stack_monitoring_connector_id: str,
+                 stack_monitoring_status: str):
+        """
+        :param str stack_monitoring_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+        :param str stack_monitoring_status: The status of Stack Monitoring.
+        """
+        pulumi.set(__self__, "stack_monitoring_connector_id", stack_monitoring_connector_id)
+        pulumi.set(__self__, "stack_monitoring_status", stack_monitoring_status)
+
+    @property
+    @pulumi.getter(name="stackMonitoringConnectorId")
+    def stack_monitoring_connector_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+        """
+        return pulumi.get(self, "stack_monitoring_connector_id")
+
+    @property
+    @pulumi.getter(name="stackMonitoringStatus")
+    def stack_monitoring_status(self) -> str:
+        """
+        The status of Stack Monitoring.
+        """
+        return pulumi.get(self, "stack_monitoring_status")
+
+
+@pulumi.output_type
 class GetExternalContainerDatabasesExternalContainerDatabaseResult(dict):
     def __init__(__self__, *,
                  character_set: str,
@@ -24075,6 +26182,7 @@ class GetExternalContainerDatabasesExternalContainerDatabaseResult(dict):
                  id: str,
                  lifecycle_details: str,
                  ncharacter_set: str,
+                 stack_monitoring_configs: Sequence['outputs.GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigResult'],
                  state: str,
                  time_created: str,
                  time_zone: str):
@@ -24094,6 +26202,7 @@ class GetExternalContainerDatabasesExternalContainerDatabaseResult(dict):
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure external database resource.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param str ncharacter_set: The national character of the external database.
+        :param Sequence['GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArgs'] stack_monitoring_configs: The configuration of Stack Monitoring for the external database.
         :param str state: A filter to return only resources that match the specified lifecycle state.
         :param str time_created: The date and time the database was created.
         :param str time_zone: The time zone of the external database. It is a time zone offset (a character type in the format '[+|-]TZH:TZM') or a time zone region name, depending on how the time zone value was specified when the database was created / last altered.
@@ -24113,6 +26222,7 @@ class GetExternalContainerDatabasesExternalContainerDatabaseResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "ncharacter_set", ncharacter_set)
+        pulumi.set(__self__, "stack_monitoring_configs", stack_monitoring_configs)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_zone", time_zone)
@@ -24238,6 +26348,14 @@ class GetExternalContainerDatabasesExternalContainerDatabaseResult(dict):
         return pulumi.get(self, "ncharacter_set")
 
     @property
+    @pulumi.getter(name="stackMonitoringConfigs")
+    def stack_monitoring_configs(self) -> Sequence['outputs.GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigResult']:
+        """
+        The configuration of Stack Monitoring for the external database.
+        """
+        return pulumi.get(self, "stack_monitoring_configs")
+
+    @property
     @pulumi.getter
     def state(self) -> str:
         """
@@ -24303,6 +26421,35 @@ class GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementCo
 
 
 @pulumi.output_type
+class GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigResult(dict):
+    def __init__(__self__, *,
+                 stack_monitoring_connector_id: str,
+                 stack_monitoring_status: str):
+        """
+        :param str stack_monitoring_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+        :param str stack_monitoring_status: The status of Stack Monitoring.
+        """
+        pulumi.set(__self__, "stack_monitoring_connector_id", stack_monitoring_connector_id)
+        pulumi.set(__self__, "stack_monitoring_status", stack_monitoring_status)
+
+    @property
+    @pulumi.getter(name="stackMonitoringConnectorId")
+    def stack_monitoring_connector_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+        """
+        return pulumi.get(self, "stack_monitoring_connector_id")
+
+    @property
+    @pulumi.getter(name="stackMonitoringStatus")
+    def stack_monitoring_status(self) -> str:
+        """
+        The status of Stack Monitoring.
+        """
+        return pulumi.get(self, "stack_monitoring_status")
+
+
+@pulumi.output_type
 class GetExternalContainerDatabasesFilterResult(dict):
     def __init__(__self__, *,
                  name: str,
@@ -24336,18 +26483,21 @@ class GetExternalDatabaseConnectorConnectionCredentialResult(dict):
                  credential_type: str,
                  password: str,
                  role: str,
+                 ssl_secret_id: str,
                  username: str):
         """
         :param str credential_name: The name of the credential information that used to connect to the database. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
         :param str credential_type: The type of credential used to connect to the database.
         :param str password: The password that will be used to connect to the database.
         :param str role: The role of the user that will be connecting to the database.
+        :param str ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         :param str username: The username that will be used to connect to the database.
         """
         pulumi.set(__self__, "credential_name", credential_name)
         pulumi.set(__self__, "credential_type", credential_type)
         pulumi.set(__self__, "password", password)
         pulumi.set(__self__, "role", role)
+        pulumi.set(__self__, "ssl_secret_id", ssl_secret_id)
         pulumi.set(__self__, "username", username)
 
     @property
@@ -24381,6 +26531,14 @@ class GetExternalDatabaseConnectorConnectionCredentialResult(dict):
         The role of the user that will be connecting to the database.
         """
         return pulumi.get(self, "role")
+
+    @property
+    @pulumi.getter(name="sslSecretId")
+    def ssl_secret_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        """
+        return pulumi.get(self, "ssl_secret_id")
 
     @property
     @pulumi.getter
@@ -24621,18 +26779,21 @@ class GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredential
                  credential_type: str,
                  password: str,
                  role: str,
+                 ssl_secret_id: str,
                  username: str):
         """
         :param str credential_name: The name of the credential information that used to connect to the database. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
         :param str credential_type: The type of credential used to connect to the database.
         :param str password: The password that will be used to connect to the database.
         :param str role: The role of the user that will be connecting to the database.
+        :param str ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         :param str username: The username that will be used to connect to the database.
         """
         pulumi.set(__self__, "credential_name", credential_name)
         pulumi.set(__self__, "credential_type", credential_type)
         pulumi.set(__self__, "password", password)
         pulumi.set(__self__, "role", role)
+        pulumi.set(__self__, "ssl_secret_id", ssl_secret_id)
         pulumi.set(__self__, "username", username)
 
     @property
@@ -24666,6 +26827,14 @@ class GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredential
         The role of the user that will be connecting to the database.
         """
         return pulumi.get(self, "role")
+
+    @property
+    @pulumi.getter(name="sslSecretId")
+    def ssl_secret_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        """
+        return pulumi.get(self, "ssl_secret_id")
 
     @property
     @pulumi.getter
@@ -24824,6 +26993,35 @@ class GetExternalNonContainerDatabaseOperationsInsightsConfigResult(dict):
 
 
 @pulumi.output_type
+class GetExternalNonContainerDatabaseStackMonitoringConfigResult(dict):
+    def __init__(__self__, *,
+                 stack_monitoring_connector_id: str,
+                 stack_monitoring_status: str):
+        """
+        :param str stack_monitoring_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+        :param str stack_monitoring_status: The status of Stack Monitoring.
+        """
+        pulumi.set(__self__, "stack_monitoring_connector_id", stack_monitoring_connector_id)
+        pulumi.set(__self__, "stack_monitoring_status", stack_monitoring_status)
+
+    @property
+    @pulumi.getter(name="stackMonitoringConnectorId")
+    def stack_monitoring_connector_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+        """
+        return pulumi.get(self, "stack_monitoring_connector_id")
+
+    @property
+    @pulumi.getter(name="stackMonitoringStatus")
+    def stack_monitoring_status(self) -> str:
+        """
+        The status of Stack Monitoring.
+        """
+        return pulumi.get(self, "stack_monitoring_status")
+
+
+@pulumi.output_type
 class GetExternalNonContainerDatabasesExternalNonContainerDatabaseResult(dict):
     def __init__(__self__, *,
                  character_set: str,
@@ -24842,6 +27040,7 @@ class GetExternalNonContainerDatabasesExternalNonContainerDatabaseResult(dict):
                  lifecycle_details: str,
                  ncharacter_set: str,
                  operations_insights_configs: Sequence['outputs.GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigResult'],
+                 stack_monitoring_configs: Sequence['outputs.GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigResult'],
                  state: str,
                  time_created: str,
                  time_zone: str):
@@ -24862,6 +27061,7 @@ class GetExternalNonContainerDatabasesExternalNonContainerDatabaseResult(dict):
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param str ncharacter_set: The national character of the external database.
         :param Sequence['GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArgs'] operations_insights_configs: The configuration of Operations Insights for the external database
+        :param Sequence['GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArgs'] stack_monitoring_configs: The configuration of Stack Monitoring for the external database.
         :param str state: A filter to return only resources that match the specified lifecycle state.
         :param str time_created: The date and time the database was created.
         :param str time_zone: The time zone of the external database. It is a time zone offset (a character type in the format '[+|-]TZH:TZM') or a time zone region name, depending on how the time zone value was specified when the database was created / last altered.
@@ -24882,6 +27082,7 @@ class GetExternalNonContainerDatabasesExternalNonContainerDatabaseResult(dict):
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "ncharacter_set", ncharacter_set)
         pulumi.set(__self__, "operations_insights_configs", operations_insights_configs)
+        pulumi.set(__self__, "stack_monitoring_configs", stack_monitoring_configs)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_zone", time_zone)
@@ -25015,6 +27216,14 @@ class GetExternalNonContainerDatabasesExternalNonContainerDatabaseResult(dict):
         return pulumi.get(self, "operations_insights_configs")
 
     @property
+    @pulumi.getter(name="stackMonitoringConfigs")
+    def stack_monitoring_configs(self) -> Sequence['outputs.GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigResult']:
+        """
+        The configuration of Stack Monitoring for the external database.
+        """
+        return pulumi.get(self, "stack_monitoring_configs")
+
+    @property
     @pulumi.getter
     def state(self) -> str:
         """
@@ -25106,6 +27315,35 @@ class GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsi
         The status of Operations Insights
         """
         return pulumi.get(self, "operations_insights_status")
+
+
+@pulumi.output_type
+class GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigResult(dict):
+    def __init__(__self__, *,
+                 stack_monitoring_connector_id: str,
+                 stack_monitoring_status: str):
+        """
+        :param str stack_monitoring_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+        :param str stack_monitoring_status: The status of Stack Monitoring.
+        """
+        pulumi.set(__self__, "stack_monitoring_connector_id", stack_monitoring_connector_id)
+        pulumi.set(__self__, "stack_monitoring_status", stack_monitoring_status)
+
+    @property
+    @pulumi.getter(name="stackMonitoringConnectorId")
+    def stack_monitoring_connector_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+        """
+        return pulumi.get(self, "stack_monitoring_connector_id")
+
+    @property
+    @pulumi.getter(name="stackMonitoringStatus")
+    def stack_monitoring_status(self) -> str:
+        """
+        The status of Stack Monitoring.
+        """
+        return pulumi.get(self, "stack_monitoring_status")
 
 
 @pulumi.output_type
@@ -25205,6 +27443,35 @@ class GetExternalPluggableDatabaseOperationsInsightsConfigResult(dict):
 
 
 @pulumi.output_type
+class GetExternalPluggableDatabaseStackMonitoringConfigResult(dict):
+    def __init__(__self__, *,
+                 stack_monitoring_connector_id: str,
+                 stack_monitoring_status: str):
+        """
+        :param str stack_monitoring_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+        :param str stack_monitoring_status: The status of Stack Monitoring.
+        """
+        pulumi.set(__self__, "stack_monitoring_connector_id", stack_monitoring_connector_id)
+        pulumi.set(__self__, "stack_monitoring_status", stack_monitoring_status)
+
+    @property
+    @pulumi.getter(name="stackMonitoringConnectorId")
+    def stack_monitoring_connector_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+        """
+        return pulumi.get(self, "stack_monitoring_connector_id")
+
+    @property
+    @pulumi.getter(name="stackMonitoringStatus")
+    def stack_monitoring_status(self) -> str:
+        """
+        The status of Stack Monitoring.
+        """
+        return pulumi.get(self, "stack_monitoring_status")
+
+
+@pulumi.output_type
 class GetExternalPluggableDatabasesExternalPluggableDatabaseResult(dict):
     def __init__(__self__, *,
                  character_set: str,
@@ -25225,6 +27492,7 @@ class GetExternalPluggableDatabasesExternalPluggableDatabaseResult(dict):
                  ncharacter_set: str,
                  operations_insights_configs: Sequence['outputs.GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigResult'],
                  source_id: str,
+                 stack_monitoring_configs: Sequence['outputs.GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigResult'],
                  state: str,
                  time_created: str,
                  time_zone: str):
@@ -25247,6 +27515,7 @@ class GetExternalPluggableDatabasesExternalPluggableDatabaseResult(dict):
         :param str ncharacter_set: The national character of the external database.
         :param Sequence['GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArgs'] operations_insights_configs: The configuration of Operations Insights for the external database
         :param str source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the the non-container database that was converted to a pluggable database to create this resource.
+        :param Sequence['GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArgs'] stack_monitoring_configs: The configuration of Stack Monitoring for the external database.
         :param str state: A filter to return only resources that match the specified lifecycle state.
         :param str time_created: The date and time the database was created.
         :param str time_zone: The time zone of the external database. It is a time zone offset (a character type in the format '[+|-]TZH:TZM') or a time zone region name, depending on how the time zone value was specified when the database was created / last altered.
@@ -25269,6 +27538,7 @@ class GetExternalPluggableDatabasesExternalPluggableDatabaseResult(dict):
         pulumi.set(__self__, "ncharacter_set", ncharacter_set)
         pulumi.set(__self__, "operations_insights_configs", operations_insights_configs)
         pulumi.set(__self__, "source_id", source_id)
+        pulumi.set(__self__, "stack_monitoring_configs", stack_monitoring_configs)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_zone", time_zone)
@@ -25418,6 +27688,14 @@ class GetExternalPluggableDatabasesExternalPluggableDatabaseResult(dict):
         return pulumi.get(self, "source_id")
 
     @property
+    @pulumi.getter(name="stackMonitoringConfigs")
+    def stack_monitoring_configs(self) -> Sequence['outputs.GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigResult']:
+        """
+        The configuration of Stack Monitoring for the external database.
+        """
+        return pulumi.get(self, "stack_monitoring_configs")
+
+    @property
     @pulumi.getter
     def state(self) -> str:
         """
@@ -25509,6 +27787,35 @@ class GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsCo
         The status of Operations Insights
         """
         return pulumi.get(self, "operations_insights_status")
+
+
+@pulumi.output_type
+class GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigResult(dict):
+    def __init__(__self__, *,
+                 stack_monitoring_connector_id: str,
+                 stack_monitoring_status: str):
+        """
+        :param str stack_monitoring_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+        :param str stack_monitoring_status: The status of Stack Monitoring.
+        """
+        pulumi.set(__self__, "stack_monitoring_connector_id", stack_monitoring_connector_id)
+        pulumi.set(__self__, "stack_monitoring_status", stack_monitoring_status)
+
+    @property
+    @pulumi.getter(name="stackMonitoringConnectorId")
+    def stack_monitoring_connector_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+        """
+        return pulumi.get(self, "stack_monitoring_connector_id")
+
+    @property
+    @pulumi.getter(name="stackMonitoringStatus")
+    def stack_monitoring_status(self) -> str:
+        """
+        The status of Stack Monitoring.
+        """
+        return pulumi.get(self, "stack_monitoring_status")
 
 
 @pulumi.output_type
@@ -26742,6 +29049,24 @@ class GetPluggableDatabasesPluggableDatabaseConnectionStringResult(dict):
         An IP-based PDB connection string.
         """
         return pulumi.get(self, "pdb_ip_default")
+
+
+@pulumi.output_type
+class GetVmClusterDataCollectionOptionResult(dict):
+    def __init__(__self__, *,
+                 is_diagnostics_events_enabled: bool):
+        """
+        :param bool is_diagnostics_events_enabled: Indicates whether diagnostic collection is enabled for the VM cluster. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+        """
+        pulumi.set(__self__, "is_diagnostics_events_enabled", is_diagnostics_events_enabled)
+
+    @property
+    @pulumi.getter(name="isDiagnosticsEventsEnabled")
+    def is_diagnostics_events_enabled(self) -> bool:
+        """
+        Indicates whether diagnostic collection is enabled for the VM cluster. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+        """
+        return pulumi.get(self, "is_diagnostics_events_enabled")
 
 
 @pulumi.output_type
@@ -28102,6 +30427,7 @@ class GetVmClustersVmClusterResult(dict):
                  compartment_id: str,
                  cpu_core_count: int,
                  cpus_enabled: int,
+                 data_collection_options: Sequence['outputs.GetVmClustersVmClusterDataCollectionOptionResult'],
                  data_storage_size_in_gb: float,
                  data_storage_size_in_tbs: float,
                  db_node_storage_size_in_gbs: int,
@@ -28130,6 +30456,7 @@ class GetVmClustersVmClusterResult(dict):
         """
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param int cpus_enabled: The number of enabled CPU cores.
+        :param Sequence['GetVmClustersVmClusterDataCollectionOptionArgs'] data_collection_options: Indicates user preferences for the various diagnostic collection options for the VM cluster.
         :param float data_storage_size_in_tbs: Size, in terabytes, of the DATA disk group.
         :param int db_node_storage_size_in_gbs: The local node storage allocated in GBs.
         :param Sequence[str] db_servers: The list of Db server.
@@ -28156,6 +30483,7 @@ class GetVmClustersVmClusterResult(dict):
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "cpu_core_count", cpu_core_count)
         pulumi.set(__self__, "cpus_enabled", cpus_enabled)
+        pulumi.set(__self__, "data_collection_options", data_collection_options)
         pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
         pulumi.set(__self__, "data_storage_size_in_tbs", data_storage_size_in_tbs)
         pulumi.set(__self__, "db_node_storage_size_in_gbs", db_node_storage_size_in_gbs)
@@ -28202,6 +30530,14 @@ class GetVmClustersVmClusterResult(dict):
         The number of enabled CPU cores.
         """
         return pulumi.get(self, "cpus_enabled")
+
+    @property
+    @pulumi.getter(name="dataCollectionOptions")
+    def data_collection_options(self) -> Sequence['outputs.GetVmClustersVmClusterDataCollectionOptionResult']:
+        """
+        Indicates user preferences for the various diagnostic collection options for the VM cluster.
+        """
+        return pulumi.get(self, "data_collection_options")
 
     @property
     @pulumi.getter(name="dataStorageSizeInGb")
@@ -28393,5 +30729,23 @@ class GetVmClustersVmClusterResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
         """
         return pulumi.get(self, "vm_cluster_network_id")
+
+
+@pulumi.output_type
+class GetVmClustersVmClusterDataCollectionOptionResult(dict):
+    def __init__(__self__, *,
+                 is_diagnostics_events_enabled: bool):
+        """
+        :param bool is_diagnostics_events_enabled: Indicates whether diagnostic collection is enabled for the VM cluster. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+        """
+        pulumi.set(__self__, "is_diagnostics_events_enabled", is_diagnostics_events_enabled)
+
+    @property
+    @pulumi.getter(name="isDiagnosticsEventsEnabled")
+    def is_diagnostics_events_enabled(self) -> bool:
+        """
+        Indicates whether diagnostic collection is enabled for the VM cluster. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+        """
+        return pulumi.get(self, "is_diagnostics_events_enabled")
 
 

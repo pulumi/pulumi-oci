@@ -85,7 +85,7 @@ public final class GetTriggerResult {
     private final String timeUpdated;
     private final String triggerId;
     /**
-     * @return Source of the trigger. Allowed values are, GITHUB, GITLAB and DEVOPS_CODE_REPOSITORY.
+     * @return Source of the trigger. Allowed values are, GITHUB and GITLAB.
      * 
      */
     private final String triggerSource;
@@ -235,7 +235,7 @@ public final class GetTriggerResult {
         return this.triggerId;
     }
     /**
-     * @return Source of the trigger. Allowed values are, GITHUB, GITLAB and DEVOPS_CODE_REPOSITORY.
+     * @return Source of the trigger. Allowed values are, GITHUB and GITLAB.
      * 
      */
     public String triggerSource() {

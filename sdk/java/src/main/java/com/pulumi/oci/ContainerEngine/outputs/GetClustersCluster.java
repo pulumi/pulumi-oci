@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerEngine.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.ContainerEngine.outputs.GetClustersClusterClusterPodNetworkOption;
 import com.pulumi.oci.ContainerEngine.outputs.GetClustersClusterEndpoint;
 import com.pulumi.oci.ContainerEngine.outputs.GetClustersClusterEndpointConfig;
 import com.pulumi.oci.ContainerEngine.outputs.GetClustersClusterImagePolicyConfig;
@@ -22,6 +23,11 @@ public final class GetClustersCluster {
      * 
      */
     private final List<String> availableKubernetesUpgrades;
+    /**
+     * @return Available CNIs and network options for existing and new node pools of the cluster
+     * 
+     */
+    private final List<GetClustersClusterClusterPodNetworkOption> clusterPodNetworkOptions;
     /**
      * @return The OCID of the compartment.
      * 
@@ -101,6 +107,7 @@ public final class GetClustersCluster {
     @CustomType.Constructor
     private GetClustersCluster(
         @CustomType.Parameter("availableKubernetesUpgrades") List<String> availableKubernetesUpgrades,
+        @CustomType.Parameter("clusterPodNetworkOptions") List<GetClustersClusterClusterPodNetworkOption> clusterPodNetworkOptions,
         @CustomType.Parameter("compartmentId") String compartmentId,
         @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
         @CustomType.Parameter("endpointConfigs") List<GetClustersClusterEndpointConfig> endpointConfigs,
@@ -117,6 +124,7 @@ public final class GetClustersCluster {
         @CustomType.Parameter("state") String state,
         @CustomType.Parameter("vcnId") String vcnId) {
         this.availableKubernetesUpgrades = availableKubernetesUpgrades;
+        this.clusterPodNetworkOptions = clusterPodNetworkOptions;
         this.compartmentId = compartmentId;
         this.definedTags = definedTags;
         this.endpointConfigs = endpointConfigs;
@@ -140,6 +148,13 @@ public final class GetClustersCluster {
      */
     public List<String> availableKubernetesUpgrades() {
         return this.availableKubernetesUpgrades;
+    }
+    /**
+     * @return Available CNIs and network options for existing and new node pools of the cluster
+     * 
+     */
+    public List<GetClustersClusterClusterPodNetworkOption> clusterPodNetworkOptions() {
+        return this.clusterPodNetworkOptions;
     }
     /**
      * @return The OCID of the compartment.
@@ -257,6 +272,7 @@ public final class GetClustersCluster {
 
     public static final class Builder {
         private List<String> availableKubernetesUpgrades;
+        private List<GetClustersClusterClusterPodNetworkOption> clusterPodNetworkOptions;
         private String compartmentId;
         private Map<String,Object> definedTags;
         private List<GetClustersClusterEndpointConfig> endpointConfigs;
@@ -280,6 +296,7 @@ public final class GetClustersCluster {
         public Builder(GetClustersCluster defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availableKubernetesUpgrades = defaults.availableKubernetesUpgrades;
+    	      this.clusterPodNetworkOptions = defaults.clusterPodNetworkOptions;
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
     	      this.endpointConfigs = defaults.endpointConfigs;
@@ -303,6 +320,13 @@ public final class GetClustersCluster {
         }
         public Builder availableKubernetesUpgrades(String... availableKubernetesUpgrades) {
             return availableKubernetesUpgrades(List.of(availableKubernetesUpgrades));
+        }
+        public Builder clusterPodNetworkOptions(List<GetClustersClusterClusterPodNetworkOption> clusterPodNetworkOptions) {
+            this.clusterPodNetworkOptions = Objects.requireNonNull(clusterPodNetworkOptions);
+            return this;
+        }
+        public Builder clusterPodNetworkOptions(GetClustersClusterClusterPodNetworkOption... clusterPodNetworkOptions) {
+            return clusterPodNetworkOptions(List.of(clusterPodNetworkOptions));
         }
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
@@ -379,7 +403,7 @@ public final class GetClustersCluster {
             this.vcnId = Objects.requireNonNull(vcnId);
             return this;
         }        public GetClustersCluster build() {
-            return new GetClustersCluster(availableKubernetesUpgrades, compartmentId, definedTags, endpointConfigs, endpoints, freeformTags, id, imagePolicyConfigs, kmsKeyId, kubernetesVersion, lifecycleDetails, metadatas, name, options, state, vcnId);
+            return new GetClustersCluster(availableKubernetesUpgrades, clusterPodNetworkOptions, compartmentId, definedTags, endpointConfigs, endpoints, freeformTags, id, imagePolicyConfigs, kmsKeyId, kubernetesVersion, lifecycleDetails, metadatas, name, options, state, vcnId);
         }
     }
 }

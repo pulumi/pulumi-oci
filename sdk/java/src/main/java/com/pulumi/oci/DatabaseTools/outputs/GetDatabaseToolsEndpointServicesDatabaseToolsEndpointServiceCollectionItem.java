@@ -22,12 +22,12 @@ public final class GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceC
      */
     private final Map<String,Object> definedTags;
     /**
-     * @return A description of the DatabaseToolsEndpointService.
+     * @return A description of the Database Tools Endpoint Service.
      * 
      */
     private final String description;
     /**
-     * @return A filter to return only resources that match the entire display name given.
+     * @return A filter to return only resources that match the entire specified display name.
      * 
      */
     private final String displayName;
@@ -37,7 +37,7 @@ public final class GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceC
      */
     private final Map<String,Object> freeformTags;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsEndpointService.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Endpoint Service.
      * 
      */
     private final String id;
@@ -47,12 +47,12 @@ public final class GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceC
      */
     private final String lifecycleDetails;
     /**
-     * @return A filter to return only resources that match the entire name given.
+     * @return A filter to return only resources that match the entire specified name.
      * 
      */
     private final String name;
     /**
-     * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * @return A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
      * 
      */
     private final String state;
@@ -62,12 +62,12 @@ public final class GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceC
      */
     private final Map<String,Object> systemTags;
     /**
-     * @return The time the DatabaseToolsEndpointService was created. An RFC3339 formatted datetime string
+     * @return The time the Database Tools Endpoint Service was created. An RFC3339 formatted datetime string
      * 
      */
     private final String timeCreated;
     /**
-     * @return The time the DatabaseToolsEndpointService was updated. An RFC3339 formatted datetime string
+     * @return The time the Database Tools Endpoint Service was updated. An RFC3339 formatted datetime string
      * 
      */
     private final String timeUpdated;
@@ -115,14 +115,14 @@ public final class GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceC
         return this.definedTags;
     }
     /**
-     * @return A description of the DatabaseToolsEndpointService.
+     * @return A description of the Database Tools Endpoint Service.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return A filter to return only resources that match the entire display name given.
+     * @return A filter to return only resources that match the entire specified display name.
      * 
      */
     public String displayName() {
@@ -136,7 +136,7 @@ public final class GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceC
         return this.freeformTags;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsEndpointService.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Endpoint Service.
      * 
      */
     public String id() {
@@ -150,14 +150,14 @@ public final class GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceC
         return this.lifecycleDetails;
     }
     /**
-     * @return A filter to return only resources that match the entire name given.
+     * @return A filter to return only resources that match the entire specified name.
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * @return A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
      * 
      */
     public String state() {
@@ -171,14 +171,14 @@ public final class GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceC
         return this.systemTags;
     }
     /**
-     * @return The time the DatabaseToolsEndpointService was created. An RFC3339 formatted datetime string
+     * @return The time the Database Tools Endpoint Service was created. An RFC3339 formatted datetime string
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return The time the DatabaseToolsEndpointService was updated. An RFC3339 formatted datetime string
+     * @return The time the Database Tools Endpoint Service was updated. An RFC3339 formatted datetime string
      * 
      */
     public String timeUpdated() {

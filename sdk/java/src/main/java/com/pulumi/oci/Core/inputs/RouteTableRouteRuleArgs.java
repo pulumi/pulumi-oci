@@ -102,6 +102,13 @@ public final class RouteTableRouteRuleArgs extends com.pulumi.resources.Resource
         return this.networkEntityId;
     }
 
+    @Import(name="routeType")
+    private @Nullable Output<String> routeType;
+
+    public Optional<Output<String>> routeType() {
+        return Optional.ofNullable(this.routeType);
+    }
+
     private RouteTableRouteRuleArgs() {}
 
     private RouteTableRouteRuleArgs(RouteTableRouteRuleArgs $) {
@@ -110,6 +117,7 @@ public final class RouteTableRouteRuleArgs extends com.pulumi.resources.Resource
         this.destination = $.destination;
         this.destinationType = $.destinationType;
         this.networkEntityId = $.networkEntityId;
+        this.routeType = $.routeType;
     }
 
     public static Builder builder() {
@@ -245,6 +253,15 @@ public final class RouteTableRouteRuleArgs extends com.pulumi.resources.Resource
          */
         public Builder networkEntityId(String networkEntityId) {
             return networkEntityId(Output.of(networkEntityId));
+        }
+
+        public Builder routeType(@Nullable Output<String> routeType) {
+            $.routeType = routeType;
+            return this;
+        }
+
+        public Builder routeType(String routeType) {
+            return routeType(Output.of(routeType));
         }
 
         public RouteTableRouteRuleArgs build() {

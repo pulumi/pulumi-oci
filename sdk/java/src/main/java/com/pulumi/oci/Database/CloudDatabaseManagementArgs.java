@@ -6,8 +6,12 @@ package com.pulumi.oci.Database;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Database.inputs.CloudDatabaseManagementCredentialdetailsArgs;
+import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class CloudDatabaseManagementArgs extends com.pulumi.resources.ResourceArgs {
@@ -37,6 +41,21 @@ public final class CloudDatabaseManagementArgs extends com.pulumi.resources.Reso
     }
 
     /**
+     * (Updatable) Use this flag to enable/disable database management
+     * 
+     */
+    @Import(name="enableManagement", required=true)
+    private Output<Boolean> enableManagement;
+
+    /**
+     * @return (Updatable) Use this flag to enable/disable database management
+     * 
+     */
+    public Output<Boolean> enableManagement() {
+        return this.enableManagement;
+    }
+
+    /**
      * (Updatable) Specifies database management type
      * enum:
      * - `BASIC`
@@ -58,14 +77,29 @@ public final class CloudDatabaseManagementArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * (Updatable) The private end point [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The port used to connect to the database.
+     * 
+     */
+    @Import(name="port")
+    private @Nullable Output<Integer> port;
+
+    /**
+     * @return The port used to connect to the database.
+     * 
+     */
+    public Optional<Output<Integer>> port() {
+        return Optional.ofNullable(this.port);
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
      * 
      */
     @Import(name="privateEndPointId", required=true)
     private Output<String> privateEndPointId;
 
     /**
-     * @return (Updatable) The private end point [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
      * 
      */
     public Output<String> privateEndPointId() {
@@ -73,18 +107,63 @@ public final class CloudDatabaseManagementArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * (Updatable) Database service name
+     * Protocol used by the database connection.
+     * 
+     */
+    @Import(name="protocol")
+    private @Nullable Output<String> protocol;
+
+    /**
+     * @return Protocol used by the database connection.
+     * 
+     */
+    public Optional<Output<String>> protocol() {
+        return Optional.ofNullable(this.protocol);
+    }
+
+    /**
+     * The role of the user that will be connecting to the database.
+     * 
+     */
+    @Import(name="role")
+    private @Nullable Output<String> role;
+
+    /**
+     * @return The role of the user that will be connecting to the database.
+     * 
+     */
+    public Optional<Output<String>> role() {
+        return Optional.ofNullable(this.role);
+    }
+
+    /**
+     * The name of the Oracle Database service that will be used to connect to the database.
      * 
      */
     @Import(name="serviceName", required=true)
     private Output<String> serviceName;
 
     /**
-     * @return (Updatable) Database service name
+     * @return The name of the Oracle Database service that will be used to connect to the database.
      * 
      */
     public Output<String> serviceName() {
         return this.serviceName;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * 
+     */
+    @Import(name="sslSecretId")
+    private @Nullable Output<String> sslSecretId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * 
+     */
+    public Optional<Output<String>> sslSecretId() {
+        return Optional.ofNullable(this.sslSecretId);
     }
 
     private CloudDatabaseManagementArgs() {}
@@ -92,9 +171,14 @@ public final class CloudDatabaseManagementArgs extends com.pulumi.resources.Reso
     private CloudDatabaseManagementArgs(CloudDatabaseManagementArgs $) {
         this.credentialdetails = $.credentialdetails;
         this.databaseId = $.databaseId;
+        this.enableManagement = $.enableManagement;
         this.managementType = $.managementType;
+        this.port = $.port;
         this.privateEndPointId = $.privateEndPointId;
+        this.protocol = $.protocol;
+        this.role = $.role;
         this.serviceName = $.serviceName;
+        this.sslSecretId = $.sslSecretId;
     }
 
     public static Builder builder() {
@@ -146,6 +230,27 @@ public final class CloudDatabaseManagementArgs extends com.pulumi.resources.Reso
         }
 
         /**
+         * @param enableManagement (Updatable) Use this flag to enable/disable database management
+         * 
+         * @return builder
+         * 
+         */
+        public Builder enableManagement(Output<Boolean> enableManagement) {
+            $.enableManagement = enableManagement;
+            return this;
+        }
+
+        /**
+         * @param enableManagement (Updatable) Use this flag to enable/disable database management
+         * 
+         * @return builder
+         * 
+         */
+        public Builder enableManagement(Boolean enableManagement) {
+            return enableManagement(Output.of(enableManagement));
+        }
+
+        /**
          * @param managementType (Updatable) Specifies database management type
          * enum:
          * - `BASIC`
@@ -173,7 +278,28 @@ public final class CloudDatabaseManagementArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param privateEndPointId (Updatable) The private end point [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * @param port The port used to connect to the database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder port(@Nullable Output<Integer> port) {
+            $.port = port;
+            return this;
+        }
+
+        /**
+         * @param port The port used to connect to the database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder port(Integer port) {
+            return port(Output.of(port));
+        }
+
+        /**
+         * @param privateEndPointId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
          * 
          * @return builder
          * 
@@ -184,7 +310,7 @@ public final class CloudDatabaseManagementArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param privateEndPointId (Updatable) The private end point [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * @param privateEndPointId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
          * 
          * @return builder
          * 
@@ -194,7 +320,49 @@ public final class CloudDatabaseManagementArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param serviceName (Updatable) Database service name
+         * @param protocol Protocol used by the database connection.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder protocol(@Nullable Output<String> protocol) {
+            $.protocol = protocol;
+            return this;
+        }
+
+        /**
+         * @param protocol Protocol used by the database connection.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder protocol(String protocol) {
+            return protocol(Output.of(protocol));
+        }
+
+        /**
+         * @param role The role of the user that will be connecting to the database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder role(@Nullable Output<String> role) {
+            $.role = role;
+            return this;
+        }
+
+        /**
+         * @param role The role of the user that will be connecting to the database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder role(String role) {
+            return role(Output.of(role));
+        }
+
+        /**
+         * @param serviceName The name of the Oracle Database service that will be used to connect to the database.
          * 
          * @return builder
          * 
@@ -205,7 +373,7 @@ public final class CloudDatabaseManagementArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param serviceName (Updatable) Database service name
+         * @param serviceName The name of the Oracle Database service that will be used to connect to the database.
          * 
          * @return builder
          * 
@@ -214,9 +382,31 @@ public final class CloudDatabaseManagementArgs extends com.pulumi.resources.Reso
             return serviceName(Output.of(serviceName));
         }
 
+        /**
+         * @param sslSecretId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sslSecretId(@Nullable Output<String> sslSecretId) {
+            $.sslSecretId = sslSecretId;
+            return this;
+        }
+
+        /**
+         * @param sslSecretId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sslSecretId(String sslSecretId) {
+            return sslSecretId(Output.of(sslSecretId));
+        }
+
         public CloudDatabaseManagementArgs build() {
             $.credentialdetails = Objects.requireNonNull($.credentialdetails, "expected parameter 'credentialdetails' to be non-null");
             $.databaseId = Objects.requireNonNull($.databaseId, "expected parameter 'databaseId' to be non-null");
+            $.enableManagement = Objects.requireNonNull($.enableManagement, "expected parameter 'enableManagement' to be non-null");
             $.managementType = Objects.requireNonNull($.managementType, "expected parameter 'managementType' to be non-null");
             $.privateEndPointId = Objects.requireNonNull($.privateEndPointId, "expected parameter 'privateEndPointId' to be non-null");
             $.serviceName = Objects.requireNonNull($.serviceName, "expected parameter 'serviceName' to be non-null");

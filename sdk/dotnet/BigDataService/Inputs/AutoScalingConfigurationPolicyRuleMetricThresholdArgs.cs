@@ -13,7 +13,7 @@ namespace Pulumi.Oci.BigDataService.Inputs
     public sealed class AutoScalingConfigurationPolicyRuleMetricThresholdArgs : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) This value is the minimum period of time the metric value meets or exceeds the threshold value before the action is triggered. The value is in minutes.
+        /// (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
         /// </summary>
         [Input("durationInMinutes", required: true)]
         public Input<int> DurationInMinutes { get; set; } = null!;

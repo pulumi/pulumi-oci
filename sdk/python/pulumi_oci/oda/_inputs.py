@@ -9,8 +9,48 @@ from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
+    'OdaInstanceRestrictedOperationArgs',
     'GetOdaInstancesFilterArgs',
 ]
+
+@pulumi.input_type
+class OdaInstanceRestrictedOperationArgs:
+    def __init__(__self__, *,
+                 operation_name: Optional[pulumi.Input[str]] = None,
+                 restricting_service: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] operation_name: Name of the restricted operation.
+        :param pulumi.Input[str] restricting_service: Name of the service restricting the operation.
+        """
+        if operation_name is not None:
+            pulumi.set(__self__, "operation_name", operation_name)
+        if restricting_service is not None:
+            pulumi.set(__self__, "restricting_service", restricting_service)
+
+    @property
+    @pulumi.getter(name="operationName")
+    def operation_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of the restricted operation.
+        """
+        return pulumi.get(self, "operation_name")
+
+    @operation_name.setter
+    def operation_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "operation_name", value)
+
+    @property
+    @pulumi.getter(name="restrictingService")
+    def restricting_service(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of the service restricting the operation.
+        """
+        return pulumi.get(self, "restricting_service")
+
+    @restricting_service.setter
+    def restricting_service(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "restricting_service", value)
+
 
 @pulumi.input_type
 class GetOdaInstancesFilterArgs:

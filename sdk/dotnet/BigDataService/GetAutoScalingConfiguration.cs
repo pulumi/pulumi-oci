@@ -134,13 +134,17 @@ namespace Pulumi.Oci.BigDataService
         public readonly string Id;
         public readonly bool IsEnabled;
         /// <summary>
-        /// A node type that is managed by an autoscale configuration. The only supported type is WORKER.
+        /// A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
         /// </summary>
         public readonly string NodeType;
         /// <summary>
-        /// Policy definitions for the autoscale configuration.
+        /// This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutoScalingConfigurationPolicyResult> Policies;
+        /// <summary>
+        /// Details of an autoscale policy.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetAutoScalingConfigurationPolicyDetailResult> PolicyDetails;
         /// <summary>
         /// The state of the autoscale configuration.
         /// </summary>
@@ -172,6 +176,8 @@ namespace Pulumi.Oci.BigDataService
 
             ImmutableArray<Outputs.GetAutoScalingConfigurationPolicyResult> policies,
 
+            ImmutableArray<Outputs.GetAutoScalingConfigurationPolicyDetailResult> policyDetails,
+
             string state,
 
             string timeCreated,
@@ -186,6 +192,7 @@ namespace Pulumi.Oci.BigDataService
             IsEnabled = isEnabled;
             NodeType = nodeType;
             Policies = policies;
+            PolicyDetails = policyDetails;
             State = state;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;

@@ -18,7 +18,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string BandwidthShapeName;
         /// <summary>
-        /// Set to ENABLED to activate the  bgp session of virtual circuit, DISABLED to deactivate.
+        /// Set to `ENABLED` (the default) to activate the BGP session of the virtual circuit, set to `DISABLED` to deactivate the virtual circuit.
         /// </summary>
         public readonly string BgpAdminState;
         /// <summary>
@@ -74,7 +74,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string IpMtu;
         /// <summary>
-        /// Set to true to enable BFD for ipv4 Bgp Peering, false to disable. If not set, default is false
+        /// Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
         /// </summary>
         public readonly bool IsBfdEnabled;
         /// <summary>

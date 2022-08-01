@@ -4,13 +4,26 @@
 package com.pulumi.oci.Oda.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Oda.outputs.GetOdaInstanceRestrictedOperation;
+import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
 @CustomType
 public final class GetOdaInstanceResult {
+    /**
+     * @return A list of attachment identifiers for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+     * 
+     */
+    private final List<String> attachmentIds;
+    /**
+     * @return A list of attachment types for this instance (if any). Use attachmentIds to get the details of the attachments.
+     * 
+     */
+    private final List<String> attachmentTypes;
     /**
      * @return Identifier of the compartment that the instance belongs to.
      * 
@@ -37,7 +50,7 @@ public final class GetOdaInstanceResult {
      */
     private final String displayName;
     /**
-     * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * @return Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     private final Map<String,Object> freeformTags;
@@ -47,11 +60,46 @@ public final class GetOdaInstanceResult {
      */
     private final String id;
     /**
+     * @return If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.
+     * 
+     */
+    private final String identityAppConsoleUrl;
+    /**
+     * @return If isRoleBasedAccess is set to true, this property specifies the GUID of the Identity Application instance Digital Assistant has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this Digital Assistant instance for users within the identity domain.
+     * 
+     */
+    private final String identityAppGuid;
+    /**
+     * @return If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
+     * 
+     */
+    private final String identityDomain;
+    /**
+     * @return A list of package ids imported into this instance (if any). Use GetImportedPackage to get the details of the imported packages.
+     * 
+     */
+    private final List<String> importedPackageIds;
+    /**
+     * @return A list of package names imported into this instance (if any). Use importedPackageIds field to get the details of the imported packages.
+     * 
+     */
+    private final List<String> importedPackageNames;
+    /**
+     * @return Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
+     * 
+     */
+    private final Boolean isRoleBasedAccess;
+    /**
      * @return The current sub-state of the Digital Assistant instance.
      * 
      */
     private final String lifecycleSubState;
     private final String odaInstanceId;
+    /**
+     * @return A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+     * 
+     */
+    private final List<GetOdaInstanceRestrictedOperation> restrictedOperations;
     /**
      * @return Shape or size of the instance.
      * 
@@ -85,6 +133,8 @@ public final class GetOdaInstanceResult {
 
     @CustomType.Constructor
     private GetOdaInstanceResult(
+        @CustomType.Parameter("attachmentIds") List<String> attachmentIds,
+        @CustomType.Parameter("attachmentTypes") List<String> attachmentTypes,
         @CustomType.Parameter("compartmentId") String compartmentId,
         @CustomType.Parameter("connectorUrl") String connectorUrl,
         @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
@@ -92,14 +142,23 @@ public final class GetOdaInstanceResult {
         @CustomType.Parameter("displayName") String displayName,
         @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
         @CustomType.Parameter("id") String id,
+        @CustomType.Parameter("identityAppConsoleUrl") String identityAppConsoleUrl,
+        @CustomType.Parameter("identityAppGuid") String identityAppGuid,
+        @CustomType.Parameter("identityDomain") String identityDomain,
+        @CustomType.Parameter("importedPackageIds") List<String> importedPackageIds,
+        @CustomType.Parameter("importedPackageNames") List<String> importedPackageNames,
+        @CustomType.Parameter("isRoleBasedAccess") Boolean isRoleBasedAccess,
         @CustomType.Parameter("lifecycleSubState") String lifecycleSubState,
         @CustomType.Parameter("odaInstanceId") String odaInstanceId,
+        @CustomType.Parameter("restrictedOperations") List<GetOdaInstanceRestrictedOperation> restrictedOperations,
         @CustomType.Parameter("shapeName") String shapeName,
         @CustomType.Parameter("state") String state,
         @CustomType.Parameter("stateMessage") String stateMessage,
         @CustomType.Parameter("timeCreated") String timeCreated,
         @CustomType.Parameter("timeUpdated") String timeUpdated,
         @CustomType.Parameter("webAppUrl") String webAppUrl) {
+        this.attachmentIds = attachmentIds;
+        this.attachmentTypes = attachmentTypes;
         this.compartmentId = compartmentId;
         this.connectorUrl = connectorUrl;
         this.definedTags = definedTags;
@@ -107,8 +166,15 @@ public final class GetOdaInstanceResult {
         this.displayName = displayName;
         this.freeformTags = freeformTags;
         this.id = id;
+        this.identityAppConsoleUrl = identityAppConsoleUrl;
+        this.identityAppGuid = identityAppGuid;
+        this.identityDomain = identityDomain;
+        this.importedPackageIds = importedPackageIds;
+        this.importedPackageNames = importedPackageNames;
+        this.isRoleBasedAccess = isRoleBasedAccess;
         this.lifecycleSubState = lifecycleSubState;
         this.odaInstanceId = odaInstanceId;
+        this.restrictedOperations = restrictedOperations;
         this.shapeName = shapeName;
         this.state = state;
         this.stateMessage = stateMessage;
@@ -117,6 +183,20 @@ public final class GetOdaInstanceResult {
         this.webAppUrl = webAppUrl;
     }
 
+    /**
+     * @return A list of attachment identifiers for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+     * 
+     */
+    public List<String> attachmentIds() {
+        return this.attachmentIds;
+    }
+    /**
+     * @return A list of attachment types for this instance (if any). Use attachmentIds to get the details of the attachments.
+     * 
+     */
+    public List<String> attachmentTypes() {
+        return this.attachmentTypes;
+    }
     /**
      * @return Identifier of the compartment that the instance belongs to.
      * 
@@ -153,7 +233,7 @@ public final class GetOdaInstanceResult {
         return this.displayName;
     }
     /**
-     * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * @return Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
@@ -167,6 +247,48 @@ public final class GetOdaInstanceResult {
         return this.id;
     }
     /**
+     * @return If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.
+     * 
+     */
+    public String identityAppConsoleUrl() {
+        return this.identityAppConsoleUrl;
+    }
+    /**
+     * @return If isRoleBasedAccess is set to true, this property specifies the GUID of the Identity Application instance Digital Assistant has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this Digital Assistant instance for users within the identity domain.
+     * 
+     */
+    public String identityAppGuid() {
+        return this.identityAppGuid;
+    }
+    /**
+     * @return If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
+     * 
+     */
+    public String identityDomain() {
+        return this.identityDomain;
+    }
+    /**
+     * @return A list of package ids imported into this instance (if any). Use GetImportedPackage to get the details of the imported packages.
+     * 
+     */
+    public List<String> importedPackageIds() {
+        return this.importedPackageIds;
+    }
+    /**
+     * @return A list of package names imported into this instance (if any). Use importedPackageIds field to get the details of the imported packages.
+     * 
+     */
+    public List<String> importedPackageNames() {
+        return this.importedPackageNames;
+    }
+    /**
+     * @return Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
+     * 
+     */
+    public Boolean isRoleBasedAccess() {
+        return this.isRoleBasedAccess;
+    }
+    /**
      * @return The current sub-state of the Digital Assistant instance.
      * 
      */
@@ -175,6 +297,13 @@ public final class GetOdaInstanceResult {
     }
     public String odaInstanceId() {
         return this.odaInstanceId;
+    }
+    /**
+     * @return A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+     * 
+     */
+    public List<GetOdaInstanceRestrictedOperation> restrictedOperations() {
+        return this.restrictedOperations;
     }
     /**
      * @return Shape or size of the instance.
@@ -228,6 +357,8 @@ public final class GetOdaInstanceResult {
     }
 
     public static final class Builder {
+        private List<String> attachmentIds;
+        private List<String> attachmentTypes;
         private String compartmentId;
         private String connectorUrl;
         private Map<String,Object> definedTags;
@@ -235,8 +366,15 @@ public final class GetOdaInstanceResult {
         private String displayName;
         private Map<String,Object> freeformTags;
         private String id;
+        private String identityAppConsoleUrl;
+        private String identityAppGuid;
+        private String identityDomain;
+        private List<String> importedPackageIds;
+        private List<String> importedPackageNames;
+        private Boolean isRoleBasedAccess;
         private String lifecycleSubState;
         private String odaInstanceId;
+        private List<GetOdaInstanceRestrictedOperation> restrictedOperations;
         private String shapeName;
         private String state;
         private String stateMessage;
@@ -250,6 +388,8 @@ public final class GetOdaInstanceResult {
 
         public Builder(GetOdaInstanceResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.attachmentIds = defaults.attachmentIds;
+    	      this.attachmentTypes = defaults.attachmentTypes;
     	      this.compartmentId = defaults.compartmentId;
     	      this.connectorUrl = defaults.connectorUrl;
     	      this.definedTags = defaults.definedTags;
@@ -257,8 +397,15 @@ public final class GetOdaInstanceResult {
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.identityAppConsoleUrl = defaults.identityAppConsoleUrl;
+    	      this.identityAppGuid = defaults.identityAppGuid;
+    	      this.identityDomain = defaults.identityDomain;
+    	      this.importedPackageIds = defaults.importedPackageIds;
+    	      this.importedPackageNames = defaults.importedPackageNames;
+    	      this.isRoleBasedAccess = defaults.isRoleBasedAccess;
     	      this.lifecycleSubState = defaults.lifecycleSubState;
     	      this.odaInstanceId = defaults.odaInstanceId;
+    	      this.restrictedOperations = defaults.restrictedOperations;
     	      this.shapeName = defaults.shapeName;
     	      this.state = defaults.state;
     	      this.stateMessage = defaults.stateMessage;
@@ -267,6 +414,20 @@ public final class GetOdaInstanceResult {
     	      this.webAppUrl = defaults.webAppUrl;
         }
 
+        public Builder attachmentIds(List<String> attachmentIds) {
+            this.attachmentIds = Objects.requireNonNull(attachmentIds);
+            return this;
+        }
+        public Builder attachmentIds(String... attachmentIds) {
+            return attachmentIds(List.of(attachmentIds));
+        }
+        public Builder attachmentTypes(List<String> attachmentTypes) {
+            this.attachmentTypes = Objects.requireNonNull(attachmentTypes);
+            return this;
+        }
+        public Builder attachmentTypes(String... attachmentTypes) {
+            return attachmentTypes(List.of(attachmentTypes));
+        }
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
@@ -295,6 +456,36 @@ public final class GetOdaInstanceResult {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        public Builder identityAppConsoleUrl(String identityAppConsoleUrl) {
+            this.identityAppConsoleUrl = Objects.requireNonNull(identityAppConsoleUrl);
+            return this;
+        }
+        public Builder identityAppGuid(String identityAppGuid) {
+            this.identityAppGuid = Objects.requireNonNull(identityAppGuid);
+            return this;
+        }
+        public Builder identityDomain(String identityDomain) {
+            this.identityDomain = Objects.requireNonNull(identityDomain);
+            return this;
+        }
+        public Builder importedPackageIds(List<String> importedPackageIds) {
+            this.importedPackageIds = Objects.requireNonNull(importedPackageIds);
+            return this;
+        }
+        public Builder importedPackageIds(String... importedPackageIds) {
+            return importedPackageIds(List.of(importedPackageIds));
+        }
+        public Builder importedPackageNames(List<String> importedPackageNames) {
+            this.importedPackageNames = Objects.requireNonNull(importedPackageNames);
+            return this;
+        }
+        public Builder importedPackageNames(String... importedPackageNames) {
+            return importedPackageNames(List.of(importedPackageNames));
+        }
+        public Builder isRoleBasedAccess(Boolean isRoleBasedAccess) {
+            this.isRoleBasedAccess = Objects.requireNonNull(isRoleBasedAccess);
+            return this;
+        }
         public Builder lifecycleSubState(String lifecycleSubState) {
             this.lifecycleSubState = Objects.requireNonNull(lifecycleSubState);
             return this;
@@ -302,6 +493,13 @@ public final class GetOdaInstanceResult {
         public Builder odaInstanceId(String odaInstanceId) {
             this.odaInstanceId = Objects.requireNonNull(odaInstanceId);
             return this;
+        }
+        public Builder restrictedOperations(List<GetOdaInstanceRestrictedOperation> restrictedOperations) {
+            this.restrictedOperations = Objects.requireNonNull(restrictedOperations);
+            return this;
+        }
+        public Builder restrictedOperations(GetOdaInstanceRestrictedOperation... restrictedOperations) {
+            return restrictedOperations(List.of(restrictedOperations));
         }
         public Builder shapeName(String shapeName) {
             this.shapeName = Objects.requireNonNull(shapeName);
@@ -327,7 +525,7 @@ public final class GetOdaInstanceResult {
             this.webAppUrl = Objects.requireNonNull(webAppUrl);
             return this;
         }        public GetOdaInstanceResult build() {
-            return new GetOdaInstanceResult(compartmentId, connectorUrl, definedTags, description, displayName, freeformTags, id, lifecycleSubState, odaInstanceId, shapeName, state, stateMessage, timeCreated, timeUpdated, webAppUrl);
+            return new GetOdaInstanceResult(attachmentIds, attachmentTypes, compartmentId, connectorUrl, definedTags, description, displayName, freeformTags, id, identityAppConsoleUrl, identityAppGuid, identityDomain, importedPackageIds, importedPackageNames, isRoleBasedAccess, lifecycleSubState, odaInstanceId, restrictedOperations, shapeName, state, stateMessage, timeCreated, timeUpdated, webAppUrl);
         }
     }
 }

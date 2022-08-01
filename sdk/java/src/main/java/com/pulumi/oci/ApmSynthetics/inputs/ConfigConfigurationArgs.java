@@ -218,14 +218,14 @@ public final class ConfigConfigurationArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * (Updatable) Verify all the search strings present in response. If any search string is not present in the response, then it will be considered as a failure.
+     * (Updatable) Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
      * 
      */
     @Import(name="verifyTexts")
     private @Nullable Output<List<ConfigConfigurationVerifyTextArgs>> verifyTexts;
 
     /**
-     * @return (Updatable) Verify all the search strings present in response. If any search string is not present in the response, then it will be considered as a failure.
+     * @return (Updatable) Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
      * 
      */
     public Optional<Output<List<ConfigConfigurationVerifyTextArgs>>> verifyTexts() {
@@ -573,7 +573,7 @@ public final class ConfigConfigurationArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param verifyTexts (Updatable) Verify all the search strings present in response. If any search string is not present in the response, then it will be considered as a failure.
+         * @param verifyTexts (Updatable) Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
          * 
          * @return builder
          * 
@@ -584,7 +584,7 @@ public final class ConfigConfigurationArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param verifyTexts (Updatable) Verify all the search strings present in response. If any search string is not present in the response, then it will be considered as a failure.
+         * @param verifyTexts (Updatable) Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
          * 
          * @return builder
          * 
@@ -594,7 +594,7 @@ public final class ConfigConfigurationArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param verifyTexts (Updatable) Verify all the search strings present in response. If any search string is not present in the response, then it will be considered as a failure.
+         * @param verifyTexts (Updatable) Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
          * 
          * @return builder
          * 

@@ -4,6 +4,8 @@
 package com.pulumi.oci.Limits.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Limits.outputs.GetQuotasQuotaLock;
+import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -37,6 +39,12 @@ public final class GetQuotasQuota {
      * 
      */
     private final String id;
+    private final Boolean isLockOverride;
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    private final List<GetQuotasQuotaLock> locks;
     /**
      * @return name
      * 
@@ -65,6 +73,8 @@ public final class GetQuotasQuota {
         @CustomType.Parameter("description") String description,
         @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
         @CustomType.Parameter("id") String id,
+        @CustomType.Parameter("isLockOverride") Boolean isLockOverride,
+        @CustomType.Parameter("locks") List<GetQuotasQuotaLock> locks,
         @CustomType.Parameter("name") String name,
         @CustomType.Parameter("state") String state,
         @CustomType.Parameter("statements") List<String> statements,
@@ -74,6 +84,8 @@ public final class GetQuotasQuota {
         this.description = description;
         this.freeformTags = freeformTags;
         this.id = id;
+        this.isLockOverride = isLockOverride;
+        this.locks = locks;
         this.name = name;
         this.state = state;
         this.statements = statements;
@@ -114,6 +126,16 @@ public final class GetQuotasQuota {
      */
     public String id() {
         return this.id;
+    }
+    public Boolean isLockOverride() {
+        return this.isLockOverride;
+    }
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public List<GetQuotasQuotaLock> locks() {
+        return this.locks;
     }
     /**
      * @return name
@@ -158,6 +180,8 @@ public final class GetQuotasQuota {
         private String description;
         private Map<String,Object> freeformTags;
         private String id;
+        private Boolean isLockOverride;
+        private List<GetQuotasQuotaLock> locks;
         private String name;
         private String state;
         private List<String> statements;
@@ -174,6 +198,8 @@ public final class GetQuotasQuota {
     	      this.description = defaults.description;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.isLockOverride = defaults.isLockOverride;
+    	      this.locks = defaults.locks;
     	      this.name = defaults.name;
     	      this.state = defaults.state;
     	      this.statements = defaults.statements;
@@ -200,6 +226,17 @@ public final class GetQuotasQuota {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        public Builder isLockOverride(Boolean isLockOverride) {
+            this.isLockOverride = Objects.requireNonNull(isLockOverride);
+            return this;
+        }
+        public Builder locks(List<GetQuotasQuotaLock> locks) {
+            this.locks = Objects.requireNonNull(locks);
+            return this;
+        }
+        public Builder locks(GetQuotasQuotaLock... locks) {
+            return locks(List.of(locks));
+        }
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
@@ -219,7 +256,7 @@ public final class GetQuotasQuota {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }        public GetQuotasQuota build() {
-            return new GetQuotasQuota(compartmentId, definedTags, description, freeformTags, id, name, state, statements, timeCreated);
+            return new GetQuotasQuota(compartmentId, definedTags, description, freeformTags, id, isLockOverride, locks, name, state, statements, timeCreated);
         }
     }
 }

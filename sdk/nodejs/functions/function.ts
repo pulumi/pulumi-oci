@@ -29,6 +29,10 @@ import * as utilities from "../utilities";
  *         Department: "Finance",
  *     },
  *     imageDigest: _var.function_image_digest,
+ *     provisionedConcurrencyConfig: {
+ *         strategy: _var.function_provisioned_concurrency_config_strategy,
+ *         count: _var.function_provisioned_concurrency_config_count,
+ *     },
  *     timeoutInSeconds: _var.function_timeout_in_seconds,
  *     traceConfig: {
  *         isEnabled: _var.function_trace_config_is_enabled,
@@ -113,6 +117,10 @@ export class Function extends pulumi.CustomResource {
      */
     public readonly memoryInMbs!: pulumi.Output<string>;
     /**
+     * (Updatable) Define the strategy for provisioned concurrency for the function.
+     */
+    public readonly provisionedConcurrencyConfig!: pulumi.Output<outputs.Functions.FunctionProvisionedConcurrencyConfig>;
+    /**
      * The current state of the function.
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
@@ -156,6 +164,7 @@ export class Function extends pulumi.CustomResource {
             resourceInputs["imageDigest"] = state ? state.imageDigest : undefined;
             resourceInputs["invokeEndpoint"] = state ? state.invokeEndpoint : undefined;
             resourceInputs["memoryInMbs"] = state ? state.memoryInMbs : undefined;
+            resourceInputs["provisionedConcurrencyConfig"] = state ? state.provisionedConcurrencyConfig : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
@@ -183,6 +192,7 @@ export class Function extends pulumi.CustomResource {
             resourceInputs["image"] = args ? args.image : undefined;
             resourceInputs["imageDigest"] = args ? args.imageDigest : undefined;
             resourceInputs["memoryInMbs"] = args ? args.memoryInMbs : undefined;
+            resourceInputs["provisionedConcurrencyConfig"] = args ? args.provisionedConcurrencyConfig : undefined;
             resourceInputs["timeoutInSeconds"] = args ? args.timeoutInSeconds : undefined;
             resourceInputs["traceConfig"] = args ? args.traceConfig : undefined;
             resourceInputs["compartmentId"] = undefined /*out*/;
@@ -241,6 +251,10 @@ export interface FunctionState {
      */
     memoryInMbs?: pulumi.Input<string>;
     /**
+     * (Updatable) Define the strategy for provisioned concurrency for the function.
+     */
+    provisionedConcurrencyConfig?: pulumi.Input<inputs.Functions.FunctionProvisionedConcurrencyConfig>;
+    /**
      * The current state of the function.
      */
     state?: pulumi.Input<string>;
@@ -298,6 +312,10 @@ export interface FunctionArgs {
      * (Updatable) Maximum usable memory for the function (MiB).
      */
     memoryInMbs: pulumi.Input<string>;
+    /**
+     * (Updatable) Define the strategy for provisioned concurrency for the function.
+     */
+    provisionedConcurrencyConfig?: pulumi.Input<inputs.Functions.FunctionProvisionedConcurrencyConfig>;
     /**
      * (Updatable) Timeout for executions of the function. Value in seconds.
      */

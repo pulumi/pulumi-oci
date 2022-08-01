@@ -10,10 +10,15 @@ import java.util.Objects;
 @CustomType
 public final class GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSource {
     /**
-     * @return base64 Encoded String
+     * @return Specifies content for the inline artifact.
      * 
      */
     private final String base64encodedContent;
+    /**
+     * @return The URL of an OCIR repository.
+     * 
+     */
+    private final String chartUrl;
     /**
      * @return Specifies the artifact path in the repository.
      * 
@@ -48,6 +53,7 @@ public final class GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactS
     @CustomType.Constructor
     private GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSource(
         @CustomType.Parameter("base64encodedContent") String base64encodedContent,
+        @CustomType.Parameter("chartUrl") String chartUrl,
         @CustomType.Parameter("deployArtifactPath") String deployArtifactPath,
         @CustomType.Parameter("deployArtifactSourceType") String deployArtifactSourceType,
         @CustomType.Parameter("deployArtifactVersion") String deployArtifactVersion,
@@ -55,6 +61,7 @@ public final class GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactS
         @CustomType.Parameter("imageUri") String imageUri,
         @CustomType.Parameter("repositoryId") String repositoryId) {
         this.base64encodedContent = base64encodedContent;
+        this.chartUrl = chartUrl;
         this.deployArtifactPath = deployArtifactPath;
         this.deployArtifactSourceType = deployArtifactSourceType;
         this.deployArtifactVersion = deployArtifactVersion;
@@ -64,11 +71,18 @@ public final class GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactS
     }
 
     /**
-     * @return base64 Encoded String
+     * @return Specifies content for the inline artifact.
      * 
      */
     public String base64encodedContent() {
         return this.base64encodedContent;
+    }
+    /**
+     * @return The URL of an OCIR repository.
+     * 
+     */
+    public String chartUrl() {
+        return this.chartUrl;
     }
     /**
      * @return Specifies the artifact path in the repository.
@@ -123,6 +137,7 @@ public final class GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactS
 
     public static final class Builder {
         private String base64encodedContent;
+        private String chartUrl;
         private String deployArtifactPath;
         private String deployArtifactSourceType;
         private String deployArtifactVersion;
@@ -137,6 +152,7 @@ public final class GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactS
         public Builder(GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSource defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.base64encodedContent = defaults.base64encodedContent;
+    	      this.chartUrl = defaults.chartUrl;
     	      this.deployArtifactPath = defaults.deployArtifactPath;
     	      this.deployArtifactSourceType = defaults.deployArtifactSourceType;
     	      this.deployArtifactVersion = defaults.deployArtifactVersion;
@@ -147,6 +163,10 @@ public final class GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactS
 
         public Builder base64encodedContent(String base64encodedContent) {
             this.base64encodedContent = Objects.requireNonNull(base64encodedContent);
+            return this;
+        }
+        public Builder chartUrl(String chartUrl) {
+            this.chartUrl = Objects.requireNonNull(chartUrl);
             return this;
         }
         public Builder deployArtifactPath(String deployArtifactPath) {
@@ -173,7 +193,7 @@ public final class GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactS
             this.repositoryId = Objects.requireNonNull(repositoryId);
             return this;
         }        public GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSource build() {
-            return new GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSource(base64encodedContent, deployArtifactPath, deployArtifactSourceType, deployArtifactVersion, imageDigest, imageUri, repositoryId);
+            return new GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSource(base64encodedContent, chartUrl, deployArtifactPath, deployArtifactSourceType, deployArtifactVersion, imageDigest, imageUri, repositoryId);
         }
     }
 }

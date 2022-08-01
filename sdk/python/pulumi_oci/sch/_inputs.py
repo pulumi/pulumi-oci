@@ -12,6 +12,10 @@ __all__ = [
     'ConnectorSourceArgs',
     'ConnectorSourceCursorArgs',
     'ConnectorSourceLogSourceArgs',
+    'ConnectorSourceMonitoringSourceArgs',
+    'ConnectorSourceMonitoringSourceNamespaceDetailsArgs',
+    'ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs',
+    'ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgs',
     'ConnectorTargetArgs',
     'ConnectorTargetDimensionArgs',
     'ConnectorTargetDimensionDimensionValueArgs',
@@ -25,11 +29,13 @@ class ConnectorSourceArgs:
                  kind: pulumi.Input[str],
                  cursor: Optional[pulumi.Input['ConnectorSourceCursorArgs']] = None,
                  log_sources: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectorSourceLogSourceArgs']]]] = None,
+                 monitoring_sources: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectorSourceMonitoringSourceArgs']]]] = None,
                  stream_id: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] kind: (Updatable) The type descriminator.
         :param pulumi.Input['ConnectorSourceCursorArgs'] cursor: (Updatable) The type of [cursor](https://docs.cloud.oracle.com/iaas/Content/Streaming/Tasks/using_a_single_consumer.htm#usingcursors), which determines the starting point from which the stream will be consumed.
         :param pulumi.Input[Sequence[pulumi.Input['ConnectorSourceLogSourceArgs']]] log_sources: (Updatable) The logs for this Logging source.
+        :param pulumi.Input[Sequence[pulumi.Input['ConnectorSourceMonitoringSourceArgs']]] monitoring_sources: (Updatable) The list of metric namespaces to retrieve data from.
         :param pulumi.Input[str] stream_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
         """
         pulumi.set(__self__, "kind", kind)
@@ -37,6 +43,8 @@ class ConnectorSourceArgs:
             pulumi.set(__self__, "cursor", cursor)
         if log_sources is not None:
             pulumi.set(__self__, "log_sources", log_sources)
+        if monitoring_sources is not None:
+            pulumi.set(__self__, "monitoring_sources", monitoring_sources)
         if stream_id is not None:
             pulumi.set(__self__, "stream_id", stream_id)
 
@@ -75,6 +83,18 @@ class ConnectorSourceArgs:
     @log_sources.setter
     def log_sources(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectorSourceLogSourceArgs']]]]):
         pulumi.set(self, "log_sources", value)
+
+    @property
+    @pulumi.getter(name="monitoringSources")
+    def monitoring_sources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ConnectorSourceMonitoringSourceArgs']]]]:
+        """
+        (Updatable) The list of metric namespaces to retrieve data from.
+        """
+        return pulumi.get(self, "monitoring_sources")
+
+    @monitoring_sources.setter
+    def monitoring_sources(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectorSourceMonitoringSourceArgs']]]]):
+        pulumi.set(self, "monitoring_sources", value)
 
     @property
     @pulumi.getter(name="streamId")
@@ -165,6 +185,141 @@ class ConnectorSourceLogSourceArgs:
     @log_id.setter
     def log_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "log_id", value)
+
+
+@pulumi.input_type
+class ConnectorSourceMonitoringSourceArgs:
+    def __init__(__self__, *,
+                 compartment_id: Optional[pulumi.Input[str]] = None,
+                 namespace_details: Optional[pulumi.Input['ConnectorSourceMonitoringSourceNamespaceDetailsArgs']] = None):
+        """
+        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
+        :param pulumi.Input['ConnectorSourceMonitoringSourceNamespaceDetailsArgs'] namespace_details: (Updatable) Discriminator for namespaces in the compartment-specific list.
+        """
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if namespace_details is not None:
+            pulumi.set(__self__, "namespace_details", namespace_details)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @compartment_id.setter
+    def compartment_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "compartment_id", value)
+
+    @property
+    @pulumi.getter(name="namespaceDetails")
+    def namespace_details(self) -> Optional[pulumi.Input['ConnectorSourceMonitoringSourceNamespaceDetailsArgs']]:
+        """
+        (Updatable) Discriminator for namespaces in the compartment-specific list.
+        """
+        return pulumi.get(self, "namespace_details")
+
+    @namespace_details.setter
+    def namespace_details(self, value: Optional[pulumi.Input['ConnectorSourceMonitoringSourceNamespaceDetailsArgs']]):
+        pulumi.set(self, "namespace_details", value)
+
+
+@pulumi.input_type
+class ConnectorSourceMonitoringSourceNamespaceDetailsArgs:
+    def __init__(__self__, *,
+                 kind: pulumi.Input[str],
+                 namespaces: pulumi.Input[Sequence[pulumi.Input['ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs']]]):
+        """
+        :param pulumi.Input[str] kind: (Updatable) The type descriminator.
+        :param pulumi.Input[Sequence[pulumi.Input['ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs']]] namespaces: (Updatable) The namespaces for the compartment-specific list.
+        """
+        pulumi.set(__self__, "kind", kind)
+        pulumi.set(__self__, "namespaces", namespaces)
+
+    @property
+    @pulumi.getter
+    def kind(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The type descriminator.
+        """
+        return pulumi.get(self, "kind")
+
+    @kind.setter
+    def kind(self, value: pulumi.Input[str]):
+        pulumi.set(self, "kind", value)
+
+    @property
+    @pulumi.getter
+    def namespaces(self) -> pulumi.Input[Sequence[pulumi.Input['ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs']]]:
+        """
+        (Updatable) The namespaces for the compartment-specific list.
+        """
+        return pulumi.get(self, "namespaces")
+
+    @namespaces.setter
+    def namespaces(self, value: pulumi.Input[Sequence[pulumi.Input['ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs']]]):
+        pulumi.set(self, "namespaces", value)
+
+
+@pulumi.input_type
+class ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs:
+    def __init__(__self__, *,
+                 metrics: pulumi.Input['ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgs'],
+                 namespace: pulumi.Input[str]):
+        """
+        :param pulumi.Input['ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgs'] metrics: (Updatable) The metrics to query for the specified metric namespace.
+        :param pulumi.Input[str] namespace: (Updatable) The namespace.
+        """
+        pulumi.set(__self__, "metrics", metrics)
+        pulumi.set(__self__, "namespace", namespace)
+
+    @property
+    @pulumi.getter
+    def metrics(self) -> pulumi.Input['ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgs']:
+        """
+        (Updatable) The metrics to query for the specified metric namespace.
+        """
+        return pulumi.get(self, "metrics")
+
+    @metrics.setter
+    def metrics(self, value: pulumi.Input['ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgs']):
+        pulumi.set(self, "metrics", value)
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The namespace.
+        """
+        return pulumi.get(self, "namespace")
+
+    @namespace.setter
+    def namespace(self, value: pulumi.Input[str]):
+        pulumi.set(self, "namespace", value)
+
+
+@pulumi.input_type
+class ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgs:
+    def __init__(__self__, *,
+                 kind: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] kind: (Updatable) The type descriminator.
+        """
+        pulumi.set(__self__, "kind", kind)
+
+    @property
+    @pulumi.getter
+    def kind(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The type descriminator.
+        """
+        return pulumi.get(self, "kind")
+
+    @kind.setter
+    def kind(self, value: pulumi.Input[str]):
+        pulumi.set(self, "kind", value)
 
 
 @pulumi.input_type
@@ -460,7 +615,7 @@ class ConnectorTargetDimensionDimensionValueArgs:
                  value: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] kind: (Updatable) The type descriminator.
-        :param pulumi.Input[str] path: (Updatable) The location to use for deriving the dimension value (evaluated). The path must start with `logContent` in an acceptable notation style with supported [JMESPath selectors](https://jmespath.org/specification.html): expression with dot and index operator (`.`, and `[]`). Example with dot notation: `logContent.data` Example with index notation: `logContent.data[0].content` For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). The returned value depends on the results of evaluation. If the evaluated value is valid, then the evaluated value is returned without double quotes. (Any front or trailing double quotes are trimmed before returning the value. For example, the evaluated value `"compartmentId"` is returned as `compartmentId`.) If the evaluated value is invalid, then the returned value is `SCH_EVAL_INVALID_VALUE`. If the evaluated value is empty, then the returned value is `SCH_EVAL_VALUE_EMPTY`.
+        :param pulumi.Input[str] path: (Updatable) The location to use for deriving the dimension value (evaluated). The path must start with `logContent` in an acceptable notation style with supported [JMESPath selectors](https://jmespath.org/specification.html): expression with dot and index operator (`.` and `[]`). Example with dot notation: `logContent.data` Example with index notation: `logContent.data[0].content` For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). The returned value depends on the results of evaluation. If the evaluated value is valid, then the evaluated value is returned without double quotes. (Any front or trailing double quotes are trimmed before returning the value. For example, the evaluated value `"compartmentId"` is returned as `compartmentId`.) If the evaluated value is invalid, then the returned value is `SCH_EVAL_INVALID_VALUE`. If the evaluated value is empty, then the returned value is `SCH_EVAL_VALUE_EMPTY`.
         :param pulumi.Input[str] value: (Updatable) The data extracted from the specified dimension value (passed as-is). Unicode characters only. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails).
         """
         pulumi.set(__self__, "kind", kind)
@@ -485,7 +640,7 @@ class ConnectorTargetDimensionDimensionValueArgs:
     @pulumi.getter
     def path(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The location to use for deriving the dimension value (evaluated). The path must start with `logContent` in an acceptable notation style with supported [JMESPath selectors](https://jmespath.org/specification.html): expression with dot and index operator (`.`, and `[]`). Example with dot notation: `logContent.data` Example with index notation: `logContent.data[0].content` For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). The returned value depends on the results of evaluation. If the evaluated value is valid, then the evaluated value is returned without double quotes. (Any front or trailing double quotes are trimmed before returning the value. For example, the evaluated value `"compartmentId"` is returned as `compartmentId`.) If the evaluated value is invalid, then the returned value is `SCH_EVAL_INVALID_VALUE`. If the evaluated value is empty, then the returned value is `SCH_EVAL_VALUE_EMPTY`.
+        (Updatable) The location to use for deriving the dimension value (evaluated). The path must start with `logContent` in an acceptable notation style with supported [JMESPath selectors](https://jmespath.org/specification.html): expression with dot and index operator (`.` and `[]`). Example with dot notation: `logContent.data` Example with index notation: `logContent.data[0].content` For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). The returned value depends on the results of evaluation. If the evaluated value is valid, then the evaluated value is returned without double quotes. (Any front or trailing double quotes are trimmed before returning the value. For example, the evaluated value `"compartmentId"` is returned as `compartmentId`.) If the evaluated value is invalid, then the returned value is `SCH_EVAL_INVALID_VALUE`. If the evaluated value is empty, then the returned value is `SCH_EVAL_VALUE_EMPTY`.
         """
         return pulumi.get(self, "path")
 

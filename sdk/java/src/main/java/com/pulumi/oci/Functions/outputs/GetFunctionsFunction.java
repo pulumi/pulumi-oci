@@ -4,6 +4,7 @@
 package com.pulumi.oci.Functions.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Functions.outputs.GetFunctionsFunctionProvisionedConcurrencyConfig;
 import com.pulumi.oci.Functions.outputs.GetFunctionsFunctionTraceConfig;
 import java.lang.Integer;
 import java.lang.Object;
@@ -70,6 +71,11 @@ public final class GetFunctionsFunction {
      */
     private final String memoryInMbs;
     /**
+     * @return Define the strategy for provisioned concurrency for the function.
+     * 
+     */
+    private final List<GetFunctionsFunctionProvisionedConcurrencyConfig> provisionedConcurrencyConfigs;
+    /**
      * @return A filter to return only functions that match the lifecycle state in this parameter. Example: `Creating`
      * 
      */
@@ -108,6 +114,7 @@ public final class GetFunctionsFunction {
         @CustomType.Parameter("imageDigest") String imageDigest,
         @CustomType.Parameter("invokeEndpoint") String invokeEndpoint,
         @CustomType.Parameter("memoryInMbs") String memoryInMbs,
+        @CustomType.Parameter("provisionedConcurrencyConfigs") List<GetFunctionsFunctionProvisionedConcurrencyConfig> provisionedConcurrencyConfigs,
         @CustomType.Parameter("state") String state,
         @CustomType.Parameter("timeCreated") String timeCreated,
         @CustomType.Parameter("timeUpdated") String timeUpdated,
@@ -124,6 +131,7 @@ public final class GetFunctionsFunction {
         this.imageDigest = imageDigest;
         this.invokeEndpoint = invokeEndpoint;
         this.memoryInMbs = memoryInMbs;
+        this.provisionedConcurrencyConfigs = provisionedConcurrencyConfigs;
         this.state = state;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
@@ -209,6 +217,13 @@ public final class GetFunctionsFunction {
         return this.memoryInMbs;
     }
     /**
+     * @return Define the strategy for provisioned concurrency for the function.
+     * 
+     */
+    public List<GetFunctionsFunctionProvisionedConcurrencyConfig> provisionedConcurrencyConfigs() {
+        return this.provisionedConcurrencyConfigs;
+    }
+    /**
      * @return A filter to return only functions that match the lifecycle state in this parameter. Example: `Creating`
      * 
      */
@@ -264,6 +279,7 @@ public final class GetFunctionsFunction {
         private String imageDigest;
         private String invokeEndpoint;
         private String memoryInMbs;
+        private List<GetFunctionsFunctionProvisionedConcurrencyConfig> provisionedConcurrencyConfigs;
         private String state;
         private String timeCreated;
         private String timeUpdated;
@@ -287,6 +303,7 @@ public final class GetFunctionsFunction {
     	      this.imageDigest = defaults.imageDigest;
     	      this.invokeEndpoint = defaults.invokeEndpoint;
     	      this.memoryInMbs = defaults.memoryInMbs;
+    	      this.provisionedConcurrencyConfigs = defaults.provisionedConcurrencyConfigs;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
@@ -338,6 +355,13 @@ public final class GetFunctionsFunction {
             this.memoryInMbs = Objects.requireNonNull(memoryInMbs);
             return this;
         }
+        public Builder provisionedConcurrencyConfigs(List<GetFunctionsFunctionProvisionedConcurrencyConfig> provisionedConcurrencyConfigs) {
+            this.provisionedConcurrencyConfigs = Objects.requireNonNull(provisionedConcurrencyConfigs);
+            return this;
+        }
+        public Builder provisionedConcurrencyConfigs(GetFunctionsFunctionProvisionedConcurrencyConfig... provisionedConcurrencyConfigs) {
+            return provisionedConcurrencyConfigs(List.of(provisionedConcurrencyConfigs));
+        }
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
@@ -361,7 +385,7 @@ public final class GetFunctionsFunction {
         public Builder traceConfigs(GetFunctionsFunctionTraceConfig... traceConfigs) {
             return traceConfigs(List.of(traceConfigs));
         }        public GetFunctionsFunction build() {
-            return new GetFunctionsFunction(applicationId, compartmentId, config, definedTags, displayName, freeformTags, id, image, imageDigest, invokeEndpoint, memoryInMbs, state, timeCreated, timeUpdated, timeoutInSeconds, traceConfigs);
+            return new GetFunctionsFunction(applicationId, compartmentId, config, definedTags, displayName, freeformTags, id, image, imageDigest, invokeEndpoint, memoryInMbs, provisionedConcurrencyConfigs, state, timeCreated, timeUpdated, timeoutInSeconds, traceConfigs);
         }
     }
 }

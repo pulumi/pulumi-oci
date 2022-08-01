@@ -70,6 +70,10 @@ export class VmClusterAddVirtualNetwork extends pulumi.CustomResource {
      * The number of enabled CPU cores.
      */
     public /*out*/ readonly cpusEnabled!: pulumi.Output<number>;
+    /**
+     * Indicates user preferences for the various diagnostic collection options for the VM cluster.
+     */
+    public /*out*/ readonly dataCollectionOptions!: pulumi.Output<outputs.Database.VmClusterAddVirtualNetworkDataCollectionOption[]>;
     public /*out*/ readonly dataStorageSizeInGb!: pulumi.Output<number>;
     /**
      * Size, in terabytes, of the DATA disk group.
@@ -176,6 +180,7 @@ export class VmClusterAddVirtualNetwork extends pulumi.CustomResource {
             const state = argsOrState as VmClusterAddVirtualNetworkState | undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["cpusEnabled"] = state ? state.cpusEnabled : undefined;
+            resourceInputs["dataCollectionOptions"] = state ? state.dataCollectionOptions : undefined;
             resourceInputs["dataStorageSizeInGb"] = state ? state.dataStorageSizeInGb : undefined;
             resourceInputs["dataStorageSizeInTbs"] = state ? state.dataStorageSizeInTbs : undefined;
             resourceInputs["dbNodeStorageSizeInGbs"] = state ? state.dbNodeStorageSizeInGbs : undefined;
@@ -212,6 +217,7 @@ export class VmClusterAddVirtualNetwork extends pulumi.CustomResource {
             resourceInputs["vmClusterId"] = args ? args.vmClusterId : undefined;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["cpusEnabled"] = undefined /*out*/;
+            resourceInputs["dataCollectionOptions"] = undefined /*out*/;
             resourceInputs["dataStorageSizeInGb"] = undefined /*out*/;
             resourceInputs["dataStorageSizeInTbs"] = undefined /*out*/;
             resourceInputs["dbNodeStorageSizeInGbs"] = undefined /*out*/;
@@ -252,6 +258,10 @@ export interface VmClusterAddVirtualNetworkState {
      * The number of enabled CPU cores.
      */
     cpusEnabled?: pulumi.Input<number>;
+    /**
+     * Indicates user preferences for the various diagnostic collection options for the VM cluster.
+     */
+    dataCollectionOptions?: pulumi.Input<pulumi.Input<inputs.Database.VmClusterAddVirtualNetworkDataCollectionOption>[]>;
     dataStorageSizeInGb?: pulumi.Input<number>;
     /**
      * Size, in terabytes, of the DATA disk group.

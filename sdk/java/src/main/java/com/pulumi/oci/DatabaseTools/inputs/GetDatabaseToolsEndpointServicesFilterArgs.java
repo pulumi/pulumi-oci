@@ -18,14 +18,14 @@ public final class GetDatabaseToolsEndpointServicesFilterArgs extends com.pulumi
     public static final GetDatabaseToolsEndpointServicesFilterArgs Empty = new GetDatabaseToolsEndpointServicesFilterArgs();
 
     /**
-     * A filter to return only resources that match the entire name given.
+     * A filter to return only resources that match the entire specified name.
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return A filter to return only resources that match the entire name given.
+     * @return A filter to return only resources that match the entire specified name.
      * 
      */
     public Output<String> name() {
@@ -73,7 +73,7 @@ public final class GetDatabaseToolsEndpointServicesFilterArgs extends com.pulumi
         }
 
         /**
-         * @param name A filter to return only resources that match the entire name given.
+         * @param name A filter to return only resources that match the entire specified name.
          * 
          * @return builder
          * 
@@ -84,7 +84,7 @@ public final class GetDatabaseToolsEndpointServicesFilterArgs extends com.pulumi
         }
 
         /**
-         * @param name A filter to return only resources that match the entire name given.
+         * @param name A filter to return only resources that match the entire specified name.
          * 
          * @return builder
          * 

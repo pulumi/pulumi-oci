@@ -167,6 +167,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string NcharacterSet;
         /// <summary>
+        /// The configuration of Stack Monitoring for the external database.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetExternalContainerDatabaseStackMonitoringConfigResult> StackMonitoringConfigs;
+        /// <summary>
         /// The current state of the Oracle Cloud Infrastructure external database resource.
         /// </summary>
         public readonly string State;
@@ -213,6 +217,8 @@ namespace Pulumi.Oci.Database
 
             string ncharacterSet,
 
+            ImmutableArray<Outputs.GetExternalContainerDatabaseStackMonitoringConfigResult> stackMonitoringConfigs,
+
             string state,
 
             string timeCreated,
@@ -235,6 +241,7 @@ namespace Pulumi.Oci.Database
             Id = id;
             LifecycleDetails = lifecycleDetails;
             NcharacterSet = ncharacterSet;
+            StackMonitoringConfigs = stackMonitoringConfigs;
             State = state;
             TimeCreated = timeCreated;
             TimeZone = timeZone;

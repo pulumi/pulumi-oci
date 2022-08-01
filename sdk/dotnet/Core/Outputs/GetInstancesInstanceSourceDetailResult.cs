@@ -18,6 +18,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string BootVolumeSizeInGbs;
         /// <summary>
+        /// The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+        /// </summary>
+        public readonly string BootVolumeVpusPerGb;
+        /// <summary>
         /// The OCID of the Key Management key to assign as the master encryption key for the boot volume.
         /// </summary>
         public readonly string KmsKeyId;
@@ -34,6 +38,8 @@ namespace Pulumi.Oci.Core.Outputs
         private GetInstancesInstanceSourceDetailResult(
             string bootVolumeSizeInGbs,
 
+            string bootVolumeVpusPerGb,
+
             string kmsKeyId,
 
             string sourceId,
@@ -41,6 +47,7 @@ namespace Pulumi.Oci.Core.Outputs
             string sourceType)
         {
             BootVolumeSizeInGbs = bootVolumeSizeInGbs;
+            BootVolumeVpusPerGb = bootVolumeVpusPerGb;
             KmsKeyId = kmsKeyId;
             SourceId = sourceId;
             SourceType = sourceType;

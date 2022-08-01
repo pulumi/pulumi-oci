@@ -40,11 +40,12 @@ import (
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		_, err := CloudGuard.GetGuardTargets(ctx, &cloudguard.GetGuardTargetsArgs{
-// 			CompartmentId:          _var.Compartment_id,
-// 			AccessLevel:            pulumi.StringRef(_var.Target_access_level),
-// 			CompartmentIdInSubtree: pulumi.BoolRef(_var.Target_compartment_id_in_subtree),
-// 			DisplayName:            pulumi.StringRef(_var.Target_display_name),
-// 			State:                  pulumi.StringRef(_var.Target_state),
+// 			CompartmentId:                     _var.Compartment_id,
+// 			AccessLevel:                       pulumi.StringRef(_var.Target_access_level),
+// 			CompartmentIdInSubtree:            pulumi.BoolRef(_var.Target_compartment_id_in_subtree),
+// 			DisplayName:                       pulumi.StringRef(_var.Target_display_name),
+// 			IsNonSecurityZoneTargetsOnlyQuery: pulumi.BoolRef(_var.Target_is_non_security_zone_targets_only_query),
+// 			State:                             pulumi.StringRef(_var.Target_state),
 // 		}, nil)
 // 		if err != nil {
 // 			return err
@@ -73,6 +74,8 @@ type GetGuardTargetsArgs struct {
 	// A filter to return only resources that match the entire display name given.
 	DisplayName *string                 `pulumi:"displayName"`
 	Filters     []GetGuardTargetsFilter `pulumi:"filters"`
+	// Default is false. When set to true, only the targets that would be deleted as part of security zone creation will be returned.
+	IsNonSecurityZoneTargetsOnlyQuery *bool `pulumi:"isNonSecurityZoneTargetsOnlyQuery"`
 	// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
 	State *string `pulumi:"state"`
 }
@@ -83,11 +86,12 @@ type GetGuardTargetsResult struct {
 	// Compartment Identifier
 	CompartmentId          string `pulumi:"compartmentId"`
 	CompartmentIdInSubtree *bool  `pulumi:"compartmentIdInSubtree"`
-	// ResponderRule Display Name
+	// ResponderRule display name.
 	DisplayName *string                 `pulumi:"displayName"`
 	Filters     []GetGuardTargetsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id                                string `pulumi:"id"`
+	IsNonSecurityZoneTargetsOnlyQuery *bool  `pulumi:"isNonSecurityZoneTargetsOnlyQuery"`
 	// The current state of the ResponderRule.
 	State *string `pulumi:"state"`
 	// The list of target_collection.
@@ -118,6 +122,8 @@ type GetGuardTargetsOutputArgs struct {
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringPtrInput           `pulumi:"displayName"`
 	Filters     GetGuardTargetsFilterArrayInput `pulumi:"filters"`
+	// Default is false. When set to true, only the targets that would be deleted as part of security zone creation will be returned.
+	IsNonSecurityZoneTargetsOnlyQuery pulumi.BoolPtrInput `pulumi:"isNonSecurityZoneTargetsOnlyQuery"`
 	// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
 	State pulumi.StringPtrInput `pulumi:"state"`
 }
@@ -154,7 +160,7 @@ func (o GetGuardTargetsResultOutput) CompartmentIdInSubtree() pulumi.BoolPtrOutp
 	return o.ApplyT(func(v GetGuardTargetsResult) *bool { return v.CompartmentIdInSubtree }).(pulumi.BoolPtrOutput)
 }
 
-// ResponderRule Display Name
+// ResponderRule display name.
 func (o GetGuardTargetsResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetGuardTargetsResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -166,6 +172,10 @@ func (o GetGuardTargetsResultOutput) Filters() GetGuardTargetsFilterArrayOutput 
 // The provider-assigned unique ID for this managed resource.
 func (o GetGuardTargetsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetsResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetGuardTargetsResultOutput) IsNonSecurityZoneTargetsOnlyQuery() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetGuardTargetsResult) *bool { return v.IsNonSecurityZoneTargetsOnlyQuery }).(pulumi.BoolPtrOutput)
 }
 
 // The current state of the ResponderRule.

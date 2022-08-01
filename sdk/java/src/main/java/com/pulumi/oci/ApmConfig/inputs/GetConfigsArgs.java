@@ -18,14 +18,14 @@ public final class GetConfigsArgs extends com.pulumi.resources.InvokeArgs {
     public static final GetConfigsArgs Empty = new GetConfigsArgs();
 
     /**
-     * The APM Domain Id the request is intended for.
+     * The APM Domain ID the request is intended for.
      * 
      */
     @Import(name="apmDomainId", required=true)
     private Output<String> apmDomainId;
 
     /**
-     * @return The APM Domain Id the request is intended for.
+     * @return The APM Domain ID the request is intended for.
      * 
      */
     public Output<String> apmDomainId() {
@@ -33,14 +33,14 @@ public final class GetConfigsArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * A filter to match only configuration items of the given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
+     * A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
      * 
      */
     @Import(name="configType")
     private @Nullable Output<String> configType;
 
     /**
-     * @return A filter to match only configuration items of the given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
+     * @return A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
      * 
      */
     public Optional<Output<String>> configType() {
@@ -48,14 +48,44 @@ public final class GetConfigsArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * A filter to return only resources that match the entire display name given.
+     * A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned. Each item in the list has the format &#34;{namespace}.{tagName}.{value}&#34;.  All inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as &#34;OR&#34;. Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as &#34;AND&#34;.
+     * 
+     */
+    @Import(name="definedTagEquals")
+    private @Nullable Output<List<String>> definedTagEquals;
+
+    /**
+     * @return A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned. Each item in the list has the format &#34;{namespace}.{tagName}.{value}&#34;.  All inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as &#34;OR&#34;. Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as &#34;AND&#34;.
+     * 
+     */
+    public Optional<Output<List<String>>> definedTagEquals() {
+        return Optional.ofNullable(this.definedTagEquals);
+    }
+
+    /**
+     * A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned. Each item in the list has the format &#34;{namespace}.{tagName}.true&#34; (for checking existence of a defined tag) or &#34;{namespace}.true&#34;.  All inputs are case-insensitive. Currently, only existence (&#34;true&#34; at the end) is supported. Absence (&#34;false&#34; at the end) is not supported. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as &#34;OR&#34;. Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as &#34;AND&#34;.
+     * 
+     */
+    @Import(name="definedTagExists")
+    private @Nullable Output<List<String>> definedTagExists;
+
+    /**
+     * @return A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned. Each item in the list has the format &#34;{namespace}.{tagName}.true&#34; (for checking existence of a defined tag) or &#34;{namespace}.true&#34;.  All inputs are case-insensitive. Currently, only existence (&#34;true&#34; at the end) is supported. Absence (&#34;false&#34; at the end) is not supported. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as &#34;OR&#34;. Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as &#34;AND&#34;.
+     * 
+     */
+    public Optional<Output<List<String>>> definedTagExists() {
+        return Optional.ofNullable(this.definedTagExists);
+    }
+
+    /**
+     * A filter to return resources that match the given display name.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return A filter to return only resources that match the entire display name given.
+     * @return A filter to return resources that match the given display name.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -69,13 +99,63 @@ public final class GetConfigsArgs extends com.pulumi.resources.InvokeArgs {
         return Optional.ofNullable(this.filters);
     }
 
+    /**
+     * A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned. The key for each tag is &#34;{tagName}.{value}&#34;.  All inputs are case-insensitive. Multiple values for the same tag name are interpreted as &#34;OR&#34;.  Values for different tag names are interpreted as &#34;AND&#34;.
+     * 
+     */
+    @Import(name="freeformTagEquals")
+    private @Nullable Output<List<String>> freeformTagEquals;
+
+    /**
+     * @return A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned. The key for each tag is &#34;{tagName}.{value}&#34;.  All inputs are case-insensitive. Multiple values for the same tag name are interpreted as &#34;OR&#34;.  Values for different tag names are interpreted as &#34;AND&#34;.
+     * 
+     */
+    public Optional<Output<List<String>>> freeformTagEquals() {
+        return Optional.ofNullable(this.freeformTagEquals);
+    }
+
+    /**
+     * A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned. The key for each tag is &#34;{tagName}.true&#34;.  All inputs are case-insensitive. Currently, only existence (&#34;true&#34; at the end) is supported. Absence (&#34;false&#34; at the end) is not supported. Multiple values for different tag names are interpreted as &#34;AND&#34;.
+     * 
+     */
+    @Import(name="freeformTagExists")
+    private @Nullable Output<List<String>> freeformTagExists;
+
+    /**
+     * @return A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned. The key for each tag is &#34;{tagName}.true&#34;.  All inputs are case-insensitive. Currently, only existence (&#34;true&#34; at the end) is supported. Absence (&#34;false&#34; at the end) is not supported. Multiple values for different tag names are interpreted as &#34;AND&#34;.
+     * 
+     */
+    public Optional<Output<List<String>>> freeformTagExists() {
+        return Optional.ofNullable(this.freeformTagExists);
+    }
+
+    /**
+     * A filter to return OPTIONS resources that match the given group.
+     * 
+     */
+    @Import(name="optionsGroup")
+    private @Nullable Output<String> optionsGroup;
+
+    /**
+     * @return A filter to return OPTIONS resources that match the given group.
+     * 
+     */
+    public Optional<Output<String>> optionsGroup() {
+        return Optional.ofNullable(this.optionsGroup);
+    }
+
     private GetConfigsArgs() {}
 
     private GetConfigsArgs(GetConfigsArgs $) {
         this.apmDomainId = $.apmDomainId;
         this.configType = $.configType;
+        this.definedTagEquals = $.definedTagEquals;
+        this.definedTagExists = $.definedTagExists;
         this.displayName = $.displayName;
         this.filters = $.filters;
+        this.freeformTagEquals = $.freeformTagEquals;
+        this.freeformTagExists = $.freeformTagExists;
+        this.optionsGroup = $.optionsGroup;
     }
 
     public static Builder builder() {
@@ -97,7 +177,7 @@ public final class GetConfigsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param apmDomainId The APM Domain Id the request is intended for.
+         * @param apmDomainId The APM Domain ID the request is intended for.
          * 
          * @return builder
          * 
@@ -108,7 +188,7 @@ public final class GetConfigsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param apmDomainId The APM Domain Id the request is intended for.
+         * @param apmDomainId The APM Domain ID the request is intended for.
          * 
          * @return builder
          * 
@@ -118,7 +198,7 @@ public final class GetConfigsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param configType A filter to match only configuration items of the given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
+         * @param configType A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
          * 
          * @return builder
          * 
@@ -129,7 +209,7 @@ public final class GetConfigsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param configType A filter to match only configuration items of the given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
+         * @param configType A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
          * 
          * @return builder
          * 
@@ -139,7 +219,69 @@ public final class GetConfigsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param displayName A filter to return only resources that match the entire display name given.
+         * @param definedTagEquals A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned. Each item in the list has the format &#34;{namespace}.{tagName}.{value}&#34;.  All inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as &#34;OR&#34;. Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as &#34;AND&#34;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder definedTagEquals(@Nullable Output<List<String>> definedTagEquals) {
+            $.definedTagEquals = definedTagEquals;
+            return this;
+        }
+
+        /**
+         * @param definedTagEquals A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned. Each item in the list has the format &#34;{namespace}.{tagName}.{value}&#34;.  All inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as &#34;OR&#34;. Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as &#34;AND&#34;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder definedTagEquals(List<String> definedTagEquals) {
+            return definedTagEquals(Output.of(definedTagEquals));
+        }
+
+        /**
+         * @param definedTagEquals A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned. Each item in the list has the format &#34;{namespace}.{tagName}.{value}&#34;.  All inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as &#34;OR&#34;. Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as &#34;AND&#34;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder definedTagEquals(String... definedTagEquals) {
+            return definedTagEquals(List.of(definedTagEquals));
+        }
+
+        /**
+         * @param definedTagExists A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned. Each item in the list has the format &#34;{namespace}.{tagName}.true&#34; (for checking existence of a defined tag) or &#34;{namespace}.true&#34;.  All inputs are case-insensitive. Currently, only existence (&#34;true&#34; at the end) is supported. Absence (&#34;false&#34; at the end) is not supported. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as &#34;OR&#34;. Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as &#34;AND&#34;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder definedTagExists(@Nullable Output<List<String>> definedTagExists) {
+            $.definedTagExists = definedTagExists;
+            return this;
+        }
+
+        /**
+         * @param definedTagExists A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned. Each item in the list has the format &#34;{namespace}.{tagName}.true&#34; (for checking existence of a defined tag) or &#34;{namespace}.true&#34;.  All inputs are case-insensitive. Currently, only existence (&#34;true&#34; at the end) is supported. Absence (&#34;false&#34; at the end) is not supported. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as &#34;OR&#34;. Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as &#34;AND&#34;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder definedTagExists(List<String> definedTagExists) {
+            return definedTagExists(Output.of(definedTagExists));
+        }
+
+        /**
+         * @param definedTagExists A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned. Each item in the list has the format &#34;{namespace}.{tagName}.true&#34; (for checking existence of a defined tag) or &#34;{namespace}.true&#34;.  All inputs are case-insensitive. Currently, only existence (&#34;true&#34; at the end) is supported. Absence (&#34;false&#34; at the end) is not supported. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as &#34;OR&#34;. Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as &#34;AND&#34;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder definedTagExists(String... definedTagExists) {
+            return definedTagExists(List.of(definedTagExists));
+        }
+
+        /**
+         * @param displayName A filter to return resources that match the given display name.
          * 
          * @return builder
          * 
@@ -150,7 +292,7 @@ public final class GetConfigsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param displayName A filter to return only resources that match the entire display name given.
+         * @param displayName A filter to return resources that match the given display name.
          * 
          * @return builder
          * 
@@ -170,6 +312,89 @@ public final class GetConfigsArgs extends com.pulumi.resources.InvokeArgs {
 
         public Builder filters(GetConfigsFilterArgs... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param freeformTagEquals A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned. The key for each tag is &#34;{tagName}.{value}&#34;.  All inputs are case-insensitive. Multiple values for the same tag name are interpreted as &#34;OR&#34;.  Values for different tag names are interpreted as &#34;AND&#34;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder freeformTagEquals(@Nullable Output<List<String>> freeformTagEquals) {
+            $.freeformTagEquals = freeformTagEquals;
+            return this;
+        }
+
+        /**
+         * @param freeformTagEquals A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned. The key for each tag is &#34;{tagName}.{value}&#34;.  All inputs are case-insensitive. Multiple values for the same tag name are interpreted as &#34;OR&#34;.  Values for different tag names are interpreted as &#34;AND&#34;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder freeformTagEquals(List<String> freeformTagEquals) {
+            return freeformTagEquals(Output.of(freeformTagEquals));
+        }
+
+        /**
+         * @param freeformTagEquals A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned. The key for each tag is &#34;{tagName}.{value}&#34;.  All inputs are case-insensitive. Multiple values for the same tag name are interpreted as &#34;OR&#34;.  Values for different tag names are interpreted as &#34;AND&#34;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder freeformTagEquals(String... freeformTagEquals) {
+            return freeformTagEquals(List.of(freeformTagEquals));
+        }
+
+        /**
+         * @param freeformTagExists A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned. The key for each tag is &#34;{tagName}.true&#34;.  All inputs are case-insensitive. Currently, only existence (&#34;true&#34; at the end) is supported. Absence (&#34;false&#34; at the end) is not supported. Multiple values for different tag names are interpreted as &#34;AND&#34;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder freeformTagExists(@Nullable Output<List<String>> freeformTagExists) {
+            $.freeformTagExists = freeformTagExists;
+            return this;
+        }
+
+        /**
+         * @param freeformTagExists A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned. The key for each tag is &#34;{tagName}.true&#34;.  All inputs are case-insensitive. Currently, only existence (&#34;true&#34; at the end) is supported. Absence (&#34;false&#34; at the end) is not supported. Multiple values for different tag names are interpreted as &#34;AND&#34;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder freeformTagExists(List<String> freeformTagExists) {
+            return freeformTagExists(Output.of(freeformTagExists));
+        }
+
+        /**
+         * @param freeformTagExists A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned. The key for each tag is &#34;{tagName}.true&#34;.  All inputs are case-insensitive. Currently, only existence (&#34;true&#34; at the end) is supported. Absence (&#34;false&#34; at the end) is not supported. Multiple values for different tag names are interpreted as &#34;AND&#34;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder freeformTagExists(String... freeformTagExists) {
+            return freeformTagExists(List.of(freeformTagExists));
+        }
+
+        /**
+         * @param optionsGroup A filter to return OPTIONS resources that match the given group.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder optionsGroup(@Nullable Output<String> optionsGroup) {
+            $.optionsGroup = optionsGroup;
+            return this;
+        }
+
+        /**
+         * @param optionsGroup A filter to return OPTIONS resources that match the given group.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder optionsGroup(String optionsGroup) {
+            return optionsGroup(Output.of(optionsGroup));
         }
 
         public GetConfigsArgs build() {

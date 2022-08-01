@@ -192,15 +192,26 @@ class DatabaseToolsConnectionRelatedResourceArgs:
 @pulumi.input_type
 class DatabaseToolsConnectionUserPasswordArgs:
     def __init__(__self__, *,
-                 value_type: pulumi.Input[str],
-                 secret_id: Optional[pulumi.Input[str]] = None):
+                 secret_id: pulumi.Input[str],
+                 value_type: pulumi.Input[str]):
         """
-        :param pulumi.Input[str] value_type: (Updatable) The value type of the user password.
         :param pulumi.Input[str] secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        :param pulumi.Input[str] value_type: (Updatable) The value type of the user password.
         """
+        pulumi.set(__self__, "secret_id", secret_id)
         pulumi.set(__self__, "value_type", value_type)
-        if secret_id is not None:
-            pulumi.set(__self__, "secret_id", secret_id)
+
+    @property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        """
+        return pulumi.get(self, "secret_id")
+
+    @secret_id.setter
+    def secret_id(self, value: pulumi.Input[str]):
+        pulumi.set(self, "secret_id", value)
 
     @property
     @pulumi.getter(name="valueType")
@@ -213,18 +224,6 @@ class DatabaseToolsConnectionUserPasswordArgs:
     @value_type.setter
     def value_type(self, value: pulumi.Input[str]):
         pulumi.set(self, "value_type", value)
-
-    @property
-    @pulumi.getter(name="secretId")
-    def secret_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-        """
-        return pulumi.get(self, "secret_id")
-
-    @secret_id.setter
-    def secret_id(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "secret_id", value)
 
 
 @pulumi.input_type
@@ -319,7 +318,7 @@ class GetDatabaseToolsEndpointServicesFilterArgs:
                  values: Sequence[str],
                  regex: Optional[bool] = None):
         """
-        :param str name: A filter to return only resources that match the entire name given.
+        :param str name: A filter to return only resources that match the entire specified name.
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
@@ -330,7 +329,7 @@ class GetDatabaseToolsEndpointServicesFilterArgs:
     @pulumi.getter
     def name(self) -> str:
         """
-        A filter to return only resources that match the entire name given.
+        A filter to return only resources that match the entire specified name.
         """
         return pulumi.get(self, "name")
 

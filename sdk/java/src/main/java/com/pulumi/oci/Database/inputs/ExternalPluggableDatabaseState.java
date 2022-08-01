@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Database.inputs.ExternalPluggableDatabaseDatabaseManagementConfigArgs;
 import com.pulumi.oci.Database.inputs.ExternalPluggableDatabaseOperationsInsightsConfigArgs;
+import com.pulumi.oci.Database.inputs.ExternalPluggableDatabaseStackMonitoringConfigArgs;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -276,6 +277,21 @@ public final class ExternalPluggableDatabaseState extends com.pulumi.resources.R
     }
 
     /**
+     * The configuration of Stack Monitoring for the external database.
+     * 
+     */
+    @Import(name="stackMonitoringConfigs")
+    private @Nullable Output<List<ExternalPluggableDatabaseStackMonitoringConfigArgs>> stackMonitoringConfigs;
+
+    /**
+     * @return The configuration of Stack Monitoring for the external database.
+     * 
+     */
+    public Optional<Output<List<ExternalPluggableDatabaseStackMonitoringConfigArgs>>> stackMonitoringConfigs() {
+        return Optional.ofNullable(this.stackMonitoringConfigs);
+    }
+
+    /**
      * The current state of the Oracle Cloud Infrastructure external database resource.
      * 
      */
@@ -340,6 +356,7 @@ public final class ExternalPluggableDatabaseState extends com.pulumi.resources.R
         this.ncharacterSet = $.ncharacterSet;
         this.operationsInsightsConfigs = $.operationsInsightsConfigs;
         this.sourceId = $.sourceId;
+        this.stackMonitoringConfigs = $.stackMonitoringConfigs;
         this.state = $.state;
         this.timeCreated = $.timeCreated;
         this.timeZone = $.timeZone;
@@ -738,6 +755,37 @@ public final class ExternalPluggableDatabaseState extends com.pulumi.resources.R
          */
         public Builder sourceId(String sourceId) {
             return sourceId(Output.of(sourceId));
+        }
+
+        /**
+         * @param stackMonitoringConfigs The configuration of Stack Monitoring for the external database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder stackMonitoringConfigs(@Nullable Output<List<ExternalPluggableDatabaseStackMonitoringConfigArgs>> stackMonitoringConfigs) {
+            $.stackMonitoringConfigs = stackMonitoringConfigs;
+            return this;
+        }
+
+        /**
+         * @param stackMonitoringConfigs The configuration of Stack Monitoring for the external database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder stackMonitoringConfigs(List<ExternalPluggableDatabaseStackMonitoringConfigArgs> stackMonitoringConfigs) {
+            return stackMonitoringConfigs(Output.of(stackMonitoringConfigs));
+        }
+
+        /**
+         * @param stackMonitoringConfigs The configuration of Stack Monitoring for the external database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder stackMonitoringConfigs(ExternalPluggableDatabaseStackMonitoringConfigArgs... stackMonitoringConfigs) {
+            return stackMonitoringConfigs(List.of(stackMonitoringConfigs));
         }
 
         /**

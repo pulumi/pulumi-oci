@@ -93,7 +93,7 @@ class GetManagedListResult:
     @pulumi.getter
     def description(self) -> str:
         """
-        ManagedList description
+        ManagedList description.
         """
         return pulumi.get(self, "description")
 
@@ -101,7 +101,7 @@ class GetManagedListResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        ManagedList display name
+        ManagedList display name.
         """
         return pulumi.get(self, "display_name")
 

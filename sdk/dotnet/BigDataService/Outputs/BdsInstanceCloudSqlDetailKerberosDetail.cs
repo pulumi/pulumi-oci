@@ -18,7 +18,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// </summary>
         public readonly string? KeytabFile;
         /// <summary>
-        /// Name of the Kerberos principal.
+        /// Name of the Kerberos principal
         /// </summary>
         public readonly string? PrincipalName;
 

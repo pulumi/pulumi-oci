@@ -7,6 +7,8 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['QuotaArgs', 'Quota']
 
@@ -18,6 +20,7 @@ class QuotaArgs:
                  statements: pulumi.Input[Sequence[pulumi.Input[str]]],
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['QuotaLockArgs']]]] = None,
                  name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Quota resource.
@@ -26,6 +29,7 @@ class QuotaArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] statements: (Updatable) An array of quota statements written in the declarative quota statement language.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Sequence[pulumi.Input['QuotaLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input[str] name: The name you assign to the quota during creation. The name must be unique across all quotas in the tenancy and cannot be changed.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -35,6 +39,8 @@ class QuotaArgs:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if locks is not None:
+            pulumi.set(__self__, "locks", locks)
         if name is not None:
             pulumi.set(__self__, "name", name)
 
@@ -100,6 +106,18 @@ class QuotaArgs:
 
     @property
     @pulumi.getter
+    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['QuotaLockArgs']]]]:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @locks.setter
+    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['QuotaLockArgs']]]]):
+        pulumi.set(self, "locks", value)
+
+    @property
+    @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
         The name you assign to the quota during creation. The name must be unique across all quotas in the tenancy and cannot be changed.
@@ -118,6 +136,8 @@ class _QuotaState:
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 is_lock_override: Optional[pulumi.Input[bool]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['QuotaLockArgs']]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  statements: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -128,6 +148,8 @@ class _QuotaState:
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description you assign to the quota.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[bool] is_lock_override: this is a computed field which is set to true if any lock is present`
+        :param pulumi.Input[Sequence[pulumi.Input['QuotaLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input[str] name: The name you assign to the quota during creation. The name must be unique across all quotas in the tenancy and cannot be changed.
         :param pulumi.Input[str] state: The quota's current state.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] statements: (Updatable) An array of quota statements written in the declarative quota statement language.
@@ -141,6 +163,10 @@ class _QuotaState:
             pulumi.set(__self__, "description", description)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if is_lock_override is not None:
+            pulumi.set(__self__, "is_lock_override", is_lock_override)
+        if locks is not None:
+            pulumi.set(__self__, "locks", locks)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if state is not None:
@@ -197,6 +223,30 @@ class _QuotaState:
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> Optional[pulumi.Input[bool]]:
+        """
+        this is a computed field which is set to true if any lock is present`
+        """
+        return pulumi.get(self, "is_lock_override")
+
+    @is_lock_override.setter
+    def is_lock_override(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_lock_override", value)
+
+    @property
+    @pulumi.getter
+    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['QuotaLockArgs']]]]:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @locks.setter
+    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['QuotaLockArgs']]]]):
+        pulumi.set(self, "locks", value)
 
     @property
     @pulumi.getter
@@ -256,6 +306,7 @@ class Quota(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['QuotaLockArgs']]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  statements: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  __props__=None):
@@ -279,7 +330,12 @@ class Quota(pulumi.CustomResource):
             },
             freeform_tags={
                 "Department": "Finance",
-            })
+            },
+            locks=[oci.limits.QuotaLockArgs(
+                type=var["quota_locks_type"],
+                message=var["quota_locks_message"],
+                related_resource_id=oci_limits_related_resource["test_related_resource"]["id"],
+            )])
         ```
 
         ## Import
@@ -296,6 +352,7 @@ class Quota(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description you assign to the quota.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['QuotaLockArgs']]]] locks: Locks associated with this resource.
         :param pulumi.Input[str] name: The name you assign to the quota during creation. The name must be unique across all quotas in the tenancy and cannot be changed.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] statements: (Updatable) An array of quota statements written in the declarative quota statement language.
         """
@@ -325,7 +382,12 @@ class Quota(pulumi.CustomResource):
             },
             freeform_tags={
                 "Department": "Finance",
-            })
+            },
+            locks=[oci.limits.QuotaLockArgs(
+                type=var["quota_locks_type"],
+                message=var["quota_locks_message"],
+                related_resource_id=oci_limits_related_resource["test_related_resource"]["id"],
+            )])
         ```
 
         ## Import
@@ -355,6 +417,7 @@ class Quota(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['QuotaLockArgs']]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  statements: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  __props__=None):
@@ -377,10 +440,12 @@ class Quota(pulumi.CustomResource):
                 raise TypeError("Missing required property 'description'")
             __props__.__dict__["description"] = description
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["locks"] = locks
             __props__.__dict__["name"] = name
             if statements is None and not opts.urn:
                 raise TypeError("Missing required property 'statements'")
             __props__.__dict__["statements"] = statements
+            __props__.__dict__["is_lock_override"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None
         super(Quota, __self__).__init__(
@@ -397,6 +462,8 @@ class Quota(pulumi.CustomResource):
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             description: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            is_lock_override: Optional[pulumi.Input[bool]] = None,
+            locks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['QuotaLockArgs']]]]] = None,
             name: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             statements: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -412,6 +479,8 @@ class Quota(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description you assign to the quota.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[bool] is_lock_override: this is a computed field which is set to true if any lock is present`
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['QuotaLockArgs']]]] locks: Locks associated with this resource.
         :param pulumi.Input[str] name: The name you assign to the quota during creation. The name must be unique across all quotas in the tenancy and cannot be changed.
         :param pulumi.Input[str] state: The quota's current state.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] statements: (Updatable) An array of quota statements written in the declarative quota statement language.
@@ -425,6 +494,8 @@ class Quota(pulumi.CustomResource):
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["description"] = description
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["is_lock_override"] = is_lock_override
+        __props__.__dict__["locks"] = locks
         __props__.__dict__["name"] = name
         __props__.__dict__["state"] = state
         __props__.__dict__["statements"] = statements
@@ -462,6 +533,22 @@ class Quota(pulumi.CustomResource):
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> pulumi.Output[bool]:
+        """
+        this is a computed field which is set to true if any lock is present`
+        """
+        return pulumi.get(self, "is_lock_override")
+
+    @property
+    @pulumi.getter
+    def locks(self) -> pulumi.Output[Sequence['outputs.QuotaLock']]:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
 
     @property
     @pulumi.getter

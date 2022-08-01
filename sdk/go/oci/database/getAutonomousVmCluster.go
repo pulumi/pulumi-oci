@@ -56,9 +56,13 @@ type LookupAutonomousVmClusterResult struct {
 	// The data disk group size allocated for Autonomous Databases, in TBs.
 	AutonomousDataStorageSizeInTbs float64 `pulumi:"autonomousDataStorageSizeInTbs"`
 	AutonomousVmClusterId          string  `pulumi:"autonomousVmClusterId"`
+	// The data disk group size available for Autonomous Databases, in TBs.
+	AvailableAutonomousDataStorageSizeInTbs float64 `pulumi:"availableAutonomousDataStorageSizeInTbs"`
+	// The number of Autonomous Container Databases that can be created with the currently available local storage.
+	AvailableContainerDatabases int `pulumi:"availableContainerDatabases"`
 	// The numnber of CPU cores available.
 	AvailableCpus int `pulumi:"availableCpus"`
-	// The data storage available in TBs
+	// **Deprecated.** Use `availableAutonomousDataStorageSizeInTBs` for Autonomous Databases' data storage availability in TBs.
 	AvailableDataStorageSizeInTbs float64 `pulumi:"availableDataStorageSizeInTbs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
@@ -101,6 +105,8 @@ type LookupAutonomousVmClusterResult struct {
 	NextMaintenanceRunId string `pulumi:"nextMaintenanceRunId"`
 	// The number of enabled OCPU cores.
 	OcpusEnabled float64 `pulumi:"ocpusEnabled"`
+	// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+	ReclaimableCpus int `pulumi:"reclaimableCpus"`
 	// The current state of the Autonomous VM cluster.
 	State string `pulumi:"state"`
 	// The date and time that the Autonomous VM cluster was created.
@@ -160,12 +166,22 @@ func (o LookupAutonomousVmClusterResultOutput) AutonomousVmClusterId() pulumi.St
 	return o.ApplyT(func(v LookupAutonomousVmClusterResult) string { return v.AutonomousVmClusterId }).(pulumi.StringOutput)
 }
 
+// The data disk group size available for Autonomous Databases, in TBs.
+func (o LookupAutonomousVmClusterResultOutput) AvailableAutonomousDataStorageSizeInTbs() pulumi.Float64Output {
+	return o.ApplyT(func(v LookupAutonomousVmClusterResult) float64 { return v.AvailableAutonomousDataStorageSizeInTbs }).(pulumi.Float64Output)
+}
+
+// The number of Autonomous Container Databases that can be created with the currently available local storage.
+func (o LookupAutonomousVmClusterResultOutput) AvailableContainerDatabases() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupAutonomousVmClusterResult) int { return v.AvailableContainerDatabases }).(pulumi.IntOutput)
+}
+
 // The numnber of CPU cores available.
 func (o LookupAutonomousVmClusterResultOutput) AvailableCpus() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupAutonomousVmClusterResult) int { return v.AvailableCpus }).(pulumi.IntOutput)
 }
 
-// The data storage available in TBs
+// **Deprecated.** Use `availableAutonomousDataStorageSizeInTBs` for Autonomous Databases' data storage availability in TBs.
 func (o LookupAutonomousVmClusterResultOutput) AvailableDataStorageSizeInTbs() pulumi.Float64Output {
 	return o.ApplyT(func(v LookupAutonomousVmClusterResult) float64 { return v.AvailableDataStorageSizeInTbs }).(pulumi.Float64Output)
 }
@@ -276,6 +292,11 @@ func (o LookupAutonomousVmClusterResultOutput) NextMaintenanceRunId() pulumi.Str
 // The number of enabled OCPU cores.
 func (o LookupAutonomousVmClusterResultOutput) OcpusEnabled() pulumi.Float64Output {
 	return o.ApplyT(func(v LookupAutonomousVmClusterResult) float64 { return v.OcpusEnabled }).(pulumi.Float64Output)
+}
+
+// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+func (o LookupAutonomousVmClusterResultOutput) ReclaimableCpus() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupAutonomousVmClusterResult) int { return v.ReclaimableCpus }).(pulumi.IntOutput)
 }
 
 // The current state of the Autonomous VM cluster.

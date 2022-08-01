@@ -102,10 +102,6 @@ def get_supported_host_shapes(compartment_id: Optional[str] = None,
                               sddc_type: Optional[str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSupportedHostShapesResult:
     """
-    This data source provides the list of Supported Host Shapes in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
-
-    Lists supported compute shapes for ESXi hosts.
-
     ## Example Usage
 
     ```python
@@ -149,10 +145,6 @@ def get_supported_host_shapes_output(compartment_id: Optional[pulumi.Input[str]]
                                      sddc_type: Optional[pulumi.Input[Optional[str]]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSupportedHostShapesResult]:
     """
-    This data source provides the list of Supported Host Shapes in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
-
-    Lists supported compute shapes for ESXi hosts.
-
     ## Example Usage
 
     ```python

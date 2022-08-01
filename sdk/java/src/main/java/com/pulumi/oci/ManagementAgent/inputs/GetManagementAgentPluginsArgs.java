@@ -18,6 +18,21 @@ public final class GetManagementAgentPluginsArgs extends com.pulumi.resources.In
     public static final GetManagementAgentPluginsArgs Empty = new GetManagementAgentPluginsArgs();
 
     /**
+     * The ManagementAgentID of the agent from which the Management Agents to be filtered.
+     * 
+     */
+    @Import(name="agentId")
+    private @Nullable Output<String> agentId;
+
+    /**
+     * @return The ManagementAgentID of the agent from which the Management Agents to be filtered.
+     * 
+     */
+    public Optional<Output<String>> agentId() {
+        return Optional.ofNullable(this.agentId);
+    }
+
+    /**
      * The OCID of the compartment to which a request will be scoped.
      * 
      */
@@ -55,14 +70,14 @@ public final class GetManagementAgentPluginsArgs extends com.pulumi.resources.In
     }
 
     /**
-     * Filter to return only results having the particular platform type.
+     * Array of PlatformTypes to return only results having the particular platform types. Example: [&#34;LINUX&#34;]
      * 
      */
     @Import(name="platformTypes")
     private @Nullable Output<List<String>> platformTypes;
 
     /**
-     * @return Filter to return only results having the particular platform type.
+     * @return Array of PlatformTypes to return only results having the particular platform types. Example: [&#34;LINUX&#34;]
      * 
      */
     public Optional<Output<List<String>>> platformTypes() {
@@ -87,6 +102,7 @@ public final class GetManagementAgentPluginsArgs extends com.pulumi.resources.In
     private GetManagementAgentPluginsArgs() {}
 
     private GetManagementAgentPluginsArgs(GetManagementAgentPluginsArgs $) {
+        this.agentId = $.agentId;
         this.compartmentId = $.compartmentId;
         this.displayName = $.displayName;
         this.filters = $.filters;
@@ -110,6 +126,27 @@ public final class GetManagementAgentPluginsArgs extends com.pulumi.resources.In
 
         public Builder(GetManagementAgentPluginsArgs defaults) {
             $ = new GetManagementAgentPluginsArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param agentId The ManagementAgentID of the agent from which the Management Agents to be filtered.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder agentId(@Nullable Output<String> agentId) {
+            $.agentId = agentId;
+            return this;
+        }
+
+        /**
+         * @param agentId The ManagementAgentID of the agent from which the Management Agents to be filtered.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder agentId(String agentId) {
+            return agentId(Output.of(agentId));
         }
 
         /**
@@ -168,7 +205,7 @@ public final class GetManagementAgentPluginsArgs extends com.pulumi.resources.In
         }
 
         /**
-         * @param platformTypes Filter to return only results having the particular platform type.
+         * @param platformTypes Array of PlatformTypes to return only results having the particular platform types. Example: [&#34;LINUX&#34;]
          * 
          * @return builder
          * 
@@ -179,7 +216,7 @@ public final class GetManagementAgentPluginsArgs extends com.pulumi.resources.In
         }
 
         /**
-         * @param platformTypes Filter to return only results having the particular platform type.
+         * @param platformTypes Array of PlatformTypes to return only results having the particular platform types. Example: [&#34;LINUX&#34;]
          * 
          * @return builder
          * 
@@ -189,7 +226,7 @@ public final class GetManagementAgentPluginsArgs extends com.pulumi.resources.In
         }
 
         /**
-         * @param platformTypes Filter to return only results having the particular platform type.
+         * @param platformTypes Array of PlatformTypes to return only results having the particular platform types. Example: [&#34;LINUX&#34;]
          * 
          * @return builder
          * 

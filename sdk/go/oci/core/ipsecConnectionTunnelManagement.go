@@ -77,9 +77,10 @@ type IpsecConnectionTunnelManagement struct {
 	// The IP address of Cpe headend.  Example: `129.146.17.50`
 	CpeIp pulumi.StringOutput `pulumi:"cpeIp"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName     pulumi.StringOutput `pulumi:"displayName"`
-	DpdMode         pulumi.StringOutput `pulumi:"dpdMode"`
-	DpdTimeoutInSec pulumi.IntOutput    `pulumi:"dpdTimeoutInSec"`
+	DisplayName     pulumi.StringOutput                                 `pulumi:"displayName"`
+	DpdConfigs      IpsecConnectionTunnelManagementDpdConfigArrayOutput `pulumi:"dpdConfigs"`
+	DpdMode         pulumi.StringOutput                                 `pulumi:"dpdMode"`
+	DpdTimeoutInSec pulumi.IntOutput                                    `pulumi:"dpdTimeoutInSec"`
 	// Configuration information used by the encryption domain policy. Required if the tunnel uses POLICY routing.
 	EncryptionDomainConfig IpsecConnectionTunnelManagementEncryptionDomainConfigOutput `pulumi:"encryptionDomainConfig"`
 	// Internet Key Exchange protocol version.
@@ -153,9 +154,10 @@ type ipsecConnectionTunnelManagementState struct {
 	// The IP address of Cpe headend.  Example: `129.146.17.50`
 	CpeIp *string `pulumi:"cpeIp"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName     *string `pulumi:"displayName"`
-	DpdMode         *string `pulumi:"dpdMode"`
-	DpdTimeoutInSec *int    `pulumi:"dpdTimeoutInSec"`
+	DisplayName     *string                                    `pulumi:"displayName"`
+	DpdConfigs      []IpsecConnectionTunnelManagementDpdConfig `pulumi:"dpdConfigs"`
+	DpdMode         *string                                    `pulumi:"dpdMode"`
+	DpdTimeoutInSec *int                                       `pulumi:"dpdTimeoutInSec"`
 	// Configuration information used by the encryption domain policy. Required if the tunnel uses POLICY routing.
 	EncryptionDomainConfig *IpsecConnectionTunnelManagementEncryptionDomainConfig `pulumi:"encryptionDomainConfig"`
 	// Internet Key Exchange protocol version.
@@ -193,6 +195,7 @@ type IpsecConnectionTunnelManagementState struct {
 	CpeIp pulumi.StringPtrInput
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName     pulumi.StringPtrInput
+	DpdConfigs      IpsecConnectionTunnelManagementDpdConfigArrayInput
 	DpdMode         pulumi.StringPtrInput
 	DpdTimeoutInSec pulumi.IntPtrInput
 	// Configuration information used by the encryption domain policy. Required if the tunnel uses POLICY routing.
@@ -231,7 +234,8 @@ type ipsecConnectionTunnelManagementArgs struct {
 	// Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
 	BgpSessionInfos []IpsecConnectionTunnelManagementBgpSessionInfo `pulumi:"bgpSessionInfos"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName *string `pulumi:"displayName"`
+	DisplayName *string                                    `pulumi:"displayName"`
+	DpdConfigs  []IpsecConnectionTunnelManagementDpdConfig `pulumi:"dpdConfigs"`
 	// Configuration information used by the encryption domain policy. Required if the tunnel uses POLICY routing.
 	EncryptionDomainConfig *IpsecConnectionTunnelManagementEncryptionDomainConfig `pulumi:"encryptionDomainConfig"`
 	// Internet Key Exchange protocol version.
@@ -252,6 +256,7 @@ type IpsecConnectionTunnelManagementArgs struct {
 	BgpSessionInfos IpsecConnectionTunnelManagementBgpSessionInfoArrayInput
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
+	DpdConfigs  IpsecConnectionTunnelManagementDpdConfigArrayInput
 	// Configuration information used by the encryption domain policy. Required if the tunnel uses POLICY routing.
 	EncryptionDomainConfig IpsecConnectionTunnelManagementEncryptionDomainConfigPtrInput
 	// Internet Key Exchange protocol version.

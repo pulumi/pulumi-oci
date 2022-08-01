@@ -17,14 +17,14 @@ public final class DetectorRecipeDetectorRuleCandidateResponderRuleArgs extends 
     public static final DetectorRecipeDetectorRuleCandidateResponderRuleArgs Empty = new DetectorRecipeDetectorRuleCandidateResponderRuleArgs();
 
     /**
-     * (Updatable) DetectorRecipe Display Name
+     * (Updatable) Detector recipe display name.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) DetectorRecipe Display Name
+     * @return (Updatable) Detector recipe display name.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -88,7 +88,7 @@ public final class DetectorRecipeDetectorRuleCandidateResponderRuleArgs extends 
         }
 
         /**
-         * @param displayName (Updatable) DetectorRecipe Display Name
+         * @param displayName (Updatable) Detector recipe display name.
          * 
          * @return builder
          * 
@@ -99,7 +99,7 @@ public final class DetectorRecipeDetectorRuleCandidateResponderRuleArgs extends 
         }
 
         /**
-         * @param displayName (Updatable) DetectorRecipe Display Name
+         * @param displayName (Updatable) Detector recipe display name.
          * 
          * @return builder
          * 

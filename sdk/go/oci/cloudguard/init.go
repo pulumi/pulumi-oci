@@ -31,6 +31,10 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ManagedList{}
 	case "oci:CloudGuard/responderRecipe:ResponderRecipe":
 		r = &ResponderRecipe{}
+	case "oci:CloudGuard/securityRecipe:SecurityRecipe":
+		r = &SecurityRecipe{}
+	case "oci:CloudGuard/securityZone:SecurityZone":
+		r = &SecurityZone{}
 	case "oci:CloudGuard/target:Target":
 		r = &Target{}
 	default:
@@ -69,6 +73,16 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"CloudGuard/responderRecipe",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"CloudGuard/securityRecipe",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"CloudGuard/securityZone",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

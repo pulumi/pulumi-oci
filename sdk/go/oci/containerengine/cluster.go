@@ -27,6 +27,8 @@ type Cluster struct {
 
 	// Available Kubernetes versions to which the clusters masters may be upgraded.
 	AvailableKubernetesUpgrades pulumi.StringArrayOutput `pulumi:"availableKubernetesUpgrades"`
+	// Available CNIs and network options for existing and new node pools of the cluster
+	ClusterPodNetworkOptions ClusterClusterPodNetworkOptionArrayOutput `pulumi:"clusterPodNetworkOptions"`
 	// The OCID of the compartment in which to create the cluster.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -97,6 +99,8 @@ func GetCluster(ctx *pulumi.Context,
 type clusterState struct {
 	// Available Kubernetes versions to which the clusters masters may be upgraded.
 	AvailableKubernetesUpgrades []string `pulumi:"availableKubernetesUpgrades"`
+	// Available CNIs and network options for existing and new node pools of the cluster
+	ClusterPodNetworkOptions []ClusterClusterPodNetworkOption `pulumi:"clusterPodNetworkOptions"`
 	// The OCID of the compartment in which to create the cluster.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -130,6 +134,8 @@ type clusterState struct {
 type ClusterState struct {
 	// Available Kubernetes versions to which the clusters masters may be upgraded.
 	AvailableKubernetesUpgrades pulumi.StringArrayInput
+	// Available CNIs and network options for existing and new node pools of the cluster
+	ClusterPodNetworkOptions ClusterClusterPodNetworkOptionArrayInput
 	// The OCID of the compartment in which to create the cluster.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -165,6 +171,8 @@ func (ClusterState) ElementType() reflect.Type {
 }
 
 type clusterArgs struct {
+	// Available CNIs and network options for existing and new node pools of the cluster
+	ClusterPodNetworkOptions []ClusterClusterPodNetworkOption `pulumi:"clusterPodNetworkOptions"`
 	// The OCID of the compartment in which to create the cluster.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -189,6 +197,8 @@ type clusterArgs struct {
 
 // The set of arguments for constructing a Cluster resource.
 type ClusterArgs struct {
+	// Available CNIs and network options for existing and new node pools of the cluster
+	ClusterPodNetworkOptions ClusterClusterPodNetworkOptionArrayInput
 	// The OCID of the compartment in which to create the cluster.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`

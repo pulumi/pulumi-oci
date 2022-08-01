@@ -7,8 +7,6 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.String;
 import java.util.Objects;
-import java.util.Optional;
-import javax.annotation.Nullable;
 
 
 public final class DatabaseToolsConnectionUserPasswordArgs extends com.pulumi.resources.ResourceArgs {
@@ -19,15 +17,15 @@ public final class DatabaseToolsConnectionUserPasswordArgs extends com.pulumi.re
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
      * 
      */
-    @Import(name="secretId")
-    private @Nullable Output<String> secretId;
+    @Import(name="secretId", required=true)
+    private Output<String> secretId;
 
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
      * 
      */
-    public Optional<Output<String>> secretId() {
-        return Optional.ofNullable(this.secretId);
+    public Output<String> secretId() {
+        return this.secretId;
     }
 
     /**
@@ -76,7 +74,7 @@ public final class DatabaseToolsConnectionUserPasswordArgs extends com.pulumi.re
          * @return builder
          * 
          */
-        public Builder secretId(@Nullable Output<String> secretId) {
+        public Builder secretId(Output<String> secretId) {
             $.secretId = secretId;
             return this;
         }
@@ -113,6 +111,7 @@ public final class DatabaseToolsConnectionUserPasswordArgs extends com.pulumi.re
         }
 
         public DatabaseToolsConnectionUserPasswordArgs build() {
+            $.secretId = Objects.requireNonNull($.secretId, "expected parameter 'secretId' to be non-null");
             $.valueType = Objects.requireNonNull($.valueType, "expected parameter 'valueType' to be non-null");
             return $;
         }

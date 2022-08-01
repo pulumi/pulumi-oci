@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetDatabaseToolsPrivateEndpointsResult {
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools private endpoint.
      * 
      */
     private final String compartmentId;
@@ -30,7 +30,7 @@ public final class GetDatabaseToolsPrivateEndpointsResult {
      */
     private final @Nullable String displayName;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsEndpointService.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Endpoint Service.
      * 
      */
     private final @Nullable String endpointServiceId;
@@ -41,7 +41,7 @@ public final class GetDatabaseToolsPrivateEndpointsResult {
      */
     private final String id;
     /**
-     * @return The current state of the DatabaseToolsPrivateEndpoint.
+     * @return The current state of the Database Tools private endpoint.
      * 
      */
     private final @Nullable String state;
@@ -72,7 +72,7 @@ public final class GetDatabaseToolsPrivateEndpointsResult {
     }
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools private endpoint.
      * 
      */
     public String compartmentId() {
@@ -93,7 +93,7 @@ public final class GetDatabaseToolsPrivateEndpointsResult {
         return Optional.ofNullable(this.displayName);
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsEndpointService.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Endpoint Service.
      * 
      */
     public Optional<String> endpointServiceId() {
@@ -110,7 +110,7 @@ public final class GetDatabaseToolsPrivateEndpointsResult {
         return this.id;
     }
     /**
-     * @return The current state of the DatabaseToolsPrivateEndpoint.
+     * @return The current state of the Database Tools private endpoint.
      * 
      */
     public Optional<String> state() {

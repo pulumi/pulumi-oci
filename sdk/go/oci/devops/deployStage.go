@@ -79,6 +79,8 @@ type DeployStage struct {
 	FunctionTimeoutInSeconds pulumi.IntOutput `pulumi:"functionTimeoutInSeconds"`
 	// (Updatable) Collection of backend environment IP addresses.
 	GreenBackendIps DeployStageGreenBackendIpsOutput `pulumi:"greenBackendIps"`
+	// (Updatable) Helm chart artifact OCID.
+	HelmChartDeployArtifactId pulumi.StringOutput `pulumi:"helmChartDeployArtifactId"`
 	// (Updatable) A boolean flag specifies whether this stage executes asynchronously.
 	IsAsync pulumi.BoolOutput `pulumi:"isAsync"`
 	// (Updatable) A boolean flag specifies whether the invoked function should be validated.
@@ -101,10 +103,12 @@ type DeployStage struct {
 	OkeCanaryTrafficShiftDeployStageId pulumi.StringOutput `pulumi:"okeCanaryTrafficShiftDeployStageId"`
 	// (Updatable) Kubernetes cluster environment OCID for deployment.
 	OkeClusterDeployEnvironmentId pulumi.StringOutput `pulumi:"okeClusterDeployEnvironmentId"`
-	// Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+	// Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
 	ProductionLoadBalancerConfig DeployStageProductionLoadBalancerConfigOutput `pulumi:"productionLoadBalancerConfig"`
 	// The OCID of a project.
 	ProjectId pulumi.StringOutput `pulumi:"projectId"`
+	// (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
+	ReleaseName pulumi.StringOutput `pulumi:"releaseName"`
 	// (Updatable) Specifies the rollback policy. This is initiated on the failure of certain stage types.
 	RollbackPolicy DeployStageRollbackPolicyOutput `pulumi:"rollbackPolicy"`
 	// (Updatable) Description of rollout policy for load balancer traffic shift stage.
@@ -119,8 +123,12 @@ type DeployStage struct {
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// Time the deployment stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	// (Updatable) Time to wait for execution of a helm stage. Defaults to 300 seconds.
+	TimeoutInSeconds pulumi.IntOutput `pulumi:"timeoutInSeconds"`
 	// (Updatable) Specifies the target or destination backend set.
 	TrafficShiftTarget pulumi.StringOutput `pulumi:"trafficShiftTarget"`
+	// (Updatable) List of values.yaml file artifact OCIDs.
+	ValuesArtifactIds pulumi.StringArrayOutput `pulumi:"valuesArtifactIds"`
 	// (Updatable) Specifies wait criteria for the Wait stage.
 	WaitCriteria DeployStageWaitCriteriaOutput `pulumi:"waitCriteria"`
 }
@@ -217,6 +225,8 @@ type deployStageState struct {
 	FunctionTimeoutInSeconds *int `pulumi:"functionTimeoutInSeconds"`
 	// (Updatable) Collection of backend environment IP addresses.
 	GreenBackendIps *DeployStageGreenBackendIps `pulumi:"greenBackendIps"`
+	// (Updatable) Helm chart artifact OCID.
+	HelmChartDeployArtifactId *string `pulumi:"helmChartDeployArtifactId"`
 	// (Updatable) A boolean flag specifies whether this stage executes asynchronously.
 	IsAsync *bool `pulumi:"isAsync"`
 	// (Updatable) A boolean flag specifies whether the invoked function should be validated.
@@ -239,10 +249,12 @@ type deployStageState struct {
 	OkeCanaryTrafficShiftDeployStageId *string `pulumi:"okeCanaryTrafficShiftDeployStageId"`
 	// (Updatable) Kubernetes cluster environment OCID for deployment.
 	OkeClusterDeployEnvironmentId *string `pulumi:"okeClusterDeployEnvironmentId"`
-	// Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+	// Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
 	ProductionLoadBalancerConfig *DeployStageProductionLoadBalancerConfig `pulumi:"productionLoadBalancerConfig"`
 	// The OCID of a project.
 	ProjectId *string `pulumi:"projectId"`
+	// (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
+	ReleaseName *string `pulumi:"releaseName"`
 	// (Updatable) Specifies the rollback policy. This is initiated on the failure of certain stage types.
 	RollbackPolicy *DeployStageRollbackPolicy `pulumi:"rollbackPolicy"`
 	// (Updatable) Description of rollout policy for load balancer traffic shift stage.
@@ -257,8 +269,12 @@ type deployStageState struct {
 	TimeCreated *string `pulumi:"timeCreated"`
 	// Time the deployment stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeUpdated *string `pulumi:"timeUpdated"`
+	// (Updatable) Time to wait for execution of a helm stage. Defaults to 300 seconds.
+	TimeoutInSeconds *int `pulumi:"timeoutInSeconds"`
 	// (Updatable) Specifies the target or destination backend set.
 	TrafficShiftTarget *string `pulumi:"trafficShiftTarget"`
+	// (Updatable) List of values.yaml file artifact OCIDs.
+	ValuesArtifactIds []string `pulumi:"valuesArtifactIds"`
 	// (Updatable) Specifies wait criteria for the Wait stage.
 	WaitCriteria *DeployStageWaitCriteria `pulumi:"waitCriteria"`
 }
@@ -318,6 +334,8 @@ type DeployStageState struct {
 	FunctionTimeoutInSeconds pulumi.IntPtrInput
 	// (Updatable) Collection of backend environment IP addresses.
 	GreenBackendIps DeployStageGreenBackendIpsPtrInput
+	// (Updatable) Helm chart artifact OCID.
+	HelmChartDeployArtifactId pulumi.StringPtrInput
 	// (Updatable) A boolean flag specifies whether this stage executes asynchronously.
 	IsAsync pulumi.BoolPtrInput
 	// (Updatable) A boolean flag specifies whether the invoked function should be validated.
@@ -340,10 +358,12 @@ type DeployStageState struct {
 	OkeCanaryTrafficShiftDeployStageId pulumi.StringPtrInput
 	// (Updatable) Kubernetes cluster environment OCID for deployment.
 	OkeClusterDeployEnvironmentId pulumi.StringPtrInput
-	// Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+	// Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
 	ProductionLoadBalancerConfig DeployStageProductionLoadBalancerConfigPtrInput
 	// The OCID of a project.
 	ProjectId pulumi.StringPtrInput
+	// (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
+	ReleaseName pulumi.StringPtrInput
 	// (Updatable) Specifies the rollback policy. This is initiated on the failure of certain stage types.
 	RollbackPolicy DeployStageRollbackPolicyPtrInput
 	// (Updatable) Description of rollout policy for load balancer traffic shift stage.
@@ -358,8 +378,12 @@ type DeployStageState struct {
 	TimeCreated pulumi.StringPtrInput
 	// Time the deployment stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeUpdated pulumi.StringPtrInput
+	// (Updatable) Time to wait for execution of a helm stage. Defaults to 300 seconds.
+	TimeoutInSeconds pulumi.IntPtrInput
 	// (Updatable) Specifies the target or destination backend set.
 	TrafficShiftTarget pulumi.StringPtrInput
+	// (Updatable) List of values.yaml file artifact OCIDs.
+	ValuesArtifactIds pulumi.StringArrayInput
 	// (Updatable) Specifies wait criteria for the Wait stage.
 	WaitCriteria DeployStageWaitCriteriaPtrInput
 }
@@ -421,6 +445,8 @@ type deployStageArgs struct {
 	FunctionTimeoutInSeconds *int `pulumi:"functionTimeoutInSeconds"`
 	// (Updatable) Collection of backend environment IP addresses.
 	GreenBackendIps *DeployStageGreenBackendIps `pulumi:"greenBackendIps"`
+	// (Updatable) Helm chart artifact OCID.
+	HelmChartDeployArtifactId *string `pulumi:"helmChartDeployArtifactId"`
 	// (Updatable) A boolean flag specifies whether this stage executes asynchronously.
 	IsAsync *bool `pulumi:"isAsync"`
 	// (Updatable) A boolean flag specifies whether the invoked function should be validated.
@@ -441,16 +467,22 @@ type deployStageArgs struct {
 	OkeCanaryTrafficShiftDeployStageId *string `pulumi:"okeCanaryTrafficShiftDeployStageId"`
 	// (Updatable) Kubernetes cluster environment OCID for deployment.
 	OkeClusterDeployEnvironmentId *string `pulumi:"okeClusterDeployEnvironmentId"`
-	// Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+	// Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
 	ProductionLoadBalancerConfig *DeployStageProductionLoadBalancerConfig `pulumi:"productionLoadBalancerConfig"`
+	// (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
+	ReleaseName *string `pulumi:"releaseName"`
 	// (Updatable) Specifies the rollback policy. This is initiated on the failure of certain stage types.
 	RollbackPolicy *DeployStageRollbackPolicy `pulumi:"rollbackPolicy"`
 	// (Updatable) Description of rollout policy for load balancer traffic shift stage.
 	RolloutPolicy *DeployStageRolloutPolicy `pulumi:"rolloutPolicy"`
 	// (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
 	TestLoadBalancerConfig *DeployStageTestLoadBalancerConfig `pulumi:"testLoadBalancerConfig"`
+	// (Updatable) Time to wait for execution of a helm stage. Defaults to 300 seconds.
+	TimeoutInSeconds *int `pulumi:"timeoutInSeconds"`
 	// (Updatable) Specifies the target or destination backend set.
 	TrafficShiftTarget *string `pulumi:"trafficShiftTarget"`
+	// (Updatable) List of values.yaml file artifact OCIDs.
+	ValuesArtifactIds []string `pulumi:"valuesArtifactIds"`
 	// (Updatable) Specifies wait criteria for the Wait stage.
 	WaitCriteria *DeployStageWaitCriteria `pulumi:"waitCriteria"`
 }
@@ -509,6 +541,8 @@ type DeployStageArgs struct {
 	FunctionTimeoutInSeconds pulumi.IntPtrInput
 	// (Updatable) Collection of backend environment IP addresses.
 	GreenBackendIps DeployStageGreenBackendIpsPtrInput
+	// (Updatable) Helm chart artifact OCID.
+	HelmChartDeployArtifactId pulumi.StringPtrInput
 	// (Updatable) A boolean flag specifies whether this stage executes asynchronously.
 	IsAsync pulumi.BoolPtrInput
 	// (Updatable) A boolean flag specifies whether the invoked function should be validated.
@@ -529,16 +563,22 @@ type DeployStageArgs struct {
 	OkeCanaryTrafficShiftDeployStageId pulumi.StringPtrInput
 	// (Updatable) Kubernetes cluster environment OCID for deployment.
 	OkeClusterDeployEnvironmentId pulumi.StringPtrInput
-	// Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+	// Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
 	ProductionLoadBalancerConfig DeployStageProductionLoadBalancerConfigPtrInput
+	// (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
+	ReleaseName pulumi.StringPtrInput
 	// (Updatable) Specifies the rollback policy. This is initiated on the failure of certain stage types.
 	RollbackPolicy DeployStageRollbackPolicyPtrInput
 	// (Updatable) Description of rollout policy for load balancer traffic shift stage.
 	RolloutPolicy DeployStageRolloutPolicyPtrInput
 	// (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
 	TestLoadBalancerConfig DeployStageTestLoadBalancerConfigPtrInput
+	// (Updatable) Time to wait for execution of a helm stage. Defaults to 300 seconds.
+	TimeoutInSeconds pulumi.IntPtrInput
 	// (Updatable) Specifies the target or destination backend set.
 	TrafficShiftTarget pulumi.StringPtrInput
+	// (Updatable) List of values.yaml file artifact OCIDs.
+	ValuesArtifactIds pulumi.StringArrayInput
 	// (Updatable) Specifies wait criteria for the Wait stage.
 	WaitCriteria DeployStageWaitCriteriaPtrInput
 }

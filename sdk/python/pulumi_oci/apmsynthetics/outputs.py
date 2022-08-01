@@ -19,9 +19,18 @@ __all__ = [
     'ConfigConfigurationVerifyText',
     'ConfigScriptParameter',
     'ConfigScriptParameterMonitorScriptParameter',
+    'DedicatedVantagePointDvpStackDetails',
+    'DedicatedVantagePointMonitorStatusCountMap',
     'ScriptMonitorStatusCountMap',
     'ScriptParameter',
     'ScriptParameterScriptParameter',
+    'GetDedicatedVantagePointDvpStackDetailResult',
+    'GetDedicatedVantagePointMonitorStatusCountMapResult',
+    'GetDedicatedVantagePointsDedicatedVantagePointCollectionResult',
+    'GetDedicatedVantagePointsDedicatedVantagePointCollectionItemResult',
+    'GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailResult',
+    'GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapResult',
+    'GetDedicatedVantagePointsFilterResult',
     'GetMonitorConfigurationResult',
     'GetMonitorConfigurationNetworkConfigurationResult',
     'GetMonitorConfigurationReqAuthenticationDetailResult',
@@ -135,7 +144,7 @@ class ConfigConfiguration(dict):
         :param Sequence['ConfigConfigurationRequestQueryParamArgs'] request_query_params: (Updatable) List of request query params. Example: `[{"paramName": "sortOrder", "paramValue": "asc"}]`
         :param Sequence[str] verify_response_codes: (Updatable) Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
         :param str verify_response_content: (Updatable) Verify response content against regular expression based string. If response content does not match the verifyResponseContent value, then it will be considered a failure.
-        :param Sequence['ConfigConfigurationVerifyTextArgs'] verify_texts: (Updatable) Verify all the search strings present in response. If any search string is not present in the response, then it will be considered as a failure.
+        :param Sequence['ConfigConfigurationVerifyTextArgs'] verify_texts: (Updatable) Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
         """
         if config_type is not None:
             pulumi.set(__self__, "config_type", config_type)
@@ -274,7 +283,7 @@ class ConfigConfiguration(dict):
     @pulumi.getter(name="verifyTexts")
     def verify_texts(self) -> Optional[Sequence['outputs.ConfigConfigurationVerifyText']]:
         """
-        (Updatable) Verify all the search strings present in response. If any search string is not present in the response, then it will be considered as a failure.
+        (Updatable) Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
         """
         return pulumi.get(self, "verify_texts")
 
@@ -813,6 +822,135 @@ class ConfigScriptParameterMonitorScriptParameter(dict):
 
 
 @pulumi.output_type
+class DedicatedVantagePointDvpStackDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dvpStackId":
+            suggest = "dvp_stack_id"
+        elif key == "dvpStackType":
+            suggest = "dvp_stack_type"
+        elif key == "dvpStreamId":
+            suggest = "dvp_stream_id"
+        elif key == "dvpVersion":
+            suggest = "dvp_version"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DedicatedVantagePointDvpStackDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DedicatedVantagePointDvpStackDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DedicatedVantagePointDvpStackDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 dvp_stack_id: str,
+                 dvp_stack_type: str,
+                 dvp_stream_id: str,
+                 dvp_version: str):
+        """
+        :param str dvp_stack_id: (Updatable) Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+        :param str dvp_stack_type: (Updatable) Type of stack.
+        :param str dvp_stream_id: (Updatable) Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+        :param str dvp_version: (Updatable) Version of DVP.
+        """
+        pulumi.set(__self__, "dvp_stack_id", dvp_stack_id)
+        pulumi.set(__self__, "dvp_stack_type", dvp_stack_type)
+        pulumi.set(__self__, "dvp_stream_id", dvp_stream_id)
+        pulumi.set(__self__, "dvp_version", dvp_version)
+
+    @property
+    @pulumi.getter(name="dvpStackId")
+    def dvp_stack_id(self) -> str:
+        """
+        (Updatable) Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+        """
+        return pulumi.get(self, "dvp_stack_id")
+
+    @property
+    @pulumi.getter(name="dvpStackType")
+    def dvp_stack_type(self) -> str:
+        """
+        (Updatable) Type of stack.
+        """
+        return pulumi.get(self, "dvp_stack_type")
+
+    @property
+    @pulumi.getter(name="dvpStreamId")
+    def dvp_stream_id(self) -> str:
+        """
+        (Updatable) Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+        """
+        return pulumi.get(self, "dvp_stream_id")
+
+    @property
+    @pulumi.getter(name="dvpVersion")
+    def dvp_version(self) -> str:
+        """
+        (Updatable) Version of DVP.
+        """
+        return pulumi.get(self, "dvp_version")
+
+
+@pulumi.output_type
+class DedicatedVantagePointMonitorStatusCountMap(dict):
+    def __init__(__self__, *,
+                 disabled: Optional[int] = None,
+                 enabled: Optional[int] = None,
+                 invalid: Optional[int] = None,
+                 total: Optional[int] = None):
+        """
+        :param int disabled: Number of disabled monitors using the script.
+        :param int enabled: Number of enabled monitors using the script.
+        :param int invalid: Number of invalid monitors using the script.
+        :param int total: Total number of monitors using the script.
+        """
+        if disabled is not None:
+            pulumi.set(__self__, "disabled", disabled)
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if invalid is not None:
+            pulumi.set(__self__, "invalid", invalid)
+        if total is not None:
+            pulumi.set(__self__, "total", total)
+
+    @property
+    @pulumi.getter
+    def disabled(self) -> Optional[int]:
+        """
+        Number of disabled monitors using the script.
+        """
+        return pulumi.get(self, "disabled")
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[int]:
+        """
+        Number of enabled monitors using the script.
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def invalid(self) -> Optional[int]:
+        """
+        Number of invalid monitors using the script.
+        """
+        return pulumi.get(self, "invalid")
+
+    @property
+    @pulumi.getter
+    def total(self) -> Optional[int]:
+        """
+        Total number of monitors using the script.
+        """
+        return pulumi.get(self, "total")
+
+
+@pulumi.output_type
 class ScriptMonitorStatusCountMap(dict):
     def __init__(__self__, *,
                  disabled: Optional[int] = None,
@@ -1023,6 +1161,394 @@ class ScriptParameterScriptParameter(dict):
 
 
 @pulumi.output_type
+class GetDedicatedVantagePointDvpStackDetailResult(dict):
+    def __init__(__self__, *,
+                 dvp_stack_id: str,
+                 dvp_stack_type: str,
+                 dvp_stream_id: str,
+                 dvp_version: str):
+        """
+        :param str dvp_stack_id: Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+        :param str dvp_stack_type: Type of stack.
+        :param str dvp_stream_id: Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+        :param str dvp_version: Version of DVP.
+        """
+        pulumi.set(__self__, "dvp_stack_id", dvp_stack_id)
+        pulumi.set(__self__, "dvp_stack_type", dvp_stack_type)
+        pulumi.set(__self__, "dvp_stream_id", dvp_stream_id)
+        pulumi.set(__self__, "dvp_version", dvp_version)
+
+    @property
+    @pulumi.getter(name="dvpStackId")
+    def dvp_stack_id(self) -> str:
+        """
+        Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+        """
+        return pulumi.get(self, "dvp_stack_id")
+
+    @property
+    @pulumi.getter(name="dvpStackType")
+    def dvp_stack_type(self) -> str:
+        """
+        Type of stack.
+        """
+        return pulumi.get(self, "dvp_stack_type")
+
+    @property
+    @pulumi.getter(name="dvpStreamId")
+    def dvp_stream_id(self) -> str:
+        """
+        Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+        """
+        return pulumi.get(self, "dvp_stream_id")
+
+    @property
+    @pulumi.getter(name="dvpVersion")
+    def dvp_version(self) -> str:
+        """
+        Version of DVP.
+        """
+        return pulumi.get(self, "dvp_version")
+
+
+@pulumi.output_type
+class GetDedicatedVantagePointMonitorStatusCountMapResult(dict):
+    def __init__(__self__, *,
+                 disabled: int,
+                 enabled: int,
+                 invalid: int,
+                 total: int):
+        """
+        :param int disabled: Number of disabled monitors using the script.
+        :param int enabled: Number of enabled monitors using the script.
+        :param int invalid: Number of invalid monitors using the script.
+        :param int total: Total number of monitors using the script.
+        """
+        pulumi.set(__self__, "disabled", disabled)
+        pulumi.set(__self__, "enabled", enabled)
+        pulumi.set(__self__, "invalid", invalid)
+        pulumi.set(__self__, "total", total)
+
+    @property
+    @pulumi.getter
+    def disabled(self) -> int:
+        """
+        Number of disabled monitors using the script.
+        """
+        return pulumi.get(self, "disabled")
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> int:
+        """
+        Number of enabled monitors using the script.
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def invalid(self) -> int:
+        """
+        Number of invalid monitors using the script.
+        """
+        return pulumi.get(self, "invalid")
+
+    @property
+    @pulumi.getter
+    def total(self) -> int:
+        """
+        Total number of monitors using the script.
+        """
+        return pulumi.get(self, "total")
+
+
+@pulumi.output_type
+class GetDedicatedVantagePointsDedicatedVantagePointCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetDedicatedVantagePointsDedicatedVantagePointCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetDedicatedVantagePointsDedicatedVantagePointCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetDedicatedVantagePointsDedicatedVantagePointCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 apm_domain_id: str,
+                 defined_tags: Mapping[str, Any],
+                 display_name: str,
+                 dvp_stack_details: Sequence['outputs.GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailResult'],
+                 freeform_tags: Mapping[str, Any],
+                 id: str,
+                 monitor_status_count_maps: Sequence['outputs.GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapResult'],
+                 name: str,
+                 region: str,
+                 status: str,
+                 time_created: str,
+                 time_updated: str):
+        """
+        :param str apm_domain_id: The APM domain ID the request is intended for.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param str display_name: A filter to return only the resources that match the entire display name.
+        :param Sequence['GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArgs'] dvp_stack_details: Details of DVP Stack.
+        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated vantage point.
+        :param Sequence['GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArgs'] monitor_status_count_maps: Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
+        :param str name: A filter to return only the resources that match the entire name.
+        :param str region: Name of the region.
+        :param str status: A filter to return only the dedicated vantage points that match a given status.
+        :param str time_created: The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+        :param str time_updated: The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
+        """
+        pulumi.set(__self__, "apm_domain_id", apm_domain_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "dvp_stack_details", dvp_stack_details)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "monitor_status_count_maps", monitor_status_count_maps)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "region", region)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="apmDomainId")
+    def apm_domain_id(self) -> str:
+        """
+        The APM domain ID the request is intended for.
+        """
+        return pulumi.get(self, "apm_domain_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only the resources that match the entire display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="dvpStackDetails")
+    def dvp_stack_details(self) -> Sequence['outputs.GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailResult']:
+        """
+        Details of DVP Stack.
+        """
+        return pulumi.get(self, "dvp_stack_details")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated vantage point.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="monitorStatusCountMaps")
+    def monitor_status_count_maps(self) -> Sequence['outputs.GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapResult']:
+        """
+        Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
+        """
+        return pulumi.get(self, "monitor_status_count_maps")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        A filter to return only the resources that match the entire name.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def region(self) -> str:
+        """
+        Name of the region.
+        """
+        return pulumi.get(self, "region")
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        """
+        A filter to return only the dedicated vantage points that match a given status.
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailResult(dict):
+    def __init__(__self__, *,
+                 dvp_stack_id: str,
+                 dvp_stack_type: str,
+                 dvp_stream_id: str,
+                 dvp_version: str):
+        """
+        :param str dvp_stack_id: Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+        :param str dvp_stack_type: Type of stack.
+        :param str dvp_stream_id: Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+        :param str dvp_version: Version of DVP.
+        """
+        pulumi.set(__self__, "dvp_stack_id", dvp_stack_id)
+        pulumi.set(__self__, "dvp_stack_type", dvp_stack_type)
+        pulumi.set(__self__, "dvp_stream_id", dvp_stream_id)
+        pulumi.set(__self__, "dvp_version", dvp_version)
+
+    @property
+    @pulumi.getter(name="dvpStackId")
+    def dvp_stack_id(self) -> str:
+        """
+        Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+        """
+        return pulumi.get(self, "dvp_stack_id")
+
+    @property
+    @pulumi.getter(name="dvpStackType")
+    def dvp_stack_type(self) -> str:
+        """
+        Type of stack.
+        """
+        return pulumi.get(self, "dvp_stack_type")
+
+    @property
+    @pulumi.getter(name="dvpStreamId")
+    def dvp_stream_id(self) -> str:
+        """
+        Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+        """
+        return pulumi.get(self, "dvp_stream_id")
+
+    @property
+    @pulumi.getter(name="dvpVersion")
+    def dvp_version(self) -> str:
+        """
+        Version of DVP.
+        """
+        return pulumi.get(self, "dvp_version")
+
+
+@pulumi.output_type
+class GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapResult(dict):
+    def __init__(__self__, *,
+                 disabled: int,
+                 enabled: int,
+                 invalid: int,
+                 total: int):
+        """
+        :param int disabled: Number of disabled monitors using the script.
+        :param int enabled: Number of enabled monitors using the script.
+        :param int invalid: Number of invalid monitors using the script.
+        :param int total: Total number of monitors using the script.
+        """
+        pulumi.set(__self__, "disabled", disabled)
+        pulumi.set(__self__, "enabled", enabled)
+        pulumi.set(__self__, "invalid", invalid)
+        pulumi.set(__self__, "total", total)
+
+    @property
+    @pulumi.getter
+    def disabled(self) -> int:
+        """
+        Number of disabled monitors using the script.
+        """
+        return pulumi.get(self, "disabled")
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> int:
+        """
+        Number of enabled monitors using the script.
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def invalid(self) -> int:
+        """
+        Number of invalid monitors using the script.
+        """
+        return pulumi.get(self, "invalid")
+
+    @property
+    @pulumi.getter
+    def total(self) -> int:
+        """
+        Total number of monitors using the script.
+        """
+        return pulumi.get(self, "total")
+
+
+@pulumi.output_type
+class GetDedicatedVantagePointsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: A filter to return only the resources that match the entire name.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        A filter to return only the resources that match the entire name.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
 class GetMonitorConfigurationResult(dict):
     def __init__(__self__, *,
                  config_type: str,
@@ -1053,7 +1579,7 @@ class GetMonitorConfigurationResult(dict):
         :param Sequence['GetMonitorConfigurationRequestQueryParamArgs'] request_query_params: List of request query params. Example: `[{"paramName": "sortOrder", "paramValue": "asc"}]`
         :param Sequence[str] verify_response_codes: Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
         :param str verify_response_content: Verify response content against regular expression based string. If response content does not match the verifyResponseContent value, then it will be considered a failure.
-        :param Sequence['GetMonitorConfigurationVerifyTextArgs'] verify_texts: Verify all the search strings present in response. If any search string is not present in the response, then it will be considered as a failure.
+        :param Sequence['GetMonitorConfigurationVerifyTextArgs'] verify_texts: Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
         """
         pulumi.set(__self__, "config_type", config_type)
         pulumi.set(__self__, "is_certificate_validation_enabled", is_certificate_validation_enabled)
@@ -1178,7 +1704,7 @@ class GetMonitorConfigurationResult(dict):
     @pulumi.getter(name="verifyTexts")
     def verify_texts(self) -> Sequence['outputs.GetMonitorConfigurationVerifyTextResult']:
         """
-        Verify all the search strings present in response. If any search string is not present in the response, then it will be considered as a failure.
+        Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
         """
         return pulumi.get(self, "verify_texts")
 
@@ -1607,12 +2133,12 @@ class GetMonitorsMonitorCollectionItemResult(dict):
         :param str apm_domain_id: The APM domain ID the request is intended for.
         :param Sequence['GetMonitorsMonitorCollectionItemConfigurationArgs'] configurations: Details of monitor configuration.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str display_name: A filter to return only resources that match the entire display name given.
+        :param str display_name: A filter to return only the resources that match the entire display name.
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
         :param bool is_run_once: If runOnce is enabled, then the monitor will run once.
         :param str monitor_type: A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST and REST.
-        :param int repeat_interval_in_seconds: Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds.
+        :param int repeat_interval_in_seconds: Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
         :param str script_id: A filter to return only monitors using scriptId.
         :param str script_name: Name of the script.
         :param Sequence['GetMonitorsMonitorCollectionItemScriptParameterArgs'] script_parameters: List of script parameters. Example: `[{"monitorScriptParameter": {"paramName": "userid", "paramValue":"testuser"}, "isSecret": false, "isOverwritten": false}]`
@@ -1620,9 +2146,9 @@ class GetMonitorsMonitorCollectionItemResult(dict):
         :param str target: Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is.
         :param str time_created: The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         :param str time_updated: The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
-        :param int timeout_in_seconds: Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+        :param int timeout_in_seconds: Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
         :param int vantage_point_count: Number of vantage points where monitor is running.
-        :param Sequence[str] vantage_points: List of vantage points from where monitor is running.
+        :param Sequence[str] vantage_points: List of public and dedicated vantage points where the monitor is running.
         """
         pulumi.set(__self__, "apm_domain_id", apm_domain_id)
         pulumi.set(__self__, "configurations", configurations)
@@ -1672,7 +2198,7 @@ class GetMonitorsMonitorCollectionItemResult(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        A filter to return only resources that match the entire display name given.
+        A filter to return only the resources that match the entire display name.
         """
         return pulumi.get(self, "display_name")
 
@@ -1712,7 +2238,7 @@ class GetMonitorsMonitorCollectionItemResult(dict):
     @pulumi.getter(name="repeatIntervalInSeconds")
     def repeat_interval_in_seconds(self) -> int:
         """
-        Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds.
+        Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
         """
         return pulumi.get(self, "repeat_interval_in_seconds")
 
@@ -1776,7 +2302,7 @@ class GetMonitorsMonitorCollectionItemResult(dict):
     @pulumi.getter(name="timeoutInSeconds")
     def timeout_in_seconds(self) -> int:
         """
-        Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+        Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
         """
         return pulumi.get(self, "timeout_in_seconds")
 
@@ -1792,7 +2318,7 @@ class GetMonitorsMonitorCollectionItemResult(dict):
     @pulumi.getter(name="vantagePoints")
     def vantage_points(self) -> Sequence[str]:
         """
-        List of vantage points from where monitor is running.
+        List of public and dedicated vantage points where the monitor is running.
         """
         return pulumi.get(self, "vantage_points")
 
@@ -1828,7 +2354,7 @@ class GetMonitorsMonitorCollectionItemConfigurationResult(dict):
         :param Sequence['GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamArgs'] request_query_params: List of request query params. Example: `[{"paramName": "sortOrder", "paramValue": "asc"}]`
         :param Sequence[str] verify_response_codes: Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
         :param str verify_response_content: Verify response content against regular expression based string. If response content does not match the verifyResponseContent value, then it will be considered a failure.
-        :param Sequence['GetMonitorsMonitorCollectionItemConfigurationVerifyTextArgs'] verify_texts: Verify all the search strings present in response. If any search string is not present in the response, then it will be considered as a failure.
+        :param Sequence['GetMonitorsMonitorCollectionItemConfigurationVerifyTextArgs'] verify_texts: Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
         """
         pulumi.set(__self__, "config_type", config_type)
         pulumi.set(__self__, "is_certificate_validation_enabled", is_certificate_validation_enabled)
@@ -1953,7 +2479,7 @@ class GetMonitorsMonitorCollectionItemConfigurationResult(dict):
     @pulumi.getter(name="verifyTexts")
     def verify_texts(self) -> Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationVerifyTextResult']:
         """
-        Verify all the search strings present in response. If any search string is not present in the response, then it will be considered as a failure.
+        Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
         """
         return pulumi.get(self, "verify_texts")
 
@@ -2578,14 +3104,14 @@ class GetScriptsScriptCollectionItemResult(dict):
         :param int content_size_in_bytes: Size of the script content.
         :param str content_type: A filter to return only resources that match the content type given.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str display_name: A filter to return only resources that match the entire display name given.
+        :param str display_name: A filter to return only the resources that match the entire display name.
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
         :param Sequence['GetScriptsScriptCollectionItemMonitorStatusCountMapArgs'] monitor_status_count_maps: Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
         :param Sequence['GetScriptsScriptCollectionItemParameterArgs'] parameters: List of script parameters. Example: `[{"scriptParameter": {"paramName": "userid", "paramValue":"testuser", "isSecret": false}, "isOverwritten": false}]`
         :param str time_created: The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         :param str time_updated: The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
-        :param str time_uploaded: The time when the script was uploaded.
+        :param str time_uploaded: The time the script was uploaded.
         """
         pulumi.set(__self__, "apm_domain_id", apm_domain_id)
         pulumi.set(__self__, "content", content)
@@ -2654,7 +3180,7 @@ class GetScriptsScriptCollectionItemResult(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        A filter to return only resources that match the entire display name given.
+        A filter to return only the resources that match the entire display name.
         """
         return pulumi.get(self, "display_name")
 
@@ -2710,7 +3236,7 @@ class GetScriptsScriptCollectionItemResult(dict):
     @pulumi.getter(name="timeUploaded")
     def time_uploaded(self) -> str:
         """
-        The time when the script was uploaded.
+        The time the script was uploaded.
         """
         return pulumi.get(self, "time_uploaded")
 
@@ -2875,9 +3401,9 @@ class GetVantagePointItemResult(dict):
                  geos: Sequence['outputs.GetVantagePointItemGeoResult'],
                  name: str):
         """
-        :param str display_name: A filter to return only resources that match the entire display name given.
-        :param Sequence['GetVantagePointItemGeoArgs'] geos: Geographic summary about a vantage point.
-        :param str name: A filter to return only resources that match the entire name given.
+        :param str display_name: A filter to return only the resources that match the entire display name.
+        :param Sequence['GetVantagePointItemGeoArgs'] geos: Geographic summary of a vantage point.
+        :param str name: A filter to return only the resources that match the entire name.
         """
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "geos", geos)
@@ -2887,7 +3413,7 @@ class GetVantagePointItemResult(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        A filter to return only resources that match the entire display name given.
+        A filter to return only the resources that match the entire display name.
         """
         return pulumi.get(self, "display_name")
 
@@ -2895,7 +3421,7 @@ class GetVantagePointItemResult(dict):
     @pulumi.getter
     def geos(self) -> Sequence['outputs.GetVantagePointItemGeoResult']:
         """
-        Geographic summary about a vantage point.
+        Geographic summary of a vantage point.
         """
         return pulumi.get(self, "geos")
 
@@ -2903,7 +3429,7 @@ class GetVantagePointItemResult(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        A filter to return only resources that match the entire name given.
+        A filter to return only the resources that match the entire name.
         """
         return pulumi.get(self, "name")
 
@@ -2988,7 +3514,7 @@ class GetVantagePointsFilterResult(dict):
                  values: Sequence[str],
                  regex: Optional[bool] = None):
         """
-        :param str name: A filter to return only resources that match the entire name given.
+        :param str name: A filter to return only the resources that match the entire name.
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
@@ -2999,7 +3525,7 @@ class GetVantagePointsFilterResult(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        A filter to return only resources that match the entire name given.
+        A filter to return only the resources that match the entire name.
         """
         return pulumi.get(self, "name")
 
@@ -3039,9 +3565,9 @@ class GetVantagePointsPublicVantagePointCollectionItemResult(dict):
                  geos: Sequence['outputs.GetVantagePointsPublicVantagePointCollectionItemGeoResult'],
                  name: str):
         """
-        :param str display_name: A filter to return only resources that match the entire display name given.
-        :param Sequence['GetVantagePointsPublicVantagePointCollectionItemGeoArgs'] geos: Geographic summary about a vantage point.
-        :param str name: A filter to return only resources that match the entire name given.
+        :param str display_name: A filter to return only the resources that match the entire display name.
+        :param Sequence['GetVantagePointsPublicVantagePointCollectionItemGeoArgs'] geos: Geographic summary of a vantage point.
+        :param str name: A filter to return only the resources that match the entire name.
         """
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "geos", geos)
@@ -3051,7 +3577,7 @@ class GetVantagePointsPublicVantagePointCollectionItemResult(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        A filter to return only resources that match the entire display name given.
+        A filter to return only the resources that match the entire display name.
         """
         return pulumi.get(self, "display_name")
 
@@ -3059,7 +3585,7 @@ class GetVantagePointsPublicVantagePointCollectionItemResult(dict):
     @pulumi.getter
     def geos(self) -> Sequence['outputs.GetVantagePointsPublicVantagePointCollectionItemGeoResult']:
         """
-        Geographic summary about a vantage point.
+        Geographic summary of a vantage point.
         """
         return pulumi.get(self, "geos")
 
@@ -3067,7 +3593,7 @@ class GetVantagePointsPublicVantagePointCollectionItemResult(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        A filter to return only resources that match the entire name given.
+        A filter to return only the resources that match the entire name.
         """
         return pulumi.get(self, "name")
 

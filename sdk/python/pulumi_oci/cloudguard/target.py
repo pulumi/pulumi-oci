@@ -28,7 +28,7 @@ class TargetArgs:
         """
         The set of arguments for constructing a Target resource.
         :param pulumi.Input[str] compartment_id: (Updatable) compartment associated with condition
-        :param pulumi.Input[str] display_name: (Updatable) DetectorTemplate Identifier
+        :param pulumi.Input[str] display_name: (Updatable) DetectorTemplate identifier.
         :param pulumi.Input[str] target_resource_id: Resource ID which the target uses to monitor
         :param pulumi.Input[str] target_resource_type: possible type of targets(compartment/HCMCloud/ERPCloud)
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -71,7 +71,7 @@ class TargetArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
         """
-        (Updatable) DetectorTemplate Identifier
+        (Updatable) DetectorTemplate identifier.
         """
         return pulumi.get(self, "display_name")
 
@@ -189,6 +189,7 @@ class _TargetState:
                  recipe_count: Optional[pulumi.Input[int]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 target_details: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetailArgs']]]] = None,
                  target_detector_recipes: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeArgs']]]] = None,
                  target_resource_id: Optional[pulumi.Input[str]] = None,
                  target_resource_type: Optional[pulumi.Input[str]] = None,
@@ -200,13 +201,14 @@ class _TargetState:
         :param pulumi.Input[str] compartment_id: (Updatable) compartment associated with condition
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: The target description.
-        :param pulumi.Input[str] display_name: (Updatable) DetectorTemplate Identifier
+        :param pulumi.Input[str] display_name: (Updatable) DetectorTemplate identifier.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] inherited_by_compartments: List of inherited compartments
         :param pulumi.Input[str] lifecyle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[int] recipe_count: Total number of recipes attached to target
         :param pulumi.Input[str] state: (Updatable) The current state of the DetectorRule.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[Sequence[pulumi.Input['TargetTargetDetailArgs']]] target_details: Details specific to the target type.
         :param pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeArgs']]] target_detector_recipes: (Updatable) List of detector recipes to associate with target
         :param pulumi.Input[str] target_resource_id: Resource ID which the target uses to monitor
         :param pulumi.Input[str] target_resource_type: possible type of targets(compartment/HCMCloud/ERPCloud)
@@ -234,6 +236,8 @@ class _TargetState:
             pulumi.set(__self__, "state", state)
         if system_tags is not None:
             pulumi.set(__self__, "system_tags", system_tags)
+        if target_details is not None:
+            pulumi.set(__self__, "target_details", target_details)
         if target_detector_recipes is not None:
             pulumi.set(__self__, "target_detector_recipes", target_detector_recipes)
         if target_resource_id is not None:
@@ -287,7 +291,7 @@ class _TargetState:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) DetectorTemplate Identifier
+        (Updatable) DetectorTemplate identifier.
         """
         return pulumi.get(self, "display_name")
 
@@ -366,6 +370,18 @@ class _TargetState:
     @system_tags.setter
     def system_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "system_tags", value)
+
+    @property
+    @pulumi.getter(name="targetDetails")
+    def target_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetailArgs']]]]:
+        """
+        Details specific to the target type.
+        """
+        return pulumi.get(self, "target_details")
+
+    @target_details.setter
+    def target_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetailArgs']]]]):
+        pulumi.set(self, "target_details", value)
 
     @property
     @pulumi.getter(name="targetDetectorRecipes")
@@ -522,7 +538,7 @@ class Target(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) compartment associated with condition
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: The target description.
-        :param pulumi.Input[str] display_name: (Updatable) DetectorTemplate Identifier
+        :param pulumi.Input[str] display_name: (Updatable) DetectorTemplate identifier.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] state: (Updatable) The current state of the DetectorRule.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TargetTargetDetectorRecipeArgs']]]] target_detector_recipes: (Updatable) List of detector recipes to associate with target
@@ -656,6 +672,7 @@ class Target(pulumi.CustomResource):
             __props__.__dict__["lifecyle_details"] = None
             __props__.__dict__["recipe_count"] = None
             __props__.__dict__["system_tags"] = None
+            __props__.__dict__["target_details"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_updated"] = None
         super(Target, __self__).__init__(
@@ -678,6 +695,7 @@ class Target(pulumi.CustomResource):
             recipe_count: Optional[pulumi.Input[int]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            target_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TargetTargetDetailArgs']]]]] = None,
             target_detector_recipes: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TargetTargetDetectorRecipeArgs']]]]] = None,
             target_resource_id: Optional[pulumi.Input[str]] = None,
             target_resource_type: Optional[pulumi.Input[str]] = None,
@@ -694,13 +712,14 @@ class Target(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) compartment associated with condition
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: The target description.
-        :param pulumi.Input[str] display_name: (Updatable) DetectorTemplate Identifier
+        :param pulumi.Input[str] display_name: (Updatable) DetectorTemplate identifier.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] inherited_by_compartments: List of inherited compartments
         :param pulumi.Input[str] lifecyle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[int] recipe_count: Total number of recipes attached to target
         :param pulumi.Input[str] state: (Updatable) The current state of the DetectorRule.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TargetTargetDetailArgs']]]] target_details: Details specific to the target type.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TargetTargetDetectorRecipeArgs']]]] target_detector_recipes: (Updatable) List of detector recipes to associate with target
         :param pulumi.Input[str] target_resource_id: Resource ID which the target uses to monitor
         :param pulumi.Input[str] target_resource_type: possible type of targets(compartment/HCMCloud/ERPCloud)
@@ -722,6 +741,7 @@ class Target(pulumi.CustomResource):
         __props__.__dict__["recipe_count"] = recipe_count
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
+        __props__.__dict__["target_details"] = target_details
         __props__.__dict__["target_detector_recipes"] = target_detector_recipes
         __props__.__dict__["target_resource_id"] = target_resource_id
         __props__.__dict__["target_resource_type"] = target_resource_type
@@ -758,7 +778,7 @@ class Target(pulumi.CustomResource):
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
         """
-        (Updatable) DetectorTemplate Identifier
+        (Updatable) DetectorTemplate identifier.
         """
         return pulumi.get(self, "display_name")
 
@@ -809,6 +829,14 @@ class Target(pulumi.CustomResource):
         System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="targetDetails")
+    def target_details(self) -> pulumi.Output[Sequence['outputs.TargetTargetDetail']]:
+        """
+        Details specific to the target type.
+        """
+        return pulumi.get(self, "target_details")
 
     @property
     @pulumi.getter(name="targetDetectorRecipes")

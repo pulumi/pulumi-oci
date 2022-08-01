@@ -4,6 +4,7 @@
 package com.pulumi.oci.Functions.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Functions.outputs.GetFunctionProvisionedConcurrencyConfig;
 import com.pulumi.oci.Functions.outputs.GetFunctionTraceConfig;
 import java.lang.Integer;
 import java.lang.Object;
@@ -71,6 +72,11 @@ public final class GetFunctionResult {
      */
     private final String memoryInMbs;
     /**
+     * @return Define the strategy for provisioned concurrency for the function.
+     * 
+     */
+    private final List<GetFunctionProvisionedConcurrencyConfig> provisionedConcurrencyConfigs;
+    /**
      * @return The current state of the function.
      * 
      */
@@ -110,6 +116,7 @@ public final class GetFunctionResult {
         @CustomType.Parameter("imageDigest") String imageDigest,
         @CustomType.Parameter("invokeEndpoint") String invokeEndpoint,
         @CustomType.Parameter("memoryInMbs") String memoryInMbs,
+        @CustomType.Parameter("provisionedConcurrencyConfigs") List<GetFunctionProvisionedConcurrencyConfig> provisionedConcurrencyConfigs,
         @CustomType.Parameter("state") String state,
         @CustomType.Parameter("timeCreated") String timeCreated,
         @CustomType.Parameter("timeUpdated") String timeUpdated,
@@ -127,6 +134,7 @@ public final class GetFunctionResult {
         this.imageDigest = imageDigest;
         this.invokeEndpoint = invokeEndpoint;
         this.memoryInMbs = memoryInMbs;
+        this.provisionedConcurrencyConfigs = provisionedConcurrencyConfigs;
         this.state = state;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
@@ -215,6 +223,13 @@ public final class GetFunctionResult {
         return this.memoryInMbs;
     }
     /**
+     * @return Define the strategy for provisioned concurrency for the function.
+     * 
+     */
+    public List<GetFunctionProvisionedConcurrencyConfig> provisionedConcurrencyConfigs() {
+        return this.provisionedConcurrencyConfigs;
+    }
+    /**
      * @return The current state of the function.
      * 
      */
@@ -271,6 +286,7 @@ public final class GetFunctionResult {
         private String imageDigest;
         private String invokeEndpoint;
         private String memoryInMbs;
+        private List<GetFunctionProvisionedConcurrencyConfig> provisionedConcurrencyConfigs;
         private String state;
         private String timeCreated;
         private String timeUpdated;
@@ -295,6 +311,7 @@ public final class GetFunctionResult {
     	      this.imageDigest = defaults.imageDigest;
     	      this.invokeEndpoint = defaults.invokeEndpoint;
     	      this.memoryInMbs = defaults.memoryInMbs;
+    	      this.provisionedConcurrencyConfigs = defaults.provisionedConcurrencyConfigs;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
@@ -350,6 +367,13 @@ public final class GetFunctionResult {
             this.memoryInMbs = Objects.requireNonNull(memoryInMbs);
             return this;
         }
+        public Builder provisionedConcurrencyConfigs(List<GetFunctionProvisionedConcurrencyConfig> provisionedConcurrencyConfigs) {
+            this.provisionedConcurrencyConfigs = Objects.requireNonNull(provisionedConcurrencyConfigs);
+            return this;
+        }
+        public Builder provisionedConcurrencyConfigs(GetFunctionProvisionedConcurrencyConfig... provisionedConcurrencyConfigs) {
+            return provisionedConcurrencyConfigs(List.of(provisionedConcurrencyConfigs));
+        }
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
@@ -373,7 +397,7 @@ public final class GetFunctionResult {
         public Builder traceConfigs(GetFunctionTraceConfig... traceConfigs) {
             return traceConfigs(List.of(traceConfigs));
         }        public GetFunctionResult build() {
-            return new GetFunctionResult(applicationId, compartmentId, config, definedTags, displayName, freeformTags, functionId, id, image, imageDigest, invokeEndpoint, memoryInMbs, state, timeCreated, timeUpdated, timeoutInSeconds, traceConfigs);
+            return new GetFunctionResult(applicationId, compartmentId, config, definedTags, displayName, freeformTags, functionId, id, image, imageDigest, invokeEndpoint, memoryInMbs, provisionedConcurrencyConfigs, state, timeCreated, timeUpdated, timeoutInSeconds, traceConfigs);
         }
     }
 }

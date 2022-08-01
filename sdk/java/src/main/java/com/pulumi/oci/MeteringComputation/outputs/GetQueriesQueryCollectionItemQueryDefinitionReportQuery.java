@@ -24,6 +24,10 @@ public final class GetQueriesQueryCollectionItemQueryDefinitionReportQuery {
      * 
      */
     private final String dateRangeName;
+    /**
+     * @return The filter object for query usage.
+     * 
+     */
     private final String filter;
     /**
      * @return Forecast configuration of usage/cost.
@@ -113,6 +117,10 @@ public final class GetQueriesQueryCollectionItemQueryDefinitionReportQuery {
     public String dateRangeName() {
         return this.dateRangeName;
     }
+    /**
+     * @return The filter object for query usage.
+     * 
+     */
     public String filter() {
         return this.filter;
     }

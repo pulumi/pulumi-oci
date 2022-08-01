@@ -12,7 +12,7 @@ import (
 
 // This data source provides details about a specific Database Tools Private Endpoint resource in Oracle Cloud Infrastructure Database Tools service.
 //
-// Gets a DatabaseToolsPrivateEndpoint by identifier
+// Gets details of a specified Database Tools private endpoint.
 //
 // ## Example Usage
 //
@@ -47,7 +47,7 @@ func LookupDatabaseToolsPrivateEndpoint(ctx *pulumi.Context, args *LookupDatabas
 
 // A collection of arguments for invoking getDatabaseToolsPrivateEndpoint.
 type LookupDatabaseToolsPrivateEndpointArgs struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a DatabaseToolsPrivateEndpoint.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools private endpoint.
 	DatabaseToolsPrivateEndpointId string `pulumi:"databaseToolsPrivateEndpointId"`
 }
 
@@ -55,22 +55,22 @@ type LookupDatabaseToolsPrivateEndpointArgs struct {
 type LookupDatabaseToolsPrivateEndpointResult struct {
 	// A list of additional FQDNs that can be also be used for the private endpoint.
 	AdditionalFqdns []string `pulumi:"additionalFqdns"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools private endpoint.
 	CompartmentId                  string `pulumi:"compartmentId"`
 	DatabaseToolsPrivateEndpointId string `pulumi:"databaseToolsPrivateEndpointId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// A description of the DatabaseToolsPrivateEndpoint.
+	// A description of the Database Tools private endpoint.
 	Description string `pulumi:"description"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// Then FQDN to use for the private endpoint.
 	EndpointFqdn string `pulumi:"endpointFqdn"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsEndpointService.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Endpoint Service.
 	EndpointServiceId string `pulumi:"endpointServiceId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsPrivateEndpoint.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint.
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
@@ -80,17 +80,17 @@ type LookupDatabaseToolsPrivateEndpointResult struct {
 	PrivateEndpointIp string `pulumi:"privateEndpointIp"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint's VNIC.
 	PrivateEndpointVnicId string `pulumi:"privateEndpointVnicId"`
-	// Reverse connection configuration details of Private Endpoint.
+	// Reverse connection configuration details of the private endpoint.
 	ReverseConnectionConfigurations []GetDatabaseToolsPrivateEndpointReverseConnectionConfiguration `pulumi:"reverseConnectionConfigurations"`
-	// The current state of the DatabaseToolsPrivateEndpoint.
+	// The current state of the Database Tools private endpoint.
 	State string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that the private endpoint belongs to.
 	SubnetId string `pulumi:"subnetId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// The time the DatabaseToolsPrivateEndpoint was created. An RFC3339 formatted datetime string
+	// The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
 	TimeCreated string `pulumi:"timeCreated"`
-	// The time the DatabaseToolsPrivateEndpoint was updated. An RFC3339 formatted datetime string
+	// The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN that the private endpoint belongs to.
 	VcnId string `pulumi:"vcnId"`
@@ -111,7 +111,7 @@ func LookupDatabaseToolsPrivateEndpointOutput(ctx *pulumi.Context, args LookupDa
 
 // A collection of arguments for invoking getDatabaseToolsPrivateEndpoint.
 type LookupDatabaseToolsPrivateEndpointOutputArgs struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a DatabaseToolsPrivateEndpoint.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools private endpoint.
 	DatabaseToolsPrivateEndpointId pulumi.StringInput `pulumi:"databaseToolsPrivateEndpointId"`
 }
 
@@ -139,7 +139,7 @@ func (o LookupDatabaseToolsPrivateEndpointResultOutput) AdditionalFqdns() pulumi
 	return o.ApplyT(func(v LookupDatabaseToolsPrivateEndpointResult) []string { return v.AdditionalFqdns }).(pulumi.StringArrayOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools private endpoint.
 func (o LookupDatabaseToolsPrivateEndpointResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatabaseToolsPrivateEndpointResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -153,7 +153,7 @@ func (o LookupDatabaseToolsPrivateEndpointResultOutput) DefinedTags() pulumi.Map
 	return o.ApplyT(func(v LookupDatabaseToolsPrivateEndpointResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// A description of the DatabaseToolsPrivateEndpoint.
+// A description of the Database Tools private endpoint.
 func (o LookupDatabaseToolsPrivateEndpointResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatabaseToolsPrivateEndpointResult) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -168,7 +168,7 @@ func (o LookupDatabaseToolsPrivateEndpointResultOutput) EndpointFqdn() pulumi.St
 	return o.ApplyT(func(v LookupDatabaseToolsPrivateEndpointResult) string { return v.EndpointFqdn }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsEndpointService.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Endpoint Service.
 func (o LookupDatabaseToolsPrivateEndpointResultOutput) EndpointServiceId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatabaseToolsPrivateEndpointResult) string { return v.EndpointServiceId }).(pulumi.StringOutput)
 }
@@ -178,7 +178,7 @@ func (o LookupDatabaseToolsPrivateEndpointResultOutput) FreeformTags() pulumi.Ma
 	return o.ApplyT(func(v LookupDatabaseToolsPrivateEndpointResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsPrivateEndpoint.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint.
 func (o LookupDatabaseToolsPrivateEndpointResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatabaseToolsPrivateEndpointResult) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -203,14 +203,14 @@ func (o LookupDatabaseToolsPrivateEndpointResultOutput) PrivateEndpointVnicId() 
 	return o.ApplyT(func(v LookupDatabaseToolsPrivateEndpointResult) string { return v.PrivateEndpointVnicId }).(pulumi.StringOutput)
 }
 
-// Reverse connection configuration details of Private Endpoint.
+// Reverse connection configuration details of the private endpoint.
 func (o LookupDatabaseToolsPrivateEndpointResultOutput) ReverseConnectionConfigurations() GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationArrayOutput {
 	return o.ApplyT(func(v LookupDatabaseToolsPrivateEndpointResult) []GetDatabaseToolsPrivateEndpointReverseConnectionConfiguration {
 		return v.ReverseConnectionConfigurations
 	}).(GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationArrayOutput)
 }
 
-// The current state of the DatabaseToolsPrivateEndpoint.
+// The current state of the Database Tools private endpoint.
 func (o LookupDatabaseToolsPrivateEndpointResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatabaseToolsPrivateEndpointResult) string { return v.State }).(pulumi.StringOutput)
 }
@@ -225,12 +225,12 @@ func (o LookupDatabaseToolsPrivateEndpointResultOutput) SystemTags() pulumi.MapO
 	return o.ApplyT(func(v LookupDatabaseToolsPrivateEndpointResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// The time the DatabaseToolsPrivateEndpoint was created. An RFC3339 formatted datetime string
+// The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
 func (o LookupDatabaseToolsPrivateEndpointResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatabaseToolsPrivateEndpointResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The time the DatabaseToolsPrivateEndpoint was updated. An RFC3339 formatted datetime string
+// The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
 func (o LookupDatabaseToolsPrivateEndpointResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatabaseToolsPrivateEndpointResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }

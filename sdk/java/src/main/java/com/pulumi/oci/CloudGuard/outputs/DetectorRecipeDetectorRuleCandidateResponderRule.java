@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DetectorRecipeDetectorRuleCandidateResponderRule {
     /**
-     * @return (Updatable) DetectorRecipe Display Name
+     * @return (Updatable) Detector recipe display name.
      * 
      */
     private final @Nullable String displayName;
@@ -39,7 +39,7 @@ public final class DetectorRecipeDetectorRuleCandidateResponderRule {
     }
 
     /**
-     * @return (Updatable) DetectorRecipe Display Name
+     * @return (Updatable) Detector recipe display name.
      * 
      */
     public Optional<String> displayName() {

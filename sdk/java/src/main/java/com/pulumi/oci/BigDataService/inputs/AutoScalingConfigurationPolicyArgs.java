@@ -16,14 +16,14 @@ public final class AutoScalingConfigurationPolicyArgs extends com.pulumi.resourc
     public static final AutoScalingConfigurationPolicyArgs Empty = new AutoScalingConfigurationPolicyArgs();
 
     /**
-     * (Updatable) Types of autoscale policies. Options are SCHEDULE-BASED or THRESHOLD-BASED. (Only THRESHOLD-BASED is supported in this release.)
+     * Type of autoscaling policy.
      * 
      */
     @Import(name="policyType", required=true)
     private Output<String> policyType;
 
     /**
-     * @return (Updatable) Types of autoscale policies. Options are SCHEDULE-BASED or THRESHOLD-BASED. (Only THRESHOLD-BASED is supported in this release.)
+     * @return Type of autoscaling policy.
      * 
      */
     public Output<String> policyType() {
@@ -71,7 +71,7 @@ public final class AutoScalingConfigurationPolicyArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param policyType (Updatable) Types of autoscale policies. Options are SCHEDULE-BASED or THRESHOLD-BASED. (Only THRESHOLD-BASED is supported in this release.)
+         * @param policyType Type of autoscaling policy.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class AutoScalingConfigurationPolicyArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param policyType (Updatable) Types of autoscale policies. Options are SCHEDULE-BASED or THRESHOLD-BASED. (Only THRESHOLD-BASED is supported in this release.)
+         * @param policyType Type of autoscaling policy.
          * 
          * @return builder
          * 

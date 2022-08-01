@@ -62,6 +62,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string Iqn;
         /// <summary>
+        /// Whether Oracle Cloud Agent is enabled perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
+        /// </summary>
+        public readonly bool IsAgentAutoIscsiLoginEnabled;
+        /// <summary>
         /// Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.
         /// </summary>
         public readonly bool IsMultipath;
@@ -126,6 +130,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             string iqn,
 
+            bool isAgentAutoIscsiLoginEnabled,
+
             bool isMultipath,
 
             bool isPvEncryptionInTransitEnabled,
@@ -160,6 +166,7 @@ namespace Pulumi.Oci.Core.Outputs
             InstanceId = instanceId;
             Ipv4 = ipv4;
             Iqn = iqn;
+            IsAgentAutoIscsiLoginEnabled = isAgentAutoIscsiLoginEnabled;
             IsMultipath = isMultipath;
             IsPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             IsReadOnly = isReadOnly;

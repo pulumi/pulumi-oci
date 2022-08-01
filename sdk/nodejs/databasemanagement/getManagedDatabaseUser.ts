@@ -117,7 +117,7 @@ export interface GetManagedDatabaseUserResult {
      */
     readonly passwordVersions: string;
     /**
-     * The User resource profile name.
+     * The profile name of the user.
      */
     readonly profile: string;
     /**
@@ -145,7 +145,7 @@ export interface GetManagedDatabaseUserResult {
      */
     readonly timeLastLogin: string;
     /**
-     * The date the account was locked if account status was LOCKED.
+     * The date the account was locked, if the status of the account is LOCKED.
      */
     readonly timeLocked: string;
     /**

@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Database.outputs.GetExternalContainerDatabaseDatabaseManagementConfig;
+import com.pulumi.oci.Database.outputs.GetExternalContainerDatabaseStackMonitoringConfig;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -90,6 +91,11 @@ public final class GetExternalContainerDatabaseResult {
      */
     private final String ncharacterSet;
     /**
+     * @return The configuration of Stack Monitoring for the external database.
+     * 
+     */
+    private final List<GetExternalContainerDatabaseStackMonitoringConfig> stackMonitoringConfigs;
+    /**
      * @return The current state of the Oracle Cloud Infrastructure external database resource.
      * 
      */
@@ -123,6 +129,7 @@ public final class GetExternalContainerDatabaseResult {
         @CustomType.Parameter("id") String id,
         @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
         @CustomType.Parameter("ncharacterSet") String ncharacterSet,
+        @CustomType.Parameter("stackMonitoringConfigs") List<GetExternalContainerDatabaseStackMonitoringConfig> stackMonitoringConfigs,
         @CustomType.Parameter("state") String state,
         @CustomType.Parameter("timeCreated") String timeCreated,
         @CustomType.Parameter("timeZone") String timeZone) {
@@ -142,6 +149,7 @@ public final class GetExternalContainerDatabaseResult {
         this.id = id;
         this.lifecycleDetails = lifecycleDetails;
         this.ncharacterSet = ncharacterSet;
+        this.stackMonitoringConfigs = stackMonitoringConfigs;
         this.state = state;
         this.timeCreated = timeCreated;
         this.timeZone = timeZone;
@@ -256,6 +264,13 @@ public final class GetExternalContainerDatabaseResult {
         return this.ncharacterSet;
     }
     /**
+     * @return The configuration of Stack Monitoring for the external database.
+     * 
+     */
+    public List<GetExternalContainerDatabaseStackMonitoringConfig> stackMonitoringConfigs() {
+        return this.stackMonitoringConfigs;
+    }
+    /**
      * @return The current state of the Oracle Cloud Infrastructure external database resource.
      * 
      */
@@ -302,6 +317,7 @@ public final class GetExternalContainerDatabaseResult {
         private String id;
         private String lifecycleDetails;
         private String ncharacterSet;
+        private List<GetExternalContainerDatabaseStackMonitoringConfig> stackMonitoringConfigs;
         private String state;
         private String timeCreated;
         private String timeZone;
@@ -328,6 +344,7 @@ public final class GetExternalContainerDatabaseResult {
     	      this.id = defaults.id;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.ncharacterSet = defaults.ncharacterSet;
+    	      this.stackMonitoringConfigs = defaults.stackMonitoringConfigs;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeZone = defaults.timeZone;
@@ -400,6 +417,13 @@ public final class GetExternalContainerDatabaseResult {
             this.ncharacterSet = Objects.requireNonNull(ncharacterSet);
             return this;
         }
+        public Builder stackMonitoringConfigs(List<GetExternalContainerDatabaseStackMonitoringConfig> stackMonitoringConfigs) {
+            this.stackMonitoringConfigs = Objects.requireNonNull(stackMonitoringConfigs);
+            return this;
+        }
+        public Builder stackMonitoringConfigs(GetExternalContainerDatabaseStackMonitoringConfig... stackMonitoringConfigs) {
+            return stackMonitoringConfigs(List.of(stackMonitoringConfigs));
+        }
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
@@ -412,7 +436,7 @@ public final class GetExternalContainerDatabaseResult {
             this.timeZone = Objects.requireNonNull(timeZone);
             return this;
         }        public GetExternalContainerDatabaseResult build() {
-            return new GetExternalContainerDatabaseResult(characterSet, compartmentId, databaseConfiguration, databaseEdition, databaseManagementConfigs, databaseVersion, dbId, dbPacks, dbUniqueName, definedTags, displayName, externalContainerDatabaseId, freeformTags, id, lifecycleDetails, ncharacterSet, state, timeCreated, timeZone);
+            return new GetExternalContainerDatabaseResult(characterSet, compartmentId, databaseConfiguration, databaseEdition, databaseManagementConfigs, databaseVersion, dbId, dbPacks, dbUniqueName, definedTags, displayName, externalContainerDatabaseId, freeformTags, id, lifecycleDetails, ncharacterSet, stackMonitoringConfigs, state, timeCreated, timeZone);
         }
     }
 }

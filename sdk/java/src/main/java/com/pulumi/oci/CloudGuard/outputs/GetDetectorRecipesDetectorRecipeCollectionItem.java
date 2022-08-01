@@ -25,7 +25,7 @@ public final class GetDetectorRecipesDetectorRecipeCollectionItem {
      */
     private final Map<String,Object> definedTags;
     /**
-     * @return Description for DetectorRecipeDetectorRule
+     * @return Description for DetectorRecipeDetectorRule.
      * 
      */
     private final String description;
@@ -139,7 +139,7 @@ public final class GetDetectorRecipesDetectorRecipeCollectionItem {
         return this.definedTags;
     }
     /**
-     * @return Description for DetectorRecipeDetectorRule
+     * @return Description for DetectorRecipeDetectorRule.
      * 
      */
     public String description() {

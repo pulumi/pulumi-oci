@@ -103,7 +103,7 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         public Input<string>? PublicIp { get; set; }
 
         /// <summary>
-        /// The state of the node.
+        /// The state of the nodepool.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }

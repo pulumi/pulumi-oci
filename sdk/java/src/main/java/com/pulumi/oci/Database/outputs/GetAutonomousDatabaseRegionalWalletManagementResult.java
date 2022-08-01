@@ -5,11 +5,13 @@ package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 
 @CustomType
 public final class GetAutonomousDatabaseRegionalWalletManagementResult {
+    private final Integer gracePeriod;
     private final String id;
     private final Boolean shouldRotate;
     /**
@@ -25,16 +27,21 @@ public final class GetAutonomousDatabaseRegionalWalletManagementResult {
 
     @CustomType.Constructor
     private GetAutonomousDatabaseRegionalWalletManagementResult(
+        @CustomType.Parameter("gracePeriod") Integer gracePeriod,
         @CustomType.Parameter("id") String id,
         @CustomType.Parameter("shouldRotate") Boolean shouldRotate,
         @CustomType.Parameter("state") String state,
         @CustomType.Parameter("timeRotated") String timeRotated) {
+        this.gracePeriod = gracePeriod;
         this.id = id;
         this.shouldRotate = shouldRotate;
         this.state = state;
         this.timeRotated = timeRotated;
     }
 
+    public Integer gracePeriod() {
+        return this.gracePeriod;
+    }
     public String id() {
         return this.id;
     }
@@ -65,6 +72,7 @@ public final class GetAutonomousDatabaseRegionalWalletManagementResult {
     }
 
     public static final class Builder {
+        private Integer gracePeriod;
         private String id;
         private Boolean shouldRotate;
         private String state;
@@ -76,12 +84,17 @@ public final class GetAutonomousDatabaseRegionalWalletManagementResult {
 
         public Builder(GetAutonomousDatabaseRegionalWalletManagementResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.gracePeriod = defaults.gracePeriod;
     	      this.id = defaults.id;
     	      this.shouldRotate = defaults.shouldRotate;
     	      this.state = defaults.state;
     	      this.timeRotated = defaults.timeRotated;
         }
 
+        public Builder gracePeriod(Integer gracePeriod) {
+            this.gracePeriod = Objects.requireNonNull(gracePeriod);
+            return this;
+        }
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
@@ -98,7 +111,7 @@ public final class GetAutonomousDatabaseRegionalWalletManagementResult {
             this.timeRotated = Objects.requireNonNull(timeRotated);
             return this;
         }        public GetAutonomousDatabaseRegionalWalletManagementResult build() {
-            return new GetAutonomousDatabaseRegionalWalletManagementResult(id, shouldRotate, state, timeRotated);
+            return new GetAutonomousDatabaseRegionalWalletManagementResult(gracePeriod, id, shouldRotate, state, timeRotated);
         }
     }
 }

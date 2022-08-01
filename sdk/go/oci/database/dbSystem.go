@@ -65,7 +65,7 @@ type DbSystem struct {
 	ClusterName pulumi.StringOutput `pulumi:"clusterName"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the DB system  belongs in.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system. The valid values depend on the specified shape:
+	// (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system or AMD VMDB Systems. The valid values depend on the specified shape:
 	// * BM.DenseIO1.36 - Specify a multiple of 2, from 2 to 36.
 	// * BM.DenseIO2.52 - Specify a multiple of 2, from 2 to 52.
 	// * Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
@@ -75,6 +75,7 @@ type DbSystem struct {
 	// * Exadata.Quarter2.92 - Specify a multiple of 2, from 0 to 92.
 	// * Exadata.Half2.184 - Specify a multiple of 4, from 0 to 184.
 	// * Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
+	// * VM.Standard.E4.Flex - Specify any thing from 1 to 64.
 	CpuCoreCount pulumi.IntOutput `pulumi:"cpuCoreCount"`
 	// The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Specify 80 or 40. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems. Required for BMDBs.
 	DataStoragePercentage pulumi.IntOutput `pulumi:"dataStoragePercentage"`
@@ -120,12 +121,14 @@ type DbSystem struct {
 	MaintenanceWindowDetails DbSystemMaintenanceWindowDetailsPtrOutput `pulumi:"maintenanceWindowDetails"`
 	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindows DbSystemMaintenanceWindowArrayOutput `pulumi:"maintenanceWindows"`
+	// Memory allocated to the DB system, in gigabytes.
+	MemorySizeInGbs pulumi.IntOutput `pulumi:"memorySizeInGbs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
 	NextMaintenanceRunId pulumi.StringOutput `pulumi:"nextMaintenanceRunId"`
 	// The number of nodes to launch for a 2-node RAC virtual machine DB system. Specify either 1 or 2.
 	NodeCount pulumi.IntOutput `pulumi:"nodeCount"`
-	// (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-	// * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+	// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
 	NsgIds pulumi.StringArrayOutput `pulumi:"nsgIds"`
 	// The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	PointInTimeDataDiskCloneTimestamp pulumi.StringOutput `pulumi:"pointInTimeDataDiskCloneTimestamp"`
@@ -153,6 +156,8 @@ type DbSystem struct {
 	SshPublicKeys pulumi.StringArrayOutput `pulumi:"sshPublicKeys"`
 	// The current state of the DB system.
 	State pulumi.StringOutput `pulumi:"state"`
+	// The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
+	StorageVolumePerformanceMode pulumi.StringOutput `pulumi:"storageVolumePerformanceMode"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
 	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
 	// The date and time the DB system was created.
@@ -227,7 +232,7 @@ type dbSystemState struct {
 	ClusterName *string `pulumi:"clusterName"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the DB system  belongs in.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system. The valid values depend on the specified shape:
+	// (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system or AMD VMDB Systems. The valid values depend on the specified shape:
 	// * BM.DenseIO1.36 - Specify a multiple of 2, from 2 to 36.
 	// * BM.DenseIO2.52 - Specify a multiple of 2, from 2 to 52.
 	// * Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
@@ -237,6 +242,7 @@ type dbSystemState struct {
 	// * Exadata.Quarter2.92 - Specify a multiple of 2, from 0 to 92.
 	// * Exadata.Half2.184 - Specify a multiple of 4, from 0 to 184.
 	// * Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
+	// * VM.Standard.E4.Flex - Specify any thing from 1 to 64.
 	CpuCoreCount *int `pulumi:"cpuCoreCount"`
 	// The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Specify 80 or 40. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems. Required for BMDBs.
 	DataStoragePercentage *int `pulumi:"dataStoragePercentage"`
@@ -282,12 +288,14 @@ type dbSystemState struct {
 	MaintenanceWindowDetails *DbSystemMaintenanceWindowDetails `pulumi:"maintenanceWindowDetails"`
 	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindows []DbSystemMaintenanceWindow `pulumi:"maintenanceWindows"`
+	// Memory allocated to the DB system, in gigabytes.
+	MemorySizeInGbs *int `pulumi:"memorySizeInGbs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
 	NextMaintenanceRunId *string `pulumi:"nextMaintenanceRunId"`
 	// The number of nodes to launch for a 2-node RAC virtual machine DB system. Specify either 1 or 2.
 	NodeCount *int `pulumi:"nodeCount"`
-	// (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-	// * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+	// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
 	NsgIds []string `pulumi:"nsgIds"`
 	// The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	PointInTimeDataDiskCloneTimestamp *string `pulumi:"pointInTimeDataDiskCloneTimestamp"`
@@ -315,6 +323,8 @@ type dbSystemState struct {
 	SshPublicKeys []string `pulumi:"sshPublicKeys"`
 	// The current state of the DB system.
 	State *string `pulumi:"state"`
+	// The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
+	StorageVolumePerformanceMode *string `pulumi:"storageVolumePerformanceMode"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
 	SubnetId *string `pulumi:"subnetId"`
 	// The date and time the DB system was created.
@@ -340,7 +350,7 @@ type DbSystemState struct {
 	ClusterName pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the DB system  belongs in.
 	CompartmentId pulumi.StringPtrInput
-	// (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system. The valid values depend on the specified shape:
+	// (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system or AMD VMDB Systems. The valid values depend on the specified shape:
 	// * BM.DenseIO1.36 - Specify a multiple of 2, from 2 to 36.
 	// * BM.DenseIO2.52 - Specify a multiple of 2, from 2 to 52.
 	// * Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
@@ -350,6 +360,7 @@ type DbSystemState struct {
 	// * Exadata.Quarter2.92 - Specify a multiple of 2, from 0 to 92.
 	// * Exadata.Half2.184 - Specify a multiple of 4, from 0 to 184.
 	// * Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
+	// * VM.Standard.E4.Flex - Specify any thing from 1 to 64.
 	CpuCoreCount pulumi.IntPtrInput
 	// The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Specify 80 or 40. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems. Required for BMDBs.
 	DataStoragePercentage pulumi.IntPtrInput
@@ -395,12 +406,14 @@ type DbSystemState struct {
 	MaintenanceWindowDetails DbSystemMaintenanceWindowDetailsPtrInput
 	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindows DbSystemMaintenanceWindowArrayInput
+	// Memory allocated to the DB system, in gigabytes.
+	MemorySizeInGbs pulumi.IntPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
 	NextMaintenanceRunId pulumi.StringPtrInput
 	// The number of nodes to launch for a 2-node RAC virtual machine DB system. Specify either 1 or 2.
 	NodeCount pulumi.IntPtrInput
-	// (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-	// * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+	// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
 	NsgIds pulumi.StringArrayInput
 	// The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	PointInTimeDataDiskCloneTimestamp pulumi.StringPtrInput
@@ -428,6 +441,8 @@ type DbSystemState struct {
 	SshPublicKeys pulumi.StringArrayInput
 	// The current state of the DB system.
 	State pulumi.StringPtrInput
+	// The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
+	StorageVolumePerformanceMode pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
 	SubnetId pulumi.StringPtrInput
 	// The date and time the DB system was created.
@@ -457,7 +472,7 @@ type dbSystemArgs struct {
 	ClusterName *string `pulumi:"clusterName"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the DB system  belongs in.
 	CompartmentId string `pulumi:"compartmentId"`
-	// (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system. The valid values depend on the specified shape:
+	// (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system or AMD VMDB Systems. The valid values depend on the specified shape:
 	// * BM.DenseIO1.36 - Specify a multiple of 2, from 2 to 36.
 	// * BM.DenseIO2.52 - Specify a multiple of 2, from 2 to 52.
 	// * Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
@@ -467,6 +482,7 @@ type dbSystemArgs struct {
 	// * Exadata.Quarter2.92 - Specify a multiple of 2, from 0 to 92.
 	// * Exadata.Half2.184 - Specify a multiple of 4, from 0 to 184.
 	// * Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
+	// * VM.Standard.E4.Flex - Specify any thing from 1 to 64.
 	CpuCoreCount *int `pulumi:"cpuCoreCount"`
 	// The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Specify 80 or 40. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems. Required for BMDBs.
 	DataStoragePercentage *int `pulumi:"dataStoragePercentage"`
@@ -502,8 +518,8 @@ type dbSystemArgs struct {
 	MaintenanceWindowDetails *DbSystemMaintenanceWindowDetails `pulumi:"maintenanceWindowDetails"`
 	// The number of nodes to launch for a 2-node RAC virtual machine DB system. Specify either 1 or 2.
 	NodeCount *int `pulumi:"nodeCount"`
-	// (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-	// * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+	// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
 	NsgIds []string `pulumi:"nsgIds"`
 	// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. Supported for VM BM shape.
 	PrivateIp *string `pulumi:"privateIp"`
@@ -521,6 +537,8 @@ type dbSystemArgs struct {
 	SparseDiskgroup *bool `pulumi:"sparseDiskgroup"`
 	// (Updatable) The public key portion of the key pair to use for SSH access to the DB system. Multiple public keys can be provided. The length of the combined keys cannot exceed 40,000 characters.
 	SshPublicKeys []string `pulumi:"sshPublicKeys"`
+	// The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
+	StorageVolumePerformanceMode *string `pulumi:"storageVolumePerformanceMode"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
 	SubnetId string `pulumi:"subnetId"`
 	// The time zone to use for the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
@@ -539,7 +557,7 @@ type DbSystemArgs struct {
 	ClusterName pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the DB system  belongs in.
 	CompartmentId pulumi.StringInput
-	// (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system. The valid values depend on the specified shape:
+	// (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system or AMD VMDB Systems. The valid values depend on the specified shape:
 	// * BM.DenseIO1.36 - Specify a multiple of 2, from 2 to 36.
 	// * BM.DenseIO2.52 - Specify a multiple of 2, from 2 to 52.
 	// * Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
@@ -549,6 +567,7 @@ type DbSystemArgs struct {
 	// * Exadata.Quarter2.92 - Specify a multiple of 2, from 0 to 92.
 	// * Exadata.Half2.184 - Specify a multiple of 4, from 0 to 184.
 	// * Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
+	// * VM.Standard.E4.Flex - Specify any thing from 1 to 64.
 	CpuCoreCount pulumi.IntPtrInput
 	// The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Specify 80 or 40. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems. Required for BMDBs.
 	DataStoragePercentage pulumi.IntPtrInput
@@ -584,8 +603,8 @@ type DbSystemArgs struct {
 	MaintenanceWindowDetails DbSystemMaintenanceWindowDetailsPtrInput
 	// The number of nodes to launch for a 2-node RAC virtual machine DB system. Specify either 1 or 2.
 	NodeCount pulumi.IntPtrInput
-	// (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-	// * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+	// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
 	NsgIds pulumi.StringArrayInput
 	// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. Supported for VM BM shape.
 	PrivateIp pulumi.StringPtrInput
@@ -603,6 +622,8 @@ type DbSystemArgs struct {
 	SparseDiskgroup pulumi.BoolPtrInput
 	// (Updatable) The public key portion of the key pair to use for SSH access to the DB system. Multiple public keys can be provided. The length of the combined keys cannot exceed 40,000 characters.
 	SshPublicKeys pulumi.StringArrayInput
+	// The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
+	StorageVolumePerformanceMode pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
 	SubnetId pulumi.StringInput
 	// The time zone to use for the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).

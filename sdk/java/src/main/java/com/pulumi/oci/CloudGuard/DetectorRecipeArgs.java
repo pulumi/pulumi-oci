@@ -50,14 +50,14 @@ public final class DetectorRecipeArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * (Updatable) DetectorRecipe Description
+     * (Updatable) Detector recipe description.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) DetectorRecipe Description
+     * @return (Updatable) Detector recipe description.
      * 
      */
     public Optional<Output<String>> description() {
@@ -80,14 +80,14 @@ public final class DetectorRecipeArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * (Updatable) DetectorRecipe Display Name
+     * (Updatable) Detector recipe display name.
      * 
      */
     @Import(name="displayName", required=true)
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) DetectorRecipe Display Name
+     * @return (Updatable) Detector recipe display name.
      * 
      */
     public Output<String> displayName() {
@@ -197,7 +197,7 @@ public final class DetectorRecipeArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param description (Updatable) DetectorRecipe Description
+         * @param description (Updatable) Detector recipe description.
          * 
          * @return builder
          * 
@@ -208,7 +208,7 @@ public final class DetectorRecipeArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param description (Updatable) DetectorRecipe Description
+         * @param description (Updatable) Detector recipe description.
          * 
          * @return builder
          * 
@@ -249,7 +249,7 @@ public final class DetectorRecipeArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param displayName (Updatable) DetectorRecipe Display Name
+         * @param displayName (Updatable) Detector recipe display name.
          * 
          * @return builder
          * 
@@ -260,7 +260,7 @@ public final class DetectorRecipeArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param displayName (Updatable) DetectorRecipe Display Name
+         * @param displayName (Updatable) Detector recipe display name.
          * 
          * @return builder
          * 

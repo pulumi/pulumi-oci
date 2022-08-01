@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudGuard.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.CloudGuard.outputs.GetGuardTargetTargetDetail;
 import com.pulumi.oci.CloudGuard.outputs.GetGuardTargetTargetDetectorRecipe;
 import com.pulumi.oci.CloudGuard.outputs.GetGuardTargetTargetResponderRecipe;
 import java.lang.Integer;
@@ -26,12 +27,12 @@ public final class GetGuardTargetResult {
      */
     private final Map<String,Object> definedTags;
     /**
-     * @return ResponderRule Description
+     * @return ResponderRule description.
      * 
      */
     private final String description;
     /**
-     * @return ResponderRule Display Name
+     * @return ResponderRule display name.
      * 
      */
     private final String displayName;
@@ -41,7 +42,7 @@ public final class GetGuardTargetResult {
      */
     private final Map<String,Object> freeformTags;
     /**
-     * @return Unique identifier of TargetResponderRecipe that is immutable on creation
+     * @return Unique identifier of TargetResponderRecipe that can&#39;t be changed after creation.
      * 
      */
     private final String id;
@@ -70,6 +71,11 @@ public final class GetGuardTargetResult {
      * 
      */
     private final Map<String,Object> systemTags;
+    /**
+     * @return Details specific to the target type.
+     * 
+     */
+    private final List<GetGuardTargetTargetDetail> targetDetails;
     /**
      * @return List of detector recipes associated with target
      * 
@@ -115,6 +121,7 @@ public final class GetGuardTargetResult {
         @CustomType.Parameter("recipeCount") Integer recipeCount,
         @CustomType.Parameter("state") String state,
         @CustomType.Parameter("systemTags") Map<String,Object> systemTags,
+        @CustomType.Parameter("targetDetails") List<GetGuardTargetTargetDetail> targetDetails,
         @CustomType.Parameter("targetDetectorRecipes") List<GetGuardTargetTargetDetectorRecipe> targetDetectorRecipes,
         @CustomType.Parameter("targetId") String targetId,
         @CustomType.Parameter("targetResourceId") String targetResourceId,
@@ -133,6 +140,7 @@ public final class GetGuardTargetResult {
         this.recipeCount = recipeCount;
         this.state = state;
         this.systemTags = systemTags;
+        this.targetDetails = targetDetails;
         this.targetDetectorRecipes = targetDetectorRecipes;
         this.targetId = targetId;
         this.targetResourceId = targetResourceId;
@@ -157,14 +165,14 @@ public final class GetGuardTargetResult {
         return this.definedTags;
     }
     /**
-     * @return ResponderRule Description
+     * @return ResponderRule description.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return ResponderRule Display Name
+     * @return ResponderRule display name.
      * 
      */
     public String displayName() {
@@ -178,7 +186,7 @@ public final class GetGuardTargetResult {
         return this.freeformTags;
     }
     /**
-     * @return Unique identifier of TargetResponderRecipe that is immutable on creation
+     * @return Unique identifier of TargetResponderRecipe that can&#39;t be changed after creation.
      * 
      */
     public String id() {
@@ -218,6 +226,13 @@ public final class GetGuardTargetResult {
      */
     public Map<String,Object> systemTags() {
         return this.systemTags;
+    }
+    /**
+     * @return Details specific to the target type.
+     * 
+     */
+    public List<GetGuardTargetTargetDetail> targetDetails() {
+        return this.targetDetails;
     }
     /**
      * @return List of detector recipes associated with target
@@ -285,6 +300,7 @@ public final class GetGuardTargetResult {
         private Integer recipeCount;
         private String state;
         private Map<String,Object> systemTags;
+        private List<GetGuardTargetTargetDetail> targetDetails;
         private List<GetGuardTargetTargetDetectorRecipe> targetDetectorRecipes;
         private String targetId;
         private String targetResourceId;
@@ -310,6 +326,7 @@ public final class GetGuardTargetResult {
     	      this.recipeCount = defaults.recipeCount;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
+    	      this.targetDetails = defaults.targetDetails;
     	      this.targetDetectorRecipes = defaults.targetDetectorRecipes;
     	      this.targetId = defaults.targetId;
     	      this.targetResourceId = defaults.targetResourceId;
@@ -366,6 +383,13 @@ public final class GetGuardTargetResult {
             this.systemTags = Objects.requireNonNull(systemTags);
             return this;
         }
+        public Builder targetDetails(List<GetGuardTargetTargetDetail> targetDetails) {
+            this.targetDetails = Objects.requireNonNull(targetDetails);
+            return this;
+        }
+        public Builder targetDetails(GetGuardTargetTargetDetail... targetDetails) {
+            return targetDetails(List.of(targetDetails));
+        }
         public Builder targetDetectorRecipes(List<GetGuardTargetTargetDetectorRecipe> targetDetectorRecipes) {
             this.targetDetectorRecipes = Objects.requireNonNull(targetDetectorRecipes);
             return this;
@@ -400,7 +424,7 @@ public final class GetGuardTargetResult {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }        public GetGuardTargetResult build() {
-            return new GetGuardTargetResult(compartmentId, definedTags, description, displayName, freeformTags, id, inheritedByCompartments, lifecyleDetails, recipeCount, state, systemTags, targetDetectorRecipes, targetId, targetResourceId, targetResourceType, targetResponderRecipes, timeCreated, timeUpdated);
+            return new GetGuardTargetResult(compartmentId, definedTags, description, displayName, freeformTags, id, inheritedByCompartments, lifecyleDetails, recipeCount, state, systemTags, targetDetails, targetDetectorRecipes, targetId, targetResourceId, targetResourceType, targetResponderRecipes, timeCreated, timeUpdated);
         }
     }
 }

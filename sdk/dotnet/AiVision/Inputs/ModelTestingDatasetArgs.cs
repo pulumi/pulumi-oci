@@ -30,6 +30,9 @@ namespace Pulumi.Oci.AiVision.Inputs
         [Input("datasetType", required: true)]
         public Input<string> DatasetType { get; set; } = null!;
 
+        /// <summary>
+        /// The namespace name of the ObjectStorage bucket that contains the input data file.
+        /// </summary>
         [Input("namespaceName")]
         public Input<string>? NamespaceName { get; set; }
 

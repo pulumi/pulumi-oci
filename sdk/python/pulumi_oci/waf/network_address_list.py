@@ -564,7 +564,7 @@ class NetworkAddressList(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def addresses(self) -> pulumi.Output[Sequence[str]]:
+    def addresses(self) -> pulumi.Output[Optional[Sequence[str]]]:
         """
         (Updatable) A private IP address or CIDR IP address range.
         """

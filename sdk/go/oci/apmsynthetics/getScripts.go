@@ -53,7 +53,7 @@ type GetScriptsArgs struct {
 	ApmDomainId string `pulumi:"apmDomainId"`
 	// A filter to return only resources that match the content type given.
 	ContentType *string `pulumi:"contentType"`
-	// A filter to return only resources that match the entire display name given.
+	// A filter to return only the resources that match the entire display name.
 	DisplayName *string            `pulumi:"displayName"`
 	Filters     []GetScriptsFilter `pulumi:"filters"`
 }
@@ -91,7 +91,7 @@ type GetScriptsOutputArgs struct {
 	ApmDomainId pulumi.StringInput `pulumi:"apmDomainId"`
 	// A filter to return only resources that match the content type given.
 	ContentType pulumi.StringPtrInput `pulumi:"contentType"`
-	// A filter to return only resources that match the entire display name given.
+	// A filter to return only the resources that match the entire display name.
 	DisplayName pulumi.StringPtrInput      `pulumi:"displayName"`
 	Filters     GetScriptsFilterArrayInput `pulumi:"filters"`
 }

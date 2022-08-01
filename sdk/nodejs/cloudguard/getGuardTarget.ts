@@ -55,11 +55,11 @@ export interface GetGuardTargetResult {
      */
     readonly definedTags: {[key: string]: any};
     /**
-     * ResponderRule Description
+     * ResponderRule description.
      */
     readonly description: string;
     /**
-     * ResponderRule Display Name
+     * ResponderRule display name.
      */
     readonly displayName: string;
     /**
@@ -67,7 +67,7 @@ export interface GetGuardTargetResult {
      */
     readonly freeformTags: {[key: string]: any};
     /**
-     * Unique identifier of TargetResponderRecipe that is immutable on creation
+     * Unique identifier of TargetResponderRecipe that can't be changed after creation.
      */
     readonly id: string;
     /**
@@ -90,6 +90,10 @@ export interface GetGuardTargetResult {
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
     readonly systemTags: {[key: string]: any};
+    /**
+     * Details specific to the target type.
+     */
+    readonly targetDetails: outputs.CloudGuard.GetGuardTargetTargetDetail[];
     /**
      * List of detector recipes associated with target
      */

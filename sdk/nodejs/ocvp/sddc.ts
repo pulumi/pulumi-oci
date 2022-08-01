@@ -35,6 +35,7 @@ import * as utilities from "../utilities";
  *     vmwareSoftwareVersion: _var.sddc_vmware_software_version,
  *     vsanVlanId: oci_core_vlan.test_vsan_vlan.id,
  *     vsphereVlanId: oci_core_vlan.test_vsphere_vlan.id,
+ *     capacityReservationId: oci_ocvp_capacity_reservation.test_capacity_reservation.id,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
@@ -44,6 +45,8 @@ import * as utilities from "../utilities";
  *     },
  *     hcxAction: _var.hcx_action,
  *     hcxVlanId: oci_core_vlan.test_vlan.id,
+ *     initialHostOcpuCount: _var.sddc_initial_host_ocpu_count,
+ *     initialHostShapeName: oci_core_shape.test_shape.name,
  *     initialSku: _var.sddc_initial_sku,
  *     instanceDisplayNamePrefix: _var.sddc_instance_display_name_prefix,
  *     isHcxEnabled: _var.sddc_is_hcx_enabled,
@@ -97,6 +100,10 @@ export class Sddc extends pulumi.CustomResource {
      */
     public /*out*/ readonly actualEsxiHostsCount!: pulumi.Output<number>;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+     */
+    public readonly capacityReservationId!: pulumi.Output<string>;
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the SDDC.
      */
     public readonly compartmentId!: pulumi.Output<string>;
@@ -148,6 +155,14 @@ export class Sddc extends pulumi.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the HCX component of the VMware environment. This value is required only when `isHcxEnabled` is true.
      */
     public readonly hcxVlanId!: pulumi.Output<string>;
+    /**
+     * The initial OCPU count of the SDDC's ESXi hosts.
+     */
+    public readonly initialHostOcpuCount!: pulumi.Output<number>;
+    /**
+     * The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+     */
+    public readonly initialHostShapeName!: pulumi.Output<string>;
     /**
      * The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
      */
@@ -307,6 +322,7 @@ export class Sddc extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as SddcState | undefined;
             resourceInputs["actualEsxiHostsCount"] = state ? state.actualEsxiHostsCount : undefined;
+            resourceInputs["capacityReservationId"] = state ? state.capacityReservationId : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["computeAvailabilityDomain"] = state ? state.computeAvailabilityDomain : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
@@ -320,6 +336,8 @@ export class Sddc extends pulumi.CustomResource {
             resourceInputs["hcxOnPremLicenses"] = state ? state.hcxOnPremLicenses : undefined;
             resourceInputs["hcxPrivateIpId"] = state ? state.hcxPrivateIpId : undefined;
             resourceInputs["hcxVlanId"] = state ? state.hcxVlanId : undefined;
+            resourceInputs["initialHostOcpuCount"] = state ? state.initialHostOcpuCount : undefined;
+            resourceInputs["initialHostShapeName"] = state ? state.initialHostShapeName : undefined;
             resourceInputs["initialSku"] = state ? state.initialSku : undefined;
             resourceInputs["instanceDisplayNamePrefix"] = state ? state.instanceDisplayNamePrefix : undefined;
             resourceInputs["isHcxEnabled"] = state ? state.isHcxEnabled : undefined;
@@ -397,6 +415,7 @@ export class Sddc extends pulumi.CustomResource {
             if ((!args || args.vsphereVlanId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'vsphereVlanId'");
             }
+            resourceInputs["capacityReservationId"] = args ? args.capacityReservationId : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["computeAvailabilityDomain"] = args ? args.computeAvailabilityDomain : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
@@ -405,6 +424,8 @@ export class Sddc extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["hcxAction"] = args ? args.hcxAction : undefined;
             resourceInputs["hcxVlanId"] = args ? args.hcxVlanId : undefined;
+            resourceInputs["initialHostOcpuCount"] = args ? args.initialHostOcpuCount : undefined;
+            resourceInputs["initialHostShapeName"] = args ? args.initialHostShapeName : undefined;
             resourceInputs["initialSku"] = args ? args.initialSku : undefined;
             resourceInputs["instanceDisplayNamePrefix"] = args ? args.instanceDisplayNamePrefix : undefined;
             resourceInputs["isHcxEnabled"] = args ? args.isHcxEnabled : undefined;
@@ -462,6 +483,10 @@ export interface SddcState {
      */
     actualEsxiHostsCount?: pulumi.Input<number>;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+     */
+    capacityReservationId?: pulumi.Input<string>;
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the SDDC.
      */
     compartmentId?: pulumi.Input<string>;
@@ -513,6 +538,14 @@ export interface SddcState {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the HCX component of the VMware environment. This value is required only when `isHcxEnabled` is true.
      */
     hcxVlanId?: pulumi.Input<string>;
+    /**
+     * The initial OCPU count of the SDDC's ESXi hosts.
+     */
+    initialHostOcpuCount?: pulumi.Input<number>;
+    /**
+     * The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+     */
+    initialHostShapeName?: pulumi.Input<string>;
     /**
      * The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
      */
@@ -664,6 +697,10 @@ export interface SddcState {
  */
 export interface SddcArgs {
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+     */
+    capacityReservationId?: pulumi.Input<string>;
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the SDDC.
      */
     compartmentId: pulumi.Input<string>;
@@ -695,6 +732,14 @@ export interface SddcArgs {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the HCX component of the VMware environment. This value is required only when `isHcxEnabled` is true.
      */
     hcxVlanId?: pulumi.Input<string>;
+    /**
+     * The initial OCPU count of the SDDC's ESXi hosts.
+     */
+    initialHostOcpuCount?: pulumi.Input<number>;
+    /**
+     * The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+     */
+    initialHostShapeName?: pulumi.Input<string>;
     /**
      * The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
      */

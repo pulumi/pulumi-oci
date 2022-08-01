@@ -6,6 +6,7 @@ package com.pulumi.oci.Core.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -15,6 +16,51 @@ import javax.annotation.Nullable;
 public final class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs Empty = new InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs();
+
+    /**
+     * Whether virtualization instructions are available.
+     * 
+     */
+    @Import(name="areVirtualInstructionsEnabled")
+    private @Nullable Output<Boolean> areVirtualInstructionsEnabled;
+
+    /**
+     * @return Whether virtualization instructions are available.
+     * 
+     */
+    public Optional<Output<Boolean>> areVirtualInstructionsEnabled() {
+        return Optional.ofNullable(this.areVirtualInstructionsEnabled);
+    }
+
+    /**
+     * Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device passthrough.
+     * 
+     */
+    @Import(name="isAccessControlServiceEnabled")
+    private @Nullable Output<Boolean> isAccessControlServiceEnabled;
+
+    /**
+     * @return Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device passthrough.
+     * 
+     */
+    public Optional<Output<Boolean>> isAccessControlServiceEnabled() {
+        return Optional.ofNullable(this.isAccessControlServiceEnabled);
+    }
+
+    /**
+     * Whether the input-output memory management unit is enabled.
+     * 
+     */
+    @Import(name="isInputOutputMemoryManagementUnitEnabled")
+    private @Nullable Output<Boolean> isInputOutputMemoryManagementUnitEnabled;
+
+    /**
+     * @return Whether the input-output memory management unit is enabled.
+     * 
+     */
+    public Optional<Output<Boolean>> isInputOutputMemoryManagementUnitEnabled() {
+        return Optional.ofNullable(this.isInputOutputMemoryManagementUnitEnabled);
+    }
 
     /**
      * Whether the Measured Boot feature is enabled on the instance.
@@ -44,6 +90,21 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConf
      */
     public Optional<Output<Boolean>> isSecureBootEnabled() {
         return Optional.ofNullable(this.isSecureBootEnabled);
+    }
+
+    /**
+     * Whether symmetric multi-threading is enabled on the instance.
+     * 
+     */
+    @Import(name="isSymmetricMultiThreadingEnabled")
+    private @Nullable Output<Boolean> isSymmetricMultiThreadingEnabled;
+
+    /**
+     * @return Whether symmetric multi-threading is enabled on the instance.
+     * 
+     */
+    public Optional<Output<Boolean>> isSymmetricMultiThreadingEnabled() {
+        return Optional.ofNullable(this.isSymmetricMultiThreadingEnabled);
     }
 
     /**
@@ -77,6 +138,21 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConf
     }
 
     /**
+     * The percentage of cores enabled.
+     * 
+     */
+    @Import(name="percentageOfCoresEnabled")
+    private @Nullable Output<Integer> percentageOfCoresEnabled;
+
+    /**
+     * @return The percentage of cores enabled.
+     * 
+     */
+    public Optional<Output<Integer>> percentageOfCoresEnabled() {
+        return Optional.ofNullable(this.percentageOfCoresEnabled);
+    }
+
+    /**
      * The type of action to run when the instance is interrupted for eviction.
      * 
      */
@@ -94,10 +170,15 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConf
     private InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs() {}
 
     private InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs(InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs $) {
+        this.areVirtualInstructionsEnabled = $.areVirtualInstructionsEnabled;
+        this.isAccessControlServiceEnabled = $.isAccessControlServiceEnabled;
+        this.isInputOutputMemoryManagementUnitEnabled = $.isInputOutputMemoryManagementUnitEnabled;
         this.isMeasuredBootEnabled = $.isMeasuredBootEnabled;
         this.isSecureBootEnabled = $.isSecureBootEnabled;
+        this.isSymmetricMultiThreadingEnabled = $.isSymmetricMultiThreadingEnabled;
         this.isTrustedPlatformModuleEnabled = $.isTrustedPlatformModuleEnabled;
         this.numaNodesPerSocket = $.numaNodesPerSocket;
+        this.percentageOfCoresEnabled = $.percentageOfCoresEnabled;
         this.type = $.type;
     }
 
@@ -117,6 +198,69 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConf
 
         public Builder(InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs defaults) {
             $ = new InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param areVirtualInstructionsEnabled Whether virtualization instructions are available.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder areVirtualInstructionsEnabled(@Nullable Output<Boolean> areVirtualInstructionsEnabled) {
+            $.areVirtualInstructionsEnabled = areVirtualInstructionsEnabled;
+            return this;
+        }
+
+        /**
+         * @param areVirtualInstructionsEnabled Whether virtualization instructions are available.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder areVirtualInstructionsEnabled(Boolean areVirtualInstructionsEnabled) {
+            return areVirtualInstructionsEnabled(Output.of(areVirtualInstructionsEnabled));
+        }
+
+        /**
+         * @param isAccessControlServiceEnabled Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device passthrough.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isAccessControlServiceEnabled(@Nullable Output<Boolean> isAccessControlServiceEnabled) {
+            $.isAccessControlServiceEnabled = isAccessControlServiceEnabled;
+            return this;
+        }
+
+        /**
+         * @param isAccessControlServiceEnabled Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device passthrough.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isAccessControlServiceEnabled(Boolean isAccessControlServiceEnabled) {
+            return isAccessControlServiceEnabled(Output.of(isAccessControlServiceEnabled));
+        }
+
+        /**
+         * @param isInputOutputMemoryManagementUnitEnabled Whether the input-output memory management unit is enabled.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isInputOutputMemoryManagementUnitEnabled(@Nullable Output<Boolean> isInputOutputMemoryManagementUnitEnabled) {
+            $.isInputOutputMemoryManagementUnitEnabled = isInputOutputMemoryManagementUnitEnabled;
+            return this;
+        }
+
+        /**
+         * @param isInputOutputMemoryManagementUnitEnabled Whether the input-output memory management unit is enabled.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isInputOutputMemoryManagementUnitEnabled(Boolean isInputOutputMemoryManagementUnitEnabled) {
+            return isInputOutputMemoryManagementUnitEnabled(Output.of(isInputOutputMemoryManagementUnitEnabled));
         }
 
         /**
@@ -162,6 +306,27 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConf
         }
 
         /**
+         * @param isSymmetricMultiThreadingEnabled Whether symmetric multi-threading is enabled on the instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isSymmetricMultiThreadingEnabled(@Nullable Output<Boolean> isSymmetricMultiThreadingEnabled) {
+            $.isSymmetricMultiThreadingEnabled = isSymmetricMultiThreadingEnabled;
+            return this;
+        }
+
+        /**
+         * @param isSymmetricMultiThreadingEnabled Whether symmetric multi-threading is enabled on the instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isSymmetricMultiThreadingEnabled(Boolean isSymmetricMultiThreadingEnabled) {
+            return isSymmetricMultiThreadingEnabled(Output.of(isSymmetricMultiThreadingEnabled));
+        }
+
+        /**
          * @param isTrustedPlatformModuleEnabled Whether the Trusted Platform Module (TPM) is enabled on the instance.
          * 
          * @return builder
@@ -201,6 +366,27 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConf
          */
         public Builder numaNodesPerSocket(String numaNodesPerSocket) {
             return numaNodesPerSocket(Output.of(numaNodesPerSocket));
+        }
+
+        /**
+         * @param percentageOfCoresEnabled The percentage of cores enabled.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder percentageOfCoresEnabled(@Nullable Output<Integer> percentageOfCoresEnabled) {
+            $.percentageOfCoresEnabled = percentageOfCoresEnabled;
+            return this;
+        }
+
+        /**
+         * @param percentageOfCoresEnabled The percentage of cores enabled.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder percentageOfCoresEnabled(Integer percentageOfCoresEnabled) {
+            return percentageOfCoresEnabled(Output.of(percentageOfCoresEnabled));
         }
 
         /**

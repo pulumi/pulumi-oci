@@ -104,7 +104,7 @@ class GetResultResult:
     @pulumi.getter(name="vantagePoint")
     def vantage_point(self) -> str:
         """
-        The name of the vantage point.
+        The name of the public or dedicated vantage point.
         """
         return pulumi.get(self, "vantage_point")
 
@@ -155,8 +155,8 @@ def get_result(apm_domain_id: Optional[str] = None,
     :param str apm_domain_id: The APM domain ID the request is intended for.
     :param str execution_time: The time the object was posted.
     :param str monitor_id: The OCID of the monitor.
-    :param str result_content_type: The result content type zip or raw.
-    :param str result_type: The result type har, screenshot, log or network.
+    :param str result_content_type: The result content type: zip or raw.
+    :param str result_type: The result type: har, screenshot, log, or network.
     :param str vantage_point: The vantagePoint name.
     """
     __args__ = dict()
@@ -214,8 +214,8 @@ def get_result_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
     :param str apm_domain_id: The APM domain ID the request is intended for.
     :param str execution_time: The time the object was posted.
     :param str monitor_id: The OCID of the monitor.
-    :param str result_content_type: The result content type zip or raw.
-    :param str result_type: The result type har, screenshot, log or network.
+    :param str result_content_type: The result content type: zip or raw.
+    :param str result_type: The result type: har, screenshot, log, or network.
     :param str vantage_point: The vantagePoint name.
     """
     ...

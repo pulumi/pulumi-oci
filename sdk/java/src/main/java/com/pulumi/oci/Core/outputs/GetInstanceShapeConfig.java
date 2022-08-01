@@ -56,6 +56,7 @@ public final class GetInstanceShapeConfig {
      * 
      */
     private final Double networkingBandwidthInGbps;
+    private final Integer nvmes;
     /**
      * @return The total number of OCPUs available to the instance.
      * 
@@ -78,6 +79,7 @@ public final class GetInstanceShapeConfig {
         @CustomType.Parameter("maxVnicAttachments") Integer maxVnicAttachments,
         @CustomType.Parameter("memoryInGbs") Double memoryInGbs,
         @CustomType.Parameter("networkingBandwidthInGbps") Double networkingBandwidthInGbps,
+        @CustomType.Parameter("nvmes") Integer nvmes,
         @CustomType.Parameter("ocpus") Double ocpus,
         @CustomType.Parameter("processorDescription") String processorDescription) {
         this.baselineOcpuUtilization = baselineOcpuUtilization;
@@ -89,6 +91,7 @@ public final class GetInstanceShapeConfig {
         this.maxVnicAttachments = maxVnicAttachments;
         this.memoryInGbs = memoryInGbs;
         this.networkingBandwidthInGbps = networkingBandwidthInGbps;
+        this.nvmes = nvmes;
         this.ocpus = ocpus;
         this.processorDescription = processorDescription;
     }
@@ -156,6 +159,9 @@ public final class GetInstanceShapeConfig {
     public Double networkingBandwidthInGbps() {
         return this.networkingBandwidthInGbps;
     }
+    public Integer nvmes() {
+        return this.nvmes;
+    }
     /**
      * @return The total number of OCPUs available to the instance.
      * 
@@ -189,6 +195,7 @@ public final class GetInstanceShapeConfig {
         private Integer maxVnicAttachments;
         private Double memoryInGbs;
         private Double networkingBandwidthInGbps;
+        private Integer nvmes;
         private Double ocpus;
         private String processorDescription;
 
@@ -207,6 +214,7 @@ public final class GetInstanceShapeConfig {
     	      this.maxVnicAttachments = defaults.maxVnicAttachments;
     	      this.memoryInGbs = defaults.memoryInGbs;
     	      this.networkingBandwidthInGbps = defaults.networkingBandwidthInGbps;
+    	      this.nvmes = defaults.nvmes;
     	      this.ocpus = defaults.ocpus;
     	      this.processorDescription = defaults.processorDescription;
         }
@@ -247,6 +255,10 @@ public final class GetInstanceShapeConfig {
             this.networkingBandwidthInGbps = Objects.requireNonNull(networkingBandwidthInGbps);
             return this;
         }
+        public Builder nvmes(Integer nvmes) {
+            this.nvmes = Objects.requireNonNull(nvmes);
+            return this;
+        }
         public Builder ocpus(Double ocpus) {
             this.ocpus = Objects.requireNonNull(ocpus);
             return this;
@@ -255,7 +267,7 @@ public final class GetInstanceShapeConfig {
             this.processorDescription = Objects.requireNonNull(processorDescription);
             return this;
         }        public GetInstanceShapeConfig build() {
-            return new GetInstanceShapeConfig(baselineOcpuUtilization, gpuDescription, gpus, localDiskDescription, localDisks, localDisksTotalSizeInGbs, maxVnicAttachments, memoryInGbs, networkingBandwidthInGbps, ocpus, processorDescription);
+            return new GetInstanceShapeConfig(baselineOcpuUtilization, gpuDescription, gpus, localDiskDescription, localDisks, localDisksTotalSizeInGbs, maxVnicAttachments, memoryInGbs, networkingBandwidthInGbps, nvmes, ocpus, processorDescription);
         }
     }
 }

@@ -57,6 +57,11 @@ public final class GetAnalyticsInstanceResult {
     private final String id;
     private final String idcsAccessToken;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+     * 
+     */
+    private final String kmsKeyId;
+    /**
      * @return The license used for the service.
      * 
      */
@@ -71,11 +76,6 @@ public final class GetAnalyticsInstanceResult {
      * 
      */
     private final List<GetAnalyticsInstanceNetworkEndpointDetail> networkEndpointDetails;
-    /**
-     * @return Map of PrivateAccessChannel unique identifier key as KEY and PrivateAccessChannel Object as VALUE.
-     * 
-     */
-    private final Map<String,Object> privateAccessChannels;
     /**
      * @return URL of the Analytics service.
      * 
@@ -96,11 +96,6 @@ public final class GetAnalyticsInstanceResult {
      * 
      */
     private final String timeUpdated;
-    /**
-     * @return Map of VanityUrl unique identifier key as KEY and VanityUrl Object as VALUE.
-     * 
-     */
-    private final Map<String,Object> vanityUrlDetails;
 
     @CustomType.Constructor
     private GetAnalyticsInstanceResult(
@@ -114,15 +109,14 @@ public final class GetAnalyticsInstanceResult {
         @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
         @CustomType.Parameter("id") String id,
         @CustomType.Parameter("idcsAccessToken") String idcsAccessToken,
+        @CustomType.Parameter("kmsKeyId") String kmsKeyId,
         @CustomType.Parameter("licenseType") String licenseType,
         @CustomType.Parameter("name") String name,
         @CustomType.Parameter("networkEndpointDetails") List<GetAnalyticsInstanceNetworkEndpointDetail> networkEndpointDetails,
-        @CustomType.Parameter("privateAccessChannels") Map<String,Object> privateAccessChannels,
         @CustomType.Parameter("serviceUrl") String serviceUrl,
         @CustomType.Parameter("state") String state,
         @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated,
-        @CustomType.Parameter("vanityUrlDetails") Map<String,Object> vanityUrlDetails) {
+        @CustomType.Parameter("timeUpdated") String timeUpdated) {
         this.analyticsInstanceId = analyticsInstanceId;
         this.capacities = capacities;
         this.compartmentId = compartmentId;
@@ -133,15 +127,14 @@ public final class GetAnalyticsInstanceResult {
         this.freeformTags = freeformTags;
         this.id = id;
         this.idcsAccessToken = idcsAccessToken;
+        this.kmsKeyId = kmsKeyId;
         this.licenseType = licenseType;
         this.name = name;
         this.networkEndpointDetails = networkEndpointDetails;
-        this.privateAccessChannels = privateAccessChannels;
         this.serviceUrl = serviceUrl;
         this.state = state;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
-        this.vanityUrlDetails = vanityUrlDetails;
     }
 
     public String analyticsInstanceId() {
@@ -207,6 +200,13 @@ public final class GetAnalyticsInstanceResult {
         return this.idcsAccessToken;
     }
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+     * 
+     */
+    public String kmsKeyId() {
+        return this.kmsKeyId;
+    }
+    /**
      * @return The license used for the service.
      * 
      */
@@ -226,13 +226,6 @@ public final class GetAnalyticsInstanceResult {
      */
     public List<GetAnalyticsInstanceNetworkEndpointDetail> networkEndpointDetails() {
         return this.networkEndpointDetails;
-    }
-    /**
-     * @return Map of PrivateAccessChannel unique identifier key as KEY and PrivateAccessChannel Object as VALUE.
-     * 
-     */
-    public Map<String,Object> privateAccessChannels() {
-        return this.privateAccessChannels;
     }
     /**
      * @return URL of the Analytics service.
@@ -262,13 +255,6 @@ public final class GetAnalyticsInstanceResult {
     public String timeUpdated() {
         return this.timeUpdated;
     }
-    /**
-     * @return Map of VanityUrl unique identifier key as KEY and VanityUrl Object as VALUE.
-     * 
-     */
-    public Map<String,Object> vanityUrlDetails() {
-        return this.vanityUrlDetails;
-    }
 
     public static Builder builder() {
         return new Builder();
@@ -289,15 +275,14 @@ public final class GetAnalyticsInstanceResult {
         private Map<String,Object> freeformTags;
         private String id;
         private String idcsAccessToken;
+        private String kmsKeyId;
         private String licenseType;
         private String name;
         private List<GetAnalyticsInstanceNetworkEndpointDetail> networkEndpointDetails;
-        private Map<String,Object> privateAccessChannels;
         private String serviceUrl;
         private String state;
         private String timeCreated;
         private String timeUpdated;
-        private Map<String,Object> vanityUrlDetails;
 
         public Builder() {
     	      // Empty
@@ -315,15 +300,14 @@ public final class GetAnalyticsInstanceResult {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.idcsAccessToken = defaults.idcsAccessToken;
+    	      this.kmsKeyId = defaults.kmsKeyId;
     	      this.licenseType = defaults.licenseType;
     	      this.name = defaults.name;
     	      this.networkEndpointDetails = defaults.networkEndpointDetails;
-    	      this.privateAccessChannels = defaults.privateAccessChannels;
     	      this.serviceUrl = defaults.serviceUrl;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
-    	      this.vanityUrlDetails = defaults.vanityUrlDetails;
         }
 
         public Builder analyticsInstanceId(String analyticsInstanceId) {
@@ -369,6 +353,10 @@ public final class GetAnalyticsInstanceResult {
             this.idcsAccessToken = Objects.requireNonNull(idcsAccessToken);
             return this;
         }
+        public Builder kmsKeyId(String kmsKeyId) {
+            this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
+            return this;
+        }
         public Builder licenseType(String licenseType) {
             this.licenseType = Objects.requireNonNull(licenseType);
             return this;
@@ -383,10 +371,6 @@ public final class GetAnalyticsInstanceResult {
         }
         public Builder networkEndpointDetails(GetAnalyticsInstanceNetworkEndpointDetail... networkEndpointDetails) {
             return networkEndpointDetails(List.of(networkEndpointDetails));
-        }
-        public Builder privateAccessChannels(Map<String,Object> privateAccessChannels) {
-            this.privateAccessChannels = Objects.requireNonNull(privateAccessChannels);
-            return this;
         }
         public Builder serviceUrl(String serviceUrl) {
             this.serviceUrl = Objects.requireNonNull(serviceUrl);
@@ -403,12 +387,8 @@ public final class GetAnalyticsInstanceResult {
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }
-        public Builder vanityUrlDetails(Map<String,Object> vanityUrlDetails) {
-            this.vanityUrlDetails = Objects.requireNonNull(vanityUrlDetails);
-            return this;
         }        public GetAnalyticsInstanceResult build() {
-            return new GetAnalyticsInstanceResult(analyticsInstanceId, capacities, compartmentId, definedTags, description, emailNotification, featureSet, freeformTags, id, idcsAccessToken, licenseType, name, networkEndpointDetails, privateAccessChannels, serviceUrl, state, timeCreated, timeUpdated, vanityUrlDetails);
+            return new GetAnalyticsInstanceResult(analyticsInstanceId, capacities, compartmentId, definedTags, description, emailNotification, featureSet, freeformTags, id, idcsAccessToken, kmsKeyId, licenseType, name, networkEndpointDetails, serviceUrl, state, timeCreated, timeUpdated);
         }
     }
 }

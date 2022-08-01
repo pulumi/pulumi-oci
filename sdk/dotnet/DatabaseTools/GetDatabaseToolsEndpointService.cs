@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DatabaseTools
         /// <summary>
         /// This data source provides details about a specific Database Tools Endpoint Service resource in Oracle Cloud Infrastructure Database Tools service.
         /// 
-        /// Gets a DatabaseToolsEndpointService by identifier
+        /// Gets details for the specified Database Tools endpoint service.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -45,7 +45,7 @@ namespace Pulumi.Oci.DatabaseTools
         /// <summary>
         /// This data source provides details about a specific Database Tools Endpoint Service resource in Oracle Cloud Infrastructure Database Tools service.
         /// 
-        /// Gets a DatabaseToolsEndpointService by identifier
+        /// Gets details for the specified Database Tools endpoint service.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -78,7 +78,7 @@ namespace Pulumi.Oci.DatabaseTools
     public sealed class GetDatabaseToolsEndpointServiceArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a DatabaseToolsEndpointService.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools Endpoint Service.
         /// </summary>
         [Input("databaseToolsEndpointServiceId", required: true)]
         public string DatabaseToolsEndpointServiceId { get; set; } = null!;
@@ -91,7 +91,7 @@ namespace Pulumi.Oci.DatabaseTools
     public sealed class GetDatabaseToolsEndpointServiceInvokeArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a DatabaseToolsEndpointService.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools Endpoint Service.
         /// </summary>
         [Input("databaseToolsEndpointServiceId", required: true)]
         public Input<string> DatabaseToolsEndpointServiceId { get; set; } = null!;
@@ -106,7 +106,7 @@ namespace Pulumi.Oci.DatabaseTools
     public sealed class GetDatabaseToolsEndpointServiceResult
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools Endpoint Service.
         /// </summary>
         public readonly string CompartmentId;
         public readonly string DatabaseToolsEndpointServiceId;
@@ -115,7 +115,7 @@ namespace Pulumi.Oci.DatabaseTools
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
         /// <summary>
-        /// A description of the DatabaseToolsEndpointService.
+        /// A description of the Database Tools Endpoint Service.
         /// </summary>
         public readonly string Description;
         /// <summary>
@@ -139,7 +139,7 @@ namespace Pulumi.Oci.DatabaseTools
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// The current state of the DatabaseToolsEndpointService.
+        /// The current state of the Database Tools Endpoint Service.
         /// </summary>
         public readonly string State;
         /// <summary>
@@ -147,11 +147,11 @@ namespace Pulumi.Oci.DatabaseTools
         /// </summary>
         public readonly ImmutableDictionary<string, object> SystemTags;
         /// <summary>
-        /// The time the DatabaseToolsEndpointService was created. An RFC3339 formatted datetime string
+        /// The time the Database Tools Endpoint Service was created. An RFC3339 formatted datetime string
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The time the DatabaseToolsEndpointService was updated. An RFC3339 formatted datetime string
+        /// The time the Database Tools Endpoint Service was updated. An RFC3339 formatted datetime string
         /// </summary>
         public readonly string TimeUpdated;
 

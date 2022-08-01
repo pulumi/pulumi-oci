@@ -28,6 +28,9 @@ import * as utilities from "../utilities";
  *     subnetId: oci_core_subnet.test_subnet.id,
  *     backupNetworkNsgIds: _var.cloud_vm_cluster_backup_network_nsg_ids,
  *     clusterName: _var.cloud_vm_cluster_cluster_name,
+ *     dataCollectionOptions: {
+ *         isDiagnosticsEventsEnabled: _var.cloud_vm_cluster_data_collection_options_is_diagnostics_events_enabled,
+ *     },
  *     dataStoragePercentage: _var.cloud_vm_cluster_data_storage_percentage,
  *     definedTags: _var.cloud_vm_cluster_defined_tags,
  *     domain: _var.cloud_vm_cluster_domain,
@@ -118,6 +121,10 @@ export class CloudVmCluster extends pulumi.CustomResource {
     public readonly cpuCoreCount!: pulumi.Output<number>;
     public readonly createAsync!: pulumi.Output<boolean | undefined>;
     /**
+     * (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+     */
+    public readonly dataCollectionOptions!: pulumi.Output<outputs.Database.CloudVmClusterDataCollectionOptions>;
+    /**
      * The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
      */
     public readonly dataStoragePercentage!: pulumi.Output<number>;
@@ -182,8 +189,8 @@ export class CloudVmCluster extends pulumi.CustomResource {
      */
     public /*out*/ readonly nodeCount!: pulumi.Output<number>;
     /**
-     * (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-     * * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+     * (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+     * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      */
     public readonly nsgIds!: pulumi.Output<string[]>;
     /**
@@ -272,6 +279,7 @@ export class CloudVmCluster extends pulumi.CustomResource {
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["cpuCoreCount"] = state ? state.cpuCoreCount : undefined;
             resourceInputs["createAsync"] = state ? state.createAsync : undefined;
+            resourceInputs["dataCollectionOptions"] = state ? state.dataCollectionOptions : undefined;
             resourceInputs["dataStoragePercentage"] = state ? state.dataStoragePercentage : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["diskRedundancy"] = state ? state.diskRedundancy : undefined;
@@ -341,6 +349,7 @@ export class CloudVmCluster extends pulumi.CustomResource {
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["cpuCoreCount"] = args ? args.cpuCoreCount : undefined;
             resourceInputs["createAsync"] = args ? args.createAsync : undefined;
+            resourceInputs["dataCollectionOptions"] = args ? args.dataCollectionOptions : undefined;
             resourceInputs["dataStoragePercentage"] = args ? args.dataStoragePercentage : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
@@ -422,6 +431,10 @@ export interface CloudVmClusterState {
     cpuCoreCount?: pulumi.Input<number>;
     createAsync?: pulumi.Input<boolean>;
     /**
+     * (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+     */
+    dataCollectionOptions?: pulumi.Input<inputs.Database.CloudVmClusterDataCollectionOptions>;
+    /**
      * The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
      */
     dataStoragePercentage?: pulumi.Input<number>;
@@ -486,8 +499,8 @@ export interface CloudVmClusterState {
      */
     nodeCount?: pulumi.Input<number>;
     /**
-     * (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-     * * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+     * (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+     * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      */
     nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -593,6 +606,10 @@ export interface CloudVmClusterArgs {
     cpuCoreCount: pulumi.Input<number>;
     createAsync?: pulumi.Input<boolean>;
     /**
+     * (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+     */
+    dataCollectionOptions?: pulumi.Input<inputs.Database.CloudVmClusterDataCollectionOptions>;
+    /**
      * The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
      */
     dataStoragePercentage?: pulumi.Input<number>;
@@ -633,8 +650,8 @@ export interface CloudVmClusterArgs {
      */
     licenseModel?: pulumi.Input<string>;
     /**
-     * (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-     * * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+     * (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+     * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      */
     nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**

@@ -5,6 +5,7 @@ package com.pulumi.oci.BigDataService.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.BigDataService.outputs.BdsInstanceNodeAttachedBlockVolume;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -19,67 +20,77 @@ public final class BdsInstanceNode {
      */
     private final @Nullable List<BdsInstanceNodeAttachedBlockVolume> attachedBlockVolumes;
     /**
-     * @return The name of the availability domain in which the node is running.
+     * @return The name of the availability domain the node is running in
      * 
      */
     private final @Nullable String availabilityDomain;
     /**
-     * @return (Updatable) Name of the Big Data Service cluster.
+     * @return (Updatable) Name of the BDS instance
      * 
      */
     private final @Nullable String displayName;
     /**
-     * @return The name of the fault domain in which the node is running.
+     * @return The name of the fault domain the node is running in
      * 
      */
     private final @Nullable String faultDomain;
     /**
-     * @return The fully-qualified hostname (FQDN) of the node.
+     * @return The fully-qualified hostname (FQDN) of the node
      * 
      */
     private final @Nullable String hostname;
     /**
-     * @return The OCID of the image from which the node was created.
+     * @return The OCID of the image from which the node was created
      * 
      */
     private final @Nullable String imageId;
     /**
-     * @return The OCID of the underlying Oracle Cloud Infrastructure Compute instance.
+     * @return The OCID of the underlying compute instance
      * 
      */
     private final @Nullable String instanceId;
     /**
-     * @return IP address of the node.
+     * @return IP address of the node
      * 
      */
     private final @Nullable String ipAddress;
     /**
-     * @return The Big Data Service cluster node type.
+     * @return The total amount of memory available to the node, in gigabytes
+     * 
+     */
+    private final @Nullable Integer memoryInGbs;
+    /**
+     * @return BDS instance node type
      * 
      */
     private final @Nullable String nodeType;
     /**
-     * @return (Updatable) Shape of the node.
+     * @return The total number of OCPUs available to the node.
+     * 
+     */
+    private final @Nullable Integer ocpus;
+    /**
+     * @return Shape of the node
      * 
      */
     private final @Nullable String shape;
     /**
-     * @return The fingerprint of the SSH key used for node access.
+     * @return The fingerprint of the SSH key used for node access
      * 
      */
     private final @Nullable String sshFingerprint;
     /**
-     * @return The state of the cluster.
+     * @return The state of the BDS instance
      * 
      */
     private final @Nullable String state;
     /**
-     * @return The OCID of the subnet in which the node will be created.
+     * @return The OCID of the subnet in which the node should be created
      * 
      */
     private final @Nullable String subnetId;
     /**
-     * @return The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+     * @return The time the BDS instance was created. An RFC3339 formatted datetime string
      * 
      */
     private final @Nullable String timeCreated;
@@ -94,7 +105,9 @@ public final class BdsInstanceNode {
         @CustomType.Parameter("imageId") @Nullable String imageId,
         @CustomType.Parameter("instanceId") @Nullable String instanceId,
         @CustomType.Parameter("ipAddress") @Nullable String ipAddress,
+        @CustomType.Parameter("memoryInGbs") @Nullable Integer memoryInGbs,
         @CustomType.Parameter("nodeType") @Nullable String nodeType,
+        @CustomType.Parameter("ocpus") @Nullable Integer ocpus,
         @CustomType.Parameter("shape") @Nullable String shape,
         @CustomType.Parameter("sshFingerprint") @Nullable String sshFingerprint,
         @CustomType.Parameter("state") @Nullable String state,
@@ -108,7 +121,9 @@ public final class BdsInstanceNode {
         this.imageId = imageId;
         this.instanceId = instanceId;
         this.ipAddress = ipAddress;
+        this.memoryInGbs = memoryInGbs;
         this.nodeType = nodeType;
+        this.ocpus = ocpus;
         this.shape = shape;
         this.sshFingerprint = sshFingerprint;
         this.state = state;
@@ -124,91 +139,105 @@ public final class BdsInstanceNode {
         return this.attachedBlockVolumes == null ? List.of() : this.attachedBlockVolumes;
     }
     /**
-     * @return The name of the availability domain in which the node is running.
+     * @return The name of the availability domain the node is running in
      * 
      */
     public Optional<String> availabilityDomain() {
         return Optional.ofNullable(this.availabilityDomain);
     }
     /**
-     * @return (Updatable) Name of the Big Data Service cluster.
+     * @return (Updatable) Name of the BDS instance
      * 
      */
     public Optional<String> displayName() {
         return Optional.ofNullable(this.displayName);
     }
     /**
-     * @return The name of the fault domain in which the node is running.
+     * @return The name of the fault domain the node is running in
      * 
      */
     public Optional<String> faultDomain() {
         return Optional.ofNullable(this.faultDomain);
     }
     /**
-     * @return The fully-qualified hostname (FQDN) of the node.
+     * @return The fully-qualified hostname (FQDN) of the node
      * 
      */
     public Optional<String> hostname() {
         return Optional.ofNullable(this.hostname);
     }
     /**
-     * @return The OCID of the image from which the node was created.
+     * @return The OCID of the image from which the node was created
      * 
      */
     public Optional<String> imageId() {
         return Optional.ofNullable(this.imageId);
     }
     /**
-     * @return The OCID of the underlying Oracle Cloud Infrastructure Compute instance.
+     * @return The OCID of the underlying compute instance
      * 
      */
     public Optional<String> instanceId() {
         return Optional.ofNullable(this.instanceId);
     }
     /**
-     * @return IP address of the node.
+     * @return IP address of the node
      * 
      */
     public Optional<String> ipAddress() {
         return Optional.ofNullable(this.ipAddress);
     }
     /**
-     * @return The Big Data Service cluster node type.
+     * @return The total amount of memory available to the node, in gigabytes
+     * 
+     */
+    public Optional<Integer> memoryInGbs() {
+        return Optional.ofNullable(this.memoryInGbs);
+    }
+    /**
+     * @return BDS instance node type
      * 
      */
     public Optional<String> nodeType() {
         return Optional.ofNullable(this.nodeType);
     }
     /**
-     * @return (Updatable) Shape of the node.
+     * @return The total number of OCPUs available to the node.
+     * 
+     */
+    public Optional<Integer> ocpus() {
+        return Optional.ofNullable(this.ocpus);
+    }
+    /**
+     * @return Shape of the node
      * 
      */
     public Optional<String> shape() {
         return Optional.ofNullable(this.shape);
     }
     /**
-     * @return The fingerprint of the SSH key used for node access.
+     * @return The fingerprint of the SSH key used for node access
      * 
      */
     public Optional<String> sshFingerprint() {
         return Optional.ofNullable(this.sshFingerprint);
     }
     /**
-     * @return The state of the cluster.
+     * @return The state of the BDS instance
      * 
      */
     public Optional<String> state() {
         return Optional.ofNullable(this.state);
     }
     /**
-     * @return The OCID of the subnet in which the node will be created.
+     * @return The OCID of the subnet in which the node should be created
      * 
      */
     public Optional<String> subnetId() {
         return Optional.ofNullable(this.subnetId);
     }
     /**
-     * @return The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+     * @return The time the BDS instance was created. An RFC3339 formatted datetime string
      * 
      */
     public Optional<String> timeCreated() {
@@ -232,7 +261,9 @@ public final class BdsInstanceNode {
         private @Nullable String imageId;
         private @Nullable String instanceId;
         private @Nullable String ipAddress;
+        private @Nullable Integer memoryInGbs;
         private @Nullable String nodeType;
+        private @Nullable Integer ocpus;
         private @Nullable String shape;
         private @Nullable String sshFingerprint;
         private @Nullable String state;
@@ -253,7 +284,9 @@ public final class BdsInstanceNode {
     	      this.imageId = defaults.imageId;
     	      this.instanceId = defaults.instanceId;
     	      this.ipAddress = defaults.ipAddress;
+    	      this.memoryInGbs = defaults.memoryInGbs;
     	      this.nodeType = defaults.nodeType;
+    	      this.ocpus = defaults.ocpus;
     	      this.shape = defaults.shape;
     	      this.sshFingerprint = defaults.sshFingerprint;
     	      this.state = defaults.state;
@@ -296,8 +329,16 @@ public final class BdsInstanceNode {
             this.ipAddress = ipAddress;
             return this;
         }
+        public Builder memoryInGbs(@Nullable Integer memoryInGbs) {
+            this.memoryInGbs = memoryInGbs;
+            return this;
+        }
         public Builder nodeType(@Nullable String nodeType) {
             this.nodeType = nodeType;
+            return this;
+        }
+        public Builder ocpus(@Nullable Integer ocpus) {
+            this.ocpus = ocpus;
             return this;
         }
         public Builder shape(@Nullable String shape) {
@@ -320,7 +361,7 @@ public final class BdsInstanceNode {
             this.timeCreated = timeCreated;
             return this;
         }        public BdsInstanceNode build() {
-            return new BdsInstanceNode(attachedBlockVolumes, availabilityDomain, displayName, faultDomain, hostname, imageId, instanceId, ipAddress, nodeType, shape, sshFingerprint, state, subnetId, timeCreated);
+            return new BdsInstanceNode(attachedBlockVolumes, availabilityDomain, displayName, faultDomain, hostname, imageId, instanceId, ipAddress, memoryInGbs, nodeType, ocpus, shape, sshFingerprint, state, subnetId, timeCreated);
         }
     }
 }

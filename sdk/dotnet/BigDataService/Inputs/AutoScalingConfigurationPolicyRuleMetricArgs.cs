@@ -19,7 +19,7 @@ namespace Pulumi.Oci.BigDataService.Inputs
         public Input<string> MetricType { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) An autoscale action is triggered when a performance metric meets or exceeds a threshold.
+        /// (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
         /// </summary>
         [Input("threshold", required: true)]
         public Input<Inputs.AutoScalingConfigurationPolicyRuleMetricThresholdArgs> Threshold { get; set; } = null!;

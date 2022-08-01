@@ -133,6 +133,7 @@ class _ExternalPluggableDatabaseState:
                  ncharacter_set: Optional[pulumi.Input[str]] = None,
                  operations_insights_configs: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalPluggableDatabaseOperationsInsightsConfigArgs']]]] = None,
                  source_id: Optional[pulumi.Input[str]] = None,
+                 stack_monitoring_configs: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalPluggableDatabaseStackMonitoringConfigArgs']]]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_zone: Optional[pulumi.Input[str]] = None):
@@ -155,6 +156,7 @@ class _ExternalPluggableDatabaseState:
         :param pulumi.Input[str] ncharacter_set: The national character of the external database.
         :param pulumi.Input[Sequence[pulumi.Input['ExternalPluggableDatabaseOperationsInsightsConfigArgs']]] operations_insights_configs: The configuration of Operations Insights for the external database
         :param pulumi.Input[str] source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the the non-container database that was converted to a pluggable database to create this resource.
+        :param pulumi.Input[Sequence[pulumi.Input['ExternalPluggableDatabaseStackMonitoringConfigArgs']]] stack_monitoring_configs: The configuration of Stack Monitoring for the external database.
         :param pulumi.Input[str] state: The current state of the Oracle Cloud Infrastructure external database resource.
         :param pulumi.Input[str] time_created: The date and time the database was created.
         :param pulumi.Input[str] time_zone: The time zone of the external database. It is a time zone offset (a character type in the format '[+|-]TZH:TZM') or a time zone region name, depending on how the time zone value was specified when the database was created / last altered.
@@ -193,6 +195,8 @@ class _ExternalPluggableDatabaseState:
             pulumi.set(__self__, "operations_insights_configs", operations_insights_configs)
         if source_id is not None:
             pulumi.set(__self__, "source_id", source_id)
+        if stack_monitoring_configs is not None:
+            pulumi.set(__self__, "stack_monitoring_configs", stack_monitoring_configs)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if time_created is not None:
@@ -405,6 +409,18 @@ class _ExternalPluggableDatabaseState:
         pulumi.set(self, "source_id", value)
 
     @property
+    @pulumi.getter(name="stackMonitoringConfigs")
+    def stack_monitoring_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalPluggableDatabaseStackMonitoringConfigArgs']]]]:
+        """
+        The configuration of Stack Monitoring for the external database.
+        """
+        return pulumi.get(self, "stack_monitoring_configs")
+
+    @stack_monitoring_configs.setter
+    def stack_monitoring_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalPluggableDatabaseStackMonitoringConfigArgs']]]]):
+        pulumi.set(self, "stack_monitoring_configs", value)
+
+    @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
@@ -586,6 +602,7 @@ class ExternalPluggableDatabase(pulumi.CustomResource):
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["ncharacter_set"] = None
             __props__.__dict__["operations_insights_configs"] = None
+            __props__.__dict__["stack_monitoring_configs"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_zone"] = None
@@ -616,6 +633,7 @@ class ExternalPluggableDatabase(pulumi.CustomResource):
             ncharacter_set: Optional[pulumi.Input[str]] = None,
             operations_insights_configs: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalPluggableDatabaseOperationsInsightsConfigArgs']]]]] = None,
             source_id: Optional[pulumi.Input[str]] = None,
+            stack_monitoring_configs: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalPluggableDatabaseStackMonitoringConfigArgs']]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_zone: Optional[pulumi.Input[str]] = None) -> 'ExternalPluggableDatabase':
@@ -643,6 +661,7 @@ class ExternalPluggableDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] ncharacter_set: The national character of the external database.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalPluggableDatabaseOperationsInsightsConfigArgs']]]] operations_insights_configs: The configuration of Operations Insights for the external database
         :param pulumi.Input[str] source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the the non-container database that was converted to a pluggable database to create this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalPluggableDatabaseStackMonitoringConfigArgs']]]] stack_monitoring_configs: The configuration of Stack Monitoring for the external database.
         :param pulumi.Input[str] state: The current state of the Oracle Cloud Infrastructure external database resource.
         :param pulumi.Input[str] time_created: The date and time the database was created.
         :param pulumi.Input[str] time_zone: The time zone of the external database. It is a time zone offset (a character type in the format '[+|-]TZH:TZM') or a time zone region name, depending on how the time zone value was specified when the database was created / last altered.
@@ -668,6 +687,7 @@ class ExternalPluggableDatabase(pulumi.CustomResource):
         __props__.__dict__["ncharacter_set"] = ncharacter_set
         __props__.__dict__["operations_insights_configs"] = operations_insights_configs
         __props__.__dict__["source_id"] = source_id
+        __props__.__dict__["stack_monitoring_configs"] = stack_monitoring_configs
         __props__.__dict__["state"] = state
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_zone"] = time_zone
@@ -808,6 +828,14 @@ class ExternalPluggableDatabase(pulumi.CustomResource):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the the non-container database that was converted to a pluggable database to create this resource.
         """
         return pulumi.get(self, "source_id")
+
+    @property
+    @pulumi.getter(name="stackMonitoringConfigs")
+    def stack_monitoring_configs(self) -> pulumi.Output[Sequence['outputs.ExternalPluggableDatabaseStackMonitoringConfig']]:
+        """
+        The configuration of Stack Monitoring for the external database.
+        """
+        return pulumi.get(self, "stack_monitoring_configs")
 
     @property
     @pulumi.getter

@@ -29,15 +29,6 @@ namespace Pulumi.Oci.ApiGateway
     ///             CompartmentId = @var.Compartment_id,
     ///             GatewayId = oci_apigateway_gateway.Test_gateway.Id,
     ///             PathPrefix = @var.Deployment_path_prefix,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             DisplayName = @var.Deployment_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
     ///             Specification = new Oci.ApiGateway.Inputs.DeploymentSpecificationArgs
     ///             {
     ///                 LoggingPolicies = new Oci.ApiGateway.Inputs.DeploymentSpecificationLoggingPoliciesArgs
@@ -115,6 +106,10 @@ namespace Pulumi.Oci.ApiGateway
     ///                     {
     ///                         RateInRequestsPerSecond = @var.Deployment_specification_request_policies_rate_limiting_rate_in_requests_per_second,
     ///                         RateKey = @var.Deployment_specification_request_policies_rate_limiting_rate_key,
+    ///                     },
+    ///                     UsagePlans = new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesUsagePlansArgs
+    ///                     {
+    ///                         TokenLocations = @var.Deployment_specification_request_policies_usage_plans_token_locations,
     ///                     },
     ///                 },
     ///                 Routes = 
@@ -338,6 +333,15 @@ namespace Pulumi.Oci.ApiGateway
     ///                     },
     ///                 },
     ///             },
+    ///             DefinedTags = 
+    ///             {
+    ///                 { "Operations.CostCenter", "42" },
+    ///             },
+    ///             DisplayName = @var.Deployment_display_name,
+    ///             FreeformTags = 
+    ///             {
+    ///                 { "Department", "Finance" },
+    ///             },
     ///         });
     ///     }
     /// 
@@ -524,8 +528,8 @@ namespace Pulumi.Oci.ApiGateway
         /// <summary>
         /// (Updatable) The logical configuration of the API exposed by a deployment.
         /// </summary>
-        [Input("specification")]
-        public Input<Inputs.DeploymentSpecificationArgs>? Specification { get; set; }
+        [Input("specification", required: true)]
+        public Input<Inputs.DeploymentSpecificationArgs> Specification { get; set; } = null!;
 
         public DeploymentArgs()
         {

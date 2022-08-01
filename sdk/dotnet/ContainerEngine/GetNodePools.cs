@@ -33,6 +33,7 @@ namespace Pulumi.Oci.ContainerEngine
         ///             CompartmentId = @var.Compartment_id,
         ///             ClusterId = oci_containerengine_cluster.Test_cluster.Id,
         ///             Name = @var.Node_pool_name,
+        ///             States = @var.Node_pool_state,
         ///         }));
         ///     }
         /// 
@@ -66,6 +67,7 @@ namespace Pulumi.Oci.ContainerEngine
         ///             CompartmentId = @var.Compartment_id,
         ///             ClusterId = oci_containerengine_cluster.Test_cluster.Id,
         ///             Name = @var.Node_pool_name,
+        ///             States = @var.Node_pool_state,
         ///         }));
         ///     }
         /// 
@@ -107,6 +109,18 @@ namespace Pulumi.Oci.ContainerEngine
         [Input("name")]
         public string? Name { get; set; }
 
+        [Input("states")]
+        private List<string>? _states;
+
+        /// <summary>
+        /// A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
+        /// </summary>
+        public List<string> States
+        {
+            get => _states ?? (_states = new List<string>());
+            set => _states = value;
+        }
+
         public GetNodePoolsArgs()
         {
         }
@@ -140,6 +154,18 @@ namespace Pulumi.Oci.ContainerEngine
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        [Input("states")]
+        private InputList<string>? _states;
+
+        /// <summary>
+        /// A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
+        /// </summary>
+        public InputList<string> States
+        {
+            get => _states ?? (_states = new InputList<string>());
+            set => _states = value;
+        }
+
         public GetNodePoolsInvokeArgs()
         {
         }
@@ -170,6 +196,10 @@ namespace Pulumi.Oci.ContainerEngine
         /// The list of node_pools.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetNodePoolsNodePoolResult> NodePools;
+        /// <summary>
+        /// The state of the nodepool.
+        /// </summary>
+        public readonly ImmutableArray<string> States;
 
         [OutputConstructor]
         private GetNodePoolsResult(
@@ -183,7 +213,9 @@ namespace Pulumi.Oci.ContainerEngine
 
             string? name,
 
-            ImmutableArray<Outputs.GetNodePoolsNodePoolResult> nodePools)
+            ImmutableArray<Outputs.GetNodePoolsNodePoolResult> nodePools,
+
+            ImmutableArray<string> states)
         {
             ClusterId = clusterId;
             CompartmentId = compartmentId;
@@ -191,6 +223,7 @@ namespace Pulumi.Oci.ContainerEngine
             Id = id;
             Name = name;
             NodePools = nodePools;
+            States = states;
         }
     }
 }

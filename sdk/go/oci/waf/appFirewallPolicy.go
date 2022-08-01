@@ -66,6 +66,8 @@ import (
 // 				},
 // 			},
 // 			RequestProtection: &waf.AppFirewallPolicyRequestProtectionArgs{
+// 				BodyInspectionSizeLimitExceededActionName: pulumi.Any(_var.Web_app_firewall_policy_request_protection_body_inspection_size_limit_exceeded_action_name),
+// 				BodyInspectionSizeLimitInBytes:            pulumi.Any(_var.Web_app_firewall_policy_request_protection_body_inspection_size_limit_in_bytes),
 // 				Rules: waf.AppFirewallPolicyRequestProtectionRuleArray{
 // 					&waf.AppFirewallPolicyRequestProtectionRuleArgs{
 // 						ActionName: pulumi.Any(_var.Web_app_firewall_policy_request_protection_rules_action_name),
@@ -88,9 +90,10 @@ import (
 // 								},
 // 							},
 // 						},
-// 						Type:              pulumi.Any(_var.Web_app_firewall_policy_request_protection_rules_type),
-// 						Condition:         pulumi.Any(_var.Web_app_firewall_policy_request_protection_rules_condition),
-// 						ConditionLanguage: pulumi.Any(_var.Web_app_firewall_policy_request_protection_rules_condition_language),
+// 						Type:                    pulumi.Any(_var.Web_app_firewall_policy_request_protection_rules_type),
+// 						Condition:               pulumi.Any(_var.Web_app_firewall_policy_request_protection_rules_condition),
+// 						ConditionLanguage:       pulumi.Any(_var.Web_app_firewall_policy_request_protection_rules_condition_language),
+// 						IsBodyInspectionEnabled: pulumi.Any(_var.Web_app_firewall_policy_request_protection_rules_is_body_inspection_enabled),
 // 						ProtectionCapabilitySettings: &waf.AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsArgs{
 // 							AllowedHttpMethods:         pulumi.Any(_var.Web_app_firewall_policy_request_protection_rules_protection_capability_settings_allowed_http_methods),
 // 							MaxHttpRequestHeaderLength: pulumi.Any(_var.Web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_http_request_header_length),
@@ -154,9 +157,10 @@ import (
 // 								},
 // 							},
 // 						},
-// 						Type:              pulumi.Any(_var.Web_app_firewall_policy_response_protection_rules_type),
-// 						Condition:         pulumi.Any(_var.Web_app_firewall_policy_response_protection_rules_condition),
-// 						ConditionLanguage: pulumi.Any(_var.Web_app_firewall_policy_response_protection_rules_condition_language),
+// 						Type:                    pulumi.Any(_var.Web_app_firewall_policy_response_protection_rules_type),
+// 						Condition:               pulumi.Any(_var.Web_app_firewall_policy_response_protection_rules_condition),
+// 						ConditionLanguage:       pulumi.Any(_var.Web_app_firewall_policy_response_protection_rules_condition_language),
+// 						IsBodyInspectionEnabled: pulumi.Any(_var.Web_app_firewall_policy_response_protection_rules_is_body_inspection_enabled),
 // 						ProtectionCapabilitySettings: &waf.AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsArgs{
 // 							AllowedHttpMethods:         pulumi.Any(_var.Web_app_firewall_policy_response_protection_rules_protection_capability_settings_allowed_http_methods),
 // 							MaxHttpRequestHeaderLength: pulumi.Any(_var.Web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_http_request_header_length),

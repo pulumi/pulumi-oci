@@ -18,7 +18,7 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipe {
      */
     private final String compartmentId;
     /**
-     * @return ResponderRule Description
+     * @return ResponderRule description.
      * 
      */
     private final String description;
@@ -48,7 +48,7 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipe {
      */
     private final List<GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRule> effectiveDetectorRules;
     /**
-     * @return Unique identifier of TargetResponderRecipe that is immutable on creation
+     * @return Unique identifier of TargetResponderRecipe that can&#39;t be changed after creation.
      * 
      */
     private final String id;
@@ -109,7 +109,7 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipe {
         return this.compartmentId;
     }
     /**
-     * @return ResponderRule Description
+     * @return ResponderRule description.
      * 
      */
     public String description() {
@@ -151,7 +151,7 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipe {
         return this.effectiveDetectorRules;
     }
     /**
-     * @return Unique identifier of TargetResponderRecipe that is immutable on creation
+     * @return Unique identifier of TargetResponderRecipe that can&#39;t be changed after creation.
      * 
      */
     public String id() {

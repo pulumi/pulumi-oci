@@ -28,6 +28,7 @@ import * as utilities from "../utilities";
  *         Department: "Finance",
  *     },
  *     publicIpId: oci_core_public_ip.test_public_ip.id,
+ *     routeTableId: oci_core_route_table.test_route_table.id,
  * });
  * ```
  *
@@ -96,6 +97,10 @@ export class NatGateway extends pulumi.CustomResource {
      */
     public readonly publicIpId!: pulumi.Output<string>;
     /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
+     */
+    public readonly routeTableId!: pulumi.Output<string>;
+    /**
      * The NAT gateway's current state.
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
@@ -128,6 +133,7 @@ export class NatGateway extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["natIp"] = state ? state.natIp : undefined;
             resourceInputs["publicIpId"] = state ? state.publicIpId : undefined;
+            resourceInputs["routeTableId"] = state ? state.routeTableId : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["vcnId"] = state ? state.vcnId : undefined;
@@ -145,6 +151,7 @@ export class NatGateway extends pulumi.CustomResource {
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["publicIpId"] = args ? args.publicIpId : undefined;
+            resourceInputs["routeTableId"] = args ? args.routeTableId : undefined;
             resourceInputs["vcnId"] = args ? args.vcnId : undefined;
             resourceInputs["natIp"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
@@ -188,6 +195,10 @@ export interface NatGatewayState {
      */
     publicIpId?: pulumi.Input<string>;
     /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
+     */
+    routeTableId?: pulumi.Input<string>;
+    /**
      * The NAT gateway's current state.
      */
     state?: pulumi.Input<string>;
@@ -229,6 +240,10 @@ export interface NatGatewayArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP address associated with the NAT gateway.
      */
     publicIpId?: pulumi.Input<string>;
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
+     */
+    routeTableId?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the gateway belongs to.
      */

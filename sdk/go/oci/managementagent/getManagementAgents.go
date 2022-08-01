@@ -13,7 +13,8 @@ import (
 // This data source provides the list of Management Agents in Oracle Cloud Infrastructure Management Agent service.
 //
 // Returns a list of Management Agents.
-// If no explicit page size limit is specified, it will default to 5000.
+// If no explicit page size limit is specified, it will default to 1000 when compartmentIdInSubtree is true and 5000 otherwise.
+// The response is limited to maximum 1000 records when compartmentIdInSubtree is true.
 //
 // ## Example Usage
 //
@@ -28,16 +29,18 @@ import (
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		_, err := ManagementAgent.GetManagementAgents(ctx, &managementagent.GetManagementAgentsArgs{
-// 			CompartmentId:      _var.Compartment_id,
-// 			AvailabilityStatus: pulumi.StringRef(_var.Management_agent_availability_status),
-// 			DisplayName:        pulumi.StringRef(_var.Management_agent_display_name),
-// 			HostId:             pulumi.StringRef(oci_management_agent_host.Test_host.Id),
-// 			InstallType:        pulumi.StringRef(_var.Management_agent_install_type),
-// 			IsCustomerDeployed: pulumi.BoolRef(_var.Management_agent_is_customer_deployed),
-// 			PlatformTypes:      _var.Management_agent_platform_type,
-// 			PluginNames:        _var.Management_agent_plugin_name,
-// 			State:              pulumi.StringRef(_var.Management_agent_state),
-// 			Versions:           _var.Management_agent_version,
+// 			CompartmentId:          _var.Compartment_id,
+// 			AccessLevel:            pulumi.StringRef(_var.Management_agent_access_level),
+// 			AvailabilityStatus:     pulumi.StringRef(_var.Management_agent_availability_status),
+// 			CompartmentIdInSubtree: pulumi.BoolRef(_var.Management_agent_compartment_id_in_subtree),
+// 			DisplayName:            pulumi.StringRef(_var.Management_agent_display_name),
+// 			HostId:                 pulumi.StringRef(oci_management_agent_host.Test_host.Id),
+// 			InstallType:            pulumi.StringRef(_var.Management_agent_install_type),
+// 			IsCustomerDeployed:     pulumi.BoolRef(_var.Management_agent_is_customer_deployed),
+// 			PlatformTypes:          _var.Management_agent_platform_type,
+// 			PluginNames:            _var.Management_agent_plugin_name,
+// 			State:                  pulumi.StringRef(_var.Management_agent_state),
+// 			Versions:               _var.Management_agent_version,
 // 		}, nil)
 // 		if err != nil {
 // 			return err
@@ -57,10 +60,14 @@ func GetManagementAgents(ctx *pulumi.Context, args *GetManagementAgentsArgs, opt
 
 // A collection of arguments for invoking getManagementAgents.
 type GetManagementAgentsArgs struct {
+	// When the value is "ACCESSIBLE", insufficient permissions for a compartment will filter out resources in that compartment without rejecting the request.
+	AccessLevel *string `pulumi:"accessLevel"`
 	// Filter to return only Management Agents in the particular availability status.
 	AvailabilityStatus *string `pulumi:"availabilityStatus"`
 	// The OCID of the compartment to which a request will be scoped.
 	CompartmentId string `pulumi:"compartmentId"`
+	// if set to true then it fetches resources for all compartments where user has access to else only on the compartment specified.
+	CompartmentIdInSubtree *bool `pulumi:"compartmentIdInSubtree"`
 	// Filter to return only Management Agents having the particular display name.
 	DisplayName *string                     `pulumi:"displayName"`
 	Filters     []GetManagementAgentsFilter `pulumi:"filters"`
@@ -70,22 +77,24 @@ type GetManagementAgentsArgs struct {
 	InstallType *string `pulumi:"installType"`
 	// true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
 	IsCustomerDeployed *bool `pulumi:"isCustomerDeployed"`
-	// Filter to return only results having the particular platform type.
+	// Array of PlatformTypes to return only results having the particular platform types. Example: ["LINUX"]
 	PlatformTypes []string `pulumi:"platformTypes"`
-	// Filter to return only Management Agents having the particular Plugin installed. A special pluginName of 'None' can be provided and this will return only Management Agents having no plugin installed.
+	// Array of pluginName to return only Management Agents having the particular Plugins installed. A special pluginName of 'None' can be provided and this will return only Management Agents having no plugin installed. Example: ["PluginA"]
 	PluginNames []string `pulumi:"pluginNames"`
 	// Filter to return only Management Agents in the particular lifecycle state.
 	State *string `pulumi:"state"`
-	// Filter to return only Management Agents having the particular agent version.
+	// Array of versions to return only Management Agents having the particular agent versions. Example: ["202020.0101","210201.0513"]
 	Versions []string `pulumi:"versions"`
 }
 
 // A collection of values returned by getManagementAgents.
 type GetManagementAgentsResult struct {
+	AccessLevel *string `pulumi:"accessLevel"`
 	// The current availability status of managementAgent
 	AvailabilityStatus *string `pulumi:"availabilityStatus"`
 	// Compartment Identifier
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId          string `pulumi:"compartmentId"`
+	CompartmentIdInSubtree *bool  `pulumi:"compartmentIdInSubtree"`
 	// Management Agent Name
 	DisplayName *string                     `pulumi:"displayName"`
 	Filters     []GetManagementAgentsFilter `pulumi:"filters"`
@@ -124,10 +133,14 @@ func GetManagementAgentsOutput(ctx *pulumi.Context, args GetManagementAgentsOutp
 
 // A collection of arguments for invoking getManagementAgents.
 type GetManagementAgentsOutputArgs struct {
+	// When the value is "ACCESSIBLE", insufficient permissions for a compartment will filter out resources in that compartment without rejecting the request.
+	AccessLevel pulumi.StringPtrInput `pulumi:"accessLevel"`
 	// Filter to return only Management Agents in the particular availability status.
 	AvailabilityStatus pulumi.StringPtrInput `pulumi:"availabilityStatus"`
 	// The OCID of the compartment to which a request will be scoped.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// if set to true then it fetches resources for all compartments where user has access to else only on the compartment specified.
+	CompartmentIdInSubtree pulumi.BoolPtrInput `pulumi:"compartmentIdInSubtree"`
 	// Filter to return only Management Agents having the particular display name.
 	DisplayName pulumi.StringPtrInput               `pulumi:"displayName"`
 	Filters     GetManagementAgentsFilterArrayInput `pulumi:"filters"`
@@ -137,13 +150,13 @@ type GetManagementAgentsOutputArgs struct {
 	InstallType pulumi.StringPtrInput `pulumi:"installType"`
 	// true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
 	IsCustomerDeployed pulumi.BoolPtrInput `pulumi:"isCustomerDeployed"`
-	// Filter to return only results having the particular platform type.
+	// Array of PlatformTypes to return only results having the particular platform types. Example: ["LINUX"]
 	PlatformTypes pulumi.StringArrayInput `pulumi:"platformTypes"`
-	// Filter to return only Management Agents having the particular Plugin installed. A special pluginName of 'None' can be provided and this will return only Management Agents having no plugin installed.
+	// Array of pluginName to return only Management Agents having the particular Plugins installed. A special pluginName of 'None' can be provided and this will return only Management Agents having no plugin installed. Example: ["PluginA"]
 	PluginNames pulumi.StringArrayInput `pulumi:"pluginNames"`
 	// Filter to return only Management Agents in the particular lifecycle state.
 	State pulumi.StringPtrInput `pulumi:"state"`
-	// Filter to return only Management Agents having the particular agent version.
+	// Array of versions to return only Management Agents having the particular agent versions. Example: ["202020.0101","210201.0513"]
 	Versions pulumi.StringArrayInput `pulumi:"versions"`
 }
 
@@ -166,6 +179,10 @@ func (o GetManagementAgentsResultOutput) ToGetManagementAgentsResultOutputWithCo
 	return o
 }
 
+func (o GetManagementAgentsResultOutput) AccessLevel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentsResult) *string { return v.AccessLevel }).(pulumi.StringPtrOutput)
+}
+
 // The current availability status of managementAgent
 func (o GetManagementAgentsResultOutput) AvailabilityStatus() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetManagementAgentsResult) *string { return v.AvailabilityStatus }).(pulumi.StringPtrOutput)
@@ -174,6 +191,10 @@ func (o GetManagementAgentsResultOutput) AvailabilityStatus() pulumi.StringPtrOu
 // Compartment Identifier
 func (o GetManagementAgentsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagementAgentsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+func (o GetManagementAgentsResultOutput) CompartmentIdInSubtree() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentsResult) *bool { return v.CompartmentIdInSubtree }).(pulumi.BoolPtrOutput)
 }
 
 // Management Agent Name

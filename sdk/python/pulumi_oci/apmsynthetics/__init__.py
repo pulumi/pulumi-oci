@@ -6,6 +6,9 @@ from .. import _utilities
 import typing
 # Export this package's modules as members:
 from .config import *
+from .dedicated_vantage_point import *
+from .get_dedicated_vantage_point import *
+from .get_dedicated_vantage_points import *
 from .get_monitor import *
 from .get_monitors import *
 from .get_result import *

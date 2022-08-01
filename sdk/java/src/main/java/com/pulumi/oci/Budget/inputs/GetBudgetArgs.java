@@ -14,14 +14,14 @@ public final class GetBudgetArgs extends com.pulumi.resources.InvokeArgs {
     public static final GetBudgetArgs Empty = new GetBudgetArgs();
 
     /**
-     * The unique Budget OCID
+     * The unique budget OCID.
      * 
      */
     @Import(name="budgetId", required=true)
     private Output<String> budgetId;
 
     /**
-     * @return The unique Budget OCID
+     * @return The unique budget OCID.
      * 
      */
     public Output<String> budgetId() {
@@ -53,7 +53,7 @@ public final class GetBudgetArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param budgetId The unique Budget OCID
+         * @param budgetId The unique budget OCID.
          * 
          * @return builder
          * 
@@ -64,7 +64,7 @@ public final class GetBudgetArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param budgetId The unique Budget OCID
+         * @param budgetId The unique budget OCID.
          * 
          * @return builder
          * 

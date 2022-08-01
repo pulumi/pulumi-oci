@@ -88,11 +88,19 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
      */
     public readonly autonomousDataStorageSizeInTbs!: pulumi.Output<number>;
     /**
+     * The data disk group size available for Autonomous Databases, in TBs.
+     */
+    public /*out*/ readonly availableAutonomousDataStorageSizeInTbs!: pulumi.Output<number>;
+    /**
+     * The number of Autonomous Container Databases that can be created with the currently available local storage.
+     */
+    public /*out*/ readonly availableContainerDatabases!: pulumi.Output<number>;
+    /**
      * The numnber of CPU cores available.
      */
     public /*out*/ readonly availableCpus!: pulumi.Output<number>;
     /**
-     * The data storage available in TBs
+     * **Deprecated.** Use `availableAutonomousDataStorageSizeInTBs` for Autonomous Databases' data storage availability in TBs.
      */
     public /*out*/ readonly availableDataStorageSizeInTbs!: pulumi.Output<number>;
     /**
@@ -173,6 +181,10 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
      */
     public /*out*/ readonly ocpusEnabled!: pulumi.Output<number>;
     /**
+     * CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+     */
+    public /*out*/ readonly reclaimableCpus!: pulumi.Output<number>;
+    /**
      * The current state of the Autonomous VM cluster.
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
@@ -207,6 +219,8 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as AutonomousVmClusterState | undefined;
             resourceInputs["autonomousDataStorageSizeInTbs"] = state ? state.autonomousDataStorageSizeInTbs : undefined;
+            resourceInputs["availableAutonomousDataStorageSizeInTbs"] = state ? state.availableAutonomousDataStorageSizeInTbs : undefined;
+            resourceInputs["availableContainerDatabases"] = state ? state.availableContainerDatabases : undefined;
             resourceInputs["availableCpus"] = state ? state.availableCpus : undefined;
             resourceInputs["availableDataStorageSizeInTbs"] = state ? state.availableDataStorageSizeInTbs : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
@@ -229,6 +243,7 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
             resourceInputs["memorySizeInGbs"] = state ? state.memorySizeInGbs : undefined;
             resourceInputs["nextMaintenanceRunId"] = state ? state.nextMaintenanceRunId : undefined;
             resourceInputs["ocpusEnabled"] = state ? state.ocpusEnabled : undefined;
+            resourceInputs["reclaimableCpus"] = state ? state.reclaimableCpus : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeZone"] = state ? state.timeZone : undefined;
@@ -262,6 +277,8 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
             resourceInputs["timeZone"] = args ? args.timeZone : undefined;
             resourceInputs["totalContainerDatabases"] = args ? args.totalContainerDatabases : undefined;
             resourceInputs["vmClusterNetworkId"] = args ? args.vmClusterNetworkId : undefined;
+            resourceInputs["availableAutonomousDataStorageSizeInTbs"] = undefined /*out*/;
+            resourceInputs["availableContainerDatabases"] = undefined /*out*/;
             resourceInputs["availableCpus"] = undefined /*out*/;
             resourceInputs["availableDataStorageSizeInTbs"] = undefined /*out*/;
             resourceInputs["cpusEnabled"] = undefined /*out*/;
@@ -274,6 +291,7 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
             resourceInputs["memorySizeInGbs"] = undefined /*out*/;
             resourceInputs["nextMaintenanceRunId"] = undefined /*out*/;
             resourceInputs["ocpusEnabled"] = undefined /*out*/;
+            resourceInputs["reclaimableCpus"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
         }
@@ -291,11 +309,19 @@ export interface AutonomousVmClusterState {
      */
     autonomousDataStorageSizeInTbs?: pulumi.Input<number>;
     /**
+     * The data disk group size available for Autonomous Databases, in TBs.
+     */
+    availableAutonomousDataStorageSizeInTbs?: pulumi.Input<number>;
+    /**
+     * The number of Autonomous Container Databases that can be created with the currently available local storage.
+     */
+    availableContainerDatabases?: pulumi.Input<number>;
+    /**
      * The numnber of CPU cores available.
      */
     availableCpus?: pulumi.Input<number>;
     /**
-     * The data storage available in TBs
+     * **Deprecated.** Use `availableAutonomousDataStorageSizeInTBs` for Autonomous Databases' data storage availability in TBs.
      */
     availableDataStorageSizeInTbs?: pulumi.Input<number>;
     /**
@@ -375,6 +401,10 @@ export interface AutonomousVmClusterState {
      * The number of enabled OCPU cores.
      */
     ocpusEnabled?: pulumi.Input<number>;
+    /**
+     * CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+     */
+    reclaimableCpus?: pulumi.Input<number>;
     /**
      * The current state of the Autonomous VM cluster.
      */

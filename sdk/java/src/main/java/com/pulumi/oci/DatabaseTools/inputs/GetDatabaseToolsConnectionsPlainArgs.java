@@ -32,14 +32,14 @@ public final class GetDatabaseToolsConnectionsPlainArgs extends com.pulumi.resou
     }
 
     /**
-     * A filter to return only resources that match the entire display name given.
+     * A filter to return only resources that match the entire specified display name.
      * 
      */
     @Import(name="displayName")
     private @Nullable String displayName;
 
     /**
-     * @return A filter to return only resources that match the entire display name given.
+     * @return A filter to return only resources that match the entire specified display name.
      * 
      */
     public Optional<String> displayName() {
@@ -54,14 +54,14 @@ public final class GetDatabaseToolsConnectionsPlainArgs extends com.pulumi.resou
     }
 
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
      * 
      */
     @Import(name="state")
     private @Nullable String state;
 
     /**
-     * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * @return A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
      * 
      */
     public Optional<String> state() {
@@ -69,14 +69,14 @@ public final class GetDatabaseToolsConnectionsPlainArgs extends com.pulumi.resou
     }
 
     /**
-     * A filter to return only resources their endpointServiceId matches the given endpointServiceId.
+     * A filter to return only resources their type matches the specified type.
      * 
      */
     @Import(name="types")
     private @Nullable List<String> types;
 
     /**
-     * @return A filter to return only resources their endpointServiceId matches the given endpointServiceId.
+     * @return A filter to return only resources their type matches the specified type.
      * 
      */
     public Optional<List<String>> types() {
@@ -123,7 +123,7 @@ public final class GetDatabaseToolsConnectionsPlainArgs extends com.pulumi.resou
         }
 
         /**
-         * @param displayName A filter to return only resources that match the entire display name given.
+         * @param displayName A filter to return only resources that match the entire specified display name.
          * 
          * @return builder
          * 
@@ -143,7 +143,7 @@ public final class GetDatabaseToolsConnectionsPlainArgs extends com.pulumi.resou
         }
 
         /**
-         * @param state A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * @param state A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
          * 
          * @return builder
          * 
@@ -154,7 +154,7 @@ public final class GetDatabaseToolsConnectionsPlainArgs extends com.pulumi.resou
         }
 
         /**
-         * @param types A filter to return only resources their endpointServiceId matches the given endpointServiceId.
+         * @param types A filter to return only resources their type matches the specified type.
          * 
          * @return builder
          * 
@@ -165,7 +165,7 @@ public final class GetDatabaseToolsConnectionsPlainArgs extends com.pulumi.resou
         }
 
         /**
-         * @param types A filter to return only resources their endpointServiceId matches the given endpointServiceId.
+         * @param types A filter to return only resources their type matches the specified type.
          * 
          * @return builder
          * 

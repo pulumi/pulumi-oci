@@ -19,14 +19,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     public static final RuleArgs Empty = new RuleArgs();
 
     /**
-     * The unique Budget OCID
+     * The unique budget OCID.
      * 
      */
     @Import(name="budgetId", required=true)
     private Output<String> budgetId;
 
     /**
-     * @return The unique Budget OCID
+     * @return The unique budget OCID.
      * 
      */
     public Output<String> budgetId() {
@@ -64,14 +64,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The name of the alert rule.
+     * (Updatable) The name of the alert rule. Avoid entering confidential information.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) The name of the alert rule.
+     * @return (Updatable) The name of the alert rule. Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -94,14 +94,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The message to be sent to the recipients when alert rule is triggered.
+     * (Updatable) The message to be sent to the recipients when the alert rule is triggered.
      * 
      */
     @Import(name="message")
     private @Nullable Output<String> message;
 
     /**
-     * @return (Updatable) The message to be sent to the recipients when alert rule is triggered.
+     * @return (Updatable) The message to be sent to the recipients when the alert rule is triggered.
      * 
      */
     public Optional<Output<String>> message() {
@@ -109,14 +109,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The audience that will receive the alert when it triggers. An empty string is interpreted as null.
+     * (Updatable) The audience that receives the alert when it triggers. An empty string is interpreted as null.
      * 
      */
     @Import(name="recipients")
     private @Nullable Output<String> recipients;
 
     /**
-     * @return (Updatable) The audience that will receive the alert when it triggers. An empty string is interpreted as null.
+     * @return (Updatable) The audience that receives the alert when it triggers. An empty string is interpreted as null.
      * 
      */
     public Optional<Output<String>> recipients() {
@@ -124,14 +124,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The threshold for triggering the alert expressed as a whole number or decimal value. If thresholdType is ABSOLUTE, threshold can have at most 12 digits before the decimal point and up to 2 digits after the decimal point. If thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to 2 digits after the decimal point.
+     * (Updatable) The threshold for triggering the alert, expressed as a whole number or decimal value. If the thresholdType is ABSOLUTE, the threshold can have at most 12 digits before the decimal point, and up to two digits after the decimal point. If the thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to two digits after the decimal point.
      * 
      */
     @Import(name="threshold", required=true)
     private Output<Double> threshold;
 
     /**
-     * @return (Updatable) The threshold for triggering the alert expressed as a whole number or decimal value. If thresholdType is ABSOLUTE, threshold can have at most 12 digits before the decimal point and up to 2 digits after the decimal point. If thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to 2 digits after the decimal point.
+     * @return (Updatable) The threshold for triggering the alert, expressed as a whole number or decimal value. If the thresholdType is ABSOLUTE, the threshold can have at most 12 digits before the decimal point, and up to two digits after the decimal point. If the thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to two digits after the decimal point.
      * 
      */
     public Output<Double> threshold() {
@@ -154,14 +154,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Type of alert. Valid values are ACTUAL (the alert will trigger based on actual usage) or FORECAST (the alert will trigger based on predicted usage).
+     * (Updatable) The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
      * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
-     * @return (Updatable) Type of alert. Valid values are ACTUAL (the alert will trigger based on actual usage) or FORECAST (the alert will trigger based on predicted usage).
+     * @return (Updatable) The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
      * 
      */
     public Output<String> type() {
@@ -202,7 +202,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param budgetId The unique Budget OCID
+         * @param budgetId The unique budget OCID.
          * 
          * @return builder
          * 
@@ -213,7 +213,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param budgetId The unique Budget OCID
+         * @param budgetId The unique budget OCID.
          * 
          * @return builder
          * 
@@ -265,7 +265,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) The name of the alert rule.
+         * @param displayName (Updatable) The name of the alert rule. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -276,7 +276,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) The name of the alert rule.
+         * @param displayName (Updatable) The name of the alert rule. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -307,7 +307,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param message (Updatable) The message to be sent to the recipients when alert rule is triggered.
+         * @param message (Updatable) The message to be sent to the recipients when the alert rule is triggered.
          * 
          * @return builder
          * 
@@ -318,7 +318,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param message (Updatable) The message to be sent to the recipients when alert rule is triggered.
+         * @param message (Updatable) The message to be sent to the recipients when the alert rule is triggered.
          * 
          * @return builder
          * 
@@ -328,7 +328,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param recipients (Updatable) The audience that will receive the alert when it triggers. An empty string is interpreted as null.
+         * @param recipients (Updatable) The audience that receives the alert when it triggers. An empty string is interpreted as null.
          * 
          * @return builder
          * 
@@ -339,7 +339,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param recipients (Updatable) The audience that will receive the alert when it triggers. An empty string is interpreted as null.
+         * @param recipients (Updatable) The audience that receives the alert when it triggers. An empty string is interpreted as null.
          * 
          * @return builder
          * 
@@ -349,7 +349,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param threshold (Updatable) The threshold for triggering the alert expressed as a whole number or decimal value. If thresholdType is ABSOLUTE, threshold can have at most 12 digits before the decimal point and up to 2 digits after the decimal point. If thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to 2 digits after the decimal point.
+         * @param threshold (Updatable) The threshold for triggering the alert, expressed as a whole number or decimal value. If the thresholdType is ABSOLUTE, the threshold can have at most 12 digits before the decimal point, and up to two digits after the decimal point. If the thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to two digits after the decimal point.
          * 
          * @return builder
          * 
@@ -360,7 +360,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param threshold (Updatable) The threshold for triggering the alert expressed as a whole number or decimal value. If thresholdType is ABSOLUTE, threshold can have at most 12 digits before the decimal point and up to 2 digits after the decimal point. If thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to 2 digits after the decimal point.
+         * @param threshold (Updatable) The threshold for triggering the alert, expressed as a whole number or decimal value. If the thresholdType is ABSOLUTE, the threshold can have at most 12 digits before the decimal point, and up to two digits after the decimal point. If the thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to two digits after the decimal point.
          * 
          * @return builder
          * 
@@ -391,7 +391,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param type (Updatable) Type of alert. Valid values are ACTUAL (the alert will trigger based on actual usage) or FORECAST (the alert will trigger based on predicted usage).
+         * @param type (Updatable) The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
          * 
          * @return builder
          * 
@@ -402,7 +402,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param type (Updatable) Type of alert. Valid values are ACTUAL (the alert will trigger based on actual usage) or FORECAST (the alert will trigger based on predicted usage).
+         * @param type (Updatable) The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
          * 
          * @return builder
          * 

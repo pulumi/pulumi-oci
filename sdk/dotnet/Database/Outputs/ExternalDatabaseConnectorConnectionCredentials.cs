@@ -30,6 +30,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string? Role;
         /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        /// </summary>
+        public readonly string? SslSecretId;
+        /// <summary>
         /// (Updatable) The username that will be used to connect to the database.
         /// </summary>
         public readonly string? Username;
@@ -44,12 +48,15 @@ namespace Pulumi.Oci.Database.Outputs
 
             string? role,
 
+            string? sslSecretId,
+
             string? username)
         {
             CredentialName = credentialName;
             CredentialType = credentialType;
             Password = password;
             Role = role;
+            SslSecretId = sslSecretId;
             Username = username;
         }
     }

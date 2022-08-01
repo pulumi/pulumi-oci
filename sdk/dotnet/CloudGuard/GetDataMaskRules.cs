@@ -223,7 +223,7 @@ namespace Pulumi.Oci.CloudGuard
     {
         public readonly string? AccessLevel;
         /// <summary>
-        /// Compartment Identifier where the resource is created
+        /// Compartment Identifier where the resource is created.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -235,7 +235,7 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public readonly string? DataMaskRuleStatus;
         /// <summary>
-        /// Data Mask Rule Identifier, can be renamed
+        /// Data Mask Rule Identifier, can be renamed.
         /// </summary>
         public readonly string? DisplayName;
         public readonly ImmutableArray<Outputs.GetDataMaskRulesFilterResult> Filters;

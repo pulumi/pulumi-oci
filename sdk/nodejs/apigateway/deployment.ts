@@ -20,13 +20,6 @@ import * as utilities from "../utilities";
  *     compartmentId: _var.compartment_id,
  *     gatewayId: oci_apigateway_gateway.test_gateway.id,
  *     pathPrefix: _var.deployment_path_prefix,
- *     definedTags: {
- *         "Operations.CostCenter": "42",
- *     },
- *     displayName: _var.deployment_display_name,
- *     freeformTags: {
- *         Department: "Finance",
- *     },
  *     specification: {
  *         loggingPolicies: {
  *             accessLog: {
@@ -86,6 +79,9 @@ import * as utilities from "../utilities";
  *             rateLimiting: {
  *                 rateInRequestsPerSecond: _var.deployment_specification_request_policies_rate_limiting_rate_in_requests_per_second,
  *                 rateKey: _var.deployment_specification_request_policies_rate_limiting_rate_key,
+ *             },
+ *             usagePlans: {
+ *                 tokenLocations: _var.deployment_specification_request_policies_usage_plans_token_locations,
  *             },
  *         },
  *         routes: [{
@@ -228,6 +224,13 @@ import * as utilities from "../utilities";
  *             },
  *         }],
  *     },
+ *     definedTags: {
+ *         "Operations.CostCenter": "42",
+ *     },
+ *     displayName: _var.deployment_display_name,
+ *     freeformTags: {
+ *         Department: "Finance",
+ *     },
  * });
  * ```
  *
@@ -352,6 +355,9 @@ export class Deployment extends pulumi.CustomResource {
             if ((!args || args.pathPrefix === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'pathPrefix'");
             }
+            if ((!args || args.specification === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'specification'");
+            }
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
@@ -455,5 +461,5 @@ export interface DeploymentArgs {
     /**
      * (Updatable) The logical configuration of the API exposed by a deployment.
      */
-    specification?: pulumi.Input<inputs.ApiGateway.DeploymentSpecification>;
+    specification: pulumi.Input<inputs.ApiGateway.DeploymentSpecification>;
 }

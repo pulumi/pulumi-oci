@@ -4,10 +4,12 @@
 package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Mysql.outputs.GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -24,10 +26,15 @@ public final class GetMysqlBackupDbSystemSnapshotBackupPolicy {
      */
     private final Map<String,Object> freeformTags;
     /**
-     * @return If automated backups are enabled or disabled.
+     * @return Specifies if PITR is enabled or disabled.
      * 
      */
     private final Boolean isEnabled;
+    /**
+     * @return The PITR policy for the DB System.
+     * 
+     */
+    private final List<GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy> pitrPolicies;
     /**
      * @return Number of days to retain this backup.
      * 
@@ -44,11 +51,13 @@ public final class GetMysqlBackupDbSystemSnapshotBackupPolicy {
         @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
         @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
         @CustomType.Parameter("isEnabled") Boolean isEnabled,
+        @CustomType.Parameter("pitrPolicies") List<GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy> pitrPolicies,
         @CustomType.Parameter("retentionInDays") Integer retentionInDays,
         @CustomType.Parameter("windowStartTime") String windowStartTime) {
         this.definedTags = definedTags;
         this.freeformTags = freeformTags;
         this.isEnabled = isEnabled;
+        this.pitrPolicies = pitrPolicies;
         this.retentionInDays = retentionInDays;
         this.windowStartTime = windowStartTime;
     }
@@ -68,11 +77,18 @@ public final class GetMysqlBackupDbSystemSnapshotBackupPolicy {
         return this.freeformTags;
     }
     /**
-     * @return If automated backups are enabled or disabled.
+     * @return Specifies if PITR is enabled or disabled.
      * 
      */
     public Boolean isEnabled() {
         return this.isEnabled;
+    }
+    /**
+     * @return The PITR policy for the DB System.
+     * 
+     */
+    public List<GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy> pitrPolicies() {
+        return this.pitrPolicies;
     }
     /**
      * @return Number of days to retain this backup.
@@ -101,6 +117,7 @@ public final class GetMysqlBackupDbSystemSnapshotBackupPolicy {
         private Map<String,Object> definedTags;
         private Map<String,Object> freeformTags;
         private Boolean isEnabled;
+        private List<GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy> pitrPolicies;
         private Integer retentionInDays;
         private String windowStartTime;
 
@@ -113,6 +130,7 @@ public final class GetMysqlBackupDbSystemSnapshotBackupPolicy {
     	      this.definedTags = defaults.definedTags;
     	      this.freeformTags = defaults.freeformTags;
     	      this.isEnabled = defaults.isEnabled;
+    	      this.pitrPolicies = defaults.pitrPolicies;
     	      this.retentionInDays = defaults.retentionInDays;
     	      this.windowStartTime = defaults.windowStartTime;
         }
@@ -129,6 +147,13 @@ public final class GetMysqlBackupDbSystemSnapshotBackupPolicy {
             this.isEnabled = Objects.requireNonNull(isEnabled);
             return this;
         }
+        public Builder pitrPolicies(List<GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy> pitrPolicies) {
+            this.pitrPolicies = Objects.requireNonNull(pitrPolicies);
+            return this;
+        }
+        public Builder pitrPolicies(GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy... pitrPolicies) {
+            return pitrPolicies(List.of(pitrPolicies));
+        }
         public Builder retentionInDays(Integer retentionInDays) {
             this.retentionInDays = Objects.requireNonNull(retentionInDays);
             return this;
@@ -137,7 +162,7 @@ public final class GetMysqlBackupDbSystemSnapshotBackupPolicy {
             this.windowStartTime = Objects.requireNonNull(windowStartTime);
             return this;
         }        public GetMysqlBackupDbSystemSnapshotBackupPolicy build() {
-            return new GetMysqlBackupDbSystemSnapshotBackupPolicy(definedTags, freeformTags, isEnabled, retentionInDays, windowStartTime);
+            return new GetMysqlBackupDbSystemSnapshotBackupPolicy(definedTags, freeformTags, isEnabled, pitrPolicies, retentionInDays, windowStartTime);
         }
     }
 }

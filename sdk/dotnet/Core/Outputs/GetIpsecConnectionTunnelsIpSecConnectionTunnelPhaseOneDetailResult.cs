@@ -36,7 +36,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The total configured lifetime of the IKE security association.
         /// </summary>
-        public readonly string Lifetime;
+        public readonly int Lifetime;
         /// <summary>
         /// The negotiated phase two authentication algorithm.
         /// </summary>
@@ -70,7 +70,7 @@ namespace Pulumi.Oci.Core.Outputs
 
             bool isIkeEstablished,
 
-            string lifetime,
+            int lifetime,
 
             string negotiatedAuthenticationAlgorithm,
 

@@ -139,14 +139,14 @@ public final class DatabaseSoftwareImageArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * output from lsinventory which will get passed as a string
+     * The output from the OPatch lsInventory command, which is passed as a string.
      * 
      */
     @Import(name="lsInventory")
     private @Nullable Output<String> lsInventory;
 
     /**
-     * @return output from lsinventory which will get passed as a string
+     * @return The output from the OPatch lsInventory command, which is passed as a string.
      * 
      */
     public Optional<Output<String>> lsInventory() {
@@ -396,7 +396,7 @@ public final class DatabaseSoftwareImageArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param lsInventory output from lsinventory which will get passed as a string
+         * @param lsInventory The output from the OPatch lsInventory command, which is passed as a string.
          * 
          * @return builder
          * 
@@ -407,7 +407,7 @@ public final class DatabaseSoftwareImageArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param lsInventory output from lsinventory which will get passed as a string
+         * @param lsInventory The output from the OPatch lsInventory command, which is passed as a string.
          * 
          * @return builder
          * 

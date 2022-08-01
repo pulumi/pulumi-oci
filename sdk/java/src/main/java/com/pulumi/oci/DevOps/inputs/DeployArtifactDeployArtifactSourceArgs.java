@@ -16,18 +16,33 @@ public final class DeployArtifactDeployArtifactSourceArgs extends com.pulumi.res
     public static final DeployArtifactDeployArtifactSourceArgs Empty = new DeployArtifactDeployArtifactSourceArgs();
 
     /**
-     * (Updatable) base64 Encoded String
+     * (Updatable) Specifies content for the inline artifact.
      * 
      */
     @Import(name="base64encodedContent")
     private @Nullable Output<String> base64encodedContent;
 
     /**
-     * @return (Updatable) base64 Encoded String
+     * @return (Updatable) Specifies content for the inline artifact.
      * 
      */
     public Optional<Output<String>> base64encodedContent() {
         return Optional.ofNullable(this.base64encodedContent);
+    }
+
+    /**
+     * (Updatable) The URL of an OCIR repository.
+     * 
+     */
+    @Import(name="chartUrl")
+    private @Nullable Output<String> chartUrl;
+
+    /**
+     * @return (Updatable) The URL of an OCIR repository.
+     * 
+     */
+    public Optional<Output<String>> chartUrl() {
+        return Optional.ofNullable(this.chartUrl);
     }
 
     /**
@@ -124,6 +139,7 @@ public final class DeployArtifactDeployArtifactSourceArgs extends com.pulumi.res
 
     private DeployArtifactDeployArtifactSourceArgs(DeployArtifactDeployArtifactSourceArgs $) {
         this.base64encodedContent = $.base64encodedContent;
+        this.chartUrl = $.chartUrl;
         this.deployArtifactPath = $.deployArtifactPath;
         this.deployArtifactSourceType = $.deployArtifactSourceType;
         this.deployArtifactVersion = $.deployArtifactVersion;
@@ -151,7 +167,7 @@ public final class DeployArtifactDeployArtifactSourceArgs extends com.pulumi.res
         }
 
         /**
-         * @param base64encodedContent (Updatable) base64 Encoded String
+         * @param base64encodedContent (Updatable) Specifies content for the inline artifact.
          * 
          * @return builder
          * 
@@ -162,13 +178,34 @@ public final class DeployArtifactDeployArtifactSourceArgs extends com.pulumi.res
         }
 
         /**
-         * @param base64encodedContent (Updatable) base64 Encoded String
+         * @param base64encodedContent (Updatable) Specifies content for the inline artifact.
          * 
          * @return builder
          * 
          */
         public Builder base64encodedContent(String base64encodedContent) {
             return base64encodedContent(Output.of(base64encodedContent));
+        }
+
+        /**
+         * @param chartUrl (Updatable) The URL of an OCIR repository.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder chartUrl(@Nullable Output<String> chartUrl) {
+            $.chartUrl = chartUrl;
+            return this;
+        }
+
+        /**
+         * @param chartUrl (Updatable) The URL of an OCIR repository.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder chartUrl(String chartUrl) {
+            return chartUrl(Output.of(chartUrl));
         }
 
         /**

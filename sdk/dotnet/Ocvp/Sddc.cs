@@ -44,6 +44,7 @@ namespace Pulumi.Oci.Ocvp
     ///             VmwareSoftwareVersion = @var.Sddc_vmware_software_version,
     ///             VsanVlanId = oci_core_vlan.Test_vsan_vlan.Id,
     ///             VsphereVlanId = oci_core_vlan.Test_vsphere_vlan.Id,
+    ///             CapacityReservationId = oci_ocvp_capacity_reservation.Test_capacity_reservation.Id,
     ///             DefinedTags = 
     ///             {
     ///                 { "Operations.CostCenter", "42" },
@@ -55,6 +56,8 @@ namespace Pulumi.Oci.Ocvp
     ///             },
     ///             HcxAction = @var.Hcx_action,
     ///             HcxVlanId = oci_core_vlan.Test_vlan.Id,
+    ///             InitialHostOcpuCount = @var.Sddc_initial_host_ocpu_count,
+    ///             InitialHostShapeName = oci_core_shape.Test_shape.Name,
     ///             InitialSku = @var.Sddc_initial_sku,
     ///             InstanceDisplayNamePrefix = @var.Sddc_instance_display_name_prefix,
     ///             IsHcxEnabled = @var.Sddc_is_hcx_enabled,
@@ -86,6 +89,12 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         [Output("actualEsxiHostsCount")]
         public Output<int> ActualEsxiHostsCount { get; private set; } = null!;
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+        /// </summary>
+        [Output("capacityReservationId")]
+        public Output<string> CapacityReservationId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the SDDC.
@@ -164,6 +173,18 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         [Output("hcxVlanId")]
         public Output<string> HcxVlanId { get; private set; } = null!;
+
+        /// <summary>
+        /// The initial OCPU count of the SDDC's ESXi hosts.
+        /// </summary>
+        [Output("initialHostOcpuCount")]
+        public Output<double> InitialHostOcpuCount { get; private set; } = null!;
+
+        /// <summary>
+        /// The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+        /// </summary>
+        [Output("initialHostShapeName")]
+        public Output<string> InitialHostShapeName { get; private set; } = null!;
 
         /// <summary>
         /// The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
@@ -428,6 +449,12 @@ namespace Pulumi.Oci.Ocvp
     public sealed class SddcArgs : Pulumi.ResourceArgs
     {
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+        /// </summary>
+        [Input("capacityReservationId")]
+        public Input<string>? CapacityReservationId { get; set; }
+
+        /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the SDDC.
         /// </summary>
         [Input("compartmentId", required: true)]
@@ -486,6 +513,18 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         [Input("hcxVlanId")]
         public Input<string>? HcxVlanId { get; set; }
+
+        /// <summary>
+        /// The initial OCPU count of the SDDC's ESXi hosts.
+        /// </summary>
+        [Input("initialHostOcpuCount")]
+        public Input<double>? InitialHostOcpuCount { get; set; }
+
+        /// <summary>
+        /// The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+        /// </summary>
+        [Input("initialHostShapeName")]
+        public Input<string>? InitialHostShapeName { get; set; }
 
         /// <summary>
         /// The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
@@ -621,6 +660,12 @@ namespace Pulumi.Oci.Ocvp
         public Input<int>? ActualEsxiHostsCount { get; set; }
 
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+        /// </summary>
+        [Input("capacityReservationId")]
+        public Input<string>? CapacityReservationId { get; set; }
+
+        /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the SDDC.
         /// </summary>
         [Input("compartmentId")]
@@ -715,6 +760,18 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         [Input("hcxVlanId")]
         public Input<string>? HcxVlanId { get; set; }
+
+        /// <summary>
+        /// The initial OCPU count of the SDDC's ESXi hosts.
+        /// </summary>
+        [Input("initialHostOcpuCount")]
+        public Input<double>? InitialHostOcpuCount { get; set; }
+
+        /// <summary>
+        /// The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+        /// </summary>
+        [Input("initialHostShapeName")]
+        public Input<string>? InitialHostShapeName { get; set; }
 
         /// <summary>
         /// The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).

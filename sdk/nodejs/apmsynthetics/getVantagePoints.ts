@@ -46,12 +46,12 @@ export interface GetVantagePointsArgs {
      */
     apmDomainId: string;
     /**
-     * A filter to return only resources that match the entire display name given.
+     * A filter to return only the resources that match the entire display name.
      */
     displayName?: string;
     filters?: inputs.ApmSynthetics.GetVantagePointsFilter[];
     /**
-     * A filter to return only resources that match the entire name given.
+     * A filter to return only the resources that match the entire name.
      */
     name?: string;
 }
@@ -93,12 +93,12 @@ export interface GetVantagePointsOutputArgs {
      */
     apmDomainId: pulumi.Input<string>;
     /**
-     * A filter to return only resources that match the entire display name given.
+     * A filter to return only the resources that match the entire display name.
      */
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.ApmSynthetics.GetVantagePointsFilterArgs>[]>;
     /**
-     * A filter to return only resources that match the entire name given.
+     * A filter to return only the resources that match the entire name.
      */
     name?: pulumi.Input<string>;
 }

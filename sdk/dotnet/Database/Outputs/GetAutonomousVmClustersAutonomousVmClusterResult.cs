@@ -18,11 +18,19 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly double AutonomousDataStorageSizeInTbs;
         /// <summary>
+        /// The data disk group size available for Autonomous Databases, in TBs.
+        /// </summary>
+        public readonly double AvailableAutonomousDataStorageSizeInTbs;
+        /// <summary>
+        /// The number of Autonomous Container Databases that can be created with the currently available local storage.
+        /// </summary>
+        public readonly int AvailableContainerDatabases;
+        /// <summary>
         /// The numnber of CPU cores available.
         /// </summary>
         public readonly int AvailableCpus;
         /// <summary>
-        /// The data storage available in TBs
+        /// **Deprecated.** Use `availableAutonomousDataStorageSizeInTBs` for Autonomous Databases' data storage availability in TBs.
         /// </summary>
         public readonly double AvailableDataStorageSizeInTbs;
         /// <summary>
@@ -107,6 +115,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly double OcpusEnabled;
         /// <summary>
+        /// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+        /// </summary>
+        public readonly int ReclaimableCpus;
+        /// <summary>
         /// A filter to return only resources that match the given lifecycle state exactly.
         /// </summary>
         public readonly string State;
@@ -130,6 +142,10 @@ namespace Pulumi.Oci.Database.Outputs
         [OutputConstructor]
         private GetAutonomousVmClustersAutonomousVmClusterResult(
             double autonomousDataStorageSizeInTbs,
+
+            double availableAutonomousDataStorageSizeInTbs,
+
+            int availableContainerDatabases,
 
             int availableCpus,
 
@@ -177,6 +193,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             double ocpusEnabled,
 
+            int reclaimableCpus,
+
             string state,
 
             string timeCreated,
@@ -188,6 +206,8 @@ namespace Pulumi.Oci.Database.Outputs
             string vmClusterNetworkId)
         {
             AutonomousDataStorageSizeInTbs = autonomousDataStorageSizeInTbs;
+            AvailableAutonomousDataStorageSizeInTbs = availableAutonomousDataStorageSizeInTbs;
+            AvailableContainerDatabases = availableContainerDatabases;
             AvailableCpus = availableCpus;
             AvailableDataStorageSizeInTbs = availableDataStorageSizeInTbs;
             CompartmentId = compartmentId;
@@ -211,6 +231,7 @@ namespace Pulumi.Oci.Database.Outputs
             MemorySizeInGbs = memorySizeInGbs;
             NextMaintenanceRunId = nextMaintenanceRunId;
             OcpusEnabled = ocpusEnabled;
+            ReclaimableCpus = reclaimableCpus;
             State = state;
             TimeCreated = timeCreated;
             TimeZone = timeZone;

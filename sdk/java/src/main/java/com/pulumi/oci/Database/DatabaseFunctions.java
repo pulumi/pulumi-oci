@@ -7,6 +7,8 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.oci.Database.inputs.GetAutonomousCharacterSetsArgs;
+import com.pulumi.oci.Database.inputs.GetAutonomousCharacterSetsPlainArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseDataguardAssociationArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseDataguardAssociationPlainArgs;
@@ -113,14 +115,22 @@ import com.pulumi.oci.Database.inputs.GetDbServerArgs;
 import com.pulumi.oci.Database.inputs.GetDbServerPlainArgs;
 import com.pulumi.oci.Database.inputs.GetDbServersArgs;
 import com.pulumi.oci.Database.inputs.GetDbServersPlainArgs;
+import com.pulumi.oci.Database.inputs.GetDbSystemComputePerformancesArgs;
+import com.pulumi.oci.Database.inputs.GetDbSystemComputePerformancesPlainArgs;
 import com.pulumi.oci.Database.inputs.GetDbSystemHistoryEntriesArgs;
 import com.pulumi.oci.Database.inputs.GetDbSystemHistoryEntriesPlainArgs;
 import com.pulumi.oci.Database.inputs.GetDbSystemPatchesArgs;
 import com.pulumi.oci.Database.inputs.GetDbSystemPatchesPlainArgs;
 import com.pulumi.oci.Database.inputs.GetDbSystemShapesArgs;
 import com.pulumi.oci.Database.inputs.GetDbSystemShapesPlainArgs;
+import com.pulumi.oci.Database.inputs.GetDbSystemStoragePerformancesArgs;
+import com.pulumi.oci.Database.inputs.GetDbSystemStoragePerformancesPlainArgs;
 import com.pulumi.oci.Database.inputs.GetDbSystemsArgs;
 import com.pulumi.oci.Database.inputs.GetDbSystemsPlainArgs;
+import com.pulumi.oci.Database.inputs.GetDbSystemsUpgradeHistoryEntriesArgs;
+import com.pulumi.oci.Database.inputs.GetDbSystemsUpgradeHistoryEntriesPlainArgs;
+import com.pulumi.oci.Database.inputs.GetDbSystemsUpgradeHistoryEntryArgs;
+import com.pulumi.oci.Database.inputs.GetDbSystemsUpgradeHistoryEntryPlainArgs;
 import com.pulumi.oci.Database.inputs.GetDbVersionsArgs;
 import com.pulumi.oci.Database.inputs.GetDbVersionsPlainArgs;
 import com.pulumi.oci.Database.inputs.GetExadataInfrastructureArgs;
@@ -191,6 +201,7 @@ import com.pulumi.oci.Database.inputs.GetVmClusterUpdatesArgs;
 import com.pulumi.oci.Database.inputs.GetVmClusterUpdatesPlainArgs;
 import com.pulumi.oci.Database.inputs.GetVmClustersArgs;
 import com.pulumi.oci.Database.inputs.GetVmClustersPlainArgs;
+import com.pulumi.oci.Database.outputs.GetAutonomousCharacterSetsResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseDataguardAssociationResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseDataguardAssociationsResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseResult;
@@ -245,10 +256,14 @@ import com.pulumi.oci.Database.outputs.GetDbNodeResult;
 import com.pulumi.oci.Database.outputs.GetDbNodesResult;
 import com.pulumi.oci.Database.outputs.GetDbServerResult;
 import com.pulumi.oci.Database.outputs.GetDbServersResult;
+import com.pulumi.oci.Database.outputs.GetDbSystemComputePerformancesResult;
 import com.pulumi.oci.Database.outputs.GetDbSystemHistoryEntriesResult;
 import com.pulumi.oci.Database.outputs.GetDbSystemPatchesResult;
 import com.pulumi.oci.Database.outputs.GetDbSystemShapesResult;
+import com.pulumi.oci.Database.outputs.GetDbSystemStoragePerformancesResult;
 import com.pulumi.oci.Database.outputs.GetDbSystemsResult;
+import com.pulumi.oci.Database.outputs.GetDbSystemsUpgradeHistoryEntriesResult;
+import com.pulumi.oci.Database.outputs.GetDbSystemsUpgradeHistoryEntryResult;
 import com.pulumi.oci.Database.outputs.GetDbVersionsResult;
 import com.pulumi.oci.Database.outputs.GetExadataInfrastructureDownloadConfigFileResult;
 import com.pulumi.oci.Database.outputs.GetExadataInfrastructureResult;
@@ -289,6 +304,72 @@ import com.pulumi.resources.InvokeArgs;
 import java.util.concurrent.CompletableFuture;
 
 public final class DatabaseFunctions {
+    /**
+     * This data source provides the list of Autonomous Database Character Sets in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of supported character sets.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetAutonomousCharacterSetsResult> getAutonomousCharacterSets() {
+        return getAutonomousCharacterSets(GetAutonomousCharacterSetsArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Autonomous Database Character Sets in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of supported character sets.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetAutonomousCharacterSetsResult> getAutonomousCharacterSetsPlain() {
+        return getAutonomousCharacterSetsPlain(GetAutonomousCharacterSetsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Autonomous Database Character Sets in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of supported character sets.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetAutonomousCharacterSetsResult> getAutonomousCharacterSets(GetAutonomousCharacterSetsArgs args) {
+        return getAutonomousCharacterSets(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Autonomous Database Character Sets in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of supported character sets.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetAutonomousCharacterSetsResult> getAutonomousCharacterSetsPlain(GetAutonomousCharacterSetsPlainArgs args) {
+        return getAutonomousCharacterSetsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Autonomous Database Character Sets in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of supported character sets.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetAutonomousCharacterSetsResult> getAutonomousCharacterSets(GetAutonomousCharacterSetsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAutonomousCharacterSets:getAutonomousCharacterSets", TypeShape.of(GetAutonomousCharacterSetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Autonomous Database Character Sets in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of supported character sets.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetAutonomousCharacterSetsResult> getAutonomousCharacterSetsPlain(GetAutonomousCharacterSetsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getAutonomousCharacterSets:getAutonomousCharacterSets", TypeShape.of(GetAutonomousCharacterSetsResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * This data source provides details about a specific Autonomous Container Database resource in Oracle Cloud Infrastructure Database service.
      * 
@@ -2724,6 +2805,72 @@ public final class DatabaseFunctions {
         return Deployment.getInstance().invokeAsync("oci:Database/getDbServers:getDbServers", TypeShape.of(GetDbServersResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides the list of Db System Compute Performances in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of expected compute performance parameters for a virtual machine DB system based on system configuration.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetDbSystemComputePerformancesResult> getDbSystemComputePerformances() {
+        return getDbSystemComputePerformances(GetDbSystemComputePerformancesArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Db System Compute Performances in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of expected compute performance parameters for a virtual machine DB system based on system configuration.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetDbSystemComputePerformancesResult> getDbSystemComputePerformancesPlain() {
+        return getDbSystemComputePerformancesPlain(GetDbSystemComputePerformancesPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Db System Compute Performances in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of expected compute performance parameters for a virtual machine DB system based on system configuration.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetDbSystemComputePerformancesResult> getDbSystemComputePerformances(GetDbSystemComputePerformancesArgs args) {
+        return getDbSystemComputePerformances(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Db System Compute Performances in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of expected compute performance parameters for a virtual machine DB system based on system configuration.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetDbSystemComputePerformancesResult> getDbSystemComputePerformancesPlain(GetDbSystemComputePerformancesPlainArgs args) {
+        return getDbSystemComputePerformancesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Db System Compute Performances in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of expected compute performance parameters for a virtual machine DB system based on system configuration.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetDbSystemComputePerformancesResult> getDbSystemComputePerformances(GetDbSystemComputePerformancesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getDbSystemComputePerformances:getDbSystemComputePerformances", TypeShape.of(GetDbSystemComputePerformancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Db System Compute Performances in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of expected compute performance parameters for a virtual machine DB system based on system configuration.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetDbSystemComputePerformancesResult> getDbSystemComputePerformancesPlain(GetDbSystemComputePerformancesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getDbSystemComputePerformances:getDbSystemComputePerformances", TypeShape.of(GetDbSystemComputePerformancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides the list of Db System Patch History Entries in Oracle Cloud Infrastructure Database service.
      * 
      * Gets the history of the patch actions performed on the specified DB system.
@@ -2856,6 +3003,50 @@ public final class DatabaseFunctions {
         return Deployment.getInstance().invokeAsync("oci:Database/getDbSystemShapes:getDbSystemShapes", TypeShape.of(GetDbSystemShapesResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides the list of Db System Storage Performances in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of possible expected storage performance parameters of a VMDB System based on Configuration.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetDbSystemStoragePerformancesResult> getDbSystemStoragePerformances(GetDbSystemStoragePerformancesArgs args) {
+        return getDbSystemStoragePerformances(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Db System Storage Performances in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of possible expected storage performance parameters of a VMDB System based on Configuration.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetDbSystemStoragePerformancesResult> getDbSystemStoragePerformancesPlain(GetDbSystemStoragePerformancesPlainArgs args) {
+        return getDbSystemStoragePerformancesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Db System Storage Performances in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of possible expected storage performance parameters of a VMDB System based on Configuration.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetDbSystemStoragePerformancesResult> getDbSystemStoragePerformances(GetDbSystemStoragePerformancesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getDbSystemStoragePerformances:getDbSystemStoragePerformances", TypeShape.of(GetDbSystemStoragePerformancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Db System Storage Performances in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of possible expected storage performance parameters of a VMDB System based on Configuration.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetDbSystemStoragePerformancesResult> getDbSystemStoragePerformancesPlain(GetDbSystemStoragePerformancesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getDbSystemStoragePerformances:getDbSystemStoragePerformances", TypeShape.of(GetDbSystemStoragePerformancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides the list of Db Systems in Oracle Cloud Infrastructure Database service.
      * 
      * Lists the DB systems in the specified compartment. You can specify a `backupId` to list only the DB systems that support creating a database using this backup in this compartment.
@@ -2914,6 +3105,94 @@ public final class DatabaseFunctions {
      */
     public static CompletableFuture<GetDbSystemsResult> getDbSystemsPlain(GetDbSystemsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getDbSystems:getDbSystems", TypeShape.of(GetDbSystemsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Db Systems Upgrade History Entries in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the history of the upgrade actions performed on the specified DB system.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetDbSystemsUpgradeHistoryEntriesResult> getDbSystemsUpgradeHistoryEntries(GetDbSystemsUpgradeHistoryEntriesArgs args) {
+        return getDbSystemsUpgradeHistoryEntries(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Db Systems Upgrade History Entries in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the history of the upgrade actions performed on the specified DB system.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetDbSystemsUpgradeHistoryEntriesResult> getDbSystemsUpgradeHistoryEntriesPlain(GetDbSystemsUpgradeHistoryEntriesPlainArgs args) {
+        return getDbSystemsUpgradeHistoryEntriesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Db Systems Upgrade History Entries in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the history of the upgrade actions performed on the specified DB system.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetDbSystemsUpgradeHistoryEntriesResult> getDbSystemsUpgradeHistoryEntries(GetDbSystemsUpgradeHistoryEntriesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getDbSystemsUpgradeHistoryEntries:getDbSystemsUpgradeHistoryEntries", TypeShape.of(GetDbSystemsUpgradeHistoryEntriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Db Systems Upgrade History Entries in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the history of the upgrade actions performed on the specified DB system.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetDbSystemsUpgradeHistoryEntriesResult> getDbSystemsUpgradeHistoryEntriesPlain(GetDbSystemsUpgradeHistoryEntriesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getDbSystemsUpgradeHistoryEntries:getDbSystemsUpgradeHistoryEntries", TypeShape.of(GetDbSystemsUpgradeHistoryEntriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Db Systems Upgrade History Entry resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the details of the specified operating system upgrade operation for the specified DB system.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetDbSystemsUpgradeHistoryEntryResult> getDbSystemsUpgradeHistoryEntry(GetDbSystemsUpgradeHistoryEntryArgs args) {
+        return getDbSystemsUpgradeHistoryEntry(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Db Systems Upgrade History Entry resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the details of the specified operating system upgrade operation for the specified DB system.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetDbSystemsUpgradeHistoryEntryResult> getDbSystemsUpgradeHistoryEntryPlain(GetDbSystemsUpgradeHistoryEntryPlainArgs args) {
+        return getDbSystemsUpgradeHistoryEntryPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Db Systems Upgrade History Entry resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the details of the specified operating system upgrade operation for the specified DB system.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetDbSystemsUpgradeHistoryEntryResult> getDbSystemsUpgradeHistoryEntry(GetDbSystemsUpgradeHistoryEntryArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getDbSystemsUpgradeHistoryEntry:getDbSystemsUpgradeHistoryEntry", TypeShape.of(GetDbSystemsUpgradeHistoryEntryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Db Systems Upgrade History Entry resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the details of the specified operating system upgrade operation for the specified DB system.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetDbSystemsUpgradeHistoryEntryResult> getDbSystemsUpgradeHistoryEntryPlain(GetDbSystemsUpgradeHistoryEntryPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getDbSystemsUpgradeHistoryEntry:getDbSystemsUpgradeHistoryEntry", TypeShape.of(GetDbSystemsUpgradeHistoryEntryResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Db Versions in Oracle Cloud Infrastructure Database service.

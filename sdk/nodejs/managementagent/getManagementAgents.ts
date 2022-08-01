@@ -9,7 +9,8 @@ import * as utilities from "../utilities";
  * This data source provides the list of Management Agents in Oracle Cloud Infrastructure Management Agent service.
  *
  * Returns a list of Management Agents.
- * If no explicit page size limit is specified, it will default to 5000.
+ * If no explicit page size limit is specified, it will default to 1000 when compartmentIdInSubtree is true and 5000 otherwise.
+ * The response is limited to maximum 1000 records when compartmentIdInSubtree is true.
  *
  * ## Example Usage
  *
@@ -19,7 +20,9 @@ import * as utilities from "../utilities";
  *
  * const testManagementAgents = oci.ManagementAgent.getManagementAgents({
  *     compartmentId: _var.compartment_id,
+ *     accessLevel: _var.management_agent_access_level,
  *     availabilityStatus: _var.management_agent_availability_status,
+ *     compartmentIdInSubtree: _var.management_agent_compartment_id_in_subtree,
  *     displayName: _var.management_agent_display_name,
  *     hostId: oci_management_agent_host.test_host.id,
  *     installType: _var.management_agent_install_type,
@@ -38,8 +41,10 @@ export function getManagementAgents(args: GetManagementAgentsArgs, opts?: pulumi
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
     return pulumi.runtime.invoke("oci:ManagementAgent/getManagementAgents:getManagementAgents", {
+        "accessLevel": args.accessLevel,
         "availabilityStatus": args.availabilityStatus,
         "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
         "displayName": args.displayName,
         "filters": args.filters,
         "hostId": args.hostId,
@@ -57,6 +62,10 @@ export function getManagementAgents(args: GetManagementAgentsArgs, opts?: pulumi
  */
 export interface GetManagementAgentsArgs {
     /**
+     * When the value is "ACCESSIBLE", insufficient permissions for a compartment will filter out resources in that compartment without rejecting the request.
+     */
+    accessLevel?: string;
+    /**
      * Filter to return only Management Agents in the particular availability status.
      */
     availabilityStatus?: string;
@@ -64,6 +73,10 @@ export interface GetManagementAgentsArgs {
      * The OCID of the compartment to which a request will be scoped.
      */
     compartmentId: string;
+    /**
+     * if set to true then it fetches resources for all compartments where user has access to else only on the compartment specified.
+     */
+    compartmentIdInSubtree?: boolean;
     /**
      * Filter to return only Management Agents having the particular display name.
      */
@@ -82,11 +95,11 @@ export interface GetManagementAgentsArgs {
      */
     isCustomerDeployed?: boolean;
     /**
-     * Filter to return only results having the particular platform type.
+     * Array of PlatformTypes to return only results having the particular platform types. Example: ["LINUX"]
      */
     platformTypes?: string[];
     /**
-     * Filter to return only Management Agents having the particular Plugin installed. A special pluginName of 'None' can be provided and this will return only Management Agents having no plugin installed.
+     * Array of pluginName to return only Management Agents having the particular Plugins installed. A special pluginName of 'None' can be provided and this will return only Management Agents having no plugin installed. Example: ["PluginA"]
      */
     pluginNames?: string[];
     /**
@@ -94,7 +107,7 @@ export interface GetManagementAgentsArgs {
      */
     state?: string;
     /**
-     * Filter to return only Management Agents having the particular agent version.
+     * Array of versions to return only Management Agents having the particular agent versions. Example: ["202020.0101","210201.0513"]
      */
     versions?: string[];
 }
@@ -103,6 +116,7 @@ export interface GetManagementAgentsArgs {
  * A collection of values returned by getManagementAgents.
  */
 export interface GetManagementAgentsResult {
+    readonly accessLevel?: string;
     /**
      * The current availability status of managementAgent
      */
@@ -111,6 +125,7 @@ export interface GetManagementAgentsResult {
      * Compartment Identifier
      */
     readonly compartmentId: string;
+    readonly compartmentIdInSubtree?: boolean;
     /**
      * Management Agent Name
      */
@@ -163,6 +178,10 @@ export function getManagementAgentsOutput(args: GetManagementAgentsOutputArgs, o
  */
 export interface GetManagementAgentsOutputArgs {
     /**
+     * When the value is "ACCESSIBLE", insufficient permissions for a compartment will filter out resources in that compartment without rejecting the request.
+     */
+    accessLevel?: pulumi.Input<string>;
+    /**
      * Filter to return only Management Agents in the particular availability status.
      */
     availabilityStatus?: pulumi.Input<string>;
@@ -170,6 +189,10 @@ export interface GetManagementAgentsOutputArgs {
      * The OCID of the compartment to which a request will be scoped.
      */
     compartmentId: pulumi.Input<string>;
+    /**
+     * if set to true then it fetches resources for all compartments where user has access to else only on the compartment specified.
+     */
+    compartmentIdInSubtree?: pulumi.Input<boolean>;
     /**
      * Filter to return only Management Agents having the particular display name.
      */
@@ -188,11 +211,11 @@ export interface GetManagementAgentsOutputArgs {
      */
     isCustomerDeployed?: pulumi.Input<boolean>;
     /**
-     * Filter to return only results having the particular platform type.
+     * Array of PlatformTypes to return only results having the particular platform types. Example: ["LINUX"]
      */
     platformTypes?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * Filter to return only Management Agents having the particular Plugin installed. A special pluginName of 'None' can be provided and this will return only Management Agents having no plugin installed.
+     * Array of pluginName to return only Management Agents having the particular Plugins installed. A special pluginName of 'None' can be provided and this will return only Management Agents having no plugin installed. Example: ["PluginA"]
      */
     pluginNames?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -200,7 +223,7 @@ export interface GetManagementAgentsOutputArgs {
      */
     state?: pulumi.Input<string>;
     /**
-     * Filter to return only Management Agents having the particular agent version.
+     * Array of versions to return only Management Agents having the particular agent versions. Example: ["202020.0101","210201.0513"]
      */
     versions?: pulumi.Input<pulumi.Input<string>[]>;
 }

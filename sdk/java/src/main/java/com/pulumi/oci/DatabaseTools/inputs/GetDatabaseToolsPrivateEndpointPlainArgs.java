@@ -13,14 +13,14 @@ public final class GetDatabaseToolsPrivateEndpointPlainArgs extends com.pulumi.r
     public static final GetDatabaseToolsPrivateEndpointPlainArgs Empty = new GetDatabaseToolsPrivateEndpointPlainArgs();
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a DatabaseToolsPrivateEndpoint.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools private endpoint.
      * 
      */
     @Import(name="databaseToolsPrivateEndpointId", required=true)
     private String databaseToolsPrivateEndpointId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a DatabaseToolsPrivateEndpoint.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools private endpoint.
      * 
      */
     public String databaseToolsPrivateEndpointId() {
@@ -52,7 +52,7 @@ public final class GetDatabaseToolsPrivateEndpointPlainArgs extends com.pulumi.r
         }
 
         /**
-         * @param databaseToolsPrivateEndpointId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a DatabaseToolsPrivateEndpoint.
+         * @param databaseToolsPrivateEndpointId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools private endpoint.
          * 
          * @return builder
          * 

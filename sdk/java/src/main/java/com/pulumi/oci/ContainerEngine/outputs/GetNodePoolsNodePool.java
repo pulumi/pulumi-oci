@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.ContainerEngine.outputs.GetNodePoolsNodePoolInitialNodeLabel;
 import com.pulumi.oci.ContainerEngine.outputs.GetNodePoolsNodePoolNode;
 import com.pulumi.oci.ContainerEngine.outputs.GetNodePoolsNodePoolNodeConfigDetail;
+import com.pulumi.oci.ContainerEngine.outputs.GetNodePoolsNodePoolNodeEvictionNodePoolSetting;
 import com.pulumi.oci.ContainerEngine.outputs.GetNodePoolsNodePoolNodeShapeConfig;
 import com.pulumi.oci.ContainerEngine.outputs.GetNodePoolsNodePoolNodeSource;
 import com.pulumi.oci.ContainerEngine.outputs.GetNodePoolsNodePoolNodeSourceDetail;
@@ -55,6 +56,11 @@ public final class GetNodePoolsNodePool {
      */
     private final String kubernetesVersion;
     /**
+     * @return Details about the state of the node.
+     * 
+     */
+    private final String lifecycleDetails;
+    /**
      * @return The name to filter on.
      * 
      */
@@ -64,6 +70,11 @@ public final class GetNodePoolsNodePool {
      * 
      */
     private final List<GetNodePoolsNodePoolNodeConfigDetail> nodeConfigDetails;
+    /**
+     * @return Node Eviction Details configuration
+     * 
+     */
+    private final List<GetNodePoolsNodePoolNodeEvictionNodePoolSetting> nodeEvictionNodePoolSettings;
     /**
      * @return Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
      * 
@@ -128,6 +139,11 @@ public final class GetNodePoolsNodePool {
      */
     private final String sshPublicKey;
     /**
+     * @return A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
+     * 
+     */
+    private final String state;
+    /**
      * @return The OCIDs of the subnets in which to place nodes for this node pool.
      * 
      */
@@ -142,8 +158,10 @@ public final class GetNodePoolsNodePool {
         @CustomType.Parameter("id") String id,
         @CustomType.Parameter("initialNodeLabels") List<GetNodePoolsNodePoolInitialNodeLabel> initialNodeLabels,
         @CustomType.Parameter("kubernetesVersion") String kubernetesVersion,
+        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
         @CustomType.Parameter("name") String name,
         @CustomType.Parameter("nodeConfigDetails") List<GetNodePoolsNodePoolNodeConfigDetail> nodeConfigDetails,
+        @CustomType.Parameter("nodeEvictionNodePoolSettings") List<GetNodePoolsNodePoolNodeEvictionNodePoolSetting> nodeEvictionNodePoolSettings,
         @CustomType.Parameter("nodeImageId") String nodeImageId,
         @CustomType.Parameter("nodeImageName") String nodeImageName,
         @CustomType.Parameter("nodeMetadata") Map<String,Object> nodeMetadata,
@@ -155,6 +173,7 @@ public final class GetNodePoolsNodePool {
         @CustomType.Parameter("nodes") List<GetNodePoolsNodePoolNode> nodes,
         @CustomType.Parameter("quantityPerSubnet") Integer quantityPerSubnet,
         @CustomType.Parameter("sshPublicKey") String sshPublicKey,
+        @CustomType.Parameter("state") String state,
         @CustomType.Parameter("subnetIds") List<String> subnetIds) {
         this.clusterId = clusterId;
         this.compartmentId = compartmentId;
@@ -163,8 +182,10 @@ public final class GetNodePoolsNodePool {
         this.id = id;
         this.initialNodeLabels = initialNodeLabels;
         this.kubernetesVersion = kubernetesVersion;
+        this.lifecycleDetails = lifecycleDetails;
         this.name = name;
         this.nodeConfigDetails = nodeConfigDetails;
+        this.nodeEvictionNodePoolSettings = nodeEvictionNodePoolSettings;
         this.nodeImageId = nodeImageId;
         this.nodeImageName = nodeImageName;
         this.nodeMetadata = nodeMetadata;
@@ -176,6 +197,7 @@ public final class GetNodePoolsNodePool {
         this.nodes = nodes;
         this.quantityPerSubnet = quantityPerSubnet;
         this.sshPublicKey = sshPublicKey;
+        this.state = state;
         this.subnetIds = subnetIds;
     }
 
@@ -229,6 +251,13 @@ public final class GetNodePoolsNodePool {
         return this.kubernetesVersion;
     }
     /**
+     * @return Details about the state of the node.
+     * 
+     */
+    public String lifecycleDetails() {
+        return this.lifecycleDetails;
+    }
+    /**
      * @return The name to filter on.
      * 
      */
@@ -241,6 +270,13 @@ public final class GetNodePoolsNodePool {
      */
     public List<GetNodePoolsNodePoolNodeConfigDetail> nodeConfigDetails() {
         return this.nodeConfigDetails;
+    }
+    /**
+     * @return Node Eviction Details configuration
+     * 
+     */
+    public List<GetNodePoolsNodePoolNodeEvictionNodePoolSetting> nodeEvictionNodePoolSettings() {
+        return this.nodeEvictionNodePoolSettings;
     }
     /**
      * @return Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
@@ -328,6 +364,13 @@ public final class GetNodePoolsNodePool {
         return this.sshPublicKey;
     }
     /**
+     * @return A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
+     * 
+     */
+    public String state() {
+        return this.state;
+    }
+    /**
      * @return The OCIDs of the subnets in which to place nodes for this node pool.
      * 
      */
@@ -351,8 +394,10 @@ public final class GetNodePoolsNodePool {
         private String id;
         private List<GetNodePoolsNodePoolInitialNodeLabel> initialNodeLabels;
         private String kubernetesVersion;
+        private String lifecycleDetails;
         private String name;
         private List<GetNodePoolsNodePoolNodeConfigDetail> nodeConfigDetails;
+        private List<GetNodePoolsNodePoolNodeEvictionNodePoolSetting> nodeEvictionNodePoolSettings;
         private String nodeImageId;
         private String nodeImageName;
         private Map<String,Object> nodeMetadata;
@@ -364,6 +409,7 @@ public final class GetNodePoolsNodePool {
         private List<GetNodePoolsNodePoolNode> nodes;
         private Integer quantityPerSubnet;
         private String sshPublicKey;
+        private String state;
         private List<String> subnetIds;
 
         public Builder() {
@@ -379,8 +425,10 @@ public final class GetNodePoolsNodePool {
     	      this.id = defaults.id;
     	      this.initialNodeLabels = defaults.initialNodeLabels;
     	      this.kubernetesVersion = defaults.kubernetesVersion;
+    	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.name = defaults.name;
     	      this.nodeConfigDetails = defaults.nodeConfigDetails;
+    	      this.nodeEvictionNodePoolSettings = defaults.nodeEvictionNodePoolSettings;
     	      this.nodeImageId = defaults.nodeImageId;
     	      this.nodeImageName = defaults.nodeImageName;
     	      this.nodeMetadata = defaults.nodeMetadata;
@@ -392,6 +440,7 @@ public final class GetNodePoolsNodePool {
     	      this.nodes = defaults.nodes;
     	      this.quantityPerSubnet = defaults.quantityPerSubnet;
     	      this.sshPublicKey = defaults.sshPublicKey;
+    	      this.state = defaults.state;
     	      this.subnetIds = defaults.subnetIds;
         }
 
@@ -426,6 +475,10 @@ public final class GetNodePoolsNodePool {
             this.kubernetesVersion = Objects.requireNonNull(kubernetesVersion);
             return this;
         }
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            return this;
+        }
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
@@ -436,6 +489,13 @@ public final class GetNodePoolsNodePool {
         }
         public Builder nodeConfigDetails(GetNodePoolsNodePoolNodeConfigDetail... nodeConfigDetails) {
             return nodeConfigDetails(List.of(nodeConfigDetails));
+        }
+        public Builder nodeEvictionNodePoolSettings(List<GetNodePoolsNodePoolNodeEvictionNodePoolSetting> nodeEvictionNodePoolSettings) {
+            this.nodeEvictionNodePoolSettings = Objects.requireNonNull(nodeEvictionNodePoolSettings);
+            return this;
+        }
+        public Builder nodeEvictionNodePoolSettings(GetNodePoolsNodePoolNodeEvictionNodePoolSetting... nodeEvictionNodePoolSettings) {
+            return nodeEvictionNodePoolSettings(List.of(nodeEvictionNodePoolSettings));
         }
         public Builder nodeImageId(String nodeImageId) {
             this.nodeImageId = Objects.requireNonNull(nodeImageId);
@@ -493,6 +553,10 @@ public final class GetNodePoolsNodePool {
             this.sshPublicKey = Objects.requireNonNull(sshPublicKey);
             return this;
         }
+        public Builder state(String state) {
+            this.state = Objects.requireNonNull(state);
+            return this;
+        }
         public Builder subnetIds(List<String> subnetIds) {
             this.subnetIds = Objects.requireNonNull(subnetIds);
             return this;
@@ -500,7 +564,7 @@ public final class GetNodePoolsNodePool {
         public Builder subnetIds(String... subnetIds) {
             return subnetIds(List.of(subnetIds));
         }        public GetNodePoolsNodePool build() {
-            return new GetNodePoolsNodePool(clusterId, compartmentId, definedTags, freeformTags, id, initialNodeLabels, kubernetesVersion, name, nodeConfigDetails, nodeImageId, nodeImageName, nodeMetadata, nodePoolId, nodeShape, nodeShapeConfigs, nodeSourceDetails, nodeSources, nodes, quantityPerSubnet, sshPublicKey, subnetIds);
+            return new GetNodePoolsNodePool(clusterId, compartmentId, definedTags, freeformTags, id, initialNodeLabels, kubernetesVersion, lifecycleDetails, name, nodeConfigDetails, nodeEvictionNodePoolSettings, nodeImageId, nodeImageName, nodeMetadata, nodePoolId, nodeShape, nodeShapeConfigs, nodeSourceDetails, nodeSources, nodes, quantityPerSubnet, sshPublicKey, state, subnetIds);
         }
     }
 }

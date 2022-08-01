@@ -48,6 +48,18 @@ namespace Pulumi.Oci.DevOps.Inputs
             set => _exportedVariables = value;
         }
 
+        [Input("vulnerabilityAuditSummaryCollections")]
+        private InputList<Inputs.BuildRunBuildOutputVulnerabilityAuditSummaryCollectionGetArgs>? _vulnerabilityAuditSummaryCollections;
+
+        /// <summary>
+        /// List of vulnerability audit summary.
+        /// </summary>
+        public InputList<Inputs.BuildRunBuildOutputVulnerabilityAuditSummaryCollectionGetArgs> VulnerabilityAuditSummaryCollections
+        {
+            get => _vulnerabilityAuditSummaryCollections ?? (_vulnerabilityAuditSummaryCollections = new InputList<Inputs.BuildRunBuildOutputVulnerabilityAuditSummaryCollectionGetArgs>());
+            set => _vulnerabilityAuditSummaryCollections = value;
+        }
+
         public BuildRunBuildOutputGetArgs()
         {
         }

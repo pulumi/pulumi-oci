@@ -48,7 +48,7 @@ export interface GetAutonomousContainerDatabaseArgs {
 export interface GetAutonomousContainerDatabaseResult {
     readonly autonomousContainerDatabaseId: string;
     /**
-     * The OCID of the Autonomous Exadata Infrastructure.
+     * **No longer used.** For Autonomous Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
      */
     readonly autonomousExadataInfrastructureId: string;
     /**
@@ -59,6 +59,10 @@ export interface GetAutonomousContainerDatabaseResult {
      * The availability domain of the Autonomous Container Database.
      */
     readonly availabilityDomain: string;
+    /**
+     * Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
+     */
+    readonly availableCpus: number;
     /**
      * Backup options for the Autonomous Container Database.
      */
@@ -151,7 +155,15 @@ export interface GetAutonomousContainerDatabaseResult {
     readonly peerDbUniqueName: string;
     readonly protectionMode: string;
     /**
-     * The role of the dataguard enabled Autonomous Container Database.
+     * An array of CPU values that can be used to successfully provision a single Autonomous Database.
+     */
+    readonly provisionableCpuses: number[];
+    /**
+     * CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+     */
+    readonly reclaimableCpus: number;
+    /**
+     * The role of the Autonomous Data Guard-enabled Autonomous Container Database.
      */
     readonly role: string;
     readonly rotateKeyTrigger: boolean;
@@ -171,6 +183,10 @@ export interface GetAutonomousContainerDatabaseResult {
      * The date and time the Autonomous Container Database was created.
      */
     readonly timeCreated: string;
+    /**
+     * The number of CPU cores allocated to the Autonomous VM cluster.
+     */
+    readonly totalCpus: number;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      */

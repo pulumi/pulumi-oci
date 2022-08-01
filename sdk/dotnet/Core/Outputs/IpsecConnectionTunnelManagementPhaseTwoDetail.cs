@@ -19,7 +19,7 @@ namespace Pulumi.Oci.Core.Outputs
         public readonly bool? IsCustomPhaseTwoConfig;
         public readonly bool? IsEspEstablished;
         public readonly bool? IsPfsEnabled;
-        public readonly string? Lifetime;
+        public readonly int? Lifetime;
         public readonly string? NegotiatedAuthenticationAlgorithm;
         public readonly string? NegotiatedDhGroup;
         public readonly string? NegotiatedEncryptionAlgorithm;
@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Core.Outputs
 
             bool? isPfsEnabled,
 
-            string? lifetime,
+            int? lifetime,
 
             string? negotiatedAuthenticationAlgorithm,
 

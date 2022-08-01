@@ -11,9 +11,9 @@ import (
 )
 
 type ConfigDimension struct {
-	// (Updatable) The name of the metric
+	// (Updatable) The name of the metric. This must be a known metric name.
 	Name *string `pulumi:"name"`
-	// (Updatable) Must be NULL at the moment, and "name" must be a known metric.
+	// (Updatable) This must not be set.
 	ValueSource *string `pulumi:"valueSource"`
 }
 
@@ -29,9 +29,9 @@ type ConfigDimensionInput interface {
 }
 
 type ConfigDimensionArgs struct {
-	// (Updatable) The name of the metric
+	// (Updatable) The name of the metric. This must be a known metric name.
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// (Updatable) Must be NULL at the moment, and "name" must be a known metric.
+	// (Updatable) This must not be set.
 	ValueSource pulumi.StringPtrInput `pulumi:"valueSource"`
 }
 
@@ -86,12 +86,12 @@ func (o ConfigDimensionOutput) ToConfigDimensionOutputWithContext(ctx context.Co
 	return o
 }
 
-// (Updatable) The name of the metric
+// (Updatable) The name of the metric. This must be a known metric name.
 func (o ConfigDimensionOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConfigDimension) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Must be NULL at the moment, and "name" must be a known metric.
+// (Updatable) This must not be set.
 func (o ConfigDimensionOutput) ValueSource() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConfigDimension) *string { return v.ValueSource }).(pulumi.StringPtrOutput)
 }
@@ -117,13 +117,13 @@ func (o ConfigDimensionArrayOutput) Index(i pulumi.IntInput) ConfigDimensionOutp
 }
 
 type ConfigMetric struct {
-	// (Updatable) A description of the metric
+	// (Updatable) A description of the metric.
 	Description *string `pulumi:"description"`
-	// (Updatable) The name of the metric
+	// (Updatable) The name of the metric. This must be a known metric name.
 	Name *string `pulumi:"name"`
-	// (Updatable) The unit of the metric
+	// (Updatable) The unit of the metric.
 	Unit *string `pulumi:"unit"`
-	// (Updatable) Must be NULL at the moment, and "name" must be a known metric.
+	// (Updatable) This must not be set.
 	ValueSource *string `pulumi:"valueSource"`
 }
 
@@ -139,13 +139,13 @@ type ConfigMetricInput interface {
 }
 
 type ConfigMetricArgs struct {
-	// (Updatable) A description of the metric
+	// (Updatable) A description of the metric.
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// (Updatable) The name of the metric
+	// (Updatable) The name of the metric. This must be a known metric name.
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// (Updatable) The unit of the metric
+	// (Updatable) The unit of the metric.
 	Unit pulumi.StringPtrInput `pulumi:"unit"`
-	// (Updatable) Must be NULL at the moment, and "name" must be a known metric.
+	// (Updatable) This must not be set.
 	ValueSource pulumi.StringPtrInput `pulumi:"valueSource"`
 }
 
@@ -200,22 +200,22 @@ func (o ConfigMetricOutput) ToConfigMetricOutputWithContext(ctx context.Context)
 	return o
 }
 
-// (Updatable) A description of the metric
+// (Updatable) A description of the metric.
 func (o ConfigMetricOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConfigMetric) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The name of the metric
+// (Updatable) The name of the metric. This must be a known metric name.
 func (o ConfigMetricOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConfigMetric) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The unit of the metric
+// (Updatable) The unit of the metric.
 func (o ConfigMetricOutput) Unit() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConfigMetric) *string { return v.Unit }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Must be NULL at the moment, and "name" must be a known metric.
+// (Updatable) This must not be set.
 func (o ConfigMetricOutput) ValueSource() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConfigMetric) *string { return v.ValueSource }).(pulumi.StringPtrOutput)
 }
@@ -241,19 +241,19 @@ func (o ConfigMetricArrayOutput) Index(i pulumi.IntInput) ConfigMetricOutput {
 }
 
 type ConfigRule struct {
-	// (Updatable) A user-friendly name that provides a short description this rule.
+	// (Updatable) The name by which a configuration entity is displayed to the end user.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) The string that defines the Span Filter expression.
 	FilterText *string `pulumi:"filterText"`
-	// (Updatable) If true, the rule will compute the actual Apdex score for spans that have been marked as errors. If false, the rule will always set the Apdex for error spans to frustrating, regardless of the configured thresholds. Default is false.
+	// (Updatable) Specifies whether an Apdex score should be computed for error spans. Setting it to "true" means that the Apdex score is computed in the usual way. Setting it to "false" skips the Apdex computation and sets the Apdex score to "frustrating" regardless of the configured thresholds. The default is "false".
 	IsApplyToErrorSpans *bool `pulumi:"isApplyToErrorSpans"`
-	// (Updatable) Specifies if the Apdex rule will be computed for spans matching the rule. Can be used to make sure certain spans don't get an Apdex score. The default is "true".
+	// (Updatable) Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable Apdex score for spans that do not need or require it. The default is "true".
 	IsEnabled *bool `pulumi:"isEnabled"`
 	// (Updatable) The priority controls the order in which multiple rules in a rule set are applied. Lower values indicate higher priorities. Rules with higher priority are applied first, and once a match is found, the rest of the rules are ignored. Rules within the same rule set cannot have the same priority.
 	Priority *int `pulumi:"priority"`
-	// (Updatable) The maximum response time in milliseconds that will be considered satisfactory for the end user.
+	// (Updatable) The maximum response time in milliseconds that is considered "satisfactory" for the end user.
 	SatisfiedResponseTime *int `pulumi:"satisfiedResponseTime"`
-	// (Updatable) The maximum response time in milliseconds that will be considered tolerable for the end user. Response times beyond this threshold will be considered frustrating. This value cannot be lower than "satisfiedResponseTime".
+	// (Updatable) The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime".
 	ToleratingResponseTime *int `pulumi:"toleratingResponseTime"`
 }
 
@@ -269,19 +269,19 @@ type ConfigRuleInput interface {
 }
 
 type ConfigRuleArgs struct {
-	// (Updatable) A user-friendly name that provides a short description this rule.
+	// (Updatable) The name by which a configuration entity is displayed to the end user.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// (Updatable) The string that defines the Span Filter expression.
 	FilterText pulumi.StringPtrInput `pulumi:"filterText"`
-	// (Updatable) If true, the rule will compute the actual Apdex score for spans that have been marked as errors. If false, the rule will always set the Apdex for error spans to frustrating, regardless of the configured thresholds. Default is false.
+	// (Updatable) Specifies whether an Apdex score should be computed for error spans. Setting it to "true" means that the Apdex score is computed in the usual way. Setting it to "false" skips the Apdex computation and sets the Apdex score to "frustrating" regardless of the configured thresholds. The default is "false".
 	IsApplyToErrorSpans pulumi.BoolPtrInput `pulumi:"isApplyToErrorSpans"`
-	// (Updatable) Specifies if the Apdex rule will be computed for spans matching the rule. Can be used to make sure certain spans don't get an Apdex score. The default is "true".
+	// (Updatable) Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable Apdex score for spans that do not need or require it. The default is "true".
 	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 	// (Updatable) The priority controls the order in which multiple rules in a rule set are applied. Lower values indicate higher priorities. Rules with higher priority are applied first, and once a match is found, the rest of the rules are ignored. Rules within the same rule set cannot have the same priority.
 	Priority pulumi.IntPtrInput `pulumi:"priority"`
-	// (Updatable) The maximum response time in milliseconds that will be considered satisfactory for the end user.
+	// (Updatable) The maximum response time in milliseconds that is considered "satisfactory" for the end user.
 	SatisfiedResponseTime pulumi.IntPtrInput `pulumi:"satisfiedResponseTime"`
-	// (Updatable) The maximum response time in milliseconds that will be considered tolerable for the end user. Response times beyond this threshold will be considered frustrating. This value cannot be lower than "satisfiedResponseTime".
+	// (Updatable) The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime".
 	ToleratingResponseTime pulumi.IntPtrInput `pulumi:"toleratingResponseTime"`
 }
 
@@ -336,7 +336,7 @@ func (o ConfigRuleOutput) ToConfigRuleOutputWithContext(ctx context.Context) Con
 	return o
 }
 
-// (Updatable) A user-friendly name that provides a short description this rule.
+// (Updatable) The name by which a configuration entity is displayed to the end user.
 func (o ConfigRuleOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConfigRule) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -346,12 +346,12 @@ func (o ConfigRuleOutput) FilterText() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConfigRule) *string { return v.FilterText }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) If true, the rule will compute the actual Apdex score for spans that have been marked as errors. If false, the rule will always set the Apdex for error spans to frustrating, regardless of the configured thresholds. Default is false.
+// (Updatable) Specifies whether an Apdex score should be computed for error spans. Setting it to "true" means that the Apdex score is computed in the usual way. Setting it to "false" skips the Apdex computation and sets the Apdex score to "frustrating" regardless of the configured thresholds. The default is "false".
 func (o ConfigRuleOutput) IsApplyToErrorSpans() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ConfigRule) *bool { return v.IsApplyToErrorSpans }).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) Specifies if the Apdex rule will be computed for spans matching the rule. Can be used to make sure certain spans don't get an Apdex score. The default is "true".
+// (Updatable) Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable Apdex score for spans that do not need or require it. The default is "true".
 func (o ConfigRuleOutput) IsEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ConfigRule) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
@@ -361,12 +361,12 @@ func (o ConfigRuleOutput) Priority() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ConfigRule) *int { return v.Priority }).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) The maximum response time in milliseconds that will be considered satisfactory for the end user.
+// (Updatable) The maximum response time in milliseconds that is considered "satisfactory" for the end user.
 func (o ConfigRuleOutput) SatisfiedResponseTime() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ConfigRule) *int { return v.SatisfiedResponseTime }).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) The maximum response time in milliseconds that will be considered tolerable for the end user. Response times beyond this threshold will be considered frustrating. This value cannot be lower than "satisfiedResponseTime".
+// (Updatable) The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime".
 func (o ConfigRuleOutput) ToleratingResponseTime() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ConfigRule) *int { return v.ToleratingResponseTime }).(pulumi.IntPtrOutput)
 }
@@ -392,9 +392,9 @@ func (o ConfigRuleArrayOutput) Index(i pulumi.IntInput) ConfigRuleOutput {
 }
 
 type GetConfigDimension struct {
-	// The name of the metric
+	// The name of the metric. This must be a known metric name.
 	Name string `pulumi:"name"`
-	// Must be NULL at the moment, and "name" must be a known metric.
+	// This must not be set.
 	ValueSource string `pulumi:"valueSource"`
 }
 
@@ -410,9 +410,9 @@ type GetConfigDimensionInput interface {
 }
 
 type GetConfigDimensionArgs struct {
-	// The name of the metric
+	// The name of the metric. This must be a known metric name.
 	Name pulumi.StringInput `pulumi:"name"`
-	// Must be NULL at the moment, and "name" must be a known metric.
+	// This must not be set.
 	ValueSource pulumi.StringInput `pulumi:"valueSource"`
 }
 
@@ -467,12 +467,12 @@ func (o GetConfigDimensionOutput) ToGetConfigDimensionOutputWithContext(ctx cont
 	return o
 }
 
-// The name of the metric
+// The name of the metric. This must be a known metric name.
 func (o GetConfigDimensionOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigDimension) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// Must be NULL at the moment, and "name" must be a known metric.
+// This must not be set.
 func (o GetConfigDimensionOutput) ValueSource() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigDimension) string { return v.ValueSource }).(pulumi.StringOutput)
 }
@@ -498,13 +498,13 @@ func (o GetConfigDimensionArrayOutput) Index(i pulumi.IntInput) GetConfigDimensi
 }
 
 type GetConfigMetric struct {
-	// A description of the metric
+	// A description of the metric.
 	Description string `pulumi:"description"`
-	// The name of the metric
+	// The name of the metric. This must be a known metric name.
 	Name string `pulumi:"name"`
-	// The unit of the metric
+	// The unit of the metric.
 	Unit string `pulumi:"unit"`
-	// Must be NULL at the moment, and "name" must be a known metric.
+	// This must not be set.
 	ValueSource string `pulumi:"valueSource"`
 }
 
@@ -520,13 +520,13 @@ type GetConfigMetricInput interface {
 }
 
 type GetConfigMetricArgs struct {
-	// A description of the metric
+	// A description of the metric.
 	Description pulumi.StringInput `pulumi:"description"`
-	// The name of the metric
+	// The name of the metric. This must be a known metric name.
 	Name pulumi.StringInput `pulumi:"name"`
-	// The unit of the metric
+	// The unit of the metric.
 	Unit pulumi.StringInput `pulumi:"unit"`
-	// Must be NULL at the moment, and "name" must be a known metric.
+	// This must not be set.
 	ValueSource pulumi.StringInput `pulumi:"valueSource"`
 }
 
@@ -581,22 +581,22 @@ func (o GetConfigMetricOutput) ToGetConfigMetricOutputWithContext(ctx context.Co
 	return o
 }
 
-// A description of the metric
+// A description of the metric.
 func (o GetConfigMetricOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigMetric) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// The name of the metric
+// The name of the metric. This must be a known metric name.
 func (o GetConfigMetricOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigMetric) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// The unit of the metric
+// The unit of the metric.
 func (o GetConfigMetricOutput) Unit() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigMetric) string { return v.Unit }).(pulumi.StringOutput)
 }
 
-// Must be NULL at the moment, and "name" must be a known metric.
+// This must not be set.
 func (o GetConfigMetricOutput) ValueSource() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigMetric) string { return v.ValueSource }).(pulumi.StringOutput)
 }
@@ -622,19 +622,19 @@ func (o GetConfigMetricArrayOutput) Index(i pulumi.IntInput) GetConfigMetricOutp
 }
 
 type GetConfigRule struct {
-	// A user-friendly name that provides a short description this rule.
+	// The name by which a configuration entity is displayed to the end user.
 	DisplayName string `pulumi:"displayName"`
 	// The string that defines the Span Filter expression.
 	FilterText string `pulumi:"filterText"`
-	// If true, the rule will compute the actual Apdex score for spans that have been marked as errors. If false, the rule will always set the Apdex for error spans to frustrating, regardless of the configured thresholds. Default is false.
+	// Specifies whether an Apdex score should be computed for error spans. Setting it to "true" means that the Apdex score is computed in the usual way. Setting it to "false" skips the Apdex computation and sets the Apdex score to "frustrating" regardless of the configured thresholds. The default is "false".
 	IsApplyToErrorSpans bool `pulumi:"isApplyToErrorSpans"`
-	// Specifies if the Apdex rule will be computed for spans matching the rule. Can be used to make sure certain spans don't get an Apdex score. The default is "true".
+	// Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable Apdex score for spans that do not need or require it. The default is "true".
 	IsEnabled bool `pulumi:"isEnabled"`
 	// The priority controls the order in which multiple rules in a rule set are applied. Lower values indicate higher priorities. Rules with higher priority are applied first, and once a match is found, the rest of the rules are ignored. Rules within the same rule set cannot have the same priority.
 	Priority int `pulumi:"priority"`
-	// The maximum response time in milliseconds that will be considered satisfactory for the end user.
+	// The maximum response time in milliseconds that is considered "satisfactory" for the end user.
 	SatisfiedResponseTime int `pulumi:"satisfiedResponseTime"`
-	// The maximum response time in milliseconds that will be considered tolerable for the end user. Response times beyond this threshold will be considered frustrating. This value cannot be lower than "satisfiedResponseTime".
+	// The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime".
 	ToleratingResponseTime int `pulumi:"toleratingResponseTime"`
 }
 
@@ -650,19 +650,19 @@ type GetConfigRuleInput interface {
 }
 
 type GetConfigRuleArgs struct {
-	// A user-friendly name that provides a short description this rule.
+	// The name by which a configuration entity is displayed to the end user.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// The string that defines the Span Filter expression.
 	FilterText pulumi.StringInput `pulumi:"filterText"`
-	// If true, the rule will compute the actual Apdex score for spans that have been marked as errors. If false, the rule will always set the Apdex for error spans to frustrating, regardless of the configured thresholds. Default is false.
+	// Specifies whether an Apdex score should be computed for error spans. Setting it to "true" means that the Apdex score is computed in the usual way. Setting it to "false" skips the Apdex computation and sets the Apdex score to "frustrating" regardless of the configured thresholds. The default is "false".
 	IsApplyToErrorSpans pulumi.BoolInput `pulumi:"isApplyToErrorSpans"`
-	// Specifies if the Apdex rule will be computed for spans matching the rule. Can be used to make sure certain spans don't get an Apdex score. The default is "true".
+	// Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable Apdex score for spans that do not need or require it. The default is "true".
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
 	// The priority controls the order in which multiple rules in a rule set are applied. Lower values indicate higher priorities. Rules with higher priority are applied first, and once a match is found, the rest of the rules are ignored. Rules within the same rule set cannot have the same priority.
 	Priority pulumi.IntInput `pulumi:"priority"`
-	// The maximum response time in milliseconds that will be considered satisfactory for the end user.
+	// The maximum response time in milliseconds that is considered "satisfactory" for the end user.
 	SatisfiedResponseTime pulumi.IntInput `pulumi:"satisfiedResponseTime"`
-	// The maximum response time in milliseconds that will be considered tolerable for the end user. Response times beyond this threshold will be considered frustrating. This value cannot be lower than "satisfiedResponseTime".
+	// The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime".
 	ToleratingResponseTime pulumi.IntInput `pulumi:"toleratingResponseTime"`
 }
 
@@ -717,7 +717,7 @@ func (o GetConfigRuleOutput) ToGetConfigRuleOutputWithContext(ctx context.Contex
 	return o
 }
 
-// A user-friendly name that provides a short description this rule.
+// The name by which a configuration entity is displayed to the end user.
 func (o GetConfigRuleOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigRule) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -727,12 +727,12 @@ func (o GetConfigRuleOutput) FilterText() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigRule) string { return v.FilterText }).(pulumi.StringOutput)
 }
 
-// If true, the rule will compute the actual Apdex score for spans that have been marked as errors. If false, the rule will always set the Apdex for error spans to frustrating, regardless of the configured thresholds. Default is false.
+// Specifies whether an Apdex score should be computed for error spans. Setting it to "true" means that the Apdex score is computed in the usual way. Setting it to "false" skips the Apdex computation and sets the Apdex score to "frustrating" regardless of the configured thresholds. The default is "false".
 func (o GetConfigRuleOutput) IsApplyToErrorSpans() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetConfigRule) bool { return v.IsApplyToErrorSpans }).(pulumi.BoolOutput)
 }
 
-// Specifies if the Apdex rule will be computed for spans matching the rule. Can be used to make sure certain spans don't get an Apdex score. The default is "true".
+// Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable Apdex score for spans that do not need or require it. The default is "true".
 func (o GetConfigRuleOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetConfigRule) bool { return v.IsEnabled }).(pulumi.BoolOutput)
 }
@@ -742,12 +742,12 @@ func (o GetConfigRuleOutput) Priority() pulumi.IntOutput {
 	return o.ApplyT(func(v GetConfigRule) int { return v.Priority }).(pulumi.IntOutput)
 }
 
-// The maximum response time in milliseconds that will be considered satisfactory for the end user.
+// The maximum response time in milliseconds that is considered "satisfactory" for the end user.
 func (o GetConfigRuleOutput) SatisfiedResponseTime() pulumi.IntOutput {
 	return o.ApplyT(func(v GetConfigRule) int { return v.SatisfiedResponseTime }).(pulumi.IntOutput)
 }
 
-// The maximum response time in milliseconds that will be considered tolerable for the end user. Response times beyond this threshold will be considered frustrating. This value cannot be lower than "satisfiedResponseTime".
+// The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime".
 func (o GetConfigRuleOutput) ToleratingResponseTime() pulumi.IntOutput {
 	return o.ApplyT(func(v GetConfigRule) int { return v.ToleratingResponseTime }).(pulumi.IntOutput)
 }
@@ -867,31 +867,36 @@ func (o GetConfigsConfigCollectionArrayOutput) Index(i pulumi.IntInput) GetConfi
 }
 
 type GetConfigsConfigCollectionItem struct {
-	// The APM Domain Id the request is intended for.
+	// The APM Domain ID the request is intended for.
 	ApmDomainId string `pulumi:"apmDomainId"`
-	// A filter to match only configuration items of the given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
+	// A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
 	ConfigType string `pulumi:"configType"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// A description of the metric
+	// A description of the metric.
 	Description string `pulumi:"description"`
-	// A list of dimensions for this metric
+	// A list of dimensions for the metric. This variable should not be used.
 	Dimensions []GetConfigsConfigCollectionItemDimension `pulumi:"dimensions"`
-	// A filter to return only resources that match the entire display name given.
+	// A filter to return resources that match the given display name.
 	DisplayName string `pulumi:"displayName"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId will be generated when a Span Filter is created.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
 	FilterId string `pulumi:"filterId"`
 	// The string that defines the Span Filter expression.
 	FilterText string `pulumi:"filterText"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID will be generated when the item is created.
-	Id      string                                 `pulumi:"id"`
+	// A string that specifies the group that an OPTIONS item belongs to.
+	Group string `pulumi:"group"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
+	Id string `pulumi:"id"`
+	// The list of metrics in this group.
 	Metrics []GetConfigsConfigCollectionItemMetric `pulumi:"metrics"`
-	// The namespace to write the metrics to
-	Namespace string                               `pulumi:"namespace"`
-	OpcDryRun string                               `pulumi:"opcDryRun"`
-	Rules     []GetConfigsConfigCollectionItemRule `pulumi:"rules"`
+	// The namespace to which the metrics are published. It must be one of several predefined namespaces.
+	Namespace string `pulumi:"namespace"`
+	OpcDryRun string `pulumi:"opcDryRun"`
+	// The options are stored here as JSON.
+	Options string                               `pulumi:"options"`
+	Rules   []GetConfigsConfigCollectionItemRule `pulumi:"rules"`
 	// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
@@ -910,31 +915,36 @@ type GetConfigsConfigCollectionItemInput interface {
 }
 
 type GetConfigsConfigCollectionItemArgs struct {
-	// The APM Domain Id the request is intended for.
+	// The APM Domain ID the request is intended for.
 	ApmDomainId pulumi.StringInput `pulumi:"apmDomainId"`
-	// A filter to match only configuration items of the given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
+	// A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
 	ConfigType pulumi.StringInput `pulumi:"configType"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
-	// A description of the metric
+	// A description of the metric.
 	Description pulumi.StringInput `pulumi:"description"`
-	// A list of dimensions for this metric
+	// A list of dimensions for the metric. This variable should not be used.
 	Dimensions GetConfigsConfigCollectionItemDimensionArrayInput `pulumi:"dimensions"`
-	// A filter to return only resources that match the entire display name given.
+	// A filter to return resources that match the given display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId will be generated when a Span Filter is created.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
 	FilterId pulumi.StringInput `pulumi:"filterId"`
 	// The string that defines the Span Filter expression.
 	FilterText pulumi.StringInput `pulumi:"filterText"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID will be generated when the item is created.
-	Id      pulumi.StringInput                             `pulumi:"id"`
+	// A string that specifies the group that an OPTIONS item belongs to.
+	Group pulumi.StringInput `pulumi:"group"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The list of metrics in this group.
 	Metrics GetConfigsConfigCollectionItemMetricArrayInput `pulumi:"metrics"`
-	// The namespace to write the metrics to
-	Namespace pulumi.StringInput                           `pulumi:"namespace"`
-	OpcDryRun pulumi.StringInput                           `pulumi:"opcDryRun"`
-	Rules     GetConfigsConfigCollectionItemRuleArrayInput `pulumi:"rules"`
+	// The namespace to which the metrics are published. It must be one of several predefined namespaces.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	OpcDryRun pulumi.StringInput `pulumi:"opcDryRun"`
+	// The options are stored here as JSON.
+	Options pulumi.StringInput                           `pulumi:"options"`
+	Rules   GetConfigsConfigCollectionItemRuleArrayInput `pulumi:"rules"`
 	// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
@@ -992,12 +1002,12 @@ func (o GetConfigsConfigCollectionItemOutput) ToGetConfigsConfigCollectionItemOu
 	return o
 }
 
-// The APM Domain Id the request is intended for.
+// The APM Domain ID the request is intended for.
 func (o GetConfigsConfigCollectionItemOutput) ApmDomainId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.ApmDomainId }).(pulumi.StringOutput)
 }
 
-// A filter to match only configuration items of the given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
+// A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
 func (o GetConfigsConfigCollectionItemOutput) ConfigType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.ConfigType }).(pulumi.StringOutput)
 }
@@ -1007,22 +1017,22 @@ func (o GetConfigsConfigCollectionItemOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetConfigsConfigCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// A description of the metric
+// A description of the metric.
 func (o GetConfigsConfigCollectionItemOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// A list of dimensions for this metric
+// A list of dimensions for the metric. This variable should not be used.
 func (o GetConfigsConfigCollectionItemOutput) Dimensions() GetConfigsConfigCollectionItemDimensionArrayOutput {
 	return o.ApplyT(func(v GetConfigsConfigCollectionItem) []GetConfigsConfigCollectionItemDimension { return v.Dimensions }).(GetConfigsConfigCollectionItemDimensionArrayOutput)
 }
 
-// A filter to return only resources that match the entire display name given.
+// A filter to return resources that match the given display name.
 func (o GetConfigsConfigCollectionItemOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId will be generated when a Span Filter is created.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
 func (o GetConfigsConfigCollectionItemOutput) FilterId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.FilterId }).(pulumi.StringOutput)
 }
@@ -1037,22 +1047,33 @@ func (o GetConfigsConfigCollectionItemOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetConfigsConfigCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID will be generated when the item is created.
+// A string that specifies the group that an OPTIONS item belongs to.
+func (o GetConfigsConfigCollectionItemOutput) Group() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.Group }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
 func (o GetConfigsConfigCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// The list of metrics in this group.
 func (o GetConfigsConfigCollectionItemOutput) Metrics() GetConfigsConfigCollectionItemMetricArrayOutput {
 	return o.ApplyT(func(v GetConfigsConfigCollectionItem) []GetConfigsConfigCollectionItemMetric { return v.Metrics }).(GetConfigsConfigCollectionItemMetricArrayOutput)
 }
 
-// The namespace to write the metrics to
+// The namespace to which the metrics are published. It must be one of several predefined namespaces.
 func (o GetConfigsConfigCollectionItemOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.Namespace }).(pulumi.StringOutput)
 }
 
 func (o GetConfigsConfigCollectionItemOutput) OpcDryRun() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.OpcDryRun }).(pulumi.StringOutput)
+}
+
+// The options are stored here as JSON.
+func (o GetConfigsConfigCollectionItemOutput) Options() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.Options }).(pulumi.StringOutput)
 }
 
 func (o GetConfigsConfigCollectionItemOutput) Rules() GetConfigsConfigCollectionItemRuleArrayOutput {
@@ -1090,9 +1111,9 @@ func (o GetConfigsConfigCollectionItemArrayOutput) Index(i pulumi.IntInput) GetC
 }
 
 type GetConfigsConfigCollectionItemDimension struct {
-	// The name of the metric
+	// The name of the metric. This must be a known metric name.
 	Name string `pulumi:"name"`
-	// Must be NULL at the moment, and "name" must be a known metric.
+	// This must not be set.
 	ValueSource string `pulumi:"valueSource"`
 }
 
@@ -1108,9 +1129,9 @@ type GetConfigsConfigCollectionItemDimensionInput interface {
 }
 
 type GetConfigsConfigCollectionItemDimensionArgs struct {
-	// The name of the metric
+	// The name of the metric. This must be a known metric name.
 	Name pulumi.StringInput `pulumi:"name"`
-	// Must be NULL at the moment, and "name" must be a known metric.
+	// This must not be set.
 	ValueSource pulumi.StringInput `pulumi:"valueSource"`
 }
 
@@ -1165,12 +1186,12 @@ func (o GetConfigsConfigCollectionItemDimensionOutput) ToGetConfigsConfigCollect
 	return o
 }
 
-// The name of the metric
+// The name of the metric. This must be a known metric name.
 func (o GetConfigsConfigCollectionItemDimensionOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigsConfigCollectionItemDimension) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// Must be NULL at the moment, and "name" must be a known metric.
+// This must not be set.
 func (o GetConfigsConfigCollectionItemDimensionOutput) ValueSource() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigsConfigCollectionItemDimension) string { return v.ValueSource }).(pulumi.StringOutput)
 }
@@ -1196,13 +1217,13 @@ func (o GetConfigsConfigCollectionItemDimensionArrayOutput) Index(i pulumi.IntIn
 }
 
 type GetConfigsConfigCollectionItemMetric struct {
-	// A description of the metric
+	// A description of the metric.
 	Description string `pulumi:"description"`
-	// The name of the metric
+	// The name of the metric. This must be a known metric name.
 	Name string `pulumi:"name"`
-	// The unit of the metric
+	// The unit of the metric.
 	Unit string `pulumi:"unit"`
-	// Must be NULL at the moment, and "name" must be a known metric.
+	// This must not be set.
 	ValueSource string `pulumi:"valueSource"`
 }
 
@@ -1218,13 +1239,13 @@ type GetConfigsConfigCollectionItemMetricInput interface {
 }
 
 type GetConfigsConfigCollectionItemMetricArgs struct {
-	// A description of the metric
+	// A description of the metric.
 	Description pulumi.StringInput `pulumi:"description"`
-	// The name of the metric
+	// The name of the metric. This must be a known metric name.
 	Name pulumi.StringInput `pulumi:"name"`
-	// The unit of the metric
+	// The unit of the metric.
 	Unit pulumi.StringInput `pulumi:"unit"`
-	// Must be NULL at the moment, and "name" must be a known metric.
+	// This must not be set.
 	ValueSource pulumi.StringInput `pulumi:"valueSource"`
 }
 
@@ -1279,22 +1300,22 @@ func (o GetConfigsConfigCollectionItemMetricOutput) ToGetConfigsConfigCollection
 	return o
 }
 
-// A description of the metric
+// A description of the metric.
 func (o GetConfigsConfigCollectionItemMetricOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigsConfigCollectionItemMetric) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// The name of the metric
+// The name of the metric. This must be a known metric name.
 func (o GetConfigsConfigCollectionItemMetricOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigsConfigCollectionItemMetric) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// The unit of the metric
+// The unit of the metric.
 func (o GetConfigsConfigCollectionItemMetricOutput) Unit() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigsConfigCollectionItemMetric) string { return v.Unit }).(pulumi.StringOutput)
 }
 
-// Must be NULL at the moment, and "name" must be a known metric.
+// This must not be set.
 func (o GetConfigsConfigCollectionItemMetricOutput) ValueSource() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigsConfigCollectionItemMetric) string { return v.ValueSource }).(pulumi.StringOutput)
 }
@@ -1320,19 +1341,19 @@ func (o GetConfigsConfigCollectionItemMetricArrayOutput) Index(i pulumi.IntInput
 }
 
 type GetConfigsConfigCollectionItemRule struct {
-	// A filter to return only resources that match the entire display name given.
+	// A filter to return resources that match the given display name.
 	DisplayName string `pulumi:"displayName"`
 	// The string that defines the Span Filter expression.
 	FilterText string `pulumi:"filterText"`
-	// If true, the rule will compute the actual Apdex score for spans that have been marked as errors. If false, the rule will always set the Apdex for error spans to frustrating, regardless of the configured thresholds. Default is false.
+	// Specifies whether an Apdex score should be computed for error spans. Setting it to "true" means that the Apdex score is computed in the usual way. Setting it to "false" skips the Apdex computation and sets the Apdex score to "frustrating" regardless of the configured thresholds. The default is "false".
 	IsApplyToErrorSpans bool `pulumi:"isApplyToErrorSpans"`
-	// Specifies if the Apdex rule will be computed for spans matching the rule. Can be used to make sure certain spans don't get an Apdex score. The default is "true".
+	// Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable Apdex score for spans that do not need or require it. The default is "true".
 	IsEnabled bool `pulumi:"isEnabled"`
 	// The priority controls the order in which multiple rules in a rule set are applied. Lower values indicate higher priorities. Rules with higher priority are applied first, and once a match is found, the rest of the rules are ignored. Rules within the same rule set cannot have the same priority.
 	Priority int `pulumi:"priority"`
-	// The maximum response time in milliseconds that will be considered satisfactory for the end user.
+	// The maximum response time in milliseconds that is considered "satisfactory" for the end user.
 	SatisfiedResponseTime int `pulumi:"satisfiedResponseTime"`
-	// The maximum response time in milliseconds that will be considered tolerable for the end user. Response times beyond this threshold will be considered frustrating. This value cannot be lower than "satisfiedResponseTime".
+	// The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime".
 	ToleratingResponseTime int `pulumi:"toleratingResponseTime"`
 }
 
@@ -1348,19 +1369,19 @@ type GetConfigsConfigCollectionItemRuleInput interface {
 }
 
 type GetConfigsConfigCollectionItemRuleArgs struct {
-	// A filter to return only resources that match the entire display name given.
+	// A filter to return resources that match the given display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// The string that defines the Span Filter expression.
 	FilterText pulumi.StringInput `pulumi:"filterText"`
-	// If true, the rule will compute the actual Apdex score for spans that have been marked as errors. If false, the rule will always set the Apdex for error spans to frustrating, regardless of the configured thresholds. Default is false.
+	// Specifies whether an Apdex score should be computed for error spans. Setting it to "true" means that the Apdex score is computed in the usual way. Setting it to "false" skips the Apdex computation and sets the Apdex score to "frustrating" regardless of the configured thresholds. The default is "false".
 	IsApplyToErrorSpans pulumi.BoolInput `pulumi:"isApplyToErrorSpans"`
-	// Specifies if the Apdex rule will be computed for spans matching the rule. Can be used to make sure certain spans don't get an Apdex score. The default is "true".
+	// Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable Apdex score for spans that do not need or require it. The default is "true".
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
 	// The priority controls the order in which multiple rules in a rule set are applied. Lower values indicate higher priorities. Rules with higher priority are applied first, and once a match is found, the rest of the rules are ignored. Rules within the same rule set cannot have the same priority.
 	Priority pulumi.IntInput `pulumi:"priority"`
-	// The maximum response time in milliseconds that will be considered satisfactory for the end user.
+	// The maximum response time in milliseconds that is considered "satisfactory" for the end user.
 	SatisfiedResponseTime pulumi.IntInput `pulumi:"satisfiedResponseTime"`
-	// The maximum response time in milliseconds that will be considered tolerable for the end user. Response times beyond this threshold will be considered frustrating. This value cannot be lower than "satisfiedResponseTime".
+	// The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime".
 	ToleratingResponseTime pulumi.IntInput `pulumi:"toleratingResponseTime"`
 }
 
@@ -1415,7 +1436,7 @@ func (o GetConfigsConfigCollectionItemRuleOutput) ToGetConfigsConfigCollectionIt
 	return o
 }
 
-// A filter to return only resources that match the entire display name given.
+// A filter to return resources that match the given display name.
 func (o GetConfigsConfigCollectionItemRuleOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigsConfigCollectionItemRule) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -1425,12 +1446,12 @@ func (o GetConfigsConfigCollectionItemRuleOutput) FilterText() pulumi.StringOutp
 	return o.ApplyT(func(v GetConfigsConfigCollectionItemRule) string { return v.FilterText }).(pulumi.StringOutput)
 }
 
-// If true, the rule will compute the actual Apdex score for spans that have been marked as errors. If false, the rule will always set the Apdex for error spans to frustrating, regardless of the configured thresholds. Default is false.
+// Specifies whether an Apdex score should be computed for error spans. Setting it to "true" means that the Apdex score is computed in the usual way. Setting it to "false" skips the Apdex computation and sets the Apdex score to "frustrating" regardless of the configured thresholds. The default is "false".
 func (o GetConfigsConfigCollectionItemRuleOutput) IsApplyToErrorSpans() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetConfigsConfigCollectionItemRule) bool { return v.IsApplyToErrorSpans }).(pulumi.BoolOutput)
 }
 
-// Specifies if the Apdex rule will be computed for spans matching the rule. Can be used to make sure certain spans don't get an Apdex score. The default is "true".
+// Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable Apdex score for spans that do not need or require it. The default is "true".
 func (o GetConfigsConfigCollectionItemRuleOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetConfigsConfigCollectionItemRule) bool { return v.IsEnabled }).(pulumi.BoolOutput)
 }
@@ -1440,12 +1461,12 @@ func (o GetConfigsConfigCollectionItemRuleOutput) Priority() pulumi.IntOutput {
 	return o.ApplyT(func(v GetConfigsConfigCollectionItemRule) int { return v.Priority }).(pulumi.IntOutput)
 }
 
-// The maximum response time in milliseconds that will be considered satisfactory for the end user.
+// The maximum response time in milliseconds that is considered "satisfactory" for the end user.
 func (o GetConfigsConfigCollectionItemRuleOutput) SatisfiedResponseTime() pulumi.IntOutput {
 	return o.ApplyT(func(v GetConfigsConfigCollectionItemRule) int { return v.SatisfiedResponseTime }).(pulumi.IntOutput)
 }
 
-// The maximum response time in milliseconds that will be considered tolerable for the end user. Response times beyond this threshold will be considered frustrating. This value cannot be lower than "satisfiedResponseTime".
+// The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime".
 func (o GetConfigsConfigCollectionItemRuleOutput) ToleratingResponseTime() pulumi.IntOutput {
 	return o.ApplyT(func(v GetConfigsConfigCollectionItemRule) int { return v.ToleratingResponseTime }).(pulumi.IntOutput)
 }
@@ -1471,7 +1492,7 @@ func (o GetConfigsConfigCollectionItemRuleArrayOutput) Index(i pulumi.IntInput) 
 }
 
 type GetConfigsFilter struct {
-	// The name of the metric
+	// The name of the metric. This must be a known metric name.
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
 	Values []string `pulumi:"values"`
@@ -1489,7 +1510,7 @@ type GetConfigsFilterInput interface {
 }
 
 type GetConfigsFilterArgs struct {
-	// The name of the metric
+	// The name of the metric. This must be a known metric name.
 	Name   pulumi.StringInput      `pulumi:"name"`
 	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
 	Values pulumi.StringArrayInput `pulumi:"values"`
@@ -1546,7 +1567,7 @@ func (o GetConfigsFilterOutput) ToGetConfigsFilterOutputWithContext(ctx context.
 	return o
 }
 
-// The name of the metric
+// The name of the metric. This must be a known metric name.
 func (o GetConfigsFilterOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigsFilter) string { return v.Name }).(pulumi.StringOutput)
 }

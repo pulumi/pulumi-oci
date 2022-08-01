@@ -28,10 +28,9 @@ import (
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		_, err := ContainerEngine.NewNodePool(ctx, "testNodePool", &ContainerEngine.NodePoolArgs{
-// 			ClusterId:         pulumi.Any(oci_containerengine_cluster.Test_cluster.Id),
-// 			CompartmentId:     pulumi.Any(_var.Compartment_id),
-// 			KubernetesVersion: pulumi.Any(_var.Node_pool_kubernetes_version),
-// 			NodeShape:         pulumi.Any(_var.Node_pool_node_shape),
+// 			ClusterId:     pulumi.Any(oci_containerengine_cluster.Test_cluster.Id),
+// 			CompartmentId: pulumi.Any(_var.Compartment_id),
+// 			NodeShape:     pulumi.Any(_var.Node_pool_node_shape),
 // 			DefinedTags: pulumi.AnyMap{
 // 				"Operations.CostCenter": pulumi.Any("42"),
 // 			},
@@ -44,17 +43,25 @@ import (
 // 					Value: pulumi.Any(_var.Node_pool_initial_node_labels_value),
 // 				},
 // 			},
+// 			KubernetesVersion: pulumi.Any(_var.Node_pool_kubernetes_version),
 // 			NodeConfigDetails: &containerengine.NodePoolNodeConfigDetailsArgs{
 // 				PlacementConfigs: containerengine.NodePoolNodeConfigDetailsPlacementConfigArray{
 // 					&containerengine.NodePoolNodeConfigDetailsPlacementConfigArgs{
 // 						AvailabilityDomain:    pulumi.Any(_var.Node_pool_node_config_details_placement_configs_availability_domain),
 // 						SubnetId:              pulumi.Any(oci_core_subnet.Test_subnet.Id),
 // 						CapacityReservationId: pulumi.Any(oci_containerengine_capacity_reservation.Test_capacity_reservation.Id),
+// 						FaultDomains:          pulumi.Any(_var.Node_pool_node_config_details_placement_configs_fault_domains),
 // 					},
 // 				},
 // 				Size:                           pulumi.Any(_var.Node_pool_node_config_details_size),
 // 				IsPvEncryptionInTransitEnabled: pulumi.Any(_var.Node_pool_node_config_details_is_pv_encryption_in_transit_enabled),
 // 				KmsKeyId:                       pulumi.Any(oci_kms_key.Test_key.Id),
+// 				NodePoolPodNetworkOptionDetails: &containerengine.NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs{
+// 					CniType:        pulumi.Any(_var.Node_pool_node_config_details_node_pool_pod_network_option_details_cni_type),
+// 					MaxPodsPerNode: pulumi.Any(_var.Node_pool_node_config_details_node_pool_pod_network_option_details_max_pods_per_node),
+// 					PodNsgIds:      pulumi.Any(_var.Node_pool_node_config_details_node_pool_pod_network_option_details_pod_nsg_ids),
+// 					PodSubnetIds:   pulumi.Any(_var.Node_pool_node_config_details_node_pool_pod_network_option_details_pod_subnet_ids),
+// 				},
 // 				DefinedTags: pulumi.AnyMap{
 // 					"Operations.CostCenter": pulumi.Any("42"),
 // 				},
@@ -62,6 +69,10 @@ import (
 // 					"Department": pulumi.Any("Finance"),
 // 				},
 // 				NsgIds: pulumi.Any(_var.Node_pool_node_config_details_nsg_ids),
+// 			},
+// 			NodeEvictionNodePoolSettings: &containerengine.NodePoolNodeEvictionNodePoolSettingsArgs{
+// 				EvictionGraceDuration:           pulumi.Any(_var.Node_pool_node_eviction_node_pool_settings_eviction_grace_duration),
+// 				IsForceDeleteAfterGraceDuration: pulumi.Any(_var.Node_pool_node_eviction_node_pool_settings_is_force_delete_after_grace_duration),
 // 			},
 // 			NodeImageName: pulumi.Any(oci_core_image.Test_image.Name),
 // 			NodeMetadata:  pulumi.Any(_var.Node_pool_node_metadata),
@@ -108,10 +119,14 @@ type NodePool struct {
 	InitialNodeLabels NodePoolInitialNodeLabelArrayOutput `pulumi:"initialNodeLabels"`
 	// (Updatable) The version of Kubernetes to install on the nodes in the node pool.
 	KubernetesVersion pulumi.StringOutput `pulumi:"kubernetesVersion"`
+	// Details about the state of the node.
+	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) The name of the node pool. Avoid entering confidential information.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
 	NodeConfigDetails NodePoolNodeConfigDetailsOutput `pulumi:"nodeConfigDetails"`
+	// (Updatable) Node Eviction Details configuration
+	NodeEvictionNodePoolSettings NodePoolNodeEvictionNodePoolSettingsOutput `pulumi:"nodeEvictionNodePoolSettings"`
 	// Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
 	//
 	// Deprecated: The 'node_image_id' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.
@@ -136,6 +151,8 @@ type NodePool struct {
 	QuantityPerSubnet pulumi.IntOutput `pulumi:"quantityPerSubnet"`
 	// (Updatable) The SSH public key on each node in the node pool on launch.
 	SshPublicKey pulumi.StringOutput `pulumi:"sshPublicKey"`
+	// The state of the nodepool.
+	State pulumi.StringOutput `pulumi:"state"`
 	// (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
 	SubnetIds pulumi.StringArrayOutput `pulumi:"subnetIds"`
 }
@@ -152,9 +169,6 @@ func NewNodePool(ctx *pulumi.Context,
 	}
 	if args.CompartmentId == nil {
 		return nil, errors.New("invalid value for required argument 'CompartmentId'")
-	}
-	if args.KubernetesVersion == nil {
-		return nil, errors.New("invalid value for required argument 'KubernetesVersion'")
 	}
 	if args.NodeShape == nil {
 		return nil, errors.New("invalid value for required argument 'NodeShape'")
@@ -193,10 +207,14 @@ type nodePoolState struct {
 	InitialNodeLabels []NodePoolInitialNodeLabel `pulumi:"initialNodeLabels"`
 	// (Updatable) The version of Kubernetes to install on the nodes in the node pool.
 	KubernetesVersion *string `pulumi:"kubernetesVersion"`
+	// Details about the state of the node.
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// (Updatable) The name of the node pool. Avoid entering confidential information.
 	Name *string `pulumi:"name"`
 	// (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
 	NodeConfigDetails *NodePoolNodeConfigDetails `pulumi:"nodeConfigDetails"`
+	// (Updatable) Node Eviction Details configuration
+	NodeEvictionNodePoolSettings *NodePoolNodeEvictionNodePoolSettings `pulumi:"nodeEvictionNodePoolSettings"`
 	// Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
 	//
 	// Deprecated: The 'node_image_id' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.
@@ -221,6 +239,8 @@ type nodePoolState struct {
 	QuantityPerSubnet *int `pulumi:"quantityPerSubnet"`
 	// (Updatable) The SSH public key on each node in the node pool on launch.
 	SshPublicKey *string `pulumi:"sshPublicKey"`
+	// The state of the nodepool.
+	State *string `pulumi:"state"`
 	// (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
 	SubnetIds []string `pulumi:"subnetIds"`
 }
@@ -238,10 +258,14 @@ type NodePoolState struct {
 	InitialNodeLabels NodePoolInitialNodeLabelArrayInput
 	// (Updatable) The version of Kubernetes to install on the nodes in the node pool.
 	KubernetesVersion pulumi.StringPtrInput
+	// Details about the state of the node.
+	LifecycleDetails pulumi.StringPtrInput
 	// (Updatable) The name of the node pool. Avoid entering confidential information.
 	Name pulumi.StringPtrInput
 	// (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
 	NodeConfigDetails NodePoolNodeConfigDetailsPtrInput
+	// (Updatable) Node Eviction Details configuration
+	NodeEvictionNodePoolSettings NodePoolNodeEvictionNodePoolSettingsPtrInput
 	// Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
 	//
 	// Deprecated: The 'node_image_id' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.
@@ -266,6 +290,8 @@ type NodePoolState struct {
 	QuantityPerSubnet pulumi.IntPtrInput
 	// (Updatable) The SSH public key on each node in the node pool on launch.
 	SshPublicKey pulumi.StringPtrInput
+	// The state of the nodepool.
+	State pulumi.StringPtrInput
 	// (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
 	SubnetIds pulumi.StringArrayInput
 }
@@ -286,11 +312,13 @@ type nodePoolArgs struct {
 	// (Updatable) A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
 	InitialNodeLabels []NodePoolInitialNodeLabel `pulumi:"initialNodeLabels"`
 	// (Updatable) The version of Kubernetes to install on the nodes in the node pool.
-	KubernetesVersion string `pulumi:"kubernetesVersion"`
+	KubernetesVersion *string `pulumi:"kubernetesVersion"`
 	// (Updatable) The name of the node pool. Avoid entering confidential information.
 	Name *string `pulumi:"name"`
 	// (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
 	NodeConfigDetails *NodePoolNodeConfigDetails `pulumi:"nodeConfigDetails"`
+	// (Updatable) Node Eviction Details configuration
+	NodeEvictionNodePoolSettings *NodePoolNodeEvictionNodePoolSettings `pulumi:"nodeEvictionNodePoolSettings"`
 	// Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
 	//
 	// Deprecated: The 'node_image_id' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.
@@ -328,11 +356,13 @@ type NodePoolArgs struct {
 	// (Updatable) A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
 	InitialNodeLabels NodePoolInitialNodeLabelArrayInput
 	// (Updatable) The version of Kubernetes to install on the nodes in the node pool.
-	KubernetesVersion pulumi.StringInput
+	KubernetesVersion pulumi.StringPtrInput
 	// (Updatable) The name of the node pool. Avoid entering confidential information.
 	Name pulumi.StringPtrInput
 	// (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
 	NodeConfigDetails NodePoolNodeConfigDetailsPtrInput
+	// (Updatable) Node Eviction Details configuration
+	NodeEvictionNodePoolSettings NodePoolNodeEvictionNodePoolSettingsPtrInput
 	// Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
 	//
 	// Deprecated: The 'node_image_id' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.

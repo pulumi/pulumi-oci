@@ -103,7 +103,7 @@ export interface GetScriptResult {
      */
     readonly timeUpdated: string;
     /**
-     * The time when the script was uploaded.
+     * The time the script was uploaded.
      */
     readonly timeUploaded: string;
 }

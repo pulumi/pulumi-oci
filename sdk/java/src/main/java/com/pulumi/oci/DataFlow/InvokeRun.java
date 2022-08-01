@@ -9,6 +9,8 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.DataFlow.InvokeRunArgs;
 import com.pulumi.oci.DataFlow.inputs.InvokeRunState;
+import com.pulumi.oci.DataFlow.outputs.InvokeRunDriverShapeConfig;
+import com.pulumi.oci.DataFlow.outputs.InvokeRunExecutorShapeConfig;
 import com.pulumi.oci.DataFlow.outputs.InvokeRunParameter;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
@@ -202,6 +204,20 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
         return this.driverShape;
     }
     /**
+     * This is used to configure the shape of the driver or executor if a flexible shape is used.
+     * 
+     */
+    @Export(name="driverShapeConfig", type=InvokeRunDriverShapeConfig.class, parameters={})
+    private Output<InvokeRunDriverShapeConfig> driverShapeConfig;
+
+    /**
+     * @return This is used to configure the shape of the driver or executor if a flexible shape is used.
+     * 
+     */
+    public Output<InvokeRunDriverShapeConfig> driverShapeConfig() {
+        return this.driverShapeConfig;
+    }
+    /**
      * The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
      * 
      */
@@ -228,6 +244,20 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
      */
     public Output<String> executorShape() {
         return this.executorShape;
+    }
+    /**
+     * This is used to configure the shape of the driver or executor if a flexible shape is used.
+     * 
+     */
+    @Export(name="executorShapeConfig", type=InvokeRunExecutorShapeConfig.class, parameters={})
+    private Output<InvokeRunExecutorShapeConfig> executorShapeConfig;
+
+    /**
+     * @return This is used to configure the shape of the driver or executor if a flexible shape is used.
+     * 
+     */
+    public Output<InvokeRunExecutorShapeConfig> executorShapeConfig() {
+        return this.executorShapeConfig;
     }
     /**
      * An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.

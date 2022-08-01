@@ -48,6 +48,18 @@ import * as utilities from "../utilities";
  *             logGroupId: oci_logging_log_group.test_log_group.id,
  *             logId: oci_logging_log.test_log.id,
  *         }],
+ *         monitoringSources: [{
+ *             compartmentId: _var.compartment_id,
+ *             namespaceDetails: {
+ *                 kind: _var.service_connector_source_monitoring_sources_namespace_details_kind,
+ *                 namespaces: [{
+ *                     metrics: {
+ *                         kind: _var.service_connector_source_monitoring_sources_namespace_details_namespaces_metrics_kind,
+ *                     },
+ *                     namespace: _var.service_connector_source_monitoring_sources_namespace_details_namespaces_namespace,
+ *                 }],
+ *             },
+ *         }],
  *         streamId: oci_streaming_stream.test_stream.id,
  *     },
  *     target: {

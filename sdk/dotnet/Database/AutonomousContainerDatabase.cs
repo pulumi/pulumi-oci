@@ -121,7 +121,7 @@ namespace Pulumi.Oci.Database
     public partial class AutonomousContainerDatabase : Pulumi.CustomResource
     {
         /// <summary>
-        /// The OCID of the Autonomous Exadata Infrastructure. Please use cloud_autonomous_vm_cluster_id instead.
+        /// **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
         /// </summary>
         [Output("autonomousExadataInfrastructureId")]
         public Output<string> AutonomousExadataInfrastructureId { get; private set; } = null!;
@@ -137,6 +137,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("availabilityDomain")]
         public Output<string> AvailabilityDomain { get; private set; } = null!;
+
+        /// <summary>
+        /// Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
+        /// </summary>
+        [Output("availableCpus")]
+        public Output<double> AvailableCpus { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Backup options for the Autonomous Container Database.
@@ -283,7 +289,7 @@ namespace Pulumi.Oci.Database
         public Output<string> PeerAutonomousContainerDatabaseDisplayName { get; private set; } = null!;
 
         /// <summary>
-        /// The OCID of the peer Autonomous Exadata Infrastructure for autonomous dataguard. Please use peer_cloud_autonomous_vm_cluster_id instead.
+        /// *No longer used.* This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `peerCloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
         /// </summary>
         [Output("peerAutonomousExadataInfrastructureId")]
         public Output<string> PeerAutonomousExadataInfrastructureId { get; private set; } = null!;
@@ -310,7 +316,19 @@ namespace Pulumi.Oci.Database
         public Output<string> ProtectionMode { get; private set; } = null!;
 
         /// <summary>
-        /// The role of the dataguard enabled Autonomous Container Database.
+        /// An array of CPU values that can be used to successfully provision a single Autonomous Database.
+        /// </summary>
+        [Output("provisionableCpuses")]
+        public Output<ImmutableArray<double>> ProvisionableCpuses { get; private set; } = null!;
+
+        /// <summary>
+        /// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+        /// </summary>
+        [Output("reclaimableCpus")]
+        public Output<double> ReclaimableCpus { get; private set; } = null!;
+
+        /// <summary>
+        /// The role of the Autonomous Data Guard-enabled Autonomous Container Database.
         /// </summary>
         [Output("role")]
         public Output<string> Role { get; private set; } = null!;
@@ -344,6 +362,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
+
+        /// <summary>
+        /// The number of CPU cores allocated to the Autonomous VM cluster.
+        /// </summary>
+        [Output("totalCpus")]
+        public Output<int> TotalCpus { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
@@ -398,7 +422,7 @@ namespace Pulumi.Oci.Database
     public sealed class AutonomousContainerDatabaseArgs : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The OCID of the Autonomous Exadata Infrastructure. Please use cloud_autonomous_vm_cluster_id instead.
+        /// **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
         /// </summary>
         [Input("autonomousExadataInfrastructureId")]
         public Input<string>? AutonomousExadataInfrastructureId { get; set; }
@@ -506,7 +530,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? PeerAutonomousContainerDatabaseDisplayName { get; set; }
 
         /// <summary>
-        /// The OCID of the peer Autonomous Exadata Infrastructure for autonomous dataguard. Please use peer_cloud_autonomous_vm_cluster_id instead.
+        /// *No longer used.* This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `peerCloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
         /// </summary>
         [Input("peerAutonomousExadataInfrastructureId")]
         public Input<string>? PeerAutonomousExadataInfrastructureId { get; set; }
@@ -564,7 +588,7 @@ namespace Pulumi.Oci.Database
     public sealed class AutonomousContainerDatabaseState : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The OCID of the Autonomous Exadata Infrastructure. Please use cloud_autonomous_vm_cluster_id instead.
+        /// **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
         /// </summary>
         [Input("autonomousExadataInfrastructureId")]
         public Input<string>? AutonomousExadataInfrastructureId { get; set; }
@@ -580,6 +604,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("availabilityDomain")]
         public Input<string>? AvailabilityDomain { get; set; }
+
+        /// <summary>
+        /// Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
+        /// </summary>
+        [Input("availableCpus")]
+        public Input<double>? AvailableCpus { get; set; }
 
         /// <summary>
         /// (Updatable) Backup options for the Autonomous Container Database.
@@ -750,7 +780,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? PeerAutonomousContainerDatabaseDisplayName { get; set; }
 
         /// <summary>
-        /// The OCID of the peer Autonomous Exadata Infrastructure for autonomous dataguard. Please use peer_cloud_autonomous_vm_cluster_id instead.
+        /// *No longer used.* This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `peerCloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
         /// </summary>
         [Input("peerAutonomousExadataInfrastructureId")]
         public Input<string>? PeerAutonomousExadataInfrastructureId { get; set; }
@@ -776,8 +806,26 @@ namespace Pulumi.Oci.Database
         [Input("protectionMode")]
         public Input<string>? ProtectionMode { get; set; }
 
+        [Input("provisionableCpuses")]
+        private InputList<double>? _provisionableCpuses;
+
         /// <summary>
-        /// The role of the dataguard enabled Autonomous Container Database.
+        /// An array of CPU values that can be used to successfully provision a single Autonomous Database.
+        /// </summary>
+        public InputList<double> ProvisionableCpuses
+        {
+            get => _provisionableCpuses ?? (_provisionableCpuses = new InputList<double>());
+            set => _provisionableCpuses = value;
+        }
+
+        /// <summary>
+        /// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+        /// </summary>
+        [Input("reclaimableCpus")]
+        public Input<double>? ReclaimableCpus { get; set; }
+
+        /// <summary>
+        /// The role of the Autonomous Data Guard-enabled Autonomous Container Database.
         /// </summary>
         [Input("role")]
         public Input<string>? Role { get; set; }
@@ -811,6 +859,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
+
+        /// <summary>
+        /// The number of CPU cores allocated to the Autonomous VM cluster.
+        /// </summary>
+        [Input("totalCpus")]
+        public Input<int>? TotalCpus { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).

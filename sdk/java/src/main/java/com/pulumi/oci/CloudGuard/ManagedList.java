@@ -62,28 +62,28 @@ public class ManagedList extends com.pulumi.resources.CustomResource {
         return this.definedTags;
     }
     /**
-     * (Updatable) ManagedList description
+     * (Updatable) Managed list description.
      * 
      */
     @Export(name="description", type=String.class, parameters={})
     private Output<String> description;
 
     /**
-     * @return (Updatable) ManagedList description
+     * @return (Updatable) Managed list description.
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * (Updatable) ManagedList display name
+     * (Updatable) Managed list display name.
      * 
      */
     @Export(name="displayName", type=String.class, parameters={})
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) ManagedList display name
+     * @return (Updatable) Managed list display name.
      * 
      */
     public Output<String> displayName() {

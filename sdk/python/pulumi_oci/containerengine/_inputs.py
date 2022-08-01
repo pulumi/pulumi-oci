@@ -9,6 +9,7 @@ from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
+    'ClusterClusterPodNetworkOptionArgs',
     'ClusterEndpointArgs',
     'ClusterEndpointConfigArgs',
     'ClusterImagePolicyConfigArgs',
@@ -23,8 +24,10 @@ __all__ = [
     'NodePoolInitialNodeLabelArgs',
     'NodePoolNodeArgs',
     'NodePoolNodeConfigDetailsArgs',
+    'NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs',
     'NodePoolNodeConfigDetailsPlacementConfigArgs',
     'NodePoolNodeErrorArgs',
+    'NodePoolNodeEvictionNodePoolSettingsArgs',
     'NodePoolNodeShapeConfigArgs',
     'NodePoolNodeSourceArgs',
     'NodePoolNodeSourceDetailsArgs',
@@ -34,6 +37,28 @@ __all__ = [
     'GetWorkRequestLogEntriesFilterArgs',
     'GetWorkRequestsFilterArgs',
 ]
+
+@pulumi.input_type
+class ClusterClusterPodNetworkOptionArgs:
+    def __init__(__self__, *,
+                 cni_type: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] cni_type: The CNI used by the node pools of this cluster
+        """
+        pulumi.set(__self__, "cni_type", cni_type)
+
+    @property
+    @pulumi.getter(name="cniType")
+    def cni_type(self) -> pulumi.Input[str]:
+        """
+        The CNI used by the node pools of this cluster
+        """
+        return pulumi.get(self, "cni_type")
+
+    @cni_type.setter
+    def cni_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "cni_type", value)
+
 
 @pulumi.input_type
 class ClusterEndpointArgs:
@@ -724,7 +749,7 @@ class NodePoolNodeArgs:
         :param pulumi.Input[str] node_pool_id: The OCID of the node pool to which this node belongs.
         :param pulumi.Input[str] private_ip: The private IP address of this node.
         :param pulumi.Input[str] public_ip: The public IP address of this node.
-        :param pulumi.Input[str] state: The state of the node.
+        :param pulumi.Input[str] state: The state of the nodepool.
         :param pulumi.Input[str] subnet_id: (Updatable) The OCID of the subnet in which to place nodes.
         """
         if availability_domain is not None:
@@ -904,7 +929,7 @@ class NodePoolNodeArgs:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
-        The state of the node.
+        The state of the nodepool.
         """
         return pulumi.get(self, "state")
 
@@ -934,6 +959,7 @@ class NodePoolNodeConfigDetailsArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[bool]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
+                 node_pool_pod_network_option_details: Optional[pulumi.Input['NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs']] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['NodePoolNodeConfigDetailsPlacementConfigArgs']]] placement_configs: (Updatable) The placement configurations for the node pool. Provide one placement configuration for each availability domain in which you intend to launch a node.
@@ -942,6 +968,7 @@ class NodePoolNodeConfigDetailsArgs:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_pv_encryption_in_transit_enabled: (Updatable) Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. The default value is false.
         :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of the Key Management Service key assigned to the boot volume.
+        :param pulumi.Input['NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs'] node_pool_pod_network_option_details: (Updatable) The CNI related configuration of pods in the node pool.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The OCIDs of the Network Security Group(s) to associate nodes for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
         """
         pulumi.set(__self__, "placement_configs", placement_configs)
@@ -954,6 +981,8 @@ class NodePoolNodeConfigDetailsArgs:
             pulumi.set(__self__, "is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
         if kms_key_id is not None:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
+        if node_pool_pod_network_option_details is not None:
+            pulumi.set(__self__, "node_pool_pod_network_option_details", node_pool_pod_network_option_details)
         if nsg_ids is not None:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
 
@@ -1030,6 +1059,18 @@ class NodePoolNodeConfigDetailsArgs:
         pulumi.set(self, "kms_key_id", value)
 
     @property
+    @pulumi.getter(name="nodePoolPodNetworkOptionDetails")
+    def node_pool_pod_network_option_details(self) -> Optional[pulumi.Input['NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs']]:
+        """
+        (Updatable) The CNI related configuration of pods in the node pool.
+        """
+        return pulumi.get(self, "node_pool_pod_network_option_details")
+
+    @node_pool_pod_network_option_details.setter
+    def node_pool_pod_network_option_details(self, value: Optional[pulumi.Input['NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs']]):
+        pulumi.set(self, "node_pool_pod_network_option_details", value)
+
+    @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
@@ -1043,20 +1084,94 @@ class NodePoolNodeConfigDetailsArgs:
 
 
 @pulumi.input_type
+class NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs:
+    def __init__(__self__, *,
+                 cni_type: pulumi.Input[str],
+                 max_pods_per_node: Optional[pulumi.Input[int]] = None,
+                 pod_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 pod_subnet_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        """
+        :param pulumi.Input[str] cni_type: (Updatable) The CNI plugin used by this node pool
+        :param pulumi.Input[int] max_pods_per_node: (Updatable) The max number of pods per node in the node pool. This value will be limited by the number of VNICs attachable to the node pool shape
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] pod_nsg_ids: (Updatable) The OCIDs of the Network Security Group(s) to associate pods for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] pod_subnet_ids: (Updatable) The OCIDs of the subnets in which to place pods for this node pool. This can be one of the node pool subnet IDs
+        """
+        pulumi.set(__self__, "cni_type", cni_type)
+        if max_pods_per_node is not None:
+            pulumi.set(__self__, "max_pods_per_node", max_pods_per_node)
+        if pod_nsg_ids is not None:
+            pulumi.set(__self__, "pod_nsg_ids", pod_nsg_ids)
+        if pod_subnet_ids is not None:
+            pulumi.set(__self__, "pod_subnet_ids", pod_subnet_ids)
+
+    @property
+    @pulumi.getter(name="cniType")
+    def cni_type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The CNI plugin used by this node pool
+        """
+        return pulumi.get(self, "cni_type")
+
+    @cni_type.setter
+    def cni_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "cni_type", value)
+
+    @property
+    @pulumi.getter(name="maxPodsPerNode")
+    def max_pods_per_node(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The max number of pods per node in the node pool. This value will be limited by the number of VNICs attachable to the node pool shape
+        """
+        return pulumi.get(self, "max_pods_per_node")
+
+    @max_pods_per_node.setter
+    def max_pods_per_node(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "max_pods_per_node", value)
+
+    @property
+    @pulumi.getter(name="podNsgIds")
+    def pod_nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) The OCIDs of the Network Security Group(s) to associate pods for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+        """
+        return pulumi.get(self, "pod_nsg_ids")
+
+    @pod_nsg_ids.setter
+    def pod_nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "pod_nsg_ids", value)
+
+    @property
+    @pulumi.getter(name="podSubnetIds")
+    def pod_subnet_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) The OCIDs of the subnets in which to place pods for this node pool. This can be one of the node pool subnet IDs
+        """
+        return pulumi.get(self, "pod_subnet_ids")
+
+    @pod_subnet_ids.setter
+    def pod_subnet_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "pod_subnet_ids", value)
+
+
+@pulumi.input_type
 class NodePoolNodeConfigDetailsPlacementConfigArgs:
     def __init__(__self__, *,
                  availability_domain: pulumi.Input[str],
                  subnet_id: pulumi.Input[str],
-                 capacity_reservation_id: Optional[pulumi.Input[str]] = None):
+                 capacity_reservation_id: Optional[pulumi.Input[str]] = None,
+                 fault_domains: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         :param pulumi.Input[str] availability_domain: (Updatable) The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[str] subnet_id: (Updatable) The OCID of the subnet in which to place nodes.
         :param pulumi.Input[str] capacity_reservation_id: (Updatable) The OCID of the compute capacity reservation in which to place the compute instance.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] fault_domains: (Updatable) A list of fault domains in which to place nodes.
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "subnet_id", subnet_id)
         if capacity_reservation_id is not None:
             pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
+        if fault_domains is not None:
+            pulumi.set(__self__, "fault_domains", fault_domains)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -1093,6 +1208,18 @@ class NodePoolNodeConfigDetailsPlacementConfigArgs:
     @capacity_reservation_id.setter
     def capacity_reservation_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "capacity_reservation_id", value)
+
+    @property
+    @pulumi.getter(name="faultDomains")
+    def fault_domains(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) A list of fault domains in which to place nodes.
+        """
+        return pulumi.get(self, "fault_domains")
+
+    @fault_domains.setter
+    def fault_domains(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "fault_domains", value)
 
 
 @pulumi.input_type
@@ -1148,6 +1275,45 @@ class NodePoolNodeErrorArgs:
     @status.setter
     def status(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "status", value)
+
+
+@pulumi.input_type
+class NodePoolNodeEvictionNodePoolSettingsArgs:
+    def __init__(__self__, *,
+                 eviction_grace_duration: Optional[pulumi.Input[str]] = None,
+                 is_force_delete_after_grace_duration: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[str] eviction_grace_duration: (Updatable) Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
+        :param pulumi.Input[bool] is_force_delete_after_grace_duration: (Updatable) If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
+        """
+        if eviction_grace_duration is not None:
+            pulumi.set(__self__, "eviction_grace_duration", eviction_grace_duration)
+        if is_force_delete_after_grace_duration is not None:
+            pulumi.set(__self__, "is_force_delete_after_grace_duration", is_force_delete_after_grace_duration)
+
+    @property
+    @pulumi.getter(name="evictionGraceDuration")
+    def eviction_grace_duration(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
+        """
+        return pulumi.get(self, "eviction_grace_duration")
+
+    @eviction_grace_duration.setter
+    def eviction_grace_duration(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "eviction_grace_duration", value)
+
+    @property
+    @pulumi.getter(name="isForceDeleteAfterGraceDuration")
+    def is_force_delete_after_grace_duration(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
+        """
+        return pulumi.get(self, "is_force_delete_after_grace_duration")
+
+    @is_force_delete_after_grace_duration.setter
+    def is_force_delete_after_grace_duration(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_force_delete_after_grace_duration", value)
 
 
 @pulumi.input_type

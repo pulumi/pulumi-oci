@@ -10,22 +10,22 @@ import java.util.Objects;
 @CustomType
 public final class GetConfigsConfigCollectionItemMetric {
     /**
-     * @return A description of the metric
+     * @return A description of the metric.
      * 
      */
     private final String description;
     /**
-     * @return The name of the metric
+     * @return The name of the metric. This must be a known metric name.
      * 
      */
     private final String name;
     /**
-     * @return The unit of the metric
+     * @return The unit of the metric.
      * 
      */
     private final String unit;
     /**
-     * @return Must be NULL at the moment, and &#34;name&#34; must be a known metric.
+     * @return This must not be set.
      * 
      */
     private final String valueSource;
@@ -43,28 +43,28 @@ public final class GetConfigsConfigCollectionItemMetric {
     }
 
     /**
-     * @return A description of the metric
+     * @return A description of the metric.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return The name of the metric
+     * @return The name of the metric. This must be a known metric name.
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return The unit of the metric
+     * @return The unit of the metric.
      * 
      */
     public String unit() {
         return this.unit;
     }
     /**
-     * @return Must be NULL at the moment, and &#34;name&#34; must be a known metric.
+     * @return This must not be set.
      * 
      */
     public String valueSource() {

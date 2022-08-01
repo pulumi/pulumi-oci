@@ -35,6 +35,7 @@ class ExadataInfrastructureArgs:
                  create_async: Optional[pulumi.Input[bool]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 is_cps_offline_report_enabled: Optional[pulumi.Input[bool]] = None,
                  maintenance_window: Optional[pulumi.Input['ExadataInfrastructureMaintenanceWindowArgs']] = None,
                  storage_count: Optional[pulumi.Input[int]] = None):
         """
@@ -58,6 +59,7 @@ class ExadataInfrastructureArgs:
         :param pulumi.Input[str] corporate_proxy: (Updatable) The corporate network proxy for access to the control plane network. Oracle recommends using an HTTPS proxy when possible for enhanced security.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[bool] is_cps_offline_report_enabled: (Updatable) Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
         :param pulumi.Input['ExadataInfrastructureMaintenanceWindowArgs'] maintenance_window: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[int] storage_count: The number of storage servers for the Exadata infrastructure.
         """
@@ -89,6 +91,8 @@ class ExadataInfrastructureArgs:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if is_cps_offline_report_enabled is not None:
+            pulumi.set(__self__, "is_cps_offline_report_enabled", is_cps_offline_report_enabled)
         if maintenance_window is not None:
             pulumi.set(__self__, "maintenance_window", maintenance_window)
         if storage_count is not None:
@@ -332,6 +336,18 @@ class ExadataInfrastructureArgs:
         pulumi.set(self, "freeform_tags", value)
 
     @property
+    @pulumi.getter(name="isCpsOfflineReportEnabled")
+    def is_cps_offline_report_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
+        """
+        return pulumi.get(self, "is_cps_offline_report_enabled")
+
+    @is_cps_offline_report_enabled.setter
+    def is_cps_offline_report_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_cps_offline_report_enabled", value)
+
+    @property
     @pulumi.getter(name="maintenanceWindow")
     def maintenance_window(self) -> Optional[pulumi.Input['ExadataInfrastructureMaintenanceWindowArgs']]:
         """
@@ -381,6 +397,7 @@ class _ExadataInfrastructureState:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  gateway: Optional[pulumi.Input[str]] = None,
                  infini_band_network_cidr: Optional[pulumi.Input[str]] = None,
+                 is_cps_offline_report_enabled: Optional[pulumi.Input[bool]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  maintenance_slo_status: Optional[pulumi.Input[str]] = None,
                  maintenance_window: Optional[pulumi.Input['ExadataInfrastructureMaintenanceWindowArgs']] = None,
@@ -420,6 +437,7 @@ class _ExadataInfrastructureState:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] gateway: (Updatable) The gateway for the control plane network.
         :param pulumi.Input[str] infini_band_network_cidr: (Updatable) The CIDR block for the Exadata InfiniBand interconnect.
+        :param pulumi.Input[bool] is_cps_offline_report_enabled: (Updatable) Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[str] maintenance_slo_status: A field to capture ‘Maintenance SLO Status’ for the Exadata infrastructure with values ‘OK’, ‘DEGRADED’. Default is ‘OK’ when the infrastructure is provisioned.
         :param pulumi.Input['ExadataInfrastructureMaintenanceWindowArgs'] maintenance_window: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
@@ -481,6 +499,8 @@ class _ExadataInfrastructureState:
             pulumi.set(__self__, "gateway", gateway)
         if infini_band_network_cidr is not None:
             pulumi.set(__self__, "infini_band_network_cidr", infini_band_network_cidr)
+        if is_cps_offline_report_enabled is not None:
+            pulumi.set(__self__, "is_cps_offline_report_enabled", is_cps_offline_report_enabled)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if maintenance_slo_status is not None:
@@ -776,6 +796,18 @@ class _ExadataInfrastructureState:
         pulumi.set(self, "infini_band_network_cidr", value)
 
     @property
+    @pulumi.getter(name="isCpsOfflineReportEnabled")
+    def is_cps_offline_report_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
+        """
+        return pulumi.get(self, "is_cps_offline_report_enabled")
+
+    @is_cps_offline_report_enabled.setter
+    def is_cps_offline_report_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_cps_offline_report_enabled", value)
+
+    @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
         """
@@ -989,6 +1021,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  gateway: Optional[pulumi.Input[str]] = None,
                  infini_band_network_cidr: Optional[pulumi.Input[str]] = None,
+                 is_cps_offline_report_enabled: Optional[pulumi.Input[bool]] = None,
                  maintenance_window: Optional[pulumi.Input[pulumi.InputType['ExadataInfrastructureMaintenanceWindowArgs']]] = None,
                  netmask: Optional[pulumi.Input[str]] = None,
                  ntp_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -1035,6 +1068,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
+            is_cps_offline_report_enabled=var["exadata_infrastructure_is_cps_offline_report_enabled"],
             maintenance_window=oci.database.ExadataInfrastructureMaintenanceWindowArgs(
                 preference=var["exadata_infrastructure_maintenance_window_preference"],
                 custom_action_timeout_in_mins=var["exadata_infrastructure_maintenance_window_custom_action_timeout_in_mins"],
@@ -1078,6 +1112,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] gateway: (Updatable) The gateway for the control plane network.
         :param pulumi.Input[str] infini_band_network_cidr: (Updatable) The CIDR block for the Exadata InfiniBand interconnect.
+        :param pulumi.Input[bool] is_cps_offline_report_enabled: (Updatable) Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
         :param pulumi.Input[pulumi.InputType['ExadataInfrastructureMaintenanceWindowArgs']] maintenance_window: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[str] netmask: (Updatable) The netmask for the control plane network.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ntp_servers: (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
@@ -1130,6 +1165,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
+            is_cps_offline_report_enabled=var["exadata_infrastructure_is_cps_offline_report_enabled"],
             maintenance_window=oci.database.ExadataInfrastructureMaintenanceWindowArgs(
                 preference=var["exadata_infrastructure_maintenance_window_preference"],
                 custom_action_timeout_in_mins=var["exadata_infrastructure_maintenance_window_custom_action_timeout_in_mins"],
@@ -1187,6 +1223,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  gateway: Optional[pulumi.Input[str]] = None,
                  infini_band_network_cidr: Optional[pulumi.Input[str]] = None,
+                 is_cps_offline_report_enabled: Optional[pulumi.Input[bool]] = None,
                  maintenance_window: Optional[pulumi.Input[pulumi.InputType['ExadataInfrastructureMaintenanceWindowArgs']]] = None,
                  netmask: Optional[pulumi.Input[str]] = None,
                  ntp_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -1237,6 +1274,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
             if infini_band_network_cidr is None and not opts.urn:
                 raise TypeError("Missing required property 'infini_band_network_cidr'")
             __props__.__dict__["infini_band_network_cidr"] = infini_band_network_cidr
+            __props__.__dict__["is_cps_offline_report_enabled"] = is_cps_offline_report_enabled
             __props__.__dict__["maintenance_window"] = maintenance_window
             if netmask is None and not opts.urn:
                 raise TypeError("Missing required property 'netmask'")
@@ -1299,6 +1337,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             gateway: Optional[pulumi.Input[str]] = None,
             infini_band_network_cidr: Optional[pulumi.Input[str]] = None,
+            is_cps_offline_report_enabled: Optional[pulumi.Input[bool]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             maintenance_slo_status: Optional[pulumi.Input[str]] = None,
             maintenance_window: Optional[pulumi.Input[pulumi.InputType['ExadataInfrastructureMaintenanceWindowArgs']]] = None,
@@ -1343,6 +1382,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] gateway: (Updatable) The gateway for the control plane network.
         :param pulumi.Input[str] infini_band_network_cidr: (Updatable) The CIDR block for the Exadata InfiniBand interconnect.
+        :param pulumi.Input[bool] is_cps_offline_report_enabled: (Updatable) Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[str] maintenance_slo_status: A field to capture ‘Maintenance SLO Status’ for the Exadata infrastructure with values ‘OK’, ‘DEGRADED’. Default is ‘OK’ when the infrastructure is provisioned.
         :param pulumi.Input[pulumi.InputType['ExadataInfrastructureMaintenanceWindowArgs']] maintenance_window: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
@@ -1386,6 +1426,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["gateway"] = gateway
         __props__.__dict__["infini_band_network_cidr"] = infini_band_network_cidr
+        __props__.__dict__["is_cps_offline_report_enabled"] = is_cps_offline_report_enabled
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["maintenance_slo_status"] = maintenance_slo_status
         __props__.__dict__["maintenance_window"] = maintenance_window
@@ -1576,6 +1617,14 @@ class ExadataInfrastructure(pulumi.CustomResource):
         (Updatable) The CIDR block for the Exadata InfiniBand interconnect.
         """
         return pulumi.get(self, "infini_band_network_cidr")
+
+    @property
+    @pulumi.getter(name="isCpsOfflineReportEnabled")
+    def is_cps_offline_report_enabled(self) -> pulumi.Output[bool]:
+        """
+        (Updatable) Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
+        """
+        return pulumi.get(self, "is_cps_offline_report_enabled")
 
     @property
     @pulumi.getter(name="lifecycleDetails")

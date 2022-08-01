@@ -48,7 +48,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Specifies whether the auto-tune performance is enabled for this boot volume.
+        /// Specifies whether the auto-tune performance is enabled for this volume.
         /// </summary>
         public readonly bool IsAutoTuneEnabled;
         /// <summary>

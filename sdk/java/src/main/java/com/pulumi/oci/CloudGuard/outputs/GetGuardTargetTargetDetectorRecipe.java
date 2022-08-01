@@ -18,7 +18,7 @@ public final class GetGuardTargetTargetDetectorRecipe {
      */
     private final String compartmentId;
     /**
-     * @return ResponderRule Description
+     * @return ResponderRule description.
      * 
      */
     private final String description;
@@ -38,7 +38,7 @@ public final class GetGuardTargetTargetDetectorRecipe {
      */
     private final List<GetGuardTargetTargetDetectorRecipeDetectorRule> detectorRules;
     /**
-     * @return ResponderRule Display Name
+     * @return ResponderRule display name.
      * 
      */
     private final String displayName;
@@ -48,7 +48,7 @@ public final class GetGuardTargetTargetDetectorRecipe {
      */
     private final List<GetGuardTargetTargetDetectorRecipeEffectiveDetectorRule> effectiveDetectorRules;
     /**
-     * @return Unique identifier of TargetResponderRecipe that is immutable on creation
+     * @return Unique identifier of TargetResponderRecipe that can&#39;t be changed after creation.
      * 
      */
     private final String id;
@@ -109,7 +109,7 @@ public final class GetGuardTargetTargetDetectorRecipe {
         return this.compartmentId;
     }
     /**
-     * @return ResponderRule Description
+     * @return ResponderRule description.
      * 
      */
     public String description() {
@@ -137,7 +137,7 @@ public final class GetGuardTargetTargetDetectorRecipe {
         return this.detectorRules;
     }
     /**
-     * @return ResponderRule Display Name
+     * @return ResponderRule display name.
      * 
      */
     public String displayName() {
@@ -151,7 +151,7 @@ public final class GetGuardTargetTargetDetectorRecipe {
         return this.effectiveDetectorRules;
     }
     /**
-     * @return Unique identifier of TargetResponderRecipe that is immutable on creation
+     * @return Unique identifier of TargetResponderRecipe that can&#39;t be changed after creation.
      * 
      */
     public String id() {

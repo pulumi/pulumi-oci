@@ -92,7 +92,7 @@ public final class GetManagementAgentsManagementAgent {
      */
     private final String platformName;
     /**
-     * @return Filter to return only results having the particular platform type.
+     * @return Array of PlatformTypes to return only results having the particular platform types. Example: [&#34;LINUX&#34;]
      * 
      */
     private final String platformType;
@@ -132,7 +132,7 @@ public final class GetManagementAgentsManagementAgent {
      */
     private final String timeUpdated;
     /**
-     * @return Filter to return only Management Agents having the particular agent version.
+     * @return Array of versions to return only Management Agents having the particular agent versions. Example: [&#34;202020.0101&#34;,&#34;210201.0513&#34;]
      * 
      */
     private final String version;
@@ -305,7 +305,7 @@ public final class GetManagementAgentsManagementAgent {
         return this.platformName;
     }
     /**
-     * @return Filter to return only results having the particular platform type.
+     * @return Array of PlatformTypes to return only results having the particular platform types. Example: [&#34;LINUX&#34;]
      * 
      */
     public String platformType() {
@@ -361,7 +361,7 @@ public final class GetManagementAgentsManagementAgent {
         return this.timeUpdated;
     }
     /**
-     * @return Filter to return only Management Agents having the particular agent version.
+     * @return Array of versions to return only Management Agents having the particular agent versions. Example: [&#34;202020.0101&#34;,&#34;210201.0513&#34;]
      * 
      */
     public String version() {

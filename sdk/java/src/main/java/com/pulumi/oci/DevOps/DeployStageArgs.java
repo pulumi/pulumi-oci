@@ -424,6 +424,21 @@ public final class DeployStageArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Helm chart artifact OCID.
+     * 
+     */
+    @Import(name="helmChartDeployArtifactId")
+    private @Nullable Output<String> helmChartDeployArtifactId;
+
+    /**
+     * @return (Updatable) Helm chart artifact OCID.
+     * 
+     */
+    public Optional<Output<String>> helmChartDeployArtifactId() {
+        return Optional.ofNullable(this.helmChartDeployArtifactId);
+    }
+
+    /**
      * (Updatable) A boolean flag specifies whether this stage executes asynchronously.
      * 
      */
@@ -574,18 +589,33 @@ public final class DeployStageArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+     * Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
      * 
      */
     @Import(name="productionLoadBalancerConfig")
     private @Nullable Output<DeployStageProductionLoadBalancerConfigArgs> productionLoadBalancerConfig;
 
     /**
-     * @return Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+     * @return Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
      * 
      */
     public Optional<Output<DeployStageProductionLoadBalancerConfigArgs>> productionLoadBalancerConfig() {
         return Optional.ofNullable(this.productionLoadBalancerConfig);
+    }
+
+    /**
+     * (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
+     * 
+     */
+    @Import(name="releaseName")
+    private @Nullable Output<String> releaseName;
+
+    /**
+     * @return (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
+     * 
+     */
+    public Optional<Output<String>> releaseName() {
+        return Optional.ofNullable(this.releaseName);
     }
 
     /**
@@ -634,6 +664,21 @@ public final class DeployStageArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Time to wait for execution of a helm stage. Defaults to 300 seconds.
+     * 
+     */
+    @Import(name="timeoutInSeconds")
+    private @Nullable Output<Integer> timeoutInSeconds;
+
+    /**
+     * @return (Updatable) Time to wait for execution of a helm stage. Defaults to 300 seconds.
+     * 
+     */
+    public Optional<Output<Integer>> timeoutInSeconds() {
+        return Optional.ofNullable(this.timeoutInSeconds);
+    }
+
+    /**
      * (Updatable) Specifies the target or destination backend set.
      * 
      */
@@ -646,6 +691,21 @@ public final class DeployStageArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> trafficShiftTarget() {
         return Optional.ofNullable(this.trafficShiftTarget);
+    }
+
+    /**
+     * (Updatable) List of values.yaml file artifact OCIDs.
+     * 
+     */
+    @Import(name="valuesArtifactIds")
+    private @Nullable Output<List<String>> valuesArtifactIds;
+
+    /**
+     * @return (Updatable) List of values.yaml file artifact OCIDs.
+     * 
+     */
+    public Optional<Output<List<String>>> valuesArtifactIds() {
+        return Optional.ofNullable(this.valuesArtifactIds);
     }
 
     /**
@@ -692,6 +752,7 @@ public final class DeployStageArgs extends com.pulumi.resources.ResourceArgs {
         this.functionDeployEnvironmentId = $.functionDeployEnvironmentId;
         this.functionTimeoutInSeconds = $.functionTimeoutInSeconds;
         this.greenBackendIps = $.greenBackendIps;
+        this.helmChartDeployArtifactId = $.helmChartDeployArtifactId;
         this.isAsync = $.isAsync;
         this.isValidationEnabled = $.isValidationEnabled;
         this.kubernetesManifestDeployArtifactIds = $.kubernetesManifestDeployArtifactIds;
@@ -703,10 +764,13 @@ public final class DeployStageArgs extends com.pulumi.resources.ResourceArgs {
         this.okeCanaryTrafficShiftDeployStageId = $.okeCanaryTrafficShiftDeployStageId;
         this.okeClusterDeployEnvironmentId = $.okeClusterDeployEnvironmentId;
         this.productionLoadBalancerConfig = $.productionLoadBalancerConfig;
+        this.releaseName = $.releaseName;
         this.rollbackPolicy = $.rollbackPolicy;
         this.rolloutPolicy = $.rolloutPolicy;
         this.testLoadBalancerConfig = $.testLoadBalancerConfig;
+        this.timeoutInSeconds = $.timeoutInSeconds;
         this.trafficShiftTarget = $.trafficShiftTarget;
+        this.valuesArtifactIds = $.valuesArtifactIds;
         this.waitCriteria = $.waitCriteria;
     }
 
@@ -1285,6 +1349,27 @@ public final class DeployStageArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param helmChartDeployArtifactId (Updatable) Helm chart artifact OCID.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder helmChartDeployArtifactId(@Nullable Output<String> helmChartDeployArtifactId) {
+            $.helmChartDeployArtifactId = helmChartDeployArtifactId;
+            return this;
+        }
+
+        /**
+         * @param helmChartDeployArtifactId (Updatable) Helm chart artifact OCID.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder helmChartDeployArtifactId(String helmChartDeployArtifactId) {
+            return helmChartDeployArtifactId(Output.of(helmChartDeployArtifactId));
+        }
+
+        /**
          * @param isAsync (Updatable) A boolean flag specifies whether this stage executes asynchronously.
          * 
          * @return builder
@@ -1505,7 +1590,7 @@ public final class DeployStageArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param productionLoadBalancerConfig Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+         * @param productionLoadBalancerConfig Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
          * 
          * @return builder
          * 
@@ -1516,13 +1601,34 @@ public final class DeployStageArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param productionLoadBalancerConfig Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+         * @param productionLoadBalancerConfig Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
          * 
          * @return builder
          * 
          */
         public Builder productionLoadBalancerConfig(DeployStageProductionLoadBalancerConfigArgs productionLoadBalancerConfig) {
             return productionLoadBalancerConfig(Output.of(productionLoadBalancerConfig));
+        }
+
+        /**
+         * @param releaseName (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder releaseName(@Nullable Output<String> releaseName) {
+            $.releaseName = releaseName;
+            return this;
+        }
+
+        /**
+         * @param releaseName (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder releaseName(String releaseName) {
+            return releaseName(Output.of(releaseName));
         }
 
         /**
@@ -1589,6 +1695,27 @@ public final class DeployStageArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param timeoutInSeconds (Updatable) Time to wait for execution of a helm stage. Defaults to 300 seconds.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeoutInSeconds(@Nullable Output<Integer> timeoutInSeconds) {
+            $.timeoutInSeconds = timeoutInSeconds;
+            return this;
+        }
+
+        /**
+         * @param timeoutInSeconds (Updatable) Time to wait for execution of a helm stage. Defaults to 300 seconds.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeoutInSeconds(Integer timeoutInSeconds) {
+            return timeoutInSeconds(Output.of(timeoutInSeconds));
+        }
+
+        /**
          * @param trafficShiftTarget (Updatable) Specifies the target or destination backend set.
          * 
          * @return builder
@@ -1607,6 +1734,37 @@ public final class DeployStageArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder trafficShiftTarget(String trafficShiftTarget) {
             return trafficShiftTarget(Output.of(trafficShiftTarget));
+        }
+
+        /**
+         * @param valuesArtifactIds (Updatable) List of values.yaml file artifact OCIDs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder valuesArtifactIds(@Nullable Output<List<String>> valuesArtifactIds) {
+            $.valuesArtifactIds = valuesArtifactIds;
+            return this;
+        }
+
+        /**
+         * @param valuesArtifactIds (Updatable) List of values.yaml file artifact OCIDs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder valuesArtifactIds(List<String> valuesArtifactIds) {
+            return valuesArtifactIds(Output.of(valuesArtifactIds));
+        }
+
+        /**
+         * @param valuesArtifactIds (Updatable) List of values.yaml file artifact OCIDs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder valuesArtifactIds(String... valuesArtifactIds) {
+            return valuesArtifactIds(List.of(valuesArtifactIds));
         }
 
         /**

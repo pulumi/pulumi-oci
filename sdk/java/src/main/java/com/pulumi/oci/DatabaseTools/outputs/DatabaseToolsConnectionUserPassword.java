@@ -6,8 +6,6 @@ package com.pulumi.oci.DatabaseTools.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
-import java.util.Optional;
-import javax.annotation.Nullable;
 
 @CustomType
 public final class DatabaseToolsConnectionUserPassword {
@@ -15,7 +13,7 @@ public final class DatabaseToolsConnectionUserPassword {
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
      * 
      */
-    private final @Nullable String secretId;
+    private final String secretId;
     /**
      * @return (Updatable) The value type of the user password.
      * 
@@ -24,7 +22,7 @@ public final class DatabaseToolsConnectionUserPassword {
 
     @CustomType.Constructor
     private DatabaseToolsConnectionUserPassword(
-        @CustomType.Parameter("secretId") @Nullable String secretId,
+        @CustomType.Parameter("secretId") String secretId,
         @CustomType.Parameter("valueType") String valueType) {
         this.secretId = secretId;
         this.valueType = valueType;
@@ -34,8 +32,8 @@ public final class DatabaseToolsConnectionUserPassword {
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
      * 
      */
-    public Optional<String> secretId() {
-        return Optional.ofNullable(this.secretId);
+    public String secretId() {
+        return this.secretId;
     }
     /**
      * @return (Updatable) The value type of the user password.
@@ -54,7 +52,7 @@ public final class DatabaseToolsConnectionUserPassword {
     }
 
     public static final class Builder {
-        private @Nullable String secretId;
+        private String secretId;
         private String valueType;
 
         public Builder() {
@@ -67,8 +65,8 @@ public final class DatabaseToolsConnectionUserPassword {
     	      this.valueType = defaults.valueType;
         }
 
-        public Builder secretId(@Nullable String secretId) {
-            this.secretId = secretId;
+        public Builder secretId(String secretId) {
+            this.secretId = Objects.requireNonNull(secretId);
             return this;
         }
         public Builder valueType(String valueType) {

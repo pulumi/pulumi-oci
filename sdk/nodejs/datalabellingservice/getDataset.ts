@@ -55,7 +55,7 @@ export interface GetDatasetResult {
      */
     readonly compartmentId: string;
     /**
-     * Specifies how to process the data. Supported formats include DOCUMENT, IMAGE and TEXT.
+     * It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
      */
     readonly datasetFormatDetails: outputs.DataLabellingService.GetDatasetDatasetFormatDetail[];
     readonly datasetId: string;
@@ -84,11 +84,11 @@ export interface GetDatasetResult {
      */
     readonly id: string;
     /**
-     * Initial Generate Records configuration, generates records from the Dataset's source.
+     * The initial generate records configuration. It generates records from the dataset's source.
      */
     readonly initialRecordGenerationConfigurations: outputs.DataLabellingService.GetDatasetInitialRecordGenerationConfiguration[];
     /**
-     * An ordered collection of Labels that are unique by name.
+     * An ordered collection of labels that are unique by name.
      */
     readonly labelSets: outputs.DataLabellingService.GetDatasetLabelSet[];
     /**

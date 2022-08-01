@@ -88,6 +88,12 @@ namespace Pulumi.Oci.Opsi
         public Output<string> DatabaseVersion { get; private set; } = null!;
 
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint. This field and opsi_private_endpoint_id are mutually exclusive. If DBM private endpoint ID is provided, a new OPSI private endpoint ID will be created.
+        /// </summary>
+        [Output("dbmPrivateEndpointId")]
+        public Output<string> DbmPrivateEndpointId { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
@@ -295,6 +301,12 @@ namespace Pulumi.Oci.Opsi
         [Input("databaseResourceType")]
         public Input<string>? DatabaseResourceType { get; set; }
 
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint. This field and opsi_private_endpoint_id are mutually exclusive. If DBM private endpoint ID is provided, a new OPSI private endpoint ID will be created.
+        /// </summary>
+        [Input("dbmPrivateEndpointId")]
+        public Input<string>? DbmPrivateEndpointId { get; set; }
+
         [Input("definedTags")]
         private InputMap<object>? _definedTags;
 
@@ -445,6 +457,12 @@ namespace Pulumi.Oci.Opsi
         /// </summary>
         [Input("databaseVersion")]
         public Input<string>? DatabaseVersion { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint. This field and opsi_private_endpoint_id are mutually exclusive. If DBM private endpoint ID is provided, a new OPSI private endpoint ID will be created.
+        /// </summary>
+        [Input("dbmPrivateEndpointId")]
+        public Input<string>? DbmPrivateEndpointId { get; set; }
 
         [Input("definedTags")]
         private InputMap<object>? _definedTags;

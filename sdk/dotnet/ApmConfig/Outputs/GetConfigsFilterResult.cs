@@ -14,7 +14,7 @@ namespace Pulumi.Oci.ApmConfig.Outputs
     public sealed class GetConfigsFilterResult
     {
         /// <summary>
-        /// The name of the metric
+        /// The name of the metric. This must be a known metric name.
         /// </summary>
         public readonly string Name;
         public readonly bool? Regex;

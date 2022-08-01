@@ -60,7 +60,7 @@ namespace Pulumi.Oci.Functions
         public Output<string> FnIntent { get; private set; } = null!;
 
         /// <summary>
-        /// Indicates whether the functions platform should execute the request directly and return the result ('sync') or whether the platform should enqueue the request for later processing and acknowledge that it has been processed ('detached').
+        /// Indicates whether Oracle Functions should execute the request and return the result ('sync') of the execution,  or whether Oracle Functions should return as soon as processing has begun ('detached') and leave result handling to the function.
         /// </summary>
         [Output("fnInvokeType")]
         public Output<string> FnInvokeType { get; private set; } = null!;
@@ -145,7 +145,7 @@ namespace Pulumi.Oci.Functions
         public Input<string>? FnIntent { get; set; }
 
         /// <summary>
-        /// Indicates whether the functions platform should execute the request directly and return the result ('sync') or whether the platform should enqueue the request for later processing and acknowledge that it has been processed ('detached').
+        /// Indicates whether Oracle Functions should execute the request and return the result ('sync') of the execution,  or whether Oracle Functions should return as soon as processing has begun ('detached') and leave result handling to the function.
         /// </summary>
         [Input("fnInvokeType")]
         public Input<string>? FnInvokeType { get; set; }
@@ -194,7 +194,7 @@ namespace Pulumi.Oci.Functions
         public Input<string>? FnIntent { get; set; }
 
         /// <summary>
-        /// Indicates whether the functions platform should execute the request directly and return the result ('sync') or whether the platform should enqueue the request for later processing and acknowledge that it has been processed ('detached').
+        /// Indicates whether Oracle Functions should execute the request and return the result ('sync') of the execution,  or whether Oracle Functions should return as soon as processing has begun ('detached') and leave result handling to the function.
         /// </summary>
         [Input("fnInvokeType")]
         public Input<string>? FnInvokeType { get; set; }

@@ -63,28 +63,28 @@ public class ResponderRecipe extends com.pulumi.resources.CustomResource {
         return this.definedTags;
     }
     /**
-     * (Updatable) ResponderRecipe Description
+     * (Updatable) Responder recipe description.
      * 
      */
     @Export(name="description", type=String.class, parameters={})
     private Output<String> description;
 
     /**
-     * @return (Updatable) ResponderRecipe Description
+     * @return (Updatable) Responder recipe description.
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * (Updatable) ResponderRecipe Display Name
+     * (Updatable) Responder recipe display name.
      * 
      */
     @Export(name="displayName", type=String.class, parameters={})
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) ResponderRecipe Display Name
+     * @return (Updatable) Responder recipe display name.
      * 
      */
     public Output<String> displayName() {

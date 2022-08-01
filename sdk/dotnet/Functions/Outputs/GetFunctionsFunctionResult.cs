@@ -58,6 +58,10 @@ namespace Pulumi.Oci.Functions.Outputs
         /// </summary>
         public readonly string MemoryInMbs;
         /// <summary>
+        /// Define the strategy for provisioned concurrency for the function.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetFunctionsFunctionProvisionedConcurrencyConfigResult> ProvisionedConcurrencyConfigs;
+        /// <summary>
         /// A filter to return only functions that match the lifecycle state in this parameter. Example: `Creating`
         /// </summary>
         public readonly string State;
@@ -102,6 +106,8 @@ namespace Pulumi.Oci.Functions.Outputs
 
             string memoryInMbs,
 
+            ImmutableArray<Outputs.GetFunctionsFunctionProvisionedConcurrencyConfigResult> provisionedConcurrencyConfigs,
+
             string state,
 
             string timeCreated,
@@ -123,6 +129,7 @@ namespace Pulumi.Oci.Functions.Outputs
             ImageDigest = imageDigest;
             InvokeEndpoint = invokeEndpoint;
             MemoryInMbs = memoryInMbs;
+            ProvisionedConcurrencyConfigs = provisionedConcurrencyConfigs;
             State = state;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;

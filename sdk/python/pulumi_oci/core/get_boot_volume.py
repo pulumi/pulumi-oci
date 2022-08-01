@@ -100,7 +100,7 @@ class GetBootVolumeResult:
     @pulumi.getter(name="autoTunedVpusPerGb")
     def auto_tuned_vpus_per_gb(self) -> str:
         """
-        The number of Volume Performance Units per GB that this volume is effectively tuned to when it's idle.
+        The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it's idle.
         """
         return pulumi.get(self, "auto_tuned_vpus_per_gb")
 
@@ -264,7 +264,7 @@ class GetBootVolumeResult:
     @pulumi.getter(name="vpusPerGb")
     def vpus_per_gb(self) -> str:
         """
-        The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+        The number of volume performance units (VPUs) that will be applied to this boot volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
         """
         return pulumi.get(self, "vpus_per_gb")
 

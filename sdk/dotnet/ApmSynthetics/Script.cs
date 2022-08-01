@@ -138,7 +138,7 @@ namespace Pulumi.Oci.ApmSynthetics
         public Output<string> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
-        /// The time when the script was uploaded.
+        /// The time the script was uploaded.
         /// </summary>
         [Output("timeUploaded")]
         public Output<string> TimeUploaded { get; private set; } = null!;
@@ -359,7 +359,7 @@ namespace Pulumi.Oci.ApmSynthetics
         public Input<string>? TimeUpdated { get; set; }
 
         /// <summary>
-        /// The time when the script was uploaded.
+        /// The time the script was uploaded.
         /// </summary>
         [Input("timeUploaded")]
         public Input<string>? TimeUploaded { get; set; }

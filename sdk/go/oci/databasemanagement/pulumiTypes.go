@@ -1967,6 +1967,1437 @@ func (o GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItemArrayOut
 	}).(GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItemOutput)
 }
 
+type GetManagedDatabaseAddmTaskItem struct {
+	// The ID number of the beginning AWR snapshot.
+	BeginSnapshotId string `pulumi:"beginSnapshotId"`
+	// The database user who owns the ADDM task.
+	DbUser string `pulumi:"dbUser"`
+	// The description of the ADDM task.
+	Description string `pulumi:"description"`
+	// The ID number of the ending AWR snapshot.
+	EndSnapshotId string `pulumi:"endSnapshotId"`
+	// The timestamp of the ending AWR snapshot used in the ADDM task as defined by date-time RFC3339 format.
+	EndSnapshotTime string `pulumi:"endSnapshotTime"`
+	// The number of ADDM findings.
+	Findings string `pulumi:"findings"`
+	// A description of how the task was created.
+	HowCreated string `pulumi:"howCreated"`
+	// The timestamp of the beginning AWR snapshot used in the ADDM task as defined by date-time RFC3339 format.
+	StartSnapshotTime string `pulumi:"startSnapshotTime"`
+	// The status of the ADDM task.
+	Status string `pulumi:"status"`
+	// The ID number of the ADDM task.
+	TaskId string `pulumi:"taskId"`
+	// The name of the ADDM task.
+	TaskName string `pulumi:"taskName"`
+	// The creation date of the ADDM task.
+	TimeCreated string `pulumi:"timeCreated"`
+}
+
+// GetManagedDatabaseAddmTaskItemInput is an input type that accepts GetManagedDatabaseAddmTaskItemArgs and GetManagedDatabaseAddmTaskItemOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseAddmTaskItemInput` via:
+//
+//          GetManagedDatabaseAddmTaskItemArgs{...}
+type GetManagedDatabaseAddmTaskItemInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseAddmTaskItemOutput() GetManagedDatabaseAddmTaskItemOutput
+	ToGetManagedDatabaseAddmTaskItemOutputWithContext(context.Context) GetManagedDatabaseAddmTaskItemOutput
+}
+
+type GetManagedDatabaseAddmTaskItemArgs struct {
+	// The ID number of the beginning AWR snapshot.
+	BeginSnapshotId pulumi.StringInput `pulumi:"beginSnapshotId"`
+	// The database user who owns the ADDM task.
+	DbUser pulumi.StringInput `pulumi:"dbUser"`
+	// The description of the ADDM task.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The ID number of the ending AWR snapshot.
+	EndSnapshotId pulumi.StringInput `pulumi:"endSnapshotId"`
+	// The timestamp of the ending AWR snapshot used in the ADDM task as defined by date-time RFC3339 format.
+	EndSnapshotTime pulumi.StringInput `pulumi:"endSnapshotTime"`
+	// The number of ADDM findings.
+	Findings pulumi.StringInput `pulumi:"findings"`
+	// A description of how the task was created.
+	HowCreated pulumi.StringInput `pulumi:"howCreated"`
+	// The timestamp of the beginning AWR snapshot used in the ADDM task as defined by date-time RFC3339 format.
+	StartSnapshotTime pulumi.StringInput `pulumi:"startSnapshotTime"`
+	// The status of the ADDM task.
+	Status pulumi.StringInput `pulumi:"status"`
+	// The ID number of the ADDM task.
+	TaskId pulumi.StringInput `pulumi:"taskId"`
+	// The name of the ADDM task.
+	TaskName pulumi.StringInput `pulumi:"taskName"`
+	// The creation date of the ADDM task.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+}
+
+func (GetManagedDatabaseAddmTaskItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseAddmTaskItem)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseAddmTaskItemArgs) ToGetManagedDatabaseAddmTaskItemOutput() GetManagedDatabaseAddmTaskItemOutput {
+	return i.ToGetManagedDatabaseAddmTaskItemOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseAddmTaskItemArgs) ToGetManagedDatabaseAddmTaskItemOutputWithContext(ctx context.Context) GetManagedDatabaseAddmTaskItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseAddmTaskItemOutput)
+}
+
+// GetManagedDatabaseAddmTaskItemArrayInput is an input type that accepts GetManagedDatabaseAddmTaskItemArray and GetManagedDatabaseAddmTaskItemArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseAddmTaskItemArrayInput` via:
+//
+//          GetManagedDatabaseAddmTaskItemArray{ GetManagedDatabaseAddmTaskItemArgs{...} }
+type GetManagedDatabaseAddmTaskItemArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseAddmTaskItemArrayOutput() GetManagedDatabaseAddmTaskItemArrayOutput
+	ToGetManagedDatabaseAddmTaskItemArrayOutputWithContext(context.Context) GetManagedDatabaseAddmTaskItemArrayOutput
+}
+
+type GetManagedDatabaseAddmTaskItemArray []GetManagedDatabaseAddmTaskItemInput
+
+func (GetManagedDatabaseAddmTaskItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseAddmTaskItem)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseAddmTaskItemArray) ToGetManagedDatabaseAddmTaskItemArrayOutput() GetManagedDatabaseAddmTaskItemArrayOutput {
+	return i.ToGetManagedDatabaseAddmTaskItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseAddmTaskItemArray) ToGetManagedDatabaseAddmTaskItemArrayOutputWithContext(ctx context.Context) GetManagedDatabaseAddmTaskItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseAddmTaskItemArrayOutput)
+}
+
+type GetManagedDatabaseAddmTaskItemOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseAddmTaskItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseAddmTaskItem)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseAddmTaskItemOutput) ToGetManagedDatabaseAddmTaskItemOutput() GetManagedDatabaseAddmTaskItemOutput {
+	return o
+}
+
+func (o GetManagedDatabaseAddmTaskItemOutput) ToGetManagedDatabaseAddmTaskItemOutputWithContext(ctx context.Context) GetManagedDatabaseAddmTaskItemOutput {
+	return o
+}
+
+// The ID number of the beginning AWR snapshot.
+func (o GetManagedDatabaseAddmTaskItemOutput) BeginSnapshotId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseAddmTaskItem) string { return v.BeginSnapshotId }).(pulumi.StringOutput)
+}
+
+// The database user who owns the ADDM task.
+func (o GetManagedDatabaseAddmTaskItemOutput) DbUser() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseAddmTaskItem) string { return v.DbUser }).(pulumi.StringOutput)
+}
+
+// The description of the ADDM task.
+func (o GetManagedDatabaseAddmTaskItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseAddmTaskItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The ID number of the ending AWR snapshot.
+func (o GetManagedDatabaseAddmTaskItemOutput) EndSnapshotId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseAddmTaskItem) string { return v.EndSnapshotId }).(pulumi.StringOutput)
+}
+
+// The timestamp of the ending AWR snapshot used in the ADDM task as defined by date-time RFC3339 format.
+func (o GetManagedDatabaseAddmTaskItemOutput) EndSnapshotTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseAddmTaskItem) string { return v.EndSnapshotTime }).(pulumi.StringOutput)
+}
+
+// The number of ADDM findings.
+func (o GetManagedDatabaseAddmTaskItemOutput) Findings() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseAddmTaskItem) string { return v.Findings }).(pulumi.StringOutput)
+}
+
+// A description of how the task was created.
+func (o GetManagedDatabaseAddmTaskItemOutput) HowCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseAddmTaskItem) string { return v.HowCreated }).(pulumi.StringOutput)
+}
+
+// The timestamp of the beginning AWR snapshot used in the ADDM task as defined by date-time RFC3339 format.
+func (o GetManagedDatabaseAddmTaskItemOutput) StartSnapshotTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseAddmTaskItem) string { return v.StartSnapshotTime }).(pulumi.StringOutput)
+}
+
+// The status of the ADDM task.
+func (o GetManagedDatabaseAddmTaskItemOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseAddmTaskItem) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// The ID number of the ADDM task.
+func (o GetManagedDatabaseAddmTaskItemOutput) TaskId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseAddmTaskItem) string { return v.TaskId }).(pulumi.StringOutput)
+}
+
+// The name of the ADDM task.
+func (o GetManagedDatabaseAddmTaskItemOutput) TaskName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseAddmTaskItem) string { return v.TaskName }).(pulumi.StringOutput)
+}
+
+// The creation date of the ADDM task.
+func (o GetManagedDatabaseAddmTaskItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseAddmTaskItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+type GetManagedDatabaseAddmTaskItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseAddmTaskItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseAddmTaskItem)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseAddmTaskItemArrayOutput) ToGetManagedDatabaseAddmTaskItemArrayOutput() GetManagedDatabaseAddmTaskItemArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseAddmTaskItemArrayOutput) ToGetManagedDatabaseAddmTaskItemArrayOutputWithContext(ctx context.Context) GetManagedDatabaseAddmTaskItemArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseAddmTaskItemArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseAddmTaskItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseAddmTaskItem {
+		return vs[0].([]GetManagedDatabaseAddmTaskItem)[vs[1].(int)]
+	}).(GetManagedDatabaseAddmTaskItemOutput)
+}
+
+type GetManagedDatabaseAddmTasksAddmTasksCollection struct {
+	// The list of ADDM task metadata.
+	Items []GetManagedDatabaseAddmTasksAddmTasksCollectionItem `pulumi:"items"`
+}
+
+// GetManagedDatabaseAddmTasksAddmTasksCollectionInput is an input type that accepts GetManagedDatabaseAddmTasksAddmTasksCollectionArgs and GetManagedDatabaseAddmTasksAddmTasksCollectionOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseAddmTasksAddmTasksCollectionInput` via:
+//
+//          GetManagedDatabaseAddmTasksAddmTasksCollectionArgs{...}
+type GetManagedDatabaseAddmTasksAddmTasksCollectionInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseAddmTasksAddmTasksCollectionOutput() GetManagedDatabaseAddmTasksAddmTasksCollectionOutput
+	ToGetManagedDatabaseAddmTasksAddmTasksCollectionOutputWithContext(context.Context) GetManagedDatabaseAddmTasksAddmTasksCollectionOutput
+}
+
+type GetManagedDatabaseAddmTasksAddmTasksCollectionArgs struct {
+	// The list of ADDM task metadata.
+	Items GetManagedDatabaseAddmTasksAddmTasksCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetManagedDatabaseAddmTasksAddmTasksCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseAddmTasksAddmTasksCollection)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseAddmTasksAddmTasksCollectionArgs) ToGetManagedDatabaseAddmTasksAddmTasksCollectionOutput() GetManagedDatabaseAddmTasksAddmTasksCollectionOutput {
+	return i.ToGetManagedDatabaseAddmTasksAddmTasksCollectionOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseAddmTasksAddmTasksCollectionArgs) ToGetManagedDatabaseAddmTasksAddmTasksCollectionOutputWithContext(ctx context.Context) GetManagedDatabaseAddmTasksAddmTasksCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseAddmTasksAddmTasksCollectionOutput)
+}
+
+// GetManagedDatabaseAddmTasksAddmTasksCollectionArrayInput is an input type that accepts GetManagedDatabaseAddmTasksAddmTasksCollectionArray and GetManagedDatabaseAddmTasksAddmTasksCollectionArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseAddmTasksAddmTasksCollectionArrayInput` via:
+//
+//          GetManagedDatabaseAddmTasksAddmTasksCollectionArray{ GetManagedDatabaseAddmTasksAddmTasksCollectionArgs{...} }
+type GetManagedDatabaseAddmTasksAddmTasksCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseAddmTasksAddmTasksCollectionArrayOutput() GetManagedDatabaseAddmTasksAddmTasksCollectionArrayOutput
+	ToGetManagedDatabaseAddmTasksAddmTasksCollectionArrayOutputWithContext(context.Context) GetManagedDatabaseAddmTasksAddmTasksCollectionArrayOutput
+}
+
+type GetManagedDatabaseAddmTasksAddmTasksCollectionArray []GetManagedDatabaseAddmTasksAddmTasksCollectionInput
+
+func (GetManagedDatabaseAddmTasksAddmTasksCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseAddmTasksAddmTasksCollection)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseAddmTasksAddmTasksCollectionArray) ToGetManagedDatabaseAddmTasksAddmTasksCollectionArrayOutput() GetManagedDatabaseAddmTasksAddmTasksCollectionArrayOutput {
+	return i.ToGetManagedDatabaseAddmTasksAddmTasksCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseAddmTasksAddmTasksCollectionArray) ToGetManagedDatabaseAddmTasksAddmTasksCollectionArrayOutputWithContext(ctx context.Context) GetManagedDatabaseAddmTasksAddmTasksCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseAddmTasksAddmTasksCollectionArrayOutput)
+}
+
+type GetManagedDatabaseAddmTasksAddmTasksCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseAddmTasksAddmTasksCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseAddmTasksAddmTasksCollection)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseAddmTasksAddmTasksCollectionOutput) ToGetManagedDatabaseAddmTasksAddmTasksCollectionOutput() GetManagedDatabaseAddmTasksAddmTasksCollectionOutput {
+	return o
+}
+
+func (o GetManagedDatabaseAddmTasksAddmTasksCollectionOutput) ToGetManagedDatabaseAddmTasksAddmTasksCollectionOutputWithContext(ctx context.Context) GetManagedDatabaseAddmTasksAddmTasksCollectionOutput {
+	return o
+}
+
+// The list of ADDM task metadata.
+func (o GetManagedDatabaseAddmTasksAddmTasksCollectionOutput) Items() GetManagedDatabaseAddmTasksAddmTasksCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetManagedDatabaseAddmTasksAddmTasksCollection) []GetManagedDatabaseAddmTasksAddmTasksCollectionItem {
+		return v.Items
+	}).(GetManagedDatabaseAddmTasksAddmTasksCollectionItemArrayOutput)
+}
+
+type GetManagedDatabaseAddmTasksAddmTasksCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseAddmTasksAddmTasksCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseAddmTasksAddmTasksCollection)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseAddmTasksAddmTasksCollectionArrayOutput) ToGetManagedDatabaseAddmTasksAddmTasksCollectionArrayOutput() GetManagedDatabaseAddmTasksAddmTasksCollectionArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseAddmTasksAddmTasksCollectionArrayOutput) ToGetManagedDatabaseAddmTasksAddmTasksCollectionArrayOutputWithContext(ctx context.Context) GetManagedDatabaseAddmTasksAddmTasksCollectionArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseAddmTasksAddmTasksCollectionArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseAddmTasksAddmTasksCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseAddmTasksAddmTasksCollection {
+		return vs[0].([]GetManagedDatabaseAddmTasksAddmTasksCollection)[vs[1].(int)]
+	}).(GetManagedDatabaseAddmTasksAddmTasksCollectionOutput)
+}
+
+type GetManagedDatabaseAddmTasksAddmTasksCollectionItem struct {
+	// The ID number of the beginning AWR snapshot.
+	BeginSnapshotId string `pulumi:"beginSnapshotId"`
+	// The database user who owns the ADDM task.
+	DbUser string `pulumi:"dbUser"`
+	// The description of the ADDM task.
+	Description string `pulumi:"description"`
+	// The ID number of the ending AWR snapshot.
+	EndSnapshotId string `pulumi:"endSnapshotId"`
+	// The timestamp of the ending AWR snapshot used in the ADDM task as defined by date-time RFC3339 format.
+	EndSnapshotTime string `pulumi:"endSnapshotTime"`
+	// The number of ADDM findings.
+	Findings string `pulumi:"findings"`
+	// A description of how the task was created.
+	HowCreated string `pulumi:"howCreated"`
+	// The timestamp of the beginning AWR snapshot used in the ADDM task as defined by date-time RFC3339 format.
+	StartSnapshotTime string `pulumi:"startSnapshotTime"`
+	// The status of the ADDM task.
+	Status string `pulumi:"status"`
+	// The ID number of the ADDM task.
+	TaskId string `pulumi:"taskId"`
+	// The name of the ADDM task.
+	TaskName string `pulumi:"taskName"`
+	// The creation date of the ADDM task.
+	TimeCreated string `pulumi:"timeCreated"`
+}
+
+// GetManagedDatabaseAddmTasksAddmTasksCollectionItemInput is an input type that accepts GetManagedDatabaseAddmTasksAddmTasksCollectionItemArgs and GetManagedDatabaseAddmTasksAddmTasksCollectionItemOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseAddmTasksAddmTasksCollectionItemInput` via:
+//
+//          GetManagedDatabaseAddmTasksAddmTasksCollectionItemArgs{...}
+type GetManagedDatabaseAddmTasksAddmTasksCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseAddmTasksAddmTasksCollectionItemOutput() GetManagedDatabaseAddmTasksAddmTasksCollectionItemOutput
+	ToGetManagedDatabaseAddmTasksAddmTasksCollectionItemOutputWithContext(context.Context) GetManagedDatabaseAddmTasksAddmTasksCollectionItemOutput
+}
+
+type GetManagedDatabaseAddmTasksAddmTasksCollectionItemArgs struct {
+	// The ID number of the beginning AWR snapshot.
+	BeginSnapshotId pulumi.StringInput `pulumi:"beginSnapshotId"`
+	// The database user who owns the ADDM task.
+	DbUser pulumi.StringInput `pulumi:"dbUser"`
+	// The description of the ADDM task.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The ID number of the ending AWR snapshot.
+	EndSnapshotId pulumi.StringInput `pulumi:"endSnapshotId"`
+	// The timestamp of the ending AWR snapshot used in the ADDM task as defined by date-time RFC3339 format.
+	EndSnapshotTime pulumi.StringInput `pulumi:"endSnapshotTime"`
+	// The number of ADDM findings.
+	Findings pulumi.StringInput `pulumi:"findings"`
+	// A description of how the task was created.
+	HowCreated pulumi.StringInput `pulumi:"howCreated"`
+	// The timestamp of the beginning AWR snapshot used in the ADDM task as defined by date-time RFC3339 format.
+	StartSnapshotTime pulumi.StringInput `pulumi:"startSnapshotTime"`
+	// The status of the ADDM task.
+	Status pulumi.StringInput `pulumi:"status"`
+	// The ID number of the ADDM task.
+	TaskId pulumi.StringInput `pulumi:"taskId"`
+	// The name of the ADDM task.
+	TaskName pulumi.StringInput `pulumi:"taskName"`
+	// The creation date of the ADDM task.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+}
+
+func (GetManagedDatabaseAddmTasksAddmTasksCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseAddmTasksAddmTasksCollectionItem)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseAddmTasksAddmTasksCollectionItemArgs) ToGetManagedDatabaseAddmTasksAddmTasksCollectionItemOutput() GetManagedDatabaseAddmTasksAddmTasksCollectionItemOutput {
+	return i.ToGetManagedDatabaseAddmTasksAddmTasksCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseAddmTasksAddmTasksCollectionItemArgs) ToGetManagedDatabaseAddmTasksAddmTasksCollectionItemOutputWithContext(ctx context.Context) GetManagedDatabaseAddmTasksAddmTasksCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseAddmTasksAddmTasksCollectionItemOutput)
+}
+
+// GetManagedDatabaseAddmTasksAddmTasksCollectionItemArrayInput is an input type that accepts GetManagedDatabaseAddmTasksAddmTasksCollectionItemArray and GetManagedDatabaseAddmTasksAddmTasksCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseAddmTasksAddmTasksCollectionItemArrayInput` via:
+//
+//          GetManagedDatabaseAddmTasksAddmTasksCollectionItemArray{ GetManagedDatabaseAddmTasksAddmTasksCollectionItemArgs{...} }
+type GetManagedDatabaseAddmTasksAddmTasksCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseAddmTasksAddmTasksCollectionItemArrayOutput() GetManagedDatabaseAddmTasksAddmTasksCollectionItemArrayOutput
+	ToGetManagedDatabaseAddmTasksAddmTasksCollectionItemArrayOutputWithContext(context.Context) GetManagedDatabaseAddmTasksAddmTasksCollectionItemArrayOutput
+}
+
+type GetManagedDatabaseAddmTasksAddmTasksCollectionItemArray []GetManagedDatabaseAddmTasksAddmTasksCollectionItemInput
+
+func (GetManagedDatabaseAddmTasksAddmTasksCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseAddmTasksAddmTasksCollectionItem)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseAddmTasksAddmTasksCollectionItemArray) ToGetManagedDatabaseAddmTasksAddmTasksCollectionItemArrayOutput() GetManagedDatabaseAddmTasksAddmTasksCollectionItemArrayOutput {
+	return i.ToGetManagedDatabaseAddmTasksAddmTasksCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseAddmTasksAddmTasksCollectionItemArray) ToGetManagedDatabaseAddmTasksAddmTasksCollectionItemArrayOutputWithContext(ctx context.Context) GetManagedDatabaseAddmTasksAddmTasksCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseAddmTasksAddmTasksCollectionItemArrayOutput)
+}
+
+type GetManagedDatabaseAddmTasksAddmTasksCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseAddmTasksAddmTasksCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseAddmTasksAddmTasksCollectionItem)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseAddmTasksAddmTasksCollectionItemOutput) ToGetManagedDatabaseAddmTasksAddmTasksCollectionItemOutput() GetManagedDatabaseAddmTasksAddmTasksCollectionItemOutput {
+	return o
+}
+
+func (o GetManagedDatabaseAddmTasksAddmTasksCollectionItemOutput) ToGetManagedDatabaseAddmTasksAddmTasksCollectionItemOutputWithContext(ctx context.Context) GetManagedDatabaseAddmTasksAddmTasksCollectionItemOutput {
+	return o
+}
+
+// The ID number of the beginning AWR snapshot.
+func (o GetManagedDatabaseAddmTasksAddmTasksCollectionItemOutput) BeginSnapshotId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseAddmTasksAddmTasksCollectionItem) string { return v.BeginSnapshotId }).(pulumi.StringOutput)
+}
+
+// The database user who owns the ADDM task.
+func (o GetManagedDatabaseAddmTasksAddmTasksCollectionItemOutput) DbUser() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseAddmTasksAddmTasksCollectionItem) string { return v.DbUser }).(pulumi.StringOutput)
+}
+
+// The description of the ADDM task.
+func (o GetManagedDatabaseAddmTasksAddmTasksCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseAddmTasksAddmTasksCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The ID number of the ending AWR snapshot.
+func (o GetManagedDatabaseAddmTasksAddmTasksCollectionItemOutput) EndSnapshotId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseAddmTasksAddmTasksCollectionItem) string { return v.EndSnapshotId }).(pulumi.StringOutput)
+}
+
+// The timestamp of the ending AWR snapshot used in the ADDM task as defined by date-time RFC3339 format.
+func (o GetManagedDatabaseAddmTasksAddmTasksCollectionItemOutput) EndSnapshotTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseAddmTasksAddmTasksCollectionItem) string { return v.EndSnapshotTime }).(pulumi.StringOutput)
+}
+
+// The number of ADDM findings.
+func (o GetManagedDatabaseAddmTasksAddmTasksCollectionItemOutput) Findings() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseAddmTasksAddmTasksCollectionItem) string { return v.Findings }).(pulumi.StringOutput)
+}
+
+// A description of how the task was created.
+func (o GetManagedDatabaseAddmTasksAddmTasksCollectionItemOutput) HowCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseAddmTasksAddmTasksCollectionItem) string { return v.HowCreated }).(pulumi.StringOutput)
+}
+
+// The timestamp of the beginning AWR snapshot used in the ADDM task as defined by date-time RFC3339 format.
+func (o GetManagedDatabaseAddmTasksAddmTasksCollectionItemOutput) StartSnapshotTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseAddmTasksAddmTasksCollectionItem) string { return v.StartSnapshotTime }).(pulumi.StringOutput)
+}
+
+// The status of the ADDM task.
+func (o GetManagedDatabaseAddmTasksAddmTasksCollectionItemOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseAddmTasksAddmTasksCollectionItem) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// The ID number of the ADDM task.
+func (o GetManagedDatabaseAddmTasksAddmTasksCollectionItemOutput) TaskId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseAddmTasksAddmTasksCollectionItem) string { return v.TaskId }).(pulumi.StringOutput)
+}
+
+// The name of the ADDM task.
+func (o GetManagedDatabaseAddmTasksAddmTasksCollectionItemOutput) TaskName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseAddmTasksAddmTasksCollectionItem) string { return v.TaskName }).(pulumi.StringOutput)
+}
+
+// The creation date of the ADDM task.
+func (o GetManagedDatabaseAddmTasksAddmTasksCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseAddmTasksAddmTasksCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+type GetManagedDatabaseAddmTasksAddmTasksCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseAddmTasksAddmTasksCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseAddmTasksAddmTasksCollectionItem)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseAddmTasksAddmTasksCollectionItemArrayOutput) ToGetManagedDatabaseAddmTasksAddmTasksCollectionItemArrayOutput() GetManagedDatabaseAddmTasksAddmTasksCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseAddmTasksAddmTasksCollectionItemArrayOutput) ToGetManagedDatabaseAddmTasksAddmTasksCollectionItemArrayOutputWithContext(ctx context.Context) GetManagedDatabaseAddmTasksAddmTasksCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseAddmTasksAddmTasksCollectionItemArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseAddmTasksAddmTasksCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseAddmTasksAddmTasksCollectionItem {
+		return vs[0].([]GetManagedDatabaseAddmTasksAddmTasksCollectionItem)[vs[1].(int)]
+	}).(GetManagedDatabaseAddmTasksAddmTasksCollectionItemOutput)
+}
+
+type GetManagedDatabaseAddmTasksFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetManagedDatabaseAddmTasksFilterInput is an input type that accepts GetManagedDatabaseAddmTasksFilterArgs and GetManagedDatabaseAddmTasksFilterOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseAddmTasksFilterInput` via:
+//
+//          GetManagedDatabaseAddmTasksFilterArgs{...}
+type GetManagedDatabaseAddmTasksFilterInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseAddmTasksFilterOutput() GetManagedDatabaseAddmTasksFilterOutput
+	ToGetManagedDatabaseAddmTasksFilterOutputWithContext(context.Context) GetManagedDatabaseAddmTasksFilterOutput
+}
+
+type GetManagedDatabaseAddmTasksFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetManagedDatabaseAddmTasksFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseAddmTasksFilter)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseAddmTasksFilterArgs) ToGetManagedDatabaseAddmTasksFilterOutput() GetManagedDatabaseAddmTasksFilterOutput {
+	return i.ToGetManagedDatabaseAddmTasksFilterOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseAddmTasksFilterArgs) ToGetManagedDatabaseAddmTasksFilterOutputWithContext(ctx context.Context) GetManagedDatabaseAddmTasksFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseAddmTasksFilterOutput)
+}
+
+// GetManagedDatabaseAddmTasksFilterArrayInput is an input type that accepts GetManagedDatabaseAddmTasksFilterArray and GetManagedDatabaseAddmTasksFilterArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseAddmTasksFilterArrayInput` via:
+//
+//          GetManagedDatabaseAddmTasksFilterArray{ GetManagedDatabaseAddmTasksFilterArgs{...} }
+type GetManagedDatabaseAddmTasksFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseAddmTasksFilterArrayOutput() GetManagedDatabaseAddmTasksFilterArrayOutput
+	ToGetManagedDatabaseAddmTasksFilterArrayOutputWithContext(context.Context) GetManagedDatabaseAddmTasksFilterArrayOutput
+}
+
+type GetManagedDatabaseAddmTasksFilterArray []GetManagedDatabaseAddmTasksFilterInput
+
+func (GetManagedDatabaseAddmTasksFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseAddmTasksFilter)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseAddmTasksFilterArray) ToGetManagedDatabaseAddmTasksFilterArrayOutput() GetManagedDatabaseAddmTasksFilterArrayOutput {
+	return i.ToGetManagedDatabaseAddmTasksFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseAddmTasksFilterArray) ToGetManagedDatabaseAddmTasksFilterArrayOutputWithContext(ctx context.Context) GetManagedDatabaseAddmTasksFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseAddmTasksFilterArrayOutput)
+}
+
+type GetManagedDatabaseAddmTasksFilterOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseAddmTasksFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseAddmTasksFilter)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseAddmTasksFilterOutput) ToGetManagedDatabaseAddmTasksFilterOutput() GetManagedDatabaseAddmTasksFilterOutput {
+	return o
+}
+
+func (o GetManagedDatabaseAddmTasksFilterOutput) ToGetManagedDatabaseAddmTasksFilterOutputWithContext(ctx context.Context) GetManagedDatabaseAddmTasksFilterOutput {
+	return o
+}
+
+func (o GetManagedDatabaseAddmTasksFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseAddmTasksFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetManagedDatabaseAddmTasksFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseAddmTasksFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetManagedDatabaseAddmTasksFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagedDatabaseAddmTasksFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetManagedDatabaseAddmTasksFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseAddmTasksFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseAddmTasksFilter)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseAddmTasksFilterArrayOutput) ToGetManagedDatabaseAddmTasksFilterArrayOutput() GetManagedDatabaseAddmTasksFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseAddmTasksFilterArrayOutput) ToGetManagedDatabaseAddmTasksFilterArrayOutputWithContext(ctx context.Context) GetManagedDatabaseAddmTasksFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseAddmTasksFilterArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseAddmTasksFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseAddmTasksFilter {
+		return vs[0].([]GetManagedDatabaseAddmTasksFilter)[vs[1].(int)]
+	}).(GetManagedDatabaseAddmTasksFilterOutput)
+}
+
+type GetManagedDatabaseAlertLogCountItem struct {
+	// The category of different alert logs.
+	Category string `pulumi:"category"`
+	// The count of alert logs with specific category.
+	Count int `pulumi:"count"`
+}
+
+// GetManagedDatabaseAlertLogCountItemInput is an input type that accepts GetManagedDatabaseAlertLogCountItemArgs and GetManagedDatabaseAlertLogCountItemOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseAlertLogCountItemInput` via:
+//
+//          GetManagedDatabaseAlertLogCountItemArgs{...}
+type GetManagedDatabaseAlertLogCountItemInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseAlertLogCountItemOutput() GetManagedDatabaseAlertLogCountItemOutput
+	ToGetManagedDatabaseAlertLogCountItemOutputWithContext(context.Context) GetManagedDatabaseAlertLogCountItemOutput
+}
+
+type GetManagedDatabaseAlertLogCountItemArgs struct {
+	// The category of different alert logs.
+	Category pulumi.StringInput `pulumi:"category"`
+	// The count of alert logs with specific category.
+	Count pulumi.IntInput `pulumi:"count"`
+}
+
+func (GetManagedDatabaseAlertLogCountItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseAlertLogCountItem)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseAlertLogCountItemArgs) ToGetManagedDatabaseAlertLogCountItemOutput() GetManagedDatabaseAlertLogCountItemOutput {
+	return i.ToGetManagedDatabaseAlertLogCountItemOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseAlertLogCountItemArgs) ToGetManagedDatabaseAlertLogCountItemOutputWithContext(ctx context.Context) GetManagedDatabaseAlertLogCountItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseAlertLogCountItemOutput)
+}
+
+// GetManagedDatabaseAlertLogCountItemArrayInput is an input type that accepts GetManagedDatabaseAlertLogCountItemArray and GetManagedDatabaseAlertLogCountItemArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseAlertLogCountItemArrayInput` via:
+//
+//          GetManagedDatabaseAlertLogCountItemArray{ GetManagedDatabaseAlertLogCountItemArgs{...} }
+type GetManagedDatabaseAlertLogCountItemArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseAlertLogCountItemArrayOutput() GetManagedDatabaseAlertLogCountItemArrayOutput
+	ToGetManagedDatabaseAlertLogCountItemArrayOutputWithContext(context.Context) GetManagedDatabaseAlertLogCountItemArrayOutput
+}
+
+type GetManagedDatabaseAlertLogCountItemArray []GetManagedDatabaseAlertLogCountItemInput
+
+func (GetManagedDatabaseAlertLogCountItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseAlertLogCountItem)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseAlertLogCountItemArray) ToGetManagedDatabaseAlertLogCountItemArrayOutput() GetManagedDatabaseAlertLogCountItemArrayOutput {
+	return i.ToGetManagedDatabaseAlertLogCountItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseAlertLogCountItemArray) ToGetManagedDatabaseAlertLogCountItemArrayOutputWithContext(ctx context.Context) GetManagedDatabaseAlertLogCountItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseAlertLogCountItemArrayOutput)
+}
+
+type GetManagedDatabaseAlertLogCountItemOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseAlertLogCountItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseAlertLogCountItem)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseAlertLogCountItemOutput) ToGetManagedDatabaseAlertLogCountItemOutput() GetManagedDatabaseAlertLogCountItemOutput {
+	return o
+}
+
+func (o GetManagedDatabaseAlertLogCountItemOutput) ToGetManagedDatabaseAlertLogCountItemOutputWithContext(ctx context.Context) GetManagedDatabaseAlertLogCountItemOutput {
+	return o
+}
+
+// The category of different alert logs.
+func (o GetManagedDatabaseAlertLogCountItemOutput) Category() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseAlertLogCountItem) string { return v.Category }).(pulumi.StringOutput)
+}
+
+// The count of alert logs with specific category.
+func (o GetManagedDatabaseAlertLogCountItemOutput) Count() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagedDatabaseAlertLogCountItem) int { return v.Count }).(pulumi.IntOutput)
+}
+
+type GetManagedDatabaseAlertLogCountItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseAlertLogCountItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseAlertLogCountItem)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseAlertLogCountItemArrayOutput) ToGetManagedDatabaseAlertLogCountItemArrayOutput() GetManagedDatabaseAlertLogCountItemArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseAlertLogCountItemArrayOutput) ToGetManagedDatabaseAlertLogCountItemArrayOutputWithContext(ctx context.Context) GetManagedDatabaseAlertLogCountItemArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseAlertLogCountItemArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseAlertLogCountItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseAlertLogCountItem {
+		return vs[0].([]GetManagedDatabaseAlertLogCountItem)[vs[1].(int)]
+	}).(GetManagedDatabaseAlertLogCountItemOutput)
+}
+
+type GetManagedDatabaseAlertLogCountsAlertLogCountsCollection struct {
+	// An array of the counts of different urgency or type of alert logs.
+	Items []GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItem `pulumi:"items"`
+}
+
+// GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionInput is an input type that accepts GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionArgs and GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionInput` via:
+//
+//          GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionArgs{...}
+type GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseAlertLogCountsAlertLogCountsCollectionOutput() GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionOutput
+	ToGetManagedDatabaseAlertLogCountsAlertLogCountsCollectionOutputWithContext(context.Context) GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionOutput
+}
+
+type GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionArgs struct {
+	// An array of the counts of different urgency or type of alert logs.
+	Items GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseAlertLogCountsAlertLogCountsCollection)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionArgs) ToGetManagedDatabaseAlertLogCountsAlertLogCountsCollectionOutput() GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionOutput {
+	return i.ToGetManagedDatabaseAlertLogCountsAlertLogCountsCollectionOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionArgs) ToGetManagedDatabaseAlertLogCountsAlertLogCountsCollectionOutputWithContext(ctx context.Context) GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionOutput)
+}
+
+// GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionArrayInput is an input type that accepts GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionArray and GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionArrayInput` via:
+//
+//          GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionArray{ GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionArgs{...} }
+type GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseAlertLogCountsAlertLogCountsCollectionArrayOutput() GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionArrayOutput
+	ToGetManagedDatabaseAlertLogCountsAlertLogCountsCollectionArrayOutputWithContext(context.Context) GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionArrayOutput
+}
+
+type GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionArray []GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionInput
+
+func (GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseAlertLogCountsAlertLogCountsCollection)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionArray) ToGetManagedDatabaseAlertLogCountsAlertLogCountsCollectionArrayOutput() GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionArrayOutput {
+	return i.ToGetManagedDatabaseAlertLogCountsAlertLogCountsCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionArray) ToGetManagedDatabaseAlertLogCountsAlertLogCountsCollectionArrayOutputWithContext(ctx context.Context) GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionArrayOutput)
+}
+
+type GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseAlertLogCountsAlertLogCountsCollection)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionOutput) ToGetManagedDatabaseAlertLogCountsAlertLogCountsCollectionOutput() GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionOutput {
+	return o
+}
+
+func (o GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionOutput) ToGetManagedDatabaseAlertLogCountsAlertLogCountsCollectionOutputWithContext(ctx context.Context) GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionOutput {
+	return o
+}
+
+// An array of the counts of different urgency or type of alert logs.
+func (o GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionOutput) Items() GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetManagedDatabaseAlertLogCountsAlertLogCountsCollection) []GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItem {
+		return v.Items
+	}).(GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArrayOutput)
+}
+
+type GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseAlertLogCountsAlertLogCountsCollection)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionArrayOutput) ToGetManagedDatabaseAlertLogCountsAlertLogCountsCollectionArrayOutput() GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionArrayOutput) ToGetManagedDatabaseAlertLogCountsAlertLogCountsCollectionArrayOutputWithContext(ctx context.Context) GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseAlertLogCountsAlertLogCountsCollection {
+		return vs[0].([]GetManagedDatabaseAlertLogCountsAlertLogCountsCollection)[vs[1].(int)]
+	}).(GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionOutput)
+}
+
+type GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItem struct {
+	// The category of different alert logs.
+	Category string `pulumi:"category"`
+	// The count of alert logs with specific category.
+	Count int `pulumi:"count"`
+}
+
+// GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemInput is an input type that accepts GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArgs and GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemInput` via:
+//
+//          GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArgs{...}
+type GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemOutput() GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemOutput
+	ToGetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemOutputWithContext(context.Context) GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemOutput
+}
+
+type GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArgs struct {
+	// The category of different alert logs.
+	Category pulumi.StringInput `pulumi:"category"`
+	// The count of alert logs with specific category.
+	Count pulumi.IntInput `pulumi:"count"`
+}
+
+func (GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItem)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArgs) ToGetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemOutput() GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemOutput {
+	return i.ToGetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArgs) ToGetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemOutputWithContext(ctx context.Context) GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemOutput)
+}
+
+// GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArrayInput is an input type that accepts GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArray and GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArrayInput` via:
+//
+//          GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArray{ GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArgs{...} }
+type GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArrayOutput() GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArrayOutput
+	ToGetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArrayOutputWithContext(context.Context) GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArrayOutput
+}
+
+type GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArray []GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemInput
+
+func (GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItem)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArray) ToGetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArrayOutput() GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArrayOutput {
+	return i.ToGetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArray) ToGetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArrayOutputWithContext(ctx context.Context) GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArrayOutput)
+}
+
+type GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItem)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemOutput) ToGetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemOutput() GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemOutput {
+	return o
+}
+
+func (o GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemOutput) ToGetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemOutputWithContext(ctx context.Context) GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemOutput {
+	return o
+}
+
+// The category of different alert logs.
+func (o GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemOutput) Category() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItem) string { return v.Category }).(pulumi.StringOutput)
+}
+
+// The count of alert logs with specific category.
+func (o GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemOutput) Count() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItem) int { return v.Count }).(pulumi.IntOutput)
+}
+
+type GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItem)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArrayOutput) ToGetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArrayOutput() GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArrayOutput) ToGetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArrayOutputWithContext(ctx context.Context) GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItem {
+		return vs[0].([]GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItem)[vs[1].(int)]
+	}).(GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemOutput)
+}
+
+type GetManagedDatabaseAlertLogCountsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetManagedDatabaseAlertLogCountsFilterInput is an input type that accepts GetManagedDatabaseAlertLogCountsFilterArgs and GetManagedDatabaseAlertLogCountsFilterOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseAlertLogCountsFilterInput` via:
+//
+//          GetManagedDatabaseAlertLogCountsFilterArgs{...}
+type GetManagedDatabaseAlertLogCountsFilterInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseAlertLogCountsFilterOutput() GetManagedDatabaseAlertLogCountsFilterOutput
+	ToGetManagedDatabaseAlertLogCountsFilterOutputWithContext(context.Context) GetManagedDatabaseAlertLogCountsFilterOutput
+}
+
+type GetManagedDatabaseAlertLogCountsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetManagedDatabaseAlertLogCountsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseAlertLogCountsFilter)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseAlertLogCountsFilterArgs) ToGetManagedDatabaseAlertLogCountsFilterOutput() GetManagedDatabaseAlertLogCountsFilterOutput {
+	return i.ToGetManagedDatabaseAlertLogCountsFilterOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseAlertLogCountsFilterArgs) ToGetManagedDatabaseAlertLogCountsFilterOutputWithContext(ctx context.Context) GetManagedDatabaseAlertLogCountsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseAlertLogCountsFilterOutput)
+}
+
+// GetManagedDatabaseAlertLogCountsFilterArrayInput is an input type that accepts GetManagedDatabaseAlertLogCountsFilterArray and GetManagedDatabaseAlertLogCountsFilterArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseAlertLogCountsFilterArrayInput` via:
+//
+//          GetManagedDatabaseAlertLogCountsFilterArray{ GetManagedDatabaseAlertLogCountsFilterArgs{...} }
+type GetManagedDatabaseAlertLogCountsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseAlertLogCountsFilterArrayOutput() GetManagedDatabaseAlertLogCountsFilterArrayOutput
+	ToGetManagedDatabaseAlertLogCountsFilterArrayOutputWithContext(context.Context) GetManagedDatabaseAlertLogCountsFilterArrayOutput
+}
+
+type GetManagedDatabaseAlertLogCountsFilterArray []GetManagedDatabaseAlertLogCountsFilterInput
+
+func (GetManagedDatabaseAlertLogCountsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseAlertLogCountsFilter)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseAlertLogCountsFilterArray) ToGetManagedDatabaseAlertLogCountsFilterArrayOutput() GetManagedDatabaseAlertLogCountsFilterArrayOutput {
+	return i.ToGetManagedDatabaseAlertLogCountsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseAlertLogCountsFilterArray) ToGetManagedDatabaseAlertLogCountsFilterArrayOutputWithContext(ctx context.Context) GetManagedDatabaseAlertLogCountsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseAlertLogCountsFilterArrayOutput)
+}
+
+type GetManagedDatabaseAlertLogCountsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseAlertLogCountsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseAlertLogCountsFilter)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseAlertLogCountsFilterOutput) ToGetManagedDatabaseAlertLogCountsFilterOutput() GetManagedDatabaseAlertLogCountsFilterOutput {
+	return o
+}
+
+func (o GetManagedDatabaseAlertLogCountsFilterOutput) ToGetManagedDatabaseAlertLogCountsFilterOutputWithContext(ctx context.Context) GetManagedDatabaseAlertLogCountsFilterOutput {
+	return o
+}
+
+func (o GetManagedDatabaseAlertLogCountsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseAlertLogCountsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetManagedDatabaseAlertLogCountsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseAlertLogCountsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetManagedDatabaseAlertLogCountsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagedDatabaseAlertLogCountsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetManagedDatabaseAlertLogCountsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseAlertLogCountsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseAlertLogCountsFilter)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseAlertLogCountsFilterArrayOutput) ToGetManagedDatabaseAlertLogCountsFilterArrayOutput() GetManagedDatabaseAlertLogCountsFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseAlertLogCountsFilterArrayOutput) ToGetManagedDatabaseAlertLogCountsFilterArrayOutputWithContext(ctx context.Context) GetManagedDatabaseAlertLogCountsFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseAlertLogCountsFilterArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseAlertLogCountsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseAlertLogCountsFilter {
+		return vs[0].([]GetManagedDatabaseAlertLogCountsFilter)[vs[1].(int)]
+	}).(GetManagedDatabaseAlertLogCountsFilterOutput)
+}
+
+type GetManagedDatabaseAttentionLogCountItem struct {
+	// The category of different attention logs.
+	Category string `pulumi:"category"`
+	// The count of attention logs with specific category.
+	Count int `pulumi:"count"`
+}
+
+// GetManagedDatabaseAttentionLogCountItemInput is an input type that accepts GetManagedDatabaseAttentionLogCountItemArgs and GetManagedDatabaseAttentionLogCountItemOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseAttentionLogCountItemInput` via:
+//
+//          GetManagedDatabaseAttentionLogCountItemArgs{...}
+type GetManagedDatabaseAttentionLogCountItemInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseAttentionLogCountItemOutput() GetManagedDatabaseAttentionLogCountItemOutput
+	ToGetManagedDatabaseAttentionLogCountItemOutputWithContext(context.Context) GetManagedDatabaseAttentionLogCountItemOutput
+}
+
+type GetManagedDatabaseAttentionLogCountItemArgs struct {
+	// The category of different attention logs.
+	Category pulumi.StringInput `pulumi:"category"`
+	// The count of attention logs with specific category.
+	Count pulumi.IntInput `pulumi:"count"`
+}
+
+func (GetManagedDatabaseAttentionLogCountItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseAttentionLogCountItem)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseAttentionLogCountItemArgs) ToGetManagedDatabaseAttentionLogCountItemOutput() GetManagedDatabaseAttentionLogCountItemOutput {
+	return i.ToGetManagedDatabaseAttentionLogCountItemOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseAttentionLogCountItemArgs) ToGetManagedDatabaseAttentionLogCountItemOutputWithContext(ctx context.Context) GetManagedDatabaseAttentionLogCountItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseAttentionLogCountItemOutput)
+}
+
+// GetManagedDatabaseAttentionLogCountItemArrayInput is an input type that accepts GetManagedDatabaseAttentionLogCountItemArray and GetManagedDatabaseAttentionLogCountItemArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseAttentionLogCountItemArrayInput` via:
+//
+//          GetManagedDatabaseAttentionLogCountItemArray{ GetManagedDatabaseAttentionLogCountItemArgs{...} }
+type GetManagedDatabaseAttentionLogCountItemArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseAttentionLogCountItemArrayOutput() GetManagedDatabaseAttentionLogCountItemArrayOutput
+	ToGetManagedDatabaseAttentionLogCountItemArrayOutputWithContext(context.Context) GetManagedDatabaseAttentionLogCountItemArrayOutput
+}
+
+type GetManagedDatabaseAttentionLogCountItemArray []GetManagedDatabaseAttentionLogCountItemInput
+
+func (GetManagedDatabaseAttentionLogCountItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseAttentionLogCountItem)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseAttentionLogCountItemArray) ToGetManagedDatabaseAttentionLogCountItemArrayOutput() GetManagedDatabaseAttentionLogCountItemArrayOutput {
+	return i.ToGetManagedDatabaseAttentionLogCountItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseAttentionLogCountItemArray) ToGetManagedDatabaseAttentionLogCountItemArrayOutputWithContext(ctx context.Context) GetManagedDatabaseAttentionLogCountItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseAttentionLogCountItemArrayOutput)
+}
+
+type GetManagedDatabaseAttentionLogCountItemOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseAttentionLogCountItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseAttentionLogCountItem)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseAttentionLogCountItemOutput) ToGetManagedDatabaseAttentionLogCountItemOutput() GetManagedDatabaseAttentionLogCountItemOutput {
+	return o
+}
+
+func (o GetManagedDatabaseAttentionLogCountItemOutput) ToGetManagedDatabaseAttentionLogCountItemOutputWithContext(ctx context.Context) GetManagedDatabaseAttentionLogCountItemOutput {
+	return o
+}
+
+// The category of different attention logs.
+func (o GetManagedDatabaseAttentionLogCountItemOutput) Category() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseAttentionLogCountItem) string { return v.Category }).(pulumi.StringOutput)
+}
+
+// The count of attention logs with specific category.
+func (o GetManagedDatabaseAttentionLogCountItemOutput) Count() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagedDatabaseAttentionLogCountItem) int { return v.Count }).(pulumi.IntOutput)
+}
+
+type GetManagedDatabaseAttentionLogCountItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseAttentionLogCountItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseAttentionLogCountItem)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseAttentionLogCountItemArrayOutput) ToGetManagedDatabaseAttentionLogCountItemArrayOutput() GetManagedDatabaseAttentionLogCountItemArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseAttentionLogCountItemArrayOutput) ToGetManagedDatabaseAttentionLogCountItemArrayOutputWithContext(ctx context.Context) GetManagedDatabaseAttentionLogCountItemArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseAttentionLogCountItemArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseAttentionLogCountItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseAttentionLogCountItem {
+		return vs[0].([]GetManagedDatabaseAttentionLogCountItem)[vs[1].(int)]
+	}).(GetManagedDatabaseAttentionLogCountItemOutput)
+}
+
+type GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollection struct {
+	// An array of the counts of different urgency or type of attention logs.
+	Items []GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItem `pulumi:"items"`
+}
+
+// GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionInput is an input type that accepts GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionArgs and GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionInput` via:
+//
+//          GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionArgs{...}
+type GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionOutput() GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionOutput
+	ToGetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionOutputWithContext(context.Context) GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionOutput
+}
+
+type GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionArgs struct {
+	// An array of the counts of different urgency or type of attention logs.
+	Items GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollection)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionArgs) ToGetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionOutput() GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionOutput {
+	return i.ToGetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionArgs) ToGetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionOutputWithContext(ctx context.Context) GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionOutput)
+}
+
+// GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionArrayInput is an input type that accepts GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionArray and GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionArrayInput` via:
+//
+//          GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionArray{ GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionArgs{...} }
+type GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionArrayOutput() GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionArrayOutput
+	ToGetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionArrayOutputWithContext(context.Context) GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionArrayOutput
+}
+
+type GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionArray []GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionInput
+
+func (GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollection)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionArray) ToGetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionArrayOutput() GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionArrayOutput {
+	return i.ToGetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionArray) ToGetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionArrayOutputWithContext(ctx context.Context) GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionArrayOutput)
+}
+
+type GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollection)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionOutput) ToGetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionOutput() GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionOutput {
+	return o
+}
+
+func (o GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionOutput) ToGetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionOutputWithContext(ctx context.Context) GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionOutput {
+	return o
+}
+
+// An array of the counts of different urgency or type of attention logs.
+func (o GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionOutput) Items() GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollection) []GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItem {
+		return v.Items
+	}).(GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArrayOutput)
+}
+
+type GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollection)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionArrayOutput) ToGetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionArrayOutput() GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionArrayOutput) ToGetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionArrayOutputWithContext(ctx context.Context) GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollection {
+		return vs[0].([]GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollection)[vs[1].(int)]
+	}).(GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionOutput)
+}
+
+type GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItem struct {
+	// The category of different attention logs.
+	Category string `pulumi:"category"`
+	// The count of attention logs with specific category.
+	Count int `pulumi:"count"`
+}
+
+// GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemInput is an input type that accepts GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArgs and GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemInput` via:
+//
+//          GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArgs{...}
+type GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemOutput() GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemOutput
+	ToGetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemOutputWithContext(context.Context) GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemOutput
+}
+
+type GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArgs struct {
+	// The category of different attention logs.
+	Category pulumi.StringInput `pulumi:"category"`
+	// The count of attention logs with specific category.
+	Count pulumi.IntInput `pulumi:"count"`
+}
+
+func (GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItem)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArgs) ToGetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemOutput() GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemOutput {
+	return i.ToGetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArgs) ToGetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemOutputWithContext(ctx context.Context) GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemOutput)
+}
+
+// GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArrayInput is an input type that accepts GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArray and GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArrayInput` via:
+//
+//          GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArray{ GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArgs{...} }
+type GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArrayOutput() GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArrayOutput
+	ToGetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArrayOutputWithContext(context.Context) GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArrayOutput
+}
+
+type GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArray []GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemInput
+
+func (GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItem)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArray) ToGetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArrayOutput() GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArrayOutput {
+	return i.ToGetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArray) ToGetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArrayOutputWithContext(ctx context.Context) GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArrayOutput)
+}
+
+type GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItem)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemOutput) ToGetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemOutput() GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemOutput {
+	return o
+}
+
+func (o GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemOutput) ToGetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemOutputWithContext(ctx context.Context) GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemOutput {
+	return o
+}
+
+// The category of different attention logs.
+func (o GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemOutput) Category() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItem) string { return v.Category }).(pulumi.StringOutput)
+}
+
+// The count of attention logs with specific category.
+func (o GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemOutput) Count() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItem) int { return v.Count }).(pulumi.IntOutput)
+}
+
+type GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItem)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArrayOutput) ToGetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArrayOutput() GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArrayOutput) ToGetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArrayOutputWithContext(ctx context.Context) GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItem {
+		return vs[0].([]GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItem)[vs[1].(int)]
+	}).(GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemOutput)
+}
+
+type GetManagedDatabaseAttentionLogCountsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetManagedDatabaseAttentionLogCountsFilterInput is an input type that accepts GetManagedDatabaseAttentionLogCountsFilterArgs and GetManagedDatabaseAttentionLogCountsFilterOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseAttentionLogCountsFilterInput` via:
+//
+//          GetManagedDatabaseAttentionLogCountsFilterArgs{...}
+type GetManagedDatabaseAttentionLogCountsFilterInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseAttentionLogCountsFilterOutput() GetManagedDatabaseAttentionLogCountsFilterOutput
+	ToGetManagedDatabaseAttentionLogCountsFilterOutputWithContext(context.Context) GetManagedDatabaseAttentionLogCountsFilterOutput
+}
+
+type GetManagedDatabaseAttentionLogCountsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetManagedDatabaseAttentionLogCountsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseAttentionLogCountsFilter)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseAttentionLogCountsFilterArgs) ToGetManagedDatabaseAttentionLogCountsFilterOutput() GetManagedDatabaseAttentionLogCountsFilterOutput {
+	return i.ToGetManagedDatabaseAttentionLogCountsFilterOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseAttentionLogCountsFilterArgs) ToGetManagedDatabaseAttentionLogCountsFilterOutputWithContext(ctx context.Context) GetManagedDatabaseAttentionLogCountsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseAttentionLogCountsFilterOutput)
+}
+
+// GetManagedDatabaseAttentionLogCountsFilterArrayInput is an input type that accepts GetManagedDatabaseAttentionLogCountsFilterArray and GetManagedDatabaseAttentionLogCountsFilterArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseAttentionLogCountsFilterArrayInput` via:
+//
+//          GetManagedDatabaseAttentionLogCountsFilterArray{ GetManagedDatabaseAttentionLogCountsFilterArgs{...} }
+type GetManagedDatabaseAttentionLogCountsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseAttentionLogCountsFilterArrayOutput() GetManagedDatabaseAttentionLogCountsFilterArrayOutput
+	ToGetManagedDatabaseAttentionLogCountsFilterArrayOutputWithContext(context.Context) GetManagedDatabaseAttentionLogCountsFilterArrayOutput
+}
+
+type GetManagedDatabaseAttentionLogCountsFilterArray []GetManagedDatabaseAttentionLogCountsFilterInput
+
+func (GetManagedDatabaseAttentionLogCountsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseAttentionLogCountsFilter)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseAttentionLogCountsFilterArray) ToGetManagedDatabaseAttentionLogCountsFilterArrayOutput() GetManagedDatabaseAttentionLogCountsFilterArrayOutput {
+	return i.ToGetManagedDatabaseAttentionLogCountsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseAttentionLogCountsFilterArray) ToGetManagedDatabaseAttentionLogCountsFilterArrayOutputWithContext(ctx context.Context) GetManagedDatabaseAttentionLogCountsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseAttentionLogCountsFilterArrayOutput)
+}
+
+type GetManagedDatabaseAttentionLogCountsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseAttentionLogCountsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseAttentionLogCountsFilter)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseAttentionLogCountsFilterOutput) ToGetManagedDatabaseAttentionLogCountsFilterOutput() GetManagedDatabaseAttentionLogCountsFilterOutput {
+	return o
+}
+
+func (o GetManagedDatabaseAttentionLogCountsFilterOutput) ToGetManagedDatabaseAttentionLogCountsFilterOutputWithContext(ctx context.Context) GetManagedDatabaseAttentionLogCountsFilterOutput {
+	return o
+}
+
+func (o GetManagedDatabaseAttentionLogCountsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseAttentionLogCountsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetManagedDatabaseAttentionLogCountsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseAttentionLogCountsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetManagedDatabaseAttentionLogCountsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagedDatabaseAttentionLogCountsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetManagedDatabaseAttentionLogCountsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseAttentionLogCountsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseAttentionLogCountsFilter)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseAttentionLogCountsFilterArrayOutput) ToGetManagedDatabaseAttentionLogCountsFilterArrayOutput() GetManagedDatabaseAttentionLogCountsFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseAttentionLogCountsFilterArrayOutput) ToGetManagedDatabaseAttentionLogCountsFilterArrayOutputWithContext(ctx context.Context) GetManagedDatabaseAttentionLogCountsFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseAttentionLogCountsFilterArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseAttentionLogCountsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseAttentionLogCountsFilter {
+		return vs[0].([]GetManagedDatabaseAttentionLogCountsFilter)[vs[1].(int)]
+	}).(GetManagedDatabaseAttentionLogCountsFilterOutput)
+}
+
 type GetManagedDatabaseGroupManagedDatabase struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
 	CompartmentId string `pulumi:"compartmentId"`
@@ -4070,6 +5501,8 @@ type GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItem struct {
 	Finding string `pulumi:"finding"`
 	// Action sql to be implemented based on the recommendation result.
 	ImplementActionSql string `pulumi:"implementActionSql"`
+	// Indicates whether a SQL Profile recommendation uses parallel execution.
+	IsParallelExecution bool `pulumi:"isParallelExecution"`
 	// Describes the reasoning behind the recommendation and how it relates to the finding.
 	Rationale string `pulumi:"rationale"`
 	// The recommendation for a specific finding.
@@ -4102,6 +5535,8 @@ type GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItemArgs struct {
 	Finding pulumi.StringInput `pulumi:"finding"`
 	// Action sql to be implemented based on the recommendation result.
 	ImplementActionSql pulumi.StringInput `pulumi:"implementActionSql"`
+	// Indicates whether a SQL Profile recommendation uses parallel execution.
+	IsParallelExecution pulumi.BoolInput `pulumi:"isParallelExecution"`
 	// Describes the reasoning behind the recommendation and how it relates to the finding.
 	Rationale pulumi.StringInput `pulumi:"rationale"`
 	// The recommendation for a specific finding.
@@ -4180,6 +5615,11 @@ func (o GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItemOutput) Finding
 // Action sql to be implemented based on the recommendation result.
 func (o GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItemOutput) ImplementActionSql() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItem) string { return v.ImplementActionSql }).(pulumi.StringOutput)
+}
+
+// Indicates whether a SQL Profile recommendation uses parallel execution.
+func (o GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItemOutput) IsParallelExecution() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItem) bool { return v.IsParallelExecution }).(pulumi.BoolOutput)
 }
 
 // Describes the reasoning behind the recommendation and how it relates to the finding.
@@ -4448,6 +5888,8 @@ type GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskR
 	Finding string `pulumi:"finding"`
 	// Action sql to be implemented based on the recommendation result.
 	ImplementActionSql string `pulumi:"implementActionSql"`
+	// Indicates whether a SQL Profile recommendation uses parallel execution.
+	IsParallelExecution bool `pulumi:"isParallelExecution"`
 	// Describes the reasoning behind the recommendation and how it relates to the finding.
 	Rationale string `pulumi:"rationale"`
 	// The recommendation for a specific finding.
@@ -4480,6 +5922,8 @@ type GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskR
 	Finding pulumi.StringInput `pulumi:"finding"`
 	// Action sql to be implemented based on the recommendation result.
 	ImplementActionSql pulumi.StringInput `pulumi:"implementActionSql"`
+	// Indicates whether a SQL Profile recommendation uses parallel execution.
+	IsParallelExecution pulumi.BoolInput `pulumi:"isParallelExecution"`
 	// Describes the reasoning behind the recommendation and how it relates to the finding.
 	Rationale pulumi.StringInput `pulumi:"rationale"`
 	// The recommendation for a specific finding.
@@ -4564,6 +6008,13 @@ func (o GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTa
 	return o.ApplyT(func(v GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollectionItem) string {
 		return v.ImplementActionSql
 	}).(pulumi.StringOutput)
+}
+
+// Indicates whether a SQL Profile recommendation uses parallel execution.
+func (o GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollectionItemOutput) IsParallelExecution() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollectionItem) bool {
+		return v.IsParallelExecution
+	}).(pulumi.BoolOutput)
 }
 
 // Describes the reasoning behind the recommendation and how it relates to the finding.
@@ -6287,6 +7738,462 @@ func (o GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfoArrayOutput)
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfo {
 		return vs[0].([]GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfo)[vs[1].(int)]
 	}).(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfoOutput)
+}
+
+type GetManagedDatabaseSqlTuningSetItem struct {
+	// The description of the SQL tuning set.
+	Description string `pulumi:"description"`
+	// The name of the SQL tuning set.
+	Name string `pulumi:"name"`
+	// The owner of the SQL tuning set.
+	Owner string `pulumi:"owner"`
+	// The number of SQL statements in the SQL tuning set.
+	StatementCounts int `pulumi:"statementCounts"`
+}
+
+// GetManagedDatabaseSqlTuningSetItemInput is an input type that accepts GetManagedDatabaseSqlTuningSetItemArgs and GetManagedDatabaseSqlTuningSetItemOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseSqlTuningSetItemInput` via:
+//
+//          GetManagedDatabaseSqlTuningSetItemArgs{...}
+type GetManagedDatabaseSqlTuningSetItemInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseSqlTuningSetItemOutput() GetManagedDatabaseSqlTuningSetItemOutput
+	ToGetManagedDatabaseSqlTuningSetItemOutputWithContext(context.Context) GetManagedDatabaseSqlTuningSetItemOutput
+}
+
+type GetManagedDatabaseSqlTuningSetItemArgs struct {
+	// The description of the SQL tuning set.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The name of the SQL tuning set.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The owner of the SQL tuning set.
+	Owner pulumi.StringInput `pulumi:"owner"`
+	// The number of SQL statements in the SQL tuning set.
+	StatementCounts pulumi.IntInput `pulumi:"statementCounts"`
+}
+
+func (GetManagedDatabaseSqlTuningSetItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseSqlTuningSetItem)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseSqlTuningSetItemArgs) ToGetManagedDatabaseSqlTuningSetItemOutput() GetManagedDatabaseSqlTuningSetItemOutput {
+	return i.ToGetManagedDatabaseSqlTuningSetItemOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseSqlTuningSetItemArgs) ToGetManagedDatabaseSqlTuningSetItemOutputWithContext(ctx context.Context) GetManagedDatabaseSqlTuningSetItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseSqlTuningSetItemOutput)
+}
+
+// GetManagedDatabaseSqlTuningSetItemArrayInput is an input type that accepts GetManagedDatabaseSqlTuningSetItemArray and GetManagedDatabaseSqlTuningSetItemArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseSqlTuningSetItemArrayInput` via:
+//
+//          GetManagedDatabaseSqlTuningSetItemArray{ GetManagedDatabaseSqlTuningSetItemArgs{...} }
+type GetManagedDatabaseSqlTuningSetItemArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseSqlTuningSetItemArrayOutput() GetManagedDatabaseSqlTuningSetItemArrayOutput
+	ToGetManagedDatabaseSqlTuningSetItemArrayOutputWithContext(context.Context) GetManagedDatabaseSqlTuningSetItemArrayOutput
+}
+
+type GetManagedDatabaseSqlTuningSetItemArray []GetManagedDatabaseSqlTuningSetItemInput
+
+func (GetManagedDatabaseSqlTuningSetItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseSqlTuningSetItem)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseSqlTuningSetItemArray) ToGetManagedDatabaseSqlTuningSetItemArrayOutput() GetManagedDatabaseSqlTuningSetItemArrayOutput {
+	return i.ToGetManagedDatabaseSqlTuningSetItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseSqlTuningSetItemArray) ToGetManagedDatabaseSqlTuningSetItemArrayOutputWithContext(ctx context.Context) GetManagedDatabaseSqlTuningSetItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseSqlTuningSetItemArrayOutput)
+}
+
+type GetManagedDatabaseSqlTuningSetItemOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseSqlTuningSetItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseSqlTuningSetItem)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseSqlTuningSetItemOutput) ToGetManagedDatabaseSqlTuningSetItemOutput() GetManagedDatabaseSqlTuningSetItemOutput {
+	return o
+}
+
+func (o GetManagedDatabaseSqlTuningSetItemOutput) ToGetManagedDatabaseSqlTuningSetItemOutputWithContext(ctx context.Context) GetManagedDatabaseSqlTuningSetItemOutput {
+	return o
+}
+
+// The description of the SQL tuning set.
+func (o GetManagedDatabaseSqlTuningSetItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlTuningSetItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The name of the SQL tuning set.
+func (o GetManagedDatabaseSqlTuningSetItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlTuningSetItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The owner of the SQL tuning set.
+func (o GetManagedDatabaseSqlTuningSetItemOutput) Owner() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlTuningSetItem) string { return v.Owner }).(pulumi.StringOutput)
+}
+
+// The number of SQL statements in the SQL tuning set.
+func (o GetManagedDatabaseSqlTuningSetItemOutput) StatementCounts() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlTuningSetItem) int { return v.StatementCounts }).(pulumi.IntOutput)
+}
+
+type GetManagedDatabaseSqlTuningSetItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseSqlTuningSetItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseSqlTuningSetItem)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseSqlTuningSetItemArrayOutput) ToGetManagedDatabaseSqlTuningSetItemArrayOutput() GetManagedDatabaseSqlTuningSetItemArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseSqlTuningSetItemArrayOutput) ToGetManagedDatabaseSqlTuningSetItemArrayOutputWithContext(ctx context.Context) GetManagedDatabaseSqlTuningSetItemArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseSqlTuningSetItemArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseSqlTuningSetItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseSqlTuningSetItem {
+		return vs[0].([]GetManagedDatabaseSqlTuningSetItem)[vs[1].(int)]
+	}).(GetManagedDatabaseSqlTuningSetItemOutput)
+}
+
+type GetManagedDatabaseSqlTuningSetsFilter struct {
+	// The name of the SQL tuning set.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetManagedDatabaseSqlTuningSetsFilterInput is an input type that accepts GetManagedDatabaseSqlTuningSetsFilterArgs and GetManagedDatabaseSqlTuningSetsFilterOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseSqlTuningSetsFilterInput` via:
+//
+//          GetManagedDatabaseSqlTuningSetsFilterArgs{...}
+type GetManagedDatabaseSqlTuningSetsFilterInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseSqlTuningSetsFilterOutput() GetManagedDatabaseSqlTuningSetsFilterOutput
+	ToGetManagedDatabaseSqlTuningSetsFilterOutputWithContext(context.Context) GetManagedDatabaseSqlTuningSetsFilterOutput
+}
+
+type GetManagedDatabaseSqlTuningSetsFilterArgs struct {
+	// The name of the SQL tuning set.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetManagedDatabaseSqlTuningSetsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseSqlTuningSetsFilter)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseSqlTuningSetsFilterArgs) ToGetManagedDatabaseSqlTuningSetsFilterOutput() GetManagedDatabaseSqlTuningSetsFilterOutput {
+	return i.ToGetManagedDatabaseSqlTuningSetsFilterOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseSqlTuningSetsFilterArgs) ToGetManagedDatabaseSqlTuningSetsFilterOutputWithContext(ctx context.Context) GetManagedDatabaseSqlTuningSetsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseSqlTuningSetsFilterOutput)
+}
+
+// GetManagedDatabaseSqlTuningSetsFilterArrayInput is an input type that accepts GetManagedDatabaseSqlTuningSetsFilterArray and GetManagedDatabaseSqlTuningSetsFilterArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseSqlTuningSetsFilterArrayInput` via:
+//
+//          GetManagedDatabaseSqlTuningSetsFilterArray{ GetManagedDatabaseSqlTuningSetsFilterArgs{...} }
+type GetManagedDatabaseSqlTuningSetsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseSqlTuningSetsFilterArrayOutput() GetManagedDatabaseSqlTuningSetsFilterArrayOutput
+	ToGetManagedDatabaseSqlTuningSetsFilterArrayOutputWithContext(context.Context) GetManagedDatabaseSqlTuningSetsFilterArrayOutput
+}
+
+type GetManagedDatabaseSqlTuningSetsFilterArray []GetManagedDatabaseSqlTuningSetsFilterInput
+
+func (GetManagedDatabaseSqlTuningSetsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseSqlTuningSetsFilter)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseSqlTuningSetsFilterArray) ToGetManagedDatabaseSqlTuningSetsFilterArrayOutput() GetManagedDatabaseSqlTuningSetsFilterArrayOutput {
+	return i.ToGetManagedDatabaseSqlTuningSetsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseSqlTuningSetsFilterArray) ToGetManagedDatabaseSqlTuningSetsFilterArrayOutputWithContext(ctx context.Context) GetManagedDatabaseSqlTuningSetsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseSqlTuningSetsFilterArrayOutput)
+}
+
+type GetManagedDatabaseSqlTuningSetsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseSqlTuningSetsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseSqlTuningSetsFilter)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseSqlTuningSetsFilterOutput) ToGetManagedDatabaseSqlTuningSetsFilterOutput() GetManagedDatabaseSqlTuningSetsFilterOutput {
+	return o
+}
+
+func (o GetManagedDatabaseSqlTuningSetsFilterOutput) ToGetManagedDatabaseSqlTuningSetsFilterOutputWithContext(ctx context.Context) GetManagedDatabaseSqlTuningSetsFilterOutput {
+	return o
+}
+
+// The name of the SQL tuning set.
+func (o GetManagedDatabaseSqlTuningSetsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlTuningSetsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetManagedDatabaseSqlTuningSetsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlTuningSetsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetManagedDatabaseSqlTuningSetsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlTuningSetsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetManagedDatabaseSqlTuningSetsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseSqlTuningSetsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseSqlTuningSetsFilter)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseSqlTuningSetsFilterArrayOutput) ToGetManagedDatabaseSqlTuningSetsFilterArrayOutput() GetManagedDatabaseSqlTuningSetsFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseSqlTuningSetsFilterArrayOutput) ToGetManagedDatabaseSqlTuningSetsFilterArrayOutputWithContext(ctx context.Context) GetManagedDatabaseSqlTuningSetsFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseSqlTuningSetsFilterArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseSqlTuningSetsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseSqlTuningSetsFilter {
+		return vs[0].([]GetManagedDatabaseSqlTuningSetsFilter)[vs[1].(int)]
+	}).(GetManagedDatabaseSqlTuningSetsFilterOutput)
+}
+
+type GetManagedDatabaseSqlTuningSetsSqlTuningSetCollection struct {
+	// The details in the SQL tuning set summary.
+	Items []GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem `pulumi:"items"`
+}
+
+// GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionInput is an input type that accepts GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArgs and GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionInput` via:
+//
+//          GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArgs{...}
+type GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionOutput() GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionOutput
+	ToGetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionOutputWithContext(context.Context) GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionOutput
+}
+
+type GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArgs struct {
+	// The details in the SQL tuning set summary.
+	Items GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseSqlTuningSetsSqlTuningSetCollection)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArgs) ToGetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionOutput() GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionOutput {
+	return i.ToGetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArgs) ToGetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionOutputWithContext(ctx context.Context) GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionOutput)
+}
+
+// GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArrayInput is an input type that accepts GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArray and GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArrayInput` via:
+//
+//          GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArray{ GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArgs{...} }
+type GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArrayOutput() GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArrayOutput
+	ToGetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArrayOutputWithContext(context.Context) GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArrayOutput
+}
+
+type GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArray []GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionInput
+
+func (GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseSqlTuningSetsSqlTuningSetCollection)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArray) ToGetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArrayOutput() GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArrayOutput {
+	return i.ToGetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArray) ToGetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArrayOutputWithContext(ctx context.Context) GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArrayOutput)
+}
+
+type GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseSqlTuningSetsSqlTuningSetCollection)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionOutput) ToGetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionOutput() GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionOutput {
+	return o
+}
+
+func (o GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionOutput) ToGetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionOutputWithContext(ctx context.Context) GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionOutput {
+	return o
+}
+
+// The details in the SQL tuning set summary.
+func (o GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionOutput) Items() GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlTuningSetsSqlTuningSetCollection) []GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem {
+		return v.Items
+	}).(GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArrayOutput)
+}
+
+type GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseSqlTuningSetsSqlTuningSetCollection)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArrayOutput) ToGetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArrayOutput() GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArrayOutput) ToGetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArrayOutputWithContext(ctx context.Context) GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseSqlTuningSetsSqlTuningSetCollection {
+		return vs[0].([]GetManagedDatabaseSqlTuningSetsSqlTuningSetCollection)[vs[1].(int)]
+	}).(GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionOutput)
+}
+
+type GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem struct {
+	// The description of the SQL tuning set.
+	Description string `pulumi:"description"`
+	// The name of the SQL tuning set.
+	Name string `pulumi:"name"`
+	// The owner of the SQL tuning set.
+	Owner string `pulumi:"owner"`
+	// The number of SQL statements in the SQL tuning set.
+	StatementCounts int `pulumi:"statementCounts"`
+}
+
+// GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemInput is an input type that accepts GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArgs and GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemInput` via:
+//
+//          GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArgs{...}
+type GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemOutput() GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemOutput
+	ToGetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemOutputWithContext(context.Context) GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemOutput
+}
+
+type GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArgs struct {
+	// The description of the SQL tuning set.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The name of the SQL tuning set.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The owner of the SQL tuning set.
+	Owner pulumi.StringInput `pulumi:"owner"`
+	// The number of SQL statements in the SQL tuning set.
+	StatementCounts pulumi.IntInput `pulumi:"statementCounts"`
+}
+
+func (GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArgs) ToGetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemOutput() GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemOutput {
+	return i.ToGetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArgs) ToGetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemOutputWithContext(ctx context.Context) GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemOutput)
+}
+
+// GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArrayInput is an input type that accepts GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArray and GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArrayInput` via:
+//
+//          GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArray{ GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArgs{...} }
+type GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArrayOutput() GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArrayOutput
+	ToGetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArrayOutputWithContext(context.Context) GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArrayOutput
+}
+
+type GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArray []GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemInput
+
+func (GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem)(nil)).Elem()
+}
+
+func (i GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArray) ToGetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArrayOutput() GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArrayOutput {
+	return i.ToGetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArray) ToGetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArrayOutputWithContext(ctx context.Context) GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArrayOutput)
+}
+
+type GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemOutput) ToGetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemOutput() GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemOutput {
+	return o
+}
+
+func (o GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemOutput) ToGetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemOutputWithContext(ctx context.Context) GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemOutput {
+	return o
+}
+
+// The description of the SQL tuning set.
+func (o GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The name of the SQL tuning set.
+func (o GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The owner of the SQL tuning set.
+func (o GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemOutput) Owner() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem) string { return v.Owner }).(pulumi.StringOutput)
+}
+
+// The number of SQL statements in the SQL tuning set.
+func (o GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemOutput) StatementCounts() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem) int { return v.StatementCounts }).(pulumi.IntOutput)
+}
+
+type GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem)(nil)).Elem()
+}
+
+func (o GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArrayOutput) ToGetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArrayOutput() GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArrayOutput) ToGetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArrayOutputWithContext(ctx context.Context) GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArrayOutput) Index(i pulumi.IntInput) GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem {
+		return vs[0].([]GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem)[vs[1].(int)]
+	}).(GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemOutput)
 }
 
 type GetManagedDatabaseUserConsumerGroupPrivilegeItem struct {
@@ -8855,7 +10762,7 @@ type GetManagedDatabaseUsersUserCollectionItem struct {
 	OracleMaintained string `pulumi:"oracleMaintained"`
 	// The list of existing versions of the password hashes (also known as "verifiers") for the account.
 	PasswordVersions string `pulumi:"passwordVersions"`
-	// The User resource profile name.
+	// The profile name of the user.
 	Profile string `pulumi:"profile"`
 	// Indicates whether a user can connect directly (N) or whether the account can only be proxied (Y) by users who have proxy privileges for this account (that is, by users who have been granted the "connect through" privilege for this account).
 	ProxyConnect string `pulumi:"proxyConnect"`
@@ -8869,7 +10776,7 @@ type GetManagedDatabaseUsersUserCollectionItem struct {
 	TimeExpiring string `pulumi:"timeExpiring"`
 	// The date and time of the last user login. This column is not populated when a user connects to the database with administrative privileges, that is, AS { SYSASM | SYSBACKUP | SYSDBA | SYSDG | SYSOPER | SYSRAC | SYSKM }.
 	TimeLastLogin string `pulumi:"timeLastLogin"`
-	// The date the account was locked if account status was LOCKED.
+	// The date the account was locked, if the status of the account is LOCKED.
 	TimeLocked string `pulumi:"timeLocked"`
 	// The date and time when the user password was last set. This column is populated only when the value of the AUTHENTICATION_TYPE column is PASSWORD. Otherwise, this column is null.
 	TimePasswordChanged string `pulumi:"timePasswordChanged"`
@@ -8917,7 +10824,7 @@ type GetManagedDatabaseUsersUserCollectionItemArgs struct {
 	OracleMaintained pulumi.StringInput `pulumi:"oracleMaintained"`
 	// The list of existing versions of the password hashes (also known as "verifiers") for the account.
 	PasswordVersions pulumi.StringInput `pulumi:"passwordVersions"`
-	// The User resource profile name.
+	// The profile name of the user.
 	Profile pulumi.StringInput `pulumi:"profile"`
 	// Indicates whether a user can connect directly (N) or whether the account can only be proxied (Y) by users who have proxy privileges for this account (that is, by users who have been granted the "connect through" privilege for this account).
 	ProxyConnect pulumi.StringInput `pulumi:"proxyConnect"`
@@ -8931,7 +10838,7 @@ type GetManagedDatabaseUsersUserCollectionItemArgs struct {
 	TimeExpiring pulumi.StringInput `pulumi:"timeExpiring"`
 	// The date and time of the last user login. This column is not populated when a user connects to the database with administrative privileges, that is, AS { SYSASM | SYSBACKUP | SYSDBA | SYSDG | SYSOPER | SYSRAC | SYSKM }.
 	TimeLastLogin pulumi.StringInput `pulumi:"timeLastLogin"`
-	// The date the account was locked if account status was LOCKED.
+	// The date the account was locked, if the status of the account is LOCKED.
 	TimeLocked pulumi.StringInput `pulumi:"timeLocked"`
 	// The date and time when the user password was last set. This column is populated only when the value of the AUTHENTICATION_TYPE column is PASSWORD. Otherwise, this column is null.
 	TimePasswordChanged pulumi.StringInput `pulumi:"timePasswordChanged"`
@@ -9063,7 +10970,7 @@ func (o GetManagedDatabaseUsersUserCollectionItemOutput) PasswordVersions() pulu
 	return o.ApplyT(func(v GetManagedDatabaseUsersUserCollectionItem) string { return v.PasswordVersions }).(pulumi.StringOutput)
 }
 
-// The User resource profile name.
+// The profile name of the user.
 func (o GetManagedDatabaseUsersUserCollectionItemOutput) Profile() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedDatabaseUsersUserCollectionItem) string { return v.Profile }).(pulumi.StringOutput)
 }
@@ -9098,7 +11005,7 @@ func (o GetManagedDatabaseUsersUserCollectionItemOutput) TimeLastLogin() pulumi.
 	return o.ApplyT(func(v GetManagedDatabaseUsersUserCollectionItem) string { return v.TimeLastLogin }).(pulumi.StringOutput)
 }
 
-// The date the account was locked if account status was LOCKED.
+// The date the account was locked, if the status of the account is LOCKED.
 func (o GetManagedDatabaseUsersUserCollectionItemOutput) TimeLocked() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedDatabaseUsersUserCollectionItem) string { return v.TimeLocked }).(pulumi.StringOutput)
 }
@@ -12147,6 +14054,30 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionArrayInput)(nil)).Elem(), GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItemInput)(nil)).Elem(), GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItemArrayInput)(nil)).Elem(), GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseAddmTaskItemInput)(nil)).Elem(), GetManagedDatabaseAddmTaskItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseAddmTaskItemArrayInput)(nil)).Elem(), GetManagedDatabaseAddmTaskItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseAddmTasksAddmTasksCollectionInput)(nil)).Elem(), GetManagedDatabaseAddmTasksAddmTasksCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseAddmTasksAddmTasksCollectionArrayInput)(nil)).Elem(), GetManagedDatabaseAddmTasksAddmTasksCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseAddmTasksAddmTasksCollectionItemInput)(nil)).Elem(), GetManagedDatabaseAddmTasksAddmTasksCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseAddmTasksAddmTasksCollectionItemArrayInput)(nil)).Elem(), GetManagedDatabaseAddmTasksAddmTasksCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseAddmTasksFilterInput)(nil)).Elem(), GetManagedDatabaseAddmTasksFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseAddmTasksFilterArrayInput)(nil)).Elem(), GetManagedDatabaseAddmTasksFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseAlertLogCountItemInput)(nil)).Elem(), GetManagedDatabaseAlertLogCountItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseAlertLogCountItemArrayInput)(nil)).Elem(), GetManagedDatabaseAlertLogCountItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionInput)(nil)).Elem(), GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionArrayInput)(nil)).Elem(), GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemInput)(nil)).Elem(), GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArrayInput)(nil)).Elem(), GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseAlertLogCountsFilterInput)(nil)).Elem(), GetManagedDatabaseAlertLogCountsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseAlertLogCountsFilterArrayInput)(nil)).Elem(), GetManagedDatabaseAlertLogCountsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseAttentionLogCountItemInput)(nil)).Elem(), GetManagedDatabaseAttentionLogCountItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseAttentionLogCountItemArrayInput)(nil)).Elem(), GetManagedDatabaseAttentionLogCountItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionInput)(nil)).Elem(), GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionArrayInput)(nil)).Elem(), GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemInput)(nil)).Elem(), GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArrayInput)(nil)).Elem(), GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseAttentionLogCountsFilterInput)(nil)).Elem(), GetManagedDatabaseAttentionLogCountsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseAttentionLogCountsFilterArrayInput)(nil)).Elem(), GetManagedDatabaseAttentionLogCountsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseGroupManagedDatabaseInput)(nil)).Elem(), GetManagedDatabaseGroupManagedDatabaseArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseGroupManagedDatabaseArrayInput)(nil)).Elem(), GetManagedDatabaseGroupManagedDatabaseArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseGroupsFilterInput)(nil)).Elem(), GetManagedDatabaseGroupsFilterArgs{})
@@ -12203,6 +14134,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCountArrayInput)(nil)).Elem(), GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCountArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfoInput)(nil)).Elem(), GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfoArrayInput)(nil)).Elem(), GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfoArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseSqlTuningSetItemInput)(nil)).Elem(), GetManagedDatabaseSqlTuningSetItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseSqlTuningSetItemArrayInput)(nil)).Elem(), GetManagedDatabaseSqlTuningSetItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseSqlTuningSetsFilterInput)(nil)).Elem(), GetManagedDatabaseSqlTuningSetsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseSqlTuningSetsFilterArrayInput)(nil)).Elem(), GetManagedDatabaseSqlTuningSetsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionInput)(nil)).Elem(), GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArrayInput)(nil)).Elem(), GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemInput)(nil)).Elem(), GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArrayInput)(nil)).Elem(), GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseUserConsumerGroupPrivilegeItemInput)(nil)).Elem(), GetManagedDatabaseUserConsumerGroupPrivilegeItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseUserConsumerGroupPrivilegeItemArrayInput)(nil)).Elem(), GetManagedDatabaseUserConsumerGroupPrivilegeItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionInput)(nil)).Elem(), GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionArgs{})
@@ -12323,6 +14262,30 @@ func init() {
 	pulumi.RegisterOutputType(GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseAddmTaskItemOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseAddmTaskItemArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseAddmTasksAddmTasksCollectionOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseAddmTasksAddmTasksCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseAddmTasksAddmTasksCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseAddmTasksAddmTasksCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseAddmTasksFilterOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseAddmTasksFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseAlertLogCountItemOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseAlertLogCountItemArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseAlertLogCountsFilterOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseAlertLogCountsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseAttentionLogCountItemOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseAttentionLogCountItemArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseAttentionLogCountsFilterOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseAttentionLogCountsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetManagedDatabaseGroupManagedDatabaseOutput{})
 	pulumi.RegisterOutputType(GetManagedDatabaseGroupManagedDatabaseArrayOutput{})
 	pulumi.RegisterOutputType(GetManagedDatabaseGroupsFilterOutput{})
@@ -12379,6 +14342,14 @@ func init() {
 	pulumi.RegisterOutputType(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCountArrayOutput{})
 	pulumi.RegisterOutputType(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfoOutput{})
 	pulumi.RegisterOutputType(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfoArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseSqlTuningSetItemOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseSqlTuningSetItemArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseSqlTuningSetsFilterOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseSqlTuningSetsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetManagedDatabaseUserConsumerGroupPrivilegeItemOutput{})
 	pulumi.RegisterOutputType(GetManagedDatabaseUserConsumerGroupPrivilegeItemArrayOutput{})
 	pulumi.RegisterOutputType(GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionOutput{})

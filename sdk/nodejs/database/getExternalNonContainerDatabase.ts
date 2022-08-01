@@ -112,6 +112,10 @@ export interface GetExternalNonContainerDatabaseResult {
      */
     readonly operationsInsightsConfigs: outputs.Database.GetExternalNonContainerDatabaseOperationsInsightsConfig[];
     /**
+     * The configuration of Stack Monitoring for the external database.
+     */
+    readonly stackMonitoringConfigs: outputs.Database.GetExternalNonContainerDatabaseStackMonitoringConfig[];
+    /**
      * The current state of the Oracle Cloud Infrastructure external database resource.
      */
     readonly state: string;

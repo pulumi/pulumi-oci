@@ -15,27 +15,27 @@ import javax.annotation.Nullable;
 @CustomType
 public final class BdsInstanceCloudSqlDetail {
     /**
-     * @return The size of block volume in GB to be attached to a given node. All the details needed for attaching the block volume are managed by service itself.
+     * @return The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
      * 
      */
     private final String blockVolumeSizeInGbs;
     /**
-     * @return IP address of the node.
+     * @return IP address of the node
      * 
      */
     private final @Nullable String ipAddress;
     /**
-     * @return Boolean flag specifying whether or not Kerberos principals are mapped to database users.
+     * @return Boolean flag specifying whether or not are Kerberos principals mapped to database users.
      * 
      */
     private final @Nullable Boolean isKerberosMappedToDatabaseUsers;
     /**
-     * @return Details about the Kerberos principals.
+     * @return Details about Kerberos principals
      * 
      */
     private final @Nullable List<BdsInstanceCloudSqlDetailKerberosDetail> kerberosDetails;
     /**
-     * @return (Updatable) Shape of the node.
+     * @return Shape of the node
      * 
      */
     private final String shape;
@@ -55,35 +55,35 @@ public final class BdsInstanceCloudSqlDetail {
     }
 
     /**
-     * @return The size of block volume in GB to be attached to a given node. All the details needed for attaching the block volume are managed by service itself.
+     * @return The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
      * 
      */
     public String blockVolumeSizeInGbs() {
         return this.blockVolumeSizeInGbs;
     }
     /**
-     * @return IP address of the node.
+     * @return IP address of the node
      * 
      */
     public Optional<String> ipAddress() {
         return Optional.ofNullable(this.ipAddress);
     }
     /**
-     * @return Boolean flag specifying whether or not Kerberos principals are mapped to database users.
+     * @return Boolean flag specifying whether or not are Kerberos principals mapped to database users.
      * 
      */
     public Optional<Boolean> isKerberosMappedToDatabaseUsers() {
         return Optional.ofNullable(this.isKerberosMappedToDatabaseUsers);
     }
     /**
-     * @return Details about the Kerberos principals.
+     * @return Details about Kerberos principals
      * 
      */
     public List<BdsInstanceCloudSqlDetailKerberosDetail> kerberosDetails() {
         return this.kerberosDetails == null ? List.of() : this.kerberosDetails;
     }
     /**
-     * @return (Updatable) Shape of the node.
+     * @return Shape of the node
      * 
      */
     public String shape() {

@@ -11,6 +11,7 @@ import com.pulumi.oci.Database.AutonomousDatabaseRegionalWalletManagementArgs;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseRegionalWalletManagementState;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -29,6 +30,20 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:Database/autonomousDatabaseRegionalWalletManagement:AutonomousDatabaseRegionalWalletManagement")
 public class AutonomousDatabaseRegionalWalletManagement extends com.pulumi.resources.CustomResource {
+    /**
+     * (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+     * 
+     */
+    @Export(name="gracePeriod", type=Integer.class, parameters={})
+    private Output<Integer> gracePeriod;
+
+    /**
+     * @return (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+     * 
+     */
+    public Output<Integer> gracePeriod() {
+        return this.gracePeriod;
+    }
     /**
      * (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
      * 

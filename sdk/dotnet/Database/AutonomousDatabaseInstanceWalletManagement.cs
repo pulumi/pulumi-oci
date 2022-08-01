@@ -27,6 +27,7 @@ namespace Pulumi.Oci.Database
     ///         var testAutonomousDatabaseInstanceWalletManagement = new Oci.Database.AutonomousDatabaseInstanceWalletManagement("testAutonomousDatabaseInstanceWalletManagement", new Oci.Database.AutonomousDatabaseInstanceWalletManagementArgs
     ///         {
     ///             AutonomousDatabaseId = oci_database_autonomous_database.Test_autonomous_database.Id,
+    ///             GracePeriod = @var.Autonomous_database_instance_wallet_management_grace_period,
     ///             ShouldRotate = @var.Autonomous_database_instance_wallet_management_should_rotate,
     ///         });
     ///     }
@@ -46,6 +47,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("autonomousDatabaseId")]
         public Output<string> AutonomousDatabaseId { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+        /// </summary>
+        [Output("gracePeriod")]
+        public Output<int> GracePeriod { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
@@ -118,6 +125,12 @@ namespace Pulumi.Oci.Database
         public Input<string> AutonomousDatabaseId { get; set; } = null!;
 
         /// <summary>
+        /// (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+        /// </summary>
+        [Input("gracePeriod")]
+        public Input<int>? GracePeriod { get; set; }
+
+        /// <summary>
         /// (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
         /// </summary>
         [Input("shouldRotate")]
@@ -135,6 +148,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("autonomousDatabaseId")]
         public Input<string>? AutonomousDatabaseId { get; set; }
+
+        /// <summary>
+        /// (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+        /// </summary>
+        [Input("gracePeriod")]
+        public Input<int>? GracePeriod { get; set; }
 
         /// <summary>
         /// (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.

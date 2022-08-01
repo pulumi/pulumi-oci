@@ -8,6 +8,7 @@ import com.pulumi.oci.ApiGateway.outputs.GetApiDeploymentSpecificationRequestPol
 import com.pulumi.oci.ApiGateway.outputs.GetApiDeploymentSpecificationRequestPolicyCor;
 import com.pulumi.oci.ApiGateway.outputs.GetApiDeploymentSpecificationRequestPolicyMutualTl;
 import com.pulumi.oci.ApiGateway.outputs.GetApiDeploymentSpecificationRequestPolicyRateLimiting;
+import com.pulumi.oci.ApiGateway.outputs.GetApiDeploymentSpecificationRequestPolicyUsagePlan;
 import java.util.List;
 import java.util.Objects;
 
@@ -33,17 +34,24 @@ public final class GetApiDeploymentSpecificationRequestPolicy {
      * 
      */
     private final List<GetApiDeploymentSpecificationRequestPolicyRateLimiting> rateLimitings;
+    /**
+     * @return Usage plan policies for this deployment
+     * 
+     */
+    private final List<GetApiDeploymentSpecificationRequestPolicyUsagePlan> usagePlans;
 
     @CustomType.Constructor
     private GetApiDeploymentSpecificationRequestPolicy(
         @CustomType.Parameter("authentications") List<GetApiDeploymentSpecificationRequestPolicyAuthentication> authentications,
         @CustomType.Parameter("cors") List<GetApiDeploymentSpecificationRequestPolicyCor> cors,
         @CustomType.Parameter("mutualTls") List<GetApiDeploymentSpecificationRequestPolicyMutualTl> mutualTls,
-        @CustomType.Parameter("rateLimitings") List<GetApiDeploymentSpecificationRequestPolicyRateLimiting> rateLimitings) {
+        @CustomType.Parameter("rateLimitings") List<GetApiDeploymentSpecificationRequestPolicyRateLimiting> rateLimitings,
+        @CustomType.Parameter("usagePlans") List<GetApiDeploymentSpecificationRequestPolicyUsagePlan> usagePlans) {
         this.authentications = authentications;
         this.cors = cors;
         this.mutualTls = mutualTls;
         this.rateLimitings = rateLimitings;
+        this.usagePlans = usagePlans;
     }
 
     /**
@@ -74,6 +82,13 @@ public final class GetApiDeploymentSpecificationRequestPolicy {
     public List<GetApiDeploymentSpecificationRequestPolicyRateLimiting> rateLimitings() {
         return this.rateLimitings;
     }
+    /**
+     * @return Usage plan policies for this deployment
+     * 
+     */
+    public List<GetApiDeploymentSpecificationRequestPolicyUsagePlan> usagePlans() {
+        return this.usagePlans;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -88,6 +103,7 @@ public final class GetApiDeploymentSpecificationRequestPolicy {
         private List<GetApiDeploymentSpecificationRequestPolicyCor> cors;
         private List<GetApiDeploymentSpecificationRequestPolicyMutualTl> mutualTls;
         private List<GetApiDeploymentSpecificationRequestPolicyRateLimiting> rateLimitings;
+        private List<GetApiDeploymentSpecificationRequestPolicyUsagePlan> usagePlans;
 
         public Builder() {
     	      // Empty
@@ -99,6 +115,7 @@ public final class GetApiDeploymentSpecificationRequestPolicy {
     	      this.cors = defaults.cors;
     	      this.mutualTls = defaults.mutualTls;
     	      this.rateLimitings = defaults.rateLimitings;
+    	      this.usagePlans = defaults.usagePlans;
         }
 
         public Builder authentications(List<GetApiDeploymentSpecificationRequestPolicyAuthentication> authentications) {
@@ -128,8 +145,15 @@ public final class GetApiDeploymentSpecificationRequestPolicy {
         }
         public Builder rateLimitings(GetApiDeploymentSpecificationRequestPolicyRateLimiting... rateLimitings) {
             return rateLimitings(List.of(rateLimitings));
+        }
+        public Builder usagePlans(List<GetApiDeploymentSpecificationRequestPolicyUsagePlan> usagePlans) {
+            this.usagePlans = Objects.requireNonNull(usagePlans);
+            return this;
+        }
+        public Builder usagePlans(GetApiDeploymentSpecificationRequestPolicyUsagePlan... usagePlans) {
+            return usagePlans(List.of(usagePlans));
         }        public GetApiDeploymentSpecificationRequestPolicy build() {
-            return new GetApiDeploymentSpecificationRequestPolicy(authentications, cors, mutualTls, rateLimitings);
+            return new GetApiDeploymentSpecificationRequestPolicy(authentications, cors, mutualTls, rateLimitings, usagePlans);
         }
     }
 }

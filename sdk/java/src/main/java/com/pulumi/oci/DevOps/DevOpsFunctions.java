@@ -47,6 +47,8 @@ import com.pulumi.oci.DevOps.inputs.GetProjectArgs;
 import com.pulumi.oci.DevOps.inputs.GetProjectPlainArgs;
 import com.pulumi.oci.DevOps.inputs.GetProjectsArgs;
 import com.pulumi.oci.DevOps.inputs.GetProjectsPlainArgs;
+import com.pulumi.oci.DevOps.inputs.GetRepoFileLineArgs;
+import com.pulumi.oci.DevOps.inputs.GetRepoFileLinePlainArgs;
 import com.pulumi.oci.DevOps.inputs.GetRepositoriesArgs;
 import com.pulumi.oci.DevOps.inputs.GetRepositoriesPlainArgs;
 import com.pulumi.oci.DevOps.inputs.GetRepositoryArchiveContentArgs;
@@ -109,6 +111,7 @@ import com.pulumi.oci.DevOps.outputs.GetDeploymentResult;
 import com.pulumi.oci.DevOps.outputs.GetDeploymentsResult;
 import com.pulumi.oci.DevOps.outputs.GetProjectResult;
 import com.pulumi.oci.DevOps.outputs.GetProjectsResult;
+import com.pulumi.oci.DevOps.outputs.GetRepoFileLineResult;
 import com.pulumi.oci.DevOps.outputs.GetRepositoriesResult;
 import com.pulumi.oci.DevOps.outputs.GetRepositoryArchiveContentResult;
 import com.pulumi.oci.DevOps.outputs.GetRepositoryAuthorResult;
@@ -1211,6 +1214,50 @@ public final class DevOpsFunctions {
      */
     public static CompletableFuture<GetProjectsResult> getProjectsPlain(GetProjectsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DevOps/getProjects:getProjects", TypeShape.of(GetProjectsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Repo File Line resource in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Retrieve lines of a specified file. Supports starting line number and limit.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetRepoFileLineResult> getRepoFileLine(GetRepoFileLineArgs args) {
+        return getRepoFileLine(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Repo File Line resource in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Retrieve lines of a specified file. Supports starting line number and limit.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetRepoFileLineResult> getRepoFileLinePlain(GetRepoFileLinePlainArgs args) {
+        return getRepoFileLinePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Repo File Line resource in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Retrieve lines of a specified file. Supports starting line number and limit.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetRepoFileLineResult> getRepoFileLine(GetRepoFileLineArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DevOps/getRepoFileLine:getRepoFileLine", TypeShape.of(GetRepoFileLineResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Repo File Line resource in Oracle Cloud Infrastructure Devops service.
+     * 
+     * Retrieve lines of a specified file. Supports starting line number and limit.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetRepoFileLineResult> getRepoFileLinePlain(GetRepoFileLinePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DevOps/getRepoFileLine:getRepoFileLine", TypeShape.of(GetRepoFileLineResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Repositories in Oracle Cloud Infrastructure Devops service.

@@ -18,7 +18,7 @@ public final class GetDetectorRecipeEffectiveDetectorRule {
      */
     private final List<GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRule> candidateResponderRules;
     /**
-     * @return Description for DetectorRecipeDetectorRule
+     * @return Description for DetectorRecipeDetectorRule.
      * 
      */
     private final String description;
@@ -33,12 +33,12 @@ public final class GetDetectorRecipeEffectiveDetectorRule {
      */
     private final String detector;
     /**
-     * @return The unique identifier of the detector rule
+     * @return The unique identifier of the detector rule.
      * 
      */
     private final String detectorRuleId;
     /**
-     * @return displayName
+     * @return Display name for DetectorRecipeDetectorRule.
      * 
      */
     private final String displayName;
@@ -123,7 +123,7 @@ public final class GetDetectorRecipeEffectiveDetectorRule {
         return this.candidateResponderRules;
     }
     /**
-     * @return Description for DetectorRecipeDetectorRule
+     * @return Description for DetectorRecipeDetectorRule.
      * 
      */
     public String description() {
@@ -144,14 +144,14 @@ public final class GetDetectorRecipeEffectiveDetectorRule {
         return this.detector;
     }
     /**
-     * @return The unique identifier of the detector rule
+     * @return The unique identifier of the detector rule.
      * 
      */
     public String detectorRuleId() {
         return this.detectorRuleId;
     }
     /**
-     * @return displayName
+     * @return Display name for DetectorRecipeDetectorRule.
      * 
      */
     public String displayName() {

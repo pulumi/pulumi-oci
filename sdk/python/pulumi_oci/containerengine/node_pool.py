@@ -17,13 +17,14 @@ class NodePoolArgs:
     def __init__(__self__, *,
                  cluster_id: pulumi.Input[str],
                  compartment_id: pulumi.Input[str],
-                 kubernetes_version: pulumi.Input[str],
                  node_shape: pulumi.Input[str],
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  initial_node_labels: Optional[pulumi.Input[Sequence[pulumi.Input['NodePoolInitialNodeLabelArgs']]]] = None,
+                 kubernetes_version: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  node_config_details: Optional[pulumi.Input['NodePoolNodeConfigDetailsArgs']] = None,
+                 node_eviction_node_pool_settings: Optional[pulumi.Input['NodePoolNodeEvictionNodePoolSettingsArgs']] = None,
                  node_image_id: Optional[pulumi.Input[str]] = None,
                  node_image_name: Optional[pulumi.Input[str]] = None,
                  node_metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -36,13 +37,14 @@ class NodePoolArgs:
         The set of arguments for constructing a NodePool resource.
         :param pulumi.Input[str] cluster_id: The OCID of the cluster to which this node pool is attached.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment in which the node pool exists.
-        :param pulumi.Input[str] kubernetes_version: (Updatable) The version of Kubernetes to install on the nodes in the node pool.
         :param pulumi.Input[str] node_shape: (Updatable) The name of the node shape of the nodes in the node pool.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input['NodePoolInitialNodeLabelArgs']]] initial_node_labels: (Updatable) A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
+        :param pulumi.Input[str] kubernetes_version: (Updatable) The version of Kubernetes to install on the nodes in the node pool.
         :param pulumi.Input[str] name: (Updatable) The name of the node pool. Avoid entering confidential information.
         :param pulumi.Input['NodePoolNodeConfigDetailsArgs'] node_config_details: (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
+        :param pulumi.Input['NodePoolNodeEvictionNodePoolSettingsArgs'] node_eviction_node_pool_settings: (Updatable) Node Eviction Details configuration
         :param pulumi.Input[str] node_image_id: Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
         :param pulumi.Input[str] node_image_name: Deprecated. Use `nodeSourceDetails` instead. If you specify values for both, this value is ignored. The name of the image running on the nodes in the node pool. Cannot be used when `node_image_id` is specified.
         :param pulumi.Input[Mapping[str, Any]] node_metadata: (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
@@ -54,7 +56,6 @@ class NodePoolArgs:
         """
         pulumi.set(__self__, "cluster_id", cluster_id)
         pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "kubernetes_version", kubernetes_version)
         pulumi.set(__self__, "node_shape", node_shape)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
@@ -62,10 +63,14 @@ class NodePoolArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if initial_node_labels is not None:
             pulumi.set(__self__, "initial_node_labels", initial_node_labels)
+        if kubernetes_version is not None:
+            pulumi.set(__self__, "kubernetes_version", kubernetes_version)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if node_config_details is not None:
             pulumi.set(__self__, "node_config_details", node_config_details)
+        if node_eviction_node_pool_settings is not None:
+            pulumi.set(__self__, "node_eviction_node_pool_settings", node_eviction_node_pool_settings)
         if node_image_id is not None:
             warnings.warn("""The 'node_image_id' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.""", DeprecationWarning)
             pulumi.log.warn("""node_image_id is deprecated: The 'node_image_id' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.""")
@@ -112,18 +117,6 @@ class NodePoolArgs:
     @compartment_id.setter
     def compartment_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "compartment_id", value)
-
-    @property
-    @pulumi.getter(name="kubernetesVersion")
-    def kubernetes_version(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The version of Kubernetes to install on the nodes in the node pool.
-        """
-        return pulumi.get(self, "kubernetes_version")
-
-    @kubernetes_version.setter
-    def kubernetes_version(self, value: pulumi.Input[str]):
-        pulumi.set(self, "kubernetes_version", value)
 
     @property
     @pulumi.getter(name="nodeShape")
@@ -174,6 +167,18 @@ class NodePoolArgs:
         pulumi.set(self, "initial_node_labels", value)
 
     @property
+    @pulumi.getter(name="kubernetesVersion")
+    def kubernetes_version(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The version of Kubernetes to install on the nodes in the node pool.
+        """
+        return pulumi.get(self, "kubernetes_version")
+
+    @kubernetes_version.setter
+    def kubernetes_version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "kubernetes_version", value)
+
+    @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
@@ -196,6 +201,18 @@ class NodePoolArgs:
     @node_config_details.setter
     def node_config_details(self, value: Optional[pulumi.Input['NodePoolNodeConfigDetailsArgs']]):
         pulumi.set(self, "node_config_details", value)
+
+    @property
+    @pulumi.getter(name="nodeEvictionNodePoolSettings")
+    def node_eviction_node_pool_settings(self) -> Optional[pulumi.Input['NodePoolNodeEvictionNodePoolSettingsArgs']]:
+        """
+        (Updatable) Node Eviction Details configuration
+        """
+        return pulumi.get(self, "node_eviction_node_pool_settings")
+
+    @node_eviction_node_pool_settings.setter
+    def node_eviction_node_pool_settings(self, value: Optional[pulumi.Input['NodePoolNodeEvictionNodePoolSettingsArgs']]):
+        pulumi.set(self, "node_eviction_node_pool_settings", value)
 
     @property
     @pulumi.getter(name="nodeImageId")
@@ -303,8 +320,10 @@ class _NodePoolState:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  initial_node_labels: Optional[pulumi.Input[Sequence[pulumi.Input['NodePoolInitialNodeLabelArgs']]]] = None,
                  kubernetes_version: Optional[pulumi.Input[str]] = None,
+                 lifecycle_details: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  node_config_details: Optional[pulumi.Input['NodePoolNodeConfigDetailsArgs']] = None,
+                 node_eviction_node_pool_settings: Optional[pulumi.Input['NodePoolNodeEvictionNodePoolSettingsArgs']] = None,
                  node_image_id: Optional[pulumi.Input[str]] = None,
                  node_image_name: Optional[pulumi.Input[str]] = None,
                  node_metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -315,6 +334,7 @@ class _NodePoolState:
                  nodes: Optional[pulumi.Input[Sequence[pulumi.Input['NodePoolNodeArgs']]]] = None,
                  quantity_per_subnet: Optional[pulumi.Input[int]] = None,
                  ssh_public_key: Optional[pulumi.Input[str]] = None,
+                 state: Optional[pulumi.Input[str]] = None,
                  subnet_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         Input properties used for looking up and filtering NodePool resources.
@@ -324,8 +344,10 @@ class _NodePoolState:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input['NodePoolInitialNodeLabelArgs']]] initial_node_labels: (Updatable) A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
         :param pulumi.Input[str] kubernetes_version: (Updatable) The version of Kubernetes to install on the nodes in the node pool.
+        :param pulumi.Input[str] lifecycle_details: Details about the state of the node.
         :param pulumi.Input[str] name: (Updatable) The name of the node pool. Avoid entering confidential information.
         :param pulumi.Input['NodePoolNodeConfigDetailsArgs'] node_config_details: (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
+        :param pulumi.Input['NodePoolNodeEvictionNodePoolSettingsArgs'] node_eviction_node_pool_settings: (Updatable) Node Eviction Details configuration
         :param pulumi.Input[str] node_image_id: Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
         :param pulumi.Input[str] node_image_name: Deprecated. Use `nodeSourceDetails` instead. If you specify values for both, this value is ignored. The name of the image running on the nodes in the node pool. Cannot be used when `node_image_id` is specified.
         :param pulumi.Input[Mapping[str, Any]] node_metadata: (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
@@ -336,6 +358,7 @@ class _NodePoolState:
         :param pulumi.Input[Sequence[pulumi.Input['NodePoolNodeArgs']]] nodes: The nodes in the node pool.
         :param pulumi.Input[int] quantity_per_subnet: (Updatable) Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property. When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.
         :param pulumi.Input[str] ssh_public_key: (Updatable) The SSH public key on each node in the node pool on launch.
+        :param pulumi.Input[str] state: The state of the nodepool.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] subnet_ids: (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
         """
         if cluster_id is not None:
@@ -350,10 +373,14 @@ class _NodePoolState:
             pulumi.set(__self__, "initial_node_labels", initial_node_labels)
         if kubernetes_version is not None:
             pulumi.set(__self__, "kubernetes_version", kubernetes_version)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if node_config_details is not None:
             pulumi.set(__self__, "node_config_details", node_config_details)
+        if node_eviction_node_pool_settings is not None:
+            pulumi.set(__self__, "node_eviction_node_pool_settings", node_eviction_node_pool_settings)
         if node_image_id is not None:
             warnings.warn("""The 'node_image_id' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.""", DeprecationWarning)
             pulumi.log.warn("""node_image_id is deprecated: The 'node_image_id' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.""")
@@ -380,6 +407,8 @@ class _NodePoolState:
             pulumi.set(__self__, "quantity_per_subnet", quantity_per_subnet)
         if ssh_public_key is not None:
             pulumi.set(__self__, "ssh_public_key", ssh_public_key)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
         if subnet_ids is not None:
             pulumi.set(__self__, "subnet_ids", subnet_ids)
 
@@ -456,6 +485,18 @@ class _NodePoolState:
         pulumi.set(self, "kubernetes_version", value)
 
     @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
+        """
+        Details about the state of the node.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @lifecycle_details.setter
+    def lifecycle_details(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "lifecycle_details", value)
+
+    @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
@@ -478,6 +519,18 @@ class _NodePoolState:
     @node_config_details.setter
     def node_config_details(self, value: Optional[pulumi.Input['NodePoolNodeConfigDetailsArgs']]):
         pulumi.set(self, "node_config_details", value)
+
+    @property
+    @pulumi.getter(name="nodeEvictionNodePoolSettings")
+    def node_eviction_node_pool_settings(self) -> Optional[pulumi.Input['NodePoolNodeEvictionNodePoolSettingsArgs']]:
+        """
+        (Updatable) Node Eviction Details configuration
+        """
+        return pulumi.get(self, "node_eviction_node_pool_settings")
+
+    @node_eviction_node_pool_settings.setter
+    def node_eviction_node_pool_settings(self, value: Optional[pulumi.Input['NodePoolNodeEvictionNodePoolSettingsArgs']]):
+        pulumi.set(self, "node_eviction_node_pool_settings", value)
 
     @property
     @pulumi.getter(name="nodeImageId")
@@ -600,6 +653,18 @@ class _NodePoolState:
         pulumi.set(self, "ssh_public_key", value)
 
     @property
+    @pulumi.getter
+    def state(self) -> Optional[pulumi.Input[str]]:
+        """
+        The state of the nodepool.
+        """
+        return pulumi.get(self, "state")
+
+    @state.setter
+    def state(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "state", value)
+
+    @property
     @pulumi.getter(name="subnetIds")
     def subnet_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
@@ -625,6 +690,7 @@ class NodePool(pulumi.CustomResource):
                  kubernetes_version: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  node_config_details: Optional[pulumi.Input[pulumi.InputType['NodePoolNodeConfigDetailsArgs']]] = None,
+                 node_eviction_node_pool_settings: Optional[pulumi.Input[pulumi.InputType['NodePoolNodeEvictionNodePoolSettingsArgs']]] = None,
                  node_image_id: Optional[pulumi.Input[str]] = None,
                  node_image_name: Optional[pulumi.Input[str]] = None,
                  node_metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -649,7 +715,6 @@ class NodePool(pulumi.CustomResource):
         test_node_pool = oci.container_engine.NodePool("testNodePool",
             cluster_id=oci_containerengine_cluster["test_cluster"]["id"],
             compartment_id=var["compartment_id"],
-            kubernetes_version=var["node_pool_kubernetes_version"],
             node_shape=var["node_pool_node_shape"],
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -661,15 +726,23 @@ class NodePool(pulumi.CustomResource):
                 key=var["node_pool_initial_node_labels_key"],
                 value=var["node_pool_initial_node_labels_value"],
             )],
+            kubernetes_version=var["node_pool_kubernetes_version"],
             node_config_details=oci.container.engine.NodePoolNodeConfigDetailsArgs(
                 placement_configs=[oci.container.engine.NodePoolNodeConfigDetailsPlacementConfigArgs(
                     availability_domain=var["node_pool_node_config_details_placement_configs_availability_domain"],
                     subnet_id=oci_core_subnet["test_subnet"]["id"],
                     capacity_reservation_id=oci_containerengine_capacity_reservation["test_capacity_reservation"]["id"],
+                    fault_domains=var["node_pool_node_config_details_placement_configs_fault_domains"],
                 )],
                 size=var["node_pool_node_config_details_size"],
                 is_pv_encryption_in_transit_enabled=var["node_pool_node_config_details_is_pv_encryption_in_transit_enabled"],
                 kms_key_id=oci_kms_key["test_key"]["id"],
+                node_pool_pod_network_option_details=oci.container.engine.NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs(
+                    cni_type=var["node_pool_node_config_details_node_pool_pod_network_option_details_cni_type"],
+                    max_pods_per_node=var["node_pool_node_config_details_node_pool_pod_network_option_details_max_pods_per_node"],
+                    pod_nsg_ids=var["node_pool_node_config_details_node_pool_pod_network_option_details_pod_nsg_ids"],
+                    pod_subnet_ids=var["node_pool_node_config_details_node_pool_pod_network_option_details_pod_subnet_ids"],
+                ),
                 defined_tags={
                     "Operations.CostCenter": "42",
                 },
@@ -677,6 +750,10 @@ class NodePool(pulumi.CustomResource):
                     "Department": "Finance",
                 },
                 nsg_ids=var["node_pool_node_config_details_nsg_ids"],
+            ),
+            node_eviction_node_pool_settings=oci.container.engine.NodePoolNodeEvictionNodePoolSettingsArgs(
+                eviction_grace_duration=var["node_pool_node_eviction_node_pool_settings_eviction_grace_duration"],
+                is_force_delete_after_grace_duration=var["node_pool_node_eviction_node_pool_settings_is_force_delete_after_grace_duration"],
             ),
             node_image_name=oci_core_image["test_image"]["name"],
             node_metadata=var["node_pool_node_metadata"],
@@ -712,6 +789,7 @@ class NodePool(pulumi.CustomResource):
         :param pulumi.Input[str] kubernetes_version: (Updatable) The version of Kubernetes to install on the nodes in the node pool.
         :param pulumi.Input[str] name: (Updatable) The name of the node pool. Avoid entering confidential information.
         :param pulumi.Input[pulumi.InputType['NodePoolNodeConfigDetailsArgs']] node_config_details: (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
+        :param pulumi.Input[pulumi.InputType['NodePoolNodeEvictionNodePoolSettingsArgs']] node_eviction_node_pool_settings: (Updatable) Node Eviction Details configuration
         :param pulumi.Input[str] node_image_id: Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
         :param pulumi.Input[str] node_image_name: Deprecated. Use `nodeSourceDetails` instead. If you specify values for both, this value is ignored. The name of the image running on the nodes in the node pool. Cannot be used when `node_image_id` is specified.
         :param pulumi.Input[Mapping[str, Any]] node_metadata: (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
@@ -742,7 +820,6 @@ class NodePool(pulumi.CustomResource):
         test_node_pool = oci.container_engine.NodePool("testNodePool",
             cluster_id=oci_containerengine_cluster["test_cluster"]["id"],
             compartment_id=var["compartment_id"],
-            kubernetes_version=var["node_pool_kubernetes_version"],
             node_shape=var["node_pool_node_shape"],
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -754,15 +831,23 @@ class NodePool(pulumi.CustomResource):
                 key=var["node_pool_initial_node_labels_key"],
                 value=var["node_pool_initial_node_labels_value"],
             )],
+            kubernetes_version=var["node_pool_kubernetes_version"],
             node_config_details=oci.container.engine.NodePoolNodeConfigDetailsArgs(
                 placement_configs=[oci.container.engine.NodePoolNodeConfigDetailsPlacementConfigArgs(
                     availability_domain=var["node_pool_node_config_details_placement_configs_availability_domain"],
                     subnet_id=oci_core_subnet["test_subnet"]["id"],
                     capacity_reservation_id=oci_containerengine_capacity_reservation["test_capacity_reservation"]["id"],
+                    fault_domains=var["node_pool_node_config_details_placement_configs_fault_domains"],
                 )],
                 size=var["node_pool_node_config_details_size"],
                 is_pv_encryption_in_transit_enabled=var["node_pool_node_config_details_is_pv_encryption_in_transit_enabled"],
                 kms_key_id=oci_kms_key["test_key"]["id"],
+                node_pool_pod_network_option_details=oci.container.engine.NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs(
+                    cni_type=var["node_pool_node_config_details_node_pool_pod_network_option_details_cni_type"],
+                    max_pods_per_node=var["node_pool_node_config_details_node_pool_pod_network_option_details_max_pods_per_node"],
+                    pod_nsg_ids=var["node_pool_node_config_details_node_pool_pod_network_option_details_pod_nsg_ids"],
+                    pod_subnet_ids=var["node_pool_node_config_details_node_pool_pod_network_option_details_pod_subnet_ids"],
+                ),
                 defined_tags={
                     "Operations.CostCenter": "42",
                 },
@@ -770,6 +855,10 @@ class NodePool(pulumi.CustomResource):
                     "Department": "Finance",
                 },
                 nsg_ids=var["node_pool_node_config_details_nsg_ids"],
+            ),
+            node_eviction_node_pool_settings=oci.container.engine.NodePoolNodeEvictionNodePoolSettingsArgs(
+                eviction_grace_duration=var["node_pool_node_eviction_node_pool_settings_eviction_grace_duration"],
+                is_force_delete_after_grace_duration=var["node_pool_node_eviction_node_pool_settings_is_force_delete_after_grace_duration"],
             ),
             node_image_name=oci_core_image["test_image"]["name"],
             node_metadata=var["node_pool_node_metadata"],
@@ -818,6 +907,7 @@ class NodePool(pulumi.CustomResource):
                  kubernetes_version: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  node_config_details: Optional[pulumi.Input[pulumi.InputType['NodePoolNodeConfigDetailsArgs']]] = None,
+                 node_eviction_node_pool_settings: Optional[pulumi.Input[pulumi.InputType['NodePoolNodeEvictionNodePoolSettingsArgs']]] = None,
                  node_image_id: Optional[pulumi.Input[str]] = None,
                  node_image_name: Optional[pulumi.Input[str]] = None,
                  node_metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -848,11 +938,10 @@ class NodePool(pulumi.CustomResource):
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["initial_node_labels"] = initial_node_labels
-            if kubernetes_version is None and not opts.urn:
-                raise TypeError("Missing required property 'kubernetes_version'")
             __props__.__dict__["kubernetes_version"] = kubernetes_version
             __props__.__dict__["name"] = name
             __props__.__dict__["node_config_details"] = node_config_details
+            __props__.__dict__["node_eviction_node_pool_settings"] = node_eviction_node_pool_settings
             if node_image_id is not None and not opts.urn:
                 warnings.warn("""The 'node_image_id' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.""", DeprecationWarning)
                 pulumi.log.warn("""node_image_id is deprecated: The 'node_image_id' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.""")
@@ -870,8 +959,10 @@ class NodePool(pulumi.CustomResource):
             __props__.__dict__["quantity_per_subnet"] = quantity_per_subnet
             __props__.__dict__["ssh_public_key"] = ssh_public_key
             __props__.__dict__["subnet_ids"] = subnet_ids
+            __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["node_sources"] = None
             __props__.__dict__["nodes"] = None
+            __props__.__dict__["state"] = None
         super(NodePool, __self__).__init__(
             'oci:ContainerEngine/nodePool:NodePool',
             resource_name,
@@ -888,8 +979,10 @@ class NodePool(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             initial_node_labels: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NodePoolInitialNodeLabelArgs']]]]] = None,
             kubernetes_version: Optional[pulumi.Input[str]] = None,
+            lifecycle_details: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
             node_config_details: Optional[pulumi.Input[pulumi.InputType['NodePoolNodeConfigDetailsArgs']]] = None,
+            node_eviction_node_pool_settings: Optional[pulumi.Input[pulumi.InputType['NodePoolNodeEvictionNodePoolSettingsArgs']]] = None,
             node_image_id: Optional[pulumi.Input[str]] = None,
             node_image_name: Optional[pulumi.Input[str]] = None,
             node_metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -900,6 +993,7 @@ class NodePool(pulumi.CustomResource):
             nodes: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NodePoolNodeArgs']]]]] = None,
             quantity_per_subnet: Optional[pulumi.Input[int]] = None,
             ssh_public_key: Optional[pulumi.Input[str]] = None,
+            state: Optional[pulumi.Input[str]] = None,
             subnet_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None) -> 'NodePool':
         """
         Get an existing NodePool resource's state with the given name, id, and optional extra
@@ -914,8 +1008,10 @@ class NodePool(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NodePoolInitialNodeLabelArgs']]]] initial_node_labels: (Updatable) A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
         :param pulumi.Input[str] kubernetes_version: (Updatable) The version of Kubernetes to install on the nodes in the node pool.
+        :param pulumi.Input[str] lifecycle_details: Details about the state of the node.
         :param pulumi.Input[str] name: (Updatable) The name of the node pool. Avoid entering confidential information.
         :param pulumi.Input[pulumi.InputType['NodePoolNodeConfigDetailsArgs']] node_config_details: (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
+        :param pulumi.Input[pulumi.InputType['NodePoolNodeEvictionNodePoolSettingsArgs']] node_eviction_node_pool_settings: (Updatable) Node Eviction Details configuration
         :param pulumi.Input[str] node_image_id: Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
         :param pulumi.Input[str] node_image_name: Deprecated. Use `nodeSourceDetails` instead. If you specify values for both, this value is ignored. The name of the image running on the nodes in the node pool. Cannot be used when `node_image_id` is specified.
         :param pulumi.Input[Mapping[str, Any]] node_metadata: (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
@@ -926,6 +1022,7 @@ class NodePool(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NodePoolNodeArgs']]]] nodes: The nodes in the node pool.
         :param pulumi.Input[int] quantity_per_subnet: (Updatable) Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property. When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.
         :param pulumi.Input[str] ssh_public_key: (Updatable) The SSH public key on each node in the node pool on launch.
+        :param pulumi.Input[str] state: The state of the nodepool.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] subnet_ids: (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -938,8 +1035,10 @@ class NodePool(pulumi.CustomResource):
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["initial_node_labels"] = initial_node_labels
         __props__.__dict__["kubernetes_version"] = kubernetes_version
+        __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["name"] = name
         __props__.__dict__["node_config_details"] = node_config_details
+        __props__.__dict__["node_eviction_node_pool_settings"] = node_eviction_node_pool_settings
         __props__.__dict__["node_image_id"] = node_image_id
         __props__.__dict__["node_image_name"] = node_image_name
         __props__.__dict__["node_metadata"] = node_metadata
@@ -950,6 +1049,7 @@ class NodePool(pulumi.CustomResource):
         __props__.__dict__["nodes"] = nodes
         __props__.__dict__["quantity_per_subnet"] = quantity_per_subnet
         __props__.__dict__["ssh_public_key"] = ssh_public_key
+        __props__.__dict__["state"] = state
         __props__.__dict__["subnet_ids"] = subnet_ids
         return NodePool(resource_name, opts=opts, __props__=__props__)
 
@@ -1002,6 +1102,14 @@ class NodePool(pulumi.CustomResource):
         return pulumi.get(self, "kubernetes_version")
 
     @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> pulumi.Output[str]:
+        """
+        Details about the state of the node.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
         """
@@ -1016,6 +1124,14 @@ class NodePool(pulumi.CustomResource):
         (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
         """
         return pulumi.get(self, "node_config_details")
+
+    @property
+    @pulumi.getter(name="nodeEvictionNodePoolSettings")
+    def node_eviction_node_pool_settings(self) -> pulumi.Output['outputs.NodePoolNodeEvictionNodePoolSettings']:
+        """
+        (Updatable) Node Eviction Details configuration
+        """
+        return pulumi.get(self, "node_eviction_node_pool_settings")
 
     @property
     @pulumi.getter(name="nodeImageId")
@@ -1096,6 +1212,14 @@ class NodePool(pulumi.CustomResource):
         (Updatable) The SSH public key on each node in the node pool on launch.
         """
         return pulumi.get(self, "ssh_public_key")
+
+    @property
+    @pulumi.getter
+    def state(self) -> pulumi.Output[str]:
+        """
+        The state of the nodepool.
+        """
+        return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subnetIds")

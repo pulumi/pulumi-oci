@@ -144,7 +144,7 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         public readonly int DataStorageSizeInGb;
         /// <summary>
-        /// The OCID of the source DB System.
+        /// The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
         /// </summary>
         public readonly string DbSystemId;
         /// <summary>
@@ -200,7 +200,7 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         public readonly bool IsHeatWaveClusterAttached;
         /// <summary>
-        /// If the policy is to enable high availability of the instance, by maintaining secondary/failover capacity as necessary.
+        /// Specifies if the DB System is highly available.
         /// </summary>
         public readonly bool IsHighlyAvailable;
         /// <summary>
@@ -215,6 +215,10 @@ namespace Pulumi.Oci.Mysql
         /// Name of the MySQL Version in use for the DB System.
         /// </summary>
         public readonly string MysqlVersion;
+        /// <summary>
+        /// Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetMysqlDbSystemPointInTimeRecoveryDetailResult> PointInTimeRecoveryDetails;
         /// <summary>
         /// The port for primary endpoint of the DB System to listen on.
         /// </summary>
@@ -309,6 +313,8 @@ namespace Pulumi.Oci.Mysql
 
             string mysqlVersion,
 
+            ImmutableArray<Outputs.GetMysqlDbSystemPointInTimeRecoveryDetailResult> pointInTimeRecoveryDetails,
+
             int port,
 
             int portX,
@@ -356,6 +362,7 @@ namespace Pulumi.Oci.Mysql
             LifecycleDetails = lifecycleDetails;
             Maintenances = maintenances;
             MysqlVersion = mysqlVersion;
+            PointInTimeRecoveryDetails = pointInTimeRecoveryDetails;
             Port = port;
             PortX = portX;
             ShapeName = shapeName;

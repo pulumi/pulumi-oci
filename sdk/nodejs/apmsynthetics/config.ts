@@ -147,7 +147,7 @@ export class Config extends pulumi.CustomResource {
      */
     public readonly monitorType!: pulumi.Output<string>;
     /**
-     * (Updatable) Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds.
+     * (Updatable) Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
      */
     public readonly repeatIntervalInSeconds!: pulumi.Output<number>;
     /**
@@ -179,7 +179,7 @@ export class Config extends pulumi.CustomResource {
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
     /**
-     * (Updatable) Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+     * (Updatable) Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
      */
     public readonly timeoutInSeconds!: pulumi.Output<number>;
     /**
@@ -187,7 +187,7 @@ export class Config extends pulumi.CustomResource {
      */
     public /*out*/ readonly vantagePointCount!: pulumi.Output<number>;
     /**
-     * (Updatable) A list of vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points.
+     * (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points.
      */
     public readonly vantagePoints!: pulumi.Output<string[]>;
 
@@ -296,7 +296,7 @@ export interface ConfigState {
      */
     monitorType?: pulumi.Input<string>;
     /**
-     * (Updatable) Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds.
+     * (Updatable) Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
      */
     repeatIntervalInSeconds?: pulumi.Input<number>;
     /**
@@ -328,7 +328,7 @@ export interface ConfigState {
      */
     timeUpdated?: pulumi.Input<string>;
     /**
-     * (Updatable) Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+     * (Updatable) Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
      */
     timeoutInSeconds?: pulumi.Input<number>;
     /**
@@ -336,7 +336,7 @@ export interface ConfigState {
      */
     vantagePointCount?: pulumi.Input<number>;
     /**
-     * (Updatable) A list of vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points.
+     * (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points.
      */
     vantagePoints?: pulumi.Input<pulumi.Input<string>[]>;
 }
@@ -374,7 +374,7 @@ export interface ConfigArgs {
      */
     monitorType: pulumi.Input<string>;
     /**
-     * (Updatable) Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds.
+     * (Updatable) Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
      */
     repeatIntervalInSeconds: pulumi.Input<number>;
     /**
@@ -398,11 +398,11 @@ export interface ConfigArgs {
      */
     target?: pulumi.Input<string>;
     /**
-     * (Updatable) Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+     * (Updatable) Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
      */
     timeoutInSeconds?: pulumi.Input<number>;
     /**
-     * (Updatable) A list of vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points.
+     * (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points.
      */
     vantagePoints: pulumi.Input<pulumi.Input<string>[]>;
 }

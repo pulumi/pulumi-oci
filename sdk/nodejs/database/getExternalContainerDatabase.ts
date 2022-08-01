@@ -108,6 +108,10 @@ export interface GetExternalContainerDatabaseResult {
      */
     readonly ncharacterSet: string;
     /**
+     * The configuration of Stack Monitoring for the external database.
+     */
+    readonly stackMonitoringConfigs: outputs.Database.GetExternalContainerDatabaseStackMonitoringConfig[];
+    /**
      * The current state of the Oracle Cloud Infrastructure external database resource.
      */
     readonly state: string;

@@ -1134,6 +1134,7 @@ class GetDatabaseInsightsDatabaseInsightsCollectionItemResult(dict):
                  database_resource_type: str,
                  database_type: str,
                  database_version: str,
+                 dbm_private_endpoint_id: str,
                  defined_tags: Mapping[str, Any],
                  deployment_type: str,
                  enterprise_manager_bridge_id: str,
@@ -1199,6 +1200,7 @@ class GetDatabaseInsightsDatabaseInsightsCollectionItemResult(dict):
         pulumi.set(__self__, "database_resource_type", database_resource_type)
         pulumi.set(__self__, "database_type", database_type)
         pulumi.set(__self__, "database_version", database_version)
+        pulumi.set(__self__, "dbm_private_endpoint_id", dbm_private_endpoint_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "deployment_type", deployment_type)
         pulumi.set(__self__, "enterprise_manager_bridge_id", enterprise_manager_bridge_id)
@@ -1308,6 +1310,11 @@ class GetDatabaseInsightsDatabaseInsightsCollectionItemResult(dict):
         The version of the database.
         """
         return pulumi.get(self, "database_version")
+
+    @property
+    @pulumi.getter(name="dbmPrivateEndpointId")
+    def dbm_private_endpoint_id(self) -> str:
+        return pulumi.get(self, "dbm_private_endpoint_id")
 
     @property
     @pulumi.getter(name="definedTags")

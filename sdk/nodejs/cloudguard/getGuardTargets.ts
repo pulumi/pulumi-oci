@@ -34,6 +34,7 @@ import * as utilities from "../utilities";
  *     accessLevel: _var.target_access_level,
  *     compartmentIdInSubtree: _var.target_compartment_id_in_subtree,
  *     displayName: _var.target_display_name,
+ *     isNonSecurityZoneTargetsOnlyQuery: _var.target_is_non_security_zone_targets_only_query,
  *     state: _var.target_state,
  * });
  * ```
@@ -50,6 +51,7 @@ export function getGuardTargets(args: GetGuardTargetsArgs, opts?: pulumi.InvokeO
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
         "displayName": args.displayName,
         "filters": args.filters,
+        "isNonSecurityZoneTargetsOnlyQuery": args.isNonSecurityZoneTargetsOnlyQuery,
         "state": args.state,
     }, opts);
 }
@@ -76,6 +78,10 @@ export interface GetGuardTargetsArgs {
     displayName?: string;
     filters?: inputs.CloudGuard.GetGuardTargetsFilter[];
     /**
+     * Default is false. When set to true, only the targets that would be deleted as part of security zone creation will be returned.
+     */
+    isNonSecurityZoneTargetsOnlyQuery?: boolean;
+    /**
      * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      */
     state?: string;
@@ -92,7 +98,7 @@ export interface GetGuardTargetsResult {
     readonly compartmentId: string;
     readonly compartmentIdInSubtree?: boolean;
     /**
-     * ResponderRule Display Name
+     * ResponderRule display name.
      */
     readonly displayName?: string;
     readonly filters?: outputs.CloudGuard.GetGuardTargetsFilter[];
@@ -100,6 +106,7 @@ export interface GetGuardTargetsResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    readonly isNonSecurityZoneTargetsOnlyQuery?: boolean;
     /**
      * The current state of the ResponderRule.
      */
@@ -135,6 +142,10 @@ export interface GetGuardTargetsOutputArgs {
      */
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.CloudGuard.GetGuardTargetsFilterArgs>[]>;
+    /**
+     * Default is false. When set to true, only the targets that would be deleted as part of security zone creation will be returned.
+     */
+    isNonSecurityZoneTargetsOnlyQuery?: pulumi.Input<boolean>;
     /**
      * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      */

@@ -27,7 +27,7 @@ public final class GetDatasetResult {
      */
     private final String compartmentId;
     /**
-     * @return Specifies how to process the data. Supported formats include DOCUMENT, IMAGE and TEXT.
+     * @return It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
      * 
      */
     private final List<GetDatasetDatasetFormatDetail> datasetFormatDetails;
@@ -63,12 +63,12 @@ public final class GetDatasetResult {
      */
     private final String id;
     /**
-     * @return Initial Generate Records configuration, generates records from the Dataset&#39;s source.
+     * @return The initial generate records configuration. It generates records from the dataset&#39;s source.
      * 
      */
     private final List<GetDatasetInitialRecordGenerationConfiguration> initialRecordGenerationConfigurations;
     /**
-     * @return An ordered collection of Labels that are unique by name.
+     * @return An ordered collection of labels that are unique by name.
      * 
      */
     private final List<GetDatasetLabelSet> labelSets;
@@ -151,7 +151,7 @@ public final class GetDatasetResult {
         return this.compartmentId;
     }
     /**
-     * @return Specifies how to process the data. Supported formats include DOCUMENT, IMAGE and TEXT.
+     * @return It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
      * 
      */
     public List<GetDatasetDatasetFormatDetail> datasetFormatDetails() {
@@ -203,14 +203,14 @@ public final class GetDatasetResult {
         return this.id;
     }
     /**
-     * @return Initial Generate Records configuration, generates records from the Dataset&#39;s source.
+     * @return The initial generate records configuration. It generates records from the dataset&#39;s source.
      * 
      */
     public List<GetDatasetInitialRecordGenerationConfiguration> initialRecordGenerationConfigurations() {
         return this.initialRecordGenerationConfigurations;
     }
     /**
-     * @return An ordered collection of Labels that are unique by name.
+     * @return An ordered collection of labels that are unique by name.
      * 
      */
     public List<GetDatasetLabelSet> labelSets() {

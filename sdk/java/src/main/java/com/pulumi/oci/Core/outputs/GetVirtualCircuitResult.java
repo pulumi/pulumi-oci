@@ -22,7 +22,7 @@ public final class GetVirtualCircuitResult {
      */
     private final String bandwidthShapeName;
     /**
-     * @return Set to ENABLED to activate the  bgp session of virtual circuit, DISABLED to deactivate.
+     * @return Set to `ENABLED` (the default) to activate the BGP session of the virtual circuit, set to `DISABLED` to deactivate the virtual circuit.
      * 
      */
     private final String bgpAdminState;
@@ -100,7 +100,7 @@ public final class GetVirtualCircuitResult {
      */
     private final String ipMtu;
     /**
-     * @return Set to true to enable BFD for ipv4 Bgp Peering, false to disable. If not set, default is false
+     * @return Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
      * 
      */
     private final Boolean isBfdEnabled;
@@ -236,7 +236,7 @@ public final class GetVirtualCircuitResult {
         return this.bandwidthShapeName;
     }
     /**
-     * @return Set to ENABLED to activate the  bgp session of virtual circuit, DISABLED to deactivate.
+     * @return Set to `ENABLED` (the default) to activate the BGP session of the virtual circuit, set to `DISABLED` to deactivate the virtual circuit.
      * 
      */
     public String bgpAdminState() {
@@ -342,7 +342,7 @@ public final class GetVirtualCircuitResult {
         return this.ipMtu;
     }
     /**
-     * @return Set to true to enable BFD for ipv4 Bgp Peering, false to disable. If not set, default is false
+     * @return Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
      * 
      */
     public Boolean isBfdEnabled() {

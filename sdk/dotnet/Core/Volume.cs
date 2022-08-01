@@ -139,7 +139,7 @@ namespace Pulumi.Oci.Core
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume.
+        /// (Updatable) Specifies whether the auto-tune performance is enabled for this volume.
         /// </summary>
         [Output("isAutoTuneEnabled")]
         public Output<bool> IsAutoTuneEnabled { get; private set; } = null!;
@@ -317,7 +317,7 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
-        /// (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume.
+        /// (Updatable) Specifies whether the auto-tune performance is enabled for this volume.
         /// </summary>
         [Input("isAutoTuneEnabled")]
         public Input<bool>? IsAutoTuneEnabled { get; set; }
@@ -432,7 +432,7 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
-        /// (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume.
+        /// (Updatable) Specifies whether the auto-tune performance is enabled for this volume.
         /// </summary>
         [Input("isAutoTuneEnabled")]
         public Input<bool>? IsAutoTuneEnabled { get; set; }

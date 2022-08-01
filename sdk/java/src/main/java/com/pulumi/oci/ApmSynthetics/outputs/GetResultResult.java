@@ -43,7 +43,7 @@ public final class GetResultResult {
      */
     private final String resultType;
     /**
-     * @return The name of the vantage point.
+     * @return The name of the public or dedicated vantage point.
      * 
      */
     private final String vantagePoint;
@@ -114,7 +114,7 @@ public final class GetResultResult {
         return this.resultType;
     }
     /**
-     * @return The name of the vantage point.
+     * @return The name of the public or dedicated vantage point.
      * 
      */
     public String vantagePoint() {

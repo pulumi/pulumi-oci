@@ -15,6 +15,8 @@ __all__ = [
     'NetworkLoadBalancerIpAddress',
     'NetworkLoadBalancerIpAddressReservedIp',
     'NetworkLoadBalancerReservedIp',
+    'NetworkLoadBalancersBackendSetsUnifiedBackend',
+    'NetworkLoadBalancersBackendSetsUnifiedHealthChecker',
     'GetBackendHealthHealthCheckResultResult',
     'GetBackendSetBackendResult',
     'GetBackendSetHealthCheckerResult',
@@ -440,6 +442,288 @@ class NetworkLoadBalancerReservedIp(dict):
         OCID of the reserved public IP address created with the virtual cloud network.
         """
         return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class NetworkLoadBalancersBackendSetsUnifiedBackend(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "ipAddress":
+            suggest = "ip_address"
+        elif key == "isBackup":
+            suggest = "is_backup"
+        elif key == "isDrain":
+            suggest = "is_drain"
+        elif key == "isOffline":
+            suggest = "is_offline"
+        elif key == "targetId":
+            suggest = "target_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in NetworkLoadBalancersBackendSetsUnifiedBackend. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        NetworkLoadBalancersBackendSetsUnifiedBackend.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        NetworkLoadBalancersBackendSetsUnifiedBackend.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 port: int,
+                 ip_address: Optional[str] = None,
+                 is_backup: Optional[bool] = None,
+                 is_drain: Optional[bool] = None,
+                 is_offline: Optional[bool] = None,
+                 name: Optional[str] = None,
+                 target_id: Optional[str] = None,
+                 weight: Optional[int] = None):
+        """
+        :param int port: (Updatable) The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
+        :param str ip_address: (Updatable) The IP address of the backend server.  Example: `10.0.0.3`
+        :param bool is_backup: (Updatable) Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
+        :param bool is_drain: (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no  incoming traffic.  Example: `false`
+        :param bool is_offline: (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
+        :param str name: A user-friendly name for the backend set that must be unique and cannot be changed.
+        :param str target_id: (Updatable) The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
+        :param int weight: (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+        """
+        pulumi.set(__self__, "port", port)
+        if ip_address is not None:
+            pulumi.set(__self__, "ip_address", ip_address)
+        if is_backup is not None:
+            pulumi.set(__self__, "is_backup", is_backup)
+        if is_drain is not None:
+            pulumi.set(__self__, "is_drain", is_drain)
+        if is_offline is not None:
+            pulumi.set(__self__, "is_offline", is_offline)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if target_id is not None:
+            pulumi.set(__self__, "target_id", target_id)
+        if weight is not None:
+            pulumi.set(__self__, "weight", weight)
+
+    @property
+    @pulumi.getter
+    def port(self) -> int:
+        """
+        (Updatable) The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
+        """
+        return pulumi.get(self, "port")
+
+    @property
+    @pulumi.getter(name="ipAddress")
+    def ip_address(self) -> Optional[str]:
+        """
+        (Updatable) The IP address of the backend server.  Example: `10.0.0.3`
+        """
+        return pulumi.get(self, "ip_address")
+
+    @property
+    @pulumi.getter(name="isBackup")
+    def is_backup(self) -> Optional[bool]:
+        """
+        (Updatable) Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
+        """
+        return pulumi.get(self, "is_backup")
+
+    @property
+    @pulumi.getter(name="isDrain")
+    def is_drain(self) -> Optional[bool]:
+        """
+        (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no  incoming traffic.  Example: `false`
+        """
+        return pulumi.get(self, "is_drain")
+
+    @property
+    @pulumi.getter(name="isOffline")
+    def is_offline(self) -> Optional[bool]:
+        """
+        (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
+        """
+        return pulumi.get(self, "is_offline")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        A user-friendly name for the backend set that must be unique and cannot be changed.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> Optional[str]:
+        """
+        (Updatable) The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
+        """
+        return pulumi.get(self, "target_id")
+
+    @property
+    @pulumi.getter
+    def weight(self) -> Optional[int]:
+        """
+        (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+        """
+        return pulumi.get(self, "weight")
+
+
+@pulumi.output_type
+class NetworkLoadBalancersBackendSetsUnifiedHealthChecker(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "intervalInMillis":
+            suggest = "interval_in_millis"
+        elif key == "requestData":
+            suggest = "request_data"
+        elif key == "responseBodyRegex":
+            suggest = "response_body_regex"
+        elif key == "responseData":
+            suggest = "response_data"
+        elif key == "returnCode":
+            suggest = "return_code"
+        elif key == "timeoutInMillis":
+            suggest = "timeout_in_millis"
+        elif key == "urlPath":
+            suggest = "url_path"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in NetworkLoadBalancersBackendSetsUnifiedHealthChecker. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        NetworkLoadBalancersBackendSetsUnifiedHealthChecker.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        NetworkLoadBalancersBackendSetsUnifiedHealthChecker.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 protocol: str,
+                 interval_in_millis: Optional[int] = None,
+                 port: Optional[int] = None,
+                 request_data: Optional[str] = None,
+                 response_body_regex: Optional[str] = None,
+                 response_data: Optional[str] = None,
+                 retries: Optional[int] = None,
+                 return_code: Optional[int] = None,
+                 timeout_in_millis: Optional[int] = None,
+                 url_path: Optional[str] = None):
+        """
+        :param str protocol: (Updatable) The protocol the health check must use; either HTTP or HTTPS, or UDP or TCP.  Example: `HTTP`
+        :param int interval_in_millis: (Updatable) The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
+        :param int port: (Updatable) The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
+        :param str request_data: (Updatable) Base64 encoded pattern to be sent as UDP or TCP health check probe.
+        :param str response_body_regex: (Updatable) A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|\s)*$`
+        :param str response_data: (Updatable) Base64 encoded pattern to be validated as UDP or TCP health check probe response.
+        :param int retries: (Updatable) The number of retries to attempt before a backend server is considered "unhealthy". This number also applies when recovering a server to the "healthy" state. The default value is 3.  Example: `3`
+        :param int return_code: (Updatable) The status code a healthy backend server should return. If you configure the health check policy to use the HTTP protocol, then you can use common HTTP status codes such as "200".  Example: `200`
+        :param int timeout_in_millis: (Updatable) The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply returns within this timeout period. The default value is 3000 (3 seconds).  Example: `3000`
+        :param str url_path: (Updatable) The path against which to run the health check.  Example: `/healthcheck`
+        """
+        pulumi.set(__self__, "protocol", protocol)
+        if interval_in_millis is not None:
+            pulumi.set(__self__, "interval_in_millis", interval_in_millis)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if request_data is not None:
+            pulumi.set(__self__, "request_data", request_data)
+        if response_body_regex is not None:
+            pulumi.set(__self__, "response_body_regex", response_body_regex)
+        if response_data is not None:
+            pulumi.set(__self__, "response_data", response_data)
+        if retries is not None:
+            pulumi.set(__self__, "retries", retries)
+        if return_code is not None:
+            pulumi.set(__self__, "return_code", return_code)
+        if timeout_in_millis is not None:
+            pulumi.set(__self__, "timeout_in_millis", timeout_in_millis)
+        if url_path is not None:
+            pulumi.set(__self__, "url_path", url_path)
+
+    @property
+    @pulumi.getter
+    def protocol(self) -> str:
+        """
+        (Updatable) The protocol the health check must use; either HTTP or HTTPS, or UDP or TCP.  Example: `HTTP`
+        """
+        return pulumi.get(self, "protocol")
+
+    @property
+    @pulumi.getter(name="intervalInMillis")
+    def interval_in_millis(self) -> Optional[int]:
+        """
+        (Updatable) The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
+        """
+        return pulumi.get(self, "interval_in_millis")
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[int]:
+        """
+        (Updatable) The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
+        """
+        return pulumi.get(self, "port")
+
+    @property
+    @pulumi.getter(name="requestData")
+    def request_data(self) -> Optional[str]:
+        """
+        (Updatable) Base64 encoded pattern to be sent as UDP or TCP health check probe.
+        """
+        return pulumi.get(self, "request_data")
+
+    @property
+    @pulumi.getter(name="responseBodyRegex")
+    def response_body_regex(self) -> Optional[str]:
+        """
+        (Updatable) A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|\s)*$`
+        """
+        return pulumi.get(self, "response_body_regex")
+
+    @property
+    @pulumi.getter(name="responseData")
+    def response_data(self) -> Optional[str]:
+        """
+        (Updatable) Base64 encoded pattern to be validated as UDP or TCP health check probe response.
+        """
+        return pulumi.get(self, "response_data")
+
+    @property
+    @pulumi.getter
+    def retries(self) -> Optional[int]:
+        """
+        (Updatable) The number of retries to attempt before a backend server is considered "unhealthy". This number also applies when recovering a server to the "healthy" state. The default value is 3.  Example: `3`
+        """
+        return pulumi.get(self, "retries")
+
+    @property
+    @pulumi.getter(name="returnCode")
+    def return_code(self) -> Optional[int]:
+        """
+        (Updatable) The status code a healthy backend server should return. If you configure the health check policy to use the HTTP protocol, then you can use common HTTP status codes such as "200".  Example: `200`
+        """
+        return pulumi.get(self, "return_code")
+
+    @property
+    @pulumi.getter(name="timeoutInMillis")
+    def timeout_in_millis(self) -> Optional[int]:
+        """
+        (Updatable) The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply returns within this timeout period. The default value is 3000 (3 seconds).  Example: `3000`
+        """
+        return pulumi.get(self, "timeout_in_millis")
+
+    @property
+    @pulumi.getter(name="urlPath")
+    def url_path(self) -> Optional[str]:
+        """
+        (Updatable) The path against which to run the health check.  Example: `/healthcheck`
+        """
+        return pulumi.get(self, "url_path")
 
 
 @pulumi.output_type

@@ -13,14 +13,14 @@ public final class GetDatabaseToolsEndpointServicePlainArgs extends com.pulumi.r
     public static final GetDatabaseToolsEndpointServicePlainArgs Empty = new GetDatabaseToolsEndpointServicePlainArgs();
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a DatabaseToolsEndpointService.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools Endpoint Service.
      * 
      */
     @Import(name="databaseToolsEndpointServiceId", required=true)
     private String databaseToolsEndpointServiceId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a DatabaseToolsEndpointService.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools Endpoint Service.
      * 
      */
     public String databaseToolsEndpointServiceId() {
@@ -52,7 +52,7 @@ public final class GetDatabaseToolsEndpointServicePlainArgs extends com.pulumi.r
         }
 
         /**
-         * @param databaseToolsEndpointServiceId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a DatabaseToolsEndpointService.
+         * @param databaseToolsEndpointServiceId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools Endpoint Service.
          * 
          * @return builder
          * 

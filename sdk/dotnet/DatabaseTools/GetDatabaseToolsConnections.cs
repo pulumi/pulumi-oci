@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DatabaseTools
         /// <summary>
         /// This data source provides the list of Database Tools Connections in Oracle Cloud Infrastructure Database Tools service.
         /// 
-        /// Returns a list of DatabaseToolsConnections.
+        /// Returns a list of Database Tools connections.
         /// 
         /// 
         /// {{% examples %}}
@@ -49,7 +49,7 @@ namespace Pulumi.Oci.DatabaseTools
         /// <summary>
         /// This data source provides the list of Database Tools Connections in Oracle Cloud Infrastructure Database Tools service.
         /// 
-        /// Returns a list of DatabaseToolsConnections.
+        /// Returns a list of Database Tools connections.
         /// 
         /// 
         /// {{% examples %}}
@@ -92,7 +92,7 @@ namespace Pulumi.Oci.DatabaseTools
         public string CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// A filter to return only resources that match the entire display name given.
+        /// A filter to return only resources that match the entire specified display name.
         /// </summary>
         [Input("displayName")]
         public string? DisplayName { get; set; }
@@ -106,7 +106,7 @@ namespace Pulumi.Oci.DatabaseTools
         }
 
         /// <summary>
-        /// A filter to return only resources their lifecycleState matches the given lifecycleState.
+        /// A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
         /// </summary>
         [Input("state")]
         public string? State { get; set; }
@@ -115,7 +115,7 @@ namespace Pulumi.Oci.DatabaseTools
         private List<string>? _types;
 
         /// <summary>
-        /// A filter to return only resources their endpointServiceId matches the given endpointServiceId.
+        /// A filter to return only resources their type matches the specified type.
         /// </summary>
         public List<string> Types
         {
@@ -137,7 +137,7 @@ namespace Pulumi.Oci.DatabaseTools
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// A filter to return only resources that match the entire display name given.
+        /// A filter to return only resources that match the entire specified display name.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -151,7 +151,7 @@ namespace Pulumi.Oci.DatabaseTools
         }
 
         /// <summary>
-        /// A filter to return only resources their lifecycleState matches the given lifecycleState.
+        /// A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -160,7 +160,7 @@ namespace Pulumi.Oci.DatabaseTools
         private InputList<string>? _types;
 
         /// <summary>
-        /// A filter to return only resources their endpointServiceId matches the given endpointServiceId.
+        /// A filter to return only resources their type matches the specified type.
         /// </summary>
         public InputList<string> Types
         {
@@ -178,7 +178,7 @@ namespace Pulumi.Oci.DatabaseTools
     public sealed class GetDatabaseToolsConnectionsResult
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -195,11 +195,11 @@ namespace Pulumi.Oci.DatabaseTools
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// The current state of the DatabaseToolsConnection.
+        /// The current state of the Database Tools connection.
         /// </summary>
         public readonly string? State;
         /// <summary>
-        /// The DatabaseToolsConnection type.
+        /// The Database Tools connection type.
         /// </summary>
         public readonly ImmutableArray<string> Types;
 

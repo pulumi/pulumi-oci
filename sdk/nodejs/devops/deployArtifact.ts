@@ -21,6 +21,7 @@ import * as utilities from "../utilities";
  *     deployArtifactSource: {
  *         deployArtifactSourceType: _var.deploy_artifact_deploy_artifact_source_deploy_artifact_source_type,
  *         base64encodedContent: _var.deploy_artifact_deploy_artifact_source_base64encoded_content,
+ *         chartUrl: _var.deploy_artifact_deploy_artifact_source_chart_url,
  *         deployArtifactPath: _var.deploy_artifact_deploy_artifact_source_deploy_artifact_path,
  *         deployArtifactVersion: _var.deploy_artifact_deploy_artifact_source_deploy_artifact_version,
  *         imageDigest: _var.deploy_artifact_deploy_artifact_source_image_digest,

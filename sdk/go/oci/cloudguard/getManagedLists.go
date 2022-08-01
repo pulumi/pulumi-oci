@@ -89,7 +89,7 @@ type GetManagedListsResult struct {
 	// Compartment Identifier where the resource is created
 	CompartmentId          string `pulumi:"compartmentId"`
 	CompartmentIdInSubtree *bool  `pulumi:"compartmentIdInSubtree"`
-	// ManagedList display name
+	// ManagedList display name.
 	DisplayName *string                 `pulumi:"displayName"`
 	Filters     []GetManagedListsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
@@ -167,7 +167,7 @@ func (o GetManagedListsResultOutput) CompartmentIdInSubtree() pulumi.BoolPtrOutp
 	return o.ApplyT(func(v GetManagedListsResult) *bool { return v.CompartmentIdInSubtree }).(pulumi.BoolPtrOutput)
 }
 
-// ManagedList display name
+// ManagedList display name.
 func (o GetManagedListsResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetManagedListsResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }

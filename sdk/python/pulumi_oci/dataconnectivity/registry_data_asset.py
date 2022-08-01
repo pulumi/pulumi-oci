@@ -23,6 +23,7 @@ class RegistryDataAssetArgs:
                  asset_properties: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  default_connection: Optional[pulumi.Input['RegistryDataAssetDefaultConnectionArgs']] = None,
                  description: Optional[pulumi.Input[str]] = None,
+                 end_points: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  external_key: Optional[pulumi.Input[str]] = None,
                  key: Optional[pulumi.Input[str]] = None,
                  metadata: Optional[pulumi.Input['RegistryDataAssetMetadataArgs']] = None,
@@ -42,6 +43,7 @@ class RegistryDataAssetArgs:
         :param pulumi.Input[Mapping[str, Any]] asset_properties: (Updatable) Additional properties for the data asset.
         :param pulumi.Input['RegistryDataAssetDefaultConnectionArgs'] default_connection: (Updatable) The default connection key.
         :param pulumi.Input[str] description: (Updatable) A user defined description for the object.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] end_points: (Updatable) The list of endpoints with which this data asset is associated.
         :param pulumi.Input[str] external_key: (Updatable) The external key for the object.
         :param pulumi.Input[str] key: (Updatable) The identifying key for the object.
         :param pulumi.Input['RegistryDataAssetMetadataArgs'] metadata: (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
@@ -63,6 +65,8 @@ class RegistryDataAssetArgs:
             pulumi.set(__self__, "default_connection", default_connection)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if end_points is not None:
+            pulumi.set(__self__, "end_points", end_points)
         if external_key is not None:
             pulumi.set(__self__, "external_key", external_key)
         if key is not None:
@@ -179,6 +183,18 @@ class RegistryDataAssetArgs:
         pulumi.set(self, "description", value)
 
     @property
+    @pulumi.getter(name="endPoints")
+    def end_points(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) The list of endpoints with which this data asset is associated.
+        """
+        return pulumi.get(self, "end_points")
+
+    @end_points.setter
+    def end_points(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "end_points", value)
+
+    @property
     @pulumi.getter(name="externalKey")
     def external_key(self) -> Optional[pulumi.Input[str]]:
         """
@@ -293,6 +309,7 @@ class _RegistryDataAssetState:
                  asset_properties: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  default_connection: Optional[pulumi.Input['RegistryDataAssetDefaultConnectionArgs']] = None,
                  description: Optional[pulumi.Input[str]] = None,
+                 end_points: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  external_key: Optional[pulumi.Input[str]] = None,
                  identifier: Optional[pulumi.Input[str]] = None,
                  key: Optional[pulumi.Input[str]] = None,
@@ -312,6 +329,7 @@ class _RegistryDataAssetState:
         :param pulumi.Input[Mapping[str, Any]] asset_properties: (Updatable) Additional properties for the data asset.
         :param pulumi.Input['RegistryDataAssetDefaultConnectionArgs'] default_connection: (Updatable) The default connection key.
         :param pulumi.Input[str] description: (Updatable) A user defined description for the object.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] end_points: (Updatable) The list of endpoints with which this data asset is associated.
         :param pulumi.Input[str] external_key: (Updatable) The external key for the object.
         :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
         :param pulumi.Input[str] key: (Updatable) The identifying key for the object.
@@ -333,6 +351,8 @@ class _RegistryDataAssetState:
             pulumi.set(__self__, "default_connection", default_connection)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if end_points is not None:
+            pulumi.set(__self__, "end_points", end_points)
         if external_key is not None:
             pulumi.set(__self__, "external_key", external_key)
         if identifier is not None:
@@ -397,6 +417,18 @@ class _RegistryDataAssetState:
     @description.setter
     def description(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="endPoints")
+    def end_points(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) The list of endpoints with which this data asset is associated.
+        """
+        return pulumi.get(self, "end_points")
+
+    @end_points.setter
+    def end_points(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "end_points", value)
 
     @property
     @pulumi.getter(name="externalKey")
@@ -575,6 +607,7 @@ class RegistryDataAsset(pulumi.CustomResource):
                  asset_properties: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  default_connection: Optional[pulumi.Input[pulumi.InputType['RegistryDataAssetDefaultConnectionArgs']]] = None,
                  description: Optional[pulumi.Input[str]] = None,
+                 end_points: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  external_key: Optional[pulumi.Input[str]] = None,
                  identifier: Optional[pulumi.Input[str]] = None,
                  key: Optional[pulumi.Input[str]] = None,
@@ -697,6 +730,7 @@ class RegistryDataAsset(pulumi.CustomResource):
                 type=var["registry_data_asset_default_connection_type"],
             ),
             description=var["registry_data_asset_description"],
+            end_points=var["registry_data_asset_end_points"],
             external_key=var["registry_data_asset_external_key"],
             key=var["registry_data_asset_key"],
             metadata=oci.data.connectivity.RegistryDataAssetMetadataArgs(
@@ -800,6 +834,7 @@ class RegistryDataAsset(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] asset_properties: (Updatable) Additional properties for the data asset.
         :param pulumi.Input[pulumi.InputType['RegistryDataAssetDefaultConnectionArgs']] default_connection: (Updatable) The default connection key.
         :param pulumi.Input[str] description: (Updatable) A user defined description for the object.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] end_points: (Updatable) The list of endpoints with which this data asset is associated.
         :param pulumi.Input[str] external_key: (Updatable) The external key for the object.
         :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
         :param pulumi.Input[str] key: (Updatable) The identifying key for the object.
@@ -928,6 +963,7 @@ class RegistryDataAsset(pulumi.CustomResource):
                 type=var["registry_data_asset_default_connection_type"],
             ),
             description=var["registry_data_asset_description"],
+            end_points=var["registry_data_asset_end_points"],
             external_key=var["registry_data_asset_external_key"],
             key=var["registry_data_asset_key"],
             metadata=oci.data.connectivity.RegistryDataAssetMetadataArgs(
@@ -1044,6 +1080,7 @@ class RegistryDataAsset(pulumi.CustomResource):
                  asset_properties: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  default_connection: Optional[pulumi.Input[pulumi.InputType['RegistryDataAssetDefaultConnectionArgs']]] = None,
                  description: Optional[pulumi.Input[str]] = None,
+                 end_points: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  external_key: Optional[pulumi.Input[str]] = None,
                  identifier: Optional[pulumi.Input[str]] = None,
                  key: Optional[pulumi.Input[str]] = None,
@@ -1073,6 +1110,7 @@ class RegistryDataAsset(pulumi.CustomResource):
             __props__.__dict__["asset_properties"] = asset_properties
             __props__.__dict__["default_connection"] = default_connection
             __props__.__dict__["description"] = description
+            __props__.__dict__["end_points"] = end_points
             __props__.__dict__["external_key"] = external_key
             if identifier is None and not opts.urn:
                 raise TypeError("Missing required property 'identifier'")
@@ -1110,6 +1148,7 @@ class RegistryDataAsset(pulumi.CustomResource):
             asset_properties: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             default_connection: Optional[pulumi.Input[pulumi.InputType['RegistryDataAssetDefaultConnectionArgs']]] = None,
             description: Optional[pulumi.Input[str]] = None,
+            end_points: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             external_key: Optional[pulumi.Input[str]] = None,
             identifier: Optional[pulumi.Input[str]] = None,
             key: Optional[pulumi.Input[str]] = None,
@@ -1134,6 +1173,7 @@ class RegistryDataAsset(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] asset_properties: (Updatable) Additional properties for the data asset.
         :param pulumi.Input[pulumi.InputType['RegistryDataAssetDefaultConnectionArgs']] default_connection: (Updatable) The default connection key.
         :param pulumi.Input[str] description: (Updatable) A user defined description for the object.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] end_points: (Updatable) The list of endpoints with which this data asset is associated.
         :param pulumi.Input[str] external_key: (Updatable) The external key for the object.
         :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
         :param pulumi.Input[str] key: (Updatable) The identifying key for the object.
@@ -1156,6 +1196,7 @@ class RegistryDataAsset(pulumi.CustomResource):
         __props__.__dict__["asset_properties"] = asset_properties
         __props__.__dict__["default_connection"] = default_connection
         __props__.__dict__["description"] = description
+        __props__.__dict__["end_points"] = end_points
         __props__.__dict__["external_key"] = external_key
         __props__.__dict__["identifier"] = identifier
         __props__.__dict__["key"] = key
@@ -1195,6 +1236,14 @@ class RegistryDataAsset(pulumi.CustomResource):
         (Updatable) A user defined description for the object.
         """
         return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="endPoints")
+    def end_points(self) -> pulumi.Output[Sequence[str]]:
+        """
+        (Updatable) The list of endpoints with which this data asset is associated.
+        """
+        return pulumi.get(self, "end_points")
 
     @property
     @pulumi.getter(name="externalKey")

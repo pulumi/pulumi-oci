@@ -24,6 +24,18 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         [Input("capacityReservationId")]
         public Input<string>? CapacityReservationId { get; set; }
 
+        [Input("faultDomains")]
+        private InputList<string>? _faultDomains;
+
+        /// <summary>
+        /// (Updatable) A list of fault domains in which to place nodes.
+        /// </summary>
+        public InputList<string> FaultDomains
+        {
+            get => _faultDomains ?? (_faultDomains = new InputList<string>());
+            set => _faultDomains = value;
+        }
+
         /// <summary>
         /// (Updatable) The OCID of the subnet in which to place nodes.
         /// </summary>

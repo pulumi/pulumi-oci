@@ -65,6 +65,12 @@ namespace Pulumi.Oci.Database
         [Output("cpusEnabled")]
         public Output<int> CpusEnabled { get; private set; } = null!;
 
+        /// <summary>
+        /// Indicates user preferences for the various diagnostic collection options for the VM cluster.
+        /// </summary>
+        [Output("dataCollectionOptions")]
+        public Output<ImmutableArray<Outputs.VmClusterAddVirtualNetworkDataCollectionOption>> DataCollectionOptions { get; private set; } = null!;
+
         [Output("dataStorageSizeInGb")]
         public Output<double> DataStorageSizeInGb { get; private set; } = null!;
 
@@ -285,6 +291,18 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("cpusEnabled")]
         public Input<int>? CpusEnabled { get; set; }
+
+        [Input("dataCollectionOptions")]
+        private InputList<Inputs.VmClusterAddVirtualNetworkDataCollectionOptionGetArgs>? _dataCollectionOptions;
+
+        /// <summary>
+        /// Indicates user preferences for the various diagnostic collection options for the VM cluster.
+        /// </summary>
+        public InputList<Inputs.VmClusterAddVirtualNetworkDataCollectionOptionGetArgs> DataCollectionOptions
+        {
+            get => _dataCollectionOptions ?? (_dataCollectionOptions = new InputList<Inputs.VmClusterAddVirtualNetworkDataCollectionOptionGetArgs>());
+            set => _dataCollectionOptions = value;
+        }
 
         [Input("dataStorageSizeInGb")]
         public Input<double>? DataStorageSizeInGb { get; set; }

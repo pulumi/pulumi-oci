@@ -73,7 +73,7 @@ type LookupMysqlDbSystemResult struct {
 	CurrentPlacements []GetMysqlDbSystemCurrentPlacement `pulumi:"currentPlacements"`
 	// Initial size of the data volume in GiBs that will be created and attached.
 	DataStorageSizeInGb int `pulumi:"dataStorageSizeInGb"`
-	// The OCID of the source DB System.
+	// The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
 	DbSystemId string `pulumi:"dbSystemId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -101,16 +101,16 @@ type LookupMysqlDbSystemResult struct {
 	IsAnalyticsClusterAttached bool `pulumi:"isAnalyticsClusterAttached"`
 	// If the DB System has a HeatWave Cluster attached.
 	IsHeatWaveClusterAttached bool `pulumi:"isHeatWaveClusterAttached"`
-	// If the policy is to enable high availability of the instance, by maintaining secondary/failover capacity as necessary.
+	// Specifies if the DB System is highly available.
 	IsHighlyAvailable bool `pulumi:"isHighlyAvailable"`
 	// Additional information about the current lifecycleState.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The Maintenance Policy for the DB System.
 	Maintenances []GetMysqlDbSystemMaintenance `pulumi:"maintenances"`
 	// Name of the MySQL Version in use for the DB System.
-	//
-	// Deprecated: The 'mysql_version' field has been deprecated and may be removed in a future version. Do not use this field.
 	MysqlVersion string `pulumi:"mysqlVersion"`
+	// Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
+	PointInTimeRecoveryDetails []GetMysqlDbSystemPointInTimeRecoveryDetail `pulumi:"pointInTimeRecoveryDetails"`
 	// The port for primary endpoint of the DB System to listen on.
 	Port int `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
@@ -221,7 +221,7 @@ func (o LookupMysqlDbSystemResultOutput) DataStorageSizeInGb() pulumi.IntOutput 
 	return o.ApplyT(func(v LookupMysqlDbSystemResult) int { return v.DataStorageSizeInGb }).(pulumi.IntOutput)
 }
 
-// The OCID of the source DB System.
+// The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
 func (o LookupMysqlDbSystemResultOutput) DbSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMysqlDbSystemResult) string { return v.DbSystemId }).(pulumi.StringOutput)
 }
@@ -291,7 +291,7 @@ func (o LookupMysqlDbSystemResultOutput) IsHeatWaveClusterAttached() pulumi.Bool
 	return o.ApplyT(func(v LookupMysqlDbSystemResult) bool { return v.IsHeatWaveClusterAttached }).(pulumi.BoolOutput)
 }
 
-// If the policy is to enable high availability of the instance, by maintaining secondary/failover capacity as necessary.
+// Specifies if the DB System is highly available.
 func (o LookupMysqlDbSystemResultOutput) IsHighlyAvailable() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupMysqlDbSystemResult) bool { return v.IsHighlyAvailable }).(pulumi.BoolOutput)
 }
@@ -307,10 +307,15 @@ func (o LookupMysqlDbSystemResultOutput) Maintenances() GetMysqlDbSystemMaintena
 }
 
 // Name of the MySQL Version in use for the DB System.
-//
-// Deprecated: The 'mysql_version' field has been deprecated and may be removed in a future version. Do not use this field.
 func (o LookupMysqlDbSystemResultOutput) MysqlVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMysqlDbSystemResult) string { return v.MysqlVersion }).(pulumi.StringOutput)
+}
+
+// Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
+func (o LookupMysqlDbSystemResultOutput) PointInTimeRecoveryDetails() GetMysqlDbSystemPointInTimeRecoveryDetailArrayOutput {
+	return o.ApplyT(func(v LookupMysqlDbSystemResult) []GetMysqlDbSystemPointInTimeRecoveryDetail {
+		return v.PointInTimeRecoveryDetails
+	}).(GetMysqlDbSystemPointInTimeRecoveryDetailArrayOutput)
 }
 
 // The port for primary endpoint of the DB System to listen on.

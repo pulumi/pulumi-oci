@@ -11,6 +11,7 @@ from . import outputs
 
 __all__ = [
     'DatasetDatasetFormatDetails',
+    'DatasetDatasetFormatDetailsTextFileTypeMetadata',
     'DatasetDatasetSourceDetails',
     'DatasetInitialRecordGenerationConfiguration',
     'DatasetLabelSet',
@@ -20,6 +21,7 @@ __all__ = [
     'GetAnnotationFormatsAnnotationFormatCollectionItemResult',
     'GetAnnotationFormatsFilterResult',
     'GetDatasetDatasetFormatDetailResult',
+    'GetDatasetDatasetFormatDetailTextFileTypeMetadataResult',
     'GetDatasetDatasetSourceDetailResult',
     'GetDatasetInitialRecordGenerationConfigurationResult',
     'GetDatasetLabelSetResult',
@@ -27,6 +29,7 @@ __all__ = [
     'GetDatasetsDatasetCollectionResult',
     'GetDatasetsDatasetCollectionItemResult',
     'GetDatasetsDatasetCollectionItemDatasetFormatDetailResult',
+    'GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataResult',
     'GetDatasetsDatasetCollectionItemDatasetSourceDetailResult',
     'GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationResult',
     'GetDatasetsDatasetCollectionItemLabelSetResult',
@@ -41,6 +44,8 @@ class DatasetDatasetFormatDetails(dict):
         suggest = None
         if key == "formatType":
             suggest = "format_type"
+        elif key == "textFileTypeMetadata":
+            suggest = "text_file_type_metadata"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in DatasetDatasetFormatDetails. Access the value via the '{suggest}' property getter instead.")
@@ -54,19 +59,135 @@ class DatasetDatasetFormatDetails(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 format_type: str):
+                 format_type: str,
+                 text_file_type_metadata: Optional['outputs.DatasetDatasetFormatDetailsTextFileTypeMetadata'] = None):
         """
-        :param str format_type: Format type. DOCUMENT format is for record contents that are PDFs or TIFFs. IMAGE format is for record contents that are JPEGs or PNGs. TEXT format is for record contents that are txt files.
+        :param str format_type: It defines the format type of text files.
+        :param 'DatasetDatasetFormatDetailsTextFileTypeMetadataArgs' text_file_type_metadata: Metadata for files with text content.
         """
         pulumi.set(__self__, "format_type", format_type)
+        if text_file_type_metadata is not None:
+            pulumi.set(__self__, "text_file_type_metadata", text_file_type_metadata)
 
     @property
     @pulumi.getter(name="formatType")
     def format_type(self) -> str:
         """
-        Format type. DOCUMENT format is for record contents that are PDFs or TIFFs. IMAGE format is for record contents that are JPEGs or PNGs. TEXT format is for record contents that are txt files.
+        It defines the format type of text files.
         """
         return pulumi.get(self, "format_type")
+
+    @property
+    @pulumi.getter(name="textFileTypeMetadata")
+    def text_file_type_metadata(self) -> Optional['outputs.DatasetDatasetFormatDetailsTextFileTypeMetadata']:
+        """
+        Metadata for files with text content.
+        """
+        return pulumi.get(self, "text_file_type_metadata")
+
+
+@pulumi.output_type
+class DatasetDatasetFormatDetailsTextFileTypeMetadata(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "columnIndex":
+            suggest = "column_index"
+        elif key == "formatType":
+            suggest = "format_type"
+        elif key == "columnDelimiter":
+            suggest = "column_delimiter"
+        elif key == "columnName":
+            suggest = "column_name"
+        elif key == "escapeCharacter":
+            suggest = "escape_character"
+        elif key == "lineDelimiter":
+            suggest = "line_delimiter"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatasetDatasetFormatDetailsTextFileTypeMetadata. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatasetDatasetFormatDetailsTextFileTypeMetadata.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatasetDatasetFormatDetailsTextFileTypeMetadata.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 column_index: int,
+                 format_type: str,
+                 column_delimiter: Optional[str] = None,
+                 column_name: Optional[str] = None,
+                 escape_character: Optional[str] = None,
+                 line_delimiter: Optional[str] = None):
+        """
+        :param int column_index: The index of a selected column. This is a zero-based index.
+        :param str format_type: It defines the format type of text files.
+        :param str column_delimiter: A column delimiter
+        :param str column_name: The name of a selected column.
+        :param str escape_character: An escape character.
+        :param str line_delimiter: A line delimiter.
+        """
+        pulumi.set(__self__, "column_index", column_index)
+        pulumi.set(__self__, "format_type", format_type)
+        if column_delimiter is not None:
+            pulumi.set(__self__, "column_delimiter", column_delimiter)
+        if column_name is not None:
+            pulumi.set(__self__, "column_name", column_name)
+        if escape_character is not None:
+            pulumi.set(__self__, "escape_character", escape_character)
+        if line_delimiter is not None:
+            pulumi.set(__self__, "line_delimiter", line_delimiter)
+
+    @property
+    @pulumi.getter(name="columnIndex")
+    def column_index(self) -> int:
+        """
+        The index of a selected column. This is a zero-based index.
+        """
+        return pulumi.get(self, "column_index")
+
+    @property
+    @pulumi.getter(name="formatType")
+    def format_type(self) -> str:
+        """
+        It defines the format type of text files.
+        """
+        return pulumi.get(self, "format_type")
+
+    @property
+    @pulumi.getter(name="columnDelimiter")
+    def column_delimiter(self) -> Optional[str]:
+        """
+        A column delimiter
+        """
+        return pulumi.get(self, "column_delimiter")
+
+    @property
+    @pulumi.getter(name="columnName")
+    def column_name(self) -> Optional[str]:
+        """
+        The name of a selected column.
+        """
+        return pulumi.get(self, "column_name")
+
+    @property
+    @pulumi.getter(name="escapeCharacter")
+    def escape_character(self) -> Optional[str]:
+        """
+        An escape character.
+        """
+        return pulumi.get(self, "escape_character")
+
+    @property
+    @pulumi.getter(name="lineDelimiter")
+    def line_delimiter(self) -> Optional[str]:
+        """
+        A line delimiter.
+        """
+        return pulumi.get(self, "line_delimiter")
 
 
 @pulumi.output_type
@@ -94,10 +215,10 @@ class DatasetDatasetSourceDetails(dict):
                  source_type: str,
                  prefix: Optional[str] = None):
         """
-        :param str bucket: The object storage bucket that contains the dataset data source
-        :param str namespace: Namespace of the bucket that contains the dataset data source
-        :param str source_type: Source type.  OBJECT_STORAGE allows the customer to describe where the dataset is in object storage.
-        :param str prefix: A common path prefix shared by the objects that make up the dataset. Records will not be generated for objects whose name match exactly with prefix.
+        :param str bucket: The object storage bucket that contains the dataset data source.
+        :param str namespace: The namespace of the bucket that contains the dataset data source.
+        :param str source_type: The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
+        :param str prefix: A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
         """
         pulumi.set(__self__, "bucket", bucket)
         pulumi.set(__self__, "namespace", namespace)
@@ -109,7 +230,7 @@ class DatasetDatasetSourceDetails(dict):
     @pulumi.getter
     def bucket(self) -> str:
         """
-        The object storage bucket that contains the dataset data source
+        The object storage bucket that contains the dataset data source.
         """
         return pulumi.get(self, "bucket")
 
@@ -117,7 +238,7 @@ class DatasetDatasetSourceDetails(dict):
     @pulumi.getter
     def namespace(self) -> str:
         """
-        Namespace of the bucket that contains the dataset data source
+        The namespace of the bucket that contains the dataset data source.
         """
         return pulumi.get(self, "namespace")
 
@@ -125,7 +246,7 @@ class DatasetDatasetSourceDetails(dict):
     @pulumi.getter(name="sourceType")
     def source_type(self) -> str:
         """
-        Source type.  OBJECT_STORAGE allows the customer to describe where the dataset is in object storage.
+        The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
         """
         return pulumi.get(self, "source_type")
 
@@ -133,7 +254,7 @@ class DatasetDatasetSourceDetails(dict):
     @pulumi.getter
     def prefix(self) -> Optional[str]:
         """
-        A common path prefix shared by the objects that make up the dataset. Records will not be generated for objects whose name match exactly with prefix.
+        A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
         """
         return pulumi.get(self, "prefix")
 
@@ -149,7 +270,7 @@ class DatasetLabelSet(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.DatasetLabelSetItem']):
         """
-        :param Sequence['DatasetLabelSetItemArgs'] items: An ordered collection of Labels that are unique by name.
+        :param Sequence['DatasetLabelSetItemArgs'] items: An ordered collection of labels that are unique by name.
         """
         pulumi.set(__self__, "items", items)
 
@@ -157,7 +278,7 @@ class DatasetLabelSet(dict):
     @pulumi.getter
     def items(self) -> Sequence['outputs.DatasetLabelSetItem']:
         """
-        An ordered collection of Labels that are unique by name.
+        An ordered collection of labels that are unique by name.
         """
         return pulumi.get(self, "items")
 
@@ -270,19 +391,103 @@ class GetAnnotationFormatsFilterResult(dict):
 @pulumi.output_type
 class GetDatasetDatasetFormatDetailResult(dict):
     def __init__(__self__, *,
-                 format_type: str):
+                 format_type: str,
+                 text_file_type_metadatas: Sequence['outputs.GetDatasetDatasetFormatDetailTextFileTypeMetadataResult']):
         """
-        :param str format_type: Format type. DOCUMENT format is for record contents that are PDFs or TIFFs. IMAGE format is for record contents that are JPEGs or PNGs. TEXT format is for record contents that are txt files.
+        :param str format_type: It defines the format type of text files.
+        :param Sequence['GetDatasetDatasetFormatDetailTextFileTypeMetadataArgs'] text_file_type_metadatas: Metadata for files with text content.
         """
         pulumi.set(__self__, "format_type", format_type)
+        pulumi.set(__self__, "text_file_type_metadatas", text_file_type_metadatas)
 
     @property
     @pulumi.getter(name="formatType")
     def format_type(self) -> str:
         """
-        Format type. DOCUMENT format is for record contents that are PDFs or TIFFs. IMAGE format is for record contents that are JPEGs or PNGs. TEXT format is for record contents that are txt files.
+        It defines the format type of text files.
         """
         return pulumi.get(self, "format_type")
+
+    @property
+    @pulumi.getter(name="textFileTypeMetadatas")
+    def text_file_type_metadatas(self) -> Sequence['outputs.GetDatasetDatasetFormatDetailTextFileTypeMetadataResult']:
+        """
+        Metadata for files with text content.
+        """
+        return pulumi.get(self, "text_file_type_metadatas")
+
+
+@pulumi.output_type
+class GetDatasetDatasetFormatDetailTextFileTypeMetadataResult(dict):
+    def __init__(__self__, *,
+                 column_delimiter: str,
+                 column_index: int,
+                 column_name: str,
+                 escape_character: str,
+                 format_type: str,
+                 line_delimiter: str):
+        """
+        :param str column_delimiter: A column delimiter
+        :param int column_index: The index of a selected column. This is a zero-based index.
+        :param str column_name: The name of a selected column.
+        :param str escape_character: An escape character.
+        :param str format_type: It defines the format type of text files.
+        :param str line_delimiter: A line delimiter.
+        """
+        pulumi.set(__self__, "column_delimiter", column_delimiter)
+        pulumi.set(__self__, "column_index", column_index)
+        pulumi.set(__self__, "column_name", column_name)
+        pulumi.set(__self__, "escape_character", escape_character)
+        pulumi.set(__self__, "format_type", format_type)
+        pulumi.set(__self__, "line_delimiter", line_delimiter)
+
+    @property
+    @pulumi.getter(name="columnDelimiter")
+    def column_delimiter(self) -> str:
+        """
+        A column delimiter
+        """
+        return pulumi.get(self, "column_delimiter")
+
+    @property
+    @pulumi.getter(name="columnIndex")
+    def column_index(self) -> int:
+        """
+        The index of a selected column. This is a zero-based index.
+        """
+        return pulumi.get(self, "column_index")
+
+    @property
+    @pulumi.getter(name="columnName")
+    def column_name(self) -> str:
+        """
+        The name of a selected column.
+        """
+        return pulumi.get(self, "column_name")
+
+    @property
+    @pulumi.getter(name="escapeCharacter")
+    def escape_character(self) -> str:
+        """
+        An escape character.
+        """
+        return pulumi.get(self, "escape_character")
+
+    @property
+    @pulumi.getter(name="formatType")
+    def format_type(self) -> str:
+        """
+        It defines the format type of text files.
+        """
+        return pulumi.get(self, "format_type")
+
+    @property
+    @pulumi.getter(name="lineDelimiter")
+    def line_delimiter(self) -> str:
+        """
+        A line delimiter.
+        """
+        return pulumi.get(self, "line_delimiter")
 
 
 @pulumi.output_type
@@ -293,10 +498,10 @@ class GetDatasetDatasetSourceDetailResult(dict):
                  prefix: str,
                  source_type: str):
         """
-        :param str bucket: The object storage bucket that contains the dataset data source
-        :param str namespace: Namespace of the bucket that contains the dataset data source
-        :param str prefix: A common path prefix shared by the objects that make up the dataset. Records will not be generated for objects whose name match exactly with prefix.
-        :param str source_type: Source type.  OBJECT_STORAGE allows the customer to describe where the dataset is in object storage.
+        :param str bucket: The object storage bucket that contains the dataset data source.
+        :param str namespace: The namespace of the bucket that contains the dataset data source.
+        :param str prefix: A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
+        :param str source_type: The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
         """
         pulumi.set(__self__, "bucket", bucket)
         pulumi.set(__self__, "namespace", namespace)
@@ -307,7 +512,7 @@ class GetDatasetDatasetSourceDetailResult(dict):
     @pulumi.getter
     def bucket(self) -> str:
         """
-        The object storage bucket that contains the dataset data source
+        The object storage bucket that contains the dataset data source.
         """
         return pulumi.get(self, "bucket")
 
@@ -315,7 +520,7 @@ class GetDatasetDatasetSourceDetailResult(dict):
     @pulumi.getter
     def namespace(self) -> str:
         """
-        Namespace of the bucket that contains the dataset data source
+        The namespace of the bucket that contains the dataset data source.
         """
         return pulumi.get(self, "namespace")
 
@@ -323,7 +528,7 @@ class GetDatasetDatasetSourceDetailResult(dict):
     @pulumi.getter
     def prefix(self) -> str:
         """
-        A common path prefix shared by the objects that make up the dataset. Records will not be generated for objects whose name match exactly with prefix.
+        A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
         """
         return pulumi.get(self, "prefix")
 
@@ -331,7 +536,7 @@ class GetDatasetDatasetSourceDetailResult(dict):
     @pulumi.getter(name="sourceType")
     def source_type(self) -> str:
         """
-        Source type.  OBJECT_STORAGE allows the customer to describe where the dataset is in object storage.
+        The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
         """
         return pulumi.get(self, "source_type")
 
@@ -347,7 +552,7 @@ class GetDatasetLabelSetResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetDatasetLabelSetItemResult']):
         """
-        :param Sequence['GetDatasetLabelSetItemArgs'] items: An ordered collection of Labels that are unique by name.
+        :param Sequence['GetDatasetLabelSetItemArgs'] items: An ordered collection of labels that are unique by name.
         """
         pulumi.set(__self__, "items", items)
 
@@ -355,7 +560,7 @@ class GetDatasetLabelSetResult(dict):
     @pulumi.getter
     def items(self) -> Sequence['outputs.GetDatasetLabelSetItemResult']:
         """
-        An ordered collection of Labels that are unique by name.
+        An ordered collection of labels that are unique by name.
         """
         return pulumi.get(self, "items")
 
@@ -383,7 +588,7 @@ class GetDatasetsDatasetCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetDatasetsDatasetCollectionItemResult']):
         """
-        :param Sequence['GetDatasetsDatasetCollectionItemArgs'] items: An ordered collection of Labels that are unique by name.
+        :param Sequence['GetDatasetsDatasetCollectionItemArgs'] items: An ordered collection of labels that are unique by name.
         """
         pulumi.set(__self__, "items", items)
 
@@ -391,7 +596,7 @@ class GetDatasetsDatasetCollectionResult(dict):
     @pulumi.getter
     def items(self) -> Sequence['outputs.GetDatasetsDatasetCollectionItemResult']:
         """
-        An ordered collection of Labels that are unique by name.
+        An ordered collection of labels that are unique by name.
         """
         return pulumi.get(self, "items")
 
@@ -418,15 +623,15 @@ class GetDatasetsDatasetCollectionItemResult(dict):
         """
         :param str annotation_format: A filter to return only resources that match the entire annotation format given.
         :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Sequence['GetDatasetsDatasetCollectionItemDatasetFormatDetailArgs'] dataset_format_details: Specifies how to process the data. Supported formats include DOCUMENT, IMAGE and TEXT.
+        :param Sequence['GetDatasetsDatasetCollectionItemDatasetFormatDetailArgs'] dataset_format_details: It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
         :param Sequence['GetDatasetsDatasetCollectionItemDatasetSourceDetailArgs'] dataset_source_details: This allows the customer to specify the source of the dataset.
         :param Mapping[str, Any] defined_tags: The defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         :param str description: A user provided description of the dataset
         :param str display_name: A filter to return only resources that match the entire display name given.
         :param Mapping[str, Any] freeform_tags: A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         :param str id: Unique Dataset OCID
-        :param Sequence['GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationArgs'] initial_record_generation_configurations: Initial Generate Records configuration, generates records from the Dataset's source.
-        :param Sequence['GetDatasetsDatasetCollectionItemLabelSetArgs'] label_sets: An ordered collection of Labels that are unique by name.
+        :param Sequence['GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationArgs'] initial_record_generation_configurations: The initial generate records configuration. It generates records from the dataset's source.
+        :param Sequence['GetDatasetsDatasetCollectionItemLabelSetArgs'] label_sets: An ordered collection of labels that are unique by name.
         :param str labeling_instructions: The labeling instructions for human labelers in rich text format
         :param str lifecycle_details: A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in FAILED or NEEDS_ATTENTION state.
         :param str state: A filter to return only resources whose lifecycleState matches this query param.
@@ -470,7 +675,7 @@ class GetDatasetsDatasetCollectionItemResult(dict):
     @pulumi.getter(name="datasetFormatDetails")
     def dataset_format_details(self) -> Sequence['outputs.GetDatasetsDatasetCollectionItemDatasetFormatDetailResult']:
         """
-        Specifies how to process the data. Supported formats include DOCUMENT, IMAGE and TEXT.
+        It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
         """
         return pulumi.get(self, "dataset_format_details")
 
@@ -526,7 +731,7 @@ class GetDatasetsDatasetCollectionItemResult(dict):
     @pulumi.getter(name="initialRecordGenerationConfigurations")
     def initial_record_generation_configurations(self) -> Sequence['outputs.GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationResult']:
         """
-        Initial Generate Records configuration, generates records from the Dataset's source.
+        The initial generate records configuration. It generates records from the dataset's source.
         """
         return pulumi.get(self, "initial_record_generation_configurations")
 
@@ -534,7 +739,7 @@ class GetDatasetsDatasetCollectionItemResult(dict):
     @pulumi.getter(name="labelSets")
     def label_sets(self) -> Sequence['outputs.GetDatasetsDatasetCollectionItemLabelSetResult']:
         """
-        An ordered collection of Labels that are unique by name.
+        An ordered collection of labels that are unique by name.
         """
         return pulumi.get(self, "label_sets")
 
@@ -582,19 +787,103 @@ class GetDatasetsDatasetCollectionItemResult(dict):
 @pulumi.output_type
 class GetDatasetsDatasetCollectionItemDatasetFormatDetailResult(dict):
     def __init__(__self__, *,
-                 format_type: str):
+                 format_type: str,
+                 text_file_type_metadatas: Sequence['outputs.GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataResult']):
         """
-        :param str format_type: Format type. DOCUMENT format is for record contents that are PDFs or TIFFs. IMAGE format is for record contents that are JPEGs or PNGs. TEXT format is for record contents that are txt files.
+        :param str format_type: It defines the format type of text files.
+        :param Sequence['GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArgs'] text_file_type_metadatas: Metadata for files with text content.
         """
         pulumi.set(__self__, "format_type", format_type)
+        pulumi.set(__self__, "text_file_type_metadatas", text_file_type_metadatas)
 
     @property
     @pulumi.getter(name="formatType")
     def format_type(self) -> str:
         """
-        Format type. DOCUMENT format is for record contents that are PDFs or TIFFs. IMAGE format is for record contents that are JPEGs or PNGs. TEXT format is for record contents that are txt files.
+        It defines the format type of text files.
         """
         return pulumi.get(self, "format_type")
+
+    @property
+    @pulumi.getter(name="textFileTypeMetadatas")
+    def text_file_type_metadatas(self) -> Sequence['outputs.GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataResult']:
+        """
+        Metadata for files with text content.
+        """
+        return pulumi.get(self, "text_file_type_metadatas")
+
+
+@pulumi.output_type
+class GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataResult(dict):
+    def __init__(__self__, *,
+                 column_delimiter: str,
+                 column_index: int,
+                 column_name: str,
+                 escape_character: str,
+                 format_type: str,
+                 line_delimiter: str):
+        """
+        :param str column_delimiter: A column delimiter
+        :param int column_index: The index of a selected column. This is a zero-based index.
+        :param str column_name: The name of a selected column.
+        :param str escape_character: An escape character.
+        :param str format_type: It defines the format type of text files.
+        :param str line_delimiter: A line delimiter.
+        """
+        pulumi.set(__self__, "column_delimiter", column_delimiter)
+        pulumi.set(__self__, "column_index", column_index)
+        pulumi.set(__self__, "column_name", column_name)
+        pulumi.set(__self__, "escape_character", escape_character)
+        pulumi.set(__self__, "format_type", format_type)
+        pulumi.set(__self__, "line_delimiter", line_delimiter)
+
+    @property
+    @pulumi.getter(name="columnDelimiter")
+    def column_delimiter(self) -> str:
+        """
+        A column delimiter
+        """
+        return pulumi.get(self, "column_delimiter")
+
+    @property
+    @pulumi.getter(name="columnIndex")
+    def column_index(self) -> int:
+        """
+        The index of a selected column. This is a zero-based index.
+        """
+        return pulumi.get(self, "column_index")
+
+    @property
+    @pulumi.getter(name="columnName")
+    def column_name(self) -> str:
+        """
+        The name of a selected column.
+        """
+        return pulumi.get(self, "column_name")
+
+    @property
+    @pulumi.getter(name="escapeCharacter")
+    def escape_character(self) -> str:
+        """
+        An escape character.
+        """
+        return pulumi.get(self, "escape_character")
+
+    @property
+    @pulumi.getter(name="formatType")
+    def format_type(self) -> str:
+        """
+        It defines the format type of text files.
+        """
+        return pulumi.get(self, "format_type")
+
+    @property
+    @pulumi.getter(name="lineDelimiter")
+    def line_delimiter(self) -> str:
+        """
+        A line delimiter.
+        """
+        return pulumi.get(self, "line_delimiter")
 
 
 @pulumi.output_type
@@ -605,10 +894,10 @@ class GetDatasetsDatasetCollectionItemDatasetSourceDetailResult(dict):
                  prefix: str,
                  source_type: str):
         """
-        :param str bucket: The object storage bucket that contains the dataset data source
-        :param str namespace: Namespace of the bucket that contains the dataset data source
-        :param str prefix: A common path prefix shared by the objects that make up the dataset. Records will not be generated for objects whose name match exactly with prefix.
-        :param str source_type: Source type.  OBJECT_STORAGE allows the customer to describe where the dataset is in object storage.
+        :param str bucket: The object storage bucket that contains the dataset data source.
+        :param str namespace: The namespace of the bucket that contains the dataset data source.
+        :param str prefix: A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
+        :param str source_type: The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
         """
         pulumi.set(__self__, "bucket", bucket)
         pulumi.set(__self__, "namespace", namespace)
@@ -619,7 +908,7 @@ class GetDatasetsDatasetCollectionItemDatasetSourceDetailResult(dict):
     @pulumi.getter
     def bucket(self) -> str:
         """
-        The object storage bucket that contains the dataset data source
+        The object storage bucket that contains the dataset data source.
         """
         return pulumi.get(self, "bucket")
 
@@ -627,7 +916,7 @@ class GetDatasetsDatasetCollectionItemDatasetSourceDetailResult(dict):
     @pulumi.getter
     def namespace(self) -> str:
         """
-        Namespace of the bucket that contains the dataset data source
+        The namespace of the bucket that contains the dataset data source.
         """
         return pulumi.get(self, "namespace")
 
@@ -635,7 +924,7 @@ class GetDatasetsDatasetCollectionItemDatasetSourceDetailResult(dict):
     @pulumi.getter
     def prefix(self) -> str:
         """
-        A common path prefix shared by the objects that make up the dataset. Records will not be generated for objects whose name match exactly with prefix.
+        A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
         """
         return pulumi.get(self, "prefix")
 
@@ -643,7 +932,7 @@ class GetDatasetsDatasetCollectionItemDatasetSourceDetailResult(dict):
     @pulumi.getter(name="sourceType")
     def source_type(self) -> str:
         """
-        Source type.  OBJECT_STORAGE allows the customer to describe where the dataset is in object storage.
+        The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
         """
         return pulumi.get(self, "source_type")
 
@@ -659,7 +948,7 @@ class GetDatasetsDatasetCollectionItemLabelSetResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetDatasetsDatasetCollectionItemLabelSetItemResult']):
         """
-        :param Sequence['GetDatasetsDatasetCollectionItemLabelSetItemArgs'] items: An ordered collection of Labels that are unique by name.
+        :param Sequence['GetDatasetsDatasetCollectionItemLabelSetItemArgs'] items: An ordered collection of labels that are unique by name.
         """
         pulumi.set(__self__, "items", items)
 
@@ -667,7 +956,7 @@ class GetDatasetsDatasetCollectionItemLabelSetResult(dict):
     @pulumi.getter
     def items(self) -> Sequence['outputs.GetDatasetsDatasetCollectionItemLabelSetItemResult']:
         """
-        An ordered collection of Labels that are unique by name.
+        An ordered collection of labels that are unique by name.
         """
         return pulumi.get(self, "items")
 

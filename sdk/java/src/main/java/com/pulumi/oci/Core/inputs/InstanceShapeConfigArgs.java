@@ -153,6 +153,21 @@ public final class InstanceShapeConfigArgs extends com.pulumi.resources.Resource
     }
 
     /**
+     * (Updatable) The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+     * 
+     */
+    @Import(name="nvmes")
+    private @Nullable Output<Integer> nvmes;
+
+    /**
+     * @return (Updatable) The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+     * 
+     */
+    public Optional<Output<Integer>> nvmes() {
+        return Optional.ofNullable(this.nvmes);
+    }
+
+    /**
      * (Updatable) The total number of OCPUs available to the instance.
      * 
      */
@@ -194,6 +209,7 @@ public final class InstanceShapeConfigArgs extends com.pulumi.resources.Resource
         this.maxVnicAttachments = $.maxVnicAttachments;
         this.memoryInGbs = $.memoryInGbs;
         this.networkingBandwidthInGbps = $.networkingBandwidthInGbps;
+        this.nvmes = $.nvmes;
         this.ocpus = $.ocpus;
         this.processorDescription = $.processorDescription;
     }
@@ -403,6 +419,27 @@ public final class InstanceShapeConfigArgs extends com.pulumi.resources.Resource
          */
         public Builder networkingBandwidthInGbps(Double networkingBandwidthInGbps) {
             return networkingBandwidthInGbps(Output.of(networkingBandwidthInGbps));
+        }
+
+        /**
+         * @param nvmes (Updatable) The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nvmes(@Nullable Output<Integer> nvmes) {
+            $.nvmes = nvmes;
+            return this;
+        }
+
+        /**
+         * @param nvmes (Updatable) The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nvmes(Integer nvmes) {
+            return nvmes(Output.of(nvmes));
         }
 
         /**

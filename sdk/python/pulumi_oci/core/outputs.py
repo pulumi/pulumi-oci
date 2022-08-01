@@ -13,6 +13,14 @@ __all__ = [
     'BootVolumeBackupSourceDetails',
     'BootVolumeBootVolumeReplica',
     'BootVolumeSourceDetails',
+    'CaptureFilterVtapCaptureFilterRule',
+    'CaptureFilterVtapCaptureFilterRuleIcmpOptions',
+    'CaptureFilterVtapCaptureFilterRuleTcpOptions',
+    'CaptureFilterVtapCaptureFilterRuleTcpOptionsDestinationPortRange',
+    'CaptureFilterVtapCaptureFilterRuleTcpOptionsSourcePortRange',
+    'CaptureFilterVtapCaptureFilterRuleUdpOptions',
+    'CaptureFilterVtapCaptureFilterRuleUdpOptionsDestinationPortRange',
+    'CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRange',
     'ClusterNetworkInstancePool',
     'ClusterNetworkInstancePoolLoadBalancer',
     'ClusterNetworkInstancePoolPlacementConfiguration',
@@ -83,6 +91,7 @@ __all__ = [
     'InstanceShapeConfig',
     'InstanceSourceDetails',
     'IpsecConnectionTunnelManagementBgpSessionInfo',
+    'IpsecConnectionTunnelManagementDpdConfig',
     'IpsecConnectionTunnelManagementEncryptionDomainConfig',
     'IpsecConnectionTunnelManagementPhaseOneDetail',
     'IpsecConnectionTunnelManagementPhaseTwoDetail',
@@ -150,6 +159,24 @@ __all__ = [
     'GetByoipRangesByoipRangeCollectionItemResult',
     'GetByoipRangesByoipRangeCollectionItemByoipRangeVcnIpv6allocationResult',
     'GetByoipRangesFilterResult',
+    'GetCaptureFilterVtapCaptureFilterRuleResult',
+    'GetCaptureFilterVtapCaptureFilterRuleIcmpOptionResult',
+    'GetCaptureFilterVtapCaptureFilterRuleTcpOptionResult',
+    'GetCaptureFilterVtapCaptureFilterRuleTcpOptionDestinationPortRangeResult',
+    'GetCaptureFilterVtapCaptureFilterRuleTcpOptionSourcePortRangeResult',
+    'GetCaptureFilterVtapCaptureFilterRuleUdpOptionResult',
+    'GetCaptureFilterVtapCaptureFilterRuleUdpOptionDestinationPortRangeResult',
+    'GetCaptureFilterVtapCaptureFilterRuleUdpOptionSourcePortRangeResult',
+    'GetCaptureFiltersCaptureFilterResult',
+    'GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleResult',
+    'GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleIcmpOptionResult',
+    'GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOptionResult',
+    'GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOptionDestinationPortRangeResult',
+    'GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOptionSourcePortRangeResult',
+    'GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleUdpOptionResult',
+    'GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleUdpOptionDestinationPortRangeResult',
+    'GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleUdpOptionSourcePortRangeResult',
+    'GetCaptureFiltersFilterResult',
     'GetClusterNetworkInstancePoolResult',
     'GetClusterNetworkInstancePoolLoadBalancerResult',
     'GetClusterNetworkInstancePoolPlacementConfigurationResult',
@@ -416,10 +443,15 @@ __all__ = [
     'GetShapeShapeNetworkingBandwidthOptionResult',
     'GetShapeShapeOcpuOptionResult',
     'GetShapeShapePlatformConfigOptionResult',
+    'GetShapeShapePlatformConfigOptionAccessControlServiceOptionResult',
+    'GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionResult',
     'GetShapeShapePlatformConfigOptionMeasuredBootOptionResult',
     'GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionResult',
+    'GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionResult',
     'GetShapeShapePlatformConfigOptionSecureBootOptionResult',
+    'GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionResult',
     'GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionResult',
+    'GetShapeShapePlatformConfigOptionVirtualInstructionsOptionResult',
     'GetShapeShapeRecommendedAlternativeResult',
     'GetShapesFilterResult',
     'GetShapesShapeResult',
@@ -428,10 +460,15 @@ __all__ = [
     'GetShapesShapeNetworkingBandwidthOptionResult',
     'GetShapesShapeOcpuOptionResult',
     'GetShapesShapePlatformConfigOptionResult',
+    'GetShapesShapePlatformConfigOptionAccessControlServiceOptionResult',
+    'GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionResult',
     'GetShapesShapePlatformConfigOptionMeasuredBootOptionResult',
     'GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionResult',
+    'GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionResult',
     'GetShapesShapePlatformConfigOptionSecureBootOptionResult',
+    'GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionResult',
     'GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionResult',
+    'GetShapesShapePlatformConfigOptionVirtualInstructionsOptionResult',
     'GetShapesShapeRecommendedAlternativeResult',
     'GetSubnetsFilterResult',
     'GetSubnetsSubnetResult',
@@ -487,6 +524,8 @@ __all__ = [
     'GetVolumesVolumeResult',
     'GetVolumesVolumeBlockVolumeReplicaResult',
     'GetVolumesVolumeSourceDetailResult',
+    'GetVtapsFilterResult',
+    'GetVtapsVtapResult',
 ]
 
 @pulumi.output_type
@@ -635,6 +674,393 @@ class BootVolumeSourceDetails(dict):
         The type can be one of these values: `bootVolume`, `bootVolumeBackup`, `bootVolumeReplica`
         """
         return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class CaptureFilterVtapCaptureFilterRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "trafficDirection":
+            suggest = "traffic_direction"
+        elif key == "destinationCidr":
+            suggest = "destination_cidr"
+        elif key == "icmpOptions":
+            suggest = "icmp_options"
+        elif key == "ruleAction":
+            suggest = "rule_action"
+        elif key == "sourceCidr":
+            suggest = "source_cidr"
+        elif key == "tcpOptions":
+            suggest = "tcp_options"
+        elif key == "udpOptions":
+            suggest = "udp_options"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CaptureFilterVtapCaptureFilterRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CaptureFilterVtapCaptureFilterRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CaptureFilterVtapCaptureFilterRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 traffic_direction: str,
+                 destination_cidr: Optional[str] = None,
+                 icmp_options: Optional['outputs.CaptureFilterVtapCaptureFilterRuleIcmpOptions'] = None,
+                 protocol: Optional[str] = None,
+                 rule_action: Optional[str] = None,
+                 source_cidr: Optional[str] = None,
+                 tcp_options: Optional['outputs.CaptureFilterVtapCaptureFilterRuleTcpOptions'] = None,
+                 udp_options: Optional['outputs.CaptureFilterVtapCaptureFilterRuleUdpOptions'] = None):
+        """
+        :param str traffic_direction: (Updatable) The traffic direction the VTAP is configured to mirror.
+        :param str destination_cidr: (Updatable) Traffic sent to this CIDR block through the VTAP source will be mirrored to the VTAP target.
+        :param 'CaptureFilterVtapCaptureFilterRuleIcmpOptionsArgs' icmp_options: (Updatable) Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
+               * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
+               * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
+        :param str protocol: (Updatable) The transport protocol used in the filter. If do not choose a protocol, all protocols will be used in the filter. Supported options are:
+               * 1 = ICMP
+               * 6 = TCP
+               * 17 = UDP
+        :param str rule_action: (Updatable) Include or exclude packets meeting this definition from mirrored traffic.
+        :param str source_cidr: (Updatable) Traffic from this CIDR block to the VTAP source will be mirrored to the VTAP target.
+        :param 'CaptureFilterVtapCaptureFilterRuleTcpOptionsArgs' tcp_options: (Updatable) Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
+        :param 'CaptureFilterVtapCaptureFilterRuleUdpOptionsArgs' udp_options: (Updatable) Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
+        """
+        pulumi.set(__self__, "traffic_direction", traffic_direction)
+        if destination_cidr is not None:
+            pulumi.set(__self__, "destination_cidr", destination_cidr)
+        if icmp_options is not None:
+            pulumi.set(__self__, "icmp_options", icmp_options)
+        if protocol is not None:
+            pulumi.set(__self__, "protocol", protocol)
+        if rule_action is not None:
+            pulumi.set(__self__, "rule_action", rule_action)
+        if source_cidr is not None:
+            pulumi.set(__self__, "source_cidr", source_cidr)
+        if tcp_options is not None:
+            pulumi.set(__self__, "tcp_options", tcp_options)
+        if udp_options is not None:
+            pulumi.set(__self__, "udp_options", udp_options)
+
+    @property
+    @pulumi.getter(name="trafficDirection")
+    def traffic_direction(self) -> str:
+        """
+        (Updatable) The traffic direction the VTAP is configured to mirror.
+        """
+        return pulumi.get(self, "traffic_direction")
+
+    @property
+    @pulumi.getter(name="destinationCidr")
+    def destination_cidr(self) -> Optional[str]:
+        """
+        (Updatable) Traffic sent to this CIDR block through the VTAP source will be mirrored to the VTAP target.
+        """
+        return pulumi.get(self, "destination_cidr")
+
+    @property
+    @pulumi.getter(name="icmpOptions")
+    def icmp_options(self) -> Optional['outputs.CaptureFilterVtapCaptureFilterRuleIcmpOptions']:
+        """
+        (Updatable) Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
+        * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
+        * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
+        """
+        return pulumi.get(self, "icmp_options")
+
+    @property
+    @pulumi.getter
+    def protocol(self) -> Optional[str]:
+        """
+        (Updatable) The transport protocol used in the filter. If do not choose a protocol, all protocols will be used in the filter. Supported options are:
+        * 1 = ICMP
+        * 6 = TCP
+        * 17 = UDP
+        """
+        return pulumi.get(self, "protocol")
+
+    @property
+    @pulumi.getter(name="ruleAction")
+    def rule_action(self) -> Optional[str]:
+        """
+        (Updatable) Include or exclude packets meeting this definition from mirrored traffic.
+        """
+        return pulumi.get(self, "rule_action")
+
+    @property
+    @pulumi.getter(name="sourceCidr")
+    def source_cidr(self) -> Optional[str]:
+        """
+        (Updatable) Traffic from this CIDR block to the VTAP source will be mirrored to the VTAP target.
+        """
+        return pulumi.get(self, "source_cidr")
+
+    @property
+    @pulumi.getter(name="tcpOptions")
+    def tcp_options(self) -> Optional['outputs.CaptureFilterVtapCaptureFilterRuleTcpOptions']:
+        """
+        (Updatable) Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
+        """
+        return pulumi.get(self, "tcp_options")
+
+    @property
+    @pulumi.getter(name="udpOptions")
+    def udp_options(self) -> Optional['outputs.CaptureFilterVtapCaptureFilterRuleUdpOptions']:
+        """
+        (Updatable) Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
+        """
+        return pulumi.get(self, "udp_options")
+
+
+@pulumi.output_type
+class CaptureFilterVtapCaptureFilterRuleIcmpOptions(dict):
+    def __init__(__self__, *,
+                 type: int,
+                 code: Optional[int] = None):
+        """
+        :param int type: (Updatable) The ICMP type.
+        :param int code: (Updatable) The ICMP code (optional).
+        """
+        pulumi.set(__self__, "type", type)
+        if code is not None:
+            pulumi.set(__self__, "code", code)
+
+    @property
+    @pulumi.getter
+    def type(self) -> int:
+        """
+        (Updatable) The ICMP type.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def code(self) -> Optional[int]:
+        """
+        (Updatable) The ICMP code (optional).
+        """
+        return pulumi.get(self, "code")
+
+
+@pulumi.output_type
+class CaptureFilterVtapCaptureFilterRuleTcpOptions(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "destinationPortRange":
+            suggest = "destination_port_range"
+        elif key == "sourcePortRange":
+            suggest = "source_port_range"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CaptureFilterVtapCaptureFilterRuleTcpOptions. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CaptureFilterVtapCaptureFilterRuleTcpOptions.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CaptureFilterVtapCaptureFilterRuleTcpOptions.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 destination_port_range: Optional['outputs.CaptureFilterVtapCaptureFilterRuleTcpOptionsDestinationPortRange'] = None,
+                 source_port_range: Optional['outputs.CaptureFilterVtapCaptureFilterRuleTcpOptionsSourcePortRange'] = None):
+        """
+        :param 'CaptureFilterVtapCaptureFilterRuleTcpOptionsDestinationPortRangeArgs' destination_port_range: (Updatable)
+        :param 'CaptureFilterVtapCaptureFilterRuleTcpOptionsSourcePortRangeArgs' source_port_range: (Updatable)
+        """
+        if destination_port_range is not None:
+            pulumi.set(__self__, "destination_port_range", destination_port_range)
+        if source_port_range is not None:
+            pulumi.set(__self__, "source_port_range", source_port_range)
+
+    @property
+    @pulumi.getter(name="destinationPortRange")
+    def destination_port_range(self) -> Optional['outputs.CaptureFilterVtapCaptureFilterRuleTcpOptionsDestinationPortRange']:
+        """
+        (Updatable)
+        """
+        return pulumi.get(self, "destination_port_range")
+
+    @property
+    @pulumi.getter(name="sourcePortRange")
+    def source_port_range(self) -> Optional['outputs.CaptureFilterVtapCaptureFilterRuleTcpOptionsSourcePortRange']:
+        """
+        (Updatable)
+        """
+        return pulumi.get(self, "source_port_range")
+
+
+@pulumi.output_type
+class CaptureFilterVtapCaptureFilterRuleTcpOptionsDestinationPortRange(dict):
+    def __init__(__self__, *,
+                 max: int,
+                 min: int):
+        """
+        :param int max: (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+        :param int min: (Updatable) The minimum port number, which must not be greater than the maximum port number.
+        """
+        pulumi.set(__self__, "max", max)
+        pulumi.set(__self__, "min", min)
+
+    @property
+    @pulumi.getter
+    def max(self) -> int:
+        """
+        (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+        """
+        return pulumi.get(self, "max")
+
+    @property
+    @pulumi.getter
+    def min(self) -> int:
+        """
+        (Updatable) The minimum port number, which must not be greater than the maximum port number.
+        """
+        return pulumi.get(self, "min")
+
+
+@pulumi.output_type
+class CaptureFilterVtapCaptureFilterRuleTcpOptionsSourcePortRange(dict):
+    def __init__(__self__, *,
+                 max: int,
+                 min: int):
+        """
+        :param int max: (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+        :param int min: (Updatable) The minimum port number, which must not be greater than the maximum port number.
+        """
+        pulumi.set(__self__, "max", max)
+        pulumi.set(__self__, "min", min)
+
+    @property
+    @pulumi.getter
+    def max(self) -> int:
+        """
+        (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+        """
+        return pulumi.get(self, "max")
+
+    @property
+    @pulumi.getter
+    def min(self) -> int:
+        """
+        (Updatable) The minimum port number, which must not be greater than the maximum port number.
+        """
+        return pulumi.get(self, "min")
+
+
+@pulumi.output_type
+class CaptureFilterVtapCaptureFilterRuleUdpOptions(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "destinationPortRange":
+            suggest = "destination_port_range"
+        elif key == "sourcePortRange":
+            suggest = "source_port_range"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CaptureFilterVtapCaptureFilterRuleUdpOptions. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CaptureFilterVtapCaptureFilterRuleUdpOptions.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CaptureFilterVtapCaptureFilterRuleUdpOptions.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 destination_port_range: Optional['outputs.CaptureFilterVtapCaptureFilterRuleUdpOptionsDestinationPortRange'] = None,
+                 source_port_range: Optional['outputs.CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRange'] = None):
+        """
+        :param 'CaptureFilterVtapCaptureFilterRuleUdpOptionsDestinationPortRangeArgs' destination_port_range: (Updatable)
+        :param 'CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRangeArgs' source_port_range: (Updatable)
+        """
+        if destination_port_range is not None:
+            pulumi.set(__self__, "destination_port_range", destination_port_range)
+        if source_port_range is not None:
+            pulumi.set(__self__, "source_port_range", source_port_range)
+
+    @property
+    @pulumi.getter(name="destinationPortRange")
+    def destination_port_range(self) -> Optional['outputs.CaptureFilterVtapCaptureFilterRuleUdpOptionsDestinationPortRange']:
+        """
+        (Updatable)
+        """
+        return pulumi.get(self, "destination_port_range")
+
+    @property
+    @pulumi.getter(name="sourcePortRange")
+    def source_port_range(self) -> Optional['outputs.CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRange']:
+        """
+        (Updatable)
+        """
+        return pulumi.get(self, "source_port_range")
+
+
+@pulumi.output_type
+class CaptureFilterVtapCaptureFilterRuleUdpOptionsDestinationPortRange(dict):
+    def __init__(__self__, *,
+                 max: int,
+                 min: int):
+        """
+        :param int max: (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+        :param int min: (Updatable) The minimum port number, which must not be greater than the maximum port number.
+        """
+        pulumi.set(__self__, "max", max)
+        pulumi.set(__self__, "min", min)
+
+    @property
+    @pulumi.getter
+    def max(self) -> int:
+        """
+        (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+        """
+        return pulumi.get(self, "max")
+
+    @property
+    @pulumi.getter
+    def min(self) -> int:
+        """
+        (Updatable) The minimum port number, which must not be greater than the maximum port number.
+        """
+        return pulumi.get(self, "min")
+
+
+@pulumi.output_type
+class CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRange(dict):
+    def __init__(__self__, *,
+                 max: int,
+                 min: int):
+        """
+        :param int max: (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+        :param int min: (Updatable) The minimum port number, which must not be greater than the maximum port number.
+        """
+        pulumi.set(__self__, "max", max)
+        pulumi.set(__self__, "min", min)
+
+    @property
+    @pulumi.getter
+    def max(self) -> int:
+        """
+        (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+        """
+        return pulumi.get(self, "max")
+
+    @property
+    @pulumi.getter
+    def min(self) -> int:
+        """
+        (Updatable) The minimum port number, which must not be greater than the maximum port number.
+        """
+        return pulumi.get(self, "min")
 
 
 @pulumi.output_type
@@ -1636,6 +2062,8 @@ class DefaultRouteTableRouteRule(dict):
             suggest = "cidr_block"
         elif key == "destinationType":
             suggest = "destination_type"
+        elif key == "routeType":
+            suggest = "route_type"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in DefaultRouteTableRouteRule. Access the value via the '{suggest}' property getter instead.")
@@ -1653,7 +2081,8 @@ class DefaultRouteTableRouteRule(dict):
                  cidr_block: Optional[str] = None,
                  description: Optional[str] = None,
                  destination: Optional[str] = None,
-                 destination_type: Optional[str] = None):
+                 destination_type: Optional[str] = None,
+                 route_type: Optional[str] = None):
         pulumi.set(__self__, "network_entity_id", network_entity_id)
         if cidr_block is not None:
             pulumi.set(__self__, "cidr_block", cidr_block)
@@ -1663,6 +2092,8 @@ class DefaultRouteTableRouteRule(dict):
             pulumi.set(__self__, "destination", destination)
         if destination_type is not None:
             pulumi.set(__self__, "destination_type", destination_type)
+        if route_type is not None:
+            pulumi.set(__self__, "route_type", route_type)
 
     @property
     @pulumi.getter(name="networkEntityId")
@@ -1688,6 +2119,11 @@ class DefaultRouteTableRouteRule(dict):
     @pulumi.getter(name="destinationType")
     def destination_type(self) -> Optional[str]:
         return pulumi.get(self, "destination_type")
+
+    @property
+    @pulumi.getter(name="routeType")
+    def route_type(self) -> Optional[str]:
+        return pulumi.get(self, "route_type")
 
 
 @pulumi.output_type
@@ -2359,7 +2795,7 @@ class DrgAttachmentNetworkDetails(dict):
         :param str type: (Updatable) The type can be one of these values: `IPSEC_TUNNEL`, `REMOTE_PEERING_CONNECTION`, `VCN`, `VIRTUAL_CIRCUIT`
         :param str ipsec_connection_id: The IPSec connection that contains the attached IPSec tunnel.
         :param str route_table_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the DRG attachment.
-        :param str vcn_route_type: (Updatable) Indicates whether the VCN CIDR(s) or the individual Subnet CIDR(s) are imported from the attachment.  Routes from the VCN Ingress Route Table are always imported. It can be one of these values: `VCN_CIDRS` , `SUBNET_CIDRS`
+        :param str vcn_route_type: (Updatable) Indicates whether the VCN CIDRs or the individual subnet CIDRs are imported from the attachment. Routes from the VCN ingress route table are always imported.
         """
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "type", type)
@@ -2406,7 +2842,7 @@ class DrgAttachmentNetworkDetails(dict):
     @pulumi.getter(name="vcnRouteType")
     def vcn_route_type(self) -> Optional[str]:
         """
-        (Updatable) Indicates whether the VCN CIDR(s) or the individual Subnet CIDR(s) are imported from the attachment.  Routes from the VCN Ingress Route Table are always imported. It can be one of these values: `VCN_CIDRS` , `SUBNET_CIDRS`
+        (Updatable) Indicates whether the VCN CIDRs or the individual subnet CIDRs are imported from the attachment. Routes from the VCN ingress route table are always imported.
         """
         return pulumi.get(self, "vcn_route_type")
 
@@ -4288,14 +4724,24 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfig(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "isMeasuredBootEnabled":
+        if key == "areVirtualInstructionsEnabled":
+            suggest = "are_virtual_instructions_enabled"
+        elif key == "isAccessControlServiceEnabled":
+            suggest = "is_access_control_service_enabled"
+        elif key == "isInputOutputMemoryManagementUnitEnabled":
+            suggest = "is_input_output_memory_management_unit_enabled"
+        elif key == "isMeasuredBootEnabled":
             suggest = "is_measured_boot_enabled"
         elif key == "isSecureBootEnabled":
             suggest = "is_secure_boot_enabled"
+        elif key == "isSymmetricMultiThreadingEnabled":
+            suggest = "is_symmetric_multi_threading_enabled"
         elif key == "isTrustedPlatformModuleEnabled":
             suggest = "is_trusted_platform_module_enabled"
         elif key == "numaNodesPerSocket":
             suggest = "numa_nodes_per_socket"
+        elif key == "percentageOfCoresEnabled":
+            suggest = "percentage_of_cores_enabled"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfig. Access the value via the '{suggest}' property getter instead.")
@@ -4310,26 +4756,46 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfig(dict):
 
     def __init__(__self__, *,
                  type: str,
+                 are_virtual_instructions_enabled: Optional[bool] = None,
+                 is_access_control_service_enabled: Optional[bool] = None,
+                 is_input_output_memory_management_unit_enabled: Optional[bool] = None,
                  is_measured_boot_enabled: Optional[bool] = None,
                  is_secure_boot_enabled: Optional[bool] = None,
+                 is_symmetric_multi_threading_enabled: Optional[bool] = None,
                  is_trusted_platform_module_enabled: Optional[bool] = None,
-                 numa_nodes_per_socket: Optional[str] = None):
+                 numa_nodes_per_socket: Optional[str] = None,
+                 percentage_of_cores_enabled: Optional[int] = None):
         """
         :param str type: The type of action to run when the instance is interrupted for eviction.
+        :param bool are_virtual_instructions_enabled: Whether virtualization instructions are available.
+        :param bool is_access_control_service_enabled: Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device passthrough.
+        :param bool is_input_output_memory_management_unit_enabled: Whether the input-output memory management unit is enabled.
         :param bool is_measured_boot_enabled: Whether the Measured Boot feature is enabled on the instance.
         :param bool is_secure_boot_enabled: Whether Secure Boot is enabled on the instance.
+        :param bool is_symmetric_multi_threading_enabled: Whether symmetric multi-threading is enabled on the instance.
         :param bool is_trusted_platform_module_enabled: Whether the Trusted Platform Module (TPM) is enabled on the instance.
         :param str numa_nodes_per_socket: The number of NUMA nodes per socket (NPS).
+        :param int percentage_of_cores_enabled: The percentage of cores enabled.
         """
         pulumi.set(__self__, "type", type)
+        if are_virtual_instructions_enabled is not None:
+            pulumi.set(__self__, "are_virtual_instructions_enabled", are_virtual_instructions_enabled)
+        if is_access_control_service_enabled is not None:
+            pulumi.set(__self__, "is_access_control_service_enabled", is_access_control_service_enabled)
+        if is_input_output_memory_management_unit_enabled is not None:
+            pulumi.set(__self__, "is_input_output_memory_management_unit_enabled", is_input_output_memory_management_unit_enabled)
         if is_measured_boot_enabled is not None:
             pulumi.set(__self__, "is_measured_boot_enabled", is_measured_boot_enabled)
         if is_secure_boot_enabled is not None:
             pulumi.set(__self__, "is_secure_boot_enabled", is_secure_boot_enabled)
+        if is_symmetric_multi_threading_enabled is not None:
+            pulumi.set(__self__, "is_symmetric_multi_threading_enabled", is_symmetric_multi_threading_enabled)
         if is_trusted_platform_module_enabled is not None:
             pulumi.set(__self__, "is_trusted_platform_module_enabled", is_trusted_platform_module_enabled)
         if numa_nodes_per_socket is not None:
             pulumi.set(__self__, "numa_nodes_per_socket", numa_nodes_per_socket)
+        if percentage_of_cores_enabled is not None:
+            pulumi.set(__self__, "percentage_of_cores_enabled", percentage_of_cores_enabled)
 
     @property
     @pulumi.getter
@@ -4338,6 +4804,30 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfig(dict):
         The type of action to run when the instance is interrupted for eviction.
         """
         return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="areVirtualInstructionsEnabled")
+    def are_virtual_instructions_enabled(self) -> Optional[bool]:
+        """
+        Whether virtualization instructions are available.
+        """
+        return pulumi.get(self, "are_virtual_instructions_enabled")
+
+    @property
+    @pulumi.getter(name="isAccessControlServiceEnabled")
+    def is_access_control_service_enabled(self) -> Optional[bool]:
+        """
+        Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device passthrough.
+        """
+        return pulumi.get(self, "is_access_control_service_enabled")
+
+    @property
+    @pulumi.getter(name="isInputOutputMemoryManagementUnitEnabled")
+    def is_input_output_memory_management_unit_enabled(self) -> Optional[bool]:
+        """
+        Whether the input-output memory management unit is enabled.
+        """
+        return pulumi.get(self, "is_input_output_memory_management_unit_enabled")
 
     @property
     @pulumi.getter(name="isMeasuredBootEnabled")
@@ -4356,6 +4846,14 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfig(dict):
         return pulumi.get(self, "is_secure_boot_enabled")
 
     @property
+    @pulumi.getter(name="isSymmetricMultiThreadingEnabled")
+    def is_symmetric_multi_threading_enabled(self) -> Optional[bool]:
+        """
+        Whether symmetric multi-threading is enabled on the instance.
+        """
+        return pulumi.get(self, "is_symmetric_multi_threading_enabled")
+
+    @property
     @pulumi.getter(name="isTrustedPlatformModuleEnabled")
     def is_trusted_platform_module_enabled(self) -> Optional[bool]:
         """
@@ -4370,6 +4868,14 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfig(dict):
         The number of NUMA nodes per socket (NPS).
         """
         return pulumi.get(self, "numa_nodes_per_socket")
+
+    @property
+    @pulumi.getter(name="percentageOfCoresEnabled")
+    def percentage_of_cores_enabled(self) -> Optional[int]:
+        """
+        The percentage of cores enabled.
+        """
+        return pulumi.get(self, "percentage_of_cores_enabled")
 
 
 @pulumi.output_type
@@ -4478,16 +4984,20 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig(dict):
     def __init__(__self__, *,
                  baseline_ocpu_utilization: Optional[str] = None,
                  memory_in_gbs: Optional[float] = None,
+                 nvmes: Optional[int] = None,
                  ocpus: Optional[float] = None):
         """
         :param str baseline_ocpu_utilization: The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
         :param float memory_in_gbs: The total amount of memory available to the instance, in gigabytes.
+        :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param float ocpus: The total number of OCPUs available to the instance.
         """
         if baseline_ocpu_utilization is not None:
             pulumi.set(__self__, "baseline_ocpu_utilization", baseline_ocpu_utilization)
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if nvmes is not None:
+            pulumi.set(__self__, "nvmes", nvmes)
         if ocpus is not None:
             pulumi.set(__self__, "ocpus", ocpus)
 
@@ -4509,6 +5019,14 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig(dict):
 
     @property
     @pulumi.getter
+    def nvmes(self) -> Optional[int]:
+        """
+        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        """
+        return pulumi.get(self, "nvmes")
+
+    @property
+    @pulumi.getter
     def ocpus(self) -> Optional[float]:
         """
         The total number of OCPUs available to the instance.
@@ -4527,6 +5045,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetails(dict):
             suggest = "boot_volume_id"
         elif key == "bootVolumeSizeInGbs":
             suggest = "boot_volume_size_in_gbs"
+        elif key == "bootVolumeVpusPerGb":
+            suggest = "boot_volume_vpus_per_gb"
         elif key == "imageId":
             suggest = "image_id"
 
@@ -4545,11 +5065,13 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetails(dict):
                  source_type: str,
                  boot_volume_id: Optional[str] = None,
                  boot_volume_size_in_gbs: Optional[str] = None,
+                 boot_volume_vpus_per_gb: Optional[str] = None,
                  image_id: Optional[str] = None):
         """
         :param str source_type: The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
         :param str boot_volume_id: The OCID of the boot volume used to boot the instance.
         :param str boot_volume_size_in_gbs: The size of the boot volume in GBs. The minimum value is 50 GB and the maximum value is 32,768 GB (32 TB).
+        :param str boot_volume_vpus_per_gb: The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
         :param str image_id: The OCID of the image used to boot the instance.
         """
         pulumi.set(__self__, "source_type", source_type)
@@ -4557,6 +5079,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetails(dict):
             pulumi.set(__self__, "boot_volume_id", boot_volume_id)
         if boot_volume_size_in_gbs is not None:
             pulumi.set(__self__, "boot_volume_size_in_gbs", boot_volume_size_in_gbs)
+        if boot_volume_vpus_per_gb is not None:
+            pulumi.set(__self__, "boot_volume_vpus_per_gb", boot_volume_vpus_per_gb)
         if image_id is not None:
             pulumi.set(__self__, "image_id", image_id)
 
@@ -4583,6 +5107,14 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetails(dict):
         The size of the boot volume in GBs. The minimum value is 50 GB and the maximum value is 32,768 GB (32 TB).
         """
         return pulumi.get(self, "boot_volume_size_in_gbs")
+
+    @property
+    @pulumi.getter(name="bootVolumeVpusPerGb")
+    def boot_volume_vpus_per_gb(self) -> Optional[str]:
+        """
+        The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+        """
+        return pulumi.get(self, "boot_volume_vpus_per_gb")
 
     @property
     @pulumi.getter(name="imageId")
@@ -5140,14 +5672,24 @@ class InstancePlatformConfig(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "isMeasuredBootEnabled":
+        if key == "areVirtualInstructionsEnabled":
+            suggest = "are_virtual_instructions_enabled"
+        elif key == "isAccessControlServiceEnabled":
+            suggest = "is_access_control_service_enabled"
+        elif key == "isInputOutputMemoryManagementUnitEnabled":
+            suggest = "is_input_output_memory_management_unit_enabled"
+        elif key == "isMeasuredBootEnabled":
             suggest = "is_measured_boot_enabled"
         elif key == "isSecureBootEnabled":
             suggest = "is_secure_boot_enabled"
+        elif key == "isSymmetricMultiThreadingEnabled":
+            suggest = "is_symmetric_multi_threading_enabled"
         elif key == "isTrustedPlatformModuleEnabled":
             suggest = "is_trusted_platform_module_enabled"
         elif key == "numaNodesPerSocket":
             suggest = "numa_nodes_per_socket"
+        elif key == "percentageOfCoresEnabled":
+            suggest = "percentage_of_cores_enabled"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in InstancePlatformConfig. Access the value via the '{suggest}' property getter instead.")
@@ -5162,26 +5704,46 @@ class InstancePlatformConfig(dict):
 
     def __init__(__self__, *,
                  type: str,
+                 are_virtual_instructions_enabled: Optional[bool] = None,
+                 is_access_control_service_enabled: Optional[bool] = None,
+                 is_input_output_memory_management_unit_enabled: Optional[bool] = None,
                  is_measured_boot_enabled: Optional[bool] = None,
                  is_secure_boot_enabled: Optional[bool] = None,
+                 is_symmetric_multi_threading_enabled: Optional[bool] = None,
                  is_trusted_platform_module_enabled: Optional[bool] = None,
-                 numa_nodes_per_socket: Optional[str] = None):
+                 numa_nodes_per_socket: Optional[str] = None,
+                 percentage_of_cores_enabled: Optional[int] = None):
         """
         :param str type: The type of action to run when the instance is interrupted for eviction.
+        :param bool are_virtual_instructions_enabled: Whether virtualization instructions are available.
+        :param bool is_access_control_service_enabled: Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device passthrough.
+        :param bool is_input_output_memory_management_unit_enabled: Whether the input-output memory management unit is enabled.
         :param bool is_measured_boot_enabled: Whether the Measured Boot feature is enabled on the instance.
         :param bool is_secure_boot_enabled: Whether Secure Boot is enabled on the instance.
+        :param bool is_symmetric_multi_threading_enabled: Whether symmetric multi-threading is enabled on the instance.
         :param bool is_trusted_platform_module_enabled: Whether the Trusted Platform Module (TPM) is enabled on the instance.
         :param str numa_nodes_per_socket: The number of NUMA nodes per socket (NPS).
+        :param int percentage_of_cores_enabled: The percentage of cores enabled.
         """
         pulumi.set(__self__, "type", type)
+        if are_virtual_instructions_enabled is not None:
+            pulumi.set(__self__, "are_virtual_instructions_enabled", are_virtual_instructions_enabled)
+        if is_access_control_service_enabled is not None:
+            pulumi.set(__self__, "is_access_control_service_enabled", is_access_control_service_enabled)
+        if is_input_output_memory_management_unit_enabled is not None:
+            pulumi.set(__self__, "is_input_output_memory_management_unit_enabled", is_input_output_memory_management_unit_enabled)
         if is_measured_boot_enabled is not None:
             pulumi.set(__self__, "is_measured_boot_enabled", is_measured_boot_enabled)
         if is_secure_boot_enabled is not None:
             pulumi.set(__self__, "is_secure_boot_enabled", is_secure_boot_enabled)
+        if is_symmetric_multi_threading_enabled is not None:
+            pulumi.set(__self__, "is_symmetric_multi_threading_enabled", is_symmetric_multi_threading_enabled)
         if is_trusted_platform_module_enabled is not None:
             pulumi.set(__self__, "is_trusted_platform_module_enabled", is_trusted_platform_module_enabled)
         if numa_nodes_per_socket is not None:
             pulumi.set(__self__, "numa_nodes_per_socket", numa_nodes_per_socket)
+        if percentage_of_cores_enabled is not None:
+            pulumi.set(__self__, "percentage_of_cores_enabled", percentage_of_cores_enabled)
 
     @property
     @pulumi.getter
@@ -5190,6 +5752,30 @@ class InstancePlatformConfig(dict):
         The type of action to run when the instance is interrupted for eviction.
         """
         return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="areVirtualInstructionsEnabled")
+    def are_virtual_instructions_enabled(self) -> Optional[bool]:
+        """
+        Whether virtualization instructions are available.
+        """
+        return pulumi.get(self, "are_virtual_instructions_enabled")
+
+    @property
+    @pulumi.getter(name="isAccessControlServiceEnabled")
+    def is_access_control_service_enabled(self) -> Optional[bool]:
+        """
+        Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device passthrough.
+        """
+        return pulumi.get(self, "is_access_control_service_enabled")
+
+    @property
+    @pulumi.getter(name="isInputOutputMemoryManagementUnitEnabled")
+    def is_input_output_memory_management_unit_enabled(self) -> Optional[bool]:
+        """
+        Whether the input-output memory management unit is enabled.
+        """
+        return pulumi.get(self, "is_input_output_memory_management_unit_enabled")
 
     @property
     @pulumi.getter(name="isMeasuredBootEnabled")
@@ -5208,6 +5794,14 @@ class InstancePlatformConfig(dict):
         return pulumi.get(self, "is_secure_boot_enabled")
 
     @property
+    @pulumi.getter(name="isSymmetricMultiThreadingEnabled")
+    def is_symmetric_multi_threading_enabled(self) -> Optional[bool]:
+        """
+        Whether symmetric multi-threading is enabled on the instance.
+        """
+        return pulumi.get(self, "is_symmetric_multi_threading_enabled")
+
+    @property
     @pulumi.getter(name="isTrustedPlatformModuleEnabled")
     def is_trusted_platform_module_enabled(self) -> Optional[bool]:
         """
@@ -5222,6 +5816,14 @@ class InstancePlatformConfig(dict):
         The number of NUMA nodes per socket (NPS).
         """
         return pulumi.get(self, "numa_nodes_per_socket")
+
+    @property
+    @pulumi.getter(name="percentageOfCoresEnabled")
+    def percentage_of_cores_enabled(self) -> Optional[int]:
+        """
+        The percentage of cores enabled.
+        """
+        return pulumi.get(self, "percentage_of_cores_enabled")
 
 
 @pulumi.output_type
@@ -5676,6 +6278,7 @@ class InstanceShapeConfig(dict):
                  max_vnic_attachments: Optional[int] = None,
                  memory_in_gbs: Optional[float] = None,
                  networking_bandwidth_in_gbps: Optional[float] = None,
+                 nvmes: Optional[int] = None,
                  ocpus: Optional[float] = None,
                  processor_description: Optional[str] = None):
         """
@@ -5688,6 +6291,7 @@ class InstanceShapeConfig(dict):
         :param int max_vnic_attachments: The maximum number of VNIC attachments for the instance.
         :param float memory_in_gbs: (Updatable) The total amount of memory available to the instance, in gigabytes.
         :param float networking_bandwidth_in_gbps: The networking bandwidth available to the instance, in gigabits per second.
+        :param int nvmes: (Updatable) The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param float ocpus: (Updatable) The total number of OCPUs available to the instance.
         :param str processor_description: A short description of the instance's processor (CPU).
         """
@@ -5709,6 +6313,8 @@ class InstanceShapeConfig(dict):
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if networking_bandwidth_in_gbps is not None:
             pulumi.set(__self__, "networking_bandwidth_in_gbps", networking_bandwidth_in_gbps)
+        if nvmes is not None:
+            pulumi.set(__self__, "nvmes", nvmes)
         if ocpus is not None:
             pulumi.set(__self__, "ocpus", ocpus)
         if processor_description is not None:
@@ -5788,6 +6394,14 @@ class InstanceShapeConfig(dict):
 
     @property
     @pulumi.getter
+    def nvmes(self) -> Optional[int]:
+        """
+        (Updatable) The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        """
+        return pulumi.get(self, "nvmes")
+
+    @property
+    @pulumi.getter
     def ocpus(self) -> Optional[float]:
         """
         (Updatable) The total number of OCPUs available to the instance.
@@ -5814,6 +6428,8 @@ class InstanceSourceDetails(dict):
             suggest = "source_type"
         elif key == "bootVolumeSizeInGbs":
             suggest = "boot_volume_size_in_gbs"
+        elif key == "bootVolumeVpusPerGb":
+            suggest = "boot_volume_vpus_per_gb"
         elif key == "kmsKeyId":
             suggest = "kms_key_id"
 
@@ -5832,17 +6448,21 @@ class InstanceSourceDetails(dict):
                  source_id: str,
                  source_type: str,
                  boot_volume_size_in_gbs: Optional[str] = None,
+                 boot_volume_vpus_per_gb: Optional[str] = None,
                  kms_key_id: Optional[str] = None):
         """
         :param str source_id: The OCID of an image or a boot volume to use, depending on the value of `source_type`.
         :param str source_type: The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
         :param str boot_volume_size_in_gbs: (Updatable) The size of the boot volume in GBs. Minimum value is 50 GB and maximum value is 32,768 GB (32 TB).
+        :param str boot_volume_vpus_per_gb: The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
         :param str kms_key_id: The OCID of the Key Management key to assign as the master encryption key for the boot volume.
         """
         pulumi.set(__self__, "source_id", source_id)
         pulumi.set(__self__, "source_type", source_type)
         if boot_volume_size_in_gbs is not None:
             pulumi.set(__self__, "boot_volume_size_in_gbs", boot_volume_size_in_gbs)
+        if boot_volume_vpus_per_gb is not None:
+            pulumi.set(__self__, "boot_volume_vpus_per_gb", boot_volume_vpus_per_gb)
         if kms_key_id is not None:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
 
@@ -5871,6 +6491,14 @@ class InstanceSourceDetails(dict):
         return pulumi.get(self, "boot_volume_size_in_gbs")
 
     @property
+    @pulumi.getter(name="bootVolumeVpusPerGb")
+    def boot_volume_vpus_per_gb(self) -> Optional[str]:
+        """
+        The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+        """
+        return pulumi.get(self, "boot_volume_vpus_per_gb")
+
+    @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[str]:
         """
@@ -5884,7 +6512,9 @@ class IpsecConnectionTunnelManagementBgpSessionInfo(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "bgpState":
+        if key == "bgpIpv6state":
+            suggest = "bgp_ipv6state"
+        elif key == "bgpState":
             suggest = "bgp_state"
         elif key == "customerBgpAsn":
             suggest = "customer_bgp_asn"
@@ -5907,6 +6537,7 @@ class IpsecConnectionTunnelManagementBgpSessionInfo(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 bgp_ipv6state: Optional[str] = None,
                  bgp_state: Optional[str] = None,
                  customer_bgp_asn: Optional[str] = None,
                  customer_interface_ip: Optional[str] = None,
@@ -5919,6 +6550,8 @@ class IpsecConnectionTunnelManagementBgpSessionInfo(dict):
         :param str oracle_bgp_asn: This is the value of the Oracle Bgp ASN in asplain format, as a string. Example: 1587232876 (4 byte ASN) or 12345 (2 byte ASN)
         :param str oracle_interface_ip: The IP address for the Oracle end of the inside tunnel interface.
         """
+        if bgp_ipv6state is not None:
+            pulumi.set(__self__, "bgp_ipv6state", bgp_ipv6state)
         if bgp_state is not None:
             pulumi.set(__self__, "bgp_state", bgp_state)
         if customer_bgp_asn is not None:
@@ -5929,6 +6562,11 @@ class IpsecConnectionTunnelManagementBgpSessionInfo(dict):
             pulumi.set(__self__, "oracle_bgp_asn", oracle_bgp_asn)
         if oracle_interface_ip is not None:
             pulumi.set(__self__, "oracle_interface_ip", oracle_interface_ip)
+
+    @property
+    @pulumi.getter(name="bgpIpv6state")
+    def bgp_ipv6state(self) -> Optional[str]:
+        return pulumi.get(self, "bgp_ipv6state")
 
     @property
     @pulumi.getter(name="bgpState")
@@ -5969,6 +6607,46 @@ class IpsecConnectionTunnelManagementBgpSessionInfo(dict):
         The IP address for the Oracle end of the inside tunnel interface.
         """
         return pulumi.get(self, "oracle_interface_ip")
+
+
+@pulumi.output_type
+class IpsecConnectionTunnelManagementDpdConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dpdMode":
+            suggest = "dpd_mode"
+        elif key == "dpdTimeoutInSec":
+            suggest = "dpd_timeout_in_sec"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in IpsecConnectionTunnelManagementDpdConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        IpsecConnectionTunnelManagementDpdConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        IpsecConnectionTunnelManagementDpdConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 dpd_mode: Optional[str] = None,
+                 dpd_timeout_in_sec: Optional[int] = None):
+        if dpd_mode is not None:
+            pulumi.set(__self__, "dpd_mode", dpd_mode)
+        if dpd_timeout_in_sec is not None:
+            pulumi.set(__self__, "dpd_timeout_in_sec", dpd_timeout_in_sec)
+
+    @property
+    @pulumi.getter(name="dpdMode")
+    def dpd_mode(self) -> Optional[str]:
+        return pulumi.get(self, "dpd_mode")
+
+    @property
+    @pulumi.getter(name="dpdTimeoutInSec")
+    def dpd_timeout_in_sec(self) -> Optional[int]:
+        return pulumi.get(self, "dpd_timeout_in_sec")
 
 
 @pulumi.output_type
@@ -6064,7 +6742,7 @@ class IpsecConnectionTunnelManagementPhaseOneDetail(dict):
                  custom_encryption_algorithm: Optional[str] = None,
                  is_custom_phase_one_config: Optional[bool] = None,
                  is_ike_established: Optional[bool] = None,
-                 lifetime: Optional[str] = None,
+                 lifetime: Optional[int] = None,
                  negotiated_authentication_algorithm: Optional[str] = None,
                  negotiated_dh_group: Optional[str] = None,
                  negotiated_encryption_algorithm: Optional[str] = None,
@@ -6120,7 +6798,7 @@ class IpsecConnectionTunnelManagementPhaseOneDetail(dict):
 
     @property
     @pulumi.getter
-    def lifetime(self) -> Optional[str]:
+    def lifetime(self) -> Optional[int]:
         return pulumi.get(self, "lifetime")
 
     @property
@@ -6195,7 +6873,7 @@ class IpsecConnectionTunnelManagementPhaseTwoDetail(dict):
                  is_custom_phase_two_config: Optional[bool] = None,
                  is_esp_established: Optional[bool] = None,
                  is_pfs_enabled: Optional[bool] = None,
-                 lifetime: Optional[str] = None,
+                 lifetime: Optional[int] = None,
                  negotiated_authentication_algorithm: Optional[str] = None,
                  negotiated_dh_group: Optional[str] = None,
                  negotiated_encryption_algorithm: Optional[str] = None,
@@ -6258,7 +6936,7 @@ class IpsecConnectionTunnelManagementPhaseTwoDetail(dict):
 
     @property
     @pulumi.getter
-    def lifetime(self) -> Optional[str]:
+    def lifetime(self) -> Optional[int]:
         return pulumi.get(self, "lifetime")
 
     @property
@@ -6524,6 +7202,8 @@ class RouteTableRouteRule(dict):
             suggest = "cidr_block"
         elif key == "destinationType":
             suggest = "destination_type"
+        elif key == "routeType":
+            suggest = "route_type"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in RouteTableRouteRule. Access the value via the '{suggest}' property getter instead.")
@@ -6541,7 +7221,8 @@ class RouteTableRouteRule(dict):
                  cidr_block: Optional[str] = None,
                  description: Optional[str] = None,
                  destination: Optional[str] = None,
-                 destination_type: Optional[str] = None):
+                 destination_type: Optional[str] = None,
+                 route_type: Optional[str] = None):
         """
         :param str network_entity_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the route rule's target. For information about the type of targets you can specify, see [Route Tables](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm).
         :param str cidr_block: (Updatable) Deprecated. Instead use `destination` and `destinationType`. Requests that include both `cidrBlock` and `destination` will be rejected.
@@ -6560,6 +7241,8 @@ class RouteTableRouteRule(dict):
             pulumi.set(__self__, "destination", destination)
         if destination_type is not None:
             pulumi.set(__self__, "destination_type", destination_type)
+        if route_type is not None:
+            pulumi.set(__self__, "route_type", route_type)
 
     @property
     @pulumi.getter(name="networkEntityId")
@@ -6602,6 +7285,11 @@ class RouteTableRouteRule(dict):
         * `SERVICE_CIDR_BLOCK`: If the rule's `destination` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic destined for a particular `Service` through a service gateway).
         """
         return pulumi.get(self, "destination_type")
+
+    @property
+    @pulumi.getter(name="routeType")
+    def route_type(self) -> Optional[str]:
+        return pulumi.get(self, "route_type")
 
 
 @pulumi.output_type
@@ -9588,7 +10276,7 @@ class GetBootVolumesBootVolumeResult(dict):
                  volume_group_id: str,
                  vpus_per_gb: str):
         """
-        :param str auto_tuned_vpus_per_gb: The number of Volume Performance Units per GB that this volume is effectively tuned to when it's idle.
+        :param str auto_tuned_vpus_per_gb: The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it's idle.
         :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
         :param Sequence['GetBootVolumesBootVolumeBootVolumeReplicaArgs'] boot_volume_replicas: The list of boot volume replicas of this boot volume
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -9606,7 +10294,7 @@ class GetBootVolumesBootVolumeResult(dict):
         :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str time_created: The date and time the boot volume was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str volume_group_id: The OCID of the volume group.
-        :param str vpus_per_gb: The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+        :param str vpus_per_gb: The number of volume performance units (VPUs) that will be applied to this boot volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
         """
         pulumi.set(__self__, "auto_tuned_vpus_per_gb", auto_tuned_vpus_per_gb)
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -9635,7 +10323,7 @@ class GetBootVolumesBootVolumeResult(dict):
     @pulumi.getter(name="autoTunedVpusPerGb")
     def auto_tuned_vpus_per_gb(self) -> str:
         """
-        The number of Volume Performance Units per GB that this volume is effectively tuned to when it's idle.
+        The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it's idle.
         """
         return pulumi.get(self, "auto_tuned_vpus_per_gb")
 
@@ -9794,7 +10482,7 @@ class GetBootVolumesBootVolumeResult(dict):
     @pulumi.getter(name="vpusPerGb")
     def vpus_per_gb(self) -> str:
         """
-        The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+        The number of volume performance units (VPUs) that will be applied to this boot volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
         """
         return pulumi.get(self, "vpus_per_gb")
 
@@ -10259,6 +10947,715 @@ class GetByoipRangesByoipRangeCollectionItemByoipRangeVcnIpv6allocationResult(di
 
 @pulumi.output_type
 class GetByoipRangesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetCaptureFilterVtapCaptureFilterRuleResult(dict):
+    def __init__(__self__, *,
+                 destination_cidr: str,
+                 icmp_options: Sequence['outputs.GetCaptureFilterVtapCaptureFilterRuleIcmpOptionResult'],
+                 protocol: str,
+                 rule_action: str,
+                 source_cidr: str,
+                 tcp_options: Sequence['outputs.GetCaptureFilterVtapCaptureFilterRuleTcpOptionResult'],
+                 traffic_direction: str,
+                 udp_options: Sequence['outputs.GetCaptureFilterVtapCaptureFilterRuleUdpOptionResult']):
+        """
+        :param str destination_cidr: Traffic sent to this CIDR block through the VTAP source will be mirrored to the VTAP target.
+        :param Sequence['GetCaptureFilterVtapCaptureFilterRuleIcmpOptionArgs'] icmp_options: Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
+               * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
+               * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
+        :param str protocol: The transport protocol used in the filter. If do not choose a protocol, all protocols will be used in the filter. Supported options are:
+               * 1 = ICMP
+               * 6 = TCP
+               * 17 = UDP
+        :param str rule_action: Include or exclude packets meeting this definition from mirrored traffic.
+        :param str source_cidr: Traffic from this CIDR block to the VTAP source will be mirrored to the VTAP target.
+        :param Sequence['GetCaptureFilterVtapCaptureFilterRuleTcpOptionArgs'] tcp_options: Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
+        :param str traffic_direction: The traffic direction the VTAP is configured to mirror.
+        :param Sequence['GetCaptureFilterVtapCaptureFilterRuleUdpOptionArgs'] udp_options: Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
+        """
+        pulumi.set(__self__, "destination_cidr", destination_cidr)
+        pulumi.set(__self__, "icmp_options", icmp_options)
+        pulumi.set(__self__, "protocol", protocol)
+        pulumi.set(__self__, "rule_action", rule_action)
+        pulumi.set(__self__, "source_cidr", source_cidr)
+        pulumi.set(__self__, "tcp_options", tcp_options)
+        pulumi.set(__self__, "traffic_direction", traffic_direction)
+        pulumi.set(__self__, "udp_options", udp_options)
+
+    @property
+    @pulumi.getter(name="destinationCidr")
+    def destination_cidr(self) -> str:
+        """
+        Traffic sent to this CIDR block through the VTAP source will be mirrored to the VTAP target.
+        """
+        return pulumi.get(self, "destination_cidr")
+
+    @property
+    @pulumi.getter(name="icmpOptions")
+    def icmp_options(self) -> Sequence['outputs.GetCaptureFilterVtapCaptureFilterRuleIcmpOptionResult']:
+        """
+        Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
+        * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
+        * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
+        """
+        return pulumi.get(self, "icmp_options")
+
+    @property
+    @pulumi.getter
+    def protocol(self) -> str:
+        """
+        The transport protocol used in the filter. If do not choose a protocol, all protocols will be used in the filter. Supported options are:
+        * 1 = ICMP
+        * 6 = TCP
+        * 17 = UDP
+        """
+        return pulumi.get(self, "protocol")
+
+    @property
+    @pulumi.getter(name="ruleAction")
+    def rule_action(self) -> str:
+        """
+        Include or exclude packets meeting this definition from mirrored traffic.
+        """
+        return pulumi.get(self, "rule_action")
+
+    @property
+    @pulumi.getter(name="sourceCidr")
+    def source_cidr(self) -> str:
+        """
+        Traffic from this CIDR block to the VTAP source will be mirrored to the VTAP target.
+        """
+        return pulumi.get(self, "source_cidr")
+
+    @property
+    @pulumi.getter(name="tcpOptions")
+    def tcp_options(self) -> Sequence['outputs.GetCaptureFilterVtapCaptureFilterRuleTcpOptionResult']:
+        """
+        Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
+        """
+        return pulumi.get(self, "tcp_options")
+
+    @property
+    @pulumi.getter(name="trafficDirection")
+    def traffic_direction(self) -> str:
+        """
+        The traffic direction the VTAP is configured to mirror.
+        """
+        return pulumi.get(self, "traffic_direction")
+
+    @property
+    @pulumi.getter(name="udpOptions")
+    def udp_options(self) -> Sequence['outputs.GetCaptureFilterVtapCaptureFilterRuleUdpOptionResult']:
+        """
+        Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
+        """
+        return pulumi.get(self, "udp_options")
+
+
+@pulumi.output_type
+class GetCaptureFilterVtapCaptureFilterRuleIcmpOptionResult(dict):
+    def __init__(__self__, *,
+                 code: int,
+                 type: int):
+        """
+        :param int code: The ICMP code (optional).
+        :param int type: The ICMP type.
+        """
+        pulumi.set(__self__, "code", code)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def code(self) -> int:
+        """
+        The ICMP code (optional).
+        """
+        return pulumi.get(self, "code")
+
+    @property
+    @pulumi.getter
+    def type(self) -> int:
+        """
+        The ICMP type.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetCaptureFilterVtapCaptureFilterRuleTcpOptionResult(dict):
+    def __init__(__self__, *,
+                 destination_port_ranges: Sequence['outputs.GetCaptureFilterVtapCaptureFilterRuleTcpOptionDestinationPortRangeResult'],
+                 source_port_ranges: Sequence['outputs.GetCaptureFilterVtapCaptureFilterRuleTcpOptionSourcePortRangeResult']):
+        pulumi.set(__self__, "destination_port_ranges", destination_port_ranges)
+        pulumi.set(__self__, "source_port_ranges", source_port_ranges)
+
+    @property
+    @pulumi.getter(name="destinationPortRanges")
+    def destination_port_ranges(self) -> Sequence['outputs.GetCaptureFilterVtapCaptureFilterRuleTcpOptionDestinationPortRangeResult']:
+        return pulumi.get(self, "destination_port_ranges")
+
+    @property
+    @pulumi.getter(name="sourcePortRanges")
+    def source_port_ranges(self) -> Sequence['outputs.GetCaptureFilterVtapCaptureFilterRuleTcpOptionSourcePortRangeResult']:
+        return pulumi.get(self, "source_port_ranges")
+
+
+@pulumi.output_type
+class GetCaptureFilterVtapCaptureFilterRuleTcpOptionDestinationPortRangeResult(dict):
+    def __init__(__self__, *,
+                 max: int,
+                 min: int):
+        """
+        :param int max: The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+        :param int min: The minimum port number, which must not be greater than the maximum port number.
+        """
+        pulumi.set(__self__, "max", max)
+        pulumi.set(__self__, "min", min)
+
+    @property
+    @pulumi.getter
+    def max(self) -> int:
+        """
+        The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+        """
+        return pulumi.get(self, "max")
+
+    @property
+    @pulumi.getter
+    def min(self) -> int:
+        """
+        The minimum port number, which must not be greater than the maximum port number.
+        """
+        return pulumi.get(self, "min")
+
+
+@pulumi.output_type
+class GetCaptureFilterVtapCaptureFilterRuleTcpOptionSourcePortRangeResult(dict):
+    def __init__(__self__, *,
+                 max: int,
+                 min: int):
+        """
+        :param int max: The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+        :param int min: The minimum port number, which must not be greater than the maximum port number.
+        """
+        pulumi.set(__self__, "max", max)
+        pulumi.set(__self__, "min", min)
+
+    @property
+    @pulumi.getter
+    def max(self) -> int:
+        """
+        The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+        """
+        return pulumi.get(self, "max")
+
+    @property
+    @pulumi.getter
+    def min(self) -> int:
+        """
+        The minimum port number, which must not be greater than the maximum port number.
+        """
+        return pulumi.get(self, "min")
+
+
+@pulumi.output_type
+class GetCaptureFilterVtapCaptureFilterRuleUdpOptionResult(dict):
+    def __init__(__self__, *,
+                 destination_port_ranges: Sequence['outputs.GetCaptureFilterVtapCaptureFilterRuleUdpOptionDestinationPortRangeResult'],
+                 source_port_ranges: Sequence['outputs.GetCaptureFilterVtapCaptureFilterRuleUdpOptionSourcePortRangeResult']):
+        pulumi.set(__self__, "destination_port_ranges", destination_port_ranges)
+        pulumi.set(__self__, "source_port_ranges", source_port_ranges)
+
+    @property
+    @pulumi.getter(name="destinationPortRanges")
+    def destination_port_ranges(self) -> Sequence['outputs.GetCaptureFilterVtapCaptureFilterRuleUdpOptionDestinationPortRangeResult']:
+        return pulumi.get(self, "destination_port_ranges")
+
+    @property
+    @pulumi.getter(name="sourcePortRanges")
+    def source_port_ranges(self) -> Sequence['outputs.GetCaptureFilterVtapCaptureFilterRuleUdpOptionSourcePortRangeResult']:
+        return pulumi.get(self, "source_port_ranges")
+
+
+@pulumi.output_type
+class GetCaptureFilterVtapCaptureFilterRuleUdpOptionDestinationPortRangeResult(dict):
+    def __init__(__self__, *,
+                 max: int,
+                 min: int):
+        """
+        :param int max: The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+        :param int min: The minimum port number, which must not be greater than the maximum port number.
+        """
+        pulumi.set(__self__, "max", max)
+        pulumi.set(__self__, "min", min)
+
+    @property
+    @pulumi.getter
+    def max(self) -> int:
+        """
+        The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+        """
+        return pulumi.get(self, "max")
+
+    @property
+    @pulumi.getter
+    def min(self) -> int:
+        """
+        The minimum port number, which must not be greater than the maximum port number.
+        """
+        return pulumi.get(self, "min")
+
+
+@pulumi.output_type
+class GetCaptureFilterVtapCaptureFilterRuleUdpOptionSourcePortRangeResult(dict):
+    def __init__(__self__, *,
+                 max: int,
+                 min: int):
+        """
+        :param int max: The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+        :param int min: The minimum port number, which must not be greater than the maximum port number.
+        """
+        pulumi.set(__self__, "max", max)
+        pulumi.set(__self__, "min", min)
+
+    @property
+    @pulumi.getter
+    def max(self) -> int:
+        """
+        The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+        """
+        return pulumi.get(self, "max")
+
+    @property
+    @pulumi.getter
+    def min(self) -> int:
+        """
+        The minimum port number, which must not be greater than the maximum port number.
+        """
+        return pulumi.get(self, "min")
+
+
+@pulumi.output_type
+class GetCaptureFiltersCaptureFilterResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 defined_tags: Mapping[str, Any],
+                 display_name: str,
+                 filter_type: str,
+                 freeform_tags: Mapping[str, Any],
+                 id: str,
+                 state: str,
+                 time_created: str,
+                 vtap_capture_filter_rules: Sequence['outputs.GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleResult']):
+        """
+        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param str display_name: A filter to return only resources that match the given display name exactly.
+        :param str filter_type: Indicates which service will use this capture filter
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param str id: The capture filter's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+        :param str state: A filter to return only resources that match the given capture filter lifecycle state. The state value is case-insensitive.
+        :param str time_created: The date and time the capture filter was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2021-08-25T21:10:29.600Z`
+        :param Sequence['GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleArgs'] vtap_capture_filter_rules: The set of rules governing what traffic a VTAP mirrors.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "filter_type", filter_type)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "vtap_capture_filter_rules", vtap_capture_filter_rules)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the given display name exactly.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="filterType")
+    def filter_type(self) -> str:
+        """
+        Indicates which service will use this capture filter
+        """
+        return pulumi.get(self, "filter_type")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The capture filter's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return only resources that match the given capture filter lifecycle state. The state value is case-insensitive.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the capture filter was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2021-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="vtapCaptureFilterRules")
+    def vtap_capture_filter_rules(self) -> Sequence['outputs.GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleResult']:
+        """
+        The set of rules governing what traffic a VTAP mirrors.
+        """
+        return pulumi.get(self, "vtap_capture_filter_rules")
+
+
+@pulumi.output_type
+class GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleResult(dict):
+    def __init__(__self__, *,
+                 destination_cidr: str,
+                 icmp_options: Sequence['outputs.GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleIcmpOptionResult'],
+                 protocol: str,
+                 rule_action: str,
+                 source_cidr: str,
+                 tcp_options: Sequence['outputs.GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOptionResult'],
+                 traffic_direction: str,
+                 udp_options: Sequence['outputs.GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleUdpOptionResult']):
+        """
+        :param str destination_cidr: Traffic sent to this CIDR block through the VTAP source will be mirrored to the VTAP target.
+        :param Sequence['GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleIcmpOptionArgs'] icmp_options: Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
+               * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
+               * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
+        :param str protocol: The transport protocol used in the filter. If do not choose a protocol, all protocols will be used in the filter. Supported options are:
+               * 1 = ICMP
+               * 6 = TCP
+               * 17 = UDP
+        :param str rule_action: Include or exclude packets meeting this definition from mirrored traffic.
+        :param str source_cidr: Traffic from this CIDR block to the VTAP source will be mirrored to the VTAP target.
+        :param Sequence['GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOptionArgs'] tcp_options: Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
+        :param str traffic_direction: The traffic direction the VTAP is configured to mirror.
+        :param Sequence['GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleUdpOptionArgs'] udp_options: Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
+        """
+        pulumi.set(__self__, "destination_cidr", destination_cidr)
+        pulumi.set(__self__, "icmp_options", icmp_options)
+        pulumi.set(__self__, "protocol", protocol)
+        pulumi.set(__self__, "rule_action", rule_action)
+        pulumi.set(__self__, "source_cidr", source_cidr)
+        pulumi.set(__self__, "tcp_options", tcp_options)
+        pulumi.set(__self__, "traffic_direction", traffic_direction)
+        pulumi.set(__self__, "udp_options", udp_options)
+
+    @property
+    @pulumi.getter(name="destinationCidr")
+    def destination_cidr(self) -> str:
+        """
+        Traffic sent to this CIDR block through the VTAP source will be mirrored to the VTAP target.
+        """
+        return pulumi.get(self, "destination_cidr")
+
+    @property
+    @pulumi.getter(name="icmpOptions")
+    def icmp_options(self) -> Sequence['outputs.GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleIcmpOptionResult']:
+        """
+        Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
+        * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
+        * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
+        """
+        return pulumi.get(self, "icmp_options")
+
+    @property
+    @pulumi.getter
+    def protocol(self) -> str:
+        """
+        The transport protocol used in the filter. If do not choose a protocol, all protocols will be used in the filter. Supported options are:
+        * 1 = ICMP
+        * 6 = TCP
+        * 17 = UDP
+        """
+        return pulumi.get(self, "protocol")
+
+    @property
+    @pulumi.getter(name="ruleAction")
+    def rule_action(self) -> str:
+        """
+        Include or exclude packets meeting this definition from mirrored traffic.
+        """
+        return pulumi.get(self, "rule_action")
+
+    @property
+    @pulumi.getter(name="sourceCidr")
+    def source_cidr(self) -> str:
+        """
+        Traffic from this CIDR block to the VTAP source will be mirrored to the VTAP target.
+        """
+        return pulumi.get(self, "source_cidr")
+
+    @property
+    @pulumi.getter(name="tcpOptions")
+    def tcp_options(self) -> Sequence['outputs.GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOptionResult']:
+        """
+        Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
+        """
+        return pulumi.get(self, "tcp_options")
+
+    @property
+    @pulumi.getter(name="trafficDirection")
+    def traffic_direction(self) -> str:
+        """
+        The traffic direction the VTAP is configured to mirror.
+        """
+        return pulumi.get(self, "traffic_direction")
+
+    @property
+    @pulumi.getter(name="udpOptions")
+    def udp_options(self) -> Sequence['outputs.GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleUdpOptionResult']:
+        """
+        Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
+        """
+        return pulumi.get(self, "udp_options")
+
+
+@pulumi.output_type
+class GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleIcmpOptionResult(dict):
+    def __init__(__self__, *,
+                 code: int,
+                 type: int):
+        """
+        :param int code: The ICMP code (optional).
+        :param int type: The ICMP type.
+        """
+        pulumi.set(__self__, "code", code)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def code(self) -> int:
+        """
+        The ICMP code (optional).
+        """
+        return pulumi.get(self, "code")
+
+    @property
+    @pulumi.getter
+    def type(self) -> int:
+        """
+        The ICMP type.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOptionResult(dict):
+    def __init__(__self__, *,
+                 destination_port_ranges: Sequence['outputs.GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOptionDestinationPortRangeResult'],
+                 source_port_ranges: Sequence['outputs.GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOptionSourcePortRangeResult']):
+        pulumi.set(__self__, "destination_port_ranges", destination_port_ranges)
+        pulumi.set(__self__, "source_port_ranges", source_port_ranges)
+
+    @property
+    @pulumi.getter(name="destinationPortRanges")
+    def destination_port_ranges(self) -> Sequence['outputs.GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOptionDestinationPortRangeResult']:
+        return pulumi.get(self, "destination_port_ranges")
+
+    @property
+    @pulumi.getter(name="sourcePortRanges")
+    def source_port_ranges(self) -> Sequence['outputs.GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOptionSourcePortRangeResult']:
+        return pulumi.get(self, "source_port_ranges")
+
+
+@pulumi.output_type
+class GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOptionDestinationPortRangeResult(dict):
+    def __init__(__self__, *,
+                 max: int,
+                 min: int):
+        """
+        :param int max: The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+        :param int min: The minimum port number, which must not be greater than the maximum port number.
+        """
+        pulumi.set(__self__, "max", max)
+        pulumi.set(__self__, "min", min)
+
+    @property
+    @pulumi.getter
+    def max(self) -> int:
+        """
+        The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+        """
+        return pulumi.get(self, "max")
+
+    @property
+    @pulumi.getter
+    def min(self) -> int:
+        """
+        The minimum port number, which must not be greater than the maximum port number.
+        """
+        return pulumi.get(self, "min")
+
+
+@pulumi.output_type
+class GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOptionSourcePortRangeResult(dict):
+    def __init__(__self__, *,
+                 max: int,
+                 min: int):
+        """
+        :param int max: The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+        :param int min: The minimum port number, which must not be greater than the maximum port number.
+        """
+        pulumi.set(__self__, "max", max)
+        pulumi.set(__self__, "min", min)
+
+    @property
+    @pulumi.getter
+    def max(self) -> int:
+        """
+        The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+        """
+        return pulumi.get(self, "max")
+
+    @property
+    @pulumi.getter
+    def min(self) -> int:
+        """
+        The minimum port number, which must not be greater than the maximum port number.
+        """
+        return pulumi.get(self, "min")
+
+
+@pulumi.output_type
+class GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleUdpOptionResult(dict):
+    def __init__(__self__, *,
+                 destination_port_ranges: Sequence['outputs.GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleUdpOptionDestinationPortRangeResult'],
+                 source_port_ranges: Sequence['outputs.GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleUdpOptionSourcePortRangeResult']):
+        pulumi.set(__self__, "destination_port_ranges", destination_port_ranges)
+        pulumi.set(__self__, "source_port_ranges", source_port_ranges)
+
+    @property
+    @pulumi.getter(name="destinationPortRanges")
+    def destination_port_ranges(self) -> Sequence['outputs.GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleUdpOptionDestinationPortRangeResult']:
+        return pulumi.get(self, "destination_port_ranges")
+
+    @property
+    @pulumi.getter(name="sourcePortRanges")
+    def source_port_ranges(self) -> Sequence['outputs.GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleUdpOptionSourcePortRangeResult']:
+        return pulumi.get(self, "source_port_ranges")
+
+
+@pulumi.output_type
+class GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleUdpOptionDestinationPortRangeResult(dict):
+    def __init__(__self__, *,
+                 max: int,
+                 min: int):
+        """
+        :param int max: The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+        :param int min: The minimum port number, which must not be greater than the maximum port number.
+        """
+        pulumi.set(__self__, "max", max)
+        pulumi.set(__self__, "min", min)
+
+    @property
+    @pulumi.getter
+    def max(self) -> int:
+        """
+        The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+        """
+        return pulumi.get(self, "max")
+
+    @property
+    @pulumi.getter
+    def min(self) -> int:
+        """
+        The minimum port number, which must not be greater than the maximum port number.
+        """
+        return pulumi.get(self, "min")
+
+
+@pulumi.output_type
+class GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleUdpOptionSourcePortRangeResult(dict):
+    def __init__(__self__, *,
+                 max: int,
+                 min: int):
+        """
+        :param int max: The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+        :param int min: The minimum port number, which must not be greater than the maximum port number.
+        """
+        pulumi.set(__self__, "max", max)
+        pulumi.set(__self__, "min", min)
+
+    @property
+    @pulumi.getter
+    def max(self) -> int:
+        """
+        The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+        """
+        return pulumi.get(self, "max")
+
+    @property
+    @pulumi.getter
+    def min(self) -> int:
+        """
+        The minimum port number, which must not be greater than the maximum port number.
+        """
+        return pulumi.get(self, "min")
+
+
+@pulumi.output_type
+class GetCaptureFiltersFilterResult(dict):
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],
@@ -14325,7 +15722,7 @@ class GetDrgAttachmentsDrgAttachmentNetworkDetailResult(dict):
         :param str ipsec_connection_id: The IPSec connection that contains the attached IPSec tunnel.
         :param str route_table_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the DRG attachment is using.
         :param str type: The type can be one of these values: `IPSEC_TUNNEL`, `REMOTE_PEERING_CONNECTION`, `VCN`, `VIRTUAL_CIRCUIT`
-        :param str vcn_route_type: Indicates whether the VCN CIDR(s) or the individual Subnet CIDR(s) are imported from the attachment.  Routes from the VCN Ingress Route Table are always imported. It can be one of these values: `VCN_CIDRS` , `SUBNET_CIDRS`
+        :param str vcn_route_type: Indicates whether the VCN CIDRs or the individual subnet CIDRs are imported from the attachment. Routes from the VCN ingress route table are always imported.
         """
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "ipsec_connection_id", ipsec_connection_id)
@@ -14369,7 +15766,7 @@ class GetDrgAttachmentsDrgAttachmentNetworkDetailResult(dict):
     @pulumi.getter(name="vcnRouteType")
     def vcn_route_type(self) -> str:
         """
-        Indicates whether the VCN CIDR(s) or the individual Subnet CIDR(s) are imported from the attachment.  Routes from the VCN Ingress Route Table are always imported. It can be one of these values: `VCN_CIDRS` , `SUBNET_CIDRS`
+        Indicates whether the VCN CIDRs or the individual subnet CIDRs are imported from the attachment. Routes from the VCN ingress route table are always imported.
         """
         return pulumi.get(self, "vcn_route_type")
 
@@ -17062,23 +18459,62 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionResult(dict)
 @pulumi.output_type
 class GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigResult(dict):
     def __init__(__self__, *,
+                 are_virtual_instructions_enabled: bool,
+                 is_access_control_service_enabled: bool,
+                 is_input_output_memory_management_unit_enabled: bool,
                  is_measured_boot_enabled: bool,
                  is_secure_boot_enabled: bool,
+                 is_symmetric_multi_threading_enabled: bool,
                  is_trusted_platform_module_enabled: bool,
                  numa_nodes_per_socket: str,
+                 percentage_of_cores_enabled: int,
                  type: str):
         """
+        :param bool are_virtual_instructions_enabled: Whether virtualization instructions are available.
+        :param bool is_access_control_service_enabled: Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device passthrough.
+        :param bool is_input_output_memory_management_unit_enabled: Whether the input-output memory management unit is enabled.
         :param bool is_measured_boot_enabled: Whether the Measured Boot feature is enabled on the instance.
         :param bool is_secure_boot_enabled: Whether Secure Boot is enabled on the instance.
+        :param bool is_symmetric_multi_threading_enabled: Whether symmetric multi-threading is enabled on the instance.
         :param bool is_trusted_platform_module_enabled: Whether the Trusted Platform Module (TPM) is enabled on the instance.
         :param str numa_nodes_per_socket: The number of NUMA nodes per socket (NPS).
+        :param int percentage_of_cores_enabled: The percentage of cores enabled.
         :param str type: The type of action to run when the instance is interrupted for eviction.
         """
+        pulumi.set(__self__, "are_virtual_instructions_enabled", are_virtual_instructions_enabled)
+        pulumi.set(__self__, "is_access_control_service_enabled", is_access_control_service_enabled)
+        pulumi.set(__self__, "is_input_output_memory_management_unit_enabled", is_input_output_memory_management_unit_enabled)
         pulumi.set(__self__, "is_measured_boot_enabled", is_measured_boot_enabled)
         pulumi.set(__self__, "is_secure_boot_enabled", is_secure_boot_enabled)
+        pulumi.set(__self__, "is_symmetric_multi_threading_enabled", is_symmetric_multi_threading_enabled)
         pulumi.set(__self__, "is_trusted_platform_module_enabled", is_trusted_platform_module_enabled)
         pulumi.set(__self__, "numa_nodes_per_socket", numa_nodes_per_socket)
+        pulumi.set(__self__, "percentage_of_cores_enabled", percentage_of_cores_enabled)
         pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="areVirtualInstructionsEnabled")
+    def are_virtual_instructions_enabled(self) -> bool:
+        """
+        Whether virtualization instructions are available.
+        """
+        return pulumi.get(self, "are_virtual_instructions_enabled")
+
+    @property
+    @pulumi.getter(name="isAccessControlServiceEnabled")
+    def is_access_control_service_enabled(self) -> bool:
+        """
+        Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device passthrough.
+        """
+        return pulumi.get(self, "is_access_control_service_enabled")
+
+    @property
+    @pulumi.getter(name="isInputOutputMemoryManagementUnitEnabled")
+    def is_input_output_memory_management_unit_enabled(self) -> bool:
+        """
+        Whether the input-output memory management unit is enabled.
+        """
+        return pulumi.get(self, "is_input_output_memory_management_unit_enabled")
 
     @property
     @pulumi.getter(name="isMeasuredBootEnabled")
@@ -17097,6 +18533,14 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigResult(dic
         return pulumi.get(self, "is_secure_boot_enabled")
 
     @property
+    @pulumi.getter(name="isSymmetricMultiThreadingEnabled")
+    def is_symmetric_multi_threading_enabled(self) -> bool:
+        """
+        Whether symmetric multi-threading is enabled on the instance.
+        """
+        return pulumi.get(self, "is_symmetric_multi_threading_enabled")
+
+    @property
     @pulumi.getter(name="isTrustedPlatformModuleEnabled")
     def is_trusted_platform_module_enabled(self) -> bool:
         """
@@ -17111,6 +18555,14 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigResult(dic
         The number of NUMA nodes per socket (NPS).
         """
         return pulumi.get(self, "numa_nodes_per_socket")
+
+    @property
+    @pulumi.getter(name="percentageOfCoresEnabled")
+    def percentage_of_cores_enabled(self) -> int:
+        """
+        The percentage of cores enabled.
+        """
+        return pulumi.get(self, "percentage_of_cores_enabled")
 
     @property
     @pulumi.getter
@@ -17173,14 +18625,17 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigResult(dict):
     def __init__(__self__, *,
                  baseline_ocpu_utilization: str,
                  memory_in_gbs: float,
+                 nvmes: int,
                  ocpus: float):
         """
         :param str baseline_ocpu_utilization: The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
         :param float memory_in_gbs: The total amount of memory available to the instance, in gigabytes.
+        :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param float ocpus: The total number of OCPUs available to the instance.
         """
         pulumi.set(__self__, "baseline_ocpu_utilization", baseline_ocpu_utilization)
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "nvmes", nvmes)
         pulumi.set(__self__, "ocpus", ocpus)
 
     @property
@@ -17201,6 +18656,14 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigResult(dict):
 
     @property
     @pulumi.getter
+    def nvmes(self) -> int:
+        """
+        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        """
+        return pulumi.get(self, "nvmes")
+
+    @property
+    @pulumi.getter
     def ocpus(self) -> float:
         """
         The total number of OCPUs available to the instance.
@@ -17213,16 +18676,19 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailResult(dict)
     def __init__(__self__, *,
                  boot_volume_id: str,
                  boot_volume_size_in_gbs: str,
+                 boot_volume_vpus_per_gb: str,
                  image_id: str,
                  source_type: str):
         """
         :param str boot_volume_id: The OCID of the boot volume used to boot the instance.
         :param str boot_volume_size_in_gbs: The size of the boot volume in GBs. The minimum value is 50 GB and the maximum value is 32,768 GB (32 TB).
+        :param str boot_volume_vpus_per_gb: The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
         :param str image_id: The OCID of the image used to boot the instance.
         :param str source_type: The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
         """
         pulumi.set(__self__, "boot_volume_id", boot_volume_id)
         pulumi.set(__self__, "boot_volume_size_in_gbs", boot_volume_size_in_gbs)
+        pulumi.set(__self__, "boot_volume_vpus_per_gb", boot_volume_vpus_per_gb)
         pulumi.set(__self__, "image_id", image_id)
         pulumi.set(__self__, "source_type", source_type)
 
@@ -17241,6 +18707,14 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailResult(dict)
         The size of the boot volume in GBs. The minimum value is 50 GB and the maximum value is 32,768 GB (32 TB).
         """
         return pulumi.get(self, "boot_volume_size_in_gbs")
+
+    @property
+    @pulumi.getter(name="bootVolumeVpusPerGb")
+    def boot_volume_vpus_per_gb(self) -> str:
+        """
+        The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+        """
+        return pulumi.get(self, "boot_volume_vpus_per_gb")
 
     @property
     @pulumi.getter(name="imageId")
@@ -18439,23 +19913,62 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLa
 @pulumi.output_type
 class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigResult(dict):
     def __init__(__self__, *,
+                 are_virtual_instructions_enabled: bool,
+                 is_access_control_service_enabled: bool,
+                 is_input_output_memory_management_unit_enabled: bool,
                  is_measured_boot_enabled: bool,
                  is_secure_boot_enabled: bool,
+                 is_symmetric_multi_threading_enabled: bool,
                  is_trusted_platform_module_enabled: bool,
                  numa_nodes_per_socket: str,
+                 percentage_of_cores_enabled: int,
                  type: str):
         """
+        :param bool are_virtual_instructions_enabled: Whether virtualization instructions are available.
+        :param bool is_access_control_service_enabled: Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device passthrough.
+        :param bool is_input_output_memory_management_unit_enabled: Whether the input-output memory management unit is enabled.
         :param bool is_measured_boot_enabled: Whether the Measured Boot feature is enabled on the instance.
         :param bool is_secure_boot_enabled: Whether Secure Boot is enabled on the instance.
+        :param bool is_symmetric_multi_threading_enabled: Whether symmetric multi-threading is enabled on the instance.
         :param bool is_trusted_platform_module_enabled: Whether the Trusted Platform Module (TPM) is enabled on the instance.
         :param str numa_nodes_per_socket: The number of NUMA nodes per socket (NPS).
+        :param int percentage_of_cores_enabled: The percentage of cores enabled.
         :param str type: The type of action to run when the instance is interrupted for eviction.
         """
+        pulumi.set(__self__, "are_virtual_instructions_enabled", are_virtual_instructions_enabled)
+        pulumi.set(__self__, "is_access_control_service_enabled", is_access_control_service_enabled)
+        pulumi.set(__self__, "is_input_output_memory_management_unit_enabled", is_input_output_memory_management_unit_enabled)
         pulumi.set(__self__, "is_measured_boot_enabled", is_measured_boot_enabled)
         pulumi.set(__self__, "is_secure_boot_enabled", is_secure_boot_enabled)
+        pulumi.set(__self__, "is_symmetric_multi_threading_enabled", is_symmetric_multi_threading_enabled)
         pulumi.set(__self__, "is_trusted_platform_module_enabled", is_trusted_platform_module_enabled)
         pulumi.set(__self__, "numa_nodes_per_socket", numa_nodes_per_socket)
+        pulumi.set(__self__, "percentage_of_cores_enabled", percentage_of_cores_enabled)
         pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="areVirtualInstructionsEnabled")
+    def are_virtual_instructions_enabled(self) -> bool:
+        """
+        Whether virtualization instructions are available.
+        """
+        return pulumi.get(self, "are_virtual_instructions_enabled")
+
+    @property
+    @pulumi.getter(name="isAccessControlServiceEnabled")
+    def is_access_control_service_enabled(self) -> bool:
+        """
+        Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device passthrough.
+        """
+        return pulumi.get(self, "is_access_control_service_enabled")
+
+    @property
+    @pulumi.getter(name="isInputOutputMemoryManagementUnitEnabled")
+    def is_input_output_memory_management_unit_enabled(self) -> bool:
+        """
+        Whether the input-output memory management unit is enabled.
+        """
+        return pulumi.get(self, "is_input_output_memory_management_unit_enabled")
 
     @property
     @pulumi.getter(name="isMeasuredBootEnabled")
@@ -18474,6 +19987,14 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPl
         return pulumi.get(self, "is_secure_boot_enabled")
 
     @property
+    @pulumi.getter(name="isSymmetricMultiThreadingEnabled")
+    def is_symmetric_multi_threading_enabled(self) -> bool:
+        """
+        Whether symmetric multi-threading is enabled on the instance.
+        """
+        return pulumi.get(self, "is_symmetric_multi_threading_enabled")
+
+    @property
     @pulumi.getter(name="isTrustedPlatformModuleEnabled")
     def is_trusted_platform_module_enabled(self) -> bool:
         """
@@ -18488,6 +20009,14 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPl
         The number of NUMA nodes per socket (NPS).
         """
         return pulumi.get(self, "numa_nodes_per_socket")
+
+    @property
+    @pulumi.getter(name="percentageOfCoresEnabled")
+    def percentage_of_cores_enabled(self) -> int:
+        """
+        The percentage of cores enabled.
+        """
+        return pulumi.get(self, "percentage_of_cores_enabled")
 
     @property
     @pulumi.getter
@@ -18550,14 +20079,17 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailSh
     def __init__(__self__, *,
                  baseline_ocpu_utilization: str,
                  memory_in_gbs: float,
+                 nvmes: int,
                  ocpus: float):
         """
         :param str baseline_ocpu_utilization: The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
         :param float memory_in_gbs: The total amount of memory available to the instance, in gigabytes.
+        :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param float ocpus: The total number of OCPUs available to the instance.
         """
         pulumi.set(__self__, "baseline_ocpu_utilization", baseline_ocpu_utilization)
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "nvmes", nvmes)
         pulumi.set(__self__, "ocpus", ocpus)
 
     @property
@@ -18578,6 +20110,14 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailSh
 
     @property
     @pulumi.getter
+    def nvmes(self) -> int:
+        """
+        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        """
+        return pulumi.get(self, "nvmes")
+
+    @property
+    @pulumi.getter
     def ocpus(self) -> float:
         """
         The total number of OCPUs available to the instance.
@@ -18590,16 +20130,19 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailSo
     def __init__(__self__, *,
                  boot_volume_id: str,
                  boot_volume_size_in_gbs: str,
+                 boot_volume_vpus_per_gb: str,
                  image_id: str,
                  source_type: str):
         """
         :param str boot_volume_id: The OCID of the boot volume used to boot the instance.
         :param str boot_volume_size_in_gbs: The size of the boot volume in GBs. The minimum value is 50 GB and the maximum value is 32,768 GB (32 TB).
+        :param str boot_volume_vpus_per_gb: The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
         :param str image_id: The OCID of the image used to boot the instance.
         :param str source_type: The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
         """
         pulumi.set(__self__, "boot_volume_id", boot_volume_id)
         pulumi.set(__self__, "boot_volume_size_in_gbs", boot_volume_size_in_gbs)
+        pulumi.set(__self__, "boot_volume_vpus_per_gb", boot_volume_vpus_per_gb)
         pulumi.set(__self__, "image_id", image_id)
         pulumi.set(__self__, "source_type", source_type)
 
@@ -18618,6 +20161,14 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailSo
         The size of the boot volume in GBs. The minimum value is 50 GB and the maximum value is 32,768 GB (32 TB).
         """
         return pulumi.get(self, "boot_volume_size_in_gbs")
+
+    @property
+    @pulumi.getter(name="bootVolumeVpusPerGb")
+    def boot_volume_vpus_per_gb(self) -> str:
+        """
+        The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+        """
+        return pulumi.get(self, "boot_volume_vpus_per_gb")
 
     @property
     @pulumi.getter(name="imageId")
@@ -19313,23 +20864,62 @@ class GetInstanceMeasuredBootReportMeasurementPolicyResult(dict):
 @pulumi.output_type
 class GetInstancePlatformConfigResult(dict):
     def __init__(__self__, *,
+                 are_virtual_instructions_enabled: bool,
+                 is_access_control_service_enabled: bool,
+                 is_input_output_memory_management_unit_enabled: bool,
                  is_measured_boot_enabled: bool,
                  is_secure_boot_enabled: bool,
+                 is_symmetric_multi_threading_enabled: bool,
                  is_trusted_platform_module_enabled: bool,
                  numa_nodes_per_socket: str,
+                 percentage_of_cores_enabled: int,
                  type: str):
         """
+        :param bool are_virtual_instructions_enabled: Whether virtualization instructions are available.
+        :param bool is_access_control_service_enabled: Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device passthrough.
+        :param bool is_input_output_memory_management_unit_enabled: Whether the input-output memory management unit is enabled.
         :param bool is_measured_boot_enabled: Whether the Measured Boot is to be enabled on the instance
-        :param bool is_secure_boot_enabled: Whether the Secure Boot is to be enabled on the instance
-        :param bool is_trusted_platform_module_enabled: Whether the Trusted Platform Module (TPM) is to be enabled on the instance
+        :param bool is_secure_boot_enabled: Whether the Secure Boot is to be enabled on the instance.
+        :param bool is_symmetric_multi_threading_enabled: Whether symmetric multi-threading is enabled on the instance.
+        :param bool is_trusted_platform_module_enabled: Whether the Trusted Platform Module (TPM) is to be enabled on the instance.
         :param str numa_nodes_per_socket: The number of NUMA nodes per socket (NPS).
+        :param int percentage_of_cores_enabled: The percentage of cores enabled.
         :param str type: (Required) The type of action to run when the instance is interrupted for eviction.
         """
+        pulumi.set(__self__, "are_virtual_instructions_enabled", are_virtual_instructions_enabled)
+        pulumi.set(__self__, "is_access_control_service_enabled", is_access_control_service_enabled)
+        pulumi.set(__self__, "is_input_output_memory_management_unit_enabled", is_input_output_memory_management_unit_enabled)
         pulumi.set(__self__, "is_measured_boot_enabled", is_measured_boot_enabled)
         pulumi.set(__self__, "is_secure_boot_enabled", is_secure_boot_enabled)
+        pulumi.set(__self__, "is_symmetric_multi_threading_enabled", is_symmetric_multi_threading_enabled)
         pulumi.set(__self__, "is_trusted_platform_module_enabled", is_trusted_platform_module_enabled)
         pulumi.set(__self__, "numa_nodes_per_socket", numa_nodes_per_socket)
+        pulumi.set(__self__, "percentage_of_cores_enabled", percentage_of_cores_enabled)
         pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="areVirtualInstructionsEnabled")
+    def are_virtual_instructions_enabled(self) -> bool:
+        """
+        Whether virtualization instructions are available.
+        """
+        return pulumi.get(self, "are_virtual_instructions_enabled")
+
+    @property
+    @pulumi.getter(name="isAccessControlServiceEnabled")
+    def is_access_control_service_enabled(self) -> bool:
+        """
+        Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device passthrough.
+        """
+        return pulumi.get(self, "is_access_control_service_enabled")
+
+    @property
+    @pulumi.getter(name="isInputOutputMemoryManagementUnitEnabled")
+    def is_input_output_memory_management_unit_enabled(self) -> bool:
+        """
+        Whether the input-output memory management unit is enabled.
+        """
+        return pulumi.get(self, "is_input_output_memory_management_unit_enabled")
 
     @property
     @pulumi.getter(name="isMeasuredBootEnabled")
@@ -19343,15 +20933,23 @@ class GetInstancePlatformConfigResult(dict):
     @pulumi.getter(name="isSecureBootEnabled")
     def is_secure_boot_enabled(self) -> bool:
         """
-        Whether the Secure Boot is to be enabled on the instance
+        Whether the Secure Boot is to be enabled on the instance.
         """
         return pulumi.get(self, "is_secure_boot_enabled")
+
+    @property
+    @pulumi.getter(name="isSymmetricMultiThreadingEnabled")
+    def is_symmetric_multi_threading_enabled(self) -> bool:
+        """
+        Whether symmetric multi-threading is enabled on the instance.
+        """
+        return pulumi.get(self, "is_symmetric_multi_threading_enabled")
 
     @property
     @pulumi.getter(name="isTrustedPlatformModuleEnabled")
     def is_trusted_platform_module_enabled(self) -> bool:
         """
-        Whether the Trusted Platform Module (TPM) is to be enabled on the instance
+        Whether the Trusted Platform Module (TPM) is to be enabled on the instance.
         """
         return pulumi.get(self, "is_trusted_platform_module_enabled")
 
@@ -19362,6 +20960,14 @@ class GetInstancePlatformConfigResult(dict):
         The number of NUMA nodes per socket (NPS).
         """
         return pulumi.get(self, "numa_nodes_per_socket")
+
+    @property
+    @pulumi.getter(name="percentageOfCoresEnabled")
+    def percentage_of_cores_enabled(self) -> int:
+        """
+        The percentage of cores enabled.
+        """
+        return pulumi.get(self, "percentage_of_cores_enabled")
 
     @property
     @pulumi.getter
@@ -20170,6 +21776,7 @@ class GetInstanceShapeConfigResult(dict):
                  max_vnic_attachments: int,
                  memory_in_gbs: float,
                  networking_bandwidth_in_gbps: float,
+                 nvmes: int,
                  ocpus: float,
                  processor_description: str):
         """
@@ -20194,6 +21801,7 @@ class GetInstanceShapeConfigResult(dict):
         pulumi.set(__self__, "max_vnic_attachments", max_vnic_attachments)
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         pulumi.set(__self__, "networking_bandwidth_in_gbps", networking_bandwidth_in_gbps)
+        pulumi.set(__self__, "nvmes", nvmes)
         pulumi.set(__self__, "ocpus", ocpus)
         pulumi.set(__self__, "processor_description", processor_description)
 
@@ -20271,6 +21879,11 @@ class GetInstanceShapeConfigResult(dict):
 
     @property
     @pulumi.getter
+    def nvmes(self) -> int:
+        return pulumi.get(self, "nvmes")
+
+    @property
+    @pulumi.getter
     def ocpus(self) -> float:
         """
         The total number of OCPUs available to the instance.
@@ -20290,16 +21903,19 @@ class GetInstanceShapeConfigResult(dict):
 class GetInstanceSourceDetailResult(dict):
     def __init__(__self__, *,
                  boot_volume_size_in_gbs: str,
+                 boot_volume_vpus_per_gb: str,
                  kms_key_id: str,
                  source_id: str,
                  source_type: str):
         """
         :param str boot_volume_size_in_gbs: The size of the boot volume in GBs. Minimum value is 50 GB and maximum value is 32,768 GB (32 TB).
+        :param str boot_volume_vpus_per_gb: The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
         :param str kms_key_id: The OCID of the Key Management key to assign as the master encryption key for the boot volume.
         :param str source_id: The OCID of an image or a boot volume to use, depending on the value of `source_type`.
         :param str source_type: The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
         """
         pulumi.set(__self__, "boot_volume_size_in_gbs", boot_volume_size_in_gbs)
+        pulumi.set(__self__, "boot_volume_vpus_per_gb", boot_volume_vpus_per_gb)
         pulumi.set(__self__, "kms_key_id", kms_key_id)
         pulumi.set(__self__, "source_id", source_id)
         pulumi.set(__self__, "source_type", source_type)
@@ -20311,6 +21927,14 @@ class GetInstanceSourceDetailResult(dict):
         The size of the boot volume in GBs. Minimum value is 50 GB and maximum value is 32,768 GB (32 TB).
         """
         return pulumi.get(self, "boot_volume_size_in_gbs")
+
+    @property
+    @pulumi.getter(name="bootVolumeVpusPerGb")
+    def boot_volume_vpus_per_gb(self) -> str:
+        """
+        The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+        """
+        return pulumi.get(self, "boot_volume_vpus_per_gb")
 
     @property
     @pulumi.getter(name="kmsKeyId")
@@ -21055,29 +22679,68 @@ class GetInstancesInstanceLaunchOptionResult(dict):
 @pulumi.output_type
 class GetInstancesInstancePlatformConfigResult(dict):
     def __init__(__self__, *,
+                 are_virtual_instructions_enabled: bool,
+                 is_access_control_service_enabled: bool,
+                 is_input_output_memory_management_unit_enabled: bool,
                  is_measured_boot_enabled: bool,
                  is_secure_boot_enabled: bool,
+                 is_symmetric_multi_threading_enabled: bool,
                  is_trusted_platform_module_enabled: bool,
                  numa_nodes_per_socket: str,
+                 percentage_of_cores_enabled: int,
                  type: str):
         """
-        :param bool is_measured_boot_enabled: Whether the Measured Boot is to be enabled on the instance
-        :param bool is_secure_boot_enabled: Whether the Secure Boot is to be enabled on the instance
-        :param bool is_trusted_platform_module_enabled: Whether the Trusted Platform Module (TPM) is to be enabled on the instance
+        :param bool are_virtual_instructions_enabled: Whether virtualization instructions are available.
+        :param bool is_access_control_service_enabled: Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device passthrough.
+        :param bool is_input_output_memory_management_unit_enabled: Whether the input-output memory management unit is enabled.
+        :param bool is_measured_boot_enabled: Whether the Measured Boot is to be enabled on the instance.
+        :param bool is_secure_boot_enabled: Whether the Secure Boot is to be enabled on the instance.
+        :param bool is_symmetric_multi_threading_enabled: Whether symmetric multi-threading is enabled on the instance.
+        :param bool is_trusted_platform_module_enabled: Whether the Trusted Platform Module (TPM) is to be enabled on the instance.
         :param str numa_nodes_per_socket: The number of NUMA nodes per socket (NPS).
+        :param int percentage_of_cores_enabled: The percentage of cores enabled.
         :param str type: (Required) The type of action to run when the instance is interrupted for eviction.
         """
+        pulumi.set(__self__, "are_virtual_instructions_enabled", are_virtual_instructions_enabled)
+        pulumi.set(__self__, "is_access_control_service_enabled", is_access_control_service_enabled)
+        pulumi.set(__self__, "is_input_output_memory_management_unit_enabled", is_input_output_memory_management_unit_enabled)
         pulumi.set(__self__, "is_measured_boot_enabled", is_measured_boot_enabled)
         pulumi.set(__self__, "is_secure_boot_enabled", is_secure_boot_enabled)
+        pulumi.set(__self__, "is_symmetric_multi_threading_enabled", is_symmetric_multi_threading_enabled)
         pulumi.set(__self__, "is_trusted_platform_module_enabled", is_trusted_platform_module_enabled)
         pulumi.set(__self__, "numa_nodes_per_socket", numa_nodes_per_socket)
+        pulumi.set(__self__, "percentage_of_cores_enabled", percentage_of_cores_enabled)
         pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="areVirtualInstructionsEnabled")
+    def are_virtual_instructions_enabled(self) -> bool:
+        """
+        Whether virtualization instructions are available.
+        """
+        return pulumi.get(self, "are_virtual_instructions_enabled")
+
+    @property
+    @pulumi.getter(name="isAccessControlServiceEnabled")
+    def is_access_control_service_enabled(self) -> bool:
+        """
+        Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device passthrough.
+        """
+        return pulumi.get(self, "is_access_control_service_enabled")
+
+    @property
+    @pulumi.getter(name="isInputOutputMemoryManagementUnitEnabled")
+    def is_input_output_memory_management_unit_enabled(self) -> bool:
+        """
+        Whether the input-output memory management unit is enabled.
+        """
+        return pulumi.get(self, "is_input_output_memory_management_unit_enabled")
 
     @property
     @pulumi.getter(name="isMeasuredBootEnabled")
     def is_measured_boot_enabled(self) -> bool:
         """
-        Whether the Measured Boot is to be enabled on the instance
+        Whether the Measured Boot is to be enabled on the instance.
         """
         return pulumi.get(self, "is_measured_boot_enabled")
 
@@ -21085,15 +22748,23 @@ class GetInstancesInstancePlatformConfigResult(dict):
     @pulumi.getter(name="isSecureBootEnabled")
     def is_secure_boot_enabled(self) -> bool:
         """
-        Whether the Secure Boot is to be enabled on the instance
+        Whether the Secure Boot is to be enabled on the instance.
         """
         return pulumi.get(self, "is_secure_boot_enabled")
+
+    @property
+    @pulumi.getter(name="isSymmetricMultiThreadingEnabled")
+    def is_symmetric_multi_threading_enabled(self) -> bool:
+        """
+        Whether symmetric multi-threading is enabled on the instance.
+        """
+        return pulumi.get(self, "is_symmetric_multi_threading_enabled")
 
     @property
     @pulumi.getter(name="isTrustedPlatformModuleEnabled")
     def is_trusted_platform_module_enabled(self) -> bool:
         """
-        Whether the Trusted Platform Module (TPM) is to be enabled on the instance
+        Whether the Trusted Platform Module (TPM) is to be enabled on the instance.
         """
         return pulumi.get(self, "is_trusted_platform_module_enabled")
 
@@ -21104,6 +22775,14 @@ class GetInstancesInstancePlatformConfigResult(dict):
         The number of NUMA nodes per socket (NPS).
         """
         return pulumi.get(self, "numa_nodes_per_socket")
+
+    @property
+    @pulumi.getter(name="percentageOfCoresEnabled")
+    def percentage_of_cores_enabled(self) -> int:
+        """
+        The percentage of cores enabled.
+        """
+        return pulumi.get(self, "percentage_of_cores_enabled")
 
     @property
     @pulumi.getter
@@ -21173,6 +22852,7 @@ class GetInstancesInstanceShapeConfigResult(dict):
                  max_vnic_attachments: int,
                  memory_in_gbs: float,
                  networking_bandwidth_in_gbps: float,
+                 nvmes: int,
                  ocpus: float,
                  processor_description: str):
         """
@@ -21197,6 +22877,7 @@ class GetInstancesInstanceShapeConfigResult(dict):
         pulumi.set(__self__, "max_vnic_attachments", max_vnic_attachments)
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         pulumi.set(__self__, "networking_bandwidth_in_gbps", networking_bandwidth_in_gbps)
+        pulumi.set(__self__, "nvmes", nvmes)
         pulumi.set(__self__, "ocpus", ocpus)
         pulumi.set(__self__, "processor_description", processor_description)
 
@@ -21274,6 +22955,11 @@ class GetInstancesInstanceShapeConfigResult(dict):
 
     @property
     @pulumi.getter
+    def nvmes(self) -> int:
+        return pulumi.get(self, "nvmes")
+
+    @property
+    @pulumi.getter
     def ocpus(self) -> float:
         """
         The total number of OCPUs available to the instance.
@@ -21293,16 +22979,19 @@ class GetInstancesInstanceShapeConfigResult(dict):
 class GetInstancesInstanceSourceDetailResult(dict):
     def __init__(__self__, *,
                  boot_volume_size_in_gbs: str,
+                 boot_volume_vpus_per_gb: str,
                  kms_key_id: str,
                  source_id: str,
                  source_type: str):
         """
         :param str boot_volume_size_in_gbs: The size of the boot volume in GBs. Minimum value is 50 GB and maximum value is 32,768 GB (32 TB).
+        :param str boot_volume_vpus_per_gb: The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
         :param str kms_key_id: The OCID of the Key Management key to assign as the master encryption key for the boot volume.
         :param str source_id: The OCID of an image or a boot volume to use, depending on the value of `source_type`.
         :param str source_type: The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
         """
         pulumi.set(__self__, "boot_volume_size_in_gbs", boot_volume_size_in_gbs)
+        pulumi.set(__self__, "boot_volume_vpus_per_gb", boot_volume_vpus_per_gb)
         pulumi.set(__self__, "kms_key_id", kms_key_id)
         pulumi.set(__self__, "source_id", source_id)
         pulumi.set(__self__, "source_type", source_type)
@@ -21314,6 +23003,14 @@ class GetInstancesInstanceSourceDetailResult(dict):
         The size of the boot volume in GBs. Minimum value is 50 GB and maximum value is 32,768 GB (32 TB).
         """
         return pulumi.get(self, "boot_volume_size_in_gbs")
+
+    @property
+    @pulumi.getter(name="bootVolumeVpusPerGb")
+    def boot_volume_vpus_per_gb(self) -> str:
+        """
+        The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+        """
+        return pulumi.get(self, "boot_volume_vpus_per_gb")
 
     @property
     @pulumi.getter(name="kmsKeyId")
@@ -21376,6 +23073,7 @@ class GetInternetGatewaysGatewayResult(dict):
                  enabled: bool,
                  freeform_tags: Mapping[str, Any],
                  id: str,
+                 route_table_id: str,
                  state: str,
                  time_created: str,
                  vcn_id: str):
@@ -21386,6 +23084,7 @@ class GetInternetGatewaysGatewayResult(dict):
         :param bool enabled: Whether the gateway is enabled. When the gateway is disabled, traffic is not routed to/from the Internet, regardless of route rules.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The internet gateway's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+        :param str route_table_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the Internet Gateway is using.
         :param str state: A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
         :param str time_created: The date and time the internet gateway was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
@@ -21396,6 +23095,7 @@ class GetInternetGatewaysGatewayResult(dict):
         pulumi.set(__self__, "enabled", enabled)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "route_table_id", route_table_id)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "vcn_id", vcn_id)
@@ -21447,6 +23147,14 @@ class GetInternetGatewaysGatewayResult(dict):
         The internet gateway's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="routeTableId")
+    def route_table_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the Internet Gateway is using.
+        """
+        return pulumi.get(self, "route_table_id")
 
     @property
     @pulumi.getter
@@ -21703,6 +23411,7 @@ class GetIpsecConfigTunnelResult(dict):
 @pulumi.output_type
 class GetIpsecConnectionTunnelBgpSessionInfoResult(dict):
     def __init__(__self__, *,
+                 bgp_ipv6state: str,
                  bgp_state: str,
                  customer_bgp_asn: str,
                  customer_interface_ip: str,
@@ -21715,11 +23424,17 @@ class GetIpsecConnectionTunnelBgpSessionInfoResult(dict):
         :param str oracle_bgp_asn: This is the value of the Oracle Bgp ASN in asplain format, as a string. Example: 1587232876 (4 byte ASN) or 12345 (2 byte ASN)
         :param str oracle_interface_ip: This is the IPv4 Address used in the BGP peering session for the Oracle router. Example: 10.0.0.1/31
         """
+        pulumi.set(__self__, "bgp_ipv6state", bgp_ipv6state)
         pulumi.set(__self__, "bgp_state", bgp_state)
         pulumi.set(__self__, "customer_bgp_asn", customer_bgp_asn)
         pulumi.set(__self__, "customer_interface_ip", customer_interface_ip)
         pulumi.set(__self__, "oracle_bgp_asn", oracle_bgp_asn)
         pulumi.set(__self__, "oracle_interface_ip", oracle_interface_ip)
+
+    @property
+    @pulumi.getter(name="bgpIpv6state")
+    def bgp_ipv6state(self) -> str:
+        return pulumi.get(self, "bgp_ipv6state")
 
     @property
     @pulumi.getter(name="bgpState")
@@ -22255,7 +23970,7 @@ class GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailResult(dict):
                  custom_encryption_algorithm: str,
                  is_custom_phase_one_config: bool,
                  is_ike_established: bool,
-                 lifetime: str,
+                 lifetime: int,
                  negotiated_authentication_algorithm: str,
                  negotiated_dh_group: str,
                  negotiated_encryption_algorithm: str,
@@ -22267,7 +23982,7 @@ class GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailResult(dict):
         :param str custom_encryption_algorithm: The proposed custom phase two encryption algorithm.
         :param bool is_custom_phase_one_config: Indicates whether custom phase one configuration is enabled. If this option is not enabled, default settings are proposed.
         :param bool is_ike_established: Indicates whether IKE phase one is established.
-        :param str lifetime: The total configured lifetime of the IKE security association.
+        :param int lifetime: The total configured lifetime of the IKE security association.
         :param str negotiated_authentication_algorithm: The negotiated phase two authentication algorithm.
         :param str negotiated_dh_group: The negotiated Diffie-Hellman group.
         :param str negotiated_encryption_algorithm: The negotiated encryption algorithm.
@@ -22328,7 +24043,7 @@ class GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailResult(dict):
 
     @property
     @pulumi.getter
-    def lifetime(self) -> str:
+    def lifetime(self) -> int:
         """
         The total configured lifetime of the IKE security association.
         """
@@ -22384,7 +24099,7 @@ class GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailResult(dict):
                  is_custom_phase_two_config: bool,
                  is_esp_established: bool,
                  is_pfs_enabled: bool,
-                 lifetime: str,
+                 lifetime: int,
                  negotiated_authentication_algorithm: str,
                  negotiated_dh_group: str,
                  negotiated_encryption_algorithm: str,
@@ -22397,7 +24112,7 @@ class GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailResult(dict):
         :param bool is_custom_phase_two_config: Indicates whether custom phase two configuration is enabled. If this option is not enabled, default settings are proposed.
         :param bool is_esp_established: Indicates that ESP phase two is established.
         :param bool is_pfs_enabled: Indicates that PFS (perfect forward secrecy) is enabled.
-        :param str lifetime: The total configured lifetime of the IKE security association.
+        :param int lifetime: The total configured lifetime of the IKE security association.
         :param str negotiated_authentication_algorithm: The negotiated phase two authentication algorithm.
         :param str negotiated_dh_group: The negotiated Diffie-Hellman group.
         :param str negotiated_encryption_algorithm: The negotiated encryption algorithm.
@@ -22467,7 +24182,7 @@ class GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailResult(dict):
 
     @property
     @pulumi.getter
-    def lifetime(self) -> str:
+    def lifetime(self) -> int:
         """
         The total configured lifetime of the IKE security association.
         """
@@ -23234,6 +24949,7 @@ class GetNatGatewaysNatGatewayResult(dict):
                  id: str,
                  nat_ip: str,
                  public_ip_id: str,
+                 route_table_id: str,
                  state: str,
                  time_created: str,
                  vcn_id: str):
@@ -23246,6 +24962,7 @@ class GetNatGatewaysNatGatewayResult(dict):
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NAT gateway.
         :param str nat_ip: The IP address associated with the NAT gateway.
         :param str public_ip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP address associated with the NAT gateway.
+        :param str route_table_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
         :param str state: A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
         :param str time_created: The date and time the NAT gateway was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
@@ -23258,6 +24975,7 @@ class GetNatGatewaysNatGatewayResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "nat_ip", nat_ip)
         pulumi.set(__self__, "public_ip_id", public_ip_id)
+        pulumi.set(__self__, "route_table_id", route_table_id)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "vcn_id", vcn_id)
@@ -23325,6 +25043,14 @@ class GetNatGatewaysNatGatewayResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP address associated with the NAT gateway.
         """
         return pulumi.get(self, "public_ip_id")
+
+    @property
+    @pulumi.getter(name="routeTableId")
+    def route_table_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
+        """
+        return pulumi.get(self, "route_table_id")
 
     @property
     @pulumi.getter
@@ -24814,7 +26540,8 @@ class GetRouteTablesRouteTableRouteRuleResult(dict):
                  description: str,
                  destination: str,
                  destination_type: str,
-                 network_entity_id: str):
+                 network_entity_id: str,
+                 route_type: str):
         """
         :param str cidr_block: Deprecated. Instead use `destination` and `destinationType`. Requests that include both `cidrBlock` and `destination` will be rejected.
         :param str description: An optional description of your choice for the rule.
@@ -24829,6 +26556,7 @@ class GetRouteTablesRouteTableRouteRuleResult(dict):
         pulumi.set(__self__, "destination", destination)
         pulumi.set(__self__, "destination_type", destination_type)
         pulumi.set(__self__, "network_entity_id", network_entity_id)
+        pulumi.set(__self__, "route_type", route_type)
 
     @property
     @pulumi.getter(name="cidrBlock")
@@ -24871,6 +26599,11 @@ class GetRouteTablesRouteTableRouteRuleResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the route rule's target. For information about the type of targets you can specify, see [Route Tables](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm).
         """
         return pulumi.get(self, "network_entity_id")
+
+    @property
+    @pulumi.getter(name="routeType")
+    def route_type(self) -> str:
+        return pulumi.get(self, "route_type")
 
 
 @pulumi.output_type
@@ -26162,16 +27895,36 @@ class GetShapeShapeOcpuOptionResult(dict):
 @pulumi.output_type
 class GetShapeShapePlatformConfigOptionResult(dict):
     def __init__(__self__, *,
+                 access_control_service_options: Sequence['outputs.GetShapeShapePlatformConfigOptionAccessControlServiceOptionResult'],
+                 input_output_memory_management_unit_options: Sequence['outputs.GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionResult'],
                  measured_boot_options: Sequence['outputs.GetShapeShapePlatformConfigOptionMeasuredBootOptionResult'],
                  numa_nodes_per_socket_platform_options: Sequence['outputs.GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionResult'],
+                 percentage_of_cores_enabled_options: Sequence['outputs.GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionResult'],
                  secure_boot_options: Sequence['outputs.GetShapeShapePlatformConfigOptionSecureBootOptionResult'],
+                 symmetric_multi_threading_options: Sequence['outputs.GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionResult'],
                  trusted_platform_module_options: Sequence['outputs.GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionResult'],
-                 type: str):
+                 type: str,
+                 virtual_instructions_options: Sequence['outputs.GetShapeShapePlatformConfigOptionVirtualInstructionsOptionResult']):
+        pulumi.set(__self__, "access_control_service_options", access_control_service_options)
+        pulumi.set(__self__, "input_output_memory_management_unit_options", input_output_memory_management_unit_options)
         pulumi.set(__self__, "measured_boot_options", measured_boot_options)
         pulumi.set(__self__, "numa_nodes_per_socket_platform_options", numa_nodes_per_socket_platform_options)
+        pulumi.set(__self__, "percentage_of_cores_enabled_options", percentage_of_cores_enabled_options)
         pulumi.set(__self__, "secure_boot_options", secure_boot_options)
+        pulumi.set(__self__, "symmetric_multi_threading_options", symmetric_multi_threading_options)
         pulumi.set(__self__, "trusted_platform_module_options", trusted_platform_module_options)
         pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "virtual_instructions_options", virtual_instructions_options)
+
+    @property
+    @pulumi.getter(name="accessControlServiceOptions")
+    def access_control_service_options(self) -> Sequence['outputs.GetShapeShapePlatformConfigOptionAccessControlServiceOptionResult']:
+        return pulumi.get(self, "access_control_service_options")
+
+    @property
+    @pulumi.getter(name="inputOutputMemoryManagementUnitOptions")
+    def input_output_memory_management_unit_options(self) -> Sequence['outputs.GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionResult']:
+        return pulumi.get(self, "input_output_memory_management_unit_options")
 
     @property
     @pulumi.getter(name="measuredBootOptions")
@@ -26184,9 +27937,19 @@ class GetShapeShapePlatformConfigOptionResult(dict):
         return pulumi.get(self, "numa_nodes_per_socket_platform_options")
 
     @property
+    @pulumi.getter(name="percentageOfCoresEnabledOptions")
+    def percentage_of_cores_enabled_options(self) -> Sequence['outputs.GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionResult']:
+        return pulumi.get(self, "percentage_of_cores_enabled_options")
+
+    @property
     @pulumi.getter(name="secureBootOptions")
     def secure_boot_options(self) -> Sequence['outputs.GetShapeShapePlatformConfigOptionSecureBootOptionResult']:
         return pulumi.get(self, "secure_boot_options")
+
+    @property
+    @pulumi.getter(name="symmetricMultiThreadingOptions")
+    def symmetric_multi_threading_options(self) -> Sequence['outputs.GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionResult']:
+        return pulumi.get(self, "symmetric_multi_threading_options")
 
     @property
     @pulumi.getter(name="trustedPlatformModuleOptions")
@@ -26197,6 +27960,49 @@ class GetShapeShapePlatformConfigOptionResult(dict):
     @pulumi.getter
     def type(self) -> str:
         return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="virtualInstructionsOptions")
+    def virtual_instructions_options(self) -> Sequence['outputs.GetShapeShapePlatformConfigOptionVirtualInstructionsOptionResult']:
+        return pulumi.get(self, "virtual_instructions_options")
+
+
+@pulumi.output_type
+class GetShapeShapePlatformConfigOptionAccessControlServiceOptionResult(dict):
+    def __init__(__self__, *,
+                 allowed_values: Sequence[bool],
+                 is_default_enabled: bool):
+        pulumi.set(__self__, "allowed_values", allowed_values)
+        pulumi.set(__self__, "is_default_enabled", is_default_enabled)
+
+    @property
+    @pulumi.getter(name="allowedValues")
+    def allowed_values(self) -> Sequence[bool]:
+        return pulumi.get(self, "allowed_values")
+
+    @property
+    @pulumi.getter(name="isDefaultEnabled")
+    def is_default_enabled(self) -> bool:
+        return pulumi.get(self, "is_default_enabled")
+
+
+@pulumi.output_type
+class GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionResult(dict):
+    def __init__(__self__, *,
+                 allowed_values: Sequence[bool],
+                 is_default_enabled: bool):
+        pulumi.set(__self__, "allowed_values", allowed_values)
+        pulumi.set(__self__, "is_default_enabled", is_default_enabled)
+
+    @property
+    @pulumi.getter(name="allowedValues")
+    def allowed_values(self) -> Sequence[bool]:
+        return pulumi.get(self, "allowed_values")
+
+    @property
+    @pulumi.getter(name="isDefaultEnabled")
+    def is_default_enabled(self) -> bool:
+        return pulumi.get(self, "is_default_enabled")
 
 
 @pulumi.output_type
@@ -26238,6 +28044,32 @@ class GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionResult(di
 
 
 @pulumi.output_type
+class GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionResult(dict):
+    def __init__(__self__, *,
+                 default_value: int,
+                 max: int,
+                 min: int):
+        pulumi.set(__self__, "default_value", default_value)
+        pulumi.set(__self__, "max", max)
+        pulumi.set(__self__, "min", min)
+
+    @property
+    @pulumi.getter(name="defaultValue")
+    def default_value(self) -> int:
+        return pulumi.get(self, "default_value")
+
+    @property
+    @pulumi.getter
+    def max(self) -> int:
+        return pulumi.get(self, "max")
+
+    @property
+    @pulumi.getter
+    def min(self) -> int:
+        return pulumi.get(self, "min")
+
+
+@pulumi.output_type
 class GetShapeShapePlatformConfigOptionSecureBootOptionResult(dict):
     def __init__(__self__, *,
                  allowed_values: Sequence[bool],
@@ -26257,7 +28089,45 @@ class GetShapeShapePlatformConfigOptionSecureBootOptionResult(dict):
 
 
 @pulumi.output_type
+class GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionResult(dict):
+    def __init__(__self__, *,
+                 allowed_values: Sequence[bool],
+                 is_default_enabled: bool):
+        pulumi.set(__self__, "allowed_values", allowed_values)
+        pulumi.set(__self__, "is_default_enabled", is_default_enabled)
+
+    @property
+    @pulumi.getter(name="allowedValues")
+    def allowed_values(self) -> Sequence[bool]:
+        return pulumi.get(self, "allowed_values")
+
+    @property
+    @pulumi.getter(name="isDefaultEnabled")
+    def is_default_enabled(self) -> bool:
+        return pulumi.get(self, "is_default_enabled")
+
+
+@pulumi.output_type
 class GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionResult(dict):
+    def __init__(__self__, *,
+                 allowed_values: Sequence[bool],
+                 is_default_enabled: bool):
+        pulumi.set(__self__, "allowed_values", allowed_values)
+        pulumi.set(__self__, "is_default_enabled", is_default_enabled)
+
+    @property
+    @pulumi.getter(name="allowedValues")
+    def allowed_values(self) -> Sequence[bool]:
+        return pulumi.get(self, "allowed_values")
+
+    @property
+    @pulumi.getter(name="isDefaultEnabled")
+    def is_default_enabled(self) -> bool:
+        return pulumi.get(self, "is_default_enabled")
+
+
+@pulumi.output_type
+class GetShapeShapePlatformConfigOptionVirtualInstructionsOptionResult(dict):
     def __init__(__self__, *,
                  allowed_values: Sequence[bool],
                  is_default_enabled: bool):
@@ -26654,8 +28524,8 @@ class GetShapesShapeMaxVnicAttachmentOptionResult(dict):
                  min: int):
         """
         :param float default_per_ocpu: The default number of VNIC attachments allowed per OCPU.
-        :param float max: The maximum number of OCPUs.
-        :param int min: The minimum number of OCPUs.
+        :param float max: The maximum allowed percentage of cores enabled.
+        :param int min: The minimum allowed percentage of cores enabled.
         """
         pulumi.set(__self__, "default_per_ocpu", default_per_ocpu)
         pulumi.set(__self__, "max", max)
@@ -26673,7 +28543,7 @@ class GetShapesShapeMaxVnicAttachmentOptionResult(dict):
     @pulumi.getter
     def max(self) -> float:
         """
-        The maximum number of OCPUs.
+        The maximum allowed percentage of cores enabled.
         """
         return pulumi.get(self, "max")
 
@@ -26681,7 +28551,7 @@ class GetShapesShapeMaxVnicAttachmentOptionResult(dict):
     @pulumi.getter
     def min(self) -> int:
         """
-        The minimum number of OCPUs.
+        The minimum allowed percentage of cores enabled.
         """
         return pulumi.get(self, "min")
 
@@ -26794,8 +28664,8 @@ class GetShapesShapeOcpuOptionResult(dict):
                  max: float,
                  min: float):
         """
-        :param float max: The maximum number of OCPUs.
-        :param float min: The minimum number of OCPUs.
+        :param float max: The maximum allowed percentage of cores enabled.
+        :param float min: The minimum allowed percentage of cores enabled.
         """
         pulumi.set(__self__, "max", max)
         pulumi.set(__self__, "min", min)
@@ -26804,7 +28674,7 @@ class GetShapesShapeOcpuOptionResult(dict):
     @pulumi.getter
     def max(self) -> float:
         """
-        The maximum number of OCPUs.
+        The maximum allowed percentage of cores enabled.
         """
         return pulumi.get(self, "max")
 
@@ -26812,7 +28682,7 @@ class GetShapesShapeOcpuOptionResult(dict):
     @pulumi.getter
     def min(self) -> float:
         """
-        The minimum number of OCPUs.
+        The minimum allowed percentage of cores enabled.
         """
         return pulumi.get(self, "min")
 
@@ -26820,29 +28690,60 @@ class GetShapesShapeOcpuOptionResult(dict):
 @pulumi.output_type
 class GetShapesShapePlatformConfigOptionResult(dict):
     def __init__(__self__, *,
+                 access_control_service_options: Sequence['outputs.GetShapesShapePlatformConfigOptionAccessControlServiceOptionResult'],
+                 input_output_memory_management_unit_options: Sequence['outputs.GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionResult'],
                  measured_boot_options: Sequence['outputs.GetShapesShapePlatformConfigOptionMeasuredBootOptionResult'],
                  numa_nodes_per_socket_platform_options: Sequence['outputs.GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionResult'],
+                 percentage_of_cores_enabled_options: Sequence['outputs.GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionResult'],
                  secure_boot_options: Sequence['outputs.GetShapesShapePlatformConfigOptionSecureBootOptionResult'],
+                 symmetric_multi_threading_options: Sequence['outputs.GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionResult'],
                  trusted_platform_module_options: Sequence['outputs.GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionResult'],
-                 type: str):
+                 type: str,
+                 virtual_instructions_options: Sequence['outputs.GetShapesShapePlatformConfigOptionVirtualInstructionsOptionResult']):
         """
-        :param Sequence['GetShapesShapePlatformConfigOptionMeasuredBootOptionArgs'] measured_boot_options: Available and default options for Measured Boot configuration
-        :param Sequence['GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArgs'] numa_nodes_per_socket_platform_options: Available and default options for NUMA Nodes Per Socket configuration
-        :param Sequence['GetShapesShapePlatformConfigOptionSecureBootOptionArgs'] secure_boot_options: Available and default options for Secure Boot configuration
-        :param Sequence['GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArgs'] trusted_platform_module_options: Available and default options for Trusted Platform Module (TPM) configuration
-        :param str type: The type of platform being configured. (Supported types=[INTEL_VM, AMD_MILAN_BM, AMD_ROME_BM, INTEL_SKYLAKE_BM])
+        :param Sequence['GetShapesShapePlatformConfigOptionAccessControlServiceOptionArgs'] access_control_service_options: Configuration options for the Access Control Service.
+        :param Sequence['GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArgs'] input_output_memory_management_unit_options: Configuration options for the input-output memory management unit.
+        :param Sequence['GetShapesShapePlatformConfigOptionMeasuredBootOptionArgs'] measured_boot_options: Configuration options for the Measured Boot feature.
+        :param Sequence['GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArgs'] numa_nodes_per_socket_platform_options: Configuration options for NUMA nodes per socket.
+        :param Sequence['GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArgs'] percentage_of_cores_enabled_options: Configuration options for the percentage of cores enabled.
+        :param Sequence['GetShapesShapePlatformConfigOptionSecureBootOptionArgs'] secure_boot_options: Configuration options for Secure Boot.
+        :param Sequence['GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArgs'] symmetric_multi_threading_options: Configuration options for symmetric multi-threading.
+        :param Sequence['GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArgs'] trusted_platform_module_options: Configuration options for the Trusted Platform Module (TPM).
+        :param str type: The type of platform being configured. (Supported types=[INTEL_VM, AMD_MILAN_BM, AMD_ROME_BM, AMD_ROME_BM_GPU, INTEL_ICELAKE_BM, INTEL_SKYLAKE_BM])
+        :param Sequence['GetShapesShapePlatformConfigOptionVirtualInstructionsOptionArgs'] virtual_instructions_options: Configuration options for the virtualization instructions.
         """
+        pulumi.set(__self__, "access_control_service_options", access_control_service_options)
+        pulumi.set(__self__, "input_output_memory_management_unit_options", input_output_memory_management_unit_options)
         pulumi.set(__self__, "measured_boot_options", measured_boot_options)
         pulumi.set(__self__, "numa_nodes_per_socket_platform_options", numa_nodes_per_socket_platform_options)
+        pulumi.set(__self__, "percentage_of_cores_enabled_options", percentage_of_cores_enabled_options)
         pulumi.set(__self__, "secure_boot_options", secure_boot_options)
+        pulumi.set(__self__, "symmetric_multi_threading_options", symmetric_multi_threading_options)
         pulumi.set(__self__, "trusted_platform_module_options", trusted_platform_module_options)
         pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "virtual_instructions_options", virtual_instructions_options)
+
+    @property
+    @pulumi.getter(name="accessControlServiceOptions")
+    def access_control_service_options(self) -> Sequence['outputs.GetShapesShapePlatformConfigOptionAccessControlServiceOptionResult']:
+        """
+        Configuration options for the Access Control Service.
+        """
+        return pulumi.get(self, "access_control_service_options")
+
+    @property
+    @pulumi.getter(name="inputOutputMemoryManagementUnitOptions")
+    def input_output_memory_management_unit_options(self) -> Sequence['outputs.GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionResult']:
+        """
+        Configuration options for the input-output memory management unit.
+        """
+        return pulumi.get(self, "input_output_memory_management_unit_options")
 
     @property
     @pulumi.getter(name="measuredBootOptions")
     def measured_boot_options(self) -> Sequence['outputs.GetShapesShapePlatformConfigOptionMeasuredBootOptionResult']:
         """
-        Available and default options for Measured Boot configuration
+        Configuration options for the Measured Boot feature.
         """
         return pulumi.get(self, "measured_boot_options")
 
@@ -26850,23 +28751,39 @@ class GetShapesShapePlatformConfigOptionResult(dict):
     @pulumi.getter(name="numaNodesPerSocketPlatformOptions")
     def numa_nodes_per_socket_platform_options(self) -> Sequence['outputs.GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionResult']:
         """
-        Available and default options for NUMA Nodes Per Socket configuration
+        Configuration options for NUMA nodes per socket.
         """
         return pulumi.get(self, "numa_nodes_per_socket_platform_options")
+
+    @property
+    @pulumi.getter(name="percentageOfCoresEnabledOptions")
+    def percentage_of_cores_enabled_options(self) -> Sequence['outputs.GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionResult']:
+        """
+        Configuration options for the percentage of cores enabled.
+        """
+        return pulumi.get(self, "percentage_of_cores_enabled_options")
 
     @property
     @pulumi.getter(name="secureBootOptions")
     def secure_boot_options(self) -> Sequence['outputs.GetShapesShapePlatformConfigOptionSecureBootOptionResult']:
         """
-        Available and default options for Secure Boot configuration
+        Configuration options for Secure Boot.
         """
         return pulumi.get(self, "secure_boot_options")
+
+    @property
+    @pulumi.getter(name="symmetricMultiThreadingOptions")
+    def symmetric_multi_threading_options(self) -> Sequence['outputs.GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionResult']:
+        """
+        Configuration options for symmetric multi-threading.
+        """
+        return pulumi.get(self, "symmetric_multi_threading_options")
 
     @property
     @pulumi.getter(name="trustedPlatformModuleOptions")
     def trusted_platform_module_options(self) -> Sequence['outputs.GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionResult']:
         """
-        Available and default options for Trusted Platform Module (TPM) configuration
+        Configuration options for the Trusted Platform Module (TPM).
         """
         return pulumi.get(self, "trusted_platform_module_options")
 
@@ -26874,19 +28791,27 @@ class GetShapesShapePlatformConfigOptionResult(dict):
     @pulumi.getter
     def type(self) -> str:
         """
-        The type of platform being configured. (Supported types=[INTEL_VM, AMD_MILAN_BM, AMD_ROME_BM, INTEL_SKYLAKE_BM])
+        The type of platform being configured. (Supported types=[INTEL_VM, AMD_MILAN_BM, AMD_ROME_BM, AMD_ROME_BM_GPU, INTEL_ICELAKE_BM, INTEL_SKYLAKE_BM])
         """
         return pulumi.get(self, "type")
 
+    @property
+    @pulumi.getter(name="virtualInstructionsOptions")
+    def virtual_instructions_options(self) -> Sequence['outputs.GetShapesShapePlatformConfigOptionVirtualInstructionsOptionResult']:
+        """
+        Configuration options for the virtualization instructions.
+        """
+        return pulumi.get(self, "virtual_instructions_options")
+
 
 @pulumi.output_type
-class GetShapesShapePlatformConfigOptionMeasuredBootOptionResult(dict):
+class GetShapesShapePlatformConfigOptionAccessControlServiceOptionResult(dict):
     def __init__(__self__, *,
                  allowed_values: Sequence[bool],
                  is_default_enabled: bool):
         """
-        :param Sequence[bool] allowed_values: Possible boolean values indicating whether Trusted Platform Module (TPM) can be enabled or disabled
-        :param bool is_default_enabled: Indicates whether Trusted Platform Module is to be enabled by default
+        :param Sequence[bool] allowed_values: Whether virtualization instructions can be enabled.
+        :param bool is_default_enabled: Whether virtualization instructions are enabled by default.
         """
         pulumi.set(__self__, "allowed_values", allowed_values)
         pulumi.set(__self__, "is_default_enabled", is_default_enabled)
@@ -26895,7 +28820,7 @@ class GetShapesShapePlatformConfigOptionMeasuredBootOptionResult(dict):
     @pulumi.getter(name="allowedValues")
     def allowed_values(self) -> Sequence[bool]:
         """
-        Possible boolean values indicating whether Trusted Platform Module (TPM) can be enabled or disabled
+        Whether virtualization instructions can be enabled.
         """
         return pulumi.get(self, "allowed_values")
 
@@ -26903,7 +28828,65 @@ class GetShapesShapePlatformConfigOptionMeasuredBootOptionResult(dict):
     @pulumi.getter(name="isDefaultEnabled")
     def is_default_enabled(self) -> bool:
         """
-        Indicates whether Trusted Platform Module is to be enabled by default
+        Whether virtualization instructions are enabled by default.
+        """
+        return pulumi.get(self, "is_default_enabled")
+
+
+@pulumi.output_type
+class GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionResult(dict):
+    def __init__(__self__, *,
+                 allowed_values: Sequence[bool],
+                 is_default_enabled: bool):
+        """
+        :param Sequence[bool] allowed_values: Whether virtualization instructions can be enabled.
+        :param bool is_default_enabled: Whether virtualization instructions are enabled by default.
+        """
+        pulumi.set(__self__, "allowed_values", allowed_values)
+        pulumi.set(__self__, "is_default_enabled", is_default_enabled)
+
+    @property
+    @pulumi.getter(name="allowedValues")
+    def allowed_values(self) -> Sequence[bool]:
+        """
+        Whether virtualization instructions can be enabled.
+        """
+        return pulumi.get(self, "allowed_values")
+
+    @property
+    @pulumi.getter(name="isDefaultEnabled")
+    def is_default_enabled(self) -> bool:
+        """
+        Whether virtualization instructions are enabled by default.
+        """
+        return pulumi.get(self, "is_default_enabled")
+
+
+@pulumi.output_type
+class GetShapesShapePlatformConfigOptionMeasuredBootOptionResult(dict):
+    def __init__(__self__, *,
+                 allowed_values: Sequence[bool],
+                 is_default_enabled: bool):
+        """
+        :param Sequence[bool] allowed_values: Whether virtualization instructions can be enabled.
+        :param bool is_default_enabled: Whether virtualization instructions are enabled by default.
+        """
+        pulumi.set(__self__, "allowed_values", allowed_values)
+        pulumi.set(__self__, "is_default_enabled", is_default_enabled)
+
+    @property
+    @pulumi.getter(name="allowedValues")
+    def allowed_values(self) -> Sequence[bool]:
+        """
+        Whether virtualization instructions can be enabled.
+        """
+        return pulumi.get(self, "allowed_values")
+
+    @property
+    @pulumi.getter(name="isDefaultEnabled")
+    def is_default_enabled(self) -> bool:
+        """
+        Whether virtualization instructions are enabled by default.
         """
         return pulumi.get(self, "is_default_enabled")
 
@@ -26914,8 +28897,8 @@ class GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionResult(d
                  allowed_values: Sequence[str],
                  default_value: str):
         """
-        :param Sequence[str] allowed_values: Possible boolean values indicating whether Trusted Platform Module (TPM) can be enabled or disabled
-        :param str default_value: Indicates the default NUMA Nodes Per Socket configuration
+        :param Sequence[str] allowed_values: Whether virtualization instructions can be enabled.
+        :param str default_value: The default percentage of cores enabled.
         """
         pulumi.set(__self__, "allowed_values", allowed_values)
         pulumi.set(__self__, "default_value", default_value)
@@ -26924,7 +28907,7 @@ class GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionResult(d
     @pulumi.getter(name="allowedValues")
     def allowed_values(self) -> Sequence[str]:
         """
-        Possible boolean values indicating whether Trusted Platform Module (TPM) can be enabled or disabled
+        Whether virtualization instructions can be enabled.
         """
         return pulumi.get(self, "allowed_values")
 
@@ -26932,9 +28915,49 @@ class GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionResult(d
     @pulumi.getter(name="defaultValue")
     def default_value(self) -> str:
         """
-        Indicates the default NUMA Nodes Per Socket configuration
+        The default percentage of cores enabled.
         """
         return pulumi.get(self, "default_value")
+
+
+@pulumi.output_type
+class GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionResult(dict):
+    def __init__(__self__, *,
+                 default_value: int,
+                 max: int,
+                 min: int):
+        """
+        :param int default_value: The default percentage of cores enabled.
+        :param int max: The maximum allowed percentage of cores enabled.
+        :param int min: The minimum allowed percentage of cores enabled.
+        """
+        pulumi.set(__self__, "default_value", default_value)
+        pulumi.set(__self__, "max", max)
+        pulumi.set(__self__, "min", min)
+
+    @property
+    @pulumi.getter(name="defaultValue")
+    def default_value(self) -> int:
+        """
+        The default percentage of cores enabled.
+        """
+        return pulumi.get(self, "default_value")
+
+    @property
+    @pulumi.getter
+    def max(self) -> int:
+        """
+        The maximum allowed percentage of cores enabled.
+        """
+        return pulumi.get(self, "max")
+
+    @property
+    @pulumi.getter
+    def min(self) -> int:
+        """
+        The minimum allowed percentage of cores enabled.
+        """
+        return pulumi.get(self, "min")
 
 
 @pulumi.output_type
@@ -26943,8 +28966,8 @@ class GetShapesShapePlatformConfigOptionSecureBootOptionResult(dict):
                  allowed_values: Sequence[bool],
                  is_default_enabled: bool):
         """
-        :param Sequence[bool] allowed_values: Possible boolean values indicating whether Trusted Platform Module (TPM) can be enabled or disabled
-        :param bool is_default_enabled: Indicates whether Trusted Platform Module is to be enabled by default
+        :param Sequence[bool] allowed_values: Whether virtualization instructions can be enabled.
+        :param bool is_default_enabled: Whether virtualization instructions are enabled by default.
         """
         pulumi.set(__self__, "allowed_values", allowed_values)
         pulumi.set(__self__, "is_default_enabled", is_default_enabled)
@@ -26953,7 +28976,7 @@ class GetShapesShapePlatformConfigOptionSecureBootOptionResult(dict):
     @pulumi.getter(name="allowedValues")
     def allowed_values(self) -> Sequence[bool]:
         """
-        Possible boolean values indicating whether Trusted Platform Module (TPM) can be enabled or disabled
+        Whether virtualization instructions can be enabled.
         """
         return pulumi.get(self, "allowed_values")
 
@@ -26961,7 +28984,36 @@ class GetShapesShapePlatformConfigOptionSecureBootOptionResult(dict):
     @pulumi.getter(name="isDefaultEnabled")
     def is_default_enabled(self) -> bool:
         """
-        Indicates whether Trusted Platform Module is to be enabled by default
+        Whether virtualization instructions are enabled by default.
+        """
+        return pulumi.get(self, "is_default_enabled")
+
+
+@pulumi.output_type
+class GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionResult(dict):
+    def __init__(__self__, *,
+                 allowed_values: Sequence[bool],
+                 is_default_enabled: bool):
+        """
+        :param Sequence[bool] allowed_values: Whether virtualization instructions can be enabled.
+        :param bool is_default_enabled: Whether virtualization instructions are enabled by default.
+        """
+        pulumi.set(__self__, "allowed_values", allowed_values)
+        pulumi.set(__self__, "is_default_enabled", is_default_enabled)
+
+    @property
+    @pulumi.getter(name="allowedValues")
+    def allowed_values(self) -> Sequence[bool]:
+        """
+        Whether virtualization instructions can be enabled.
+        """
+        return pulumi.get(self, "allowed_values")
+
+    @property
+    @pulumi.getter(name="isDefaultEnabled")
+    def is_default_enabled(self) -> bool:
+        """
+        Whether virtualization instructions are enabled by default.
         """
         return pulumi.get(self, "is_default_enabled")
 
@@ -26972,8 +29024,8 @@ class GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionResult(dict):
                  allowed_values: Sequence[bool],
                  is_default_enabled: bool):
         """
-        :param Sequence[bool] allowed_values: Possible boolean values indicating whether Trusted Platform Module (TPM) can be enabled or disabled
-        :param bool is_default_enabled: Indicates whether Trusted Platform Module is to be enabled by default
+        :param Sequence[bool] allowed_values: Whether virtualization instructions can be enabled.
+        :param bool is_default_enabled: Whether virtualization instructions are enabled by default.
         """
         pulumi.set(__self__, "allowed_values", allowed_values)
         pulumi.set(__self__, "is_default_enabled", is_default_enabled)
@@ -26982,7 +29034,7 @@ class GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionResult(dict):
     @pulumi.getter(name="allowedValues")
     def allowed_values(self) -> Sequence[bool]:
         """
-        Possible boolean values indicating whether Trusted Platform Module (TPM) can be enabled or disabled
+        Whether virtualization instructions can be enabled.
         """
         return pulumi.get(self, "allowed_values")
 
@@ -26990,7 +29042,36 @@ class GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionResult(dict):
     @pulumi.getter(name="isDefaultEnabled")
     def is_default_enabled(self) -> bool:
         """
-        Indicates whether Trusted Platform Module is to be enabled by default
+        Whether virtualization instructions are enabled by default.
+        """
+        return pulumi.get(self, "is_default_enabled")
+
+
+@pulumi.output_type
+class GetShapesShapePlatformConfigOptionVirtualInstructionsOptionResult(dict):
+    def __init__(__self__, *,
+                 allowed_values: Sequence[bool],
+                 is_default_enabled: bool):
+        """
+        :param Sequence[bool] allowed_values: Whether virtualization instructions can be enabled.
+        :param bool is_default_enabled: Whether virtualization instructions are enabled by default.
+        """
+        pulumi.set(__self__, "allowed_values", allowed_values)
+        pulumi.set(__self__, "is_default_enabled", is_default_enabled)
+
+    @property
+    @pulumi.getter(name="allowedValues")
+    def allowed_values(self) -> Sequence[bool]:
+        """
+        Whether virtualization instructions can be enabled.
+        """
+        return pulumi.get(self, "allowed_values")
+
+    @property
+    @pulumi.getter(name="isDefaultEnabled")
+    def is_default_enabled(self) -> bool:
+        """
+        Whether virtualization instructions are enabled by default.
         """
         return pulumi.get(self, "is_default_enabled")
 
@@ -27933,7 +30014,7 @@ class GetVirtualCircuitsVirtualCircuitResult(dict):
                  virtual_circuit_id: str):
         """
         :param str bandwidth_shape_name: The provisioned data rate of the connection. To get a list of the available bandwidth levels (that is, shapes), see [ListFastConnectProviderServiceVirtualCircuitBandwidthShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderVirtualCircuitBandwidthShapes).  Example: `10 Gbps`
-        :param str bgp_admin_state: Set to ENABLED to activate the  bgp session of virtual circuit, DISABLED to deactivate.
+        :param str bgp_admin_state: Set to `ENABLED` (the default) to activate the BGP session of the virtual circuit, set to `DISABLED` to deactivate the virtual circuit.
         :param str bgp_ipv6session_state: The state of the Ipv6 BGP session associated with the virtual circuit.
         :param str bgp_management: Deprecated. Instead use the information in [FastConnectProviderService](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/).
         :param str bgp_session_state: The state of the Ipv4 BGP session associated with the virtual circuit.
@@ -27947,7 +30028,7 @@ class GetVirtualCircuitsVirtualCircuitResult(dict):
         :param str gateway_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer's [dynamic routing gateway (DRG)](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Drg) that this virtual circuit uses. Applicable only to private virtual circuits.
         :param str id: The virtual circuit's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
         :param str ip_mtu: The layer 3 IP MTU to use on this virtual circuit.
-        :param bool is_bfd_enabled: Set to true to enable BFD for ipv4 Bgp Peering, false to disable. If not set, default is false
+        :param bool is_bfd_enabled: Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
         :param int oracle_bgp_asn: The Oracle BGP ASN.
         :param str provider_service_id: The OCID of the service offered by the provider (if the customer is connecting via a provider).
         :param str provider_service_key_name: The service key name offered by the provider (if the customer is connecting via a provider).
@@ -28003,7 +30084,7 @@ class GetVirtualCircuitsVirtualCircuitResult(dict):
     @pulumi.getter(name="bgpAdminState")
     def bgp_admin_state(self) -> str:
         """
-        Set to ENABLED to activate the  bgp session of virtual circuit, DISABLED to deactivate.
+        Set to `ENABLED` (the default) to activate the BGP session of the virtual circuit, set to `DISABLED` to deactivate the virtual circuit.
         """
         return pulumi.get(self, "bgp_admin_state")
 
@@ -28115,7 +30196,7 @@ class GetVirtualCircuitsVirtualCircuitResult(dict):
     @pulumi.getter(name="isBfdEnabled")
     def is_bfd_enabled(self) -> bool:
         """
-        Set to true to enable BFD for ipv4 Bgp Peering, false to disable. If not set, default is false
+        Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
         """
         return pulumi.get(self, "is_bfd_enabled")
 
@@ -28996,6 +31077,7 @@ class GetVolumeAttachmentsVolumeAttachmentResult(dict):
                  instance_id: str,
                  ipv4: str,
                  iqn: str,
+                 is_agent_auto_iscsi_login_enabled: bool,
                  is_multipath: bool,
                  is_pv_encryption_in_transit_enabled: bool,
                  is_read_only: bool,
@@ -29020,6 +31102,7 @@ class GetVolumeAttachmentsVolumeAttachmentResult(dict):
         :param str instance_id: The OCID of the instance.
         :param str ipv4: The volume's iSCSI IP address.  Example: `169.254.2.2`
         :param str iqn: The target volume's iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).  Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`
+        :param bool is_agent_auto_iscsi_login_enabled: Whether Oracle Cloud Agent is enabled perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
         :param bool is_multipath: Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.
         :param bool is_pv_encryption_in_transit_enabled: Whether in-transit encryption for the data volume's paravirtualized attachment is enabled or not.
         :param bool is_read_only: Whether the attachment was created in read-only mode.
@@ -29042,6 +31125,7 @@ class GetVolumeAttachmentsVolumeAttachmentResult(dict):
         pulumi.set(__self__, "instance_id", instance_id)
         pulumi.set(__self__, "ipv4", ipv4)
         pulumi.set(__self__, "iqn", iqn)
+        pulumi.set(__self__, "is_agent_auto_iscsi_login_enabled", is_agent_auto_iscsi_login_enabled)
         pulumi.set(__self__, "is_multipath", is_multipath)
         pulumi.set(__self__, "is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
         pulumi.set(__self__, "is_read_only", is_read_only)
@@ -29149,6 +31233,14 @@ class GetVolumeAttachmentsVolumeAttachmentResult(dict):
         The target volume's iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).  Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`
         """
         return pulumi.get(self, "iqn")
+
+    @property
+    @pulumi.getter(name="isAgentAutoIscsiLoginEnabled")
+    def is_agent_auto_iscsi_login_enabled(self) -> bool:
+        """
+        Whether Oracle Cloud Agent is enabled perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
+        """
+        return pulumi.get(self, "is_agent_auto_iscsi_login_enabled")
 
     @property
     @pulumi.getter(name="isMultipath")
@@ -30780,7 +32872,7 @@ class GetVolumesVolumeResult(dict):
         :param str display_name: A filter to return only resources that match the given display name exactly.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The OCID of the block volume replica.
-        :param bool is_auto_tune_enabled: Specifies whether the auto-tune performance is enabled for this boot volume.
+        :param bool is_auto_tune_enabled: Specifies whether the auto-tune performance is enabled for this volume.
         :param bool is_hydrated: Specifies whether the cloned volume's data has finished copying from the source volume or backup.
         :param str kms_key_id: The OCID of the Key Management key which is the master encryption key for the volume.
         :param str size_in_gbs: The size of the volume in GBs.
@@ -30892,7 +32984,7 @@ class GetVolumesVolumeResult(dict):
     @pulumi.getter(name="isAutoTuneEnabled")
     def is_auto_tune_enabled(self) -> bool:
         """
-        Specifies whether the auto-tune performance is enabled for this boot volume.
+        Specifies whether the auto-tune performance is enabled for this volume.
         """
         return pulumi.get(self, "is_auto_tune_enabled")
 
@@ -31046,5 +33138,285 @@ class GetVolumesVolumeSourceDetailResult(dict):
         The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`
         """
         return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetVtapsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetVtapsVtapResult(dict):
+    def __init__(__self__, *,
+                 capture_filter_id: str,
+                 compartment_id: str,
+                 defined_tags: Mapping[str, Any],
+                 display_name: str,
+                 encapsulation_protocol: str,
+                 freeform_tags: Mapping[str, Any],
+                 id: str,
+                 is_vtap_enabled: bool,
+                 lifecycle_state_details: str,
+                 max_packet_size: int,
+                 source_id: str,
+                 source_private_endpoint_ip: str,
+                 source_private_endpoint_subnet_id: str,
+                 source_type: str,
+                 state: str,
+                 target_id: str,
+                 target_ip: str,
+                 target_type: str,
+                 time_created: str,
+                 traffic_mode: str,
+                 vcn_id: str,
+                 vxlan_network_identifier: str):
+        """
+        :param str capture_filter_id: The capture filter's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param str display_name: A filter to return only resources that match the given display name exactly.
+        :param str encapsulation_protocol: Defines an encapsulation header type for the VTAP's mirrored traffic.
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param str id: The VTAP's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+        :param bool is_vtap_enabled: Indicates whether to list all VTAPs or only running VTAPs.
+               * When `FALSE`, lists ALL running and stopped VTAPs.
+               * When `TRUE`, lists only running VTAPs (VTAPs where isVtapEnabled = `TRUE`).
+        :param str lifecycle_state_details: The VTAP's current running state.
+        :param int max_packet_size: The maximum size of the packets to be included in the filter.
+        :param str source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source point where packets are captured.
+        :param str source_private_endpoint_ip: The IP Address of the source private endpoint.
+        :param str source_private_endpoint_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that source private endpoint belongs to.
+        :param str source_type: The source type for the VTAP.
+        :param str state: A filter to return only resources that match the given VTAP administrative lifecycle state. The state value is case-insensitive.
+        :param str target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VTAP target.
+        :param str target_ip: The IP address of the VTAP target.
+        :param str target_type: The target type for the VTAP.
+        :param str time_created: The date and time the VTAP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2020-08-25T21:10:29.600Z`
+        :param str traffic_mode: Used to control the priority of traffic. It is an optional field. If it not passed, the value is DEFAULT
+        :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+        :param str vxlan_network_identifier: The virtual extensible LAN (VXLAN) network identifier (or VXLAN segment ID) that uniquely identifies the VXLAN.
+        """
+        pulumi.set(__self__, "capture_filter_id", capture_filter_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "encapsulation_protocol", encapsulation_protocol)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_vtap_enabled", is_vtap_enabled)
+        pulumi.set(__self__, "lifecycle_state_details", lifecycle_state_details)
+        pulumi.set(__self__, "max_packet_size", max_packet_size)
+        pulumi.set(__self__, "source_id", source_id)
+        pulumi.set(__self__, "source_private_endpoint_ip", source_private_endpoint_ip)
+        pulumi.set(__self__, "source_private_endpoint_subnet_id", source_private_endpoint_subnet_id)
+        pulumi.set(__self__, "source_type", source_type)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "target_ip", target_ip)
+        pulumi.set(__self__, "target_type", target_type)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "traffic_mode", traffic_mode)
+        pulumi.set(__self__, "vcn_id", vcn_id)
+        pulumi.set(__self__, "vxlan_network_identifier", vxlan_network_identifier)
+
+    @property
+    @pulumi.getter(name="captureFilterId")
+    def capture_filter_id(self) -> str:
+        """
+        The capture filter's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+        """
+        return pulumi.get(self, "capture_filter_id")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the given display name exactly.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="encapsulationProtocol")
+    def encapsulation_protocol(self) -> str:
+        """
+        Defines an encapsulation header type for the VTAP's mirrored traffic.
+        """
+        return pulumi.get(self, "encapsulation_protocol")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The VTAP's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isVtapEnabled")
+    def is_vtap_enabled(self) -> bool:
+        """
+        Indicates whether to list all VTAPs or only running VTAPs.
+        * When `FALSE`, lists ALL running and stopped VTAPs.
+        * When `TRUE`, lists only running VTAPs (VTAPs where isVtapEnabled = `TRUE`).
+        """
+        return pulumi.get(self, "is_vtap_enabled")
+
+    @property
+    @pulumi.getter(name="lifecycleStateDetails")
+    def lifecycle_state_details(self) -> str:
+        """
+        The VTAP's current running state.
+        """
+        return pulumi.get(self, "lifecycle_state_details")
+
+    @property
+    @pulumi.getter(name="maxPacketSize")
+    def max_packet_size(self) -> int:
+        """
+        The maximum size of the packets to be included in the filter.
+        """
+        return pulumi.get(self, "max_packet_size")
+
+    @property
+    @pulumi.getter(name="sourceId")
+    def source_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source point where packets are captured.
+        """
+        return pulumi.get(self, "source_id")
+
+    @property
+    @pulumi.getter(name="sourcePrivateEndpointIp")
+    def source_private_endpoint_ip(self) -> str:
+        """
+        The IP Address of the source private endpoint.
+        """
+        return pulumi.get(self, "source_private_endpoint_ip")
+
+    @property
+    @pulumi.getter(name="sourcePrivateEndpointSubnetId")
+    def source_private_endpoint_subnet_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that source private endpoint belongs to.
+        """
+        return pulumi.get(self, "source_private_endpoint_subnet_id")
+
+    @property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> str:
+        """
+        The source type for the VTAP.
+        """
+        return pulumi.get(self, "source_type")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return only resources that match the given VTAP administrative lifecycle state. The state value is case-insensitive.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VTAP target.
+        """
+        return pulumi.get(self, "target_id")
+
+    @property
+    @pulumi.getter(name="targetIp")
+    def target_ip(self) -> str:
+        """
+        The IP address of the VTAP target.
+        """
+        return pulumi.get(self, "target_ip")
+
+    @property
+    @pulumi.getter(name="targetType")
+    def target_type(self) -> str:
+        """
+        The target type for the VTAP.
+        """
+        return pulumi.get(self, "target_type")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the VTAP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2020-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="trafficMode")
+    def traffic_mode(self) -> str:
+        """
+        Used to control the priority of traffic. It is an optional field. If it not passed, the value is DEFAULT
+        """
+        return pulumi.get(self, "traffic_mode")
+
+    @property
+    @pulumi.getter(name="vcnId")
+    def vcn_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+        """
+        return pulumi.get(self, "vcn_id")
+
+    @property
+    @pulumi.getter(name="vxlanNetworkIdentifier")
+    def vxlan_network_identifier(self) -> str:
+        """
+        The virtual extensible LAN (VXLAN) network identifier (or VXLAN segment ID) that uniquely identifies the VXLAN.
+        """
+        return pulumi.get(self, "vxlan_network_identifier")
 
 

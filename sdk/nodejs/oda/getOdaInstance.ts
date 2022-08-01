@@ -2,6 +2,7 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import { input as inputs, output as outputs } from "../types";
 import * as utilities from "../utilities";
 
 /**
@@ -46,6 +47,14 @@ export interface GetOdaInstanceArgs {
  */
 export interface GetOdaInstanceResult {
     /**
+     * A list of attachment identifiers for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+     */
+    readonly attachmentIds: string[];
+    /**
+     * A list of attachment types for this instance (if any). Use attachmentIds to get the details of the attachments.
+     */
+    readonly attachmentTypes: string[];
+    /**
      * Identifier of the compartment that the instance belongs to.
      */
     readonly compartmentId: string;
@@ -66,7 +75,7 @@ export interface GetOdaInstanceResult {
      */
     readonly displayName: string;
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+     * Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
      */
     readonly freeformTags: {[key: string]: any};
     /**
@@ -74,10 +83,38 @@ export interface GetOdaInstanceResult {
      */
     readonly id: string;
     /**
+     * If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.
+     */
+    readonly identityAppConsoleUrl: string;
+    /**
+     * If isRoleBasedAccess is set to true, this property specifies the GUID of the Identity Application instance Digital Assistant has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this Digital Assistant instance for users within the identity domain.
+     */
+    readonly identityAppGuid: string;
+    /**
+     * If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
+     */
+    readonly identityDomain: string;
+    /**
+     * A list of package ids imported into this instance (if any). Use GetImportedPackage to get the details of the imported packages.
+     */
+    readonly importedPackageIds: string[];
+    /**
+     * A list of package names imported into this instance (if any). Use importedPackageIds field to get the details of the imported packages.
+     */
+    readonly importedPackageNames: string[];
+    /**
+     * Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
+     */
+    readonly isRoleBasedAccess: boolean;
+    /**
      * The current sub-state of the Digital Assistant instance.
      */
     readonly lifecycleSubState: string;
     readonly odaInstanceId: string;
+    /**
+     * A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+     */
+    readonly restrictedOperations: outputs.Oda.GetOdaInstanceRestrictedOperation[];
     /**
      * Shape or size of the instance.
      */

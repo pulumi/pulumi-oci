@@ -22,7 +22,7 @@ namespace Pulumi.Oci.DataLabellingService.Outputs
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// Specifies how to process the data. Supported formats include DOCUMENT, IMAGE and TEXT.
+        /// It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDatasetsDatasetCollectionItemDatasetFormatDetailResult> DatasetFormatDetails;
         /// <summary>
@@ -50,11 +50,11 @@ namespace Pulumi.Oci.DataLabellingService.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Initial Generate Records configuration, generates records from the Dataset's source.
+        /// The initial generate records configuration. It generates records from the dataset's source.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationResult> InitialRecordGenerationConfigurations;
         /// <summary>
-        /// An ordered collection of Labels that are unique by name.
+        /// An ordered collection of labels that are unique by name.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDatasetsDatasetCollectionItemLabelSetResult> LabelSets;
         /// <summary>

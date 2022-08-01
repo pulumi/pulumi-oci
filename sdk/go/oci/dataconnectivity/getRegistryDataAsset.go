@@ -63,6 +63,8 @@ type LookupRegistryDataAssetResult struct {
 	DefaultConnections []GetRegistryDataAssetDefaultConnection `pulumi:"defaultConnections"`
 	// A user defined description for the object.
 	Description string `pulumi:"description"`
+	// The list of endpoints with which this data asset is associated.
+	EndPoints []string `pulumi:"endPoints"`
 	// The external key for the object.
 	ExternalKey string `pulumi:"externalKey"`
 	Id          string `pulumi:"id"`
@@ -152,6 +154,11 @@ func (o LookupRegistryDataAssetResultOutput) DefaultConnections() GetRegistryDat
 // A user defined description for the object.
 func (o LookupRegistryDataAssetResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRegistryDataAssetResult) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The list of endpoints with which this data asset is associated.
+func (o LookupRegistryDataAssetResultOutput) EndPoints() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupRegistryDataAssetResult) []string { return v.EndPoints }).(pulumi.StringArrayOutput)
 }
 
 // The external key for the object.

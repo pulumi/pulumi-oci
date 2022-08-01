@@ -200,14 +200,14 @@ public final class DatabaseSoftwareImageState extends com.pulumi.resources.Resou
     }
 
     /**
-     * output from lsinventory which will get passed as a string
+     * The output from the OPatch lsInventory command, which is passed as a string.
      * 
      */
     @Import(name="lsInventory")
     private @Nullable Output<String> lsInventory;
 
     /**
-     * @return output from lsinventory which will get passed as a string
+     * @return The output from the OPatch lsInventory command, which is passed as a string.
      * 
      */
     public Optional<Output<String>> lsInventory() {
@@ -587,7 +587,7 @@ public final class DatabaseSoftwareImageState extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param lsInventory output from lsinventory which will get passed as a string
+         * @param lsInventory The output from the OPatch lsInventory command, which is passed as a string.
          * 
          * @return builder
          * 
@@ -598,7 +598,7 @@ public final class DatabaseSoftwareImageState extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param lsInventory output from lsinventory which will get passed as a string
+         * @param lsInventory The output from the OPatch lsInventory command, which is passed as a string.
          * 
          * @return builder
          * 

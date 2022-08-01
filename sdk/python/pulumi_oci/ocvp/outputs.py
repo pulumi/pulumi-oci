@@ -91,6 +91,7 @@ class SddcHcxOnPremLicense(dict):
 class GetExsiHostsEsxiHostCollectionResult(dict):
     def __init__(__self__, *,
                  billing_contract_end_date: str,
+                 capacity_reservation_id: str,
                  compartment_id: str,
                  compute_availability_domain: str,
                  compute_instance_id: str,
@@ -100,6 +101,8 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
                  failed_esxi_host_id: str,
                  freeform_tags: Mapping[str, Any],
                  grace_period_end_date: str,
+                 host_ocpu_count: float,
+                 host_shape_name: str,
                  id: str,
                  next_sku: str,
                  replacement_esxi_host_id: str,
@@ -109,6 +112,7 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
                  time_updated: str):
         """
         :param str billing_contract_end_date: Current billing cycle end date. If the value in `currentSku` and `nextSku` are different, the value specified in `nextSku` becomes the new `currentSKU` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
+        :param str capacity_reservation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
         :param str compute_availability_domain: The availability domain of the ESXi host.
         :param str compute_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute instance.
@@ -118,6 +122,8 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
         :param str failed_esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is failed.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str grace_period_end_date: The date and time when the new esxi host should start billing cycle. [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2021-07-25T21:10:29.600Z`
+        :param float host_ocpu_count: The OCPU count of the ESXi host.
+        :param str host_shape_name: The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host.
         :param str next_sku: The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
         :param str replacement_esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
@@ -127,6 +133,7 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
         :param str time_updated: The date and time the ESXi host was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         pulumi.set(__self__, "billing_contract_end_date", billing_contract_end_date)
+        pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "compute_availability_domain", compute_availability_domain)
         pulumi.set(__self__, "compute_instance_id", compute_instance_id)
@@ -136,6 +143,8 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
         pulumi.set(__self__, "failed_esxi_host_id", failed_esxi_host_id)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "grace_period_end_date", grace_period_end_date)
+        pulumi.set(__self__, "host_ocpu_count", host_ocpu_count)
+        pulumi.set(__self__, "host_shape_name", host_shape_name)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "next_sku", next_sku)
         pulumi.set(__self__, "replacement_esxi_host_id", replacement_esxi_host_id)
@@ -151,6 +160,14 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
         Current billing cycle end date. If the value in `currentSku` and `nextSku` are different, the value specified in `nextSku` becomes the new `currentSKU` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "billing_contract_end_date")
+
+    @property
+    @pulumi.getter(name="capacityReservationId")
+    def capacity_reservation_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+        """
+        return pulumi.get(self, "capacity_reservation_id")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -223,6 +240,22 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
         The date and time when the new esxi host should start billing cycle. [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2021-07-25T21:10:29.600Z`
         """
         return pulumi.get(self, "grace_period_end_date")
+
+    @property
+    @pulumi.getter(name="hostOcpuCount")
+    def host_ocpu_count(self) -> float:
+        """
+        The OCPU count of the ESXi host.
+        """
+        return pulumi.get(self, "host_ocpu_count")
+
+    @property
+    @pulumi.getter(name="hostShapeName")
+    def host_shape_name(self) -> str:
+        """
+        The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+        """
+        return pulumi.get(self, "host_shape_name")
 
     @property
     @pulumi.getter
@@ -379,6 +412,7 @@ class GetSddcsFilterResult(dict):
 class GetSddcsSddcCollectionResult(dict):
     def __init__(__self__, *,
                  actual_esxi_hosts_count: int,
+                 capacity_reservation_id: str,
                  compartment_id: str,
                  compute_availability_domain: str,
                  defined_tags: Mapping[str, Any],
@@ -393,6 +427,8 @@ class GetSddcsSddcCollectionResult(dict):
                  hcx_private_ip_id: str,
                  hcx_vlan_id: str,
                  id: str,
+                 initial_host_ocpu_count: float,
+                 initial_host_shape_name: str,
                  initial_sku: str,
                  instance_display_name_prefix: str,
                  is_hcx_enabled: bool,
@@ -431,6 +467,7 @@ class GetSddcsSddcCollectionResult(dict):
                  workload_network_cidr: str):
         """
         :param int actual_esxi_hosts_count: The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC.
+        :param str capacity_reservation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param str compute_availability_domain: The name of the availability domain that the Compute instances are running in.  Example: `Uocm:PHX-AD-1`
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -444,6 +481,8 @@ class GetSddcsSddcCollectionResult(dict):
         :param str hcx_private_ip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for HCX Manager. For information about `PrivateIp` objects, see the Core Services API.
         :param str hcx_vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the HCX component of the VMware environment.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
+        :param float initial_host_ocpu_count: The initial OCPU count of the SDDC's ESXi hosts.
+        :param str initial_host_shape_name: The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
         :param str initial_sku: The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
         :param str instance_display_name_prefix: A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
         :param bool is_hcx_enabled: Indicates whether HCX is enabled for this SDDC.
@@ -480,6 +519,7 @@ class GetSddcsSddcCollectionResult(dict):
         :param str workload_network_cidr: The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
         """
         pulumi.set(__self__, "actual_esxi_hosts_count", actual_esxi_hosts_count)
+        pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "compute_availability_domain", compute_availability_domain)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -494,6 +534,8 @@ class GetSddcsSddcCollectionResult(dict):
         pulumi.set(__self__, "hcx_private_ip_id", hcx_private_ip_id)
         pulumi.set(__self__, "hcx_vlan_id", hcx_vlan_id)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "initial_host_ocpu_count", initial_host_ocpu_count)
+        pulumi.set(__self__, "initial_host_shape_name", initial_host_shape_name)
         pulumi.set(__self__, "initial_sku", initial_sku)
         pulumi.set(__self__, "instance_display_name_prefix", instance_display_name_prefix)
         pulumi.set(__self__, "is_hcx_enabled", is_hcx_enabled)
@@ -538,6 +580,14 @@ class GetSddcsSddcCollectionResult(dict):
         The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC.
         """
         return pulumi.get(self, "actual_esxi_hosts_count")
+
+    @property
+    @pulumi.getter(name="capacityReservationId")
+    def capacity_reservation_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+        """
+        return pulumi.get(self, "capacity_reservation_id")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -647,6 +697,22 @@ class GetSddcsSddcCollectionResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="initialHostOcpuCount")
+    def initial_host_ocpu_count(self) -> float:
+        """
+        The initial OCPU count of the SDDC's ESXi hosts.
+        """
+        return pulumi.get(self, "initial_host_ocpu_count")
+
+    @property
+    @pulumi.getter(name="initialHostShapeName")
+    def initial_host_shape_name(self) -> str:
+        """
+        The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+        """
+        return pulumi.get(self, "initial_host_shape_name")
 
     @property
     @pulumi.getter(name="initialSku")
@@ -1014,7 +1080,8 @@ class GetSupportedHostShapesItemResult(dict):
                  shape_family: str,
                  supported_ocpu_counts: Sequence[float],
                  supported_operations: Sequence[str],
-                 supported_sddc_types: Sequence[str]):
+                 supported_sddc_types: Sequence[str],
+                 supported_vmware_software_versions: Sequence[str]):
         """
         :param float default_ocpu_count: The default OCPU count of the shape.
         :param str description: Description of the shape.
@@ -1024,6 +1091,7 @@ class GetSupportedHostShapesItemResult(dict):
         :param Sequence[float] supported_ocpu_counts: Support OCPU count of the shape.
         :param Sequence[str] supported_operations: The operations where you can use the shape. The operations can be CREATE_SDDC or CREATE_ESXI_HOST.
         :param Sequence[str] supported_sddc_types: The supported SDDC types for the shape.
+        :param Sequence[str] supported_vmware_software_versions: The VMware software versions supported by the shape.
         """
         pulumi.set(__self__, "default_ocpu_count", default_ocpu_count)
         pulumi.set(__self__, "description", description)
@@ -1033,6 +1101,7 @@ class GetSupportedHostShapesItemResult(dict):
         pulumi.set(__self__, "supported_ocpu_counts", supported_ocpu_counts)
         pulumi.set(__self__, "supported_operations", supported_operations)
         pulumi.set(__self__, "supported_sddc_types", supported_sddc_types)
+        pulumi.set(__self__, "supported_vmware_software_versions", supported_vmware_software_versions)
 
     @property
     @pulumi.getter(name="defaultOcpuCount")
@@ -1097,6 +1166,14 @@ class GetSupportedHostShapesItemResult(dict):
         The supported SDDC types for the shape.
         """
         return pulumi.get(self, "supported_sddc_types")
+
+    @property
+    @pulumi.getter(name="supportedVmwareSoftwareVersions")
+    def supported_vmware_software_versions(self) -> Sequence[str]:
+        """
+        The VMware software versions supported by the shape.
+        """
+        return pulumi.get(self, "supported_vmware_software_versions")
 
 
 @pulumi.output_type

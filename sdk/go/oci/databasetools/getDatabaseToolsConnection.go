@@ -12,7 +12,7 @@ import (
 
 // This data source provides details about a specific Database Tools Connection resource in Oracle Cloud Infrastructure Database Tools service.
 //
-// Gets a DatabaseToolsConnection by identifier
+// Gets details of the specified Database Tools connection.
 //
 // ## Example Usage
 //
@@ -47,17 +47,17 @@ func LookupDatabaseToolsConnection(ctx *pulumi.Context, args *LookupDatabaseTool
 
 // A collection of arguments for invoking getDatabaseToolsConnection.
 type LookupDatabaseToolsConnectionArgs struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a DatabaseToolsConnection.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools connection.
 	DatabaseToolsConnectionId string `pulumi:"databaseToolsConnectionId"`
 }
 
 // A collection of values returned by getDatabaseToolsConnection.
 type LookupDatabaseToolsConnectionResult struct {
-	// Advanced connection properties key-value pair (e.g., oracle.net.ssl_server_dn_match).
+	// The advanced connection properties key-value pair (for example, `oracle.net.ssl_server_dn_match`).
 	AdvancedProperties map[string]interface{} `pulumi:"advancedProperties"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Connect descriptor or Easy Connect Naming method to connect to the database.
+	// The connect descriptor or Easy Connect Naming method used to connect to the database.
 	ConnectionString          string `pulumi:"connectionString"`
 	DatabaseToolsConnectionId string `pulumi:"databaseToolsConnectionId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -66,27 +66,27 @@ type LookupDatabaseToolsConnectionResult struct {
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsConnection.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools connection.
 	Id string `pulumi:"id"`
-	// Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
+	// The Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
 	KeyStores []GetDatabaseToolsConnectionKeyStore `pulumi:"keyStores"`
-	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	// A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsPrivateEndpoint used to access the database in the Customer VCN.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
 	PrivateEndpointId string `pulumi:"privateEndpointId"`
 	// A related resource
 	RelatedResources []GetDatabaseToolsConnectionRelatedResource `pulumi:"relatedResources"`
-	// The current state of the DatabaseToolsConnection.
+	// The current state of the Database Tools connection.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// The time the DatabaseToolsConnection was created. An RFC3339 formatted datetime string
+	// The time the Database Tools connection was created. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
-	// The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string
+	// The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
 	TimeUpdated string `pulumi:"timeUpdated"`
-	// The DatabaseToolsConnection type.
+	// The Database Tools connection type.
 	Type string `pulumi:"type"`
-	// Database user name.
+	// The database user name.
 	UserName string `pulumi:"userName"`
 	// The user password.
 	UserPasswords []GetDatabaseToolsConnectionUserPassword `pulumi:"userPasswords"`
@@ -107,7 +107,7 @@ func LookupDatabaseToolsConnectionOutput(ctx *pulumi.Context, args LookupDatabas
 
 // A collection of arguments for invoking getDatabaseToolsConnection.
 type LookupDatabaseToolsConnectionOutputArgs struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a DatabaseToolsConnection.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools connection.
 	DatabaseToolsConnectionId pulumi.StringInput `pulumi:"databaseToolsConnectionId"`
 }
 
@@ -130,17 +130,17 @@ func (o LookupDatabaseToolsConnectionResultOutput) ToLookupDatabaseToolsConnecti
 	return o
 }
 
-// Advanced connection properties key-value pair (e.g., oracle.net.ssl_server_dn_match).
+// The advanced connection properties key-value pair (for example, `oracle.net.ssl_server_dn_match`).
 func (o LookupDatabaseToolsConnectionResultOutput) AdvancedProperties() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupDatabaseToolsConnectionResult) map[string]interface{} { return v.AdvancedProperties }).(pulumi.MapOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
 func (o LookupDatabaseToolsConnectionResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatabaseToolsConnectionResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Connect descriptor or Easy Connect Naming method to connect to the database.
+// The connect descriptor or Easy Connect Naming method used to connect to the database.
 func (o LookupDatabaseToolsConnectionResultOutput) ConnectionString() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatabaseToolsConnectionResult) string { return v.ConnectionString }).(pulumi.StringOutput)
 }
@@ -164,22 +164,22 @@ func (o LookupDatabaseToolsConnectionResultOutput) FreeformTags() pulumi.MapOutp
 	return o.ApplyT(func(v LookupDatabaseToolsConnectionResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsConnection.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools connection.
 func (o LookupDatabaseToolsConnectionResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatabaseToolsConnectionResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
+// The Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
 func (o LookupDatabaseToolsConnectionResultOutput) KeyStores() GetDatabaseToolsConnectionKeyStoreArrayOutput {
 	return o.ApplyT(func(v LookupDatabaseToolsConnectionResult) []GetDatabaseToolsConnectionKeyStore { return v.KeyStores }).(GetDatabaseToolsConnectionKeyStoreArrayOutput)
 }
 
-// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+// A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
 func (o LookupDatabaseToolsConnectionResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatabaseToolsConnectionResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsPrivateEndpoint used to access the database in the Customer VCN.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
 func (o LookupDatabaseToolsConnectionResultOutput) PrivateEndpointId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatabaseToolsConnectionResult) string { return v.PrivateEndpointId }).(pulumi.StringOutput)
 }
@@ -191,7 +191,7 @@ func (o LookupDatabaseToolsConnectionResultOutput) RelatedResources() GetDatabas
 	}).(GetDatabaseToolsConnectionRelatedResourceArrayOutput)
 }
 
-// The current state of the DatabaseToolsConnection.
+// The current state of the Database Tools connection.
 func (o LookupDatabaseToolsConnectionResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatabaseToolsConnectionResult) string { return v.State }).(pulumi.StringOutput)
 }
@@ -201,22 +201,22 @@ func (o LookupDatabaseToolsConnectionResultOutput) SystemTags() pulumi.MapOutput
 	return o.ApplyT(func(v LookupDatabaseToolsConnectionResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// The time the DatabaseToolsConnection was created. An RFC3339 formatted datetime string
+// The time the Database Tools connection was created. An RFC3339 formatted datetime string.
 func (o LookupDatabaseToolsConnectionResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatabaseToolsConnectionResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string
+// The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
 func (o LookupDatabaseToolsConnectionResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatabaseToolsConnectionResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// The DatabaseToolsConnection type.
+// The Database Tools connection type.
 func (o LookupDatabaseToolsConnectionResultOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatabaseToolsConnectionResult) string { return v.Type }).(pulumi.StringOutput)
 }
 
-// Database user name.
+// The database user name.
 func (o LookupDatabaseToolsConnectionResultOutput) UserName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatabaseToolsConnectionResult) string { return v.UserName }).(pulumi.StringOutput)
 }

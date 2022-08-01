@@ -45,6 +45,10 @@ namespace Pulumi.Oci.Ocvp.Outputs
         /// The supported SDDC types for the shape.
         /// </summary>
         public readonly ImmutableArray<string> SupportedSddcTypes;
+        /// <summary>
+        /// The VMware software versions supported by the shape.
+        /// </summary>
+        public readonly ImmutableArray<string> SupportedVmwareSoftwareVersions;
 
         [OutputConstructor]
         private GetSupportedHostShapesItemResult(
@@ -62,7 +66,9 @@ namespace Pulumi.Oci.Ocvp.Outputs
 
             ImmutableArray<string> supportedOperations,
 
-            ImmutableArray<string> supportedSddcTypes)
+            ImmutableArray<string> supportedSddcTypes,
+
+            ImmutableArray<string> supportedVmwareSoftwareVersions)
         {
             DefaultOcpuCount = defaultOcpuCount;
             Description = description;
@@ -72,6 +78,7 @@ namespace Pulumi.Oci.Ocvp.Outputs
             SupportedOcpuCounts = supportedOcpuCounts;
             SupportedOperations = supportedOperations;
             SupportedSddcTypes = supportedSddcTypes;
+            SupportedVmwareSoftwareVersions = supportedVmwareSoftwareVersions;
         }
     }
 }

@@ -13,7 +13,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
     public sealed class DetectorRecipeDetectorRuleCandidateResponderRuleGetArgs : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) DetectorRecipe Display Name
+        /// (Updatable) Detector recipe display name.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }

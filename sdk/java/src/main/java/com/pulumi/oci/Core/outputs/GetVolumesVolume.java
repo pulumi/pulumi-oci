@@ -64,7 +64,7 @@ public final class GetVolumesVolume {
      */
     private final String id;
     /**
-     * @return Specifies whether the auto-tune performance is enabled for this boot volume.
+     * @return Specifies whether the auto-tune performance is enabled for this volume.
      * 
      */
     private final Boolean isAutoTuneEnabled;
@@ -237,7 +237,7 @@ public final class GetVolumesVolume {
         return this.id;
     }
     /**
-     * @return Specifies whether the auto-tune performance is enabled for this boot volume.
+     * @return Specifies whether the auto-tune performance is enabled for this volume.
      * 
      */
     public Boolean isAutoTuneEnabled() {

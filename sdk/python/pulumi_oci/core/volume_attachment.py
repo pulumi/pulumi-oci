@@ -22,6 +22,7 @@ class VolumeAttachmentArgs:
                  device: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  encryption_in_transit_type: Optional[pulumi.Input[str]] = None,
+                 is_agent_auto_iscsi_login_enabled: Optional[pulumi.Input[bool]] = None,
                  is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[bool]] = None,
                  is_read_only: Optional[pulumi.Input[bool]] = None,
                  is_shareable: Optional[pulumi.Input[bool]] = None,
@@ -35,6 +36,7 @@ class VolumeAttachmentArgs:
         :param pulumi.Input[str] device: The device name. To retrieve a list of devices for a given instance, see [ListInstanceDevices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Device/ListInstanceDevices).
         :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[str] encryption_in_transit_type: Refer the top-level definition of encryptionInTransitType. The default value is NONE.
+        :param pulumi.Input[bool] is_agent_auto_iscsi_login_enabled: Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
         :param pulumi.Input[bool] is_pv_encryption_in_transit_enabled: Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
         :param pulumi.Input[bool] is_read_only: Whether the attachment was created in read-only mode.
         :param pulumi.Input[bool] is_shareable: Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
@@ -54,6 +56,8 @@ class VolumeAttachmentArgs:
             pulumi.set(__self__, "display_name", display_name)
         if encryption_in_transit_type is not None:
             pulumi.set(__self__, "encryption_in_transit_type", encryption_in_transit_type)
+        if is_agent_auto_iscsi_login_enabled is not None:
+            pulumi.set(__self__, "is_agent_auto_iscsi_login_enabled", is_agent_auto_iscsi_login_enabled)
         if is_pv_encryption_in_transit_enabled is not None:
             pulumi.set(__self__, "is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
         if is_read_only is not None:
@@ -148,6 +152,18 @@ class VolumeAttachmentArgs:
         pulumi.set(self, "encryption_in_transit_type", value)
 
     @property
+    @pulumi.getter(name="isAgentAutoIscsiLoginEnabled")
+    def is_agent_auto_iscsi_login_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
+        """
+        return pulumi.get(self, "is_agent_auto_iscsi_login_enabled")
+
+    @is_agent_auto_iscsi_login_enabled.setter
+    def is_agent_auto_iscsi_login_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_agent_auto_iscsi_login_enabled", value)
+
+    @property
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
     def is_pv_encryption_in_transit_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
@@ -210,6 +226,7 @@ class _VolumeAttachmentState:
                  instance_id: Optional[pulumi.Input[str]] = None,
                  ipv4: Optional[pulumi.Input[str]] = None,
                  iqn: Optional[pulumi.Input[str]] = None,
+                 is_agent_auto_iscsi_login_enabled: Optional[pulumi.Input[bool]] = None,
                  is_multipath: Optional[pulumi.Input[bool]] = None,
                  is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[bool]] = None,
                  is_read_only: Optional[pulumi.Input[bool]] = None,
@@ -234,6 +251,7 @@ class _VolumeAttachmentState:
         :param pulumi.Input[str] instance_id: The OCID of the instance.
         :param pulumi.Input[str] ipv4: The volume's iSCSI IP address.  Example: `169.254.2.2`
         :param pulumi.Input[str] iqn: The target volume's iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).  Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`
+        :param pulumi.Input[bool] is_agent_auto_iscsi_login_enabled: Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
         :param pulumi.Input[bool] is_multipath: Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.
         :param pulumi.Input[bool] is_pv_encryption_in_transit_enabled: Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
         :param pulumi.Input[bool] is_read_only: Whether the attachment was created in read-only mode.
@@ -271,6 +289,8 @@ class _VolumeAttachmentState:
             pulumi.set(__self__, "ipv4", ipv4)
         if iqn is not None:
             pulumi.set(__self__, "iqn", iqn)
+        if is_agent_auto_iscsi_login_enabled is not None:
+            pulumi.set(__self__, "is_agent_auto_iscsi_login_enabled", is_agent_auto_iscsi_login_enabled)
         if is_multipath is not None:
             pulumi.set(__self__, "is_multipath", is_multipath)
         if is_pv_encryption_in_transit_enabled is not None:
@@ -427,6 +447,18 @@ class _VolumeAttachmentState:
         pulumi.set(self, "iqn", value)
 
     @property
+    @pulumi.getter(name="isAgentAutoIscsiLoginEnabled")
+    def is_agent_auto_iscsi_login_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
+        """
+        return pulumi.get(self, "is_agent_auto_iscsi_login_enabled")
+
+    @is_agent_auto_iscsi_login_enabled.setter
+    def is_agent_auto_iscsi_login_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_agent_auto_iscsi_login_enabled", value)
+
+    @property
     @pulumi.getter(name="isMultipath")
     def is_multipath(self) -> Optional[pulumi.Input[bool]]:
         """
@@ -570,6 +602,7 @@ class VolumeAttachment(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  encryption_in_transit_type: Optional[pulumi.Input[str]] = None,
                  instance_id: Optional[pulumi.Input[str]] = None,
+                 is_agent_auto_iscsi_login_enabled: Optional[pulumi.Input[bool]] = None,
                  is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[bool]] = None,
                  is_read_only: Optional[pulumi.Input[bool]] = None,
                  is_shareable: Optional[pulumi.Input[bool]] = None,
@@ -594,6 +627,7 @@ class VolumeAttachment(pulumi.CustomResource):
             device=var["volume_attachment_device"],
             display_name=var["volume_attachment_display_name"],
             encryption_in_transit_type=var["volume_attachment_encryption_in_transit_type"],
+            is_agent_auto_iscsi_login_enabled=var["volume_attachment_is_agent_auto_iscsi_login_enabled"],
             is_pv_encryption_in_transit_enabled=var["volume_attachment_is_pv_encryption_in_transit_enabled"],
             is_read_only=var["volume_attachment_is_read_only"],
             is_shareable=var["volume_attachment_is_shareable"],
@@ -616,6 +650,7 @@ class VolumeAttachment(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[str] encryption_in_transit_type: Refer the top-level definition of encryptionInTransitType. The default value is NONE.
         :param pulumi.Input[str] instance_id: The OCID of the instance.
+        :param pulumi.Input[bool] is_agent_auto_iscsi_login_enabled: Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
         :param pulumi.Input[bool] is_pv_encryption_in_transit_enabled: Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
         :param pulumi.Input[bool] is_read_only: Whether the attachment was created in read-only mode.
         :param pulumi.Input[bool] is_shareable: Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
@@ -646,6 +681,7 @@ class VolumeAttachment(pulumi.CustomResource):
             device=var["volume_attachment_device"],
             display_name=var["volume_attachment_display_name"],
             encryption_in_transit_type=var["volume_attachment_encryption_in_transit_type"],
+            is_agent_auto_iscsi_login_enabled=var["volume_attachment_is_agent_auto_iscsi_login_enabled"],
             is_pv_encryption_in_transit_enabled=var["volume_attachment_is_pv_encryption_in_transit_enabled"],
             is_read_only=var["volume_attachment_is_read_only"],
             is_shareable=var["volume_attachment_is_shareable"],
@@ -681,6 +717,7 @@ class VolumeAttachment(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  encryption_in_transit_type: Optional[pulumi.Input[str]] = None,
                  instance_id: Optional[pulumi.Input[str]] = None,
+                 is_agent_auto_iscsi_login_enabled: Optional[pulumi.Input[bool]] = None,
                  is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[bool]] = None,
                  is_read_only: Optional[pulumi.Input[bool]] = None,
                  is_shareable: Optional[pulumi.Input[bool]] = None,
@@ -711,6 +748,7 @@ class VolumeAttachment(pulumi.CustomResource):
             if instance_id is None and not opts.urn:
                 raise TypeError("Missing required property 'instance_id'")
             __props__.__dict__["instance_id"] = instance_id
+            __props__.__dict__["is_agent_auto_iscsi_login_enabled"] = is_agent_auto_iscsi_login_enabled
             __props__.__dict__["is_pv_encryption_in_transit_enabled"] = is_pv_encryption_in_transit_enabled
             __props__.__dict__["is_read_only"] = is_read_only
             __props__.__dict__["is_shareable"] = is_shareable
@@ -750,6 +788,7 @@ class VolumeAttachment(pulumi.CustomResource):
             instance_id: Optional[pulumi.Input[str]] = None,
             ipv4: Optional[pulumi.Input[str]] = None,
             iqn: Optional[pulumi.Input[str]] = None,
+            is_agent_auto_iscsi_login_enabled: Optional[pulumi.Input[bool]] = None,
             is_multipath: Optional[pulumi.Input[bool]] = None,
             is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[bool]] = None,
             is_read_only: Optional[pulumi.Input[bool]] = None,
@@ -779,6 +818,7 @@ class VolumeAttachment(pulumi.CustomResource):
         :param pulumi.Input[str] instance_id: The OCID of the instance.
         :param pulumi.Input[str] ipv4: The volume's iSCSI IP address.  Example: `169.254.2.2`
         :param pulumi.Input[str] iqn: The target volume's iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).  Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`
+        :param pulumi.Input[bool] is_agent_auto_iscsi_login_enabled: Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
         :param pulumi.Input[bool] is_multipath: Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.
         :param pulumi.Input[bool] is_pv_encryption_in_transit_enabled: Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
         :param pulumi.Input[bool] is_read_only: Whether the attachment was created in read-only mode.
@@ -806,6 +846,7 @@ class VolumeAttachment(pulumi.CustomResource):
         __props__.__dict__["instance_id"] = instance_id
         __props__.__dict__["ipv4"] = ipv4
         __props__.__dict__["iqn"] = iqn
+        __props__.__dict__["is_agent_auto_iscsi_login_enabled"] = is_agent_auto_iscsi_login_enabled
         __props__.__dict__["is_multipath"] = is_multipath
         __props__.__dict__["is_pv_encryption_in_transit_enabled"] = is_pv_encryption_in_transit_enabled
         __props__.__dict__["is_read_only"] = is_read_only
@@ -906,6 +947,14 @@ class VolumeAttachment(pulumi.CustomResource):
         The target volume's iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).  Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`
         """
         return pulumi.get(self, "iqn")
+
+    @property
+    @pulumi.getter(name="isAgentAutoIscsiLoginEnabled")
+    def is_agent_auto_iscsi_login_enabled(self) -> pulumi.Output[bool]:
+        """
+        Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
+        """
+        return pulumi.get(self, "is_agent_auto_iscsi_login_enabled")
 
     @property
     @pulumi.getter(name="isMultipath")

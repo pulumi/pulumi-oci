@@ -76,13 +76,13 @@ type GetDataMaskRulesArgs struct {
 // A collection of values returned by getDataMaskRules.
 type GetDataMaskRulesResult struct {
 	AccessLevel *string `pulumi:"accessLevel"`
-	// Compartment Identifier where the resource is created
+	// Compartment Identifier where the resource is created.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The list of data_mask_rule_collection.
 	DataMaskRuleCollections []GetDataMaskRulesDataMaskRuleCollection `pulumi:"dataMaskRuleCollections"`
 	// The status of the dataMaskRule.
 	DataMaskRuleStatus *string `pulumi:"dataMaskRuleStatus"`
-	// Data Mask Rule Identifier, can be renamed
+	// Data Mask Rule Identifier, can be renamed.
 	DisplayName *string                  `pulumi:"displayName"`
 	Filters     []GetDataMaskRulesFilter `pulumi:"filters"`
 	// IAM Group id associated with the data mask rule
@@ -152,7 +152,7 @@ func (o GetDataMaskRulesResultOutput) AccessLevel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDataMaskRulesResult) *string { return v.AccessLevel }).(pulumi.StringPtrOutput)
 }
 
-// Compartment Identifier where the resource is created
+// Compartment Identifier where the resource is created.
 func (o GetDataMaskRulesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDataMaskRulesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -169,7 +169,7 @@ func (o GetDataMaskRulesResultOutput) DataMaskRuleStatus() pulumi.StringPtrOutpu
 	return o.ApplyT(func(v GetDataMaskRulesResult) *string { return v.DataMaskRuleStatus }).(pulumi.StringPtrOutput)
 }
 
-// Data Mask Rule Identifier, can be renamed
+// Data Mask Rule Identifier, can be renamed.
 func (o GetDataMaskRulesResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDataMaskRulesResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }

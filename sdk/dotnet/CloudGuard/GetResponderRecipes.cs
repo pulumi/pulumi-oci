@@ -226,7 +226,7 @@ namespace Pulumi.Oci.CloudGuard
         public readonly string CompartmentId;
         public readonly bool? CompartmentIdInSubtree;
         /// <summary>
-        /// ResponderRule Display Name
+        /// ResponderRule display name.
         /// </summary>
         public readonly string? DisplayName;
         public readonly ImmutableArray<Outputs.GetResponderRecipesFilterResult> Filters;

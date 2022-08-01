@@ -20,16 +20,31 @@ class GetCloudAutonomousVmClusterResult:
     """
     A collection of values returned by getCloudAutonomousVmCluster.
     """
-    def __init__(__self__, availability_domain=None, cloud_autonomous_vm_cluster_id=None, cloud_exadata_infrastructure_id=None, compartment_id=None, cpu_core_count=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, defined_tags=None, description=None, display_name=None, domain=None, freeform_tags=None, hostname=None, id=None, last_maintenance_run_id=None, last_update_history_entry_id=None, license_model=None, lifecycle_details=None, memory_size_in_gbs=None, next_maintenance_run_id=None, node_count=None, nsg_ids=None, ocpu_count=None, rotate_ords_certs_trigger=None, rotate_ssl_certs_trigger=None, shape=None, state=None, subnet_id=None, time_created=None, time_updated=None):
+    def __init__(__self__, autonomous_data_storage_size_in_tbs=None, availability_domain=None, available_autonomous_data_storage_size_in_tbs=None, available_container_databases=None, available_cpus=None, cloud_autonomous_vm_cluster_id=None, cloud_exadata_infrastructure_id=None, cluster_time_zone=None, compartment_id=None, cpu_core_count=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, defined_tags=None, description=None, display_name=None, domain=None, freeform_tags=None, hostname=None, id=None, last_maintenance_run_id=None, last_update_history_entry_id=None, license_model=None, lifecycle_details=None, memory_per_oracle_compute_unit_in_gbs=None, memory_size_in_gbs=None, next_maintenance_run_id=None, node_count=None, nsg_ids=None, ocpu_count=None, reclaimable_cpus=None, rotate_ords_certs_trigger=None, rotate_ssl_certs_trigger=None, shape=None, state=None, subnet_id=None, time_created=None, time_updated=None, total_container_databases=None):
+        if autonomous_data_storage_size_in_tbs and not isinstance(autonomous_data_storage_size_in_tbs, float):
+            raise TypeError("Expected argument 'autonomous_data_storage_size_in_tbs' to be a float")
+        pulumi.set(__self__, "autonomous_data_storage_size_in_tbs", autonomous_data_storage_size_in_tbs)
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
+        if available_autonomous_data_storage_size_in_tbs and not isinstance(available_autonomous_data_storage_size_in_tbs, float):
+            raise TypeError("Expected argument 'available_autonomous_data_storage_size_in_tbs' to be a float")
+        pulumi.set(__self__, "available_autonomous_data_storage_size_in_tbs", available_autonomous_data_storage_size_in_tbs)
+        if available_container_databases and not isinstance(available_container_databases, int):
+            raise TypeError("Expected argument 'available_container_databases' to be a int")
+        pulumi.set(__self__, "available_container_databases", available_container_databases)
+        if available_cpus and not isinstance(available_cpus, float):
+            raise TypeError("Expected argument 'available_cpus' to be a float")
+        pulumi.set(__self__, "available_cpus", available_cpus)
         if cloud_autonomous_vm_cluster_id and not isinstance(cloud_autonomous_vm_cluster_id, str):
             raise TypeError("Expected argument 'cloud_autonomous_vm_cluster_id' to be a str")
         pulumi.set(__self__, "cloud_autonomous_vm_cluster_id", cloud_autonomous_vm_cluster_id)
         if cloud_exadata_infrastructure_id and not isinstance(cloud_exadata_infrastructure_id, str):
             raise TypeError("Expected argument 'cloud_exadata_infrastructure_id' to be a str")
         pulumi.set(__self__, "cloud_exadata_infrastructure_id", cloud_exadata_infrastructure_id)
+        if cluster_time_zone and not isinstance(cluster_time_zone, str):
+            raise TypeError("Expected argument 'cluster_time_zone' to be a str")
+        pulumi.set(__self__, "cluster_time_zone", cluster_time_zone)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -42,6 +57,9 @@ class GetCloudAutonomousVmClusterResult:
         if data_storage_size_in_tbs and not isinstance(data_storage_size_in_tbs, float):
             raise TypeError("Expected argument 'data_storage_size_in_tbs' to be a float")
         pulumi.set(__self__, "data_storage_size_in_tbs", data_storage_size_in_tbs)
+        if db_node_storage_size_in_gbs and not isinstance(db_node_storage_size_in_gbs, int):
+            raise TypeError("Expected argument 'db_node_storage_size_in_gbs' to be a int")
+        pulumi.set(__self__, "db_node_storage_size_in_gbs", db_node_storage_size_in_gbs)
         if defined_tags and not isinstance(defined_tags, dict):
             raise TypeError("Expected argument 'defined_tags' to be a dict")
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -75,6 +93,9 @@ class GetCloudAutonomousVmClusterResult:
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if memory_per_oracle_compute_unit_in_gbs and not isinstance(memory_per_oracle_compute_unit_in_gbs, int):
+            raise TypeError("Expected argument 'memory_per_oracle_compute_unit_in_gbs' to be a int")
+        pulumi.set(__self__, "memory_per_oracle_compute_unit_in_gbs", memory_per_oracle_compute_unit_in_gbs)
         if memory_size_in_gbs and not isinstance(memory_size_in_gbs, int):
             raise TypeError("Expected argument 'memory_size_in_gbs' to be a int")
         pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
@@ -90,6 +111,9 @@ class GetCloudAutonomousVmClusterResult:
         if ocpu_count and not isinstance(ocpu_count, float):
             raise TypeError("Expected argument 'ocpu_count' to be a float")
         pulumi.set(__self__, "ocpu_count", ocpu_count)
+        if reclaimable_cpus and not isinstance(reclaimable_cpus, float):
+            raise TypeError("Expected argument 'reclaimable_cpus' to be a float")
+        pulumi.set(__self__, "reclaimable_cpus", reclaimable_cpus)
         if rotate_ords_certs_trigger and not isinstance(rotate_ords_certs_trigger, bool):
             raise TypeError("Expected argument 'rotate_ords_certs_trigger' to be a bool")
         pulumi.set(__self__, "rotate_ords_certs_trigger", rotate_ords_certs_trigger)
@@ -111,6 +135,17 @@ class GetCloudAutonomousVmClusterResult:
         if time_updated and not isinstance(time_updated, str):
             raise TypeError("Expected argument 'time_updated' to be a str")
         pulumi.set(__self__, "time_updated", time_updated)
+        if total_container_databases and not isinstance(total_container_databases, int):
+            raise TypeError("Expected argument 'total_container_databases' to be a int")
+        pulumi.set(__self__, "total_container_databases", total_container_databases)
+
+    @property
+    @pulumi.getter(name="autonomousDataStorageSizeInTbs")
+    def autonomous_data_storage_size_in_tbs(self) -> float:
+        """
+        The data disk group size allocated for Autonomous Databases, in TBs.
+        """
+        return pulumi.get(self, "autonomous_data_storage_size_in_tbs")
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -119,6 +154,30 @@ class GetCloudAutonomousVmClusterResult:
         The name of the availability domain that the cloud Autonomous VM cluster is located in.
         """
         return pulumi.get(self, "availability_domain")
+
+    @property
+    @pulumi.getter(name="availableAutonomousDataStorageSizeInTbs")
+    def available_autonomous_data_storage_size_in_tbs(self) -> float:
+        """
+        The data disk group size available for Autonomous Databases, in TBs.
+        """
+        return pulumi.get(self, "available_autonomous_data_storage_size_in_tbs")
+
+    @property
+    @pulumi.getter(name="availableContainerDatabases")
+    def available_container_databases(self) -> int:
+        """
+        The number of Autonomous Container Databases that can be created with the currently available local storage.
+        """
+        return pulumi.get(self, "available_container_databases")
+
+    @property
+    @pulumi.getter(name="availableCpus")
+    def available_cpus(self) -> float:
+        """
+        CPU cores available for allocation to Autonomous Databases.
+        """
+        return pulumi.get(self, "available_cpus")
 
     @property
     @pulumi.getter(name="cloudAutonomousVmClusterId")
@@ -132,6 +191,14 @@ class GetCloudAutonomousVmClusterResult:
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure.
         """
         return pulumi.get(self, "cloud_exadata_infrastructure_id")
+
+    @property
+    @pulumi.getter(name="clusterTimeZone")
+    def cluster_time_zone(self) -> str:
+        """
+        The time zone of the Cloud Autonomous VM Cluster.
+        """
+        return pulumi.get(self, "cluster_time_zone")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -164,6 +231,14 @@ class GetCloudAutonomousVmClusterResult:
         The total data storage allocated, in terabytes (TB).
         """
         return pulumi.get(self, "data_storage_size_in_tbs")
+
+    @property
+    @pulumi.getter(name="dbNodeStorageSizeInGbs")
+    def db_node_storage_size_in_gbs(self) -> int:
+        """
+        The local node storage allocated in GBs.
+        """
+        return pulumi.get(self, "db_node_storage_size_in_gbs")
 
     @property
     @pulumi.getter(name="definedTags")
@@ -254,6 +329,14 @@ class GetCloudAutonomousVmClusterResult:
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
+    def memory_per_oracle_compute_unit_in_gbs(self) -> int:
+        """
+        The amount of memory (in GBs) enabled per each OCPU core.
+        """
+        return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
+
+    @property
     @pulumi.getter(name="memorySizeInGbs")
     def memory_size_in_gbs(self) -> int:
         """
@@ -281,8 +364,8 @@ class GetCloudAutonomousVmClusterResult:
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Sequence[str]:
         """
-        A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+        The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+        * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         """
         return pulumi.get(self, "nsg_ids")
 
@@ -293,6 +376,14 @@ class GetCloudAutonomousVmClusterResult:
         The number of CPU cores enabled on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
         """
         return pulumi.get(self, "ocpu_count")
+
+    @property
+    @pulumi.getter(name="reclaimableCpus")
+    def reclaimable_cpus(self) -> float:
+        """
+        CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+        """
+        return pulumi.get(self, "reclaimable_cpus")
 
     @property
     @pulumi.getter(name="rotateOrdsCertsTrigger")
@@ -344,6 +435,14 @@ class GetCloudAutonomousVmClusterResult:
         """
         return pulumi.get(self, "time_updated")
 
+    @property
+    @pulumi.getter(name="totalContainerDatabases")
+    def total_container_databases(self) -> int:
+        """
+        The total number of Autonomous Container Databases that can be created with the allocated local storage.
+        """
+        return pulumi.get(self, "total_container_databases")
+
 
 class AwaitableGetCloudAutonomousVmClusterResult(GetCloudAutonomousVmClusterResult):
     # pylint: disable=using-constant-test
@@ -351,13 +450,19 @@ class AwaitableGetCloudAutonomousVmClusterResult(GetCloudAutonomousVmClusterResu
         if False:
             yield self
         return GetCloudAutonomousVmClusterResult(
+            autonomous_data_storage_size_in_tbs=self.autonomous_data_storage_size_in_tbs,
             availability_domain=self.availability_domain,
+            available_autonomous_data_storage_size_in_tbs=self.available_autonomous_data_storage_size_in_tbs,
+            available_container_databases=self.available_container_databases,
+            available_cpus=self.available_cpus,
             cloud_autonomous_vm_cluster_id=self.cloud_autonomous_vm_cluster_id,
             cloud_exadata_infrastructure_id=self.cloud_exadata_infrastructure_id,
+            cluster_time_zone=self.cluster_time_zone,
             compartment_id=self.compartment_id,
             cpu_core_count=self.cpu_core_count,
             data_storage_size_in_gb=self.data_storage_size_in_gb,
             data_storage_size_in_tbs=self.data_storage_size_in_tbs,
+            db_node_storage_size_in_gbs=self.db_node_storage_size_in_gbs,
             defined_tags=self.defined_tags,
             description=self.description,
             display_name=self.display_name,
@@ -369,18 +474,21 @@ class AwaitableGetCloudAutonomousVmClusterResult(GetCloudAutonomousVmClusterResu
             last_update_history_entry_id=self.last_update_history_entry_id,
             license_model=self.license_model,
             lifecycle_details=self.lifecycle_details,
+            memory_per_oracle_compute_unit_in_gbs=self.memory_per_oracle_compute_unit_in_gbs,
             memory_size_in_gbs=self.memory_size_in_gbs,
             next_maintenance_run_id=self.next_maintenance_run_id,
             node_count=self.node_count,
             nsg_ids=self.nsg_ids,
             ocpu_count=self.ocpu_count,
+            reclaimable_cpus=self.reclaimable_cpus,
             rotate_ords_certs_trigger=self.rotate_ords_certs_trigger,
             rotate_ssl_certs_trigger=self.rotate_ssl_certs_trigger,
             shape=self.shape,
             state=self.state,
             subnet_id=self.subnet_id,
             time_created=self.time_created,
-            time_updated=self.time_updated)
+            time_updated=self.time_updated,
+            total_container_databases=self.total_container_databases)
 
 
 def get_cloud_autonomous_vm_cluster(cloud_autonomous_vm_cluster_id: Optional[str] = None,
@@ -411,13 +519,19 @@ def get_cloud_autonomous_vm_cluster(cloud_autonomous_vm_cluster_id: Optional[str
     __ret__ = pulumi.runtime.invoke('oci:Database/getCloudAutonomousVmCluster:getCloudAutonomousVmCluster', __args__, opts=opts, typ=GetCloudAutonomousVmClusterResult).value
 
     return AwaitableGetCloudAutonomousVmClusterResult(
+        autonomous_data_storage_size_in_tbs=__ret__.autonomous_data_storage_size_in_tbs,
         availability_domain=__ret__.availability_domain,
+        available_autonomous_data_storage_size_in_tbs=__ret__.available_autonomous_data_storage_size_in_tbs,
+        available_container_databases=__ret__.available_container_databases,
+        available_cpus=__ret__.available_cpus,
         cloud_autonomous_vm_cluster_id=__ret__.cloud_autonomous_vm_cluster_id,
         cloud_exadata_infrastructure_id=__ret__.cloud_exadata_infrastructure_id,
+        cluster_time_zone=__ret__.cluster_time_zone,
         compartment_id=__ret__.compartment_id,
         cpu_core_count=__ret__.cpu_core_count,
         data_storage_size_in_gb=__ret__.data_storage_size_in_gb,
         data_storage_size_in_tbs=__ret__.data_storage_size_in_tbs,
+        db_node_storage_size_in_gbs=__ret__.db_node_storage_size_in_gbs,
         defined_tags=__ret__.defined_tags,
         description=__ret__.description,
         display_name=__ret__.display_name,
@@ -429,18 +543,21 @@ def get_cloud_autonomous_vm_cluster(cloud_autonomous_vm_cluster_id: Optional[str
         last_update_history_entry_id=__ret__.last_update_history_entry_id,
         license_model=__ret__.license_model,
         lifecycle_details=__ret__.lifecycle_details,
+        memory_per_oracle_compute_unit_in_gbs=__ret__.memory_per_oracle_compute_unit_in_gbs,
         memory_size_in_gbs=__ret__.memory_size_in_gbs,
         next_maintenance_run_id=__ret__.next_maintenance_run_id,
         node_count=__ret__.node_count,
         nsg_ids=__ret__.nsg_ids,
         ocpu_count=__ret__.ocpu_count,
+        reclaimable_cpus=__ret__.reclaimable_cpus,
         rotate_ords_certs_trigger=__ret__.rotate_ords_certs_trigger,
         rotate_ssl_certs_trigger=__ret__.rotate_ssl_certs_trigger,
         shape=__ret__.shape,
         state=__ret__.state,
         subnet_id=__ret__.subnet_id,
         time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        time_updated=__ret__.time_updated,
+        total_container_databases=__ret__.total_container_databases)
 
 
 @_utilities.lift_output_func(get_cloud_autonomous_vm_cluster)

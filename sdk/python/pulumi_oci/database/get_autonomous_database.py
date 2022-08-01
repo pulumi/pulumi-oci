@@ -21,7 +21,7 @@ class GetAutonomousDatabaseResult:
     """
     A collection of values returned by getAutonomousDatabase.
     """
-    def __init__(__self__, actual_used_data_storage_size_in_tbs=None, admin_password=None, allocated_storage_size_in_tbs=None, apex_details=None, are_primary_whitelisted_ips_used=None, autonomous_container_database_id=None, autonomous_database_backup_id=None, autonomous_database_id=None, autonomous_maintenance_schedule_type=None, available_upgrade_versions=None, backup_configs=None, clone_type=None, compartment_id=None, connection_strings=None, connection_urls=None, cpu_core_count=None, customer_contacts=None, data_safe_status=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, database_edition=None, database_management_status=None, dataguard_region_type=None, db_name=None, db_version=None, db_workload=None, defined_tags=None, display_name=None, failed_data_recovery_in_seconds=None, freeform_tags=None, id=None, infrastructure_type=None, is_access_control_enabled=None, is_auto_scaling_enabled=None, is_auto_scaling_for_storage_enabled=None, is_data_guard_enabled=None, is_dedicated=None, is_free_tier=None, is_mtls_connection_required=None, is_preview=None, is_preview_version_with_service_terms_accepted=None, is_reconnect_clone_enabled=None, is_refreshable_clone=None, is_shrink_only=None, key_history_entries=None, key_store_id=None, key_store_wallet_name=None, kms_key_id=None, kms_key_lifecycle_details=None, kms_key_version_id=None, license_model=None, lifecycle_details=None, max_cpu_core_count=None, memory_per_oracle_compute_unit_in_gbs=None, nsg_ids=None, ocpu_count=None, open_mode=None, operations_insights_status=None, peer_db_ids=None, permission_level=None, private_endpoint=None, private_endpoint_ip=None, private_endpoint_label=None, refreshable_mode=None, refreshable_status=None, role=None, rotate_key_trigger=None, scheduled_operations=None, service_console_url=None, source=None, source_id=None, standby_dbs=None, standby_whitelisted_ips=None, state=None, subnet_id=None, supported_regions_to_clone_tos=None, switchover_to=None, switchover_to_remote_peer_id=None, system_tags=None, time_created=None, time_data_guard_role_changed=None, time_deletion_of_free_autonomous_database=None, time_local_data_guard_enabled=None, time_maintenance_begin=None, time_maintenance_end=None, time_of_last_failover=None, time_of_last_refresh=None, time_of_last_refresh_point=None, time_of_last_switchover=None, time_of_next_refresh=None, time_reclamation_of_free_autonomous_database=None, time_until_reconnect_clone_enabled=None, timestamp=None, used_data_storage_size_in_tbs=None, vault_id=None, whitelisted_ips=None):
+    def __init__(__self__, actual_used_data_storage_size_in_tbs=None, admin_password=None, allocated_storage_size_in_tbs=None, apex_details=None, are_primary_whitelisted_ips_used=None, autonomous_container_database_id=None, autonomous_database_backup_id=None, autonomous_database_id=None, autonomous_maintenance_schedule_type=None, available_upgrade_versions=None, backup_configs=None, character_set=None, clone_type=None, compartment_id=None, connection_strings=None, connection_urls=None, cpu_core_count=None, customer_contacts=None, data_safe_status=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, database_edition=None, database_management_status=None, dataguard_region_type=None, db_name=None, db_version=None, db_workload=None, defined_tags=None, display_name=None, failed_data_recovery_in_seconds=None, freeform_tags=None, id=None, infrastructure_type=None, is_access_control_enabled=None, is_auto_scaling_enabled=None, is_auto_scaling_for_storage_enabled=None, is_data_guard_enabled=None, is_dedicated=None, is_free_tier=None, is_local_data_guard_enabled=None, is_mtls_connection_required=None, is_preview=None, is_preview_version_with_service_terms_accepted=None, is_reconnect_clone_enabled=None, is_refreshable_clone=None, is_remote_data_guard_enabled=None, is_shrink_only=None, key_history_entries=None, key_store_id=None, key_store_wallet_name=None, kms_key_id=None, kms_key_lifecycle_details=None, kms_key_version_id=None, license_model=None, lifecycle_details=None, local_standby_dbs=None, max_cpu_core_count=None, memory_per_oracle_compute_unit_in_gbs=None, ncharacter_set=None, nsg_ids=None, ocpu_count=None, open_mode=None, operations_insights_status=None, peer_db_ids=None, permission_level=None, private_endpoint=None, private_endpoint_ip=None, private_endpoint_label=None, provisionable_cpuses=None, refreshable_mode=None, refreshable_status=None, role=None, rotate_key_trigger=None, scheduled_operations=None, service_console_url=None, source=None, source_id=None, standby_dbs=None, standby_whitelisted_ips=None, state=None, subnet_id=None, supported_regions_to_clone_tos=None, switchover_to=None, switchover_to_remote_peer_id=None, system_tags=None, time_created=None, time_data_guard_role_changed=None, time_deletion_of_free_autonomous_database=None, time_local_data_guard_enabled=None, time_maintenance_begin=None, time_maintenance_end=None, time_of_last_failover=None, time_of_last_refresh=None, time_of_last_refresh_point=None, time_of_last_switchover=None, time_of_next_refresh=None, time_reclamation_of_free_autonomous_database=None, time_until_reconnect_clone_enabled=None, timestamp=None, used_data_storage_size_in_tbs=None, vault_id=None, whitelisted_ips=None):
         if actual_used_data_storage_size_in_tbs and not isinstance(actual_used_data_storage_size_in_tbs, float):
             raise TypeError("Expected argument 'actual_used_data_storage_size_in_tbs' to be a float")
         pulumi.set(__self__, "actual_used_data_storage_size_in_tbs", actual_used_data_storage_size_in_tbs)
@@ -55,6 +55,9 @@ class GetAutonomousDatabaseResult:
         if backup_configs and not isinstance(backup_configs, list):
             raise TypeError("Expected argument 'backup_configs' to be a list")
         pulumi.set(__self__, "backup_configs", backup_configs)
+        if character_set and not isinstance(character_set, str):
+            raise TypeError("Expected argument 'character_set' to be a str")
+        pulumi.set(__self__, "character_set", character_set)
         if clone_type and not isinstance(clone_type, str):
             raise TypeError("Expected argument 'clone_type' to be a str")
         pulumi.set(__self__, "clone_type", clone_type)
@@ -136,6 +139,9 @@ class GetAutonomousDatabaseResult:
         if is_free_tier and not isinstance(is_free_tier, bool):
             raise TypeError("Expected argument 'is_free_tier' to be a bool")
         pulumi.set(__self__, "is_free_tier", is_free_tier)
+        if is_local_data_guard_enabled and not isinstance(is_local_data_guard_enabled, bool):
+            raise TypeError("Expected argument 'is_local_data_guard_enabled' to be a bool")
+        pulumi.set(__self__, "is_local_data_guard_enabled", is_local_data_guard_enabled)
         if is_mtls_connection_required and not isinstance(is_mtls_connection_required, bool):
             raise TypeError("Expected argument 'is_mtls_connection_required' to be a bool")
         pulumi.set(__self__, "is_mtls_connection_required", is_mtls_connection_required)
@@ -151,6 +157,9 @@ class GetAutonomousDatabaseResult:
         if is_refreshable_clone and not isinstance(is_refreshable_clone, bool):
             raise TypeError("Expected argument 'is_refreshable_clone' to be a bool")
         pulumi.set(__self__, "is_refreshable_clone", is_refreshable_clone)
+        if is_remote_data_guard_enabled and not isinstance(is_remote_data_guard_enabled, bool):
+            raise TypeError("Expected argument 'is_remote_data_guard_enabled' to be a bool")
+        pulumi.set(__self__, "is_remote_data_guard_enabled", is_remote_data_guard_enabled)
         if is_shrink_only and not isinstance(is_shrink_only, bool):
             raise TypeError("Expected argument 'is_shrink_only' to be a bool")
         pulumi.set(__self__, "is_shrink_only", is_shrink_only)
@@ -178,12 +187,18 @@ class GetAutonomousDatabaseResult:
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if local_standby_dbs and not isinstance(local_standby_dbs, list):
+            raise TypeError("Expected argument 'local_standby_dbs' to be a list")
+        pulumi.set(__self__, "local_standby_dbs", local_standby_dbs)
         if max_cpu_core_count and not isinstance(max_cpu_core_count, int):
             raise TypeError("Expected argument 'max_cpu_core_count' to be a int")
         pulumi.set(__self__, "max_cpu_core_count", max_cpu_core_count)
         if memory_per_oracle_compute_unit_in_gbs and not isinstance(memory_per_oracle_compute_unit_in_gbs, int):
             raise TypeError("Expected argument 'memory_per_oracle_compute_unit_in_gbs' to be a int")
         pulumi.set(__self__, "memory_per_oracle_compute_unit_in_gbs", memory_per_oracle_compute_unit_in_gbs)
+        if ncharacter_set and not isinstance(ncharacter_set, str):
+            raise TypeError("Expected argument 'ncharacter_set' to be a str")
+        pulumi.set(__self__, "ncharacter_set", ncharacter_set)
         if nsg_ids and not isinstance(nsg_ids, list):
             raise TypeError("Expected argument 'nsg_ids' to be a list")
         pulumi.set(__self__, "nsg_ids", nsg_ids)
@@ -211,6 +226,9 @@ class GetAutonomousDatabaseResult:
         if private_endpoint_label and not isinstance(private_endpoint_label, str):
             raise TypeError("Expected argument 'private_endpoint_label' to be a str")
         pulumi.set(__self__, "private_endpoint_label", private_endpoint_label)
+        if provisionable_cpuses and not isinstance(provisionable_cpuses, list):
+            raise TypeError("Expected argument 'provisionable_cpuses' to be a list")
+        pulumi.set(__self__, "provisionable_cpuses", provisionable_cpuses)
         if refreshable_mode and not isinstance(refreshable_mode, str):
             raise TypeError("Expected argument 'refreshable_mode' to be a str")
         pulumi.set(__self__, "refreshable_mode", refreshable_mode)
@@ -389,6 +407,14 @@ class GetAutonomousDatabaseResult:
         Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
         """
         return pulumi.get(self, "backup_configs")
+
+    @property
+    @pulumi.getter(name="characterSet")
+    def character_set(self) -> str:
+        """
+        The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
+        """
+        return pulumi.get(self, "character_set")
 
     @property
     @pulumi.getter(name="cloneType")
@@ -587,7 +613,7 @@ class GetAutonomousDatabaseResult:
     @pulumi.getter(name="isDataGuardEnabled")
     def is_data_guard_enabled(self) -> bool:
         """
-        Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to  Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         """
         return pulumi.get(self, "is_data_guard_enabled")
 
@@ -606,6 +632,14 @@ class GetAutonomousDatabaseResult:
         Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
         """
         return pulumi.get(self, "is_free_tier")
+
+    @property
+    @pulumi.getter(name="isLocalDataGuardEnabled")
+    def is_local_data_guard_enabled(self) -> bool:
+        """
+        Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        """
+        return pulumi.get(self, "is_local_data_guard_enabled")
 
     @property
     @pulumi.getter(name="isMtlsConnectionRequired")
@@ -643,6 +677,14 @@ class GetAutonomousDatabaseResult:
         Indicates whether the Autonomous Database is a refreshable clone.
         """
         return pulumi.get(self, "is_refreshable_clone")
+
+    @property
+    @pulumi.getter(name="isRemoteDataGuardEnabled")
+    def is_remote_data_guard_enabled(self) -> bool:
+        """
+        Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        """
+        return pulumi.get(self, "is_remote_data_guard_enabled")
 
     @property
     @pulumi.getter(name="isShrinkOnly")
@@ -714,6 +756,14 @@ class GetAutonomousDatabaseResult:
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter(name="localStandbyDbs")
+    def local_standby_dbs(self) -> Sequence['outputs.GetAutonomousDatabaseLocalStandbyDbResult']:
+        """
+        Autonomous Data Guard standby database details.
+        """
+        return pulumi.get(self, "local_standby_dbs")
+
+    @property
     @pulumi.getter(name="maxCpuCoreCount")
     def max_cpu_core_count(self) -> int:
         """
@@ -730,11 +780,19 @@ class GetAutonomousDatabaseResult:
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
 
     @property
+    @pulumi.getter(name="ncharacterSet")
+    def ncharacter_set(self) -> str:
+        """
+        The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
+        """
+        return pulumi.get(self, "ncharacter_set")
+
+    @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Sequence[str]:
         """
-        A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+        The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+        * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         """
         return pulumi.get(self, "nsg_ids")
 
@@ -803,6 +861,14 @@ class GetAutonomousDatabaseResult:
         return pulumi.get(self, "private_endpoint_label")
 
     @property
+    @pulumi.getter(name="provisionableCpuses")
+    def provisionable_cpuses(self) -> Sequence[float]:
+        """
+        An array of CPU values that an Autonomous Database can be scaled to.
+        """
+        return pulumi.get(self, "provisionable_cpuses")
+
+    @property
     @pulumi.getter(name="refreshableMode")
     def refreshable_mode(self) -> str:
         """
@@ -864,7 +930,7 @@ class GetAutonomousDatabaseResult:
     @pulumi.getter(name="standbyDbs")
     def standby_dbs(self) -> Sequence['outputs.GetAutonomousDatabaseStandbyDbResult']:
         """
-        Autonomous Data Guard standby database details.
+        **Deprecated** Autonomous Data Guard standby database details.
         """
         return pulumi.get(self, "standby_dbs")
 
@@ -1069,6 +1135,7 @@ class AwaitableGetAutonomousDatabaseResult(GetAutonomousDatabaseResult):
             autonomous_maintenance_schedule_type=self.autonomous_maintenance_schedule_type,
             available_upgrade_versions=self.available_upgrade_versions,
             backup_configs=self.backup_configs,
+            character_set=self.character_set,
             clone_type=self.clone_type,
             compartment_id=self.compartment_id,
             connection_strings=self.connection_strings,
@@ -1096,11 +1163,13 @@ class AwaitableGetAutonomousDatabaseResult(GetAutonomousDatabaseResult):
             is_data_guard_enabled=self.is_data_guard_enabled,
             is_dedicated=self.is_dedicated,
             is_free_tier=self.is_free_tier,
+            is_local_data_guard_enabled=self.is_local_data_guard_enabled,
             is_mtls_connection_required=self.is_mtls_connection_required,
             is_preview=self.is_preview,
             is_preview_version_with_service_terms_accepted=self.is_preview_version_with_service_terms_accepted,
             is_reconnect_clone_enabled=self.is_reconnect_clone_enabled,
             is_refreshable_clone=self.is_refreshable_clone,
+            is_remote_data_guard_enabled=self.is_remote_data_guard_enabled,
             is_shrink_only=self.is_shrink_only,
             key_history_entries=self.key_history_entries,
             key_store_id=self.key_store_id,
@@ -1110,8 +1179,10 @@ class AwaitableGetAutonomousDatabaseResult(GetAutonomousDatabaseResult):
             kms_key_version_id=self.kms_key_version_id,
             license_model=self.license_model,
             lifecycle_details=self.lifecycle_details,
+            local_standby_dbs=self.local_standby_dbs,
             max_cpu_core_count=self.max_cpu_core_count,
             memory_per_oracle_compute_unit_in_gbs=self.memory_per_oracle_compute_unit_in_gbs,
+            ncharacter_set=self.ncharacter_set,
             nsg_ids=self.nsg_ids,
             ocpu_count=self.ocpu_count,
             open_mode=self.open_mode,
@@ -1121,6 +1192,7 @@ class AwaitableGetAutonomousDatabaseResult(GetAutonomousDatabaseResult):
             private_endpoint=self.private_endpoint,
             private_endpoint_ip=self.private_endpoint_ip,
             private_endpoint_label=self.private_endpoint_label,
+            provisionable_cpuses=self.provisionable_cpuses,
             refreshable_mode=self.refreshable_mode,
             refreshable_status=self.refreshable_status,
             role=self.role,
@@ -1195,6 +1267,7 @@ def get_autonomous_database(autonomous_database_id: Optional[str] = None,
         autonomous_maintenance_schedule_type=__ret__.autonomous_maintenance_schedule_type,
         available_upgrade_versions=__ret__.available_upgrade_versions,
         backup_configs=__ret__.backup_configs,
+        character_set=__ret__.character_set,
         clone_type=__ret__.clone_type,
         compartment_id=__ret__.compartment_id,
         connection_strings=__ret__.connection_strings,
@@ -1222,11 +1295,13 @@ def get_autonomous_database(autonomous_database_id: Optional[str] = None,
         is_data_guard_enabled=__ret__.is_data_guard_enabled,
         is_dedicated=__ret__.is_dedicated,
         is_free_tier=__ret__.is_free_tier,
+        is_local_data_guard_enabled=__ret__.is_local_data_guard_enabled,
         is_mtls_connection_required=__ret__.is_mtls_connection_required,
         is_preview=__ret__.is_preview,
         is_preview_version_with_service_terms_accepted=__ret__.is_preview_version_with_service_terms_accepted,
         is_reconnect_clone_enabled=__ret__.is_reconnect_clone_enabled,
         is_refreshable_clone=__ret__.is_refreshable_clone,
+        is_remote_data_guard_enabled=__ret__.is_remote_data_guard_enabled,
         is_shrink_only=__ret__.is_shrink_only,
         key_history_entries=__ret__.key_history_entries,
         key_store_id=__ret__.key_store_id,
@@ -1236,8 +1311,10 @@ def get_autonomous_database(autonomous_database_id: Optional[str] = None,
         kms_key_version_id=__ret__.kms_key_version_id,
         license_model=__ret__.license_model,
         lifecycle_details=__ret__.lifecycle_details,
+        local_standby_dbs=__ret__.local_standby_dbs,
         max_cpu_core_count=__ret__.max_cpu_core_count,
         memory_per_oracle_compute_unit_in_gbs=__ret__.memory_per_oracle_compute_unit_in_gbs,
+        ncharacter_set=__ret__.ncharacter_set,
         nsg_ids=__ret__.nsg_ids,
         ocpu_count=__ret__.ocpu_count,
         open_mode=__ret__.open_mode,
@@ -1247,6 +1324,7 @@ def get_autonomous_database(autonomous_database_id: Optional[str] = None,
         private_endpoint=__ret__.private_endpoint,
         private_endpoint_ip=__ret__.private_endpoint_ip,
         private_endpoint_label=__ret__.private_endpoint_label,
+        provisionable_cpuses=__ret__.provisionable_cpuses,
         refreshable_mode=__ret__.refreshable_mode,
         refreshable_status=__ret__.refreshable_status,
         role=__ret__.role,

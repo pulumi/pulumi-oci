@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetConfigsFilter {
     /**
-     * @return The name of the metric
+     * @return The name of the metric. This must be a known metric name.
      * 
      */
     private final String name;
@@ -32,7 +32,7 @@ public final class GetConfigsFilter {
     }
 
     /**
-     * @return The name of the metric
+     * @return The name of the metric. This must be a known metric name.
      * 
      */
     public String name() {

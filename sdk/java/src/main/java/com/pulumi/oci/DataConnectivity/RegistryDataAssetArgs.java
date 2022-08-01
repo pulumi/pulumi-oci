@@ -12,6 +12,7 @@ import com.pulumi.oci.DataConnectivity.inputs.RegistryDataAssetRegistryMetadataA
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -65,6 +66,21 @@ public final class RegistryDataAssetArgs extends com.pulumi.resources.ResourceAr
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
+    }
+
+    /**
+     * (Updatable) The list of endpoints with which this data asset is associated.
+     * 
+     */
+    @Import(name="endPoints")
+    private @Nullable Output<List<String>> endPoints;
+
+    /**
+     * @return (Updatable) The list of endpoints with which this data asset is associated.
+     * 
+     */
+    public Optional<Output<List<String>>> endPoints() {
+        return Optional.ofNullable(this.endPoints);
     }
 
     /**
@@ -283,6 +299,7 @@ public final class RegistryDataAssetArgs extends com.pulumi.resources.ResourceAr
         this.assetProperties = $.assetProperties;
         this.defaultConnection = $.defaultConnection;
         this.description = $.description;
+        this.endPoints = $.endPoints;
         this.externalKey = $.externalKey;
         this.identifier = $.identifier;
         this.key = $.key;
@@ -378,6 +395,37 @@ public final class RegistryDataAssetArgs extends com.pulumi.resources.ResourceAr
          */
         public Builder description(String description) {
             return description(Output.of(description));
+        }
+
+        /**
+         * @param endPoints (Updatable) The list of endpoints with which this data asset is associated.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder endPoints(@Nullable Output<List<String>> endPoints) {
+            $.endPoints = endPoints;
+            return this;
+        }
+
+        /**
+         * @param endPoints (Updatable) The list of endpoints with which this data asset is associated.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder endPoints(List<String> endPoints) {
+            return endPoints(Output.of(endPoints));
+        }
+
+        /**
+         * @param endPoints (Updatable) The list of endpoints with which this data asset is associated.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder endPoints(String... endPoints) {
+            return endPoints(List.of(endPoints));
         }
 
         /**

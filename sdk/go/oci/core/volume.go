@@ -105,7 +105,7 @@ type Volume struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
-	// (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume.
+	// (Updatable) Specifies whether the auto-tune performance is enabled for this volume.
 	IsAutoTuneEnabled pulumi.BoolOutput `pulumi:"isAutoTuneEnabled"`
 	// Specifies whether the cloned volume's data has finished copying from the source volume or backup.
 	IsHydrated pulumi.BoolOutput `pulumi:"isHydrated"`
@@ -186,7 +186,7 @@ type volumeState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume.
+	// (Updatable) Specifies whether the auto-tune performance is enabled for this volume.
 	IsAutoTuneEnabled *bool `pulumi:"isAutoTuneEnabled"`
 	// Specifies whether the cloned volume's data has finished copying from the source volume or backup.
 	IsHydrated *bool `pulumi:"isHydrated"`
@@ -233,7 +233,7 @@ type VolumeState struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
-	// (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume.
+	// (Updatable) Specifies whether the auto-tune performance is enabled for this volume.
 	IsAutoTuneEnabled pulumi.BoolPtrInput
 	// Specifies whether the cloned volume's data has finished copying from the source volume or backup.
 	IsHydrated pulumi.BoolPtrInput
@@ -282,7 +282,7 @@ type volumeArgs struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume.
+	// (Updatable) Specifies whether the auto-tune performance is enabled for this volume.
 	IsAutoTuneEnabled *bool `pulumi:"isAutoTuneEnabled"`
 	// (Updatable) The OCID of the Key Management key to assign as the master encryption key for the volume.
 	KmsKeyId *string `pulumi:"kmsKeyId"`
@@ -318,7 +318,7 @@ type VolumeArgs struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
-	// (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume.
+	// (Updatable) Specifies whether the auto-tune performance is enabled for this volume.
 	IsAutoTuneEnabled pulumi.BoolPtrInput
 	// (Updatable) The OCID of the Key Management key to assign as the master encryption key for the volume.
 	KmsKeyId pulumi.StringPtrInput

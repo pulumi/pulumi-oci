@@ -41,18 +41,29 @@ namespace Pulumi.Oci.Database
     ///             TransportType = @var.Data_guard_association_transport_type,
     ///             AvailabilityDomain = @var.Data_guard_association_availability_domain,
     ///             BackupNetworkNsgIds = @var.Data_guard_association_backup_network_nsg_ids,
+    ///             CpuCoreCount = @var.Data_guard_association_cpu_core_count,
+    ///             DatabaseDefinedTags = @var.Data_guard_association_database_defined_tags,
+    ///             DatabaseFreeformTags = @var.Data_guard_association_database_freeform_tags,
     ///             DatabaseSoftwareImageId = oci_database_database_software_image.Test_database_software_image.Id,
+    ///             DbSystemDefinedTags = @var.Data_guard_association_db_system_defined_tags,
+    ///             DbSystemFreeformTags = @var.Data_guard_association_db_system_freeform_tags,
     ///             DisplayName = @var.Data_guard_association_display_name,
+    ///             FaultDomains = @var.Data_guard_association_fault_domains,
     ///             Hostname = @var.Data_guard_association_hostname,
     ///             IsActiveDataGuardEnabled = @var.Data_guard_association_is_active_data_guard_enabled,
+    ///             LicenseModel = @var.Data_guard_association_license_model,
+    ///             NodeCount = @var.Data_guard_association_node_count,
     ///             NsgIds = @var.Data_guard_association_nsg_ids,
     ///             PeerDbHomeId = oci_database_db_home.Test_db_home.Id,
     ///             PeerDbSystemId = oci_database_db_system.Test_db_system.Id,
     ///             PeerDbUniqueName = @var.Data_guard_association_peer_db_unique_name,
     ///             PeerSidPrefix = @var.Data_guard_association_peer_sid_prefix,
     ///             PeerVmClusterId = oci_database_vm_cluster.Test_vm_cluster.Id,
+    ///             PrivateIp = @var.Data_guard_association_private_ip,
     ///             Shape = @var.Data_guard_association_shape,
+    ///             StorageVolumePerformanceMode = @var.Data_guard_association_storage_volume_performance_mode,
     ///             SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///             TimeZone = @var.Data_guard_association_time_zone,
     ///         });
     ///     }
     /// 
@@ -90,6 +101,12 @@ namespace Pulumi.Oci.Database
         [Output("backupNetworkNsgIds")]
         public Output<ImmutableArray<string>> BackupNetworkNsgIds { get; private set; } = null!;
 
+        /// <summary>
+        /// The number of OCPU cores available for AMD-based virtual machine DB systems.
+        /// </summary>
+        [Output("cpuCoreCount")]
+        public Output<int> CpuCoreCount { get; private set; } = null!;
+
         [Output("createAsync")]
         public Output<bool?> CreateAsync { get; private set; } = null!;
 
@@ -106,6 +123,18 @@ namespace Pulumi.Oci.Database
         public Output<string> DatabaseAdminPassword { get; private set; } = null!;
 
         /// <summary>
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        /// </summary>
+        [Output("databaseDefinedTags")]
+        public Output<ImmutableDictionary<string, object>?> DatabaseDefinedTags { get; private set; } = null!;
+
+        /// <summary>
+        /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        /// </summary>
+        [Output("databaseFreeformTags")]
+        public Output<ImmutableDictionary<string, object>?> DatabaseFreeformTags { get; private set; } = null!;
+
+        /// <summary>
         /// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Output("databaseId")]
@@ -117,6 +146,18 @@ namespace Pulumi.Oci.Database
         [Output("databaseSoftwareImageId")]
         public Output<string?> DatabaseSoftwareImageId { get; private set; } = null!;
 
+        /// <summary>
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        /// </summary>
+        [Output("dbSystemDefinedTags")]
+        public Output<ImmutableDictionary<string, object>?> DbSystemDefinedTags { get; private set; } = null!;
+
+        /// <summary>
+        /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        /// </summary>
+        [Output("dbSystemFreeformTags")]
+        public Output<ImmutableDictionary<string, object>?> DbSystemFreeformTags { get; private set; } = null!;
+
         [Output("deleteStandbyDbHomeOnDelete")]
         public Output<string> DeleteStandbyDbHomeOnDelete { get; private set; } = null!;
 
@@ -125,6 +166,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
+
+        /// <summary>
+        /// A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
+        /// </summary>
+        [Output("faultDomains")]
+        public Output<ImmutableArray<string>> FaultDomains { get; private set; } = null!;
 
         /// <summary>
         /// The hostname for the DB node.
@@ -139,14 +186,26 @@ namespace Pulumi.Oci.Database
         public Output<bool> IsActiveDataGuardEnabled { get; private set; } = null!;
 
         /// <summary>
+        /// The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED.
+        /// </summary>
+        [Output("licenseModel")]
+        public Output<string?> LicenseModel { get; private set; } = null!;
+
+        /// <summary>
         /// Additional information about the current lifecycleState, if available.
         /// </summary>
         [Output("lifecycleDetails")]
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
-        /// A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        /// * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+        /// The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
+        /// </summary>
+        [Output("nodeCount")]
+        public Output<int?> NodeCount { get; private set; } = null!;
+
+        /// <summary>
+        /// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+        /// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         /// </summary>
         [Output("nsgIds")]
         public Output<ImmutableArray<string>> NsgIds { get; private set; } = null!;
@@ -200,6 +259,12 @@ namespace Pulumi.Oci.Database
         public Output<string> PeerVmClusterId { get; private set; } = null!;
 
         /// <summary>
+        /// The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
+        /// </summary>
+        [Output("privateIp")]
+        public Output<string?> PrivateIp { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The protection mode to set up between the primary and standby databases. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         /// </summary>
         [Output("protectionMode")]
@@ -224,6 +289,12 @@ namespace Pulumi.Oci.Database
         public Output<string> State { get; private set; } = null!;
 
         /// <summary>
+        /// The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
+        /// </summary>
+        [Output("storageVolumePerformanceMode")]
+        public Output<string> StorageVolumePerformanceMode { get; private set; } = null!;
+
+        /// <summary>
         /// The OCID of the subnet the DB system is associated with. **Subnet Restrictions:**
         /// * For 1- and 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.16.16/28
         /// </summary>
@@ -235,6 +306,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
+
+        /// <summary>
+        /// The time zone of the dataguard standby DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+        /// </summary>
+        [Output("timeZone")]
+        public Output<string?> TimeZone { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
@@ -309,6 +386,12 @@ namespace Pulumi.Oci.Database
             set => _backupNetworkNsgIds = value;
         }
 
+        /// <summary>
+        /// The number of OCPU cores available for AMD-based virtual machine DB systems.
+        /// </summary>
+        [Input("cpuCoreCount")]
+        public Input<int>? CpuCoreCount { get; set; }
+
         [Input("createAsync")]
         public Input<bool>? CreateAsync { get; set; }
 
@@ -324,6 +407,30 @@ namespace Pulumi.Oci.Database
         [Input("databaseAdminPassword", required: true)]
         public Input<string> DatabaseAdminPassword { get; set; } = null!;
 
+        [Input("databaseDefinedTags")]
+        private InputMap<object>? _databaseDefinedTags;
+
+        /// <summary>
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        /// </summary>
+        public InputMap<object> DatabaseDefinedTags
+        {
+            get => _databaseDefinedTags ?? (_databaseDefinedTags = new InputMap<object>());
+            set => _databaseDefinedTags = value;
+        }
+
+        [Input("databaseFreeformTags")]
+        private InputMap<object>? _databaseFreeformTags;
+
+        /// <summary>
+        /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        /// </summary>
+        public InputMap<object> DatabaseFreeformTags
+        {
+            get => _databaseFreeformTags ?? (_databaseFreeformTags = new InputMap<object>());
+            set => _databaseFreeformTags = value;
+        }
+
         /// <summary>
         /// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
@@ -336,6 +443,30 @@ namespace Pulumi.Oci.Database
         [Input("databaseSoftwareImageId")]
         public Input<string>? DatabaseSoftwareImageId { get; set; }
 
+        [Input("dbSystemDefinedTags")]
+        private InputMap<object>? _dbSystemDefinedTags;
+
+        /// <summary>
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        /// </summary>
+        public InputMap<object> DbSystemDefinedTags
+        {
+            get => _dbSystemDefinedTags ?? (_dbSystemDefinedTags = new InputMap<object>());
+            set => _dbSystemDefinedTags = value;
+        }
+
+        [Input("dbSystemFreeformTags")]
+        private InputMap<object>? _dbSystemFreeformTags;
+
+        /// <summary>
+        /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        /// </summary>
+        public InputMap<object> DbSystemFreeformTags
+        {
+            get => _dbSystemFreeformTags ?? (_dbSystemFreeformTags = new InputMap<object>());
+            set => _dbSystemFreeformTags = value;
+        }
+
         [Input("deleteStandbyDbHomeOnDelete", required: true)]
         public Input<string> DeleteStandbyDbHomeOnDelete { get; set; } = null!;
 
@@ -344,6 +475,18 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
+
+        [Input("faultDomains")]
+        private InputList<string>? _faultDomains;
+
+        /// <summary>
+        /// A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
+        /// </summary>
+        public InputList<string> FaultDomains
+        {
+            get => _faultDomains ?? (_faultDomains = new InputList<string>());
+            set => _faultDomains = value;
+        }
 
         /// <summary>
         /// The hostname for the DB node.
@@ -357,12 +500,24 @@ namespace Pulumi.Oci.Database
         [Input("isActiveDataGuardEnabled")]
         public Input<bool>? IsActiveDataGuardEnabled { get; set; }
 
+        /// <summary>
+        /// The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED.
+        /// </summary>
+        [Input("licenseModel")]
+        public Input<string>? LicenseModel { get; set; }
+
+        /// <summary>
+        /// The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
+        /// </summary>
+        [Input("nodeCount")]
+        public Input<int>? NodeCount { get; set; }
+
         [Input("nsgIds")]
         private InputList<string>? _nsgIds;
 
         /// <summary>
-        /// A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        /// * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+        /// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+        /// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         /// </summary>
         public InputList<string> NsgIds
         {
@@ -401,6 +556,12 @@ namespace Pulumi.Oci.Database
         public Input<string>? PeerVmClusterId { get; set; }
 
         /// <summary>
+        /// The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
+        /// </summary>
+        [Input("privateIp")]
+        public Input<string>? PrivateIp { get; set; }
+
+        /// <summary>
         /// (Updatable) The protection mode to set up between the primary and standby databases. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         /// </summary>
         [Input("protectionMode", required: true)]
@@ -413,11 +574,23 @@ namespace Pulumi.Oci.Database
         public Input<string>? Shape { get; set; }
 
         /// <summary>
+        /// The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
+        /// </summary>
+        [Input("storageVolumePerformanceMode")]
+        public Input<string>? StorageVolumePerformanceMode { get; set; }
+
+        /// <summary>
         /// The OCID of the subnet the DB system is associated with. **Subnet Restrictions:**
         /// * For 1- and 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.16.16/28
         /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }
+
+        /// <summary>
+        /// The time zone of the dataguard standby DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+        /// </summary>
+        [Input("timeZone")]
+        public Input<string>? TimeZone { get; set; }
 
         /// <summary>
         /// (Updatable) The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
@@ -465,6 +638,12 @@ namespace Pulumi.Oci.Database
             set => _backupNetworkNsgIds = value;
         }
 
+        /// <summary>
+        /// The number of OCPU cores available for AMD-based virtual machine DB systems.
+        /// </summary>
+        [Input("cpuCoreCount")]
+        public Input<int>? CpuCoreCount { get; set; }
+
         [Input("createAsync")]
         public Input<bool>? CreateAsync { get; set; }
 
@@ -480,6 +659,30 @@ namespace Pulumi.Oci.Database
         [Input("databaseAdminPassword")]
         public Input<string>? DatabaseAdminPassword { get; set; }
 
+        [Input("databaseDefinedTags")]
+        private InputMap<object>? _databaseDefinedTags;
+
+        /// <summary>
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        /// </summary>
+        public InputMap<object> DatabaseDefinedTags
+        {
+            get => _databaseDefinedTags ?? (_databaseDefinedTags = new InputMap<object>());
+            set => _databaseDefinedTags = value;
+        }
+
+        [Input("databaseFreeformTags")]
+        private InputMap<object>? _databaseFreeformTags;
+
+        /// <summary>
+        /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        /// </summary>
+        public InputMap<object> DatabaseFreeformTags
+        {
+            get => _databaseFreeformTags ?? (_databaseFreeformTags = new InputMap<object>());
+            set => _databaseFreeformTags = value;
+        }
+
         /// <summary>
         /// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
@@ -492,6 +695,30 @@ namespace Pulumi.Oci.Database
         [Input("databaseSoftwareImageId")]
         public Input<string>? DatabaseSoftwareImageId { get; set; }
 
+        [Input("dbSystemDefinedTags")]
+        private InputMap<object>? _dbSystemDefinedTags;
+
+        /// <summary>
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        /// </summary>
+        public InputMap<object> DbSystemDefinedTags
+        {
+            get => _dbSystemDefinedTags ?? (_dbSystemDefinedTags = new InputMap<object>());
+            set => _dbSystemDefinedTags = value;
+        }
+
+        [Input("dbSystemFreeformTags")]
+        private InputMap<object>? _dbSystemFreeformTags;
+
+        /// <summary>
+        /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        /// </summary>
+        public InputMap<object> DbSystemFreeformTags
+        {
+            get => _dbSystemFreeformTags ?? (_dbSystemFreeformTags = new InputMap<object>());
+            set => _dbSystemFreeformTags = value;
+        }
+
         [Input("deleteStandbyDbHomeOnDelete")]
         public Input<string>? DeleteStandbyDbHomeOnDelete { get; set; }
 
@@ -500,6 +727,18 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
+
+        [Input("faultDomains")]
+        private InputList<string>? _faultDomains;
+
+        /// <summary>
+        /// A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
+        /// </summary>
+        public InputList<string> FaultDomains
+        {
+            get => _faultDomains ?? (_faultDomains = new InputList<string>());
+            set => _faultDomains = value;
+        }
 
         /// <summary>
         /// The hostname for the DB node.
@@ -514,17 +753,29 @@ namespace Pulumi.Oci.Database
         public Input<bool>? IsActiveDataGuardEnabled { get; set; }
 
         /// <summary>
+        /// The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED.
+        /// </summary>
+        [Input("licenseModel")]
+        public Input<string>? LicenseModel { get; set; }
+
+        /// <summary>
         /// Additional information about the current lifecycleState, if available.
         /// </summary>
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
 
+        /// <summary>
+        /// The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
+        /// </summary>
+        [Input("nodeCount")]
+        public Input<int>? NodeCount { get; set; }
+
         [Input("nsgIds")]
         private InputList<string>? _nsgIds;
 
         /// <summary>
-        /// A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        /// * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+        /// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+        /// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         /// </summary>
         public InputList<string> NsgIds
         {
@@ -581,6 +832,12 @@ namespace Pulumi.Oci.Database
         public Input<string>? PeerVmClusterId { get; set; }
 
         /// <summary>
+        /// The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
+        /// </summary>
+        [Input("privateIp")]
+        public Input<string>? PrivateIp { get; set; }
+
+        /// <summary>
         /// (Updatable) The protection mode to set up between the primary and standby databases. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         /// </summary>
         [Input("protectionMode")]
@@ -605,6 +862,12 @@ namespace Pulumi.Oci.Database
         public Input<string>? State { get; set; }
 
         /// <summary>
+        /// The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
+        /// </summary>
+        [Input("storageVolumePerformanceMode")]
+        public Input<string>? StorageVolumePerformanceMode { get; set; }
+
+        /// <summary>
         /// The OCID of the subnet the DB system is associated with. **Subnet Restrictions:**
         /// * For 1- and 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.16.16/28
         /// </summary>
@@ -616,6 +879,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
+
+        /// <summary>
+        /// The time zone of the dataguard standby DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+        /// </summary>
+        [Input("timeZone")]
+        public Input<string>? TimeZone { get; set; }
 
         /// <summary>
         /// (Updatable) The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:

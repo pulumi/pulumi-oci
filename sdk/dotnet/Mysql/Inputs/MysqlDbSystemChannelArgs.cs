@@ -55,7 +55,7 @@ namespace Pulumi.Oci.Mysql.Inputs
         public Input<string>? Id { get; set; }
 
         /// <summary>
-        /// (Updatable) Specifies if automatic backups are enabled.
+        /// (Updatable) Specifies if PITR is enabled or disabled.
         /// </summary>
         [Input("isEnabled")]
         public Input<bool>? IsEnabled { get; set; }

@@ -133,6 +133,10 @@ namespace Pulumi.Oci.DataConnectivity
         /// </summary>
         public readonly string Description;
         /// <summary>
+        /// The list of endpoints with which this data asset is associated.
+        /// </summary>
+        public readonly ImmutableArray<string> EndPoints;
+        /// <summary>
         /// The external key for the object.
         /// </summary>
         public readonly string ExternalKey;
@@ -197,6 +201,8 @@ namespace Pulumi.Oci.DataConnectivity
 
             string description,
 
+            ImmutableArray<string> endPoints,
+
             string externalKey,
 
             string id,
@@ -231,6 +237,7 @@ namespace Pulumi.Oci.DataConnectivity
             DataAssetKey = dataAssetKey;
             DefaultConnections = defaultConnections;
             Description = description;
+            EndPoints = endPoints;
             ExternalKey = externalKey;
             Id = id;
             Identifier = identifier;

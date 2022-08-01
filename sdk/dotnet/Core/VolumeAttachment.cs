@@ -32,6 +32,7 @@ namespace Pulumi.Oci.Core
     ///             Device = @var.Volume_attachment_device,
     ///             DisplayName = @var.Volume_attachment_display_name,
     ///             EncryptionInTransitType = @var.Volume_attachment_encryption_in_transit_type,
+    ///             IsAgentAutoIscsiLoginEnabled = @var.Volume_attachment_is_agent_auto_iscsi_login_enabled,
     ///             IsPvEncryptionInTransitEnabled = @var.Volume_attachment_is_pv_encryption_in_transit_enabled,
     ///             IsReadOnly = @var.Volume_attachment_is_read_only,
     ///             IsShareable = @var.Volume_attachment_is_shareable,
@@ -118,6 +119,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Output("iqn")]
         public Output<string> Iqn { get; private set; } = null!;
+
+        /// <summary>
+        /// Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
+        /// </summary>
+        [Output("isAgentAutoIscsiLoginEnabled")]
+        public Output<bool> IsAgentAutoIscsiLoginEnabled { get; private set; } = null!;
 
         /// <summary>
         /// Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.
@@ -268,6 +275,12 @@ namespace Pulumi.Oci.Core
         public Input<string> InstanceId { get; set; } = null!;
 
         /// <summary>
+        /// Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
+        /// </summary>
+        [Input("isAgentAutoIscsiLoginEnabled")]
+        public Input<bool>? IsAgentAutoIscsiLoginEnabled { get; set; }
+
+        /// <summary>
         /// Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
         /// </summary>
         [Input("isPvEncryptionInTransitEnabled")]
@@ -369,6 +382,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Input("iqn")]
         public Input<string>? Iqn { get; set; }
+
+        /// <summary>
+        /// Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
+        /// </summary>
+        [Input("isAgentAutoIscsiLoginEnabled")]
+        public Input<bool>? IsAgentAutoIscsiLoginEnabled { get; set; }
 
         /// <summary>
         /// Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.

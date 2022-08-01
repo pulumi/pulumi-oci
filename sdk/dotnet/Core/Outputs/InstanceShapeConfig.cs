@@ -50,6 +50,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly double? NetworkingBandwidthInGbps;
         /// <summary>
+        /// (Updatable) The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        /// </summary>
+        public readonly int? Nvmes;
+        /// <summary>
         /// (Updatable) The total number of OCPUs available to the instance.
         /// </summary>
         public readonly double? Ocpus;
@@ -78,6 +82,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             double? networkingBandwidthInGbps,
 
+            int? nvmes,
+
             double? ocpus,
 
             string? processorDescription)
@@ -91,6 +97,7 @@ namespace Pulumi.Oci.Core.Outputs
             MaxVnicAttachments = maxVnicAttachments;
             MemoryInGbs = memoryInGbs;
             NetworkingBandwidthInGbps = networkingBandwidthInGbps;
+            Nvmes = nvmes;
             Ocpus = ocpus;
             ProcessorDescription = processorDescription;
         }

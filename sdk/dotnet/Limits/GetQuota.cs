@@ -125,6 +125,11 @@ namespace Pulumi.Oci.Limits
         /// The OCID of the quota.
         /// </summary>
         public readonly string Id;
+        public readonly bool IsLockOverride;
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetQuotaLockResult> Locks;
         /// <summary>
         /// The name you assign to the quota during creation. The name must be unique across all quotas in the tenancy and cannot be changed.
         /// </summary>
@@ -155,6 +160,10 @@ namespace Pulumi.Oci.Limits
 
             string id,
 
+            bool isLockOverride,
+
+            ImmutableArray<Outputs.GetQuotaLockResult> locks,
+
             string name,
 
             string quotaId,
@@ -170,6 +179,8 @@ namespace Pulumi.Oci.Limits
             Description = description;
             FreeformTags = freeformTags;
             Id = id;
+            IsLockOverride = isLockOverride;
+            Locks = locks;
             Name = name;
             QuotaId = quotaId;
             State = state;

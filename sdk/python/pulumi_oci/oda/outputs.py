@@ -7,11 +7,94 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
+from . import outputs
 
 __all__ = [
+    'OdaInstanceRestrictedOperation',
+    'GetOdaInstanceRestrictedOperationResult',
     'GetOdaInstancesFilterResult',
     'GetOdaInstancesOdaInstanceResult',
+    'GetOdaInstancesOdaInstanceRestrictedOperationResult',
 ]
+
+@pulumi.output_type
+class OdaInstanceRestrictedOperation(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "operationName":
+            suggest = "operation_name"
+        elif key == "restrictingService":
+            suggest = "restricting_service"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in OdaInstanceRestrictedOperation. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        OdaInstanceRestrictedOperation.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        OdaInstanceRestrictedOperation.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 operation_name: Optional[str] = None,
+                 restricting_service: Optional[str] = None):
+        """
+        :param str operation_name: Name of the restricted operation.
+        :param str restricting_service: Name of the service restricting the operation.
+        """
+        if operation_name is not None:
+            pulumi.set(__self__, "operation_name", operation_name)
+        if restricting_service is not None:
+            pulumi.set(__self__, "restricting_service", restricting_service)
+
+    @property
+    @pulumi.getter(name="operationName")
+    def operation_name(self) -> Optional[str]:
+        """
+        Name of the restricted operation.
+        """
+        return pulumi.get(self, "operation_name")
+
+    @property
+    @pulumi.getter(name="restrictingService")
+    def restricting_service(self) -> Optional[str]:
+        """
+        Name of the service restricting the operation.
+        """
+        return pulumi.get(self, "restricting_service")
+
+
+@pulumi.output_type
+class GetOdaInstanceRestrictedOperationResult(dict):
+    def __init__(__self__, *,
+                 operation_name: str,
+                 restricting_service: str):
+        """
+        :param str operation_name: Name of the restricted operation.
+        :param str restricting_service: Name of the service restricting the operation.
+        """
+        pulumi.set(__self__, "operation_name", operation_name)
+        pulumi.set(__self__, "restricting_service", restricting_service)
+
+    @property
+    @pulumi.getter(name="operationName")
+    def operation_name(self) -> str:
+        """
+        Name of the restricted operation.
+        """
+        return pulumi.get(self, "operation_name")
+
+    @property
+    @pulumi.getter(name="restrictingService")
+    def restricting_service(self) -> str:
+        """
+        Name of the service restricting the operation.
+        """
+        return pulumi.get(self, "restricting_service")
+
 
 @pulumi.output_type
 class GetOdaInstancesFilterResult(dict):
@@ -43,6 +126,8 @@ class GetOdaInstancesFilterResult(dict):
 @pulumi.output_type
 class GetOdaInstancesOdaInstanceResult(dict):
     def __init__(__self__, *,
+                 attachment_ids: Sequence[str],
+                 attachment_types: Sequence[str],
                  compartment_id: str,
                  connector_url: str,
                  defined_tags: Mapping[str, Any],
@@ -50,7 +135,14 @@ class GetOdaInstancesOdaInstanceResult(dict):
                  display_name: str,
                  freeform_tags: Mapping[str, Any],
                  id: str,
+                 identity_app_console_url: str,
+                 identity_app_guid: str,
+                 identity_domain: str,
+                 imported_package_ids: Sequence[str],
+                 imported_package_names: Sequence[str],
+                 is_role_based_access: bool,
                  lifecycle_sub_state: str,
+                 restricted_operations: Sequence['outputs.GetOdaInstancesOdaInstanceRestrictedOperationResult'],
                  shape_name: str,
                  state: str,
                  state_message: str,
@@ -58,14 +150,23 @@ class GetOdaInstancesOdaInstanceResult(dict):
                  time_updated: str,
                  web_app_url: str):
         """
+        :param Sequence[str] attachment_ids: A list of attachment identifiers for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+        :param Sequence[str] attachment_types: A list of attachment types for this instance (if any). Use attachmentIds to get the details of the attachments.
         :param str compartment_id: List the Digital Assistant instances that belong to this compartment.
         :param str connector_url: URL for the connector's endpoint.
         :param Mapping[str, Any] defined_tags: Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: Description of the Digital Assistant instance.
         :param str display_name: List only the information for the Digital Assistant instance with this user-friendly name. These names don't have to be unique and may change.  Example: `My new resource`
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
         :param str id: Unique immutable identifier that was assigned when the instance was created.
+        :param str identity_app_console_url: If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.
+        :param str identity_app_guid: If isRoleBasedAccess is set to true, this property specifies the GUID of the Identity Application instance Digital Assistant has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this Digital Assistant instance for users within the identity domain.
+        :param str identity_domain: If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
+        :param Sequence[str] imported_package_ids: A list of package ids imported into this instance (if any). Use GetImportedPackage to get the details of the imported packages.
+        :param Sequence[str] imported_package_names: A list of package names imported into this instance (if any). Use importedPackageIds field to get the details of the imported packages.
+        :param bool is_role_based_access: Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
         :param str lifecycle_sub_state: The current sub-state of the Digital Assistant instance.
+        :param Sequence['GetOdaInstancesOdaInstanceRestrictedOperationArgs'] restricted_operations: A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
         :param str shape_name: Shape or size of the instance.
         :param str state: List only the Digital Assistant instances that are in this lifecycle state.
         :param str state_message: A message that describes the current state in more detail. For example, actionable information about an instance that's in the `FAILED` state.
@@ -73,6 +174,8 @@ class GetOdaInstancesOdaInstanceResult(dict):
         :param str time_updated: When the Digital Assistance instance was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
         :param str web_app_url: URL for the Digital Assistant web application that's associated with the instance.
         """
+        pulumi.set(__self__, "attachment_ids", attachment_ids)
+        pulumi.set(__self__, "attachment_types", attachment_types)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "connector_url", connector_url)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -80,13 +183,36 @@ class GetOdaInstancesOdaInstanceResult(dict):
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "identity_app_console_url", identity_app_console_url)
+        pulumi.set(__self__, "identity_app_guid", identity_app_guid)
+        pulumi.set(__self__, "identity_domain", identity_domain)
+        pulumi.set(__self__, "imported_package_ids", imported_package_ids)
+        pulumi.set(__self__, "imported_package_names", imported_package_names)
+        pulumi.set(__self__, "is_role_based_access", is_role_based_access)
         pulumi.set(__self__, "lifecycle_sub_state", lifecycle_sub_state)
+        pulumi.set(__self__, "restricted_operations", restricted_operations)
         pulumi.set(__self__, "shape_name", shape_name)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "state_message", state_message)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
         pulumi.set(__self__, "web_app_url", web_app_url)
+
+    @property
+    @pulumi.getter(name="attachmentIds")
+    def attachment_ids(self) -> Sequence[str]:
+        """
+        A list of attachment identifiers for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+        """
+        return pulumi.get(self, "attachment_ids")
+
+    @property
+    @pulumi.getter(name="attachmentTypes")
+    def attachment_types(self) -> Sequence[str]:
+        """
+        A list of attachment types for this instance (if any). Use attachmentIds to get the details of the attachments.
+        """
+        return pulumi.get(self, "attachment_types")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -132,7 +258,7 @@ class GetOdaInstancesOdaInstanceResult(dict):
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, Any]:
         """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -145,12 +271,68 @@ class GetOdaInstancesOdaInstanceResult(dict):
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="identityAppConsoleUrl")
+    def identity_app_console_url(self) -> str:
+        """
+        If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.
+        """
+        return pulumi.get(self, "identity_app_console_url")
+
+    @property
+    @pulumi.getter(name="identityAppGuid")
+    def identity_app_guid(self) -> str:
+        """
+        If isRoleBasedAccess is set to true, this property specifies the GUID of the Identity Application instance Digital Assistant has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this Digital Assistant instance for users within the identity domain.
+        """
+        return pulumi.get(self, "identity_app_guid")
+
+    @property
+    @pulumi.getter(name="identityDomain")
+    def identity_domain(self) -> str:
+        """
+        If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
+        """
+        return pulumi.get(self, "identity_domain")
+
+    @property
+    @pulumi.getter(name="importedPackageIds")
+    def imported_package_ids(self) -> Sequence[str]:
+        """
+        A list of package ids imported into this instance (if any). Use GetImportedPackage to get the details of the imported packages.
+        """
+        return pulumi.get(self, "imported_package_ids")
+
+    @property
+    @pulumi.getter(name="importedPackageNames")
+    def imported_package_names(self) -> Sequence[str]:
+        """
+        A list of package names imported into this instance (if any). Use importedPackageIds field to get the details of the imported packages.
+        """
+        return pulumi.get(self, "imported_package_names")
+
+    @property
+    @pulumi.getter(name="isRoleBasedAccess")
+    def is_role_based_access(self) -> bool:
+        """
+        Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
+        """
+        return pulumi.get(self, "is_role_based_access")
+
+    @property
     @pulumi.getter(name="lifecycleSubState")
     def lifecycle_sub_state(self) -> str:
         """
         The current sub-state of the Digital Assistant instance.
         """
         return pulumi.get(self, "lifecycle_sub_state")
+
+    @property
+    @pulumi.getter(name="restrictedOperations")
+    def restricted_operations(self) -> Sequence['outputs.GetOdaInstancesOdaInstanceRestrictedOperationResult']:
+        """
+        A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+        """
+        return pulumi.get(self, "restricted_operations")
 
     @property
     @pulumi.getter(name="shapeName")
@@ -199,5 +381,34 @@ class GetOdaInstancesOdaInstanceResult(dict):
         URL for the Digital Assistant web application that's associated with the instance.
         """
         return pulumi.get(self, "web_app_url")
+
+
+@pulumi.output_type
+class GetOdaInstancesOdaInstanceRestrictedOperationResult(dict):
+    def __init__(__self__, *,
+                 operation_name: str,
+                 restricting_service: str):
+        """
+        :param str operation_name: Name of the restricted operation.
+        :param str restricting_service: Name of the service restricting the operation.
+        """
+        pulumi.set(__self__, "operation_name", operation_name)
+        pulumi.set(__self__, "restricting_service", restricting_service)
+
+    @property
+    @pulumi.getter(name="operationName")
+    def operation_name(self) -> str:
+        """
+        Name of the restricted operation.
+        """
+        return pulumi.get(self, "operation_name")
+
+    @property
+    @pulumi.getter(name="restrictingService")
+    def restricting_service(self) -> str:
+        """
+        Name of the service restricting the operation.
+        """
+        return pulumi.get(self, "restricting_service")
 
 

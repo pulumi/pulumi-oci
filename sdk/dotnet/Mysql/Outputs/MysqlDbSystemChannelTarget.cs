@@ -22,7 +22,7 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly string? ChannelName;
         /// <summary>
-        /// The OCID of the source DB System.
+        /// The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
         /// </summary>
         public readonly string? DbSystemId;
         /// <summary>

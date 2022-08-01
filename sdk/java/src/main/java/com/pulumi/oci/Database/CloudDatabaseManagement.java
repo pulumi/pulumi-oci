@@ -12,7 +12,9 @@ import com.pulumi.oci.Database.inputs.CloudDatabaseManagementState;
 import com.pulumi.oci.Database.outputs.CloudDatabaseManagementCredentialdetails;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -67,62 +69,6 @@ public class CloudDatabaseManagement extends com.pulumi.resources.CustomResource
         return this.enableManagement;
     }
     /**
-     * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-     * 
-     */
-    @Export(name="kmsKeyId", type=String.class, parameters={})
-    private Output<String> kmsKeyId;
-
-    /**
-     * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-     * 
-     */
-    public Output<String> kmsKeyId() {
-        return this.kmsKeyId;
-    }
-    /**
-     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-     * 
-     */
-    @Export(name="kmsKeyVersionId", type=String.class, parameters={})
-    private Output<String> kmsKeyVersionId;
-
-    /**
-     * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-     * 
-     */
-    public Output<String> kmsKeyVersionId() {
-        return this.kmsKeyVersionId;
-    }
-    /**
-     * The date and time when the latest database backup was created.
-     * 
-     */
-    @Export(name="lastBackupTimestamp", type=String.class, parameters={})
-    private Output<String> lastBackupTimestamp;
-
-    /**
-     * @return The date and time when the latest database backup was created.
-     * 
-     */
-    public Output<String> lastBackupTimestamp() {
-        return this.lastBackupTimestamp;
-    }
-    /**
-     * Additional information about the current lifecycle state.
-     * 
-     */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
-    private Output<String> lifecycleDetails;
-
-    /**
-     * @return Additional information about the current lifecycle state.
-     * 
-     */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
-    }
-    /**
      * (Updatable) Specifies database management type
      * enum:
      * - `BASIC`
@@ -143,144 +89,88 @@ public class CloudDatabaseManagement extends com.pulumi.resources.CustomResource
         return this.managementType;
     }
     /**
-     * The national character set for the database.
+     * The port used to connect to the database.
      * 
      */
-    @Export(name="ncharacterSet", type=String.class, parameters={})
-    private Output<String> ncharacterSet;
+    @Export(name="port", type=Integer.class, parameters={})
+    private Output</* @Nullable */ Integer> port;
 
     /**
-     * @return The national character set for the database.
+     * @return The port used to connect to the database.
      * 
      */
-    public Output<String> ncharacterSet() {
-        return this.ncharacterSet;
+    public Output<Optional<Integer>> port() {
+        return Codegen.optional(this.port);
     }
     /**
-     * The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
-     * 
-     */
-    @Export(name="pdbName", type=String.class, parameters={})
-    private Output<String> pdbName;
-
-    /**
-     * @return The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
-     * 
-     */
-    public Output<String> pdbName() {
-        return this.pdbName;
-    }
-    /**
-     * (Updatable) The private end point [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
      * 
      */
     @Export(name="privateEndPointId", type=String.class, parameters={})
     private Output<String> privateEndPointId;
 
     /**
-     * @return (Updatable) The private end point [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
      * 
      */
     public Output<String> privateEndPointId() {
         return this.privateEndPointId;
     }
     /**
-     * (Updatable) Database service name
+     * Protocol used by the database connection.
+     * 
+     */
+    @Export(name="protocol", type=String.class, parameters={})
+    private Output</* @Nullable */ String> protocol;
+
+    /**
+     * @return Protocol used by the database connection.
+     * 
+     */
+    public Output<Optional<String>> protocol() {
+        return Codegen.optional(this.protocol);
+    }
+    /**
+     * The role of the user that will be connecting to the database.
+     * 
+     */
+    @Export(name="role", type=String.class, parameters={})
+    private Output</* @Nullable */ String> role;
+
+    /**
+     * @return The role of the user that will be connecting to the database.
+     * 
+     */
+    public Output<Optional<String>> role() {
+        return Codegen.optional(this.role);
+    }
+    /**
+     * The name of the Oracle Database service that will be used to connect to the database.
      * 
      */
     @Export(name="serviceName", type=String.class, parameters={})
     private Output<String> serviceName;
 
     /**
-     * @return (Updatable) Database service name
+     * @return The name of the Oracle Database service that will be used to connect to the database.
      * 
      */
     public Output<String> serviceName() {
         return this.serviceName;
     }
     /**
-     * Specifies a prefix for the `Oracle SID` of the database to be created.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * 
      */
-    @Export(name="sidPrefix", type=String.class, parameters={})
-    private Output<String> sidPrefix;
+    @Export(name="sslSecretId", type=String.class, parameters={})
+    private Output</* @Nullable */ String> sslSecretId;
 
     /**
-     * @return Specifies a prefix for the `Oracle SID` of the database to be created.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * 
      */
-    public Output<String> sidPrefix() {
-        return this.sidPrefix;
-    }
-    /**
-     * Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
-     * 
-     */
-    @Export(name="sourceDatabasePointInTimeRecoveryTimestamp", type=String.class, parameters={})
-    private Output<String> sourceDatabasePointInTimeRecoveryTimestamp;
-
-    /**
-     * @return Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
-     * 
-     */
-    public Output<String> sourceDatabasePointInTimeRecoveryTimestamp() {
-        return this.sourceDatabasePointInTimeRecoveryTimestamp;
-    }
-    /**
-     * The current state of the database.
-     * 
-     */
-    @Export(name="state", type=String.class, parameters={})
-    private Output<String> state;
-
-    /**
-     * @return The current state of the database.
-     * 
-     */
-    public Output<String> state() {
-        return this.state;
-    }
-    /**
-     * The date and time the database was created.
-     * 
-     */
-    @Export(name="timeCreated", type=String.class, parameters={})
-    private Output<String> timeCreated;
-
-    /**
-     * @return The date and time the database was created.
-     * 
-     */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
-    }
-    /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-     * 
-     */
-    @Export(name="vaultId", type=String.class, parameters={})
-    private Output<String> vaultId;
-
-    /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-     * 
-     */
-    public Output<String> vaultId() {
-        return this.vaultId;
-    }
-    /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
-     * 
-     */
-    @Export(name="vmClusterId", type=String.class, parameters={})
-    private Output<String> vmClusterId;
-
-    /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
-     * 
-     */
-    public Output<String> vmClusterId() {
-        return this.vmClusterId;
+    public Output<Optional<String>> sslSecretId() {
+        return Codegen.optional(this.sslSecretId);
     }
 
     /**

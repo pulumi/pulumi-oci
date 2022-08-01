@@ -11,6 +11,7 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class IpsecConnectionTunnelManagementBgpSessionInfo {
+    private final @Nullable String bgpIpv6state;
     /**
      * @return the state of the BGP.
      * 
@@ -39,11 +40,13 @@ public final class IpsecConnectionTunnelManagementBgpSessionInfo {
 
     @CustomType.Constructor
     private IpsecConnectionTunnelManagementBgpSessionInfo(
+        @CustomType.Parameter("bgpIpv6state") @Nullable String bgpIpv6state,
         @CustomType.Parameter("bgpState") @Nullable String bgpState,
         @CustomType.Parameter("customerBgpAsn") @Nullable String customerBgpAsn,
         @CustomType.Parameter("customerInterfaceIp") @Nullable String customerInterfaceIp,
         @CustomType.Parameter("oracleBgpAsn") @Nullable String oracleBgpAsn,
         @CustomType.Parameter("oracleInterfaceIp") @Nullable String oracleInterfaceIp) {
+        this.bgpIpv6state = bgpIpv6state;
         this.bgpState = bgpState;
         this.customerBgpAsn = customerBgpAsn;
         this.customerInterfaceIp = customerInterfaceIp;
@@ -51,6 +54,9 @@ public final class IpsecConnectionTunnelManagementBgpSessionInfo {
         this.oracleInterfaceIp = oracleInterfaceIp;
     }
 
+    public Optional<String> bgpIpv6state() {
+        return Optional.ofNullable(this.bgpIpv6state);
+    }
     /**
      * @return the state of the BGP.
      * 
@@ -96,6 +102,7 @@ public final class IpsecConnectionTunnelManagementBgpSessionInfo {
     }
 
     public static final class Builder {
+        private @Nullable String bgpIpv6state;
         private @Nullable String bgpState;
         private @Nullable String customerBgpAsn;
         private @Nullable String customerInterfaceIp;
@@ -108,6 +115,7 @@ public final class IpsecConnectionTunnelManagementBgpSessionInfo {
 
         public Builder(IpsecConnectionTunnelManagementBgpSessionInfo defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.bgpIpv6state = defaults.bgpIpv6state;
     	      this.bgpState = defaults.bgpState;
     	      this.customerBgpAsn = defaults.customerBgpAsn;
     	      this.customerInterfaceIp = defaults.customerInterfaceIp;
@@ -115,6 +123,10 @@ public final class IpsecConnectionTunnelManagementBgpSessionInfo {
     	      this.oracleInterfaceIp = defaults.oracleInterfaceIp;
         }
 
+        public Builder bgpIpv6state(@Nullable String bgpIpv6state) {
+            this.bgpIpv6state = bgpIpv6state;
+            return this;
+        }
         public Builder bgpState(@Nullable String bgpState) {
             this.bgpState = bgpState;
             return this;
@@ -135,7 +147,7 @@ public final class IpsecConnectionTunnelManagementBgpSessionInfo {
             this.oracleInterfaceIp = oracleInterfaceIp;
             return this;
         }        public IpsecConnectionTunnelManagementBgpSessionInfo build() {
-            return new IpsecConnectionTunnelManagementBgpSessionInfo(bgpState, customerBgpAsn, customerInterfaceIp, oracleBgpAsn, oracleInterfaceIp);
+            return new IpsecConnectionTunnelManagementBgpSessionInfo(bgpIpv6state, bgpState, customerBgpAsn, customerInterfaceIp, oracleBgpAsn, oracleInterfaceIp);
         }
     }
 }

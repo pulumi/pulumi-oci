@@ -10,11 +10,214 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'GetPrivateEndpointsFilterResult',
+    'GetPrivateEndpointsPrivateEndpointCollectionResult',
+    'GetPrivateEndpointsPrivateEndpointCollectionItemResult',
     'GetStackConfigSourceResult',
     'GetStacksFilterResult',
     'GetStacksStackResult',
     'GetStacksStackConfigSourceResult',
 ]
+
+@pulumi.output_type
+class GetPrivateEndpointsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetPrivateEndpointsPrivateEndpointCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetPrivateEndpointsPrivateEndpointCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetPrivateEndpointsPrivateEndpointCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetPrivateEndpointsPrivateEndpointCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 defined_tags: Mapping[str, Any],
+                 description: str,
+                 display_name: str,
+                 dns_zones: Sequence[str],
+                 freeform_tags: Mapping[str, Any],
+                 id: str,
+                 is_used_with_configuration_source_provider: bool,
+                 nsg_id_lists: Sequence[str],
+                 source_ips: Sequence[str],
+                 state: str,
+                 subnet_id: str,
+                 time_created: str,
+                 vcn_id: str):
+        """
+        :param str compartment_id: A filter to return only resources that exist in the compartment, identified by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param str description: Description of the private endpoint. Avoid entering confidential information.
+        :param str display_name: A filter to return only resources that match the given display name exactly. Use this filter to list a resource by name. Requires `sortBy` set to `DISPLAYNAME`. Alternatively, when you know the resource OCID, use the related Get operation.
+        :param Sequence[str] dns_zones: DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
+        :param Mapping[str, Any] freeform_tags: Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param str id: Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the private endpoint details.
+        :param bool is_used_with_configuration_source_provider: When `true`, allows the private endpoint to be used with a configuration source provider.
+        :param Sequence[str] nsg_id_lists: An array of network security groups (NSG) that the customer can optionally provide.
+        :param Sequence[str] source_ips: The source IPs which resource manager service will use to connect to customer's network. Automatically assigned by Resource Manager Service.
+        :param str state: The current lifecycle state of the private endpoint.
+        :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet within the VCN for the private endpoint.
+        :param str time_created: The date and time at which the private endpoint was created. Format is defined by RFC3339. Example: `2020-11-25T21:10:29.600Z`
+        :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "dns_zones", dns_zones)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_used_with_configuration_source_provider", is_used_with_configuration_source_provider)
+        pulumi.set(__self__, "nsg_id_lists", nsg_id_lists)
+        pulumi.set(__self__, "source_ips", source_ips)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "vcn_id", vcn_id)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        A filter to return only resources that exist in the compartment, identified by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        Description of the private endpoint. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the given display name exactly. Use this filter to list a resource by name. Requires `sortBy` set to `DISPLAYNAME`. Alternatively, when you know the resource OCID, use the related Get operation.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="dnsZones")
+    def dns_zones(self) -> Sequence[str]:
+        """
+        DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
+        """
+        return pulumi.get(self, "dns_zones")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the private endpoint details.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isUsedWithConfigurationSourceProvider")
+    def is_used_with_configuration_source_provider(self) -> bool:
+        """
+        When `true`, allows the private endpoint to be used with a configuration source provider.
+        """
+        return pulumi.get(self, "is_used_with_configuration_source_provider")
+
+    @property
+    @pulumi.getter(name="nsgIdLists")
+    def nsg_id_lists(self) -> Sequence[str]:
+        """
+        An array of network security groups (NSG) that the customer can optionally provide.
+        """
+        return pulumi.get(self, "nsg_id_lists")
+
+    @property
+    @pulumi.getter(name="sourceIps")
+    def source_ips(self) -> Sequence[str]:
+        """
+        The source IPs which resource manager service will use to connect to customer's network. Automatically assigned by Resource Manager Service.
+        """
+        return pulumi.get(self, "source_ips")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The current lifecycle state of the private endpoint.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet within the VCN for the private endpoint.
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time at which the private endpoint was created. Format is defined by RFC3339. Example: `2020-11-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="vcnId")
+    def vcn_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+        """
+        return pulumi.get(self, "vcn_id")
+
 
 @pulumi.output_type
 class GetStackConfigSourceResult(dict):

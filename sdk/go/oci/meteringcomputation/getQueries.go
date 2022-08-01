@@ -48,15 +48,17 @@ func GetQueries(ctx *pulumi.Context, args *GetQueriesArgs, opts ...pulumi.Invoke
 // A collection of arguments for invoking getQueries.
 type GetQueriesArgs struct {
 	// The compartment ID in which to list resources.
-	CompartmentId string             `pulumi:"compartmentId"`
-	Filters       []GetQueriesFilter `pulumi:"filters"`
+	CompartmentId string `pulumi:"compartmentId"`
+	// The filter object for query usage.
+	Filters []GetQueriesFilter `pulumi:"filters"`
 }
 
 // A collection of values returned by getQueries.
 type GetQueriesResult struct {
 	// The compartment OCID.
-	CompartmentId string             `pulumi:"compartmentId"`
-	Filters       []GetQueriesFilter `pulumi:"filters"`
+	CompartmentId string `pulumi:"compartmentId"`
+	// The filter object for query usage.
+	Filters []GetQueriesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// The list of query_collection.
@@ -79,8 +81,9 @@ func GetQueriesOutput(ctx *pulumi.Context, args GetQueriesOutputArgs, opts ...pu
 // A collection of arguments for invoking getQueries.
 type GetQueriesOutputArgs struct {
 	// The compartment ID in which to list resources.
-	CompartmentId pulumi.StringInput         `pulumi:"compartmentId"`
-	Filters       GetQueriesFilterArrayInput `pulumi:"filters"`
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The filter object for query usage.
+	Filters GetQueriesFilterArrayInput `pulumi:"filters"`
 }
 
 func (GetQueriesOutputArgs) ElementType() reflect.Type {
@@ -107,6 +110,7 @@ func (o GetQueriesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetQueriesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// The filter object for query usage.
 func (o GetQueriesResultOutput) Filters() GetQueriesFilterArrayOutput {
 	return o.ApplyT(func(v GetQueriesResult) []GetQueriesFilter { return v.Filters }).(GetQueriesFilterArrayOutput)
 }

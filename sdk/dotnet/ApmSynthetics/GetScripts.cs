@@ -96,7 +96,7 @@ namespace Pulumi.Oci.ApmSynthetics
         public string? ContentType { get; set; }
 
         /// <summary>
-        /// A filter to return only resources that match the entire display name given.
+        /// A filter to return only the resources that match the entire display name.
         /// </summary>
         [Input("displayName")]
         public string? DisplayName { get; set; }
@@ -129,7 +129,7 @@ namespace Pulumi.Oci.ApmSynthetics
         public Input<string>? ContentType { get; set; }
 
         /// <summary>
-        /// A filter to return only resources that match the entire display name given.
+        /// A filter to return only the resources that match the entire display name.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }

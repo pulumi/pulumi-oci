@@ -28,6 +28,7 @@ import (
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		_, err := ManagementAgent.GetManagementAgentPlugins(ctx, &managementagent.GetManagementAgentPluginsArgs{
 // 			CompartmentId: _var.Compartment_id,
+// 			AgentId:       pulumi.StringRef(_var.Management_agent_id),
 // 			DisplayName:   pulumi.StringRef(_var.Management_agent_plugin_display_name),
 // 			PlatformTypes: _var.Management_agent_plugin_platform_type,
 // 			State:         pulumi.StringRef(_var.Management_agent_plugin_state),
@@ -50,12 +51,14 @@ func GetManagementAgentPlugins(ctx *pulumi.Context, args *GetManagementAgentPlug
 
 // A collection of arguments for invoking getManagementAgentPlugins.
 type GetManagementAgentPluginsArgs struct {
+	// The ManagementAgentID of the agent from which the Management Agents to be filtered.
+	AgentId *string `pulumi:"agentId"`
 	// The OCID of the compartment to which a request will be scoped.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Filter to return only Management Agent Plugins having the particular display name.
 	DisplayName *string                           `pulumi:"displayName"`
 	Filters     []GetManagementAgentPluginsFilter `pulumi:"filters"`
-	// Filter to return only results having the particular platform type.
+	// Array of PlatformTypes to return only results having the particular platform types. Example: ["LINUX"]
 	PlatformTypes []string `pulumi:"platformTypes"`
 	// Filter to return only Management Agents in the particular lifecycle state.
 	State *string `pulumi:"state"`
@@ -63,7 +66,8 @@ type GetManagementAgentPluginsArgs struct {
 
 // A collection of values returned by getManagementAgentPlugins.
 type GetManagementAgentPluginsResult struct {
-	CompartmentId string `pulumi:"compartmentId"`
+	AgentId       *string `pulumi:"agentId"`
+	CompartmentId string  `pulumi:"compartmentId"`
 	// Management Agent Plugin Display Name
 	DisplayName *string                           `pulumi:"displayName"`
 	Filters     []GetManagementAgentPluginsFilter `pulumi:"filters"`
@@ -91,12 +95,14 @@ func GetManagementAgentPluginsOutput(ctx *pulumi.Context, args GetManagementAgen
 
 // A collection of arguments for invoking getManagementAgentPlugins.
 type GetManagementAgentPluginsOutputArgs struct {
+	// The ManagementAgentID of the agent from which the Management Agents to be filtered.
+	AgentId pulumi.StringPtrInput `pulumi:"agentId"`
 	// The OCID of the compartment to which a request will be scoped.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Filter to return only Management Agent Plugins having the particular display name.
 	DisplayName pulumi.StringPtrInput                     `pulumi:"displayName"`
 	Filters     GetManagementAgentPluginsFilterArrayInput `pulumi:"filters"`
-	// Filter to return only results having the particular platform type.
+	// Array of PlatformTypes to return only results having the particular platform types. Example: ["LINUX"]
 	PlatformTypes pulumi.StringArrayInput `pulumi:"platformTypes"`
 	// Filter to return only Management Agents in the particular lifecycle state.
 	State pulumi.StringPtrInput `pulumi:"state"`
@@ -119,6 +125,10 @@ func (o GetManagementAgentPluginsResultOutput) ToGetManagementAgentPluginsResult
 
 func (o GetManagementAgentPluginsResultOutput) ToGetManagementAgentPluginsResultOutputWithContext(ctx context.Context) GetManagementAgentPluginsResultOutput {
 	return o
+}
+
+func (o GetManagementAgentPluginsResultOutput) AgentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentPluginsResult) *string { return v.AgentId }).(pulumi.StringPtrOutput)
 }
 
 func (o GetManagementAgentPluginsResultOutput) CompartmentId() pulumi.StringOutput {

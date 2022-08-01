@@ -29,18 +29,23 @@ export * from "./databaseUpgrade";
 export * from "./dbHome";
 export * from "./dbNodeConsoleConnection";
 export * from "./dbSystem";
+export * from "./dbSystemsUpgrade";
 export * from "./exadataInfrastructure";
 export * from "./exadataInfrastructureStorage";
 export * from "./exadataIormConfig";
 export * from "./externalContainerDatabase";
 export * from "./externalContainerDatabaseManagement";
+export * from "./externalContainerDatabasesStackMonitoring";
 export * from "./externalDatabaseConnector";
 export * from "./externalNonContainerDatabase";
 export * from "./externalNonContainerDatabaseManagement";
 export * from "./externalNonContainerDatabaseOperationsInsightsManagement";
+export * from "./externalNonContainerDatabasesStackMonitoring";
 export * from "./externalPluggableDatabase";
 export * from "./externalPluggableDatabaseManagement";
 export * from "./externalPluggableDatabaseOperationsInsightsManagement";
+export * from "./externalPluggableDatabasesStackMonitoring";
+export * from "./getAutonomousCharacterSets";
 export * from "./getAutonomousContainerDatabase";
 export * from "./getAutonomousContainerDatabaseDataguardAssociation";
 export * from "./getAutonomousContainerDatabaseDataguardAssociations";
@@ -95,10 +100,14 @@ export * from "./getDbNodeConsoleConnections";
 export * from "./getDbNodes";
 export * from "./getDbServer";
 export * from "./getDbServers";
+export * from "./getDbSystemComputePerformances";
 export * from "./getDbSystemHistoryEntries";
 export * from "./getDbSystemPatches";
 export * from "./getDbSystemShapes";
+export * from "./getDbSystemStoragePerformances";
 export * from "./getDbSystems";
+export * from "./getDbSystemsUpgradeHistoryEntries";
+export * from "./getDbSystemsUpgradeHistoryEntry";
 export * from "./getDbVersions";
 export * from "./getExadataInfrastructure";
 export * from "./getExadataInfrastructureDownloadConfigFile";
@@ -169,18 +178,22 @@ import { DatabaseUpgrade } from "./databaseUpgrade";
 import { DbHome } from "./dbHome";
 import { DbNodeConsoleConnection } from "./dbNodeConsoleConnection";
 import { DbSystem } from "./dbSystem";
+import { DbSystemsUpgrade } from "./dbSystemsUpgrade";
 import { ExadataInfrastructure } from "./exadataInfrastructure";
 import { ExadataInfrastructureStorage } from "./exadataInfrastructureStorage";
 import { ExadataIormConfig } from "./exadataIormConfig";
 import { ExternalContainerDatabase } from "./externalContainerDatabase";
 import { ExternalContainerDatabaseManagement } from "./externalContainerDatabaseManagement";
+import { ExternalContainerDatabasesStackMonitoring } from "./externalContainerDatabasesStackMonitoring";
 import { ExternalDatabaseConnector } from "./externalDatabaseConnector";
 import { ExternalNonContainerDatabase } from "./externalNonContainerDatabase";
 import { ExternalNonContainerDatabaseManagement } from "./externalNonContainerDatabaseManagement";
 import { ExternalNonContainerDatabaseOperationsInsightsManagement } from "./externalNonContainerDatabaseOperationsInsightsManagement";
+import { ExternalNonContainerDatabasesStackMonitoring } from "./externalNonContainerDatabasesStackMonitoring";
 import { ExternalPluggableDatabase } from "./externalPluggableDatabase";
 import { ExternalPluggableDatabaseManagement } from "./externalPluggableDatabaseManagement";
 import { ExternalPluggableDatabaseOperationsInsightsManagement } from "./externalPluggableDatabaseOperationsInsightsManagement";
+import { ExternalPluggableDatabasesStackMonitoring } from "./externalPluggableDatabasesStackMonitoring";
 import { KeyStore } from "./keyStore";
 import { MaintenanceRun } from "./maintenanceRun";
 import { PluggableDatabase } from "./pluggableDatabase";
@@ -243,6 +256,8 @@ const _module = {
                 return new DbNodeConsoleConnection(name, <any>undefined, { urn })
             case "oci:Database/dbSystem:DbSystem":
                 return new DbSystem(name, <any>undefined, { urn })
+            case "oci:Database/dbSystemsUpgrade:DbSystemsUpgrade":
+                return new DbSystemsUpgrade(name, <any>undefined, { urn })
             case "oci:Database/exadataInfrastructure:ExadataInfrastructure":
                 return new ExadataInfrastructure(name, <any>undefined, { urn })
             case "oci:Database/exadataInfrastructureStorage:ExadataInfrastructureStorage":
@@ -253,6 +268,8 @@ const _module = {
                 return new ExternalContainerDatabase(name, <any>undefined, { urn })
             case "oci:Database/externalContainerDatabaseManagement:ExternalContainerDatabaseManagement":
                 return new ExternalContainerDatabaseManagement(name, <any>undefined, { urn })
+            case "oci:Database/externalContainerDatabasesStackMonitoring:ExternalContainerDatabasesStackMonitoring":
+                return new ExternalContainerDatabasesStackMonitoring(name, <any>undefined, { urn })
             case "oci:Database/externalDatabaseConnector:ExternalDatabaseConnector":
                 return new ExternalDatabaseConnector(name, <any>undefined, { urn })
             case "oci:Database/externalNonContainerDatabase:ExternalNonContainerDatabase":
@@ -261,12 +278,16 @@ const _module = {
                 return new ExternalNonContainerDatabaseManagement(name, <any>undefined, { urn })
             case "oci:Database/externalNonContainerDatabaseOperationsInsightsManagement:ExternalNonContainerDatabaseOperationsInsightsManagement":
                 return new ExternalNonContainerDatabaseOperationsInsightsManagement(name, <any>undefined, { urn })
+            case "oci:Database/externalNonContainerDatabasesStackMonitoring:ExternalNonContainerDatabasesStackMonitoring":
+                return new ExternalNonContainerDatabasesStackMonitoring(name, <any>undefined, { urn })
             case "oci:Database/externalPluggableDatabase:ExternalPluggableDatabase":
                 return new ExternalPluggableDatabase(name, <any>undefined, { urn })
             case "oci:Database/externalPluggableDatabaseManagement:ExternalPluggableDatabaseManagement":
                 return new ExternalPluggableDatabaseManagement(name, <any>undefined, { urn })
             case "oci:Database/externalPluggableDatabaseOperationsInsightsManagement:ExternalPluggableDatabaseOperationsInsightsManagement":
                 return new ExternalPluggableDatabaseOperationsInsightsManagement(name, <any>undefined, { urn })
+            case "oci:Database/externalPluggableDatabasesStackMonitoring:ExternalPluggableDatabasesStackMonitoring":
+                return new ExternalPluggableDatabasesStackMonitoring(name, <any>undefined, { urn })
             case "oci:Database/keyStore:KeyStore":
                 return new KeyStore(name, <any>undefined, { urn })
             case "oci:Database/maintenanceRun:MaintenanceRun":
@@ -314,18 +335,22 @@ pulumi.runtime.registerResourceModule("oci", "Database/databaseUpgrade", _module
 pulumi.runtime.registerResourceModule("oci", "Database/dbHome", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/dbNodeConsoleConnection", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/dbSystem", _module)
+pulumi.runtime.registerResourceModule("oci", "Database/dbSystemsUpgrade", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/exadataInfrastructure", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/exadataInfrastructureStorage", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/exadataIormConfig", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/externalContainerDatabase", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/externalContainerDatabaseManagement", _module)
+pulumi.runtime.registerResourceModule("oci", "Database/externalContainerDatabasesStackMonitoring", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/externalDatabaseConnector", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/externalNonContainerDatabase", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/externalNonContainerDatabaseManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/externalNonContainerDatabaseOperationsInsightsManagement", _module)
+pulumi.runtime.registerResourceModule("oci", "Database/externalNonContainerDatabasesStackMonitoring", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/externalPluggableDatabase", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/externalPluggableDatabaseManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/externalPluggableDatabaseOperationsInsightsManagement", _module)
+pulumi.runtime.registerResourceModule("oci", "Database/externalPluggableDatabasesStackMonitoring", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/keyStore", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/maintenanceRun", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/pluggableDatabase", _module)

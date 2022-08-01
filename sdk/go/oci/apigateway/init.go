@@ -29,6 +29,10 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &Deployment{}
 	case "oci:ApiGateway/gateway:Gateway":
 		r = &Gateway{}
+	case "oci:ApiGateway/subscriber:Subscriber":
+		r = &Subscriber{}
+	case "oci:ApiGateway/usagePlan:UsagePlan":
+		r = &UsagePlan{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -60,6 +64,16 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"ApiGateway/gateway",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"ApiGateway/subscriber",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"ApiGateway/usagePlan",
 		&module{version},
 	)
 }

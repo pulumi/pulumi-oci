@@ -73,7 +73,7 @@ class GetResponderRecipesResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        ResponderRule Display Name
+        ResponderRule display name.
         """
         return pulumi.get(self, "display_name")
 

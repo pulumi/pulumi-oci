@@ -47,7 +47,7 @@ export interface GetBootVolumeArgs {
  */
 export interface GetBootVolumeResult {
     /**
-     * The number of Volume Performance Units per GB that this volume is effectively tuned to when it's idle.
+     * The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it's idle.
      */
     readonly autoTunedVpusPerGb: string;
     /**
@@ -126,7 +126,7 @@ export interface GetBootVolumeResult {
      */
     readonly volumeGroupId: string;
     /**
-     * The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+     * The number of volume performance units (VPUs) that will be applied to this boot volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
      */
     readonly vpusPerGb: string;
 }

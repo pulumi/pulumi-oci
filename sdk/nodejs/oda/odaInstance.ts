@@ -2,6 +2,7 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import { input as inputs, output as outputs } from "../types";
 import * as utilities from "../utilities";
 
 /**
@@ -10,7 +11,7 @@ import * as utilities from "../utilities";
  * Starts an asynchronous job to create a Digital Assistant instance.
  *
  * To monitor the status of the job, take the `opc-work-request-id` response
- * header value and use it to call `GET /workRequests/{workRequestID}`.
+ * header value and use it to call `GET /workRequests/{workRequestId}`.
  *
  * ## Example Usage
  *
@@ -29,6 +30,8 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
+ *     identityDomain: _var.oda_instance_identity_domain,
+ *     isRoleBasedAccess: _var.oda_instance_is_role_based_access,
  * });
  * ```
  *
@@ -69,6 +72,14 @@ export class OdaInstance extends pulumi.CustomResource {
     }
 
     /**
+     * A list of attachment identifiers for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+     */
+    public /*out*/ readonly attachmentIds!: pulumi.Output<string[]>;
+    /**
+     * A list of attachment types for this instance (if any). Use attachmentIds to get the details of the attachments.
+     */
+    public /*out*/ readonly attachmentTypes!: pulumi.Output<string[]>;
+    /**
      * (Updatable) Identifier of the compartment.
      */
     public readonly compartmentId!: pulumi.Output<string>;
@@ -89,13 +100,41 @@ export class OdaInstance extends pulumi.CustomResource {
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
-     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    /**
+     * If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.
+     */
+    public /*out*/ readonly identityAppConsoleUrl!: pulumi.Output<string>;
+    /**
+     * If isRoleBasedAccess is set to true, this property specifies the GUID of the Identity Application instance Digital Assistant has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this Digital Assistant instance for users within the identity domain.
+     */
+    public /*out*/ readonly identityAppGuid!: pulumi.Output<string>;
+    /**
+     * If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
+     */
+    public readonly identityDomain!: pulumi.Output<string>;
+    /**
+     * A list of package ids imported into this instance (if any). Use GetImportedPackage to get the details of the imported packages.
+     */
+    public /*out*/ readonly importedPackageIds!: pulumi.Output<string[]>;
+    /**
+     * A list of package names imported into this instance (if any). Use importedPackageIds field to get the details of the imported packages.
+     */
+    public /*out*/ readonly importedPackageNames!: pulumi.Output<string[]>;
+    /**
+     * Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
+     */
+    public readonly isRoleBasedAccess!: pulumi.Output<boolean>;
     /**
      * The current sub-state of the Digital Assistant instance.
      */
     public /*out*/ readonly lifecycleSubState!: pulumi.Output<string>;
+    /**
+     * A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+     */
+    public /*out*/ readonly restrictedOperations!: pulumi.Output<outputs.Oda.OdaInstanceRestrictedOperation[]>;
     /**
      * Shape or size of the instance.
      */
@@ -134,13 +173,22 @@ export class OdaInstance extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as OdaInstanceState | undefined;
+            resourceInputs["attachmentIds"] = state ? state.attachmentIds : undefined;
+            resourceInputs["attachmentTypes"] = state ? state.attachmentTypes : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["connectorUrl"] = state ? state.connectorUrl : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
+            resourceInputs["identityAppConsoleUrl"] = state ? state.identityAppConsoleUrl : undefined;
+            resourceInputs["identityAppGuid"] = state ? state.identityAppGuid : undefined;
+            resourceInputs["identityDomain"] = state ? state.identityDomain : undefined;
+            resourceInputs["importedPackageIds"] = state ? state.importedPackageIds : undefined;
+            resourceInputs["importedPackageNames"] = state ? state.importedPackageNames : undefined;
+            resourceInputs["isRoleBasedAccess"] = state ? state.isRoleBasedAccess : undefined;
             resourceInputs["lifecycleSubState"] = state ? state.lifecycleSubState : undefined;
+            resourceInputs["restrictedOperations"] = state ? state.restrictedOperations : undefined;
             resourceInputs["shapeName"] = state ? state.shapeName : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["stateMessage"] = state ? state.stateMessage : undefined;
@@ -160,10 +208,19 @@ export class OdaInstance extends pulumi.CustomResource {
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["identityDomain"] = args ? args.identityDomain : undefined;
+            resourceInputs["isRoleBasedAccess"] = args ? args.isRoleBasedAccess : undefined;
             resourceInputs["shapeName"] = args ? args.shapeName : undefined;
             resourceInputs["state"] = args ? args.state : undefined;
+            resourceInputs["attachmentIds"] = undefined /*out*/;
+            resourceInputs["attachmentTypes"] = undefined /*out*/;
             resourceInputs["connectorUrl"] = undefined /*out*/;
+            resourceInputs["identityAppConsoleUrl"] = undefined /*out*/;
+            resourceInputs["identityAppGuid"] = undefined /*out*/;
+            resourceInputs["importedPackageIds"] = undefined /*out*/;
+            resourceInputs["importedPackageNames"] = undefined /*out*/;
             resourceInputs["lifecycleSubState"] = undefined /*out*/;
+            resourceInputs["restrictedOperations"] = undefined /*out*/;
             resourceInputs["stateMessage"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
@@ -178,6 +235,14 @@ export class OdaInstance extends pulumi.CustomResource {
  * Input properties used for looking up and filtering OdaInstance resources.
  */
 export interface OdaInstanceState {
+    /**
+     * A list of attachment identifiers for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+     */
+    attachmentIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * A list of attachment types for this instance (if any). Use attachmentIds to get the details of the attachments.
+     */
+    attachmentTypes?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * (Updatable) Identifier of the compartment.
      */
@@ -199,13 +264,41 @@ export interface OdaInstanceState {
      */
     displayName?: pulumi.Input<string>;
     /**
-     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.
+     */
+    identityAppConsoleUrl?: pulumi.Input<string>;
+    /**
+     * If isRoleBasedAccess is set to true, this property specifies the GUID of the Identity Application instance Digital Assistant has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this Digital Assistant instance for users within the identity domain.
+     */
+    identityAppGuid?: pulumi.Input<string>;
+    /**
+     * If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
+     */
+    identityDomain?: pulumi.Input<string>;
+    /**
+     * A list of package ids imported into this instance (if any). Use GetImportedPackage to get the details of the imported packages.
+     */
+    importedPackageIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * A list of package names imported into this instance (if any). Use importedPackageIds field to get the details of the imported packages.
+     */
+    importedPackageNames?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
+     */
+    isRoleBasedAccess?: pulumi.Input<boolean>;
     /**
      * The current sub-state of the Digital Assistant instance.
      */
     lifecycleSubState?: pulumi.Input<string>;
+    /**
+     * A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+     */
+    restrictedOperations?: pulumi.Input<pulumi.Input<inputs.Oda.OdaInstanceRestrictedOperation>[]>;
     /**
      * Shape or size of the instance.
      */
@@ -253,9 +346,17 @@ export interface OdaInstanceArgs {
      */
     displayName?: pulumi.Input<string>;
     /**
-     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
+     */
+    identityDomain?: pulumi.Input<string>;
+    /**
+     * Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
+     */
+    isRoleBasedAccess?: pulumi.Input<boolean>;
     /**
      * Shape or size of the instance.
      */

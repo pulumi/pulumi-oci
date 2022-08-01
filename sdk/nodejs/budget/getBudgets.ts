@@ -8,16 +8,14 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Budgets in Oracle Cloud Infrastructure Budget service.
  *
- * Gets a list of Budgets in a compartment.
+ * Gets a list of budgets in a compartment.
  *
- * By default, ListBudgets returns budgets of 'COMPARTMENT' target type and the budget records with only ONE target compartment OCID.
+ * By default, ListBudgets returns budgets of the 'COMPARTMENT' target type, and the budget records with only one target compartment OCID.
  *
- * To list ALL budgets, set the targetType query parameter to ALL.
- * Example:
- *   'targetType=ALL'
+ * To list all budgets, set the targetType query parameter to ALL (for example: 'targetType=ALL').
  *
- * Additional targetTypes would be available in future releases. Clients should ignore new targetType
- * or upgrade to latest version of client SDK to handle new targetType.
+ * Additional targetTypes would be available in future releases. Clients should ignore new targetTypes,
+ * or upgrade to the latest version of the client SDK to handle new targetTypes.
  *
  * ## Example Usage
  *
@@ -57,7 +55,7 @@ export interface GetBudgetsArgs {
      */
     compartmentId: string;
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+     * A user-friendly name. This does not have to be unique, and it's changeable.  Example: `My new resource`
      */
     displayName?: string;
     filters?: inputs.Budget.GetBudgetsFilter[];
@@ -66,7 +64,7 @@ export interface GetBudgetsArgs {
      */
     state?: string;
     /**
-     * The type of target to filter by.
+     * The type of target to filter by:
      * * ALL - List all budgets
      * * COMPARTMENT - List all budgets with targetType == "COMPARTMENT"
      * * TAG - List all budgets with targetType == "TAG"
@@ -83,11 +81,11 @@ export interface GetBudgetsResult {
      */
     readonly budgets: outputs.Budget.GetBudgetsBudget[];
     /**
-     * The OCID of the compartment
+     * The OCID of the compartment.
      */
     readonly compartmentId: string;
     /**
-     * The display name of the budget.
+     * The display name of the budget. Avoid entering confidential information.
      */
     readonly displayName?: string;
     readonly filters?: outputs.Budget.GetBudgetsFilter[];
@@ -118,7 +116,7 @@ export interface GetBudgetsOutputArgs {
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+     * A user-friendly name. This does not have to be unique, and it's changeable.  Example: `My new resource`
      */
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.Budget.GetBudgetsFilterArgs>[]>;
@@ -127,7 +125,7 @@ export interface GetBudgetsOutputArgs {
      */
     state?: pulumi.Input<string>;
     /**
-     * The type of target to filter by.
+     * The type of target to filter by:
      * * ALL - List all budgets
      * * COMPARTMENT - List all budgets with targetType == "COMPARTMENT"
      * * TAG - List all budgets with targetType == "TAG"

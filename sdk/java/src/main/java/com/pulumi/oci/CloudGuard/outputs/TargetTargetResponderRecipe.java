@@ -25,7 +25,7 @@ public final class TargetTargetResponderRecipe {
      */
     private final @Nullable String description;
     /**
-     * @return (Updatable) DetectorTemplate Identifier
+     * @return (Updatable) DetectorTemplate identifier.
      * 
      */
     private final @Nullable String displayName;
@@ -35,7 +35,7 @@ public final class TargetTargetResponderRecipe {
      */
     private final @Nullable List<TargetTargetResponderRecipeEffectiveResponderRule> effectiveResponderRules;
     /**
-     * @return Unique identifier of TargetResponderRecipe that is immutable on creation
+     * @return Unique identifier of TargetResponderRecipe that can&#39;t be changed after creation.
      * 
      */
     private final @Nullable String id;
@@ -104,7 +104,7 @@ public final class TargetTargetResponderRecipe {
         return Optional.ofNullable(this.description);
     }
     /**
-     * @return (Updatable) DetectorTemplate Identifier
+     * @return (Updatable) DetectorTemplate identifier.
      * 
      */
     public Optional<String> displayName() {
@@ -118,7 +118,7 @@ public final class TargetTargetResponderRecipe {
         return this.effectiveResponderRules == null ? List.of() : this.effectiveResponderRules;
     }
     /**
-     * @return Unique identifier of TargetResponderRecipe that is immutable on creation
+     * @return Unique identifier of TargetResponderRecipe that can&#39;t be changed after creation.
      * 
      */
     public Optional<String> id() {

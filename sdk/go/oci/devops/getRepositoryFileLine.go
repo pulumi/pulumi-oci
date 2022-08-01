@@ -50,7 +50,7 @@ func GetRepositoryFileLine(ctx *pulumi.Context, args *GetRepositoryFileLineArgs,
 
 // A collection of arguments for invoking getRepositoryFileLine.
 type GetRepositoryFileLineArgs struct {
-	// Path to a file within a repository.
+	// A filter to return file contents of the specified paths.
 	FilePath string `pulumi:"filePath"`
 	// Unique repository identifier.
 	RepositoryId string `pulumi:"repositoryId"`
@@ -87,7 +87,7 @@ func GetRepositoryFileLineOutput(ctx *pulumi.Context, args GetRepositoryFileLine
 
 // A collection of arguments for invoking getRepositoryFileLine.
 type GetRepositoryFileLineOutputArgs struct {
-	// Path to a file within a repository.
+	// A filter to return file contents of the specified paths.
 	FilePath pulumi.StringInput `pulumi:"filePath"`
 	// Unique repository identifier.
 	RepositoryId pulumi.StringInput `pulumi:"repositoryId"`

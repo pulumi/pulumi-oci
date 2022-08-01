@@ -46,6 +46,7 @@ public final class GetMonitorsResult {
      * 
      */
     private final @Nullable String status;
+    private final @Nullable String vantagePoint;
 
     @CustomType.Constructor
     private GetMonitorsResult(
@@ -56,7 +57,8 @@ public final class GetMonitorsResult {
         @CustomType.Parameter("monitorCollections") List<GetMonitorsMonitorCollection> monitorCollections,
         @CustomType.Parameter("monitorType") @Nullable String monitorType,
         @CustomType.Parameter("scriptId") @Nullable String scriptId,
-        @CustomType.Parameter("status") @Nullable String status) {
+        @CustomType.Parameter("status") @Nullable String status,
+        @CustomType.Parameter("vantagePoint") @Nullable String vantagePoint) {
         this.apmDomainId = apmDomainId;
         this.displayName = displayName;
         this.filters = filters;
@@ -65,6 +67,7 @@ public final class GetMonitorsResult {
         this.monitorType = monitorType;
         this.scriptId = scriptId;
         this.status = status;
+        this.vantagePoint = vantagePoint;
     }
 
     public String apmDomainId() {
@@ -115,6 +118,9 @@ public final class GetMonitorsResult {
     public Optional<String> status() {
         return Optional.ofNullable(this.status);
     }
+    public Optional<String> vantagePoint() {
+        return Optional.ofNullable(this.vantagePoint);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -133,6 +139,7 @@ public final class GetMonitorsResult {
         private @Nullable String monitorType;
         private @Nullable String scriptId;
         private @Nullable String status;
+        private @Nullable String vantagePoint;
 
         public Builder() {
     	      // Empty
@@ -148,6 +155,7 @@ public final class GetMonitorsResult {
     	      this.monitorType = defaults.monitorType;
     	      this.scriptId = defaults.scriptId;
     	      this.status = defaults.status;
+    	      this.vantagePoint = defaults.vantagePoint;
         }
 
         public Builder apmDomainId(String apmDomainId) {
@@ -187,8 +195,12 @@ public final class GetMonitorsResult {
         public Builder status(@Nullable String status) {
             this.status = status;
             return this;
+        }
+        public Builder vantagePoint(@Nullable String vantagePoint) {
+            this.vantagePoint = vantagePoint;
+            return this;
         }        public GetMonitorsResult build() {
-            return new GetMonitorsResult(apmDomainId, displayName, filters, id, monitorCollections, monitorType, scriptId, status);
+            return new GetMonitorsResult(apmDomainId, displayName, filters, id, monitorCollections, monitorType, scriptId, status, vantagePoint);
         }
     }
 }

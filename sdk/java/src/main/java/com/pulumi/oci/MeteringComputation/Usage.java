@@ -48,9 +48,17 @@ public class Usage extends com.pulumi.resources.CustomResource {
     public Output<Double> compartmentDepth() {
         return this.compartmentDepth;
     }
+    /**
+     * The filter object for query usage.
+     * 
+     */
     @Export(name="filter", type=String.class, parameters={})
     private Output</* @Nullable */ String> filter;
 
+    /**
+     * @return The filter object for query usage.
+     * 
+     */
     public Output<Optional<String>> filter() {
         return Codegen.optional(this.filter);
     }

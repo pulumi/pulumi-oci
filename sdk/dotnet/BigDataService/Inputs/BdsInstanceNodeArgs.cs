@@ -25,79 +25,91 @@ namespace Pulumi.Oci.BigDataService.Inputs
         }
 
         /// <summary>
-        /// The name of the availability domain in which the node is running.
+        /// The name of the availability domain the node is running in
         /// </summary>
         [Input("availabilityDomain")]
         public Input<string>? AvailabilityDomain { get; set; }
 
         /// <summary>
-        /// (Updatable) Name of the Big Data Service cluster.
+        /// (Updatable) Name of the BDS instance
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// The name of the fault domain in which the node is running.
+        /// The name of the fault domain the node is running in
         /// </summary>
         [Input("faultDomain")]
         public Input<string>? FaultDomain { get; set; }
 
         /// <summary>
-        /// The fully-qualified hostname (FQDN) of the node.
+        /// The fully-qualified hostname (FQDN) of the node
         /// </summary>
         [Input("hostname")]
         public Input<string>? Hostname { get; set; }
 
         /// <summary>
-        /// The OCID of the image from which the node was created.
+        /// The OCID of the image from which the node was created
         /// </summary>
         [Input("imageId")]
         public Input<string>? ImageId { get; set; }
 
         /// <summary>
-        /// The OCID of the underlying Oracle Cloud Infrastructure Compute instance.
+        /// The OCID of the underlying compute instance
         /// </summary>
         [Input("instanceId")]
         public Input<string>? InstanceId { get; set; }
 
         /// <summary>
-        /// IP address of the node.
+        /// IP address of the node
         /// </summary>
         [Input("ipAddress")]
         public Input<string>? IpAddress { get; set; }
 
         /// <summary>
-        /// The Big Data Service cluster node type.
+        /// The total amount of memory available to the node, in gigabytes
+        /// </summary>
+        [Input("memoryInGbs")]
+        public Input<int>? MemoryInGbs { get; set; }
+
+        /// <summary>
+        /// BDS instance node type
         /// </summary>
         [Input("nodeType")]
         public Input<string>? NodeType { get; set; }
 
         /// <summary>
-        /// (Updatable) Shape of the node.
+        /// The total number of OCPUs available to the node.
+        /// </summary>
+        [Input("ocpus")]
+        public Input<int>? Ocpus { get; set; }
+
+        /// <summary>
+        /// Shape of the node
         /// </summary>
         [Input("shape")]
         public Input<string>? Shape { get; set; }
 
         /// <summary>
-        /// The fingerprint of the SSH key used for node access.
+        /// The fingerprint of the SSH key used for node access
         /// </summary>
         [Input("sshFingerprint")]
         public Input<string>? SshFingerprint { get; set; }
 
         /// <summary>
-        /// The state of the cluster.
+        /// The state of the BDS instance
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
 
         /// <summary>
-        /// The OCID of the subnet in which the node will be created.
+        /// The OCID of the subnet in which the node should be created
         /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }
 
         /// <summary>
-        /// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+        /// The time the BDS instance was created. An RFC3339 formatted datetime string
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }

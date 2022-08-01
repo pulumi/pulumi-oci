@@ -47,8 +47,8 @@ class ConfigDimension(dict):
                  name: Optional[str] = None,
                  value_source: Optional[str] = None):
         """
-        :param str name: (Updatable) The name of the metric
-        :param str value_source: (Updatable) Must be NULL at the moment, and "name" must be a known metric.
+        :param str name: (Updatable) The name of the metric. This must be a known metric name.
+        :param str value_source: (Updatable) This must not be set.
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -59,7 +59,7 @@ class ConfigDimension(dict):
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        (Updatable) The name of the metric
+        (Updatable) The name of the metric. This must be a known metric name.
         """
         return pulumi.get(self, "name")
 
@@ -67,7 +67,7 @@ class ConfigDimension(dict):
     @pulumi.getter(name="valueSource")
     def value_source(self) -> Optional[str]:
         """
-        (Updatable) Must be NULL at the moment, and "name" must be a known metric.
+        (Updatable) This must not be set.
         """
         return pulumi.get(self, "value_source")
 
@@ -97,10 +97,10 @@ class ConfigMetric(dict):
                  unit: Optional[str] = None,
                  value_source: Optional[str] = None):
         """
-        :param str description: (Updatable) A description of the metric
-        :param str name: (Updatable) The name of the metric
-        :param str unit: (Updatable) The unit of the metric
-        :param str value_source: (Updatable) Must be NULL at the moment, and "name" must be a known metric.
+        :param str description: (Updatable) A description of the metric.
+        :param str name: (Updatable) The name of the metric. This must be a known metric name.
+        :param str unit: (Updatable) The unit of the metric.
+        :param str value_source: (Updatable) This must not be set.
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -115,7 +115,7 @@ class ConfigMetric(dict):
     @pulumi.getter
     def description(self) -> Optional[str]:
         """
-        (Updatable) A description of the metric
+        (Updatable) A description of the metric.
         """
         return pulumi.get(self, "description")
 
@@ -123,7 +123,7 @@ class ConfigMetric(dict):
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        (Updatable) The name of the metric
+        (Updatable) The name of the metric. This must be a known metric name.
         """
         return pulumi.get(self, "name")
 
@@ -131,7 +131,7 @@ class ConfigMetric(dict):
     @pulumi.getter
     def unit(self) -> Optional[str]:
         """
-        (Updatable) The unit of the metric
+        (Updatable) The unit of the metric.
         """
         return pulumi.get(self, "unit")
 
@@ -139,7 +139,7 @@ class ConfigMetric(dict):
     @pulumi.getter(name="valueSource")
     def value_source(self) -> Optional[str]:
         """
-        (Updatable) Must be NULL at the moment, and "name" must be a known metric.
+        (Updatable) This must not be set.
         """
         return pulumi.get(self, "value_source")
 
@@ -182,13 +182,13 @@ class ConfigRule(dict):
                  satisfied_response_time: Optional[int] = None,
                  tolerating_response_time: Optional[int] = None):
         """
-        :param str display_name: (Updatable) A user-friendly name that provides a short description this rule.
+        :param str display_name: (Updatable) The name by which a configuration entity is displayed to the end user.
         :param str filter_text: (Updatable) The string that defines the Span Filter expression.
-        :param bool is_apply_to_error_spans: (Updatable) If true, the rule will compute the actual Apdex score for spans that have been marked as errors. If false, the rule will always set the Apdex for error spans to frustrating, regardless of the configured thresholds. Default is false.
-        :param bool is_enabled: (Updatable) Specifies if the Apdex rule will be computed for spans matching the rule. Can be used to make sure certain spans don't get an Apdex score. The default is "true".
+        :param bool is_apply_to_error_spans: (Updatable) Specifies whether an Apdex score should be computed for error spans. Setting it to "true" means that the Apdex score is computed in the usual way. Setting it to "false" skips the Apdex computation and sets the Apdex score to "frustrating" regardless of the configured thresholds. The default is "false".
+        :param bool is_enabled: (Updatable) Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable Apdex score for spans that do not need or require it. The default is "true".
         :param int priority: (Updatable) The priority controls the order in which multiple rules in a rule set are applied. Lower values indicate higher priorities. Rules with higher priority are applied first, and once a match is found, the rest of the rules are ignored. Rules within the same rule set cannot have the same priority.
-        :param int satisfied_response_time: (Updatable) The maximum response time in milliseconds that will be considered satisfactory for the end user.
-        :param int tolerating_response_time: (Updatable) The maximum response time in milliseconds that will be considered tolerable for the end user. Response times beyond this threshold will be considered frustrating. This value cannot be lower than "satisfiedResponseTime".
+        :param int satisfied_response_time: (Updatable) The maximum response time in milliseconds that is considered "satisfactory" for the end user.
+        :param int tolerating_response_time: (Updatable) The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime".
         """
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
@@ -209,7 +209,7 @@ class ConfigRule(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        (Updatable) A user-friendly name that provides a short description this rule.
+        (Updatable) The name by which a configuration entity is displayed to the end user.
         """
         return pulumi.get(self, "display_name")
 
@@ -225,7 +225,7 @@ class ConfigRule(dict):
     @pulumi.getter(name="isApplyToErrorSpans")
     def is_apply_to_error_spans(self) -> Optional[bool]:
         """
-        (Updatable) If true, the rule will compute the actual Apdex score for spans that have been marked as errors. If false, the rule will always set the Apdex for error spans to frustrating, regardless of the configured thresholds. Default is false.
+        (Updatable) Specifies whether an Apdex score should be computed for error spans. Setting it to "true" means that the Apdex score is computed in the usual way. Setting it to "false" skips the Apdex computation and sets the Apdex score to "frustrating" regardless of the configured thresholds. The default is "false".
         """
         return pulumi.get(self, "is_apply_to_error_spans")
 
@@ -233,7 +233,7 @@ class ConfigRule(dict):
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[bool]:
         """
-        (Updatable) Specifies if the Apdex rule will be computed for spans matching the rule. Can be used to make sure certain spans don't get an Apdex score. The default is "true".
+        (Updatable) Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable Apdex score for spans that do not need or require it. The default is "true".
         """
         return pulumi.get(self, "is_enabled")
 
@@ -249,7 +249,7 @@ class ConfigRule(dict):
     @pulumi.getter(name="satisfiedResponseTime")
     def satisfied_response_time(self) -> Optional[int]:
         """
-        (Updatable) The maximum response time in milliseconds that will be considered satisfactory for the end user.
+        (Updatable) The maximum response time in milliseconds that is considered "satisfactory" for the end user.
         """
         return pulumi.get(self, "satisfied_response_time")
 
@@ -257,7 +257,7 @@ class ConfigRule(dict):
     @pulumi.getter(name="toleratingResponseTime")
     def tolerating_response_time(self) -> Optional[int]:
         """
-        (Updatable) The maximum response time in milliseconds that will be considered tolerable for the end user. Response times beyond this threshold will be considered frustrating. This value cannot be lower than "satisfiedResponseTime".
+        (Updatable) The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime".
         """
         return pulumi.get(self, "tolerating_response_time")
 
@@ -268,8 +268,8 @@ class GetConfigDimensionResult(dict):
                  name: str,
                  value_source: str):
         """
-        :param str name: The name of the metric
-        :param str value_source: Must be NULL at the moment, and "name" must be a known metric.
+        :param str name: The name of the metric. This must be a known metric name.
+        :param str value_source: This must not be set.
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "value_source", value_source)
@@ -278,7 +278,7 @@ class GetConfigDimensionResult(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        The name of the metric
+        The name of the metric. This must be a known metric name.
         """
         return pulumi.get(self, "name")
 
@@ -286,7 +286,7 @@ class GetConfigDimensionResult(dict):
     @pulumi.getter(name="valueSource")
     def value_source(self) -> str:
         """
-        Must be NULL at the moment, and "name" must be a known metric.
+        This must not be set.
         """
         return pulumi.get(self, "value_source")
 
@@ -299,10 +299,10 @@ class GetConfigMetricResult(dict):
                  unit: str,
                  value_source: str):
         """
-        :param str description: A description of the metric
-        :param str name: The name of the metric
-        :param str unit: The unit of the metric
-        :param str value_source: Must be NULL at the moment, and "name" must be a known metric.
+        :param str description: A description of the metric.
+        :param str name: The name of the metric. This must be a known metric name.
+        :param str unit: The unit of the metric.
+        :param str value_source: This must not be set.
         """
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "name", name)
@@ -313,7 +313,7 @@ class GetConfigMetricResult(dict):
     @pulumi.getter
     def description(self) -> str:
         """
-        A description of the metric
+        A description of the metric.
         """
         return pulumi.get(self, "description")
 
@@ -321,7 +321,7 @@ class GetConfigMetricResult(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        The name of the metric
+        The name of the metric. This must be a known metric name.
         """
         return pulumi.get(self, "name")
 
@@ -329,7 +329,7 @@ class GetConfigMetricResult(dict):
     @pulumi.getter
     def unit(self) -> str:
         """
-        The unit of the metric
+        The unit of the metric.
         """
         return pulumi.get(self, "unit")
 
@@ -337,7 +337,7 @@ class GetConfigMetricResult(dict):
     @pulumi.getter(name="valueSource")
     def value_source(self) -> str:
         """
-        Must be NULL at the moment, and "name" must be a known metric.
+        This must not be set.
         """
         return pulumi.get(self, "value_source")
 
@@ -353,13 +353,13 @@ class GetConfigRuleResult(dict):
                  satisfied_response_time: int,
                  tolerating_response_time: int):
         """
-        :param str display_name: A user-friendly name that provides a short description this rule.
+        :param str display_name: The name by which a configuration entity is displayed to the end user.
         :param str filter_text: The string that defines the Span Filter expression.
-        :param bool is_apply_to_error_spans: If true, the rule will compute the actual Apdex score for spans that have been marked as errors. If false, the rule will always set the Apdex for error spans to frustrating, regardless of the configured thresholds. Default is false.
-        :param bool is_enabled: Specifies if the Apdex rule will be computed for spans matching the rule. Can be used to make sure certain spans don't get an Apdex score. The default is "true".
+        :param bool is_apply_to_error_spans: Specifies whether an Apdex score should be computed for error spans. Setting it to "true" means that the Apdex score is computed in the usual way. Setting it to "false" skips the Apdex computation and sets the Apdex score to "frustrating" regardless of the configured thresholds. The default is "false".
+        :param bool is_enabled: Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable Apdex score for spans that do not need or require it. The default is "true".
         :param int priority: The priority controls the order in which multiple rules in a rule set are applied. Lower values indicate higher priorities. Rules with higher priority are applied first, and once a match is found, the rest of the rules are ignored. Rules within the same rule set cannot have the same priority.
-        :param int satisfied_response_time: The maximum response time in milliseconds that will be considered satisfactory for the end user.
-        :param int tolerating_response_time: The maximum response time in milliseconds that will be considered tolerable for the end user. Response times beyond this threshold will be considered frustrating. This value cannot be lower than "satisfiedResponseTime".
+        :param int satisfied_response_time: The maximum response time in milliseconds that is considered "satisfactory" for the end user.
+        :param int tolerating_response_time: The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime".
         """
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "filter_text", filter_text)
@@ -373,7 +373,7 @@ class GetConfigRuleResult(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        A user-friendly name that provides a short description this rule.
+        The name by which a configuration entity is displayed to the end user.
         """
         return pulumi.get(self, "display_name")
 
@@ -389,7 +389,7 @@ class GetConfigRuleResult(dict):
     @pulumi.getter(name="isApplyToErrorSpans")
     def is_apply_to_error_spans(self) -> bool:
         """
-        If true, the rule will compute the actual Apdex score for spans that have been marked as errors. If false, the rule will always set the Apdex for error spans to frustrating, regardless of the configured thresholds. Default is false.
+        Specifies whether an Apdex score should be computed for error spans. Setting it to "true" means that the Apdex score is computed in the usual way. Setting it to "false" skips the Apdex computation and sets the Apdex score to "frustrating" regardless of the configured thresholds. The default is "false".
         """
         return pulumi.get(self, "is_apply_to_error_spans")
 
@@ -397,7 +397,7 @@ class GetConfigRuleResult(dict):
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> bool:
         """
-        Specifies if the Apdex rule will be computed for spans matching the rule. Can be used to make sure certain spans don't get an Apdex score. The default is "true".
+        Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable Apdex score for spans that do not need or require it. The default is "true".
         """
         return pulumi.get(self, "is_enabled")
 
@@ -413,7 +413,7 @@ class GetConfigRuleResult(dict):
     @pulumi.getter(name="satisfiedResponseTime")
     def satisfied_response_time(self) -> int:
         """
-        The maximum response time in milliseconds that will be considered satisfactory for the end user.
+        The maximum response time in milliseconds that is considered "satisfactory" for the end user.
         """
         return pulumi.get(self, "satisfied_response_time")
 
@@ -421,7 +421,7 @@ class GetConfigRuleResult(dict):
     @pulumi.getter(name="toleratingResponseTime")
     def tolerating_response_time(self) -> int:
         """
-        The maximum response time in milliseconds that will be considered tolerable for the end user. Response times beyond this threshold will be considered frustrating. This value cannot be lower than "satisfiedResponseTime".
+        The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime".
         """
         return pulumi.get(self, "tolerating_response_time")
 
@@ -450,25 +450,30 @@ class GetConfigsConfigCollectionItemResult(dict):
                  filter_id: str,
                  filter_text: str,
                  freeform_tags: Mapping[str, Any],
+                 group: str,
                  id: str,
                  metrics: Sequence['outputs.GetConfigsConfigCollectionItemMetricResult'],
                  namespace: str,
                  opc_dry_run: str,
+                 options: str,
                  rules: Sequence['outputs.GetConfigsConfigCollectionItemRuleResult'],
                  time_created: str,
                  time_updated: str):
         """
-        :param str apm_domain_id: The APM Domain Id the request is intended for.
-        :param str config_type: A filter to match only configuration items of the given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
+        :param str apm_domain_id: The APM Domain ID the request is intended for.
+        :param str config_type: A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str description: A description of the metric
-        :param Sequence['GetConfigsConfigCollectionItemDimensionArgs'] dimensions: A list of dimensions for this metric
-        :param str display_name: A filter to return only resources that match the entire display name given.
-        :param str filter_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId will be generated when a Span Filter is created.
+        :param str description: A description of the metric.
+        :param Sequence['GetConfigsConfigCollectionItemDimensionArgs'] dimensions: A list of dimensions for the metric. This variable should not be used.
+        :param str display_name: A filter to return resources that match the given display name.
+        :param str filter_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
         :param str filter_text: The string that defines the Span Filter expression.
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID will be generated when the item is created.
-        :param str namespace: The namespace to write the metrics to
+        :param str group: A string that specifies the group that an OPTIONS item belongs to.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
+        :param Sequence['GetConfigsConfigCollectionItemMetricArgs'] metrics: The list of metrics in this group.
+        :param str namespace: The namespace to which the metrics are published. It must be one of several predefined namespaces.
+        :param str options: The options are stored here as JSON.
         :param str time_created: The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         :param str time_updated: The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
         """
@@ -481,10 +486,12 @@ class GetConfigsConfigCollectionItemResult(dict):
         pulumi.set(__self__, "filter_id", filter_id)
         pulumi.set(__self__, "filter_text", filter_text)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "group", group)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "metrics", metrics)
         pulumi.set(__self__, "namespace", namespace)
         pulumi.set(__self__, "opc_dry_run", opc_dry_run)
+        pulumi.set(__self__, "options", options)
         pulumi.set(__self__, "rules", rules)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
@@ -493,7 +500,7 @@ class GetConfigsConfigCollectionItemResult(dict):
     @pulumi.getter(name="apmDomainId")
     def apm_domain_id(self) -> str:
         """
-        The APM Domain Id the request is intended for.
+        The APM Domain ID the request is intended for.
         """
         return pulumi.get(self, "apm_domain_id")
 
@@ -501,7 +508,7 @@ class GetConfigsConfigCollectionItemResult(dict):
     @pulumi.getter(name="configType")
     def config_type(self) -> str:
         """
-        A filter to match only configuration items of the given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
+        A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
         """
         return pulumi.get(self, "config_type")
 
@@ -517,7 +524,7 @@ class GetConfigsConfigCollectionItemResult(dict):
     @pulumi.getter
     def description(self) -> str:
         """
-        A description of the metric
+        A description of the metric.
         """
         return pulumi.get(self, "description")
 
@@ -525,7 +532,7 @@ class GetConfigsConfigCollectionItemResult(dict):
     @pulumi.getter
     def dimensions(self) -> Sequence['outputs.GetConfigsConfigCollectionItemDimensionResult']:
         """
-        A list of dimensions for this metric
+        A list of dimensions for the metric. This variable should not be used.
         """
         return pulumi.get(self, "dimensions")
 
@@ -533,7 +540,7 @@ class GetConfigsConfigCollectionItemResult(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        A filter to return only resources that match the entire display name given.
+        A filter to return resources that match the given display name.
         """
         return pulumi.get(self, "display_name")
 
@@ -541,7 +548,7 @@ class GetConfigsConfigCollectionItemResult(dict):
     @pulumi.getter(name="filterId")
     def filter_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId will be generated when a Span Filter is created.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
         """
         return pulumi.get(self, "filter_id")
 
@@ -563,22 +570,33 @@ class GetConfigsConfigCollectionItemResult(dict):
 
     @property
     @pulumi.getter
+    def group(self) -> str:
+        """
+        A string that specifies the group that an OPTIONS item belongs to.
+        """
+        return pulumi.get(self, "group")
+
+    @property
+    @pulumi.getter
     def id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID will be generated when the item is created.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
         """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
     def metrics(self) -> Sequence['outputs.GetConfigsConfigCollectionItemMetricResult']:
+        """
+        The list of metrics in this group.
+        """
         return pulumi.get(self, "metrics")
 
     @property
     @pulumi.getter
     def namespace(self) -> str:
         """
-        The namespace to write the metrics to
+        The namespace to which the metrics are published. It must be one of several predefined namespaces.
         """
         return pulumi.get(self, "namespace")
 
@@ -586,6 +604,14 @@ class GetConfigsConfigCollectionItemResult(dict):
     @pulumi.getter(name="opcDryRun")
     def opc_dry_run(self) -> str:
         return pulumi.get(self, "opc_dry_run")
+
+    @property
+    @pulumi.getter
+    def options(self) -> str:
+        """
+        The options are stored here as JSON.
+        """
+        return pulumi.get(self, "options")
 
     @property
     @pulumi.getter
@@ -615,8 +641,8 @@ class GetConfigsConfigCollectionItemDimensionResult(dict):
                  name: str,
                  value_source: str):
         """
-        :param str name: The name of the metric
-        :param str value_source: Must be NULL at the moment, and "name" must be a known metric.
+        :param str name: The name of the metric. This must be a known metric name.
+        :param str value_source: This must not be set.
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "value_source", value_source)
@@ -625,7 +651,7 @@ class GetConfigsConfigCollectionItemDimensionResult(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        The name of the metric
+        The name of the metric. This must be a known metric name.
         """
         return pulumi.get(self, "name")
 
@@ -633,7 +659,7 @@ class GetConfigsConfigCollectionItemDimensionResult(dict):
     @pulumi.getter(name="valueSource")
     def value_source(self) -> str:
         """
-        Must be NULL at the moment, and "name" must be a known metric.
+        This must not be set.
         """
         return pulumi.get(self, "value_source")
 
@@ -646,10 +672,10 @@ class GetConfigsConfigCollectionItemMetricResult(dict):
                  unit: str,
                  value_source: str):
         """
-        :param str description: A description of the metric
-        :param str name: The name of the metric
-        :param str unit: The unit of the metric
-        :param str value_source: Must be NULL at the moment, and "name" must be a known metric.
+        :param str description: A description of the metric.
+        :param str name: The name of the metric. This must be a known metric name.
+        :param str unit: The unit of the metric.
+        :param str value_source: This must not be set.
         """
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "name", name)
@@ -660,7 +686,7 @@ class GetConfigsConfigCollectionItemMetricResult(dict):
     @pulumi.getter
     def description(self) -> str:
         """
-        A description of the metric
+        A description of the metric.
         """
         return pulumi.get(self, "description")
 
@@ -668,7 +694,7 @@ class GetConfigsConfigCollectionItemMetricResult(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        The name of the metric
+        The name of the metric. This must be a known metric name.
         """
         return pulumi.get(self, "name")
 
@@ -676,7 +702,7 @@ class GetConfigsConfigCollectionItemMetricResult(dict):
     @pulumi.getter
     def unit(self) -> str:
         """
-        The unit of the metric
+        The unit of the metric.
         """
         return pulumi.get(self, "unit")
 
@@ -684,7 +710,7 @@ class GetConfigsConfigCollectionItemMetricResult(dict):
     @pulumi.getter(name="valueSource")
     def value_source(self) -> str:
         """
-        Must be NULL at the moment, and "name" must be a known metric.
+        This must not be set.
         """
         return pulumi.get(self, "value_source")
 
@@ -700,13 +726,13 @@ class GetConfigsConfigCollectionItemRuleResult(dict):
                  satisfied_response_time: int,
                  tolerating_response_time: int):
         """
-        :param str display_name: A filter to return only resources that match the entire display name given.
+        :param str display_name: A filter to return resources that match the given display name.
         :param str filter_text: The string that defines the Span Filter expression.
-        :param bool is_apply_to_error_spans: If true, the rule will compute the actual Apdex score for spans that have been marked as errors. If false, the rule will always set the Apdex for error spans to frustrating, regardless of the configured thresholds. Default is false.
-        :param bool is_enabled: Specifies if the Apdex rule will be computed for spans matching the rule. Can be used to make sure certain spans don't get an Apdex score. The default is "true".
+        :param bool is_apply_to_error_spans: Specifies whether an Apdex score should be computed for error spans. Setting it to "true" means that the Apdex score is computed in the usual way. Setting it to "false" skips the Apdex computation and sets the Apdex score to "frustrating" regardless of the configured thresholds. The default is "false".
+        :param bool is_enabled: Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable Apdex score for spans that do not need or require it. The default is "true".
         :param int priority: The priority controls the order in which multiple rules in a rule set are applied. Lower values indicate higher priorities. Rules with higher priority are applied first, and once a match is found, the rest of the rules are ignored. Rules within the same rule set cannot have the same priority.
-        :param int satisfied_response_time: The maximum response time in milliseconds that will be considered satisfactory for the end user.
-        :param int tolerating_response_time: The maximum response time in milliseconds that will be considered tolerable for the end user. Response times beyond this threshold will be considered frustrating. This value cannot be lower than "satisfiedResponseTime".
+        :param int satisfied_response_time: The maximum response time in milliseconds that is considered "satisfactory" for the end user.
+        :param int tolerating_response_time: The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime".
         """
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "filter_text", filter_text)
@@ -720,7 +746,7 @@ class GetConfigsConfigCollectionItemRuleResult(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        A filter to return only resources that match the entire display name given.
+        A filter to return resources that match the given display name.
         """
         return pulumi.get(self, "display_name")
 
@@ -736,7 +762,7 @@ class GetConfigsConfigCollectionItemRuleResult(dict):
     @pulumi.getter(name="isApplyToErrorSpans")
     def is_apply_to_error_spans(self) -> bool:
         """
-        If true, the rule will compute the actual Apdex score for spans that have been marked as errors. If false, the rule will always set the Apdex for error spans to frustrating, regardless of the configured thresholds. Default is false.
+        Specifies whether an Apdex score should be computed for error spans. Setting it to "true" means that the Apdex score is computed in the usual way. Setting it to "false" skips the Apdex computation and sets the Apdex score to "frustrating" regardless of the configured thresholds. The default is "false".
         """
         return pulumi.get(self, "is_apply_to_error_spans")
 
@@ -744,7 +770,7 @@ class GetConfigsConfigCollectionItemRuleResult(dict):
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> bool:
         """
-        Specifies if the Apdex rule will be computed for spans matching the rule. Can be used to make sure certain spans don't get an Apdex score. The default is "true".
+        Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable Apdex score for spans that do not need or require it. The default is "true".
         """
         return pulumi.get(self, "is_enabled")
 
@@ -760,7 +786,7 @@ class GetConfigsConfigCollectionItemRuleResult(dict):
     @pulumi.getter(name="satisfiedResponseTime")
     def satisfied_response_time(self) -> int:
         """
-        The maximum response time in milliseconds that will be considered satisfactory for the end user.
+        The maximum response time in milliseconds that is considered "satisfactory" for the end user.
         """
         return pulumi.get(self, "satisfied_response_time")
 
@@ -768,7 +794,7 @@ class GetConfigsConfigCollectionItemRuleResult(dict):
     @pulumi.getter(name="toleratingResponseTime")
     def tolerating_response_time(self) -> int:
         """
-        The maximum response time in milliseconds that will be considered tolerable for the end user. Response times beyond this threshold will be considered frustrating. This value cannot be lower than "satisfiedResponseTime".
+        The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime".
         """
         return pulumi.get(self, "tolerating_response_time")
 
@@ -780,7 +806,7 @@ class GetConfigsFilterResult(dict):
                  values: Sequence[str],
                  regex: Optional[bool] = None):
         """
-        :param str name: The name of the metric
+        :param str name: The name of the metric. This must be a known metric name.
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
@@ -791,7 +817,7 @@ class GetConfigsFilterResult(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        The name of the metric
+        The name of the metric. This must be a known metric name.
         """
         return pulumi.get(self, "name")
 

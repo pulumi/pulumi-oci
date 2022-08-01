@@ -12,7 +12,7 @@ import (
 
 // This data source provides the list of Alert Rules in Oracle Cloud Infrastructure Budget service.
 //
-// Returns a list of Alert Rules for a specified Budget.
+// Returns a list of Alert Rules for a specified budget.
 //
 // ## Example Usage
 //
@@ -49,9 +49,9 @@ func GetAlertRules(ctx *pulumi.Context, args *GetAlertRulesArgs, opts ...pulumi.
 
 // A collection of arguments for invoking getAlertRules.
 type GetAlertRulesArgs struct {
-	// The unique Budget OCID
+	// The unique budget OCID.
 	BudgetId string `pulumi:"budgetId"`
-	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+	// A user-friendly name. This does not have to be unique, and it's changeable.  Example: `My new resource`
 	DisplayName *string               `pulumi:"displayName"`
 	Filters     []GetAlertRulesFilter `pulumi:"filters"`
 	// The current state of the resource to filter by.
@@ -62,9 +62,9 @@ type GetAlertRulesArgs struct {
 type GetAlertRulesResult struct {
 	// The list of alert_rules.
 	AlertRules []GetAlertRulesAlertRule `pulumi:"alertRules"`
-	// The OCID of the budget
+	// The OCID of the budget.
 	BudgetId string `pulumi:"budgetId"`
-	// The name of the alert rule.
+	// The name of the alert rule. Avoid entering confidential information.
 	DisplayName *string               `pulumi:"displayName"`
 	Filters     []GetAlertRulesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
@@ -88,9 +88,9 @@ func GetAlertRulesOutput(ctx *pulumi.Context, args GetAlertRulesOutputArgs, opts
 
 // A collection of arguments for invoking getAlertRules.
 type GetAlertRulesOutputArgs struct {
-	// The unique Budget OCID
+	// The unique budget OCID.
 	BudgetId pulumi.StringInput `pulumi:"budgetId"`
-	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+	// A user-friendly name. This does not have to be unique, and it's changeable.  Example: `My new resource`
 	DisplayName pulumi.StringPtrInput         `pulumi:"displayName"`
 	Filters     GetAlertRulesFilterArrayInput `pulumi:"filters"`
 	// The current state of the resource to filter by.
@@ -121,12 +121,12 @@ func (o GetAlertRulesResultOutput) AlertRules() GetAlertRulesAlertRuleArrayOutpu
 	return o.ApplyT(func(v GetAlertRulesResult) []GetAlertRulesAlertRule { return v.AlertRules }).(GetAlertRulesAlertRuleArrayOutput)
 }
 
-// The OCID of the budget
+// The OCID of the budget.
 func (o GetAlertRulesResultOutput) BudgetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAlertRulesResult) string { return v.BudgetId }).(pulumi.StringOutput)
 }
 
-// The name of the alert rule.
+// The name of the alert rule. Avoid entering confidential information.
 func (o GetAlertRulesResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetAlertRulesResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }

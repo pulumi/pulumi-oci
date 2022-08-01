@@ -29,7 +29,9 @@ class ApplicationArgs:
                  configuration: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
+                 driver_shape_config: Optional[pulumi.Input['ApplicationDriverShapeConfigArgs']] = None,
                  execute: Optional[pulumi.Input[str]] = None,
+                 executor_shape_config: Optional[pulumi.Input['ApplicationExecutorShapeConfigArgs']] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  logs_bucket_uri: Optional[pulumi.Input[str]] = None,
                  metastore_id: Optional[pulumi.Input[str]] = None,
@@ -53,7 +55,9 @@ class ApplicationArgs:
         :param pulumi.Input[Mapping[str, Any]] configuration: (Updatable) The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) A user-friendly description. Avoid entering confidential information.
+        :param pulumi.Input['ApplicationDriverShapeConfigArgs'] driver_shape_config: (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
         :param pulumi.Input[str] execute: (Updatable) The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
+        :param pulumi.Input['ApplicationExecutorShapeConfigArgs'] executor_shape_config: (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] logs_bucket_uri: (Updatable) An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         :param pulumi.Input[str] metastore_id: (Updatable) The OCID of Oracle Cloud Infrastructure Hive Metastore.
@@ -82,8 +86,12 @@ class ApplicationArgs:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if driver_shape_config is not None:
+            pulumi.set(__self__, "driver_shape_config", driver_shape_config)
         if execute is not None:
             pulumi.set(__self__, "execute", execute)
+        if executor_shape_config is not None:
+            pulumi.set(__self__, "executor_shape_config", executor_shape_config)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if logs_bucket_uri is not None:
@@ -268,6 +276,18 @@ class ApplicationArgs:
         pulumi.set(self, "description", value)
 
     @property
+    @pulumi.getter(name="driverShapeConfig")
+    def driver_shape_config(self) -> Optional[pulumi.Input['ApplicationDriverShapeConfigArgs']]:
+        """
+        (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
+        """
+        return pulumi.get(self, "driver_shape_config")
+
+    @driver_shape_config.setter
+    def driver_shape_config(self, value: Optional[pulumi.Input['ApplicationDriverShapeConfigArgs']]):
+        pulumi.set(self, "driver_shape_config", value)
+
+    @property
     @pulumi.getter
     def execute(self) -> Optional[pulumi.Input[str]]:
         """
@@ -278,6 +298,18 @@ class ApplicationArgs:
     @execute.setter
     def execute(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "execute", value)
+
+    @property
+    @pulumi.getter(name="executorShapeConfig")
+    def executor_shape_config(self) -> Optional[pulumi.Input['ApplicationExecutorShapeConfigArgs']]:
+        """
+        (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
+        """
+        return pulumi.get(self, "executor_shape_config")
+
+    @executor_shape_config.setter
+    def executor_shape_config(self, value: Optional[pulumi.Input['ApplicationExecutorShapeConfigArgs']]):
+        pulumi.set(self, "executor_shape_config", value)
 
     @property
     @pulumi.getter(name="freeformTags")
@@ -376,8 +408,10 @@ class _ApplicationState:
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  driver_shape: Optional[pulumi.Input[str]] = None,
+                 driver_shape_config: Optional[pulumi.Input['ApplicationDriverShapeConfigArgs']] = None,
                  execute: Optional[pulumi.Input[str]] = None,
                  executor_shape: Optional[pulumi.Input[str]] = None,
+                 executor_shape_config: Optional[pulumi.Input['ApplicationExecutorShapeConfigArgs']] = None,
                  file_uri: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  language: Optional[pulumi.Input[str]] = None,
@@ -405,8 +439,10 @@ class _ApplicationState:
         :param pulumi.Input[str] description: (Updatable) A user-friendly description. Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique. Avoid entering confidential information.
         :param pulumi.Input[str] driver_shape: (Updatable) The VM shape for the driver. Sets the driver cores and memory.
+        :param pulumi.Input['ApplicationDriverShapeConfigArgs'] driver_shape_config: (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
         :param pulumi.Input[str] execute: (Updatable) The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
         :param pulumi.Input[str] executor_shape: (Updatable) The VM shape for the executors. Sets the executor cores and memory.
+        :param pulumi.Input['ApplicationExecutorShapeConfigArgs'] executor_shape_config: (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
         :param pulumi.Input[str] file_uri: (Updatable) An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] language: (Updatable) The Spark language.
@@ -442,10 +478,14 @@ class _ApplicationState:
             pulumi.set(__self__, "display_name", display_name)
         if driver_shape is not None:
             pulumi.set(__self__, "driver_shape", driver_shape)
+        if driver_shape_config is not None:
+            pulumi.set(__self__, "driver_shape_config", driver_shape_config)
         if execute is not None:
             pulumi.set(__self__, "execute", execute)
         if executor_shape is not None:
             pulumi.set(__self__, "executor_shape", executor_shape)
+        if executor_shape_config is not None:
+            pulumi.set(__self__, "executor_shape_config", executor_shape_config)
         if file_uri is not None:
             pulumi.set(__self__, "file_uri", file_uri)
         if freeform_tags is not None:
@@ -588,6 +628,18 @@ class _ApplicationState:
         pulumi.set(self, "driver_shape", value)
 
     @property
+    @pulumi.getter(name="driverShapeConfig")
+    def driver_shape_config(self) -> Optional[pulumi.Input['ApplicationDriverShapeConfigArgs']]:
+        """
+        (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
+        """
+        return pulumi.get(self, "driver_shape_config")
+
+    @driver_shape_config.setter
+    def driver_shape_config(self, value: Optional[pulumi.Input['ApplicationDriverShapeConfigArgs']]):
+        pulumi.set(self, "driver_shape_config", value)
+
+    @property
     @pulumi.getter
     def execute(self) -> Optional[pulumi.Input[str]]:
         """
@@ -610,6 +662,18 @@ class _ApplicationState:
     @executor_shape.setter
     def executor_shape(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "executor_shape", value)
+
+    @property
+    @pulumi.getter(name="executorShapeConfig")
+    def executor_shape_config(self) -> Optional[pulumi.Input['ApplicationExecutorShapeConfigArgs']]:
+        """
+        (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
+        """
+        return pulumi.get(self, "executor_shape_config")
+
+    @executor_shape_config.setter
+    def executor_shape_config(self, value: Optional[pulumi.Input['ApplicationExecutorShapeConfigArgs']]):
+        pulumi.set(self, "executor_shape_config", value)
 
     @property
     @pulumi.getter(name="fileUri")
@@ -818,8 +882,10 @@ class Application(pulumi.CustomResource):
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  driver_shape: Optional[pulumi.Input[str]] = None,
+                 driver_shape_config: Optional[pulumi.Input[pulumi.InputType['ApplicationDriverShapeConfigArgs']]] = None,
                  execute: Optional[pulumi.Input[str]] = None,
                  executor_shape: Optional[pulumi.Input[str]] = None,
+                 executor_shape_config: Optional[pulumi.Input[pulumi.InputType['ApplicationExecutorShapeConfigArgs']]] = None,
                  file_uri: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  language: Optional[pulumi.Input[str]] = None,
@@ -860,7 +926,15 @@ class Application(pulumi.CustomResource):
                 "Operations.CostCenter": "42",
             },
             description=var["application_description"],
+            driver_shape_config=oci.data.flow.ApplicationDriverShapeConfigArgs(
+                memory_in_gbs=var["application_driver_shape_config_memory_in_gbs"],
+                ocpus=var["application_driver_shape_config_ocpus"],
+            ),
             execute=var["application_execute"],
+            executor_shape_config=oci.data.flow.ApplicationExecutorShapeConfigArgs(
+                memory_in_gbs=var["application_executor_shape_config_memory_in_gbs"],
+                ocpus=var["application_executor_shape_config_ocpus"],
+            ),
             freeform_tags={
                 "Department": "Finance",
             },
@@ -894,8 +968,10 @@ class Application(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) A user-friendly description. Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique. Avoid entering confidential information.
         :param pulumi.Input[str] driver_shape: (Updatable) The VM shape for the driver. Sets the driver cores and memory.
+        :param pulumi.Input[pulumi.InputType['ApplicationDriverShapeConfigArgs']] driver_shape_config: (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
         :param pulumi.Input[str] execute: (Updatable) The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
         :param pulumi.Input[str] executor_shape: (Updatable) The VM shape for the executors. Sets the executor cores and memory.
+        :param pulumi.Input[pulumi.InputType['ApplicationExecutorShapeConfigArgs']] executor_shape_config: (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
         :param pulumi.Input[str] file_uri: (Updatable) An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] language: (Updatable) The Spark language.
@@ -942,7 +1018,15 @@ class Application(pulumi.CustomResource):
                 "Operations.CostCenter": "42",
             },
             description=var["application_description"],
+            driver_shape_config=oci.data.flow.ApplicationDriverShapeConfigArgs(
+                memory_in_gbs=var["application_driver_shape_config_memory_in_gbs"],
+                ocpus=var["application_driver_shape_config_ocpus"],
+            ),
             execute=var["application_execute"],
+            executor_shape_config=oci.data.flow.ApplicationExecutorShapeConfigArgs(
+                memory_in_gbs=var["application_executor_shape_config_memory_in_gbs"],
+                ocpus=var["application_executor_shape_config_ocpus"],
+            ),
             freeform_tags={
                 "Department": "Finance",
             },
@@ -989,8 +1073,10 @@ class Application(pulumi.CustomResource):
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  driver_shape: Optional[pulumi.Input[str]] = None,
+                 driver_shape_config: Optional[pulumi.Input[pulumi.InputType['ApplicationDriverShapeConfigArgs']]] = None,
                  execute: Optional[pulumi.Input[str]] = None,
                  executor_shape: Optional[pulumi.Input[str]] = None,
+                 executor_shape_config: Optional[pulumi.Input[pulumi.InputType['ApplicationExecutorShapeConfigArgs']]] = None,
                  file_uri: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  language: Optional[pulumi.Input[str]] = None,
@@ -1029,10 +1115,12 @@ class Application(pulumi.CustomResource):
             if driver_shape is None and not opts.urn:
                 raise TypeError("Missing required property 'driver_shape'")
             __props__.__dict__["driver_shape"] = driver_shape
+            __props__.__dict__["driver_shape_config"] = driver_shape_config
             __props__.__dict__["execute"] = execute
             if executor_shape is None and not opts.urn:
                 raise TypeError("Missing required property 'executor_shape'")
             __props__.__dict__["executor_shape"] = executor_shape
+            __props__.__dict__["executor_shape_config"] = executor_shape_config
             if file_uri is None and not opts.urn:
                 raise TypeError("Missing required property 'file_uri'")
             __props__.__dict__["file_uri"] = file_uri
@@ -1076,8 +1164,10 @@ class Application(pulumi.CustomResource):
             description: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             driver_shape: Optional[pulumi.Input[str]] = None,
+            driver_shape_config: Optional[pulumi.Input[pulumi.InputType['ApplicationDriverShapeConfigArgs']]] = None,
             execute: Optional[pulumi.Input[str]] = None,
             executor_shape: Optional[pulumi.Input[str]] = None,
+            executor_shape_config: Optional[pulumi.Input[pulumi.InputType['ApplicationExecutorShapeConfigArgs']]] = None,
             file_uri: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             language: Optional[pulumi.Input[str]] = None,
@@ -1110,8 +1200,10 @@ class Application(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) A user-friendly description. Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique. Avoid entering confidential information.
         :param pulumi.Input[str] driver_shape: (Updatable) The VM shape for the driver. Sets the driver cores and memory.
+        :param pulumi.Input[pulumi.InputType['ApplicationDriverShapeConfigArgs']] driver_shape_config: (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
         :param pulumi.Input[str] execute: (Updatable) The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
         :param pulumi.Input[str] executor_shape: (Updatable) The VM shape for the executors. Sets the executor cores and memory.
+        :param pulumi.Input[pulumi.InputType['ApplicationExecutorShapeConfigArgs']] executor_shape_config: (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
         :param pulumi.Input[str] file_uri: (Updatable) An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] language: (Updatable) The Spark language.
@@ -1142,8 +1234,10 @@ class Application(pulumi.CustomResource):
         __props__.__dict__["description"] = description
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["driver_shape"] = driver_shape
+        __props__.__dict__["driver_shape_config"] = driver_shape_config
         __props__.__dict__["execute"] = execute
         __props__.__dict__["executor_shape"] = executor_shape
+        __props__.__dict__["executor_shape_config"] = executor_shape_config
         __props__.__dict__["file_uri"] = file_uri
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["language"] = language
@@ -1235,6 +1329,14 @@ class Application(pulumi.CustomResource):
         return pulumi.get(self, "driver_shape")
 
     @property
+    @pulumi.getter(name="driverShapeConfig")
+    def driver_shape_config(self) -> pulumi.Output['outputs.ApplicationDriverShapeConfig']:
+        """
+        (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
+        """
+        return pulumi.get(self, "driver_shape_config")
+
+    @property
     @pulumi.getter
     def execute(self) -> pulumi.Output[str]:
         """
@@ -1249,6 +1351,14 @@ class Application(pulumi.CustomResource):
         (Updatable) The VM shape for the executors. Sets the executor cores and memory.
         """
         return pulumi.get(self, "executor_shape")
+
+    @property
+    @pulumi.getter(name="executorShapeConfig")
+    def executor_shape_config(self) -> pulumi.Output['outputs.ApplicationExecutorShapeConfig']:
+        """
+        (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
+        """
+        return pulumi.get(self, "executor_shape_config")
 
     @property
     @pulumi.getter(name="fileUri")

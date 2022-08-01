@@ -25,16 +25,16 @@ class RuleArgs:
                  recipients: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Rule resource.
-        :param pulumi.Input[str] budget_id: The unique Budget OCID
-        :param pulumi.Input[float] threshold: (Updatable) The threshold for triggering the alert expressed as a whole number or decimal value. If thresholdType is ABSOLUTE, threshold can have at most 12 digits before the decimal point and up to 2 digits after the decimal point. If thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to 2 digits after the decimal point.
+        :param pulumi.Input[str] budget_id: The unique budget OCID.
+        :param pulumi.Input[float] threshold: (Updatable) The threshold for triggering the alert, expressed as a whole number or decimal value. If the thresholdType is ABSOLUTE, the threshold can have at most 12 digits before the decimal point, and up to two digits after the decimal point. If the thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to two digits after the decimal point.
         :param pulumi.Input[str] threshold_type: (Updatable) The type of threshold.
-        :param pulumi.Input[str] type: (Updatable) Type of alert. Valid values are ACTUAL (the alert will trigger based on actual usage) or FORECAST (the alert will trigger based on predicted usage).
+        :param pulumi.Input[str] type: (Updatable) The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the alert rule.
-        :param pulumi.Input[str] display_name: (Updatable) The name of the alert rule.
+        :param pulumi.Input[str] display_name: (Updatable) The name of the alert rule. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] message: (Updatable) The message to be sent to the recipients when alert rule is triggered.
-        :param pulumi.Input[str] recipients: (Updatable) The audience that will receive the alert when it triggers. An empty string is interpreted as null.
+        :param pulumi.Input[str] message: (Updatable) The message to be sent to the recipients when the alert rule is triggered.
+        :param pulumi.Input[str] recipients: (Updatable) The audience that receives the alert when it triggers. An empty string is interpreted as null.
         """
         pulumi.set(__self__, "budget_id", budget_id)
         pulumi.set(__self__, "threshold", threshold)
@@ -57,7 +57,7 @@ class RuleArgs:
     @pulumi.getter(name="budgetId")
     def budget_id(self) -> pulumi.Input[str]:
         """
-        The unique Budget OCID
+        The unique budget OCID.
         """
         return pulumi.get(self, "budget_id")
 
@@ -69,7 +69,7 @@ class RuleArgs:
     @pulumi.getter
     def threshold(self) -> pulumi.Input[float]:
         """
-        (Updatable) The threshold for triggering the alert expressed as a whole number or decimal value. If thresholdType is ABSOLUTE, threshold can have at most 12 digits before the decimal point and up to 2 digits after the decimal point. If thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to 2 digits after the decimal point.
+        (Updatable) The threshold for triggering the alert, expressed as a whole number or decimal value. If the thresholdType is ABSOLUTE, the threshold can have at most 12 digits before the decimal point, and up to two digits after the decimal point. If the thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to two digits after the decimal point.
         """
         return pulumi.get(self, "threshold")
 
@@ -93,7 +93,7 @@ class RuleArgs:
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
         """
-        (Updatable) Type of alert. Valid values are ACTUAL (the alert will trigger based on actual usage) or FORECAST (the alert will trigger based on predicted usage).
+        (Updatable) The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
         """
         return pulumi.get(self, "type")
 
@@ -129,7 +129,7 @@ class RuleArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The name of the alert rule.
+        (Updatable) The name of the alert rule. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -153,7 +153,7 @@ class RuleArgs:
     @pulumi.getter
     def message(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The message to be sent to the recipients when alert rule is triggered.
+        (Updatable) The message to be sent to the recipients when the alert rule is triggered.
         """
         return pulumi.get(self, "message")
 
@@ -165,7 +165,7 @@ class RuleArgs:
     @pulumi.getter
     def recipients(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The audience that will receive the alert when it triggers. An empty string is interpreted as null.
+        (Updatable) The audience that receives the alert when it triggers. An empty string is interpreted as null.
         """
         return pulumi.get(self, "recipients")
 
@@ -193,20 +193,20 @@ class _RuleState:
                  version: Optional[pulumi.Input[int]] = None):
         """
         Input properties used for looking up and filtering Rule resources.
-        :param pulumi.Input[str] budget_id: The unique Budget OCID
+        :param pulumi.Input[str] budget_id: The unique budget OCID.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the alert rule.
-        :param pulumi.Input[str] display_name: (Updatable) The name of the alert rule.
+        :param pulumi.Input[str] display_name: (Updatable) The name of the alert rule. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] message: (Updatable) The message to be sent to the recipients when alert rule is triggered.
-        :param pulumi.Input[str] recipients: (Updatable) The audience that will receive the alert when it triggers. An empty string is interpreted as null.
+        :param pulumi.Input[str] message: (Updatable) The message to be sent to the recipients when the alert rule is triggered.
+        :param pulumi.Input[str] recipients: (Updatable) The audience that receives the alert when it triggers. An empty string is interpreted as null.
         :param pulumi.Input[str] state: The current state of the alert rule.
-        :param pulumi.Input[float] threshold: (Updatable) The threshold for triggering the alert expressed as a whole number or decimal value. If thresholdType is ABSOLUTE, threshold can have at most 12 digits before the decimal point and up to 2 digits after the decimal point. If thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to 2 digits after the decimal point.
+        :param pulumi.Input[float] threshold: (Updatable) The threshold for triggering the alert, expressed as a whole number or decimal value. If the thresholdType is ABSOLUTE, the threshold can have at most 12 digits before the decimal point, and up to two digits after the decimal point. If the thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to two digits after the decimal point.
         :param pulumi.Input[str] threshold_type: (Updatable) The type of threshold.
-        :param pulumi.Input[str] time_created: Time when budget was created
-        :param pulumi.Input[str] time_updated: Time when budget was updated
-        :param pulumi.Input[str] type: (Updatable) Type of alert. Valid values are ACTUAL (the alert will trigger based on actual usage) or FORECAST (the alert will trigger based on predicted usage).
-        :param pulumi.Input[int] version: Version of the alert rule. Starts from 1 and increments by 1.
+        :param pulumi.Input[str] time_created: The time when the budget was created.
+        :param pulumi.Input[str] time_updated: The time when the budget was updated.
+        :param pulumi.Input[str] type: (Updatable) The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
+        :param pulumi.Input[int] version: The version of the alert rule. Starts from 1 and increments by 1.
         """
         if budget_id is not None:
             pulumi.set(__self__, "budget_id", budget_id)
@@ -241,7 +241,7 @@ class _RuleState:
     @pulumi.getter(name="budgetId")
     def budget_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The unique Budget OCID
+        The unique budget OCID.
         """
         return pulumi.get(self, "budget_id")
 
@@ -277,7 +277,7 @@ class _RuleState:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The name of the alert rule.
+        (Updatable) The name of the alert rule. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -301,7 +301,7 @@ class _RuleState:
     @pulumi.getter
     def message(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The message to be sent to the recipients when alert rule is triggered.
+        (Updatable) The message to be sent to the recipients when the alert rule is triggered.
         """
         return pulumi.get(self, "message")
 
@@ -313,7 +313,7 @@ class _RuleState:
     @pulumi.getter
     def recipients(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The audience that will receive the alert when it triggers. An empty string is interpreted as null.
+        (Updatable) The audience that receives the alert when it triggers. An empty string is interpreted as null.
         """
         return pulumi.get(self, "recipients")
 
@@ -337,7 +337,7 @@ class _RuleState:
     @pulumi.getter
     def threshold(self) -> Optional[pulumi.Input[float]]:
         """
-        (Updatable) The threshold for triggering the alert expressed as a whole number or decimal value. If thresholdType is ABSOLUTE, threshold can have at most 12 digits before the decimal point and up to 2 digits after the decimal point. If thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to 2 digits after the decimal point.
+        (Updatable) The threshold for triggering the alert, expressed as a whole number or decimal value. If the thresholdType is ABSOLUTE, the threshold can have at most 12 digits before the decimal point, and up to two digits after the decimal point. If the thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to two digits after the decimal point.
         """
         return pulumi.get(self, "threshold")
 
@@ -361,7 +361,7 @@ class _RuleState:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
         """
-        Time when budget was created
+        The time when the budget was created.
         """
         return pulumi.get(self, "time_created")
 
@@ -373,7 +373,7 @@ class _RuleState:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
         """
-        Time when budget was updated
+        The time when the budget was updated.
         """
         return pulumi.get(self, "time_updated")
 
@@ -385,7 +385,7 @@ class _RuleState:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Type of alert. Valid values are ACTUAL (the alert will trigger based on actual usage) or FORECAST (the alert will trigger based on predicted usage).
+        (Updatable) The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
         """
         return pulumi.get(self, "type")
 
@@ -397,7 +397,7 @@ class _RuleState:
     @pulumi.getter
     def version(self) -> Optional[pulumi.Input[int]]:
         """
-        Version of the alert rule. Starts from 1 and increments by 1.
+        The version of the alert rule. Starts from 1 and increments by 1.
         """
         return pulumi.get(self, "version")
 
@@ -460,16 +460,16 @@ class Rule(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] budget_id: The unique Budget OCID
+        :param pulumi.Input[str] budget_id: The unique budget OCID.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the alert rule.
-        :param pulumi.Input[str] display_name: (Updatable) The name of the alert rule.
+        :param pulumi.Input[str] display_name: (Updatable) The name of the alert rule. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] message: (Updatable) The message to be sent to the recipients when alert rule is triggered.
-        :param pulumi.Input[str] recipients: (Updatable) The audience that will receive the alert when it triggers. An empty string is interpreted as null.
-        :param pulumi.Input[float] threshold: (Updatable) The threshold for triggering the alert expressed as a whole number or decimal value. If thresholdType is ABSOLUTE, threshold can have at most 12 digits before the decimal point and up to 2 digits after the decimal point. If thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to 2 digits after the decimal point.
+        :param pulumi.Input[str] message: (Updatable) The message to be sent to the recipients when the alert rule is triggered.
+        :param pulumi.Input[str] recipients: (Updatable) The audience that receives the alert when it triggers. An empty string is interpreted as null.
+        :param pulumi.Input[float] threshold: (Updatable) The threshold for triggering the alert, expressed as a whole number or decimal value. If the thresholdType is ABSOLUTE, the threshold can have at most 12 digits before the decimal point, and up to two digits after the decimal point. If the thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to two digits after the decimal point.
         :param pulumi.Input[str] threshold_type: (Updatable) The type of threshold.
-        :param pulumi.Input[str] type: (Updatable) Type of alert. Valid values are ACTUAL (the alert will trigger based on actual usage) or FORECAST (the alert will trigger based on predicted usage).
+        :param pulumi.Input[str] type: (Updatable) The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
         """
         ...
     @overload
@@ -603,20 +603,20 @@ class Rule(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] budget_id: The unique Budget OCID
+        :param pulumi.Input[str] budget_id: The unique budget OCID.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the alert rule.
-        :param pulumi.Input[str] display_name: (Updatable) The name of the alert rule.
+        :param pulumi.Input[str] display_name: (Updatable) The name of the alert rule. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] message: (Updatable) The message to be sent to the recipients when alert rule is triggered.
-        :param pulumi.Input[str] recipients: (Updatable) The audience that will receive the alert when it triggers. An empty string is interpreted as null.
+        :param pulumi.Input[str] message: (Updatable) The message to be sent to the recipients when the alert rule is triggered.
+        :param pulumi.Input[str] recipients: (Updatable) The audience that receives the alert when it triggers. An empty string is interpreted as null.
         :param pulumi.Input[str] state: The current state of the alert rule.
-        :param pulumi.Input[float] threshold: (Updatable) The threshold for triggering the alert expressed as a whole number or decimal value. If thresholdType is ABSOLUTE, threshold can have at most 12 digits before the decimal point and up to 2 digits after the decimal point. If thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to 2 digits after the decimal point.
+        :param pulumi.Input[float] threshold: (Updatable) The threshold for triggering the alert, expressed as a whole number or decimal value. If the thresholdType is ABSOLUTE, the threshold can have at most 12 digits before the decimal point, and up to two digits after the decimal point. If the thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to two digits after the decimal point.
         :param pulumi.Input[str] threshold_type: (Updatable) The type of threshold.
-        :param pulumi.Input[str] time_created: Time when budget was created
-        :param pulumi.Input[str] time_updated: Time when budget was updated
-        :param pulumi.Input[str] type: (Updatable) Type of alert. Valid values are ACTUAL (the alert will trigger based on actual usage) or FORECAST (the alert will trigger based on predicted usage).
-        :param pulumi.Input[int] version: Version of the alert rule. Starts from 1 and increments by 1.
+        :param pulumi.Input[str] time_created: The time when the budget was created.
+        :param pulumi.Input[str] time_updated: The time when the budget was updated.
+        :param pulumi.Input[str] type: (Updatable) The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
+        :param pulumi.Input[int] version: The version of the alert rule. Starts from 1 and increments by 1.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -642,7 +642,7 @@ class Rule(pulumi.CustomResource):
     @pulumi.getter(name="budgetId")
     def budget_id(self) -> pulumi.Output[str]:
         """
-        The unique Budget OCID
+        The unique budget OCID.
         """
         return pulumi.get(self, "budget_id")
 
@@ -666,7 +666,7 @@ class Rule(pulumi.CustomResource):
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
         """
-        (Updatable) The name of the alert rule.
+        (Updatable) The name of the alert rule. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -682,7 +682,7 @@ class Rule(pulumi.CustomResource):
     @pulumi.getter
     def message(self) -> pulumi.Output[str]:
         """
-        (Updatable) The message to be sent to the recipients when alert rule is triggered.
+        (Updatable) The message to be sent to the recipients when the alert rule is triggered.
         """
         return pulumi.get(self, "message")
 
@@ -690,7 +690,7 @@ class Rule(pulumi.CustomResource):
     @pulumi.getter
     def recipients(self) -> pulumi.Output[Optional[str]]:
         """
-        (Updatable) The audience that will receive the alert when it triggers. An empty string is interpreted as null.
+        (Updatable) The audience that receives the alert when it triggers. An empty string is interpreted as null.
         """
         return pulumi.get(self, "recipients")
 
@@ -706,7 +706,7 @@ class Rule(pulumi.CustomResource):
     @pulumi.getter
     def threshold(self) -> pulumi.Output[float]:
         """
-        (Updatable) The threshold for triggering the alert expressed as a whole number or decimal value. If thresholdType is ABSOLUTE, threshold can have at most 12 digits before the decimal point and up to 2 digits after the decimal point. If thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to 2 digits after the decimal point.
+        (Updatable) The threshold for triggering the alert, expressed as a whole number or decimal value. If the thresholdType is ABSOLUTE, the threshold can have at most 12 digits before the decimal point, and up to two digits after the decimal point. If the thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to two digits after the decimal point.
         """
         return pulumi.get(self, "threshold")
 
@@ -722,7 +722,7 @@ class Rule(pulumi.CustomResource):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> pulumi.Output[str]:
         """
-        Time when budget was created
+        The time when the budget was created.
         """
         return pulumi.get(self, "time_created")
 
@@ -730,7 +730,7 @@ class Rule(pulumi.CustomResource):
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> pulumi.Output[str]:
         """
-        Time when budget was updated
+        The time when the budget was updated.
         """
         return pulumi.get(self, "time_updated")
 
@@ -738,7 +738,7 @@ class Rule(pulumi.CustomResource):
     @pulumi.getter
     def type(self) -> pulumi.Output[str]:
         """
-        (Updatable) Type of alert. Valid values are ACTUAL (the alert will trigger based on actual usage) or FORECAST (the alert will trigger based on predicted usage).
+        (Updatable) The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
         """
         return pulumi.get(self, "type")
 
@@ -746,7 +746,7 @@ class Rule(pulumi.CustomResource):
     @pulumi.getter
     def version(self) -> pulumi.Output[int]:
         """
-        Version of the alert rule. Starts from 1 and increments by 1.
+        The version of the alert rule. Starts from 1 and increments by 1.
         """
         return pulumi.get(self, "version")
 

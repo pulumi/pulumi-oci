@@ -215,14 +215,14 @@ public final class TriggerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Source of the trigger. Allowed values are, GITHUB and GITLAB.
+     * (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
      * 
      */
     @Import(name="triggerSource")
     private @Nullable Output<String> triggerSource;
 
     /**
-     * @return (Updatable) Source of the trigger. Allowed values are, GITHUB and GITLAB.
+     * @return (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
      * 
      */
     public Optional<Output<String>> triggerSource() {
@@ -566,7 +566,7 @@ public final class TriggerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param triggerSource (Updatable) Source of the trigger. Allowed values are, GITHUB and GITLAB.
+         * @param triggerSource (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
          * 
          * @return builder
          * 
@@ -577,7 +577,7 @@ public final class TriggerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param triggerSource (Updatable) Source of the trigger. Allowed values are, GITHUB and GITLAB.
+         * @param triggerSource (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
          * 
          * @return builder
          * 

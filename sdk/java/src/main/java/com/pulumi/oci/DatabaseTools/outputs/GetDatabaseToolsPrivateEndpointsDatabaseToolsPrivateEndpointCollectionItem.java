@@ -29,12 +29,12 @@ public final class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointC
      */
     private final Map<String,Object> definedTags;
     /**
-     * @return A description of the DatabaseToolsPrivateEndpoint.
+     * @return A description of the Database Tools private endpoint.
      * 
      */
     private final String description;
     /**
-     * @return A filter to return only resources that match the entire display name given.
+     * @return A filter to return only resources that match the entire specified display name.
      * 
      */
     private final String displayName;
@@ -44,7 +44,7 @@ public final class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointC
      */
     private final String endpointFqdn;
     /**
-     * @return A filter to return only resources their type matches the given type.
+     * @return A filter to return only resources their `endpointServiceId` matches the specified `endpointServiceId`.
      * 
      */
     private final String endpointServiceId;
@@ -54,7 +54,7 @@ public final class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointC
      */
     private final Map<String,Object> freeformTags;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsPrivateEndpoint.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint.
      * 
      */
     private final String id;
@@ -79,17 +79,17 @@ public final class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointC
      */
     private final String privateEndpointVnicId;
     /**
-     * @return Reverse connection configuration details of Private Endpoint.
+     * @return Reverse connection configuration details of the private endpoint.
      * 
      */
     private final List<GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfiguration> reverseConnectionConfigurations;
     /**
-     * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * @return A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
      * 
      */
     private final String state;
     /**
-     * @return A filter to return only resources their subnetId matches the given subnetId.
+     * @return A filter to return only resources their `subnetId` matches the specified `subnetId`.
      * 
      */
     private final String subnetId;
@@ -99,12 +99,12 @@ public final class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointC
      */
     private final Map<String,Object> systemTags;
     /**
-     * @return The time the DatabaseToolsPrivateEndpoint was created. An RFC3339 formatted datetime string
+     * @return The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
      * 
      */
     private final String timeCreated;
     /**
-     * @return The time the DatabaseToolsPrivateEndpoint was updated. An RFC3339 formatted datetime string
+     * @return The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
      * 
      */
     private final String timeUpdated;
@@ -180,14 +180,14 @@ public final class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointC
         return this.definedTags;
     }
     /**
-     * @return A description of the DatabaseToolsPrivateEndpoint.
+     * @return A description of the Database Tools private endpoint.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return A filter to return only resources that match the entire display name given.
+     * @return A filter to return only resources that match the entire specified display name.
      * 
      */
     public String displayName() {
@@ -201,7 +201,7 @@ public final class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointC
         return this.endpointFqdn;
     }
     /**
-     * @return A filter to return only resources their type matches the given type.
+     * @return A filter to return only resources their `endpointServiceId` matches the specified `endpointServiceId`.
      * 
      */
     public String endpointServiceId() {
@@ -215,7 +215,7 @@ public final class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointC
         return this.freeformTags;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsPrivateEndpoint.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint.
      * 
      */
     public String id() {
@@ -250,21 +250,21 @@ public final class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointC
         return this.privateEndpointVnicId;
     }
     /**
-     * @return Reverse connection configuration details of Private Endpoint.
+     * @return Reverse connection configuration details of the private endpoint.
      * 
      */
     public List<GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfiguration> reverseConnectionConfigurations() {
         return this.reverseConnectionConfigurations;
     }
     /**
-     * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * @return A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
      * 
      */
     public String state() {
         return this.state;
     }
     /**
-     * @return A filter to return only resources their subnetId matches the given subnetId.
+     * @return A filter to return only resources their `subnetId` matches the specified `subnetId`.
      * 
      */
     public String subnetId() {
@@ -278,14 +278,14 @@ public final class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointC
         return this.systemTags;
     }
     /**
-     * @return The time the DatabaseToolsPrivateEndpoint was created. An RFC3339 formatted datetime string
+     * @return The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return The time the DatabaseToolsPrivateEndpoint was updated. An RFC3339 formatted datetime string
+     * @return The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
      * 
      */
     public String timeUpdated() {

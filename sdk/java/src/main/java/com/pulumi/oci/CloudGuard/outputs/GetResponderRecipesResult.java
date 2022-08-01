@@ -23,7 +23,7 @@ public final class GetResponderRecipesResult {
     private final String compartmentId;
     private final @Nullable Boolean compartmentIdInSubtree;
     /**
-     * @return ResponderRule Display Name
+     * @return ResponderRule display name.
      * 
      */
     private final @Nullable String displayName;
@@ -81,7 +81,7 @@ public final class GetResponderRecipesResult {
         return Optional.ofNullable(this.compartmentIdInSubtree);
     }
     /**
-     * @return ResponderRule Display Name
+     * @return ResponderRule display name.
      * 
      */
     public Optional<String> displayName() {

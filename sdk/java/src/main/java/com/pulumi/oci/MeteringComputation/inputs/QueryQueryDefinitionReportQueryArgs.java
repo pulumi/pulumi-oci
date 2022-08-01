@@ -51,14 +51,14 @@ public final class QueryQueryDefinitionReportQueryArgs extends com.pulumi.resour
     }
 
     /**
-     * (Updatable)
+     * (Updatable) The filter object for query usage.
      * 
      */
     @Import(name="filter")
     private @Nullable Output<String> filter;
 
     /**
-     * @return (Updatable)
+     * @return (Updatable) The filter object for query usage.
      * 
      */
     public Optional<Output<String>> filter() {
@@ -278,7 +278,7 @@ public final class QueryQueryDefinitionReportQueryArgs extends com.pulumi.resour
         }
 
         /**
-         * @param filter (Updatable)
+         * @param filter (Updatable) The filter object for query usage.
          * 
          * @return builder
          * 
@@ -289,7 +289,7 @@ public final class QueryQueryDefinitionReportQueryArgs extends com.pulumi.resour
         }
 
         /**
-         * @param filter (Updatable)
+         * @param filter (Updatable) The filter object for query usage.
          * 
          * @return builder
          * 

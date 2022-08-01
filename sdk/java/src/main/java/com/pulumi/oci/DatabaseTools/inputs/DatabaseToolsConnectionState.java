@@ -22,14 +22,14 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
     public static final DatabaseToolsConnectionState Empty = new DatabaseToolsConnectionState();
 
     /**
-     * (Updatable) Advanced connection properties key-value pair (e.g., oracle.net.ssl_server_dn_match).
+     * (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
      * 
      */
     @Import(name="advancedProperties")
     private @Nullable Output<Map<String,Object>> advancedProperties;
 
     /**
-     * @return (Updatable) Advanced connection properties key-value pair (e.g., oracle.net.ssl_server_dn_match).
+     * @return (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
      * 
      */
     public Optional<Output<Map<String,Object>>> advancedProperties() {
@@ -37,14 +37,14 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
     }
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -52,14 +52,14 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
     }
 
     /**
-     * (Updatable) Connect descriptor or Easy Connect Naming method to connect to the database.
+     * (Updatable) The connect descriptor or Easy Connect Naming method use to connect to the database.
      * 
      */
     @Import(name="connectionString")
     private @Nullable Output<String> connectionString;
 
     /**
-     * @return (Updatable) Connect descriptor or Easy Connect Naming method to connect to the database.
+     * @return (Updatable) The connect descriptor or Easy Connect Naming method use to connect to the database.
      * 
      */
     public Optional<Output<String>> connectionString() {
@@ -127,14 +127,14 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
     }
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
      * 
      */
     @Import(name="lifecycleDetails")
     private @Nullable Output<String> lifecycleDetails;
 
     /**
-     * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * @return A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
      * 
      */
     public Optional<Output<String>> lifecycleDetails() {
@@ -142,14 +142,14 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
     }
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsPrivateEndpoint used to access the database in the Customer VCN.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
      * 
      */
     @Import(name="privateEndpointId")
     private @Nullable Output<String> privateEndpointId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsPrivateEndpoint used to access the database in the Customer VCN.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
      * 
      */
     public Optional<Output<String>> privateEndpointId() {
@@ -172,14 +172,14 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
     }
 
     /**
-     * The current state of the DatabaseToolsConnection.
+     * The current state of the Database Tools connection.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return The current state of the DatabaseToolsConnection.
+     * @return The current state of the Database Tools connection.
      * 
      */
     public Optional<Output<String>> state() {
@@ -202,14 +202,14 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
     }
 
     /**
-     * The time the DatabaseToolsConnection was created. An RFC3339 formatted datetime string
+     * The time the Database Tools connection was created. An RFC3339 formatted datetime string.
      * 
      */
     @Import(name="timeCreated")
     private @Nullable Output<String> timeCreated;
 
     /**
-     * @return The time the DatabaseToolsConnection was created. An RFC3339 formatted datetime string
+     * @return The time the Database Tools connection was created. An RFC3339 formatted datetime string.
      * 
      */
     public Optional<Output<String>> timeCreated() {
@@ -217,14 +217,14 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
     }
 
     /**
-     * The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string
+     * The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
      * 
      */
     @Import(name="timeUpdated")
     private @Nullable Output<String> timeUpdated;
 
     /**
-     * @return The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string
+     * @return The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
      * 
      */
     public Optional<Output<String>> timeUpdated() {
@@ -247,14 +247,14 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
     }
 
     /**
-     * (Updatable) Database user name.
+     * (Updatable) The database user name.
      * 
      */
     @Import(name="userName")
     private @Nullable Output<String> userName;
 
     /**
-     * @return (Updatable) Database user name.
+     * @return (Updatable) The database user name.
      * 
      */
     public Optional<Output<String>> userName() {
@@ -317,7 +317,7 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param advancedProperties (Updatable) Advanced connection properties key-value pair (e.g., oracle.net.ssl_server_dn_match).
+         * @param advancedProperties (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
          * 
          * @return builder
          * 
@@ -328,7 +328,7 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param advancedProperties (Updatable) Advanced connection properties key-value pair (e.g., oracle.net.ssl_server_dn_match).
+         * @param advancedProperties (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
          * 
          * @return builder
          * 
@@ -338,7 +338,7 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
          * 
          * @return builder
          * 
@@ -349,7 +349,7 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
          * 
          * @return builder
          * 
@@ -359,7 +359,7 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param connectionString (Updatable) Connect descriptor or Easy Connect Naming method to connect to the database.
+         * @param connectionString (Updatable) The connect descriptor or Easy Connect Naming method use to connect to the database.
          * 
          * @return builder
          * 
@@ -370,7 +370,7 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param connectionString (Updatable) Connect descriptor or Easy Connect Naming method to connect to the database.
+         * @param connectionString (Updatable) The connect descriptor or Easy Connect Naming method use to connect to the database.
          * 
          * @return builder
          * 
@@ -474,7 +474,7 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param lifecycleDetails A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         * @param lifecycleDetails A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
          * 
          * @return builder
          * 
@@ -485,7 +485,7 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param lifecycleDetails A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         * @param lifecycleDetails A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
          * 
          * @return builder
          * 
@@ -495,7 +495,7 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param privateEndpointId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsPrivateEndpoint used to access the database in the Customer VCN.
+         * @param privateEndpointId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
          * 
          * @return builder
          * 
@@ -506,7 +506,7 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param privateEndpointId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsPrivateEndpoint used to access the database in the Customer VCN.
+         * @param privateEndpointId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
          * 
          * @return builder
          * 
@@ -537,7 +537,7 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param state The current state of the DatabaseToolsConnection.
+         * @param state The current state of the Database Tools connection.
          * 
          * @return builder
          * 
@@ -548,7 +548,7 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param state The current state of the DatabaseToolsConnection.
+         * @param state The current state of the Database Tools connection.
          * 
          * @return builder
          * 
@@ -579,7 +579,7 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param timeCreated The time the DatabaseToolsConnection was created. An RFC3339 formatted datetime string
+         * @param timeCreated The time the Database Tools connection was created. An RFC3339 formatted datetime string.
          * 
          * @return builder
          * 
@@ -590,7 +590,7 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param timeCreated The time the DatabaseToolsConnection was created. An RFC3339 formatted datetime string
+         * @param timeCreated The time the Database Tools connection was created. An RFC3339 formatted datetime string.
          * 
          * @return builder
          * 
@@ -600,7 +600,7 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param timeUpdated The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string
+         * @param timeUpdated The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
          * 
          * @return builder
          * 
@@ -611,7 +611,7 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param timeUpdated The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string
+         * @param timeUpdated The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
          * 
          * @return builder
          * 
@@ -642,7 +642,7 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param userName (Updatable) Database user name.
+         * @param userName (Updatable) The database user name.
          * 
          * @return builder
          * 
@@ -653,7 +653,7 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param userName (Updatable) Database user name.
+         * @param userName (Updatable) The database user name.
          * 
          * @return builder
          * 

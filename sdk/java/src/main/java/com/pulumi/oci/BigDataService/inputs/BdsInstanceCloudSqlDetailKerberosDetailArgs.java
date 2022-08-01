@@ -31,14 +31,14 @@ public final class BdsInstanceCloudSqlDetailKerberosDetailArgs extends com.pulum
     }
 
     /**
-     * Name of the Kerberos principal.
+     * Name of the Kerberos principal
      * 
      */
     @Import(name="principalName")
     private @Nullable Output<String> principalName;
 
     /**
-     * @return Name of the Kerberos principal.
+     * @return Name of the Kerberos principal
      * 
      */
     public Optional<Output<String>> principalName() {
@@ -92,7 +92,7 @@ public final class BdsInstanceCloudSqlDetailKerberosDetailArgs extends com.pulum
         }
 
         /**
-         * @param principalName Name of the Kerberos principal.
+         * @param principalName Name of the Kerberos principal
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class BdsInstanceCloudSqlDetailKerberosDetailArgs extends com.pulum
         }
 
         /**
-         * @param principalName Name of the Kerberos principal.
+         * @param principalName Name of the Kerberos principal
          * 
          * @return builder
          * 

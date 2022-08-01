@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Database.outputs.GetVmClustersVmClusterDataCollectionOption;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Integer;
@@ -26,6 +27,11 @@ public final class GetVmClustersVmCluster {
      * 
      */
     private final Integer cpusEnabled;
+    /**
+     * @return Indicates user preferences for the various diagnostic collection options for the VM cluster.
+     * 
+     */
+    private final List<GetVmClustersVmClusterDataCollectionOption> dataCollectionOptions;
     private final Double dataStorageSizeInGb;
     /**
      * @return Size, in terabytes, of the DATA disk group.
@@ -145,6 +151,7 @@ public final class GetVmClustersVmCluster {
         @CustomType.Parameter("compartmentId") String compartmentId,
         @CustomType.Parameter("cpuCoreCount") Integer cpuCoreCount,
         @CustomType.Parameter("cpusEnabled") Integer cpusEnabled,
+        @CustomType.Parameter("dataCollectionOptions") List<GetVmClustersVmClusterDataCollectionOption> dataCollectionOptions,
         @CustomType.Parameter("dataStorageSizeInGb") Double dataStorageSizeInGb,
         @CustomType.Parameter("dataStorageSizeInTbs") Double dataStorageSizeInTbs,
         @CustomType.Parameter("dbNodeStorageSizeInGbs") Integer dbNodeStorageSizeInGbs,
@@ -173,6 +180,7 @@ public final class GetVmClustersVmCluster {
         this.compartmentId = compartmentId;
         this.cpuCoreCount = cpuCoreCount;
         this.cpusEnabled = cpusEnabled;
+        this.dataCollectionOptions = dataCollectionOptions;
         this.dataStorageSizeInGb = dataStorageSizeInGb;
         this.dataStorageSizeInTbs = dataStorageSizeInTbs;
         this.dbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
@@ -216,6 +224,13 @@ public final class GetVmClustersVmCluster {
      */
     public Integer cpusEnabled() {
         return this.cpusEnabled;
+    }
+    /**
+     * @return Indicates user preferences for the various diagnostic collection options for the VM cluster.
+     * 
+     */
+    public List<GetVmClustersVmClusterDataCollectionOption> dataCollectionOptions() {
+        return this.dataCollectionOptions;
     }
     public Double dataStorageSizeInGb() {
         return this.dataStorageSizeInGb;
@@ -393,6 +408,7 @@ public final class GetVmClustersVmCluster {
         private String compartmentId;
         private Integer cpuCoreCount;
         private Integer cpusEnabled;
+        private List<GetVmClustersVmClusterDataCollectionOption> dataCollectionOptions;
         private Double dataStorageSizeInGb;
         private Double dataStorageSizeInTbs;
         private Integer dbNodeStorageSizeInGbs;
@@ -428,6 +444,7 @@ public final class GetVmClustersVmCluster {
     	      this.compartmentId = defaults.compartmentId;
     	      this.cpuCoreCount = defaults.cpuCoreCount;
     	      this.cpusEnabled = defaults.cpusEnabled;
+    	      this.dataCollectionOptions = defaults.dataCollectionOptions;
     	      this.dataStorageSizeInGb = defaults.dataStorageSizeInGb;
     	      this.dataStorageSizeInTbs = defaults.dataStorageSizeInTbs;
     	      this.dbNodeStorageSizeInGbs = defaults.dbNodeStorageSizeInGbs;
@@ -466,6 +483,13 @@ public final class GetVmClustersVmCluster {
         public Builder cpusEnabled(Integer cpusEnabled) {
             this.cpusEnabled = Objects.requireNonNull(cpusEnabled);
             return this;
+        }
+        public Builder dataCollectionOptions(List<GetVmClustersVmClusterDataCollectionOption> dataCollectionOptions) {
+            this.dataCollectionOptions = Objects.requireNonNull(dataCollectionOptions);
+            return this;
+        }
+        public Builder dataCollectionOptions(GetVmClustersVmClusterDataCollectionOption... dataCollectionOptions) {
+            return dataCollectionOptions(List.of(dataCollectionOptions));
         }
         public Builder dataStorageSizeInGb(Double dataStorageSizeInGb) {
             this.dataStorageSizeInGb = Objects.requireNonNull(dataStorageSizeInGb);
@@ -573,7 +597,7 @@ public final class GetVmClustersVmCluster {
             this.vmClusterNetworkId = Objects.requireNonNull(vmClusterNetworkId);
             return this;
         }        public GetVmClustersVmCluster build() {
-            return new GetVmClustersVmCluster(compartmentId, cpuCoreCount, cpusEnabled, dataStorageSizeInGb, dataStorageSizeInTbs, dbNodeStorageSizeInGbs, dbServers, definedTags, displayName, exadataInfrastructureId, freeformTags, giVersion, id, isLocalBackupEnabled, isSparseDiskgroupEnabled, lastPatchHistoryEntryId, licenseModel, lifecycleDetails, memorySizeInGbs, ocpuCount, ocpusEnabled, shape, sshPublicKeys, state, systemVersion, timeCreated, timeZone, vmClusterNetworkId);
+            return new GetVmClustersVmCluster(compartmentId, cpuCoreCount, cpusEnabled, dataCollectionOptions, dataStorageSizeInGb, dataStorageSizeInTbs, dbNodeStorageSizeInGbs, dbServers, definedTags, displayName, exadataInfrastructureId, freeformTags, giVersion, id, isLocalBackupEnabled, isSparseDiskgroupEnabled, lastPatchHistoryEntryId, licenseModel, lifecycleDetails, memorySizeInGbs, ocpuCount, ocpusEnabled, shape, sshPublicKeys, state, systemVersion, timeCreated, timeZone, vmClusterNetworkId);
         }
     }
 }

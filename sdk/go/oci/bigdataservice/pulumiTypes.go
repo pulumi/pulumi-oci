@@ -11,7 +11,7 @@ import (
 )
 
 type AutoScalingConfigurationPolicy struct {
-	// (Updatable) Types of autoscale policies. Options are SCHEDULE-BASED or THRESHOLD-BASED. (Only THRESHOLD-BASED is supported in this release.)
+	// Type of autoscaling policy.
 	PolicyType string `pulumi:"policyType"`
 	// (Updatable) The list of rules for autoscaling. If an action has multiple rules, the last rule in the array will be applied.
 	Rules []AutoScalingConfigurationPolicyRule `pulumi:"rules"`
@@ -29,7 +29,7 @@ type AutoScalingConfigurationPolicyInput interface {
 }
 
 type AutoScalingConfigurationPolicyArgs struct {
-	// (Updatable) Types of autoscale policies. Options are SCHEDULE-BASED or THRESHOLD-BASED. (Only THRESHOLD-BASED is supported in this release.)
+	// Type of autoscaling policy.
 	PolicyType pulumi.StringInput `pulumi:"policyType"`
 	// (Updatable) The list of rules for autoscaling. If an action has multiple rules, the last rule in the array will be applied.
 	Rules AutoScalingConfigurationPolicyRuleArrayInput `pulumi:"rules"`
@@ -112,7 +112,7 @@ func (o AutoScalingConfigurationPolicyOutput) ToAutoScalingConfigurationPolicyPt
 	}).(AutoScalingConfigurationPolicyPtrOutput)
 }
 
-// (Updatable) Types of autoscale policies. Options are SCHEDULE-BASED or THRESHOLD-BASED. (Only THRESHOLD-BASED is supported in this release.)
+// Type of autoscaling policy.
 func (o AutoScalingConfigurationPolicyOutput) PolicyType() pulumi.StringOutput {
 	return o.ApplyT(func(v AutoScalingConfigurationPolicy) string { return v.PolicyType }).(pulumi.StringOutput)
 }
@@ -146,7 +146,7 @@ func (o AutoScalingConfigurationPolicyPtrOutput) Elem() AutoScalingConfiguration
 	}).(AutoScalingConfigurationPolicyOutput)
 }
 
-// (Updatable) Types of autoscale policies. Options are SCHEDULE-BASED or THRESHOLD-BASED. (Only THRESHOLD-BASED is supported in this release.)
+// Type of autoscaling policy.
 func (o AutoScalingConfigurationPolicyPtrOutput) PolicyType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AutoScalingConfigurationPolicy) *string {
 		if v == nil {
@@ -164,6 +164,2790 @@ func (o AutoScalingConfigurationPolicyPtrOutput) Rules() AutoScalingConfiguratio
 		}
 		return v.Rules
 	}).(AutoScalingConfigurationPolicyRuleArrayOutput)
+}
+
+type AutoScalingConfigurationPolicyDetails struct {
+	// The type of autoscaling action to take.
+	ActionType *string `pulumi:"actionType"`
+	// Type of autoscaling policy.
+	PolicyType string `pulumi:"policyType"`
+	// (Updatable) Configration for a metric based vertical scale-down policy.
+	ScaleDownConfig *AutoScalingConfigurationPolicyDetailsScaleDownConfig `pulumi:"scaleDownConfig"`
+	// (Updatable) Configration for a metric based horizontal scale-in policy.
+	ScaleInConfig *AutoScalingConfigurationPolicyDetailsScaleInConfig `pulumi:"scaleInConfig"`
+	// (Updatable) Configration for a metric based horizontal scale-out policy.
+	ScaleOutConfig *AutoScalingConfigurationPolicyDetailsScaleOutConfig `pulumi:"scaleOutConfig"`
+	// (Updatable) Configration for a metric based vertical scale-up policy.
+	ScaleUpConfig *AutoScalingConfigurationPolicyDetailsScaleUpConfig `pulumi:"scaleUpConfig"`
+	// (Updatable)
+	ScheduleDetails []AutoScalingConfigurationPolicyDetailsScheduleDetail `pulumi:"scheduleDetails"`
+	// (Updatable) The time zone of the execution schedule, in IANA time zone database name format
+	Timezone *string `pulumi:"timezone"`
+	// The type of autoscaling trigger.
+	TriggerType *string `pulumi:"triggerType"`
+}
+
+// AutoScalingConfigurationPolicyDetailsInput is an input type that accepts AutoScalingConfigurationPolicyDetailsArgs and AutoScalingConfigurationPolicyDetailsOutput values.
+// You can construct a concrete instance of `AutoScalingConfigurationPolicyDetailsInput` via:
+//
+//          AutoScalingConfigurationPolicyDetailsArgs{...}
+type AutoScalingConfigurationPolicyDetailsInput interface {
+	pulumi.Input
+
+	ToAutoScalingConfigurationPolicyDetailsOutput() AutoScalingConfigurationPolicyDetailsOutput
+	ToAutoScalingConfigurationPolicyDetailsOutputWithContext(context.Context) AutoScalingConfigurationPolicyDetailsOutput
+}
+
+type AutoScalingConfigurationPolicyDetailsArgs struct {
+	// The type of autoscaling action to take.
+	ActionType pulumi.StringPtrInput `pulumi:"actionType"`
+	// Type of autoscaling policy.
+	PolicyType pulumi.StringInput `pulumi:"policyType"`
+	// (Updatable) Configration for a metric based vertical scale-down policy.
+	ScaleDownConfig AutoScalingConfigurationPolicyDetailsScaleDownConfigPtrInput `pulumi:"scaleDownConfig"`
+	// (Updatable) Configration for a metric based horizontal scale-in policy.
+	ScaleInConfig AutoScalingConfigurationPolicyDetailsScaleInConfigPtrInput `pulumi:"scaleInConfig"`
+	// (Updatable) Configration for a metric based horizontal scale-out policy.
+	ScaleOutConfig AutoScalingConfigurationPolicyDetailsScaleOutConfigPtrInput `pulumi:"scaleOutConfig"`
+	// (Updatable) Configration for a metric based vertical scale-up policy.
+	ScaleUpConfig AutoScalingConfigurationPolicyDetailsScaleUpConfigPtrInput `pulumi:"scaleUpConfig"`
+	// (Updatable)
+	ScheduleDetails AutoScalingConfigurationPolicyDetailsScheduleDetailArrayInput `pulumi:"scheduleDetails"`
+	// (Updatable) The time zone of the execution schedule, in IANA time zone database name format
+	Timezone pulumi.StringPtrInput `pulumi:"timezone"`
+	// The type of autoscaling trigger.
+	TriggerType pulumi.StringPtrInput `pulumi:"triggerType"`
+}
+
+func (AutoScalingConfigurationPolicyDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AutoScalingConfigurationPolicyDetails)(nil)).Elem()
+}
+
+func (i AutoScalingConfigurationPolicyDetailsArgs) ToAutoScalingConfigurationPolicyDetailsOutput() AutoScalingConfigurationPolicyDetailsOutput {
+	return i.ToAutoScalingConfigurationPolicyDetailsOutputWithContext(context.Background())
+}
+
+func (i AutoScalingConfigurationPolicyDetailsArgs) ToAutoScalingConfigurationPolicyDetailsOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsOutput)
+}
+
+func (i AutoScalingConfigurationPolicyDetailsArgs) ToAutoScalingConfigurationPolicyDetailsPtrOutput() AutoScalingConfigurationPolicyDetailsPtrOutput {
+	return i.ToAutoScalingConfigurationPolicyDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i AutoScalingConfigurationPolicyDetailsArgs) ToAutoScalingConfigurationPolicyDetailsPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsOutput).ToAutoScalingConfigurationPolicyDetailsPtrOutputWithContext(ctx)
+}
+
+// AutoScalingConfigurationPolicyDetailsPtrInput is an input type that accepts AutoScalingConfigurationPolicyDetailsArgs, AutoScalingConfigurationPolicyDetailsPtr and AutoScalingConfigurationPolicyDetailsPtrOutput values.
+// You can construct a concrete instance of `AutoScalingConfigurationPolicyDetailsPtrInput` via:
+//
+//          AutoScalingConfigurationPolicyDetailsArgs{...}
+//
+//  or:
+//
+//          nil
+type AutoScalingConfigurationPolicyDetailsPtrInput interface {
+	pulumi.Input
+
+	ToAutoScalingConfigurationPolicyDetailsPtrOutput() AutoScalingConfigurationPolicyDetailsPtrOutput
+	ToAutoScalingConfigurationPolicyDetailsPtrOutputWithContext(context.Context) AutoScalingConfigurationPolicyDetailsPtrOutput
+}
+
+type autoScalingConfigurationPolicyDetailsPtrType AutoScalingConfigurationPolicyDetailsArgs
+
+func AutoScalingConfigurationPolicyDetailsPtr(v *AutoScalingConfigurationPolicyDetailsArgs) AutoScalingConfigurationPolicyDetailsPtrInput {
+	return (*autoScalingConfigurationPolicyDetailsPtrType)(v)
+}
+
+func (*autoScalingConfigurationPolicyDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AutoScalingConfigurationPolicyDetails)(nil)).Elem()
+}
+
+func (i *autoScalingConfigurationPolicyDetailsPtrType) ToAutoScalingConfigurationPolicyDetailsPtrOutput() AutoScalingConfigurationPolicyDetailsPtrOutput {
+	return i.ToAutoScalingConfigurationPolicyDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *autoScalingConfigurationPolicyDetailsPtrType) ToAutoScalingConfigurationPolicyDetailsPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsPtrOutput)
+}
+
+type AutoScalingConfigurationPolicyDetailsOutput struct{ *pulumi.OutputState }
+
+func (AutoScalingConfigurationPolicyDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AutoScalingConfigurationPolicyDetails)(nil)).Elem()
+}
+
+func (o AutoScalingConfigurationPolicyDetailsOutput) ToAutoScalingConfigurationPolicyDetailsOutput() AutoScalingConfigurationPolicyDetailsOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsOutput) ToAutoScalingConfigurationPolicyDetailsOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsOutput) ToAutoScalingConfigurationPolicyDetailsPtrOutput() AutoScalingConfigurationPolicyDetailsPtrOutput {
+	return o.ToAutoScalingConfigurationPolicyDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o AutoScalingConfigurationPolicyDetailsOutput) ToAutoScalingConfigurationPolicyDetailsPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AutoScalingConfigurationPolicyDetails) *AutoScalingConfigurationPolicyDetails {
+		return &v
+	}).(AutoScalingConfigurationPolicyDetailsPtrOutput)
+}
+
+// The type of autoscaling action to take.
+func (o AutoScalingConfigurationPolicyDetailsOutput) ActionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetails) *string { return v.ActionType }).(pulumi.StringPtrOutput)
+}
+
+// Type of autoscaling policy.
+func (o AutoScalingConfigurationPolicyDetailsOutput) PolicyType() pulumi.StringOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetails) string { return v.PolicyType }).(pulumi.StringOutput)
+}
+
+// (Updatable) Configration for a metric based vertical scale-down policy.
+func (o AutoScalingConfigurationPolicyDetailsOutput) ScaleDownConfig() AutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetails) *AutoScalingConfigurationPolicyDetailsScaleDownConfig {
+		return v.ScaleDownConfig
+	}).(AutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutput)
+}
+
+// (Updatable) Configration for a metric based horizontal scale-in policy.
+func (o AutoScalingConfigurationPolicyDetailsOutput) ScaleInConfig() AutoScalingConfigurationPolicyDetailsScaleInConfigPtrOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetails) *AutoScalingConfigurationPolicyDetailsScaleInConfig {
+		return v.ScaleInConfig
+	}).(AutoScalingConfigurationPolicyDetailsScaleInConfigPtrOutput)
+}
+
+// (Updatable) Configration for a metric based horizontal scale-out policy.
+func (o AutoScalingConfigurationPolicyDetailsOutput) ScaleOutConfig() AutoScalingConfigurationPolicyDetailsScaleOutConfigPtrOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetails) *AutoScalingConfigurationPolicyDetailsScaleOutConfig {
+		return v.ScaleOutConfig
+	}).(AutoScalingConfigurationPolicyDetailsScaleOutConfigPtrOutput)
+}
+
+// (Updatable) Configration for a metric based vertical scale-up policy.
+func (o AutoScalingConfigurationPolicyDetailsOutput) ScaleUpConfig() AutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetails) *AutoScalingConfigurationPolicyDetailsScaleUpConfig {
+		return v.ScaleUpConfig
+	}).(AutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutput)
+}
+
+// (Updatable)
+func (o AutoScalingConfigurationPolicyDetailsOutput) ScheduleDetails() AutoScalingConfigurationPolicyDetailsScheduleDetailArrayOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetails) []AutoScalingConfigurationPolicyDetailsScheduleDetail {
+		return v.ScheduleDetails
+	}).(AutoScalingConfigurationPolicyDetailsScheduleDetailArrayOutput)
+}
+
+// (Updatable) The time zone of the execution schedule, in IANA time zone database name format
+func (o AutoScalingConfigurationPolicyDetailsOutput) Timezone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetails) *string { return v.Timezone }).(pulumi.StringPtrOutput)
+}
+
+// The type of autoscaling trigger.
+func (o AutoScalingConfigurationPolicyDetailsOutput) TriggerType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetails) *string { return v.TriggerType }).(pulumi.StringPtrOutput)
+}
+
+type AutoScalingConfigurationPolicyDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (AutoScalingConfigurationPolicyDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AutoScalingConfigurationPolicyDetails)(nil)).Elem()
+}
+
+func (o AutoScalingConfigurationPolicyDetailsPtrOutput) ToAutoScalingConfigurationPolicyDetailsPtrOutput() AutoScalingConfigurationPolicyDetailsPtrOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsPtrOutput) ToAutoScalingConfigurationPolicyDetailsPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsPtrOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsPtrOutput) Elem() AutoScalingConfigurationPolicyDetailsOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetails) AutoScalingConfigurationPolicyDetails {
+		if v != nil {
+			return *v
+		}
+		var ret AutoScalingConfigurationPolicyDetails
+		return ret
+	}).(AutoScalingConfigurationPolicyDetailsOutput)
+}
+
+// The type of autoscaling action to take.
+func (o AutoScalingConfigurationPolicyDetailsPtrOutput) ActionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ActionType
+	}).(pulumi.StringPtrOutput)
+}
+
+// Type of autoscaling policy.
+func (o AutoScalingConfigurationPolicyDetailsPtrOutput) PolicyType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.PolicyType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Configration for a metric based vertical scale-down policy.
+func (o AutoScalingConfigurationPolicyDetailsPtrOutput) ScaleDownConfig() AutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetails) *AutoScalingConfigurationPolicyDetailsScaleDownConfig {
+		if v == nil {
+			return nil
+		}
+		return v.ScaleDownConfig
+	}).(AutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutput)
+}
+
+// (Updatable) Configration for a metric based horizontal scale-in policy.
+func (o AutoScalingConfigurationPolicyDetailsPtrOutput) ScaleInConfig() AutoScalingConfigurationPolicyDetailsScaleInConfigPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetails) *AutoScalingConfigurationPolicyDetailsScaleInConfig {
+		if v == nil {
+			return nil
+		}
+		return v.ScaleInConfig
+	}).(AutoScalingConfigurationPolicyDetailsScaleInConfigPtrOutput)
+}
+
+// (Updatable) Configration for a metric based horizontal scale-out policy.
+func (o AutoScalingConfigurationPolicyDetailsPtrOutput) ScaleOutConfig() AutoScalingConfigurationPolicyDetailsScaleOutConfigPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetails) *AutoScalingConfigurationPolicyDetailsScaleOutConfig {
+		if v == nil {
+			return nil
+		}
+		return v.ScaleOutConfig
+	}).(AutoScalingConfigurationPolicyDetailsScaleOutConfigPtrOutput)
+}
+
+// (Updatable) Configration for a metric based vertical scale-up policy.
+func (o AutoScalingConfigurationPolicyDetailsPtrOutput) ScaleUpConfig() AutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetails) *AutoScalingConfigurationPolicyDetailsScaleUpConfig {
+		if v == nil {
+			return nil
+		}
+		return v.ScaleUpConfig
+	}).(AutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutput)
+}
+
+// (Updatable)
+func (o AutoScalingConfigurationPolicyDetailsPtrOutput) ScheduleDetails() AutoScalingConfigurationPolicyDetailsScheduleDetailArrayOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetails) []AutoScalingConfigurationPolicyDetailsScheduleDetail {
+		if v == nil {
+			return nil
+		}
+		return v.ScheduleDetails
+	}).(AutoScalingConfigurationPolicyDetailsScheduleDetailArrayOutput)
+}
+
+// (Updatable) The time zone of the execution schedule, in IANA time zone database name format
+func (o AutoScalingConfigurationPolicyDetailsPtrOutput) Timezone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Timezone
+	}).(pulumi.StringPtrOutput)
+}
+
+// The type of autoscaling trigger.
+func (o AutoScalingConfigurationPolicyDetailsPtrOutput) TriggerType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TriggerType
+	}).(pulumi.StringPtrOutput)
+}
+
+type AutoScalingConfigurationPolicyDetailsScaleDownConfig struct {
+	// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+	MemoryStepSize *int `pulumi:"memoryStepSize"`
+	// (Updatable) Metric and threshold details for triggering an autoscale action.
+	Metric *AutoScalingConfigurationPolicyDetailsScaleDownConfigMetric `pulumi:"metric"`
+	// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the minimum memory in GBs each node can be scaled-down to. This value is not used for nodes with fixed compute shapes.
+	MinMemoryPerNode *int `pulumi:"minMemoryPerNode"`
+	// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the minimum number of OCPUs each node can be scaled-down to. This value is not used for nodes with fixed compute shapes.
+	MinOcpusPerNode *int `pulumi:"minOcpusPerNode"`
+	// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+	OcpuStepSize *int `pulumi:"ocpuStepSize"`
+}
+
+// AutoScalingConfigurationPolicyDetailsScaleDownConfigInput is an input type that accepts AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs and AutoScalingConfigurationPolicyDetailsScaleDownConfigOutput values.
+// You can construct a concrete instance of `AutoScalingConfigurationPolicyDetailsScaleDownConfigInput` via:
+//
+//          AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs{...}
+type AutoScalingConfigurationPolicyDetailsScaleDownConfigInput interface {
+	pulumi.Input
+
+	ToAutoScalingConfigurationPolicyDetailsScaleDownConfigOutput() AutoScalingConfigurationPolicyDetailsScaleDownConfigOutput
+	ToAutoScalingConfigurationPolicyDetailsScaleDownConfigOutputWithContext(context.Context) AutoScalingConfigurationPolicyDetailsScaleDownConfigOutput
+}
+
+type AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs struct {
+	// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+	MemoryStepSize pulumi.IntPtrInput `pulumi:"memoryStepSize"`
+	// (Updatable) Metric and threshold details for triggering an autoscale action.
+	Metric AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrInput `pulumi:"metric"`
+	// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the minimum memory in GBs each node can be scaled-down to. This value is not used for nodes with fixed compute shapes.
+	MinMemoryPerNode pulumi.IntPtrInput `pulumi:"minMemoryPerNode"`
+	// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the minimum number of OCPUs each node can be scaled-down to. This value is not used for nodes with fixed compute shapes.
+	MinOcpusPerNode pulumi.IntPtrInput `pulumi:"minOcpusPerNode"`
+	// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+	OcpuStepSize pulumi.IntPtrInput `pulumi:"ocpuStepSize"`
+}
+
+func (AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScaleDownConfig)(nil)).Elem()
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs) ToAutoScalingConfigurationPolicyDetailsScaleDownConfigOutput() AutoScalingConfigurationPolicyDetailsScaleDownConfigOutput {
+	return i.ToAutoScalingConfigurationPolicyDetailsScaleDownConfigOutputWithContext(context.Background())
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs) ToAutoScalingConfigurationPolicyDetailsScaleDownConfigOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleDownConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleDownConfigOutput)
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs) ToAutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutput() AutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutput {
+	return i.ToAutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutputWithContext(context.Background())
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs) ToAutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleDownConfigOutput).ToAutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutputWithContext(ctx)
+}
+
+// AutoScalingConfigurationPolicyDetailsScaleDownConfigPtrInput is an input type that accepts AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs, AutoScalingConfigurationPolicyDetailsScaleDownConfigPtr and AutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutput values.
+// You can construct a concrete instance of `AutoScalingConfigurationPolicyDetailsScaleDownConfigPtrInput` via:
+//
+//          AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs{...}
+//
+//  or:
+//
+//          nil
+type AutoScalingConfigurationPolicyDetailsScaleDownConfigPtrInput interface {
+	pulumi.Input
+
+	ToAutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutput() AutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutput
+	ToAutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutputWithContext(context.Context) AutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutput
+}
+
+type autoScalingConfigurationPolicyDetailsScaleDownConfigPtrType AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs
+
+func AutoScalingConfigurationPolicyDetailsScaleDownConfigPtr(v *AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs) AutoScalingConfigurationPolicyDetailsScaleDownConfigPtrInput {
+	return (*autoScalingConfigurationPolicyDetailsScaleDownConfigPtrType)(v)
+}
+
+func (*autoScalingConfigurationPolicyDetailsScaleDownConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AutoScalingConfigurationPolicyDetailsScaleDownConfig)(nil)).Elem()
+}
+
+func (i *autoScalingConfigurationPolicyDetailsScaleDownConfigPtrType) ToAutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutput() AutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutput {
+	return i.ToAutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *autoScalingConfigurationPolicyDetailsScaleDownConfigPtrType) ToAutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutput)
+}
+
+type AutoScalingConfigurationPolicyDetailsScaleDownConfigOutput struct{ *pulumi.OutputState }
+
+func (AutoScalingConfigurationPolicyDetailsScaleDownConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScaleDownConfig)(nil)).Elem()
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigOutput) ToAutoScalingConfigurationPolicyDetailsScaleDownConfigOutput() AutoScalingConfigurationPolicyDetailsScaleDownConfigOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigOutput) ToAutoScalingConfigurationPolicyDetailsScaleDownConfigOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleDownConfigOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigOutput) ToAutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutput() AutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutput {
+	return o.ToAutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutputWithContext(context.Background())
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigOutput) ToAutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AutoScalingConfigurationPolicyDetailsScaleDownConfig) *AutoScalingConfigurationPolicyDetailsScaleDownConfig {
+		return &v
+	}).(AutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutput)
+}
+
+// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigOutput) MemoryStepSize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScaleDownConfig) *int { return v.MemoryStepSize }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Metric and threshold details for triggering an autoscale action.
+func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigOutput) Metric() AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScaleDownConfig) *AutoScalingConfigurationPolicyDetailsScaleDownConfigMetric {
+		return v.Metric
+	}).(AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrOutput)
+}
+
+// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the minimum memory in GBs each node can be scaled-down to. This value is not used for nodes with fixed compute shapes.
+func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigOutput) MinMemoryPerNode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScaleDownConfig) *int { return v.MinMemoryPerNode }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the minimum number of OCPUs each node can be scaled-down to. This value is not used for nodes with fixed compute shapes.
+func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigOutput) MinOcpusPerNode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScaleDownConfig) *int { return v.MinOcpusPerNode }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigOutput) OcpuStepSize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScaleDownConfig) *int { return v.OcpuStepSize }).(pulumi.IntPtrOutput)
+}
+
+type AutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (AutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AutoScalingConfigurationPolicyDetailsScaleDownConfig)(nil)).Elem()
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutput) ToAutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutput() AutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutput) ToAutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutput) Elem() AutoScalingConfigurationPolicyDetailsScaleDownConfigOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetailsScaleDownConfig) AutoScalingConfigurationPolicyDetailsScaleDownConfig {
+		if v != nil {
+			return *v
+		}
+		var ret AutoScalingConfigurationPolicyDetailsScaleDownConfig
+		return ret
+	}).(AutoScalingConfigurationPolicyDetailsScaleDownConfigOutput)
+}
+
+// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutput) MemoryStepSize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetailsScaleDownConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MemoryStepSize
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Metric and threshold details for triggering an autoscale action.
+func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutput) Metric() AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetailsScaleDownConfig) *AutoScalingConfigurationPolicyDetailsScaleDownConfigMetric {
+		if v == nil {
+			return nil
+		}
+		return v.Metric
+	}).(AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrOutput)
+}
+
+// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the minimum memory in GBs each node can be scaled-down to. This value is not used for nodes with fixed compute shapes.
+func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutput) MinMemoryPerNode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetailsScaleDownConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MinMemoryPerNode
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the minimum number of OCPUs each node can be scaled-down to. This value is not used for nodes with fixed compute shapes.
+func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutput) MinOcpusPerNode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetailsScaleDownConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MinOcpusPerNode
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutput) OcpuStepSize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetailsScaleDownConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.OcpuStepSize
+	}).(pulumi.IntPtrOutput)
+}
+
+type AutoScalingConfigurationPolicyDetailsScaleDownConfigMetric struct {
+	// (Updatable) Allowed value is CPU_UTILIZATION.
+	MetricType *string `pulumi:"metricType"`
+	// (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
+	Threshold *AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThreshold `pulumi:"threshold"`
+}
+
+// AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricInput is an input type that accepts AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricArgs and AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricOutput values.
+// You can construct a concrete instance of `AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricInput` via:
+//
+//          AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricArgs{...}
+type AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricInput interface {
+	pulumi.Input
+
+	ToAutoScalingConfigurationPolicyDetailsScaleDownConfigMetricOutput() AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricOutput
+	ToAutoScalingConfigurationPolicyDetailsScaleDownConfigMetricOutputWithContext(context.Context) AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricOutput
+}
+
+type AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricArgs struct {
+	// (Updatable) Allowed value is CPU_UTILIZATION.
+	MetricType pulumi.StringPtrInput `pulumi:"metricType"`
+	// (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
+	Threshold AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrInput `pulumi:"threshold"`
+}
+
+func (AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScaleDownConfigMetric)(nil)).Elem()
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricArgs) ToAutoScalingConfigurationPolicyDetailsScaleDownConfigMetricOutput() AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricOutput {
+	return i.ToAutoScalingConfigurationPolicyDetailsScaleDownConfigMetricOutputWithContext(context.Background())
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricArgs) ToAutoScalingConfigurationPolicyDetailsScaleDownConfigMetricOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricOutput)
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricArgs) ToAutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrOutput() AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrOutput {
+	return i.ToAutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrOutputWithContext(context.Background())
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricArgs) ToAutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricOutput).ToAutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrOutputWithContext(ctx)
+}
+
+// AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrInput is an input type that accepts AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricArgs, AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtr and AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrOutput values.
+// You can construct a concrete instance of `AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrInput` via:
+//
+//          AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricArgs{...}
+//
+//  or:
+//
+//          nil
+type AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrInput interface {
+	pulumi.Input
+
+	ToAutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrOutput() AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrOutput
+	ToAutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrOutputWithContext(context.Context) AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrOutput
+}
+
+type autoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrType AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricArgs
+
+func AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtr(v *AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricArgs) AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrInput {
+	return (*autoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrType)(v)
+}
+
+func (*autoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AutoScalingConfigurationPolicyDetailsScaleDownConfigMetric)(nil)).Elem()
+}
+
+func (i *autoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrType) ToAutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrOutput() AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrOutput {
+	return i.ToAutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrOutputWithContext(context.Background())
+}
+
+func (i *autoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrType) ToAutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrOutput)
+}
+
+type AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricOutput struct{ *pulumi.OutputState }
+
+func (AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScaleDownConfigMetric)(nil)).Elem()
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricOutput) ToAutoScalingConfigurationPolicyDetailsScaleDownConfigMetricOutput() AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricOutput) ToAutoScalingConfigurationPolicyDetailsScaleDownConfigMetricOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricOutput) ToAutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrOutput() AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrOutput {
+	return o.ToAutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrOutputWithContext(context.Background())
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricOutput) ToAutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AutoScalingConfigurationPolicyDetailsScaleDownConfigMetric) *AutoScalingConfigurationPolicyDetailsScaleDownConfigMetric {
+		return &v
+	}).(AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrOutput)
+}
+
+// (Updatable) Allowed value is CPU_UTILIZATION.
+func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricOutput) MetricType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScaleDownConfigMetric) *string { return v.MetricType }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
+func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricOutput) Threshold() AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScaleDownConfigMetric) *AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThreshold {
+		return v.Threshold
+	}).(AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrOutput)
+}
+
+type AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrOutput struct{ *pulumi.OutputState }
+
+func (AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AutoScalingConfigurationPolicyDetailsScaleDownConfigMetric)(nil)).Elem()
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrOutput) ToAutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrOutput() AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrOutput) ToAutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrOutput) Elem() AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetailsScaleDownConfigMetric) AutoScalingConfigurationPolicyDetailsScaleDownConfigMetric {
+		if v != nil {
+			return *v
+		}
+		var ret AutoScalingConfigurationPolicyDetailsScaleDownConfigMetric
+		return ret
+	}).(AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricOutput)
+}
+
+// (Updatable) Allowed value is CPU_UTILIZATION.
+func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrOutput) MetricType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetailsScaleDownConfigMetric) *string {
+		if v == nil {
+			return nil
+		}
+		return v.MetricType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
+func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrOutput) Threshold() AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetailsScaleDownConfigMetric) *AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThreshold {
+		if v == nil {
+			return nil
+		}
+		return v.Threshold
+	}).(AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrOutput)
+}
+
+type AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThreshold struct {
+	// (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
+	DurationInMinutes *int `pulumi:"durationInMinutes"`
+	// (Updatable) The comparison operator to use. Options are greater than (GT) or less than (LT).
+	Operator *string `pulumi:"operator"`
+	// (Updatable) Integer non-negative value. 0 < value < 100
+	Value *int `pulumi:"value"`
+}
+
+// AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdInput is an input type that accepts AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdArgs and AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdOutput values.
+// You can construct a concrete instance of `AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdInput` via:
+//
+//          AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdArgs{...}
+type AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdInput interface {
+	pulumi.Input
+
+	ToAutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdOutput() AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdOutput
+	ToAutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdOutputWithContext(context.Context) AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdOutput
+}
+
+type AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdArgs struct {
+	// (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
+	DurationInMinutes pulumi.IntPtrInput `pulumi:"durationInMinutes"`
+	// (Updatable) The comparison operator to use. Options are greater than (GT) or less than (LT).
+	Operator pulumi.StringPtrInput `pulumi:"operator"`
+	// (Updatable) Integer non-negative value. 0 < value < 100
+	Value pulumi.IntPtrInput `pulumi:"value"`
+}
+
+func (AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThreshold)(nil)).Elem()
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdArgs) ToAutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdOutput() AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdOutput {
+	return i.ToAutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdOutputWithContext(context.Background())
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdArgs) ToAutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdOutput)
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdArgs) ToAutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrOutput() AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrOutput {
+	return i.ToAutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrOutputWithContext(context.Background())
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdArgs) ToAutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdOutput).ToAutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrOutputWithContext(ctx)
+}
+
+// AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrInput is an input type that accepts AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdArgs, AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtr and AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrOutput values.
+// You can construct a concrete instance of `AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrInput` via:
+//
+//          AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdArgs{...}
+//
+//  or:
+//
+//          nil
+type AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrInput interface {
+	pulumi.Input
+
+	ToAutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrOutput() AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrOutput
+	ToAutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrOutputWithContext(context.Context) AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrOutput
+}
+
+type autoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrType AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdArgs
+
+func AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtr(v *AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdArgs) AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrInput {
+	return (*autoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrType)(v)
+}
+
+func (*autoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThreshold)(nil)).Elem()
+}
+
+func (i *autoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrType) ToAutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrOutput() AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrOutput {
+	return i.ToAutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrOutputWithContext(context.Background())
+}
+
+func (i *autoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrType) ToAutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrOutput)
+}
+
+type AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdOutput struct{ *pulumi.OutputState }
+
+func (AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThreshold)(nil)).Elem()
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdOutput) ToAutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdOutput() AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdOutput) ToAutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdOutput) ToAutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrOutput() AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrOutput {
+	return o.ToAutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrOutputWithContext(context.Background())
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdOutput) ToAutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThreshold) *AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThreshold {
+		return &v
+	}).(AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrOutput)
+}
+
+// (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
+func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdOutput) DurationInMinutes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThreshold) *int {
+		return v.DurationInMinutes
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The comparison operator to use. Options are greater than (GT) or less than (LT).
+func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdOutput) Operator() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThreshold) *string { return v.Operator }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Integer non-negative value. 0 < value < 100
+func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdOutput) Value() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThreshold) *int { return v.Value }).(pulumi.IntPtrOutput)
+}
+
+type AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrOutput struct{ *pulumi.OutputState }
+
+func (AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThreshold)(nil)).Elem()
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrOutput) ToAutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrOutput() AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrOutput) ToAutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrOutput) Elem() AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThreshold) AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThreshold {
+		if v != nil {
+			return *v
+		}
+		var ret AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThreshold
+		return ret
+	}).(AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdOutput)
+}
+
+// (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
+func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrOutput) DurationInMinutes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThreshold) *int {
+		if v == nil {
+			return nil
+		}
+		return v.DurationInMinutes
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The comparison operator to use. Options are greater than (GT) or less than (LT).
+func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrOutput) Operator() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThreshold) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Operator
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Integer non-negative value. 0 < value < 100
+func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrOutput) Value() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThreshold) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Value
+	}).(pulumi.IntPtrOutput)
+}
+
+type AutoScalingConfigurationPolicyDetailsScaleInConfig struct {
+	// (Updatable) Metric and threshold details for triggering an autoscale action.
+	Metric *AutoScalingConfigurationPolicyDetailsScaleInConfigMetric `pulumi:"metric"`
+	// (Updatable) This value is the minimum number of nodes the cluster can be scaled-in to.
+	MinNodeCount *int `pulumi:"minNodeCount"`
+	// (Updatable) This value is the number of nodes to add during a scale-out event.
+	StepSize *int `pulumi:"stepSize"`
+}
+
+// AutoScalingConfigurationPolicyDetailsScaleInConfigInput is an input type that accepts AutoScalingConfigurationPolicyDetailsScaleInConfigArgs and AutoScalingConfigurationPolicyDetailsScaleInConfigOutput values.
+// You can construct a concrete instance of `AutoScalingConfigurationPolicyDetailsScaleInConfigInput` via:
+//
+//          AutoScalingConfigurationPolicyDetailsScaleInConfigArgs{...}
+type AutoScalingConfigurationPolicyDetailsScaleInConfigInput interface {
+	pulumi.Input
+
+	ToAutoScalingConfigurationPolicyDetailsScaleInConfigOutput() AutoScalingConfigurationPolicyDetailsScaleInConfigOutput
+	ToAutoScalingConfigurationPolicyDetailsScaleInConfigOutputWithContext(context.Context) AutoScalingConfigurationPolicyDetailsScaleInConfigOutput
+}
+
+type AutoScalingConfigurationPolicyDetailsScaleInConfigArgs struct {
+	// (Updatable) Metric and threshold details for triggering an autoscale action.
+	Metric AutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrInput `pulumi:"metric"`
+	// (Updatable) This value is the minimum number of nodes the cluster can be scaled-in to.
+	MinNodeCount pulumi.IntPtrInput `pulumi:"minNodeCount"`
+	// (Updatable) This value is the number of nodes to add during a scale-out event.
+	StepSize pulumi.IntPtrInput `pulumi:"stepSize"`
+}
+
+func (AutoScalingConfigurationPolicyDetailsScaleInConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScaleInConfig)(nil)).Elem()
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScaleInConfigArgs) ToAutoScalingConfigurationPolicyDetailsScaleInConfigOutput() AutoScalingConfigurationPolicyDetailsScaleInConfigOutput {
+	return i.ToAutoScalingConfigurationPolicyDetailsScaleInConfigOutputWithContext(context.Background())
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScaleInConfigArgs) ToAutoScalingConfigurationPolicyDetailsScaleInConfigOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleInConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleInConfigOutput)
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScaleInConfigArgs) ToAutoScalingConfigurationPolicyDetailsScaleInConfigPtrOutput() AutoScalingConfigurationPolicyDetailsScaleInConfigPtrOutput {
+	return i.ToAutoScalingConfigurationPolicyDetailsScaleInConfigPtrOutputWithContext(context.Background())
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScaleInConfigArgs) ToAutoScalingConfigurationPolicyDetailsScaleInConfigPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleInConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleInConfigOutput).ToAutoScalingConfigurationPolicyDetailsScaleInConfigPtrOutputWithContext(ctx)
+}
+
+// AutoScalingConfigurationPolicyDetailsScaleInConfigPtrInput is an input type that accepts AutoScalingConfigurationPolicyDetailsScaleInConfigArgs, AutoScalingConfigurationPolicyDetailsScaleInConfigPtr and AutoScalingConfigurationPolicyDetailsScaleInConfigPtrOutput values.
+// You can construct a concrete instance of `AutoScalingConfigurationPolicyDetailsScaleInConfigPtrInput` via:
+//
+//          AutoScalingConfigurationPolicyDetailsScaleInConfigArgs{...}
+//
+//  or:
+//
+//          nil
+type AutoScalingConfigurationPolicyDetailsScaleInConfigPtrInput interface {
+	pulumi.Input
+
+	ToAutoScalingConfigurationPolicyDetailsScaleInConfigPtrOutput() AutoScalingConfigurationPolicyDetailsScaleInConfigPtrOutput
+	ToAutoScalingConfigurationPolicyDetailsScaleInConfigPtrOutputWithContext(context.Context) AutoScalingConfigurationPolicyDetailsScaleInConfigPtrOutput
+}
+
+type autoScalingConfigurationPolicyDetailsScaleInConfigPtrType AutoScalingConfigurationPolicyDetailsScaleInConfigArgs
+
+func AutoScalingConfigurationPolicyDetailsScaleInConfigPtr(v *AutoScalingConfigurationPolicyDetailsScaleInConfigArgs) AutoScalingConfigurationPolicyDetailsScaleInConfigPtrInput {
+	return (*autoScalingConfigurationPolicyDetailsScaleInConfigPtrType)(v)
+}
+
+func (*autoScalingConfigurationPolicyDetailsScaleInConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AutoScalingConfigurationPolicyDetailsScaleInConfig)(nil)).Elem()
+}
+
+func (i *autoScalingConfigurationPolicyDetailsScaleInConfigPtrType) ToAutoScalingConfigurationPolicyDetailsScaleInConfigPtrOutput() AutoScalingConfigurationPolicyDetailsScaleInConfigPtrOutput {
+	return i.ToAutoScalingConfigurationPolicyDetailsScaleInConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *autoScalingConfigurationPolicyDetailsScaleInConfigPtrType) ToAutoScalingConfigurationPolicyDetailsScaleInConfigPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleInConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleInConfigPtrOutput)
+}
+
+type AutoScalingConfigurationPolicyDetailsScaleInConfigOutput struct{ *pulumi.OutputState }
+
+func (AutoScalingConfigurationPolicyDetailsScaleInConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScaleInConfig)(nil)).Elem()
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleInConfigOutput) ToAutoScalingConfigurationPolicyDetailsScaleInConfigOutput() AutoScalingConfigurationPolicyDetailsScaleInConfigOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleInConfigOutput) ToAutoScalingConfigurationPolicyDetailsScaleInConfigOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleInConfigOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleInConfigOutput) ToAutoScalingConfigurationPolicyDetailsScaleInConfigPtrOutput() AutoScalingConfigurationPolicyDetailsScaleInConfigPtrOutput {
+	return o.ToAutoScalingConfigurationPolicyDetailsScaleInConfigPtrOutputWithContext(context.Background())
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleInConfigOutput) ToAutoScalingConfigurationPolicyDetailsScaleInConfigPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleInConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AutoScalingConfigurationPolicyDetailsScaleInConfig) *AutoScalingConfigurationPolicyDetailsScaleInConfig {
+		return &v
+	}).(AutoScalingConfigurationPolicyDetailsScaleInConfigPtrOutput)
+}
+
+// (Updatable) Metric and threshold details for triggering an autoscale action.
+func (o AutoScalingConfigurationPolicyDetailsScaleInConfigOutput) Metric() AutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScaleInConfig) *AutoScalingConfigurationPolicyDetailsScaleInConfigMetric {
+		return v.Metric
+	}).(AutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrOutput)
+}
+
+// (Updatable) This value is the minimum number of nodes the cluster can be scaled-in to.
+func (o AutoScalingConfigurationPolicyDetailsScaleInConfigOutput) MinNodeCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScaleInConfig) *int { return v.MinNodeCount }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) This value is the number of nodes to add during a scale-out event.
+func (o AutoScalingConfigurationPolicyDetailsScaleInConfigOutput) StepSize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScaleInConfig) *int { return v.StepSize }).(pulumi.IntPtrOutput)
+}
+
+type AutoScalingConfigurationPolicyDetailsScaleInConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (AutoScalingConfigurationPolicyDetailsScaleInConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AutoScalingConfigurationPolicyDetailsScaleInConfig)(nil)).Elem()
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleInConfigPtrOutput) ToAutoScalingConfigurationPolicyDetailsScaleInConfigPtrOutput() AutoScalingConfigurationPolicyDetailsScaleInConfigPtrOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleInConfigPtrOutput) ToAutoScalingConfigurationPolicyDetailsScaleInConfigPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleInConfigPtrOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleInConfigPtrOutput) Elem() AutoScalingConfigurationPolicyDetailsScaleInConfigOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetailsScaleInConfig) AutoScalingConfigurationPolicyDetailsScaleInConfig {
+		if v != nil {
+			return *v
+		}
+		var ret AutoScalingConfigurationPolicyDetailsScaleInConfig
+		return ret
+	}).(AutoScalingConfigurationPolicyDetailsScaleInConfigOutput)
+}
+
+// (Updatable) Metric and threshold details for triggering an autoscale action.
+func (o AutoScalingConfigurationPolicyDetailsScaleInConfigPtrOutput) Metric() AutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetailsScaleInConfig) *AutoScalingConfigurationPolicyDetailsScaleInConfigMetric {
+		if v == nil {
+			return nil
+		}
+		return v.Metric
+	}).(AutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrOutput)
+}
+
+// (Updatable) This value is the minimum number of nodes the cluster can be scaled-in to.
+func (o AutoScalingConfigurationPolicyDetailsScaleInConfigPtrOutput) MinNodeCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetailsScaleInConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MinNodeCount
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) This value is the number of nodes to add during a scale-out event.
+func (o AutoScalingConfigurationPolicyDetailsScaleInConfigPtrOutput) StepSize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetailsScaleInConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.StepSize
+	}).(pulumi.IntPtrOutput)
+}
+
+type AutoScalingConfigurationPolicyDetailsScaleInConfigMetric struct {
+	// (Updatable) Allowed value is CPU_UTILIZATION.
+	MetricType *string `pulumi:"metricType"`
+	// (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
+	Threshold *AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThreshold `pulumi:"threshold"`
+}
+
+// AutoScalingConfigurationPolicyDetailsScaleInConfigMetricInput is an input type that accepts AutoScalingConfigurationPolicyDetailsScaleInConfigMetricArgs and AutoScalingConfigurationPolicyDetailsScaleInConfigMetricOutput values.
+// You can construct a concrete instance of `AutoScalingConfigurationPolicyDetailsScaleInConfigMetricInput` via:
+//
+//          AutoScalingConfigurationPolicyDetailsScaleInConfigMetricArgs{...}
+type AutoScalingConfigurationPolicyDetailsScaleInConfigMetricInput interface {
+	pulumi.Input
+
+	ToAutoScalingConfigurationPolicyDetailsScaleInConfigMetricOutput() AutoScalingConfigurationPolicyDetailsScaleInConfigMetricOutput
+	ToAutoScalingConfigurationPolicyDetailsScaleInConfigMetricOutputWithContext(context.Context) AutoScalingConfigurationPolicyDetailsScaleInConfigMetricOutput
+}
+
+type AutoScalingConfigurationPolicyDetailsScaleInConfigMetricArgs struct {
+	// (Updatable) Allowed value is CPU_UTILIZATION.
+	MetricType pulumi.StringPtrInput `pulumi:"metricType"`
+	// (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
+	Threshold AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrInput `pulumi:"threshold"`
+}
+
+func (AutoScalingConfigurationPolicyDetailsScaleInConfigMetricArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScaleInConfigMetric)(nil)).Elem()
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScaleInConfigMetricArgs) ToAutoScalingConfigurationPolicyDetailsScaleInConfigMetricOutput() AutoScalingConfigurationPolicyDetailsScaleInConfigMetricOutput {
+	return i.ToAutoScalingConfigurationPolicyDetailsScaleInConfigMetricOutputWithContext(context.Background())
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScaleInConfigMetricArgs) ToAutoScalingConfigurationPolicyDetailsScaleInConfigMetricOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleInConfigMetricOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleInConfigMetricOutput)
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScaleInConfigMetricArgs) ToAutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrOutput() AutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrOutput {
+	return i.ToAutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrOutputWithContext(context.Background())
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScaleInConfigMetricArgs) ToAutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleInConfigMetricOutput).ToAutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrOutputWithContext(ctx)
+}
+
+// AutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrInput is an input type that accepts AutoScalingConfigurationPolicyDetailsScaleInConfigMetricArgs, AutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtr and AutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrOutput values.
+// You can construct a concrete instance of `AutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrInput` via:
+//
+//          AutoScalingConfigurationPolicyDetailsScaleInConfigMetricArgs{...}
+//
+//  or:
+//
+//          nil
+type AutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrInput interface {
+	pulumi.Input
+
+	ToAutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrOutput() AutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrOutput
+	ToAutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrOutputWithContext(context.Context) AutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrOutput
+}
+
+type autoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrType AutoScalingConfigurationPolicyDetailsScaleInConfigMetricArgs
+
+func AutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtr(v *AutoScalingConfigurationPolicyDetailsScaleInConfigMetricArgs) AutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrInput {
+	return (*autoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrType)(v)
+}
+
+func (*autoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AutoScalingConfigurationPolicyDetailsScaleInConfigMetric)(nil)).Elem()
+}
+
+func (i *autoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrType) ToAutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrOutput() AutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrOutput {
+	return i.ToAutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrOutputWithContext(context.Background())
+}
+
+func (i *autoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrType) ToAutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrOutput)
+}
+
+type AutoScalingConfigurationPolicyDetailsScaleInConfigMetricOutput struct{ *pulumi.OutputState }
+
+func (AutoScalingConfigurationPolicyDetailsScaleInConfigMetricOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScaleInConfigMetric)(nil)).Elem()
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleInConfigMetricOutput) ToAutoScalingConfigurationPolicyDetailsScaleInConfigMetricOutput() AutoScalingConfigurationPolicyDetailsScaleInConfigMetricOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleInConfigMetricOutput) ToAutoScalingConfigurationPolicyDetailsScaleInConfigMetricOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleInConfigMetricOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleInConfigMetricOutput) ToAutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrOutput() AutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrOutput {
+	return o.ToAutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrOutputWithContext(context.Background())
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleInConfigMetricOutput) ToAutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AutoScalingConfigurationPolicyDetailsScaleInConfigMetric) *AutoScalingConfigurationPolicyDetailsScaleInConfigMetric {
+		return &v
+	}).(AutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrOutput)
+}
+
+// (Updatable) Allowed value is CPU_UTILIZATION.
+func (o AutoScalingConfigurationPolicyDetailsScaleInConfigMetricOutput) MetricType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScaleInConfigMetric) *string { return v.MetricType }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
+func (o AutoScalingConfigurationPolicyDetailsScaleInConfigMetricOutput) Threshold() AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScaleInConfigMetric) *AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThreshold {
+		return v.Threshold
+	}).(AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrOutput)
+}
+
+type AutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrOutput struct{ *pulumi.OutputState }
+
+func (AutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AutoScalingConfigurationPolicyDetailsScaleInConfigMetric)(nil)).Elem()
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrOutput) ToAutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrOutput() AutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrOutput) ToAutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrOutput) Elem() AutoScalingConfigurationPolicyDetailsScaleInConfigMetricOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetailsScaleInConfigMetric) AutoScalingConfigurationPolicyDetailsScaleInConfigMetric {
+		if v != nil {
+			return *v
+		}
+		var ret AutoScalingConfigurationPolicyDetailsScaleInConfigMetric
+		return ret
+	}).(AutoScalingConfigurationPolicyDetailsScaleInConfigMetricOutput)
+}
+
+// (Updatable) Allowed value is CPU_UTILIZATION.
+func (o AutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrOutput) MetricType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetailsScaleInConfigMetric) *string {
+		if v == nil {
+			return nil
+		}
+		return v.MetricType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
+func (o AutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrOutput) Threshold() AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetailsScaleInConfigMetric) *AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThreshold {
+		if v == nil {
+			return nil
+		}
+		return v.Threshold
+	}).(AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrOutput)
+}
+
+type AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThreshold struct {
+	// (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
+	DurationInMinutes *int `pulumi:"durationInMinutes"`
+	// (Updatable) The comparison operator to use. Options are greater than (GT) or less than (LT).
+	Operator *string `pulumi:"operator"`
+	// (Updatable) Integer non-negative value. 0 < value < 100
+	Value *int `pulumi:"value"`
+}
+
+// AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdInput is an input type that accepts AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdArgs and AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdOutput values.
+// You can construct a concrete instance of `AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdInput` via:
+//
+//          AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdArgs{...}
+type AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdInput interface {
+	pulumi.Input
+
+	ToAutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdOutput() AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdOutput
+	ToAutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdOutputWithContext(context.Context) AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdOutput
+}
+
+type AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdArgs struct {
+	// (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
+	DurationInMinutes pulumi.IntPtrInput `pulumi:"durationInMinutes"`
+	// (Updatable) The comparison operator to use. Options are greater than (GT) or less than (LT).
+	Operator pulumi.StringPtrInput `pulumi:"operator"`
+	// (Updatable) Integer non-negative value. 0 < value < 100
+	Value pulumi.IntPtrInput `pulumi:"value"`
+}
+
+func (AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThreshold)(nil)).Elem()
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdArgs) ToAutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdOutput() AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdOutput {
+	return i.ToAutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdOutputWithContext(context.Background())
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdArgs) ToAutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdOutput)
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdArgs) ToAutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrOutput() AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrOutput {
+	return i.ToAutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrOutputWithContext(context.Background())
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdArgs) ToAutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdOutput).ToAutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrOutputWithContext(ctx)
+}
+
+// AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrInput is an input type that accepts AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdArgs, AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtr and AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrOutput values.
+// You can construct a concrete instance of `AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrInput` via:
+//
+//          AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdArgs{...}
+//
+//  or:
+//
+//          nil
+type AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrInput interface {
+	pulumi.Input
+
+	ToAutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrOutput() AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrOutput
+	ToAutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrOutputWithContext(context.Context) AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrOutput
+}
+
+type autoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrType AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdArgs
+
+func AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtr(v *AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdArgs) AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrInput {
+	return (*autoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrType)(v)
+}
+
+func (*autoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThreshold)(nil)).Elem()
+}
+
+func (i *autoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrType) ToAutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrOutput() AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrOutput {
+	return i.ToAutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrOutputWithContext(context.Background())
+}
+
+func (i *autoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrType) ToAutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrOutput)
+}
+
+type AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdOutput struct{ *pulumi.OutputState }
+
+func (AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThreshold)(nil)).Elem()
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdOutput) ToAutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdOutput() AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdOutput) ToAutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdOutput) ToAutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrOutput() AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrOutput {
+	return o.ToAutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrOutputWithContext(context.Background())
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdOutput) ToAutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThreshold) *AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThreshold {
+		return &v
+	}).(AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrOutput)
+}
+
+// (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
+func (o AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdOutput) DurationInMinutes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThreshold) *int {
+		return v.DurationInMinutes
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The comparison operator to use. Options are greater than (GT) or less than (LT).
+func (o AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdOutput) Operator() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThreshold) *string { return v.Operator }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Integer non-negative value. 0 < value < 100
+func (o AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdOutput) Value() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThreshold) *int { return v.Value }).(pulumi.IntPtrOutput)
+}
+
+type AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrOutput struct{ *pulumi.OutputState }
+
+func (AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThreshold)(nil)).Elem()
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrOutput) ToAutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrOutput() AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrOutput) ToAutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrOutput) Elem() AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThreshold) AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThreshold {
+		if v != nil {
+			return *v
+		}
+		var ret AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThreshold
+		return ret
+	}).(AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdOutput)
+}
+
+// (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
+func (o AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrOutput) DurationInMinutes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThreshold) *int {
+		if v == nil {
+			return nil
+		}
+		return v.DurationInMinutes
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The comparison operator to use. Options are greater than (GT) or less than (LT).
+func (o AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrOutput) Operator() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThreshold) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Operator
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Integer non-negative value. 0 < value < 100
+func (o AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrOutput) Value() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThreshold) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Value
+	}).(pulumi.IntPtrOutput)
+}
+
+type AutoScalingConfigurationPolicyDetailsScaleOutConfig struct {
+	// (Updatable) This value is the maximum number of nodes the cluster can be scaled-out to.
+	MaxNodeCount *int `pulumi:"maxNodeCount"`
+	// (Updatable) Metric and threshold details for triggering an autoscale action.
+	Metric *AutoScalingConfigurationPolicyDetailsScaleOutConfigMetric `pulumi:"metric"`
+	// (Updatable) This value is the number of nodes to add during a scale-out event.
+	StepSize *int `pulumi:"stepSize"`
+}
+
+// AutoScalingConfigurationPolicyDetailsScaleOutConfigInput is an input type that accepts AutoScalingConfigurationPolicyDetailsScaleOutConfigArgs and AutoScalingConfigurationPolicyDetailsScaleOutConfigOutput values.
+// You can construct a concrete instance of `AutoScalingConfigurationPolicyDetailsScaleOutConfigInput` via:
+//
+//          AutoScalingConfigurationPolicyDetailsScaleOutConfigArgs{...}
+type AutoScalingConfigurationPolicyDetailsScaleOutConfigInput interface {
+	pulumi.Input
+
+	ToAutoScalingConfigurationPolicyDetailsScaleOutConfigOutput() AutoScalingConfigurationPolicyDetailsScaleOutConfigOutput
+	ToAutoScalingConfigurationPolicyDetailsScaleOutConfigOutputWithContext(context.Context) AutoScalingConfigurationPolicyDetailsScaleOutConfigOutput
+}
+
+type AutoScalingConfigurationPolicyDetailsScaleOutConfigArgs struct {
+	// (Updatable) This value is the maximum number of nodes the cluster can be scaled-out to.
+	MaxNodeCount pulumi.IntPtrInput `pulumi:"maxNodeCount"`
+	// (Updatable) Metric and threshold details for triggering an autoscale action.
+	Metric AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrInput `pulumi:"metric"`
+	// (Updatable) This value is the number of nodes to add during a scale-out event.
+	StepSize pulumi.IntPtrInput `pulumi:"stepSize"`
+}
+
+func (AutoScalingConfigurationPolicyDetailsScaleOutConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScaleOutConfig)(nil)).Elem()
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScaleOutConfigArgs) ToAutoScalingConfigurationPolicyDetailsScaleOutConfigOutput() AutoScalingConfigurationPolicyDetailsScaleOutConfigOutput {
+	return i.ToAutoScalingConfigurationPolicyDetailsScaleOutConfigOutputWithContext(context.Background())
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScaleOutConfigArgs) ToAutoScalingConfigurationPolicyDetailsScaleOutConfigOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleOutConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleOutConfigOutput)
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScaleOutConfigArgs) ToAutoScalingConfigurationPolicyDetailsScaleOutConfigPtrOutput() AutoScalingConfigurationPolicyDetailsScaleOutConfigPtrOutput {
+	return i.ToAutoScalingConfigurationPolicyDetailsScaleOutConfigPtrOutputWithContext(context.Background())
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScaleOutConfigArgs) ToAutoScalingConfigurationPolicyDetailsScaleOutConfigPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleOutConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleOutConfigOutput).ToAutoScalingConfigurationPolicyDetailsScaleOutConfigPtrOutputWithContext(ctx)
+}
+
+// AutoScalingConfigurationPolicyDetailsScaleOutConfigPtrInput is an input type that accepts AutoScalingConfigurationPolicyDetailsScaleOutConfigArgs, AutoScalingConfigurationPolicyDetailsScaleOutConfigPtr and AutoScalingConfigurationPolicyDetailsScaleOutConfigPtrOutput values.
+// You can construct a concrete instance of `AutoScalingConfigurationPolicyDetailsScaleOutConfigPtrInput` via:
+//
+//          AutoScalingConfigurationPolicyDetailsScaleOutConfigArgs{...}
+//
+//  or:
+//
+//          nil
+type AutoScalingConfigurationPolicyDetailsScaleOutConfigPtrInput interface {
+	pulumi.Input
+
+	ToAutoScalingConfigurationPolicyDetailsScaleOutConfigPtrOutput() AutoScalingConfigurationPolicyDetailsScaleOutConfigPtrOutput
+	ToAutoScalingConfigurationPolicyDetailsScaleOutConfigPtrOutputWithContext(context.Context) AutoScalingConfigurationPolicyDetailsScaleOutConfigPtrOutput
+}
+
+type autoScalingConfigurationPolicyDetailsScaleOutConfigPtrType AutoScalingConfigurationPolicyDetailsScaleOutConfigArgs
+
+func AutoScalingConfigurationPolicyDetailsScaleOutConfigPtr(v *AutoScalingConfigurationPolicyDetailsScaleOutConfigArgs) AutoScalingConfigurationPolicyDetailsScaleOutConfigPtrInput {
+	return (*autoScalingConfigurationPolicyDetailsScaleOutConfigPtrType)(v)
+}
+
+func (*autoScalingConfigurationPolicyDetailsScaleOutConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AutoScalingConfigurationPolicyDetailsScaleOutConfig)(nil)).Elem()
+}
+
+func (i *autoScalingConfigurationPolicyDetailsScaleOutConfigPtrType) ToAutoScalingConfigurationPolicyDetailsScaleOutConfigPtrOutput() AutoScalingConfigurationPolicyDetailsScaleOutConfigPtrOutput {
+	return i.ToAutoScalingConfigurationPolicyDetailsScaleOutConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *autoScalingConfigurationPolicyDetailsScaleOutConfigPtrType) ToAutoScalingConfigurationPolicyDetailsScaleOutConfigPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleOutConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleOutConfigPtrOutput)
+}
+
+type AutoScalingConfigurationPolicyDetailsScaleOutConfigOutput struct{ *pulumi.OutputState }
+
+func (AutoScalingConfigurationPolicyDetailsScaleOutConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScaleOutConfig)(nil)).Elem()
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigOutput) ToAutoScalingConfigurationPolicyDetailsScaleOutConfigOutput() AutoScalingConfigurationPolicyDetailsScaleOutConfigOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigOutput) ToAutoScalingConfigurationPolicyDetailsScaleOutConfigOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleOutConfigOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigOutput) ToAutoScalingConfigurationPolicyDetailsScaleOutConfigPtrOutput() AutoScalingConfigurationPolicyDetailsScaleOutConfigPtrOutput {
+	return o.ToAutoScalingConfigurationPolicyDetailsScaleOutConfigPtrOutputWithContext(context.Background())
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigOutput) ToAutoScalingConfigurationPolicyDetailsScaleOutConfigPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleOutConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AutoScalingConfigurationPolicyDetailsScaleOutConfig) *AutoScalingConfigurationPolicyDetailsScaleOutConfig {
+		return &v
+	}).(AutoScalingConfigurationPolicyDetailsScaleOutConfigPtrOutput)
+}
+
+// (Updatable) This value is the maximum number of nodes the cluster can be scaled-out to.
+func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigOutput) MaxNodeCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScaleOutConfig) *int { return v.MaxNodeCount }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Metric and threshold details for triggering an autoscale action.
+func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigOutput) Metric() AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScaleOutConfig) *AutoScalingConfigurationPolicyDetailsScaleOutConfigMetric {
+		return v.Metric
+	}).(AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrOutput)
+}
+
+// (Updatable) This value is the number of nodes to add during a scale-out event.
+func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigOutput) StepSize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScaleOutConfig) *int { return v.StepSize }).(pulumi.IntPtrOutput)
+}
+
+type AutoScalingConfigurationPolicyDetailsScaleOutConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (AutoScalingConfigurationPolicyDetailsScaleOutConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AutoScalingConfigurationPolicyDetailsScaleOutConfig)(nil)).Elem()
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigPtrOutput) ToAutoScalingConfigurationPolicyDetailsScaleOutConfigPtrOutput() AutoScalingConfigurationPolicyDetailsScaleOutConfigPtrOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigPtrOutput) ToAutoScalingConfigurationPolicyDetailsScaleOutConfigPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleOutConfigPtrOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigPtrOutput) Elem() AutoScalingConfigurationPolicyDetailsScaleOutConfigOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetailsScaleOutConfig) AutoScalingConfigurationPolicyDetailsScaleOutConfig {
+		if v != nil {
+			return *v
+		}
+		var ret AutoScalingConfigurationPolicyDetailsScaleOutConfig
+		return ret
+	}).(AutoScalingConfigurationPolicyDetailsScaleOutConfigOutput)
+}
+
+// (Updatable) This value is the maximum number of nodes the cluster can be scaled-out to.
+func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigPtrOutput) MaxNodeCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetailsScaleOutConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MaxNodeCount
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Metric and threshold details for triggering an autoscale action.
+func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigPtrOutput) Metric() AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetailsScaleOutConfig) *AutoScalingConfigurationPolicyDetailsScaleOutConfigMetric {
+		if v == nil {
+			return nil
+		}
+		return v.Metric
+	}).(AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrOutput)
+}
+
+// (Updatable) This value is the number of nodes to add during a scale-out event.
+func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigPtrOutput) StepSize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetailsScaleOutConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.StepSize
+	}).(pulumi.IntPtrOutput)
+}
+
+type AutoScalingConfigurationPolicyDetailsScaleOutConfigMetric struct {
+	// (Updatable) Allowed value is CPU_UTILIZATION.
+	MetricType *string `pulumi:"metricType"`
+	// (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
+	Threshold *AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThreshold `pulumi:"threshold"`
+}
+
+// AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricInput is an input type that accepts AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricArgs and AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricOutput values.
+// You can construct a concrete instance of `AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricInput` via:
+//
+//          AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricArgs{...}
+type AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricInput interface {
+	pulumi.Input
+
+	ToAutoScalingConfigurationPolicyDetailsScaleOutConfigMetricOutput() AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricOutput
+	ToAutoScalingConfigurationPolicyDetailsScaleOutConfigMetricOutputWithContext(context.Context) AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricOutput
+}
+
+type AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricArgs struct {
+	// (Updatable) Allowed value is CPU_UTILIZATION.
+	MetricType pulumi.StringPtrInput `pulumi:"metricType"`
+	// (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
+	Threshold AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrInput `pulumi:"threshold"`
+}
+
+func (AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScaleOutConfigMetric)(nil)).Elem()
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricArgs) ToAutoScalingConfigurationPolicyDetailsScaleOutConfigMetricOutput() AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricOutput {
+	return i.ToAutoScalingConfigurationPolicyDetailsScaleOutConfigMetricOutputWithContext(context.Background())
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricArgs) ToAutoScalingConfigurationPolicyDetailsScaleOutConfigMetricOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricOutput)
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricArgs) ToAutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrOutput() AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrOutput {
+	return i.ToAutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrOutputWithContext(context.Background())
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricArgs) ToAutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricOutput).ToAutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrOutputWithContext(ctx)
+}
+
+// AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrInput is an input type that accepts AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricArgs, AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtr and AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrOutput values.
+// You can construct a concrete instance of `AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrInput` via:
+//
+//          AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricArgs{...}
+//
+//  or:
+//
+//          nil
+type AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrInput interface {
+	pulumi.Input
+
+	ToAutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrOutput() AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrOutput
+	ToAutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrOutputWithContext(context.Context) AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrOutput
+}
+
+type autoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrType AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricArgs
+
+func AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtr(v *AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricArgs) AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrInput {
+	return (*autoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrType)(v)
+}
+
+func (*autoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AutoScalingConfigurationPolicyDetailsScaleOutConfigMetric)(nil)).Elem()
+}
+
+func (i *autoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrType) ToAutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrOutput() AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrOutput {
+	return i.ToAutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrOutputWithContext(context.Background())
+}
+
+func (i *autoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrType) ToAutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrOutput)
+}
+
+type AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricOutput struct{ *pulumi.OutputState }
+
+func (AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScaleOutConfigMetric)(nil)).Elem()
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricOutput) ToAutoScalingConfigurationPolicyDetailsScaleOutConfigMetricOutput() AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricOutput) ToAutoScalingConfigurationPolicyDetailsScaleOutConfigMetricOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricOutput) ToAutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrOutput() AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrOutput {
+	return o.ToAutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrOutputWithContext(context.Background())
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricOutput) ToAutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AutoScalingConfigurationPolicyDetailsScaleOutConfigMetric) *AutoScalingConfigurationPolicyDetailsScaleOutConfigMetric {
+		return &v
+	}).(AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrOutput)
+}
+
+// (Updatable) Allowed value is CPU_UTILIZATION.
+func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricOutput) MetricType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScaleOutConfigMetric) *string { return v.MetricType }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
+func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricOutput) Threshold() AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScaleOutConfigMetric) *AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThreshold {
+		return v.Threshold
+	}).(AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrOutput)
+}
+
+type AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrOutput struct{ *pulumi.OutputState }
+
+func (AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AutoScalingConfigurationPolicyDetailsScaleOutConfigMetric)(nil)).Elem()
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrOutput) ToAutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrOutput() AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrOutput) ToAutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrOutput) Elem() AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetailsScaleOutConfigMetric) AutoScalingConfigurationPolicyDetailsScaleOutConfigMetric {
+		if v != nil {
+			return *v
+		}
+		var ret AutoScalingConfigurationPolicyDetailsScaleOutConfigMetric
+		return ret
+	}).(AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricOutput)
+}
+
+// (Updatable) Allowed value is CPU_UTILIZATION.
+func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrOutput) MetricType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetailsScaleOutConfigMetric) *string {
+		if v == nil {
+			return nil
+		}
+		return v.MetricType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
+func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrOutput) Threshold() AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetailsScaleOutConfigMetric) *AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThreshold {
+		if v == nil {
+			return nil
+		}
+		return v.Threshold
+	}).(AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrOutput)
+}
+
+type AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThreshold struct {
+	// (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
+	DurationInMinutes *int `pulumi:"durationInMinutes"`
+	// (Updatable) The comparison operator to use. Options are greater than (GT) or less than (LT).
+	Operator *string `pulumi:"operator"`
+	// (Updatable) Integer non-negative value. 0 < value < 100
+	Value *int `pulumi:"value"`
+}
+
+// AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdInput is an input type that accepts AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdArgs and AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdOutput values.
+// You can construct a concrete instance of `AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdInput` via:
+//
+//          AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdArgs{...}
+type AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdInput interface {
+	pulumi.Input
+
+	ToAutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdOutput() AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdOutput
+	ToAutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdOutputWithContext(context.Context) AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdOutput
+}
+
+type AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdArgs struct {
+	// (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
+	DurationInMinutes pulumi.IntPtrInput `pulumi:"durationInMinutes"`
+	// (Updatable) The comparison operator to use. Options are greater than (GT) or less than (LT).
+	Operator pulumi.StringPtrInput `pulumi:"operator"`
+	// (Updatable) Integer non-negative value. 0 < value < 100
+	Value pulumi.IntPtrInput `pulumi:"value"`
+}
+
+func (AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThreshold)(nil)).Elem()
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdArgs) ToAutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdOutput() AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdOutput {
+	return i.ToAutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdOutputWithContext(context.Background())
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdArgs) ToAutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdOutput)
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdArgs) ToAutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrOutput() AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrOutput {
+	return i.ToAutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrOutputWithContext(context.Background())
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdArgs) ToAutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdOutput).ToAutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrOutputWithContext(ctx)
+}
+
+// AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrInput is an input type that accepts AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdArgs, AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtr and AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrOutput values.
+// You can construct a concrete instance of `AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrInput` via:
+//
+//          AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdArgs{...}
+//
+//  or:
+//
+//          nil
+type AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrInput interface {
+	pulumi.Input
+
+	ToAutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrOutput() AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrOutput
+	ToAutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrOutputWithContext(context.Context) AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrOutput
+}
+
+type autoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrType AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdArgs
+
+func AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtr(v *AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdArgs) AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrInput {
+	return (*autoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrType)(v)
+}
+
+func (*autoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThreshold)(nil)).Elem()
+}
+
+func (i *autoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrType) ToAutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrOutput() AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrOutput {
+	return i.ToAutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrOutputWithContext(context.Background())
+}
+
+func (i *autoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrType) ToAutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrOutput)
+}
+
+type AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdOutput struct{ *pulumi.OutputState }
+
+func (AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThreshold)(nil)).Elem()
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdOutput) ToAutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdOutput() AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdOutput) ToAutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdOutput) ToAutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrOutput() AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrOutput {
+	return o.ToAutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrOutputWithContext(context.Background())
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdOutput) ToAutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThreshold) *AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThreshold {
+		return &v
+	}).(AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrOutput)
+}
+
+// (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
+func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdOutput) DurationInMinutes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThreshold) *int {
+		return v.DurationInMinutes
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The comparison operator to use. Options are greater than (GT) or less than (LT).
+func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdOutput) Operator() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThreshold) *string { return v.Operator }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Integer non-negative value. 0 < value < 100
+func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdOutput) Value() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThreshold) *int { return v.Value }).(pulumi.IntPtrOutput)
+}
+
+type AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrOutput struct{ *pulumi.OutputState }
+
+func (AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThreshold)(nil)).Elem()
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrOutput) ToAutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrOutput() AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrOutput) ToAutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrOutput) Elem() AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThreshold) AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThreshold {
+		if v != nil {
+			return *v
+		}
+		var ret AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThreshold
+		return ret
+	}).(AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdOutput)
+}
+
+// (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
+func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrOutput) DurationInMinutes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThreshold) *int {
+		if v == nil {
+			return nil
+		}
+		return v.DurationInMinutes
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The comparison operator to use. Options are greater than (GT) or less than (LT).
+func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrOutput) Operator() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThreshold) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Operator
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Integer non-negative value. 0 < value < 100
+func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrOutput) Value() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThreshold) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Value
+	}).(pulumi.IntPtrOutput)
+}
+
+type AutoScalingConfigurationPolicyDetailsScaleUpConfig struct {
+	// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the maximum memory in GBs each node can be scaled-up to. This value is not used for nodes with fixed compute shapes.
+	MaxMemoryPerNode *int `pulumi:"maxMemoryPerNode"`
+	// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the maximum number of OCPUs each node can be scaled-up to. This value is not used for nodes with fixed compute shapes.
+	MaxOcpusPerNode *int `pulumi:"maxOcpusPerNode"`
+	// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+	MemoryStepSize *int `pulumi:"memoryStepSize"`
+	// (Updatable) Metric and threshold details for triggering an autoscale action.
+	Metric *AutoScalingConfigurationPolicyDetailsScaleUpConfigMetric `pulumi:"metric"`
+	// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+	OcpuStepSize *int `pulumi:"ocpuStepSize"`
+}
+
+// AutoScalingConfigurationPolicyDetailsScaleUpConfigInput is an input type that accepts AutoScalingConfigurationPolicyDetailsScaleUpConfigArgs and AutoScalingConfigurationPolicyDetailsScaleUpConfigOutput values.
+// You can construct a concrete instance of `AutoScalingConfigurationPolicyDetailsScaleUpConfigInput` via:
+//
+//          AutoScalingConfigurationPolicyDetailsScaleUpConfigArgs{...}
+type AutoScalingConfigurationPolicyDetailsScaleUpConfigInput interface {
+	pulumi.Input
+
+	ToAutoScalingConfigurationPolicyDetailsScaleUpConfigOutput() AutoScalingConfigurationPolicyDetailsScaleUpConfigOutput
+	ToAutoScalingConfigurationPolicyDetailsScaleUpConfigOutputWithContext(context.Context) AutoScalingConfigurationPolicyDetailsScaleUpConfigOutput
+}
+
+type AutoScalingConfigurationPolicyDetailsScaleUpConfigArgs struct {
+	// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the maximum memory in GBs each node can be scaled-up to. This value is not used for nodes with fixed compute shapes.
+	MaxMemoryPerNode pulumi.IntPtrInput `pulumi:"maxMemoryPerNode"`
+	// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the maximum number of OCPUs each node can be scaled-up to. This value is not used for nodes with fixed compute shapes.
+	MaxOcpusPerNode pulumi.IntPtrInput `pulumi:"maxOcpusPerNode"`
+	// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+	MemoryStepSize pulumi.IntPtrInput `pulumi:"memoryStepSize"`
+	// (Updatable) Metric and threshold details for triggering an autoscale action.
+	Metric AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrInput `pulumi:"metric"`
+	// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+	OcpuStepSize pulumi.IntPtrInput `pulumi:"ocpuStepSize"`
+}
+
+func (AutoScalingConfigurationPolicyDetailsScaleUpConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScaleUpConfig)(nil)).Elem()
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScaleUpConfigArgs) ToAutoScalingConfigurationPolicyDetailsScaleUpConfigOutput() AutoScalingConfigurationPolicyDetailsScaleUpConfigOutput {
+	return i.ToAutoScalingConfigurationPolicyDetailsScaleUpConfigOutputWithContext(context.Background())
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScaleUpConfigArgs) ToAutoScalingConfigurationPolicyDetailsScaleUpConfigOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleUpConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleUpConfigOutput)
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScaleUpConfigArgs) ToAutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutput() AutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutput {
+	return i.ToAutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutputWithContext(context.Background())
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScaleUpConfigArgs) ToAutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleUpConfigOutput).ToAutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutputWithContext(ctx)
+}
+
+// AutoScalingConfigurationPolicyDetailsScaleUpConfigPtrInput is an input type that accepts AutoScalingConfigurationPolicyDetailsScaleUpConfigArgs, AutoScalingConfigurationPolicyDetailsScaleUpConfigPtr and AutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutput values.
+// You can construct a concrete instance of `AutoScalingConfigurationPolicyDetailsScaleUpConfigPtrInput` via:
+//
+//          AutoScalingConfigurationPolicyDetailsScaleUpConfigArgs{...}
+//
+//  or:
+//
+//          nil
+type AutoScalingConfigurationPolicyDetailsScaleUpConfigPtrInput interface {
+	pulumi.Input
+
+	ToAutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutput() AutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutput
+	ToAutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutputWithContext(context.Context) AutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutput
+}
+
+type autoScalingConfigurationPolicyDetailsScaleUpConfigPtrType AutoScalingConfigurationPolicyDetailsScaleUpConfigArgs
+
+func AutoScalingConfigurationPolicyDetailsScaleUpConfigPtr(v *AutoScalingConfigurationPolicyDetailsScaleUpConfigArgs) AutoScalingConfigurationPolicyDetailsScaleUpConfigPtrInput {
+	return (*autoScalingConfigurationPolicyDetailsScaleUpConfigPtrType)(v)
+}
+
+func (*autoScalingConfigurationPolicyDetailsScaleUpConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AutoScalingConfigurationPolicyDetailsScaleUpConfig)(nil)).Elem()
+}
+
+func (i *autoScalingConfigurationPolicyDetailsScaleUpConfigPtrType) ToAutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutput() AutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutput {
+	return i.ToAutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *autoScalingConfigurationPolicyDetailsScaleUpConfigPtrType) ToAutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutput)
+}
+
+type AutoScalingConfigurationPolicyDetailsScaleUpConfigOutput struct{ *pulumi.OutputState }
+
+func (AutoScalingConfigurationPolicyDetailsScaleUpConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScaleUpConfig)(nil)).Elem()
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigOutput) ToAutoScalingConfigurationPolicyDetailsScaleUpConfigOutput() AutoScalingConfigurationPolicyDetailsScaleUpConfigOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigOutput) ToAutoScalingConfigurationPolicyDetailsScaleUpConfigOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleUpConfigOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigOutput) ToAutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutput() AutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutput {
+	return o.ToAutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutputWithContext(context.Background())
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigOutput) ToAutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AutoScalingConfigurationPolicyDetailsScaleUpConfig) *AutoScalingConfigurationPolicyDetailsScaleUpConfig {
+		return &v
+	}).(AutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutput)
+}
+
+// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the maximum memory in GBs each node can be scaled-up to. This value is not used for nodes with fixed compute shapes.
+func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigOutput) MaxMemoryPerNode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScaleUpConfig) *int { return v.MaxMemoryPerNode }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the maximum number of OCPUs each node can be scaled-up to. This value is not used for nodes with fixed compute shapes.
+func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigOutput) MaxOcpusPerNode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScaleUpConfig) *int { return v.MaxOcpusPerNode }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigOutput) MemoryStepSize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScaleUpConfig) *int { return v.MemoryStepSize }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Metric and threshold details for triggering an autoscale action.
+func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigOutput) Metric() AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScaleUpConfig) *AutoScalingConfigurationPolicyDetailsScaleUpConfigMetric {
+		return v.Metric
+	}).(AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrOutput)
+}
+
+// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigOutput) OcpuStepSize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScaleUpConfig) *int { return v.OcpuStepSize }).(pulumi.IntPtrOutput)
+}
+
+type AutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (AutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AutoScalingConfigurationPolicyDetailsScaleUpConfig)(nil)).Elem()
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutput) ToAutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutput() AutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutput) ToAutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutput) Elem() AutoScalingConfigurationPolicyDetailsScaleUpConfigOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetailsScaleUpConfig) AutoScalingConfigurationPolicyDetailsScaleUpConfig {
+		if v != nil {
+			return *v
+		}
+		var ret AutoScalingConfigurationPolicyDetailsScaleUpConfig
+		return ret
+	}).(AutoScalingConfigurationPolicyDetailsScaleUpConfigOutput)
+}
+
+// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the maximum memory in GBs each node can be scaled-up to. This value is not used for nodes with fixed compute shapes.
+func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutput) MaxMemoryPerNode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetailsScaleUpConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MaxMemoryPerNode
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the maximum number of OCPUs each node can be scaled-up to. This value is not used for nodes with fixed compute shapes.
+func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutput) MaxOcpusPerNode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetailsScaleUpConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MaxOcpusPerNode
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutput) MemoryStepSize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetailsScaleUpConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MemoryStepSize
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Metric and threshold details for triggering an autoscale action.
+func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutput) Metric() AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetailsScaleUpConfig) *AutoScalingConfigurationPolicyDetailsScaleUpConfigMetric {
+		if v == nil {
+			return nil
+		}
+		return v.Metric
+	}).(AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrOutput)
+}
+
+// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutput) OcpuStepSize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetailsScaleUpConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.OcpuStepSize
+	}).(pulumi.IntPtrOutput)
+}
+
+type AutoScalingConfigurationPolicyDetailsScaleUpConfigMetric struct {
+	// (Updatable) Allowed value is CPU_UTILIZATION.
+	MetricType *string `pulumi:"metricType"`
+	// (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
+	Threshold *AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThreshold `pulumi:"threshold"`
+}
+
+// AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricInput is an input type that accepts AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricArgs and AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricOutput values.
+// You can construct a concrete instance of `AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricInput` via:
+//
+//          AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricArgs{...}
+type AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricInput interface {
+	pulumi.Input
+
+	ToAutoScalingConfigurationPolicyDetailsScaleUpConfigMetricOutput() AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricOutput
+	ToAutoScalingConfigurationPolicyDetailsScaleUpConfigMetricOutputWithContext(context.Context) AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricOutput
+}
+
+type AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricArgs struct {
+	// (Updatable) Allowed value is CPU_UTILIZATION.
+	MetricType pulumi.StringPtrInput `pulumi:"metricType"`
+	// (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
+	Threshold AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrInput `pulumi:"threshold"`
+}
+
+func (AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScaleUpConfigMetric)(nil)).Elem()
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricArgs) ToAutoScalingConfigurationPolicyDetailsScaleUpConfigMetricOutput() AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricOutput {
+	return i.ToAutoScalingConfigurationPolicyDetailsScaleUpConfigMetricOutputWithContext(context.Background())
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricArgs) ToAutoScalingConfigurationPolicyDetailsScaleUpConfigMetricOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricOutput)
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricArgs) ToAutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrOutput() AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrOutput {
+	return i.ToAutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrOutputWithContext(context.Background())
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricArgs) ToAutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricOutput).ToAutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrOutputWithContext(ctx)
+}
+
+// AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrInput is an input type that accepts AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricArgs, AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtr and AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrOutput values.
+// You can construct a concrete instance of `AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrInput` via:
+//
+//          AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricArgs{...}
+//
+//  or:
+//
+//          nil
+type AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrInput interface {
+	pulumi.Input
+
+	ToAutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrOutput() AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrOutput
+	ToAutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrOutputWithContext(context.Context) AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrOutput
+}
+
+type autoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrType AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricArgs
+
+func AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtr(v *AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricArgs) AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrInput {
+	return (*autoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrType)(v)
+}
+
+func (*autoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AutoScalingConfigurationPolicyDetailsScaleUpConfigMetric)(nil)).Elem()
+}
+
+func (i *autoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrType) ToAutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrOutput() AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrOutput {
+	return i.ToAutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrOutputWithContext(context.Background())
+}
+
+func (i *autoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrType) ToAutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrOutput)
+}
+
+type AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricOutput struct{ *pulumi.OutputState }
+
+func (AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScaleUpConfigMetric)(nil)).Elem()
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricOutput) ToAutoScalingConfigurationPolicyDetailsScaleUpConfigMetricOutput() AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricOutput) ToAutoScalingConfigurationPolicyDetailsScaleUpConfigMetricOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricOutput) ToAutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrOutput() AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrOutput {
+	return o.ToAutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrOutputWithContext(context.Background())
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricOutput) ToAutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AutoScalingConfigurationPolicyDetailsScaleUpConfigMetric) *AutoScalingConfigurationPolicyDetailsScaleUpConfigMetric {
+		return &v
+	}).(AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrOutput)
+}
+
+// (Updatable) Allowed value is CPU_UTILIZATION.
+func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricOutput) MetricType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScaleUpConfigMetric) *string { return v.MetricType }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
+func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricOutput) Threshold() AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScaleUpConfigMetric) *AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThreshold {
+		return v.Threshold
+	}).(AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrOutput)
+}
+
+type AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrOutput struct{ *pulumi.OutputState }
+
+func (AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AutoScalingConfigurationPolicyDetailsScaleUpConfigMetric)(nil)).Elem()
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrOutput) ToAutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrOutput() AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrOutput) ToAutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrOutput) Elem() AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetailsScaleUpConfigMetric) AutoScalingConfigurationPolicyDetailsScaleUpConfigMetric {
+		if v != nil {
+			return *v
+		}
+		var ret AutoScalingConfigurationPolicyDetailsScaleUpConfigMetric
+		return ret
+	}).(AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricOutput)
+}
+
+// (Updatable) Allowed value is CPU_UTILIZATION.
+func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrOutput) MetricType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetailsScaleUpConfigMetric) *string {
+		if v == nil {
+			return nil
+		}
+		return v.MetricType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
+func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrOutput) Threshold() AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetailsScaleUpConfigMetric) *AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThreshold {
+		if v == nil {
+			return nil
+		}
+		return v.Threshold
+	}).(AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrOutput)
+}
+
+type AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThreshold struct {
+	// (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
+	DurationInMinutes *int `pulumi:"durationInMinutes"`
+	// (Updatable) The comparison operator to use. Options are greater than (GT) or less than (LT).
+	Operator *string `pulumi:"operator"`
+	// (Updatable) Integer non-negative value. 0 < value < 100
+	Value *int `pulumi:"value"`
+}
+
+// AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdInput is an input type that accepts AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdArgs and AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdOutput values.
+// You can construct a concrete instance of `AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdInput` via:
+//
+//          AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdArgs{...}
+type AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdInput interface {
+	pulumi.Input
+
+	ToAutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdOutput() AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdOutput
+	ToAutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdOutputWithContext(context.Context) AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdOutput
+}
+
+type AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdArgs struct {
+	// (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
+	DurationInMinutes pulumi.IntPtrInput `pulumi:"durationInMinutes"`
+	// (Updatable) The comparison operator to use. Options are greater than (GT) or less than (LT).
+	Operator pulumi.StringPtrInput `pulumi:"operator"`
+	// (Updatable) Integer non-negative value. 0 < value < 100
+	Value pulumi.IntPtrInput `pulumi:"value"`
+}
+
+func (AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThreshold)(nil)).Elem()
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdArgs) ToAutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdOutput() AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdOutput {
+	return i.ToAutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdOutputWithContext(context.Background())
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdArgs) ToAutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdOutput)
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdArgs) ToAutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrOutput() AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrOutput {
+	return i.ToAutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrOutputWithContext(context.Background())
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdArgs) ToAutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdOutput).ToAutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrOutputWithContext(ctx)
+}
+
+// AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrInput is an input type that accepts AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdArgs, AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtr and AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrOutput values.
+// You can construct a concrete instance of `AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrInput` via:
+//
+//          AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdArgs{...}
+//
+//  or:
+//
+//          nil
+type AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrInput interface {
+	pulumi.Input
+
+	ToAutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrOutput() AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrOutput
+	ToAutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrOutputWithContext(context.Context) AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrOutput
+}
+
+type autoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrType AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdArgs
+
+func AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtr(v *AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdArgs) AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrInput {
+	return (*autoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrType)(v)
+}
+
+func (*autoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThreshold)(nil)).Elem()
+}
+
+func (i *autoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrType) ToAutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrOutput() AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrOutput {
+	return i.ToAutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrOutputWithContext(context.Background())
+}
+
+func (i *autoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrType) ToAutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrOutput)
+}
+
+type AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdOutput struct{ *pulumi.OutputState }
+
+func (AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThreshold)(nil)).Elem()
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdOutput) ToAutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdOutput() AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdOutput) ToAutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdOutput) ToAutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrOutput() AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrOutput {
+	return o.ToAutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrOutputWithContext(context.Background())
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdOutput) ToAutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThreshold) *AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThreshold {
+		return &v
+	}).(AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrOutput)
+}
+
+// (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
+func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdOutput) DurationInMinutes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThreshold) *int {
+		return v.DurationInMinutes
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The comparison operator to use. Options are greater than (GT) or less than (LT).
+func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdOutput) Operator() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThreshold) *string { return v.Operator }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Integer non-negative value. 0 < value < 100
+func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdOutput) Value() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThreshold) *int { return v.Value }).(pulumi.IntPtrOutput)
+}
+
+type AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrOutput struct{ *pulumi.OutputState }
+
+func (AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThreshold)(nil)).Elem()
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrOutput) ToAutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrOutput() AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrOutput) ToAutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrOutput) Elem() AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThreshold) AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThreshold {
+		if v != nil {
+			return *v
+		}
+		var ret AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThreshold
+		return ret
+	}).(AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdOutput)
+}
+
+// (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
+func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrOutput) DurationInMinutes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThreshold) *int {
+		if v == nil {
+			return nil
+		}
+		return v.DurationInMinutes
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The comparison operator to use. Options are greater than (GT) or less than (LT).
+func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrOutput) Operator() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThreshold) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Operator
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Integer non-negative value. 0 < value < 100
+func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrOutput) Value() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThreshold) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Value
+	}).(pulumi.IntPtrOutput)
+}
+
+type AutoScalingConfigurationPolicyDetailsScheduleDetail struct {
+	// (Updatable) The type of schedule.
+	ScheduleType *string `pulumi:"scheduleType"`
+	// (Updatable)
+	TimeAndHorizontalScalingConfigs []AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfig `pulumi:"timeAndHorizontalScalingConfigs"`
+	// (Updatable)
+	TimeAndVerticalScalingConfigs []AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfig `pulumi:"timeAndVerticalScalingConfigs"`
+}
+
+// AutoScalingConfigurationPolicyDetailsScheduleDetailInput is an input type that accepts AutoScalingConfigurationPolicyDetailsScheduleDetailArgs and AutoScalingConfigurationPolicyDetailsScheduleDetailOutput values.
+// You can construct a concrete instance of `AutoScalingConfigurationPolicyDetailsScheduleDetailInput` via:
+//
+//          AutoScalingConfigurationPolicyDetailsScheduleDetailArgs{...}
+type AutoScalingConfigurationPolicyDetailsScheduleDetailInput interface {
+	pulumi.Input
+
+	ToAutoScalingConfigurationPolicyDetailsScheduleDetailOutput() AutoScalingConfigurationPolicyDetailsScheduleDetailOutput
+	ToAutoScalingConfigurationPolicyDetailsScheduleDetailOutputWithContext(context.Context) AutoScalingConfigurationPolicyDetailsScheduleDetailOutput
+}
+
+type AutoScalingConfigurationPolicyDetailsScheduleDetailArgs struct {
+	// (Updatable) The type of schedule.
+	ScheduleType pulumi.StringPtrInput `pulumi:"scheduleType"`
+	// (Updatable)
+	TimeAndHorizontalScalingConfigs AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArrayInput `pulumi:"timeAndHorizontalScalingConfigs"`
+	// (Updatable)
+	TimeAndVerticalScalingConfigs AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArrayInput `pulumi:"timeAndVerticalScalingConfigs"`
+}
+
+func (AutoScalingConfigurationPolicyDetailsScheduleDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScheduleDetail)(nil)).Elem()
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScheduleDetailArgs) ToAutoScalingConfigurationPolicyDetailsScheduleDetailOutput() AutoScalingConfigurationPolicyDetailsScheduleDetailOutput {
+	return i.ToAutoScalingConfigurationPolicyDetailsScheduleDetailOutputWithContext(context.Background())
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScheduleDetailArgs) ToAutoScalingConfigurationPolicyDetailsScheduleDetailOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScheduleDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScheduleDetailOutput)
+}
+
+// AutoScalingConfigurationPolicyDetailsScheduleDetailArrayInput is an input type that accepts AutoScalingConfigurationPolicyDetailsScheduleDetailArray and AutoScalingConfigurationPolicyDetailsScheduleDetailArrayOutput values.
+// You can construct a concrete instance of `AutoScalingConfigurationPolicyDetailsScheduleDetailArrayInput` via:
+//
+//          AutoScalingConfigurationPolicyDetailsScheduleDetailArray{ AutoScalingConfigurationPolicyDetailsScheduleDetailArgs{...} }
+type AutoScalingConfigurationPolicyDetailsScheduleDetailArrayInput interface {
+	pulumi.Input
+
+	ToAutoScalingConfigurationPolicyDetailsScheduleDetailArrayOutput() AutoScalingConfigurationPolicyDetailsScheduleDetailArrayOutput
+	ToAutoScalingConfigurationPolicyDetailsScheduleDetailArrayOutputWithContext(context.Context) AutoScalingConfigurationPolicyDetailsScheduleDetailArrayOutput
+}
+
+type AutoScalingConfigurationPolicyDetailsScheduleDetailArray []AutoScalingConfigurationPolicyDetailsScheduleDetailInput
+
+func (AutoScalingConfigurationPolicyDetailsScheduleDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AutoScalingConfigurationPolicyDetailsScheduleDetail)(nil)).Elem()
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScheduleDetailArray) ToAutoScalingConfigurationPolicyDetailsScheduleDetailArrayOutput() AutoScalingConfigurationPolicyDetailsScheduleDetailArrayOutput {
+	return i.ToAutoScalingConfigurationPolicyDetailsScheduleDetailArrayOutputWithContext(context.Background())
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScheduleDetailArray) ToAutoScalingConfigurationPolicyDetailsScheduleDetailArrayOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScheduleDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScheduleDetailArrayOutput)
+}
+
+type AutoScalingConfigurationPolicyDetailsScheduleDetailOutput struct{ *pulumi.OutputState }
+
+func (AutoScalingConfigurationPolicyDetailsScheduleDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScheduleDetail)(nil)).Elem()
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScheduleDetailOutput) ToAutoScalingConfigurationPolicyDetailsScheduleDetailOutput() AutoScalingConfigurationPolicyDetailsScheduleDetailOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScheduleDetailOutput) ToAutoScalingConfigurationPolicyDetailsScheduleDetailOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScheduleDetailOutput {
+	return o
+}
+
+// (Updatable) The type of schedule.
+func (o AutoScalingConfigurationPolicyDetailsScheduleDetailOutput) ScheduleType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScheduleDetail) *string { return v.ScheduleType }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable)
+func (o AutoScalingConfigurationPolicyDetailsScheduleDetailOutput) TimeAndHorizontalScalingConfigs() AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArrayOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScheduleDetail) []AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfig {
+		return v.TimeAndHorizontalScalingConfigs
+	}).(AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArrayOutput)
+}
+
+// (Updatable)
+func (o AutoScalingConfigurationPolicyDetailsScheduleDetailOutput) TimeAndVerticalScalingConfigs() AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArrayOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScheduleDetail) []AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfig {
+		return v.TimeAndVerticalScalingConfigs
+	}).(AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArrayOutput)
+}
+
+type AutoScalingConfigurationPolicyDetailsScheduleDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (AutoScalingConfigurationPolicyDetailsScheduleDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AutoScalingConfigurationPolicyDetailsScheduleDetail)(nil)).Elem()
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScheduleDetailArrayOutput) ToAutoScalingConfigurationPolicyDetailsScheduleDetailArrayOutput() AutoScalingConfigurationPolicyDetailsScheduleDetailArrayOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScheduleDetailArrayOutput) ToAutoScalingConfigurationPolicyDetailsScheduleDetailArrayOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScheduleDetailArrayOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScheduleDetailArrayOutput) Index(i pulumi.IntInput) AutoScalingConfigurationPolicyDetailsScheduleDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AutoScalingConfigurationPolicyDetailsScheduleDetail {
+		return vs[0].([]AutoScalingConfigurationPolicyDetailsScheduleDetail)[vs[1].(int)]
+	}).(AutoScalingConfigurationPolicyDetailsScheduleDetailOutput)
+}
+
+type AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfig struct {
+	// (Updatable) This value is the desired number of nodes in the cluster.
+	TargetNodeCount *int `pulumi:"targetNodeCount"`
+	// (Updatable) Day/time recurrence (specified following RFC 5545) at which to trigger autoscaling action. Currently only WEEKLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR and BYMINUTE fields. Other fields are not supported.
+	TimeRecurrence *string `pulumi:"timeRecurrence"`
+}
+
+// AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigInput is an input type that accepts AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArgs and AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigOutput values.
+// You can construct a concrete instance of `AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigInput` via:
+//
+//          AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArgs{...}
+type AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigInput interface {
+	pulumi.Input
+
+	ToAutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigOutput() AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigOutput
+	ToAutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigOutputWithContext(context.Context) AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigOutput
+}
+
+type AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArgs struct {
+	// (Updatable) This value is the desired number of nodes in the cluster.
+	TargetNodeCount pulumi.IntPtrInput `pulumi:"targetNodeCount"`
+	// (Updatable) Day/time recurrence (specified following RFC 5545) at which to trigger autoscaling action. Currently only WEEKLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR and BYMINUTE fields. Other fields are not supported.
+	TimeRecurrence pulumi.StringPtrInput `pulumi:"timeRecurrence"`
+}
+
+func (AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfig)(nil)).Elem()
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArgs) ToAutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigOutput() AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigOutput {
+	return i.ToAutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigOutputWithContext(context.Background())
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArgs) ToAutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigOutput)
+}
+
+// AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArrayInput is an input type that accepts AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArray and AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArrayOutput values.
+// You can construct a concrete instance of `AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArrayInput` via:
+//
+//          AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArray{ AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArgs{...} }
+type AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArrayInput interface {
+	pulumi.Input
+
+	ToAutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArrayOutput() AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArrayOutput
+	ToAutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArrayOutputWithContext(context.Context) AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArrayOutput
+}
+
+type AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArray []AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigInput
+
+func (AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfig)(nil)).Elem()
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArray) ToAutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArrayOutput() AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArrayOutput {
+	return i.ToAutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArrayOutputWithContext(context.Background())
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArray) ToAutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArrayOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArrayOutput)
+}
+
+type AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigOutput struct{ *pulumi.OutputState }
+
+func (AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfig)(nil)).Elem()
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigOutput) ToAutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigOutput() AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigOutput) ToAutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigOutput {
+	return o
+}
+
+// (Updatable) This value is the desired number of nodes in the cluster.
+func (o AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigOutput) TargetNodeCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfig) *int {
+		return v.TargetNodeCount
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Day/time recurrence (specified following RFC 5545) at which to trigger autoscaling action. Currently only WEEKLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR and BYMINUTE fields. Other fields are not supported.
+func (o AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigOutput) TimeRecurrence() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfig) *string {
+		return v.TimeRecurrence
+	}).(pulumi.StringPtrOutput)
+}
+
+type AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfig)(nil)).Elem()
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArrayOutput) ToAutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArrayOutput() AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArrayOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArrayOutput) ToAutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArrayOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArrayOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArrayOutput) Index(i pulumi.IntInput) AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfig {
+		return vs[0].([]AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfig)[vs[1].(int)]
+	}).(AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigOutput)
+}
+
+type AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfig struct {
+	// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired memory in GBs on each node. This value is not used for nodes with fixed compute shapes.
+	TargetMemoryPerNode *int `pulumi:"targetMemoryPerNode"`
+	// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired OCPUs count on each node. This value is not used for nodes with fixed compute shapes.
+	TargetOcpusPerNode *int `pulumi:"targetOcpusPerNode"`
+	// (Updatable) For nodes with [fixed compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired shape of each node. This value is not used for nodes with flexible compute shapes.
+	TargetShape *string `pulumi:"targetShape"`
+	// (Updatable) Day/time recurrence (specified following RFC 5545) at which to trigger autoscaling action. Currently only WEEKLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR and BYMINUTE fields. Other fields are not supported.
+	TimeRecurrence *string `pulumi:"timeRecurrence"`
+}
+
+// AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigInput is an input type that accepts AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArgs and AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigOutput values.
+// You can construct a concrete instance of `AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigInput` via:
+//
+//          AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArgs{...}
+type AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigInput interface {
+	pulumi.Input
+
+	ToAutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigOutput() AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigOutput
+	ToAutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigOutputWithContext(context.Context) AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigOutput
+}
+
+type AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArgs struct {
+	// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired memory in GBs on each node. This value is not used for nodes with fixed compute shapes.
+	TargetMemoryPerNode pulumi.IntPtrInput `pulumi:"targetMemoryPerNode"`
+	// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired OCPUs count on each node. This value is not used for nodes with fixed compute shapes.
+	TargetOcpusPerNode pulumi.IntPtrInput `pulumi:"targetOcpusPerNode"`
+	// (Updatable) For nodes with [fixed compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired shape of each node. This value is not used for nodes with flexible compute shapes.
+	TargetShape pulumi.StringPtrInput `pulumi:"targetShape"`
+	// (Updatable) Day/time recurrence (specified following RFC 5545) at which to trigger autoscaling action. Currently only WEEKLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR and BYMINUTE fields. Other fields are not supported.
+	TimeRecurrence pulumi.StringPtrInput `pulumi:"timeRecurrence"`
+}
+
+func (AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfig)(nil)).Elem()
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArgs) ToAutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigOutput() AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigOutput {
+	return i.ToAutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigOutputWithContext(context.Background())
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArgs) ToAutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigOutput)
+}
+
+// AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArrayInput is an input type that accepts AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArray and AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArrayOutput values.
+// You can construct a concrete instance of `AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArrayInput` via:
+//
+//          AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArray{ AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArgs{...} }
+type AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArrayInput interface {
+	pulumi.Input
+
+	ToAutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArrayOutput() AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArrayOutput
+	ToAutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArrayOutputWithContext(context.Context) AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArrayOutput
+}
+
+type AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArray []AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigInput
+
+func (AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfig)(nil)).Elem()
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArray) ToAutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArrayOutput() AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArrayOutput {
+	return i.ToAutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArrayOutputWithContext(context.Background())
+}
+
+func (i AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArray) ToAutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArrayOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArrayOutput)
+}
+
+type AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigOutput struct{ *pulumi.OutputState }
+
+func (AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfig)(nil)).Elem()
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigOutput) ToAutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigOutput() AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigOutput) ToAutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigOutput {
+	return o
+}
+
+// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired memory in GBs on each node. This value is not used for nodes with fixed compute shapes.
+func (o AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigOutput) TargetMemoryPerNode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfig) *int {
+		return v.TargetMemoryPerNode
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired OCPUs count on each node. This value is not used for nodes with fixed compute shapes.
+func (o AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigOutput) TargetOcpusPerNode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfig) *int {
+		return v.TargetOcpusPerNode
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) For nodes with [fixed compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired shape of each node. This value is not used for nodes with flexible compute shapes.
+func (o AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigOutput) TargetShape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfig) *string {
+		return v.TargetShape
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Day/time recurrence (specified following RFC 5545) at which to trigger autoscaling action. Currently only WEEKLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR and BYMINUTE fields. Other fields are not supported.
+func (o AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigOutput) TimeRecurrence() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfig) *string {
+		return v.TimeRecurrence
+	}).(pulumi.StringPtrOutput)
+}
+
+type AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfig)(nil)).Elem()
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArrayOutput) ToAutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArrayOutput() AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArrayOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArrayOutput) ToAutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArrayOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArrayOutput {
+	return o
+}
+
+func (o AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArrayOutput) Index(i pulumi.IntInput) AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfig {
+		return vs[0].([]AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfig)[vs[1].(int)]
+	}).(AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigOutput)
 }
 
 type AutoScalingConfigurationPolicyRule struct {
@@ -275,7 +3059,7 @@ func (o AutoScalingConfigurationPolicyRuleArrayOutput) Index(i pulumi.IntInput) 
 type AutoScalingConfigurationPolicyRuleMetric struct {
 	// (Updatable) Allowed value is CPU_UTILIZATION.
 	MetricType string `pulumi:"metricType"`
-	// (Updatable) An autoscale action is triggered when a performance metric meets or exceeds a threshold.
+	// (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
 	Threshold AutoScalingConfigurationPolicyRuleMetricThreshold `pulumi:"threshold"`
 }
 
@@ -293,7 +3077,7 @@ type AutoScalingConfigurationPolicyRuleMetricInput interface {
 type AutoScalingConfigurationPolicyRuleMetricArgs struct {
 	// (Updatable) Allowed value is CPU_UTILIZATION.
 	MetricType pulumi.StringInput `pulumi:"metricType"`
-	// (Updatable) An autoscale action is triggered when a performance metric meets or exceeds a threshold.
+	// (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
 	Threshold AutoScalingConfigurationPolicyRuleMetricThresholdInput `pulumi:"threshold"`
 }
 
@@ -328,7 +3112,7 @@ func (o AutoScalingConfigurationPolicyRuleMetricOutput) MetricType() pulumi.Stri
 	return o.ApplyT(func(v AutoScalingConfigurationPolicyRuleMetric) string { return v.MetricType }).(pulumi.StringOutput)
 }
 
-// (Updatable) An autoscale action is triggered when a performance metric meets or exceeds a threshold.
+// (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
 func (o AutoScalingConfigurationPolicyRuleMetricOutput) Threshold() AutoScalingConfigurationPolicyRuleMetricThresholdOutput {
 	return o.ApplyT(func(v AutoScalingConfigurationPolicyRuleMetric) AutoScalingConfigurationPolicyRuleMetricThreshold {
 		return v.Threshold
@@ -336,7 +3120,7 @@ func (o AutoScalingConfigurationPolicyRuleMetricOutput) Threshold() AutoScalingC
 }
 
 type AutoScalingConfigurationPolicyRuleMetricThreshold struct {
-	// (Updatable) This value is the minimum period of time the metric value meets or exceeds the threshold value before the action is triggered. The value is in minutes.
+	// (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
 	DurationInMinutes int `pulumi:"durationInMinutes"`
 	// (Updatable) The comparison operator to use. Options are greater than (GT) or less than (LT).
 	Operator string `pulumi:"operator"`
@@ -356,7 +3140,7 @@ type AutoScalingConfigurationPolicyRuleMetricThresholdInput interface {
 }
 
 type AutoScalingConfigurationPolicyRuleMetricThresholdArgs struct {
-	// (Updatable) This value is the minimum period of time the metric value meets or exceeds the threshold value before the action is triggered. The value is in minutes.
+	// (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
 	DurationInMinutes pulumi.IntInput `pulumi:"durationInMinutes"`
 	// (Updatable) The comparison operator to use. Options are greater than (GT) or less than (LT).
 	Operator pulumi.StringInput `pulumi:"operator"`
@@ -390,7 +3174,7 @@ func (o AutoScalingConfigurationPolicyRuleMetricThresholdOutput) ToAutoScalingCo
 	return o
 }
 
-// (Updatable) This value is the minimum period of time the metric value meets or exceeds the threshold value before the action is triggered. The value is in minutes.
+// (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
 func (o AutoScalingConfigurationPolicyRuleMetricThresholdOutput) DurationInMinutes() pulumi.IntOutput {
 	return o.ApplyT(func(v AutoScalingConfigurationPolicyRuleMetricThreshold) int { return v.DurationInMinutes }).(pulumi.IntOutput)
 }
@@ -406,15 +3190,15 @@ func (o AutoScalingConfigurationPolicyRuleMetricThresholdOutput) Value() pulumi.
 }
 
 type BdsInstanceCloudSqlDetail struct {
-	// The size of block volume in GB to be attached to a given node. All the details needed for attaching the block volume are managed by service itself.
+	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
 	BlockVolumeSizeInGbs string `pulumi:"blockVolumeSizeInGbs"`
-	// IP address of the node.
+	// IP address of the node
 	IpAddress *string `pulumi:"ipAddress"`
-	// Boolean flag specifying whether or not Kerberos principals are mapped to database users.
+	// Boolean flag specifying whether or not are Kerberos principals mapped to database users.
 	IsKerberosMappedToDatabaseUsers *bool `pulumi:"isKerberosMappedToDatabaseUsers"`
-	// Details about the Kerberos principals.
+	// Details about Kerberos principals
 	KerberosDetails []BdsInstanceCloudSqlDetailKerberosDetail `pulumi:"kerberosDetails"`
-	// (Updatable) Shape of the node.
+	// Shape of the node
 	Shape string `pulumi:"shape"`
 }
 
@@ -430,15 +3214,15 @@ type BdsInstanceCloudSqlDetailInput interface {
 }
 
 type BdsInstanceCloudSqlDetailArgs struct {
-	// The size of block volume in GB to be attached to a given node. All the details needed for attaching the block volume are managed by service itself.
+	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
 	BlockVolumeSizeInGbs pulumi.StringInput `pulumi:"blockVolumeSizeInGbs"`
-	// IP address of the node.
+	// IP address of the node
 	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
-	// Boolean flag specifying whether or not Kerberos principals are mapped to database users.
+	// Boolean flag specifying whether or not are Kerberos principals mapped to database users.
 	IsKerberosMappedToDatabaseUsers pulumi.BoolPtrInput `pulumi:"isKerberosMappedToDatabaseUsers"`
-	// Details about the Kerberos principals.
+	// Details about Kerberos principals
 	KerberosDetails BdsInstanceCloudSqlDetailKerberosDetailArrayInput `pulumi:"kerberosDetails"`
-	// (Updatable) Shape of the node.
+	// Shape of the node
 	Shape pulumi.StringInput `pulumi:"shape"`
 }
 
@@ -493,27 +3277,27 @@ func (o BdsInstanceCloudSqlDetailOutput) ToBdsInstanceCloudSqlDetailOutputWithCo
 	return o
 }
 
-// The size of block volume in GB to be attached to a given node. All the details needed for attaching the block volume are managed by service itself.
+// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
 func (o BdsInstanceCloudSqlDetailOutput) BlockVolumeSizeInGbs() pulumi.StringOutput {
 	return o.ApplyT(func(v BdsInstanceCloudSqlDetail) string { return v.BlockVolumeSizeInGbs }).(pulumi.StringOutput)
 }
 
-// IP address of the node.
+// IP address of the node
 func (o BdsInstanceCloudSqlDetailOutput) IpAddress() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceCloudSqlDetail) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
 }
 
-// Boolean flag specifying whether or not Kerberos principals are mapped to database users.
+// Boolean flag specifying whether or not are Kerberos principals mapped to database users.
 func (o BdsInstanceCloudSqlDetailOutput) IsKerberosMappedToDatabaseUsers() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v BdsInstanceCloudSqlDetail) *bool { return v.IsKerberosMappedToDatabaseUsers }).(pulumi.BoolPtrOutput)
 }
 
-// Details about the Kerberos principals.
+// Details about Kerberos principals
 func (o BdsInstanceCloudSqlDetailOutput) KerberosDetails() BdsInstanceCloudSqlDetailKerberosDetailArrayOutput {
 	return o.ApplyT(func(v BdsInstanceCloudSqlDetail) []BdsInstanceCloudSqlDetailKerberosDetail { return v.KerberosDetails }).(BdsInstanceCloudSqlDetailKerberosDetailArrayOutput)
 }
 
-// (Updatable) Shape of the node.
+// Shape of the node
 func (o BdsInstanceCloudSqlDetailOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v BdsInstanceCloudSqlDetail) string { return v.Shape }).(pulumi.StringOutput)
 }
@@ -541,7 +3325,7 @@ func (o BdsInstanceCloudSqlDetailArrayOutput) Index(i pulumi.IntInput) BdsInstan
 type BdsInstanceCloudSqlDetailKerberosDetail struct {
 	// Location of the keytab file
 	KeytabFile *string `pulumi:"keytabFile"`
-	// Name of the Kerberos principal.
+	// Name of the Kerberos principal
 	PrincipalName *string `pulumi:"principalName"`
 }
 
@@ -559,7 +3343,7 @@ type BdsInstanceCloudSqlDetailKerberosDetailInput interface {
 type BdsInstanceCloudSqlDetailKerberosDetailArgs struct {
 	// Location of the keytab file
 	KeytabFile pulumi.StringPtrInput `pulumi:"keytabFile"`
-	// Name of the Kerberos principal.
+	// Name of the Kerberos principal
 	PrincipalName pulumi.StringPtrInput `pulumi:"principalName"`
 }
 
@@ -619,7 +3403,7 @@ func (o BdsInstanceCloudSqlDetailKerberosDetailOutput) KeytabFile() pulumi.Strin
 	return o.ApplyT(func(v BdsInstanceCloudSqlDetailKerberosDetail) *string { return v.KeytabFile }).(pulumi.StringPtrOutput)
 }
 
-// Name of the Kerberos principal.
+// Name of the Kerberos principal
 func (o BdsInstanceCloudSqlDetailKerberosDetailOutput) PrincipalName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceCloudSqlDetailKerberosDetail) *string { return v.PrincipalName }).(pulumi.StringPtrOutput)
 }
@@ -645,31 +3429,32 @@ func (o BdsInstanceCloudSqlDetailKerberosDetailArrayOutput) Index(i pulumi.IntIn
 }
 
 type BdsInstanceClusterDetail struct {
-	// The URL of Ambari
 	AmbariUrl *string `pulumi:"ambariUrl"`
-	// Cloud SQL cell version.
+	// Cloud SQL cell version
 	BdCellVersion *string `pulumi:"bdCellVersion"`
 	// BDA version installed in the cluster
 	BdaVersion *string `pulumi:"bdaVersion"`
-	// Big Data Manager version installed in the cluster.
+	// Big Data Manager version installed in the cluster
 	BdmVersion *string `pulumi:"bdmVersion"`
-	// Big Data Service version installed in the cluster.
+	// Big Data Service version installed in the cluster
 	BdsVersion *string `pulumi:"bdsVersion"`
-	// The URL of Big Data Manager.
+	// The URL of a Big Data Manager
 	BigDataManagerUrl *string `pulumi:"bigDataManagerUrl"`
-	// The URL of Cloudera Manager
+	// The URL of a Cloudera Manager
 	ClouderaManagerUrl *string `pulumi:"clouderaManagerUrl"`
-	// Big Data SQL version.
+	// Big Data SQL version
 	CsqlCellVersion *string `pulumi:"csqlCellVersion"`
-	// Cloud SQL query server database version.
+	// Query Server Database version
 	DbVersion *string `pulumi:"dbVersion"`
-	// The URL of the Hue server.
+	// The URL of a Hue Server
 	HueServerUrl *string `pulumi:"hueServerUrl"`
-	// Oracle Linux version installed in the cluster.
+	// The URL of the Jupyterhub.
+	JupyterHubUrl *string `pulumi:"jupyterHubUrl"`
+	// Oracle Linux version installed in the cluster
 	OsVersion *string `pulumi:"osVersion"`
-	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+	// The time the BDS instance was created. An RFC3339 formatted datetime string
 	TimeCreated *string `pulumi:"timeCreated"`
-	// The time the cluster was automatically or manually refreshed, shown as an RFC 3339 formatted datetime string.
+	// The time the BDS instance was automatically, or manually refreshed. An RFC3339 formatted datetime string
 	TimeRefreshed *string `pulumi:"timeRefreshed"`
 }
 
@@ -685,31 +3470,32 @@ type BdsInstanceClusterDetailInput interface {
 }
 
 type BdsInstanceClusterDetailArgs struct {
-	// The URL of Ambari
 	AmbariUrl pulumi.StringPtrInput `pulumi:"ambariUrl"`
-	// Cloud SQL cell version.
+	// Cloud SQL cell version
 	BdCellVersion pulumi.StringPtrInput `pulumi:"bdCellVersion"`
 	// BDA version installed in the cluster
 	BdaVersion pulumi.StringPtrInput `pulumi:"bdaVersion"`
-	// Big Data Manager version installed in the cluster.
+	// Big Data Manager version installed in the cluster
 	BdmVersion pulumi.StringPtrInput `pulumi:"bdmVersion"`
-	// Big Data Service version installed in the cluster.
+	// Big Data Service version installed in the cluster
 	BdsVersion pulumi.StringPtrInput `pulumi:"bdsVersion"`
-	// The URL of Big Data Manager.
+	// The URL of a Big Data Manager
 	BigDataManagerUrl pulumi.StringPtrInput `pulumi:"bigDataManagerUrl"`
-	// The URL of Cloudera Manager
+	// The URL of a Cloudera Manager
 	ClouderaManagerUrl pulumi.StringPtrInput `pulumi:"clouderaManagerUrl"`
-	// Big Data SQL version.
+	// Big Data SQL version
 	CsqlCellVersion pulumi.StringPtrInput `pulumi:"csqlCellVersion"`
-	// Cloud SQL query server database version.
+	// Query Server Database version
 	DbVersion pulumi.StringPtrInput `pulumi:"dbVersion"`
-	// The URL of the Hue server.
+	// The URL of a Hue Server
 	HueServerUrl pulumi.StringPtrInput `pulumi:"hueServerUrl"`
-	// Oracle Linux version installed in the cluster.
+	// The URL of the Jupyterhub.
+	JupyterHubUrl pulumi.StringPtrInput `pulumi:"jupyterHubUrl"`
+	// Oracle Linux version installed in the cluster
 	OsVersion pulumi.StringPtrInput `pulumi:"osVersion"`
-	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+	// The time the BDS instance was created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
-	// The time the cluster was automatically or manually refreshed, shown as an RFC 3339 formatted datetime string.
+	// The time the BDS instance was automatically, or manually refreshed. An RFC3339 formatted datetime string
 	TimeRefreshed pulumi.StringPtrInput `pulumi:"timeRefreshed"`
 }
 
@@ -764,12 +3550,11 @@ func (o BdsInstanceClusterDetailOutput) ToBdsInstanceClusterDetailOutputWithCont
 	return o
 }
 
-// The URL of Ambari
 func (o BdsInstanceClusterDetailOutput) AmbariUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceClusterDetail) *string { return v.AmbariUrl }).(pulumi.StringPtrOutput)
 }
 
-// Cloud SQL cell version.
+// Cloud SQL cell version
 func (o BdsInstanceClusterDetailOutput) BdCellVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceClusterDetail) *string { return v.BdCellVersion }).(pulumi.StringPtrOutput)
 }
@@ -779,52 +3564,57 @@ func (o BdsInstanceClusterDetailOutput) BdaVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceClusterDetail) *string { return v.BdaVersion }).(pulumi.StringPtrOutput)
 }
 
-// Big Data Manager version installed in the cluster.
+// Big Data Manager version installed in the cluster
 func (o BdsInstanceClusterDetailOutput) BdmVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceClusterDetail) *string { return v.BdmVersion }).(pulumi.StringPtrOutput)
 }
 
-// Big Data Service version installed in the cluster.
+// Big Data Service version installed in the cluster
 func (o BdsInstanceClusterDetailOutput) BdsVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceClusterDetail) *string { return v.BdsVersion }).(pulumi.StringPtrOutput)
 }
 
-// The URL of Big Data Manager.
+// The URL of a Big Data Manager
 func (o BdsInstanceClusterDetailOutput) BigDataManagerUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceClusterDetail) *string { return v.BigDataManagerUrl }).(pulumi.StringPtrOutput)
 }
 
-// The URL of Cloudera Manager
+// The URL of a Cloudera Manager
 func (o BdsInstanceClusterDetailOutput) ClouderaManagerUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceClusterDetail) *string { return v.ClouderaManagerUrl }).(pulumi.StringPtrOutput)
 }
 
-// Big Data SQL version.
+// Big Data SQL version
 func (o BdsInstanceClusterDetailOutput) CsqlCellVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceClusterDetail) *string { return v.CsqlCellVersion }).(pulumi.StringPtrOutput)
 }
 
-// Cloud SQL query server database version.
+// Query Server Database version
 func (o BdsInstanceClusterDetailOutput) DbVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceClusterDetail) *string { return v.DbVersion }).(pulumi.StringPtrOutput)
 }
 
-// The URL of the Hue server.
+// The URL of a Hue Server
 func (o BdsInstanceClusterDetailOutput) HueServerUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceClusterDetail) *string { return v.HueServerUrl }).(pulumi.StringPtrOutput)
 }
 
-// Oracle Linux version installed in the cluster.
+// The URL of the Jupyterhub.
+func (o BdsInstanceClusterDetailOutput) JupyterHubUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BdsInstanceClusterDetail) *string { return v.JupyterHubUrl }).(pulumi.StringPtrOutput)
+}
+
+// Oracle Linux version installed in the cluster
 func (o BdsInstanceClusterDetailOutput) OsVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceClusterDetail) *string { return v.OsVersion }).(pulumi.StringPtrOutput)
 }
 
-// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+// The time the BDS instance was created. An RFC3339 formatted datetime string
 func (o BdsInstanceClusterDetailOutput) TimeCreated() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceClusterDetail) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
-// The time the cluster was automatically or manually refreshed, shown as an RFC 3339 formatted datetime string.
+// The time the BDS instance was automatically, or manually refreshed. An RFC3339 formatted datetime string
 func (o BdsInstanceClusterDetailOutput) TimeRefreshed() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceClusterDetail) *string { return v.TimeRefreshed }).(pulumi.StringPtrOutput)
 }
@@ -849,14 +3639,387 @@ func (o BdsInstanceClusterDetailArrayOutput) Index(i pulumi.IntInput) BdsInstanc
 	}).(BdsInstanceClusterDetailOutput)
 }
 
-type BdsInstanceMasterNode struct {
-	// The size of block volume in GB to be attached to a given node. All the details needed for attaching the block volume are managed by service itself.
+type BdsInstanceComputeOnlyWorkerNode struct {
+	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
 	BlockVolumeSizeInGbs string `pulumi:"blockVolumeSizeInGbs"`
-	// The number of nodes that form the cluster.
+	// The amount of worker nodes should be created
 	NumberOfNodes int `pulumi:"numberOfNodes"`
-	// (Updatable) Shape of the node.
+	// Shape of the node
 	Shape string `pulumi:"shape"`
-	// The OCID of the subnet in which the node will be created.
+	// The shape configuration requested for the node.
+	ShapeConfig *BdsInstanceComputeOnlyWorkerNodeShapeConfig `pulumi:"shapeConfig"`
+	// The OCID of the subnet in which the node should be created
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// BdsInstanceComputeOnlyWorkerNodeInput is an input type that accepts BdsInstanceComputeOnlyWorkerNodeArgs and BdsInstanceComputeOnlyWorkerNodeOutput values.
+// You can construct a concrete instance of `BdsInstanceComputeOnlyWorkerNodeInput` via:
+//
+//          BdsInstanceComputeOnlyWorkerNodeArgs{...}
+type BdsInstanceComputeOnlyWorkerNodeInput interface {
+	pulumi.Input
+
+	ToBdsInstanceComputeOnlyWorkerNodeOutput() BdsInstanceComputeOnlyWorkerNodeOutput
+	ToBdsInstanceComputeOnlyWorkerNodeOutputWithContext(context.Context) BdsInstanceComputeOnlyWorkerNodeOutput
+}
+
+type BdsInstanceComputeOnlyWorkerNodeArgs struct {
+	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+	BlockVolumeSizeInGbs pulumi.StringInput `pulumi:"blockVolumeSizeInGbs"`
+	// The amount of worker nodes should be created
+	NumberOfNodes pulumi.IntInput `pulumi:"numberOfNodes"`
+	// Shape of the node
+	Shape pulumi.StringInput `pulumi:"shape"`
+	// The shape configuration requested for the node.
+	ShapeConfig BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrInput `pulumi:"shapeConfig"`
+	// The OCID of the subnet in which the node should be created
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (BdsInstanceComputeOnlyWorkerNodeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsInstanceComputeOnlyWorkerNode)(nil)).Elem()
+}
+
+func (i BdsInstanceComputeOnlyWorkerNodeArgs) ToBdsInstanceComputeOnlyWorkerNodeOutput() BdsInstanceComputeOnlyWorkerNodeOutput {
+	return i.ToBdsInstanceComputeOnlyWorkerNodeOutputWithContext(context.Background())
+}
+
+func (i BdsInstanceComputeOnlyWorkerNodeArgs) ToBdsInstanceComputeOnlyWorkerNodeOutputWithContext(ctx context.Context) BdsInstanceComputeOnlyWorkerNodeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceComputeOnlyWorkerNodeOutput)
+}
+
+func (i BdsInstanceComputeOnlyWorkerNodeArgs) ToBdsInstanceComputeOnlyWorkerNodePtrOutput() BdsInstanceComputeOnlyWorkerNodePtrOutput {
+	return i.ToBdsInstanceComputeOnlyWorkerNodePtrOutputWithContext(context.Background())
+}
+
+func (i BdsInstanceComputeOnlyWorkerNodeArgs) ToBdsInstanceComputeOnlyWorkerNodePtrOutputWithContext(ctx context.Context) BdsInstanceComputeOnlyWorkerNodePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceComputeOnlyWorkerNodeOutput).ToBdsInstanceComputeOnlyWorkerNodePtrOutputWithContext(ctx)
+}
+
+// BdsInstanceComputeOnlyWorkerNodePtrInput is an input type that accepts BdsInstanceComputeOnlyWorkerNodeArgs, BdsInstanceComputeOnlyWorkerNodePtr and BdsInstanceComputeOnlyWorkerNodePtrOutput values.
+// You can construct a concrete instance of `BdsInstanceComputeOnlyWorkerNodePtrInput` via:
+//
+//          BdsInstanceComputeOnlyWorkerNodeArgs{...}
+//
+//  or:
+//
+//          nil
+type BdsInstanceComputeOnlyWorkerNodePtrInput interface {
+	pulumi.Input
+
+	ToBdsInstanceComputeOnlyWorkerNodePtrOutput() BdsInstanceComputeOnlyWorkerNodePtrOutput
+	ToBdsInstanceComputeOnlyWorkerNodePtrOutputWithContext(context.Context) BdsInstanceComputeOnlyWorkerNodePtrOutput
+}
+
+type bdsInstanceComputeOnlyWorkerNodePtrType BdsInstanceComputeOnlyWorkerNodeArgs
+
+func BdsInstanceComputeOnlyWorkerNodePtr(v *BdsInstanceComputeOnlyWorkerNodeArgs) BdsInstanceComputeOnlyWorkerNodePtrInput {
+	return (*bdsInstanceComputeOnlyWorkerNodePtrType)(v)
+}
+
+func (*bdsInstanceComputeOnlyWorkerNodePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**BdsInstanceComputeOnlyWorkerNode)(nil)).Elem()
+}
+
+func (i *bdsInstanceComputeOnlyWorkerNodePtrType) ToBdsInstanceComputeOnlyWorkerNodePtrOutput() BdsInstanceComputeOnlyWorkerNodePtrOutput {
+	return i.ToBdsInstanceComputeOnlyWorkerNodePtrOutputWithContext(context.Background())
+}
+
+func (i *bdsInstanceComputeOnlyWorkerNodePtrType) ToBdsInstanceComputeOnlyWorkerNodePtrOutputWithContext(ctx context.Context) BdsInstanceComputeOnlyWorkerNodePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceComputeOnlyWorkerNodePtrOutput)
+}
+
+type BdsInstanceComputeOnlyWorkerNodeOutput struct{ *pulumi.OutputState }
+
+func (BdsInstanceComputeOnlyWorkerNodeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsInstanceComputeOnlyWorkerNode)(nil)).Elem()
+}
+
+func (o BdsInstanceComputeOnlyWorkerNodeOutput) ToBdsInstanceComputeOnlyWorkerNodeOutput() BdsInstanceComputeOnlyWorkerNodeOutput {
+	return o
+}
+
+func (o BdsInstanceComputeOnlyWorkerNodeOutput) ToBdsInstanceComputeOnlyWorkerNodeOutputWithContext(ctx context.Context) BdsInstanceComputeOnlyWorkerNodeOutput {
+	return o
+}
+
+func (o BdsInstanceComputeOnlyWorkerNodeOutput) ToBdsInstanceComputeOnlyWorkerNodePtrOutput() BdsInstanceComputeOnlyWorkerNodePtrOutput {
+	return o.ToBdsInstanceComputeOnlyWorkerNodePtrOutputWithContext(context.Background())
+}
+
+func (o BdsInstanceComputeOnlyWorkerNodeOutput) ToBdsInstanceComputeOnlyWorkerNodePtrOutputWithContext(ctx context.Context) BdsInstanceComputeOnlyWorkerNodePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v BdsInstanceComputeOnlyWorkerNode) *BdsInstanceComputeOnlyWorkerNode {
+		return &v
+	}).(BdsInstanceComputeOnlyWorkerNodePtrOutput)
+}
+
+// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+func (o BdsInstanceComputeOnlyWorkerNodeOutput) BlockVolumeSizeInGbs() pulumi.StringOutput {
+	return o.ApplyT(func(v BdsInstanceComputeOnlyWorkerNode) string { return v.BlockVolumeSizeInGbs }).(pulumi.StringOutput)
+}
+
+// The amount of worker nodes should be created
+func (o BdsInstanceComputeOnlyWorkerNodeOutput) NumberOfNodes() pulumi.IntOutput {
+	return o.ApplyT(func(v BdsInstanceComputeOnlyWorkerNode) int { return v.NumberOfNodes }).(pulumi.IntOutput)
+}
+
+// Shape of the node
+func (o BdsInstanceComputeOnlyWorkerNodeOutput) Shape() pulumi.StringOutput {
+	return o.ApplyT(func(v BdsInstanceComputeOnlyWorkerNode) string { return v.Shape }).(pulumi.StringOutput)
+}
+
+// The shape configuration requested for the node.
+func (o BdsInstanceComputeOnlyWorkerNodeOutput) ShapeConfig() BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput {
+	return o.ApplyT(func(v BdsInstanceComputeOnlyWorkerNode) *BdsInstanceComputeOnlyWorkerNodeShapeConfig {
+		return v.ShapeConfig
+	}).(BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput)
+}
+
+// The OCID of the subnet in which the node should be created
+func (o BdsInstanceComputeOnlyWorkerNodeOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v BdsInstanceComputeOnlyWorkerNode) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+type BdsInstanceComputeOnlyWorkerNodePtrOutput struct{ *pulumi.OutputState }
+
+func (BdsInstanceComputeOnlyWorkerNodePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**BdsInstanceComputeOnlyWorkerNode)(nil)).Elem()
+}
+
+func (o BdsInstanceComputeOnlyWorkerNodePtrOutput) ToBdsInstanceComputeOnlyWorkerNodePtrOutput() BdsInstanceComputeOnlyWorkerNodePtrOutput {
+	return o
+}
+
+func (o BdsInstanceComputeOnlyWorkerNodePtrOutput) ToBdsInstanceComputeOnlyWorkerNodePtrOutputWithContext(ctx context.Context) BdsInstanceComputeOnlyWorkerNodePtrOutput {
+	return o
+}
+
+func (o BdsInstanceComputeOnlyWorkerNodePtrOutput) Elem() BdsInstanceComputeOnlyWorkerNodeOutput {
+	return o.ApplyT(func(v *BdsInstanceComputeOnlyWorkerNode) BdsInstanceComputeOnlyWorkerNode {
+		if v != nil {
+			return *v
+		}
+		var ret BdsInstanceComputeOnlyWorkerNode
+		return ret
+	}).(BdsInstanceComputeOnlyWorkerNodeOutput)
+}
+
+// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+func (o BdsInstanceComputeOnlyWorkerNodePtrOutput) BlockVolumeSizeInGbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceComputeOnlyWorkerNode) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.BlockVolumeSizeInGbs
+	}).(pulumi.StringPtrOutput)
+}
+
+// The amount of worker nodes should be created
+func (o BdsInstanceComputeOnlyWorkerNodePtrOutput) NumberOfNodes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceComputeOnlyWorkerNode) *int {
+		if v == nil {
+			return nil
+		}
+		return &v.NumberOfNodes
+	}).(pulumi.IntPtrOutput)
+}
+
+// Shape of the node
+func (o BdsInstanceComputeOnlyWorkerNodePtrOutput) Shape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceComputeOnlyWorkerNode) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Shape
+	}).(pulumi.StringPtrOutput)
+}
+
+// The shape configuration requested for the node.
+func (o BdsInstanceComputeOnlyWorkerNodePtrOutput) ShapeConfig() BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceComputeOnlyWorkerNode) *BdsInstanceComputeOnlyWorkerNodeShapeConfig {
+		if v == nil {
+			return nil
+		}
+		return v.ShapeConfig
+	}).(BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput)
+}
+
+// The OCID of the subnet in which the node should be created
+func (o BdsInstanceComputeOnlyWorkerNodePtrOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceComputeOnlyWorkerNode) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.SubnetId
+	}).(pulumi.StringPtrOutput)
+}
+
+type BdsInstanceComputeOnlyWorkerNodeShapeConfig struct {
+	// The total amount of memory available to the node, in gigabytes
+	MemoryInGbs *int `pulumi:"memoryInGbs"`
+	// The total number of OCPUs available to the node.
+	Ocpus *int `pulumi:"ocpus"`
+}
+
+// BdsInstanceComputeOnlyWorkerNodeShapeConfigInput is an input type that accepts BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs and BdsInstanceComputeOnlyWorkerNodeShapeConfigOutput values.
+// You can construct a concrete instance of `BdsInstanceComputeOnlyWorkerNodeShapeConfigInput` via:
+//
+//          BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs{...}
+type BdsInstanceComputeOnlyWorkerNodeShapeConfigInput interface {
+	pulumi.Input
+
+	ToBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput() BdsInstanceComputeOnlyWorkerNodeShapeConfigOutput
+	ToBdsInstanceComputeOnlyWorkerNodeShapeConfigOutputWithContext(context.Context) BdsInstanceComputeOnlyWorkerNodeShapeConfigOutput
+}
+
+type BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs struct {
+	// The total amount of memory available to the node, in gigabytes
+	MemoryInGbs pulumi.IntPtrInput `pulumi:"memoryInGbs"`
+	// The total number of OCPUs available to the node.
+	Ocpus pulumi.IntPtrInput `pulumi:"ocpus"`
+}
+
+func (BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsInstanceComputeOnlyWorkerNodeShapeConfig)(nil)).Elem()
+}
+
+func (i BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs) ToBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput() BdsInstanceComputeOnlyWorkerNodeShapeConfigOutput {
+	return i.ToBdsInstanceComputeOnlyWorkerNodeShapeConfigOutputWithContext(context.Background())
+}
+
+func (i BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs) ToBdsInstanceComputeOnlyWorkerNodeShapeConfigOutputWithContext(ctx context.Context) BdsInstanceComputeOnlyWorkerNodeShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceComputeOnlyWorkerNodeShapeConfigOutput)
+}
+
+func (i BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs) ToBdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput() BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput {
+	return i.ToBdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (i BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs) ToBdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutputWithContext(ctx context.Context) BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceComputeOnlyWorkerNodeShapeConfigOutput).ToBdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutputWithContext(ctx)
+}
+
+// BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrInput is an input type that accepts BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs, BdsInstanceComputeOnlyWorkerNodeShapeConfigPtr and BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput values.
+// You can construct a concrete instance of `BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrInput` via:
+//
+//          BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs{...}
+//
+//  or:
+//
+//          nil
+type BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrInput interface {
+	pulumi.Input
+
+	ToBdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput() BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput
+	ToBdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutputWithContext(context.Context) BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput
+}
+
+type bdsInstanceComputeOnlyWorkerNodeShapeConfigPtrType BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs
+
+func BdsInstanceComputeOnlyWorkerNodeShapeConfigPtr(v *BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs) BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrInput {
+	return (*bdsInstanceComputeOnlyWorkerNodeShapeConfigPtrType)(v)
+}
+
+func (*bdsInstanceComputeOnlyWorkerNodeShapeConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**BdsInstanceComputeOnlyWorkerNodeShapeConfig)(nil)).Elem()
+}
+
+func (i *bdsInstanceComputeOnlyWorkerNodeShapeConfigPtrType) ToBdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput() BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput {
+	return i.ToBdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *bdsInstanceComputeOnlyWorkerNodeShapeConfigPtrType) ToBdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutputWithContext(ctx context.Context) BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput)
+}
+
+type BdsInstanceComputeOnlyWorkerNodeShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (BdsInstanceComputeOnlyWorkerNodeShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsInstanceComputeOnlyWorkerNodeShapeConfig)(nil)).Elem()
+}
+
+func (o BdsInstanceComputeOnlyWorkerNodeShapeConfigOutput) ToBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput() BdsInstanceComputeOnlyWorkerNodeShapeConfigOutput {
+	return o
+}
+
+func (o BdsInstanceComputeOnlyWorkerNodeShapeConfigOutput) ToBdsInstanceComputeOnlyWorkerNodeShapeConfigOutputWithContext(ctx context.Context) BdsInstanceComputeOnlyWorkerNodeShapeConfigOutput {
+	return o
+}
+
+func (o BdsInstanceComputeOnlyWorkerNodeShapeConfigOutput) ToBdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput() BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput {
+	return o.ToBdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (o BdsInstanceComputeOnlyWorkerNodeShapeConfigOutput) ToBdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutputWithContext(ctx context.Context) BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v BdsInstanceComputeOnlyWorkerNodeShapeConfig) *BdsInstanceComputeOnlyWorkerNodeShapeConfig {
+		return &v
+	}).(BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput)
+}
+
+// The total amount of memory available to the node, in gigabytes
+func (o BdsInstanceComputeOnlyWorkerNodeShapeConfigOutput) MemoryInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BdsInstanceComputeOnlyWorkerNodeShapeConfig) *int { return v.MemoryInGbs }).(pulumi.IntPtrOutput)
+}
+
+// The total number of OCPUs available to the node.
+func (o BdsInstanceComputeOnlyWorkerNodeShapeConfigOutput) Ocpus() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BdsInstanceComputeOnlyWorkerNodeShapeConfig) *int { return v.Ocpus }).(pulumi.IntPtrOutput)
+}
+
+type BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**BdsInstanceComputeOnlyWorkerNodeShapeConfig)(nil)).Elem()
+}
+
+func (o BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput) ToBdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput() BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput {
+	return o
+}
+
+func (o BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput) ToBdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutputWithContext(ctx context.Context) BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput {
+	return o
+}
+
+func (o BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput) Elem() BdsInstanceComputeOnlyWorkerNodeShapeConfigOutput {
+	return o.ApplyT(func(v *BdsInstanceComputeOnlyWorkerNodeShapeConfig) BdsInstanceComputeOnlyWorkerNodeShapeConfig {
+		if v != nil {
+			return *v
+		}
+		var ret BdsInstanceComputeOnlyWorkerNodeShapeConfig
+		return ret
+	}).(BdsInstanceComputeOnlyWorkerNodeShapeConfigOutput)
+}
+
+// The total amount of memory available to the node, in gigabytes
+func (o BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput) MemoryInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceComputeOnlyWorkerNodeShapeConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MemoryInGbs
+	}).(pulumi.IntPtrOutput)
+}
+
+// The total number of OCPUs available to the node.
+func (o BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput) Ocpus() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceComputeOnlyWorkerNodeShapeConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Ocpus
+	}).(pulumi.IntPtrOutput)
+}
+
+type BdsInstanceMasterNode struct {
+	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+	BlockVolumeSizeInGbs string `pulumi:"blockVolumeSizeInGbs"`
+	// The amount of worker nodes should be created
+	NumberOfNodes int `pulumi:"numberOfNodes"`
+	// Shape of the node
+	Shape string `pulumi:"shape"`
+	// The shape configuration requested for the node.
+	ShapeConfig *BdsInstanceMasterNodeShapeConfig `pulumi:"shapeConfig"`
+	// The OCID of the subnet in which the node should be created
 	SubnetId string `pulumi:"subnetId"`
 }
 
@@ -872,13 +4035,15 @@ type BdsInstanceMasterNodeInput interface {
 }
 
 type BdsInstanceMasterNodeArgs struct {
-	// The size of block volume in GB to be attached to a given node. All the details needed for attaching the block volume are managed by service itself.
+	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
 	BlockVolumeSizeInGbs pulumi.StringInput `pulumi:"blockVolumeSizeInGbs"`
-	// The number of nodes that form the cluster.
+	// The amount of worker nodes should be created
 	NumberOfNodes pulumi.IntInput `pulumi:"numberOfNodes"`
-	// (Updatable) Shape of the node.
+	// Shape of the node
 	Shape pulumi.StringInput `pulumi:"shape"`
-	// The OCID of the subnet in which the node will be created.
+	// The shape configuration requested for the node.
+	ShapeConfig BdsInstanceMasterNodeShapeConfigPtrInput `pulumi:"shapeConfig"`
+	// The OCID of the subnet in which the node should be created
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 }
 
@@ -959,22 +4124,27 @@ func (o BdsInstanceMasterNodeOutput) ToBdsInstanceMasterNodePtrOutputWithContext
 	}).(BdsInstanceMasterNodePtrOutput)
 }
 
-// The size of block volume in GB to be attached to a given node. All the details needed for attaching the block volume are managed by service itself.
+// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
 func (o BdsInstanceMasterNodeOutput) BlockVolumeSizeInGbs() pulumi.StringOutput {
 	return o.ApplyT(func(v BdsInstanceMasterNode) string { return v.BlockVolumeSizeInGbs }).(pulumi.StringOutput)
 }
 
-// The number of nodes that form the cluster.
+// The amount of worker nodes should be created
 func (o BdsInstanceMasterNodeOutput) NumberOfNodes() pulumi.IntOutput {
 	return o.ApplyT(func(v BdsInstanceMasterNode) int { return v.NumberOfNodes }).(pulumi.IntOutput)
 }
 
-// (Updatable) Shape of the node.
+// Shape of the node
 func (o BdsInstanceMasterNodeOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v BdsInstanceMasterNode) string { return v.Shape }).(pulumi.StringOutput)
 }
 
-// The OCID of the subnet in which the node will be created.
+// The shape configuration requested for the node.
+func (o BdsInstanceMasterNodeOutput) ShapeConfig() BdsInstanceMasterNodeShapeConfigPtrOutput {
+	return o.ApplyT(func(v BdsInstanceMasterNode) *BdsInstanceMasterNodeShapeConfig { return v.ShapeConfig }).(BdsInstanceMasterNodeShapeConfigPtrOutput)
+}
+
+// The OCID of the subnet in which the node should be created
 func (o BdsInstanceMasterNodeOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v BdsInstanceMasterNode) string { return v.SubnetId }).(pulumi.StringOutput)
 }
@@ -1003,7 +4173,7 @@ func (o BdsInstanceMasterNodePtrOutput) Elem() BdsInstanceMasterNodeOutput {
 	}).(BdsInstanceMasterNodeOutput)
 }
 
-// The size of block volume in GB to be attached to a given node. All the details needed for attaching the block volume are managed by service itself.
+// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
 func (o BdsInstanceMasterNodePtrOutput) BlockVolumeSizeInGbs() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *BdsInstanceMasterNode) *string {
 		if v == nil {
@@ -1013,7 +4183,7 @@ func (o BdsInstanceMasterNodePtrOutput) BlockVolumeSizeInGbs() pulumi.StringPtrO
 	}).(pulumi.StringPtrOutput)
 }
 
-// The number of nodes that form the cluster.
+// The amount of worker nodes should be created
 func (o BdsInstanceMasterNodePtrOutput) NumberOfNodes() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *BdsInstanceMasterNode) *int {
 		if v == nil {
@@ -1023,7 +4193,7 @@ func (o BdsInstanceMasterNodePtrOutput) NumberOfNodes() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) Shape of the node.
+// Shape of the node
 func (o BdsInstanceMasterNodePtrOutput) Shape() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *BdsInstanceMasterNode) *string {
 		if v == nil {
@@ -1033,7 +4203,17 @@ func (o BdsInstanceMasterNodePtrOutput) Shape() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// The OCID of the subnet in which the node will be created.
+// The shape configuration requested for the node.
+func (o BdsInstanceMasterNodePtrOutput) ShapeConfig() BdsInstanceMasterNodeShapeConfigPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceMasterNode) *BdsInstanceMasterNodeShapeConfig {
+		if v == nil {
+			return nil
+		}
+		return v.ShapeConfig
+	}).(BdsInstanceMasterNodeShapeConfigPtrOutput)
+}
+
+// The OCID of the subnet in which the node should be created
 func (o BdsInstanceMasterNodePtrOutput) SubnetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *BdsInstanceMasterNode) *string {
 		if v == nil {
@@ -1041,6 +4221,162 @@ func (o BdsInstanceMasterNodePtrOutput) SubnetId() pulumi.StringPtrOutput {
 		}
 		return &v.SubnetId
 	}).(pulumi.StringPtrOutput)
+}
+
+type BdsInstanceMasterNodeShapeConfig struct {
+	// The total amount of memory available to the node, in gigabytes
+	MemoryInGbs *int `pulumi:"memoryInGbs"`
+	// The total number of OCPUs available to the node.
+	Ocpus *int `pulumi:"ocpus"`
+}
+
+// BdsInstanceMasterNodeShapeConfigInput is an input type that accepts BdsInstanceMasterNodeShapeConfigArgs and BdsInstanceMasterNodeShapeConfigOutput values.
+// You can construct a concrete instance of `BdsInstanceMasterNodeShapeConfigInput` via:
+//
+//          BdsInstanceMasterNodeShapeConfigArgs{...}
+type BdsInstanceMasterNodeShapeConfigInput interface {
+	pulumi.Input
+
+	ToBdsInstanceMasterNodeShapeConfigOutput() BdsInstanceMasterNodeShapeConfigOutput
+	ToBdsInstanceMasterNodeShapeConfigOutputWithContext(context.Context) BdsInstanceMasterNodeShapeConfigOutput
+}
+
+type BdsInstanceMasterNodeShapeConfigArgs struct {
+	// The total amount of memory available to the node, in gigabytes
+	MemoryInGbs pulumi.IntPtrInput `pulumi:"memoryInGbs"`
+	// The total number of OCPUs available to the node.
+	Ocpus pulumi.IntPtrInput `pulumi:"ocpus"`
+}
+
+func (BdsInstanceMasterNodeShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsInstanceMasterNodeShapeConfig)(nil)).Elem()
+}
+
+func (i BdsInstanceMasterNodeShapeConfigArgs) ToBdsInstanceMasterNodeShapeConfigOutput() BdsInstanceMasterNodeShapeConfigOutput {
+	return i.ToBdsInstanceMasterNodeShapeConfigOutputWithContext(context.Background())
+}
+
+func (i BdsInstanceMasterNodeShapeConfigArgs) ToBdsInstanceMasterNodeShapeConfigOutputWithContext(ctx context.Context) BdsInstanceMasterNodeShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceMasterNodeShapeConfigOutput)
+}
+
+func (i BdsInstanceMasterNodeShapeConfigArgs) ToBdsInstanceMasterNodeShapeConfigPtrOutput() BdsInstanceMasterNodeShapeConfigPtrOutput {
+	return i.ToBdsInstanceMasterNodeShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (i BdsInstanceMasterNodeShapeConfigArgs) ToBdsInstanceMasterNodeShapeConfigPtrOutputWithContext(ctx context.Context) BdsInstanceMasterNodeShapeConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceMasterNodeShapeConfigOutput).ToBdsInstanceMasterNodeShapeConfigPtrOutputWithContext(ctx)
+}
+
+// BdsInstanceMasterNodeShapeConfigPtrInput is an input type that accepts BdsInstanceMasterNodeShapeConfigArgs, BdsInstanceMasterNodeShapeConfigPtr and BdsInstanceMasterNodeShapeConfigPtrOutput values.
+// You can construct a concrete instance of `BdsInstanceMasterNodeShapeConfigPtrInput` via:
+//
+//          BdsInstanceMasterNodeShapeConfigArgs{...}
+//
+//  or:
+//
+//          nil
+type BdsInstanceMasterNodeShapeConfigPtrInput interface {
+	pulumi.Input
+
+	ToBdsInstanceMasterNodeShapeConfigPtrOutput() BdsInstanceMasterNodeShapeConfigPtrOutput
+	ToBdsInstanceMasterNodeShapeConfigPtrOutputWithContext(context.Context) BdsInstanceMasterNodeShapeConfigPtrOutput
+}
+
+type bdsInstanceMasterNodeShapeConfigPtrType BdsInstanceMasterNodeShapeConfigArgs
+
+func BdsInstanceMasterNodeShapeConfigPtr(v *BdsInstanceMasterNodeShapeConfigArgs) BdsInstanceMasterNodeShapeConfigPtrInput {
+	return (*bdsInstanceMasterNodeShapeConfigPtrType)(v)
+}
+
+func (*bdsInstanceMasterNodeShapeConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**BdsInstanceMasterNodeShapeConfig)(nil)).Elem()
+}
+
+func (i *bdsInstanceMasterNodeShapeConfigPtrType) ToBdsInstanceMasterNodeShapeConfigPtrOutput() BdsInstanceMasterNodeShapeConfigPtrOutput {
+	return i.ToBdsInstanceMasterNodeShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *bdsInstanceMasterNodeShapeConfigPtrType) ToBdsInstanceMasterNodeShapeConfigPtrOutputWithContext(ctx context.Context) BdsInstanceMasterNodeShapeConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceMasterNodeShapeConfigPtrOutput)
+}
+
+type BdsInstanceMasterNodeShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (BdsInstanceMasterNodeShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsInstanceMasterNodeShapeConfig)(nil)).Elem()
+}
+
+func (o BdsInstanceMasterNodeShapeConfigOutput) ToBdsInstanceMasterNodeShapeConfigOutput() BdsInstanceMasterNodeShapeConfigOutput {
+	return o
+}
+
+func (o BdsInstanceMasterNodeShapeConfigOutput) ToBdsInstanceMasterNodeShapeConfigOutputWithContext(ctx context.Context) BdsInstanceMasterNodeShapeConfigOutput {
+	return o
+}
+
+func (o BdsInstanceMasterNodeShapeConfigOutput) ToBdsInstanceMasterNodeShapeConfigPtrOutput() BdsInstanceMasterNodeShapeConfigPtrOutput {
+	return o.ToBdsInstanceMasterNodeShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (o BdsInstanceMasterNodeShapeConfigOutput) ToBdsInstanceMasterNodeShapeConfigPtrOutputWithContext(ctx context.Context) BdsInstanceMasterNodeShapeConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v BdsInstanceMasterNodeShapeConfig) *BdsInstanceMasterNodeShapeConfig {
+		return &v
+	}).(BdsInstanceMasterNodeShapeConfigPtrOutput)
+}
+
+// The total amount of memory available to the node, in gigabytes
+func (o BdsInstanceMasterNodeShapeConfigOutput) MemoryInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BdsInstanceMasterNodeShapeConfig) *int { return v.MemoryInGbs }).(pulumi.IntPtrOutput)
+}
+
+// The total number of OCPUs available to the node.
+func (o BdsInstanceMasterNodeShapeConfigOutput) Ocpus() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BdsInstanceMasterNodeShapeConfig) *int { return v.Ocpus }).(pulumi.IntPtrOutput)
+}
+
+type BdsInstanceMasterNodeShapeConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (BdsInstanceMasterNodeShapeConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**BdsInstanceMasterNodeShapeConfig)(nil)).Elem()
+}
+
+func (o BdsInstanceMasterNodeShapeConfigPtrOutput) ToBdsInstanceMasterNodeShapeConfigPtrOutput() BdsInstanceMasterNodeShapeConfigPtrOutput {
+	return o
+}
+
+func (o BdsInstanceMasterNodeShapeConfigPtrOutput) ToBdsInstanceMasterNodeShapeConfigPtrOutputWithContext(ctx context.Context) BdsInstanceMasterNodeShapeConfigPtrOutput {
+	return o
+}
+
+func (o BdsInstanceMasterNodeShapeConfigPtrOutput) Elem() BdsInstanceMasterNodeShapeConfigOutput {
+	return o.ApplyT(func(v *BdsInstanceMasterNodeShapeConfig) BdsInstanceMasterNodeShapeConfig {
+		if v != nil {
+			return *v
+		}
+		var ret BdsInstanceMasterNodeShapeConfig
+		return ret
+	}).(BdsInstanceMasterNodeShapeConfigOutput)
+}
+
+// The total amount of memory available to the node, in gigabytes
+func (o BdsInstanceMasterNodeShapeConfigPtrOutput) MemoryInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceMasterNodeShapeConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MemoryInGbs
+	}).(pulumi.IntPtrOutput)
+}
+
+// The total number of OCPUs available to the node.
+func (o BdsInstanceMasterNodeShapeConfigPtrOutput) Ocpus() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceMasterNodeShapeConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Ocpus
+	}).(pulumi.IntPtrOutput)
 }
 
 type BdsInstanceNetworkConfig struct {
@@ -1202,31 +4538,35 @@ func (o BdsInstanceNetworkConfigPtrOutput) IsNatGatewayRequired() pulumi.BoolPtr
 type BdsInstanceNode struct {
 	// The list of block volumes attached to a given node.
 	AttachedBlockVolumes []BdsInstanceNodeAttachedBlockVolume `pulumi:"attachedBlockVolumes"`
-	// The name of the availability domain in which the node is running.
+	// The name of the availability domain the node is running in
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
-	// (Updatable) Name of the Big Data Service cluster.
+	// (Updatable) Name of the BDS instance
 	DisplayName *string `pulumi:"displayName"`
-	// The name of the fault domain in which the node is running.
+	// The name of the fault domain the node is running in
 	FaultDomain *string `pulumi:"faultDomain"`
-	// The fully-qualified hostname (FQDN) of the node.
+	// The fully-qualified hostname (FQDN) of the node
 	Hostname *string `pulumi:"hostname"`
-	// The OCID of the image from which the node was created.
+	// The OCID of the image from which the node was created
 	ImageId *string `pulumi:"imageId"`
-	// The OCID of the underlying Oracle Cloud Infrastructure Compute instance.
+	// The OCID of the underlying compute instance
 	InstanceId *string `pulumi:"instanceId"`
-	// IP address of the node.
+	// IP address of the node
 	IpAddress *string `pulumi:"ipAddress"`
-	// The Big Data Service cluster node type.
+	// The total amount of memory available to the node, in gigabytes
+	MemoryInGbs *int `pulumi:"memoryInGbs"`
+	// BDS instance node type
 	NodeType *string `pulumi:"nodeType"`
-	// (Updatable) Shape of the node.
+	// The total number of OCPUs available to the node.
+	Ocpus *int `pulumi:"ocpus"`
+	// Shape of the node
 	Shape *string `pulumi:"shape"`
-	// The fingerprint of the SSH key used for node access.
+	// The fingerprint of the SSH key used for node access
 	SshFingerprint *string `pulumi:"sshFingerprint"`
-	// The state of the cluster.
+	// The state of the BDS instance
 	State *string `pulumi:"state"`
-	// The OCID of the subnet in which the node will be created.
+	// The OCID of the subnet in which the node should be created
 	SubnetId *string `pulumi:"subnetId"`
-	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+	// The time the BDS instance was created. An RFC3339 formatted datetime string
 	TimeCreated *string `pulumi:"timeCreated"`
 }
 
@@ -1244,31 +4584,35 @@ type BdsInstanceNodeInput interface {
 type BdsInstanceNodeArgs struct {
 	// The list of block volumes attached to a given node.
 	AttachedBlockVolumes BdsInstanceNodeAttachedBlockVolumeArrayInput `pulumi:"attachedBlockVolumes"`
-	// The name of the availability domain in which the node is running.
+	// The name of the availability domain the node is running in
 	AvailabilityDomain pulumi.StringPtrInput `pulumi:"availabilityDomain"`
-	// (Updatable) Name of the Big Data Service cluster.
+	// (Updatable) Name of the BDS instance
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
-	// The name of the fault domain in which the node is running.
+	// The name of the fault domain the node is running in
 	FaultDomain pulumi.StringPtrInput `pulumi:"faultDomain"`
-	// The fully-qualified hostname (FQDN) of the node.
+	// The fully-qualified hostname (FQDN) of the node
 	Hostname pulumi.StringPtrInput `pulumi:"hostname"`
-	// The OCID of the image from which the node was created.
+	// The OCID of the image from which the node was created
 	ImageId pulumi.StringPtrInput `pulumi:"imageId"`
-	// The OCID of the underlying Oracle Cloud Infrastructure Compute instance.
+	// The OCID of the underlying compute instance
 	InstanceId pulumi.StringPtrInput `pulumi:"instanceId"`
-	// IP address of the node.
+	// IP address of the node
 	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
-	// The Big Data Service cluster node type.
+	// The total amount of memory available to the node, in gigabytes
+	MemoryInGbs pulumi.IntPtrInput `pulumi:"memoryInGbs"`
+	// BDS instance node type
 	NodeType pulumi.StringPtrInput `pulumi:"nodeType"`
-	// (Updatable) Shape of the node.
+	// The total number of OCPUs available to the node.
+	Ocpus pulumi.IntPtrInput `pulumi:"ocpus"`
+	// Shape of the node
 	Shape pulumi.StringPtrInput `pulumi:"shape"`
-	// The fingerprint of the SSH key used for node access.
+	// The fingerprint of the SSH key used for node access
 	SshFingerprint pulumi.StringPtrInput `pulumi:"sshFingerprint"`
-	// The state of the cluster.
+	// The state of the BDS instance
 	State pulumi.StringPtrInput `pulumi:"state"`
-	// The OCID of the subnet in which the node will be created.
+	// The OCID of the subnet in which the node should be created
 	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
-	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+	// The time the BDS instance was created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 }
 
@@ -1328,67 +4672,77 @@ func (o BdsInstanceNodeOutput) AttachedBlockVolumes() BdsInstanceNodeAttachedBlo
 	return o.ApplyT(func(v BdsInstanceNode) []BdsInstanceNodeAttachedBlockVolume { return v.AttachedBlockVolumes }).(BdsInstanceNodeAttachedBlockVolumeArrayOutput)
 }
 
-// The name of the availability domain in which the node is running.
+// The name of the availability domain the node is running in
 func (o BdsInstanceNodeOutput) AvailabilityDomain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceNode) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Name of the Big Data Service cluster.
+// (Updatable) Name of the BDS instance
 func (o BdsInstanceNodeOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceNode) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
-// The name of the fault domain in which the node is running.
+// The name of the fault domain the node is running in
 func (o BdsInstanceNodeOutput) FaultDomain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceNode) *string { return v.FaultDomain }).(pulumi.StringPtrOutput)
 }
 
-// The fully-qualified hostname (FQDN) of the node.
+// The fully-qualified hostname (FQDN) of the node
 func (o BdsInstanceNodeOutput) Hostname() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceNode) *string { return v.Hostname }).(pulumi.StringPtrOutput)
 }
 
-// The OCID of the image from which the node was created.
+// The OCID of the image from which the node was created
 func (o BdsInstanceNodeOutput) ImageId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceNode) *string { return v.ImageId }).(pulumi.StringPtrOutput)
 }
 
-// The OCID of the underlying Oracle Cloud Infrastructure Compute instance.
+// The OCID of the underlying compute instance
 func (o BdsInstanceNodeOutput) InstanceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceNode) *string { return v.InstanceId }).(pulumi.StringPtrOutput)
 }
 
-// IP address of the node.
+// IP address of the node
 func (o BdsInstanceNodeOutput) IpAddress() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceNode) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
 }
 
-// The Big Data Service cluster node type.
+// The total amount of memory available to the node, in gigabytes
+func (o BdsInstanceNodeOutput) MemoryInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BdsInstanceNode) *int { return v.MemoryInGbs }).(pulumi.IntPtrOutput)
+}
+
+// BDS instance node type
 func (o BdsInstanceNodeOutput) NodeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceNode) *string { return v.NodeType }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Shape of the node.
+// The total number of OCPUs available to the node.
+func (o BdsInstanceNodeOutput) Ocpus() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BdsInstanceNode) *int { return v.Ocpus }).(pulumi.IntPtrOutput)
+}
+
+// Shape of the node
 func (o BdsInstanceNodeOutput) Shape() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceNode) *string { return v.Shape }).(pulumi.StringPtrOutput)
 }
 
-// The fingerprint of the SSH key used for node access.
+// The fingerprint of the SSH key used for node access
 func (o BdsInstanceNodeOutput) SshFingerprint() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceNode) *string { return v.SshFingerprint }).(pulumi.StringPtrOutput)
 }
 
-// The state of the cluster.
+// The state of the BDS instance
 func (o BdsInstanceNodeOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceNode) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
-// The OCID of the subnet in which the node will be created.
+// The OCID of the subnet in which the node should be created
 func (o BdsInstanceNodeOutput) SubnetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceNode) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
-// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+// The time the BDS instance was created. An RFC3339 formatted datetime string
 func (o BdsInstanceNodeOutput) TimeCreated() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceNode) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
@@ -1520,13 +4874,15 @@ func (o BdsInstanceNodeAttachedBlockVolumeArrayOutput) Index(i pulumi.IntInput) 
 }
 
 type BdsInstanceUtilNode struct {
-	// The size of block volume in GB to be attached to a given node. All the details needed for attaching the block volume are managed by service itself.
+	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
 	BlockVolumeSizeInGbs string `pulumi:"blockVolumeSizeInGbs"`
-	// The number of nodes that form the cluster.
+	// The amount of worker nodes should be created
 	NumberOfNodes int `pulumi:"numberOfNodes"`
-	// (Updatable) Shape of the node.
+	// Shape of the node
 	Shape string `pulumi:"shape"`
-	// The OCID of the subnet in which the node will be created.
+	// The shape configuration requested for the node.
+	ShapeConfig *BdsInstanceUtilNodeShapeConfig `pulumi:"shapeConfig"`
+	// The OCID of the subnet in which the node should be created
 	SubnetId string `pulumi:"subnetId"`
 }
 
@@ -1542,13 +4898,15 @@ type BdsInstanceUtilNodeInput interface {
 }
 
 type BdsInstanceUtilNodeArgs struct {
-	// The size of block volume in GB to be attached to a given node. All the details needed for attaching the block volume are managed by service itself.
+	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
 	BlockVolumeSizeInGbs pulumi.StringInput `pulumi:"blockVolumeSizeInGbs"`
-	// The number of nodes that form the cluster.
+	// The amount of worker nodes should be created
 	NumberOfNodes pulumi.IntInput `pulumi:"numberOfNodes"`
-	// (Updatable) Shape of the node.
+	// Shape of the node
 	Shape pulumi.StringInput `pulumi:"shape"`
-	// The OCID of the subnet in which the node will be created.
+	// The shape configuration requested for the node.
+	ShapeConfig BdsInstanceUtilNodeShapeConfigPtrInput `pulumi:"shapeConfig"`
+	// The OCID of the subnet in which the node should be created
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 }
 
@@ -1629,22 +4987,27 @@ func (o BdsInstanceUtilNodeOutput) ToBdsInstanceUtilNodePtrOutputWithContext(ctx
 	}).(BdsInstanceUtilNodePtrOutput)
 }
 
-// The size of block volume in GB to be attached to a given node. All the details needed for attaching the block volume are managed by service itself.
+// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
 func (o BdsInstanceUtilNodeOutput) BlockVolumeSizeInGbs() pulumi.StringOutput {
 	return o.ApplyT(func(v BdsInstanceUtilNode) string { return v.BlockVolumeSizeInGbs }).(pulumi.StringOutput)
 }
 
-// The number of nodes that form the cluster.
+// The amount of worker nodes should be created
 func (o BdsInstanceUtilNodeOutput) NumberOfNodes() pulumi.IntOutput {
 	return o.ApplyT(func(v BdsInstanceUtilNode) int { return v.NumberOfNodes }).(pulumi.IntOutput)
 }
 
-// (Updatable) Shape of the node.
+// Shape of the node
 func (o BdsInstanceUtilNodeOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v BdsInstanceUtilNode) string { return v.Shape }).(pulumi.StringOutput)
 }
 
-// The OCID of the subnet in which the node will be created.
+// The shape configuration requested for the node.
+func (o BdsInstanceUtilNodeOutput) ShapeConfig() BdsInstanceUtilNodeShapeConfigPtrOutput {
+	return o.ApplyT(func(v BdsInstanceUtilNode) *BdsInstanceUtilNodeShapeConfig { return v.ShapeConfig }).(BdsInstanceUtilNodeShapeConfigPtrOutput)
+}
+
+// The OCID of the subnet in which the node should be created
 func (o BdsInstanceUtilNodeOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v BdsInstanceUtilNode) string { return v.SubnetId }).(pulumi.StringOutput)
 }
@@ -1673,7 +5036,7 @@ func (o BdsInstanceUtilNodePtrOutput) Elem() BdsInstanceUtilNodeOutput {
 	}).(BdsInstanceUtilNodeOutput)
 }
 
-// The size of block volume in GB to be attached to a given node. All the details needed for attaching the block volume are managed by service itself.
+// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
 func (o BdsInstanceUtilNodePtrOutput) BlockVolumeSizeInGbs() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *BdsInstanceUtilNode) *string {
 		if v == nil {
@@ -1683,7 +5046,7 @@ func (o BdsInstanceUtilNodePtrOutput) BlockVolumeSizeInGbs() pulumi.StringPtrOut
 	}).(pulumi.StringPtrOutput)
 }
 
-// The number of nodes that form the cluster.
+// The amount of worker nodes should be created
 func (o BdsInstanceUtilNodePtrOutput) NumberOfNodes() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *BdsInstanceUtilNode) *int {
 		if v == nil {
@@ -1693,7 +5056,7 @@ func (o BdsInstanceUtilNodePtrOutput) NumberOfNodes() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) Shape of the node.
+// Shape of the node
 func (o BdsInstanceUtilNodePtrOutput) Shape() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *BdsInstanceUtilNode) *string {
 		if v == nil {
@@ -1703,7 +5066,17 @@ func (o BdsInstanceUtilNodePtrOutput) Shape() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// The OCID of the subnet in which the node will be created.
+// The shape configuration requested for the node.
+func (o BdsInstanceUtilNodePtrOutput) ShapeConfig() BdsInstanceUtilNodeShapeConfigPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceUtilNode) *BdsInstanceUtilNodeShapeConfig {
+		if v == nil {
+			return nil
+		}
+		return v.ShapeConfig
+	}).(BdsInstanceUtilNodeShapeConfigPtrOutput)
+}
+
+// The OCID of the subnet in which the node should be created
 func (o BdsInstanceUtilNodePtrOutput) SubnetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *BdsInstanceUtilNode) *string {
 		if v == nil {
@@ -1713,14 +5086,172 @@ func (o BdsInstanceUtilNodePtrOutput) SubnetId() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+type BdsInstanceUtilNodeShapeConfig struct {
+	// The total amount of memory available to the node, in gigabytes
+	MemoryInGbs *int `pulumi:"memoryInGbs"`
+	// The total number of OCPUs available to the node.
+	Ocpus *int `pulumi:"ocpus"`
+}
+
+// BdsInstanceUtilNodeShapeConfigInput is an input type that accepts BdsInstanceUtilNodeShapeConfigArgs and BdsInstanceUtilNodeShapeConfigOutput values.
+// You can construct a concrete instance of `BdsInstanceUtilNodeShapeConfigInput` via:
+//
+//          BdsInstanceUtilNodeShapeConfigArgs{...}
+type BdsInstanceUtilNodeShapeConfigInput interface {
+	pulumi.Input
+
+	ToBdsInstanceUtilNodeShapeConfigOutput() BdsInstanceUtilNodeShapeConfigOutput
+	ToBdsInstanceUtilNodeShapeConfigOutputWithContext(context.Context) BdsInstanceUtilNodeShapeConfigOutput
+}
+
+type BdsInstanceUtilNodeShapeConfigArgs struct {
+	// The total amount of memory available to the node, in gigabytes
+	MemoryInGbs pulumi.IntPtrInput `pulumi:"memoryInGbs"`
+	// The total number of OCPUs available to the node.
+	Ocpus pulumi.IntPtrInput `pulumi:"ocpus"`
+}
+
+func (BdsInstanceUtilNodeShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsInstanceUtilNodeShapeConfig)(nil)).Elem()
+}
+
+func (i BdsInstanceUtilNodeShapeConfigArgs) ToBdsInstanceUtilNodeShapeConfigOutput() BdsInstanceUtilNodeShapeConfigOutput {
+	return i.ToBdsInstanceUtilNodeShapeConfigOutputWithContext(context.Background())
+}
+
+func (i BdsInstanceUtilNodeShapeConfigArgs) ToBdsInstanceUtilNodeShapeConfigOutputWithContext(ctx context.Context) BdsInstanceUtilNodeShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceUtilNodeShapeConfigOutput)
+}
+
+func (i BdsInstanceUtilNodeShapeConfigArgs) ToBdsInstanceUtilNodeShapeConfigPtrOutput() BdsInstanceUtilNodeShapeConfigPtrOutput {
+	return i.ToBdsInstanceUtilNodeShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (i BdsInstanceUtilNodeShapeConfigArgs) ToBdsInstanceUtilNodeShapeConfigPtrOutputWithContext(ctx context.Context) BdsInstanceUtilNodeShapeConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceUtilNodeShapeConfigOutput).ToBdsInstanceUtilNodeShapeConfigPtrOutputWithContext(ctx)
+}
+
+// BdsInstanceUtilNodeShapeConfigPtrInput is an input type that accepts BdsInstanceUtilNodeShapeConfigArgs, BdsInstanceUtilNodeShapeConfigPtr and BdsInstanceUtilNodeShapeConfigPtrOutput values.
+// You can construct a concrete instance of `BdsInstanceUtilNodeShapeConfigPtrInput` via:
+//
+//          BdsInstanceUtilNodeShapeConfigArgs{...}
+//
+//  or:
+//
+//          nil
+type BdsInstanceUtilNodeShapeConfigPtrInput interface {
+	pulumi.Input
+
+	ToBdsInstanceUtilNodeShapeConfigPtrOutput() BdsInstanceUtilNodeShapeConfigPtrOutput
+	ToBdsInstanceUtilNodeShapeConfigPtrOutputWithContext(context.Context) BdsInstanceUtilNodeShapeConfigPtrOutput
+}
+
+type bdsInstanceUtilNodeShapeConfigPtrType BdsInstanceUtilNodeShapeConfigArgs
+
+func BdsInstanceUtilNodeShapeConfigPtr(v *BdsInstanceUtilNodeShapeConfigArgs) BdsInstanceUtilNodeShapeConfigPtrInput {
+	return (*bdsInstanceUtilNodeShapeConfigPtrType)(v)
+}
+
+func (*bdsInstanceUtilNodeShapeConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**BdsInstanceUtilNodeShapeConfig)(nil)).Elem()
+}
+
+func (i *bdsInstanceUtilNodeShapeConfigPtrType) ToBdsInstanceUtilNodeShapeConfigPtrOutput() BdsInstanceUtilNodeShapeConfigPtrOutput {
+	return i.ToBdsInstanceUtilNodeShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *bdsInstanceUtilNodeShapeConfigPtrType) ToBdsInstanceUtilNodeShapeConfigPtrOutputWithContext(ctx context.Context) BdsInstanceUtilNodeShapeConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceUtilNodeShapeConfigPtrOutput)
+}
+
+type BdsInstanceUtilNodeShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (BdsInstanceUtilNodeShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsInstanceUtilNodeShapeConfig)(nil)).Elem()
+}
+
+func (o BdsInstanceUtilNodeShapeConfigOutput) ToBdsInstanceUtilNodeShapeConfigOutput() BdsInstanceUtilNodeShapeConfigOutput {
+	return o
+}
+
+func (o BdsInstanceUtilNodeShapeConfigOutput) ToBdsInstanceUtilNodeShapeConfigOutputWithContext(ctx context.Context) BdsInstanceUtilNodeShapeConfigOutput {
+	return o
+}
+
+func (o BdsInstanceUtilNodeShapeConfigOutput) ToBdsInstanceUtilNodeShapeConfigPtrOutput() BdsInstanceUtilNodeShapeConfigPtrOutput {
+	return o.ToBdsInstanceUtilNodeShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (o BdsInstanceUtilNodeShapeConfigOutput) ToBdsInstanceUtilNodeShapeConfigPtrOutputWithContext(ctx context.Context) BdsInstanceUtilNodeShapeConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v BdsInstanceUtilNodeShapeConfig) *BdsInstanceUtilNodeShapeConfig {
+		return &v
+	}).(BdsInstanceUtilNodeShapeConfigPtrOutput)
+}
+
+// The total amount of memory available to the node, in gigabytes
+func (o BdsInstanceUtilNodeShapeConfigOutput) MemoryInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BdsInstanceUtilNodeShapeConfig) *int { return v.MemoryInGbs }).(pulumi.IntPtrOutput)
+}
+
+// The total number of OCPUs available to the node.
+func (o BdsInstanceUtilNodeShapeConfigOutput) Ocpus() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BdsInstanceUtilNodeShapeConfig) *int { return v.Ocpus }).(pulumi.IntPtrOutput)
+}
+
+type BdsInstanceUtilNodeShapeConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (BdsInstanceUtilNodeShapeConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**BdsInstanceUtilNodeShapeConfig)(nil)).Elem()
+}
+
+func (o BdsInstanceUtilNodeShapeConfigPtrOutput) ToBdsInstanceUtilNodeShapeConfigPtrOutput() BdsInstanceUtilNodeShapeConfigPtrOutput {
+	return o
+}
+
+func (o BdsInstanceUtilNodeShapeConfigPtrOutput) ToBdsInstanceUtilNodeShapeConfigPtrOutputWithContext(ctx context.Context) BdsInstanceUtilNodeShapeConfigPtrOutput {
+	return o
+}
+
+func (o BdsInstanceUtilNodeShapeConfigPtrOutput) Elem() BdsInstanceUtilNodeShapeConfigOutput {
+	return o.ApplyT(func(v *BdsInstanceUtilNodeShapeConfig) BdsInstanceUtilNodeShapeConfig {
+		if v != nil {
+			return *v
+		}
+		var ret BdsInstanceUtilNodeShapeConfig
+		return ret
+	}).(BdsInstanceUtilNodeShapeConfigOutput)
+}
+
+// The total amount of memory available to the node, in gigabytes
+func (o BdsInstanceUtilNodeShapeConfigPtrOutput) MemoryInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceUtilNodeShapeConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MemoryInGbs
+	}).(pulumi.IntPtrOutput)
+}
+
+// The total number of OCPUs available to the node.
+func (o BdsInstanceUtilNodeShapeConfigPtrOutput) Ocpus() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceUtilNodeShapeConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Ocpus
+	}).(pulumi.IntPtrOutput)
+}
+
 type BdsInstanceWorkerNode struct {
-	// The size of block volume in GB to be attached to a given node. All the details needed for attaching the block volume are managed by service itself.
+	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
 	BlockVolumeSizeInGbs string `pulumi:"blockVolumeSizeInGbs"`
-	// The number of nodes that form the cluster.
+	// The amount of worker nodes should be created
 	NumberOfNodes int `pulumi:"numberOfNodes"`
-	// (Updatable) Shape of the node.
+	// Shape of the node
 	Shape string `pulumi:"shape"`
-	// The OCID of the subnet in which the node will be created.
+	// The shape configuration requested for the node.
+	ShapeConfig *BdsInstanceWorkerNodeShapeConfig `pulumi:"shapeConfig"`
+	// The OCID of the subnet in which the node should be created
 	SubnetId string `pulumi:"subnetId"`
 }
 
@@ -1736,13 +5267,15 @@ type BdsInstanceWorkerNodeInput interface {
 }
 
 type BdsInstanceWorkerNodeArgs struct {
-	// The size of block volume in GB to be attached to a given node. All the details needed for attaching the block volume are managed by service itself.
+	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
 	BlockVolumeSizeInGbs pulumi.StringInput `pulumi:"blockVolumeSizeInGbs"`
-	// The number of nodes that form the cluster.
+	// The amount of worker nodes should be created
 	NumberOfNodes pulumi.IntInput `pulumi:"numberOfNodes"`
-	// (Updatable) Shape of the node.
+	// Shape of the node
 	Shape pulumi.StringInput `pulumi:"shape"`
-	// The OCID of the subnet in which the node will be created.
+	// The shape configuration requested for the node.
+	ShapeConfig BdsInstanceWorkerNodeShapeConfigPtrInput `pulumi:"shapeConfig"`
+	// The OCID of the subnet in which the node should be created
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 }
 
@@ -1823,22 +5356,27 @@ func (o BdsInstanceWorkerNodeOutput) ToBdsInstanceWorkerNodePtrOutputWithContext
 	}).(BdsInstanceWorkerNodePtrOutput)
 }
 
-// The size of block volume in GB to be attached to a given node. All the details needed for attaching the block volume are managed by service itself.
+// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
 func (o BdsInstanceWorkerNodeOutput) BlockVolumeSizeInGbs() pulumi.StringOutput {
 	return o.ApplyT(func(v BdsInstanceWorkerNode) string { return v.BlockVolumeSizeInGbs }).(pulumi.StringOutput)
 }
 
-// The number of nodes that form the cluster.
+// The amount of worker nodes should be created
 func (o BdsInstanceWorkerNodeOutput) NumberOfNodes() pulumi.IntOutput {
 	return o.ApplyT(func(v BdsInstanceWorkerNode) int { return v.NumberOfNodes }).(pulumi.IntOutput)
 }
 
-// (Updatable) Shape of the node.
+// Shape of the node
 func (o BdsInstanceWorkerNodeOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v BdsInstanceWorkerNode) string { return v.Shape }).(pulumi.StringOutput)
 }
 
-// The OCID of the subnet in which the node will be created.
+// The shape configuration requested for the node.
+func (o BdsInstanceWorkerNodeOutput) ShapeConfig() BdsInstanceWorkerNodeShapeConfigPtrOutput {
+	return o.ApplyT(func(v BdsInstanceWorkerNode) *BdsInstanceWorkerNodeShapeConfig { return v.ShapeConfig }).(BdsInstanceWorkerNodeShapeConfigPtrOutput)
+}
+
+// The OCID of the subnet in which the node should be created
 func (o BdsInstanceWorkerNodeOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v BdsInstanceWorkerNode) string { return v.SubnetId }).(pulumi.StringOutput)
 }
@@ -1867,7 +5405,7 @@ func (o BdsInstanceWorkerNodePtrOutput) Elem() BdsInstanceWorkerNodeOutput {
 	}).(BdsInstanceWorkerNodeOutput)
 }
 
-// The size of block volume in GB to be attached to a given node. All the details needed for attaching the block volume are managed by service itself.
+// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
 func (o BdsInstanceWorkerNodePtrOutput) BlockVolumeSizeInGbs() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *BdsInstanceWorkerNode) *string {
 		if v == nil {
@@ -1877,7 +5415,7 @@ func (o BdsInstanceWorkerNodePtrOutput) BlockVolumeSizeInGbs() pulumi.StringPtrO
 	}).(pulumi.StringPtrOutput)
 }
 
-// The number of nodes that form the cluster.
+// The amount of worker nodes should be created
 func (o BdsInstanceWorkerNodePtrOutput) NumberOfNodes() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *BdsInstanceWorkerNode) *int {
 		if v == nil {
@@ -1887,7 +5425,7 @@ func (o BdsInstanceWorkerNodePtrOutput) NumberOfNodes() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) Shape of the node.
+// Shape of the node
 func (o BdsInstanceWorkerNodePtrOutput) Shape() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *BdsInstanceWorkerNode) *string {
 		if v == nil {
@@ -1897,7 +5435,17 @@ func (o BdsInstanceWorkerNodePtrOutput) Shape() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// The OCID of the subnet in which the node will be created.
+// The shape configuration requested for the node.
+func (o BdsInstanceWorkerNodePtrOutput) ShapeConfig() BdsInstanceWorkerNodeShapeConfigPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceWorkerNode) *BdsInstanceWorkerNodeShapeConfig {
+		if v == nil {
+			return nil
+		}
+		return v.ShapeConfig
+	}).(BdsInstanceWorkerNodeShapeConfigPtrOutput)
+}
+
+// The OCID of the subnet in which the node should be created
 func (o BdsInstanceWorkerNodePtrOutput) SubnetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *BdsInstanceWorkerNode) *string {
 		if v == nil {
@@ -1907,8 +5455,164 @@ func (o BdsInstanceWorkerNodePtrOutput) SubnetId() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+type BdsInstanceWorkerNodeShapeConfig struct {
+	// The total amount of memory available to the node, in gigabytes
+	MemoryInGbs *int `pulumi:"memoryInGbs"`
+	// The total number of OCPUs available to the node.
+	Ocpus *int `pulumi:"ocpus"`
+}
+
+// BdsInstanceWorkerNodeShapeConfigInput is an input type that accepts BdsInstanceWorkerNodeShapeConfigArgs and BdsInstanceWorkerNodeShapeConfigOutput values.
+// You can construct a concrete instance of `BdsInstanceWorkerNodeShapeConfigInput` via:
+//
+//          BdsInstanceWorkerNodeShapeConfigArgs{...}
+type BdsInstanceWorkerNodeShapeConfigInput interface {
+	pulumi.Input
+
+	ToBdsInstanceWorkerNodeShapeConfigOutput() BdsInstanceWorkerNodeShapeConfigOutput
+	ToBdsInstanceWorkerNodeShapeConfigOutputWithContext(context.Context) BdsInstanceWorkerNodeShapeConfigOutput
+}
+
+type BdsInstanceWorkerNodeShapeConfigArgs struct {
+	// The total amount of memory available to the node, in gigabytes
+	MemoryInGbs pulumi.IntPtrInput `pulumi:"memoryInGbs"`
+	// The total number of OCPUs available to the node.
+	Ocpus pulumi.IntPtrInput `pulumi:"ocpus"`
+}
+
+func (BdsInstanceWorkerNodeShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsInstanceWorkerNodeShapeConfig)(nil)).Elem()
+}
+
+func (i BdsInstanceWorkerNodeShapeConfigArgs) ToBdsInstanceWorkerNodeShapeConfigOutput() BdsInstanceWorkerNodeShapeConfigOutput {
+	return i.ToBdsInstanceWorkerNodeShapeConfigOutputWithContext(context.Background())
+}
+
+func (i BdsInstanceWorkerNodeShapeConfigArgs) ToBdsInstanceWorkerNodeShapeConfigOutputWithContext(ctx context.Context) BdsInstanceWorkerNodeShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceWorkerNodeShapeConfigOutput)
+}
+
+func (i BdsInstanceWorkerNodeShapeConfigArgs) ToBdsInstanceWorkerNodeShapeConfigPtrOutput() BdsInstanceWorkerNodeShapeConfigPtrOutput {
+	return i.ToBdsInstanceWorkerNodeShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (i BdsInstanceWorkerNodeShapeConfigArgs) ToBdsInstanceWorkerNodeShapeConfigPtrOutputWithContext(ctx context.Context) BdsInstanceWorkerNodeShapeConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceWorkerNodeShapeConfigOutput).ToBdsInstanceWorkerNodeShapeConfigPtrOutputWithContext(ctx)
+}
+
+// BdsInstanceWorkerNodeShapeConfigPtrInput is an input type that accepts BdsInstanceWorkerNodeShapeConfigArgs, BdsInstanceWorkerNodeShapeConfigPtr and BdsInstanceWorkerNodeShapeConfigPtrOutput values.
+// You can construct a concrete instance of `BdsInstanceWorkerNodeShapeConfigPtrInput` via:
+//
+//          BdsInstanceWorkerNodeShapeConfigArgs{...}
+//
+//  or:
+//
+//          nil
+type BdsInstanceWorkerNodeShapeConfigPtrInput interface {
+	pulumi.Input
+
+	ToBdsInstanceWorkerNodeShapeConfigPtrOutput() BdsInstanceWorkerNodeShapeConfigPtrOutput
+	ToBdsInstanceWorkerNodeShapeConfigPtrOutputWithContext(context.Context) BdsInstanceWorkerNodeShapeConfigPtrOutput
+}
+
+type bdsInstanceWorkerNodeShapeConfigPtrType BdsInstanceWorkerNodeShapeConfigArgs
+
+func BdsInstanceWorkerNodeShapeConfigPtr(v *BdsInstanceWorkerNodeShapeConfigArgs) BdsInstanceWorkerNodeShapeConfigPtrInput {
+	return (*bdsInstanceWorkerNodeShapeConfigPtrType)(v)
+}
+
+func (*bdsInstanceWorkerNodeShapeConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**BdsInstanceWorkerNodeShapeConfig)(nil)).Elem()
+}
+
+func (i *bdsInstanceWorkerNodeShapeConfigPtrType) ToBdsInstanceWorkerNodeShapeConfigPtrOutput() BdsInstanceWorkerNodeShapeConfigPtrOutput {
+	return i.ToBdsInstanceWorkerNodeShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *bdsInstanceWorkerNodeShapeConfigPtrType) ToBdsInstanceWorkerNodeShapeConfigPtrOutputWithContext(ctx context.Context) BdsInstanceWorkerNodeShapeConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceWorkerNodeShapeConfigPtrOutput)
+}
+
+type BdsInstanceWorkerNodeShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (BdsInstanceWorkerNodeShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsInstanceWorkerNodeShapeConfig)(nil)).Elem()
+}
+
+func (o BdsInstanceWorkerNodeShapeConfigOutput) ToBdsInstanceWorkerNodeShapeConfigOutput() BdsInstanceWorkerNodeShapeConfigOutput {
+	return o
+}
+
+func (o BdsInstanceWorkerNodeShapeConfigOutput) ToBdsInstanceWorkerNodeShapeConfigOutputWithContext(ctx context.Context) BdsInstanceWorkerNodeShapeConfigOutput {
+	return o
+}
+
+func (o BdsInstanceWorkerNodeShapeConfigOutput) ToBdsInstanceWorkerNodeShapeConfigPtrOutput() BdsInstanceWorkerNodeShapeConfigPtrOutput {
+	return o.ToBdsInstanceWorkerNodeShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (o BdsInstanceWorkerNodeShapeConfigOutput) ToBdsInstanceWorkerNodeShapeConfigPtrOutputWithContext(ctx context.Context) BdsInstanceWorkerNodeShapeConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v BdsInstanceWorkerNodeShapeConfig) *BdsInstanceWorkerNodeShapeConfig {
+		return &v
+	}).(BdsInstanceWorkerNodeShapeConfigPtrOutput)
+}
+
+// The total amount of memory available to the node, in gigabytes
+func (o BdsInstanceWorkerNodeShapeConfigOutput) MemoryInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BdsInstanceWorkerNodeShapeConfig) *int { return v.MemoryInGbs }).(pulumi.IntPtrOutput)
+}
+
+// The total number of OCPUs available to the node.
+func (o BdsInstanceWorkerNodeShapeConfigOutput) Ocpus() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BdsInstanceWorkerNodeShapeConfig) *int { return v.Ocpus }).(pulumi.IntPtrOutput)
+}
+
+type BdsInstanceWorkerNodeShapeConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (BdsInstanceWorkerNodeShapeConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**BdsInstanceWorkerNodeShapeConfig)(nil)).Elem()
+}
+
+func (o BdsInstanceWorkerNodeShapeConfigPtrOutput) ToBdsInstanceWorkerNodeShapeConfigPtrOutput() BdsInstanceWorkerNodeShapeConfigPtrOutput {
+	return o
+}
+
+func (o BdsInstanceWorkerNodeShapeConfigPtrOutput) ToBdsInstanceWorkerNodeShapeConfigPtrOutputWithContext(ctx context.Context) BdsInstanceWorkerNodeShapeConfigPtrOutput {
+	return o
+}
+
+func (o BdsInstanceWorkerNodeShapeConfigPtrOutput) Elem() BdsInstanceWorkerNodeShapeConfigOutput {
+	return o.ApplyT(func(v *BdsInstanceWorkerNodeShapeConfig) BdsInstanceWorkerNodeShapeConfig {
+		if v != nil {
+			return *v
+		}
+		var ret BdsInstanceWorkerNodeShapeConfig
+		return ret
+	}).(BdsInstanceWorkerNodeShapeConfigOutput)
+}
+
+// The total amount of memory available to the node, in gigabytes
+func (o BdsInstanceWorkerNodeShapeConfigPtrOutput) MemoryInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceWorkerNodeShapeConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MemoryInGbs
+	}).(pulumi.IntPtrOutput)
+}
+
+// The total number of OCPUs available to the node.
+func (o BdsInstanceWorkerNodeShapeConfigPtrOutput) Ocpus() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceWorkerNodeShapeConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Ocpus
+	}).(pulumi.IntPtrOutput)
+}
+
 type GetAutoScalingConfigurationPolicy struct {
-	// Types of autoscale policies. Options are SCHEDULE-BASED or THRESHOLD-BASED. (Only THRESHOLD-BASED is supported in this release.)
+	// Type of autoscaling policy.
 	PolicyType string `pulumi:"policyType"`
 	// The list of rules for autoscaling. If an action has multiple rules, the last rule in the array will be applied.
 	Rules []GetAutoScalingConfigurationPolicyRule `pulumi:"rules"`
@@ -1926,7 +5630,7 @@ type GetAutoScalingConfigurationPolicyInput interface {
 }
 
 type GetAutoScalingConfigurationPolicyArgs struct {
-	// Types of autoscale policies. Options are SCHEDULE-BASED or THRESHOLD-BASED. (Only THRESHOLD-BASED is supported in this release.)
+	// Type of autoscaling policy.
 	PolicyType pulumi.StringInput `pulumi:"policyType"`
 	// The list of rules for autoscaling. If an action has multiple rules, the last rule in the array will be applied.
 	Rules GetAutoScalingConfigurationPolicyRuleArrayInput `pulumi:"rules"`
@@ -1983,7 +5687,7 @@ func (o GetAutoScalingConfigurationPolicyOutput) ToGetAutoScalingConfigurationPo
 	return o
 }
 
-// Types of autoscale policies. Options are SCHEDULE-BASED or THRESHOLD-BASED. (Only THRESHOLD-BASED is supported in this release.)
+// Type of autoscaling policy.
 func (o GetAutoScalingConfigurationPolicyOutput) PolicyType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutoScalingConfigurationPolicy) string { return v.PolicyType }).(pulumi.StringOutput)
 }
@@ -2011,6 +5715,1943 @@ func (o GetAutoScalingConfigurationPolicyArrayOutput) Index(i pulumi.IntInput) G
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutoScalingConfigurationPolicy {
 		return vs[0].([]GetAutoScalingConfigurationPolicy)[vs[1].(int)]
 	}).(GetAutoScalingConfigurationPolicyOutput)
+}
+
+type GetAutoScalingConfigurationPolicyDetail struct {
+	// The type of autoscaling action to take.
+	ActionType string `pulumi:"actionType"`
+	// Type of autoscaling policy.
+	PolicyType string `pulumi:"policyType"`
+	// Configration for a metric based vertical scale-down policy.
+	ScaleDownConfigs []GetAutoScalingConfigurationPolicyDetailScaleDownConfig `pulumi:"scaleDownConfigs"`
+	// Configration for a metric based horizontal scale-in policy.
+	ScaleInConfigs []GetAutoScalingConfigurationPolicyDetailScaleInConfig `pulumi:"scaleInConfigs"`
+	// Configration for a metric based horizontal scale-out policy.
+	ScaleOutConfigs []GetAutoScalingConfigurationPolicyDetailScaleOutConfig `pulumi:"scaleOutConfigs"`
+	// Configration for a metric based vertical scale-up policy.
+	ScaleUpConfigs  []GetAutoScalingConfigurationPolicyDetailScaleUpConfig  `pulumi:"scaleUpConfigs"`
+	ScheduleDetails []GetAutoScalingConfigurationPolicyDetailScheduleDetail `pulumi:"scheduleDetails"`
+	// The time zone of the execution schedule, in IANA time zone database name format
+	Timezone string `pulumi:"timezone"`
+	// The type of autoscaling trigger.
+	TriggerType string `pulumi:"triggerType"`
+}
+
+// GetAutoScalingConfigurationPolicyDetailInput is an input type that accepts GetAutoScalingConfigurationPolicyDetailArgs and GetAutoScalingConfigurationPolicyDetailOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationPolicyDetailInput` via:
+//
+//          GetAutoScalingConfigurationPolicyDetailArgs{...}
+type GetAutoScalingConfigurationPolicyDetailInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationPolicyDetailOutput() GetAutoScalingConfigurationPolicyDetailOutput
+	ToGetAutoScalingConfigurationPolicyDetailOutputWithContext(context.Context) GetAutoScalingConfigurationPolicyDetailOutput
+}
+
+type GetAutoScalingConfigurationPolicyDetailArgs struct {
+	// The type of autoscaling action to take.
+	ActionType pulumi.StringInput `pulumi:"actionType"`
+	// Type of autoscaling policy.
+	PolicyType pulumi.StringInput `pulumi:"policyType"`
+	// Configration for a metric based vertical scale-down policy.
+	ScaleDownConfigs GetAutoScalingConfigurationPolicyDetailScaleDownConfigArrayInput `pulumi:"scaleDownConfigs"`
+	// Configration for a metric based horizontal scale-in policy.
+	ScaleInConfigs GetAutoScalingConfigurationPolicyDetailScaleInConfigArrayInput `pulumi:"scaleInConfigs"`
+	// Configration for a metric based horizontal scale-out policy.
+	ScaleOutConfigs GetAutoScalingConfigurationPolicyDetailScaleOutConfigArrayInput `pulumi:"scaleOutConfigs"`
+	// Configration for a metric based vertical scale-up policy.
+	ScaleUpConfigs  GetAutoScalingConfigurationPolicyDetailScaleUpConfigArrayInput  `pulumi:"scaleUpConfigs"`
+	ScheduleDetails GetAutoScalingConfigurationPolicyDetailScheduleDetailArrayInput `pulumi:"scheduleDetails"`
+	// The time zone of the execution schedule, in IANA time zone database name format
+	Timezone pulumi.StringInput `pulumi:"timezone"`
+	// The type of autoscaling trigger.
+	TriggerType pulumi.StringInput `pulumi:"triggerType"`
+}
+
+func (GetAutoScalingConfigurationPolicyDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetail)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailArgs) ToGetAutoScalingConfigurationPolicyDetailOutput() GetAutoScalingConfigurationPolicyDetailOutput {
+	return i.ToGetAutoScalingConfigurationPolicyDetailOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailArgs) ToGetAutoScalingConfigurationPolicyDetailOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailOutput)
+}
+
+// GetAutoScalingConfigurationPolicyDetailArrayInput is an input type that accepts GetAutoScalingConfigurationPolicyDetailArray and GetAutoScalingConfigurationPolicyDetailArrayOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationPolicyDetailArrayInput` via:
+//
+//          GetAutoScalingConfigurationPolicyDetailArray{ GetAutoScalingConfigurationPolicyDetailArgs{...} }
+type GetAutoScalingConfigurationPolicyDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationPolicyDetailArrayOutput() GetAutoScalingConfigurationPolicyDetailArrayOutput
+	ToGetAutoScalingConfigurationPolicyDetailArrayOutputWithContext(context.Context) GetAutoScalingConfigurationPolicyDetailArrayOutput
+}
+
+type GetAutoScalingConfigurationPolicyDetailArray []GetAutoScalingConfigurationPolicyDetailInput
+
+func (GetAutoScalingConfigurationPolicyDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationPolicyDetail)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailArray) ToGetAutoScalingConfigurationPolicyDetailArrayOutput() GetAutoScalingConfigurationPolicyDetailArrayOutput {
+	return i.ToGetAutoScalingConfigurationPolicyDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailArray) ToGetAutoScalingConfigurationPolicyDetailArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailArrayOutput)
+}
+
+type GetAutoScalingConfigurationPolicyDetailOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationPolicyDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetail)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailOutput) ToGetAutoScalingConfigurationPolicyDetailOutput() GetAutoScalingConfigurationPolicyDetailOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailOutput) ToGetAutoScalingConfigurationPolicyDetailOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailOutput {
+	return o
+}
+
+// The type of autoscaling action to take.
+func (o GetAutoScalingConfigurationPolicyDetailOutput) ActionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetail) string { return v.ActionType }).(pulumi.StringOutput)
+}
+
+// Type of autoscaling policy.
+func (o GetAutoScalingConfigurationPolicyDetailOutput) PolicyType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetail) string { return v.PolicyType }).(pulumi.StringOutput)
+}
+
+// Configration for a metric based vertical scale-down policy.
+func (o GetAutoScalingConfigurationPolicyDetailOutput) ScaleDownConfigs() GetAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetail) []GetAutoScalingConfigurationPolicyDetailScaleDownConfig {
+		return v.ScaleDownConfigs
+	}).(GetAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutput)
+}
+
+// Configration for a metric based horizontal scale-in policy.
+func (o GetAutoScalingConfigurationPolicyDetailOutput) ScaleInConfigs() GetAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetail) []GetAutoScalingConfigurationPolicyDetailScaleInConfig {
+		return v.ScaleInConfigs
+	}).(GetAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutput)
+}
+
+// Configration for a metric based horizontal scale-out policy.
+func (o GetAutoScalingConfigurationPolicyDetailOutput) ScaleOutConfigs() GetAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetail) []GetAutoScalingConfigurationPolicyDetailScaleOutConfig {
+		return v.ScaleOutConfigs
+	}).(GetAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutput)
+}
+
+// Configration for a metric based vertical scale-up policy.
+func (o GetAutoScalingConfigurationPolicyDetailOutput) ScaleUpConfigs() GetAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetail) []GetAutoScalingConfigurationPolicyDetailScaleUpConfig {
+		return v.ScaleUpConfigs
+	}).(GetAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutput)
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailOutput) ScheduleDetails() GetAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetail) []GetAutoScalingConfigurationPolicyDetailScheduleDetail {
+		return v.ScheduleDetails
+	}).(GetAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutput)
+}
+
+// The time zone of the execution schedule, in IANA time zone database name format
+func (o GetAutoScalingConfigurationPolicyDetailOutput) Timezone() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetail) string { return v.Timezone }).(pulumi.StringOutput)
+}
+
+// The type of autoscaling trigger.
+func (o GetAutoScalingConfigurationPolicyDetailOutput) TriggerType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetail) string { return v.TriggerType }).(pulumi.StringOutput)
+}
+
+type GetAutoScalingConfigurationPolicyDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationPolicyDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationPolicyDetail)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailArrayOutput) ToGetAutoScalingConfigurationPolicyDetailArrayOutput() GetAutoScalingConfigurationPolicyDetailArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailArrayOutput) ToGetAutoScalingConfigurationPolicyDetailArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationPolicyDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutoScalingConfigurationPolicyDetail {
+		return vs[0].([]GetAutoScalingConfigurationPolicyDetail)[vs[1].(int)]
+	}).(GetAutoScalingConfigurationPolicyDetailOutput)
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleDownConfig struct {
+	// For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+	MemoryStepSize int `pulumi:"memoryStepSize"`
+	// Metric and threshold details for triggering an autoscale action.
+	Metrics []GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetric `pulumi:"metrics"`
+	// For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the minimum memory in GBs each node can be scaled-down to. This value is not used for nodes with fixed compute shapes.
+	MinMemoryPerNode int `pulumi:"minMemoryPerNode"`
+	// For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the minimum number of OCPUs each node can be scaled-down to. This value is not used for nodes with fixed compute shapes.
+	MinOcpusPerNode int `pulumi:"minOcpusPerNode"`
+	// For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+	OcpuStepSize int `pulumi:"ocpuStepSize"`
+}
+
+// GetAutoScalingConfigurationPolicyDetailScaleDownConfigInput is an input type that accepts GetAutoScalingConfigurationPolicyDetailScaleDownConfigArgs and GetAutoScalingConfigurationPolicyDetailScaleDownConfigOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationPolicyDetailScaleDownConfigInput` via:
+//
+//          GetAutoScalingConfigurationPolicyDetailScaleDownConfigArgs{...}
+type GetAutoScalingConfigurationPolicyDetailScaleDownConfigInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationPolicyDetailScaleDownConfigOutput() GetAutoScalingConfigurationPolicyDetailScaleDownConfigOutput
+	ToGetAutoScalingConfigurationPolicyDetailScaleDownConfigOutputWithContext(context.Context) GetAutoScalingConfigurationPolicyDetailScaleDownConfigOutput
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleDownConfigArgs struct {
+	// For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+	MemoryStepSize pulumi.IntInput `pulumi:"memoryStepSize"`
+	// Metric and threshold details for triggering an autoscale action.
+	Metrics GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayInput `pulumi:"metrics"`
+	// For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the minimum memory in GBs each node can be scaled-down to. This value is not used for nodes with fixed compute shapes.
+	MinMemoryPerNode pulumi.IntInput `pulumi:"minMemoryPerNode"`
+	// For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the minimum number of OCPUs each node can be scaled-down to. This value is not used for nodes with fixed compute shapes.
+	MinOcpusPerNode pulumi.IntInput `pulumi:"minOcpusPerNode"`
+	// For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+	OcpuStepSize pulumi.IntInput `pulumi:"ocpuStepSize"`
+}
+
+func (GetAutoScalingConfigurationPolicyDetailScaleDownConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScaleDownConfig)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScaleDownConfigArgs) ToGetAutoScalingConfigurationPolicyDetailScaleDownConfigOutput() GetAutoScalingConfigurationPolicyDetailScaleDownConfigOutput {
+	return i.ToGetAutoScalingConfigurationPolicyDetailScaleDownConfigOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScaleDownConfigArgs) ToGetAutoScalingConfigurationPolicyDetailScaleDownConfigOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleDownConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScaleDownConfigOutput)
+}
+
+// GetAutoScalingConfigurationPolicyDetailScaleDownConfigArrayInput is an input type that accepts GetAutoScalingConfigurationPolicyDetailScaleDownConfigArray and GetAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationPolicyDetailScaleDownConfigArrayInput` via:
+//
+//          GetAutoScalingConfigurationPolicyDetailScaleDownConfigArray{ GetAutoScalingConfigurationPolicyDetailScaleDownConfigArgs{...} }
+type GetAutoScalingConfigurationPolicyDetailScaleDownConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutput() GetAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutput
+	ToGetAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutputWithContext(context.Context) GetAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutput
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleDownConfigArray []GetAutoScalingConfigurationPolicyDetailScaleDownConfigInput
+
+func (GetAutoScalingConfigurationPolicyDetailScaleDownConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationPolicyDetailScaleDownConfig)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScaleDownConfigArray) ToGetAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutput() GetAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutput {
+	return i.ToGetAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScaleDownConfigArray) ToGetAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutput)
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleDownConfigOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationPolicyDetailScaleDownConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScaleDownConfig)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleDownConfigOutput) ToGetAutoScalingConfigurationPolicyDetailScaleDownConfigOutput() GetAutoScalingConfigurationPolicyDetailScaleDownConfigOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleDownConfigOutput) ToGetAutoScalingConfigurationPolicyDetailScaleDownConfigOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleDownConfigOutput {
+	return o
+}
+
+// For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+func (o GetAutoScalingConfigurationPolicyDetailScaleDownConfigOutput) MemoryStepSize() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetailScaleDownConfig) int { return v.MemoryStepSize }).(pulumi.IntOutput)
+}
+
+// Metric and threshold details for triggering an autoscale action.
+func (o GetAutoScalingConfigurationPolicyDetailScaleDownConfigOutput) Metrics() GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetailScaleDownConfig) []GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetric {
+		return v.Metrics
+	}).(GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutput)
+}
+
+// For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the minimum memory in GBs each node can be scaled-down to. This value is not used for nodes with fixed compute shapes.
+func (o GetAutoScalingConfigurationPolicyDetailScaleDownConfigOutput) MinMemoryPerNode() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetailScaleDownConfig) int { return v.MinMemoryPerNode }).(pulumi.IntOutput)
+}
+
+// For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the minimum number of OCPUs each node can be scaled-down to. This value is not used for nodes with fixed compute shapes.
+func (o GetAutoScalingConfigurationPolicyDetailScaleDownConfigOutput) MinOcpusPerNode() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetailScaleDownConfig) int { return v.MinOcpusPerNode }).(pulumi.IntOutput)
+}
+
+// For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+func (o GetAutoScalingConfigurationPolicyDetailScaleDownConfigOutput) OcpuStepSize() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetailScaleDownConfig) int { return v.OcpuStepSize }).(pulumi.IntOutput)
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationPolicyDetailScaleDownConfig)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutput) ToGetAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutput() GetAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutput) ToGetAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationPolicyDetailScaleDownConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutoScalingConfigurationPolicyDetailScaleDownConfig {
+		return vs[0].([]GetAutoScalingConfigurationPolicyDetailScaleDownConfig)[vs[1].(int)]
+	}).(GetAutoScalingConfigurationPolicyDetailScaleDownConfigOutput)
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetric struct {
+	// Allowed value is CPU_UTILIZATION.
+	MetricType string `pulumi:"metricType"`
+	// An autoscale action is triggered when a performance metric exceeds a threshold.
+	Thresholds []GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThreshold `pulumi:"thresholds"`
+}
+
+// GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricInput is an input type that accepts GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArgs and GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricInput` via:
+//
+//          GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArgs{...}
+type GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput() GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput
+	ToGetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutputWithContext(context.Context) GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArgs struct {
+	// Allowed value is CPU_UTILIZATION.
+	MetricType pulumi.StringInput `pulumi:"metricType"`
+	// An autoscale action is triggered when a performance metric exceeds a threshold.
+	Thresholds GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayInput `pulumi:"thresholds"`
+}
+
+func (GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetric)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArgs) ToGetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput() GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput {
+	return i.ToGetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArgs) ToGetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput)
+}
+
+// GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayInput is an input type that accepts GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArray and GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayInput` via:
+//
+//          GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArray{ GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArgs{...} }
+type GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutput() GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutput
+	ToGetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutputWithContext(context.Context) GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutput
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArray []GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricInput
+
+func (GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetric)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArray) ToGetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutput() GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutput {
+	return i.ToGetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArray) ToGetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutput)
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetric)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput) ToGetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput() GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput) ToGetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput {
+	return o
+}
+
+// Allowed value is CPU_UTILIZATION.
+func (o GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput) MetricType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetric) string { return v.MetricType }).(pulumi.StringOutput)
+}
+
+// An autoscale action is triggered when a performance metric exceeds a threshold.
+func (o GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput) Thresholds() GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetric) []GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThreshold {
+		return v.Thresholds
+	}).(GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutput)
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetric)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutput) ToGetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutput() GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutput) ToGetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetric {
+		return vs[0].([]GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetric)[vs[1].(int)]
+	}).(GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput)
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThreshold struct {
+	// This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
+	DurationInMinutes int `pulumi:"durationInMinutes"`
+	// The comparison operator to use. Options are greater than (GT) or less than (LT).
+	Operator string `pulumi:"operator"`
+	// Integer non-negative value. 0 < value < 100
+	Value int `pulumi:"value"`
+}
+
+// GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdInput is an input type that accepts GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArgs and GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdInput` via:
+//
+//          GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArgs{...}
+type GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput() GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput
+	ToGetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutputWithContext(context.Context) GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArgs struct {
+	// This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
+	DurationInMinutes pulumi.IntInput `pulumi:"durationInMinutes"`
+	// The comparison operator to use. Options are greater than (GT) or less than (LT).
+	Operator pulumi.StringInput `pulumi:"operator"`
+	// Integer non-negative value. 0 < value < 100
+	Value pulumi.IntInput `pulumi:"value"`
+}
+
+func (GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThreshold)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArgs) ToGetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput() GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput {
+	return i.ToGetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArgs) ToGetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput)
+}
+
+// GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayInput is an input type that accepts GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArray and GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayInput` via:
+//
+//          GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArray{ GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArgs{...} }
+type GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutput() GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutput
+	ToGetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutputWithContext(context.Context) GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutput
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArray []GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdInput
+
+func (GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThreshold)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArray) ToGetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutput() GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutput {
+	return i.ToGetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArray) ToGetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutput)
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThreshold)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput) ToGetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput() GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput) ToGetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput {
+	return o
+}
+
+// This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
+func (o GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput) DurationInMinutes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThreshold) int {
+		return v.DurationInMinutes
+	}).(pulumi.IntOutput)
+}
+
+// The comparison operator to use. Options are greater than (GT) or less than (LT).
+func (o GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput) Operator() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThreshold) string {
+		return v.Operator
+	}).(pulumi.StringOutput)
+}
+
+// Integer non-negative value. 0 < value < 100
+func (o GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput) Value() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThreshold) int { return v.Value }).(pulumi.IntOutput)
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThreshold)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutput) ToGetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutput() GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutput) ToGetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThreshold {
+		return vs[0].([]GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThreshold)[vs[1].(int)]
+	}).(GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput)
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleInConfig struct {
+	// Metric and threshold details for triggering an autoscale action.
+	Metrics []GetAutoScalingConfigurationPolicyDetailScaleInConfigMetric `pulumi:"metrics"`
+	// This value is the minimum number of nodes the cluster can be scaled-in to.
+	MinNodeCount int `pulumi:"minNodeCount"`
+	// This value is the number of nodes to add during a scale-out event.
+	StepSize int `pulumi:"stepSize"`
+}
+
+// GetAutoScalingConfigurationPolicyDetailScaleInConfigInput is an input type that accepts GetAutoScalingConfigurationPolicyDetailScaleInConfigArgs and GetAutoScalingConfigurationPolicyDetailScaleInConfigOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationPolicyDetailScaleInConfigInput` via:
+//
+//          GetAutoScalingConfigurationPolicyDetailScaleInConfigArgs{...}
+type GetAutoScalingConfigurationPolicyDetailScaleInConfigInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationPolicyDetailScaleInConfigOutput() GetAutoScalingConfigurationPolicyDetailScaleInConfigOutput
+	ToGetAutoScalingConfigurationPolicyDetailScaleInConfigOutputWithContext(context.Context) GetAutoScalingConfigurationPolicyDetailScaleInConfigOutput
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleInConfigArgs struct {
+	// Metric and threshold details for triggering an autoscale action.
+	Metrics GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayInput `pulumi:"metrics"`
+	// This value is the minimum number of nodes the cluster can be scaled-in to.
+	MinNodeCount pulumi.IntInput `pulumi:"minNodeCount"`
+	// This value is the number of nodes to add during a scale-out event.
+	StepSize pulumi.IntInput `pulumi:"stepSize"`
+}
+
+func (GetAutoScalingConfigurationPolicyDetailScaleInConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScaleInConfig)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScaleInConfigArgs) ToGetAutoScalingConfigurationPolicyDetailScaleInConfigOutput() GetAutoScalingConfigurationPolicyDetailScaleInConfigOutput {
+	return i.ToGetAutoScalingConfigurationPolicyDetailScaleInConfigOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScaleInConfigArgs) ToGetAutoScalingConfigurationPolicyDetailScaleInConfigOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleInConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScaleInConfigOutput)
+}
+
+// GetAutoScalingConfigurationPolicyDetailScaleInConfigArrayInput is an input type that accepts GetAutoScalingConfigurationPolicyDetailScaleInConfigArray and GetAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationPolicyDetailScaleInConfigArrayInput` via:
+//
+//          GetAutoScalingConfigurationPolicyDetailScaleInConfigArray{ GetAutoScalingConfigurationPolicyDetailScaleInConfigArgs{...} }
+type GetAutoScalingConfigurationPolicyDetailScaleInConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutput() GetAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutput
+	ToGetAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutputWithContext(context.Context) GetAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutput
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleInConfigArray []GetAutoScalingConfigurationPolicyDetailScaleInConfigInput
+
+func (GetAutoScalingConfigurationPolicyDetailScaleInConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationPolicyDetailScaleInConfig)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScaleInConfigArray) ToGetAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutput() GetAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutput {
+	return i.ToGetAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScaleInConfigArray) ToGetAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutput)
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleInConfigOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationPolicyDetailScaleInConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScaleInConfig)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleInConfigOutput) ToGetAutoScalingConfigurationPolicyDetailScaleInConfigOutput() GetAutoScalingConfigurationPolicyDetailScaleInConfigOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleInConfigOutput) ToGetAutoScalingConfigurationPolicyDetailScaleInConfigOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleInConfigOutput {
+	return o
+}
+
+// Metric and threshold details for triggering an autoscale action.
+func (o GetAutoScalingConfigurationPolicyDetailScaleInConfigOutput) Metrics() GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetailScaleInConfig) []GetAutoScalingConfigurationPolicyDetailScaleInConfigMetric {
+		return v.Metrics
+	}).(GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutput)
+}
+
+// This value is the minimum number of nodes the cluster can be scaled-in to.
+func (o GetAutoScalingConfigurationPolicyDetailScaleInConfigOutput) MinNodeCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetailScaleInConfig) int { return v.MinNodeCount }).(pulumi.IntOutput)
+}
+
+// This value is the number of nodes to add during a scale-out event.
+func (o GetAutoScalingConfigurationPolicyDetailScaleInConfigOutput) StepSize() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetailScaleInConfig) int { return v.StepSize }).(pulumi.IntOutput)
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationPolicyDetailScaleInConfig)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutput) ToGetAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutput() GetAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutput) ToGetAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationPolicyDetailScaleInConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutoScalingConfigurationPolicyDetailScaleInConfig {
+		return vs[0].([]GetAutoScalingConfigurationPolicyDetailScaleInConfig)[vs[1].(int)]
+	}).(GetAutoScalingConfigurationPolicyDetailScaleInConfigOutput)
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleInConfigMetric struct {
+	// Allowed value is CPU_UTILIZATION.
+	MetricType string `pulumi:"metricType"`
+	// An autoscale action is triggered when a performance metric exceeds a threshold.
+	Thresholds []GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold `pulumi:"thresholds"`
+}
+
+// GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricInput is an input type that accepts GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArgs and GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricInput` via:
+//
+//          GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArgs{...}
+type GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput() GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput
+	ToGetAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutputWithContext(context.Context) GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArgs struct {
+	// Allowed value is CPU_UTILIZATION.
+	MetricType pulumi.StringInput `pulumi:"metricType"`
+	// An autoscale action is triggered when a performance metric exceeds a threshold.
+	Thresholds GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayInput `pulumi:"thresholds"`
+}
+
+func (GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScaleInConfigMetric)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArgs) ToGetAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput() GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput {
+	return i.ToGetAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArgs) ToGetAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput)
+}
+
+// GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayInput is an input type that accepts GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArray and GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayInput` via:
+//
+//          GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArray{ GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArgs{...} }
+type GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutput() GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutput
+	ToGetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutputWithContext(context.Context) GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutput
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArray []GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricInput
+
+func (GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationPolicyDetailScaleInConfigMetric)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArray) ToGetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutput() GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutput {
+	return i.ToGetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArray) ToGetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutput)
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScaleInConfigMetric)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput) ToGetAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput() GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput) ToGetAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput {
+	return o
+}
+
+// Allowed value is CPU_UTILIZATION.
+func (o GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput) MetricType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetailScaleInConfigMetric) string { return v.MetricType }).(pulumi.StringOutput)
+}
+
+// An autoscale action is triggered when a performance metric exceeds a threshold.
+func (o GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput) Thresholds() GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetailScaleInConfigMetric) []GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold {
+		return v.Thresholds
+	}).(GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutput)
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationPolicyDetailScaleInConfigMetric)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutput) ToGetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutput() GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutput) ToGetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutoScalingConfigurationPolicyDetailScaleInConfigMetric {
+		return vs[0].([]GetAutoScalingConfigurationPolicyDetailScaleInConfigMetric)[vs[1].(int)]
+	}).(GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput)
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold struct {
+	// This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
+	DurationInMinutes int `pulumi:"durationInMinutes"`
+	// The comparison operator to use. Options are greater than (GT) or less than (LT).
+	Operator string `pulumi:"operator"`
+	// Integer non-negative value. 0 < value < 100
+	Value int `pulumi:"value"`
+}
+
+// GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdInput is an input type that accepts GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArgs and GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdInput` via:
+//
+//          GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArgs{...}
+type GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput() GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput
+	ToGetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutputWithContext(context.Context) GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArgs struct {
+	// This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
+	DurationInMinutes pulumi.IntInput `pulumi:"durationInMinutes"`
+	// The comparison operator to use. Options are greater than (GT) or less than (LT).
+	Operator pulumi.StringInput `pulumi:"operator"`
+	// Integer non-negative value. 0 < value < 100
+	Value pulumi.IntInput `pulumi:"value"`
+}
+
+func (GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArgs) ToGetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput() GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput {
+	return i.ToGetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArgs) ToGetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput)
+}
+
+// GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayInput is an input type that accepts GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArray and GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayInput` via:
+//
+//          GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArray{ GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArgs{...} }
+type GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutput() GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutput
+	ToGetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutputWithContext(context.Context) GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutput
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArray []GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdInput
+
+func (GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArray) ToGetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutput() GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutput {
+	return i.ToGetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArray) ToGetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutput)
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput) ToGetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput() GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput) ToGetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput {
+	return o
+}
+
+// This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
+func (o GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput) DurationInMinutes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold) int {
+		return v.DurationInMinutes
+	}).(pulumi.IntOutput)
+}
+
+// The comparison operator to use. Options are greater than (GT) or less than (LT).
+func (o GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput) Operator() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold) string { return v.Operator }).(pulumi.StringOutput)
+}
+
+// Integer non-negative value. 0 < value < 100
+func (o GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput) Value() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold) int { return v.Value }).(pulumi.IntOutput)
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutput) ToGetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutput() GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutput) ToGetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold {
+		return vs[0].([]GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold)[vs[1].(int)]
+	}).(GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput)
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleOutConfig struct {
+	// This value is the maximum number of nodes the cluster can be scaled-out to.
+	MaxNodeCount int `pulumi:"maxNodeCount"`
+	// Metric and threshold details for triggering an autoscale action.
+	Metrics []GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetric `pulumi:"metrics"`
+	// This value is the number of nodes to add during a scale-out event.
+	StepSize int `pulumi:"stepSize"`
+}
+
+// GetAutoScalingConfigurationPolicyDetailScaleOutConfigInput is an input type that accepts GetAutoScalingConfigurationPolicyDetailScaleOutConfigArgs and GetAutoScalingConfigurationPolicyDetailScaleOutConfigOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationPolicyDetailScaleOutConfigInput` via:
+//
+//          GetAutoScalingConfigurationPolicyDetailScaleOutConfigArgs{...}
+type GetAutoScalingConfigurationPolicyDetailScaleOutConfigInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationPolicyDetailScaleOutConfigOutput() GetAutoScalingConfigurationPolicyDetailScaleOutConfigOutput
+	ToGetAutoScalingConfigurationPolicyDetailScaleOutConfigOutputWithContext(context.Context) GetAutoScalingConfigurationPolicyDetailScaleOutConfigOutput
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleOutConfigArgs struct {
+	// This value is the maximum number of nodes the cluster can be scaled-out to.
+	MaxNodeCount pulumi.IntInput `pulumi:"maxNodeCount"`
+	// Metric and threshold details for triggering an autoscale action.
+	Metrics GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayInput `pulumi:"metrics"`
+	// This value is the number of nodes to add during a scale-out event.
+	StepSize pulumi.IntInput `pulumi:"stepSize"`
+}
+
+func (GetAutoScalingConfigurationPolicyDetailScaleOutConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScaleOutConfig)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScaleOutConfigArgs) ToGetAutoScalingConfigurationPolicyDetailScaleOutConfigOutput() GetAutoScalingConfigurationPolicyDetailScaleOutConfigOutput {
+	return i.ToGetAutoScalingConfigurationPolicyDetailScaleOutConfigOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScaleOutConfigArgs) ToGetAutoScalingConfigurationPolicyDetailScaleOutConfigOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleOutConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScaleOutConfigOutput)
+}
+
+// GetAutoScalingConfigurationPolicyDetailScaleOutConfigArrayInput is an input type that accepts GetAutoScalingConfigurationPolicyDetailScaleOutConfigArray and GetAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationPolicyDetailScaleOutConfigArrayInput` via:
+//
+//          GetAutoScalingConfigurationPolicyDetailScaleOutConfigArray{ GetAutoScalingConfigurationPolicyDetailScaleOutConfigArgs{...} }
+type GetAutoScalingConfigurationPolicyDetailScaleOutConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutput() GetAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutput
+	ToGetAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutputWithContext(context.Context) GetAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutput
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleOutConfigArray []GetAutoScalingConfigurationPolicyDetailScaleOutConfigInput
+
+func (GetAutoScalingConfigurationPolicyDetailScaleOutConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationPolicyDetailScaleOutConfig)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScaleOutConfigArray) ToGetAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutput() GetAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutput {
+	return i.ToGetAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScaleOutConfigArray) ToGetAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutput)
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleOutConfigOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationPolicyDetailScaleOutConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScaleOutConfig)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleOutConfigOutput) ToGetAutoScalingConfigurationPolicyDetailScaleOutConfigOutput() GetAutoScalingConfigurationPolicyDetailScaleOutConfigOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleOutConfigOutput) ToGetAutoScalingConfigurationPolicyDetailScaleOutConfigOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleOutConfigOutput {
+	return o
+}
+
+// This value is the maximum number of nodes the cluster can be scaled-out to.
+func (o GetAutoScalingConfigurationPolicyDetailScaleOutConfigOutput) MaxNodeCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetailScaleOutConfig) int { return v.MaxNodeCount }).(pulumi.IntOutput)
+}
+
+// Metric and threshold details for triggering an autoscale action.
+func (o GetAutoScalingConfigurationPolicyDetailScaleOutConfigOutput) Metrics() GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetailScaleOutConfig) []GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetric {
+		return v.Metrics
+	}).(GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutput)
+}
+
+// This value is the number of nodes to add during a scale-out event.
+func (o GetAutoScalingConfigurationPolicyDetailScaleOutConfigOutput) StepSize() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetailScaleOutConfig) int { return v.StepSize }).(pulumi.IntOutput)
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationPolicyDetailScaleOutConfig)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutput) ToGetAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutput() GetAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutput) ToGetAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationPolicyDetailScaleOutConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutoScalingConfigurationPolicyDetailScaleOutConfig {
+		return vs[0].([]GetAutoScalingConfigurationPolicyDetailScaleOutConfig)[vs[1].(int)]
+	}).(GetAutoScalingConfigurationPolicyDetailScaleOutConfigOutput)
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetric struct {
+	// Allowed value is CPU_UTILIZATION.
+	MetricType string `pulumi:"metricType"`
+	// An autoscale action is triggered when a performance metric exceeds a threshold.
+	Thresholds []GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThreshold `pulumi:"thresholds"`
+}
+
+// GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricInput is an input type that accepts GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArgs and GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricInput` via:
+//
+//          GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArgs{...}
+type GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput() GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput
+	ToGetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutputWithContext(context.Context) GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArgs struct {
+	// Allowed value is CPU_UTILIZATION.
+	MetricType pulumi.StringInput `pulumi:"metricType"`
+	// An autoscale action is triggered when a performance metric exceeds a threshold.
+	Thresholds GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayInput `pulumi:"thresholds"`
+}
+
+func (GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetric)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArgs) ToGetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput() GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput {
+	return i.ToGetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArgs) ToGetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput)
+}
+
+// GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayInput is an input type that accepts GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArray and GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayInput` via:
+//
+//          GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArray{ GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArgs{...} }
+type GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutput() GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutput
+	ToGetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutputWithContext(context.Context) GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutput
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArray []GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricInput
+
+func (GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetric)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArray) ToGetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutput() GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutput {
+	return i.ToGetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArray) ToGetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutput)
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetric)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput) ToGetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput() GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput) ToGetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput {
+	return o
+}
+
+// Allowed value is CPU_UTILIZATION.
+func (o GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput) MetricType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetric) string { return v.MetricType }).(pulumi.StringOutput)
+}
+
+// An autoscale action is triggered when a performance metric exceeds a threshold.
+func (o GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput) Thresholds() GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetric) []GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThreshold {
+		return v.Thresholds
+	}).(GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutput)
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetric)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutput) ToGetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutput() GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutput) ToGetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetric {
+		return vs[0].([]GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetric)[vs[1].(int)]
+	}).(GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput)
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThreshold struct {
+	// This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
+	DurationInMinutes int `pulumi:"durationInMinutes"`
+	// The comparison operator to use. Options are greater than (GT) or less than (LT).
+	Operator string `pulumi:"operator"`
+	// Integer non-negative value. 0 < value < 100
+	Value int `pulumi:"value"`
+}
+
+// GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdInput is an input type that accepts GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArgs and GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdInput` via:
+//
+//          GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArgs{...}
+type GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput() GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput
+	ToGetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutputWithContext(context.Context) GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArgs struct {
+	// This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
+	DurationInMinutes pulumi.IntInput `pulumi:"durationInMinutes"`
+	// The comparison operator to use. Options are greater than (GT) or less than (LT).
+	Operator pulumi.StringInput `pulumi:"operator"`
+	// Integer non-negative value. 0 < value < 100
+	Value pulumi.IntInput `pulumi:"value"`
+}
+
+func (GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThreshold)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArgs) ToGetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput() GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput {
+	return i.ToGetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArgs) ToGetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput)
+}
+
+// GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayInput is an input type that accepts GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArray and GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayInput` via:
+//
+//          GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArray{ GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArgs{...} }
+type GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutput() GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutput
+	ToGetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutputWithContext(context.Context) GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutput
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArray []GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdInput
+
+func (GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThreshold)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArray) ToGetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutput() GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutput {
+	return i.ToGetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArray) ToGetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutput)
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThreshold)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput) ToGetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput() GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput) ToGetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput {
+	return o
+}
+
+// This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
+func (o GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput) DurationInMinutes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThreshold) int {
+		return v.DurationInMinutes
+	}).(pulumi.IntOutput)
+}
+
+// The comparison operator to use. Options are greater than (GT) or less than (LT).
+func (o GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput) Operator() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThreshold) string { return v.Operator }).(pulumi.StringOutput)
+}
+
+// Integer non-negative value. 0 < value < 100
+func (o GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput) Value() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThreshold) int { return v.Value }).(pulumi.IntOutput)
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThreshold)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutput) ToGetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutput() GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutput) ToGetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThreshold {
+		return vs[0].([]GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThreshold)[vs[1].(int)]
+	}).(GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput)
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleUpConfig struct {
+	// For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the maximum memory in GBs each node can be scaled-up to. This value is not used for nodes with fixed compute shapes.
+	MaxMemoryPerNode int `pulumi:"maxMemoryPerNode"`
+	// For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the maximum number of OCPUs each node can be scaled-up to. This value is not used for nodes with fixed compute shapes.
+	MaxOcpusPerNode int `pulumi:"maxOcpusPerNode"`
+	// For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+	MemoryStepSize int `pulumi:"memoryStepSize"`
+	// Metric and threshold details for triggering an autoscale action.
+	Metrics []GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetric `pulumi:"metrics"`
+	// For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+	OcpuStepSize int `pulumi:"ocpuStepSize"`
+}
+
+// GetAutoScalingConfigurationPolicyDetailScaleUpConfigInput is an input type that accepts GetAutoScalingConfigurationPolicyDetailScaleUpConfigArgs and GetAutoScalingConfigurationPolicyDetailScaleUpConfigOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationPolicyDetailScaleUpConfigInput` via:
+//
+//          GetAutoScalingConfigurationPolicyDetailScaleUpConfigArgs{...}
+type GetAutoScalingConfigurationPolicyDetailScaleUpConfigInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationPolicyDetailScaleUpConfigOutput() GetAutoScalingConfigurationPolicyDetailScaleUpConfigOutput
+	ToGetAutoScalingConfigurationPolicyDetailScaleUpConfigOutputWithContext(context.Context) GetAutoScalingConfigurationPolicyDetailScaleUpConfigOutput
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleUpConfigArgs struct {
+	// For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the maximum memory in GBs each node can be scaled-up to. This value is not used for nodes with fixed compute shapes.
+	MaxMemoryPerNode pulumi.IntInput `pulumi:"maxMemoryPerNode"`
+	// For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the maximum number of OCPUs each node can be scaled-up to. This value is not used for nodes with fixed compute shapes.
+	MaxOcpusPerNode pulumi.IntInput `pulumi:"maxOcpusPerNode"`
+	// For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+	MemoryStepSize pulumi.IntInput `pulumi:"memoryStepSize"`
+	// Metric and threshold details for triggering an autoscale action.
+	Metrics GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayInput `pulumi:"metrics"`
+	// For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+	OcpuStepSize pulumi.IntInput `pulumi:"ocpuStepSize"`
+}
+
+func (GetAutoScalingConfigurationPolicyDetailScaleUpConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScaleUpConfig)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScaleUpConfigArgs) ToGetAutoScalingConfigurationPolicyDetailScaleUpConfigOutput() GetAutoScalingConfigurationPolicyDetailScaleUpConfigOutput {
+	return i.ToGetAutoScalingConfigurationPolicyDetailScaleUpConfigOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScaleUpConfigArgs) ToGetAutoScalingConfigurationPolicyDetailScaleUpConfigOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleUpConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScaleUpConfigOutput)
+}
+
+// GetAutoScalingConfigurationPolicyDetailScaleUpConfigArrayInput is an input type that accepts GetAutoScalingConfigurationPolicyDetailScaleUpConfigArray and GetAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationPolicyDetailScaleUpConfigArrayInput` via:
+//
+//          GetAutoScalingConfigurationPolicyDetailScaleUpConfigArray{ GetAutoScalingConfigurationPolicyDetailScaleUpConfigArgs{...} }
+type GetAutoScalingConfigurationPolicyDetailScaleUpConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutput() GetAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutput
+	ToGetAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutputWithContext(context.Context) GetAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutput
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleUpConfigArray []GetAutoScalingConfigurationPolicyDetailScaleUpConfigInput
+
+func (GetAutoScalingConfigurationPolicyDetailScaleUpConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationPolicyDetailScaleUpConfig)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScaleUpConfigArray) ToGetAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutput() GetAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutput {
+	return i.ToGetAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScaleUpConfigArray) ToGetAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutput)
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleUpConfigOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationPolicyDetailScaleUpConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScaleUpConfig)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleUpConfigOutput) ToGetAutoScalingConfigurationPolicyDetailScaleUpConfigOutput() GetAutoScalingConfigurationPolicyDetailScaleUpConfigOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleUpConfigOutput) ToGetAutoScalingConfigurationPolicyDetailScaleUpConfigOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleUpConfigOutput {
+	return o
+}
+
+// For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the maximum memory in GBs each node can be scaled-up to. This value is not used for nodes with fixed compute shapes.
+func (o GetAutoScalingConfigurationPolicyDetailScaleUpConfigOutput) MaxMemoryPerNode() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetailScaleUpConfig) int { return v.MaxMemoryPerNode }).(pulumi.IntOutput)
+}
+
+// For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the maximum number of OCPUs each node can be scaled-up to. This value is not used for nodes with fixed compute shapes.
+func (o GetAutoScalingConfigurationPolicyDetailScaleUpConfigOutput) MaxOcpusPerNode() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetailScaleUpConfig) int { return v.MaxOcpusPerNode }).(pulumi.IntOutput)
+}
+
+// For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+func (o GetAutoScalingConfigurationPolicyDetailScaleUpConfigOutput) MemoryStepSize() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetailScaleUpConfig) int { return v.MemoryStepSize }).(pulumi.IntOutput)
+}
+
+// Metric and threshold details for triggering an autoscale action.
+func (o GetAutoScalingConfigurationPolicyDetailScaleUpConfigOutput) Metrics() GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetailScaleUpConfig) []GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetric {
+		return v.Metrics
+	}).(GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutput)
+}
+
+// For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+func (o GetAutoScalingConfigurationPolicyDetailScaleUpConfigOutput) OcpuStepSize() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetailScaleUpConfig) int { return v.OcpuStepSize }).(pulumi.IntOutput)
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationPolicyDetailScaleUpConfig)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutput) ToGetAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutput() GetAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutput) ToGetAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationPolicyDetailScaleUpConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutoScalingConfigurationPolicyDetailScaleUpConfig {
+		return vs[0].([]GetAutoScalingConfigurationPolicyDetailScaleUpConfig)[vs[1].(int)]
+	}).(GetAutoScalingConfigurationPolicyDetailScaleUpConfigOutput)
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetric struct {
+	// Allowed value is CPU_UTILIZATION.
+	MetricType string `pulumi:"metricType"`
+	// An autoscale action is triggered when a performance metric exceeds a threshold.
+	Thresholds []GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold `pulumi:"thresholds"`
+}
+
+// GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricInput is an input type that accepts GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArgs and GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricInput` via:
+//
+//          GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArgs{...}
+type GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput() GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput
+	ToGetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutputWithContext(context.Context) GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArgs struct {
+	// Allowed value is CPU_UTILIZATION.
+	MetricType pulumi.StringInput `pulumi:"metricType"`
+	// An autoscale action is triggered when a performance metric exceeds a threshold.
+	Thresholds GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayInput `pulumi:"thresholds"`
+}
+
+func (GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetric)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArgs) ToGetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput() GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput {
+	return i.ToGetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArgs) ToGetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput)
+}
+
+// GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayInput is an input type that accepts GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArray and GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayInput` via:
+//
+//          GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArray{ GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArgs{...} }
+type GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutput() GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutput
+	ToGetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutputWithContext(context.Context) GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutput
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArray []GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricInput
+
+func (GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetric)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArray) ToGetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutput() GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutput {
+	return i.ToGetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArray) ToGetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutput)
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetric)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput) ToGetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput() GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput) ToGetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput {
+	return o
+}
+
+// Allowed value is CPU_UTILIZATION.
+func (o GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput) MetricType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetric) string { return v.MetricType }).(pulumi.StringOutput)
+}
+
+// An autoscale action is triggered when a performance metric exceeds a threshold.
+func (o GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput) Thresholds() GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetric) []GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold {
+		return v.Thresholds
+	}).(GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutput)
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetric)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutput) ToGetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutput() GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutput) ToGetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetric {
+		return vs[0].([]GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetric)[vs[1].(int)]
+	}).(GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput)
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold struct {
+	// This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
+	DurationInMinutes int `pulumi:"durationInMinutes"`
+	// The comparison operator to use. Options are greater than (GT) or less than (LT).
+	Operator string `pulumi:"operator"`
+	// Integer non-negative value. 0 < value < 100
+	Value int `pulumi:"value"`
+}
+
+// GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdInput is an input type that accepts GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArgs and GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdInput` via:
+//
+//          GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArgs{...}
+type GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput() GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput
+	ToGetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutputWithContext(context.Context) GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArgs struct {
+	// This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
+	DurationInMinutes pulumi.IntInput `pulumi:"durationInMinutes"`
+	// The comparison operator to use. Options are greater than (GT) or less than (LT).
+	Operator pulumi.StringInput `pulumi:"operator"`
+	// Integer non-negative value. 0 < value < 100
+	Value pulumi.IntInput `pulumi:"value"`
+}
+
+func (GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArgs) ToGetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput() GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput {
+	return i.ToGetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArgs) ToGetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput)
+}
+
+// GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayInput is an input type that accepts GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArray and GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayInput` via:
+//
+//          GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArray{ GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArgs{...} }
+type GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutput() GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutput
+	ToGetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutputWithContext(context.Context) GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutput
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArray []GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdInput
+
+func (GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArray) ToGetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutput() GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutput {
+	return i.ToGetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArray) ToGetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutput)
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput) ToGetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput() GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput) ToGetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput {
+	return o
+}
+
+// This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
+func (o GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput) DurationInMinutes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold) int {
+		return v.DurationInMinutes
+	}).(pulumi.IntOutput)
+}
+
+// The comparison operator to use. Options are greater than (GT) or less than (LT).
+func (o GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput) Operator() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold) string { return v.Operator }).(pulumi.StringOutput)
+}
+
+// Integer non-negative value. 0 < value < 100
+func (o GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput) Value() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold) int { return v.Value }).(pulumi.IntOutput)
+}
+
+type GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutput) ToGetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutput() GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutput) ToGetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold {
+		return vs[0].([]GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold)[vs[1].(int)]
+	}).(GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput)
+}
+
+type GetAutoScalingConfigurationPolicyDetailScheduleDetail struct {
+	// The type of schedule.
+	ScheduleType                    string                                                                                `pulumi:"scheduleType"`
+	TimeAndHorizontalScalingConfigs []GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig `pulumi:"timeAndHorizontalScalingConfigs"`
+	TimeAndVerticalScalingConfigs   []GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig   `pulumi:"timeAndVerticalScalingConfigs"`
+}
+
+// GetAutoScalingConfigurationPolicyDetailScheduleDetailInput is an input type that accepts GetAutoScalingConfigurationPolicyDetailScheduleDetailArgs and GetAutoScalingConfigurationPolicyDetailScheduleDetailOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationPolicyDetailScheduleDetailInput` via:
+//
+//          GetAutoScalingConfigurationPolicyDetailScheduleDetailArgs{...}
+type GetAutoScalingConfigurationPolicyDetailScheduleDetailInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationPolicyDetailScheduleDetailOutput() GetAutoScalingConfigurationPolicyDetailScheduleDetailOutput
+	ToGetAutoScalingConfigurationPolicyDetailScheduleDetailOutputWithContext(context.Context) GetAutoScalingConfigurationPolicyDetailScheduleDetailOutput
+}
+
+type GetAutoScalingConfigurationPolicyDetailScheduleDetailArgs struct {
+	// The type of schedule.
+	ScheduleType                    pulumi.StringInput                                                                            `pulumi:"scheduleType"`
+	TimeAndHorizontalScalingConfigs GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayInput `pulumi:"timeAndHorizontalScalingConfigs"`
+	TimeAndVerticalScalingConfigs   GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayInput   `pulumi:"timeAndVerticalScalingConfigs"`
+}
+
+func (GetAutoScalingConfigurationPolicyDetailScheduleDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScheduleDetail)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScheduleDetailArgs) ToGetAutoScalingConfigurationPolicyDetailScheduleDetailOutput() GetAutoScalingConfigurationPolicyDetailScheduleDetailOutput {
+	return i.ToGetAutoScalingConfigurationPolicyDetailScheduleDetailOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScheduleDetailArgs) ToGetAutoScalingConfigurationPolicyDetailScheduleDetailOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScheduleDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScheduleDetailOutput)
+}
+
+// GetAutoScalingConfigurationPolicyDetailScheduleDetailArrayInput is an input type that accepts GetAutoScalingConfigurationPolicyDetailScheduleDetailArray and GetAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationPolicyDetailScheduleDetailArrayInput` via:
+//
+//          GetAutoScalingConfigurationPolicyDetailScheduleDetailArray{ GetAutoScalingConfigurationPolicyDetailScheduleDetailArgs{...} }
+type GetAutoScalingConfigurationPolicyDetailScheduleDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutput() GetAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutput
+	ToGetAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutputWithContext(context.Context) GetAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutput
+}
+
+type GetAutoScalingConfigurationPolicyDetailScheduleDetailArray []GetAutoScalingConfigurationPolicyDetailScheduleDetailInput
+
+func (GetAutoScalingConfigurationPolicyDetailScheduleDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationPolicyDetailScheduleDetail)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScheduleDetailArray) ToGetAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutput() GetAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutput {
+	return i.ToGetAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScheduleDetailArray) ToGetAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutput)
+}
+
+type GetAutoScalingConfigurationPolicyDetailScheduleDetailOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationPolicyDetailScheduleDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScheduleDetail)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScheduleDetailOutput) ToGetAutoScalingConfigurationPolicyDetailScheduleDetailOutput() GetAutoScalingConfigurationPolicyDetailScheduleDetailOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScheduleDetailOutput) ToGetAutoScalingConfigurationPolicyDetailScheduleDetailOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScheduleDetailOutput {
+	return o
+}
+
+// The type of schedule.
+func (o GetAutoScalingConfigurationPolicyDetailScheduleDetailOutput) ScheduleType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetailScheduleDetail) string { return v.ScheduleType }).(pulumi.StringOutput)
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScheduleDetailOutput) TimeAndHorizontalScalingConfigs() GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetailScheduleDetail) []GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig {
+		return v.TimeAndHorizontalScalingConfigs
+	}).(GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutput)
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScheduleDetailOutput) TimeAndVerticalScalingConfigs() GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetailScheduleDetail) []GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig {
+		return v.TimeAndVerticalScalingConfigs
+	}).(GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutput)
+}
+
+type GetAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationPolicyDetailScheduleDetail)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutput) ToGetAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutput() GetAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutput) ToGetAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationPolicyDetailScheduleDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutoScalingConfigurationPolicyDetailScheduleDetail {
+		return vs[0].([]GetAutoScalingConfigurationPolicyDetailScheduleDetail)[vs[1].(int)]
+	}).(GetAutoScalingConfigurationPolicyDetailScheduleDetailOutput)
+}
+
+type GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig struct {
+	// This value is the desired number of nodes in the cluster.
+	TargetNodeCount int `pulumi:"targetNodeCount"`
+	// Day/time recurrence (specified following RFC 5545) at which to trigger autoscaling action. Currently only WEEKLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR and BYMINUTE fields. Other fields are not supported.
+	TimeRecurrence string `pulumi:"timeRecurrence"`
+}
+
+// GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigInput is an input type that accepts GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArgs and GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigInput` via:
+//
+//          GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArgs{...}
+type GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutput() GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutput
+	ToGetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutputWithContext(context.Context) GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutput
+}
+
+type GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArgs struct {
+	// This value is the desired number of nodes in the cluster.
+	TargetNodeCount pulumi.IntInput `pulumi:"targetNodeCount"`
+	// Day/time recurrence (specified following RFC 5545) at which to trigger autoscaling action. Currently only WEEKLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR and BYMINUTE fields. Other fields are not supported.
+	TimeRecurrence pulumi.StringInput `pulumi:"timeRecurrence"`
+}
+
+func (GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArgs) ToGetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutput() GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutput {
+	return i.ToGetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArgs) ToGetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutput)
+}
+
+// GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayInput is an input type that accepts GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArray and GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayInput` via:
+//
+//          GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArray{ GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArgs{...} }
+type GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutput() GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutput
+	ToGetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutputWithContext(context.Context) GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutput
+}
+
+type GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArray []GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigInput
+
+func (GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArray) ToGetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutput() GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutput {
+	return i.ToGetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArray) ToGetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutput)
+}
+
+type GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutput) ToGetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutput() GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutput) ToGetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutput {
+	return o
+}
+
+// This value is the desired number of nodes in the cluster.
+func (o GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutput) TargetNodeCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig) int {
+		return v.TargetNodeCount
+	}).(pulumi.IntOutput)
+}
+
+// Day/time recurrence (specified following RFC 5545) at which to trigger autoscaling action. Currently only WEEKLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR and BYMINUTE fields. Other fields are not supported.
+func (o GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutput) TimeRecurrence() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig) string {
+		return v.TimeRecurrence
+	}).(pulumi.StringOutput)
+}
+
+type GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutput) ToGetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutput() GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutput) ToGetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig {
+		return vs[0].([]GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig)[vs[1].(int)]
+	}).(GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutput)
+}
+
+type GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig struct {
+	// For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired memory in GBs on each node. This value is not used for nodes with fixed compute shapes.
+	TargetMemoryPerNode int `pulumi:"targetMemoryPerNode"`
+	// For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired OCPUs count on each node. This value is not used for nodes with fixed compute shapes.
+	TargetOcpusPerNode int `pulumi:"targetOcpusPerNode"`
+	// For nodes with [fixed compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired shape of each node. This value is not used for nodes with flexible compute shapes.
+	TargetShape string `pulumi:"targetShape"`
+	// Day/time recurrence (specified following RFC 5545) at which to trigger autoscaling action. Currently only WEEKLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR and BYMINUTE fields. Other fields are not supported.
+	TimeRecurrence string `pulumi:"timeRecurrence"`
+}
+
+// GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigInput is an input type that accepts GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArgs and GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigInput` via:
+//
+//          GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArgs{...}
+type GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput() GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput
+	ToGetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutputWithContext(context.Context) GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput
+}
+
+type GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArgs struct {
+	// For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired memory in GBs on each node. This value is not used for nodes with fixed compute shapes.
+	TargetMemoryPerNode pulumi.IntInput `pulumi:"targetMemoryPerNode"`
+	// For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired OCPUs count on each node. This value is not used for nodes with fixed compute shapes.
+	TargetOcpusPerNode pulumi.IntInput `pulumi:"targetOcpusPerNode"`
+	// For nodes with [fixed compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired shape of each node. This value is not used for nodes with flexible compute shapes.
+	TargetShape pulumi.StringInput `pulumi:"targetShape"`
+	// Day/time recurrence (specified following RFC 5545) at which to trigger autoscaling action. Currently only WEEKLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR and BYMINUTE fields. Other fields are not supported.
+	TimeRecurrence pulumi.StringInput `pulumi:"timeRecurrence"`
+}
+
+func (GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArgs) ToGetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput() GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput {
+	return i.ToGetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArgs) ToGetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput)
+}
+
+// GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayInput is an input type that accepts GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArray and GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayInput` via:
+//
+//          GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArray{ GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArgs{...} }
+type GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutput() GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutput
+	ToGetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutputWithContext(context.Context) GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutput
+}
+
+type GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArray []GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigInput
+
+func (GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArray) ToGetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutput() GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutput {
+	return i.ToGetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArray) ToGetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutput)
+}
+
+type GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput) ToGetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput() GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput) ToGetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput {
+	return o
+}
+
+// For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired memory in GBs on each node. This value is not used for nodes with fixed compute shapes.
+func (o GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput) TargetMemoryPerNode() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig) int {
+		return v.TargetMemoryPerNode
+	}).(pulumi.IntOutput)
+}
+
+// For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired OCPUs count on each node. This value is not used for nodes with fixed compute shapes.
+func (o GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput) TargetOcpusPerNode() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig) int {
+		return v.TargetOcpusPerNode
+	}).(pulumi.IntOutput)
+}
+
+// For nodes with [fixed compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired shape of each node. This value is not used for nodes with flexible compute shapes.
+func (o GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput) TargetShape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig) string {
+		return v.TargetShape
+	}).(pulumi.StringOutput)
+}
+
+// Day/time recurrence (specified following RFC 5545) at which to trigger autoscaling action. Currently only WEEKLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR and BYMINUTE fields. Other fields are not supported.
+func (o GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput) TimeRecurrence() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig) string {
+		return v.TimeRecurrence
+	}).(pulumi.StringOutput)
+}
+
+type GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutput) ToGetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutput() GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutput) ToGetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig {
+		return vs[0].([]GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig)[vs[1].(int)]
+	}).(GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput)
 }
 
 type GetAutoScalingConfigurationPolicyRule struct {
@@ -2124,7 +7765,7 @@ func (o GetAutoScalingConfigurationPolicyRuleArrayOutput) Index(i pulumi.IntInpu
 type GetAutoScalingConfigurationPolicyRuleMetric struct {
 	// Allowed value is CPU_UTILIZATION.
 	MetricType string `pulumi:"metricType"`
-	// An autoscale action is triggered when a performance metric meets or exceeds a threshold.
+	// An autoscale action is triggered when a performance metric exceeds a threshold.
 	Thresholds []GetAutoScalingConfigurationPolicyRuleMetricThreshold `pulumi:"thresholds"`
 }
 
@@ -2142,7 +7783,7 @@ type GetAutoScalingConfigurationPolicyRuleMetricInput interface {
 type GetAutoScalingConfigurationPolicyRuleMetricArgs struct {
 	// Allowed value is CPU_UTILIZATION.
 	MetricType pulumi.StringInput `pulumi:"metricType"`
-	// An autoscale action is triggered when a performance metric meets or exceeds a threshold.
+	// An autoscale action is triggered when a performance metric exceeds a threshold.
 	Thresholds GetAutoScalingConfigurationPolicyRuleMetricThresholdArrayInput `pulumi:"thresholds"`
 }
 
@@ -2202,7 +7843,7 @@ func (o GetAutoScalingConfigurationPolicyRuleMetricOutput) MetricType() pulumi.S
 	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyRuleMetric) string { return v.MetricType }).(pulumi.StringOutput)
 }
 
-// An autoscale action is triggered when a performance metric meets or exceeds a threshold.
+// An autoscale action is triggered when a performance metric exceeds a threshold.
 func (o GetAutoScalingConfigurationPolicyRuleMetricOutput) Thresholds() GetAutoScalingConfigurationPolicyRuleMetricThresholdArrayOutput {
 	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyRuleMetric) []GetAutoScalingConfigurationPolicyRuleMetricThreshold {
 		return v.Thresholds
@@ -2230,7 +7871,7 @@ func (o GetAutoScalingConfigurationPolicyRuleMetricArrayOutput) Index(i pulumi.I
 }
 
 type GetAutoScalingConfigurationPolicyRuleMetricThreshold struct {
-	// This value is the minimum period of time the metric value meets or exceeds the threshold value before the action is triggered. The value is in minutes.
+	// This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
 	DurationInMinutes int `pulumi:"durationInMinutes"`
 	// The comparison operator to use. Options are greater than (GT) or less than (LT).
 	Operator string `pulumi:"operator"`
@@ -2250,7 +7891,7 @@ type GetAutoScalingConfigurationPolicyRuleMetricThresholdInput interface {
 }
 
 type GetAutoScalingConfigurationPolicyRuleMetricThresholdArgs struct {
-	// This value is the minimum period of time the metric value meets or exceeds the threshold value before the action is triggered. The value is in minutes.
+	// This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
 	DurationInMinutes pulumi.IntInput `pulumi:"durationInMinutes"`
 	// The comparison operator to use. Options are greater than (GT) or less than (LT).
 	Operator pulumi.StringInput `pulumi:"operator"`
@@ -2309,7 +7950,7 @@ func (o GetAutoScalingConfigurationPolicyRuleMetricThresholdOutput) ToGetAutoSca
 	return o
 }
 
-// This value is the minimum period of time the metric value meets or exceeds the threshold value before the action is triggered. The value is in minutes.
+// This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
 func (o GetAutoScalingConfigurationPolicyRuleMetricThresholdOutput) DurationInMinutes() pulumi.IntOutput {
 	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyRuleMetricThreshold) int { return v.DurationInMinutes }).(pulumi.IntOutput)
 }
@@ -2345,16 +7986,17 @@ func (o GetAutoScalingConfigurationPolicyRuleMetricThresholdArrayOutput) Index(i
 }
 
 type GetAutoScalingConfigurationsAutoScalingConfiguration struct {
-	BdsInstanceId        string                                                       `pulumi:"bdsInstanceId"`
-	ClusterAdminPassword string                                                       `pulumi:"clusterAdminPassword"`
-	DisplayName          string                                                       `pulumi:"displayName"`
-	Id                   string                                                       `pulumi:"id"`
-	IsEnabled            bool                                                         `pulumi:"isEnabled"`
-	NodeType             string                                                       `pulumi:"nodeType"`
-	Policies             []GetAutoScalingConfigurationsAutoScalingConfigurationPolicy `pulumi:"policies"`
-	State                string                                                       `pulumi:"state"`
-	TimeCreated          string                                                       `pulumi:"timeCreated"`
-	TimeUpdated          string                                                       `pulumi:"timeUpdated"`
+	BdsInstanceId        string                                                             `pulumi:"bdsInstanceId"`
+	ClusterAdminPassword string                                                             `pulumi:"clusterAdminPassword"`
+	DisplayName          string                                                             `pulumi:"displayName"`
+	Id                   string                                                             `pulumi:"id"`
+	IsEnabled            bool                                                               `pulumi:"isEnabled"`
+	NodeType             string                                                             `pulumi:"nodeType"`
+	Policies             []GetAutoScalingConfigurationsAutoScalingConfigurationPolicy       `pulumi:"policies"`
+	PolicyDetails        []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail `pulumi:"policyDetails"`
+	State                string                                                             `pulumi:"state"`
+	TimeCreated          string                                                             `pulumi:"timeCreated"`
+	TimeUpdated          string                                                             `pulumi:"timeUpdated"`
 }
 
 // GetAutoScalingConfigurationsAutoScalingConfigurationInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationArgs and GetAutoScalingConfigurationsAutoScalingConfigurationOutput values.
@@ -2369,16 +8011,17 @@ type GetAutoScalingConfigurationsAutoScalingConfigurationInput interface {
 }
 
 type GetAutoScalingConfigurationsAutoScalingConfigurationArgs struct {
-	BdsInstanceId        pulumi.StringInput                                                   `pulumi:"bdsInstanceId"`
-	ClusterAdminPassword pulumi.StringInput                                                   `pulumi:"clusterAdminPassword"`
-	DisplayName          pulumi.StringInput                                                   `pulumi:"displayName"`
-	Id                   pulumi.StringInput                                                   `pulumi:"id"`
-	IsEnabled            pulumi.BoolInput                                                     `pulumi:"isEnabled"`
-	NodeType             pulumi.StringInput                                                   `pulumi:"nodeType"`
-	Policies             GetAutoScalingConfigurationsAutoScalingConfigurationPolicyArrayInput `pulumi:"policies"`
-	State                pulumi.StringInput                                                   `pulumi:"state"`
-	TimeCreated          pulumi.StringInput                                                   `pulumi:"timeCreated"`
-	TimeUpdated          pulumi.StringInput                                                   `pulumi:"timeUpdated"`
+	BdsInstanceId        pulumi.StringInput                                                         `pulumi:"bdsInstanceId"`
+	ClusterAdminPassword pulumi.StringInput                                                         `pulumi:"clusterAdminPassword"`
+	DisplayName          pulumi.StringInput                                                         `pulumi:"displayName"`
+	Id                   pulumi.StringInput                                                         `pulumi:"id"`
+	IsEnabled            pulumi.BoolInput                                                           `pulumi:"isEnabled"`
+	NodeType             pulumi.StringInput                                                         `pulumi:"nodeType"`
+	Policies             GetAutoScalingConfigurationsAutoScalingConfigurationPolicyArrayInput       `pulumi:"policies"`
+	PolicyDetails        GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArrayInput `pulumi:"policyDetails"`
+	State                pulumi.StringInput                                                         `pulumi:"state"`
+	TimeCreated          pulumi.StringInput                                                         `pulumi:"timeCreated"`
+	TimeUpdated          pulumi.StringInput                                                         `pulumi:"timeUpdated"`
 }
 
 func (GetAutoScalingConfigurationsAutoScalingConfigurationArgs) ElementType() reflect.Type {
@@ -2460,6 +8103,12 @@ func (o GetAutoScalingConfigurationsAutoScalingConfigurationOutput) Policies() G
 	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfiguration) []GetAutoScalingConfigurationsAutoScalingConfigurationPolicy {
 		return v.Policies
 	}).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyArrayOutput)
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationOutput) PolicyDetails() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArrayOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfiguration) []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail {
+		return v.PolicyDetails
+	}).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArrayOutput)
 }
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationOutput) State() pulumi.StringOutput {
@@ -2594,6 +8243,1838 @@ func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyArrayOutput) I
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutoScalingConfigurationsAutoScalingConfigurationPolicy {
 		return vs[0].([]GetAutoScalingConfigurationsAutoScalingConfigurationPolicy)[vs[1].(int)]
 	}).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyOutput)
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail struct {
+	ActionType       string                                                                            `pulumi:"actionType"`
+	PolicyType       string                                                                            `pulumi:"policyType"`
+	ScaleDownConfigs []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfig `pulumi:"scaleDownConfigs"`
+	ScaleInConfigs   []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfig   `pulumi:"scaleInConfigs"`
+	ScaleOutConfigs  []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfig  `pulumi:"scaleOutConfigs"`
+	ScaleUpConfigs   []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfig   `pulumi:"scaleUpConfigs"`
+	ScheduleDetails  []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetail  `pulumi:"scheduleDetails"`
+	Timezone         string                                                                            `pulumi:"timezone"`
+	TriggerType      string                                                                            `pulumi:"triggerType"`
+}
+
+// GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArgs and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailInput` via:
+//
+//          GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArgs{...}
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailOutput
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailOutputWithContext(context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailOutput
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArgs struct {
+	ActionType       pulumi.StringInput                                                                        `pulumi:"actionType"`
+	PolicyType       pulumi.StringInput                                                                        `pulumi:"policyType"`
+	ScaleDownConfigs GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigArrayInput `pulumi:"scaleDownConfigs"`
+	ScaleInConfigs   GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigArrayInput   `pulumi:"scaleInConfigs"`
+	ScaleOutConfigs  GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigArrayInput  `pulumi:"scaleOutConfigs"`
+	ScaleUpConfigs   GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigArrayInput   `pulumi:"scaleUpConfigs"`
+	ScheduleDetails  GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailArrayInput  `pulumi:"scheduleDetails"`
+	Timezone         pulumi.StringInput                                                                        `pulumi:"timezone"`
+	TriggerType      pulumi.StringInput                                                                        `pulumi:"triggerType"`
+}
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArgs) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailOutput {
+	return i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArgs) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailOutput)
+}
+
+// GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArrayInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArray and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArrayOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArrayInput` via:
+//
+//          GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArray{ GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArgs{...} }
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArrayOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArrayOutput
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArrayOutputWithContext(context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArrayOutput
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArray []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailInput
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArray) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArrayOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArrayOutput {
+	return i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArray) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArrayOutput)
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailOutput) ActionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail) string { return v.ActionType }).(pulumi.StringOutput)
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailOutput) PolicyType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail) string { return v.PolicyType }).(pulumi.StringOutput)
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailOutput) ScaleDownConfigs() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail) []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfig {
+		return v.ScaleDownConfigs
+	}).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutput)
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailOutput) ScaleInConfigs() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail) []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfig {
+		return v.ScaleInConfigs
+	}).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutput)
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailOutput) ScaleOutConfigs() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail) []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfig {
+		return v.ScaleOutConfigs
+	}).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutput)
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailOutput) ScaleUpConfigs() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail) []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfig {
+		return v.ScaleUpConfigs
+	}).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutput)
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailOutput) ScheduleDetails() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail) []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetail {
+		return v.ScheduleDetails
+	}).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutput)
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailOutput) Timezone() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail) string { return v.Timezone }).(pulumi.StringOutput)
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailOutput) TriggerType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail) string { return v.TriggerType }).(pulumi.StringOutput)
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArrayOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArrayOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArrayOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail {
+		return vs[0].([]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail)[vs[1].(int)]
+	}).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailOutput)
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfig struct {
+	MemoryStepSize   int                                                                                     `pulumi:"memoryStepSize"`
+	Metrics          []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetric `pulumi:"metrics"`
+	MinMemoryPerNode int                                                                                     `pulumi:"minMemoryPerNode"`
+	MinOcpusPerNode  int                                                                                     `pulumi:"minOcpusPerNode"`
+	OcpuStepSize     int                                                                                     `pulumi:"ocpuStepSize"`
+}
+
+// GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigArgs and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigInput` via:
+//
+//          GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigArgs{...}
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigOutput
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigOutputWithContext(context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigOutput
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigArgs struct {
+	MemoryStepSize   pulumi.IntInput                                                                                 `pulumi:"memoryStepSize"`
+	Metrics          GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayInput `pulumi:"metrics"`
+	MinMemoryPerNode pulumi.IntInput                                                                                 `pulumi:"minMemoryPerNode"`
+	MinOcpusPerNode  pulumi.IntInput                                                                                 `pulumi:"minOcpusPerNode"`
+	OcpuStepSize     pulumi.IntInput                                                                                 `pulumi:"ocpuStepSize"`
+}
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfig)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigArgs) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigOutput {
+	return i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigArgs) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigOutput)
+}
+
+// GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigArrayInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigArray and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigArrayInput` via:
+//
+//          GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigArray{ GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigArgs{...} }
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutput
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutputWithContext(context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutput
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigArray []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigInput
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfig)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigArray) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutput {
+	return i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigArray) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutput)
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfig)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigOutput) MemoryStepSize() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfig) int {
+		return v.MemoryStepSize
+	}).(pulumi.IntOutput)
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigOutput) Metrics() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfig) []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetric {
+		return v.Metrics
+	}).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutput)
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigOutput) MinMemoryPerNode() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfig) int {
+		return v.MinMemoryPerNode
+	}).(pulumi.IntOutput)
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigOutput) MinOcpusPerNode() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfig) int {
+		return v.MinOcpusPerNode
+	}).(pulumi.IntOutput)
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigOutput) OcpuStepSize() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfig) int {
+		return v.OcpuStepSize
+	}).(pulumi.IntOutput)
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfig)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfig {
+		return vs[0].([]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfig)[vs[1].(int)]
+	}).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigOutput)
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetric struct {
+	MetricType string                                                                                           `pulumi:"metricType"`
+	Thresholds []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThreshold `pulumi:"thresholds"`
+}
+
+// GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArgs and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricInput` via:
+//
+//          GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArgs{...}
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutputWithContext(context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArgs struct {
+	MetricType pulumi.StringInput                                                                                       `pulumi:"metricType"`
+	Thresholds GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayInput `pulumi:"thresholds"`
+}
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetric)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArgs) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput {
+	return i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArgs) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput)
+}
+
+// GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArray and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayInput` via:
+//
+//          GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArray{ GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArgs{...} }
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutput
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutputWithContext(context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutput
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArray []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricInput
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetric)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArray) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutput {
+	return i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArray) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutput)
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetric)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput) MetricType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetric) string {
+		return v.MetricType
+	}).(pulumi.StringOutput)
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput) Thresholds() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetric) []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThreshold {
+		return v.Thresholds
+	}).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutput)
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetric)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetric {
+		return vs[0].([]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetric)[vs[1].(int)]
+	}).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput)
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThreshold struct {
+	DurationInMinutes int    `pulumi:"durationInMinutes"`
+	Operator          string `pulumi:"operator"`
+	Value             int    `pulumi:"value"`
+}
+
+// GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArgs and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdInput` via:
+//
+//          GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArgs{...}
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutputWithContext(context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArgs struct {
+	DurationInMinutes pulumi.IntInput    `pulumi:"durationInMinutes"`
+	Operator          pulumi.StringInput `pulumi:"operator"`
+	Value             pulumi.IntInput    `pulumi:"value"`
+}
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThreshold)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArgs) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput {
+	return i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArgs) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput)
+}
+
+// GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArray and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayInput` via:
+//
+//          GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArray{ GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArgs{...} }
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutput
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutputWithContext(context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutput
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArray []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdInput
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThreshold)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArray) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutput {
+	return i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArray) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutput)
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThreshold)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput) DurationInMinutes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThreshold) int {
+		return v.DurationInMinutes
+	}).(pulumi.IntOutput)
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput) Operator() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThreshold) string {
+		return v.Operator
+	}).(pulumi.StringOutput)
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput) Value() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThreshold) int {
+		return v.Value
+	}).(pulumi.IntOutput)
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThreshold)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThreshold {
+		return vs[0].([]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThreshold)[vs[1].(int)]
+	}).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput)
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfig struct {
+	Metrics      []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetric `pulumi:"metrics"`
+	MinNodeCount int                                                                                   `pulumi:"minNodeCount"`
+	StepSize     int                                                                                   `pulumi:"stepSize"`
+}
+
+// GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigArgs and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigInput` via:
+//
+//          GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigArgs{...}
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigOutput
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigOutputWithContext(context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigOutput
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigArgs struct {
+	Metrics      GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayInput `pulumi:"metrics"`
+	MinNodeCount pulumi.IntInput                                                                               `pulumi:"minNodeCount"`
+	StepSize     pulumi.IntInput                                                                               `pulumi:"stepSize"`
+}
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfig)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigArgs) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigOutput {
+	return i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigArgs) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigOutput)
+}
+
+// GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigArrayInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigArray and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigArrayInput` via:
+//
+//          GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigArray{ GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigArgs{...} }
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutput
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutputWithContext(context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutput
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigArray []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigInput
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfig)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigArray) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutput {
+	return i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigArray) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutput)
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfig)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigOutput) Metrics() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfig) []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetric {
+		return v.Metrics
+	}).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutput)
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigOutput) MinNodeCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfig) int {
+		return v.MinNodeCount
+	}).(pulumi.IntOutput)
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigOutput) StepSize() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfig) int {
+		return v.StepSize
+	}).(pulumi.IntOutput)
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfig)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfig {
+		return vs[0].([]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfig)[vs[1].(int)]
+	}).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigOutput)
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetric struct {
+	MetricType string                                                                                         `pulumi:"metricType"`
+	Thresholds []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold `pulumi:"thresholds"`
+}
+
+// GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArgs and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricInput` via:
+//
+//          GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArgs{...}
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutputWithContext(context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArgs struct {
+	MetricType pulumi.StringInput                                                                                     `pulumi:"metricType"`
+	Thresholds GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayInput `pulumi:"thresholds"`
+}
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetric)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArgs) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput {
+	return i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArgs) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput)
+}
+
+// GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArray and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayInput` via:
+//
+//          GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArray{ GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArgs{...} }
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutput
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutputWithContext(context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutput
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArray []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricInput
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetric)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArray) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutput {
+	return i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArray) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutput)
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetric)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput) MetricType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetric) string {
+		return v.MetricType
+	}).(pulumi.StringOutput)
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput) Thresholds() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetric) []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold {
+		return v.Thresholds
+	}).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutput)
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetric)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetric {
+		return vs[0].([]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetric)[vs[1].(int)]
+	}).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput)
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold struct {
+	DurationInMinutes int    `pulumi:"durationInMinutes"`
+	Operator          string `pulumi:"operator"`
+	Value             int    `pulumi:"value"`
+}
+
+// GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArgs and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdInput` via:
+//
+//          GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArgs{...}
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutputWithContext(context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArgs struct {
+	DurationInMinutes pulumi.IntInput    `pulumi:"durationInMinutes"`
+	Operator          pulumi.StringInput `pulumi:"operator"`
+	Value             pulumi.IntInput    `pulumi:"value"`
+}
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArgs) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput {
+	return i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArgs) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput)
+}
+
+// GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArray and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayInput` via:
+//
+//          GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArray{ GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArgs{...} }
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutput
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutputWithContext(context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutput
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArray []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdInput
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArray) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutput {
+	return i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArray) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutput)
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput) DurationInMinutes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold) int {
+		return v.DurationInMinutes
+	}).(pulumi.IntOutput)
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput) Operator() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold) string {
+		return v.Operator
+	}).(pulumi.StringOutput)
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput) Value() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold) int {
+		return v.Value
+	}).(pulumi.IntOutput)
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold {
+		return vs[0].([]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold)[vs[1].(int)]
+	}).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput)
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfig struct {
+	MaxNodeCount int                                                                                    `pulumi:"maxNodeCount"`
+	Metrics      []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetric `pulumi:"metrics"`
+	StepSize     int                                                                                    `pulumi:"stepSize"`
+}
+
+// GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigArgs and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigInput` via:
+//
+//          GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigArgs{...}
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigOutput
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigOutputWithContext(context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigOutput
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigArgs struct {
+	MaxNodeCount pulumi.IntInput                                                                                `pulumi:"maxNodeCount"`
+	Metrics      GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayInput `pulumi:"metrics"`
+	StepSize     pulumi.IntInput                                                                                `pulumi:"stepSize"`
+}
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfig)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigArgs) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigOutput {
+	return i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigArgs) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigOutput)
+}
+
+// GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigArrayInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigArray and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigArrayInput` via:
+//
+//          GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigArray{ GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigArgs{...} }
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutput
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutputWithContext(context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutput
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigArray []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigInput
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfig)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigArray) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutput {
+	return i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigArray) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutput)
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfig)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigOutput) MaxNodeCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfig) int {
+		return v.MaxNodeCount
+	}).(pulumi.IntOutput)
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigOutput) Metrics() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfig) []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetric {
+		return v.Metrics
+	}).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutput)
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigOutput) StepSize() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfig) int {
+		return v.StepSize
+	}).(pulumi.IntOutput)
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfig)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfig {
+		return vs[0].([]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfig)[vs[1].(int)]
+	}).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigOutput)
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetric struct {
+	MetricType string                                                                                          `pulumi:"metricType"`
+	Thresholds []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThreshold `pulumi:"thresholds"`
+}
+
+// GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArgs and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricInput` via:
+//
+//          GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArgs{...}
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutputWithContext(context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArgs struct {
+	MetricType pulumi.StringInput                                                                                      `pulumi:"metricType"`
+	Thresholds GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayInput `pulumi:"thresholds"`
+}
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetric)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArgs) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput {
+	return i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArgs) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput)
+}
+
+// GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArray and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayInput` via:
+//
+//          GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArray{ GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArgs{...} }
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutput
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutputWithContext(context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutput
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArray []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricInput
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetric)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArray) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutput {
+	return i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArray) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutput)
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetric)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput) MetricType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetric) string {
+		return v.MetricType
+	}).(pulumi.StringOutput)
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput) Thresholds() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetric) []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThreshold {
+		return v.Thresholds
+	}).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutput)
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetric)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetric {
+		return vs[0].([]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetric)[vs[1].(int)]
+	}).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput)
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThreshold struct {
+	DurationInMinutes int    `pulumi:"durationInMinutes"`
+	Operator          string `pulumi:"operator"`
+	Value             int    `pulumi:"value"`
+}
+
+// GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArgs and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdInput` via:
+//
+//          GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArgs{...}
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutputWithContext(context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArgs struct {
+	DurationInMinutes pulumi.IntInput    `pulumi:"durationInMinutes"`
+	Operator          pulumi.StringInput `pulumi:"operator"`
+	Value             pulumi.IntInput    `pulumi:"value"`
+}
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThreshold)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArgs) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput {
+	return i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArgs) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput)
+}
+
+// GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArray and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayInput` via:
+//
+//          GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArray{ GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArgs{...} }
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutput
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutputWithContext(context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutput
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArray []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdInput
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThreshold)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArray) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutput {
+	return i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArray) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutput)
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThreshold)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput) DurationInMinutes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThreshold) int {
+		return v.DurationInMinutes
+	}).(pulumi.IntOutput)
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput) Operator() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThreshold) string {
+		return v.Operator
+	}).(pulumi.StringOutput)
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput) Value() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThreshold) int {
+		return v.Value
+	}).(pulumi.IntOutput)
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThreshold)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThreshold {
+		return vs[0].([]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThreshold)[vs[1].(int)]
+	}).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput)
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfig struct {
+	MaxMemoryPerNode int                                                                                   `pulumi:"maxMemoryPerNode"`
+	MaxOcpusPerNode  int                                                                                   `pulumi:"maxOcpusPerNode"`
+	MemoryStepSize   int                                                                                   `pulumi:"memoryStepSize"`
+	Metrics          []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetric `pulumi:"metrics"`
+	OcpuStepSize     int                                                                                   `pulumi:"ocpuStepSize"`
+}
+
+// GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigArgs and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigInput` via:
+//
+//          GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigArgs{...}
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigOutput
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigOutputWithContext(context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigOutput
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigArgs struct {
+	MaxMemoryPerNode pulumi.IntInput                                                                               `pulumi:"maxMemoryPerNode"`
+	MaxOcpusPerNode  pulumi.IntInput                                                                               `pulumi:"maxOcpusPerNode"`
+	MemoryStepSize   pulumi.IntInput                                                                               `pulumi:"memoryStepSize"`
+	Metrics          GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayInput `pulumi:"metrics"`
+	OcpuStepSize     pulumi.IntInput                                                                               `pulumi:"ocpuStepSize"`
+}
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfig)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigArgs) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigOutput {
+	return i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigArgs) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigOutput)
+}
+
+// GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigArrayInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigArray and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigArrayInput` via:
+//
+//          GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigArray{ GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigArgs{...} }
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutput
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutputWithContext(context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutput
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigArray []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigInput
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfig)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigArray) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutput {
+	return i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigArray) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutput)
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfig)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigOutput) MaxMemoryPerNode() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfig) int {
+		return v.MaxMemoryPerNode
+	}).(pulumi.IntOutput)
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigOutput) MaxOcpusPerNode() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfig) int {
+		return v.MaxOcpusPerNode
+	}).(pulumi.IntOutput)
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigOutput) MemoryStepSize() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfig) int {
+		return v.MemoryStepSize
+	}).(pulumi.IntOutput)
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigOutput) Metrics() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfig) []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetric {
+		return v.Metrics
+	}).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutput)
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigOutput) OcpuStepSize() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfig) int {
+		return v.OcpuStepSize
+	}).(pulumi.IntOutput)
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfig)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfig {
+		return vs[0].([]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfig)[vs[1].(int)]
+	}).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigOutput)
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetric struct {
+	MetricType string                                                                                         `pulumi:"metricType"`
+	Thresholds []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold `pulumi:"thresholds"`
+}
+
+// GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArgs and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricInput` via:
+//
+//          GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArgs{...}
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutputWithContext(context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArgs struct {
+	MetricType pulumi.StringInput                                                                                     `pulumi:"metricType"`
+	Thresholds GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayInput `pulumi:"thresholds"`
+}
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetric)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArgs) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput {
+	return i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArgs) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput)
+}
+
+// GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArray and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayInput` via:
+//
+//          GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArray{ GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArgs{...} }
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutput
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutputWithContext(context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutput
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArray []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricInput
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetric)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArray) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutput {
+	return i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArray) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutput)
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetric)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput) MetricType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetric) string {
+		return v.MetricType
+	}).(pulumi.StringOutput)
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput) Thresholds() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetric) []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold {
+		return v.Thresholds
+	}).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutput)
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetric)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetric {
+		return vs[0].([]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetric)[vs[1].(int)]
+	}).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput)
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold struct {
+	DurationInMinutes int    `pulumi:"durationInMinutes"`
+	Operator          string `pulumi:"operator"`
+	Value             int    `pulumi:"value"`
+}
+
+// GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArgs and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdInput` via:
+//
+//          GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArgs{...}
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutputWithContext(context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArgs struct {
+	DurationInMinutes pulumi.IntInput    `pulumi:"durationInMinutes"`
+	Operator          pulumi.StringInput `pulumi:"operator"`
+	Value             pulumi.IntInput    `pulumi:"value"`
+}
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArgs) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput {
+	return i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArgs) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput)
+}
+
+// GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArray and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayInput` via:
+//
+//          GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArray{ GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArgs{...} }
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutput
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutputWithContext(context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutput
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArray []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdInput
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArray) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutput {
+	return i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArray) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutput)
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput) DurationInMinutes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold) int {
+		return v.DurationInMinutes
+	}).(pulumi.IntOutput)
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput) Operator() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold) string {
+		return v.Operator
+	}).(pulumi.StringOutput)
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput) Value() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold) int {
+		return v.Value
+	}).(pulumi.IntOutput)
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold {
+		return vs[0].([]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold)[vs[1].(int)]
+	}).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput)
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetail struct {
+	ScheduleType                    string                                                                                                         `pulumi:"scheduleType"`
+	TimeAndHorizontalScalingConfigs []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig `pulumi:"timeAndHorizontalScalingConfigs"`
+	TimeAndVerticalScalingConfigs   []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig   `pulumi:"timeAndVerticalScalingConfigs"`
+}
+
+// GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailArgs and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailInput` via:
+//
+//          GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailArgs{...}
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailOutput
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailOutputWithContext(context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailOutput
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailArgs struct {
+	ScheduleType                    pulumi.StringInput                                                                                                     `pulumi:"scheduleType"`
+	TimeAndHorizontalScalingConfigs GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayInput `pulumi:"timeAndHorizontalScalingConfigs"`
+	TimeAndVerticalScalingConfigs   GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayInput   `pulumi:"timeAndVerticalScalingConfigs"`
+}
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetail)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailArgs) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailOutput {
+	return i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailArgs) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailOutput)
+}
+
+// GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailArrayInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailArray and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailArrayInput` via:
+//
+//          GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailArray{ GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailArgs{...} }
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutput
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutputWithContext(context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutput
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailArray []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailInput
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetail)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailArray) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutput {
+	return i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailArray) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutput)
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetail)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailOutput) ScheduleType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetail) string {
+		return v.ScheduleType
+	}).(pulumi.StringOutput)
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailOutput) TimeAndHorizontalScalingConfigs() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetail) []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig {
+		return v.TimeAndHorizontalScalingConfigs
+	}).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutput)
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailOutput) TimeAndVerticalScalingConfigs() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetail) []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig {
+		return v.TimeAndVerticalScalingConfigs
+	}).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutput)
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetail)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetail {
+		return vs[0].([]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetail)[vs[1].(int)]
+	}).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailOutput)
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig struct {
+	TargetNodeCount int    `pulumi:"targetNodeCount"`
+	TimeRecurrence  string `pulumi:"timeRecurrence"`
+}
+
+// GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArgs and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigInput` via:
+//
+//          GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArgs{...}
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutput
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutputWithContext(context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutput
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArgs struct {
+	TargetNodeCount pulumi.IntInput    `pulumi:"targetNodeCount"`
+	TimeRecurrence  pulumi.StringInput `pulumi:"timeRecurrence"`
+}
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArgs) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutput {
+	return i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArgs) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutput)
+}
+
+// GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArray and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayInput` via:
+//
+//          GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArray{ GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArgs{...} }
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutput
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutputWithContext(context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutput
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArray []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigInput
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArray) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutput {
+	return i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArray) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutput)
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutput) TargetNodeCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig) int {
+		return v.TargetNodeCount
+	}).(pulumi.IntOutput)
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutput) TimeRecurrence() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig) string {
+		return v.TimeRecurrence
+	}).(pulumi.StringOutput)
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig {
+		return vs[0].([]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig)[vs[1].(int)]
+	}).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutput)
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig struct {
+	TargetMemoryPerNode int    `pulumi:"targetMemoryPerNode"`
+	TargetOcpusPerNode  int    `pulumi:"targetOcpusPerNode"`
+	TargetShape         string `pulumi:"targetShape"`
+	TimeRecurrence      string `pulumi:"timeRecurrence"`
+}
+
+// GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArgs and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigInput` via:
+//
+//          GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArgs{...}
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutputWithContext(context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArgs struct {
+	TargetMemoryPerNode pulumi.IntInput    `pulumi:"targetMemoryPerNode"`
+	TargetOcpusPerNode  pulumi.IntInput    `pulumi:"targetOcpusPerNode"`
+	TargetShape         pulumi.StringInput `pulumi:"targetShape"`
+	TimeRecurrence      pulumi.StringInput `pulumi:"timeRecurrence"`
+}
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArgs) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput {
+	return i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArgs) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput)
+}
+
+// GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArray and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutput values.
+// You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayInput` via:
+//
+//          GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArray{ GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArgs{...} }
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutput
+	ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutputWithContext(context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutput
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArray []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigInput
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig)(nil)).Elem()
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArray) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutput {
+	return i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArray) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutput)
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput) TargetMemoryPerNode() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig) int {
+		return v.TargetMemoryPerNode
+	}).(pulumi.IntOutput)
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput) TargetOcpusPerNode() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig) int {
+		return v.TargetOcpusPerNode
+	}).(pulumi.IntOutput)
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput) TargetShape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig) string {
+		return v.TargetShape
+	}).(pulumi.StringOutput)
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput) TimeRecurrence() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig) string {
+		return v.TimeRecurrence
+	}).(pulumi.StringOutput)
+}
+
+type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig)(nil)).Elem()
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutput() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutput {
+	return o
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig {
+		return vs[0].([]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig)[vs[1].(int)]
+	}).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput)
 }
 
 type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRule struct {
@@ -3572,6 +11053,8 @@ type GetBdsInstanceClusterDetail struct {
 	DbVersion string `pulumi:"dbVersion"`
 	// The URL of the Hue server.
 	HueServerUrl string `pulumi:"hueServerUrl"`
+	// The URL of the Jupyterhub.
+	JupyterHubUrl string `pulumi:"jupyterHubUrl"`
 	// Oracle Linux version installed in the cluster.
 	OsVersion string `pulumi:"osVersion"`
 	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
@@ -3612,6 +11095,8 @@ type GetBdsInstanceClusterDetailArgs struct {
 	DbVersion pulumi.StringInput `pulumi:"dbVersion"`
 	// The URL of the Hue server.
 	HueServerUrl pulumi.StringInput `pulumi:"hueServerUrl"`
+	// The URL of the Jupyterhub.
+	JupyterHubUrl pulumi.StringInput `pulumi:"jupyterHubUrl"`
 	// Oracle Linux version installed in the cluster.
 	OsVersion pulumi.StringInput `pulumi:"osVersion"`
 	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
@@ -3721,6 +11206,11 @@ func (o GetBdsInstanceClusterDetailOutput) HueServerUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBdsInstanceClusterDetail) string { return v.HueServerUrl }).(pulumi.StringOutput)
 }
 
+// The URL of the Jupyterhub.
+func (o GetBdsInstanceClusterDetailOutput) JupyterHubUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceClusterDetail) string { return v.JupyterHubUrl }).(pulumi.StringOutput)
+}
+
 // Oracle Linux version installed in the cluster.
 func (o GetBdsInstanceClusterDetailOutput) OsVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBdsInstanceClusterDetail) string { return v.OsVersion }).(pulumi.StringOutput)
@@ -3756,13 +11246,252 @@ func (o GetBdsInstanceClusterDetailArrayOutput) Index(i pulumi.IntInput) GetBdsI
 	}).(GetBdsInstanceClusterDetailOutput)
 }
 
+type GetBdsInstanceComputeOnlyWorkerNode struct {
+	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+	BlockVolumeSizeInGbs string `pulumi:"blockVolumeSizeInGbs"`
+	// The number of nodes that form the cluster.
+	NumberOfNodes int `pulumi:"numberOfNodes"`
+	// Shape of the node.
+	Shape        string                                           `pulumi:"shape"`
+	ShapeConfigs []GetBdsInstanceComputeOnlyWorkerNodeShapeConfig `pulumi:"shapeConfigs"`
+	// The OCID of the subnet in which the node is to be created.
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetBdsInstanceComputeOnlyWorkerNodeInput is an input type that accepts GetBdsInstanceComputeOnlyWorkerNodeArgs and GetBdsInstanceComputeOnlyWorkerNodeOutput values.
+// You can construct a concrete instance of `GetBdsInstanceComputeOnlyWorkerNodeInput` via:
+//
+//          GetBdsInstanceComputeOnlyWorkerNodeArgs{...}
+type GetBdsInstanceComputeOnlyWorkerNodeInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceComputeOnlyWorkerNodeOutput() GetBdsInstanceComputeOnlyWorkerNodeOutput
+	ToGetBdsInstanceComputeOnlyWorkerNodeOutputWithContext(context.Context) GetBdsInstanceComputeOnlyWorkerNodeOutput
+}
+
+type GetBdsInstanceComputeOnlyWorkerNodeArgs struct {
+	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+	BlockVolumeSizeInGbs pulumi.StringInput `pulumi:"blockVolumeSizeInGbs"`
+	// The number of nodes that form the cluster.
+	NumberOfNodes pulumi.IntInput `pulumi:"numberOfNodes"`
+	// Shape of the node.
+	Shape        pulumi.StringInput                                       `pulumi:"shape"`
+	ShapeConfigs GetBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayInput `pulumi:"shapeConfigs"`
+	// The OCID of the subnet in which the node is to be created.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetBdsInstanceComputeOnlyWorkerNodeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceComputeOnlyWorkerNode)(nil)).Elem()
+}
+
+func (i GetBdsInstanceComputeOnlyWorkerNodeArgs) ToGetBdsInstanceComputeOnlyWorkerNodeOutput() GetBdsInstanceComputeOnlyWorkerNodeOutput {
+	return i.ToGetBdsInstanceComputeOnlyWorkerNodeOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceComputeOnlyWorkerNodeArgs) ToGetBdsInstanceComputeOnlyWorkerNodeOutputWithContext(ctx context.Context) GetBdsInstanceComputeOnlyWorkerNodeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceComputeOnlyWorkerNodeOutput)
+}
+
+// GetBdsInstanceComputeOnlyWorkerNodeArrayInput is an input type that accepts GetBdsInstanceComputeOnlyWorkerNodeArray and GetBdsInstanceComputeOnlyWorkerNodeArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstanceComputeOnlyWorkerNodeArrayInput` via:
+//
+//          GetBdsInstanceComputeOnlyWorkerNodeArray{ GetBdsInstanceComputeOnlyWorkerNodeArgs{...} }
+type GetBdsInstanceComputeOnlyWorkerNodeArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceComputeOnlyWorkerNodeArrayOutput() GetBdsInstanceComputeOnlyWorkerNodeArrayOutput
+	ToGetBdsInstanceComputeOnlyWorkerNodeArrayOutputWithContext(context.Context) GetBdsInstanceComputeOnlyWorkerNodeArrayOutput
+}
+
+type GetBdsInstanceComputeOnlyWorkerNodeArray []GetBdsInstanceComputeOnlyWorkerNodeInput
+
+func (GetBdsInstanceComputeOnlyWorkerNodeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceComputeOnlyWorkerNode)(nil)).Elem()
+}
+
+func (i GetBdsInstanceComputeOnlyWorkerNodeArray) ToGetBdsInstanceComputeOnlyWorkerNodeArrayOutput() GetBdsInstanceComputeOnlyWorkerNodeArrayOutput {
+	return i.ToGetBdsInstanceComputeOnlyWorkerNodeArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceComputeOnlyWorkerNodeArray) ToGetBdsInstanceComputeOnlyWorkerNodeArrayOutputWithContext(ctx context.Context) GetBdsInstanceComputeOnlyWorkerNodeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceComputeOnlyWorkerNodeArrayOutput)
+}
+
+type GetBdsInstanceComputeOnlyWorkerNodeOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceComputeOnlyWorkerNodeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceComputeOnlyWorkerNode)(nil)).Elem()
+}
+
+func (o GetBdsInstanceComputeOnlyWorkerNodeOutput) ToGetBdsInstanceComputeOnlyWorkerNodeOutput() GetBdsInstanceComputeOnlyWorkerNodeOutput {
+	return o
+}
+
+func (o GetBdsInstanceComputeOnlyWorkerNodeOutput) ToGetBdsInstanceComputeOnlyWorkerNodeOutputWithContext(ctx context.Context) GetBdsInstanceComputeOnlyWorkerNodeOutput {
+	return o
+}
+
+// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+func (o GetBdsInstanceComputeOnlyWorkerNodeOutput) BlockVolumeSizeInGbs() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceComputeOnlyWorkerNode) string { return v.BlockVolumeSizeInGbs }).(pulumi.StringOutput)
+}
+
+// The number of nodes that form the cluster.
+func (o GetBdsInstanceComputeOnlyWorkerNodeOutput) NumberOfNodes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstanceComputeOnlyWorkerNode) int { return v.NumberOfNodes }).(pulumi.IntOutput)
+}
+
+// Shape of the node.
+func (o GetBdsInstanceComputeOnlyWorkerNodeOutput) Shape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceComputeOnlyWorkerNode) string { return v.Shape }).(pulumi.StringOutput)
+}
+
+func (o GetBdsInstanceComputeOnlyWorkerNodeOutput) ShapeConfigs() GetBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutput {
+	return o.ApplyT(func(v GetBdsInstanceComputeOnlyWorkerNode) []GetBdsInstanceComputeOnlyWorkerNodeShapeConfig {
+		return v.ShapeConfigs
+	}).(GetBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutput)
+}
+
+// The OCID of the subnet in which the node is to be created.
+func (o GetBdsInstanceComputeOnlyWorkerNodeOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceComputeOnlyWorkerNode) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+type GetBdsInstanceComputeOnlyWorkerNodeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceComputeOnlyWorkerNodeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceComputeOnlyWorkerNode)(nil)).Elem()
+}
+
+func (o GetBdsInstanceComputeOnlyWorkerNodeArrayOutput) ToGetBdsInstanceComputeOnlyWorkerNodeArrayOutput() GetBdsInstanceComputeOnlyWorkerNodeArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceComputeOnlyWorkerNodeArrayOutput) ToGetBdsInstanceComputeOnlyWorkerNodeArrayOutputWithContext(ctx context.Context) GetBdsInstanceComputeOnlyWorkerNodeArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceComputeOnlyWorkerNodeArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceComputeOnlyWorkerNodeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceComputeOnlyWorkerNode {
+		return vs[0].([]GetBdsInstanceComputeOnlyWorkerNode)[vs[1].(int)]
+	}).(GetBdsInstanceComputeOnlyWorkerNodeOutput)
+}
+
+type GetBdsInstanceComputeOnlyWorkerNodeShapeConfig struct {
+	// The total amount of memory available to the node, in gigabytes.
+	MemoryInGbs int `pulumi:"memoryInGbs"`
+	// The total number of OCPUs available to the node.
+	Ocpus int `pulumi:"ocpus"`
+}
+
+// GetBdsInstanceComputeOnlyWorkerNodeShapeConfigInput is an input type that accepts GetBdsInstanceComputeOnlyWorkerNodeShapeConfigArgs and GetBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput values.
+// You can construct a concrete instance of `GetBdsInstanceComputeOnlyWorkerNodeShapeConfigInput` via:
+//
+//          GetBdsInstanceComputeOnlyWorkerNodeShapeConfigArgs{...}
+type GetBdsInstanceComputeOnlyWorkerNodeShapeConfigInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput() GetBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput
+	ToGetBdsInstanceComputeOnlyWorkerNodeShapeConfigOutputWithContext(context.Context) GetBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput
+}
+
+type GetBdsInstanceComputeOnlyWorkerNodeShapeConfigArgs struct {
+	// The total amount of memory available to the node, in gigabytes.
+	MemoryInGbs pulumi.IntInput `pulumi:"memoryInGbs"`
+	// The total number of OCPUs available to the node.
+	Ocpus pulumi.IntInput `pulumi:"ocpus"`
+}
+
+func (GetBdsInstanceComputeOnlyWorkerNodeShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceComputeOnlyWorkerNodeShapeConfig)(nil)).Elem()
+}
+
+func (i GetBdsInstanceComputeOnlyWorkerNodeShapeConfigArgs) ToGetBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput() GetBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput {
+	return i.ToGetBdsInstanceComputeOnlyWorkerNodeShapeConfigOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceComputeOnlyWorkerNodeShapeConfigArgs) ToGetBdsInstanceComputeOnlyWorkerNodeShapeConfigOutputWithContext(ctx context.Context) GetBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput)
+}
+
+// GetBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayInput is an input type that accepts GetBdsInstanceComputeOnlyWorkerNodeShapeConfigArray and GetBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayInput` via:
+//
+//          GetBdsInstanceComputeOnlyWorkerNodeShapeConfigArray{ GetBdsInstanceComputeOnlyWorkerNodeShapeConfigArgs{...} }
+type GetBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutput() GetBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutput
+	ToGetBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutputWithContext(context.Context) GetBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutput
+}
+
+type GetBdsInstanceComputeOnlyWorkerNodeShapeConfigArray []GetBdsInstanceComputeOnlyWorkerNodeShapeConfigInput
+
+func (GetBdsInstanceComputeOnlyWorkerNodeShapeConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceComputeOnlyWorkerNodeShapeConfig)(nil)).Elem()
+}
+
+func (i GetBdsInstanceComputeOnlyWorkerNodeShapeConfigArray) ToGetBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutput() GetBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutput {
+	return i.ToGetBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceComputeOnlyWorkerNodeShapeConfigArray) ToGetBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutputWithContext(ctx context.Context) GetBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutput)
+}
+
+type GetBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceComputeOnlyWorkerNodeShapeConfig)(nil)).Elem()
+}
+
+func (o GetBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput) ToGetBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput() GetBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput {
+	return o
+}
+
+func (o GetBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput) ToGetBdsInstanceComputeOnlyWorkerNodeShapeConfigOutputWithContext(ctx context.Context) GetBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput {
+	return o
+}
+
+// The total amount of memory available to the node, in gigabytes.
+func (o GetBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput) MemoryInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstanceComputeOnlyWorkerNodeShapeConfig) int { return v.MemoryInGbs }).(pulumi.IntOutput)
+}
+
+// The total number of OCPUs available to the node.
+func (o GetBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput) Ocpus() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstanceComputeOnlyWorkerNodeShapeConfig) int { return v.Ocpus }).(pulumi.IntOutput)
+}
+
+type GetBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceComputeOnlyWorkerNodeShapeConfig)(nil)).Elem()
+}
+
+func (o GetBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutput) ToGetBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutput() GetBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutput) ToGetBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutputWithContext(ctx context.Context) GetBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceComputeOnlyWorkerNodeShapeConfig {
+		return vs[0].([]GetBdsInstanceComputeOnlyWorkerNodeShapeConfig)[vs[1].(int)]
+	}).(GetBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput)
+}
+
 type GetBdsInstanceMasterNode struct {
 	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
 	BlockVolumeSizeInGbs string `pulumi:"blockVolumeSizeInGbs"`
 	// The number of nodes that form the cluster.
 	NumberOfNodes int `pulumi:"numberOfNodes"`
 	// Shape of the node.
-	Shape string `pulumi:"shape"`
+	Shape        string                                `pulumi:"shape"`
+	ShapeConfigs []GetBdsInstanceMasterNodeShapeConfig `pulumi:"shapeConfigs"`
 	// The OCID of the subnet in which the node is to be created.
 	SubnetId string `pulumi:"subnetId"`
 }
@@ -3784,7 +11513,8 @@ type GetBdsInstanceMasterNodeArgs struct {
 	// The number of nodes that form the cluster.
 	NumberOfNodes pulumi.IntInput `pulumi:"numberOfNodes"`
 	// Shape of the node.
-	Shape pulumi.StringInput `pulumi:"shape"`
+	Shape        pulumi.StringInput                            `pulumi:"shape"`
+	ShapeConfigs GetBdsInstanceMasterNodeShapeConfigArrayInput `pulumi:"shapeConfigs"`
 	// The OCID of the subnet in which the node is to be created.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 }
@@ -3855,6 +11585,10 @@ func (o GetBdsInstanceMasterNodeOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBdsInstanceMasterNode) string { return v.Shape }).(pulumi.StringOutput)
 }
 
+func (o GetBdsInstanceMasterNodeOutput) ShapeConfigs() GetBdsInstanceMasterNodeShapeConfigArrayOutput {
+	return o.ApplyT(func(v GetBdsInstanceMasterNode) []GetBdsInstanceMasterNodeShapeConfig { return v.ShapeConfigs }).(GetBdsInstanceMasterNodeShapeConfigArrayOutput)
+}
+
 // The OCID of the subnet in which the node is to be created.
 func (o GetBdsInstanceMasterNodeOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBdsInstanceMasterNode) string { return v.SubnetId }).(pulumi.StringOutput)
@@ -3878,6 +11612,112 @@ func (o GetBdsInstanceMasterNodeArrayOutput) Index(i pulumi.IntInput) GetBdsInst
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceMasterNode {
 		return vs[0].([]GetBdsInstanceMasterNode)[vs[1].(int)]
 	}).(GetBdsInstanceMasterNodeOutput)
+}
+
+type GetBdsInstanceMasterNodeShapeConfig struct {
+	// The total amount of memory available to the node, in gigabytes.
+	MemoryInGbs int `pulumi:"memoryInGbs"`
+	// The total number of OCPUs available to the node.
+	Ocpus int `pulumi:"ocpus"`
+}
+
+// GetBdsInstanceMasterNodeShapeConfigInput is an input type that accepts GetBdsInstanceMasterNodeShapeConfigArgs and GetBdsInstanceMasterNodeShapeConfigOutput values.
+// You can construct a concrete instance of `GetBdsInstanceMasterNodeShapeConfigInput` via:
+//
+//          GetBdsInstanceMasterNodeShapeConfigArgs{...}
+type GetBdsInstanceMasterNodeShapeConfigInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceMasterNodeShapeConfigOutput() GetBdsInstanceMasterNodeShapeConfigOutput
+	ToGetBdsInstanceMasterNodeShapeConfigOutputWithContext(context.Context) GetBdsInstanceMasterNodeShapeConfigOutput
+}
+
+type GetBdsInstanceMasterNodeShapeConfigArgs struct {
+	// The total amount of memory available to the node, in gigabytes.
+	MemoryInGbs pulumi.IntInput `pulumi:"memoryInGbs"`
+	// The total number of OCPUs available to the node.
+	Ocpus pulumi.IntInput `pulumi:"ocpus"`
+}
+
+func (GetBdsInstanceMasterNodeShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceMasterNodeShapeConfig)(nil)).Elem()
+}
+
+func (i GetBdsInstanceMasterNodeShapeConfigArgs) ToGetBdsInstanceMasterNodeShapeConfigOutput() GetBdsInstanceMasterNodeShapeConfigOutput {
+	return i.ToGetBdsInstanceMasterNodeShapeConfigOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceMasterNodeShapeConfigArgs) ToGetBdsInstanceMasterNodeShapeConfigOutputWithContext(ctx context.Context) GetBdsInstanceMasterNodeShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceMasterNodeShapeConfigOutput)
+}
+
+// GetBdsInstanceMasterNodeShapeConfigArrayInput is an input type that accepts GetBdsInstanceMasterNodeShapeConfigArray and GetBdsInstanceMasterNodeShapeConfigArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstanceMasterNodeShapeConfigArrayInput` via:
+//
+//          GetBdsInstanceMasterNodeShapeConfigArray{ GetBdsInstanceMasterNodeShapeConfigArgs{...} }
+type GetBdsInstanceMasterNodeShapeConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceMasterNodeShapeConfigArrayOutput() GetBdsInstanceMasterNodeShapeConfigArrayOutput
+	ToGetBdsInstanceMasterNodeShapeConfigArrayOutputWithContext(context.Context) GetBdsInstanceMasterNodeShapeConfigArrayOutput
+}
+
+type GetBdsInstanceMasterNodeShapeConfigArray []GetBdsInstanceMasterNodeShapeConfigInput
+
+func (GetBdsInstanceMasterNodeShapeConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceMasterNodeShapeConfig)(nil)).Elem()
+}
+
+func (i GetBdsInstanceMasterNodeShapeConfigArray) ToGetBdsInstanceMasterNodeShapeConfigArrayOutput() GetBdsInstanceMasterNodeShapeConfigArrayOutput {
+	return i.ToGetBdsInstanceMasterNodeShapeConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceMasterNodeShapeConfigArray) ToGetBdsInstanceMasterNodeShapeConfigArrayOutputWithContext(ctx context.Context) GetBdsInstanceMasterNodeShapeConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceMasterNodeShapeConfigArrayOutput)
+}
+
+type GetBdsInstanceMasterNodeShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceMasterNodeShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceMasterNodeShapeConfig)(nil)).Elem()
+}
+
+func (o GetBdsInstanceMasterNodeShapeConfigOutput) ToGetBdsInstanceMasterNodeShapeConfigOutput() GetBdsInstanceMasterNodeShapeConfigOutput {
+	return o
+}
+
+func (o GetBdsInstanceMasterNodeShapeConfigOutput) ToGetBdsInstanceMasterNodeShapeConfigOutputWithContext(ctx context.Context) GetBdsInstanceMasterNodeShapeConfigOutput {
+	return o
+}
+
+// The total amount of memory available to the node, in gigabytes.
+func (o GetBdsInstanceMasterNodeShapeConfigOutput) MemoryInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstanceMasterNodeShapeConfig) int { return v.MemoryInGbs }).(pulumi.IntOutput)
+}
+
+// The total number of OCPUs available to the node.
+func (o GetBdsInstanceMasterNodeShapeConfigOutput) Ocpus() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstanceMasterNodeShapeConfig) int { return v.Ocpus }).(pulumi.IntOutput)
+}
+
+type GetBdsInstanceMasterNodeShapeConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceMasterNodeShapeConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceMasterNodeShapeConfig)(nil)).Elem()
+}
+
+func (o GetBdsInstanceMasterNodeShapeConfigArrayOutput) ToGetBdsInstanceMasterNodeShapeConfigArrayOutput() GetBdsInstanceMasterNodeShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceMasterNodeShapeConfigArrayOutput) ToGetBdsInstanceMasterNodeShapeConfigArrayOutputWithContext(ctx context.Context) GetBdsInstanceMasterNodeShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceMasterNodeShapeConfigArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceMasterNodeShapeConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceMasterNodeShapeConfig {
+		return vs[0].([]GetBdsInstanceMasterNodeShapeConfig)[vs[1].(int)]
+	}).(GetBdsInstanceMasterNodeShapeConfigOutput)
 }
 
 type GetBdsInstanceMetastoreConfigsBdsMetastoreConfiguration struct {
@@ -4296,8 +12136,12 @@ type GetBdsInstanceNode struct {
 	InstanceId string `pulumi:"instanceId"`
 	// IP address of the node.
 	IpAddress string `pulumi:"ipAddress"`
+	// The total amount of memory available to the node, in gigabytes.
+	MemoryInGbs int `pulumi:"memoryInGbs"`
 	// Cluster node type.
 	NodeType string `pulumi:"nodeType"`
+	// The total number of OCPUs available to the node.
+	Ocpus int `pulumi:"ocpus"`
 	// Shape of the node.
 	Shape string `pulumi:"shape"`
 	// The fingerprint of the SSH key used for node access.
@@ -4338,8 +12182,12 @@ type GetBdsInstanceNodeArgs struct {
 	InstanceId pulumi.StringInput `pulumi:"instanceId"`
 	// IP address of the node.
 	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+	// The total amount of memory available to the node, in gigabytes.
+	MemoryInGbs pulumi.IntInput `pulumi:"memoryInGbs"`
 	// Cluster node type.
 	NodeType pulumi.StringInput `pulumi:"nodeType"`
+	// The total number of OCPUs available to the node.
+	Ocpus pulumi.IntInput `pulumi:"ocpus"`
 	// Shape of the node.
 	Shape pulumi.StringInput `pulumi:"shape"`
 	// The fingerprint of the SSH key used for node access.
@@ -4443,9 +12291,19 @@ func (o GetBdsInstanceNodeOutput) IpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBdsInstanceNode) string { return v.IpAddress }).(pulumi.StringOutput)
 }
 
+// The total amount of memory available to the node, in gigabytes.
+func (o GetBdsInstanceNodeOutput) MemoryInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstanceNode) int { return v.MemoryInGbs }).(pulumi.IntOutput)
+}
+
 // Cluster node type.
 func (o GetBdsInstanceNodeOutput) NodeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBdsInstanceNode) string { return v.NodeType }).(pulumi.StringOutput)
+}
+
+// The total number of OCPUs available to the node.
+func (o GetBdsInstanceNodeOutput) Ocpus() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstanceNode) int { return v.Ocpus }).(pulumi.IntOutput)
 }
 
 // Shape of the node.
@@ -4605,7 +12463,8 @@ type GetBdsInstanceUtilNode struct {
 	// The number of nodes that form the cluster.
 	NumberOfNodes int `pulumi:"numberOfNodes"`
 	// Shape of the node.
-	Shape string `pulumi:"shape"`
+	Shape        string                              `pulumi:"shape"`
+	ShapeConfigs []GetBdsInstanceUtilNodeShapeConfig `pulumi:"shapeConfigs"`
 	// The OCID of the subnet in which the node is to be created.
 	SubnetId string `pulumi:"subnetId"`
 }
@@ -4627,7 +12486,8 @@ type GetBdsInstanceUtilNodeArgs struct {
 	// The number of nodes that form the cluster.
 	NumberOfNodes pulumi.IntInput `pulumi:"numberOfNodes"`
 	// Shape of the node.
-	Shape pulumi.StringInput `pulumi:"shape"`
+	Shape        pulumi.StringInput                          `pulumi:"shape"`
+	ShapeConfigs GetBdsInstanceUtilNodeShapeConfigArrayInput `pulumi:"shapeConfigs"`
 	// The OCID of the subnet in which the node is to be created.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 }
@@ -4698,6 +12558,10 @@ func (o GetBdsInstanceUtilNodeOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBdsInstanceUtilNode) string { return v.Shape }).(pulumi.StringOutput)
 }
 
+func (o GetBdsInstanceUtilNodeOutput) ShapeConfigs() GetBdsInstanceUtilNodeShapeConfigArrayOutput {
+	return o.ApplyT(func(v GetBdsInstanceUtilNode) []GetBdsInstanceUtilNodeShapeConfig { return v.ShapeConfigs }).(GetBdsInstanceUtilNodeShapeConfigArrayOutput)
+}
+
 // The OCID of the subnet in which the node is to be created.
 func (o GetBdsInstanceUtilNodeOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBdsInstanceUtilNode) string { return v.SubnetId }).(pulumi.StringOutput)
@@ -4723,13 +12587,120 @@ func (o GetBdsInstanceUtilNodeArrayOutput) Index(i pulumi.IntInput) GetBdsInstan
 	}).(GetBdsInstanceUtilNodeOutput)
 }
 
+type GetBdsInstanceUtilNodeShapeConfig struct {
+	// The total amount of memory available to the node, in gigabytes.
+	MemoryInGbs int `pulumi:"memoryInGbs"`
+	// The total number of OCPUs available to the node.
+	Ocpus int `pulumi:"ocpus"`
+}
+
+// GetBdsInstanceUtilNodeShapeConfigInput is an input type that accepts GetBdsInstanceUtilNodeShapeConfigArgs and GetBdsInstanceUtilNodeShapeConfigOutput values.
+// You can construct a concrete instance of `GetBdsInstanceUtilNodeShapeConfigInput` via:
+//
+//          GetBdsInstanceUtilNodeShapeConfigArgs{...}
+type GetBdsInstanceUtilNodeShapeConfigInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceUtilNodeShapeConfigOutput() GetBdsInstanceUtilNodeShapeConfigOutput
+	ToGetBdsInstanceUtilNodeShapeConfigOutputWithContext(context.Context) GetBdsInstanceUtilNodeShapeConfigOutput
+}
+
+type GetBdsInstanceUtilNodeShapeConfigArgs struct {
+	// The total amount of memory available to the node, in gigabytes.
+	MemoryInGbs pulumi.IntInput `pulumi:"memoryInGbs"`
+	// The total number of OCPUs available to the node.
+	Ocpus pulumi.IntInput `pulumi:"ocpus"`
+}
+
+func (GetBdsInstanceUtilNodeShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceUtilNodeShapeConfig)(nil)).Elem()
+}
+
+func (i GetBdsInstanceUtilNodeShapeConfigArgs) ToGetBdsInstanceUtilNodeShapeConfigOutput() GetBdsInstanceUtilNodeShapeConfigOutput {
+	return i.ToGetBdsInstanceUtilNodeShapeConfigOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceUtilNodeShapeConfigArgs) ToGetBdsInstanceUtilNodeShapeConfigOutputWithContext(ctx context.Context) GetBdsInstanceUtilNodeShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceUtilNodeShapeConfigOutput)
+}
+
+// GetBdsInstanceUtilNodeShapeConfigArrayInput is an input type that accepts GetBdsInstanceUtilNodeShapeConfigArray and GetBdsInstanceUtilNodeShapeConfigArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstanceUtilNodeShapeConfigArrayInput` via:
+//
+//          GetBdsInstanceUtilNodeShapeConfigArray{ GetBdsInstanceUtilNodeShapeConfigArgs{...} }
+type GetBdsInstanceUtilNodeShapeConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceUtilNodeShapeConfigArrayOutput() GetBdsInstanceUtilNodeShapeConfigArrayOutput
+	ToGetBdsInstanceUtilNodeShapeConfigArrayOutputWithContext(context.Context) GetBdsInstanceUtilNodeShapeConfigArrayOutput
+}
+
+type GetBdsInstanceUtilNodeShapeConfigArray []GetBdsInstanceUtilNodeShapeConfigInput
+
+func (GetBdsInstanceUtilNodeShapeConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceUtilNodeShapeConfig)(nil)).Elem()
+}
+
+func (i GetBdsInstanceUtilNodeShapeConfigArray) ToGetBdsInstanceUtilNodeShapeConfigArrayOutput() GetBdsInstanceUtilNodeShapeConfigArrayOutput {
+	return i.ToGetBdsInstanceUtilNodeShapeConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceUtilNodeShapeConfigArray) ToGetBdsInstanceUtilNodeShapeConfigArrayOutputWithContext(ctx context.Context) GetBdsInstanceUtilNodeShapeConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceUtilNodeShapeConfigArrayOutput)
+}
+
+type GetBdsInstanceUtilNodeShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceUtilNodeShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceUtilNodeShapeConfig)(nil)).Elem()
+}
+
+func (o GetBdsInstanceUtilNodeShapeConfigOutput) ToGetBdsInstanceUtilNodeShapeConfigOutput() GetBdsInstanceUtilNodeShapeConfigOutput {
+	return o
+}
+
+func (o GetBdsInstanceUtilNodeShapeConfigOutput) ToGetBdsInstanceUtilNodeShapeConfigOutputWithContext(ctx context.Context) GetBdsInstanceUtilNodeShapeConfigOutput {
+	return o
+}
+
+// The total amount of memory available to the node, in gigabytes.
+func (o GetBdsInstanceUtilNodeShapeConfigOutput) MemoryInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstanceUtilNodeShapeConfig) int { return v.MemoryInGbs }).(pulumi.IntOutput)
+}
+
+// The total number of OCPUs available to the node.
+func (o GetBdsInstanceUtilNodeShapeConfigOutput) Ocpus() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstanceUtilNodeShapeConfig) int { return v.Ocpus }).(pulumi.IntOutput)
+}
+
+type GetBdsInstanceUtilNodeShapeConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceUtilNodeShapeConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceUtilNodeShapeConfig)(nil)).Elem()
+}
+
+func (o GetBdsInstanceUtilNodeShapeConfigArrayOutput) ToGetBdsInstanceUtilNodeShapeConfigArrayOutput() GetBdsInstanceUtilNodeShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceUtilNodeShapeConfigArrayOutput) ToGetBdsInstanceUtilNodeShapeConfigArrayOutputWithContext(ctx context.Context) GetBdsInstanceUtilNodeShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceUtilNodeShapeConfigArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceUtilNodeShapeConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceUtilNodeShapeConfig {
+		return vs[0].([]GetBdsInstanceUtilNodeShapeConfig)[vs[1].(int)]
+	}).(GetBdsInstanceUtilNodeShapeConfigOutput)
+}
+
 type GetBdsInstanceWorkerNode struct {
 	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
 	BlockVolumeSizeInGbs string `pulumi:"blockVolumeSizeInGbs"`
 	// The number of nodes that form the cluster.
 	NumberOfNodes int `pulumi:"numberOfNodes"`
 	// Shape of the node.
-	Shape string `pulumi:"shape"`
+	Shape        string                                `pulumi:"shape"`
+	ShapeConfigs []GetBdsInstanceWorkerNodeShapeConfig `pulumi:"shapeConfigs"`
 	// The OCID of the subnet in which the node is to be created.
 	SubnetId string `pulumi:"subnetId"`
 }
@@ -4751,7 +12722,8 @@ type GetBdsInstanceWorkerNodeArgs struct {
 	// The number of nodes that form the cluster.
 	NumberOfNodes pulumi.IntInput `pulumi:"numberOfNodes"`
 	// Shape of the node.
-	Shape pulumi.StringInput `pulumi:"shape"`
+	Shape        pulumi.StringInput                            `pulumi:"shape"`
+	ShapeConfigs GetBdsInstanceWorkerNodeShapeConfigArrayInput `pulumi:"shapeConfigs"`
 	// The OCID of the subnet in which the node is to be created.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 }
@@ -4822,6 +12794,10 @@ func (o GetBdsInstanceWorkerNodeOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBdsInstanceWorkerNode) string { return v.Shape }).(pulumi.StringOutput)
 }
 
+func (o GetBdsInstanceWorkerNodeOutput) ShapeConfigs() GetBdsInstanceWorkerNodeShapeConfigArrayOutput {
+	return o.ApplyT(func(v GetBdsInstanceWorkerNode) []GetBdsInstanceWorkerNodeShapeConfig { return v.ShapeConfigs }).(GetBdsInstanceWorkerNodeShapeConfigArrayOutput)
+}
+
 // The OCID of the subnet in which the node is to be created.
 func (o GetBdsInstanceWorkerNodeOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBdsInstanceWorkerNode) string { return v.SubnetId }).(pulumi.StringOutput)
@@ -4847,7 +12823,115 @@ func (o GetBdsInstanceWorkerNodeArrayOutput) Index(i pulumi.IntInput) GetBdsInst
 	}).(GetBdsInstanceWorkerNodeOutput)
 }
 
+type GetBdsInstanceWorkerNodeShapeConfig struct {
+	// The total amount of memory available to the node, in gigabytes.
+	MemoryInGbs int `pulumi:"memoryInGbs"`
+	// The total number of OCPUs available to the node.
+	Ocpus int `pulumi:"ocpus"`
+}
+
+// GetBdsInstanceWorkerNodeShapeConfigInput is an input type that accepts GetBdsInstanceWorkerNodeShapeConfigArgs and GetBdsInstanceWorkerNodeShapeConfigOutput values.
+// You can construct a concrete instance of `GetBdsInstanceWorkerNodeShapeConfigInput` via:
+//
+//          GetBdsInstanceWorkerNodeShapeConfigArgs{...}
+type GetBdsInstanceWorkerNodeShapeConfigInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceWorkerNodeShapeConfigOutput() GetBdsInstanceWorkerNodeShapeConfigOutput
+	ToGetBdsInstanceWorkerNodeShapeConfigOutputWithContext(context.Context) GetBdsInstanceWorkerNodeShapeConfigOutput
+}
+
+type GetBdsInstanceWorkerNodeShapeConfigArgs struct {
+	// The total amount of memory available to the node, in gigabytes.
+	MemoryInGbs pulumi.IntInput `pulumi:"memoryInGbs"`
+	// The total number of OCPUs available to the node.
+	Ocpus pulumi.IntInput `pulumi:"ocpus"`
+}
+
+func (GetBdsInstanceWorkerNodeShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceWorkerNodeShapeConfig)(nil)).Elem()
+}
+
+func (i GetBdsInstanceWorkerNodeShapeConfigArgs) ToGetBdsInstanceWorkerNodeShapeConfigOutput() GetBdsInstanceWorkerNodeShapeConfigOutput {
+	return i.ToGetBdsInstanceWorkerNodeShapeConfigOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceWorkerNodeShapeConfigArgs) ToGetBdsInstanceWorkerNodeShapeConfigOutputWithContext(ctx context.Context) GetBdsInstanceWorkerNodeShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceWorkerNodeShapeConfigOutput)
+}
+
+// GetBdsInstanceWorkerNodeShapeConfigArrayInput is an input type that accepts GetBdsInstanceWorkerNodeShapeConfigArray and GetBdsInstanceWorkerNodeShapeConfigArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstanceWorkerNodeShapeConfigArrayInput` via:
+//
+//          GetBdsInstanceWorkerNodeShapeConfigArray{ GetBdsInstanceWorkerNodeShapeConfigArgs{...} }
+type GetBdsInstanceWorkerNodeShapeConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceWorkerNodeShapeConfigArrayOutput() GetBdsInstanceWorkerNodeShapeConfigArrayOutput
+	ToGetBdsInstanceWorkerNodeShapeConfigArrayOutputWithContext(context.Context) GetBdsInstanceWorkerNodeShapeConfigArrayOutput
+}
+
+type GetBdsInstanceWorkerNodeShapeConfigArray []GetBdsInstanceWorkerNodeShapeConfigInput
+
+func (GetBdsInstanceWorkerNodeShapeConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceWorkerNodeShapeConfig)(nil)).Elem()
+}
+
+func (i GetBdsInstanceWorkerNodeShapeConfigArray) ToGetBdsInstanceWorkerNodeShapeConfigArrayOutput() GetBdsInstanceWorkerNodeShapeConfigArrayOutput {
+	return i.ToGetBdsInstanceWorkerNodeShapeConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceWorkerNodeShapeConfigArray) ToGetBdsInstanceWorkerNodeShapeConfigArrayOutputWithContext(ctx context.Context) GetBdsInstanceWorkerNodeShapeConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceWorkerNodeShapeConfigArrayOutput)
+}
+
+type GetBdsInstanceWorkerNodeShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceWorkerNodeShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceWorkerNodeShapeConfig)(nil)).Elem()
+}
+
+func (o GetBdsInstanceWorkerNodeShapeConfigOutput) ToGetBdsInstanceWorkerNodeShapeConfigOutput() GetBdsInstanceWorkerNodeShapeConfigOutput {
+	return o
+}
+
+func (o GetBdsInstanceWorkerNodeShapeConfigOutput) ToGetBdsInstanceWorkerNodeShapeConfigOutputWithContext(ctx context.Context) GetBdsInstanceWorkerNodeShapeConfigOutput {
+	return o
+}
+
+// The total amount of memory available to the node, in gigabytes.
+func (o GetBdsInstanceWorkerNodeShapeConfigOutput) MemoryInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstanceWorkerNodeShapeConfig) int { return v.MemoryInGbs }).(pulumi.IntOutput)
+}
+
+// The total number of OCPUs available to the node.
+func (o GetBdsInstanceWorkerNodeShapeConfigOutput) Ocpus() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstanceWorkerNodeShapeConfig) int { return v.Ocpus }).(pulumi.IntOutput)
+}
+
+type GetBdsInstanceWorkerNodeShapeConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceWorkerNodeShapeConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceWorkerNodeShapeConfig)(nil)).Elem()
+}
+
+func (o GetBdsInstanceWorkerNodeShapeConfigArrayOutput) ToGetBdsInstanceWorkerNodeShapeConfigArrayOutput() GetBdsInstanceWorkerNodeShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceWorkerNodeShapeConfigArrayOutput) ToGetBdsInstanceWorkerNodeShapeConfigArrayOutputWithContext(ctx context.Context) GetBdsInstanceWorkerNodeShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceWorkerNodeShapeConfigArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceWorkerNodeShapeConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceWorkerNodeShapeConfig {
+		return vs[0].([]GetBdsInstanceWorkerNodeShapeConfig)[vs[1].(int)]
+	}).(GetBdsInstanceWorkerNodeShapeConfigOutput)
+}
+
 type GetBdsInstancesBdsInstance struct {
+	// pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
+	BootstrapScriptUrl string `pulumi:"bootstrapScriptUrl"`
 	// The information about added Cloud SQL capability
 	CloudSqlDetails      []GetBdsInstancesBdsInstanceCloudSqlDetail `pulumi:"cloudSqlDetails"`
 	ClusterAdminPassword string                                     `pulumi:"clusterAdminPassword"`
@@ -4857,7 +12941,8 @@ type GetBdsInstancesBdsInstance struct {
 	// Version of the Hadoop distribution.
 	ClusterVersion string `pulumi:"clusterVersion"`
 	// The OCID of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId          string                                            `pulumi:"compartmentId"`
+	ComputeOnlyWorkerNodes []GetBdsInstancesBdsInstanceComputeOnlyWorkerNode `pulumi:"computeOnlyWorkerNodes"`
 	// The user who created the cluster.
 	CreatedBy string `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For example, `{"foo-namespace": {"bar-key": "value"}}`
@@ -4873,8 +12958,9 @@ type GetBdsInstancesBdsInstance struct {
 	// Boolean flag specifying whether or not the cluster is highly available (HA)
 	IsHighAvailability bool `pulumi:"isHighAvailability"`
 	// Boolean flag specifying whether or not the cluster should be set up as secure.
-	IsSecure    bool                                   `pulumi:"isSecure"`
-	MasterNodes []GetBdsInstancesBdsInstanceMasterNode `pulumi:"masterNodes"`
+	IsSecure          bool                                   `pulumi:"isSecure"`
+	KerberosRealmName string                                 `pulumi:"kerberosRealmName"`
+	MasterNodes       []GetBdsInstancesBdsInstanceMasterNode `pulumi:"masterNodes"`
 	// Additional configuration of the user's network.
 	NetworkConfigs []GetBdsInstancesBdsInstanceNetworkConfig `pulumi:"networkConfigs"`
 	// The list of nodes in the cluster.
@@ -4903,6 +12989,8 @@ type GetBdsInstancesBdsInstanceInput interface {
 }
 
 type GetBdsInstancesBdsInstanceArgs struct {
+	// pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
+	BootstrapScriptUrl pulumi.StringInput `pulumi:"bootstrapScriptUrl"`
 	// The information about added Cloud SQL capability
 	CloudSqlDetails      GetBdsInstancesBdsInstanceCloudSqlDetailArrayInput `pulumi:"cloudSqlDetails"`
 	ClusterAdminPassword pulumi.StringInput                                 `pulumi:"clusterAdminPassword"`
@@ -4912,7 +13000,8 @@ type GetBdsInstancesBdsInstanceArgs struct {
 	// Version of the Hadoop distribution.
 	ClusterVersion pulumi.StringInput `pulumi:"clusterVersion"`
 	// The OCID of the compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId          pulumi.StringInput                                        `pulumi:"compartmentId"`
+	ComputeOnlyWorkerNodes GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArrayInput `pulumi:"computeOnlyWorkerNodes"`
 	// The user who created the cluster.
 	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For example, `{"foo-namespace": {"bar-key": "value"}}`
@@ -4928,8 +13017,9 @@ type GetBdsInstancesBdsInstanceArgs struct {
 	// Boolean flag specifying whether or not the cluster is highly available (HA)
 	IsHighAvailability pulumi.BoolInput `pulumi:"isHighAvailability"`
 	// Boolean flag specifying whether or not the cluster should be set up as secure.
-	IsSecure    pulumi.BoolInput                               `pulumi:"isSecure"`
-	MasterNodes GetBdsInstancesBdsInstanceMasterNodeArrayInput `pulumi:"masterNodes"`
+	IsSecure          pulumi.BoolInput                               `pulumi:"isSecure"`
+	KerberosRealmName pulumi.StringInput                             `pulumi:"kerberosRealmName"`
+	MasterNodes       GetBdsInstancesBdsInstanceMasterNodeArrayInput `pulumi:"masterNodes"`
 	// Additional configuration of the user's network.
 	NetworkConfigs GetBdsInstancesBdsInstanceNetworkConfigArrayInput `pulumi:"networkConfigs"`
 	// The list of nodes in the cluster.
@@ -4997,6 +13087,11 @@ func (o GetBdsInstancesBdsInstanceOutput) ToGetBdsInstancesBdsInstanceOutputWith
 	return o
 }
 
+// pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
+func (o GetBdsInstancesBdsInstanceOutput) BootstrapScriptUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstance) string { return v.BootstrapScriptUrl }).(pulumi.StringOutput)
+}
+
 // The information about added Cloud SQL capability
 func (o GetBdsInstancesBdsInstanceOutput) CloudSqlDetails() GetBdsInstancesBdsInstanceCloudSqlDetailArrayOutput {
 	return o.ApplyT(func(v GetBdsInstancesBdsInstance) []GetBdsInstancesBdsInstanceCloudSqlDetail {
@@ -5025,6 +13120,12 @@ func (o GetBdsInstancesBdsInstanceOutput) ClusterVersion() pulumi.StringOutput {
 // The OCID of the compartment.
 func (o GetBdsInstancesBdsInstanceOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBdsInstancesBdsInstance) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+func (o GetBdsInstancesBdsInstanceOutput) ComputeOnlyWorkerNodes() GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArrayOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstance) []GetBdsInstancesBdsInstanceComputeOnlyWorkerNode {
+		return v.ComputeOnlyWorkerNodes
+	}).(GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArrayOutput)
 }
 
 // The user who created the cluster.
@@ -5065,6 +13166,10 @@ func (o GetBdsInstancesBdsInstanceOutput) IsHighAvailability() pulumi.BoolOutput
 // Boolean flag specifying whether or not the cluster should be set up as secure.
 func (o GetBdsInstancesBdsInstanceOutput) IsSecure() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetBdsInstancesBdsInstance) bool { return v.IsSecure }).(pulumi.BoolOutput)
+}
+
+func (o GetBdsInstancesBdsInstanceOutput) KerberosRealmName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstance) string { return v.KerberosRealmName }).(pulumi.StringOutput)
 }
 
 func (o GetBdsInstancesBdsInstanceOutput) MasterNodes() GetBdsInstancesBdsInstanceMasterNodeArrayOutput {
@@ -5391,6 +13496,8 @@ type GetBdsInstancesBdsInstanceClusterDetail struct {
 	DbVersion string `pulumi:"dbVersion"`
 	// The URL of the Hue server.
 	HueServerUrl string `pulumi:"hueServerUrl"`
+	// The URL of the Jupyterhub.
+	JupyterHubUrl string `pulumi:"jupyterHubUrl"`
 	// Oracle Linux version installed in the cluster.
 	OsVersion string `pulumi:"osVersion"`
 	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
@@ -5431,6 +13538,8 @@ type GetBdsInstancesBdsInstanceClusterDetailArgs struct {
 	DbVersion pulumi.StringInput `pulumi:"dbVersion"`
 	// The URL of the Hue server.
 	HueServerUrl pulumi.StringInput `pulumi:"hueServerUrl"`
+	// The URL of the Jupyterhub.
+	JupyterHubUrl pulumi.StringInput `pulumi:"jupyterHubUrl"`
 	// Oracle Linux version installed in the cluster.
 	OsVersion pulumi.StringInput `pulumi:"osVersion"`
 	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
@@ -5540,6 +13649,11 @@ func (o GetBdsInstancesBdsInstanceClusterDetailOutput) HueServerUrl() pulumi.Str
 	return o.ApplyT(func(v GetBdsInstancesBdsInstanceClusterDetail) string { return v.HueServerUrl }).(pulumi.StringOutput)
 }
 
+// The URL of the Jupyterhub.
+func (o GetBdsInstancesBdsInstanceClusterDetailOutput) JupyterHubUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceClusterDetail) string { return v.JupyterHubUrl }).(pulumi.StringOutput)
+}
+
 // Oracle Linux version installed in the cluster.
 func (o GetBdsInstancesBdsInstanceClusterDetailOutput) OsVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBdsInstancesBdsInstanceClusterDetail) string { return v.OsVersion }).(pulumi.StringOutput)
@@ -5575,13 +13689,252 @@ func (o GetBdsInstancesBdsInstanceClusterDetailArrayOutput) Index(i pulumi.IntIn
 	}).(GetBdsInstancesBdsInstanceClusterDetailOutput)
 }
 
+type GetBdsInstancesBdsInstanceComputeOnlyWorkerNode struct {
+	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+	BlockVolumeSizeInGbs string `pulumi:"blockVolumeSizeInGbs"`
+	// The number of nodes that form the cluster.
+	NumberOfNodes int `pulumi:"numberOfNodes"`
+	// Shape of the node.
+	Shape        string                                                       `pulumi:"shape"`
+	ShapeConfigs []GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfig `pulumi:"shapeConfigs"`
+	// The OCID of the subnet in which the node is to be created.
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeInput is an input type that accepts GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArgs and GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeOutput values.
+// You can construct a concrete instance of `GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeInput` via:
+//
+//          GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArgs{...}
+type GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeInput interface {
+	pulumi.Input
+
+	ToGetBdsInstancesBdsInstanceComputeOnlyWorkerNodeOutput() GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeOutput
+	ToGetBdsInstancesBdsInstanceComputeOnlyWorkerNodeOutputWithContext(context.Context) GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeOutput
+}
+
+type GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArgs struct {
+	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+	BlockVolumeSizeInGbs pulumi.StringInput `pulumi:"blockVolumeSizeInGbs"`
+	// The number of nodes that form the cluster.
+	NumberOfNodes pulumi.IntInput `pulumi:"numberOfNodes"`
+	// Shape of the node.
+	Shape        pulumi.StringInput                                                   `pulumi:"shape"`
+	ShapeConfigs GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayInput `pulumi:"shapeConfigs"`
+	// The OCID of the subnet in which the node is to be created.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstancesBdsInstanceComputeOnlyWorkerNode)(nil)).Elem()
+}
+
+func (i GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArgs) ToGetBdsInstancesBdsInstanceComputeOnlyWorkerNodeOutput() GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeOutput {
+	return i.ToGetBdsInstancesBdsInstanceComputeOnlyWorkerNodeOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArgs) ToGetBdsInstancesBdsInstanceComputeOnlyWorkerNodeOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeOutput)
+}
+
+// GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArrayInput is an input type that accepts GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArray and GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArrayInput` via:
+//
+//          GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArray{ GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArgs{...} }
+type GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArrayOutput() GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArrayOutput
+	ToGetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArrayOutputWithContext(context.Context) GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArrayOutput
+}
+
+type GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArray []GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeInput
+
+func (GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstancesBdsInstanceComputeOnlyWorkerNode)(nil)).Elem()
+}
+
+func (i GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArray) ToGetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArrayOutput() GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArrayOutput {
+	return i.ToGetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArray) ToGetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArrayOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArrayOutput)
+}
+
+type GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstancesBdsInstanceComputeOnlyWorkerNode)(nil)).Elem()
+}
+
+func (o GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeOutput) ToGetBdsInstancesBdsInstanceComputeOnlyWorkerNodeOutput() GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeOutput {
+	return o
+}
+
+func (o GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeOutput) ToGetBdsInstancesBdsInstanceComputeOnlyWorkerNodeOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeOutput {
+	return o
+}
+
+// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+func (o GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeOutput) BlockVolumeSizeInGbs() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceComputeOnlyWorkerNode) string { return v.BlockVolumeSizeInGbs }).(pulumi.StringOutput)
+}
+
+// The number of nodes that form the cluster.
+func (o GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeOutput) NumberOfNodes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceComputeOnlyWorkerNode) int { return v.NumberOfNodes }).(pulumi.IntOutput)
+}
+
+// Shape of the node.
+func (o GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeOutput) Shape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceComputeOnlyWorkerNode) string { return v.Shape }).(pulumi.StringOutput)
+}
+
+func (o GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeOutput) ShapeConfigs() GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceComputeOnlyWorkerNode) []GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfig {
+		return v.ShapeConfigs
+	}).(GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutput)
+}
+
+// The OCID of the subnet in which the node is to be created.
+func (o GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceComputeOnlyWorkerNode) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+type GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstancesBdsInstanceComputeOnlyWorkerNode)(nil)).Elem()
+}
+
+func (o GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArrayOutput) ToGetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArrayOutput() GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArrayOutput {
+	return o
+}
+
+func (o GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArrayOutput) ToGetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArrayOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArrayOutput {
+	return o
+}
+
+func (o GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArrayOutput) Index(i pulumi.IntInput) GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstancesBdsInstanceComputeOnlyWorkerNode {
+		return vs[0].([]GetBdsInstancesBdsInstanceComputeOnlyWorkerNode)[vs[1].(int)]
+	}).(GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeOutput)
+}
+
+type GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfig struct {
+	// The total amount of memory available to the node, in gigabytes.
+	MemoryInGbs int `pulumi:"memoryInGbs"`
+	// The total number of OCPUs available to the node.
+	Ocpus int `pulumi:"ocpus"`
+}
+
+// GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigInput is an input type that accepts GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArgs and GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput values.
+// You can construct a concrete instance of `GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigInput` via:
+//
+//          GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArgs{...}
+type GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigInput interface {
+	pulumi.Input
+
+	ToGetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput() GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput
+	ToGetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigOutputWithContext(context.Context) GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput
+}
+
+type GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArgs struct {
+	// The total amount of memory available to the node, in gigabytes.
+	MemoryInGbs pulumi.IntInput `pulumi:"memoryInGbs"`
+	// The total number of OCPUs available to the node.
+	Ocpus pulumi.IntInput `pulumi:"ocpus"`
+}
+
+func (GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfig)(nil)).Elem()
+}
+
+func (i GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArgs) ToGetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput() GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput {
+	return i.ToGetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArgs) ToGetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput)
+}
+
+// GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayInput is an input type that accepts GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArray and GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayInput` via:
+//
+//          GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArray{ GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArgs{...} }
+type GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutput() GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutput
+	ToGetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutputWithContext(context.Context) GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutput
+}
+
+type GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArray []GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigInput
+
+func (GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfig)(nil)).Elem()
+}
+
+func (i GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArray) ToGetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutput() GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutput {
+	return i.ToGetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArray) ToGetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutput)
+}
+
+type GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfig)(nil)).Elem()
+}
+
+func (o GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput) ToGetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput() GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput {
+	return o
+}
+
+func (o GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput) ToGetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput {
+	return o
+}
+
+// The total amount of memory available to the node, in gigabytes.
+func (o GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput) MemoryInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfig) int { return v.MemoryInGbs }).(pulumi.IntOutput)
+}
+
+// The total number of OCPUs available to the node.
+func (o GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput) Ocpus() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfig) int { return v.Ocpus }).(pulumi.IntOutput)
+}
+
+type GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfig)(nil)).Elem()
+}
+
+func (o GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutput) ToGetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutput() GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutput) ToGetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutput) Index(i pulumi.IntInput) GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfig {
+		return vs[0].([]GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfig)[vs[1].(int)]
+	}).(GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput)
+}
+
 type GetBdsInstancesBdsInstanceMasterNode struct {
 	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
 	BlockVolumeSizeInGbs string `pulumi:"blockVolumeSizeInGbs"`
 	// The number of nodes that form the cluster.
 	NumberOfNodes int `pulumi:"numberOfNodes"`
 	// Shape of the node.
-	Shape string `pulumi:"shape"`
+	Shape        string                                            `pulumi:"shape"`
+	ShapeConfigs []GetBdsInstancesBdsInstanceMasterNodeShapeConfig `pulumi:"shapeConfigs"`
 	// The OCID of the subnet in which the node is to be created.
 	SubnetId string `pulumi:"subnetId"`
 }
@@ -5603,7 +13956,8 @@ type GetBdsInstancesBdsInstanceMasterNodeArgs struct {
 	// The number of nodes that form the cluster.
 	NumberOfNodes pulumi.IntInput `pulumi:"numberOfNodes"`
 	// Shape of the node.
-	Shape pulumi.StringInput `pulumi:"shape"`
+	Shape        pulumi.StringInput                                        `pulumi:"shape"`
+	ShapeConfigs GetBdsInstancesBdsInstanceMasterNodeShapeConfigArrayInput `pulumi:"shapeConfigs"`
 	// The OCID of the subnet in which the node is to be created.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 }
@@ -5674,6 +14028,12 @@ func (o GetBdsInstancesBdsInstanceMasterNodeOutput) Shape() pulumi.StringOutput 
 	return o.ApplyT(func(v GetBdsInstancesBdsInstanceMasterNode) string { return v.Shape }).(pulumi.StringOutput)
 }
 
+func (o GetBdsInstancesBdsInstanceMasterNodeOutput) ShapeConfigs() GetBdsInstancesBdsInstanceMasterNodeShapeConfigArrayOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceMasterNode) []GetBdsInstancesBdsInstanceMasterNodeShapeConfig {
+		return v.ShapeConfigs
+	}).(GetBdsInstancesBdsInstanceMasterNodeShapeConfigArrayOutput)
+}
+
 // The OCID of the subnet in which the node is to be created.
 func (o GetBdsInstancesBdsInstanceMasterNodeOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBdsInstancesBdsInstanceMasterNode) string { return v.SubnetId }).(pulumi.StringOutput)
@@ -5697,6 +14057,112 @@ func (o GetBdsInstancesBdsInstanceMasterNodeArrayOutput) Index(i pulumi.IntInput
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstancesBdsInstanceMasterNode {
 		return vs[0].([]GetBdsInstancesBdsInstanceMasterNode)[vs[1].(int)]
 	}).(GetBdsInstancesBdsInstanceMasterNodeOutput)
+}
+
+type GetBdsInstancesBdsInstanceMasterNodeShapeConfig struct {
+	// The total amount of memory available to the node, in gigabytes.
+	MemoryInGbs int `pulumi:"memoryInGbs"`
+	// The total number of OCPUs available to the node.
+	Ocpus int `pulumi:"ocpus"`
+}
+
+// GetBdsInstancesBdsInstanceMasterNodeShapeConfigInput is an input type that accepts GetBdsInstancesBdsInstanceMasterNodeShapeConfigArgs and GetBdsInstancesBdsInstanceMasterNodeShapeConfigOutput values.
+// You can construct a concrete instance of `GetBdsInstancesBdsInstanceMasterNodeShapeConfigInput` via:
+//
+//          GetBdsInstancesBdsInstanceMasterNodeShapeConfigArgs{...}
+type GetBdsInstancesBdsInstanceMasterNodeShapeConfigInput interface {
+	pulumi.Input
+
+	ToGetBdsInstancesBdsInstanceMasterNodeShapeConfigOutput() GetBdsInstancesBdsInstanceMasterNodeShapeConfigOutput
+	ToGetBdsInstancesBdsInstanceMasterNodeShapeConfigOutputWithContext(context.Context) GetBdsInstancesBdsInstanceMasterNodeShapeConfigOutput
+}
+
+type GetBdsInstancesBdsInstanceMasterNodeShapeConfigArgs struct {
+	// The total amount of memory available to the node, in gigabytes.
+	MemoryInGbs pulumi.IntInput `pulumi:"memoryInGbs"`
+	// The total number of OCPUs available to the node.
+	Ocpus pulumi.IntInput `pulumi:"ocpus"`
+}
+
+func (GetBdsInstancesBdsInstanceMasterNodeShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstancesBdsInstanceMasterNodeShapeConfig)(nil)).Elem()
+}
+
+func (i GetBdsInstancesBdsInstanceMasterNodeShapeConfigArgs) ToGetBdsInstancesBdsInstanceMasterNodeShapeConfigOutput() GetBdsInstancesBdsInstanceMasterNodeShapeConfigOutput {
+	return i.ToGetBdsInstancesBdsInstanceMasterNodeShapeConfigOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstancesBdsInstanceMasterNodeShapeConfigArgs) ToGetBdsInstancesBdsInstanceMasterNodeShapeConfigOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceMasterNodeShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceMasterNodeShapeConfigOutput)
+}
+
+// GetBdsInstancesBdsInstanceMasterNodeShapeConfigArrayInput is an input type that accepts GetBdsInstancesBdsInstanceMasterNodeShapeConfigArray and GetBdsInstancesBdsInstanceMasterNodeShapeConfigArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstancesBdsInstanceMasterNodeShapeConfigArrayInput` via:
+//
+//          GetBdsInstancesBdsInstanceMasterNodeShapeConfigArray{ GetBdsInstancesBdsInstanceMasterNodeShapeConfigArgs{...} }
+type GetBdsInstancesBdsInstanceMasterNodeShapeConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstancesBdsInstanceMasterNodeShapeConfigArrayOutput() GetBdsInstancesBdsInstanceMasterNodeShapeConfigArrayOutput
+	ToGetBdsInstancesBdsInstanceMasterNodeShapeConfigArrayOutputWithContext(context.Context) GetBdsInstancesBdsInstanceMasterNodeShapeConfigArrayOutput
+}
+
+type GetBdsInstancesBdsInstanceMasterNodeShapeConfigArray []GetBdsInstancesBdsInstanceMasterNodeShapeConfigInput
+
+func (GetBdsInstancesBdsInstanceMasterNodeShapeConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstancesBdsInstanceMasterNodeShapeConfig)(nil)).Elem()
+}
+
+func (i GetBdsInstancesBdsInstanceMasterNodeShapeConfigArray) ToGetBdsInstancesBdsInstanceMasterNodeShapeConfigArrayOutput() GetBdsInstancesBdsInstanceMasterNodeShapeConfigArrayOutput {
+	return i.ToGetBdsInstancesBdsInstanceMasterNodeShapeConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstancesBdsInstanceMasterNodeShapeConfigArray) ToGetBdsInstancesBdsInstanceMasterNodeShapeConfigArrayOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceMasterNodeShapeConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceMasterNodeShapeConfigArrayOutput)
+}
+
+type GetBdsInstancesBdsInstanceMasterNodeShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstancesBdsInstanceMasterNodeShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstancesBdsInstanceMasterNodeShapeConfig)(nil)).Elem()
+}
+
+func (o GetBdsInstancesBdsInstanceMasterNodeShapeConfigOutput) ToGetBdsInstancesBdsInstanceMasterNodeShapeConfigOutput() GetBdsInstancesBdsInstanceMasterNodeShapeConfigOutput {
+	return o
+}
+
+func (o GetBdsInstancesBdsInstanceMasterNodeShapeConfigOutput) ToGetBdsInstancesBdsInstanceMasterNodeShapeConfigOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceMasterNodeShapeConfigOutput {
+	return o
+}
+
+// The total amount of memory available to the node, in gigabytes.
+func (o GetBdsInstancesBdsInstanceMasterNodeShapeConfigOutput) MemoryInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceMasterNodeShapeConfig) int { return v.MemoryInGbs }).(pulumi.IntOutput)
+}
+
+// The total number of OCPUs available to the node.
+func (o GetBdsInstancesBdsInstanceMasterNodeShapeConfigOutput) Ocpus() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceMasterNodeShapeConfig) int { return v.Ocpus }).(pulumi.IntOutput)
+}
+
+type GetBdsInstancesBdsInstanceMasterNodeShapeConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstancesBdsInstanceMasterNodeShapeConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstancesBdsInstanceMasterNodeShapeConfig)(nil)).Elem()
+}
+
+func (o GetBdsInstancesBdsInstanceMasterNodeShapeConfigArrayOutput) ToGetBdsInstancesBdsInstanceMasterNodeShapeConfigArrayOutput() GetBdsInstancesBdsInstanceMasterNodeShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetBdsInstancesBdsInstanceMasterNodeShapeConfigArrayOutput) ToGetBdsInstancesBdsInstanceMasterNodeShapeConfigArrayOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceMasterNodeShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetBdsInstancesBdsInstanceMasterNodeShapeConfigArrayOutput) Index(i pulumi.IntInput) GetBdsInstancesBdsInstanceMasterNodeShapeConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstancesBdsInstanceMasterNodeShapeConfig {
+		return vs[0].([]GetBdsInstancesBdsInstanceMasterNodeShapeConfig)[vs[1].(int)]
+	}).(GetBdsInstancesBdsInstanceMasterNodeShapeConfigOutput)
 }
 
 type GetBdsInstancesBdsInstanceNetworkConfig struct {
@@ -5822,8 +14288,12 @@ type GetBdsInstancesBdsInstanceNode struct {
 	InstanceId string `pulumi:"instanceId"`
 	// IP address of the node.
 	IpAddress string `pulumi:"ipAddress"`
+	// The total amount of memory available to the node, in gigabytes.
+	MemoryInGbs int `pulumi:"memoryInGbs"`
 	// Cluster node type.
 	NodeType string `pulumi:"nodeType"`
+	// The total number of OCPUs available to the node.
+	Ocpus int `pulumi:"ocpus"`
 	// Shape of the node.
 	Shape string `pulumi:"shape"`
 	// The fingerprint of the SSH key used for node access.
@@ -5864,8 +14334,12 @@ type GetBdsInstancesBdsInstanceNodeArgs struct {
 	InstanceId pulumi.StringInput `pulumi:"instanceId"`
 	// IP address of the node.
 	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+	// The total amount of memory available to the node, in gigabytes.
+	MemoryInGbs pulumi.IntInput `pulumi:"memoryInGbs"`
 	// Cluster node type.
 	NodeType pulumi.StringInput `pulumi:"nodeType"`
+	// The total number of OCPUs available to the node.
+	Ocpus pulumi.IntInput `pulumi:"ocpus"`
 	// Shape of the node.
 	Shape pulumi.StringInput `pulumi:"shape"`
 	// The fingerprint of the SSH key used for node access.
@@ -5971,9 +14445,19 @@ func (o GetBdsInstancesBdsInstanceNodeOutput) IpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBdsInstancesBdsInstanceNode) string { return v.IpAddress }).(pulumi.StringOutput)
 }
 
+// The total amount of memory available to the node, in gigabytes.
+func (o GetBdsInstancesBdsInstanceNodeOutput) MemoryInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceNode) int { return v.MemoryInGbs }).(pulumi.IntOutput)
+}
+
 // Cluster node type.
 func (o GetBdsInstancesBdsInstanceNodeOutput) NodeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBdsInstancesBdsInstanceNode) string { return v.NodeType }).(pulumi.StringOutput)
+}
+
+// The total number of OCPUs available to the node.
+func (o GetBdsInstancesBdsInstanceNodeOutput) Ocpus() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceNode) int { return v.Ocpus }).(pulumi.IntOutput)
 }
 
 // Shape of the node.
@@ -6133,7 +14617,8 @@ type GetBdsInstancesBdsInstanceUtilNode struct {
 	// The number of nodes that form the cluster.
 	NumberOfNodes int `pulumi:"numberOfNodes"`
 	// Shape of the node.
-	Shape string `pulumi:"shape"`
+	Shape        string                                          `pulumi:"shape"`
+	ShapeConfigs []GetBdsInstancesBdsInstanceUtilNodeShapeConfig `pulumi:"shapeConfigs"`
 	// The OCID of the subnet in which the node is to be created.
 	SubnetId string `pulumi:"subnetId"`
 }
@@ -6155,7 +14640,8 @@ type GetBdsInstancesBdsInstanceUtilNodeArgs struct {
 	// The number of nodes that form the cluster.
 	NumberOfNodes pulumi.IntInput `pulumi:"numberOfNodes"`
 	// Shape of the node.
-	Shape pulumi.StringInput `pulumi:"shape"`
+	Shape        pulumi.StringInput                                      `pulumi:"shape"`
+	ShapeConfigs GetBdsInstancesBdsInstanceUtilNodeShapeConfigArrayInput `pulumi:"shapeConfigs"`
 	// The OCID of the subnet in which the node is to be created.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 }
@@ -6226,6 +14712,12 @@ func (o GetBdsInstancesBdsInstanceUtilNodeOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBdsInstancesBdsInstanceUtilNode) string { return v.Shape }).(pulumi.StringOutput)
 }
 
+func (o GetBdsInstancesBdsInstanceUtilNodeOutput) ShapeConfigs() GetBdsInstancesBdsInstanceUtilNodeShapeConfigArrayOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceUtilNode) []GetBdsInstancesBdsInstanceUtilNodeShapeConfig {
+		return v.ShapeConfigs
+	}).(GetBdsInstancesBdsInstanceUtilNodeShapeConfigArrayOutput)
+}
+
 // The OCID of the subnet in which the node is to be created.
 func (o GetBdsInstancesBdsInstanceUtilNodeOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBdsInstancesBdsInstanceUtilNode) string { return v.SubnetId }).(pulumi.StringOutput)
@@ -6251,13 +14743,120 @@ func (o GetBdsInstancesBdsInstanceUtilNodeArrayOutput) Index(i pulumi.IntInput) 
 	}).(GetBdsInstancesBdsInstanceUtilNodeOutput)
 }
 
+type GetBdsInstancesBdsInstanceUtilNodeShapeConfig struct {
+	// The total amount of memory available to the node, in gigabytes.
+	MemoryInGbs int `pulumi:"memoryInGbs"`
+	// The total number of OCPUs available to the node.
+	Ocpus int `pulumi:"ocpus"`
+}
+
+// GetBdsInstancesBdsInstanceUtilNodeShapeConfigInput is an input type that accepts GetBdsInstancesBdsInstanceUtilNodeShapeConfigArgs and GetBdsInstancesBdsInstanceUtilNodeShapeConfigOutput values.
+// You can construct a concrete instance of `GetBdsInstancesBdsInstanceUtilNodeShapeConfigInput` via:
+//
+//          GetBdsInstancesBdsInstanceUtilNodeShapeConfigArgs{...}
+type GetBdsInstancesBdsInstanceUtilNodeShapeConfigInput interface {
+	pulumi.Input
+
+	ToGetBdsInstancesBdsInstanceUtilNodeShapeConfigOutput() GetBdsInstancesBdsInstanceUtilNodeShapeConfigOutput
+	ToGetBdsInstancesBdsInstanceUtilNodeShapeConfigOutputWithContext(context.Context) GetBdsInstancesBdsInstanceUtilNodeShapeConfigOutput
+}
+
+type GetBdsInstancesBdsInstanceUtilNodeShapeConfigArgs struct {
+	// The total amount of memory available to the node, in gigabytes.
+	MemoryInGbs pulumi.IntInput `pulumi:"memoryInGbs"`
+	// The total number of OCPUs available to the node.
+	Ocpus pulumi.IntInput `pulumi:"ocpus"`
+}
+
+func (GetBdsInstancesBdsInstanceUtilNodeShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstancesBdsInstanceUtilNodeShapeConfig)(nil)).Elem()
+}
+
+func (i GetBdsInstancesBdsInstanceUtilNodeShapeConfigArgs) ToGetBdsInstancesBdsInstanceUtilNodeShapeConfigOutput() GetBdsInstancesBdsInstanceUtilNodeShapeConfigOutput {
+	return i.ToGetBdsInstancesBdsInstanceUtilNodeShapeConfigOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstancesBdsInstanceUtilNodeShapeConfigArgs) ToGetBdsInstancesBdsInstanceUtilNodeShapeConfigOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceUtilNodeShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceUtilNodeShapeConfigOutput)
+}
+
+// GetBdsInstancesBdsInstanceUtilNodeShapeConfigArrayInput is an input type that accepts GetBdsInstancesBdsInstanceUtilNodeShapeConfigArray and GetBdsInstancesBdsInstanceUtilNodeShapeConfigArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstancesBdsInstanceUtilNodeShapeConfigArrayInput` via:
+//
+//          GetBdsInstancesBdsInstanceUtilNodeShapeConfigArray{ GetBdsInstancesBdsInstanceUtilNodeShapeConfigArgs{...} }
+type GetBdsInstancesBdsInstanceUtilNodeShapeConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstancesBdsInstanceUtilNodeShapeConfigArrayOutput() GetBdsInstancesBdsInstanceUtilNodeShapeConfigArrayOutput
+	ToGetBdsInstancesBdsInstanceUtilNodeShapeConfigArrayOutputWithContext(context.Context) GetBdsInstancesBdsInstanceUtilNodeShapeConfigArrayOutput
+}
+
+type GetBdsInstancesBdsInstanceUtilNodeShapeConfigArray []GetBdsInstancesBdsInstanceUtilNodeShapeConfigInput
+
+func (GetBdsInstancesBdsInstanceUtilNodeShapeConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstancesBdsInstanceUtilNodeShapeConfig)(nil)).Elem()
+}
+
+func (i GetBdsInstancesBdsInstanceUtilNodeShapeConfigArray) ToGetBdsInstancesBdsInstanceUtilNodeShapeConfigArrayOutput() GetBdsInstancesBdsInstanceUtilNodeShapeConfigArrayOutput {
+	return i.ToGetBdsInstancesBdsInstanceUtilNodeShapeConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstancesBdsInstanceUtilNodeShapeConfigArray) ToGetBdsInstancesBdsInstanceUtilNodeShapeConfigArrayOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceUtilNodeShapeConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceUtilNodeShapeConfigArrayOutput)
+}
+
+type GetBdsInstancesBdsInstanceUtilNodeShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstancesBdsInstanceUtilNodeShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstancesBdsInstanceUtilNodeShapeConfig)(nil)).Elem()
+}
+
+func (o GetBdsInstancesBdsInstanceUtilNodeShapeConfigOutput) ToGetBdsInstancesBdsInstanceUtilNodeShapeConfigOutput() GetBdsInstancesBdsInstanceUtilNodeShapeConfigOutput {
+	return o
+}
+
+func (o GetBdsInstancesBdsInstanceUtilNodeShapeConfigOutput) ToGetBdsInstancesBdsInstanceUtilNodeShapeConfigOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceUtilNodeShapeConfigOutput {
+	return o
+}
+
+// The total amount of memory available to the node, in gigabytes.
+func (o GetBdsInstancesBdsInstanceUtilNodeShapeConfigOutput) MemoryInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceUtilNodeShapeConfig) int { return v.MemoryInGbs }).(pulumi.IntOutput)
+}
+
+// The total number of OCPUs available to the node.
+func (o GetBdsInstancesBdsInstanceUtilNodeShapeConfigOutput) Ocpus() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceUtilNodeShapeConfig) int { return v.Ocpus }).(pulumi.IntOutput)
+}
+
+type GetBdsInstancesBdsInstanceUtilNodeShapeConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstancesBdsInstanceUtilNodeShapeConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstancesBdsInstanceUtilNodeShapeConfig)(nil)).Elem()
+}
+
+func (o GetBdsInstancesBdsInstanceUtilNodeShapeConfigArrayOutput) ToGetBdsInstancesBdsInstanceUtilNodeShapeConfigArrayOutput() GetBdsInstancesBdsInstanceUtilNodeShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetBdsInstancesBdsInstanceUtilNodeShapeConfigArrayOutput) ToGetBdsInstancesBdsInstanceUtilNodeShapeConfigArrayOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceUtilNodeShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetBdsInstancesBdsInstanceUtilNodeShapeConfigArrayOutput) Index(i pulumi.IntInput) GetBdsInstancesBdsInstanceUtilNodeShapeConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstancesBdsInstanceUtilNodeShapeConfig {
+		return vs[0].([]GetBdsInstancesBdsInstanceUtilNodeShapeConfig)[vs[1].(int)]
+	}).(GetBdsInstancesBdsInstanceUtilNodeShapeConfigOutput)
+}
+
 type GetBdsInstancesBdsInstanceWorkerNode struct {
 	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
 	BlockVolumeSizeInGbs string `pulumi:"blockVolumeSizeInGbs"`
 	// The number of nodes that form the cluster.
 	NumberOfNodes int `pulumi:"numberOfNodes"`
 	// Shape of the node.
-	Shape string `pulumi:"shape"`
+	Shape        string                                            `pulumi:"shape"`
+	ShapeConfigs []GetBdsInstancesBdsInstanceWorkerNodeShapeConfig `pulumi:"shapeConfigs"`
 	// The OCID of the subnet in which the node is to be created.
 	SubnetId string `pulumi:"subnetId"`
 }
@@ -6279,7 +14878,8 @@ type GetBdsInstancesBdsInstanceWorkerNodeArgs struct {
 	// The number of nodes that form the cluster.
 	NumberOfNodes pulumi.IntInput `pulumi:"numberOfNodes"`
 	// Shape of the node.
-	Shape pulumi.StringInput `pulumi:"shape"`
+	Shape        pulumi.StringInput                                        `pulumi:"shape"`
+	ShapeConfigs GetBdsInstancesBdsInstanceWorkerNodeShapeConfigArrayInput `pulumi:"shapeConfigs"`
 	// The OCID of the subnet in which the node is to be created.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 }
@@ -6350,6 +14950,12 @@ func (o GetBdsInstancesBdsInstanceWorkerNodeOutput) Shape() pulumi.StringOutput 
 	return o.ApplyT(func(v GetBdsInstancesBdsInstanceWorkerNode) string { return v.Shape }).(pulumi.StringOutput)
 }
 
+func (o GetBdsInstancesBdsInstanceWorkerNodeOutput) ShapeConfigs() GetBdsInstancesBdsInstanceWorkerNodeShapeConfigArrayOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceWorkerNode) []GetBdsInstancesBdsInstanceWorkerNodeShapeConfig {
+		return v.ShapeConfigs
+	}).(GetBdsInstancesBdsInstanceWorkerNodeShapeConfigArrayOutput)
+}
+
 // The OCID of the subnet in which the node is to be created.
 func (o GetBdsInstancesBdsInstanceWorkerNodeOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBdsInstancesBdsInstanceWorkerNode) string { return v.SubnetId }).(pulumi.StringOutput)
@@ -6373,6 +14979,112 @@ func (o GetBdsInstancesBdsInstanceWorkerNodeArrayOutput) Index(i pulumi.IntInput
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstancesBdsInstanceWorkerNode {
 		return vs[0].([]GetBdsInstancesBdsInstanceWorkerNode)[vs[1].(int)]
 	}).(GetBdsInstancesBdsInstanceWorkerNodeOutput)
+}
+
+type GetBdsInstancesBdsInstanceWorkerNodeShapeConfig struct {
+	// The total amount of memory available to the node, in gigabytes.
+	MemoryInGbs int `pulumi:"memoryInGbs"`
+	// The total number of OCPUs available to the node.
+	Ocpus int `pulumi:"ocpus"`
+}
+
+// GetBdsInstancesBdsInstanceWorkerNodeShapeConfigInput is an input type that accepts GetBdsInstancesBdsInstanceWorkerNodeShapeConfigArgs and GetBdsInstancesBdsInstanceWorkerNodeShapeConfigOutput values.
+// You can construct a concrete instance of `GetBdsInstancesBdsInstanceWorkerNodeShapeConfigInput` via:
+//
+//          GetBdsInstancesBdsInstanceWorkerNodeShapeConfigArgs{...}
+type GetBdsInstancesBdsInstanceWorkerNodeShapeConfigInput interface {
+	pulumi.Input
+
+	ToGetBdsInstancesBdsInstanceWorkerNodeShapeConfigOutput() GetBdsInstancesBdsInstanceWorkerNodeShapeConfigOutput
+	ToGetBdsInstancesBdsInstanceWorkerNodeShapeConfigOutputWithContext(context.Context) GetBdsInstancesBdsInstanceWorkerNodeShapeConfigOutput
+}
+
+type GetBdsInstancesBdsInstanceWorkerNodeShapeConfigArgs struct {
+	// The total amount of memory available to the node, in gigabytes.
+	MemoryInGbs pulumi.IntInput `pulumi:"memoryInGbs"`
+	// The total number of OCPUs available to the node.
+	Ocpus pulumi.IntInput `pulumi:"ocpus"`
+}
+
+func (GetBdsInstancesBdsInstanceWorkerNodeShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstancesBdsInstanceWorkerNodeShapeConfig)(nil)).Elem()
+}
+
+func (i GetBdsInstancesBdsInstanceWorkerNodeShapeConfigArgs) ToGetBdsInstancesBdsInstanceWorkerNodeShapeConfigOutput() GetBdsInstancesBdsInstanceWorkerNodeShapeConfigOutput {
+	return i.ToGetBdsInstancesBdsInstanceWorkerNodeShapeConfigOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstancesBdsInstanceWorkerNodeShapeConfigArgs) ToGetBdsInstancesBdsInstanceWorkerNodeShapeConfigOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceWorkerNodeShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceWorkerNodeShapeConfigOutput)
+}
+
+// GetBdsInstancesBdsInstanceWorkerNodeShapeConfigArrayInput is an input type that accepts GetBdsInstancesBdsInstanceWorkerNodeShapeConfigArray and GetBdsInstancesBdsInstanceWorkerNodeShapeConfigArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstancesBdsInstanceWorkerNodeShapeConfigArrayInput` via:
+//
+//          GetBdsInstancesBdsInstanceWorkerNodeShapeConfigArray{ GetBdsInstancesBdsInstanceWorkerNodeShapeConfigArgs{...} }
+type GetBdsInstancesBdsInstanceWorkerNodeShapeConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstancesBdsInstanceWorkerNodeShapeConfigArrayOutput() GetBdsInstancesBdsInstanceWorkerNodeShapeConfigArrayOutput
+	ToGetBdsInstancesBdsInstanceWorkerNodeShapeConfigArrayOutputWithContext(context.Context) GetBdsInstancesBdsInstanceWorkerNodeShapeConfigArrayOutput
+}
+
+type GetBdsInstancesBdsInstanceWorkerNodeShapeConfigArray []GetBdsInstancesBdsInstanceWorkerNodeShapeConfigInput
+
+func (GetBdsInstancesBdsInstanceWorkerNodeShapeConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstancesBdsInstanceWorkerNodeShapeConfig)(nil)).Elem()
+}
+
+func (i GetBdsInstancesBdsInstanceWorkerNodeShapeConfigArray) ToGetBdsInstancesBdsInstanceWorkerNodeShapeConfigArrayOutput() GetBdsInstancesBdsInstanceWorkerNodeShapeConfigArrayOutput {
+	return i.ToGetBdsInstancesBdsInstanceWorkerNodeShapeConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstancesBdsInstanceWorkerNodeShapeConfigArray) ToGetBdsInstancesBdsInstanceWorkerNodeShapeConfigArrayOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceWorkerNodeShapeConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceWorkerNodeShapeConfigArrayOutput)
+}
+
+type GetBdsInstancesBdsInstanceWorkerNodeShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstancesBdsInstanceWorkerNodeShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstancesBdsInstanceWorkerNodeShapeConfig)(nil)).Elem()
+}
+
+func (o GetBdsInstancesBdsInstanceWorkerNodeShapeConfigOutput) ToGetBdsInstancesBdsInstanceWorkerNodeShapeConfigOutput() GetBdsInstancesBdsInstanceWorkerNodeShapeConfigOutput {
+	return o
+}
+
+func (o GetBdsInstancesBdsInstanceWorkerNodeShapeConfigOutput) ToGetBdsInstancesBdsInstanceWorkerNodeShapeConfigOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceWorkerNodeShapeConfigOutput {
+	return o
+}
+
+// The total amount of memory available to the node, in gigabytes.
+func (o GetBdsInstancesBdsInstanceWorkerNodeShapeConfigOutput) MemoryInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceWorkerNodeShapeConfig) int { return v.MemoryInGbs }).(pulumi.IntOutput)
+}
+
+// The total number of OCPUs available to the node.
+func (o GetBdsInstancesBdsInstanceWorkerNodeShapeConfigOutput) Ocpus() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceWorkerNodeShapeConfig) int { return v.Ocpus }).(pulumi.IntOutput)
+}
+
+type GetBdsInstancesBdsInstanceWorkerNodeShapeConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstancesBdsInstanceWorkerNodeShapeConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstancesBdsInstanceWorkerNodeShapeConfig)(nil)).Elem()
+}
+
+func (o GetBdsInstancesBdsInstanceWorkerNodeShapeConfigArrayOutput) ToGetBdsInstancesBdsInstanceWorkerNodeShapeConfigArrayOutput() GetBdsInstancesBdsInstanceWorkerNodeShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetBdsInstancesBdsInstanceWorkerNodeShapeConfigArrayOutput) ToGetBdsInstancesBdsInstanceWorkerNodeShapeConfigArrayOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceWorkerNodeShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetBdsInstancesBdsInstanceWorkerNodeShapeConfigArrayOutput) Index(i pulumi.IntInput) GetBdsInstancesBdsInstanceWorkerNodeShapeConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstancesBdsInstanceWorkerNodeShapeConfig {
+		return vs[0].([]GetBdsInstancesBdsInstanceWorkerNodeShapeConfig)[vs[1].(int)]
+	}).(GetBdsInstancesBdsInstanceWorkerNodeShapeConfigOutput)
 }
 
 type GetBdsInstancesFilter struct {
@@ -6484,6 +15196,38 @@ func (o GetBdsInstancesFilterArrayOutput) Index(i pulumi.IntInput) GetBdsInstanc
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AutoScalingConfigurationPolicyInput)(nil)).Elem(), AutoScalingConfigurationPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AutoScalingConfigurationPolicyPtrInput)(nil)).Elem(), AutoScalingConfigurationPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsInput)(nil)).Elem(), AutoScalingConfigurationPolicyDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsPtrInput)(nil)).Elem(), AutoScalingConfigurationPolicyDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScaleDownConfigInput)(nil)).Elem(), AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScaleDownConfigPtrInput)(nil)).Elem(), AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricInput)(nil)).Elem(), AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrInput)(nil)).Elem(), AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdInput)(nil)).Elem(), AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrInput)(nil)).Elem(), AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScaleInConfigInput)(nil)).Elem(), AutoScalingConfigurationPolicyDetailsScaleInConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScaleInConfigPtrInput)(nil)).Elem(), AutoScalingConfigurationPolicyDetailsScaleInConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScaleInConfigMetricInput)(nil)).Elem(), AutoScalingConfigurationPolicyDetailsScaleInConfigMetricArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrInput)(nil)).Elem(), AutoScalingConfigurationPolicyDetailsScaleInConfigMetricArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdInput)(nil)).Elem(), AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrInput)(nil)).Elem(), AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScaleOutConfigInput)(nil)).Elem(), AutoScalingConfigurationPolicyDetailsScaleOutConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScaleOutConfigPtrInput)(nil)).Elem(), AutoScalingConfigurationPolicyDetailsScaleOutConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricInput)(nil)).Elem(), AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrInput)(nil)).Elem(), AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdInput)(nil)).Elem(), AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrInput)(nil)).Elem(), AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScaleUpConfigInput)(nil)).Elem(), AutoScalingConfigurationPolicyDetailsScaleUpConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScaleUpConfigPtrInput)(nil)).Elem(), AutoScalingConfigurationPolicyDetailsScaleUpConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricInput)(nil)).Elem(), AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrInput)(nil)).Elem(), AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdInput)(nil)).Elem(), AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrInput)(nil)).Elem(), AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScheduleDetailInput)(nil)).Elem(), AutoScalingConfigurationPolicyDetailsScheduleDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScheduleDetailArrayInput)(nil)).Elem(), AutoScalingConfigurationPolicyDetailsScheduleDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigInput)(nil)).Elem(), AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArrayInput)(nil)).Elem(), AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigInput)(nil)).Elem(), AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArrayInput)(nil)).Elem(), AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AutoScalingConfigurationPolicyRuleInput)(nil)).Elem(), AutoScalingConfigurationPolicyRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AutoScalingConfigurationPolicyRuleArrayInput)(nil)).Elem(), AutoScalingConfigurationPolicyRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AutoScalingConfigurationPolicyRuleMetricInput)(nil)).Elem(), AutoScalingConfigurationPolicyRuleMetricArgs{})
@@ -6494,8 +15238,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceCloudSqlDetailKerberosDetailArrayInput)(nil)).Elem(), BdsInstanceCloudSqlDetailKerberosDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceClusterDetailInput)(nil)).Elem(), BdsInstanceClusterDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceClusterDetailArrayInput)(nil)).Elem(), BdsInstanceClusterDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceComputeOnlyWorkerNodeInput)(nil)).Elem(), BdsInstanceComputeOnlyWorkerNodeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceComputeOnlyWorkerNodePtrInput)(nil)).Elem(), BdsInstanceComputeOnlyWorkerNodeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceComputeOnlyWorkerNodeShapeConfigInput)(nil)).Elem(), BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrInput)(nil)).Elem(), BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceMasterNodeInput)(nil)).Elem(), BdsInstanceMasterNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceMasterNodePtrInput)(nil)).Elem(), BdsInstanceMasterNodeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceMasterNodeShapeConfigInput)(nil)).Elem(), BdsInstanceMasterNodeShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceMasterNodeShapeConfigPtrInput)(nil)).Elem(), BdsInstanceMasterNodeShapeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceNetworkConfigInput)(nil)).Elem(), BdsInstanceNetworkConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceNetworkConfigPtrInput)(nil)).Elem(), BdsInstanceNetworkConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceNodeInput)(nil)).Elem(), BdsInstanceNodeArgs{})
@@ -6504,10 +15254,46 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceNodeAttachedBlockVolumeArrayInput)(nil)).Elem(), BdsInstanceNodeAttachedBlockVolumeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceUtilNodeInput)(nil)).Elem(), BdsInstanceUtilNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceUtilNodePtrInput)(nil)).Elem(), BdsInstanceUtilNodeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceUtilNodeShapeConfigInput)(nil)).Elem(), BdsInstanceUtilNodeShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceUtilNodeShapeConfigPtrInput)(nil)).Elem(), BdsInstanceUtilNodeShapeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceWorkerNodeInput)(nil)).Elem(), BdsInstanceWorkerNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceWorkerNodePtrInput)(nil)).Elem(), BdsInstanceWorkerNodeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceWorkerNodeShapeConfigInput)(nil)).Elem(), BdsInstanceWorkerNodeShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceWorkerNodeShapeConfigPtrInput)(nil)).Elem(), BdsInstanceWorkerNodeShapeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationPolicyInput)(nil)).Elem(), GetAutoScalingConfigurationPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationPolicyArrayInput)(nil)).Elem(), GetAutoScalingConfigurationPolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailInput)(nil)).Elem(), GetAutoScalingConfigurationPolicyDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailArrayInput)(nil)).Elem(), GetAutoScalingConfigurationPolicyDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScaleDownConfigInput)(nil)).Elem(), GetAutoScalingConfigurationPolicyDetailScaleDownConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScaleDownConfigArrayInput)(nil)).Elem(), GetAutoScalingConfigurationPolicyDetailScaleDownConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricInput)(nil)).Elem(), GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayInput)(nil)).Elem(), GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdInput)(nil)).Elem(), GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayInput)(nil)).Elem(), GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScaleInConfigInput)(nil)).Elem(), GetAutoScalingConfigurationPolicyDetailScaleInConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScaleInConfigArrayInput)(nil)).Elem(), GetAutoScalingConfigurationPolicyDetailScaleInConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricInput)(nil)).Elem(), GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayInput)(nil)).Elem(), GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdInput)(nil)).Elem(), GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayInput)(nil)).Elem(), GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScaleOutConfigInput)(nil)).Elem(), GetAutoScalingConfigurationPolicyDetailScaleOutConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScaleOutConfigArrayInput)(nil)).Elem(), GetAutoScalingConfigurationPolicyDetailScaleOutConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricInput)(nil)).Elem(), GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayInput)(nil)).Elem(), GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdInput)(nil)).Elem(), GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayInput)(nil)).Elem(), GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScaleUpConfigInput)(nil)).Elem(), GetAutoScalingConfigurationPolicyDetailScaleUpConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScaleUpConfigArrayInput)(nil)).Elem(), GetAutoScalingConfigurationPolicyDetailScaleUpConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricInput)(nil)).Elem(), GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayInput)(nil)).Elem(), GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdInput)(nil)).Elem(), GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayInput)(nil)).Elem(), GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScheduleDetailInput)(nil)).Elem(), GetAutoScalingConfigurationPolicyDetailScheduleDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScheduleDetailArrayInput)(nil)).Elem(), GetAutoScalingConfigurationPolicyDetailScheduleDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigInput)(nil)).Elem(), GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayInput)(nil)).Elem(), GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigInput)(nil)).Elem(), GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayInput)(nil)).Elem(), GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationPolicyRuleInput)(nil)).Elem(), GetAutoScalingConfigurationPolicyRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationPolicyRuleArrayInput)(nil)).Elem(), GetAutoScalingConfigurationPolicyRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationPolicyRuleMetricInput)(nil)).Elem(), GetAutoScalingConfigurationPolicyRuleMetricArgs{})
@@ -6518,6 +15304,38 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationArrayInput)(nil)).Elem(), GetAutoScalingConfigurationsAutoScalingConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyInput)(nil)).Elem(), GetAutoScalingConfigurationsAutoScalingConfigurationPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyArrayInput)(nil)).Elem(), GetAutoScalingConfigurationsAutoScalingConfigurationPolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailInput)(nil)).Elem(), GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArrayInput)(nil)).Elem(), GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigInput)(nil)).Elem(), GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigArrayInput)(nil)).Elem(), GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricInput)(nil)).Elem(), GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayInput)(nil)).Elem(), GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdInput)(nil)).Elem(), GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayInput)(nil)).Elem(), GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigInput)(nil)).Elem(), GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigArrayInput)(nil)).Elem(), GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricInput)(nil)).Elem(), GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayInput)(nil)).Elem(), GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdInput)(nil)).Elem(), GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayInput)(nil)).Elem(), GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigInput)(nil)).Elem(), GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigArrayInput)(nil)).Elem(), GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricInput)(nil)).Elem(), GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayInput)(nil)).Elem(), GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdInput)(nil)).Elem(), GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayInput)(nil)).Elem(), GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigInput)(nil)).Elem(), GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigArrayInput)(nil)).Elem(), GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricInput)(nil)).Elem(), GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayInput)(nil)).Elem(), GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdInput)(nil)).Elem(), GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayInput)(nil)).Elem(), GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailInput)(nil)).Elem(), GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailArrayInput)(nil)).Elem(), GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigInput)(nil)).Elem(), GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayInput)(nil)).Elem(), GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigInput)(nil)).Elem(), GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayInput)(nil)).Elem(), GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleInput)(nil)).Elem(), GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleArrayInput)(nil)).Elem(), GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricInput)(nil)).Elem(), GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricArgs{})
@@ -6536,8 +15354,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceCloudSqlDetailKerberosDetailArrayInput)(nil)).Elem(), GetBdsInstanceCloudSqlDetailKerberosDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceClusterDetailInput)(nil)).Elem(), GetBdsInstanceClusterDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceClusterDetailArrayInput)(nil)).Elem(), GetBdsInstanceClusterDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceComputeOnlyWorkerNodeInput)(nil)).Elem(), GetBdsInstanceComputeOnlyWorkerNodeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceComputeOnlyWorkerNodeArrayInput)(nil)).Elem(), GetBdsInstanceComputeOnlyWorkerNodeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceComputeOnlyWorkerNodeShapeConfigInput)(nil)).Elem(), GetBdsInstanceComputeOnlyWorkerNodeShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayInput)(nil)).Elem(), GetBdsInstanceComputeOnlyWorkerNodeShapeConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceMasterNodeInput)(nil)).Elem(), GetBdsInstanceMasterNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceMasterNodeArrayInput)(nil)).Elem(), GetBdsInstanceMasterNodeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceMasterNodeShapeConfigInput)(nil)).Elem(), GetBdsInstanceMasterNodeShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceMasterNodeShapeConfigArrayInput)(nil)).Elem(), GetBdsInstanceMasterNodeShapeConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceMetastoreConfigsBdsMetastoreConfigurationInput)(nil)).Elem(), GetBdsInstanceMetastoreConfigsBdsMetastoreConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceMetastoreConfigsBdsMetastoreConfigurationArrayInput)(nil)).Elem(), GetBdsInstanceMetastoreConfigsBdsMetastoreConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceMetastoreConfigsFilterInput)(nil)).Elem(), GetBdsInstanceMetastoreConfigsFilterArgs{})
@@ -6550,8 +15374,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceNodeAttachedBlockVolumeArrayInput)(nil)).Elem(), GetBdsInstanceNodeAttachedBlockVolumeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceUtilNodeInput)(nil)).Elem(), GetBdsInstanceUtilNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceUtilNodeArrayInput)(nil)).Elem(), GetBdsInstanceUtilNodeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceUtilNodeShapeConfigInput)(nil)).Elem(), GetBdsInstanceUtilNodeShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceUtilNodeShapeConfigArrayInput)(nil)).Elem(), GetBdsInstanceUtilNodeShapeConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceWorkerNodeInput)(nil)).Elem(), GetBdsInstanceWorkerNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceWorkerNodeArrayInput)(nil)).Elem(), GetBdsInstanceWorkerNodeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceWorkerNodeShapeConfigInput)(nil)).Elem(), GetBdsInstanceWorkerNodeShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceWorkerNodeShapeConfigArrayInput)(nil)).Elem(), GetBdsInstanceWorkerNodeShapeConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceInput)(nil)).Elem(), GetBdsInstancesBdsInstanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceArrayInput)(nil)).Elem(), GetBdsInstancesBdsInstanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceCloudSqlDetailInput)(nil)).Elem(), GetBdsInstancesBdsInstanceCloudSqlDetailArgs{})
@@ -6560,8 +15388,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetailArrayInput)(nil)).Elem(), GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceClusterDetailInput)(nil)).Elem(), GetBdsInstancesBdsInstanceClusterDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceClusterDetailArrayInput)(nil)).Elem(), GetBdsInstancesBdsInstanceClusterDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeInput)(nil)).Elem(), GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArrayInput)(nil)).Elem(), GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigInput)(nil)).Elem(), GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayInput)(nil)).Elem(), GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceMasterNodeInput)(nil)).Elem(), GetBdsInstancesBdsInstanceMasterNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceMasterNodeArrayInput)(nil)).Elem(), GetBdsInstancesBdsInstanceMasterNodeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceMasterNodeShapeConfigInput)(nil)).Elem(), GetBdsInstancesBdsInstanceMasterNodeShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceMasterNodeShapeConfigArrayInput)(nil)).Elem(), GetBdsInstancesBdsInstanceMasterNodeShapeConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceNetworkConfigInput)(nil)).Elem(), GetBdsInstancesBdsInstanceNetworkConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceNetworkConfigArrayInput)(nil)).Elem(), GetBdsInstancesBdsInstanceNetworkConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceNodeInput)(nil)).Elem(), GetBdsInstancesBdsInstanceNodeArgs{})
@@ -6570,12 +15404,48 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceNodeAttachedBlockVolumeArrayInput)(nil)).Elem(), GetBdsInstancesBdsInstanceNodeAttachedBlockVolumeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceUtilNodeInput)(nil)).Elem(), GetBdsInstancesBdsInstanceUtilNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceUtilNodeArrayInput)(nil)).Elem(), GetBdsInstancesBdsInstanceUtilNodeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceUtilNodeShapeConfigInput)(nil)).Elem(), GetBdsInstancesBdsInstanceUtilNodeShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceUtilNodeShapeConfigArrayInput)(nil)).Elem(), GetBdsInstancesBdsInstanceUtilNodeShapeConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceWorkerNodeInput)(nil)).Elem(), GetBdsInstancesBdsInstanceWorkerNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceWorkerNodeArrayInput)(nil)).Elem(), GetBdsInstancesBdsInstanceWorkerNodeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceWorkerNodeShapeConfigInput)(nil)).Elem(), GetBdsInstancesBdsInstanceWorkerNodeShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceWorkerNodeShapeConfigArrayInput)(nil)).Elem(), GetBdsInstancesBdsInstanceWorkerNodeShapeConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesFilterInput)(nil)).Elem(), GetBdsInstancesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesFilterArrayInput)(nil)).Elem(), GetBdsInstancesFilterArray{})
 	pulumi.RegisterOutputType(AutoScalingConfigurationPolicyOutput{})
 	pulumi.RegisterOutputType(AutoScalingConfigurationPolicyPtrOutput{})
+	pulumi.RegisterOutputType(AutoScalingConfigurationPolicyDetailsOutput{})
+	pulumi.RegisterOutputType(AutoScalingConfigurationPolicyDetailsPtrOutput{})
+	pulumi.RegisterOutputType(AutoScalingConfigurationPolicyDetailsScaleDownConfigOutput{})
+	pulumi.RegisterOutputType(AutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutput{})
+	pulumi.RegisterOutputType(AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricOutput{})
+	pulumi.RegisterOutputType(AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrOutput{})
+	pulumi.RegisterOutputType(AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdOutput{})
+	pulumi.RegisterOutputType(AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrOutput{})
+	pulumi.RegisterOutputType(AutoScalingConfigurationPolicyDetailsScaleInConfigOutput{})
+	pulumi.RegisterOutputType(AutoScalingConfigurationPolicyDetailsScaleInConfigPtrOutput{})
+	pulumi.RegisterOutputType(AutoScalingConfigurationPolicyDetailsScaleInConfigMetricOutput{})
+	pulumi.RegisterOutputType(AutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrOutput{})
+	pulumi.RegisterOutputType(AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdOutput{})
+	pulumi.RegisterOutputType(AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrOutput{})
+	pulumi.RegisterOutputType(AutoScalingConfigurationPolicyDetailsScaleOutConfigOutput{})
+	pulumi.RegisterOutputType(AutoScalingConfigurationPolicyDetailsScaleOutConfigPtrOutput{})
+	pulumi.RegisterOutputType(AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricOutput{})
+	pulumi.RegisterOutputType(AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrOutput{})
+	pulumi.RegisterOutputType(AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdOutput{})
+	pulumi.RegisterOutputType(AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrOutput{})
+	pulumi.RegisterOutputType(AutoScalingConfigurationPolicyDetailsScaleUpConfigOutput{})
+	pulumi.RegisterOutputType(AutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutput{})
+	pulumi.RegisterOutputType(AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricOutput{})
+	pulumi.RegisterOutputType(AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrOutput{})
+	pulumi.RegisterOutputType(AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdOutput{})
+	pulumi.RegisterOutputType(AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrOutput{})
+	pulumi.RegisterOutputType(AutoScalingConfigurationPolicyDetailsScheduleDetailOutput{})
+	pulumi.RegisterOutputType(AutoScalingConfigurationPolicyDetailsScheduleDetailArrayOutput{})
+	pulumi.RegisterOutputType(AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigOutput{})
+	pulumi.RegisterOutputType(AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArrayOutput{})
+	pulumi.RegisterOutputType(AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigOutput{})
+	pulumi.RegisterOutputType(AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArrayOutput{})
 	pulumi.RegisterOutputType(AutoScalingConfigurationPolicyRuleOutput{})
 	pulumi.RegisterOutputType(AutoScalingConfigurationPolicyRuleArrayOutput{})
 	pulumi.RegisterOutputType(AutoScalingConfigurationPolicyRuleMetricOutput{})
@@ -6586,8 +15456,14 @@ func init() {
 	pulumi.RegisterOutputType(BdsInstanceCloudSqlDetailKerberosDetailArrayOutput{})
 	pulumi.RegisterOutputType(BdsInstanceClusterDetailOutput{})
 	pulumi.RegisterOutputType(BdsInstanceClusterDetailArrayOutput{})
+	pulumi.RegisterOutputType(BdsInstanceComputeOnlyWorkerNodeOutput{})
+	pulumi.RegisterOutputType(BdsInstanceComputeOnlyWorkerNodePtrOutput{})
+	pulumi.RegisterOutputType(BdsInstanceComputeOnlyWorkerNodeShapeConfigOutput{})
+	pulumi.RegisterOutputType(BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput{})
 	pulumi.RegisterOutputType(BdsInstanceMasterNodeOutput{})
 	pulumi.RegisterOutputType(BdsInstanceMasterNodePtrOutput{})
+	pulumi.RegisterOutputType(BdsInstanceMasterNodeShapeConfigOutput{})
+	pulumi.RegisterOutputType(BdsInstanceMasterNodeShapeConfigPtrOutput{})
 	pulumi.RegisterOutputType(BdsInstanceNetworkConfigOutput{})
 	pulumi.RegisterOutputType(BdsInstanceNetworkConfigPtrOutput{})
 	pulumi.RegisterOutputType(BdsInstanceNodeOutput{})
@@ -6596,10 +15472,46 @@ func init() {
 	pulumi.RegisterOutputType(BdsInstanceNodeAttachedBlockVolumeArrayOutput{})
 	pulumi.RegisterOutputType(BdsInstanceUtilNodeOutput{})
 	pulumi.RegisterOutputType(BdsInstanceUtilNodePtrOutput{})
+	pulumi.RegisterOutputType(BdsInstanceUtilNodeShapeConfigOutput{})
+	pulumi.RegisterOutputType(BdsInstanceUtilNodeShapeConfigPtrOutput{})
 	pulumi.RegisterOutputType(BdsInstanceWorkerNodeOutput{})
 	pulumi.RegisterOutputType(BdsInstanceWorkerNodePtrOutput{})
+	pulumi.RegisterOutputType(BdsInstanceWorkerNodeShapeConfigOutput{})
+	pulumi.RegisterOutputType(BdsInstanceWorkerNodeShapeConfigPtrOutput{})
 	pulumi.RegisterOutputType(GetAutoScalingConfigurationPolicyOutput{})
 	pulumi.RegisterOutputType(GetAutoScalingConfigurationPolicyArrayOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationPolicyDetailOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationPolicyDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationPolicyDetailScaleDownConfigOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationPolicyDetailScaleInConfigOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationPolicyDetailScaleOutConfigOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationPolicyDetailScaleUpConfigOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationPolicyDetailScheduleDetailOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetAutoScalingConfigurationPolicyRuleOutput{})
 	pulumi.RegisterOutputType(GetAutoScalingConfigurationPolicyRuleArrayOutput{})
 	pulumi.RegisterOutputType(GetAutoScalingConfigurationPolicyRuleMetricOutput{})
@@ -6610,6 +15522,38 @@ func init() {
 	pulumi.RegisterOutputType(GetAutoScalingConfigurationsAutoScalingConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyOutput{})
 	pulumi.RegisterOutputType(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyArrayOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput{})
+	pulumi.RegisterOutputType(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleOutput{})
 	pulumi.RegisterOutputType(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleArrayOutput{})
 	pulumi.RegisterOutputType(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricOutput{})
@@ -6628,8 +15572,14 @@ func init() {
 	pulumi.RegisterOutputType(GetBdsInstanceCloudSqlDetailKerberosDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceClusterDetailOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceClusterDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceComputeOnlyWorkerNodeOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceComputeOnlyWorkerNodeArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceMasterNodeOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceMasterNodeArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceMasterNodeShapeConfigOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceMasterNodeShapeConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceMetastoreConfigsBdsMetastoreConfigurationOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceMetastoreConfigsBdsMetastoreConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceMetastoreConfigsFilterOutput{})
@@ -6642,8 +15592,12 @@ func init() {
 	pulumi.RegisterOutputType(GetBdsInstanceNodeAttachedBlockVolumeArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceUtilNodeOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceUtilNodeArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceUtilNodeShapeConfigOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceUtilNodeShapeConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceWorkerNodeOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceWorkerNodeArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceWorkerNodeShapeConfigOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceWorkerNodeShapeConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceOutput{})
 	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceCloudSqlDetailOutput{})
@@ -6652,8 +15606,14 @@ func init() {
 	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceClusterDetailOutput{})
 	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceClusterDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeOutput{})
+	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput{})
+	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceMasterNodeOutput{})
 	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceMasterNodeArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceMasterNodeShapeConfigOutput{})
+	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceMasterNodeShapeConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceNetworkConfigOutput{})
 	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceNetworkConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceNodeOutput{})
@@ -6662,8 +15622,12 @@ func init() {
 	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceNodeAttachedBlockVolumeArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceUtilNodeOutput{})
 	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceUtilNodeArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceUtilNodeShapeConfigOutput{})
+	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceUtilNodeShapeConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceWorkerNodeOutput{})
 	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceWorkerNodeArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceWorkerNodeShapeConfigOutput{})
+	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceWorkerNodeShapeConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstancesFilterOutput{})
 	pulumi.RegisterOutputType(GetBdsInstancesFilterArrayOutput{})
 }

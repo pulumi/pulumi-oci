@@ -5,6 +5,8 @@ package com.pulumi.oci.DataFlow.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.DataFlow.inputs.InvokeRunDriverShapeConfigArgs;
+import com.pulumi.oci.DataFlow.inputs.InvokeRunExecutorShapeConfigArgs;
 import com.pulumi.oci.DataFlow.inputs.InvokeRunParameterArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -194,6 +196,21 @@ public final class InvokeRunState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * This is used to configure the shape of the driver or executor if a flexible shape is used.
+     * 
+     */
+    @Import(name="driverShapeConfig")
+    private @Nullable Output<InvokeRunDriverShapeConfigArgs> driverShapeConfig;
+
+    /**
+     * @return This is used to configure the shape of the driver or executor if a flexible shape is used.
+     * 
+     */
+    public Optional<Output<InvokeRunDriverShapeConfigArgs>> driverShapeConfig() {
+        return Optional.ofNullable(this.driverShapeConfig);
+    }
+
+    /**
      * The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
      * 
      */
@@ -221,6 +238,21 @@ public final class InvokeRunState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> executorShape() {
         return Optional.ofNullable(this.executorShape);
+    }
+
+    /**
+     * This is used to configure the shape of the driver or executor if a flexible shape is used.
+     * 
+     */
+    @Import(name="executorShapeConfig")
+    private @Nullable Output<InvokeRunExecutorShapeConfigArgs> executorShapeConfig;
+
+    /**
+     * @return This is used to configure the shape of the driver or executor if a flexible shape is used.
+     * 
+     */
+    public Optional<Output<InvokeRunExecutorShapeConfigArgs>> executorShapeConfig() {
+        return Optional.ofNullable(this.executorShapeConfig);
     }
 
     /**
@@ -598,8 +630,10 @@ public final class InvokeRunState extends com.pulumi.resources.ResourceArgs {
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.driverShape = $.driverShape;
+        this.driverShapeConfig = $.driverShapeConfig;
         this.execute = $.execute;
         this.executorShape = $.executorShape;
+        this.executorShapeConfig = $.executorShapeConfig;
         this.fileUri = $.fileUri;
         this.freeformTags = $.freeformTags;
         this.language = $.language;
@@ -895,6 +929,27 @@ public final class InvokeRunState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param driverShapeConfig This is used to configure the shape of the driver or executor if a flexible shape is used.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder driverShapeConfig(@Nullable Output<InvokeRunDriverShapeConfigArgs> driverShapeConfig) {
+            $.driverShapeConfig = driverShapeConfig;
+            return this;
+        }
+
+        /**
+         * @param driverShapeConfig This is used to configure the shape of the driver or executor if a flexible shape is used.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder driverShapeConfig(InvokeRunDriverShapeConfigArgs driverShapeConfig) {
+            return driverShapeConfig(Output.of(driverShapeConfig));
+        }
+
+        /**
          * @param execute The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
          * 
          * @return builder
@@ -934,6 +989,27 @@ public final class InvokeRunState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder executorShape(String executorShape) {
             return executorShape(Output.of(executorShape));
+        }
+
+        /**
+         * @param executorShapeConfig This is used to configure the shape of the driver or executor if a flexible shape is used.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder executorShapeConfig(@Nullable Output<InvokeRunExecutorShapeConfigArgs> executorShapeConfig) {
+            $.executorShapeConfig = executorShapeConfig;
+            return this;
+        }
+
+        /**
+         * @param executorShapeConfig This is used to configure the shape of the driver or executor if a flexible shape is used.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder executorShapeConfig(InvokeRunExecutorShapeConfigArgs executorShapeConfig) {
+            return executorShapeConfig(Output.of(executorShapeConfig));
         }
 
         /**

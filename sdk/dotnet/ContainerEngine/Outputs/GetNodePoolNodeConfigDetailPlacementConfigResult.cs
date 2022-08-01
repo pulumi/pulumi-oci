@@ -22,6 +22,10 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// </summary>
         public readonly string CapacityReservationId;
         /// <summary>
+        /// A list of fault domains in which to place nodes.
+        /// </summary>
+        public readonly ImmutableArray<string> FaultDomains;
+        /// <summary>
         /// The OCID of the subnet in which this node is placed.
         /// </summary>
         public readonly string SubnetId;
@@ -32,10 +36,13 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
 
             string capacityReservationId,
 
+            ImmutableArray<string> faultDomains,
+
             string subnetId)
         {
             AvailabilityDomain = availabilityDomain;
             CapacityReservationId = capacityReservationId;
+            FaultDomains = faultDomains;
             SubnetId = subnetId;
         }
     }

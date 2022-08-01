@@ -89,7 +89,7 @@ type Script struct {
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
-	// The time when the script was uploaded.
+	// The time the script was uploaded.
 	TimeUploaded pulumi.StringOutput `pulumi:"timeUploaded"`
 }
 
@@ -158,7 +158,7 @@ type scriptState struct {
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
 	TimeUpdated *string `pulumi:"timeUpdated"`
-	// The time when the script was uploaded.
+	// The time the script was uploaded.
 	TimeUploaded *string `pulumi:"timeUploaded"`
 }
 
@@ -187,7 +187,7 @@ type ScriptState struct {
 	TimeCreated pulumi.StringPtrInput
 	// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
 	TimeUpdated pulumi.StringPtrInput
-	// The time when the script was uploaded.
+	// The time the script was uploaded.
 	TimeUploaded pulumi.StringPtrInput
 }
 

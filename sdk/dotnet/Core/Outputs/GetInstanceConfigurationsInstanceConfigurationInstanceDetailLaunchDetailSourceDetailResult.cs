@@ -22,6 +22,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string BootVolumeSizeInGbs;
         /// <summary>
+        /// The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+        /// </summary>
+        public readonly string BootVolumeVpusPerGb;
+        /// <summary>
         /// The OCID of the image used to boot the instance.
         /// </summary>
         public readonly string ImageId;
@@ -36,12 +40,15 @@ namespace Pulumi.Oci.Core.Outputs
 
             string bootVolumeSizeInGbs,
 
+            string bootVolumeVpusPerGb,
+
             string imageId,
 
             string sourceType)
         {
             BootVolumeId = bootVolumeId;
             BootVolumeSizeInGbs = bootVolumeSizeInGbs;
+            BootVolumeVpusPerGb = bootVolumeVpusPerGb;
             ImageId = imageId;
             SourceType = sourceType;
         }

@@ -232,7 +232,7 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDetectorRecipesDetectorRecipeCollectionResult> DetectorRecipeCollections;
         /// <summary>
-        /// displayName
+        /// Display name for DetectorRecipeDetectorRule.
         /// </summary>
         public readonly string? DisplayName;
         public readonly ImmutableArray<Outputs.GetDetectorRecipesFilterResult> Filters;

@@ -5,11 +5,13 @@ package com.pulumi.oci.ContainerEngine;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.ContainerEngine.inputs.ClusterClusterPodNetworkOptionArgs;
 import com.pulumi.oci.ContainerEngine.inputs.ClusterEndpointConfigArgs;
 import com.pulumi.oci.ContainerEngine.inputs.ClusterImagePolicyConfigArgs;
 import com.pulumi.oci.ContainerEngine.inputs.ClusterOptionsArgs;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -19,6 +21,21 @@ import javax.annotation.Nullable;
 public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final ClusterArgs Empty = new ClusterArgs();
+
+    /**
+     * Available CNIs and network options for existing and new node pools of the cluster
+     * 
+     */
+    @Import(name="clusterPodNetworkOptions")
+    private @Nullable Output<List<ClusterClusterPodNetworkOptionArgs>> clusterPodNetworkOptions;
+
+    /**
+     * @return Available CNIs and network options for existing and new node pools of the cluster
+     * 
+     */
+    public Optional<Output<List<ClusterClusterPodNetworkOptionArgs>>> clusterPodNetworkOptions() {
+        return Optional.ofNullable(this.clusterPodNetworkOptions);
+    }
 
     /**
      * The OCID of the compartment in which to create the cluster.
@@ -173,6 +190,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
     private ClusterArgs() {}
 
     private ClusterArgs(ClusterArgs $) {
+        this.clusterPodNetworkOptions = $.clusterPodNetworkOptions;
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
         this.endpointConfig = $.endpointConfig;
@@ -201,6 +219,37 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         public Builder(ClusterArgs defaults) {
             $ = new ClusterArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param clusterPodNetworkOptions Available CNIs and network options for existing and new node pools of the cluster
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterPodNetworkOptions(@Nullable Output<List<ClusterClusterPodNetworkOptionArgs>> clusterPodNetworkOptions) {
+            $.clusterPodNetworkOptions = clusterPodNetworkOptions;
+            return this;
+        }
+
+        /**
+         * @param clusterPodNetworkOptions Available CNIs and network options for existing and new node pools of the cluster
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterPodNetworkOptions(List<ClusterClusterPodNetworkOptionArgs> clusterPodNetworkOptions) {
+            return clusterPodNetworkOptions(Output.of(clusterPodNetworkOptions));
+        }
+
+        /**
+         * @param clusterPodNetworkOptions Available CNIs and network options for existing and new node pools of the cluster
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterPodNetworkOptions(ClusterClusterPodNetworkOptionArgs... clusterPodNetworkOptions) {
+            return clusterPodNetworkOptions(List.of(clusterPodNetworkOptions));
         }
 
         /**

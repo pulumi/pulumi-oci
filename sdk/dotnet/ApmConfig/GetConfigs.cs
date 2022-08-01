@@ -14,7 +14,7 @@ namespace Pulumi.Oci.ApmConfig
         /// <summary>
         /// This data source provides the list of Configs in Oracle Cloud Infrastructure Apm Config service.
         /// 
-        /// Returns all configured items optionally filtered by configuration type
+        /// Returns all configuration items, which can optionally be filtered by configuration type.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -32,7 +32,12 @@ namespace Pulumi.Oci.ApmConfig
         ///         {
         ///             ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
         ///             ConfigType = @var.Config_config_type,
+        ///             DefinedTagEquals = @var.Config_defined_tag_equals,
+        ///             DefinedTagExists = @var.Config_defined_tag_exists,
         ///             DisplayName = @var.Config_display_name,
+        ///             FreeformTagEquals = @var.Config_freeform_tag_equals,
+        ///             FreeformTagExists = @var.Config_freeform_tag_exists,
+        ///             OptionsGroup = @var.Config_options_group,
         ///         }));
         ///     }
         /// 
@@ -47,7 +52,7 @@ namespace Pulumi.Oci.ApmConfig
         /// <summary>
         /// This data source provides the list of Configs in Oracle Cloud Infrastructure Apm Config service.
         /// 
-        /// Returns all configured items optionally filtered by configuration type
+        /// Returns all configuration items, which can optionally be filtered by configuration type.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -65,7 +70,12 @@ namespace Pulumi.Oci.ApmConfig
         ///         {
         ///             ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
         ///             ConfigType = @var.Config_config_type,
+        ///             DefinedTagEquals = @var.Config_defined_tag_equals,
+        ///             DefinedTagExists = @var.Config_defined_tag_exists,
         ///             DisplayName = @var.Config_display_name,
+        ///             FreeformTagEquals = @var.Config_freeform_tag_equals,
+        ///             FreeformTagExists = @var.Config_freeform_tag_exists,
+        ///             OptionsGroup = @var.Config_options_group,
         ///         }));
         ///     }
         /// 
@@ -82,19 +92,43 @@ namespace Pulumi.Oci.ApmConfig
     public sealed class GetConfigsArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The APM Domain Id the request is intended for.
+        /// The APM Domain ID the request is intended for.
         /// </summary>
         [Input("apmDomainId", required: true)]
         public string ApmDomainId { get; set; } = null!;
 
         /// <summary>
-        /// A filter to match only configuration items of the given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
+        /// A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
         /// </summary>
         [Input("configType")]
         public string? ConfigType { get; set; }
 
+        [Input("definedTagEquals")]
+        private List<string>? _definedTagEquals;
+
         /// <summary>
-        /// A filter to return only resources that match the entire display name given.
+        /// A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned. Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+        /// </summary>
+        public List<string> DefinedTagEquals
+        {
+            get => _definedTagEquals ?? (_definedTagEquals = new List<string>());
+            set => _definedTagEquals = value;
+        }
+
+        [Input("definedTagExists")]
+        private List<string>? _definedTagExists;
+
+        /// <summary>
+        /// A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned. Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag) or "{namespace}.true".  All inputs are case-insensitive. Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+        /// </summary>
+        public List<string> DefinedTagExists
+        {
+            get => _definedTagExists ?? (_definedTagExists = new List<string>());
+            set => _definedTagExists = value;
+        }
+
+        /// <summary>
+        /// A filter to return resources that match the given display name.
         /// </summary>
         [Input("displayName")]
         public string? DisplayName { get; set; }
@@ -107,6 +141,36 @@ namespace Pulumi.Oci.ApmConfig
             set => _filters = value;
         }
 
+        [Input("freeformTagEquals")]
+        private List<string>? _freeformTagEquals;
+
+        /// <summary>
+        /// A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned. The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive. Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
+        /// </summary>
+        public List<string> FreeformTagEquals
+        {
+            get => _freeformTagEquals ?? (_freeformTagEquals = new List<string>());
+            set => _freeformTagEquals = value;
+        }
+
+        [Input("freeformTagExists")]
+        private List<string>? _freeformTagExists;
+
+        /// <summary>
+        /// A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned. The key for each tag is "{tagName}.true".  All inputs are case-insensitive. Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported. Multiple values for different tag names are interpreted as "AND".
+        /// </summary>
+        public List<string> FreeformTagExists
+        {
+            get => _freeformTagExists ?? (_freeformTagExists = new List<string>());
+            set => _freeformTagExists = value;
+        }
+
+        /// <summary>
+        /// A filter to return OPTIONS resources that match the given group.
+        /// </summary>
+        [Input("optionsGroup")]
+        public string? OptionsGroup { get; set; }
+
         public GetConfigsArgs()
         {
         }
@@ -115,19 +179,43 @@ namespace Pulumi.Oci.ApmConfig
     public sealed class GetConfigsInvokeArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The APM Domain Id the request is intended for.
+        /// The APM Domain ID the request is intended for.
         /// </summary>
         [Input("apmDomainId", required: true)]
         public Input<string> ApmDomainId { get; set; } = null!;
 
         /// <summary>
-        /// A filter to match only configuration items of the given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
+        /// A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
         /// </summary>
         [Input("configType")]
         public Input<string>? ConfigType { get; set; }
 
+        [Input("definedTagEquals")]
+        private InputList<string>? _definedTagEquals;
+
         /// <summary>
-        /// A filter to return only resources that match the entire display name given.
+        /// A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned. Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+        /// </summary>
+        public InputList<string> DefinedTagEquals
+        {
+            get => _definedTagEquals ?? (_definedTagEquals = new InputList<string>());
+            set => _definedTagEquals = value;
+        }
+
+        [Input("definedTagExists")]
+        private InputList<string>? _definedTagExists;
+
+        /// <summary>
+        /// A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned. Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag) or "{namespace}.true".  All inputs are case-insensitive. Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+        /// </summary>
+        public InputList<string> DefinedTagExists
+        {
+            get => _definedTagExists ?? (_definedTagExists = new InputList<string>());
+            set => _definedTagExists = value;
+        }
+
+        /// <summary>
+        /// A filter to return resources that match the given display name.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -139,6 +227,36 @@ namespace Pulumi.Oci.ApmConfig
             get => _filters ?? (_filters = new InputList<Inputs.GetConfigsFilterInputArgs>());
             set => _filters = value;
         }
+
+        [Input("freeformTagEquals")]
+        private InputList<string>? _freeformTagEquals;
+
+        /// <summary>
+        /// A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned. The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive. Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
+        /// </summary>
+        public InputList<string> FreeformTagEquals
+        {
+            get => _freeformTagEquals ?? (_freeformTagEquals = new InputList<string>());
+            set => _freeformTagEquals = value;
+        }
+
+        [Input("freeformTagExists")]
+        private InputList<string>? _freeformTagExists;
+
+        /// <summary>
+        /// A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned. The key for each tag is "{tagName}.true".  All inputs are case-insensitive. Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported. Multiple values for different tag names are interpreted as "AND".
+        /// </summary>
+        public InputList<string> FreeformTagExists
+        {
+            get => _freeformTagExists ?? (_freeformTagExists = new InputList<string>());
+            set => _freeformTagExists = value;
+        }
+
+        /// <summary>
+        /// A filter to return OPTIONS resources that match the given group.
+        /// </summary>
+        [Input("optionsGroup")]
+        public Input<string>? OptionsGroup { get; set; }
 
         public GetConfigsInvokeArgs()
         {
@@ -155,18 +273,23 @@ namespace Pulumi.Oci.ApmConfig
         /// </summary>
         public readonly ImmutableArray<Outputs.GetConfigsConfigCollectionResult> ConfigCollections;
         /// <summary>
-        /// The type of configuration item
+        /// The type of configuration item.
         /// </summary>
         public readonly string? ConfigType;
+        public readonly ImmutableArray<string> DefinedTagEquals;
+        public readonly ImmutableArray<string> DefinedTagExists;
         /// <summary>
-        /// A user-friendly name that provides a short description this rule.
+        /// The name by which a configuration entity is displayed to the end user.
         /// </summary>
         public readonly string? DisplayName;
         public readonly ImmutableArray<Outputs.GetConfigsFilterResult> Filters;
+        public readonly ImmutableArray<string> FreeformTagEquals;
+        public readonly ImmutableArray<string> FreeformTagExists;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        public readonly string? OptionsGroup;
 
         [OutputConstructor]
         private GetConfigsResult(
@@ -176,18 +299,33 @@ namespace Pulumi.Oci.ApmConfig
 
             string? configType,
 
+            ImmutableArray<string> definedTagEquals,
+
+            ImmutableArray<string> definedTagExists,
+
             string? displayName,
 
             ImmutableArray<Outputs.GetConfigsFilterResult> filters,
 
-            string id)
+            ImmutableArray<string> freeformTagEquals,
+
+            ImmutableArray<string> freeformTagExists,
+
+            string id,
+
+            string? optionsGroup)
         {
             ApmDomainId = apmDomainId;
             ConfigCollections = configCollections;
             ConfigType = configType;
+            DefinedTagEquals = definedTagEquals;
+            DefinedTagExists = definedTagExists;
             DisplayName = displayName;
             Filters = filters;
+            FreeformTagEquals = freeformTagEquals;
+            FreeformTagExists = freeformTagExists;
             Id = id;
+            OptionsGroup = optionsGroup;
         }
     }
 }

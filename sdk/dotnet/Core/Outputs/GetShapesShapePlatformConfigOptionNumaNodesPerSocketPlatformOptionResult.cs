@@ -14,11 +14,11 @@ namespace Pulumi.Oci.Core.Outputs
     public sealed class GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionResult
     {
         /// <summary>
-        /// Possible boolean values indicating whether Trusted Platform Module (TPM) can be enabled or disabled
+        /// Whether virtualization instructions can be enabled.
         /// </summary>
         public readonly ImmutableArray<string> AllowedValues;
         /// <summary>
-        /// Indicates the default NUMA Nodes Per Socket configuration
+        /// The default percentage of cores enabled.
         /// </summary>
         public readonly string DefaultValue;
 

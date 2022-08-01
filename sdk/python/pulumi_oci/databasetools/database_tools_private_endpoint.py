@@ -26,12 +26,12 @@ class DatabaseToolsPrivateEndpointArgs:
                  private_endpoint_ip: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a DatabaseToolsPrivateEndpoint resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools private endpoint.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] endpoint_service_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsEndpointService.
+        :param pulumi.Input[str] endpoint_service_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `DatabaseToolsEndpointService`.
         :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that the private endpoint belongs to.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) A description of the DatabaseToolsPrivateEndpoint.
+        :param pulumi.Input[str] description: (Updatable) A description of the Database Tools private endpoint.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint's VNIC belongs to.  For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
         :param pulumi.Input[str] private_endpoint_ip: The private IP address that represents the access point for the associated endpoint service.
@@ -55,7 +55,7 @@ class DatabaseToolsPrivateEndpointArgs:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools private endpoint.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -79,7 +79,7 @@ class DatabaseToolsPrivateEndpointArgs:
     @pulumi.getter(name="endpointServiceId")
     def endpoint_service_id(self) -> pulumi.Input[str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsEndpointService.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `DatabaseToolsEndpointService`.
         """
         return pulumi.get(self, "endpoint_service_id")
 
@@ -115,7 +115,7 @@ class DatabaseToolsPrivateEndpointArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A description of the DatabaseToolsPrivateEndpoint.
+        (Updatable) A description of the Database Tools private endpoint.
         """
         return pulumi.get(self, "description")
 
@@ -185,23 +185,23 @@ class _DatabaseToolsPrivateEndpointState:
         """
         Input properties used for looking up and filtering DatabaseToolsPrivateEndpoint resources.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] additional_fqdns: A list of additional FQDNs that can be also be used for the private endpoint.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools private endpoint.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) A description of the DatabaseToolsPrivateEndpoint.
+        :param pulumi.Input[str] description: (Updatable) A description of the Database Tools private endpoint.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[str] endpoint_fqdn: Then FQDN to use for the private endpoint.
-        :param pulumi.Input[str] endpoint_service_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsEndpointService.
+        :param pulumi.Input[str] endpoint_service_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `DatabaseToolsEndpointService`.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint's VNIC belongs to.  For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
         :param pulumi.Input[str] private_endpoint_ip: The private IP address that represents the access point for the associated endpoint service.
         :param pulumi.Input[str] private_endpoint_vnic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint's VNIC.
-        :param pulumi.Input[Sequence[pulumi.Input['DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs']]] reverse_connection_configurations: Reverse connection configuration details of Private Endpoint.
-        :param pulumi.Input[str] state: The current state of the DatabaseToolsPrivateEndpoint.
+        :param pulumi.Input[Sequence[pulumi.Input['DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs']]] reverse_connection_configurations: Reverse connection configuration details of the private endpoint.
+        :param pulumi.Input[str] state: The current state of the Database Tools private endpoint.
         :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that the private endpoint belongs to.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time the DatabaseToolsPrivateEndpoint was created. An RFC3339 formatted datetime string
-        :param pulumi.Input[str] time_updated: The time the DatabaseToolsPrivateEndpoint was updated. An RFC3339 formatted datetime string
+        :param pulumi.Input[str] time_created: The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
+        :param pulumi.Input[str] time_updated: The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
         :param pulumi.Input[str] vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN that the private endpoint belongs to.
         """
         if additional_fqdns is not None:
@@ -259,7 +259,7 @@ class _DatabaseToolsPrivateEndpointState:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools private endpoint.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -283,7 +283,7 @@ class _DatabaseToolsPrivateEndpointState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A description of the DatabaseToolsPrivateEndpoint.
+        (Updatable) A description of the Database Tools private endpoint.
         """
         return pulumi.get(self, "description")
 
@@ -319,7 +319,7 @@ class _DatabaseToolsPrivateEndpointState:
     @pulumi.getter(name="endpointServiceId")
     def endpoint_service_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsEndpointService.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `DatabaseToolsEndpointService`.
         """
         return pulumi.get(self, "endpoint_service_id")
 
@@ -391,7 +391,7 @@ class _DatabaseToolsPrivateEndpointState:
     @pulumi.getter(name="reverseConnectionConfigurations")
     def reverse_connection_configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs']]]]:
         """
-        Reverse connection configuration details of Private Endpoint.
+        Reverse connection configuration details of the private endpoint.
         """
         return pulumi.get(self, "reverse_connection_configurations")
 
@@ -403,7 +403,7 @@ class _DatabaseToolsPrivateEndpointState:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
-        The current state of the DatabaseToolsPrivateEndpoint.
+        The current state of the Database Tools private endpoint.
         """
         return pulumi.get(self, "state")
 
@@ -439,7 +439,7 @@ class _DatabaseToolsPrivateEndpointState:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
         """
-        The time the DatabaseToolsPrivateEndpoint was created. An RFC3339 formatted datetime string
+        The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
         """
         return pulumi.get(self, "time_created")
 
@@ -451,7 +451,7 @@ class _DatabaseToolsPrivateEndpointState:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
         """
-        The time the DatabaseToolsPrivateEndpoint was updated. An RFC3339 formatted datetime string
+        The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
         """
         return pulumi.get(self, "time_updated")
 
@@ -490,7 +490,7 @@ class DatabaseToolsPrivateEndpoint(pulumi.CustomResource):
         """
         This resource provides the Database Tools Private Endpoint resource in Oracle Cloud Infrastructure Database Tools service.
 
-        Creates a new DatabaseToolsPrivateEndpoint.
+        Creates a new Database Tools private endpoint.
 
         ## Example Usage
 
@@ -524,11 +524,11 @@ class DatabaseToolsPrivateEndpoint(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools private endpoint.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) A description of the DatabaseToolsPrivateEndpoint.
+        :param pulumi.Input[str] description: (Updatable) A description of the Database Tools private endpoint.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] endpoint_service_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsEndpointService.
+        :param pulumi.Input[str] endpoint_service_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `DatabaseToolsEndpointService`.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint's VNIC belongs to.  For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
         :param pulumi.Input[str] private_endpoint_ip: The private IP address that represents the access point for the associated endpoint service.
@@ -543,7 +543,7 @@ class DatabaseToolsPrivateEndpoint(pulumi.CustomResource):
         """
         This resource provides the Database Tools Private Endpoint resource in Oracle Cloud Infrastructure Database Tools service.
 
-        Creates a new DatabaseToolsPrivateEndpoint.
+        Creates a new Database Tools private endpoint.
 
         ## Example Usage
 
@@ -675,23 +675,23 @@ class DatabaseToolsPrivateEndpoint(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] additional_fqdns: A list of additional FQDNs that can be also be used for the private endpoint.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools private endpoint.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) A description of the DatabaseToolsPrivateEndpoint.
+        :param pulumi.Input[str] description: (Updatable) A description of the Database Tools private endpoint.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[str] endpoint_fqdn: Then FQDN to use for the private endpoint.
-        :param pulumi.Input[str] endpoint_service_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsEndpointService.
+        :param pulumi.Input[str] endpoint_service_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `DatabaseToolsEndpointService`.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint's VNIC belongs to.  For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
         :param pulumi.Input[str] private_endpoint_ip: The private IP address that represents the access point for the associated endpoint service.
         :param pulumi.Input[str] private_endpoint_vnic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint's VNIC.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs']]]] reverse_connection_configurations: Reverse connection configuration details of Private Endpoint.
-        :param pulumi.Input[str] state: The current state of the DatabaseToolsPrivateEndpoint.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs']]]] reverse_connection_configurations: Reverse connection configuration details of the private endpoint.
+        :param pulumi.Input[str] state: The current state of the Database Tools private endpoint.
         :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that the private endpoint belongs to.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time the DatabaseToolsPrivateEndpoint was created. An RFC3339 formatted datetime string
-        :param pulumi.Input[str] time_updated: The time the DatabaseToolsPrivateEndpoint was updated. An RFC3339 formatted datetime string
+        :param pulumi.Input[str] time_created: The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
+        :param pulumi.Input[str] time_updated: The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
         :param pulumi.Input[str] vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN that the private endpoint belongs to.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -731,7 +731,7 @@ class DatabaseToolsPrivateEndpoint(pulumi.CustomResource):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools private endpoint.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -747,7 +747,7 @@ class DatabaseToolsPrivateEndpoint(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[str]:
         """
-        (Updatable) A description of the DatabaseToolsPrivateEndpoint.
+        (Updatable) A description of the Database Tools private endpoint.
         """
         return pulumi.get(self, "description")
 
@@ -771,7 +771,7 @@ class DatabaseToolsPrivateEndpoint(pulumi.CustomResource):
     @pulumi.getter(name="endpointServiceId")
     def endpoint_service_id(self) -> pulumi.Output[str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsEndpointService.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `DatabaseToolsEndpointService`.
         """
         return pulumi.get(self, "endpoint_service_id")
 
@@ -819,7 +819,7 @@ class DatabaseToolsPrivateEndpoint(pulumi.CustomResource):
     @pulumi.getter(name="reverseConnectionConfigurations")
     def reverse_connection_configurations(self) -> pulumi.Output[Sequence['outputs.DatabaseToolsPrivateEndpointReverseConnectionConfiguration']]:
         """
-        Reverse connection configuration details of Private Endpoint.
+        Reverse connection configuration details of the private endpoint.
         """
         return pulumi.get(self, "reverse_connection_configurations")
 
@@ -827,7 +827,7 @@ class DatabaseToolsPrivateEndpoint(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[str]:
         """
-        The current state of the DatabaseToolsPrivateEndpoint.
+        The current state of the Database Tools private endpoint.
         """
         return pulumi.get(self, "state")
 
@@ -851,7 +851,7 @@ class DatabaseToolsPrivateEndpoint(pulumi.CustomResource):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> pulumi.Output[str]:
         """
-        The time the DatabaseToolsPrivateEndpoint was created. An RFC3339 formatted datetime string
+        The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
         """
         return pulumi.get(self, "time_created")
 
@@ -859,7 +859,7 @@ class DatabaseToolsPrivateEndpoint(pulumi.CustomResource):
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> pulumi.Output[str]:
         """
-        The time the DatabaseToolsPrivateEndpoint was updated. An RFC3339 formatted datetime string
+        The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
         """
         return pulumi.get(self, "time_updated")
 

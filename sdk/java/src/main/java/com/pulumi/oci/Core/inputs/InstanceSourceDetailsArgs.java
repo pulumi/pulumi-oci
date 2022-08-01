@@ -31,6 +31,21 @@ public final class InstanceSourceDetailsArgs extends com.pulumi.resources.Resour
     }
 
     /**
+     * The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service&#39;s elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+     * 
+     */
+    @Import(name="bootVolumeVpusPerGb")
+    private @Nullable Output<String> bootVolumeVpusPerGb;
+
+    /**
+     * @return The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service&#39;s elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+     * 
+     */
+    public Optional<Output<String>> bootVolumeVpusPerGb() {
+        return Optional.ofNullable(this.bootVolumeVpusPerGb);
+    }
+
+    /**
      * The OCID of the Key Management key to assign as the master encryption key for the boot volume.
      * 
      */
@@ -79,6 +94,7 @@ public final class InstanceSourceDetailsArgs extends com.pulumi.resources.Resour
 
     private InstanceSourceDetailsArgs(InstanceSourceDetailsArgs $) {
         this.bootVolumeSizeInGbs = $.bootVolumeSizeInGbs;
+        this.bootVolumeVpusPerGb = $.bootVolumeVpusPerGb;
         this.kmsKeyId = $.kmsKeyId;
         this.sourceId = $.sourceId;
         this.sourceType = $.sourceType;
@@ -121,6 +137,27 @@ public final class InstanceSourceDetailsArgs extends com.pulumi.resources.Resour
          */
         public Builder bootVolumeSizeInGbs(String bootVolumeSizeInGbs) {
             return bootVolumeSizeInGbs(Output.of(bootVolumeSizeInGbs));
+        }
+
+        /**
+         * @param bootVolumeVpusPerGb The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service&#39;s elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder bootVolumeVpusPerGb(@Nullable Output<String> bootVolumeVpusPerGb) {
+            $.bootVolumeVpusPerGb = bootVolumeVpusPerGb;
+            return this;
+        }
+
+        /**
+         * @param bootVolumeVpusPerGb The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service&#39;s elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder bootVolumeVpusPerGb(String bootVolumeVpusPerGb) {
+            return bootVolumeVpusPerGb(Output.of(bootVolumeVpusPerGb));
         }
 
         /**

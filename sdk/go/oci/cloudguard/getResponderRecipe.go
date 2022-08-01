@@ -57,9 +57,9 @@ type LookupResponderRecipeResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// ResponderRule Description
+	// ResponderRule description.
 	Description string `pulumi:"description"`
-	// ResponderRule Display Name
+	// ResponderRule display name.
 	DisplayName string `pulumi:"displayName"`
 	// List of responder rules associated with the recipe
 	EffectiveResponderRules []GetResponderRecipeEffectiveResponderRule `pulumi:"effectiveResponderRules"`
@@ -134,12 +134,12 @@ func (o LookupResponderRecipeResultOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupResponderRecipeResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// ResponderRule Description
+// ResponderRule description.
 func (o LookupResponderRecipeResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupResponderRecipeResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// ResponderRule Display Name
+// ResponderRule display name.
 func (o LookupResponderRecipeResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupResponderRecipeResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }

@@ -22,6 +22,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly double MemoryInGbs;
         /// <summary>
+        /// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        /// </summary>
+        public readonly int Nvmes;
+        /// <summary>
         /// The total number of OCPUs available to the instance.
         /// </summary>
         public readonly double Ocpus;
@@ -32,10 +36,13 @@ namespace Pulumi.Oci.Core.Outputs
 
             double memoryInGbs,
 
+            int nvmes,
+
             double ocpus)
         {
             BaselineOcpuUtilization = baselineOcpuUtilization;
             MemoryInGbs = memoryInGbs;
+            Nvmes = nvmes;
             Ocpus = ocpus;
         }
     }

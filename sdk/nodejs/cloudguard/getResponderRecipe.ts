@@ -55,11 +55,11 @@ export interface GetResponderRecipeResult {
      */
     readonly definedTags: {[key: string]: any};
     /**
-     * ResponderRule Description
+     * ResponderRule description.
      */
     readonly description: string;
     /**
-     * ResponderRule Display Name
+     * ResponderRule display name.
      */
     readonly displayName: string;
     /**

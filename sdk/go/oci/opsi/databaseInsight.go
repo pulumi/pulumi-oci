@@ -43,6 +43,8 @@ type DatabaseInsight struct {
 	DatabaseType pulumi.StringOutput `pulumi:"databaseType"`
 	// The version of the database.
 	DatabaseVersion pulumi.StringOutput `pulumi:"databaseVersion"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint. This field and opsiPrivateEndpointId are mutually exclusive. If DBM private endpoint ID is provided, a new OPSI private endpoint ID will be created.
+	DbmPrivateEndpointId pulumi.StringOutput `pulumi:"dbmPrivateEndpointId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// Database Deployment Type
@@ -142,6 +144,8 @@ type databaseInsightState struct {
 	DatabaseType *string `pulumi:"databaseType"`
 	// The version of the database.
 	DatabaseVersion *string `pulumi:"databaseVersion"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint. This field and opsiPrivateEndpointId are mutually exclusive. If DBM private endpoint ID is provided, a new OPSI private endpoint ID will be created.
+	DbmPrivateEndpointId *string `pulumi:"dbmPrivateEndpointId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Database Deployment Type
@@ -207,6 +211,8 @@ type DatabaseInsightState struct {
 	DatabaseType pulumi.StringPtrInput
 	// The version of the database.
 	DatabaseVersion pulumi.StringPtrInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint. This field and opsiPrivateEndpointId are mutually exclusive. If DBM private endpoint ID is provided, a new OPSI private endpoint ID will be created.
+	DbmPrivateEndpointId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
 	// Database Deployment Type
@@ -268,6 +274,8 @@ type databaseInsightArgs struct {
 	DatabaseId *string `pulumi:"databaseId"`
 	// Oracle Cloud Infrastructure database resource type
 	DatabaseResourceType *string `pulumi:"databaseResourceType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint. This field and opsiPrivateEndpointId are mutually exclusive. If DBM private endpoint ID is provided, a new OPSI private endpoint ID will be created.
+	DbmPrivateEndpointId *string `pulumi:"dbmPrivateEndpointId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Database Deployment Type
@@ -308,6 +316,8 @@ type DatabaseInsightArgs struct {
 	DatabaseId pulumi.StringPtrInput
 	// Oracle Cloud Infrastructure database resource type
 	DatabaseResourceType pulumi.StringPtrInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint. This field and opsiPrivateEndpointId are mutually exclusive. If DBM private endpoint ID is provided, a new OPSI private endpoint ID will be created.
+	DbmPrivateEndpointId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
 	// Database Deployment Type

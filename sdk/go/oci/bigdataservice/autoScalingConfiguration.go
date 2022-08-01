@@ -32,23 +32,38 @@ import (
 // 			ClusterAdminPassword: pulumi.Any(_var.Auto_scaling_configuration_cluster_admin_password),
 // 			IsEnabled:            pulumi.Any(_var.Auto_scaling_configuration_is_enabled),
 // 			NodeType:             pulumi.Any(_var.Auto_scaling_configuration_node_type),
-// 			Policy: &bigdataservice.AutoScalingConfigurationPolicyArgs{
-// 				PolicyType: pulumi.Any(_var.Auto_scaling_configuration_policy_policy_type),
-// 				Rules: bigdataservice.AutoScalingConfigurationPolicyRuleArray{
-// 					&bigdataservice.AutoScalingConfigurationPolicyRuleArgs{
-// 						Action: pulumi.Any(_var.Auto_scaling_configuration_policy_rules_action),
-// 						Metric: &bigdataservice.AutoScalingConfigurationPolicyRuleMetricArgs{
-// 							MetricType: pulumi.Any(_var.Auto_scaling_configuration_policy_rules_metric_metric_type),
-// 							Threshold: &bigdataservice.AutoScalingConfigurationPolicyRuleMetricThresholdArgs{
-// 								DurationInMinutes: pulumi.Any(_var.Auto_scaling_configuration_policy_rules_metric_threshold_duration_in_minutes),
-// 								Operator:          pulumi.Any(_var.Auto_scaling_configuration_policy_rules_metric_threshold_operator),
-// 								Value:             pulumi.Any(_var.Auto_scaling_configuration_policy_rules_metric_threshold_value),
-// 							},
+// 			DisplayName:          pulumi.Any(_var.Auto_scaling_configuration_display_name),
+// 			PolicyDetails: &bigdataservice.AutoScalingConfigurationPolicyDetailsArgs{
+// 				PolicyType: pulumi.Any(_var.Auto_scaling_configuration_policy_details_policy_type),
+// 				ScaleDownConfig: &bigdataservice.AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs{
+// 					MemoryStepSize: pulumi.Any(_var.Auto_scaling_configuration_policy_details_scale_down_config_memory_step_size),
+// 					Metric: &bigdataservice.AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricArgs{
+// 						MetricType: pulumi.Any(_var.Auto_scaling_configuration_policy_details_scale_down_config_metric_metric_type),
+// 						Threshold: &bigdataservice.AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdArgs{
+// 							DurationInMinutes: pulumi.Any(_var.Auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_duration_in_minutes),
+// 							Operator:          pulumi.Any(_var.Auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_operator),
+// 							Value:             pulumi.Any(_var.Auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_value),
 // 						},
 // 					},
+// 					MinMemoryPerNode: pulumi.Any(_var.Auto_scaling_configuration_policy_details_scale_down_config_min_memory_per_node),
+// 					MinOcpusPerNode:  pulumi.Any(_var.Auto_scaling_configuration_policy_details_scale_down_config_min_ocpus_per_node),
+// 					OcpuStepSize:     pulumi.Any(_var.Auto_scaling_configuration_policy_details_scale_down_config_ocpu_step_size),
+// 				},
+// 				ScaleUpConfig: &bigdataservice.AutoScalingConfigurationPolicyDetailsScaleUpConfigArgs{
+// 					MaxMemoryPerNode: pulumi.Any(_var.Auto_scaling_configuration_policy_details_scale_up_config_max_memory_per_node),
+// 					MaxOcpusPerNode:  pulumi.Any(_var.Auto_scaling_configuration_policy_details_scale_up_config_max_ocpus_per_node),
+// 					MemoryStepSize:   pulumi.Any(_var.Auto_scaling_configuration_policy_details_scale_up_config_memory_step_size),
+// 					Metric: &bigdataservice.AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricArgs{
+// 						MetricType: pulumi.Any(_var.Auto_scaling_configuration_policy_details_scale_up_config_metric_metric_type),
+// 						Threshold: &bigdataservice.AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdArgs{
+// 							DurationInMinutes: pulumi.Any(_var.Auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_duration_in_minutes),
+// 							Operator:          pulumi.Any(_var.Auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_operator),
+// 							Value:             pulumi.Any(_var.Auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_value),
+// 						},
+// 					},
+// 					OcpuStepSize: pulumi.Any(_var.Auto_scaling_configuration_policy_details_scale_up_config_ocpu_step_size),
 // 				},
 // 			},
-// 			DisplayName: pulumi.Any(_var.Auto_scaling_configuration_display_name),
 // 		})
 // 		if err != nil {
 // 			return err
@@ -76,10 +91,12 @@ type AutoScalingConfiguration struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Whether the autoscale configuration is enabled.
 	IsEnabled pulumi.BoolOutput `pulumi:"isEnabled"`
-	// A node type that is managed by an autoscale configuration. The only supported type is WORKER.
+	// A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
 	NodeType pulumi.StringOutput `pulumi:"nodeType"`
-	// (Updatable) Policy definitions for the autoscale configuration.
+	// (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
 	Policy AutoScalingConfigurationPolicyOutput `pulumi:"policy"`
+	// (Updatable) Policy definition for the autoscale configuration.
+	PolicyDetails AutoScalingConfigurationPolicyDetailsOutput `pulumi:"policyDetails"`
 	// The state of the autoscale configuration.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
@@ -106,9 +123,6 @@ func NewAutoScalingConfiguration(ctx *pulumi.Context,
 	}
 	if args.NodeType == nil {
 		return nil, errors.New("invalid value for required argument 'NodeType'")
-	}
-	if args.Policy == nil {
-		return nil, errors.New("invalid value for required argument 'Policy'")
 	}
 	var resource AutoScalingConfiguration
 	err := ctx.RegisterResource("oci:BigDataService/autoScalingConfiguration:AutoScalingConfiguration", name, args, &resource, opts...)
@@ -140,10 +154,12 @@ type autoScalingConfigurationState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Whether the autoscale configuration is enabled.
 	IsEnabled *bool `pulumi:"isEnabled"`
-	// A node type that is managed by an autoscale configuration. The only supported type is WORKER.
+	// A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
 	NodeType *string `pulumi:"nodeType"`
-	// (Updatable) Policy definitions for the autoscale configuration.
+	// (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
 	Policy *AutoScalingConfigurationPolicy `pulumi:"policy"`
+	// (Updatable) Policy definition for the autoscale configuration.
+	PolicyDetails *AutoScalingConfigurationPolicyDetails `pulumi:"policyDetails"`
 	// The state of the autoscale configuration.
 	State *string `pulumi:"state"`
 	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
@@ -161,10 +177,12 @@ type AutoScalingConfigurationState struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Whether the autoscale configuration is enabled.
 	IsEnabled pulumi.BoolPtrInput
-	// A node type that is managed by an autoscale configuration. The only supported type is WORKER.
+	// A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
 	NodeType pulumi.StringPtrInput
-	// (Updatable) Policy definitions for the autoscale configuration.
+	// (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
 	Policy AutoScalingConfigurationPolicyPtrInput
+	// (Updatable) Policy definition for the autoscale configuration.
+	PolicyDetails AutoScalingConfigurationPolicyDetailsPtrInput
 	// The state of the autoscale configuration.
 	State pulumi.StringPtrInput
 	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
@@ -186,10 +204,12 @@ type autoScalingConfigurationArgs struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Whether the autoscale configuration is enabled.
 	IsEnabled bool `pulumi:"isEnabled"`
-	// A node type that is managed by an autoscale configuration. The only supported type is WORKER.
+	// A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
 	NodeType string `pulumi:"nodeType"`
-	// (Updatable) Policy definitions for the autoscale configuration.
-	Policy AutoScalingConfigurationPolicy `pulumi:"policy"`
+	// (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
+	Policy *AutoScalingConfigurationPolicy `pulumi:"policy"`
+	// (Updatable) Policy definition for the autoscale configuration.
+	PolicyDetails *AutoScalingConfigurationPolicyDetails `pulumi:"policyDetails"`
 }
 
 // The set of arguments for constructing a AutoScalingConfiguration resource.
@@ -202,10 +222,12 @@ type AutoScalingConfigurationArgs struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Whether the autoscale configuration is enabled.
 	IsEnabled pulumi.BoolInput
-	// A node type that is managed by an autoscale configuration. The only supported type is WORKER.
+	// A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
 	NodeType pulumi.StringInput
-	// (Updatable) Policy definitions for the autoscale configuration.
-	Policy AutoScalingConfigurationPolicyInput
+	// (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
+	Policy AutoScalingConfigurationPolicyPtrInput
+	// (Updatable) Policy definition for the autoscale configuration.
+	PolicyDetails AutoScalingConfigurationPolicyDetailsPtrInput
 }
 
 func (AutoScalingConfigurationArgs) ElementType() reflect.Type {

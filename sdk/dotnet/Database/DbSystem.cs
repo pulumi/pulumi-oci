@@ -86,7 +86,7 @@ namespace Pulumi.Oci.Database
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system. The valid values depend on the specified shape:
+        /// (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system or AMD VMDB Systems. The valid values depend on the specified shape:
         /// * BM.DenseIO1.36 - Specify a multiple of 2, from 2 to 36.
         /// * BM.DenseIO2.52 - Specify a multiple of 2, from 2 to 52.
         /// * Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
@@ -96,6 +96,7 @@ namespace Pulumi.Oci.Database
         /// * Exadata.Quarter2.92 - Specify a multiple of 2, from 0 to 92.
         /// * Exadata.Half2.184 - Specify a multiple of 4, from 0 to 184.
         /// * Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
+        /// * VM.Standard.E4.Flex - Specify any thing from 1 to 64.
         /// </summary>
         [Output("cpuCoreCount")]
         public Output<int> CpuCoreCount { get; private set; } = null!;
@@ -233,6 +234,12 @@ namespace Pulumi.Oci.Database
         public Output<ImmutableArray<Outputs.DbSystemMaintenanceWindow>> MaintenanceWindows { get; private set; } = null!;
 
         /// <summary>
+        /// Memory allocated to the DB system, in gigabytes.
+        /// </summary>
+        [Output("memorySizeInGbs")]
+        public Output<int> MemorySizeInGbs { get; private set; } = null!;
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         /// </summary>
         [Output("nextMaintenanceRunId")]
@@ -245,8 +252,8 @@ namespace Pulumi.Oci.Database
         public Output<int> NodeCount { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        /// * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+        /// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+        /// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         /// </summary>
         [Output("nsgIds")]
         public Output<ImmutableArray<string>> NsgIds { get; private set; } = null!;
@@ -324,6 +331,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
+
+        /// <summary>
+        /// The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
+        /// </summary>
+        [Output("storageVolumePerformanceMode")]
+        public Output<string> StorageVolumePerformanceMode { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
@@ -444,7 +457,7 @@ namespace Pulumi.Oci.Database
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system. The valid values depend on the specified shape:
+        /// (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system or AMD VMDB Systems. The valid values depend on the specified shape:
         /// * BM.DenseIO1.36 - Specify a multiple of 2, from 2 to 36.
         /// * BM.DenseIO2.52 - Specify a multiple of 2, from 2 to 52.
         /// * Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
@@ -454,6 +467,7 @@ namespace Pulumi.Oci.Database
         /// * Exadata.Quarter2.92 - Specify a multiple of 2, from 0 to 92.
         /// * Exadata.Half2.184 - Specify a multiple of 4, from 0 to 184.
         /// * Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
+        /// * VM.Standard.E4.Flex - Specify any thing from 1 to 64.
         /// </summary>
         [Input("cpuCoreCount")]
         public Input<int>? CpuCoreCount { get; set; }
@@ -582,8 +596,8 @@ namespace Pulumi.Oci.Database
         private InputList<string>? _nsgIds;
 
         /// <summary>
-        /// (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        /// * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+        /// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+        /// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         /// </summary>
         public InputList<string> NsgIds
         {
@@ -642,6 +656,12 @@ namespace Pulumi.Oci.Database
         }
 
         /// <summary>
+        /// The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
+        /// </summary>
+        [Input("storageVolumePerformanceMode")]
+        public Input<string>? StorageVolumePerformanceMode { get; set; }
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
         /// </summary>
         [Input("subnetId", required: true)]
@@ -697,7 +717,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system. The valid values depend on the specified shape:
+        /// (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system or AMD VMDB Systems. The valid values depend on the specified shape:
         /// * BM.DenseIO1.36 - Specify a multiple of 2, from 2 to 36.
         /// * BM.DenseIO2.52 - Specify a multiple of 2, from 2 to 52.
         /// * Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
@@ -707,6 +727,7 @@ namespace Pulumi.Oci.Database
         /// * Exadata.Quarter2.92 - Specify a multiple of 2, from 0 to 92.
         /// * Exadata.Half2.184 - Specify a multiple of 4, from 0 to 184.
         /// * Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
+        /// * VM.Standard.E4.Flex - Specify any thing from 1 to 64.
         /// </summary>
         [Input("cpuCoreCount")]
         public Input<int>? CpuCoreCount { get; set; }
@@ -874,6 +895,12 @@ namespace Pulumi.Oci.Database
         }
 
         /// <summary>
+        /// Memory allocated to the DB system, in gigabytes.
+        /// </summary>
+        [Input("memorySizeInGbs")]
+        public Input<int>? MemorySizeInGbs { get; set; }
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         /// </summary>
         [Input("nextMaintenanceRunId")]
@@ -889,8 +916,8 @@ namespace Pulumi.Oci.Database
         private InputList<string>? _nsgIds;
 
         /// <summary>
-        /// (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        /// * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+        /// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+        /// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         /// </summary>
         public InputList<string> NsgIds
         {
@@ -983,6 +1010,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
+
+        /// <summary>
+        /// The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
+        /// </summary>
+        [Input("storageVolumePerformanceMode")]
+        public Input<string>? StorageVolumePerformanceMode { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.

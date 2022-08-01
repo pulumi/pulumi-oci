@@ -58,9 +58,9 @@ type GetResultArgs struct {
 	ExecutionTime string `pulumi:"executionTime"`
 	// The OCID of the monitor.
 	MonitorId string `pulumi:"monitorId"`
-	// The result content type zip or raw.
+	// The result content type: zip or raw.
 	ResultContentType string `pulumi:"resultContentType"`
-	// The result type har, screenshot, log or network.
+	// The result type: har, screenshot, log, or network.
 	ResultType string `pulumi:"resultType"`
 	// The vantagePoint name.
 	VantagePoint string `pulumi:"vantagePoint"`
@@ -81,7 +81,7 @@ type GetResultResult struct {
 	ResultDataSets []GetResultResultDataSet `pulumi:"resultDataSets"`
 	// Type of result. Example: HAR, Screenshot, Log or Network.
 	ResultType string `pulumi:"resultType"`
-	// The name of the vantage point.
+	// The name of the public or dedicated vantage point.
 	VantagePoint string `pulumi:"vantagePoint"`
 }
 
@@ -106,9 +106,9 @@ type GetResultOutputArgs struct {
 	ExecutionTime pulumi.StringInput `pulumi:"executionTime"`
 	// The OCID of the monitor.
 	MonitorId pulumi.StringInput `pulumi:"monitorId"`
-	// The result content type zip or raw.
+	// The result content type: zip or raw.
 	ResultContentType pulumi.StringInput `pulumi:"resultContentType"`
-	// The result type har, screenshot, log or network.
+	// The result type: har, screenshot, log, or network.
 	ResultType pulumi.StringInput `pulumi:"resultType"`
 	// The vantagePoint name.
 	VantagePoint pulumi.StringInput `pulumi:"vantagePoint"`
@@ -167,7 +167,7 @@ func (o GetResultResultOutput) ResultType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResultResult) string { return v.ResultType }).(pulumi.StringOutput)
 }
 
-// The name of the vantage point.
+// The name of the public or dedicated vantage point.
 func (o GetResultResultOutput) VantagePoint() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResultResult) string { return v.VantagePoint }).(pulumi.StringOutput)
 }

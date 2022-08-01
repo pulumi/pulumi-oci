@@ -46,6 +46,7 @@ namespace Pulumi.Oci.Analytics
     ///             {
     ///                 { "Department", "Finance" },
     ///             },
+    ///             KmsKeyId = oci_kms_key.Test_key.Id,
     ///             NetworkEndpointDetails = new Oci.Analytics.Inputs.AnalyticsInstanceNetworkEndpointDetailsArgs
     ///             {
     ///                 NetworkEndpointType = @var.Analytics_instance_network_endpoint_details_network_endpoint_type,
@@ -127,6 +128,12 @@ namespace Pulumi.Oci.Analytics
         public Output<string> IdcsAccessToken { get; private set; } = null!;
 
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. "") indicates to use Oracle managed default encryption.
+        /// </summary>
+        [Output("kmsKeyId")]
+        public Output<string?> KmsKeyId { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The license used for the service.
         /// </summary>
         [Output("licenseType")]
@@ -143,12 +150,6 @@ namespace Pulumi.Oci.Analytics
         /// </summary>
         [Output("networkEndpointDetails")]
         public Output<Outputs.AnalyticsInstanceNetworkEndpointDetails> NetworkEndpointDetails { get; private set; } = null!;
-
-        /// <summary>
-        /// Map of PrivateAccessChannel unique identifier key as KEY and PrivateAccessChannel Object as VALUE.
-        /// </summary>
-        [Output("privateAccessChannels")]
-        public Output<ImmutableDictionary<string, object>> PrivateAccessChannels { get; private set; } = null!;
 
         /// <summary>
         /// URL of the Analytics service.
@@ -173,12 +174,6 @@ namespace Pulumi.Oci.Analytics
         /// </summary>
         [Output("timeUpdated")]
         public Output<string> TimeUpdated { get; private set; } = null!;
-
-        /// <summary>
-        /// Map of VanityUrl unique identifier key as KEY and VanityUrl Object as VALUE.
-        /// </summary>
-        [Output("vanityUrlDetails")]
-        public Output<ImmutableDictionary<string, object>> VanityUrlDetails { get; private set; } = null!;
 
 
         /// <summary>
@@ -287,6 +282,12 @@ namespace Pulumi.Oci.Analytics
         public Input<string> IdcsAccessToken { get; set; } = null!;
 
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. "") indicates to use Oracle managed default encryption.
+        /// </summary>
+        [Input("kmsKeyId")]
+        public Input<string>? KmsKeyId { get; set; }
+
+        /// <summary>
         /// (Updatable) The license used for the service.
         /// </summary>
         [Input("licenseType", required: true)]
@@ -378,6 +379,12 @@ namespace Pulumi.Oci.Analytics
         public Input<string>? IdcsAccessToken { get; set; }
 
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. "") indicates to use Oracle managed default encryption.
+        /// </summary>
+        [Input("kmsKeyId")]
+        public Input<string>? KmsKeyId { get; set; }
+
+        /// <summary>
         /// (Updatable) The license used for the service.
         /// </summary>
         [Input("licenseType")]
@@ -394,18 +401,6 @@ namespace Pulumi.Oci.Analytics
         /// </summary>
         [Input("networkEndpointDetails")]
         public Input<Inputs.AnalyticsInstanceNetworkEndpointDetailsGetArgs>? NetworkEndpointDetails { get; set; }
-
-        [Input("privateAccessChannels")]
-        private InputMap<object>? _privateAccessChannels;
-
-        /// <summary>
-        /// Map of PrivateAccessChannel unique identifier key as KEY and PrivateAccessChannel Object as VALUE.
-        /// </summary>
-        public InputMap<object> PrivateAccessChannels
-        {
-            get => _privateAccessChannels ?? (_privateAccessChannels = new InputMap<object>());
-            set => _privateAccessChannels = value;
-        }
 
         /// <summary>
         /// URL of the Analytics service.
@@ -430,18 +425,6 @@ namespace Pulumi.Oci.Analytics
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }
-
-        [Input("vanityUrlDetails")]
-        private InputMap<object>? _vanityUrlDetails;
-
-        /// <summary>
-        /// Map of VanityUrl unique identifier key as KEY and VanityUrl Object as VALUE.
-        /// </summary>
-        public InputMap<object> VanityUrlDetails
-        {
-            get => _vanityUrlDetails ?? (_vanityUrlDetails = new InputMap<object>());
-            set => _vanityUrlDetails = value;
-        }
 
         public AnalyticsInstanceState()
         {

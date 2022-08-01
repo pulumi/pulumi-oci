@@ -43,7 +43,7 @@ export function getRepositoryFileLine(args: GetRepositoryFileLineArgs, opts?: pu
  */
 export interface GetRepositoryFileLineArgs {
     /**
-     * Path to a file within a repository.
+     * A filter to return file contents of the specified paths.
      */
     filePath: string;
     /**
@@ -87,7 +87,7 @@ export function getRepositoryFileLineOutput(args: GetRepositoryFileLineOutputArg
  */
 export interface GetRepositoryFileLineOutputArgs {
     /**
-     * Path to a file within a repository.
+     * A filter to return file contents of the specified paths.
      */
     filePath: pulumi.Input<string>;
     /**

@@ -30,7 +30,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string DetectorRuleId;
         /// <summary>
-        /// (Updatable) DetectorTemplate Identifier
+        /// (Updatable) DetectorTemplate identifier.
         /// </summary>
         public readonly string? DisplayName;
         /// <summary>

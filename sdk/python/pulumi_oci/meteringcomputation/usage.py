@@ -33,6 +33,7 @@ class UsageArgs:
         :param pulumi.Input[str] time_usage_ended: The usage end time.
         :param pulumi.Input[str] time_usage_started: The usage start time.
         :param pulumi.Input[float] compartment_depth: The compartment depth level.
+        :param pulumi.Input[str] filter: The filter object for query usage.
         :param pulumi.Input['UsageForecastArgs'] forecast: Forecast configuration of usage/cost.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] group_bies: Aggregate the result by. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
         :param pulumi.Input[Sequence[pulumi.Input['UsageGroupByTagArgs']]] group_by_tags: GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
@@ -121,6 +122,9 @@ class UsageArgs:
     @property
     @pulumi.getter
     def filter(self) -> Optional[pulumi.Input[str]]:
+        """
+        The filter object for query usage.
+        """
         return pulumi.get(self, "filter")
 
     @filter.setter
@@ -206,6 +210,7 @@ class _UsageState:
         """
         Input properties used for looking up and filtering Usage resources.
         :param pulumi.Input[float] compartment_depth: The compartment depth level.
+        :param pulumi.Input[str] filter: The filter object for query usage.
         :param pulumi.Input['UsageForecastArgs'] forecast: Forecast configuration of usage/cost.
         :param pulumi.Input[str] granularity: The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] group_bies: Aggregate the result by. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
@@ -257,6 +262,9 @@ class _UsageState:
     @property
     @pulumi.getter
     def filter(self) -> Optional[pulumi.Input[str]]:
+        """
+        The filter object for query usage.
+        """
         return pulumi.get(self, "filter")
 
     @filter.setter
@@ -441,6 +449,7 @@ class Usage(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[float] compartment_depth: The compartment depth level.
+        :param pulumi.Input[str] filter: The filter object for query usage.
         :param pulumi.Input[pulumi.InputType['UsageForecastArgs']] forecast: Forecast configuration of usage/cost.
         :param pulumi.Input[str] granularity: The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] group_bies: Aggregate the result by. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
@@ -582,6 +591,7 @@ class Usage(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[float] compartment_depth: The compartment depth level.
+        :param pulumi.Input[str] filter: The filter object for query usage.
         :param pulumi.Input[pulumi.InputType['UsageForecastArgs']] forecast: Forecast configuration of usage/cost.
         :param pulumi.Input[str] granularity: The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] group_bies: Aggregate the result by. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
@@ -622,6 +632,9 @@ class Usage(pulumi.CustomResource):
     @property
     @pulumi.getter
     def filter(self) -> pulumi.Output[Optional[str]]:
+        """
+        The filter object for query usage.
+        """
         return pulumi.get(self, "filter")
 
     @property

@@ -10,12 +10,12 @@ import java.util.Objects;
 @CustomType
 public final class GetConfigDimension {
     /**
-     * @return The name of the metric
+     * @return The name of the metric. This must be a known metric name.
      * 
      */
     private final String name;
     /**
-     * @return Must be NULL at the moment, and &#34;name&#34; must be a known metric.
+     * @return This must not be set.
      * 
      */
     private final String valueSource;
@@ -29,14 +29,14 @@ public final class GetConfigDimension {
     }
 
     /**
-     * @return The name of the metric
+     * @return The name of the metric. This must be a known metric name.
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return Must be NULL at the moment, and &#34;name&#34; must be a known metric.
+     * @return This must not be set.
      * 
      */
     public String valueSource() {

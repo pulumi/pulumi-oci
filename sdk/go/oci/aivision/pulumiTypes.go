@@ -16,7 +16,8 @@ type ModelTestingDataset struct {
 	// The OCID of the Data Science Labeling Dataset.
 	DatasetId *string `pulumi:"datasetId"`
 	// Type of the Dataset.
-	DatasetType   string  `pulumi:"datasetType"`
+	DatasetType string `pulumi:"datasetType"`
+	// The namespace name of the ObjectStorage bucket that contains the input data file.
 	NamespaceName *string `pulumi:"namespaceName"`
 	// The object name of the input data file.
 	Object *string `pulumi:"object"`
@@ -39,7 +40,8 @@ type ModelTestingDatasetArgs struct {
 	// The OCID of the Data Science Labeling Dataset.
 	DatasetId pulumi.StringPtrInput `pulumi:"datasetId"`
 	// Type of the Dataset.
-	DatasetType   pulumi.StringInput    `pulumi:"datasetType"`
+	DatasetType pulumi.StringInput `pulumi:"datasetType"`
+	// The namespace name of the ObjectStorage bucket that contains the input data file.
 	NamespaceName pulumi.StringPtrInput `pulumi:"namespaceName"`
 	// The object name of the input data file.
 	Object pulumi.StringPtrInput `pulumi:"object"`
@@ -137,6 +139,7 @@ func (o ModelTestingDatasetOutput) DatasetType() pulumi.StringOutput {
 	return o.ApplyT(func(v ModelTestingDataset) string { return v.DatasetType }).(pulumi.StringOutput)
 }
 
+// The namespace name of the ObjectStorage bucket that contains the input data file.
 func (o ModelTestingDatasetOutput) NamespaceName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ModelTestingDataset) *string { return v.NamespaceName }).(pulumi.StringPtrOutput)
 }
@@ -200,6 +203,7 @@ func (o ModelTestingDatasetPtrOutput) DatasetType() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// The namespace name of the ObjectStorage bucket that contains the input data file.
 func (o ModelTestingDatasetPtrOutput) NamespaceName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ModelTestingDataset) *string {
 		if v == nil {
@@ -225,7 +229,8 @@ type ModelTrainingDataset struct {
 	// The OCID of the Data Science Labeling Dataset.
 	DatasetId *string `pulumi:"datasetId"`
 	// Type of the Dataset.
-	DatasetType   string  `pulumi:"datasetType"`
+	DatasetType string `pulumi:"datasetType"`
+	// The namespace name of the ObjectStorage bucket that contains the input data file.
 	NamespaceName *string `pulumi:"namespaceName"`
 	// The object name of the input data file.
 	Object *string `pulumi:"object"`
@@ -248,7 +253,8 @@ type ModelTrainingDatasetArgs struct {
 	// The OCID of the Data Science Labeling Dataset.
 	DatasetId pulumi.StringPtrInput `pulumi:"datasetId"`
 	// Type of the Dataset.
-	DatasetType   pulumi.StringInput    `pulumi:"datasetType"`
+	DatasetType pulumi.StringInput `pulumi:"datasetType"`
+	// The namespace name of the ObjectStorage bucket that contains the input data file.
 	NamespaceName pulumi.StringPtrInput `pulumi:"namespaceName"`
 	// The object name of the input data file.
 	Object pulumi.StringPtrInput `pulumi:"object"`
@@ -346,6 +352,7 @@ func (o ModelTrainingDatasetOutput) DatasetType() pulumi.StringOutput {
 	return o.ApplyT(func(v ModelTrainingDataset) string { return v.DatasetType }).(pulumi.StringOutput)
 }
 
+// The namespace name of the ObjectStorage bucket that contains the input data file.
 func (o ModelTrainingDatasetOutput) NamespaceName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ModelTrainingDataset) *string { return v.NamespaceName }).(pulumi.StringPtrOutput)
 }
@@ -409,6 +416,7 @@ func (o ModelTrainingDatasetPtrOutput) DatasetType() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// The namespace name of the ObjectStorage bucket that contains the input data file.
 func (o ModelTrainingDatasetPtrOutput) NamespaceName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ModelTrainingDataset) *string {
 		if v == nil {
@@ -434,7 +442,8 @@ type ModelValidationDataset struct {
 	// The OCID of the Data Science Labeling Dataset.
 	DatasetId *string `pulumi:"datasetId"`
 	// Type of the Dataset.
-	DatasetType   string  `pulumi:"datasetType"`
+	DatasetType string `pulumi:"datasetType"`
+	// The namespace name of the ObjectStorage bucket that contains the input data file.
 	NamespaceName *string `pulumi:"namespaceName"`
 	// The object name of the input data file.
 	Object *string `pulumi:"object"`
@@ -457,7 +466,8 @@ type ModelValidationDatasetArgs struct {
 	// The OCID of the Data Science Labeling Dataset.
 	DatasetId pulumi.StringPtrInput `pulumi:"datasetId"`
 	// Type of the Dataset.
-	DatasetType   pulumi.StringInput    `pulumi:"datasetType"`
+	DatasetType pulumi.StringInput `pulumi:"datasetType"`
+	// The namespace name of the ObjectStorage bucket that contains the input data file.
 	NamespaceName pulumi.StringPtrInput `pulumi:"namespaceName"`
 	// The object name of the input data file.
 	Object pulumi.StringPtrInput `pulumi:"object"`
@@ -555,6 +565,7 @@ func (o ModelValidationDatasetOutput) DatasetType() pulumi.StringOutput {
 	return o.ApplyT(func(v ModelValidationDataset) string { return v.DatasetType }).(pulumi.StringOutput)
 }
 
+// The namespace name of the ObjectStorage bucket that contains the input data file.
 func (o ModelValidationDatasetOutput) NamespaceName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ModelValidationDataset) *string { return v.NamespaceName }).(pulumi.StringPtrOutput)
 }
@@ -618,6 +629,7 @@ func (o ModelValidationDatasetPtrOutput) DatasetType() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// The namespace name of the ObjectStorage bucket that contains the input data file.
 func (o ModelValidationDatasetPtrOutput) NamespaceName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ModelValidationDataset) *string {
 		if v == nil {
@@ -643,7 +655,8 @@ type GetModelTestingDataset struct {
 	// The OCID of the Data Science Labeling Dataset.
 	DatasetId string `pulumi:"datasetId"`
 	// Type of the Dataset.
-	DatasetType   string `pulumi:"datasetType"`
+	DatasetType string `pulumi:"datasetType"`
+	// The namespace name of the ObjectStorage bucket that contains the input data file.
 	NamespaceName string `pulumi:"namespaceName"`
 	// The object name of the input data file.
 	Object string `pulumi:"object"`
@@ -666,7 +679,8 @@ type GetModelTestingDatasetArgs struct {
 	// The OCID of the Data Science Labeling Dataset.
 	DatasetId pulumi.StringInput `pulumi:"datasetId"`
 	// Type of the Dataset.
-	DatasetType   pulumi.StringInput `pulumi:"datasetType"`
+	DatasetType pulumi.StringInput `pulumi:"datasetType"`
+	// The namespace name of the ObjectStorage bucket that contains the input data file.
 	NamespaceName pulumi.StringInput `pulumi:"namespaceName"`
 	// The object name of the input data file.
 	Object pulumi.StringInput `pulumi:"object"`
@@ -738,6 +752,7 @@ func (o GetModelTestingDatasetOutput) DatasetType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelTestingDataset) string { return v.DatasetType }).(pulumi.StringOutput)
 }
 
+// The namespace name of the ObjectStorage bucket that contains the input data file.
 func (o GetModelTestingDatasetOutput) NamespaceName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelTestingDataset) string { return v.NamespaceName }).(pulumi.StringOutput)
 }
@@ -773,7 +788,8 @@ type GetModelTrainingDataset struct {
 	// The OCID of the Data Science Labeling Dataset.
 	DatasetId string `pulumi:"datasetId"`
 	// Type of the Dataset.
-	DatasetType   string `pulumi:"datasetType"`
+	DatasetType string `pulumi:"datasetType"`
+	// The namespace name of the ObjectStorage bucket that contains the input data file.
 	NamespaceName string `pulumi:"namespaceName"`
 	// The object name of the input data file.
 	Object string `pulumi:"object"`
@@ -796,7 +812,8 @@ type GetModelTrainingDatasetArgs struct {
 	// The OCID of the Data Science Labeling Dataset.
 	DatasetId pulumi.StringInput `pulumi:"datasetId"`
 	// Type of the Dataset.
-	DatasetType   pulumi.StringInput `pulumi:"datasetType"`
+	DatasetType pulumi.StringInput `pulumi:"datasetType"`
+	// The namespace name of the ObjectStorage bucket that contains the input data file.
 	NamespaceName pulumi.StringInput `pulumi:"namespaceName"`
 	// The object name of the input data file.
 	Object pulumi.StringInput `pulumi:"object"`
@@ -868,6 +885,7 @@ func (o GetModelTrainingDatasetOutput) DatasetType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelTrainingDataset) string { return v.DatasetType }).(pulumi.StringOutput)
 }
 
+// The namespace name of the ObjectStorage bucket that contains the input data file.
 func (o GetModelTrainingDatasetOutput) NamespaceName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelTrainingDataset) string { return v.NamespaceName }).(pulumi.StringOutput)
 }
@@ -903,7 +921,8 @@ type GetModelValidationDataset struct {
 	// The OCID of the Data Science Labeling Dataset.
 	DatasetId string `pulumi:"datasetId"`
 	// Type of the Dataset.
-	DatasetType   string `pulumi:"datasetType"`
+	DatasetType string `pulumi:"datasetType"`
+	// The namespace name of the ObjectStorage bucket that contains the input data file.
 	NamespaceName string `pulumi:"namespaceName"`
 	// The object name of the input data file.
 	Object string `pulumi:"object"`
@@ -926,7 +945,8 @@ type GetModelValidationDatasetArgs struct {
 	// The OCID of the Data Science Labeling Dataset.
 	DatasetId pulumi.StringInput `pulumi:"datasetId"`
 	// Type of the Dataset.
-	DatasetType   pulumi.StringInput `pulumi:"datasetType"`
+	DatasetType pulumi.StringInput `pulumi:"datasetType"`
+	// The namespace name of the ObjectStorage bucket that contains the input data file.
 	NamespaceName pulumi.StringInput `pulumi:"namespaceName"`
 	// The object name of the input data file.
 	Object pulumi.StringInput `pulumi:"object"`
@@ -998,6 +1018,7 @@ func (o GetModelValidationDatasetOutput) DatasetType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelValidationDataset) string { return v.DatasetType }).(pulumi.StringOutput)
 }
 
+// The namespace name of the ObjectStorage bucket that contains the input data file.
 func (o GetModelValidationDatasetOutput) NamespaceName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelValidationDataset) string { return v.NamespaceName }).(pulumi.StringOutput)
 }

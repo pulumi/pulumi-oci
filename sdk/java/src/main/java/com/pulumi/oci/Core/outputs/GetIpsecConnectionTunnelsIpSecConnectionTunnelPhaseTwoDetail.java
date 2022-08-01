@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 
@@ -44,7 +45,7 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail 
      * @return The total configured lifetime of the IKE security association.
      * 
      */
-    private final String lifetime;
+    private final Integer lifetime;
     /**
      * @return The negotiated phase two authentication algorithm.
      * 
@@ -79,7 +80,7 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail 
         @CustomType.Parameter("isCustomPhaseTwoConfig") Boolean isCustomPhaseTwoConfig,
         @CustomType.Parameter("isEspEstablished") Boolean isEspEstablished,
         @CustomType.Parameter("isPfsEnabled") Boolean isPfsEnabled,
-        @CustomType.Parameter("lifetime") String lifetime,
+        @CustomType.Parameter("lifetime") Integer lifetime,
         @CustomType.Parameter("negotiatedAuthenticationAlgorithm") String negotiatedAuthenticationAlgorithm,
         @CustomType.Parameter("negotiatedDhGroup") String negotiatedDhGroup,
         @CustomType.Parameter("negotiatedEncryptionAlgorithm") String negotiatedEncryptionAlgorithm,
@@ -145,7 +146,7 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail 
      * @return The total configured lifetime of the IKE security association.
      * 
      */
-    public String lifetime() {
+    public Integer lifetime() {
         return this.lifetime;
     }
     /**
@@ -199,7 +200,7 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail 
         private Boolean isCustomPhaseTwoConfig;
         private Boolean isEspEstablished;
         private Boolean isPfsEnabled;
-        private String lifetime;
+        private Integer lifetime;
         private String negotiatedAuthenticationAlgorithm;
         private String negotiatedDhGroup;
         private String negotiatedEncryptionAlgorithm;
@@ -250,7 +251,7 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail 
             this.isPfsEnabled = Objects.requireNonNull(isPfsEnabled);
             return this;
         }
-        public Builder lifetime(String lifetime) {
+        public Builder lifetime(Integer lifetime) {
             this.lifetime = Objects.requireNonNull(lifetime);
             return this;
         }

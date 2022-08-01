@@ -114,11 +114,11 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
         /// <summary>
-        /// ManagedList description
+        /// ManagedList description.
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// ManagedList display name
+        /// ManagedList display name.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>

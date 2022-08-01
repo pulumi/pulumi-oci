@@ -25,6 +25,18 @@ __all__ = [
     'GetJobExecutionsStatusesFilterResult',
     'GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionResult',
     'GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItemResult',
+    'GetManagedDatabaseAddmTaskItemResult',
+    'GetManagedDatabaseAddmTasksAddmTasksCollectionResult',
+    'GetManagedDatabaseAddmTasksAddmTasksCollectionItemResult',
+    'GetManagedDatabaseAddmTasksFilterResult',
+    'GetManagedDatabaseAlertLogCountItemResult',
+    'GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionResult',
+    'GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemResult',
+    'GetManagedDatabaseAlertLogCountsFilterResult',
+    'GetManagedDatabaseAttentionLogCountItemResult',
+    'GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionResult',
+    'GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemResult',
+    'GetManagedDatabaseAttentionLogCountsFilterResult',
     'GetManagedDatabaseGroupManagedDatabaseResult',
     'GetManagedDatabaseGroupsFilterResult',
     'GetManagedDatabaseGroupsManagedDatabaseGroupCollectionResult',
@@ -53,6 +65,10 @@ __all__ = [
     'GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCountResult',
     'GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCountResult',
     'GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfoResult',
+    'GetManagedDatabaseSqlTuningSetItemResult',
+    'GetManagedDatabaseSqlTuningSetsFilterResult',
+    'GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionResult',
+    'GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemResult',
     'GetManagedDatabaseUserConsumerGroupPrivilegeItemResult',
     'GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionResult',
     'GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionItemResult',
@@ -869,6 +885,535 @@ class GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItemResult(dic
         The status of the job execution.
         """
         return pulumi.get(self, "status")
+
+
+@pulumi.output_type
+class GetManagedDatabaseAddmTaskItemResult(dict):
+    def __init__(__self__, *,
+                 begin_snapshot_id: str,
+                 db_user: str,
+                 description: str,
+                 end_snapshot_id: str,
+                 end_snapshot_time: str,
+                 findings: str,
+                 how_created: str,
+                 start_snapshot_time: str,
+                 status: str,
+                 task_id: str,
+                 task_name: str,
+                 time_created: str):
+        """
+        :param str begin_snapshot_id: The ID number of the beginning AWR snapshot.
+        :param str db_user: The database user who owns the ADDM task.
+        :param str description: The description of the ADDM task.
+        :param str end_snapshot_id: The ID number of the ending AWR snapshot.
+        :param str end_snapshot_time: The timestamp of the ending AWR snapshot used in the ADDM task as defined by date-time RFC3339 format.
+        :param str findings: The number of ADDM findings.
+        :param str how_created: A description of how the task was created.
+        :param str start_snapshot_time: The timestamp of the beginning AWR snapshot used in the ADDM task as defined by date-time RFC3339 format.
+        :param str status: The status of the ADDM task.
+        :param str task_id: The ID number of the ADDM task.
+        :param str task_name: The name of the ADDM task.
+        :param str time_created: The creation date of the ADDM task.
+        """
+        pulumi.set(__self__, "begin_snapshot_id", begin_snapshot_id)
+        pulumi.set(__self__, "db_user", db_user)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "end_snapshot_id", end_snapshot_id)
+        pulumi.set(__self__, "end_snapshot_time", end_snapshot_time)
+        pulumi.set(__self__, "findings", findings)
+        pulumi.set(__self__, "how_created", how_created)
+        pulumi.set(__self__, "start_snapshot_time", start_snapshot_time)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "task_id", task_id)
+        pulumi.set(__self__, "task_name", task_name)
+        pulumi.set(__self__, "time_created", time_created)
+
+    @property
+    @pulumi.getter(name="beginSnapshotId")
+    def begin_snapshot_id(self) -> str:
+        """
+        The ID number of the beginning AWR snapshot.
+        """
+        return pulumi.get(self, "begin_snapshot_id")
+
+    @property
+    @pulumi.getter(name="dbUser")
+    def db_user(self) -> str:
+        """
+        The database user who owns the ADDM task.
+        """
+        return pulumi.get(self, "db_user")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        The description of the ADDM task.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="endSnapshotId")
+    def end_snapshot_id(self) -> str:
+        """
+        The ID number of the ending AWR snapshot.
+        """
+        return pulumi.get(self, "end_snapshot_id")
+
+    @property
+    @pulumi.getter(name="endSnapshotTime")
+    def end_snapshot_time(self) -> str:
+        """
+        The timestamp of the ending AWR snapshot used in the ADDM task as defined by date-time RFC3339 format.
+        """
+        return pulumi.get(self, "end_snapshot_time")
+
+    @property
+    @pulumi.getter
+    def findings(self) -> str:
+        """
+        The number of ADDM findings.
+        """
+        return pulumi.get(self, "findings")
+
+    @property
+    @pulumi.getter(name="howCreated")
+    def how_created(self) -> str:
+        """
+        A description of how the task was created.
+        """
+        return pulumi.get(self, "how_created")
+
+    @property
+    @pulumi.getter(name="startSnapshotTime")
+    def start_snapshot_time(self) -> str:
+        """
+        The timestamp of the beginning AWR snapshot used in the ADDM task as defined by date-time RFC3339 format.
+        """
+        return pulumi.get(self, "start_snapshot_time")
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        """
+        The status of the ADDM task.
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="taskId")
+    def task_id(self) -> str:
+        """
+        The ID number of the ADDM task.
+        """
+        return pulumi.get(self, "task_id")
+
+    @property
+    @pulumi.getter(name="taskName")
+    def task_name(self) -> str:
+        """
+        The name of the ADDM task.
+        """
+        return pulumi.get(self, "task_name")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The creation date of the ADDM task.
+        """
+        return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
+class GetManagedDatabaseAddmTasksAddmTasksCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetManagedDatabaseAddmTasksAddmTasksCollectionItemResult']):
+        """
+        :param Sequence['GetManagedDatabaseAddmTasksAddmTasksCollectionItemArgs'] items: The list of ADDM task metadata.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetManagedDatabaseAddmTasksAddmTasksCollectionItemResult']:
+        """
+        The list of ADDM task metadata.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetManagedDatabaseAddmTasksAddmTasksCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 begin_snapshot_id: str,
+                 db_user: str,
+                 description: str,
+                 end_snapshot_id: str,
+                 end_snapshot_time: str,
+                 findings: str,
+                 how_created: str,
+                 start_snapshot_time: str,
+                 status: str,
+                 task_id: str,
+                 task_name: str,
+                 time_created: str):
+        """
+        :param str begin_snapshot_id: The ID number of the beginning AWR snapshot.
+        :param str db_user: The database user who owns the ADDM task.
+        :param str description: The description of the ADDM task.
+        :param str end_snapshot_id: The ID number of the ending AWR snapshot.
+        :param str end_snapshot_time: The timestamp of the ending AWR snapshot used in the ADDM task as defined by date-time RFC3339 format.
+        :param str findings: The number of ADDM findings.
+        :param str how_created: A description of how the task was created.
+        :param str start_snapshot_time: The timestamp of the beginning AWR snapshot used in the ADDM task as defined by date-time RFC3339 format.
+        :param str status: The status of the ADDM task.
+        :param str task_id: The ID number of the ADDM task.
+        :param str task_name: The name of the ADDM task.
+        :param str time_created: The creation date of the ADDM task.
+        """
+        pulumi.set(__self__, "begin_snapshot_id", begin_snapshot_id)
+        pulumi.set(__self__, "db_user", db_user)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "end_snapshot_id", end_snapshot_id)
+        pulumi.set(__self__, "end_snapshot_time", end_snapshot_time)
+        pulumi.set(__self__, "findings", findings)
+        pulumi.set(__self__, "how_created", how_created)
+        pulumi.set(__self__, "start_snapshot_time", start_snapshot_time)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "task_id", task_id)
+        pulumi.set(__self__, "task_name", task_name)
+        pulumi.set(__self__, "time_created", time_created)
+
+    @property
+    @pulumi.getter(name="beginSnapshotId")
+    def begin_snapshot_id(self) -> str:
+        """
+        The ID number of the beginning AWR snapshot.
+        """
+        return pulumi.get(self, "begin_snapshot_id")
+
+    @property
+    @pulumi.getter(name="dbUser")
+    def db_user(self) -> str:
+        """
+        The database user who owns the ADDM task.
+        """
+        return pulumi.get(self, "db_user")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        The description of the ADDM task.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="endSnapshotId")
+    def end_snapshot_id(self) -> str:
+        """
+        The ID number of the ending AWR snapshot.
+        """
+        return pulumi.get(self, "end_snapshot_id")
+
+    @property
+    @pulumi.getter(name="endSnapshotTime")
+    def end_snapshot_time(self) -> str:
+        """
+        The timestamp of the ending AWR snapshot used in the ADDM task as defined by date-time RFC3339 format.
+        """
+        return pulumi.get(self, "end_snapshot_time")
+
+    @property
+    @pulumi.getter
+    def findings(self) -> str:
+        """
+        The number of ADDM findings.
+        """
+        return pulumi.get(self, "findings")
+
+    @property
+    @pulumi.getter(name="howCreated")
+    def how_created(self) -> str:
+        """
+        A description of how the task was created.
+        """
+        return pulumi.get(self, "how_created")
+
+    @property
+    @pulumi.getter(name="startSnapshotTime")
+    def start_snapshot_time(self) -> str:
+        """
+        The timestamp of the beginning AWR snapshot used in the ADDM task as defined by date-time RFC3339 format.
+        """
+        return pulumi.get(self, "start_snapshot_time")
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        """
+        The status of the ADDM task.
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="taskId")
+    def task_id(self) -> str:
+        """
+        The ID number of the ADDM task.
+        """
+        return pulumi.get(self, "task_id")
+
+    @property
+    @pulumi.getter(name="taskName")
+    def task_name(self) -> str:
+        """
+        The name of the ADDM task.
+        """
+        return pulumi.get(self, "task_name")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The creation date of the ADDM task.
+        """
+        return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
+class GetManagedDatabaseAddmTasksFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetManagedDatabaseAlertLogCountItemResult(dict):
+    def __init__(__self__, *,
+                 category: str,
+                 count: int):
+        """
+        :param str category: The category of different alert logs.
+        :param int count: The count of alert logs with specific category.
+        """
+        pulumi.set(__self__, "category", category)
+        pulumi.set(__self__, "count", count)
+
+    @property
+    @pulumi.getter
+    def category(self) -> str:
+        """
+        The category of different alert logs.
+        """
+        return pulumi.get(self, "category")
+
+    @property
+    @pulumi.getter
+    def count(self) -> int:
+        """
+        The count of alert logs with specific category.
+        """
+        return pulumi.get(self, "count")
+
+
+@pulumi.output_type
+class GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemResult']):
+        """
+        :param Sequence['GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemArgs'] items: An array of the counts of different urgency or type of alert logs.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemResult']:
+        """
+        An array of the counts of different urgency or type of alert logs.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 category: str,
+                 count: int):
+        """
+        :param str category: The category of different alert logs.
+        :param int count: The count of alert logs with specific category.
+        """
+        pulumi.set(__self__, "category", category)
+        pulumi.set(__self__, "count", count)
+
+    @property
+    @pulumi.getter
+    def category(self) -> str:
+        """
+        The category of different alert logs.
+        """
+        return pulumi.get(self, "category")
+
+    @property
+    @pulumi.getter
+    def count(self) -> int:
+        """
+        The count of alert logs with specific category.
+        """
+        return pulumi.get(self, "count")
+
+
+@pulumi.output_type
+class GetManagedDatabaseAlertLogCountsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetManagedDatabaseAttentionLogCountItemResult(dict):
+    def __init__(__self__, *,
+                 category: str,
+                 count: int):
+        """
+        :param str category: The category of different attention logs.
+        :param int count: The count of attention logs with specific category.
+        """
+        pulumi.set(__self__, "category", category)
+        pulumi.set(__self__, "count", count)
+
+    @property
+    @pulumi.getter
+    def category(self) -> str:
+        """
+        The category of different attention logs.
+        """
+        return pulumi.get(self, "category")
+
+    @property
+    @pulumi.getter
+    def count(self) -> int:
+        """
+        The count of attention logs with specific category.
+        """
+        return pulumi.get(self, "count")
+
+
+@pulumi.output_type
+class GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemResult']):
+        """
+        :param Sequence['GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemArgs'] items: An array of the counts of different urgency or type of attention logs.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemResult']:
+        """
+        An array of the counts of different urgency or type of attention logs.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 category: str,
+                 count: int):
+        """
+        :param str category: The category of different attention logs.
+        :param int count: The count of attention logs with specific category.
+        """
+        pulumi.set(__self__, "category", category)
+        pulumi.set(__self__, "count", count)
+
+    @property
+    @pulumi.getter
+    def category(self) -> str:
+        """
+        The category of different attention logs.
+        """
+        return pulumi.get(self, "category")
+
+    @property
+    @pulumi.getter
+    def count(self) -> int:
+        """
+        The count of attention logs with specific category.
+        """
+        return pulumi.get(self, "count")
+
+
+@pulumi.output_type
+class GetManagedDatabaseAttentionLogCountsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
 
 
 @pulumi.output_type
@@ -1932,6 +2477,7 @@ class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItemResult(dict):
                  benefit: float,
                  finding: str,
                  implement_action_sql: str,
+                 is_parallel_execution: bool,
                  rationale: str,
                  recommendation: str,
                  recommendation_key: int,
@@ -1942,6 +2488,7 @@ class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItemResult(dict):
         :param float benefit: The percentage benefit of this implementation.
         :param str finding: Summary of the issue found in the SQL statement.
         :param str implement_action_sql: Action sql to be implemented based on the recommendation result.
+        :param bool is_parallel_execution: Indicates whether a SQL Profile recommendation uses parallel execution.
         :param str rationale: Describes the reasoning behind the recommendation and how it relates to the finding.
         :param str recommendation: The recommendation for a specific finding.
         :param int recommendation_key: The unique identifier of the recommendation in the scope of the task.
@@ -1952,6 +2499,7 @@ class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItemResult(dict):
         pulumi.set(__self__, "benefit", benefit)
         pulumi.set(__self__, "finding", finding)
         pulumi.set(__self__, "implement_action_sql", implement_action_sql)
+        pulumi.set(__self__, "is_parallel_execution", is_parallel_execution)
         pulumi.set(__self__, "rationale", rationale)
         pulumi.set(__self__, "recommendation", recommendation)
         pulumi.set(__self__, "recommendation_key", recommendation_key)
@@ -1982,6 +2530,14 @@ class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItemResult(dict):
         Action sql to be implemented based on the recommendation result.
         """
         return pulumi.get(self, "implement_action_sql")
+
+    @property
+    @pulumi.getter(name="isParallelExecution")
+    def is_parallel_execution(self) -> bool:
+        """
+        Indicates whether a SQL Profile recommendation uses parallel execution.
+        """
+        return pulumi.get(self, "is_parallel_execution")
 
     @property
     @pulumi.getter
@@ -2083,6 +2639,7 @@ class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTask
                  benefit: float,
                  finding: str,
                  implement_action_sql: str,
+                 is_parallel_execution: bool,
                  rationale: str,
                  recommendation: str,
                  recommendation_key: int,
@@ -2093,6 +2650,7 @@ class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTask
         :param float benefit: The percentage benefit of this implementation.
         :param str finding: Summary of the issue found in the SQL statement.
         :param str implement_action_sql: Action sql to be implemented based on the recommendation result.
+        :param bool is_parallel_execution: Indicates whether a SQL Profile recommendation uses parallel execution.
         :param str rationale: Describes the reasoning behind the recommendation and how it relates to the finding.
         :param str recommendation: The recommendation for a specific finding.
         :param int recommendation_key: The unique identifier of the recommendation in the scope of the task.
@@ -2103,6 +2661,7 @@ class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTask
         pulumi.set(__self__, "benefit", benefit)
         pulumi.set(__self__, "finding", finding)
         pulumi.set(__self__, "implement_action_sql", implement_action_sql)
+        pulumi.set(__self__, "is_parallel_execution", is_parallel_execution)
         pulumi.set(__self__, "rationale", rationale)
         pulumi.set(__self__, "recommendation", recommendation)
         pulumi.set(__self__, "recommendation_key", recommendation_key)
@@ -2133,6 +2692,14 @@ class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTask
         Action sql to be implemented based on the recommendation result.
         """
         return pulumi.get(self, "implement_action_sql")
+
+    @property
+    @pulumi.getter(name="isParallelExecution")
+    def is_parallel_execution(self) -> bool:
+        """
+        Indicates whether a SQL Profile recommendation uses parallel execution.
+        """
+        return pulumi.get(self, "is_parallel_execution")
 
     @property
     @pulumi.getter
@@ -3123,6 +3690,159 @@ class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfoResult(dict):
 
 
 @pulumi.output_type
+class GetManagedDatabaseSqlTuningSetItemResult(dict):
+    def __init__(__self__, *,
+                 description: str,
+                 name: str,
+                 owner: str,
+                 statement_counts: int):
+        """
+        :param str description: The description of the SQL tuning set.
+        :param str name: The name of the SQL tuning set.
+        :param str owner: The owner of the SQL tuning set.
+        :param int statement_counts: The number of SQL statements in the SQL tuning set.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "owner", owner)
+        pulumi.set(__self__, "statement_counts", statement_counts)
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        The description of the SQL tuning set.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The name of the SQL tuning set.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def owner(self) -> str:
+        """
+        The owner of the SQL tuning set.
+        """
+        return pulumi.get(self, "owner")
+
+    @property
+    @pulumi.getter(name="statementCounts")
+    def statement_counts(self) -> int:
+        """
+        The number of SQL statements in the SQL tuning set.
+        """
+        return pulumi.get(self, "statement_counts")
+
+
+@pulumi.output_type
+class GetManagedDatabaseSqlTuningSetsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: The name of the SQL tuning set.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The name of the SQL tuning set.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemResult']):
+        """
+        :param Sequence['GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArgs'] items: The details in the SQL tuning set summary.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemResult']:
+        """
+        The details in the SQL tuning set summary.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 description: str,
+                 name: str,
+                 owner: str,
+                 statement_counts: int):
+        """
+        :param str description: The description of the SQL tuning set.
+        :param str name: The name of the SQL tuning set.
+        :param str owner: The owner of the SQL tuning set.
+        :param int statement_counts: The number of SQL statements in the SQL tuning set.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "owner", owner)
+        pulumi.set(__self__, "statement_counts", statement_counts)
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        The description of the SQL tuning set.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The name of the SQL tuning set.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def owner(self) -> str:
+        """
+        The owner of the SQL tuning set.
+        """
+        return pulumi.get(self, "owner")
+
+    @property
+    @pulumi.getter(name="statementCounts")
+    def statement_counts(self) -> int:
+        """
+        The number of SQL statements in the SQL tuning set.
+        """
+        return pulumi.get(self, "statement_counts")
+
+
+@pulumi.output_type
 class GetManagedDatabaseUserConsumerGroupPrivilegeItemResult(dict):
     def __init__(__self__, *,
                  grant_option: str,
@@ -4019,14 +4739,14 @@ class GetManagedDatabaseUsersUserCollectionItemResult(dict):
         :param str name: A filter to return only resources that match the entire name.
         :param str oracle_maintained: Indicates whether the user was created and is maintained by Oracle-supplied scripts (such as catalog.sql or catproc.sql).
         :param str password_versions: The list of existing versions of the password hashes (also known as "verifiers") for the account.
-        :param str profile: The User resource profile name.
+        :param str profile: The profile name of the user.
         :param str proxy_connect: Indicates whether a user can connect directly (N) or whether the account can only be proxied (Y) by users who have proxy privileges for this account (that is, by users who have been granted the "connect through" privilege for this account).
         :param str status: The status of the user account.
         :param str temp_tablespace: The name of the default tablespace for temporary tables or the name of a tablespace group.
         :param str time_created: The date and time the user was created.
         :param str time_expiring: The date and time of the expiration of the user account.
         :param str time_last_login: The date and time of the last user login. This column is not populated when a user connects to the database with administrative privileges, that is, AS { SYSASM | SYSBACKUP | SYSDBA | SYSDG | SYSOPER | SYSRAC | SYSKM }.
-        :param str time_locked: The date the account was locked if account status was LOCKED.
+        :param str time_locked: The date the account was locked, if the status of the account is LOCKED.
         :param str time_password_changed: The date and time when the user password was last set. This column is populated only when the value of the AUTHENTICATION_TYPE column is PASSWORD. Otherwise, this column is null.
         """
         pulumi.set(__self__, "all_shared", all_shared)
@@ -4178,7 +4898,7 @@ class GetManagedDatabaseUsersUserCollectionItemResult(dict):
     @pulumi.getter
     def profile(self) -> str:
         """
-        The User resource profile name.
+        The profile name of the user.
         """
         return pulumi.get(self, "profile")
 
@@ -4234,7 +4954,7 @@ class GetManagedDatabaseUsersUserCollectionItemResult(dict):
     @pulumi.getter(name="timeLocked")
     def time_locked(self) -> str:
         """
-        The date the account was locked if account status was LOCKED.
+        The date the account was locked, if the status of the account is LOCKED.
         """
         return pulumi.get(self, "time_locked")
 

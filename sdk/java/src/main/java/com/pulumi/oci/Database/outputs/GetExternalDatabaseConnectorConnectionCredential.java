@@ -30,6 +30,11 @@ public final class GetExternalDatabaseConnectorConnectionCredential {
      */
     private final String role;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * 
+     */
+    private final String sslSecretId;
+    /**
      * @return The username that will be used to connect to the database.
      * 
      */
@@ -41,11 +46,13 @@ public final class GetExternalDatabaseConnectorConnectionCredential {
         @CustomType.Parameter("credentialType") String credentialType,
         @CustomType.Parameter("password") String password,
         @CustomType.Parameter("role") String role,
+        @CustomType.Parameter("sslSecretId") String sslSecretId,
         @CustomType.Parameter("username") String username) {
         this.credentialName = credentialName;
         this.credentialType = credentialType;
         this.password = password;
         this.role = role;
+        this.sslSecretId = sslSecretId;
         this.username = username;
     }
 
@@ -78,6 +85,13 @@ public final class GetExternalDatabaseConnectorConnectionCredential {
         return this.role;
     }
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * 
+     */
+    public String sslSecretId() {
+        return this.sslSecretId;
+    }
+    /**
      * @return The username that will be used to connect to the database.
      * 
      */
@@ -98,6 +112,7 @@ public final class GetExternalDatabaseConnectorConnectionCredential {
         private String credentialType;
         private String password;
         private String role;
+        private String sslSecretId;
         private String username;
 
         public Builder() {
@@ -110,6 +125,7 @@ public final class GetExternalDatabaseConnectorConnectionCredential {
     	      this.credentialType = defaults.credentialType;
     	      this.password = defaults.password;
     	      this.role = defaults.role;
+    	      this.sslSecretId = defaults.sslSecretId;
     	      this.username = defaults.username;
         }
 
@@ -129,11 +145,15 @@ public final class GetExternalDatabaseConnectorConnectionCredential {
             this.role = Objects.requireNonNull(role);
             return this;
         }
+        public Builder sslSecretId(String sslSecretId) {
+            this.sslSecretId = Objects.requireNonNull(sslSecretId);
+            return this;
+        }
         public Builder username(String username) {
             this.username = Objects.requireNonNull(username);
             return this;
         }        public GetExternalDatabaseConnectorConnectionCredential build() {
-            return new GetExternalDatabaseConnectorConnectionCredential(credentialName, credentialType, password, role, username);
+            return new GetExternalDatabaseConnectorConnectionCredential(credentialName, credentialType, password, role, sslSecretId, username);
         }
     }
 }

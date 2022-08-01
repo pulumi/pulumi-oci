@@ -15,14 +15,14 @@ public final class AutoScalingConfigurationPolicyRuleMetricThresholdArgs extends
     public static final AutoScalingConfigurationPolicyRuleMetricThresholdArgs Empty = new AutoScalingConfigurationPolicyRuleMetricThresholdArgs();
 
     /**
-     * (Updatable) This value is the minimum period of time the metric value meets or exceeds the threshold value before the action is triggered. The value is in minutes.
+     * (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
      * 
      */
     @Import(name="durationInMinutes", required=true)
     private Output<Integer> durationInMinutes;
 
     /**
-     * @return (Updatable) This value is the minimum period of time the metric value meets or exceeds the threshold value before the action is triggered. The value is in minutes.
+     * @return (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
      * 
      */
     public Output<Integer> durationInMinutes() {
@@ -86,7 +86,7 @@ public final class AutoScalingConfigurationPolicyRuleMetricThresholdArgs extends
         }
 
         /**
-         * @param durationInMinutes (Updatable) This value is the minimum period of time the metric value meets or exceeds the threshold value before the action is triggered. The value is in minutes.
+         * @param durationInMinutes (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
          * 
          * @return builder
          * 
@@ -97,7 +97,7 @@ public final class AutoScalingConfigurationPolicyRuleMetricThresholdArgs extends
         }
 
         /**
-         * @param durationInMinutes (Updatable) This value is the minimum period of time the metric value meets or exceeds the threshold value before the action is triggered. The value is in minutes.
+         * @param durationInMinutes (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
          * 
          * @return builder
          * 

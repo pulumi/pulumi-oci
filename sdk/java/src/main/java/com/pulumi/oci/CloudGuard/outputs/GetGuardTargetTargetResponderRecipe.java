@@ -18,12 +18,12 @@ public final class GetGuardTargetTargetResponderRecipe {
      */
     private final String compartmentId;
     /**
-     * @return ResponderRule Description
+     * @return ResponderRule description.
      * 
      */
     private final String description;
     /**
-     * @return ResponderRule Display Name
+     * @return ResponderRule display name.
      * 
      */
     private final String displayName;
@@ -33,7 +33,7 @@ public final class GetGuardTargetTargetResponderRecipe {
      */
     private final List<GetGuardTargetTargetResponderRecipeEffectiveResponderRule> effectiveResponderRules;
     /**
-     * @return Unique identifier of TargetResponderRecipe that is immutable on creation
+     * @return Unique identifier of TargetResponderRecipe that can&#39;t be changed after creation.
      * 
      */
     private final String id;
@@ -43,7 +43,7 @@ public final class GetGuardTargetTargetResponderRecipe {
      */
     private final String owner;
     /**
-     * @return Unique identifier for Responder Recipe of which this is an extension
+     * @return Unique identifier for Responder Recipe of which this is an extension.
      * 
      */
     private final String responderRecipeId;
@@ -95,14 +95,14 @@ public final class GetGuardTargetTargetResponderRecipe {
         return this.compartmentId;
     }
     /**
-     * @return ResponderRule Description
+     * @return ResponderRule description.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return ResponderRule Display Name
+     * @return ResponderRule display name.
      * 
      */
     public String displayName() {
@@ -116,7 +116,7 @@ public final class GetGuardTargetTargetResponderRecipe {
         return this.effectiveResponderRules;
     }
     /**
-     * @return Unique identifier of TargetResponderRecipe that is immutable on creation
+     * @return Unique identifier of TargetResponderRecipe that can&#39;t be changed after creation.
      * 
      */
     public String id() {
@@ -130,7 +130,7 @@ public final class GetGuardTargetTargetResponderRecipe {
         return this.owner;
     }
     /**
-     * @return Unique identifier for Responder Recipe of which this is an extension
+     * @return Unique identifier for Responder Recipe of which this is an extension.
      * 
      */
     public String responderRecipeId() {

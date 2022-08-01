@@ -59,25 +59,33 @@ type LookupDataGuardAssociationResult struct {
 	// The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `9 seconds`
 	ApplyLag string `pulumi:"applyLag"`
 	// The rate at which redo logs are synced between the associated databases.  Example: `180 Mb per second`
-	ApplyRate              string   `pulumi:"applyRate"`
-	AvailabilityDomain     string   `pulumi:"availabilityDomain"`
-	BackupNetworkNsgIds    []string `pulumi:"backupNetworkNsgIds"`
-	CreateAsync            bool     `pulumi:"createAsync"`
-	CreationType           string   `pulumi:"creationType"`
-	DataGuardAssociationId string   `pulumi:"dataGuardAssociationId"`
-	DatabaseAdminPassword  string   `pulumi:"databaseAdminPassword"`
+	ApplyRate              string                 `pulumi:"applyRate"`
+	AvailabilityDomain     string                 `pulumi:"availabilityDomain"`
+	BackupNetworkNsgIds    []string               `pulumi:"backupNetworkNsgIds"`
+	CpuCoreCount           int                    `pulumi:"cpuCoreCount"`
+	CreateAsync            bool                   `pulumi:"createAsync"`
+	CreationType           string                 `pulumi:"creationType"`
+	DataGuardAssociationId string                 `pulumi:"dataGuardAssociationId"`
+	DatabaseAdminPassword  string                 `pulumi:"databaseAdminPassword"`
+	DatabaseDefinedTags    map[string]interface{} `pulumi:"databaseDefinedTags"`
+	DatabaseFreeformTags   map[string]interface{} `pulumi:"databaseFreeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the reporting database.
-	DatabaseId                  string `pulumi:"databaseId"`
-	DatabaseSoftwareImageId     string `pulumi:"databaseSoftwareImageId"`
-	DeleteStandbyDbHomeOnDelete string `pulumi:"deleteStandbyDbHomeOnDelete"`
-	DisplayName                 string `pulumi:"displayName"`
-	Hostname                    string `pulumi:"hostname"`
+	DatabaseId                  string                 `pulumi:"databaseId"`
+	DatabaseSoftwareImageId     string                 `pulumi:"databaseSoftwareImageId"`
+	DbSystemDefinedTags         map[string]interface{} `pulumi:"dbSystemDefinedTags"`
+	DbSystemFreeformTags        map[string]interface{} `pulumi:"dbSystemFreeformTags"`
+	DeleteStandbyDbHomeOnDelete string                 `pulumi:"deleteStandbyDbHomeOnDelete"`
+	DisplayName                 string                 `pulumi:"displayName"`
+	FaultDomains                []string               `pulumi:"faultDomains"`
+	Hostname                    string                 `pulumi:"hostname"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Data Guard association.
 	Id string `pulumi:"id"`
 	// True if active Data Guard is enabled.
-	IsActiveDataGuardEnabled bool `pulumi:"isActiveDataGuardEnabled"`
+	IsActiveDataGuardEnabled bool   `pulumi:"isActiveDataGuardEnabled"`
+	LicenseModel             string `pulumi:"licenseModel"`
 	// Additional information about the current lifecycleState, if available.
 	LifecycleDetails string   `pulumi:"lifecycleDetails"`
+	NodeCount        int      `pulumi:"nodeCount"`
 	NsgIds           []string `pulumi:"nsgIds"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer database's Data Guard association.
 	PeerDataGuardAssociationId string `pulumi:"peerDataGuardAssociationId"`
@@ -92,16 +100,19 @@ type LookupDataGuardAssociationResult struct {
 	PeerRole        string `pulumi:"peerRole"`
 	PeerSidPrefix   string `pulumi:"peerSidPrefix"`
 	PeerVmClusterId string `pulumi:"peerVmClusterId"`
+	PrivateIp       string `pulumi:"privateIp"`
 	// The protection mode of this Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
 	ProtectionMode string `pulumi:"protectionMode"`
 	// The role of the reporting database in this Data Guard association.
 	Role  string `pulumi:"role"`
 	Shape string `pulumi:"shape"`
 	// The current state of the Data Guard association.
-	State    string `pulumi:"state"`
-	SubnetId string `pulumi:"subnetId"`
+	State                        string `pulumi:"state"`
+	StorageVolumePerformanceMode string `pulumi:"storageVolumePerformanceMode"`
+	SubnetId                     string `pulumi:"subnetId"`
 	// The date and time the Data Guard association was created.
 	TimeCreated string `pulumi:"timeCreated"`
+	TimeZone    string `pulumi:"timeZone"`
 	// The redo transport type used by this Data Guard association.  For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
 	TransportType string `pulumi:"transportType"`
 }
@@ -164,6 +175,10 @@ func (o LookupDataGuardAssociationResultOutput) BackupNetworkNsgIds() pulumi.Str
 	return o.ApplyT(func(v LookupDataGuardAssociationResult) []string { return v.BackupNetworkNsgIds }).(pulumi.StringArrayOutput)
 }
 
+func (o LookupDataGuardAssociationResultOutput) CpuCoreCount() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) int { return v.CpuCoreCount }).(pulumi.IntOutput)
+}
+
 func (o LookupDataGuardAssociationResultOutput) CreateAsync() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupDataGuardAssociationResult) bool { return v.CreateAsync }).(pulumi.BoolOutput)
 }
@@ -180,6 +195,14 @@ func (o LookupDataGuardAssociationResultOutput) DatabaseAdminPassword() pulumi.S
 	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.DatabaseAdminPassword }).(pulumi.StringOutput)
 }
 
+func (o LookupDataGuardAssociationResultOutput) DatabaseDefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) map[string]interface{} { return v.DatabaseDefinedTags }).(pulumi.MapOutput)
+}
+
+func (o LookupDataGuardAssociationResultOutput) DatabaseFreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) map[string]interface{} { return v.DatabaseFreeformTags }).(pulumi.MapOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the reporting database.
 func (o LookupDataGuardAssociationResultOutput) DatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.DatabaseId }).(pulumi.StringOutput)
@@ -189,12 +212,24 @@ func (o LookupDataGuardAssociationResultOutput) DatabaseSoftwareImageId() pulumi
 	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.DatabaseSoftwareImageId }).(pulumi.StringOutput)
 }
 
+func (o LookupDataGuardAssociationResultOutput) DbSystemDefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) map[string]interface{} { return v.DbSystemDefinedTags }).(pulumi.MapOutput)
+}
+
+func (o LookupDataGuardAssociationResultOutput) DbSystemFreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) map[string]interface{} { return v.DbSystemFreeformTags }).(pulumi.MapOutput)
+}
+
 func (o LookupDataGuardAssociationResultOutput) DeleteStandbyDbHomeOnDelete() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.DeleteStandbyDbHomeOnDelete }).(pulumi.StringOutput)
 }
 
 func (o LookupDataGuardAssociationResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+func (o LookupDataGuardAssociationResultOutput) FaultDomains() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) []string { return v.FaultDomains }).(pulumi.StringArrayOutput)
 }
 
 func (o LookupDataGuardAssociationResultOutput) Hostname() pulumi.StringOutput {
@@ -211,9 +246,17 @@ func (o LookupDataGuardAssociationResultOutput) IsActiveDataGuardEnabled() pulum
 	return o.ApplyT(func(v LookupDataGuardAssociationResult) bool { return v.IsActiveDataGuardEnabled }).(pulumi.BoolOutput)
 }
 
+func (o LookupDataGuardAssociationResultOutput) LicenseModel() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.LicenseModel }).(pulumi.StringOutput)
+}
+
 // Additional information about the current lifecycleState, if available.
 func (o LookupDataGuardAssociationResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+func (o LookupDataGuardAssociationResultOutput) NodeCount() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) int { return v.NodeCount }).(pulumi.IntOutput)
 }
 
 func (o LookupDataGuardAssociationResultOutput) NsgIds() pulumi.StringArrayOutput {
@@ -257,6 +300,10 @@ func (o LookupDataGuardAssociationResultOutput) PeerVmClusterId() pulumi.StringO
 	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.PeerVmClusterId }).(pulumi.StringOutput)
 }
 
+func (o LookupDataGuardAssociationResultOutput) PrivateIp() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.PrivateIp }).(pulumi.StringOutput)
+}
+
 // The protection mode of this Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
 func (o LookupDataGuardAssociationResultOutput) ProtectionMode() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.ProtectionMode }).(pulumi.StringOutput)
@@ -276,6 +323,10 @@ func (o LookupDataGuardAssociationResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.State }).(pulumi.StringOutput)
 }
 
+func (o LookupDataGuardAssociationResultOutput) StorageVolumePerformanceMode() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.StorageVolumePerformanceMode }).(pulumi.StringOutput)
+}
+
 func (o LookupDataGuardAssociationResultOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.SubnetId }).(pulumi.StringOutput)
 }
@@ -283,6 +334,10 @@ func (o LookupDataGuardAssociationResultOutput) SubnetId() pulumi.StringOutput {
 // The date and time the Data Guard association was created.
 func (o LookupDataGuardAssociationResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+func (o LookupDataGuardAssociationResultOutput) TimeZone() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.TimeZone }).(pulumi.StringOutput)
 }
 
 // The redo transport type used by this Data Guard association.  For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.

@@ -90,7 +90,7 @@ namespace Pulumi.Oci.ApmSynthetics
         public string ApmDomainId { get; set; } = null!;
 
         /// <summary>
-        /// A filter to return only resources that match the entire display name given.
+        /// A filter to return only the resources that match the entire display name.
         /// </summary>
         [Input("displayName")]
         public string? DisplayName { get; set; }
@@ -104,7 +104,7 @@ namespace Pulumi.Oci.ApmSynthetics
         }
 
         /// <summary>
-        /// A filter to return only resources that match the entire name given.
+        /// A filter to return only the resources that match the entire name.
         /// </summary>
         [Input("name")]
         public string? Name { get; set; }
@@ -123,7 +123,7 @@ namespace Pulumi.Oci.ApmSynthetics
         public Input<string> ApmDomainId { get; set; } = null!;
 
         /// <summary>
-        /// A filter to return only resources that match the entire display name given.
+        /// A filter to return only the resources that match the entire display name.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -137,7 +137,7 @@ namespace Pulumi.Oci.ApmSynthetics
         }
 
         /// <summary>
-        /// A filter to return only resources that match the entire name given.
+        /// A filter to return only the resources that match the entire name.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }

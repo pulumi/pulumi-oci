@@ -120,6 +120,10 @@ namespace Pulumi.Oci.ContainerEngine
     public sealed class GetClusterOptionResult
     {
         public readonly string ClusterOptionId;
+        /// <summary>
+        /// Available CNIs and network options for existing and new node pools of the cluster
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetClusterOptionClusterPodNetworkOptionResult> ClusterPodNetworkOptions;
         public readonly string? CompartmentId;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
@@ -134,6 +138,8 @@ namespace Pulumi.Oci.ContainerEngine
         private GetClusterOptionResult(
             string clusterOptionId,
 
+            ImmutableArray<Outputs.GetClusterOptionClusterPodNetworkOptionResult> clusterPodNetworkOptions,
+
             string? compartmentId,
 
             string id,
@@ -141,6 +147,7 @@ namespace Pulumi.Oci.ContainerEngine
             ImmutableArray<string> kubernetesVersions)
         {
             ClusterOptionId = clusterOptionId;
+            ClusterPodNetworkOptions = clusterPodNetworkOptions;
             CompartmentId = compartmentId;
             Id = id;
             KubernetesVersions = kubernetesVersions;

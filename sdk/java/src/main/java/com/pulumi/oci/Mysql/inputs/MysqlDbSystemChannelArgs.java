@@ -97,14 +97,14 @@ public final class MysqlDbSystemChannelArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * (Updatable) Specifies if automatic backups are enabled.
+     * (Updatable) Specifies if PITR is enabled or disabled.
      * 
      */
     @Import(name="isEnabled")
     private @Nullable Output<Boolean> isEnabled;
 
     /**
-     * @return (Updatable) Specifies if automatic backups are enabled.
+     * @return (Updatable) Specifies if PITR is enabled or disabled.
      * 
      */
     public Optional<Output<Boolean>> isEnabled() {
@@ -342,7 +342,7 @@ public final class MysqlDbSystemChannelArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param isEnabled (Updatable) Specifies if automatic backups are enabled.
+         * @param isEnabled (Updatable) Specifies if PITR is enabled or disabled.
          * 
          * @return builder
          * 
@@ -353,7 +353,7 @@ public final class MysqlDbSystemChannelArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param isEnabled (Updatable) Specifies if automatic backups are enabled.
+         * @param isEnabled (Updatable) Specifies if PITR is enabled or disabled.
          * 
          * @return builder
          * 

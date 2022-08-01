@@ -67,10 +67,14 @@ type LookupNodePoolResult struct {
 	InitialNodeLabels []GetNodePoolInitialNodeLabel `pulumi:"initialNodeLabels"`
 	// The version of Kubernetes this node is running.
 	KubernetesVersion string `pulumi:"kubernetesVersion"`
+	// Details about the state of the node.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The name of the node.
 	Name string `pulumi:"name"`
 	// The configuration of nodes in the node pool.
 	NodeConfigDetails []GetNodePoolNodeConfigDetail `pulumi:"nodeConfigDetails"`
+	// Node Eviction Details configuration
+	NodeEvictionNodePoolSettings []GetNodePoolNodeEvictionNodePoolSetting `pulumi:"nodeEvictionNodePoolSettings"`
 	// Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
 	//
 	// Deprecated: The 'node_image_id' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.
@@ -97,6 +101,8 @@ type LookupNodePoolResult struct {
 	QuantityPerSubnet int `pulumi:"quantityPerSubnet"`
 	// The SSH public key on each node in the node pool on launch.
 	SshPublicKey string `pulumi:"sshPublicKey"`
+	// The state of the nodepool.
+	State string `pulumi:"state"`
 	// The OCIDs of the subnets in which to place nodes for this node pool.
 	SubnetIds []string `pulumi:"subnetIds"`
 }
@@ -174,6 +180,11 @@ func (o LookupNodePoolResultOutput) KubernetesVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupNodePoolResult) string { return v.KubernetesVersion }).(pulumi.StringOutput)
 }
 
+// Details about the state of the node.
+func (o LookupNodePoolResultOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupNodePoolResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
 // The name of the node.
 func (o LookupNodePoolResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupNodePoolResult) string { return v.Name }).(pulumi.StringOutput)
@@ -182,6 +193,13 @@ func (o LookupNodePoolResultOutput) Name() pulumi.StringOutput {
 // The configuration of nodes in the node pool.
 func (o LookupNodePoolResultOutput) NodeConfigDetails() GetNodePoolNodeConfigDetailArrayOutput {
 	return o.ApplyT(func(v LookupNodePoolResult) []GetNodePoolNodeConfigDetail { return v.NodeConfigDetails }).(GetNodePoolNodeConfigDetailArrayOutput)
+}
+
+// Node Eviction Details configuration
+func (o LookupNodePoolResultOutput) NodeEvictionNodePoolSettings() GetNodePoolNodeEvictionNodePoolSettingArrayOutput {
+	return o.ApplyT(func(v LookupNodePoolResult) []GetNodePoolNodeEvictionNodePoolSetting {
+		return v.NodeEvictionNodePoolSettings
+	}).(GetNodePoolNodeEvictionNodePoolSettingArrayOutput)
 }
 
 // Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
@@ -241,6 +259,11 @@ func (o LookupNodePoolResultOutput) QuantityPerSubnet() pulumi.IntOutput {
 // The SSH public key on each node in the node pool on launch.
 func (o LookupNodePoolResultOutput) SshPublicKey() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupNodePoolResult) string { return v.SshPublicKey }).(pulumi.StringOutput)
+}
+
+// The state of the nodepool.
+func (o LookupNodePoolResultOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupNodePoolResult) string { return v.State }).(pulumi.StringOutput)
 }
 
 // The OCIDs of the subnets in which to place nodes for this node pool.

@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Double;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 
@@ -21,6 +22,11 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
      */
     private final Double memoryInGbs;
     /**
+     * @return The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+     * 
+     */
+    private final Integer nvmes;
+    /**
      * @return The total number of OCPUs available to the instance.
      * 
      */
@@ -30,9 +36,11 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
     private GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailShapeConfig(
         @CustomType.Parameter("baselineOcpuUtilization") String baselineOcpuUtilization,
         @CustomType.Parameter("memoryInGbs") Double memoryInGbs,
+        @CustomType.Parameter("nvmes") Integer nvmes,
         @CustomType.Parameter("ocpus") Double ocpus) {
         this.baselineOcpuUtilization = baselineOcpuUtilization;
         this.memoryInGbs = memoryInGbs;
+        this.nvmes = nvmes;
         this.ocpus = ocpus;
     }
 
@@ -49,6 +57,13 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
      */
     public Double memoryInGbs() {
         return this.memoryInGbs;
+    }
+    /**
+     * @return The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+     * 
+     */
+    public Integer nvmes() {
+        return this.nvmes;
     }
     /**
      * @return The total number of OCPUs available to the instance.
@@ -69,6 +84,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
     public static final class Builder {
         private String baselineOcpuUtilization;
         private Double memoryInGbs;
+        private Integer nvmes;
         private Double ocpus;
 
         public Builder() {
@@ -79,6 +95,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
     	      Objects.requireNonNull(defaults);
     	      this.baselineOcpuUtilization = defaults.baselineOcpuUtilization;
     	      this.memoryInGbs = defaults.memoryInGbs;
+    	      this.nvmes = defaults.nvmes;
     	      this.ocpus = defaults.ocpus;
         }
 
@@ -90,11 +107,15 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
             this.memoryInGbs = Objects.requireNonNull(memoryInGbs);
             return this;
         }
+        public Builder nvmes(Integer nvmes) {
+            this.nvmes = Objects.requireNonNull(nvmes);
+            return this;
+        }
         public Builder ocpus(Double ocpus) {
             this.ocpus = Objects.requireNonNull(ocpus);
             return this;
         }        public GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailShapeConfig build() {
-            return new GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailShapeConfig(baselineOcpuUtilization, memoryInGbs, ocpus);
+            return new GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailShapeConfig(baselineOcpuUtilization, memoryInGbs, nvmes, ocpus);
         }
     }
 }

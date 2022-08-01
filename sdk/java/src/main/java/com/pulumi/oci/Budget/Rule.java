@@ -37,14 +37,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:Budget/rule:Rule")
 public class Rule extends com.pulumi.resources.CustomResource {
     /**
-     * The unique Budget OCID
+     * The unique budget OCID.
      * 
      */
     @Export(name="budgetId", type=String.class, parameters={})
     private Output<String> budgetId;
 
     /**
-     * @return The unique Budget OCID
+     * @return The unique budget OCID.
      * 
      */
     public Output<String> budgetId() {
@@ -79,14 +79,14 @@ public class Rule extends com.pulumi.resources.CustomResource {
         return this.description;
     }
     /**
-     * (Updatable) The name of the alert rule.
+     * (Updatable) The name of the alert rule. Avoid entering confidential information.
      * 
      */
     @Export(name="displayName", type=String.class, parameters={})
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) The name of the alert rule.
+     * @return (Updatable) The name of the alert rule. Avoid entering confidential information.
      * 
      */
     public Output<String> displayName() {
@@ -107,28 +107,28 @@ public class Rule extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
-     * (Updatable) The message to be sent to the recipients when alert rule is triggered.
+     * (Updatable) The message to be sent to the recipients when the alert rule is triggered.
      * 
      */
     @Export(name="message", type=String.class, parameters={})
     private Output<String> message;
 
     /**
-     * @return (Updatable) The message to be sent to the recipients when alert rule is triggered.
+     * @return (Updatable) The message to be sent to the recipients when the alert rule is triggered.
      * 
      */
     public Output<String> message() {
         return this.message;
     }
     /**
-     * (Updatable) The audience that will receive the alert when it triggers. An empty string is interpreted as null.
+     * (Updatable) The audience that receives the alert when it triggers. An empty string is interpreted as null.
      * 
      */
     @Export(name="recipients", type=String.class, parameters={})
     private Output</* @Nullable */ String> recipients;
 
     /**
-     * @return (Updatable) The audience that will receive the alert when it triggers. An empty string is interpreted as null.
+     * @return (Updatable) The audience that receives the alert when it triggers. An empty string is interpreted as null.
      * 
      */
     public Output<Optional<String>> recipients() {
@@ -149,14 +149,14 @@ public class Rule extends com.pulumi.resources.CustomResource {
         return this.state;
     }
     /**
-     * (Updatable) The threshold for triggering the alert expressed as a whole number or decimal value. If thresholdType is ABSOLUTE, threshold can have at most 12 digits before the decimal point and up to 2 digits after the decimal point. If thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to 2 digits after the decimal point.
+     * (Updatable) The threshold for triggering the alert, expressed as a whole number or decimal value. If the thresholdType is ABSOLUTE, the threshold can have at most 12 digits before the decimal point, and up to two digits after the decimal point. If the thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to two digits after the decimal point.
      * 
      */
     @Export(name="threshold", type=Double.class, parameters={})
     private Output<Double> threshold;
 
     /**
-     * @return (Updatable) The threshold for triggering the alert expressed as a whole number or decimal value. If thresholdType is ABSOLUTE, threshold can have at most 12 digits before the decimal point and up to 2 digits after the decimal point. If thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to 2 digits after the decimal point.
+     * @return (Updatable) The threshold for triggering the alert, expressed as a whole number or decimal value. If the thresholdType is ABSOLUTE, the threshold can have at most 12 digits before the decimal point, and up to two digits after the decimal point. If the thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to two digits after the decimal point.
      * 
      */
     public Output<Double> threshold() {
@@ -177,56 +177,56 @@ public class Rule extends com.pulumi.resources.CustomResource {
         return this.thresholdType;
     }
     /**
-     * Time when budget was created
+     * The time when the budget was created.
      * 
      */
     @Export(name="timeCreated", type=String.class, parameters={})
     private Output<String> timeCreated;
 
     /**
-     * @return Time when budget was created
+     * @return The time when the budget was created.
      * 
      */
     public Output<String> timeCreated() {
         return this.timeCreated;
     }
     /**
-     * Time when budget was updated
+     * The time when the budget was updated.
      * 
      */
     @Export(name="timeUpdated", type=String.class, parameters={})
     private Output<String> timeUpdated;
 
     /**
-     * @return Time when budget was updated
+     * @return The time when the budget was updated.
      * 
      */
     public Output<String> timeUpdated() {
         return this.timeUpdated;
     }
     /**
-     * (Updatable) Type of alert. Valid values are ACTUAL (the alert will trigger based on actual usage) or FORECAST (the alert will trigger based on predicted usage).
+     * (Updatable) The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
      * 
      */
     @Export(name="type", type=String.class, parameters={})
     private Output<String> type;
 
     /**
-     * @return (Updatable) Type of alert. Valid values are ACTUAL (the alert will trigger based on actual usage) or FORECAST (the alert will trigger based on predicted usage).
+     * @return (Updatable) The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
      * 
      */
     public Output<String> type() {
         return this.type;
     }
     /**
-     * Version of the alert rule. Starts from 1 and increments by 1.
+     * The version of the alert rule. Starts from 1 and increments by 1.
      * 
      */
     @Export(name="version", type=Integer.class, parameters={})
     private Output<Integer> version;
 
     /**
-     * @return Version of the alert rule. Starts from 1 and increments by 1.
+     * @return The version of the alert rule. Starts from 1 and increments by 1.
      * 
      */
     public Output<Integer> version() {

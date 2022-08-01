@@ -164,6 +164,11 @@ public final class GetDeployStageResult {
      */
     private final List<GetDeployStageGreenBackendIp> greenBackendIps;
     /**
+     * @return Helm chart artifact OCID.
+     * 
+     */
+    private final String helmChartDeployArtifactId;
+    /**
      * @return Unique identifier that is immutable on creation.
      * 
      */
@@ -234,6 +239,11 @@ public final class GetDeployStageResult {
      */
     private final String projectId;
     /**
+     * @return Release name of the Helm chart.
+     * 
+     */
+    private final String releaseName;
+    /**
      * @return Specifies the rollback policy. This is initiated on the failure of certain stage types.
      * 
      */
@@ -269,10 +279,20 @@ public final class GetDeployStageResult {
      */
     private final String timeUpdated;
     /**
+     * @return Time to wait for execution of a helm stage. Defaults to 300 seconds.
+     * 
+     */
+    private final Integer timeoutInSeconds;
+    /**
      * @return Specifies the target or destination backend set.
      * 
      */
     private final String trafficShiftTarget;
+    /**
+     * @return List of values.yaml file artifact OCIDs.
+     * 
+     */
+    private final List<String> valuesArtifactIds;
     /**
      * @return Specifies wait criteria for the Wait stage.
      * 
@@ -309,6 +329,7 @@ public final class GetDeployStageResult {
         @CustomType.Parameter("functionDeployEnvironmentId") String functionDeployEnvironmentId,
         @CustomType.Parameter("functionTimeoutInSeconds") Integer functionTimeoutInSeconds,
         @CustomType.Parameter("greenBackendIps") List<GetDeployStageGreenBackendIp> greenBackendIps,
+        @CustomType.Parameter("helmChartDeployArtifactId") String helmChartDeployArtifactId,
         @CustomType.Parameter("id") String id,
         @CustomType.Parameter("isAsync") Boolean isAsync,
         @CustomType.Parameter("isValidationEnabled") Boolean isValidationEnabled,
@@ -323,6 +344,7 @@ public final class GetDeployStageResult {
         @CustomType.Parameter("okeClusterDeployEnvironmentId") String okeClusterDeployEnvironmentId,
         @CustomType.Parameter("productionLoadBalancerConfigs") List<GetDeployStageProductionLoadBalancerConfig> productionLoadBalancerConfigs,
         @CustomType.Parameter("projectId") String projectId,
+        @CustomType.Parameter("releaseName") String releaseName,
         @CustomType.Parameter("rollbackPolicies") List<GetDeployStageRollbackPolicy> rollbackPolicies,
         @CustomType.Parameter("rolloutPolicies") List<GetDeployStageRolloutPolicy> rolloutPolicies,
         @CustomType.Parameter("state") String state,
@@ -330,7 +352,9 @@ public final class GetDeployStageResult {
         @CustomType.Parameter("testLoadBalancerConfigs") List<GetDeployStageTestLoadBalancerConfig> testLoadBalancerConfigs,
         @CustomType.Parameter("timeCreated") String timeCreated,
         @CustomType.Parameter("timeUpdated") String timeUpdated,
+        @CustomType.Parameter("timeoutInSeconds") Integer timeoutInSeconds,
         @CustomType.Parameter("trafficShiftTarget") String trafficShiftTarget,
+        @CustomType.Parameter("valuesArtifactIds") List<String> valuesArtifactIds,
         @CustomType.Parameter("waitCriterias") List<GetDeployStageWaitCriteria> waitCriterias) {
         this.approvalPolicies = approvalPolicies;
         this.blueBackendIps = blueBackendIps;
@@ -360,6 +384,7 @@ public final class GetDeployStageResult {
         this.functionDeployEnvironmentId = functionDeployEnvironmentId;
         this.functionTimeoutInSeconds = functionTimeoutInSeconds;
         this.greenBackendIps = greenBackendIps;
+        this.helmChartDeployArtifactId = helmChartDeployArtifactId;
         this.id = id;
         this.isAsync = isAsync;
         this.isValidationEnabled = isValidationEnabled;
@@ -374,6 +399,7 @@ public final class GetDeployStageResult {
         this.okeClusterDeployEnvironmentId = okeClusterDeployEnvironmentId;
         this.productionLoadBalancerConfigs = productionLoadBalancerConfigs;
         this.projectId = projectId;
+        this.releaseName = releaseName;
         this.rollbackPolicies = rollbackPolicies;
         this.rolloutPolicies = rolloutPolicies;
         this.state = state;
@@ -381,7 +407,9 @@ public final class GetDeployStageResult {
         this.testLoadBalancerConfigs = testLoadBalancerConfigs;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
+        this.timeoutInSeconds = timeoutInSeconds;
         this.trafficShiftTarget = trafficShiftTarget;
+        this.valuesArtifactIds = valuesArtifactIds;
         this.waitCriterias = waitCriterias;
     }
 
@@ -578,6 +606,13 @@ public final class GetDeployStageResult {
         return this.greenBackendIps;
     }
     /**
+     * @return Helm chart artifact OCID.
+     * 
+     */
+    public String helmChartDeployArtifactId() {
+        return this.helmChartDeployArtifactId;
+    }
+    /**
      * @return Unique identifier that is immutable on creation.
      * 
      */
@@ -676,6 +711,13 @@ public final class GetDeployStageResult {
         return this.projectId;
     }
     /**
+     * @return Release name of the Helm chart.
+     * 
+     */
+    public String releaseName() {
+        return this.releaseName;
+    }
+    /**
      * @return Specifies the rollback policy. This is initiated on the failure of certain stage types.
      * 
      */
@@ -725,11 +767,25 @@ public final class GetDeployStageResult {
         return this.timeUpdated;
     }
     /**
+     * @return Time to wait for execution of a helm stage. Defaults to 300 seconds.
+     * 
+     */
+    public Integer timeoutInSeconds() {
+        return this.timeoutInSeconds;
+    }
+    /**
      * @return Specifies the target or destination backend set.
      * 
      */
     public String trafficShiftTarget() {
         return this.trafficShiftTarget;
+    }
+    /**
+     * @return List of values.yaml file artifact OCIDs.
+     * 
+     */
+    public List<String> valuesArtifactIds() {
+        return this.valuesArtifactIds;
     }
     /**
      * @return Specifies wait criteria for the Wait stage.
@@ -776,6 +832,7 @@ public final class GetDeployStageResult {
         private String functionDeployEnvironmentId;
         private Integer functionTimeoutInSeconds;
         private List<GetDeployStageGreenBackendIp> greenBackendIps;
+        private String helmChartDeployArtifactId;
         private String id;
         private Boolean isAsync;
         private Boolean isValidationEnabled;
@@ -790,6 +847,7 @@ public final class GetDeployStageResult {
         private String okeClusterDeployEnvironmentId;
         private List<GetDeployStageProductionLoadBalancerConfig> productionLoadBalancerConfigs;
         private String projectId;
+        private String releaseName;
         private List<GetDeployStageRollbackPolicy> rollbackPolicies;
         private List<GetDeployStageRolloutPolicy> rolloutPolicies;
         private String state;
@@ -797,7 +855,9 @@ public final class GetDeployStageResult {
         private List<GetDeployStageTestLoadBalancerConfig> testLoadBalancerConfigs;
         private String timeCreated;
         private String timeUpdated;
+        private Integer timeoutInSeconds;
         private String trafficShiftTarget;
+        private List<String> valuesArtifactIds;
         private List<GetDeployStageWaitCriteria> waitCriterias;
 
         public Builder() {
@@ -834,6 +894,7 @@ public final class GetDeployStageResult {
     	      this.functionDeployEnvironmentId = defaults.functionDeployEnvironmentId;
     	      this.functionTimeoutInSeconds = defaults.functionTimeoutInSeconds;
     	      this.greenBackendIps = defaults.greenBackendIps;
+    	      this.helmChartDeployArtifactId = defaults.helmChartDeployArtifactId;
     	      this.id = defaults.id;
     	      this.isAsync = defaults.isAsync;
     	      this.isValidationEnabled = defaults.isValidationEnabled;
@@ -848,6 +909,7 @@ public final class GetDeployStageResult {
     	      this.okeClusterDeployEnvironmentId = defaults.okeClusterDeployEnvironmentId;
     	      this.productionLoadBalancerConfigs = defaults.productionLoadBalancerConfigs;
     	      this.projectId = defaults.projectId;
+    	      this.releaseName = defaults.releaseName;
     	      this.rollbackPolicies = defaults.rollbackPolicies;
     	      this.rolloutPolicies = defaults.rolloutPolicies;
     	      this.state = defaults.state;
@@ -855,7 +917,9 @@ public final class GetDeployStageResult {
     	      this.testLoadBalancerConfigs = defaults.testLoadBalancerConfigs;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
+    	      this.timeoutInSeconds = defaults.timeoutInSeconds;
     	      this.trafficShiftTarget = defaults.trafficShiftTarget;
+    	      this.valuesArtifactIds = defaults.valuesArtifactIds;
     	      this.waitCriterias = defaults.waitCriterias;
         }
 
@@ -995,6 +1059,10 @@ public final class GetDeployStageResult {
         public Builder greenBackendIps(GetDeployStageGreenBackendIp... greenBackendIps) {
             return greenBackendIps(List.of(greenBackendIps));
         }
+        public Builder helmChartDeployArtifactId(String helmChartDeployArtifactId) {
+            this.helmChartDeployArtifactId = Objects.requireNonNull(helmChartDeployArtifactId);
+            return this;
+        }
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
@@ -1060,6 +1128,10 @@ public final class GetDeployStageResult {
             this.projectId = Objects.requireNonNull(projectId);
             return this;
         }
+        public Builder releaseName(String releaseName) {
+            this.releaseName = Objects.requireNonNull(releaseName);
+            return this;
+        }
         public Builder rollbackPolicies(List<GetDeployStageRollbackPolicy> rollbackPolicies) {
             this.rollbackPolicies = Objects.requireNonNull(rollbackPolicies);
             return this;
@@ -1097,9 +1169,20 @@ public final class GetDeployStageResult {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }
+        public Builder timeoutInSeconds(Integer timeoutInSeconds) {
+            this.timeoutInSeconds = Objects.requireNonNull(timeoutInSeconds);
+            return this;
+        }
         public Builder trafficShiftTarget(String trafficShiftTarget) {
             this.trafficShiftTarget = Objects.requireNonNull(trafficShiftTarget);
             return this;
+        }
+        public Builder valuesArtifactIds(List<String> valuesArtifactIds) {
+            this.valuesArtifactIds = Objects.requireNonNull(valuesArtifactIds);
+            return this;
+        }
+        public Builder valuesArtifactIds(String... valuesArtifactIds) {
+            return valuesArtifactIds(List.of(valuesArtifactIds));
         }
         public Builder waitCriterias(List<GetDeployStageWaitCriteria> waitCriterias) {
             this.waitCriterias = Objects.requireNonNull(waitCriterias);
@@ -1108,7 +1191,7 @@ public final class GetDeployStageResult {
         public Builder waitCriterias(GetDeployStageWaitCriteria... waitCriterias) {
             return waitCriterias(List.of(waitCriterias));
         }        public GetDeployStageResult build() {
-            return new GetDeployStageResult(approvalPolicies, blueBackendIps, blueGreenStrategies, canaryStrategies, compartmentId, computeInstanceGroupBlueGreenDeploymentDeployStageId, computeInstanceGroupCanaryDeployStageId, computeInstanceGroupCanaryTrafficShiftDeployStageId, computeInstanceGroupDeployEnvironmentId, config, definedTags, deployArtifactId, deployArtifactIds, deployEnvironmentIdA, deployEnvironmentIdB, deployPipelineId, deployStageId, deployStagePredecessorCollections, deployStageType, deploymentSpecDeployArtifactId, description, displayName, dockerImageDeployArtifactId, failurePolicies, freeformTags, functionDeployEnvironmentId, functionTimeoutInSeconds, greenBackendIps, id, isAsync, isValidationEnabled, kubernetesManifestDeployArtifactIds, lifecycleDetails, loadBalancerConfigs, maxMemoryInMbs, namespace, okeBlueGreenDeployStageId, okeCanaryDeployStageId, okeCanaryTrafficShiftDeployStageId, okeClusterDeployEnvironmentId, productionLoadBalancerConfigs, projectId, rollbackPolicies, rolloutPolicies, state, systemTags, testLoadBalancerConfigs, timeCreated, timeUpdated, trafficShiftTarget, waitCriterias);
+            return new GetDeployStageResult(approvalPolicies, blueBackendIps, blueGreenStrategies, canaryStrategies, compartmentId, computeInstanceGroupBlueGreenDeploymentDeployStageId, computeInstanceGroupCanaryDeployStageId, computeInstanceGroupCanaryTrafficShiftDeployStageId, computeInstanceGroupDeployEnvironmentId, config, definedTags, deployArtifactId, deployArtifactIds, deployEnvironmentIdA, deployEnvironmentIdB, deployPipelineId, deployStageId, deployStagePredecessorCollections, deployStageType, deploymentSpecDeployArtifactId, description, displayName, dockerImageDeployArtifactId, failurePolicies, freeformTags, functionDeployEnvironmentId, functionTimeoutInSeconds, greenBackendIps, helmChartDeployArtifactId, id, isAsync, isValidationEnabled, kubernetesManifestDeployArtifactIds, lifecycleDetails, loadBalancerConfigs, maxMemoryInMbs, namespace, okeBlueGreenDeployStageId, okeCanaryDeployStageId, okeCanaryTrafficShiftDeployStageId, okeClusterDeployEnvironmentId, productionLoadBalancerConfigs, projectId, releaseName, rollbackPolicies, rolloutPolicies, state, systemTags, testLoadBalancerConfigs, timeCreated, timeUpdated, timeoutInSeconds, trafficShiftTarget, valuesArtifactIds, waitCriterias);
         }
     }
 }

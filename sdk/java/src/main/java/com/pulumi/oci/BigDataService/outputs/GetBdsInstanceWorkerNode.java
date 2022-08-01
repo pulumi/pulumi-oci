@@ -4,8 +4,10 @@
 package com.pulumi.oci.BigDataService.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceWorkerNodeShapeConfig;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
@@ -25,6 +27,7 @@ public final class GetBdsInstanceWorkerNode {
      * 
      */
     private final String shape;
+    private final List<GetBdsInstanceWorkerNodeShapeConfig> shapeConfigs;
     /**
      * @return The OCID of the subnet in which the node is to be created.
      * 
@@ -36,10 +39,12 @@ public final class GetBdsInstanceWorkerNode {
         @CustomType.Parameter("blockVolumeSizeInGbs") String blockVolumeSizeInGbs,
         @CustomType.Parameter("numberOfNodes") Integer numberOfNodes,
         @CustomType.Parameter("shape") String shape,
+        @CustomType.Parameter("shapeConfigs") List<GetBdsInstanceWorkerNodeShapeConfig> shapeConfigs,
         @CustomType.Parameter("subnetId") String subnetId) {
         this.blockVolumeSizeInGbs = blockVolumeSizeInGbs;
         this.numberOfNodes = numberOfNodes;
         this.shape = shape;
+        this.shapeConfigs = shapeConfigs;
         this.subnetId = subnetId;
     }
 
@@ -64,6 +69,9 @@ public final class GetBdsInstanceWorkerNode {
     public String shape() {
         return this.shape;
     }
+    public List<GetBdsInstanceWorkerNodeShapeConfig> shapeConfigs() {
+        return this.shapeConfigs;
+    }
     /**
      * @return The OCID of the subnet in which the node is to be created.
      * 
@@ -84,6 +92,7 @@ public final class GetBdsInstanceWorkerNode {
         private String blockVolumeSizeInGbs;
         private Integer numberOfNodes;
         private String shape;
+        private List<GetBdsInstanceWorkerNodeShapeConfig> shapeConfigs;
         private String subnetId;
 
         public Builder() {
@@ -95,6 +104,7 @@ public final class GetBdsInstanceWorkerNode {
     	      this.blockVolumeSizeInGbs = defaults.blockVolumeSizeInGbs;
     	      this.numberOfNodes = defaults.numberOfNodes;
     	      this.shape = defaults.shape;
+    	      this.shapeConfigs = defaults.shapeConfigs;
     	      this.subnetId = defaults.subnetId;
         }
 
@@ -110,11 +120,18 @@ public final class GetBdsInstanceWorkerNode {
             this.shape = Objects.requireNonNull(shape);
             return this;
         }
+        public Builder shapeConfigs(List<GetBdsInstanceWorkerNodeShapeConfig> shapeConfigs) {
+            this.shapeConfigs = Objects.requireNonNull(shapeConfigs);
+            return this;
+        }
+        public Builder shapeConfigs(GetBdsInstanceWorkerNodeShapeConfig... shapeConfigs) {
+            return shapeConfigs(List.of(shapeConfigs));
+        }
         public Builder subnetId(String subnetId) {
             this.subnetId = Objects.requireNonNull(subnetId);
             return this;
         }        public GetBdsInstanceWorkerNode build() {
-            return new GetBdsInstanceWorkerNode(blockVolumeSizeInGbs, numberOfNodes, shape, subnetId);
+            return new GetBdsInstanceWorkerNode(blockVolumeSizeInGbs, numberOfNodes, shape, shapeConfigs, subnetId);
         }
     }
 }

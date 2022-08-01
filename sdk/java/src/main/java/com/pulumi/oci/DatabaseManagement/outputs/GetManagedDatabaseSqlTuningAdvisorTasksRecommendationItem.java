@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Integer;
 import java.lang.String;
@@ -26,6 +27,11 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItem {
      * 
      */
     private final String implementActionSql;
+    /**
+     * @return Indicates whether a SQL Profile recommendation uses parallel execution.
+     * 
+     */
+    private final Boolean isParallelExecution;
     /**
      * @return Describes the reasoning behind the recommendation and how it relates to the finding.
      * 
@@ -62,6 +68,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItem {
         @CustomType.Parameter("benefit") Double benefit,
         @CustomType.Parameter("finding") String finding,
         @CustomType.Parameter("implementActionSql") String implementActionSql,
+        @CustomType.Parameter("isParallelExecution") Boolean isParallelExecution,
         @CustomType.Parameter("rationale") String rationale,
         @CustomType.Parameter("recommendation") String recommendation,
         @CustomType.Parameter("recommendationKey") Integer recommendationKey,
@@ -71,6 +78,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItem {
         this.benefit = benefit;
         this.finding = finding;
         this.implementActionSql = implementActionSql;
+        this.isParallelExecution = isParallelExecution;
         this.rationale = rationale;
         this.recommendation = recommendation;
         this.recommendationKey = recommendationKey;
@@ -99,6 +107,13 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItem {
      */
     public String implementActionSql() {
         return this.implementActionSql;
+    }
+    /**
+     * @return Indicates whether a SQL Profile recommendation uses parallel execution.
+     * 
+     */
+    public Boolean isParallelExecution() {
+        return this.isParallelExecution;
     }
     /**
      * @return Describes the reasoning behind the recommendation and how it relates to the finding.
@@ -155,6 +170,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItem {
         private Double benefit;
         private String finding;
         private String implementActionSql;
+        private Boolean isParallelExecution;
         private String rationale;
         private String recommendation;
         private Integer recommendationKey;
@@ -171,6 +187,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItem {
     	      this.benefit = defaults.benefit;
     	      this.finding = defaults.finding;
     	      this.implementActionSql = defaults.implementActionSql;
+    	      this.isParallelExecution = defaults.isParallelExecution;
     	      this.rationale = defaults.rationale;
     	      this.recommendation = defaults.recommendation;
     	      this.recommendationKey = defaults.recommendationKey;
@@ -189,6 +206,10 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItem {
         }
         public Builder implementActionSql(String implementActionSql) {
             this.implementActionSql = Objects.requireNonNull(implementActionSql);
+            return this;
+        }
+        public Builder isParallelExecution(Boolean isParallelExecution) {
+            this.isParallelExecution = Objects.requireNonNull(isParallelExecution);
             return this;
         }
         public Builder rationale(String rationale) {
@@ -215,7 +236,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItem {
             this.sqlTuningAdvisorTaskObjectId = Objects.requireNonNull(sqlTuningAdvisorTaskObjectId);
             return this;
         }        public GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItem build() {
-            return new GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItem(benefit, finding, implementActionSql, rationale, recommendation, recommendationKey, recommendationType, sqlTuningAdvisorTaskId, sqlTuningAdvisorTaskObjectId);
+            return new GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItem(benefit, finding, implementActionSql, isParallelExecution, rationale, recommendation, recommendationKey, recommendationType, sqlTuningAdvisorTaskId, sqlTuningAdvisorTaskObjectId);
         }
     }
 }

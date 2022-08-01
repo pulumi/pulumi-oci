@@ -18,7 +18,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// </summary>
         public readonly string MetricType;
         /// <summary>
-        /// An autoscale action is triggered when a performance metric meets or exceeds a threshold.
+        /// An autoscale action is triggered when a performance metric exceeds a threshold.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutoScalingConfigurationPolicyRuleMetricThresholdResult> Thresholds;
 

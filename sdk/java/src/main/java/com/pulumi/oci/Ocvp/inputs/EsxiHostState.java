@@ -5,6 +5,7 @@ package com.pulumi.oci.Ocvp.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import java.lang.Double;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -30,6 +31,21 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> billingContractEndDate() {
         return Optional.ofNullable(this.billingContractEndDate);
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+     * 
+     */
+    @Import(name="capacityReservationId")
+    private @Nullable Output<String> capacityReservationId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+     * 
+     */
+    public Optional<Output<String>> capacityReservationId() {
+        return Optional.ofNullable(this.capacityReservationId);
     }
 
     /**
@@ -123,14 +139,14 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be udpated in the newly created Esxi host.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is failed. It is an optional param, when user supplies this param, new Esxi Host will be created to replace the failed one, and failedEsxiHostId field will be udpated in the newly created EsxiHost.
      * 
      */
     @Import(name="failedEsxiHostId")
     private @Nullable Output<String> failedEsxiHostId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be udpated in the newly created Esxi host.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is failed. It is an optional param, when user supplies this param, new Esxi Host will be created to replace the failed one, and failedEsxiHostId field will be udpated in the newly created EsxiHost.
      * 
      */
     public Optional<Output<String>> failedEsxiHostId() {
@@ -165,6 +181,36 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> gracePeriodEndDate() {
         return Optional.ofNullable(this.gracePeriodEndDate);
+    }
+
+    /**
+     * The OCPU count of the ESXi host.
+     * 
+     */
+    @Import(name="hostOcpuCount")
+    private @Nullable Output<Double> hostOcpuCount;
+
+    /**
+     * @return The OCPU count of the ESXi host.
+     * 
+     */
+    public Optional<Output<Double>> hostOcpuCount() {
+        return Optional.ofNullable(this.hostOcpuCount);
+    }
+
+    /**
+     * The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+     * 
+     */
+    @Import(name="hostShapeName")
+    private @Nullable Output<String> hostShapeName;
+
+    /**
+     * @return The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+     * 
+     */
+    public Optional<Output<String>> hostShapeName() {
+        return Optional.ofNullable(this.hostShapeName);
     }
 
     /**
@@ -261,6 +307,7 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
 
     private EsxiHostState(EsxiHostState $) {
         this.billingContractEndDate = $.billingContractEndDate;
+        this.capacityReservationId = $.capacityReservationId;
         this.compartmentId = $.compartmentId;
         this.computeAvailabilityDomain = $.computeAvailabilityDomain;
         this.computeInstanceId = $.computeInstanceId;
@@ -270,6 +317,8 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
         this.failedEsxiHostId = $.failedEsxiHostId;
         this.freeformTags = $.freeformTags;
         this.gracePeriodEndDate = $.gracePeriodEndDate;
+        this.hostOcpuCount = $.hostOcpuCount;
+        this.hostShapeName = $.hostShapeName;
         this.nextSku = $.nextSku;
         this.replacementEsxiHostId = $.replacementEsxiHostId;
         this.sddcId = $.sddcId;
@@ -315,6 +364,27 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder billingContractEndDate(String billingContractEndDate) {
             return billingContractEndDate(Output.of(billingContractEndDate));
+        }
+
+        /**
+         * @param capacityReservationId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder capacityReservationId(@Nullable Output<String> capacityReservationId) {
+            $.capacityReservationId = capacityReservationId;
+            return this;
+        }
+
+        /**
+         * @param capacityReservationId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder capacityReservationId(String capacityReservationId) {
+            return capacityReservationId(Output.of(capacityReservationId));
         }
 
         /**
@@ -444,7 +514,7 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param failedEsxiHostId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be udpated in the newly created Esxi host.
+         * @param failedEsxiHostId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is failed. It is an optional param, when user supplies this param, new Esxi Host will be created to replace the failed one, and failedEsxiHostId field will be udpated in the newly created EsxiHost.
          * 
          * @return builder
          * 
@@ -455,7 +525,7 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param failedEsxiHostId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be udpated in the newly created Esxi host.
+         * @param failedEsxiHostId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is failed. It is an optional param, when user supplies this param, new Esxi Host will be created to replace the failed one, and failedEsxiHostId field will be udpated in the newly created EsxiHost.
          * 
          * @return builder
          * 
@@ -504,6 +574,48 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder gracePeriodEndDate(String gracePeriodEndDate) {
             return gracePeriodEndDate(Output.of(gracePeriodEndDate));
+        }
+
+        /**
+         * @param hostOcpuCount The OCPU count of the ESXi host.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder hostOcpuCount(@Nullable Output<Double> hostOcpuCount) {
+            $.hostOcpuCount = hostOcpuCount;
+            return this;
+        }
+
+        /**
+         * @param hostOcpuCount The OCPU count of the ESXi host.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder hostOcpuCount(Double hostOcpuCount) {
+            return hostOcpuCount(Output.of(hostOcpuCount));
+        }
+
+        /**
+         * @param hostShapeName The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder hostShapeName(@Nullable Output<String> hostShapeName) {
+            $.hostShapeName = hostShapeName;
+            return this;
+        }
+
+        /**
+         * @param hostShapeName The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder hostShapeName(String hostShapeName) {
+            return hostShapeName(Output.of(hostShapeName));
         }
 
         /**

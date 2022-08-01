@@ -54,6 +54,8 @@ type LookupBdsInstanceArgs struct {
 // A collection of values returned by getBdsInstance.
 type LookupBdsInstanceResult struct {
 	BdsInstanceId string `pulumi:"bdsInstanceId"`
+	// pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
+	BootstrapScriptUrl string `pulumi:"bootstrapScriptUrl"`
 	// The information about added Cloud SQL capability
 	CloudSqlDetails      []GetBdsInstanceCloudSqlDetail `pulumi:"cloudSqlDetails"`
 	ClusterAdminPassword string                         `pulumi:"clusterAdminPassword"`
@@ -63,7 +65,8 @@ type LookupBdsInstanceResult struct {
 	// Version of the Hadoop distribution.
 	ClusterVersion string `pulumi:"clusterVersion"`
 	// The OCID of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId          string                                `pulumi:"compartmentId"`
+	ComputeOnlyWorkerNodes []GetBdsInstanceComputeOnlyWorkerNode `pulumi:"computeOnlyWorkerNodes"`
 	// The user who created the cluster.
 	CreatedBy string `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For example, `{"foo-namespace": {"bar-key": "value"}}`
@@ -79,8 +82,9 @@ type LookupBdsInstanceResult struct {
 	// Boolean flag specifying whether or not the cluster is highly available (HA)
 	IsHighAvailability bool `pulumi:"isHighAvailability"`
 	// Boolean flag specifying whether or not the cluster should be set up as secure.
-	IsSecure    bool                       `pulumi:"isSecure"`
-	MasterNodes []GetBdsInstanceMasterNode `pulumi:"masterNodes"`
+	IsSecure          bool                       `pulumi:"isSecure"`
+	KerberosRealmName string                     `pulumi:"kerberosRealmName"`
+	MasterNodes       []GetBdsInstanceMasterNode `pulumi:"masterNodes"`
 	// Additional configuration of the user's network.
 	NetworkConfigs []GetBdsInstanceNetworkConfig `pulumi:"networkConfigs"`
 	// The list of nodes in the cluster.
@@ -139,6 +143,11 @@ func (o LookupBdsInstanceResultOutput) BdsInstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBdsInstanceResult) string { return v.BdsInstanceId }).(pulumi.StringOutput)
 }
 
+// pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
+func (o LookupBdsInstanceResultOutput) BootstrapScriptUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupBdsInstanceResult) string { return v.BootstrapScriptUrl }).(pulumi.StringOutput)
+}
+
 // The information about added Cloud SQL capability
 func (o LookupBdsInstanceResultOutput) CloudSqlDetails() GetBdsInstanceCloudSqlDetailArrayOutput {
 	return o.ApplyT(func(v LookupBdsInstanceResult) []GetBdsInstanceCloudSqlDetail { return v.CloudSqlDetails }).(GetBdsInstanceCloudSqlDetailArrayOutput)
@@ -165,6 +174,10 @@ func (o LookupBdsInstanceResultOutput) ClusterVersion() pulumi.StringOutput {
 // The OCID of the compartment.
 func (o LookupBdsInstanceResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBdsInstanceResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+func (o LookupBdsInstanceResultOutput) ComputeOnlyWorkerNodes() GetBdsInstanceComputeOnlyWorkerNodeArrayOutput {
+	return o.ApplyT(func(v LookupBdsInstanceResult) []GetBdsInstanceComputeOnlyWorkerNode { return v.ComputeOnlyWorkerNodes }).(GetBdsInstanceComputeOnlyWorkerNodeArrayOutput)
 }
 
 // The user who created the cluster.
@@ -205,6 +218,10 @@ func (o LookupBdsInstanceResultOutput) IsHighAvailability() pulumi.BoolOutput {
 // Boolean flag specifying whether or not the cluster should be set up as secure.
 func (o LookupBdsInstanceResultOutput) IsSecure() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupBdsInstanceResult) bool { return v.IsSecure }).(pulumi.BoolOutput)
+}
+
+func (o LookupBdsInstanceResultOutput) KerberosRealmName() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupBdsInstanceResult) string { return v.KerberosRealmName }).(pulumi.StringOutput)
 }
 
 func (o LookupBdsInstanceResultOutput) MasterNodes() GetBdsInstanceMasterNodeArrayOutput {

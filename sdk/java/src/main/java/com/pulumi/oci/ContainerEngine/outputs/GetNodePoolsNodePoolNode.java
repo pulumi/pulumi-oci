@@ -74,7 +74,7 @@ public final class GetNodePoolsNodePoolNode {
      */
     private final String publicIp;
     /**
-     * @return The state of the node.
+     * @return A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
      * 
      */
     private final String state;
@@ -201,7 +201,7 @@ public final class GetNodePoolsNodePoolNode {
         return this.publicIp;
     }
     /**
-     * @return The state of the node.
+     * @return A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
      * 
      */
     public String state() {

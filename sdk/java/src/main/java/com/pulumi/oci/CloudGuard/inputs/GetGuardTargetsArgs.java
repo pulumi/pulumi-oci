@@ -86,6 +86,21 @@ public final class GetGuardTargetsArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
+     * Default is false. When set to true, only the targets that would be deleted as part of security zone creation will be returned.
+     * 
+     */
+    @Import(name="isNonSecurityZoneTargetsOnlyQuery")
+    private @Nullable Output<Boolean> isNonSecurityZoneTargetsOnlyQuery;
+
+    /**
+     * @return Default is false. When set to true, only the targets that would be deleted as part of security zone creation will be returned.
+     * 
+     */
+    public Optional<Output<Boolean>> isNonSecurityZoneTargetsOnlyQuery() {
+        return Optional.ofNullable(this.isNonSecurityZoneTargetsOnlyQuery);
+    }
+
+    /**
      * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      * 
      */
@@ -108,6 +123,7 @@ public final class GetGuardTargetsArgs extends com.pulumi.resources.InvokeArgs {
         this.compartmentIdInSubtree = $.compartmentIdInSubtree;
         this.displayName = $.displayName;
         this.filters = $.filters;
+        this.isNonSecurityZoneTargetsOnlyQuery = $.isNonSecurityZoneTargetsOnlyQuery;
         this.state = $.state;
     }
 
@@ -224,6 +240,27 @@ public final class GetGuardTargetsArgs extends com.pulumi.resources.InvokeArgs {
 
         public Builder filters(GetGuardTargetsFilterArgs... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param isNonSecurityZoneTargetsOnlyQuery Default is false. When set to true, only the targets that would be deleted as part of security zone creation will be returned.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isNonSecurityZoneTargetsOnlyQuery(@Nullable Output<Boolean> isNonSecurityZoneTargetsOnlyQuery) {
+            $.isNonSecurityZoneTargetsOnlyQuery = isNonSecurityZoneTargetsOnlyQuery;
+            return this;
+        }
+
+        /**
+         * @param isNonSecurityZoneTargetsOnlyQuery Default is false. When set to true, only the targets that would be deleted as part of security zone creation will be returned.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isNonSecurityZoneTargetsOnlyQuery(Boolean isNonSecurityZoneTargetsOnlyQuery) {
+            return isNonSecurityZoneTargetsOnlyQuery(Output.of(isNonSecurityZoneTargetsOnlyQuery));
         }
 
         /**

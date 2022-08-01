@@ -1064,14 +1064,14 @@ type GetAnalyticsInstancesAnalyticsInstance struct {
 	// The Virtual Cloud Network OCID.
 	Id              string `pulumi:"id"`
 	IdcsAccessToken string `pulumi:"idcsAccessToken"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+	KmsKeyId string `pulumi:"kmsKeyId"`
 	// The license used for the service.
 	LicenseType string `pulumi:"licenseType"`
 	// A filter to return only resources that match the given name exactly.
 	Name string `pulumi:"name"`
 	// Base representation of a network endpoint.
 	NetworkEndpointDetails []GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetail `pulumi:"networkEndpointDetails"`
-	// Map of PrivateAccessChannel unique identifier key as KEY and PrivateAccessChannel Object as VALUE.
-	PrivateAccessChannels map[string]interface{} `pulumi:"privateAccessChannels"`
 	// URL of the Analytics service.
 	ServiceUrl string `pulumi:"serviceUrl"`
 	// A filter to only return resources matching the lifecycle state. The state value is case-insensitive.
@@ -1080,8 +1080,6 @@ type GetAnalyticsInstancesAnalyticsInstance struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
 	TimeUpdated string `pulumi:"timeUpdated"`
-	// Map of VanityUrl unique identifier key as KEY and VanityUrl Object as VALUE.
-	VanityUrlDetails map[string]interface{} `pulumi:"vanityUrlDetails"`
 }
 
 // GetAnalyticsInstancesAnalyticsInstanceInput is an input type that accepts GetAnalyticsInstancesAnalyticsInstanceArgs and GetAnalyticsInstancesAnalyticsInstanceOutput values.
@@ -1113,14 +1111,14 @@ type GetAnalyticsInstancesAnalyticsInstanceArgs struct {
 	// The Virtual Cloud Network OCID.
 	Id              pulumi.StringInput `pulumi:"id"`
 	IdcsAccessToken pulumi.StringInput `pulumi:"idcsAccessToken"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
 	// The license used for the service.
 	LicenseType pulumi.StringInput `pulumi:"licenseType"`
 	// A filter to return only resources that match the given name exactly.
 	Name pulumi.StringInput `pulumi:"name"`
 	// Base representation of a network endpoint.
 	NetworkEndpointDetails GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailArrayInput `pulumi:"networkEndpointDetails"`
-	// Map of PrivateAccessChannel unique identifier key as KEY and PrivateAccessChannel Object as VALUE.
-	PrivateAccessChannels pulumi.MapInput `pulumi:"privateAccessChannels"`
 	// URL of the Analytics service.
 	ServiceUrl pulumi.StringInput `pulumi:"serviceUrl"`
 	// A filter to only return resources matching the lifecycle state. The state value is case-insensitive.
@@ -1129,8 +1127,6 @@ type GetAnalyticsInstancesAnalyticsInstanceArgs struct {
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
-	// Map of VanityUrl unique identifier key as KEY and VanityUrl Object as VALUE.
-	VanityUrlDetails pulumi.MapInput `pulumi:"vanityUrlDetails"`
 }
 
 func (GetAnalyticsInstancesAnalyticsInstanceArgs) ElementType() reflect.Type {
@@ -1230,6 +1226,11 @@ func (o GetAnalyticsInstancesAnalyticsInstanceOutput) IdcsAccessToken() pulumi.S
 	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) string { return v.IdcsAccessToken }).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+func (o GetAnalyticsInstancesAnalyticsInstanceOutput) KmsKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) string { return v.KmsKeyId }).(pulumi.StringOutput)
+}
+
 // The license used for the service.
 func (o GetAnalyticsInstancesAnalyticsInstanceOutput) LicenseType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) string { return v.LicenseType }).(pulumi.StringOutput)
@@ -1245,11 +1246,6 @@ func (o GetAnalyticsInstancesAnalyticsInstanceOutput) NetworkEndpointDetails() G
 	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) []GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetail {
 		return v.NetworkEndpointDetails
 	}).(GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailArrayOutput)
-}
-
-// Map of PrivateAccessChannel unique identifier key as KEY and PrivateAccessChannel Object as VALUE.
-func (o GetAnalyticsInstancesAnalyticsInstanceOutput) PrivateAccessChannels() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) map[string]interface{} { return v.PrivateAccessChannels }).(pulumi.MapOutput)
 }
 
 // URL of the Analytics service.
@@ -1270,11 +1266,6 @@ func (o GetAnalyticsInstancesAnalyticsInstanceOutput) TimeCreated() pulumi.Strin
 // The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
 func (o GetAnalyticsInstancesAnalyticsInstanceOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) string { return v.TimeUpdated }).(pulumi.StringOutput)
-}
-
-// Map of VanityUrl unique identifier key as KEY and VanityUrl Object as VALUE.
-func (o GetAnalyticsInstancesAnalyticsInstanceOutput) VanityUrlDetails() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) map[string]interface{} { return v.VanityUrlDetails }).(pulumi.MapOutput)
 }
 
 type GetAnalyticsInstancesAnalyticsInstanceArrayOutput struct{ *pulumi.OutputState }

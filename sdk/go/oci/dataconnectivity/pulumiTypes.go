@@ -17965,6 +17965,8 @@ type GetRegistryDataAssetsDataAssetSummaryCollectionItem struct {
 	DefaultConnection GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnection `pulumi:"defaultConnection"`
 	// A user defined description for the object.
 	Description string `pulumi:"description"`
+	// The list of endpoints with which this data asset is associated.
+	EndPoints []string `pulumi:"endPoints"`
 	// The external key for the object.
 	ExternalKey string `pulumi:"externalKey"`
 	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
@@ -18013,6 +18015,8 @@ type GetRegistryDataAssetsDataAssetSummaryCollectionItemArgs struct {
 	DefaultConnection GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionInput `pulumi:"defaultConnection"`
 	// A user defined description for the object.
 	Description pulumi.StringInput `pulumi:"description"`
+	// The list of endpoints with which this data asset is associated.
+	EndPoints pulumi.StringArrayInput `pulumi:"endPoints"`
 	// The external key for the object.
 	ExternalKey pulumi.StringInput `pulumi:"externalKey"`
 	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
@@ -18111,6 +18115,11 @@ func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemOutput) DefaultConnec
 // A user defined description for the object.
 func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The list of endpoints with which this data asset is associated.
+func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemOutput) EndPoints() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItem) []string { return v.EndPoints }).(pulumi.StringArrayOutput)
 }
 
 // The external key for the object.

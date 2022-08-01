@@ -169,7 +169,7 @@ func (o DataMaskRuleTargetSelectedPtrOutput) Values() pulumi.StringArrayOutput {
 type DetectorRecipeDetectorRule struct {
 	// List of CandidateResponderRule related to this rule
 	CandidateResponderRules []DetectorRecipeDetectorRuleCandidateResponderRule `pulumi:"candidateResponderRules"`
-	// (Updatable) DetectorRecipe Description
+	// (Updatable) Detector recipe description.
 	Description *string `pulumi:"description"`
 	// (Updatable) Details of a Detector Rule to be overriden in Detector Recipe
 	Details DetectorRecipeDetectorRuleDetails `pulumi:"details"`
@@ -177,7 +177,7 @@ type DetectorRecipeDetectorRule struct {
 	Detector *string `pulumi:"detector"`
 	// (Updatable) DetectorRecipeRule Identifier
 	DetectorRuleId string `pulumi:"detectorRuleId"`
-	// (Updatable) DetectorRecipe Display Name
+	// (Updatable) Detector recipe display name.
 	DisplayName *string `pulumi:"displayName"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
@@ -211,7 +211,7 @@ type DetectorRecipeDetectorRuleInput interface {
 type DetectorRecipeDetectorRuleArgs struct {
 	// List of CandidateResponderRule related to this rule
 	CandidateResponderRules DetectorRecipeDetectorRuleCandidateResponderRuleArrayInput `pulumi:"candidateResponderRules"`
-	// (Updatable) DetectorRecipe Description
+	// (Updatable) Detector recipe description.
 	Description pulumi.StringPtrInput `pulumi:"description"`
 	// (Updatable) Details of a Detector Rule to be overriden in Detector Recipe
 	Details DetectorRecipeDetectorRuleDetailsInput `pulumi:"details"`
@@ -219,7 +219,7 @@ type DetectorRecipeDetectorRuleArgs struct {
 	Detector pulumi.StringPtrInput `pulumi:"detector"`
 	// (Updatable) DetectorRecipeRule Identifier
 	DetectorRuleId pulumi.StringInput `pulumi:"detectorRuleId"`
-	// (Updatable) DetectorRecipe Display Name
+	// (Updatable) Detector recipe display name.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
@@ -297,7 +297,7 @@ func (o DetectorRecipeDetectorRuleOutput) CandidateResponderRules() DetectorReci
 	}).(DetectorRecipeDetectorRuleCandidateResponderRuleArrayOutput)
 }
 
-// (Updatable) DetectorRecipe Description
+// (Updatable) Detector recipe description.
 func (o DetectorRecipeDetectorRuleOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DetectorRecipeDetectorRule) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
@@ -317,7 +317,7 @@ func (o DetectorRecipeDetectorRuleOutput) DetectorRuleId() pulumi.StringOutput {
 	return o.ApplyT(func(v DetectorRecipeDetectorRule) string { return v.DetectorRuleId }).(pulumi.StringOutput)
 }
 
-// (Updatable) DetectorRecipe Display Name
+// (Updatable) Detector recipe display name.
 func (o DetectorRecipeDetectorRuleOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DetectorRecipeDetectorRule) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -383,7 +383,7 @@ func (o DetectorRecipeDetectorRuleArrayOutput) Index(i pulumi.IntInput) Detector
 }
 
 type DetectorRecipeDetectorRuleCandidateResponderRule struct {
-	// (Updatable) DetectorRecipe Display Name
+	// (Updatable) Detector recipe display name.
 	DisplayName *string `pulumi:"displayName"`
 	// Ocid for detector recipe
 	Id *string `pulumi:"id"`
@@ -403,7 +403,7 @@ type DetectorRecipeDetectorRuleCandidateResponderRuleInput interface {
 }
 
 type DetectorRecipeDetectorRuleCandidateResponderRuleArgs struct {
-	// (Updatable) DetectorRecipe Display Name
+	// (Updatable) Detector recipe display name.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Ocid for detector recipe
 	Id pulumi.StringPtrInput `pulumi:"id"`
@@ -462,7 +462,7 @@ func (o DetectorRecipeDetectorRuleCandidateResponderRuleOutput) ToDetectorRecipe
 	return o
 }
 
-// (Updatable) DetectorRecipe Display Name
+// (Updatable) Detector recipe display name.
 func (o DetectorRecipeDetectorRuleCandidateResponderRuleOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DetectorRecipeDetectorRuleCandidateResponderRule) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -498,7 +498,7 @@ func (o DetectorRecipeDetectorRuleCandidateResponderRuleArrayOutput) Index(i pul
 }
 
 type DetectorRecipeDetectorRuleDetails struct {
-	// (Updatable)
+	// (Updatable) Base condition object
 	Condition *string `pulumi:"condition"`
 	// (Updatable) Configuration details
 	Configurations []DetectorRecipeDetectorRuleDetailsConfiguration `pulumi:"configurations"`
@@ -524,7 +524,7 @@ type DetectorRecipeDetectorRuleDetailsInput interface {
 }
 
 type DetectorRecipeDetectorRuleDetailsArgs struct {
-	// (Updatable)
+	// (Updatable) Base condition object
 	Condition pulumi.StringPtrInput `pulumi:"condition"`
 	// (Updatable) Configuration details
 	Configurations DetectorRecipeDetectorRuleDetailsConfigurationArrayInput `pulumi:"configurations"`
@@ -564,7 +564,7 @@ func (o DetectorRecipeDetectorRuleDetailsOutput) ToDetectorRecipeDetectorRuleDet
 	return o
 }
 
-// (Updatable)
+// (Updatable) Base condition object
 func (o DetectorRecipeDetectorRuleDetailsOutput) Condition() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DetectorRecipeDetectorRuleDetails) *string { return v.Condition }).(pulumi.StringPtrOutput)
 }
@@ -849,7 +849,7 @@ func (o DetectorRecipeDetectorRuleDetailsConfigurationValueArrayOutput) Index(i 
 type DetectorRecipeEffectiveDetectorRule struct {
 	// List of CandidateResponderRule related to this rule
 	CandidateResponderRules []DetectorRecipeEffectiveDetectorRuleCandidateResponderRule `pulumi:"candidateResponderRules"`
-	// (Updatable) DetectorRecipe Description
+	// (Updatable) Detector recipe description.
 	Description *string `pulumi:"description"`
 	// (Updatable) Details of a Detector Rule to be overriden in Detector Recipe
 	Details []DetectorRecipeEffectiveDetectorRuleDetail `pulumi:"details"`
@@ -857,7 +857,7 @@ type DetectorRecipeEffectiveDetectorRule struct {
 	Detector *string `pulumi:"detector"`
 	// (Updatable) DetectorRecipeRule Identifier
 	DetectorRuleId *string `pulumi:"detectorRuleId"`
-	// (Updatable) DetectorRecipe Display Name
+	// (Updatable) Detector recipe display name.
 	DisplayName *string `pulumi:"displayName"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
@@ -891,7 +891,7 @@ type DetectorRecipeEffectiveDetectorRuleInput interface {
 type DetectorRecipeEffectiveDetectorRuleArgs struct {
 	// List of CandidateResponderRule related to this rule
 	CandidateResponderRules DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArrayInput `pulumi:"candidateResponderRules"`
-	// (Updatable) DetectorRecipe Description
+	// (Updatable) Detector recipe description.
 	Description pulumi.StringPtrInput `pulumi:"description"`
 	// (Updatable) Details of a Detector Rule to be overriden in Detector Recipe
 	Details DetectorRecipeEffectiveDetectorRuleDetailArrayInput `pulumi:"details"`
@@ -899,7 +899,7 @@ type DetectorRecipeEffectiveDetectorRuleArgs struct {
 	Detector pulumi.StringPtrInput `pulumi:"detector"`
 	// (Updatable) DetectorRecipeRule Identifier
 	DetectorRuleId pulumi.StringPtrInput `pulumi:"detectorRuleId"`
-	// (Updatable) DetectorRecipe Display Name
+	// (Updatable) Detector recipe display name.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
@@ -977,7 +977,7 @@ func (o DetectorRecipeEffectiveDetectorRuleOutput) CandidateResponderRules() Det
 	}).(DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArrayOutput)
 }
 
-// (Updatable) DetectorRecipe Description
+// (Updatable) Detector recipe description.
 func (o DetectorRecipeEffectiveDetectorRuleOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRule) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
@@ -999,7 +999,7 @@ func (o DetectorRecipeEffectiveDetectorRuleOutput) DetectorRuleId() pulumi.Strin
 	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRule) *string { return v.DetectorRuleId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) DetectorRecipe Display Name
+// (Updatable) Detector recipe display name.
 func (o DetectorRecipeEffectiveDetectorRuleOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRule) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -1065,7 +1065,7 @@ func (o DetectorRecipeEffectiveDetectorRuleArrayOutput) Index(i pulumi.IntInput)
 }
 
 type DetectorRecipeEffectiveDetectorRuleCandidateResponderRule struct {
-	// (Updatable) DetectorRecipe Display Name
+	// (Updatable) Detector recipe display name.
 	DisplayName *string `pulumi:"displayName"`
 	// Ocid for detector recipe
 	Id *string `pulumi:"id"`
@@ -1085,7 +1085,7 @@ type DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleInput interface {
 }
 
 type DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgs struct {
-	// (Updatable) DetectorRecipe Display Name
+	// (Updatable) Detector recipe display name.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Ocid for detector recipe
 	Id pulumi.StringPtrInput `pulumi:"id"`
@@ -1144,7 +1144,7 @@ func (o DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleOutput) ToDetec
 	return o
 }
 
-// (Updatable) DetectorRecipe Display Name
+// (Updatable) Detector recipe display name.
 func (o DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRuleCandidateResponderRule) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -1180,7 +1180,7 @@ func (o DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArrayOutput) In
 }
 
 type DetectorRecipeEffectiveDetectorRuleDetail struct {
-	// (Updatable)
+	// (Updatable) Base condition object
 	Condition *string `pulumi:"condition"`
 	// (Updatable) Configuration details
 	Configurations []DetectorRecipeEffectiveDetectorRuleDetailConfiguration `pulumi:"configurations"`
@@ -1206,7 +1206,7 @@ type DetectorRecipeEffectiveDetectorRuleDetailInput interface {
 }
 
 type DetectorRecipeEffectiveDetectorRuleDetailArgs struct {
-	// (Updatable)
+	// (Updatable) Base condition object
 	Condition pulumi.StringPtrInput `pulumi:"condition"`
 	// (Updatable) Configuration details
 	Configurations DetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayInput `pulumi:"configurations"`
@@ -1271,7 +1271,7 @@ func (o DetectorRecipeEffectiveDetectorRuleDetailOutput) ToDetectorRecipeEffecti
 	return o
 }
 
-// (Updatable)
+// (Updatable) Base condition object
 func (o DetectorRecipeEffectiveDetectorRuleDetailOutput) Condition() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRuleDetail) *string { return v.Condition }).(pulumi.StringPtrOutput)
 }
@@ -1576,11 +1576,11 @@ func (o DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutput) 
 type ResponderRecipeEffectiveResponderRule struct {
 	// (Updatable) Compartment Identifier
 	CompartmentId *string `pulumi:"compartmentId"`
-	// (Updatable) ResponderRecipe Description
+	// (Updatable) Responder recipe description.
 	Description *string `pulumi:"description"`
 	// (Updatable) Details of UpdateResponderRuleDetails.
 	Details []ResponderRecipeEffectiveResponderRuleDetail `pulumi:"details"`
-	// (Updatable) ResponderRecipe Display Name
+	// (Updatable) Responder recipe display name.
 	DisplayName *string `pulumi:"displayName"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
@@ -1614,11 +1614,11 @@ type ResponderRecipeEffectiveResponderRuleInput interface {
 type ResponderRecipeEffectiveResponderRuleArgs struct {
 	// (Updatable) Compartment Identifier
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
-	// (Updatable) ResponderRecipe Description
+	// (Updatable) Responder recipe description.
 	Description pulumi.StringPtrInput `pulumi:"description"`
 	// (Updatable) Details of UpdateResponderRuleDetails.
 	Details ResponderRecipeEffectiveResponderRuleDetailArrayInput `pulumi:"details"`
-	// (Updatable) ResponderRecipe Display Name
+	// (Updatable) Responder recipe display name.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
@@ -1694,7 +1694,7 @@ func (o ResponderRecipeEffectiveResponderRuleOutput) CompartmentId() pulumi.Stri
 	return o.ApplyT(func(v ResponderRecipeEffectiveResponderRule) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) ResponderRecipe Description
+// (Updatable) Responder recipe description.
 func (o ResponderRecipeEffectiveResponderRuleOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ResponderRecipeEffectiveResponderRule) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
@@ -1706,7 +1706,7 @@ func (o ResponderRecipeEffectiveResponderRuleOutput) Details() ResponderRecipeEf
 	}).(ResponderRecipeEffectiveResponderRuleDetailArrayOutput)
 }
 
-// (Updatable) ResponderRecipe Display Name
+// (Updatable) Responder recipe display name.
 func (o ResponderRecipeEffectiveResponderRuleOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ResponderRecipeEffectiveResponderRule) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -1772,6 +1772,7 @@ func (o ResponderRecipeEffectiveResponderRuleArrayOutput) Index(i pulumi.IntInpu
 }
 
 type ResponderRecipeEffectiveResponderRuleDetail struct {
+	// Base condition object
 	Condition *string `pulumi:"condition"`
 	// ResponderRule configurations
 	Configurations []ResponderRecipeEffectiveResponderRuleDetailConfiguration `pulumi:"configurations"`
@@ -1793,6 +1794,7 @@ type ResponderRecipeEffectiveResponderRuleDetailInput interface {
 }
 
 type ResponderRecipeEffectiveResponderRuleDetailArgs struct {
+	// Base condition object
 	Condition pulumi.StringPtrInput `pulumi:"condition"`
 	// ResponderRule configurations
 	Configurations ResponderRecipeEffectiveResponderRuleDetailConfigurationArrayInput `pulumi:"configurations"`
@@ -1853,6 +1855,7 @@ func (o ResponderRecipeEffectiveResponderRuleDetailOutput) ToResponderRecipeEffe
 	return o
 }
 
+// Base condition object
 func (o ResponderRecipeEffectiveResponderRuleDetailOutput) Condition() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ResponderRecipeEffectiveResponderRuleDetail) *string { return v.Condition }).(pulumi.StringPtrOutput)
 }
@@ -2012,11 +2015,11 @@ func (o ResponderRecipeEffectiveResponderRuleDetailConfigurationArrayOutput) Ind
 type ResponderRecipeResponderRule struct {
 	// (Updatable) Compartment Identifier
 	CompartmentId *string `pulumi:"compartmentId"`
-	// (Updatable) ResponderRecipe Description
+	// (Updatable) Responder recipe description.
 	Description *string `pulumi:"description"`
 	// (Updatable) Details of UpdateResponderRuleDetails.
 	Details ResponderRecipeResponderRuleDetails `pulumi:"details"`
-	// (Updatable) ResponderRecipe Display Name
+	// (Updatable) Responder recipe display name.
 	DisplayName *string `pulumi:"displayName"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
@@ -2050,11 +2053,11 @@ type ResponderRecipeResponderRuleInput interface {
 type ResponderRecipeResponderRuleArgs struct {
 	// (Updatable) Compartment Identifier
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
-	// (Updatable) ResponderRecipe Description
+	// (Updatable) Responder recipe description.
 	Description pulumi.StringPtrInput `pulumi:"description"`
 	// (Updatable) Details of UpdateResponderRuleDetails.
 	Details ResponderRecipeResponderRuleDetailsInput `pulumi:"details"`
-	// (Updatable) ResponderRecipe Display Name
+	// (Updatable) Responder recipe display name.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
@@ -2130,7 +2133,7 @@ func (o ResponderRecipeResponderRuleOutput) CompartmentId() pulumi.StringPtrOutp
 	return o.ApplyT(func(v ResponderRecipeResponderRule) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) ResponderRecipe Description
+// (Updatable) Responder recipe description.
 func (o ResponderRecipeResponderRuleOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ResponderRecipeResponderRule) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
@@ -2140,7 +2143,7 @@ func (o ResponderRecipeResponderRuleOutput) Details() ResponderRecipeResponderRu
 	return o.ApplyT(func(v ResponderRecipeResponderRule) ResponderRecipeResponderRuleDetails { return v.Details }).(ResponderRecipeResponderRuleDetailsOutput)
 }
 
-// (Updatable) ResponderRecipe Display Name
+// (Updatable) Responder recipe display name.
 func (o ResponderRecipeResponderRuleOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ResponderRecipeResponderRule) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -2206,6 +2209,7 @@ func (o ResponderRecipeResponderRuleArrayOutput) Index(i pulumi.IntInput) Respon
 }
 
 type ResponderRecipeResponderRuleDetails struct {
+	// Base condition object
 	Condition *string `pulumi:"condition"`
 	// ResponderRule configurations
 	Configurations []ResponderRecipeResponderRuleDetailsConfiguration `pulumi:"configurations"`
@@ -2227,6 +2231,7 @@ type ResponderRecipeResponderRuleDetailsInput interface {
 }
 
 type ResponderRecipeResponderRuleDetailsArgs struct {
+	// Base condition object
 	Condition pulumi.StringPtrInput `pulumi:"condition"`
 	// ResponderRule configurations
 	Configurations ResponderRecipeResponderRuleDetailsConfigurationArrayInput `pulumi:"configurations"`
@@ -2262,6 +2267,7 @@ func (o ResponderRecipeResponderRuleDetailsOutput) ToResponderRecipeResponderRul
 	return o
 }
 
+// Base condition object
 func (o ResponderRecipeResponderRuleDetailsOutput) Condition() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ResponderRecipeResponderRuleDetails) *string { return v.Condition }).(pulumi.StringPtrOutput)
 }
@@ -2398,6 +2404,337 @@ func (o ResponderRecipeResponderRuleDetailsConfigurationArrayOutput) Index(i pul
 	}).(ResponderRecipeResponderRuleDetailsConfigurationOutput)
 }
 
+type TargetTargetDetail struct {
+	// The name of the security zone to associate this compartment with.
+	SecurityZoneDisplayName *string `pulumi:"securityZoneDisplayName"`
+	// The OCID of the security zone to associate this compartment with.
+	SecurityZoneId *string `pulumi:"securityZoneId"`
+	// possible type of targets(compartment/HCMCloud/ERPCloud)
+	TargetResourceType *string `pulumi:"targetResourceType"`
+	// The list of security zone recipes to associate this compartment with.
+	TargetSecurityZoneRecipes []TargetTargetDetailTargetSecurityZoneRecipe `pulumi:"targetSecurityZoneRecipes"`
+}
+
+// TargetTargetDetailInput is an input type that accepts TargetTargetDetailArgs and TargetTargetDetailOutput values.
+// You can construct a concrete instance of `TargetTargetDetailInput` via:
+//
+//          TargetTargetDetailArgs{...}
+type TargetTargetDetailInput interface {
+	pulumi.Input
+
+	ToTargetTargetDetailOutput() TargetTargetDetailOutput
+	ToTargetTargetDetailOutputWithContext(context.Context) TargetTargetDetailOutput
+}
+
+type TargetTargetDetailArgs struct {
+	// The name of the security zone to associate this compartment with.
+	SecurityZoneDisplayName pulumi.StringPtrInput `pulumi:"securityZoneDisplayName"`
+	// The OCID of the security zone to associate this compartment with.
+	SecurityZoneId pulumi.StringPtrInput `pulumi:"securityZoneId"`
+	// possible type of targets(compartment/HCMCloud/ERPCloud)
+	TargetResourceType pulumi.StringPtrInput `pulumi:"targetResourceType"`
+	// The list of security zone recipes to associate this compartment with.
+	TargetSecurityZoneRecipes TargetTargetDetailTargetSecurityZoneRecipeArrayInput `pulumi:"targetSecurityZoneRecipes"`
+}
+
+func (TargetTargetDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TargetTargetDetail)(nil)).Elem()
+}
+
+func (i TargetTargetDetailArgs) ToTargetTargetDetailOutput() TargetTargetDetailOutput {
+	return i.ToTargetTargetDetailOutputWithContext(context.Background())
+}
+
+func (i TargetTargetDetailArgs) ToTargetTargetDetailOutputWithContext(ctx context.Context) TargetTargetDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetDetailOutput)
+}
+
+// TargetTargetDetailArrayInput is an input type that accepts TargetTargetDetailArray and TargetTargetDetailArrayOutput values.
+// You can construct a concrete instance of `TargetTargetDetailArrayInput` via:
+//
+//          TargetTargetDetailArray{ TargetTargetDetailArgs{...} }
+type TargetTargetDetailArrayInput interface {
+	pulumi.Input
+
+	ToTargetTargetDetailArrayOutput() TargetTargetDetailArrayOutput
+	ToTargetTargetDetailArrayOutputWithContext(context.Context) TargetTargetDetailArrayOutput
+}
+
+type TargetTargetDetailArray []TargetTargetDetailInput
+
+func (TargetTargetDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TargetTargetDetail)(nil)).Elem()
+}
+
+func (i TargetTargetDetailArray) ToTargetTargetDetailArrayOutput() TargetTargetDetailArrayOutput {
+	return i.ToTargetTargetDetailArrayOutputWithContext(context.Background())
+}
+
+func (i TargetTargetDetailArray) ToTargetTargetDetailArrayOutputWithContext(ctx context.Context) TargetTargetDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetDetailArrayOutput)
+}
+
+type TargetTargetDetailOutput struct{ *pulumi.OutputState }
+
+func (TargetTargetDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TargetTargetDetail)(nil)).Elem()
+}
+
+func (o TargetTargetDetailOutput) ToTargetTargetDetailOutput() TargetTargetDetailOutput {
+	return o
+}
+
+func (o TargetTargetDetailOutput) ToTargetTargetDetailOutputWithContext(ctx context.Context) TargetTargetDetailOutput {
+	return o
+}
+
+// The name of the security zone to associate this compartment with.
+func (o TargetTargetDetailOutput) SecurityZoneDisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetTargetDetail) *string { return v.SecurityZoneDisplayName }).(pulumi.StringPtrOutput)
+}
+
+// The OCID of the security zone to associate this compartment with.
+func (o TargetTargetDetailOutput) SecurityZoneId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetTargetDetail) *string { return v.SecurityZoneId }).(pulumi.StringPtrOutput)
+}
+
+// possible type of targets(compartment/HCMCloud/ERPCloud)
+func (o TargetTargetDetailOutput) TargetResourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetTargetDetail) *string { return v.TargetResourceType }).(pulumi.StringPtrOutput)
+}
+
+// The list of security zone recipes to associate this compartment with.
+func (o TargetTargetDetailOutput) TargetSecurityZoneRecipes() TargetTargetDetailTargetSecurityZoneRecipeArrayOutput {
+	return o.ApplyT(func(v TargetTargetDetail) []TargetTargetDetailTargetSecurityZoneRecipe {
+		return v.TargetSecurityZoneRecipes
+	}).(TargetTargetDetailTargetSecurityZoneRecipeArrayOutput)
+}
+
+type TargetTargetDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (TargetTargetDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TargetTargetDetail)(nil)).Elem()
+}
+
+func (o TargetTargetDetailArrayOutput) ToTargetTargetDetailArrayOutput() TargetTargetDetailArrayOutput {
+	return o
+}
+
+func (o TargetTargetDetailArrayOutput) ToTargetTargetDetailArrayOutputWithContext(ctx context.Context) TargetTargetDetailArrayOutput {
+	return o
+}
+
+func (o TargetTargetDetailArrayOutput) Index(i pulumi.IntInput) TargetTargetDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TargetTargetDetail {
+		return vs[0].([]TargetTargetDetail)[vs[1].(int)]
+	}).(TargetTargetDetailOutput)
+}
+
+type TargetTargetDetailTargetSecurityZoneRecipe struct {
+	// (Updatable) compartment associated with condition
+	CompartmentId *string `pulumi:"compartmentId"`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// The target description.
+	Description *string `pulumi:"description"`
+	// (Updatable) DetectorTemplate identifier.
+	DisplayName *string `pulumi:"displayName"`
+	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// Unique identifier of TargetResponderRecipe that can't be changed after creation.
+	Id *string `pulumi:"id"`
+	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// Owner of ResponderRecipe
+	Owner *string `pulumi:"owner"`
+	// The list of `SecurityPolicy` ids that are included in the recipe
+	SecurityPolicies []string `pulumi:"securityPolicies"`
+	// (Updatable) The current state of the DetectorRule.
+	State *string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// The date and time the target was created. Format defined by RFC3339.
+	TimeCreated *string `pulumi:"timeCreated"`
+	// The date and time the target was updated. Format defined by RFC3339.
+	TimeUpdated *string `pulumi:"timeUpdated"`
+}
+
+// TargetTargetDetailTargetSecurityZoneRecipeInput is an input type that accepts TargetTargetDetailTargetSecurityZoneRecipeArgs and TargetTargetDetailTargetSecurityZoneRecipeOutput values.
+// You can construct a concrete instance of `TargetTargetDetailTargetSecurityZoneRecipeInput` via:
+//
+//          TargetTargetDetailTargetSecurityZoneRecipeArgs{...}
+type TargetTargetDetailTargetSecurityZoneRecipeInput interface {
+	pulumi.Input
+
+	ToTargetTargetDetailTargetSecurityZoneRecipeOutput() TargetTargetDetailTargetSecurityZoneRecipeOutput
+	ToTargetTargetDetailTargetSecurityZoneRecipeOutputWithContext(context.Context) TargetTargetDetailTargetSecurityZoneRecipeOutput
+}
+
+type TargetTargetDetailTargetSecurityZoneRecipeArgs struct {
+	// (Updatable) compartment associated with condition
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// The target description.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// (Updatable) DetectorTemplate identifier.
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// Unique identifier of TargetResponderRecipe that can't be changed after creation.
+	Id pulumi.StringPtrInput `pulumi:"id"`
+	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
+	// Owner of ResponderRecipe
+	Owner pulumi.StringPtrInput `pulumi:"owner"`
+	// The list of `SecurityPolicy` ids that are included in the recipe
+	SecurityPolicies pulumi.StringArrayInput `pulumi:"securityPolicies"`
+	// (Updatable) The current state of the DetectorRule.
+	State pulumi.StringPtrInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	// The date and time the target was created. Format defined by RFC3339.
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// The date and time the target was updated. Format defined by RFC3339.
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
+}
+
+func (TargetTargetDetailTargetSecurityZoneRecipeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TargetTargetDetailTargetSecurityZoneRecipe)(nil)).Elem()
+}
+
+func (i TargetTargetDetailTargetSecurityZoneRecipeArgs) ToTargetTargetDetailTargetSecurityZoneRecipeOutput() TargetTargetDetailTargetSecurityZoneRecipeOutput {
+	return i.ToTargetTargetDetailTargetSecurityZoneRecipeOutputWithContext(context.Background())
+}
+
+func (i TargetTargetDetailTargetSecurityZoneRecipeArgs) ToTargetTargetDetailTargetSecurityZoneRecipeOutputWithContext(ctx context.Context) TargetTargetDetailTargetSecurityZoneRecipeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetDetailTargetSecurityZoneRecipeOutput)
+}
+
+// TargetTargetDetailTargetSecurityZoneRecipeArrayInput is an input type that accepts TargetTargetDetailTargetSecurityZoneRecipeArray and TargetTargetDetailTargetSecurityZoneRecipeArrayOutput values.
+// You can construct a concrete instance of `TargetTargetDetailTargetSecurityZoneRecipeArrayInput` via:
+//
+//          TargetTargetDetailTargetSecurityZoneRecipeArray{ TargetTargetDetailTargetSecurityZoneRecipeArgs{...} }
+type TargetTargetDetailTargetSecurityZoneRecipeArrayInput interface {
+	pulumi.Input
+
+	ToTargetTargetDetailTargetSecurityZoneRecipeArrayOutput() TargetTargetDetailTargetSecurityZoneRecipeArrayOutput
+	ToTargetTargetDetailTargetSecurityZoneRecipeArrayOutputWithContext(context.Context) TargetTargetDetailTargetSecurityZoneRecipeArrayOutput
+}
+
+type TargetTargetDetailTargetSecurityZoneRecipeArray []TargetTargetDetailTargetSecurityZoneRecipeInput
+
+func (TargetTargetDetailTargetSecurityZoneRecipeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TargetTargetDetailTargetSecurityZoneRecipe)(nil)).Elem()
+}
+
+func (i TargetTargetDetailTargetSecurityZoneRecipeArray) ToTargetTargetDetailTargetSecurityZoneRecipeArrayOutput() TargetTargetDetailTargetSecurityZoneRecipeArrayOutput {
+	return i.ToTargetTargetDetailTargetSecurityZoneRecipeArrayOutputWithContext(context.Background())
+}
+
+func (i TargetTargetDetailTargetSecurityZoneRecipeArray) ToTargetTargetDetailTargetSecurityZoneRecipeArrayOutputWithContext(ctx context.Context) TargetTargetDetailTargetSecurityZoneRecipeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetDetailTargetSecurityZoneRecipeArrayOutput)
+}
+
+type TargetTargetDetailTargetSecurityZoneRecipeOutput struct{ *pulumi.OutputState }
+
+func (TargetTargetDetailTargetSecurityZoneRecipeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TargetTargetDetailTargetSecurityZoneRecipe)(nil)).Elem()
+}
+
+func (o TargetTargetDetailTargetSecurityZoneRecipeOutput) ToTargetTargetDetailTargetSecurityZoneRecipeOutput() TargetTargetDetailTargetSecurityZoneRecipeOutput {
+	return o
+}
+
+func (o TargetTargetDetailTargetSecurityZoneRecipeOutput) ToTargetTargetDetailTargetSecurityZoneRecipeOutputWithContext(ctx context.Context) TargetTargetDetailTargetSecurityZoneRecipeOutput {
+	return o
+}
+
+// (Updatable) compartment associated with condition
+func (o TargetTargetDetailTargetSecurityZoneRecipeOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetTargetDetailTargetSecurityZoneRecipe) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o TargetTargetDetailTargetSecurityZoneRecipeOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v TargetTargetDetailTargetSecurityZoneRecipe) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// The target description.
+func (o TargetTargetDetailTargetSecurityZoneRecipeOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetTargetDetailTargetSecurityZoneRecipe) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) DetectorTemplate identifier.
+func (o TargetTargetDetailTargetSecurityZoneRecipeOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetTargetDetailTargetSecurityZoneRecipe) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o TargetTargetDetailTargetSecurityZoneRecipeOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v TargetTargetDetailTargetSecurityZoneRecipe) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// Unique identifier of TargetResponderRecipe that can't be changed after creation.
+func (o TargetTargetDetailTargetSecurityZoneRecipeOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetTargetDetailTargetSecurityZoneRecipe) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+func (o TargetTargetDetailTargetSecurityZoneRecipeOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetTargetDetailTargetSecurityZoneRecipe) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
+}
+
+// Owner of ResponderRecipe
+func (o TargetTargetDetailTargetSecurityZoneRecipeOutput) Owner() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetTargetDetailTargetSecurityZoneRecipe) *string { return v.Owner }).(pulumi.StringPtrOutput)
+}
+
+// The list of `SecurityPolicy` ids that are included in the recipe
+func (o TargetTargetDetailTargetSecurityZoneRecipeOutput) SecurityPolicies() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v TargetTargetDetailTargetSecurityZoneRecipe) []string { return v.SecurityPolicies }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The current state of the DetectorRule.
+func (o TargetTargetDetailTargetSecurityZoneRecipeOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetTargetDetailTargetSecurityZoneRecipe) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o TargetTargetDetailTargetSecurityZoneRecipeOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v TargetTargetDetailTargetSecurityZoneRecipe) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+}
+
+// The date and time the target was created. Format defined by RFC3339.
+func (o TargetTargetDetailTargetSecurityZoneRecipeOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetTargetDetailTargetSecurityZoneRecipe) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// The date and time the target was updated. Format defined by RFC3339.
+func (o TargetTargetDetailTargetSecurityZoneRecipeOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetTargetDetailTargetSecurityZoneRecipe) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
+}
+
+type TargetTargetDetailTargetSecurityZoneRecipeArrayOutput struct{ *pulumi.OutputState }
+
+func (TargetTargetDetailTargetSecurityZoneRecipeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TargetTargetDetailTargetSecurityZoneRecipe)(nil)).Elem()
+}
+
+func (o TargetTargetDetailTargetSecurityZoneRecipeArrayOutput) ToTargetTargetDetailTargetSecurityZoneRecipeArrayOutput() TargetTargetDetailTargetSecurityZoneRecipeArrayOutput {
+	return o
+}
+
+func (o TargetTargetDetailTargetSecurityZoneRecipeArrayOutput) ToTargetTargetDetailTargetSecurityZoneRecipeArrayOutputWithContext(ctx context.Context) TargetTargetDetailTargetSecurityZoneRecipeArrayOutput {
+	return o
+}
+
+func (o TargetTargetDetailTargetSecurityZoneRecipeArrayOutput) Index(i pulumi.IntInput) TargetTargetDetailTargetSecurityZoneRecipeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TargetTargetDetailTargetSecurityZoneRecipe {
+		return vs[0].([]TargetTargetDetailTargetSecurityZoneRecipe)[vs[1].(int)]
+	}).(TargetTargetDetailTargetSecurityZoneRecipeOutput)
+}
+
 type TargetTargetDetectorRecipe struct {
 	// (Updatable) compartment associated with condition
 	CompartmentId *string `pulumi:"compartmentId"`
@@ -2409,11 +2746,11 @@ type TargetTargetDetectorRecipe struct {
 	DetectorRecipeId string `pulumi:"detectorRecipeId"`
 	// (Updatable) Overrides to be applied to Detector Rule associated with the target
 	DetectorRules []TargetTargetDetectorRecipeDetectorRule `pulumi:"detectorRules"`
-	// (Updatable) DetectorTemplate Identifier
+	// (Updatable) DetectorTemplate identifier.
 	DisplayName *string `pulumi:"displayName"`
 	// List of effective detector rules for the detector type for recipe after applying defaults
 	EffectiveDetectorRules []TargetTargetDetectorRecipeEffectiveDetectorRule `pulumi:"effectiveDetectorRules"`
-	// Unique identifier of TargetResponderRecipe that is immutable on creation
+	// Unique identifier of TargetResponderRecipe that can't be changed after creation.
 	Id *string `pulumi:"id"`
 	// Owner of ResponderRecipe
 	Owner *string `pulumi:"owner"`
@@ -2447,11 +2784,11 @@ type TargetTargetDetectorRecipeArgs struct {
 	DetectorRecipeId pulumi.StringInput `pulumi:"detectorRecipeId"`
 	// (Updatable) Overrides to be applied to Detector Rule associated with the target
 	DetectorRules TargetTargetDetectorRecipeDetectorRuleArrayInput `pulumi:"detectorRules"`
-	// (Updatable) DetectorTemplate Identifier
+	// (Updatable) DetectorTemplate identifier.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// List of effective detector rules for the detector type for recipe after applying defaults
 	EffectiveDetectorRules TargetTargetDetectorRecipeEffectiveDetectorRuleArrayInput `pulumi:"effectiveDetectorRules"`
-	// Unique identifier of TargetResponderRecipe that is immutable on creation
+	// Unique identifier of TargetResponderRecipe that can't be changed after creation.
 	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Owner of ResponderRecipe
 	Owner pulumi.StringPtrInput `pulumi:"owner"`
@@ -2539,7 +2876,7 @@ func (o TargetTargetDetectorRecipeOutput) DetectorRules() TargetTargetDetectorRe
 	return o.ApplyT(func(v TargetTargetDetectorRecipe) []TargetTargetDetectorRecipeDetectorRule { return v.DetectorRules }).(TargetTargetDetectorRecipeDetectorRuleArrayOutput)
 }
 
-// (Updatable) DetectorTemplate Identifier
+// (Updatable) DetectorTemplate identifier.
 func (o TargetTargetDetectorRecipeOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetDetectorRecipe) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -2551,7 +2888,7 @@ func (o TargetTargetDetectorRecipeOutput) EffectiveDetectorRules() TargetTargetD
 	}).(TargetTargetDetectorRecipeEffectiveDetectorRuleArrayOutput)
 }
 
-// Unique identifier of TargetResponderRecipe that is immutable on creation
+// Unique identifier of TargetResponderRecipe that can't be changed after creation.
 func (o TargetTargetDetectorRecipeOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetDetectorRecipe) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
@@ -2605,7 +2942,7 @@ type TargetTargetDetectorRecipeDetectorRule struct {
 	Detector *string `pulumi:"detector"`
 	// (Updatable) Identifier for DetectorRule.
 	DetectorRuleId string `pulumi:"detectorRuleId"`
-	// (Updatable) DetectorTemplate Identifier
+	// (Updatable) DetectorTemplate identifier.
 	DisplayName *string `pulumi:"displayName"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
@@ -2645,7 +2982,7 @@ type TargetTargetDetectorRecipeDetectorRuleArgs struct {
 	Detector pulumi.StringPtrInput `pulumi:"detector"`
 	// (Updatable) Identifier for DetectorRule.
 	DetectorRuleId pulumi.StringInput `pulumi:"detectorRuleId"`
-	// (Updatable) DetectorTemplate Identifier
+	// (Updatable) DetectorTemplate identifier.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
@@ -2738,7 +3075,7 @@ func (o TargetTargetDetectorRecipeDetectorRuleOutput) DetectorRuleId() pulumi.St
 	return o.ApplyT(func(v TargetTargetDetectorRecipeDetectorRule) string { return v.DetectorRuleId }).(pulumi.StringOutput)
 }
 
-// (Updatable) DetectorTemplate Identifier
+// (Updatable) DetectorTemplate identifier.
 func (o TargetTargetDetectorRecipeDetectorRuleOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetDetectorRecipeDetectorRule) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -2907,7 +3244,7 @@ func (o TargetTargetDetectorRecipeDetectorRuleDetailsOutput) RiskLevel() pulumi.
 type TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroup struct {
 	// (Updatable) compartment associated with condition
 	CompartmentId string `pulumi:"compartmentId"`
-	// (Updatable)
+	// (Updatable) Base condition object
 	Condition string `pulumi:"condition"`
 }
 
@@ -2925,7 +3262,7 @@ type TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupInput interface 
 type TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArgs struct {
 	// (Updatable) compartment associated with condition
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// (Updatable)
+	// (Updatable) Base condition object
 	Condition pulumi.StringInput `pulumi:"condition"`
 }
 
@@ -2985,7 +3322,7 @@ func (o TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupOutput) Compa
 	return o.ApplyT(func(v TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroup) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// (Updatable)
+// (Updatable) Base condition object
 func (o TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupOutput) Condition() pulumi.StringOutput {
 	return o.ApplyT(func(v TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroup) string { return v.Condition }).(pulumi.StringOutput)
 }
@@ -3271,7 +3608,7 @@ type TargetTargetDetectorRecipeEffectiveDetectorRule struct {
 	Detector *string `pulumi:"detector"`
 	// (Updatable) Identifier for DetectorRule.
 	DetectorRuleId *string `pulumi:"detectorRuleId"`
-	// (Updatable) DetectorTemplate Identifier
+	// (Updatable) DetectorTemplate identifier.
 	DisplayName *string `pulumi:"displayName"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
@@ -3311,7 +3648,7 @@ type TargetTargetDetectorRecipeEffectiveDetectorRuleArgs struct {
 	Detector pulumi.StringPtrInput `pulumi:"detector"`
 	// (Updatable) Identifier for DetectorRule.
 	DetectorRuleId pulumi.StringPtrInput `pulumi:"detectorRuleId"`
-	// (Updatable) DetectorTemplate Identifier
+	// (Updatable) DetectorTemplate identifier.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
@@ -3404,7 +3741,7 @@ func (o TargetTargetDetectorRecipeEffectiveDetectorRuleOutput) DetectorRuleId() 
 	return o.ApplyT(func(v TargetTargetDetectorRecipeEffectiveDetectorRule) *string { return v.DetectorRuleId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) DetectorTemplate Identifier
+// (Updatable) DetectorTemplate identifier.
 func (o TargetTargetDetectorRecipeEffectiveDetectorRuleOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetDetectorRecipeEffectiveDetectorRule) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -3618,7 +3955,7 @@ func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArrayOutput) Index(
 type TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup struct {
 	// (Updatable) compartment associated with condition
 	CompartmentId *string `pulumi:"compartmentId"`
-	// (Updatable)
+	// (Updatable) Base condition object
 	Condition *string `pulumi:"condition"`
 }
 
@@ -3636,7 +3973,7 @@ type TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupInput in
 type TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgs struct {
 	// (Updatable) compartment associated with condition
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
-	// (Updatable)
+	// (Updatable) Base condition object
 	Condition pulumi.StringPtrInput `pulumi:"condition"`
 }
 
@@ -3698,7 +4035,7 @@ func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupOutpu
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable)
+// (Updatable) Base condition object
 func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupOutput) Condition() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup) *string {
 		return v.Condition
@@ -3986,11 +4323,11 @@ type TargetTargetResponderRecipe struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The target description.
 	Description *string `pulumi:"description"`
-	// (Updatable) DetectorTemplate Identifier
+	// (Updatable) DetectorTemplate identifier.
 	DisplayName *string `pulumi:"displayName"`
 	// List of responder rules associated with the recipe after applying all defaults
 	EffectiveResponderRules []TargetTargetResponderRecipeEffectiveResponderRule `pulumi:"effectiveResponderRules"`
-	// Unique identifier of TargetResponderRecipe that is immutable on creation
+	// Unique identifier of TargetResponderRecipe that can't be changed after creation.
 	Id *string `pulumi:"id"`
 	// Owner of ResponderRecipe
 	Owner *string `pulumi:"owner"`
@@ -4020,11 +4357,11 @@ type TargetTargetResponderRecipeArgs struct {
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The target description.
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// (Updatable) DetectorTemplate Identifier
+	// (Updatable) DetectorTemplate identifier.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// List of responder rules associated with the recipe after applying all defaults
 	EffectiveResponderRules TargetTargetResponderRecipeEffectiveResponderRuleArrayInput `pulumi:"effectiveResponderRules"`
-	// Unique identifier of TargetResponderRecipe that is immutable on creation
+	// Unique identifier of TargetResponderRecipe that can't be changed after creation.
 	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Owner of ResponderRecipe
 	Owner pulumi.StringPtrInput `pulumi:"owner"`
@@ -4099,7 +4436,7 @@ func (o TargetTargetResponderRecipeOutput) Description() pulumi.StringPtrOutput 
 	return o.ApplyT(func(v TargetTargetResponderRecipe) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) DetectorTemplate Identifier
+// (Updatable) DetectorTemplate identifier.
 func (o TargetTargetResponderRecipeOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetResponderRecipe) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -4111,7 +4448,7 @@ func (o TargetTargetResponderRecipeOutput) EffectiveResponderRules() TargetTarge
 	}).(TargetTargetResponderRecipeEffectiveResponderRuleArrayOutput)
 }
 
-// Unique identifier of TargetResponderRecipe that is immutable on creation
+// Unique identifier of TargetResponderRecipe that can't be changed after creation.
 func (o TargetTargetResponderRecipeOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetResponderRecipe) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
@@ -4170,7 +4507,7 @@ type TargetTargetResponderRecipeEffectiveResponderRule struct {
 	Description *string `pulumi:"description"`
 	// (Updatable) Details of ResponderRule.
 	Details []TargetTargetResponderRecipeEffectiveResponderRuleDetail `pulumi:"details"`
-	// (Updatable) DetectorTemplate Identifier
+	// (Updatable) DetectorTemplate identifier.
 	DisplayName *string `pulumi:"displayName"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
@@ -4208,7 +4545,7 @@ type TargetTargetResponderRecipeEffectiveResponderRuleArgs struct {
 	Description pulumi.StringPtrInput `pulumi:"description"`
 	// (Updatable) Details of ResponderRule.
 	Details TargetTargetResponderRecipeEffectiveResponderRuleDetailArrayInput `pulumi:"details"`
-	// (Updatable) DetectorTemplate Identifier
+	// (Updatable) DetectorTemplate identifier.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
@@ -4296,7 +4633,7 @@ func (o TargetTargetResponderRecipeEffectiveResponderRuleOutput) Details() Targe
 	}).(TargetTargetResponderRecipeEffectiveResponderRuleDetailArrayOutput)
 }
 
-// (Updatable) DetectorTemplate Identifier
+// (Updatable) DetectorTemplate identifier.
 func (o TargetTargetResponderRecipeEffectiveResponderRuleOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetResponderRecipeEffectiveResponderRule) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -4362,7 +4699,7 @@ func (o TargetTargetResponderRecipeEffectiveResponderRuleArrayOutput) Index(i pu
 }
 
 type TargetTargetResponderRecipeEffectiveResponderRuleDetail struct {
-	// (Updatable)
+	// (Updatable) Base condition object
 	Condition *string `pulumi:"condition"`
 	// (Updatable) Configurations associated with the ResponderRule
 	Configurations []TargetTargetResponderRecipeEffectiveResponderRuleDetailConfiguration `pulumi:"configurations"`
@@ -4384,7 +4721,7 @@ type TargetTargetResponderRecipeEffectiveResponderRuleDetailInput interface {
 }
 
 type TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs struct {
-	// (Updatable)
+	// (Updatable) Base condition object
 	Condition pulumi.StringPtrInput `pulumi:"condition"`
 	// (Updatable) Configurations associated with the ResponderRule
 	Configurations TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayInput `pulumi:"configurations"`
@@ -4445,7 +4782,7 @@ func (o TargetTargetResponderRecipeEffectiveResponderRuleDetailOutput) ToTargetT
 	return o
 }
 
-// (Updatable)
+// (Updatable) Base condition object
 func (o TargetTargetResponderRecipeEffectiveResponderRuleDetailOutput) Condition() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetResponderRecipeEffectiveResponderRuleDetail) *string { return v.Condition }).(pulumi.StringPtrOutput)
 }
@@ -4611,7 +4948,7 @@ type TargetTargetResponderRecipeResponderRule struct {
 	Description *string `pulumi:"description"`
 	// (Updatable) Details of ResponderRule.
 	Details TargetTargetResponderRecipeResponderRuleDetails `pulumi:"details"`
-	// (Updatable) DetectorTemplate Identifier
+	// (Updatable) DetectorTemplate identifier.
 	DisplayName *string `pulumi:"displayName"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
@@ -4649,7 +4986,7 @@ type TargetTargetResponderRecipeResponderRuleArgs struct {
 	Description pulumi.StringPtrInput `pulumi:"description"`
 	// (Updatable) Details of ResponderRule.
 	Details TargetTargetResponderRecipeResponderRuleDetailsInput `pulumi:"details"`
-	// (Updatable) DetectorTemplate Identifier
+	// (Updatable) DetectorTemplate identifier.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
@@ -4737,7 +5074,7 @@ func (o TargetTargetResponderRecipeResponderRuleOutput) Details() TargetTargetRe
 	}).(TargetTargetResponderRecipeResponderRuleDetailsOutput)
 }
 
-// (Updatable) DetectorTemplate Identifier
+// (Updatable) DetectorTemplate identifier.
 func (o TargetTargetResponderRecipeResponderRuleOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetResponderRecipeResponderRule) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -4803,7 +5140,7 @@ func (o TargetTargetResponderRecipeResponderRuleArrayOutput) Index(i pulumi.IntI
 }
 
 type TargetTargetResponderRecipeResponderRuleDetails struct {
-	// (Updatable)
+	// (Updatable) Base condition object
 	Condition *string `pulumi:"condition"`
 	// (Updatable) Configurations associated with the ResponderRule
 	Configurations []TargetTargetResponderRecipeResponderRuleDetailsConfiguration `pulumi:"configurations"`
@@ -4825,7 +5162,7 @@ type TargetTargetResponderRecipeResponderRuleDetailsInput interface {
 }
 
 type TargetTargetResponderRecipeResponderRuleDetailsArgs struct {
-	// (Updatable)
+	// (Updatable) Base condition object
 	Condition pulumi.StringPtrInput `pulumi:"condition"`
 	// (Updatable) Configurations associated with the ResponderRule
 	Configurations TargetTargetResponderRecipeResponderRuleDetailsConfigurationArrayInput `pulumi:"configurations"`
@@ -4861,7 +5198,7 @@ func (o TargetTargetResponderRecipeResponderRuleDetailsOutput) ToTargetTargetRes
 	return o
 }
 
-// (Updatable)
+// (Updatable) Base condition object
 func (o TargetTargetResponderRecipeResponderRuleDetailsOutput) Condition() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetResponderRecipeResponderRuleDetails) *string { return v.Condition }).(pulumi.StringPtrOutput)
 }
@@ -5643,15 +5980,15 @@ func (o GetDataMaskRulesFilterArrayOutput) Index(i pulumi.IntInput) GetDataMaskR
 type GetDetectorRecipeDetectorRule struct {
 	// List of CandidateResponderRule related to this rule
 	CandidateResponderRules []GetDetectorRecipeDetectorRuleCandidateResponderRule `pulumi:"candidateResponderRules"`
-	// Description for DetectorRecipeDetectorRule
+	// Description for DetectorRecipeDetectorRule.
 	Description string `pulumi:"description"`
 	// Details of a Detector Rule
 	Details []GetDetectorRecipeDetectorRuleDetail `pulumi:"details"`
 	// detector for the rule
 	Detector string `pulumi:"detector"`
-	// The unique identifier of the detector rule
+	// The unique identifier of the detector rule.
 	DetectorRuleId string `pulumi:"detectorRuleId"`
-	// displayName
+	// Display name for DetectorRecipeDetectorRule.
 	DisplayName string `pulumi:"displayName"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
@@ -5685,15 +6022,15 @@ type GetDetectorRecipeDetectorRuleInput interface {
 type GetDetectorRecipeDetectorRuleArgs struct {
 	// List of CandidateResponderRule related to this rule
 	CandidateResponderRules GetDetectorRecipeDetectorRuleCandidateResponderRuleArrayInput `pulumi:"candidateResponderRules"`
-	// Description for DetectorRecipeDetectorRule
+	// Description for DetectorRecipeDetectorRule.
 	Description pulumi.StringInput `pulumi:"description"`
 	// Details of a Detector Rule
 	Details GetDetectorRecipeDetectorRuleDetailArrayInput `pulumi:"details"`
 	// detector for the rule
 	Detector pulumi.StringInput `pulumi:"detector"`
-	// The unique identifier of the detector rule
+	// The unique identifier of the detector rule.
 	DetectorRuleId pulumi.StringInput `pulumi:"detectorRuleId"`
-	// displayName
+	// Display name for DetectorRecipeDetectorRule.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
@@ -5771,7 +6108,7 @@ func (o GetDetectorRecipeDetectorRuleOutput) CandidateResponderRules() GetDetect
 	}).(GetDetectorRecipeDetectorRuleCandidateResponderRuleArrayOutput)
 }
 
-// Description for DetectorRecipeDetectorRule
+// Description for DetectorRecipeDetectorRule.
 func (o GetDetectorRecipeDetectorRuleOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDetectorRecipeDetectorRule) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -5786,12 +6123,12 @@ func (o GetDetectorRecipeDetectorRuleOutput) Detector() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDetectorRecipeDetectorRule) string { return v.Detector }).(pulumi.StringOutput)
 }
 
-// The unique identifier of the detector rule
+// The unique identifier of the detector rule.
 func (o GetDetectorRecipeDetectorRuleOutput) DetectorRuleId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDetectorRecipeDetectorRule) string { return v.DetectorRuleId }).(pulumi.StringOutput)
 }
 
-// displayName
+// Display name for DetectorRecipeDetectorRule.
 func (o GetDetectorRecipeDetectorRuleOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDetectorRecipeDetectorRule) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -5857,7 +6194,7 @@ func (o GetDetectorRecipeDetectorRuleArrayOutput) Index(i pulumi.IntInput) GetDe
 }
 
 type GetDetectorRecipeDetectorRuleCandidateResponderRule struct {
-	// displayName
+	// Display name for DetectorRecipeDetectorRule.
 	DisplayName string `pulumi:"displayName"`
 	// Ocid for detector recipe
 	Id string `pulumi:"id"`
@@ -5877,7 +6214,7 @@ type GetDetectorRecipeDetectorRuleCandidateResponderRuleInput interface {
 }
 
 type GetDetectorRecipeDetectorRuleCandidateResponderRuleArgs struct {
-	// displayName
+	// Display name for DetectorRecipeDetectorRule.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Ocid for detector recipe
 	Id pulumi.StringInput `pulumi:"id"`
@@ -5936,7 +6273,7 @@ func (o GetDetectorRecipeDetectorRuleCandidateResponderRuleOutput) ToGetDetector
 	return o
 }
 
-// displayName
+// Display name for DetectorRecipeDetectorRule.
 func (o GetDetectorRecipeDetectorRuleCandidateResponderRuleOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDetectorRecipeDetectorRuleCandidateResponderRule) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -5972,6 +6309,7 @@ func (o GetDetectorRecipeDetectorRuleCandidateResponderRuleArrayOutput) Index(i 
 }
 
 type GetDetectorRecipeDetectorRuleDetail struct {
+	// Base condition object
 	Condition string `pulumi:"condition"`
 	// Configuration details
 	Configurations []GetDetectorRecipeDetectorRuleDetailConfiguration `pulumi:"configurations"`
@@ -5997,6 +6335,7 @@ type GetDetectorRecipeDetectorRuleDetailInput interface {
 }
 
 type GetDetectorRecipeDetectorRuleDetailArgs struct {
+	// Base condition object
 	Condition pulumi.StringInput `pulumi:"condition"`
 	// Configuration details
 	Configurations GetDetectorRecipeDetectorRuleDetailConfigurationArrayInput `pulumi:"configurations"`
@@ -6061,6 +6400,7 @@ func (o GetDetectorRecipeDetectorRuleDetailOutput) ToGetDetectorRecipeDetectorRu
 	return o
 }
 
+// Base condition object
 func (o GetDetectorRecipeDetectorRuleDetailOutput) Condition() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDetectorRecipeDetectorRuleDetail) string { return v.Condition }).(pulumi.StringOutput)
 }
@@ -6365,15 +6705,15 @@ func (o GetDetectorRecipeDetectorRuleDetailConfigurationValueArrayOutput) Index(
 type GetDetectorRecipeEffectiveDetectorRule struct {
 	// List of CandidateResponderRule related to this rule
 	CandidateResponderRules []GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRule `pulumi:"candidateResponderRules"`
-	// Description for DetectorRecipeDetectorRule
+	// Description for DetectorRecipeDetectorRule.
 	Description string `pulumi:"description"`
 	// Details of a Detector Rule
 	Details []GetDetectorRecipeEffectiveDetectorRuleDetail `pulumi:"details"`
 	// detector for the rule
 	Detector string `pulumi:"detector"`
-	// The unique identifier of the detector rule
+	// The unique identifier of the detector rule.
 	DetectorRuleId string `pulumi:"detectorRuleId"`
-	// displayName
+	// Display name for DetectorRecipeDetectorRule.
 	DisplayName string `pulumi:"displayName"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
@@ -6407,15 +6747,15 @@ type GetDetectorRecipeEffectiveDetectorRuleInput interface {
 type GetDetectorRecipeEffectiveDetectorRuleArgs struct {
 	// List of CandidateResponderRule related to this rule
 	CandidateResponderRules GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArrayInput `pulumi:"candidateResponderRules"`
-	// Description for DetectorRecipeDetectorRule
+	// Description for DetectorRecipeDetectorRule.
 	Description pulumi.StringInput `pulumi:"description"`
 	// Details of a Detector Rule
 	Details GetDetectorRecipeEffectiveDetectorRuleDetailArrayInput `pulumi:"details"`
 	// detector for the rule
 	Detector pulumi.StringInput `pulumi:"detector"`
-	// The unique identifier of the detector rule
+	// The unique identifier of the detector rule.
 	DetectorRuleId pulumi.StringInput `pulumi:"detectorRuleId"`
-	// displayName
+	// Display name for DetectorRecipeDetectorRule.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
@@ -6493,7 +6833,7 @@ func (o GetDetectorRecipeEffectiveDetectorRuleOutput) CandidateResponderRules() 
 	}).(GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArrayOutput)
 }
 
-// Description for DetectorRecipeDetectorRule
+// Description for DetectorRecipeDetectorRule.
 func (o GetDetectorRecipeEffectiveDetectorRuleOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDetectorRecipeEffectiveDetectorRule) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -6510,12 +6850,12 @@ func (o GetDetectorRecipeEffectiveDetectorRuleOutput) Detector() pulumi.StringOu
 	return o.ApplyT(func(v GetDetectorRecipeEffectiveDetectorRule) string { return v.Detector }).(pulumi.StringOutput)
 }
 
-// The unique identifier of the detector rule
+// The unique identifier of the detector rule.
 func (o GetDetectorRecipeEffectiveDetectorRuleOutput) DetectorRuleId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDetectorRecipeEffectiveDetectorRule) string { return v.DetectorRuleId }).(pulumi.StringOutput)
 }
 
-// displayName
+// Display name for DetectorRecipeDetectorRule.
 func (o GetDetectorRecipeEffectiveDetectorRuleOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDetectorRecipeEffectiveDetectorRule) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -6581,7 +6921,7 @@ func (o GetDetectorRecipeEffectiveDetectorRuleArrayOutput) Index(i pulumi.IntInp
 }
 
 type GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRule struct {
-	// displayName
+	// Display name for DetectorRecipeDetectorRule.
 	DisplayName string `pulumi:"displayName"`
 	// Ocid for detector recipe
 	Id string `pulumi:"id"`
@@ -6601,7 +6941,7 @@ type GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleInput interface
 }
 
 type GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgs struct {
-	// displayName
+	// Display name for DetectorRecipeDetectorRule.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Ocid for detector recipe
 	Id pulumi.StringInput `pulumi:"id"`
@@ -6660,7 +7000,7 @@ func (o GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleOutput) ToGe
 	return o
 }
 
-// displayName
+// Display name for DetectorRecipeDetectorRule.
 func (o GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRule) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -6696,6 +7036,7 @@ func (o GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArrayOutput)
 }
 
 type GetDetectorRecipeEffectiveDetectorRuleDetail struct {
+	// Base condition object
 	Condition string `pulumi:"condition"`
 	// Configuration details
 	Configurations []GetDetectorRecipeEffectiveDetectorRuleDetailConfiguration `pulumi:"configurations"`
@@ -6721,6 +7062,7 @@ type GetDetectorRecipeEffectiveDetectorRuleDetailInput interface {
 }
 
 type GetDetectorRecipeEffectiveDetectorRuleDetailArgs struct {
+	// Base condition object
 	Condition pulumi.StringInput `pulumi:"condition"`
 	// Configuration details
 	Configurations GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayInput `pulumi:"configurations"`
@@ -6785,6 +7127,7 @@ func (o GetDetectorRecipeEffectiveDetectorRuleDetailOutput) ToGetDetectorRecipeE
 	return o
 }
 
+// Base condition object
 func (o GetDetectorRecipeEffectiveDetectorRuleDetailOutput) Condition() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDetectorRecipeEffectiveDetectorRuleDetail) string { return v.Condition }).(pulumi.StringOutput)
 }
@@ -7189,7 +7532,7 @@ type GetDetectorRecipesDetectorRecipeCollectionItem struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// Description for DetectorRecipeDetectorRule
+	// Description for DetectorRecipeDetectorRule.
 	Description string `pulumi:"description"`
 	// detector for the rule
 	Detector string `pulumi:"detector"`
@@ -7233,7 +7576,7 @@ type GetDetectorRecipesDetectorRecipeCollectionItemArgs struct {
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
-	// Description for DetectorRecipeDetectorRule
+	// Description for DetectorRecipeDetectorRule.
 	Description pulumi.StringInput `pulumi:"description"`
 	// detector for the rule
 	Detector pulumi.StringInput `pulumi:"detector"`
@@ -7322,7 +7665,7 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemOutput) DefinedTags() pulu
 	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// Description for DetectorRecipeDetectorRule
+// Description for DetectorRecipeDetectorRule.
 func (o GetDetectorRecipesDetectorRecipeCollectionItemOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItem) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -7414,13 +7757,13 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemArrayOutput) Index(i pulum
 type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRule struct {
 	// List of CandidateResponderRule related to this rule
 	CandidateResponderRules []GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRule `pulumi:"candidateResponderRules"`
-	// Description for DetectorRecipeDetectorRule
+	// Description for DetectorRecipeDetectorRule.
 	Description string `pulumi:"description"`
 	// Details of a Detector Rule
 	Details []GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetail `pulumi:"details"`
 	// detector for the rule
 	Detector string `pulumi:"detector"`
-	// The unique identifier of the detector rule
+	// The unique identifier of the detector rule.
 	DetectorRuleId string `pulumi:"detectorRuleId"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
@@ -7456,13 +7799,13 @@ type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleInput interface {
 type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleArgs struct {
 	// List of CandidateResponderRule related to this rule
 	CandidateResponderRules GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRuleArrayInput `pulumi:"candidateResponderRules"`
-	// Description for DetectorRecipeDetectorRule
+	// Description for DetectorRecipeDetectorRule.
 	Description pulumi.StringInput `pulumi:"description"`
 	// Details of a Detector Rule
 	Details GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailArrayInput `pulumi:"details"`
 	// detector for the rule
 	Detector pulumi.StringInput `pulumi:"detector"`
-	// The unique identifier of the detector rule
+	// The unique identifier of the detector rule.
 	DetectorRuleId pulumi.StringInput `pulumi:"detectorRuleId"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
@@ -7542,7 +7885,7 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleOutput) Candid
 	}).(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRuleArrayOutput)
 }
 
-// Description for DetectorRecipeDetectorRule
+// Description for DetectorRecipeDetectorRule.
 func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemDetectorRule) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -7559,7 +7902,7 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleOutput) Detect
 	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemDetectorRule) string { return v.Detector }).(pulumi.StringOutput)
 }
 
-// The unique identifier of the detector rule
+// The unique identifier of the detector rule.
 func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleOutput) DetectorRuleId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemDetectorRule) string { return v.DetectorRuleId }).(pulumi.StringOutput)
 }
@@ -7751,6 +8094,7 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateRespo
 }
 
 type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetail struct {
+	// Base condition object
 	Condition string `pulumi:"condition"`
 	// Configuration details
 	Configurations []GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfiguration `pulumi:"configurations"`
@@ -7776,6 +8120,7 @@ type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailInput inter
 }
 
 type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailArgs struct {
+	// Base condition object
 	Condition pulumi.StringInput `pulumi:"condition"`
 	// Configuration details
 	Configurations GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationArrayInput `pulumi:"configurations"`
@@ -7840,6 +8185,7 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailOutput) 
 	return o
 }
 
+// Base condition object
 func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailOutput) Condition() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetail) string { return v.Condition }).(pulumi.StringOutput)
 }
@@ -8160,13 +8506,13 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigur
 type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRule struct {
 	// List of CandidateResponderRule related to this rule
 	CandidateResponderRules []GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRule `pulumi:"candidateResponderRules"`
-	// Description for DetectorRecipeDetectorRule
+	// Description for DetectorRecipeDetectorRule.
 	Description string `pulumi:"description"`
 	// Details of a Detector Rule
 	Details []GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetail `pulumi:"details"`
 	// detector for the rule
 	Detector string `pulumi:"detector"`
-	// The unique identifier of the detector rule
+	// The unique identifier of the detector rule.
 	DetectorRuleId string `pulumi:"detectorRuleId"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
@@ -8202,13 +8548,13 @@ type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleInput in
 type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleArgs struct {
 	// List of CandidateResponderRule related to this rule
 	CandidateResponderRules GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRuleArrayInput `pulumi:"candidateResponderRules"`
-	// Description for DetectorRecipeDetectorRule
+	// Description for DetectorRecipeDetectorRule.
 	Description pulumi.StringInput `pulumi:"description"`
 	// Details of a Detector Rule
 	Details GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailArrayInput `pulumi:"details"`
 	// detector for the rule
 	Detector pulumi.StringInput `pulumi:"detector"`
-	// The unique identifier of the detector rule
+	// The unique identifier of the detector rule.
 	DetectorRuleId pulumi.StringInput `pulumi:"detectorRuleId"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
@@ -8288,7 +8634,7 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleOutpu
 	}).(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRuleArrayOutput)
 }
 
-// Description for DetectorRecipeDetectorRule
+// Description for DetectorRecipeDetectorRule.
 func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRule) string {
 		return v.Description
@@ -8307,7 +8653,7 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleOutpu
 	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRule) string { return v.Detector }).(pulumi.StringOutput)
 }
 
-// The unique identifier of the detector rule
+// The unique identifier of the detector rule.
 func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleOutput) DetectorRuleId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRule) string {
 		return v.DetectorRuleId
@@ -8517,6 +8863,7 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandi
 }
 
 type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetail struct {
+	// Base condition object
 	Condition string `pulumi:"condition"`
 	// Configuration details
 	Configurations []GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfiguration `pulumi:"configurations"`
@@ -8542,6 +8889,7 @@ type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailIn
 }
 
 type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailArgs struct {
+	// Base condition object
 	Condition pulumi.StringInput `pulumi:"condition"`
 	// Configuration details
 	Configurations GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationArrayInput `pulumi:"configurations"`
@@ -8606,6 +8954,7 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetai
 	return o
 }
 
+// Base condition object
 func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailOutput) Condition() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetail) string {
 		return v.Condition
@@ -9043,10 +9392,345 @@ func (o GetDetectorRecipesFilterArrayOutput) Index(i pulumi.IntInput) GetDetecto
 	}).(GetDetectorRecipesFilterOutput)
 }
 
+type GetGuardTargetTargetDetail struct {
+	// The name of the security zone to associate this compartment with.
+	SecurityZoneDisplayName string `pulumi:"securityZoneDisplayName"`
+	// The OCID of the security zone to associate this compartment with.
+	SecurityZoneId string `pulumi:"securityZoneId"`
+	// possible type of targets
+	TargetResourceType string `pulumi:"targetResourceType"`
+	// The list of security zone recipes to associate this compartment with.
+	TargetSecurityZoneRecipes []GetGuardTargetTargetDetailTargetSecurityZoneRecipe `pulumi:"targetSecurityZoneRecipes"`
+}
+
+// GetGuardTargetTargetDetailInput is an input type that accepts GetGuardTargetTargetDetailArgs and GetGuardTargetTargetDetailOutput values.
+// You can construct a concrete instance of `GetGuardTargetTargetDetailInput` via:
+//
+//          GetGuardTargetTargetDetailArgs{...}
+type GetGuardTargetTargetDetailInput interface {
+	pulumi.Input
+
+	ToGetGuardTargetTargetDetailOutput() GetGuardTargetTargetDetailOutput
+	ToGetGuardTargetTargetDetailOutputWithContext(context.Context) GetGuardTargetTargetDetailOutput
+}
+
+type GetGuardTargetTargetDetailArgs struct {
+	// The name of the security zone to associate this compartment with.
+	SecurityZoneDisplayName pulumi.StringInput `pulumi:"securityZoneDisplayName"`
+	// The OCID of the security zone to associate this compartment with.
+	SecurityZoneId pulumi.StringInput `pulumi:"securityZoneId"`
+	// possible type of targets
+	TargetResourceType pulumi.StringInput `pulumi:"targetResourceType"`
+	// The list of security zone recipes to associate this compartment with.
+	TargetSecurityZoneRecipes GetGuardTargetTargetDetailTargetSecurityZoneRecipeArrayInput `pulumi:"targetSecurityZoneRecipes"`
+}
+
+func (GetGuardTargetTargetDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGuardTargetTargetDetail)(nil)).Elem()
+}
+
+func (i GetGuardTargetTargetDetailArgs) ToGetGuardTargetTargetDetailOutput() GetGuardTargetTargetDetailOutput {
+	return i.ToGetGuardTargetTargetDetailOutputWithContext(context.Background())
+}
+
+func (i GetGuardTargetTargetDetailArgs) ToGetGuardTargetTargetDetailOutputWithContext(ctx context.Context) GetGuardTargetTargetDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetDetailOutput)
+}
+
+// GetGuardTargetTargetDetailArrayInput is an input type that accepts GetGuardTargetTargetDetailArray and GetGuardTargetTargetDetailArrayOutput values.
+// You can construct a concrete instance of `GetGuardTargetTargetDetailArrayInput` via:
+//
+//          GetGuardTargetTargetDetailArray{ GetGuardTargetTargetDetailArgs{...} }
+type GetGuardTargetTargetDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetGuardTargetTargetDetailArrayOutput() GetGuardTargetTargetDetailArrayOutput
+	ToGetGuardTargetTargetDetailArrayOutputWithContext(context.Context) GetGuardTargetTargetDetailArrayOutput
+}
+
+type GetGuardTargetTargetDetailArray []GetGuardTargetTargetDetailInput
+
+func (GetGuardTargetTargetDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGuardTargetTargetDetail)(nil)).Elem()
+}
+
+func (i GetGuardTargetTargetDetailArray) ToGetGuardTargetTargetDetailArrayOutput() GetGuardTargetTargetDetailArrayOutput {
+	return i.ToGetGuardTargetTargetDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetGuardTargetTargetDetailArray) ToGetGuardTargetTargetDetailArrayOutputWithContext(ctx context.Context) GetGuardTargetTargetDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetDetailArrayOutput)
+}
+
+type GetGuardTargetTargetDetailOutput struct{ *pulumi.OutputState }
+
+func (GetGuardTargetTargetDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGuardTargetTargetDetail)(nil)).Elem()
+}
+
+func (o GetGuardTargetTargetDetailOutput) ToGetGuardTargetTargetDetailOutput() GetGuardTargetTargetDetailOutput {
+	return o
+}
+
+func (o GetGuardTargetTargetDetailOutput) ToGetGuardTargetTargetDetailOutputWithContext(ctx context.Context) GetGuardTargetTargetDetailOutput {
+	return o
+}
+
+// The name of the security zone to associate this compartment with.
+func (o GetGuardTargetTargetDetailOutput) SecurityZoneDisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetTargetDetail) string { return v.SecurityZoneDisplayName }).(pulumi.StringOutput)
+}
+
+// The OCID of the security zone to associate this compartment with.
+func (o GetGuardTargetTargetDetailOutput) SecurityZoneId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetTargetDetail) string { return v.SecurityZoneId }).(pulumi.StringOutput)
+}
+
+// possible type of targets
+func (o GetGuardTargetTargetDetailOutput) TargetResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetTargetDetail) string { return v.TargetResourceType }).(pulumi.StringOutput)
+}
+
+// The list of security zone recipes to associate this compartment with.
+func (o GetGuardTargetTargetDetailOutput) TargetSecurityZoneRecipes() GetGuardTargetTargetDetailTargetSecurityZoneRecipeArrayOutput {
+	return o.ApplyT(func(v GetGuardTargetTargetDetail) []GetGuardTargetTargetDetailTargetSecurityZoneRecipe {
+		return v.TargetSecurityZoneRecipes
+	}).(GetGuardTargetTargetDetailTargetSecurityZoneRecipeArrayOutput)
+}
+
+type GetGuardTargetTargetDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetGuardTargetTargetDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGuardTargetTargetDetail)(nil)).Elem()
+}
+
+func (o GetGuardTargetTargetDetailArrayOutput) ToGetGuardTargetTargetDetailArrayOutput() GetGuardTargetTargetDetailArrayOutput {
+	return o
+}
+
+func (o GetGuardTargetTargetDetailArrayOutput) ToGetGuardTargetTargetDetailArrayOutputWithContext(ctx context.Context) GetGuardTargetTargetDetailArrayOutput {
+	return o
+}
+
+func (o GetGuardTargetTargetDetailArrayOutput) Index(i pulumi.IntInput) GetGuardTargetTargetDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGuardTargetTargetDetail {
+		return vs[0].([]GetGuardTargetTargetDetail)[vs[1].(int)]
+	}).(GetGuardTargetTargetDetailOutput)
+}
+
+type GetGuardTargetTargetDetailTargetSecurityZoneRecipe struct {
+	// Compartment Identifier
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// ResponderRule description.
+	Description string `pulumi:"description"`
+	// ResponderRule display name.
+	DisplayName string `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// Unique identifier of TargetResponderRecipe that can't be changed after creation.
+	Id string `pulumi:"id"`
+	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Owner of ResponderRecipe
+	Owner string `pulumi:"owner"`
+	// The list of `SecurityPolicy` ids that are included in the recipe
+	SecurityPolicies []string `pulumi:"securityPolicies"`
+	// The current state of the ResponderRule.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// The date and time the target was created. Format defined by RFC3339.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the target was updated. Format defined by RFC3339.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetGuardTargetTargetDetailTargetSecurityZoneRecipeInput is an input type that accepts GetGuardTargetTargetDetailTargetSecurityZoneRecipeArgs and GetGuardTargetTargetDetailTargetSecurityZoneRecipeOutput values.
+// You can construct a concrete instance of `GetGuardTargetTargetDetailTargetSecurityZoneRecipeInput` via:
+//
+//          GetGuardTargetTargetDetailTargetSecurityZoneRecipeArgs{...}
+type GetGuardTargetTargetDetailTargetSecurityZoneRecipeInput interface {
+	pulumi.Input
+
+	ToGetGuardTargetTargetDetailTargetSecurityZoneRecipeOutput() GetGuardTargetTargetDetailTargetSecurityZoneRecipeOutput
+	ToGetGuardTargetTargetDetailTargetSecurityZoneRecipeOutputWithContext(context.Context) GetGuardTargetTargetDetailTargetSecurityZoneRecipeOutput
+}
+
+type GetGuardTargetTargetDetailTargetSecurityZoneRecipeArgs struct {
+	// Compartment Identifier
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// ResponderRule description.
+	Description pulumi.StringInput `pulumi:"description"`
+	// ResponderRule display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// Unique identifier of TargetResponderRecipe that can't be changed after creation.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Owner of ResponderRecipe
+	Owner pulumi.StringInput `pulumi:"owner"`
+	// The list of `SecurityPolicy` ids that are included in the recipe
+	SecurityPolicies pulumi.StringArrayInput `pulumi:"securityPolicies"`
+	// The current state of the ResponderRule.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	// The date and time the target was created. Format defined by RFC3339.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the target was updated. Format defined by RFC3339.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetGuardTargetTargetDetailTargetSecurityZoneRecipeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGuardTargetTargetDetailTargetSecurityZoneRecipe)(nil)).Elem()
+}
+
+func (i GetGuardTargetTargetDetailTargetSecurityZoneRecipeArgs) ToGetGuardTargetTargetDetailTargetSecurityZoneRecipeOutput() GetGuardTargetTargetDetailTargetSecurityZoneRecipeOutput {
+	return i.ToGetGuardTargetTargetDetailTargetSecurityZoneRecipeOutputWithContext(context.Background())
+}
+
+func (i GetGuardTargetTargetDetailTargetSecurityZoneRecipeArgs) ToGetGuardTargetTargetDetailTargetSecurityZoneRecipeOutputWithContext(ctx context.Context) GetGuardTargetTargetDetailTargetSecurityZoneRecipeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetDetailTargetSecurityZoneRecipeOutput)
+}
+
+// GetGuardTargetTargetDetailTargetSecurityZoneRecipeArrayInput is an input type that accepts GetGuardTargetTargetDetailTargetSecurityZoneRecipeArray and GetGuardTargetTargetDetailTargetSecurityZoneRecipeArrayOutput values.
+// You can construct a concrete instance of `GetGuardTargetTargetDetailTargetSecurityZoneRecipeArrayInput` via:
+//
+//          GetGuardTargetTargetDetailTargetSecurityZoneRecipeArray{ GetGuardTargetTargetDetailTargetSecurityZoneRecipeArgs{...} }
+type GetGuardTargetTargetDetailTargetSecurityZoneRecipeArrayInput interface {
+	pulumi.Input
+
+	ToGetGuardTargetTargetDetailTargetSecurityZoneRecipeArrayOutput() GetGuardTargetTargetDetailTargetSecurityZoneRecipeArrayOutput
+	ToGetGuardTargetTargetDetailTargetSecurityZoneRecipeArrayOutputWithContext(context.Context) GetGuardTargetTargetDetailTargetSecurityZoneRecipeArrayOutput
+}
+
+type GetGuardTargetTargetDetailTargetSecurityZoneRecipeArray []GetGuardTargetTargetDetailTargetSecurityZoneRecipeInput
+
+func (GetGuardTargetTargetDetailTargetSecurityZoneRecipeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGuardTargetTargetDetailTargetSecurityZoneRecipe)(nil)).Elem()
+}
+
+func (i GetGuardTargetTargetDetailTargetSecurityZoneRecipeArray) ToGetGuardTargetTargetDetailTargetSecurityZoneRecipeArrayOutput() GetGuardTargetTargetDetailTargetSecurityZoneRecipeArrayOutput {
+	return i.ToGetGuardTargetTargetDetailTargetSecurityZoneRecipeArrayOutputWithContext(context.Background())
+}
+
+func (i GetGuardTargetTargetDetailTargetSecurityZoneRecipeArray) ToGetGuardTargetTargetDetailTargetSecurityZoneRecipeArrayOutputWithContext(ctx context.Context) GetGuardTargetTargetDetailTargetSecurityZoneRecipeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetDetailTargetSecurityZoneRecipeArrayOutput)
+}
+
+type GetGuardTargetTargetDetailTargetSecurityZoneRecipeOutput struct{ *pulumi.OutputState }
+
+func (GetGuardTargetTargetDetailTargetSecurityZoneRecipeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGuardTargetTargetDetailTargetSecurityZoneRecipe)(nil)).Elem()
+}
+
+func (o GetGuardTargetTargetDetailTargetSecurityZoneRecipeOutput) ToGetGuardTargetTargetDetailTargetSecurityZoneRecipeOutput() GetGuardTargetTargetDetailTargetSecurityZoneRecipeOutput {
+	return o
+}
+
+func (o GetGuardTargetTargetDetailTargetSecurityZoneRecipeOutput) ToGetGuardTargetTargetDetailTargetSecurityZoneRecipeOutputWithContext(ctx context.Context) GetGuardTargetTargetDetailTargetSecurityZoneRecipeOutput {
+	return o
+}
+
+// Compartment Identifier
+func (o GetGuardTargetTargetDetailTargetSecurityZoneRecipeOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetTargetDetailTargetSecurityZoneRecipe) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetGuardTargetTargetDetailTargetSecurityZoneRecipeOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetGuardTargetTargetDetailTargetSecurityZoneRecipe) map[string]interface{} {
+		return v.DefinedTags
+	}).(pulumi.MapOutput)
+}
+
+// ResponderRule description.
+func (o GetGuardTargetTargetDetailTargetSecurityZoneRecipeOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetTargetDetailTargetSecurityZoneRecipe) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// ResponderRule display name.
+func (o GetGuardTargetTargetDetailTargetSecurityZoneRecipeOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetTargetDetailTargetSecurityZoneRecipe) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetGuardTargetTargetDetailTargetSecurityZoneRecipeOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetGuardTargetTargetDetailTargetSecurityZoneRecipe) map[string]interface{} {
+		return v.FreeformTags
+	}).(pulumi.MapOutput)
+}
+
+// Unique identifier of TargetResponderRecipe that can't be changed after creation.
+func (o GetGuardTargetTargetDetailTargetSecurityZoneRecipeOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetTargetDetailTargetSecurityZoneRecipe) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+func (o GetGuardTargetTargetDetailTargetSecurityZoneRecipeOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetTargetDetailTargetSecurityZoneRecipe) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Owner of ResponderRecipe
+func (o GetGuardTargetTargetDetailTargetSecurityZoneRecipeOutput) Owner() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetTargetDetailTargetSecurityZoneRecipe) string { return v.Owner }).(pulumi.StringOutput)
+}
+
+// The list of `SecurityPolicy` ids that are included in the recipe
+func (o GetGuardTargetTargetDetailTargetSecurityZoneRecipeOutput) SecurityPolicies() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetGuardTargetTargetDetailTargetSecurityZoneRecipe) []string { return v.SecurityPolicies }).(pulumi.StringArrayOutput)
+}
+
+// The current state of the ResponderRule.
+func (o GetGuardTargetTargetDetailTargetSecurityZoneRecipeOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetTargetDetailTargetSecurityZoneRecipe) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetGuardTargetTargetDetailTargetSecurityZoneRecipeOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetGuardTargetTargetDetailTargetSecurityZoneRecipe) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+}
+
+// The date and time the target was created. Format defined by RFC3339.
+func (o GetGuardTargetTargetDetailTargetSecurityZoneRecipeOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetTargetDetailTargetSecurityZoneRecipe) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the target was updated. Format defined by RFC3339.
+func (o GetGuardTargetTargetDetailTargetSecurityZoneRecipeOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetTargetDetailTargetSecurityZoneRecipe) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetGuardTargetTargetDetailTargetSecurityZoneRecipeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetGuardTargetTargetDetailTargetSecurityZoneRecipeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGuardTargetTargetDetailTargetSecurityZoneRecipe)(nil)).Elem()
+}
+
+func (o GetGuardTargetTargetDetailTargetSecurityZoneRecipeArrayOutput) ToGetGuardTargetTargetDetailTargetSecurityZoneRecipeArrayOutput() GetGuardTargetTargetDetailTargetSecurityZoneRecipeArrayOutput {
+	return o
+}
+
+func (o GetGuardTargetTargetDetailTargetSecurityZoneRecipeArrayOutput) ToGetGuardTargetTargetDetailTargetSecurityZoneRecipeArrayOutputWithContext(ctx context.Context) GetGuardTargetTargetDetailTargetSecurityZoneRecipeArrayOutput {
+	return o
+}
+
+func (o GetGuardTargetTargetDetailTargetSecurityZoneRecipeArrayOutput) Index(i pulumi.IntInput) GetGuardTargetTargetDetailTargetSecurityZoneRecipeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGuardTargetTargetDetailTargetSecurityZoneRecipe {
+		return vs[0].([]GetGuardTargetTargetDetailTargetSecurityZoneRecipe)[vs[1].(int)]
+	}).(GetGuardTargetTargetDetailTargetSecurityZoneRecipeOutput)
+}
+
 type GetGuardTargetTargetDetectorRecipe struct {
 	// Compartment Identifier
 	CompartmentId string `pulumi:"compartmentId"`
-	// ResponderRule Description
+	// ResponderRule description.
 	Description string `pulumi:"description"`
 	// detector for the rule
 	Detector string `pulumi:"detector"`
@@ -9054,11 +9738,11 @@ type GetGuardTargetTargetDetectorRecipe struct {
 	DetectorRecipeId string `pulumi:"detectorRecipeId"`
 	// List of detector rules for the detector type for recipe - user input
 	DetectorRules []GetGuardTargetTargetDetectorRecipeDetectorRule `pulumi:"detectorRules"`
-	// ResponderRule Display Name
+	// ResponderRule display name.
 	DisplayName string `pulumi:"displayName"`
 	// List of effective detector rules for the detector type for recipe after applying defaults
 	EffectiveDetectorRules []GetGuardTargetTargetDetectorRecipeEffectiveDetectorRule `pulumi:"effectiveDetectorRules"`
-	// Unique identifier of TargetResponderRecipe that is immutable on creation
+	// Unique identifier of TargetResponderRecipe that can't be changed after creation.
 	Id string `pulumi:"id"`
 	// Owner of ResponderRecipe
 	Owner string `pulumi:"owner"`
@@ -9084,7 +9768,7 @@ type GetGuardTargetTargetDetectorRecipeInput interface {
 type GetGuardTargetTargetDetectorRecipeArgs struct {
 	// Compartment Identifier
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// ResponderRule Description
+	// ResponderRule description.
 	Description pulumi.StringInput `pulumi:"description"`
 	// detector for the rule
 	Detector pulumi.StringInput `pulumi:"detector"`
@@ -9092,11 +9776,11 @@ type GetGuardTargetTargetDetectorRecipeArgs struct {
 	DetectorRecipeId pulumi.StringInput `pulumi:"detectorRecipeId"`
 	// List of detector rules for the detector type for recipe - user input
 	DetectorRules GetGuardTargetTargetDetectorRecipeDetectorRuleArrayInput `pulumi:"detectorRules"`
-	// ResponderRule Display Name
+	// ResponderRule display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// List of effective detector rules for the detector type for recipe after applying defaults
 	EffectiveDetectorRules GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleArrayInput `pulumi:"effectiveDetectorRules"`
-	// Unique identifier of TargetResponderRecipe that is immutable on creation
+	// Unique identifier of TargetResponderRecipe that can't be changed after creation.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Owner of ResponderRecipe
 	Owner pulumi.StringInput `pulumi:"owner"`
@@ -9164,7 +9848,7 @@ func (o GetGuardTargetTargetDetectorRecipeOutput) CompartmentId() pulumi.StringO
 	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipe) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// ResponderRule Description
+// ResponderRule description.
 func (o GetGuardTargetTargetDetectorRecipeOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipe) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -9186,7 +9870,7 @@ func (o GetGuardTargetTargetDetectorRecipeOutput) DetectorRules() GetGuardTarget
 	}).(GetGuardTargetTargetDetectorRecipeDetectorRuleArrayOutput)
 }
 
-// ResponderRule Display Name
+// ResponderRule display name.
 func (o GetGuardTargetTargetDetectorRecipeOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipe) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -9198,7 +9882,7 @@ func (o GetGuardTargetTargetDetectorRecipeOutput) EffectiveDetectorRules() GetGu
 	}).(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleArrayOutput)
 }
 
-// Unique identifier of TargetResponderRecipe that is immutable on creation
+// Unique identifier of TargetResponderRecipe that can't be changed after creation.
 func (o GetGuardTargetTargetDetectorRecipeOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipe) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -9244,15 +9928,15 @@ func (o GetGuardTargetTargetDetectorRecipeArrayOutput) Index(i pulumi.IntInput) 
 }
 
 type GetGuardTargetTargetDetectorRecipeDetectorRule struct {
-	// ResponderRule Description
+	// ResponderRule description.
 	Description string `pulumi:"description"`
 	// Details of ResponderRule.
 	Details []GetGuardTargetTargetDetectorRecipeDetectorRuleDetail `pulumi:"details"`
 	// detector for the rule
 	Detector string `pulumi:"detector"`
-	// The unique identifier of the detector rule
+	// The unique identifier of the detector rule.
 	DetectorRuleId string `pulumi:"detectorRuleId"`
-	// ResponderRule Display Name
+	// ResponderRule display name.
 	DisplayName string `pulumi:"displayName"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
@@ -9284,15 +9968,15 @@ type GetGuardTargetTargetDetectorRecipeDetectorRuleInput interface {
 }
 
 type GetGuardTargetTargetDetectorRecipeDetectorRuleArgs struct {
-	// ResponderRule Description
+	// ResponderRule description.
 	Description pulumi.StringInput `pulumi:"description"`
 	// Details of ResponderRule.
 	Details GetGuardTargetTargetDetectorRecipeDetectorRuleDetailArrayInput `pulumi:"details"`
 	// detector for the rule
 	Detector pulumi.StringInput `pulumi:"detector"`
-	// The unique identifier of the detector rule
+	// The unique identifier of the detector rule.
 	DetectorRuleId pulumi.StringInput `pulumi:"detectorRuleId"`
-	// ResponderRule Display Name
+	// ResponderRule display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
@@ -9363,7 +10047,7 @@ func (o GetGuardTargetTargetDetectorRecipeDetectorRuleOutput) ToGetGuardTargetTa
 	return o
 }
 
-// ResponderRule Description
+// ResponderRule description.
 func (o GetGuardTargetTargetDetectorRecipeDetectorRuleOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipeDetectorRule) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -9380,12 +10064,12 @@ func (o GetGuardTargetTargetDetectorRecipeDetectorRuleOutput) Detector() pulumi.
 	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipeDetectorRule) string { return v.Detector }).(pulumi.StringOutput)
 }
 
-// The unique identifier of the detector rule
+// The unique identifier of the detector rule.
 func (o GetGuardTargetTargetDetectorRecipeDetectorRuleOutput) DetectorRuleId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipeDetectorRule) string { return v.DetectorRuleId }).(pulumi.StringOutput)
 }
 
-// ResponderRule Display Name
+// ResponderRule display name.
 func (o GetGuardTargetTargetDetectorRecipeDetectorRuleOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipeDetectorRule) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -9599,7 +10283,8 @@ func (o GetGuardTargetTargetDetectorRecipeDetectorRuleDetailArrayOutput) Index(i
 type GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroup struct {
 	// Compartment Identifier
 	CompartmentId string `pulumi:"compartmentId"`
-	Condition     string `pulumi:"condition"`
+	// Base condition object
+	Condition string `pulumi:"condition"`
 }
 
 // GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupInput is an input type that accepts GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupArgs and GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupOutput values.
@@ -9616,7 +10301,8 @@ type GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupInput int
 type GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupArgs struct {
 	// Compartment Identifier
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	Condition     pulumi.StringInput `pulumi:"condition"`
+	// Base condition object
+	Condition pulumi.StringInput `pulumi:"condition"`
 }
 
 func (GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupArgs) ElementType() reflect.Type {
@@ -9677,6 +10363,7 @@ func (o GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupOutput
 	}).(pulumi.StringOutput)
 }
 
+// Base condition object
 func (o GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupOutput) Condition() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroup) string { return v.Condition }).(pulumi.StringOutput)
 }
@@ -9956,15 +10643,15 @@ func (o GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueAr
 }
 
 type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRule struct {
-	// ResponderRule Description
+	// ResponderRule description.
 	Description string `pulumi:"description"`
 	// Details of ResponderRule.
 	Details []GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetail `pulumi:"details"`
 	// detector for the rule
 	Detector string `pulumi:"detector"`
-	// The unique identifier of the detector rule
+	// The unique identifier of the detector rule.
 	DetectorRuleId string `pulumi:"detectorRuleId"`
-	// ResponderRule Display Name
+	// ResponderRule display name.
 	DisplayName string `pulumi:"displayName"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
@@ -9996,15 +10683,15 @@ type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleInput interface {
 }
 
 type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleArgs struct {
-	// ResponderRule Description
+	// ResponderRule description.
 	Description pulumi.StringInput `pulumi:"description"`
 	// Details of ResponderRule.
 	Details GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailArrayInput `pulumi:"details"`
 	// detector for the rule
 	Detector pulumi.StringInput `pulumi:"detector"`
-	// The unique identifier of the detector rule
+	// The unique identifier of the detector rule.
 	DetectorRuleId pulumi.StringInput `pulumi:"detectorRuleId"`
-	// ResponderRule Display Name
+	// ResponderRule display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
@@ -10075,7 +10762,7 @@ func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleOutput) ToGetGuar
 	return o
 }
 
-// ResponderRule Description
+// ResponderRule description.
 func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipeEffectiveDetectorRule) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -10092,12 +10779,12 @@ func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleOutput) Detector(
 	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipeEffectiveDetectorRule) string { return v.Detector }).(pulumi.StringOutput)
 }
 
-// The unique identifier of the detector rule
+// The unique identifier of the detector rule.
 func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleOutput) DetectorRuleId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipeEffectiveDetectorRule) string { return v.DetectorRuleId }).(pulumi.StringOutput)
 }
 
-// ResponderRule Display Name
+// ResponderRule display name.
 func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipeEffectiveDetectorRule) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -10313,7 +11000,8 @@ func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailArrayOutput
 type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup struct {
 	// Compartment Identifier
 	CompartmentId string `pulumi:"compartmentId"`
-	Condition     string `pulumi:"condition"`
+	// Base condition object
+	Condition string `pulumi:"condition"`
 }
 
 // GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupInput is an input type that accepts GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgs and GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupOutput values.
@@ -10330,7 +11018,8 @@ type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup
 type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgs struct {
 	// Compartment Identifier
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	Condition     pulumi.StringInput `pulumi:"condition"`
+	// Base condition object
+	Condition pulumi.StringInput `pulumi:"condition"`
 }
 
 func (GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgs) ElementType() reflect.Type {
@@ -10391,6 +11080,7 @@ func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGr
 	}).(pulumi.StringOutput)
 }
 
+// Base condition object
 func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupOutput) Condition() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup) string {
 		return v.Condition
@@ -10684,17 +11374,17 @@ func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurati
 type GetGuardTargetTargetResponderRecipe struct {
 	// Compartment Identifier
 	CompartmentId string `pulumi:"compartmentId"`
-	// ResponderRule Description
+	// ResponderRule description.
 	Description string `pulumi:"description"`
-	// ResponderRule Display Name
+	// ResponderRule display name.
 	DisplayName string `pulumi:"displayName"`
 	// List of responder rules associated with the recipe after applying all defaults
 	EffectiveResponderRules []GetGuardTargetTargetResponderRecipeEffectiveResponderRule `pulumi:"effectiveResponderRules"`
-	// Unique identifier of TargetResponderRecipe that is immutable on creation
+	// Unique identifier of TargetResponderRecipe that can't be changed after creation.
 	Id string `pulumi:"id"`
 	// Owner of ResponderRecipe
 	Owner string `pulumi:"owner"`
-	// Unique identifier for Responder Recipe of which this is an extension
+	// Unique identifier for Responder Recipe of which this is an extension.
 	ResponderRecipeId string `pulumi:"responderRecipeId"`
 	// List of responder rules associated with the recipe - user input
 	ResponderRules []GetGuardTargetTargetResponderRecipeResponderRule `pulumi:"responderRules"`
@@ -10718,17 +11408,17 @@ type GetGuardTargetTargetResponderRecipeInput interface {
 type GetGuardTargetTargetResponderRecipeArgs struct {
 	// Compartment Identifier
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// ResponderRule Description
+	// ResponderRule description.
 	Description pulumi.StringInput `pulumi:"description"`
-	// ResponderRule Display Name
+	// ResponderRule display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// List of responder rules associated with the recipe after applying all defaults
 	EffectiveResponderRules GetGuardTargetTargetResponderRecipeEffectiveResponderRuleArrayInput `pulumi:"effectiveResponderRules"`
-	// Unique identifier of TargetResponderRecipe that is immutable on creation
+	// Unique identifier of TargetResponderRecipe that can't be changed after creation.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Owner of ResponderRecipe
 	Owner pulumi.StringInput `pulumi:"owner"`
-	// Unique identifier for Responder Recipe of which this is an extension
+	// Unique identifier for Responder Recipe of which this is an extension.
 	ResponderRecipeId pulumi.StringInput `pulumi:"responderRecipeId"`
 	// List of responder rules associated with the recipe - user input
 	ResponderRules GetGuardTargetTargetResponderRecipeResponderRuleArrayInput `pulumi:"responderRules"`
@@ -10794,12 +11484,12 @@ func (o GetGuardTargetTargetResponderRecipeOutput) CompartmentId() pulumi.String
 	return o.ApplyT(func(v GetGuardTargetTargetResponderRecipe) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// ResponderRule Description
+// ResponderRule description.
 func (o GetGuardTargetTargetResponderRecipeOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetTargetResponderRecipe) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// ResponderRule Display Name
+// ResponderRule display name.
 func (o GetGuardTargetTargetResponderRecipeOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetTargetResponderRecipe) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -10811,7 +11501,7 @@ func (o GetGuardTargetTargetResponderRecipeOutput) EffectiveResponderRules() Get
 	}).(GetGuardTargetTargetResponderRecipeEffectiveResponderRuleArrayOutput)
 }
 
-// Unique identifier of TargetResponderRecipe that is immutable on creation
+// Unique identifier of TargetResponderRecipe that can't be changed after creation.
 func (o GetGuardTargetTargetResponderRecipeOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetTargetResponderRecipe) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -10821,7 +11511,7 @@ func (o GetGuardTargetTargetResponderRecipeOutput) Owner() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetTargetResponderRecipe) string { return v.Owner }).(pulumi.StringOutput)
 }
 
-// Unique identifier for Responder Recipe of which this is an extension
+// Unique identifier for Responder Recipe of which this is an extension.
 func (o GetGuardTargetTargetResponderRecipeOutput) ResponderRecipeId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetTargetResponderRecipe) string { return v.ResponderRecipeId }).(pulumi.StringOutput)
 }
@@ -10866,17 +11556,17 @@ func (o GetGuardTargetTargetResponderRecipeArrayOutput) Index(i pulumi.IntInput)
 type GetGuardTargetTargetResponderRecipeEffectiveResponderRule struct {
 	// Compartment Identifier
 	CompartmentId string `pulumi:"compartmentId"`
-	// ResponderRule Description
+	// ResponderRule description.
 	Description string `pulumi:"description"`
 	// Details of ResponderRule.
 	Details []GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetail `pulumi:"details"`
-	// ResponderRule Display Name
+	// ResponderRule display name.
 	DisplayName string `pulumi:"displayName"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// List of Policy
 	Policies []string `pulumi:"policies"`
-	// Identifier for ResponderRule.
+	// Unique ResponderRule identifier.
 	ResponderRuleId string `pulumi:"responderRuleId"`
 	// The current state of the ResponderRule.
 	State string `pulumi:"state"`
@@ -10904,17 +11594,17 @@ type GetGuardTargetTargetResponderRecipeEffectiveResponderRuleInput interface {
 type GetGuardTargetTargetResponderRecipeEffectiveResponderRuleArgs struct {
 	// Compartment Identifier
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// ResponderRule Description
+	// ResponderRule description.
 	Description pulumi.StringInput `pulumi:"description"`
 	// Details of ResponderRule.
 	Details GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailArrayInput `pulumi:"details"`
-	// ResponderRule Display Name
+	// ResponderRule display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// List of Policy
 	Policies pulumi.StringArrayInput `pulumi:"policies"`
-	// Identifier for ResponderRule.
+	// Unique ResponderRule identifier.
 	ResponderRuleId pulumi.StringInput `pulumi:"responderRuleId"`
 	// The current state of the ResponderRule.
 	State pulumi.StringInput `pulumi:"state"`
@@ -10984,7 +11674,7 @@ func (o GetGuardTargetTargetResponderRecipeEffectiveResponderRuleOutput) Compart
 	return o.ApplyT(func(v GetGuardTargetTargetResponderRecipeEffectiveResponderRule) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// ResponderRule Description
+// ResponderRule description.
 func (o GetGuardTargetTargetResponderRecipeEffectiveResponderRuleOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetTargetResponderRecipeEffectiveResponderRule) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -10996,7 +11686,7 @@ func (o GetGuardTargetTargetResponderRecipeEffectiveResponderRuleOutput) Details
 	}).(GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailArrayOutput)
 }
 
-// ResponderRule Display Name
+// ResponderRule display name.
 func (o GetGuardTargetTargetResponderRecipeEffectiveResponderRuleOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetTargetResponderRecipeEffectiveResponderRule) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -11011,7 +11701,7 @@ func (o GetGuardTargetTargetResponderRecipeEffectiveResponderRuleOutput) Policie
 	return o.ApplyT(func(v GetGuardTargetTargetResponderRecipeEffectiveResponderRule) []string { return v.Policies }).(pulumi.StringArrayOutput)
 }
 
-// Identifier for ResponderRule.
+// Unique ResponderRule identifier.
 func (o GetGuardTargetTargetResponderRecipeEffectiveResponderRuleOutput) ResponderRuleId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetTargetResponderRecipeEffectiveResponderRule) string { return v.ResponderRuleId }).(pulumi.StringOutput)
 }
@@ -11062,6 +11752,7 @@ func (o GetGuardTargetTargetResponderRecipeEffectiveResponderRuleArrayOutput) In
 }
 
 type GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetail struct {
+	// Base condition object
 	Condition string `pulumi:"condition"`
 	// ResponderRule configurations
 	Configurations []GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfiguration `pulumi:"configurations"`
@@ -11083,6 +11774,7 @@ type GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailInput interf
 }
 
 type GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailArgs struct {
+	// Base condition object
 	Condition pulumi.StringInput `pulumi:"condition"`
 	// ResponderRule configurations
 	Configurations GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayInput `pulumi:"configurations"`
@@ -11143,6 +11835,7 @@ func (o GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailOutput) T
 	return o
 }
 
+// Base condition object
 func (o GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailOutput) Condition() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetail) string { return v.Condition }).(pulumi.StringOutput)
 }
@@ -11308,17 +12001,17 @@ func (o GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfigura
 type GetGuardTargetTargetResponderRecipeResponderRule struct {
 	// Compartment Identifier
 	CompartmentId string `pulumi:"compartmentId"`
-	// ResponderRule Description
+	// ResponderRule description.
 	Description string `pulumi:"description"`
 	// Details of ResponderRule.
 	Details []GetGuardTargetTargetResponderRecipeResponderRuleDetail `pulumi:"details"`
-	// ResponderRule Display Name
+	// ResponderRule display name.
 	DisplayName string `pulumi:"displayName"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// List of Policy
 	Policies []string `pulumi:"policies"`
-	// Identifier for ResponderRule.
+	// Unique ResponderRule identifier.
 	ResponderRuleId string `pulumi:"responderRuleId"`
 	// The current state of the ResponderRule.
 	State string `pulumi:"state"`
@@ -11346,17 +12039,17 @@ type GetGuardTargetTargetResponderRecipeResponderRuleInput interface {
 type GetGuardTargetTargetResponderRecipeResponderRuleArgs struct {
 	// Compartment Identifier
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// ResponderRule Description
+	// ResponderRule description.
 	Description pulumi.StringInput `pulumi:"description"`
 	// Details of ResponderRule.
 	Details GetGuardTargetTargetResponderRecipeResponderRuleDetailArrayInput `pulumi:"details"`
-	// ResponderRule Display Name
+	// ResponderRule display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// List of Policy
 	Policies pulumi.StringArrayInput `pulumi:"policies"`
-	// Identifier for ResponderRule.
+	// Unique ResponderRule identifier.
 	ResponderRuleId pulumi.StringInput `pulumi:"responderRuleId"`
 	// The current state of the ResponderRule.
 	State pulumi.StringInput `pulumi:"state"`
@@ -11426,7 +12119,7 @@ func (o GetGuardTargetTargetResponderRecipeResponderRuleOutput) CompartmentId() 
 	return o.ApplyT(func(v GetGuardTargetTargetResponderRecipeResponderRule) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// ResponderRule Description
+// ResponderRule description.
 func (o GetGuardTargetTargetResponderRecipeResponderRuleOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetTargetResponderRecipeResponderRule) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -11438,7 +12131,7 @@ func (o GetGuardTargetTargetResponderRecipeResponderRuleOutput) Details() GetGua
 	}).(GetGuardTargetTargetResponderRecipeResponderRuleDetailArrayOutput)
 }
 
-// ResponderRule Display Name
+// ResponderRule display name.
 func (o GetGuardTargetTargetResponderRecipeResponderRuleOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetTargetResponderRecipeResponderRule) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -11453,7 +12146,7 @@ func (o GetGuardTargetTargetResponderRecipeResponderRuleOutput) Policies() pulum
 	return o.ApplyT(func(v GetGuardTargetTargetResponderRecipeResponderRule) []string { return v.Policies }).(pulumi.StringArrayOutput)
 }
 
-// Identifier for ResponderRule.
+// Unique ResponderRule identifier.
 func (o GetGuardTargetTargetResponderRecipeResponderRuleOutput) ResponderRuleId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetTargetResponderRecipeResponderRule) string { return v.ResponderRuleId }).(pulumi.StringOutput)
 }
@@ -11504,6 +12197,7 @@ func (o GetGuardTargetTargetResponderRecipeResponderRuleArrayOutput) Index(i pul
 }
 
 type GetGuardTargetTargetResponderRecipeResponderRuleDetail struct {
+	// Base condition object
 	Condition string `pulumi:"condition"`
 	// ResponderRule configurations
 	Configurations []GetGuardTargetTargetResponderRecipeResponderRuleDetailConfiguration `pulumi:"configurations"`
@@ -11525,6 +12219,7 @@ type GetGuardTargetTargetResponderRecipeResponderRuleDetailInput interface {
 }
 
 type GetGuardTargetTargetResponderRecipeResponderRuleDetailArgs struct {
+	// Base condition object
 	Condition pulumi.StringInput `pulumi:"condition"`
 	// ResponderRule configurations
 	Configurations GetGuardTargetTargetResponderRecipeResponderRuleDetailConfigurationArrayInput `pulumi:"configurations"`
@@ -11585,6 +12280,7 @@ func (o GetGuardTargetTargetResponderRecipeResponderRuleDetailOutput) ToGetGuard
 	return o
 }
 
+// Base condition object
 func (o GetGuardTargetTargetResponderRecipeResponderRuleDetailOutput) Condition() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetTargetResponderRecipeResponderRuleDetail) string { return v.Condition }).(pulumi.StringOutput)
 }
@@ -11952,13 +12648,13 @@ type GetGuardTargetsTargetCollectionItem struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// ResponderRule Description
+	// ResponderRule description.
 	Description string `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// Unique identifier of TargetResponderRecipe that is immutable on creation
+	// Unique identifier of TargetResponderRecipe that can't be changed after creation.
 	Id string `pulumi:"id"`
 	// List of inherited compartments
 	InheritedByCompartments []string `pulumi:"inheritedByCompartments"`
@@ -11970,6 +12666,8 @@ type GetGuardTargetsTargetCollectionItem struct {
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// Details specific to the target type.
+	TargetDetails []GetGuardTargetsTargetCollectionItemTargetDetail `pulumi:"targetDetails"`
 	// List of detector recipes associated with target
 	TargetDetectorRecipes []GetGuardTargetsTargetCollectionItemTargetDetectorRecipe `pulumi:"targetDetectorRecipes"`
 	// Resource ID which the target uses to monitor
@@ -12000,13 +12698,13 @@ type GetGuardTargetsTargetCollectionItemArgs struct {
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
-	// ResponderRule Description
+	// ResponderRule description.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
-	// Unique identifier of TargetResponderRecipe that is immutable on creation
+	// Unique identifier of TargetResponderRecipe that can't be changed after creation.
 	Id pulumi.StringInput `pulumi:"id"`
 	// List of inherited compartments
 	InheritedByCompartments pulumi.StringArrayInput `pulumi:"inheritedByCompartments"`
@@ -12018,6 +12716,8 @@ type GetGuardTargetsTargetCollectionItemArgs struct {
 	State pulumi.StringInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	// Details specific to the target type.
+	TargetDetails GetGuardTargetsTargetCollectionItemTargetDetailArrayInput `pulumi:"targetDetails"`
 	// List of detector recipes associated with target
 	TargetDetectorRecipes GetGuardTargetsTargetCollectionItemTargetDetectorRecipeArrayInput `pulumi:"targetDetectorRecipes"`
 	// Resource ID which the target uses to monitor
@@ -12093,7 +12793,7 @@ func (o GetGuardTargetsTargetCollectionItemOutput) DefinedTags() pulumi.MapOutpu
 	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// ResponderRule Description
+// ResponderRule description.
 func (o GetGuardTargetsTargetCollectionItemOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItem) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -12108,7 +12808,7 @@ func (o GetGuardTargetsTargetCollectionItemOutput) FreeformTags() pulumi.MapOutp
 	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// Unique identifier of TargetResponderRecipe that is immutable on creation
+// Unique identifier of TargetResponderRecipe that can't be changed after creation.
 func (o GetGuardTargetsTargetCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -12136,6 +12836,13 @@ func (o GetGuardTargetsTargetCollectionItemOutput) State() pulumi.StringOutput {
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 func (o GetGuardTargetsTargetCollectionItemOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+}
+
+// Details specific to the target type.
+func (o GetGuardTargetsTargetCollectionItemOutput) TargetDetails() GetGuardTargetsTargetCollectionItemTargetDetailArrayOutput {
+	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItem) []GetGuardTargetsTargetCollectionItemTargetDetail {
+		return v.TargetDetails
+	}).(GetGuardTargetsTargetCollectionItemTargetDetailArrayOutput)
 }
 
 // List of detector recipes associated with target
@@ -12192,10 +12899,361 @@ func (o GetGuardTargetsTargetCollectionItemArrayOutput) Index(i pulumi.IntInput)
 	}).(GetGuardTargetsTargetCollectionItemOutput)
 }
 
+type GetGuardTargetsTargetCollectionItemTargetDetail struct {
+	// The name of the security zone to associate this compartment with.
+	SecurityZoneDisplayName string `pulumi:"securityZoneDisplayName"`
+	// The OCID of the security zone to associate this compartment with.
+	SecurityZoneId string `pulumi:"securityZoneId"`
+	// possible type of targets
+	TargetResourceType string `pulumi:"targetResourceType"`
+	// The list of security zone recipes to associate this compartment with.
+	TargetSecurityZoneRecipes []GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipe `pulumi:"targetSecurityZoneRecipes"`
+}
+
+// GetGuardTargetsTargetCollectionItemTargetDetailInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetailArgs and GetGuardTargetsTargetCollectionItemTargetDetailOutput values.
+// You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetailInput` via:
+//
+//          GetGuardTargetsTargetCollectionItemTargetDetailArgs{...}
+type GetGuardTargetsTargetCollectionItemTargetDetailInput interface {
+	pulumi.Input
+
+	ToGetGuardTargetsTargetCollectionItemTargetDetailOutput() GetGuardTargetsTargetCollectionItemTargetDetailOutput
+	ToGetGuardTargetsTargetCollectionItemTargetDetailOutputWithContext(context.Context) GetGuardTargetsTargetCollectionItemTargetDetailOutput
+}
+
+type GetGuardTargetsTargetCollectionItemTargetDetailArgs struct {
+	// The name of the security zone to associate this compartment with.
+	SecurityZoneDisplayName pulumi.StringInput `pulumi:"securityZoneDisplayName"`
+	// The OCID of the security zone to associate this compartment with.
+	SecurityZoneId pulumi.StringInput `pulumi:"securityZoneId"`
+	// possible type of targets
+	TargetResourceType pulumi.StringInput `pulumi:"targetResourceType"`
+	// The list of security zone recipes to associate this compartment with.
+	TargetSecurityZoneRecipes GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArrayInput `pulumi:"targetSecurityZoneRecipes"`
+}
+
+func (GetGuardTargetsTargetCollectionItemTargetDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetail)(nil)).Elem()
+}
+
+func (i GetGuardTargetsTargetCollectionItemTargetDetailArgs) ToGetGuardTargetsTargetCollectionItemTargetDetailOutput() GetGuardTargetsTargetCollectionItemTargetDetailOutput {
+	return i.ToGetGuardTargetsTargetCollectionItemTargetDetailOutputWithContext(context.Background())
+}
+
+func (i GetGuardTargetsTargetCollectionItemTargetDetailArgs) ToGetGuardTargetsTargetCollectionItemTargetDetailOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetDetailOutput)
+}
+
+// GetGuardTargetsTargetCollectionItemTargetDetailArrayInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetailArray and GetGuardTargetsTargetCollectionItemTargetDetailArrayOutput values.
+// You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetailArrayInput` via:
+//
+//          GetGuardTargetsTargetCollectionItemTargetDetailArray{ GetGuardTargetsTargetCollectionItemTargetDetailArgs{...} }
+type GetGuardTargetsTargetCollectionItemTargetDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetGuardTargetsTargetCollectionItemTargetDetailArrayOutput() GetGuardTargetsTargetCollectionItemTargetDetailArrayOutput
+	ToGetGuardTargetsTargetCollectionItemTargetDetailArrayOutputWithContext(context.Context) GetGuardTargetsTargetCollectionItemTargetDetailArrayOutput
+}
+
+type GetGuardTargetsTargetCollectionItemTargetDetailArray []GetGuardTargetsTargetCollectionItemTargetDetailInput
+
+func (GetGuardTargetsTargetCollectionItemTargetDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGuardTargetsTargetCollectionItemTargetDetail)(nil)).Elem()
+}
+
+func (i GetGuardTargetsTargetCollectionItemTargetDetailArray) ToGetGuardTargetsTargetCollectionItemTargetDetailArrayOutput() GetGuardTargetsTargetCollectionItemTargetDetailArrayOutput {
+	return i.ToGetGuardTargetsTargetCollectionItemTargetDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetGuardTargetsTargetCollectionItemTargetDetailArray) ToGetGuardTargetsTargetCollectionItemTargetDetailArrayOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetDetailArrayOutput)
+}
+
+type GetGuardTargetsTargetCollectionItemTargetDetailOutput struct{ *pulumi.OutputState }
+
+func (GetGuardTargetsTargetCollectionItemTargetDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetail)(nil)).Elem()
+}
+
+func (o GetGuardTargetsTargetCollectionItemTargetDetailOutput) ToGetGuardTargetsTargetCollectionItemTargetDetailOutput() GetGuardTargetsTargetCollectionItemTargetDetailOutput {
+	return o
+}
+
+func (o GetGuardTargetsTargetCollectionItemTargetDetailOutput) ToGetGuardTargetsTargetCollectionItemTargetDetailOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetailOutput {
+	return o
+}
+
+// The name of the security zone to associate this compartment with.
+func (o GetGuardTargetsTargetCollectionItemTargetDetailOutput) SecurityZoneDisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetail) string { return v.SecurityZoneDisplayName }).(pulumi.StringOutput)
+}
+
+// The OCID of the security zone to associate this compartment with.
+func (o GetGuardTargetsTargetCollectionItemTargetDetailOutput) SecurityZoneId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetail) string { return v.SecurityZoneId }).(pulumi.StringOutput)
+}
+
+// possible type of targets
+func (o GetGuardTargetsTargetCollectionItemTargetDetailOutput) TargetResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetail) string { return v.TargetResourceType }).(pulumi.StringOutput)
+}
+
+// The list of security zone recipes to associate this compartment with.
+func (o GetGuardTargetsTargetCollectionItemTargetDetailOutput) TargetSecurityZoneRecipes() GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArrayOutput {
+	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetail) []GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipe {
+		return v.TargetSecurityZoneRecipes
+	}).(GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArrayOutput)
+}
+
+type GetGuardTargetsTargetCollectionItemTargetDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetGuardTargetsTargetCollectionItemTargetDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGuardTargetsTargetCollectionItemTargetDetail)(nil)).Elem()
+}
+
+func (o GetGuardTargetsTargetCollectionItemTargetDetailArrayOutput) ToGetGuardTargetsTargetCollectionItemTargetDetailArrayOutput() GetGuardTargetsTargetCollectionItemTargetDetailArrayOutput {
+	return o
+}
+
+func (o GetGuardTargetsTargetCollectionItemTargetDetailArrayOutput) ToGetGuardTargetsTargetCollectionItemTargetDetailArrayOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetailArrayOutput {
+	return o
+}
+
+func (o GetGuardTargetsTargetCollectionItemTargetDetailArrayOutput) Index(i pulumi.IntInput) GetGuardTargetsTargetCollectionItemTargetDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGuardTargetsTargetCollectionItemTargetDetail {
+		return vs[0].([]GetGuardTargetsTargetCollectionItemTargetDetail)[vs[1].(int)]
+	}).(GetGuardTargetsTargetCollectionItemTargetDetailOutput)
+}
+
+type GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipe struct {
+	// The ID of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// ResponderRule description.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// Unique identifier of TargetResponderRecipe that can't be changed after creation.
+	Id string `pulumi:"id"`
+	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Owner of ResponderRecipe
+	Owner string `pulumi:"owner"`
+	// The list of `SecurityPolicy` ids that are included in the recipe
+	SecurityPolicies []string `pulumi:"securityPolicies"`
+	// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// The date and time the target was created. Format defined by RFC3339.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the target was updated. Format defined by RFC3339.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArgs and GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeOutput values.
+// You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeInput` via:
+//
+//          GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArgs{...}
+type GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeInput interface {
+	pulumi.Input
+
+	ToGetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeOutput() GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeOutput
+	ToGetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeOutputWithContext(context.Context) GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeOutput
+}
+
+type GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArgs struct {
+	// The ID of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// ResponderRule description.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// Unique identifier of TargetResponderRecipe that can't be changed after creation.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Owner of ResponderRecipe
+	Owner pulumi.StringInput `pulumi:"owner"`
+	// The list of `SecurityPolicy` ids that are included in the recipe
+	SecurityPolicies pulumi.StringArrayInput `pulumi:"securityPolicies"`
+	// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	// The date and time the target was created. Format defined by RFC3339.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the target was updated. Format defined by RFC3339.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipe)(nil)).Elem()
+}
+
+func (i GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArgs) ToGetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeOutput() GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeOutput {
+	return i.ToGetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeOutputWithContext(context.Background())
+}
+
+func (i GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArgs) ToGetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeOutput)
+}
+
+// GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArrayInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArray and GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArrayOutput values.
+// You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArrayInput` via:
+//
+//          GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArray{ GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArgs{...} }
+type GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArrayInput interface {
+	pulumi.Input
+
+	ToGetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArrayOutput() GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArrayOutput
+	ToGetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArrayOutputWithContext(context.Context) GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArrayOutput
+}
+
+type GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArray []GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeInput
+
+func (GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipe)(nil)).Elem()
+}
+
+func (i GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArray) ToGetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArrayOutput() GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArrayOutput {
+	return i.ToGetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArrayOutputWithContext(context.Background())
+}
+
+func (i GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArray) ToGetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArrayOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArrayOutput)
+}
+
+type GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeOutput struct{ *pulumi.OutputState }
+
+func (GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipe)(nil)).Elem()
+}
+
+func (o GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeOutput) ToGetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeOutput() GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeOutput {
+	return o
+}
+
+func (o GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeOutput) ToGetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeOutput {
+	return o
+}
+
+// The ID of the compartment in which to list resources.
+func (o GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipe) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipe) map[string]interface{} {
+		return v.DefinedTags
+	}).(pulumi.MapOutput)
+}
+
+// ResponderRule description.
+func (o GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipe) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipe) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipe) map[string]interface{} {
+		return v.FreeformTags
+	}).(pulumi.MapOutput)
+}
+
+// Unique identifier of TargetResponderRecipe that can't be changed after creation.
+func (o GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipe) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+func (o GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipe) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
+}
+
+// Owner of ResponderRecipe
+func (o GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeOutput) Owner() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipe) string { return v.Owner }).(pulumi.StringOutput)
+}
+
+// The list of `SecurityPolicy` ids that are included in the recipe
+func (o GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeOutput) SecurityPolicies() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipe) []string {
+		return v.SecurityPolicies
+	}).(pulumi.StringArrayOutput)
+}
+
+// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+func (o GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipe) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipe) map[string]interface{} {
+		return v.SystemTags
+	}).(pulumi.MapOutput)
+}
+
+// The date and time the target was created. Format defined by RFC3339.
+func (o GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipe) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the target was updated. Format defined by RFC3339.
+func (o GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipe) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+type GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipe)(nil)).Elem()
+}
+
+func (o GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArrayOutput) ToGetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArrayOutput() GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArrayOutput {
+	return o
+}
+
+func (o GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArrayOutput) ToGetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArrayOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArrayOutput {
+	return o
+}
+
+func (o GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArrayOutput) Index(i pulumi.IntInput) GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipe {
+		return vs[0].([]GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipe)[vs[1].(int)]
+	}).(GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeOutput)
+}
+
 type GetGuardTargetsTargetCollectionItemTargetDetectorRecipe struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
-	// ResponderRule Description
+	// ResponderRule description.
 	Description string `pulumi:"description"`
 	// detector for the rule
 	Detector string `pulumi:"detector"`
@@ -12207,7 +13265,7 @@ type GetGuardTargetsTargetCollectionItemTargetDetectorRecipe struct {
 	DisplayName string `pulumi:"displayName"`
 	// List of effective detector rules for the detector type for recipe after applying defaults
 	EffectiveDetectorRules []GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRule `pulumi:"effectiveDetectorRules"`
-	// Unique identifier of TargetResponderRecipe that is immutable on creation
+	// Unique identifier of TargetResponderRecipe that can't be changed after creation.
 	Id string `pulumi:"id"`
 	// Owner of ResponderRecipe
 	Owner string `pulumi:"owner"`
@@ -12233,7 +13291,7 @@ type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeInput interface {
 type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeArgs struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// ResponderRule Description
+	// ResponderRule description.
 	Description pulumi.StringInput `pulumi:"description"`
 	// detector for the rule
 	Detector pulumi.StringInput `pulumi:"detector"`
@@ -12245,7 +13303,7 @@ type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeArgs struct {
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// List of effective detector rules for the detector type for recipe after applying defaults
 	EffectiveDetectorRules GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleArrayInput `pulumi:"effectiveDetectorRules"`
-	// Unique identifier of TargetResponderRecipe that is immutable on creation
+	// Unique identifier of TargetResponderRecipe that can't be changed after creation.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Owner of ResponderRecipe
 	Owner pulumi.StringInput `pulumi:"owner"`
@@ -12313,7 +13371,7 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeOutput) Compartme
 	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetectorRecipe) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// ResponderRule Description
+// ResponderRule description.
 func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetectorRecipe) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -12347,7 +13405,7 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeOutput) Effective
 	}).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleArrayOutput)
 }
 
-// Unique identifier of TargetResponderRecipe that is immutable on creation
+// Unique identifier of TargetResponderRecipe that can't be changed after creation.
 func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetectorRecipe) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -12393,13 +13451,13 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeArrayOutput) Inde
 }
 
 type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRule struct {
-	// ResponderRule Description
+	// ResponderRule description.
 	Description string `pulumi:"description"`
 	// Details of ResponderRule.
 	Details []GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetail `pulumi:"details"`
 	// detector for the rule
 	Detector string `pulumi:"detector"`
-	// The unique identifier of the detector rule
+	// The unique identifier of the detector rule.
 	DetectorRuleId string `pulumi:"detectorRuleId"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
@@ -12433,13 +13491,13 @@ type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleInput in
 }
 
 type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleArgs struct {
-	// ResponderRule Description
+	// ResponderRule description.
 	Description pulumi.StringInput `pulumi:"description"`
 	// Details of ResponderRule.
 	Details GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailArrayInput `pulumi:"details"`
 	// detector for the rule
 	Detector pulumi.StringInput `pulumi:"detector"`
-	// The unique identifier of the detector rule
+	// The unique identifier of the detector rule.
 	DetectorRuleId pulumi.StringInput `pulumi:"detectorRuleId"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
@@ -12512,7 +13570,7 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleOutpu
 	return o
 }
 
-// ResponderRule Description
+// ResponderRule description.
 func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRule) string {
 		return v.Description
@@ -12531,7 +13589,7 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleOutpu
 	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRule) string { return v.Detector }).(pulumi.StringOutput)
 }
 
-// The unique identifier of the detector rule
+// The unique identifier of the detector rule.
 func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleOutput) DetectorRuleId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRule) string {
 		return v.DetectorRuleId
@@ -12776,7 +13834,8 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetai
 type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroup struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
-	Condition     string `pulumi:"condition"`
+	// Base condition object
+	Condition string `pulumi:"condition"`
 }
 
 // GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroupInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroupArgs and GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroupOutput values.
@@ -12793,7 +13852,8 @@ type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailCo
 type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroupArgs struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	Condition     pulumi.StringInput `pulumi:"condition"`
+	// Base condition object
+	Condition pulumi.StringInput `pulumi:"condition"`
 }
 
 func (GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroupArgs) ElementType() reflect.Type {
@@ -12854,6 +13914,7 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetai
 	}).(pulumi.StringOutput)
 }
 
+// Base condition object
 func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroupOutput) Condition() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroup) string {
 		return v.Condition
@@ -13145,13 +14206,13 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetai
 }
 
 type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRule struct {
-	// ResponderRule Description
+	// ResponderRule description.
 	Description string `pulumi:"description"`
 	// Details of ResponderRule.
 	Details []GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetail `pulumi:"details"`
 	// detector for the rule
 	Detector string `pulumi:"detector"`
-	// The unique identifier of the detector rule
+	// The unique identifier of the detector rule.
 	DetectorRuleId string `pulumi:"detectorRuleId"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
@@ -13185,13 +14246,13 @@ type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRul
 }
 
 type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleArgs struct {
-	// ResponderRule Description
+	// ResponderRule description.
 	Description pulumi.StringInput `pulumi:"description"`
 	// Details of ResponderRule.
 	Details GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailArrayInput `pulumi:"details"`
 	// detector for the rule
 	Detector pulumi.StringInput `pulumi:"detector"`
-	// The unique identifier of the detector rule
+	// The unique identifier of the detector rule.
 	DetectorRuleId pulumi.StringInput `pulumi:"detectorRuleId"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
@@ -13264,7 +14325,7 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetector
 	return o
 }
 
-// ResponderRule Description
+// ResponderRule description.
 func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRule) string {
 		return v.Description
@@ -13285,7 +14346,7 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetector
 	}).(pulumi.StringOutput)
 }
 
-// The unique identifier of the detector rule
+// The unique identifier of the detector rule.
 func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleOutput) DetectorRuleId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRule) string {
 		return v.DetectorRuleId
@@ -13532,7 +14593,8 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetector
 type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
-	Condition     string `pulumi:"condition"`
+	// Base condition object
+	Condition string `pulumi:"condition"`
 }
 
 // GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgs and GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupOutput values.
@@ -13549,7 +14611,8 @@ type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRul
 type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgs struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	Condition     pulumi.StringInput `pulumi:"condition"`
+	// Base condition object
+	Condition pulumi.StringInput `pulumi:"condition"`
 }
 
 func (GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgs) ElementType() reflect.Type {
@@ -13610,6 +14673,7 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetector
 	}).(pulumi.StringOutput)
 }
 
+// Base condition object
 func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupOutput) Condition() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup) string {
 		return v.Condition
@@ -13903,17 +14967,17 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetector
 type GetGuardTargetsTargetCollectionItemTargetResponderRecipe struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
-	// ResponderRule Description
+	// ResponderRule description.
 	Description string `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
 	// List of responder rules associated with the recipe after applying all defaults
 	EffectiveResponderRules []GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRule `pulumi:"effectiveResponderRules"`
-	// Unique identifier of TargetResponderRecipe that is immutable on creation
+	// Unique identifier of TargetResponderRecipe that can't be changed after creation.
 	Id string `pulumi:"id"`
 	// Owner of ResponderRecipe
 	Owner string `pulumi:"owner"`
-	// Unique identifier for Responder Recipe of which this is an extension
+	// Unique identifier for Responder Recipe of which this is an extension.
 	ResponderRecipeId string `pulumi:"responderRecipeId"`
 	// List of responder rules associated with the recipe - user input
 	ResponderRules []GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRule `pulumi:"responderRules"`
@@ -13937,17 +15001,17 @@ type GetGuardTargetsTargetCollectionItemTargetResponderRecipeInput interface {
 type GetGuardTargetsTargetCollectionItemTargetResponderRecipeArgs struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// ResponderRule Description
+	// ResponderRule description.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// List of responder rules associated with the recipe after applying all defaults
 	EffectiveResponderRules GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleArrayInput `pulumi:"effectiveResponderRules"`
-	// Unique identifier of TargetResponderRecipe that is immutable on creation
+	// Unique identifier of TargetResponderRecipe that can't be changed after creation.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Owner of ResponderRecipe
 	Owner pulumi.StringInput `pulumi:"owner"`
-	// Unique identifier for Responder Recipe of which this is an extension
+	// Unique identifier for Responder Recipe of which this is an extension.
 	ResponderRecipeId pulumi.StringInput `pulumi:"responderRecipeId"`
 	// List of responder rules associated with the recipe - user input
 	ResponderRules GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleArrayInput `pulumi:"responderRules"`
@@ -14013,7 +15077,7 @@ func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeOutput) Compartm
 	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetResponderRecipe) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// ResponderRule Description
+// ResponderRule description.
 func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetResponderRecipe) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -14030,7 +15094,7 @@ func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeOutput) Effectiv
 	}).(GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleArrayOutput)
 }
 
-// Unique identifier of TargetResponderRecipe that is immutable on creation
+// Unique identifier of TargetResponderRecipe that can't be changed after creation.
 func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetResponderRecipe) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -14040,7 +15104,7 @@ func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeOutput) Owner() 
 	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetResponderRecipe) string { return v.Owner }).(pulumi.StringOutput)
 }
 
-// Unique identifier for Responder Recipe of which this is an extension
+// Unique identifier for Responder Recipe of which this is an extension.
 func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeOutput) ResponderRecipeId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetResponderRecipe) string { return v.ResponderRecipeId }).(pulumi.StringOutput)
 }
@@ -14085,7 +15149,7 @@ func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeArrayOutput) Ind
 type GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRule struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
-	// ResponderRule Description
+	// ResponderRule description.
 	Description string `pulumi:"description"`
 	// Details of ResponderRule.
 	Details []GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetail `pulumi:"details"`
@@ -14095,7 +15159,7 @@ type GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderR
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// List of Policy
 	Policies []string `pulumi:"policies"`
-	// Identifier for ResponderRule.
+	// Unique ResponderRule identifier.
 	ResponderRuleId string `pulumi:"responderRuleId"`
 	// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
 	State string `pulumi:"state"`
@@ -14123,7 +15187,7 @@ type GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderR
 type GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleArgs struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// ResponderRule Description
+	// ResponderRule description.
 	Description pulumi.StringInput `pulumi:"description"`
 	// Details of ResponderRule.
 	Details GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailArrayInput `pulumi:"details"`
@@ -14133,7 +15197,7 @@ type GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderR
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// List of Policy
 	Policies pulumi.StringArrayInput `pulumi:"policies"`
-	// Identifier for ResponderRule.
+	// Unique ResponderRule identifier.
 	ResponderRuleId pulumi.StringInput `pulumi:"responderRuleId"`
 	// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
 	State pulumi.StringInput `pulumi:"state"`
@@ -14205,7 +15269,7 @@ func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveRespond
 	}).(pulumi.StringOutput)
 }
 
-// ResponderRule Description
+// ResponderRule description.
 func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRule) string {
 		return v.Description
@@ -14240,7 +15304,7 @@ func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveRespond
 	}).(pulumi.StringArrayOutput)
 }
 
-// Identifier for ResponderRule.
+// Unique ResponderRule identifier.
 func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleOutput) ResponderRuleId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRule) string {
 		return v.ResponderRuleId
@@ -14303,6 +15367,7 @@ func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveRespond
 }
 
 type GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetail struct {
+	// Base condition object
 	Condition string `pulumi:"condition"`
 	// ResponderRule configurations
 	Configurations []GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfiguration `pulumi:"configurations"`
@@ -14324,6 +15389,7 @@ type GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderR
 }
 
 type GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailArgs struct {
+	// Base condition object
 	Condition pulumi.StringInput `pulumi:"condition"`
 	// ResponderRule configurations
 	Configurations GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayInput `pulumi:"configurations"`
@@ -14384,6 +15450,7 @@ func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveRespond
 	return o
 }
 
+// Base condition object
 func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailOutput) Condition() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetail) string {
 		return v.Condition
@@ -14555,7 +15622,7 @@ func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveRespond
 type GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRule struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
-	// ResponderRule Description
+	// ResponderRule description.
 	Description string `pulumi:"description"`
 	// Details of ResponderRule.
 	Details []GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetail `pulumi:"details"`
@@ -14565,7 +15632,7 @@ type GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRule struc
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// List of Policy
 	Policies []string `pulumi:"policies"`
-	// Identifier for ResponderRule.
+	// Unique ResponderRule identifier.
 	ResponderRuleId string `pulumi:"responderRuleId"`
 	// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
 	State string `pulumi:"state"`
@@ -14593,7 +15660,7 @@ type GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleInput 
 type GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleArgs struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// ResponderRule Description
+	// ResponderRule description.
 	Description pulumi.StringInput `pulumi:"description"`
 	// Details of ResponderRule.
 	Details GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailArrayInput `pulumi:"details"`
@@ -14603,7 +15670,7 @@ type GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleArgs s
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// List of Policy
 	Policies pulumi.StringArrayInput `pulumi:"policies"`
-	// Identifier for ResponderRule.
+	// Unique ResponderRule identifier.
 	ResponderRuleId pulumi.StringInput `pulumi:"responderRuleId"`
 	// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
 	State pulumi.StringInput `pulumi:"state"`
@@ -14675,7 +15742,7 @@ func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleOut
 	}).(pulumi.StringOutput)
 }
 
-// ResponderRule Description
+// ResponderRule description.
 func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRule) string {
 		return v.Description
@@ -14710,7 +15777,7 @@ func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleOut
 	}).(pulumi.StringArrayOutput)
 }
 
-// Identifier for ResponderRule.
+// Unique ResponderRule identifier.
 func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleOutput) ResponderRuleId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRule) string {
 		return v.ResponderRuleId
@@ -14769,6 +15836,7 @@ func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleArr
 }
 
 type GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetail struct {
+	// Base condition object
 	Condition string `pulumi:"condition"`
 	// ResponderRule configurations
 	Configurations []GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailConfiguration `pulumi:"configurations"`
@@ -14790,6 +15858,7 @@ type GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetail
 }
 
 type GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailArgs struct {
+	// Base condition object
 	Condition pulumi.StringInput `pulumi:"condition"`
 	// ResponderRule configurations
 	Configurations GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailConfigurationArrayInput `pulumi:"configurations"`
@@ -14850,6 +15919,7 @@ func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDet
 	return o
 }
 
+// Base condition object
 func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailOutput) Condition() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetail) string {
 		return v.Condition
@@ -15225,7 +16295,7 @@ type GetManagedListsManagedListCollectionItem struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// ManagedList description
+	// ManagedList description.
 	Description string `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
@@ -15271,7 +16341,7 @@ type GetManagedListsManagedListCollectionItemArgs struct {
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
-	// ManagedList description
+	// ManagedList description.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
@@ -15362,7 +16432,7 @@ func (o GetManagedListsManagedListCollectionItemOutput) DefinedTags() pulumi.Map
 	return o.ApplyT(func(v GetManagedListsManagedListCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// ManagedList description
+// ManagedList description.
 func (o GetManagedListsManagedListCollectionItemOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedListsManagedListCollectionItem) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -15455,11 +16525,11 @@ func (o GetManagedListsManagedListCollectionItemArrayOutput) Index(i pulumi.IntI
 type GetResponderRecipeEffectiveResponderRule struct {
 	// Compartment Identifier
 	CompartmentId string `pulumi:"compartmentId"`
-	// ResponderRule Description
+	// ResponderRule description.
 	Description string `pulumi:"description"`
 	// Details of ResponderRule.
 	Details []GetResponderRecipeEffectiveResponderRuleDetail `pulumi:"details"`
-	// ResponderRule Display Name
+	// ResponderRule display name.
 	DisplayName string `pulumi:"displayName"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
@@ -15493,11 +16563,11 @@ type GetResponderRecipeEffectiveResponderRuleInput interface {
 type GetResponderRecipeEffectiveResponderRuleArgs struct {
 	// Compartment Identifier
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// ResponderRule Description
+	// ResponderRule description.
 	Description pulumi.StringInput `pulumi:"description"`
 	// Details of ResponderRule.
 	Details GetResponderRecipeEffectiveResponderRuleDetailArrayInput `pulumi:"details"`
-	// ResponderRule Display Name
+	// ResponderRule display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
@@ -15573,7 +16643,7 @@ func (o GetResponderRecipeEffectiveResponderRuleOutput) CompartmentId() pulumi.S
 	return o.ApplyT(func(v GetResponderRecipeEffectiveResponderRule) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// ResponderRule Description
+// ResponderRule description.
 func (o GetResponderRecipeEffectiveResponderRuleOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResponderRecipeEffectiveResponderRule) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -15585,7 +16655,7 @@ func (o GetResponderRecipeEffectiveResponderRuleOutput) Details() GetResponderRe
 	}).(GetResponderRecipeEffectiveResponderRuleDetailArrayOutput)
 }
 
-// ResponderRule Display Name
+// ResponderRule display name.
 func (o GetResponderRecipeEffectiveResponderRuleOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResponderRecipeEffectiveResponderRule) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -15651,6 +16721,7 @@ func (o GetResponderRecipeEffectiveResponderRuleArrayOutput) Index(i pulumi.IntI
 }
 
 type GetResponderRecipeEffectiveResponderRuleDetail struct {
+	// Base condition object
 	Condition string `pulumi:"condition"`
 	// ResponderRule configurations
 	Configurations []GetResponderRecipeEffectiveResponderRuleDetailConfiguration `pulumi:"configurations"`
@@ -15672,6 +16743,7 @@ type GetResponderRecipeEffectiveResponderRuleDetailInput interface {
 }
 
 type GetResponderRecipeEffectiveResponderRuleDetailArgs struct {
+	// Base condition object
 	Condition pulumi.StringInput `pulumi:"condition"`
 	// ResponderRule configurations
 	Configurations GetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayInput `pulumi:"configurations"`
@@ -15732,6 +16804,7 @@ func (o GetResponderRecipeEffectiveResponderRuleDetailOutput) ToGetResponderReci
 	return o
 }
 
+// Base condition object
 func (o GetResponderRecipeEffectiveResponderRuleDetailOutput) Condition() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResponderRecipeEffectiveResponderRuleDetail) string { return v.Condition }).(pulumi.StringOutput)
 }
@@ -15891,11 +16964,11 @@ func (o GetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayOutput) 
 type GetResponderRecipeResponderRule struct {
 	// Compartment Identifier
 	CompartmentId string `pulumi:"compartmentId"`
-	// ResponderRule Description
+	// ResponderRule description.
 	Description string `pulumi:"description"`
 	// Details of ResponderRule.
 	Details []GetResponderRecipeResponderRuleDetail `pulumi:"details"`
-	// ResponderRule Display Name
+	// ResponderRule display name.
 	DisplayName string `pulumi:"displayName"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
@@ -15929,11 +17002,11 @@ type GetResponderRecipeResponderRuleInput interface {
 type GetResponderRecipeResponderRuleArgs struct {
 	// Compartment Identifier
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// ResponderRule Description
+	// ResponderRule description.
 	Description pulumi.StringInput `pulumi:"description"`
 	// Details of ResponderRule.
 	Details GetResponderRecipeResponderRuleDetailArrayInput `pulumi:"details"`
-	// ResponderRule Display Name
+	// ResponderRule display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
@@ -16009,7 +17082,7 @@ func (o GetResponderRecipeResponderRuleOutput) CompartmentId() pulumi.StringOutp
 	return o.ApplyT(func(v GetResponderRecipeResponderRule) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// ResponderRule Description
+// ResponderRule description.
 func (o GetResponderRecipeResponderRuleOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResponderRecipeResponderRule) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -16019,7 +17092,7 @@ func (o GetResponderRecipeResponderRuleOutput) Details() GetResponderRecipeRespo
 	return o.ApplyT(func(v GetResponderRecipeResponderRule) []GetResponderRecipeResponderRuleDetail { return v.Details }).(GetResponderRecipeResponderRuleDetailArrayOutput)
 }
 
-// ResponderRule Display Name
+// ResponderRule display name.
 func (o GetResponderRecipeResponderRuleOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResponderRecipeResponderRule) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -16085,6 +17158,7 @@ func (o GetResponderRecipeResponderRuleArrayOutput) Index(i pulumi.IntInput) Get
 }
 
 type GetResponderRecipeResponderRuleDetail struct {
+	// Base condition object
 	Condition string `pulumi:"condition"`
 	// ResponderRule configurations
 	Configurations []GetResponderRecipeResponderRuleDetailConfiguration `pulumi:"configurations"`
@@ -16106,6 +17180,7 @@ type GetResponderRecipeResponderRuleDetailInput interface {
 }
 
 type GetResponderRecipeResponderRuleDetailArgs struct {
+	// Base condition object
 	Condition pulumi.StringInput `pulumi:"condition"`
 	// ResponderRule configurations
 	Configurations GetResponderRecipeResponderRuleDetailConfigurationArrayInput `pulumi:"configurations"`
@@ -16166,6 +17241,7 @@ func (o GetResponderRecipeResponderRuleDetailOutput) ToGetResponderRecipeRespond
 	return o
 }
 
+// Base condition object
 func (o GetResponderRecipeResponderRuleDetailOutput) Condition() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResponderRecipeResponderRuleDetail) string { return v.Condition }).(pulumi.StringOutput)
 }
@@ -16532,7 +17608,7 @@ type GetResponderRecipesResponderRecipeCollectionItem struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// ResponderRule Description
+	// ResponderRule description.
 	Description string `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
@@ -16576,7 +17652,7 @@ type GetResponderRecipesResponderRecipeCollectionItemArgs struct {
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
-	// ResponderRule Description
+	// ResponderRule description.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
@@ -16665,7 +17741,7 @@ func (o GetResponderRecipesResponderRecipeCollectionItemOutput) DefinedTags() pu
 	return o.ApplyT(func(v GetResponderRecipesResponderRecipeCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// ResponderRule Description
+// ResponderRule description.
 func (o GetResponderRecipesResponderRecipeCollectionItemOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResponderRecipesResponderRecipeCollectionItem) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -16757,7 +17833,7 @@ func (o GetResponderRecipesResponderRecipeCollectionItemArrayOutput) Index(i pul
 type GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRule struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
-	// ResponderRule Description
+	// ResponderRule description.
 	Description string `pulumi:"description"`
 	// Details of ResponderRule.
 	Details []GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetail `pulumi:"details"`
@@ -16795,7 +17871,7 @@ type GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleInput
 type GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleArgs struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// ResponderRule Description
+	// ResponderRule description.
 	Description pulumi.StringInput `pulumi:"description"`
 	// Details of ResponderRule.
 	Details GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailArrayInput `pulumi:"details"`
@@ -16877,7 +17953,7 @@ func (o GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleOu
 	}).(pulumi.StringOutput)
 }
 
-// ResponderRule Description
+// ResponderRule description.
 func (o GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRule) string {
 		return v.Description
@@ -16971,6 +18047,7 @@ func (o GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleAr
 }
 
 type GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetail struct {
+	// Base condition object
 	Condition string `pulumi:"condition"`
 	// ResponderRule configurations
 	Configurations []GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfiguration `pulumi:"configurations"`
@@ -16992,6 +18069,7 @@ type GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetai
 }
 
 type GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailArgs struct {
+	// Base condition object
 	Condition pulumi.StringInput `pulumi:"condition"`
 	// ResponderRule configurations
 	Configurations GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfigurationArrayInput `pulumi:"configurations"`
@@ -17052,6 +18130,7 @@ func (o GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDe
 	return o
 }
 
+// Base condition object
 func (o GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailOutput) Condition() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetail) string {
 		return v.Condition
@@ -17223,7 +18302,7 @@ func (o GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDe
 type GetResponderRecipesResponderRecipeCollectionItemResponderRule struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
-	// ResponderRule Description
+	// ResponderRule description.
 	Description string `pulumi:"description"`
 	// Details of ResponderRule.
 	Details []GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetail `pulumi:"details"`
@@ -17261,7 +18340,7 @@ type GetResponderRecipesResponderRecipeCollectionItemResponderRuleInput interfac
 type GetResponderRecipesResponderRecipeCollectionItemResponderRuleArgs struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// ResponderRule Description
+	// ResponderRule description.
 	Description pulumi.StringInput `pulumi:"description"`
 	// Details of ResponderRule.
 	Details GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailArrayInput `pulumi:"details"`
@@ -17341,7 +18420,7 @@ func (o GetResponderRecipesResponderRecipeCollectionItemResponderRuleOutput) Com
 	return o.ApplyT(func(v GetResponderRecipesResponderRecipeCollectionItemResponderRule) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// ResponderRule Description
+// ResponderRule description.
 func (o GetResponderRecipesResponderRecipeCollectionItemResponderRuleOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResponderRecipesResponderRecipeCollectionItemResponderRule) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -17423,6 +18502,7 @@ func (o GetResponderRecipesResponderRecipeCollectionItemResponderRuleArrayOutput
 }
 
 type GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetail struct {
+	// Base condition object
 	Condition string `pulumi:"condition"`
 	// ResponderRule configurations
 	Configurations []GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfiguration `pulumi:"configurations"`
@@ -17444,6 +18524,7 @@ type GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailInput in
 }
 
 type GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailArgs struct {
+	// Base condition object
 	Condition pulumi.StringInput `pulumi:"condition"`
 	// ResponderRule configurations
 	Configurations GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfigurationArrayInput `pulumi:"configurations"`
@@ -17504,6 +18585,7 @@ func (o GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailOutpu
 	return o
 }
 
+// Base condition object
 func (o GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailOutput) Condition() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetail) string { return v.Condition }).(pulumi.StringOutput)
 }
@@ -17666,6 +18748,1254 @@ func (o GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfi
 	}).(GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfigurationOutput)
 }
 
+type GetSecurityPoliciesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSecurityPoliciesFilterInput is an input type that accepts GetSecurityPoliciesFilterArgs and GetSecurityPoliciesFilterOutput values.
+// You can construct a concrete instance of `GetSecurityPoliciesFilterInput` via:
+//
+//          GetSecurityPoliciesFilterArgs{...}
+type GetSecurityPoliciesFilterInput interface {
+	pulumi.Input
+
+	ToGetSecurityPoliciesFilterOutput() GetSecurityPoliciesFilterOutput
+	ToGetSecurityPoliciesFilterOutputWithContext(context.Context) GetSecurityPoliciesFilterOutput
+}
+
+type GetSecurityPoliciesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSecurityPoliciesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPoliciesFilter)(nil)).Elem()
+}
+
+func (i GetSecurityPoliciesFilterArgs) ToGetSecurityPoliciesFilterOutput() GetSecurityPoliciesFilterOutput {
+	return i.ToGetSecurityPoliciesFilterOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPoliciesFilterArgs) ToGetSecurityPoliciesFilterOutputWithContext(ctx context.Context) GetSecurityPoliciesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPoliciesFilterOutput)
+}
+
+// GetSecurityPoliciesFilterArrayInput is an input type that accepts GetSecurityPoliciesFilterArray and GetSecurityPoliciesFilterArrayOutput values.
+// You can construct a concrete instance of `GetSecurityPoliciesFilterArrayInput` via:
+//
+//          GetSecurityPoliciesFilterArray{ GetSecurityPoliciesFilterArgs{...} }
+type GetSecurityPoliciesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityPoliciesFilterArrayOutput() GetSecurityPoliciesFilterArrayOutput
+	ToGetSecurityPoliciesFilterArrayOutputWithContext(context.Context) GetSecurityPoliciesFilterArrayOutput
+}
+
+type GetSecurityPoliciesFilterArray []GetSecurityPoliciesFilterInput
+
+func (GetSecurityPoliciesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPoliciesFilter)(nil)).Elem()
+}
+
+func (i GetSecurityPoliciesFilterArray) ToGetSecurityPoliciesFilterArrayOutput() GetSecurityPoliciesFilterArrayOutput {
+	return i.ToGetSecurityPoliciesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPoliciesFilterArray) ToGetSecurityPoliciesFilterArrayOutputWithContext(ctx context.Context) GetSecurityPoliciesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPoliciesFilterArrayOutput)
+}
+
+type GetSecurityPoliciesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPoliciesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPoliciesFilter)(nil)).Elem()
+}
+
+func (o GetSecurityPoliciesFilterOutput) ToGetSecurityPoliciesFilterOutput() GetSecurityPoliciesFilterOutput {
+	return o
+}
+
+func (o GetSecurityPoliciesFilterOutput) ToGetSecurityPoliciesFilterOutputWithContext(ctx context.Context) GetSecurityPoliciesFilterOutput {
+	return o
+}
+
+func (o GetSecurityPoliciesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPoliciesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSecurityPoliciesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSecurityPoliciesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSecurityPoliciesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSecurityPoliciesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSecurityPoliciesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPoliciesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPoliciesFilter)(nil)).Elem()
+}
+
+func (o GetSecurityPoliciesFilterArrayOutput) ToGetSecurityPoliciesFilterArrayOutput() GetSecurityPoliciesFilterArrayOutput {
+	return o
+}
+
+func (o GetSecurityPoliciesFilterArrayOutput) ToGetSecurityPoliciesFilterArrayOutputWithContext(ctx context.Context) GetSecurityPoliciesFilterArrayOutput {
+	return o
+}
+
+func (o GetSecurityPoliciesFilterArrayOutput) Index(i pulumi.IntInput) GetSecurityPoliciesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityPoliciesFilter {
+		return vs[0].([]GetSecurityPoliciesFilter)[vs[1].(int)]
+	}).(GetSecurityPoliciesFilterOutput)
+}
+
+type GetSecurityPoliciesSecurityPolicyCollection struct {
+	Items []GetSecurityPoliciesSecurityPolicyCollectionItem `pulumi:"items"`
+}
+
+// GetSecurityPoliciesSecurityPolicyCollectionInput is an input type that accepts GetSecurityPoliciesSecurityPolicyCollectionArgs and GetSecurityPoliciesSecurityPolicyCollectionOutput values.
+// You can construct a concrete instance of `GetSecurityPoliciesSecurityPolicyCollectionInput` via:
+//
+//          GetSecurityPoliciesSecurityPolicyCollectionArgs{...}
+type GetSecurityPoliciesSecurityPolicyCollectionInput interface {
+	pulumi.Input
+
+	ToGetSecurityPoliciesSecurityPolicyCollectionOutput() GetSecurityPoliciesSecurityPolicyCollectionOutput
+	ToGetSecurityPoliciesSecurityPolicyCollectionOutputWithContext(context.Context) GetSecurityPoliciesSecurityPolicyCollectionOutput
+}
+
+type GetSecurityPoliciesSecurityPolicyCollectionArgs struct {
+	Items GetSecurityPoliciesSecurityPolicyCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSecurityPoliciesSecurityPolicyCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPoliciesSecurityPolicyCollection)(nil)).Elem()
+}
+
+func (i GetSecurityPoliciesSecurityPolicyCollectionArgs) ToGetSecurityPoliciesSecurityPolicyCollectionOutput() GetSecurityPoliciesSecurityPolicyCollectionOutput {
+	return i.ToGetSecurityPoliciesSecurityPolicyCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPoliciesSecurityPolicyCollectionArgs) ToGetSecurityPoliciesSecurityPolicyCollectionOutputWithContext(ctx context.Context) GetSecurityPoliciesSecurityPolicyCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPoliciesSecurityPolicyCollectionOutput)
+}
+
+// GetSecurityPoliciesSecurityPolicyCollectionArrayInput is an input type that accepts GetSecurityPoliciesSecurityPolicyCollectionArray and GetSecurityPoliciesSecurityPolicyCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSecurityPoliciesSecurityPolicyCollectionArrayInput` via:
+//
+//          GetSecurityPoliciesSecurityPolicyCollectionArray{ GetSecurityPoliciesSecurityPolicyCollectionArgs{...} }
+type GetSecurityPoliciesSecurityPolicyCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityPoliciesSecurityPolicyCollectionArrayOutput() GetSecurityPoliciesSecurityPolicyCollectionArrayOutput
+	ToGetSecurityPoliciesSecurityPolicyCollectionArrayOutputWithContext(context.Context) GetSecurityPoliciesSecurityPolicyCollectionArrayOutput
+}
+
+type GetSecurityPoliciesSecurityPolicyCollectionArray []GetSecurityPoliciesSecurityPolicyCollectionInput
+
+func (GetSecurityPoliciesSecurityPolicyCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPoliciesSecurityPolicyCollection)(nil)).Elem()
+}
+
+func (i GetSecurityPoliciesSecurityPolicyCollectionArray) ToGetSecurityPoliciesSecurityPolicyCollectionArrayOutput() GetSecurityPoliciesSecurityPolicyCollectionArrayOutput {
+	return i.ToGetSecurityPoliciesSecurityPolicyCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPoliciesSecurityPolicyCollectionArray) ToGetSecurityPoliciesSecurityPolicyCollectionArrayOutputWithContext(ctx context.Context) GetSecurityPoliciesSecurityPolicyCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPoliciesSecurityPolicyCollectionArrayOutput)
+}
+
+type GetSecurityPoliciesSecurityPolicyCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPoliciesSecurityPolicyCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPoliciesSecurityPolicyCollection)(nil)).Elem()
+}
+
+func (o GetSecurityPoliciesSecurityPolicyCollectionOutput) ToGetSecurityPoliciesSecurityPolicyCollectionOutput() GetSecurityPoliciesSecurityPolicyCollectionOutput {
+	return o
+}
+
+func (o GetSecurityPoliciesSecurityPolicyCollectionOutput) ToGetSecurityPoliciesSecurityPolicyCollectionOutputWithContext(ctx context.Context) GetSecurityPoliciesSecurityPolicyCollectionOutput {
+	return o
+}
+
+func (o GetSecurityPoliciesSecurityPolicyCollectionOutput) Items() GetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSecurityPoliciesSecurityPolicyCollection) []GetSecurityPoliciesSecurityPolicyCollectionItem {
+		return v.Items
+	}).(GetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput)
+}
+
+type GetSecurityPoliciesSecurityPolicyCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPoliciesSecurityPolicyCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPoliciesSecurityPolicyCollection)(nil)).Elem()
+}
+
+func (o GetSecurityPoliciesSecurityPolicyCollectionArrayOutput) ToGetSecurityPoliciesSecurityPolicyCollectionArrayOutput() GetSecurityPoliciesSecurityPolicyCollectionArrayOutput {
+	return o
+}
+
+func (o GetSecurityPoliciesSecurityPolicyCollectionArrayOutput) ToGetSecurityPoliciesSecurityPolicyCollectionArrayOutputWithContext(ctx context.Context) GetSecurityPoliciesSecurityPolicyCollectionArrayOutput {
+	return o
+}
+
+func (o GetSecurityPoliciesSecurityPolicyCollectionArrayOutput) Index(i pulumi.IntInput) GetSecurityPoliciesSecurityPolicyCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityPoliciesSecurityPolicyCollection {
+		return vs[0].([]GetSecurityPoliciesSecurityPolicyCollection)[vs[1].(int)]
+	}).(GetSecurityPoliciesSecurityPolicyCollectionOutput)
+}
+
+type GetSecurityPoliciesSecurityPolicyCollectionItem struct {
+	// The category of security policy
+	Category string `pulumi:"category"`
+	// The ID of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// The security policy's description
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// A shorter version of the security policy's name
+	FriendlyName string `pulumi:"friendlyName"`
+	// The unique identifier of the security zone policy (`SecurityPolicy`)
+	Id string `pulumi:"id"`
+	// A message describing the current state in more detail. For example, this can be used to provide actionable information for a resource in a `Failed` state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The owner of the security policy
+	Owner string `pulumi:"owner"`
+	// The list of services that the security policy protects
+	Services []string `pulumi:"services"`
+	// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// The time the security policy was created. An RFC3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time the security policy was last updated. An RFC3339 formatted datetime string.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetSecurityPoliciesSecurityPolicyCollectionItemInput is an input type that accepts GetSecurityPoliciesSecurityPolicyCollectionItemArgs and GetSecurityPoliciesSecurityPolicyCollectionItemOutput values.
+// You can construct a concrete instance of `GetSecurityPoliciesSecurityPolicyCollectionItemInput` via:
+//
+//          GetSecurityPoliciesSecurityPolicyCollectionItemArgs{...}
+type GetSecurityPoliciesSecurityPolicyCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSecurityPoliciesSecurityPolicyCollectionItemOutput() GetSecurityPoliciesSecurityPolicyCollectionItemOutput
+	ToGetSecurityPoliciesSecurityPolicyCollectionItemOutputWithContext(context.Context) GetSecurityPoliciesSecurityPolicyCollectionItemOutput
+}
+
+type GetSecurityPoliciesSecurityPolicyCollectionItemArgs struct {
+	// The category of security policy
+	Category pulumi.StringInput `pulumi:"category"`
+	// The ID of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// The security policy's description
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// A shorter version of the security policy's name
+	FriendlyName pulumi.StringInput `pulumi:"friendlyName"`
+	// The unique identifier of the security zone policy (`SecurityPolicy`)
+	Id pulumi.StringInput `pulumi:"id"`
+	// A message describing the current state in more detail. For example, this can be used to provide actionable information for a resource in a `Failed` state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The owner of the security policy
+	Owner pulumi.StringInput `pulumi:"owner"`
+	// The list of services that the security policy protects
+	Services pulumi.StringArrayInput `pulumi:"services"`
+	// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	// The time the security policy was created. An RFC3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time the security policy was last updated. An RFC3339 formatted datetime string.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetSecurityPoliciesSecurityPolicyCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPoliciesSecurityPolicyCollectionItem)(nil)).Elem()
+}
+
+func (i GetSecurityPoliciesSecurityPolicyCollectionItemArgs) ToGetSecurityPoliciesSecurityPolicyCollectionItemOutput() GetSecurityPoliciesSecurityPolicyCollectionItemOutput {
+	return i.ToGetSecurityPoliciesSecurityPolicyCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPoliciesSecurityPolicyCollectionItemArgs) ToGetSecurityPoliciesSecurityPolicyCollectionItemOutputWithContext(ctx context.Context) GetSecurityPoliciesSecurityPolicyCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPoliciesSecurityPolicyCollectionItemOutput)
+}
+
+// GetSecurityPoliciesSecurityPolicyCollectionItemArrayInput is an input type that accepts GetSecurityPoliciesSecurityPolicyCollectionItemArray and GetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSecurityPoliciesSecurityPolicyCollectionItemArrayInput` via:
+//
+//          GetSecurityPoliciesSecurityPolicyCollectionItemArray{ GetSecurityPoliciesSecurityPolicyCollectionItemArgs{...} }
+type GetSecurityPoliciesSecurityPolicyCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput() GetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput
+	ToGetSecurityPoliciesSecurityPolicyCollectionItemArrayOutputWithContext(context.Context) GetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput
+}
+
+type GetSecurityPoliciesSecurityPolicyCollectionItemArray []GetSecurityPoliciesSecurityPolicyCollectionItemInput
+
+func (GetSecurityPoliciesSecurityPolicyCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPoliciesSecurityPolicyCollectionItem)(nil)).Elem()
+}
+
+func (i GetSecurityPoliciesSecurityPolicyCollectionItemArray) ToGetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput() GetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput {
+	return i.ToGetSecurityPoliciesSecurityPolicyCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityPoliciesSecurityPolicyCollectionItemArray) ToGetSecurityPoliciesSecurityPolicyCollectionItemArrayOutputWithContext(ctx context.Context) GetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput)
+}
+
+type GetSecurityPoliciesSecurityPolicyCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPoliciesSecurityPolicyCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityPoliciesSecurityPolicyCollectionItem)(nil)).Elem()
+}
+
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) ToGetSecurityPoliciesSecurityPolicyCollectionItemOutput() GetSecurityPoliciesSecurityPolicyCollectionItemOutput {
+	return o
+}
+
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) ToGetSecurityPoliciesSecurityPolicyCollectionItemOutputWithContext(ctx context.Context) GetSecurityPoliciesSecurityPolicyCollectionItemOutput {
+	return o
+}
+
+// The category of security policy
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) Category() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPoliciesSecurityPolicyCollectionItem) string { return v.Category }).(pulumi.StringOutput)
+}
+
+// The ID of the compartment in which to list resources.
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPoliciesSecurityPolicyCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetSecurityPoliciesSecurityPolicyCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// The security policy's description
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPoliciesSecurityPolicyCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPoliciesSecurityPolicyCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetSecurityPoliciesSecurityPolicyCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// A shorter version of the security policy's name
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) FriendlyName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPoliciesSecurityPolicyCollectionItem) string { return v.FriendlyName }).(pulumi.StringOutput)
+}
+
+// The unique identifier of the security zone policy (`SecurityPolicy`)
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPoliciesSecurityPolicyCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A message describing the current state in more detail. For example, this can be used to provide actionable information for a resource in a `Failed` state.
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPoliciesSecurityPolicyCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The owner of the security policy
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) Owner() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPoliciesSecurityPolicyCollectionItem) string { return v.Owner }).(pulumi.StringOutput)
+}
+
+// The list of services that the security policy protects
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) Services() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSecurityPoliciesSecurityPolicyCollectionItem) []string { return v.Services }).(pulumi.StringArrayOutput)
+}
+
+// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPoliciesSecurityPolicyCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetSecurityPoliciesSecurityPolicyCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+}
+
+// The time the security policy was created. An RFC3339 formatted datetime string.
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPoliciesSecurityPolicyCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time the security policy was last updated. An RFC3339 formatted datetime string.
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPoliciesSecurityPolicyCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityPoliciesSecurityPolicyCollectionItem)(nil)).Elem()
+}
+
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput) ToGetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput() GetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput) ToGetSecurityPoliciesSecurityPolicyCollectionItemArrayOutputWithContext(ctx context.Context) GetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSecurityPoliciesSecurityPolicyCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityPoliciesSecurityPolicyCollectionItem {
+		return vs[0].([]GetSecurityPoliciesSecurityPolicyCollectionItem)[vs[1].(int)]
+	}).(GetSecurityPoliciesSecurityPolicyCollectionItemOutput)
+}
+
+type GetSecurityRecipesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSecurityRecipesFilterInput is an input type that accepts GetSecurityRecipesFilterArgs and GetSecurityRecipesFilterOutput values.
+// You can construct a concrete instance of `GetSecurityRecipesFilterInput` via:
+//
+//          GetSecurityRecipesFilterArgs{...}
+type GetSecurityRecipesFilterInput interface {
+	pulumi.Input
+
+	ToGetSecurityRecipesFilterOutput() GetSecurityRecipesFilterOutput
+	ToGetSecurityRecipesFilterOutputWithContext(context.Context) GetSecurityRecipesFilterOutput
+}
+
+type GetSecurityRecipesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSecurityRecipesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityRecipesFilter)(nil)).Elem()
+}
+
+func (i GetSecurityRecipesFilterArgs) ToGetSecurityRecipesFilterOutput() GetSecurityRecipesFilterOutput {
+	return i.ToGetSecurityRecipesFilterOutputWithContext(context.Background())
+}
+
+func (i GetSecurityRecipesFilterArgs) ToGetSecurityRecipesFilterOutputWithContext(ctx context.Context) GetSecurityRecipesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityRecipesFilterOutput)
+}
+
+// GetSecurityRecipesFilterArrayInput is an input type that accepts GetSecurityRecipesFilterArray and GetSecurityRecipesFilterArrayOutput values.
+// You can construct a concrete instance of `GetSecurityRecipesFilterArrayInput` via:
+//
+//          GetSecurityRecipesFilterArray{ GetSecurityRecipesFilterArgs{...} }
+type GetSecurityRecipesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityRecipesFilterArrayOutput() GetSecurityRecipesFilterArrayOutput
+	ToGetSecurityRecipesFilterArrayOutputWithContext(context.Context) GetSecurityRecipesFilterArrayOutput
+}
+
+type GetSecurityRecipesFilterArray []GetSecurityRecipesFilterInput
+
+func (GetSecurityRecipesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityRecipesFilter)(nil)).Elem()
+}
+
+func (i GetSecurityRecipesFilterArray) ToGetSecurityRecipesFilterArrayOutput() GetSecurityRecipesFilterArrayOutput {
+	return i.ToGetSecurityRecipesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityRecipesFilterArray) ToGetSecurityRecipesFilterArrayOutputWithContext(ctx context.Context) GetSecurityRecipesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityRecipesFilterArrayOutput)
+}
+
+type GetSecurityRecipesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityRecipesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityRecipesFilter)(nil)).Elem()
+}
+
+func (o GetSecurityRecipesFilterOutput) ToGetSecurityRecipesFilterOutput() GetSecurityRecipesFilterOutput {
+	return o
+}
+
+func (o GetSecurityRecipesFilterOutput) ToGetSecurityRecipesFilterOutputWithContext(ctx context.Context) GetSecurityRecipesFilterOutput {
+	return o
+}
+
+func (o GetSecurityRecipesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityRecipesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSecurityRecipesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSecurityRecipesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSecurityRecipesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSecurityRecipesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSecurityRecipesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityRecipesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityRecipesFilter)(nil)).Elem()
+}
+
+func (o GetSecurityRecipesFilterArrayOutput) ToGetSecurityRecipesFilterArrayOutput() GetSecurityRecipesFilterArrayOutput {
+	return o
+}
+
+func (o GetSecurityRecipesFilterArrayOutput) ToGetSecurityRecipesFilterArrayOutputWithContext(ctx context.Context) GetSecurityRecipesFilterArrayOutput {
+	return o
+}
+
+func (o GetSecurityRecipesFilterArrayOutput) Index(i pulumi.IntInput) GetSecurityRecipesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityRecipesFilter {
+		return vs[0].([]GetSecurityRecipesFilter)[vs[1].(int)]
+	}).(GetSecurityRecipesFilterOutput)
+}
+
+type GetSecurityRecipesSecurityRecipeCollection struct {
+	Items []GetSecurityRecipesSecurityRecipeCollectionItem `pulumi:"items"`
+}
+
+// GetSecurityRecipesSecurityRecipeCollectionInput is an input type that accepts GetSecurityRecipesSecurityRecipeCollectionArgs and GetSecurityRecipesSecurityRecipeCollectionOutput values.
+// You can construct a concrete instance of `GetSecurityRecipesSecurityRecipeCollectionInput` via:
+//
+//          GetSecurityRecipesSecurityRecipeCollectionArgs{...}
+type GetSecurityRecipesSecurityRecipeCollectionInput interface {
+	pulumi.Input
+
+	ToGetSecurityRecipesSecurityRecipeCollectionOutput() GetSecurityRecipesSecurityRecipeCollectionOutput
+	ToGetSecurityRecipesSecurityRecipeCollectionOutputWithContext(context.Context) GetSecurityRecipesSecurityRecipeCollectionOutput
+}
+
+type GetSecurityRecipesSecurityRecipeCollectionArgs struct {
+	Items GetSecurityRecipesSecurityRecipeCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSecurityRecipesSecurityRecipeCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityRecipesSecurityRecipeCollection)(nil)).Elem()
+}
+
+func (i GetSecurityRecipesSecurityRecipeCollectionArgs) ToGetSecurityRecipesSecurityRecipeCollectionOutput() GetSecurityRecipesSecurityRecipeCollectionOutput {
+	return i.ToGetSecurityRecipesSecurityRecipeCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSecurityRecipesSecurityRecipeCollectionArgs) ToGetSecurityRecipesSecurityRecipeCollectionOutputWithContext(ctx context.Context) GetSecurityRecipesSecurityRecipeCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityRecipesSecurityRecipeCollectionOutput)
+}
+
+// GetSecurityRecipesSecurityRecipeCollectionArrayInput is an input type that accepts GetSecurityRecipesSecurityRecipeCollectionArray and GetSecurityRecipesSecurityRecipeCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSecurityRecipesSecurityRecipeCollectionArrayInput` via:
+//
+//          GetSecurityRecipesSecurityRecipeCollectionArray{ GetSecurityRecipesSecurityRecipeCollectionArgs{...} }
+type GetSecurityRecipesSecurityRecipeCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityRecipesSecurityRecipeCollectionArrayOutput() GetSecurityRecipesSecurityRecipeCollectionArrayOutput
+	ToGetSecurityRecipesSecurityRecipeCollectionArrayOutputWithContext(context.Context) GetSecurityRecipesSecurityRecipeCollectionArrayOutput
+}
+
+type GetSecurityRecipesSecurityRecipeCollectionArray []GetSecurityRecipesSecurityRecipeCollectionInput
+
+func (GetSecurityRecipesSecurityRecipeCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityRecipesSecurityRecipeCollection)(nil)).Elem()
+}
+
+func (i GetSecurityRecipesSecurityRecipeCollectionArray) ToGetSecurityRecipesSecurityRecipeCollectionArrayOutput() GetSecurityRecipesSecurityRecipeCollectionArrayOutput {
+	return i.ToGetSecurityRecipesSecurityRecipeCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityRecipesSecurityRecipeCollectionArray) ToGetSecurityRecipesSecurityRecipeCollectionArrayOutputWithContext(ctx context.Context) GetSecurityRecipesSecurityRecipeCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityRecipesSecurityRecipeCollectionArrayOutput)
+}
+
+type GetSecurityRecipesSecurityRecipeCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityRecipesSecurityRecipeCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityRecipesSecurityRecipeCollection)(nil)).Elem()
+}
+
+func (o GetSecurityRecipesSecurityRecipeCollectionOutput) ToGetSecurityRecipesSecurityRecipeCollectionOutput() GetSecurityRecipesSecurityRecipeCollectionOutput {
+	return o
+}
+
+func (o GetSecurityRecipesSecurityRecipeCollectionOutput) ToGetSecurityRecipesSecurityRecipeCollectionOutputWithContext(ctx context.Context) GetSecurityRecipesSecurityRecipeCollectionOutput {
+	return o
+}
+
+func (o GetSecurityRecipesSecurityRecipeCollectionOutput) Items() GetSecurityRecipesSecurityRecipeCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSecurityRecipesSecurityRecipeCollection) []GetSecurityRecipesSecurityRecipeCollectionItem {
+		return v.Items
+	}).(GetSecurityRecipesSecurityRecipeCollectionItemArrayOutput)
+}
+
+type GetSecurityRecipesSecurityRecipeCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityRecipesSecurityRecipeCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityRecipesSecurityRecipeCollection)(nil)).Elem()
+}
+
+func (o GetSecurityRecipesSecurityRecipeCollectionArrayOutput) ToGetSecurityRecipesSecurityRecipeCollectionArrayOutput() GetSecurityRecipesSecurityRecipeCollectionArrayOutput {
+	return o
+}
+
+func (o GetSecurityRecipesSecurityRecipeCollectionArrayOutput) ToGetSecurityRecipesSecurityRecipeCollectionArrayOutputWithContext(ctx context.Context) GetSecurityRecipesSecurityRecipeCollectionArrayOutput {
+	return o
+}
+
+func (o GetSecurityRecipesSecurityRecipeCollectionArrayOutput) Index(i pulumi.IntInput) GetSecurityRecipesSecurityRecipeCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityRecipesSecurityRecipeCollection {
+		return vs[0].([]GetSecurityRecipesSecurityRecipeCollection)[vs[1].(int)]
+	}).(GetSecurityRecipesSecurityRecipeCollectionOutput)
+}
+
+type GetSecurityRecipesSecurityRecipeCollectionItem struct {
+	// The ID of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// The recipe's description
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The unique identifier of the security zone recipe (`SecurityRecipe`)
+	Id string `pulumi:"id"`
+	// A message describing the current state in more detail. For example, this can be used to provide actionable information for a recipe in the `Failed` state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The owner of the recipe
+	Owner string `pulumi:"owner"`
+	// The list of `SecurityPolicy` ids that are included in the recipe
+	SecurityPolicies []string `pulumi:"securityPolicies"`
+	// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// The time the recipe was created. An RFC3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time the recipe was last updated. An RFC3339 formatted datetime string.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetSecurityRecipesSecurityRecipeCollectionItemInput is an input type that accepts GetSecurityRecipesSecurityRecipeCollectionItemArgs and GetSecurityRecipesSecurityRecipeCollectionItemOutput values.
+// You can construct a concrete instance of `GetSecurityRecipesSecurityRecipeCollectionItemInput` via:
+//
+//          GetSecurityRecipesSecurityRecipeCollectionItemArgs{...}
+type GetSecurityRecipesSecurityRecipeCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSecurityRecipesSecurityRecipeCollectionItemOutput() GetSecurityRecipesSecurityRecipeCollectionItemOutput
+	ToGetSecurityRecipesSecurityRecipeCollectionItemOutputWithContext(context.Context) GetSecurityRecipesSecurityRecipeCollectionItemOutput
+}
+
+type GetSecurityRecipesSecurityRecipeCollectionItemArgs struct {
+	// The ID of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// The recipe's description
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The unique identifier of the security zone recipe (`SecurityRecipe`)
+	Id pulumi.StringInput `pulumi:"id"`
+	// A message describing the current state in more detail. For example, this can be used to provide actionable information for a recipe in the `Failed` state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The owner of the recipe
+	Owner pulumi.StringInput `pulumi:"owner"`
+	// The list of `SecurityPolicy` ids that are included in the recipe
+	SecurityPolicies pulumi.StringArrayInput `pulumi:"securityPolicies"`
+	// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	// The time the recipe was created. An RFC3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time the recipe was last updated. An RFC3339 formatted datetime string.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetSecurityRecipesSecurityRecipeCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityRecipesSecurityRecipeCollectionItem)(nil)).Elem()
+}
+
+func (i GetSecurityRecipesSecurityRecipeCollectionItemArgs) ToGetSecurityRecipesSecurityRecipeCollectionItemOutput() GetSecurityRecipesSecurityRecipeCollectionItemOutput {
+	return i.ToGetSecurityRecipesSecurityRecipeCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSecurityRecipesSecurityRecipeCollectionItemArgs) ToGetSecurityRecipesSecurityRecipeCollectionItemOutputWithContext(ctx context.Context) GetSecurityRecipesSecurityRecipeCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityRecipesSecurityRecipeCollectionItemOutput)
+}
+
+// GetSecurityRecipesSecurityRecipeCollectionItemArrayInput is an input type that accepts GetSecurityRecipesSecurityRecipeCollectionItemArray and GetSecurityRecipesSecurityRecipeCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSecurityRecipesSecurityRecipeCollectionItemArrayInput` via:
+//
+//          GetSecurityRecipesSecurityRecipeCollectionItemArray{ GetSecurityRecipesSecurityRecipeCollectionItemArgs{...} }
+type GetSecurityRecipesSecurityRecipeCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityRecipesSecurityRecipeCollectionItemArrayOutput() GetSecurityRecipesSecurityRecipeCollectionItemArrayOutput
+	ToGetSecurityRecipesSecurityRecipeCollectionItemArrayOutputWithContext(context.Context) GetSecurityRecipesSecurityRecipeCollectionItemArrayOutput
+}
+
+type GetSecurityRecipesSecurityRecipeCollectionItemArray []GetSecurityRecipesSecurityRecipeCollectionItemInput
+
+func (GetSecurityRecipesSecurityRecipeCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityRecipesSecurityRecipeCollectionItem)(nil)).Elem()
+}
+
+func (i GetSecurityRecipesSecurityRecipeCollectionItemArray) ToGetSecurityRecipesSecurityRecipeCollectionItemArrayOutput() GetSecurityRecipesSecurityRecipeCollectionItemArrayOutput {
+	return i.ToGetSecurityRecipesSecurityRecipeCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityRecipesSecurityRecipeCollectionItemArray) ToGetSecurityRecipesSecurityRecipeCollectionItemArrayOutputWithContext(ctx context.Context) GetSecurityRecipesSecurityRecipeCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityRecipesSecurityRecipeCollectionItemArrayOutput)
+}
+
+type GetSecurityRecipesSecurityRecipeCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityRecipesSecurityRecipeCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityRecipesSecurityRecipeCollectionItem)(nil)).Elem()
+}
+
+func (o GetSecurityRecipesSecurityRecipeCollectionItemOutput) ToGetSecurityRecipesSecurityRecipeCollectionItemOutput() GetSecurityRecipesSecurityRecipeCollectionItemOutput {
+	return o
+}
+
+func (o GetSecurityRecipesSecurityRecipeCollectionItemOutput) ToGetSecurityRecipesSecurityRecipeCollectionItemOutputWithContext(ctx context.Context) GetSecurityRecipesSecurityRecipeCollectionItemOutput {
+	return o
+}
+
+// The ID of the compartment in which to list resources.
+func (o GetSecurityRecipesSecurityRecipeCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityRecipesSecurityRecipeCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetSecurityRecipesSecurityRecipeCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetSecurityRecipesSecurityRecipeCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// The recipe's description
+func (o GetSecurityRecipesSecurityRecipeCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityRecipesSecurityRecipeCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetSecurityRecipesSecurityRecipeCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityRecipesSecurityRecipeCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetSecurityRecipesSecurityRecipeCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetSecurityRecipesSecurityRecipeCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// The unique identifier of the security zone recipe (`SecurityRecipe`)
+func (o GetSecurityRecipesSecurityRecipeCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityRecipesSecurityRecipeCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A message describing the current state in more detail. For example, this can be used to provide actionable information for a recipe in the `Failed` state.
+func (o GetSecurityRecipesSecurityRecipeCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityRecipesSecurityRecipeCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The owner of the recipe
+func (o GetSecurityRecipesSecurityRecipeCollectionItemOutput) Owner() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityRecipesSecurityRecipeCollectionItem) string { return v.Owner }).(pulumi.StringOutput)
+}
+
+// The list of `SecurityPolicy` ids that are included in the recipe
+func (o GetSecurityRecipesSecurityRecipeCollectionItemOutput) SecurityPolicies() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSecurityRecipesSecurityRecipeCollectionItem) []string { return v.SecurityPolicies }).(pulumi.StringArrayOutput)
+}
+
+// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+func (o GetSecurityRecipesSecurityRecipeCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityRecipesSecurityRecipeCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetSecurityRecipesSecurityRecipeCollectionItemOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetSecurityRecipesSecurityRecipeCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+}
+
+// The time the recipe was created. An RFC3339 formatted datetime string.
+func (o GetSecurityRecipesSecurityRecipeCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityRecipesSecurityRecipeCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time the recipe was last updated. An RFC3339 formatted datetime string.
+func (o GetSecurityRecipesSecurityRecipeCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityRecipesSecurityRecipeCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetSecurityRecipesSecurityRecipeCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityRecipesSecurityRecipeCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityRecipesSecurityRecipeCollectionItem)(nil)).Elem()
+}
+
+func (o GetSecurityRecipesSecurityRecipeCollectionItemArrayOutput) ToGetSecurityRecipesSecurityRecipeCollectionItemArrayOutput() GetSecurityRecipesSecurityRecipeCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSecurityRecipesSecurityRecipeCollectionItemArrayOutput) ToGetSecurityRecipesSecurityRecipeCollectionItemArrayOutputWithContext(ctx context.Context) GetSecurityRecipesSecurityRecipeCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSecurityRecipesSecurityRecipeCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSecurityRecipesSecurityRecipeCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityRecipesSecurityRecipeCollectionItem {
+		return vs[0].([]GetSecurityRecipesSecurityRecipeCollectionItem)[vs[1].(int)]
+	}).(GetSecurityRecipesSecurityRecipeCollectionItemOutput)
+}
+
+type GetSecurityZonesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSecurityZonesFilterInput is an input type that accepts GetSecurityZonesFilterArgs and GetSecurityZonesFilterOutput values.
+// You can construct a concrete instance of `GetSecurityZonesFilterInput` via:
+//
+//          GetSecurityZonesFilterArgs{...}
+type GetSecurityZonesFilterInput interface {
+	pulumi.Input
+
+	ToGetSecurityZonesFilterOutput() GetSecurityZonesFilterOutput
+	ToGetSecurityZonesFilterOutputWithContext(context.Context) GetSecurityZonesFilterOutput
+}
+
+type GetSecurityZonesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSecurityZonesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityZonesFilter)(nil)).Elem()
+}
+
+func (i GetSecurityZonesFilterArgs) ToGetSecurityZonesFilterOutput() GetSecurityZonesFilterOutput {
+	return i.ToGetSecurityZonesFilterOutputWithContext(context.Background())
+}
+
+func (i GetSecurityZonesFilterArgs) ToGetSecurityZonesFilterOutputWithContext(ctx context.Context) GetSecurityZonesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityZonesFilterOutput)
+}
+
+// GetSecurityZonesFilterArrayInput is an input type that accepts GetSecurityZonesFilterArray and GetSecurityZonesFilterArrayOutput values.
+// You can construct a concrete instance of `GetSecurityZonesFilterArrayInput` via:
+//
+//          GetSecurityZonesFilterArray{ GetSecurityZonesFilterArgs{...} }
+type GetSecurityZonesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityZonesFilterArrayOutput() GetSecurityZonesFilterArrayOutput
+	ToGetSecurityZonesFilterArrayOutputWithContext(context.Context) GetSecurityZonesFilterArrayOutput
+}
+
+type GetSecurityZonesFilterArray []GetSecurityZonesFilterInput
+
+func (GetSecurityZonesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityZonesFilter)(nil)).Elem()
+}
+
+func (i GetSecurityZonesFilterArray) ToGetSecurityZonesFilterArrayOutput() GetSecurityZonesFilterArrayOutput {
+	return i.ToGetSecurityZonesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityZonesFilterArray) ToGetSecurityZonesFilterArrayOutputWithContext(ctx context.Context) GetSecurityZonesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityZonesFilterArrayOutput)
+}
+
+type GetSecurityZonesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityZonesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityZonesFilter)(nil)).Elem()
+}
+
+func (o GetSecurityZonesFilterOutput) ToGetSecurityZonesFilterOutput() GetSecurityZonesFilterOutput {
+	return o
+}
+
+func (o GetSecurityZonesFilterOutput) ToGetSecurityZonesFilterOutputWithContext(ctx context.Context) GetSecurityZonesFilterOutput {
+	return o
+}
+
+func (o GetSecurityZonesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityZonesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSecurityZonesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSecurityZonesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSecurityZonesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSecurityZonesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSecurityZonesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityZonesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityZonesFilter)(nil)).Elem()
+}
+
+func (o GetSecurityZonesFilterArrayOutput) ToGetSecurityZonesFilterArrayOutput() GetSecurityZonesFilterArrayOutput {
+	return o
+}
+
+func (o GetSecurityZonesFilterArrayOutput) ToGetSecurityZonesFilterArrayOutputWithContext(ctx context.Context) GetSecurityZonesFilterArrayOutput {
+	return o
+}
+
+func (o GetSecurityZonesFilterArrayOutput) Index(i pulumi.IntInput) GetSecurityZonesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityZonesFilter {
+		return vs[0].([]GetSecurityZonesFilter)[vs[1].(int)]
+	}).(GetSecurityZonesFilterOutput)
+}
+
+type GetSecurityZonesSecurityZoneCollection struct {
+	Items []GetSecurityZonesSecurityZoneCollectionItem `pulumi:"items"`
+}
+
+// GetSecurityZonesSecurityZoneCollectionInput is an input type that accepts GetSecurityZonesSecurityZoneCollectionArgs and GetSecurityZonesSecurityZoneCollectionOutput values.
+// You can construct a concrete instance of `GetSecurityZonesSecurityZoneCollectionInput` via:
+//
+//          GetSecurityZonesSecurityZoneCollectionArgs{...}
+type GetSecurityZonesSecurityZoneCollectionInput interface {
+	pulumi.Input
+
+	ToGetSecurityZonesSecurityZoneCollectionOutput() GetSecurityZonesSecurityZoneCollectionOutput
+	ToGetSecurityZonesSecurityZoneCollectionOutputWithContext(context.Context) GetSecurityZonesSecurityZoneCollectionOutput
+}
+
+type GetSecurityZonesSecurityZoneCollectionArgs struct {
+	Items GetSecurityZonesSecurityZoneCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSecurityZonesSecurityZoneCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityZonesSecurityZoneCollection)(nil)).Elem()
+}
+
+func (i GetSecurityZonesSecurityZoneCollectionArgs) ToGetSecurityZonesSecurityZoneCollectionOutput() GetSecurityZonesSecurityZoneCollectionOutput {
+	return i.ToGetSecurityZonesSecurityZoneCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSecurityZonesSecurityZoneCollectionArgs) ToGetSecurityZonesSecurityZoneCollectionOutputWithContext(ctx context.Context) GetSecurityZonesSecurityZoneCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityZonesSecurityZoneCollectionOutput)
+}
+
+// GetSecurityZonesSecurityZoneCollectionArrayInput is an input type that accepts GetSecurityZonesSecurityZoneCollectionArray and GetSecurityZonesSecurityZoneCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSecurityZonesSecurityZoneCollectionArrayInput` via:
+//
+//          GetSecurityZonesSecurityZoneCollectionArray{ GetSecurityZonesSecurityZoneCollectionArgs{...} }
+type GetSecurityZonesSecurityZoneCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityZonesSecurityZoneCollectionArrayOutput() GetSecurityZonesSecurityZoneCollectionArrayOutput
+	ToGetSecurityZonesSecurityZoneCollectionArrayOutputWithContext(context.Context) GetSecurityZonesSecurityZoneCollectionArrayOutput
+}
+
+type GetSecurityZonesSecurityZoneCollectionArray []GetSecurityZonesSecurityZoneCollectionInput
+
+func (GetSecurityZonesSecurityZoneCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityZonesSecurityZoneCollection)(nil)).Elem()
+}
+
+func (i GetSecurityZonesSecurityZoneCollectionArray) ToGetSecurityZonesSecurityZoneCollectionArrayOutput() GetSecurityZonesSecurityZoneCollectionArrayOutput {
+	return i.ToGetSecurityZonesSecurityZoneCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityZonesSecurityZoneCollectionArray) ToGetSecurityZonesSecurityZoneCollectionArrayOutputWithContext(ctx context.Context) GetSecurityZonesSecurityZoneCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityZonesSecurityZoneCollectionArrayOutput)
+}
+
+type GetSecurityZonesSecurityZoneCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityZonesSecurityZoneCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityZonesSecurityZoneCollection)(nil)).Elem()
+}
+
+func (o GetSecurityZonesSecurityZoneCollectionOutput) ToGetSecurityZonesSecurityZoneCollectionOutput() GetSecurityZonesSecurityZoneCollectionOutput {
+	return o
+}
+
+func (o GetSecurityZonesSecurityZoneCollectionOutput) ToGetSecurityZonesSecurityZoneCollectionOutputWithContext(ctx context.Context) GetSecurityZonesSecurityZoneCollectionOutput {
+	return o
+}
+
+func (o GetSecurityZonesSecurityZoneCollectionOutput) Items() GetSecurityZonesSecurityZoneCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSecurityZonesSecurityZoneCollection) []GetSecurityZonesSecurityZoneCollectionItem {
+		return v.Items
+	}).(GetSecurityZonesSecurityZoneCollectionItemArrayOutput)
+}
+
+type GetSecurityZonesSecurityZoneCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityZonesSecurityZoneCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityZonesSecurityZoneCollection)(nil)).Elem()
+}
+
+func (o GetSecurityZonesSecurityZoneCollectionArrayOutput) ToGetSecurityZonesSecurityZoneCollectionArrayOutput() GetSecurityZonesSecurityZoneCollectionArrayOutput {
+	return o
+}
+
+func (o GetSecurityZonesSecurityZoneCollectionArrayOutput) ToGetSecurityZonesSecurityZoneCollectionArrayOutputWithContext(ctx context.Context) GetSecurityZonesSecurityZoneCollectionArrayOutput {
+	return o
+}
+
+func (o GetSecurityZonesSecurityZoneCollectionArrayOutput) Index(i pulumi.IntInput) GetSecurityZonesSecurityZoneCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityZonesSecurityZoneCollection {
+		return vs[0].([]GetSecurityZonesSecurityZoneCollection)[vs[1].(int)]
+	}).(GetSecurityZonesSecurityZoneCollectionOutput)
+}
+
+type GetSecurityZonesSecurityZoneCollectionItem struct {
+	// The ID of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// The security zone's description
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The unique identifier of the security zone (`SecurityZone`)
+	Id string `pulumi:"id"`
+	// List of inherited compartments
+	InheritedByCompartments []string `pulumi:"inheritedByCompartments"`
+	// A message describing the current state in more detail. For example, this can be used to provide actionable information for a zone in the `Failed` state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The OCID of the recipe (`SecurityRecipe`) for the security zone
+	SecurityZoneRecipeId string `pulumi:"securityZoneRecipeId"`
+	// The OCID of the target associated with the security zone
+	SecurityZoneTargetId string `pulumi:"securityZoneTargetId"`
+	// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// The time the security zone was created. An RFC3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time the security zone was last updated. An RFC3339 formatted datetime string.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetSecurityZonesSecurityZoneCollectionItemInput is an input type that accepts GetSecurityZonesSecurityZoneCollectionItemArgs and GetSecurityZonesSecurityZoneCollectionItemOutput values.
+// You can construct a concrete instance of `GetSecurityZonesSecurityZoneCollectionItemInput` via:
+//
+//          GetSecurityZonesSecurityZoneCollectionItemArgs{...}
+type GetSecurityZonesSecurityZoneCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSecurityZonesSecurityZoneCollectionItemOutput() GetSecurityZonesSecurityZoneCollectionItemOutput
+	ToGetSecurityZonesSecurityZoneCollectionItemOutputWithContext(context.Context) GetSecurityZonesSecurityZoneCollectionItemOutput
+}
+
+type GetSecurityZonesSecurityZoneCollectionItemArgs struct {
+	// The ID of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// The security zone's description
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The unique identifier of the security zone (`SecurityZone`)
+	Id pulumi.StringInput `pulumi:"id"`
+	// List of inherited compartments
+	InheritedByCompartments pulumi.StringArrayInput `pulumi:"inheritedByCompartments"`
+	// A message describing the current state in more detail. For example, this can be used to provide actionable information for a zone in the `Failed` state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The OCID of the recipe (`SecurityRecipe`) for the security zone
+	SecurityZoneRecipeId pulumi.StringInput `pulumi:"securityZoneRecipeId"`
+	// The OCID of the target associated with the security zone
+	SecurityZoneTargetId pulumi.StringInput `pulumi:"securityZoneTargetId"`
+	// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	// The time the security zone was created. An RFC3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time the security zone was last updated. An RFC3339 formatted datetime string.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetSecurityZonesSecurityZoneCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityZonesSecurityZoneCollectionItem)(nil)).Elem()
+}
+
+func (i GetSecurityZonesSecurityZoneCollectionItemArgs) ToGetSecurityZonesSecurityZoneCollectionItemOutput() GetSecurityZonesSecurityZoneCollectionItemOutput {
+	return i.ToGetSecurityZonesSecurityZoneCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSecurityZonesSecurityZoneCollectionItemArgs) ToGetSecurityZonesSecurityZoneCollectionItemOutputWithContext(ctx context.Context) GetSecurityZonesSecurityZoneCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityZonesSecurityZoneCollectionItemOutput)
+}
+
+// GetSecurityZonesSecurityZoneCollectionItemArrayInput is an input type that accepts GetSecurityZonesSecurityZoneCollectionItemArray and GetSecurityZonesSecurityZoneCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSecurityZonesSecurityZoneCollectionItemArrayInput` via:
+//
+//          GetSecurityZonesSecurityZoneCollectionItemArray{ GetSecurityZonesSecurityZoneCollectionItemArgs{...} }
+type GetSecurityZonesSecurityZoneCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSecurityZonesSecurityZoneCollectionItemArrayOutput() GetSecurityZonesSecurityZoneCollectionItemArrayOutput
+	ToGetSecurityZonesSecurityZoneCollectionItemArrayOutputWithContext(context.Context) GetSecurityZonesSecurityZoneCollectionItemArrayOutput
+}
+
+type GetSecurityZonesSecurityZoneCollectionItemArray []GetSecurityZonesSecurityZoneCollectionItemInput
+
+func (GetSecurityZonesSecurityZoneCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityZonesSecurityZoneCollectionItem)(nil)).Elem()
+}
+
+func (i GetSecurityZonesSecurityZoneCollectionItemArray) ToGetSecurityZonesSecurityZoneCollectionItemArrayOutput() GetSecurityZonesSecurityZoneCollectionItemArrayOutput {
+	return i.ToGetSecurityZonesSecurityZoneCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecurityZonesSecurityZoneCollectionItemArray) ToGetSecurityZonesSecurityZoneCollectionItemArrayOutputWithContext(ctx context.Context) GetSecurityZonesSecurityZoneCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityZonesSecurityZoneCollectionItemArrayOutput)
+}
+
+type GetSecurityZonesSecurityZoneCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityZonesSecurityZoneCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecurityZonesSecurityZoneCollectionItem)(nil)).Elem()
+}
+
+func (o GetSecurityZonesSecurityZoneCollectionItemOutput) ToGetSecurityZonesSecurityZoneCollectionItemOutput() GetSecurityZonesSecurityZoneCollectionItemOutput {
+	return o
+}
+
+func (o GetSecurityZonesSecurityZoneCollectionItemOutput) ToGetSecurityZonesSecurityZoneCollectionItemOutputWithContext(ctx context.Context) GetSecurityZonesSecurityZoneCollectionItemOutput {
+	return o
+}
+
+// The ID of the compartment in which to list resources.
+func (o GetSecurityZonesSecurityZoneCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityZonesSecurityZoneCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetSecurityZonesSecurityZoneCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetSecurityZonesSecurityZoneCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// The security zone's description
+func (o GetSecurityZonesSecurityZoneCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityZonesSecurityZoneCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetSecurityZonesSecurityZoneCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityZonesSecurityZoneCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetSecurityZonesSecurityZoneCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetSecurityZonesSecurityZoneCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// The unique identifier of the security zone (`SecurityZone`)
+func (o GetSecurityZonesSecurityZoneCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityZonesSecurityZoneCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// List of inherited compartments
+func (o GetSecurityZonesSecurityZoneCollectionItemOutput) InheritedByCompartments() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSecurityZonesSecurityZoneCollectionItem) []string { return v.InheritedByCompartments }).(pulumi.StringArrayOutput)
+}
+
+// A message describing the current state in more detail. For example, this can be used to provide actionable information for a zone in the `Failed` state.
+func (o GetSecurityZonesSecurityZoneCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityZonesSecurityZoneCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The OCID of the recipe (`SecurityRecipe`) for the security zone
+func (o GetSecurityZonesSecurityZoneCollectionItemOutput) SecurityZoneRecipeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityZonesSecurityZoneCollectionItem) string { return v.SecurityZoneRecipeId }).(pulumi.StringOutput)
+}
+
+// The OCID of the target associated with the security zone
+func (o GetSecurityZonesSecurityZoneCollectionItemOutput) SecurityZoneTargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityZonesSecurityZoneCollectionItem) string { return v.SecurityZoneTargetId }).(pulumi.StringOutput)
+}
+
+// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+func (o GetSecurityZonesSecurityZoneCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityZonesSecurityZoneCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetSecurityZonesSecurityZoneCollectionItemOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetSecurityZonesSecurityZoneCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+}
+
+// The time the security zone was created. An RFC3339 formatted datetime string.
+func (o GetSecurityZonesSecurityZoneCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityZonesSecurityZoneCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time the security zone was last updated. An RFC3339 formatted datetime string.
+func (o GetSecurityZonesSecurityZoneCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityZonesSecurityZoneCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetSecurityZonesSecurityZoneCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecurityZonesSecurityZoneCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecurityZonesSecurityZoneCollectionItem)(nil)).Elem()
+}
+
+func (o GetSecurityZonesSecurityZoneCollectionItemArrayOutput) ToGetSecurityZonesSecurityZoneCollectionItemArrayOutput() GetSecurityZonesSecurityZoneCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSecurityZonesSecurityZoneCollectionItemArrayOutput) ToGetSecurityZonesSecurityZoneCollectionItemArrayOutputWithContext(ctx context.Context) GetSecurityZonesSecurityZoneCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSecurityZonesSecurityZoneCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSecurityZonesSecurityZoneCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityZonesSecurityZoneCollectionItem {
+		return vs[0].([]GetSecurityZonesSecurityZoneCollectionItem)[vs[1].(int)]
+	}).(GetSecurityZonesSecurityZoneCollectionItemOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DataMaskRuleTargetSelectedInput)(nil)).Elem(), DataMaskRuleTargetSelectedArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DataMaskRuleTargetSelectedPtrInput)(nil)).Elem(), DataMaskRuleTargetSelectedArgs{})
@@ -17699,6 +20029,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ResponderRecipeResponderRuleDetailsInput)(nil)).Elem(), ResponderRecipeResponderRuleDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ResponderRecipeResponderRuleDetailsConfigurationInput)(nil)).Elem(), ResponderRecipeResponderRuleDetailsConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ResponderRecipeResponderRuleDetailsConfigurationArrayInput)(nil)).Elem(), ResponderRecipeResponderRuleDetailsConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TargetTargetDetailInput)(nil)).Elem(), TargetTargetDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TargetTargetDetailArrayInput)(nil)).Elem(), TargetTargetDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TargetTargetDetailTargetSecurityZoneRecipeInput)(nil)).Elem(), TargetTargetDetailTargetSecurityZoneRecipeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TargetTargetDetailTargetSecurityZoneRecipeArrayInput)(nil)).Elem(), TargetTargetDetailTargetSecurityZoneRecipeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TargetTargetDetectorRecipeInput)(nil)).Elem(), TargetTargetDetectorRecipeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TargetTargetDetectorRecipeArrayInput)(nil)).Elem(), TargetTargetDetectorRecipeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TargetTargetDetectorRecipeDetectorRuleInput)(nil)).Elem(), TargetTargetDetectorRecipeDetectorRuleArgs{})
@@ -17789,6 +20123,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueArrayInput)(nil)).Elem(), GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesFilterInput)(nil)).Elem(), GetDetectorRecipesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesFilterArrayInput)(nil)).Elem(), GetDetectorRecipesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetDetailInput)(nil)).Elem(), GetGuardTargetTargetDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetDetailArrayInput)(nil)).Elem(), GetGuardTargetTargetDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetDetailTargetSecurityZoneRecipeInput)(nil)).Elem(), GetGuardTargetTargetDetailTargetSecurityZoneRecipeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetDetailTargetSecurityZoneRecipeArrayInput)(nil)).Elem(), GetGuardTargetTargetDetailTargetSecurityZoneRecipeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeInput)(nil)).Elem(), GetGuardTargetTargetDetectorRecipeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeArrayInput)(nil)).Elem(), GetGuardTargetTargetDetectorRecipeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeDetectorRuleInput)(nil)).Elem(), GetGuardTargetTargetDetectorRecipeDetectorRuleArgs{})
@@ -17831,6 +20169,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionArrayInput)(nil)).Elem(), GetGuardTargetsTargetCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemArrayInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetailInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemTargetDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetailArrayInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemTargetDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArrayInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemTargetDetectorRecipeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeArrayInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemTargetDetectorRecipeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleArgs{})
@@ -17903,6 +20245,24 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailArrayInput)(nil)).Elem(), GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfigurationInput)(nil)).Elem(), GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfigurationArrayInput)(nil)).Elem(), GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPoliciesFilterInput)(nil)).Elem(), GetSecurityPoliciesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPoliciesFilterArrayInput)(nil)).Elem(), GetSecurityPoliciesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPoliciesSecurityPolicyCollectionInput)(nil)).Elem(), GetSecurityPoliciesSecurityPolicyCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPoliciesSecurityPolicyCollectionArrayInput)(nil)).Elem(), GetSecurityPoliciesSecurityPolicyCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPoliciesSecurityPolicyCollectionItemInput)(nil)).Elem(), GetSecurityPoliciesSecurityPolicyCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityPoliciesSecurityPolicyCollectionItemArrayInput)(nil)).Elem(), GetSecurityPoliciesSecurityPolicyCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityRecipesFilterInput)(nil)).Elem(), GetSecurityRecipesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityRecipesFilterArrayInput)(nil)).Elem(), GetSecurityRecipesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityRecipesSecurityRecipeCollectionInput)(nil)).Elem(), GetSecurityRecipesSecurityRecipeCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityRecipesSecurityRecipeCollectionArrayInput)(nil)).Elem(), GetSecurityRecipesSecurityRecipeCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityRecipesSecurityRecipeCollectionItemInput)(nil)).Elem(), GetSecurityRecipesSecurityRecipeCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityRecipesSecurityRecipeCollectionItemArrayInput)(nil)).Elem(), GetSecurityRecipesSecurityRecipeCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityZonesFilterInput)(nil)).Elem(), GetSecurityZonesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityZonesFilterArrayInput)(nil)).Elem(), GetSecurityZonesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityZonesSecurityZoneCollectionInput)(nil)).Elem(), GetSecurityZonesSecurityZoneCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityZonesSecurityZoneCollectionArrayInput)(nil)).Elem(), GetSecurityZonesSecurityZoneCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityZonesSecurityZoneCollectionItemInput)(nil)).Elem(), GetSecurityZonesSecurityZoneCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityZonesSecurityZoneCollectionItemArrayInput)(nil)).Elem(), GetSecurityZonesSecurityZoneCollectionItemArray{})
 	pulumi.RegisterOutputType(DataMaskRuleTargetSelectedOutput{})
 	pulumi.RegisterOutputType(DataMaskRuleTargetSelectedPtrOutput{})
 	pulumi.RegisterOutputType(DetectorRecipeDetectorRuleOutput{})
@@ -17935,6 +20295,10 @@ func init() {
 	pulumi.RegisterOutputType(ResponderRecipeResponderRuleDetailsOutput{})
 	pulumi.RegisterOutputType(ResponderRecipeResponderRuleDetailsConfigurationOutput{})
 	pulumi.RegisterOutputType(ResponderRecipeResponderRuleDetailsConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(TargetTargetDetailOutput{})
+	pulumi.RegisterOutputType(TargetTargetDetailArrayOutput{})
+	pulumi.RegisterOutputType(TargetTargetDetailTargetSecurityZoneRecipeOutput{})
+	pulumi.RegisterOutputType(TargetTargetDetailTargetSecurityZoneRecipeArrayOutput{})
 	pulumi.RegisterOutputType(TargetTargetDetectorRecipeOutput{})
 	pulumi.RegisterOutputType(TargetTargetDetectorRecipeArrayOutput{})
 	pulumi.RegisterOutputType(TargetTargetDetectorRecipeDetectorRuleOutput{})
@@ -18025,6 +20389,10 @@ func init() {
 	pulumi.RegisterOutputType(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueArrayOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipesFilterOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetGuardTargetTargetDetailOutput{})
+	pulumi.RegisterOutputType(GetGuardTargetTargetDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetGuardTargetTargetDetailTargetSecurityZoneRecipeOutput{})
+	pulumi.RegisterOutputType(GetGuardTargetTargetDetailTargetSecurityZoneRecipeArrayOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetTargetDetectorRecipeOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetTargetDetectorRecipeArrayOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetTargetDetectorRecipeDetectorRuleOutput{})
@@ -18067,6 +20435,10 @@ func init() {
 	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemTargetDetailOutput{})
+	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemTargetDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeOutput{})
+	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArrayOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeArrayOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleOutput{})
@@ -18139,4 +20511,22 @@ func init() {
 	pulumi.RegisterOutputType(GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfigurationOutput{})
 	pulumi.RegisterOutputType(GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityPoliciesFilterOutput{})
+	pulumi.RegisterOutputType(GetSecurityPoliciesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityPoliciesSecurityPolicyCollectionOutput{})
+	pulumi.RegisterOutputType(GetSecurityPoliciesSecurityPolicyCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityPoliciesSecurityPolicyCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityRecipesFilterOutput{})
+	pulumi.RegisterOutputType(GetSecurityRecipesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityRecipesSecurityRecipeCollectionOutput{})
+	pulumi.RegisterOutputType(GetSecurityRecipesSecurityRecipeCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityRecipesSecurityRecipeCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSecurityRecipesSecurityRecipeCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityZonesFilterOutput{})
+	pulumi.RegisterOutputType(GetSecurityZonesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityZonesSecurityZoneCollectionOutput{})
+	pulumi.RegisterOutputType(GetSecurityZonesSecurityZoneCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSecurityZonesSecurityZoneCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSecurityZonesSecurityZoneCollectionItemArrayOutput{})
 }

@@ -6,6 +6,9 @@ import * as utilities from "../utilities";
 
 // Export members:
 export * from "./config";
+export * from "./dedicatedVantagePoint";
+export * from "./getDedicatedVantagePoint";
+export * from "./getDedicatedVantagePoints";
 export * from "./getMonitor";
 export * from "./getMonitors";
 export * from "./getResult";
@@ -17,6 +20,7 @@ export * from "./script";
 
 // Import resources to register:
 import { Config } from "./config";
+import { DedicatedVantagePoint } from "./dedicatedVantagePoint";
 import { Script } from "./script";
 
 const _module = {
@@ -25,6 +29,8 @@ const _module = {
         switch (type) {
             case "oci:ApmSynthetics/config:Config":
                 return new Config(name, <any>undefined, { urn })
+            case "oci:ApmSynthetics/dedicatedVantagePoint:DedicatedVantagePoint":
+                return new DedicatedVantagePoint(name, <any>undefined, { urn })
             case "oci:ApmSynthetics/script:Script":
                 return new Script(name, <any>undefined, { urn })
             default:
@@ -33,4 +39,5 @@ const _module = {
     },
 };
 pulumi.runtime.registerResourceModule("oci", "ApmSynthetics/config", _module)
+pulumi.runtime.registerResourceModule("oci", "ApmSynthetics/dedicatedVantagePoint", _module)
 pulumi.runtime.registerResourceModule("oci", "ApmSynthetics/script", _module)

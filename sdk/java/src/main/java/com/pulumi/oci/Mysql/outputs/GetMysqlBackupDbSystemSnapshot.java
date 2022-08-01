@@ -104,7 +104,7 @@ public final class GetMysqlBackupDbSystemSnapshot {
      */
     private final String ipAddress;
     /**
-     * @return If the policy is to enable high availability of the instance, by maintaining secondary/failover capacity as necessary.
+     * @return Specifies if the DB System is highly available.
      * 
      */
     private final Boolean isHighlyAvailable;
@@ -311,7 +311,7 @@ public final class GetMysqlBackupDbSystemSnapshot {
         return this.ipAddress;
     }
     /**
-     * @return If the policy is to enable high availability of the instance, by maintaining secondary/failover capacity as necessary.
+     * @return Specifies if the DB System is highly available.
      * 
      */
     public Boolean isHighlyAvailable() {

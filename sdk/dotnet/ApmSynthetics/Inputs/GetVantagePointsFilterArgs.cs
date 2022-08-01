@@ -13,7 +13,7 @@ namespace Pulumi.Oci.ApmSynthetics.Inputs
     public sealed class GetVantagePointsFilterInputArgs : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// A filter to return only resources that match the entire name given.
+        /// A filter to return only the resources that match the entire name.
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;

@@ -125,6 +125,7 @@ import (
 // 				Type: pulumi.Any(_var.Registry_data_asset_default_connection_type),
 // 			},
 // 			Description: pulumi.Any(_var.Registry_data_asset_description),
+// 			EndPoints:   pulumi.Any(_var.Registry_data_asset_end_points),
 // 			ExternalKey: pulumi.Any(_var.Registry_data_asset_external_key),
 // 			Key:         pulumi.Any(_var.Registry_data_asset_key),
 // 			Metadata: &dataconnectivity.RegistryDataAssetMetadataArgs{
@@ -242,6 +243,8 @@ type RegistryDataAsset struct {
 	DefaultConnection RegistryDataAssetDefaultConnectionOutput `pulumi:"defaultConnection"`
 	// (Updatable) A user defined description for the object.
 	Description pulumi.StringOutput `pulumi:"description"`
+	// (Updatable) The list of endpoints with which this data asset is associated.
+	EndPoints pulumi.StringArrayOutput `pulumi:"endPoints"`
 	// (Updatable) The external key for the object.
 	ExternalKey pulumi.StringOutput `pulumi:"externalKey"`
 	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
@@ -322,6 +325,8 @@ type registryDataAssetState struct {
 	DefaultConnection *RegistryDataAssetDefaultConnection `pulumi:"defaultConnection"`
 	// (Updatable) A user defined description for the object.
 	Description *string `pulumi:"description"`
+	// (Updatable) The list of endpoints with which this data asset is associated.
+	EndPoints []string `pulumi:"endPoints"`
 	// (Updatable) The external key for the object.
 	ExternalKey *string `pulumi:"externalKey"`
 	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
@@ -359,6 +364,8 @@ type RegistryDataAssetState struct {
 	DefaultConnection RegistryDataAssetDefaultConnectionPtrInput
 	// (Updatable) A user defined description for the object.
 	Description pulumi.StringPtrInput
+	// (Updatable) The list of endpoints with which this data asset is associated.
+	EndPoints pulumi.StringArrayInput
 	// (Updatable) The external key for the object.
 	ExternalKey pulumi.StringPtrInput
 	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
@@ -400,6 +407,8 @@ type registryDataAssetArgs struct {
 	DefaultConnection *RegistryDataAssetDefaultConnection `pulumi:"defaultConnection"`
 	// (Updatable) A user defined description for the object.
 	Description *string `pulumi:"description"`
+	// (Updatable) The list of endpoints with which this data asset is associated.
+	EndPoints []string `pulumi:"endPoints"`
 	// (Updatable) The external key for the object.
 	ExternalKey *string `pulumi:"externalKey"`
 	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
@@ -438,6 +447,8 @@ type RegistryDataAssetArgs struct {
 	DefaultConnection RegistryDataAssetDefaultConnectionPtrInput
 	// (Updatable) A user defined description for the object.
 	Description pulumi.StringPtrInput
+	// (Updatable) The list of endpoints with which this data asset is associated.
+	EndPoints pulumi.StringArrayInput
 	// (Updatable) The external key for the object.
 	ExternalKey pulumi.StringPtrInput
 	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.

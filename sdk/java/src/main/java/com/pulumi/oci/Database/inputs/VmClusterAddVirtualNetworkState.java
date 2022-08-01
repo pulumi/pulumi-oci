@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Database.inputs.VmClusterAddVirtualNetworkDataCollectionOptionArgs;
 import com.pulumi.oci.Database.inputs.VmClusterAddVirtualNetworkDbServerArgs;
 import java.lang.Boolean;
 import java.lang.Double;
@@ -50,6 +51,21 @@ public final class VmClusterAddVirtualNetworkState extends com.pulumi.resources.
      */
     public Optional<Output<Integer>> cpusEnabled() {
         return Optional.ofNullable(this.cpusEnabled);
+    }
+
+    /**
+     * Indicates user preferences for the various diagnostic collection options for the VM cluster.
+     * 
+     */
+    @Import(name="dataCollectionOptions")
+    private @Nullable Output<List<VmClusterAddVirtualNetworkDataCollectionOptionArgs>> dataCollectionOptions;
+
+    /**
+     * @return Indicates user preferences for the various diagnostic collection options for the VM cluster.
+     * 
+     */
+    public Optional<Output<List<VmClusterAddVirtualNetworkDataCollectionOptionArgs>>> dataCollectionOptions() {
+        return Optional.ofNullable(this.dataCollectionOptions);
     }
 
     @Import(name="dataStorageSizeInGb")
@@ -401,6 +417,7 @@ public final class VmClusterAddVirtualNetworkState extends com.pulumi.resources.
     private VmClusterAddVirtualNetworkState(VmClusterAddVirtualNetworkState $) {
         this.compartmentId = $.compartmentId;
         this.cpusEnabled = $.cpusEnabled;
+        this.dataCollectionOptions = $.dataCollectionOptions;
         this.dataStorageSizeInGb = $.dataStorageSizeInGb;
         this.dataStorageSizeInTbs = $.dataStorageSizeInTbs;
         this.dbNodeStorageSizeInGbs = $.dbNodeStorageSizeInGbs;
@@ -485,6 +502,37 @@ public final class VmClusterAddVirtualNetworkState extends com.pulumi.resources.
          */
         public Builder cpusEnabled(Integer cpusEnabled) {
             return cpusEnabled(Output.of(cpusEnabled));
+        }
+
+        /**
+         * @param dataCollectionOptions Indicates user preferences for the various diagnostic collection options for the VM cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataCollectionOptions(@Nullable Output<List<VmClusterAddVirtualNetworkDataCollectionOptionArgs>> dataCollectionOptions) {
+            $.dataCollectionOptions = dataCollectionOptions;
+            return this;
+        }
+
+        /**
+         * @param dataCollectionOptions Indicates user preferences for the various diagnostic collection options for the VM cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataCollectionOptions(List<VmClusterAddVirtualNetworkDataCollectionOptionArgs> dataCollectionOptions) {
+            return dataCollectionOptions(Output.of(dataCollectionOptions));
+        }
+
+        /**
+         * @param dataCollectionOptions Indicates user preferences for the various diagnostic collection options for the VM cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataCollectionOptions(VmClusterAddVirtualNetworkDataCollectionOptionArgs... dataCollectionOptions) {
+            return dataCollectionOptions(List.of(dataCollectionOptions));
         }
 
         public Builder dataStorageSizeInGb(@Nullable Output<Double> dataStorageSizeInGb) {

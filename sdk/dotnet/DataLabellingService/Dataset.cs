@@ -31,6 +31,15 @@ namespace Pulumi.Oci.DataLabellingService
     ///             DatasetFormatDetails = new Oci.DataLabellingService.Inputs.DatasetDatasetFormatDetailsArgs
     ///             {
     ///                 FormatType = @var.Dataset_dataset_format_details_format_type,
+    ///                 TextFileTypeMetadata = new Oci.DataLabellingService.Inputs.DatasetDatasetFormatDetailsTextFileTypeMetadataArgs
+    ///                 {
+    ///                     ColumnIndex = @var.Dataset_dataset_format_details_text_file_type_metadata_column_index,
+    ///                     FormatType = @var.Dataset_dataset_format_details_text_file_type_metadata_format_type,
+    ///                     ColumnDelimiter = @var.Dataset_dataset_format_details_text_file_type_metadata_column_delimiter,
+    ///                     ColumnName = @var.Dataset_dataset_format_details_text_file_type_metadata_column_name,
+    ///                     EscapeCharacter = @var.Dataset_dataset_format_details_text_file_type_metadata_escape_character,
+    ///                     LineDelimiter = @var.Dataset_dataset_format_details_text_file_type_metadata_line_delimiter,
+    ///                 },
     ///             },
     ///             DatasetSourceDetails = new Oci.DataLabellingService.Inputs.DatasetDatasetSourceDetailsArgs
     ///             {
@@ -85,7 +94,7 @@ namespace Pulumi.Oci.DataLabellingService
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// Specifies how to process the data. Supported formats include IMAGE and TEXT.
+        /// It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
         /// </summary>
         [Output("datasetFormatDetails")]
         public Output<Outputs.DatasetDatasetFormatDetails> DatasetFormatDetails { get; private set; } = null!;
@@ -121,19 +130,19 @@ namespace Pulumi.Oci.DataLabellingService
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// Initial Generate Records configuration, generates records from the Dataset's source.
+        /// The initial generate records configuration. It generates records from the dataset's source.
         /// </summary>
         [Output("initialRecordGenerationConfiguration")]
         public Output<Outputs.DatasetInitialRecordGenerationConfiguration> InitialRecordGenerationConfiguration { get; private set; } = null!;
 
         /// <summary>
-        /// An ordered collection of Labels that are unique by name.
+        /// An ordered collection of labels that are unique by name.
         /// </summary>
         [Output("labelSet")]
         public Output<Outputs.DatasetLabelSet> LabelSet { get; private set; } = null!;
 
         /// <summary>
-        /// The labeling instructions for human labelers in rich text format
+        /// (Updatable) The labeling instructions for human labelers in rich text format
         /// </summary>
         [Output("labelingInstructions")]
         public Output<string> LabelingInstructions { get; private set; } = null!;
@@ -221,7 +230,7 @@ namespace Pulumi.Oci.DataLabellingService
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// Specifies how to process the data. Supported formats include IMAGE and TEXT.
+        /// It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
         /// </summary>
         [Input("datasetFormatDetails", required: true)]
         public Input<Inputs.DatasetDatasetFormatDetailsArgs> DatasetFormatDetails { get; set; } = null!;
@@ -269,19 +278,19 @@ namespace Pulumi.Oci.DataLabellingService
         }
 
         /// <summary>
-        /// Initial Generate Records configuration, generates records from the Dataset's source.
+        /// The initial generate records configuration. It generates records from the dataset's source.
         /// </summary>
         [Input("initialRecordGenerationConfiguration")]
         public Input<Inputs.DatasetInitialRecordGenerationConfigurationArgs>? InitialRecordGenerationConfiguration { get; set; }
 
         /// <summary>
-        /// An ordered collection of Labels that are unique by name.
+        /// An ordered collection of labels that are unique by name.
         /// </summary>
         [Input("labelSet", required: true)]
         public Input<Inputs.DatasetLabelSetArgs> LabelSet { get; set; } = null!;
 
         /// <summary>
-        /// The labeling instructions for human labelers in rich text format
+        /// (Updatable) The labeling instructions for human labelers in rich text format
         /// </summary>
         [Input("labelingInstructions")]
         public Input<string>? LabelingInstructions { get; set; }
@@ -306,7 +315,7 @@ namespace Pulumi.Oci.DataLabellingService
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// Specifies how to process the data. Supported formats include IMAGE and TEXT.
+        /// It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
         /// </summary>
         [Input("datasetFormatDetails")]
         public Input<Inputs.DatasetDatasetFormatDetailsGetArgs>? DatasetFormatDetails { get; set; }
@@ -354,19 +363,19 @@ namespace Pulumi.Oci.DataLabellingService
         }
 
         /// <summary>
-        /// Initial Generate Records configuration, generates records from the Dataset's source.
+        /// The initial generate records configuration. It generates records from the dataset's source.
         /// </summary>
         [Input("initialRecordGenerationConfiguration")]
         public Input<Inputs.DatasetInitialRecordGenerationConfigurationGetArgs>? InitialRecordGenerationConfiguration { get; set; }
 
         /// <summary>
-        /// An ordered collection of Labels that are unique by name.
+        /// An ordered collection of labels that are unique by name.
         /// </summary>
         [Input("labelSet")]
         public Input<Inputs.DatasetLabelSetGetArgs>? LabelSet { get; set; }
 
         /// <summary>
-        /// The labeling instructions for human labelers in rich text format
+        /// (Updatable) The labeling instructions for human labelers in rich text format
         /// </summary>
         [Input("labelingInstructions")]
         public Input<string>? LabelingInstructions { get; set; }

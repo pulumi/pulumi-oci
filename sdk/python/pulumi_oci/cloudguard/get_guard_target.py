@@ -21,7 +21,7 @@ class GetGuardTargetResult:
     """
     A collection of values returned by getGuardTarget.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, inherited_by_compartments=None, lifecyle_details=None, recipe_count=None, state=None, system_tags=None, target_detector_recipes=None, target_id=None, target_resource_id=None, target_resource_type=None, target_responder_recipes=None, time_created=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, inherited_by_compartments=None, lifecyle_details=None, recipe_count=None, state=None, system_tags=None, target_details=None, target_detector_recipes=None, target_id=None, target_resource_id=None, target_resource_type=None, target_responder_recipes=None, time_created=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -55,6 +55,9 @@ class GetGuardTargetResult:
         if system_tags and not isinstance(system_tags, dict):
             raise TypeError("Expected argument 'system_tags' to be a dict")
         pulumi.set(__self__, "system_tags", system_tags)
+        if target_details and not isinstance(target_details, list):
+            raise TypeError("Expected argument 'target_details' to be a list")
+        pulumi.set(__self__, "target_details", target_details)
         if target_detector_recipes and not isinstance(target_detector_recipes, list):
             raise TypeError("Expected argument 'target_detector_recipes' to be a list")
         pulumi.set(__self__, "target_detector_recipes", target_detector_recipes)
@@ -97,7 +100,7 @@ class GetGuardTargetResult:
     @pulumi.getter
     def description(self) -> str:
         """
-        ResponderRule Description
+        ResponderRule description.
         """
         return pulumi.get(self, "description")
 
@@ -105,7 +108,7 @@ class GetGuardTargetResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        ResponderRule Display Name
+        ResponderRule display name.
         """
         return pulumi.get(self, "display_name")
 
@@ -121,7 +124,7 @@ class GetGuardTargetResult:
     @pulumi.getter
     def id(self) -> str:
         """
-        Unique identifier of TargetResponderRecipe that is immutable on creation
+        Unique identifier of TargetResponderRecipe that can't be changed after creation.
         """
         return pulumi.get(self, "id")
 
@@ -164,6 +167,14 @@ class GetGuardTargetResult:
         System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="targetDetails")
+    def target_details(self) -> Sequence['outputs.GetGuardTargetTargetDetailResult']:
+        """
+        Details specific to the target type.
+        """
+        return pulumi.get(self, "target_details")
 
     @property
     @pulumi.getter(name="targetDetectorRecipes")
@@ -236,6 +247,7 @@ class AwaitableGetGuardTargetResult(GetGuardTargetResult):
             recipe_count=self.recipe_count,
             state=self.state,
             system_tags=self.system_tags,
+            target_details=self.target_details,
             target_detector_recipes=self.target_detector_recipes,
             target_id=self.target_id,
             target_resource_id=self.target_resource_id,
@@ -284,6 +296,7 @@ def get_guard_target(target_id: Optional[str] = None,
         recipe_count=__ret__.recipe_count,
         state=__ret__.state,
         system_tags=__ret__.system_tags,
+        target_details=__ret__.target_details,
         target_detector_recipes=__ret__.target_detector_recipes,
         target_id=__ret__.target_id,
         target_resource_id=__ret__.target_resource_id,

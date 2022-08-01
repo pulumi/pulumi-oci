@@ -19,7 +19,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// (Updatable) ResponderRecipe Description
+        /// (Updatable) Responder recipe description.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -37,7 +37,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         }
 
         /// <summary>
-        /// (Updatable) ResponderRecipe Display Name
+        /// (Updatable) Responder recipe display name.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }

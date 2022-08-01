@@ -14,7 +14,7 @@ import java.util.Objects;
 @CustomType
 public final class GetAlertRulesAlertRule {
     /**
-     * @return The unique Budget OCID
+     * @return The unique budget OCID.
      * 
      */
     private final String budgetId;
@@ -29,7 +29,7 @@ public final class GetAlertRulesAlertRule {
      */
     private final String description;
     /**
-     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
+     * @return A user-friendly name. This does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
      * 
      */
     private final String displayName;
@@ -39,17 +39,17 @@ public final class GetAlertRulesAlertRule {
      */
     private final Map<String,Object> freeformTags;
     /**
-     * @return The OCID of the alert rule
+     * @return The OCID of the alert rule.
      * 
      */
     private final String id;
     /**
-     * @return Custom message that will be sent when alert is triggered
+     * @return The custom message that will be sent when the alert is triggered.
      * 
      */
     private final String message;
     /**
-     * @return Delimited list of email addresses to receive the alert when it triggers. Delimiter character can be comma, space, TAB, or semicolon.
+     * @return The delimited list of email addresses to receive the alert when it triggers. Delimiter characters can be a comma, space, TAB, or semicolon.
      * 
      */
     private final String recipients;
@@ -59,7 +59,7 @@ public final class GetAlertRulesAlertRule {
      */
     private final String state;
     /**
-     * @return The threshold for triggering the alert. If thresholdType is PERCENTAGE, the maximum value is 10000.
+     * @return The threshold for triggering the alert. If the thresholdType is PERCENTAGE, the maximum value is 10000.
      * 
      */
     private final Double threshold;
@@ -69,22 +69,22 @@ public final class GetAlertRulesAlertRule {
      */
     private final String thresholdType;
     /**
-     * @return Time when budget was created
+     * @return The time when the budget was created.
      * 
      */
     private final String timeCreated;
     /**
-     * @return Time when budget was updated
+     * @return The time when the budget was updated.
      * 
      */
     private final String timeUpdated;
     /**
-     * @return The type of alert. Valid values are ACTUAL (the alert will trigger based on actual usage) or FORECAST (the alert will trigger based on predicted usage).
+     * @return The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
      * 
      */
     private final String type;
     /**
-     * @return Version of the alert rule. Starts from 1 and increments by 1.
+     * @return The version of the alert rule. Starts from 1 and increments by 1.
      * 
      */
     private final Integer version;
@@ -124,7 +124,7 @@ public final class GetAlertRulesAlertRule {
     }
 
     /**
-     * @return The unique Budget OCID
+     * @return The unique budget OCID.
      * 
      */
     public String budgetId() {
@@ -145,7 +145,7 @@ public final class GetAlertRulesAlertRule {
         return this.description;
     }
     /**
-     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
+     * @return A user-friendly name. This does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
      * 
      */
     public String displayName() {
@@ -159,21 +159,21 @@ public final class GetAlertRulesAlertRule {
         return this.freeformTags;
     }
     /**
-     * @return The OCID of the alert rule
+     * @return The OCID of the alert rule.
      * 
      */
     public String id() {
         return this.id;
     }
     /**
-     * @return Custom message that will be sent when alert is triggered
+     * @return The custom message that will be sent when the alert is triggered.
      * 
      */
     public String message() {
         return this.message;
     }
     /**
-     * @return Delimited list of email addresses to receive the alert when it triggers. Delimiter character can be comma, space, TAB, or semicolon.
+     * @return The delimited list of email addresses to receive the alert when it triggers. Delimiter characters can be a comma, space, TAB, or semicolon.
      * 
      */
     public String recipients() {
@@ -187,7 +187,7 @@ public final class GetAlertRulesAlertRule {
         return this.state;
     }
     /**
-     * @return The threshold for triggering the alert. If thresholdType is PERCENTAGE, the maximum value is 10000.
+     * @return The threshold for triggering the alert. If the thresholdType is PERCENTAGE, the maximum value is 10000.
      * 
      */
     public Double threshold() {
@@ -201,28 +201,28 @@ public final class GetAlertRulesAlertRule {
         return this.thresholdType;
     }
     /**
-     * @return Time when budget was created
+     * @return The time when the budget was created.
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return Time when budget was updated
+     * @return The time when the budget was updated.
      * 
      */
     public String timeUpdated() {
         return this.timeUpdated;
     }
     /**
-     * @return The type of alert. Valid values are ACTUAL (the alert will trigger based on actual usage) or FORECAST (the alert will trigger based on predicted usage).
+     * @return The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
      * 
      */
     public String type() {
         return this.type;
     }
     /**
-     * @return Version of the alert rule. Starts from 1 and increments by 1.
+     * @return The version of the alert rule. Starts from 1 and increments by 1.
      * 
      */
     public Integer version() {

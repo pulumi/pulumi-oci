@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Database.VmClusterAddVirtualNetworkArgs;
 import com.pulumi.oci.Database.inputs.VmClusterAddVirtualNetworkState;
+import com.pulumi.oci.Database.outputs.VmClusterAddVirtualNetworkDataCollectionOption;
 import com.pulumi.oci.Database.outputs.VmClusterAddVirtualNetworkDbServer;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
@@ -65,6 +66,20 @@ public class VmClusterAddVirtualNetwork extends com.pulumi.resources.CustomResou
      */
     public Output<Integer> cpusEnabled() {
         return this.cpusEnabled;
+    }
+    /**
+     * Indicates user preferences for the various diagnostic collection options for the VM cluster.
+     * 
+     */
+    @Export(name="dataCollectionOptions", type=List.class, parameters={VmClusterAddVirtualNetworkDataCollectionOption.class})
+    private Output<List<VmClusterAddVirtualNetworkDataCollectionOption>> dataCollectionOptions;
+
+    /**
+     * @return Indicates user preferences for the various diagnostic collection options for the VM cluster.
+     * 
+     */
+    public Output<List<VmClusterAddVirtualNetworkDataCollectionOption>> dataCollectionOptions() {
+        return this.dataCollectionOptions;
     }
     @Export(name="dataStorageSizeInGb", type=Double.class, parameters={})
     private Output<Double> dataStorageSizeInGb;

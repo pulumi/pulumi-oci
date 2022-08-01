@@ -14,7 +14,7 @@ import java.util.Objects;
 @CustomType
 public final class GetDataMaskRuleResult {
     /**
-     * @return Compartment Identifier where the resource is created
+     * @return Compartment Identifier where the resource is created.
      * 
      */
     private final String compartmentId;
@@ -40,7 +40,7 @@ public final class GetDataMaskRuleResult {
      */
     private final String description;
     /**
-     * @return Data Mask Rule Identifier, can be renamed
+     * @return Data Mask Rule Identifier, can be renamed.
      * 
      */
     private final String displayName;
@@ -127,7 +127,7 @@ public final class GetDataMaskRuleResult {
     }
 
     /**
-     * @return Compartment Identifier where the resource is created
+     * @return Compartment Identifier where the resource is created.
      * 
      */
     public String compartmentId() {
@@ -165,7 +165,7 @@ public final class GetDataMaskRuleResult {
         return this.description;
     }
     /**
-     * @return Data Mask Rule Identifier, can be renamed
+     * @return Data Mask Rule Identifier, can be renamed.
      * 
      */
     public String displayName() {

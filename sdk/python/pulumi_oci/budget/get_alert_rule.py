@@ -79,7 +79,7 @@ class GetAlertRuleResult:
     @pulumi.getter(name="budgetId")
     def budget_id(self) -> str:
         """
-        The OCID of the budget
+        The OCID of the budget.
         """
         return pulumi.get(self, "budget_id")
 
@@ -103,7 +103,7 @@ class GetAlertRuleResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        The name of the alert rule.
+        The name of the alert rule. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -119,7 +119,7 @@ class GetAlertRuleResult:
     @pulumi.getter
     def id(self) -> str:
         """
-        The OCID of the alert rule
+        The OCID of the alert rule.
         """
         return pulumi.get(self, "id")
 
@@ -127,7 +127,7 @@ class GetAlertRuleResult:
     @pulumi.getter
     def message(self) -> str:
         """
-        Custom message that will be sent when alert is triggered
+        The custom message that will be sent when the alert is triggered.
         """
         return pulumi.get(self, "message")
 
@@ -135,7 +135,7 @@ class GetAlertRuleResult:
     @pulumi.getter
     def recipients(self) -> str:
         """
-        Delimited list of email addresses to receive the alert when it triggers. Delimiter character can be comma, space, TAB, or semicolon.
+        The delimited list of email addresses to receive the alert when it triggers. Delimiter characters can be a comma, space, TAB, or semicolon.
         """
         return pulumi.get(self, "recipients")
 
@@ -151,7 +151,7 @@ class GetAlertRuleResult:
     @pulumi.getter
     def threshold(self) -> float:
         """
-        The threshold for triggering the alert. If thresholdType is PERCENTAGE, the maximum value is 10000.
+        The threshold for triggering the alert. If the thresholdType is PERCENTAGE, the maximum value is 10000.
         """
         return pulumi.get(self, "threshold")
 
@@ -167,7 +167,7 @@ class GetAlertRuleResult:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        Time when budget was created
+        The time when the budget was created.
         """
         return pulumi.get(self, "time_created")
 
@@ -175,7 +175,7 @@ class GetAlertRuleResult:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
-        Time when budget was updated
+        The time when the budget was updated.
         """
         return pulumi.get(self, "time_updated")
 
@@ -183,7 +183,7 @@ class GetAlertRuleResult:
     @pulumi.getter
     def type(self) -> str:
         """
-        The type of alert. Valid values are ACTUAL (the alert will trigger based on actual usage) or FORECAST (the alert will trigger based on predicted usage).
+        The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
         """
         return pulumi.get(self, "type")
 
@@ -191,7 +191,7 @@ class GetAlertRuleResult:
     @pulumi.getter
     def version(self) -> int:
         """
-        Version of the alert rule. Starts from 1 and increments by 1.
+        The version of the alert rule. Starts from 1 and increments by 1.
         """
         return pulumi.get(self, "version")
 
@@ -226,7 +226,7 @@ def get_alert_rule(alert_rule_id: Optional[str] = None,
     """
     This data source provides details about a specific Alert Rule resource in Oracle Cloud Infrastructure Budget service.
 
-    Gets an Alert Rule for a specified Budget.
+    Gets an Alert Rule for a specified budget.
 
     ## Example Usage
 
@@ -239,8 +239,8 @@ def get_alert_rule(alert_rule_id: Optional[str] = None,
     ```
 
 
-    :param str alert_rule_id: The unique Alert Rule OCID
-    :param str budget_id: The unique Budget OCID
+    :param str alert_rule_id: The unique Alert Rule OCID.
+    :param str budget_id: The unique budget OCID.
     """
     __args__ = dict()
     __args__['alertRuleId'] = alert_rule_id
@@ -277,7 +277,7 @@ def get_alert_rule_output(alert_rule_id: Optional[pulumi.Input[str]] = None,
     """
     This data source provides details about a specific Alert Rule resource in Oracle Cloud Infrastructure Budget service.
 
-    Gets an Alert Rule for a specified Budget.
+    Gets an Alert Rule for a specified budget.
 
     ## Example Usage
 
@@ -290,7 +290,7 @@ def get_alert_rule_output(alert_rule_id: Optional[pulumi.Input[str]] = None,
     ```
 
 
-    :param str alert_rule_id: The unique Alert Rule OCID
-    :param str budget_id: The unique Budget OCID
+    :param str alert_rule_id: The unique Alert Rule OCID.
+    :param str budget_id: The unique budget OCID.
     """
     ...

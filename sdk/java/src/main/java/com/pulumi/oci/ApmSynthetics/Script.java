@@ -206,14 +206,14 @@ public class Script extends com.pulumi.resources.CustomResource {
         return this.timeUpdated;
     }
     /**
-     * The time when the script was uploaded.
+     * The time the script was uploaded.
      * 
      */
     @Export(name="timeUploaded", type=String.class, parameters={})
     private Output<String> timeUploaded;
 
     /**
-     * @return The time when the script was uploaded.
+     * @return The time the script was uploaded.
      * 
      */
     public Output<String> timeUploaded() {

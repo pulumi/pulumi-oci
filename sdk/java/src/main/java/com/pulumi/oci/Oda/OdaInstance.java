@@ -9,9 +9,12 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Oda.OdaInstanceArgs;
 import com.pulumi.oci.Oda.inputs.OdaInstanceState;
+import com.pulumi.oci.Oda.outputs.OdaInstanceRestrictedOperation;
 import com.pulumi.oci.Utilities;
+import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -22,7 +25,7 @@ import javax.annotation.Nullable;
  * Starts an asynchronous job to create a Digital Assistant instance.
  * 
  * To monitor the status of the job, take the `opc-work-request-id` response
- * header value and use it to call `GET /workRequests/{workRequestID}`.
+ * header value and use it to call `GET /workRequests/{workRequestId}`.
  * 
  * ## Example Usage
  * 
@@ -37,6 +40,34 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:Oda/odaInstance:OdaInstance")
 public class OdaInstance extends com.pulumi.resources.CustomResource {
+    /**
+     * A list of attachment identifiers for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+     * 
+     */
+    @Export(name="attachmentIds", type=List.class, parameters={String.class})
+    private Output<List<String>> attachmentIds;
+
+    /**
+     * @return A list of attachment identifiers for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+     * 
+     */
+    public Output<List<String>> attachmentIds() {
+        return this.attachmentIds;
+    }
+    /**
+     * A list of attachment types for this instance (if any). Use attachmentIds to get the details of the attachments.
+     * 
+     */
+    @Export(name="attachmentTypes", type=List.class, parameters={String.class})
+    private Output<List<String>> attachmentTypes;
+
+    /**
+     * @return A list of attachment types for this instance (if any). Use attachmentIds to get the details of the attachments.
+     * 
+     */
+    public Output<List<String>> attachmentTypes() {
+        return this.attachmentTypes;
+    }
     /**
      * (Updatable) Identifier of the compartment.
      * 
@@ -108,18 +139,102 @@ public class OdaInstance extends com.pulumi.resources.CustomResource {
         return this.displayName;
     }
     /**
-     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
     private Output<Map<String,Object>> freeformTags;
 
     /**
-     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Output<Map<String,Object>> freeformTags() {
         return this.freeformTags;
+    }
+    /**
+     * If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.
+     * 
+     */
+    @Export(name="identityAppConsoleUrl", type=String.class, parameters={})
+    private Output<String> identityAppConsoleUrl;
+
+    /**
+     * @return If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.
+     * 
+     */
+    public Output<String> identityAppConsoleUrl() {
+        return this.identityAppConsoleUrl;
+    }
+    /**
+     * If isRoleBasedAccess is set to true, this property specifies the GUID of the Identity Application instance Digital Assistant has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this Digital Assistant instance for users within the identity domain.
+     * 
+     */
+    @Export(name="identityAppGuid", type=String.class, parameters={})
+    private Output<String> identityAppGuid;
+
+    /**
+     * @return If isRoleBasedAccess is set to true, this property specifies the GUID of the Identity Application instance Digital Assistant has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this Digital Assistant instance for users within the identity domain.
+     * 
+     */
+    public Output<String> identityAppGuid() {
+        return this.identityAppGuid;
+    }
+    /**
+     * If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
+     * 
+     */
+    @Export(name="identityDomain", type=String.class, parameters={})
+    private Output<String> identityDomain;
+
+    /**
+     * @return If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
+     * 
+     */
+    public Output<String> identityDomain() {
+        return this.identityDomain;
+    }
+    /**
+     * A list of package ids imported into this instance (if any). Use GetImportedPackage to get the details of the imported packages.
+     * 
+     */
+    @Export(name="importedPackageIds", type=List.class, parameters={String.class})
+    private Output<List<String>> importedPackageIds;
+
+    /**
+     * @return A list of package ids imported into this instance (if any). Use GetImportedPackage to get the details of the imported packages.
+     * 
+     */
+    public Output<List<String>> importedPackageIds() {
+        return this.importedPackageIds;
+    }
+    /**
+     * A list of package names imported into this instance (if any). Use importedPackageIds field to get the details of the imported packages.
+     * 
+     */
+    @Export(name="importedPackageNames", type=List.class, parameters={String.class})
+    private Output<List<String>> importedPackageNames;
+
+    /**
+     * @return A list of package names imported into this instance (if any). Use importedPackageIds field to get the details of the imported packages.
+     * 
+     */
+    public Output<List<String>> importedPackageNames() {
+        return this.importedPackageNames;
+    }
+    /**
+     * Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
+     * 
+     */
+    @Export(name="isRoleBasedAccess", type=Boolean.class, parameters={})
+    private Output<Boolean> isRoleBasedAccess;
+
+    /**
+     * @return Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
+     * 
+     */
+    public Output<Boolean> isRoleBasedAccess() {
+        return this.isRoleBasedAccess;
     }
     /**
      * The current sub-state of the Digital Assistant instance.
@@ -134,6 +249,20 @@ public class OdaInstance extends com.pulumi.resources.CustomResource {
      */
     public Output<String> lifecycleSubState() {
         return this.lifecycleSubState;
+    }
+    /**
+     * A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+     * 
+     */
+    @Export(name="restrictedOperations", type=List.class, parameters={OdaInstanceRestrictedOperation.class})
+    private Output<List<OdaInstanceRestrictedOperation>> restrictedOperations;
+
+    /**
+     * @return A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+     * 
+     */
+    public Output<List<OdaInstanceRestrictedOperation>> restrictedOperations() {
+        return this.restrictedOperations;
     }
     /**
      * Shape or size of the instance.

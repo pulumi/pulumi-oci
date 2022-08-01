@@ -19,7 +19,7 @@ namespace Pulumi.Oci.DevOps.Inputs
         public Input<string>? Branch { get; set; }
 
         /// <summary>
-        /// (Updatable) Connection identifier pertinent to GitHub source provider.
+        /// (Updatable) Connection identifier pertinent to Bitbucket Cloud source provider
         /// </summary>
         [Input("connectionId")]
         public Input<string>? ConnectionId { get; set; }

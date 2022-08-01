@@ -100,18 +100,18 @@ public final class GetDbVersionsPlainArgs extends com.pulumi.resources.InvokeArg
     }
 
     /**
-     * The DB system storage management option. Used to list database versions available for that storage manager. Valid values are:
-     * * ASM - Automatic storage management
-     * * LVM - Logical volume management
+     * The DB system storage management option. Used to list database versions available for that storage manager. Valid values are `ASM` and `LVM`.
+     * * ASM specifies Oracle Automatic Storage Management
+     * * LVM specifies logical volume manager, sometimes called logical disk manager.
      * 
      */
     @Import(name="storageManagement")
     private @Nullable String storageManagement;
 
     /**
-     * @return The DB system storage management option. Used to list database versions available for that storage manager. Valid values are:
-     * * ASM - Automatic storage management
-     * * LVM - Logical volume management
+     * @return The DB system storage management option. Used to list database versions available for that storage manager. Valid values are `ASM` and `LVM`.
+     * * ASM specifies Oracle Automatic Storage Management
+     * * LVM specifies logical volume manager, sometimes called logical disk manager.
      * 
      */
     public Optional<String> storageManagement() {
@@ -213,9 +213,9 @@ public final class GetDbVersionsPlainArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param storageManagement The DB system storage management option. Used to list database versions available for that storage manager. Valid values are:
-         * * ASM - Automatic storage management
-         * * LVM - Logical volume management
+         * @param storageManagement The DB system storage management option. Used to list database versions available for that storage manager. Valid values are `ASM` and `LVM`.
+         * * ASM specifies Oracle Automatic Storage Management
+         * * LVM specifies logical volume manager, sometimes called logical disk manager.
          * 
          * @return builder
          * 

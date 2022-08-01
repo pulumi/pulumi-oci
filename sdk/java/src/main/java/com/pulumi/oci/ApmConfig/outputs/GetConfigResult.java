@@ -18,7 +18,7 @@ public final class GetConfigResult {
     private final String apmDomainId;
     private final String configId;
     /**
-     * @return The type of configuration item
+     * @return The type of configuration item.
      * 
      */
     private final String configType;
@@ -28,22 +28,22 @@ public final class GetConfigResult {
      */
     private final Map<String,Object> definedTags;
     /**
-     * @return A description of the metric
+     * @return A description of the metric.
      * 
      */
     private final String description;
     /**
-     * @return A list of dimensions for this metric
+     * @return A list of dimensions for the metric. This variable should not be used.
      * 
      */
     private final List<GetConfigDimension> dimensions;
     /**
-     * @return A user-friendly name that provides a short description this rule.
+     * @return The name by which a configuration entity is displayed to the end user.
      * 
      */
     private final String displayName;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId will be generated when a Span Filter is created.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
      * 
      */
     private final String filterId;
@@ -58,17 +58,31 @@ public final class GetConfigResult {
      */
     private final Map<String,Object> freeformTags;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID will be generated when the item is created.
+     * @return A string that specifies the group that an OPTIONS item belongs to.
+     * 
+     */
+    private final String group;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
      * 
      */
     private final String id;
+    /**
+     * @return The list of metrics in this group.
+     * 
+     */
     private final List<GetConfigMetric> metrics;
     /**
-     * @return The namespace to write the metrics to
+     * @return The namespace to which the metrics are published. It must be one of several predefined namespaces.
      * 
      */
     private final String namespace;
     private final String opcDryRun;
+    /**
+     * @return The options are stored here as JSON.
+     * 
+     */
+    private final String options;
     private final List<GetConfigRule> rules;
     /**
      * @return The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
@@ -93,10 +107,12 @@ public final class GetConfigResult {
         @CustomType.Parameter("filterId") String filterId,
         @CustomType.Parameter("filterText") String filterText,
         @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
+        @CustomType.Parameter("group") String group,
         @CustomType.Parameter("id") String id,
         @CustomType.Parameter("metrics") List<GetConfigMetric> metrics,
         @CustomType.Parameter("namespace") String namespace,
         @CustomType.Parameter("opcDryRun") String opcDryRun,
+        @CustomType.Parameter("options") String options,
         @CustomType.Parameter("rules") List<GetConfigRule> rules,
         @CustomType.Parameter("timeCreated") String timeCreated,
         @CustomType.Parameter("timeUpdated") String timeUpdated) {
@@ -110,10 +126,12 @@ public final class GetConfigResult {
         this.filterId = filterId;
         this.filterText = filterText;
         this.freeformTags = freeformTags;
+        this.group = group;
         this.id = id;
         this.metrics = metrics;
         this.namespace = namespace;
         this.opcDryRun = opcDryRun;
+        this.options = options;
         this.rules = rules;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
@@ -126,7 +144,7 @@ public final class GetConfigResult {
         return this.configId;
     }
     /**
-     * @return The type of configuration item
+     * @return The type of configuration item.
      * 
      */
     public String configType() {
@@ -140,28 +158,28 @@ public final class GetConfigResult {
         return this.definedTags;
     }
     /**
-     * @return A description of the metric
+     * @return A description of the metric.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return A list of dimensions for this metric
+     * @return A list of dimensions for the metric. This variable should not be used.
      * 
      */
     public List<GetConfigDimension> dimensions() {
         return this.dimensions;
     }
     /**
-     * @return A user-friendly name that provides a short description this rule.
+     * @return The name by which a configuration entity is displayed to the end user.
      * 
      */
     public String displayName() {
         return this.displayName;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId will be generated when a Span Filter is created.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
      * 
      */
     public String filterId() {
@@ -182,17 +200,28 @@ public final class GetConfigResult {
         return this.freeformTags;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID will be generated when the item is created.
+     * @return A string that specifies the group that an OPTIONS item belongs to.
+     * 
+     */
+    public String group() {
+        return this.group;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
      * 
      */
     public String id() {
         return this.id;
     }
+    /**
+     * @return The list of metrics in this group.
+     * 
+     */
     public List<GetConfigMetric> metrics() {
         return this.metrics;
     }
     /**
-     * @return The namespace to write the metrics to
+     * @return The namespace to which the metrics are published. It must be one of several predefined namespaces.
      * 
      */
     public String namespace() {
@@ -200,6 +229,13 @@ public final class GetConfigResult {
     }
     public String opcDryRun() {
         return this.opcDryRun;
+    }
+    /**
+     * @return The options are stored here as JSON.
+     * 
+     */
+    public String options() {
+        return this.options;
     }
     public List<GetConfigRule> rules() {
         return this.rules;
@@ -238,10 +274,12 @@ public final class GetConfigResult {
         private String filterId;
         private String filterText;
         private Map<String,Object> freeformTags;
+        private String group;
         private String id;
         private List<GetConfigMetric> metrics;
         private String namespace;
         private String opcDryRun;
+        private String options;
         private List<GetConfigRule> rules;
         private String timeCreated;
         private String timeUpdated;
@@ -262,10 +300,12 @@ public final class GetConfigResult {
     	      this.filterId = defaults.filterId;
     	      this.filterText = defaults.filterText;
     	      this.freeformTags = defaults.freeformTags;
+    	      this.group = defaults.group;
     	      this.id = defaults.id;
     	      this.metrics = defaults.metrics;
     	      this.namespace = defaults.namespace;
     	      this.opcDryRun = defaults.opcDryRun;
+    	      this.options = defaults.options;
     	      this.rules = defaults.rules;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
@@ -314,6 +354,10 @@ public final class GetConfigResult {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        public Builder group(String group) {
+            this.group = Objects.requireNonNull(group);
+            return this;
+        }
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
@@ -333,6 +377,10 @@ public final class GetConfigResult {
             this.opcDryRun = Objects.requireNonNull(opcDryRun);
             return this;
         }
+        public Builder options(String options) {
+            this.options = Objects.requireNonNull(options);
+            return this;
+        }
         public Builder rules(List<GetConfigRule> rules) {
             this.rules = Objects.requireNonNull(rules);
             return this;
@@ -348,7 +396,7 @@ public final class GetConfigResult {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }        public GetConfigResult build() {
-            return new GetConfigResult(apmDomainId, configId, configType, definedTags, description, dimensions, displayName, filterId, filterText, freeformTags, id, metrics, namespace, opcDryRun, rules, timeCreated, timeUpdated);
+            return new GetConfigResult(apmDomainId, configId, configType, definedTags, description, dimensions, displayName, filterId, filterText, freeformTags, group, id, metrics, namespace, opcDryRun, options, rules, timeCreated, timeUpdated);
         }
     }
 }

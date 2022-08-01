@@ -38,7 +38,7 @@ class VirtualCircuitArgs:
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the virtual circuit.
         :param pulumi.Input[str] type: The type of IP addresses used in this virtual circuit. PRIVATE means [RFC 1918](https://tools.ietf.org/html/rfc1918) addresses (10.0.0.0/8, 172.16/12, and 192.168/16).
         :param pulumi.Input[str] bandwidth_shape_name: (Updatable) The provisioned data rate of the connection. To get a list of the available bandwidth levels (that is, shapes), see [ListFastConnectProviderServiceVirtualCircuitBandwidthShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderVirtualCircuitBandwidthShapes).  Example: `10 Gbps`
-        :param pulumi.Input[str] bgp_admin_state: (Updatable) Set to ENABLED to activate the bgp session of virtual circuit, DISABLED to deactivate.
+        :param pulumi.Input[str] bgp_admin_state: (Updatable) Set to `ENABLED` (the default) to activate the BGP session of the virtual circuit, set to `DISABLED` to deactivate the virtual circuit.
         :param pulumi.Input[Sequence[pulumi.Input['VirtualCircuitCrossConnectMappingArgs']]] cross_connect_mappings: (Updatable) Create a `CrossConnectMapping` for each cross-connect or cross-connect group this virtual circuit will run on.
         :param pulumi.Input[str] customer_asn: (Updatable) Your BGP ASN (either public or private). Provide this value only if there's a BGP session that goes from your edge router to Oracle. Otherwise, leave this empty or null. Can be a 2-byte or 4-byte ASN. Uses "asplain" format.  Example: `12345` (2-byte) or `1587232876` (4-byte)
         :param pulumi.Input[int] customer_bgp_asn: (Updatable) Deprecated. Instead use `customerAsn`. If you specify values for both, the request will be rejected.
@@ -47,7 +47,7 @@ class VirtualCircuitArgs:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] gateway_id: (Updatable) For private virtual circuits only. The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [dynamic routing gateway (DRG)](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Drg) that this virtual circuit uses.
         :param pulumi.Input[str] ip_mtu: (Updatable) The layer 3 IP MTU to use with this virtual circuit.
-        :param pulumi.Input[bool] is_bfd_enabled: (Updatable) Set to true to enable BFD for ipv4 Bgp Peering, false to disable. If not set, default is false
+        :param pulumi.Input[bool] is_bfd_enabled: (Updatable) Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
         :param pulumi.Input[str] provider_service_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you're connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
         :param pulumi.Input[str] provider_service_key_name: (Updatable) The service key name offered by the provider (if the customer is connecting via a provider).
         :param pulumi.Input[Sequence[pulumi.Input['VirtualCircuitPublicPrefixArgs']]] public_prefixes: (Updatable) For a public virtual circuit. The public IP prefixes (CIDRs) the customer wants to advertise across the connection.
@@ -132,7 +132,7 @@ class VirtualCircuitArgs:
     @pulumi.getter(name="bgpAdminState")
     def bgp_admin_state(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Set to ENABLED to activate the bgp session of virtual circuit, DISABLED to deactivate.
+        (Updatable) Set to `ENABLED` (the default) to activate the BGP session of the virtual circuit, set to `DISABLED` to deactivate the virtual circuit.
         """
         return pulumi.get(self, "bgp_admin_state")
 
@@ -240,7 +240,7 @@ class VirtualCircuitArgs:
     @pulumi.getter(name="isBfdEnabled")
     def is_bfd_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Set to true to enable BFD for ipv4 Bgp Peering, false to disable. If not set, default is false
+        (Updatable) Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
         """
         return pulumi.get(self, "is_bfd_enabled")
 
@@ -342,7 +342,7 @@ class _VirtualCircuitState:
         """
         Input properties used for looking up and filtering VirtualCircuit resources.
         :param pulumi.Input[str] bandwidth_shape_name: (Updatable) The provisioned data rate of the connection. To get a list of the available bandwidth levels (that is, shapes), see [ListFastConnectProviderServiceVirtualCircuitBandwidthShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderVirtualCircuitBandwidthShapes).  Example: `10 Gbps`
-        :param pulumi.Input[str] bgp_admin_state: (Updatable) Set to ENABLED to activate the bgp session of virtual circuit, DISABLED to deactivate.
+        :param pulumi.Input[str] bgp_admin_state: (Updatable) Set to `ENABLED` (the default) to activate the BGP session of the virtual circuit, set to `DISABLED` to deactivate the virtual circuit.
         :param pulumi.Input[str] bgp_ipv6session_state: The state of the Ipv6 BGP session associated with the virtual circuit.
         :param pulumi.Input[str] bgp_management: Deprecated. Instead use the information in [FastConnectProviderService](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/).
         :param pulumi.Input[str] bgp_session_state: The state of the Ipv4 BGP session associated with the virtual circuit.
@@ -355,7 +355,7 @@ class _VirtualCircuitState:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] gateway_id: (Updatable) For private virtual circuits only. The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [dynamic routing gateway (DRG)](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Drg) that this virtual circuit uses.
         :param pulumi.Input[str] ip_mtu: (Updatable) The layer 3 IP MTU to use with this virtual circuit.
-        :param pulumi.Input[bool] is_bfd_enabled: (Updatable) Set to true to enable BFD for ipv4 Bgp Peering, false to disable. If not set, default is false
+        :param pulumi.Input[bool] is_bfd_enabled: (Updatable) Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
         :param pulumi.Input[int] oracle_bgp_asn: The Oracle BGP ASN.
         :param pulumi.Input[str] provider_service_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you're connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
         :param pulumi.Input[str] provider_service_key_name: (Updatable) The service key name offered by the provider (if the customer is connecting via a provider).
@@ -446,7 +446,7 @@ class _VirtualCircuitState:
     @pulumi.getter(name="bgpAdminState")
     def bgp_admin_state(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Set to ENABLED to activate the bgp session of virtual circuit, DISABLED to deactivate.
+        (Updatable) Set to `ENABLED` (the default) to activate the BGP session of the virtual circuit, set to `DISABLED` to deactivate the virtual circuit.
         """
         return pulumi.get(self, "bgp_admin_state")
 
@@ -602,7 +602,7 @@ class _VirtualCircuitState:
     @pulumi.getter(name="isBfdEnabled")
     def is_bfd_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Set to true to enable BFD for ipv4 Bgp Peering, false to disable. If not set, default is false
+        (Updatable) Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
         """
         return pulumi.get(self, "is_bfd_enabled")
 
@@ -856,7 +856,7 @@ class VirtualCircuit(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] bandwidth_shape_name: (Updatable) The provisioned data rate of the connection. To get a list of the available bandwidth levels (that is, shapes), see [ListFastConnectProviderServiceVirtualCircuitBandwidthShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderVirtualCircuitBandwidthShapes).  Example: `10 Gbps`
-        :param pulumi.Input[str] bgp_admin_state: (Updatable) Set to ENABLED to activate the bgp session of virtual circuit, DISABLED to deactivate.
+        :param pulumi.Input[str] bgp_admin_state: (Updatable) Set to `ENABLED` (the default) to activate the BGP session of the virtual circuit, set to `DISABLED` to deactivate the virtual circuit.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the virtual circuit.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VirtualCircuitCrossConnectMappingArgs']]]] cross_connect_mappings: (Updatable) Create a `CrossConnectMapping` for each cross-connect or cross-connect group this virtual circuit will run on.
         :param pulumi.Input[str] customer_asn: (Updatable) Your BGP ASN (either public or private). Provide this value only if there's a BGP session that goes from your edge router to Oracle. Otherwise, leave this empty or null. Can be a 2-byte or 4-byte ASN. Uses "asplain" format.  Example: `12345` (2-byte) or `1587232876` (4-byte)
@@ -866,7 +866,7 @@ class VirtualCircuit(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] gateway_id: (Updatable) For private virtual circuits only. The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [dynamic routing gateway (DRG)](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Drg) that this virtual circuit uses.
         :param pulumi.Input[str] ip_mtu: (Updatable) The layer 3 IP MTU to use with this virtual circuit.
-        :param pulumi.Input[bool] is_bfd_enabled: (Updatable) Set to true to enable BFD for ipv4 Bgp Peering, false to disable. If not set, default is false
+        :param pulumi.Input[bool] is_bfd_enabled: (Updatable) Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
         :param pulumi.Input[str] provider_service_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you're connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
         :param pulumi.Input[str] provider_service_key_name: (Updatable) The service key name offered by the provider (if the customer is connecting via a provider).
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VirtualCircuitPublicPrefixArgs']]]] public_prefixes: (Updatable) For a public virtual circuit. The public IP prefixes (CIDRs) the customer wants to advertise across the connection.
@@ -1078,7 +1078,7 @@ class VirtualCircuit(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] bandwidth_shape_name: (Updatable) The provisioned data rate of the connection. To get a list of the available bandwidth levels (that is, shapes), see [ListFastConnectProviderServiceVirtualCircuitBandwidthShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderVirtualCircuitBandwidthShapes).  Example: `10 Gbps`
-        :param pulumi.Input[str] bgp_admin_state: (Updatable) Set to ENABLED to activate the bgp session of virtual circuit, DISABLED to deactivate.
+        :param pulumi.Input[str] bgp_admin_state: (Updatable) Set to `ENABLED` (the default) to activate the BGP session of the virtual circuit, set to `DISABLED` to deactivate the virtual circuit.
         :param pulumi.Input[str] bgp_ipv6session_state: The state of the Ipv6 BGP session associated with the virtual circuit.
         :param pulumi.Input[str] bgp_management: Deprecated. Instead use the information in [FastConnectProviderService](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/).
         :param pulumi.Input[str] bgp_session_state: The state of the Ipv4 BGP session associated with the virtual circuit.
@@ -1091,7 +1091,7 @@ class VirtualCircuit(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] gateway_id: (Updatable) For private virtual circuits only. The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [dynamic routing gateway (DRG)](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Drg) that this virtual circuit uses.
         :param pulumi.Input[str] ip_mtu: (Updatable) The layer 3 IP MTU to use with this virtual circuit.
-        :param pulumi.Input[bool] is_bfd_enabled: (Updatable) Set to true to enable BFD for ipv4 Bgp Peering, false to disable. If not set, default is false
+        :param pulumi.Input[bool] is_bfd_enabled: (Updatable) Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
         :param pulumi.Input[int] oracle_bgp_asn: The Oracle BGP ASN.
         :param pulumi.Input[str] provider_service_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you're connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
         :param pulumi.Input[str] provider_service_key_name: (Updatable) The service key name offered by the provider (if the customer is connecting via a provider).
@@ -1150,7 +1150,7 @@ class VirtualCircuit(pulumi.CustomResource):
     @pulumi.getter(name="bgpAdminState")
     def bgp_admin_state(self) -> pulumi.Output[str]:
         """
-        (Updatable) Set to ENABLED to activate the bgp session of virtual circuit, DISABLED to deactivate.
+        (Updatable) Set to `ENABLED` (the default) to activate the BGP session of the virtual circuit, set to `DISABLED` to deactivate the virtual circuit.
         """
         return pulumi.get(self, "bgp_admin_state")
 
@@ -1254,7 +1254,7 @@ class VirtualCircuit(pulumi.CustomResource):
     @pulumi.getter(name="isBfdEnabled")
     def is_bfd_enabled(self) -> pulumi.Output[bool]:
         """
-        (Updatable) Set to true to enable BFD for ipv4 Bgp Peering, false to disable. If not set, default is false
+        (Updatable) Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
         """
         return pulumi.get(self, "is_bfd_enabled")
 

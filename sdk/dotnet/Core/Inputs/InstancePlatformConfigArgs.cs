@@ -13,6 +13,24 @@ namespace Pulumi.Oci.Core.Inputs
     public sealed class InstancePlatformConfigArgs : Pulumi.ResourceArgs
     {
         /// <summary>
+        /// Whether virtualization instructions are available.
+        /// </summary>
+        [Input("areVirtualInstructionsEnabled")]
+        public Input<bool>? AreVirtualInstructionsEnabled { get; set; }
+
+        /// <summary>
+        /// Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device passthrough.
+        /// </summary>
+        [Input("isAccessControlServiceEnabled")]
+        public Input<bool>? IsAccessControlServiceEnabled { get; set; }
+
+        /// <summary>
+        /// Whether the input-output memory management unit is enabled.
+        /// </summary>
+        [Input("isInputOutputMemoryManagementUnitEnabled")]
+        public Input<bool>? IsInputOutputMemoryManagementUnitEnabled { get; set; }
+
+        /// <summary>
         /// Whether the Measured Boot feature is enabled on the instance.
         /// </summary>
         [Input("isMeasuredBootEnabled")]
@@ -25,6 +43,12 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<bool>? IsSecureBootEnabled { get; set; }
 
         /// <summary>
+        /// Whether symmetric multi-threading is enabled on the instance.
+        /// </summary>
+        [Input("isSymmetricMultiThreadingEnabled")]
+        public Input<bool>? IsSymmetricMultiThreadingEnabled { get; set; }
+
+        /// <summary>
         /// Whether the Trusted Platform Module (TPM) is enabled on the instance.
         /// </summary>
         [Input("isTrustedPlatformModuleEnabled")]
@@ -35,6 +59,12 @@ namespace Pulumi.Oci.Core.Inputs
         /// </summary>
         [Input("numaNodesPerSocket")]
         public Input<string>? NumaNodesPerSocket { get; set; }
+
+        /// <summary>
+        /// The percentage of cores enabled.
+        /// </summary>
+        [Input("percentageOfCoresEnabled")]
+        public Input<int>? PercentageOfCoresEnabled { get; set; }
 
         /// <summary>
         /// The type of action to run when the instance is interrupted for eviction.

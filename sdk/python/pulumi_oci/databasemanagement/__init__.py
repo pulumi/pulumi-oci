@@ -13,6 +13,12 @@ from .get_db_management_private_endpoints import *
 from .get_job_executions_status import *
 from .get_job_executions_statuses import *
 from .get_managed_database import *
+from .get_managed_database_addm_task import *
+from .get_managed_database_addm_tasks import *
+from .get_managed_database_alert_log_count import *
+from .get_managed_database_alert_log_counts import *
+from .get_managed_database_attention_log_count import *
+from .get_managed_database_attention_log_counts import *
 from .get_managed_database_group import *
 from .get_managed_database_groups import *
 from .get_managed_database_sql_tuning_advisor_task import *
@@ -24,6 +30,8 @@ from .get_managed_database_sql_tuning_advisor_tasks_recommendation import *
 from .get_managed_database_sql_tuning_advisor_tasks_recommendations import *
 from .get_managed_database_sql_tuning_advisor_tasks_sql_execution_plan import *
 from .get_managed_database_sql_tuning_advisor_tasks_summary_report import *
+from .get_managed_database_sql_tuning_set import *
+from .get_managed_database_sql_tuning_sets import *
 from .get_managed_database_user import *
 from .get_managed_database_user_consumer_group_privilege import *
 from .get_managed_database_user_consumer_group_privileges import *

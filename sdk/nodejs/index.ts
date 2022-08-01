@@ -8,6 +8,7 @@ import * as utilities from "./utilities";
 export * from "./provider";
 
 // Export sub-modules:
+import * as adm from "./adm";
 import * as aianomalydetection from "./aianomalydetection";
 import * as aivision from "./aivision";
 import * as analytics from "./analytics";
@@ -44,6 +45,7 @@ import * as datascience from "./datascience";
 import * as devops from "./devops";
 import * as dns from "./dns";
 import * as email from "./email";
+import * as emwarehouse from "./emwarehouse";
 import * as events from "./events";
 import * as filestorage from "./filestorage";
 import * as functions from "./functions";
@@ -55,6 +57,7 @@ import * as identitydataplane from "./identitydataplane";
 import * as integration from "./integration";
 import * as jms from "./jms";
 import * as kms from "./kms";
+import * as licensemanager from "./licensemanager";
 import * as limits from "./limits";
 import * as loadbalancer from "./loadbalancer";
 import * as loganalytics from "./loganalytics";
@@ -65,12 +68,14 @@ import * as marketplace from "./marketplace";
 import * as meteringcomputation from "./meteringcomputation";
 import * as monitoring from "./monitoring";
 import * as mysql from "./mysql";
+import * as networkfirewall from "./networkfirewall";
 import * as networkloadbalancer from "./networkloadbalancer";
 import * as nosql from "./nosql";
 import * as objectstorage from "./objectstorage";
 import * as oce from "./oce";
 import * as ocvp from "./ocvp";
 import * as oda from "./oda";
+import * as onesubsription from "./onesubsription";
 import * as ons from "./ons";
 import * as operatoraccesscontrol from "./operatoraccesscontrol";
 import * as opsi from "./opsi";
@@ -86,17 +91,21 @@ import * as sch from "./sch";
 import * as secrets from "./secrets";
 import * as servicecatalog from "./servicecatalog";
 import * as servicemanagerproxy from "./servicemanagerproxy";
+import * as servicemesh from "./servicemesh";
 import * as stackmonitoring from "./stackmonitoring";
 import * as streaming from "./streaming";
 import * as types from "./types";
 import * as usageproxy from "./usageproxy";
 import * as vault from "./vault";
 import * as visualbuilder from "./visualbuilder";
+import * as vnmonitoring from "./vnmonitoring";
 import * as vulnerabilityscanning from "./vulnerabilityscanning";
+import * as waa from "./waa";
 import * as waas from "./waas";
 import * as waf from "./waf";
 
 export {
+    adm,
     aianomalydetection,
     aivision,
     analytics,
@@ -133,6 +142,7 @@ export {
     devops,
     dns,
     email,
+    emwarehouse,
     events,
     filestorage,
     functions,
@@ -144,6 +154,7 @@ export {
     integration,
     jms,
     kms,
+    licensemanager,
     limits,
     loadbalancer,
     loganalytics,
@@ -154,12 +165,14 @@ export {
     meteringcomputation,
     monitoring,
     mysql,
+    networkfirewall,
     networkloadbalancer,
     nosql,
     objectstorage,
     oce,
     ocvp,
     oda,
+    onesubsription,
     ons,
     operatoraccesscontrol,
     opsi,
@@ -175,13 +188,16 @@ export {
     secrets,
     servicecatalog,
     servicemanagerproxy,
+    servicemesh,
     stackmonitoring,
     streaming,
     types,
     usageproxy,
     vault,
     visualbuilder,
+    vnmonitoring,
     vulnerabilityscanning,
+    waa,
     waas,
     waf,
 };

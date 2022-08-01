@@ -89,7 +89,7 @@ type GetDetectorRecipesResult struct {
 	CompartmentIdInSubtree *bool  `pulumi:"compartmentIdInSubtree"`
 	// The list of detector_recipe_collection.
 	DetectorRecipeCollections []GetDetectorRecipesDetectorRecipeCollection `pulumi:"detectorRecipeCollections"`
-	// displayName
+	// Display name for DetectorRecipeDetectorRule.
 	DisplayName *string                    `pulumi:"displayName"`
 	Filters     []GetDetectorRecipesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
@@ -168,7 +168,7 @@ func (o GetDetectorRecipesResultOutput) DetectorRecipeCollections() GetDetectorR
 	}).(GetDetectorRecipesDetectorRecipeCollectionArrayOutput)
 }
 
-// displayName
+// Display name for DetectorRecipeDetectorRule.
 func (o GetDetectorRecipesResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDetectorRecipesResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }

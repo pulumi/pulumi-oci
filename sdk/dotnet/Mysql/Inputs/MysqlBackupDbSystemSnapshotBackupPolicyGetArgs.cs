@@ -37,10 +37,22 @@ namespace Pulumi.Oci.Mysql.Inputs
         }
 
         /// <summary>
-        /// If automated backups are enabled or disabled.
+        /// Specifies if PITR is enabled or disabled.
         /// </summary>
         [Input("isEnabled")]
         public Input<bool>? IsEnabled { get; set; }
+
+        [Input("pitrPolicies")]
+        private InputList<Inputs.MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyGetArgs>? _pitrPolicies;
+
+        /// <summary>
+        /// The PITR policy for the DB System.
+        /// </summary>
+        public InputList<Inputs.MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyGetArgs> PitrPolicies
+        {
+            get => _pitrPolicies ?? (_pitrPolicies = new InputList<Inputs.MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyGetArgs>());
+            set => _pitrPolicies = value;
+        }
 
         /// <summary>
         /// (Updatable) Number of days to retain this backup.

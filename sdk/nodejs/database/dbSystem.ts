@@ -97,7 +97,7 @@ export class DbSystem extends pulumi.CustomResource {
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
-     * (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system. The valid values depend on the specified shape:
+     * (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system or AMD VMDB Systems. The valid values depend on the specified shape:
      * * BM.DenseIO1.36 - Specify a multiple of 2, from 2 to 36.
      * * BM.DenseIO2.52 - Specify a multiple of 2, from 2 to 52.
      * * Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
@@ -107,6 +107,7 @@ export class DbSystem extends pulumi.CustomResource {
      * * Exadata.Quarter2.92 - Specify a multiple of 2, from 0 to 92.
      * * Exadata.Half2.184 - Specify a multiple of 4, from 0 to 184.
      * * Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
+     * * VM.Standard.E4.Flex - Specify any thing from 1 to 64.
      */
     public readonly cpuCoreCount!: pulumi.Output<number>;
     /**
@@ -198,6 +199,10 @@ export class DbSystem extends pulumi.CustomResource {
      */
     public /*out*/ readonly maintenanceWindows!: pulumi.Output<outputs.Database.DbSystemMaintenanceWindow[]>;
     /**
+     * Memory allocated to the DB system, in gigabytes.
+     */
+    public /*out*/ readonly memorySizeInGbs!: pulumi.Output<number>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      */
     public /*out*/ readonly nextMaintenanceRunId!: pulumi.Output<string>;
@@ -206,8 +211,8 @@ export class DbSystem extends pulumi.CustomResource {
      */
     public readonly nodeCount!: pulumi.Output<number>;
     /**
-     * (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-     * * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+     * (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+     * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      */
     public readonly nsgIds!: pulumi.Output<string[] | undefined>;
     /**
@@ -260,6 +265,10 @@ export class DbSystem extends pulumi.CustomResource {
      * The current state of the DB system.
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
+    /**
+     * The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
+     */
+    public readonly storageVolumePerformanceMode!: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
      */
@@ -326,6 +335,7 @@ export class DbSystem extends pulumi.CustomResource {
             resourceInputs["listenerPort"] = state ? state.listenerPort : undefined;
             resourceInputs["maintenanceWindowDetails"] = state ? state.maintenanceWindowDetails : undefined;
             resourceInputs["maintenanceWindows"] = state ? state.maintenanceWindows : undefined;
+            resourceInputs["memorySizeInGbs"] = state ? state.memorySizeInGbs : undefined;
             resourceInputs["nextMaintenanceRunId"] = state ? state.nextMaintenanceRunId : undefined;
             resourceInputs["nodeCount"] = state ? state.nodeCount : undefined;
             resourceInputs["nsgIds"] = state ? state.nsgIds : undefined;
@@ -341,6 +351,7 @@ export class DbSystem extends pulumi.CustomResource {
             resourceInputs["sparseDiskgroup"] = state ? state.sparseDiskgroup : undefined;
             resourceInputs["sshPublicKeys"] = state ? state.sshPublicKeys : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
+            resourceInputs["storageVolumePerformanceMode"] = state ? state.storageVolumePerformanceMode : undefined;
             resourceInputs["subnetId"] = state ? state.subnetId : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeZone"] = state ? state.timeZone : undefined;
@@ -401,6 +412,7 @@ export class DbSystem extends pulumi.CustomResource {
             resourceInputs["sourceDbSystemId"] = args ? args.sourceDbSystemId : undefined;
             resourceInputs["sparseDiskgroup"] = args ? args.sparseDiskgroup : undefined;
             resourceInputs["sshPublicKeys"] = args ? args.sshPublicKeys : undefined;
+            resourceInputs["storageVolumePerformanceMode"] = args ? args.storageVolumePerformanceMode : undefined;
             resourceInputs["subnetId"] = args ? args.subnetId : undefined;
             resourceInputs["timeZone"] = args ? args.timeZone : undefined;
             resourceInputs["iormConfigCaches"] = undefined /*out*/;
@@ -409,6 +421,7 @@ export class DbSystem extends pulumi.CustomResource {
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["listenerPort"] = undefined /*out*/;
             resourceInputs["maintenanceWindows"] = undefined /*out*/;
+            resourceInputs["memorySizeInGbs"] = undefined /*out*/;
             resourceInputs["nextMaintenanceRunId"] = undefined /*out*/;
             resourceInputs["pointInTimeDataDiskCloneTimestamp"] = undefined /*out*/;
             resourceInputs["scanDnsName"] = undefined /*out*/;
@@ -450,7 +463,7 @@ export interface DbSystemState {
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system. The valid values depend on the specified shape:
+     * (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system or AMD VMDB Systems. The valid values depend on the specified shape:
      * * BM.DenseIO1.36 - Specify a multiple of 2, from 2 to 36.
      * * BM.DenseIO2.52 - Specify a multiple of 2, from 2 to 52.
      * * Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
@@ -460,6 +473,7 @@ export interface DbSystemState {
      * * Exadata.Quarter2.92 - Specify a multiple of 2, from 0 to 92.
      * * Exadata.Half2.184 - Specify a multiple of 4, from 0 to 184.
      * * Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
+     * * VM.Standard.E4.Flex - Specify any thing from 1 to 64.
      */
     cpuCoreCount?: pulumi.Input<number>;
     /**
@@ -551,6 +565,10 @@ export interface DbSystemState {
      */
     maintenanceWindows?: pulumi.Input<pulumi.Input<inputs.Database.DbSystemMaintenanceWindow>[]>;
     /**
+     * Memory allocated to the DB system, in gigabytes.
+     */
+    memorySizeInGbs?: pulumi.Input<number>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      */
     nextMaintenanceRunId?: pulumi.Input<string>;
@@ -559,8 +577,8 @@ export interface DbSystemState {
      */
     nodeCount?: pulumi.Input<number>;
     /**
-     * (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-     * * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+     * (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+     * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      */
     nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -614,6 +632,10 @@ export interface DbSystemState {
      */
     state?: pulumi.Input<string>;
     /**
+     * The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
+     */
+    storageVolumePerformanceMode?: pulumi.Input<string>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
      */
     subnetId?: pulumi.Input<string>;
@@ -664,7 +686,7 @@ export interface DbSystemArgs {
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system. The valid values depend on the specified shape:
+     * (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system or AMD VMDB Systems. The valid values depend on the specified shape:
      * * BM.DenseIO1.36 - Specify a multiple of 2, from 2 to 36.
      * * BM.DenseIO2.52 - Specify a multiple of 2, from 2 to 52.
      * * Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
@@ -674,6 +696,7 @@ export interface DbSystemArgs {
      * * Exadata.Quarter2.92 - Specify a multiple of 2, from 0 to 92.
      * * Exadata.Half2.184 - Specify a multiple of 4, from 0 to 184.
      * * Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
+     * * VM.Standard.E4.Flex - Specify any thing from 1 to 64.
      */
     cpuCoreCount?: pulumi.Input<number>;
     /**
@@ -745,8 +768,8 @@ export interface DbSystemArgs {
      */
     nodeCount?: pulumi.Input<number>;
     /**
-     * (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-     * * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+     * (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+     * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      */
     nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -779,6 +802,10 @@ export interface DbSystemArgs {
      * (Updatable) The public key portion of the key pair to use for SSH access to the DB system. Multiple public keys can be provided. The length of the combined keys cannot exceed 40,000 characters.
      */
     sshPublicKeys: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
+     */
+    storageVolumePerformanceMode?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
      */

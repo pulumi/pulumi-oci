@@ -19,7 +19,7 @@ namespace Pulumi.Oci.BigDataService.Inputs
         public Input<string>? KeytabFile { get; set; }
 
         /// <summary>
-        /// Name of the Kerberos principal.
+        /// Name of the Kerberos principal
         /// </summary>
         [Input("principalName")]
         public Input<string>? PrincipalName { get; set; }

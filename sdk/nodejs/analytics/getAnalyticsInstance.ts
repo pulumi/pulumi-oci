@@ -81,6 +81,10 @@ export interface GetAnalyticsInstanceResult {
     readonly id: string;
     readonly idcsAccessToken: string;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+     */
+    readonly kmsKeyId: string;
+    /**
      * The license used for the service.
      */
     readonly licenseType: string;
@@ -92,10 +96,6 @@ export interface GetAnalyticsInstanceResult {
      * Base representation of a network endpoint.
      */
     readonly networkEndpointDetails: outputs.Analytics.GetAnalyticsInstanceNetworkEndpointDetail[];
-    /**
-     * Map of PrivateAccessChannel unique identifier key as KEY and PrivateAccessChannel Object as VALUE.
-     */
-    readonly privateAccessChannels: {[key: string]: any};
     /**
      * URL of the Analytics service.
      */
@@ -112,10 +112,6 @@ export interface GetAnalyticsInstanceResult {
      * The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
      */
     readonly timeUpdated: string;
-    /**
-     * Map of VanityUrl unique identifier key as KEY and VanityUrl Object as VALUE.
-     */
-    readonly vanityUrlDetails: {[key: string]: any};
 }
 
 export function getAnalyticsInstanceOutput(args: GetAnalyticsInstanceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAnalyticsInstanceResult> {

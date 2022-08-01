@@ -108,14 +108,34 @@ namespace Pulumi.Oci.Database
     public sealed class GetCloudAutonomousVmClusterResult
     {
         /// <summary>
+        /// The data disk group size allocated for Autonomous Databases, in TBs.
+        /// </summary>
+        public readonly double AutonomousDataStorageSizeInTbs;
+        /// <summary>
         /// The name of the availability domain that the cloud Autonomous VM cluster is located in.
         /// </summary>
         public readonly string AvailabilityDomain;
+        /// <summary>
+        /// The data disk group size available for Autonomous Databases, in TBs.
+        /// </summary>
+        public readonly double AvailableAutonomousDataStorageSizeInTbs;
+        /// <summary>
+        /// The number of Autonomous Container Databases that can be created with the currently available local storage.
+        /// </summary>
+        public readonly int AvailableContainerDatabases;
+        /// <summary>
+        /// CPU cores available for allocation to Autonomous Databases.
+        /// </summary>
+        public readonly double AvailableCpus;
         public readonly string CloudAutonomousVmClusterId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure.
         /// </summary>
         public readonly string CloudExadataInfrastructureId;
+        /// <summary>
+        /// The time zone of the Cloud Autonomous VM Cluster.
+        /// </summary>
+        public readonly string ClusterTimeZone;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
@@ -132,6 +152,10 @@ namespace Pulumi.Oci.Database
         /// The total data storage allocated, in terabytes (TB).
         /// </summary>
         public readonly double DataStorageSizeInTbs;
+        /// <summary>
+        /// The local node storage allocated in GBs.
+        /// </summary>
+        public readonly int DbNodeStorageSizeInGbs;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
@@ -177,6 +201,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
+        /// The amount of memory (in GBs) enabled per each OCPU core.
+        /// </summary>
+        public readonly int MemoryPerOracleComputeUnitInGbs;
+        /// <summary>
         /// The memory allocated in GBs.
         /// </summary>
         public readonly int MemorySizeInGbs;
@@ -189,14 +217,18 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly int NodeCount;
         /// <summary>
-        /// A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        /// * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+        /// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+        /// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         /// </summary>
         public readonly ImmutableArray<string> NsgIds;
         /// <summary>
         /// The number of CPU cores enabled on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
         /// </summary>
         public readonly double OcpuCount;
+        /// <summary>
+        /// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+        /// </summary>
+        public readonly double ReclaimableCpus;
         public readonly bool RotateOrdsCertsTrigger;
         public readonly bool RotateSslCertsTrigger;
         /// <summary>
@@ -219,14 +251,28 @@ namespace Pulumi.Oci.Database
         /// The last date and time that the cloud Autonomous VM cluster was updated.
         /// </summary>
         public readonly string TimeUpdated;
+        /// <summary>
+        /// The total number of Autonomous Container Databases that can be created with the allocated local storage.
+        /// </summary>
+        public readonly int TotalContainerDatabases;
 
         [OutputConstructor]
         private GetCloudAutonomousVmClusterResult(
+            double autonomousDataStorageSizeInTbs,
+
             string availabilityDomain,
+
+            double availableAutonomousDataStorageSizeInTbs,
+
+            int availableContainerDatabases,
+
+            double availableCpus,
 
             string cloudAutonomousVmClusterId,
 
             string cloudExadataInfrastructureId,
+
+            string clusterTimeZone,
 
             string compartmentId,
 
@@ -235,6 +281,8 @@ namespace Pulumi.Oci.Database
             double dataStorageSizeInGb,
 
             double dataStorageSizeInTbs,
+
+            int dbNodeStorageSizeInGbs,
 
             ImmutableDictionary<string, object> definedTags,
 
@@ -258,6 +306,8 @@ namespace Pulumi.Oci.Database
 
             string lifecycleDetails,
 
+            int memoryPerOracleComputeUnitInGbs,
+
             int memorySizeInGbs,
 
             string nextMaintenanceRunId,
@@ -267,6 +317,8 @@ namespace Pulumi.Oci.Database
             ImmutableArray<string> nsgIds,
 
             double ocpuCount,
+
+            double reclaimableCpus,
 
             bool rotateOrdsCertsTrigger,
 
@@ -280,15 +332,23 @@ namespace Pulumi.Oci.Database
 
             string timeCreated,
 
-            string timeUpdated)
+            string timeUpdated,
+
+            int totalContainerDatabases)
         {
+            AutonomousDataStorageSizeInTbs = autonomousDataStorageSizeInTbs;
             AvailabilityDomain = availabilityDomain;
+            AvailableAutonomousDataStorageSizeInTbs = availableAutonomousDataStorageSizeInTbs;
+            AvailableContainerDatabases = availableContainerDatabases;
+            AvailableCpus = availableCpus;
             CloudAutonomousVmClusterId = cloudAutonomousVmClusterId;
             CloudExadataInfrastructureId = cloudExadataInfrastructureId;
+            ClusterTimeZone = clusterTimeZone;
             CompartmentId = compartmentId;
             CpuCoreCount = cpuCoreCount;
             DataStorageSizeInGb = dataStorageSizeInGb;
             DataStorageSizeInTbs = dataStorageSizeInTbs;
+            DbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
             DefinedTags = definedTags;
             Description = description;
             DisplayName = displayName;
@@ -300,11 +360,13 @@ namespace Pulumi.Oci.Database
             LastUpdateHistoryEntryId = lastUpdateHistoryEntryId;
             LicenseModel = licenseModel;
             LifecycleDetails = lifecycleDetails;
+            MemoryPerOracleComputeUnitInGbs = memoryPerOracleComputeUnitInGbs;
             MemorySizeInGbs = memorySizeInGbs;
             NextMaintenanceRunId = nextMaintenanceRunId;
             NodeCount = nodeCount;
             NsgIds = nsgIds;
             OcpuCount = ocpuCount;
+            ReclaimableCpus = reclaimableCpus;
             RotateOrdsCertsTrigger = rotateOrdsCertsTrigger;
             RotateSslCertsTrigger = rotateSslCertsTrigger;
             Shape = shape;
@@ -312,6 +374,7 @@ namespace Pulumi.Oci.Database
             SubnetId = subnetId;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
+            TotalContainerDatabases = totalContainerDatabases;
         }
     }
 }

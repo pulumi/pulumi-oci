@@ -13,7 +13,7 @@ import (
 
 // This resource provides the Config resource in Oracle Cloud Infrastructure Apm Config service.
 //
-// Creates a new Configuration item.
+// Creates a new configuration item.
 //
 // ## Example Usage
 //
@@ -46,6 +46,7 @@ import (
 // 			FreeformTags: pulumi.AnyMap{
 // 				"bar-key": pulumi.Any("value"),
 // 			},
+// 			Group: pulumi.Any(_var.Config_group),
 // 			Metrics: apmconfig.ConfigMetricArray{
 // 				&apmconfig.ConfigMetricArgs{
 // 					Description: pulumi.Any(_var.Config_metrics_description),
@@ -56,6 +57,7 @@ import (
 // 			},
 // 			Namespace: pulumi.Any(_var.Config_namespace),
 // 			OpcDryRun: pulumi.Any(_var.Config_opc_dry_run),
+// 			Options:   pulumi.Any(_var.Config_options),
 // 			Rules: apmconfig.ConfigRuleArray{
 // 				&apmconfig.ConfigRuleArgs{
 // 					DisplayName:            pulumi.Any(_var.Config_rules_display_name),
@@ -86,30 +88,34 @@ import (
 type Config struct {
 	pulumi.CustomResourceState
 
-	// (Updatable) The APM Domain Id the request is intended for.
+	// (Updatable) The APM Domain ID the request is intended for.
 	ApmDomainId pulumi.StringOutput `pulumi:"apmDomainId"`
-	// (Updatable) The type of configuration item
+	// (Updatable) The type of configuration item.
 	ConfigType pulumi.StringOutput `pulumi:"configType"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
-	// (Updatable) A description of the metric
+	// (Updatable) A description of the metric.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// (Updatable) A list of dimensions for this metric. Must be NULL at the moment.
+	// (Updatable) A list of dimensions for the metric. This variable should not be used.
 	Dimensions ConfigDimensionArrayOutput `pulumi:"dimensions"`
-	// (Updatable) A user-friendly name that provides a short description this rule.
+	// (Updatable) The name by which a configuration entity is displayed to the end user.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId will be generated when a Span Filter is created.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
 	FilterId pulumi.StringOutput `pulumi:"filterId"`
 	// (Updatable) The string that defines the Span Filter expression.
 	FilterText pulumi.StringOutput `pulumi:"filterText"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
-	// (Updatable)
+	// (Updatable) A string that specifies the group that an OPTIONS item belongs to.
+	Group pulumi.StringOutput `pulumi:"group"`
+	// (Updatable) The list of metrics in this group.
 	Metrics ConfigMetricArrayOutput `pulumi:"metrics"`
-	// (Updatable) The namespace to write the metrics to
+	// (Updatable) The namespace to which the metrics are published. It must be one of several predefined namespaces.
 	Namespace pulumi.StringOutput `pulumi:"namespace"`
-	// (Updatable) Indicates that this request is a dry-run. If set to "true", nothing will be modified, only the validation will be performed.
+	// (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not modify the configuration item details and is used only to perform validation on the submitted data.
 	OpcDryRun pulumi.StringOutput `pulumi:"opcDryRun"`
+	// (Updatable) The options are stored here as JSON.
+	Options pulumi.StringOutput `pulumi:"options"`
 	// (Updatable)
 	Rules ConfigRuleArrayOutput `pulumi:"rules"`
 	// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
@@ -156,30 +162,34 @@ func GetConfig(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Config resources.
 type configState struct {
-	// (Updatable) The APM Domain Id the request is intended for.
+	// (Updatable) The APM Domain ID the request is intended for.
 	ApmDomainId *string `pulumi:"apmDomainId"`
-	// (Updatable) The type of configuration item
+	// (Updatable) The type of configuration item.
 	ConfigType *string `pulumi:"configType"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// (Updatable) A description of the metric
+	// (Updatable) A description of the metric.
 	Description *string `pulumi:"description"`
-	// (Updatable) A list of dimensions for this metric. Must be NULL at the moment.
+	// (Updatable) A list of dimensions for the metric. This variable should not be used.
 	Dimensions []ConfigDimension `pulumi:"dimensions"`
-	// (Updatable) A user-friendly name that provides a short description this rule.
+	// (Updatable) The name by which a configuration entity is displayed to the end user.
 	DisplayName *string `pulumi:"displayName"`
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId will be generated when a Span Filter is created.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
 	FilterId *string `pulumi:"filterId"`
 	// (Updatable) The string that defines the Span Filter expression.
 	FilterText *string `pulumi:"filterText"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// (Updatable)
+	// (Updatable) A string that specifies the group that an OPTIONS item belongs to.
+	Group *string `pulumi:"group"`
+	// (Updatable) The list of metrics in this group.
 	Metrics []ConfigMetric `pulumi:"metrics"`
-	// (Updatable) The namespace to write the metrics to
+	// (Updatable) The namespace to which the metrics are published. It must be one of several predefined namespaces.
 	Namespace *string `pulumi:"namespace"`
-	// (Updatable) Indicates that this request is a dry-run. If set to "true", nothing will be modified, only the validation will be performed.
+	// (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not modify the configuration item details and is used only to perform validation on the submitted data.
 	OpcDryRun *string `pulumi:"opcDryRun"`
+	// (Updatable) The options are stored here as JSON.
+	Options *string `pulumi:"options"`
 	// (Updatable)
 	Rules []ConfigRule `pulumi:"rules"`
 	// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
@@ -189,30 +199,34 @@ type configState struct {
 }
 
 type ConfigState struct {
-	// (Updatable) The APM Domain Id the request is intended for.
+	// (Updatable) The APM Domain ID the request is intended for.
 	ApmDomainId pulumi.StringPtrInput
-	// (Updatable) The type of configuration item
+	// (Updatable) The type of configuration item.
 	ConfigType pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
-	// (Updatable) A description of the metric
+	// (Updatable) A description of the metric.
 	Description pulumi.StringPtrInput
-	// (Updatable) A list of dimensions for this metric. Must be NULL at the moment.
+	// (Updatable) A list of dimensions for the metric. This variable should not be used.
 	Dimensions ConfigDimensionArrayInput
-	// (Updatable) A user-friendly name that provides a short description this rule.
+	// (Updatable) The name by which a configuration entity is displayed to the end user.
 	DisplayName pulumi.StringPtrInput
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId will be generated when a Span Filter is created.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
 	FilterId pulumi.StringPtrInput
 	// (Updatable) The string that defines the Span Filter expression.
 	FilterText pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
-	// (Updatable)
+	// (Updatable) A string that specifies the group that an OPTIONS item belongs to.
+	Group pulumi.StringPtrInput
+	// (Updatable) The list of metrics in this group.
 	Metrics ConfigMetricArrayInput
-	// (Updatable) The namespace to write the metrics to
+	// (Updatable) The namespace to which the metrics are published. It must be one of several predefined namespaces.
 	Namespace pulumi.StringPtrInput
-	// (Updatable) Indicates that this request is a dry-run. If set to "true", nothing will be modified, only the validation will be performed.
+	// (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not modify the configuration item details and is used only to perform validation on the submitted data.
 	OpcDryRun pulumi.StringPtrInput
+	// (Updatable) The options are stored here as JSON.
+	Options pulumi.StringPtrInput
 	// (Updatable)
 	Rules ConfigRuleArrayInput
 	// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
@@ -226,60 +240,68 @@ func (ConfigState) ElementType() reflect.Type {
 }
 
 type configArgs struct {
-	// (Updatable) The APM Domain Id the request is intended for.
+	// (Updatable) The APM Domain ID the request is intended for.
 	ApmDomainId string `pulumi:"apmDomainId"`
-	// (Updatable) The type of configuration item
+	// (Updatable) The type of configuration item.
 	ConfigType string `pulumi:"configType"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// (Updatable) A description of the metric
+	// (Updatable) A description of the metric.
 	Description *string `pulumi:"description"`
-	// (Updatable) A list of dimensions for this metric. Must be NULL at the moment.
+	// (Updatable) A list of dimensions for the metric. This variable should not be used.
 	Dimensions []ConfigDimension `pulumi:"dimensions"`
-	// (Updatable) A user-friendly name that provides a short description this rule.
+	// (Updatable) The name by which a configuration entity is displayed to the end user.
 	DisplayName string `pulumi:"displayName"`
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId will be generated when a Span Filter is created.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
 	FilterId *string `pulumi:"filterId"`
 	// (Updatable) The string that defines the Span Filter expression.
 	FilterText *string `pulumi:"filterText"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// (Updatable)
+	// (Updatable) A string that specifies the group that an OPTIONS item belongs to.
+	Group *string `pulumi:"group"`
+	// (Updatable) The list of metrics in this group.
 	Metrics []ConfigMetric `pulumi:"metrics"`
-	// (Updatable) The namespace to write the metrics to
+	// (Updatable) The namespace to which the metrics are published. It must be one of several predefined namespaces.
 	Namespace *string `pulumi:"namespace"`
-	// (Updatable) Indicates that this request is a dry-run. If set to "true", nothing will be modified, only the validation will be performed.
+	// (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not modify the configuration item details and is used only to perform validation on the submitted data.
 	OpcDryRun *string `pulumi:"opcDryRun"`
+	// (Updatable) The options are stored here as JSON.
+	Options *string `pulumi:"options"`
 	// (Updatable)
 	Rules []ConfigRule `pulumi:"rules"`
 }
 
 // The set of arguments for constructing a Config resource.
 type ConfigArgs struct {
-	// (Updatable) The APM Domain Id the request is intended for.
+	// (Updatable) The APM Domain ID the request is intended for.
 	ApmDomainId pulumi.StringInput
-	// (Updatable) The type of configuration item
+	// (Updatable) The type of configuration item.
 	ConfigType pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
-	// (Updatable) A description of the metric
+	// (Updatable) A description of the metric.
 	Description pulumi.StringPtrInput
-	// (Updatable) A list of dimensions for this metric. Must be NULL at the moment.
+	// (Updatable) A list of dimensions for the metric. This variable should not be used.
 	Dimensions ConfigDimensionArrayInput
-	// (Updatable) A user-friendly name that provides a short description this rule.
+	// (Updatable) The name by which a configuration entity is displayed to the end user.
 	DisplayName pulumi.StringInput
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId will be generated when a Span Filter is created.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
 	FilterId pulumi.StringPtrInput
 	// (Updatable) The string that defines the Span Filter expression.
 	FilterText pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
-	// (Updatable)
+	// (Updatable) A string that specifies the group that an OPTIONS item belongs to.
+	Group pulumi.StringPtrInput
+	// (Updatable) The list of metrics in this group.
 	Metrics ConfigMetricArrayInput
-	// (Updatable) The namespace to write the metrics to
+	// (Updatable) The namespace to which the metrics are published. It must be one of several predefined namespaces.
 	Namespace pulumi.StringPtrInput
-	// (Updatable) Indicates that this request is a dry-run. If set to "true", nothing will be modified, only the validation will be performed.
+	// (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not modify the configuration item details and is used only to perform validation on the submitted data.
 	OpcDryRun pulumi.StringPtrInput
+	// (Updatable) The options are stored here as JSON.
+	Options pulumi.StringPtrInput
 	// (Updatable)
 	Rules ConfigRuleArrayInput
 }

@@ -12,6 +12,9 @@ namespace Pulumi.Oci.CloudGuard.Inputs
 
     public sealed class ResponderRecipeResponderRuleDetailsArgs : Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Base condition object
+        /// </summary>
         [Input("condition")]
         public Input<string>? Condition { get; set; }
 

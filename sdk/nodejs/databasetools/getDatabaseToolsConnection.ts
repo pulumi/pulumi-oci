@@ -8,7 +8,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Database Tools Connection resource in Oracle Cloud Infrastructure Database Tools service.
  *
- * Gets a DatabaseToolsConnection by identifier
+ * Gets details of the specified Database Tools connection.
  *
  * ## Example Usage
  *
@@ -37,7 +37,7 @@ export function getDatabaseToolsConnection(args: GetDatabaseToolsConnectionArgs,
  */
 export interface GetDatabaseToolsConnectionArgs {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a DatabaseToolsConnection.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools connection.
      */
     databaseToolsConnectionId: string;
 }
@@ -47,15 +47,15 @@ export interface GetDatabaseToolsConnectionArgs {
  */
 export interface GetDatabaseToolsConnectionResult {
     /**
-     * Advanced connection properties key-value pair (e.g., oracle.net.ssl_server_dn_match).
+     * The advanced connection properties key-value pair (for example, `oracle.net.ssl_server_dn_match`).
      */
     readonly advancedProperties: {[key: string]: any};
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
      */
     readonly compartmentId: string;
     /**
-     * Connect descriptor or Easy Connect Naming method to connect to the database.
+     * The connect descriptor or Easy Connect Naming method used to connect to the database.
      */
     readonly connectionString: string;
     readonly databaseToolsConnectionId: string;
@@ -72,19 +72,19 @@ export interface GetDatabaseToolsConnectionResult {
      */
     readonly freeformTags: {[key: string]: any};
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsConnection.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools connection.
      */
     readonly id: string;
     /**
-     * Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
+     * The Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
      */
     readonly keyStores: outputs.DatabaseTools.GetDatabaseToolsConnectionKeyStore[];
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
      */
     readonly lifecycleDetails: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsPrivateEndpoint used to access the database in the Customer VCN.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
      */
     readonly privateEndpointId: string;
     /**
@@ -92,7 +92,7 @@ export interface GetDatabaseToolsConnectionResult {
      */
     readonly relatedResources: outputs.DatabaseTools.GetDatabaseToolsConnectionRelatedResource[];
     /**
-     * The current state of the DatabaseToolsConnection.
+     * The current state of the Database Tools connection.
      */
     readonly state: string;
     /**
@@ -100,19 +100,19 @@ export interface GetDatabaseToolsConnectionResult {
      */
     readonly systemTags: {[key: string]: any};
     /**
-     * The time the DatabaseToolsConnection was created. An RFC3339 formatted datetime string
+     * The time the Database Tools connection was created. An RFC3339 formatted datetime string.
      */
     readonly timeCreated: string;
     /**
-     * The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string
+     * The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
      */
     readonly timeUpdated: string;
     /**
-     * The DatabaseToolsConnection type.
+     * The Database Tools connection type.
      */
     readonly type: string;
     /**
-     * Database user name.
+     * The database user name.
      */
     readonly userName: string;
     /**
@@ -130,7 +130,7 @@ export function getDatabaseToolsConnectionOutput(args: GetDatabaseToolsConnectio
  */
 export interface GetDatabaseToolsConnectionOutputArgs {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a DatabaseToolsConnection.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools connection.
      */
     databaseToolsConnectionId: pulumi.Input<string>;
 }

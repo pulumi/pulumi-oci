@@ -5,8 +5,11 @@ package com.pulumi.oci.Oda.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Oda.inputs.OdaInstanceRestrictedOperationArgs;
+import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -16,6 +19,36 @@ import javax.annotation.Nullable;
 public final class OdaInstanceState extends com.pulumi.resources.ResourceArgs {
 
     public static final OdaInstanceState Empty = new OdaInstanceState();
+
+    /**
+     * A list of attachment identifiers for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+     * 
+     */
+    @Import(name="attachmentIds")
+    private @Nullable Output<List<String>> attachmentIds;
+
+    /**
+     * @return A list of attachment identifiers for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+     * 
+     */
+    public Optional<Output<List<String>>> attachmentIds() {
+        return Optional.ofNullable(this.attachmentIds);
+    }
+
+    /**
+     * A list of attachment types for this instance (if any). Use attachmentIds to get the details of the attachments.
+     * 
+     */
+    @Import(name="attachmentTypes")
+    private @Nullable Output<List<String>> attachmentTypes;
+
+    /**
+     * @return A list of attachment types for this instance (if any). Use attachmentIds to get the details of the attachments.
+     * 
+     */
+    public Optional<Output<List<String>>> attachmentTypes() {
+        return Optional.ofNullable(this.attachmentTypes);
+    }
 
     /**
      * (Updatable) Identifier of the compartment.
@@ -93,18 +126,108 @@ public final class OdaInstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Import(name="freeformTags")
     private @Nullable Output<Map<String,Object>> freeformTags;
 
     /**
-     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Optional<Output<Map<String,Object>>> freeformTags() {
         return Optional.ofNullable(this.freeformTags);
+    }
+
+    /**
+     * If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.
+     * 
+     */
+    @Import(name="identityAppConsoleUrl")
+    private @Nullable Output<String> identityAppConsoleUrl;
+
+    /**
+     * @return If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.
+     * 
+     */
+    public Optional<Output<String>> identityAppConsoleUrl() {
+        return Optional.ofNullable(this.identityAppConsoleUrl);
+    }
+
+    /**
+     * If isRoleBasedAccess is set to true, this property specifies the GUID of the Identity Application instance Digital Assistant has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this Digital Assistant instance for users within the identity domain.
+     * 
+     */
+    @Import(name="identityAppGuid")
+    private @Nullable Output<String> identityAppGuid;
+
+    /**
+     * @return If isRoleBasedAccess is set to true, this property specifies the GUID of the Identity Application instance Digital Assistant has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this Digital Assistant instance for users within the identity domain.
+     * 
+     */
+    public Optional<Output<String>> identityAppGuid() {
+        return Optional.ofNullable(this.identityAppGuid);
+    }
+
+    /**
+     * If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
+     * 
+     */
+    @Import(name="identityDomain")
+    private @Nullable Output<String> identityDomain;
+
+    /**
+     * @return If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
+     * 
+     */
+    public Optional<Output<String>> identityDomain() {
+        return Optional.ofNullable(this.identityDomain);
+    }
+
+    /**
+     * A list of package ids imported into this instance (if any). Use GetImportedPackage to get the details of the imported packages.
+     * 
+     */
+    @Import(name="importedPackageIds")
+    private @Nullable Output<List<String>> importedPackageIds;
+
+    /**
+     * @return A list of package ids imported into this instance (if any). Use GetImportedPackage to get the details of the imported packages.
+     * 
+     */
+    public Optional<Output<List<String>>> importedPackageIds() {
+        return Optional.ofNullable(this.importedPackageIds);
+    }
+
+    /**
+     * A list of package names imported into this instance (if any). Use importedPackageIds field to get the details of the imported packages.
+     * 
+     */
+    @Import(name="importedPackageNames")
+    private @Nullable Output<List<String>> importedPackageNames;
+
+    /**
+     * @return A list of package names imported into this instance (if any). Use importedPackageIds field to get the details of the imported packages.
+     * 
+     */
+    public Optional<Output<List<String>>> importedPackageNames() {
+        return Optional.ofNullable(this.importedPackageNames);
+    }
+
+    /**
+     * Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
+     * 
+     */
+    @Import(name="isRoleBasedAccess")
+    private @Nullable Output<Boolean> isRoleBasedAccess;
+
+    /**
+     * @return Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
+     * 
+     */
+    public Optional<Output<Boolean>> isRoleBasedAccess() {
+        return Optional.ofNullable(this.isRoleBasedAccess);
     }
 
     /**
@@ -120,6 +243,21 @@ public final class OdaInstanceState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> lifecycleSubState() {
         return Optional.ofNullable(this.lifecycleSubState);
+    }
+
+    /**
+     * A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+     * 
+     */
+    @Import(name="restrictedOperations")
+    private @Nullable Output<List<OdaInstanceRestrictedOperationArgs>> restrictedOperations;
+
+    /**
+     * @return A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+     * 
+     */
+    public Optional<Output<List<OdaInstanceRestrictedOperationArgs>>> restrictedOperations() {
+        return Optional.ofNullable(this.restrictedOperations);
     }
 
     /**
@@ -215,13 +353,22 @@ public final class OdaInstanceState extends com.pulumi.resources.ResourceArgs {
     private OdaInstanceState() {}
 
     private OdaInstanceState(OdaInstanceState $) {
+        this.attachmentIds = $.attachmentIds;
+        this.attachmentTypes = $.attachmentTypes;
         this.compartmentId = $.compartmentId;
         this.connectorUrl = $.connectorUrl;
         this.definedTags = $.definedTags;
         this.description = $.description;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.identityAppConsoleUrl = $.identityAppConsoleUrl;
+        this.identityAppGuid = $.identityAppGuid;
+        this.identityDomain = $.identityDomain;
+        this.importedPackageIds = $.importedPackageIds;
+        this.importedPackageNames = $.importedPackageNames;
+        this.isRoleBasedAccess = $.isRoleBasedAccess;
         this.lifecycleSubState = $.lifecycleSubState;
+        this.restrictedOperations = $.restrictedOperations;
         this.shapeName = $.shapeName;
         this.state = $.state;
         this.stateMessage = $.stateMessage;
@@ -246,6 +393,68 @@ public final class OdaInstanceState extends com.pulumi.resources.ResourceArgs {
 
         public Builder(OdaInstanceState defaults) {
             $ = new OdaInstanceState(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param attachmentIds A list of attachment identifiers for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder attachmentIds(@Nullable Output<List<String>> attachmentIds) {
+            $.attachmentIds = attachmentIds;
+            return this;
+        }
+
+        /**
+         * @param attachmentIds A list of attachment identifiers for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder attachmentIds(List<String> attachmentIds) {
+            return attachmentIds(Output.of(attachmentIds));
+        }
+
+        /**
+         * @param attachmentIds A list of attachment identifiers for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder attachmentIds(String... attachmentIds) {
+            return attachmentIds(List.of(attachmentIds));
+        }
+
+        /**
+         * @param attachmentTypes A list of attachment types for this instance (if any). Use attachmentIds to get the details of the attachments.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder attachmentTypes(@Nullable Output<List<String>> attachmentTypes) {
+            $.attachmentTypes = attachmentTypes;
+            return this;
+        }
+
+        /**
+         * @param attachmentTypes A list of attachment types for this instance (if any). Use attachmentIds to get the details of the attachments.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder attachmentTypes(List<String> attachmentTypes) {
+            return attachmentTypes(Output.of(attachmentTypes));
+        }
+
+        /**
+         * @param attachmentTypes A list of attachment types for this instance (if any). Use attachmentIds to get the details of the attachments.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder attachmentTypes(String... attachmentTypes) {
+            return attachmentTypes(List.of(attachmentTypes));
         }
 
         /**
@@ -354,7 +563,7 @@ public final class OdaInstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
          * 
@@ -365,13 +574,159 @@ public final class OdaInstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
          * 
          */
         public Builder freeformTags(Map<String,Object> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        /**
+         * @param identityAppConsoleUrl If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder identityAppConsoleUrl(@Nullable Output<String> identityAppConsoleUrl) {
+            $.identityAppConsoleUrl = identityAppConsoleUrl;
+            return this;
+        }
+
+        /**
+         * @param identityAppConsoleUrl If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder identityAppConsoleUrl(String identityAppConsoleUrl) {
+            return identityAppConsoleUrl(Output.of(identityAppConsoleUrl));
+        }
+
+        /**
+         * @param identityAppGuid If isRoleBasedAccess is set to true, this property specifies the GUID of the Identity Application instance Digital Assistant has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this Digital Assistant instance for users within the identity domain.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder identityAppGuid(@Nullable Output<String> identityAppGuid) {
+            $.identityAppGuid = identityAppGuid;
+            return this;
+        }
+
+        /**
+         * @param identityAppGuid If isRoleBasedAccess is set to true, this property specifies the GUID of the Identity Application instance Digital Assistant has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this Digital Assistant instance for users within the identity domain.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder identityAppGuid(String identityAppGuid) {
+            return identityAppGuid(Output.of(identityAppGuid));
+        }
+
+        /**
+         * @param identityDomain If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder identityDomain(@Nullable Output<String> identityDomain) {
+            $.identityDomain = identityDomain;
+            return this;
+        }
+
+        /**
+         * @param identityDomain If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder identityDomain(String identityDomain) {
+            return identityDomain(Output.of(identityDomain));
+        }
+
+        /**
+         * @param importedPackageIds A list of package ids imported into this instance (if any). Use GetImportedPackage to get the details of the imported packages.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder importedPackageIds(@Nullable Output<List<String>> importedPackageIds) {
+            $.importedPackageIds = importedPackageIds;
+            return this;
+        }
+
+        /**
+         * @param importedPackageIds A list of package ids imported into this instance (if any). Use GetImportedPackage to get the details of the imported packages.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder importedPackageIds(List<String> importedPackageIds) {
+            return importedPackageIds(Output.of(importedPackageIds));
+        }
+
+        /**
+         * @param importedPackageIds A list of package ids imported into this instance (if any). Use GetImportedPackage to get the details of the imported packages.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder importedPackageIds(String... importedPackageIds) {
+            return importedPackageIds(List.of(importedPackageIds));
+        }
+
+        /**
+         * @param importedPackageNames A list of package names imported into this instance (if any). Use importedPackageIds field to get the details of the imported packages.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder importedPackageNames(@Nullable Output<List<String>> importedPackageNames) {
+            $.importedPackageNames = importedPackageNames;
+            return this;
+        }
+
+        /**
+         * @param importedPackageNames A list of package names imported into this instance (if any). Use importedPackageIds field to get the details of the imported packages.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder importedPackageNames(List<String> importedPackageNames) {
+            return importedPackageNames(Output.of(importedPackageNames));
+        }
+
+        /**
+         * @param importedPackageNames A list of package names imported into this instance (if any). Use importedPackageIds field to get the details of the imported packages.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder importedPackageNames(String... importedPackageNames) {
+            return importedPackageNames(List.of(importedPackageNames));
+        }
+
+        /**
+         * @param isRoleBasedAccess Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isRoleBasedAccess(@Nullable Output<Boolean> isRoleBasedAccess) {
+            $.isRoleBasedAccess = isRoleBasedAccess;
+            return this;
+        }
+
+        /**
+         * @param isRoleBasedAccess Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isRoleBasedAccess(Boolean isRoleBasedAccess) {
+            return isRoleBasedAccess(Output.of(isRoleBasedAccess));
         }
 
         /**
@@ -393,6 +748,37 @@ public final class OdaInstanceState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder lifecycleSubState(String lifecycleSubState) {
             return lifecycleSubState(Output.of(lifecycleSubState));
+        }
+
+        /**
+         * @param restrictedOperations A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder restrictedOperations(@Nullable Output<List<OdaInstanceRestrictedOperationArgs>> restrictedOperations) {
+            $.restrictedOperations = restrictedOperations;
+            return this;
+        }
+
+        /**
+         * @param restrictedOperations A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder restrictedOperations(List<OdaInstanceRestrictedOperationArgs> restrictedOperations) {
+            return restrictedOperations(Output.of(restrictedOperations));
+        }
+
+        /**
+         * @param restrictedOperations A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder restrictedOperations(OdaInstanceRestrictedOperationArgs... restrictedOperations) {
+            return restrictedOperations(List.of(restrictedOperations));
         }
 
         /**

@@ -178,7 +178,7 @@ class GetScriptResult:
     @pulumi.getter(name="timeUploaded")
     def time_uploaded(self) -> str:
         """
-        The time when the script was uploaded.
+        The time the script was uploaded.
         """
         return pulumi.get(self, "time_uploaded")
 

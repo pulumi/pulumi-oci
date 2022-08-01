@@ -8,7 +8,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Alert Rules in Oracle Cloud Infrastructure Budget service.
  *
- * Returns a list of Alert Rules for a specified Budget.
+ * Returns a list of Alert Rules for a specified budget.
  *
  * ## Example Usage
  *
@@ -42,11 +42,11 @@ export function getAlertRules(args: GetAlertRulesArgs, opts?: pulumi.InvokeOptio
  */
 export interface GetAlertRulesArgs {
     /**
-     * The unique Budget OCID
+     * The unique budget OCID.
      */
     budgetId: string;
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+     * A user-friendly name. This does not have to be unique, and it's changeable.  Example: `My new resource`
      */
     displayName?: string;
     filters?: inputs.Budget.GetAlertRulesFilter[];
@@ -65,11 +65,11 @@ export interface GetAlertRulesResult {
      */
     readonly alertRules: outputs.Budget.GetAlertRulesAlertRule[];
     /**
-     * The OCID of the budget
+     * The OCID of the budget.
      */
     readonly budgetId: string;
     /**
-     * The name of the alert rule.
+     * The name of the alert rule. Avoid entering confidential information.
      */
     readonly displayName?: string;
     readonly filters?: outputs.Budget.GetAlertRulesFilter[];
@@ -92,11 +92,11 @@ export function getAlertRulesOutput(args: GetAlertRulesOutputArgs, opts?: pulumi
  */
 export interface GetAlertRulesOutputArgs {
     /**
-     * The unique Budget OCID
+     * The unique budget OCID.
      */
     budgetId: pulumi.Input<string>;
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+     * A user-friendly name. This does not have to be unique, and it's changeable.  Example: `My new resource`
      */
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.Budget.GetAlertRulesFilterArgs>[]>;

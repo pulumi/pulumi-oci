@@ -686,7 +686,7 @@ class Model(pulumi.CustomResource):
                 dataset_type=var["model_training_dataset_dataset_type"],
                 bucket=var["model_training_dataset_bucket"],
                 dataset_id=oci_data_labeling_service_dataset["test_dataset"]["id"],
-                namespace=var["model_training_dataset_namespace"],
+                namespace_name=var["model_training_dataset_namespace"],
                 object=var["model_training_dataset_object"],
             ),
             defined_tags={
@@ -704,14 +704,14 @@ class Model(pulumi.CustomResource):
                 dataset_type=var["model_testing_dataset_dataset_type"],
                 bucket=var["model_testing_dataset_bucket"],
                 dataset_id=oci_data_labeling_service_dataset["test_dataset"]["id"],
-                namespace=var["model_testing_dataset_namespace"],
+                namespace_name=var["model_testing_dataset_namespace"],
                 object=var["model_testing_dataset_object"],
             ),
             validation_dataset=oci.ai.vision.ModelValidationDatasetArgs(
                 dataset_type=var["model_validation_dataset_dataset_type"],
                 bucket=var["model_validation_dataset_bucket"],
                 dataset_id=oci_data_labeling_service_dataset["test_dataset"]["id"],
-                namespace=var["model_validation_dataset_namespace"],
+                namespace_name=var["model_validation_dataset_namespace"],
                 object=var["model_validation_dataset_object"],
             ))
         ```
@@ -765,7 +765,7 @@ class Model(pulumi.CustomResource):
                 dataset_type=var["model_training_dataset_dataset_type"],
                 bucket=var["model_training_dataset_bucket"],
                 dataset_id=oci_data_labeling_service_dataset["test_dataset"]["id"],
-                namespace=var["model_training_dataset_namespace"],
+                namespace_name=var["model_training_dataset_namespace"],
                 object=var["model_training_dataset_object"],
             ),
             defined_tags={
@@ -783,14 +783,14 @@ class Model(pulumi.CustomResource):
                 dataset_type=var["model_testing_dataset_dataset_type"],
                 bucket=var["model_testing_dataset_bucket"],
                 dataset_id=oci_data_labeling_service_dataset["test_dataset"]["id"],
-                namespace=var["model_testing_dataset_namespace"],
+                namespace_name=var["model_testing_dataset_namespace"],
                 object=var["model_testing_dataset_object"],
             ),
             validation_dataset=oci.ai.vision.ModelValidationDatasetArgs(
                 dataset_type=var["model_validation_dataset_dataset_type"],
                 bucket=var["model_validation_dataset_bucket"],
                 dataset_id=oci_data_labeling_service_dataset["test_dataset"]["id"],
-                namespace=var["model_validation_dataset_namespace"],
+                namespace_name=var["model_validation_dataset_namespace"],
                 object=var["model_validation_dataset_object"],
             ))
         ```

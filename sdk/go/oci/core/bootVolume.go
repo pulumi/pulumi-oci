@@ -87,7 +87,7 @@ import (
 type BootVolume struct {
 	pulumi.CustomResourceState
 
-	// The number of Volume Performance Units per GB that this volume is effectively tuned to when it's idle.
+	// The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it's idle.
 	AutoTunedVpusPerGb pulumi.StringOutput `pulumi:"autoTunedVpusPerGb"`
 	// (Updatable) The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain pulumi.StringOutput `pulumi:"availabilityDomain"`
@@ -169,7 +169,7 @@ func GetBootVolume(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering BootVolume resources.
 type bootVolumeState struct {
-	// The number of Volume Performance Units per GB that this volume is effectively tuned to when it's idle.
+	// The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it's idle.
 	AutoTunedVpusPerGb *string `pulumi:"autoTunedVpusPerGb"`
 	// (Updatable) The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
@@ -214,7 +214,7 @@ type bootVolumeState struct {
 }
 
 type BootVolumeState struct {
-	// The number of Volume Performance Units per GB that this volume is effectively tuned to when it's idle.
+	// The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it's idle.
 	AutoTunedVpusPerGb pulumi.StringPtrInput
 	// (Updatable) The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain pulumi.StringPtrInput

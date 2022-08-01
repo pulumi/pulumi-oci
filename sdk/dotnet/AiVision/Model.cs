@@ -34,7 +34,7 @@ namespace Pulumi.Oci.AiVision
     ///                 DatasetType = @var.Model_training_dataset_dataset_type,
     ///                 Bucket = @var.Model_training_dataset_bucket,
     ///                 DatasetId = oci_data_labeling_service_dataset.Test_dataset.Id,
-    ///                 Namespace = @var.Model_training_dataset_namespace,
+    ///                 NamespaceName = @var.Model_training_dataset_namespace,
     ///                 Object = @var.Model_training_dataset_object,
     ///             },
     ///             DefinedTags = 
@@ -55,7 +55,7 @@ namespace Pulumi.Oci.AiVision
     ///                 DatasetType = @var.Model_testing_dataset_dataset_type,
     ///                 Bucket = @var.Model_testing_dataset_bucket,
     ///                 DatasetId = oci_data_labeling_service_dataset.Test_dataset.Id,
-    ///                 Namespace = @var.Model_testing_dataset_namespace,
+    ///                 NamespaceName = @var.Model_testing_dataset_namespace,
     ///                 Object = @var.Model_testing_dataset_object,
     ///             },
     ///             ValidationDataset = new Oci.AiVision.Inputs.ModelValidationDatasetArgs
@@ -63,7 +63,7 @@ namespace Pulumi.Oci.AiVision
     ///                 DatasetType = @var.Model_validation_dataset_dataset_type,
     ///                 Bucket = @var.Model_validation_dataset_bucket,
     ///                 DatasetId = oci_data_labeling_service_dataset.Test_dataset.Id,
-    ///                 Namespace = @var.Model_validation_dataset_namespace,
+    ///                 NamespaceName = @var.Model_validation_dataset_namespace,
     ///                 Object = @var.Model_validation_dataset_object,
     ///             },
     ///         });

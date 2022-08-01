@@ -150,6 +150,7 @@ namespace Pulumi.Oci.Opsi
         /// The version of the database.
         /// </summary>
         public readonly string DatabaseVersion;
+        public readonly string DbmPrivateEndpointId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
@@ -258,6 +259,8 @@ namespace Pulumi.Oci.Opsi
 
             string databaseVersion,
 
+            string dbmPrivateEndpointId,
+
             ImmutableDictionary<string, object> definedTags,
 
             string deploymentType,
@@ -312,6 +315,7 @@ namespace Pulumi.Oci.Opsi
             DatabaseResourceType = databaseResourceType;
             DatabaseType = databaseType;
             DatabaseVersion = databaseVersion;
+            DbmPrivateEndpointId = dbmPrivateEndpointId;
             DefinedTags = definedTags;
             DeploymentType = deploymentType;
             EnterpriseManagerBridgeId = enterpriseManagerBridgeId;

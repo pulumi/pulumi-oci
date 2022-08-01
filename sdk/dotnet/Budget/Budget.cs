@@ -12,7 +12,7 @@ namespace Pulumi.Oci.Budget
     /// <summary>
     /// This resource provides the Budget resource in Oracle Cloud Infrastructure Budget service.
     /// 
-    /// Creates a new Budget.
+    /// Creates a new budget.
     /// 
     /// ## Example Usage
     /// 
@@ -40,6 +40,7 @@ namespace Pulumi.Oci.Budget
     ///             {
     ///                 { "Department", "Finance" },
     ///             },
+    ///             ProcessingPeriodType = @var.Budget_processing_period_type,
     ///             TargetCompartmentId = oci_identity_compartment.Test_compartment.Id,
     ///             TargetType = @var.Budget_target_type,
     ///             Targets = @var.Budget_targets,
@@ -61,13 +62,13 @@ namespace Pulumi.Oci.Budget
     public partial class Budget : Pulumi.CustomResource
     {
         /// <summary>
-        /// The actual spend in currency for the current budget cycle
+        /// The actual spend in currency for the current budget cycle.
         /// </summary>
         [Output("actualSpend")]
         public Output<double> ActualSpend { get; private set; } = null!;
 
         /// <summary>
-        /// Total number of alert rules in the budget
+        /// The total number of alert rules in the budget.
         /// </summary>
         [Output("alertRuleCount")]
         public Output<int> AlertRuleCount { get; private set; } = null!;
@@ -85,7 +86,7 @@ namespace Pulumi.Oci.Budget
         public Output<int> BudgetProcessingPeriodStartOffset { get; private set; } = null!;
 
         /// <summary>
-        /// The OCID of the tenancy
+        /// The OCID of the compartment.
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -103,13 +104,13 @@ namespace Pulumi.Oci.Budget
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The displayName of the budget.
+        /// (Updatable) The displayName of the budget. Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
-        /// The forecasted spend in currency by the end of the current budget cycle
+        /// The forecasted spend in currency by the end of the current budget cycle.
         /// </summary>
         [Output("forecastedSpend")]
         public Output<double> ForecastedSpend { get; private set; } = null!;
@@ -119,6 +120,12 @@ namespace Pulumi.Oci.Budget
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The type of the budget processing period. Valid values are INVOICE and MONTH.
+        /// </summary>
+        [Output("processingPeriodType")]
+        public Output<string> ProcessingPeriodType { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The reset period for the budget. Valid value is MONTHLY.
@@ -133,7 +140,7 @@ namespace Pulumi.Oci.Budget
         public Output<string> State { get; private set; } = null!;
 
         /// <summary>
-        /// This is DEPRECTAED. Set the target compartment id in targets instead.
+        /// This is DEPRECATED. Set the target compartment ID in targets instead.
         /// </summary>
         [Output("targetCompartmentId")]
         public Output<string> TargetCompartmentId { get; private set; } = null!;
@@ -145,31 +152,31 @@ namespace Pulumi.Oci.Budget
         public Output<string> TargetType { get; private set; } = null!;
 
         /// <summary>
-        /// The list of targets on which the budget is applied. If targetType is "COMPARTMENT", targets contains list of compartment OCIDs. If targetType is "TAG", targets contains list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain EXACT ONE item.
+        /// The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item.
         /// </summary>
         [Output("targets")]
         public Output<ImmutableArray<string>> Targets { get; private set; } = null!;
 
         /// <summary>
-        /// Time that budget was created
+        /// The time that the budget was created.
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
 
         /// <summary>
-        /// The time that the budget spend was last computed
+        /// The time that the budget spend was last computed.
         /// </summary>
         [Output("timeSpendComputed")]
         public Output<string> TimeSpendComputed { get; private set; } = null!;
 
         /// <summary>
-        /// Time that budget was updated
+        /// The time that the budget was updated.
         /// </summary>
         [Output("timeUpdated")]
         public Output<string> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
-        /// Version of the budget. Starts from 1 and increments by 1.
+        /// The version of the budget. Starts from 1 and increments by 1.
         /// </summary>
         [Output("version")]
         public Output<int> Version { get; private set; } = null!;
@@ -233,7 +240,7 @@ namespace Pulumi.Oci.Budget
         public Input<int>? BudgetProcessingPeriodStartOffset { get; set; }
 
         /// <summary>
-        /// The OCID of the tenancy
+        /// The OCID of the compartment.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
@@ -257,7 +264,7 @@ namespace Pulumi.Oci.Budget
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) The displayName of the budget.
+        /// (Updatable) The displayName of the budget. Avoid entering confidential information.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -275,13 +282,19 @@ namespace Pulumi.Oci.Budget
         }
 
         /// <summary>
+        /// (Updatable) The type of the budget processing period. Valid values are INVOICE and MONTH.
+        /// </summary>
+        [Input("processingPeriodType")]
+        public Input<string>? ProcessingPeriodType { get; set; }
+
+        /// <summary>
         /// (Updatable) The reset period for the budget. Valid value is MONTHLY.
         /// </summary>
         [Input("resetPeriod", required: true)]
         public Input<string> ResetPeriod { get; set; } = null!;
 
         /// <summary>
-        /// This is DEPRECTAED. Set the target compartment id in targets instead.
+        /// This is DEPRECATED. Set the target compartment ID in targets instead.
         /// </summary>
         [Input("targetCompartmentId")]
         public Input<string>? TargetCompartmentId { get; set; }
@@ -296,7 +309,7 @@ namespace Pulumi.Oci.Budget
         private InputList<string>? _targets;
 
         /// <summary>
-        /// The list of targets on which the budget is applied. If targetType is "COMPARTMENT", targets contains list of compartment OCIDs. If targetType is "TAG", targets contains list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain EXACT ONE item.
+        /// The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item.
         /// </summary>
         public InputList<string> Targets
         {
@@ -312,13 +325,13 @@ namespace Pulumi.Oci.Budget
     public sealed class BudgetState : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The actual spend in currency for the current budget cycle
+        /// The actual spend in currency for the current budget cycle.
         /// </summary>
         [Input("actualSpend")]
         public Input<double>? ActualSpend { get; set; }
 
         /// <summary>
-        /// Total number of alert rules in the budget
+        /// The total number of alert rules in the budget.
         /// </summary>
         [Input("alertRuleCount")]
         public Input<int>? AlertRuleCount { get; set; }
@@ -336,7 +349,7 @@ namespace Pulumi.Oci.Budget
         public Input<int>? BudgetProcessingPeriodStartOffset { get; set; }
 
         /// <summary>
-        /// The OCID of the tenancy
+        /// The OCID of the compartment.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -360,13 +373,13 @@ namespace Pulumi.Oci.Budget
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) The displayName of the budget.
+        /// (Updatable) The displayName of the budget. Avoid entering confidential information.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// The forecasted spend in currency by the end of the current budget cycle
+        /// The forecasted spend in currency by the end of the current budget cycle.
         /// </summary>
         [Input("forecastedSpend")]
         public Input<double>? ForecastedSpend { get; set; }
@@ -384,6 +397,12 @@ namespace Pulumi.Oci.Budget
         }
 
         /// <summary>
+        /// (Updatable) The type of the budget processing period. Valid values are INVOICE and MONTH.
+        /// </summary>
+        [Input("processingPeriodType")]
+        public Input<string>? ProcessingPeriodType { get; set; }
+
+        /// <summary>
         /// (Updatable) The reset period for the budget. Valid value is MONTHLY.
         /// </summary>
         [Input("resetPeriod")]
@@ -396,7 +415,7 @@ namespace Pulumi.Oci.Budget
         public Input<string>? State { get; set; }
 
         /// <summary>
-        /// This is DEPRECTAED. Set the target compartment id in targets instead.
+        /// This is DEPRECATED. Set the target compartment ID in targets instead.
         /// </summary>
         [Input("targetCompartmentId")]
         public Input<string>? TargetCompartmentId { get; set; }
@@ -411,7 +430,7 @@ namespace Pulumi.Oci.Budget
         private InputList<string>? _targets;
 
         /// <summary>
-        /// The list of targets on which the budget is applied. If targetType is "COMPARTMENT", targets contains list of compartment OCIDs. If targetType is "TAG", targets contains list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain EXACT ONE item.
+        /// The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item.
         /// </summary>
         public InputList<string> Targets
         {
@@ -420,25 +439,25 @@ namespace Pulumi.Oci.Budget
         }
 
         /// <summary>
-        /// Time that budget was created
+        /// The time that the budget was created.
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// The time that the budget spend was last computed
+        /// The time that the budget spend was last computed.
         /// </summary>
         [Input("timeSpendComputed")]
         public Input<string>? TimeSpendComputed { get; set; }
 
         /// <summary>
-        /// Time that budget was updated
+        /// The time that the budget was updated.
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }
 
         /// <summary>
-        /// Version of the budget. Starts from 1 and increments by 1.
+        /// The version of the budget. Starts from 1 and increments by 1.
         /// </summary>
         [Input("version")]
         public Input<int>? Version { get; set; }

@@ -22,13 +22,19 @@ class GetManagementAgentsResult:
     """
     A collection of values returned by getManagementAgents.
     """
-    def __init__(__self__, availability_status=None, compartment_id=None, display_name=None, filters=None, host_id=None, id=None, install_type=None, is_customer_deployed=None, management_agents=None, platform_types=None, plugin_names=None, state=None, versions=None):
+    def __init__(__self__, access_level=None, availability_status=None, compartment_id=None, compartment_id_in_subtree=None, display_name=None, filters=None, host_id=None, id=None, install_type=None, is_customer_deployed=None, management_agents=None, platform_types=None, plugin_names=None, state=None, versions=None):
+        if access_level and not isinstance(access_level, str):
+            raise TypeError("Expected argument 'access_level' to be a str")
+        pulumi.set(__self__, "access_level", access_level)
         if availability_status and not isinstance(availability_status, str):
             raise TypeError("Expected argument 'availability_status' to be a str")
         pulumi.set(__self__, "availability_status", availability_status)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
+        if compartment_id_in_subtree and not isinstance(compartment_id_in_subtree, bool):
+            raise TypeError("Expected argument 'compartment_id_in_subtree' to be a bool")
+        pulumi.set(__self__, "compartment_id_in_subtree", compartment_id_in_subtree)
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
@@ -64,6 +70,11 @@ class GetManagementAgentsResult:
         pulumi.set(__self__, "versions", versions)
 
     @property
+    @pulumi.getter(name="accessLevel")
+    def access_level(self) -> Optional[str]:
+        return pulumi.get(self, "access_level")
+
+    @property
     @pulumi.getter(name="availabilityStatus")
     def availability_status(self) -> Optional[str]:
         """
@@ -78,6 +89,11 @@ class GetManagementAgentsResult:
         Compartment Identifier
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="compartmentIdInSubtree")
+    def compartment_id_in_subtree(self) -> Optional[bool]:
+        return pulumi.get(self, "compartment_id_in_subtree")
 
     @property
     @pulumi.getter(name="displayName")
@@ -171,8 +187,10 @@ class AwaitableGetManagementAgentsResult(GetManagementAgentsResult):
         if False:
             yield self
         return GetManagementAgentsResult(
+            access_level=self.access_level,
             availability_status=self.availability_status,
             compartment_id=self.compartment_id,
+            compartment_id_in_subtree=self.compartment_id_in_subtree,
             display_name=self.display_name,
             filters=self.filters,
             host_id=self.host_id,
@@ -186,8 +204,10 @@ class AwaitableGetManagementAgentsResult(GetManagementAgentsResult):
             versions=self.versions)
 
 
-def get_management_agents(availability_status: Optional[str] = None,
+def get_management_agents(access_level: Optional[str] = None,
+                          availability_status: Optional[str] = None,
                           compartment_id: Optional[str] = None,
+                          compartment_id_in_subtree: Optional[bool] = None,
                           display_name: Optional[str] = None,
                           filters: Optional[Sequence[pulumi.InputType['GetManagementAgentsFilterArgs']]] = None,
                           host_id: Optional[str] = None,
@@ -202,7 +222,8 @@ def get_management_agents(availability_status: Optional[str] = None,
     This data source provides the list of Management Agents in Oracle Cloud Infrastructure Management Agent service.
 
     Returns a list of Management Agents.
-    If no explicit page size limit is specified, it will default to 5000.
+    If no explicit page size limit is specified, it will default to 1000 when compartmentIdInSubtree is true and 5000 otherwise.
+    The response is limited to maximum 1000 records when compartmentIdInSubtree is true.
 
     ## Example Usage
 
@@ -211,7 +232,9 @@ def get_management_agents(availability_status: Optional[str] = None,
     import pulumi_oci as oci
 
     test_management_agents = oci.ManagementAgent.get_management_agents(compartment_id=var["compartment_id"],
+        access_level=var["management_agent_access_level"],
         availability_status=var["management_agent_availability_status"],
+        compartment_id_in_subtree=var["management_agent_compartment_id_in_subtree"],
         display_name=var["management_agent_display_name"],
         host_id=oci_management_agent_host["test_host"]["id"],
         install_type=var["management_agent_install_type"],
@@ -223,20 +246,24 @@ def get_management_agents(availability_status: Optional[str] = None,
     ```
 
 
+    :param str access_level: When the value is "ACCESSIBLE", insufficient permissions for a compartment will filter out resources in that compartment without rejecting the request.
     :param str availability_status: Filter to return only Management Agents in the particular availability status.
     :param str compartment_id: The OCID of the compartment to which a request will be scoped.
+    :param bool compartment_id_in_subtree: if set to true then it fetches resources for all compartments where user has access to else only on the compartment specified.
     :param str display_name: Filter to return only Management Agents having the particular display name.
     :param str host_id: Filter to return only Management Agents having the particular agent host id.
     :param str install_type: A filter to return either agents or gateway types depending upon install type selected by user. By default both install type will be returned.
     :param bool is_customer_deployed: true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
-    :param Sequence[str] platform_types: Filter to return only results having the particular platform type.
-    :param Sequence[str] plugin_names: Filter to return only Management Agents having the particular Plugin installed. A special pluginName of 'None' can be provided and this will return only Management Agents having no plugin installed.
+    :param Sequence[str] platform_types: Array of PlatformTypes to return only results having the particular platform types. Example: ["LINUX"]
+    :param Sequence[str] plugin_names: Array of pluginName to return only Management Agents having the particular Plugins installed. A special pluginName of 'None' can be provided and this will return only Management Agents having no plugin installed. Example: ["PluginA"]
     :param str state: Filter to return only Management Agents in the particular lifecycle state.
-    :param Sequence[str] versions: Filter to return only Management Agents having the particular agent version.
+    :param Sequence[str] versions: Array of versions to return only Management Agents having the particular agent versions. Example: ["202020.0101","210201.0513"]
     """
     __args__ = dict()
+    __args__['accessLevel'] = access_level
     __args__['availabilityStatus'] = availability_status
     __args__['compartmentId'] = compartment_id
+    __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['hostId'] = host_id
@@ -253,8 +280,10 @@ def get_management_agents(availability_status: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ManagementAgent/getManagementAgents:getManagementAgents', __args__, opts=opts, typ=GetManagementAgentsResult).value
 
     return AwaitableGetManagementAgentsResult(
+        access_level=__ret__.access_level,
         availability_status=__ret__.availability_status,
         compartment_id=__ret__.compartment_id,
+        compartment_id_in_subtree=__ret__.compartment_id_in_subtree,
         display_name=__ret__.display_name,
         filters=__ret__.filters,
         host_id=__ret__.host_id,
@@ -269,8 +298,10 @@ def get_management_agents(availability_status: Optional[str] = None,
 
 
 @_utilities.lift_output_func(get_management_agents)
-def get_management_agents_output(availability_status: Optional[pulumi.Input[Optional[str]]] = None,
+def get_management_agents_output(access_level: Optional[pulumi.Input[Optional[str]]] = None,
+                                 availability_status: Optional[pulumi.Input[Optional[str]]] = None,
                                  compartment_id: Optional[pulumi.Input[str]] = None,
+                                 compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
                                  display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                  filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetManagementAgentsFilterArgs']]]]] = None,
                                  host_id: Optional[pulumi.Input[Optional[str]]] = None,
@@ -285,7 +316,8 @@ def get_management_agents_output(availability_status: Optional[pulumi.Input[Opti
     This data source provides the list of Management Agents in Oracle Cloud Infrastructure Management Agent service.
 
     Returns a list of Management Agents.
-    If no explicit page size limit is specified, it will default to 5000.
+    If no explicit page size limit is specified, it will default to 1000 when compartmentIdInSubtree is true and 5000 otherwise.
+    The response is limited to maximum 1000 records when compartmentIdInSubtree is true.
 
     ## Example Usage
 
@@ -294,7 +326,9 @@ def get_management_agents_output(availability_status: Optional[pulumi.Input[Opti
     import pulumi_oci as oci
 
     test_management_agents = oci.ManagementAgent.get_management_agents(compartment_id=var["compartment_id"],
+        access_level=var["management_agent_access_level"],
         availability_status=var["management_agent_availability_status"],
+        compartment_id_in_subtree=var["management_agent_compartment_id_in_subtree"],
         display_name=var["management_agent_display_name"],
         host_id=oci_management_agent_host["test_host"]["id"],
         install_type=var["management_agent_install_type"],
@@ -306,15 +340,17 @@ def get_management_agents_output(availability_status: Optional[pulumi.Input[Opti
     ```
 
 
+    :param str access_level: When the value is "ACCESSIBLE", insufficient permissions for a compartment will filter out resources in that compartment without rejecting the request.
     :param str availability_status: Filter to return only Management Agents in the particular availability status.
     :param str compartment_id: The OCID of the compartment to which a request will be scoped.
+    :param bool compartment_id_in_subtree: if set to true then it fetches resources for all compartments where user has access to else only on the compartment specified.
     :param str display_name: Filter to return only Management Agents having the particular display name.
     :param str host_id: Filter to return only Management Agents having the particular agent host id.
     :param str install_type: A filter to return either agents or gateway types depending upon install type selected by user. By default both install type will be returned.
     :param bool is_customer_deployed: true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
-    :param Sequence[str] platform_types: Filter to return only results having the particular platform type.
-    :param Sequence[str] plugin_names: Filter to return only Management Agents having the particular Plugin installed. A special pluginName of 'None' can be provided and this will return only Management Agents having no plugin installed.
+    :param Sequence[str] platform_types: Array of PlatformTypes to return only results having the particular platform types. Example: ["LINUX"]
+    :param Sequence[str] plugin_names: Array of pluginName to return only Management Agents having the particular Plugins installed. A special pluginName of 'None' can be provided and this will return only Management Agents having no plugin installed. Example: ["PluginA"]
     :param str state: Filter to return only Management Agents in the particular lifecycle state.
-    :param Sequence[str] versions: Filter to return only Management Agents having the particular agent version.
+    :param Sequence[str] versions: Array of versions to return only Management Agents having the particular agent versions. Example: ["202020.0101","210201.0513"]
     """
     ...

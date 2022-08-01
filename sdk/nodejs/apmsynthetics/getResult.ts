@@ -59,11 +59,11 @@ export interface GetResultArgs {
      */
     monitorId: string;
     /**
-     * The result content type zip or raw.
+     * The result content type: zip or raw.
      */
     resultContentType: string;
     /**
-     * The result type har, screenshot, log or network.
+     * The result type: har, screenshot, log, or network.
      */
     resultType: string;
     /**
@@ -102,7 +102,7 @@ export interface GetResultResult {
      */
     readonly resultType: string;
     /**
-     * The name of the vantage point.
+     * The name of the public or dedicated vantage point.
      */
     readonly vantagePoint: string;
 }
@@ -128,11 +128,11 @@ export interface GetResultOutputArgs {
      */
     monitorId: pulumi.Input<string>;
     /**
-     * The result content type zip or raw.
+     * The result content type: zip or raw.
      */
     resultContentType: pulumi.Input<string>;
     /**
-     * The result type har, screenshot, log or network.
+     * The result type: har, screenshot, log, or network.
      */
     resultType: pulumi.Input<string>;
     /**

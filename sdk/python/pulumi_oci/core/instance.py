@@ -1206,10 +1206,15 @@ class Instance(pulumi.CustomResource):
             metadata=var["instance_metadata"],
             platform_config=oci.core.InstancePlatformConfigArgs(
                 type=var["instance_platform_config_type"],
+                are_virtual_instructions_enabled=var["instance_platform_config_are_virtual_instructions_enabled"],
+                is_access_control_service_enabled=var["instance_platform_config_is_access_control_service_enabled"],
+                is_input_output_memory_management_unit_enabled=var["instance_platform_config_is_input_output_memory_management_unit_enabled"],
                 is_measured_boot_enabled=var["instance_platform_config_is_measured_boot_enabled"],
                 is_secure_boot_enabled=var["instance_platform_config_is_secure_boot_enabled"],
+                is_symmetric_multi_threading_enabled=var["instance_platform_config_is_symmetric_multi_threading_enabled"],
                 is_trusted_platform_module_enabled=var["instance_platform_config_is_trusted_platform_module_enabled"],
                 numa_nodes_per_socket=var["instance_platform_config_numa_nodes_per_socket"],
+                percentage_of_cores_enabled=var["instance_platform_config_percentage_of_cores_enabled"],
             ),
             preemptible_instance_config=oci.core.InstancePreemptibleInstanceConfigArgs(
                 preemption_action=oci.core.InstancePreemptibleInstanceConfigPreemptionActionArgs(
@@ -1220,12 +1225,14 @@ class Instance(pulumi.CustomResource):
             shape_config=oci.core.InstanceShapeConfigArgs(
                 baseline_ocpu_utilization=var["instance_shape_config_baseline_ocpu_utilization"],
                 memory_in_gbs=var["instance_shape_config_memory_in_gbs"],
+                nvmes=var["instance_shape_config_nvmes"],
                 ocpus=var["instance_shape_config_ocpus"],
             ),
             source_details=oci.core.InstanceSourceDetailsArgs(
                 source_id=oci_core_image["test_image"]["id"],
                 source_type="image",
                 boot_volume_size_in_gbs=var["instance_source_details_boot_volume_size_in_gbs"],
+                boot_volume_vpus_per_gb=var["instance_source_details_boot_volume_vpus_per_gb"],
                 kms_key_id=oci_kms_key["test_key"]["id"],
             ),
             preserve_boot_volume=False)
@@ -1388,10 +1395,15 @@ class Instance(pulumi.CustomResource):
             metadata=var["instance_metadata"],
             platform_config=oci.core.InstancePlatformConfigArgs(
                 type=var["instance_platform_config_type"],
+                are_virtual_instructions_enabled=var["instance_platform_config_are_virtual_instructions_enabled"],
+                is_access_control_service_enabled=var["instance_platform_config_is_access_control_service_enabled"],
+                is_input_output_memory_management_unit_enabled=var["instance_platform_config_is_input_output_memory_management_unit_enabled"],
                 is_measured_boot_enabled=var["instance_platform_config_is_measured_boot_enabled"],
                 is_secure_boot_enabled=var["instance_platform_config_is_secure_boot_enabled"],
+                is_symmetric_multi_threading_enabled=var["instance_platform_config_is_symmetric_multi_threading_enabled"],
                 is_trusted_platform_module_enabled=var["instance_platform_config_is_trusted_platform_module_enabled"],
                 numa_nodes_per_socket=var["instance_platform_config_numa_nodes_per_socket"],
+                percentage_of_cores_enabled=var["instance_platform_config_percentage_of_cores_enabled"],
             ),
             preemptible_instance_config=oci.core.InstancePreemptibleInstanceConfigArgs(
                 preemption_action=oci.core.InstancePreemptibleInstanceConfigPreemptionActionArgs(
@@ -1402,12 +1414,14 @@ class Instance(pulumi.CustomResource):
             shape_config=oci.core.InstanceShapeConfigArgs(
                 baseline_ocpu_utilization=var["instance_shape_config_baseline_ocpu_utilization"],
                 memory_in_gbs=var["instance_shape_config_memory_in_gbs"],
+                nvmes=var["instance_shape_config_nvmes"],
                 ocpus=var["instance_shape_config_ocpus"],
             ),
             source_details=oci.core.InstanceSourceDetailsArgs(
                 source_id=oci_core_image["test_image"]["id"],
                 source_type="image",
                 boot_volume_size_in_gbs=var["instance_source_details_boot_volume_size_in_gbs"],
+                boot_volume_vpus_per_gb=var["instance_source_details_boot_volume_vpus_per_gb"],
                 kms_key_id=oci_kms_key["test_key"]["id"],
             ),
             preserve_boot_volume=False)

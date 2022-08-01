@@ -28,7 +28,7 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<bool>? IsIkeEstablished { get; set; }
 
         [Input("lifetime")]
-        public Input<string>? Lifetime { get; set; }
+        public Input<int>? Lifetime { get; set; }
 
         [Input("negotiatedAuthenticationAlgorithm")]
         public Input<string>? NegotiatedAuthenticationAlgorithm { get; set; }

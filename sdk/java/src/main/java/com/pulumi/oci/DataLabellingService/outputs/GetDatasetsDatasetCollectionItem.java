@@ -27,7 +27,7 @@ public final class GetDatasetsDatasetCollectionItem {
      */
     private final String compartmentId;
     /**
-     * @return Specifies how to process the data. Supported formats include DOCUMENT, IMAGE and TEXT.
+     * @return It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
      * 
      */
     private final List<GetDatasetsDatasetCollectionItemDatasetFormatDetail> datasetFormatDetails;
@@ -62,12 +62,12 @@ public final class GetDatasetsDatasetCollectionItem {
      */
     private final String id;
     /**
-     * @return Initial Generate Records configuration, generates records from the Dataset&#39;s source.
+     * @return The initial generate records configuration. It generates records from the dataset&#39;s source.
      * 
      */
     private final List<GetDatasetsDatasetCollectionItemInitialRecordGenerationConfiguration> initialRecordGenerationConfigurations;
     /**
-     * @return An ordered collection of Labels that are unique by name.
+     * @return An ordered collection of labels that are unique by name.
      * 
      */
     private final List<GetDatasetsDatasetCollectionItemLabelSet> labelSets;
@@ -148,7 +148,7 @@ public final class GetDatasetsDatasetCollectionItem {
         return this.compartmentId;
     }
     /**
-     * @return Specifies how to process the data. Supported formats include DOCUMENT, IMAGE and TEXT.
+     * @return It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
      * 
      */
     public List<GetDatasetsDatasetCollectionItemDatasetFormatDetail> datasetFormatDetails() {
@@ -197,14 +197,14 @@ public final class GetDatasetsDatasetCollectionItem {
         return this.id;
     }
     /**
-     * @return Initial Generate Records configuration, generates records from the Dataset&#39;s source.
+     * @return The initial generate records configuration. It generates records from the dataset&#39;s source.
      * 
      */
     public List<GetDatasetsDatasetCollectionItemInitialRecordGenerationConfiguration> initialRecordGenerationConfigurations() {
         return this.initialRecordGenerationConfigurations;
     }
     /**
-     * @return An ordered collection of Labels that are unique by name.
+     * @return An ordered collection of labels that are unique by name.
      * 
      */
     public List<GetDatasetsDatasetCollectionItemLabelSet> labelSets() {

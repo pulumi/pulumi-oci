@@ -33,6 +33,10 @@ namespace Pulumi.Oci.Database
     ///             GiVersion = @var.Vm_cluster_gi_version,
     ///             SshPublicKeys = @var.Vm_cluster_ssh_public_keys,
     ///             VmClusterNetworkId = oci_database_vm_cluster_network.Test_vm_cluster_network.Id,
+    ///             DataCollectionOptions = new Oci.Database.Inputs.VmClusterDataCollectionOptionsArgs
+    ///             {
+    ///                 IsDiagnosticsEventsEnabled = @var.Vm_cluster_data_collection_options_is_diagnostics_events_enabled,
+    ///             },
     ///             DataStorageSizeInTbs = @var.Vm_cluster_data_storage_size_in_tbs,
     ///             DbNodeStorageSizeInGbs = @var.Vm_cluster_db_node_storage_size_in_gbs,
     ///             DbServers = @var.Vm_cluster_db_servers,
@@ -77,6 +81,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("cpusEnabled")]
         public Output<int> CpusEnabled { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster.
+        /// </summary>
+        [Output("dataCollectionOptions")]
+        public Output<Outputs.VmClusterDataCollectionOptions> DataCollectionOptions { get; private set; } = null!;
 
         [Output("dataStorageSizeInGb")]
         public Output<double> DataStorageSizeInGb { get; private set; } = null!;
@@ -268,6 +278,12 @@ namespace Pulumi.Oci.Database
         [Input("cpuCoreCount", required: true)]
         public Input<int> CpuCoreCount { get; set; } = null!;
 
+        /// <summary>
+        /// (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster.
+        /// </summary>
+        [Input("dataCollectionOptions")]
+        public Input<Inputs.VmClusterDataCollectionOptionsArgs>? DataCollectionOptions { get; set; }
+
         [Input("dataStorageSizeInGb")]
         public Input<double>? DataStorageSizeInGb { get; set; }
 
@@ -409,6 +425,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("cpusEnabled")]
         public Input<int>? CpusEnabled { get; set; }
+
+        /// <summary>
+        /// (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster.
+        /// </summary>
+        [Input("dataCollectionOptions")]
+        public Input<Inputs.VmClusterDataCollectionOptionsGetArgs>? DataCollectionOptions { get; set; }
 
         [Input("dataStorageSizeInGb")]
         public Input<double>? DataStorageSizeInGb { get; set; }

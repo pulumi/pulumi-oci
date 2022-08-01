@@ -17,6 +17,7 @@ import * as utilities from "../utilities";
  *
  * const testAutonomousDatabaseInstanceWalletManagement = new oci.database.AutonomousDatabaseInstanceWalletManagement("testAutonomousDatabaseInstanceWalletManagement", {
  *     autonomousDatabaseId: oci_database_autonomous_database.test_autonomous_database.id,
+ *     gracePeriod: _var.autonomous_database_instance_wallet_management_grace_period,
  *     shouldRotate: _var.autonomous_database_instance_wallet_management_should_rotate,
  * });
  * ```
@@ -58,6 +59,10 @@ export class AutonomousDatabaseInstanceWalletManagement extends pulumi.CustomRes
      */
     public readonly autonomousDatabaseId!: pulumi.Output<string>;
     /**
+     * (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+     */
+    public readonly gracePeriod!: pulumi.Output<number>;
+    /**
      * (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
      */
     public readonly shouldRotate!: pulumi.Output<boolean | undefined>;
@@ -84,6 +89,7 @@ export class AutonomousDatabaseInstanceWalletManagement extends pulumi.CustomRes
         if (opts.id) {
             const state = argsOrState as AutonomousDatabaseInstanceWalletManagementState | undefined;
             resourceInputs["autonomousDatabaseId"] = state ? state.autonomousDatabaseId : undefined;
+            resourceInputs["gracePeriod"] = state ? state.gracePeriod : undefined;
             resourceInputs["shouldRotate"] = state ? state.shouldRotate : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["timeRotated"] = state ? state.timeRotated : undefined;
@@ -93,6 +99,7 @@ export class AutonomousDatabaseInstanceWalletManagement extends pulumi.CustomRes
                 throw new Error("Missing required property 'autonomousDatabaseId'");
             }
             resourceInputs["autonomousDatabaseId"] = args ? args.autonomousDatabaseId : undefined;
+            resourceInputs["gracePeriod"] = args ? args.gracePeriod : undefined;
             resourceInputs["shouldRotate"] = args ? args.shouldRotate : undefined;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeRotated"] = undefined /*out*/;
@@ -110,6 +117,10 @@ export interface AutonomousDatabaseInstanceWalletManagementState {
      * (Updatable) The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     autonomousDatabaseId?: pulumi.Input<string>;
+    /**
+     * (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+     */
+    gracePeriod?: pulumi.Input<number>;
     /**
      * (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
      */
@@ -132,6 +143,10 @@ export interface AutonomousDatabaseInstanceWalletManagementArgs {
      * (Updatable) The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     autonomousDatabaseId: pulumi.Input<string>;
+    /**
+     * (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+     */
+    gracePeriod?: pulumi.Input<number>;
     /**
      * (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
      */

@@ -32,6 +32,7 @@ export function getAutonomousDatabaseRegionalWalletManagement(opts?: pulumi.Invo
  * A collection of values returned by getAutonomousDatabaseRegionalWalletManagement.
  */
 export interface GetAutonomousDatabaseRegionalWalletManagementResult {
+    readonly gracePeriod: number;
     readonly id: string;
     readonly shouldRotate: boolean;
     /**

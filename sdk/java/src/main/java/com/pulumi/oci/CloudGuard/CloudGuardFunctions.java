@@ -29,6 +29,18 @@ import com.pulumi.oci.CloudGuard.inputs.GetResponderRecipeArgs;
 import com.pulumi.oci.CloudGuard.inputs.GetResponderRecipePlainArgs;
 import com.pulumi.oci.CloudGuard.inputs.GetResponderRecipesArgs;
 import com.pulumi.oci.CloudGuard.inputs.GetResponderRecipesPlainArgs;
+import com.pulumi.oci.CloudGuard.inputs.GetSecurityPoliciesArgs;
+import com.pulumi.oci.CloudGuard.inputs.GetSecurityPoliciesPlainArgs;
+import com.pulumi.oci.CloudGuard.inputs.GetSecurityPolicyArgs;
+import com.pulumi.oci.CloudGuard.inputs.GetSecurityPolicyPlainArgs;
+import com.pulumi.oci.CloudGuard.inputs.GetSecurityRecipeArgs;
+import com.pulumi.oci.CloudGuard.inputs.GetSecurityRecipePlainArgs;
+import com.pulumi.oci.CloudGuard.inputs.GetSecurityRecipesArgs;
+import com.pulumi.oci.CloudGuard.inputs.GetSecurityRecipesPlainArgs;
+import com.pulumi.oci.CloudGuard.inputs.GetSecurityZoneArgs;
+import com.pulumi.oci.CloudGuard.inputs.GetSecurityZonePlainArgs;
+import com.pulumi.oci.CloudGuard.inputs.GetSecurityZonesArgs;
+import com.pulumi.oci.CloudGuard.inputs.GetSecurityZonesPlainArgs;
 import com.pulumi.oci.CloudGuard.outputs.GetCloudGuardConfigurationResult;
 import com.pulumi.oci.CloudGuard.outputs.GetDataMaskRuleResult;
 import com.pulumi.oci.CloudGuard.outputs.GetDataMaskRulesResult;
@@ -40,6 +52,12 @@ import com.pulumi.oci.CloudGuard.outputs.GetManagedListResult;
 import com.pulumi.oci.CloudGuard.outputs.GetManagedListsResult;
 import com.pulumi.oci.CloudGuard.outputs.GetResponderRecipeResult;
 import com.pulumi.oci.CloudGuard.outputs.GetResponderRecipesResult;
+import com.pulumi.oci.CloudGuard.outputs.GetSecurityPoliciesResult;
+import com.pulumi.oci.CloudGuard.outputs.GetSecurityPolicyResult;
+import com.pulumi.oci.CloudGuard.outputs.GetSecurityRecipeResult;
+import com.pulumi.oci.CloudGuard.outputs.GetSecurityRecipesResult;
+import com.pulumi.oci.CloudGuard.outputs.GetSecurityZoneResult;
+import com.pulumi.oci.CloudGuard.outputs.GetSecurityZonesResult;
 import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
 
@@ -739,5 +757,269 @@ public final class CloudGuardFunctions {
      */
     public static CompletableFuture<GetResponderRecipesResult> getResponderRecipesPlain(GetResponderRecipesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:CloudGuard/getResponderRecipes:getResponderRecipes", TypeShape.of(GetResponderRecipesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Security Policies in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Returns a list of security zone policies. Specify any compartment.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetSecurityPoliciesResult> getSecurityPolicies(GetSecurityPoliciesArgs args) {
+        return getSecurityPolicies(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Security Policies in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Returns a list of security zone policies. Specify any compartment.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetSecurityPoliciesResult> getSecurityPoliciesPlain(GetSecurityPoliciesPlainArgs args) {
+        return getSecurityPoliciesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Security Policies in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Returns a list of security zone policies. Specify any compartment.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetSecurityPoliciesResult> getSecurityPolicies(GetSecurityPoliciesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CloudGuard/getSecurityPolicies:getSecurityPolicies", TypeShape.of(GetSecurityPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Security Policies in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Returns a list of security zone policies. Specify any compartment.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetSecurityPoliciesResult> getSecurityPoliciesPlain(GetSecurityPoliciesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:CloudGuard/getSecurityPolicies:getSecurityPolicies", TypeShape.of(GetSecurityPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Security Policy resource in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Gets a security zone policy using its identifier. When a policy is enabled in a security zone, then any action in the zone that attempts to violate that policy is denied.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetSecurityPolicyResult> getSecurityPolicy(GetSecurityPolicyArgs args) {
+        return getSecurityPolicy(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Security Policy resource in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Gets a security zone policy using its identifier. When a policy is enabled in a security zone, then any action in the zone that attempts to violate that policy is denied.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetSecurityPolicyResult> getSecurityPolicyPlain(GetSecurityPolicyPlainArgs args) {
+        return getSecurityPolicyPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Security Policy resource in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Gets a security zone policy using its identifier. When a policy is enabled in a security zone, then any action in the zone that attempts to violate that policy is denied.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetSecurityPolicyResult> getSecurityPolicy(GetSecurityPolicyArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CloudGuard/getSecurityPolicy:getSecurityPolicy", TypeShape.of(GetSecurityPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Security Policy resource in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Gets a security zone policy using its identifier. When a policy is enabled in a security zone, then any action in the zone that attempts to violate that policy is denied.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetSecurityPolicyResult> getSecurityPolicyPlain(GetSecurityPolicyPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:CloudGuard/getSecurityPolicy:getSecurityPolicy", TypeShape.of(GetSecurityPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Security Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Gets a security zone recipe by identifier. A security zone recipe is a collection of security zone policies.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetSecurityRecipeResult> getSecurityRecipe(GetSecurityRecipeArgs args) {
+        return getSecurityRecipe(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Security Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Gets a security zone recipe by identifier. A security zone recipe is a collection of security zone policies.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetSecurityRecipeResult> getSecurityRecipePlain(GetSecurityRecipePlainArgs args) {
+        return getSecurityRecipePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Security Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Gets a security zone recipe by identifier. A security zone recipe is a collection of security zone policies.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetSecurityRecipeResult> getSecurityRecipe(GetSecurityRecipeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CloudGuard/getSecurityRecipe:getSecurityRecipe", TypeShape.of(GetSecurityRecipeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Security Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Gets a security zone recipe by identifier. A security zone recipe is a collection of security zone policies.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetSecurityRecipeResult> getSecurityRecipePlain(GetSecurityRecipePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:CloudGuard/getSecurityRecipe:getSecurityRecipe", TypeShape.of(GetSecurityRecipeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Security Recipes in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Gets a list of all security zone recipes in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetSecurityRecipesResult> getSecurityRecipes(GetSecurityRecipesArgs args) {
+        return getSecurityRecipes(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Security Recipes in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Gets a list of all security zone recipes in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetSecurityRecipesResult> getSecurityRecipesPlain(GetSecurityRecipesPlainArgs args) {
+        return getSecurityRecipesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Security Recipes in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Gets a list of all security zone recipes in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetSecurityRecipesResult> getSecurityRecipes(GetSecurityRecipesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CloudGuard/getSecurityRecipes:getSecurityRecipes", TypeShape.of(GetSecurityRecipesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Security Recipes in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Gets a list of all security zone recipes in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetSecurityRecipesResult> getSecurityRecipesPlain(GetSecurityRecipesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:CloudGuard/getSecurityRecipes:getSecurityRecipes", TypeShape.of(GetSecurityRecipesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Security Zone resource in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Gets a security zone by its identifier. A security zone is associated with a security zone recipe and enforces all security zone policies in the recipe. Any actions in the zone&#39;s compartments that violate a policy are denied.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetSecurityZoneResult> getSecurityZone(GetSecurityZoneArgs args) {
+        return getSecurityZone(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Security Zone resource in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Gets a security zone by its identifier. A security zone is associated with a security zone recipe and enforces all security zone policies in the recipe. Any actions in the zone&#39;s compartments that violate a policy are denied.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetSecurityZoneResult> getSecurityZonePlain(GetSecurityZonePlainArgs args) {
+        return getSecurityZonePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Security Zone resource in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Gets a security zone by its identifier. A security zone is associated with a security zone recipe and enforces all security zone policies in the recipe. Any actions in the zone&#39;s compartments that violate a policy are denied.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetSecurityZoneResult> getSecurityZone(GetSecurityZoneArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CloudGuard/getSecurityZone:getSecurityZone", TypeShape.of(GetSecurityZoneResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Security Zone resource in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Gets a security zone by its identifier. A security zone is associated with a security zone recipe and enforces all security zone policies in the recipe. Any actions in the zone&#39;s compartments that violate a policy are denied.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetSecurityZoneResult> getSecurityZonePlain(GetSecurityZonePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:CloudGuard/getSecurityZone:getSecurityZone", TypeShape.of(GetSecurityZoneResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Security Zones in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Gets a list of all security zones in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetSecurityZonesResult> getSecurityZones(GetSecurityZonesArgs args) {
+        return getSecurityZones(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Security Zones in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Gets a list of all security zones in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetSecurityZonesResult> getSecurityZonesPlain(GetSecurityZonesPlainArgs args) {
+        return getSecurityZonesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Security Zones in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Gets a list of all security zones in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetSecurityZonesResult> getSecurityZones(GetSecurityZonesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CloudGuard/getSecurityZones:getSecurityZones", TypeShape.of(GetSecurityZonesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Security Zones in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Gets a list of all security zones in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetSecurityZonesResult> getSecurityZonesPlain(GetSecurityZonesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:CloudGuard/getSecurityZones:getSecurityZones", TypeShape.of(GetSecurityZonesResult.class), args, Utilities.withVersion(options));
     }
 }

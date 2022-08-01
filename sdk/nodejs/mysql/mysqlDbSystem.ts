@@ -31,6 +31,9 @@ import * as utilities from "../utilities";
  *             "bar-key": "value",
  *         },
  *         isEnabled: _var.mysql_db_system_backup_policy_is_enabled,
+ *         pitrPolicy: {
+ *             isEnabled: _var.mysql_db_system_backup_policy_pitr_policy_is_enabled,
+ *         },
  *         retentionInDays: _var.mysql_db_system_backup_policy_retention_in_days,
  *         windowStartTime: _var.mysql_db_system_backup_policy_window_start_time,
  *     },
@@ -208,10 +211,12 @@ export class MysqlDbSystem extends pulumi.CustomResource {
     public readonly maintenance!: pulumi.Output<outputs.Mysql.MysqlDbSystemMaintenance>;
     /**
      * Name of the MySQL Version in use for the DB System.
-     *
-     * @deprecated The 'mysql_version' field has been deprecated and may be removed in a future version. Do not use this field.
      */
     public readonly mysqlVersion!: pulumi.Output<string>;
+    /**
+     * Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
+     */
+    public /*out*/ readonly pointInTimeRecoveryDetails!: pulumi.Output<outputs.Mysql.MysqlDbSystemPointInTimeRecoveryDetail[]>;
     /**
      * The port for primary endpoint of the DB System to listen on.
      */
@@ -290,6 +295,7 @@ export class MysqlDbSystem extends pulumi.CustomResource {
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["maintenance"] = state ? state.maintenance : undefined;
             resourceInputs["mysqlVersion"] = state ? state.mysqlVersion : undefined;
+            resourceInputs["pointInTimeRecoveryDetails"] = state ? state.pointInTimeRecoveryDetails : undefined;
             resourceInputs["port"] = state ? state.port : undefined;
             resourceInputs["portX"] = state ? state.portX : undefined;
             resourceInputs["shapeName"] = state ? state.shapeName : undefined;
@@ -347,6 +353,7 @@ export class MysqlDbSystem extends pulumi.CustomResource {
             resourceInputs["isAnalyticsClusterAttached"] = undefined /*out*/;
             resourceInputs["isHeatWaveClusterAttached"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
+            resourceInputs["pointInTimeRecoveryDetails"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
         }
@@ -465,10 +472,12 @@ export interface MysqlDbSystemState {
     maintenance?: pulumi.Input<inputs.Mysql.MysqlDbSystemMaintenance>;
     /**
      * Name of the MySQL Version in use for the DB System.
-     *
-     * @deprecated The 'mysql_version' field has been deprecated and may be removed in a future version. Do not use this field.
      */
     mysqlVersion?: pulumi.Input<string>;
+    /**
+     * Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
+     */
+    pointInTimeRecoveryDetails?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlDbSystemPointInTimeRecoveryDetail>[]>;
     /**
      * The port for primary endpoint of the DB System to listen on.
      */
@@ -586,8 +595,6 @@ export interface MysqlDbSystemArgs {
     maintenance?: pulumi.Input<inputs.Mysql.MysqlDbSystemMaintenance>;
     /**
      * Name of the MySQL Version in use for the DB System.
-     *
-     * @deprecated The 'mysql_version' field has been deprecated and may be removed in a future version. Do not use this field.
      */
     mysqlVersion?: pulumi.Input<string>;
     /**

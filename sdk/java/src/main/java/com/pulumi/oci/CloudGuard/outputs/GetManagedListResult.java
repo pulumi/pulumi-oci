@@ -24,12 +24,12 @@ public final class GetManagedListResult {
      */
     private final Map<String,Object> definedTags;
     /**
-     * @return ManagedList description
+     * @return ManagedList description.
      * 
      */
     private final String description;
     /**
-     * @return ManagedList display name
+     * @return ManagedList display name.
      * 
      */
     private final String displayName;
@@ -148,14 +148,14 @@ public final class GetManagedListResult {
         return this.definedTags;
     }
     /**
-     * @return ManagedList description
+     * @return ManagedList description.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return ManagedList display name
+     * @return ManagedList display name.
      * 
      */
     public String displayName() {

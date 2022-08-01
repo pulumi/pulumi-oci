@@ -38,7 +38,7 @@ namespace Pulumi.Oci.CloudGuard
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) DetectorRecipe Description
+        /// (Updatable) Detector recipe description.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
@@ -56,7 +56,7 @@ namespace Pulumi.Oci.CloudGuard
         public Output<ImmutableArray<Outputs.DetectorRecipeDetectorRule>> DetectorRules { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) DetectorRecipe Display Name
+        /// (Updatable) Detector recipe display name.
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
@@ -174,7 +174,7 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
-        /// (Updatable) DetectorRecipe Description
+        /// (Updatable) Detector recipe description.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -192,7 +192,7 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
-        /// (Updatable) DetectorRecipe Display Name
+        /// (Updatable) Detector recipe display name.
         /// </summary>
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
@@ -241,7 +241,7 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
-        /// (Updatable) DetectorRecipe Description
+        /// (Updatable) Detector recipe description.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -265,7 +265,7 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
-        /// (Updatable) DetectorRecipe Display Name
+        /// (Updatable) Detector recipe display name.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }

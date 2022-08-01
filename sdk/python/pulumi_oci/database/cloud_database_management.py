@@ -17,24 +17,43 @@ class CloudDatabaseManagementArgs:
     def __init__(__self__, *,
                  credentialdetails: pulumi.Input['CloudDatabaseManagementCredentialdetailsArgs'],
                  database_id: pulumi.Input[str],
+                 enable_management: pulumi.Input[bool],
                  management_type: pulumi.Input[str],
                  private_end_point_id: pulumi.Input[str],
-                 service_name: pulumi.Input[str]):
+                 service_name: pulumi.Input[str],
+                 port: Optional[pulumi.Input[int]] = None,
+                 protocol: Optional[pulumi.Input[str]] = None,
+                 role: Optional[pulumi.Input[str]] = None,
+                 ssl_secret_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a CloudDatabaseManagement resource.
         :param pulumi.Input[str] database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param pulumi.Input[bool] enable_management: (Updatable) Use this flag to enable/disable database management
         :param pulumi.Input[str] management_type: (Updatable) Specifies database management type
                enum:
                - `BASIC`
                - `ADVANCED`
-        :param pulumi.Input[str] private_end_point_id: (Updatable) The private end point [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[str] service_name: (Updatable) Database service name
+        :param pulumi.Input[str] private_end_point_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+        :param pulumi.Input[str] service_name: The name of the Oracle Database service that will be used to connect to the database.
+        :param pulumi.Input[int] port: The port used to connect to the database.
+        :param pulumi.Input[str] protocol: Protocol used by the database connection.
+        :param pulumi.Input[str] role: The role of the user that will be connecting to the database.
+        :param pulumi.Input[str] ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
         pulumi.set(__self__, "credentialdetails", credentialdetails)
         pulumi.set(__self__, "database_id", database_id)
+        pulumi.set(__self__, "enable_management", enable_management)
         pulumi.set(__self__, "management_type", management_type)
         pulumi.set(__self__, "private_end_point_id", private_end_point_id)
         pulumi.set(__self__, "service_name", service_name)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if protocol is not None:
+            pulumi.set(__self__, "protocol", protocol)
+        if role is not None:
+            pulumi.set(__self__, "role", role)
+        if ssl_secret_id is not None:
+            pulumi.set(__self__, "ssl_secret_id", ssl_secret_id)
 
     @property
     @pulumi.getter
@@ -58,6 +77,18 @@ class CloudDatabaseManagementArgs:
         pulumi.set(self, "database_id", value)
 
     @property
+    @pulumi.getter(name="enableManagement")
+    def enable_management(self) -> pulumi.Input[bool]:
+        """
+        (Updatable) Use this flag to enable/disable database management
+        """
+        return pulumi.get(self, "enable_management")
+
+    @enable_management.setter
+    def enable_management(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enable_management", value)
+
+    @property
     @pulumi.getter(name="managementType")
     def management_type(self) -> pulumi.Input[str]:
         """
@@ -76,7 +107,7 @@ class CloudDatabaseManagementArgs:
     @pulumi.getter(name="privateEndPointId")
     def private_end_point_id(self) -> pulumi.Input[str]:
         """
-        (Updatable) The private end point [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
         """
         return pulumi.get(self, "private_end_point_id")
 
@@ -88,13 +119,61 @@ class CloudDatabaseManagementArgs:
     @pulumi.getter(name="serviceName")
     def service_name(self) -> pulumi.Input[str]:
         """
-        (Updatable) Database service name
+        The name of the Oracle Database service that will be used to connect to the database.
         """
         return pulumi.get(self, "service_name")
 
     @service_name.setter
     def service_name(self, value: pulumi.Input[str]):
         pulumi.set(self, "service_name", value)
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[pulumi.Input[int]]:
+        """
+        The port used to connect to the database.
+        """
+        return pulumi.get(self, "port")
+
+    @port.setter
+    def port(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "port", value)
+
+    @property
+    @pulumi.getter
+    def protocol(self) -> Optional[pulumi.Input[str]]:
+        """
+        Protocol used by the database connection.
+        """
+        return pulumi.get(self, "protocol")
+
+    @protocol.setter
+    def protocol(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "protocol", value)
+
+    @property
+    @pulumi.getter
+    def role(self) -> Optional[pulumi.Input[str]]:
+        """
+        The role of the user that will be connecting to the database.
+        """
+        return pulumi.get(self, "role")
+
+    @role.setter
+    def role(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "role", value)
+
+    @property
+    @pulumi.getter(name="sslSecretId")
+    def ssl_secret_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        """
+        return pulumi.get(self, "ssl_secret_id")
+
+    @ssl_secret_id.setter
+    def ssl_secret_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ssl_secret_id", value)
 
 
 @pulumi.input_type
@@ -103,43 +182,27 @@ class _CloudDatabaseManagementState:
                  credentialdetails: Optional[pulumi.Input['CloudDatabaseManagementCredentialdetailsArgs']] = None,
                  database_id: Optional[pulumi.Input[str]] = None,
                  enable_management: Optional[pulumi.Input[bool]] = None,
-                 kms_key_id: Optional[pulumi.Input[str]] = None,
-                 kms_key_version_id: Optional[pulumi.Input[str]] = None,
-                 last_backup_timestamp: Optional[pulumi.Input[str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[str]] = None,
                  management_type: Optional[pulumi.Input[str]] = None,
-                 ncharacter_set: Optional[pulumi.Input[str]] = None,
-                 pdb_name: Optional[pulumi.Input[str]] = None,
+                 port: Optional[pulumi.Input[int]] = None,
                  private_end_point_id: Optional[pulumi.Input[str]] = None,
+                 protocol: Optional[pulumi.Input[str]] = None,
+                 role: Optional[pulumi.Input[str]] = None,
                  service_name: Optional[pulumi.Input[str]] = None,
-                 sid_prefix: Optional[pulumi.Input[str]] = None,
-                 source_database_point_in_time_recovery_timestamp: Optional[pulumi.Input[str]] = None,
-                 state: Optional[pulumi.Input[str]] = None,
-                 time_created: Optional[pulumi.Input[str]] = None,
-                 vault_id: Optional[pulumi.Input[str]] = None,
-                 vm_cluster_id: Optional[pulumi.Input[str]] = None):
+                 ssl_secret_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering CloudDatabaseManagement resources.
         :param pulumi.Input[str] database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[bool] enable_management: (Updatable) Use this flag to enable/disable database management
-        :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        :param pulumi.Input[str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-        :param pulumi.Input[str] last_backup_timestamp: The date and time when the latest database backup was created.
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[str] management_type: (Updatable) Specifies database management type
                enum:
                - `BASIC`
                - `ADVANCED`
-        :param pulumi.Input[str] ncharacter_set: The national character set for the database.
-        :param pulumi.Input[str] pdb_name: The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
-        :param pulumi.Input[str] private_end_point_id: (Updatable) The private end point [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[str] service_name: (Updatable) Database service name
-        :param pulumi.Input[str] sid_prefix: Specifies a prefix for the `Oracle SID` of the database to be created.
-        :param pulumi.Input[str] source_database_point_in_time_recovery_timestamp: Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
-        :param pulumi.Input[str] state: The current state of the database.
-        :param pulumi.Input[str] time_created: The date and time the database was created.
-        :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        :param pulumi.Input[str] vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+        :param pulumi.Input[int] port: The port used to connect to the database.
+        :param pulumi.Input[str] private_end_point_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+        :param pulumi.Input[str] protocol: Protocol used by the database connection.
+        :param pulumi.Input[str] role: The role of the user that will be connecting to the database.
+        :param pulumi.Input[str] service_name: The name of the Oracle Database service that will be used to connect to the database.
+        :param pulumi.Input[str] ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
         if credentialdetails is not None:
             pulumi.set(__self__, "credentialdetails", credentialdetails)
@@ -147,36 +210,20 @@ class _CloudDatabaseManagementState:
             pulumi.set(__self__, "database_id", database_id)
         if enable_management is not None:
             pulumi.set(__self__, "enable_management", enable_management)
-        if kms_key_id is not None:
-            pulumi.set(__self__, "kms_key_id", kms_key_id)
-        if kms_key_version_id is not None:
-            pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
-        if last_backup_timestamp is not None:
-            pulumi.set(__self__, "last_backup_timestamp", last_backup_timestamp)
-        if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if management_type is not None:
             pulumi.set(__self__, "management_type", management_type)
-        if ncharacter_set is not None:
-            pulumi.set(__self__, "ncharacter_set", ncharacter_set)
-        if pdb_name is not None:
-            pulumi.set(__self__, "pdb_name", pdb_name)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
         if private_end_point_id is not None:
             pulumi.set(__self__, "private_end_point_id", private_end_point_id)
+        if protocol is not None:
+            pulumi.set(__self__, "protocol", protocol)
+        if role is not None:
+            pulumi.set(__self__, "role", role)
         if service_name is not None:
             pulumi.set(__self__, "service_name", service_name)
-        if sid_prefix is not None:
-            pulumi.set(__self__, "sid_prefix", sid_prefix)
-        if source_database_point_in_time_recovery_timestamp is not None:
-            pulumi.set(__self__, "source_database_point_in_time_recovery_timestamp", source_database_point_in_time_recovery_timestamp)
-        if state is not None:
-            pulumi.set(__self__, "state", state)
-        if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
-        if vault_id is not None:
-            pulumi.set(__self__, "vault_id", vault_id)
-        if vm_cluster_id is not None:
-            pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
+        if ssl_secret_id is not None:
+            pulumi.set(__self__, "ssl_secret_id", ssl_secret_id)
 
     @property
     @pulumi.getter
@@ -212,54 +259,6 @@ class _CloudDatabaseManagementState:
         pulumi.set(self, "enable_management", value)
 
     @property
-    @pulumi.getter(name="kmsKeyId")
-    def kms_key_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        """
-        return pulumi.get(self, "kms_key_id")
-
-    @kms_key_id.setter
-    def kms_key_id(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "kms_key_id", value)
-
-    @property
-    @pulumi.getter(name="kmsKeyVersionId")
-    def kms_key_version_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-        """
-        return pulumi.get(self, "kms_key_version_id")
-
-    @kms_key_version_id.setter
-    def kms_key_version_id(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "kms_key_version_id", value)
-
-    @property
-    @pulumi.getter(name="lastBackupTimestamp")
-    def last_backup_timestamp(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time when the latest database backup was created.
-        """
-        return pulumi.get(self, "last_backup_timestamp")
-
-    @last_backup_timestamp.setter
-    def last_backup_timestamp(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "last_backup_timestamp", value)
-
-    @property
-    @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Additional information about the current lifecycle state.
-        """
-        return pulumi.get(self, "lifecycle_details")
-
-    @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "lifecycle_details", value)
-
-    @property
     @pulumi.getter(name="managementType")
     def management_type(self) -> Optional[pulumi.Input[str]]:
         """
@@ -275,34 +274,22 @@ class _CloudDatabaseManagementState:
         pulumi.set(self, "management_type", value)
 
     @property
-    @pulumi.getter(name="ncharacterSet")
-    def ncharacter_set(self) -> Optional[pulumi.Input[str]]:
+    @pulumi.getter
+    def port(self) -> Optional[pulumi.Input[int]]:
         """
-        The national character set for the database.
+        The port used to connect to the database.
         """
-        return pulumi.get(self, "ncharacter_set")
+        return pulumi.get(self, "port")
 
-    @ncharacter_set.setter
-    def ncharacter_set(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "ncharacter_set", value)
-
-    @property
-    @pulumi.getter(name="pdbName")
-    def pdb_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
-        """
-        return pulumi.get(self, "pdb_name")
-
-    @pdb_name.setter
-    def pdb_name(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "pdb_name", value)
+    @port.setter
+    def port(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "port", value)
 
     @property
     @pulumi.getter(name="privateEndPointId")
     def private_end_point_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The private end point [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
         """
         return pulumi.get(self, "private_end_point_id")
 
@@ -311,10 +298,34 @@ class _CloudDatabaseManagementState:
         pulumi.set(self, "private_end_point_id", value)
 
     @property
+    @pulumi.getter
+    def protocol(self) -> Optional[pulumi.Input[str]]:
+        """
+        Protocol used by the database connection.
+        """
+        return pulumi.get(self, "protocol")
+
+    @protocol.setter
+    def protocol(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "protocol", value)
+
+    @property
+    @pulumi.getter
+    def role(self) -> Optional[pulumi.Input[str]]:
+        """
+        The role of the user that will be connecting to the database.
+        """
+        return pulumi.get(self, "role")
+
+    @role.setter
+    def role(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "role", value)
+
+    @property
     @pulumi.getter(name="serviceName")
     def service_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Database service name
+        The name of the Oracle Database service that will be used to connect to the database.
         """
         return pulumi.get(self, "service_name")
 
@@ -323,76 +334,16 @@ class _CloudDatabaseManagementState:
         pulumi.set(self, "service_name", value)
 
     @property
-    @pulumi.getter(name="sidPrefix")
-    def sid_prefix(self) -> Optional[pulumi.Input[str]]:
+    @pulumi.getter(name="sslSecretId")
+    def ssl_secret_id(self) -> Optional[pulumi.Input[str]]:
         """
-        Specifies a prefix for the `Oracle SID` of the database to be created.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
-        return pulumi.get(self, "sid_prefix")
+        return pulumi.get(self, "ssl_secret_id")
 
-    @sid_prefix.setter
-    def sid_prefix(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "sid_prefix", value)
-
-    @property
-    @pulumi.getter(name="sourceDatabasePointInTimeRecoveryTimestamp")
-    def source_database_point_in_time_recovery_timestamp(self) -> Optional[pulumi.Input[str]]:
-        """
-        Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
-        """
-        return pulumi.get(self, "source_database_point_in_time_recovery_timestamp")
-
-    @source_database_point_in_time_recovery_timestamp.setter
-    def source_database_point_in_time_recovery_timestamp(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "source_database_point_in_time_recovery_timestamp", value)
-
-    @property
-    @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the database.
-        """
-        return pulumi.get(self, "state")
-
-    @state.setter
-    def state(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "state", value)
-
-    @property
-    @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the database was created.
-        """
-        return pulumi.get(self, "time_created")
-
-    @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "time_created", value)
-
-    @property
-    @pulumi.getter(name="vaultId")
-    def vault_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        """
-        return pulumi.get(self, "vault_id")
-
-    @vault_id.setter
-    def vault_id(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "vault_id", value)
-
-    @property
-    @pulumi.getter(name="vmClusterId")
-    def vm_cluster_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
-        """
-        return pulumi.get(self, "vm_cluster_id")
-
-    @vm_cluster_id.setter
-    def vm_cluster_id(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "vm_cluster_id", value)
+    @ssl_secret_id.setter
+    def ssl_secret_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ssl_secret_id", value)
 
 
 class CloudDatabaseManagement(pulumi.CustomResource):
@@ -402,9 +353,14 @@ class CloudDatabaseManagement(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  credentialdetails: Optional[pulumi.Input[pulumi.InputType['CloudDatabaseManagementCredentialdetailsArgs']]] = None,
                  database_id: Optional[pulumi.Input[str]] = None,
+                 enable_management: Optional[pulumi.Input[bool]] = None,
                  management_type: Optional[pulumi.Input[str]] = None,
+                 port: Optional[pulumi.Input[int]] = None,
                  private_end_point_id: Optional[pulumi.Input[str]] = None,
+                 protocol: Optional[pulumi.Input[str]] = None,
+                 role: Optional[pulumi.Input[str]] = None,
                  service_name: Optional[pulumi.Input[str]] = None,
+                 ssl_secret_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
         This resource provides the Database Management resource in Oracle Cloud Infrastructure Database service.
@@ -414,6 +370,28 @@ class CloudDatabaseManagement(pulumi.CustomResource):
         Database Management requires `USER_NAME`, `PASSWORD_SECRET_ID` and `PRIVATE_END_POINT_ID`.
         `database.0.database_management_config` is updated to appropriate managementType and managementStatus for the specified Oracle Database instance.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test = oci.database.CloudDatabaseManagement("test",
+            database_id=oci_database_database["test_database"]["id"],
+            management_type=var["database_cloud_database_management_details_management_type"],
+            private_end_point_id=var["database_cloud_database_management_details_private_end_point_id"],
+            service_name=var["database_cloud_database_management_details_service_name"],
+            credentialdetails=oci.database.CloudDatabaseManagementCredentialdetailsArgs(
+                user_name=var["database_cloud_database_management_details_user_name"],
+                password_secret_id=var["database_cloud_database_management_details_password_secret_id"],
+            ),
+            enable_management=var["database_cloud_database_management_details_enable_management"],
+            port=var["cloud_database_management_port"],
+            protocol=var["cloud_database_management_protocol"],
+            role=var["cloud_database_management_role"],
+            ssl_secret_id=oci_vault_secret["test_secret"]["id"])
+        ```
+
         ## Import
 
         Import is not supported for this resource.
@@ -421,12 +399,17 @@ class CloudDatabaseManagement(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param pulumi.Input[bool] enable_management: (Updatable) Use this flag to enable/disable database management
         :param pulumi.Input[str] management_type: (Updatable) Specifies database management type
                enum:
                - `BASIC`
                - `ADVANCED`
-        :param pulumi.Input[str] private_end_point_id: (Updatable) The private end point [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[str] service_name: (Updatable) Database service name
+        :param pulumi.Input[int] port: The port used to connect to the database.
+        :param pulumi.Input[str] private_end_point_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+        :param pulumi.Input[str] protocol: Protocol used by the database connection.
+        :param pulumi.Input[str] role: The role of the user that will be connecting to the database.
+        :param pulumi.Input[str] service_name: The name of the Oracle Database service that will be used to connect to the database.
+        :param pulumi.Input[str] ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
         ...
     @overload
@@ -441,6 +424,28 @@ class CloudDatabaseManagement(pulumi.CustomResource):
 
         Database Management requires `USER_NAME`, `PASSWORD_SECRET_ID` and `PRIVATE_END_POINT_ID`.
         `database.0.database_management_config` is updated to appropriate managementType and managementStatus for the specified Oracle Database instance.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test = oci.database.CloudDatabaseManagement("test",
+            database_id=oci_database_database["test_database"]["id"],
+            management_type=var["database_cloud_database_management_details_management_type"],
+            private_end_point_id=var["database_cloud_database_management_details_private_end_point_id"],
+            service_name=var["database_cloud_database_management_details_service_name"],
+            credentialdetails=oci.database.CloudDatabaseManagementCredentialdetailsArgs(
+                user_name=var["database_cloud_database_management_details_user_name"],
+                password_secret_id=var["database_cloud_database_management_details_password_secret_id"],
+            ),
+            enable_management=var["database_cloud_database_management_details_enable_management"],
+            port=var["cloud_database_management_port"],
+            protocol=var["cloud_database_management_protocol"],
+            role=var["cloud_database_management_role"],
+            ssl_secret_id=oci_vault_secret["test_secret"]["id"])
+        ```
 
         ## Import
 
@@ -463,9 +468,14 @@ class CloudDatabaseManagement(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  credentialdetails: Optional[pulumi.Input[pulumi.InputType['CloudDatabaseManagementCredentialdetailsArgs']]] = None,
                  database_id: Optional[pulumi.Input[str]] = None,
+                 enable_management: Optional[pulumi.Input[bool]] = None,
                  management_type: Optional[pulumi.Input[str]] = None,
+                 port: Optional[pulumi.Input[int]] = None,
                  private_end_point_id: Optional[pulumi.Input[str]] = None,
+                 protocol: Optional[pulumi.Input[str]] = None,
+                 role: Optional[pulumi.Input[str]] = None,
                  service_name: Optional[pulumi.Input[str]] = None,
+                 ssl_secret_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         if opts is None:
             opts = pulumi.ResourceOptions()
@@ -484,28 +494,22 @@ class CloudDatabaseManagement(pulumi.CustomResource):
             if database_id is None and not opts.urn:
                 raise TypeError("Missing required property 'database_id'")
             __props__.__dict__["database_id"] = database_id
+            if enable_management is None and not opts.urn:
+                raise TypeError("Missing required property 'enable_management'")
+            __props__.__dict__["enable_management"] = enable_management
             if management_type is None and not opts.urn:
                 raise TypeError("Missing required property 'management_type'")
             __props__.__dict__["management_type"] = management_type
+            __props__.__dict__["port"] = port
             if private_end_point_id is None and not opts.urn:
                 raise TypeError("Missing required property 'private_end_point_id'")
             __props__.__dict__["private_end_point_id"] = private_end_point_id
+            __props__.__dict__["protocol"] = protocol
+            __props__.__dict__["role"] = role
             if service_name is None and not opts.urn:
                 raise TypeError("Missing required property 'service_name'")
             __props__.__dict__["service_name"] = service_name
-            __props__.__dict__["enable_management"] = None
-            __props__.__dict__["kms_key_id"] = None
-            __props__.__dict__["kms_key_version_id"] = None
-            __props__.__dict__["last_backup_timestamp"] = None
-            __props__.__dict__["lifecycle_details"] = None
-            __props__.__dict__["ncharacter_set"] = None
-            __props__.__dict__["pdb_name"] = None
-            __props__.__dict__["sid_prefix"] = None
-            __props__.__dict__["source_database_point_in_time_recovery_timestamp"] = None
-            __props__.__dict__["state"] = None
-            __props__.__dict__["time_created"] = None
-            __props__.__dict__["vault_id"] = None
-            __props__.__dict__["vm_cluster_id"] = None
+            __props__.__dict__["ssl_secret_id"] = ssl_secret_id
         super(CloudDatabaseManagement, __self__).__init__(
             'oci:Database/cloudDatabaseManagement:CloudDatabaseManagement',
             resource_name,
@@ -519,21 +523,13 @@ class CloudDatabaseManagement(pulumi.CustomResource):
             credentialdetails: Optional[pulumi.Input[pulumi.InputType['CloudDatabaseManagementCredentialdetailsArgs']]] = None,
             database_id: Optional[pulumi.Input[str]] = None,
             enable_management: Optional[pulumi.Input[bool]] = None,
-            kms_key_id: Optional[pulumi.Input[str]] = None,
-            kms_key_version_id: Optional[pulumi.Input[str]] = None,
-            last_backup_timestamp: Optional[pulumi.Input[str]] = None,
-            lifecycle_details: Optional[pulumi.Input[str]] = None,
             management_type: Optional[pulumi.Input[str]] = None,
-            ncharacter_set: Optional[pulumi.Input[str]] = None,
-            pdb_name: Optional[pulumi.Input[str]] = None,
+            port: Optional[pulumi.Input[int]] = None,
             private_end_point_id: Optional[pulumi.Input[str]] = None,
+            protocol: Optional[pulumi.Input[str]] = None,
+            role: Optional[pulumi.Input[str]] = None,
             service_name: Optional[pulumi.Input[str]] = None,
-            sid_prefix: Optional[pulumi.Input[str]] = None,
-            source_database_point_in_time_recovery_timestamp: Optional[pulumi.Input[str]] = None,
-            state: Optional[pulumi.Input[str]] = None,
-            time_created: Optional[pulumi.Input[str]] = None,
-            vault_id: Optional[pulumi.Input[str]] = None,
-            vm_cluster_id: Optional[pulumi.Input[str]] = None) -> 'CloudDatabaseManagement':
+            ssl_secret_id: Optional[pulumi.Input[str]] = None) -> 'CloudDatabaseManagement':
         """
         Get an existing CloudDatabaseManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -543,24 +539,16 @@ class CloudDatabaseManagement(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[bool] enable_management: (Updatable) Use this flag to enable/disable database management
-        :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        :param pulumi.Input[str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-        :param pulumi.Input[str] last_backup_timestamp: The date and time when the latest database backup was created.
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[str] management_type: (Updatable) Specifies database management type
                enum:
                - `BASIC`
                - `ADVANCED`
-        :param pulumi.Input[str] ncharacter_set: The national character set for the database.
-        :param pulumi.Input[str] pdb_name: The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
-        :param pulumi.Input[str] private_end_point_id: (Updatable) The private end point [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[str] service_name: (Updatable) Database service name
-        :param pulumi.Input[str] sid_prefix: Specifies a prefix for the `Oracle SID` of the database to be created.
-        :param pulumi.Input[str] source_database_point_in_time_recovery_timestamp: Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
-        :param pulumi.Input[str] state: The current state of the database.
-        :param pulumi.Input[str] time_created: The date and time the database was created.
-        :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        :param pulumi.Input[str] vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+        :param pulumi.Input[int] port: The port used to connect to the database.
+        :param pulumi.Input[str] private_end_point_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+        :param pulumi.Input[str] protocol: Protocol used by the database connection.
+        :param pulumi.Input[str] role: The role of the user that will be connecting to the database.
+        :param pulumi.Input[str] service_name: The name of the Oracle Database service that will be used to connect to the database.
+        :param pulumi.Input[str] ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -569,21 +557,13 @@ class CloudDatabaseManagement(pulumi.CustomResource):
         __props__.__dict__["credentialdetails"] = credentialdetails
         __props__.__dict__["database_id"] = database_id
         __props__.__dict__["enable_management"] = enable_management
-        __props__.__dict__["kms_key_id"] = kms_key_id
-        __props__.__dict__["kms_key_version_id"] = kms_key_version_id
-        __props__.__dict__["last_backup_timestamp"] = last_backup_timestamp
-        __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["management_type"] = management_type
-        __props__.__dict__["ncharacter_set"] = ncharacter_set
-        __props__.__dict__["pdb_name"] = pdb_name
+        __props__.__dict__["port"] = port
         __props__.__dict__["private_end_point_id"] = private_end_point_id
+        __props__.__dict__["protocol"] = protocol
+        __props__.__dict__["role"] = role
         __props__.__dict__["service_name"] = service_name
-        __props__.__dict__["sid_prefix"] = sid_prefix
-        __props__.__dict__["source_database_point_in_time_recovery_timestamp"] = source_database_point_in_time_recovery_timestamp
-        __props__.__dict__["state"] = state
-        __props__.__dict__["time_created"] = time_created
-        __props__.__dict__["vault_id"] = vault_id
-        __props__.__dict__["vm_cluster_id"] = vm_cluster_id
+        __props__.__dict__["ssl_secret_id"] = ssl_secret_id
         return CloudDatabaseManagement(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -608,38 +588,6 @@ class CloudDatabaseManagement(pulumi.CustomResource):
         return pulumi.get(self, "enable_management")
 
     @property
-    @pulumi.getter(name="kmsKeyId")
-    def kms_key_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        """
-        return pulumi.get(self, "kms_key_id")
-
-    @property
-    @pulumi.getter(name="kmsKeyVersionId")
-    def kms_key_version_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-        """
-        return pulumi.get(self, "kms_key_version_id")
-
-    @property
-    @pulumi.getter(name="lastBackupTimestamp")
-    def last_backup_timestamp(self) -> pulumi.Output[str]:
-        """
-        The date and time when the latest database backup was created.
-        """
-        return pulumi.get(self, "last_backup_timestamp")
-
-    @property
-    @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        Additional information about the current lifecycle state.
-        """
-        return pulumi.get(self, "lifecycle_details")
-
-    @property
     @pulumi.getter(name="managementType")
     def management_type(self) -> pulumi.Output[str]:
         """
@@ -651,82 +599,50 @@ class CloudDatabaseManagement(pulumi.CustomResource):
         return pulumi.get(self, "management_type")
 
     @property
-    @pulumi.getter(name="ncharacterSet")
-    def ncharacter_set(self) -> pulumi.Output[str]:
+    @pulumi.getter
+    def port(self) -> pulumi.Output[Optional[int]]:
         """
-        The national character set for the database.
+        The port used to connect to the database.
         """
-        return pulumi.get(self, "ncharacter_set")
-
-    @property
-    @pulumi.getter(name="pdbName")
-    def pdb_name(self) -> pulumi.Output[str]:
-        """
-        The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
-        """
-        return pulumi.get(self, "pdb_name")
+        return pulumi.get(self, "port")
 
     @property
     @pulumi.getter(name="privateEndPointId")
     def private_end_point_id(self) -> pulumi.Output[str]:
         """
-        (Updatable) The private end point [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
         """
         return pulumi.get(self, "private_end_point_id")
+
+    @property
+    @pulumi.getter
+    def protocol(self) -> pulumi.Output[Optional[str]]:
+        """
+        Protocol used by the database connection.
+        """
+        return pulumi.get(self, "protocol")
+
+    @property
+    @pulumi.getter
+    def role(self) -> pulumi.Output[Optional[str]]:
+        """
+        The role of the user that will be connecting to the database.
+        """
+        return pulumi.get(self, "role")
 
     @property
     @pulumi.getter(name="serviceName")
     def service_name(self) -> pulumi.Output[str]:
         """
-        (Updatable) Database service name
+        The name of the Oracle Database service that will be used to connect to the database.
         """
         return pulumi.get(self, "service_name")
 
     @property
-    @pulumi.getter(name="sidPrefix")
-    def sid_prefix(self) -> pulumi.Output[str]:
+    @pulumi.getter(name="sslSecretId")
+    def ssl_secret_id(self) -> pulumi.Output[Optional[str]]:
         """
-        Specifies a prefix for the `Oracle SID` of the database to be created.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
-        return pulumi.get(self, "sid_prefix")
-
-    @property
-    @pulumi.getter(name="sourceDatabasePointInTimeRecoveryTimestamp")
-    def source_database_point_in_time_recovery_timestamp(self) -> pulumi.Output[str]:
-        """
-        Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
-        """
-        return pulumi.get(self, "source_database_point_in_time_recovery_timestamp")
-
-    @property
-    @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the database.
-        """
-        return pulumi.get(self, "state")
-
-    @property
-    @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the database was created.
-        """
-        return pulumi.get(self, "time_created")
-
-    @property
-    @pulumi.getter(name="vaultId")
-    def vault_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        """
-        return pulumi.get(self, "vault_id")
-
-    @property
-    @pulumi.getter(name="vmClusterId")
-    def vm_cluster_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
-        """
-        return pulumi.get(self, "vm_cluster_id")
+        return pulumi.get(self, "ssl_secret_id")
 

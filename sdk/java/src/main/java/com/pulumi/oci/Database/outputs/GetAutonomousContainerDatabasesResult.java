@@ -20,7 +20,7 @@ public final class GetAutonomousContainerDatabasesResult {
      */
     private final List<GetAutonomousContainerDatabasesAutonomousContainerDatabase> autonomousContainerDatabases;
     /**
-     * @return The OCID of the Autonomous Exadata Infrastructure.
+     * @return **No longer used.** For Autonomous Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
      * 
      */
     private final @Nullable String autonomousExadataInfrastructureId;
@@ -107,7 +107,7 @@ public final class GetAutonomousContainerDatabasesResult {
         return this.autonomousContainerDatabases;
     }
     /**
-     * @return The OCID of the Autonomous Exadata Infrastructure.
+     * @return **No longer used.** For Autonomous Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
      * 
      */
     public Optional<String> autonomousExadataInfrastructureId() {

@@ -24,12 +24,22 @@ public final class GetAutonomousVmClusterResult {
     private final Double autonomousDataStorageSizeInTbs;
     private final String autonomousVmClusterId;
     /**
+     * @return The data disk group size available for Autonomous Databases, in TBs.
+     * 
+     */
+    private final Double availableAutonomousDataStorageSizeInTbs;
+    /**
+     * @return The number of Autonomous Container Databases that can be created with the currently available local storage.
+     * 
+     */
+    private final Integer availableContainerDatabases;
+    /**
      * @return The numnber of CPU cores available.
      * 
      */
     private final Integer availableCpus;
     /**
-     * @return The data storage available in TBs
+     * @return **Deprecated.** Use `availableAutonomousDataStorageSizeInTBs` for Autonomous Databases&#39; data storage availability in TBs.
      * 
      */
     private final Double availableDataStorageSizeInTbs;
@@ -135,6 +145,11 @@ public final class GetAutonomousVmClusterResult {
      */
     private final Double ocpusEnabled;
     /**
+     * @return CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+     * 
+     */
+    private final Integer reclaimableCpus;
+    /**
      * @return The current state of the Autonomous VM cluster.
      * 
      */
@@ -164,6 +179,8 @@ public final class GetAutonomousVmClusterResult {
     private GetAutonomousVmClusterResult(
         @CustomType.Parameter("autonomousDataStorageSizeInTbs") Double autonomousDataStorageSizeInTbs,
         @CustomType.Parameter("autonomousVmClusterId") String autonomousVmClusterId,
+        @CustomType.Parameter("availableAutonomousDataStorageSizeInTbs") Double availableAutonomousDataStorageSizeInTbs,
+        @CustomType.Parameter("availableContainerDatabases") Integer availableContainerDatabases,
         @CustomType.Parameter("availableCpus") Integer availableCpus,
         @CustomType.Parameter("availableDataStorageSizeInTbs") Double availableDataStorageSizeInTbs,
         @CustomType.Parameter("compartmentId") String compartmentId,
@@ -187,6 +204,7 @@ public final class GetAutonomousVmClusterResult {
         @CustomType.Parameter("memorySizeInGbs") Integer memorySizeInGbs,
         @CustomType.Parameter("nextMaintenanceRunId") String nextMaintenanceRunId,
         @CustomType.Parameter("ocpusEnabled") Double ocpusEnabled,
+        @CustomType.Parameter("reclaimableCpus") Integer reclaimableCpus,
         @CustomType.Parameter("state") String state,
         @CustomType.Parameter("timeCreated") String timeCreated,
         @CustomType.Parameter("timeZone") String timeZone,
@@ -194,6 +212,8 @@ public final class GetAutonomousVmClusterResult {
         @CustomType.Parameter("vmClusterNetworkId") String vmClusterNetworkId) {
         this.autonomousDataStorageSizeInTbs = autonomousDataStorageSizeInTbs;
         this.autonomousVmClusterId = autonomousVmClusterId;
+        this.availableAutonomousDataStorageSizeInTbs = availableAutonomousDataStorageSizeInTbs;
+        this.availableContainerDatabases = availableContainerDatabases;
         this.availableCpus = availableCpus;
         this.availableDataStorageSizeInTbs = availableDataStorageSizeInTbs;
         this.compartmentId = compartmentId;
@@ -217,6 +237,7 @@ public final class GetAutonomousVmClusterResult {
         this.memorySizeInGbs = memorySizeInGbs;
         this.nextMaintenanceRunId = nextMaintenanceRunId;
         this.ocpusEnabled = ocpusEnabled;
+        this.reclaimableCpus = reclaimableCpus;
         this.state = state;
         this.timeCreated = timeCreated;
         this.timeZone = timeZone;
@@ -235,6 +256,20 @@ public final class GetAutonomousVmClusterResult {
         return this.autonomousVmClusterId;
     }
     /**
+     * @return The data disk group size available for Autonomous Databases, in TBs.
+     * 
+     */
+    public Double availableAutonomousDataStorageSizeInTbs() {
+        return this.availableAutonomousDataStorageSizeInTbs;
+    }
+    /**
+     * @return The number of Autonomous Container Databases that can be created with the currently available local storage.
+     * 
+     */
+    public Integer availableContainerDatabases() {
+        return this.availableContainerDatabases;
+    }
+    /**
      * @return The numnber of CPU cores available.
      * 
      */
@@ -242,7 +277,7 @@ public final class GetAutonomousVmClusterResult {
         return this.availableCpus;
     }
     /**
-     * @return The data storage available in TBs
+     * @return **Deprecated.** Use `availableAutonomousDataStorageSizeInTBs` for Autonomous Databases&#39; data storage availability in TBs.
      * 
      */
     public Double availableDataStorageSizeInTbs() {
@@ -392,6 +427,13 @@ public final class GetAutonomousVmClusterResult {
         return this.ocpusEnabled;
     }
     /**
+     * @return CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+     * 
+     */
+    public Integer reclaimableCpus() {
+        return this.reclaimableCpus;
+    }
+    /**
      * @return The current state of the Autonomous VM cluster.
      * 
      */
@@ -438,6 +480,8 @@ public final class GetAutonomousVmClusterResult {
     public static final class Builder {
         private Double autonomousDataStorageSizeInTbs;
         private String autonomousVmClusterId;
+        private Double availableAutonomousDataStorageSizeInTbs;
+        private Integer availableContainerDatabases;
         private Integer availableCpus;
         private Double availableDataStorageSizeInTbs;
         private String compartmentId;
@@ -461,6 +505,7 @@ public final class GetAutonomousVmClusterResult {
         private Integer memorySizeInGbs;
         private String nextMaintenanceRunId;
         private Double ocpusEnabled;
+        private Integer reclaimableCpus;
         private String state;
         private String timeCreated;
         private String timeZone;
@@ -475,6 +520,8 @@ public final class GetAutonomousVmClusterResult {
     	      Objects.requireNonNull(defaults);
     	      this.autonomousDataStorageSizeInTbs = defaults.autonomousDataStorageSizeInTbs;
     	      this.autonomousVmClusterId = defaults.autonomousVmClusterId;
+    	      this.availableAutonomousDataStorageSizeInTbs = defaults.availableAutonomousDataStorageSizeInTbs;
+    	      this.availableContainerDatabases = defaults.availableContainerDatabases;
     	      this.availableCpus = defaults.availableCpus;
     	      this.availableDataStorageSizeInTbs = defaults.availableDataStorageSizeInTbs;
     	      this.compartmentId = defaults.compartmentId;
@@ -498,6 +545,7 @@ public final class GetAutonomousVmClusterResult {
     	      this.memorySizeInGbs = defaults.memorySizeInGbs;
     	      this.nextMaintenanceRunId = defaults.nextMaintenanceRunId;
     	      this.ocpusEnabled = defaults.ocpusEnabled;
+    	      this.reclaimableCpus = defaults.reclaimableCpus;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeZone = defaults.timeZone;
@@ -511,6 +559,14 @@ public final class GetAutonomousVmClusterResult {
         }
         public Builder autonomousVmClusterId(String autonomousVmClusterId) {
             this.autonomousVmClusterId = Objects.requireNonNull(autonomousVmClusterId);
+            return this;
+        }
+        public Builder availableAutonomousDataStorageSizeInTbs(Double availableAutonomousDataStorageSizeInTbs) {
+            this.availableAutonomousDataStorageSizeInTbs = Objects.requireNonNull(availableAutonomousDataStorageSizeInTbs);
+            return this;
+        }
+        public Builder availableContainerDatabases(Integer availableContainerDatabases) {
+            this.availableContainerDatabases = Objects.requireNonNull(availableContainerDatabases);
             return this;
         }
         public Builder availableCpus(Integer availableCpus) {
@@ -611,6 +667,10 @@ public final class GetAutonomousVmClusterResult {
             this.ocpusEnabled = Objects.requireNonNull(ocpusEnabled);
             return this;
         }
+        public Builder reclaimableCpus(Integer reclaimableCpus) {
+            this.reclaimableCpus = Objects.requireNonNull(reclaimableCpus);
+            return this;
+        }
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
@@ -631,7 +691,7 @@ public final class GetAutonomousVmClusterResult {
             this.vmClusterNetworkId = Objects.requireNonNull(vmClusterNetworkId);
             return this;
         }        public GetAutonomousVmClusterResult build() {
-            return new GetAutonomousVmClusterResult(autonomousDataStorageSizeInTbs, autonomousVmClusterId, availableCpus, availableDataStorageSizeInTbs, compartmentId, cpuCoreCountPerNode, cpusEnabled, dataStorageSizeInGb, dataStorageSizeInTbs, dbNodeStorageSizeInGbs, definedTags, displayName, exadataInfrastructureId, freeformTags, id, isLocalBackupEnabled, lastMaintenanceRunId, licenseModel, lifecycleDetails, maintenanceWindowDetails, maintenanceWindows, memoryPerOracleComputeUnitInGbs, memorySizeInGbs, nextMaintenanceRunId, ocpusEnabled, state, timeCreated, timeZone, totalContainerDatabases, vmClusterNetworkId);
+            return new GetAutonomousVmClusterResult(autonomousDataStorageSizeInTbs, autonomousVmClusterId, availableAutonomousDataStorageSizeInTbs, availableContainerDatabases, availableCpus, availableDataStorageSizeInTbs, compartmentId, cpuCoreCountPerNode, cpusEnabled, dataStorageSizeInGb, dataStorageSizeInTbs, dbNodeStorageSizeInGbs, definedTags, displayName, exadataInfrastructureId, freeformTags, id, isLocalBackupEnabled, lastMaintenanceRunId, licenseModel, lifecycleDetails, maintenanceWindowDetails, maintenanceWindows, memoryPerOracleComputeUnitInGbs, memorySizeInGbs, nextMaintenanceRunId, ocpusEnabled, reclaimableCpus, state, timeCreated, timeZone, totalContainerDatabases, vmClusterNetworkId);
         }
     }
 }

@@ -15,6 +15,7 @@ import com.pulumi.oci.Utilities;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -149,6 +150,20 @@ public class AnalyticsInstance extends com.pulumi.resources.CustomResource {
         return this.idcsAccessToken;
     }
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. &#34;&#34;) indicates to use Oracle managed default encryption.
+     * 
+     */
+    @Export(name="kmsKeyId", type=String.class, parameters={})
+    private Output</* @Nullable */ String> kmsKeyId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. &#34;&#34;) indicates to use Oracle managed default encryption.
+     * 
+     */
+    public Output<Optional<String>> kmsKeyId() {
+        return Codegen.optional(this.kmsKeyId);
+    }
+    /**
      * (Updatable) The license used for the service.
      * 
      */
@@ -189,20 +204,6 @@ public class AnalyticsInstance extends com.pulumi.resources.CustomResource {
      */
     public Output<AnalyticsInstanceNetworkEndpointDetails> networkEndpointDetails() {
         return this.networkEndpointDetails;
-    }
-    /**
-     * Map of PrivateAccessChannel unique identifier key as KEY and PrivateAccessChannel Object as VALUE.
-     * 
-     */
-    @Export(name="privateAccessChannels", type=Map.class, parameters={String.class, Object.class})
-    private Output<Map<String,Object>> privateAccessChannels;
-
-    /**
-     * @return Map of PrivateAccessChannel unique identifier key as KEY and PrivateAccessChannel Object as VALUE.
-     * 
-     */
-    public Output<Map<String,Object>> privateAccessChannels() {
-        return this.privateAccessChannels;
     }
     /**
      * URL of the Analytics service.
@@ -259,20 +260,6 @@ public class AnalyticsInstance extends com.pulumi.resources.CustomResource {
      */
     public Output<String> timeUpdated() {
         return this.timeUpdated;
-    }
-    /**
-     * Map of VanityUrl unique identifier key as KEY and VanityUrl Object as VALUE.
-     * 
-     */
-    @Export(name="vanityUrlDetails", type=Map.class, parameters={String.class, Object.class})
-    private Output<Map<String,Object>> vanityUrlDetails;
-
-    /**
-     * @return Map of VanityUrl unique identifier key as KEY and VanityUrl Object as VALUE.
-     * 
-     */
-    public Output<Map<String,Object>> vanityUrlDetails() {
-        return this.vanityUrlDetails;
     }
 
     /**

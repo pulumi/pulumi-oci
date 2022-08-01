@@ -150,7 +150,7 @@ namespace Pulumi.Oci.ApmSynthetics
         /// </summary>
         public readonly string MonitorType;
         /// <summary>
-        /// Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds.
+        /// Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
         /// </summary>
         public readonly int RepeatIntervalInSeconds;
         /// <summary>
@@ -182,7 +182,7 @@ namespace Pulumi.Oci.ApmSynthetics
         /// </summary>
         public readonly string TimeUpdated;
         /// <summary>
-        /// Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+        /// Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
         /// </summary>
         public readonly int TimeoutInSeconds;
         /// <summary>
@@ -190,7 +190,7 @@ namespace Pulumi.Oci.ApmSynthetics
         /// </summary>
         public readonly int VantagePointCount;
         /// <summary>
-        /// List of vantage points from where monitor is running.
+        /// List of public and dedicated vantage points where the monitor is running.
         /// </summary>
         public readonly ImmutableArray<string> VantagePoints;
 

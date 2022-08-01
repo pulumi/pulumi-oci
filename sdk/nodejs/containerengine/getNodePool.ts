@@ -75,6 +75,10 @@ export interface GetNodePoolResult {
      */
     readonly kubernetesVersion: string;
     /**
+     * Details about the state of the node.
+     */
+    readonly lifecycleDetails: string;
+    /**
      * The name of the node.
      */
     readonly name: string;
@@ -82,6 +86,10 @@ export interface GetNodePoolResult {
      * The configuration of nodes in the node pool.
      */
     readonly nodeConfigDetails: outputs.ContainerEngine.GetNodePoolNodeConfigDetail[];
+    /**
+     * Node Eviction Details configuration
+     */
+    readonly nodeEvictionNodePoolSettings: outputs.ContainerEngine.GetNodePoolNodeEvictionNodePoolSetting[];
     /**
      * Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
      *
@@ -130,6 +138,10 @@ export interface GetNodePoolResult {
      * The SSH public key on each node in the node pool on launch.
      */
     readonly sshPublicKey: string;
+    /**
+     * The state of the nodepool.
+     */
+    readonly state: string;
     /**
      * The OCIDs of the subnets in which to place nodes for this node pool.
      */

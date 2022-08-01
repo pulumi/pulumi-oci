@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// This data source provides details about a specific Autonomous Vm Cluster resource in Oracle Cloud Infrastructure Database service.
         /// 
-        /// Gets information about the specified Autonomous VM cluster for an Exadata Cloud@Customer system. To get information about an Autonomous VM Cluster in the Oracle cloud, see [GetCloudAutonomousVmCluster](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/GetCloudAutonomousVmCluster). 
+        /// Gets information about the specified Autonomous VM cluster for an Exadata Cloud@Customer system. To get information about an Autonomous VM Cluster in the Oracle cloud, see [GetCloudAutonomousVmCluster](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/GetCloudAutonomousVmCluster).
         /// 
         /// 
         /// {{% examples %}}
@@ -46,7 +46,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// This data source provides details about a specific Autonomous Vm Cluster resource in Oracle Cloud Infrastructure Database service.
         /// 
-        /// Gets information about the specified Autonomous VM cluster for an Exadata Cloud@Customer system. To get information about an Autonomous VM Cluster in the Oracle cloud, see [GetCloudAutonomousVmCluster](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/GetCloudAutonomousVmCluster). 
+        /// Gets information about the specified Autonomous VM cluster for an Exadata Cloud@Customer system. To get information about an Autonomous VM Cluster in the Oracle cloud, see [GetCloudAutonomousVmCluster](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/GetCloudAutonomousVmCluster).
         /// 
         /// 
         /// {{% examples %}}
@@ -113,11 +113,19 @@ namespace Pulumi.Oci.Database
         public readonly double AutonomousDataStorageSizeInTbs;
         public readonly string AutonomousVmClusterId;
         /// <summary>
+        /// The data disk group size available for Autonomous Databases, in TBs.
+        /// </summary>
+        public readonly double AvailableAutonomousDataStorageSizeInTbs;
+        /// <summary>
+        /// The number of Autonomous Container Databases that can be created with the currently available local storage.
+        /// </summary>
+        public readonly int AvailableContainerDatabases;
+        /// <summary>
         /// The numnber of CPU cores available.
         /// </summary>
         public readonly int AvailableCpus;
         /// <summary>
-        /// The data storage available in TBs
+        /// **Deprecated.** Use `availableAutonomousDataStorageSizeInTBs` for Autonomous Databases' data storage availability in TBs.
         /// </summary>
         public readonly double AvailableDataStorageSizeInTbs;
         /// <summary>
@@ -202,6 +210,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly double OcpusEnabled;
         /// <summary>
+        /// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+        /// </summary>
+        public readonly int ReclaimableCpus;
+        /// <summary>
         /// The current state of the Autonomous VM cluster.
         /// </summary>
         public readonly string State;
@@ -227,6 +239,10 @@ namespace Pulumi.Oci.Database
             double autonomousDataStorageSizeInTbs,
 
             string autonomousVmClusterId,
+
+            double availableAutonomousDataStorageSizeInTbs,
+
+            int availableContainerDatabases,
 
             int availableCpus,
 
@@ -274,6 +290,8 @@ namespace Pulumi.Oci.Database
 
             double ocpusEnabled,
 
+            int reclaimableCpus,
+
             string state,
 
             string timeCreated,
@@ -286,6 +304,8 @@ namespace Pulumi.Oci.Database
         {
             AutonomousDataStorageSizeInTbs = autonomousDataStorageSizeInTbs;
             AutonomousVmClusterId = autonomousVmClusterId;
+            AvailableAutonomousDataStorageSizeInTbs = availableAutonomousDataStorageSizeInTbs;
+            AvailableContainerDatabases = availableContainerDatabases;
             AvailableCpus = availableCpus;
             AvailableDataStorageSizeInTbs = availableDataStorageSizeInTbs;
             CompartmentId = compartmentId;
@@ -309,6 +329,7 @@ namespace Pulumi.Oci.Database
             MemorySizeInGbs = memorySizeInGbs;
             NextMaintenanceRunId = nextMaintenanceRunId;
             OcpusEnabled = ocpusEnabled;
+            ReclaimableCpus = reclaimableCpus;
             State = state;
             TimeCreated = timeCreated;
             TimeZone = timeZone;

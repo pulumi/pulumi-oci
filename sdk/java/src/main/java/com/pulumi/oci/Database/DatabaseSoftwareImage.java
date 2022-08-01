@@ -204,14 +204,14 @@ public class DatabaseSoftwareImage extends com.pulumi.resources.CustomResource {
         return this.lifecycleDetails;
     }
     /**
-     * output from lsinventory which will get passed as a string
+     * The output from the OPatch lsInventory command, which is passed as a string.
      * 
      */
     @Export(name="lsInventory", type=String.class, parameters={})
     private Output<String> lsInventory;
 
     /**
-     * @return output from lsinventory which will get passed as a string
+     * @return The output from the OPatch lsInventory command, which is passed as a string.
      * 
      */
     public Output<String> lsInventory() {

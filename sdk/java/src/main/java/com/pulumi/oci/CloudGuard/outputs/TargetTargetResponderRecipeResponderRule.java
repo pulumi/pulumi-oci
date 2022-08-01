@@ -29,7 +29,7 @@ public final class TargetTargetResponderRecipeResponderRule {
      */
     private final TargetTargetResponderRecipeResponderRuleDetails details;
     /**
-     * @return (Updatable) DetectorTemplate Identifier
+     * @return (Updatable) DetectorTemplate identifier.
      * 
      */
     private final @Nullable String displayName;
@@ -124,7 +124,7 @@ public final class TargetTargetResponderRecipeResponderRule {
         return this.details;
     }
     /**
-     * @return (Updatable) DetectorTemplate Identifier
+     * @return (Updatable) DetectorTemplate identifier.
      * 
      */
     public Optional<String> displayName() {

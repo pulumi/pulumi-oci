@@ -189,6 +189,20 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
         return this.databaseVersion;
     }
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint. This field and opsi_private_endpoint_id are mutually exclusive. If DBM private endpoint ID is provided, a new OPSI private endpoint ID will be created.
+     * 
+     */
+    @Export(name="dbmPrivateEndpointId", type=String.class, parameters={})
+    private Output<String> dbmPrivateEndpointId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint. This field and opsi_private_endpoint_id are mutually exclusive. If DBM private endpoint ID is provided, a new OPSI private endpoint ID will be created.
+     * 
+     */
+    public Output<String> dbmPrivateEndpointId() {
+        return this.dbmPrivateEndpointId;
+    }
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */

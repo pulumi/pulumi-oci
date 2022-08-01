@@ -50,14 +50,14 @@ public final class ManagedListState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) ManagedList description
+     * (Updatable) Managed list description.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) ManagedList description
+     * @return (Updatable) Managed list description.
      * 
      */
     public Optional<Output<String>> description() {
@@ -65,14 +65,14 @@ public final class ManagedListState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) ManagedList display name
+     * (Updatable) Managed list display name.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) ManagedList display name
+     * @return (Updatable) Managed list display name.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -325,7 +325,7 @@ public final class ManagedListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description (Updatable) ManagedList description
+         * @param description (Updatable) Managed list description.
          * 
          * @return builder
          * 
@@ -336,7 +336,7 @@ public final class ManagedListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description (Updatable) ManagedList description
+         * @param description (Updatable) Managed list description.
          * 
          * @return builder
          * 
@@ -346,7 +346,7 @@ public final class ManagedListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) ManagedList display name
+         * @param displayName (Updatable) Managed list display name.
          * 
          * @return builder
          * 
@@ -357,7 +357,7 @@ public final class ManagedListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) ManagedList display name
+         * @param displayName (Updatable) Managed list display name.
          * 
          * @return builder
          * 

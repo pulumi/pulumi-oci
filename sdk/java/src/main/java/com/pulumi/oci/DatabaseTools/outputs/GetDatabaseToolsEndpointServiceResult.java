@@ -12,7 +12,7 @@ import java.util.Objects;
 @CustomType
 public final class GetDatabaseToolsEndpointServiceResult {
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools Endpoint Service.
      * 
      */
     private final String compartmentId;
@@ -23,7 +23,7 @@ public final class GetDatabaseToolsEndpointServiceResult {
      */
     private final Map<String,Object> definedTags;
     /**
-     * @return A description of the DatabaseToolsEndpointService.
+     * @return A description of the Database Tools Endpoint Service.
      * 
      */
     private final String description;
@@ -53,7 +53,7 @@ public final class GetDatabaseToolsEndpointServiceResult {
      */
     private final String name;
     /**
-     * @return The current state of the DatabaseToolsEndpointService.
+     * @return The current state of the Database Tools Endpoint Service.
      * 
      */
     private final String state;
@@ -63,12 +63,12 @@ public final class GetDatabaseToolsEndpointServiceResult {
      */
     private final Map<String,Object> systemTags;
     /**
-     * @return The time the DatabaseToolsEndpointService was created. An RFC3339 formatted datetime string
+     * @return The time the Database Tools Endpoint Service was created. An RFC3339 formatted datetime string
      * 
      */
     private final String timeCreated;
     /**
-     * @return The time the DatabaseToolsEndpointService was updated. An RFC3339 formatted datetime string
+     * @return The time the Database Tools Endpoint Service was updated. An RFC3339 formatted datetime string
      * 
      */
     private final String timeUpdated;
@@ -104,7 +104,7 @@ public final class GetDatabaseToolsEndpointServiceResult {
     }
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools Endpoint Service.
      * 
      */
     public String compartmentId() {
@@ -121,7 +121,7 @@ public final class GetDatabaseToolsEndpointServiceResult {
         return this.definedTags;
     }
     /**
-     * @return A description of the DatabaseToolsEndpointService.
+     * @return A description of the Database Tools Endpoint Service.
      * 
      */
     public String description() {
@@ -163,7 +163,7 @@ public final class GetDatabaseToolsEndpointServiceResult {
         return this.name;
     }
     /**
-     * @return The current state of the DatabaseToolsEndpointService.
+     * @return The current state of the Database Tools Endpoint Service.
      * 
      */
     public String state() {
@@ -177,14 +177,14 @@ public final class GetDatabaseToolsEndpointServiceResult {
         return this.systemTags;
     }
     /**
-     * @return The time the DatabaseToolsEndpointService was created. An RFC3339 formatted datetime string
+     * @return The time the Database Tools Endpoint Service was created. An RFC3339 formatted datetime string
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return The time the DatabaseToolsEndpointService was updated. An RFC3339 formatted datetime string
+     * @return The time the Database Tools Endpoint Service was updated. An RFC3339 formatted datetime string
      * 
      */
     public String timeUpdated() {

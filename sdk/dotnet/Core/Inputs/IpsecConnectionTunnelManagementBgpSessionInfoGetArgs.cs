@@ -12,6 +12,9 @@ namespace Pulumi.Oci.Core.Inputs
 
     public sealed class IpsecConnectionTunnelManagementBgpSessionInfoGetArgs : Pulumi.ResourceArgs
     {
+        [Input("bgpIpv6state")]
+        public Input<string>? BgpIpv6state { get; set; }
+
         /// <summary>
         /// the state of the BGP.
         /// </summary>

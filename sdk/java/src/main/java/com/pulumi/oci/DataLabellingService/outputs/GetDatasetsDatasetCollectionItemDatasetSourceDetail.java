@@ -10,22 +10,22 @@ import java.util.Objects;
 @CustomType
 public final class GetDatasetsDatasetCollectionItemDatasetSourceDetail {
     /**
-     * @return The object storage bucket that contains the dataset data source
+     * @return The object storage bucket that contains the dataset data source.
      * 
      */
     private final String bucket;
     /**
-     * @return Namespace of the bucket that contains the dataset data source
+     * @return The namespace of the bucket that contains the dataset data source.
      * 
      */
     private final String namespace;
     /**
-     * @return A common path prefix shared by the objects that make up the dataset. Records will not be generated for objects whose name match exactly with prefix.
+     * @return A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
      * 
      */
     private final String prefix;
     /**
-     * @return Source type.  OBJECT_STORAGE allows the customer to describe where the dataset is in object storage.
+     * @return The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
      * 
      */
     private final String sourceType;
@@ -43,28 +43,28 @@ public final class GetDatasetsDatasetCollectionItemDatasetSourceDetail {
     }
 
     /**
-     * @return The object storage bucket that contains the dataset data source
+     * @return The object storage bucket that contains the dataset data source.
      * 
      */
     public String bucket() {
         return this.bucket;
     }
     /**
-     * @return Namespace of the bucket that contains the dataset data source
+     * @return The namespace of the bucket that contains the dataset data source.
      * 
      */
     public String namespace() {
         return this.namespace;
     }
     /**
-     * @return A common path prefix shared by the objects that make up the dataset. Records will not be generated for objects whose name match exactly with prefix.
+     * @return A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
      * 
      */
     public String prefix() {
         return this.prefix;
     }
     /**
-     * @return Source type.  OBJECT_STORAGE allows the customer to describe where the dataset is in object storage.
+     * @return The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
      * 
      */
     public String sourceType() {

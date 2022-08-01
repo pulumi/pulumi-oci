@@ -25,7 +25,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         }
 
         /// <summary>
-        /// (Updatable) DetectorRecipe Description
+        /// (Updatable) Detector recipe description.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -49,7 +49,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         public Input<string> DetectorRuleId { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) DetectorRecipe Display Name
+        /// (Updatable) Detector recipe display name.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }

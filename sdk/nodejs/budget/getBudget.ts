@@ -7,7 +7,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Budget resource in Oracle Cloud Infrastructure Budget service.
  *
- * Gets a Budget by identifier
+ * Gets a budget by the identifier.
  *
  * ## Example Usage
  *
@@ -36,7 +36,7 @@ export function getBudget(args: GetBudgetArgs, opts?: pulumi.InvokeOptions): Pro
  */
 export interface GetBudgetArgs {
     /**
-     * The unique Budget OCID
+     * The unique budget OCID.
      */
     budgetId: string;
 }
@@ -46,15 +46,15 @@ export interface GetBudgetArgs {
  */
 export interface GetBudgetResult {
     /**
-     * The actual spend in currency for the current budget cycle
+     * The actual spend in currency for the current budget cycle.
      */
     readonly actualSpend: number;
     /**
-     * Total number of alert rules in the budget
+     * The total number of alert rules in the budget.
      */
     readonly alertRuleCount: number;
     /**
-     * The amount of the budget expressed in the currency of the customer's rate card.
+     * The amount of the budget, expressed in the currency of the customer's rate card.
      */
     readonly amount: number;
     readonly budgetId: string;
@@ -63,7 +63,7 @@ export interface GetBudgetResult {
      */
     readonly budgetProcessingPeriodStartOffset: number;
     /**
-     * The OCID of the tenancy
+     * The OCID of the compartment.
      */
     readonly compartmentId: string;
     /**
@@ -75,11 +75,11 @@ export interface GetBudgetResult {
      */
     readonly description: string;
     /**
-     * The display name of the budget.
+     * The display name of the budget. Avoid entering confidential information.
      */
     readonly displayName: string;
     /**
-     * The forecasted spend in currency by the end of the current budget cycle
+     * The forecasted spend in currency by the end of the current budget cycle.
      */
     readonly forecastedSpend: number;
     /**
@@ -87,9 +87,13 @@ export interface GetBudgetResult {
      */
     readonly freeformTags: {[key: string]: any};
     /**
-     * The OCID of the budget
+     * The OCID of the budget.
      */
     readonly id: string;
+    /**
+     * The type of the budget processing period. Valid values are INVOICE and MONTH.
+     */
+    readonly processingPeriodType: string;
     /**
      * The reset period for the budget.
      */
@@ -99,7 +103,7 @@ export interface GetBudgetResult {
      */
     readonly state: string;
     /**
-     * This is DEPRECATED. For backwards compatability, the property will be populated when targetType is "COMPARTMENT" AND targets contains EXACT ONE target compartment ocid. For all other scenarios, this property will be left empty.
+     * This is DEPRECATED. For backwards compatability, the property is populated when the targetType is "COMPARTMENT", and targets contain the specific target compartment OCID. For all other scenarios, this property will be left empty.
      *
      * @deprecated The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead.
      */
@@ -109,23 +113,23 @@ export interface GetBudgetResult {
      */
     readonly targetType: string;
     /**
-     * The list of targets on which the budget is applied. If targetType is "COMPARTMENT", targets contains list of compartment OCIDs. If targetType is "TAG", targets contains list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}".
+     * The list of targets on which the budget is applied. If the targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If the targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}".
      */
     readonly targets: string[];
     /**
-     * Time that budget was created
+     * The time that the budget was created.
      */
     readonly timeCreated: string;
     /**
-     * The time that the budget spend was last computed
+     * The time that the budget spend was last computed.
      */
     readonly timeSpendComputed: string;
     /**
-     * Time that budget was updated
+     * The time that the budget was updated.
      */
     readonly timeUpdated: string;
     /**
-     * Version of the budget. Starts from 1 and increments by 1.
+     * The version of the budget. Starts from 1 and increments by 1.
      */
     readonly version: number;
 }
@@ -139,7 +143,7 @@ export function getBudgetOutput(args: GetBudgetOutputArgs, opts?: pulumi.InvokeO
  */
 export interface GetBudgetOutputArgs {
     /**
-     * The unique Budget OCID
+     * The unique budget OCID.
      */
     budgetId: pulumi.Input<string>;
 }

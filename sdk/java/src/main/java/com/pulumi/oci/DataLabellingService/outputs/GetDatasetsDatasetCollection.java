@@ -11,7 +11,7 @@ import java.util.Objects;
 @CustomType
 public final class GetDatasetsDatasetCollection {
     /**
-     * @return An ordered collection of Labels that are unique by name.
+     * @return An ordered collection of labels that are unique by name.
      * 
      */
     private final List<GetDatasetsDatasetCollectionItem> items;
@@ -22,7 +22,7 @@ public final class GetDatasetsDatasetCollection {
     }
 
     /**
-     * @return An ordered collection of Labels that are unique by name.
+     * @return An ordered collection of labels that are unique by name.
      * 
      */
     public List<GetDatasetsDatasetCollectionItem> items() {

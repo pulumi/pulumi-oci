@@ -101,7 +101,7 @@ export interface GetAutonomousContainerDatabasesResult {
      */
     readonly autonomousContainerDatabases: outputs.Database.GetAutonomousContainerDatabasesAutonomousContainerDatabase[];
     /**
-     * The OCID of the Autonomous Exadata Infrastructure.
+     * **No longer used.** For Autonomous Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
      */
     readonly autonomousExadataInfrastructureId?: string;
     /**

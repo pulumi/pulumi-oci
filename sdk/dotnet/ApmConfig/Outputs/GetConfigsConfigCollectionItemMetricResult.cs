@@ -14,19 +14,19 @@ namespace Pulumi.Oci.ApmConfig.Outputs
     public sealed class GetConfigsConfigCollectionItemMetricResult
     {
         /// <summary>
-        /// A description of the metric
+        /// A description of the metric.
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// The name of the metric
+        /// The name of the metric. This must be a known metric name.
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// The unit of the metric
+        /// The unit of the metric.
         /// </summary>
         public readonly string Unit;
         /// <summary>
-        /// Must be NULL at the moment, and "name" must be a known metric.
+        /// This must not be set.
         /// </summary>
         public readonly string ValueSource;
 

@@ -50,14 +50,14 @@ public final class BudgetArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The OCID of the tenancy
+     * The OCID of the compartment.
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return The OCID of the tenancy
+     * @return The OCID of the compartment.
      * 
      */
     public Output<String> compartmentId() {
@@ -95,14 +95,14 @@ public final class BudgetArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The displayName of the budget.
+     * (Updatable) The displayName of the budget. Avoid entering confidential information.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) The displayName of the budget.
+     * @return (Updatable) The displayName of the budget. Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -125,6 +125,21 @@ public final class BudgetArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The type of the budget processing period. Valid values are INVOICE and MONTH.
+     * 
+     */
+    @Import(name="processingPeriodType")
+    private @Nullable Output<String> processingPeriodType;
+
+    /**
+     * @return (Updatable) The type of the budget processing period. Valid values are INVOICE and MONTH.
+     * 
+     */
+    public Optional<Output<String>> processingPeriodType() {
+        return Optional.ofNullable(this.processingPeriodType);
+    }
+
+    /**
      * (Updatable) The reset period for the budget. Valid value is MONTHLY.
      * 
      */
@@ -140,7 +155,7 @@ public final class BudgetArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * This is DEPRECTAED. Set the target compartment id in targets instead.
+     * This is DEPRECATED. Set the target compartment ID in targets instead.
      * 
      * @deprecated
      * The &#39;target_compartment_id&#39; field has been deprecated. Please use &#39;target_type&#39; instead.
@@ -151,7 +166,7 @@ public final class BudgetArgs extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<String> targetCompartmentId;
 
     /**
-     * @return This is DEPRECTAED. Set the target compartment id in targets instead.
+     * @return This is DEPRECATED. Set the target compartment ID in targets instead.
      * 
      * @deprecated
      * The &#39;target_compartment_id&#39; field has been deprecated. Please use &#39;target_type&#39; instead.
@@ -178,14 +193,14 @@ public final class BudgetArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The list of targets on which the budget is applied. If targetType is &#34;COMPARTMENT&#34;, targets contains list of compartment OCIDs. If targetType is &#34;TAG&#34;, targets contains list of cost tracking tag identifiers in the form of &#34;{tagNamespace}.{tagKey}.{tagValue}&#34;. Curerntly, the array should contain EXACT ONE item.
+     * The list of targets on which the budget is applied. If targetType is &#34;COMPARTMENT&#34;, the targets contain the list of compartment OCIDs. If targetType is &#34;TAG&#34;, the targets contain the list of cost tracking tag identifiers in the form of &#34;{tagNamespace}.{tagKey}.{tagValue}&#34;. Curerntly, the array should contain exactly one item.
      * 
      */
     @Import(name="targets")
     private @Nullable Output<List<String>> targets;
 
     /**
-     * @return The list of targets on which the budget is applied. If targetType is &#34;COMPARTMENT&#34;, targets contains list of compartment OCIDs. If targetType is &#34;TAG&#34;, targets contains list of cost tracking tag identifiers in the form of &#34;{tagNamespace}.{tagKey}.{tagValue}&#34;. Curerntly, the array should contain EXACT ONE item.
+     * @return The list of targets on which the budget is applied. If targetType is &#34;COMPARTMENT&#34;, the targets contain the list of compartment OCIDs. If targetType is &#34;TAG&#34;, the targets contain the list of cost tracking tag identifiers in the form of &#34;{tagNamespace}.{tagKey}.{tagValue}&#34;. Curerntly, the array should contain exactly one item.
      * 
      */
     public Optional<Output<List<String>>> targets() {
@@ -202,6 +217,7 @@ public final class BudgetArgs extends com.pulumi.resources.ResourceArgs {
         this.description = $.description;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.processingPeriodType = $.processingPeriodType;
         this.resetPeriod = $.resetPeriod;
         this.targetCompartmentId = $.targetCompartmentId;
         this.targetType = $.targetType;
@@ -269,7 +285,7 @@ public final class BudgetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId The OCID of the tenancy
+         * @param compartmentId The OCID of the compartment.
          * 
          * @return builder
          * 
@@ -280,7 +296,7 @@ public final class BudgetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId The OCID of the tenancy
+         * @param compartmentId The OCID of the compartment.
          * 
          * @return builder
          * 
@@ -332,7 +348,7 @@ public final class BudgetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) The displayName of the budget.
+         * @param displayName (Updatable) The displayName of the budget. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -343,7 +359,7 @@ public final class BudgetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) The displayName of the budget.
+         * @param displayName (Updatable) The displayName of the budget. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -374,6 +390,27 @@ public final class BudgetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param processingPeriodType (Updatable) The type of the budget processing period. Valid values are INVOICE and MONTH.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder processingPeriodType(@Nullable Output<String> processingPeriodType) {
+            $.processingPeriodType = processingPeriodType;
+            return this;
+        }
+
+        /**
+         * @param processingPeriodType (Updatable) The type of the budget processing period. Valid values are INVOICE and MONTH.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder processingPeriodType(String processingPeriodType) {
+            return processingPeriodType(Output.of(processingPeriodType));
+        }
+
+        /**
          * @param resetPeriod (Updatable) The reset period for the budget. Valid value is MONTHLY.
          * 
          * @return builder
@@ -395,7 +432,7 @@ public final class BudgetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param targetCompartmentId This is DEPRECTAED. Set the target compartment id in targets instead.
+         * @param targetCompartmentId This is DEPRECATED. Set the target compartment ID in targets instead.
          * 
          * @return builder
          * 
@@ -410,7 +447,7 @@ public final class BudgetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param targetCompartmentId This is DEPRECTAED. Set the target compartment id in targets instead.
+         * @param targetCompartmentId This is DEPRECATED. Set the target compartment ID in targets instead.
          * 
          * @return builder
          * 
@@ -445,7 +482,7 @@ public final class BudgetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param targets The list of targets on which the budget is applied. If targetType is &#34;COMPARTMENT&#34;, targets contains list of compartment OCIDs. If targetType is &#34;TAG&#34;, targets contains list of cost tracking tag identifiers in the form of &#34;{tagNamespace}.{tagKey}.{tagValue}&#34;. Curerntly, the array should contain EXACT ONE item.
+         * @param targets The list of targets on which the budget is applied. If targetType is &#34;COMPARTMENT&#34;, the targets contain the list of compartment OCIDs. If targetType is &#34;TAG&#34;, the targets contain the list of cost tracking tag identifiers in the form of &#34;{tagNamespace}.{tagKey}.{tagValue}&#34;. Curerntly, the array should contain exactly one item.
          * 
          * @return builder
          * 
@@ -456,7 +493,7 @@ public final class BudgetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param targets The list of targets on which the budget is applied. If targetType is &#34;COMPARTMENT&#34;, targets contains list of compartment OCIDs. If targetType is &#34;TAG&#34;, targets contains list of cost tracking tag identifiers in the form of &#34;{tagNamespace}.{tagKey}.{tagValue}&#34;. Curerntly, the array should contain EXACT ONE item.
+         * @param targets The list of targets on which the budget is applied. If targetType is &#34;COMPARTMENT&#34;, the targets contain the list of compartment OCIDs. If targetType is &#34;TAG&#34;, the targets contain the list of cost tracking tag identifiers in the form of &#34;{tagNamespace}.{tagKey}.{tagValue}&#34;. Curerntly, the array should contain exactly one item.
          * 
          * @return builder
          * 
@@ -466,7 +503,7 @@ public final class BudgetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param targets The list of targets on which the budget is applied. If targetType is &#34;COMPARTMENT&#34;, targets contains list of compartment OCIDs. If targetType is &#34;TAG&#34;, targets contains list of cost tracking tag identifiers in the form of &#34;{tagNamespace}.{tagKey}.{tagValue}&#34;. Curerntly, the array should contain EXACT ONE item.
+         * @param targets The list of targets on which the budget is applied. If targetType is &#34;COMPARTMENT&#34;, the targets contain the list of compartment OCIDs. If targetType is &#34;TAG&#34;, the targets contain the list of cost tracking tag identifiers in the form of &#34;{tagNamespace}.{tagKey}.{tagValue}&#34;. Curerntly, the array should contain exactly one item.
          * 
          * @return builder
          * 

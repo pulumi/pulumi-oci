@@ -15,7 +15,7 @@ namespace Pulumi.Oci.Oda
     /// Starts an asynchronous job to create a Digital Assistant instance.
     /// 
     /// To monitor the status of the job, take the `opc-work-request-id` response
-    /// header value and use it to call `GET /workRequests/{workRequestID}`.
+    /// header value and use it to call `GET /workRequests/{workRequestId}`.
     /// 
     /// ## Example Usage
     /// 
@@ -41,6 +41,8 @@ namespace Pulumi.Oci.Oda
     ///             {
     ///                 { "bar-key", "value" },
     ///             },
+    ///             IdentityDomain = @var.Oda_instance_identity_domain,
+    ///             IsRoleBasedAccess = @var.Oda_instance_is_role_based_access,
     ///         });
     ///     }
     /// 
@@ -58,6 +60,18 @@ namespace Pulumi.Oci.Oda
     [OciResourceType("oci:Oda/odaInstance:OdaInstance")]
     public partial class OdaInstance : Pulumi.CustomResource
     {
+        /// <summary>
+        /// A list of attachment identifiers for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+        /// </summary>
+        [Output("attachmentIds")]
+        public Output<ImmutableArray<string>> AttachmentIds { get; private set; } = null!;
+
+        /// <summary>
+        /// A list of attachment types for this instance (if any). Use attachmentIds to get the details of the attachments.
+        /// </summary>
+        [Output("attachmentTypes")]
+        public Output<ImmutableArray<string>> AttachmentTypes { get; private set; } = null!;
+
         /// <summary>
         /// (Updatable) Identifier of the compartment.
         /// </summary>
@@ -89,16 +103,58 @@ namespace Pulumi.Oci.Oda
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+
+        /// <summary>
+        /// If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.
+        /// </summary>
+        [Output("identityAppConsoleUrl")]
+        public Output<string> IdentityAppConsoleUrl { get; private set; } = null!;
+
+        /// <summary>
+        /// If isRoleBasedAccess is set to true, this property specifies the GUID of the Identity Application instance Digital Assistant has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this Digital Assistant instance for users within the identity domain.
+        /// </summary>
+        [Output("identityAppGuid")]
+        public Output<string> IdentityAppGuid { get; private set; } = null!;
+
+        /// <summary>
+        /// If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
+        /// </summary>
+        [Output("identityDomain")]
+        public Output<string> IdentityDomain { get; private set; } = null!;
+
+        /// <summary>
+        /// A list of package ids imported into this instance (if any). Use GetImportedPackage to get the details of the imported packages.
+        /// </summary>
+        [Output("importedPackageIds")]
+        public Output<ImmutableArray<string>> ImportedPackageIds { get; private set; } = null!;
+
+        /// <summary>
+        /// A list of package names imported into this instance (if any). Use importedPackageIds field to get the details of the imported packages.
+        /// </summary>
+        [Output("importedPackageNames")]
+        public Output<ImmutableArray<string>> ImportedPackageNames { get; private set; } = null!;
+
+        /// <summary>
+        /// Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
+        /// </summary>
+        [Output("isRoleBasedAccess")]
+        public Output<bool> IsRoleBasedAccess { get; private set; } = null!;
 
         /// <summary>
         /// The current sub-state of the Digital Assistant instance.
         /// </summary>
         [Output("lifecycleSubState")]
         public Output<string> LifecycleSubState { get; private set; } = null!;
+
+        /// <summary>
+        /// A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+        /// </summary>
+        [Output("restrictedOperations")]
+        public Output<ImmutableArray<Outputs.OdaInstanceRestrictedOperation>> RestrictedOperations { get; private set; } = null!;
 
         /// <summary>
         /// Shape or size of the instance.
@@ -216,13 +272,25 @@ namespace Pulumi.Oci.Oda
         private InputMap<object>? _freeformTags;
 
         /// <summary>
-        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
         /// </summary>
         public InputMap<object> FreeformTags
         {
             get => _freeformTags ?? (_freeformTags = new InputMap<object>());
             set => _freeformTags = value;
         }
+
+        /// <summary>
+        /// If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
+        /// </summary>
+        [Input("identityDomain")]
+        public Input<string>? IdentityDomain { get; set; }
+
+        /// <summary>
+        /// Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
+        /// </summary>
+        [Input("isRoleBasedAccess")]
+        public Input<bool>? IsRoleBasedAccess { get; set; }
 
         /// <summary>
         /// Shape or size of the instance.
@@ -243,6 +311,30 @@ namespace Pulumi.Oci.Oda
 
     public sealed class OdaInstanceState : Pulumi.ResourceArgs
     {
+        [Input("attachmentIds")]
+        private InputList<string>? _attachmentIds;
+
+        /// <summary>
+        /// A list of attachment identifiers for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+        /// </summary>
+        public InputList<string> AttachmentIds
+        {
+            get => _attachmentIds ?? (_attachmentIds = new InputList<string>());
+            set => _attachmentIds = value;
+        }
+
+        [Input("attachmentTypes")]
+        private InputList<string>? _attachmentTypes;
+
+        /// <summary>
+        /// A list of attachment types for this instance (if any). Use attachmentIds to get the details of the attachments.
+        /// </summary>
+        public InputList<string> AttachmentTypes
+        {
+            get => _attachmentTypes ?? (_attachmentTypes = new InputList<string>());
+            set => _attachmentTypes = value;
+        }
+
         /// <summary>
         /// (Updatable) Identifier of the compartment.
         /// </summary>
@@ -283,7 +375,7 @@ namespace Pulumi.Oci.Oda
         private InputMap<object>? _freeformTags;
 
         /// <summary>
-        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
         /// </summary>
         public InputMap<object> FreeformTags
         {
@@ -292,10 +384,70 @@ namespace Pulumi.Oci.Oda
         }
 
         /// <summary>
+        /// If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.
+        /// </summary>
+        [Input("identityAppConsoleUrl")]
+        public Input<string>? IdentityAppConsoleUrl { get; set; }
+
+        /// <summary>
+        /// If isRoleBasedAccess is set to true, this property specifies the GUID of the Identity Application instance Digital Assistant has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this Digital Assistant instance for users within the identity domain.
+        /// </summary>
+        [Input("identityAppGuid")]
+        public Input<string>? IdentityAppGuid { get; set; }
+
+        /// <summary>
+        /// If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
+        /// </summary>
+        [Input("identityDomain")]
+        public Input<string>? IdentityDomain { get; set; }
+
+        [Input("importedPackageIds")]
+        private InputList<string>? _importedPackageIds;
+
+        /// <summary>
+        /// A list of package ids imported into this instance (if any). Use GetImportedPackage to get the details of the imported packages.
+        /// </summary>
+        public InputList<string> ImportedPackageIds
+        {
+            get => _importedPackageIds ?? (_importedPackageIds = new InputList<string>());
+            set => _importedPackageIds = value;
+        }
+
+        [Input("importedPackageNames")]
+        private InputList<string>? _importedPackageNames;
+
+        /// <summary>
+        /// A list of package names imported into this instance (if any). Use importedPackageIds field to get the details of the imported packages.
+        /// </summary>
+        public InputList<string> ImportedPackageNames
+        {
+            get => _importedPackageNames ?? (_importedPackageNames = new InputList<string>());
+            set => _importedPackageNames = value;
+        }
+
+        /// <summary>
+        /// Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
+        /// </summary>
+        [Input("isRoleBasedAccess")]
+        public Input<bool>? IsRoleBasedAccess { get; set; }
+
+        /// <summary>
         /// The current sub-state of the Digital Assistant instance.
         /// </summary>
         [Input("lifecycleSubState")]
         public Input<string>? LifecycleSubState { get; set; }
+
+        [Input("restrictedOperations")]
+        private InputList<Inputs.OdaInstanceRestrictedOperationGetArgs>? _restrictedOperations;
+
+        /// <summary>
+        /// A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+        /// </summary>
+        public InputList<Inputs.OdaInstanceRestrictedOperationGetArgs> RestrictedOperations
+        {
+            get => _restrictedOperations ?? (_restrictedOperations = new InputList<Inputs.OdaInstanceRestrictedOperationGetArgs>());
+            set => _restrictedOperations = value;
+        }
 
         /// <summary>
         /// Shape or size of the instance.

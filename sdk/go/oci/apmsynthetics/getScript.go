@@ -82,7 +82,7 @@ type LookupScriptResult struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
 	TimeUpdated string `pulumi:"timeUpdated"`
-	// The time when the script was uploaded.
+	// The time the script was uploaded.
 	TimeUploaded string `pulumi:"timeUploaded"`
 }
 
@@ -194,7 +194,7 @@ func (o LookupScriptResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupScriptResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// The time when the script was uploaded.
+// The time the script was uploaded.
 func (o LookupScriptResultOutput) TimeUploaded() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupScriptResult) string { return v.TimeUploaded }).(pulumi.StringOutput)
 }

@@ -188,6 +188,12 @@ namespace Pulumi.Oci.DevOps
         public Output<Outputs.DeployStageGreenBackendIps> GreenBackendIps { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Helm chart artifact OCID.
+        /// </summary>
+        [Output("helmChartDeployArtifactId")]
+        public Output<string> HelmChartDeployArtifactId { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) A boolean flag specifies whether this stage executes asynchronously.
         /// </summary>
         [Output("isAsync")]
@@ -254,7 +260,7 @@ namespace Pulumi.Oci.DevOps
         public Output<string> OkeClusterDeployEnvironmentId { get; private set; } = null!;
 
         /// <summary>
-        /// Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+        /// Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
         /// </summary>
         [Output("productionLoadBalancerConfig")]
         public Output<Outputs.DeployStageProductionLoadBalancerConfig> ProductionLoadBalancerConfig { get; private set; } = null!;
@@ -264,6 +270,12 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         [Output("projectId")]
         public Output<string> ProjectId { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
+        /// </summary>
+        [Output("releaseName")]
+        public Output<string> ReleaseName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Specifies the rollback policy. This is initiated on the failure of certain stage types.
@@ -308,10 +320,22 @@ namespace Pulumi.Oci.DevOps
         public Output<string> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Time to wait for execution of a helm stage. Defaults to 300 seconds.
+        /// </summary>
+        [Output("timeoutInSeconds")]
+        public Output<int> TimeoutInSeconds { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Specifies the target or destination backend set.
         /// </summary>
         [Output("trafficShiftTarget")]
         public Output<string> TrafficShiftTarget { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) List of values.yaml file artifact OCIDs.
+        /// </summary>
+        [Output("valuesArtifactIds")]
+        public Output<ImmutableArray<string>> ValuesArtifactIds { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Specifies wait criteria for the Wait stage.
@@ -546,6 +570,12 @@ namespace Pulumi.Oci.DevOps
         public Input<Inputs.DeployStageGreenBackendIpsArgs>? GreenBackendIps { get; set; }
 
         /// <summary>
+        /// (Updatable) Helm chart artifact OCID.
+        /// </summary>
+        [Input("helmChartDeployArtifactId")]
+        public Input<string>? HelmChartDeployArtifactId { get; set; }
+
+        /// <summary>
         /// (Updatable) A boolean flag specifies whether this stage executes asynchronously.
         /// </summary>
         [Input("isAsync")]
@@ -612,10 +642,16 @@ namespace Pulumi.Oci.DevOps
         public Input<string>? OkeClusterDeployEnvironmentId { get; set; }
 
         /// <summary>
-        /// Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+        /// Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
         /// </summary>
         [Input("productionLoadBalancerConfig")]
         public Input<Inputs.DeployStageProductionLoadBalancerConfigArgs>? ProductionLoadBalancerConfig { get; set; }
+
+        /// <summary>
+        /// (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
+        /// </summary>
+        [Input("releaseName")]
+        public Input<string>? ReleaseName { get; set; }
 
         /// <summary>
         /// (Updatable) Specifies the rollback policy. This is initiated on the failure of certain stage types.
@@ -636,10 +672,28 @@ namespace Pulumi.Oci.DevOps
         public Input<Inputs.DeployStageTestLoadBalancerConfigArgs>? TestLoadBalancerConfig { get; set; }
 
         /// <summary>
+        /// (Updatable) Time to wait for execution of a helm stage. Defaults to 300 seconds.
+        /// </summary>
+        [Input("timeoutInSeconds")]
+        public Input<int>? TimeoutInSeconds { get; set; }
+
+        /// <summary>
         /// (Updatable) Specifies the target or destination backend set.
         /// </summary>
         [Input("trafficShiftTarget")]
         public Input<string>? TrafficShiftTarget { get; set; }
+
+        [Input("valuesArtifactIds")]
+        private InputList<string>? _valuesArtifactIds;
+
+        /// <summary>
+        /// (Updatable) List of values.yaml file artifact OCIDs.
+        /// </summary>
+        public InputList<string> ValuesArtifactIds
+        {
+            get => _valuesArtifactIds ?? (_valuesArtifactIds = new InputList<string>());
+            set => _valuesArtifactIds = value;
+        }
 
         /// <summary>
         /// (Updatable) Specifies wait criteria for the Wait stage.
@@ -841,6 +895,12 @@ namespace Pulumi.Oci.DevOps
         public Input<Inputs.DeployStageGreenBackendIpsGetArgs>? GreenBackendIps { get; set; }
 
         /// <summary>
+        /// (Updatable) Helm chart artifact OCID.
+        /// </summary>
+        [Input("helmChartDeployArtifactId")]
+        public Input<string>? HelmChartDeployArtifactId { get; set; }
+
+        /// <summary>
         /// (Updatable) A boolean flag specifies whether this stage executes asynchronously.
         /// </summary>
         [Input("isAsync")]
@@ -913,7 +973,7 @@ namespace Pulumi.Oci.DevOps
         public Input<string>? OkeClusterDeployEnvironmentId { get; set; }
 
         /// <summary>
-        /// Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+        /// Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
         /// </summary>
         [Input("productionLoadBalancerConfig")]
         public Input<Inputs.DeployStageProductionLoadBalancerConfigGetArgs>? ProductionLoadBalancerConfig { get; set; }
@@ -923,6 +983,12 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         [Input("projectId")]
         public Input<string>? ProjectId { get; set; }
+
+        /// <summary>
+        /// (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
+        /// </summary>
+        [Input("releaseName")]
+        public Input<string>? ReleaseName { get; set; }
 
         /// <summary>
         /// (Updatable) Specifies the rollback policy. This is initiated on the failure of certain stage types.
@@ -973,10 +1039,28 @@ namespace Pulumi.Oci.DevOps
         public Input<string>? TimeUpdated { get; set; }
 
         /// <summary>
+        /// (Updatable) Time to wait for execution of a helm stage. Defaults to 300 seconds.
+        /// </summary>
+        [Input("timeoutInSeconds")]
+        public Input<int>? TimeoutInSeconds { get; set; }
+
+        /// <summary>
         /// (Updatable) Specifies the target or destination backend set.
         /// </summary>
         [Input("trafficShiftTarget")]
         public Input<string>? TrafficShiftTarget { get; set; }
+
+        [Input("valuesArtifactIds")]
+        private InputList<string>? _valuesArtifactIds;
+
+        /// <summary>
+        /// (Updatable) List of values.yaml file artifact OCIDs.
+        /// </summary>
+        public InputList<string> ValuesArtifactIds
+        {
+            get => _valuesArtifactIds ?? (_valuesArtifactIds = new InputList<string>());
+            set => _valuesArtifactIds = value;
+        }
 
         /// <summary>
         /// (Updatable) Specifies wait criteria for the Wait stage.

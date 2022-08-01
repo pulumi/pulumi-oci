@@ -20,10 +20,13 @@ class GetExsiHostResult:
     """
     A collection of values returned by getExsiHost.
     """
-    def __init__(__self__, billing_contract_end_date=None, compartment_id=None, compute_availability_domain=None, compute_instance_id=None, current_sku=None, defined_tags=None, display_name=None, esxi_host_id=None, failed_esxi_host_id=None, freeform_tags=None, grace_period_end_date=None, id=None, next_sku=None, replacement_esxi_host_id=None, sddc_id=None, state=None, time_created=None, time_updated=None):
+    def __init__(__self__, billing_contract_end_date=None, capacity_reservation_id=None, compartment_id=None, compute_availability_domain=None, compute_instance_id=None, current_sku=None, defined_tags=None, display_name=None, esxi_host_id=None, failed_esxi_host_id=None, freeform_tags=None, grace_period_end_date=None, host_ocpu_count=None, host_shape_name=None, id=None, next_sku=None, replacement_esxi_host_id=None, sddc_id=None, state=None, time_created=None, time_updated=None):
         if billing_contract_end_date and not isinstance(billing_contract_end_date, str):
             raise TypeError("Expected argument 'billing_contract_end_date' to be a str")
         pulumi.set(__self__, "billing_contract_end_date", billing_contract_end_date)
+        if capacity_reservation_id and not isinstance(capacity_reservation_id, str):
+            raise TypeError("Expected argument 'capacity_reservation_id' to be a str")
+        pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -54,6 +57,12 @@ class GetExsiHostResult:
         if grace_period_end_date and not isinstance(grace_period_end_date, str):
             raise TypeError("Expected argument 'grace_period_end_date' to be a str")
         pulumi.set(__self__, "grace_period_end_date", grace_period_end_date)
+        if host_ocpu_count and not isinstance(host_ocpu_count, float):
+            raise TypeError("Expected argument 'host_ocpu_count' to be a float")
+        pulumi.set(__self__, "host_ocpu_count", host_ocpu_count)
+        if host_shape_name and not isinstance(host_shape_name, str):
+            raise TypeError("Expected argument 'host_shape_name' to be a str")
+        pulumi.set(__self__, "host_shape_name", host_shape_name)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -83,6 +92,14 @@ class GetExsiHostResult:
         Current billing cycle end date. If the value in `currentSku` and `nextSku` are different, the value specified in `nextSku` becomes the new `currentSKU` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "billing_contract_end_date")
+
+    @property
+    @pulumi.getter(name="capacityReservationId")
+    def capacity_reservation_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+        """
+        return pulumi.get(self, "capacity_reservation_id")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -162,6 +179,22 @@ class GetExsiHostResult:
         return pulumi.get(self, "grace_period_end_date")
 
     @property
+    @pulumi.getter(name="hostOcpuCount")
+    def host_ocpu_count(self) -> float:
+        """
+        The OCPU count of the ESXi host.
+        """
+        return pulumi.get(self, "host_ocpu_count")
+
+    @property
+    @pulumi.getter(name="hostShapeName")
+    def host_shape_name(self) -> str:
+        """
+        The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+        """
+        return pulumi.get(self, "host_shape_name")
+
+    @property
     @pulumi.getter
     def id(self) -> str:
         """
@@ -225,6 +258,7 @@ class AwaitableGetExsiHostResult(GetExsiHostResult):
             yield self
         return GetExsiHostResult(
             billing_contract_end_date=self.billing_contract_end_date,
+            capacity_reservation_id=self.capacity_reservation_id,
             compartment_id=self.compartment_id,
             compute_availability_domain=self.compute_availability_domain,
             compute_instance_id=self.compute_instance_id,
@@ -235,6 +269,8 @@ class AwaitableGetExsiHostResult(GetExsiHostResult):
             failed_esxi_host_id=self.failed_esxi_host_id,
             freeform_tags=self.freeform_tags,
             grace_period_end_date=self.grace_period_end_date,
+            host_ocpu_count=self.host_ocpu_count,
+            host_shape_name=self.host_shape_name,
             id=self.id,
             next_sku=self.next_sku,
             replacement_esxi_host_id=self.replacement_esxi_host_id,
@@ -273,6 +309,7 @@ def get_exsi_host(esxi_host_id: Optional[str] = None,
 
     return AwaitableGetExsiHostResult(
         billing_contract_end_date=__ret__.billing_contract_end_date,
+        capacity_reservation_id=__ret__.capacity_reservation_id,
         compartment_id=__ret__.compartment_id,
         compute_availability_domain=__ret__.compute_availability_domain,
         compute_instance_id=__ret__.compute_instance_id,
@@ -283,6 +320,8 @@ def get_exsi_host(esxi_host_id: Optional[str] = None,
         failed_esxi_host_id=__ret__.failed_esxi_host_id,
         freeform_tags=__ret__.freeform_tags,
         grace_period_end_date=__ret__.grace_period_end_date,
+        host_ocpu_count=__ret__.host_ocpu_count,
+        host_shape_name=__ret__.host_shape_name,
         id=__ret__.id,
         next_sku=__ret__.next_sku,
         replacement_esxi_host_id=__ret__.replacement_esxi_host_id,

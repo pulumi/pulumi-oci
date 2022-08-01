@@ -54,11 +54,11 @@ export interface GetManagedListResult {
      */
     readonly definedTags: {[key: string]: any};
     /**
-     * ManagedList description
+     * ManagedList description.
      */
     readonly description: string;
     /**
-     * ManagedList display name
+     * ManagedList display name.
      */
     readonly displayName: string;
     /**

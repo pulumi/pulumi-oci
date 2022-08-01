@@ -54,6 +54,11 @@ public final class GetNatGatewayResult {
      */
     private final String publicIpId;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
+     * 
+     */
+    private final String routeTableId;
+    /**
      * @return The NAT gateway&#39;s current state.
      * 
      */
@@ -80,6 +85,7 @@ public final class GetNatGatewayResult {
         @CustomType.Parameter("natGatewayId") String natGatewayId,
         @CustomType.Parameter("natIp") String natIp,
         @CustomType.Parameter("publicIpId") String publicIpId,
+        @CustomType.Parameter("routeTableId") String routeTableId,
         @CustomType.Parameter("state") String state,
         @CustomType.Parameter("timeCreated") String timeCreated,
         @CustomType.Parameter("vcnId") String vcnId) {
@@ -92,6 +98,7 @@ public final class GetNatGatewayResult {
         this.natGatewayId = natGatewayId;
         this.natIp = natIp;
         this.publicIpId = publicIpId;
+        this.routeTableId = routeTableId;
         this.state = state;
         this.timeCreated = timeCreated;
         this.vcnId = vcnId;
@@ -157,6 +164,13 @@ public final class GetNatGatewayResult {
         return this.publicIpId;
     }
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
+     * 
+     */
+    public String routeTableId() {
+        return this.routeTableId;
+    }
+    /**
      * @return The NAT gateway&#39;s current state.
      * 
      */
@@ -196,6 +210,7 @@ public final class GetNatGatewayResult {
         private String natGatewayId;
         private String natIp;
         private String publicIpId;
+        private String routeTableId;
         private String state;
         private String timeCreated;
         private String vcnId;
@@ -215,6 +230,7 @@ public final class GetNatGatewayResult {
     	      this.natGatewayId = defaults.natGatewayId;
     	      this.natIp = defaults.natIp;
     	      this.publicIpId = defaults.publicIpId;
+    	      this.routeTableId = defaults.routeTableId;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
     	      this.vcnId = defaults.vcnId;
@@ -256,6 +272,10 @@ public final class GetNatGatewayResult {
             this.publicIpId = Objects.requireNonNull(publicIpId);
             return this;
         }
+        public Builder routeTableId(String routeTableId) {
+            this.routeTableId = Objects.requireNonNull(routeTableId);
+            return this;
+        }
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
@@ -268,7 +288,7 @@ public final class GetNatGatewayResult {
             this.vcnId = Objects.requireNonNull(vcnId);
             return this;
         }        public GetNatGatewayResult build() {
-            return new GetNatGatewayResult(blockTraffic, compartmentId, definedTags, displayName, freeformTags, id, natGatewayId, natIp, publicIpId, state, timeCreated, vcnId);
+            return new GetNatGatewayResult(blockTraffic, compartmentId, definedTags, displayName, freeformTags, id, natGatewayId, natIp, publicIpId, routeTableId, state, timeCreated, vcnId);
         }
     }
 }

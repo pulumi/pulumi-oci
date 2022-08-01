@@ -141,6 +141,12 @@ namespace Pulumi.Oci.Database
         public Output<ImmutableArray<Outputs.ExternalNonContainerDatabaseOperationsInsightsConfig>> OperationsInsightsConfigs { get; private set; } = null!;
 
         /// <summary>
+        /// The configuration of Stack Monitoring for the external database.
+        /// </summary>
+        [Output("stackMonitoringConfigs")]
+        public Output<ImmutableArray<Outputs.ExternalNonContainerDatabaseStackMonitoringConfig>> StackMonitoringConfigs { get; private set; } = null!;
+
+        /// <summary>
         /// The current state of the Oracle Cloud Infrastructure external database resource.
         /// </summary>
         [Output("state")]
@@ -359,6 +365,18 @@ namespace Pulumi.Oci.Database
         {
             get => _operationsInsightsConfigs ?? (_operationsInsightsConfigs = new InputList<Inputs.ExternalNonContainerDatabaseOperationsInsightsConfigGetArgs>());
             set => _operationsInsightsConfigs = value;
+        }
+
+        [Input("stackMonitoringConfigs")]
+        private InputList<Inputs.ExternalNonContainerDatabaseStackMonitoringConfigGetArgs>? _stackMonitoringConfigs;
+
+        /// <summary>
+        /// The configuration of Stack Monitoring for the external database.
+        /// </summary>
+        public InputList<Inputs.ExternalNonContainerDatabaseStackMonitoringConfigGetArgs> StackMonitoringConfigs
+        {
+            get => _stackMonitoringConfigs ?? (_stackMonitoringConfigs = new InputList<Inputs.ExternalNonContainerDatabaseStackMonitoringConfigGetArgs>());
+            set => _stackMonitoringConfigs = value;
         }
 
         /// <summary>

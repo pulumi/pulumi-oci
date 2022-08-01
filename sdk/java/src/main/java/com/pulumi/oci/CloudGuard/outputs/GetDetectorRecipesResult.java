@@ -28,7 +28,7 @@ public final class GetDetectorRecipesResult {
      */
     private final List<GetDetectorRecipesDetectorRecipeCollection> detectorRecipeCollections;
     /**
-     * @return displayName
+     * @return Display name for DetectorRecipeDetectorRule.
      * 
      */
     private final @Nullable String displayName;
@@ -88,7 +88,7 @@ public final class GetDetectorRecipesResult {
         return this.detectorRecipeCollections;
     }
     /**
-     * @return displayName
+     * @return Display name for DetectorRecipeDetectorRule.
      * 
      */
     public Optional<String> displayName() {

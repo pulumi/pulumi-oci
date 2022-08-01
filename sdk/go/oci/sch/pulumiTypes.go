@@ -17,6 +17,8 @@ type ConnectorSource struct {
 	Kind string `pulumi:"kind"`
 	// (Updatable) The logs for this Logging source.
 	LogSources []ConnectorSourceLogSource `pulumi:"logSources"`
+	// (Updatable) The list of metric namespaces to retrieve data from.
+	MonitoringSources []ConnectorSourceMonitoringSource `pulumi:"monitoringSources"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
 	StreamId *string `pulumi:"streamId"`
 }
@@ -39,6 +41,8 @@ type ConnectorSourceArgs struct {
 	Kind pulumi.StringInput `pulumi:"kind"`
 	// (Updatable) The logs for this Logging source.
 	LogSources ConnectorSourceLogSourceArrayInput `pulumi:"logSources"`
+	// (Updatable) The list of metric namespaces to retrieve data from.
+	MonitoringSources ConnectorSourceMonitoringSourceArrayInput `pulumi:"monitoringSources"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
 	StreamId pulumi.StringPtrInput `pulumi:"streamId"`
 }
@@ -135,6 +139,11 @@ func (o ConnectorSourceOutput) LogSources() ConnectorSourceLogSourceArrayOutput 
 	return o.ApplyT(func(v ConnectorSource) []ConnectorSourceLogSource { return v.LogSources }).(ConnectorSourceLogSourceArrayOutput)
 }
 
+// (Updatable) The list of metric namespaces to retrieve data from.
+func (o ConnectorSourceOutput) MonitoringSources() ConnectorSourceMonitoringSourceArrayOutput {
+	return o.ApplyT(func(v ConnectorSource) []ConnectorSourceMonitoringSource { return v.MonitoringSources }).(ConnectorSourceMonitoringSourceArrayOutput)
+}
+
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
 func (o ConnectorSourceOutput) StreamId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConnectorSource) *string { return v.StreamId }).(pulumi.StringPtrOutput)
@@ -192,6 +201,16 @@ func (o ConnectorSourcePtrOutput) LogSources() ConnectorSourceLogSourceArrayOutp
 		}
 		return v.LogSources
 	}).(ConnectorSourceLogSourceArrayOutput)
+}
+
+// (Updatable) The list of metric namespaces to retrieve data from.
+func (o ConnectorSourcePtrOutput) MonitoringSources() ConnectorSourceMonitoringSourceArrayOutput {
+	return o.ApplyT(func(v *ConnectorSource) []ConnectorSourceMonitoringSource {
+		if v == nil {
+			return nil
+		}
+		return v.MonitoringSources
+	}).(ConnectorSourceMonitoringSourceArrayOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
@@ -454,6 +473,432 @@ func (o ConnectorSourceLogSourceArrayOutput) Index(i pulumi.IntInput) ConnectorS
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ConnectorSourceLogSource {
 		return vs[0].([]ConnectorSourceLogSource)[vs[1].(int)]
 	}).(ConnectorSourceLogSourceOutput)
+}
+
+type ConnectorSourceMonitoringSource struct {
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
+	CompartmentId *string `pulumi:"compartmentId"`
+	// (Updatable) Discriminator for namespaces in the compartment-specific list.
+	NamespaceDetails *ConnectorSourceMonitoringSourceNamespaceDetails `pulumi:"namespaceDetails"`
+}
+
+// ConnectorSourceMonitoringSourceInput is an input type that accepts ConnectorSourceMonitoringSourceArgs and ConnectorSourceMonitoringSourceOutput values.
+// You can construct a concrete instance of `ConnectorSourceMonitoringSourceInput` via:
+//
+//          ConnectorSourceMonitoringSourceArgs{...}
+type ConnectorSourceMonitoringSourceInput interface {
+	pulumi.Input
+
+	ToConnectorSourceMonitoringSourceOutput() ConnectorSourceMonitoringSourceOutput
+	ToConnectorSourceMonitoringSourceOutputWithContext(context.Context) ConnectorSourceMonitoringSourceOutput
+}
+
+type ConnectorSourceMonitoringSourceArgs struct {
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
+	// (Updatable) Discriminator for namespaces in the compartment-specific list.
+	NamespaceDetails ConnectorSourceMonitoringSourceNamespaceDetailsPtrInput `pulumi:"namespaceDetails"`
+}
+
+func (ConnectorSourceMonitoringSourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConnectorSourceMonitoringSource)(nil)).Elem()
+}
+
+func (i ConnectorSourceMonitoringSourceArgs) ToConnectorSourceMonitoringSourceOutput() ConnectorSourceMonitoringSourceOutput {
+	return i.ToConnectorSourceMonitoringSourceOutputWithContext(context.Background())
+}
+
+func (i ConnectorSourceMonitoringSourceArgs) ToConnectorSourceMonitoringSourceOutputWithContext(ctx context.Context) ConnectorSourceMonitoringSourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConnectorSourceMonitoringSourceOutput)
+}
+
+// ConnectorSourceMonitoringSourceArrayInput is an input type that accepts ConnectorSourceMonitoringSourceArray and ConnectorSourceMonitoringSourceArrayOutput values.
+// You can construct a concrete instance of `ConnectorSourceMonitoringSourceArrayInput` via:
+//
+//          ConnectorSourceMonitoringSourceArray{ ConnectorSourceMonitoringSourceArgs{...} }
+type ConnectorSourceMonitoringSourceArrayInput interface {
+	pulumi.Input
+
+	ToConnectorSourceMonitoringSourceArrayOutput() ConnectorSourceMonitoringSourceArrayOutput
+	ToConnectorSourceMonitoringSourceArrayOutputWithContext(context.Context) ConnectorSourceMonitoringSourceArrayOutput
+}
+
+type ConnectorSourceMonitoringSourceArray []ConnectorSourceMonitoringSourceInput
+
+func (ConnectorSourceMonitoringSourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ConnectorSourceMonitoringSource)(nil)).Elem()
+}
+
+func (i ConnectorSourceMonitoringSourceArray) ToConnectorSourceMonitoringSourceArrayOutput() ConnectorSourceMonitoringSourceArrayOutput {
+	return i.ToConnectorSourceMonitoringSourceArrayOutputWithContext(context.Background())
+}
+
+func (i ConnectorSourceMonitoringSourceArray) ToConnectorSourceMonitoringSourceArrayOutputWithContext(ctx context.Context) ConnectorSourceMonitoringSourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConnectorSourceMonitoringSourceArrayOutput)
+}
+
+type ConnectorSourceMonitoringSourceOutput struct{ *pulumi.OutputState }
+
+func (ConnectorSourceMonitoringSourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConnectorSourceMonitoringSource)(nil)).Elem()
+}
+
+func (o ConnectorSourceMonitoringSourceOutput) ToConnectorSourceMonitoringSourceOutput() ConnectorSourceMonitoringSourceOutput {
+	return o
+}
+
+func (o ConnectorSourceMonitoringSourceOutput) ToConnectorSourceMonitoringSourceOutputWithContext(ctx context.Context) ConnectorSourceMonitoringSourceOutput {
+	return o
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
+func (o ConnectorSourceMonitoringSourceOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConnectorSourceMonitoringSource) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Discriminator for namespaces in the compartment-specific list.
+func (o ConnectorSourceMonitoringSourceOutput) NamespaceDetails() ConnectorSourceMonitoringSourceNamespaceDetailsPtrOutput {
+	return o.ApplyT(func(v ConnectorSourceMonitoringSource) *ConnectorSourceMonitoringSourceNamespaceDetails {
+		return v.NamespaceDetails
+	}).(ConnectorSourceMonitoringSourceNamespaceDetailsPtrOutput)
+}
+
+type ConnectorSourceMonitoringSourceArrayOutput struct{ *pulumi.OutputState }
+
+func (ConnectorSourceMonitoringSourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ConnectorSourceMonitoringSource)(nil)).Elem()
+}
+
+func (o ConnectorSourceMonitoringSourceArrayOutput) ToConnectorSourceMonitoringSourceArrayOutput() ConnectorSourceMonitoringSourceArrayOutput {
+	return o
+}
+
+func (o ConnectorSourceMonitoringSourceArrayOutput) ToConnectorSourceMonitoringSourceArrayOutputWithContext(ctx context.Context) ConnectorSourceMonitoringSourceArrayOutput {
+	return o
+}
+
+func (o ConnectorSourceMonitoringSourceArrayOutput) Index(i pulumi.IntInput) ConnectorSourceMonitoringSourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ConnectorSourceMonitoringSource {
+		return vs[0].([]ConnectorSourceMonitoringSource)[vs[1].(int)]
+	}).(ConnectorSourceMonitoringSourceOutput)
+}
+
+type ConnectorSourceMonitoringSourceNamespaceDetails struct {
+	// (Updatable) The type descriminator.
+	Kind string `pulumi:"kind"`
+	// (Updatable) The namespaces for the compartment-specific list.
+	Namespaces []ConnectorSourceMonitoringSourceNamespaceDetailsNamespace `pulumi:"namespaces"`
+}
+
+// ConnectorSourceMonitoringSourceNamespaceDetailsInput is an input type that accepts ConnectorSourceMonitoringSourceNamespaceDetailsArgs and ConnectorSourceMonitoringSourceNamespaceDetailsOutput values.
+// You can construct a concrete instance of `ConnectorSourceMonitoringSourceNamespaceDetailsInput` via:
+//
+//          ConnectorSourceMonitoringSourceNamespaceDetailsArgs{...}
+type ConnectorSourceMonitoringSourceNamespaceDetailsInput interface {
+	pulumi.Input
+
+	ToConnectorSourceMonitoringSourceNamespaceDetailsOutput() ConnectorSourceMonitoringSourceNamespaceDetailsOutput
+	ToConnectorSourceMonitoringSourceNamespaceDetailsOutputWithContext(context.Context) ConnectorSourceMonitoringSourceNamespaceDetailsOutput
+}
+
+type ConnectorSourceMonitoringSourceNamespaceDetailsArgs struct {
+	// (Updatable) The type descriminator.
+	Kind pulumi.StringInput `pulumi:"kind"`
+	// (Updatable) The namespaces for the compartment-specific list.
+	Namespaces ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArrayInput `pulumi:"namespaces"`
+}
+
+func (ConnectorSourceMonitoringSourceNamespaceDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConnectorSourceMonitoringSourceNamespaceDetails)(nil)).Elem()
+}
+
+func (i ConnectorSourceMonitoringSourceNamespaceDetailsArgs) ToConnectorSourceMonitoringSourceNamespaceDetailsOutput() ConnectorSourceMonitoringSourceNamespaceDetailsOutput {
+	return i.ToConnectorSourceMonitoringSourceNamespaceDetailsOutputWithContext(context.Background())
+}
+
+func (i ConnectorSourceMonitoringSourceNamespaceDetailsArgs) ToConnectorSourceMonitoringSourceNamespaceDetailsOutputWithContext(ctx context.Context) ConnectorSourceMonitoringSourceNamespaceDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConnectorSourceMonitoringSourceNamespaceDetailsOutput)
+}
+
+func (i ConnectorSourceMonitoringSourceNamespaceDetailsArgs) ToConnectorSourceMonitoringSourceNamespaceDetailsPtrOutput() ConnectorSourceMonitoringSourceNamespaceDetailsPtrOutput {
+	return i.ToConnectorSourceMonitoringSourceNamespaceDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i ConnectorSourceMonitoringSourceNamespaceDetailsArgs) ToConnectorSourceMonitoringSourceNamespaceDetailsPtrOutputWithContext(ctx context.Context) ConnectorSourceMonitoringSourceNamespaceDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConnectorSourceMonitoringSourceNamespaceDetailsOutput).ToConnectorSourceMonitoringSourceNamespaceDetailsPtrOutputWithContext(ctx)
+}
+
+// ConnectorSourceMonitoringSourceNamespaceDetailsPtrInput is an input type that accepts ConnectorSourceMonitoringSourceNamespaceDetailsArgs, ConnectorSourceMonitoringSourceNamespaceDetailsPtr and ConnectorSourceMonitoringSourceNamespaceDetailsPtrOutput values.
+// You can construct a concrete instance of `ConnectorSourceMonitoringSourceNamespaceDetailsPtrInput` via:
+//
+//          ConnectorSourceMonitoringSourceNamespaceDetailsArgs{...}
+//
+//  or:
+//
+//          nil
+type ConnectorSourceMonitoringSourceNamespaceDetailsPtrInput interface {
+	pulumi.Input
+
+	ToConnectorSourceMonitoringSourceNamespaceDetailsPtrOutput() ConnectorSourceMonitoringSourceNamespaceDetailsPtrOutput
+	ToConnectorSourceMonitoringSourceNamespaceDetailsPtrOutputWithContext(context.Context) ConnectorSourceMonitoringSourceNamespaceDetailsPtrOutput
+}
+
+type connectorSourceMonitoringSourceNamespaceDetailsPtrType ConnectorSourceMonitoringSourceNamespaceDetailsArgs
+
+func ConnectorSourceMonitoringSourceNamespaceDetailsPtr(v *ConnectorSourceMonitoringSourceNamespaceDetailsArgs) ConnectorSourceMonitoringSourceNamespaceDetailsPtrInput {
+	return (*connectorSourceMonitoringSourceNamespaceDetailsPtrType)(v)
+}
+
+func (*connectorSourceMonitoringSourceNamespaceDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ConnectorSourceMonitoringSourceNamespaceDetails)(nil)).Elem()
+}
+
+func (i *connectorSourceMonitoringSourceNamespaceDetailsPtrType) ToConnectorSourceMonitoringSourceNamespaceDetailsPtrOutput() ConnectorSourceMonitoringSourceNamespaceDetailsPtrOutput {
+	return i.ToConnectorSourceMonitoringSourceNamespaceDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *connectorSourceMonitoringSourceNamespaceDetailsPtrType) ToConnectorSourceMonitoringSourceNamespaceDetailsPtrOutputWithContext(ctx context.Context) ConnectorSourceMonitoringSourceNamespaceDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConnectorSourceMonitoringSourceNamespaceDetailsPtrOutput)
+}
+
+type ConnectorSourceMonitoringSourceNamespaceDetailsOutput struct{ *pulumi.OutputState }
+
+func (ConnectorSourceMonitoringSourceNamespaceDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConnectorSourceMonitoringSourceNamespaceDetails)(nil)).Elem()
+}
+
+func (o ConnectorSourceMonitoringSourceNamespaceDetailsOutput) ToConnectorSourceMonitoringSourceNamespaceDetailsOutput() ConnectorSourceMonitoringSourceNamespaceDetailsOutput {
+	return o
+}
+
+func (o ConnectorSourceMonitoringSourceNamespaceDetailsOutput) ToConnectorSourceMonitoringSourceNamespaceDetailsOutputWithContext(ctx context.Context) ConnectorSourceMonitoringSourceNamespaceDetailsOutput {
+	return o
+}
+
+func (o ConnectorSourceMonitoringSourceNamespaceDetailsOutput) ToConnectorSourceMonitoringSourceNamespaceDetailsPtrOutput() ConnectorSourceMonitoringSourceNamespaceDetailsPtrOutput {
+	return o.ToConnectorSourceMonitoringSourceNamespaceDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o ConnectorSourceMonitoringSourceNamespaceDetailsOutput) ToConnectorSourceMonitoringSourceNamespaceDetailsPtrOutputWithContext(ctx context.Context) ConnectorSourceMonitoringSourceNamespaceDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ConnectorSourceMonitoringSourceNamespaceDetails) *ConnectorSourceMonitoringSourceNamespaceDetails {
+		return &v
+	}).(ConnectorSourceMonitoringSourceNamespaceDetailsPtrOutput)
+}
+
+// (Updatable) The type descriminator.
+func (o ConnectorSourceMonitoringSourceNamespaceDetailsOutput) Kind() pulumi.StringOutput {
+	return o.ApplyT(func(v ConnectorSourceMonitoringSourceNamespaceDetails) string { return v.Kind }).(pulumi.StringOutput)
+}
+
+// (Updatable) The namespaces for the compartment-specific list.
+func (o ConnectorSourceMonitoringSourceNamespaceDetailsOutput) Namespaces() ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArrayOutput {
+	return o.ApplyT(func(v ConnectorSourceMonitoringSourceNamespaceDetails) []ConnectorSourceMonitoringSourceNamespaceDetailsNamespace {
+		return v.Namespaces
+	}).(ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArrayOutput)
+}
+
+type ConnectorSourceMonitoringSourceNamespaceDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (ConnectorSourceMonitoringSourceNamespaceDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ConnectorSourceMonitoringSourceNamespaceDetails)(nil)).Elem()
+}
+
+func (o ConnectorSourceMonitoringSourceNamespaceDetailsPtrOutput) ToConnectorSourceMonitoringSourceNamespaceDetailsPtrOutput() ConnectorSourceMonitoringSourceNamespaceDetailsPtrOutput {
+	return o
+}
+
+func (o ConnectorSourceMonitoringSourceNamespaceDetailsPtrOutput) ToConnectorSourceMonitoringSourceNamespaceDetailsPtrOutputWithContext(ctx context.Context) ConnectorSourceMonitoringSourceNamespaceDetailsPtrOutput {
+	return o
+}
+
+func (o ConnectorSourceMonitoringSourceNamespaceDetailsPtrOutput) Elem() ConnectorSourceMonitoringSourceNamespaceDetailsOutput {
+	return o.ApplyT(func(v *ConnectorSourceMonitoringSourceNamespaceDetails) ConnectorSourceMonitoringSourceNamespaceDetails {
+		if v != nil {
+			return *v
+		}
+		var ret ConnectorSourceMonitoringSourceNamespaceDetails
+		return ret
+	}).(ConnectorSourceMonitoringSourceNamespaceDetailsOutput)
+}
+
+// (Updatable) The type descriminator.
+func (o ConnectorSourceMonitoringSourceNamespaceDetailsPtrOutput) Kind() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConnectorSourceMonitoringSourceNamespaceDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Kind
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The namespaces for the compartment-specific list.
+func (o ConnectorSourceMonitoringSourceNamespaceDetailsPtrOutput) Namespaces() ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArrayOutput {
+	return o.ApplyT(func(v *ConnectorSourceMonitoringSourceNamespaceDetails) []ConnectorSourceMonitoringSourceNamespaceDetailsNamespace {
+		if v == nil {
+			return nil
+		}
+		return v.Namespaces
+	}).(ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArrayOutput)
+}
+
+type ConnectorSourceMonitoringSourceNamespaceDetailsNamespace struct {
+	// (Updatable) The metrics to query for the specified metric namespace.
+	Metrics ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetrics `pulumi:"metrics"`
+	// (Updatable) The namespace.
+	Namespace string `pulumi:"namespace"`
+}
+
+// ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceInput is an input type that accepts ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs and ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceOutput values.
+// You can construct a concrete instance of `ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceInput` via:
+//
+//          ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs{...}
+type ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceInput interface {
+	pulumi.Input
+
+	ToConnectorSourceMonitoringSourceNamespaceDetailsNamespaceOutput() ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceOutput
+	ToConnectorSourceMonitoringSourceNamespaceDetailsNamespaceOutputWithContext(context.Context) ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceOutput
+}
+
+type ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs struct {
+	// (Updatable) The metrics to query for the specified metric namespace.
+	Metrics ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsInput `pulumi:"metrics"`
+	// (Updatable) The namespace.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+}
+
+func (ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConnectorSourceMonitoringSourceNamespaceDetailsNamespace)(nil)).Elem()
+}
+
+func (i ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs) ToConnectorSourceMonitoringSourceNamespaceDetailsNamespaceOutput() ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceOutput {
+	return i.ToConnectorSourceMonitoringSourceNamespaceDetailsNamespaceOutputWithContext(context.Background())
+}
+
+func (i ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs) ToConnectorSourceMonitoringSourceNamespaceDetailsNamespaceOutputWithContext(ctx context.Context) ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceOutput)
+}
+
+// ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArrayInput is an input type that accepts ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArray and ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArrayOutput values.
+// You can construct a concrete instance of `ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArrayInput` via:
+//
+//          ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArray{ ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs{...} }
+type ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArrayInput interface {
+	pulumi.Input
+
+	ToConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArrayOutput() ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArrayOutput
+	ToConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArrayOutputWithContext(context.Context) ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArrayOutput
+}
+
+type ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArray []ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceInput
+
+func (ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ConnectorSourceMonitoringSourceNamespaceDetailsNamespace)(nil)).Elem()
+}
+
+func (i ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArray) ToConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArrayOutput() ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArrayOutput {
+	return i.ToConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArrayOutputWithContext(context.Background())
+}
+
+func (i ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArray) ToConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArrayOutputWithContext(ctx context.Context) ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArrayOutput)
+}
+
+type ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceOutput struct{ *pulumi.OutputState }
+
+func (ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConnectorSourceMonitoringSourceNamespaceDetailsNamespace)(nil)).Elem()
+}
+
+func (o ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceOutput) ToConnectorSourceMonitoringSourceNamespaceDetailsNamespaceOutput() ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceOutput {
+	return o
+}
+
+func (o ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceOutput) ToConnectorSourceMonitoringSourceNamespaceDetailsNamespaceOutputWithContext(ctx context.Context) ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceOutput {
+	return o
+}
+
+// (Updatable) The metrics to query for the specified metric namespace.
+func (o ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceOutput) Metrics() ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsOutput {
+	return o.ApplyT(func(v ConnectorSourceMonitoringSourceNamespaceDetailsNamespace) ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetrics {
+		return v.Metrics
+	}).(ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsOutput)
+}
+
+// (Updatable) The namespace.
+func (o ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v ConnectorSourceMonitoringSourceNamespaceDetailsNamespace) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+type ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArrayOutput struct{ *pulumi.OutputState }
+
+func (ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ConnectorSourceMonitoringSourceNamespaceDetailsNamespace)(nil)).Elem()
+}
+
+func (o ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArrayOutput) ToConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArrayOutput() ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArrayOutput {
+	return o
+}
+
+func (o ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArrayOutput) ToConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArrayOutputWithContext(ctx context.Context) ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArrayOutput {
+	return o
+}
+
+func (o ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArrayOutput) Index(i pulumi.IntInput) ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ConnectorSourceMonitoringSourceNamespaceDetailsNamespace {
+		return vs[0].([]ConnectorSourceMonitoringSourceNamespaceDetailsNamespace)[vs[1].(int)]
+	}).(ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceOutput)
+}
+
+type ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetrics struct {
+	// (Updatable) The type descriminator.
+	Kind string `pulumi:"kind"`
+}
+
+// ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsInput is an input type that accepts ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgs and ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsOutput values.
+// You can construct a concrete instance of `ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsInput` via:
+//
+//          ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgs{...}
+type ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsInput interface {
+	pulumi.Input
+
+	ToConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsOutput() ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsOutput
+	ToConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsOutputWithContext(context.Context) ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsOutput
+}
+
+type ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgs struct {
+	// (Updatable) The type descriminator.
+	Kind pulumi.StringInput `pulumi:"kind"`
+}
+
+func (ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetrics)(nil)).Elem()
+}
+
+func (i ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgs) ToConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsOutput() ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsOutput {
+	return i.ToConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsOutputWithContext(context.Background())
+}
+
+func (i ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgs) ToConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsOutputWithContext(ctx context.Context) ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsOutput)
+}
+
+type ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsOutput struct{ *pulumi.OutputState }
+
+func (ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetrics)(nil)).Elem()
+}
+
+func (o ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsOutput) ToConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsOutput() ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsOutput {
+	return o
+}
+
+func (o ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsOutput) ToConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsOutputWithContext(ctx context.Context) ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsOutput {
+	return o
+}
+
+// (Updatable) The type descriminator.
+func (o ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsOutput) Kind() pulumi.StringOutput {
+	return o.ApplyT(func(v ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetrics) string { return v.Kind }).(pulumi.StringOutput)
 }
 
 type ConnectorTarget struct {
@@ -968,7 +1413,7 @@ func (o ConnectorTargetDimensionArrayOutput) Index(i pulumi.IntInput) ConnectorT
 type ConnectorTargetDimensionDimensionValue struct {
 	// (Updatable) The type descriminator.
 	Kind string `pulumi:"kind"`
-	// (Updatable) The location to use for deriving the dimension value (evaluated). The path must start with `logContent` in an acceptable notation style with supported [JMESPath selectors](https://jmespath.org/specification.html): expression with dot and index operator (`.`, and `[]`). Example with dot notation: `logContent.data` Example with index notation: `logContent.data[0].content` For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). The returned value depends on the results of evaluation. If the evaluated value is valid, then the evaluated value is returned without double quotes. (Any front or trailing double quotes are trimmed before returning the value. For example, the evaluated value `"compartmentId"` is returned as `compartmentId`.) If the evaluated value is invalid, then the returned value is `SCH_EVAL_INVALID_VALUE`. If the evaluated value is empty, then the returned value is `SCH_EVAL_VALUE_EMPTY`.
+	// (Updatable) The location to use for deriving the dimension value (evaluated). The path must start with `logContent` in an acceptable notation style with supported [JMESPath selectors](https://jmespath.org/specification.html): expression with dot and index operator (`.` and `[]`). Example with dot notation: `logContent.data` Example with index notation: `logContent.data[0].content` For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). The returned value depends on the results of evaluation. If the evaluated value is valid, then the evaluated value is returned without double quotes. (Any front or trailing double quotes are trimmed before returning the value. For example, the evaluated value `"compartmentId"` is returned as `compartmentId`.) If the evaluated value is invalid, then the returned value is `SCH_EVAL_INVALID_VALUE`. If the evaluated value is empty, then the returned value is `SCH_EVAL_VALUE_EMPTY`.
 	Path *string `pulumi:"path"`
 	// (Updatable) The data extracted from the specified dimension value (passed as-is). Unicode characters only. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails).
 	Value *string `pulumi:"value"`
@@ -988,7 +1433,7 @@ type ConnectorTargetDimensionDimensionValueInput interface {
 type ConnectorTargetDimensionDimensionValueArgs struct {
 	// (Updatable) The type descriminator.
 	Kind pulumi.StringInput `pulumi:"kind"`
-	// (Updatable) The location to use for deriving the dimension value (evaluated). The path must start with `logContent` in an acceptable notation style with supported [JMESPath selectors](https://jmespath.org/specification.html): expression with dot and index operator (`.`, and `[]`). Example with dot notation: `logContent.data` Example with index notation: `logContent.data[0].content` For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). The returned value depends on the results of evaluation. If the evaluated value is valid, then the evaluated value is returned without double quotes. (Any front or trailing double quotes are trimmed before returning the value. For example, the evaluated value `"compartmentId"` is returned as `compartmentId`.) If the evaluated value is invalid, then the returned value is `SCH_EVAL_INVALID_VALUE`. If the evaluated value is empty, then the returned value is `SCH_EVAL_VALUE_EMPTY`.
+	// (Updatable) The location to use for deriving the dimension value (evaluated). The path must start with `logContent` in an acceptable notation style with supported [JMESPath selectors](https://jmespath.org/specification.html): expression with dot and index operator (`.` and `[]`). Example with dot notation: `logContent.data` Example with index notation: `logContent.data[0].content` For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). The returned value depends on the results of evaluation. If the evaluated value is valid, then the evaluated value is returned without double quotes. (Any front or trailing double quotes are trimmed before returning the value. For example, the evaluated value `"compartmentId"` is returned as `compartmentId`.) If the evaluated value is invalid, then the returned value is `SCH_EVAL_INVALID_VALUE`. If the evaluated value is empty, then the returned value is `SCH_EVAL_VALUE_EMPTY`.
 	Path pulumi.StringPtrInput `pulumi:"path"`
 	// (Updatable) The data extracted from the specified dimension value (passed as-is). Unicode characters only. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails).
 	Value pulumi.StringPtrInput `pulumi:"value"`
@@ -1076,7 +1521,7 @@ func (o ConnectorTargetDimensionDimensionValueOutput) Kind() pulumi.StringOutput
 	return o.ApplyT(func(v ConnectorTargetDimensionDimensionValue) string { return v.Kind }).(pulumi.StringOutput)
 }
 
-// (Updatable) The location to use for deriving the dimension value (evaluated). The path must start with `logContent` in an acceptable notation style with supported [JMESPath selectors](https://jmespath.org/specification.html): expression with dot and index operator (`.`, and `[]`). Example with dot notation: `logContent.data` Example with index notation: `logContent.data[0].content` For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). The returned value depends on the results of evaluation. If the evaluated value is valid, then the evaluated value is returned without double quotes. (Any front or trailing double quotes are trimmed before returning the value. For example, the evaluated value `"compartmentId"` is returned as `compartmentId`.) If the evaluated value is invalid, then the returned value is `SCH_EVAL_INVALID_VALUE`. If the evaluated value is empty, then the returned value is `SCH_EVAL_VALUE_EMPTY`.
+// (Updatable) The location to use for deriving the dimension value (evaluated). The path must start with `logContent` in an acceptable notation style with supported [JMESPath selectors](https://jmespath.org/specification.html): expression with dot and index operator (`.` and `[]`). Example with dot notation: `logContent.data` Example with index notation: `logContent.data[0].content` For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). The returned value depends on the results of evaluation. If the evaluated value is valid, then the evaluated value is returned without double quotes. (Any front or trailing double quotes are trimmed before returning the value. For example, the evaluated value `"compartmentId"` is returned as `compartmentId`.) If the evaluated value is invalid, then the returned value is `SCH_EVAL_INVALID_VALUE`. If the evaluated value is empty, then the returned value is `SCH_EVAL_VALUE_EMPTY`.
 func (o ConnectorTargetDimensionDimensionValueOutput) Path() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConnectorTargetDimensionDimensionValue) *string { return v.Path }).(pulumi.StringPtrOutput)
 }
@@ -1120,7 +1565,7 @@ func (o ConnectorTargetDimensionDimensionValuePtrOutput) Kind() pulumi.StringPtr
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The location to use for deriving the dimension value (evaluated). The path must start with `logContent` in an acceptable notation style with supported [JMESPath selectors](https://jmespath.org/specification.html): expression with dot and index operator (`.`, and `[]`). Example with dot notation: `logContent.data` Example with index notation: `logContent.data[0].content` For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). The returned value depends on the results of evaluation. If the evaluated value is valid, then the evaluated value is returned without double quotes. (Any front or trailing double quotes are trimmed before returning the value. For example, the evaluated value `"compartmentId"` is returned as `compartmentId`.) If the evaluated value is invalid, then the returned value is `SCH_EVAL_INVALID_VALUE`. If the evaluated value is empty, then the returned value is `SCH_EVAL_VALUE_EMPTY`.
+// (Updatable) The location to use for deriving the dimension value (evaluated). The path must start with `logContent` in an acceptable notation style with supported [JMESPath selectors](https://jmespath.org/specification.html): expression with dot and index operator (`.` and `[]`). Example with dot notation: `logContent.data` Example with index notation: `logContent.data[0].content` For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). The returned value depends on the results of evaluation. If the evaluated value is valid, then the evaluated value is returned without double quotes. (Any front or trailing double quotes are trimmed before returning the value. For example, the evaluated value `"compartmentId"` is returned as `compartmentId`.) If the evaluated value is invalid, then the returned value is `SCH_EVAL_INVALID_VALUE`. If the evaluated value is empty, then the returned value is `SCH_EVAL_VALUE_EMPTY`.
 func (o ConnectorTargetDimensionDimensionValuePtrOutput) Path() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ConnectorTargetDimensionDimensionValue) *string {
 		if v == nil {
@@ -1280,6 +1725,8 @@ type GetServiceConnectorSource struct {
 	Kind string `pulumi:"kind"`
 	// The logs for this Logging source.
 	LogSources []GetServiceConnectorSourceLogSource `pulumi:"logSources"`
+	// The list of metric namespaces to retrieve data from.
+	MonitoringSources []GetServiceConnectorSourceMonitoringSource `pulumi:"monitoringSources"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
 	StreamId string `pulumi:"streamId"`
 }
@@ -1302,6 +1749,8 @@ type GetServiceConnectorSourceArgs struct {
 	Kind pulumi.StringInput `pulumi:"kind"`
 	// The logs for this Logging source.
 	LogSources GetServiceConnectorSourceLogSourceArrayInput `pulumi:"logSources"`
+	// The list of metric namespaces to retrieve data from.
+	MonitoringSources GetServiceConnectorSourceMonitoringSourceArrayInput `pulumi:"monitoringSources"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
 	StreamId pulumi.StringInput `pulumi:"streamId"`
 }
@@ -1370,6 +1819,13 @@ func (o GetServiceConnectorSourceOutput) Kind() pulumi.StringOutput {
 // The logs for this Logging source.
 func (o GetServiceConnectorSourceOutput) LogSources() GetServiceConnectorSourceLogSourceArrayOutput {
 	return o.ApplyT(func(v GetServiceConnectorSource) []GetServiceConnectorSourceLogSource { return v.LogSources }).(GetServiceConnectorSourceLogSourceArrayOutput)
+}
+
+// The list of metric namespaces to retrieve data from.
+func (o GetServiceConnectorSourceOutput) MonitoringSources() GetServiceConnectorSourceMonitoringSourceArrayOutput {
+	return o.ApplyT(func(v GetServiceConnectorSource) []GetServiceConnectorSourceMonitoringSource {
+		return v.MonitoringSources
+	}).(GetServiceConnectorSourceMonitoringSourceArrayOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
@@ -1607,6 +2063,427 @@ func (o GetServiceConnectorSourceLogSourceArrayOutput) Index(i pulumi.IntInput) 
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServiceConnectorSourceLogSource {
 		return vs[0].([]GetServiceConnectorSourceLogSource)[vs[1].(int)]
 	}).(GetServiceConnectorSourceLogSourceOutput)
+}
+
+type GetServiceConnectorSourceMonitoringSource struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Discriminator for namespaces in the compartment-specific list.
+	NamespaceDetails []GetServiceConnectorSourceMonitoringSourceNamespaceDetail `pulumi:"namespaceDetails"`
+}
+
+// GetServiceConnectorSourceMonitoringSourceInput is an input type that accepts GetServiceConnectorSourceMonitoringSourceArgs and GetServiceConnectorSourceMonitoringSourceOutput values.
+// You can construct a concrete instance of `GetServiceConnectorSourceMonitoringSourceInput` via:
+//
+//          GetServiceConnectorSourceMonitoringSourceArgs{...}
+type GetServiceConnectorSourceMonitoringSourceInput interface {
+	pulumi.Input
+
+	ToGetServiceConnectorSourceMonitoringSourceOutput() GetServiceConnectorSourceMonitoringSourceOutput
+	ToGetServiceConnectorSourceMonitoringSourceOutputWithContext(context.Context) GetServiceConnectorSourceMonitoringSourceOutput
+}
+
+type GetServiceConnectorSourceMonitoringSourceArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Discriminator for namespaces in the compartment-specific list.
+	NamespaceDetails GetServiceConnectorSourceMonitoringSourceNamespaceDetailArrayInput `pulumi:"namespaceDetails"`
+}
+
+func (GetServiceConnectorSourceMonitoringSourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServiceConnectorSourceMonitoringSource)(nil)).Elem()
+}
+
+func (i GetServiceConnectorSourceMonitoringSourceArgs) ToGetServiceConnectorSourceMonitoringSourceOutput() GetServiceConnectorSourceMonitoringSourceOutput {
+	return i.ToGetServiceConnectorSourceMonitoringSourceOutputWithContext(context.Background())
+}
+
+func (i GetServiceConnectorSourceMonitoringSourceArgs) ToGetServiceConnectorSourceMonitoringSourceOutputWithContext(ctx context.Context) GetServiceConnectorSourceMonitoringSourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorSourceMonitoringSourceOutput)
+}
+
+// GetServiceConnectorSourceMonitoringSourceArrayInput is an input type that accepts GetServiceConnectorSourceMonitoringSourceArray and GetServiceConnectorSourceMonitoringSourceArrayOutput values.
+// You can construct a concrete instance of `GetServiceConnectorSourceMonitoringSourceArrayInput` via:
+//
+//          GetServiceConnectorSourceMonitoringSourceArray{ GetServiceConnectorSourceMonitoringSourceArgs{...} }
+type GetServiceConnectorSourceMonitoringSourceArrayInput interface {
+	pulumi.Input
+
+	ToGetServiceConnectorSourceMonitoringSourceArrayOutput() GetServiceConnectorSourceMonitoringSourceArrayOutput
+	ToGetServiceConnectorSourceMonitoringSourceArrayOutputWithContext(context.Context) GetServiceConnectorSourceMonitoringSourceArrayOutput
+}
+
+type GetServiceConnectorSourceMonitoringSourceArray []GetServiceConnectorSourceMonitoringSourceInput
+
+func (GetServiceConnectorSourceMonitoringSourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServiceConnectorSourceMonitoringSource)(nil)).Elem()
+}
+
+func (i GetServiceConnectorSourceMonitoringSourceArray) ToGetServiceConnectorSourceMonitoringSourceArrayOutput() GetServiceConnectorSourceMonitoringSourceArrayOutput {
+	return i.ToGetServiceConnectorSourceMonitoringSourceArrayOutputWithContext(context.Background())
+}
+
+func (i GetServiceConnectorSourceMonitoringSourceArray) ToGetServiceConnectorSourceMonitoringSourceArrayOutputWithContext(ctx context.Context) GetServiceConnectorSourceMonitoringSourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorSourceMonitoringSourceArrayOutput)
+}
+
+type GetServiceConnectorSourceMonitoringSourceOutput struct{ *pulumi.OutputState }
+
+func (GetServiceConnectorSourceMonitoringSourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServiceConnectorSourceMonitoringSource)(nil)).Elem()
+}
+
+func (o GetServiceConnectorSourceMonitoringSourceOutput) ToGetServiceConnectorSourceMonitoringSourceOutput() GetServiceConnectorSourceMonitoringSourceOutput {
+	return o
+}
+
+func (o GetServiceConnectorSourceMonitoringSourceOutput) ToGetServiceConnectorSourceMonitoringSourceOutputWithContext(ctx context.Context) GetServiceConnectorSourceMonitoringSourceOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
+func (o GetServiceConnectorSourceMonitoringSourceOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServiceConnectorSourceMonitoringSource) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Discriminator for namespaces in the compartment-specific list.
+func (o GetServiceConnectorSourceMonitoringSourceOutput) NamespaceDetails() GetServiceConnectorSourceMonitoringSourceNamespaceDetailArrayOutput {
+	return o.ApplyT(func(v GetServiceConnectorSourceMonitoringSource) []GetServiceConnectorSourceMonitoringSourceNamespaceDetail {
+		return v.NamespaceDetails
+	}).(GetServiceConnectorSourceMonitoringSourceNamespaceDetailArrayOutput)
+}
+
+type GetServiceConnectorSourceMonitoringSourceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetServiceConnectorSourceMonitoringSourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServiceConnectorSourceMonitoringSource)(nil)).Elem()
+}
+
+func (o GetServiceConnectorSourceMonitoringSourceArrayOutput) ToGetServiceConnectorSourceMonitoringSourceArrayOutput() GetServiceConnectorSourceMonitoringSourceArrayOutput {
+	return o
+}
+
+func (o GetServiceConnectorSourceMonitoringSourceArrayOutput) ToGetServiceConnectorSourceMonitoringSourceArrayOutputWithContext(ctx context.Context) GetServiceConnectorSourceMonitoringSourceArrayOutput {
+	return o
+}
+
+func (o GetServiceConnectorSourceMonitoringSourceArrayOutput) Index(i pulumi.IntInput) GetServiceConnectorSourceMonitoringSourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServiceConnectorSourceMonitoringSource {
+		return vs[0].([]GetServiceConnectorSourceMonitoringSource)[vs[1].(int)]
+	}).(GetServiceConnectorSourceMonitoringSourceOutput)
+}
+
+type GetServiceConnectorSourceMonitoringSourceNamespaceDetail struct {
+	// The type descriminator.
+	Kind string `pulumi:"kind"`
+	// The namespaces for the compartment-specific list.
+	Namespaces []GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespace `pulumi:"namespaces"`
+}
+
+// GetServiceConnectorSourceMonitoringSourceNamespaceDetailInput is an input type that accepts GetServiceConnectorSourceMonitoringSourceNamespaceDetailArgs and GetServiceConnectorSourceMonitoringSourceNamespaceDetailOutput values.
+// You can construct a concrete instance of `GetServiceConnectorSourceMonitoringSourceNamespaceDetailInput` via:
+//
+//          GetServiceConnectorSourceMonitoringSourceNamespaceDetailArgs{...}
+type GetServiceConnectorSourceMonitoringSourceNamespaceDetailInput interface {
+	pulumi.Input
+
+	ToGetServiceConnectorSourceMonitoringSourceNamespaceDetailOutput() GetServiceConnectorSourceMonitoringSourceNamespaceDetailOutput
+	ToGetServiceConnectorSourceMonitoringSourceNamespaceDetailOutputWithContext(context.Context) GetServiceConnectorSourceMonitoringSourceNamespaceDetailOutput
+}
+
+type GetServiceConnectorSourceMonitoringSourceNamespaceDetailArgs struct {
+	// The type descriminator.
+	Kind pulumi.StringInput `pulumi:"kind"`
+	// The namespaces for the compartment-specific list.
+	Namespaces GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArrayInput `pulumi:"namespaces"`
+}
+
+func (GetServiceConnectorSourceMonitoringSourceNamespaceDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServiceConnectorSourceMonitoringSourceNamespaceDetail)(nil)).Elem()
+}
+
+func (i GetServiceConnectorSourceMonitoringSourceNamespaceDetailArgs) ToGetServiceConnectorSourceMonitoringSourceNamespaceDetailOutput() GetServiceConnectorSourceMonitoringSourceNamespaceDetailOutput {
+	return i.ToGetServiceConnectorSourceMonitoringSourceNamespaceDetailOutputWithContext(context.Background())
+}
+
+func (i GetServiceConnectorSourceMonitoringSourceNamespaceDetailArgs) ToGetServiceConnectorSourceMonitoringSourceNamespaceDetailOutputWithContext(ctx context.Context) GetServiceConnectorSourceMonitoringSourceNamespaceDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorSourceMonitoringSourceNamespaceDetailOutput)
+}
+
+// GetServiceConnectorSourceMonitoringSourceNamespaceDetailArrayInput is an input type that accepts GetServiceConnectorSourceMonitoringSourceNamespaceDetailArray and GetServiceConnectorSourceMonitoringSourceNamespaceDetailArrayOutput values.
+// You can construct a concrete instance of `GetServiceConnectorSourceMonitoringSourceNamespaceDetailArrayInput` via:
+//
+//          GetServiceConnectorSourceMonitoringSourceNamespaceDetailArray{ GetServiceConnectorSourceMonitoringSourceNamespaceDetailArgs{...} }
+type GetServiceConnectorSourceMonitoringSourceNamespaceDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetServiceConnectorSourceMonitoringSourceNamespaceDetailArrayOutput() GetServiceConnectorSourceMonitoringSourceNamespaceDetailArrayOutput
+	ToGetServiceConnectorSourceMonitoringSourceNamespaceDetailArrayOutputWithContext(context.Context) GetServiceConnectorSourceMonitoringSourceNamespaceDetailArrayOutput
+}
+
+type GetServiceConnectorSourceMonitoringSourceNamespaceDetailArray []GetServiceConnectorSourceMonitoringSourceNamespaceDetailInput
+
+func (GetServiceConnectorSourceMonitoringSourceNamespaceDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServiceConnectorSourceMonitoringSourceNamespaceDetail)(nil)).Elem()
+}
+
+func (i GetServiceConnectorSourceMonitoringSourceNamespaceDetailArray) ToGetServiceConnectorSourceMonitoringSourceNamespaceDetailArrayOutput() GetServiceConnectorSourceMonitoringSourceNamespaceDetailArrayOutput {
+	return i.ToGetServiceConnectorSourceMonitoringSourceNamespaceDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetServiceConnectorSourceMonitoringSourceNamespaceDetailArray) ToGetServiceConnectorSourceMonitoringSourceNamespaceDetailArrayOutputWithContext(ctx context.Context) GetServiceConnectorSourceMonitoringSourceNamespaceDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorSourceMonitoringSourceNamespaceDetailArrayOutput)
+}
+
+type GetServiceConnectorSourceMonitoringSourceNamespaceDetailOutput struct{ *pulumi.OutputState }
+
+func (GetServiceConnectorSourceMonitoringSourceNamespaceDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServiceConnectorSourceMonitoringSourceNamespaceDetail)(nil)).Elem()
+}
+
+func (o GetServiceConnectorSourceMonitoringSourceNamespaceDetailOutput) ToGetServiceConnectorSourceMonitoringSourceNamespaceDetailOutput() GetServiceConnectorSourceMonitoringSourceNamespaceDetailOutput {
+	return o
+}
+
+func (o GetServiceConnectorSourceMonitoringSourceNamespaceDetailOutput) ToGetServiceConnectorSourceMonitoringSourceNamespaceDetailOutputWithContext(ctx context.Context) GetServiceConnectorSourceMonitoringSourceNamespaceDetailOutput {
+	return o
+}
+
+// The type descriminator.
+func (o GetServiceConnectorSourceMonitoringSourceNamespaceDetailOutput) Kind() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServiceConnectorSourceMonitoringSourceNamespaceDetail) string { return v.Kind }).(pulumi.StringOutput)
+}
+
+// The namespaces for the compartment-specific list.
+func (o GetServiceConnectorSourceMonitoringSourceNamespaceDetailOutput) Namespaces() GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArrayOutput {
+	return o.ApplyT(func(v GetServiceConnectorSourceMonitoringSourceNamespaceDetail) []GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespace {
+		return v.Namespaces
+	}).(GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArrayOutput)
+}
+
+type GetServiceConnectorSourceMonitoringSourceNamespaceDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetServiceConnectorSourceMonitoringSourceNamespaceDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServiceConnectorSourceMonitoringSourceNamespaceDetail)(nil)).Elem()
+}
+
+func (o GetServiceConnectorSourceMonitoringSourceNamespaceDetailArrayOutput) ToGetServiceConnectorSourceMonitoringSourceNamespaceDetailArrayOutput() GetServiceConnectorSourceMonitoringSourceNamespaceDetailArrayOutput {
+	return o
+}
+
+func (o GetServiceConnectorSourceMonitoringSourceNamespaceDetailArrayOutput) ToGetServiceConnectorSourceMonitoringSourceNamespaceDetailArrayOutputWithContext(ctx context.Context) GetServiceConnectorSourceMonitoringSourceNamespaceDetailArrayOutput {
+	return o
+}
+
+func (o GetServiceConnectorSourceMonitoringSourceNamespaceDetailArrayOutput) Index(i pulumi.IntInput) GetServiceConnectorSourceMonitoringSourceNamespaceDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServiceConnectorSourceMonitoringSourceNamespaceDetail {
+		return vs[0].([]GetServiceConnectorSourceMonitoringSourceNamespaceDetail)[vs[1].(int)]
+	}).(GetServiceConnectorSourceMonitoringSourceNamespaceDetailOutput)
+}
+
+type GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespace struct {
+	// The metrics to query for the specified metric namespace.
+	Metrics []GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetric `pulumi:"metrics"`
+	// The namespace.
+	Namespace string `pulumi:"namespace"`
+}
+
+// GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceInput is an input type that accepts GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArgs and GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceOutput values.
+// You can construct a concrete instance of `GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceInput` via:
+//
+//          GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArgs{...}
+type GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceInput interface {
+	pulumi.Input
+
+	ToGetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceOutput() GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceOutput
+	ToGetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceOutputWithContext(context.Context) GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceOutput
+}
+
+type GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArgs struct {
+	// The metrics to query for the specified metric namespace.
+	Metrics GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayInput `pulumi:"metrics"`
+	// The namespace.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+}
+
+func (GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespace)(nil)).Elem()
+}
+
+func (i GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArgs) ToGetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceOutput() GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceOutput {
+	return i.ToGetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceOutputWithContext(context.Background())
+}
+
+func (i GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArgs) ToGetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceOutputWithContext(ctx context.Context) GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceOutput)
+}
+
+// GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArrayInput is an input type that accepts GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArray and GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArrayOutput values.
+// You can construct a concrete instance of `GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArrayInput` via:
+//
+//          GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArray{ GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArgs{...} }
+type GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArrayInput interface {
+	pulumi.Input
+
+	ToGetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArrayOutput() GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArrayOutput
+	ToGetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArrayOutputWithContext(context.Context) GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArrayOutput
+}
+
+type GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArray []GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceInput
+
+func (GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespace)(nil)).Elem()
+}
+
+func (i GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArray) ToGetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArrayOutput() GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArrayOutput {
+	return i.ToGetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArrayOutputWithContext(context.Background())
+}
+
+func (i GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArray) ToGetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArrayOutputWithContext(ctx context.Context) GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArrayOutput)
+}
+
+type GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceOutput struct{ *pulumi.OutputState }
+
+func (GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespace)(nil)).Elem()
+}
+
+func (o GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceOutput) ToGetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceOutput() GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceOutput {
+	return o
+}
+
+func (o GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceOutput) ToGetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceOutputWithContext(ctx context.Context) GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceOutput {
+	return o
+}
+
+// The metrics to query for the specified metric namespace.
+func (o GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceOutput) Metrics() GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutput {
+	return o.ApplyT(func(v GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespace) []GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetric {
+		return v.Metrics
+	}).(GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutput)
+}
+
+// The namespace.
+func (o GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespace) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+type GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespace)(nil)).Elem()
+}
+
+func (o GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArrayOutput) ToGetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArrayOutput() GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArrayOutput {
+	return o
+}
+
+func (o GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArrayOutput) ToGetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArrayOutputWithContext(ctx context.Context) GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArrayOutput {
+	return o
+}
+
+func (o GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArrayOutput) Index(i pulumi.IntInput) GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespace {
+		return vs[0].([]GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespace)[vs[1].(int)]
+	}).(GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceOutput)
+}
+
+type GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetric struct {
+	// The type descriminator.
+	Kind string `pulumi:"kind"`
+}
+
+// GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricInput is an input type that accepts GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArgs and GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput values.
+// You can construct a concrete instance of `GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricInput` via:
+//
+//          GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArgs{...}
+type GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricInput interface {
+	pulumi.Input
+
+	ToGetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput() GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput
+	ToGetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricOutputWithContext(context.Context) GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput
+}
+
+type GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArgs struct {
+	// The type descriminator.
+	Kind pulumi.StringInput `pulumi:"kind"`
+}
+
+func (GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetric)(nil)).Elem()
+}
+
+func (i GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArgs) ToGetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput() GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput {
+	return i.ToGetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricOutputWithContext(context.Background())
+}
+
+func (i GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArgs) ToGetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricOutputWithContext(ctx context.Context) GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput)
+}
+
+// GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayInput is an input type that accepts GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArray and GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutput values.
+// You can construct a concrete instance of `GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayInput` via:
+//
+//          GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArray{ GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArgs{...} }
+type GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayInput interface {
+	pulumi.Input
+
+	ToGetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutput() GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutput
+	ToGetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutputWithContext(context.Context) GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutput
+}
+
+type GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArray []GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricInput
+
+func (GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetric)(nil)).Elem()
+}
+
+func (i GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArray) ToGetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutput() GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutput {
+	return i.ToGetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutputWithContext(context.Background())
+}
+
+func (i GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArray) ToGetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutputWithContext(ctx context.Context) GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutput)
+}
+
+type GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput struct{ *pulumi.OutputState }
+
+func (GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetric)(nil)).Elem()
+}
+
+func (o GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput) ToGetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput() GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput {
+	return o
+}
+
+func (o GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput) ToGetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricOutputWithContext(ctx context.Context) GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput {
+	return o
+}
+
+// The type descriminator.
+func (o GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput) Kind() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetric) string { return v.Kind }).(pulumi.StringOutput)
+}
+
+type GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutput struct{ *pulumi.OutputState }
+
+func (GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetric)(nil)).Elem()
+}
+
+func (o GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutput) ToGetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutput() GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutput {
+	return o
+}
+
+func (o GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutput) ToGetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutputWithContext(ctx context.Context) GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutput {
+	return o
+}
+
+func (o GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutput) Index(i pulumi.IntInput) GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetric {
+		return vs[0].([]GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetric)[vs[1].(int)]
+	}).(GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput)
 }
 
 type GetServiceConnectorTarget struct {
@@ -1943,7 +2820,7 @@ func (o GetServiceConnectorTargetDimensionArrayOutput) Index(i pulumi.IntInput) 
 type GetServiceConnectorTargetDimensionDimensionValue struct {
 	// The type descriminator.
 	Kind string `pulumi:"kind"`
-	// The location to use for deriving the dimension value (evaluated). The path must start with `logContent` in an acceptable notation style with supported [JMESPath selectors](https://jmespath.org/specification.html): expression with dot and index operator (`.`, and `[]`). Example with dot notation: `logContent.data` Example with index notation: `logContent.data[0].content` For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). The returned value depends on the results of evaluation. If the evaluated value is valid, then the evaluated value is returned without double quotes. (Any front or trailing double quotes are trimmed before returning the value. For example, the evaluated value `"compartmentId"` is returned as `compartmentId`.) If the evaluated value is invalid, then the returned value is `SCH_EVAL_INVALID_VALUE`. If the evaluated value is empty, then the returned value is `SCH_EVAL_VALUE_EMPTY`.
+	// The location to use for deriving the dimension value (evaluated). The path must start with `logContent` in an acceptable notation style with supported [JMESPath selectors](https://jmespath.org/specification.html): expression with dot and index operator (`.` and `[]`). Example with dot notation: `logContent.data` Example with index notation: `logContent.data[0].content` For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). The returned value depends on the results of evaluation. If the evaluated value is valid, then the evaluated value is returned without double quotes. (Any front or trailing double quotes are trimmed before returning the value. For example, the evaluated value `"compartmentId"` is returned as `compartmentId`.) If the evaluated value is invalid, then the returned value is `SCH_EVAL_INVALID_VALUE`. If the evaluated value is empty, then the returned value is `SCH_EVAL_VALUE_EMPTY`.
 	Path string `pulumi:"path"`
 	// The data extracted from the specified dimension value (passed as-is). Unicode characters only. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails).
 	Value string `pulumi:"value"`
@@ -1963,7 +2840,7 @@ type GetServiceConnectorTargetDimensionDimensionValueInput interface {
 type GetServiceConnectorTargetDimensionDimensionValueArgs struct {
 	// The type descriminator.
 	Kind pulumi.StringInput `pulumi:"kind"`
-	// The location to use for deriving the dimension value (evaluated). The path must start with `logContent` in an acceptable notation style with supported [JMESPath selectors](https://jmespath.org/specification.html): expression with dot and index operator (`.`, and `[]`). Example with dot notation: `logContent.data` Example with index notation: `logContent.data[0].content` For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). The returned value depends on the results of evaluation. If the evaluated value is valid, then the evaluated value is returned without double quotes. (Any front or trailing double quotes are trimmed before returning the value. For example, the evaluated value `"compartmentId"` is returned as `compartmentId`.) If the evaluated value is invalid, then the returned value is `SCH_EVAL_INVALID_VALUE`. If the evaluated value is empty, then the returned value is `SCH_EVAL_VALUE_EMPTY`.
+	// The location to use for deriving the dimension value (evaluated). The path must start with `logContent` in an acceptable notation style with supported [JMESPath selectors](https://jmespath.org/specification.html): expression with dot and index operator (`.` and `[]`). Example with dot notation: `logContent.data` Example with index notation: `logContent.data[0].content` For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). The returned value depends on the results of evaluation. If the evaluated value is valid, then the evaluated value is returned without double quotes. (Any front or trailing double quotes are trimmed before returning the value. For example, the evaluated value `"compartmentId"` is returned as `compartmentId`.) If the evaluated value is invalid, then the returned value is `SCH_EVAL_INVALID_VALUE`. If the evaluated value is empty, then the returned value is `SCH_EVAL_VALUE_EMPTY`.
 	Path pulumi.StringInput `pulumi:"path"`
 	// The data extracted from the specified dimension value (passed as-is). Unicode characters only. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails).
 	Value pulumi.StringInput `pulumi:"value"`
@@ -2025,7 +2902,7 @@ func (o GetServiceConnectorTargetDimensionDimensionValueOutput) Kind() pulumi.St
 	return o.ApplyT(func(v GetServiceConnectorTargetDimensionDimensionValue) string { return v.Kind }).(pulumi.StringOutput)
 }
 
-// The location to use for deriving the dimension value (evaluated). The path must start with `logContent` in an acceptable notation style with supported [JMESPath selectors](https://jmespath.org/specification.html): expression with dot and index operator (`.`, and `[]`). Example with dot notation: `logContent.data` Example with index notation: `logContent.data[0].content` For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). The returned value depends on the results of evaluation. If the evaluated value is valid, then the evaluated value is returned without double quotes. (Any front or trailing double quotes are trimmed before returning the value. For example, the evaluated value `"compartmentId"` is returned as `compartmentId`.) If the evaluated value is invalid, then the returned value is `SCH_EVAL_INVALID_VALUE`. If the evaluated value is empty, then the returned value is `SCH_EVAL_VALUE_EMPTY`.
+// The location to use for deriving the dimension value (evaluated). The path must start with `logContent` in an acceptable notation style with supported [JMESPath selectors](https://jmespath.org/specification.html): expression with dot and index operator (`.` and `[]`). Example with dot notation: `logContent.data` Example with index notation: `logContent.data[0].content` For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). The returned value depends on the results of evaluation. If the evaluated value is valid, then the evaluated value is returned without double quotes. (Any front or trailing double quotes are trimmed before returning the value. For example, the evaluated value `"compartmentId"` is returned as `compartmentId`.) If the evaluated value is invalid, then the returned value is `SCH_EVAL_INVALID_VALUE`. If the evaluated value is empty, then the returned value is `SCH_EVAL_VALUE_EMPTY`.
 func (o GetServiceConnectorTargetDimensionDimensionValueOutput) Path() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorTargetDimensionDimensionValue) string { return v.Path }).(pulumi.StringOutput)
 }
@@ -2624,6 +3501,8 @@ type GetServiceConnectorsServiceConnectorCollectionItemSource struct {
 	Kind string `pulumi:"kind"`
 	// The logs for this Logging source.
 	LogSources []GetServiceConnectorsServiceConnectorCollectionItemSourceLogSource `pulumi:"logSources"`
+	// The list of metric namespaces to retrieve data from.
+	MonitoringSources []GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource `pulumi:"monitoringSources"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
 	StreamId string `pulumi:"streamId"`
 }
@@ -2646,6 +3525,8 @@ type GetServiceConnectorsServiceConnectorCollectionItemSourceArgs struct {
 	Kind pulumi.StringInput `pulumi:"kind"`
 	// The logs for this Logging source.
 	LogSources GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceArrayInput `pulumi:"logSources"`
+	// The list of metric namespaces to retrieve data from.
+	MonitoringSources GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArrayInput `pulumi:"monitoringSources"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
 	StreamId pulumi.StringInput `pulumi:"streamId"`
 }
@@ -2718,6 +3599,13 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemSourceOutput) LogSourc
 	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemSource) []GetServiceConnectorsServiceConnectorCollectionItemSourceLogSource {
 		return v.LogSources
 	}).(GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceArrayOutput)
+}
+
+// The list of metric namespaces to retrieve data from.
+func (o GetServiceConnectorsServiceConnectorCollectionItemSourceOutput) MonitoringSources() GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArrayOutput {
+	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemSource) []GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource {
+		return v.MonitoringSources
+	}).(GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArrayOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
@@ -2957,6 +3845,435 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceArrayOu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServiceConnectorsServiceConnectorCollectionItemSourceLogSource {
 		return vs[0].([]GetServiceConnectorsServiceConnectorCollectionItemSourceLogSource)[vs[1].(int)]
 	}).(GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceOutput)
+}
+
+type GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this request.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Discriminator for namespaces in the compartment-specific list.
+	NamespaceDetails []GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetail `pulumi:"namespaceDetails"`
+}
+
+// GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceInput is an input type that accepts GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArgs and GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceOutput values.
+// You can construct a concrete instance of `GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceInput` via:
+//
+//          GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArgs{...}
+type GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceInput interface {
+	pulumi.Input
+
+	ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceOutput() GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceOutput
+	ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceOutputWithContext(context.Context) GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceOutput
+}
+
+type GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this request.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Discriminator for namespaces in the compartment-specific list.
+	NamespaceDetails GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArrayInput `pulumi:"namespaceDetails"`
+}
+
+func (GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource)(nil)).Elem()
+}
+
+func (i GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArgs) ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceOutput() GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceOutput {
+	return i.ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceOutputWithContext(context.Background())
+}
+
+func (i GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArgs) ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceOutputWithContext(ctx context.Context) GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceOutput)
+}
+
+// GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArrayInput is an input type that accepts GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArray and GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArrayOutput values.
+// You can construct a concrete instance of `GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArrayInput` via:
+//
+//          GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArray{ GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArgs{...} }
+type GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArrayInput interface {
+	pulumi.Input
+
+	ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArrayOutput() GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArrayOutput
+	ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArrayOutputWithContext(context.Context) GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArrayOutput
+}
+
+type GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArray []GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceInput
+
+func (GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource)(nil)).Elem()
+}
+
+func (i GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArray) ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArrayOutput() GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArrayOutput {
+	return i.ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArrayOutputWithContext(context.Background())
+}
+
+func (i GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArray) ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArrayOutputWithContext(ctx context.Context) GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArrayOutput)
+}
+
+type GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceOutput struct{ *pulumi.OutputState }
+
+func (GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource)(nil)).Elem()
+}
+
+func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceOutput) ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceOutput() GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceOutput {
+	return o
+}
+
+func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceOutput) ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceOutputWithContext(ctx context.Context) GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this request.
+func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// Discriminator for namespaces in the compartment-specific list.
+func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceOutput) NamespaceDetails() GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArrayOutput {
+	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource) []GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetail {
+		return v.NamespaceDetails
+	}).(GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArrayOutput)
+}
+
+type GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource)(nil)).Elem()
+}
+
+func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArrayOutput) ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArrayOutput() GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArrayOutput {
+	return o
+}
+
+func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArrayOutput) ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArrayOutputWithContext(ctx context.Context) GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArrayOutput {
+	return o
+}
+
+func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArrayOutput) Index(i pulumi.IntInput) GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource {
+		return vs[0].([]GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource)[vs[1].(int)]
+	}).(GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceOutput)
+}
+
+type GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetail struct {
+	// The type descriminator.
+	Kind string `pulumi:"kind"`
+	// The namespaces for the compartment-specific list.
+	Namespaces []GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespace `pulumi:"namespaces"`
+}
+
+// GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailInput is an input type that accepts GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArgs and GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailOutput values.
+// You can construct a concrete instance of `GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailInput` via:
+//
+//          GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArgs{...}
+type GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailInput interface {
+	pulumi.Input
+
+	ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailOutput() GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailOutput
+	ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailOutputWithContext(context.Context) GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailOutput
+}
+
+type GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArgs struct {
+	// The type descriminator.
+	Kind pulumi.StringInput `pulumi:"kind"`
+	// The namespaces for the compartment-specific list.
+	Namespaces GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArrayInput `pulumi:"namespaces"`
+}
+
+func (GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetail)(nil)).Elem()
+}
+
+func (i GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArgs) ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailOutput() GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailOutput {
+	return i.ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailOutputWithContext(context.Background())
+}
+
+func (i GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArgs) ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailOutputWithContext(ctx context.Context) GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailOutput)
+}
+
+// GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArrayInput is an input type that accepts GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArray and GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArrayOutput values.
+// You can construct a concrete instance of `GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArrayInput` via:
+//
+//          GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArray{ GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArgs{...} }
+type GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArrayOutput() GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArrayOutput
+	ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArrayOutputWithContext(context.Context) GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArrayOutput
+}
+
+type GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArray []GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailInput
+
+func (GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetail)(nil)).Elem()
+}
+
+func (i GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArray) ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArrayOutput() GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArrayOutput {
+	return i.ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArray) ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArrayOutputWithContext(ctx context.Context) GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArrayOutput)
+}
+
+type GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailOutput struct{ *pulumi.OutputState }
+
+func (GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetail)(nil)).Elem()
+}
+
+func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailOutput) ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailOutput() GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailOutput {
+	return o
+}
+
+func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailOutput) ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailOutputWithContext(ctx context.Context) GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailOutput {
+	return o
+}
+
+// The type descriminator.
+func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailOutput) Kind() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetail) string {
+		return v.Kind
+	}).(pulumi.StringOutput)
+}
+
+// The namespaces for the compartment-specific list.
+func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailOutput) Namespaces() GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArrayOutput {
+	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetail) []GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespace {
+		return v.Namespaces
+	}).(GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArrayOutput)
+}
+
+type GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetail)(nil)).Elem()
+}
+
+func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArrayOutput) ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArrayOutput() GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArrayOutput {
+	return o
+}
+
+func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArrayOutput) ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArrayOutputWithContext(ctx context.Context) GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArrayOutput {
+	return o
+}
+
+func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArrayOutput) Index(i pulumi.IntInput) GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetail {
+		return vs[0].([]GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetail)[vs[1].(int)]
+	}).(GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailOutput)
+}
+
+type GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespace struct {
+	// The metrics to query for the specified metric namespace.
+	Metrics []GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetric `pulumi:"metrics"`
+	// The namespace.
+	Namespace string `pulumi:"namespace"`
+}
+
+// GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceInput is an input type that accepts GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArgs and GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceOutput values.
+// You can construct a concrete instance of `GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceInput` via:
+//
+//          GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArgs{...}
+type GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceInput interface {
+	pulumi.Input
+
+	ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceOutput() GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceOutput
+	ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceOutputWithContext(context.Context) GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceOutput
+}
+
+type GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArgs struct {
+	// The metrics to query for the specified metric namespace.
+	Metrics GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayInput `pulumi:"metrics"`
+	// The namespace.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+}
+
+func (GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespace)(nil)).Elem()
+}
+
+func (i GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArgs) ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceOutput() GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceOutput {
+	return i.ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceOutputWithContext(context.Background())
+}
+
+func (i GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArgs) ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceOutputWithContext(ctx context.Context) GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceOutput)
+}
+
+// GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArrayInput is an input type that accepts GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArray and GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArrayOutput values.
+// You can construct a concrete instance of `GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArrayInput` via:
+//
+//          GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArray{ GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArgs{...} }
+type GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArrayInput interface {
+	pulumi.Input
+
+	ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArrayOutput() GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArrayOutput
+	ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArrayOutputWithContext(context.Context) GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArrayOutput
+}
+
+type GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArray []GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceInput
+
+func (GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespace)(nil)).Elem()
+}
+
+func (i GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArray) ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArrayOutput() GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArrayOutput {
+	return i.ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArrayOutputWithContext(context.Background())
+}
+
+func (i GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArray) ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArrayOutputWithContext(ctx context.Context) GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArrayOutput)
+}
+
+type GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceOutput struct{ *pulumi.OutputState }
+
+func (GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespace)(nil)).Elem()
+}
+
+func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceOutput) ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceOutput() GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceOutput {
+	return o
+}
+
+func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceOutput) ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceOutputWithContext(ctx context.Context) GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceOutput {
+	return o
+}
+
+// The metrics to query for the specified metric namespace.
+func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceOutput) Metrics() GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutput {
+	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespace) []GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetric {
+		return v.Metrics
+	}).(GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutput)
+}
+
+// The namespace.
+func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespace) string {
+		return v.Namespace
+	}).(pulumi.StringOutput)
+}
+
+type GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespace)(nil)).Elem()
+}
+
+func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArrayOutput) ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArrayOutput() GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArrayOutput {
+	return o
+}
+
+func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArrayOutput) ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArrayOutputWithContext(ctx context.Context) GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArrayOutput {
+	return o
+}
+
+func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArrayOutput) Index(i pulumi.IntInput) GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespace {
+		return vs[0].([]GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespace)[vs[1].(int)]
+	}).(GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceOutput)
+}
+
+type GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetric struct {
+	// The type descriminator.
+	Kind string `pulumi:"kind"`
+}
+
+// GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricInput is an input type that accepts GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArgs and GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput values.
+// You can construct a concrete instance of `GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricInput` via:
+//
+//          GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArgs{...}
+type GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricInput interface {
+	pulumi.Input
+
+	ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput() GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput
+	ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricOutputWithContext(context.Context) GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput
+}
+
+type GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArgs struct {
+	// The type descriminator.
+	Kind pulumi.StringInput `pulumi:"kind"`
+}
+
+func (GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetric)(nil)).Elem()
+}
+
+func (i GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArgs) ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput() GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput {
+	return i.ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricOutputWithContext(context.Background())
+}
+
+func (i GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArgs) ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricOutputWithContext(ctx context.Context) GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput)
+}
+
+// GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayInput is an input type that accepts GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArray and GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutput values.
+// You can construct a concrete instance of `GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayInput` via:
+//
+//          GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArray{ GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArgs{...} }
+type GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayInput interface {
+	pulumi.Input
+
+	ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutput() GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutput
+	ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutputWithContext(context.Context) GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutput
+}
+
+type GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArray []GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricInput
+
+func (GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetric)(nil)).Elem()
+}
+
+func (i GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArray) ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutput() GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutput {
+	return i.ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutputWithContext(context.Background())
+}
+
+func (i GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArray) ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutputWithContext(ctx context.Context) GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutput)
+}
+
+type GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput struct{ *pulumi.OutputState }
+
+func (GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetric)(nil)).Elem()
+}
+
+func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput) ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput() GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput {
+	return o
+}
+
+func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput) ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricOutputWithContext(ctx context.Context) GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput {
+	return o
+}
+
+// The type descriminator.
+func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput) Kind() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetric) string {
+		return v.Kind
+	}).(pulumi.StringOutput)
+}
+
+type GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutput struct{ *pulumi.OutputState }
+
+func (GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetric)(nil)).Elem()
+}
+
+func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutput) ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutput() GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutput {
+	return o
+}
+
+func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutput) ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutputWithContext(ctx context.Context) GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutput {
+	return o
+}
+
+func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutput) Index(i pulumi.IntInput) GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetric {
+		return vs[0].([]GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetric)[vs[1].(int)]
+	}).(GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput)
 }
 
 type GetServiceConnectorsServiceConnectorCollectionItemTarget struct {
@@ -3297,7 +4614,7 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionArrayOu
 type GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValue struct {
 	// The type descriminator.
 	Kind string `pulumi:"kind"`
-	// The location to use for deriving the dimension value (evaluated). The path must start with `logContent` in an acceptable notation style with supported [JMESPath selectors](https://jmespath.org/specification.html): expression with dot and index operator (`.`, and `[]`). Example with dot notation: `logContent.data` Example with index notation: `logContent.data[0].content` For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). The returned value depends on the results of evaluation. If the evaluated value is valid, then the evaluated value is returned without double quotes. (Any front or trailing double quotes are trimmed before returning the value. For example, the evaluated value `"compartmentId"` is returned as `compartmentId`.) If the evaluated value is invalid, then the returned value is `SCH_EVAL_INVALID_VALUE`. If the evaluated value is empty, then the returned value is `SCH_EVAL_VALUE_EMPTY`.
+	// The location to use for deriving the dimension value (evaluated). The path must start with `logContent` in an acceptable notation style with supported [JMESPath selectors](https://jmespath.org/specification.html): expression with dot and index operator (`.` and `[]`). Example with dot notation: `logContent.data` Example with index notation: `logContent.data[0].content` For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). The returned value depends on the results of evaluation. If the evaluated value is valid, then the evaluated value is returned without double quotes. (Any front or trailing double quotes are trimmed before returning the value. For example, the evaluated value `"compartmentId"` is returned as `compartmentId`.) If the evaluated value is invalid, then the returned value is `SCH_EVAL_INVALID_VALUE`. If the evaluated value is empty, then the returned value is `SCH_EVAL_VALUE_EMPTY`.
 	Path string `pulumi:"path"`
 	// The data extracted from the specified dimension value (passed as-is). Unicode characters only. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails).
 	Value string `pulumi:"value"`
@@ -3317,7 +4634,7 @@ type GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionV
 type GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueArgs struct {
 	// The type descriminator.
 	Kind pulumi.StringInput `pulumi:"kind"`
-	// The location to use for deriving the dimension value (evaluated). The path must start with `logContent` in an acceptable notation style with supported [JMESPath selectors](https://jmespath.org/specification.html): expression with dot and index operator (`.`, and `[]`). Example with dot notation: `logContent.data` Example with index notation: `logContent.data[0].content` For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). The returned value depends on the results of evaluation. If the evaluated value is valid, then the evaluated value is returned without double quotes. (Any front or trailing double quotes are trimmed before returning the value. For example, the evaluated value `"compartmentId"` is returned as `compartmentId`.) If the evaluated value is invalid, then the returned value is `SCH_EVAL_INVALID_VALUE`. If the evaluated value is empty, then the returned value is `SCH_EVAL_VALUE_EMPTY`.
+	// The location to use for deriving the dimension value (evaluated). The path must start with `logContent` in an acceptable notation style with supported [JMESPath selectors](https://jmespath.org/specification.html): expression with dot and index operator (`.` and `[]`). Example with dot notation: `logContent.data` Example with index notation: `logContent.data[0].content` For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). The returned value depends on the results of evaluation. If the evaluated value is valid, then the evaluated value is returned without double quotes. (Any front or trailing double quotes are trimmed before returning the value. For example, the evaluated value `"compartmentId"` is returned as `compartmentId`.) If the evaluated value is invalid, then the returned value is `SCH_EVAL_INVALID_VALUE`. If the evaluated value is empty, then the returned value is `SCH_EVAL_VALUE_EMPTY`.
 	Path pulumi.StringInput `pulumi:"path"`
 	// The data extracted from the specified dimension value (passed as-is). Unicode characters only. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails).
 	Value pulumi.StringInput `pulumi:"value"`
@@ -3381,7 +4698,7 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensi
 	}).(pulumi.StringOutput)
 }
 
-// The location to use for deriving the dimension value (evaluated). The path must start with `logContent` in an acceptable notation style with supported [JMESPath selectors](https://jmespath.org/specification.html): expression with dot and index operator (`.`, and `[]`). Example with dot notation: `logContent.data` Example with index notation: `logContent.data[0].content` For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). The returned value depends on the results of evaluation. If the evaluated value is valid, then the evaluated value is returned without double quotes. (Any front or trailing double quotes are trimmed before returning the value. For example, the evaluated value `"compartmentId"` is returned as `compartmentId`.) If the evaluated value is invalid, then the returned value is `SCH_EVAL_INVALID_VALUE`. If the evaluated value is empty, then the returned value is `SCH_EVAL_VALUE_EMPTY`.
+// The location to use for deriving the dimension value (evaluated). The path must start with `logContent` in an acceptable notation style with supported [JMESPath selectors](https://jmespath.org/specification.html): expression with dot and index operator (`.` and `[]`). Example with dot notation: `logContent.data` Example with index notation: `logContent.data[0].content` For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). The returned value depends on the results of evaluation. If the evaluated value is valid, then the evaluated value is returned without double quotes. (Any front or trailing double quotes are trimmed before returning the value. For example, the evaluated value `"compartmentId"` is returned as `compartmentId`.) If the evaluated value is invalid, then the returned value is `SCH_EVAL_INVALID_VALUE`. If the evaluated value is empty, then the returned value is `SCH_EVAL_VALUE_EMPTY`.
 func (o GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueOutput) Path() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValue) string {
 		return v.Path
@@ -3555,6 +4872,13 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ConnectorSourceCursorPtrInput)(nil)).Elem(), ConnectorSourceCursorArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConnectorSourceLogSourceInput)(nil)).Elem(), ConnectorSourceLogSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConnectorSourceLogSourceArrayInput)(nil)).Elem(), ConnectorSourceLogSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConnectorSourceMonitoringSourceInput)(nil)).Elem(), ConnectorSourceMonitoringSourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConnectorSourceMonitoringSourceArrayInput)(nil)).Elem(), ConnectorSourceMonitoringSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConnectorSourceMonitoringSourceNamespaceDetailsInput)(nil)).Elem(), ConnectorSourceMonitoringSourceNamespaceDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConnectorSourceMonitoringSourceNamespaceDetailsPtrInput)(nil)).Elem(), ConnectorSourceMonitoringSourceNamespaceDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceInput)(nil)).Elem(), ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArrayInput)(nil)).Elem(), ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsInput)(nil)).Elem(), ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConnectorTargetInput)(nil)).Elem(), ConnectorTargetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConnectorTargetPtrInput)(nil)).Elem(), ConnectorTargetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConnectorTargetDimensionInput)(nil)).Elem(), ConnectorTargetDimensionArgs{})
@@ -3569,6 +4893,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorSourceCursorArrayInput)(nil)).Elem(), GetServiceConnectorSourceCursorArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorSourceLogSourceInput)(nil)).Elem(), GetServiceConnectorSourceLogSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorSourceLogSourceArrayInput)(nil)).Elem(), GetServiceConnectorSourceLogSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorSourceMonitoringSourceInput)(nil)).Elem(), GetServiceConnectorSourceMonitoringSourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorSourceMonitoringSourceArrayInput)(nil)).Elem(), GetServiceConnectorSourceMonitoringSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorSourceMonitoringSourceNamespaceDetailInput)(nil)).Elem(), GetServiceConnectorSourceMonitoringSourceNamespaceDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorSourceMonitoringSourceNamespaceDetailArrayInput)(nil)).Elem(), GetServiceConnectorSourceMonitoringSourceNamespaceDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceInput)(nil)).Elem(), GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArrayInput)(nil)).Elem(), GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricInput)(nil)).Elem(), GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayInput)(nil)).Elem(), GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorTargetInput)(nil)).Elem(), GetServiceConnectorTargetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorTargetArrayInput)(nil)).Elem(), GetServiceConnectorTargetArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorTargetDimensionInput)(nil)).Elem(), GetServiceConnectorTargetDimensionArgs{})
@@ -3589,6 +4921,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorsServiceConnectorCollectionItemSourceCursorArrayInput)(nil)).Elem(), GetServiceConnectorsServiceConnectorCollectionItemSourceCursorArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceInput)(nil)).Elem(), GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceArrayInput)(nil)).Elem(), GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceInput)(nil)).Elem(), GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArrayInput)(nil)).Elem(), GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailInput)(nil)).Elem(), GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArrayInput)(nil)).Elem(), GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceInput)(nil)).Elem(), GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArrayInput)(nil)).Elem(), GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricInput)(nil)).Elem(), GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayInput)(nil)).Elem(), GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorsServiceConnectorCollectionItemTargetInput)(nil)).Elem(), GetServiceConnectorsServiceConnectorCollectionItemTargetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorsServiceConnectorCollectionItemTargetArrayInput)(nil)).Elem(), GetServiceConnectorsServiceConnectorCollectionItemTargetArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionInput)(nil)).Elem(), GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionArgs{})
@@ -3603,6 +4943,13 @@ func init() {
 	pulumi.RegisterOutputType(ConnectorSourceCursorPtrOutput{})
 	pulumi.RegisterOutputType(ConnectorSourceLogSourceOutput{})
 	pulumi.RegisterOutputType(ConnectorSourceLogSourceArrayOutput{})
+	pulumi.RegisterOutputType(ConnectorSourceMonitoringSourceOutput{})
+	pulumi.RegisterOutputType(ConnectorSourceMonitoringSourceArrayOutput{})
+	pulumi.RegisterOutputType(ConnectorSourceMonitoringSourceNamespaceDetailsOutput{})
+	pulumi.RegisterOutputType(ConnectorSourceMonitoringSourceNamespaceDetailsPtrOutput{})
+	pulumi.RegisterOutputType(ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceOutput{})
+	pulumi.RegisterOutputType(ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArrayOutput{})
+	pulumi.RegisterOutputType(ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsOutput{})
 	pulumi.RegisterOutputType(ConnectorTargetOutput{})
 	pulumi.RegisterOutputType(ConnectorTargetPtrOutput{})
 	pulumi.RegisterOutputType(ConnectorTargetDimensionOutput{})
@@ -3617,6 +4964,14 @@ func init() {
 	pulumi.RegisterOutputType(GetServiceConnectorSourceCursorArrayOutput{})
 	pulumi.RegisterOutputType(GetServiceConnectorSourceLogSourceOutput{})
 	pulumi.RegisterOutputType(GetServiceConnectorSourceLogSourceArrayOutput{})
+	pulumi.RegisterOutputType(GetServiceConnectorSourceMonitoringSourceOutput{})
+	pulumi.RegisterOutputType(GetServiceConnectorSourceMonitoringSourceArrayOutput{})
+	pulumi.RegisterOutputType(GetServiceConnectorSourceMonitoringSourceNamespaceDetailOutput{})
+	pulumi.RegisterOutputType(GetServiceConnectorSourceMonitoringSourceNamespaceDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceOutput{})
+	pulumi.RegisterOutputType(GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArrayOutput{})
+	pulumi.RegisterOutputType(GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput{})
+	pulumi.RegisterOutputType(GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutput{})
 	pulumi.RegisterOutputType(GetServiceConnectorTargetOutput{})
 	pulumi.RegisterOutputType(GetServiceConnectorTargetArrayOutput{})
 	pulumi.RegisterOutputType(GetServiceConnectorTargetDimensionOutput{})
@@ -3637,6 +4992,14 @@ func init() {
 	pulumi.RegisterOutputType(GetServiceConnectorsServiceConnectorCollectionItemSourceCursorArrayOutput{})
 	pulumi.RegisterOutputType(GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceOutput{})
 	pulumi.RegisterOutputType(GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceArrayOutput{})
+	pulumi.RegisterOutputType(GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceOutput{})
+	pulumi.RegisterOutputType(GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArrayOutput{})
+	pulumi.RegisterOutputType(GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailOutput{})
+	pulumi.RegisterOutputType(GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceOutput{})
+	pulumi.RegisterOutputType(GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArrayOutput{})
+	pulumi.RegisterOutputType(GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput{})
+	pulumi.RegisterOutputType(GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutput{})
 	pulumi.RegisterOutputType(GetServiceConnectorsServiceConnectorCollectionItemTargetOutput{})
 	pulumi.RegisterOutputType(GetServiceConnectorsServiceConnectorCollectionItemTargetArrayOutput{})
 	pulumi.RegisterOutputType(GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionOutput{})

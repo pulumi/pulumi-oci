@@ -38,7 +38,7 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
         /// <summary>
-        /// A filter to return only resources that match the entire display name given.
+        /// A filter to return only the resources that match the entire display name.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
@@ -66,7 +66,7 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// </summary>
         public readonly string TimeUpdated;
         /// <summary>
-        /// The time when the script was uploaded.
+        /// The time the script was uploaded.
         /// </summary>
         public readonly string TimeUploaded;
 

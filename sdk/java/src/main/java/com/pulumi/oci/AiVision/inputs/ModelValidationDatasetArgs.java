@@ -60,9 +60,17 @@ public final class ModelValidationDatasetArgs extends com.pulumi.resources.Resou
         return this.datasetType;
     }
 
+    /**
+     * The namespace name of the ObjectStorage bucket that contains the input data file.
+     * 
+     */
     @Import(name="namespaceName")
     private @Nullable Output<String> namespaceName;
 
+    /**
+     * @return The namespace name of the ObjectStorage bucket that contains the input data file.
+     * 
+     */
     public Optional<Output<String>> namespaceName() {
         return Optional.ofNullable(this.namespaceName);
     }
@@ -173,11 +181,23 @@ public final class ModelValidationDatasetArgs extends com.pulumi.resources.Resou
             return datasetType(Output.of(datasetType));
         }
 
+        /**
+         * @param namespaceName The namespace name of the ObjectStorage bucket that contains the input data file.
+         * 
+         * @return builder
+         * 
+         */
         public Builder namespaceName(@Nullable Output<String> namespaceName) {
             $.namespaceName = namespaceName;
             return this;
         }
 
+        /**
+         * @param namespaceName The namespace name of the ObjectStorage bucket that contains the input data file.
+         * 
+         * @return builder
+         * 
+         */
         public Builder namespaceName(String namespaceName) {
             return namespaceName(Output.of(namespaceName));
         }

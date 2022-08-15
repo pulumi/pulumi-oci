@@ -34,6 +34,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
+ *     kmsKeyId: oci_kms_key.test_key.id,
  *     networkEndpointDetails: {
  *         networkEndpointType: _var.analytics_instance_network_endpoint_details_network_endpoint_type,
  *         subnetId: oci_core_subnet.test_subnet.id,
@@ -116,6 +117,10 @@ export class AnalyticsInstance extends pulumi.CustomResource {
      */
     public readonly idcsAccessToken!: pulumi.Output<string>;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. "") indicates to use Oracle managed default encryption.
+     */
+    public readonly kmsKeyId!: pulumi.Output<string | undefined>;
+    /**
      * (Updatable) The license used for the service.
      */
     public readonly licenseType!: pulumi.Output<string>;
@@ -127,10 +132,6 @@ export class AnalyticsInstance extends pulumi.CustomResource {
      * Base representation of a network endpoint.
      */
     public readonly networkEndpointDetails!: pulumi.Output<outputs.Analytics.AnalyticsInstanceNetworkEndpointDetails>;
-    /**
-     * Map of PrivateAccessChannel unique identifier key as KEY and PrivateAccessChannel Object as VALUE.
-     */
-    public /*out*/ readonly privateAccessChannels!: pulumi.Output<{[key: string]: any}>;
     /**
      * URL of the Analytics service.
      */
@@ -147,10 +148,6 @@ export class AnalyticsInstance extends pulumi.CustomResource {
      * The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
-    /**
-     * Map of VanityUrl unique identifier key as KEY and VanityUrl Object as VALUE.
-     */
-    public /*out*/ readonly vanityUrlDetails!: pulumi.Output<{[key: string]: any}>;
 
     /**
      * Create a AnalyticsInstance resource with the given unique name, arguments, and options.
@@ -173,15 +170,14 @@ export class AnalyticsInstance extends pulumi.CustomResource {
             resourceInputs["featureSet"] = state ? state.featureSet : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["idcsAccessToken"] = state ? state.idcsAccessToken : undefined;
+            resourceInputs["kmsKeyId"] = state ? state.kmsKeyId : undefined;
             resourceInputs["licenseType"] = state ? state.licenseType : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["networkEndpointDetails"] = state ? state.networkEndpointDetails : undefined;
-            resourceInputs["privateAccessChannels"] = state ? state.privateAccessChannels : undefined;
             resourceInputs["serviceUrl"] = state ? state.serviceUrl : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["vanityUrlDetails"] = state ? state.vanityUrlDetails : undefined;
         } else {
             const args = argsOrState as AnalyticsInstanceArgs | undefined;
             if ((!args || args.capacity === undefined) && !opts.urn) {
@@ -207,15 +203,14 @@ export class AnalyticsInstance extends pulumi.CustomResource {
             resourceInputs["featureSet"] = args ? args.featureSet : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["idcsAccessToken"] = args ? args.idcsAccessToken : undefined;
+            resourceInputs["kmsKeyId"] = args ? args.kmsKeyId : undefined;
             resourceInputs["licenseType"] = args ? args.licenseType : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["networkEndpointDetails"] = args ? args.networkEndpointDetails : undefined;
             resourceInputs["state"] = args ? args.state : undefined;
-            resourceInputs["privateAccessChannels"] = undefined /*out*/;
             resourceInputs["serviceUrl"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
-            resourceInputs["vanityUrlDetails"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AnalyticsInstance.__pulumiType, name, resourceInputs, opts);
@@ -259,6 +254,10 @@ export interface AnalyticsInstanceState {
      */
     idcsAccessToken?: pulumi.Input<string>;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. "") indicates to use Oracle managed default encryption.
+     */
+    kmsKeyId?: pulumi.Input<string>;
+    /**
      * (Updatable) The license used for the service.
      */
     licenseType?: pulumi.Input<string>;
@@ -270,10 +269,6 @@ export interface AnalyticsInstanceState {
      * Base representation of a network endpoint.
      */
     networkEndpointDetails?: pulumi.Input<inputs.Analytics.AnalyticsInstanceNetworkEndpointDetails>;
-    /**
-     * Map of PrivateAccessChannel unique identifier key as KEY and PrivateAccessChannel Object as VALUE.
-     */
-    privateAccessChannels?: pulumi.Input<{[key: string]: any}>;
     /**
      * URL of the Analytics service.
      */
@@ -290,10 +285,6 @@ export interface AnalyticsInstanceState {
      * The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
      */
     timeUpdated?: pulumi.Input<string>;
-    /**
-     * Map of VanityUrl unique identifier key as KEY and VanityUrl Object as VALUE.
-     */
-    vanityUrlDetails?: pulumi.Input<{[key: string]: any}>;
 }
 
 /**
@@ -332,6 +323,10 @@ export interface AnalyticsInstanceArgs {
      * IDCS access token identifying a stripe and service administrator user.
      */
     idcsAccessToken: pulumi.Input<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. "") indicates to use Oracle managed default encryption.
+     */
+    kmsKeyId?: pulumi.Input<string>;
     /**
      * (Updatable) The license used for the service.
      */

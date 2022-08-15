@@ -132,7 +132,7 @@ export class Trigger extends pulumi.CustomResource {
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
     /**
-     * (Updatable) Source of the trigger. Allowed values are, GITHUB and GITLAB.
+     * (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
      */
     public readonly triggerSource!: pulumi.Output<string>;
     /**
@@ -257,7 +257,7 @@ export interface TriggerState {
      */
     timeUpdated?: pulumi.Input<string>;
     /**
-     * (Updatable) Source of the trigger. Allowed values are, GITHUB and GITLAB.
+     * (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
      */
     triggerSource?: pulumi.Input<string>;
     /**
@@ -299,7 +299,7 @@ export interface TriggerArgs {
      */
     repositoryId?: pulumi.Input<string>;
     /**
-     * (Updatable) Source of the trigger. Allowed values are, GITHUB and GITLAB.
+     * (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
      */
     triggerSource: pulumi.Input<string>;
 }

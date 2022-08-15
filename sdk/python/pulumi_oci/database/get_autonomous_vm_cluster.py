@@ -21,13 +21,19 @@ class GetAutonomousVmClusterResult:
     """
     A collection of values returned by getAutonomousVmCluster.
     """
-    def __init__(__self__, autonomous_data_storage_size_in_tbs=None, autonomous_vm_cluster_id=None, available_cpus=None, available_data_storage_size_in_tbs=None, compartment_id=None, cpu_core_count_per_node=None, cpus_enabled=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, defined_tags=None, display_name=None, exadata_infrastructure_id=None, freeform_tags=None, id=None, is_local_backup_enabled=None, last_maintenance_run_id=None, license_model=None, lifecycle_details=None, maintenance_window_details=None, maintenance_windows=None, memory_per_oracle_compute_unit_in_gbs=None, memory_size_in_gbs=None, next_maintenance_run_id=None, ocpus_enabled=None, state=None, time_created=None, time_zone=None, total_container_databases=None, vm_cluster_network_id=None):
+    def __init__(__self__, autonomous_data_storage_size_in_tbs=None, autonomous_vm_cluster_id=None, available_autonomous_data_storage_size_in_tbs=None, available_container_databases=None, available_cpus=None, available_data_storage_size_in_tbs=None, compartment_id=None, cpu_core_count_per_node=None, cpus_enabled=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, defined_tags=None, display_name=None, exadata_infrastructure_id=None, freeform_tags=None, id=None, is_local_backup_enabled=None, last_maintenance_run_id=None, license_model=None, lifecycle_details=None, maintenance_window_details=None, maintenance_windows=None, memory_per_oracle_compute_unit_in_gbs=None, memory_size_in_gbs=None, next_maintenance_run_id=None, ocpus_enabled=None, reclaimable_cpus=None, state=None, time_created=None, time_zone=None, total_container_databases=None, vm_cluster_network_id=None):
         if autonomous_data_storage_size_in_tbs and not isinstance(autonomous_data_storage_size_in_tbs, float):
             raise TypeError("Expected argument 'autonomous_data_storage_size_in_tbs' to be a float")
         pulumi.set(__self__, "autonomous_data_storage_size_in_tbs", autonomous_data_storage_size_in_tbs)
         if autonomous_vm_cluster_id and not isinstance(autonomous_vm_cluster_id, str):
             raise TypeError("Expected argument 'autonomous_vm_cluster_id' to be a str")
         pulumi.set(__self__, "autonomous_vm_cluster_id", autonomous_vm_cluster_id)
+        if available_autonomous_data_storage_size_in_tbs and not isinstance(available_autonomous_data_storage_size_in_tbs, float):
+            raise TypeError("Expected argument 'available_autonomous_data_storage_size_in_tbs' to be a float")
+        pulumi.set(__self__, "available_autonomous_data_storage_size_in_tbs", available_autonomous_data_storage_size_in_tbs)
+        if available_container_databases and not isinstance(available_container_databases, int):
+            raise TypeError("Expected argument 'available_container_databases' to be a int")
+        pulumi.set(__self__, "available_container_databases", available_container_databases)
         if available_cpus and not isinstance(available_cpus, int):
             raise TypeError("Expected argument 'available_cpus' to be a int")
         pulumi.set(__self__, "available_cpus", available_cpus)
@@ -97,6 +103,9 @@ class GetAutonomousVmClusterResult:
         if ocpus_enabled and not isinstance(ocpus_enabled, float):
             raise TypeError("Expected argument 'ocpus_enabled' to be a float")
         pulumi.set(__self__, "ocpus_enabled", ocpus_enabled)
+        if reclaimable_cpus and not isinstance(reclaimable_cpus, int):
+            raise TypeError("Expected argument 'reclaimable_cpus' to be a int")
+        pulumi.set(__self__, "reclaimable_cpus", reclaimable_cpus)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -127,6 +136,22 @@ class GetAutonomousVmClusterResult:
         return pulumi.get(self, "autonomous_vm_cluster_id")
 
     @property
+    @pulumi.getter(name="availableAutonomousDataStorageSizeInTbs")
+    def available_autonomous_data_storage_size_in_tbs(self) -> float:
+        """
+        The data disk group size available for Autonomous Databases, in TBs.
+        """
+        return pulumi.get(self, "available_autonomous_data_storage_size_in_tbs")
+
+    @property
+    @pulumi.getter(name="availableContainerDatabases")
+    def available_container_databases(self) -> int:
+        """
+        The number of Autonomous Container Databases that can be created with the currently available local storage.
+        """
+        return pulumi.get(self, "available_container_databases")
+
+    @property
     @pulumi.getter(name="availableCpus")
     def available_cpus(self) -> int:
         """
@@ -138,7 +163,7 @@ class GetAutonomousVmClusterResult:
     @pulumi.getter(name="availableDataStorageSizeInTbs")
     def available_data_storage_size_in_tbs(self) -> float:
         """
-        The data storage available in TBs
+        **Deprecated.** Use `availableAutonomousDataStorageSizeInTBs` for Autonomous Databases' data storage availability in TBs.
         """
         return pulumi.get(self, "available_data_storage_size_in_tbs")
 
@@ -308,6 +333,14 @@ class GetAutonomousVmClusterResult:
         return pulumi.get(self, "ocpus_enabled")
 
     @property
+    @pulumi.getter(name="reclaimableCpus")
+    def reclaimable_cpus(self) -> int:
+        """
+        CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+        """
+        return pulumi.get(self, "reclaimable_cpus")
+
+    @property
     @pulumi.getter
     def state(self) -> str:
         """
@@ -356,6 +389,8 @@ class AwaitableGetAutonomousVmClusterResult(GetAutonomousVmClusterResult):
         return GetAutonomousVmClusterResult(
             autonomous_data_storage_size_in_tbs=self.autonomous_data_storage_size_in_tbs,
             autonomous_vm_cluster_id=self.autonomous_vm_cluster_id,
+            available_autonomous_data_storage_size_in_tbs=self.available_autonomous_data_storage_size_in_tbs,
+            available_container_databases=self.available_container_databases,
             available_cpus=self.available_cpus,
             available_data_storage_size_in_tbs=self.available_data_storage_size_in_tbs,
             compartment_id=self.compartment_id,
@@ -379,6 +414,7 @@ class AwaitableGetAutonomousVmClusterResult(GetAutonomousVmClusterResult):
             memory_size_in_gbs=self.memory_size_in_gbs,
             next_maintenance_run_id=self.next_maintenance_run_id,
             ocpus_enabled=self.ocpus_enabled,
+            reclaimable_cpus=self.reclaimable_cpus,
             state=self.state,
             time_created=self.time_created,
             time_zone=self.time_zone,
@@ -416,6 +452,8 @@ def get_autonomous_vm_cluster(autonomous_vm_cluster_id: Optional[str] = None,
     return AwaitableGetAutonomousVmClusterResult(
         autonomous_data_storage_size_in_tbs=__ret__.autonomous_data_storage_size_in_tbs,
         autonomous_vm_cluster_id=__ret__.autonomous_vm_cluster_id,
+        available_autonomous_data_storage_size_in_tbs=__ret__.available_autonomous_data_storage_size_in_tbs,
+        available_container_databases=__ret__.available_container_databases,
         available_cpus=__ret__.available_cpus,
         available_data_storage_size_in_tbs=__ret__.available_data_storage_size_in_tbs,
         compartment_id=__ret__.compartment_id,
@@ -439,6 +477,7 @@ def get_autonomous_vm_cluster(autonomous_vm_cluster_id: Optional[str] = None,
         memory_size_in_gbs=__ret__.memory_size_in_gbs,
         next_maintenance_run_id=__ret__.next_maintenance_run_id,
         ocpus_enabled=__ret__.ocpus_enabled,
+        reclaimable_cpus=__ret__.reclaimable_cpus,
         state=__ret__.state,
         time_created=__ret__.time_created,
         time_zone=__ret__.time_zone,

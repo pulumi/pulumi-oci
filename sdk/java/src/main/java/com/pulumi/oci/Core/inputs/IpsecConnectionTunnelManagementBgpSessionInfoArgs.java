@@ -15,6 +15,13 @@ public final class IpsecConnectionTunnelManagementBgpSessionInfoArgs extends com
 
     public static final IpsecConnectionTunnelManagementBgpSessionInfoArgs Empty = new IpsecConnectionTunnelManagementBgpSessionInfoArgs();
 
+    @Import(name="bgpIpv6state")
+    private @Nullable Output<String> bgpIpv6state;
+
+    public Optional<Output<String>> bgpIpv6state() {
+        return Optional.ofNullable(this.bgpIpv6state);
+    }
+
     /**
      * the state of the BGP.
      * 
@@ -93,6 +100,7 @@ public final class IpsecConnectionTunnelManagementBgpSessionInfoArgs extends com
     private IpsecConnectionTunnelManagementBgpSessionInfoArgs() {}
 
     private IpsecConnectionTunnelManagementBgpSessionInfoArgs(IpsecConnectionTunnelManagementBgpSessionInfoArgs $) {
+        this.bgpIpv6state = $.bgpIpv6state;
         this.bgpState = $.bgpState;
         this.customerBgpAsn = $.customerBgpAsn;
         this.customerInterfaceIp = $.customerInterfaceIp;
@@ -116,6 +124,15 @@ public final class IpsecConnectionTunnelManagementBgpSessionInfoArgs extends com
 
         public Builder(IpsecConnectionTunnelManagementBgpSessionInfoArgs defaults) {
             $ = new IpsecConnectionTunnelManagementBgpSessionInfoArgs(Objects.requireNonNull(defaults));
+        }
+
+        public Builder bgpIpv6state(@Nullable Output<String> bgpIpv6state) {
+            $.bgpIpv6state = bgpIpv6state;
+            return this;
+        }
+
+        public Builder bgpIpv6state(String bgpIpv6state) {
+            return bgpIpv6state(Output.of(bgpIpv6state));
         }
 
         /**

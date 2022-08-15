@@ -134,6 +134,10 @@ export class ExternalPluggableDatabase extends pulumi.CustomResource {
      */
     public readonly sourceId!: pulumi.Output<string>;
     /**
+     * The configuration of Stack Monitoring for the external database.
+     */
+    public /*out*/ readonly stackMonitoringConfigs!: pulumi.Output<outputs.Database.ExternalPluggableDatabaseStackMonitoringConfig[]>;
+    /**
      * The current state of the Oracle Cloud Infrastructure external database resource.
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
@@ -176,6 +180,7 @@ export class ExternalPluggableDatabase extends pulumi.CustomResource {
             resourceInputs["ncharacterSet"] = state ? state.ncharacterSet : undefined;
             resourceInputs["operationsInsightsConfigs"] = state ? state.operationsInsightsConfigs : undefined;
             resourceInputs["sourceId"] = state ? state.sourceId : undefined;
+            resourceInputs["stackMonitoringConfigs"] = state ? state.stackMonitoringConfigs : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeZone"] = state ? state.timeZone : undefined;
@@ -207,6 +212,7 @@ export class ExternalPluggableDatabase extends pulumi.CustomResource {
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["ncharacterSet"] = undefined /*out*/;
             resourceInputs["operationsInsightsConfigs"] = undefined /*out*/;
+            resourceInputs["stackMonitoringConfigs"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeZone"] = undefined /*out*/;
@@ -288,6 +294,10 @@ export interface ExternalPluggableDatabaseState {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the the non-container database that was converted to a pluggable database to create this resource.
      */
     sourceId?: pulumi.Input<string>;
+    /**
+     * The configuration of Stack Monitoring for the external database.
+     */
+    stackMonitoringConfigs?: pulumi.Input<pulumi.Input<inputs.Database.ExternalPluggableDatabaseStackMonitoringConfig>[]>;
     /**
      * The current state of the Oracle Cloud Infrastructure external database resource.
      */

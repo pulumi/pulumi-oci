@@ -13,7 +13,7 @@ namespace Pulumi.Oci.ApmConfig.Inputs
     public sealed class GetConfigsFilterInputArgs : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The name of the metric
+        /// The name of the metric. This must be a known metric name.
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;

@@ -6,6 +6,7 @@ package com.pulumi.oci.Sch.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Sch.outputs.GetServiceConnectorSourceCursor;
 import com.pulumi.oci.Sch.outputs.GetServiceConnectorSourceLogSource;
+import com.pulumi.oci.Sch.outputs.GetServiceConnectorSourceMonitoringSource;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -28,6 +29,11 @@ public final class GetServiceConnectorSource {
      */
     private final List<GetServiceConnectorSourceLogSource> logSources;
     /**
+     * @return The list of metric namespaces to retrieve data from.
+     * 
+     */
+    private final List<GetServiceConnectorSourceMonitoringSource> monitoringSources;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
      * 
      */
@@ -38,10 +44,12 @@ public final class GetServiceConnectorSource {
         @CustomType.Parameter("cursors") List<GetServiceConnectorSourceCursor> cursors,
         @CustomType.Parameter("kind") String kind,
         @CustomType.Parameter("logSources") List<GetServiceConnectorSourceLogSource> logSources,
+        @CustomType.Parameter("monitoringSources") List<GetServiceConnectorSourceMonitoringSource> monitoringSources,
         @CustomType.Parameter("streamId") String streamId) {
         this.cursors = cursors;
         this.kind = kind;
         this.logSources = logSources;
+        this.monitoringSources = monitoringSources;
         this.streamId = streamId;
     }
 
@@ -67,6 +75,13 @@ public final class GetServiceConnectorSource {
         return this.logSources;
     }
     /**
+     * @return The list of metric namespaces to retrieve data from.
+     * 
+     */
+    public List<GetServiceConnectorSourceMonitoringSource> monitoringSources() {
+        return this.monitoringSources;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
      * 
      */
@@ -86,6 +101,7 @@ public final class GetServiceConnectorSource {
         private List<GetServiceConnectorSourceCursor> cursors;
         private String kind;
         private List<GetServiceConnectorSourceLogSource> logSources;
+        private List<GetServiceConnectorSourceMonitoringSource> monitoringSources;
         private String streamId;
 
         public Builder() {
@@ -97,6 +113,7 @@ public final class GetServiceConnectorSource {
     	      this.cursors = defaults.cursors;
     	      this.kind = defaults.kind;
     	      this.logSources = defaults.logSources;
+    	      this.monitoringSources = defaults.monitoringSources;
     	      this.streamId = defaults.streamId;
         }
 
@@ -118,11 +135,18 @@ public final class GetServiceConnectorSource {
         public Builder logSources(GetServiceConnectorSourceLogSource... logSources) {
             return logSources(List.of(logSources));
         }
+        public Builder monitoringSources(List<GetServiceConnectorSourceMonitoringSource> monitoringSources) {
+            this.monitoringSources = Objects.requireNonNull(monitoringSources);
+            return this;
+        }
+        public Builder monitoringSources(GetServiceConnectorSourceMonitoringSource... monitoringSources) {
+            return monitoringSources(List.of(monitoringSources));
+        }
         public Builder streamId(String streamId) {
             this.streamId = Objects.requireNonNull(streamId);
             return this;
         }        public GetServiceConnectorSource build() {
-            return new GetServiceConnectorSource(cursors, kind, logSources, streamId);
+            return new GetServiceConnectorSource(cursors, kind, logSources, monitoringSources, streamId);
         }
     }
 }

@@ -1,17 +1,16 @@
 module github.com/pulumi/pulumi-oci/provider
 
-go 1.17
+go 1.18
 
 replace (
 	github.com/hashicorp/go-getter v1.5.0 => github.com/hashicorp/go-getter v1.4.0
 	github.com/hashicorp/terraform-plugin-sdk/v2 => github.com/pulumi/terraform-plugin-sdk/v2 v2.0.0-20211230170131-3a7c83bfab87
-	github.com/terraform-providers/terraform-provider-oci => github.com/pulumi/terraform-provider-oci v1.0.19-0.20220426114506-596d8a0d6f9f
-	github.com/terraform-providers/terraform-provider-oci/shim => ./shim
+	github.com/oracle/terraform-provider-oci/shim => ./shim
 )
 
 require (
+	github.com/oracle/terraform-provider-oci/shim v0.0.0
 	github.com/pulumi/pulumi-terraform-bridge/v3 v3.19.0
-	github.com/terraform-providers/terraform-provider-oci/shim v0.0.0
 )
 
 require (
@@ -129,7 +128,8 @@ require (
 	github.com/oklog/run v1.0.0 // indirect
 	github.com/opentracing/basictracer-go v1.0.0 // indirect
 	github.com/opentracing/opentracing-go v1.1.0 // indirect
-	github.com/oracle/oci-go-sdk/v65 v65.2.0 // indirect
+	github.com/oracle/oci-go-sdk/v65 v65.14.0 // indirect
+	github.com/oracle/terraform-provider-oci v1.0.19-0.20220728185956-7d7ee1838ab7 // indirect
 	github.com/pgavlin/goldmark v1.1.33-0.20200616210433-b5eb04559386 // indirect
 	github.com/pierrec/lz4 v2.6.0+incompatible // indirect
 	github.com/pkg/errors v0.9.1 // indirect
@@ -155,7 +155,6 @@ require (
 	github.com/stretchr/testify v1.7.1 // indirect
 	github.com/terraform-providers/terraform-provider-archive v1.3.0 // indirect
 	github.com/terraform-providers/terraform-provider-http v1.2.0 // indirect
-	github.com/terraform-providers/terraform-provider-oci v0.0.0-00010101000000-000000000000 // indirect
 	github.com/texttheater/golang-levenshtein v0.0.0-20191208221605-eb6844b05fc6 // indirect
 	github.com/tweekmonster/luser v0.0.0-20161003172636-3fa38070dbd7 // indirect
 	github.com/uber/jaeger-client-go v2.22.1+incompatible // indirect

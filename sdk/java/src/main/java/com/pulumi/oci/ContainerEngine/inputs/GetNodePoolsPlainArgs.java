@@ -68,6 +68,21 @@ public final class GetNodePoolsPlainArgs extends com.pulumi.resources.InvokeArgs
         return Optional.ofNullable(this.name);
     }
 
+    /**
+     * A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
+     * 
+     */
+    @Import(name="states")
+    private @Nullable List<String> states;
+
+    /**
+     * @return A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
+     * 
+     */
+    public Optional<List<String>> states() {
+        return Optional.ofNullable(this.states);
+    }
+
     private GetNodePoolsPlainArgs() {}
 
     private GetNodePoolsPlainArgs(GetNodePoolsPlainArgs $) {
@@ -75,6 +90,7 @@ public final class GetNodePoolsPlainArgs extends com.pulumi.resources.InvokeArgs
         this.compartmentId = $.compartmentId;
         this.filters = $.filters;
         this.name = $.name;
+        this.states = $.states;
     }
 
     public static Builder builder() {
@@ -135,6 +151,27 @@ public final class GetNodePoolsPlainArgs extends com.pulumi.resources.InvokeArgs
         public Builder name(@Nullable String name) {
             $.name = name;
             return this;
+        }
+
+        /**
+         * @param states A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
+         * 
+         * @return builder
+         * 
+         */
+        public Builder states(@Nullable List<String> states) {
+            $.states = states;
+            return this;
+        }
+
+        /**
+         * @param states A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
+         * 
+         * @return builder
+         * 
+         */
+        public Builder states(String... states) {
+            return states(List.of(states));
         }
 
         public GetNodePoolsPlainArgs build() {

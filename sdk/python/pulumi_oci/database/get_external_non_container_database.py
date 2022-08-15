@@ -21,7 +21,7 @@ class GetExternalNonContainerDatabaseResult:
     """
     A collection of values returned by getExternalNonContainerDatabase.
     """
-    def __init__(__self__, character_set=None, compartment_id=None, database_configuration=None, database_edition=None, database_management_configs=None, database_version=None, db_id=None, db_packs=None, db_unique_name=None, defined_tags=None, display_name=None, external_non_container_database_id=None, freeform_tags=None, id=None, lifecycle_details=None, ncharacter_set=None, operations_insights_configs=None, state=None, time_created=None, time_zone=None):
+    def __init__(__self__, character_set=None, compartment_id=None, database_configuration=None, database_edition=None, database_management_configs=None, database_version=None, db_id=None, db_packs=None, db_unique_name=None, defined_tags=None, display_name=None, external_non_container_database_id=None, freeform_tags=None, id=None, lifecycle_details=None, ncharacter_set=None, operations_insights_configs=None, stack_monitoring_configs=None, state=None, time_created=None, time_zone=None):
         if character_set and not isinstance(character_set, str):
             raise TypeError("Expected argument 'character_set' to be a str")
         pulumi.set(__self__, "character_set", character_set)
@@ -73,6 +73,9 @@ class GetExternalNonContainerDatabaseResult:
         if operations_insights_configs and not isinstance(operations_insights_configs, list):
             raise TypeError("Expected argument 'operations_insights_configs' to be a list")
         pulumi.set(__self__, "operations_insights_configs", operations_insights_configs)
+        if stack_monitoring_configs and not isinstance(stack_monitoring_configs, list):
+            raise TypeError("Expected argument 'stack_monitoring_configs' to be a list")
+        pulumi.set(__self__, "stack_monitoring_configs", stack_monitoring_configs)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -217,6 +220,14 @@ class GetExternalNonContainerDatabaseResult:
         return pulumi.get(self, "operations_insights_configs")
 
     @property
+    @pulumi.getter(name="stackMonitoringConfigs")
+    def stack_monitoring_configs(self) -> Sequence['outputs.GetExternalNonContainerDatabaseStackMonitoringConfigResult']:
+        """
+        The configuration of Stack Monitoring for the external database.
+        """
+        return pulumi.get(self, "stack_monitoring_configs")
+
+    @property
     @pulumi.getter
     def state(self) -> str:
         """
@@ -264,6 +275,7 @@ class AwaitableGetExternalNonContainerDatabaseResult(GetExternalNonContainerData
             lifecycle_details=self.lifecycle_details,
             ncharacter_set=self.ncharacter_set,
             operations_insights_configs=self.operations_insights_configs,
+            stack_monitoring_configs=self.stack_monitoring_configs,
             state=self.state,
             time_created=self.time_created,
             time_zone=self.time_zone)
@@ -314,6 +326,7 @@ def get_external_non_container_database(external_non_container_database_id: Opti
         lifecycle_details=__ret__.lifecycle_details,
         ncharacter_set=__ret__.ncharacter_set,
         operations_insights_configs=__ret__.operations_insights_configs,
+        stack_monitoring_configs=__ret__.stack_monitoring_configs,
         state=__ret__.state,
         time_created=__ret__.time_created,
         time_zone=__ret__.time_zone)

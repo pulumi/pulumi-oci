@@ -21,7 +21,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Budget resource in Oracle Cloud Infrastructure Budget service.
  * 
- * Creates a new Budget.
+ * Creates a new budget.
  * 
  * ## Example Usage
  * 
@@ -37,28 +37,28 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:Budget/budget:Budget")
 public class Budget extends com.pulumi.resources.CustomResource {
     /**
-     * The actual spend in currency for the current budget cycle
+     * The actual spend in currency for the current budget cycle.
      * 
      */
     @Export(name="actualSpend", type=Double.class, parameters={})
     private Output<Double> actualSpend;
 
     /**
-     * @return The actual spend in currency for the current budget cycle
+     * @return The actual spend in currency for the current budget cycle.
      * 
      */
     public Output<Double> actualSpend() {
         return this.actualSpend;
     }
     /**
-     * Total number of alert rules in the budget
+     * The total number of alert rules in the budget.
      * 
      */
     @Export(name="alertRuleCount", type=Integer.class, parameters={})
     private Output<Integer> alertRuleCount;
 
     /**
-     * @return Total number of alert rules in the budget
+     * @return The total number of alert rules in the budget.
      * 
      */
     public Output<Integer> alertRuleCount() {
@@ -93,14 +93,14 @@ public class Budget extends com.pulumi.resources.CustomResource {
         return this.budgetProcessingPeriodStartOffset;
     }
     /**
-     * The OCID of the tenancy
+     * The OCID of the compartment.
      * 
      */
     @Export(name="compartmentId", type=String.class, parameters={})
     private Output<String> compartmentId;
 
     /**
-     * @return The OCID of the tenancy
+     * @return The OCID of the compartment.
      * 
      */
     public Output<String> compartmentId() {
@@ -135,28 +135,28 @@ public class Budget extends com.pulumi.resources.CustomResource {
         return this.description;
     }
     /**
-     * (Updatable) The displayName of the budget.
+     * (Updatable) The displayName of the budget. Avoid entering confidential information.
      * 
      */
     @Export(name="displayName", type=String.class, parameters={})
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) The displayName of the budget.
+     * @return (Updatable) The displayName of the budget. Avoid entering confidential information.
      * 
      */
     public Output<String> displayName() {
         return this.displayName;
     }
     /**
-     * The forecasted spend in currency by the end of the current budget cycle
+     * The forecasted spend in currency by the end of the current budget cycle.
      * 
      */
     @Export(name="forecastedSpend", type=Double.class, parameters={})
     private Output<Double> forecastedSpend;
 
     /**
-     * @return The forecasted spend in currency by the end of the current budget cycle
+     * @return The forecasted spend in currency by the end of the current budget cycle.
      * 
      */
     public Output<Double> forecastedSpend() {
@@ -175,6 +175,20 @@ public class Budget extends com.pulumi.resources.CustomResource {
      */
     public Output<Map<String,Object>> freeformTags() {
         return this.freeformTags;
+    }
+    /**
+     * (Updatable) The type of the budget processing period. Valid values are INVOICE and MONTH.
+     * 
+     */
+    @Export(name="processingPeriodType", type=String.class, parameters={})
+    private Output<String> processingPeriodType;
+
+    /**
+     * @return (Updatable) The type of the budget processing period. Valid values are INVOICE and MONTH.
+     * 
+     */
+    public Output<String> processingPeriodType() {
+        return this.processingPeriodType;
     }
     /**
      * (Updatable) The reset period for the budget. Valid value is MONTHLY.
@@ -205,7 +219,7 @@ public class Budget extends com.pulumi.resources.CustomResource {
         return this.state;
     }
     /**
-     * This is DEPRECTAED. Set the target compartment id in targets instead.
+     * This is DEPRECATED. Set the target compartment ID in targets instead.
      * 
      * @deprecated
      * The &#39;target_compartment_id&#39; field has been deprecated. Please use &#39;target_type&#39; instead.
@@ -216,7 +230,7 @@ public class Budget extends com.pulumi.resources.CustomResource {
     private Output<String> targetCompartmentId;
 
     /**
-     * @return This is DEPRECTAED. Set the target compartment id in targets instead.
+     * @return This is DEPRECATED. Set the target compartment ID in targets instead.
      * 
      */
     public Output<String> targetCompartmentId() {
@@ -237,70 +251,70 @@ public class Budget extends com.pulumi.resources.CustomResource {
         return this.targetType;
     }
     /**
-     * The list of targets on which the budget is applied. If targetType is &#34;COMPARTMENT&#34;, targets contains list of compartment OCIDs. If targetType is &#34;TAG&#34;, targets contains list of cost tracking tag identifiers in the form of &#34;{tagNamespace}.{tagKey}.{tagValue}&#34;. Curerntly, the array should contain EXACT ONE item.
+     * The list of targets on which the budget is applied. If targetType is &#34;COMPARTMENT&#34;, the targets contain the list of compartment OCIDs. If targetType is &#34;TAG&#34;, the targets contain the list of cost tracking tag identifiers in the form of &#34;{tagNamespace}.{tagKey}.{tagValue}&#34;. Curerntly, the array should contain exactly one item.
      * 
      */
     @Export(name="targets", type=List.class, parameters={String.class})
     private Output<List<String>> targets;
 
     /**
-     * @return The list of targets on which the budget is applied. If targetType is &#34;COMPARTMENT&#34;, targets contains list of compartment OCIDs. If targetType is &#34;TAG&#34;, targets contains list of cost tracking tag identifiers in the form of &#34;{tagNamespace}.{tagKey}.{tagValue}&#34;. Curerntly, the array should contain EXACT ONE item.
+     * @return The list of targets on which the budget is applied. If targetType is &#34;COMPARTMENT&#34;, the targets contain the list of compartment OCIDs. If targetType is &#34;TAG&#34;, the targets contain the list of cost tracking tag identifiers in the form of &#34;{tagNamespace}.{tagKey}.{tagValue}&#34;. Curerntly, the array should contain exactly one item.
      * 
      */
     public Output<List<String>> targets() {
         return this.targets;
     }
     /**
-     * Time that budget was created
+     * The time that the budget was created.
      * 
      */
     @Export(name="timeCreated", type=String.class, parameters={})
     private Output<String> timeCreated;
 
     /**
-     * @return Time that budget was created
+     * @return The time that the budget was created.
      * 
      */
     public Output<String> timeCreated() {
         return this.timeCreated;
     }
     /**
-     * The time that the budget spend was last computed
+     * The time that the budget spend was last computed.
      * 
      */
     @Export(name="timeSpendComputed", type=String.class, parameters={})
     private Output<String> timeSpendComputed;
 
     /**
-     * @return The time that the budget spend was last computed
+     * @return The time that the budget spend was last computed.
      * 
      */
     public Output<String> timeSpendComputed() {
         return this.timeSpendComputed;
     }
     /**
-     * Time that budget was updated
+     * The time that the budget was updated.
      * 
      */
     @Export(name="timeUpdated", type=String.class, parameters={})
     private Output<String> timeUpdated;
 
     /**
-     * @return Time that budget was updated
+     * @return The time that the budget was updated.
      * 
      */
     public Output<String> timeUpdated() {
         return this.timeUpdated;
     }
     /**
-     * Version of the budget. Starts from 1 and increments by 1.
+     * The version of the budget. Starts from 1 and increments by 1.
      * 
      */
     @Export(name="version", type=Integer.class, parameters={})
     private Output<Integer> version;
 
     /**
-     * @return Version of the budget. Starts from 1 and increments by 1.
+     * @return The version of the budget. Starts from 1 and increments by 1.
      * 
      */
     public Output<Integer> version() {

@@ -90,11 +90,11 @@ export class DataMaskRule extends pulumi.CustomResource {
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * The Data Mask Rule description.
+     * The data mask rule description. Avoid entering confidential information.
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * (Updatable) Data Mask Rule name
+     * (Updatable) Data mask rule name.
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
@@ -215,11 +215,11 @@ export interface DataMaskRuleState {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The Data Mask Rule description.
+     * The data mask rule description. Avoid entering confidential information.
      */
     description?: pulumi.Input<string>;
     /**
-     * (Updatable) Data Mask Rule name
+     * (Updatable) Data mask rule name.
      */
     displayName?: pulumi.Input<string>;
     /**
@@ -277,11 +277,11 @@ export interface DataMaskRuleArgs {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The Data Mask Rule description.
+     * The data mask rule description. Avoid entering confidential information.
      */
     description?: pulumi.Input<string>;
     /**
-     * (Updatable) Data Mask Rule name
+     * (Updatable) Data mask rule name.
      */
     displayName: pulumi.Input<string>;
     /**

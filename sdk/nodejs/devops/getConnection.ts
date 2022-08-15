@@ -50,6 +50,10 @@ export interface GetConnectionResult {
      */
     readonly accessToken: string;
     /**
+     * OCID of personal Bitbucket Cloud AppPassword saved in secret store
+     */
+    readonly appPassword: string;
+    /**
      * The OCID of the compartment containing the connection.
      */
     readonly compartmentId: string;
@@ -98,6 +102,10 @@ export interface GetConnectionResult {
      * The time the connection was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      */
     readonly timeUpdated: string;
+    /**
+     * Public Bitbucket Cloud Username in plain text
+     */
+    readonly username: string;
 }
 
 export function getConnectionOutput(args: GetConnectionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetConnectionResult> {

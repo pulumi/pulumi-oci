@@ -406,6 +406,7 @@ class DeployArtifact(pulumi.CustomResource):
             deploy_artifact_source=oci.dev.ops.DeployArtifactDeployArtifactSourceArgs(
                 deploy_artifact_source_type=var["deploy_artifact_deploy_artifact_source_deploy_artifact_source_type"],
                 base64encoded_content=var["deploy_artifact_deploy_artifact_source_base64encoded_content"],
+                chart_url=var["deploy_artifact_deploy_artifact_source_chart_url"],
                 deploy_artifact_path=var["deploy_artifact_deploy_artifact_source_deploy_artifact_path"],
                 deploy_artifact_version=var["deploy_artifact_deploy_artifact_source_deploy_artifact_version"],
                 image_digest=var["deploy_artifact_deploy_artifact_source_image_digest"],
@@ -465,6 +466,7 @@ class DeployArtifact(pulumi.CustomResource):
             deploy_artifact_source=oci.dev.ops.DeployArtifactDeployArtifactSourceArgs(
                 deploy_artifact_source_type=var["deploy_artifact_deploy_artifact_source_deploy_artifact_source_type"],
                 base64encoded_content=var["deploy_artifact_deploy_artifact_source_base64encoded_content"],
+                chart_url=var["deploy_artifact_deploy_artifact_source_chart_url"],
                 deploy_artifact_path=var["deploy_artifact_deploy_artifact_source_deploy_artifact_path"],
                 deploy_artifact_version=var["deploy_artifact_deploy_artifact_source_deploy_artifact_version"],
                 image_digest=var["deploy_artifact_deploy_artifact_source_image_digest"],

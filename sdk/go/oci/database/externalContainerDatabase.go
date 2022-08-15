@@ -81,6 +81,8 @@ type ExternalContainerDatabase struct {
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// The national character of the external database.
 	NcharacterSet pulumi.StringOutput `pulumi:"ncharacterSet"`
+	// The configuration of Stack Monitoring for the external database.
+	StackMonitoringConfigs ExternalContainerDatabaseStackMonitoringConfigArrayOutput `pulumi:"stackMonitoringConfigs"`
 	// The current state of the Oracle Cloud Infrastructure external database resource.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The date and time the database was created.
@@ -152,6 +154,8 @@ type externalContainerDatabaseState struct {
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The national character of the external database.
 	NcharacterSet *string `pulumi:"ncharacterSet"`
+	// The configuration of Stack Monitoring for the external database.
+	StackMonitoringConfigs []ExternalContainerDatabaseStackMonitoringConfig `pulumi:"stackMonitoringConfigs"`
 	// The current state of the Oracle Cloud Infrastructure external database resource.
 	State *string `pulumi:"state"`
 	// The date and time the database was created.
@@ -189,6 +193,8 @@ type ExternalContainerDatabaseState struct {
 	LifecycleDetails pulumi.StringPtrInput
 	// The national character of the external database.
 	NcharacterSet pulumi.StringPtrInput
+	// The configuration of Stack Monitoring for the external database.
+	StackMonitoringConfigs ExternalContainerDatabaseStackMonitoringConfigArrayInput
 	// The current state of the Oracle Cloud Infrastructure external database resource.
 	State pulumi.StringPtrInput
 	// The date and time the database was created.

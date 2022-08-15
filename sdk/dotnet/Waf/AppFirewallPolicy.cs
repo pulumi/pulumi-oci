@@ -75,6 +75,8 @@ namespace Pulumi.Oci.Waf
     ///             },
     ///             RequestProtection = new Oci.Waf.Inputs.AppFirewallPolicyRequestProtectionArgs
     ///             {
+    ///                 BodyInspectionSizeLimitExceededActionName = @var.Web_app_firewall_policy_request_protection_body_inspection_size_limit_exceeded_action_name,
+    ///                 BodyInspectionSizeLimitInBytes = @var.Web_app_firewall_policy_request_protection_body_inspection_size_limit_in_bytes,
     ///                 Rules = 
     ///                 {
     ///                     new Oci.Waf.Inputs.AppFirewallPolicyRequestProtectionRuleArgs
@@ -107,6 +109,7 @@ namespace Pulumi.Oci.Waf
     ///                         Type = @var.Web_app_firewall_policy_request_protection_rules_type,
     ///                         Condition = @var.Web_app_firewall_policy_request_protection_rules_condition,
     ///                         ConditionLanguage = @var.Web_app_firewall_policy_request_protection_rules_condition_language,
+    ///                         IsBodyInspectionEnabled = @var.Web_app_firewall_policy_request_protection_rules_is_body_inspection_enabled,
     ///                         ProtectionCapabilitySettings = new Oci.Waf.Inputs.AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsArgs
     ///                         {
     ///                             AllowedHttpMethods = @var.Web_app_firewall_policy_request_protection_rules_protection_capability_settings_allowed_http_methods,
@@ -190,6 +193,7 @@ namespace Pulumi.Oci.Waf
     ///                         Type = @var.Web_app_firewall_policy_response_protection_rules_type,
     ///                         Condition = @var.Web_app_firewall_policy_response_protection_rules_condition,
     ///                         ConditionLanguage = @var.Web_app_firewall_policy_response_protection_rules_condition_language,
+    ///                         IsBodyInspectionEnabled = @var.Web_app_firewall_policy_response_protection_rules_is_body_inspection_enabled,
     ///                         ProtectionCapabilitySettings = new Oci.Waf.Inputs.AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsArgs
     ///                         {
     ///                             AllowedHttpMethods = @var.Web_app_firewall_policy_response_protection_rules_protection_capability_settings_allowed_http_methods,

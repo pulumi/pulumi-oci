@@ -25,12 +25,12 @@ public final class GetResponderRecipeResult {
      */
     private final Map<String,Object> definedTags;
     /**
-     * @return ResponderRule Description
+     * @return ResponderRule description.
      * 
      */
     private final String description;
     /**
-     * @return ResponderRule Display Name
+     * @return ResponderRule display name.
      * 
      */
     private final String displayName;
@@ -142,14 +142,14 @@ public final class GetResponderRecipeResult {
         return this.definedTags;
     }
     /**
-     * @return ResponderRule Description
+     * @return ResponderRule description.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return ResponderRule Display Name
+     * @return ResponderRule display name.
      * 
      */
     public String displayName() {

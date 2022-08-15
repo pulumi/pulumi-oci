@@ -21,15 +21,30 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
      * (Updatable) The OCID of personal access token saved in secret store.
      * 
      */
-    @Import(name="accessToken", required=true)
-    private Output<String> accessToken;
+    @Import(name="accessToken")
+    private @Nullable Output<String> accessToken;
 
     /**
      * @return (Updatable) The OCID of personal access token saved in secret store.
      * 
      */
-    public Output<String> accessToken() {
-        return this.accessToken;
+    public Optional<Output<String>> accessToken() {
+        return Optional.ofNullable(this.accessToken);
+    }
+
+    /**
+     * (Updatable) OCID of personal Bitbucket Cloud AppPassword saved in secret store
+     * 
+     */
+    @Import(name="appPassword")
+    private @Nullable Output<String> appPassword;
+
+    /**
+     * @return (Updatable) OCID of personal Bitbucket Cloud AppPassword saved in secret store
+     * 
+     */
+    public Optional<Output<String>> appPassword() {
+        return Optional.ofNullable(this.appPassword);
     }
 
     /**
@@ -122,16 +137,33 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         return this.projectId;
     }
 
+    /**
+     * (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
+     * 
+     */
+    @Import(name="username")
+    private @Nullable Output<String> username;
+
+    /**
+     * @return (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
+     * 
+     */
+    public Optional<Output<String>> username() {
+        return Optional.ofNullable(this.username);
+    }
+
     private ConnectionArgs() {}
 
     private ConnectionArgs(ConnectionArgs $) {
         this.accessToken = $.accessToken;
+        this.appPassword = $.appPassword;
         this.connectionType = $.connectionType;
         this.definedTags = $.definedTags;
         this.description = $.description;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.projectId = $.projectId;
+        this.username = $.username;
     }
 
     public static Builder builder() {
@@ -158,7 +190,7 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder accessToken(Output<String> accessToken) {
+        public Builder accessToken(@Nullable Output<String> accessToken) {
             $.accessToken = accessToken;
             return this;
         }
@@ -171,6 +203,27 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder accessToken(String accessToken) {
             return accessToken(Output.of(accessToken));
+        }
+
+        /**
+         * @param appPassword (Updatable) OCID of personal Bitbucket Cloud AppPassword saved in secret store
+         * 
+         * @return builder
+         * 
+         */
+        public Builder appPassword(@Nullable Output<String> appPassword) {
+            $.appPassword = appPassword;
+            return this;
+        }
+
+        /**
+         * @param appPassword (Updatable) OCID of personal Bitbucket Cloud AppPassword saved in secret store
+         * 
+         * @return builder
+         * 
+         */
+        public Builder appPassword(String appPassword) {
+            return appPassword(Output.of(appPassword));
         }
 
         /**
@@ -299,8 +352,28 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
             return projectId(Output.of(projectId));
         }
 
+        /**
+         * @param username (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder username(@Nullable Output<String> username) {
+            $.username = username;
+            return this;
+        }
+
+        /**
+         * @param username (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder username(String username) {
+            return username(Output.of(username));
+        }
+
         public ConnectionArgs build() {
-            $.accessToken = Objects.requireNonNull($.accessToken, "expected parameter 'accessToken' to be non-null");
             $.connectionType = Objects.requireNonNull($.connectionType, "expected parameter 'connectionType' to be non-null");
             $.projectId = Objects.requireNonNull($.projectId, "expected parameter 'projectId' to be non-null");
             return $;

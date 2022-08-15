@@ -48,6 +48,20 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.accessToken;
     }
     /**
+     * (Updatable) OCID of personal Bitbucket Cloud AppPassword saved in secret store
+     * 
+     */
+    @Export(name="appPassword", type=String.class, parameters={})
+    private Output<String> appPassword;
+
+    /**
+     * @return (Updatable) OCID of personal Bitbucket Cloud AppPassword saved in secret store
+     * 
+     */
+    public Output<String> appPassword() {
+        return this.appPassword;
+    }
+    /**
      * The OCID of the compartment containing the connection.
      * 
      */
@@ -200,6 +214,20 @@ public class Connection extends com.pulumi.resources.CustomResource {
      */
     public Output<String> timeUpdated() {
         return this.timeUpdated;
+    }
+    /**
+     * (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
+     * 
+     */
+    @Export(name="username", type=String.class, parameters={})
+    private Output<String> username;
+
+    /**
+     * @return (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
+     * 
+     */
+    public Output<String> username() {
+        return this.username;
     }
 
     /**

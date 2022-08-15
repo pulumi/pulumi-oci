@@ -12,7 +12,7 @@ import (
 
 // This data source provides the list of Database Tools Connections in Oracle Cloud Infrastructure Database Tools service.
 //
-// Returns a list of DatabaseToolsConnections.
+// Returns a list of Database Tools connections.
 //
 // ## Example Usage
 //
@@ -52,18 +52,18 @@ func GetDatabaseToolsConnections(ctx *pulumi.Context, args *GetDatabaseToolsConn
 type GetDatabaseToolsConnectionsArgs struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
-	// A filter to return only resources that match the entire display name given.
+	// A filter to return only resources that match the entire specified display name.
 	DisplayName *string                             `pulumi:"displayName"`
 	Filters     []GetDatabaseToolsConnectionsFilter `pulumi:"filters"`
-	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	// A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
 	State *string `pulumi:"state"`
-	// A filter to return only resources their endpointServiceId matches the given endpointServiceId.
+	// A filter to return only resources their type matches the specified type.
 	Types []string `pulumi:"types"`
 }
 
 // A collection of values returned by getDatabaseToolsConnections.
 type GetDatabaseToolsConnectionsResult struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The list of database_tools_connection_collection.
 	DatabaseToolsConnectionCollections []GetDatabaseToolsConnectionsDatabaseToolsConnectionCollection `pulumi:"databaseToolsConnectionCollections"`
@@ -72,9 +72,9 @@ type GetDatabaseToolsConnectionsResult struct {
 	Filters     []GetDatabaseToolsConnectionsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
-	// The current state of the DatabaseToolsConnection.
+	// The current state of the Database Tools connection.
 	State *string `pulumi:"state"`
-	// The DatabaseToolsConnection type.
+	// The Database Tools connection type.
 	Types []string `pulumi:"types"`
 }
 
@@ -95,12 +95,12 @@ func GetDatabaseToolsConnectionsOutput(ctx *pulumi.Context, args GetDatabaseTool
 type GetDatabaseToolsConnectionsOutputArgs struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// A filter to return only resources that match the entire display name given.
+	// A filter to return only resources that match the entire specified display name.
 	DisplayName pulumi.StringPtrInput                       `pulumi:"displayName"`
 	Filters     GetDatabaseToolsConnectionsFilterArrayInput `pulumi:"filters"`
-	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	// A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
 	State pulumi.StringPtrInput `pulumi:"state"`
-	// A filter to return only resources their endpointServiceId matches the given endpointServiceId.
+	// A filter to return only resources their type matches the specified type.
 	Types pulumi.StringArrayInput `pulumi:"types"`
 }
 
@@ -123,7 +123,7 @@ func (o GetDatabaseToolsConnectionsResultOutput) ToGetDatabaseToolsConnectionsRe
 	return o
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
 func (o GetDatabaseToolsConnectionsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseToolsConnectionsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -149,12 +149,12 @@ func (o GetDatabaseToolsConnectionsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseToolsConnectionsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The current state of the DatabaseToolsConnection.
+// The current state of the Database Tools connection.
 func (o GetDatabaseToolsConnectionsResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDatabaseToolsConnectionsResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
-// The DatabaseToolsConnection type.
+// The Database Tools connection type.
 func (o GetDatabaseToolsConnectionsResultOutput) Types() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDatabaseToolsConnectionsResult) []string { return v.Types }).(pulumi.StringArrayOutput)
 }

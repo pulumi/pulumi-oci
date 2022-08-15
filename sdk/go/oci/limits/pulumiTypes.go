@@ -10,6 +10,130 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+type QuotaLock struct {
+	// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+	Message *string `pulumi:"message"`
+	// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+	RelatedResourceId *string `pulumi:"relatedResourceId"`
+	// Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated *string `pulumi:"timeCreated"`
+	// Lock type.
+	Type string `pulumi:"type"`
+}
+
+// QuotaLockInput is an input type that accepts QuotaLockArgs and QuotaLockOutput values.
+// You can construct a concrete instance of `QuotaLockInput` via:
+//
+//          QuotaLockArgs{...}
+type QuotaLockInput interface {
+	pulumi.Input
+
+	ToQuotaLockOutput() QuotaLockOutput
+	ToQuotaLockOutputWithContext(context.Context) QuotaLockOutput
+}
+
+type QuotaLockArgs struct {
+	// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+	Message pulumi.StringPtrInput `pulumi:"message"`
+	// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+	RelatedResourceId pulumi.StringPtrInput `pulumi:"relatedResourceId"`
+	// Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// Lock type.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (QuotaLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*QuotaLock)(nil)).Elem()
+}
+
+func (i QuotaLockArgs) ToQuotaLockOutput() QuotaLockOutput {
+	return i.ToQuotaLockOutputWithContext(context.Background())
+}
+
+func (i QuotaLockArgs) ToQuotaLockOutputWithContext(ctx context.Context) QuotaLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(QuotaLockOutput)
+}
+
+// QuotaLockArrayInput is an input type that accepts QuotaLockArray and QuotaLockArrayOutput values.
+// You can construct a concrete instance of `QuotaLockArrayInput` via:
+//
+//          QuotaLockArray{ QuotaLockArgs{...} }
+type QuotaLockArrayInput interface {
+	pulumi.Input
+
+	ToQuotaLockArrayOutput() QuotaLockArrayOutput
+	ToQuotaLockArrayOutputWithContext(context.Context) QuotaLockArrayOutput
+}
+
+type QuotaLockArray []QuotaLockInput
+
+func (QuotaLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]QuotaLock)(nil)).Elem()
+}
+
+func (i QuotaLockArray) ToQuotaLockArrayOutput() QuotaLockArrayOutput {
+	return i.ToQuotaLockArrayOutputWithContext(context.Background())
+}
+
+func (i QuotaLockArray) ToQuotaLockArrayOutputWithContext(ctx context.Context) QuotaLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(QuotaLockArrayOutput)
+}
+
+type QuotaLockOutput struct{ *pulumi.OutputState }
+
+func (QuotaLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*QuotaLock)(nil)).Elem()
+}
+
+func (o QuotaLockOutput) ToQuotaLockOutput() QuotaLockOutput {
+	return o
+}
+
+func (o QuotaLockOutput) ToQuotaLockOutputWithContext(ctx context.Context) QuotaLockOutput {
+	return o
+}
+
+// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+func (o QuotaLockOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v QuotaLock) *string { return v.Message }).(pulumi.StringPtrOutput)
+}
+
+// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+func (o QuotaLockOutput) RelatedResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v QuotaLock) *string { return v.RelatedResourceId }).(pulumi.StringPtrOutput)
+}
+
+// Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
+func (o QuotaLockOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v QuotaLock) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// Lock type.
+func (o QuotaLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v QuotaLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type QuotaLockArrayOutput struct{ *pulumi.OutputState }
+
+func (QuotaLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]QuotaLock)(nil)).Elem()
+}
+
+func (o QuotaLockArrayOutput) ToQuotaLockArrayOutput() QuotaLockArrayOutput {
+	return o
+}
+
+func (o QuotaLockArrayOutput) ToQuotaLockArrayOutputWithContext(ctx context.Context) QuotaLockArrayOutput {
+	return o
+}
+
+func (o QuotaLockArrayOutput) Index(i pulumi.IntInput) QuotaLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) QuotaLock {
+		return vs[0].([]QuotaLock)[vs[1].(int)]
+	}).(QuotaLockOutput)
+}
+
 type GetLimitDefinitionsFilter struct {
 	// Optional field, filter for a specific resource limit.
 	Name   string   `pulumi:"name"`
@@ -521,6 +645,130 @@ func (o GetLimitValuesLimitValueArrayOutput) Index(i pulumi.IntInput) GetLimitVa
 	}).(GetLimitValuesLimitValueOutput)
 }
 
+type GetQuotaLock struct {
+	// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// Lock type.
+	Type string `pulumi:"type"`
+}
+
+// GetQuotaLockInput is an input type that accepts GetQuotaLockArgs and GetQuotaLockOutput values.
+// You can construct a concrete instance of `GetQuotaLockInput` via:
+//
+//          GetQuotaLockArgs{...}
+type GetQuotaLockInput interface {
+	pulumi.Input
+
+	ToGetQuotaLockOutput() GetQuotaLockOutput
+	ToGetQuotaLockOutputWithContext(context.Context) GetQuotaLockOutput
+}
+
+type GetQuotaLockArgs struct {
+	// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Lock type.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetQuotaLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetQuotaLock)(nil)).Elem()
+}
+
+func (i GetQuotaLockArgs) ToGetQuotaLockOutput() GetQuotaLockOutput {
+	return i.ToGetQuotaLockOutputWithContext(context.Background())
+}
+
+func (i GetQuotaLockArgs) ToGetQuotaLockOutputWithContext(ctx context.Context) GetQuotaLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetQuotaLockOutput)
+}
+
+// GetQuotaLockArrayInput is an input type that accepts GetQuotaLockArray and GetQuotaLockArrayOutput values.
+// You can construct a concrete instance of `GetQuotaLockArrayInput` via:
+//
+//          GetQuotaLockArray{ GetQuotaLockArgs{...} }
+type GetQuotaLockArrayInput interface {
+	pulumi.Input
+
+	ToGetQuotaLockArrayOutput() GetQuotaLockArrayOutput
+	ToGetQuotaLockArrayOutputWithContext(context.Context) GetQuotaLockArrayOutput
+}
+
+type GetQuotaLockArray []GetQuotaLockInput
+
+func (GetQuotaLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetQuotaLock)(nil)).Elem()
+}
+
+func (i GetQuotaLockArray) ToGetQuotaLockArrayOutput() GetQuotaLockArrayOutput {
+	return i.ToGetQuotaLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetQuotaLockArray) ToGetQuotaLockArrayOutputWithContext(ctx context.Context) GetQuotaLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetQuotaLockArrayOutput)
+}
+
+type GetQuotaLockOutput struct{ *pulumi.OutputState }
+
+func (GetQuotaLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetQuotaLock)(nil)).Elem()
+}
+
+func (o GetQuotaLockOutput) ToGetQuotaLockOutput() GetQuotaLockOutput {
+	return o
+}
+
+func (o GetQuotaLockOutput) ToGetQuotaLockOutputWithContext(ctx context.Context) GetQuotaLockOutput {
+	return o
+}
+
+// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+func (o GetQuotaLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetQuotaLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+func (o GetQuotaLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetQuotaLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
+func (o GetQuotaLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetQuotaLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Lock type.
+func (o GetQuotaLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetQuotaLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetQuotaLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetQuotaLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetQuotaLock)(nil)).Elem()
+}
+
+func (o GetQuotaLockArrayOutput) ToGetQuotaLockArrayOutput() GetQuotaLockArrayOutput {
+	return o
+}
+
+func (o GetQuotaLockArrayOutput) ToGetQuotaLockArrayOutputWithContext(ctx context.Context) GetQuotaLockArrayOutput {
+	return o
+}
+
+func (o GetQuotaLockArrayOutput) Index(i pulumi.IntInput) GetQuotaLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetQuotaLock {
+		return vs[0].([]GetQuotaLock)[vs[1].(int)]
+	}).(GetQuotaLockOutput)
+}
+
 type GetQuotasFilter struct {
 	// name
 	Name   string   `pulumi:"name"`
@@ -640,7 +888,10 @@ type GetQuotasQuota struct {
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the quota.
-	Id string `pulumi:"id"`
+	Id             string `pulumi:"id"`
+	IsLockOverride bool   `pulumi:"isLockOverride"`
+	// Locks associated with this resource.
+	Locks []GetQuotasQuotaLock `pulumi:"locks"`
 	// name
 	Name string `pulumi:"name"`
 	// Filters returned quotas based on the given state.
@@ -672,7 +923,10 @@ type GetQuotasQuotaArgs struct {
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID of the quota.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id             pulumi.StringInput `pulumi:"id"`
+	IsLockOverride pulumi.BoolInput   `pulumi:"isLockOverride"`
+	// Locks associated with this resource.
+	Locks GetQuotasQuotaLockArrayInput `pulumi:"locks"`
 	// name
 	Name pulumi.StringInput `pulumi:"name"`
 	// Filters returned quotas based on the given state.
@@ -759,6 +1013,15 @@ func (o GetQuotasQuotaOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetQuotasQuota) string { return v.Id }).(pulumi.StringOutput)
 }
 
+func (o GetQuotasQuotaOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetQuotasQuota) bool { return v.IsLockOverride }).(pulumi.BoolOutput)
+}
+
+// Locks associated with this resource.
+func (o GetQuotasQuotaOutput) Locks() GetQuotasQuotaLockArrayOutput {
+	return o.ApplyT(func(v GetQuotasQuota) []GetQuotasQuotaLock { return v.Locks }).(GetQuotasQuotaLockArrayOutput)
+}
+
 // name
 func (o GetQuotasQuotaOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetQuotasQuota) string { return v.Name }).(pulumi.StringOutput)
@@ -797,6 +1060,130 @@ func (o GetQuotasQuotaArrayOutput) Index(i pulumi.IntInput) GetQuotasQuotaOutput
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetQuotasQuota {
 		return vs[0].([]GetQuotasQuota)[vs[1].(int)]
 	}).(GetQuotasQuotaOutput)
+}
+
+type GetQuotasQuotaLock struct {
+	// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// Lock type.
+	Type string `pulumi:"type"`
+}
+
+// GetQuotasQuotaLockInput is an input type that accepts GetQuotasQuotaLockArgs and GetQuotasQuotaLockOutput values.
+// You can construct a concrete instance of `GetQuotasQuotaLockInput` via:
+//
+//          GetQuotasQuotaLockArgs{...}
+type GetQuotasQuotaLockInput interface {
+	pulumi.Input
+
+	ToGetQuotasQuotaLockOutput() GetQuotasQuotaLockOutput
+	ToGetQuotasQuotaLockOutputWithContext(context.Context) GetQuotasQuotaLockOutput
+}
+
+type GetQuotasQuotaLockArgs struct {
+	// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Lock type.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetQuotasQuotaLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetQuotasQuotaLock)(nil)).Elem()
+}
+
+func (i GetQuotasQuotaLockArgs) ToGetQuotasQuotaLockOutput() GetQuotasQuotaLockOutput {
+	return i.ToGetQuotasQuotaLockOutputWithContext(context.Background())
+}
+
+func (i GetQuotasQuotaLockArgs) ToGetQuotasQuotaLockOutputWithContext(ctx context.Context) GetQuotasQuotaLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetQuotasQuotaLockOutput)
+}
+
+// GetQuotasQuotaLockArrayInput is an input type that accepts GetQuotasQuotaLockArray and GetQuotasQuotaLockArrayOutput values.
+// You can construct a concrete instance of `GetQuotasQuotaLockArrayInput` via:
+//
+//          GetQuotasQuotaLockArray{ GetQuotasQuotaLockArgs{...} }
+type GetQuotasQuotaLockArrayInput interface {
+	pulumi.Input
+
+	ToGetQuotasQuotaLockArrayOutput() GetQuotasQuotaLockArrayOutput
+	ToGetQuotasQuotaLockArrayOutputWithContext(context.Context) GetQuotasQuotaLockArrayOutput
+}
+
+type GetQuotasQuotaLockArray []GetQuotasQuotaLockInput
+
+func (GetQuotasQuotaLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetQuotasQuotaLock)(nil)).Elem()
+}
+
+func (i GetQuotasQuotaLockArray) ToGetQuotasQuotaLockArrayOutput() GetQuotasQuotaLockArrayOutput {
+	return i.ToGetQuotasQuotaLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetQuotasQuotaLockArray) ToGetQuotasQuotaLockArrayOutputWithContext(ctx context.Context) GetQuotasQuotaLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetQuotasQuotaLockArrayOutput)
+}
+
+type GetQuotasQuotaLockOutput struct{ *pulumi.OutputState }
+
+func (GetQuotasQuotaLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetQuotasQuotaLock)(nil)).Elem()
+}
+
+func (o GetQuotasQuotaLockOutput) ToGetQuotasQuotaLockOutput() GetQuotasQuotaLockOutput {
+	return o
+}
+
+func (o GetQuotasQuotaLockOutput) ToGetQuotasQuotaLockOutputWithContext(ctx context.Context) GetQuotasQuotaLockOutput {
+	return o
+}
+
+// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+func (o GetQuotasQuotaLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetQuotasQuotaLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+func (o GetQuotasQuotaLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetQuotasQuotaLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
+func (o GetQuotasQuotaLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetQuotasQuotaLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Lock type.
+func (o GetQuotasQuotaLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetQuotasQuotaLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetQuotasQuotaLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetQuotasQuotaLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetQuotasQuotaLock)(nil)).Elem()
+}
+
+func (o GetQuotasQuotaLockArrayOutput) ToGetQuotasQuotaLockArrayOutput() GetQuotasQuotaLockArrayOutput {
+	return o
+}
+
+func (o GetQuotasQuotaLockArrayOutput) ToGetQuotasQuotaLockArrayOutputWithContext(ctx context.Context) GetQuotasQuotaLockArrayOutput {
+	return o
+}
+
+func (o GetQuotasQuotaLockArrayOutput) Index(i pulumi.IntInput) GetQuotasQuotaLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetQuotasQuotaLock {
+		return vs[0].([]GetQuotasQuotaLock)[vs[1].(int)]
+	}).(GetQuotasQuotaLockOutput)
 }
 
 type GetServicesFilter struct {
@@ -1015,6 +1402,8 @@ func (o GetServicesServiceArrayOutput) Index(i pulumi.IntInput) GetServicesServi
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*QuotaLockInput)(nil)).Elem(), QuotaLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*QuotaLockArrayInput)(nil)).Elem(), QuotaLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetLimitDefinitionsFilterInput)(nil)).Elem(), GetLimitDefinitionsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetLimitDefinitionsFilterArrayInput)(nil)).Elem(), GetLimitDefinitionsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetLimitDefinitionsLimitDefinitionInput)(nil)).Elem(), GetLimitDefinitionsLimitDefinitionArgs{})
@@ -1023,14 +1412,20 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetLimitValuesFilterArrayInput)(nil)).Elem(), GetLimitValuesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetLimitValuesLimitValueInput)(nil)).Elem(), GetLimitValuesLimitValueArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetLimitValuesLimitValueArrayInput)(nil)).Elem(), GetLimitValuesLimitValueArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetQuotaLockInput)(nil)).Elem(), GetQuotaLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetQuotaLockArrayInput)(nil)).Elem(), GetQuotaLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetQuotasFilterInput)(nil)).Elem(), GetQuotasFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetQuotasFilterArrayInput)(nil)).Elem(), GetQuotasFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetQuotasQuotaInput)(nil)).Elem(), GetQuotasQuotaArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetQuotasQuotaArrayInput)(nil)).Elem(), GetQuotasQuotaArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetQuotasQuotaLockInput)(nil)).Elem(), GetQuotasQuotaLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetQuotasQuotaLockArrayInput)(nil)).Elem(), GetQuotasQuotaLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetServicesFilterInput)(nil)).Elem(), GetServicesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetServicesFilterArrayInput)(nil)).Elem(), GetServicesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetServicesServiceInput)(nil)).Elem(), GetServicesServiceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetServicesServiceArrayInput)(nil)).Elem(), GetServicesServiceArray{})
+	pulumi.RegisterOutputType(QuotaLockOutput{})
+	pulumi.RegisterOutputType(QuotaLockArrayOutput{})
 	pulumi.RegisterOutputType(GetLimitDefinitionsFilterOutput{})
 	pulumi.RegisterOutputType(GetLimitDefinitionsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetLimitDefinitionsLimitDefinitionOutput{})
@@ -1039,10 +1434,14 @@ func init() {
 	pulumi.RegisterOutputType(GetLimitValuesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetLimitValuesLimitValueOutput{})
 	pulumi.RegisterOutputType(GetLimitValuesLimitValueArrayOutput{})
+	pulumi.RegisterOutputType(GetQuotaLockOutput{})
+	pulumi.RegisterOutputType(GetQuotaLockArrayOutput{})
 	pulumi.RegisterOutputType(GetQuotasFilterOutput{})
 	pulumi.RegisterOutputType(GetQuotasFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetQuotasQuotaOutput{})
 	pulumi.RegisterOutputType(GetQuotasQuotaArrayOutput{})
+	pulumi.RegisterOutputType(GetQuotasQuotaLockOutput{})
+	pulumi.RegisterOutputType(GetQuotasQuotaLockArrayOutput{})
 	pulumi.RegisterOutputType(GetServicesFilterOutput{})
 	pulumi.RegisterOutputType(GetServicesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetServicesServiceOutput{})

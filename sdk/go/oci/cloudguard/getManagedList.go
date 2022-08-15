@@ -57,9 +57,9 @@ type LookupManagedListResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// ManagedList description
+	// ManagedList description.
 	Description string `pulumi:"description"`
-	// ManagedList display name
+	// ManagedList display name.
 	DisplayName string `pulumi:"displayName"`
 	// provider of the feed
 	FeedProvider string `pulumi:"feedProvider"`
@@ -136,12 +136,12 @@ func (o LookupManagedListResultOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupManagedListResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// ManagedList description
+// ManagedList description.
 func (o LookupManagedListResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupManagedListResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// ManagedList display name
+// ManagedList display name.
 func (o LookupManagedListResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupManagedListResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }

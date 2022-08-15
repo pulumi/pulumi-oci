@@ -55,6 +55,7 @@ type LookupAutonomousDatabaseInstanceWalletManagementArgs struct {
 type LookupAutonomousDatabaseInstanceWalletManagementResult struct {
 	// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	AutonomousDatabaseId string `pulumi:"autonomousDatabaseId"`
+	GracePeriod          int    `pulumi:"gracePeriod"`
 	Id                   string `pulumi:"id"`
 	// Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
 	ShouldRotate bool `pulumi:"shouldRotate"`
@@ -105,6 +106,10 @@ func (o LookupAutonomousDatabaseInstanceWalletManagementResultOutput) ToLookupAu
 // The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o LookupAutonomousDatabaseInstanceWalletManagementResultOutput) AutonomousDatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseInstanceWalletManagementResult) string { return v.AutonomousDatabaseId }).(pulumi.StringOutput)
+}
+
+func (o LookupAutonomousDatabaseInstanceWalletManagementResultOutput) GracePeriod() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseInstanceWalletManagementResult) int { return v.GracePeriod }).(pulumi.IntOutput)
 }
 
 func (o LookupAutonomousDatabaseInstanceWalletManagementResultOutput) Id() pulumi.StringOutput {

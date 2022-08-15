@@ -110,6 +110,10 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         public readonly string AccessToken;
         /// <summary>
+        /// OCID of personal Bitbucket Cloud AppPassword saved in secret store
+        /// </summary>
+        public readonly string AppPassword;
+        /// <summary>
         /// The OCID of the compartment containing the connection.
         /// </summary>
         public readonly string CompartmentId;
@@ -158,10 +162,16 @@ namespace Pulumi.Oci.DevOps
         /// The time the connection was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         /// </summary>
         public readonly string TimeUpdated;
+        /// <summary>
+        /// Public Bitbucket Cloud Username in plain text
+        /// </summary>
+        public readonly string Username;
 
         [OutputConstructor]
         private GetConnectionResult(
             string accessToken,
+
+            string appPassword,
 
             string compartmentId,
 
@@ -187,9 +197,12 @@ namespace Pulumi.Oci.DevOps
 
             string timeCreated,
 
-            string timeUpdated)
+            string timeUpdated,
+
+            string username)
         {
             AccessToken = accessToken;
+            AppPassword = appPassword;
             CompartmentId = compartmentId;
             ConnectionId = connectionId;
             ConnectionType = connectionType;
@@ -203,6 +216,7 @@ namespace Pulumi.Oci.DevOps
             SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
+            Username = username;
         }
     }
 }

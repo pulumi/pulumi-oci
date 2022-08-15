@@ -36,6 +36,7 @@ namespace Pulumi.Oci.ApmSynthetics
         ///             MonitorType = @var.Monitor_monitor_type,
         ///             ScriptId = oci_apm_synthetics_script.Test_script.Id,
         ///             Status = @var.Monitor_status,
+        ///             VantagePoint = @var.Monitor_vantage_point,
         ///         }));
         ///     }
         /// 
@@ -72,6 +73,7 @@ namespace Pulumi.Oci.ApmSynthetics
         ///             MonitorType = @var.Monitor_monitor_type,
         ///             ScriptId = oci_apm_synthetics_script.Test_script.Id,
         ///             Status = @var.Monitor_status,
+        ///             VantagePoint = @var.Monitor_vantage_point,
         ///         }));
         ///     }
         /// 
@@ -94,7 +96,7 @@ namespace Pulumi.Oci.ApmSynthetics
         public string ApmDomainId { get; set; } = null!;
 
         /// <summary>
-        /// A filter to return only resources that match the entire display name given.
+        /// A filter to return only the resources that match the entire display name.
         /// </summary>
         [Input("displayName")]
         public string? DisplayName { get; set; }
@@ -125,6 +127,12 @@ namespace Pulumi.Oci.ApmSynthetics
         [Input("status")]
         public string? Status { get; set; }
 
+        /// <summary>
+        /// The name of the public or dedicated vantage point.
+        /// </summary>
+        [Input("vantagePoint")]
+        public string? VantagePoint { get; set; }
+
         public GetMonitorsArgs()
         {
         }
@@ -139,7 +147,7 @@ namespace Pulumi.Oci.ApmSynthetics
         public Input<string> ApmDomainId { get; set; } = null!;
 
         /// <summary>
-        /// A filter to return only resources that match the entire display name given.
+        /// A filter to return only the resources that match the entire display name.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -169,6 +177,12 @@ namespace Pulumi.Oci.ApmSynthetics
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
+
+        /// <summary>
+        /// The name of the public or dedicated vantage point.
+        /// </summary>
+        [Input("vantagePoint")]
+        public Input<string>? VantagePoint { get; set; }
 
         public GetMonitorsInvokeArgs()
         {
@@ -205,6 +219,7 @@ namespace Pulumi.Oci.ApmSynthetics
         /// Enables or disables the monitor.
         /// </summary>
         public readonly string? Status;
+        public readonly string? VantagePoint;
 
         [OutputConstructor]
         private GetMonitorsResult(
@@ -222,7 +237,9 @@ namespace Pulumi.Oci.ApmSynthetics
 
             string? scriptId,
 
-            string? status)
+            string? status,
+
+            string? vantagePoint)
         {
             ApmDomainId = apmDomainId;
             DisplayName = displayName;
@@ -232,6 +249,7 @@ namespace Pulumi.Oci.ApmSynthetics
             MonitorType = monitorType;
             ScriptId = scriptId;
             Status = status;
+            VantagePoint = vantagePoint;
         }
     }
 }

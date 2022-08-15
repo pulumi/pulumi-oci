@@ -192,7 +192,7 @@ class GetDatabaseSoftwareImageResult:
     @pulumi.getter(name="lsInventory")
     def ls_inventory(self) -> str:
         """
-        output from lsinventory which will get passed as a string
+        The output from the OPatch lsInventory command, which is passed as a string.
         """
         return pulumi.get(self, "ls_inventory")
 

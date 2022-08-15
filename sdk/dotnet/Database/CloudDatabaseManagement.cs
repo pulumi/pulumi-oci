@@ -17,6 +17,38 @@ namespace Pulumi.Oci.Database
     /// Database Management requires `USER_NAME`, `PASSWORD_SECRET_ID` and `PRIVATE_END_POINT_ID`.
     /// `database.0.database_management_config` is updated to appropriate managementType and managementStatus for the specified Oracle Database instance.
     /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// class MyStack : Stack
+    /// {
+    ///     public MyStack()
+    ///     {
+    ///         var test = new Oci.Database.CloudDatabaseManagement("test", new Oci.Database.CloudDatabaseManagementArgs
+    ///         {
+    ///             DatabaseId = oci_database_database.Test_database.Id,
+    ///             ManagementType = @var.Database_cloud_database_management_details_management_type,
+    ///             PrivateEndPointId = @var.Database_cloud_database_management_details_private_end_point_id,
+    ///             ServiceName = @var.Database_cloud_database_management_details_service_name,
+    ///             Credentialdetails = new Oci.Database.Inputs.CloudDatabaseManagementCredentialdetailsArgs
+    ///             {
+    ///                 UserName = @var.Database_cloud_database_management_details_user_name,
+    ///                 PasswordSecretId = @var.Database_cloud_database_management_details_password_secret_id,
+    ///             },
+    ///             EnableManagement = @var.Database_cloud_database_management_details_enable_management,
+    ///             Port = @var.Cloud_database_management_port,
+    ///             Protocol = @var.Cloud_database_management_protocol,
+    ///             Role = @var.Cloud_database_management_role,
+    ///             SslSecretId = oci_vault_secret.Test_secret.Id,
+    ///         });
+    ///     }
+    /// 
+    /// }
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// Import is not supported for this resource.
@@ -40,30 +72,6 @@ namespace Pulumi.Oci.Database
         public Output<bool> EnableManagement { get; private set; } = null!;
 
         /// <summary>
-        /// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        /// </summary>
-        [Output("kmsKeyId")]
-        public Output<string> KmsKeyId { get; private set; } = null!;
-
-        /// <summary>
-        /// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-        /// </summary>
-        [Output("kmsKeyVersionId")]
-        public Output<string> KmsKeyVersionId { get; private set; } = null!;
-
-        /// <summary>
-        /// The date and time when the latest database backup was created.
-        /// </summary>
-        [Output("lastBackupTimestamp")]
-        public Output<string> LastBackupTimestamp { get; private set; } = null!;
-
-        /// <summary>
-        /// Additional information about the current lifecycle state.
-        /// </summary>
-        [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
-
-        /// <summary>
         /// (Updatable) Specifies database management type
         /// enum:
         /// - `BASIC`
@@ -73,64 +81,40 @@ namespace Pulumi.Oci.Database
         public Output<string> ManagementType { get; private set; } = null!;
 
         /// <summary>
-        /// The national character set for the database.
+        /// The port used to connect to the database.
         /// </summary>
-        [Output("ncharacterSet")]
-        public Output<string> NcharacterSet { get; private set; } = null!;
+        [Output("port")]
+        public Output<int?> Port { get; private set; } = null!;
 
         /// <summary>
-        /// The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
-        /// </summary>
-        [Output("pdbName")]
-        public Output<string> PdbName { get; private set; } = null!;
-
-        /// <summary>
-        /// (Updatable) The private end point [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
         /// </summary>
         [Output("privateEndPointId")]
         public Output<string> PrivateEndPointId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Database service name
+        /// Protocol used by the database connection.
+        /// </summary>
+        [Output("protocol")]
+        public Output<string?> Protocol { get; private set; } = null!;
+
+        /// <summary>
+        /// The role of the user that will be connecting to the database.
+        /// </summary>
+        [Output("role")]
+        public Output<string?> Role { get; private set; } = null!;
+
+        /// <summary>
+        /// The name of the Oracle Database service that will be used to connect to the database.
         /// </summary>
         [Output("serviceName")]
         public Output<string> ServiceName { get; private set; } = null!;
 
         /// <summary>
-        /// Specifies a prefix for the `Oracle SID` of the database to be created.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         /// </summary>
-        [Output("sidPrefix")]
-        public Output<string> SidPrefix { get; private set; } = null!;
-
-        /// <summary>
-        /// Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
-        /// </summary>
-        [Output("sourceDatabasePointInTimeRecoveryTimestamp")]
-        public Output<string> SourceDatabasePointInTimeRecoveryTimestamp { get; private set; } = null!;
-
-        /// <summary>
-        /// The current state of the database.
-        /// </summary>
-        [Output("state")]
-        public Output<string> State { get; private set; } = null!;
-
-        /// <summary>
-        /// The date and time the database was created.
-        /// </summary>
-        [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
-
-        /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        /// </summary>
-        [Output("vaultId")]
-        public Output<string> VaultId { get; private set; } = null!;
-
-        /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
-        /// </summary>
-        [Output("vmClusterId")]
-        public Output<string> VmClusterId { get; private set; } = null!;
+        [Output("sslSecretId")]
+        public Output<string?> SslSecretId { get; private set; } = null!;
 
 
         /// <summary>
@@ -188,6 +172,12 @@ namespace Pulumi.Oci.Database
         public Input<string> DatabaseId { get; set; } = null!;
 
         /// <summary>
+        /// (Updatable) Use this flag to enable/disable database management
+        /// </summary>
+        [Input("enableManagement", required: true)]
+        public Input<bool> EnableManagement { get; set; } = null!;
+
+        /// <summary>
         /// (Updatable) Specifies database management type
         /// enum:
         /// - `BASIC`
@@ -197,16 +187,40 @@ namespace Pulumi.Oci.Database
         public Input<string> ManagementType { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The private end point [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// The port used to connect to the database.
+        /// </summary>
+        [Input("port")]
+        public Input<int>? Port { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
         /// </summary>
         [Input("privateEndPointId", required: true)]
         public Input<string> PrivateEndPointId { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Database service name
+        /// Protocol used by the database connection.
+        /// </summary>
+        [Input("protocol")]
+        public Input<string>? Protocol { get; set; }
+
+        /// <summary>
+        /// The role of the user that will be connecting to the database.
+        /// </summary>
+        [Input("role")]
+        public Input<string>? Role { get; set; }
+
+        /// <summary>
+        /// The name of the Oracle Database service that will be used to connect to the database.
         /// </summary>
         [Input("serviceName", required: true)]
         public Input<string> ServiceName { get; set; } = null!;
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        /// </summary>
+        [Input("sslSecretId")]
+        public Input<string>? SslSecretId { get; set; }
 
         public CloudDatabaseManagementArgs()
         {
@@ -231,30 +245,6 @@ namespace Pulumi.Oci.Database
         public Input<bool>? EnableManagement { get; set; }
 
         /// <summary>
-        /// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        /// </summary>
-        [Input("kmsKeyId")]
-        public Input<string>? KmsKeyId { get; set; }
-
-        /// <summary>
-        /// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-        /// </summary>
-        [Input("kmsKeyVersionId")]
-        public Input<string>? KmsKeyVersionId { get; set; }
-
-        /// <summary>
-        /// The date and time when the latest database backup was created.
-        /// </summary>
-        [Input("lastBackupTimestamp")]
-        public Input<string>? LastBackupTimestamp { get; set; }
-
-        /// <summary>
-        /// Additional information about the current lifecycle state.
-        /// </summary>
-        [Input("lifecycleDetails")]
-        public Input<string>? LifecycleDetails { get; set; }
-
-        /// <summary>
         /// (Updatable) Specifies database management type
         /// enum:
         /// - `BASIC`
@@ -264,64 +254,40 @@ namespace Pulumi.Oci.Database
         public Input<string>? ManagementType { get; set; }
 
         /// <summary>
-        /// The national character set for the database.
+        /// The port used to connect to the database.
         /// </summary>
-        [Input("ncharacterSet")]
-        public Input<string>? NcharacterSet { get; set; }
+        [Input("port")]
+        public Input<int>? Port { get; set; }
 
         /// <summary>
-        /// The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
-        /// </summary>
-        [Input("pdbName")]
-        public Input<string>? PdbName { get; set; }
-
-        /// <summary>
-        /// (Updatable) The private end point [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
         /// </summary>
         [Input("privateEndPointId")]
         public Input<string>? PrivateEndPointId { get; set; }
 
         /// <summary>
-        /// (Updatable) Database service name
+        /// Protocol used by the database connection.
+        /// </summary>
+        [Input("protocol")]
+        public Input<string>? Protocol { get; set; }
+
+        /// <summary>
+        /// The role of the user that will be connecting to the database.
+        /// </summary>
+        [Input("role")]
+        public Input<string>? Role { get; set; }
+
+        /// <summary>
+        /// The name of the Oracle Database service that will be used to connect to the database.
         /// </summary>
         [Input("serviceName")]
         public Input<string>? ServiceName { get; set; }
 
         /// <summary>
-        /// Specifies a prefix for the `Oracle SID` of the database to be created.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         /// </summary>
-        [Input("sidPrefix")]
-        public Input<string>? SidPrefix { get; set; }
-
-        /// <summary>
-        /// Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
-        /// </summary>
-        [Input("sourceDatabasePointInTimeRecoveryTimestamp")]
-        public Input<string>? SourceDatabasePointInTimeRecoveryTimestamp { get; set; }
-
-        /// <summary>
-        /// The current state of the database.
-        /// </summary>
-        [Input("state")]
-        public Input<string>? State { get; set; }
-
-        /// <summary>
-        /// The date and time the database was created.
-        /// </summary>
-        [Input("timeCreated")]
-        public Input<string>? TimeCreated { get; set; }
-
-        /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        /// </summary>
-        [Input("vaultId")]
-        public Input<string>? VaultId { get; set; }
-
-        /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
-        /// </summary>
-        [Input("vmClusterId")]
-        public Input<string>? VmClusterId { get; set; }
+        [Input("sslSecretId")]
+        public Input<string>? SslSecretId { get; set; }
 
         public CloudDatabaseManagementState()
         {

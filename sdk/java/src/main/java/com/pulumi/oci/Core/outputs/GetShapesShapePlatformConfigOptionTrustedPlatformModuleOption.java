@@ -11,12 +11,12 @@ import java.util.Objects;
 @CustomType
 public final class GetShapesShapePlatformConfigOptionTrustedPlatformModuleOption {
     /**
-     * @return Possible boolean values indicating whether Trusted Platform Module (TPM) can be enabled or disabled
+     * @return Whether virtualization instructions can be enabled.
      * 
      */
     private final List<Boolean> allowedValues;
     /**
-     * @return Indicates whether Trusted Platform Module is to be enabled by default
+     * @return Whether virtualization instructions are enabled by default.
      * 
      */
     private final Boolean isDefaultEnabled;
@@ -30,14 +30,14 @@ public final class GetShapesShapePlatformConfigOptionTrustedPlatformModuleOption
     }
 
     /**
-     * @return Possible boolean values indicating whether Trusted Platform Module (TPM) can be enabled or disabled
+     * @return Whether virtualization instructions can be enabled.
      * 
      */
     public List<Boolean> allowedValues() {
         return this.allowedValues;
     }
     /**
-     * @return Indicates whether Trusted Platform Module is to be enabled by default
+     * @return Whether virtualization instructions are enabled by default.
      * 
      */
     public Boolean isDefaultEnabled() {

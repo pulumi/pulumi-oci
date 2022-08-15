@@ -8,7 +8,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Config resource in Oracle Cloud Infrastructure Apm Config service.
  *
- * Creates a new Configuration item.
+ * Creates a new configuration item.
  *
  * ## Example Usage
  *
@@ -33,6 +33,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
+ *     group: _var.config_group,
  *     metrics: [{
  *         description: _var.config_metrics_description,
  *         name: _var.config_metrics_name,
@@ -41,6 +42,7 @@ import * as utilities from "../utilities";
  *     }],
  *     namespace: _var.config_namespace,
  *     opcDryRun: _var.config_opc_dry_run,
+ *     options: _var.config_options,
  *     rules: [{
  *         displayName: _var.config_rules_display_name,
  *         filterText: _var.config_rules_filter_text,
@@ -90,11 +92,11 @@ export class Config extends pulumi.CustomResource {
     }
 
     /**
-     * (Updatable) The APM Domain Id the request is intended for.
+     * (Updatable) The APM Domain ID the request is intended for.
      */
     public readonly apmDomainId!: pulumi.Output<string>;
     /**
-     * (Updatable) The type of configuration item
+     * (Updatable) The type of configuration item.
      */
     public readonly configType!: pulumi.Output<string>;
     /**
@@ -102,19 +104,19 @@ export class Config extends pulumi.CustomResource {
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * (Updatable) A description of the metric
+     * (Updatable) A description of the metric.
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * (Updatable) A list of dimensions for this metric. Must be NULL at the moment.
+     * (Updatable) A list of dimensions for the metric. This variable should not be used.
      */
     public readonly dimensions!: pulumi.Output<outputs.ApmConfig.ConfigDimension[]>;
     /**
-     * (Updatable) A user-friendly name that provides a short description this rule.
+     * (Updatable) The name by which a configuration entity is displayed to the end user.
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId will be generated when a Span Filter is created.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
      */
     public readonly filterId!: pulumi.Output<string>;
     /**
@@ -126,17 +128,25 @@ export class Config extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * (Updatable)
+     * (Updatable) A string that specifies the group that an OPTIONS item belongs to.
+     */
+    public readonly group!: pulumi.Output<string>;
+    /**
+     * (Updatable) The list of metrics in this group.
      */
     public readonly metrics!: pulumi.Output<outputs.ApmConfig.ConfigMetric[]>;
     /**
-     * (Updatable) The namespace to write the metrics to
+     * (Updatable) The namespace to which the metrics are published. It must be one of several predefined namespaces.
      */
     public readonly namespace!: pulumi.Output<string>;
     /**
-     * (Updatable) Indicates that this request is a dry-run. If set to "true", nothing will be modified, only the validation will be performed.
+     * (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not modify the configuration item details and is used only to perform validation on the submitted data.
      */
     public readonly opcDryRun!: pulumi.Output<string>;
+    /**
+     * (Updatable) The options are stored here as JSON.
+     */
+    public readonly options!: pulumi.Output<string>;
     /**
      * (Updatable)
      */
@@ -172,9 +182,11 @@ export class Config extends pulumi.CustomResource {
             resourceInputs["filterId"] = state ? state.filterId : undefined;
             resourceInputs["filterText"] = state ? state.filterText : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
+            resourceInputs["group"] = state ? state.group : undefined;
             resourceInputs["metrics"] = state ? state.metrics : undefined;
             resourceInputs["namespace"] = state ? state.namespace : undefined;
             resourceInputs["opcDryRun"] = state ? state.opcDryRun : undefined;
+            resourceInputs["options"] = state ? state.options : undefined;
             resourceInputs["rules"] = state ? state.rules : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
@@ -198,9 +210,11 @@ export class Config extends pulumi.CustomResource {
             resourceInputs["filterId"] = args ? args.filterId : undefined;
             resourceInputs["filterText"] = args ? args.filterText : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["group"] = args ? args.group : undefined;
             resourceInputs["metrics"] = args ? args.metrics : undefined;
             resourceInputs["namespace"] = args ? args.namespace : undefined;
             resourceInputs["opcDryRun"] = args ? args.opcDryRun : undefined;
+            resourceInputs["options"] = args ? args.options : undefined;
             resourceInputs["rules"] = args ? args.rules : undefined;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
@@ -215,11 +229,11 @@ export class Config extends pulumi.CustomResource {
  */
 export interface ConfigState {
     /**
-     * (Updatable) The APM Domain Id the request is intended for.
+     * (Updatable) The APM Domain ID the request is intended for.
      */
     apmDomainId?: pulumi.Input<string>;
     /**
-     * (Updatable) The type of configuration item
+     * (Updatable) The type of configuration item.
      */
     configType?: pulumi.Input<string>;
     /**
@@ -227,19 +241,19 @@ export interface ConfigState {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) A description of the metric
+     * (Updatable) A description of the metric.
      */
     description?: pulumi.Input<string>;
     /**
-     * (Updatable) A list of dimensions for this metric. Must be NULL at the moment.
+     * (Updatable) A list of dimensions for the metric. This variable should not be used.
      */
     dimensions?: pulumi.Input<pulumi.Input<inputs.ApmConfig.ConfigDimension>[]>;
     /**
-     * (Updatable) A user-friendly name that provides a short description this rule.
+     * (Updatable) The name by which a configuration entity is displayed to the end user.
      */
     displayName?: pulumi.Input<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId will be generated when a Span Filter is created.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
      */
     filterId?: pulumi.Input<string>;
     /**
@@ -251,17 +265,25 @@ export interface ConfigState {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable)
+     * (Updatable) A string that specifies the group that an OPTIONS item belongs to.
+     */
+    group?: pulumi.Input<string>;
+    /**
+     * (Updatable) The list of metrics in this group.
      */
     metrics?: pulumi.Input<pulumi.Input<inputs.ApmConfig.ConfigMetric>[]>;
     /**
-     * (Updatable) The namespace to write the metrics to
+     * (Updatable) The namespace to which the metrics are published. It must be one of several predefined namespaces.
      */
     namespace?: pulumi.Input<string>;
     /**
-     * (Updatable) Indicates that this request is a dry-run. If set to "true", nothing will be modified, only the validation will be performed.
+     * (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not modify the configuration item details and is used only to perform validation on the submitted data.
      */
     opcDryRun?: pulumi.Input<string>;
+    /**
+     * (Updatable) The options are stored here as JSON.
+     */
+    options?: pulumi.Input<string>;
     /**
      * (Updatable)
      */
@@ -281,11 +303,11 @@ export interface ConfigState {
  */
 export interface ConfigArgs {
     /**
-     * (Updatable) The APM Domain Id the request is intended for.
+     * (Updatable) The APM Domain ID the request is intended for.
      */
     apmDomainId: pulumi.Input<string>;
     /**
-     * (Updatable) The type of configuration item
+     * (Updatable) The type of configuration item.
      */
     configType: pulumi.Input<string>;
     /**
@@ -293,19 +315,19 @@ export interface ConfigArgs {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) A description of the metric
+     * (Updatable) A description of the metric.
      */
     description?: pulumi.Input<string>;
     /**
-     * (Updatable) A list of dimensions for this metric. Must be NULL at the moment.
+     * (Updatable) A list of dimensions for the metric. This variable should not be used.
      */
     dimensions?: pulumi.Input<pulumi.Input<inputs.ApmConfig.ConfigDimension>[]>;
     /**
-     * (Updatable) A user-friendly name that provides a short description this rule.
+     * (Updatable) The name by which a configuration entity is displayed to the end user.
      */
     displayName: pulumi.Input<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId will be generated when a Span Filter is created.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
      */
     filterId?: pulumi.Input<string>;
     /**
@@ -317,17 +339,25 @@ export interface ConfigArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable)
+     * (Updatable) A string that specifies the group that an OPTIONS item belongs to.
+     */
+    group?: pulumi.Input<string>;
+    /**
+     * (Updatable) The list of metrics in this group.
      */
     metrics?: pulumi.Input<pulumi.Input<inputs.ApmConfig.ConfigMetric>[]>;
     /**
-     * (Updatable) The namespace to write the metrics to
+     * (Updatable) The namespace to which the metrics are published. It must be one of several predefined namespaces.
      */
     namespace?: pulumi.Input<string>;
     /**
-     * (Updatable) Indicates that this request is a dry-run. If set to "true", nothing will be modified, only the validation will be performed.
+     * (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not modify the configuration item details and is used only to perform validation on the submitted data.
      */
     opcDryRun?: pulumi.Input<string>;
+    /**
+     * (Updatable) The options are stored here as JSON.
+     */
+    options?: pulumi.Input<string>;
     /**
      * (Updatable)
      */

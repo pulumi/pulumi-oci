@@ -134,6 +134,10 @@ namespace Pulumi.Oci.ContainerEngine
         /// </summary>
         public readonly string KubernetesVersion;
         /// <summary>
+        /// Details about the state of the node.
+        /// </summary>
+        public readonly string LifecycleDetails;
+        /// <summary>
         /// The name of the node.
         /// </summary>
         public readonly string Name;
@@ -141,6 +145,10 @@ namespace Pulumi.Oci.ContainerEngine
         /// The configuration of nodes in the node pool.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetNodePoolNodeConfigDetailResult> NodeConfigDetails;
+        /// <summary>
+        /// Node Eviction Details configuration
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetNodePoolNodeEvictionNodePoolSettingResult> NodeEvictionNodePoolSettings;
         /// <summary>
         /// Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
         /// </summary>
@@ -186,6 +194,10 @@ namespace Pulumi.Oci.ContainerEngine
         /// </summary>
         public readonly string SshPublicKey;
         /// <summary>
+        /// The state of the nodepool.
+        /// </summary>
+        public readonly string State;
+        /// <summary>
         /// The OCIDs of the subnets in which to place nodes for this node pool.
         /// </summary>
         public readonly ImmutableArray<string> SubnetIds;
@@ -206,9 +218,13 @@ namespace Pulumi.Oci.ContainerEngine
 
             string kubernetesVersion,
 
+            string lifecycleDetails,
+
             string name,
 
             ImmutableArray<Outputs.GetNodePoolNodeConfigDetailResult> nodeConfigDetails,
+
+            ImmutableArray<Outputs.GetNodePoolNodeEvictionNodePoolSettingResult> nodeEvictionNodePoolSettings,
 
             string nodeImageId,
 
@@ -232,6 +248,8 @@ namespace Pulumi.Oci.ContainerEngine
 
             string sshPublicKey,
 
+            string state,
+
             ImmutableArray<string> subnetIds)
         {
             ClusterId = clusterId;
@@ -241,8 +259,10 @@ namespace Pulumi.Oci.ContainerEngine
             Id = id;
             InitialNodeLabels = initialNodeLabels;
             KubernetesVersion = kubernetesVersion;
+            LifecycleDetails = lifecycleDetails;
             Name = name;
             NodeConfigDetails = nodeConfigDetails;
+            NodeEvictionNodePoolSettings = nodeEvictionNodePoolSettings;
             NodeImageId = nodeImageId;
             NodeImageName = nodeImageName;
             NodeMetadata = nodeMetadata;
@@ -254,6 +274,7 @@ namespace Pulumi.Oci.ContainerEngine
             Nodes = nodes;
             QuantityPerSubnet = quantityPerSubnet;
             SshPublicKey = sshPublicKey;
+            State = state;
             SubnetIds = subnetIds;
         }
     }

@@ -86,7 +86,7 @@ type GetResponderRecipesResult struct {
 	// Compartment Identifier
 	CompartmentId          string `pulumi:"compartmentId"`
 	CompartmentIdInSubtree *bool  `pulumi:"compartmentIdInSubtree"`
-	// ResponderRule Display Name
+	// ResponderRule display name.
 	DisplayName *string                     `pulumi:"displayName"`
 	Filters     []GetResponderRecipesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
@@ -160,7 +160,7 @@ func (o GetResponderRecipesResultOutput) CompartmentIdInSubtree() pulumi.BoolPtr
 	return o.ApplyT(func(v GetResponderRecipesResult) *bool { return v.CompartmentIdInSubtree }).(pulumi.BoolPtrOutput)
 }
 
-// ResponderRule Display Name
+// ResponderRule display name.
 func (o GetResponderRecipesResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetResponderRecipesResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }

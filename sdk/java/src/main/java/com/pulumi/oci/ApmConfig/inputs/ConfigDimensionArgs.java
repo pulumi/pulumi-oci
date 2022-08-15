@@ -16,14 +16,14 @@ public final class ConfigDimensionArgs extends com.pulumi.resources.ResourceArgs
     public static final ConfigDimensionArgs Empty = new ConfigDimensionArgs();
 
     /**
-     * (Updatable) The name of the metric
+     * (Updatable) The name of the metric. This must be a known metric name.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return (Updatable) The name of the metric
+     * @return (Updatable) The name of the metric. This must be a known metric name.
      * 
      */
     public Optional<Output<String>> name() {
@@ -31,14 +31,14 @@ public final class ConfigDimensionArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * (Updatable) Must be NULL at the moment, and &#34;name&#34; must be a known metric.
+     * (Updatable) This must not be set.
      * 
      */
     @Import(name="valueSource")
     private @Nullable Output<String> valueSource;
 
     /**
-     * @return (Updatable) Must be NULL at the moment, and &#34;name&#34; must be a known metric.
+     * @return (Updatable) This must not be set.
      * 
      */
     public Optional<Output<String>> valueSource() {
@@ -71,7 +71,7 @@ public final class ConfigDimensionArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param name (Updatable) The name of the metric
+         * @param name (Updatable) The name of the metric. This must be a known metric name.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class ConfigDimensionArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param name (Updatable) The name of the metric
+         * @param name (Updatable) The name of the metric. This must be a known metric name.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class ConfigDimensionArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param valueSource (Updatable) Must be NULL at the moment, and &#34;name&#34; must be a known metric.
+         * @param valueSource (Updatable) This must not be set.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class ConfigDimensionArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param valueSource (Updatable) Must be NULL at the moment, and &#34;name&#34; must be a known metric.
+         * @param valueSource (Updatable) This must not be set.
          * 
          * @return builder
          * 

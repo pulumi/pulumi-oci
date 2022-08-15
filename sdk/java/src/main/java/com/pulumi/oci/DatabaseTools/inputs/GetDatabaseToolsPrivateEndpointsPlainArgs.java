@@ -32,14 +32,14 @@ public final class GetDatabaseToolsPrivateEndpointsPlainArgs extends com.pulumi.
     }
 
     /**
-     * A filter to return only resources that match the entire display name given.
+     * A filter to return only resources that match the entire specified display name.
      * 
      */
     @Import(name="displayName")
     private @Nullable String displayName;
 
     /**
-     * @return A filter to return only resources that match the entire display name given.
+     * @return A filter to return only resources that match the entire specified display name.
      * 
      */
     public Optional<String> displayName() {
@@ -47,14 +47,14 @@ public final class GetDatabaseToolsPrivateEndpointsPlainArgs extends com.pulumi.
     }
 
     /**
-     * A filter to return only resources their type matches the given type.
+     * A filter to return only resources their `endpointServiceId` matches the specified `endpointServiceId`.
      * 
      */
     @Import(name="endpointServiceId")
     private @Nullable String endpointServiceId;
 
     /**
-     * @return A filter to return only resources their type matches the given type.
+     * @return A filter to return only resources their `endpointServiceId` matches the specified `endpointServiceId`.
      * 
      */
     public Optional<String> endpointServiceId() {
@@ -69,14 +69,14 @@ public final class GetDatabaseToolsPrivateEndpointsPlainArgs extends com.pulumi.
     }
 
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
      * 
      */
     @Import(name="state")
     private @Nullable String state;
 
     /**
-     * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * @return A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
      * 
      */
     public Optional<String> state() {
@@ -84,14 +84,14 @@ public final class GetDatabaseToolsPrivateEndpointsPlainArgs extends com.pulumi.
     }
 
     /**
-     * A filter to return only resources their subnetId matches the given subnetId.
+     * A filter to return only resources their `subnetId` matches the specified `subnetId`.
      * 
      */
     @Import(name="subnetId")
     private @Nullable String subnetId;
 
     /**
-     * @return A filter to return only resources their subnetId matches the given subnetId.
+     * @return A filter to return only resources their `subnetId` matches the specified `subnetId`.
      * 
      */
     public Optional<String> subnetId() {
@@ -139,7 +139,7 @@ public final class GetDatabaseToolsPrivateEndpointsPlainArgs extends com.pulumi.
         }
 
         /**
-         * @param displayName A filter to return only resources that match the entire display name given.
+         * @param displayName A filter to return only resources that match the entire specified display name.
          * 
          * @return builder
          * 
@@ -150,7 +150,7 @@ public final class GetDatabaseToolsPrivateEndpointsPlainArgs extends com.pulumi.
         }
 
         /**
-         * @param endpointServiceId A filter to return only resources their type matches the given type.
+         * @param endpointServiceId A filter to return only resources their `endpointServiceId` matches the specified `endpointServiceId`.
          * 
          * @return builder
          * 
@@ -170,7 +170,7 @@ public final class GetDatabaseToolsPrivateEndpointsPlainArgs extends com.pulumi.
         }
 
         /**
-         * @param state A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * @param state A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
          * 
          * @return builder
          * 
@@ -181,7 +181,7 @@ public final class GetDatabaseToolsPrivateEndpointsPlainArgs extends com.pulumi.
         }
 
         /**
-         * @param subnetId A filter to return only resources their subnetId matches the given subnetId.
+         * @param subnetId A filter to return only resources their `subnetId` matches the specified `subnetId`.
          * 
          * @return builder
          * 

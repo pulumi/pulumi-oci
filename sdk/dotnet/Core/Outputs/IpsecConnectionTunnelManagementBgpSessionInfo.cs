@@ -13,6 +13,7 @@ namespace Pulumi.Oci.Core.Outputs
     [OutputType]
     public sealed class IpsecConnectionTunnelManagementBgpSessionInfo
     {
+        public readonly string? BgpIpv6state;
         /// <summary>
         /// the state of the BGP.
         /// </summary>
@@ -36,6 +37,8 @@ namespace Pulumi.Oci.Core.Outputs
 
         [OutputConstructor]
         private IpsecConnectionTunnelManagementBgpSessionInfo(
+            string? bgpIpv6state,
+
             string? bgpState,
 
             string? customerBgpAsn,
@@ -46,6 +49,7 @@ namespace Pulumi.Oci.Core.Outputs
 
             string? oracleInterfaceIp)
         {
+            BgpIpv6state = bgpIpv6state;
             BgpState = bgpState;
             CustomerBgpAsn = customerBgpAsn;
             CustomerInterfaceIp = customerInterfaceIp;

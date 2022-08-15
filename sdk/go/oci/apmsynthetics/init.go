@@ -23,6 +23,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 	switch typ {
 	case "oci:ApmSynthetics/config:Config":
 		r = &Config{}
+	case "oci:ApmSynthetics/dedicatedVantagePoint:DedicatedVantagePoint":
+		r = &DedicatedVantagePoint{}
 	case "oci:ApmSynthetics/script:Script":
 		r = &Script{}
 	default:
@@ -41,6 +43,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"ApmSynthetics/config",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"ApmSynthetics/dedicatedVantagePoint",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

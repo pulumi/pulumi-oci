@@ -89,7 +89,7 @@ namespace Pulumi.Oci.Core
     public partial class BootVolume : Pulumi.CustomResource
     {
         /// <summary>
-        /// The number of Volume Performance Units per GB that this volume is effectively tuned to when it's idle.
+        /// The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it's idle.
         /// </summary>
         [Output("autoTunedVpusPerGb")]
         public Output<string> AutoTunedVpusPerGb { get; private set; } = null!;
@@ -352,7 +352,7 @@ namespace Pulumi.Oci.Core
     public sealed class BootVolumeState : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The number of Volume Performance Units per GB that this volume is effectively tuned to when it's idle.
+        /// The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it's idle.
         /// </summary>
         [Input("autoTunedVpusPerGb")]
         public Input<string>? AutoTunedVpusPerGb { get; set; }

@@ -115,7 +115,7 @@ def get_repository_file_line(file_path: Optional[str] = None,
     ```
 
 
-    :param str file_path: Path to a file within a repository.
+    :param str file_path: A filter to return file contents of the specified paths.
     :param str repository_id: Unique repository identifier.
     :param str revision: Retrieve file lines from specific revision.
     :param int start_line_number: Line number from where to start returning file lines.
@@ -164,7 +164,7 @@ def get_repository_file_line_output(file_path: Optional[pulumi.Input[str]] = Non
     ```
 
 
-    :param str file_path: Path to a file within a repository.
+    :param str file_path: A filter to return file contents of the specified paths.
     :param str repository_id: Unique repository identifier.
     :param str revision: Retrieve file lines from specific revision.
     :param int start_line_number: Line number from where to start returning file lines.

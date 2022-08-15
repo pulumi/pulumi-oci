@@ -40,6 +40,7 @@ namespace Pulumi.Oci.Core
     ///                 { "Department", "Finance" },
     ///             },
     ///             PublicIpId = oci_core_public_ip.Test_public_ip.Id,
+    ///             RouteTableId = oci_core_route_table.Test_route_table.Id,
     ///         });
     ///     }
     /// 
@@ -98,6 +99,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Output("publicIpId")]
         public Output<string> PublicIpId { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
+        /// </summary>
+        [Output("routeTableId")]
+        public Output<string> RouteTableId { get; private set; } = null!;
 
         /// <summary>
         /// The NAT gateway's current state.
@@ -212,6 +219,12 @@ namespace Pulumi.Oci.Core
         public Input<string>? PublicIpId { get; set; }
 
         /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
+        /// </summary>
+        [Input("routeTableId")]
+        public Input<string>? RouteTableId { get; set; }
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the gateway belongs to.
         /// </summary>
         [Input("vcnId", required: true)]
@@ -277,6 +290,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Input("publicIpId")]
         public Input<string>? PublicIpId { get; set; }
+
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
+        /// </summary>
+        [Input("routeTableId")]
+        public Input<string>? RouteTableId { get; set; }
 
         /// <summary>
         /// The NAT gateway's current state.

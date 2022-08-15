@@ -42,6 +42,7 @@ func LookupAutonomousDatabaseRegionalWalletManagement(ctx *pulumi.Context, opts 
 
 // A collection of values returned by getAutonomousDatabaseRegionalWalletManagement.
 type LookupAutonomousDatabaseRegionalWalletManagementResult struct {
+	GracePeriod  int    `pulumi:"gracePeriod"`
 	Id           string `pulumi:"id"`
 	ShouldRotate bool   `pulumi:"shouldRotate"`
 	// The current lifecycle state of the Autonomous Database wallet.

@@ -5,6 +5,7 @@ package com.pulumi.oci.BigDataService.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceNodeAttachedBlockVolume;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -52,10 +53,20 @@ public final class GetBdsInstanceNode {
      */
     private final String ipAddress;
     /**
+     * @return The total amount of memory available to the node, in gigabytes.
+     * 
+     */
+    private final Integer memoryInGbs;
+    /**
      * @return Cluster node type.
      * 
      */
     private final String nodeType;
+    /**
+     * @return The total number of OCPUs available to the node.
+     * 
+     */
+    private final Integer ocpus;
     /**
      * @return Shape of the node.
      * 
@@ -92,7 +103,9 @@ public final class GetBdsInstanceNode {
         @CustomType.Parameter("imageId") String imageId,
         @CustomType.Parameter("instanceId") String instanceId,
         @CustomType.Parameter("ipAddress") String ipAddress,
+        @CustomType.Parameter("memoryInGbs") Integer memoryInGbs,
         @CustomType.Parameter("nodeType") String nodeType,
+        @CustomType.Parameter("ocpus") Integer ocpus,
         @CustomType.Parameter("shape") String shape,
         @CustomType.Parameter("sshFingerprint") String sshFingerprint,
         @CustomType.Parameter("state") String state,
@@ -106,7 +119,9 @@ public final class GetBdsInstanceNode {
         this.imageId = imageId;
         this.instanceId = instanceId;
         this.ipAddress = ipAddress;
+        this.memoryInGbs = memoryInGbs;
         this.nodeType = nodeType;
+        this.ocpus = ocpus;
         this.shape = shape;
         this.sshFingerprint = sshFingerprint;
         this.state = state;
@@ -171,11 +186,25 @@ public final class GetBdsInstanceNode {
         return this.ipAddress;
     }
     /**
+     * @return The total amount of memory available to the node, in gigabytes.
+     * 
+     */
+    public Integer memoryInGbs() {
+        return this.memoryInGbs;
+    }
+    /**
      * @return Cluster node type.
      * 
      */
     public String nodeType() {
         return this.nodeType;
+    }
+    /**
+     * @return The total number of OCPUs available to the node.
+     * 
+     */
+    public Integer ocpus() {
+        return this.ocpus;
     }
     /**
      * @return Shape of the node.
@@ -230,7 +259,9 @@ public final class GetBdsInstanceNode {
         private String imageId;
         private String instanceId;
         private String ipAddress;
+        private Integer memoryInGbs;
         private String nodeType;
+        private Integer ocpus;
         private String shape;
         private String sshFingerprint;
         private String state;
@@ -251,7 +282,9 @@ public final class GetBdsInstanceNode {
     	      this.imageId = defaults.imageId;
     	      this.instanceId = defaults.instanceId;
     	      this.ipAddress = defaults.ipAddress;
+    	      this.memoryInGbs = defaults.memoryInGbs;
     	      this.nodeType = defaults.nodeType;
+    	      this.ocpus = defaults.ocpus;
     	      this.shape = defaults.shape;
     	      this.sshFingerprint = defaults.sshFingerprint;
     	      this.state = defaults.state;
@@ -294,8 +327,16 @@ public final class GetBdsInstanceNode {
             this.ipAddress = Objects.requireNonNull(ipAddress);
             return this;
         }
+        public Builder memoryInGbs(Integer memoryInGbs) {
+            this.memoryInGbs = Objects.requireNonNull(memoryInGbs);
+            return this;
+        }
         public Builder nodeType(String nodeType) {
             this.nodeType = Objects.requireNonNull(nodeType);
+            return this;
+        }
+        public Builder ocpus(Integer ocpus) {
+            this.ocpus = Objects.requireNonNull(ocpus);
             return this;
         }
         public Builder shape(String shape) {
@@ -318,7 +359,7 @@ public final class GetBdsInstanceNode {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }        public GetBdsInstanceNode build() {
-            return new GetBdsInstanceNode(attachedBlockVolumes, availabilityDomain, displayName, faultDomain, hostname, imageId, instanceId, ipAddress, nodeType, shape, sshFingerprint, state, subnetId, timeCreated);
+            return new GetBdsInstanceNode(attachedBlockVolumes, availabilityDomain, displayName, faultDomain, hostname, imageId, instanceId, ipAddress, memoryInGbs, nodeType, ocpus, shape, sshFingerprint, state, subnetId, timeCreated);
         }
     }
 }

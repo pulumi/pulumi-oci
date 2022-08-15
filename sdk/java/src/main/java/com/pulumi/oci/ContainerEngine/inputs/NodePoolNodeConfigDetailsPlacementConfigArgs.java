@@ -6,6 +6,7 @@ package com.pulumi.oci.ContainerEngine.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -46,6 +47,21 @@ public final class NodePoolNodeConfigDetailsPlacementConfigArgs extends com.pulu
     }
 
     /**
+     * (Updatable) A list of fault domains in which to place nodes.
+     * 
+     */
+    @Import(name="faultDomains")
+    private @Nullable Output<List<String>> faultDomains;
+
+    /**
+     * @return (Updatable) A list of fault domains in which to place nodes.
+     * 
+     */
+    public Optional<Output<List<String>>> faultDomains() {
+        return Optional.ofNullable(this.faultDomains);
+    }
+
+    /**
      * (Updatable) The OCID of the subnet in which to place nodes.
      * 
      */
@@ -65,6 +81,7 @@ public final class NodePoolNodeConfigDetailsPlacementConfigArgs extends com.pulu
     private NodePoolNodeConfigDetailsPlacementConfigArgs(NodePoolNodeConfigDetailsPlacementConfigArgs $) {
         this.availabilityDomain = $.availabilityDomain;
         this.capacityReservationId = $.capacityReservationId;
+        this.faultDomains = $.faultDomains;
         this.subnetId = $.subnetId;
     }
 
@@ -126,6 +143,37 @@ public final class NodePoolNodeConfigDetailsPlacementConfigArgs extends com.pulu
          */
         public Builder capacityReservationId(String capacityReservationId) {
             return capacityReservationId(Output.of(capacityReservationId));
+        }
+
+        /**
+         * @param faultDomains (Updatable) A list of fault domains in which to place nodes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder faultDomains(@Nullable Output<List<String>> faultDomains) {
+            $.faultDomains = faultDomains;
+            return this;
+        }
+
+        /**
+         * @param faultDomains (Updatable) A list of fault domains in which to place nodes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder faultDomains(List<String> faultDomains) {
+            return faultDomains(Output.of(faultDomains));
+        }
+
+        /**
+         * @param faultDomains (Updatable) A list of fault domains in which to place nodes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder faultDomains(String... faultDomains) {
+            return faultDomains(List.of(faultDomains));
         }
 
         /**

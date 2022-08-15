@@ -38,14 +38,14 @@ public final class VirtualCircuitArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * (Updatable) Set to ENABLED to activate the bgp session of virtual circuit, DISABLED to deactivate.
+     * (Updatable) Set to `ENABLED` (the default) to activate the BGP session of the virtual circuit, set to `DISABLED` to deactivate the virtual circuit.
      * 
      */
     @Import(name="bgpAdminState")
     private @Nullable Output<String> bgpAdminState;
 
     /**
-     * @return (Updatable) Set to ENABLED to activate the bgp session of virtual circuit, DISABLED to deactivate.
+     * @return (Updatable) Set to `ENABLED` (the default) to activate the BGP session of the virtual circuit, set to `DISABLED` to deactivate the virtual circuit.
      * 
      */
     public Optional<Output<String>> bgpAdminState() {
@@ -196,14 +196,14 @@ public final class VirtualCircuitArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * (Updatable) Set to true to enable BFD for ipv4 Bgp Peering, false to disable. If not set, default is false
+     * (Updatable) Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
      * 
      */
     @Import(name="isBfdEnabled")
     private @Nullable Output<Boolean> isBfdEnabled;
 
     /**
-     * @return (Updatable) Set to true to enable BFD for ipv4 Bgp Peering, false to disable. If not set, default is false
+     * @return (Updatable) Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
      * 
      */
     public Optional<Output<Boolean>> isBfdEnabled() {
@@ -363,7 +363,7 @@ public final class VirtualCircuitArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param bgpAdminState (Updatable) Set to ENABLED to activate the bgp session of virtual circuit, DISABLED to deactivate.
+         * @param bgpAdminState (Updatable) Set to `ENABLED` (the default) to activate the BGP session of the virtual circuit, set to `DISABLED` to deactivate the virtual circuit.
          * 
          * @return builder
          * 
@@ -374,7 +374,7 @@ public final class VirtualCircuitArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param bgpAdminState (Updatable) Set to ENABLED to activate the bgp session of virtual circuit, DISABLED to deactivate.
+         * @param bgpAdminState (Updatable) Set to `ENABLED` (the default) to activate the BGP session of the virtual circuit, set to `DISABLED` to deactivate the virtual circuit.
          * 
          * @return builder
          * 
@@ -591,7 +591,7 @@ public final class VirtualCircuitArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param isBfdEnabled (Updatable) Set to true to enable BFD for ipv4 Bgp Peering, false to disable. If not set, default is false
+         * @param isBfdEnabled (Updatable) Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
          * 
          * @return builder
          * 
@@ -602,7 +602,7 @@ public final class VirtualCircuitArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param isBfdEnabled (Updatable) Set to true to enable BFD for ipv4 Bgp Peering, false to disable. If not set, default is false
+         * @param isBfdEnabled (Updatable) Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
          * 
          * @return builder
          * 

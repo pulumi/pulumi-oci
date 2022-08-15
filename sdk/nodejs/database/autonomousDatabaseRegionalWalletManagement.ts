@@ -15,7 +15,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousDatabaseRegionalWalletManagement = new oci.database.AutonomousDatabaseRegionalWalletManagement("testAutonomousDatabaseRegionalWalletManagement", {shouldRotate: _var.autonomous_database_regional_wallet_management_should_rotate});
+ * const testAutonomousDatabaseRegionalWalletManagement = new oci.database.AutonomousDatabaseRegionalWalletManagement("testAutonomousDatabaseRegionalWalletManagement", {
+ *     gracePeriod: _var.autonomous_database_regional_wallet_management_grace_period,
+ *     shouldRotate: _var.autonomous_database_regional_wallet_management_should_rotate,
+ * });
  * ```
  *
  * ## Import
@@ -51,6 +54,10 @@ export class AutonomousDatabaseRegionalWalletManagement extends pulumi.CustomRes
     }
 
     /**
+     * (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+     */
+    public readonly gracePeriod!: pulumi.Output<number>;
+    /**
      * (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
      */
     public readonly shouldRotate!: pulumi.Output<boolean | undefined>;
@@ -76,11 +83,13 @@ export class AutonomousDatabaseRegionalWalletManagement extends pulumi.CustomRes
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AutonomousDatabaseRegionalWalletManagementState | undefined;
+            resourceInputs["gracePeriod"] = state ? state.gracePeriod : undefined;
             resourceInputs["shouldRotate"] = state ? state.shouldRotate : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["timeRotated"] = state ? state.timeRotated : undefined;
         } else {
             const args = argsOrState as AutonomousDatabaseRegionalWalletManagementArgs | undefined;
+            resourceInputs["gracePeriod"] = args ? args.gracePeriod : undefined;
             resourceInputs["shouldRotate"] = args ? args.shouldRotate : undefined;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeRotated"] = undefined /*out*/;
@@ -94,6 +103,10 @@ export class AutonomousDatabaseRegionalWalletManagement extends pulumi.CustomRes
  * Input properties used for looking up and filtering AutonomousDatabaseRegionalWalletManagement resources.
  */
 export interface AutonomousDatabaseRegionalWalletManagementState {
+    /**
+     * (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+     */
+    gracePeriod?: pulumi.Input<number>;
     /**
      * (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
      */
@@ -112,6 +125,10 @@ export interface AutonomousDatabaseRegionalWalletManagementState {
  * The set of arguments for constructing a AutonomousDatabaseRegionalWalletManagement resource.
  */
 export interface AutonomousDatabaseRegionalWalletManagementArgs {
+    /**
+     * (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+     */
+    gracePeriod?: pulumi.Input<number>;
     /**
      * (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
      */

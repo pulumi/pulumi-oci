@@ -81,6 +81,10 @@ export interface GetAutonomousDatabaseResult {
      * Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
      */
     readonly backupConfigs: outputs.Database.GetAutonomousDatabaseBackupConfig[];
+    /**
+     * The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
+     */
+    readonly characterSet: string;
     readonly cloneType: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -179,7 +183,7 @@ export interface GetAutonomousDatabaseResult {
      */
     readonly isAutoScalingForStorageEnabled: boolean;
     /**
-     * Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to  Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+     * **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      */
     readonly isDataGuardEnabled: boolean;
     /**
@@ -190,6 +194,10 @@ export interface GetAutonomousDatabaseResult {
      * Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
      */
     readonly isFreeTier: boolean;
+    /**
+     * Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+     */
+    readonly isLocalDataGuardEnabled: boolean;
     /**
      * Indicates whether the Autonomous Database requires mTLS connections.
      */
@@ -207,6 +215,10 @@ export interface GetAutonomousDatabaseResult {
      * Indicates whether the Autonomous Database is a refreshable clone.
      */
     readonly isRefreshableClone: boolean;
+    /**
+     * Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+     */
+    readonly isRemoteDataGuardEnabled: boolean;
     readonly isShrinkOnly: boolean;
     /**
      * Key History Entry.
@@ -241,6 +253,10 @@ export interface GetAutonomousDatabaseResult {
      */
     readonly lifecycleDetails: string;
     /**
+     * Autonomous Data Guard standby database details.
+     */
+    readonly localStandbyDbs: outputs.Database.GetAutonomousDatabaseLocalStandbyDb[];
+    /**
      * The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
      */
     readonly maxCpuCoreCount: number;
@@ -249,8 +265,12 @@ export interface GetAutonomousDatabaseResult {
      */
     readonly memoryPerOracleComputeUnitInGbs: number;
     /**
-     * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-     * * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+     * The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
+     */
+    readonly ncharacterSet: string;
+    /**
+     * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+     * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      */
     readonly nsgIds: string[];
     /**
@@ -286,6 +306,10 @@ export interface GetAutonomousDatabaseResult {
      */
     readonly privateEndpointLabel: string;
     /**
+     * An array of CPU values that an Autonomous Database can be scaled to.
+     */
+    readonly provisionableCpuses: number[];
+    /**
      * The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
      */
     readonly refreshableMode: string;
@@ -312,7 +336,7 @@ export interface GetAutonomousDatabaseResult {
      */
     readonly sourceId: string;
     /**
-     * Autonomous Data Guard standby database details.
+     * **Deprecated** Autonomous Data Guard standby database details.
      */
     readonly standbyDbs: outputs.Database.GetAutonomousDatabaseStandbyDb[];
     /**

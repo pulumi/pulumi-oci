@@ -77,7 +77,7 @@ class GetMysqlDbSystemsResult:
     @pulumi.getter(name="dbSystemId")
     def db_system_id(self) -> Optional[str]:
         """
-        The OCID of the source DB System.
+        The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
         """
         return pulumi.get(self, "db_system_id")
 

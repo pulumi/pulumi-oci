@@ -151,6 +151,10 @@ namespace Pulumi.Oci.Functions
         /// </summary>
         public readonly string MemoryInMbs;
         /// <summary>
+        /// Define the strategy for provisioned concurrency for the function.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetFunctionProvisionedConcurrencyConfigResult> ProvisionedConcurrencyConfigs;
+        /// <summary>
         /// The current state of the function.
         /// </summary>
         public readonly string State;
@@ -197,6 +201,8 @@ namespace Pulumi.Oci.Functions
 
             string memoryInMbs,
 
+            ImmutableArray<Outputs.GetFunctionProvisionedConcurrencyConfigResult> provisionedConcurrencyConfigs,
+
             string state,
 
             string timeCreated,
@@ -219,6 +225,7 @@ namespace Pulumi.Oci.Functions
             ImageDigest = imageDigest;
             InvokeEndpoint = invokeEndpoint;
             MemoryInMbs = memoryInMbs;
+            ProvisionedConcurrencyConfigs = provisionedConcurrencyConfigs;
             State = state;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;

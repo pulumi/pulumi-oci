@@ -33,14 +33,14 @@ public final class GetVantagePointsArgs extends com.pulumi.resources.InvokeArgs 
     }
 
     /**
-     * A filter to return only resources that match the entire display name given.
+     * A filter to return only the resources that match the entire display name.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return A filter to return only resources that match the entire display name given.
+     * @return A filter to return only the resources that match the entire display name.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -55,14 +55,14 @@ public final class GetVantagePointsArgs extends com.pulumi.resources.InvokeArgs 
     }
 
     /**
-     * A filter to return only resources that match the entire name given.
+     * A filter to return only the resources that match the entire name.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return A filter to return only resources that match the entire name given.
+     * @return A filter to return only the resources that match the entire name.
      * 
      */
     public Optional<Output<String>> name() {
@@ -118,7 +118,7 @@ public final class GetVantagePointsArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param displayName A filter to return only resources that match the entire display name given.
+         * @param displayName A filter to return only the resources that match the entire display name.
          * 
          * @return builder
          * 
@@ -129,7 +129,7 @@ public final class GetVantagePointsArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param displayName A filter to return only resources that match the entire display name given.
+         * @param displayName A filter to return only the resources that match the entire display name.
          * 
          * @return builder
          * 
@@ -152,7 +152,7 @@ public final class GetVantagePointsArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param name A filter to return only resources that match the entire name given.
+         * @param name A filter to return only the resources that match the entire name.
          * 
          * @return builder
          * 
@@ -163,7 +163,7 @@ public final class GetVantagePointsArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param name A filter to return only resources that match the entire name given.
+         * @param name A filter to return only the resources that match the entire name.
          * 
          * @return builder
          * 

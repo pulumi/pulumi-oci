@@ -193,6 +193,21 @@ public final class VolumeAttachmentState extends com.pulumi.resources.ResourceAr
     }
 
     /**
+     * Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
+     * 
+     */
+    @Import(name="isAgentAutoIscsiLoginEnabled")
+    private @Nullable Output<Boolean> isAgentAutoIscsiLoginEnabled;
+
+    /**
+     * @return Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
+     * 
+     */
+    public Optional<Output<Boolean>> isAgentAutoIscsiLoginEnabled() {
+        return Optional.ofNullable(this.isAgentAutoIscsiLoginEnabled);
+    }
+
+    /**
      * Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.
      * 
      */
@@ -371,6 +386,7 @@ public final class VolumeAttachmentState extends com.pulumi.resources.ResourceAr
         this.instanceId = $.instanceId;
         this.ipv4 = $.ipv4;
         this.iqn = $.iqn;
+        this.isAgentAutoIscsiLoginEnabled = $.isAgentAutoIscsiLoginEnabled;
         this.isMultipath = $.isMultipath;
         this.isPvEncryptionInTransitEnabled = $.isPvEncryptionInTransitEnabled;
         this.isReadOnly = $.isReadOnly;
@@ -639,6 +655,27 @@ public final class VolumeAttachmentState extends com.pulumi.resources.ResourceAr
          */
         public Builder iqn(String iqn) {
             return iqn(Output.of(iqn));
+        }
+
+        /**
+         * @param isAgentAutoIscsiLoginEnabled Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isAgentAutoIscsiLoginEnabled(@Nullable Output<Boolean> isAgentAutoIscsiLoginEnabled) {
+            $.isAgentAutoIscsiLoginEnabled = isAgentAutoIscsiLoginEnabled;
+            return this;
+        }
+
+        /**
+         * @param isAgentAutoIscsiLoginEnabled Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isAgentAutoIscsiLoginEnabled(Boolean isAgentAutoIscsiLoginEnabled) {
+            return isAgentAutoIscsiLoginEnabled(Output.of(isAgentAutoIscsiLoginEnabled));
         }
 
         /**

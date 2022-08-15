@@ -22,7 +22,7 @@ public final class GetTriggersTriggerCollectionItemActionFilter {
      */
     private final List<GetTriggersTriggerCollectionItemActionFilterInclude> includes;
     /**
-     * @return Source of the trigger. Allowed values are, GITHUB, GITLAB and DEVOPS_CODE_REPOSITORY.
+     * @return Source of the trigger. Allowed values are, GITHUB and GITLAB.
      * 
      */
     private final String triggerSource;
@@ -52,7 +52,7 @@ public final class GetTriggersTriggerCollectionItemActionFilter {
         return this.includes;
     }
     /**
-     * @return Source of the trigger. Allowed values are, GITHUB, GITLAB and DEVOPS_CODE_REPOSITORY.
+     * @return Source of the trigger. Allowed values are, GITHUB and GITLAB.
      * 
      */
     public String triggerSource() {

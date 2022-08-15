@@ -41,6 +41,9 @@ export interface GetQueriesArgs {
      * The compartment ID in which to list resources.
      */
     compartmentId: string;
+    /**
+     * The filter object for query usage.
+     */
     filters?: inputs.MeteringComputation.GetQueriesFilter[];
 }
 
@@ -52,6 +55,9 @@ export interface GetQueriesResult {
      * The compartment OCID.
      */
     readonly compartmentId: string;
+    /**
+     * The filter object for query usage.
+     */
     readonly filters?: outputs.MeteringComputation.GetQueriesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
@@ -75,5 +81,8 @@ export interface GetQueriesOutputArgs {
      * The compartment ID in which to list resources.
      */
     compartmentId: pulumi.Input<string>;
+    /**
+     * The filter object for query usage.
+     */
     filters?: pulumi.Input<pulumi.Input<inputs.MeteringComputation.GetQueriesFilterArgs>[]>;
 }

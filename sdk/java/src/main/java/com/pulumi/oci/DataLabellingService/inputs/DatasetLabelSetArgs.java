@@ -15,14 +15,14 @@ public final class DatasetLabelSetArgs extends com.pulumi.resources.ResourceArgs
     public static final DatasetLabelSetArgs Empty = new DatasetLabelSetArgs();
 
     /**
-     * An ordered collection of Labels that are unique by name.
+     * An ordered collection of labels that are unique by name.
      * 
      */
     @Import(name="items", required=true)
     private Output<List<DatasetLabelSetItemArgs>> items;
 
     /**
-     * @return An ordered collection of Labels that are unique by name.
+     * @return An ordered collection of labels that are unique by name.
      * 
      */
     public Output<List<DatasetLabelSetItemArgs>> items() {
@@ -54,7 +54,7 @@ public final class DatasetLabelSetArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param items An ordered collection of Labels that are unique by name.
+         * @param items An ordered collection of labels that are unique by name.
          * 
          * @return builder
          * 
@@ -65,7 +65,7 @@ public final class DatasetLabelSetArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param items An ordered collection of Labels that are unique by name.
+         * @param items An ordered collection of labels that are unique by name.
          * 
          * @return builder
          * 
@@ -75,7 +75,7 @@ public final class DatasetLabelSetArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param items An ordered collection of Labels that are unique by name.
+         * @param items An ordered collection of labels that are unique by name.
          * 
          * @return builder
          * 

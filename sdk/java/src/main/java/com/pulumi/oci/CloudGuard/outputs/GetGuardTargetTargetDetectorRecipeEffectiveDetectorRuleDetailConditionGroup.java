@@ -14,6 +14,10 @@ public final class GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetail
      * 
      */
     private final String compartmentId;
+    /**
+     * @return Base condition object
+     * 
+     */
     private final String condition;
 
     @CustomType.Constructor
@@ -31,6 +35,10 @@ public final class GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetail
     public String compartmentId() {
         return this.compartmentId;
     }
+    /**
+     * @return Base condition object
+     * 
+     */
     public String condition() {
         return this.condition;
     }

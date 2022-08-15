@@ -8,6 +8,7 @@ import com.pulumi.oci.ApiGateway.outputs.GetDeploymentsDeploymentCollectionSpeci
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyCor;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyMutualTl;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyRateLimiting;
+import com.pulumi.oci.ApiGateway.outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlan;
 import java.util.List;
 import java.util.Objects;
 
@@ -33,17 +34,24 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicy 
      * 
      */
     private final List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyRateLimiting> rateLimitings;
+    /**
+     * @return Usage plan policies for this deployment
+     * 
+     */
+    private final List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlan> usagePlans;
 
     @CustomType.Constructor
     private GetDeploymentsDeploymentCollectionSpecificationRequestPolicy(
         @CustomType.Parameter("authentications") List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication> authentications,
         @CustomType.Parameter("cors") List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyCor> cors,
         @CustomType.Parameter("mutualTls") List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyMutualTl> mutualTls,
-        @CustomType.Parameter("rateLimitings") List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyRateLimiting> rateLimitings) {
+        @CustomType.Parameter("rateLimitings") List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyRateLimiting> rateLimitings,
+        @CustomType.Parameter("usagePlans") List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlan> usagePlans) {
         this.authentications = authentications;
         this.cors = cors;
         this.mutualTls = mutualTls;
         this.rateLimitings = rateLimitings;
+        this.usagePlans = usagePlans;
     }
 
     /**
@@ -74,6 +82,13 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicy 
     public List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyRateLimiting> rateLimitings() {
         return this.rateLimitings;
     }
+    /**
+     * @return Usage plan policies for this deployment
+     * 
+     */
+    public List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlan> usagePlans() {
+        return this.usagePlans;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -88,6 +103,7 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicy 
         private List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyCor> cors;
         private List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyMutualTl> mutualTls;
         private List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyRateLimiting> rateLimitings;
+        private List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlan> usagePlans;
 
         public Builder() {
     	      // Empty
@@ -99,6 +115,7 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicy 
     	      this.cors = defaults.cors;
     	      this.mutualTls = defaults.mutualTls;
     	      this.rateLimitings = defaults.rateLimitings;
+    	      this.usagePlans = defaults.usagePlans;
         }
 
         public Builder authentications(List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication> authentications) {
@@ -128,8 +145,15 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicy 
         }
         public Builder rateLimitings(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyRateLimiting... rateLimitings) {
             return rateLimitings(List.of(rateLimitings));
+        }
+        public Builder usagePlans(List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlan> usagePlans) {
+            this.usagePlans = Objects.requireNonNull(usagePlans);
+            return this;
+        }
+        public Builder usagePlans(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlan... usagePlans) {
+            return usagePlans(List.of(usagePlans));
         }        public GetDeploymentsDeploymentCollectionSpecificationRequestPolicy build() {
-            return new GetDeploymentsDeploymentCollectionSpecificationRequestPolicy(authentications, cors, mutualTls, rateLimitings);
+            return new GetDeploymentsDeploymentCollectionSpecificationRequestPolicy(authentications, cors, mutualTls, rateLimitings, usagePlans);
         }
     }
 }

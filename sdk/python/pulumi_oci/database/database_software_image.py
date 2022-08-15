@@ -34,7 +34,7 @@ class DatabaseSoftwareImageArgs:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] image_shape_family: To what shape the image is meant for.
         :param pulumi.Input[str] image_type: The type of software image. Can be grid or database.
-        :param pulumi.Input[str] ls_inventory: output from lsinventory which will get passed as a string
+        :param pulumi.Input[str] ls_inventory: The output from the OPatch lsInventory command, which is passed as a string.
         :param pulumi.Input[str] patch_set: The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
         :param pulumi.Input[str] source_db_home_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
         """
@@ -159,7 +159,7 @@ class DatabaseSoftwareImageArgs:
     @pulumi.getter(name="lsInventory")
     def ls_inventory(self) -> Optional[pulumi.Input[str]]:
         """
-        output from lsinventory which will get passed as a string
+        The output from the OPatch lsInventory command, which is passed as a string.
         """
         return pulumi.get(self, "ls_inventory")
 
@@ -226,7 +226,7 @@ class _DatabaseSoftwareImageState:
         :param pulumi.Input[str] included_patches_summary: The patches included in the image and the version of the image
         :param pulumi.Input[bool] is_upgrade_supported: True if this Database software image is supported for Upgrade.
         :param pulumi.Input[str] lifecycle_details: Detailed message for the lifecycle state.
-        :param pulumi.Input[str] ls_inventory: output from lsinventory which will get passed as a string
+        :param pulumi.Input[str] ls_inventory: The output from the OPatch lsInventory command, which is passed as a string.
         :param pulumi.Input[str] patch_set: The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
         :param pulumi.Input[str] source_db_home_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
         :param pulumi.Input[str] state: The current state of the database software image.
@@ -415,7 +415,7 @@ class _DatabaseSoftwareImageState:
     @pulumi.getter(name="lsInventory")
     def ls_inventory(self) -> Optional[pulumi.Input[str]]:
         """
-        output from lsinventory which will get passed as a string
+        The output from the OPatch lsInventory command, which is passed as a string.
         """
         return pulumi.get(self, "ls_inventory")
 
@@ -534,7 +534,7 @@ class DatabaseSoftwareImage(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] image_shape_family: To what shape the image is meant for.
         :param pulumi.Input[str] image_type: The type of software image. Can be grid or database.
-        :param pulumi.Input[str] ls_inventory: output from lsinventory which will get passed as a string
+        :param pulumi.Input[str] ls_inventory: The output from the OPatch lsInventory command, which is passed as a string.
         :param pulumi.Input[str] patch_set: The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
         :param pulumi.Input[str] source_db_home_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
         """
@@ -684,7 +684,7 @@ class DatabaseSoftwareImage(pulumi.CustomResource):
         :param pulumi.Input[str] included_patches_summary: The patches included in the image and the version of the image
         :param pulumi.Input[bool] is_upgrade_supported: True if this Database software image is supported for Upgrade.
         :param pulumi.Input[str] lifecycle_details: Detailed message for the lifecycle state.
-        :param pulumi.Input[str] ls_inventory: output from lsinventory which will get passed as a string
+        :param pulumi.Input[str] ls_inventory: The output from the OPatch lsInventory command, which is passed as a string.
         :param pulumi.Input[str] patch_set: The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
         :param pulumi.Input[str] source_db_home_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
         :param pulumi.Input[str] state: The current state of the database software image.
@@ -813,7 +813,7 @@ class DatabaseSoftwareImage(pulumi.CustomResource):
     @pulumi.getter(name="lsInventory")
     def ls_inventory(self) -> pulumi.Output[str]:
         """
-        output from lsinventory which will get passed as a string
+        The output from the OPatch lsInventory command, which is passed as a string.
         """
         return pulumi.get(self, "ls_inventory")
 

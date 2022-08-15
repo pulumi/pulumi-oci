@@ -21,19 +21,30 @@ class DataGuardAssociationArgs:
                  transport_type: pulumi.Input[str],
                  availability_domain: Optional[pulumi.Input[str]] = None,
                  backup_network_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 cpu_core_count: Optional[pulumi.Input[int]] = None,
                  create_async: Optional[pulumi.Input[bool]] = None,
+                 database_defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 database_freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  database_software_image_id: Optional[pulumi.Input[str]] = None,
+                 db_system_defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 db_system_freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 fault_domains: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  hostname: Optional[pulumi.Input[str]] = None,
                  is_active_data_guard_enabled: Optional[pulumi.Input[bool]] = None,
+                 license_model: Optional[pulumi.Input[str]] = None,
+                 node_count: Optional[pulumi.Input[int]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  peer_db_home_id: Optional[pulumi.Input[str]] = None,
                  peer_db_system_id: Optional[pulumi.Input[str]] = None,
                  peer_db_unique_name: Optional[pulumi.Input[str]] = None,
                  peer_sid_prefix: Optional[pulumi.Input[str]] = None,
                  peer_vm_cluster_id: Optional[pulumi.Input[str]] = None,
+                 private_ip: Optional[pulumi.Input[str]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
-                 subnet_id: Optional[pulumi.Input[str]] = None):
+                 storage_volume_performance_mode: Optional[pulumi.Input[str]] = None,
+                 subnet_id: Optional[pulumi.Input[str]] = None,
+                 time_zone: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a DataGuardAssociation resource.
         :param pulumi.Input[str] creation_type: Specifies whether to create the peer database in an existing DB system or in a new DB system.
@@ -46,20 +57,31 @@ class DataGuardAssociationArgs:
                * MAXIMUM_PROTECTION - SYNC
         :param pulumi.Input[str] availability_domain: The name of the availability domain that the standby database DB system will be located in. For example- "Uocm:PHX-AD-1".
         :param pulumi.Input[Sequence[pulumi.Input[str]]] backup_network_nsg_ids: A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+        :param pulumi.Input[int] cpu_core_count: The number of OCPU cores available for AMD-based virtual machine DB systems.
+        :param pulumi.Input[Mapping[str, Any]] database_defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param pulumi.Input[Mapping[str, Any]] database_freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] database_software_image_id: The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Applicable only when creationType=`ExistingDbSystem` and when the existing database has Exadata shape.
+        :param pulumi.Input[Mapping[str, Any]] db_system_defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param pulumi.Input[Mapping[str, Any]] db_system_freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] display_name: The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] fault_domains: A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
         :param pulumi.Input[str] hostname: The hostname for the DB node.
         :param pulumi.Input[bool] is_active_data_guard_enabled: (Updatable) True if active Data Guard is enabled.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-               * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+        :param pulumi.Input[str] license_model: The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED.
+        :param pulumi.Input[int] node_count: The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+               * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         :param pulumi.Input[str] peer_db_home_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB home in which to create the standby database. You must supply this value to create standby database with an existing DB home
         :param pulumi.Input[str] peer_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system in which to create the standby database. You must supply this value if creationType is `ExistingDbSystem`.
         :param pulumi.Input[str] peer_db_unique_name: Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
         :param pulumi.Input[str] peer_sid_prefix: Specifies a prefix for the `Oracle SID` of the database to be created.
         :param pulumi.Input[str] peer_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster in which to create the standby database. You must supply this value if creationType is `ExistingVmCluster`.
+        :param pulumi.Input[str] private_ip: The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
         :param pulumi.Input[str] shape: The virtual machine DB system shape to launch for the standby database in the Data Guard association. The shape determines the number of CPU cores and the amount of memory available for the DB system. Only virtual machine shapes are valid options. If you do not supply this parameter, the default shape is the shape of the primary DB system.
+        :param pulumi.Input[str] storage_volume_performance_mode: The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
         :param pulumi.Input[str] subnet_id: The OCID of the subnet the DB system is associated with. **Subnet Restrictions:**
                * For 1- and 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.16.16/28
+        :param pulumi.Input[str] time_zone: The time zone of the dataguard standby DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         """
         pulumi.set(__self__, "creation_type", creation_type)
         pulumi.set(__self__, "database_admin_password", database_admin_password)
@@ -71,16 +93,32 @@ class DataGuardAssociationArgs:
             pulumi.set(__self__, "availability_domain", availability_domain)
         if backup_network_nsg_ids is not None:
             pulumi.set(__self__, "backup_network_nsg_ids", backup_network_nsg_ids)
+        if cpu_core_count is not None:
+            pulumi.set(__self__, "cpu_core_count", cpu_core_count)
         if create_async is not None:
             pulumi.set(__self__, "create_async", create_async)
+        if database_defined_tags is not None:
+            pulumi.set(__self__, "database_defined_tags", database_defined_tags)
+        if database_freeform_tags is not None:
+            pulumi.set(__self__, "database_freeform_tags", database_freeform_tags)
         if database_software_image_id is not None:
             pulumi.set(__self__, "database_software_image_id", database_software_image_id)
+        if db_system_defined_tags is not None:
+            pulumi.set(__self__, "db_system_defined_tags", db_system_defined_tags)
+        if db_system_freeform_tags is not None:
+            pulumi.set(__self__, "db_system_freeform_tags", db_system_freeform_tags)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if fault_domains is not None:
+            pulumi.set(__self__, "fault_domains", fault_domains)
         if hostname is not None:
             pulumi.set(__self__, "hostname", hostname)
         if is_active_data_guard_enabled is not None:
             pulumi.set(__self__, "is_active_data_guard_enabled", is_active_data_guard_enabled)
+        if license_model is not None:
+            pulumi.set(__self__, "license_model", license_model)
+        if node_count is not None:
+            pulumi.set(__self__, "node_count", node_count)
         if nsg_ids is not None:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if peer_db_home_id is not None:
@@ -93,10 +131,16 @@ class DataGuardAssociationArgs:
             pulumi.set(__self__, "peer_sid_prefix", peer_sid_prefix)
         if peer_vm_cluster_id is not None:
             pulumi.set(__self__, "peer_vm_cluster_id", peer_vm_cluster_id)
+        if private_ip is not None:
+            pulumi.set(__self__, "private_ip", private_ip)
         if shape is not None:
             pulumi.set(__self__, "shape", shape)
+        if storage_volume_performance_mode is not None:
+            pulumi.set(__self__, "storage_volume_performance_mode", storage_volume_performance_mode)
         if subnet_id is not None:
             pulumi.set(__self__, "subnet_id", subnet_id)
+        if time_zone is not None:
+            pulumi.set(__self__, "time_zone", time_zone)
 
     @property
     @pulumi.getter(name="creationType")
@@ -195,6 +239,18 @@ class DataGuardAssociationArgs:
         pulumi.set(self, "backup_network_nsg_ids", value)
 
     @property
+    @pulumi.getter(name="cpuCoreCount")
+    def cpu_core_count(self) -> Optional[pulumi.Input[int]]:
+        """
+        The number of OCPU cores available for AMD-based virtual machine DB systems.
+        """
+        return pulumi.get(self, "cpu_core_count")
+
+    @cpu_core_count.setter
+    def cpu_core_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "cpu_core_count", value)
+
+    @property
     @pulumi.getter(name="createAsync")
     def create_async(self) -> Optional[pulumi.Input[bool]]:
         return pulumi.get(self, "create_async")
@@ -202,6 +258,30 @@ class DataGuardAssociationArgs:
     @create_async.setter
     def create_async(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "create_async", value)
+
+    @property
+    @pulumi.getter(name="databaseDefinedTags")
+    def database_defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "database_defined_tags")
+
+    @database_defined_tags.setter
+    def database_defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "database_defined_tags", value)
+
+    @property
+    @pulumi.getter(name="databaseFreeformTags")
+    def database_freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "database_freeform_tags")
+
+    @database_freeform_tags.setter
+    def database_freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "database_freeform_tags", value)
 
     @property
     @pulumi.getter(name="databaseSoftwareImageId")
@@ -216,6 +296,30 @@ class DataGuardAssociationArgs:
         pulumi.set(self, "database_software_image_id", value)
 
     @property
+    @pulumi.getter(name="dbSystemDefinedTags")
+    def db_system_defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "db_system_defined_tags")
+
+    @db_system_defined_tags.setter
+    def db_system_defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "db_system_defined_tags", value)
+
+    @property
+    @pulumi.getter(name="dbSystemFreeformTags")
+    def db_system_freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "db_system_freeform_tags")
+
+    @db_system_freeform_tags.setter
+    def db_system_freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "db_system_freeform_tags", value)
+
+    @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
@@ -226,6 +330,18 @@ class DataGuardAssociationArgs:
     @display_name.setter
     def display_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="faultDomains")
+    def fault_domains(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
+        """
+        return pulumi.get(self, "fault_domains")
+
+    @fault_domains.setter
+    def fault_domains(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "fault_domains", value)
 
     @property
     @pulumi.getter
@@ -252,11 +368,35 @@ class DataGuardAssociationArgs:
         pulumi.set(self, "is_active_data_guard_enabled", value)
 
     @property
+    @pulumi.getter(name="licenseModel")
+    def license_model(self) -> Optional[pulumi.Input[str]]:
+        """
+        The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED.
+        """
+        return pulumi.get(self, "license_model")
+
+    @license_model.setter
+    def license_model(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "license_model", value)
+
+    @property
+    @pulumi.getter(name="nodeCount")
+    def node_count(self) -> Optional[pulumi.Input[int]]:
+        """
+        The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
+        """
+        return pulumi.get(self, "node_count")
+
+    @node_count.setter
+    def node_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "node_count", value)
+
+    @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+        The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+        * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         """
         return pulumi.get(self, "nsg_ids")
 
@@ -325,6 +465,18 @@ class DataGuardAssociationArgs:
         pulumi.set(self, "peer_vm_cluster_id", value)
 
     @property
+    @pulumi.getter(name="privateIp")
+    def private_ip(self) -> Optional[pulumi.Input[str]]:
+        """
+        The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
+        """
+        return pulumi.get(self, "private_ip")
+
+    @private_ip.setter
+    def private_ip(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "private_ip", value)
+
+    @property
     @pulumi.getter
     def shape(self) -> Optional[pulumi.Input[str]]:
         """
@@ -335,6 +487,18 @@ class DataGuardAssociationArgs:
     @shape.setter
     def shape(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "shape", value)
+
+    @property
+    @pulumi.getter(name="storageVolumePerformanceMode")
+    def storage_volume_performance_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
+        """
+        return pulumi.get(self, "storage_volume_performance_mode")
+
+    @storage_volume_performance_mode.setter
+    def storage_volume_performance_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "storage_volume_performance_mode", value)
 
     @property
     @pulumi.getter(name="subnetId")
@@ -349,6 +513,18 @@ class DataGuardAssociationArgs:
     def subnet_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "subnet_id", value)
 
+    @property
+    @pulumi.getter(name="timeZone")
+    def time_zone(self) -> Optional[pulumi.Input[str]]:
+        """
+        The time zone of the dataguard standby DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+        """
+        return pulumi.get(self, "time_zone")
+
+    @time_zone.setter
+    def time_zone(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_zone", value)
+
 
 @pulumi.input_type
 class _DataGuardAssociationState:
@@ -357,16 +533,24 @@ class _DataGuardAssociationState:
                  apply_rate: Optional[pulumi.Input[str]] = None,
                  availability_domain: Optional[pulumi.Input[str]] = None,
                  backup_network_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 cpu_core_count: Optional[pulumi.Input[int]] = None,
                  create_async: Optional[pulumi.Input[bool]] = None,
                  creation_type: Optional[pulumi.Input[str]] = None,
                  database_admin_password: Optional[pulumi.Input[str]] = None,
+                 database_defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 database_freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  database_id: Optional[pulumi.Input[str]] = None,
                  database_software_image_id: Optional[pulumi.Input[str]] = None,
+                 db_system_defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 db_system_freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  delete_standby_db_home_on_delete: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 fault_domains: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  hostname: Optional[pulumi.Input[str]] = None,
                  is_active_data_guard_enabled: Optional[pulumi.Input[bool]] = None,
+                 license_model: Optional[pulumi.Input[str]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
+                 node_count: Optional[pulumi.Input[int]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  peer_data_guard_association_id: Optional[pulumi.Input[str]] = None,
                  peer_database_id: Optional[pulumi.Input[str]] = None,
@@ -376,12 +560,15 @@ class _DataGuardAssociationState:
                  peer_role: Optional[pulumi.Input[str]] = None,
                  peer_sid_prefix: Optional[pulumi.Input[str]] = None,
                  peer_vm_cluster_id: Optional[pulumi.Input[str]] = None,
+                 private_ip: Optional[pulumi.Input[str]] = None,
                  protection_mode: Optional[pulumi.Input[str]] = None,
                  role: Optional[pulumi.Input[str]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
+                 storage_volume_performance_mode: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
+                 time_zone: Optional[pulumi.Input[str]] = None,
                  transport_type: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering DataGuardAssociation resources.
@@ -389,16 +576,24 @@ class _DataGuardAssociationState:
         :param pulumi.Input[str] apply_rate: The rate at which redo logs are synced between the associated databases.  Example: `180 Mb per second`
         :param pulumi.Input[str] availability_domain: The name of the availability domain that the standby database DB system will be located in. For example- "Uocm:PHX-AD-1".
         :param pulumi.Input[Sequence[pulumi.Input[str]]] backup_network_nsg_ids: A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+        :param pulumi.Input[int] cpu_core_count: The number of OCPU cores available for AMD-based virtual machine DB systems.
         :param pulumi.Input[str] creation_type: Specifies whether to create the peer database in an existing DB system or in a new DB system.
         :param pulumi.Input[str] database_admin_password: (Updatable) A strong password for the `SYS`, `SYSTEM`, and `PDB Admin` users to apply during standby creation.
+        :param pulumi.Input[Mapping[str, Any]] database_defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param pulumi.Input[Mapping[str, Any]] database_freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] database_software_image_id: The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Applicable only when creationType=`ExistingDbSystem` and when the existing database has Exadata shape.
+        :param pulumi.Input[Mapping[str, Any]] db_system_defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param pulumi.Input[Mapping[str, Any]] db_system_freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] display_name: The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] fault_domains: A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
         :param pulumi.Input[str] hostname: The hostname for the DB node.
         :param pulumi.Input[bool] is_active_data_guard_enabled: (Updatable) True if active Data Guard is enabled.
+        :param pulumi.Input[str] license_model: The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycleState, if available.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-               * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+        :param pulumi.Input[int] node_count: The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+               * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         :param pulumi.Input[str] peer_data_guard_association_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer database's Data Guard association.
         :param pulumi.Input[str] peer_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated peer database.
         :param pulumi.Input[str] peer_db_home_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB home in which to create the standby database. You must supply this value to create standby database with an existing DB home
@@ -407,13 +602,16 @@ class _DataGuardAssociationState:
         :param pulumi.Input[str] peer_role: The role of the peer database in this Data Guard association.
         :param pulumi.Input[str] peer_sid_prefix: Specifies a prefix for the `Oracle SID` of the database to be created.
         :param pulumi.Input[str] peer_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster in which to create the standby database. You must supply this value if creationType is `ExistingVmCluster`.
+        :param pulumi.Input[str] private_ip: The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
         :param pulumi.Input[str] protection_mode: (Updatable) The protection mode to set up between the primary and standby databases. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         :param pulumi.Input[str] role: The role of the reporting database in this Data Guard association.
         :param pulumi.Input[str] shape: The virtual machine DB system shape to launch for the standby database in the Data Guard association. The shape determines the number of CPU cores and the amount of memory available for the DB system. Only virtual machine shapes are valid options. If you do not supply this parameter, the default shape is the shape of the primary DB system.
         :param pulumi.Input[str] state: The current state of the Data Guard association.
+        :param pulumi.Input[str] storage_volume_performance_mode: The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
         :param pulumi.Input[str] subnet_id: The OCID of the subnet the DB system is associated with. **Subnet Restrictions:**
                * For 1- and 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.16.16/28
         :param pulumi.Input[str] time_created: The date and time the Data Guard association was created.
+        :param pulumi.Input[str] time_zone: The time zone of the dataguard standby DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         :param pulumi.Input[str] transport_type: (Updatable) The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
                * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
                * MAXIMUM_PERFORMANCE - ASYNC
@@ -427,26 +625,42 @@ class _DataGuardAssociationState:
             pulumi.set(__self__, "availability_domain", availability_domain)
         if backup_network_nsg_ids is not None:
             pulumi.set(__self__, "backup_network_nsg_ids", backup_network_nsg_ids)
+        if cpu_core_count is not None:
+            pulumi.set(__self__, "cpu_core_count", cpu_core_count)
         if create_async is not None:
             pulumi.set(__self__, "create_async", create_async)
         if creation_type is not None:
             pulumi.set(__self__, "creation_type", creation_type)
         if database_admin_password is not None:
             pulumi.set(__self__, "database_admin_password", database_admin_password)
+        if database_defined_tags is not None:
+            pulumi.set(__self__, "database_defined_tags", database_defined_tags)
+        if database_freeform_tags is not None:
+            pulumi.set(__self__, "database_freeform_tags", database_freeform_tags)
         if database_id is not None:
             pulumi.set(__self__, "database_id", database_id)
         if database_software_image_id is not None:
             pulumi.set(__self__, "database_software_image_id", database_software_image_id)
+        if db_system_defined_tags is not None:
+            pulumi.set(__self__, "db_system_defined_tags", db_system_defined_tags)
+        if db_system_freeform_tags is not None:
+            pulumi.set(__self__, "db_system_freeform_tags", db_system_freeform_tags)
         if delete_standby_db_home_on_delete is not None:
             pulumi.set(__self__, "delete_standby_db_home_on_delete", delete_standby_db_home_on_delete)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if fault_domains is not None:
+            pulumi.set(__self__, "fault_domains", fault_domains)
         if hostname is not None:
             pulumi.set(__self__, "hostname", hostname)
         if is_active_data_guard_enabled is not None:
             pulumi.set(__self__, "is_active_data_guard_enabled", is_active_data_guard_enabled)
+        if license_model is not None:
+            pulumi.set(__self__, "license_model", license_model)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if node_count is not None:
+            pulumi.set(__self__, "node_count", node_count)
         if nsg_ids is not None:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if peer_data_guard_association_id is not None:
@@ -465,6 +679,8 @@ class _DataGuardAssociationState:
             pulumi.set(__self__, "peer_sid_prefix", peer_sid_prefix)
         if peer_vm_cluster_id is not None:
             pulumi.set(__self__, "peer_vm_cluster_id", peer_vm_cluster_id)
+        if private_ip is not None:
+            pulumi.set(__self__, "private_ip", private_ip)
         if protection_mode is not None:
             pulumi.set(__self__, "protection_mode", protection_mode)
         if role is not None:
@@ -473,10 +689,14 @@ class _DataGuardAssociationState:
             pulumi.set(__self__, "shape", shape)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if storage_volume_performance_mode is not None:
+            pulumi.set(__self__, "storage_volume_performance_mode", storage_volume_performance_mode)
         if subnet_id is not None:
             pulumi.set(__self__, "subnet_id", subnet_id)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
+        if time_zone is not None:
+            pulumi.set(__self__, "time_zone", time_zone)
         if transport_type is not None:
             pulumi.set(__self__, "transport_type", transport_type)
 
@@ -529,6 +749,18 @@ class _DataGuardAssociationState:
         pulumi.set(self, "backup_network_nsg_ids", value)
 
     @property
+    @pulumi.getter(name="cpuCoreCount")
+    def cpu_core_count(self) -> Optional[pulumi.Input[int]]:
+        """
+        The number of OCPU cores available for AMD-based virtual machine DB systems.
+        """
+        return pulumi.get(self, "cpu_core_count")
+
+    @cpu_core_count.setter
+    def cpu_core_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "cpu_core_count", value)
+
+    @property
     @pulumi.getter(name="createAsync")
     def create_async(self) -> Optional[pulumi.Input[bool]]:
         return pulumi.get(self, "create_async")
@@ -562,6 +794,30 @@ class _DataGuardAssociationState:
         pulumi.set(self, "database_admin_password", value)
 
     @property
+    @pulumi.getter(name="databaseDefinedTags")
+    def database_defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "database_defined_tags")
+
+    @database_defined_tags.setter
+    def database_defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "database_defined_tags", value)
+
+    @property
+    @pulumi.getter(name="databaseFreeformTags")
+    def database_freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "database_freeform_tags")
+
+    @database_freeform_tags.setter
+    def database_freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "database_freeform_tags", value)
+
+    @property
     @pulumi.getter(name="databaseId")
     def database_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -586,6 +842,30 @@ class _DataGuardAssociationState:
         pulumi.set(self, "database_software_image_id", value)
 
     @property
+    @pulumi.getter(name="dbSystemDefinedTags")
+    def db_system_defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "db_system_defined_tags")
+
+    @db_system_defined_tags.setter
+    def db_system_defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "db_system_defined_tags", value)
+
+    @property
+    @pulumi.getter(name="dbSystemFreeformTags")
+    def db_system_freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "db_system_freeform_tags")
+
+    @db_system_freeform_tags.setter
+    def db_system_freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "db_system_freeform_tags", value)
+
+    @property
     @pulumi.getter(name="deleteStandbyDbHomeOnDelete")
     def delete_standby_db_home_on_delete(self) -> Optional[pulumi.Input[str]]:
         return pulumi.get(self, "delete_standby_db_home_on_delete")
@@ -605,6 +885,18 @@ class _DataGuardAssociationState:
     @display_name.setter
     def display_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="faultDomains")
+    def fault_domains(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
+        """
+        return pulumi.get(self, "fault_domains")
+
+    @fault_domains.setter
+    def fault_domains(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "fault_domains", value)
 
     @property
     @pulumi.getter
@@ -631,6 +923,18 @@ class _DataGuardAssociationState:
         pulumi.set(self, "is_active_data_guard_enabled", value)
 
     @property
+    @pulumi.getter(name="licenseModel")
+    def license_model(self) -> Optional[pulumi.Input[str]]:
+        """
+        The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED.
+        """
+        return pulumi.get(self, "license_model")
+
+    @license_model.setter
+    def license_model(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "license_model", value)
+
+    @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
         """
@@ -643,11 +947,23 @@ class _DataGuardAssociationState:
         pulumi.set(self, "lifecycle_details", value)
 
     @property
+    @pulumi.getter(name="nodeCount")
+    def node_count(self) -> Optional[pulumi.Input[int]]:
+        """
+        The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
+        """
+        return pulumi.get(self, "node_count")
+
+    @node_count.setter
+    def node_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "node_count", value)
+
+    @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+        The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+        * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         """
         return pulumi.get(self, "nsg_ids")
 
@@ -752,6 +1068,18 @@ class _DataGuardAssociationState:
         pulumi.set(self, "peer_vm_cluster_id", value)
 
     @property
+    @pulumi.getter(name="privateIp")
+    def private_ip(self) -> Optional[pulumi.Input[str]]:
+        """
+        The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
+        """
+        return pulumi.get(self, "private_ip")
+
+    @private_ip.setter
+    def private_ip(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "private_ip", value)
+
+    @property
     @pulumi.getter(name="protectionMode")
     def protection_mode(self) -> Optional[pulumi.Input[str]]:
         """
@@ -800,6 +1128,18 @@ class _DataGuardAssociationState:
         pulumi.set(self, "state", value)
 
     @property
+    @pulumi.getter(name="storageVolumePerformanceMode")
+    def storage_volume_performance_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
+        """
+        return pulumi.get(self, "storage_volume_performance_mode")
+
+    @storage_volume_performance_mode.setter
+    def storage_volume_performance_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "storage_volume_performance_mode", value)
+
+    @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -825,6 +1165,18 @@ class _DataGuardAssociationState:
         pulumi.set(self, "time_created", value)
 
     @property
+    @pulumi.getter(name="timeZone")
+    def time_zone(self) -> Optional[pulumi.Input[str]]:
+        """
+        The time zone of the dataguard standby DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+        """
+        return pulumi.get(self, "time_zone")
+
+    @time_zone.setter
+    def time_zone(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_zone", value)
+
+    @property
     @pulumi.getter(name="transportType")
     def transport_type(self) -> Optional[pulumi.Input[str]]:
         """
@@ -847,24 +1199,35 @@ class DataGuardAssociation(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  availability_domain: Optional[pulumi.Input[str]] = None,
                  backup_network_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 cpu_core_count: Optional[pulumi.Input[int]] = None,
                  create_async: Optional[pulumi.Input[bool]] = None,
                  creation_type: Optional[pulumi.Input[str]] = None,
                  database_admin_password: Optional[pulumi.Input[str]] = None,
+                 database_defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 database_freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  database_id: Optional[pulumi.Input[str]] = None,
                  database_software_image_id: Optional[pulumi.Input[str]] = None,
+                 db_system_defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 db_system_freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  delete_standby_db_home_on_delete: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 fault_domains: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  hostname: Optional[pulumi.Input[str]] = None,
                  is_active_data_guard_enabled: Optional[pulumi.Input[bool]] = None,
+                 license_model: Optional[pulumi.Input[str]] = None,
+                 node_count: Optional[pulumi.Input[int]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  peer_db_home_id: Optional[pulumi.Input[str]] = None,
                  peer_db_system_id: Optional[pulumi.Input[str]] = None,
                  peer_db_unique_name: Optional[pulumi.Input[str]] = None,
                  peer_sid_prefix: Optional[pulumi.Input[str]] = None,
                  peer_vm_cluster_id: Optional[pulumi.Input[str]] = None,
+                 private_ip: Optional[pulumi.Input[str]] = None,
                  protection_mode: Optional[pulumi.Input[str]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
+                 storage_volume_performance_mode: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
+                 time_zone: Optional[pulumi.Input[str]] = None,
                  transport_type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -894,18 +1257,29 @@ class DataGuardAssociation(pulumi.CustomResource):
             transport_type=var["data_guard_association_transport_type"],
             availability_domain=var["data_guard_association_availability_domain"],
             backup_network_nsg_ids=var["data_guard_association_backup_network_nsg_ids"],
+            cpu_core_count=var["data_guard_association_cpu_core_count"],
+            database_defined_tags=var["data_guard_association_database_defined_tags"],
+            database_freeform_tags=var["data_guard_association_database_freeform_tags"],
             database_software_image_id=oci_database_database_software_image["test_database_software_image"]["id"],
+            db_system_defined_tags=var["data_guard_association_db_system_defined_tags"],
+            db_system_freeform_tags=var["data_guard_association_db_system_freeform_tags"],
             display_name=var["data_guard_association_display_name"],
+            fault_domains=var["data_guard_association_fault_domains"],
             hostname=var["data_guard_association_hostname"],
             is_active_data_guard_enabled=var["data_guard_association_is_active_data_guard_enabled"],
+            license_model=var["data_guard_association_license_model"],
+            node_count=var["data_guard_association_node_count"],
             nsg_ids=var["data_guard_association_nsg_ids"],
             peer_db_home_id=oci_database_db_home["test_db_home"]["id"],
             peer_db_system_id=oci_database_db_system["test_db_system"]["id"],
             peer_db_unique_name=var["data_guard_association_peer_db_unique_name"],
             peer_sid_prefix=var["data_guard_association_peer_sid_prefix"],
             peer_vm_cluster_id=oci_database_vm_cluster["test_vm_cluster"]["id"],
+            private_ip=var["data_guard_association_private_ip"],
             shape=var["data_guard_association_shape"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"])
+            storage_volume_performance_mode=var["data_guard_association_storage_volume_performance_mode"],
+            subnet_id=oci_core_subnet["test_subnet"]["id"],
+            time_zone=var["data_guard_association_time_zone"])
         ```
 
         ## Import
@@ -916,24 +1290,35 @@ class DataGuardAssociation(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] availability_domain: The name of the availability domain that the standby database DB system will be located in. For example- "Uocm:PHX-AD-1".
         :param pulumi.Input[Sequence[pulumi.Input[str]]] backup_network_nsg_ids: A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+        :param pulumi.Input[int] cpu_core_count: The number of OCPU cores available for AMD-based virtual machine DB systems.
         :param pulumi.Input[str] creation_type: Specifies whether to create the peer database in an existing DB system or in a new DB system.
         :param pulumi.Input[str] database_admin_password: (Updatable) A strong password for the `SYS`, `SYSTEM`, and `PDB Admin` users to apply during standby creation.
+        :param pulumi.Input[Mapping[str, Any]] database_defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param pulumi.Input[Mapping[str, Any]] database_freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] database_software_image_id: The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Applicable only when creationType=`ExistingDbSystem` and when the existing database has Exadata shape.
+        :param pulumi.Input[Mapping[str, Any]] db_system_defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param pulumi.Input[Mapping[str, Any]] db_system_freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] display_name: The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] fault_domains: A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
         :param pulumi.Input[str] hostname: The hostname for the DB node.
         :param pulumi.Input[bool] is_active_data_guard_enabled: (Updatable) True if active Data Guard is enabled.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-               * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+        :param pulumi.Input[str] license_model: The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED.
+        :param pulumi.Input[int] node_count: The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+               * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         :param pulumi.Input[str] peer_db_home_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB home in which to create the standby database. You must supply this value to create standby database with an existing DB home
         :param pulumi.Input[str] peer_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system in which to create the standby database. You must supply this value if creationType is `ExistingDbSystem`.
         :param pulumi.Input[str] peer_db_unique_name: Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
         :param pulumi.Input[str] peer_sid_prefix: Specifies a prefix for the `Oracle SID` of the database to be created.
         :param pulumi.Input[str] peer_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster in which to create the standby database. You must supply this value if creationType is `ExistingVmCluster`.
+        :param pulumi.Input[str] private_ip: The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
         :param pulumi.Input[str] protection_mode: (Updatable) The protection mode to set up between the primary and standby databases. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         :param pulumi.Input[str] shape: The virtual machine DB system shape to launch for the standby database in the Data Guard association. The shape determines the number of CPU cores and the amount of memory available for the DB system. Only virtual machine shapes are valid options. If you do not supply this parameter, the default shape is the shape of the primary DB system.
+        :param pulumi.Input[str] storage_volume_performance_mode: The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
         :param pulumi.Input[str] subnet_id: The OCID of the subnet the DB system is associated with. **Subnet Restrictions:**
                * For 1- and 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.16.16/28
+        :param pulumi.Input[str] time_zone: The time zone of the dataguard standby DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         :param pulumi.Input[str] transport_type: (Updatable) The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
                * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
                * MAXIMUM_PERFORMANCE - ASYNC
@@ -972,18 +1357,29 @@ class DataGuardAssociation(pulumi.CustomResource):
             transport_type=var["data_guard_association_transport_type"],
             availability_domain=var["data_guard_association_availability_domain"],
             backup_network_nsg_ids=var["data_guard_association_backup_network_nsg_ids"],
+            cpu_core_count=var["data_guard_association_cpu_core_count"],
+            database_defined_tags=var["data_guard_association_database_defined_tags"],
+            database_freeform_tags=var["data_guard_association_database_freeform_tags"],
             database_software_image_id=oci_database_database_software_image["test_database_software_image"]["id"],
+            db_system_defined_tags=var["data_guard_association_db_system_defined_tags"],
+            db_system_freeform_tags=var["data_guard_association_db_system_freeform_tags"],
             display_name=var["data_guard_association_display_name"],
+            fault_domains=var["data_guard_association_fault_domains"],
             hostname=var["data_guard_association_hostname"],
             is_active_data_guard_enabled=var["data_guard_association_is_active_data_guard_enabled"],
+            license_model=var["data_guard_association_license_model"],
+            node_count=var["data_guard_association_node_count"],
             nsg_ids=var["data_guard_association_nsg_ids"],
             peer_db_home_id=oci_database_db_home["test_db_home"]["id"],
             peer_db_system_id=oci_database_db_system["test_db_system"]["id"],
             peer_db_unique_name=var["data_guard_association_peer_db_unique_name"],
             peer_sid_prefix=var["data_guard_association_peer_sid_prefix"],
             peer_vm_cluster_id=oci_database_vm_cluster["test_vm_cluster"]["id"],
+            private_ip=var["data_guard_association_private_ip"],
             shape=var["data_guard_association_shape"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"])
+            storage_volume_performance_mode=var["data_guard_association_storage_volume_performance_mode"],
+            subnet_id=oci_core_subnet["test_subnet"]["id"],
+            time_zone=var["data_guard_association_time_zone"])
         ```
 
         ## Import
@@ -1007,24 +1403,35 @@ class DataGuardAssociation(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  availability_domain: Optional[pulumi.Input[str]] = None,
                  backup_network_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 cpu_core_count: Optional[pulumi.Input[int]] = None,
                  create_async: Optional[pulumi.Input[bool]] = None,
                  creation_type: Optional[pulumi.Input[str]] = None,
                  database_admin_password: Optional[pulumi.Input[str]] = None,
+                 database_defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 database_freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  database_id: Optional[pulumi.Input[str]] = None,
                  database_software_image_id: Optional[pulumi.Input[str]] = None,
+                 db_system_defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 db_system_freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  delete_standby_db_home_on_delete: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 fault_domains: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  hostname: Optional[pulumi.Input[str]] = None,
                  is_active_data_guard_enabled: Optional[pulumi.Input[bool]] = None,
+                 license_model: Optional[pulumi.Input[str]] = None,
+                 node_count: Optional[pulumi.Input[int]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  peer_db_home_id: Optional[pulumi.Input[str]] = None,
                  peer_db_system_id: Optional[pulumi.Input[str]] = None,
                  peer_db_unique_name: Optional[pulumi.Input[str]] = None,
                  peer_sid_prefix: Optional[pulumi.Input[str]] = None,
                  peer_vm_cluster_id: Optional[pulumi.Input[str]] = None,
+                 private_ip: Optional[pulumi.Input[str]] = None,
                  protection_mode: Optional[pulumi.Input[str]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
+                 storage_volume_performance_mode: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
+                 time_zone: Optional[pulumi.Input[str]] = None,
                  transport_type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         if opts is None:
@@ -1040,6 +1447,7 @@ class DataGuardAssociation(pulumi.CustomResource):
 
             __props__.__dict__["availability_domain"] = availability_domain
             __props__.__dict__["backup_network_nsg_ids"] = backup_network_nsg_ids
+            __props__.__dict__["cpu_core_count"] = cpu_core_count
             __props__.__dict__["create_async"] = create_async
             if creation_type is None and not opts.urn:
                 raise TypeError("Missing required property 'creation_type'")
@@ -1047,27 +1455,37 @@ class DataGuardAssociation(pulumi.CustomResource):
             if database_admin_password is None and not opts.urn:
                 raise TypeError("Missing required property 'database_admin_password'")
             __props__.__dict__["database_admin_password"] = database_admin_password
+            __props__.__dict__["database_defined_tags"] = database_defined_tags
+            __props__.__dict__["database_freeform_tags"] = database_freeform_tags
             if database_id is None and not opts.urn:
                 raise TypeError("Missing required property 'database_id'")
             __props__.__dict__["database_id"] = database_id
             __props__.__dict__["database_software_image_id"] = database_software_image_id
+            __props__.__dict__["db_system_defined_tags"] = db_system_defined_tags
+            __props__.__dict__["db_system_freeform_tags"] = db_system_freeform_tags
             if delete_standby_db_home_on_delete is None and not opts.urn:
                 raise TypeError("Missing required property 'delete_standby_db_home_on_delete'")
             __props__.__dict__["delete_standby_db_home_on_delete"] = delete_standby_db_home_on_delete
             __props__.__dict__["display_name"] = display_name
+            __props__.__dict__["fault_domains"] = fault_domains
             __props__.__dict__["hostname"] = hostname
             __props__.__dict__["is_active_data_guard_enabled"] = is_active_data_guard_enabled
+            __props__.__dict__["license_model"] = license_model
+            __props__.__dict__["node_count"] = node_count
             __props__.__dict__["nsg_ids"] = nsg_ids
             __props__.__dict__["peer_db_home_id"] = peer_db_home_id
             __props__.__dict__["peer_db_system_id"] = peer_db_system_id
             __props__.__dict__["peer_db_unique_name"] = peer_db_unique_name
             __props__.__dict__["peer_sid_prefix"] = peer_sid_prefix
             __props__.__dict__["peer_vm_cluster_id"] = peer_vm_cluster_id
+            __props__.__dict__["private_ip"] = private_ip
             if protection_mode is None and not opts.urn:
                 raise TypeError("Missing required property 'protection_mode'")
             __props__.__dict__["protection_mode"] = protection_mode
             __props__.__dict__["shape"] = shape
+            __props__.__dict__["storage_volume_performance_mode"] = storage_volume_performance_mode
             __props__.__dict__["subnet_id"] = subnet_id
+            __props__.__dict__["time_zone"] = time_zone
             if transport_type is None and not opts.urn:
                 raise TypeError("Missing required property 'transport_type'")
             __props__.__dict__["transport_type"] = transport_type
@@ -1094,16 +1512,24 @@ class DataGuardAssociation(pulumi.CustomResource):
             apply_rate: Optional[pulumi.Input[str]] = None,
             availability_domain: Optional[pulumi.Input[str]] = None,
             backup_network_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+            cpu_core_count: Optional[pulumi.Input[int]] = None,
             create_async: Optional[pulumi.Input[bool]] = None,
             creation_type: Optional[pulumi.Input[str]] = None,
             database_admin_password: Optional[pulumi.Input[str]] = None,
+            database_defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            database_freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             database_id: Optional[pulumi.Input[str]] = None,
             database_software_image_id: Optional[pulumi.Input[str]] = None,
+            db_system_defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            db_system_freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             delete_standby_db_home_on_delete: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
+            fault_domains: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             hostname: Optional[pulumi.Input[str]] = None,
             is_active_data_guard_enabled: Optional[pulumi.Input[bool]] = None,
+            license_model: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
+            node_count: Optional[pulumi.Input[int]] = None,
             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             peer_data_guard_association_id: Optional[pulumi.Input[str]] = None,
             peer_database_id: Optional[pulumi.Input[str]] = None,
@@ -1113,12 +1539,15 @@ class DataGuardAssociation(pulumi.CustomResource):
             peer_role: Optional[pulumi.Input[str]] = None,
             peer_sid_prefix: Optional[pulumi.Input[str]] = None,
             peer_vm_cluster_id: Optional[pulumi.Input[str]] = None,
+            private_ip: Optional[pulumi.Input[str]] = None,
             protection_mode: Optional[pulumi.Input[str]] = None,
             role: Optional[pulumi.Input[str]] = None,
             shape: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
+            storage_volume_performance_mode: Optional[pulumi.Input[str]] = None,
             subnet_id: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
+            time_zone: Optional[pulumi.Input[str]] = None,
             transport_type: Optional[pulumi.Input[str]] = None) -> 'DataGuardAssociation':
         """
         Get an existing DataGuardAssociation resource's state with the given name, id, and optional extra
@@ -1131,16 +1560,24 @@ class DataGuardAssociation(pulumi.CustomResource):
         :param pulumi.Input[str] apply_rate: The rate at which redo logs are synced between the associated databases.  Example: `180 Mb per second`
         :param pulumi.Input[str] availability_domain: The name of the availability domain that the standby database DB system will be located in. For example- "Uocm:PHX-AD-1".
         :param pulumi.Input[Sequence[pulumi.Input[str]]] backup_network_nsg_ids: A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+        :param pulumi.Input[int] cpu_core_count: The number of OCPU cores available for AMD-based virtual machine DB systems.
         :param pulumi.Input[str] creation_type: Specifies whether to create the peer database in an existing DB system or in a new DB system.
         :param pulumi.Input[str] database_admin_password: (Updatable) A strong password for the `SYS`, `SYSTEM`, and `PDB Admin` users to apply during standby creation.
+        :param pulumi.Input[Mapping[str, Any]] database_defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param pulumi.Input[Mapping[str, Any]] database_freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] database_software_image_id: The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Applicable only when creationType=`ExistingDbSystem` and when the existing database has Exadata shape.
+        :param pulumi.Input[Mapping[str, Any]] db_system_defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param pulumi.Input[Mapping[str, Any]] db_system_freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] display_name: The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] fault_domains: A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
         :param pulumi.Input[str] hostname: The hostname for the DB node.
         :param pulumi.Input[bool] is_active_data_guard_enabled: (Updatable) True if active Data Guard is enabled.
+        :param pulumi.Input[str] license_model: The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycleState, if available.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-               * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+        :param pulumi.Input[int] node_count: The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+               * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         :param pulumi.Input[str] peer_data_guard_association_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer database's Data Guard association.
         :param pulumi.Input[str] peer_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated peer database.
         :param pulumi.Input[str] peer_db_home_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB home in which to create the standby database. You must supply this value to create standby database with an existing DB home
@@ -1149,13 +1586,16 @@ class DataGuardAssociation(pulumi.CustomResource):
         :param pulumi.Input[str] peer_role: The role of the peer database in this Data Guard association.
         :param pulumi.Input[str] peer_sid_prefix: Specifies a prefix for the `Oracle SID` of the database to be created.
         :param pulumi.Input[str] peer_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster in which to create the standby database. You must supply this value if creationType is `ExistingVmCluster`.
+        :param pulumi.Input[str] private_ip: The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
         :param pulumi.Input[str] protection_mode: (Updatable) The protection mode to set up between the primary and standby databases. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         :param pulumi.Input[str] role: The role of the reporting database in this Data Guard association.
         :param pulumi.Input[str] shape: The virtual machine DB system shape to launch for the standby database in the Data Guard association. The shape determines the number of CPU cores and the amount of memory available for the DB system. Only virtual machine shapes are valid options. If you do not supply this parameter, the default shape is the shape of the primary DB system.
         :param pulumi.Input[str] state: The current state of the Data Guard association.
+        :param pulumi.Input[str] storage_volume_performance_mode: The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
         :param pulumi.Input[str] subnet_id: The OCID of the subnet the DB system is associated with. **Subnet Restrictions:**
                * For 1- and 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.16.16/28
         :param pulumi.Input[str] time_created: The date and time the Data Guard association was created.
+        :param pulumi.Input[str] time_zone: The time zone of the dataguard standby DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         :param pulumi.Input[str] transport_type: (Updatable) The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
                * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
                * MAXIMUM_PERFORMANCE - ASYNC
@@ -1169,16 +1609,24 @@ class DataGuardAssociation(pulumi.CustomResource):
         __props__.__dict__["apply_rate"] = apply_rate
         __props__.__dict__["availability_domain"] = availability_domain
         __props__.__dict__["backup_network_nsg_ids"] = backup_network_nsg_ids
+        __props__.__dict__["cpu_core_count"] = cpu_core_count
         __props__.__dict__["create_async"] = create_async
         __props__.__dict__["creation_type"] = creation_type
         __props__.__dict__["database_admin_password"] = database_admin_password
+        __props__.__dict__["database_defined_tags"] = database_defined_tags
+        __props__.__dict__["database_freeform_tags"] = database_freeform_tags
         __props__.__dict__["database_id"] = database_id
         __props__.__dict__["database_software_image_id"] = database_software_image_id
+        __props__.__dict__["db_system_defined_tags"] = db_system_defined_tags
+        __props__.__dict__["db_system_freeform_tags"] = db_system_freeform_tags
         __props__.__dict__["delete_standby_db_home_on_delete"] = delete_standby_db_home_on_delete
         __props__.__dict__["display_name"] = display_name
+        __props__.__dict__["fault_domains"] = fault_domains
         __props__.__dict__["hostname"] = hostname
         __props__.__dict__["is_active_data_guard_enabled"] = is_active_data_guard_enabled
+        __props__.__dict__["license_model"] = license_model
         __props__.__dict__["lifecycle_details"] = lifecycle_details
+        __props__.__dict__["node_count"] = node_count
         __props__.__dict__["nsg_ids"] = nsg_ids
         __props__.__dict__["peer_data_guard_association_id"] = peer_data_guard_association_id
         __props__.__dict__["peer_database_id"] = peer_database_id
@@ -1188,12 +1636,15 @@ class DataGuardAssociation(pulumi.CustomResource):
         __props__.__dict__["peer_role"] = peer_role
         __props__.__dict__["peer_sid_prefix"] = peer_sid_prefix
         __props__.__dict__["peer_vm_cluster_id"] = peer_vm_cluster_id
+        __props__.__dict__["private_ip"] = private_ip
         __props__.__dict__["protection_mode"] = protection_mode
         __props__.__dict__["role"] = role
         __props__.__dict__["shape"] = shape
         __props__.__dict__["state"] = state
+        __props__.__dict__["storage_volume_performance_mode"] = storage_volume_performance_mode
         __props__.__dict__["subnet_id"] = subnet_id
         __props__.__dict__["time_created"] = time_created
+        __props__.__dict__["time_zone"] = time_zone
         __props__.__dict__["transport_type"] = transport_type
         return DataGuardAssociation(resource_name, opts=opts, __props__=__props__)
 
@@ -1230,6 +1681,14 @@ class DataGuardAssociation(pulumi.CustomResource):
         return pulumi.get(self, "backup_network_nsg_ids")
 
     @property
+    @pulumi.getter(name="cpuCoreCount")
+    def cpu_core_count(self) -> pulumi.Output[int]:
+        """
+        The number of OCPU cores available for AMD-based virtual machine DB systems.
+        """
+        return pulumi.get(self, "cpu_core_count")
+
+    @property
     @pulumi.getter(name="createAsync")
     def create_async(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "create_async")
@@ -1251,6 +1710,22 @@ class DataGuardAssociation(pulumi.CustomResource):
         return pulumi.get(self, "database_admin_password")
 
     @property
+    @pulumi.getter(name="databaseDefinedTags")
+    def database_defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "database_defined_tags")
+
+    @property
+    @pulumi.getter(name="databaseFreeformTags")
+    def database_freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "database_freeform_tags")
+
+    @property
     @pulumi.getter(name="databaseId")
     def database_id(self) -> pulumi.Output[str]:
         """
@@ -1267,6 +1742,22 @@ class DataGuardAssociation(pulumi.CustomResource):
         return pulumi.get(self, "database_software_image_id")
 
     @property
+    @pulumi.getter(name="dbSystemDefinedTags")
+    def db_system_defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "db_system_defined_tags")
+
+    @property
+    @pulumi.getter(name="dbSystemFreeformTags")
+    def db_system_freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "db_system_freeform_tags")
+
+    @property
     @pulumi.getter(name="deleteStandbyDbHomeOnDelete")
     def delete_standby_db_home_on_delete(self) -> pulumi.Output[str]:
         return pulumi.get(self, "delete_standby_db_home_on_delete")
@@ -1278,6 +1769,14 @@ class DataGuardAssociation(pulumi.CustomResource):
         The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
         """
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="faultDomains")
+    def fault_domains(self) -> pulumi.Output[Optional[Sequence[str]]]:
+        """
+        A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
+        """
+        return pulumi.get(self, "fault_domains")
 
     @property
     @pulumi.getter
@@ -1296,6 +1795,14 @@ class DataGuardAssociation(pulumi.CustomResource):
         return pulumi.get(self, "is_active_data_guard_enabled")
 
     @property
+    @pulumi.getter(name="licenseModel")
+    def license_model(self) -> pulumi.Output[Optional[str]]:
+        """
+        The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED.
+        """
+        return pulumi.get(self, "license_model")
+
+    @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> pulumi.Output[str]:
         """
@@ -1304,11 +1811,19 @@ class DataGuardAssociation(pulumi.CustomResource):
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter(name="nodeCount")
+    def node_count(self) -> pulumi.Output[Optional[int]]:
+        """
+        The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
+        """
+        return pulumi.get(self, "node_count")
+
+    @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> pulumi.Output[Optional[Sequence[str]]]:
         """
-        A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+        The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+        * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         """
         return pulumi.get(self, "nsg_ids")
 
@@ -1377,6 +1892,14 @@ class DataGuardAssociation(pulumi.CustomResource):
         return pulumi.get(self, "peer_vm_cluster_id")
 
     @property
+    @pulumi.getter(name="privateIp")
+    def private_ip(self) -> pulumi.Output[Optional[str]]:
+        """
+        The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
+        """
+        return pulumi.get(self, "private_ip")
+
+    @property
     @pulumi.getter(name="protectionMode")
     def protection_mode(self) -> pulumi.Output[str]:
         """
@@ -1409,6 +1932,14 @@ class DataGuardAssociation(pulumi.CustomResource):
         return pulumi.get(self, "state")
 
     @property
+    @pulumi.getter(name="storageVolumePerformanceMode")
+    def storage_volume_performance_mode(self) -> pulumi.Output[str]:
+        """
+        The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
+        """
+        return pulumi.get(self, "storage_volume_performance_mode")
+
+    @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Output[str]:
         """
@@ -1424,6 +1955,14 @@ class DataGuardAssociation(pulumi.CustomResource):
         The date and time the Data Guard association was created.
         """
         return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeZone")
+    def time_zone(self) -> pulumi.Output[Optional[str]]:
+        """
+        The time zone of the dataguard standby DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+        """
+        return pulumi.get(self, "time_zone")
 
     @property
     @pulumi.getter(name="transportType")

@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Budget.Outputs
     public sealed class GetAlertRulesAlertRuleResult
     {
         /// <summary>
-        /// The unique Budget OCID
+        /// The unique budget OCID.
         /// </summary>
         public readonly string BudgetId;
         /// <summary>
@@ -26,7 +26,7 @@ namespace Pulumi.Oci.Budget.Outputs
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+        /// A user-friendly name. This does not have to be unique, and it's changeable.  Example: `My new resource`
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
@@ -34,15 +34,15 @@ namespace Pulumi.Oci.Budget.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// The OCID of the alert rule
+        /// The OCID of the alert rule.
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Custom message that will be sent when alert is triggered
+        /// The custom message that will be sent when the alert is triggered.
         /// </summary>
         public readonly string Message;
         /// <summary>
-        /// Delimited list of email addresses to receive the alert when it triggers. Delimiter character can be comma, space, TAB, or semicolon.
+        /// The delimited list of email addresses to receive the alert when it triggers. Delimiter characters can be a comma, space, TAB, or semicolon.
         /// </summary>
         public readonly string Recipients;
         /// <summary>
@@ -50,7 +50,7 @@ namespace Pulumi.Oci.Budget.Outputs
         /// </summary>
         public readonly string State;
         /// <summary>
-        /// The threshold for triggering the alert. If thresholdType is PERCENTAGE, the maximum value is 10000.
+        /// The threshold for triggering the alert. If the thresholdType is PERCENTAGE, the maximum value is 10000.
         /// </summary>
         public readonly double Threshold;
         /// <summary>
@@ -58,19 +58,19 @@ namespace Pulumi.Oci.Budget.Outputs
         /// </summary>
         public readonly string ThresholdType;
         /// <summary>
-        /// Time when budget was created
+        /// The time when the budget was created.
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// Time when budget was updated
+        /// The time when the budget was updated.
         /// </summary>
         public readonly string TimeUpdated;
         /// <summary>
-        /// The type of alert. Valid values are ACTUAL (the alert will trigger based on actual usage) or FORECAST (the alert will trigger based on predicted usage).
+        /// The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
         /// </summary>
         public readonly string Type;
         /// <summary>
-        /// Version of the alert rule. Starts from 1 and increments by 1.
+        /// The version of the alert rule. Starts from 1 and increments by 1.
         /// </summary>
         public readonly int Version;
 

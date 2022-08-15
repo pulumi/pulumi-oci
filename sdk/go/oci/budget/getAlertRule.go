@@ -12,7 +12,7 @@ import (
 
 // This data source provides details about a specific Alert Rule resource in Oracle Cloud Infrastructure Budget service.
 //
-// Gets an Alert Rule for a specified Budget.
+// Gets an Alert Rule for a specified budget.
 //
 // ## Example Usage
 //
@@ -48,44 +48,44 @@ func GetAlertRule(ctx *pulumi.Context, args *GetAlertRuleArgs, opts ...pulumi.In
 
 // A collection of arguments for invoking getAlertRule.
 type GetAlertRuleArgs struct {
-	// The unique Alert Rule OCID
+	// The unique Alert Rule OCID.
 	AlertRuleId string `pulumi:"alertRuleId"`
-	// The unique Budget OCID
+	// The unique budget OCID.
 	BudgetId string `pulumi:"budgetId"`
 }
 
 // A collection of values returned by getAlertRule.
 type GetAlertRuleResult struct {
 	AlertRuleId string `pulumi:"alertRuleId"`
-	// The OCID of the budget
+	// The OCID of the budget.
 	BudgetId string `pulumi:"budgetId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The description of the alert rule.
 	Description string `pulumi:"description"`
-	// The name of the alert rule.
+	// The name of the alert rule. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// The OCID of the alert rule
+	// The OCID of the alert rule.
 	Id string `pulumi:"id"`
-	// Custom message that will be sent when alert is triggered
+	// The custom message that will be sent when the alert is triggered.
 	Message string `pulumi:"message"`
-	// Delimited list of email addresses to receive the alert when it triggers. Delimiter character can be comma, space, TAB, or semicolon.
+	// The delimited list of email addresses to receive the alert when it triggers. Delimiter characters can be a comma, space, TAB, or semicolon.
 	Recipients string `pulumi:"recipients"`
 	// The current state of the alert rule.
 	State string `pulumi:"state"`
-	// The threshold for triggering the alert. If thresholdType is PERCENTAGE, the maximum value is 10000.
+	// The threshold for triggering the alert. If the thresholdType is PERCENTAGE, the maximum value is 10000.
 	Threshold float64 `pulumi:"threshold"`
 	// The type of threshold.
 	ThresholdType string `pulumi:"thresholdType"`
-	// Time when budget was created
+	// The time when the budget was created.
 	TimeCreated string `pulumi:"timeCreated"`
-	// Time when budget was updated
+	// The time when the budget was updated.
 	TimeUpdated string `pulumi:"timeUpdated"`
-	// The type of alert. Valid values are ACTUAL (the alert will trigger based on actual usage) or FORECAST (the alert will trigger based on predicted usage).
+	// The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
 	Type string `pulumi:"type"`
-	// Version of the alert rule. Starts from 1 and increments by 1.
+	// The version of the alert rule. Starts from 1 and increments by 1.
 	Version int `pulumi:"version"`
 }
 
@@ -104,9 +104,9 @@ func GetAlertRuleOutput(ctx *pulumi.Context, args GetAlertRuleOutputArgs, opts .
 
 // A collection of arguments for invoking getAlertRule.
 type GetAlertRuleOutputArgs struct {
-	// The unique Alert Rule OCID
+	// The unique Alert Rule OCID.
 	AlertRuleId pulumi.StringInput `pulumi:"alertRuleId"`
-	// The unique Budget OCID
+	// The unique budget OCID.
 	BudgetId pulumi.StringInput `pulumi:"budgetId"`
 }
 
@@ -133,7 +133,7 @@ func (o GetAlertRuleResultOutput) AlertRuleId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAlertRuleResult) string { return v.AlertRuleId }).(pulumi.StringOutput)
 }
 
-// The OCID of the budget
+// The OCID of the budget.
 func (o GetAlertRuleResultOutput) BudgetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAlertRuleResult) string { return v.BudgetId }).(pulumi.StringOutput)
 }
@@ -148,7 +148,7 @@ func (o GetAlertRuleResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAlertRuleResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// The name of the alert rule.
+// The name of the alert rule. Avoid entering confidential information.
 func (o GetAlertRuleResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAlertRuleResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -158,17 +158,17 @@ func (o GetAlertRuleResultOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetAlertRuleResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// The OCID of the alert rule
+// The OCID of the alert rule.
 func (o GetAlertRuleResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAlertRuleResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Custom message that will be sent when alert is triggered
+// The custom message that will be sent when the alert is triggered.
 func (o GetAlertRuleResultOutput) Message() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAlertRuleResult) string { return v.Message }).(pulumi.StringOutput)
 }
 
-// Delimited list of email addresses to receive the alert when it triggers. Delimiter character can be comma, space, TAB, or semicolon.
+// The delimited list of email addresses to receive the alert when it triggers. Delimiter characters can be a comma, space, TAB, or semicolon.
 func (o GetAlertRuleResultOutput) Recipients() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAlertRuleResult) string { return v.Recipients }).(pulumi.StringOutput)
 }
@@ -178,7 +178,7 @@ func (o GetAlertRuleResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAlertRuleResult) string { return v.State }).(pulumi.StringOutput)
 }
 
-// The threshold for triggering the alert. If thresholdType is PERCENTAGE, the maximum value is 10000.
+// The threshold for triggering the alert. If the thresholdType is PERCENTAGE, the maximum value is 10000.
 func (o GetAlertRuleResultOutput) Threshold() pulumi.Float64Output {
 	return o.ApplyT(func(v GetAlertRuleResult) float64 { return v.Threshold }).(pulumi.Float64Output)
 }
@@ -188,22 +188,22 @@ func (o GetAlertRuleResultOutput) ThresholdType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAlertRuleResult) string { return v.ThresholdType }).(pulumi.StringOutput)
 }
 
-// Time when budget was created
+// The time when the budget was created.
 func (o GetAlertRuleResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAlertRuleResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// Time when budget was updated
+// The time when the budget was updated.
 func (o GetAlertRuleResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAlertRuleResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// The type of alert. Valid values are ACTUAL (the alert will trigger based on actual usage) or FORECAST (the alert will trigger based on predicted usage).
+// The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
 func (o GetAlertRuleResultOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAlertRuleResult) string { return v.Type }).(pulumi.StringOutput)
 }
 
-// Version of the alert rule. Starts from 1 and increments by 1.
+// The version of the alert rule. Starts from 1 and increments by 1.
 func (o GetAlertRuleResultOutput) Version() pulumi.IntOutput {
 	return o.ApplyT(func(v GetAlertRuleResult) int { return v.Version }).(pulumi.IntOutput)
 }

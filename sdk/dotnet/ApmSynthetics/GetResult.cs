@@ -108,13 +108,13 @@ namespace Pulumi.Oci.ApmSynthetics
         public string MonitorId { get; set; } = null!;
 
         /// <summary>
-        /// The result content type zip or raw.
+        /// The result content type: zip or raw.
         /// </summary>
         [Input("resultContentType", required: true)]
         public string ResultContentType { get; set; } = null!;
 
         /// <summary>
-        /// The result type har, screenshot, log or network.
+        /// The result type: har, screenshot, log, or network.
         /// </summary>
         [Input("resultType", required: true)]
         public string ResultType { get; set; } = null!;
@@ -151,13 +151,13 @@ namespace Pulumi.Oci.ApmSynthetics
         public Input<string> MonitorId { get; set; } = null!;
 
         /// <summary>
-        /// The result content type zip or raw.
+        /// The result content type: zip or raw.
         /// </summary>
         [Input("resultContentType", required: true)]
         public Input<string> ResultContentType { get; set; } = null!;
 
         /// <summary>
-        /// The result type har, screenshot, log or network.
+        /// The result type: har, screenshot, log, or network.
         /// </summary>
         [Input("resultType", required: true)]
         public Input<string> ResultType { get; set; } = null!;
@@ -203,7 +203,7 @@ namespace Pulumi.Oci.ApmSynthetics
         /// </summary>
         public readonly string ResultType;
         /// <summary>
-        /// The name of the vantage point.
+        /// The name of the public or dedicated vantage point.
         /// </summary>
         public readonly string VantagePoint;
 

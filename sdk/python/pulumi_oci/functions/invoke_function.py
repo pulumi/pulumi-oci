@@ -24,7 +24,7 @@ class InvokeFunctionArgs:
         The set of arguments for constructing a InvokeFunction resource.
         :param pulumi.Input[str] function_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this function.
         :param pulumi.Input[str] fn_intent: An optional intent header that indicates to the FDK the way the event should be interpreted. E.g. 'httprequest', 'cloudevent'.
-        :param pulumi.Input[str] fn_invoke_type: Indicates whether the functions platform should execute the request directly and return the result ('sync') or whether the platform should enqueue the request for later processing and acknowledge that it has been processed ('detached').
+        :param pulumi.Input[str] fn_invoke_type: Indicates whether Oracle Functions should execute the request and return the result ('sync') of the execution,  or whether Oracle Functions should return as soon as processing has begun ('detached') and leave result handling to the function.
         :param pulumi.Input[str] input_body_source_path: An absolute path to a file on the local system that contains the input to be provided to the function. Cannot be defined if `invoke_function_body` or `invoke_function_body_base64_encoded` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
         :param pulumi.Input[str] invoke_function_body: The body of the function invocation. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit. Cannot be defined if `input_body_source_path` or `invoke_function_body_base64_encoded` is defined.
         """
@@ -79,7 +79,7 @@ class InvokeFunctionArgs:
     @pulumi.getter(name="fnInvokeType")
     def fn_invoke_type(self) -> Optional[pulumi.Input[str]]:
         """
-        Indicates whether the functions platform should execute the request directly and return the result ('sync') or whether the platform should enqueue the request for later processing and acknowledge that it has been processed ('detached').
+        Indicates whether Oracle Functions should execute the request and return the result ('sync') of the execution,  or whether Oracle Functions should return as soon as processing has begun ('detached') and leave result handling to the function.
         """
         return pulumi.get(self, "fn_invoke_type")
 
@@ -137,7 +137,7 @@ class _InvokeFunctionState:
         Input properties used for looking up and filtering InvokeFunction resources.
         :param pulumi.Input[str] content: Content of the response string, if any. If `base64_encode_content` is set to `true`, then this content will be base64 encoded.
         :param pulumi.Input[str] fn_intent: An optional intent header that indicates to the FDK the way the event should be interpreted. E.g. 'httprequest', 'cloudevent'.
-        :param pulumi.Input[str] fn_invoke_type: Indicates whether the functions platform should execute the request directly and return the result ('sync') or whether the platform should enqueue the request for later processing and acknowledge that it has been processed ('detached').
+        :param pulumi.Input[str] fn_invoke_type: Indicates whether Oracle Functions should execute the request and return the result ('sync') of the execution,  or whether Oracle Functions should return as soon as processing has begun ('detached') and leave result handling to the function.
         :param pulumi.Input[str] function_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this function.
         :param pulumi.Input[str] input_body_source_path: An absolute path to a file on the local system that contains the input to be provided to the function. Cannot be defined if `invoke_function_body` or `invoke_function_body_base64_encoded` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
         :param pulumi.Input[str] invoke_function_body: The body of the function invocation. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit. Cannot be defined if `input_body_source_path` or `invoke_function_body_base64_encoded` is defined.
@@ -198,7 +198,7 @@ class _InvokeFunctionState:
     @pulumi.getter(name="fnInvokeType")
     def fn_invoke_type(self) -> Optional[pulumi.Input[str]]:
         """
-        Indicates whether the functions platform should execute the request directly and return the result ('sync') or whether the platform should enqueue the request for later processing and acknowledge that it has been processed ('detached').
+        Indicates whether Oracle Functions should execute the request and return the result ('sync') of the execution,  or whether Oracle Functions should return as soon as processing has begun ('detached') and leave result handling to the function.
         """
         return pulumi.get(self, "fn_invoke_type")
 
@@ -300,7 +300,7 @@ class InvokeFunction(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] fn_intent: An optional intent header that indicates to the FDK the way the event should be interpreted. E.g. 'httprequest', 'cloudevent'.
-        :param pulumi.Input[str] fn_invoke_type: Indicates whether the functions platform should execute the request directly and return the result ('sync') or whether the platform should enqueue the request for later processing and acknowledge that it has been processed ('detached').
+        :param pulumi.Input[str] fn_invoke_type: Indicates whether Oracle Functions should execute the request and return the result ('sync') of the execution,  or whether Oracle Functions should return as soon as processing has begun ('detached') and leave result handling to the function.
         :param pulumi.Input[str] function_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this function.
         :param pulumi.Input[str] input_body_source_path: An absolute path to a file on the local system that contains the input to be provided to the function. Cannot be defined if `invoke_function_body` or `invoke_function_body_base64_encoded` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
         :param pulumi.Input[str] invoke_function_body: The body of the function invocation. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit. Cannot be defined if `input_body_source_path` or `invoke_function_body_base64_encoded` is defined.
@@ -407,7 +407,7 @@ class InvokeFunction(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] content: Content of the response string, if any. If `base64_encode_content` is set to `true`, then this content will be base64 encoded.
         :param pulumi.Input[str] fn_intent: An optional intent header that indicates to the FDK the way the event should be interpreted. E.g. 'httprequest', 'cloudevent'.
-        :param pulumi.Input[str] fn_invoke_type: Indicates whether the functions platform should execute the request directly and return the result ('sync') or whether the platform should enqueue the request for later processing and acknowledge that it has been processed ('detached').
+        :param pulumi.Input[str] fn_invoke_type: Indicates whether Oracle Functions should execute the request and return the result ('sync') of the execution,  or whether Oracle Functions should return as soon as processing has begun ('detached') and leave result handling to the function.
         :param pulumi.Input[str] function_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this function.
         :param pulumi.Input[str] input_body_source_path: An absolute path to a file on the local system that contains the input to be provided to the function. Cannot be defined if `invoke_function_body` or `invoke_function_body_base64_encoded` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
         :param pulumi.Input[str] invoke_function_body: The body of the function invocation. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit. Cannot be defined if `input_body_source_path` or `invoke_function_body_base64_encoded` is defined.
@@ -452,7 +452,7 @@ class InvokeFunction(pulumi.CustomResource):
     @pulumi.getter(name="fnInvokeType")
     def fn_invoke_type(self) -> pulumi.Output[str]:
         """
-        Indicates whether the functions platform should execute the request directly and return the result ('sync') or whether the platform should enqueue the request for later processing and acknowledge that it has been processed ('detached').
+        Indicates whether Oracle Functions should execute the request and return the result ('sync') of the execution,  or whether Oracle Functions should return as soon as processing has begun ('detached') and leave result handling to the function.
         """
         return pulumi.get(self, "fn_invoke_type")
 

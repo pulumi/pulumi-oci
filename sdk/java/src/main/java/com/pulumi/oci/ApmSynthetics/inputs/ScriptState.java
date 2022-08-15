@@ -202,14 +202,14 @@ public final class ScriptState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The time when the script was uploaded.
+     * The time the script was uploaded.
      * 
      */
     @Import(name="timeUploaded")
     private @Nullable Output<String> timeUploaded;
 
     /**
-     * @return The time when the script was uploaded.
+     * @return The time the script was uploaded.
      * 
      */
     public Optional<Output<String>> timeUploaded() {
@@ -525,7 +525,7 @@ public final class ScriptState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeUploaded The time when the script was uploaded.
+         * @param timeUploaded The time the script was uploaded.
          * 
          * @return builder
          * 
@@ -536,7 +536,7 @@ public final class ScriptState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeUploaded The time when the script was uploaded.
+         * @param timeUploaded The time the script was uploaded.
          * 
          * @return builder
          * 

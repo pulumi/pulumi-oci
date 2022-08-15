@@ -7,6 +7,7 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
+from . import outputs
 
 __all__ = [
     'GetQuotaResult',
@@ -20,7 +21,7 @@ class GetQuotaResult:
     """
     A collection of values returned by getQuota.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, freeform_tags=None, id=None, name=None, quota_id=None, state=None, statements=None, time_created=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, freeform_tags=None, id=None, is_lock_override=None, locks=None, name=None, quota_id=None, state=None, statements=None, time_created=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -36,6 +37,12 @@ class GetQuotaResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_lock_override and not isinstance(is_lock_override, bool):
+            raise TypeError("Expected argument 'is_lock_override' to be a bool")
+        pulumi.set(__self__, "is_lock_override", is_lock_override)
+        if locks and not isinstance(locks, list):
+            raise TypeError("Expected argument 'locks' to be a list")
+        pulumi.set(__self__, "locks", locks)
         if name and not isinstance(name, str):
             raise TypeError("Expected argument 'name' to be a str")
         pulumi.set(__self__, "name", name)
@@ -93,6 +100,19 @@ class GetQuotaResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> bool:
+        return pulumi.get(self, "is_lock_override")
+
+    @property
+    @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetQuotaLockResult']:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @property
     @pulumi.getter
     def name(self) -> str:
         """
@@ -141,6 +161,8 @@ class AwaitableGetQuotaResult(GetQuotaResult):
             description=self.description,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            is_lock_override=self.is_lock_override,
+            locks=self.locks,
             name=self.name,
             quota_id=self.quota_id,
             state=self.state,
@@ -181,6 +203,8 @@ def get_quota(quota_id: Optional[str] = None,
         description=__ret__.description,
         freeform_tags=__ret__.freeform_tags,
         id=__ret__.id,
+        is_lock_override=__ret__.is_lock_override,
+        locks=__ret__.locks,
         name=__ret__.name,
         quota_id=__ret__.quota_id,
         state=__ret__.state,

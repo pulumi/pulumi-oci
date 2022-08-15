@@ -108,7 +108,7 @@ export class Target extends pulumi.CustomResource {
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * (Updatable) DetectorTemplate Identifier
+     * (Updatable) DetectorTemplate identifier.
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
@@ -135,6 +135,10 @@ export class Target extends pulumi.CustomResource {
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    /**
+     * Details specific to the target type.
+     */
+    public /*out*/ readonly targetDetails!: pulumi.Output<outputs.CloudGuard.TargetTargetDetail[]>;
     /**
      * (Updatable) List of detector recipes to associate with target
      */
@@ -183,6 +187,7 @@ export class Target extends pulumi.CustomResource {
             resourceInputs["recipeCount"] = state ? state.recipeCount : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
+            resourceInputs["targetDetails"] = state ? state.targetDetails : undefined;
             resourceInputs["targetDetectorRecipes"] = state ? state.targetDetectorRecipes : undefined;
             resourceInputs["targetResourceId"] = state ? state.targetResourceId : undefined;
             resourceInputs["targetResourceType"] = state ? state.targetResourceType : undefined;
@@ -217,6 +222,7 @@ export class Target extends pulumi.CustomResource {
             resourceInputs["lifecyleDetails"] = undefined /*out*/;
             resourceInputs["recipeCount"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
+            resourceInputs["targetDetails"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
         }
@@ -242,7 +248,7 @@ export interface TargetState {
      */
     description?: pulumi.Input<string>;
     /**
-     * (Updatable) DetectorTemplate Identifier
+     * (Updatable) DetectorTemplate identifier.
      */
     displayName?: pulumi.Input<string>;
     /**
@@ -269,6 +275,10 @@ export interface TargetState {
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
     systemTags?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * Details specific to the target type.
+     */
+    targetDetails?: pulumi.Input<pulumi.Input<inputs.CloudGuard.TargetTargetDetail>[]>;
     /**
      * (Updatable) List of detector recipes to associate with target
      */
@@ -312,7 +322,7 @@ export interface TargetArgs {
      */
     description?: pulumi.Input<string>;
     /**
-     * (Updatable) DetectorTemplate Identifier
+     * (Updatable) DetectorTemplate identifier.
      */
     displayName: pulumi.Input<string>;
     /**

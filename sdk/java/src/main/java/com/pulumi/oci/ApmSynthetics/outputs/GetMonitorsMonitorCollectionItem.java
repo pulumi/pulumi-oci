@@ -32,7 +32,7 @@ public final class GetMonitorsMonitorCollectionItem {
      */
     private final Map<String,Object> definedTags;
     /**
-     * @return A filter to return only resources that match the entire display name given.
+     * @return A filter to return only the resources that match the entire display name.
      * 
      */
     private final String displayName;
@@ -57,7 +57,7 @@ public final class GetMonitorsMonitorCollectionItem {
      */
     private final String monitorType;
     /**
-     * @return Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds.
+     * @return Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
      * 
      */
     private final Integer repeatIntervalInSeconds;
@@ -97,7 +97,7 @@ public final class GetMonitorsMonitorCollectionItem {
      */
     private final String timeUpdated;
     /**
-     * @return Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+     * @return Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
      * 
      */
     private final Integer timeoutInSeconds;
@@ -107,7 +107,7 @@ public final class GetMonitorsMonitorCollectionItem {
      */
     private final Integer vantagePointCount;
     /**
-     * @return List of vantage points from where monitor is running.
+     * @return List of public and dedicated vantage points where the monitor is running.
      * 
      */
     private final List<String> vantagePoints;
@@ -176,7 +176,7 @@ public final class GetMonitorsMonitorCollectionItem {
         return this.definedTags;
     }
     /**
-     * @return A filter to return only resources that match the entire display name given.
+     * @return A filter to return only the resources that match the entire display name.
      * 
      */
     public String displayName() {
@@ -211,7 +211,7 @@ public final class GetMonitorsMonitorCollectionItem {
         return this.monitorType;
     }
     /**
-     * @return Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds.
+     * @return Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
      * 
      */
     public Integer repeatIntervalInSeconds() {
@@ -267,7 +267,7 @@ public final class GetMonitorsMonitorCollectionItem {
         return this.timeUpdated;
     }
     /**
-     * @return Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+     * @return Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
      * 
      */
     public Integer timeoutInSeconds() {
@@ -281,7 +281,7 @@ public final class GetMonitorsMonitorCollectionItem {
         return this.vantagePointCount;
     }
     /**
-     * @return List of vantage points from where monitor is running.
+     * @return List of public and dedicated vantage points where the monitor is running.
      * 
      */
     public List<String> vantagePoints() {

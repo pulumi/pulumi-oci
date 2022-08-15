@@ -54,7 +54,7 @@ public final class GetMonitorResult {
      */
     private final String monitorType;
     /**
-     * @return Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds.
+     * @return Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
      * 
      */
     private final Integer repeatIntervalInSeconds;
@@ -94,7 +94,7 @@ public final class GetMonitorResult {
      */
     private final String timeUpdated;
     /**
-     * @return Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+     * @return Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
      * 
      */
     private final Integer timeoutInSeconds;
@@ -104,7 +104,7 @@ public final class GetMonitorResult {
      */
     private final Integer vantagePointCount;
     /**
-     * @return List of vantage points from where monitor is running.
+     * @return List of public and dedicated vantage points where the monitor is running.
      * 
      */
     private final List<String> vantagePoints;
@@ -209,7 +209,7 @@ public final class GetMonitorResult {
         return this.monitorType;
     }
     /**
-     * @return Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds.
+     * @return Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
      * 
      */
     public Integer repeatIntervalInSeconds() {
@@ -265,7 +265,7 @@ public final class GetMonitorResult {
         return this.timeUpdated;
     }
     /**
-     * @return Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+     * @return Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
      * 
      */
     public Integer timeoutInSeconds() {
@@ -279,7 +279,7 @@ public final class GetMonitorResult {
         return this.vantagePointCount;
     }
     /**
-     * @return List of vantage points from where monitor is running.
+     * @return List of public and dedicated vantage points where the monitor is running.
      * 
      */
     public List<String> vantagePoints() {

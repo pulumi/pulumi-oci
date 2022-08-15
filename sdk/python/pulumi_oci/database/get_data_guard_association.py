@@ -20,7 +20,7 @@ class GetDataGuardAssociationResult:
     """
     A collection of values returned by getDataGuardAssociation.
     """
-    def __init__(__self__, apply_lag=None, apply_rate=None, availability_domain=None, backup_network_nsg_ids=None, create_async=None, creation_type=None, data_guard_association_id=None, database_admin_password=None, database_id=None, database_software_image_id=None, delete_standby_db_home_on_delete=None, display_name=None, hostname=None, id=None, is_active_data_guard_enabled=None, lifecycle_details=None, nsg_ids=None, peer_data_guard_association_id=None, peer_database_id=None, peer_db_home_id=None, peer_db_system_id=None, peer_db_unique_name=None, peer_role=None, peer_sid_prefix=None, peer_vm_cluster_id=None, protection_mode=None, role=None, shape=None, state=None, subnet_id=None, time_created=None, transport_type=None):
+    def __init__(__self__, apply_lag=None, apply_rate=None, availability_domain=None, backup_network_nsg_ids=None, cpu_core_count=None, create_async=None, creation_type=None, data_guard_association_id=None, database_admin_password=None, database_defined_tags=None, database_freeform_tags=None, database_id=None, database_software_image_id=None, db_system_defined_tags=None, db_system_freeform_tags=None, delete_standby_db_home_on_delete=None, display_name=None, fault_domains=None, hostname=None, id=None, is_active_data_guard_enabled=None, license_model=None, lifecycle_details=None, node_count=None, nsg_ids=None, peer_data_guard_association_id=None, peer_database_id=None, peer_db_home_id=None, peer_db_system_id=None, peer_db_unique_name=None, peer_role=None, peer_sid_prefix=None, peer_vm_cluster_id=None, private_ip=None, protection_mode=None, role=None, shape=None, state=None, storage_volume_performance_mode=None, subnet_id=None, time_created=None, time_zone=None, transport_type=None):
         if apply_lag and not isinstance(apply_lag, str):
             raise TypeError("Expected argument 'apply_lag' to be a str")
         pulumi.set(__self__, "apply_lag", apply_lag)
@@ -33,6 +33,9 @@ class GetDataGuardAssociationResult:
         if backup_network_nsg_ids and not isinstance(backup_network_nsg_ids, list):
             raise TypeError("Expected argument 'backup_network_nsg_ids' to be a list")
         pulumi.set(__self__, "backup_network_nsg_ids", backup_network_nsg_ids)
+        if cpu_core_count and not isinstance(cpu_core_count, int):
+            raise TypeError("Expected argument 'cpu_core_count' to be a int")
+        pulumi.set(__self__, "cpu_core_count", cpu_core_count)
         if create_async and not isinstance(create_async, bool):
             raise TypeError("Expected argument 'create_async' to be a bool")
         pulumi.set(__self__, "create_async", create_async)
@@ -45,18 +48,33 @@ class GetDataGuardAssociationResult:
         if database_admin_password and not isinstance(database_admin_password, str):
             raise TypeError("Expected argument 'database_admin_password' to be a str")
         pulumi.set(__self__, "database_admin_password", database_admin_password)
+        if database_defined_tags and not isinstance(database_defined_tags, dict):
+            raise TypeError("Expected argument 'database_defined_tags' to be a dict")
+        pulumi.set(__self__, "database_defined_tags", database_defined_tags)
+        if database_freeform_tags and not isinstance(database_freeform_tags, dict):
+            raise TypeError("Expected argument 'database_freeform_tags' to be a dict")
+        pulumi.set(__self__, "database_freeform_tags", database_freeform_tags)
         if database_id and not isinstance(database_id, str):
             raise TypeError("Expected argument 'database_id' to be a str")
         pulumi.set(__self__, "database_id", database_id)
         if database_software_image_id and not isinstance(database_software_image_id, str):
             raise TypeError("Expected argument 'database_software_image_id' to be a str")
         pulumi.set(__self__, "database_software_image_id", database_software_image_id)
+        if db_system_defined_tags and not isinstance(db_system_defined_tags, dict):
+            raise TypeError("Expected argument 'db_system_defined_tags' to be a dict")
+        pulumi.set(__self__, "db_system_defined_tags", db_system_defined_tags)
+        if db_system_freeform_tags and not isinstance(db_system_freeform_tags, dict):
+            raise TypeError("Expected argument 'db_system_freeform_tags' to be a dict")
+        pulumi.set(__self__, "db_system_freeform_tags", db_system_freeform_tags)
         if delete_standby_db_home_on_delete and not isinstance(delete_standby_db_home_on_delete, str):
             raise TypeError("Expected argument 'delete_standby_db_home_on_delete' to be a str")
         pulumi.set(__self__, "delete_standby_db_home_on_delete", delete_standby_db_home_on_delete)
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
+        if fault_domains and not isinstance(fault_domains, list):
+            raise TypeError("Expected argument 'fault_domains' to be a list")
+        pulumi.set(__self__, "fault_domains", fault_domains)
         if hostname and not isinstance(hostname, str):
             raise TypeError("Expected argument 'hostname' to be a str")
         pulumi.set(__self__, "hostname", hostname)
@@ -66,9 +84,15 @@ class GetDataGuardAssociationResult:
         if is_active_data_guard_enabled and not isinstance(is_active_data_guard_enabled, bool):
             raise TypeError("Expected argument 'is_active_data_guard_enabled' to be a bool")
         pulumi.set(__self__, "is_active_data_guard_enabled", is_active_data_guard_enabled)
+        if license_model and not isinstance(license_model, str):
+            raise TypeError("Expected argument 'license_model' to be a str")
+        pulumi.set(__self__, "license_model", license_model)
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if node_count and not isinstance(node_count, int):
+            raise TypeError("Expected argument 'node_count' to be a int")
+        pulumi.set(__self__, "node_count", node_count)
         if nsg_ids and not isinstance(nsg_ids, list):
             raise TypeError("Expected argument 'nsg_ids' to be a list")
         pulumi.set(__self__, "nsg_ids", nsg_ids)
@@ -96,6 +120,9 @@ class GetDataGuardAssociationResult:
         if peer_vm_cluster_id and not isinstance(peer_vm_cluster_id, str):
             raise TypeError("Expected argument 'peer_vm_cluster_id' to be a str")
         pulumi.set(__self__, "peer_vm_cluster_id", peer_vm_cluster_id)
+        if private_ip and not isinstance(private_ip, str):
+            raise TypeError("Expected argument 'private_ip' to be a str")
+        pulumi.set(__self__, "private_ip", private_ip)
         if protection_mode and not isinstance(protection_mode, str):
             raise TypeError("Expected argument 'protection_mode' to be a str")
         pulumi.set(__self__, "protection_mode", protection_mode)
@@ -108,12 +135,18 @@ class GetDataGuardAssociationResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if storage_volume_performance_mode and not isinstance(storage_volume_performance_mode, str):
+            raise TypeError("Expected argument 'storage_volume_performance_mode' to be a str")
+        pulumi.set(__self__, "storage_volume_performance_mode", storage_volume_performance_mode)
         if subnet_id and not isinstance(subnet_id, str):
             raise TypeError("Expected argument 'subnet_id' to be a str")
         pulumi.set(__self__, "subnet_id", subnet_id)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
+        if time_zone and not isinstance(time_zone, str):
+            raise TypeError("Expected argument 'time_zone' to be a str")
+        pulumi.set(__self__, "time_zone", time_zone)
         if transport_type and not isinstance(transport_type, str):
             raise TypeError("Expected argument 'transport_type' to be a str")
         pulumi.set(__self__, "transport_type", transport_type)
@@ -145,6 +178,11 @@ class GetDataGuardAssociationResult:
         return pulumi.get(self, "backup_network_nsg_ids")
 
     @property
+    @pulumi.getter(name="cpuCoreCount")
+    def cpu_core_count(self) -> int:
+        return pulumi.get(self, "cpu_core_count")
+
+    @property
     @pulumi.getter(name="createAsync")
     def create_async(self) -> bool:
         return pulumi.get(self, "create_async")
@@ -165,6 +203,16 @@ class GetDataGuardAssociationResult:
         return pulumi.get(self, "database_admin_password")
 
     @property
+    @pulumi.getter(name="databaseDefinedTags")
+    def database_defined_tags(self) -> Mapping[str, Any]:
+        return pulumi.get(self, "database_defined_tags")
+
+    @property
+    @pulumi.getter(name="databaseFreeformTags")
+    def database_freeform_tags(self) -> Mapping[str, Any]:
+        return pulumi.get(self, "database_freeform_tags")
+
+    @property
     @pulumi.getter(name="databaseId")
     def database_id(self) -> str:
         """
@@ -178,6 +226,16 @@ class GetDataGuardAssociationResult:
         return pulumi.get(self, "database_software_image_id")
 
     @property
+    @pulumi.getter(name="dbSystemDefinedTags")
+    def db_system_defined_tags(self) -> Mapping[str, Any]:
+        return pulumi.get(self, "db_system_defined_tags")
+
+    @property
+    @pulumi.getter(name="dbSystemFreeformTags")
+    def db_system_freeform_tags(self) -> Mapping[str, Any]:
+        return pulumi.get(self, "db_system_freeform_tags")
+
+    @property
     @pulumi.getter(name="deleteStandbyDbHomeOnDelete")
     def delete_standby_db_home_on_delete(self) -> str:
         return pulumi.get(self, "delete_standby_db_home_on_delete")
@@ -186,6 +244,11 @@ class GetDataGuardAssociationResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="faultDomains")
+    def fault_domains(self) -> Sequence[str]:
+        return pulumi.get(self, "fault_domains")
 
     @property
     @pulumi.getter
@@ -209,12 +272,22 @@ class GetDataGuardAssociationResult:
         return pulumi.get(self, "is_active_data_guard_enabled")
 
     @property
+    @pulumi.getter(name="licenseModel")
+    def license_model(self) -> str:
+        return pulumi.get(self, "license_model")
+
+    @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> str:
         """
         Additional information about the current lifecycleState, if available.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="nodeCount")
+    def node_count(self) -> int:
+        return pulumi.get(self, "node_count")
 
     @property
     @pulumi.getter(name="nsgIds")
@@ -277,6 +350,11 @@ class GetDataGuardAssociationResult:
         return pulumi.get(self, "peer_vm_cluster_id")
 
     @property
+    @pulumi.getter(name="privateIp")
+    def private_ip(self) -> str:
+        return pulumi.get(self, "private_ip")
+
+    @property
     @pulumi.getter(name="protectionMode")
     def protection_mode(self) -> str:
         """
@@ -306,6 +384,11 @@ class GetDataGuardAssociationResult:
         return pulumi.get(self, "state")
 
     @property
+    @pulumi.getter(name="storageVolumePerformanceMode")
+    def storage_volume_performance_mode(self) -> str:
+        return pulumi.get(self, "storage_volume_performance_mode")
+
+    @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> str:
         return pulumi.get(self, "subnet_id")
@@ -317,6 +400,11 @@ class GetDataGuardAssociationResult:
         The date and time the Data Guard association was created.
         """
         return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeZone")
+    def time_zone(self) -> str:
+        return pulumi.get(self, "time_zone")
 
     @property
     @pulumi.getter(name="transportType")
@@ -337,18 +425,26 @@ class AwaitableGetDataGuardAssociationResult(GetDataGuardAssociationResult):
             apply_rate=self.apply_rate,
             availability_domain=self.availability_domain,
             backup_network_nsg_ids=self.backup_network_nsg_ids,
+            cpu_core_count=self.cpu_core_count,
             create_async=self.create_async,
             creation_type=self.creation_type,
             data_guard_association_id=self.data_guard_association_id,
             database_admin_password=self.database_admin_password,
+            database_defined_tags=self.database_defined_tags,
+            database_freeform_tags=self.database_freeform_tags,
             database_id=self.database_id,
             database_software_image_id=self.database_software_image_id,
+            db_system_defined_tags=self.db_system_defined_tags,
+            db_system_freeform_tags=self.db_system_freeform_tags,
             delete_standby_db_home_on_delete=self.delete_standby_db_home_on_delete,
             display_name=self.display_name,
+            fault_domains=self.fault_domains,
             hostname=self.hostname,
             id=self.id,
             is_active_data_guard_enabled=self.is_active_data_guard_enabled,
+            license_model=self.license_model,
             lifecycle_details=self.lifecycle_details,
+            node_count=self.node_count,
             nsg_ids=self.nsg_ids,
             peer_data_guard_association_id=self.peer_data_guard_association_id,
             peer_database_id=self.peer_database_id,
@@ -358,12 +454,15 @@ class AwaitableGetDataGuardAssociationResult(GetDataGuardAssociationResult):
             peer_role=self.peer_role,
             peer_sid_prefix=self.peer_sid_prefix,
             peer_vm_cluster_id=self.peer_vm_cluster_id,
+            private_ip=self.private_ip,
             protection_mode=self.protection_mode,
             role=self.role,
             shape=self.shape,
             state=self.state,
+            storage_volume_performance_mode=self.storage_volume_performance_mode,
             subnet_id=self.subnet_id,
             time_created=self.time_created,
+            time_zone=self.time_zone,
             transport_type=self.transport_type)
 
 
@@ -403,18 +502,26 @@ def get_data_guard_association(data_guard_association_id: Optional[str] = None,
         apply_rate=__ret__.apply_rate,
         availability_domain=__ret__.availability_domain,
         backup_network_nsg_ids=__ret__.backup_network_nsg_ids,
+        cpu_core_count=__ret__.cpu_core_count,
         create_async=__ret__.create_async,
         creation_type=__ret__.creation_type,
         data_guard_association_id=__ret__.data_guard_association_id,
         database_admin_password=__ret__.database_admin_password,
+        database_defined_tags=__ret__.database_defined_tags,
+        database_freeform_tags=__ret__.database_freeform_tags,
         database_id=__ret__.database_id,
         database_software_image_id=__ret__.database_software_image_id,
+        db_system_defined_tags=__ret__.db_system_defined_tags,
+        db_system_freeform_tags=__ret__.db_system_freeform_tags,
         delete_standby_db_home_on_delete=__ret__.delete_standby_db_home_on_delete,
         display_name=__ret__.display_name,
+        fault_domains=__ret__.fault_domains,
         hostname=__ret__.hostname,
         id=__ret__.id,
         is_active_data_guard_enabled=__ret__.is_active_data_guard_enabled,
+        license_model=__ret__.license_model,
         lifecycle_details=__ret__.lifecycle_details,
+        node_count=__ret__.node_count,
         nsg_ids=__ret__.nsg_ids,
         peer_data_guard_association_id=__ret__.peer_data_guard_association_id,
         peer_database_id=__ret__.peer_database_id,
@@ -424,12 +531,15 @@ def get_data_guard_association(data_guard_association_id: Optional[str] = None,
         peer_role=__ret__.peer_role,
         peer_sid_prefix=__ret__.peer_sid_prefix,
         peer_vm_cluster_id=__ret__.peer_vm_cluster_id,
+        private_ip=__ret__.private_ip,
         protection_mode=__ret__.protection_mode,
         role=__ret__.role,
         shape=__ret__.shape,
         state=__ret__.state,
+        storage_volume_performance_mode=__ret__.storage_volume_performance_mode,
         subnet_id=__ret__.subnet_id,
         time_created=__ret__.time_created,
+        time_zone=__ret__.time_zone,
         transport_type=__ret__.transport_type)
 
 

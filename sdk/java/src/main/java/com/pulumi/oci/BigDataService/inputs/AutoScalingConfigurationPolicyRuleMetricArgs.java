@@ -30,14 +30,14 @@ public final class AutoScalingConfigurationPolicyRuleMetricArgs extends com.pulu
     }
 
     /**
-     * (Updatable) An autoscale action is triggered when a performance metric meets or exceeds a threshold.
+     * (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
      * 
      */
     @Import(name="threshold", required=true)
     private Output<AutoScalingConfigurationPolicyRuleMetricThresholdArgs> threshold;
 
     /**
-     * @return (Updatable) An autoscale action is triggered when a performance metric meets or exceeds a threshold.
+     * @return (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
      * 
      */
     public Output<AutoScalingConfigurationPolicyRuleMetricThresholdArgs> threshold() {
@@ -91,7 +91,7 @@ public final class AutoScalingConfigurationPolicyRuleMetricArgs extends com.pulu
         }
 
         /**
-         * @param threshold (Updatable) An autoscale action is triggered when a performance metric meets or exceeds a threshold.
+         * @param threshold (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
          * 
          * @return builder
          * 
@@ -102,7 +102,7 @@ public final class AutoScalingConfigurationPolicyRuleMetricArgs extends com.pulu
         }
 
         /**
-         * @param threshold (Updatable) An autoscale action is triggered when a performance metric meets or exceeds a threshold.
+         * @param threshold (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
          * 
          * @return builder
          * 

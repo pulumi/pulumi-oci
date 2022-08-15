@@ -26,11 +26,11 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
         /// <summary>
-        /// A description of the DatabaseToolsPrivateEndpoint.
+        /// A description of the Database Tools private endpoint.
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// A filter to return only resources that match the entire display name given.
+        /// A filter to return only resources that match the entire specified display name.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
@@ -38,7 +38,7 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
         /// </summary>
         public readonly string EndpointFqdn;
         /// <summary>
-        /// A filter to return only resources their type matches the given type.
+        /// A filter to return only resources their `endpointServiceId` matches the specified `endpointServiceId`.
         /// </summary>
         public readonly string EndpointServiceId;
         /// <summary>
@@ -46,7 +46,7 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsPrivateEndpoint.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint.
         /// </summary>
         public readonly string Id;
         /// <summary>
@@ -66,15 +66,15 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
         /// </summary>
         public readonly string PrivateEndpointVnicId;
         /// <summary>
-        /// Reverse connection configuration details of Private Endpoint.
+        /// Reverse connection configuration details of the private endpoint.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationResult> ReverseConnectionConfigurations;
         /// <summary>
-        /// A filter to return only resources their lifecycleState matches the given lifecycleState.
+        /// A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
         /// </summary>
         public readonly string State;
         /// <summary>
-        /// A filter to return only resources their subnetId matches the given subnetId.
+        /// A filter to return only resources their `subnetId` matches the specified `subnetId`.
         /// </summary>
         public readonly string SubnetId;
         /// <summary>
@@ -82,11 +82,11 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> SystemTags;
         /// <summary>
-        /// The time the DatabaseToolsPrivateEndpoint was created. An RFC3339 formatted datetime string
+        /// The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The time the DatabaseToolsPrivateEndpoint was updated. An RFC3339 formatted datetime string
+        /// The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
         /// </summary>
         public readonly string TimeUpdated;
         /// <summary>

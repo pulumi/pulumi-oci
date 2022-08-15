@@ -6,10 +6,6 @@ import { input as inputs, output as outputs } from "../types";
 import * as utilities from "../utilities";
 
 /**
- * This data source provides the list of Supported Host Shapes in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
- *
- * Lists supported compute shapes for ESXi hosts.
- *
  * ## Example Usage
  *
  * ```typescript

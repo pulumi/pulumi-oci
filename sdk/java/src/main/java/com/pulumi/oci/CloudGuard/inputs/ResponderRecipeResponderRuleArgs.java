@@ -33,14 +33,14 @@ public final class ResponderRecipeResponderRuleArgs extends com.pulumi.resources
     }
 
     /**
-     * (Updatable) ResponderRecipe Description
+     * (Updatable) Responder recipe description.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) ResponderRecipe Description
+     * @return (Updatable) Responder recipe description.
      * 
      */
     public Optional<Output<String>> description() {
@@ -63,14 +63,14 @@ public final class ResponderRecipeResponderRuleArgs extends com.pulumi.resources
     }
 
     /**
-     * (Updatable) ResponderRecipe Display Name
+     * (Updatable) Responder recipe display name.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) ResponderRecipe Display Name
+     * @return (Updatable) Responder recipe display name.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -254,7 +254,7 @@ public final class ResponderRecipeResponderRuleArgs extends com.pulumi.resources
         }
 
         /**
-         * @param description (Updatable) ResponderRecipe Description
+         * @param description (Updatable) Responder recipe description.
          * 
          * @return builder
          * 
@@ -265,7 +265,7 @@ public final class ResponderRecipeResponderRuleArgs extends com.pulumi.resources
         }
 
         /**
-         * @param description (Updatable) ResponderRecipe Description
+         * @param description (Updatable) Responder recipe description.
          * 
          * @return builder
          * 
@@ -296,7 +296,7 @@ public final class ResponderRecipeResponderRuleArgs extends com.pulumi.resources
         }
 
         /**
-         * @param displayName (Updatable) ResponderRecipe Display Name
+         * @param displayName (Updatable) Responder recipe display name.
          * 
          * @return builder
          * 
@@ -307,7 +307,7 @@ public final class ResponderRecipeResponderRuleArgs extends com.pulumi.resources
         }
 
         /**
-         * @param displayName (Updatable) ResponderRecipe Display Name
+         * @param displayName (Updatable) Responder recipe display name.
          * 
          * @return builder
          * 

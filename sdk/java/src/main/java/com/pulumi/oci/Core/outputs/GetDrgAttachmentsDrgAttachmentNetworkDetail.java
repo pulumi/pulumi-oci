@@ -30,7 +30,7 @@ public final class GetDrgAttachmentsDrgAttachmentNetworkDetail {
      */
     private final String type;
     /**
-     * @return Indicates whether the VCN CIDR(s) or the individual Subnet CIDR(s) are imported from the attachment.  Routes from the VCN Ingress Route Table are always imported. It can be one of these values: `VCN_CIDRS` , `SUBNET_CIDRS`
+     * @return Indicates whether the VCN CIDRs or the individual subnet CIDRs are imported from the attachment. Routes from the VCN ingress route table are always imported.
      * 
      */
     private final String vcnRouteType;
@@ -78,7 +78,7 @@ public final class GetDrgAttachmentsDrgAttachmentNetworkDetail {
         return this.type;
     }
     /**
-     * @return Indicates whether the VCN CIDR(s) or the individual Subnet CIDR(s) are imported from the attachment.  Routes from the VCN Ingress Route Table are always imported. It can be one of these values: `VCN_CIDRS` , `SUBNET_CIDRS`
+     * @return Indicates whether the VCN CIDRs or the individual subnet CIDRs are imported from the attachment. Routes from the VCN ingress route table are always imported.
      * 
      */
     public String vcnRouteType() {

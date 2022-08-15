@@ -49,6 +49,7 @@ export interface GetAutonomousDatabaseInstanceWalletManagementResult {
      * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     readonly autonomousDatabaseId: string;
+    readonly gracePeriod: number;
     readonly id: string;
     /**
      * Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.

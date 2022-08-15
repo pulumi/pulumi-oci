@@ -20,7 +20,7 @@ public final class ApmConfigFunctions {
     /**
      * This data source provides details about a specific Config resource in Oracle Cloud Infrastructure Apm Config service.
      * 
-     * Get the configuration of the item identified by the OCID.
+     * Gets the configuration item identified by the OCID.
      * 
      * ## Example Usage
      * 
@@ -31,7 +31,7 @@ public final class ApmConfigFunctions {
     /**
      * This data source provides details about a specific Config resource in Oracle Cloud Infrastructure Apm Config service.
      * 
-     * Get the configuration of the item identified by the OCID.
+     * Gets the configuration item identified by the OCID.
      * 
      * ## Example Usage
      * 
@@ -42,7 +42,7 @@ public final class ApmConfigFunctions {
     /**
      * This data source provides details about a specific Config resource in Oracle Cloud Infrastructure Apm Config service.
      * 
-     * Get the configuration of the item identified by the OCID.
+     * Gets the configuration item identified by the OCID.
      * 
      * ## Example Usage
      * 
@@ -53,7 +53,7 @@ public final class ApmConfigFunctions {
     /**
      * This data source provides details about a specific Config resource in Oracle Cloud Infrastructure Apm Config service.
      * 
-     * Get the configuration of the item identified by the OCID.
+     * Gets the configuration item identified by the OCID.
      * 
      * ## Example Usage
      * 
@@ -64,7 +64,7 @@ public final class ApmConfigFunctions {
     /**
      * This data source provides the list of Configs in Oracle Cloud Infrastructure Apm Config service.
      * 
-     * Returns all configured items optionally filtered by configuration type
+     * Returns all configuration items, which can optionally be filtered by configuration type.
      * 
      * ## Example Usage
      * 
@@ -75,7 +75,7 @@ public final class ApmConfigFunctions {
     /**
      * This data source provides the list of Configs in Oracle Cloud Infrastructure Apm Config service.
      * 
-     * Returns all configured items optionally filtered by configuration type
+     * Returns all configuration items, which can optionally be filtered by configuration type.
      * 
      * ## Example Usage
      * 
@@ -86,7 +86,7 @@ public final class ApmConfigFunctions {
     /**
      * This data source provides the list of Configs in Oracle Cloud Infrastructure Apm Config service.
      * 
-     * Returns all configured items optionally filtered by configuration type
+     * Returns all configuration items, which can optionally be filtered by configuration type.
      * 
      * ## Example Usage
      * 
@@ -97,7 +97,7 @@ public final class ApmConfigFunctions {
     /**
      * This data source provides the list of Configs in Oracle Cloud Infrastructure Apm Config service.
      * 
-     * Returns all configured items optionally filtered by configuration type
+     * Returns all configuration items, which can optionally be filtered by configuration type.
      * 
      * ## Example Usage
      * 

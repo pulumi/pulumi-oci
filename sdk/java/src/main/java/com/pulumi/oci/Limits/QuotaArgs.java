@@ -5,6 +5,7 @@ package com.pulumi.oci.Limits;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Limits.inputs.QuotaLockArgs;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -79,6 +80,21 @@ public final class QuotaArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Locks associated with this resource.
+     * 
+     */
+    @Import(name="locks")
+    private @Nullable Output<List<QuotaLockArgs>> locks;
+
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public Optional<Output<List<QuotaLockArgs>>> locks() {
+        return Optional.ofNullable(this.locks);
+    }
+
+    /**
      * The name you assign to the quota during creation. The name must be unique across all quotas in the tenancy and cannot be changed.
      * 
      */
@@ -115,6 +131,7 @@ public final class QuotaArgs extends com.pulumi.resources.ResourceArgs {
         this.definedTags = $.definedTags;
         this.description = $.description;
         this.freeformTags = $.freeformTags;
+        this.locks = $.locks;
         this.name = $.name;
         this.statements = $.statements;
     }
@@ -219,6 +236,37 @@ public final class QuotaArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder freeformTags(Map<String,Object> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(@Nullable Output<List<QuotaLockArgs>> locks) {
+            $.locks = locks;
+            return this;
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(List<QuotaLockArgs> locks) {
+            return locks(Output.of(locks));
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(QuotaLockArgs... locks) {
+            return locks(List.of(locks));
         }
 
         /**

@@ -47,6 +47,7 @@ class DbSystemArgs:
                  source: Optional[pulumi.Input[str]] = None,
                  source_db_system_id: Optional[pulumi.Input[str]] = None,
                  sparse_diskgroup: Optional[pulumi.Input[bool]] = None,
+                 storage_volume_performance_mode: Optional[pulumi.Input[str]] = None,
                  time_zone: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a DbSystem resource.
@@ -62,7 +63,7 @@ class DbSystemArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] backup_network_nsg_ids: (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
         :param pulumi.Input[str] backup_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet the DB system is associated with. Applicable only to Exadata DB systems.
         :param pulumi.Input[str] cluster_name: The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
-        :param pulumi.Input[int] cpu_core_count: (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system. The valid values depend on the specified shape:
+        :param pulumi.Input[int] cpu_core_count: (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system or AMD VMDB Systems. The valid values depend on the specified shape:
                * BM.DenseIO1.36 - Specify a multiple of 2, from 2 to 36.
                * BM.DenseIO2.52 - Specify a multiple of 2, from 2 to 52.
                * Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
@@ -72,6 +73,7 @@ class DbSystemArgs:
                * Exadata.Quarter2.92 - Specify a multiple of 2, from 0 to 92.
                * Exadata.Half2.184 - Specify a multiple of 4, from 0 to 184.
                * Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
+               * VM.Standard.E4.Flex - Specify any thing from 1 to 64.
         :param pulumi.Input[int] data_storage_percentage: The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Specify 80 or 40. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems. Required for BMDBs.
         :param pulumi.Input[int] data_storage_size_in_gb: (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. Required for VMDBs.
         :param pulumi.Input[str] database_edition: The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
@@ -87,13 +89,14 @@ class DbSystemArgs:
         :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
         :param pulumi.Input['DbSystemMaintenanceWindowDetailsArgs'] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[int] node_count: The number of nodes to launch for a 2-node RAC virtual machine DB system. Specify either 1 or 2.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-               * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+               * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         :param pulumi.Input[str] private_ip: A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. Supported for VM BM shape.
         :param pulumi.Input[int] reco_storage_size_in_gb: The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
         :param pulumi.Input[str] source: The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATABASE` for creating a new database from an existing database, including archive redo log data. The default is `NONE`.
         :param pulumi.Input[str] source_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
         :param pulumi.Input[bool] sparse_diskgroup: If true, Sparse Diskgroup is configured for Exadata dbsystem. If False, Sparse diskgroup is not configured. Only applied for Exadata shape.
+        :param pulumi.Input[str] storage_volume_performance_mode: The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
         :param pulumi.Input[str] time_zone: The time zone to use for the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -153,6 +156,8 @@ class DbSystemArgs:
             pulumi.set(__self__, "source_db_system_id", source_db_system_id)
         if sparse_diskgroup is not None:
             pulumi.set(__self__, "sparse_diskgroup", sparse_diskgroup)
+        if storage_volume_performance_mode is not None:
+            pulumi.set(__self__, "storage_volume_performance_mode", storage_volume_performance_mode)
         if time_zone is not None:
             pulumi.set(__self__, "time_zone", time_zone)
 
@@ -282,7 +287,7 @@ class DbSystemArgs:
     @pulumi.getter(name="cpuCoreCount")
     def cpu_core_count(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system. The valid values depend on the specified shape:
+        (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system or AMD VMDB Systems. The valid values depend on the specified shape:
         * BM.DenseIO1.36 - Specify a multiple of 2, from 2 to 36.
         * BM.DenseIO2.52 - Specify a multiple of 2, from 2 to 52.
         * Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
@@ -292,6 +297,7 @@ class DbSystemArgs:
         * Exadata.Quarter2.92 - Specify a multiple of 2, from 0 to 92.
         * Exadata.Half2.184 - Specify a multiple of 4, from 0 to 184.
         * Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
+        * VM.Standard.E4.Flex - Specify any thing from 1 to 64.
         """
         return pulumi.get(self, "cpu_core_count")
 
@@ -483,8 +489,8 @@ class DbSystemArgs:
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+        (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+        * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         """
         return pulumi.get(self, "nsg_ids")
 
@@ -553,6 +559,18 @@ class DbSystemArgs:
         pulumi.set(self, "sparse_diskgroup", value)
 
     @property
+    @pulumi.getter(name="storageVolumePerformanceMode")
+    def storage_volume_performance_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
+        """
+        return pulumi.get(self, "storage_volume_performance_mode")
+
+    @storage_volume_performance_mode.setter
+    def storage_volume_performance_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "storage_volume_performance_mode", value)
+
+    @property
     @pulumi.getter(name="timeZone")
     def time_zone(self) -> Optional[pulumi.Input[str]]:
         """
@@ -596,6 +614,7 @@ class _DbSystemState:
                  listener_port: Optional[pulumi.Input[int]] = None,
                  maintenance_window_details: Optional[pulumi.Input['DbSystemMaintenanceWindowDetailsArgs']] = None,
                  maintenance_windows: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemMaintenanceWindowArgs']]]] = None,
+                 memory_size_in_gbs: Optional[pulumi.Input[int]] = None,
                  next_maintenance_run_id: Optional[pulumi.Input[str]] = None,
                  node_count: Optional[pulumi.Input[int]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -611,6 +630,7 @@ class _DbSystemState:
                  sparse_diskgroup: Optional[pulumi.Input[bool]] = None,
                  ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  state: Optional[pulumi.Input[str]] = None,
+                 storage_volume_performance_mode: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_zone: Optional[pulumi.Input[str]] = None,
@@ -624,7 +644,7 @@ class _DbSystemState:
         :param pulumi.Input[str] backup_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet the DB system is associated with. Applicable only to Exadata DB systems.
         :param pulumi.Input[str] cluster_name: The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the DB system  belongs in.
-        :param pulumi.Input[int] cpu_core_count: (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system. The valid values depend on the specified shape:
+        :param pulumi.Input[int] cpu_core_count: (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system or AMD VMDB Systems. The valid values depend on the specified shape:
                * BM.DenseIO1.36 - Specify a multiple of 2, from 2 to 36.
                * BM.DenseIO2.52 - Specify a multiple of 2, from 2 to 52.
                * Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
@@ -634,6 +654,7 @@ class _DbSystemState:
                * Exadata.Quarter2.92 - Specify a multiple of 2, from 0 to 92.
                * Exadata.Half2.184 - Specify a multiple of 4, from 0 to 184.
                * Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
+               * VM.Standard.E4.Flex - Specify any thing from 1 to 64.
         :param pulumi.Input[int] data_storage_percentage: The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Specify 80 or 40. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems. Required for BMDBs.
         :param pulumi.Input[int] data_storage_size_in_gb: (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. Required for VMDBs.
         :param pulumi.Input[str] database_edition: The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
@@ -656,10 +677,11 @@ class _DbSystemState:
         :param pulumi.Input[int] listener_port: The port number configured for the listener on the DB system.
         :param pulumi.Input['DbSystemMaintenanceWindowDetailsArgs'] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[Sequence[pulumi.Input['DbSystemMaintenanceWindowArgs']]] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+        :param pulumi.Input[int] memory_size_in_gbs: Memory allocated to the DB system, in gigabytes.
         :param pulumi.Input[str] next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         :param pulumi.Input[int] node_count: The number of nodes to launch for a 2-node RAC virtual machine DB system. Specify either 1 or 2.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-               * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+               * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         :param pulumi.Input[str] point_in_time_data_disk_clone_timestamp: The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param pulumi.Input[str] private_ip: A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. Supported for VM BM shape.
         :param pulumi.Input[int] reco_storage_size_in_gb: The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
@@ -674,6 +696,7 @@ class _DbSystemState:
         :param pulumi.Input[bool] sparse_diskgroup: If true, Sparse Diskgroup is configured for Exadata dbsystem. If False, Sparse diskgroup is not configured. Only applied for Exadata shape.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ssh_public_keys: (Updatable) The public key portion of the key pair to use for SSH access to the DB system. Multiple public keys can be provided. The length of the combined keys cannot exceed 40,000 characters.
         :param pulumi.Input[str] state: The current state of the DB system.
+        :param pulumi.Input[str] storage_volume_performance_mode: The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
         :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
         :param pulumi.Input[str] time_created: The date and time the DB system was created.
         :param pulumi.Input[str] time_zone: The time zone to use for the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
@@ -737,6 +760,8 @@ class _DbSystemState:
             pulumi.set(__self__, "maintenance_window_details", maintenance_window_details)
         if maintenance_windows is not None:
             pulumi.set(__self__, "maintenance_windows", maintenance_windows)
+        if memory_size_in_gbs is not None:
+            pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
         if next_maintenance_run_id is not None:
             pulumi.set(__self__, "next_maintenance_run_id", next_maintenance_run_id)
         if node_count is not None:
@@ -767,6 +792,8 @@ class _DbSystemState:
             pulumi.set(__self__, "ssh_public_keys", ssh_public_keys)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if storage_volume_performance_mode is not None:
+            pulumi.set(__self__, "storage_volume_performance_mode", storage_volume_performance_mode)
         if subnet_id is not None:
             pulumi.set(__self__, "subnet_id", subnet_id)
         if time_created is not None:
@@ -844,7 +871,7 @@ class _DbSystemState:
     @pulumi.getter(name="cpuCoreCount")
     def cpu_core_count(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system. The valid values depend on the specified shape:
+        (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system or AMD VMDB Systems. The valid values depend on the specified shape:
         * BM.DenseIO1.36 - Specify a multiple of 2, from 2 to 36.
         * BM.DenseIO2.52 - Specify a multiple of 2, from 2 to 52.
         * Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
@@ -854,6 +881,7 @@ class _DbSystemState:
         * Exadata.Quarter2.92 - Specify a multiple of 2, from 0 to 92.
         * Exadata.Half2.184 - Specify a multiple of 4, from 0 to 184.
         * Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
+        * VM.Standard.E4.Flex - Specify any thing from 1 to 64.
         """
         return pulumi.get(self, "cpu_core_count")
 
@@ -1126,6 +1154,18 @@ class _DbSystemState:
         pulumi.set(self, "maintenance_windows", value)
 
     @property
+    @pulumi.getter(name="memorySizeInGbs")
+    def memory_size_in_gbs(self) -> Optional[pulumi.Input[int]]:
+        """
+        Memory allocated to the DB system, in gigabytes.
+        """
+        return pulumi.get(self, "memory_size_in_gbs")
+
+    @memory_size_in_gbs.setter
+    def memory_size_in_gbs(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "memory_size_in_gbs", value)
+
+    @property
     @pulumi.getter(name="nextMaintenanceRunId")
     def next_maintenance_run_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -1153,8 +1193,8 @@ class _DbSystemState:
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+        (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+        * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         """
         return pulumi.get(self, "nsg_ids")
 
@@ -1309,6 +1349,18 @@ class _DbSystemState:
         pulumi.set(self, "state", value)
 
     @property
+    @pulumi.getter(name="storageVolumePerformanceMode")
+    def storage_volume_performance_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
+        """
+        return pulumi.get(self, "storage_volume_performance_mode")
+
+    @storage_volume_performance_mode.setter
+    def storage_volume_performance_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "storage_volume_performance_mode", value)
+
+    @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -1417,6 +1469,7 @@ class DbSystem(pulumi.CustomResource):
                  source_db_system_id: Optional[pulumi.Input[str]] = None,
                  sparse_diskgroup: Optional[pulumi.Input[bool]] = None,
                  ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 storage_volume_performance_mode: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  time_zone: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -1470,7 +1523,7 @@ class DbSystem(pulumi.CustomResource):
         :param pulumi.Input[str] backup_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet the DB system is associated with. Applicable only to Exadata DB systems.
         :param pulumi.Input[str] cluster_name: The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the DB system  belongs in.
-        :param pulumi.Input[int] cpu_core_count: (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system. The valid values depend on the specified shape:
+        :param pulumi.Input[int] cpu_core_count: (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system or AMD VMDB Systems. The valid values depend on the specified shape:
                * BM.DenseIO1.36 - Specify a multiple of 2, from 2 to 36.
                * BM.DenseIO2.52 - Specify a multiple of 2, from 2 to 52.
                * Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
@@ -1480,6 +1533,7 @@ class DbSystem(pulumi.CustomResource):
                * Exadata.Quarter2.92 - Specify a multiple of 2, from 0 to 92.
                * Exadata.Half2.184 - Specify a multiple of 4, from 0 to 184.
                * Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
+               * VM.Standard.E4.Flex - Specify any thing from 1 to 64.
         :param pulumi.Input[int] data_storage_percentage: The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Specify 80 or 40. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems. Required for BMDBs.
         :param pulumi.Input[int] data_storage_size_in_gb: (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. Required for VMDBs.
         :param pulumi.Input[str] database_edition: The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
@@ -1497,8 +1551,8 @@ class DbSystem(pulumi.CustomResource):
         :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
         :param pulumi.Input[pulumi.InputType['DbSystemMaintenanceWindowDetailsArgs']] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[int] node_count: The number of nodes to launch for a 2-node RAC virtual machine DB system. Specify either 1 or 2.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-               * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+               * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         :param pulumi.Input[str] private_ip: A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. Supported for VM BM shape.
         :param pulumi.Input[int] reco_storage_size_in_gb: The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
         :param pulumi.Input[str] shape: (Updatable) The shape of the DB system. The shape determines resources allocated to the DB system.
@@ -1508,6 +1562,7 @@ class DbSystem(pulumi.CustomResource):
         :param pulumi.Input[str] source_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
         :param pulumi.Input[bool] sparse_diskgroup: If true, Sparse Diskgroup is configured for Exadata dbsystem. If False, Sparse diskgroup is not configured. Only applied for Exadata shape.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ssh_public_keys: (Updatable) The public key portion of the key pair to use for SSH access to the DB system. Multiple public keys can be provided. The length of the combined keys cannot exceed 40,000 characters.
+        :param pulumi.Input[str] storage_volume_performance_mode: The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
         :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
         :param pulumi.Input[str] time_zone: The time zone to use for the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         """
@@ -1606,6 +1661,7 @@ class DbSystem(pulumi.CustomResource):
                  source_db_system_id: Optional[pulumi.Input[str]] = None,
                  sparse_diskgroup: Optional[pulumi.Input[bool]] = None,
                  ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 storage_volume_performance_mode: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  time_zone: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -1663,6 +1719,7 @@ class DbSystem(pulumi.CustomResource):
             if ssh_public_keys is None and not opts.urn:
                 raise TypeError("Missing required property 'ssh_public_keys'")
             __props__.__dict__["ssh_public_keys"] = ssh_public_keys
+            __props__.__dict__["storage_volume_performance_mode"] = storage_volume_performance_mode
             if subnet_id is None and not opts.urn:
                 raise TypeError("Missing required property 'subnet_id'")
             __props__.__dict__["subnet_id"] = subnet_id
@@ -1673,6 +1730,7 @@ class DbSystem(pulumi.CustomResource):
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["listener_port"] = None
             __props__.__dict__["maintenance_windows"] = None
+            __props__.__dict__["memory_size_in_gbs"] = None
             __props__.__dict__["next_maintenance_run_id"] = None
             __props__.__dict__["point_in_time_data_disk_clone_timestamp"] = None
             __props__.__dict__["scan_dns_name"] = None
@@ -1721,6 +1779,7 @@ class DbSystem(pulumi.CustomResource):
             listener_port: Optional[pulumi.Input[int]] = None,
             maintenance_window_details: Optional[pulumi.Input[pulumi.InputType['DbSystemMaintenanceWindowDetailsArgs']]] = None,
             maintenance_windows: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DbSystemMaintenanceWindowArgs']]]]] = None,
+            memory_size_in_gbs: Optional[pulumi.Input[int]] = None,
             next_maintenance_run_id: Optional[pulumi.Input[str]] = None,
             node_count: Optional[pulumi.Input[int]] = None,
             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -1736,6 +1795,7 @@ class DbSystem(pulumi.CustomResource):
             sparse_diskgroup: Optional[pulumi.Input[bool]] = None,
             ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
+            storage_volume_performance_mode: Optional[pulumi.Input[str]] = None,
             subnet_id: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_zone: Optional[pulumi.Input[str]] = None,
@@ -1754,7 +1814,7 @@ class DbSystem(pulumi.CustomResource):
         :param pulumi.Input[str] backup_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet the DB system is associated with. Applicable only to Exadata DB systems.
         :param pulumi.Input[str] cluster_name: The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the DB system  belongs in.
-        :param pulumi.Input[int] cpu_core_count: (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system. The valid values depend on the specified shape:
+        :param pulumi.Input[int] cpu_core_count: (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system or AMD VMDB Systems. The valid values depend on the specified shape:
                * BM.DenseIO1.36 - Specify a multiple of 2, from 2 to 36.
                * BM.DenseIO2.52 - Specify a multiple of 2, from 2 to 52.
                * Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
@@ -1764,6 +1824,7 @@ class DbSystem(pulumi.CustomResource):
                * Exadata.Quarter2.92 - Specify a multiple of 2, from 0 to 92.
                * Exadata.Half2.184 - Specify a multiple of 4, from 0 to 184.
                * Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
+               * VM.Standard.E4.Flex - Specify any thing from 1 to 64.
         :param pulumi.Input[int] data_storage_percentage: The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Specify 80 or 40. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems. Required for BMDBs.
         :param pulumi.Input[int] data_storage_size_in_gb: (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. Required for VMDBs.
         :param pulumi.Input[str] database_edition: The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
@@ -1786,10 +1847,11 @@ class DbSystem(pulumi.CustomResource):
         :param pulumi.Input[int] listener_port: The port number configured for the listener on the DB system.
         :param pulumi.Input[pulumi.InputType['DbSystemMaintenanceWindowDetailsArgs']] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DbSystemMaintenanceWindowArgs']]]] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+        :param pulumi.Input[int] memory_size_in_gbs: Memory allocated to the DB system, in gigabytes.
         :param pulumi.Input[str] next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         :param pulumi.Input[int] node_count: The number of nodes to launch for a 2-node RAC virtual machine DB system. Specify either 1 or 2.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-               * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+               * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         :param pulumi.Input[str] point_in_time_data_disk_clone_timestamp: The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param pulumi.Input[str] private_ip: A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. Supported for VM BM shape.
         :param pulumi.Input[int] reco_storage_size_in_gb: The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
@@ -1804,6 +1866,7 @@ class DbSystem(pulumi.CustomResource):
         :param pulumi.Input[bool] sparse_diskgroup: If true, Sparse Diskgroup is configured for Exadata dbsystem. If False, Sparse diskgroup is not configured. Only applied for Exadata shape.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ssh_public_keys: (Updatable) The public key portion of the key pair to use for SSH access to the DB system. Multiple public keys can be provided. The length of the combined keys cannot exceed 40,000 characters.
         :param pulumi.Input[str] state: The current state of the DB system.
+        :param pulumi.Input[str] storage_volume_performance_mode: The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
         :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
         :param pulumi.Input[str] time_created: The date and time the DB system was created.
         :param pulumi.Input[str] time_zone: The time zone to use for the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
@@ -1843,6 +1906,7 @@ class DbSystem(pulumi.CustomResource):
         __props__.__dict__["listener_port"] = listener_port
         __props__.__dict__["maintenance_window_details"] = maintenance_window_details
         __props__.__dict__["maintenance_windows"] = maintenance_windows
+        __props__.__dict__["memory_size_in_gbs"] = memory_size_in_gbs
         __props__.__dict__["next_maintenance_run_id"] = next_maintenance_run_id
         __props__.__dict__["node_count"] = node_count
         __props__.__dict__["nsg_ids"] = nsg_ids
@@ -1858,6 +1922,7 @@ class DbSystem(pulumi.CustomResource):
         __props__.__dict__["sparse_diskgroup"] = sparse_diskgroup
         __props__.__dict__["ssh_public_keys"] = ssh_public_keys
         __props__.__dict__["state"] = state
+        __props__.__dict__["storage_volume_performance_mode"] = storage_volume_performance_mode
         __props__.__dict__["subnet_id"] = subnet_id
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_zone"] = time_zone
@@ -1910,7 +1975,7 @@ class DbSystem(pulumi.CustomResource):
     @pulumi.getter(name="cpuCoreCount")
     def cpu_core_count(self) -> pulumi.Output[int]:
         """
-        (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system. The valid values depend on the specified shape:
+        (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system or AMD VMDB Systems. The valid values depend on the specified shape:
         * BM.DenseIO1.36 - Specify a multiple of 2, from 2 to 36.
         * BM.DenseIO2.52 - Specify a multiple of 2, from 2 to 52.
         * Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
@@ -1920,6 +1985,7 @@ class DbSystem(pulumi.CustomResource):
         * Exadata.Quarter2.92 - Specify a multiple of 2, from 0 to 92.
         * Exadata.Half2.184 - Specify a multiple of 4, from 0 to 184.
         * Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
+        * VM.Standard.E4.Flex - Specify any thing from 1 to 64.
         """
         return pulumi.get(self, "cpu_core_count")
 
@@ -2100,6 +2166,14 @@ class DbSystem(pulumi.CustomResource):
         return pulumi.get(self, "maintenance_windows")
 
     @property
+    @pulumi.getter(name="memorySizeInGbs")
+    def memory_size_in_gbs(self) -> pulumi.Output[int]:
+        """
+        Memory allocated to the DB system, in gigabytes.
+        """
+        return pulumi.get(self, "memory_size_in_gbs")
+
+    @property
     @pulumi.getter(name="nextMaintenanceRunId")
     def next_maintenance_run_id(self) -> pulumi.Output[str]:
         """
@@ -2119,8 +2193,8 @@ class DbSystem(pulumi.CustomResource):
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> pulumi.Output[Optional[Sequence[str]]]:
         """
-        (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+        (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+        * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         """
         return pulumi.get(self, "nsg_ids")
 
@@ -2221,6 +2295,14 @@ class DbSystem(pulumi.CustomResource):
         The current state of the DB system.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="storageVolumePerformanceMode")
+    def storage_volume_performance_mode(self) -> pulumi.Output[str]:
+        """
+        The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
+        """
+        return pulumi.get(self, "storage_volume_performance_mode")
 
     @property
     @pulumi.getter(name="subnetId")

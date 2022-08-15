@@ -53,7 +53,7 @@ type InvokeFunction struct {
 	Content pulumi.StringOutput `pulumi:"content"`
 	// An optional intent header that indicates to the FDK the way the event should be interpreted. E.g. 'httprequest', 'cloudevent'.
 	FnIntent pulumi.StringOutput `pulumi:"fnIntent"`
-	// Indicates whether the functions platform should execute the request directly and return the result ('sync') or whether the platform should enqueue the request for later processing and acknowledge that it has been processed ('detached').
+	// Indicates whether Oracle Functions should execute the request and return the result ('sync') of the execution,  or whether Oracle Functions should return as soon as processing has begun ('detached') and leave result handling to the function.
 	FnInvokeType pulumi.StringOutput `pulumi:"fnInvokeType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this function.
 	FunctionId pulumi.StringOutput `pulumi:"functionId"`
@@ -102,7 +102,7 @@ type invokeFunctionState struct {
 	Content *string `pulumi:"content"`
 	// An optional intent header that indicates to the FDK the way the event should be interpreted. E.g. 'httprequest', 'cloudevent'.
 	FnIntent *string `pulumi:"fnIntent"`
-	// Indicates whether the functions platform should execute the request directly and return the result ('sync') or whether the platform should enqueue the request for later processing and acknowledge that it has been processed ('detached').
+	// Indicates whether Oracle Functions should execute the request and return the result ('sync') of the execution,  or whether Oracle Functions should return as soon as processing has begun ('detached') and leave result handling to the function.
 	FnInvokeType *string `pulumi:"fnInvokeType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this function.
 	FunctionId *string `pulumi:"functionId"`
@@ -120,7 +120,7 @@ type InvokeFunctionState struct {
 	Content pulumi.StringPtrInput
 	// An optional intent header that indicates to the FDK the way the event should be interpreted. E.g. 'httprequest', 'cloudevent'.
 	FnIntent pulumi.StringPtrInput
-	// Indicates whether the functions platform should execute the request directly and return the result ('sync') or whether the platform should enqueue the request for later processing and acknowledge that it has been processed ('detached').
+	// Indicates whether Oracle Functions should execute the request and return the result ('sync') of the execution,  or whether Oracle Functions should return as soon as processing has begun ('detached') and leave result handling to the function.
 	FnInvokeType pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this function.
 	FunctionId pulumi.StringPtrInput
@@ -140,7 +140,7 @@ type invokeFunctionArgs struct {
 	Base64EncodeContent *bool `pulumi:"base64EncodeContent"`
 	// An optional intent header that indicates to the FDK the way the event should be interpreted. E.g. 'httprequest', 'cloudevent'.
 	FnIntent *string `pulumi:"fnIntent"`
-	// Indicates whether the functions platform should execute the request directly and return the result ('sync') or whether the platform should enqueue the request for later processing and acknowledge that it has been processed ('detached').
+	// Indicates whether Oracle Functions should execute the request and return the result ('sync') of the execution,  or whether Oracle Functions should return as soon as processing has begun ('detached') and leave result handling to the function.
 	FnInvokeType *string `pulumi:"fnInvokeType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this function.
 	FunctionId string `pulumi:"functionId"`
@@ -156,7 +156,7 @@ type InvokeFunctionArgs struct {
 	Base64EncodeContent pulumi.BoolPtrInput
 	// An optional intent header that indicates to the FDK the way the event should be interpreted. E.g. 'httprequest', 'cloudevent'.
 	FnIntent pulumi.StringPtrInput
-	// Indicates whether the functions platform should execute the request directly and return the result ('sync') or whether the platform should enqueue the request for later processing and acknowledge that it has been processed ('detached').
+	// Indicates whether Oracle Functions should execute the request and return the result ('sync') of the execution,  or whether Oracle Functions should return as soon as processing has begun ('detached') and leave result handling to the function.
 	FnInvokeType pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this function.
 	FunctionId pulumi.StringInput

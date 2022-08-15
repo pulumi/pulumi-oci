@@ -8,7 +8,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Database Tools Private Endpoint resource in Oracle Cloud Infrastructure Database Tools service.
  *
- * Gets a DatabaseToolsPrivateEndpoint by identifier
+ * Gets details of a specified Database Tools private endpoint.
  *
  * ## Example Usage
  *
@@ -37,7 +37,7 @@ export function getDatabaseToolsPrivateEndpoint(args: GetDatabaseToolsPrivateEnd
  */
 export interface GetDatabaseToolsPrivateEndpointArgs {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a DatabaseToolsPrivateEndpoint.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools private endpoint.
      */
     databaseToolsPrivateEndpointId: string;
 }
@@ -51,7 +51,7 @@ export interface GetDatabaseToolsPrivateEndpointResult {
      */
     readonly additionalFqdns: string[];
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools private endpoint.
      */
     readonly compartmentId: string;
     readonly databaseToolsPrivateEndpointId: string;
@@ -60,7 +60,7 @@ export interface GetDatabaseToolsPrivateEndpointResult {
      */
     readonly definedTags: {[key: string]: any};
     /**
-     * A description of the DatabaseToolsPrivateEndpoint.
+     * A description of the Database Tools private endpoint.
      */
     readonly description: string;
     /**
@@ -72,7 +72,7 @@ export interface GetDatabaseToolsPrivateEndpointResult {
      */
     readonly endpointFqdn: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsEndpointService.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Endpoint Service.
      */
     readonly endpointServiceId: string;
     /**
@@ -80,7 +80,7 @@ export interface GetDatabaseToolsPrivateEndpointResult {
      */
     readonly freeformTags: {[key: string]: any};
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsPrivateEndpoint.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint.
      */
     readonly id: string;
     /**
@@ -100,11 +100,11 @@ export interface GetDatabaseToolsPrivateEndpointResult {
      */
     readonly privateEndpointVnicId: string;
     /**
-     * Reverse connection configuration details of Private Endpoint.
+     * Reverse connection configuration details of the private endpoint.
      */
     readonly reverseConnectionConfigurations: outputs.DatabaseTools.GetDatabaseToolsPrivateEndpointReverseConnectionConfiguration[];
     /**
-     * The current state of the DatabaseToolsPrivateEndpoint.
+     * The current state of the Database Tools private endpoint.
      */
     readonly state: string;
     /**
@@ -116,11 +116,11 @@ export interface GetDatabaseToolsPrivateEndpointResult {
      */
     readonly systemTags: {[key: string]: any};
     /**
-     * The time the DatabaseToolsPrivateEndpoint was created. An RFC3339 formatted datetime string
+     * The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
      */
     readonly timeCreated: string;
     /**
-     * The time the DatabaseToolsPrivateEndpoint was updated. An RFC3339 formatted datetime string
+     * The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
      */
     readonly timeUpdated: string;
     /**
@@ -138,7 +138,7 @@ export function getDatabaseToolsPrivateEndpointOutput(args: GetDatabaseToolsPriv
  */
 export interface GetDatabaseToolsPrivateEndpointOutputArgs {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a DatabaseToolsPrivateEndpoint.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools private endpoint.
      */
     databaseToolsPrivateEndpointId: pulumi.Input<string>;
 }

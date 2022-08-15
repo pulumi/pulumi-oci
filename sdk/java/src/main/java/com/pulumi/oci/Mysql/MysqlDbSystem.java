@@ -17,6 +17,7 @@ import com.pulumi.oci.Mysql.outputs.MysqlDbSystemDeletionPolicy;
 import com.pulumi.oci.Mysql.outputs.MysqlDbSystemEndpoint;
 import com.pulumi.oci.Mysql.outputs.MysqlDbSystemHeatWaveCluster;
 import com.pulumi.oci.Mysql.outputs.MysqlDbSystemMaintenance;
+import com.pulumi.oci.Mysql.outputs.MysqlDbSystemPointInTimeRecoveryDetail;
 import com.pulumi.oci.Mysql.outputs.MysqlDbSystemSource;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
@@ -413,11 +414,7 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
     /**
      * Name of the MySQL Version in use for the DB System.
      * 
-     * @deprecated
-     * The &#39;mysql_version&#39; field has been deprecated and may be removed in a future version. Do not use this field.
-     * 
      */
-    @Deprecated /* The 'mysql_version' field has been deprecated and may be removed in a future version. Do not use this field. */
     @Export(name="mysqlVersion", type=String.class, parameters={})
     private Output<String> mysqlVersion;
 
@@ -427,6 +424,20 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      */
     public Output<String> mysqlVersion() {
         return this.mysqlVersion;
+    }
+    /**
+     * Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
+     * 
+     */
+    @Export(name="pointInTimeRecoveryDetails", type=List.class, parameters={MysqlDbSystemPointInTimeRecoveryDetail.class})
+    private Output<List<MysqlDbSystemPointInTimeRecoveryDetail>> pointInTimeRecoveryDetails;
+
+    /**
+     * @return Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
+     * 
+     */
+    public Output<List<MysqlDbSystemPointInTimeRecoveryDetail>> pointInTimeRecoveryDetails() {
+        return this.pointInTimeRecoveryDetails;
     }
     /**
      * The port for primary endpoint of the DB System to listen on.

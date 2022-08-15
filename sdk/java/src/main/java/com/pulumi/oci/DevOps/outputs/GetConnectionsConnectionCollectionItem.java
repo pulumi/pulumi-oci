@@ -17,6 +17,11 @@ public final class GetConnectionsConnectionCollectionItem {
      */
     private final String accessToken;
     /**
+     * @return OCID of personal Bitbucket Cloud AppPassword saved in secret store
+     * 
+     */
+    private final String appPassword;
+    /**
      * @return The OCID of the compartment in which to list resources.
      * 
      */
@@ -76,10 +81,16 @@ public final class GetConnectionsConnectionCollectionItem {
      * 
      */
     private final String timeUpdated;
+    /**
+     * @return Public Bitbucket Cloud Username in plain text
+     * 
+     */
+    private final String username;
 
     @CustomType.Constructor
     private GetConnectionsConnectionCollectionItem(
         @CustomType.Parameter("accessToken") String accessToken,
+        @CustomType.Parameter("appPassword") String appPassword,
         @CustomType.Parameter("compartmentId") String compartmentId,
         @CustomType.Parameter("connectionType") String connectionType,
         @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
@@ -91,8 +102,10 @@ public final class GetConnectionsConnectionCollectionItem {
         @CustomType.Parameter("state") String state,
         @CustomType.Parameter("systemTags") Map<String,Object> systemTags,
         @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
+        @CustomType.Parameter("timeUpdated") String timeUpdated,
+        @CustomType.Parameter("username") String username) {
         this.accessToken = accessToken;
+        this.appPassword = appPassword;
         this.compartmentId = compartmentId;
         this.connectionType = connectionType;
         this.definedTags = definedTags;
@@ -105,6 +118,7 @@ public final class GetConnectionsConnectionCollectionItem {
         this.systemTags = systemTags;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
+        this.username = username;
     }
 
     /**
@@ -113,6 +127,13 @@ public final class GetConnectionsConnectionCollectionItem {
      */
     public String accessToken() {
         return this.accessToken;
+    }
+    /**
+     * @return OCID of personal Bitbucket Cloud AppPassword saved in secret store
+     * 
+     */
+    public String appPassword() {
+        return this.appPassword;
     }
     /**
      * @return The OCID of the compartment in which to list resources.
@@ -198,6 +219,13 @@ public final class GetConnectionsConnectionCollectionItem {
     public String timeUpdated() {
         return this.timeUpdated;
     }
+    /**
+     * @return Public Bitbucket Cloud Username in plain text
+     * 
+     */
+    public String username() {
+        return this.username;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -209,6 +237,7 @@ public final class GetConnectionsConnectionCollectionItem {
 
     public static final class Builder {
         private String accessToken;
+        private String appPassword;
         private String compartmentId;
         private String connectionType;
         private Map<String,Object> definedTags;
@@ -221,6 +250,7 @@ public final class GetConnectionsConnectionCollectionItem {
         private Map<String,Object> systemTags;
         private String timeCreated;
         private String timeUpdated;
+        private String username;
 
         public Builder() {
     	      // Empty
@@ -229,6 +259,7 @@ public final class GetConnectionsConnectionCollectionItem {
         public Builder(GetConnectionsConnectionCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.accessToken = defaults.accessToken;
+    	      this.appPassword = defaults.appPassword;
     	      this.compartmentId = defaults.compartmentId;
     	      this.connectionType = defaults.connectionType;
     	      this.definedTags = defaults.definedTags;
@@ -241,10 +272,15 @@ public final class GetConnectionsConnectionCollectionItem {
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
+    	      this.username = defaults.username;
         }
 
         public Builder accessToken(String accessToken) {
             this.accessToken = Objects.requireNonNull(accessToken);
+            return this;
+        }
+        public Builder appPassword(String appPassword) {
+            this.appPassword = Objects.requireNonNull(appPassword);
             return this;
         }
         public Builder compartmentId(String compartmentId) {
@@ -294,8 +330,12 @@ public final class GetConnectionsConnectionCollectionItem {
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
+        }
+        public Builder username(String username) {
+            this.username = Objects.requireNonNull(username);
+            return this;
         }        public GetConnectionsConnectionCollectionItem build() {
-            return new GetConnectionsConnectionCollectionItem(accessToken, compartmentId, connectionType, definedTags, description, displayName, freeformTags, id, projectId, state, systemTags, timeCreated, timeUpdated);
+            return new GetConnectionsConnectionCollectionItem(accessToken, appPassword, compartmentId, connectionType, definedTags, description, displayName, freeformTags, id, projectId, state, systemTags, timeCreated, timeUpdated, username);
         }
     }
 }

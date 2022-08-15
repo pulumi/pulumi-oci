@@ -10,6 +10,7 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Core.IpsecConnectionTunnelManagementArgs;
 import com.pulumi.oci.Core.inputs.IpsecConnectionTunnelManagementState;
 import com.pulumi.oci.Core.outputs.IpsecConnectionTunnelManagementBgpSessionInfo;
+import com.pulumi.oci.Core.outputs.IpsecConnectionTunnelManagementDpdConfig;
 import com.pulumi.oci.Core.outputs.IpsecConnectionTunnelManagementEncryptionDomainConfig;
 import com.pulumi.oci.Core.outputs.IpsecConnectionTunnelManagementPhaseOneDetail;
 import com.pulumi.oci.Core.outputs.IpsecConnectionTunnelManagementPhaseTwoDetail;
@@ -17,6 +18,7 @@ import com.pulumi.oci.Utilities;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -98,6 +100,12 @@ public class IpsecConnectionTunnelManagement extends com.pulumi.resources.Custom
      */
     public Output<String> displayName() {
         return this.displayName;
+    }
+    @Export(name="dpdConfigs", type=List.class, parameters={IpsecConnectionTunnelManagementDpdConfig.class})
+    private Output</* @Nullable */ List<IpsecConnectionTunnelManagementDpdConfig>> dpdConfigs;
+
+    public Output<Optional<List<IpsecConnectionTunnelManagementDpdConfig>>> dpdConfigs() {
+        return Codegen.optional(this.dpdConfigs);
     }
     @Export(name="dpdMode", type=String.class, parameters={})
     private Output<String> dpdMode;

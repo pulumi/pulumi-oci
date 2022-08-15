@@ -18,7 +18,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// ResponderRule Description
+        /// ResponderRule description.
         /// </summary>
         public readonly string Description;
         /// <summary>
@@ -38,7 +38,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly ImmutableArray<string> Policies;
         /// <summary>
-        /// Identifier for ResponderRule.
+        /// Unique ResponderRule identifier.
         /// </summary>
         public readonly string ResponderRuleId;
         /// <summary>

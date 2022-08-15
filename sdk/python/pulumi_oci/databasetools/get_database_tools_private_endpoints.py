@@ -52,7 +52,7 @@ class GetDatabaseToolsPrivateEndpointsResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools private endpoint.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -76,7 +76,7 @@ class GetDatabaseToolsPrivateEndpointsResult:
     @pulumi.getter(name="endpointServiceId")
     def endpoint_service_id(self) -> Optional[str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsEndpointService.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Endpoint Service.
         """
         return pulumi.get(self, "endpoint_service_id")
 
@@ -97,7 +97,7 @@ class GetDatabaseToolsPrivateEndpointsResult:
     @pulumi.getter
     def state(self) -> Optional[str]:
         """
-        The current state of the DatabaseToolsPrivateEndpoint.
+        The current state of the Database Tools private endpoint.
         """
         return pulumi.get(self, "state")
 
@@ -136,7 +136,7 @@ def get_database_tools_private_endpoints(compartment_id: Optional[str] = None,
     """
     This data source provides the list of Database Tools Private Endpoints in Oracle Cloud Infrastructure Database Tools service.
 
-    Returns a list of DatabaseToolsPrivateEndpoints.
+    Returns a list of Database Tools private endpoints.
 
     ## Example Usage
 
@@ -153,10 +153,10 @@ def get_database_tools_private_endpoints(compartment_id: Optional[str] = None,
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str endpoint_service_id: A filter to return only resources their type matches the given type.
-    :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
-    :param str subnet_id: A filter to return only resources their subnetId matches the given subnetId.
+    :param str display_name: A filter to return only resources that match the entire specified display name.
+    :param str endpoint_service_id: A filter to return only resources their `endpointServiceId` matches the specified `endpointServiceId`.
+    :param str state: A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
+    :param str subnet_id: A filter to return only resources their `subnetId` matches the specified `subnetId`.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -193,7 +193,7 @@ def get_database_tools_private_endpoints_output(compartment_id: Optional[pulumi.
     """
     This data source provides the list of Database Tools Private Endpoints in Oracle Cloud Infrastructure Database Tools service.
 
-    Returns a list of DatabaseToolsPrivateEndpoints.
+    Returns a list of Database Tools private endpoints.
 
     ## Example Usage
 
@@ -210,9 +210,9 @@ def get_database_tools_private_endpoints_output(compartment_id: Optional[pulumi.
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str endpoint_service_id: A filter to return only resources their type matches the given type.
-    :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
-    :param str subnet_id: A filter to return only resources their subnetId matches the given subnetId.
+    :param str display_name: A filter to return only resources that match the entire specified display name.
+    :param str endpoint_service_id: A filter to return only resources their `endpointServiceId` matches the specified `endpointServiceId`.
+    :param str state: A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
+    :param str subnet_id: A filter to return only resources their `subnetId` matches the specified `subnetId`.
     """
     ...

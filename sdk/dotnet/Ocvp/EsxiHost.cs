@@ -37,6 +37,12 @@ namespace Pulumi.Oci.Ocvp
         public Output<string> BillingContractEndDate { get; private set; } = null!;
 
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+        /// </summary>
+        [Output("capacityReservationId")]
+        public Output<string> CapacityReservationId { get; private set; } = null!;
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
         /// </summary>
         [Output("compartmentId")]
@@ -73,7 +79,7 @@ namespace Pulumi.Oci.Ocvp
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be udpated in the newly created Esxi host.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is failed. It is an optional param, when user supplies this param, new Esxi Host will be created to replace the failed one, and failedEsxiHostId field will be udpated in the newly created EsxiHost.
         /// </summary>
         [Output("failedEsxiHostId")]
         public Output<string> FailedEsxiHostId { get; private set; } = null!;
@@ -89,6 +95,18 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         [Output("gracePeriodEndDate")]
         public Output<string> GracePeriodEndDate { get; private set; } = null!;
+
+        /// <summary>
+        /// The OCPU count of the ESXi host.
+        /// </summary>
+        [Output("hostOcpuCount")]
+        public Output<double> HostOcpuCount { get; private set; } = null!;
+
+        /// <summary>
+        /// The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+        /// </summary>
+        [Output("hostShapeName")]
+        public Output<string> HostShapeName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
@@ -173,6 +191,12 @@ namespace Pulumi.Oci.Ocvp
     public sealed class EsxiHostArgs : Pulumi.ResourceArgs
     {
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+        /// </summary>
+        [Input("capacityReservationId")]
+        public Input<string>? CapacityReservationId { get; set; }
+
+        /// <summary>
         /// The availability domain to create the ESXi host in. If keep empty, for AD-specific SDDC, new ESXi host will be created in the same availability domain; for multi-AD SDDC, new ESXi host will be auto assigned to the next availability domain following evenly distribution strategy.
         /// </summary>
         [Input("computeAvailabilityDomain")]
@@ -203,7 +227,7 @@ namespace Pulumi.Oci.Ocvp
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be udpated in the newly created Esxi host.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is failed. It is an optional param, when user supplies this param, new Esxi Host will be created to replace the failed one, and failedEsxiHostId field will be udpated in the newly created EsxiHost.
         /// </summary>
         [Input("failedEsxiHostId")]
         public Input<string>? FailedEsxiHostId { get; set; }
@@ -219,6 +243,18 @@ namespace Pulumi.Oci.Ocvp
             get => _freeformTags ?? (_freeformTags = new InputMap<object>());
             set => _freeformTags = value;
         }
+
+        /// <summary>
+        /// The OCPU count of the ESXi host.
+        /// </summary>
+        [Input("hostOcpuCount")]
+        public Input<double>? HostOcpuCount { get; set; }
+
+        /// <summary>
+        /// The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+        /// </summary>
+        [Input("hostShapeName")]
+        public Input<string>? HostShapeName { get; set; }
 
         /// <summary>
         /// (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
@@ -244,6 +280,12 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         [Input("billingContractEndDate")]
         public Input<string>? BillingContractEndDate { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+        /// </summary>
+        [Input("capacityReservationId")]
+        public Input<string>? CapacityReservationId { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
@@ -288,7 +330,7 @@ namespace Pulumi.Oci.Ocvp
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be udpated in the newly created Esxi host.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is failed. It is an optional param, when user supplies this param, new Esxi Host will be created to replace the failed one, and failedEsxiHostId field will be udpated in the newly created EsxiHost.
         /// </summary>
         [Input("failedEsxiHostId")]
         public Input<string>? FailedEsxiHostId { get; set; }
@@ -310,6 +352,18 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         [Input("gracePeriodEndDate")]
         public Input<string>? GracePeriodEndDate { get; set; }
+
+        /// <summary>
+        /// The OCPU count of the ESXi host.
+        /// </summary>
+        [Input("hostOcpuCount")]
+        public Input<double>? HostOcpuCount { get; set; }
+
+        /// <summary>
+        /// The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+        /// </summary>
+        [Input("hostShapeName")]
+        public Input<string>? HostShapeName { get; set; }
 
         /// <summary>
         /// (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).

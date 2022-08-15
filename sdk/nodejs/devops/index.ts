@@ -34,6 +34,7 @@ export * from "./getDeployment";
 export * from "./getDeployments";
 export * from "./getProject";
 export * from "./getProjects";
+export * from "./getRepoFileLine";
 export * from "./getRepositories";
 export * from "./getRepository";
 export * from "./getRepositoryArchiveContent";

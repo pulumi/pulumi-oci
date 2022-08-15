@@ -6,6 +6,7 @@ package com.pulumi.oci.Sch.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Sch.outputs.GetServiceConnectorsServiceConnectorCollectionItemSourceCursor;
 import com.pulumi.oci.Sch.outputs.GetServiceConnectorsServiceConnectorCollectionItemSourceLogSource;
+import com.pulumi.oci.Sch.outputs.GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -28,6 +29,11 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemSource {
      */
     private final List<GetServiceConnectorsServiceConnectorCollectionItemSourceLogSource> logSources;
     /**
+     * @return The list of metric namespaces to retrieve data from.
+     * 
+     */
+    private final List<GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource> monitoringSources;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
      * 
      */
@@ -38,10 +44,12 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemSource {
         @CustomType.Parameter("cursors") List<GetServiceConnectorsServiceConnectorCollectionItemSourceCursor> cursors,
         @CustomType.Parameter("kind") String kind,
         @CustomType.Parameter("logSources") List<GetServiceConnectorsServiceConnectorCollectionItemSourceLogSource> logSources,
+        @CustomType.Parameter("monitoringSources") List<GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource> monitoringSources,
         @CustomType.Parameter("streamId") String streamId) {
         this.cursors = cursors;
         this.kind = kind;
         this.logSources = logSources;
+        this.monitoringSources = monitoringSources;
         this.streamId = streamId;
     }
 
@@ -67,6 +75,13 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemSource {
         return this.logSources;
     }
     /**
+     * @return The list of metric namespaces to retrieve data from.
+     * 
+     */
+    public List<GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource> monitoringSources() {
+        return this.monitoringSources;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
      * 
      */
@@ -86,6 +101,7 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemSource {
         private List<GetServiceConnectorsServiceConnectorCollectionItemSourceCursor> cursors;
         private String kind;
         private List<GetServiceConnectorsServiceConnectorCollectionItemSourceLogSource> logSources;
+        private List<GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource> monitoringSources;
         private String streamId;
 
         public Builder() {
@@ -97,6 +113,7 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemSource {
     	      this.cursors = defaults.cursors;
     	      this.kind = defaults.kind;
     	      this.logSources = defaults.logSources;
+    	      this.monitoringSources = defaults.monitoringSources;
     	      this.streamId = defaults.streamId;
         }
 
@@ -118,11 +135,18 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemSource {
         public Builder logSources(GetServiceConnectorsServiceConnectorCollectionItemSourceLogSource... logSources) {
             return logSources(List.of(logSources));
         }
+        public Builder monitoringSources(List<GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource> monitoringSources) {
+            this.monitoringSources = Objects.requireNonNull(monitoringSources);
+            return this;
+        }
+        public Builder monitoringSources(GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource... monitoringSources) {
+            return monitoringSources(List.of(monitoringSources));
+        }
         public Builder streamId(String streamId) {
             this.streamId = Objects.requireNonNull(streamId);
             return this;
         }        public GetServiceConnectorsServiceConnectorCollectionItemSource build() {
-            return new GetServiceConnectorsServiceConnectorCollectionItemSource(cursors, kind, logSources, streamId);
+            return new GetServiceConnectorsServiceConnectorCollectionItemSource(cursors, kind, logSources, monitoringSources, streamId);
         }
     }
 }

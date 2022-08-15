@@ -14,13 +14,17 @@ __all__ = ['AutonomousDatabaseInstanceWalletManagementArgs', 'AutonomousDatabase
 class AutonomousDatabaseInstanceWalletManagementArgs:
     def __init__(__self__, *,
                  autonomous_database_id: pulumi.Input[str],
+                 grace_period: Optional[pulumi.Input[int]] = None,
                  should_rotate: Optional[pulumi.Input[bool]] = None):
         """
         The set of arguments for constructing a AutonomousDatabaseInstanceWalletManagement resource.
         :param pulumi.Input[str] autonomous_database_id: (Updatable) The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param pulumi.Input[int] grace_period: (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
         :param pulumi.Input[bool] should_rotate: (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
         """
         pulumi.set(__self__, "autonomous_database_id", autonomous_database_id)
+        if grace_period is not None:
+            pulumi.set(__self__, "grace_period", grace_period)
         if should_rotate is not None:
             pulumi.set(__self__, "should_rotate", should_rotate)
 
@@ -35,6 +39,18 @@ class AutonomousDatabaseInstanceWalletManagementArgs:
     @autonomous_database_id.setter
     def autonomous_database_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "autonomous_database_id", value)
+
+    @property
+    @pulumi.getter(name="gracePeriod")
+    def grace_period(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+        """
+        return pulumi.get(self, "grace_period")
+
+    @grace_period.setter
+    def grace_period(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "grace_period", value)
 
     @property
     @pulumi.getter(name="shouldRotate")
@@ -53,18 +69,22 @@ class AutonomousDatabaseInstanceWalletManagementArgs:
 class _AutonomousDatabaseInstanceWalletManagementState:
     def __init__(__self__, *,
                  autonomous_database_id: Optional[pulumi.Input[str]] = None,
+                 grace_period: Optional[pulumi.Input[int]] = None,
                  should_rotate: Optional[pulumi.Input[bool]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  time_rotated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AutonomousDatabaseInstanceWalletManagement resources.
         :param pulumi.Input[str] autonomous_database_id: (Updatable) The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param pulumi.Input[int] grace_period: (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
         :param pulumi.Input[bool] should_rotate: (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
         :param pulumi.Input[str] state: The current lifecycle state of the Autonomous Database wallet.
         :param pulumi.Input[str] time_rotated: The date and time the wallet was last rotated.
         """
         if autonomous_database_id is not None:
             pulumi.set(__self__, "autonomous_database_id", autonomous_database_id)
+        if grace_period is not None:
+            pulumi.set(__self__, "grace_period", grace_period)
         if should_rotate is not None:
             pulumi.set(__self__, "should_rotate", should_rotate)
         if state is not None:
@@ -83,6 +103,18 @@ class _AutonomousDatabaseInstanceWalletManagementState:
     @autonomous_database_id.setter
     def autonomous_database_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "autonomous_database_id", value)
+
+    @property
+    @pulumi.getter(name="gracePeriod")
+    def grace_period(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+        """
+        return pulumi.get(self, "grace_period")
+
+    @grace_period.setter
+    def grace_period(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "grace_period", value)
 
     @property
     @pulumi.getter(name="shouldRotate")
@@ -127,6 +159,7 @@ class AutonomousDatabaseInstanceWalletManagement(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  autonomous_database_id: Optional[pulumi.Input[str]] = None,
+                 grace_period: Optional[pulumi.Input[int]] = None,
                  should_rotate: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
         """
@@ -142,6 +175,7 @@ class AutonomousDatabaseInstanceWalletManagement(pulumi.CustomResource):
 
         test_autonomous_database_instance_wallet_management = oci.database.AutonomousDatabaseInstanceWalletManagement("testAutonomousDatabaseInstanceWalletManagement",
             autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"],
+            grace_period=var["autonomous_database_instance_wallet_management_grace_period"],
             should_rotate=var["autonomous_database_instance_wallet_management_should_rotate"])
         ```
 
@@ -152,6 +186,7 @@ class AutonomousDatabaseInstanceWalletManagement(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] autonomous_database_id: (Updatable) The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param pulumi.Input[int] grace_period: (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
         :param pulumi.Input[bool] should_rotate: (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
         """
         ...
@@ -173,6 +208,7 @@ class AutonomousDatabaseInstanceWalletManagement(pulumi.CustomResource):
 
         test_autonomous_database_instance_wallet_management = oci.database.AutonomousDatabaseInstanceWalletManagement("testAutonomousDatabaseInstanceWalletManagement",
             autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"],
+            grace_period=var["autonomous_database_instance_wallet_management_grace_period"],
             should_rotate=var["autonomous_database_instance_wallet_management_should_rotate"])
         ```
 
@@ -196,6 +232,7 @@ class AutonomousDatabaseInstanceWalletManagement(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  autonomous_database_id: Optional[pulumi.Input[str]] = None,
+                 grace_period: Optional[pulumi.Input[int]] = None,
                  should_rotate: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
         if opts is None:
@@ -212,6 +249,7 @@ class AutonomousDatabaseInstanceWalletManagement(pulumi.CustomResource):
             if autonomous_database_id is None and not opts.urn:
                 raise TypeError("Missing required property 'autonomous_database_id'")
             __props__.__dict__["autonomous_database_id"] = autonomous_database_id
+            __props__.__dict__["grace_period"] = grace_period
             __props__.__dict__["should_rotate"] = should_rotate
             __props__.__dict__["state"] = None
             __props__.__dict__["time_rotated"] = None
@@ -226,6 +264,7 @@ class AutonomousDatabaseInstanceWalletManagement(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             autonomous_database_id: Optional[pulumi.Input[str]] = None,
+            grace_period: Optional[pulumi.Input[int]] = None,
             should_rotate: Optional[pulumi.Input[bool]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_rotated: Optional[pulumi.Input[str]] = None) -> 'AutonomousDatabaseInstanceWalletManagement':
@@ -237,6 +276,7 @@ class AutonomousDatabaseInstanceWalletManagement(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] autonomous_database_id: (Updatable) The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param pulumi.Input[int] grace_period: (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
         :param pulumi.Input[bool] should_rotate: (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
         :param pulumi.Input[str] state: The current lifecycle state of the Autonomous Database wallet.
         :param pulumi.Input[str] time_rotated: The date and time the wallet was last rotated.
@@ -246,6 +286,7 @@ class AutonomousDatabaseInstanceWalletManagement(pulumi.CustomResource):
         __props__ = _AutonomousDatabaseInstanceWalletManagementState.__new__(_AutonomousDatabaseInstanceWalletManagementState)
 
         __props__.__dict__["autonomous_database_id"] = autonomous_database_id
+        __props__.__dict__["grace_period"] = grace_period
         __props__.__dict__["should_rotate"] = should_rotate
         __props__.__dict__["state"] = state
         __props__.__dict__["time_rotated"] = time_rotated
@@ -258,6 +299,14 @@ class AutonomousDatabaseInstanceWalletManagement(pulumi.CustomResource):
         (Updatable) The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "autonomous_database_id")
+
+    @property
+    @pulumi.getter(name="gracePeriod")
+    def grace_period(self) -> pulumi.Output[int]:
+        """
+        (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+        """
+        return pulumi.get(self, "grace_period")
 
     @property
     @pulumi.getter(name="shouldRotate")

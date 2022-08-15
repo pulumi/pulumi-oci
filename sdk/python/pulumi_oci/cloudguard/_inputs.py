@@ -26,6 +26,8 @@ __all__ = [
     'ResponderRecipeResponderRuleArgs',
     'ResponderRecipeResponderRuleDetailsArgs',
     'ResponderRecipeResponderRuleDetailsConfigurationArgs',
+    'TargetTargetDetailArgs',
+    'TargetTargetDetailTargetSecurityZoneRecipeArgs',
     'TargetTargetDetectorRecipeArgs',
     'TargetTargetDetectorRecipeDetectorRuleArgs',
     'TargetTargetDetectorRecipeDetectorRuleDetailsArgs',
@@ -49,6 +51,9 @@ __all__ = [
     'GetGuardTargetsFilterArgs',
     'GetManagedListsFilterArgs',
     'GetResponderRecipesFilterArgs',
+    'GetSecurityPoliciesFilterArgs',
+    'GetSecurityRecipesFilterArgs',
+    'GetSecurityZonesFilterArgs',
 ]
 
 @pulumi.input_type
@@ -110,9 +115,9 @@ class DetectorRecipeDetectorRuleArgs:
         :param pulumi.Input['DetectorRecipeDetectorRuleDetailsArgs'] details: (Updatable) Details of a Detector Rule to be overriden in Detector Recipe
         :param pulumi.Input[str] detector_rule_id: (Updatable) DetectorRecipeRule Identifier
         :param pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleCandidateResponderRuleArgs']]] candidate_responder_rules: List of CandidateResponderRule related to this rule
-        :param pulumi.Input[str] description: (Updatable) DetectorRecipe Description
+        :param pulumi.Input[str] description: (Updatable) Detector recipe description.
         :param pulumi.Input[str] detector: detector for the rule
-        :param pulumi.Input[str] display_name: (Updatable) DetectorRecipe Display Name
+        :param pulumi.Input[str] display_name: (Updatable) Detector recipe display name.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] managed_list_types: List of cloudguard managed list types related to this rule
         :param pulumi.Input[str] recommendation: Recommendation for DetectorRecipeDetectorRule
@@ -189,7 +194,7 @@ class DetectorRecipeDetectorRuleArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) DetectorRecipe Description
+        (Updatable) Detector recipe description.
         """
         return pulumi.get(self, "description")
 
@@ -213,7 +218,7 @@ class DetectorRecipeDetectorRuleArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) DetectorRecipe Display Name
+        (Updatable) Detector recipe display name.
         """
         return pulumi.get(self, "display_name")
 
@@ -325,7 +330,7 @@ class DetectorRecipeDetectorRuleCandidateResponderRuleArgs:
                  id: Optional[pulumi.Input[str]] = None,
                  is_preferred: Optional[pulumi.Input[bool]] = None):
         """
-        :param pulumi.Input[str] display_name: (Updatable) DetectorRecipe Display Name
+        :param pulumi.Input[str] display_name: (Updatable) Detector recipe display name.
         :param pulumi.Input[str] id: Ocid for detector recipe
         :param pulumi.Input[bool] is_preferred: Preferred state
         """
@@ -340,7 +345,7 @@ class DetectorRecipeDetectorRuleCandidateResponderRuleArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) DetectorRecipe Display Name
+        (Updatable) Detector recipe display name.
         """
         return pulumi.get(self, "display_name")
 
@@ -385,7 +390,7 @@ class DetectorRecipeDetectorRuleDetailsArgs:
         """
         :param pulumi.Input[bool] is_enabled: (Updatable) Enables the control
         :param pulumi.Input[str] risk_level: (Updatable) The Risk Level
-        :param pulumi.Input[str] condition: (Updatable)
+        :param pulumi.Input[str] condition: (Updatable) Base condition object
         :param pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationArgs']]] configurations: (Updatable) Configuration details
         :param pulumi.Input[bool] is_configuration_allowed: configuration allowed or not
         :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: (Updatable) user defined labels for a detector rule
@@ -429,7 +434,7 @@ class DetectorRecipeDetectorRuleDetailsArgs:
     @pulumi.getter
     def condition(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable)
+        (Updatable) Base condition object
         """
         return pulumi.get(self, "condition")
 
@@ -630,11 +635,11 @@ class DetectorRecipeEffectiveDetectorRuleArgs:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgs']]] candidate_responder_rules: List of CandidateResponderRule related to this rule
-        :param pulumi.Input[str] description: (Updatable) DetectorRecipe Description
+        :param pulumi.Input[str] description: (Updatable) Detector recipe description.
         :param pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailArgs']]] details: (Updatable) Details of a Detector Rule to be overriden in Detector Recipe
         :param pulumi.Input[str] detector: detector for the rule
         :param pulumi.Input[str] detector_rule_id: (Updatable) DetectorRecipeRule Identifier
-        :param pulumi.Input[str] display_name: (Updatable) DetectorRecipe Display Name
+        :param pulumi.Input[str] display_name: (Updatable) Detector recipe display name.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] managed_list_types: List of cloudguard managed list types related to this rule
         :param pulumi.Input[str] recommendation: Recommendation for DetectorRecipeDetectorRule
@@ -689,7 +694,7 @@ class DetectorRecipeEffectiveDetectorRuleArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) DetectorRecipe Description
+        (Updatable) Detector recipe description.
         """
         return pulumi.get(self, "description")
 
@@ -737,7 +742,7 @@ class DetectorRecipeEffectiveDetectorRuleArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) DetectorRecipe Display Name
+        (Updatable) Detector recipe display name.
         """
         return pulumi.get(self, "display_name")
 
@@ -849,7 +854,7 @@ class DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgs:
                  id: Optional[pulumi.Input[str]] = None,
                  is_preferred: Optional[pulumi.Input[bool]] = None):
         """
-        :param pulumi.Input[str] display_name: (Updatable) DetectorRecipe Display Name
+        :param pulumi.Input[str] display_name: (Updatable) Detector recipe display name.
         :param pulumi.Input[str] id: Ocid for detector recipe
         :param pulumi.Input[bool] is_preferred: Preferred state
         """
@@ -864,7 +869,7 @@ class DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) DetectorRecipe Display Name
+        (Updatable) Detector recipe display name.
         """
         return pulumi.get(self, "display_name")
 
@@ -907,7 +912,7 @@ class DetectorRecipeEffectiveDetectorRuleDetailArgs:
                  labels: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  risk_level: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] condition: (Updatable)
+        :param pulumi.Input[str] condition: (Updatable) Base condition object
         :param pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs']]] configurations: (Updatable) Configuration details
         :param pulumi.Input[bool] is_configuration_allowed: configuration allowed or not
         :param pulumi.Input[bool] is_enabled: (Updatable) Enables the control
@@ -931,7 +936,7 @@ class DetectorRecipeEffectiveDetectorRuleDetailArgs:
     @pulumi.getter
     def condition(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable)
+        (Updatable) Base condition object
         """
         return pulumi.get(self, "condition")
 
@@ -1159,9 +1164,9 @@ class ResponderRecipeEffectiveResponderRuleArgs:
                  type: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier
-        :param pulumi.Input[str] description: (Updatable) ResponderRecipe Description
+        :param pulumi.Input[str] description: (Updatable) Responder recipe description.
         :param pulumi.Input[Sequence[pulumi.Input['ResponderRecipeEffectiveResponderRuleDetailArgs']]] details: (Updatable) Details of UpdateResponderRuleDetails.
-        :param pulumi.Input[str] display_name: (Updatable) ResponderRecipe Display Name
+        :param pulumi.Input[str] display_name: (Updatable) Responder recipe display name.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] policies: List of Policy
         :param pulumi.Input[str] responder_rule_id: (Updatable) ResponderRecipeRule Identifier
@@ -1212,7 +1217,7 @@ class ResponderRecipeEffectiveResponderRuleArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) ResponderRecipe Description
+        (Updatable) Responder recipe description.
         """
         return pulumi.get(self, "description")
 
@@ -1236,7 +1241,7 @@ class ResponderRecipeEffectiveResponderRuleArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) ResponderRecipe Display Name
+        (Updatable) Responder recipe display name.
         """
         return pulumi.get(self, "display_name")
 
@@ -1349,6 +1354,7 @@ class ResponderRecipeEffectiveResponderRuleDetailArgs:
                  is_enabled: Optional[pulumi.Input[bool]] = None,
                  mode: Optional[pulumi.Input[str]] = None):
         """
+        :param pulumi.Input[str] condition: Base condition object
         :param pulumi.Input[Sequence[pulumi.Input['ResponderRecipeEffectiveResponderRuleDetailConfigurationArgs']]] configurations: ResponderRule configurations
         :param pulumi.Input[bool] is_enabled: (Updatable) Identifies state for ResponderRule
         :param pulumi.Input[str] mode: Execution Mode for ResponderRule
@@ -1365,6 +1371,9 @@ class ResponderRecipeEffectiveResponderRuleDetailArgs:
     @property
     @pulumi.getter
     def condition(self) -> Optional[pulumi.Input[str]]:
+        """
+        Base condition object
+        """
         return pulumi.get(self, "condition")
 
     @condition.setter
@@ -1482,8 +1491,8 @@ class ResponderRecipeResponderRuleArgs:
         :param pulumi.Input['ResponderRecipeResponderRuleDetailsArgs'] details: (Updatable) Details of UpdateResponderRuleDetails.
         :param pulumi.Input[str] responder_rule_id: (Updatable) ResponderRecipeRule Identifier
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier
-        :param pulumi.Input[str] description: (Updatable) ResponderRecipe Description
-        :param pulumi.Input[str] display_name: (Updatable) ResponderRecipe Display Name
+        :param pulumi.Input[str] description: (Updatable) Responder recipe description.
+        :param pulumi.Input[str] display_name: (Updatable) Responder recipe display name.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] policies: List of Policy
         :param pulumi.Input[str] state: The current state of the Example.
@@ -1555,7 +1564,7 @@ class ResponderRecipeResponderRuleArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) ResponderRecipe Description
+        (Updatable) Responder recipe description.
         """
         return pulumi.get(self, "description")
 
@@ -1567,7 +1576,7 @@ class ResponderRecipeResponderRuleArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) ResponderRecipe Display Name
+        (Updatable) Responder recipe display name.
         """
         return pulumi.get(self, "display_name")
 
@@ -1669,6 +1678,7 @@ class ResponderRecipeResponderRuleDetailsArgs:
                  mode: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[bool] is_enabled: (Updatable) Identifies state for ResponderRule
+        :param pulumi.Input[str] condition: Base condition object
         :param pulumi.Input[Sequence[pulumi.Input['ResponderRecipeResponderRuleDetailsConfigurationArgs']]] configurations: ResponderRule configurations
         :param pulumi.Input[str] mode: Execution Mode for ResponderRule
         """
@@ -1695,6 +1705,9 @@ class ResponderRecipeResponderRuleDetailsArgs:
     @property
     @pulumi.getter
     def condition(self) -> Optional[pulumi.Input[str]]:
+        """
+        Base condition object
+        """
         return pulumi.get(self, "condition")
 
     @condition.setter
@@ -1782,6 +1795,292 @@ class ResponderRecipeResponderRuleDetailsConfigurationArgs:
 
 
 @pulumi.input_type
+class TargetTargetDetailArgs:
+    def __init__(__self__, *,
+                 security_zone_display_name: Optional[pulumi.Input[str]] = None,
+                 security_zone_id: Optional[pulumi.Input[str]] = None,
+                 target_resource_type: Optional[pulumi.Input[str]] = None,
+                 target_security_zone_recipes: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetailTargetSecurityZoneRecipeArgs']]]] = None):
+        """
+        :param pulumi.Input[str] security_zone_display_name: The name of the security zone to associate this compartment with.
+        :param pulumi.Input[str] security_zone_id: The OCID of the security zone to associate this compartment with.
+        :param pulumi.Input[str] target_resource_type: possible type of targets(compartment/HCMCloud/ERPCloud)
+        :param pulumi.Input[Sequence[pulumi.Input['TargetTargetDetailTargetSecurityZoneRecipeArgs']]] target_security_zone_recipes: The list of security zone recipes to associate this compartment with.
+        """
+        if security_zone_display_name is not None:
+            pulumi.set(__self__, "security_zone_display_name", security_zone_display_name)
+        if security_zone_id is not None:
+            pulumi.set(__self__, "security_zone_id", security_zone_id)
+        if target_resource_type is not None:
+            pulumi.set(__self__, "target_resource_type", target_resource_type)
+        if target_security_zone_recipes is not None:
+            pulumi.set(__self__, "target_security_zone_recipes", target_security_zone_recipes)
+
+    @property
+    @pulumi.getter(name="securityZoneDisplayName")
+    def security_zone_display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The name of the security zone to associate this compartment with.
+        """
+        return pulumi.get(self, "security_zone_display_name")
+
+    @security_zone_display_name.setter
+    def security_zone_display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "security_zone_display_name", value)
+
+    @property
+    @pulumi.getter(name="securityZoneId")
+    def security_zone_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the security zone to associate this compartment with.
+        """
+        return pulumi.get(self, "security_zone_id")
+
+    @security_zone_id.setter
+    def security_zone_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "security_zone_id", value)
+
+    @property
+    @pulumi.getter(name="targetResourceType")
+    def target_resource_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        possible type of targets(compartment/HCMCloud/ERPCloud)
+        """
+        return pulumi.get(self, "target_resource_type")
+
+    @target_resource_type.setter
+    def target_resource_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "target_resource_type", value)
+
+    @property
+    @pulumi.getter(name="targetSecurityZoneRecipes")
+    def target_security_zone_recipes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetailTargetSecurityZoneRecipeArgs']]]]:
+        """
+        The list of security zone recipes to associate this compartment with.
+        """
+        return pulumi.get(self, "target_security_zone_recipes")
+
+    @target_security_zone_recipes.setter
+    def target_security_zone_recipes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetailTargetSecurityZoneRecipeArgs']]]]):
+        pulumi.set(self, "target_security_zone_recipes", value)
+
+
+@pulumi.input_type
+class TargetTargetDetailTargetSecurityZoneRecipeArgs:
+    def __init__(__self__, *,
+                 compartment_id: Optional[pulumi.Input[str]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 description: Optional[pulumi.Input[str]] = None,
+                 display_name: Optional[pulumi.Input[str]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 id: Optional[pulumi.Input[str]] = None,
+                 lifecycle_details: Optional[pulumi.Input[str]] = None,
+                 owner: Optional[pulumi.Input[str]] = None,
+                 security_policies: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 state: Optional[pulumi.Input[str]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 time_created: Optional[pulumi.Input[str]] = None,
+                 time_updated: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] compartment_id: (Updatable) compartment associated with condition
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[str] description: The target description.
+        :param pulumi.Input[str] display_name: (Updatable) DetectorTemplate identifier.
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[str] id: Unique identifier of TargetResponderRecipe that can't be changed after creation.
+        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        :param pulumi.Input[str] owner: Owner of ResponderRecipe
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] security_policies: The list of `SecurityPolicy` ids that are included in the recipe
+        :param pulumi.Input[str] state: (Updatable) The current state of the DetectorRule.
+        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[str] time_created: The date and time the target was created. Format defined by RFC3339.
+        :param pulumi.Input[str] time_updated: The date and time the target was updated. Format defined by RFC3339.
+        """
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if owner is not None:
+            pulumi.set(__self__, "owner", owner)
+        if security_policies is not None:
+            pulumi.set(__self__, "security_policies", security_policies)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) compartment associated with condition
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @compartment_id.setter
+    def compartment_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "compartment_id", value)
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @defined_tags.setter
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "defined_tags", value)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        The target description.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) DetectorTemplate identifier.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @freeform_tags.setter
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "freeform_tags", value)
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[str]]:
+        """
+        Unique identifier of TargetResponderRecipe that can't be changed after creation.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "id", value)
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
+        """
+        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @lifecycle_details.setter
+    def lifecycle_details(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "lifecycle_details", value)
+
+    @property
+    @pulumi.getter
+    def owner(self) -> Optional[pulumi.Input[str]]:
+        """
+        Owner of ResponderRecipe
+        """
+        return pulumi.get(self, "owner")
+
+    @owner.setter
+    def owner(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "owner", value)
+
+    @property
+    @pulumi.getter(name="securityPolicies")
+    def security_policies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        The list of `SecurityPolicy` ids that are included in the recipe
+        """
+        return pulumi.get(self, "security_policies")
+
+    @security_policies.setter
+    def security_policies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "security_policies", value)
+
+    @property
+    @pulumi.getter
+    def state(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The current state of the DetectorRule.
+        """
+        return pulumi.get(self, "state")
+
+    @state.setter
+    def state(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "state", value)
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "system_tags", value)
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[pulumi.Input[str]]:
+        """
+        The date and time the target was created. Format defined by RFC3339.
+        """
+        return pulumi.get(self, "time_created")
+
+    @time_created.setter
+    def time_created(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_created", value)
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> Optional[pulumi.Input[str]]:
+        """
+        The date and time the target was updated. Format defined by RFC3339.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @time_updated.setter
+    def time_updated(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_updated", value)
+
+
+@pulumi.input_type
 class TargetTargetDetectorRecipeArgs:
     def __init__(__self__, *,
                  detector_recipe_id: pulumi.Input[str],
@@ -1802,9 +2101,9 @@ class TargetTargetDetectorRecipeArgs:
         :param pulumi.Input[str] description: The target description.
         :param pulumi.Input[str] detector: detector for the rule
         :param pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleArgs']]] detector_rules: (Updatable) Overrides to be applied to Detector Rule associated with the target
-        :param pulumi.Input[str] display_name: (Updatable) DetectorTemplate Identifier
+        :param pulumi.Input[str] display_name: (Updatable) DetectorTemplate identifier.
         :param pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleArgs']]] effective_detector_rules: List of effective detector rules for the detector type for recipe after applying defaults
-        :param pulumi.Input[str] id: Unique identifier of TargetResponderRecipe that is immutable on creation
+        :param pulumi.Input[str] id: Unique identifier of TargetResponderRecipe that can't be changed after creation.
         :param pulumi.Input[str] owner: Owner of ResponderRecipe
         :param pulumi.Input[str] state: (Updatable) The current state of the DetectorRule.
         :param pulumi.Input[str] time_created: The date and time the target was created. Format defined by RFC3339.
@@ -1898,7 +2197,7 @@ class TargetTargetDetectorRecipeArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) DetectorTemplate Identifier
+        (Updatable) DetectorTemplate identifier.
         """
         return pulumi.get(self, "display_name")
 
@@ -1922,7 +2221,7 @@ class TargetTargetDetectorRecipeArgs:
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
         """
-        Unique identifier of TargetResponderRecipe that is immutable on creation
+        Unique identifier of TargetResponderRecipe that can't be changed after creation.
         """
         return pulumi.get(self, "id")
 
@@ -2000,7 +2299,7 @@ class TargetTargetDetectorRecipeDetectorRuleArgs:
         :param pulumi.Input[str] detector_rule_id: (Updatable) Identifier for DetectorRule.
         :param pulumi.Input[str] description: The target description.
         :param pulumi.Input[str] detector: detector for the rule
-        :param pulumi.Input[str] display_name: (Updatable) DetectorTemplate Identifier
+        :param pulumi.Input[str] display_name: (Updatable) DetectorTemplate identifier.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] managed_list_types: List of cloudguard managed list types related to this rule
         :param pulumi.Input[str] recommendation: Recommendation for TargetDetectorRecipeDetectorRule
@@ -2087,7 +2386,7 @@ class TargetTargetDetectorRecipeDetectorRuleArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) DetectorTemplate Identifier
+        (Updatable) DetectorTemplate identifier.
         """
         return pulumi.get(self, "display_name")
 
@@ -2302,7 +2601,7 @@ class TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArgs:
                  condition: pulumi.Input[str]):
         """
         :param pulumi.Input[str] compartment_id: (Updatable) compartment associated with condition
-        :param pulumi.Input[str] condition: (Updatable)
+        :param pulumi.Input[str] condition: (Updatable) Base condition object
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "condition", condition)
@@ -2323,7 +2622,7 @@ class TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArgs:
     @pulumi.getter
     def condition(self) -> pulumi.Input[str]:
         """
-        (Updatable)
+        (Updatable) Base condition object
         """
         return pulumi.get(self, "condition")
 
@@ -2495,7 +2794,7 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs:
         :param pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs']]] details: (Updatable) Details of ResponderRule.
         :param pulumi.Input[str] detector: detector for the rule
         :param pulumi.Input[str] detector_rule_id: (Updatable) Identifier for DetectorRule.
-        :param pulumi.Input[str] display_name: (Updatable) DetectorTemplate Identifier
+        :param pulumi.Input[str] display_name: (Updatable) DetectorTemplate identifier.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] managed_list_types: List of cloudguard managed list types related to this rule
         :param pulumi.Input[str] recommendation: Recommendation for TargetDetectorRecipeDetectorRule
@@ -2584,7 +2883,7 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) DetectorTemplate Identifier
+        (Updatable) DetectorTemplate identifier.
         """
         return pulumi.get(self, "display_name")
 
@@ -2799,7 +3098,7 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgs:
                  condition: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] compartment_id: (Updatable) compartment associated with condition
-        :param pulumi.Input[str] condition: (Updatable)
+        :param pulumi.Input[str] condition: (Updatable) Base condition object
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -2822,7 +3121,7 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgs:
     @pulumi.getter
     def condition(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable)
+        (Updatable) Base condition object
         """
         return pulumi.get(self, "condition")
 
@@ -2990,9 +3289,9 @@ class TargetTargetResponderRecipeArgs:
         :param pulumi.Input[str] responder_recipe_id: Identifier for ResponderRecipe.
         :param pulumi.Input[str] compartment_id: (Updatable) compartment associated with condition
         :param pulumi.Input[str] description: The target description.
-        :param pulumi.Input[str] display_name: (Updatable) DetectorTemplate Identifier
+        :param pulumi.Input[str] display_name: (Updatable) DetectorTemplate identifier.
         :param pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeEffectiveResponderRuleArgs']]] effective_responder_rules: List of responder rules associated with the recipe after applying all defaults
-        :param pulumi.Input[str] id: Unique identifier of TargetResponderRecipe that is immutable on creation
+        :param pulumi.Input[str] id: Unique identifier of TargetResponderRecipe that can't be changed after creation.
         :param pulumi.Input[str] owner: Owner of ResponderRecipe
         :param pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeResponderRuleArgs']]] responder_rules: (Updatable) Override responder rules associated with reponder recipe in a target.
         :param pulumi.Input[str] time_created: The date and time the target was created. Format defined by RFC3339.
@@ -3058,7 +3357,7 @@ class TargetTargetResponderRecipeArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) DetectorTemplate Identifier
+        (Updatable) DetectorTemplate identifier.
         """
         return pulumi.get(self, "display_name")
 
@@ -3082,7 +3381,7 @@ class TargetTargetResponderRecipeArgs:
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
         """
-        Unique identifier of TargetResponderRecipe that is immutable on creation
+        Unique identifier of TargetResponderRecipe that can't be changed after creation.
         """
         return pulumi.get(self, "id")
 
@@ -3158,7 +3457,7 @@ class TargetTargetResponderRecipeEffectiveResponderRuleArgs:
         :param pulumi.Input[str] compartment_id: (Updatable) compartment associated with condition
         :param pulumi.Input[str] description: The target description.
         :param pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs']]] details: (Updatable) Details of ResponderRule.
-        :param pulumi.Input[str] display_name: (Updatable) DetectorTemplate Identifier
+        :param pulumi.Input[str] display_name: (Updatable) DetectorTemplate identifier.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] policies: List of Policy
         :param pulumi.Input[str] responder_rule_id: (Updatable) Identifier for ResponderRule.
@@ -3233,7 +3532,7 @@ class TargetTargetResponderRecipeEffectiveResponderRuleArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) DetectorTemplate Identifier
+        (Updatable) DetectorTemplate identifier.
         """
         return pulumi.get(self, "display_name")
 
@@ -3346,7 +3645,7 @@ class TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs:
                  is_enabled: Optional[pulumi.Input[bool]] = None,
                  mode: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] condition: (Updatable)
+        :param pulumi.Input[str] condition: (Updatable) Base condition object
         :param pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArgs']]] configurations: (Updatable) Configurations associated with the ResponderRule
         :param pulumi.Input[bool] is_enabled: Identifies state for ResponderRule
         :param pulumi.Input[str] mode: (Updatable) Execution Mode for ResponderRule
@@ -3364,7 +3663,7 @@ class TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs:
     @pulumi.getter
     def condition(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable)
+        (Updatable) Base condition object
         """
         return pulumi.get(self, "condition")
 
@@ -3484,7 +3783,7 @@ class TargetTargetResponderRecipeResponderRuleArgs:
         :param pulumi.Input[str] responder_rule_id: (Updatable) Identifier for ResponderRule.
         :param pulumi.Input[str] compartment_id: (Updatable) compartment associated with condition
         :param pulumi.Input[str] description: The target description.
-        :param pulumi.Input[str] display_name: (Updatable) DetectorTemplate Identifier
+        :param pulumi.Input[str] display_name: (Updatable) DetectorTemplate identifier.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] policies: List of Policy
         :param pulumi.Input[str] state: (Updatable) The current state of the DetectorRule.
@@ -3568,7 +3867,7 @@ class TargetTargetResponderRecipeResponderRuleArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) DetectorTemplate Identifier
+        (Updatable) DetectorTemplate identifier.
         """
         return pulumi.get(self, "display_name")
 
@@ -3669,7 +3968,7 @@ class TargetTargetResponderRecipeResponderRuleDetailsArgs:
                  is_enabled: Optional[pulumi.Input[bool]] = None,
                  mode: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] condition: (Updatable)
+        :param pulumi.Input[str] condition: (Updatable) Base condition object
         :param pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeResponderRuleDetailsConfigurationArgs']]] configurations: (Updatable) Configurations associated with the ResponderRule
         :param pulumi.Input[bool] is_enabled: Identifies state for ResponderRule
         :param pulumi.Input[str] mode: (Updatable) Execution Mode for ResponderRule
@@ -3687,7 +3986,7 @@ class TargetTargetResponderRecipeResponderRuleDetailsArgs:
     @pulumi.getter
     def condition(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable)
+        (Updatable) Base condition object
         """
         return pulumi.get(self, "condition")
 
@@ -3986,6 +4285,123 @@ class GetResponderRecipesFilterArgs:
         """
         configuration name
         """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetSecurityPoliciesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetSecurityRecipesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetSecurityZonesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
         return pulumi.get(self, "name")
 
     @name.setter

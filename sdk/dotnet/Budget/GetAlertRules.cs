@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Budget
         /// <summary>
         /// This data source provides the list of Alert Rules in Oracle Cloud Infrastructure Budget service.
         /// 
-        /// Returns a list of Alert Rules for a specified Budget.
+        /// Returns a list of Alert Rules for a specified budget.
         /// 
         /// 
         /// {{% examples %}}
@@ -48,7 +48,7 @@ namespace Pulumi.Oci.Budget
         /// <summary>
         /// This data source provides the list of Alert Rules in Oracle Cloud Infrastructure Budget service.
         /// 
-        /// Returns a list of Alert Rules for a specified Budget.
+        /// Returns a list of Alert Rules for a specified budget.
         /// 
         /// 
         /// {{% examples %}}
@@ -84,13 +84,13 @@ namespace Pulumi.Oci.Budget
     public sealed class GetAlertRulesArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The unique Budget OCID
+        /// The unique budget OCID.
         /// </summary>
         [Input("budgetId", required: true)]
         public string BudgetId { get; set; } = null!;
 
         /// <summary>
-        /// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+        /// A user-friendly name. This does not have to be unique, and it's changeable.  Example: `My new resource`
         /// </summary>
         [Input("displayName")]
         public string? DisplayName { get; set; }
@@ -117,13 +117,13 @@ namespace Pulumi.Oci.Budget
     public sealed class GetAlertRulesInvokeArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The unique Budget OCID
+        /// The unique budget OCID.
         /// </summary>
         [Input("budgetId", required: true)]
         public Input<string> BudgetId { get; set; } = null!;
 
         /// <summary>
-        /// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+        /// A user-friendly name. This does not have to be unique, and it's changeable.  Example: `My new resource`
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -156,11 +156,11 @@ namespace Pulumi.Oci.Budget
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAlertRulesAlertRuleResult> AlertRules;
         /// <summary>
-        /// The OCID of the budget
+        /// The OCID of the budget.
         /// </summary>
         public readonly string BudgetId;
         /// <summary>
-        /// The name of the alert rule.
+        /// The name of the alert rule. Avoid entering confidential information.
         /// </summary>
         public readonly string? DisplayName;
         public readonly ImmutableArray<Outputs.GetAlertRulesFilterResult> Filters;

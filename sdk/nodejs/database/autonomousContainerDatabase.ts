@@ -116,7 +116,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
     }
 
     /**
-     * The OCID of the Autonomous Exadata Infrastructure. Please use cloudAutonomousVmClusterId instead.
+     * **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
      */
     public readonly autonomousExadataInfrastructureId!: pulumi.Output<string>;
     /**
@@ -127,6 +127,10 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      * The availability domain of the Autonomous Container Database.
      */
     public /*out*/ readonly availabilityDomain!: pulumi.Output<string>;
+    /**
+     * Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
+     */
+    public /*out*/ readonly availableCpus!: pulumi.Output<number>;
     /**
      * (Updatable) Backup options for the Autonomous Container Database.
      */
@@ -222,7 +226,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      */
     public readonly peerAutonomousContainerDatabaseDisplayName!: pulumi.Output<string>;
     /**
-     * The OCID of the peer Autonomous Exadata Infrastructure for autonomous dataguard. Please use peerCloudAutonomousVmClusterId instead.
+     * *No longer used.* This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `peerCloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
      */
     public readonly peerAutonomousExadataInfrastructureId!: pulumi.Output<string>;
     /**
@@ -239,7 +243,15 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      */
     public readonly protectionMode!: pulumi.Output<string>;
     /**
-     * The role of the dataguard enabled Autonomous Container Database.
+     * An array of CPU values that can be used to successfully provision a single Autonomous Database.
+     */
+    public /*out*/ readonly provisionableCpuses!: pulumi.Output<number[]>;
+    /**
+     * CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+     */
+    public /*out*/ readonly reclaimableCpus!: pulumi.Output<number>;
+    /**
+     * The role of the Autonomous Data Guard-enabled Autonomous Container Database.
      */
     public /*out*/ readonly role!: pulumi.Output<string>;
     /**
@@ -263,6 +275,10 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
+     * The number of CPU cores allocated to the Autonomous VM cluster.
+     */
+    public /*out*/ readonly totalCpus!: pulumi.Output<number>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      */
     public readonly vaultId!: pulumi.Output<string>;
@@ -283,6 +299,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
             resourceInputs["autonomousExadataInfrastructureId"] = state ? state.autonomousExadataInfrastructureId : undefined;
             resourceInputs["autonomousVmClusterId"] = state ? state.autonomousVmClusterId : undefined;
             resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
+            resourceInputs["availableCpus"] = state ? state.availableCpus : undefined;
             resourceInputs["backupConfig"] = state ? state.backupConfig : undefined;
             resourceInputs["cloudAutonomousVmClusterId"] = state ? state.cloudAutonomousVmClusterId : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
@@ -313,12 +330,15 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
             resourceInputs["peerCloudAutonomousVmClusterId"] = state ? state.peerCloudAutonomousVmClusterId : undefined;
             resourceInputs["peerDbUniqueName"] = state ? state.peerDbUniqueName : undefined;
             resourceInputs["protectionMode"] = state ? state.protectionMode : undefined;
+            resourceInputs["provisionableCpuses"] = state ? state.provisionableCpuses : undefined;
+            resourceInputs["reclaimableCpus"] = state ? state.reclaimableCpus : undefined;
             resourceInputs["role"] = state ? state.role : undefined;
             resourceInputs["rotateKeyTrigger"] = state ? state.rotateKeyTrigger : undefined;
             resourceInputs["serviceLevelAgreementType"] = state ? state.serviceLevelAgreementType : undefined;
             resourceInputs["standbyMaintenanceBufferInDays"] = state ? state.standbyMaintenanceBufferInDays : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["totalCpus"] = state ? state.totalCpus : undefined;
             resourceInputs["vaultId"] = state ? state.vaultId : undefined;
         } else {
             const args = argsOrState as AutonomousContainerDatabaseArgs | undefined;
@@ -355,6 +375,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
             resourceInputs["standbyMaintenanceBufferInDays"] = args ? args.standbyMaintenanceBufferInDays : undefined;
             resourceInputs["vaultId"] = args ? args.vaultId : undefined;
             resourceInputs["availabilityDomain"] = undefined /*out*/;
+            resourceInputs["availableCpus"] = undefined /*out*/;
             resourceInputs["dbVersion"] = undefined /*out*/;
             resourceInputs["infrastructureType"] = undefined /*out*/;
             resourceInputs["keyHistoryEntries"] = undefined /*out*/;
@@ -365,9 +386,12 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
             resourceInputs["memoryPerOracleComputeUnitInGbs"] = undefined /*out*/;
             resourceInputs["nextMaintenanceRunId"] = undefined /*out*/;
             resourceInputs["patchId"] = undefined /*out*/;
+            resourceInputs["provisionableCpuses"] = undefined /*out*/;
+            resourceInputs["reclaimableCpus"] = undefined /*out*/;
             resourceInputs["role"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
+            resourceInputs["totalCpus"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AutonomousContainerDatabase.__pulumiType, name, resourceInputs, opts);
@@ -379,7 +403,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
  */
 export interface AutonomousContainerDatabaseState {
     /**
-     * The OCID of the Autonomous Exadata Infrastructure. Please use cloudAutonomousVmClusterId instead.
+     * **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
      */
     autonomousExadataInfrastructureId?: pulumi.Input<string>;
     /**
@@ -390,6 +414,10 @@ export interface AutonomousContainerDatabaseState {
      * The availability domain of the Autonomous Container Database.
      */
     availabilityDomain?: pulumi.Input<string>;
+    /**
+     * Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
+     */
+    availableCpus?: pulumi.Input<number>;
     /**
      * (Updatable) Backup options for the Autonomous Container Database.
      */
@@ -485,7 +513,7 @@ export interface AutonomousContainerDatabaseState {
      */
     peerAutonomousContainerDatabaseDisplayName?: pulumi.Input<string>;
     /**
-     * The OCID of the peer Autonomous Exadata Infrastructure for autonomous dataguard. Please use peerCloudAutonomousVmClusterId instead.
+     * *No longer used.* This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `peerCloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
      */
     peerAutonomousExadataInfrastructureId?: pulumi.Input<string>;
     /**
@@ -502,7 +530,15 @@ export interface AutonomousContainerDatabaseState {
      */
     protectionMode?: pulumi.Input<string>;
     /**
-     * The role of the dataguard enabled Autonomous Container Database.
+     * An array of CPU values that can be used to successfully provision a single Autonomous Database.
+     */
+    provisionableCpuses?: pulumi.Input<pulumi.Input<number>[]>;
+    /**
+     * CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+     */
+    reclaimableCpus?: pulumi.Input<number>;
+    /**
+     * The role of the Autonomous Data Guard-enabled Autonomous Container Database.
      */
     role?: pulumi.Input<string>;
     /**
@@ -526,6 +562,10 @@ export interface AutonomousContainerDatabaseState {
      */
     timeCreated?: pulumi.Input<string>;
     /**
+     * The number of CPU cores allocated to the Autonomous VM cluster.
+     */
+    totalCpus?: pulumi.Input<number>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      */
     vaultId?: pulumi.Input<string>;
@@ -536,7 +576,7 @@ export interface AutonomousContainerDatabaseState {
  */
 export interface AutonomousContainerDatabaseArgs {
     /**
-     * The OCID of the Autonomous Exadata Infrastructure. Please use cloudAutonomousVmClusterId instead.
+     * **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
      */
     autonomousExadataInfrastructureId?: pulumi.Input<string>;
     /**
@@ -598,7 +638,7 @@ export interface AutonomousContainerDatabaseArgs {
      */
     peerAutonomousContainerDatabaseDisplayName?: pulumi.Input<string>;
     /**
-     * The OCID of the peer Autonomous Exadata Infrastructure for autonomous dataguard. Please use peerCloudAutonomousVmClusterId instead.
+     * *No longer used.* This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `peerCloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
      */
     peerAutonomousExadataInfrastructureId?: pulumi.Input<string>;
     /**

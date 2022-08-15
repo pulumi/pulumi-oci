@@ -32,6 +32,7 @@ namespace Pulumi.Oci.ManagementAgent
         ///         var testManagementAgentPlugins = Output.Create(Oci.ManagementAgent.GetManagementAgentPlugins.InvokeAsync(new Oci.ManagementAgent.GetManagementAgentPluginsArgs
         ///         {
         ///             CompartmentId = @var.Compartment_id,
+        ///             AgentId = @var.Management_agent_id,
         ///             DisplayName = @var.Management_agent_plugin_display_name,
         ///             PlatformTypes = @var.Management_agent_plugin_platform_type,
         ///             State = @var.Management_agent_plugin_state,
@@ -67,6 +68,7 @@ namespace Pulumi.Oci.ManagementAgent
         ///         var testManagementAgentPlugins = Output.Create(Oci.ManagementAgent.GetManagementAgentPlugins.InvokeAsync(new Oci.ManagementAgent.GetManagementAgentPluginsArgs
         ///         {
         ///             CompartmentId = @var.Compartment_id,
+        ///             AgentId = @var.Management_agent_id,
         ///             DisplayName = @var.Management_agent_plugin_display_name,
         ///             PlatformTypes = @var.Management_agent_plugin_platform_type,
         ///             State = @var.Management_agent_plugin_state,
@@ -85,6 +87,12 @@ namespace Pulumi.Oci.ManagementAgent
 
     public sealed class GetManagementAgentPluginsArgs : Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// The ManagementAgentID of the agent from which the Management Agents to be filtered.
+        /// </summary>
+        [Input("agentId")]
+        public string? AgentId { get; set; }
+
         /// <summary>
         /// The OCID of the compartment to which a request will be scoped.
         /// </summary>
@@ -109,7 +117,7 @@ namespace Pulumi.Oci.ManagementAgent
         private List<string>? _platformTypes;
 
         /// <summary>
-        /// Filter to return only results having the particular platform type.
+        /// Array of PlatformTypes to return only results having the particular platform types. Example: ["LINUX"]
         /// </summary>
         public List<string> PlatformTypes
         {
@@ -130,6 +138,12 @@ namespace Pulumi.Oci.ManagementAgent
 
     public sealed class GetManagementAgentPluginsInvokeArgs : Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// The ManagementAgentID of the agent from which the Management Agents to be filtered.
+        /// </summary>
+        [Input("agentId")]
+        public Input<string>? AgentId { get; set; }
+
         /// <summary>
         /// The OCID of the compartment to which a request will be scoped.
         /// </summary>
@@ -154,7 +168,7 @@ namespace Pulumi.Oci.ManagementAgent
         private InputList<string>? _platformTypes;
 
         /// <summary>
-        /// Filter to return only results having the particular platform type.
+        /// Array of PlatformTypes to return only results having the particular platform types. Example: ["LINUX"]
         /// </summary>
         public InputList<string> PlatformTypes
         {
@@ -177,6 +191,7 @@ namespace Pulumi.Oci.ManagementAgent
     [OutputType]
     public sealed class GetManagementAgentPluginsResult
     {
+        public readonly string? AgentId;
         public readonly string CompartmentId;
         /// <summary>
         /// Management Agent Plugin Display Name
@@ -199,6 +214,8 @@ namespace Pulumi.Oci.ManagementAgent
 
         [OutputConstructor]
         private GetManagementAgentPluginsResult(
+            string? agentId,
+
             string compartmentId,
 
             string? displayName,
@@ -213,6 +230,7 @@ namespace Pulumi.Oci.ManagementAgent
 
             string? state)
         {
+            AgentId = agentId;
             CompartmentId = compartmentId;
             DisplayName = displayName;
             Filters = filters;

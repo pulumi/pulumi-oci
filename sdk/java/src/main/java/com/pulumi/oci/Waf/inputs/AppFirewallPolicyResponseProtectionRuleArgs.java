@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Waf.inputs.AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArgs;
 import com.pulumi.oci.Waf.inputs.AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsArgs;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -66,6 +67,21 @@ public final class AppFirewallPolicyResponseProtectionRuleArgs extends com.pulum
     }
 
     /**
+     * (Updatable) Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
+     * 
+     */
+    @Import(name="isBodyInspectionEnabled")
+    private @Nullable Output<Boolean> isBodyInspectionEnabled;
+
+    /**
+     * @return (Updatable) Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
+     * 
+     */
+    public Optional<Output<Boolean>> isBodyInspectionEnabled() {
+        return Optional.ofNullable(this.isBodyInspectionEnabled);
+    }
+
+    /**
      * (Updatable) Rule name. Must be unique within the module.
      * 
      */
@@ -81,14 +97,14 @@ public final class AppFirewallPolicyResponseProtectionRuleArgs extends com.pulum
     }
 
     /**
-     * (Updatable) An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are executed in order of appearance. The array cannot contain entries with the same pair of capability key and version more than once.
+     * (Updatable) An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
      * 
      */
     @Import(name="protectionCapabilities", required=true)
     private Output<List<AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArgs>> protectionCapabilities;
 
     /**
-     * @return (Updatable) An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are executed in order of appearance. The array cannot contain entries with the same pair of capability key and version more than once.
+     * @return (Updatable) An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
      * 
      */
     public Output<List<AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArgs>> protectionCapabilities() {
@@ -131,6 +147,7 @@ public final class AppFirewallPolicyResponseProtectionRuleArgs extends com.pulum
         this.actionName = $.actionName;
         this.condition = $.condition;
         this.conditionLanguage = $.conditionLanguage;
+        this.isBodyInspectionEnabled = $.isBodyInspectionEnabled;
         this.name = $.name;
         this.protectionCapabilities = $.protectionCapabilities;
         this.protectionCapabilitySettings = $.protectionCapabilitySettings;
@@ -221,6 +238,27 @@ public final class AppFirewallPolicyResponseProtectionRuleArgs extends com.pulum
         }
 
         /**
+         * @param isBodyInspectionEnabled (Updatable) Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isBodyInspectionEnabled(@Nullable Output<Boolean> isBodyInspectionEnabled) {
+            $.isBodyInspectionEnabled = isBodyInspectionEnabled;
+            return this;
+        }
+
+        /**
+         * @param isBodyInspectionEnabled (Updatable) Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isBodyInspectionEnabled(Boolean isBodyInspectionEnabled) {
+            return isBodyInspectionEnabled(Output.of(isBodyInspectionEnabled));
+        }
+
+        /**
          * @param name (Updatable) Rule name. Must be unique within the module.
          * 
          * @return builder
@@ -242,7 +280,7 @@ public final class AppFirewallPolicyResponseProtectionRuleArgs extends com.pulum
         }
 
         /**
-         * @param protectionCapabilities (Updatable) An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are executed in order of appearance. The array cannot contain entries with the same pair of capability key and version more than once.
+         * @param protectionCapabilities (Updatable) An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
          * 
          * @return builder
          * 
@@ -253,7 +291,7 @@ public final class AppFirewallPolicyResponseProtectionRuleArgs extends com.pulum
         }
 
         /**
-         * @param protectionCapabilities (Updatable) An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are executed in order of appearance. The array cannot contain entries with the same pair of capability key and version more than once.
+         * @param protectionCapabilities (Updatable) An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
          * 
          * @return builder
          * 
@@ -263,7 +301,7 @@ public final class AppFirewallPolicyResponseProtectionRuleArgs extends com.pulum
         }
 
         /**
-         * @param protectionCapabilities (Updatable) An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are executed in order of appearance. The array cannot contain entries with the same pair of capability key and version more than once.
+         * @param protectionCapabilities (Updatable) An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
          * 
          * @return builder
          * 

@@ -35,6 +35,11 @@ namespace Pulumi.Oci.DataScience
     ///                     InstanceConfiguration = new Oci.DataScience.Inputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs
     ///                     {
     ///                         InstanceShapeName = oci_core_shape.Test_shape.Name,
+    ///                         ModelDeploymentInstanceShapeConfigDetails = new Oci.DataScience.Inputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs
+    ///                         {
+    ///                             MemoryInGbs = @var.Model_deployment_model_deployment_configuration_details_model_configuration_details_instance_configuration_model_deployment_instance_shape_config_details_memory_in_gbs,
+    ///                             Ocpus = @var.Model_deployment_model_deployment_configuration_details_model_configuration_details_instance_configuration_model_deployment_instance_shape_config_details_ocpus,
+    ///                         },
     ///                     },
     ///                     ModelId = oci_datascience_model.Test_model.Id,
     ///                     BandwidthMbps = @var.Model_deployment_model_deployment_configuration_details_model_configuration_details_bandwidth_mbps,

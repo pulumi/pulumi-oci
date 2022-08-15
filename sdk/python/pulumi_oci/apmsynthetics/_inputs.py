@@ -18,9 +18,12 @@ __all__ = [
     'ConfigConfigurationVerifyTextArgs',
     'ConfigScriptParameterArgs',
     'ConfigScriptParameterMonitorScriptParameterArgs',
+    'DedicatedVantagePointDvpStackDetailsArgs',
+    'DedicatedVantagePointMonitorStatusCountMapArgs',
     'ScriptMonitorStatusCountMapArgs',
     'ScriptParameterArgs',
     'ScriptParameterScriptParameterArgs',
+    'GetDedicatedVantagePointsFilterArgs',
     'GetMonitorsFilterArgs',
     'GetScriptsFilterArgs',
     'GetVantagePointsFilterArgs',
@@ -57,7 +60,7 @@ class ConfigConfigurationArgs:
         :param pulumi.Input[Sequence[pulumi.Input['ConfigConfigurationRequestQueryParamArgs']]] request_query_params: (Updatable) List of request query params. Example: `[{"paramName": "sortOrder", "paramValue": "asc"}]`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] verify_response_codes: (Updatable) Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
         :param pulumi.Input[str] verify_response_content: (Updatable) Verify response content against regular expression based string. If response content does not match the verifyResponseContent value, then it will be considered a failure.
-        :param pulumi.Input[Sequence[pulumi.Input['ConfigConfigurationVerifyTextArgs']]] verify_texts: (Updatable) Verify all the search strings present in response. If any search string is not present in the response, then it will be considered as a failure.
+        :param pulumi.Input[Sequence[pulumi.Input['ConfigConfigurationVerifyTextArgs']]] verify_texts: (Updatable) Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
         """
         if config_type is not None:
             pulumi.set(__self__, "config_type", config_type)
@@ -248,7 +251,7 @@ class ConfigConfigurationArgs:
     @pulumi.getter(name="verifyTexts")
     def verify_texts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ConfigConfigurationVerifyTextArgs']]]]:
         """
-        (Updatable) Verify all the search strings present in response. If any search string is not present in the response, then it will be considered as a failure.
+        (Updatable) Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
         """
         return pulumi.get(self, "verify_texts")
 
@@ -744,6 +747,144 @@ class ConfigScriptParameterMonitorScriptParameterArgs:
 
 
 @pulumi.input_type
+class DedicatedVantagePointDvpStackDetailsArgs:
+    def __init__(__self__, *,
+                 dvp_stack_id: pulumi.Input[str],
+                 dvp_stack_type: pulumi.Input[str],
+                 dvp_stream_id: pulumi.Input[str],
+                 dvp_version: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] dvp_stack_id: (Updatable) Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+        :param pulumi.Input[str] dvp_stack_type: (Updatable) Type of stack.
+        :param pulumi.Input[str] dvp_stream_id: (Updatable) Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+        :param pulumi.Input[str] dvp_version: (Updatable) Version of DVP.
+        """
+        pulumi.set(__self__, "dvp_stack_id", dvp_stack_id)
+        pulumi.set(__self__, "dvp_stack_type", dvp_stack_type)
+        pulumi.set(__self__, "dvp_stream_id", dvp_stream_id)
+        pulumi.set(__self__, "dvp_version", dvp_version)
+
+    @property
+    @pulumi.getter(name="dvpStackId")
+    def dvp_stack_id(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+        """
+        return pulumi.get(self, "dvp_stack_id")
+
+    @dvp_stack_id.setter
+    def dvp_stack_id(self, value: pulumi.Input[str]):
+        pulumi.set(self, "dvp_stack_id", value)
+
+    @property
+    @pulumi.getter(name="dvpStackType")
+    def dvp_stack_type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Type of stack.
+        """
+        return pulumi.get(self, "dvp_stack_type")
+
+    @dvp_stack_type.setter
+    def dvp_stack_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "dvp_stack_type", value)
+
+    @property
+    @pulumi.getter(name="dvpStreamId")
+    def dvp_stream_id(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+        """
+        return pulumi.get(self, "dvp_stream_id")
+
+    @dvp_stream_id.setter
+    def dvp_stream_id(self, value: pulumi.Input[str]):
+        pulumi.set(self, "dvp_stream_id", value)
+
+    @property
+    @pulumi.getter(name="dvpVersion")
+    def dvp_version(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Version of DVP.
+        """
+        return pulumi.get(self, "dvp_version")
+
+    @dvp_version.setter
+    def dvp_version(self, value: pulumi.Input[str]):
+        pulumi.set(self, "dvp_version", value)
+
+
+@pulumi.input_type
+class DedicatedVantagePointMonitorStatusCountMapArgs:
+    def __init__(__self__, *,
+                 disabled: Optional[pulumi.Input[int]] = None,
+                 enabled: Optional[pulumi.Input[int]] = None,
+                 invalid: Optional[pulumi.Input[int]] = None,
+                 total: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[int] disabled: Number of disabled monitors using the script.
+        :param pulumi.Input[int] enabled: Number of enabled monitors using the script.
+        :param pulumi.Input[int] invalid: Number of invalid monitors using the script.
+        :param pulumi.Input[int] total: Total number of monitors using the script.
+        """
+        if disabled is not None:
+            pulumi.set(__self__, "disabled", disabled)
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if invalid is not None:
+            pulumi.set(__self__, "invalid", invalid)
+        if total is not None:
+            pulumi.set(__self__, "total", total)
+
+    @property
+    @pulumi.getter
+    def disabled(self) -> Optional[pulumi.Input[int]]:
+        """
+        Number of disabled monitors using the script.
+        """
+        return pulumi.get(self, "disabled")
+
+    @disabled.setter
+    def disabled(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "disabled", value)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[pulumi.Input[int]]:
+        """
+        Number of enabled monitors using the script.
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter
+    def invalid(self) -> Optional[pulumi.Input[int]]:
+        """
+        Number of invalid monitors using the script.
+        """
+        return pulumi.get(self, "invalid")
+
+    @invalid.setter
+    def invalid(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "invalid", value)
+
+    @property
+    @pulumi.getter
+    def total(self) -> Optional[pulumi.Input[int]]:
+        """
+        Total number of monitors using the script.
+        """
+        return pulumi.get(self, "total")
+
+    @total.setter
+    def total(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "total", value)
+
+
+@pulumi.input_type
 class ScriptMonitorStatusCountMapArgs:
     def __init__(__self__, *,
                  disabled: Optional[pulumi.Input[int]] = None,
@@ -956,6 +1097,51 @@ class ScriptParameterScriptParameterArgs:
 
 
 @pulumi.input_type
+class GetDedicatedVantagePointsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: A filter to return only the resources that match the entire name.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        A filter to return only the resources that match the entire name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
 class GetMonitorsFilterArgs:
     def __init__(__self__, *,
                  name: str,
@@ -1046,7 +1232,7 @@ class GetVantagePointsFilterArgs:
                  values: Sequence[str],
                  regex: Optional[bool] = None):
         """
-        :param str name: A filter to return only resources that match the entire name given.
+        :param str name: A filter to return only the resources that match the entire name.
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
@@ -1057,7 +1243,7 @@ class GetVantagePointsFilterArgs:
     @pulumi.getter
     def name(self) -> str:
         """
-        A filter to return only resources that match the entire name given.
+        A filter to return only the resources that match the entire name.
         """
         return pulumi.get(self, "name")
 

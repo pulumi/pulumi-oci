@@ -83,6 +83,8 @@ type ExternalNonContainerDatabase struct {
 	NcharacterSet pulumi.StringOutput `pulumi:"ncharacterSet"`
 	// The configuration of Operations Insights for the external database
 	OperationsInsightsConfigs ExternalNonContainerDatabaseOperationsInsightsConfigArrayOutput `pulumi:"operationsInsightsConfigs"`
+	// The configuration of Stack Monitoring for the external database.
+	StackMonitoringConfigs ExternalNonContainerDatabaseStackMonitoringConfigArrayOutput `pulumi:"stackMonitoringConfigs"`
 	// The current state of the Oracle Cloud Infrastructure external database resource.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The date and time the database was created.
@@ -156,6 +158,8 @@ type externalNonContainerDatabaseState struct {
 	NcharacterSet *string `pulumi:"ncharacterSet"`
 	// The configuration of Operations Insights for the external database
 	OperationsInsightsConfigs []ExternalNonContainerDatabaseOperationsInsightsConfig `pulumi:"operationsInsightsConfigs"`
+	// The configuration of Stack Monitoring for the external database.
+	StackMonitoringConfigs []ExternalNonContainerDatabaseStackMonitoringConfig `pulumi:"stackMonitoringConfigs"`
 	// The current state of the Oracle Cloud Infrastructure external database resource.
 	State *string `pulumi:"state"`
 	// The date and time the database was created.
@@ -195,6 +199,8 @@ type ExternalNonContainerDatabaseState struct {
 	NcharacterSet pulumi.StringPtrInput
 	// The configuration of Operations Insights for the external database
 	OperationsInsightsConfigs ExternalNonContainerDatabaseOperationsInsightsConfigArrayInput
+	// The configuration of Stack Monitoring for the external database.
+	StackMonitoringConfigs ExternalNonContainerDatabaseStackMonitoringConfigArrayInput
 	// The current state of the Oracle Cloud Infrastructure external database resource.
 	State pulumi.StringPtrInput
 	// The date and time the database was created.

@@ -18,6 +18,7 @@ class ClusterArgs:
                  compartment_id: pulumi.Input[str],
                  kubernetes_version: pulumi.Input[str],
                  vcn_id: pulumi.Input[str],
+                 cluster_pod_network_options: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterClusterPodNetworkOptionArgs']]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  endpoint_config: Optional[pulumi.Input['ClusterEndpointConfigArgs']] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -30,6 +31,7 @@ class ClusterArgs:
         :param pulumi.Input[str] compartment_id: The OCID of the compartment in which to create the cluster.
         :param pulumi.Input[str] kubernetes_version: (Updatable) The version of Kubernetes to install into the cluster masters.
         :param pulumi.Input[str] vcn_id: The OCID of the virtual cloud network (VCN) in which to create the cluster.
+        :param pulumi.Input[Sequence[pulumi.Input['ClusterClusterPodNetworkOptionArgs']]] cluster_pod_network_options: Available CNIs and network options for existing and new node pools of the cluster
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input['ClusterEndpointConfigArgs'] endpoint_config: The network configuration for access to the Cluster control plane.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -41,6 +43,8 @@ class ClusterArgs:
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "kubernetes_version", kubernetes_version)
         pulumi.set(__self__, "vcn_id", vcn_id)
+        if cluster_pod_network_options is not None:
+            pulumi.set(__self__, "cluster_pod_network_options", cluster_pod_network_options)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if endpoint_config is not None:
@@ -91,6 +95,18 @@ class ClusterArgs:
     @vcn_id.setter
     def vcn_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "vcn_id", value)
+
+    @property
+    @pulumi.getter(name="clusterPodNetworkOptions")
+    def cluster_pod_network_options(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClusterClusterPodNetworkOptionArgs']]]]:
+        """
+        Available CNIs and network options for existing and new node pools of the cluster
+        """
+        return pulumi.get(self, "cluster_pod_network_options")
+
+    @cluster_pod_network_options.setter
+    def cluster_pod_network_options(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterClusterPodNetworkOptionArgs']]]]):
+        pulumi.set(self, "cluster_pod_network_options", value)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -181,6 +197,7 @@ class ClusterArgs:
 class _ClusterState:
     def __init__(__self__, *,
                  available_kubernetes_upgrades: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 cluster_pod_network_options: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterClusterPodNetworkOptionArgs']]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  endpoint_config: Optional[pulumi.Input['ClusterEndpointConfigArgs']] = None,
@@ -198,6 +215,7 @@ class _ClusterState:
         """
         Input properties used for looking up and filtering Cluster resources.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] available_kubernetes_upgrades: Available Kubernetes versions to which the clusters masters may be upgraded.
+        :param pulumi.Input[Sequence[pulumi.Input['ClusterClusterPodNetworkOptionArgs']]] cluster_pod_network_options: Available CNIs and network options for existing and new node pools of the cluster
         :param pulumi.Input[str] compartment_id: The OCID of the compartment in which to create the cluster.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input['ClusterEndpointConfigArgs'] endpoint_config: The network configuration for access to the Cluster control plane.
@@ -215,6 +233,8 @@ class _ClusterState:
         """
         if available_kubernetes_upgrades is not None:
             pulumi.set(__self__, "available_kubernetes_upgrades", available_kubernetes_upgrades)
+        if cluster_pod_network_options is not None:
+            pulumi.set(__self__, "cluster_pod_network_options", cluster_pod_network_options)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
@@ -255,6 +275,18 @@ class _ClusterState:
     @available_kubernetes_upgrades.setter
     def available_kubernetes_upgrades(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "available_kubernetes_upgrades", value)
+
+    @property
+    @pulumi.getter(name="clusterPodNetworkOptions")
+    def cluster_pod_network_options(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClusterClusterPodNetworkOptionArgs']]]]:
+        """
+        Available CNIs and network options for existing and new node pools of the cluster
+        """
+        return pulumi.get(self, "cluster_pod_network_options")
+
+    @cluster_pod_network_options.setter
+    def cluster_pod_network_options(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterClusterPodNetworkOptionArgs']]]]):
+        pulumi.set(self, "cluster_pod_network_options", value)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -430,6 +462,7 @@ class Cluster(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 cluster_pod_network_options: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ClusterClusterPodNetworkOptionArgs']]]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  endpoint_config: Optional[pulumi.Input[pulumi.InputType['ClusterEndpointConfigArgs']]] = None,
@@ -456,6 +489,7 @@ class Cluster(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ClusterClusterPodNetworkOptionArgs']]]] cluster_pod_network_options: Available CNIs and network options for existing and new node pools of the cluster
         :param pulumi.Input[str] compartment_id: The OCID of the compartment in which to create the cluster.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[pulumi.InputType['ClusterEndpointConfigArgs']] endpoint_config: The network configuration for access to the Cluster control plane.
@@ -501,6 +535,7 @@ class Cluster(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 cluster_pod_network_options: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ClusterClusterPodNetworkOptionArgs']]]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  endpoint_config: Optional[pulumi.Input[pulumi.InputType['ClusterEndpointConfigArgs']]] = None,
@@ -523,6 +558,7 @@ class Cluster(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = ClusterArgs.__new__(ClusterArgs)
 
+            __props__.__dict__["cluster_pod_network_options"] = cluster_pod_network_options
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
@@ -555,6 +591,7 @@ class Cluster(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             available_kubernetes_upgrades: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+            cluster_pod_network_options: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ClusterClusterPodNetworkOptionArgs']]]]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             endpoint_config: Optional[pulumi.Input[pulumi.InputType['ClusterEndpointConfigArgs']]] = None,
@@ -577,6 +614,7 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] available_kubernetes_upgrades: Available Kubernetes versions to which the clusters masters may be upgraded.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ClusterClusterPodNetworkOptionArgs']]]] cluster_pod_network_options: Available CNIs and network options for existing and new node pools of the cluster
         :param pulumi.Input[str] compartment_id: The OCID of the compartment in which to create the cluster.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[pulumi.InputType['ClusterEndpointConfigArgs']] endpoint_config: The network configuration for access to the Cluster control plane.
@@ -597,6 +635,7 @@ class Cluster(pulumi.CustomResource):
         __props__ = _ClusterState.__new__(_ClusterState)
 
         __props__.__dict__["available_kubernetes_upgrades"] = available_kubernetes_upgrades
+        __props__.__dict__["cluster_pod_network_options"] = cluster_pod_network_options
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["endpoint_config"] = endpoint_config
@@ -620,6 +659,14 @@ class Cluster(pulumi.CustomResource):
         Available Kubernetes versions to which the clusters masters may be upgraded.
         """
         return pulumi.get(self, "available_kubernetes_upgrades")
+
+    @property
+    @pulumi.getter(name="clusterPodNetworkOptions")
+    def cluster_pod_network_options(self) -> pulumi.Output[Sequence['outputs.ClusterClusterPodNetworkOption']]:
+        """
+        Available CNIs and network options for existing and new node pools of the cluster
+        """
+        return pulumi.get(self, "cluster_pod_network_options")
 
     @property
     @pulumi.getter(name="compartmentId")

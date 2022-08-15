@@ -14,14 +14,14 @@ public final class GetAlertRuleArgs extends com.pulumi.resources.InvokeArgs {
     public static final GetAlertRuleArgs Empty = new GetAlertRuleArgs();
 
     /**
-     * The unique Alert Rule OCID
+     * The unique Alert Rule OCID.
      * 
      */
     @Import(name="alertRuleId", required=true)
     private Output<String> alertRuleId;
 
     /**
-     * @return The unique Alert Rule OCID
+     * @return The unique Alert Rule OCID.
      * 
      */
     public Output<String> alertRuleId() {
@@ -29,14 +29,14 @@ public final class GetAlertRuleArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * The unique Budget OCID
+     * The unique budget OCID.
      * 
      */
     @Import(name="budgetId", required=true)
     private Output<String> budgetId;
 
     /**
-     * @return The unique Budget OCID
+     * @return The unique budget OCID.
      * 
      */
     public Output<String> budgetId() {
@@ -69,7 +69,7 @@ public final class GetAlertRuleArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param alertRuleId The unique Alert Rule OCID
+         * @param alertRuleId The unique Alert Rule OCID.
          * 
          * @return builder
          * 
@@ -80,7 +80,7 @@ public final class GetAlertRuleArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param alertRuleId The unique Alert Rule OCID
+         * @param alertRuleId The unique Alert Rule OCID.
          * 
          * @return builder
          * 
@@ -90,7 +90,7 @@ public final class GetAlertRuleArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param budgetId The unique Budget OCID
+         * @param budgetId The unique budget OCID.
          * 
          * @return builder
          * 
@@ -101,7 +101,7 @@ public final class GetAlertRuleArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param budgetId The unique Budget OCID
+         * @param budgetId The unique budget OCID.
          * 
          * @return builder
          * 

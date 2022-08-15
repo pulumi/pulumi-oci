@@ -78,6 +78,11 @@ public final class GetVolumeAttachmentsVolumeAttachment {
      */
     private final String iqn;
     /**
+     * @return Whether Oracle Cloud Agent is enabled perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
+     * 
+     */
+    private final Boolean isAgentAutoIscsiLoginEnabled;
+    /**
      * @return Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.
      * 
      */
@@ -139,6 +144,7 @@ public final class GetVolumeAttachmentsVolumeAttachment {
         @CustomType.Parameter("instanceId") String instanceId,
         @CustomType.Parameter("ipv4") String ipv4,
         @CustomType.Parameter("iqn") String iqn,
+        @CustomType.Parameter("isAgentAutoIscsiLoginEnabled") Boolean isAgentAutoIscsiLoginEnabled,
         @CustomType.Parameter("isMultipath") Boolean isMultipath,
         @CustomType.Parameter("isPvEncryptionInTransitEnabled") Boolean isPvEncryptionInTransitEnabled,
         @CustomType.Parameter("isReadOnly") Boolean isReadOnly,
@@ -162,6 +168,7 @@ public final class GetVolumeAttachmentsVolumeAttachment {
         this.instanceId = instanceId;
         this.ipv4 = ipv4;
         this.iqn = iqn;
+        this.isAgentAutoIscsiLoginEnabled = isAgentAutoIscsiLoginEnabled;
         this.isMultipath = isMultipath;
         this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
         this.isReadOnly = isReadOnly;
@@ -264,6 +271,13 @@ public final class GetVolumeAttachmentsVolumeAttachment {
         return this.iqn;
     }
     /**
+     * @return Whether Oracle Cloud Agent is enabled perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
+     * 
+     */
+    public Boolean isAgentAutoIscsiLoginEnabled() {
+        return this.isAgentAutoIscsiLoginEnabled;
+    }
+    /**
      * @return Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.
      * 
      */
@@ -354,6 +368,7 @@ public final class GetVolumeAttachmentsVolumeAttachment {
         private String instanceId;
         private String ipv4;
         private String iqn;
+        private Boolean isAgentAutoIscsiLoginEnabled;
         private Boolean isMultipath;
         private Boolean isPvEncryptionInTransitEnabled;
         private Boolean isReadOnly;
@@ -384,6 +399,7 @@ public final class GetVolumeAttachmentsVolumeAttachment {
     	      this.instanceId = defaults.instanceId;
     	      this.ipv4 = defaults.ipv4;
     	      this.iqn = defaults.iqn;
+    	      this.isAgentAutoIscsiLoginEnabled = defaults.isAgentAutoIscsiLoginEnabled;
     	      this.isMultipath = defaults.isMultipath;
     	      this.isPvEncryptionInTransitEnabled = defaults.isPvEncryptionInTransitEnabled;
     	      this.isReadOnly = defaults.isReadOnly;
@@ -445,6 +461,10 @@ public final class GetVolumeAttachmentsVolumeAttachment {
             this.iqn = Objects.requireNonNull(iqn);
             return this;
         }
+        public Builder isAgentAutoIscsiLoginEnabled(Boolean isAgentAutoIscsiLoginEnabled) {
+            this.isAgentAutoIscsiLoginEnabled = Objects.requireNonNull(isAgentAutoIscsiLoginEnabled);
+            return this;
+        }
         public Builder isMultipath(Boolean isMultipath) {
             this.isMultipath = Objects.requireNonNull(isMultipath);
             return this;
@@ -492,7 +512,7 @@ public final class GetVolumeAttachmentsVolumeAttachment {
             this.volumeId = Objects.requireNonNull(volumeId);
             return this;
         }        public GetVolumeAttachmentsVolumeAttachment build() {
-            return new GetVolumeAttachmentsVolumeAttachment(attachmentType, availabilityDomain, chapSecret, chapUsername, compartmentId, device, displayName, encryptionInTransitType, id, instanceId, ipv4, iqn, isMultipath, isPvEncryptionInTransitEnabled, isReadOnly, isShareable, iscsiLoginState, multipathDevices, port, state, timeCreated, useChap, volumeId);
+            return new GetVolumeAttachmentsVolumeAttachment(attachmentType, availabilityDomain, chapSecret, chapUsername, compartmentId, device, displayName, encryptionInTransitType, id, instanceId, ipv4, iqn, isAgentAutoIscsiLoginEnabled, isMultipath, isPvEncryptionInTransitEnabled, isReadOnly, isShareable, iscsiLoginState, multipathDevices, port, state, timeCreated, useChap, volumeId);
         }
     }
 }

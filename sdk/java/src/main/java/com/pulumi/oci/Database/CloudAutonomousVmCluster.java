@@ -39,6 +39,20 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:Database/cloudAutonomousVmCluster:CloudAutonomousVmCluster")
 public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResource {
     /**
+     * The data disk group size allocated for Autonomous Databases, in TBs.
+     * 
+     */
+    @Export(name="autonomousDataStorageSizeInTbs", type=Double.class, parameters={})
+    private Output<Double> autonomousDataStorageSizeInTbs;
+
+    /**
+     * @return The data disk group size allocated for Autonomous Databases, in TBs.
+     * 
+     */
+    public Output<Double> autonomousDataStorageSizeInTbs() {
+        return this.autonomousDataStorageSizeInTbs;
+    }
+    /**
      * The name of the availability domain that the cloud Autonomous VM cluster is located in.
      * 
      */
@@ -53,6 +67,48 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
         return this.availabilityDomain;
     }
     /**
+     * The data disk group size available for Autonomous Databases, in TBs.
+     * 
+     */
+    @Export(name="availableAutonomousDataStorageSizeInTbs", type=Double.class, parameters={})
+    private Output<Double> availableAutonomousDataStorageSizeInTbs;
+
+    /**
+     * @return The data disk group size available for Autonomous Databases, in TBs.
+     * 
+     */
+    public Output<Double> availableAutonomousDataStorageSizeInTbs() {
+        return this.availableAutonomousDataStorageSizeInTbs;
+    }
+    /**
+     * The number of Autonomous Container Databases that can be created with the currently available local storage.
+     * 
+     */
+    @Export(name="availableContainerDatabases", type=Integer.class, parameters={})
+    private Output<Integer> availableContainerDatabases;
+
+    /**
+     * @return The number of Autonomous Container Databases that can be created with the currently available local storage.
+     * 
+     */
+    public Output<Integer> availableContainerDatabases() {
+        return this.availableContainerDatabases;
+    }
+    /**
+     * CPU cores available for allocation to Autonomous Databases.
+     * 
+     */
+    @Export(name="availableCpus", type=Double.class, parameters={})
+    private Output<Double> availableCpus;
+
+    /**
+     * @return CPU cores available for allocation to Autonomous Databases.
+     * 
+     */
+    public Output<Double> availableCpus() {
+        return this.availableCpus;
+    }
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure.
      * 
      */
@@ -65,6 +121,20 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
      */
     public Output<String> cloudExadataInfrastructureId() {
         return this.cloudExadataInfrastructureId;
+    }
+    /**
+     * The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+     * 
+     */
+    @Export(name="clusterTimeZone", type=String.class, parameters={})
+    private Output<String> clusterTimeZone;
+
+    /**
+     * @return The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+     * 
+     */
+    public Output<String> clusterTimeZone() {
+        return this.clusterTimeZone;
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -121,6 +191,20 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
      */
     public Output<Double> dataStorageSizeInTbs() {
         return this.dataStorageSizeInTbs;
+    }
+    /**
+     * The local node storage allocated in GBs.
+     * 
+     */
+    @Export(name="dbNodeStorageSizeInGbs", type=Integer.class, parameters={})
+    private Output<Integer> dbNodeStorageSizeInGbs;
+
+    /**
+     * @return The local node storage allocated in GBs.
+     * 
+     */
+    public Output<Integer> dbNodeStorageSizeInGbs() {
+        return this.dbNodeStorageSizeInGbs;
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -263,6 +347,20 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
         return this.lifecycleDetails;
     }
     /**
+     * The amount of memory (in GBs) enabled per each OCPU core.
+     * 
+     */
+    @Export(name="memoryPerOracleComputeUnitInGbs", type=Integer.class, parameters={})
+    private Output<Integer> memoryPerOracleComputeUnitInGbs;
+
+    /**
+     * @return The amount of memory (in GBs) enabled per each OCPU core.
+     * 
+     */
+    public Output<Integer> memoryPerOracleComputeUnitInGbs() {
+        return this.memoryPerOracleComputeUnitInGbs;
+    }
+    /**
      * The memory allocated in GBs.
      * 
      */
@@ -305,16 +403,16 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
         return this.nodeCount;
     }
     /**
-     * (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-     * * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+     * (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+     * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      * 
      */
     @Export(name="nsgIds", type=List.class, parameters={String.class})
     private Output<List<String>> nsgIds;
 
     /**
-     * @return (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-     * * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+     * @return (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+     * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      * 
      */
     public Output<List<String>> nsgIds() {
@@ -333,6 +431,20 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
      */
     public Output<Double> ocpuCount() {
         return this.ocpuCount;
+    }
+    /**
+     * CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+     * 
+     */
+    @Export(name="reclaimableCpus", type=Double.class, parameters={})
+    private Output<Double> reclaimableCpus;
+
+    /**
+     * @return CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+     * 
+     */
+    public Output<Double> reclaimableCpus() {
+        return this.reclaimableCpus;
     }
     @Export(name="rotateOrdsCertsTrigger", type=Boolean.class, parameters={})
     private Output</* @Nullable */ Boolean> rotateOrdsCertsTrigger;
@@ -415,6 +527,20 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
      */
     public Output<String> timeUpdated() {
         return this.timeUpdated;
+    }
+    /**
+     * The total number of Autonomous Container Databases that can be created with the allocated local storage.
+     * 
+     */
+    @Export(name="totalContainerDatabases", type=Integer.class, parameters={})
+    private Output<Integer> totalContainerDatabases;
+
+    /**
+     * @return The total number of Autonomous Container Databases that can be created with the allocated local storage.
+     * 
+     */
+    public Output<Integer> totalContainerDatabases() {
+        return this.totalContainerDatabases;
     }
 
     /**

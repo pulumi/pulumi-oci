@@ -32,6 +32,7 @@ import (
 // 			DeployArtifactSource: &devops.DeployArtifactDeployArtifactSourceArgs{
 // 				DeployArtifactSourceType: pulumi.Any(_var.Deploy_artifact_deploy_artifact_source_deploy_artifact_source_type),
 // 				Base64encodedContent:     pulumi.Any(_var.Deploy_artifact_deploy_artifact_source_base64encoded_content),
+// 				ChartUrl:                 pulumi.Any(_var.Deploy_artifact_deploy_artifact_source_chart_url),
 // 				DeployArtifactPath:       pulumi.Any(_var.Deploy_artifact_deploy_artifact_source_deploy_artifact_path),
 // 				DeployArtifactVersion:    pulumi.Any(_var.Deploy_artifact_deploy_artifact_source_deploy_artifact_version),
 // 				ImageDigest:              pulumi.Any(_var.Deploy_artifact_deploy_artifact_source_image_digest),

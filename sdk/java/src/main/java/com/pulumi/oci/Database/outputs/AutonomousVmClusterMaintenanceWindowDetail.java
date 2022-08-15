@@ -6,6 +6,7 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Database.outputs.AutonomousVmClusterMaintenanceWindowDetailDaysOfWeek;
 import com.pulumi.oci.Database.outputs.AutonomousVmClusterMaintenanceWindowDetailMonth;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -15,6 +16,7 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class AutonomousVmClusterMaintenanceWindowDetail {
+    private final @Nullable Integer customActionTimeoutInMins;
     /**
      * @return (Updatable) Days during the week when maintenance should be performed.
      * 
@@ -26,6 +28,7 @@ public final class AutonomousVmClusterMaintenanceWindowDetail {
      * 
      */
     private final @Nullable List<Integer> hoursOfDays;
+    private final @Nullable Boolean isCustomActionTimeoutEnabled;
     /**
      * @return (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
      * 
@@ -36,6 +39,7 @@ public final class AutonomousVmClusterMaintenanceWindowDetail {
      * 
      */
     private final @Nullable List<AutonomousVmClusterMaintenanceWindowDetailMonth> months;
+    private final @Nullable String patchingMode;
     /**
      * @return (Updatable) The maintenance window scheduling preference.
      * 
@@ -49,20 +53,29 @@ public final class AutonomousVmClusterMaintenanceWindowDetail {
 
     @CustomType.Constructor
     private AutonomousVmClusterMaintenanceWindowDetail(
+        @CustomType.Parameter("customActionTimeoutInMins") @Nullable Integer customActionTimeoutInMins,
         @CustomType.Parameter("daysOfWeeks") @Nullable List<AutonomousVmClusterMaintenanceWindowDetailDaysOfWeek> daysOfWeeks,
         @CustomType.Parameter("hoursOfDays") @Nullable List<Integer> hoursOfDays,
+        @CustomType.Parameter("isCustomActionTimeoutEnabled") @Nullable Boolean isCustomActionTimeoutEnabled,
         @CustomType.Parameter("leadTimeInWeeks") @Nullable Integer leadTimeInWeeks,
         @CustomType.Parameter("months") @Nullable List<AutonomousVmClusterMaintenanceWindowDetailMonth> months,
+        @CustomType.Parameter("patchingMode") @Nullable String patchingMode,
         @CustomType.Parameter("preference") String preference,
         @CustomType.Parameter("weeksOfMonths") @Nullable List<Integer> weeksOfMonths) {
+        this.customActionTimeoutInMins = customActionTimeoutInMins;
         this.daysOfWeeks = daysOfWeeks;
         this.hoursOfDays = hoursOfDays;
+        this.isCustomActionTimeoutEnabled = isCustomActionTimeoutEnabled;
         this.leadTimeInWeeks = leadTimeInWeeks;
         this.months = months;
+        this.patchingMode = patchingMode;
         this.preference = preference;
         this.weeksOfMonths = weeksOfMonths;
     }
 
+    public Optional<Integer> customActionTimeoutInMins() {
+        return Optional.ofNullable(this.customActionTimeoutInMins);
+    }
     /**
      * @return (Updatable) Days during the week when maintenance should be performed.
      * 
@@ -78,6 +91,9 @@ public final class AutonomousVmClusterMaintenanceWindowDetail {
     public List<Integer> hoursOfDays() {
         return this.hoursOfDays == null ? List.of() : this.hoursOfDays;
     }
+    public Optional<Boolean> isCustomActionTimeoutEnabled() {
+        return Optional.ofNullable(this.isCustomActionTimeoutEnabled);
+    }
     /**
      * @return (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
      * 
@@ -91,6 +107,9 @@ public final class AutonomousVmClusterMaintenanceWindowDetail {
      */
     public List<AutonomousVmClusterMaintenanceWindowDetailMonth> months() {
         return this.months == null ? List.of() : this.months;
+    }
+    public Optional<String> patchingMode() {
+        return Optional.ofNullable(this.patchingMode);
     }
     /**
      * @return (Updatable) The maintenance window scheduling preference.
@@ -116,10 +135,13 @@ public final class AutonomousVmClusterMaintenanceWindowDetail {
     }
 
     public static final class Builder {
+        private @Nullable Integer customActionTimeoutInMins;
         private @Nullable List<AutonomousVmClusterMaintenanceWindowDetailDaysOfWeek> daysOfWeeks;
         private @Nullable List<Integer> hoursOfDays;
+        private @Nullable Boolean isCustomActionTimeoutEnabled;
         private @Nullable Integer leadTimeInWeeks;
         private @Nullable List<AutonomousVmClusterMaintenanceWindowDetailMonth> months;
+        private @Nullable String patchingMode;
         private String preference;
         private @Nullable List<Integer> weeksOfMonths;
 
@@ -129,14 +151,21 @@ public final class AutonomousVmClusterMaintenanceWindowDetail {
 
         public Builder(AutonomousVmClusterMaintenanceWindowDetail defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.customActionTimeoutInMins = defaults.customActionTimeoutInMins;
     	      this.daysOfWeeks = defaults.daysOfWeeks;
     	      this.hoursOfDays = defaults.hoursOfDays;
+    	      this.isCustomActionTimeoutEnabled = defaults.isCustomActionTimeoutEnabled;
     	      this.leadTimeInWeeks = defaults.leadTimeInWeeks;
     	      this.months = defaults.months;
+    	      this.patchingMode = defaults.patchingMode;
     	      this.preference = defaults.preference;
     	      this.weeksOfMonths = defaults.weeksOfMonths;
         }
 
+        public Builder customActionTimeoutInMins(@Nullable Integer customActionTimeoutInMins) {
+            this.customActionTimeoutInMins = customActionTimeoutInMins;
+            return this;
+        }
         public Builder daysOfWeeks(@Nullable List<AutonomousVmClusterMaintenanceWindowDetailDaysOfWeek> daysOfWeeks) {
             this.daysOfWeeks = daysOfWeeks;
             return this;
@@ -151,6 +180,10 @@ public final class AutonomousVmClusterMaintenanceWindowDetail {
         public Builder hoursOfDays(Integer... hoursOfDays) {
             return hoursOfDays(List.of(hoursOfDays));
         }
+        public Builder isCustomActionTimeoutEnabled(@Nullable Boolean isCustomActionTimeoutEnabled) {
+            this.isCustomActionTimeoutEnabled = isCustomActionTimeoutEnabled;
+            return this;
+        }
         public Builder leadTimeInWeeks(@Nullable Integer leadTimeInWeeks) {
             this.leadTimeInWeeks = leadTimeInWeeks;
             return this;
@@ -161,6 +194,10 @@ public final class AutonomousVmClusterMaintenanceWindowDetail {
         }
         public Builder months(AutonomousVmClusterMaintenanceWindowDetailMonth... months) {
             return months(List.of(months));
+        }
+        public Builder patchingMode(@Nullable String patchingMode) {
+            this.patchingMode = patchingMode;
+            return this;
         }
         public Builder preference(String preference) {
             this.preference = Objects.requireNonNull(preference);
@@ -173,7 +210,7 @@ public final class AutonomousVmClusterMaintenanceWindowDetail {
         public Builder weeksOfMonths(Integer... weeksOfMonths) {
             return weeksOfMonths(List.of(weeksOfMonths));
         }        public AutonomousVmClusterMaintenanceWindowDetail build() {
-            return new AutonomousVmClusterMaintenanceWindowDetail(daysOfWeeks, hoursOfDays, leadTimeInWeeks, months, preference, weeksOfMonths);
+            return new AutonomousVmClusterMaintenanceWindowDetail(customActionTimeoutInMins, daysOfWeeks, hoursOfDays, isCustomActionTimeoutEnabled, leadTimeInWeeks, months, patchingMode, preference, weeksOfMonths);
         }
     }
 }

@@ -47,7 +47,7 @@ export interface GetDataMaskRuleArgs {
  */
 export interface GetDataMaskRuleResult {
     /**
-     * Compartment Identifier where the resource is created
+     * Compartment Identifier where the resource is created.
      */
     readonly compartmentId: string;
     /**
@@ -68,7 +68,7 @@ export interface GetDataMaskRuleResult {
      */
     readonly description: string;
     /**
-     * Data Mask Rule Identifier, can be renamed
+     * Data Mask Rule Identifier, can be renamed.
      */
     readonly displayName: string;
     /**

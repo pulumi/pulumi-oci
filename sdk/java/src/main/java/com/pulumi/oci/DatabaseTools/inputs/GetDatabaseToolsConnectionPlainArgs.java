@@ -13,14 +13,14 @@ public final class GetDatabaseToolsConnectionPlainArgs extends com.pulumi.resour
     public static final GetDatabaseToolsConnectionPlainArgs Empty = new GetDatabaseToolsConnectionPlainArgs();
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a DatabaseToolsConnection.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools connection.
      * 
      */
     @Import(name="databaseToolsConnectionId", required=true)
     private String databaseToolsConnectionId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a DatabaseToolsConnection.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools connection.
      * 
      */
     public String databaseToolsConnectionId() {
@@ -52,7 +52,7 @@ public final class GetDatabaseToolsConnectionPlainArgs extends com.pulumi.resour
         }
 
         /**
-         * @param databaseToolsConnectionId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a DatabaseToolsConnection.
+         * @param databaseToolsConnectionId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools connection.
          * 
          * @return builder
          * 

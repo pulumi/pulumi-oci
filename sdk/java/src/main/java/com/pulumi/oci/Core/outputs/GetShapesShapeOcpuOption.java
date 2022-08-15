@@ -10,12 +10,12 @@ import java.util.Objects;
 @CustomType
 public final class GetShapesShapeOcpuOption {
     /**
-     * @return The maximum number of OCPUs.
+     * @return The maximum allowed percentage of cores enabled.
      * 
      */
     private final Double max;
     /**
-     * @return The minimum number of OCPUs.
+     * @return The minimum allowed percentage of cores enabled.
      * 
      */
     private final Double min;
@@ -29,14 +29,14 @@ public final class GetShapesShapeOcpuOption {
     }
 
     /**
-     * @return The maximum number of OCPUs.
+     * @return The maximum allowed percentage of cores enabled.
      * 
      */
     public Double max() {
         return this.max;
     }
     /**
-     * @return The minimum number of OCPUs.
+     * @return The minimum allowed percentage of cores enabled.
      * 
      */
     public Double min() {

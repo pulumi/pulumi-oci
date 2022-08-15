@@ -5,10 +5,12 @@ package com.pulumi.oci.Mysql.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Mysql.inputs.MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -50,18 +52,33 @@ public final class MysqlBackupDbSystemSnapshotBackupPolicyArgs extends com.pulum
     }
 
     /**
-     * If automated backups are enabled or disabled.
+     * Specifies if PITR is enabled or disabled.
      * 
      */
     @Import(name="isEnabled")
     private @Nullable Output<Boolean> isEnabled;
 
     /**
-     * @return If automated backups are enabled or disabled.
+     * @return Specifies if PITR is enabled or disabled.
      * 
      */
     public Optional<Output<Boolean>> isEnabled() {
         return Optional.ofNullable(this.isEnabled);
+    }
+
+    /**
+     * The PITR policy for the DB System.
+     * 
+     */
+    @Import(name="pitrPolicies")
+    private @Nullable Output<List<MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs>> pitrPolicies;
+
+    /**
+     * @return The PITR policy for the DB System.
+     * 
+     */
+    public Optional<Output<List<MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs>>> pitrPolicies() {
+        return Optional.ofNullable(this.pitrPolicies);
     }
 
     /**
@@ -100,6 +117,7 @@ public final class MysqlBackupDbSystemSnapshotBackupPolicyArgs extends com.pulum
         this.definedTags = $.definedTags;
         this.freeformTags = $.freeformTags;
         this.isEnabled = $.isEnabled;
+        this.pitrPolicies = $.pitrPolicies;
         this.retentionInDays = $.retentionInDays;
         this.windowStartTime = $.windowStartTime;
     }
@@ -165,7 +183,7 @@ public final class MysqlBackupDbSystemSnapshotBackupPolicyArgs extends com.pulum
         }
 
         /**
-         * @param isEnabled If automated backups are enabled or disabled.
+         * @param isEnabled Specifies if PITR is enabled or disabled.
          * 
          * @return builder
          * 
@@ -176,13 +194,44 @@ public final class MysqlBackupDbSystemSnapshotBackupPolicyArgs extends com.pulum
         }
 
         /**
-         * @param isEnabled If automated backups are enabled or disabled.
+         * @param isEnabled Specifies if PITR is enabled or disabled.
          * 
          * @return builder
          * 
          */
         public Builder isEnabled(Boolean isEnabled) {
             return isEnabled(Output.of(isEnabled));
+        }
+
+        /**
+         * @param pitrPolicies The PITR policy for the DB System.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pitrPolicies(@Nullable Output<List<MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs>> pitrPolicies) {
+            $.pitrPolicies = pitrPolicies;
+            return this;
+        }
+
+        /**
+         * @param pitrPolicies The PITR policy for the DB System.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pitrPolicies(List<MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs> pitrPolicies) {
+            return pitrPolicies(Output.of(pitrPolicies));
+        }
+
+        /**
+         * @param pitrPolicies The PITR policy for the DB System.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pitrPolicies(MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs... pitrPolicies) {
+            return pitrPolicies(List.of(pitrPolicies));
         }
 
         /**

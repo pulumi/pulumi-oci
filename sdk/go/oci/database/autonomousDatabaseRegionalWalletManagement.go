@@ -27,6 +27,7 @@ import (
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		_, err := Database.NewAutonomousDatabaseRegionalWalletManagement(ctx, "testAutonomousDatabaseRegionalWalletManagement", &Database.AutonomousDatabaseRegionalWalletManagementArgs{
+// 			GracePeriod:  pulumi.Any(_var.Autonomous_database_regional_wallet_management_grace_period),
 // 			ShouldRotate: pulumi.Any(_var.Autonomous_database_regional_wallet_management_should_rotate),
 // 		})
 // 		if err != nil {
@@ -43,6 +44,8 @@ import (
 type AutonomousDatabaseRegionalWalletManagement struct {
 	pulumi.CustomResourceState
 
+	// (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+	GracePeriod pulumi.IntOutput `pulumi:"gracePeriod"`
 	// (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
 	ShouldRotate pulumi.BoolPtrOutput `pulumi:"shouldRotate"`
 	// The current lifecycle state of the Autonomous Database wallet.
@@ -80,6 +83,8 @@ func GetAutonomousDatabaseRegionalWalletManagement(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AutonomousDatabaseRegionalWalletManagement resources.
 type autonomousDatabaseRegionalWalletManagementState struct {
+	// (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+	GracePeriod *int `pulumi:"gracePeriod"`
 	// (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
 	ShouldRotate *bool `pulumi:"shouldRotate"`
 	// The current lifecycle state of the Autonomous Database wallet.
@@ -89,6 +94,8 @@ type autonomousDatabaseRegionalWalletManagementState struct {
 }
 
 type AutonomousDatabaseRegionalWalletManagementState struct {
+	// (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+	GracePeriod pulumi.IntPtrInput
 	// (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
 	ShouldRotate pulumi.BoolPtrInput
 	// The current lifecycle state of the Autonomous Database wallet.
@@ -102,12 +109,16 @@ func (AutonomousDatabaseRegionalWalletManagementState) ElementType() reflect.Typ
 }
 
 type autonomousDatabaseRegionalWalletManagementArgs struct {
+	// (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+	GracePeriod *int `pulumi:"gracePeriod"`
 	// (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
 	ShouldRotate *bool `pulumi:"shouldRotate"`
 }
 
 // The set of arguments for constructing a AutonomousDatabaseRegionalWalletManagement resource.
 type AutonomousDatabaseRegionalWalletManagementArgs struct {
+	// (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+	GracePeriod pulumi.IntPtrInput
 	// (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
 	ShouldRotate pulumi.BoolPtrInput
 }

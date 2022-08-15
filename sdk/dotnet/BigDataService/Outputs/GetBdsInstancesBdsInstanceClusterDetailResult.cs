@@ -54,6 +54,10 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// </summary>
         public readonly string HueServerUrl;
         /// <summary>
+        /// The URL of the Jupyterhub.
+        /// </summary>
+        public readonly string JupyterHubUrl;
+        /// <summary>
         /// Oracle Linux version installed in the cluster.
         /// </summary>
         public readonly string OsVersion;
@@ -88,6 +92,8 @@ namespace Pulumi.Oci.BigDataService.Outputs
 
             string hueServerUrl,
 
+            string jupyterHubUrl,
+
             string osVersion,
 
             string timeCreated,
@@ -104,6 +110,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
             CsqlCellVersion = csqlCellVersion;
             DbVersion = dbVersion;
             HueServerUrl = hueServerUrl;
+            JupyterHubUrl = jupyterHubUrl;
             OsVersion = osVersion;
             TimeCreated = timeCreated;
             TimeRefreshed = timeRefreshed;

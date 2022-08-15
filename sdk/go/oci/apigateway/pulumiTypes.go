@@ -753,6 +753,8 @@ type DeploymentSpecificationRequestPolicies struct {
 	MutualTls *DeploymentSpecificationRequestPoliciesMutualTls `pulumi:"mutualTls"`
 	// (Updatable) Limit the number of requests that should be handled for the specified window using a specfic key.
 	RateLimiting *DeploymentSpecificationRequestPoliciesRateLimiting `pulumi:"rateLimiting"`
+	// (Updatable) Usage plan policies for this deployment
+	UsagePlans *DeploymentSpecificationRequestPoliciesUsagePlans `pulumi:"usagePlans"`
 }
 
 // DeploymentSpecificationRequestPoliciesInput is an input type that accepts DeploymentSpecificationRequestPoliciesArgs and DeploymentSpecificationRequestPoliciesOutput values.
@@ -775,6 +777,8 @@ type DeploymentSpecificationRequestPoliciesArgs struct {
 	MutualTls DeploymentSpecificationRequestPoliciesMutualTlsPtrInput `pulumi:"mutualTls"`
 	// (Updatable) Limit the number of requests that should be handled for the specified window using a specfic key.
 	RateLimiting DeploymentSpecificationRequestPoliciesRateLimitingPtrInput `pulumi:"rateLimiting"`
+	// (Updatable) Usage plan policies for this deployment
+	UsagePlans DeploymentSpecificationRequestPoliciesUsagePlansPtrInput `pulumi:"usagePlans"`
 }
 
 func (DeploymentSpecificationRequestPoliciesArgs) ElementType() reflect.Type {
@@ -882,6 +886,13 @@ func (o DeploymentSpecificationRequestPoliciesOutput) RateLimiting() DeploymentS
 	}).(DeploymentSpecificationRequestPoliciesRateLimitingPtrOutput)
 }
 
+// (Updatable) Usage plan policies for this deployment
+func (o DeploymentSpecificationRequestPoliciesOutput) UsagePlans() DeploymentSpecificationRequestPoliciesUsagePlansPtrOutput {
+	return o.ApplyT(func(v DeploymentSpecificationRequestPolicies) *DeploymentSpecificationRequestPoliciesUsagePlans {
+		return v.UsagePlans
+	}).(DeploymentSpecificationRequestPoliciesUsagePlansPtrOutput)
+}
+
 type DeploymentSpecificationRequestPoliciesPtrOutput struct{ *pulumi.OutputState }
 
 func (DeploymentSpecificationRequestPoliciesPtrOutput) ElementType() reflect.Type {
@@ -944,6 +955,16 @@ func (o DeploymentSpecificationRequestPoliciesPtrOutput) RateLimiting() Deployme
 		}
 		return v.RateLimiting
 	}).(DeploymentSpecificationRequestPoliciesRateLimitingPtrOutput)
+}
+
+// (Updatable) Usage plan policies for this deployment
+func (o DeploymentSpecificationRequestPoliciesPtrOutput) UsagePlans() DeploymentSpecificationRequestPoliciesUsagePlansPtrOutput {
+	return o.ApplyT(func(v *DeploymentSpecificationRequestPolicies) *DeploymentSpecificationRequestPoliciesUsagePlans {
+		if v == nil {
+			return nil
+		}
+		return v.UsagePlans
+	}).(DeploymentSpecificationRequestPoliciesUsagePlansPtrOutput)
 }
 
 type DeploymentSpecificationRequestPoliciesAuthentication struct {
@@ -2322,6 +2343,159 @@ func (o DeploymentSpecificationRequestPoliciesRateLimitingPtrOutput) RateKey() p
 		}
 		return &v.RateKey
 	}).(pulumi.StringPtrOutput)
+}
+
+type DeploymentSpecificationRequestPoliciesUsagePlans struct {
+	// (Updatable) A list of context variables specifying where API tokens may be located in a request. Example locations:
+	// * "request.headers[token]"
+	// * "request.query[token]"
+	// * "request.auth[Token]"
+	// * "request.path[TOKEN]"
+	TokenLocations []string `pulumi:"tokenLocations"`
+}
+
+// DeploymentSpecificationRequestPoliciesUsagePlansInput is an input type that accepts DeploymentSpecificationRequestPoliciesUsagePlansArgs and DeploymentSpecificationRequestPoliciesUsagePlansOutput values.
+// You can construct a concrete instance of `DeploymentSpecificationRequestPoliciesUsagePlansInput` via:
+//
+//          DeploymentSpecificationRequestPoliciesUsagePlansArgs{...}
+type DeploymentSpecificationRequestPoliciesUsagePlansInput interface {
+	pulumi.Input
+
+	ToDeploymentSpecificationRequestPoliciesUsagePlansOutput() DeploymentSpecificationRequestPoliciesUsagePlansOutput
+	ToDeploymentSpecificationRequestPoliciesUsagePlansOutputWithContext(context.Context) DeploymentSpecificationRequestPoliciesUsagePlansOutput
+}
+
+type DeploymentSpecificationRequestPoliciesUsagePlansArgs struct {
+	// (Updatable) A list of context variables specifying where API tokens may be located in a request. Example locations:
+	// * "request.headers[token]"
+	// * "request.query[token]"
+	// * "request.auth[Token]"
+	// * "request.path[TOKEN]"
+	TokenLocations pulumi.StringArrayInput `pulumi:"tokenLocations"`
+}
+
+func (DeploymentSpecificationRequestPoliciesUsagePlansArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DeploymentSpecificationRequestPoliciesUsagePlans)(nil)).Elem()
+}
+
+func (i DeploymentSpecificationRequestPoliciesUsagePlansArgs) ToDeploymentSpecificationRequestPoliciesUsagePlansOutput() DeploymentSpecificationRequestPoliciesUsagePlansOutput {
+	return i.ToDeploymentSpecificationRequestPoliciesUsagePlansOutputWithContext(context.Background())
+}
+
+func (i DeploymentSpecificationRequestPoliciesUsagePlansArgs) ToDeploymentSpecificationRequestPoliciesUsagePlansOutputWithContext(ctx context.Context) DeploymentSpecificationRequestPoliciesUsagePlansOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeploymentSpecificationRequestPoliciesUsagePlansOutput)
+}
+
+func (i DeploymentSpecificationRequestPoliciesUsagePlansArgs) ToDeploymentSpecificationRequestPoliciesUsagePlansPtrOutput() DeploymentSpecificationRequestPoliciesUsagePlansPtrOutput {
+	return i.ToDeploymentSpecificationRequestPoliciesUsagePlansPtrOutputWithContext(context.Background())
+}
+
+func (i DeploymentSpecificationRequestPoliciesUsagePlansArgs) ToDeploymentSpecificationRequestPoliciesUsagePlansPtrOutputWithContext(ctx context.Context) DeploymentSpecificationRequestPoliciesUsagePlansPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeploymentSpecificationRequestPoliciesUsagePlansOutput).ToDeploymentSpecificationRequestPoliciesUsagePlansPtrOutputWithContext(ctx)
+}
+
+// DeploymentSpecificationRequestPoliciesUsagePlansPtrInput is an input type that accepts DeploymentSpecificationRequestPoliciesUsagePlansArgs, DeploymentSpecificationRequestPoliciesUsagePlansPtr and DeploymentSpecificationRequestPoliciesUsagePlansPtrOutput values.
+// You can construct a concrete instance of `DeploymentSpecificationRequestPoliciesUsagePlansPtrInput` via:
+//
+//          DeploymentSpecificationRequestPoliciesUsagePlansArgs{...}
+//
+//  or:
+//
+//          nil
+type DeploymentSpecificationRequestPoliciesUsagePlansPtrInput interface {
+	pulumi.Input
+
+	ToDeploymentSpecificationRequestPoliciesUsagePlansPtrOutput() DeploymentSpecificationRequestPoliciesUsagePlansPtrOutput
+	ToDeploymentSpecificationRequestPoliciesUsagePlansPtrOutputWithContext(context.Context) DeploymentSpecificationRequestPoliciesUsagePlansPtrOutput
+}
+
+type deploymentSpecificationRequestPoliciesUsagePlansPtrType DeploymentSpecificationRequestPoliciesUsagePlansArgs
+
+func DeploymentSpecificationRequestPoliciesUsagePlansPtr(v *DeploymentSpecificationRequestPoliciesUsagePlansArgs) DeploymentSpecificationRequestPoliciesUsagePlansPtrInput {
+	return (*deploymentSpecificationRequestPoliciesUsagePlansPtrType)(v)
+}
+
+func (*deploymentSpecificationRequestPoliciesUsagePlansPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DeploymentSpecificationRequestPoliciesUsagePlans)(nil)).Elem()
+}
+
+func (i *deploymentSpecificationRequestPoliciesUsagePlansPtrType) ToDeploymentSpecificationRequestPoliciesUsagePlansPtrOutput() DeploymentSpecificationRequestPoliciesUsagePlansPtrOutput {
+	return i.ToDeploymentSpecificationRequestPoliciesUsagePlansPtrOutputWithContext(context.Background())
+}
+
+func (i *deploymentSpecificationRequestPoliciesUsagePlansPtrType) ToDeploymentSpecificationRequestPoliciesUsagePlansPtrOutputWithContext(ctx context.Context) DeploymentSpecificationRequestPoliciesUsagePlansPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeploymentSpecificationRequestPoliciesUsagePlansPtrOutput)
+}
+
+type DeploymentSpecificationRequestPoliciesUsagePlansOutput struct{ *pulumi.OutputState }
+
+func (DeploymentSpecificationRequestPoliciesUsagePlansOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DeploymentSpecificationRequestPoliciesUsagePlans)(nil)).Elem()
+}
+
+func (o DeploymentSpecificationRequestPoliciesUsagePlansOutput) ToDeploymentSpecificationRequestPoliciesUsagePlansOutput() DeploymentSpecificationRequestPoliciesUsagePlansOutput {
+	return o
+}
+
+func (o DeploymentSpecificationRequestPoliciesUsagePlansOutput) ToDeploymentSpecificationRequestPoliciesUsagePlansOutputWithContext(ctx context.Context) DeploymentSpecificationRequestPoliciesUsagePlansOutput {
+	return o
+}
+
+func (o DeploymentSpecificationRequestPoliciesUsagePlansOutput) ToDeploymentSpecificationRequestPoliciesUsagePlansPtrOutput() DeploymentSpecificationRequestPoliciesUsagePlansPtrOutput {
+	return o.ToDeploymentSpecificationRequestPoliciesUsagePlansPtrOutputWithContext(context.Background())
+}
+
+func (o DeploymentSpecificationRequestPoliciesUsagePlansOutput) ToDeploymentSpecificationRequestPoliciesUsagePlansPtrOutputWithContext(ctx context.Context) DeploymentSpecificationRequestPoliciesUsagePlansPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DeploymentSpecificationRequestPoliciesUsagePlans) *DeploymentSpecificationRequestPoliciesUsagePlans {
+		return &v
+	}).(DeploymentSpecificationRequestPoliciesUsagePlansPtrOutput)
+}
+
+// (Updatable) A list of context variables specifying where API tokens may be located in a request. Example locations:
+// * "request.headers[token]"
+// * "request.query[token]"
+// * "request.auth[Token]"
+// * "request.path[TOKEN]"
+func (o DeploymentSpecificationRequestPoliciesUsagePlansOutput) TokenLocations() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v DeploymentSpecificationRequestPoliciesUsagePlans) []string { return v.TokenLocations }).(pulumi.StringArrayOutput)
+}
+
+type DeploymentSpecificationRequestPoliciesUsagePlansPtrOutput struct{ *pulumi.OutputState }
+
+func (DeploymentSpecificationRequestPoliciesUsagePlansPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DeploymentSpecificationRequestPoliciesUsagePlans)(nil)).Elem()
+}
+
+func (o DeploymentSpecificationRequestPoliciesUsagePlansPtrOutput) ToDeploymentSpecificationRequestPoliciesUsagePlansPtrOutput() DeploymentSpecificationRequestPoliciesUsagePlansPtrOutput {
+	return o
+}
+
+func (o DeploymentSpecificationRequestPoliciesUsagePlansPtrOutput) ToDeploymentSpecificationRequestPoliciesUsagePlansPtrOutputWithContext(ctx context.Context) DeploymentSpecificationRequestPoliciesUsagePlansPtrOutput {
+	return o
+}
+
+func (o DeploymentSpecificationRequestPoliciesUsagePlansPtrOutput) Elem() DeploymentSpecificationRequestPoliciesUsagePlansOutput {
+	return o.ApplyT(func(v *DeploymentSpecificationRequestPoliciesUsagePlans) DeploymentSpecificationRequestPoliciesUsagePlans {
+		if v != nil {
+			return *v
+		}
+		var ret DeploymentSpecificationRequestPoliciesUsagePlans
+		return ret
+	}).(DeploymentSpecificationRequestPoliciesUsagePlansOutput)
+}
+
+// (Updatable) A list of context variables specifying where API tokens may be located in a request. Example locations:
+// * "request.headers[token]"
+// * "request.query[token]"
+// * "request.auth[Token]"
+// * "request.path[TOKEN]"
+func (o DeploymentSpecificationRequestPoliciesUsagePlansPtrOutput) TokenLocations() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *DeploymentSpecificationRequestPoliciesUsagePlans) []string {
+		if v == nil {
+			return nil
+		}
+		return v.TokenLocations
+	}).(pulumi.StringArrayOutput)
 }
 
 type DeploymentSpecificationRoute struct {
@@ -8629,6 +8803,692 @@ func (o GatewayResponseCacheDetailsServerArrayOutput) Index(i pulumi.IntInput) G
 	}).(GatewayResponseCacheDetailsServerOutput)
 }
 
+type SubscriberClient struct {
+	// (Updatable) The name of the client. Must be unique within a subscriber.
+	Name string `pulumi:"name"`
+	// (Updatable) The token for the client. Must be unique within a tenancy.
+	Token string `pulumi:"token"`
+}
+
+// SubscriberClientInput is an input type that accepts SubscriberClientArgs and SubscriberClientOutput values.
+// You can construct a concrete instance of `SubscriberClientInput` via:
+//
+//          SubscriberClientArgs{...}
+type SubscriberClientInput interface {
+	pulumi.Input
+
+	ToSubscriberClientOutput() SubscriberClientOutput
+	ToSubscriberClientOutputWithContext(context.Context) SubscriberClientOutput
+}
+
+type SubscriberClientArgs struct {
+	// (Updatable) The name of the client. Must be unique within a subscriber.
+	Name pulumi.StringInput `pulumi:"name"`
+	// (Updatable) The token for the client. Must be unique within a tenancy.
+	Token pulumi.StringInput `pulumi:"token"`
+}
+
+func (SubscriberClientArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SubscriberClient)(nil)).Elem()
+}
+
+func (i SubscriberClientArgs) ToSubscriberClientOutput() SubscriberClientOutput {
+	return i.ToSubscriberClientOutputWithContext(context.Background())
+}
+
+func (i SubscriberClientArgs) ToSubscriberClientOutputWithContext(ctx context.Context) SubscriberClientOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SubscriberClientOutput)
+}
+
+// SubscriberClientArrayInput is an input type that accepts SubscriberClientArray and SubscriberClientArrayOutput values.
+// You can construct a concrete instance of `SubscriberClientArrayInput` via:
+//
+//          SubscriberClientArray{ SubscriberClientArgs{...} }
+type SubscriberClientArrayInput interface {
+	pulumi.Input
+
+	ToSubscriberClientArrayOutput() SubscriberClientArrayOutput
+	ToSubscriberClientArrayOutputWithContext(context.Context) SubscriberClientArrayOutput
+}
+
+type SubscriberClientArray []SubscriberClientInput
+
+func (SubscriberClientArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SubscriberClient)(nil)).Elem()
+}
+
+func (i SubscriberClientArray) ToSubscriberClientArrayOutput() SubscriberClientArrayOutput {
+	return i.ToSubscriberClientArrayOutputWithContext(context.Background())
+}
+
+func (i SubscriberClientArray) ToSubscriberClientArrayOutputWithContext(ctx context.Context) SubscriberClientArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SubscriberClientArrayOutput)
+}
+
+type SubscriberClientOutput struct{ *pulumi.OutputState }
+
+func (SubscriberClientOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SubscriberClient)(nil)).Elem()
+}
+
+func (o SubscriberClientOutput) ToSubscriberClientOutput() SubscriberClientOutput {
+	return o
+}
+
+func (o SubscriberClientOutput) ToSubscriberClientOutputWithContext(ctx context.Context) SubscriberClientOutput {
+	return o
+}
+
+// (Updatable) The name of the client. Must be unique within a subscriber.
+func (o SubscriberClientOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v SubscriberClient) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// (Updatable) The token for the client. Must be unique within a tenancy.
+func (o SubscriberClientOutput) Token() pulumi.StringOutput {
+	return o.ApplyT(func(v SubscriberClient) string { return v.Token }).(pulumi.StringOutput)
+}
+
+type SubscriberClientArrayOutput struct{ *pulumi.OutputState }
+
+func (SubscriberClientArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SubscriberClient)(nil)).Elem()
+}
+
+func (o SubscriberClientArrayOutput) ToSubscriberClientArrayOutput() SubscriberClientArrayOutput {
+	return o
+}
+
+func (o SubscriberClientArrayOutput) ToSubscriberClientArrayOutputWithContext(ctx context.Context) SubscriberClientArrayOutput {
+	return o
+}
+
+func (o SubscriberClientArrayOutput) Index(i pulumi.IntInput) SubscriberClientOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SubscriberClient {
+		return vs[0].([]SubscriberClient)[vs[1].(int)]
+	}).(SubscriberClientOutput)
+}
+
+type UsagePlanEntitlement struct {
+	// (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
+	Description *string `pulumi:"description"`
+	// (Updatable) An entitlement name, unique within a usage plan.
+	Name string `pulumi:"name"`
+	// (Updatable) Quota policy for a usage plan.
+	Quota *UsagePlanEntitlementQuota `pulumi:"quota"`
+	// (Updatable) Rate-limiting policy for a usage plan.
+	RateLimit *UsagePlanEntitlementRateLimit `pulumi:"rateLimit"`
+	// (Updatable) A collection of targeted deployments that the entitlement will be applied to.
+	Targets []UsagePlanEntitlementTarget `pulumi:"targets"`
+}
+
+// UsagePlanEntitlementInput is an input type that accepts UsagePlanEntitlementArgs and UsagePlanEntitlementOutput values.
+// You can construct a concrete instance of `UsagePlanEntitlementInput` via:
+//
+//          UsagePlanEntitlementArgs{...}
+type UsagePlanEntitlementInput interface {
+	pulumi.Input
+
+	ToUsagePlanEntitlementOutput() UsagePlanEntitlementOutput
+	ToUsagePlanEntitlementOutputWithContext(context.Context) UsagePlanEntitlementOutput
+}
+
+type UsagePlanEntitlementArgs struct {
+	// (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// (Updatable) An entitlement name, unique within a usage plan.
+	Name pulumi.StringInput `pulumi:"name"`
+	// (Updatable) Quota policy for a usage plan.
+	Quota UsagePlanEntitlementQuotaPtrInput `pulumi:"quota"`
+	// (Updatable) Rate-limiting policy for a usage plan.
+	RateLimit UsagePlanEntitlementRateLimitPtrInput `pulumi:"rateLimit"`
+	// (Updatable) A collection of targeted deployments that the entitlement will be applied to.
+	Targets UsagePlanEntitlementTargetArrayInput `pulumi:"targets"`
+}
+
+func (UsagePlanEntitlementArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*UsagePlanEntitlement)(nil)).Elem()
+}
+
+func (i UsagePlanEntitlementArgs) ToUsagePlanEntitlementOutput() UsagePlanEntitlementOutput {
+	return i.ToUsagePlanEntitlementOutputWithContext(context.Background())
+}
+
+func (i UsagePlanEntitlementArgs) ToUsagePlanEntitlementOutputWithContext(ctx context.Context) UsagePlanEntitlementOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UsagePlanEntitlementOutput)
+}
+
+// UsagePlanEntitlementArrayInput is an input type that accepts UsagePlanEntitlementArray and UsagePlanEntitlementArrayOutput values.
+// You can construct a concrete instance of `UsagePlanEntitlementArrayInput` via:
+//
+//          UsagePlanEntitlementArray{ UsagePlanEntitlementArgs{...} }
+type UsagePlanEntitlementArrayInput interface {
+	pulumi.Input
+
+	ToUsagePlanEntitlementArrayOutput() UsagePlanEntitlementArrayOutput
+	ToUsagePlanEntitlementArrayOutputWithContext(context.Context) UsagePlanEntitlementArrayOutput
+}
+
+type UsagePlanEntitlementArray []UsagePlanEntitlementInput
+
+func (UsagePlanEntitlementArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]UsagePlanEntitlement)(nil)).Elem()
+}
+
+func (i UsagePlanEntitlementArray) ToUsagePlanEntitlementArrayOutput() UsagePlanEntitlementArrayOutput {
+	return i.ToUsagePlanEntitlementArrayOutputWithContext(context.Background())
+}
+
+func (i UsagePlanEntitlementArray) ToUsagePlanEntitlementArrayOutputWithContext(ctx context.Context) UsagePlanEntitlementArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UsagePlanEntitlementArrayOutput)
+}
+
+type UsagePlanEntitlementOutput struct{ *pulumi.OutputState }
+
+func (UsagePlanEntitlementOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*UsagePlanEntitlement)(nil)).Elem()
+}
+
+func (o UsagePlanEntitlementOutput) ToUsagePlanEntitlementOutput() UsagePlanEntitlementOutput {
+	return o
+}
+
+func (o UsagePlanEntitlementOutput) ToUsagePlanEntitlementOutputWithContext(ctx context.Context) UsagePlanEntitlementOutput {
+	return o
+}
+
+// (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
+func (o UsagePlanEntitlementOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UsagePlanEntitlement) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) An entitlement name, unique within a usage plan.
+func (o UsagePlanEntitlementOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v UsagePlanEntitlement) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// (Updatable) Quota policy for a usage plan.
+func (o UsagePlanEntitlementOutput) Quota() UsagePlanEntitlementQuotaPtrOutput {
+	return o.ApplyT(func(v UsagePlanEntitlement) *UsagePlanEntitlementQuota { return v.Quota }).(UsagePlanEntitlementQuotaPtrOutput)
+}
+
+// (Updatable) Rate-limiting policy for a usage plan.
+func (o UsagePlanEntitlementOutput) RateLimit() UsagePlanEntitlementRateLimitPtrOutput {
+	return o.ApplyT(func(v UsagePlanEntitlement) *UsagePlanEntitlementRateLimit { return v.RateLimit }).(UsagePlanEntitlementRateLimitPtrOutput)
+}
+
+// (Updatable) A collection of targeted deployments that the entitlement will be applied to.
+func (o UsagePlanEntitlementOutput) Targets() UsagePlanEntitlementTargetArrayOutput {
+	return o.ApplyT(func(v UsagePlanEntitlement) []UsagePlanEntitlementTarget { return v.Targets }).(UsagePlanEntitlementTargetArrayOutput)
+}
+
+type UsagePlanEntitlementArrayOutput struct{ *pulumi.OutputState }
+
+func (UsagePlanEntitlementArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]UsagePlanEntitlement)(nil)).Elem()
+}
+
+func (o UsagePlanEntitlementArrayOutput) ToUsagePlanEntitlementArrayOutput() UsagePlanEntitlementArrayOutput {
+	return o
+}
+
+func (o UsagePlanEntitlementArrayOutput) ToUsagePlanEntitlementArrayOutputWithContext(ctx context.Context) UsagePlanEntitlementArrayOutput {
+	return o
+}
+
+func (o UsagePlanEntitlementArrayOutput) Index(i pulumi.IntInput) UsagePlanEntitlementOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) UsagePlanEntitlement {
+		return vs[0].([]UsagePlanEntitlement)[vs[1].(int)]
+	}).(UsagePlanEntitlementOutput)
+}
+
+type UsagePlanEntitlementQuota struct {
+	// (Updatable) What the usage plan will do when a quota is breached: `REJECT` will allow no further requests `ALLOW` will continue to allow further requests
+	OperationOnBreach string `pulumi:"operationOnBreach"`
+	// (Updatable) The policy that controls when quotas will reset. Example: `CALENDAR`
+	ResetPolicy string `pulumi:"resetPolicy"`
+	// (Updatable) The unit of time over which rate limits are calculated. Example: `SECOND`
+	Unit string `pulumi:"unit"`
+	// (Updatable) The number of requests that can be made per time period.
+	Value int `pulumi:"value"`
+}
+
+// UsagePlanEntitlementQuotaInput is an input type that accepts UsagePlanEntitlementQuotaArgs and UsagePlanEntitlementQuotaOutput values.
+// You can construct a concrete instance of `UsagePlanEntitlementQuotaInput` via:
+//
+//          UsagePlanEntitlementQuotaArgs{...}
+type UsagePlanEntitlementQuotaInput interface {
+	pulumi.Input
+
+	ToUsagePlanEntitlementQuotaOutput() UsagePlanEntitlementQuotaOutput
+	ToUsagePlanEntitlementQuotaOutputWithContext(context.Context) UsagePlanEntitlementQuotaOutput
+}
+
+type UsagePlanEntitlementQuotaArgs struct {
+	// (Updatable) What the usage plan will do when a quota is breached: `REJECT` will allow no further requests `ALLOW` will continue to allow further requests
+	OperationOnBreach pulumi.StringInput `pulumi:"operationOnBreach"`
+	// (Updatable) The policy that controls when quotas will reset. Example: `CALENDAR`
+	ResetPolicy pulumi.StringInput `pulumi:"resetPolicy"`
+	// (Updatable) The unit of time over which rate limits are calculated. Example: `SECOND`
+	Unit pulumi.StringInput `pulumi:"unit"`
+	// (Updatable) The number of requests that can be made per time period.
+	Value pulumi.IntInput `pulumi:"value"`
+}
+
+func (UsagePlanEntitlementQuotaArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*UsagePlanEntitlementQuota)(nil)).Elem()
+}
+
+func (i UsagePlanEntitlementQuotaArgs) ToUsagePlanEntitlementQuotaOutput() UsagePlanEntitlementQuotaOutput {
+	return i.ToUsagePlanEntitlementQuotaOutputWithContext(context.Background())
+}
+
+func (i UsagePlanEntitlementQuotaArgs) ToUsagePlanEntitlementQuotaOutputWithContext(ctx context.Context) UsagePlanEntitlementQuotaOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UsagePlanEntitlementQuotaOutput)
+}
+
+func (i UsagePlanEntitlementQuotaArgs) ToUsagePlanEntitlementQuotaPtrOutput() UsagePlanEntitlementQuotaPtrOutput {
+	return i.ToUsagePlanEntitlementQuotaPtrOutputWithContext(context.Background())
+}
+
+func (i UsagePlanEntitlementQuotaArgs) ToUsagePlanEntitlementQuotaPtrOutputWithContext(ctx context.Context) UsagePlanEntitlementQuotaPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UsagePlanEntitlementQuotaOutput).ToUsagePlanEntitlementQuotaPtrOutputWithContext(ctx)
+}
+
+// UsagePlanEntitlementQuotaPtrInput is an input type that accepts UsagePlanEntitlementQuotaArgs, UsagePlanEntitlementQuotaPtr and UsagePlanEntitlementQuotaPtrOutput values.
+// You can construct a concrete instance of `UsagePlanEntitlementQuotaPtrInput` via:
+//
+//          UsagePlanEntitlementQuotaArgs{...}
+//
+//  or:
+//
+//          nil
+type UsagePlanEntitlementQuotaPtrInput interface {
+	pulumi.Input
+
+	ToUsagePlanEntitlementQuotaPtrOutput() UsagePlanEntitlementQuotaPtrOutput
+	ToUsagePlanEntitlementQuotaPtrOutputWithContext(context.Context) UsagePlanEntitlementQuotaPtrOutput
+}
+
+type usagePlanEntitlementQuotaPtrType UsagePlanEntitlementQuotaArgs
+
+func UsagePlanEntitlementQuotaPtr(v *UsagePlanEntitlementQuotaArgs) UsagePlanEntitlementQuotaPtrInput {
+	return (*usagePlanEntitlementQuotaPtrType)(v)
+}
+
+func (*usagePlanEntitlementQuotaPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**UsagePlanEntitlementQuota)(nil)).Elem()
+}
+
+func (i *usagePlanEntitlementQuotaPtrType) ToUsagePlanEntitlementQuotaPtrOutput() UsagePlanEntitlementQuotaPtrOutput {
+	return i.ToUsagePlanEntitlementQuotaPtrOutputWithContext(context.Background())
+}
+
+func (i *usagePlanEntitlementQuotaPtrType) ToUsagePlanEntitlementQuotaPtrOutputWithContext(ctx context.Context) UsagePlanEntitlementQuotaPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UsagePlanEntitlementQuotaPtrOutput)
+}
+
+type UsagePlanEntitlementQuotaOutput struct{ *pulumi.OutputState }
+
+func (UsagePlanEntitlementQuotaOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*UsagePlanEntitlementQuota)(nil)).Elem()
+}
+
+func (o UsagePlanEntitlementQuotaOutput) ToUsagePlanEntitlementQuotaOutput() UsagePlanEntitlementQuotaOutput {
+	return o
+}
+
+func (o UsagePlanEntitlementQuotaOutput) ToUsagePlanEntitlementQuotaOutputWithContext(ctx context.Context) UsagePlanEntitlementQuotaOutput {
+	return o
+}
+
+func (o UsagePlanEntitlementQuotaOutput) ToUsagePlanEntitlementQuotaPtrOutput() UsagePlanEntitlementQuotaPtrOutput {
+	return o.ToUsagePlanEntitlementQuotaPtrOutputWithContext(context.Background())
+}
+
+func (o UsagePlanEntitlementQuotaOutput) ToUsagePlanEntitlementQuotaPtrOutputWithContext(ctx context.Context) UsagePlanEntitlementQuotaPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v UsagePlanEntitlementQuota) *UsagePlanEntitlementQuota {
+		return &v
+	}).(UsagePlanEntitlementQuotaPtrOutput)
+}
+
+// (Updatable) What the usage plan will do when a quota is breached: `REJECT` will allow no further requests `ALLOW` will continue to allow further requests
+func (o UsagePlanEntitlementQuotaOutput) OperationOnBreach() pulumi.StringOutput {
+	return o.ApplyT(func(v UsagePlanEntitlementQuota) string { return v.OperationOnBreach }).(pulumi.StringOutput)
+}
+
+// (Updatable) The policy that controls when quotas will reset. Example: `CALENDAR`
+func (o UsagePlanEntitlementQuotaOutput) ResetPolicy() pulumi.StringOutput {
+	return o.ApplyT(func(v UsagePlanEntitlementQuota) string { return v.ResetPolicy }).(pulumi.StringOutput)
+}
+
+// (Updatable) The unit of time over which rate limits are calculated. Example: `SECOND`
+func (o UsagePlanEntitlementQuotaOutput) Unit() pulumi.StringOutput {
+	return o.ApplyT(func(v UsagePlanEntitlementQuota) string { return v.Unit }).(pulumi.StringOutput)
+}
+
+// (Updatable) The number of requests that can be made per time period.
+func (o UsagePlanEntitlementQuotaOutput) Value() pulumi.IntOutput {
+	return o.ApplyT(func(v UsagePlanEntitlementQuota) int { return v.Value }).(pulumi.IntOutput)
+}
+
+type UsagePlanEntitlementQuotaPtrOutput struct{ *pulumi.OutputState }
+
+func (UsagePlanEntitlementQuotaPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**UsagePlanEntitlementQuota)(nil)).Elem()
+}
+
+func (o UsagePlanEntitlementQuotaPtrOutput) ToUsagePlanEntitlementQuotaPtrOutput() UsagePlanEntitlementQuotaPtrOutput {
+	return o
+}
+
+func (o UsagePlanEntitlementQuotaPtrOutput) ToUsagePlanEntitlementQuotaPtrOutputWithContext(ctx context.Context) UsagePlanEntitlementQuotaPtrOutput {
+	return o
+}
+
+func (o UsagePlanEntitlementQuotaPtrOutput) Elem() UsagePlanEntitlementQuotaOutput {
+	return o.ApplyT(func(v *UsagePlanEntitlementQuota) UsagePlanEntitlementQuota {
+		if v != nil {
+			return *v
+		}
+		var ret UsagePlanEntitlementQuota
+		return ret
+	}).(UsagePlanEntitlementQuotaOutput)
+}
+
+// (Updatable) What the usage plan will do when a quota is breached: `REJECT` will allow no further requests `ALLOW` will continue to allow further requests
+func (o UsagePlanEntitlementQuotaPtrOutput) OperationOnBreach() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UsagePlanEntitlementQuota) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.OperationOnBreach
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The policy that controls when quotas will reset. Example: `CALENDAR`
+func (o UsagePlanEntitlementQuotaPtrOutput) ResetPolicy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UsagePlanEntitlementQuota) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ResetPolicy
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The unit of time over which rate limits are calculated. Example: `SECOND`
+func (o UsagePlanEntitlementQuotaPtrOutput) Unit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UsagePlanEntitlementQuota) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Unit
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The number of requests that can be made per time period.
+func (o UsagePlanEntitlementQuotaPtrOutput) Value() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *UsagePlanEntitlementQuota) *int {
+		if v == nil {
+			return nil
+		}
+		return &v.Value
+	}).(pulumi.IntPtrOutput)
+}
+
+type UsagePlanEntitlementRateLimit struct {
+	// (Updatable) The unit of time over which rate limits are calculated. Example: `SECOND`
+	Unit string `pulumi:"unit"`
+	// (Updatable) The number of requests that can be made per time period.
+	Value int `pulumi:"value"`
+}
+
+// UsagePlanEntitlementRateLimitInput is an input type that accepts UsagePlanEntitlementRateLimitArgs and UsagePlanEntitlementRateLimitOutput values.
+// You can construct a concrete instance of `UsagePlanEntitlementRateLimitInput` via:
+//
+//          UsagePlanEntitlementRateLimitArgs{...}
+type UsagePlanEntitlementRateLimitInput interface {
+	pulumi.Input
+
+	ToUsagePlanEntitlementRateLimitOutput() UsagePlanEntitlementRateLimitOutput
+	ToUsagePlanEntitlementRateLimitOutputWithContext(context.Context) UsagePlanEntitlementRateLimitOutput
+}
+
+type UsagePlanEntitlementRateLimitArgs struct {
+	// (Updatable) The unit of time over which rate limits are calculated. Example: `SECOND`
+	Unit pulumi.StringInput `pulumi:"unit"`
+	// (Updatable) The number of requests that can be made per time period.
+	Value pulumi.IntInput `pulumi:"value"`
+}
+
+func (UsagePlanEntitlementRateLimitArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*UsagePlanEntitlementRateLimit)(nil)).Elem()
+}
+
+func (i UsagePlanEntitlementRateLimitArgs) ToUsagePlanEntitlementRateLimitOutput() UsagePlanEntitlementRateLimitOutput {
+	return i.ToUsagePlanEntitlementRateLimitOutputWithContext(context.Background())
+}
+
+func (i UsagePlanEntitlementRateLimitArgs) ToUsagePlanEntitlementRateLimitOutputWithContext(ctx context.Context) UsagePlanEntitlementRateLimitOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UsagePlanEntitlementRateLimitOutput)
+}
+
+func (i UsagePlanEntitlementRateLimitArgs) ToUsagePlanEntitlementRateLimitPtrOutput() UsagePlanEntitlementRateLimitPtrOutput {
+	return i.ToUsagePlanEntitlementRateLimitPtrOutputWithContext(context.Background())
+}
+
+func (i UsagePlanEntitlementRateLimitArgs) ToUsagePlanEntitlementRateLimitPtrOutputWithContext(ctx context.Context) UsagePlanEntitlementRateLimitPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UsagePlanEntitlementRateLimitOutput).ToUsagePlanEntitlementRateLimitPtrOutputWithContext(ctx)
+}
+
+// UsagePlanEntitlementRateLimitPtrInput is an input type that accepts UsagePlanEntitlementRateLimitArgs, UsagePlanEntitlementRateLimitPtr and UsagePlanEntitlementRateLimitPtrOutput values.
+// You can construct a concrete instance of `UsagePlanEntitlementRateLimitPtrInput` via:
+//
+//          UsagePlanEntitlementRateLimitArgs{...}
+//
+//  or:
+//
+//          nil
+type UsagePlanEntitlementRateLimitPtrInput interface {
+	pulumi.Input
+
+	ToUsagePlanEntitlementRateLimitPtrOutput() UsagePlanEntitlementRateLimitPtrOutput
+	ToUsagePlanEntitlementRateLimitPtrOutputWithContext(context.Context) UsagePlanEntitlementRateLimitPtrOutput
+}
+
+type usagePlanEntitlementRateLimitPtrType UsagePlanEntitlementRateLimitArgs
+
+func UsagePlanEntitlementRateLimitPtr(v *UsagePlanEntitlementRateLimitArgs) UsagePlanEntitlementRateLimitPtrInput {
+	return (*usagePlanEntitlementRateLimitPtrType)(v)
+}
+
+func (*usagePlanEntitlementRateLimitPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**UsagePlanEntitlementRateLimit)(nil)).Elem()
+}
+
+func (i *usagePlanEntitlementRateLimitPtrType) ToUsagePlanEntitlementRateLimitPtrOutput() UsagePlanEntitlementRateLimitPtrOutput {
+	return i.ToUsagePlanEntitlementRateLimitPtrOutputWithContext(context.Background())
+}
+
+func (i *usagePlanEntitlementRateLimitPtrType) ToUsagePlanEntitlementRateLimitPtrOutputWithContext(ctx context.Context) UsagePlanEntitlementRateLimitPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UsagePlanEntitlementRateLimitPtrOutput)
+}
+
+type UsagePlanEntitlementRateLimitOutput struct{ *pulumi.OutputState }
+
+func (UsagePlanEntitlementRateLimitOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*UsagePlanEntitlementRateLimit)(nil)).Elem()
+}
+
+func (o UsagePlanEntitlementRateLimitOutput) ToUsagePlanEntitlementRateLimitOutput() UsagePlanEntitlementRateLimitOutput {
+	return o
+}
+
+func (o UsagePlanEntitlementRateLimitOutput) ToUsagePlanEntitlementRateLimitOutputWithContext(ctx context.Context) UsagePlanEntitlementRateLimitOutput {
+	return o
+}
+
+func (o UsagePlanEntitlementRateLimitOutput) ToUsagePlanEntitlementRateLimitPtrOutput() UsagePlanEntitlementRateLimitPtrOutput {
+	return o.ToUsagePlanEntitlementRateLimitPtrOutputWithContext(context.Background())
+}
+
+func (o UsagePlanEntitlementRateLimitOutput) ToUsagePlanEntitlementRateLimitPtrOutputWithContext(ctx context.Context) UsagePlanEntitlementRateLimitPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v UsagePlanEntitlementRateLimit) *UsagePlanEntitlementRateLimit {
+		return &v
+	}).(UsagePlanEntitlementRateLimitPtrOutput)
+}
+
+// (Updatable) The unit of time over which rate limits are calculated. Example: `SECOND`
+func (o UsagePlanEntitlementRateLimitOutput) Unit() pulumi.StringOutput {
+	return o.ApplyT(func(v UsagePlanEntitlementRateLimit) string { return v.Unit }).(pulumi.StringOutput)
+}
+
+// (Updatable) The number of requests that can be made per time period.
+func (o UsagePlanEntitlementRateLimitOutput) Value() pulumi.IntOutput {
+	return o.ApplyT(func(v UsagePlanEntitlementRateLimit) int { return v.Value }).(pulumi.IntOutput)
+}
+
+type UsagePlanEntitlementRateLimitPtrOutput struct{ *pulumi.OutputState }
+
+func (UsagePlanEntitlementRateLimitPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**UsagePlanEntitlementRateLimit)(nil)).Elem()
+}
+
+func (o UsagePlanEntitlementRateLimitPtrOutput) ToUsagePlanEntitlementRateLimitPtrOutput() UsagePlanEntitlementRateLimitPtrOutput {
+	return o
+}
+
+func (o UsagePlanEntitlementRateLimitPtrOutput) ToUsagePlanEntitlementRateLimitPtrOutputWithContext(ctx context.Context) UsagePlanEntitlementRateLimitPtrOutput {
+	return o
+}
+
+func (o UsagePlanEntitlementRateLimitPtrOutput) Elem() UsagePlanEntitlementRateLimitOutput {
+	return o.ApplyT(func(v *UsagePlanEntitlementRateLimit) UsagePlanEntitlementRateLimit {
+		if v != nil {
+			return *v
+		}
+		var ret UsagePlanEntitlementRateLimit
+		return ret
+	}).(UsagePlanEntitlementRateLimitOutput)
+}
+
+// (Updatable) The unit of time over which rate limits are calculated. Example: `SECOND`
+func (o UsagePlanEntitlementRateLimitPtrOutput) Unit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UsagePlanEntitlementRateLimit) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Unit
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The number of requests that can be made per time period.
+func (o UsagePlanEntitlementRateLimitPtrOutput) Value() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *UsagePlanEntitlementRateLimit) *int {
+		if v == nil {
+			return nil
+		}
+		return &v.Value
+	}).(pulumi.IntPtrOutput)
+}
+
+type UsagePlanEntitlementTarget struct {
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a deployment resource.
+	DeploymentId string `pulumi:"deploymentId"`
+}
+
+// UsagePlanEntitlementTargetInput is an input type that accepts UsagePlanEntitlementTargetArgs and UsagePlanEntitlementTargetOutput values.
+// You can construct a concrete instance of `UsagePlanEntitlementTargetInput` via:
+//
+//          UsagePlanEntitlementTargetArgs{...}
+type UsagePlanEntitlementTargetInput interface {
+	pulumi.Input
+
+	ToUsagePlanEntitlementTargetOutput() UsagePlanEntitlementTargetOutput
+	ToUsagePlanEntitlementTargetOutputWithContext(context.Context) UsagePlanEntitlementTargetOutput
+}
+
+type UsagePlanEntitlementTargetArgs struct {
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a deployment resource.
+	DeploymentId pulumi.StringInput `pulumi:"deploymentId"`
+}
+
+func (UsagePlanEntitlementTargetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*UsagePlanEntitlementTarget)(nil)).Elem()
+}
+
+func (i UsagePlanEntitlementTargetArgs) ToUsagePlanEntitlementTargetOutput() UsagePlanEntitlementTargetOutput {
+	return i.ToUsagePlanEntitlementTargetOutputWithContext(context.Background())
+}
+
+func (i UsagePlanEntitlementTargetArgs) ToUsagePlanEntitlementTargetOutputWithContext(ctx context.Context) UsagePlanEntitlementTargetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UsagePlanEntitlementTargetOutput)
+}
+
+// UsagePlanEntitlementTargetArrayInput is an input type that accepts UsagePlanEntitlementTargetArray and UsagePlanEntitlementTargetArrayOutput values.
+// You can construct a concrete instance of `UsagePlanEntitlementTargetArrayInput` via:
+//
+//          UsagePlanEntitlementTargetArray{ UsagePlanEntitlementTargetArgs{...} }
+type UsagePlanEntitlementTargetArrayInput interface {
+	pulumi.Input
+
+	ToUsagePlanEntitlementTargetArrayOutput() UsagePlanEntitlementTargetArrayOutput
+	ToUsagePlanEntitlementTargetArrayOutputWithContext(context.Context) UsagePlanEntitlementTargetArrayOutput
+}
+
+type UsagePlanEntitlementTargetArray []UsagePlanEntitlementTargetInput
+
+func (UsagePlanEntitlementTargetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]UsagePlanEntitlementTarget)(nil)).Elem()
+}
+
+func (i UsagePlanEntitlementTargetArray) ToUsagePlanEntitlementTargetArrayOutput() UsagePlanEntitlementTargetArrayOutput {
+	return i.ToUsagePlanEntitlementTargetArrayOutputWithContext(context.Background())
+}
+
+func (i UsagePlanEntitlementTargetArray) ToUsagePlanEntitlementTargetArrayOutputWithContext(ctx context.Context) UsagePlanEntitlementTargetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UsagePlanEntitlementTargetArrayOutput)
+}
+
+type UsagePlanEntitlementTargetOutput struct{ *pulumi.OutputState }
+
+func (UsagePlanEntitlementTargetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*UsagePlanEntitlementTarget)(nil)).Elem()
+}
+
+func (o UsagePlanEntitlementTargetOutput) ToUsagePlanEntitlementTargetOutput() UsagePlanEntitlementTargetOutput {
+	return o
+}
+
+func (o UsagePlanEntitlementTargetOutput) ToUsagePlanEntitlementTargetOutputWithContext(ctx context.Context) UsagePlanEntitlementTargetOutput {
+	return o
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a deployment resource.
+func (o UsagePlanEntitlementTargetOutput) DeploymentId() pulumi.StringOutput {
+	return o.ApplyT(func(v UsagePlanEntitlementTarget) string { return v.DeploymentId }).(pulumi.StringOutput)
+}
+
+type UsagePlanEntitlementTargetArrayOutput struct{ *pulumi.OutputState }
+
+func (UsagePlanEntitlementTargetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]UsagePlanEntitlementTarget)(nil)).Elem()
+}
+
+func (o UsagePlanEntitlementTargetArrayOutput) ToUsagePlanEntitlementTargetArrayOutput() UsagePlanEntitlementTargetArrayOutput {
+	return o
+}
+
+func (o UsagePlanEntitlementTargetArrayOutput) ToUsagePlanEntitlementTargetArrayOutputWithContext(ctx context.Context) UsagePlanEntitlementTargetArrayOutput {
+	return o
+}
+
+func (o UsagePlanEntitlementTargetArrayOutput) Index(i pulumi.IntInput) UsagePlanEntitlementTargetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) UsagePlanEntitlementTarget {
+		return vs[0].([]UsagePlanEntitlementTarget)[vs[1].(int)]
+	}).(UsagePlanEntitlementTargetOutput)
+}
+
 type GetApiDeploymentSpecificationLoggingPolicy struct {
 	// Configures the logging policies for the access logs of an API Deployment.
 	AccessLogs []GetApiDeploymentSpecificationLoggingPolicyAccessLog `pulumi:"accessLogs"`
@@ -8951,6 +9811,8 @@ type GetApiDeploymentSpecificationRequestPolicy struct {
 	MutualTls []GetApiDeploymentSpecificationRequestPolicyMutualTl `pulumi:"mutualTls"`
 	// Limit the number of requests that should be handled for the specified window using a specfic key.
 	RateLimitings []GetApiDeploymentSpecificationRequestPolicyRateLimiting `pulumi:"rateLimitings"`
+	// Usage plan policies for this deployment
+	UsagePlans []GetApiDeploymentSpecificationRequestPolicyUsagePlan `pulumi:"usagePlans"`
 }
 
 // GetApiDeploymentSpecificationRequestPolicyInput is an input type that accepts GetApiDeploymentSpecificationRequestPolicyArgs and GetApiDeploymentSpecificationRequestPolicyOutput values.
@@ -8973,6 +9835,8 @@ type GetApiDeploymentSpecificationRequestPolicyArgs struct {
 	MutualTls GetApiDeploymentSpecificationRequestPolicyMutualTlArrayInput `pulumi:"mutualTls"`
 	// Limit the number of requests that should be handled for the specified window using a specfic key.
 	RateLimitings GetApiDeploymentSpecificationRequestPolicyRateLimitingArrayInput `pulumi:"rateLimitings"`
+	// Usage plan policies for this deployment
+	UsagePlans GetApiDeploymentSpecificationRequestPolicyUsagePlanArrayInput `pulumi:"usagePlans"`
 }
 
 func (GetApiDeploymentSpecificationRequestPolicyArgs) ElementType() reflect.Type {
@@ -9052,6 +9916,13 @@ func (o GetApiDeploymentSpecificationRequestPolicyOutput) RateLimitings() GetApi
 	return o.ApplyT(func(v GetApiDeploymentSpecificationRequestPolicy) []GetApiDeploymentSpecificationRequestPolicyRateLimiting {
 		return v.RateLimitings
 	}).(GetApiDeploymentSpecificationRequestPolicyRateLimitingArrayOutput)
+}
+
+// Usage plan policies for this deployment
+func (o GetApiDeploymentSpecificationRequestPolicyOutput) UsagePlans() GetApiDeploymentSpecificationRequestPolicyUsagePlanArrayOutput {
+	return o.ApplyT(func(v GetApiDeploymentSpecificationRequestPolicy) []GetApiDeploymentSpecificationRequestPolicyUsagePlan {
+		return v.UsagePlans
+	}).(GetApiDeploymentSpecificationRequestPolicyUsagePlanArrayOutput)
 }
 
 type GetApiDeploymentSpecificationRequestPolicyArrayOutput struct{ *pulumi.OutputState }
@@ -10046,6 +10917,115 @@ func (o GetApiDeploymentSpecificationRequestPolicyRateLimitingArrayOutput) Index
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApiDeploymentSpecificationRequestPolicyRateLimiting {
 		return vs[0].([]GetApiDeploymentSpecificationRequestPolicyRateLimiting)[vs[1].(int)]
 	}).(GetApiDeploymentSpecificationRequestPolicyRateLimitingOutput)
+}
+
+type GetApiDeploymentSpecificationRequestPolicyUsagePlan struct {
+	// A list of context variables specifying where API tokens may be located in a request. Example locations:
+	// * "request.headers[token]"
+	// * "request.query[token]"
+	// * "request.auth[Token]"
+	// * "request.path[TOKEN]"
+	TokenLocations []string `pulumi:"tokenLocations"`
+}
+
+// GetApiDeploymentSpecificationRequestPolicyUsagePlanInput is an input type that accepts GetApiDeploymentSpecificationRequestPolicyUsagePlanArgs and GetApiDeploymentSpecificationRequestPolicyUsagePlanOutput values.
+// You can construct a concrete instance of `GetApiDeploymentSpecificationRequestPolicyUsagePlanInput` via:
+//
+//          GetApiDeploymentSpecificationRequestPolicyUsagePlanArgs{...}
+type GetApiDeploymentSpecificationRequestPolicyUsagePlanInput interface {
+	pulumi.Input
+
+	ToGetApiDeploymentSpecificationRequestPolicyUsagePlanOutput() GetApiDeploymentSpecificationRequestPolicyUsagePlanOutput
+	ToGetApiDeploymentSpecificationRequestPolicyUsagePlanOutputWithContext(context.Context) GetApiDeploymentSpecificationRequestPolicyUsagePlanOutput
+}
+
+type GetApiDeploymentSpecificationRequestPolicyUsagePlanArgs struct {
+	// A list of context variables specifying where API tokens may be located in a request. Example locations:
+	// * "request.headers[token]"
+	// * "request.query[token]"
+	// * "request.auth[Token]"
+	// * "request.path[TOKEN]"
+	TokenLocations pulumi.StringArrayInput `pulumi:"tokenLocations"`
+}
+
+func (GetApiDeploymentSpecificationRequestPolicyUsagePlanArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApiDeploymentSpecificationRequestPolicyUsagePlan)(nil)).Elem()
+}
+
+func (i GetApiDeploymentSpecificationRequestPolicyUsagePlanArgs) ToGetApiDeploymentSpecificationRequestPolicyUsagePlanOutput() GetApiDeploymentSpecificationRequestPolicyUsagePlanOutput {
+	return i.ToGetApiDeploymentSpecificationRequestPolicyUsagePlanOutputWithContext(context.Background())
+}
+
+func (i GetApiDeploymentSpecificationRequestPolicyUsagePlanArgs) ToGetApiDeploymentSpecificationRequestPolicyUsagePlanOutputWithContext(ctx context.Context) GetApiDeploymentSpecificationRequestPolicyUsagePlanOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApiDeploymentSpecificationRequestPolicyUsagePlanOutput)
+}
+
+// GetApiDeploymentSpecificationRequestPolicyUsagePlanArrayInput is an input type that accepts GetApiDeploymentSpecificationRequestPolicyUsagePlanArray and GetApiDeploymentSpecificationRequestPolicyUsagePlanArrayOutput values.
+// You can construct a concrete instance of `GetApiDeploymentSpecificationRequestPolicyUsagePlanArrayInput` via:
+//
+//          GetApiDeploymentSpecificationRequestPolicyUsagePlanArray{ GetApiDeploymentSpecificationRequestPolicyUsagePlanArgs{...} }
+type GetApiDeploymentSpecificationRequestPolicyUsagePlanArrayInput interface {
+	pulumi.Input
+
+	ToGetApiDeploymentSpecificationRequestPolicyUsagePlanArrayOutput() GetApiDeploymentSpecificationRequestPolicyUsagePlanArrayOutput
+	ToGetApiDeploymentSpecificationRequestPolicyUsagePlanArrayOutputWithContext(context.Context) GetApiDeploymentSpecificationRequestPolicyUsagePlanArrayOutput
+}
+
+type GetApiDeploymentSpecificationRequestPolicyUsagePlanArray []GetApiDeploymentSpecificationRequestPolicyUsagePlanInput
+
+func (GetApiDeploymentSpecificationRequestPolicyUsagePlanArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApiDeploymentSpecificationRequestPolicyUsagePlan)(nil)).Elem()
+}
+
+func (i GetApiDeploymentSpecificationRequestPolicyUsagePlanArray) ToGetApiDeploymentSpecificationRequestPolicyUsagePlanArrayOutput() GetApiDeploymentSpecificationRequestPolicyUsagePlanArrayOutput {
+	return i.ToGetApiDeploymentSpecificationRequestPolicyUsagePlanArrayOutputWithContext(context.Background())
+}
+
+func (i GetApiDeploymentSpecificationRequestPolicyUsagePlanArray) ToGetApiDeploymentSpecificationRequestPolicyUsagePlanArrayOutputWithContext(ctx context.Context) GetApiDeploymentSpecificationRequestPolicyUsagePlanArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApiDeploymentSpecificationRequestPolicyUsagePlanArrayOutput)
+}
+
+type GetApiDeploymentSpecificationRequestPolicyUsagePlanOutput struct{ *pulumi.OutputState }
+
+func (GetApiDeploymentSpecificationRequestPolicyUsagePlanOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApiDeploymentSpecificationRequestPolicyUsagePlan)(nil)).Elem()
+}
+
+func (o GetApiDeploymentSpecificationRequestPolicyUsagePlanOutput) ToGetApiDeploymentSpecificationRequestPolicyUsagePlanOutput() GetApiDeploymentSpecificationRequestPolicyUsagePlanOutput {
+	return o
+}
+
+func (o GetApiDeploymentSpecificationRequestPolicyUsagePlanOutput) ToGetApiDeploymentSpecificationRequestPolicyUsagePlanOutputWithContext(ctx context.Context) GetApiDeploymentSpecificationRequestPolicyUsagePlanOutput {
+	return o
+}
+
+// A list of context variables specifying where API tokens may be located in a request. Example locations:
+// * "request.headers[token]"
+// * "request.query[token]"
+// * "request.auth[Token]"
+// * "request.path[TOKEN]"
+func (o GetApiDeploymentSpecificationRequestPolicyUsagePlanOutput) TokenLocations() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetApiDeploymentSpecificationRequestPolicyUsagePlan) []string { return v.TokenLocations }).(pulumi.StringArrayOutput)
+}
+
+type GetApiDeploymentSpecificationRequestPolicyUsagePlanArrayOutput struct{ *pulumi.OutputState }
+
+func (GetApiDeploymentSpecificationRequestPolicyUsagePlanArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApiDeploymentSpecificationRequestPolicyUsagePlan)(nil)).Elem()
+}
+
+func (o GetApiDeploymentSpecificationRequestPolicyUsagePlanArrayOutput) ToGetApiDeploymentSpecificationRequestPolicyUsagePlanArrayOutput() GetApiDeploymentSpecificationRequestPolicyUsagePlanArrayOutput {
+	return o
+}
+
+func (o GetApiDeploymentSpecificationRequestPolicyUsagePlanArrayOutput) ToGetApiDeploymentSpecificationRequestPolicyUsagePlanArrayOutputWithContext(ctx context.Context) GetApiDeploymentSpecificationRequestPolicyUsagePlanArrayOutput {
+	return o
+}
+
+func (o GetApiDeploymentSpecificationRequestPolicyUsagePlanArrayOutput) Index(i pulumi.IntInput) GetApiDeploymentSpecificationRequestPolicyUsagePlanOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApiDeploymentSpecificationRequestPolicyUsagePlan {
+		return vs[0].([]GetApiDeploymentSpecificationRequestPolicyUsagePlan)[vs[1].(int)]
+	}).(GetApiDeploymentSpecificationRequestPolicyUsagePlanOutput)
 }
 
 type GetApiDeploymentSpecificationRoute struct {
@@ -16300,6 +17280,8 @@ type GetDeploymentSpecificationRequestPolicy struct {
 	MutualTls []GetDeploymentSpecificationRequestPolicyMutualTl `pulumi:"mutualTls"`
 	// Limit the number of requests that should be handled for the specified window using a specfic key.
 	RateLimitings []GetDeploymentSpecificationRequestPolicyRateLimiting `pulumi:"rateLimitings"`
+	// Usage plan policies for this deployment
+	UsagePlans []GetDeploymentSpecificationRequestPolicyUsagePlan `pulumi:"usagePlans"`
 }
 
 // GetDeploymentSpecificationRequestPolicyInput is an input type that accepts GetDeploymentSpecificationRequestPolicyArgs and GetDeploymentSpecificationRequestPolicyOutput values.
@@ -16322,6 +17304,8 @@ type GetDeploymentSpecificationRequestPolicyArgs struct {
 	MutualTls GetDeploymentSpecificationRequestPolicyMutualTlArrayInput `pulumi:"mutualTls"`
 	// Limit the number of requests that should be handled for the specified window using a specfic key.
 	RateLimitings GetDeploymentSpecificationRequestPolicyRateLimitingArrayInput `pulumi:"rateLimitings"`
+	// Usage plan policies for this deployment
+	UsagePlans GetDeploymentSpecificationRequestPolicyUsagePlanArrayInput `pulumi:"usagePlans"`
 }
 
 func (GetDeploymentSpecificationRequestPolicyArgs) ElementType() reflect.Type {
@@ -16401,6 +17385,13 @@ func (o GetDeploymentSpecificationRequestPolicyOutput) RateLimitings() GetDeploy
 	return o.ApplyT(func(v GetDeploymentSpecificationRequestPolicy) []GetDeploymentSpecificationRequestPolicyRateLimiting {
 		return v.RateLimitings
 	}).(GetDeploymentSpecificationRequestPolicyRateLimitingArrayOutput)
+}
+
+// Usage plan policies for this deployment
+func (o GetDeploymentSpecificationRequestPolicyOutput) UsagePlans() GetDeploymentSpecificationRequestPolicyUsagePlanArrayOutput {
+	return o.ApplyT(func(v GetDeploymentSpecificationRequestPolicy) []GetDeploymentSpecificationRequestPolicyUsagePlan {
+		return v.UsagePlans
+	}).(GetDeploymentSpecificationRequestPolicyUsagePlanArrayOutput)
 }
 
 type GetDeploymentSpecificationRequestPolicyArrayOutput struct{ *pulumi.OutputState }
@@ -17389,6 +18380,115 @@ func (o GetDeploymentSpecificationRequestPolicyRateLimitingArrayOutput) Index(i 
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentSpecificationRequestPolicyRateLimiting {
 		return vs[0].([]GetDeploymentSpecificationRequestPolicyRateLimiting)[vs[1].(int)]
 	}).(GetDeploymentSpecificationRequestPolicyRateLimitingOutput)
+}
+
+type GetDeploymentSpecificationRequestPolicyUsagePlan struct {
+	// A list of context variables specifying where API tokens may be located in a request. Example locations:
+	// * "request.headers[token]"
+	// * "request.query[token]"
+	// * "request.auth[Token]"
+	// * "request.path[TOKEN]"
+	TokenLocations []string `pulumi:"tokenLocations"`
+}
+
+// GetDeploymentSpecificationRequestPolicyUsagePlanInput is an input type that accepts GetDeploymentSpecificationRequestPolicyUsagePlanArgs and GetDeploymentSpecificationRequestPolicyUsagePlanOutput values.
+// You can construct a concrete instance of `GetDeploymentSpecificationRequestPolicyUsagePlanInput` via:
+//
+//          GetDeploymentSpecificationRequestPolicyUsagePlanArgs{...}
+type GetDeploymentSpecificationRequestPolicyUsagePlanInput interface {
+	pulumi.Input
+
+	ToGetDeploymentSpecificationRequestPolicyUsagePlanOutput() GetDeploymentSpecificationRequestPolicyUsagePlanOutput
+	ToGetDeploymentSpecificationRequestPolicyUsagePlanOutputWithContext(context.Context) GetDeploymentSpecificationRequestPolicyUsagePlanOutput
+}
+
+type GetDeploymentSpecificationRequestPolicyUsagePlanArgs struct {
+	// A list of context variables specifying where API tokens may be located in a request. Example locations:
+	// * "request.headers[token]"
+	// * "request.query[token]"
+	// * "request.auth[Token]"
+	// * "request.path[TOKEN]"
+	TokenLocations pulumi.StringArrayInput `pulumi:"tokenLocations"`
+}
+
+func (GetDeploymentSpecificationRequestPolicyUsagePlanArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentSpecificationRequestPolicyUsagePlan)(nil)).Elem()
+}
+
+func (i GetDeploymentSpecificationRequestPolicyUsagePlanArgs) ToGetDeploymentSpecificationRequestPolicyUsagePlanOutput() GetDeploymentSpecificationRequestPolicyUsagePlanOutput {
+	return i.ToGetDeploymentSpecificationRequestPolicyUsagePlanOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentSpecificationRequestPolicyUsagePlanArgs) ToGetDeploymentSpecificationRequestPolicyUsagePlanOutputWithContext(ctx context.Context) GetDeploymentSpecificationRequestPolicyUsagePlanOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentSpecificationRequestPolicyUsagePlanOutput)
+}
+
+// GetDeploymentSpecificationRequestPolicyUsagePlanArrayInput is an input type that accepts GetDeploymentSpecificationRequestPolicyUsagePlanArray and GetDeploymentSpecificationRequestPolicyUsagePlanArrayOutput values.
+// You can construct a concrete instance of `GetDeploymentSpecificationRequestPolicyUsagePlanArrayInput` via:
+//
+//          GetDeploymentSpecificationRequestPolicyUsagePlanArray{ GetDeploymentSpecificationRequestPolicyUsagePlanArgs{...} }
+type GetDeploymentSpecificationRequestPolicyUsagePlanArrayInput interface {
+	pulumi.Input
+
+	ToGetDeploymentSpecificationRequestPolicyUsagePlanArrayOutput() GetDeploymentSpecificationRequestPolicyUsagePlanArrayOutput
+	ToGetDeploymentSpecificationRequestPolicyUsagePlanArrayOutputWithContext(context.Context) GetDeploymentSpecificationRequestPolicyUsagePlanArrayOutput
+}
+
+type GetDeploymentSpecificationRequestPolicyUsagePlanArray []GetDeploymentSpecificationRequestPolicyUsagePlanInput
+
+func (GetDeploymentSpecificationRequestPolicyUsagePlanArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentSpecificationRequestPolicyUsagePlan)(nil)).Elem()
+}
+
+func (i GetDeploymentSpecificationRequestPolicyUsagePlanArray) ToGetDeploymentSpecificationRequestPolicyUsagePlanArrayOutput() GetDeploymentSpecificationRequestPolicyUsagePlanArrayOutput {
+	return i.ToGetDeploymentSpecificationRequestPolicyUsagePlanArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentSpecificationRequestPolicyUsagePlanArray) ToGetDeploymentSpecificationRequestPolicyUsagePlanArrayOutputWithContext(ctx context.Context) GetDeploymentSpecificationRequestPolicyUsagePlanArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentSpecificationRequestPolicyUsagePlanArrayOutput)
+}
+
+type GetDeploymentSpecificationRequestPolicyUsagePlanOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentSpecificationRequestPolicyUsagePlanOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentSpecificationRequestPolicyUsagePlan)(nil)).Elem()
+}
+
+func (o GetDeploymentSpecificationRequestPolicyUsagePlanOutput) ToGetDeploymentSpecificationRequestPolicyUsagePlanOutput() GetDeploymentSpecificationRequestPolicyUsagePlanOutput {
+	return o
+}
+
+func (o GetDeploymentSpecificationRequestPolicyUsagePlanOutput) ToGetDeploymentSpecificationRequestPolicyUsagePlanOutputWithContext(ctx context.Context) GetDeploymentSpecificationRequestPolicyUsagePlanOutput {
+	return o
+}
+
+// A list of context variables specifying where API tokens may be located in a request. Example locations:
+// * "request.headers[token]"
+// * "request.query[token]"
+// * "request.auth[Token]"
+// * "request.path[TOKEN]"
+func (o GetDeploymentSpecificationRequestPolicyUsagePlanOutput) TokenLocations() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDeploymentSpecificationRequestPolicyUsagePlan) []string { return v.TokenLocations }).(pulumi.StringArrayOutput)
+}
+
+type GetDeploymentSpecificationRequestPolicyUsagePlanArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentSpecificationRequestPolicyUsagePlanArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentSpecificationRequestPolicyUsagePlan)(nil)).Elem()
+}
+
+func (o GetDeploymentSpecificationRequestPolicyUsagePlanArrayOutput) ToGetDeploymentSpecificationRequestPolicyUsagePlanArrayOutput() GetDeploymentSpecificationRequestPolicyUsagePlanArrayOutput {
+	return o
+}
+
+func (o GetDeploymentSpecificationRequestPolicyUsagePlanArrayOutput) ToGetDeploymentSpecificationRequestPolicyUsagePlanArrayOutputWithContext(ctx context.Context) GetDeploymentSpecificationRequestPolicyUsagePlanArrayOutput {
+	return o
+}
+
+func (o GetDeploymentSpecificationRequestPolicyUsagePlanArrayOutput) Index(i pulumi.IntInput) GetDeploymentSpecificationRequestPolicyUsagePlanOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentSpecificationRequestPolicyUsagePlan {
+		return vs[0].([]GetDeploymentSpecificationRequestPolicyUsagePlan)[vs[1].(int)]
+	}).(GetDeploymentSpecificationRequestPolicyUsagePlanOutput)
 }
 
 type GetDeploymentSpecificationRoute struct {
@@ -22486,6 +23586,8 @@ type GetDeploymentsDeploymentCollectionSpecificationRequestPolicy struct {
 	MutualTls []GetDeploymentsDeploymentCollectionSpecificationRequestPolicyMutualTl `pulumi:"mutualTls"`
 	// Limit the number of requests that should be handled for the specified window using a specfic key.
 	RateLimitings []GetDeploymentsDeploymentCollectionSpecificationRequestPolicyRateLimiting `pulumi:"rateLimitings"`
+	// Usage plan policies for this deployment
+	UsagePlans []GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlan `pulumi:"usagePlans"`
 }
 
 // GetDeploymentsDeploymentCollectionSpecificationRequestPolicyInput is an input type that accepts GetDeploymentsDeploymentCollectionSpecificationRequestPolicyArgs and GetDeploymentsDeploymentCollectionSpecificationRequestPolicyOutput values.
@@ -22508,6 +23610,8 @@ type GetDeploymentsDeploymentCollectionSpecificationRequestPolicyArgs struct {
 	MutualTls GetDeploymentsDeploymentCollectionSpecificationRequestPolicyMutualTlArrayInput `pulumi:"mutualTls"`
 	// Limit the number of requests that should be handled for the specified window using a specfic key.
 	RateLimitings GetDeploymentsDeploymentCollectionSpecificationRequestPolicyRateLimitingArrayInput `pulumi:"rateLimitings"`
+	// Usage plan policies for this deployment
+	UsagePlans GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanArrayInput `pulumi:"usagePlans"`
 }
 
 func (GetDeploymentsDeploymentCollectionSpecificationRequestPolicyArgs) ElementType() reflect.Type {
@@ -22587,6 +23691,13 @@ func (o GetDeploymentsDeploymentCollectionSpecificationRequestPolicyOutput) Rate
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionSpecificationRequestPolicy) []GetDeploymentsDeploymentCollectionSpecificationRequestPolicyRateLimiting {
 		return v.RateLimitings
 	}).(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyRateLimitingArrayOutput)
+}
+
+// Usage plan policies for this deployment
+func (o GetDeploymentsDeploymentCollectionSpecificationRequestPolicyOutput) UsagePlans() GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanArrayOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionSpecificationRequestPolicy) []GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlan {
+		return v.UsagePlans
+	}).(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanArrayOutput)
 }
 
 type GetDeploymentsDeploymentCollectionSpecificationRequestPolicyArrayOutput struct{ *pulumi.OutputState }
@@ -23639,6 +24750,117 @@ func (o GetDeploymentsDeploymentCollectionSpecificationRequestPolicyRateLimiting
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentsDeploymentCollectionSpecificationRequestPolicyRateLimiting {
 		return vs[0].([]GetDeploymentsDeploymentCollectionSpecificationRequestPolicyRateLimiting)[vs[1].(int)]
 	}).(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyRateLimitingOutput)
+}
+
+type GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlan struct {
+	// A list of context variables specifying where API tokens may be located in a request. Example locations:
+	// * "request.headers[token]"
+	// * "request.query[token]"
+	// * "request.auth[Token]"
+	// * "request.path[TOKEN]"
+	TokenLocations []string `pulumi:"tokenLocations"`
+}
+
+// GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanInput is an input type that accepts GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanArgs and GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanOutput values.
+// You can construct a concrete instance of `GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanInput` via:
+//
+//          GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanArgs{...}
+type GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanInput interface {
+	pulumi.Input
+
+	ToGetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanOutput() GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanOutput
+	ToGetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanOutputWithContext(context.Context) GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanOutput
+}
+
+type GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanArgs struct {
+	// A list of context variables specifying where API tokens may be located in a request. Example locations:
+	// * "request.headers[token]"
+	// * "request.query[token]"
+	// * "request.auth[Token]"
+	// * "request.path[TOKEN]"
+	TokenLocations pulumi.StringArrayInput `pulumi:"tokenLocations"`
+}
+
+func (GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlan)(nil)).Elem()
+}
+
+func (i GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanArgs) ToGetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanOutput() GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanOutput {
+	return i.ToGetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanArgs) ToGetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanOutput)
+}
+
+// GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanArrayInput is an input type that accepts GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanArray and GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanArrayOutput values.
+// You can construct a concrete instance of `GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanArrayInput` via:
+//
+//          GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanArray{ GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanArgs{...} }
+type GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanArrayInput interface {
+	pulumi.Input
+
+	ToGetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanArrayOutput() GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanArrayOutput
+	ToGetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanArrayOutputWithContext(context.Context) GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanArrayOutput
+}
+
+type GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanArray []GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanInput
+
+func (GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlan)(nil)).Elem()
+}
+
+func (i GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanArray) ToGetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanArrayOutput() GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanArrayOutput {
+	return i.ToGetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanArray) ToGetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanArrayOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanArrayOutput)
+}
+
+type GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlan)(nil)).Elem()
+}
+
+func (o GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanOutput) ToGetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanOutput() GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanOutput {
+	return o
+}
+
+func (o GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanOutput) ToGetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanOutput {
+	return o
+}
+
+// A list of context variables specifying where API tokens may be located in a request. Example locations:
+// * "request.headers[token]"
+// * "request.query[token]"
+// * "request.auth[Token]"
+// * "request.path[TOKEN]"
+func (o GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanOutput) TokenLocations() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlan) []string {
+		return v.TokenLocations
+	}).(pulumi.StringArrayOutput)
+}
+
+type GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlan)(nil)).Elem()
+}
+
+func (o GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanArrayOutput) ToGetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanArrayOutput() GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanArrayOutput {
+	return o
+}
+
+func (o GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanArrayOutput) ToGetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanArrayOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanArrayOutput {
+	return o
+}
+
+func (o GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanArrayOutput) Index(i pulumi.IntInput) GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlan {
+		return vs[0].([]GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlan)[vs[1].(int)]
+	}).(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanOutput)
 }
 
 type GetDeploymentsDeploymentCollectionSpecificationRoute struct {
@@ -29569,6 +30791,1919 @@ func (o GetGatewaysGatewayCollectionResponseCacheDetailServerArrayOutput) Index(
 	}).(GetGatewaysGatewayCollectionResponseCacheDetailServerOutput)
 }
 
+type GetSubscriberClient struct {
+	// The name of the client. Must be unique within a subscriber.
+	Name string `pulumi:"name"`
+	// The token for the client. Must be unique within a tenancy.
+	Token string `pulumi:"token"`
+}
+
+// GetSubscriberClientInput is an input type that accepts GetSubscriberClientArgs and GetSubscriberClientOutput values.
+// You can construct a concrete instance of `GetSubscriberClientInput` via:
+//
+//          GetSubscriberClientArgs{...}
+type GetSubscriberClientInput interface {
+	pulumi.Input
+
+	ToGetSubscriberClientOutput() GetSubscriberClientOutput
+	ToGetSubscriberClientOutputWithContext(context.Context) GetSubscriberClientOutput
+}
+
+type GetSubscriberClientArgs struct {
+	// The name of the client. Must be unique within a subscriber.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The token for the client. Must be unique within a tenancy.
+	Token pulumi.StringInput `pulumi:"token"`
+}
+
+func (GetSubscriberClientArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubscriberClient)(nil)).Elem()
+}
+
+func (i GetSubscriberClientArgs) ToGetSubscriberClientOutput() GetSubscriberClientOutput {
+	return i.ToGetSubscriberClientOutputWithContext(context.Background())
+}
+
+func (i GetSubscriberClientArgs) ToGetSubscriberClientOutputWithContext(ctx context.Context) GetSubscriberClientOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriberClientOutput)
+}
+
+// GetSubscriberClientArrayInput is an input type that accepts GetSubscriberClientArray and GetSubscriberClientArrayOutput values.
+// You can construct a concrete instance of `GetSubscriberClientArrayInput` via:
+//
+//          GetSubscriberClientArray{ GetSubscriberClientArgs{...} }
+type GetSubscriberClientArrayInput interface {
+	pulumi.Input
+
+	ToGetSubscriberClientArrayOutput() GetSubscriberClientArrayOutput
+	ToGetSubscriberClientArrayOutputWithContext(context.Context) GetSubscriberClientArrayOutput
+}
+
+type GetSubscriberClientArray []GetSubscriberClientInput
+
+func (GetSubscriberClientArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubscriberClient)(nil)).Elem()
+}
+
+func (i GetSubscriberClientArray) ToGetSubscriberClientArrayOutput() GetSubscriberClientArrayOutput {
+	return i.ToGetSubscriberClientArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubscriberClientArray) ToGetSubscriberClientArrayOutputWithContext(ctx context.Context) GetSubscriberClientArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriberClientArrayOutput)
+}
+
+type GetSubscriberClientOutput struct{ *pulumi.OutputState }
+
+func (GetSubscriberClientOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubscriberClient)(nil)).Elem()
+}
+
+func (o GetSubscriberClientOutput) ToGetSubscriberClientOutput() GetSubscriberClientOutput {
+	return o
+}
+
+func (o GetSubscriberClientOutput) ToGetSubscriberClientOutputWithContext(ctx context.Context) GetSubscriberClientOutput {
+	return o
+}
+
+// The name of the client. Must be unique within a subscriber.
+func (o GetSubscriberClientOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubscriberClient) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The token for the client. Must be unique within a tenancy.
+func (o GetSubscriberClientOutput) Token() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubscriberClient) string { return v.Token }).(pulumi.StringOutput)
+}
+
+type GetSubscriberClientArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubscriberClientArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubscriberClient)(nil)).Elem()
+}
+
+func (o GetSubscriberClientArrayOutput) ToGetSubscriberClientArrayOutput() GetSubscriberClientArrayOutput {
+	return o
+}
+
+func (o GetSubscriberClientArrayOutput) ToGetSubscriberClientArrayOutputWithContext(ctx context.Context) GetSubscriberClientArrayOutput {
+	return o
+}
+
+func (o GetSubscriberClientArrayOutput) Index(i pulumi.IntInput) GetSubscriberClientOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscriberClient {
+		return vs[0].([]GetSubscriberClient)[vs[1].(int)]
+	}).(GetSubscriberClientOutput)
+}
+
+type GetSubscribersFilter struct {
+	// The name of the client. Must be unique within a subscriber.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSubscribersFilterInput is an input type that accepts GetSubscribersFilterArgs and GetSubscribersFilterOutput values.
+// You can construct a concrete instance of `GetSubscribersFilterInput` via:
+//
+//          GetSubscribersFilterArgs{...}
+type GetSubscribersFilterInput interface {
+	pulumi.Input
+
+	ToGetSubscribersFilterOutput() GetSubscribersFilterOutput
+	ToGetSubscribersFilterOutputWithContext(context.Context) GetSubscribersFilterOutput
+}
+
+type GetSubscribersFilterArgs struct {
+	// The name of the client. Must be unique within a subscriber.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSubscribersFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubscribersFilter)(nil)).Elem()
+}
+
+func (i GetSubscribersFilterArgs) ToGetSubscribersFilterOutput() GetSubscribersFilterOutput {
+	return i.ToGetSubscribersFilterOutputWithContext(context.Background())
+}
+
+func (i GetSubscribersFilterArgs) ToGetSubscribersFilterOutputWithContext(ctx context.Context) GetSubscribersFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribersFilterOutput)
+}
+
+// GetSubscribersFilterArrayInput is an input type that accepts GetSubscribersFilterArray and GetSubscribersFilterArrayOutput values.
+// You can construct a concrete instance of `GetSubscribersFilterArrayInput` via:
+//
+//          GetSubscribersFilterArray{ GetSubscribersFilterArgs{...} }
+type GetSubscribersFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSubscribersFilterArrayOutput() GetSubscribersFilterArrayOutput
+	ToGetSubscribersFilterArrayOutputWithContext(context.Context) GetSubscribersFilterArrayOutput
+}
+
+type GetSubscribersFilterArray []GetSubscribersFilterInput
+
+func (GetSubscribersFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubscribersFilter)(nil)).Elem()
+}
+
+func (i GetSubscribersFilterArray) ToGetSubscribersFilterArrayOutput() GetSubscribersFilterArrayOutput {
+	return i.ToGetSubscribersFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubscribersFilterArray) ToGetSubscribersFilterArrayOutputWithContext(ctx context.Context) GetSubscribersFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribersFilterArrayOutput)
+}
+
+type GetSubscribersFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSubscribersFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubscribersFilter)(nil)).Elem()
+}
+
+func (o GetSubscribersFilterOutput) ToGetSubscribersFilterOutput() GetSubscribersFilterOutput {
+	return o
+}
+
+func (o GetSubscribersFilterOutput) ToGetSubscribersFilterOutputWithContext(ctx context.Context) GetSubscribersFilterOutput {
+	return o
+}
+
+// The name of the client. Must be unique within a subscriber.
+func (o GetSubscribersFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubscribersFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSubscribersFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribersFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSubscribersFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSubscribersFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSubscribersFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubscribersFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubscribersFilter)(nil)).Elem()
+}
+
+func (o GetSubscribersFilterArrayOutput) ToGetSubscribersFilterArrayOutput() GetSubscribersFilterArrayOutput {
+	return o
+}
+
+func (o GetSubscribersFilterArrayOutput) ToGetSubscribersFilterArrayOutputWithContext(ctx context.Context) GetSubscribersFilterArrayOutput {
+	return o
+}
+
+func (o GetSubscribersFilterArrayOutput) Index(i pulumi.IntInput) GetSubscribersFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscribersFilter {
+		return vs[0].([]GetSubscribersFilter)[vs[1].(int)]
+	}).(GetSubscribersFilterOutput)
+}
+
+type GetSubscribersSubscriberCollection struct {
+	Items []GetSubscribersSubscriberCollectionItem `pulumi:"items"`
+}
+
+// GetSubscribersSubscriberCollectionInput is an input type that accepts GetSubscribersSubscriberCollectionArgs and GetSubscribersSubscriberCollectionOutput values.
+// You can construct a concrete instance of `GetSubscribersSubscriberCollectionInput` via:
+//
+//          GetSubscribersSubscriberCollectionArgs{...}
+type GetSubscribersSubscriberCollectionInput interface {
+	pulumi.Input
+
+	ToGetSubscribersSubscriberCollectionOutput() GetSubscribersSubscriberCollectionOutput
+	ToGetSubscribersSubscriberCollectionOutputWithContext(context.Context) GetSubscribersSubscriberCollectionOutput
+}
+
+type GetSubscribersSubscriberCollectionArgs struct {
+	Items GetSubscribersSubscriberCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSubscribersSubscriberCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubscribersSubscriberCollection)(nil)).Elem()
+}
+
+func (i GetSubscribersSubscriberCollectionArgs) ToGetSubscribersSubscriberCollectionOutput() GetSubscribersSubscriberCollectionOutput {
+	return i.ToGetSubscribersSubscriberCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSubscribersSubscriberCollectionArgs) ToGetSubscribersSubscriberCollectionOutputWithContext(ctx context.Context) GetSubscribersSubscriberCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribersSubscriberCollectionOutput)
+}
+
+// GetSubscribersSubscriberCollectionArrayInput is an input type that accepts GetSubscribersSubscriberCollectionArray and GetSubscribersSubscriberCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSubscribersSubscriberCollectionArrayInput` via:
+//
+//          GetSubscribersSubscriberCollectionArray{ GetSubscribersSubscriberCollectionArgs{...} }
+type GetSubscribersSubscriberCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSubscribersSubscriberCollectionArrayOutput() GetSubscribersSubscriberCollectionArrayOutput
+	ToGetSubscribersSubscriberCollectionArrayOutputWithContext(context.Context) GetSubscribersSubscriberCollectionArrayOutput
+}
+
+type GetSubscribersSubscriberCollectionArray []GetSubscribersSubscriberCollectionInput
+
+func (GetSubscribersSubscriberCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubscribersSubscriberCollection)(nil)).Elem()
+}
+
+func (i GetSubscribersSubscriberCollectionArray) ToGetSubscribersSubscriberCollectionArrayOutput() GetSubscribersSubscriberCollectionArrayOutput {
+	return i.ToGetSubscribersSubscriberCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubscribersSubscriberCollectionArray) ToGetSubscribersSubscriberCollectionArrayOutputWithContext(ctx context.Context) GetSubscribersSubscriberCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribersSubscriberCollectionArrayOutput)
+}
+
+type GetSubscribersSubscriberCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSubscribersSubscriberCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubscribersSubscriberCollection)(nil)).Elem()
+}
+
+func (o GetSubscribersSubscriberCollectionOutput) ToGetSubscribersSubscriberCollectionOutput() GetSubscribersSubscriberCollectionOutput {
+	return o
+}
+
+func (o GetSubscribersSubscriberCollectionOutput) ToGetSubscribersSubscriberCollectionOutputWithContext(ctx context.Context) GetSubscribersSubscriberCollectionOutput {
+	return o
+}
+
+func (o GetSubscribersSubscriberCollectionOutput) Items() GetSubscribersSubscriberCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSubscribersSubscriberCollection) []GetSubscribersSubscriberCollectionItem { return v.Items }).(GetSubscribersSubscriberCollectionItemArrayOutput)
+}
+
+type GetSubscribersSubscriberCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubscribersSubscriberCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubscribersSubscriberCollection)(nil)).Elem()
+}
+
+func (o GetSubscribersSubscriberCollectionArrayOutput) ToGetSubscribersSubscriberCollectionArrayOutput() GetSubscribersSubscriberCollectionArrayOutput {
+	return o
+}
+
+func (o GetSubscribersSubscriberCollectionArrayOutput) ToGetSubscribersSubscriberCollectionArrayOutputWithContext(ctx context.Context) GetSubscribersSubscriberCollectionArrayOutput {
+	return o
+}
+
+func (o GetSubscribersSubscriberCollectionArrayOutput) Index(i pulumi.IntInput) GetSubscribersSubscriberCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscribersSubscriberCollection {
+		return vs[0].([]GetSubscribersSubscriberCollection)[vs[1].(int)]
+	}).(GetSubscribersSubscriberCollectionOutput)
+}
+
+type GetSubscribersSubscriberCollectionItem struct {
+	// The clients belonging to this subscriber.
+	Clients []GetSubscribersSubscriberCollectionItemClient `pulumi:"clients"`
+	// The ocid of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
+	Id string `pulumi:"id"`
+	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// A filter to return only resources that match the given lifecycle state. Example: `ACTIVE`
+	State string `pulumi:"state"`
+	// The time this resource was created. An RFC3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time this resource was last updated. An RFC3339 formatted datetime string.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// An array of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of usage plan resources.
+	UsagePlans []string `pulumi:"usagePlans"`
+}
+
+// GetSubscribersSubscriberCollectionItemInput is an input type that accepts GetSubscribersSubscriberCollectionItemArgs and GetSubscribersSubscriberCollectionItemOutput values.
+// You can construct a concrete instance of `GetSubscribersSubscriberCollectionItemInput` via:
+//
+//          GetSubscribersSubscriberCollectionItemArgs{...}
+type GetSubscribersSubscriberCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSubscribersSubscriberCollectionItemOutput() GetSubscribersSubscriberCollectionItemOutput
+	ToGetSubscribersSubscriberCollectionItemOutputWithContext(context.Context) GetSubscribersSubscriberCollectionItemOutput
+}
+
+type GetSubscribersSubscriberCollectionItemArgs struct {
+	// The clients belonging to this subscriber.
+	Clients GetSubscribersSubscriberCollectionItemClientArrayInput `pulumi:"clients"`
+	// The ocid of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// A filter to return only resources that match the given lifecycle state. Example: `ACTIVE`
+	State pulumi.StringInput `pulumi:"state"`
+	// The time this resource was created. An RFC3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time this resource was last updated. An RFC3339 formatted datetime string.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// An array of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of usage plan resources.
+	UsagePlans pulumi.StringArrayInput `pulumi:"usagePlans"`
+}
+
+func (GetSubscribersSubscriberCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubscribersSubscriberCollectionItem)(nil)).Elem()
+}
+
+func (i GetSubscribersSubscriberCollectionItemArgs) ToGetSubscribersSubscriberCollectionItemOutput() GetSubscribersSubscriberCollectionItemOutput {
+	return i.ToGetSubscribersSubscriberCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSubscribersSubscriberCollectionItemArgs) ToGetSubscribersSubscriberCollectionItemOutputWithContext(ctx context.Context) GetSubscribersSubscriberCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribersSubscriberCollectionItemOutput)
+}
+
+// GetSubscribersSubscriberCollectionItemArrayInput is an input type that accepts GetSubscribersSubscriberCollectionItemArray and GetSubscribersSubscriberCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSubscribersSubscriberCollectionItemArrayInput` via:
+//
+//          GetSubscribersSubscriberCollectionItemArray{ GetSubscribersSubscriberCollectionItemArgs{...} }
+type GetSubscribersSubscriberCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSubscribersSubscriberCollectionItemArrayOutput() GetSubscribersSubscriberCollectionItemArrayOutput
+	ToGetSubscribersSubscriberCollectionItemArrayOutputWithContext(context.Context) GetSubscribersSubscriberCollectionItemArrayOutput
+}
+
+type GetSubscribersSubscriberCollectionItemArray []GetSubscribersSubscriberCollectionItemInput
+
+func (GetSubscribersSubscriberCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubscribersSubscriberCollectionItem)(nil)).Elem()
+}
+
+func (i GetSubscribersSubscriberCollectionItemArray) ToGetSubscribersSubscriberCollectionItemArrayOutput() GetSubscribersSubscriberCollectionItemArrayOutput {
+	return i.ToGetSubscribersSubscriberCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubscribersSubscriberCollectionItemArray) ToGetSubscribersSubscriberCollectionItemArrayOutputWithContext(ctx context.Context) GetSubscribersSubscriberCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribersSubscriberCollectionItemArrayOutput)
+}
+
+type GetSubscribersSubscriberCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSubscribersSubscriberCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubscribersSubscriberCollectionItem)(nil)).Elem()
+}
+
+func (o GetSubscribersSubscriberCollectionItemOutput) ToGetSubscribersSubscriberCollectionItemOutput() GetSubscribersSubscriberCollectionItemOutput {
+	return o
+}
+
+func (o GetSubscribersSubscriberCollectionItemOutput) ToGetSubscribersSubscriberCollectionItemOutputWithContext(ctx context.Context) GetSubscribersSubscriberCollectionItemOutput {
+	return o
+}
+
+// The clients belonging to this subscriber.
+func (o GetSubscribersSubscriberCollectionItemOutput) Clients() GetSubscribersSubscriberCollectionItemClientArrayOutput {
+	return o.ApplyT(func(v GetSubscribersSubscriberCollectionItem) []GetSubscribersSubscriberCollectionItemClient {
+		return v.Clients
+	}).(GetSubscribersSubscriberCollectionItemClientArrayOutput)
+}
+
+// The ocid of the compartment in which to list resources.
+func (o GetSubscribersSubscriberCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubscribersSubscriberCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetSubscribersSubscriberCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetSubscribersSubscriberCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+func (o GetSubscribersSubscriberCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubscribersSubscriberCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetSubscribersSubscriberCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetSubscribersSubscriberCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
+func (o GetSubscribersSubscriberCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubscribersSubscriberCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
+func (o GetSubscribersSubscriberCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubscribersSubscriberCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state. Example: `ACTIVE`
+func (o GetSubscribersSubscriberCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubscribersSubscriberCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The time this resource was created. An RFC3339 formatted datetime string.
+func (o GetSubscribersSubscriberCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubscribersSubscriberCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time this resource was last updated. An RFC3339 formatted datetime string.
+func (o GetSubscribersSubscriberCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubscribersSubscriberCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// An array of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of usage plan resources.
+func (o GetSubscribersSubscriberCollectionItemOutput) UsagePlans() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSubscribersSubscriberCollectionItem) []string { return v.UsagePlans }).(pulumi.StringArrayOutput)
+}
+
+type GetSubscribersSubscriberCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubscribersSubscriberCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubscribersSubscriberCollectionItem)(nil)).Elem()
+}
+
+func (o GetSubscribersSubscriberCollectionItemArrayOutput) ToGetSubscribersSubscriberCollectionItemArrayOutput() GetSubscribersSubscriberCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSubscribersSubscriberCollectionItemArrayOutput) ToGetSubscribersSubscriberCollectionItemArrayOutputWithContext(ctx context.Context) GetSubscribersSubscriberCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSubscribersSubscriberCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSubscribersSubscriberCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscribersSubscriberCollectionItem {
+		return vs[0].([]GetSubscribersSubscriberCollectionItem)[vs[1].(int)]
+	}).(GetSubscribersSubscriberCollectionItemOutput)
+}
+
+type GetSubscribersSubscriberCollectionItemClient struct {
+	// The name of the client. Must be unique within a subscriber.
+	Name string `pulumi:"name"`
+	// The token for the client. Must be unique within a tenancy.
+	Token string `pulumi:"token"`
+}
+
+// GetSubscribersSubscriberCollectionItemClientInput is an input type that accepts GetSubscribersSubscriberCollectionItemClientArgs and GetSubscribersSubscriberCollectionItemClientOutput values.
+// You can construct a concrete instance of `GetSubscribersSubscriberCollectionItemClientInput` via:
+//
+//          GetSubscribersSubscriberCollectionItemClientArgs{...}
+type GetSubscribersSubscriberCollectionItemClientInput interface {
+	pulumi.Input
+
+	ToGetSubscribersSubscriberCollectionItemClientOutput() GetSubscribersSubscriberCollectionItemClientOutput
+	ToGetSubscribersSubscriberCollectionItemClientOutputWithContext(context.Context) GetSubscribersSubscriberCollectionItemClientOutput
+}
+
+type GetSubscribersSubscriberCollectionItemClientArgs struct {
+	// The name of the client. Must be unique within a subscriber.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The token for the client. Must be unique within a tenancy.
+	Token pulumi.StringInput `pulumi:"token"`
+}
+
+func (GetSubscribersSubscriberCollectionItemClientArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubscribersSubscriberCollectionItemClient)(nil)).Elem()
+}
+
+func (i GetSubscribersSubscriberCollectionItemClientArgs) ToGetSubscribersSubscriberCollectionItemClientOutput() GetSubscribersSubscriberCollectionItemClientOutput {
+	return i.ToGetSubscribersSubscriberCollectionItemClientOutputWithContext(context.Background())
+}
+
+func (i GetSubscribersSubscriberCollectionItemClientArgs) ToGetSubscribersSubscriberCollectionItemClientOutputWithContext(ctx context.Context) GetSubscribersSubscriberCollectionItemClientOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribersSubscriberCollectionItemClientOutput)
+}
+
+// GetSubscribersSubscriberCollectionItemClientArrayInput is an input type that accepts GetSubscribersSubscriberCollectionItemClientArray and GetSubscribersSubscriberCollectionItemClientArrayOutput values.
+// You can construct a concrete instance of `GetSubscribersSubscriberCollectionItemClientArrayInput` via:
+//
+//          GetSubscribersSubscriberCollectionItemClientArray{ GetSubscribersSubscriberCollectionItemClientArgs{...} }
+type GetSubscribersSubscriberCollectionItemClientArrayInput interface {
+	pulumi.Input
+
+	ToGetSubscribersSubscriberCollectionItemClientArrayOutput() GetSubscribersSubscriberCollectionItemClientArrayOutput
+	ToGetSubscribersSubscriberCollectionItemClientArrayOutputWithContext(context.Context) GetSubscribersSubscriberCollectionItemClientArrayOutput
+}
+
+type GetSubscribersSubscriberCollectionItemClientArray []GetSubscribersSubscriberCollectionItemClientInput
+
+func (GetSubscribersSubscriberCollectionItemClientArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubscribersSubscriberCollectionItemClient)(nil)).Elem()
+}
+
+func (i GetSubscribersSubscriberCollectionItemClientArray) ToGetSubscribersSubscriberCollectionItemClientArrayOutput() GetSubscribersSubscriberCollectionItemClientArrayOutput {
+	return i.ToGetSubscribersSubscriberCollectionItemClientArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubscribersSubscriberCollectionItemClientArray) ToGetSubscribersSubscriberCollectionItemClientArrayOutputWithContext(ctx context.Context) GetSubscribersSubscriberCollectionItemClientArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribersSubscriberCollectionItemClientArrayOutput)
+}
+
+type GetSubscribersSubscriberCollectionItemClientOutput struct{ *pulumi.OutputState }
+
+func (GetSubscribersSubscriberCollectionItemClientOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubscribersSubscriberCollectionItemClient)(nil)).Elem()
+}
+
+func (o GetSubscribersSubscriberCollectionItemClientOutput) ToGetSubscribersSubscriberCollectionItemClientOutput() GetSubscribersSubscriberCollectionItemClientOutput {
+	return o
+}
+
+func (o GetSubscribersSubscriberCollectionItemClientOutput) ToGetSubscribersSubscriberCollectionItemClientOutputWithContext(ctx context.Context) GetSubscribersSubscriberCollectionItemClientOutput {
+	return o
+}
+
+// The name of the client. Must be unique within a subscriber.
+func (o GetSubscribersSubscriberCollectionItemClientOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubscribersSubscriberCollectionItemClient) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The token for the client. Must be unique within a tenancy.
+func (o GetSubscribersSubscriberCollectionItemClientOutput) Token() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubscribersSubscriberCollectionItemClient) string { return v.Token }).(pulumi.StringOutput)
+}
+
+type GetSubscribersSubscriberCollectionItemClientArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubscribersSubscriberCollectionItemClientArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubscribersSubscriberCollectionItemClient)(nil)).Elem()
+}
+
+func (o GetSubscribersSubscriberCollectionItemClientArrayOutput) ToGetSubscribersSubscriberCollectionItemClientArrayOutput() GetSubscribersSubscriberCollectionItemClientArrayOutput {
+	return o
+}
+
+func (o GetSubscribersSubscriberCollectionItemClientArrayOutput) ToGetSubscribersSubscriberCollectionItemClientArrayOutputWithContext(ctx context.Context) GetSubscribersSubscriberCollectionItemClientArrayOutput {
+	return o
+}
+
+func (o GetSubscribersSubscriberCollectionItemClientArrayOutput) Index(i pulumi.IntInput) GetSubscribersSubscriberCollectionItemClientOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscribersSubscriberCollectionItemClient {
+		return vs[0].([]GetSubscribersSubscriberCollectionItemClient)[vs[1].(int)]
+	}).(GetSubscribersSubscriberCollectionItemClientOutput)
+}
+
+type GetUsagePlanEntitlement struct {
+	// A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
+	Description string `pulumi:"description"`
+	// An entitlement name, unique within a usage plan.
+	Name string `pulumi:"name"`
+	// Quota policy for a usage plan.
+	Quotas []GetUsagePlanEntitlementQuota `pulumi:"quotas"`
+	// Rate-limiting policy for a usage plan.
+	RateLimits []GetUsagePlanEntitlementRateLimit `pulumi:"rateLimits"`
+	// A collection of targeted deployments that the entitlement will be applied to.
+	Targets []GetUsagePlanEntitlementTarget `pulumi:"targets"`
+}
+
+// GetUsagePlanEntitlementInput is an input type that accepts GetUsagePlanEntitlementArgs and GetUsagePlanEntitlementOutput values.
+// You can construct a concrete instance of `GetUsagePlanEntitlementInput` via:
+//
+//          GetUsagePlanEntitlementArgs{...}
+type GetUsagePlanEntitlementInput interface {
+	pulumi.Input
+
+	ToGetUsagePlanEntitlementOutput() GetUsagePlanEntitlementOutput
+	ToGetUsagePlanEntitlementOutputWithContext(context.Context) GetUsagePlanEntitlementOutput
+}
+
+type GetUsagePlanEntitlementArgs struct {
+	// A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
+	Description pulumi.StringInput `pulumi:"description"`
+	// An entitlement name, unique within a usage plan.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Quota policy for a usage plan.
+	Quotas GetUsagePlanEntitlementQuotaArrayInput `pulumi:"quotas"`
+	// Rate-limiting policy for a usage plan.
+	RateLimits GetUsagePlanEntitlementRateLimitArrayInput `pulumi:"rateLimits"`
+	// A collection of targeted deployments that the entitlement will be applied to.
+	Targets GetUsagePlanEntitlementTargetArrayInput `pulumi:"targets"`
+}
+
+func (GetUsagePlanEntitlementArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsagePlanEntitlement)(nil)).Elem()
+}
+
+func (i GetUsagePlanEntitlementArgs) ToGetUsagePlanEntitlementOutput() GetUsagePlanEntitlementOutput {
+	return i.ToGetUsagePlanEntitlementOutputWithContext(context.Background())
+}
+
+func (i GetUsagePlanEntitlementArgs) ToGetUsagePlanEntitlementOutputWithContext(ctx context.Context) GetUsagePlanEntitlementOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsagePlanEntitlementOutput)
+}
+
+// GetUsagePlanEntitlementArrayInput is an input type that accepts GetUsagePlanEntitlementArray and GetUsagePlanEntitlementArrayOutput values.
+// You can construct a concrete instance of `GetUsagePlanEntitlementArrayInput` via:
+//
+//          GetUsagePlanEntitlementArray{ GetUsagePlanEntitlementArgs{...} }
+type GetUsagePlanEntitlementArrayInput interface {
+	pulumi.Input
+
+	ToGetUsagePlanEntitlementArrayOutput() GetUsagePlanEntitlementArrayOutput
+	ToGetUsagePlanEntitlementArrayOutputWithContext(context.Context) GetUsagePlanEntitlementArrayOutput
+}
+
+type GetUsagePlanEntitlementArray []GetUsagePlanEntitlementInput
+
+func (GetUsagePlanEntitlementArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsagePlanEntitlement)(nil)).Elem()
+}
+
+func (i GetUsagePlanEntitlementArray) ToGetUsagePlanEntitlementArrayOutput() GetUsagePlanEntitlementArrayOutput {
+	return i.ToGetUsagePlanEntitlementArrayOutputWithContext(context.Background())
+}
+
+func (i GetUsagePlanEntitlementArray) ToGetUsagePlanEntitlementArrayOutputWithContext(ctx context.Context) GetUsagePlanEntitlementArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsagePlanEntitlementArrayOutput)
+}
+
+type GetUsagePlanEntitlementOutput struct{ *pulumi.OutputState }
+
+func (GetUsagePlanEntitlementOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsagePlanEntitlement)(nil)).Elem()
+}
+
+func (o GetUsagePlanEntitlementOutput) ToGetUsagePlanEntitlementOutput() GetUsagePlanEntitlementOutput {
+	return o
+}
+
+func (o GetUsagePlanEntitlementOutput) ToGetUsagePlanEntitlementOutputWithContext(ctx context.Context) GetUsagePlanEntitlementOutput {
+	return o
+}
+
+// A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
+func (o GetUsagePlanEntitlementOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsagePlanEntitlement) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// An entitlement name, unique within a usage plan.
+func (o GetUsagePlanEntitlementOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsagePlanEntitlement) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Quota policy for a usage plan.
+func (o GetUsagePlanEntitlementOutput) Quotas() GetUsagePlanEntitlementQuotaArrayOutput {
+	return o.ApplyT(func(v GetUsagePlanEntitlement) []GetUsagePlanEntitlementQuota { return v.Quotas }).(GetUsagePlanEntitlementQuotaArrayOutput)
+}
+
+// Rate-limiting policy for a usage plan.
+func (o GetUsagePlanEntitlementOutput) RateLimits() GetUsagePlanEntitlementRateLimitArrayOutput {
+	return o.ApplyT(func(v GetUsagePlanEntitlement) []GetUsagePlanEntitlementRateLimit { return v.RateLimits }).(GetUsagePlanEntitlementRateLimitArrayOutput)
+}
+
+// A collection of targeted deployments that the entitlement will be applied to.
+func (o GetUsagePlanEntitlementOutput) Targets() GetUsagePlanEntitlementTargetArrayOutput {
+	return o.ApplyT(func(v GetUsagePlanEntitlement) []GetUsagePlanEntitlementTarget { return v.Targets }).(GetUsagePlanEntitlementTargetArrayOutput)
+}
+
+type GetUsagePlanEntitlementArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUsagePlanEntitlementArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsagePlanEntitlement)(nil)).Elem()
+}
+
+func (o GetUsagePlanEntitlementArrayOutput) ToGetUsagePlanEntitlementArrayOutput() GetUsagePlanEntitlementArrayOutput {
+	return o
+}
+
+func (o GetUsagePlanEntitlementArrayOutput) ToGetUsagePlanEntitlementArrayOutputWithContext(ctx context.Context) GetUsagePlanEntitlementArrayOutput {
+	return o
+}
+
+func (o GetUsagePlanEntitlementArrayOutput) Index(i pulumi.IntInput) GetUsagePlanEntitlementOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUsagePlanEntitlement {
+		return vs[0].([]GetUsagePlanEntitlement)[vs[1].(int)]
+	}).(GetUsagePlanEntitlementOutput)
+}
+
+type GetUsagePlanEntitlementQuota struct {
+	// What the usage plan will do when a quota is breached: `REJECT` will allow no further requests `ALLOW` will continue to allow further requests
+	OperationOnBreach string `pulumi:"operationOnBreach"`
+	// The policy that controls when quotas will reset. Example: `CALENDAR`
+	ResetPolicy string `pulumi:"resetPolicy"`
+	// The unit of time over which rate limits are calculated. Example: `SECOND`
+	Unit string `pulumi:"unit"`
+	// The number of requests that can be made per time period.
+	Value int `pulumi:"value"`
+}
+
+// GetUsagePlanEntitlementQuotaInput is an input type that accepts GetUsagePlanEntitlementQuotaArgs and GetUsagePlanEntitlementQuotaOutput values.
+// You can construct a concrete instance of `GetUsagePlanEntitlementQuotaInput` via:
+//
+//          GetUsagePlanEntitlementQuotaArgs{...}
+type GetUsagePlanEntitlementQuotaInput interface {
+	pulumi.Input
+
+	ToGetUsagePlanEntitlementQuotaOutput() GetUsagePlanEntitlementQuotaOutput
+	ToGetUsagePlanEntitlementQuotaOutputWithContext(context.Context) GetUsagePlanEntitlementQuotaOutput
+}
+
+type GetUsagePlanEntitlementQuotaArgs struct {
+	// What the usage plan will do when a quota is breached: `REJECT` will allow no further requests `ALLOW` will continue to allow further requests
+	OperationOnBreach pulumi.StringInput `pulumi:"operationOnBreach"`
+	// The policy that controls when quotas will reset. Example: `CALENDAR`
+	ResetPolicy pulumi.StringInput `pulumi:"resetPolicy"`
+	// The unit of time over which rate limits are calculated. Example: `SECOND`
+	Unit pulumi.StringInput `pulumi:"unit"`
+	// The number of requests that can be made per time period.
+	Value pulumi.IntInput `pulumi:"value"`
+}
+
+func (GetUsagePlanEntitlementQuotaArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsagePlanEntitlementQuota)(nil)).Elem()
+}
+
+func (i GetUsagePlanEntitlementQuotaArgs) ToGetUsagePlanEntitlementQuotaOutput() GetUsagePlanEntitlementQuotaOutput {
+	return i.ToGetUsagePlanEntitlementQuotaOutputWithContext(context.Background())
+}
+
+func (i GetUsagePlanEntitlementQuotaArgs) ToGetUsagePlanEntitlementQuotaOutputWithContext(ctx context.Context) GetUsagePlanEntitlementQuotaOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsagePlanEntitlementQuotaOutput)
+}
+
+// GetUsagePlanEntitlementQuotaArrayInput is an input type that accepts GetUsagePlanEntitlementQuotaArray and GetUsagePlanEntitlementQuotaArrayOutput values.
+// You can construct a concrete instance of `GetUsagePlanEntitlementQuotaArrayInput` via:
+//
+//          GetUsagePlanEntitlementQuotaArray{ GetUsagePlanEntitlementQuotaArgs{...} }
+type GetUsagePlanEntitlementQuotaArrayInput interface {
+	pulumi.Input
+
+	ToGetUsagePlanEntitlementQuotaArrayOutput() GetUsagePlanEntitlementQuotaArrayOutput
+	ToGetUsagePlanEntitlementQuotaArrayOutputWithContext(context.Context) GetUsagePlanEntitlementQuotaArrayOutput
+}
+
+type GetUsagePlanEntitlementQuotaArray []GetUsagePlanEntitlementQuotaInput
+
+func (GetUsagePlanEntitlementQuotaArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsagePlanEntitlementQuota)(nil)).Elem()
+}
+
+func (i GetUsagePlanEntitlementQuotaArray) ToGetUsagePlanEntitlementQuotaArrayOutput() GetUsagePlanEntitlementQuotaArrayOutput {
+	return i.ToGetUsagePlanEntitlementQuotaArrayOutputWithContext(context.Background())
+}
+
+func (i GetUsagePlanEntitlementQuotaArray) ToGetUsagePlanEntitlementQuotaArrayOutputWithContext(ctx context.Context) GetUsagePlanEntitlementQuotaArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsagePlanEntitlementQuotaArrayOutput)
+}
+
+type GetUsagePlanEntitlementQuotaOutput struct{ *pulumi.OutputState }
+
+func (GetUsagePlanEntitlementQuotaOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsagePlanEntitlementQuota)(nil)).Elem()
+}
+
+func (o GetUsagePlanEntitlementQuotaOutput) ToGetUsagePlanEntitlementQuotaOutput() GetUsagePlanEntitlementQuotaOutput {
+	return o
+}
+
+func (o GetUsagePlanEntitlementQuotaOutput) ToGetUsagePlanEntitlementQuotaOutputWithContext(ctx context.Context) GetUsagePlanEntitlementQuotaOutput {
+	return o
+}
+
+// What the usage plan will do when a quota is breached: `REJECT` will allow no further requests `ALLOW` will continue to allow further requests
+func (o GetUsagePlanEntitlementQuotaOutput) OperationOnBreach() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsagePlanEntitlementQuota) string { return v.OperationOnBreach }).(pulumi.StringOutput)
+}
+
+// The policy that controls when quotas will reset. Example: `CALENDAR`
+func (o GetUsagePlanEntitlementQuotaOutput) ResetPolicy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsagePlanEntitlementQuota) string { return v.ResetPolicy }).(pulumi.StringOutput)
+}
+
+// The unit of time over which rate limits are calculated. Example: `SECOND`
+func (o GetUsagePlanEntitlementQuotaOutput) Unit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsagePlanEntitlementQuota) string { return v.Unit }).(pulumi.StringOutput)
+}
+
+// The number of requests that can be made per time period.
+func (o GetUsagePlanEntitlementQuotaOutput) Value() pulumi.IntOutput {
+	return o.ApplyT(func(v GetUsagePlanEntitlementQuota) int { return v.Value }).(pulumi.IntOutput)
+}
+
+type GetUsagePlanEntitlementQuotaArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUsagePlanEntitlementQuotaArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsagePlanEntitlementQuota)(nil)).Elem()
+}
+
+func (o GetUsagePlanEntitlementQuotaArrayOutput) ToGetUsagePlanEntitlementQuotaArrayOutput() GetUsagePlanEntitlementQuotaArrayOutput {
+	return o
+}
+
+func (o GetUsagePlanEntitlementQuotaArrayOutput) ToGetUsagePlanEntitlementQuotaArrayOutputWithContext(ctx context.Context) GetUsagePlanEntitlementQuotaArrayOutput {
+	return o
+}
+
+func (o GetUsagePlanEntitlementQuotaArrayOutput) Index(i pulumi.IntInput) GetUsagePlanEntitlementQuotaOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUsagePlanEntitlementQuota {
+		return vs[0].([]GetUsagePlanEntitlementQuota)[vs[1].(int)]
+	}).(GetUsagePlanEntitlementQuotaOutput)
+}
+
+type GetUsagePlanEntitlementRateLimit struct {
+	// The unit of time over which rate limits are calculated. Example: `SECOND`
+	Unit string `pulumi:"unit"`
+	// The number of requests that can be made per time period.
+	Value int `pulumi:"value"`
+}
+
+// GetUsagePlanEntitlementRateLimitInput is an input type that accepts GetUsagePlanEntitlementRateLimitArgs and GetUsagePlanEntitlementRateLimitOutput values.
+// You can construct a concrete instance of `GetUsagePlanEntitlementRateLimitInput` via:
+//
+//          GetUsagePlanEntitlementRateLimitArgs{...}
+type GetUsagePlanEntitlementRateLimitInput interface {
+	pulumi.Input
+
+	ToGetUsagePlanEntitlementRateLimitOutput() GetUsagePlanEntitlementRateLimitOutput
+	ToGetUsagePlanEntitlementRateLimitOutputWithContext(context.Context) GetUsagePlanEntitlementRateLimitOutput
+}
+
+type GetUsagePlanEntitlementRateLimitArgs struct {
+	// The unit of time over which rate limits are calculated. Example: `SECOND`
+	Unit pulumi.StringInput `pulumi:"unit"`
+	// The number of requests that can be made per time period.
+	Value pulumi.IntInput `pulumi:"value"`
+}
+
+func (GetUsagePlanEntitlementRateLimitArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsagePlanEntitlementRateLimit)(nil)).Elem()
+}
+
+func (i GetUsagePlanEntitlementRateLimitArgs) ToGetUsagePlanEntitlementRateLimitOutput() GetUsagePlanEntitlementRateLimitOutput {
+	return i.ToGetUsagePlanEntitlementRateLimitOutputWithContext(context.Background())
+}
+
+func (i GetUsagePlanEntitlementRateLimitArgs) ToGetUsagePlanEntitlementRateLimitOutputWithContext(ctx context.Context) GetUsagePlanEntitlementRateLimitOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsagePlanEntitlementRateLimitOutput)
+}
+
+// GetUsagePlanEntitlementRateLimitArrayInput is an input type that accepts GetUsagePlanEntitlementRateLimitArray and GetUsagePlanEntitlementRateLimitArrayOutput values.
+// You can construct a concrete instance of `GetUsagePlanEntitlementRateLimitArrayInput` via:
+//
+//          GetUsagePlanEntitlementRateLimitArray{ GetUsagePlanEntitlementRateLimitArgs{...} }
+type GetUsagePlanEntitlementRateLimitArrayInput interface {
+	pulumi.Input
+
+	ToGetUsagePlanEntitlementRateLimitArrayOutput() GetUsagePlanEntitlementRateLimitArrayOutput
+	ToGetUsagePlanEntitlementRateLimitArrayOutputWithContext(context.Context) GetUsagePlanEntitlementRateLimitArrayOutput
+}
+
+type GetUsagePlanEntitlementRateLimitArray []GetUsagePlanEntitlementRateLimitInput
+
+func (GetUsagePlanEntitlementRateLimitArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsagePlanEntitlementRateLimit)(nil)).Elem()
+}
+
+func (i GetUsagePlanEntitlementRateLimitArray) ToGetUsagePlanEntitlementRateLimitArrayOutput() GetUsagePlanEntitlementRateLimitArrayOutput {
+	return i.ToGetUsagePlanEntitlementRateLimitArrayOutputWithContext(context.Background())
+}
+
+func (i GetUsagePlanEntitlementRateLimitArray) ToGetUsagePlanEntitlementRateLimitArrayOutputWithContext(ctx context.Context) GetUsagePlanEntitlementRateLimitArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsagePlanEntitlementRateLimitArrayOutput)
+}
+
+type GetUsagePlanEntitlementRateLimitOutput struct{ *pulumi.OutputState }
+
+func (GetUsagePlanEntitlementRateLimitOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsagePlanEntitlementRateLimit)(nil)).Elem()
+}
+
+func (o GetUsagePlanEntitlementRateLimitOutput) ToGetUsagePlanEntitlementRateLimitOutput() GetUsagePlanEntitlementRateLimitOutput {
+	return o
+}
+
+func (o GetUsagePlanEntitlementRateLimitOutput) ToGetUsagePlanEntitlementRateLimitOutputWithContext(ctx context.Context) GetUsagePlanEntitlementRateLimitOutput {
+	return o
+}
+
+// The unit of time over which rate limits are calculated. Example: `SECOND`
+func (o GetUsagePlanEntitlementRateLimitOutput) Unit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsagePlanEntitlementRateLimit) string { return v.Unit }).(pulumi.StringOutput)
+}
+
+// The number of requests that can be made per time period.
+func (o GetUsagePlanEntitlementRateLimitOutput) Value() pulumi.IntOutput {
+	return o.ApplyT(func(v GetUsagePlanEntitlementRateLimit) int { return v.Value }).(pulumi.IntOutput)
+}
+
+type GetUsagePlanEntitlementRateLimitArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUsagePlanEntitlementRateLimitArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsagePlanEntitlementRateLimit)(nil)).Elem()
+}
+
+func (o GetUsagePlanEntitlementRateLimitArrayOutput) ToGetUsagePlanEntitlementRateLimitArrayOutput() GetUsagePlanEntitlementRateLimitArrayOutput {
+	return o
+}
+
+func (o GetUsagePlanEntitlementRateLimitArrayOutput) ToGetUsagePlanEntitlementRateLimitArrayOutputWithContext(ctx context.Context) GetUsagePlanEntitlementRateLimitArrayOutput {
+	return o
+}
+
+func (o GetUsagePlanEntitlementRateLimitArrayOutput) Index(i pulumi.IntInput) GetUsagePlanEntitlementRateLimitOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUsagePlanEntitlementRateLimit {
+		return vs[0].([]GetUsagePlanEntitlementRateLimit)[vs[1].(int)]
+	}).(GetUsagePlanEntitlementRateLimitOutput)
+}
+
+type GetUsagePlanEntitlementTarget struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a deployment resource.
+	DeploymentId string `pulumi:"deploymentId"`
+}
+
+// GetUsagePlanEntitlementTargetInput is an input type that accepts GetUsagePlanEntitlementTargetArgs and GetUsagePlanEntitlementTargetOutput values.
+// You can construct a concrete instance of `GetUsagePlanEntitlementTargetInput` via:
+//
+//          GetUsagePlanEntitlementTargetArgs{...}
+type GetUsagePlanEntitlementTargetInput interface {
+	pulumi.Input
+
+	ToGetUsagePlanEntitlementTargetOutput() GetUsagePlanEntitlementTargetOutput
+	ToGetUsagePlanEntitlementTargetOutputWithContext(context.Context) GetUsagePlanEntitlementTargetOutput
+}
+
+type GetUsagePlanEntitlementTargetArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a deployment resource.
+	DeploymentId pulumi.StringInput `pulumi:"deploymentId"`
+}
+
+func (GetUsagePlanEntitlementTargetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsagePlanEntitlementTarget)(nil)).Elem()
+}
+
+func (i GetUsagePlanEntitlementTargetArgs) ToGetUsagePlanEntitlementTargetOutput() GetUsagePlanEntitlementTargetOutput {
+	return i.ToGetUsagePlanEntitlementTargetOutputWithContext(context.Background())
+}
+
+func (i GetUsagePlanEntitlementTargetArgs) ToGetUsagePlanEntitlementTargetOutputWithContext(ctx context.Context) GetUsagePlanEntitlementTargetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsagePlanEntitlementTargetOutput)
+}
+
+// GetUsagePlanEntitlementTargetArrayInput is an input type that accepts GetUsagePlanEntitlementTargetArray and GetUsagePlanEntitlementTargetArrayOutput values.
+// You can construct a concrete instance of `GetUsagePlanEntitlementTargetArrayInput` via:
+//
+//          GetUsagePlanEntitlementTargetArray{ GetUsagePlanEntitlementTargetArgs{...} }
+type GetUsagePlanEntitlementTargetArrayInput interface {
+	pulumi.Input
+
+	ToGetUsagePlanEntitlementTargetArrayOutput() GetUsagePlanEntitlementTargetArrayOutput
+	ToGetUsagePlanEntitlementTargetArrayOutputWithContext(context.Context) GetUsagePlanEntitlementTargetArrayOutput
+}
+
+type GetUsagePlanEntitlementTargetArray []GetUsagePlanEntitlementTargetInput
+
+func (GetUsagePlanEntitlementTargetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsagePlanEntitlementTarget)(nil)).Elem()
+}
+
+func (i GetUsagePlanEntitlementTargetArray) ToGetUsagePlanEntitlementTargetArrayOutput() GetUsagePlanEntitlementTargetArrayOutput {
+	return i.ToGetUsagePlanEntitlementTargetArrayOutputWithContext(context.Background())
+}
+
+func (i GetUsagePlanEntitlementTargetArray) ToGetUsagePlanEntitlementTargetArrayOutputWithContext(ctx context.Context) GetUsagePlanEntitlementTargetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsagePlanEntitlementTargetArrayOutput)
+}
+
+type GetUsagePlanEntitlementTargetOutput struct{ *pulumi.OutputState }
+
+func (GetUsagePlanEntitlementTargetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsagePlanEntitlementTarget)(nil)).Elem()
+}
+
+func (o GetUsagePlanEntitlementTargetOutput) ToGetUsagePlanEntitlementTargetOutput() GetUsagePlanEntitlementTargetOutput {
+	return o
+}
+
+func (o GetUsagePlanEntitlementTargetOutput) ToGetUsagePlanEntitlementTargetOutputWithContext(ctx context.Context) GetUsagePlanEntitlementTargetOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a deployment resource.
+func (o GetUsagePlanEntitlementTargetOutput) DeploymentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsagePlanEntitlementTarget) string { return v.DeploymentId }).(pulumi.StringOutput)
+}
+
+type GetUsagePlanEntitlementTargetArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUsagePlanEntitlementTargetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsagePlanEntitlementTarget)(nil)).Elem()
+}
+
+func (o GetUsagePlanEntitlementTargetArrayOutput) ToGetUsagePlanEntitlementTargetArrayOutput() GetUsagePlanEntitlementTargetArrayOutput {
+	return o
+}
+
+func (o GetUsagePlanEntitlementTargetArrayOutput) ToGetUsagePlanEntitlementTargetArrayOutputWithContext(ctx context.Context) GetUsagePlanEntitlementTargetArrayOutput {
+	return o
+}
+
+func (o GetUsagePlanEntitlementTargetArrayOutput) Index(i pulumi.IntInput) GetUsagePlanEntitlementTargetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUsagePlanEntitlementTarget {
+		return vs[0].([]GetUsagePlanEntitlementTarget)[vs[1].(int)]
+	}).(GetUsagePlanEntitlementTargetOutput)
+}
+
+type GetUsagePlansFilter struct {
+	// An entitlement name, unique within a usage plan.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetUsagePlansFilterInput is an input type that accepts GetUsagePlansFilterArgs and GetUsagePlansFilterOutput values.
+// You can construct a concrete instance of `GetUsagePlansFilterInput` via:
+//
+//          GetUsagePlansFilterArgs{...}
+type GetUsagePlansFilterInput interface {
+	pulumi.Input
+
+	ToGetUsagePlansFilterOutput() GetUsagePlansFilterOutput
+	ToGetUsagePlansFilterOutputWithContext(context.Context) GetUsagePlansFilterOutput
+}
+
+type GetUsagePlansFilterArgs struct {
+	// An entitlement name, unique within a usage plan.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetUsagePlansFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsagePlansFilter)(nil)).Elem()
+}
+
+func (i GetUsagePlansFilterArgs) ToGetUsagePlansFilterOutput() GetUsagePlansFilterOutput {
+	return i.ToGetUsagePlansFilterOutputWithContext(context.Background())
+}
+
+func (i GetUsagePlansFilterArgs) ToGetUsagePlansFilterOutputWithContext(ctx context.Context) GetUsagePlansFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsagePlansFilterOutput)
+}
+
+// GetUsagePlansFilterArrayInput is an input type that accepts GetUsagePlansFilterArray and GetUsagePlansFilterArrayOutput values.
+// You can construct a concrete instance of `GetUsagePlansFilterArrayInput` via:
+//
+//          GetUsagePlansFilterArray{ GetUsagePlansFilterArgs{...} }
+type GetUsagePlansFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetUsagePlansFilterArrayOutput() GetUsagePlansFilterArrayOutput
+	ToGetUsagePlansFilterArrayOutputWithContext(context.Context) GetUsagePlansFilterArrayOutput
+}
+
+type GetUsagePlansFilterArray []GetUsagePlansFilterInput
+
+func (GetUsagePlansFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsagePlansFilter)(nil)).Elem()
+}
+
+func (i GetUsagePlansFilterArray) ToGetUsagePlansFilterArrayOutput() GetUsagePlansFilterArrayOutput {
+	return i.ToGetUsagePlansFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetUsagePlansFilterArray) ToGetUsagePlansFilterArrayOutputWithContext(ctx context.Context) GetUsagePlansFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsagePlansFilterArrayOutput)
+}
+
+type GetUsagePlansFilterOutput struct{ *pulumi.OutputState }
+
+func (GetUsagePlansFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsagePlansFilter)(nil)).Elem()
+}
+
+func (o GetUsagePlansFilterOutput) ToGetUsagePlansFilterOutput() GetUsagePlansFilterOutput {
+	return o
+}
+
+func (o GetUsagePlansFilterOutput) ToGetUsagePlansFilterOutputWithContext(ctx context.Context) GetUsagePlansFilterOutput {
+	return o
+}
+
+// An entitlement name, unique within a usage plan.
+func (o GetUsagePlansFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsagePlansFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetUsagePlansFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetUsagePlansFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetUsagePlansFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetUsagePlansFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetUsagePlansFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUsagePlansFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsagePlansFilter)(nil)).Elem()
+}
+
+func (o GetUsagePlansFilterArrayOutput) ToGetUsagePlansFilterArrayOutput() GetUsagePlansFilterArrayOutput {
+	return o
+}
+
+func (o GetUsagePlansFilterArrayOutput) ToGetUsagePlansFilterArrayOutputWithContext(ctx context.Context) GetUsagePlansFilterArrayOutput {
+	return o
+}
+
+func (o GetUsagePlansFilterArrayOutput) Index(i pulumi.IntInput) GetUsagePlansFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUsagePlansFilter {
+		return vs[0].([]GetUsagePlansFilter)[vs[1].(int)]
+	}).(GetUsagePlansFilterOutput)
+}
+
+type GetUsagePlansUsagePlanCollection struct {
+	Items []GetUsagePlansUsagePlanCollectionItem `pulumi:"items"`
+}
+
+// GetUsagePlansUsagePlanCollectionInput is an input type that accepts GetUsagePlansUsagePlanCollectionArgs and GetUsagePlansUsagePlanCollectionOutput values.
+// You can construct a concrete instance of `GetUsagePlansUsagePlanCollectionInput` via:
+//
+//          GetUsagePlansUsagePlanCollectionArgs{...}
+type GetUsagePlansUsagePlanCollectionInput interface {
+	pulumi.Input
+
+	ToGetUsagePlansUsagePlanCollectionOutput() GetUsagePlansUsagePlanCollectionOutput
+	ToGetUsagePlansUsagePlanCollectionOutputWithContext(context.Context) GetUsagePlansUsagePlanCollectionOutput
+}
+
+type GetUsagePlansUsagePlanCollectionArgs struct {
+	Items GetUsagePlansUsagePlanCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetUsagePlansUsagePlanCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsagePlansUsagePlanCollection)(nil)).Elem()
+}
+
+func (i GetUsagePlansUsagePlanCollectionArgs) ToGetUsagePlansUsagePlanCollectionOutput() GetUsagePlansUsagePlanCollectionOutput {
+	return i.ToGetUsagePlansUsagePlanCollectionOutputWithContext(context.Background())
+}
+
+func (i GetUsagePlansUsagePlanCollectionArgs) ToGetUsagePlansUsagePlanCollectionOutputWithContext(ctx context.Context) GetUsagePlansUsagePlanCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsagePlansUsagePlanCollectionOutput)
+}
+
+// GetUsagePlansUsagePlanCollectionArrayInput is an input type that accepts GetUsagePlansUsagePlanCollectionArray and GetUsagePlansUsagePlanCollectionArrayOutput values.
+// You can construct a concrete instance of `GetUsagePlansUsagePlanCollectionArrayInput` via:
+//
+//          GetUsagePlansUsagePlanCollectionArray{ GetUsagePlansUsagePlanCollectionArgs{...} }
+type GetUsagePlansUsagePlanCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetUsagePlansUsagePlanCollectionArrayOutput() GetUsagePlansUsagePlanCollectionArrayOutput
+	ToGetUsagePlansUsagePlanCollectionArrayOutputWithContext(context.Context) GetUsagePlansUsagePlanCollectionArrayOutput
+}
+
+type GetUsagePlansUsagePlanCollectionArray []GetUsagePlansUsagePlanCollectionInput
+
+func (GetUsagePlansUsagePlanCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsagePlansUsagePlanCollection)(nil)).Elem()
+}
+
+func (i GetUsagePlansUsagePlanCollectionArray) ToGetUsagePlansUsagePlanCollectionArrayOutput() GetUsagePlansUsagePlanCollectionArrayOutput {
+	return i.ToGetUsagePlansUsagePlanCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetUsagePlansUsagePlanCollectionArray) ToGetUsagePlansUsagePlanCollectionArrayOutputWithContext(ctx context.Context) GetUsagePlansUsagePlanCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsagePlansUsagePlanCollectionArrayOutput)
+}
+
+type GetUsagePlansUsagePlanCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetUsagePlansUsagePlanCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsagePlansUsagePlanCollection)(nil)).Elem()
+}
+
+func (o GetUsagePlansUsagePlanCollectionOutput) ToGetUsagePlansUsagePlanCollectionOutput() GetUsagePlansUsagePlanCollectionOutput {
+	return o
+}
+
+func (o GetUsagePlansUsagePlanCollectionOutput) ToGetUsagePlansUsagePlanCollectionOutputWithContext(ctx context.Context) GetUsagePlansUsagePlanCollectionOutput {
+	return o
+}
+
+func (o GetUsagePlansUsagePlanCollectionOutput) Items() GetUsagePlansUsagePlanCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetUsagePlansUsagePlanCollection) []GetUsagePlansUsagePlanCollectionItem { return v.Items }).(GetUsagePlansUsagePlanCollectionItemArrayOutput)
+}
+
+type GetUsagePlansUsagePlanCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUsagePlansUsagePlanCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsagePlansUsagePlanCollection)(nil)).Elem()
+}
+
+func (o GetUsagePlansUsagePlanCollectionArrayOutput) ToGetUsagePlansUsagePlanCollectionArrayOutput() GetUsagePlansUsagePlanCollectionArrayOutput {
+	return o
+}
+
+func (o GetUsagePlansUsagePlanCollectionArrayOutput) ToGetUsagePlansUsagePlanCollectionArrayOutputWithContext(ctx context.Context) GetUsagePlansUsagePlanCollectionArrayOutput {
+	return o
+}
+
+func (o GetUsagePlansUsagePlanCollectionArrayOutput) Index(i pulumi.IntInput) GetUsagePlansUsagePlanCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUsagePlansUsagePlanCollection {
+		return vs[0].([]GetUsagePlansUsagePlanCollection)[vs[1].(int)]
+	}).(GetUsagePlansUsagePlanCollectionOutput)
+}
+
+type GetUsagePlansUsagePlanCollectionItem struct {
+	// The ocid of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+	DisplayName string `pulumi:"displayName"`
+	// A collection of entitlements currently assigned to the usage plan.
+	Entitlements []GetUsagePlansUsagePlanCollectionItemEntitlement `pulumi:"entitlements"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a usage plan resource.
+	Id string `pulumi:"id"`
+	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// A filter to return only resources that match the given lifecycle state. Example: `ACTIVE`
+	State string `pulumi:"state"`
+	// The time this resource was created. An RFC3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time this resource was last updated. An RFC3339 formatted datetime string.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetUsagePlansUsagePlanCollectionItemInput is an input type that accepts GetUsagePlansUsagePlanCollectionItemArgs and GetUsagePlansUsagePlanCollectionItemOutput values.
+// You can construct a concrete instance of `GetUsagePlansUsagePlanCollectionItemInput` via:
+//
+//          GetUsagePlansUsagePlanCollectionItemArgs{...}
+type GetUsagePlansUsagePlanCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetUsagePlansUsagePlanCollectionItemOutput() GetUsagePlansUsagePlanCollectionItemOutput
+	ToGetUsagePlansUsagePlanCollectionItemOutputWithContext(context.Context) GetUsagePlansUsagePlanCollectionItemOutput
+}
+
+type GetUsagePlansUsagePlanCollectionItemArgs struct {
+	// The ocid of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// A collection of entitlements currently assigned to the usage plan.
+	Entitlements GetUsagePlansUsagePlanCollectionItemEntitlementArrayInput `pulumi:"entitlements"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a usage plan resource.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// A filter to return only resources that match the given lifecycle state. Example: `ACTIVE`
+	State pulumi.StringInput `pulumi:"state"`
+	// The time this resource was created. An RFC3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time this resource was last updated. An RFC3339 formatted datetime string.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetUsagePlansUsagePlanCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsagePlansUsagePlanCollectionItem)(nil)).Elem()
+}
+
+func (i GetUsagePlansUsagePlanCollectionItemArgs) ToGetUsagePlansUsagePlanCollectionItemOutput() GetUsagePlansUsagePlanCollectionItemOutput {
+	return i.ToGetUsagePlansUsagePlanCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetUsagePlansUsagePlanCollectionItemArgs) ToGetUsagePlansUsagePlanCollectionItemOutputWithContext(ctx context.Context) GetUsagePlansUsagePlanCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsagePlansUsagePlanCollectionItemOutput)
+}
+
+// GetUsagePlansUsagePlanCollectionItemArrayInput is an input type that accepts GetUsagePlansUsagePlanCollectionItemArray and GetUsagePlansUsagePlanCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetUsagePlansUsagePlanCollectionItemArrayInput` via:
+//
+//          GetUsagePlansUsagePlanCollectionItemArray{ GetUsagePlansUsagePlanCollectionItemArgs{...} }
+type GetUsagePlansUsagePlanCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetUsagePlansUsagePlanCollectionItemArrayOutput() GetUsagePlansUsagePlanCollectionItemArrayOutput
+	ToGetUsagePlansUsagePlanCollectionItemArrayOutputWithContext(context.Context) GetUsagePlansUsagePlanCollectionItemArrayOutput
+}
+
+type GetUsagePlansUsagePlanCollectionItemArray []GetUsagePlansUsagePlanCollectionItemInput
+
+func (GetUsagePlansUsagePlanCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsagePlansUsagePlanCollectionItem)(nil)).Elem()
+}
+
+func (i GetUsagePlansUsagePlanCollectionItemArray) ToGetUsagePlansUsagePlanCollectionItemArrayOutput() GetUsagePlansUsagePlanCollectionItemArrayOutput {
+	return i.ToGetUsagePlansUsagePlanCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetUsagePlansUsagePlanCollectionItemArray) ToGetUsagePlansUsagePlanCollectionItemArrayOutputWithContext(ctx context.Context) GetUsagePlansUsagePlanCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsagePlansUsagePlanCollectionItemArrayOutput)
+}
+
+type GetUsagePlansUsagePlanCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetUsagePlansUsagePlanCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsagePlansUsagePlanCollectionItem)(nil)).Elem()
+}
+
+func (o GetUsagePlansUsagePlanCollectionItemOutput) ToGetUsagePlansUsagePlanCollectionItemOutput() GetUsagePlansUsagePlanCollectionItemOutput {
+	return o
+}
+
+func (o GetUsagePlansUsagePlanCollectionItemOutput) ToGetUsagePlansUsagePlanCollectionItemOutputWithContext(ctx context.Context) GetUsagePlansUsagePlanCollectionItemOutput {
+	return o
+}
+
+// The ocid of the compartment in which to list resources.
+func (o GetUsagePlansUsagePlanCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsagePlansUsagePlanCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetUsagePlansUsagePlanCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetUsagePlansUsagePlanCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+func (o GetUsagePlansUsagePlanCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsagePlansUsagePlanCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// A collection of entitlements currently assigned to the usage plan.
+func (o GetUsagePlansUsagePlanCollectionItemOutput) Entitlements() GetUsagePlansUsagePlanCollectionItemEntitlementArrayOutput {
+	return o.ApplyT(func(v GetUsagePlansUsagePlanCollectionItem) []GetUsagePlansUsagePlanCollectionItemEntitlement {
+		return v.Entitlements
+	}).(GetUsagePlansUsagePlanCollectionItemEntitlementArrayOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetUsagePlansUsagePlanCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetUsagePlansUsagePlanCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a usage plan resource.
+func (o GetUsagePlansUsagePlanCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsagePlansUsagePlanCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
+func (o GetUsagePlansUsagePlanCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsagePlansUsagePlanCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state. Example: `ACTIVE`
+func (o GetUsagePlansUsagePlanCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsagePlansUsagePlanCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The time this resource was created. An RFC3339 formatted datetime string.
+func (o GetUsagePlansUsagePlanCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsagePlansUsagePlanCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time this resource was last updated. An RFC3339 formatted datetime string.
+func (o GetUsagePlansUsagePlanCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsagePlansUsagePlanCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetUsagePlansUsagePlanCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUsagePlansUsagePlanCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsagePlansUsagePlanCollectionItem)(nil)).Elem()
+}
+
+func (o GetUsagePlansUsagePlanCollectionItemArrayOutput) ToGetUsagePlansUsagePlanCollectionItemArrayOutput() GetUsagePlansUsagePlanCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetUsagePlansUsagePlanCollectionItemArrayOutput) ToGetUsagePlansUsagePlanCollectionItemArrayOutputWithContext(ctx context.Context) GetUsagePlansUsagePlanCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetUsagePlansUsagePlanCollectionItemArrayOutput) Index(i pulumi.IntInput) GetUsagePlansUsagePlanCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUsagePlansUsagePlanCollectionItem {
+		return vs[0].([]GetUsagePlansUsagePlanCollectionItem)[vs[1].(int)]
+	}).(GetUsagePlansUsagePlanCollectionItemOutput)
+}
+
+type GetUsagePlansUsagePlanCollectionItemEntitlement struct {
+	// A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
+	Description string `pulumi:"description"`
+	// An entitlement name, unique within a usage plan.
+	Name string `pulumi:"name"`
+	// Quota policy for a usage plan.
+	Quotas []GetUsagePlansUsagePlanCollectionItemEntitlementQuota `pulumi:"quotas"`
+	// Rate-limiting policy for a usage plan.
+	RateLimits []GetUsagePlansUsagePlanCollectionItemEntitlementRateLimit `pulumi:"rateLimits"`
+	// A collection of targeted deployments that the entitlement will be applied to.
+	Targets []GetUsagePlansUsagePlanCollectionItemEntitlementTarget `pulumi:"targets"`
+}
+
+// GetUsagePlansUsagePlanCollectionItemEntitlementInput is an input type that accepts GetUsagePlansUsagePlanCollectionItemEntitlementArgs and GetUsagePlansUsagePlanCollectionItemEntitlementOutput values.
+// You can construct a concrete instance of `GetUsagePlansUsagePlanCollectionItemEntitlementInput` via:
+//
+//          GetUsagePlansUsagePlanCollectionItemEntitlementArgs{...}
+type GetUsagePlansUsagePlanCollectionItemEntitlementInput interface {
+	pulumi.Input
+
+	ToGetUsagePlansUsagePlanCollectionItemEntitlementOutput() GetUsagePlansUsagePlanCollectionItemEntitlementOutput
+	ToGetUsagePlansUsagePlanCollectionItemEntitlementOutputWithContext(context.Context) GetUsagePlansUsagePlanCollectionItemEntitlementOutput
+}
+
+type GetUsagePlansUsagePlanCollectionItemEntitlementArgs struct {
+	// A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
+	Description pulumi.StringInput `pulumi:"description"`
+	// An entitlement name, unique within a usage plan.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Quota policy for a usage plan.
+	Quotas GetUsagePlansUsagePlanCollectionItemEntitlementQuotaArrayInput `pulumi:"quotas"`
+	// Rate-limiting policy for a usage plan.
+	RateLimits GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitArrayInput `pulumi:"rateLimits"`
+	// A collection of targeted deployments that the entitlement will be applied to.
+	Targets GetUsagePlansUsagePlanCollectionItemEntitlementTargetArrayInput `pulumi:"targets"`
+}
+
+func (GetUsagePlansUsagePlanCollectionItemEntitlementArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsagePlansUsagePlanCollectionItemEntitlement)(nil)).Elem()
+}
+
+func (i GetUsagePlansUsagePlanCollectionItemEntitlementArgs) ToGetUsagePlansUsagePlanCollectionItemEntitlementOutput() GetUsagePlansUsagePlanCollectionItemEntitlementOutput {
+	return i.ToGetUsagePlansUsagePlanCollectionItemEntitlementOutputWithContext(context.Background())
+}
+
+func (i GetUsagePlansUsagePlanCollectionItemEntitlementArgs) ToGetUsagePlansUsagePlanCollectionItemEntitlementOutputWithContext(ctx context.Context) GetUsagePlansUsagePlanCollectionItemEntitlementOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsagePlansUsagePlanCollectionItemEntitlementOutput)
+}
+
+// GetUsagePlansUsagePlanCollectionItemEntitlementArrayInput is an input type that accepts GetUsagePlansUsagePlanCollectionItemEntitlementArray and GetUsagePlansUsagePlanCollectionItemEntitlementArrayOutput values.
+// You can construct a concrete instance of `GetUsagePlansUsagePlanCollectionItemEntitlementArrayInput` via:
+//
+//          GetUsagePlansUsagePlanCollectionItemEntitlementArray{ GetUsagePlansUsagePlanCollectionItemEntitlementArgs{...} }
+type GetUsagePlansUsagePlanCollectionItemEntitlementArrayInput interface {
+	pulumi.Input
+
+	ToGetUsagePlansUsagePlanCollectionItemEntitlementArrayOutput() GetUsagePlansUsagePlanCollectionItemEntitlementArrayOutput
+	ToGetUsagePlansUsagePlanCollectionItemEntitlementArrayOutputWithContext(context.Context) GetUsagePlansUsagePlanCollectionItemEntitlementArrayOutput
+}
+
+type GetUsagePlansUsagePlanCollectionItemEntitlementArray []GetUsagePlansUsagePlanCollectionItemEntitlementInput
+
+func (GetUsagePlansUsagePlanCollectionItemEntitlementArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsagePlansUsagePlanCollectionItemEntitlement)(nil)).Elem()
+}
+
+func (i GetUsagePlansUsagePlanCollectionItemEntitlementArray) ToGetUsagePlansUsagePlanCollectionItemEntitlementArrayOutput() GetUsagePlansUsagePlanCollectionItemEntitlementArrayOutput {
+	return i.ToGetUsagePlansUsagePlanCollectionItemEntitlementArrayOutputWithContext(context.Background())
+}
+
+func (i GetUsagePlansUsagePlanCollectionItemEntitlementArray) ToGetUsagePlansUsagePlanCollectionItemEntitlementArrayOutputWithContext(ctx context.Context) GetUsagePlansUsagePlanCollectionItemEntitlementArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsagePlansUsagePlanCollectionItemEntitlementArrayOutput)
+}
+
+type GetUsagePlansUsagePlanCollectionItemEntitlementOutput struct{ *pulumi.OutputState }
+
+func (GetUsagePlansUsagePlanCollectionItemEntitlementOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsagePlansUsagePlanCollectionItemEntitlement)(nil)).Elem()
+}
+
+func (o GetUsagePlansUsagePlanCollectionItemEntitlementOutput) ToGetUsagePlansUsagePlanCollectionItemEntitlementOutput() GetUsagePlansUsagePlanCollectionItemEntitlementOutput {
+	return o
+}
+
+func (o GetUsagePlansUsagePlanCollectionItemEntitlementOutput) ToGetUsagePlansUsagePlanCollectionItemEntitlementOutputWithContext(ctx context.Context) GetUsagePlansUsagePlanCollectionItemEntitlementOutput {
+	return o
+}
+
+// A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
+func (o GetUsagePlansUsagePlanCollectionItemEntitlementOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsagePlansUsagePlanCollectionItemEntitlement) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// An entitlement name, unique within a usage plan.
+func (o GetUsagePlansUsagePlanCollectionItemEntitlementOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsagePlansUsagePlanCollectionItemEntitlement) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Quota policy for a usage plan.
+func (o GetUsagePlansUsagePlanCollectionItemEntitlementOutput) Quotas() GetUsagePlansUsagePlanCollectionItemEntitlementQuotaArrayOutput {
+	return o.ApplyT(func(v GetUsagePlansUsagePlanCollectionItemEntitlement) []GetUsagePlansUsagePlanCollectionItemEntitlementQuota {
+		return v.Quotas
+	}).(GetUsagePlansUsagePlanCollectionItemEntitlementQuotaArrayOutput)
+}
+
+// Rate-limiting policy for a usage plan.
+func (o GetUsagePlansUsagePlanCollectionItemEntitlementOutput) RateLimits() GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitArrayOutput {
+	return o.ApplyT(func(v GetUsagePlansUsagePlanCollectionItemEntitlement) []GetUsagePlansUsagePlanCollectionItemEntitlementRateLimit {
+		return v.RateLimits
+	}).(GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitArrayOutput)
+}
+
+// A collection of targeted deployments that the entitlement will be applied to.
+func (o GetUsagePlansUsagePlanCollectionItemEntitlementOutput) Targets() GetUsagePlansUsagePlanCollectionItemEntitlementTargetArrayOutput {
+	return o.ApplyT(func(v GetUsagePlansUsagePlanCollectionItemEntitlement) []GetUsagePlansUsagePlanCollectionItemEntitlementTarget {
+		return v.Targets
+	}).(GetUsagePlansUsagePlanCollectionItemEntitlementTargetArrayOutput)
+}
+
+type GetUsagePlansUsagePlanCollectionItemEntitlementArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUsagePlansUsagePlanCollectionItemEntitlementArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsagePlansUsagePlanCollectionItemEntitlement)(nil)).Elem()
+}
+
+func (o GetUsagePlansUsagePlanCollectionItemEntitlementArrayOutput) ToGetUsagePlansUsagePlanCollectionItemEntitlementArrayOutput() GetUsagePlansUsagePlanCollectionItemEntitlementArrayOutput {
+	return o
+}
+
+func (o GetUsagePlansUsagePlanCollectionItemEntitlementArrayOutput) ToGetUsagePlansUsagePlanCollectionItemEntitlementArrayOutputWithContext(ctx context.Context) GetUsagePlansUsagePlanCollectionItemEntitlementArrayOutput {
+	return o
+}
+
+func (o GetUsagePlansUsagePlanCollectionItemEntitlementArrayOutput) Index(i pulumi.IntInput) GetUsagePlansUsagePlanCollectionItemEntitlementOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUsagePlansUsagePlanCollectionItemEntitlement {
+		return vs[0].([]GetUsagePlansUsagePlanCollectionItemEntitlement)[vs[1].(int)]
+	}).(GetUsagePlansUsagePlanCollectionItemEntitlementOutput)
+}
+
+type GetUsagePlansUsagePlanCollectionItemEntitlementQuota struct {
+	// What the usage plan will do when a quota is breached: `REJECT` will allow no further requests `ALLOW` will continue to allow further requests
+	OperationOnBreach string `pulumi:"operationOnBreach"`
+	// The policy that controls when quotas will reset. Example: `CALENDAR`
+	ResetPolicy string `pulumi:"resetPolicy"`
+	// The unit of time over which rate limits are calculated. Example: `SECOND`
+	Unit string `pulumi:"unit"`
+	// The number of requests that can be made per time period.
+	Value int `pulumi:"value"`
+}
+
+// GetUsagePlansUsagePlanCollectionItemEntitlementQuotaInput is an input type that accepts GetUsagePlansUsagePlanCollectionItemEntitlementQuotaArgs and GetUsagePlansUsagePlanCollectionItemEntitlementQuotaOutput values.
+// You can construct a concrete instance of `GetUsagePlansUsagePlanCollectionItemEntitlementQuotaInput` via:
+//
+//          GetUsagePlansUsagePlanCollectionItemEntitlementQuotaArgs{...}
+type GetUsagePlansUsagePlanCollectionItemEntitlementQuotaInput interface {
+	pulumi.Input
+
+	ToGetUsagePlansUsagePlanCollectionItemEntitlementQuotaOutput() GetUsagePlansUsagePlanCollectionItemEntitlementQuotaOutput
+	ToGetUsagePlansUsagePlanCollectionItemEntitlementQuotaOutputWithContext(context.Context) GetUsagePlansUsagePlanCollectionItemEntitlementQuotaOutput
+}
+
+type GetUsagePlansUsagePlanCollectionItemEntitlementQuotaArgs struct {
+	// What the usage plan will do when a quota is breached: `REJECT` will allow no further requests `ALLOW` will continue to allow further requests
+	OperationOnBreach pulumi.StringInput `pulumi:"operationOnBreach"`
+	// The policy that controls when quotas will reset. Example: `CALENDAR`
+	ResetPolicy pulumi.StringInput `pulumi:"resetPolicy"`
+	// The unit of time over which rate limits are calculated. Example: `SECOND`
+	Unit pulumi.StringInput `pulumi:"unit"`
+	// The number of requests that can be made per time period.
+	Value pulumi.IntInput `pulumi:"value"`
+}
+
+func (GetUsagePlansUsagePlanCollectionItemEntitlementQuotaArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsagePlansUsagePlanCollectionItemEntitlementQuota)(nil)).Elem()
+}
+
+func (i GetUsagePlansUsagePlanCollectionItemEntitlementQuotaArgs) ToGetUsagePlansUsagePlanCollectionItemEntitlementQuotaOutput() GetUsagePlansUsagePlanCollectionItemEntitlementQuotaOutput {
+	return i.ToGetUsagePlansUsagePlanCollectionItemEntitlementQuotaOutputWithContext(context.Background())
+}
+
+func (i GetUsagePlansUsagePlanCollectionItemEntitlementQuotaArgs) ToGetUsagePlansUsagePlanCollectionItemEntitlementQuotaOutputWithContext(ctx context.Context) GetUsagePlansUsagePlanCollectionItemEntitlementQuotaOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsagePlansUsagePlanCollectionItemEntitlementQuotaOutput)
+}
+
+// GetUsagePlansUsagePlanCollectionItemEntitlementQuotaArrayInput is an input type that accepts GetUsagePlansUsagePlanCollectionItemEntitlementQuotaArray and GetUsagePlansUsagePlanCollectionItemEntitlementQuotaArrayOutput values.
+// You can construct a concrete instance of `GetUsagePlansUsagePlanCollectionItemEntitlementQuotaArrayInput` via:
+//
+//          GetUsagePlansUsagePlanCollectionItemEntitlementQuotaArray{ GetUsagePlansUsagePlanCollectionItemEntitlementQuotaArgs{...} }
+type GetUsagePlansUsagePlanCollectionItemEntitlementQuotaArrayInput interface {
+	pulumi.Input
+
+	ToGetUsagePlansUsagePlanCollectionItemEntitlementQuotaArrayOutput() GetUsagePlansUsagePlanCollectionItemEntitlementQuotaArrayOutput
+	ToGetUsagePlansUsagePlanCollectionItemEntitlementQuotaArrayOutputWithContext(context.Context) GetUsagePlansUsagePlanCollectionItemEntitlementQuotaArrayOutput
+}
+
+type GetUsagePlansUsagePlanCollectionItemEntitlementQuotaArray []GetUsagePlansUsagePlanCollectionItemEntitlementQuotaInput
+
+func (GetUsagePlansUsagePlanCollectionItemEntitlementQuotaArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsagePlansUsagePlanCollectionItemEntitlementQuota)(nil)).Elem()
+}
+
+func (i GetUsagePlansUsagePlanCollectionItemEntitlementQuotaArray) ToGetUsagePlansUsagePlanCollectionItemEntitlementQuotaArrayOutput() GetUsagePlansUsagePlanCollectionItemEntitlementQuotaArrayOutput {
+	return i.ToGetUsagePlansUsagePlanCollectionItemEntitlementQuotaArrayOutputWithContext(context.Background())
+}
+
+func (i GetUsagePlansUsagePlanCollectionItemEntitlementQuotaArray) ToGetUsagePlansUsagePlanCollectionItemEntitlementQuotaArrayOutputWithContext(ctx context.Context) GetUsagePlansUsagePlanCollectionItemEntitlementQuotaArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsagePlansUsagePlanCollectionItemEntitlementQuotaArrayOutput)
+}
+
+type GetUsagePlansUsagePlanCollectionItemEntitlementQuotaOutput struct{ *pulumi.OutputState }
+
+func (GetUsagePlansUsagePlanCollectionItemEntitlementQuotaOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsagePlansUsagePlanCollectionItemEntitlementQuota)(nil)).Elem()
+}
+
+func (o GetUsagePlansUsagePlanCollectionItemEntitlementQuotaOutput) ToGetUsagePlansUsagePlanCollectionItemEntitlementQuotaOutput() GetUsagePlansUsagePlanCollectionItemEntitlementQuotaOutput {
+	return o
+}
+
+func (o GetUsagePlansUsagePlanCollectionItemEntitlementQuotaOutput) ToGetUsagePlansUsagePlanCollectionItemEntitlementQuotaOutputWithContext(ctx context.Context) GetUsagePlansUsagePlanCollectionItemEntitlementQuotaOutput {
+	return o
+}
+
+// What the usage plan will do when a quota is breached: `REJECT` will allow no further requests `ALLOW` will continue to allow further requests
+func (o GetUsagePlansUsagePlanCollectionItemEntitlementQuotaOutput) OperationOnBreach() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsagePlansUsagePlanCollectionItemEntitlementQuota) string { return v.OperationOnBreach }).(pulumi.StringOutput)
+}
+
+// The policy that controls when quotas will reset. Example: `CALENDAR`
+func (o GetUsagePlansUsagePlanCollectionItemEntitlementQuotaOutput) ResetPolicy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsagePlansUsagePlanCollectionItemEntitlementQuota) string { return v.ResetPolicy }).(pulumi.StringOutput)
+}
+
+// The unit of time over which rate limits are calculated. Example: `SECOND`
+func (o GetUsagePlansUsagePlanCollectionItemEntitlementQuotaOutput) Unit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsagePlansUsagePlanCollectionItemEntitlementQuota) string { return v.Unit }).(pulumi.StringOutput)
+}
+
+// The number of requests that can be made per time period.
+func (o GetUsagePlansUsagePlanCollectionItemEntitlementQuotaOutput) Value() pulumi.IntOutput {
+	return o.ApplyT(func(v GetUsagePlansUsagePlanCollectionItemEntitlementQuota) int { return v.Value }).(pulumi.IntOutput)
+}
+
+type GetUsagePlansUsagePlanCollectionItemEntitlementQuotaArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUsagePlansUsagePlanCollectionItemEntitlementQuotaArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsagePlansUsagePlanCollectionItemEntitlementQuota)(nil)).Elem()
+}
+
+func (o GetUsagePlansUsagePlanCollectionItemEntitlementQuotaArrayOutput) ToGetUsagePlansUsagePlanCollectionItemEntitlementQuotaArrayOutput() GetUsagePlansUsagePlanCollectionItemEntitlementQuotaArrayOutput {
+	return o
+}
+
+func (o GetUsagePlansUsagePlanCollectionItemEntitlementQuotaArrayOutput) ToGetUsagePlansUsagePlanCollectionItemEntitlementQuotaArrayOutputWithContext(ctx context.Context) GetUsagePlansUsagePlanCollectionItemEntitlementQuotaArrayOutput {
+	return o
+}
+
+func (o GetUsagePlansUsagePlanCollectionItemEntitlementQuotaArrayOutput) Index(i pulumi.IntInput) GetUsagePlansUsagePlanCollectionItemEntitlementQuotaOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUsagePlansUsagePlanCollectionItemEntitlementQuota {
+		return vs[0].([]GetUsagePlansUsagePlanCollectionItemEntitlementQuota)[vs[1].(int)]
+	}).(GetUsagePlansUsagePlanCollectionItemEntitlementQuotaOutput)
+}
+
+type GetUsagePlansUsagePlanCollectionItemEntitlementRateLimit struct {
+	// The unit of time over which rate limits are calculated. Example: `SECOND`
+	Unit string `pulumi:"unit"`
+	// The number of requests that can be made per time period.
+	Value int `pulumi:"value"`
+}
+
+// GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitInput is an input type that accepts GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitArgs and GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitOutput values.
+// You can construct a concrete instance of `GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitInput` via:
+//
+//          GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitArgs{...}
+type GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitInput interface {
+	pulumi.Input
+
+	ToGetUsagePlansUsagePlanCollectionItemEntitlementRateLimitOutput() GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitOutput
+	ToGetUsagePlansUsagePlanCollectionItemEntitlementRateLimitOutputWithContext(context.Context) GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitOutput
+}
+
+type GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitArgs struct {
+	// The unit of time over which rate limits are calculated. Example: `SECOND`
+	Unit pulumi.StringInput `pulumi:"unit"`
+	// The number of requests that can be made per time period.
+	Value pulumi.IntInput `pulumi:"value"`
+}
+
+func (GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsagePlansUsagePlanCollectionItemEntitlementRateLimit)(nil)).Elem()
+}
+
+func (i GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitArgs) ToGetUsagePlansUsagePlanCollectionItemEntitlementRateLimitOutput() GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitOutput {
+	return i.ToGetUsagePlansUsagePlanCollectionItemEntitlementRateLimitOutputWithContext(context.Background())
+}
+
+func (i GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitArgs) ToGetUsagePlansUsagePlanCollectionItemEntitlementRateLimitOutputWithContext(ctx context.Context) GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitOutput)
+}
+
+// GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitArrayInput is an input type that accepts GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitArray and GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitArrayOutput values.
+// You can construct a concrete instance of `GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitArrayInput` via:
+//
+//          GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitArray{ GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitArgs{...} }
+type GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitArrayInput interface {
+	pulumi.Input
+
+	ToGetUsagePlansUsagePlanCollectionItemEntitlementRateLimitArrayOutput() GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitArrayOutput
+	ToGetUsagePlansUsagePlanCollectionItemEntitlementRateLimitArrayOutputWithContext(context.Context) GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitArrayOutput
+}
+
+type GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitArray []GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitInput
+
+func (GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsagePlansUsagePlanCollectionItemEntitlementRateLimit)(nil)).Elem()
+}
+
+func (i GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitArray) ToGetUsagePlansUsagePlanCollectionItemEntitlementRateLimitArrayOutput() GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitArrayOutput {
+	return i.ToGetUsagePlansUsagePlanCollectionItemEntitlementRateLimitArrayOutputWithContext(context.Background())
+}
+
+func (i GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitArray) ToGetUsagePlansUsagePlanCollectionItemEntitlementRateLimitArrayOutputWithContext(ctx context.Context) GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitArrayOutput)
+}
+
+type GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitOutput struct{ *pulumi.OutputState }
+
+func (GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsagePlansUsagePlanCollectionItemEntitlementRateLimit)(nil)).Elem()
+}
+
+func (o GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitOutput) ToGetUsagePlansUsagePlanCollectionItemEntitlementRateLimitOutput() GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitOutput {
+	return o
+}
+
+func (o GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitOutput) ToGetUsagePlansUsagePlanCollectionItemEntitlementRateLimitOutputWithContext(ctx context.Context) GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitOutput {
+	return o
+}
+
+// The unit of time over which rate limits are calculated. Example: `SECOND`
+func (o GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitOutput) Unit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsagePlansUsagePlanCollectionItemEntitlementRateLimit) string { return v.Unit }).(pulumi.StringOutput)
+}
+
+// The number of requests that can be made per time period.
+func (o GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitOutput) Value() pulumi.IntOutput {
+	return o.ApplyT(func(v GetUsagePlansUsagePlanCollectionItemEntitlementRateLimit) int { return v.Value }).(pulumi.IntOutput)
+}
+
+type GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsagePlansUsagePlanCollectionItemEntitlementRateLimit)(nil)).Elem()
+}
+
+func (o GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitArrayOutput) ToGetUsagePlansUsagePlanCollectionItemEntitlementRateLimitArrayOutput() GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitArrayOutput {
+	return o
+}
+
+func (o GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitArrayOutput) ToGetUsagePlansUsagePlanCollectionItemEntitlementRateLimitArrayOutputWithContext(ctx context.Context) GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitArrayOutput {
+	return o
+}
+
+func (o GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitArrayOutput) Index(i pulumi.IntInput) GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUsagePlansUsagePlanCollectionItemEntitlementRateLimit {
+		return vs[0].([]GetUsagePlansUsagePlanCollectionItemEntitlementRateLimit)[vs[1].(int)]
+	}).(GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitOutput)
+}
+
+type GetUsagePlansUsagePlanCollectionItemEntitlementTarget struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a deployment resource.
+	DeploymentId string `pulumi:"deploymentId"`
+}
+
+// GetUsagePlansUsagePlanCollectionItemEntitlementTargetInput is an input type that accepts GetUsagePlansUsagePlanCollectionItemEntitlementTargetArgs and GetUsagePlansUsagePlanCollectionItemEntitlementTargetOutput values.
+// You can construct a concrete instance of `GetUsagePlansUsagePlanCollectionItemEntitlementTargetInput` via:
+//
+//          GetUsagePlansUsagePlanCollectionItemEntitlementTargetArgs{...}
+type GetUsagePlansUsagePlanCollectionItemEntitlementTargetInput interface {
+	pulumi.Input
+
+	ToGetUsagePlansUsagePlanCollectionItemEntitlementTargetOutput() GetUsagePlansUsagePlanCollectionItemEntitlementTargetOutput
+	ToGetUsagePlansUsagePlanCollectionItemEntitlementTargetOutputWithContext(context.Context) GetUsagePlansUsagePlanCollectionItemEntitlementTargetOutput
+}
+
+type GetUsagePlansUsagePlanCollectionItemEntitlementTargetArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a deployment resource.
+	DeploymentId pulumi.StringInput `pulumi:"deploymentId"`
+}
+
+func (GetUsagePlansUsagePlanCollectionItemEntitlementTargetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsagePlansUsagePlanCollectionItemEntitlementTarget)(nil)).Elem()
+}
+
+func (i GetUsagePlansUsagePlanCollectionItemEntitlementTargetArgs) ToGetUsagePlansUsagePlanCollectionItemEntitlementTargetOutput() GetUsagePlansUsagePlanCollectionItemEntitlementTargetOutput {
+	return i.ToGetUsagePlansUsagePlanCollectionItemEntitlementTargetOutputWithContext(context.Background())
+}
+
+func (i GetUsagePlansUsagePlanCollectionItemEntitlementTargetArgs) ToGetUsagePlansUsagePlanCollectionItemEntitlementTargetOutputWithContext(ctx context.Context) GetUsagePlansUsagePlanCollectionItemEntitlementTargetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsagePlansUsagePlanCollectionItemEntitlementTargetOutput)
+}
+
+// GetUsagePlansUsagePlanCollectionItemEntitlementTargetArrayInput is an input type that accepts GetUsagePlansUsagePlanCollectionItemEntitlementTargetArray and GetUsagePlansUsagePlanCollectionItemEntitlementTargetArrayOutput values.
+// You can construct a concrete instance of `GetUsagePlansUsagePlanCollectionItemEntitlementTargetArrayInput` via:
+//
+//          GetUsagePlansUsagePlanCollectionItemEntitlementTargetArray{ GetUsagePlansUsagePlanCollectionItemEntitlementTargetArgs{...} }
+type GetUsagePlansUsagePlanCollectionItemEntitlementTargetArrayInput interface {
+	pulumi.Input
+
+	ToGetUsagePlansUsagePlanCollectionItemEntitlementTargetArrayOutput() GetUsagePlansUsagePlanCollectionItemEntitlementTargetArrayOutput
+	ToGetUsagePlansUsagePlanCollectionItemEntitlementTargetArrayOutputWithContext(context.Context) GetUsagePlansUsagePlanCollectionItemEntitlementTargetArrayOutput
+}
+
+type GetUsagePlansUsagePlanCollectionItemEntitlementTargetArray []GetUsagePlansUsagePlanCollectionItemEntitlementTargetInput
+
+func (GetUsagePlansUsagePlanCollectionItemEntitlementTargetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsagePlansUsagePlanCollectionItemEntitlementTarget)(nil)).Elem()
+}
+
+func (i GetUsagePlansUsagePlanCollectionItemEntitlementTargetArray) ToGetUsagePlansUsagePlanCollectionItemEntitlementTargetArrayOutput() GetUsagePlansUsagePlanCollectionItemEntitlementTargetArrayOutput {
+	return i.ToGetUsagePlansUsagePlanCollectionItemEntitlementTargetArrayOutputWithContext(context.Background())
+}
+
+func (i GetUsagePlansUsagePlanCollectionItemEntitlementTargetArray) ToGetUsagePlansUsagePlanCollectionItemEntitlementTargetArrayOutputWithContext(ctx context.Context) GetUsagePlansUsagePlanCollectionItemEntitlementTargetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsagePlansUsagePlanCollectionItemEntitlementTargetArrayOutput)
+}
+
+type GetUsagePlansUsagePlanCollectionItemEntitlementTargetOutput struct{ *pulumi.OutputState }
+
+func (GetUsagePlansUsagePlanCollectionItemEntitlementTargetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsagePlansUsagePlanCollectionItemEntitlementTarget)(nil)).Elem()
+}
+
+func (o GetUsagePlansUsagePlanCollectionItemEntitlementTargetOutput) ToGetUsagePlansUsagePlanCollectionItemEntitlementTargetOutput() GetUsagePlansUsagePlanCollectionItemEntitlementTargetOutput {
+	return o
+}
+
+func (o GetUsagePlansUsagePlanCollectionItemEntitlementTargetOutput) ToGetUsagePlansUsagePlanCollectionItemEntitlementTargetOutputWithContext(ctx context.Context) GetUsagePlansUsagePlanCollectionItemEntitlementTargetOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a deployment resource.
+func (o GetUsagePlansUsagePlanCollectionItemEntitlementTargetOutput) DeploymentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsagePlansUsagePlanCollectionItemEntitlementTarget) string { return v.DeploymentId }).(pulumi.StringOutput)
+}
+
+type GetUsagePlansUsagePlanCollectionItemEntitlementTargetArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUsagePlansUsagePlanCollectionItemEntitlementTargetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsagePlansUsagePlanCollectionItemEntitlementTarget)(nil)).Elem()
+}
+
+func (o GetUsagePlansUsagePlanCollectionItemEntitlementTargetArrayOutput) ToGetUsagePlansUsagePlanCollectionItemEntitlementTargetArrayOutput() GetUsagePlansUsagePlanCollectionItemEntitlementTargetArrayOutput {
+	return o
+}
+
+func (o GetUsagePlansUsagePlanCollectionItemEntitlementTargetArrayOutput) ToGetUsagePlansUsagePlanCollectionItemEntitlementTargetArrayOutputWithContext(ctx context.Context) GetUsagePlansUsagePlanCollectionItemEntitlementTargetArrayOutput {
+	return o
+}
+
+func (o GetUsagePlansUsagePlanCollectionItemEntitlementTargetArrayOutput) Index(i pulumi.IntInput) GetUsagePlansUsagePlanCollectionItemEntitlementTargetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUsagePlansUsagePlanCollectionItemEntitlementTarget {
+		return vs[0].([]GetUsagePlansUsagePlanCollectionItemEntitlementTarget)[vs[1].(int)]
+	}).(GetUsagePlansUsagePlanCollectionItemEntitlementTargetOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ApiValidationResultInput)(nil)).Elem(), ApiValidationResultArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ApiValidationResultArrayInput)(nil)).Elem(), ApiValidationResultArray{})
@@ -29596,6 +32731,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentSpecificationRequestPoliciesMutualTlsPtrInput)(nil)).Elem(), DeploymentSpecificationRequestPoliciesMutualTlsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentSpecificationRequestPoliciesRateLimitingInput)(nil)).Elem(), DeploymentSpecificationRequestPoliciesRateLimitingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentSpecificationRequestPoliciesRateLimitingPtrInput)(nil)).Elem(), DeploymentSpecificationRequestPoliciesRateLimitingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentSpecificationRequestPoliciesUsagePlansInput)(nil)).Elem(), DeploymentSpecificationRequestPoliciesUsagePlansArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentSpecificationRequestPoliciesUsagePlansPtrInput)(nil)).Elem(), DeploymentSpecificationRequestPoliciesUsagePlansArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentSpecificationRouteInput)(nil)).Elem(), DeploymentSpecificationRouteArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentSpecificationRouteArrayInput)(nil)).Elem(), DeploymentSpecificationRouteArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentSpecificationRouteBackendInput)(nil)).Elem(), DeploymentSpecificationRouteBackendArgs{})
@@ -29681,6 +32818,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GatewayResponseCacheDetailsPtrInput)(nil)).Elem(), GatewayResponseCacheDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GatewayResponseCacheDetailsServerInput)(nil)).Elem(), GatewayResponseCacheDetailsServerArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GatewayResponseCacheDetailsServerArrayInput)(nil)).Elem(), GatewayResponseCacheDetailsServerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SubscriberClientInput)(nil)).Elem(), SubscriberClientArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SubscriberClientArrayInput)(nil)).Elem(), SubscriberClientArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UsagePlanEntitlementInput)(nil)).Elem(), UsagePlanEntitlementArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UsagePlanEntitlementArrayInput)(nil)).Elem(), UsagePlanEntitlementArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UsagePlanEntitlementQuotaInput)(nil)).Elem(), UsagePlanEntitlementQuotaArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UsagePlanEntitlementQuotaPtrInput)(nil)).Elem(), UsagePlanEntitlementQuotaArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UsagePlanEntitlementRateLimitInput)(nil)).Elem(), UsagePlanEntitlementRateLimitArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UsagePlanEntitlementRateLimitPtrInput)(nil)).Elem(), UsagePlanEntitlementRateLimitArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UsagePlanEntitlementTargetInput)(nil)).Elem(), UsagePlanEntitlementTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UsagePlanEntitlementTargetArrayInput)(nil)).Elem(), UsagePlanEntitlementTargetArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApiDeploymentSpecificationLoggingPolicyInput)(nil)).Elem(), GetApiDeploymentSpecificationLoggingPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApiDeploymentSpecificationLoggingPolicyArrayInput)(nil)).Elem(), GetApiDeploymentSpecificationLoggingPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApiDeploymentSpecificationLoggingPolicyAccessLogInput)(nil)).Elem(), GetApiDeploymentSpecificationLoggingPolicyAccessLogArgs{})
@@ -29703,6 +32850,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApiDeploymentSpecificationRequestPolicyMutualTlArrayInput)(nil)).Elem(), GetApiDeploymentSpecificationRequestPolicyMutualTlArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApiDeploymentSpecificationRequestPolicyRateLimitingInput)(nil)).Elem(), GetApiDeploymentSpecificationRequestPolicyRateLimitingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApiDeploymentSpecificationRequestPolicyRateLimitingArrayInput)(nil)).Elem(), GetApiDeploymentSpecificationRequestPolicyRateLimitingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApiDeploymentSpecificationRequestPolicyUsagePlanInput)(nil)).Elem(), GetApiDeploymentSpecificationRequestPolicyUsagePlanArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApiDeploymentSpecificationRequestPolicyUsagePlanArrayInput)(nil)).Elem(), GetApiDeploymentSpecificationRequestPolicyUsagePlanArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApiDeploymentSpecificationRouteInput)(nil)).Elem(), GetApiDeploymentSpecificationRouteArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApiDeploymentSpecificationRouteArrayInput)(nil)).Elem(), GetApiDeploymentSpecificationRouteArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApiDeploymentSpecificationRouteBackendInput)(nil)).Elem(), GetApiDeploymentSpecificationRouteBackendArgs{})
@@ -29827,6 +32976,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentSpecificationRequestPolicyMutualTlArrayInput)(nil)).Elem(), GetDeploymentSpecificationRequestPolicyMutualTlArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentSpecificationRequestPolicyRateLimitingInput)(nil)).Elem(), GetDeploymentSpecificationRequestPolicyRateLimitingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentSpecificationRequestPolicyRateLimitingArrayInput)(nil)).Elem(), GetDeploymentSpecificationRequestPolicyRateLimitingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentSpecificationRequestPolicyUsagePlanInput)(nil)).Elem(), GetDeploymentSpecificationRequestPolicyUsagePlanArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentSpecificationRequestPolicyUsagePlanArrayInput)(nil)).Elem(), GetDeploymentSpecificationRequestPolicyUsagePlanArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentSpecificationRouteInput)(nil)).Elem(), GetDeploymentSpecificationRouteArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentSpecificationRouteArrayInput)(nil)).Elem(), GetDeploymentSpecificationRouteArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentSpecificationRouteBackendInput)(nil)).Elem(), GetDeploymentSpecificationRouteBackendArgs{})
@@ -29931,6 +33082,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionSpecificationRequestPolicyMutualTlArrayInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionSpecificationRequestPolicyMutualTlArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionSpecificationRequestPolicyRateLimitingInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionSpecificationRequestPolicyRateLimitingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionSpecificationRequestPolicyRateLimitingArrayInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionSpecificationRequestPolicyRateLimitingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanArrayInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionSpecificationRouteInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionSpecificationRouteArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionSpecificationRouteArrayInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionSpecificationRouteArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionSpecificationRouteBackendInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionSpecificationRouteBackendArgs{})
@@ -30031,6 +33184,38 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGatewaysGatewayCollectionResponseCacheDetailArrayInput)(nil)).Elem(), GetGatewaysGatewayCollectionResponseCacheDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGatewaysGatewayCollectionResponseCacheDetailServerInput)(nil)).Elem(), GetGatewaysGatewayCollectionResponseCacheDetailServerArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGatewaysGatewayCollectionResponseCacheDetailServerArrayInput)(nil)).Elem(), GetGatewaysGatewayCollectionResponseCacheDetailServerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubscriberClientInput)(nil)).Elem(), GetSubscriberClientArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubscriberClientArrayInput)(nil)).Elem(), GetSubscriberClientArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubscribersFilterInput)(nil)).Elem(), GetSubscribersFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubscribersFilterArrayInput)(nil)).Elem(), GetSubscribersFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubscribersSubscriberCollectionInput)(nil)).Elem(), GetSubscribersSubscriberCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubscribersSubscriberCollectionArrayInput)(nil)).Elem(), GetSubscribersSubscriberCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubscribersSubscriberCollectionItemInput)(nil)).Elem(), GetSubscribersSubscriberCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubscribersSubscriberCollectionItemArrayInput)(nil)).Elem(), GetSubscribersSubscriberCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubscribersSubscriberCollectionItemClientInput)(nil)).Elem(), GetSubscribersSubscriberCollectionItemClientArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubscribersSubscriberCollectionItemClientArrayInput)(nil)).Elem(), GetSubscribersSubscriberCollectionItemClientArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsagePlanEntitlementInput)(nil)).Elem(), GetUsagePlanEntitlementArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsagePlanEntitlementArrayInput)(nil)).Elem(), GetUsagePlanEntitlementArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsagePlanEntitlementQuotaInput)(nil)).Elem(), GetUsagePlanEntitlementQuotaArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsagePlanEntitlementQuotaArrayInput)(nil)).Elem(), GetUsagePlanEntitlementQuotaArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsagePlanEntitlementRateLimitInput)(nil)).Elem(), GetUsagePlanEntitlementRateLimitArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsagePlanEntitlementRateLimitArrayInput)(nil)).Elem(), GetUsagePlanEntitlementRateLimitArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsagePlanEntitlementTargetInput)(nil)).Elem(), GetUsagePlanEntitlementTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsagePlanEntitlementTargetArrayInput)(nil)).Elem(), GetUsagePlanEntitlementTargetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsagePlansFilterInput)(nil)).Elem(), GetUsagePlansFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsagePlansFilterArrayInput)(nil)).Elem(), GetUsagePlansFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsagePlansUsagePlanCollectionInput)(nil)).Elem(), GetUsagePlansUsagePlanCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsagePlansUsagePlanCollectionArrayInput)(nil)).Elem(), GetUsagePlansUsagePlanCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsagePlansUsagePlanCollectionItemInput)(nil)).Elem(), GetUsagePlansUsagePlanCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsagePlansUsagePlanCollectionItemArrayInput)(nil)).Elem(), GetUsagePlansUsagePlanCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsagePlansUsagePlanCollectionItemEntitlementInput)(nil)).Elem(), GetUsagePlansUsagePlanCollectionItemEntitlementArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsagePlansUsagePlanCollectionItemEntitlementArrayInput)(nil)).Elem(), GetUsagePlansUsagePlanCollectionItemEntitlementArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsagePlansUsagePlanCollectionItemEntitlementQuotaInput)(nil)).Elem(), GetUsagePlansUsagePlanCollectionItemEntitlementQuotaArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsagePlansUsagePlanCollectionItemEntitlementQuotaArrayInput)(nil)).Elem(), GetUsagePlansUsagePlanCollectionItemEntitlementQuotaArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitInput)(nil)).Elem(), GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitArrayInput)(nil)).Elem(), GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsagePlansUsagePlanCollectionItemEntitlementTargetInput)(nil)).Elem(), GetUsagePlansUsagePlanCollectionItemEntitlementTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsagePlansUsagePlanCollectionItemEntitlementTargetArrayInput)(nil)).Elem(), GetUsagePlansUsagePlanCollectionItemEntitlementTargetArray{})
 	pulumi.RegisterOutputType(ApiValidationResultOutput{})
 	pulumi.RegisterOutputType(ApiValidationResultArrayOutput{})
 	pulumi.RegisterOutputType(DeploymentSpecificationOutput{})
@@ -30057,6 +33242,8 @@ func init() {
 	pulumi.RegisterOutputType(DeploymentSpecificationRequestPoliciesMutualTlsPtrOutput{})
 	pulumi.RegisterOutputType(DeploymentSpecificationRequestPoliciesRateLimitingOutput{})
 	pulumi.RegisterOutputType(DeploymentSpecificationRequestPoliciesRateLimitingPtrOutput{})
+	pulumi.RegisterOutputType(DeploymentSpecificationRequestPoliciesUsagePlansOutput{})
+	pulumi.RegisterOutputType(DeploymentSpecificationRequestPoliciesUsagePlansPtrOutput{})
 	pulumi.RegisterOutputType(DeploymentSpecificationRouteOutput{})
 	pulumi.RegisterOutputType(DeploymentSpecificationRouteArrayOutput{})
 	pulumi.RegisterOutputType(DeploymentSpecificationRouteBackendOutput{})
@@ -30142,6 +33329,16 @@ func init() {
 	pulumi.RegisterOutputType(GatewayResponseCacheDetailsPtrOutput{})
 	pulumi.RegisterOutputType(GatewayResponseCacheDetailsServerOutput{})
 	pulumi.RegisterOutputType(GatewayResponseCacheDetailsServerArrayOutput{})
+	pulumi.RegisterOutputType(SubscriberClientOutput{})
+	pulumi.RegisterOutputType(SubscriberClientArrayOutput{})
+	pulumi.RegisterOutputType(UsagePlanEntitlementOutput{})
+	pulumi.RegisterOutputType(UsagePlanEntitlementArrayOutput{})
+	pulumi.RegisterOutputType(UsagePlanEntitlementQuotaOutput{})
+	pulumi.RegisterOutputType(UsagePlanEntitlementQuotaPtrOutput{})
+	pulumi.RegisterOutputType(UsagePlanEntitlementRateLimitOutput{})
+	pulumi.RegisterOutputType(UsagePlanEntitlementRateLimitPtrOutput{})
+	pulumi.RegisterOutputType(UsagePlanEntitlementTargetOutput{})
+	pulumi.RegisterOutputType(UsagePlanEntitlementTargetArrayOutput{})
 	pulumi.RegisterOutputType(GetApiDeploymentSpecificationLoggingPolicyOutput{})
 	pulumi.RegisterOutputType(GetApiDeploymentSpecificationLoggingPolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetApiDeploymentSpecificationLoggingPolicyAccessLogOutput{})
@@ -30164,6 +33361,8 @@ func init() {
 	pulumi.RegisterOutputType(GetApiDeploymentSpecificationRequestPolicyMutualTlArrayOutput{})
 	pulumi.RegisterOutputType(GetApiDeploymentSpecificationRequestPolicyRateLimitingOutput{})
 	pulumi.RegisterOutputType(GetApiDeploymentSpecificationRequestPolicyRateLimitingArrayOutput{})
+	pulumi.RegisterOutputType(GetApiDeploymentSpecificationRequestPolicyUsagePlanOutput{})
+	pulumi.RegisterOutputType(GetApiDeploymentSpecificationRequestPolicyUsagePlanArrayOutput{})
 	pulumi.RegisterOutputType(GetApiDeploymentSpecificationRouteOutput{})
 	pulumi.RegisterOutputType(GetApiDeploymentSpecificationRouteArrayOutput{})
 	pulumi.RegisterOutputType(GetApiDeploymentSpecificationRouteBackendOutput{})
@@ -30288,6 +33487,8 @@ func init() {
 	pulumi.RegisterOutputType(GetDeploymentSpecificationRequestPolicyMutualTlArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentSpecificationRequestPolicyRateLimitingOutput{})
 	pulumi.RegisterOutputType(GetDeploymentSpecificationRequestPolicyRateLimitingArrayOutput{})
+	pulumi.RegisterOutputType(GetDeploymentSpecificationRequestPolicyUsagePlanOutput{})
+	pulumi.RegisterOutputType(GetDeploymentSpecificationRequestPolicyUsagePlanArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentSpecificationRouteOutput{})
 	pulumi.RegisterOutputType(GetDeploymentSpecificationRouteArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentSpecificationRouteBackendOutput{})
@@ -30392,6 +33593,8 @@ func init() {
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyMutualTlArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyRateLimitingOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyRateLimitingArrayOutput{})
+	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanOutput{})
+	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionSpecificationRouteOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionSpecificationRouteArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionSpecificationRouteBackendOutput{})
@@ -30492,4 +33695,36 @@ func init() {
 	pulumi.RegisterOutputType(GetGatewaysGatewayCollectionResponseCacheDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetGatewaysGatewayCollectionResponseCacheDetailServerOutput{})
 	pulumi.RegisterOutputType(GetGatewaysGatewayCollectionResponseCacheDetailServerArrayOutput{})
+	pulumi.RegisterOutputType(GetSubscriberClientOutput{})
+	pulumi.RegisterOutputType(GetSubscriberClientArrayOutput{})
+	pulumi.RegisterOutputType(GetSubscribersFilterOutput{})
+	pulumi.RegisterOutputType(GetSubscribersFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSubscribersSubscriberCollectionOutput{})
+	pulumi.RegisterOutputType(GetSubscribersSubscriberCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSubscribersSubscriberCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSubscribersSubscriberCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSubscribersSubscriberCollectionItemClientOutput{})
+	pulumi.RegisterOutputType(GetSubscribersSubscriberCollectionItemClientArrayOutput{})
+	pulumi.RegisterOutputType(GetUsagePlanEntitlementOutput{})
+	pulumi.RegisterOutputType(GetUsagePlanEntitlementArrayOutput{})
+	pulumi.RegisterOutputType(GetUsagePlanEntitlementQuotaOutput{})
+	pulumi.RegisterOutputType(GetUsagePlanEntitlementQuotaArrayOutput{})
+	pulumi.RegisterOutputType(GetUsagePlanEntitlementRateLimitOutput{})
+	pulumi.RegisterOutputType(GetUsagePlanEntitlementRateLimitArrayOutput{})
+	pulumi.RegisterOutputType(GetUsagePlanEntitlementTargetOutput{})
+	pulumi.RegisterOutputType(GetUsagePlanEntitlementTargetArrayOutput{})
+	pulumi.RegisterOutputType(GetUsagePlansFilterOutput{})
+	pulumi.RegisterOutputType(GetUsagePlansFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetUsagePlansUsagePlanCollectionOutput{})
+	pulumi.RegisterOutputType(GetUsagePlansUsagePlanCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetUsagePlansUsagePlanCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetUsagePlansUsagePlanCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetUsagePlansUsagePlanCollectionItemEntitlementOutput{})
+	pulumi.RegisterOutputType(GetUsagePlansUsagePlanCollectionItemEntitlementArrayOutput{})
+	pulumi.RegisterOutputType(GetUsagePlansUsagePlanCollectionItemEntitlementQuotaOutput{})
+	pulumi.RegisterOutputType(GetUsagePlansUsagePlanCollectionItemEntitlementQuotaArrayOutput{})
+	pulumi.RegisterOutputType(GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitOutput{})
+	pulumi.RegisterOutputType(GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitArrayOutput{})
+	pulumi.RegisterOutputType(GetUsagePlansUsagePlanCollectionItemEntitlementTargetOutput{})
+	pulumi.RegisterOutputType(GetUsagePlansUsagePlanCollectionItemEntitlementTargetArrayOutput{})
 }

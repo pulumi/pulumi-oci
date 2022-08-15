@@ -51,6 +51,10 @@ export interface GetSddcResult {
      */
     readonly actualEsxiHostsCount: number;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+     */
+    readonly capacityReservationId: string;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
      */
     readonly compartmentId: string;
@@ -103,6 +107,14 @@ export interface GetSddcResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
      */
     readonly id: string;
+    /**
+     * The initial OCPU count of the SDDC's ESXi hosts.
+     */
+    readonly initialHostOcpuCount: number;
+    /**
+     * The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+     */
+    readonly initialHostShapeName: string;
     /**
      * The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
      */

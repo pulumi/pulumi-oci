@@ -30,28 +30,45 @@ namespace Pulumi.Oci.BigDataService
     ///             ClusterAdminPassword = @var.Auto_scaling_configuration_cluster_admin_password,
     ///             IsEnabled = @var.Auto_scaling_configuration_is_enabled,
     ///             NodeType = @var.Auto_scaling_configuration_node_type,
-    ///             Policy = new Oci.BigDataService.Inputs.AutoScalingConfigurationPolicyArgs
+    ///             DisplayName = @var.Auto_scaling_configuration_display_name,
+    ///             PolicyDetails = new Oci.BigDataService.Inputs.AutoScalingConfigurationPolicyDetailsArgs
     ///             {
-    ///                 PolicyType = @var.Auto_scaling_configuration_policy_policy_type,
-    ///                 Rules = 
+    ///                 PolicyType = @var.Auto_scaling_configuration_policy_details_policy_type,
+    ///                 ScaleDownConfig = new Oci.BigDataService.Inputs.AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs
     ///                 {
-    ///                     new Oci.BigDataService.Inputs.AutoScalingConfigurationPolicyRuleArgs
+    ///                     MemoryStepSize = @var.Auto_scaling_configuration_policy_details_scale_down_config_memory_step_size,
+    ///                     Metric = new Oci.BigDataService.Inputs.AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricArgs
     ///                     {
-    ///                         Action = @var.Auto_scaling_configuration_policy_rules_action,
-    ///                         Metric = new Oci.BigDataService.Inputs.AutoScalingConfigurationPolicyRuleMetricArgs
+    ///                         MetricType = @var.Auto_scaling_configuration_policy_details_scale_down_config_metric_metric_type,
+    ///                         Threshold = new Oci.BigDataService.Inputs.AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdArgs
     ///                         {
-    ///                             MetricType = @var.Auto_scaling_configuration_policy_rules_metric_metric_type,
-    ///                             Threshold = new Oci.BigDataService.Inputs.AutoScalingConfigurationPolicyRuleMetricThresholdArgs
-    ///                             {
-    ///                                 DurationInMinutes = @var.Auto_scaling_configuration_policy_rules_metric_threshold_duration_in_minutes,
-    ///                                 Operator = @var.Auto_scaling_configuration_policy_rules_metric_threshold_operator,
-    ///                                 Value = @var.Auto_scaling_configuration_policy_rules_metric_threshold_value,
-    ///                             },
+    ///                             DurationInMinutes = @var.Auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_duration_in_minutes,
+    ///                             Operator = @var.Auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_operator,
+    ///                             Value = @var.Auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_value,
     ///                         },
     ///                     },
+    ///                     MinMemoryPerNode = @var.Auto_scaling_configuration_policy_details_scale_down_config_min_memory_per_node,
+    ///                     MinOcpusPerNode = @var.Auto_scaling_configuration_policy_details_scale_down_config_min_ocpus_per_node,
+    ///                     OcpuStepSize = @var.Auto_scaling_configuration_policy_details_scale_down_config_ocpu_step_size,
+    ///                 },
+    ///                 ScaleUpConfig = new Oci.BigDataService.Inputs.AutoScalingConfigurationPolicyDetailsScaleUpConfigArgs
+    ///                 {
+    ///                     MaxMemoryPerNode = @var.Auto_scaling_configuration_policy_details_scale_up_config_max_memory_per_node,
+    ///                     MaxOcpusPerNode = @var.Auto_scaling_configuration_policy_details_scale_up_config_max_ocpus_per_node,
+    ///                     MemoryStepSize = @var.Auto_scaling_configuration_policy_details_scale_up_config_memory_step_size,
+    ///                     Metric = new Oci.BigDataService.Inputs.AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricArgs
+    ///                     {
+    ///                         MetricType = @var.Auto_scaling_configuration_policy_details_scale_up_config_metric_metric_type,
+    ///                         Threshold = new Oci.BigDataService.Inputs.AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdArgs
+    ///                         {
+    ///                             DurationInMinutes = @var.Auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_duration_in_minutes,
+    ///                             Operator = @var.Auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_operator,
+    ///                             Value = @var.Auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_value,
+    ///                         },
+    ///                     },
+    ///                     OcpuStepSize = @var.Auto_scaling_configuration_policy_details_scale_up_config_ocpu_step_size,
     ///                 },
     ///             },
-    ///             DisplayName = @var.Auto_scaling_configuration_display_name,
     ///         });
     ///     }
     /// 
@@ -94,16 +111,22 @@ namespace Pulumi.Oci.BigDataService
         public Output<bool> IsEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// A node type that is managed by an autoscale configuration. The only supported type is WORKER.
+        /// A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
         /// </summary>
         [Output("nodeType")]
         public Output<string> NodeType { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Policy definitions for the autoscale configuration.
+        /// (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
         /// </summary>
         [Output("policy")]
         public Output<Outputs.AutoScalingConfigurationPolicy> Policy { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Policy definition for the autoscale configuration.
+        /// </summary>
+        [Output("policyDetails")]
+        public Output<Outputs.AutoScalingConfigurationPolicyDetails> PolicyDetails { get; private set; } = null!;
 
         /// <summary>
         /// The state of the autoscale configuration.
@@ -194,16 +217,22 @@ namespace Pulumi.Oci.BigDataService
         public Input<bool> IsEnabled { get; set; } = null!;
 
         /// <summary>
-        /// A node type that is managed by an autoscale configuration. The only supported type is WORKER.
+        /// A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
         /// </summary>
         [Input("nodeType", required: true)]
         public Input<string> NodeType { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Policy definitions for the autoscale configuration.
+        /// (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
         /// </summary>
-        [Input("policy", required: true)]
-        public Input<Inputs.AutoScalingConfigurationPolicyArgs> Policy { get; set; } = null!;
+        [Input("policy")]
+        public Input<Inputs.AutoScalingConfigurationPolicyArgs>? Policy { get; set; }
+
+        /// <summary>
+        /// (Updatable) Policy definition for the autoscale configuration.
+        /// </summary>
+        [Input("policyDetails")]
+        public Input<Inputs.AutoScalingConfigurationPolicyDetailsArgs>? PolicyDetails { get; set; }
 
         public AutoScalingConfigurationArgs()
         {
@@ -237,16 +266,22 @@ namespace Pulumi.Oci.BigDataService
         public Input<bool>? IsEnabled { get; set; }
 
         /// <summary>
-        /// A node type that is managed by an autoscale configuration. The only supported type is WORKER.
+        /// A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
         /// </summary>
         [Input("nodeType")]
         public Input<string>? NodeType { get; set; }
 
         /// <summary>
-        /// (Updatable) Policy definitions for the autoscale configuration.
+        /// (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
         /// </summary>
         [Input("policy")]
         public Input<Inputs.AutoScalingConfigurationPolicyGetArgs>? Policy { get; set; }
+
+        /// <summary>
+        /// (Updatable) Policy definition for the autoscale configuration.
+        /// </summary>
+        [Input("policyDetails")]
+        public Input<Inputs.AutoScalingConfigurationPolicyDetailsGetArgs>? PolicyDetails { get; set; }
 
         /// <summary>
         /// The state of the autoscale configuration.

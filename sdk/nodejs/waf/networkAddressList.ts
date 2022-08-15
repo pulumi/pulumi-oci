@@ -74,7 +74,7 @@ export class NetworkAddressList extends pulumi.CustomResource {
     /**
      * (Updatable) A private IP address or CIDR IP address range.
      */
-    public readonly addresses!: pulumi.Output<string[]>;
+    public readonly addresses!: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */

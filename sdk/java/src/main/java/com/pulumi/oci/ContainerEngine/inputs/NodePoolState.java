@@ -8,6 +8,7 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.ContainerEngine.inputs.NodePoolInitialNodeLabelArgs;
 import com.pulumi.oci.ContainerEngine.inputs.NodePoolNodeArgs;
 import com.pulumi.oci.ContainerEngine.inputs.NodePoolNodeConfigDetailsArgs;
+import com.pulumi.oci.ContainerEngine.inputs.NodePoolNodeEvictionNodePoolSettingsArgs;
 import com.pulumi.oci.ContainerEngine.inputs.NodePoolNodeShapeConfigArgs;
 import com.pulumi.oci.ContainerEngine.inputs.NodePoolNodeSourceArgs;
 import com.pulumi.oci.ContainerEngine.inputs.NodePoolNodeSourceDetailsArgs;
@@ -116,6 +117,21 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Details about the state of the node.
+     * 
+     */
+    @Import(name="lifecycleDetails")
+    private @Nullable Output<String> lifecycleDetails;
+
+    /**
+     * @return Details about the state of the node.
+     * 
+     */
+    public Optional<Output<String>> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
+    }
+
+    /**
      * (Updatable) The name of the node pool. Avoid entering confidential information.
      * 
      */
@@ -143,6 +159,21 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<NodePoolNodeConfigDetailsArgs>> nodeConfigDetails() {
         return Optional.ofNullable(this.nodeConfigDetails);
+    }
+
+    /**
+     * (Updatable) Node Eviction Details configuration
+     * 
+     */
+    @Import(name="nodeEvictionNodePoolSettings")
+    private @Nullable Output<NodePoolNodeEvictionNodePoolSettingsArgs> nodeEvictionNodePoolSettings;
+
+    /**
+     * @return (Updatable) Node Eviction Details configuration
+     * 
+     */
+    public Optional<Output<NodePoolNodeEvictionNodePoolSettingsArgs>> nodeEvictionNodePoolSettings() {
+        return Optional.ofNullable(this.nodeEvictionNodePoolSettings);
     }
 
     /**
@@ -312,6 +343,21 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The state of the nodepool.
+     * 
+     */
+    @Import(name="state")
+    private @Nullable Output<String> state;
+
+    /**
+     * @return The state of the nodepool.
+     * 
+     */
+    public Optional<Output<String>> state() {
+        return Optional.ofNullable(this.state);
+    }
+
+    /**
      * (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
      * 
      */
@@ -335,8 +381,10 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
         this.freeformTags = $.freeformTags;
         this.initialNodeLabels = $.initialNodeLabels;
         this.kubernetesVersion = $.kubernetesVersion;
+        this.lifecycleDetails = $.lifecycleDetails;
         this.name = $.name;
         this.nodeConfigDetails = $.nodeConfigDetails;
+        this.nodeEvictionNodePoolSettings = $.nodeEvictionNodePoolSettings;
         this.nodeImageId = $.nodeImageId;
         this.nodeImageName = $.nodeImageName;
         this.nodeMetadata = $.nodeMetadata;
@@ -347,6 +395,7 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
         this.nodes = $.nodes;
         this.quantityPerSubnet = $.quantityPerSubnet;
         this.sshPublicKey = $.sshPublicKey;
+        this.state = $.state;
         this.subnetIds = $.subnetIds;
     }
 
@@ -505,6 +554,27 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param lifecycleDetails Details about the state of the node.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lifecycleDetails(@Nullable Output<String> lifecycleDetails) {
+            $.lifecycleDetails = lifecycleDetails;
+            return this;
+        }
+
+        /**
+         * @param lifecycleDetails Details about the state of the node.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            return lifecycleDetails(Output.of(lifecycleDetails));
+        }
+
+        /**
          * @param name (Updatable) The name of the node pool. Avoid entering confidential information.
          * 
          * @return builder
@@ -544,6 +614,27 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder nodeConfigDetails(NodePoolNodeConfigDetailsArgs nodeConfigDetails) {
             return nodeConfigDetails(Output.of(nodeConfigDetails));
+        }
+
+        /**
+         * @param nodeEvictionNodePoolSettings (Updatable) Node Eviction Details configuration
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nodeEvictionNodePoolSettings(@Nullable Output<NodePoolNodeEvictionNodePoolSettingsArgs> nodeEvictionNodePoolSettings) {
+            $.nodeEvictionNodePoolSettings = nodeEvictionNodePoolSettings;
+            return this;
+        }
+
+        /**
+         * @param nodeEvictionNodePoolSettings (Updatable) Node Eviction Details configuration
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nodeEvictionNodePoolSettings(NodePoolNodeEvictionNodePoolSettingsArgs nodeEvictionNodePoolSettings) {
+            return nodeEvictionNodePoolSettings(Output.of(nodeEvictionNodePoolSettings));
         }
 
         /**
@@ -790,6 +881,27 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder sshPublicKey(String sshPublicKey) {
             return sshPublicKey(Output.of(sshPublicKey));
+        }
+
+        /**
+         * @param state The state of the nodepool.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder state(@Nullable Output<String> state) {
+            $.state = state;
+            return this;
+        }
+
+        /**
+         * @param state The state of the nodepool.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder state(String state) {
+            return state(Output.of(state));
         }
 
         /**

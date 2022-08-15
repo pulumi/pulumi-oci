@@ -19,6 +19,21 @@ public final class GetManagementAgentsArgs extends com.pulumi.resources.InvokeAr
     public static final GetManagementAgentsArgs Empty = new GetManagementAgentsArgs();
 
     /**
+     * When the value is &#34;ACCESSIBLE&#34;, insufficient permissions for a compartment will filter out resources in that compartment without rejecting the request.
+     * 
+     */
+    @Import(name="accessLevel")
+    private @Nullable Output<String> accessLevel;
+
+    /**
+     * @return When the value is &#34;ACCESSIBLE&#34;, insufficient permissions for a compartment will filter out resources in that compartment without rejecting the request.
+     * 
+     */
+    public Optional<Output<String>> accessLevel() {
+        return Optional.ofNullable(this.accessLevel);
+    }
+
+    /**
      * Filter to return only Management Agents in the particular availability status.
      * 
      */
@@ -46,6 +61,21 @@ public final class GetManagementAgentsArgs extends com.pulumi.resources.InvokeAr
      */
     public Output<String> compartmentId() {
         return this.compartmentId;
+    }
+
+    /**
+     * if set to true then it fetches resources for all compartments where user has access to else only on the compartment specified.
+     * 
+     */
+    @Import(name="compartmentIdInSubtree")
+    private @Nullable Output<Boolean> compartmentIdInSubtree;
+
+    /**
+     * @return if set to true then it fetches resources for all compartments where user has access to else only on the compartment specified.
+     * 
+     */
+    public Optional<Output<Boolean>> compartmentIdInSubtree() {
+        return Optional.ofNullable(this.compartmentIdInSubtree);
     }
 
     /**
@@ -116,14 +146,14 @@ public final class GetManagementAgentsArgs extends com.pulumi.resources.InvokeAr
     }
 
     /**
-     * Filter to return only results having the particular platform type.
+     * Array of PlatformTypes to return only results having the particular platform types. Example: [&#34;LINUX&#34;]
      * 
      */
     @Import(name="platformTypes")
     private @Nullable Output<List<String>> platformTypes;
 
     /**
-     * @return Filter to return only results having the particular platform type.
+     * @return Array of PlatformTypes to return only results having the particular platform types. Example: [&#34;LINUX&#34;]
      * 
      */
     public Optional<Output<List<String>>> platformTypes() {
@@ -131,14 +161,14 @@ public final class GetManagementAgentsArgs extends com.pulumi.resources.InvokeAr
     }
 
     /**
-     * Filter to return only Management Agents having the particular Plugin installed. A special pluginName of &#39;None&#39; can be provided and this will return only Management Agents having no plugin installed.
+     * Array of pluginName to return only Management Agents having the particular Plugins installed. A special pluginName of &#39;None&#39; can be provided and this will return only Management Agents having no plugin installed. Example: [&#34;PluginA&#34;]
      * 
      */
     @Import(name="pluginNames")
     private @Nullable Output<List<String>> pluginNames;
 
     /**
-     * @return Filter to return only Management Agents having the particular Plugin installed. A special pluginName of &#39;None&#39; can be provided and this will return only Management Agents having no plugin installed.
+     * @return Array of pluginName to return only Management Agents having the particular Plugins installed. A special pluginName of &#39;None&#39; can be provided and this will return only Management Agents having no plugin installed. Example: [&#34;PluginA&#34;]
      * 
      */
     public Optional<Output<List<String>>> pluginNames() {
@@ -161,14 +191,14 @@ public final class GetManagementAgentsArgs extends com.pulumi.resources.InvokeAr
     }
 
     /**
-     * Filter to return only Management Agents having the particular agent version.
+     * Array of versions to return only Management Agents having the particular agent versions. Example: [&#34;202020.0101&#34;,&#34;210201.0513&#34;]
      * 
      */
     @Import(name="versions")
     private @Nullable Output<List<String>> versions;
 
     /**
-     * @return Filter to return only Management Agents having the particular agent version.
+     * @return Array of versions to return only Management Agents having the particular agent versions. Example: [&#34;202020.0101&#34;,&#34;210201.0513&#34;]
      * 
      */
     public Optional<Output<List<String>>> versions() {
@@ -178,8 +208,10 @@ public final class GetManagementAgentsArgs extends com.pulumi.resources.InvokeAr
     private GetManagementAgentsArgs() {}
 
     private GetManagementAgentsArgs(GetManagementAgentsArgs $) {
+        this.accessLevel = $.accessLevel;
         this.availabilityStatus = $.availabilityStatus;
         this.compartmentId = $.compartmentId;
+        this.compartmentIdInSubtree = $.compartmentIdInSubtree;
         this.displayName = $.displayName;
         this.filters = $.filters;
         this.hostId = $.hostId;
@@ -207,6 +239,27 @@ public final class GetManagementAgentsArgs extends com.pulumi.resources.InvokeAr
 
         public Builder(GetManagementAgentsArgs defaults) {
             $ = new GetManagementAgentsArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param accessLevel When the value is &#34;ACCESSIBLE&#34;, insufficient permissions for a compartment will filter out resources in that compartment without rejecting the request.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder accessLevel(@Nullable Output<String> accessLevel) {
+            $.accessLevel = accessLevel;
+            return this;
+        }
+
+        /**
+         * @param accessLevel When the value is &#34;ACCESSIBLE&#34;, insufficient permissions for a compartment will filter out resources in that compartment without rejecting the request.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder accessLevel(String accessLevel) {
+            return accessLevel(Output.of(accessLevel));
         }
 
         /**
@@ -249,6 +302,27 @@ public final class GetManagementAgentsArgs extends com.pulumi.resources.InvokeAr
          */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
+        }
+
+        /**
+         * @param compartmentIdInSubtree if set to true then it fetches resources for all compartments where user has access to else only on the compartment specified.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compartmentIdInSubtree(@Nullable Output<Boolean> compartmentIdInSubtree) {
+            $.compartmentIdInSubtree = compartmentIdInSubtree;
+            return this;
+        }
+
+        /**
+         * @param compartmentIdInSubtree if set to true then it fetches resources for all compartments where user has access to else only on the compartment specified.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
+            return compartmentIdInSubtree(Output.of(compartmentIdInSubtree));
         }
 
         /**
@@ -349,7 +423,7 @@ public final class GetManagementAgentsArgs extends com.pulumi.resources.InvokeAr
         }
 
         /**
-         * @param platformTypes Filter to return only results having the particular platform type.
+         * @param platformTypes Array of PlatformTypes to return only results having the particular platform types. Example: [&#34;LINUX&#34;]
          * 
          * @return builder
          * 
@@ -360,7 +434,7 @@ public final class GetManagementAgentsArgs extends com.pulumi.resources.InvokeAr
         }
 
         /**
-         * @param platformTypes Filter to return only results having the particular platform type.
+         * @param platformTypes Array of PlatformTypes to return only results having the particular platform types. Example: [&#34;LINUX&#34;]
          * 
          * @return builder
          * 
@@ -370,7 +444,7 @@ public final class GetManagementAgentsArgs extends com.pulumi.resources.InvokeAr
         }
 
         /**
-         * @param platformTypes Filter to return only results having the particular platform type.
+         * @param platformTypes Array of PlatformTypes to return only results having the particular platform types. Example: [&#34;LINUX&#34;]
          * 
          * @return builder
          * 
@@ -380,7 +454,7 @@ public final class GetManagementAgentsArgs extends com.pulumi.resources.InvokeAr
         }
 
         /**
-         * @param pluginNames Filter to return only Management Agents having the particular Plugin installed. A special pluginName of &#39;None&#39; can be provided and this will return only Management Agents having no plugin installed.
+         * @param pluginNames Array of pluginName to return only Management Agents having the particular Plugins installed. A special pluginName of &#39;None&#39; can be provided and this will return only Management Agents having no plugin installed. Example: [&#34;PluginA&#34;]
          * 
          * @return builder
          * 
@@ -391,7 +465,7 @@ public final class GetManagementAgentsArgs extends com.pulumi.resources.InvokeAr
         }
 
         /**
-         * @param pluginNames Filter to return only Management Agents having the particular Plugin installed. A special pluginName of &#39;None&#39; can be provided and this will return only Management Agents having no plugin installed.
+         * @param pluginNames Array of pluginName to return only Management Agents having the particular Plugins installed. A special pluginName of &#39;None&#39; can be provided and this will return only Management Agents having no plugin installed. Example: [&#34;PluginA&#34;]
          * 
          * @return builder
          * 
@@ -401,7 +475,7 @@ public final class GetManagementAgentsArgs extends com.pulumi.resources.InvokeAr
         }
 
         /**
-         * @param pluginNames Filter to return only Management Agents having the particular Plugin installed. A special pluginName of &#39;None&#39; can be provided and this will return only Management Agents having no plugin installed.
+         * @param pluginNames Array of pluginName to return only Management Agents having the particular Plugins installed. A special pluginName of &#39;None&#39; can be provided and this will return only Management Agents having no plugin installed. Example: [&#34;PluginA&#34;]
          * 
          * @return builder
          * 
@@ -432,7 +506,7 @@ public final class GetManagementAgentsArgs extends com.pulumi.resources.InvokeAr
         }
 
         /**
-         * @param versions Filter to return only Management Agents having the particular agent version.
+         * @param versions Array of versions to return only Management Agents having the particular agent versions. Example: [&#34;202020.0101&#34;,&#34;210201.0513&#34;]
          * 
          * @return builder
          * 
@@ -443,7 +517,7 @@ public final class GetManagementAgentsArgs extends com.pulumi.resources.InvokeAr
         }
 
         /**
-         * @param versions Filter to return only Management Agents having the particular agent version.
+         * @param versions Array of versions to return only Management Agents having the particular agent versions. Example: [&#34;202020.0101&#34;,&#34;210201.0513&#34;]
          * 
          * @return builder
          * 
@@ -453,7 +527,7 @@ public final class GetManagementAgentsArgs extends com.pulumi.resources.InvokeAr
         }
 
         /**
-         * @param versions Filter to return only Management Agents having the particular agent version.
+         * @param versions Array of versions to return only Management Agents having the particular agent versions. Example: [&#34;202020.0101&#34;,&#34;210201.0513&#34;]
          * 
          * @return builder
          * 

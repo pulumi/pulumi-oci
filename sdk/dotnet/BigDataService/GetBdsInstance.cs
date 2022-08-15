@@ -107,6 +107,10 @@ namespace Pulumi.Oci.BigDataService
     {
         public readonly string BdsInstanceId;
         /// <summary>
+        /// pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
+        /// </summary>
+        public readonly string BootstrapScriptUrl;
+        /// <summary>
         /// The information about added Cloud SQL capability
         /// </summary>
         public readonly ImmutableArray<Outputs.GetBdsInstanceCloudSqlDetailResult> CloudSqlDetails;
@@ -124,6 +128,7 @@ namespace Pulumi.Oci.BigDataService
         /// The OCID of the compartment.
         /// </summary>
         public readonly string CompartmentId;
+        public readonly ImmutableArray<Outputs.GetBdsInstanceComputeOnlyWorkerNodeResult> ComputeOnlyWorkerNodes;
         /// <summary>
         /// The user who created the cluster.
         /// </summary>
@@ -156,6 +161,7 @@ namespace Pulumi.Oci.BigDataService
         /// Boolean flag specifying whether or not the cluster should be set up as secure.
         /// </summary>
         public readonly bool IsSecure;
+        public readonly string KerberosRealmName;
         public readonly ImmutableArray<Outputs.GetBdsInstanceMasterNodeResult> MasterNodes;
         /// <summary>
         /// Additional configuration of the user's network.
@@ -188,6 +194,8 @@ namespace Pulumi.Oci.BigDataService
         private GetBdsInstanceResult(
             string bdsInstanceId,
 
+            string bootstrapScriptUrl,
+
             ImmutableArray<Outputs.GetBdsInstanceCloudSqlDetailResult> cloudSqlDetails,
 
             string clusterAdminPassword,
@@ -199,6 +207,8 @@ namespace Pulumi.Oci.BigDataService
             string clusterVersion,
 
             string compartmentId,
+
+            ImmutableArray<Outputs.GetBdsInstanceComputeOnlyWorkerNodeResult> computeOnlyWorkerNodes,
 
             string createdBy,
 
@@ -215,6 +225,8 @@ namespace Pulumi.Oci.BigDataService
             bool isHighAvailability,
 
             bool isSecure,
+
+            string kerberosRealmName,
 
             ImmutableArray<Outputs.GetBdsInstanceMasterNodeResult> masterNodes,
 
@@ -235,12 +247,14 @@ namespace Pulumi.Oci.BigDataService
             ImmutableArray<Outputs.GetBdsInstanceWorkerNodeResult> workerNodes)
         {
             BdsInstanceId = bdsInstanceId;
+            BootstrapScriptUrl = bootstrapScriptUrl;
             CloudSqlDetails = cloudSqlDetails;
             ClusterAdminPassword = clusterAdminPassword;
             ClusterDetails = clusterDetails;
             ClusterPublicKey = clusterPublicKey;
             ClusterVersion = clusterVersion;
             CompartmentId = compartmentId;
+            ComputeOnlyWorkerNodes = computeOnlyWorkerNodes;
             CreatedBy = createdBy;
             DefinedTags = definedTags;
             DisplayName = displayName;
@@ -249,6 +263,7 @@ namespace Pulumi.Oci.BigDataService
             IsCloudSqlConfigured = isCloudSqlConfigured;
             IsHighAvailability = isHighAvailability;
             IsSecure = isSecure;
+            KerberosRealmName = kerberosRealmName;
             MasterNodes = masterNodes;
             NetworkConfigs = networkConfigs;
             Nodes = nodes;

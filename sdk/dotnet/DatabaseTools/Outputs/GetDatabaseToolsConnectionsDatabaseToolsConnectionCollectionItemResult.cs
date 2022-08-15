@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
     public sealed class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemResult
     {
         /// <summary>
-        /// Advanced connection properties key-value pair (e.g., oracle.net.ssl_server_dn_match).
+        /// The advanced connection properties key-value pair (for example, `oracle.net.ssl_server_dn_match`).
         /// </summary>
         public readonly ImmutableDictionary<string, object> AdvancedProperties;
         /// <summary>
@@ -22,7 +22,7 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// Connect descriptor or Easy Connect Naming method to connect to the database.
+        /// The connect descriptor or Easy Connect Naming method used to connect to the database.
         /// </summary>
         public readonly string ConnectionString;
         /// <summary>
@@ -30,7 +30,7 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
         /// <summary>
-        /// A filter to return only resources that match the entire display name given.
+        /// A filter to return only resources that match the entire specified display name.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
@@ -38,19 +38,19 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsConnection.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools connection.
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
+        /// The Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreResult> KeyStores;
         /// <summary>
-        /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        /// A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsPrivateEndpoint used to access the database in the Customer VCN.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
         /// </summary>
         public readonly string PrivateEndpointId;
         /// <summary>
@@ -58,7 +58,7 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceResult> RelatedResources;
         /// <summary>
-        /// A filter to return only resources their lifecycleState matches the given lifecycleState.
+        /// A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
         /// </summary>
         public readonly string State;
         /// <summary>
@@ -66,19 +66,19 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> SystemTags;
         /// <summary>
-        /// The time the DatabaseToolsConnection was created. An RFC3339 formatted datetime string
+        /// The time the Database Tools connection was created. An RFC3339 formatted datetime string.
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string
+        /// The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
         /// </summary>
         public readonly string TimeUpdated;
         /// <summary>
-        /// A filter to return only resources their endpointServiceId matches the given endpointServiceId.
+        /// A filter to return only resources their type matches the specified type.
         /// </summary>
         public readonly string Type;
         /// <summary>
-        /// Database user name.
+        /// The database user name.
         /// </summary>
         public readonly string UserName;
         /// <summary>

@@ -11,35 +11,35 @@ import (
 )
 
 type GetAlertRulesAlertRule struct {
-	// The unique Budget OCID
+	// The unique budget OCID.
 	BudgetId string `pulumi:"budgetId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The description of the alert rule.
 	Description string `pulumi:"description"`
-	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+	// A user-friendly name. This does not have to be unique, and it's changeable.  Example: `My new resource`
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// The OCID of the alert rule
+	// The OCID of the alert rule.
 	Id string `pulumi:"id"`
-	// Custom message that will be sent when alert is triggered
+	// The custom message that will be sent when the alert is triggered.
 	Message string `pulumi:"message"`
-	// Delimited list of email addresses to receive the alert when it triggers. Delimiter character can be comma, space, TAB, or semicolon.
+	// The delimited list of email addresses to receive the alert when it triggers. Delimiter characters can be a comma, space, TAB, or semicolon.
 	Recipients string `pulumi:"recipients"`
 	// The current state of the resource to filter by.
 	State string `pulumi:"state"`
-	// The threshold for triggering the alert. If thresholdType is PERCENTAGE, the maximum value is 10000.
+	// The threshold for triggering the alert. If the thresholdType is PERCENTAGE, the maximum value is 10000.
 	Threshold float64 `pulumi:"threshold"`
 	// The type of threshold.
 	ThresholdType string `pulumi:"thresholdType"`
-	// Time when budget was created
+	// The time when the budget was created.
 	TimeCreated string `pulumi:"timeCreated"`
-	// Time when budget was updated
+	// The time when the budget was updated.
 	TimeUpdated string `pulumi:"timeUpdated"`
-	// The type of alert. Valid values are ACTUAL (the alert will trigger based on actual usage) or FORECAST (the alert will trigger based on predicted usage).
+	// The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
 	Type string `pulumi:"type"`
-	// Version of the alert rule. Starts from 1 and increments by 1.
+	// The version of the alert rule. Starts from 1 and increments by 1.
 	Version int `pulumi:"version"`
 }
 
@@ -55,35 +55,35 @@ type GetAlertRulesAlertRuleInput interface {
 }
 
 type GetAlertRulesAlertRuleArgs struct {
-	// The unique Budget OCID
+	// The unique budget OCID.
 	BudgetId pulumi.StringInput `pulumi:"budgetId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The description of the alert rule.
 	Description pulumi.StringInput `pulumi:"description"`
-	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+	// A user-friendly name. This does not have to be unique, and it's changeable.  Example: `My new resource`
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
-	// The OCID of the alert rule
+	// The OCID of the alert rule.
 	Id pulumi.StringInput `pulumi:"id"`
-	// Custom message that will be sent when alert is triggered
+	// The custom message that will be sent when the alert is triggered.
 	Message pulumi.StringInput `pulumi:"message"`
-	// Delimited list of email addresses to receive the alert when it triggers. Delimiter character can be comma, space, TAB, or semicolon.
+	// The delimited list of email addresses to receive the alert when it triggers. Delimiter characters can be a comma, space, TAB, or semicolon.
 	Recipients pulumi.StringInput `pulumi:"recipients"`
 	// The current state of the resource to filter by.
 	State pulumi.StringInput `pulumi:"state"`
-	// The threshold for triggering the alert. If thresholdType is PERCENTAGE, the maximum value is 10000.
+	// The threshold for triggering the alert. If the thresholdType is PERCENTAGE, the maximum value is 10000.
 	Threshold pulumi.Float64Input `pulumi:"threshold"`
 	// The type of threshold.
 	ThresholdType pulumi.StringInput `pulumi:"thresholdType"`
-	// Time when budget was created
+	// The time when the budget was created.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	// Time when budget was updated
+	// The time when the budget was updated.
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
-	// The type of alert. Valid values are ACTUAL (the alert will trigger based on actual usage) or FORECAST (the alert will trigger based on predicted usage).
+	// The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
 	Type pulumi.StringInput `pulumi:"type"`
-	// Version of the alert rule. Starts from 1 and increments by 1.
+	// The version of the alert rule. Starts from 1 and increments by 1.
 	Version pulumi.IntInput `pulumi:"version"`
 }
 
@@ -138,7 +138,7 @@ func (o GetAlertRulesAlertRuleOutput) ToGetAlertRulesAlertRuleOutputWithContext(
 	return o
 }
 
-// The unique Budget OCID
+// The unique budget OCID.
 func (o GetAlertRulesAlertRuleOutput) BudgetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAlertRulesAlertRule) string { return v.BudgetId }).(pulumi.StringOutput)
 }
@@ -153,7 +153,7 @@ func (o GetAlertRulesAlertRuleOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAlertRulesAlertRule) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+// A user-friendly name. This does not have to be unique, and it's changeable.  Example: `My new resource`
 func (o GetAlertRulesAlertRuleOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAlertRulesAlertRule) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -163,17 +163,17 @@ func (o GetAlertRulesAlertRuleOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetAlertRulesAlertRule) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// The OCID of the alert rule
+// The OCID of the alert rule.
 func (o GetAlertRulesAlertRuleOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAlertRulesAlertRule) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Custom message that will be sent when alert is triggered
+// The custom message that will be sent when the alert is triggered.
 func (o GetAlertRulesAlertRuleOutput) Message() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAlertRulesAlertRule) string { return v.Message }).(pulumi.StringOutput)
 }
 
-// Delimited list of email addresses to receive the alert when it triggers. Delimiter character can be comma, space, TAB, or semicolon.
+// The delimited list of email addresses to receive the alert when it triggers. Delimiter characters can be a comma, space, TAB, or semicolon.
 func (o GetAlertRulesAlertRuleOutput) Recipients() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAlertRulesAlertRule) string { return v.Recipients }).(pulumi.StringOutput)
 }
@@ -183,7 +183,7 @@ func (o GetAlertRulesAlertRuleOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAlertRulesAlertRule) string { return v.State }).(pulumi.StringOutput)
 }
 
-// The threshold for triggering the alert. If thresholdType is PERCENTAGE, the maximum value is 10000.
+// The threshold for triggering the alert. If the thresholdType is PERCENTAGE, the maximum value is 10000.
 func (o GetAlertRulesAlertRuleOutput) Threshold() pulumi.Float64Output {
 	return o.ApplyT(func(v GetAlertRulesAlertRule) float64 { return v.Threshold }).(pulumi.Float64Output)
 }
@@ -193,22 +193,22 @@ func (o GetAlertRulesAlertRuleOutput) ThresholdType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAlertRulesAlertRule) string { return v.ThresholdType }).(pulumi.StringOutput)
 }
 
-// Time when budget was created
+// The time when the budget was created.
 func (o GetAlertRulesAlertRuleOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAlertRulesAlertRule) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// Time when budget was updated
+// The time when the budget was updated.
 func (o GetAlertRulesAlertRuleOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAlertRulesAlertRule) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// The type of alert. Valid values are ACTUAL (the alert will trigger based on actual usage) or FORECAST (the alert will trigger based on predicted usage).
+// The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
 func (o GetAlertRulesAlertRuleOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAlertRulesAlertRule) string { return v.Type }).(pulumi.StringOutput)
 }
 
-// Version of the alert rule. Starts from 1 and increments by 1.
+// The version of the alert rule. Starts from 1 and increments by 1.
 func (o GetAlertRulesAlertRuleOutput) Version() pulumi.IntOutput {
 	return o.ApplyT(func(v GetAlertRulesAlertRule) int { return v.Version }).(pulumi.IntOutput)
 }
@@ -340,11 +340,11 @@ func (o GetAlertRulesFilterArrayOutput) Index(i pulumi.IntInput) GetAlertRulesFi
 }
 
 type GetBudgetsBudget struct {
-	// The actual spend in currency for the current budget cycle
+	// The actual spend in currency for the current budget cycle.
 	ActualSpend float64 `pulumi:"actualSpend"`
-	// Total number of alert rules in the budget
+	// The total number of alert rules in the budget.
 	AlertRuleCount int `pulumi:"alertRuleCount"`
-	// The amount of the budget expressed in the currency of the customer's rate card.
+	// The amount of the budget, expressed in the currency of the customer's rate card.
 	Amount int `pulumi:"amount"`
 	// The number of days offset from the first day of the month, at which the budget processing period starts. In months that have fewer days than this value, processing will begin on the last day of that month. For example, for a value of 12, processing starts every month on the 12th at midnight.
 	BudgetProcessingPeriodStartOffset int `pulumi:"budgetProcessingPeriodStartOffset"`
@@ -354,36 +354,38 @@ type GetBudgetsBudget struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The description of the budget.
 	Description string `pulumi:"description"`
-	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+	// A user-friendly name. This does not have to be unique, and it's changeable.  Example: `My new resource`
 	DisplayName string `pulumi:"displayName"`
-	// The forecasted spend in currency by the end of the current budget cycle
+	// The forecasted spend in currency by the end of the current budget cycle.
 	ForecastedSpend float64 `pulumi:"forecastedSpend"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// The OCID of the budget
+	// The OCID of the budget.
 	Id string `pulumi:"id"`
+	// The type of the budget processing period. Valid values are INVOICE and MONTH.
+	ProcessingPeriodType string `pulumi:"processingPeriodType"`
 	// The reset period for the budget.
 	ResetPeriod string `pulumi:"resetPeriod"`
 	// The current state of the resource to filter by.
 	State string `pulumi:"state"`
-	// This is DEPRECATED. For backwards compatability, the property will be populated when targetType is "COMPARTMENT" AND targets contains EXACT ONE target compartment ocid. For all other scenarios, this property will be left empty.
+	// This is DEPRECATED. For backwards compatability, the property is populated when the targetType is "COMPARTMENT", and targets contain the specific target compartment OCID. For all other scenarios, this property will be left empty.
 	//
 	// Deprecated: The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead.
 	TargetCompartmentId string `pulumi:"targetCompartmentId"`
-	// The type of target to filter by.
+	// The type of target to filter by:
 	// * ALL - List all budgets
 	// * COMPARTMENT - List all budgets with targetType == "COMPARTMENT"
 	// * TAG - List all budgets with targetType == "TAG"
 	TargetType string `pulumi:"targetType"`
-	// The list of targets on which the budget is applied. If targetType is "COMPARTMENT", targets contains list of compartment OCIDs. If targetType is "TAG", targets contains list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}".
+	// The list of targets on which the budget is applied. If the targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If the targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}".
 	Targets []string `pulumi:"targets"`
-	// Time that budget was created
+	// The time that the budget was created.
 	TimeCreated string `pulumi:"timeCreated"`
-	// The time that the budget spend was last computed
+	// The time that the budget spend was last computed.
 	TimeSpendComputed string `pulumi:"timeSpendComputed"`
-	// Time that budget was updated
+	// The time that the budget was updated.
 	TimeUpdated string `pulumi:"timeUpdated"`
-	// Version of the budget. Starts from 1 and increments by 1.
+	// The version of the budget. Starts from 1 and increments by 1.
 	Version int `pulumi:"version"`
 }
 
@@ -399,11 +401,11 @@ type GetBudgetsBudgetInput interface {
 }
 
 type GetBudgetsBudgetArgs struct {
-	// The actual spend in currency for the current budget cycle
+	// The actual spend in currency for the current budget cycle.
 	ActualSpend pulumi.Float64Input `pulumi:"actualSpend"`
-	// Total number of alert rules in the budget
+	// The total number of alert rules in the budget.
 	AlertRuleCount pulumi.IntInput `pulumi:"alertRuleCount"`
-	// The amount of the budget expressed in the currency of the customer's rate card.
+	// The amount of the budget, expressed in the currency of the customer's rate card.
 	Amount pulumi.IntInput `pulumi:"amount"`
 	// The number of days offset from the first day of the month, at which the budget processing period starts. In months that have fewer days than this value, processing will begin on the last day of that month. For example, for a value of 12, processing starts every month on the 12th at midnight.
 	BudgetProcessingPeriodStartOffset pulumi.IntInput `pulumi:"budgetProcessingPeriodStartOffset"`
@@ -413,36 +415,38 @@ type GetBudgetsBudgetArgs struct {
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The description of the budget.
 	Description pulumi.StringInput `pulumi:"description"`
-	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+	// A user-friendly name. This does not have to be unique, and it's changeable.  Example: `My new resource`
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// The forecasted spend in currency by the end of the current budget cycle
+	// The forecasted spend in currency by the end of the current budget cycle.
 	ForecastedSpend pulumi.Float64Input `pulumi:"forecastedSpend"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
-	// The OCID of the budget
+	// The OCID of the budget.
 	Id pulumi.StringInput `pulumi:"id"`
+	// The type of the budget processing period. Valid values are INVOICE and MONTH.
+	ProcessingPeriodType pulumi.StringInput `pulumi:"processingPeriodType"`
 	// The reset period for the budget.
 	ResetPeriod pulumi.StringInput `pulumi:"resetPeriod"`
 	// The current state of the resource to filter by.
 	State pulumi.StringInput `pulumi:"state"`
-	// This is DEPRECATED. For backwards compatability, the property will be populated when targetType is "COMPARTMENT" AND targets contains EXACT ONE target compartment ocid. For all other scenarios, this property will be left empty.
+	// This is DEPRECATED. For backwards compatability, the property is populated when the targetType is "COMPARTMENT", and targets contain the specific target compartment OCID. For all other scenarios, this property will be left empty.
 	//
 	// Deprecated: The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead.
 	TargetCompartmentId pulumi.StringInput `pulumi:"targetCompartmentId"`
-	// The type of target to filter by.
+	// The type of target to filter by:
 	// * ALL - List all budgets
 	// * COMPARTMENT - List all budgets with targetType == "COMPARTMENT"
 	// * TAG - List all budgets with targetType == "TAG"
 	TargetType pulumi.StringInput `pulumi:"targetType"`
-	// The list of targets on which the budget is applied. If targetType is "COMPARTMENT", targets contains list of compartment OCIDs. If targetType is "TAG", targets contains list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}".
+	// The list of targets on which the budget is applied. If the targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If the targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}".
 	Targets pulumi.StringArrayInput `pulumi:"targets"`
-	// Time that budget was created
+	// The time that the budget was created.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	// The time that the budget spend was last computed
+	// The time that the budget spend was last computed.
 	TimeSpendComputed pulumi.StringInput `pulumi:"timeSpendComputed"`
-	// Time that budget was updated
+	// The time that the budget was updated.
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
-	// Version of the budget. Starts from 1 and increments by 1.
+	// The version of the budget. Starts from 1 and increments by 1.
 	Version pulumi.IntInput `pulumi:"version"`
 }
 
@@ -497,17 +501,17 @@ func (o GetBudgetsBudgetOutput) ToGetBudgetsBudgetOutputWithContext(ctx context.
 	return o
 }
 
-// The actual spend in currency for the current budget cycle
+// The actual spend in currency for the current budget cycle.
 func (o GetBudgetsBudgetOutput) ActualSpend() pulumi.Float64Output {
 	return o.ApplyT(func(v GetBudgetsBudget) float64 { return v.ActualSpend }).(pulumi.Float64Output)
 }
 
-// Total number of alert rules in the budget
+// The total number of alert rules in the budget.
 func (o GetBudgetsBudgetOutput) AlertRuleCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetBudgetsBudget) int { return v.AlertRuleCount }).(pulumi.IntOutput)
 }
 
-// The amount of the budget expressed in the currency of the customer's rate card.
+// The amount of the budget, expressed in the currency of the customer's rate card.
 func (o GetBudgetsBudgetOutput) Amount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetBudgetsBudget) int { return v.Amount }).(pulumi.IntOutput)
 }
@@ -532,12 +536,12 @@ func (o GetBudgetsBudgetOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBudgetsBudget) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+// A user-friendly name. This does not have to be unique, and it's changeable.  Example: `My new resource`
 func (o GetBudgetsBudgetOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBudgetsBudget) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// The forecasted spend in currency by the end of the current budget cycle
+// The forecasted spend in currency by the end of the current budget cycle.
 func (o GetBudgetsBudgetOutput) ForecastedSpend() pulumi.Float64Output {
 	return o.ApplyT(func(v GetBudgetsBudget) float64 { return v.ForecastedSpend }).(pulumi.Float64Output)
 }
@@ -547,9 +551,14 @@ func (o GetBudgetsBudgetOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetBudgetsBudget) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// The OCID of the budget
+// The OCID of the budget.
 func (o GetBudgetsBudgetOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBudgetsBudget) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The type of the budget processing period. Valid values are INVOICE and MONTH.
+func (o GetBudgetsBudgetOutput) ProcessingPeriodType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBudgetsBudget) string { return v.ProcessingPeriodType }).(pulumi.StringOutput)
 }
 
 // The reset period for the budget.
@@ -562,14 +571,14 @@ func (o GetBudgetsBudgetOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBudgetsBudget) string { return v.State }).(pulumi.StringOutput)
 }
 
-// This is DEPRECATED. For backwards compatability, the property will be populated when targetType is "COMPARTMENT" AND targets contains EXACT ONE target compartment ocid. For all other scenarios, this property will be left empty.
+// This is DEPRECATED. For backwards compatability, the property is populated when the targetType is "COMPARTMENT", and targets contain the specific target compartment OCID. For all other scenarios, this property will be left empty.
 //
 // Deprecated: The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead.
 func (o GetBudgetsBudgetOutput) TargetCompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBudgetsBudget) string { return v.TargetCompartmentId }).(pulumi.StringOutput)
 }
 
-// The type of target to filter by.
+// The type of target to filter by:
 // * ALL - List all budgets
 // * COMPARTMENT - List all budgets with targetType == "COMPARTMENT"
 // * TAG - List all budgets with targetType == "TAG"
@@ -577,27 +586,27 @@ func (o GetBudgetsBudgetOutput) TargetType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBudgetsBudget) string { return v.TargetType }).(pulumi.StringOutput)
 }
 
-// The list of targets on which the budget is applied. If targetType is "COMPARTMENT", targets contains list of compartment OCIDs. If targetType is "TAG", targets contains list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}".
+// The list of targets on which the budget is applied. If the targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If the targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}".
 func (o GetBudgetsBudgetOutput) Targets() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetBudgetsBudget) []string { return v.Targets }).(pulumi.StringArrayOutput)
 }
 
-// Time that budget was created
+// The time that the budget was created.
 func (o GetBudgetsBudgetOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBudgetsBudget) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The time that the budget spend was last computed
+// The time that the budget spend was last computed.
 func (o GetBudgetsBudgetOutput) TimeSpendComputed() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBudgetsBudget) string { return v.TimeSpendComputed }).(pulumi.StringOutput)
 }
 
-// Time that budget was updated
+// The time that the budget was updated.
 func (o GetBudgetsBudgetOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBudgetsBudget) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// Version of the budget. Starts from 1 and increments by 1.
+// The version of the budget. Starts from 1 and increments by 1.
 func (o GetBudgetsBudgetOutput) Version() pulumi.IntOutput {
 	return o.ApplyT(func(v GetBudgetsBudget) int { return v.Version }).(pulumi.IntOutput)
 }

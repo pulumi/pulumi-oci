@@ -10,6 +10,218 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+type OdaInstanceRestrictedOperation struct {
+	// Name of the restricted operation.
+	OperationName *string `pulumi:"operationName"`
+	// Name of the service restricting the operation.
+	RestrictingService *string `pulumi:"restrictingService"`
+}
+
+// OdaInstanceRestrictedOperationInput is an input type that accepts OdaInstanceRestrictedOperationArgs and OdaInstanceRestrictedOperationOutput values.
+// You can construct a concrete instance of `OdaInstanceRestrictedOperationInput` via:
+//
+//          OdaInstanceRestrictedOperationArgs{...}
+type OdaInstanceRestrictedOperationInput interface {
+	pulumi.Input
+
+	ToOdaInstanceRestrictedOperationOutput() OdaInstanceRestrictedOperationOutput
+	ToOdaInstanceRestrictedOperationOutputWithContext(context.Context) OdaInstanceRestrictedOperationOutput
+}
+
+type OdaInstanceRestrictedOperationArgs struct {
+	// Name of the restricted operation.
+	OperationName pulumi.StringPtrInput `pulumi:"operationName"`
+	// Name of the service restricting the operation.
+	RestrictingService pulumi.StringPtrInput `pulumi:"restrictingService"`
+}
+
+func (OdaInstanceRestrictedOperationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*OdaInstanceRestrictedOperation)(nil)).Elem()
+}
+
+func (i OdaInstanceRestrictedOperationArgs) ToOdaInstanceRestrictedOperationOutput() OdaInstanceRestrictedOperationOutput {
+	return i.ToOdaInstanceRestrictedOperationOutputWithContext(context.Background())
+}
+
+func (i OdaInstanceRestrictedOperationArgs) ToOdaInstanceRestrictedOperationOutputWithContext(ctx context.Context) OdaInstanceRestrictedOperationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OdaInstanceRestrictedOperationOutput)
+}
+
+// OdaInstanceRestrictedOperationArrayInput is an input type that accepts OdaInstanceRestrictedOperationArray and OdaInstanceRestrictedOperationArrayOutput values.
+// You can construct a concrete instance of `OdaInstanceRestrictedOperationArrayInput` via:
+//
+//          OdaInstanceRestrictedOperationArray{ OdaInstanceRestrictedOperationArgs{...} }
+type OdaInstanceRestrictedOperationArrayInput interface {
+	pulumi.Input
+
+	ToOdaInstanceRestrictedOperationArrayOutput() OdaInstanceRestrictedOperationArrayOutput
+	ToOdaInstanceRestrictedOperationArrayOutputWithContext(context.Context) OdaInstanceRestrictedOperationArrayOutput
+}
+
+type OdaInstanceRestrictedOperationArray []OdaInstanceRestrictedOperationInput
+
+func (OdaInstanceRestrictedOperationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]OdaInstanceRestrictedOperation)(nil)).Elem()
+}
+
+func (i OdaInstanceRestrictedOperationArray) ToOdaInstanceRestrictedOperationArrayOutput() OdaInstanceRestrictedOperationArrayOutput {
+	return i.ToOdaInstanceRestrictedOperationArrayOutputWithContext(context.Background())
+}
+
+func (i OdaInstanceRestrictedOperationArray) ToOdaInstanceRestrictedOperationArrayOutputWithContext(ctx context.Context) OdaInstanceRestrictedOperationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OdaInstanceRestrictedOperationArrayOutput)
+}
+
+type OdaInstanceRestrictedOperationOutput struct{ *pulumi.OutputState }
+
+func (OdaInstanceRestrictedOperationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*OdaInstanceRestrictedOperation)(nil)).Elem()
+}
+
+func (o OdaInstanceRestrictedOperationOutput) ToOdaInstanceRestrictedOperationOutput() OdaInstanceRestrictedOperationOutput {
+	return o
+}
+
+func (o OdaInstanceRestrictedOperationOutput) ToOdaInstanceRestrictedOperationOutputWithContext(ctx context.Context) OdaInstanceRestrictedOperationOutput {
+	return o
+}
+
+// Name of the restricted operation.
+func (o OdaInstanceRestrictedOperationOutput) OperationName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OdaInstanceRestrictedOperation) *string { return v.OperationName }).(pulumi.StringPtrOutput)
+}
+
+// Name of the service restricting the operation.
+func (o OdaInstanceRestrictedOperationOutput) RestrictingService() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OdaInstanceRestrictedOperation) *string { return v.RestrictingService }).(pulumi.StringPtrOutput)
+}
+
+type OdaInstanceRestrictedOperationArrayOutput struct{ *pulumi.OutputState }
+
+func (OdaInstanceRestrictedOperationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]OdaInstanceRestrictedOperation)(nil)).Elem()
+}
+
+func (o OdaInstanceRestrictedOperationArrayOutput) ToOdaInstanceRestrictedOperationArrayOutput() OdaInstanceRestrictedOperationArrayOutput {
+	return o
+}
+
+func (o OdaInstanceRestrictedOperationArrayOutput) ToOdaInstanceRestrictedOperationArrayOutputWithContext(ctx context.Context) OdaInstanceRestrictedOperationArrayOutput {
+	return o
+}
+
+func (o OdaInstanceRestrictedOperationArrayOutput) Index(i pulumi.IntInput) OdaInstanceRestrictedOperationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) OdaInstanceRestrictedOperation {
+		return vs[0].([]OdaInstanceRestrictedOperation)[vs[1].(int)]
+	}).(OdaInstanceRestrictedOperationOutput)
+}
+
+type GetOdaInstanceRestrictedOperation struct {
+	// Name of the restricted operation.
+	OperationName string `pulumi:"operationName"`
+	// Name of the service restricting the operation.
+	RestrictingService string `pulumi:"restrictingService"`
+}
+
+// GetOdaInstanceRestrictedOperationInput is an input type that accepts GetOdaInstanceRestrictedOperationArgs and GetOdaInstanceRestrictedOperationOutput values.
+// You can construct a concrete instance of `GetOdaInstanceRestrictedOperationInput` via:
+//
+//          GetOdaInstanceRestrictedOperationArgs{...}
+type GetOdaInstanceRestrictedOperationInput interface {
+	pulumi.Input
+
+	ToGetOdaInstanceRestrictedOperationOutput() GetOdaInstanceRestrictedOperationOutput
+	ToGetOdaInstanceRestrictedOperationOutputWithContext(context.Context) GetOdaInstanceRestrictedOperationOutput
+}
+
+type GetOdaInstanceRestrictedOperationArgs struct {
+	// Name of the restricted operation.
+	OperationName pulumi.StringInput `pulumi:"operationName"`
+	// Name of the service restricting the operation.
+	RestrictingService pulumi.StringInput `pulumi:"restrictingService"`
+}
+
+func (GetOdaInstanceRestrictedOperationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOdaInstanceRestrictedOperation)(nil)).Elem()
+}
+
+func (i GetOdaInstanceRestrictedOperationArgs) ToGetOdaInstanceRestrictedOperationOutput() GetOdaInstanceRestrictedOperationOutput {
+	return i.ToGetOdaInstanceRestrictedOperationOutputWithContext(context.Background())
+}
+
+func (i GetOdaInstanceRestrictedOperationArgs) ToGetOdaInstanceRestrictedOperationOutputWithContext(ctx context.Context) GetOdaInstanceRestrictedOperationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOdaInstanceRestrictedOperationOutput)
+}
+
+// GetOdaInstanceRestrictedOperationArrayInput is an input type that accepts GetOdaInstanceRestrictedOperationArray and GetOdaInstanceRestrictedOperationArrayOutput values.
+// You can construct a concrete instance of `GetOdaInstanceRestrictedOperationArrayInput` via:
+//
+//          GetOdaInstanceRestrictedOperationArray{ GetOdaInstanceRestrictedOperationArgs{...} }
+type GetOdaInstanceRestrictedOperationArrayInput interface {
+	pulumi.Input
+
+	ToGetOdaInstanceRestrictedOperationArrayOutput() GetOdaInstanceRestrictedOperationArrayOutput
+	ToGetOdaInstanceRestrictedOperationArrayOutputWithContext(context.Context) GetOdaInstanceRestrictedOperationArrayOutput
+}
+
+type GetOdaInstanceRestrictedOperationArray []GetOdaInstanceRestrictedOperationInput
+
+func (GetOdaInstanceRestrictedOperationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOdaInstanceRestrictedOperation)(nil)).Elem()
+}
+
+func (i GetOdaInstanceRestrictedOperationArray) ToGetOdaInstanceRestrictedOperationArrayOutput() GetOdaInstanceRestrictedOperationArrayOutput {
+	return i.ToGetOdaInstanceRestrictedOperationArrayOutputWithContext(context.Background())
+}
+
+func (i GetOdaInstanceRestrictedOperationArray) ToGetOdaInstanceRestrictedOperationArrayOutputWithContext(ctx context.Context) GetOdaInstanceRestrictedOperationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOdaInstanceRestrictedOperationArrayOutput)
+}
+
+type GetOdaInstanceRestrictedOperationOutput struct{ *pulumi.OutputState }
+
+func (GetOdaInstanceRestrictedOperationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOdaInstanceRestrictedOperation)(nil)).Elem()
+}
+
+func (o GetOdaInstanceRestrictedOperationOutput) ToGetOdaInstanceRestrictedOperationOutput() GetOdaInstanceRestrictedOperationOutput {
+	return o
+}
+
+func (o GetOdaInstanceRestrictedOperationOutput) ToGetOdaInstanceRestrictedOperationOutputWithContext(ctx context.Context) GetOdaInstanceRestrictedOperationOutput {
+	return o
+}
+
+// Name of the restricted operation.
+func (o GetOdaInstanceRestrictedOperationOutput) OperationName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOdaInstanceRestrictedOperation) string { return v.OperationName }).(pulumi.StringOutput)
+}
+
+// Name of the service restricting the operation.
+func (o GetOdaInstanceRestrictedOperationOutput) RestrictingService() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOdaInstanceRestrictedOperation) string { return v.RestrictingService }).(pulumi.StringOutput)
+}
+
+type GetOdaInstanceRestrictedOperationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOdaInstanceRestrictedOperationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOdaInstanceRestrictedOperation)(nil)).Elem()
+}
+
+func (o GetOdaInstanceRestrictedOperationArrayOutput) ToGetOdaInstanceRestrictedOperationArrayOutput() GetOdaInstanceRestrictedOperationArrayOutput {
+	return o
+}
+
+func (o GetOdaInstanceRestrictedOperationArrayOutput) ToGetOdaInstanceRestrictedOperationArrayOutputWithContext(ctx context.Context) GetOdaInstanceRestrictedOperationArrayOutput {
+	return o
+}
+
+func (o GetOdaInstanceRestrictedOperationArrayOutput) Index(i pulumi.IntInput) GetOdaInstanceRestrictedOperationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOdaInstanceRestrictedOperation {
+		return vs[0].([]GetOdaInstanceRestrictedOperation)[vs[1].(int)]
+	}).(GetOdaInstanceRestrictedOperationOutput)
+}
+
 type GetOdaInstancesFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -117,6 +329,10 @@ func (o GetOdaInstancesFilterArrayOutput) Index(i pulumi.IntInput) GetOdaInstanc
 }
 
 type GetOdaInstancesOdaInstance struct {
+	// A list of attachment identifiers for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+	AttachmentIds []string `pulumi:"attachmentIds"`
+	// A list of attachment types for this instance (if any). Use attachmentIds to get the details of the attachments.
+	AttachmentTypes []string `pulumi:"attachmentTypes"`
 	// List the Digital Assistant instances that belong to this compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// URL for the connector's endpoint.
@@ -127,12 +343,26 @@ type GetOdaInstancesOdaInstance struct {
 	Description string `pulumi:"description"`
 	// List only the information for the Digital Assistant instance with this user-friendly name. These names don't have to be unique and may change.  Example: `My new resource`
 	DisplayName string `pulumi:"displayName"`
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique immutable identifier that was assigned when the instance was created.
 	Id string `pulumi:"id"`
+	// If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.
+	IdentityAppConsoleUrl string `pulumi:"identityAppConsoleUrl"`
+	// If isRoleBasedAccess is set to true, this property specifies the GUID of the Identity Application instance Digital Assistant has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this Digital Assistant instance for users within the identity domain.
+	IdentityAppGuid string `pulumi:"identityAppGuid"`
+	// If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
+	IdentityDomain string `pulumi:"identityDomain"`
+	// A list of package ids imported into this instance (if any). Use GetImportedPackage to get the details of the imported packages.
+	ImportedPackageIds []string `pulumi:"importedPackageIds"`
+	// A list of package names imported into this instance (if any). Use importedPackageIds field to get the details of the imported packages.
+	ImportedPackageNames []string `pulumi:"importedPackageNames"`
+	// Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
+	IsRoleBasedAccess bool `pulumi:"isRoleBasedAccess"`
 	// The current sub-state of the Digital Assistant instance.
 	LifecycleSubState string `pulumi:"lifecycleSubState"`
+	// A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+	RestrictedOperations []GetOdaInstancesOdaInstanceRestrictedOperation `pulumi:"restrictedOperations"`
 	// Shape or size of the instance.
 	ShapeName string `pulumi:"shapeName"`
 	// List only the Digital Assistant instances that are in this lifecycle state.
@@ -159,6 +389,10 @@ type GetOdaInstancesOdaInstanceInput interface {
 }
 
 type GetOdaInstancesOdaInstanceArgs struct {
+	// A list of attachment identifiers for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+	AttachmentIds pulumi.StringArrayInput `pulumi:"attachmentIds"`
+	// A list of attachment types for this instance (if any). Use attachmentIds to get the details of the attachments.
+	AttachmentTypes pulumi.StringArrayInput `pulumi:"attachmentTypes"`
 	// List the Digital Assistant instances that belong to this compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// URL for the connector's endpoint.
@@ -169,12 +403,26 @@ type GetOdaInstancesOdaInstanceArgs struct {
 	Description pulumi.StringInput `pulumi:"description"`
 	// List only the information for the Digital Assistant instance with this user-friendly name. These names don't have to be unique and may change.  Example: `My new resource`
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Unique immutable identifier that was assigned when the instance was created.
 	Id pulumi.StringInput `pulumi:"id"`
+	// If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.
+	IdentityAppConsoleUrl pulumi.StringInput `pulumi:"identityAppConsoleUrl"`
+	// If isRoleBasedAccess is set to true, this property specifies the GUID of the Identity Application instance Digital Assistant has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this Digital Assistant instance for users within the identity domain.
+	IdentityAppGuid pulumi.StringInput `pulumi:"identityAppGuid"`
+	// If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
+	IdentityDomain pulumi.StringInput `pulumi:"identityDomain"`
+	// A list of package ids imported into this instance (if any). Use GetImportedPackage to get the details of the imported packages.
+	ImportedPackageIds pulumi.StringArrayInput `pulumi:"importedPackageIds"`
+	// A list of package names imported into this instance (if any). Use importedPackageIds field to get the details of the imported packages.
+	ImportedPackageNames pulumi.StringArrayInput `pulumi:"importedPackageNames"`
+	// Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
+	IsRoleBasedAccess pulumi.BoolInput `pulumi:"isRoleBasedAccess"`
 	// The current sub-state of the Digital Assistant instance.
 	LifecycleSubState pulumi.StringInput `pulumi:"lifecycleSubState"`
+	// A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+	RestrictedOperations GetOdaInstancesOdaInstanceRestrictedOperationArrayInput `pulumi:"restrictedOperations"`
 	// Shape or size of the instance.
 	ShapeName pulumi.StringInput `pulumi:"shapeName"`
 	// List only the Digital Assistant instances that are in this lifecycle state.
@@ -240,6 +488,16 @@ func (o GetOdaInstancesOdaInstanceOutput) ToGetOdaInstancesOdaInstanceOutputWith
 	return o
 }
 
+// A list of attachment identifiers for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+func (o GetOdaInstancesOdaInstanceOutput) AttachmentIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetOdaInstancesOdaInstance) []string { return v.AttachmentIds }).(pulumi.StringArrayOutput)
+}
+
+// A list of attachment types for this instance (if any). Use attachmentIds to get the details of the attachments.
+func (o GetOdaInstancesOdaInstanceOutput) AttachmentTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetOdaInstancesOdaInstance) []string { return v.AttachmentTypes }).(pulumi.StringArrayOutput)
+}
+
 // List the Digital Assistant instances that belong to this compartment.
 func (o GetOdaInstancesOdaInstanceOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOdaInstancesOdaInstance) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -265,7 +523,7 @@ func (o GetOdaInstancesOdaInstanceOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOdaInstancesOdaInstance) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+// Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
 func (o GetOdaInstancesOdaInstanceOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetOdaInstancesOdaInstance) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
@@ -275,9 +533,46 @@ func (o GetOdaInstancesOdaInstanceOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOdaInstancesOdaInstance) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.
+func (o GetOdaInstancesOdaInstanceOutput) IdentityAppConsoleUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOdaInstancesOdaInstance) string { return v.IdentityAppConsoleUrl }).(pulumi.StringOutput)
+}
+
+// If isRoleBasedAccess is set to true, this property specifies the GUID of the Identity Application instance Digital Assistant has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this Digital Assistant instance for users within the identity domain.
+func (o GetOdaInstancesOdaInstanceOutput) IdentityAppGuid() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOdaInstancesOdaInstance) string { return v.IdentityAppGuid }).(pulumi.StringOutput)
+}
+
+// If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
+func (o GetOdaInstancesOdaInstanceOutput) IdentityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOdaInstancesOdaInstance) string { return v.IdentityDomain }).(pulumi.StringOutput)
+}
+
+// A list of package ids imported into this instance (if any). Use GetImportedPackage to get the details of the imported packages.
+func (o GetOdaInstancesOdaInstanceOutput) ImportedPackageIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetOdaInstancesOdaInstance) []string { return v.ImportedPackageIds }).(pulumi.StringArrayOutput)
+}
+
+// A list of package names imported into this instance (if any). Use importedPackageIds field to get the details of the imported packages.
+func (o GetOdaInstancesOdaInstanceOutput) ImportedPackageNames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetOdaInstancesOdaInstance) []string { return v.ImportedPackageNames }).(pulumi.StringArrayOutput)
+}
+
+// Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
+func (o GetOdaInstancesOdaInstanceOutput) IsRoleBasedAccess() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetOdaInstancesOdaInstance) bool { return v.IsRoleBasedAccess }).(pulumi.BoolOutput)
+}
+
 // The current sub-state of the Digital Assistant instance.
 func (o GetOdaInstancesOdaInstanceOutput) LifecycleSubState() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOdaInstancesOdaInstance) string { return v.LifecycleSubState }).(pulumi.StringOutput)
+}
+
+// A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+func (o GetOdaInstancesOdaInstanceOutput) RestrictedOperations() GetOdaInstancesOdaInstanceRestrictedOperationArrayOutput {
+	return o.ApplyT(func(v GetOdaInstancesOdaInstance) []GetOdaInstancesOdaInstanceRestrictedOperation {
+		return v.RestrictedOperations
+	}).(GetOdaInstancesOdaInstanceRestrictedOperationArrayOutput)
 }
 
 // Shape or size of the instance.
@@ -330,13 +625,131 @@ func (o GetOdaInstancesOdaInstanceArrayOutput) Index(i pulumi.IntInput) GetOdaIn
 	}).(GetOdaInstancesOdaInstanceOutput)
 }
 
+type GetOdaInstancesOdaInstanceRestrictedOperation struct {
+	// Name of the restricted operation.
+	OperationName string `pulumi:"operationName"`
+	// Name of the service restricting the operation.
+	RestrictingService string `pulumi:"restrictingService"`
+}
+
+// GetOdaInstancesOdaInstanceRestrictedOperationInput is an input type that accepts GetOdaInstancesOdaInstanceRestrictedOperationArgs and GetOdaInstancesOdaInstanceRestrictedOperationOutput values.
+// You can construct a concrete instance of `GetOdaInstancesOdaInstanceRestrictedOperationInput` via:
+//
+//          GetOdaInstancesOdaInstanceRestrictedOperationArgs{...}
+type GetOdaInstancesOdaInstanceRestrictedOperationInput interface {
+	pulumi.Input
+
+	ToGetOdaInstancesOdaInstanceRestrictedOperationOutput() GetOdaInstancesOdaInstanceRestrictedOperationOutput
+	ToGetOdaInstancesOdaInstanceRestrictedOperationOutputWithContext(context.Context) GetOdaInstancesOdaInstanceRestrictedOperationOutput
+}
+
+type GetOdaInstancesOdaInstanceRestrictedOperationArgs struct {
+	// Name of the restricted operation.
+	OperationName pulumi.StringInput `pulumi:"operationName"`
+	// Name of the service restricting the operation.
+	RestrictingService pulumi.StringInput `pulumi:"restrictingService"`
+}
+
+func (GetOdaInstancesOdaInstanceRestrictedOperationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOdaInstancesOdaInstanceRestrictedOperation)(nil)).Elem()
+}
+
+func (i GetOdaInstancesOdaInstanceRestrictedOperationArgs) ToGetOdaInstancesOdaInstanceRestrictedOperationOutput() GetOdaInstancesOdaInstanceRestrictedOperationOutput {
+	return i.ToGetOdaInstancesOdaInstanceRestrictedOperationOutputWithContext(context.Background())
+}
+
+func (i GetOdaInstancesOdaInstanceRestrictedOperationArgs) ToGetOdaInstancesOdaInstanceRestrictedOperationOutputWithContext(ctx context.Context) GetOdaInstancesOdaInstanceRestrictedOperationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOdaInstancesOdaInstanceRestrictedOperationOutput)
+}
+
+// GetOdaInstancesOdaInstanceRestrictedOperationArrayInput is an input type that accepts GetOdaInstancesOdaInstanceRestrictedOperationArray and GetOdaInstancesOdaInstanceRestrictedOperationArrayOutput values.
+// You can construct a concrete instance of `GetOdaInstancesOdaInstanceRestrictedOperationArrayInput` via:
+//
+//          GetOdaInstancesOdaInstanceRestrictedOperationArray{ GetOdaInstancesOdaInstanceRestrictedOperationArgs{...} }
+type GetOdaInstancesOdaInstanceRestrictedOperationArrayInput interface {
+	pulumi.Input
+
+	ToGetOdaInstancesOdaInstanceRestrictedOperationArrayOutput() GetOdaInstancesOdaInstanceRestrictedOperationArrayOutput
+	ToGetOdaInstancesOdaInstanceRestrictedOperationArrayOutputWithContext(context.Context) GetOdaInstancesOdaInstanceRestrictedOperationArrayOutput
+}
+
+type GetOdaInstancesOdaInstanceRestrictedOperationArray []GetOdaInstancesOdaInstanceRestrictedOperationInput
+
+func (GetOdaInstancesOdaInstanceRestrictedOperationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOdaInstancesOdaInstanceRestrictedOperation)(nil)).Elem()
+}
+
+func (i GetOdaInstancesOdaInstanceRestrictedOperationArray) ToGetOdaInstancesOdaInstanceRestrictedOperationArrayOutput() GetOdaInstancesOdaInstanceRestrictedOperationArrayOutput {
+	return i.ToGetOdaInstancesOdaInstanceRestrictedOperationArrayOutputWithContext(context.Background())
+}
+
+func (i GetOdaInstancesOdaInstanceRestrictedOperationArray) ToGetOdaInstancesOdaInstanceRestrictedOperationArrayOutputWithContext(ctx context.Context) GetOdaInstancesOdaInstanceRestrictedOperationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOdaInstancesOdaInstanceRestrictedOperationArrayOutput)
+}
+
+type GetOdaInstancesOdaInstanceRestrictedOperationOutput struct{ *pulumi.OutputState }
+
+func (GetOdaInstancesOdaInstanceRestrictedOperationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOdaInstancesOdaInstanceRestrictedOperation)(nil)).Elem()
+}
+
+func (o GetOdaInstancesOdaInstanceRestrictedOperationOutput) ToGetOdaInstancesOdaInstanceRestrictedOperationOutput() GetOdaInstancesOdaInstanceRestrictedOperationOutput {
+	return o
+}
+
+func (o GetOdaInstancesOdaInstanceRestrictedOperationOutput) ToGetOdaInstancesOdaInstanceRestrictedOperationOutputWithContext(ctx context.Context) GetOdaInstancesOdaInstanceRestrictedOperationOutput {
+	return o
+}
+
+// Name of the restricted operation.
+func (o GetOdaInstancesOdaInstanceRestrictedOperationOutput) OperationName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOdaInstancesOdaInstanceRestrictedOperation) string { return v.OperationName }).(pulumi.StringOutput)
+}
+
+// Name of the service restricting the operation.
+func (o GetOdaInstancesOdaInstanceRestrictedOperationOutput) RestrictingService() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOdaInstancesOdaInstanceRestrictedOperation) string { return v.RestrictingService }).(pulumi.StringOutput)
+}
+
+type GetOdaInstancesOdaInstanceRestrictedOperationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOdaInstancesOdaInstanceRestrictedOperationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOdaInstancesOdaInstanceRestrictedOperation)(nil)).Elem()
+}
+
+func (o GetOdaInstancesOdaInstanceRestrictedOperationArrayOutput) ToGetOdaInstancesOdaInstanceRestrictedOperationArrayOutput() GetOdaInstancesOdaInstanceRestrictedOperationArrayOutput {
+	return o
+}
+
+func (o GetOdaInstancesOdaInstanceRestrictedOperationArrayOutput) ToGetOdaInstancesOdaInstanceRestrictedOperationArrayOutputWithContext(ctx context.Context) GetOdaInstancesOdaInstanceRestrictedOperationArrayOutput {
+	return o
+}
+
+func (o GetOdaInstancesOdaInstanceRestrictedOperationArrayOutput) Index(i pulumi.IntInput) GetOdaInstancesOdaInstanceRestrictedOperationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOdaInstancesOdaInstanceRestrictedOperation {
+		return vs[0].([]GetOdaInstancesOdaInstanceRestrictedOperation)[vs[1].(int)]
+	}).(GetOdaInstancesOdaInstanceRestrictedOperationOutput)
+}
+
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*OdaInstanceRestrictedOperationInput)(nil)).Elem(), OdaInstanceRestrictedOperationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OdaInstanceRestrictedOperationArrayInput)(nil)).Elem(), OdaInstanceRestrictedOperationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOdaInstanceRestrictedOperationInput)(nil)).Elem(), GetOdaInstanceRestrictedOperationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOdaInstanceRestrictedOperationArrayInput)(nil)).Elem(), GetOdaInstanceRestrictedOperationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOdaInstancesFilterInput)(nil)).Elem(), GetOdaInstancesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOdaInstancesFilterArrayInput)(nil)).Elem(), GetOdaInstancesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOdaInstancesOdaInstanceInput)(nil)).Elem(), GetOdaInstancesOdaInstanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOdaInstancesOdaInstanceArrayInput)(nil)).Elem(), GetOdaInstancesOdaInstanceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOdaInstancesOdaInstanceRestrictedOperationInput)(nil)).Elem(), GetOdaInstancesOdaInstanceRestrictedOperationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOdaInstancesOdaInstanceRestrictedOperationArrayInput)(nil)).Elem(), GetOdaInstancesOdaInstanceRestrictedOperationArray{})
+	pulumi.RegisterOutputType(OdaInstanceRestrictedOperationOutput{})
+	pulumi.RegisterOutputType(OdaInstanceRestrictedOperationArrayOutput{})
+	pulumi.RegisterOutputType(GetOdaInstanceRestrictedOperationOutput{})
+	pulumi.RegisterOutputType(GetOdaInstanceRestrictedOperationArrayOutput{})
 	pulumi.RegisterOutputType(GetOdaInstancesFilterOutput{})
 	pulumi.RegisterOutputType(GetOdaInstancesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetOdaInstancesOdaInstanceOutput{})
 	pulumi.RegisterOutputType(GetOdaInstancesOdaInstanceArrayOutput{})
+	pulumi.RegisterOutputType(GetOdaInstancesOdaInstanceRestrictedOperationOutput{})
+	pulumi.RegisterOutputType(GetOdaInstancesOdaInstanceRestrictedOperationArrayOutput{})
 }

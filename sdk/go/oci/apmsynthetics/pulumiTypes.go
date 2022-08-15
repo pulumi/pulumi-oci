@@ -37,7 +37,7 @@ type ConfigConfiguration struct {
 	VerifyResponseCodes []string `pulumi:"verifyResponseCodes"`
 	// (Updatable) Verify response content against regular expression based string. If response content does not match the verifyResponseContent value, then it will be considered a failure.
 	VerifyResponseContent *string `pulumi:"verifyResponseContent"`
-	// (Updatable) Verify all the search strings present in response. If any search string is not present in the response, then it will be considered as a failure.
+	// (Updatable) Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
 	VerifyTexts []ConfigConfigurationVerifyText `pulumi:"verifyTexts"`
 }
 
@@ -79,7 +79,7 @@ type ConfigConfigurationArgs struct {
 	VerifyResponseCodes pulumi.StringArrayInput `pulumi:"verifyResponseCodes"`
 	// (Updatable) Verify response content against regular expression based string. If response content does not match the verifyResponseContent value, then it will be considered a failure.
 	VerifyResponseContent pulumi.StringPtrInput `pulumi:"verifyResponseContent"`
-	// (Updatable) Verify all the search strings present in response. If any search string is not present in the response, then it will be considered as a failure.
+	// (Updatable) Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
 	VerifyTexts ConfigConfigurationVerifyTextArrayInput `pulumi:"verifyTexts"`
 }
 
@@ -227,7 +227,7 @@ func (o ConfigConfigurationOutput) VerifyResponseContent() pulumi.StringPtrOutpu
 	return o.ApplyT(func(v ConfigConfiguration) *string { return v.VerifyResponseContent }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Verify all the search strings present in response. If any search string is not present in the response, then it will be considered as a failure.
+// (Updatable) Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
 func (o ConfigConfigurationOutput) VerifyTexts() ConfigConfigurationVerifyTextArrayOutput {
 	return o.ApplyT(func(v ConfigConfiguration) []ConfigConfigurationVerifyText { return v.VerifyTexts }).(ConfigConfigurationVerifyTextArrayOutput)
 }
@@ -386,7 +386,7 @@ func (o ConfigConfigurationPtrOutput) VerifyResponseContent() pulumi.StringPtrOu
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Verify all the search strings present in response. If any search string is not present in the response, then it will be considered as a failure.
+// (Updatable) Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
 func (o ConfigConfigurationPtrOutput) VerifyTexts() ConfigConfigurationVerifyTextArrayOutput {
 	return o.ApplyT(func(v *ConfigConfiguration) []ConfigConfigurationVerifyText {
 		if v == nil {
@@ -1537,6 +1537,324 @@ func (o ConfigScriptParameterMonitorScriptParameterArrayOutput) Index(i pulumi.I
 	}).(ConfigScriptParameterMonitorScriptParameterOutput)
 }
 
+type DedicatedVantagePointDvpStackDetails struct {
+	// (Updatable) Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+	DvpStackId string `pulumi:"dvpStackId"`
+	// (Updatable) Type of stack.
+	DvpStackType string `pulumi:"dvpStackType"`
+	// (Updatable) Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+	DvpStreamId string `pulumi:"dvpStreamId"`
+	// (Updatable) Version of DVP.
+	DvpVersion string `pulumi:"dvpVersion"`
+}
+
+// DedicatedVantagePointDvpStackDetailsInput is an input type that accepts DedicatedVantagePointDvpStackDetailsArgs and DedicatedVantagePointDvpStackDetailsOutput values.
+// You can construct a concrete instance of `DedicatedVantagePointDvpStackDetailsInput` via:
+//
+//          DedicatedVantagePointDvpStackDetailsArgs{...}
+type DedicatedVantagePointDvpStackDetailsInput interface {
+	pulumi.Input
+
+	ToDedicatedVantagePointDvpStackDetailsOutput() DedicatedVantagePointDvpStackDetailsOutput
+	ToDedicatedVantagePointDvpStackDetailsOutputWithContext(context.Context) DedicatedVantagePointDvpStackDetailsOutput
+}
+
+type DedicatedVantagePointDvpStackDetailsArgs struct {
+	// (Updatable) Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+	DvpStackId pulumi.StringInput `pulumi:"dvpStackId"`
+	// (Updatable) Type of stack.
+	DvpStackType pulumi.StringInput `pulumi:"dvpStackType"`
+	// (Updatable) Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+	DvpStreamId pulumi.StringInput `pulumi:"dvpStreamId"`
+	// (Updatable) Version of DVP.
+	DvpVersion pulumi.StringInput `pulumi:"dvpVersion"`
+}
+
+func (DedicatedVantagePointDvpStackDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DedicatedVantagePointDvpStackDetails)(nil)).Elem()
+}
+
+func (i DedicatedVantagePointDvpStackDetailsArgs) ToDedicatedVantagePointDvpStackDetailsOutput() DedicatedVantagePointDvpStackDetailsOutput {
+	return i.ToDedicatedVantagePointDvpStackDetailsOutputWithContext(context.Background())
+}
+
+func (i DedicatedVantagePointDvpStackDetailsArgs) ToDedicatedVantagePointDvpStackDetailsOutputWithContext(ctx context.Context) DedicatedVantagePointDvpStackDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DedicatedVantagePointDvpStackDetailsOutput)
+}
+
+func (i DedicatedVantagePointDvpStackDetailsArgs) ToDedicatedVantagePointDvpStackDetailsPtrOutput() DedicatedVantagePointDvpStackDetailsPtrOutput {
+	return i.ToDedicatedVantagePointDvpStackDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i DedicatedVantagePointDvpStackDetailsArgs) ToDedicatedVantagePointDvpStackDetailsPtrOutputWithContext(ctx context.Context) DedicatedVantagePointDvpStackDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DedicatedVantagePointDvpStackDetailsOutput).ToDedicatedVantagePointDvpStackDetailsPtrOutputWithContext(ctx)
+}
+
+// DedicatedVantagePointDvpStackDetailsPtrInput is an input type that accepts DedicatedVantagePointDvpStackDetailsArgs, DedicatedVantagePointDvpStackDetailsPtr and DedicatedVantagePointDvpStackDetailsPtrOutput values.
+// You can construct a concrete instance of `DedicatedVantagePointDvpStackDetailsPtrInput` via:
+//
+//          DedicatedVantagePointDvpStackDetailsArgs{...}
+//
+//  or:
+//
+//          nil
+type DedicatedVantagePointDvpStackDetailsPtrInput interface {
+	pulumi.Input
+
+	ToDedicatedVantagePointDvpStackDetailsPtrOutput() DedicatedVantagePointDvpStackDetailsPtrOutput
+	ToDedicatedVantagePointDvpStackDetailsPtrOutputWithContext(context.Context) DedicatedVantagePointDvpStackDetailsPtrOutput
+}
+
+type dedicatedVantagePointDvpStackDetailsPtrType DedicatedVantagePointDvpStackDetailsArgs
+
+func DedicatedVantagePointDvpStackDetailsPtr(v *DedicatedVantagePointDvpStackDetailsArgs) DedicatedVantagePointDvpStackDetailsPtrInput {
+	return (*dedicatedVantagePointDvpStackDetailsPtrType)(v)
+}
+
+func (*dedicatedVantagePointDvpStackDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DedicatedVantagePointDvpStackDetails)(nil)).Elem()
+}
+
+func (i *dedicatedVantagePointDvpStackDetailsPtrType) ToDedicatedVantagePointDvpStackDetailsPtrOutput() DedicatedVantagePointDvpStackDetailsPtrOutput {
+	return i.ToDedicatedVantagePointDvpStackDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *dedicatedVantagePointDvpStackDetailsPtrType) ToDedicatedVantagePointDvpStackDetailsPtrOutputWithContext(ctx context.Context) DedicatedVantagePointDvpStackDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DedicatedVantagePointDvpStackDetailsPtrOutput)
+}
+
+type DedicatedVantagePointDvpStackDetailsOutput struct{ *pulumi.OutputState }
+
+func (DedicatedVantagePointDvpStackDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DedicatedVantagePointDvpStackDetails)(nil)).Elem()
+}
+
+func (o DedicatedVantagePointDvpStackDetailsOutput) ToDedicatedVantagePointDvpStackDetailsOutput() DedicatedVantagePointDvpStackDetailsOutput {
+	return o
+}
+
+func (o DedicatedVantagePointDvpStackDetailsOutput) ToDedicatedVantagePointDvpStackDetailsOutputWithContext(ctx context.Context) DedicatedVantagePointDvpStackDetailsOutput {
+	return o
+}
+
+func (o DedicatedVantagePointDvpStackDetailsOutput) ToDedicatedVantagePointDvpStackDetailsPtrOutput() DedicatedVantagePointDvpStackDetailsPtrOutput {
+	return o.ToDedicatedVantagePointDvpStackDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o DedicatedVantagePointDvpStackDetailsOutput) ToDedicatedVantagePointDvpStackDetailsPtrOutputWithContext(ctx context.Context) DedicatedVantagePointDvpStackDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DedicatedVantagePointDvpStackDetails) *DedicatedVantagePointDvpStackDetails {
+		return &v
+	}).(DedicatedVantagePointDvpStackDetailsPtrOutput)
+}
+
+// (Updatable) Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+func (o DedicatedVantagePointDvpStackDetailsOutput) DvpStackId() pulumi.StringOutput {
+	return o.ApplyT(func(v DedicatedVantagePointDvpStackDetails) string { return v.DvpStackId }).(pulumi.StringOutput)
+}
+
+// (Updatable) Type of stack.
+func (o DedicatedVantagePointDvpStackDetailsOutput) DvpStackType() pulumi.StringOutput {
+	return o.ApplyT(func(v DedicatedVantagePointDvpStackDetails) string { return v.DvpStackType }).(pulumi.StringOutput)
+}
+
+// (Updatable) Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+func (o DedicatedVantagePointDvpStackDetailsOutput) DvpStreamId() pulumi.StringOutput {
+	return o.ApplyT(func(v DedicatedVantagePointDvpStackDetails) string { return v.DvpStreamId }).(pulumi.StringOutput)
+}
+
+// (Updatable) Version of DVP.
+func (o DedicatedVantagePointDvpStackDetailsOutput) DvpVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v DedicatedVantagePointDvpStackDetails) string { return v.DvpVersion }).(pulumi.StringOutput)
+}
+
+type DedicatedVantagePointDvpStackDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (DedicatedVantagePointDvpStackDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DedicatedVantagePointDvpStackDetails)(nil)).Elem()
+}
+
+func (o DedicatedVantagePointDvpStackDetailsPtrOutput) ToDedicatedVantagePointDvpStackDetailsPtrOutput() DedicatedVantagePointDvpStackDetailsPtrOutput {
+	return o
+}
+
+func (o DedicatedVantagePointDvpStackDetailsPtrOutput) ToDedicatedVantagePointDvpStackDetailsPtrOutputWithContext(ctx context.Context) DedicatedVantagePointDvpStackDetailsPtrOutput {
+	return o
+}
+
+func (o DedicatedVantagePointDvpStackDetailsPtrOutput) Elem() DedicatedVantagePointDvpStackDetailsOutput {
+	return o.ApplyT(func(v *DedicatedVantagePointDvpStackDetails) DedicatedVantagePointDvpStackDetails {
+		if v != nil {
+			return *v
+		}
+		var ret DedicatedVantagePointDvpStackDetails
+		return ret
+	}).(DedicatedVantagePointDvpStackDetailsOutput)
+}
+
+// (Updatable) Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+func (o DedicatedVantagePointDvpStackDetailsPtrOutput) DvpStackId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DedicatedVantagePointDvpStackDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.DvpStackId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Type of stack.
+func (o DedicatedVantagePointDvpStackDetailsPtrOutput) DvpStackType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DedicatedVantagePointDvpStackDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.DvpStackType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+func (o DedicatedVantagePointDvpStackDetailsPtrOutput) DvpStreamId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DedicatedVantagePointDvpStackDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.DvpStreamId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Version of DVP.
+func (o DedicatedVantagePointDvpStackDetailsPtrOutput) DvpVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DedicatedVantagePointDvpStackDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.DvpVersion
+	}).(pulumi.StringPtrOutput)
+}
+
+type DedicatedVantagePointMonitorStatusCountMap struct {
+	// Number of disabled monitors using the script.
+	Disabled *int `pulumi:"disabled"`
+	// Number of enabled monitors using the script.
+	Enabled *int `pulumi:"enabled"`
+	// Number of invalid monitors using the script.
+	Invalid *int `pulumi:"invalid"`
+	// Total number of monitors using the script.
+	Total *int `pulumi:"total"`
+}
+
+// DedicatedVantagePointMonitorStatusCountMapInput is an input type that accepts DedicatedVantagePointMonitorStatusCountMap and DedicatedVantagePointMonitorStatusCountMapOutput values.
+// You can construct a concrete instance of `DedicatedVantagePointMonitorStatusCountMapInput` via:
+//
+//          DedicatedVantagePointMonitorStatusCountMap{ "key": DedicatedVantagePointMonitorStatusCountArgs{...} }
+type DedicatedVantagePointMonitorStatusCountMapInput interface {
+	pulumi.Input
+
+	ToDedicatedVantagePointMonitorStatusCountMapOutput() DedicatedVantagePointMonitorStatusCountMapOutput
+	ToDedicatedVantagePointMonitorStatusCountMapOutputWithContext(context.Context) DedicatedVantagePointMonitorStatusCountMapOutput
+}
+
+type DedicatedVantagePointMonitorStatusCountMapArgs struct {
+	// Number of disabled monitors using the script.
+	Disabled pulumi.IntPtrInput `pulumi:"disabled"`
+	// Number of enabled monitors using the script.
+	Enabled pulumi.IntPtrInput `pulumi:"enabled"`
+	// Number of invalid monitors using the script.
+	Invalid pulumi.IntPtrInput `pulumi:"invalid"`
+	// Total number of monitors using the script.
+	Total pulumi.IntPtrInput `pulumi:"total"`
+}
+
+func (DedicatedVantagePointMonitorStatusCountMapArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DedicatedVantagePointMonitorStatusCountMap)(nil)).Elem()
+}
+
+func (i DedicatedVantagePointMonitorStatusCountMapArgs) ToDedicatedVantagePointMonitorStatusCountMapOutput() DedicatedVantagePointMonitorStatusCountMapOutput {
+	return i.ToDedicatedVantagePointMonitorStatusCountMapOutputWithContext(context.Background())
+}
+
+func (i DedicatedVantagePointMonitorStatusCountMapArgs) ToDedicatedVantagePointMonitorStatusCountMapOutputWithContext(ctx context.Context) DedicatedVantagePointMonitorStatusCountMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DedicatedVantagePointMonitorStatusCountMapOutput)
+}
+
+// DedicatedVantagePointMonitorStatusCountMapArrayInput is an input type that accepts DedicatedVantagePointMonitorStatusCountMapArray and DedicatedVantagePointMonitorStatusCountMapArrayOutput values.
+// You can construct a concrete instance of `DedicatedVantagePointMonitorStatusCountMapArrayInput` via:
+//
+//          DedicatedVantagePointMonitorStatusCountMapArray{ DedicatedVantagePointMonitorStatusCountMapArgs{...} }
+type DedicatedVantagePointMonitorStatusCountMapArrayInput interface {
+	pulumi.Input
+
+	ToDedicatedVantagePointMonitorStatusCountMapArrayOutput() DedicatedVantagePointMonitorStatusCountMapArrayOutput
+	ToDedicatedVantagePointMonitorStatusCountMapArrayOutputWithContext(context.Context) DedicatedVantagePointMonitorStatusCountMapArrayOutput
+}
+
+type DedicatedVantagePointMonitorStatusCountMapArray []DedicatedVantagePointMonitorStatusCountMapInput
+
+func (DedicatedVantagePointMonitorStatusCountMapArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DedicatedVantagePointMonitorStatusCountMap)(nil)).Elem()
+}
+
+func (i DedicatedVantagePointMonitorStatusCountMapArray) ToDedicatedVantagePointMonitorStatusCountMapArrayOutput() DedicatedVantagePointMonitorStatusCountMapArrayOutput {
+	return i.ToDedicatedVantagePointMonitorStatusCountMapArrayOutputWithContext(context.Background())
+}
+
+func (i DedicatedVantagePointMonitorStatusCountMapArray) ToDedicatedVantagePointMonitorStatusCountMapArrayOutputWithContext(ctx context.Context) DedicatedVantagePointMonitorStatusCountMapArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DedicatedVantagePointMonitorStatusCountMapArrayOutput)
+}
+
+type DedicatedVantagePointMonitorStatusCountMapOutput struct{ *pulumi.OutputState }
+
+func (DedicatedVantagePointMonitorStatusCountMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DedicatedVantagePointMonitorStatusCountMap)(nil)).Elem()
+}
+
+func (o DedicatedVantagePointMonitorStatusCountMapOutput) ToDedicatedVantagePointMonitorStatusCountMapOutput() DedicatedVantagePointMonitorStatusCountMapOutput {
+	return o
+}
+
+func (o DedicatedVantagePointMonitorStatusCountMapOutput) ToDedicatedVantagePointMonitorStatusCountMapOutputWithContext(ctx context.Context) DedicatedVantagePointMonitorStatusCountMapOutput {
+	return o
+}
+
+// Number of disabled monitors using the script.
+func (o DedicatedVantagePointMonitorStatusCountMapOutput) Disabled() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DedicatedVantagePointMonitorStatusCountMap) *int { return v.Disabled }).(pulumi.IntPtrOutput)
+}
+
+// Number of enabled monitors using the script.
+func (o DedicatedVantagePointMonitorStatusCountMapOutput) Enabled() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DedicatedVantagePointMonitorStatusCountMap) *int { return v.Enabled }).(pulumi.IntPtrOutput)
+}
+
+// Number of invalid monitors using the script.
+func (o DedicatedVantagePointMonitorStatusCountMapOutput) Invalid() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DedicatedVantagePointMonitorStatusCountMap) *int { return v.Invalid }).(pulumi.IntPtrOutput)
+}
+
+// Total number of monitors using the script.
+func (o DedicatedVantagePointMonitorStatusCountMapOutput) Total() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DedicatedVantagePointMonitorStatusCountMap) *int { return v.Total }).(pulumi.IntPtrOutput)
+}
+
+type DedicatedVantagePointMonitorStatusCountMapArrayOutput struct{ *pulumi.OutputState }
+
+func (DedicatedVantagePointMonitorStatusCountMapArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DedicatedVantagePointMonitorStatusCountMap)(nil)).Elem()
+}
+
+func (o DedicatedVantagePointMonitorStatusCountMapArrayOutput) ToDedicatedVantagePointMonitorStatusCountMapArrayOutput() DedicatedVantagePointMonitorStatusCountMapArrayOutput {
+	return o
+}
+
+func (o DedicatedVantagePointMonitorStatusCountMapArrayOutput) ToDedicatedVantagePointMonitorStatusCountMapArrayOutputWithContext(ctx context.Context) DedicatedVantagePointMonitorStatusCountMapArrayOutput {
+	return o
+}
+
+func (o DedicatedVantagePointMonitorStatusCountMapArrayOutput) Index(i pulumi.IntInput) DedicatedVantagePointMonitorStatusCountMapOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DedicatedVantagePointMonitorStatusCountMap {
+		return vs[0].([]DedicatedVantagePointMonitorStatusCountMap)[vs[1].(int)]
+	}).(DedicatedVantagePointMonitorStatusCountMapOutput)
+}
+
 type ScriptMonitorStatusCountMap struct {
 	// Number of disabled monitors using the script.
 	Disabled *int `pulumi:"disabled"`
@@ -1909,6 +2227,927 @@ func (o ScriptParameterScriptParameterArrayOutput) Index(i pulumi.IntInput) Scri
 	}).(ScriptParameterScriptParameterOutput)
 }
 
+type GetDedicatedVantagePointDvpStackDetail struct {
+	// Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+	DvpStackId string `pulumi:"dvpStackId"`
+	// Type of stack.
+	DvpStackType string `pulumi:"dvpStackType"`
+	// Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+	DvpStreamId string `pulumi:"dvpStreamId"`
+	// Version of DVP.
+	DvpVersion string `pulumi:"dvpVersion"`
+}
+
+// GetDedicatedVantagePointDvpStackDetailInput is an input type that accepts GetDedicatedVantagePointDvpStackDetailArgs and GetDedicatedVantagePointDvpStackDetailOutput values.
+// You can construct a concrete instance of `GetDedicatedVantagePointDvpStackDetailInput` via:
+//
+//          GetDedicatedVantagePointDvpStackDetailArgs{...}
+type GetDedicatedVantagePointDvpStackDetailInput interface {
+	pulumi.Input
+
+	ToGetDedicatedVantagePointDvpStackDetailOutput() GetDedicatedVantagePointDvpStackDetailOutput
+	ToGetDedicatedVantagePointDvpStackDetailOutputWithContext(context.Context) GetDedicatedVantagePointDvpStackDetailOutput
+}
+
+type GetDedicatedVantagePointDvpStackDetailArgs struct {
+	// Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+	DvpStackId pulumi.StringInput `pulumi:"dvpStackId"`
+	// Type of stack.
+	DvpStackType pulumi.StringInput `pulumi:"dvpStackType"`
+	// Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+	DvpStreamId pulumi.StringInput `pulumi:"dvpStreamId"`
+	// Version of DVP.
+	DvpVersion pulumi.StringInput `pulumi:"dvpVersion"`
+}
+
+func (GetDedicatedVantagePointDvpStackDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDedicatedVantagePointDvpStackDetail)(nil)).Elem()
+}
+
+func (i GetDedicatedVantagePointDvpStackDetailArgs) ToGetDedicatedVantagePointDvpStackDetailOutput() GetDedicatedVantagePointDvpStackDetailOutput {
+	return i.ToGetDedicatedVantagePointDvpStackDetailOutputWithContext(context.Background())
+}
+
+func (i GetDedicatedVantagePointDvpStackDetailArgs) ToGetDedicatedVantagePointDvpStackDetailOutputWithContext(ctx context.Context) GetDedicatedVantagePointDvpStackDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDedicatedVantagePointDvpStackDetailOutput)
+}
+
+// GetDedicatedVantagePointDvpStackDetailArrayInput is an input type that accepts GetDedicatedVantagePointDvpStackDetailArray and GetDedicatedVantagePointDvpStackDetailArrayOutput values.
+// You can construct a concrete instance of `GetDedicatedVantagePointDvpStackDetailArrayInput` via:
+//
+//          GetDedicatedVantagePointDvpStackDetailArray{ GetDedicatedVantagePointDvpStackDetailArgs{...} }
+type GetDedicatedVantagePointDvpStackDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDedicatedVantagePointDvpStackDetailArrayOutput() GetDedicatedVantagePointDvpStackDetailArrayOutput
+	ToGetDedicatedVantagePointDvpStackDetailArrayOutputWithContext(context.Context) GetDedicatedVantagePointDvpStackDetailArrayOutput
+}
+
+type GetDedicatedVantagePointDvpStackDetailArray []GetDedicatedVantagePointDvpStackDetailInput
+
+func (GetDedicatedVantagePointDvpStackDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDedicatedVantagePointDvpStackDetail)(nil)).Elem()
+}
+
+func (i GetDedicatedVantagePointDvpStackDetailArray) ToGetDedicatedVantagePointDvpStackDetailArrayOutput() GetDedicatedVantagePointDvpStackDetailArrayOutput {
+	return i.ToGetDedicatedVantagePointDvpStackDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDedicatedVantagePointDvpStackDetailArray) ToGetDedicatedVantagePointDvpStackDetailArrayOutputWithContext(ctx context.Context) GetDedicatedVantagePointDvpStackDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDedicatedVantagePointDvpStackDetailArrayOutput)
+}
+
+type GetDedicatedVantagePointDvpStackDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDedicatedVantagePointDvpStackDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDedicatedVantagePointDvpStackDetail)(nil)).Elem()
+}
+
+func (o GetDedicatedVantagePointDvpStackDetailOutput) ToGetDedicatedVantagePointDvpStackDetailOutput() GetDedicatedVantagePointDvpStackDetailOutput {
+	return o
+}
+
+func (o GetDedicatedVantagePointDvpStackDetailOutput) ToGetDedicatedVantagePointDvpStackDetailOutputWithContext(ctx context.Context) GetDedicatedVantagePointDvpStackDetailOutput {
+	return o
+}
+
+// Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+func (o GetDedicatedVantagePointDvpStackDetailOutput) DvpStackId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointDvpStackDetail) string { return v.DvpStackId }).(pulumi.StringOutput)
+}
+
+// Type of stack.
+func (o GetDedicatedVantagePointDvpStackDetailOutput) DvpStackType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointDvpStackDetail) string { return v.DvpStackType }).(pulumi.StringOutput)
+}
+
+// Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+func (o GetDedicatedVantagePointDvpStackDetailOutput) DvpStreamId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointDvpStackDetail) string { return v.DvpStreamId }).(pulumi.StringOutput)
+}
+
+// Version of DVP.
+func (o GetDedicatedVantagePointDvpStackDetailOutput) DvpVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointDvpStackDetail) string { return v.DvpVersion }).(pulumi.StringOutput)
+}
+
+type GetDedicatedVantagePointDvpStackDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDedicatedVantagePointDvpStackDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDedicatedVantagePointDvpStackDetail)(nil)).Elem()
+}
+
+func (o GetDedicatedVantagePointDvpStackDetailArrayOutput) ToGetDedicatedVantagePointDvpStackDetailArrayOutput() GetDedicatedVantagePointDvpStackDetailArrayOutput {
+	return o
+}
+
+func (o GetDedicatedVantagePointDvpStackDetailArrayOutput) ToGetDedicatedVantagePointDvpStackDetailArrayOutputWithContext(ctx context.Context) GetDedicatedVantagePointDvpStackDetailArrayOutput {
+	return o
+}
+
+func (o GetDedicatedVantagePointDvpStackDetailArrayOutput) Index(i pulumi.IntInput) GetDedicatedVantagePointDvpStackDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDedicatedVantagePointDvpStackDetail {
+		return vs[0].([]GetDedicatedVantagePointDvpStackDetail)[vs[1].(int)]
+	}).(GetDedicatedVantagePointDvpStackDetailOutput)
+}
+
+type GetDedicatedVantagePointMonitorStatusCountMap struct {
+	// Number of disabled monitors using the script.
+	Disabled int `pulumi:"disabled"`
+	// Number of enabled monitors using the script.
+	Enabled int `pulumi:"enabled"`
+	// Number of invalid monitors using the script.
+	Invalid int `pulumi:"invalid"`
+	// Total number of monitors using the script.
+	Total int `pulumi:"total"`
+}
+
+// GetDedicatedVantagePointMonitorStatusCountMapInput is an input type that accepts GetDedicatedVantagePointMonitorStatusCountMap and GetDedicatedVantagePointMonitorStatusCountMapOutput values.
+// You can construct a concrete instance of `GetDedicatedVantagePointMonitorStatusCountMapInput` via:
+//
+//          GetDedicatedVantagePointMonitorStatusCountMap{ "key": GetDedicatedVantagePointMonitorStatusCountArgs{...} }
+type GetDedicatedVantagePointMonitorStatusCountMapInput interface {
+	pulumi.Input
+
+	ToGetDedicatedVantagePointMonitorStatusCountMapOutput() GetDedicatedVantagePointMonitorStatusCountMapOutput
+	ToGetDedicatedVantagePointMonitorStatusCountMapOutputWithContext(context.Context) GetDedicatedVantagePointMonitorStatusCountMapOutput
+}
+
+type GetDedicatedVantagePointMonitorStatusCountMapArgs struct {
+	// Number of disabled monitors using the script.
+	Disabled pulumi.IntInput `pulumi:"disabled"`
+	// Number of enabled monitors using the script.
+	Enabled pulumi.IntInput `pulumi:"enabled"`
+	// Number of invalid monitors using the script.
+	Invalid pulumi.IntInput `pulumi:"invalid"`
+	// Total number of monitors using the script.
+	Total pulumi.IntInput `pulumi:"total"`
+}
+
+func (GetDedicatedVantagePointMonitorStatusCountMapArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDedicatedVantagePointMonitorStatusCountMap)(nil)).Elem()
+}
+
+func (i GetDedicatedVantagePointMonitorStatusCountMapArgs) ToGetDedicatedVantagePointMonitorStatusCountMapOutput() GetDedicatedVantagePointMonitorStatusCountMapOutput {
+	return i.ToGetDedicatedVantagePointMonitorStatusCountMapOutputWithContext(context.Background())
+}
+
+func (i GetDedicatedVantagePointMonitorStatusCountMapArgs) ToGetDedicatedVantagePointMonitorStatusCountMapOutputWithContext(ctx context.Context) GetDedicatedVantagePointMonitorStatusCountMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDedicatedVantagePointMonitorStatusCountMapOutput)
+}
+
+// GetDedicatedVantagePointMonitorStatusCountMapArrayInput is an input type that accepts GetDedicatedVantagePointMonitorStatusCountMapArray and GetDedicatedVantagePointMonitorStatusCountMapArrayOutput values.
+// You can construct a concrete instance of `GetDedicatedVantagePointMonitorStatusCountMapArrayInput` via:
+//
+//          GetDedicatedVantagePointMonitorStatusCountMapArray{ GetDedicatedVantagePointMonitorStatusCountMapArgs{...} }
+type GetDedicatedVantagePointMonitorStatusCountMapArrayInput interface {
+	pulumi.Input
+
+	ToGetDedicatedVantagePointMonitorStatusCountMapArrayOutput() GetDedicatedVantagePointMonitorStatusCountMapArrayOutput
+	ToGetDedicatedVantagePointMonitorStatusCountMapArrayOutputWithContext(context.Context) GetDedicatedVantagePointMonitorStatusCountMapArrayOutput
+}
+
+type GetDedicatedVantagePointMonitorStatusCountMapArray []GetDedicatedVantagePointMonitorStatusCountMapInput
+
+func (GetDedicatedVantagePointMonitorStatusCountMapArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDedicatedVantagePointMonitorStatusCountMap)(nil)).Elem()
+}
+
+func (i GetDedicatedVantagePointMonitorStatusCountMapArray) ToGetDedicatedVantagePointMonitorStatusCountMapArrayOutput() GetDedicatedVantagePointMonitorStatusCountMapArrayOutput {
+	return i.ToGetDedicatedVantagePointMonitorStatusCountMapArrayOutputWithContext(context.Background())
+}
+
+func (i GetDedicatedVantagePointMonitorStatusCountMapArray) ToGetDedicatedVantagePointMonitorStatusCountMapArrayOutputWithContext(ctx context.Context) GetDedicatedVantagePointMonitorStatusCountMapArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDedicatedVantagePointMonitorStatusCountMapArrayOutput)
+}
+
+type GetDedicatedVantagePointMonitorStatusCountMapOutput struct{ *pulumi.OutputState }
+
+func (GetDedicatedVantagePointMonitorStatusCountMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDedicatedVantagePointMonitorStatusCountMap)(nil)).Elem()
+}
+
+func (o GetDedicatedVantagePointMonitorStatusCountMapOutput) ToGetDedicatedVantagePointMonitorStatusCountMapOutput() GetDedicatedVantagePointMonitorStatusCountMapOutput {
+	return o
+}
+
+func (o GetDedicatedVantagePointMonitorStatusCountMapOutput) ToGetDedicatedVantagePointMonitorStatusCountMapOutputWithContext(ctx context.Context) GetDedicatedVantagePointMonitorStatusCountMapOutput {
+	return o
+}
+
+// Number of disabled monitors using the script.
+func (o GetDedicatedVantagePointMonitorStatusCountMapOutput) Disabled() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointMonitorStatusCountMap) int { return v.Disabled }).(pulumi.IntOutput)
+}
+
+// Number of enabled monitors using the script.
+func (o GetDedicatedVantagePointMonitorStatusCountMapOutput) Enabled() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointMonitorStatusCountMap) int { return v.Enabled }).(pulumi.IntOutput)
+}
+
+// Number of invalid monitors using the script.
+func (o GetDedicatedVantagePointMonitorStatusCountMapOutput) Invalid() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointMonitorStatusCountMap) int { return v.Invalid }).(pulumi.IntOutput)
+}
+
+// Total number of monitors using the script.
+func (o GetDedicatedVantagePointMonitorStatusCountMapOutput) Total() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointMonitorStatusCountMap) int { return v.Total }).(pulumi.IntOutput)
+}
+
+type GetDedicatedVantagePointMonitorStatusCountMapArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDedicatedVantagePointMonitorStatusCountMapArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDedicatedVantagePointMonitorStatusCountMap)(nil)).Elem()
+}
+
+func (o GetDedicatedVantagePointMonitorStatusCountMapArrayOutput) ToGetDedicatedVantagePointMonitorStatusCountMapArrayOutput() GetDedicatedVantagePointMonitorStatusCountMapArrayOutput {
+	return o
+}
+
+func (o GetDedicatedVantagePointMonitorStatusCountMapArrayOutput) ToGetDedicatedVantagePointMonitorStatusCountMapArrayOutputWithContext(ctx context.Context) GetDedicatedVantagePointMonitorStatusCountMapArrayOutput {
+	return o
+}
+
+func (o GetDedicatedVantagePointMonitorStatusCountMapArrayOutput) Index(i pulumi.IntInput) GetDedicatedVantagePointMonitorStatusCountMapOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDedicatedVantagePointMonitorStatusCountMap {
+		return vs[0].([]GetDedicatedVantagePointMonitorStatusCountMap)[vs[1].(int)]
+	}).(GetDedicatedVantagePointMonitorStatusCountMapOutput)
+}
+
+type GetDedicatedVantagePointsDedicatedVantagePointCollection struct {
+	Items []GetDedicatedVantagePointsDedicatedVantagePointCollectionItem `pulumi:"items"`
+}
+
+// GetDedicatedVantagePointsDedicatedVantagePointCollectionInput is an input type that accepts GetDedicatedVantagePointsDedicatedVantagePointCollectionArgs and GetDedicatedVantagePointsDedicatedVantagePointCollectionOutput values.
+// You can construct a concrete instance of `GetDedicatedVantagePointsDedicatedVantagePointCollectionInput` via:
+//
+//          GetDedicatedVantagePointsDedicatedVantagePointCollectionArgs{...}
+type GetDedicatedVantagePointsDedicatedVantagePointCollectionInput interface {
+	pulumi.Input
+
+	ToGetDedicatedVantagePointsDedicatedVantagePointCollectionOutput() GetDedicatedVantagePointsDedicatedVantagePointCollectionOutput
+	ToGetDedicatedVantagePointsDedicatedVantagePointCollectionOutputWithContext(context.Context) GetDedicatedVantagePointsDedicatedVantagePointCollectionOutput
+}
+
+type GetDedicatedVantagePointsDedicatedVantagePointCollectionArgs struct {
+	Items GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetDedicatedVantagePointsDedicatedVantagePointCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDedicatedVantagePointsDedicatedVantagePointCollection)(nil)).Elem()
+}
+
+func (i GetDedicatedVantagePointsDedicatedVantagePointCollectionArgs) ToGetDedicatedVantagePointsDedicatedVantagePointCollectionOutput() GetDedicatedVantagePointsDedicatedVantagePointCollectionOutput {
+	return i.ToGetDedicatedVantagePointsDedicatedVantagePointCollectionOutputWithContext(context.Background())
+}
+
+func (i GetDedicatedVantagePointsDedicatedVantagePointCollectionArgs) ToGetDedicatedVantagePointsDedicatedVantagePointCollectionOutputWithContext(ctx context.Context) GetDedicatedVantagePointsDedicatedVantagePointCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDedicatedVantagePointsDedicatedVantagePointCollectionOutput)
+}
+
+// GetDedicatedVantagePointsDedicatedVantagePointCollectionArrayInput is an input type that accepts GetDedicatedVantagePointsDedicatedVantagePointCollectionArray and GetDedicatedVantagePointsDedicatedVantagePointCollectionArrayOutput values.
+// You can construct a concrete instance of `GetDedicatedVantagePointsDedicatedVantagePointCollectionArrayInput` via:
+//
+//          GetDedicatedVantagePointsDedicatedVantagePointCollectionArray{ GetDedicatedVantagePointsDedicatedVantagePointCollectionArgs{...} }
+type GetDedicatedVantagePointsDedicatedVantagePointCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetDedicatedVantagePointsDedicatedVantagePointCollectionArrayOutput() GetDedicatedVantagePointsDedicatedVantagePointCollectionArrayOutput
+	ToGetDedicatedVantagePointsDedicatedVantagePointCollectionArrayOutputWithContext(context.Context) GetDedicatedVantagePointsDedicatedVantagePointCollectionArrayOutput
+}
+
+type GetDedicatedVantagePointsDedicatedVantagePointCollectionArray []GetDedicatedVantagePointsDedicatedVantagePointCollectionInput
+
+func (GetDedicatedVantagePointsDedicatedVantagePointCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDedicatedVantagePointsDedicatedVantagePointCollection)(nil)).Elem()
+}
+
+func (i GetDedicatedVantagePointsDedicatedVantagePointCollectionArray) ToGetDedicatedVantagePointsDedicatedVantagePointCollectionArrayOutput() GetDedicatedVantagePointsDedicatedVantagePointCollectionArrayOutput {
+	return i.ToGetDedicatedVantagePointsDedicatedVantagePointCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDedicatedVantagePointsDedicatedVantagePointCollectionArray) ToGetDedicatedVantagePointsDedicatedVantagePointCollectionArrayOutputWithContext(ctx context.Context) GetDedicatedVantagePointsDedicatedVantagePointCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDedicatedVantagePointsDedicatedVantagePointCollectionArrayOutput)
+}
+
+type GetDedicatedVantagePointsDedicatedVantagePointCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetDedicatedVantagePointsDedicatedVantagePointCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDedicatedVantagePointsDedicatedVantagePointCollection)(nil)).Elem()
+}
+
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionOutput) ToGetDedicatedVantagePointsDedicatedVantagePointCollectionOutput() GetDedicatedVantagePointsDedicatedVantagePointCollectionOutput {
+	return o
+}
+
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionOutput) ToGetDedicatedVantagePointsDedicatedVantagePointCollectionOutputWithContext(ctx context.Context) GetDedicatedVantagePointsDedicatedVantagePointCollectionOutput {
+	return o
+}
+
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionOutput) Items() GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollection) []GetDedicatedVantagePointsDedicatedVantagePointCollectionItem {
+		return v.Items
+	}).(GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArrayOutput)
+}
+
+type GetDedicatedVantagePointsDedicatedVantagePointCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDedicatedVantagePointsDedicatedVantagePointCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDedicatedVantagePointsDedicatedVantagePointCollection)(nil)).Elem()
+}
+
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionArrayOutput) ToGetDedicatedVantagePointsDedicatedVantagePointCollectionArrayOutput() GetDedicatedVantagePointsDedicatedVantagePointCollectionArrayOutput {
+	return o
+}
+
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionArrayOutput) ToGetDedicatedVantagePointsDedicatedVantagePointCollectionArrayOutputWithContext(ctx context.Context) GetDedicatedVantagePointsDedicatedVantagePointCollectionArrayOutput {
+	return o
+}
+
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionArrayOutput) Index(i pulumi.IntInput) GetDedicatedVantagePointsDedicatedVantagePointCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDedicatedVantagePointsDedicatedVantagePointCollection {
+		return vs[0].([]GetDedicatedVantagePointsDedicatedVantagePointCollection)[vs[1].(int)]
+	}).(GetDedicatedVantagePointsDedicatedVantagePointCollectionOutput)
+}
+
+type GetDedicatedVantagePointsDedicatedVantagePointCollectionItem struct {
+	// The APM domain ID the request is intended for.
+	ApmDomainId string `pulumi:"apmDomainId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// A filter to return only the resources that match the entire display name.
+	DisplayName string `pulumi:"displayName"`
+	// Details of DVP Stack.
+	DvpStackDetails []GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail `pulumi:"dvpStackDetails"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated vantage point.
+	Id string `pulumi:"id"`
+	// Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
+	MonitorStatusCountMaps []GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMap `pulumi:"monitorStatusCountMaps"`
+	// A filter to return only the resources that match the entire name.
+	Name string `pulumi:"name"`
+	// Name of the region.
+	Region string `pulumi:"region"`
+	// A filter to return only the dedicated vantage points that match a given status.
+	Status string `pulumi:"status"`
+	// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetDedicatedVantagePointsDedicatedVantagePointCollectionItemInput is an input type that accepts GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArgs and GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput values.
+// You can construct a concrete instance of `GetDedicatedVantagePointsDedicatedVantagePointCollectionItemInput` via:
+//
+//          GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArgs{...}
+type GetDedicatedVantagePointsDedicatedVantagePointCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput() GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput
+	ToGetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutputWithContext(context.Context) GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput
+}
+
+type GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArgs struct {
+	// The APM domain ID the request is intended for.
+	ApmDomainId pulumi.StringInput `pulumi:"apmDomainId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// A filter to return only the resources that match the entire display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Details of DVP Stack.
+	DvpStackDetails GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArrayInput `pulumi:"dvpStackDetails"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated vantage point.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
+	MonitorStatusCountMaps GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArrayInput `pulumi:"monitorStatusCountMaps"`
+	// A filter to return only the resources that match the entire name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Name of the region.
+	Region pulumi.StringInput `pulumi:"region"`
+	// A filter to return only the dedicated vantage points that match a given status.
+	Status pulumi.StringInput `pulumi:"status"`
+	// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDedicatedVantagePointsDedicatedVantagePointCollectionItem)(nil)).Elem()
+}
+
+func (i GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArgs) ToGetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput() GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput {
+	return i.ToGetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArgs) ToGetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutputWithContext(ctx context.Context) GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput)
+}
+
+// GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArrayInput is an input type that accepts GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArray and GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArrayInput` via:
+//
+//          GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArray{ GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArgs{...} }
+type GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetDedicatedVantagePointsDedicatedVantagePointCollectionItemArrayOutput() GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArrayOutput
+	ToGetDedicatedVantagePointsDedicatedVantagePointCollectionItemArrayOutputWithContext(context.Context) GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArrayOutput
+}
+
+type GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArray []GetDedicatedVantagePointsDedicatedVantagePointCollectionItemInput
+
+func (GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDedicatedVantagePointsDedicatedVantagePointCollectionItem)(nil)).Elem()
+}
+
+func (i GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArray) ToGetDedicatedVantagePointsDedicatedVantagePointCollectionItemArrayOutput() GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArrayOutput {
+	return i.ToGetDedicatedVantagePointsDedicatedVantagePointCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArray) ToGetDedicatedVantagePointsDedicatedVantagePointCollectionItemArrayOutputWithContext(ctx context.Context) GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArrayOutput)
+}
+
+type GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDedicatedVantagePointsDedicatedVantagePointCollectionItem)(nil)).Elem()
+}
+
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput) ToGetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput() GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput {
+	return o
+}
+
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput) ToGetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutputWithContext(ctx context.Context) GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput {
+	return o
+}
+
+// The APM domain ID the request is intended for.
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput) ApmDomainId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItem) string { return v.ApmDomainId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItem) map[string]interface{} {
+		return v.DefinedTags
+	}).(pulumi.MapOutput)
+}
+
+// A filter to return only the resources that match the entire display name.
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Details of DVP Stack.
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput) DvpStackDetails() GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArrayOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItem) []GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail {
+		return v.DvpStackDetails
+	}).(GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArrayOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItem) map[string]interface{} {
+		return v.FreeformTags
+	}).(pulumi.MapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated vantage point.
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput) MonitorStatusCountMaps() GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArrayOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItem) []GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMap {
+		return v.MonitorStatusCountMaps
+	}).(GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArrayOutput)
+}
+
+// A filter to return only the resources that match the entire name.
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Name of the region.
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItem) string { return v.Region }).(pulumi.StringOutput)
+}
+
+// A filter to return only the dedicated vantage points that match a given status.
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItem) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDedicatedVantagePointsDedicatedVantagePointCollectionItem)(nil)).Elem()
+}
+
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArrayOutput) ToGetDedicatedVantagePointsDedicatedVantagePointCollectionItemArrayOutput() GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArrayOutput) ToGetDedicatedVantagePointsDedicatedVantagePointCollectionItemArrayOutputWithContext(ctx context.Context) GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDedicatedVantagePointsDedicatedVantagePointCollectionItem {
+		return vs[0].([]GetDedicatedVantagePointsDedicatedVantagePointCollectionItem)[vs[1].(int)]
+	}).(GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput)
+}
+
+type GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail struct {
+	// Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+	DvpStackId string `pulumi:"dvpStackId"`
+	// Type of stack.
+	DvpStackType string `pulumi:"dvpStackType"`
+	// Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+	DvpStreamId string `pulumi:"dvpStreamId"`
+	// Version of DVP.
+	DvpVersion string `pulumi:"dvpVersion"`
+}
+
+// GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailInput is an input type that accepts GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArgs and GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailOutput values.
+// You can construct a concrete instance of `GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailInput` via:
+//
+//          GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArgs{...}
+type GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailInput interface {
+	pulumi.Input
+
+	ToGetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailOutput() GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailOutput
+	ToGetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailOutputWithContext(context.Context) GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailOutput
+}
+
+type GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArgs struct {
+	// Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+	DvpStackId pulumi.StringInput `pulumi:"dvpStackId"`
+	// Type of stack.
+	DvpStackType pulumi.StringInput `pulumi:"dvpStackType"`
+	// Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+	DvpStreamId pulumi.StringInput `pulumi:"dvpStreamId"`
+	// Version of DVP.
+	DvpVersion pulumi.StringInput `pulumi:"dvpVersion"`
+}
+
+func (GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail)(nil)).Elem()
+}
+
+func (i GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArgs) ToGetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailOutput() GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailOutput {
+	return i.ToGetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailOutputWithContext(context.Background())
+}
+
+func (i GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArgs) ToGetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailOutputWithContext(ctx context.Context) GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailOutput)
+}
+
+// GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArrayInput is an input type that accepts GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArray and GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArrayOutput values.
+// You can construct a concrete instance of `GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArrayInput` via:
+//
+//          GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArray{ GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArgs{...} }
+type GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArrayOutput() GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArrayOutput
+	ToGetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArrayOutputWithContext(context.Context) GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArrayOutput
+}
+
+type GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArray []GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailInput
+
+func (GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail)(nil)).Elem()
+}
+
+func (i GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArray) ToGetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArrayOutput() GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArrayOutput {
+	return i.ToGetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArray) ToGetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArrayOutputWithContext(ctx context.Context) GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArrayOutput)
+}
+
+type GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail)(nil)).Elem()
+}
+
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailOutput) ToGetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailOutput() GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailOutput {
+	return o
+}
+
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailOutput) ToGetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailOutputWithContext(ctx context.Context) GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailOutput {
+	return o
+}
+
+// Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailOutput) DvpStackId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail) string {
+		return v.DvpStackId
+	}).(pulumi.StringOutput)
+}
+
+// Type of stack.
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailOutput) DvpStackType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail) string {
+		return v.DvpStackType
+	}).(pulumi.StringOutput)
+}
+
+// Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailOutput) DvpStreamId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail) string {
+		return v.DvpStreamId
+	}).(pulumi.StringOutput)
+}
+
+// Version of DVP.
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailOutput) DvpVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail) string {
+		return v.DvpVersion
+	}).(pulumi.StringOutput)
+}
+
+type GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail)(nil)).Elem()
+}
+
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArrayOutput) ToGetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArrayOutput() GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArrayOutput {
+	return o
+}
+
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArrayOutput) ToGetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArrayOutputWithContext(ctx context.Context) GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArrayOutput {
+	return o
+}
+
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArrayOutput) Index(i pulumi.IntInput) GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail {
+		return vs[0].([]GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail)[vs[1].(int)]
+	}).(GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailOutput)
+}
+
+type GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMap struct {
+	// Number of disabled monitors using the script.
+	Disabled int `pulumi:"disabled"`
+	// Number of enabled monitors using the script.
+	Enabled int `pulumi:"enabled"`
+	// Number of invalid monitors using the script.
+	Invalid int `pulumi:"invalid"`
+	// Total number of monitors using the script.
+	Total int `pulumi:"total"`
+}
+
+// GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapInput is an input type that accepts GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMap and GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapOutput values.
+// You can construct a concrete instance of `GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapInput` via:
+//
+//          GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMap{ "key": GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountArgs{...} }
+type GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapInput interface {
+	pulumi.Input
+
+	ToGetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapOutput() GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapOutput
+	ToGetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapOutputWithContext(context.Context) GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapOutput
+}
+
+type GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArgs struct {
+	// Number of disabled monitors using the script.
+	Disabled pulumi.IntInput `pulumi:"disabled"`
+	// Number of enabled monitors using the script.
+	Enabled pulumi.IntInput `pulumi:"enabled"`
+	// Number of invalid monitors using the script.
+	Invalid pulumi.IntInput `pulumi:"invalid"`
+	// Total number of monitors using the script.
+	Total pulumi.IntInput `pulumi:"total"`
+}
+
+func (GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMap)(nil)).Elem()
+}
+
+func (i GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArgs) ToGetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapOutput() GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapOutput {
+	return i.ToGetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapOutputWithContext(context.Background())
+}
+
+func (i GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArgs) ToGetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapOutputWithContext(ctx context.Context) GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapOutput)
+}
+
+// GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArrayInput is an input type that accepts GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArray and GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArrayOutput values.
+// You can construct a concrete instance of `GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArrayInput` via:
+//
+//          GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArray{ GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArgs{...} }
+type GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArrayInput interface {
+	pulumi.Input
+
+	ToGetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArrayOutput() GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArrayOutput
+	ToGetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArrayOutputWithContext(context.Context) GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArrayOutput
+}
+
+type GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArray []GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapInput
+
+func (GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMap)(nil)).Elem()
+}
+
+func (i GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArray) ToGetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArrayOutput() GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArrayOutput {
+	return i.ToGetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArrayOutputWithContext(context.Background())
+}
+
+func (i GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArray) ToGetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArrayOutputWithContext(ctx context.Context) GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArrayOutput)
+}
+
+type GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapOutput struct{ *pulumi.OutputState }
+
+func (GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMap)(nil)).Elem()
+}
+
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapOutput) ToGetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapOutput() GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapOutput {
+	return o
+}
+
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapOutput) ToGetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapOutputWithContext(ctx context.Context) GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapOutput {
+	return o
+}
+
+// Number of disabled monitors using the script.
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapOutput) Disabled() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMap) int {
+		return v.Disabled
+	}).(pulumi.IntOutput)
+}
+
+// Number of enabled monitors using the script.
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapOutput) Enabled() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMap) int {
+		return v.Enabled
+	}).(pulumi.IntOutput)
+}
+
+// Number of invalid monitors using the script.
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapOutput) Invalid() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMap) int {
+		return v.Invalid
+	}).(pulumi.IntOutput)
+}
+
+// Total number of monitors using the script.
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapOutput) Total() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMap) int {
+		return v.Total
+	}).(pulumi.IntOutput)
+}
+
+type GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMap)(nil)).Elem()
+}
+
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArrayOutput) ToGetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArrayOutput() GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArrayOutput {
+	return o
+}
+
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArrayOutput) ToGetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArrayOutputWithContext(ctx context.Context) GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArrayOutput {
+	return o
+}
+
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArrayOutput) Index(i pulumi.IntInput) GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMap {
+		return vs[0].([]GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMap)[vs[1].(int)]
+	}).(GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapOutput)
+}
+
+type GetDedicatedVantagePointsFilter struct {
+	// A filter to return only the resources that match the entire name.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDedicatedVantagePointsFilterInput is an input type that accepts GetDedicatedVantagePointsFilterArgs and GetDedicatedVantagePointsFilterOutput values.
+// You can construct a concrete instance of `GetDedicatedVantagePointsFilterInput` via:
+//
+//          GetDedicatedVantagePointsFilterArgs{...}
+type GetDedicatedVantagePointsFilterInput interface {
+	pulumi.Input
+
+	ToGetDedicatedVantagePointsFilterOutput() GetDedicatedVantagePointsFilterOutput
+	ToGetDedicatedVantagePointsFilterOutputWithContext(context.Context) GetDedicatedVantagePointsFilterOutput
+}
+
+type GetDedicatedVantagePointsFilterArgs struct {
+	// A filter to return only the resources that match the entire name.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDedicatedVantagePointsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDedicatedVantagePointsFilter)(nil)).Elem()
+}
+
+func (i GetDedicatedVantagePointsFilterArgs) ToGetDedicatedVantagePointsFilterOutput() GetDedicatedVantagePointsFilterOutput {
+	return i.ToGetDedicatedVantagePointsFilterOutputWithContext(context.Background())
+}
+
+func (i GetDedicatedVantagePointsFilterArgs) ToGetDedicatedVantagePointsFilterOutputWithContext(ctx context.Context) GetDedicatedVantagePointsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDedicatedVantagePointsFilterOutput)
+}
+
+// GetDedicatedVantagePointsFilterArrayInput is an input type that accepts GetDedicatedVantagePointsFilterArray and GetDedicatedVantagePointsFilterArrayOutput values.
+// You can construct a concrete instance of `GetDedicatedVantagePointsFilterArrayInput` via:
+//
+//          GetDedicatedVantagePointsFilterArray{ GetDedicatedVantagePointsFilterArgs{...} }
+type GetDedicatedVantagePointsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDedicatedVantagePointsFilterArrayOutput() GetDedicatedVantagePointsFilterArrayOutput
+	ToGetDedicatedVantagePointsFilterArrayOutputWithContext(context.Context) GetDedicatedVantagePointsFilterArrayOutput
+}
+
+type GetDedicatedVantagePointsFilterArray []GetDedicatedVantagePointsFilterInput
+
+func (GetDedicatedVantagePointsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDedicatedVantagePointsFilter)(nil)).Elem()
+}
+
+func (i GetDedicatedVantagePointsFilterArray) ToGetDedicatedVantagePointsFilterArrayOutput() GetDedicatedVantagePointsFilterArrayOutput {
+	return i.ToGetDedicatedVantagePointsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDedicatedVantagePointsFilterArray) ToGetDedicatedVantagePointsFilterArrayOutputWithContext(ctx context.Context) GetDedicatedVantagePointsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDedicatedVantagePointsFilterArrayOutput)
+}
+
+type GetDedicatedVantagePointsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDedicatedVantagePointsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDedicatedVantagePointsFilter)(nil)).Elem()
+}
+
+func (o GetDedicatedVantagePointsFilterOutput) ToGetDedicatedVantagePointsFilterOutput() GetDedicatedVantagePointsFilterOutput {
+	return o
+}
+
+func (o GetDedicatedVantagePointsFilterOutput) ToGetDedicatedVantagePointsFilterOutputWithContext(ctx context.Context) GetDedicatedVantagePointsFilterOutput {
+	return o
+}
+
+// A filter to return only the resources that match the entire name.
+func (o GetDedicatedVantagePointsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDedicatedVantagePointsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDedicatedVantagePointsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDedicatedVantagePointsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDedicatedVantagePointsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDedicatedVantagePointsFilter)(nil)).Elem()
+}
+
+func (o GetDedicatedVantagePointsFilterArrayOutput) ToGetDedicatedVantagePointsFilterArrayOutput() GetDedicatedVantagePointsFilterArrayOutput {
+	return o
+}
+
+func (o GetDedicatedVantagePointsFilterArrayOutput) ToGetDedicatedVantagePointsFilterArrayOutputWithContext(ctx context.Context) GetDedicatedVantagePointsFilterArrayOutput {
+	return o
+}
+
+func (o GetDedicatedVantagePointsFilterArrayOutput) Index(i pulumi.IntInput) GetDedicatedVantagePointsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDedicatedVantagePointsFilter {
+		return vs[0].([]GetDedicatedVantagePointsFilter)[vs[1].(int)]
+	}).(GetDedicatedVantagePointsFilterOutput)
+}
+
 type GetMonitorConfiguration struct {
 	// Type of configuration.
 	ConfigType string `pulumi:"configType"`
@@ -1936,7 +3175,7 @@ type GetMonitorConfiguration struct {
 	VerifyResponseCodes []string `pulumi:"verifyResponseCodes"`
 	// Verify response content against regular expression based string. If response content does not match the verifyResponseContent value, then it will be considered a failure.
 	VerifyResponseContent string `pulumi:"verifyResponseContent"`
-	// Verify all the search strings present in response. If any search string is not present in the response, then it will be considered as a failure.
+	// Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
 	VerifyTexts []GetMonitorConfigurationVerifyText `pulumi:"verifyTexts"`
 }
 
@@ -1978,7 +3217,7 @@ type GetMonitorConfigurationArgs struct {
 	VerifyResponseCodes pulumi.StringArrayInput `pulumi:"verifyResponseCodes"`
 	// Verify response content against regular expression based string. If response content does not match the verifyResponseContent value, then it will be considered a failure.
 	VerifyResponseContent pulumi.StringInput `pulumi:"verifyResponseContent"`
-	// Verify all the search strings present in response. If any search string is not present in the response, then it will be considered as a failure.
+	// Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
 	VerifyTexts GetMonitorConfigurationVerifyTextArrayInput `pulumi:"verifyTexts"`
 }
 
@@ -2104,7 +3343,7 @@ func (o GetMonitorConfigurationOutput) VerifyResponseContent() pulumi.StringOutp
 	return o.ApplyT(func(v GetMonitorConfiguration) string { return v.VerifyResponseContent }).(pulumi.StringOutput)
 }
 
-// Verify all the search strings present in response. If any search string is not present in the response, then it will be considered as a failure.
+// Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
 func (o GetMonitorConfigurationOutput) VerifyTexts() GetMonitorConfigurationVerifyTextArrayOutput {
 	return o.ApplyT(func(v GetMonitorConfiguration) []GetMonitorConfigurationVerifyText { return v.VerifyTexts }).(GetMonitorConfigurationVerifyTextArrayOutput)
 }
@@ -3290,7 +4529,7 @@ type GetMonitorsMonitorCollectionItem struct {
 	Configurations []GetMonitorsMonitorCollectionItemConfiguration `pulumi:"configurations"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// A filter to return only resources that match the entire display name given.
+	// A filter to return only the resources that match the entire display name.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
@@ -3300,7 +4539,7 @@ type GetMonitorsMonitorCollectionItem struct {
 	IsRunOnce bool `pulumi:"isRunOnce"`
 	// A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST and REST.
 	MonitorType string `pulumi:"monitorType"`
-	// Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds.
+	// Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
 	RepeatIntervalInSeconds int `pulumi:"repeatIntervalInSeconds"`
 	// A filter to return only monitors using scriptId.
 	ScriptId string `pulumi:"scriptId"`
@@ -3316,11 +4555,11 @@ type GetMonitorsMonitorCollectionItem struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
 	TimeUpdated string `pulumi:"timeUpdated"`
-	// Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+	// Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
 	TimeoutInSeconds int `pulumi:"timeoutInSeconds"`
 	// Number of vantage points where monitor is running.
 	VantagePointCount int `pulumi:"vantagePointCount"`
-	// List of vantage points from where monitor is running.
+	// List of public and dedicated vantage points where the monitor is running.
 	VantagePoints []string `pulumi:"vantagePoints"`
 }
 
@@ -3342,7 +4581,7 @@ type GetMonitorsMonitorCollectionItemArgs struct {
 	Configurations GetMonitorsMonitorCollectionItemConfigurationArrayInput `pulumi:"configurations"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
-	// A filter to return only resources that match the entire display name given.
+	// A filter to return only the resources that match the entire display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
@@ -3352,7 +4591,7 @@ type GetMonitorsMonitorCollectionItemArgs struct {
 	IsRunOnce pulumi.BoolInput `pulumi:"isRunOnce"`
 	// A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST and REST.
 	MonitorType pulumi.StringInput `pulumi:"monitorType"`
-	// Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds.
+	// Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
 	RepeatIntervalInSeconds pulumi.IntInput `pulumi:"repeatIntervalInSeconds"`
 	// A filter to return only monitors using scriptId.
 	ScriptId pulumi.StringInput `pulumi:"scriptId"`
@@ -3368,11 +4607,11 @@ type GetMonitorsMonitorCollectionItemArgs struct {
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
-	// Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+	// Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
 	TimeoutInSeconds pulumi.IntInput `pulumi:"timeoutInSeconds"`
 	// Number of vantage points where monitor is running.
 	VantagePointCount pulumi.IntInput `pulumi:"vantagePointCount"`
-	// List of vantage points from where monitor is running.
+	// List of public and dedicated vantage points where the monitor is running.
 	VantagePoints pulumi.StringArrayInput `pulumi:"vantagePoints"`
 }
 
@@ -3444,7 +4683,7 @@ func (o GetMonitorsMonitorCollectionItemOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// A filter to return only resources that match the entire display name given.
+// A filter to return only the resources that match the entire display name.
 func (o GetMonitorsMonitorCollectionItemOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -3469,7 +4708,7 @@ func (o GetMonitorsMonitorCollectionItemOutput) MonitorType() pulumi.StringOutpu
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) string { return v.MonitorType }).(pulumi.StringOutput)
 }
 
-// Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds.
+// Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
 func (o GetMonitorsMonitorCollectionItemOutput) RepeatIntervalInSeconds() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) int { return v.RepeatIntervalInSeconds }).(pulumi.IntOutput)
 }
@@ -3511,7 +4750,7 @@ func (o GetMonitorsMonitorCollectionItemOutput) TimeUpdated() pulumi.StringOutpu
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+// Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
 func (o GetMonitorsMonitorCollectionItemOutput) TimeoutInSeconds() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) int { return v.TimeoutInSeconds }).(pulumi.IntOutput)
 }
@@ -3521,7 +4760,7 @@ func (o GetMonitorsMonitorCollectionItemOutput) VantagePointCount() pulumi.IntOu
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) int { return v.VantagePointCount }).(pulumi.IntOutput)
 }
 
-// List of vantage points from where monitor is running.
+// List of public and dedicated vantage points where the monitor is running.
 func (o GetMonitorsMonitorCollectionItemOutput) VantagePoints() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) []string { return v.VantagePoints }).(pulumi.StringArrayOutput)
 }
@@ -3573,7 +4812,7 @@ type GetMonitorsMonitorCollectionItemConfiguration struct {
 	VerifyResponseCodes []string `pulumi:"verifyResponseCodes"`
 	// Verify response content against regular expression based string. If response content does not match the verifyResponseContent value, then it will be considered a failure.
 	VerifyResponseContent string `pulumi:"verifyResponseContent"`
-	// Verify all the search strings present in response. If any search string is not present in the response, then it will be considered as a failure.
+	// Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
 	VerifyTexts []GetMonitorsMonitorCollectionItemConfigurationVerifyText `pulumi:"verifyTexts"`
 }
 
@@ -3615,7 +4854,7 @@ type GetMonitorsMonitorCollectionItemConfigurationArgs struct {
 	VerifyResponseCodes pulumi.StringArrayInput `pulumi:"verifyResponseCodes"`
 	// Verify response content against regular expression based string. If response content does not match the verifyResponseContent value, then it will be considered a failure.
 	VerifyResponseContent pulumi.StringInput `pulumi:"verifyResponseContent"`
-	// Verify all the search strings present in response. If any search string is not present in the response, then it will be considered as a failure.
+	// Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
 	VerifyTexts GetMonitorsMonitorCollectionItemConfigurationVerifyTextArrayInput `pulumi:"verifyTexts"`
 }
 
@@ -3743,7 +4982,7 @@ func (o GetMonitorsMonitorCollectionItemConfigurationOutput) VerifyResponseConte
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) string { return v.VerifyResponseContent }).(pulumi.StringOutput)
 }
 
-// Verify all the search strings present in response. If any search string is not present in the response, then it will be considered as a failure.
+// Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
 func (o GetMonitorsMonitorCollectionItemConfigurationOutput) VerifyTexts() GetMonitorsMonitorCollectionItemConfigurationVerifyTextArrayOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) []GetMonitorsMonitorCollectionItemConfigurationVerifyText {
 		return v.VerifyTexts
@@ -5452,7 +6691,7 @@ type GetScriptsScriptCollectionItem struct {
 	ContentType string `pulumi:"contentType"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// A filter to return only resources that match the entire display name given.
+	// A filter to return only the resources that match the entire display name.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
@@ -5466,7 +6705,7 @@ type GetScriptsScriptCollectionItem struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
 	TimeUpdated string `pulumi:"timeUpdated"`
-	// The time when the script was uploaded.
+	// The time the script was uploaded.
 	TimeUploaded string `pulumi:"timeUploaded"`
 }
 
@@ -5494,7 +6733,7 @@ type GetScriptsScriptCollectionItemArgs struct {
 	ContentType pulumi.StringInput `pulumi:"contentType"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
-	// A filter to return only resources that match the entire display name given.
+	// A filter to return only the resources that match the entire display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
@@ -5508,7 +6747,7 @@ type GetScriptsScriptCollectionItemArgs struct {
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
-	// The time when the script was uploaded.
+	// The time the script was uploaded.
 	TimeUploaded pulumi.StringInput `pulumi:"timeUploaded"`
 }
 
@@ -5593,7 +6832,7 @@ func (o GetScriptsScriptCollectionItemOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetScriptsScriptCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// A filter to return only resources that match the entire display name given.
+// A filter to return only the resources that match the entire display name.
 func (o GetScriptsScriptCollectionItemOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScriptsScriptCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -5630,7 +6869,7 @@ func (o GetScriptsScriptCollectionItemOutput) TimeUpdated() pulumi.StringOutput 
 	return o.ApplyT(func(v GetScriptsScriptCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// The time when the script was uploaded.
+// The time the script was uploaded.
 func (o GetScriptsScriptCollectionItemOutput) TimeUploaded() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScriptsScriptCollectionItem) string { return v.TimeUploaded }).(pulumi.StringOutput)
 }
@@ -6030,11 +7269,11 @@ func (o GetScriptsScriptCollectionItemParameterScriptParameterArrayOutput) Index
 }
 
 type GetVantagePointItem struct {
-	// A filter to return only resources that match the entire display name given.
+	// A filter to return only the resources that match the entire display name.
 	DisplayName string `pulumi:"displayName"`
-	// Geographic summary about a vantage point.
+	// Geographic summary of a vantage point.
 	Geos []GetVantagePointItemGeo `pulumi:"geos"`
-	// A filter to return only resources that match the entire name given.
+	// A filter to return only the resources that match the entire name.
 	Name string `pulumi:"name"`
 }
 
@@ -6050,11 +7289,11 @@ type GetVantagePointItemInput interface {
 }
 
 type GetVantagePointItemArgs struct {
-	// A filter to return only resources that match the entire display name given.
+	// A filter to return only the resources that match the entire display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// Geographic summary about a vantage point.
+	// Geographic summary of a vantage point.
 	Geos GetVantagePointItemGeoArrayInput `pulumi:"geos"`
-	// A filter to return only resources that match the entire name given.
+	// A filter to return only the resources that match the entire name.
 	Name pulumi.StringInput `pulumi:"name"`
 }
 
@@ -6109,17 +7348,17 @@ func (o GetVantagePointItemOutput) ToGetVantagePointItemOutputWithContext(ctx co
 	return o
 }
 
-// A filter to return only resources that match the entire display name given.
+// A filter to return only the resources that match the entire display name.
 func (o GetVantagePointItemOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVantagePointItem) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// Geographic summary about a vantage point.
+// Geographic summary of a vantage point.
 func (o GetVantagePointItemOutput) Geos() GetVantagePointItemGeoArrayOutput {
 	return o.ApplyT(func(v GetVantagePointItem) []GetVantagePointItemGeo { return v.Geos }).(GetVantagePointItemGeoArrayOutput)
 }
 
-// A filter to return only resources that match the entire name given.
+// A filter to return only the resources that match the entire name.
 func (o GetVantagePointItemOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVantagePointItem) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -6287,7 +7526,7 @@ func (o GetVantagePointItemGeoArrayOutput) Index(i pulumi.IntInput) GetVantagePo
 }
 
 type GetVantagePointsFilter struct {
-	// A filter to return only resources that match the entire name given.
+	// A filter to return only the resources that match the entire name.
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
 	Values []string `pulumi:"values"`
@@ -6305,7 +7544,7 @@ type GetVantagePointsFilterInput interface {
 }
 
 type GetVantagePointsFilterArgs struct {
-	// A filter to return only resources that match the entire name given.
+	// A filter to return only the resources that match the entire name.
 	Name   pulumi.StringInput      `pulumi:"name"`
 	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
 	Values pulumi.StringArrayInput `pulumi:"values"`
@@ -6362,7 +7601,7 @@ func (o GetVantagePointsFilterOutput) ToGetVantagePointsFilterOutputWithContext(
 	return o
 }
 
-// A filter to return only resources that match the entire name given.
+// A filter to return only the resources that match the entire name.
 func (o GetVantagePointsFilterOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVantagePointsFilter) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -6495,11 +7734,11 @@ func (o GetVantagePointsPublicVantagePointCollectionArrayOutput) Index(i pulumi.
 }
 
 type GetVantagePointsPublicVantagePointCollectionItem struct {
-	// A filter to return only resources that match the entire display name given.
+	// A filter to return only the resources that match the entire display name.
 	DisplayName string `pulumi:"displayName"`
-	// Geographic summary about a vantage point.
+	// Geographic summary of a vantage point.
 	Geos []GetVantagePointsPublicVantagePointCollectionItemGeo `pulumi:"geos"`
-	// A filter to return only resources that match the entire name given.
+	// A filter to return only the resources that match the entire name.
 	Name string `pulumi:"name"`
 }
 
@@ -6515,11 +7754,11 @@ type GetVantagePointsPublicVantagePointCollectionItemInput interface {
 }
 
 type GetVantagePointsPublicVantagePointCollectionItemArgs struct {
-	// A filter to return only resources that match the entire display name given.
+	// A filter to return only the resources that match the entire display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// Geographic summary about a vantage point.
+	// Geographic summary of a vantage point.
 	Geos GetVantagePointsPublicVantagePointCollectionItemGeoArrayInput `pulumi:"geos"`
-	// A filter to return only resources that match the entire name given.
+	// A filter to return only the resources that match the entire name.
 	Name pulumi.StringInput `pulumi:"name"`
 }
 
@@ -6574,19 +7813,19 @@ func (o GetVantagePointsPublicVantagePointCollectionItemOutput) ToGetVantagePoin
 	return o
 }
 
-// A filter to return only resources that match the entire display name given.
+// A filter to return only the resources that match the entire display name.
 func (o GetVantagePointsPublicVantagePointCollectionItemOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVantagePointsPublicVantagePointCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// Geographic summary about a vantage point.
+// Geographic summary of a vantage point.
 func (o GetVantagePointsPublicVantagePointCollectionItemOutput) Geos() GetVantagePointsPublicVantagePointCollectionItemGeoArrayOutput {
 	return o.ApplyT(func(v GetVantagePointsPublicVantagePointCollectionItem) []GetVantagePointsPublicVantagePointCollectionItemGeo {
 		return v.Geos
 	}).(GetVantagePointsPublicVantagePointCollectionItemGeoArrayOutput)
 }
 
-// A filter to return only resources that match the entire name given.
+// A filter to return only the resources that match the entire name.
 func (o GetVantagePointsPublicVantagePointCollectionItemOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVantagePointsPublicVantagePointCollectionItem) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -6772,12 +8011,30 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ConfigScriptParameterArrayInput)(nil)).Elem(), ConfigScriptParameterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConfigScriptParameterMonitorScriptParameterInput)(nil)).Elem(), ConfigScriptParameterMonitorScriptParameterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConfigScriptParameterMonitorScriptParameterArrayInput)(nil)).Elem(), ConfigScriptParameterMonitorScriptParameterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DedicatedVantagePointDvpStackDetailsInput)(nil)).Elem(), DedicatedVantagePointDvpStackDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DedicatedVantagePointDvpStackDetailsPtrInput)(nil)).Elem(), DedicatedVantagePointDvpStackDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DedicatedVantagePointMonitorStatusCountMapInput)(nil)).Elem(), DedicatedVantagePointMonitorStatusCountMapArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DedicatedVantagePointMonitorStatusCountMapArrayInput)(nil)).Elem(), DedicatedVantagePointMonitorStatusCountMapArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ScriptMonitorStatusCountMapInput)(nil)).Elem(), ScriptMonitorStatusCountMapArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ScriptMonitorStatusCountMapArrayInput)(nil)).Elem(), ScriptMonitorStatusCountMapArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ScriptParameterInput)(nil)).Elem(), ScriptParameterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ScriptParameterArrayInput)(nil)).Elem(), ScriptParameterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ScriptParameterScriptParameterInput)(nil)).Elem(), ScriptParameterScriptParameterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ScriptParameterScriptParameterArrayInput)(nil)).Elem(), ScriptParameterScriptParameterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDedicatedVantagePointDvpStackDetailInput)(nil)).Elem(), GetDedicatedVantagePointDvpStackDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDedicatedVantagePointDvpStackDetailArrayInput)(nil)).Elem(), GetDedicatedVantagePointDvpStackDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDedicatedVantagePointMonitorStatusCountMapInput)(nil)).Elem(), GetDedicatedVantagePointMonitorStatusCountMapArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDedicatedVantagePointMonitorStatusCountMapArrayInput)(nil)).Elem(), GetDedicatedVantagePointMonitorStatusCountMapArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDedicatedVantagePointsDedicatedVantagePointCollectionInput)(nil)).Elem(), GetDedicatedVantagePointsDedicatedVantagePointCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDedicatedVantagePointsDedicatedVantagePointCollectionArrayInput)(nil)).Elem(), GetDedicatedVantagePointsDedicatedVantagePointCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDedicatedVantagePointsDedicatedVantagePointCollectionItemInput)(nil)).Elem(), GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArrayInput)(nil)).Elem(), GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailInput)(nil)).Elem(), GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArrayInput)(nil)).Elem(), GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapInput)(nil)).Elem(), GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArrayInput)(nil)).Elem(), GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDedicatedVantagePointsFilterInput)(nil)).Elem(), GetDedicatedVantagePointsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDedicatedVantagePointsFilterArrayInput)(nil)).Elem(), GetDedicatedVantagePointsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorConfigurationInput)(nil)).Elem(), GetMonitorConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorConfigurationArrayInput)(nil)).Elem(), GetMonitorConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorConfigurationNetworkConfigurationInput)(nil)).Elem(), GetMonitorConfigurationNetworkConfigurationArgs{})
@@ -6870,12 +8127,30 @@ func init() {
 	pulumi.RegisterOutputType(ConfigScriptParameterArrayOutput{})
 	pulumi.RegisterOutputType(ConfigScriptParameterMonitorScriptParameterOutput{})
 	pulumi.RegisterOutputType(ConfigScriptParameterMonitorScriptParameterArrayOutput{})
+	pulumi.RegisterOutputType(DedicatedVantagePointDvpStackDetailsOutput{})
+	pulumi.RegisterOutputType(DedicatedVantagePointDvpStackDetailsPtrOutput{})
+	pulumi.RegisterOutputType(DedicatedVantagePointMonitorStatusCountMapOutput{})
+	pulumi.RegisterOutputType(DedicatedVantagePointMonitorStatusCountMapArrayOutput{})
 	pulumi.RegisterOutputType(ScriptMonitorStatusCountMapOutput{})
 	pulumi.RegisterOutputType(ScriptMonitorStatusCountMapArrayOutput{})
 	pulumi.RegisterOutputType(ScriptParameterOutput{})
 	pulumi.RegisterOutputType(ScriptParameterArrayOutput{})
 	pulumi.RegisterOutputType(ScriptParameterScriptParameterOutput{})
 	pulumi.RegisterOutputType(ScriptParameterScriptParameterArrayOutput{})
+	pulumi.RegisterOutputType(GetDedicatedVantagePointDvpStackDetailOutput{})
+	pulumi.RegisterOutputType(GetDedicatedVantagePointDvpStackDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDedicatedVantagePointMonitorStatusCountMapOutput{})
+	pulumi.RegisterOutputType(GetDedicatedVantagePointMonitorStatusCountMapArrayOutput{})
+	pulumi.RegisterOutputType(GetDedicatedVantagePointsDedicatedVantagePointCollectionOutput{})
+	pulumi.RegisterOutputType(GetDedicatedVantagePointsDedicatedVantagePointCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailOutput{})
+	pulumi.RegisterOutputType(GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapOutput{})
+	pulumi.RegisterOutputType(GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArrayOutput{})
+	pulumi.RegisterOutputType(GetDedicatedVantagePointsFilterOutput{})
+	pulumi.RegisterOutputType(GetDedicatedVantagePointsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetMonitorConfigurationOutput{})
 	pulumi.RegisterOutputType(GetMonitorConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetMonitorConfigurationNetworkConfigurationOutput{})

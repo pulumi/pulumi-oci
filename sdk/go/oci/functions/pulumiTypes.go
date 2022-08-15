@@ -419,6 +419,162 @@ func (o ApplicationTraceConfigPtrOutput) IsEnabled() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+type FunctionProvisionedConcurrencyConfig struct {
+	// (Updatable)
+	Count *int `pulumi:"count"`
+	// (Updatable) The strategy for provisioned concurrency to be used.
+	Strategy string `pulumi:"strategy"`
+}
+
+// FunctionProvisionedConcurrencyConfigInput is an input type that accepts FunctionProvisionedConcurrencyConfigArgs and FunctionProvisionedConcurrencyConfigOutput values.
+// You can construct a concrete instance of `FunctionProvisionedConcurrencyConfigInput` via:
+//
+//          FunctionProvisionedConcurrencyConfigArgs{...}
+type FunctionProvisionedConcurrencyConfigInput interface {
+	pulumi.Input
+
+	ToFunctionProvisionedConcurrencyConfigOutput() FunctionProvisionedConcurrencyConfigOutput
+	ToFunctionProvisionedConcurrencyConfigOutputWithContext(context.Context) FunctionProvisionedConcurrencyConfigOutput
+}
+
+type FunctionProvisionedConcurrencyConfigArgs struct {
+	// (Updatable)
+	Count pulumi.IntPtrInput `pulumi:"count"`
+	// (Updatable) The strategy for provisioned concurrency to be used.
+	Strategy pulumi.StringInput `pulumi:"strategy"`
+}
+
+func (FunctionProvisionedConcurrencyConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FunctionProvisionedConcurrencyConfig)(nil)).Elem()
+}
+
+func (i FunctionProvisionedConcurrencyConfigArgs) ToFunctionProvisionedConcurrencyConfigOutput() FunctionProvisionedConcurrencyConfigOutput {
+	return i.ToFunctionProvisionedConcurrencyConfigOutputWithContext(context.Background())
+}
+
+func (i FunctionProvisionedConcurrencyConfigArgs) ToFunctionProvisionedConcurrencyConfigOutputWithContext(ctx context.Context) FunctionProvisionedConcurrencyConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionProvisionedConcurrencyConfigOutput)
+}
+
+func (i FunctionProvisionedConcurrencyConfigArgs) ToFunctionProvisionedConcurrencyConfigPtrOutput() FunctionProvisionedConcurrencyConfigPtrOutput {
+	return i.ToFunctionProvisionedConcurrencyConfigPtrOutputWithContext(context.Background())
+}
+
+func (i FunctionProvisionedConcurrencyConfigArgs) ToFunctionProvisionedConcurrencyConfigPtrOutputWithContext(ctx context.Context) FunctionProvisionedConcurrencyConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionProvisionedConcurrencyConfigOutput).ToFunctionProvisionedConcurrencyConfigPtrOutputWithContext(ctx)
+}
+
+// FunctionProvisionedConcurrencyConfigPtrInput is an input type that accepts FunctionProvisionedConcurrencyConfigArgs, FunctionProvisionedConcurrencyConfigPtr and FunctionProvisionedConcurrencyConfigPtrOutput values.
+// You can construct a concrete instance of `FunctionProvisionedConcurrencyConfigPtrInput` via:
+//
+//          FunctionProvisionedConcurrencyConfigArgs{...}
+//
+//  or:
+//
+//          nil
+type FunctionProvisionedConcurrencyConfigPtrInput interface {
+	pulumi.Input
+
+	ToFunctionProvisionedConcurrencyConfigPtrOutput() FunctionProvisionedConcurrencyConfigPtrOutput
+	ToFunctionProvisionedConcurrencyConfigPtrOutputWithContext(context.Context) FunctionProvisionedConcurrencyConfigPtrOutput
+}
+
+type functionProvisionedConcurrencyConfigPtrType FunctionProvisionedConcurrencyConfigArgs
+
+func FunctionProvisionedConcurrencyConfigPtr(v *FunctionProvisionedConcurrencyConfigArgs) FunctionProvisionedConcurrencyConfigPtrInput {
+	return (*functionProvisionedConcurrencyConfigPtrType)(v)
+}
+
+func (*functionProvisionedConcurrencyConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**FunctionProvisionedConcurrencyConfig)(nil)).Elem()
+}
+
+func (i *functionProvisionedConcurrencyConfigPtrType) ToFunctionProvisionedConcurrencyConfigPtrOutput() FunctionProvisionedConcurrencyConfigPtrOutput {
+	return i.ToFunctionProvisionedConcurrencyConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *functionProvisionedConcurrencyConfigPtrType) ToFunctionProvisionedConcurrencyConfigPtrOutputWithContext(ctx context.Context) FunctionProvisionedConcurrencyConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FunctionProvisionedConcurrencyConfigPtrOutput)
+}
+
+type FunctionProvisionedConcurrencyConfigOutput struct{ *pulumi.OutputState }
+
+func (FunctionProvisionedConcurrencyConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FunctionProvisionedConcurrencyConfig)(nil)).Elem()
+}
+
+func (o FunctionProvisionedConcurrencyConfigOutput) ToFunctionProvisionedConcurrencyConfigOutput() FunctionProvisionedConcurrencyConfigOutput {
+	return o
+}
+
+func (o FunctionProvisionedConcurrencyConfigOutput) ToFunctionProvisionedConcurrencyConfigOutputWithContext(ctx context.Context) FunctionProvisionedConcurrencyConfigOutput {
+	return o
+}
+
+func (o FunctionProvisionedConcurrencyConfigOutput) ToFunctionProvisionedConcurrencyConfigPtrOutput() FunctionProvisionedConcurrencyConfigPtrOutput {
+	return o.ToFunctionProvisionedConcurrencyConfigPtrOutputWithContext(context.Background())
+}
+
+func (o FunctionProvisionedConcurrencyConfigOutput) ToFunctionProvisionedConcurrencyConfigPtrOutputWithContext(ctx context.Context) FunctionProvisionedConcurrencyConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v FunctionProvisionedConcurrencyConfig) *FunctionProvisionedConcurrencyConfig {
+		return &v
+	}).(FunctionProvisionedConcurrencyConfigPtrOutput)
+}
+
+// (Updatable)
+func (o FunctionProvisionedConcurrencyConfigOutput) Count() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v FunctionProvisionedConcurrencyConfig) *int { return v.Count }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The strategy for provisioned concurrency to be used.
+func (o FunctionProvisionedConcurrencyConfigOutput) Strategy() pulumi.StringOutput {
+	return o.ApplyT(func(v FunctionProvisionedConcurrencyConfig) string { return v.Strategy }).(pulumi.StringOutput)
+}
+
+type FunctionProvisionedConcurrencyConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (FunctionProvisionedConcurrencyConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**FunctionProvisionedConcurrencyConfig)(nil)).Elem()
+}
+
+func (o FunctionProvisionedConcurrencyConfigPtrOutput) ToFunctionProvisionedConcurrencyConfigPtrOutput() FunctionProvisionedConcurrencyConfigPtrOutput {
+	return o
+}
+
+func (o FunctionProvisionedConcurrencyConfigPtrOutput) ToFunctionProvisionedConcurrencyConfigPtrOutputWithContext(ctx context.Context) FunctionProvisionedConcurrencyConfigPtrOutput {
+	return o
+}
+
+func (o FunctionProvisionedConcurrencyConfigPtrOutput) Elem() FunctionProvisionedConcurrencyConfigOutput {
+	return o.ApplyT(func(v *FunctionProvisionedConcurrencyConfig) FunctionProvisionedConcurrencyConfig {
+		if v != nil {
+			return *v
+		}
+		var ret FunctionProvisionedConcurrencyConfig
+		return ret
+	}).(FunctionProvisionedConcurrencyConfigOutput)
+}
+
+// (Updatable)
+func (o FunctionProvisionedConcurrencyConfigPtrOutput) Count() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *FunctionProvisionedConcurrencyConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Count
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The strategy for provisioned concurrency to be used.
+func (o FunctionProvisionedConcurrencyConfigPtrOutput) Strategy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FunctionProvisionedConcurrencyConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Strategy
+	}).(pulumi.StringPtrOutput)
+}
+
 type FunctionTraceConfig struct {
 	// (Updatable) Define if tracing is enabled for the resource.
 	IsEnabled *bool `pulumi:"isEnabled"`
@@ -1500,6 +1656,109 @@ func (o GetApplicationsFilterArrayOutput) Index(i pulumi.IntInput) GetApplicatio
 	}).(GetApplicationsFilterOutput)
 }
 
+type GetFunctionProvisionedConcurrencyConfig struct {
+	Count int `pulumi:"count"`
+	// The strategy for provisioned concurrency to be used.
+	Strategy string `pulumi:"strategy"`
+}
+
+// GetFunctionProvisionedConcurrencyConfigInput is an input type that accepts GetFunctionProvisionedConcurrencyConfigArgs and GetFunctionProvisionedConcurrencyConfigOutput values.
+// You can construct a concrete instance of `GetFunctionProvisionedConcurrencyConfigInput` via:
+//
+//          GetFunctionProvisionedConcurrencyConfigArgs{...}
+type GetFunctionProvisionedConcurrencyConfigInput interface {
+	pulumi.Input
+
+	ToGetFunctionProvisionedConcurrencyConfigOutput() GetFunctionProvisionedConcurrencyConfigOutput
+	ToGetFunctionProvisionedConcurrencyConfigOutputWithContext(context.Context) GetFunctionProvisionedConcurrencyConfigOutput
+}
+
+type GetFunctionProvisionedConcurrencyConfigArgs struct {
+	Count pulumi.IntInput `pulumi:"count"`
+	// The strategy for provisioned concurrency to be used.
+	Strategy pulumi.StringInput `pulumi:"strategy"`
+}
+
+func (GetFunctionProvisionedConcurrencyConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionProvisionedConcurrencyConfig)(nil)).Elem()
+}
+
+func (i GetFunctionProvisionedConcurrencyConfigArgs) ToGetFunctionProvisionedConcurrencyConfigOutput() GetFunctionProvisionedConcurrencyConfigOutput {
+	return i.ToGetFunctionProvisionedConcurrencyConfigOutputWithContext(context.Background())
+}
+
+func (i GetFunctionProvisionedConcurrencyConfigArgs) ToGetFunctionProvisionedConcurrencyConfigOutputWithContext(ctx context.Context) GetFunctionProvisionedConcurrencyConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionProvisionedConcurrencyConfigOutput)
+}
+
+// GetFunctionProvisionedConcurrencyConfigArrayInput is an input type that accepts GetFunctionProvisionedConcurrencyConfigArray and GetFunctionProvisionedConcurrencyConfigArrayOutput values.
+// You can construct a concrete instance of `GetFunctionProvisionedConcurrencyConfigArrayInput` via:
+//
+//          GetFunctionProvisionedConcurrencyConfigArray{ GetFunctionProvisionedConcurrencyConfigArgs{...} }
+type GetFunctionProvisionedConcurrencyConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetFunctionProvisionedConcurrencyConfigArrayOutput() GetFunctionProvisionedConcurrencyConfigArrayOutput
+	ToGetFunctionProvisionedConcurrencyConfigArrayOutputWithContext(context.Context) GetFunctionProvisionedConcurrencyConfigArrayOutput
+}
+
+type GetFunctionProvisionedConcurrencyConfigArray []GetFunctionProvisionedConcurrencyConfigInput
+
+func (GetFunctionProvisionedConcurrencyConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFunctionProvisionedConcurrencyConfig)(nil)).Elem()
+}
+
+func (i GetFunctionProvisionedConcurrencyConfigArray) ToGetFunctionProvisionedConcurrencyConfigArrayOutput() GetFunctionProvisionedConcurrencyConfigArrayOutput {
+	return i.ToGetFunctionProvisionedConcurrencyConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetFunctionProvisionedConcurrencyConfigArray) ToGetFunctionProvisionedConcurrencyConfigArrayOutputWithContext(ctx context.Context) GetFunctionProvisionedConcurrencyConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionProvisionedConcurrencyConfigArrayOutput)
+}
+
+type GetFunctionProvisionedConcurrencyConfigOutput struct{ *pulumi.OutputState }
+
+func (GetFunctionProvisionedConcurrencyConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionProvisionedConcurrencyConfig)(nil)).Elem()
+}
+
+func (o GetFunctionProvisionedConcurrencyConfigOutput) ToGetFunctionProvisionedConcurrencyConfigOutput() GetFunctionProvisionedConcurrencyConfigOutput {
+	return o
+}
+
+func (o GetFunctionProvisionedConcurrencyConfigOutput) ToGetFunctionProvisionedConcurrencyConfigOutputWithContext(ctx context.Context) GetFunctionProvisionedConcurrencyConfigOutput {
+	return o
+}
+
+func (o GetFunctionProvisionedConcurrencyConfigOutput) Count() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFunctionProvisionedConcurrencyConfig) int { return v.Count }).(pulumi.IntOutput)
+}
+
+// The strategy for provisioned concurrency to be used.
+func (o GetFunctionProvisionedConcurrencyConfigOutput) Strategy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionProvisionedConcurrencyConfig) string { return v.Strategy }).(pulumi.StringOutput)
+}
+
+type GetFunctionProvisionedConcurrencyConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFunctionProvisionedConcurrencyConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFunctionProvisionedConcurrencyConfig)(nil)).Elem()
+}
+
+func (o GetFunctionProvisionedConcurrencyConfigArrayOutput) ToGetFunctionProvisionedConcurrencyConfigArrayOutput() GetFunctionProvisionedConcurrencyConfigArrayOutput {
+	return o
+}
+
+func (o GetFunctionProvisionedConcurrencyConfigArrayOutput) ToGetFunctionProvisionedConcurrencyConfigArrayOutputWithContext(ctx context.Context) GetFunctionProvisionedConcurrencyConfigArrayOutput {
+	return o
+}
+
+func (o GetFunctionProvisionedConcurrencyConfigArrayOutput) Index(i pulumi.IntInput) GetFunctionProvisionedConcurrencyConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFunctionProvisionedConcurrencyConfig {
+		return vs[0].([]GetFunctionProvisionedConcurrencyConfig)[vs[1].(int)]
+	}).(GetFunctionProvisionedConcurrencyConfigOutput)
+}
+
 type GetFunctionTraceConfig struct {
 	// Define if tracing is enabled for the resource.
 	IsEnabled bool `pulumi:"isEnabled"`
@@ -1726,6 +1985,8 @@ type GetFunctionsFunction struct {
 	InvokeEndpoint string `pulumi:"invokeEndpoint"`
 	// Maximum usable memory for the function (MiB).
 	MemoryInMbs string `pulumi:"memoryInMbs"`
+	// Define the strategy for provisioned concurrency for the function.
+	ProvisionedConcurrencyConfigs []GetFunctionsFunctionProvisionedConcurrencyConfig `pulumi:"provisionedConcurrencyConfigs"`
 	// A filter to return only functions that match the lifecycle state in this parameter. Example: `Creating`
 	State string `pulumi:"state"`
 	// The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
@@ -1772,6 +2033,8 @@ type GetFunctionsFunctionArgs struct {
 	InvokeEndpoint pulumi.StringInput `pulumi:"invokeEndpoint"`
 	// Maximum usable memory for the function (MiB).
 	MemoryInMbs pulumi.StringInput `pulumi:"memoryInMbs"`
+	// Define the strategy for provisioned concurrency for the function.
+	ProvisionedConcurrencyConfigs GetFunctionsFunctionProvisionedConcurrencyConfigArrayInput `pulumi:"provisionedConcurrencyConfigs"`
 	// A filter to return only functions that match the lifecycle state in this parameter. Example: `Creating`
 	State pulumi.StringInput `pulumi:"state"`
 	// The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
@@ -1890,6 +2153,13 @@ func (o GetFunctionsFunctionOutput) MemoryInMbs() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFunctionsFunction) string { return v.MemoryInMbs }).(pulumi.StringOutput)
 }
 
+// Define the strategy for provisioned concurrency for the function.
+func (o GetFunctionsFunctionOutput) ProvisionedConcurrencyConfigs() GetFunctionsFunctionProvisionedConcurrencyConfigArrayOutput {
+	return o.ApplyT(func(v GetFunctionsFunction) []GetFunctionsFunctionProvisionedConcurrencyConfig {
+		return v.ProvisionedConcurrencyConfigs
+	}).(GetFunctionsFunctionProvisionedConcurrencyConfigArrayOutput)
+}
+
 // A filter to return only functions that match the lifecycle state in this parameter. Example: `Creating`
 func (o GetFunctionsFunctionOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFunctionsFunction) string { return v.State }).(pulumi.StringOutput)
@@ -1933,6 +2203,109 @@ func (o GetFunctionsFunctionArrayOutput) Index(i pulumi.IntInput) GetFunctionsFu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFunctionsFunction {
 		return vs[0].([]GetFunctionsFunction)[vs[1].(int)]
 	}).(GetFunctionsFunctionOutput)
+}
+
+type GetFunctionsFunctionProvisionedConcurrencyConfig struct {
+	Count int `pulumi:"count"`
+	// The strategy for provisioned concurrency to be used.
+	Strategy string `pulumi:"strategy"`
+}
+
+// GetFunctionsFunctionProvisionedConcurrencyConfigInput is an input type that accepts GetFunctionsFunctionProvisionedConcurrencyConfigArgs and GetFunctionsFunctionProvisionedConcurrencyConfigOutput values.
+// You can construct a concrete instance of `GetFunctionsFunctionProvisionedConcurrencyConfigInput` via:
+//
+//          GetFunctionsFunctionProvisionedConcurrencyConfigArgs{...}
+type GetFunctionsFunctionProvisionedConcurrencyConfigInput interface {
+	pulumi.Input
+
+	ToGetFunctionsFunctionProvisionedConcurrencyConfigOutput() GetFunctionsFunctionProvisionedConcurrencyConfigOutput
+	ToGetFunctionsFunctionProvisionedConcurrencyConfigOutputWithContext(context.Context) GetFunctionsFunctionProvisionedConcurrencyConfigOutput
+}
+
+type GetFunctionsFunctionProvisionedConcurrencyConfigArgs struct {
+	Count pulumi.IntInput `pulumi:"count"`
+	// The strategy for provisioned concurrency to be used.
+	Strategy pulumi.StringInput `pulumi:"strategy"`
+}
+
+func (GetFunctionsFunctionProvisionedConcurrencyConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionsFunctionProvisionedConcurrencyConfig)(nil)).Elem()
+}
+
+func (i GetFunctionsFunctionProvisionedConcurrencyConfigArgs) ToGetFunctionsFunctionProvisionedConcurrencyConfigOutput() GetFunctionsFunctionProvisionedConcurrencyConfigOutput {
+	return i.ToGetFunctionsFunctionProvisionedConcurrencyConfigOutputWithContext(context.Background())
+}
+
+func (i GetFunctionsFunctionProvisionedConcurrencyConfigArgs) ToGetFunctionsFunctionProvisionedConcurrencyConfigOutputWithContext(ctx context.Context) GetFunctionsFunctionProvisionedConcurrencyConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionsFunctionProvisionedConcurrencyConfigOutput)
+}
+
+// GetFunctionsFunctionProvisionedConcurrencyConfigArrayInput is an input type that accepts GetFunctionsFunctionProvisionedConcurrencyConfigArray and GetFunctionsFunctionProvisionedConcurrencyConfigArrayOutput values.
+// You can construct a concrete instance of `GetFunctionsFunctionProvisionedConcurrencyConfigArrayInput` via:
+//
+//          GetFunctionsFunctionProvisionedConcurrencyConfigArray{ GetFunctionsFunctionProvisionedConcurrencyConfigArgs{...} }
+type GetFunctionsFunctionProvisionedConcurrencyConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetFunctionsFunctionProvisionedConcurrencyConfigArrayOutput() GetFunctionsFunctionProvisionedConcurrencyConfigArrayOutput
+	ToGetFunctionsFunctionProvisionedConcurrencyConfigArrayOutputWithContext(context.Context) GetFunctionsFunctionProvisionedConcurrencyConfigArrayOutput
+}
+
+type GetFunctionsFunctionProvisionedConcurrencyConfigArray []GetFunctionsFunctionProvisionedConcurrencyConfigInput
+
+func (GetFunctionsFunctionProvisionedConcurrencyConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFunctionsFunctionProvisionedConcurrencyConfig)(nil)).Elem()
+}
+
+func (i GetFunctionsFunctionProvisionedConcurrencyConfigArray) ToGetFunctionsFunctionProvisionedConcurrencyConfigArrayOutput() GetFunctionsFunctionProvisionedConcurrencyConfigArrayOutput {
+	return i.ToGetFunctionsFunctionProvisionedConcurrencyConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetFunctionsFunctionProvisionedConcurrencyConfigArray) ToGetFunctionsFunctionProvisionedConcurrencyConfigArrayOutputWithContext(ctx context.Context) GetFunctionsFunctionProvisionedConcurrencyConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionsFunctionProvisionedConcurrencyConfigArrayOutput)
+}
+
+type GetFunctionsFunctionProvisionedConcurrencyConfigOutput struct{ *pulumi.OutputState }
+
+func (GetFunctionsFunctionProvisionedConcurrencyConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFunctionsFunctionProvisionedConcurrencyConfig)(nil)).Elem()
+}
+
+func (o GetFunctionsFunctionProvisionedConcurrencyConfigOutput) ToGetFunctionsFunctionProvisionedConcurrencyConfigOutput() GetFunctionsFunctionProvisionedConcurrencyConfigOutput {
+	return o
+}
+
+func (o GetFunctionsFunctionProvisionedConcurrencyConfigOutput) ToGetFunctionsFunctionProvisionedConcurrencyConfigOutputWithContext(ctx context.Context) GetFunctionsFunctionProvisionedConcurrencyConfigOutput {
+	return o
+}
+
+func (o GetFunctionsFunctionProvisionedConcurrencyConfigOutput) Count() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFunctionsFunctionProvisionedConcurrencyConfig) int { return v.Count }).(pulumi.IntOutput)
+}
+
+// The strategy for provisioned concurrency to be used.
+func (o GetFunctionsFunctionProvisionedConcurrencyConfigOutput) Strategy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFunctionsFunctionProvisionedConcurrencyConfig) string { return v.Strategy }).(pulumi.StringOutput)
+}
+
+type GetFunctionsFunctionProvisionedConcurrencyConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFunctionsFunctionProvisionedConcurrencyConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFunctionsFunctionProvisionedConcurrencyConfig)(nil)).Elem()
+}
+
+func (o GetFunctionsFunctionProvisionedConcurrencyConfigArrayOutput) ToGetFunctionsFunctionProvisionedConcurrencyConfigArrayOutput() GetFunctionsFunctionProvisionedConcurrencyConfigArrayOutput {
+	return o
+}
+
+func (o GetFunctionsFunctionProvisionedConcurrencyConfigArrayOutput) ToGetFunctionsFunctionProvisionedConcurrencyConfigArrayOutputWithContext(ctx context.Context) GetFunctionsFunctionProvisionedConcurrencyConfigArrayOutput {
+	return o
+}
+
+func (o GetFunctionsFunctionProvisionedConcurrencyConfigArrayOutput) Index(i pulumi.IntInput) GetFunctionsFunctionProvisionedConcurrencyConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFunctionsFunctionProvisionedConcurrencyConfig {
+		return vs[0].([]GetFunctionsFunctionProvisionedConcurrencyConfig)[vs[1].(int)]
+	}).(GetFunctionsFunctionProvisionedConcurrencyConfigOutput)
 }
 
 type GetFunctionsFunctionTraceConfig struct {
@@ -2039,6 +2412,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ApplicationImagePolicyConfigKeyDetailArrayInput)(nil)).Elem(), ApplicationImagePolicyConfigKeyDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ApplicationTraceConfigInput)(nil)).Elem(), ApplicationTraceConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ApplicationTraceConfigPtrInput)(nil)).Elem(), ApplicationTraceConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FunctionProvisionedConcurrencyConfigInput)(nil)).Elem(), FunctionProvisionedConcurrencyConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FunctionProvisionedConcurrencyConfigPtrInput)(nil)).Elem(), FunctionProvisionedConcurrencyConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FunctionTraceConfigInput)(nil)).Elem(), FunctionTraceConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FunctionTraceConfigPtrInput)(nil)).Elem(), FunctionTraceConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationImagePolicyConfigInput)(nil)).Elem(), GetApplicationImagePolicyConfigArgs{})
@@ -2057,12 +2432,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationsApplicationTraceConfigArrayInput)(nil)).Elem(), GetApplicationsApplicationTraceConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationsFilterInput)(nil)).Elem(), GetApplicationsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationsFilterArrayInput)(nil)).Elem(), GetApplicationsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionProvisionedConcurrencyConfigInput)(nil)).Elem(), GetFunctionProvisionedConcurrencyConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionProvisionedConcurrencyConfigArrayInput)(nil)).Elem(), GetFunctionProvisionedConcurrencyConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionTraceConfigInput)(nil)).Elem(), GetFunctionTraceConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionTraceConfigArrayInput)(nil)).Elem(), GetFunctionTraceConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsFilterInput)(nil)).Elem(), GetFunctionsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsFilterArrayInput)(nil)).Elem(), GetFunctionsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsFunctionInput)(nil)).Elem(), GetFunctionsFunctionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsFunctionArrayInput)(nil)).Elem(), GetFunctionsFunctionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsFunctionProvisionedConcurrencyConfigInput)(nil)).Elem(), GetFunctionsFunctionProvisionedConcurrencyConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsFunctionProvisionedConcurrencyConfigArrayInput)(nil)).Elem(), GetFunctionsFunctionProvisionedConcurrencyConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsFunctionTraceConfigInput)(nil)).Elem(), GetFunctionsFunctionTraceConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsFunctionTraceConfigArrayInput)(nil)).Elem(), GetFunctionsFunctionTraceConfigArray{})
 	pulumi.RegisterOutputType(ApplicationImagePolicyConfigOutput{})
@@ -2071,6 +2450,8 @@ func init() {
 	pulumi.RegisterOutputType(ApplicationImagePolicyConfigKeyDetailArrayOutput{})
 	pulumi.RegisterOutputType(ApplicationTraceConfigOutput{})
 	pulumi.RegisterOutputType(ApplicationTraceConfigPtrOutput{})
+	pulumi.RegisterOutputType(FunctionProvisionedConcurrencyConfigOutput{})
+	pulumi.RegisterOutputType(FunctionProvisionedConcurrencyConfigPtrOutput{})
 	pulumi.RegisterOutputType(FunctionTraceConfigOutput{})
 	pulumi.RegisterOutputType(FunctionTraceConfigPtrOutput{})
 	pulumi.RegisterOutputType(GetApplicationImagePolicyConfigOutput{})
@@ -2089,12 +2470,16 @@ func init() {
 	pulumi.RegisterOutputType(GetApplicationsApplicationTraceConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetApplicationsFilterOutput{})
 	pulumi.RegisterOutputType(GetApplicationsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetFunctionProvisionedConcurrencyConfigOutput{})
+	pulumi.RegisterOutputType(GetFunctionProvisionedConcurrencyConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetFunctionTraceConfigOutput{})
 	pulumi.RegisterOutputType(GetFunctionTraceConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetFunctionsFilterOutput{})
 	pulumi.RegisterOutputType(GetFunctionsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetFunctionsFunctionOutput{})
 	pulumi.RegisterOutputType(GetFunctionsFunctionArrayOutput{})
+	pulumi.RegisterOutputType(GetFunctionsFunctionProvisionedConcurrencyConfigOutput{})
+	pulumi.RegisterOutputType(GetFunctionsFunctionProvisionedConcurrencyConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetFunctionsFunctionTraceConfigOutput{})
 	pulumi.RegisterOutputType(GetFunctionsFunctionTraceConfigArrayOutput{})
 }

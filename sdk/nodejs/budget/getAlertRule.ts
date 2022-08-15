@@ -7,7 +7,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Alert Rule resource in Oracle Cloud Infrastructure Budget service.
  *
- * Gets an Alert Rule for a specified Budget.
+ * Gets an Alert Rule for a specified budget.
  *
  * ## Example Usage
  *
@@ -38,11 +38,11 @@ export function getAlertRule(args: GetAlertRuleArgs, opts?: pulumi.InvokeOptions
  */
 export interface GetAlertRuleArgs {
     /**
-     * The unique Alert Rule OCID
+     * The unique Alert Rule OCID.
      */
     alertRuleId: string;
     /**
-     * The unique Budget OCID
+     * The unique budget OCID.
      */
     budgetId: string;
 }
@@ -53,7 +53,7 @@ export interface GetAlertRuleArgs {
 export interface GetAlertRuleResult {
     readonly alertRuleId: string;
     /**
-     * The OCID of the budget
+     * The OCID of the budget.
      */
     readonly budgetId: string;
     /**
@@ -65,7 +65,7 @@ export interface GetAlertRuleResult {
      */
     readonly description: string;
     /**
-     * The name of the alert rule.
+     * The name of the alert rule. Avoid entering confidential information.
      */
     readonly displayName: string;
     /**
@@ -73,15 +73,15 @@ export interface GetAlertRuleResult {
      */
     readonly freeformTags: {[key: string]: any};
     /**
-     * The OCID of the alert rule
+     * The OCID of the alert rule.
      */
     readonly id: string;
     /**
-     * Custom message that will be sent when alert is triggered
+     * The custom message that will be sent when the alert is triggered.
      */
     readonly message: string;
     /**
-     * Delimited list of email addresses to receive the alert when it triggers. Delimiter character can be comma, space, TAB, or semicolon.
+     * The delimited list of email addresses to receive the alert when it triggers. Delimiter characters can be a comma, space, TAB, or semicolon.
      */
     readonly recipients: string;
     /**
@@ -89,7 +89,7 @@ export interface GetAlertRuleResult {
      */
     readonly state: string;
     /**
-     * The threshold for triggering the alert. If thresholdType is PERCENTAGE, the maximum value is 10000.
+     * The threshold for triggering the alert. If the thresholdType is PERCENTAGE, the maximum value is 10000.
      */
     readonly threshold: number;
     /**
@@ -97,19 +97,19 @@ export interface GetAlertRuleResult {
      */
     readonly thresholdType: string;
     /**
-     * Time when budget was created
+     * The time when the budget was created.
      */
     readonly timeCreated: string;
     /**
-     * Time when budget was updated
+     * The time when the budget was updated.
      */
     readonly timeUpdated: string;
     /**
-     * The type of alert. Valid values are ACTUAL (the alert will trigger based on actual usage) or FORECAST (the alert will trigger based on predicted usage).
+     * The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
      */
     readonly type: string;
     /**
-     * Version of the alert rule. Starts from 1 and increments by 1.
+     * The version of the alert rule. Starts from 1 and increments by 1.
      */
     readonly version: number;
 }
@@ -123,11 +123,11 @@ export function getAlertRuleOutput(args: GetAlertRuleOutputArgs, opts?: pulumi.I
  */
 export interface GetAlertRuleOutputArgs {
     /**
-     * The unique Alert Rule OCID
+     * The unique Alert Rule OCID.
      */
     alertRuleId: pulumi.Input<string>;
     /**
-     * The unique Budget OCID
+     * The unique budget OCID.
      */
     budgetId: pulumi.Input<string>;
 }

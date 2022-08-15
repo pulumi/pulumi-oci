@@ -31,7 +31,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         public Input<Inputs.TargetTargetResponderRecipeResponderRuleDetailsArgs> Details { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) DetectorTemplate Identifier
+        /// (Updatable) DetectorTemplate identifier.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }

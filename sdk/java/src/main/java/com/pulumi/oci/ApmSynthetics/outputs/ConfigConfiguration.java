@@ -84,7 +84,7 @@ public final class ConfigConfiguration {
      */
     private final @Nullable String verifyResponseContent;
     /**
-     * @return (Updatable) Verify all the search strings present in response. If any search string is not present in the response, then it will be considered as a failure.
+     * @return (Updatable) Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
      * 
      */
     private final @Nullable List<ConfigConfigurationVerifyText> verifyTexts;
@@ -213,7 +213,7 @@ public final class ConfigConfiguration {
         return Optional.ofNullable(this.verifyResponseContent);
     }
     /**
-     * @return (Updatable) Verify all the search strings present in response. If any search string is not present in the response, then it will be considered as a failure.
+     * @return (Updatable) Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
      * 
      */
     public List<ConfigConfigurationVerifyText> verifyTexts() {

@@ -6,6 +6,7 @@ package com.pulumi.oci.Waf.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Waf.outputs.AppFirewallPolicyResponseProtectionRuleProtectionCapability;
 import com.pulumi.oci.Waf.outputs.AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettings;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -31,12 +32,17 @@ public final class AppFirewallPolicyResponseProtectionRule {
      */
     private final @Nullable String conditionLanguage;
     /**
+     * @return (Updatable) Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
+     * 
+     */
+    private final @Nullable Boolean isBodyInspectionEnabled;
+    /**
      * @return (Updatable) Rule name. Must be unique within the module.
      * 
      */
     private final String name;
     /**
-     * @return (Updatable) An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are executed in order of appearance. The array cannot contain entries with the same pair of capability key and version more than once.
+     * @return (Updatable) An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
      * 
      */
     private final List<AppFirewallPolicyResponseProtectionRuleProtectionCapability> protectionCapabilities;
@@ -56,6 +62,7 @@ public final class AppFirewallPolicyResponseProtectionRule {
         @CustomType.Parameter("actionName") String actionName,
         @CustomType.Parameter("condition") @Nullable String condition,
         @CustomType.Parameter("conditionLanguage") @Nullable String conditionLanguage,
+        @CustomType.Parameter("isBodyInspectionEnabled") @Nullable Boolean isBodyInspectionEnabled,
         @CustomType.Parameter("name") String name,
         @CustomType.Parameter("protectionCapabilities") List<AppFirewallPolicyResponseProtectionRuleProtectionCapability> protectionCapabilities,
         @CustomType.Parameter("protectionCapabilitySettings") @Nullable AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettings protectionCapabilitySettings,
@@ -63,6 +70,7 @@ public final class AppFirewallPolicyResponseProtectionRule {
         this.actionName = actionName;
         this.condition = condition;
         this.conditionLanguage = conditionLanguage;
+        this.isBodyInspectionEnabled = isBodyInspectionEnabled;
         this.name = name;
         this.protectionCapabilities = protectionCapabilities;
         this.protectionCapabilitySettings = protectionCapabilitySettings;
@@ -92,6 +100,13 @@ public final class AppFirewallPolicyResponseProtectionRule {
         return Optional.ofNullable(this.conditionLanguage);
     }
     /**
+     * @return (Updatable) Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
+     * 
+     */
+    public Optional<Boolean> isBodyInspectionEnabled() {
+        return Optional.ofNullable(this.isBodyInspectionEnabled);
+    }
+    /**
      * @return (Updatable) Rule name. Must be unique within the module.
      * 
      */
@@ -99,7 +114,7 @@ public final class AppFirewallPolicyResponseProtectionRule {
         return this.name;
     }
     /**
-     * @return (Updatable) An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are executed in order of appearance. The array cannot contain entries with the same pair of capability key and version more than once.
+     * @return (Updatable) An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
      * 
      */
     public List<AppFirewallPolicyResponseProtectionRuleProtectionCapability> protectionCapabilities() {
@@ -132,6 +147,7 @@ public final class AppFirewallPolicyResponseProtectionRule {
         private String actionName;
         private @Nullable String condition;
         private @Nullable String conditionLanguage;
+        private @Nullable Boolean isBodyInspectionEnabled;
         private String name;
         private List<AppFirewallPolicyResponseProtectionRuleProtectionCapability> protectionCapabilities;
         private @Nullable AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettings protectionCapabilitySettings;
@@ -146,6 +162,7 @@ public final class AppFirewallPolicyResponseProtectionRule {
     	      this.actionName = defaults.actionName;
     	      this.condition = defaults.condition;
     	      this.conditionLanguage = defaults.conditionLanguage;
+    	      this.isBodyInspectionEnabled = defaults.isBodyInspectionEnabled;
     	      this.name = defaults.name;
     	      this.protectionCapabilities = defaults.protectionCapabilities;
     	      this.protectionCapabilitySettings = defaults.protectionCapabilitySettings;
@@ -162,6 +179,10 @@ public final class AppFirewallPolicyResponseProtectionRule {
         }
         public Builder conditionLanguage(@Nullable String conditionLanguage) {
             this.conditionLanguage = conditionLanguage;
+            return this;
+        }
+        public Builder isBodyInspectionEnabled(@Nullable Boolean isBodyInspectionEnabled) {
+            this.isBodyInspectionEnabled = isBodyInspectionEnabled;
             return this;
         }
         public Builder name(String name) {
@@ -183,7 +204,7 @@ public final class AppFirewallPolicyResponseProtectionRule {
             this.type = Objects.requireNonNull(type);
             return this;
         }        public AppFirewallPolicyResponseProtectionRule build() {
-            return new AppFirewallPolicyResponseProtectionRule(actionName, condition, conditionLanguage, name, protectionCapabilities, protectionCapabilitySettings, type);
+            return new AppFirewallPolicyResponseProtectionRule(actionName, condition, conditionLanguage, isBodyInspectionEnabled, name, protectionCapabilities, protectionCapabilitySettings, type);
         }
     }
 }

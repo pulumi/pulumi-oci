@@ -6,6 +6,7 @@ package com.pulumi.oci.Ocvp.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Ocvp.outputs.GetSddcHcxOnPremLicense;
 import java.lang.Boolean;
+import java.lang.Double;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -20,6 +21,11 @@ public final class GetSddcResult {
      * 
      */
     private final Integer actualEsxiHostsCount;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+     * 
+     */
+    private final String capacityReservationId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
      * 
@@ -86,6 +92,16 @@ public final class GetSddcResult {
      * 
      */
     private final String id;
+    /**
+     * @return The initial OCPU count of the SDDC&#39;s ESXi hosts.
+     * 
+     */
+    private final Double initialHostOcpuCount;
+    /**
+     * @return The initial compute shape of the SDDC&#39;s ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+     * 
+     */
+    private final String initialHostShapeName;
     /**
      * @return The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
      * 
@@ -263,6 +279,7 @@ public final class GetSddcResult {
     @CustomType.Constructor
     private GetSddcResult(
         @CustomType.Parameter("actualEsxiHostsCount") Integer actualEsxiHostsCount,
+        @CustomType.Parameter("capacityReservationId") String capacityReservationId,
         @CustomType.Parameter("compartmentId") String compartmentId,
         @CustomType.Parameter("computeAvailabilityDomain") String computeAvailabilityDomain,
         @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
@@ -277,6 +294,8 @@ public final class GetSddcResult {
         @CustomType.Parameter("hcxPrivateIpId") String hcxPrivateIpId,
         @CustomType.Parameter("hcxVlanId") String hcxVlanId,
         @CustomType.Parameter("id") String id,
+        @CustomType.Parameter("initialHostOcpuCount") Double initialHostOcpuCount,
+        @CustomType.Parameter("initialHostShapeName") String initialHostShapeName,
         @CustomType.Parameter("initialSku") String initialSku,
         @CustomType.Parameter("instanceDisplayNamePrefix") String instanceDisplayNamePrefix,
         @CustomType.Parameter("isHcxEnabled") Boolean isHcxEnabled,
@@ -315,6 +334,7 @@ public final class GetSddcResult {
         @CustomType.Parameter("vsphereVlanId") String vsphereVlanId,
         @CustomType.Parameter("workloadNetworkCidr") String workloadNetworkCidr) {
         this.actualEsxiHostsCount = actualEsxiHostsCount;
+        this.capacityReservationId = capacityReservationId;
         this.compartmentId = compartmentId;
         this.computeAvailabilityDomain = computeAvailabilityDomain;
         this.definedTags = definedTags;
@@ -329,6 +349,8 @@ public final class GetSddcResult {
         this.hcxPrivateIpId = hcxPrivateIpId;
         this.hcxVlanId = hcxVlanId;
         this.id = id;
+        this.initialHostOcpuCount = initialHostOcpuCount;
+        this.initialHostShapeName = initialHostShapeName;
         this.initialSku = initialSku;
         this.instanceDisplayNamePrefix = instanceDisplayNamePrefix;
         this.isHcxEnabled = isHcxEnabled;
@@ -374,6 +396,13 @@ public final class GetSddcResult {
      */
     public Integer actualEsxiHostsCount() {
         return this.actualEsxiHostsCount;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+     * 
+     */
+    public String capacityReservationId() {
+        return this.capacityReservationId;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
@@ -468,6 +497,20 @@ public final class GetSddcResult {
      */
     public String id() {
         return this.id;
+    }
+    /**
+     * @return The initial OCPU count of the SDDC&#39;s ESXi hosts.
+     * 
+     */
+    public Double initialHostOcpuCount() {
+        return this.initialHostOcpuCount;
+    }
+    /**
+     * @return The initial compute shape of the SDDC&#39;s ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+     * 
+     */
+    public String initialHostShapeName() {
+        return this.initialHostShapeName;
     }
     /**
      * @return The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
@@ -727,6 +770,7 @@ public final class GetSddcResult {
 
     public static final class Builder {
         private Integer actualEsxiHostsCount;
+        private String capacityReservationId;
         private String compartmentId;
         private String computeAvailabilityDomain;
         private Map<String,Object> definedTags;
@@ -741,6 +785,8 @@ public final class GetSddcResult {
         private String hcxPrivateIpId;
         private String hcxVlanId;
         private String id;
+        private Double initialHostOcpuCount;
+        private String initialHostShapeName;
         private String initialSku;
         private String instanceDisplayNamePrefix;
         private Boolean isHcxEnabled;
@@ -786,6 +832,7 @@ public final class GetSddcResult {
         public Builder(GetSddcResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.actualEsxiHostsCount = defaults.actualEsxiHostsCount;
+    	      this.capacityReservationId = defaults.capacityReservationId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.computeAvailabilityDomain = defaults.computeAvailabilityDomain;
     	      this.definedTags = defaults.definedTags;
@@ -800,6 +847,8 @@ public final class GetSddcResult {
     	      this.hcxPrivateIpId = defaults.hcxPrivateIpId;
     	      this.hcxVlanId = defaults.hcxVlanId;
     	      this.id = defaults.id;
+    	      this.initialHostOcpuCount = defaults.initialHostOcpuCount;
+    	      this.initialHostShapeName = defaults.initialHostShapeName;
     	      this.initialSku = defaults.initialSku;
     	      this.instanceDisplayNamePrefix = defaults.instanceDisplayNamePrefix;
     	      this.isHcxEnabled = defaults.isHcxEnabled;
@@ -841,6 +890,10 @@ public final class GetSddcResult {
 
         public Builder actualEsxiHostsCount(Integer actualEsxiHostsCount) {
             this.actualEsxiHostsCount = Objects.requireNonNull(actualEsxiHostsCount);
+            return this;
+        }
+        public Builder capacityReservationId(String capacityReservationId) {
+            this.capacityReservationId = Objects.requireNonNull(capacityReservationId);
             return this;
         }
         public Builder compartmentId(String compartmentId) {
@@ -900,6 +953,14 @@ public final class GetSddcResult {
         }
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
+            return this;
+        }
+        public Builder initialHostOcpuCount(Double initialHostOcpuCount) {
+            this.initialHostOcpuCount = Objects.requireNonNull(initialHostOcpuCount);
+            return this;
+        }
+        public Builder initialHostShapeName(String initialHostShapeName) {
+            this.initialHostShapeName = Objects.requireNonNull(initialHostShapeName);
             return this;
         }
         public Builder initialSku(String initialSku) {
@@ -1053,7 +1114,7 @@ public final class GetSddcResult {
             this.workloadNetworkCidr = Objects.requireNonNull(workloadNetworkCidr);
             return this;
         }        public GetSddcResult build() {
-            return new GetSddcResult(actualEsxiHostsCount, compartmentId, computeAvailabilityDomain, definedTags, displayName, esxiHostsCount, freeformTags, hcxAction, hcxFqdn, hcxInitialPassword, hcxOnPremKey, hcxOnPremLicenses, hcxPrivateIpId, hcxVlanId, id, initialSku, instanceDisplayNamePrefix, isHcxEnabled, isHcxEnterpriseEnabled, isHcxPendingDowngrade, isShieldedInstanceEnabled, nsxEdgeUplink1vlanId, nsxEdgeUplink2vlanId, nsxEdgeUplinkIpId, nsxEdgeVtepVlanId, nsxManagerFqdn, nsxManagerInitialPassword, nsxManagerPrivateIpId, nsxManagerUsername, nsxOverlaySegmentName, nsxVtepVlanId, provisioningSubnetId, provisioningVlanId, refreshHcxLicenseStatus, replicationVlanId, reservingHcxOnPremiseLicenseKeys, sddcId, sshAuthorizedKeys, state, timeCreated, timeHcxBillingCycleEnd, timeHcxLicenseStatusUpdated, timeUpdated, vcenterFqdn, vcenterInitialPassword, vcenterPrivateIpId, vcenterUsername, vmotionVlanId, vmwareSoftwareVersion, vsanVlanId, vsphereVlanId, workloadNetworkCidr);
+            return new GetSddcResult(actualEsxiHostsCount, capacityReservationId, compartmentId, computeAvailabilityDomain, definedTags, displayName, esxiHostsCount, freeformTags, hcxAction, hcxFqdn, hcxInitialPassword, hcxOnPremKey, hcxOnPremLicenses, hcxPrivateIpId, hcxVlanId, id, initialHostOcpuCount, initialHostShapeName, initialSku, instanceDisplayNamePrefix, isHcxEnabled, isHcxEnterpriseEnabled, isHcxPendingDowngrade, isShieldedInstanceEnabled, nsxEdgeUplink1vlanId, nsxEdgeUplink2vlanId, nsxEdgeUplinkIpId, nsxEdgeVtepVlanId, nsxManagerFqdn, nsxManagerInitialPassword, nsxManagerPrivateIpId, nsxManagerUsername, nsxOverlaySegmentName, nsxVtepVlanId, provisioningSubnetId, provisioningVlanId, refreshHcxLicenseStatus, replicationVlanId, reservingHcxOnPremiseLicenseKeys, sddcId, sshAuthorizedKeys, state, timeCreated, timeHcxBillingCycleEnd, timeHcxLicenseStatusUpdated, timeUpdated, vcenterFqdn, vcenterInitialPassword, vcenterPrivateIpId, vcenterUsername, vmotionVlanId, vmwareSoftwareVersion, vsanVlanId, vsphereVlanId, workloadNetworkCidr);
         }
     }
 }

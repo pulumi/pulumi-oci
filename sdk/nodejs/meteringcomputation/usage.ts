@@ -75,6 +75,9 @@ export class Usage extends pulumi.CustomResource {
      * The compartment depth level.
      */
     public readonly compartmentDepth!: pulumi.Output<number>;
+    /**
+     * The filter object for query usage.
+     */
     public readonly filter!: pulumi.Output<string | undefined>;
     /**
      * Forecast configuration of usage/cost.
@@ -182,6 +185,9 @@ export interface UsageState {
      * The compartment depth level.
      */
     compartmentDepth?: pulumi.Input<number>;
+    /**
+     * The filter object for query usage.
+     */
     filter?: pulumi.Input<string>;
     /**
      * Forecast configuration of usage/cost.
@@ -233,6 +239,9 @@ export interface UsageArgs {
      * The compartment depth level.
      */
     compartmentDepth?: pulumi.Input<number>;
+    /**
+     * The filter object for query usage.
+     */
     filter?: pulumi.Input<string>;
     /**
      * Forecast configuration of usage/cost.

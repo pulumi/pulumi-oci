@@ -66,7 +66,7 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// </summary>
         public readonly string? VerifyResponseContent;
         /// <summary>
-        /// (Updatable) Verify all the search strings present in response. If any search string is not present in the response, then it will be considered as a failure.
+        /// (Updatable) Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
         /// </summary>
         public readonly ImmutableArray<Outputs.ConfigConfigurationVerifyText> VerifyTexts;
 

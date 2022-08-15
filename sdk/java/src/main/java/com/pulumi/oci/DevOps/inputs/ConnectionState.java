@@ -33,6 +33,21 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) OCID of personal Bitbucket Cloud AppPassword saved in secret store
+     * 
+     */
+    @Import(name="appPassword")
+    private @Nullable Output<String> appPassword;
+
+    /**
+     * @return (Updatable) OCID of personal Bitbucket Cloud AppPassword saved in secret store
+     * 
+     */
+    public Optional<Output<String>> appPassword() {
+        return Optional.ofNullable(this.appPassword);
+    }
+
+    /**
      * The OCID of the compartment containing the connection.
      * 
      */
@@ -197,10 +212,26 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.timeUpdated);
     }
 
+    /**
+     * (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
+     * 
+     */
+    @Import(name="username")
+    private @Nullable Output<String> username;
+
+    /**
+     * @return (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
+     * 
+     */
+    public Optional<Output<String>> username() {
+        return Optional.ofNullable(this.username);
+    }
+
     private ConnectionState() {}
 
     private ConnectionState(ConnectionState $) {
         this.accessToken = $.accessToken;
+        this.appPassword = $.appPassword;
         this.compartmentId = $.compartmentId;
         this.connectionType = $.connectionType;
         this.definedTags = $.definedTags;
@@ -212,6 +243,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         this.systemTags = $.systemTags;
         this.timeCreated = $.timeCreated;
         this.timeUpdated = $.timeUpdated;
+        this.username = $.username;
     }
 
     public static Builder builder() {
@@ -251,6 +283,27 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder accessToken(String accessToken) {
             return accessToken(Output.of(accessToken));
+        }
+
+        /**
+         * @param appPassword (Updatable) OCID of personal Bitbucket Cloud AppPassword saved in secret store
+         * 
+         * @return builder
+         * 
+         */
+        public Builder appPassword(@Nullable Output<String> appPassword) {
+            $.appPassword = appPassword;
+            return this;
+        }
+
+        /**
+         * @param appPassword (Updatable) OCID of personal Bitbucket Cloud AppPassword saved in secret store
+         * 
+         * @return builder
+         * 
+         */
+        public Builder appPassword(String appPassword) {
+            return appPassword(Output.of(appPassword));
         }
 
         /**
@@ -482,6 +535,27 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder timeUpdated(String timeUpdated) {
             return timeUpdated(Output.of(timeUpdated));
+        }
+
+        /**
+         * @param username (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder username(@Nullable Output<String> username) {
+            $.username = username;
+            return this;
+        }
+
+        /**
+         * @param username (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder username(String username) {
+            return username(Output.of(username));
         }
 
         public ConnectionState build() {

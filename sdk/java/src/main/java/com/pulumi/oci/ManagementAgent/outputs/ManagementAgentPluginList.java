@@ -33,6 +33,16 @@ public final class ManagementAgentPluginList {
      */
     private final @Nullable String pluginName;
     /**
+     * @return Plugin Status
+     * 
+     */
+    private final @Nullable String pluginStatus;
+    /**
+     * @return Status message of the Plugin
+     * 
+     */
+    private final @Nullable String pluginStatusMessage;
+    /**
      * @return Plugin Version
      * 
      */
@@ -44,11 +54,15 @@ public final class ManagementAgentPluginList {
         @CustomType.Parameter("pluginDisplayName") @Nullable String pluginDisplayName,
         @CustomType.Parameter("pluginId") @Nullable String pluginId,
         @CustomType.Parameter("pluginName") @Nullable String pluginName,
+        @CustomType.Parameter("pluginStatus") @Nullable String pluginStatus,
+        @CustomType.Parameter("pluginStatusMessage") @Nullable String pluginStatusMessage,
         @CustomType.Parameter("pluginVersion") @Nullable String pluginVersion) {
         this.isEnabled = isEnabled;
         this.pluginDisplayName = pluginDisplayName;
         this.pluginId = pluginId;
         this.pluginName = pluginName;
+        this.pluginStatus = pluginStatus;
+        this.pluginStatusMessage = pluginStatusMessage;
         this.pluginVersion = pluginVersion;
     }
 
@@ -81,6 +95,20 @@ public final class ManagementAgentPluginList {
         return Optional.ofNullable(this.pluginName);
     }
     /**
+     * @return Plugin Status
+     * 
+     */
+    public Optional<String> pluginStatus() {
+        return Optional.ofNullable(this.pluginStatus);
+    }
+    /**
+     * @return Status message of the Plugin
+     * 
+     */
+    public Optional<String> pluginStatusMessage() {
+        return Optional.ofNullable(this.pluginStatusMessage);
+    }
+    /**
      * @return Plugin Version
      * 
      */
@@ -101,6 +129,8 @@ public final class ManagementAgentPluginList {
         private @Nullable String pluginDisplayName;
         private @Nullable String pluginId;
         private @Nullable String pluginName;
+        private @Nullable String pluginStatus;
+        private @Nullable String pluginStatusMessage;
         private @Nullable String pluginVersion;
 
         public Builder() {
@@ -113,6 +143,8 @@ public final class ManagementAgentPluginList {
     	      this.pluginDisplayName = defaults.pluginDisplayName;
     	      this.pluginId = defaults.pluginId;
     	      this.pluginName = defaults.pluginName;
+    	      this.pluginStatus = defaults.pluginStatus;
+    	      this.pluginStatusMessage = defaults.pluginStatusMessage;
     	      this.pluginVersion = defaults.pluginVersion;
         }
 
@@ -132,11 +164,19 @@ public final class ManagementAgentPluginList {
             this.pluginName = pluginName;
             return this;
         }
+        public Builder pluginStatus(@Nullable String pluginStatus) {
+            this.pluginStatus = pluginStatus;
+            return this;
+        }
+        public Builder pluginStatusMessage(@Nullable String pluginStatusMessage) {
+            this.pluginStatusMessage = pluginStatusMessage;
+            return this;
+        }
         public Builder pluginVersion(@Nullable String pluginVersion) {
             this.pluginVersion = pluginVersion;
             return this;
         }        public ManagementAgentPluginList build() {
-            return new ManagementAgentPluginList(isEnabled, pluginDisplayName, pluginId, pluginName, pluginVersion);
+            return new ManagementAgentPluginList(isEnabled, pluginDisplayName, pluginId, pluginName, pluginStatus, pluginStatusMessage, pluginVersion);
         }
     }
 }

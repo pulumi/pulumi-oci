@@ -109,6 +109,21 @@ public final class NatGatewayArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
+     * 
+     */
+    @Import(name="routeTableId")
+    private @Nullable Output<String> routeTableId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
+     * 
+     */
+    public Optional<Output<String>> routeTableId() {
+        return Optional.ofNullable(this.routeTableId);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the gateway belongs to.
      * 
      */
@@ -132,6 +147,7 @@ public final class NatGatewayArgs extends com.pulumi.resources.ResourceArgs {
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.publicIpId = $.publicIpId;
+        this.routeTableId = $.routeTableId;
         this.vcnId = $.vcnId;
     }
 
@@ -277,6 +293,27 @@ public final class NatGatewayArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder publicIpId(String publicIpId) {
             return publicIpId(Output.of(publicIpId));
+        }
+
+        /**
+         * @param routeTableId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder routeTableId(@Nullable Output<String> routeTableId) {
+            $.routeTableId = routeTableId;
+            return this;
+        }
+
+        /**
+         * @param routeTableId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder routeTableId(String routeTableId) {
+            return routeTableId(Output.of(routeTableId));
         }
 
         /**

@@ -51,10 +51,10 @@ func GetVantagePoints(ctx *pulumi.Context, args *GetVantagePointsArgs, opts ...p
 type GetVantagePointsArgs struct {
 	// The APM domain ID the request is intended for.
 	ApmDomainId string `pulumi:"apmDomainId"`
-	// A filter to return only resources that match the entire display name given.
+	// A filter to return only the resources that match the entire display name.
 	DisplayName *string                  `pulumi:"displayName"`
 	Filters     []GetVantagePointsFilter `pulumi:"filters"`
-	// A filter to return only resources that match the entire name given.
+	// A filter to return only the resources that match the entire name.
 	Name *string `pulumi:"name"`
 }
 
@@ -89,10 +89,10 @@ func GetVantagePointsOutput(ctx *pulumi.Context, args GetVantagePointsOutputArgs
 type GetVantagePointsOutputArgs struct {
 	// The APM domain ID the request is intended for.
 	ApmDomainId pulumi.StringInput `pulumi:"apmDomainId"`
-	// A filter to return only resources that match the entire display name given.
+	// A filter to return only the resources that match the entire display name.
 	DisplayName pulumi.StringPtrInput            `pulumi:"displayName"`
 	Filters     GetVantagePointsFilterArrayInput `pulumi:"filters"`
-	// A filter to return only resources that match the entire name given.
+	// A filter to return only the resources that match the entire name.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 

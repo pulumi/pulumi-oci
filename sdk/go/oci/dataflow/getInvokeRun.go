@@ -76,10 +76,14 @@ type LookupInvokeRunResult struct {
 	DisplayName string `pulumi:"displayName"`
 	// The VM shape for the driver. Sets the driver cores and memory.
 	DriverShape string `pulumi:"driverShape"`
+	// This is used to configure the shape of the driver or executor if a flexible shape is used.
+	DriverShapeConfigs []GetInvokeRunDriverShapeConfig `pulumi:"driverShapeConfigs"`
 	// The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
 	Execute string `pulumi:"execute"`
 	// The VM shape for the executors. Sets the executor cores and memory.
 	ExecutorShape string `pulumi:"executorShape"`
+	// This is used to configure the shape of the driver or executor if a flexible shape is used.
+	ExecutorShapeConfigs []GetInvokeRunExecutorShapeConfig `pulumi:"executorShapeConfigs"`
 	// An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 	FileUri string `pulumi:"fileUri"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -230,6 +234,11 @@ func (o LookupInvokeRunResultOutput) DriverShape() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInvokeRunResult) string { return v.DriverShape }).(pulumi.StringOutput)
 }
 
+// This is used to configure the shape of the driver or executor if a flexible shape is used.
+func (o LookupInvokeRunResultOutput) DriverShapeConfigs() GetInvokeRunDriverShapeConfigArrayOutput {
+	return o.ApplyT(func(v LookupInvokeRunResult) []GetInvokeRunDriverShapeConfig { return v.DriverShapeConfigs }).(GetInvokeRunDriverShapeConfigArrayOutput)
+}
+
 // The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
 func (o LookupInvokeRunResultOutput) Execute() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInvokeRunResult) string { return v.Execute }).(pulumi.StringOutput)
@@ -238,6 +247,11 @@ func (o LookupInvokeRunResultOutput) Execute() pulumi.StringOutput {
 // The VM shape for the executors. Sets the executor cores and memory.
 func (o LookupInvokeRunResultOutput) ExecutorShape() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInvokeRunResult) string { return v.ExecutorShape }).(pulumi.StringOutput)
+}
+
+// This is used to configure the shape of the driver or executor if a flexible shape is used.
+func (o LookupInvokeRunResultOutput) ExecutorShapeConfigs() GetInvokeRunExecutorShapeConfigArrayOutput {
+	return o.ApplyT(func(v LookupInvokeRunResult) []GetInvokeRunExecutorShapeConfig { return v.ExecutorShapeConfigs }).(GetInvokeRunExecutorShapeConfigArrayOutput)
 }
 
 // An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.

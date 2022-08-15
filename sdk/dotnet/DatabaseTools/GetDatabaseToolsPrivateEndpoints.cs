@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DatabaseTools
         /// <summary>
         /// This data source provides the list of Database Tools Private Endpoints in Oracle Cloud Infrastructure Database Tools service.
         /// 
-        /// Returns a list of DatabaseToolsPrivateEndpoints.
+        /// Returns a list of Database Tools private endpoints.
         /// 
         /// 
         /// {{% examples %}}
@@ -50,7 +50,7 @@ namespace Pulumi.Oci.DatabaseTools
         /// <summary>
         /// This data source provides the list of Database Tools Private Endpoints in Oracle Cloud Infrastructure Database Tools service.
         /// 
-        /// Returns a list of DatabaseToolsPrivateEndpoints.
+        /// Returns a list of Database Tools private endpoints.
         /// 
         /// 
         /// {{% examples %}}
@@ -94,13 +94,13 @@ namespace Pulumi.Oci.DatabaseTools
         public string CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// A filter to return only resources that match the entire display name given.
+        /// A filter to return only resources that match the entire specified display name.
         /// </summary>
         [Input("displayName")]
         public string? DisplayName { get; set; }
 
         /// <summary>
-        /// A filter to return only resources their type matches the given type.
+        /// A filter to return only resources their `endpointServiceId` matches the specified `endpointServiceId`.
         /// </summary>
         [Input("endpointServiceId")]
         public string? EndpointServiceId { get; set; }
@@ -114,13 +114,13 @@ namespace Pulumi.Oci.DatabaseTools
         }
 
         /// <summary>
-        /// A filter to return only resources their lifecycleState matches the given lifecycleState.
+        /// A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
         /// </summary>
         [Input("state")]
         public string? State { get; set; }
 
         /// <summary>
-        /// A filter to return only resources their subnetId matches the given subnetId.
+        /// A filter to return only resources their `subnetId` matches the specified `subnetId`.
         /// </summary>
         [Input("subnetId")]
         public string? SubnetId { get; set; }
@@ -139,13 +139,13 @@ namespace Pulumi.Oci.DatabaseTools
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// A filter to return only resources that match the entire display name given.
+        /// A filter to return only resources that match the entire specified display name.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// A filter to return only resources their type matches the given type.
+        /// A filter to return only resources their `endpointServiceId` matches the specified `endpointServiceId`.
         /// </summary>
         [Input("endpointServiceId")]
         public Input<string>? EndpointServiceId { get; set; }
@@ -159,13 +159,13 @@ namespace Pulumi.Oci.DatabaseTools
         }
 
         /// <summary>
-        /// A filter to return only resources their lifecycleState matches the given lifecycleState.
+        /// A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
 
         /// <summary>
-        /// A filter to return only resources their subnetId matches the given subnetId.
+        /// A filter to return only resources their `subnetId` matches the specified `subnetId`.
         /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }
@@ -180,7 +180,7 @@ namespace Pulumi.Oci.DatabaseTools
     public sealed class GetDatabaseToolsPrivateEndpointsResult
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools private endpoint.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -192,7 +192,7 @@ namespace Pulumi.Oci.DatabaseTools
         /// </summary>
         public readonly string? DisplayName;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsEndpointService.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Endpoint Service.
         /// </summary>
         public readonly string? EndpointServiceId;
         public readonly ImmutableArray<Outputs.GetDatabaseToolsPrivateEndpointsFilterResult> Filters;
@@ -201,7 +201,7 @@ namespace Pulumi.Oci.DatabaseTools
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// The current state of the DatabaseToolsPrivateEndpoint.
+        /// The current state of the Database Tools private endpoint.
         /// </summary>
         public readonly string? State;
         /// <summary>

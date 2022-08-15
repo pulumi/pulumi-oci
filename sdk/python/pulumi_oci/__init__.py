@@ -9,6 +9,8 @@ from .provider import *
 
 # Make subpackages available:
 if typing.TYPE_CHECKING:
+    import pulumi_oci.adm as __adm
+    adm = __adm
     import pulumi_oci.aianomalydetection as __aianomalydetection
     aianomalydetection = __aianomalydetection
     import pulumi_oci.aivision as __aivision
@@ -81,6 +83,8 @@ if typing.TYPE_CHECKING:
     dns = __dns
     import pulumi_oci.email as __email
     email = __email
+    import pulumi_oci.emwarehouse as __emwarehouse
+    emwarehouse = __emwarehouse
     import pulumi_oci.events as __events
     events = __events
     import pulumi_oci.filestorage as __filestorage
@@ -103,6 +107,8 @@ if typing.TYPE_CHECKING:
     jms = __jms
     import pulumi_oci.kms as __kms
     kms = __kms
+    import pulumi_oci.licensemanager as __licensemanager
+    licensemanager = __licensemanager
     import pulumi_oci.limits as __limits
     limits = __limits
     import pulumi_oci.loadbalancer as __loadbalancer
@@ -123,6 +129,8 @@ if typing.TYPE_CHECKING:
     monitoring = __monitoring
     import pulumi_oci.mysql as __mysql
     mysql = __mysql
+    import pulumi_oci.networkfirewall as __networkfirewall
+    networkfirewall = __networkfirewall
     import pulumi_oci.networkloadbalancer as __networkloadbalancer
     networkloadbalancer = __networkloadbalancer
     import pulumi_oci.nosql as __nosql
@@ -135,6 +143,8 @@ if typing.TYPE_CHECKING:
     ocvp = __ocvp
     import pulumi_oci.oda as __oda
     oda = __oda
+    import pulumi_oci.onesubsription as __onesubsription
+    onesubsription = __onesubsription
     import pulumi_oci.ons as __ons
     ons = __ons
     import pulumi_oci.operatoraccesscontrol as __operatoraccesscontrol
@@ -165,6 +175,8 @@ if typing.TYPE_CHECKING:
     servicecatalog = __servicecatalog
     import pulumi_oci.servicemanagerproxy as __servicemanagerproxy
     servicemanagerproxy = __servicemanagerproxy
+    import pulumi_oci.servicemesh as __servicemesh
+    servicemesh = __servicemesh
     import pulumi_oci.stackmonitoring as __stackmonitoring
     stackmonitoring = __stackmonitoring
     import pulumi_oci.streaming as __streaming
@@ -175,13 +187,18 @@ if typing.TYPE_CHECKING:
     vault = __vault
     import pulumi_oci.visualbuilder as __visualbuilder
     visualbuilder = __visualbuilder
+    import pulumi_oci.vnmonitoring as __vnmonitoring
+    vnmonitoring = __vnmonitoring
     import pulumi_oci.vulnerabilityscanning as __vulnerabilityscanning
     vulnerabilityscanning = __vulnerabilityscanning
+    import pulumi_oci.waa as __waa
+    waa = __waa
     import pulumi_oci.waas as __waas
     waas = __waas
     import pulumi_oci.waf as __waf
     waf = __waf
 else:
+    adm = _utilities.lazy_import('pulumi_oci.adm')
     aianomalydetection = _utilities.lazy_import('pulumi_oci.aianomalydetection')
     aivision = _utilities.lazy_import('pulumi_oci.aivision')
     analytics = _utilities.lazy_import('pulumi_oci.analytics')
@@ -218,6 +235,7 @@ else:
     devops = _utilities.lazy_import('pulumi_oci.devops')
     dns = _utilities.lazy_import('pulumi_oci.dns')
     email = _utilities.lazy_import('pulumi_oci.email')
+    emwarehouse = _utilities.lazy_import('pulumi_oci.emwarehouse')
     events = _utilities.lazy_import('pulumi_oci.events')
     filestorage = _utilities.lazy_import('pulumi_oci.filestorage')
     functions = _utilities.lazy_import('pulumi_oci.functions')
@@ -229,6 +247,7 @@ else:
     integration = _utilities.lazy_import('pulumi_oci.integration')
     jms = _utilities.lazy_import('pulumi_oci.jms')
     kms = _utilities.lazy_import('pulumi_oci.kms')
+    licensemanager = _utilities.lazy_import('pulumi_oci.licensemanager')
     limits = _utilities.lazy_import('pulumi_oci.limits')
     loadbalancer = _utilities.lazy_import('pulumi_oci.loadbalancer')
     loganalytics = _utilities.lazy_import('pulumi_oci.loganalytics')
@@ -239,12 +258,14 @@ else:
     meteringcomputation = _utilities.lazy_import('pulumi_oci.meteringcomputation')
     monitoring = _utilities.lazy_import('pulumi_oci.monitoring')
     mysql = _utilities.lazy_import('pulumi_oci.mysql')
+    networkfirewall = _utilities.lazy_import('pulumi_oci.networkfirewall')
     networkloadbalancer = _utilities.lazy_import('pulumi_oci.networkloadbalancer')
     nosql = _utilities.lazy_import('pulumi_oci.nosql')
     objectstorage = _utilities.lazy_import('pulumi_oci.objectstorage')
     oce = _utilities.lazy_import('pulumi_oci.oce')
     ocvp = _utilities.lazy_import('pulumi_oci.ocvp')
     oda = _utilities.lazy_import('pulumi_oci.oda')
+    onesubsription = _utilities.lazy_import('pulumi_oci.onesubsription')
     ons = _utilities.lazy_import('pulumi_oci.ons')
     operatoraccesscontrol = _utilities.lazy_import('pulumi_oci.operatoraccesscontrol')
     opsi = _utilities.lazy_import('pulumi_oci.opsi')
@@ -260,18 +281,37 @@ else:
     secrets = _utilities.lazy_import('pulumi_oci.secrets')
     servicecatalog = _utilities.lazy_import('pulumi_oci.servicecatalog')
     servicemanagerproxy = _utilities.lazy_import('pulumi_oci.servicemanagerproxy')
+    servicemesh = _utilities.lazy_import('pulumi_oci.servicemesh')
     stackmonitoring = _utilities.lazy_import('pulumi_oci.stackmonitoring')
     streaming = _utilities.lazy_import('pulumi_oci.streaming')
     usageproxy = _utilities.lazy_import('pulumi_oci.usageproxy')
     vault = _utilities.lazy_import('pulumi_oci.vault')
     visualbuilder = _utilities.lazy_import('pulumi_oci.visualbuilder')
+    vnmonitoring = _utilities.lazy_import('pulumi_oci.vnmonitoring')
     vulnerabilityscanning = _utilities.lazy_import('pulumi_oci.vulnerabilityscanning')
+    waa = _utilities.lazy_import('pulumi_oci.waa')
     waas = _utilities.lazy_import('pulumi_oci.waas')
     waf = _utilities.lazy_import('pulumi_oci.waf')
 
 _utilities.register(
     resource_modules="""
 [
+ {
+  "pkg": "oci",
+  "mod": "Adm/knowledgeBase",
+  "fqn": "pulumi_oci.adm",
+  "classes": {
+   "oci:Adm/knowledgeBase:KnowledgeBase": "KnowledgeBase"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Adm/vulnerabilityAudit",
+  "fqn": "pulumi_oci.adm",
+  "classes": {
+   "oci:Adm/vulnerabilityAudit:VulnerabilityAudit": "VulnerabilityAudit"
+  }
+ },
  {
   "pkg": "oci",
   "mod": "AiAnomalyDetection/aiPrivateEndpoint",
@@ -378,6 +418,22 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "ApiGateway/subscriber",
+  "fqn": "pulumi_oci.apigateway",
+  "classes": {
+   "oci:ApiGateway/subscriber:Subscriber": "Subscriber"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "ApiGateway/usagePlan",
+  "fqn": "pulumi_oci.apigateway",
+  "classes": {
+   "oci:ApiGateway/usagePlan:UsagePlan": "UsagePlan"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Apm/apmDomain",
   "fqn": "pulumi_oci.apm",
   "classes": {
@@ -398,6 +454,14 @@ _utilities.register(
   "fqn": "pulumi_oci.apmsynthetics",
   "classes": {
    "oci:ApmSynthetics/config:Config": "Config"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "ApmSynthetics/dedicatedVantagePoint",
+  "fqn": "pulumi_oci.apmsynthetics",
+  "classes": {
+   "oci:ApmSynthetics/dedicatedVantagePoint:DedicatedVantagePoint": "DedicatedVantagePoint"
   }
  },
  {
@@ -626,6 +690,22 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "CloudGuard/securityRecipe",
+  "fqn": "pulumi_oci.cloudguard",
+  "classes": {
+   "oci:CloudGuard/securityRecipe:SecurityRecipe": "SecurityRecipe"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "CloudGuard/securityZone",
+  "fqn": "pulumi_oci.cloudguard",
+  "classes": {
+   "oci:CloudGuard/securityZone:SecurityZone": "SecurityZone"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "CloudGuard/target",
   "fqn": "pulumi_oci.cloudguard",
   "classes": {
@@ -678,6 +758,14 @@ _utilities.register(
   "fqn": "pulumi_oci.core",
   "classes": {
    "oci:Core/bootVolumeBackup:BootVolumeBackup": "BootVolumeBackup"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Core/captureFilter",
+  "fqn": "pulumi_oci.core",
+  "classes": {
+   "oci:Core/captureFilter:CaptureFilter": "CaptureFilter"
   }
  },
  {
@@ -1142,6 +1230,14 @@ _utilities.register(
   "fqn": "pulumi_oci.core",
   "classes": {
    "oci:Core/volumeGroupBackup:VolumeGroupBackup": "VolumeGroupBackup"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Core/vtap",
+  "fqn": "pulumi_oci.core",
+  "classes": {
+   "oci:Core/vtap:Vtap": "Vtap"
   }
  },
  {
@@ -1746,6 +1842,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "Database/dbSystemsUpgrade",
+  "fqn": "pulumi_oci.database",
+  "classes": {
+   "oci:Database/dbSystemsUpgrade:DbSystemsUpgrade": "DbSystemsUpgrade"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Database/exadataInfrastructure",
   "fqn": "pulumi_oci.database",
   "classes": {
@@ -1786,6 +1890,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "Database/externalContainerDatabasesStackMonitoring",
+  "fqn": "pulumi_oci.database",
+  "classes": {
+   "oci:Database/externalContainerDatabasesStackMonitoring:ExternalContainerDatabasesStackMonitoring": "ExternalContainerDatabasesStackMonitoring"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Database/externalDatabaseConnector",
   "fqn": "pulumi_oci.database",
   "classes": {
@@ -1818,6 +1930,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "Database/externalNonContainerDatabasesStackMonitoring",
+  "fqn": "pulumi_oci.database",
+  "classes": {
+   "oci:Database/externalNonContainerDatabasesStackMonitoring:ExternalNonContainerDatabasesStackMonitoring": "ExternalNonContainerDatabasesStackMonitoring"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Database/externalPluggableDatabase",
   "fqn": "pulumi_oci.database",
   "classes": {
@@ -1838,6 +1958,14 @@ _utilities.register(
   "fqn": "pulumi_oci.database",
   "classes": {
    "oci:Database/externalPluggableDatabaseOperationsInsightsManagement:ExternalPluggableDatabaseOperationsInsightsManagement": "ExternalPluggableDatabaseOperationsInsightsManagement"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Database/externalPluggableDatabasesStackMonitoring",
+  "fqn": "pulumi_oci.database",
+  "classes": {
+   "oci:Database/externalPluggableDatabasesStackMonitoring:ExternalPluggableDatabasesStackMonitoring": "ExternalPluggableDatabasesStackMonitoring"
   }
  },
  {
@@ -2174,6 +2302,14 @@ _utilities.register(
   "fqn": "pulumi_oci.dns",
   "classes": {
    "oci:Dns/zone:Zone": "Zone"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "EmWarehouse/emWarehouse",
+  "fqn": "pulumi_oci.emwarehouse",
+  "classes": {
+   "oci:EmWarehouse/emWarehouse:EmWarehouse": "EmWarehouse"
   }
  },
  {
@@ -2626,6 +2762,30 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "LicenseManager/configuration",
+  "fqn": "pulumi_oci.licensemanager",
+  "classes": {
+   "oci:LicenseManager/configuration:Configuration": "Configuration"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "LicenseManager/licenseRecord",
+  "fqn": "pulumi_oci.licensemanager",
+  "classes": {
+   "oci:LicenseManager/licenseRecord:LicenseRecord": "LicenseRecord"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "LicenseManager/productLicense",
+  "fqn": "pulumi_oci.licensemanager",
+  "classes": {
+   "oci:LicenseManager/productLicense:ProductLicense": "ProductLicense"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Limits/quota",
   "fqn": "pulumi_oci.limits",
   "classes": {
@@ -2882,6 +3042,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "MeteringComputation/schedule",
+  "fqn": "pulumi_oci.meteringcomputation",
+  "classes": {
+   "oci:MeteringComputation/schedule:Schedule": "Schedule"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "MeteringComputation/usage",
   "fqn": "pulumi_oci.meteringcomputation",
   "classes": {
@@ -2938,6 +3106,22 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "NetworkFirewall/networkFirewall",
+  "fqn": "pulumi_oci.networkfirewall",
+  "classes": {
+   "oci:NetworkFirewall/networkFirewall:NetworkFirewall": "NetworkFirewall"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "NetworkFirewall/networkFirewallPolicy",
+  "fqn": "pulumi_oci.networkfirewall",
+  "classes": {
+   "oci:NetworkFirewall/networkFirewallPolicy:NetworkFirewallPolicy": "NetworkFirewallPolicy"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "NetworkLoadBalancer/backend",
   "fqn": "pulumi_oci.networkloadbalancer",
   "classes": {
@@ -2966,6 +3150,14 @@ _utilities.register(
   "fqn": "pulumi_oci.networkloadbalancer",
   "classes": {
    "oci:NetworkLoadBalancer/networkLoadBalancer:NetworkLoadBalancer": "NetworkLoadBalancer"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "NetworkLoadBalancer/networkLoadBalancersBackendSetsUnified",
+  "fqn": "pulumi_oci.networkloadbalancer",
+  "classes": {
+   "oci:NetworkLoadBalancer/networkLoadBalancersBackendSetsUnified:NetworkLoadBalancersBackendSetsUnified": "NetworkLoadBalancersBackendSetsUnified"
   }
  },
  {
@@ -3250,6 +3442,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "ResourceManager/privateEndpoint",
+  "fqn": "pulumi_oci.resourcemanager",
+  "classes": {
+   "oci:ResourceManager/privateEndpoint:PrivateEndpoint": "PrivateEndpoint"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Sch/connector",
   "fqn": "pulumi_oci.sch",
   "classes": {
@@ -3278,6 +3478,62 @@ _utilities.register(
   "fqn": "pulumi_oci.servicecatalog",
   "classes": {
    "oci:ServiceCatalog/privateApplication:PrivateApplication": "PrivateApplication"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "ServiceMesh/accessPolicy",
+  "fqn": "pulumi_oci.servicemesh",
+  "classes": {
+   "oci:ServiceMesh/accessPolicy:AccessPolicy": "AccessPolicy"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "ServiceMesh/ingressGateway",
+  "fqn": "pulumi_oci.servicemesh",
+  "classes": {
+   "oci:ServiceMesh/ingressGateway:IngressGateway": "IngressGateway"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "ServiceMesh/ingressGatewayRouteTable",
+  "fqn": "pulumi_oci.servicemesh",
+  "classes": {
+   "oci:ServiceMesh/ingressGatewayRouteTable:IngressGatewayRouteTable": "IngressGatewayRouteTable"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "ServiceMesh/mesh",
+  "fqn": "pulumi_oci.servicemesh",
+  "classes": {
+   "oci:ServiceMesh/mesh:Mesh": "Mesh"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "ServiceMesh/virtualDeployment",
+  "fqn": "pulumi_oci.servicemesh",
+  "classes": {
+   "oci:ServiceMesh/virtualDeployment:VirtualDeployment": "VirtualDeployment"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "ServiceMesh/virtualService",
+  "fqn": "pulumi_oci.servicemesh",
+  "classes": {
+   "oci:ServiceMesh/virtualService:VirtualService": "VirtualService"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "ServiceMesh/virtualServiceRouteTable",
+  "fqn": "pulumi_oci.servicemesh",
+  "classes": {
+   "oci:ServiceMesh/virtualServiceRouteTable:VirtualServiceRouteTable": "VirtualServiceRouteTable"
   }
  },
  {
@@ -3378,6 +3634,22 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "VnMonitoring/pathAnalysi",
+  "fqn": "pulumi_oci.vnmonitoring",
+  "classes": {
+   "oci:VnMonitoring/pathAnalysi:PathAnalysi": "PathAnalysi"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "VnMonitoring/pathAnalyzerTest",
+  "fqn": "pulumi_oci.vnmonitoring",
+  "classes": {
+   "oci:VnMonitoring/pathAnalyzerTest:PathAnalyzerTest": "PathAnalyzerTest"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "VulnerabilityScanning/containerScanRecipe",
   "fqn": "pulumi_oci.vulnerabilityscanning",
   "classes": {
@@ -3406,6 +3678,22 @@ _utilities.register(
   "fqn": "pulumi_oci.vulnerabilityscanning",
   "classes": {
    "oci:VulnerabilityScanning/hostScanTarget:HostScanTarget": "HostScanTarget"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Waa/appAcceleration",
+  "fqn": "pulumi_oci.waa",
+  "classes": {
+   "oci:Waa/appAcceleration:AppAcceleration": "AppAcceleration"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Waa/appAccelerationPolicy",
+  "fqn": "pulumi_oci.waa",
+  "classes": {
+   "oci:Waa/appAccelerationPolicy:AppAccelerationPolicy": "AppAccelerationPolicy"
   }
  },
  {

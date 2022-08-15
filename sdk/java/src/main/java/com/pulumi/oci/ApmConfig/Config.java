@@ -22,7 +22,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Config resource in Oracle Cloud Infrastructure Apm Config service.
  * 
- * Creates a new Configuration item.
+ * Creates a new configuration item.
  * 
  * ## Example Usage
  * 
@@ -38,28 +38,28 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:ApmConfig/config:Config")
 public class Config extends com.pulumi.resources.CustomResource {
     /**
-     * (Updatable) The APM Domain Id the request is intended for.
+     * (Updatable) The APM Domain ID the request is intended for.
      * 
      */
     @Export(name="apmDomainId", type=String.class, parameters={})
     private Output<String> apmDomainId;
 
     /**
-     * @return (Updatable) The APM Domain Id the request is intended for.
+     * @return (Updatable) The APM Domain ID the request is intended for.
      * 
      */
     public Output<String> apmDomainId() {
         return this.apmDomainId;
     }
     /**
-     * (Updatable) The type of configuration item
+     * (Updatable) The type of configuration item.
      * 
      */
     @Export(name="configType", type=String.class, parameters={})
     private Output<String> configType;
 
     /**
-     * @return (Updatable) The type of configuration item
+     * @return (Updatable) The type of configuration item.
      * 
      */
     public Output<String> configType() {
@@ -80,56 +80,56 @@ public class Config extends com.pulumi.resources.CustomResource {
         return this.definedTags;
     }
     /**
-     * (Updatable) A description of the metric
+     * (Updatable) A description of the metric.
      * 
      */
     @Export(name="description", type=String.class, parameters={})
     private Output<String> description;
 
     /**
-     * @return (Updatable) A description of the metric
+     * @return (Updatable) A description of the metric.
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * (Updatable) A list of dimensions for this metric. Must be NULL at the moment.
+     * (Updatable) A list of dimensions for the metric. This variable should not be used.
      * 
      */
     @Export(name="dimensions", type=List.class, parameters={ConfigDimension.class})
     private Output<List<ConfigDimension>> dimensions;
 
     /**
-     * @return (Updatable) A list of dimensions for this metric. Must be NULL at the moment.
+     * @return (Updatable) A list of dimensions for the metric. This variable should not be used.
      * 
      */
     public Output<List<ConfigDimension>> dimensions() {
         return this.dimensions;
     }
     /**
-     * (Updatable) A user-friendly name that provides a short description this rule.
+     * (Updatable) The name by which a configuration entity is displayed to the end user.
      * 
      */
     @Export(name="displayName", type=String.class, parameters={})
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) A user-friendly name that provides a short description this rule.
+     * @return (Updatable) The name by which a configuration entity is displayed to the end user.
      * 
      */
     public Output<String> displayName() {
         return this.displayName;
     }
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId will be generated when a Span Filter is created.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
      * 
      */
     @Export(name="filterId", type=String.class, parameters={})
     private Output<String> filterId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId will be generated when a Span Filter is created.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
      * 
      */
     public Output<String> filterId() {
@@ -164,46 +164,74 @@ public class Config extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
-     * (Updatable)
+     * (Updatable) A string that specifies the group that an OPTIONS item belongs to.
+     * 
+     */
+    @Export(name="group", type=String.class, parameters={})
+    private Output<String> group;
+
+    /**
+     * @return (Updatable) A string that specifies the group that an OPTIONS item belongs to.
+     * 
+     */
+    public Output<String> group() {
+        return this.group;
+    }
+    /**
+     * (Updatable) The list of metrics in this group.
      * 
      */
     @Export(name="metrics", type=List.class, parameters={ConfigMetric.class})
     private Output<List<ConfigMetric>> metrics;
 
     /**
-     * @return (Updatable)
+     * @return (Updatable) The list of metrics in this group.
      * 
      */
     public Output<List<ConfigMetric>> metrics() {
         return this.metrics;
     }
     /**
-     * (Updatable) The namespace to write the metrics to
+     * (Updatable) The namespace to which the metrics are published. It must be one of several predefined namespaces.
      * 
      */
     @Export(name="namespace", type=String.class, parameters={})
     private Output<String> namespace;
 
     /**
-     * @return (Updatable) The namespace to write the metrics to
+     * @return (Updatable) The namespace to which the metrics are published. It must be one of several predefined namespaces.
      * 
      */
     public Output<String> namespace() {
         return this.namespace;
     }
     /**
-     * (Updatable) Indicates that this request is a dry-run. If set to &#34;true&#34;, nothing will be modified, only the validation will be performed.
+     * (Updatable) Indicates that the request is a dry run, if set to &#34;true&#34;. A dry run request does not modify the configuration item details and is used only to perform validation on the submitted data.
      * 
      */
     @Export(name="opcDryRun", type=String.class, parameters={})
     private Output<String> opcDryRun;
 
     /**
-     * @return (Updatable) Indicates that this request is a dry-run. If set to &#34;true&#34;, nothing will be modified, only the validation will be performed.
+     * @return (Updatable) Indicates that the request is a dry run, if set to &#34;true&#34;. A dry run request does not modify the configuration item details and is used only to perform validation on the submitted data.
      * 
      */
     public Output<String> opcDryRun() {
         return this.opcDryRun;
+    }
+    /**
+     * (Updatable) The options are stored here as JSON.
+     * 
+     */
+    @Export(name="options", type=String.class, parameters={})
+    private Output<String> options;
+
+    /**
+     * @return (Updatable) The options are stored here as JSON.
+     * 
+     */
+    public Output<String> options() {
+        return this.options;
     }
     /**
      * (Updatable)

@@ -69,6 +69,9 @@ namespace Pulumi.Oci.MeteringComputation
         [Output("compartmentDepth")]
         public Output<double> CompartmentDepth { get; private set; } = null!;
 
+        /// <summary>
+        /// The filter object for query usage.
+        /// </summary>
         [Output("filter")]
         public Output<string?> Filter { get; private set; } = null!;
 
@@ -184,6 +187,9 @@ namespace Pulumi.Oci.MeteringComputation
         [Input("compartmentDepth")]
         public Input<double>? CompartmentDepth { get; set; }
 
+        /// <summary>
+        /// The filter object for query usage.
+        /// </summary>
         [Input("filter")]
         public Input<string>? Filter { get; set; }
 
@@ -266,6 +272,9 @@ namespace Pulumi.Oci.MeteringComputation
         [Input("compartmentDepth")]
         public Input<double>? CompartmentDepth { get; set; }
 
+        /// <summary>
+        /// The filter object for query usage.
+        /// </summary>
         [Input("filter")]
         public Input<string>? Filter { get; set; }
 

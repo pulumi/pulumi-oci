@@ -9,6 +9,7 @@ from .app_catalog_listing_resource_version_agreement import *
 from .app_catalog_subscription import *
 from .boot_volume import *
 from .boot_volume_backup import *
+from .capture_filter import *
 from .cluster_network import *
 from .compute_capacity_reservation import *
 from .compute_image_capability_schema import *
@@ -46,6 +47,8 @@ from .get_boot_volumes import *
 from .get_byoip_allocated_ranges import *
 from .get_byoip_range import *
 from .get_byoip_ranges import *
+from .get_capture_filter import *
+from .get_capture_filters import *
 from .get_cluster_network import *
 from .get_cluster_network_instances import *
 from .get_cluster_networks import *
@@ -164,6 +167,8 @@ from .get_volume_group_replica import *
 from .get_volume_group_replicas import *
 from .get_volume_groups import *
 from .get_volumes import *
+from .get_vtap import *
+from .get_vtaps import *
 from .image import *
 from .instance import *
 from .instance_configuration import *
@@ -202,5 +207,6 @@ from .volume_backup_policy import *
 from .volume_backup_policy_assignment import *
 from .volume_group import *
 from .volume_group_backup import *
+from .vtap import *
 from ._inputs import *
 from . import outputs

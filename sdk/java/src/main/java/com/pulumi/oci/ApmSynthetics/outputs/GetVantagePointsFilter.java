@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetVantagePointsFilter {
     /**
-     * @return A filter to return only resources that match the entire name given.
+     * @return A filter to return only the resources that match the entire name.
      * 
      */
     private final String name;
@@ -32,7 +32,7 @@ public final class GetVantagePointsFilter {
     }
 
     /**
-     * @return A filter to return only resources that match the entire name given.
+     * @return A filter to return only the resources that match the entire name.
      * 
      */
     public String name() {

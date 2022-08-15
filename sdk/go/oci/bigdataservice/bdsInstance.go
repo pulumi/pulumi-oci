@@ -13,7 +13,7 @@ import (
 
 // This resource provides the Bds Instance resource in Oracle Cloud Infrastructure Big Data Service service.
 //
-// Creates a Big Data Service cluster.
+// Creates a new BDS instance.
 //
 // ## Example Usage
 //
@@ -40,21 +40,45 @@ import (
 // 				SubnetId:             pulumi.Any(oci_core_subnet.Test_subnet.Id),
 // 				BlockVolumeSizeInGbs: pulumi.Any(_var.Bds_instance_nodes_block_volume_size_in_gbs),
 // 				NumberOfNodes:        pulumi.Any(_var.Bds_instance_number_of_nodes),
+// 				ShapeConfig: &bigdataservice.BdsInstanceMasterNodeShapeConfigArgs{
+// 					MemoryInGbs: pulumi.Any(_var.Bds_instance_nodes_shape_config_memory_in_gbs),
+// 					Ocpus:       pulumi.Any(_var.Bds_instance_nodes_shape_config_ocpus),
+// 				},
 // 			},
 // 			UtilNode: &bigdataservice.BdsInstanceUtilNodeArgs{
 // 				Shape:                pulumi.Any(_var.Bds_instance_nodes_shape),
 // 				SubnetId:             pulumi.Any(oci_core_subnet.Test_subnet.Id),
 // 				BlockVolumeSizeInGbs: pulumi.Any(_var.Bds_instance_nodes_block_volume_size_in_gbs),
 // 				NumberOfNodes:        pulumi.Any(_var.Bds_instance_number_of_nodes),
+// 				ShapeConfig: &bigdataservice.BdsInstanceUtilNodeShapeConfigArgs{
+// 					MemoryInGbs: pulumi.Any(_var.Bds_instance_nodes_shape_config_memory_in_gbs),
+// 					Ocpus:       pulumi.Any(_var.Bds_instance_nodes_shape_config_ocpus),
+// 				},
 // 			},
 // 			WorkerNode: &bigdataservice.BdsInstanceWorkerNodeArgs{
 // 				Shape:                pulumi.Any(_var.Bds_instance_nodes_shape),
 // 				SubnetId:             pulumi.Any(oci_core_subnet.Test_subnet.Id),
 // 				BlockVolumeSizeInGbs: pulumi.Any(_var.Bds_instance_nodes_block_volume_size_in_gbs),
 // 				NumberOfNodes:        pulumi.Any(_var.Bds_instance_number_of_nodes),
+// 				ShapeConfig: &bigdataservice.BdsInstanceWorkerNodeShapeConfigArgs{
+// 					MemoryInGbs: pulumi.Any(_var.Bds_instance_nodes_shape_config_memory_in_gbs),
+// 					Ocpus:       pulumi.Any(_var.Bds_instance_nodes_shape_config_ocpus),
+// 				},
 // 			},
-// 			DefinedTags:  pulumi.Any(_var.Bds_instance_defined_tags),
-// 			FreeformTags: pulumi.Any(_var.Bds_instance_freeform_tags),
+// 			ComputeOnlyWorkerNode: &bigdataservice.BdsInstanceComputeOnlyWorkerNodeArgs{
+// 				Shape:                pulumi.Any(_var.Bds_instance_nodes_shape),
+// 				SubnetId:             pulumi.Any(oci_core_subnet.Test_subnet.Id),
+// 				BlockVolumeSizeInGbs: pulumi.Any(_var.Bds_instance_nodes_block_volume_size_in_gbs),
+// 				NumberOfNodes:        pulumi.Any(_var.Bds_instance_number_of_nodes),
+// 				ShapeConfig: &bigdataservice.BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs{
+// 					MemoryInGbs: pulumi.Any(_var.Bds_instance_nodes_shape_config_memory_in_gbs),
+// 					Ocpus:       pulumi.Any(_var.Bds_instance_nodes_shape_config_ocpus),
+// 				},
+// 			},
+// 			BootstrapScriptUrl: pulumi.Any(_var.Bds_instance_bootstrap_script_url),
+// 			DefinedTags:        pulumi.Any(_var.Bds_instance_defined_tags),
+// 			FreeformTags:       pulumi.Any(_var.Bds_instance_freeform_tags),
+// 			KerberosRealmName:  pulumi.Any(_var.Bds_instance_kerberos_realm_name),
 // 			NetworkConfig: &bigdataservice.BdsInstanceNetworkConfigArgs{
 // 				CidrBlock:            pulumi.Any(_var.Bds_instance_network_config_cidr_block),
 // 				IsNatGatewayRequired: pulumi.Any(_var.Bds_instance_network_config_is_nat_gateway_required),
@@ -78,47 +102,54 @@ import (
 type BdsInstance struct {
 	pulumi.CustomResourceState
 
-	// The information about added Cloud SQL capability
+	// (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
+	BootstrapScriptUrl pulumi.StringOutput `pulumi:"bootstrapScriptUrl"`
+	// -(Optional) The information about added Cloud SQL capability
 	CloudSqlDetails BdsInstanceCloudSqlDetailArrayOutput `pulumi:"cloudSqlDetails"`
-	// Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+	// Base-64 encoded password for Cloudera Manager admin user
 	ClusterAdminPassword pulumi.StringOutput `pulumi:"clusterAdminPassword"`
 	// Specific info about a Hadoop cluster
 	ClusterDetails BdsInstanceClusterDetailArrayOutput `pulumi:"clusterDetails"`
 	// The SSH public key used to authenticate the cluster connection.
 	ClusterPublicKey pulumi.StringOutput `pulumi:"clusterPublicKey"`
-	// Version of the Hadoop distribution.
+	// Version of the Hadoop distribution
 	ClusterVersion pulumi.StringOutput `pulumi:"clusterVersion"`
-	// (Updatable) The OCID of the compartment.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// The user who created the cluster.
+	// (Updatable) The OCID of the compartment
+	CompartmentId         pulumi.StringOutput                       `pulumi:"compartmentId"`
+	ComputeOnlyWorkerNode BdsInstanceComputeOnlyWorkerNodePtrOutput `pulumi:"computeOnlyWorkerNode"`
+	// The user who created the BDS instance.
 	CreatedBy pulumi.StringOutput `pulumi:"createdBy"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example, `{"foo-namespace": {"bar-key": "value"}}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
-	// (Updatable) Name of the Big Data Service cluster.
+	// (Updatable) Name of the BDS instance
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
-	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{"bar-key": "value"}`
+	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
-	// Boolean flag specifying whether or not Cloud SQL should be configured.
+	// -(Optional) (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
 	IsCloudSqlConfigured pulumi.BoolOutput `pulumi:"isCloudSqlConfigured"`
-	// Boolean flag specifying whether or not the cluster is highly available (HA).
+	// Boolean flag specifying whether or not the cluster is HA
 	IsHighAvailability pulumi.BoolOutput `pulumi:"isHighAvailability"`
-	// Boolean flag specifying whether or not the cluster should be set up as secure.
-	IsSecure   pulumi.BoolOutput           `pulumi:"isSecure"`
+	// Boolean flag specifying whether or not the cluster should be setup as secure.
+	IsSecure pulumi.BoolOutput `pulumi:"isSecure"`
+	// The user-defined kerberos realm name.
+	KerberosRealmName pulumi.StringOutput `pulumi:"kerberosRealmName"`
+	// The master node in the BDS instance
 	MasterNode BdsInstanceMasterNodeOutput `pulumi:"masterNode"`
-	// Additional configuration of the user's network.
+	// Additional configuration of customer's network.
 	NetworkConfig BdsInstanceNetworkConfigOutput `pulumi:"networkConfig"`
-	// The list of nodes in the Big Data Service cluster.
+	// The list of nodes in the BDS instance
 	Nodes BdsInstanceNodeArrayOutput `pulumi:"nodes"`
-	// The number of nodes that form the cluster.
+	// The amount of worker nodes should be created
 	NumberOfNodes pulumi.IntOutput `pulumi:"numberOfNodes"`
-	// The state of the cluster.
+	// The state of the BDS instance
 	State pulumi.StringOutput `pulumi:"state"`
-	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+	// The time the BDS instance was created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
-	// The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
-	TimeUpdated pulumi.StringOutput         `pulumi:"timeUpdated"`
-	UtilNode    BdsInstanceUtilNodeOutput   `pulumi:"utilNode"`
-	WorkerNode  BdsInstanceWorkerNodeOutput `pulumi:"workerNode"`
+	// The time the BDS instance was updated. An RFC3339 formatted datetime string
+	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	// The utility node in the BDS instance
+	UtilNode   BdsInstanceUtilNodeOutput   `pulumi:"utilNode"`
+	WorkerNode BdsInstanceWorkerNodeOutput `pulumi:"workerNode"`
 }
 
 // NewBdsInstance registers a new resource with the given unique name, arguments, and options.
@@ -180,91 +211,105 @@ func GetBdsInstance(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering BdsInstance resources.
 type bdsInstanceState struct {
-	// The information about added Cloud SQL capability
+	// (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
+	BootstrapScriptUrl *string `pulumi:"bootstrapScriptUrl"`
+	// -(Optional) The information about added Cloud SQL capability
 	CloudSqlDetails []BdsInstanceCloudSqlDetail `pulumi:"cloudSqlDetails"`
-	// Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+	// Base-64 encoded password for Cloudera Manager admin user
 	ClusterAdminPassword *string `pulumi:"clusterAdminPassword"`
 	// Specific info about a Hadoop cluster
 	ClusterDetails []BdsInstanceClusterDetail `pulumi:"clusterDetails"`
 	// The SSH public key used to authenticate the cluster connection.
 	ClusterPublicKey *string `pulumi:"clusterPublicKey"`
-	// Version of the Hadoop distribution.
+	// Version of the Hadoop distribution
 	ClusterVersion *string `pulumi:"clusterVersion"`
-	// (Updatable) The OCID of the compartment.
-	CompartmentId *string `pulumi:"compartmentId"`
-	// The user who created the cluster.
+	// (Updatable) The OCID of the compartment
+	CompartmentId         *string                           `pulumi:"compartmentId"`
+	ComputeOnlyWorkerNode *BdsInstanceComputeOnlyWorkerNode `pulumi:"computeOnlyWorkerNode"`
+	// The user who created the BDS instance.
 	CreatedBy *string `pulumi:"createdBy"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example, `{"foo-namespace": {"bar-key": "value"}}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// (Updatable) Name of the Big Data Service cluster.
+	// (Updatable) Name of the BDS instance
 	DisplayName *string `pulumi:"displayName"`
-	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{"bar-key": "value"}`
+	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// Boolean flag specifying whether or not Cloud SQL should be configured.
+	// -(Optional) (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
 	IsCloudSqlConfigured *bool `pulumi:"isCloudSqlConfigured"`
-	// Boolean flag specifying whether or not the cluster is highly available (HA).
+	// Boolean flag specifying whether or not the cluster is HA
 	IsHighAvailability *bool `pulumi:"isHighAvailability"`
-	// Boolean flag specifying whether or not the cluster should be set up as secure.
-	IsSecure   *bool                  `pulumi:"isSecure"`
+	// Boolean flag specifying whether or not the cluster should be setup as secure.
+	IsSecure *bool `pulumi:"isSecure"`
+	// The user-defined kerberos realm name.
+	KerberosRealmName *string `pulumi:"kerberosRealmName"`
+	// The master node in the BDS instance
 	MasterNode *BdsInstanceMasterNode `pulumi:"masterNode"`
-	// Additional configuration of the user's network.
+	// Additional configuration of customer's network.
 	NetworkConfig *BdsInstanceNetworkConfig `pulumi:"networkConfig"`
-	// The list of nodes in the Big Data Service cluster.
+	// The list of nodes in the BDS instance
 	Nodes []BdsInstanceNode `pulumi:"nodes"`
-	// The number of nodes that form the cluster.
+	// The amount of worker nodes should be created
 	NumberOfNodes *int `pulumi:"numberOfNodes"`
-	// The state of the cluster.
+	// The state of the BDS instance
 	State *string `pulumi:"state"`
-	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+	// The time the BDS instance was created. An RFC3339 formatted datetime string
 	TimeCreated *string `pulumi:"timeCreated"`
-	// The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
-	TimeUpdated *string                `pulumi:"timeUpdated"`
-	UtilNode    *BdsInstanceUtilNode   `pulumi:"utilNode"`
-	WorkerNode  *BdsInstanceWorkerNode `pulumi:"workerNode"`
+	// The time the BDS instance was updated. An RFC3339 formatted datetime string
+	TimeUpdated *string `pulumi:"timeUpdated"`
+	// The utility node in the BDS instance
+	UtilNode   *BdsInstanceUtilNode   `pulumi:"utilNode"`
+	WorkerNode *BdsInstanceWorkerNode `pulumi:"workerNode"`
 }
 
 type BdsInstanceState struct {
-	// The information about added Cloud SQL capability
+	// (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
+	BootstrapScriptUrl pulumi.StringPtrInput
+	// -(Optional) The information about added Cloud SQL capability
 	CloudSqlDetails BdsInstanceCloudSqlDetailArrayInput
-	// Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+	// Base-64 encoded password for Cloudera Manager admin user
 	ClusterAdminPassword pulumi.StringPtrInput
 	// Specific info about a Hadoop cluster
 	ClusterDetails BdsInstanceClusterDetailArrayInput
 	// The SSH public key used to authenticate the cluster connection.
 	ClusterPublicKey pulumi.StringPtrInput
-	// Version of the Hadoop distribution.
+	// Version of the Hadoop distribution
 	ClusterVersion pulumi.StringPtrInput
-	// (Updatable) The OCID of the compartment.
-	CompartmentId pulumi.StringPtrInput
-	// The user who created the cluster.
+	// (Updatable) The OCID of the compartment
+	CompartmentId         pulumi.StringPtrInput
+	ComputeOnlyWorkerNode BdsInstanceComputeOnlyWorkerNodePtrInput
+	// The user who created the BDS instance.
 	CreatedBy pulumi.StringPtrInput
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example, `{"foo-namespace": {"bar-key": "value"}}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
-	// (Updatable) Name of the Big Data Service cluster.
+	// (Updatable) Name of the BDS instance
 	DisplayName pulumi.StringPtrInput
-	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{"bar-key": "value"}`
+	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
-	// Boolean flag specifying whether or not Cloud SQL should be configured.
+	// -(Optional) (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
 	IsCloudSqlConfigured pulumi.BoolPtrInput
-	// Boolean flag specifying whether or not the cluster is highly available (HA).
+	// Boolean flag specifying whether or not the cluster is HA
 	IsHighAvailability pulumi.BoolPtrInput
-	// Boolean flag specifying whether or not the cluster should be set up as secure.
-	IsSecure   pulumi.BoolPtrInput
+	// Boolean flag specifying whether or not the cluster should be setup as secure.
+	IsSecure pulumi.BoolPtrInput
+	// The user-defined kerberos realm name.
+	KerberosRealmName pulumi.StringPtrInput
+	// The master node in the BDS instance
 	MasterNode BdsInstanceMasterNodePtrInput
-	// Additional configuration of the user's network.
+	// Additional configuration of customer's network.
 	NetworkConfig BdsInstanceNetworkConfigPtrInput
-	// The list of nodes in the Big Data Service cluster.
+	// The list of nodes in the BDS instance
 	Nodes BdsInstanceNodeArrayInput
-	// The number of nodes that form the cluster.
+	// The amount of worker nodes should be created
 	NumberOfNodes pulumi.IntPtrInput
-	// The state of the cluster.
+	// The state of the BDS instance
 	State pulumi.StringPtrInput
-	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+	// The time the BDS instance was created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringPtrInput
-	// The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
+	// The time the BDS instance was updated. An RFC3339 formatted datetime string
 	TimeUpdated pulumi.StringPtrInput
-	UtilNode    BdsInstanceUtilNodePtrInput
-	WorkerNode  BdsInstanceWorkerNodePtrInput
+	// The utility node in the BDS instance
+	UtilNode   BdsInstanceUtilNodePtrInput
+	WorkerNode BdsInstanceWorkerNodePtrInput
 }
 
 func (BdsInstanceState) ElementType() reflect.Type {
@@ -272,64 +317,78 @@ func (BdsInstanceState) ElementType() reflect.Type {
 }
 
 type bdsInstanceArgs struct {
-	// The information about added Cloud SQL capability
+	// (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
+	BootstrapScriptUrl *string `pulumi:"bootstrapScriptUrl"`
+	// -(Optional) The information about added Cloud SQL capability
 	CloudSqlDetails []BdsInstanceCloudSqlDetail `pulumi:"cloudSqlDetails"`
-	// Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+	// Base-64 encoded password for Cloudera Manager admin user
 	ClusterAdminPassword string `pulumi:"clusterAdminPassword"`
 	// The SSH public key used to authenticate the cluster connection.
 	ClusterPublicKey string `pulumi:"clusterPublicKey"`
-	// Version of the Hadoop distribution.
+	// Version of the Hadoop distribution
 	ClusterVersion string `pulumi:"clusterVersion"`
-	// (Updatable) The OCID of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example, `{"foo-namespace": {"bar-key": "value"}}`
+	// (Updatable) The OCID of the compartment
+	CompartmentId         string                            `pulumi:"compartmentId"`
+	ComputeOnlyWorkerNode *BdsInstanceComputeOnlyWorkerNode `pulumi:"computeOnlyWorkerNode"`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// (Updatable) Name of the Big Data Service cluster.
+	// (Updatable) Name of the BDS instance
 	DisplayName string `pulumi:"displayName"`
-	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{"bar-key": "value"}`
+	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// Boolean flag specifying whether or not Cloud SQL should be configured.
+	// -(Optional) (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
 	IsCloudSqlConfigured *bool `pulumi:"isCloudSqlConfigured"`
-	// Boolean flag specifying whether or not the cluster is highly available (HA).
+	// Boolean flag specifying whether or not the cluster is HA
 	IsHighAvailability bool `pulumi:"isHighAvailability"`
-	// Boolean flag specifying whether or not the cluster should be set up as secure.
-	IsSecure   bool                  `pulumi:"isSecure"`
+	// Boolean flag specifying whether or not the cluster should be setup as secure.
+	IsSecure bool `pulumi:"isSecure"`
+	// The user-defined kerberos realm name.
+	KerberosRealmName *string `pulumi:"kerberosRealmName"`
+	// The master node in the BDS instance
 	MasterNode BdsInstanceMasterNode `pulumi:"masterNode"`
-	// Additional configuration of the user's network.
+	// Additional configuration of customer's network.
 	NetworkConfig *BdsInstanceNetworkConfig `pulumi:"networkConfig"`
-	UtilNode      BdsInstanceUtilNode       `pulumi:"utilNode"`
-	WorkerNode    BdsInstanceWorkerNode     `pulumi:"workerNode"`
+	// The utility node in the BDS instance
+	UtilNode   BdsInstanceUtilNode   `pulumi:"utilNode"`
+	WorkerNode BdsInstanceWorkerNode `pulumi:"workerNode"`
 }
 
 // The set of arguments for constructing a BdsInstance resource.
 type BdsInstanceArgs struct {
-	// The information about added Cloud SQL capability
+	// (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
+	BootstrapScriptUrl pulumi.StringPtrInput
+	// -(Optional) The information about added Cloud SQL capability
 	CloudSqlDetails BdsInstanceCloudSqlDetailArrayInput
-	// Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+	// Base-64 encoded password for Cloudera Manager admin user
 	ClusterAdminPassword pulumi.StringInput
 	// The SSH public key used to authenticate the cluster connection.
 	ClusterPublicKey pulumi.StringInput
-	// Version of the Hadoop distribution.
+	// Version of the Hadoop distribution
 	ClusterVersion pulumi.StringInput
-	// (Updatable) The OCID of the compartment.
-	CompartmentId pulumi.StringInput
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example, `{"foo-namespace": {"bar-key": "value"}}`
+	// (Updatable) The OCID of the compartment
+	CompartmentId         pulumi.StringInput
+	ComputeOnlyWorkerNode BdsInstanceComputeOnlyWorkerNodePtrInput
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
-	// (Updatable) Name of the Big Data Service cluster.
+	// (Updatable) Name of the BDS instance
 	DisplayName pulumi.StringInput
-	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{"bar-key": "value"}`
+	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
-	// Boolean flag specifying whether or not Cloud SQL should be configured.
+	// -(Optional) (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
 	IsCloudSqlConfigured pulumi.BoolPtrInput
-	// Boolean flag specifying whether or not the cluster is highly available (HA).
+	// Boolean flag specifying whether or not the cluster is HA
 	IsHighAvailability pulumi.BoolInput
-	// Boolean flag specifying whether or not the cluster should be set up as secure.
-	IsSecure   pulumi.BoolInput
+	// Boolean flag specifying whether or not the cluster should be setup as secure.
+	IsSecure pulumi.BoolInput
+	// The user-defined kerberos realm name.
+	KerberosRealmName pulumi.StringPtrInput
+	// The master node in the BDS instance
 	MasterNode BdsInstanceMasterNodeInput
-	// Additional configuration of the user's network.
+	// Additional configuration of customer's network.
 	NetworkConfig BdsInstanceNetworkConfigPtrInput
-	UtilNode      BdsInstanceUtilNodeInput
-	WorkerNode    BdsInstanceWorkerNodeInput
+	// The utility node in the BDS instance
+	UtilNode   BdsInstanceUtilNodeInput
+	WorkerNode BdsInstanceWorkerNodeInput
 }
 
 func (BdsInstanceArgs) ElementType() reflect.Type {

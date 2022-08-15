@@ -40,6 +40,7 @@ public final class GetRouteTablesRouteTableRouteRule {
      * 
      */
     private final String networkEntityId;
+    private final String routeType;
 
     @CustomType.Constructor
     private GetRouteTablesRouteTableRouteRule(
@@ -47,12 +48,14 @@ public final class GetRouteTablesRouteTableRouteRule {
         @CustomType.Parameter("description") String description,
         @CustomType.Parameter("destination") String destination,
         @CustomType.Parameter("destinationType") String destinationType,
-        @CustomType.Parameter("networkEntityId") String networkEntityId) {
+        @CustomType.Parameter("networkEntityId") String networkEntityId,
+        @CustomType.Parameter("routeType") String routeType) {
         this.cidrBlock = cidrBlock;
         this.description = description;
         this.destination = destination;
         this.destinationType = destinationType;
         this.networkEntityId = networkEntityId;
+        this.routeType = routeType;
     }
 
     /**
@@ -96,6 +99,9 @@ public final class GetRouteTablesRouteTableRouteRule {
     public String networkEntityId() {
         return this.networkEntityId;
     }
+    public String routeType() {
+        return this.routeType;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -111,6 +117,7 @@ public final class GetRouteTablesRouteTableRouteRule {
         private String destination;
         private String destinationType;
         private String networkEntityId;
+        private String routeType;
 
         public Builder() {
     	      // Empty
@@ -123,6 +130,7 @@ public final class GetRouteTablesRouteTableRouteRule {
     	      this.destination = defaults.destination;
     	      this.destinationType = defaults.destinationType;
     	      this.networkEntityId = defaults.networkEntityId;
+    	      this.routeType = defaults.routeType;
         }
 
         public Builder cidrBlock(String cidrBlock) {
@@ -144,8 +152,12 @@ public final class GetRouteTablesRouteTableRouteRule {
         public Builder networkEntityId(String networkEntityId) {
             this.networkEntityId = Objects.requireNonNull(networkEntityId);
             return this;
+        }
+        public Builder routeType(String routeType) {
+            this.routeType = Objects.requireNonNull(routeType);
+            return this;
         }        public GetRouteTablesRouteTableRouteRule build() {
-            return new GetRouteTablesRouteTableRouteRule(cidrBlock, description, destination, destinationType, networkEntityId);
+            return new GetRouteTablesRouteTableRouteRule(cidrBlock, description, destination, destinationType, networkEntityId, routeType);
         }
     }
 }

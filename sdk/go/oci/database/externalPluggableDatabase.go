@@ -90,6 +90,8 @@ type ExternalPluggableDatabase struct {
 	OperationsInsightsConfigs ExternalPluggableDatabaseOperationsInsightsConfigArrayOutput `pulumi:"operationsInsightsConfigs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the the non-container database that was converted to a pluggable database to create this resource.
 	SourceId pulumi.StringOutput `pulumi:"sourceId"`
+	// The configuration of Stack Monitoring for the external database.
+	StackMonitoringConfigs ExternalPluggableDatabaseStackMonitoringConfigArrayOutput `pulumi:"stackMonitoringConfigs"`
 	// The current state of the Oracle Cloud Infrastructure external database resource.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The date and time the database was created.
@@ -170,6 +172,8 @@ type externalPluggableDatabaseState struct {
 	OperationsInsightsConfigs []ExternalPluggableDatabaseOperationsInsightsConfig `pulumi:"operationsInsightsConfigs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the the non-container database that was converted to a pluggable database to create this resource.
 	SourceId *string `pulumi:"sourceId"`
+	// The configuration of Stack Monitoring for the external database.
+	StackMonitoringConfigs []ExternalPluggableDatabaseStackMonitoringConfig `pulumi:"stackMonitoringConfigs"`
 	// The current state of the Oracle Cloud Infrastructure external database resource.
 	State *string `pulumi:"state"`
 	// The date and time the database was created.
@@ -213,6 +217,8 @@ type ExternalPluggableDatabaseState struct {
 	OperationsInsightsConfigs ExternalPluggableDatabaseOperationsInsightsConfigArrayInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the the non-container database that was converted to a pluggable database to create this resource.
 	SourceId pulumi.StringPtrInput
+	// The configuration of Stack Monitoring for the external database.
+	StackMonitoringConfigs ExternalPluggableDatabaseStackMonitoringConfigArrayInput
 	// The current state of the Oracle Cloud Infrastructure external database resource.
 	State pulumi.StringPtrInput
 	// The date and time the database was created.

@@ -61,33 +61,33 @@ import (
 type Rule struct {
 	pulumi.CustomResourceState
 
-	// The unique Budget OCID
+	// The unique budget OCID.
 	BudgetId pulumi.StringOutput `pulumi:"budgetId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) The description of the alert rule.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// (Updatable) The name of the alert rule.
+	// (Updatable) The name of the alert rule. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
-	// (Updatable) The message to be sent to the recipients when alert rule is triggered.
+	// (Updatable) The message to be sent to the recipients when the alert rule is triggered.
 	Message pulumi.StringOutput `pulumi:"message"`
-	// (Updatable) The audience that will receive the alert when it triggers. An empty string is interpreted as null.
+	// (Updatable) The audience that receives the alert when it triggers. An empty string is interpreted as null.
 	Recipients pulumi.StringPtrOutput `pulumi:"recipients"`
 	// The current state of the alert rule.
 	State pulumi.StringOutput `pulumi:"state"`
-	// (Updatable) The threshold for triggering the alert expressed as a whole number or decimal value. If thresholdType is ABSOLUTE, threshold can have at most 12 digits before the decimal point and up to 2 digits after the decimal point. If thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to 2 digits after the decimal point.
+	// (Updatable) The threshold for triggering the alert, expressed as a whole number or decimal value. If the thresholdType is ABSOLUTE, the threshold can have at most 12 digits before the decimal point, and up to two digits after the decimal point. If the thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to two digits after the decimal point.
 	Threshold pulumi.Float64Output `pulumi:"threshold"`
 	// (Updatable) The type of threshold.
 	ThresholdType pulumi.StringOutput `pulumi:"thresholdType"`
-	// Time when budget was created
+	// The time when the budget was created.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
-	// Time when budget was updated
+	// The time when the budget was updated.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
-	// (Updatable) Type of alert. Valid values are ACTUAL (the alert will trigger based on actual usage) or FORECAST (the alert will trigger based on predicted usage).
+	// (Updatable) The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
 	Type pulumi.StringOutput `pulumi:"type"`
-	// Version of the alert rule. Starts from 1 and increments by 1.
+	// The version of the alert rule. Starts from 1 and increments by 1.
 	Version pulumi.IntOutput `pulumi:"version"`
 }
 
@@ -132,64 +132,64 @@ func GetRule(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Rule resources.
 type ruleState struct {
-	// The unique Budget OCID
+	// The unique budget OCID.
 	BudgetId *string `pulumi:"budgetId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) The description of the alert rule.
 	Description *string `pulumi:"description"`
-	// (Updatable) The name of the alert rule.
+	// (Updatable) The name of the alert rule. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// (Updatable) The message to be sent to the recipients when alert rule is triggered.
+	// (Updatable) The message to be sent to the recipients when the alert rule is triggered.
 	Message *string `pulumi:"message"`
-	// (Updatable) The audience that will receive the alert when it triggers. An empty string is interpreted as null.
+	// (Updatable) The audience that receives the alert when it triggers. An empty string is interpreted as null.
 	Recipients *string `pulumi:"recipients"`
 	// The current state of the alert rule.
 	State *string `pulumi:"state"`
-	// (Updatable) The threshold for triggering the alert expressed as a whole number or decimal value. If thresholdType is ABSOLUTE, threshold can have at most 12 digits before the decimal point and up to 2 digits after the decimal point. If thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to 2 digits after the decimal point.
+	// (Updatable) The threshold for triggering the alert, expressed as a whole number or decimal value. If the thresholdType is ABSOLUTE, the threshold can have at most 12 digits before the decimal point, and up to two digits after the decimal point. If the thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to two digits after the decimal point.
 	Threshold *float64 `pulumi:"threshold"`
 	// (Updatable) The type of threshold.
 	ThresholdType *string `pulumi:"thresholdType"`
-	// Time when budget was created
+	// The time when the budget was created.
 	TimeCreated *string `pulumi:"timeCreated"`
-	// Time when budget was updated
+	// The time when the budget was updated.
 	TimeUpdated *string `pulumi:"timeUpdated"`
-	// (Updatable) Type of alert. Valid values are ACTUAL (the alert will trigger based on actual usage) or FORECAST (the alert will trigger based on predicted usage).
+	// (Updatable) The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
 	Type *string `pulumi:"type"`
-	// Version of the alert rule. Starts from 1 and increments by 1.
+	// The version of the alert rule. Starts from 1 and increments by 1.
 	Version *int `pulumi:"version"`
 }
 
 type RuleState struct {
-	// The unique Budget OCID
+	// The unique budget OCID.
 	BudgetId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput
 	// (Updatable) The description of the alert rule.
 	Description pulumi.StringPtrInput
-	// (Updatable) The name of the alert rule.
+	// (Updatable) The name of the alert rule. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
-	// (Updatable) The message to be sent to the recipients when alert rule is triggered.
+	// (Updatable) The message to be sent to the recipients when the alert rule is triggered.
 	Message pulumi.StringPtrInput
-	// (Updatable) The audience that will receive the alert when it triggers. An empty string is interpreted as null.
+	// (Updatable) The audience that receives the alert when it triggers. An empty string is interpreted as null.
 	Recipients pulumi.StringPtrInput
 	// The current state of the alert rule.
 	State pulumi.StringPtrInput
-	// (Updatable) The threshold for triggering the alert expressed as a whole number or decimal value. If thresholdType is ABSOLUTE, threshold can have at most 12 digits before the decimal point and up to 2 digits after the decimal point. If thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to 2 digits after the decimal point.
+	// (Updatable) The threshold for triggering the alert, expressed as a whole number or decimal value. If the thresholdType is ABSOLUTE, the threshold can have at most 12 digits before the decimal point, and up to two digits after the decimal point. If the thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to two digits after the decimal point.
 	Threshold pulumi.Float64PtrInput
 	// (Updatable) The type of threshold.
 	ThresholdType pulumi.StringPtrInput
-	// Time when budget was created
+	// The time when the budget was created.
 	TimeCreated pulumi.StringPtrInput
-	// Time when budget was updated
+	// The time when the budget was updated.
 	TimeUpdated pulumi.StringPtrInput
-	// (Updatable) Type of alert. Valid values are ACTUAL (the alert will trigger based on actual usage) or FORECAST (the alert will trigger based on predicted usage).
+	// (Updatable) The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
 	Type pulumi.StringPtrInput
-	// Version of the alert rule. Starts from 1 and increments by 1.
+	// The version of the alert rule. Starts from 1 and increments by 1.
 	Version pulumi.IntPtrInput
 }
 
@@ -198,49 +198,49 @@ func (RuleState) ElementType() reflect.Type {
 }
 
 type ruleArgs struct {
-	// The unique Budget OCID
+	// The unique budget OCID.
 	BudgetId string `pulumi:"budgetId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) The description of the alert rule.
 	Description *string `pulumi:"description"`
-	// (Updatable) The name of the alert rule.
+	// (Updatable) The name of the alert rule. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// (Updatable) The message to be sent to the recipients when alert rule is triggered.
+	// (Updatable) The message to be sent to the recipients when the alert rule is triggered.
 	Message *string `pulumi:"message"`
-	// (Updatable) The audience that will receive the alert when it triggers. An empty string is interpreted as null.
+	// (Updatable) The audience that receives the alert when it triggers. An empty string is interpreted as null.
 	Recipients *string `pulumi:"recipients"`
-	// (Updatable) The threshold for triggering the alert expressed as a whole number or decimal value. If thresholdType is ABSOLUTE, threshold can have at most 12 digits before the decimal point and up to 2 digits after the decimal point. If thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to 2 digits after the decimal point.
+	// (Updatable) The threshold for triggering the alert, expressed as a whole number or decimal value. If the thresholdType is ABSOLUTE, the threshold can have at most 12 digits before the decimal point, and up to two digits after the decimal point. If the thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to two digits after the decimal point.
 	Threshold float64 `pulumi:"threshold"`
 	// (Updatable) The type of threshold.
 	ThresholdType string `pulumi:"thresholdType"`
-	// (Updatable) Type of alert. Valid values are ACTUAL (the alert will trigger based on actual usage) or FORECAST (the alert will trigger based on predicted usage).
+	// (Updatable) The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
 	Type string `pulumi:"type"`
 }
 
 // The set of arguments for constructing a Rule resource.
 type RuleArgs struct {
-	// The unique Budget OCID
+	// The unique budget OCID.
 	BudgetId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput
 	// (Updatable) The description of the alert rule.
 	Description pulumi.StringPtrInput
-	// (Updatable) The name of the alert rule.
+	// (Updatable) The name of the alert rule. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
-	// (Updatable) The message to be sent to the recipients when alert rule is triggered.
+	// (Updatable) The message to be sent to the recipients when the alert rule is triggered.
 	Message pulumi.StringPtrInput
-	// (Updatable) The audience that will receive the alert when it triggers. An empty string is interpreted as null.
+	// (Updatable) The audience that receives the alert when it triggers. An empty string is interpreted as null.
 	Recipients pulumi.StringPtrInput
-	// (Updatable) The threshold for triggering the alert expressed as a whole number or decimal value. If thresholdType is ABSOLUTE, threshold can have at most 12 digits before the decimal point and up to 2 digits after the decimal point. If thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to 2 digits after the decimal point.
+	// (Updatable) The threshold for triggering the alert, expressed as a whole number or decimal value. If the thresholdType is ABSOLUTE, the threshold can have at most 12 digits before the decimal point, and up to two digits after the decimal point. If the thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to two digits after the decimal point.
 	Threshold pulumi.Float64Input
 	// (Updatable) The type of threshold.
 	ThresholdType pulumi.StringInput
-	// (Updatable) Type of alert. Valid values are ACTUAL (the alert will trigger based on actual usage) or FORECAST (the alert will trigger based on predicted usage).
+	// (Updatable) The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
 	Type pulumi.StringInput
 }
 

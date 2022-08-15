@@ -10,6 +10,7 @@ import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesClonesAutonomousDat
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrl;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesClonesAutonomousDatabaseCustomerContact;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntry;
+import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDb;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperation;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDb;
 import java.lang.Boolean;
@@ -63,6 +64,11 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      * 
      */
     private final List<GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfig> backupConfigs;
+    /**
+     * @return The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
+     * 
+     */
+    private final String characterSet;
     /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
@@ -183,7 +189,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private final Boolean isAutoScalingForStorageEnabled;
     /**
-     * @return Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to  Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+     * @return **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      * 
      */
     private final Boolean isDataGuardEnabled;
@@ -197,6 +203,11 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      * 
      */
     private final Boolean isFreeTier;
+    /**
+     * @return Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+     * 
+     */
+    private final Boolean isLocalDataGuardEnabled;
     /**
      * @return Indicates whether the Autonomous Database requires mTLS connections.
      * 
@@ -217,6 +228,11 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      * 
      */
     private final Boolean isRefreshableClone;
+    /**
+     * @return Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+     * 
+     */
+    private final Boolean isRemoteDataGuardEnabled;
     /**
      * @return Key History Entry.
      * 
@@ -258,6 +274,11 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private final String lifecycleDetails;
     /**
+     * @return Autonomous Data Guard standby database details.
+     * 
+     */
+    private final List<GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDb> localStandbyDbs;
+    /**
      * @return The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
      * 
      */
@@ -268,8 +289,13 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private final Integer memoryPerOracleComputeUnitInGbs;
     /**
-     * @return A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-     * * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+     * @return The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
+     * 
+     */
+    private final String ncharacterSet;
+    /**
+     * @return The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+     * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      * 
      */
     private final List<String> nsgIds;
@@ -304,6 +330,11 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private final String privateEndpointLabel;
     /**
+     * @return An array of CPU values that an Autonomous Database can be scaled to.
+     * 
+     */
+    private final List<Double> provisionableCpuses;
+    /**
      * @return The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
      * 
      */
@@ -334,7 +365,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private final String sourceId;
     /**
-     * @return Autonomous Data Guard standby database details.
+     * @return **Deprecated** Autonomous Data Guard standby database details.
      * 
      */
     private final List<GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDb> standbyDbs;
@@ -454,6 +485,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         @CustomType.Parameter("autonomousMaintenanceScheduleType") String autonomousMaintenanceScheduleType,
         @CustomType.Parameter("availableUpgradeVersions") List<String> availableUpgradeVersions,
         @CustomType.Parameter("backupConfigs") List<GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfig> backupConfigs,
+        @CustomType.Parameter("characterSet") String characterSet,
         @CustomType.Parameter("compartmentId") String compartmentId,
         @CustomType.Parameter("connectionStrings") List<GetAutonomousDatabasesClonesAutonomousDatabaseConnectionString> connectionStrings,
         @CustomType.Parameter("connectionUrls") List<GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrl> connectionUrls,
@@ -480,10 +512,12 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         @CustomType.Parameter("isDataGuardEnabled") Boolean isDataGuardEnabled,
         @CustomType.Parameter("isDedicated") Boolean isDedicated,
         @CustomType.Parameter("isFreeTier") Boolean isFreeTier,
+        @CustomType.Parameter("isLocalDataGuardEnabled") Boolean isLocalDataGuardEnabled,
         @CustomType.Parameter("isMtlsConnectionRequired") Boolean isMtlsConnectionRequired,
         @CustomType.Parameter("isPreview") Boolean isPreview,
         @CustomType.Parameter("isReconnectCloneEnabled") Boolean isReconnectCloneEnabled,
         @CustomType.Parameter("isRefreshableClone") Boolean isRefreshableClone,
+        @CustomType.Parameter("isRemoteDataGuardEnabled") Boolean isRemoteDataGuardEnabled,
         @CustomType.Parameter("keyHistoryEntries") List<GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntry> keyHistoryEntries,
         @CustomType.Parameter("keyStoreId") String keyStoreId,
         @CustomType.Parameter("keyStoreWalletName") String keyStoreWalletName,
@@ -492,8 +526,10 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         @CustomType.Parameter("kmsKeyVersionId") String kmsKeyVersionId,
         @CustomType.Parameter("licenseModel") String licenseModel,
         @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
+        @CustomType.Parameter("localStandbyDbs") List<GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDb> localStandbyDbs,
         @CustomType.Parameter("maxCpuCoreCount") Integer maxCpuCoreCount,
         @CustomType.Parameter("memoryPerOracleComputeUnitInGbs") Integer memoryPerOracleComputeUnitInGbs,
+        @CustomType.Parameter("ncharacterSet") String ncharacterSet,
         @CustomType.Parameter("nsgIds") List<String> nsgIds,
         @CustomType.Parameter("ocpuCount") Double ocpuCount,
         @CustomType.Parameter("openMode") String openMode,
@@ -501,6 +537,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         @CustomType.Parameter("privateEndpoint") String privateEndpoint,
         @CustomType.Parameter("privateEndpointIp") String privateEndpointIp,
         @CustomType.Parameter("privateEndpointLabel") String privateEndpointLabel,
+        @CustomType.Parameter("provisionableCpuses") List<Double> provisionableCpuses,
         @CustomType.Parameter("refreshableMode") String refreshableMode,
         @CustomType.Parameter("refreshableStatus") String refreshableStatus,
         @CustomType.Parameter("role") String role,
@@ -537,6 +574,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         this.autonomousMaintenanceScheduleType = autonomousMaintenanceScheduleType;
         this.availableUpgradeVersions = availableUpgradeVersions;
         this.backupConfigs = backupConfigs;
+        this.characterSet = characterSet;
         this.compartmentId = compartmentId;
         this.connectionStrings = connectionStrings;
         this.connectionUrls = connectionUrls;
@@ -563,10 +601,12 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         this.isDataGuardEnabled = isDataGuardEnabled;
         this.isDedicated = isDedicated;
         this.isFreeTier = isFreeTier;
+        this.isLocalDataGuardEnabled = isLocalDataGuardEnabled;
         this.isMtlsConnectionRequired = isMtlsConnectionRequired;
         this.isPreview = isPreview;
         this.isReconnectCloneEnabled = isReconnectCloneEnabled;
         this.isRefreshableClone = isRefreshableClone;
+        this.isRemoteDataGuardEnabled = isRemoteDataGuardEnabled;
         this.keyHistoryEntries = keyHistoryEntries;
         this.keyStoreId = keyStoreId;
         this.keyStoreWalletName = keyStoreWalletName;
@@ -575,8 +615,10 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         this.kmsKeyVersionId = kmsKeyVersionId;
         this.licenseModel = licenseModel;
         this.lifecycleDetails = lifecycleDetails;
+        this.localStandbyDbs = localStandbyDbs;
         this.maxCpuCoreCount = maxCpuCoreCount;
         this.memoryPerOracleComputeUnitInGbs = memoryPerOracleComputeUnitInGbs;
+        this.ncharacterSet = ncharacterSet;
         this.nsgIds = nsgIds;
         this.ocpuCount = ocpuCount;
         this.openMode = openMode;
@@ -584,6 +626,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         this.privateEndpoint = privateEndpoint;
         this.privateEndpointIp = privateEndpointIp;
         this.privateEndpointLabel = privateEndpointLabel;
+        this.provisionableCpuses = provisionableCpuses;
         this.refreshableMode = refreshableMode;
         this.refreshableStatus = refreshableStatus;
         this.role = role;
@@ -669,6 +712,13 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     public List<GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfig> backupConfigs() {
         return this.backupConfigs;
+    }
+    /**
+     * @return The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
+     * 
+     */
+    public String characterSet() {
+        return this.characterSet;
     }
     /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -836,7 +886,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.isAutoScalingForStorageEnabled;
     }
     /**
-     * @return Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to  Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+     * @return **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      * 
      */
     public Boolean isDataGuardEnabled() {
@@ -855,6 +905,13 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     public Boolean isFreeTier() {
         return this.isFreeTier;
+    }
+    /**
+     * @return Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+     * 
+     */
+    public Boolean isLocalDataGuardEnabled() {
+        return this.isLocalDataGuardEnabled;
     }
     /**
      * @return Indicates whether the Autonomous Database requires mTLS connections.
@@ -883,6 +940,13 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     public Boolean isRefreshableClone() {
         return this.isRefreshableClone;
+    }
+    /**
+     * @return Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+     * 
+     */
+    public Boolean isRemoteDataGuardEnabled() {
+        return this.isRemoteDataGuardEnabled;
     }
     /**
      * @return Key History Entry.
@@ -941,6 +1005,13 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.lifecycleDetails;
     }
     /**
+     * @return Autonomous Data Guard standby database details.
+     * 
+     */
+    public List<GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDb> localStandbyDbs() {
+        return this.localStandbyDbs;
+    }
+    /**
      * @return The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
      * 
      */
@@ -955,8 +1026,15 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.memoryPerOracleComputeUnitInGbs;
     }
     /**
-     * @return A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-     * * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+     * @return The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
+     * 
+     */
+    public String ncharacterSet() {
+        return this.ncharacterSet;
+    }
+    /**
+     * @return The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+     * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      * 
      */
     public List<String> nsgIds() {
@@ -1005,6 +1083,13 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.privateEndpointLabel;
     }
     /**
+     * @return An array of CPU values that an Autonomous Database can be scaled to.
+     * 
+     */
+    public List<Double> provisionableCpuses() {
+        return this.provisionableCpuses;
+    }
+    /**
      * @return The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
      * 
      */
@@ -1047,7 +1132,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.sourceId;
     }
     /**
-     * @return Autonomous Data Guard standby database details.
+     * @return **Deprecated** Autonomous Data Guard standby database details.
      * 
      */
     public List<GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDb> standbyDbs() {
@@ -1218,6 +1303,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         private String autonomousMaintenanceScheduleType;
         private List<String> availableUpgradeVersions;
         private List<GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfig> backupConfigs;
+        private String characterSet;
         private String compartmentId;
         private List<GetAutonomousDatabasesClonesAutonomousDatabaseConnectionString> connectionStrings;
         private List<GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrl> connectionUrls;
@@ -1244,10 +1330,12 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         private Boolean isDataGuardEnabled;
         private Boolean isDedicated;
         private Boolean isFreeTier;
+        private Boolean isLocalDataGuardEnabled;
         private Boolean isMtlsConnectionRequired;
         private Boolean isPreview;
         private Boolean isReconnectCloneEnabled;
         private Boolean isRefreshableClone;
+        private Boolean isRemoteDataGuardEnabled;
         private List<GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntry> keyHistoryEntries;
         private String keyStoreId;
         private String keyStoreWalletName;
@@ -1256,8 +1344,10 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         private String kmsKeyVersionId;
         private String licenseModel;
         private String lifecycleDetails;
+        private List<GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDb> localStandbyDbs;
         private Integer maxCpuCoreCount;
         private Integer memoryPerOracleComputeUnitInGbs;
+        private String ncharacterSet;
         private List<String> nsgIds;
         private Double ocpuCount;
         private String openMode;
@@ -1265,6 +1355,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         private String privateEndpoint;
         private String privateEndpointIp;
         private String privateEndpointLabel;
+        private List<Double> provisionableCpuses;
         private String refreshableMode;
         private String refreshableStatus;
         private String role;
@@ -1308,6 +1399,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
     	      this.autonomousMaintenanceScheduleType = defaults.autonomousMaintenanceScheduleType;
     	      this.availableUpgradeVersions = defaults.availableUpgradeVersions;
     	      this.backupConfigs = defaults.backupConfigs;
+    	      this.characterSet = defaults.characterSet;
     	      this.compartmentId = defaults.compartmentId;
     	      this.connectionStrings = defaults.connectionStrings;
     	      this.connectionUrls = defaults.connectionUrls;
@@ -1334,10 +1426,12 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
     	      this.isDataGuardEnabled = defaults.isDataGuardEnabled;
     	      this.isDedicated = defaults.isDedicated;
     	      this.isFreeTier = defaults.isFreeTier;
+    	      this.isLocalDataGuardEnabled = defaults.isLocalDataGuardEnabled;
     	      this.isMtlsConnectionRequired = defaults.isMtlsConnectionRequired;
     	      this.isPreview = defaults.isPreview;
     	      this.isReconnectCloneEnabled = defaults.isReconnectCloneEnabled;
     	      this.isRefreshableClone = defaults.isRefreshableClone;
+    	      this.isRemoteDataGuardEnabled = defaults.isRemoteDataGuardEnabled;
     	      this.keyHistoryEntries = defaults.keyHistoryEntries;
     	      this.keyStoreId = defaults.keyStoreId;
     	      this.keyStoreWalletName = defaults.keyStoreWalletName;
@@ -1346,8 +1440,10 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
     	      this.kmsKeyVersionId = defaults.kmsKeyVersionId;
     	      this.licenseModel = defaults.licenseModel;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.localStandbyDbs = defaults.localStandbyDbs;
     	      this.maxCpuCoreCount = defaults.maxCpuCoreCount;
     	      this.memoryPerOracleComputeUnitInGbs = defaults.memoryPerOracleComputeUnitInGbs;
+    	      this.ncharacterSet = defaults.ncharacterSet;
     	      this.nsgIds = defaults.nsgIds;
     	      this.ocpuCount = defaults.ocpuCount;
     	      this.openMode = defaults.openMode;
@@ -1355,6 +1451,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
     	      this.privateEndpoint = defaults.privateEndpoint;
     	      this.privateEndpointIp = defaults.privateEndpointIp;
     	      this.privateEndpointLabel = defaults.privateEndpointLabel;
+    	      this.provisionableCpuses = defaults.provisionableCpuses;
     	      this.refreshableMode = defaults.refreshableMode;
     	      this.refreshableStatus = defaults.refreshableStatus;
     	      this.role = defaults.role;
@@ -1425,6 +1522,10 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         }
         public Builder backupConfigs(GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfig... backupConfigs) {
             return backupConfigs(List.of(backupConfigs));
+        }
+        public Builder characterSet(String characterSet) {
+            this.characterSet = Objects.requireNonNull(characterSet);
+            return this;
         }
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
@@ -1539,6 +1640,10 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
             this.isFreeTier = Objects.requireNonNull(isFreeTier);
             return this;
         }
+        public Builder isLocalDataGuardEnabled(Boolean isLocalDataGuardEnabled) {
+            this.isLocalDataGuardEnabled = Objects.requireNonNull(isLocalDataGuardEnabled);
+            return this;
+        }
         public Builder isMtlsConnectionRequired(Boolean isMtlsConnectionRequired) {
             this.isMtlsConnectionRequired = Objects.requireNonNull(isMtlsConnectionRequired);
             return this;
@@ -1553,6 +1658,10 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         }
         public Builder isRefreshableClone(Boolean isRefreshableClone) {
             this.isRefreshableClone = Objects.requireNonNull(isRefreshableClone);
+            return this;
+        }
+        public Builder isRemoteDataGuardEnabled(Boolean isRemoteDataGuardEnabled) {
+            this.isRemoteDataGuardEnabled = Objects.requireNonNull(isRemoteDataGuardEnabled);
             return this;
         }
         public Builder keyHistoryEntries(List<GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntry> keyHistoryEntries) {
@@ -1590,12 +1699,23 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        public Builder localStandbyDbs(List<GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDb> localStandbyDbs) {
+            this.localStandbyDbs = Objects.requireNonNull(localStandbyDbs);
+            return this;
+        }
+        public Builder localStandbyDbs(GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDb... localStandbyDbs) {
+            return localStandbyDbs(List.of(localStandbyDbs));
+        }
         public Builder maxCpuCoreCount(Integer maxCpuCoreCount) {
             this.maxCpuCoreCount = Objects.requireNonNull(maxCpuCoreCount);
             return this;
         }
         public Builder memoryPerOracleComputeUnitInGbs(Integer memoryPerOracleComputeUnitInGbs) {
             this.memoryPerOracleComputeUnitInGbs = Objects.requireNonNull(memoryPerOracleComputeUnitInGbs);
+            return this;
+        }
+        public Builder ncharacterSet(String ncharacterSet) {
+            this.ncharacterSet = Objects.requireNonNull(ncharacterSet);
             return this;
         }
         public Builder nsgIds(List<String> nsgIds) {
@@ -1631,6 +1751,13 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         public Builder privateEndpointLabel(String privateEndpointLabel) {
             this.privateEndpointLabel = Objects.requireNonNull(privateEndpointLabel);
             return this;
+        }
+        public Builder provisionableCpuses(List<Double> provisionableCpuses) {
+            this.provisionableCpuses = Objects.requireNonNull(provisionableCpuses);
+            return this;
+        }
+        public Builder provisionableCpuses(Double... provisionableCpuses) {
+            return provisionableCpuses(List.of(provisionableCpuses));
         }
         public Builder refreshableMode(String refreshableMode) {
             this.refreshableMode = Objects.requireNonNull(refreshableMode);
@@ -1759,7 +1886,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         public Builder whitelistedIps(String... whitelistedIps) {
             return whitelistedIps(List.of(whitelistedIps));
         }        public GetAutonomousDatabasesClonesAutonomousDatabase build() {
-            return new GetAutonomousDatabasesClonesAutonomousDatabase(actualUsedDataStorageSizeInTbs, allocatedStorageSizeInTbs, apexDetails, arePrimaryWhitelistedIpsUsed, autonomousContainerDatabaseId, autonomousMaintenanceScheduleType, availableUpgradeVersions, backupConfigs, compartmentId, connectionStrings, connectionUrls, cpuCoreCount, customerContacts, dataSafeStatus, dataStorageSizeInGb, dataStorageSizeInTbs, databaseEdition, databaseManagementStatus, dataguardRegionType, dbName, dbVersion, dbWorkload, definedTags, displayName, failedDataRecoveryInSeconds, freeformTags, id, infrastructureType, isAccessControlEnabled, isAutoScalingEnabled, isAutoScalingForStorageEnabled, isDataGuardEnabled, isDedicated, isFreeTier, isMtlsConnectionRequired, isPreview, isReconnectCloneEnabled, isRefreshableClone, keyHistoryEntries, keyStoreId, keyStoreWalletName, kmsKeyId, kmsKeyLifecycleDetails, kmsKeyVersionId, licenseModel, lifecycleDetails, maxCpuCoreCount, memoryPerOracleComputeUnitInGbs, nsgIds, ocpuCount, openMode, peerDbIds, privateEndpoint, privateEndpointIp, privateEndpointLabel, refreshableMode, refreshableStatus, role, scheduledOperations, serviceConsoleUrl, sourceId, standbyDbs, standbyWhitelistedIps, state, subnetId, supportedRegionsToCloneTos, systemTags, timeCreated, timeDataGuardRoleChanged, timeDeletionOfFreeAutonomousDatabase, timeLocalDataGuardEnabled, timeMaintenanceBegin, timeMaintenanceEnd, timeOfLastFailover, timeOfLastRefresh, timeOfLastRefreshPoint, timeOfLastSwitchover, timeOfNextRefresh, timeReclamationOfFreeAutonomousDatabase, timeUntilReconnectCloneEnabled, usedDataStorageSizeInTbs, vaultId, whitelistedIps);
+            return new GetAutonomousDatabasesClonesAutonomousDatabase(actualUsedDataStorageSizeInTbs, allocatedStorageSizeInTbs, apexDetails, arePrimaryWhitelistedIpsUsed, autonomousContainerDatabaseId, autonomousMaintenanceScheduleType, availableUpgradeVersions, backupConfigs, characterSet, compartmentId, connectionStrings, connectionUrls, cpuCoreCount, customerContacts, dataSafeStatus, dataStorageSizeInGb, dataStorageSizeInTbs, databaseEdition, databaseManagementStatus, dataguardRegionType, dbName, dbVersion, dbWorkload, definedTags, displayName, failedDataRecoveryInSeconds, freeformTags, id, infrastructureType, isAccessControlEnabled, isAutoScalingEnabled, isAutoScalingForStorageEnabled, isDataGuardEnabled, isDedicated, isFreeTier, isLocalDataGuardEnabled, isMtlsConnectionRequired, isPreview, isReconnectCloneEnabled, isRefreshableClone, isRemoteDataGuardEnabled, keyHistoryEntries, keyStoreId, keyStoreWalletName, kmsKeyId, kmsKeyLifecycleDetails, kmsKeyVersionId, licenseModel, lifecycleDetails, localStandbyDbs, maxCpuCoreCount, memoryPerOracleComputeUnitInGbs, ncharacterSet, nsgIds, ocpuCount, openMode, peerDbIds, privateEndpoint, privateEndpointIp, privateEndpointLabel, provisionableCpuses, refreshableMode, refreshableStatus, role, scheduledOperations, serviceConsoleUrl, sourceId, standbyDbs, standbyWhitelistedIps, state, subnetId, supportedRegionsToCloneTos, systemTags, timeCreated, timeDataGuardRoleChanged, timeDeletionOfFreeAutonomousDatabase, timeLocalDataGuardEnabled, timeMaintenanceBegin, timeMaintenanceEnd, timeOfLastFailover, timeOfLastRefresh, timeOfLastRefreshPoint, timeOfLastSwitchover, timeOfNextRefresh, timeReclamationOfFreeAutonomousDatabase, timeUntilReconnectCloneEnabled, usedDataStorageSizeInTbs, vaultId, whitelistedIps);
         }
     }
 }

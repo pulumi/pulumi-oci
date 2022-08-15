@@ -22,6 +22,7 @@ public final class DefaultRouteTableRouteRule {
     private final @Nullable String destination;
     private final @Nullable String destinationType;
     private final String networkEntityId;
+    private final @Nullable String routeType;
 
     @CustomType.Constructor
     private DefaultRouteTableRouteRule(
@@ -29,12 +30,14 @@ public final class DefaultRouteTableRouteRule {
         @CustomType.Parameter("description") @Nullable String description,
         @CustomType.Parameter("destination") @Nullable String destination,
         @CustomType.Parameter("destinationType") @Nullable String destinationType,
-        @CustomType.Parameter("networkEntityId") String networkEntityId) {
+        @CustomType.Parameter("networkEntityId") String networkEntityId,
+        @CustomType.Parameter("routeType") @Nullable String routeType) {
         this.cidrBlock = cidrBlock;
         this.description = description;
         this.destination = destination;
         this.destinationType = destinationType;
         this.networkEntityId = networkEntityId;
+        this.routeType = routeType;
     }
 
     /**
@@ -58,6 +61,9 @@ public final class DefaultRouteTableRouteRule {
     public String networkEntityId() {
         return this.networkEntityId;
     }
+    public Optional<String> routeType() {
+        return Optional.ofNullable(this.routeType);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -73,6 +79,7 @@ public final class DefaultRouteTableRouteRule {
         private @Nullable String destination;
         private @Nullable String destinationType;
         private String networkEntityId;
+        private @Nullable String routeType;
 
         public Builder() {
     	      // Empty
@@ -85,6 +92,7 @@ public final class DefaultRouteTableRouteRule {
     	      this.destination = defaults.destination;
     	      this.destinationType = defaults.destinationType;
     	      this.networkEntityId = defaults.networkEntityId;
+    	      this.routeType = defaults.routeType;
         }
 
         public Builder cidrBlock(@Nullable String cidrBlock) {
@@ -106,8 +114,12 @@ public final class DefaultRouteTableRouteRule {
         public Builder networkEntityId(String networkEntityId) {
             this.networkEntityId = Objects.requireNonNull(networkEntityId);
             return this;
+        }
+        public Builder routeType(@Nullable String routeType) {
+            this.routeType = routeType;
+            return this;
         }        public DefaultRouteTableRouteRule build() {
-            return new DefaultRouteTableRouteRule(cidrBlock, description, destination, destinationType, networkEntityId);
+            return new DefaultRouteTableRouteRule(cidrBlock, description, destination, destinationType, networkEntityId, routeType);
         }
     }
 }

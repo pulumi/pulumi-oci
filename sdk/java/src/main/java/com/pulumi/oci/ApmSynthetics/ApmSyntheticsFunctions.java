@@ -7,6 +7,10 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.oci.ApmSynthetics.inputs.GetDedicatedVantagePointArgs;
+import com.pulumi.oci.ApmSynthetics.inputs.GetDedicatedVantagePointPlainArgs;
+import com.pulumi.oci.ApmSynthetics.inputs.GetDedicatedVantagePointsArgs;
+import com.pulumi.oci.ApmSynthetics.inputs.GetDedicatedVantagePointsPlainArgs;
 import com.pulumi.oci.ApmSynthetics.inputs.GetMonitorArgs;
 import com.pulumi.oci.ApmSynthetics.inputs.GetMonitorPlainArgs;
 import com.pulumi.oci.ApmSynthetics.inputs.GetMonitorsArgs;
@@ -21,6 +25,8 @@ import com.pulumi.oci.ApmSynthetics.inputs.GetVantagePointArgs;
 import com.pulumi.oci.ApmSynthetics.inputs.GetVantagePointPlainArgs;
 import com.pulumi.oci.ApmSynthetics.inputs.GetVantagePointsArgs;
 import com.pulumi.oci.ApmSynthetics.inputs.GetVantagePointsPlainArgs;
+import com.pulumi.oci.ApmSynthetics.outputs.GetDedicatedVantagePointResult;
+import com.pulumi.oci.ApmSynthetics.outputs.GetDedicatedVantagePointsResult;
 import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorResult;
 import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorsResult;
 import com.pulumi.oci.ApmSynthetics.outputs.GetResultResult;
@@ -32,6 +38,94 @@ import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
 
 public final class ApmSyntheticsFunctions {
+    /**
+     * This data source provides details about a specific Dedicated Vantage Point resource in Oracle Cloud Infrastructure Apm Synthetics service.
+     * 
+     * Gets the details of the dedicated vantage point identified by the OCID.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetDedicatedVantagePointResult> getDedicatedVantagePoint(GetDedicatedVantagePointArgs args) {
+        return getDedicatedVantagePoint(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Dedicated Vantage Point resource in Oracle Cloud Infrastructure Apm Synthetics service.
+     * 
+     * Gets the details of the dedicated vantage point identified by the OCID.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetDedicatedVantagePointResult> getDedicatedVantagePointPlain(GetDedicatedVantagePointPlainArgs args) {
+        return getDedicatedVantagePointPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Dedicated Vantage Point resource in Oracle Cloud Infrastructure Apm Synthetics service.
+     * 
+     * Gets the details of the dedicated vantage point identified by the OCID.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetDedicatedVantagePointResult> getDedicatedVantagePoint(GetDedicatedVantagePointArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ApmSynthetics/getDedicatedVantagePoint:getDedicatedVantagePoint", TypeShape.of(GetDedicatedVantagePointResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Dedicated Vantage Point resource in Oracle Cloud Infrastructure Apm Synthetics service.
+     * 
+     * Gets the details of the dedicated vantage point identified by the OCID.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetDedicatedVantagePointResult> getDedicatedVantagePointPlain(GetDedicatedVantagePointPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:ApmSynthetics/getDedicatedVantagePoint:getDedicatedVantagePoint", TypeShape.of(GetDedicatedVantagePointResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Dedicated Vantage Points in Oracle Cloud Infrastructure Apm Synthetics service.
+     * 
+     * Returns a list of dedicated vantage points.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetDedicatedVantagePointsResult> getDedicatedVantagePoints(GetDedicatedVantagePointsArgs args) {
+        return getDedicatedVantagePoints(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Dedicated Vantage Points in Oracle Cloud Infrastructure Apm Synthetics service.
+     * 
+     * Returns a list of dedicated vantage points.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetDedicatedVantagePointsResult> getDedicatedVantagePointsPlain(GetDedicatedVantagePointsPlainArgs args) {
+        return getDedicatedVantagePointsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Dedicated Vantage Points in Oracle Cloud Infrastructure Apm Synthetics service.
+     * 
+     * Returns a list of dedicated vantage points.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetDedicatedVantagePointsResult> getDedicatedVantagePoints(GetDedicatedVantagePointsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ApmSynthetics/getDedicatedVantagePoints:getDedicatedVantagePoints", TypeShape.of(GetDedicatedVantagePointsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Dedicated Vantage Points in Oracle Cloud Infrastructure Apm Synthetics service.
+     * 
+     * Returns a list of dedicated vantage points.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetDedicatedVantagePointsResult> getDedicatedVantagePointsPlain(GetDedicatedVantagePointsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:ApmSynthetics/getDedicatedVantagePoints:getDedicatedVantagePoints", TypeShape.of(GetDedicatedVantagePointsResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * This data source provides details about a specific Monitor resource in Oracle Cloud Infrastructure Apm Synthetics service.
      * 

@@ -13,6 +13,7 @@ import com.pulumi.oci.Mysql.inputs.MysqlDbSystemDeletionPolicyArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlDbSystemEndpointArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlDbSystemHeatWaveClusterArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlDbSystemMaintenanceArgs;
+import com.pulumi.oci.Mysql.inputs.MysqlDbSystemPointInTimeRecoveryDetailArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlDbSystemSourceArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -422,24 +423,31 @@ public final class MysqlDbSystemState extends com.pulumi.resources.ResourceArgs 
     /**
      * Name of the MySQL Version in use for the DB System.
      * 
-     * @deprecated
-     * The &#39;mysql_version&#39; field has been deprecated and may be removed in a future version. Do not use this field.
-     * 
      */
-    @Deprecated /* The 'mysql_version' field has been deprecated and may be removed in a future version. Do not use this field. */
     @Import(name="mysqlVersion")
     private @Nullable Output<String> mysqlVersion;
 
     /**
      * @return Name of the MySQL Version in use for the DB System.
      * 
-     * @deprecated
-     * The &#39;mysql_version&#39; field has been deprecated and may be removed in a future version. Do not use this field.
-     * 
      */
-    @Deprecated /* The 'mysql_version' field has been deprecated and may be removed in a future version. Do not use this field. */
     public Optional<Output<String>> mysqlVersion() {
         return Optional.ofNullable(this.mysqlVersion);
+    }
+
+    /**
+     * Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
+     * 
+     */
+    @Import(name="pointInTimeRecoveryDetails")
+    private @Nullable Output<List<MysqlDbSystemPointInTimeRecoveryDetailArgs>> pointInTimeRecoveryDetails;
+
+    /**
+     * @return Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
+     * 
+     */
+    public Optional<Output<List<MysqlDbSystemPointInTimeRecoveryDetailArgs>>> pointInTimeRecoveryDetails() {
+        return Optional.ofNullable(this.pointInTimeRecoveryDetails);
     }
 
     /**
@@ -609,6 +617,7 @@ public final class MysqlDbSystemState extends com.pulumi.resources.ResourceArgs 
         this.lifecycleDetails = $.lifecycleDetails;
         this.maintenance = $.maintenance;
         this.mysqlVersion = $.mysqlVersion;
+        this.pointInTimeRecoveryDetails = $.pointInTimeRecoveryDetails;
         this.port = $.port;
         this.portX = $.portX;
         this.shapeName = $.shapeName;
@@ -1249,11 +1258,7 @@ public final class MysqlDbSystemState extends com.pulumi.resources.ResourceArgs 
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;mysql_version&#39; field has been deprecated and may be removed in a future version. Do not use this field.
-         * 
          */
-        @Deprecated /* The 'mysql_version' field has been deprecated and may be removed in a future version. Do not use this field. */
         public Builder mysqlVersion(@Nullable Output<String> mysqlVersion) {
             $.mysqlVersion = mysqlVersion;
             return this;
@@ -1264,13 +1269,40 @@ public final class MysqlDbSystemState extends com.pulumi.resources.ResourceArgs 
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;mysql_version&#39; field has been deprecated and may be removed in a future version. Do not use this field.
-         * 
          */
-        @Deprecated /* The 'mysql_version' field has been deprecated and may be removed in a future version. Do not use this field. */
         public Builder mysqlVersion(String mysqlVersion) {
             return mysqlVersion(Output.of(mysqlVersion));
+        }
+
+        /**
+         * @param pointInTimeRecoveryDetails Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pointInTimeRecoveryDetails(@Nullable Output<List<MysqlDbSystemPointInTimeRecoveryDetailArgs>> pointInTimeRecoveryDetails) {
+            $.pointInTimeRecoveryDetails = pointInTimeRecoveryDetails;
+            return this;
+        }
+
+        /**
+         * @param pointInTimeRecoveryDetails Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pointInTimeRecoveryDetails(List<MysqlDbSystemPointInTimeRecoveryDetailArgs> pointInTimeRecoveryDetails) {
+            return pointInTimeRecoveryDetails(Output.of(pointInTimeRecoveryDetails));
+        }
+
+        /**
+         * @param pointInTimeRecoveryDetails Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pointInTimeRecoveryDetails(MysqlDbSystemPointInTimeRecoveryDetailArgs... pointInTimeRecoveryDetails) {
+            return pointInTimeRecoveryDetails(List.of(pointInTimeRecoveryDetails));
         }
 
         /**

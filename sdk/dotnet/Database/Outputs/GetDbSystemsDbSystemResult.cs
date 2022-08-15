@@ -118,6 +118,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDbSystemsDbSystemMaintenanceWindowResult> MaintenanceWindows;
         /// <summary>
+        /// Memory allocated to the DB system, in gigabytes.
+        /// </summary>
+        public readonly int MemorySizeInGbs;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         /// </summary>
         public readonly string NextMaintenanceRunId;
@@ -126,8 +130,8 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly int NodeCount;
         /// <summary>
-        /// A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        /// * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+        /// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+        /// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         /// </summary>
         public readonly ImmutableArray<string> NsgIds;
         /// <summary>
@@ -174,6 +178,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// A filter to return only resources that match the given lifecycle state exactly.
         /// </summary>
         public readonly string State;
+        /// <summary>
+        /// The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
+        /// </summary>
+        public readonly string StorageVolumePerformanceMode;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
         /// </summary>
@@ -259,6 +267,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             ImmutableArray<Outputs.GetDbSystemsDbSystemMaintenanceWindowResult> maintenanceWindows,
 
+            int memorySizeInGbs,
+
             string nextMaintenanceRunId,
 
             int nodeCount,
@@ -288,6 +298,8 @@ namespace Pulumi.Oci.Database.Outputs
             ImmutableArray<string> sshPublicKeys,
 
             string state,
+
+            string storageVolumePerformanceMode,
 
             string subnetId,
 
@@ -330,6 +342,7 @@ namespace Pulumi.Oci.Database.Outputs
             ListenerPort = listenerPort;
             MaintenanceWindowDetails = maintenanceWindowDetails;
             MaintenanceWindows = maintenanceWindows;
+            MemorySizeInGbs = memorySizeInGbs;
             NextMaintenanceRunId = nextMaintenanceRunId;
             NodeCount = nodeCount;
             NsgIds = nsgIds;
@@ -345,6 +358,7 @@ namespace Pulumi.Oci.Database.Outputs
             SparseDiskgroup = sparseDiskgroup;
             SshPublicKeys = sshPublicKeys;
             State = state;
+            StorageVolumePerformanceMode = storageVolumePerformanceMode;
             SubnetId = subnetId;
             TimeCreated = timeCreated;
             TimeZone = timeZone;

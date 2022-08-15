@@ -24,7 +24,7 @@ public final class GetManagedListsManagedListCollectionItem {
      */
     private final Map<String,Object> definedTags;
     /**
-     * @return ManagedList description
+     * @return ManagedList description.
      * 
      */
     private final String description;
@@ -145,7 +145,7 @@ public final class GetManagedListsManagedListCollectionItem {
         return this.definedTags;
     }
     /**
-     * @return ManagedList description
+     * @return ManagedList description.
      * 
      */
     public String description() {

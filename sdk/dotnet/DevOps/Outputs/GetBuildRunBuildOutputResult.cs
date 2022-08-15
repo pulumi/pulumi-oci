@@ -25,6 +25,10 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// Specifies list of exported variables.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetBuildRunBuildOutputExportedVariableResult> ExportedVariables;
+        /// <summary>
+        /// List of vulnerability audit summary.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionResult> VulnerabilityAuditSummaryCollections;
 
         [OutputConstructor]
         private GetBuildRunBuildOutputResult(
@@ -32,11 +36,14 @@ namespace Pulumi.Oci.DevOps.Outputs
 
             ImmutableArray<Outputs.GetBuildRunBuildOutputDeliveredArtifactResult> deliveredArtifacts,
 
-            ImmutableArray<Outputs.GetBuildRunBuildOutputExportedVariableResult> exportedVariables)
+            ImmutableArray<Outputs.GetBuildRunBuildOutputExportedVariableResult> exportedVariables,
+
+            ImmutableArray<Outputs.GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionResult> vulnerabilityAuditSummaryCollections)
         {
             ArtifactOverrideParameters = artifactOverrideParameters;
             DeliveredArtifacts = deliveredArtifacts;
             ExportedVariables = exportedVariables;
+            VulnerabilityAuditSummaryCollections = vulnerabilityAuditSummaryCollections;
         }
     }
 }

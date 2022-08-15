@@ -14,7 +14,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
     public sealed class AutoScalingConfigurationPolicy
     {
         /// <summary>
-        /// (Updatable) Types of autoscale policies. Options are SCHEDULE-BASED or THRESHOLD-BASED. (Only THRESHOLD-BASED is supported in this release.)
+        /// Type of autoscaling policy.
         /// </summary>
         public readonly string PolicyType;
         /// <summary>

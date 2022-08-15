@@ -7,6 +7,7 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
+from . import outputs
 
 __all__ = [
     'GetClusterOptionResult',
@@ -20,10 +21,13 @@ class GetClusterOptionResult:
     """
     A collection of values returned by getClusterOption.
     """
-    def __init__(__self__, cluster_option_id=None, compartment_id=None, id=None, kubernetes_versions=None):
+    def __init__(__self__, cluster_option_id=None, cluster_pod_network_options=None, compartment_id=None, id=None, kubernetes_versions=None):
         if cluster_option_id and not isinstance(cluster_option_id, str):
             raise TypeError("Expected argument 'cluster_option_id' to be a str")
         pulumi.set(__self__, "cluster_option_id", cluster_option_id)
+        if cluster_pod_network_options and not isinstance(cluster_pod_network_options, list):
+            raise TypeError("Expected argument 'cluster_pod_network_options' to be a list")
+        pulumi.set(__self__, "cluster_pod_network_options", cluster_pod_network_options)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -38,6 +42,14 @@ class GetClusterOptionResult:
     @pulumi.getter(name="clusterOptionId")
     def cluster_option_id(self) -> str:
         return pulumi.get(self, "cluster_option_id")
+
+    @property
+    @pulumi.getter(name="clusterPodNetworkOptions")
+    def cluster_pod_network_options(self) -> Sequence['outputs.GetClusterOptionClusterPodNetworkOptionResult']:
+        """
+        Available CNIs and network options for existing and new node pools of the cluster
+        """
+        return pulumi.get(self, "cluster_pod_network_options")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -68,6 +80,7 @@ class AwaitableGetClusterOptionResult(GetClusterOptionResult):
             yield self
         return GetClusterOptionResult(
             cluster_option_id=self.cluster_option_id,
+            cluster_pod_network_options=self.cluster_pod_network_options,
             compartment_id=self.compartment_id,
             id=self.id,
             kubernetes_versions=self.kubernetes_versions)
@@ -106,6 +119,7 @@ def get_cluster_option(cluster_option_id: Optional[str] = None,
 
     return AwaitableGetClusterOptionResult(
         cluster_option_id=__ret__.cluster_option_id,
+        cluster_pod_network_options=__ret__.cluster_pod_network_options,
         compartment_id=__ret__.compartment_id,
         id=__ret__.id,
         kubernetes_versions=__ret__.kubernetes_versions)

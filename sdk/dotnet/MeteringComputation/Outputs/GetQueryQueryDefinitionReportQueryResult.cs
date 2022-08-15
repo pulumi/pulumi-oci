@@ -21,6 +21,9 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
         /// The UI date range, for example, LAST_THREE_MONTHS. Conflicts with timeUsageStarted and timeUsageEnded.
         /// </summary>
         public readonly string DateRangeName;
+        /// <summary>
+        /// The filter object for query usage.
+        /// </summary>
         public readonly string Filter;
         /// <summary>
         /// Forecast configuration of usage/cost.

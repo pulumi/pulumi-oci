@@ -20,12 +20,12 @@ public final class GetAlertRulesResult {
      */
     private final List<GetAlertRulesAlertRule> alertRules;
     /**
-     * @return The OCID of the budget
+     * @return The OCID of the budget.
      * 
      */
     private final String budgetId;
     /**
-     * @return The name of the alert rule.
+     * @return The name of the alert rule. Avoid entering confidential information.
      * 
      */
     private final @Nullable String displayName;
@@ -65,14 +65,14 @@ public final class GetAlertRulesResult {
         return this.alertRules;
     }
     /**
-     * @return The OCID of the budget
+     * @return The OCID of the budget.
      * 
      */
     public String budgetId() {
         return this.budgetId;
     }
     /**
-     * @return The name of the alert rule.
+     * @return The name of the alert rule. Avoid entering confidential information.
      * 
      */
     public Optional<String> displayName() {

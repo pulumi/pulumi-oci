@@ -59,14 +59,14 @@ public final class GetResultArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * The result content type zip or raw.
+     * The result content type: zip or raw.
      * 
      */
     @Import(name="resultContentType", required=true)
     private Output<String> resultContentType;
 
     /**
-     * @return The result content type zip or raw.
+     * @return The result content type: zip or raw.
      * 
      */
     public Output<String> resultContentType() {
@@ -74,14 +74,14 @@ public final class GetResultArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * The result type har, screenshot, log or network.
+     * The result type: har, screenshot, log, or network.
      * 
      */
     @Import(name="resultType", required=true)
     private Output<String> resultType;
 
     /**
-     * @return The result type har, screenshot, log or network.
+     * @return The result type: har, screenshot, log, or network.
      * 
      */
     public Output<String> resultType() {
@@ -196,7 +196,7 @@ public final class GetResultArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param resultContentType The result content type zip or raw.
+         * @param resultContentType The result content type: zip or raw.
          * 
          * @return builder
          * 
@@ -207,7 +207,7 @@ public final class GetResultArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param resultContentType The result content type zip or raw.
+         * @param resultContentType The result content type: zip or raw.
          * 
          * @return builder
          * 
@@ -217,7 +217,7 @@ public final class GetResultArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param resultType The result type har, screenshot, log or network.
+         * @param resultType The result type: har, screenshot, log, or network.
          * 
          * @return builder
          * 
@@ -228,7 +228,7 @@ public final class GetResultArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param resultType The result type har, screenshot, log or network.
+         * @param resultType The result type: har, screenshot, log, or network.
          * 
          * @return builder
          * 

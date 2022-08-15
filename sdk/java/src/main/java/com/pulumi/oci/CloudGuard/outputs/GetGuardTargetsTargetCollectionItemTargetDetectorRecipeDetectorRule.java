@@ -12,7 +12,7 @@ import java.util.Objects;
 @CustomType
 public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRule {
     /**
-     * @return ResponderRule Description
+     * @return ResponderRule description.
      * 
      */
     private final String description;
@@ -27,7 +27,7 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetect
      */
     private final String detector;
     /**
-     * @return The unique identifier of the detector rule
+     * @return The unique identifier of the detector rule.
      * 
      */
     private final String detectorRuleId;
@@ -108,7 +108,7 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetect
     }
 
     /**
-     * @return ResponderRule Description
+     * @return ResponderRule description.
      * 
      */
     public String description() {
@@ -129,7 +129,7 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetect
         return this.detector;
     }
     /**
-     * @return The unique identifier of the detector rule
+     * @return The unique identifier of the detector rule.
      * 
      */
     public String detectorRuleId() {

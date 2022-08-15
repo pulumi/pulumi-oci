@@ -36,6 +36,12 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         [Input("rateLimiting")]
         public Input<Inputs.DeploymentSpecificationRequestPoliciesRateLimitingArgs>? RateLimiting { get; set; }
 
+        /// <summary>
+        /// (Updatable) Usage plan policies for this deployment
+        /// </summary>
+        [Input("usagePlans")]
+        public Input<Inputs.DeploymentSpecificationRequestPoliciesUsagePlansArgs>? UsagePlans { get; set; }
+
         public DeploymentSpecificationRequestPoliciesArgs()
         {
         }

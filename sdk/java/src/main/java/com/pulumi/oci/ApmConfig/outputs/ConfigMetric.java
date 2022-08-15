@@ -12,22 +12,22 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ConfigMetric {
     /**
-     * @return (Updatable) A description of the metric
+     * @return (Updatable) A description of the metric.
      * 
      */
     private final @Nullable String description;
     /**
-     * @return (Updatable) The name of the metric
+     * @return (Updatable) The name of the metric. This must be a known metric name.
      * 
      */
     private final @Nullable String name;
     /**
-     * @return (Updatable) The unit of the metric
+     * @return (Updatable) The unit of the metric.
      * 
      */
     private final @Nullable String unit;
     /**
-     * @return (Updatable) Must be NULL at the moment, and &#34;name&#34; must be a known metric.
+     * @return (Updatable) This must not be set.
      * 
      */
     private final @Nullable String valueSource;
@@ -45,28 +45,28 @@ public final class ConfigMetric {
     }
 
     /**
-     * @return (Updatable) A description of the metric
+     * @return (Updatable) A description of the metric.
      * 
      */
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
     }
     /**
-     * @return (Updatable) The name of the metric
+     * @return (Updatable) The name of the metric. This must be a known metric name.
      * 
      */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
     /**
-     * @return (Updatable) The unit of the metric
+     * @return (Updatable) The unit of the metric.
      * 
      */
     public Optional<String> unit() {
         return Optional.ofNullable(this.unit);
     }
     /**
-     * @return (Updatable) Must be NULL at the moment, and &#34;name&#34; must be a known metric.
+     * @return (Updatable) This must not be set.
      * 
      */
     public Optional<String> valueSource() {

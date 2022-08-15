@@ -10,15 +10,27 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'ApplicationDriverShapeConfig',
+    'ApplicationExecutorShapeConfig',
     'ApplicationParameter',
+    'InvokeRunDriverShapeConfig',
+    'InvokeRunExecutorShapeConfig',
     'InvokeRunParameter',
+    'GetApplicationDriverShapeConfigResult',
+    'GetApplicationExecutorShapeConfigResult',
     'GetApplicationParameterResult',
     'GetApplicationsApplicationResult',
+    'GetApplicationsApplicationDriverShapeConfigResult',
+    'GetApplicationsApplicationExecutorShapeConfigResult',
     'GetApplicationsApplicationParameterResult',
     'GetApplicationsFilterResult',
+    'GetInvokeRunDriverShapeConfigResult',
+    'GetInvokeRunExecutorShapeConfigResult',
     'GetInvokeRunParameterResult',
     'GetInvokeRunsFilterResult',
     'GetInvokeRunsRunResult',
+    'GetInvokeRunsRunDriverShapeConfigResult',
+    'GetInvokeRunsRunExecutorShapeConfigResult',
     'GetInvokeRunsRunParameterResult',
     'GetPrivateEndpointsFilterResult',
     'GetPrivateEndpointsPrivateEndpointCollectionResult',
@@ -26,6 +38,102 @@ __all__ = [
     'GetRunLogsFilterResult',
     'GetRunLogsRunLogResult',
 ]
+
+@pulumi.output_type
+class ApplicationDriverShapeConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "memoryInGbs":
+            suggest = "memory_in_gbs"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ApplicationDriverShapeConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ApplicationDriverShapeConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ApplicationDriverShapeConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 memory_in_gbs: Optional[float] = None,
+                 ocpus: Optional[float] = None):
+        """
+        :param float memory_in_gbs: (Updatable) The amount of memory used for the driver or executors.
+        :param float ocpus: (Updatable) The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+        """
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> Optional[float]:
+        """
+        (Updatable) The amount of memory used for the driver or executors.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> Optional[float]:
+        """
+        (Updatable) The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+        """
+        return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class ApplicationExecutorShapeConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "memoryInGbs":
+            suggest = "memory_in_gbs"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ApplicationExecutorShapeConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ApplicationExecutorShapeConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ApplicationExecutorShapeConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 memory_in_gbs: Optional[float] = None,
+                 ocpus: Optional[float] = None):
+        """
+        :param float memory_in_gbs: (Updatable) The amount of memory used for the driver or executors.
+        :param float ocpus: (Updatable) The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+        """
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> Optional[float]:
+        """
+        (Updatable) The amount of memory used for the driver or executors.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> Optional[float]:
+        """
+        (Updatable) The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+        """
+        return pulumi.get(self, "ocpus")
+
 
 @pulumi.output_type
 class ApplicationParameter(dict):
@@ -57,6 +165,102 @@ class ApplicationParameter(dict):
 
 
 @pulumi.output_type
+class InvokeRunDriverShapeConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "memoryInGbs":
+            suggest = "memory_in_gbs"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in InvokeRunDriverShapeConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        InvokeRunDriverShapeConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        InvokeRunDriverShapeConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 memory_in_gbs: Optional[float] = None,
+                 ocpus: Optional[float] = None):
+        """
+        :param float memory_in_gbs: The amount of memory used for the driver or executors.
+        :param float ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+        """
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> Optional[float]:
+        """
+        The amount of memory used for the driver or executors.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> Optional[float]:
+        """
+        The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+        """
+        return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class InvokeRunExecutorShapeConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "memoryInGbs":
+            suggest = "memory_in_gbs"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in InvokeRunExecutorShapeConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        InvokeRunExecutorShapeConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        InvokeRunExecutorShapeConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 memory_in_gbs: Optional[float] = None,
+                 ocpus: Optional[float] = None):
+        """
+        :param float memory_in_gbs: The amount of memory used for the driver or executors.
+        :param float ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+        """
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> Optional[float]:
+        """
+        The amount of memory used for the driver or executors.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> Optional[float]:
+        """
+        The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+        """
+        return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
 class InvokeRunParameter(dict):
     def __init__(__self__, *,
                  name: str,
@@ -83,6 +287,64 @@ class InvokeRunParameter(dict):
         The value of the parameter. It must be a string of 0 or more characters of any kind. Examples: "" (empty string), "10", "mydata.xml", "${x}"
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetApplicationDriverShapeConfigResult(dict):
+    def __init__(__self__, *,
+                 memory_in_gbs: float,
+                 ocpus: float):
+        """
+        :param float memory_in_gbs: The amount of memory used for the driver or executors.
+        :param float ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+        """
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> float:
+        """
+        The amount of memory used for the driver or executors.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> float:
+        """
+        The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+        """
+        return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class GetApplicationExecutorShapeConfigResult(dict):
+    def __init__(__self__, *,
+                 memory_in_gbs: float,
+                 ocpus: float):
+        """
+        :param float memory_in_gbs: The amount of memory used for the driver or executors.
+        :param float ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+        """
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> float:
+        """
+        The amount of memory used for the driver or executors.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> float:
+        """
+        The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+        """
+        return pulumi.get(self, "ocpus")
 
 
 @pulumi.output_type
@@ -126,8 +388,10 @@ class GetApplicationsApplicationResult(dict):
                  description: str,
                  display_name: str,
                  driver_shape: str,
+                 driver_shape_configs: Sequence['outputs.GetApplicationsApplicationDriverShapeConfigResult'],
                  execute: str,
                  executor_shape: str,
+                 executor_shape_configs: Sequence['outputs.GetApplicationsApplicationExecutorShapeConfigResult'],
                  file_uri: str,
                  freeform_tags: Mapping[str, Any],
                  id: str,
@@ -155,8 +419,10 @@ class GetApplicationsApplicationResult(dict):
         :param str description: A user-friendly description.
         :param str display_name: The query parameter for the Spark application name.
         :param str driver_shape: The VM shape for the driver. Sets the driver cores and memory.
+        :param Sequence['GetApplicationsApplicationDriverShapeConfigArgs'] driver_shape_configs: This is used to configure the shape of the driver or executor if a flexible shape is used.
         :param str execute: The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
         :param str executor_shape: The VM shape for the executors. Sets the executor cores and memory.
+        :param Sequence['GetApplicationsApplicationExecutorShapeConfigArgs'] executor_shape_configs: This is used to configure the shape of the driver or executor if a flexible shape is used.
         :param str file_uri: An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: The application ID.
@@ -184,8 +450,10 @@ class GetApplicationsApplicationResult(dict):
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "driver_shape", driver_shape)
+        pulumi.set(__self__, "driver_shape_configs", driver_shape_configs)
         pulumi.set(__self__, "execute", execute)
         pulumi.set(__self__, "executor_shape", executor_shape)
+        pulumi.set(__self__, "executor_shape_configs", executor_shape_configs)
         pulumi.set(__self__, "file_uri", file_uri)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
@@ -277,6 +545,14 @@ class GetApplicationsApplicationResult(dict):
         return pulumi.get(self, "driver_shape")
 
     @property
+    @pulumi.getter(name="driverShapeConfigs")
+    def driver_shape_configs(self) -> Sequence['outputs.GetApplicationsApplicationDriverShapeConfigResult']:
+        """
+        This is used to configure the shape of the driver or executor if a flexible shape is used.
+        """
+        return pulumi.get(self, "driver_shape_configs")
+
+    @property
     @pulumi.getter
     def execute(self) -> str:
         """
@@ -291,6 +567,14 @@ class GetApplicationsApplicationResult(dict):
         The VM shape for the executors. Sets the executor cores and memory.
         """
         return pulumi.get(self, "executor_shape")
+
+    @property
+    @pulumi.getter(name="executorShapeConfigs")
+    def executor_shape_configs(self) -> Sequence['outputs.GetApplicationsApplicationExecutorShapeConfigResult']:
+        """
+        This is used to configure the shape of the driver or executor if a flexible shape is used.
+        """
+        return pulumi.get(self, "executor_shape_configs")
 
     @property
     @pulumi.getter(name="fileUri")
@@ -430,6 +714,64 @@ class GetApplicationsApplicationResult(dict):
 
 
 @pulumi.output_type
+class GetApplicationsApplicationDriverShapeConfigResult(dict):
+    def __init__(__self__, *,
+                 memory_in_gbs: float,
+                 ocpus: float):
+        """
+        :param float memory_in_gbs: The amount of memory used for the driver or executors.
+        :param float ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+        """
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> float:
+        """
+        The amount of memory used for the driver or executors.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> float:
+        """
+        The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+        """
+        return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class GetApplicationsApplicationExecutorShapeConfigResult(dict):
+    def __init__(__self__, *,
+                 memory_in_gbs: float,
+                 ocpus: float):
+        """
+        :param float memory_in_gbs: The amount of memory used for the driver or executors.
+        :param float ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+        """
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> float:
+        """
+        The amount of memory used for the driver or executors.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> float:
+        """
+        The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+        """
+        return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
 class GetApplicationsApplicationParameterResult(dict):
     def __init__(__self__, *,
                  name: str,
@@ -489,6 +831,64 @@ class GetApplicationsFilterResult(dict):
     @pulumi.getter
     def regex(self) -> Optional[bool]:
         return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetInvokeRunDriverShapeConfigResult(dict):
+    def __init__(__self__, *,
+                 memory_in_gbs: float,
+                 ocpus: float):
+        """
+        :param float memory_in_gbs: The amount of memory used for the driver or executors.
+        :param float ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+        """
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> float:
+        """
+        The amount of memory used for the driver or executors.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> float:
+        """
+        The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+        """
+        return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class GetInvokeRunExecutorShapeConfigResult(dict):
+    def __init__(__self__, *,
+                 memory_in_gbs: float,
+                 ocpus: float):
+        """
+        :param float memory_in_gbs: The amount of memory used for the driver or executors.
+        :param float ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+        """
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> float:
+        """
+        The amount of memory used for the driver or executors.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> float:
+        """
+        The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+        """
+        return pulumi.get(self, "ocpus")
 
 
 @pulumi.output_type
@@ -568,8 +968,10 @@ class GetInvokeRunsRunResult(dict):
                  defined_tags: Mapping[str, Any],
                  display_name: str,
                  driver_shape: str,
+                 driver_shape_configs: Sequence['outputs.GetInvokeRunsRunDriverShapeConfigResult'],
                  execute: str,
                  executor_shape: str,
+                 executor_shape_configs: Sequence['outputs.GetInvokeRunsRunExecutorShapeConfigResult'],
                  file_uri: str,
                  freeform_tags: Mapping[str, Any],
                  id: str,
@@ -607,8 +1009,10 @@ class GetInvokeRunsRunResult(dict):
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: The query parameter for the Spark application name.
         :param str driver_shape: The VM shape for the driver. Sets the driver cores and memory.
+        :param Sequence['GetInvokeRunsRunDriverShapeConfigArgs'] driver_shape_configs: This is used to configure the shape of the driver or executor if a flexible shape is used.
         :param str execute: The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
         :param str executor_shape: The VM shape for the executors. Sets the executor cores and memory.
+        :param Sequence['GetInvokeRunsRunExecutorShapeConfigArgs'] executor_shape_configs: This is used to configure the shape of the driver or executor if a flexible shape is used.
         :param str file_uri: An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: The ID of a run.
@@ -647,8 +1051,10 @@ class GetInvokeRunsRunResult(dict):
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "driver_shape", driver_shape)
+        pulumi.set(__self__, "driver_shape_configs", driver_shape_configs)
         pulumi.set(__self__, "execute", execute)
         pulumi.set(__self__, "executor_shape", executor_shape)
+        pulumi.set(__self__, "executor_shape_configs", executor_shape_configs)
         pulumi.set(__self__, "file_uri", file_uri)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
@@ -769,6 +1175,14 @@ class GetInvokeRunsRunResult(dict):
         return pulumi.get(self, "driver_shape")
 
     @property
+    @pulumi.getter(name="driverShapeConfigs")
+    def driver_shape_configs(self) -> Sequence['outputs.GetInvokeRunsRunDriverShapeConfigResult']:
+        """
+        This is used to configure the shape of the driver or executor if a flexible shape is used.
+        """
+        return pulumi.get(self, "driver_shape_configs")
+
+    @property
     @pulumi.getter
     def execute(self) -> str:
         """
@@ -783,6 +1197,14 @@ class GetInvokeRunsRunResult(dict):
         The VM shape for the executors. Sets the executor cores and memory.
         """
         return pulumi.get(self, "executor_shape")
+
+    @property
+    @pulumi.getter(name="executorShapeConfigs")
+    def executor_shape_configs(self) -> Sequence['outputs.GetInvokeRunsRunExecutorShapeConfigResult']:
+        """
+        This is used to configure the shape of the driver or executor if a flexible shape is used.
+        """
+        return pulumi.get(self, "executor_shape_configs")
 
     @property
     @pulumi.getter(name="fileUri")
@@ -983,6 +1405,64 @@ class GetInvokeRunsRunResult(dict):
         An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         """
         return pulumi.get(self, "warehouse_bucket_uri")
+
+
+@pulumi.output_type
+class GetInvokeRunsRunDriverShapeConfigResult(dict):
+    def __init__(__self__, *,
+                 memory_in_gbs: float,
+                 ocpus: float):
+        """
+        :param float memory_in_gbs: The amount of memory used for the driver or executors.
+        :param float ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+        """
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> float:
+        """
+        The amount of memory used for the driver or executors.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> float:
+        """
+        The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+        """
+        return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class GetInvokeRunsRunExecutorShapeConfigResult(dict):
+    def __init__(__self__, *,
+                 memory_in_gbs: float,
+                 ocpus: float):
+        """
+        :param float memory_in_gbs: The amount of memory used for the driver or executors.
+        :param float ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+        """
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> float:
+        """
+        The amount of memory used for the driver or executors.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> float:
+        """
+        The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+        """
+        return pulumi.get(self, "ocpus")
 
 
 @pulumi.output_type

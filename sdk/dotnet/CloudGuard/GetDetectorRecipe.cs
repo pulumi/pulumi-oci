@@ -114,7 +114,7 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
         /// <summary>
-        /// Description for DetectorRecipeDetectorRule
+        /// Description for DetectorRecipeDetectorRule.
         /// </summary>
         public readonly string Description;
         /// <summary>
@@ -127,7 +127,7 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDetectorRecipeDetectorRuleResult> DetectorRules;
         /// <summary>
-        /// displayName
+        /// Display name for DetectorRecipeDetectorRule.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>

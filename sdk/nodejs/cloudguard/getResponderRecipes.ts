@@ -98,7 +98,7 @@ export interface GetResponderRecipesResult {
     readonly compartmentId: string;
     readonly compartmentIdInSubtree?: boolean;
     /**
-     * ResponderRule Display Name
+     * ResponderRule display name.
      */
     readonly displayName?: string;
     readonly filters?: outputs.CloudGuard.GetResponderRecipesFilter[];

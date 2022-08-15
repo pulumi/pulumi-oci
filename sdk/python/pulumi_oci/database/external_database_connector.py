@@ -406,6 +406,7 @@ class ExternalDatabaseConnector(pulumi.CustomResource):
                 credential_type=var["external_database_connector_connection_credentials_credential_type"],
                 password=var["external_database_connector_connection_credentials_password"],
                 role=var["external_database_connector_connection_credentials_role"],
+                ssl_secret_id=oci_vault_secret["test_secret"]["id"],
                 username=var["external_database_connector_connection_credentials_username"],
             ),
             connection_string=oci.database.ExternalDatabaseConnectorConnectionStringArgs(
@@ -466,6 +467,7 @@ class ExternalDatabaseConnector(pulumi.CustomResource):
                 credential_type=var["external_database_connector_connection_credentials_credential_type"],
                 password=var["external_database_connector_connection_credentials_password"],
                 role=var["external_database_connector_connection_credentials_role"],
+                ssl_secret_id=oci_vault_secret["test_secret"]["id"],
                 username=var["external_database_connector_connection_credentials_username"],
             ),
             connection_string=oci.database.ExternalDatabaseConnectorConnectionStringArgs(

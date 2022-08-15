@@ -10,6 +10,7 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Database.ExternalContainerDatabaseArgs;
 import com.pulumi.oci.Database.inputs.ExternalContainerDatabaseState;
 import com.pulumi.oci.Database.outputs.ExternalContainerDatabaseDatabaseManagementConfig;
+import com.pulumi.oci.Database.outputs.ExternalContainerDatabaseStackMonitoringConfig;
 import com.pulumi.oci.Utilities;
 import java.lang.Object;
 import java.lang.String;
@@ -230,6 +231,20 @@ public class ExternalContainerDatabase extends com.pulumi.resources.CustomResour
      */
     public Output<String> ncharacterSet() {
         return this.ncharacterSet;
+    }
+    /**
+     * The configuration of Stack Monitoring for the external database.
+     * 
+     */
+    @Export(name="stackMonitoringConfigs", type=List.class, parameters={ExternalContainerDatabaseStackMonitoringConfig.class})
+    private Output<List<ExternalContainerDatabaseStackMonitoringConfig>> stackMonitoringConfigs;
+
+    /**
+     * @return The configuration of Stack Monitoring for the external database.
+     * 
+     */
+    public Output<List<ExternalContainerDatabaseStackMonitoringConfig>> stackMonitoringConfigs() {
+        return this.stackMonitoringConfigs;
     }
     /**
      * The current state of the Oracle Cloud Infrastructure external database resource.

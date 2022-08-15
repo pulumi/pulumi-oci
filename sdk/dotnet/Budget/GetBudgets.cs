@@ -14,16 +14,14 @@ namespace Pulumi.Oci.Budget
         /// <summary>
         /// This data source provides the list of Budgets in Oracle Cloud Infrastructure Budget service.
         /// 
-        /// Gets a list of Budgets in a compartment.
+        /// Gets a list of budgets in a compartment.
         /// 
-        /// By default, ListBudgets returns budgets of 'COMPARTMENT' target type and the budget records with only ONE target compartment OCID.
+        /// By default, ListBudgets returns budgets of the 'COMPARTMENT' target type, and the budget records with only one target compartment OCID.
         /// 
-        /// To list ALL budgets, set the targetType query parameter to ALL.
-        /// Example:
-        ///   'targetType=ALL'
+        /// To list all budgets, set the targetType query parameter to ALL (for example: 'targetType=ALL').
         /// 
-        /// Additional targetTypes would be available in future releases. Clients should ignore new targetType 
-        /// or upgrade to latest version of client SDK to handle new targetType.
+        /// Additional targetTypes would be available in future releases. Clients should ignore new targetTypes, 
+        /// or upgrade to the latest version of the client SDK to handle new targetTypes.
         /// 
         /// 
         /// {{% examples %}}
@@ -58,16 +56,14 @@ namespace Pulumi.Oci.Budget
         /// <summary>
         /// This data source provides the list of Budgets in Oracle Cloud Infrastructure Budget service.
         /// 
-        /// Gets a list of Budgets in a compartment.
+        /// Gets a list of budgets in a compartment.
         /// 
-        /// By default, ListBudgets returns budgets of 'COMPARTMENT' target type and the budget records with only ONE target compartment OCID.
+        /// By default, ListBudgets returns budgets of the 'COMPARTMENT' target type, and the budget records with only one target compartment OCID.
         /// 
-        /// To list ALL budgets, set the targetType query parameter to ALL.
-        /// Example:
-        ///   'targetType=ALL'
+        /// To list all budgets, set the targetType query parameter to ALL (for example: 'targetType=ALL').
         /// 
-        /// Additional targetTypes would be available in future releases. Clients should ignore new targetType 
-        /// or upgrade to latest version of client SDK to handle new targetType.
+        /// Additional targetTypes would be available in future releases. Clients should ignore new targetTypes, 
+        /// or upgrade to the latest version of the client SDK to handle new targetTypes.
         /// 
         /// 
         /// {{% examples %}}
@@ -110,7 +106,7 @@ namespace Pulumi.Oci.Budget
         public string CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+        /// A user-friendly name. This does not have to be unique, and it's changeable.  Example: `My new resource`
         /// </summary>
         [Input("displayName")]
         public string? DisplayName { get; set; }
@@ -130,7 +126,7 @@ namespace Pulumi.Oci.Budget
         public string? State { get; set; }
 
         /// <summary>
-        /// The type of target to filter by.
+        /// The type of target to filter by:
         /// * ALL - List all budgets
         /// * COMPARTMENT - List all budgets with targetType == "COMPARTMENT"
         /// * TAG - List all budgets with targetType == "TAG"
@@ -152,7 +148,7 @@ namespace Pulumi.Oci.Budget
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+        /// A user-friendly name. This does not have to be unique, and it's changeable.  Example: `My new resource`
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -172,7 +168,7 @@ namespace Pulumi.Oci.Budget
         public Input<string>? State { get; set; }
 
         /// <summary>
-        /// The type of target to filter by.
+        /// The type of target to filter by:
         /// * ALL - List all budgets
         /// * COMPARTMENT - List all budgets with targetType == "COMPARTMENT"
         /// * TAG - List all budgets with targetType == "TAG"
@@ -194,11 +190,11 @@ namespace Pulumi.Oci.Budget
         /// </summary>
         public readonly ImmutableArray<Outputs.GetBudgetsBudgetResult> Budgets;
         /// <summary>
-        /// The OCID of the compartment
+        /// The OCID of the compartment.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// The display name of the budget.
+        /// The display name of the budget. Avoid entering confidential information.
         /// </summary>
         public readonly string? DisplayName;
         public readonly ImmutableArray<Outputs.GetBudgetsFilterResult> Filters;

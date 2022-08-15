@@ -57,14 +57,14 @@ type LookupDetectorRecipeResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// Description for DetectorRecipeDetectorRule
+	// Description for DetectorRecipeDetectorRule.
 	Description string `pulumi:"description"`
 	// detector for the rule
 	Detector         string `pulumi:"detector"`
 	DetectorRecipeId string `pulumi:"detectorRecipeId"`
 	// List of detector rules for the detector type for recipe - user input
 	DetectorRules []GetDetectorRecipeDetectorRule `pulumi:"detectorRules"`
-	// displayName
+	// Display name for DetectorRecipeDetectorRule.
 	DisplayName string `pulumi:"displayName"`
 	// List of effective detector rules for the detector type for recipe after applying defaults
 	EffectiveDetectorRules []GetDetectorRecipeEffectiveDetectorRule `pulumi:"effectiveDetectorRules"`
@@ -134,7 +134,7 @@ func (o LookupDetectorRecipeResultOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupDetectorRecipeResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// Description for DetectorRecipeDetectorRule
+// Description for DetectorRecipeDetectorRule.
 func (o LookupDetectorRecipeResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDetectorRecipeResult) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -153,7 +153,7 @@ func (o LookupDetectorRecipeResultOutput) DetectorRules() GetDetectorRecipeDetec
 	return o.ApplyT(func(v LookupDetectorRecipeResult) []GetDetectorRecipeDetectorRule { return v.DetectorRules }).(GetDetectorRecipeDetectorRuleArrayOutput)
 }
 
-// displayName
+// Display name for DetectorRecipeDetectorRule.
 func (o LookupDetectorRecipeResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDetectorRecipeResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }

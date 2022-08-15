@@ -297,22 +297,14 @@ public final class MysqlDbSystemArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * Name of the MySQL Version in use for the DB System.
      * 
-     * @deprecated
-     * The &#39;mysql_version&#39; field has been deprecated and may be removed in a future version. Do not use this field.
-     * 
      */
-    @Deprecated /* The 'mysql_version' field has been deprecated and may be removed in a future version. Do not use this field. */
     @Import(name="mysqlVersion")
     private @Nullable Output<String> mysqlVersion;
 
     /**
      * @return Name of the MySQL Version in use for the DB System.
      * 
-     * @deprecated
-     * The &#39;mysql_version&#39; field has been deprecated and may be removed in a future version. Do not use this field.
-     * 
      */
-    @Deprecated /* The 'mysql_version' field has been deprecated and may be removed in a future version. Do not use this field. */
     public Optional<Output<String>> mysqlVersion() {
         return Optional.ofNullable(this.mysqlVersion);
     }
@@ -866,11 +858,7 @@ public final class MysqlDbSystemArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;mysql_version&#39; field has been deprecated and may be removed in a future version. Do not use this field.
-         * 
          */
-        @Deprecated /* The 'mysql_version' field has been deprecated and may be removed in a future version. Do not use this field. */
         public Builder mysqlVersion(@Nullable Output<String> mysqlVersion) {
             $.mysqlVersion = mysqlVersion;
             return this;
@@ -881,11 +869,7 @@ public final class MysqlDbSystemArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;mysql_version&#39; field has been deprecated and may be removed in a future version. Do not use this field.
-         * 
          */
-        @Deprecated /* The 'mysql_version' field has been deprecated and may be removed in a future version. Do not use this field. */
         public Builder mysqlVersion(String mysqlVersion) {
             return mysqlVersion(Output.of(mysqlVersion));
         }

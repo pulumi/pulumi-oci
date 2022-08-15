@@ -112,15 +112,15 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
      * (Updatable) The logical configuration of the API exposed by a deployment.
      * 
      */
-    @Import(name="specification")
-    private @Nullable Output<DeploymentSpecificationArgs> specification;
+    @Import(name="specification", required=true)
+    private Output<DeploymentSpecificationArgs> specification;
 
     /**
      * @return (Updatable) The logical configuration of the API exposed by a deployment.
      * 
      */
-    public Optional<Output<DeploymentSpecificationArgs>> specification() {
-        return Optional.ofNullable(this.specification);
+    public Output<DeploymentSpecificationArgs> specification() {
+        return this.specification;
     }
 
     private DeploymentArgs() {}
@@ -285,7 +285,7 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder specification(@Nullable Output<DeploymentSpecificationArgs> specification) {
+        public Builder specification(Output<DeploymentSpecificationArgs> specification) {
             $.specification = specification;
             return this;
         }
@@ -304,6 +304,7 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
             $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
             $.gatewayId = Objects.requireNonNull($.gatewayId, "expected parameter 'gatewayId' to be non-null");
             $.pathPrefix = Objects.requireNonNull($.pathPrefix, "expected parameter 'pathPrefix' to be non-null");
+            $.specification = Objects.requireNonNull($.specification, "expected parameter 'specification' to be non-null");
             return $;
         }
     }

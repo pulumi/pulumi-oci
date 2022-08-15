@@ -37,6 +37,13 @@ import (
 // 			FreeformTags: pulumi.AnyMap{
 // 				"Department": pulumi.Any("Finance"),
 // 			},
+// 			Locks: limits.QuotaLockArray{
+// 				&limits.QuotaLockArgs{
+// 					Type:              pulumi.Any(_var.Quota_locks_type),
+// 					Message:           pulumi.Any(_var.Quota_locks_message),
+// 					RelatedResourceId: pulumi.Any(oci_limits_related_resource.Test_related_resource.Id),
+// 				},
+// 			},
 // 		})
 // 		if err != nil {
 // 			return err
@@ -64,6 +71,10 @@ type Quota struct {
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	// this is a computed field which is set to true if any lock is present`
+	IsLockOverride pulumi.BoolOutput `pulumi:"isLockOverride"`
+	// Locks associated with this resource.
+	Locks QuotaLockArrayOutput `pulumi:"locks"`
 	// The name you assign to the quota during creation. The name must be unique across all quotas in the tenancy and cannot be changed.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The quota's current state.
@@ -120,6 +131,10 @@ type quotaState struct {
 	Description *string `pulumi:"description"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// this is a computed field which is set to true if any lock is present`
+	IsLockOverride *bool `pulumi:"isLockOverride"`
+	// Locks associated with this resource.
+	Locks []QuotaLock `pulumi:"locks"`
 	// The name you assign to the quota during creation. The name must be unique across all quotas in the tenancy and cannot be changed.
 	Name *string `pulumi:"name"`
 	// The quota's current state.
@@ -139,6 +154,10 @@ type QuotaState struct {
 	Description pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
+	// this is a computed field which is set to true if any lock is present`
+	IsLockOverride pulumi.BoolPtrInput
+	// Locks associated with this resource.
+	Locks QuotaLockArrayInput
 	// The name you assign to the quota during creation. The name must be unique across all quotas in the tenancy and cannot be changed.
 	Name pulumi.StringPtrInput
 	// The quota's current state.
@@ -162,6 +181,8 @@ type quotaArgs struct {
 	Description string `pulumi:"description"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// Locks associated with this resource.
+	Locks []QuotaLock `pulumi:"locks"`
 	// The name you assign to the quota during creation. The name must be unique across all quotas in the tenancy and cannot be changed.
 	Name *string `pulumi:"name"`
 	// (Updatable) An array of quota statements written in the declarative quota statement language.
@@ -178,6 +199,8 @@ type QuotaArgs struct {
 	Description pulumi.StringInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
+	// Locks associated with this resource.
+	Locks QuotaLockArrayInput
 	// The name you assign to the quota during creation. The name must be unique across all quotas in the tenancy and cannot be changed.
 	Name pulumi.StringPtrInput
 	// (Updatable) An array of quota statements written in the declarative quota statement language.

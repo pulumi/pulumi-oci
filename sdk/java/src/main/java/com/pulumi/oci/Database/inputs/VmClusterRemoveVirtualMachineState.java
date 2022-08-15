@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Database.inputs.VmClusterRemoveVirtualMachineDataCollectionOptionArgs;
 import com.pulumi.oci.Database.inputs.VmClusterRemoveVirtualMachineDbServerArgs;
 import java.lang.Boolean;
 import java.lang.Double;
@@ -50,6 +51,21 @@ public final class VmClusterRemoveVirtualMachineState extends com.pulumi.resourc
      */
     public Optional<Output<Integer>> cpusEnabled() {
         return Optional.ofNullable(this.cpusEnabled);
+    }
+
+    /**
+     * Indicates user preferences for the various diagnostic collection options for the VM cluster.
+     * 
+     */
+    @Import(name="dataCollectionOptions")
+    private @Nullable Output<List<VmClusterRemoveVirtualMachineDataCollectionOptionArgs>> dataCollectionOptions;
+
+    /**
+     * @return Indicates user preferences for the various diagnostic collection options for the VM cluster.
+     * 
+     */
+    public Optional<Output<List<VmClusterRemoveVirtualMachineDataCollectionOptionArgs>>> dataCollectionOptions() {
+        return Optional.ofNullable(this.dataCollectionOptions);
     }
 
     /**
@@ -387,6 +403,7 @@ public final class VmClusterRemoveVirtualMachineState extends com.pulumi.resourc
     private VmClusterRemoveVirtualMachineState(VmClusterRemoveVirtualMachineState $) {
         this.compartmentId = $.compartmentId;
         this.cpusEnabled = $.cpusEnabled;
+        this.dataCollectionOptions = $.dataCollectionOptions;
         this.dataStorageSizeInTbs = $.dataStorageSizeInTbs;
         this.dbNodeStorageSizeInGbs = $.dbNodeStorageSizeInGbs;
         this.dbServers = $.dbServers;
@@ -469,6 +486,37 @@ public final class VmClusterRemoveVirtualMachineState extends com.pulumi.resourc
          */
         public Builder cpusEnabled(Integer cpusEnabled) {
             return cpusEnabled(Output.of(cpusEnabled));
+        }
+
+        /**
+         * @param dataCollectionOptions Indicates user preferences for the various diagnostic collection options for the VM cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataCollectionOptions(@Nullable Output<List<VmClusterRemoveVirtualMachineDataCollectionOptionArgs>> dataCollectionOptions) {
+            $.dataCollectionOptions = dataCollectionOptions;
+            return this;
+        }
+
+        /**
+         * @param dataCollectionOptions Indicates user preferences for the various diagnostic collection options for the VM cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataCollectionOptions(List<VmClusterRemoveVirtualMachineDataCollectionOptionArgs> dataCollectionOptions) {
+            return dataCollectionOptions(Output.of(dataCollectionOptions));
+        }
+
+        /**
+         * @param dataCollectionOptions Indicates user preferences for the various diagnostic collection options for the VM cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataCollectionOptions(VmClusterRemoveVirtualMachineDataCollectionOptionArgs... dataCollectionOptions) {
+            return dataCollectionOptions(List.of(dataCollectionOptions));
         }
 
         /**

@@ -20,6 +20,11 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
      */
     private final String bootVolumeSizeInGbs;
     /**
+     * @return The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service&#39;s elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+     * 
+     */
+    private final String bootVolumeVpusPerGb;
+    /**
      * @return The OCID of the image used to boot the instance.
      * 
      */
@@ -34,10 +39,12 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
     private GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailSourceDetail(
         @CustomType.Parameter("bootVolumeId") String bootVolumeId,
         @CustomType.Parameter("bootVolumeSizeInGbs") String bootVolumeSizeInGbs,
+        @CustomType.Parameter("bootVolumeVpusPerGb") String bootVolumeVpusPerGb,
         @CustomType.Parameter("imageId") String imageId,
         @CustomType.Parameter("sourceType") String sourceType) {
         this.bootVolumeId = bootVolumeId;
         this.bootVolumeSizeInGbs = bootVolumeSizeInGbs;
+        this.bootVolumeVpusPerGb = bootVolumeVpusPerGb;
         this.imageId = imageId;
         this.sourceType = sourceType;
     }
@@ -55,6 +62,13 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
      */
     public String bootVolumeSizeInGbs() {
         return this.bootVolumeSizeInGbs;
+    }
+    /**
+     * @return The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service&#39;s elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+     * 
+     */
+    public String bootVolumeVpusPerGb() {
+        return this.bootVolumeVpusPerGb;
     }
     /**
      * @return The OCID of the image used to boot the instance.
@@ -82,6 +96,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
     public static final class Builder {
         private String bootVolumeId;
         private String bootVolumeSizeInGbs;
+        private String bootVolumeVpusPerGb;
         private String imageId;
         private String sourceType;
 
@@ -93,6 +108,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
     	      Objects.requireNonNull(defaults);
     	      this.bootVolumeId = defaults.bootVolumeId;
     	      this.bootVolumeSizeInGbs = defaults.bootVolumeSizeInGbs;
+    	      this.bootVolumeVpusPerGb = defaults.bootVolumeVpusPerGb;
     	      this.imageId = defaults.imageId;
     	      this.sourceType = defaults.sourceType;
         }
@@ -105,6 +121,10 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
             this.bootVolumeSizeInGbs = Objects.requireNonNull(bootVolumeSizeInGbs);
             return this;
         }
+        public Builder bootVolumeVpusPerGb(String bootVolumeVpusPerGb) {
+            this.bootVolumeVpusPerGb = Objects.requireNonNull(bootVolumeVpusPerGb);
+            return this;
+        }
         public Builder imageId(String imageId) {
             this.imageId = Objects.requireNonNull(imageId);
             return this;
@@ -113,7 +133,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
             this.sourceType = Objects.requireNonNull(sourceType);
             return this;
         }        public GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailSourceDetail build() {
-            return new GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailSourceDetail(bootVolumeId, bootVolumeSizeInGbs, imageId, sourceType);
+            return new GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailSourceDetail(bootVolumeId, bootVolumeSizeInGbs, bootVolumeVpusPerGb, imageId, sourceType);
         }
     }
 }

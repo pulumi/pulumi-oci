@@ -18,6 +18,12 @@ namespace Pulumi.Oci.DataScience.Inputs
         [Input("instanceShapeName", required: true)]
         public Input<string> InstanceShapeName { get; set; } = null!;
 
+        /// <summary>
+        /// (Updatable) Details for the model-deployment instance shape configuration.
+        /// </summary>
+        [Input("modelDeploymentInstanceShapeConfigDetails")]
+        public Input<Inputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs>? ModelDeploymentInstanceShapeConfigDetails { get; set; }
+
         public ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs()
         {
         }

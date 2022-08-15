@@ -155,6 +155,10 @@ export class DeployStage extends pulumi.CustomResource {
      */
     public readonly greenBackendIps!: pulumi.Output<outputs.DevOps.DeployStageGreenBackendIps>;
     /**
+     * (Updatable) Helm chart artifact OCID.
+     */
+    public readonly helmChartDeployArtifactId!: pulumi.Output<string>;
+    /**
      * (Updatable) A boolean flag specifies whether this stage executes asynchronously.
      */
     public readonly isAsync!: pulumi.Output<boolean>;
@@ -199,13 +203,17 @@ export class DeployStage extends pulumi.CustomResource {
      */
     public readonly okeClusterDeployEnvironmentId!: pulumi.Output<string>;
     /**
-     * Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+     * Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
      */
     public readonly productionLoadBalancerConfig!: pulumi.Output<outputs.DevOps.DeployStageProductionLoadBalancerConfig>;
     /**
      * The OCID of a project.
      */
     public /*out*/ readonly projectId!: pulumi.Output<string>;
+    /**
+     * (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
+     */
+    public readonly releaseName!: pulumi.Output<string>;
     /**
      * (Updatable) Specifies the rollback policy. This is initiated on the failure of certain stage types.
      */
@@ -235,9 +243,17 @@ export class DeployStage extends pulumi.CustomResource {
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
     /**
+     * (Updatable) Time to wait for execution of a helm stage. Defaults to 300 seconds.
+     */
+    public readonly timeoutInSeconds!: pulumi.Output<number>;
+    /**
      * (Updatable) Specifies the target or destination backend set.
      */
     public readonly trafficShiftTarget!: pulumi.Output<string>;
+    /**
+     * (Updatable) List of values.yaml file artifact OCIDs.
+     */
+    public readonly valuesArtifactIds!: pulumi.Output<string[]>;
     /**
      * (Updatable) Specifies wait criteria for the Wait stage.
      */
@@ -283,6 +299,7 @@ export class DeployStage extends pulumi.CustomResource {
             resourceInputs["functionDeployEnvironmentId"] = state ? state.functionDeployEnvironmentId : undefined;
             resourceInputs["functionTimeoutInSeconds"] = state ? state.functionTimeoutInSeconds : undefined;
             resourceInputs["greenBackendIps"] = state ? state.greenBackendIps : undefined;
+            resourceInputs["helmChartDeployArtifactId"] = state ? state.helmChartDeployArtifactId : undefined;
             resourceInputs["isAsync"] = state ? state.isAsync : undefined;
             resourceInputs["isValidationEnabled"] = state ? state.isValidationEnabled : undefined;
             resourceInputs["kubernetesManifestDeployArtifactIds"] = state ? state.kubernetesManifestDeployArtifactIds : undefined;
@@ -296,6 +313,7 @@ export class DeployStage extends pulumi.CustomResource {
             resourceInputs["okeClusterDeployEnvironmentId"] = state ? state.okeClusterDeployEnvironmentId : undefined;
             resourceInputs["productionLoadBalancerConfig"] = state ? state.productionLoadBalancerConfig : undefined;
             resourceInputs["projectId"] = state ? state.projectId : undefined;
+            resourceInputs["releaseName"] = state ? state.releaseName : undefined;
             resourceInputs["rollbackPolicy"] = state ? state.rollbackPolicy : undefined;
             resourceInputs["rolloutPolicy"] = state ? state.rolloutPolicy : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
@@ -303,7 +321,9 @@ export class DeployStage extends pulumi.CustomResource {
             resourceInputs["testLoadBalancerConfig"] = state ? state.testLoadBalancerConfig : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["timeoutInSeconds"] = state ? state.timeoutInSeconds : undefined;
             resourceInputs["trafficShiftTarget"] = state ? state.trafficShiftTarget : undefined;
+            resourceInputs["valuesArtifactIds"] = state ? state.valuesArtifactIds : undefined;
             resourceInputs["waitCriteria"] = state ? state.waitCriteria : undefined;
         } else {
             const args = argsOrState as DeployStageArgs | undefined;
@@ -342,6 +362,7 @@ export class DeployStage extends pulumi.CustomResource {
             resourceInputs["functionDeployEnvironmentId"] = args ? args.functionDeployEnvironmentId : undefined;
             resourceInputs["functionTimeoutInSeconds"] = args ? args.functionTimeoutInSeconds : undefined;
             resourceInputs["greenBackendIps"] = args ? args.greenBackendIps : undefined;
+            resourceInputs["helmChartDeployArtifactId"] = args ? args.helmChartDeployArtifactId : undefined;
             resourceInputs["isAsync"] = args ? args.isAsync : undefined;
             resourceInputs["isValidationEnabled"] = args ? args.isValidationEnabled : undefined;
             resourceInputs["kubernetesManifestDeployArtifactIds"] = args ? args.kubernetesManifestDeployArtifactIds : undefined;
@@ -353,10 +374,13 @@ export class DeployStage extends pulumi.CustomResource {
             resourceInputs["okeCanaryTrafficShiftDeployStageId"] = args ? args.okeCanaryTrafficShiftDeployStageId : undefined;
             resourceInputs["okeClusterDeployEnvironmentId"] = args ? args.okeClusterDeployEnvironmentId : undefined;
             resourceInputs["productionLoadBalancerConfig"] = args ? args.productionLoadBalancerConfig : undefined;
+            resourceInputs["releaseName"] = args ? args.releaseName : undefined;
             resourceInputs["rollbackPolicy"] = args ? args.rollbackPolicy : undefined;
             resourceInputs["rolloutPolicy"] = args ? args.rolloutPolicy : undefined;
             resourceInputs["testLoadBalancerConfig"] = args ? args.testLoadBalancerConfig : undefined;
+            resourceInputs["timeoutInSeconds"] = args ? args.timeoutInSeconds : undefined;
             resourceInputs["trafficShiftTarget"] = args ? args.trafficShiftTarget : undefined;
+            resourceInputs["valuesArtifactIds"] = args ? args.valuesArtifactIds : undefined;
             resourceInputs["waitCriteria"] = args ? args.waitCriteria : undefined;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
@@ -484,6 +508,10 @@ export interface DeployStageState {
      */
     greenBackendIps?: pulumi.Input<inputs.DevOps.DeployStageGreenBackendIps>;
     /**
+     * (Updatable) Helm chart artifact OCID.
+     */
+    helmChartDeployArtifactId?: pulumi.Input<string>;
+    /**
      * (Updatable) A boolean flag specifies whether this stage executes asynchronously.
      */
     isAsync?: pulumi.Input<boolean>;
@@ -528,13 +556,17 @@ export interface DeployStageState {
      */
     okeClusterDeployEnvironmentId?: pulumi.Input<string>;
     /**
-     * Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+     * Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
      */
     productionLoadBalancerConfig?: pulumi.Input<inputs.DevOps.DeployStageProductionLoadBalancerConfig>;
     /**
      * The OCID of a project.
      */
     projectId?: pulumi.Input<string>;
+    /**
+     * (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
+     */
+    releaseName?: pulumi.Input<string>;
     /**
      * (Updatable) Specifies the rollback policy. This is initiated on the failure of certain stage types.
      */
@@ -564,9 +596,17 @@ export interface DeployStageState {
      */
     timeUpdated?: pulumi.Input<string>;
     /**
+     * (Updatable) Time to wait for execution of a helm stage. Defaults to 300 seconds.
+     */
+    timeoutInSeconds?: pulumi.Input<number>;
+    /**
      * (Updatable) Specifies the target or destination backend set.
      */
     trafficShiftTarget?: pulumi.Input<string>;
+    /**
+     * (Updatable) List of values.yaml file artifact OCIDs.
+     */
+    valuesArtifactIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * (Updatable) Specifies wait criteria for the Wait stage.
      */
@@ -682,6 +722,10 @@ export interface DeployStageArgs {
      */
     greenBackendIps?: pulumi.Input<inputs.DevOps.DeployStageGreenBackendIps>;
     /**
+     * (Updatable) Helm chart artifact OCID.
+     */
+    helmChartDeployArtifactId?: pulumi.Input<string>;
+    /**
      * (Updatable) A boolean flag specifies whether this stage executes asynchronously.
      */
     isAsync?: pulumi.Input<boolean>;
@@ -722,9 +766,13 @@ export interface DeployStageArgs {
      */
     okeClusterDeployEnvironmentId?: pulumi.Input<string>;
     /**
-     * Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+     * Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
      */
     productionLoadBalancerConfig?: pulumi.Input<inputs.DevOps.DeployStageProductionLoadBalancerConfig>;
+    /**
+     * (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
+     */
+    releaseName?: pulumi.Input<string>;
     /**
      * (Updatable) Specifies the rollback policy. This is initiated on the failure of certain stage types.
      */
@@ -738,9 +786,17 @@ export interface DeployStageArgs {
      */
     testLoadBalancerConfig?: pulumi.Input<inputs.DevOps.DeployStageTestLoadBalancerConfig>;
     /**
+     * (Updatable) Time to wait for execution of a helm stage. Defaults to 300 seconds.
+     */
+    timeoutInSeconds?: pulumi.Input<number>;
+    /**
      * (Updatable) Specifies the target or destination backend set.
      */
     trafficShiftTarget?: pulumi.Input<string>;
+    /**
+     * (Updatable) List of values.yaml file artifact OCIDs.
+     */
+    valuesArtifactIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * (Updatable) Specifies wait criteria for the Wait stage.
      */

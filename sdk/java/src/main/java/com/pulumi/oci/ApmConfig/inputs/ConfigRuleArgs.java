@@ -18,14 +18,14 @@ public final class ConfigRuleArgs extends com.pulumi.resources.ResourceArgs {
     public static final ConfigRuleArgs Empty = new ConfigRuleArgs();
 
     /**
-     * (Updatable) A user-friendly name that provides a short description this rule.
+     * (Updatable) The name by which a configuration entity is displayed to the end user.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) A user-friendly name that provides a short description this rule.
+     * @return (Updatable) The name by which a configuration entity is displayed to the end user.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -48,14 +48,14 @@ public final class ConfigRuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) If true, the rule will compute the actual Apdex score for spans that have been marked as errors. If false, the rule will always set the Apdex for error spans to frustrating, regardless of the configured thresholds. Default is false.
+     * (Updatable) Specifies whether an Apdex score should be computed for error spans. Setting it to &#34;true&#34; means that the Apdex score is computed in the usual way. Setting it to &#34;false&#34; skips the Apdex computation and sets the Apdex score to &#34;frustrating&#34; regardless of the configured thresholds. The default is &#34;false&#34;.
      * 
      */
     @Import(name="isApplyToErrorSpans")
     private @Nullable Output<Boolean> isApplyToErrorSpans;
 
     /**
-     * @return (Updatable) If true, the rule will compute the actual Apdex score for spans that have been marked as errors. If false, the rule will always set the Apdex for error spans to frustrating, regardless of the configured thresholds. Default is false.
+     * @return (Updatable) Specifies whether an Apdex score should be computed for error spans. Setting it to &#34;true&#34; means that the Apdex score is computed in the usual way. Setting it to &#34;false&#34; skips the Apdex computation and sets the Apdex score to &#34;frustrating&#34; regardless of the configured thresholds. The default is &#34;false&#34;.
      * 
      */
     public Optional<Output<Boolean>> isApplyToErrorSpans() {
@@ -63,14 +63,14 @@ public final class ConfigRuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Specifies if the Apdex rule will be computed for spans matching the rule. Can be used to make sure certain spans don&#39;t get an Apdex score. The default is &#34;true&#34;.
+     * (Updatable) Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable Apdex score for spans that do not need or require it. The default is &#34;true&#34;.
      * 
      */
     @Import(name="isEnabled")
     private @Nullable Output<Boolean> isEnabled;
 
     /**
-     * @return (Updatable) Specifies if the Apdex rule will be computed for spans matching the rule. Can be used to make sure certain spans don&#39;t get an Apdex score. The default is &#34;true&#34;.
+     * @return (Updatable) Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable Apdex score for spans that do not need or require it. The default is &#34;true&#34;.
      * 
      */
     public Optional<Output<Boolean>> isEnabled() {
@@ -93,14 +93,14 @@ public final class ConfigRuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The maximum response time in milliseconds that will be considered satisfactory for the end user.
+     * (Updatable) The maximum response time in milliseconds that is considered &#34;satisfactory&#34; for the end user.
      * 
      */
     @Import(name="satisfiedResponseTime")
     private @Nullable Output<Integer> satisfiedResponseTime;
 
     /**
-     * @return (Updatable) The maximum response time in milliseconds that will be considered satisfactory for the end user.
+     * @return (Updatable) The maximum response time in milliseconds that is considered &#34;satisfactory&#34; for the end user.
      * 
      */
     public Optional<Output<Integer>> satisfiedResponseTime() {
@@ -108,14 +108,14 @@ public final class ConfigRuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The maximum response time in milliseconds that will be considered tolerable for the end user. Response times beyond this threshold will be considered frustrating. This value cannot be lower than &#34;satisfiedResponseTime&#34;.
+     * (Updatable) The maximum response time in milliseconds that is considered &#34;tolerable&#34; for the end user. A response time beyond this threshold is considered &#34;frustrating&#34;. This value cannot be lower than &#34;satisfiedResponseTime&#34;.
      * 
      */
     @Import(name="toleratingResponseTime")
     private @Nullable Output<Integer> toleratingResponseTime;
 
     /**
-     * @return (Updatable) The maximum response time in milliseconds that will be considered tolerable for the end user. Response times beyond this threshold will be considered frustrating. This value cannot be lower than &#34;satisfiedResponseTime&#34;.
+     * @return (Updatable) The maximum response time in milliseconds that is considered &#34;tolerable&#34; for the end user. A response time beyond this threshold is considered &#34;frustrating&#34;. This value cannot be lower than &#34;satisfiedResponseTime&#34;.
      * 
      */
     public Optional<Output<Integer>> toleratingResponseTime() {
@@ -153,7 +153,7 @@ public final class ConfigRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) A user-friendly name that provides a short description this rule.
+         * @param displayName (Updatable) The name by which a configuration entity is displayed to the end user.
          * 
          * @return builder
          * 
@@ -164,7 +164,7 @@ public final class ConfigRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) A user-friendly name that provides a short description this rule.
+         * @param displayName (Updatable) The name by which a configuration entity is displayed to the end user.
          * 
          * @return builder
          * 
@@ -195,7 +195,7 @@ public final class ConfigRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isApplyToErrorSpans (Updatable) If true, the rule will compute the actual Apdex score for spans that have been marked as errors. If false, the rule will always set the Apdex for error spans to frustrating, regardless of the configured thresholds. Default is false.
+         * @param isApplyToErrorSpans (Updatable) Specifies whether an Apdex score should be computed for error spans. Setting it to &#34;true&#34; means that the Apdex score is computed in the usual way. Setting it to &#34;false&#34; skips the Apdex computation and sets the Apdex score to &#34;frustrating&#34; regardless of the configured thresholds. The default is &#34;false&#34;.
          * 
          * @return builder
          * 
@@ -206,7 +206,7 @@ public final class ConfigRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isApplyToErrorSpans (Updatable) If true, the rule will compute the actual Apdex score for spans that have been marked as errors. If false, the rule will always set the Apdex for error spans to frustrating, regardless of the configured thresholds. Default is false.
+         * @param isApplyToErrorSpans (Updatable) Specifies whether an Apdex score should be computed for error spans. Setting it to &#34;true&#34; means that the Apdex score is computed in the usual way. Setting it to &#34;false&#34; skips the Apdex computation and sets the Apdex score to &#34;frustrating&#34; regardless of the configured thresholds. The default is &#34;false&#34;.
          * 
          * @return builder
          * 
@@ -216,7 +216,7 @@ public final class ConfigRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isEnabled (Updatable) Specifies if the Apdex rule will be computed for spans matching the rule. Can be used to make sure certain spans don&#39;t get an Apdex score. The default is &#34;true&#34;.
+         * @param isEnabled (Updatable) Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable Apdex score for spans that do not need or require it. The default is &#34;true&#34;.
          * 
          * @return builder
          * 
@@ -227,7 +227,7 @@ public final class ConfigRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isEnabled (Updatable) Specifies if the Apdex rule will be computed for spans matching the rule. Can be used to make sure certain spans don&#39;t get an Apdex score. The default is &#34;true&#34;.
+         * @param isEnabled (Updatable) Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable Apdex score for spans that do not need or require it. The default is &#34;true&#34;.
          * 
          * @return builder
          * 
@@ -258,7 +258,7 @@ public final class ConfigRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param satisfiedResponseTime (Updatable) The maximum response time in milliseconds that will be considered satisfactory for the end user.
+         * @param satisfiedResponseTime (Updatable) The maximum response time in milliseconds that is considered &#34;satisfactory&#34; for the end user.
          * 
          * @return builder
          * 
@@ -269,7 +269,7 @@ public final class ConfigRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param satisfiedResponseTime (Updatable) The maximum response time in milliseconds that will be considered satisfactory for the end user.
+         * @param satisfiedResponseTime (Updatable) The maximum response time in milliseconds that is considered &#34;satisfactory&#34; for the end user.
          * 
          * @return builder
          * 
@@ -279,7 +279,7 @@ public final class ConfigRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param toleratingResponseTime (Updatable) The maximum response time in milliseconds that will be considered tolerable for the end user. Response times beyond this threshold will be considered frustrating. This value cannot be lower than &#34;satisfiedResponseTime&#34;.
+         * @param toleratingResponseTime (Updatable) The maximum response time in milliseconds that is considered &#34;tolerable&#34; for the end user. A response time beyond this threshold is considered &#34;frustrating&#34;. This value cannot be lower than &#34;satisfiedResponseTime&#34;.
          * 
          * @return builder
          * 
@@ -290,7 +290,7 @@ public final class ConfigRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param toleratingResponseTime (Updatable) The maximum response time in milliseconds that will be considered tolerable for the end user. Response times beyond this threshold will be considered frustrating. This value cannot be lower than &#34;satisfiedResponseTime&#34;.
+         * @param toleratingResponseTime (Updatable) The maximum response time in milliseconds that is considered &#34;tolerable&#34; for the end user. A response time beyond this threshold is considered &#34;frustrating&#34;. This value cannot be lower than &#34;satisfiedResponseTime&#34;.
          * 
          * @return builder
          * 

@@ -75,7 +75,8 @@ type LookupDatabaseInsightResult struct {
 	// Operations Insights internal representation of the database type.
 	DatabaseType string `pulumi:"databaseType"`
 	// The version of the database.
-	DatabaseVersion string `pulumi:"databaseVersion"`
+	DatabaseVersion      string `pulumi:"databaseVersion"`
+	DbmPrivateEndpointId string `pulumi:"dbmPrivateEndpointId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags    map[string]interface{} `pulumi:"definedTags"`
 	DeploymentType string                 `pulumi:"deploymentType"`
@@ -216,6 +217,10 @@ func (o LookupDatabaseInsightResultOutput) DatabaseType() pulumi.StringOutput {
 // The version of the database.
 func (o LookupDatabaseInsightResultOutput) DatabaseVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatabaseInsightResult) string { return v.DatabaseVersion }).(pulumi.StringOutput)
+}
+
+func (o LookupDatabaseInsightResultOutput) DbmPrivateEndpointId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDatabaseInsightResult) string { return v.DbmPrivateEndpointId }).(pulumi.StringOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`

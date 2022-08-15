@@ -22,7 +22,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
         /// <summary>
-        /// ResponderRule Description
+        /// ResponderRule description.
         /// </summary>
         public readonly string Description;
         /// <summary>
@@ -34,7 +34,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// Unique identifier of TargetResponderRecipe that is immutable on creation
+        /// Unique identifier of TargetResponderRecipe that can't be changed after creation.
         /// </summary>
         public readonly string Id;
         /// <summary>
@@ -57,6 +57,10 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> SystemTags;
+        /// <summary>
+        /// Details specific to the target type.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetGuardTargetsTargetCollectionItemTargetDetailResult> TargetDetails;
         /// <summary>
         /// List of detector recipes associated with target
         /// </summary>
@@ -106,6 +110,8 @@ namespace Pulumi.Oci.CloudGuard.Outputs
 
             ImmutableDictionary<string, object> systemTags,
 
+            ImmutableArray<Outputs.GetGuardTargetsTargetCollectionItemTargetDetailResult> targetDetails,
+
             ImmutableArray<Outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeResult> targetDetectorRecipes,
 
             string targetResourceId,
@@ -129,6 +135,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
             RecipeCount = recipeCount;
             State = state;
             SystemTags = systemTags;
+            TargetDetails = targetDetails;
             TargetDetectorRecipes = targetDetectorRecipes;
             TargetResourceId = targetResourceId;
             TargetResourceType = targetResourceType;

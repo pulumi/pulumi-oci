@@ -63,14 +63,14 @@ public class DetectorRecipe extends com.pulumi.resources.CustomResource {
         return this.definedTags;
     }
     /**
-     * (Updatable) DetectorRecipe Description
+     * (Updatable) Detector recipe description.
      * 
      */
     @Export(name="description", type=String.class, parameters={})
     private Output<String> description;
 
     /**
-     * @return (Updatable) DetectorRecipe Description
+     * @return (Updatable) Detector recipe description.
      * 
      */
     public Output<String> description() {
@@ -105,14 +105,14 @@ public class DetectorRecipe extends com.pulumi.resources.CustomResource {
         return this.detectorRules;
     }
     /**
-     * (Updatable) DetectorRecipe Display Name
+     * (Updatable) Detector recipe display name.
      * 
      */
     @Export(name="displayName", type=String.class, parameters={})
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) DetectorRecipe Display Name
+     * @return (Updatable) Detector recipe display name.
      * 
      */
     public Output<String> displayName() {

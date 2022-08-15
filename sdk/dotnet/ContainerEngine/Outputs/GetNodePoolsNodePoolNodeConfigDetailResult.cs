@@ -30,6 +30,10 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// </summary>
         public readonly string KmsKeyId;
         /// <summary>
+        /// The CNI related configuration of pods in the node pool.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailResult> NodePoolPodNetworkOptionDetails;
+        /// <summary>
         /// The OCIDs of the Network Security Group(s) to associate nodes for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
         /// </summary>
         public readonly ImmutableArray<string> NsgIds;
@@ -52,6 +56,8 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
 
             string kmsKeyId,
 
+            ImmutableArray<Outputs.GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailResult> nodePoolPodNetworkOptionDetails,
+
             ImmutableArray<string> nsgIds,
 
             ImmutableArray<Outputs.GetNodePoolsNodePoolNodeConfigDetailPlacementConfigResult> placementConfigs,
@@ -62,6 +68,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
             FreeformTags = freeformTags;
             IsPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             KmsKeyId = kmsKeyId;
+            NodePoolPodNetworkOptionDetails = nodePoolPodNetworkOptionDetails;
             NsgIds = nsgIds;
             PlacementConfigs = placementConfigs;
             Size = size;

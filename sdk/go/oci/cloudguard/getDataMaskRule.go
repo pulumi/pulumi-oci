@@ -53,7 +53,7 @@ type LookupDataMaskRuleArgs struct {
 
 // A collection of values returned by getDataMaskRule.
 type LookupDataMaskRuleResult struct {
-	// Compartment Identifier where the resource is created
+	// Compartment Identifier where the resource is created.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Data Mask Categories
 	DataMaskCategories []string `pulumi:"dataMaskCategories"`
@@ -64,7 +64,7 @@ type LookupDataMaskRuleResult struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The data mask rule description.
 	Description string `pulumi:"description"`
-	// Data Mask Rule Identifier, can be renamed
+	// Data Mask Rule Identifier, can be renamed.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
@@ -124,7 +124,7 @@ func (o LookupDataMaskRuleResultOutput) ToLookupDataMaskRuleResultOutputWithCont
 	return o
 }
 
-// Compartment Identifier where the resource is created
+// Compartment Identifier where the resource is created.
 func (o LookupDataMaskRuleResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDataMaskRuleResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -153,7 +153,7 @@ func (o LookupDataMaskRuleResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDataMaskRuleResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// Data Mask Rule Identifier, can be renamed
+// Data Mask Rule Identifier, can be renamed.
 func (o LookupDataMaskRuleResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDataMaskRuleResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }

@@ -11,6 +11,7 @@ import com.pulumi.oci.BigDataService.BdsInstanceArgs;
 import com.pulumi.oci.BigDataService.inputs.BdsInstanceState;
 import com.pulumi.oci.BigDataService.outputs.BdsInstanceCloudSqlDetail;
 import com.pulumi.oci.BigDataService.outputs.BdsInstanceClusterDetail;
+import com.pulumi.oci.BigDataService.outputs.BdsInstanceComputeOnlyWorkerNode;
 import com.pulumi.oci.BigDataService.outputs.BdsInstanceMasterNode;
 import com.pulumi.oci.BigDataService.outputs.BdsInstanceNetworkConfig;
 import com.pulumi.oci.BigDataService.outputs.BdsInstanceNode;
@@ -23,12 +24,13 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
  * This resource provides the Bds Instance resource in Oracle Cloud Infrastructure Big Data Service service.
  * 
- * Creates a Big Data Service cluster.
+ * Creates a new BDS instance.
  * 
  * ## Example Usage
  * 
@@ -44,28 +46,42 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:BigDataService/bdsInstance:BdsInstance")
 public class BdsInstance extends com.pulumi.resources.CustomResource {
     /**
-     * The information about added Cloud SQL capability
+     * (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
+     * 
+     */
+    @Export(name="bootstrapScriptUrl", type=String.class, parameters={})
+    private Output<String> bootstrapScriptUrl;
+
+    /**
+     * @return (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
+     * 
+     */
+    public Output<String> bootstrapScriptUrl() {
+        return this.bootstrapScriptUrl;
+    }
+    /**
+     * -(Optional) The information about added Cloud SQL capability
      * 
      */
     @Export(name="cloudSqlDetails", type=List.class, parameters={BdsInstanceCloudSqlDetail.class})
     private Output<List<BdsInstanceCloudSqlDetail>> cloudSqlDetails;
 
     /**
-     * @return The information about added Cloud SQL capability
+     * @return -(Optional) The information about added Cloud SQL capability
      * 
      */
     public Output<List<BdsInstanceCloudSqlDetail>> cloudSqlDetails() {
         return this.cloudSqlDetails;
     }
     /**
-     * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+     * Base-64 encoded password for Cloudera Manager admin user
      * 
      */
     @Export(name="clusterAdminPassword", type=String.class, parameters={})
     private Output<String> clusterAdminPassword;
 
     /**
-     * @return Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+     * @return Base-64 encoded password for Cloudera Manager admin user
      * 
      */
     public Output<String> clusterAdminPassword() {
@@ -100,224 +116,260 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
         return this.clusterPublicKey;
     }
     /**
-     * Version of the Hadoop distribution.
+     * Version of the Hadoop distribution
      * 
      */
     @Export(name="clusterVersion", type=String.class, parameters={})
     private Output<String> clusterVersion;
 
     /**
-     * @return Version of the Hadoop distribution.
+     * @return Version of the Hadoop distribution
      * 
      */
     public Output<String> clusterVersion() {
         return this.clusterVersion;
     }
     /**
-     * (Updatable) The OCID of the compartment.
+     * (Updatable) The OCID of the compartment
      * 
      */
     @Export(name="compartmentId", type=String.class, parameters={})
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The OCID of the compartment.
+     * @return (Updatable) The OCID of the compartment
      * 
      */
     public Output<String> compartmentId() {
         return this.compartmentId;
     }
+    @Export(name="computeOnlyWorkerNode", type=BdsInstanceComputeOnlyWorkerNode.class, parameters={})
+    private Output</* @Nullable */ BdsInstanceComputeOnlyWorkerNode> computeOnlyWorkerNode;
+
+    public Output<Optional<BdsInstanceComputeOnlyWorkerNode>> computeOnlyWorkerNode() {
+        return Codegen.optional(this.computeOnlyWorkerNode);
+    }
     /**
-     * The user who created the cluster.
+     * The user who created the BDS instance.
      * 
      */
     @Export(name="createdBy", type=String.class, parameters={})
     private Output<String> createdBy;
 
     /**
-     * @return The user who created the cluster.
+     * @return The user who created the BDS instance.
      * 
      */
     public Output<String> createdBy() {
         return this.createdBy;
     }
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example, `{&#34;foo-namespace&#34;: {&#34;bar-key&#34;: &#34;value&#34;}}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
     private Output<Map<String,Object>> definedTags;
 
     /**
-     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example, `{&#34;foo-namespace&#34;: {&#34;bar-key&#34;: &#34;value&#34;}}`
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Output<Map<String,Object>> definedTags() {
         return this.definedTags;
     }
     /**
-     * (Updatable) Name of the Big Data Service cluster.
+     * (Updatable) Name of the BDS instance
      * 
      */
     @Export(name="displayName", type=String.class, parameters={})
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) Name of the Big Data Service cluster.
+     * @return (Updatable) Name of the BDS instance
      * 
      */
     public Output<String> displayName() {
         return this.displayName;
     }
     /**
-     * (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
     private Output<Map<String,Object>> freeformTags;
 
     /**
-     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Output<Map<String,Object>> freeformTags() {
         return this.freeformTags;
     }
     /**
-     * Boolean flag specifying whether or not Cloud SQL should be configured.
+     * -(Optional) (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
      * 
      */
     @Export(name="isCloudSqlConfigured", type=Boolean.class, parameters={})
     private Output<Boolean> isCloudSqlConfigured;
 
     /**
-     * @return Boolean flag specifying whether or not Cloud SQL should be configured.
+     * @return -(Optional) (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
      * 
      */
     public Output<Boolean> isCloudSqlConfigured() {
         return this.isCloudSqlConfigured;
     }
     /**
-     * Boolean flag specifying whether or not the cluster is highly available (HA).
+     * Boolean flag specifying whether or not the cluster is HA
      * 
      */
     @Export(name="isHighAvailability", type=Boolean.class, parameters={})
     private Output<Boolean> isHighAvailability;
 
     /**
-     * @return Boolean flag specifying whether or not the cluster is highly available (HA).
+     * @return Boolean flag specifying whether or not the cluster is HA
      * 
      */
     public Output<Boolean> isHighAvailability() {
         return this.isHighAvailability;
     }
     /**
-     * Boolean flag specifying whether or not the cluster should be set up as secure.
+     * Boolean flag specifying whether or not the cluster should be setup as secure.
      * 
      */
     @Export(name="isSecure", type=Boolean.class, parameters={})
     private Output<Boolean> isSecure;
 
     /**
-     * @return Boolean flag specifying whether or not the cluster should be set up as secure.
+     * @return Boolean flag specifying whether or not the cluster should be setup as secure.
      * 
      */
     public Output<Boolean> isSecure() {
         return this.isSecure;
     }
+    /**
+     * The user-defined kerberos realm name.
+     * 
+     */
+    @Export(name="kerberosRealmName", type=String.class, parameters={})
+    private Output<String> kerberosRealmName;
+
+    /**
+     * @return The user-defined kerberos realm name.
+     * 
+     */
+    public Output<String> kerberosRealmName() {
+        return this.kerberosRealmName;
+    }
+    /**
+     * The master node in the BDS instance
+     * 
+     */
     @Export(name="masterNode", type=BdsInstanceMasterNode.class, parameters={})
     private Output<BdsInstanceMasterNode> masterNode;
 
+    /**
+     * @return The master node in the BDS instance
+     * 
+     */
     public Output<BdsInstanceMasterNode> masterNode() {
         return this.masterNode;
     }
     /**
-     * Additional configuration of the user&#39;s network.
+     * Additional configuration of customer&#39;s network.
      * 
      */
     @Export(name="networkConfig", type=BdsInstanceNetworkConfig.class, parameters={})
     private Output<BdsInstanceNetworkConfig> networkConfig;
 
     /**
-     * @return Additional configuration of the user&#39;s network.
+     * @return Additional configuration of customer&#39;s network.
      * 
      */
     public Output<BdsInstanceNetworkConfig> networkConfig() {
         return this.networkConfig;
     }
     /**
-     * The list of nodes in the Big Data Service cluster.
+     * The list of nodes in the BDS instance
      * 
      */
     @Export(name="nodes", type=List.class, parameters={BdsInstanceNode.class})
     private Output<List<BdsInstanceNode>> nodes;
 
     /**
-     * @return The list of nodes in the Big Data Service cluster.
+     * @return The list of nodes in the BDS instance
      * 
      */
     public Output<List<BdsInstanceNode>> nodes() {
         return this.nodes;
     }
     /**
-     * The number of nodes that form the cluster.
+     * The amount of worker nodes should be created
      * 
      */
     @Export(name="numberOfNodes", type=Integer.class, parameters={})
     private Output<Integer> numberOfNodes;
 
     /**
-     * @return The number of nodes that form the cluster.
+     * @return The amount of worker nodes should be created
      * 
      */
     public Output<Integer> numberOfNodes() {
         return this.numberOfNodes;
     }
     /**
-     * The state of the cluster.
+     * The state of the BDS instance
      * 
      */
     @Export(name="state", type=String.class, parameters={})
     private Output<String> state;
 
     /**
-     * @return The state of the cluster.
+     * @return The state of the BDS instance
      * 
      */
     public Output<String> state() {
         return this.state;
     }
     /**
-     * The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+     * The time the BDS instance was created. An RFC3339 formatted datetime string
      * 
      */
     @Export(name="timeCreated", type=String.class, parameters={})
     private Output<String> timeCreated;
 
     /**
-     * @return The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+     * @return The time the BDS instance was created. An RFC3339 formatted datetime string
      * 
      */
     public Output<String> timeCreated() {
         return this.timeCreated;
     }
     /**
-     * The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
+     * The time the BDS instance was updated. An RFC3339 formatted datetime string
      * 
      */
     @Export(name="timeUpdated", type=String.class, parameters={})
     private Output<String> timeUpdated;
 
     /**
-     * @return The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
+     * @return The time the BDS instance was updated. An RFC3339 formatted datetime string
      * 
      */
     public Output<String> timeUpdated() {
         return this.timeUpdated;
     }
+    /**
+     * The utility node in the BDS instance
+     * 
+     */
     @Export(name="utilNode", type=BdsInstanceUtilNode.class, parameters={})
     private Output<BdsInstanceUtilNode> utilNode;
 
+    /**
+     * @return The utility node in the BDS instance
+     * 
+     */
     public Output<BdsInstanceUtilNode> utilNode() {
         return this.utilNode;
     }

@@ -37,6 +37,15 @@ namespace Pulumi.Oci.Limits
     ///             {
     ///                 { "Department", "Finance" },
     ///             },
+    ///             Locks = 
+    ///             {
+    ///                 new Oci.Limits.Inputs.QuotaLockArgs
+    ///                 {
+    ///                     Type = @var.Quota_locks_type,
+    ///                     Message = @var.Quota_locks_message,
+    ///                     RelatedResourceId = oci_limits_related_resource.Test_related_resource.Id,
+    ///                 },
+    ///             },
     ///         });
     ///     }
     /// 
@@ -77,6 +86,18 @@ namespace Pulumi.Oci.Limits
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+
+        /// <summary>
+        /// this is a computed field which is set to true if any lock is present`
+        /// </summary>
+        [Output("isLockOverride")]
+        public Output<bool> IsLockOverride { get; private set; } = null!;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        [Output("locks")]
+        public Output<ImmutableArray<Outputs.QuotaLock>> Locks { get; private set; } = null!;
 
         /// <summary>
         /// The name you assign to the quota during creation. The name must be unique across all quotas in the tenancy and cannot be changed.
@@ -184,6 +205,18 @@ namespace Pulumi.Oci.Limits
             set => _freeformTags = value;
         }
 
+        [Input("locks")]
+        private InputList<Inputs.QuotaLockArgs>? _locks;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public InputList<Inputs.QuotaLockArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.QuotaLockArgs>());
+            set => _locks = value;
+        }
+
         /// <summary>
         /// The name you assign to the quota during creation. The name must be unique across all quotas in the tenancy and cannot be changed.
         /// </summary>
@@ -243,6 +276,24 @@ namespace Pulumi.Oci.Limits
         {
             get => _freeformTags ?? (_freeformTags = new InputMap<object>());
             set => _freeformTags = value;
+        }
+
+        /// <summary>
+        /// this is a computed field which is set to true if any lock is present`
+        /// </summary>
+        [Input("isLockOverride")]
+        public Input<bool>? IsLockOverride { get; set; }
+
+        [Input("locks")]
+        private InputList<Inputs.QuotaLockGetArgs>? _locks;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public InputList<Inputs.QuotaLockGetArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.QuotaLockGetArgs>());
+            set => _locks = value;
         }
 
         /// <summary>

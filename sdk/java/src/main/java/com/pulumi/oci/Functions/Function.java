@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Functions.FunctionArgs;
 import com.pulumi.oci.Functions.inputs.FunctionState;
+import com.pulumi.oci.Functions.outputs.FunctionProvisionedConcurrencyConfig;
 import com.pulumi.oci.Functions.outputs.FunctionTraceConfig;
 import com.pulumi.oci.Utilities;
 import java.lang.Integer;
@@ -174,6 +175,20 @@ public class Function extends com.pulumi.resources.CustomResource {
      */
     public Output<String> memoryInMbs() {
         return this.memoryInMbs;
+    }
+    /**
+     * (Updatable) Define the strategy for provisioned concurrency for the function.
+     * 
+     */
+    @Export(name="provisionedConcurrencyConfig", type=FunctionProvisionedConcurrencyConfig.class, parameters={})
+    private Output<FunctionProvisionedConcurrencyConfig> provisionedConcurrencyConfig;
+
+    /**
+     * @return (Updatable) Define the strategy for provisioned concurrency for the function.
+     * 
+     */
+    public Output<FunctionProvisionedConcurrencyConfig> provisionedConcurrencyConfig() {
+        return this.provisionedConcurrencyConfig;
     }
     /**
      * The current state of the function.

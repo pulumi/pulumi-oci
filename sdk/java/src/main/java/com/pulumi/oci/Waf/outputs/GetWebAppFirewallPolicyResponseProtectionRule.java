@@ -6,6 +6,7 @@ package com.pulumi.oci.Waf.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Waf.outputs.GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapability;
 import com.pulumi.oci.Waf.outputs.GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySetting;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -29,12 +30,17 @@ public final class GetWebAppFirewallPolicyResponseProtectionRule {
      */
     private final String conditionLanguage;
     /**
+     * @return Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
+     * 
+     */
+    private final Boolean isBodyInspectionEnabled;
+    /**
      * @return Rule name. Must be unique within the module.
      * 
      */
     private final String name;
     /**
-     * @return An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are executed in order of appearance. The array cannot contain entries with the same pair of capability key and version more than once.
+     * @return An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
      * 
      */
     private final List<GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapability> protectionCapabilities;
@@ -54,6 +60,7 @@ public final class GetWebAppFirewallPolicyResponseProtectionRule {
         @CustomType.Parameter("actionName") String actionName,
         @CustomType.Parameter("condition") String condition,
         @CustomType.Parameter("conditionLanguage") String conditionLanguage,
+        @CustomType.Parameter("isBodyInspectionEnabled") Boolean isBodyInspectionEnabled,
         @CustomType.Parameter("name") String name,
         @CustomType.Parameter("protectionCapabilities") List<GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapability> protectionCapabilities,
         @CustomType.Parameter("protectionCapabilitySettings") List<GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySetting> protectionCapabilitySettings,
@@ -61,6 +68,7 @@ public final class GetWebAppFirewallPolicyResponseProtectionRule {
         this.actionName = actionName;
         this.condition = condition;
         this.conditionLanguage = conditionLanguage;
+        this.isBodyInspectionEnabled = isBodyInspectionEnabled;
         this.name = name;
         this.protectionCapabilities = protectionCapabilities;
         this.protectionCapabilitySettings = protectionCapabilitySettings;
@@ -90,6 +98,13 @@ public final class GetWebAppFirewallPolicyResponseProtectionRule {
         return this.conditionLanguage;
     }
     /**
+     * @return Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
+     * 
+     */
+    public Boolean isBodyInspectionEnabled() {
+        return this.isBodyInspectionEnabled;
+    }
+    /**
      * @return Rule name. Must be unique within the module.
      * 
      */
@@ -97,7 +112,7 @@ public final class GetWebAppFirewallPolicyResponseProtectionRule {
         return this.name;
     }
     /**
-     * @return An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are executed in order of appearance. The array cannot contain entries with the same pair of capability key and version more than once.
+     * @return An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
      * 
      */
     public List<GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapability> protectionCapabilities() {
@@ -130,6 +145,7 @@ public final class GetWebAppFirewallPolicyResponseProtectionRule {
         private String actionName;
         private String condition;
         private String conditionLanguage;
+        private Boolean isBodyInspectionEnabled;
         private String name;
         private List<GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapability> protectionCapabilities;
         private List<GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySetting> protectionCapabilitySettings;
@@ -144,6 +160,7 @@ public final class GetWebAppFirewallPolicyResponseProtectionRule {
     	      this.actionName = defaults.actionName;
     	      this.condition = defaults.condition;
     	      this.conditionLanguage = defaults.conditionLanguage;
+    	      this.isBodyInspectionEnabled = defaults.isBodyInspectionEnabled;
     	      this.name = defaults.name;
     	      this.protectionCapabilities = defaults.protectionCapabilities;
     	      this.protectionCapabilitySettings = defaults.protectionCapabilitySettings;
@@ -160,6 +177,10 @@ public final class GetWebAppFirewallPolicyResponseProtectionRule {
         }
         public Builder conditionLanguage(String conditionLanguage) {
             this.conditionLanguage = Objects.requireNonNull(conditionLanguage);
+            return this;
+        }
+        public Builder isBodyInspectionEnabled(Boolean isBodyInspectionEnabled) {
+            this.isBodyInspectionEnabled = Objects.requireNonNull(isBodyInspectionEnabled);
             return this;
         }
         public Builder name(String name) {
@@ -184,7 +205,7 @@ public final class GetWebAppFirewallPolicyResponseProtectionRule {
             this.type = Objects.requireNonNull(type);
             return this;
         }        public GetWebAppFirewallPolicyResponseProtectionRule build() {
-            return new GetWebAppFirewallPolicyResponseProtectionRule(actionName, condition, conditionLanguage, name, protectionCapabilities, protectionCapabilitySettings, type);
+            return new GetWebAppFirewallPolicyResponseProtectionRule(actionName, condition, conditionLanguage, isBodyInspectionEnabled, name, protectionCapabilities, protectionCapabilitySettings, type);
         }
     }
 }

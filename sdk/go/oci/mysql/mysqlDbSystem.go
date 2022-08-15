@@ -41,7 +41,10 @@ import (
 // 				FreeformTags: pulumi.AnyMap{
 // 					"bar-key": pulumi.Any("value"),
 // 				},
-// 				IsEnabled:       pulumi.Any(_var.Mysql_db_system_backup_policy_is_enabled),
+// 				IsEnabled: pulumi.Any(_var.Mysql_db_system_backup_policy_is_enabled),
+// 				PitrPolicy: &mysql.MysqlDbSystemBackupPolicyPitrPolicyArgs{
+// 					IsEnabled: pulumi.Any(_var.Mysql_db_system_backup_policy_pitr_policy_is_enabled),
+// 				},
 // 				RetentionInDays: pulumi.Any(_var.Mysql_db_system_backup_policy_retention_in_days),
 // 				WindowStartTime: pulumi.Any(_var.Mysql_db_system_backup_policy_window_start_time),
 // 			},
@@ -148,9 +151,9 @@ type MysqlDbSystem struct {
 	// (Updatable) The Maintenance Policy for the DB System. `maintenance` and `backupPolicy` cannot be updated in the same request.
 	Maintenance MysqlDbSystemMaintenanceOutput `pulumi:"maintenance"`
 	// Name of the MySQL Version in use for the DB System.
-	//
-	// Deprecated: The 'mysql_version' field has been deprecated and may be removed in a future version. Do not use this field.
 	MysqlVersion pulumi.StringOutput `pulumi:"mysqlVersion"`
+	// Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
+	PointInTimeRecoveryDetails MysqlDbSystemPointInTimeRecoveryDetailArrayOutput `pulumi:"pointInTimeRecoveryDetails"`
 	// The port for primary endpoint of the DB System to listen on.
 	Port pulumi.IntOutput `pulumi:"port"`
 	// The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
@@ -266,9 +269,9 @@ type mysqlDbSystemState struct {
 	// (Updatable) The Maintenance Policy for the DB System. `maintenance` and `backupPolicy` cannot be updated in the same request.
 	Maintenance *MysqlDbSystemMaintenance `pulumi:"maintenance"`
 	// Name of the MySQL Version in use for the DB System.
-	//
-	// Deprecated: The 'mysql_version' field has been deprecated and may be removed in a future version. Do not use this field.
 	MysqlVersion *string `pulumi:"mysqlVersion"`
+	// Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
+	PointInTimeRecoveryDetails []MysqlDbSystemPointInTimeRecoveryDetail `pulumi:"pointInTimeRecoveryDetails"`
 	// The port for primary endpoint of the DB System to listen on.
 	Port *int `pulumi:"port"`
 	// The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
@@ -344,9 +347,9 @@ type MysqlDbSystemState struct {
 	// (Updatable) The Maintenance Policy for the DB System. `maintenance` and `backupPolicy` cannot be updated in the same request.
 	Maintenance MysqlDbSystemMaintenancePtrInput
 	// Name of the MySQL Version in use for the DB System.
-	//
-	// Deprecated: The 'mysql_version' field has been deprecated and may be removed in a future version. Do not use this field.
 	MysqlVersion pulumi.StringPtrInput
+	// Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
+	PointInTimeRecoveryDetails MysqlDbSystemPointInTimeRecoveryDetailArrayInput
 	// The port for primary endpoint of the DB System to listen on.
 	Port pulumi.IntPtrInput
 	// The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
@@ -410,8 +413,6 @@ type mysqlDbSystemArgs struct {
 	// (Updatable) The Maintenance Policy for the DB System. `maintenance` and `backupPolicy` cannot be updated in the same request.
 	Maintenance *MysqlDbSystemMaintenance `pulumi:"maintenance"`
 	// Name of the MySQL Version in use for the DB System.
-	//
-	// Deprecated: The 'mysql_version' field has been deprecated and may be removed in a future version. Do not use this field.
 	MysqlVersion *string `pulumi:"mysqlVersion"`
 	// The port for primary endpoint of the DB System to listen on.
 	Port *int `pulumi:"port"`
@@ -469,8 +470,6 @@ type MysqlDbSystemArgs struct {
 	// (Updatable) The Maintenance Policy for the DB System. `maintenance` and `backupPolicy` cannot be updated in the same request.
 	Maintenance MysqlDbSystemMaintenancePtrInput
 	// Name of the MySQL Version in use for the DB System.
-	//
-	// Deprecated: The 'mysql_version' field has been deprecated and may be removed in a future version. Do not use this field.
 	MysqlVersion pulumi.StringPtrInput
 	// The port for primary endpoint of the DB System to listen on.
 	Port pulumi.IntPtrInput

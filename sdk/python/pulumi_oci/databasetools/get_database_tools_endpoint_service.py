@@ -65,7 +65,7 @@ class GetDatabaseToolsEndpointServiceResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools Endpoint Service.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -86,7 +86,7 @@ class GetDatabaseToolsEndpointServiceResult:
     @pulumi.getter
     def description(self) -> str:
         """
-        A description of the DatabaseToolsEndpointService.
+        A description of the Database Tools Endpoint Service.
         """
         return pulumi.get(self, "description")
 
@@ -134,7 +134,7 @@ class GetDatabaseToolsEndpointServiceResult:
     @pulumi.getter
     def state(self) -> str:
         """
-        The current state of the DatabaseToolsEndpointService.
+        The current state of the Database Tools Endpoint Service.
         """
         return pulumi.get(self, "state")
 
@@ -150,7 +150,7 @@ class GetDatabaseToolsEndpointServiceResult:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The time the DatabaseToolsEndpointService was created. An RFC3339 formatted datetime string
+        The time the Database Tools Endpoint Service was created. An RFC3339 formatted datetime string
         """
         return pulumi.get(self, "time_created")
 
@@ -158,7 +158,7 @@ class GetDatabaseToolsEndpointServiceResult:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
-        The time the DatabaseToolsEndpointService was updated. An RFC3339 formatted datetime string
+        The time the Database Tools Endpoint Service was updated. An RFC3339 formatted datetime string
         """
         return pulumi.get(self, "time_updated")
 
@@ -189,7 +189,7 @@ def get_database_tools_endpoint_service(database_tools_endpoint_service_id: Opti
     """
     This data source provides details about a specific Database Tools Endpoint Service resource in Oracle Cloud Infrastructure Database Tools service.
 
-    Gets a DatabaseToolsEndpointService by identifier
+    Gets details for the specified Database Tools endpoint service.
 
     ## Example Usage
 
@@ -201,7 +201,7 @@ def get_database_tools_endpoint_service(database_tools_endpoint_service_id: Opti
     ```
 
 
-    :param str database_tools_endpoint_service_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a DatabaseToolsEndpointService.
+    :param str database_tools_endpoint_service_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools Endpoint Service.
     """
     __args__ = dict()
     __args__['databaseToolsEndpointServiceId'] = database_tools_endpoint_service_id
@@ -233,7 +233,7 @@ def get_database_tools_endpoint_service_output(database_tools_endpoint_service_i
     """
     This data source provides details about a specific Database Tools Endpoint Service resource in Oracle Cloud Infrastructure Database Tools service.
 
-    Gets a DatabaseToolsEndpointService by identifier
+    Gets details for the specified Database Tools endpoint service.
 
     ## Example Usage
 
@@ -245,6 +245,6 @@ def get_database_tools_endpoint_service_output(database_tools_endpoint_service_i
     ```
 
 
-    :param str database_tools_endpoint_service_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a DatabaseToolsEndpointService.
+    :param str database_tools_endpoint_service_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools Endpoint Service.
     """
     ...

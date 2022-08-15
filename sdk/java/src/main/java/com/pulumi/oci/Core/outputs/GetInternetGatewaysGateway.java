@@ -43,6 +43,11 @@ public final class GetInternetGatewaysGateway {
      */
     private final String id;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the Internet Gateway is using.
+     * 
+     */
+    private final String routeTableId;
+    /**
      * @return A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
      * 
      */
@@ -66,6 +71,7 @@ public final class GetInternetGatewaysGateway {
         @CustomType.Parameter("enabled") Boolean enabled,
         @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
         @CustomType.Parameter("id") String id,
+        @CustomType.Parameter("routeTableId") String routeTableId,
         @CustomType.Parameter("state") String state,
         @CustomType.Parameter("timeCreated") String timeCreated,
         @CustomType.Parameter("vcnId") String vcnId) {
@@ -75,6 +81,7 @@ public final class GetInternetGatewaysGateway {
         this.enabled = enabled;
         this.freeformTags = freeformTags;
         this.id = id;
+        this.routeTableId = routeTableId;
         this.state = state;
         this.timeCreated = timeCreated;
         this.vcnId = vcnId;
@@ -123,6 +130,13 @@ public final class GetInternetGatewaysGateway {
         return this.id;
     }
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the Internet Gateway is using.
+     * 
+     */
+    public String routeTableId() {
+        return this.routeTableId;
+    }
+    /**
      * @return A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
      * 
      */
@@ -159,6 +173,7 @@ public final class GetInternetGatewaysGateway {
         private Boolean enabled;
         private Map<String,Object> freeformTags;
         private String id;
+        private String routeTableId;
         private String state;
         private String timeCreated;
         private String vcnId;
@@ -175,6 +190,7 @@ public final class GetInternetGatewaysGateway {
     	      this.enabled = defaults.enabled;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.routeTableId = defaults.routeTableId;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
     	      this.vcnId = defaults.vcnId;
@@ -204,6 +220,10 @@ public final class GetInternetGatewaysGateway {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        public Builder routeTableId(String routeTableId) {
+            this.routeTableId = Objects.requireNonNull(routeTableId);
+            return this;
+        }
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
@@ -216,7 +236,7 @@ public final class GetInternetGatewaysGateway {
             this.vcnId = Objects.requireNonNull(vcnId);
             return this;
         }        public GetInternetGatewaysGateway build() {
-            return new GetInternetGatewaysGateway(compartmentId, definedTags, displayName, enabled, freeformTags, id, state, timeCreated, vcnId);
+            return new GetInternetGatewaysGateway(compartmentId, definedTags, displayName, enabled, freeformTags, id, routeTableId, state, timeCreated, vcnId);
         }
     }
 }

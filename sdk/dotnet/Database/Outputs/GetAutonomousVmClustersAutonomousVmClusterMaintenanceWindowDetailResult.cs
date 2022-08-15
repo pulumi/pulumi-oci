@@ -13,6 +13,7 @@ namespace Pulumi.Oci.Database.Outputs
     [OutputType]
     public sealed class GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailResult
     {
+        public readonly int CustomActionTimeoutInMins;
         /// <summary>
         /// Days during the week when maintenance should be performed.
         /// </summary>
@@ -22,6 +23,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
         /// </summary>
         public readonly ImmutableArray<int> HoursOfDays;
+        public readonly bool IsCustomActionTimeoutEnabled;
         /// <summary>
         /// Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
         /// </summary>
@@ -30,6 +32,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// Months during the year when maintenance should be performed.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthResult> Months;
+        public readonly string PatchingMode;
         /// <summary>
         /// The maintenance window scheduling preference.
         /// </summary>
@@ -41,22 +44,31 @@ namespace Pulumi.Oci.Database.Outputs
 
         [OutputConstructor]
         private GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailResult(
+            int customActionTimeoutInMins,
+
             ImmutableArray<Outputs.GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekResult> daysOfWeeks,
 
             ImmutableArray<int> hoursOfDays,
+
+            bool isCustomActionTimeoutEnabled,
 
             int leadTimeInWeeks,
 
             ImmutableArray<Outputs.GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthResult> months,
 
+            string patchingMode,
+
             string preference,
 
             ImmutableArray<int> weeksOfMonths)
         {
+            CustomActionTimeoutInMins = customActionTimeoutInMins;
             DaysOfWeeks = daysOfWeeks;
             HoursOfDays = hoursOfDays;
+            IsCustomActionTimeoutEnabled = isCustomActionTimeoutEnabled;
             LeadTimeInWeeks = leadTimeInWeeks;
             Months = months;
+            PatchingMode = patchingMode;
             Preference = preference;
             WeeksOfMonths = weeksOfMonths;
         }

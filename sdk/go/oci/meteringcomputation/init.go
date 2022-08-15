@@ -25,6 +25,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &CustomTable{}
 	case "oci:MeteringComputation/query:Query":
 		r = &Query{}
+	case "oci:MeteringComputation/schedule:Schedule":
+		r = &Schedule{}
 	case "oci:MeteringComputation/usage:Usage":
 		r = &Usage{}
 	default:
@@ -48,6 +50,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"MeteringComputation/query",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"MeteringComputation/schedule",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

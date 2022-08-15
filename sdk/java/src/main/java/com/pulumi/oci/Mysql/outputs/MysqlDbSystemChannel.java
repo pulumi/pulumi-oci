@@ -43,7 +43,7 @@ public final class MysqlDbSystemChannel {
      */
     private final @Nullable String id;
     /**
-     * @return (Updatable) Specifies if automatic backups are enabled.
+     * @return (Updatable) Specifies if PITR is enabled or disabled.
      * 
      */
     private final @Nullable Boolean isEnabled;
@@ -142,7 +142,7 @@ public final class MysqlDbSystemChannel {
         return Optional.ofNullable(this.id);
     }
     /**
-     * @return (Updatable) Specifies if automatic backups are enabled.
+     * @return (Updatable) Specifies if PITR is enabled or disabled.
      * 
      */
     public Optional<Boolean> isEnabled() {

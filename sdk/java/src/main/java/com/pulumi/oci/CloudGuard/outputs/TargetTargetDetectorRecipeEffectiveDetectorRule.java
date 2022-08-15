@@ -34,7 +34,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRule {
      */
     private final @Nullable String detectorRuleId;
     /**
-     * @return (Updatable) DetectorTemplate Identifier
+     * @return (Updatable) DetectorTemplate identifier.
      * 
      */
     private final @Nullable String displayName;
@@ -138,7 +138,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRule {
         return Optional.ofNullable(this.detectorRuleId);
     }
     /**
-     * @return (Updatable) DetectorTemplate Identifier
+     * @return (Updatable) DetectorTemplate identifier.
      * 
      */
     public Optional<String> displayName() {

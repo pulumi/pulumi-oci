@@ -55,11 +55,11 @@ export class ResponderRecipe extends pulumi.CustomResource {
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * (Updatable) ResponderRecipe Description
+     * (Updatable) Responder recipe description.
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * (Updatable) ResponderRecipe Display Name
+     * (Updatable) Responder recipe display name.
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
@@ -174,11 +174,11 @@ export interface ResponderRecipeState {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) ResponderRecipe Description
+     * (Updatable) Responder recipe description.
      */
     description?: pulumi.Input<string>;
     /**
-     * (Updatable) ResponderRecipe Display Name
+     * (Updatable) Responder recipe display name.
      */
     displayName?: pulumi.Input<string>;
     /**
@@ -236,11 +236,11 @@ export interface ResponderRecipeArgs {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) ResponderRecipe Description
+     * (Updatable) Responder recipe description.
      */
     description?: pulumi.Input<string>;
     /**
-     * (Updatable) ResponderRecipe Display Name
+     * (Updatable) Responder recipe display name.
      */
     displayName: pulumi.Input<string>;
     /**

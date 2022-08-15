@@ -14,11 +14,11 @@ namespace Pulumi.Oci.Core.Outputs
     public sealed class GetShapesShapePlatformConfigOptionMeasuredBootOptionResult
     {
         /// <summary>
-        /// Possible boolean values indicating whether Trusted Platform Module (TPM) can be enabled or disabled
+        /// Whether virtualization instructions can be enabled.
         /// </summary>
         public readonly ImmutableArray<bool> AllowedValues;
         /// <summary>
-        /// Indicates whether Trusted Platform Module is to be enabled by default
+        /// Whether virtualization instructions are enabled by default.
         /// </summary>
         public readonly bool IsDefaultEnabled;
 

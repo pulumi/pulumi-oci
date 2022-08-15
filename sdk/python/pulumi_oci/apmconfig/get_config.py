@@ -21,7 +21,7 @@ class GetConfigResult:
     """
     A collection of values returned by getConfig.
     """
-    def __init__(__self__, apm_domain_id=None, config_id=None, config_type=None, defined_tags=None, description=None, dimensions=None, display_name=None, filter_id=None, filter_text=None, freeform_tags=None, id=None, metrics=None, namespace=None, opc_dry_run=None, rules=None, time_created=None, time_updated=None):
+    def __init__(__self__, apm_domain_id=None, config_id=None, config_type=None, defined_tags=None, description=None, dimensions=None, display_name=None, filter_id=None, filter_text=None, freeform_tags=None, group=None, id=None, metrics=None, namespace=None, opc_dry_run=None, options=None, rules=None, time_created=None, time_updated=None):
         if apm_domain_id and not isinstance(apm_domain_id, str):
             raise TypeError("Expected argument 'apm_domain_id' to be a str")
         pulumi.set(__self__, "apm_domain_id", apm_domain_id)
@@ -52,6 +52,9 @@ class GetConfigResult:
         if freeform_tags and not isinstance(freeform_tags, dict):
             raise TypeError("Expected argument 'freeform_tags' to be a dict")
         pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if group and not isinstance(group, str):
+            raise TypeError("Expected argument 'group' to be a str")
+        pulumi.set(__self__, "group", group)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -64,6 +67,9 @@ class GetConfigResult:
         if opc_dry_run and not isinstance(opc_dry_run, str):
             raise TypeError("Expected argument 'opc_dry_run' to be a str")
         pulumi.set(__self__, "opc_dry_run", opc_dry_run)
+        if options and not isinstance(options, str):
+            raise TypeError("Expected argument 'options' to be a str")
+        pulumi.set(__self__, "options", options)
         if rules and not isinstance(rules, list):
             raise TypeError("Expected argument 'rules' to be a list")
         pulumi.set(__self__, "rules", rules)
@@ -88,7 +94,7 @@ class GetConfigResult:
     @pulumi.getter(name="configType")
     def config_type(self) -> str:
         """
-        The type of configuration item
+        The type of configuration item.
         """
         return pulumi.get(self, "config_type")
 
@@ -104,7 +110,7 @@ class GetConfigResult:
     @pulumi.getter
     def description(self) -> str:
         """
-        A description of the metric
+        A description of the metric.
         """
         return pulumi.get(self, "description")
 
@@ -112,7 +118,7 @@ class GetConfigResult:
     @pulumi.getter
     def dimensions(self) -> Sequence['outputs.GetConfigDimensionResult']:
         """
-        A list of dimensions for this metric
+        A list of dimensions for the metric. This variable should not be used.
         """
         return pulumi.get(self, "dimensions")
 
@@ -120,7 +126,7 @@ class GetConfigResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        A user-friendly name that provides a short description this rule.
+        The name by which a configuration entity is displayed to the end user.
         """
         return pulumi.get(self, "display_name")
 
@@ -128,7 +134,7 @@ class GetConfigResult:
     @pulumi.getter(name="filterId")
     def filter_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId will be generated when a Span Filter is created.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
         """
         return pulumi.get(self, "filter_id")
 
@@ -150,22 +156,33 @@ class GetConfigResult:
 
     @property
     @pulumi.getter
+    def group(self) -> str:
+        """
+        A string that specifies the group that an OPTIONS item belongs to.
+        """
+        return pulumi.get(self, "group")
+
+    @property
+    @pulumi.getter
     def id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID will be generated when the item is created.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
         """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
     def metrics(self) -> Sequence['outputs.GetConfigMetricResult']:
+        """
+        The list of metrics in this group.
+        """
         return pulumi.get(self, "metrics")
 
     @property
     @pulumi.getter
     def namespace(self) -> str:
         """
-        The namespace to write the metrics to
+        The namespace to which the metrics are published. It must be one of several predefined namespaces.
         """
         return pulumi.get(self, "namespace")
 
@@ -173,6 +190,14 @@ class GetConfigResult:
     @pulumi.getter(name="opcDryRun")
     def opc_dry_run(self) -> str:
         return pulumi.get(self, "opc_dry_run")
+
+    @property
+    @pulumi.getter
+    def options(self) -> str:
+        """
+        The options are stored here as JSON.
+        """
+        return pulumi.get(self, "options")
 
     @property
     @pulumi.getter
@@ -212,10 +237,12 @@ class AwaitableGetConfigResult(GetConfigResult):
             filter_id=self.filter_id,
             filter_text=self.filter_text,
             freeform_tags=self.freeform_tags,
+            group=self.group,
             id=self.id,
             metrics=self.metrics,
             namespace=self.namespace,
             opc_dry_run=self.opc_dry_run,
+            options=self.options,
             rules=self.rules,
             time_created=self.time_created,
             time_updated=self.time_updated)
@@ -227,7 +254,7 @@ def get_config(apm_domain_id: Optional[str] = None,
     """
     This data source provides details about a specific Config resource in Oracle Cloud Infrastructure Apm Config service.
 
-    Get the configuration of the item identified by the OCID.
+    Gets the configuration item identified by the OCID.
 
     ## Example Usage
 
@@ -240,8 +267,8 @@ def get_config(apm_domain_id: Optional[str] = None,
     ```
 
 
-    :param str apm_domain_id: The APM Domain Id the request is intended for.
-    :param str config_id: The OCID of the ConfiguredItem.
+    :param str apm_domain_id: The APM Domain ID the request is intended for.
+    :param str config_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item.
     """
     __args__ = dict()
     __args__['apmDomainId'] = apm_domain_id
@@ -263,10 +290,12 @@ def get_config(apm_domain_id: Optional[str] = None,
         filter_id=__ret__.filter_id,
         filter_text=__ret__.filter_text,
         freeform_tags=__ret__.freeform_tags,
+        group=__ret__.group,
         id=__ret__.id,
         metrics=__ret__.metrics,
         namespace=__ret__.namespace,
         opc_dry_run=__ret__.opc_dry_run,
+        options=__ret__.options,
         rules=__ret__.rules,
         time_created=__ret__.time_created,
         time_updated=__ret__.time_updated)
@@ -279,7 +308,7 @@ def get_config_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
     """
     This data source provides details about a specific Config resource in Oracle Cloud Infrastructure Apm Config service.
 
-    Get the configuration of the item identified by the OCID.
+    Gets the configuration item identified by the OCID.
 
     ## Example Usage
 
@@ -292,7 +321,7 @@ def get_config_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
     ```
 
 
-    :param str apm_domain_id: The APM Domain Id the request is intended for.
-    :param str config_id: The OCID of the ConfiguredItem.
+    :param str apm_domain_id: The APM Domain ID the request is intended for.
+    :param str config_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item.
     """
     ...

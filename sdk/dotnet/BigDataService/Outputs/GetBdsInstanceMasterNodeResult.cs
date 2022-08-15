@@ -25,6 +25,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// Shape of the node.
         /// </summary>
         public readonly string Shape;
+        public readonly ImmutableArray<Outputs.GetBdsInstanceMasterNodeShapeConfigResult> ShapeConfigs;
         /// <summary>
         /// The OCID of the subnet in which the node is to be created.
         /// </summary>
@@ -38,11 +39,14 @@ namespace Pulumi.Oci.BigDataService.Outputs
 
             string shape,
 
+            ImmutableArray<Outputs.GetBdsInstanceMasterNodeShapeConfigResult> shapeConfigs,
+
             string subnetId)
         {
             BlockVolumeSizeInGbs = blockVolumeSizeInGbs;
             NumberOfNodes = numberOfNodes;
             Shape = shape;
+            ShapeConfigs = shapeConfigs;
             SubnetId = subnetId;
         }
     }

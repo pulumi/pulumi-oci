@@ -18,14 +18,14 @@ public final class GetConfigsFilterArgs extends com.pulumi.resources.ResourceArg
     public static final GetConfigsFilterArgs Empty = new GetConfigsFilterArgs();
 
     /**
-     * The name of the metric
+     * The name of the metric. This must be a known metric name.
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return The name of the metric
+     * @return The name of the metric. This must be a known metric name.
      * 
      */
     public Output<String> name() {
@@ -73,7 +73,7 @@ public final class GetConfigsFilterArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param name The name of the metric
+         * @param name The name of the metric. This must be a known metric name.
          * 
          * @return builder
          * 
@@ -84,7 +84,7 @@ public final class GetConfigsFilterArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param name The name of the metric
+         * @param name The name of the metric. This must be a known metric name.
          * 
          * @return builder
          * 

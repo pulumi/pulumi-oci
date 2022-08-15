@@ -5,6 +5,7 @@ package com.pulumi.oci.ContainerEngine.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.ContainerEngine.inputs.NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs;
 import com.pulumi.oci.ContainerEngine.inputs.NodePoolNodeConfigDetailsPlacementConfigArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -82,6 +83,21 @@ public final class NodePoolNodeConfigDetailsArgs extends com.pulumi.resources.Re
     }
 
     /**
+     * (Updatable) The CNI related configuration of pods in the node pool.
+     * 
+     */
+    @Import(name="nodePoolPodNetworkOptionDetails")
+    private @Nullable Output<NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs> nodePoolPodNetworkOptionDetails;
+
+    /**
+     * @return (Updatable) The CNI related configuration of pods in the node pool.
+     * 
+     */
+    public Optional<Output<NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs>> nodePoolPodNetworkOptionDetails() {
+        return Optional.ofNullable(this.nodePoolPodNetworkOptionDetails);
+    }
+
+    /**
      * (Updatable) The OCIDs of the Network Security Group(s) to associate nodes for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
      * 
      */
@@ -133,6 +149,7 @@ public final class NodePoolNodeConfigDetailsArgs extends com.pulumi.resources.Re
         this.freeformTags = $.freeformTags;
         this.isPvEncryptionInTransitEnabled = $.isPvEncryptionInTransitEnabled;
         this.kmsKeyId = $.kmsKeyId;
+        this.nodePoolPodNetworkOptionDetails = $.nodePoolPodNetworkOptionDetails;
         this.nsgIds = $.nsgIds;
         this.placementConfigs = $.placementConfigs;
         this.size = $.size;
@@ -238,6 +255,27 @@ public final class NodePoolNodeConfigDetailsArgs extends com.pulumi.resources.Re
          */
         public Builder kmsKeyId(String kmsKeyId) {
             return kmsKeyId(Output.of(kmsKeyId));
+        }
+
+        /**
+         * @param nodePoolPodNetworkOptionDetails (Updatable) The CNI related configuration of pods in the node pool.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nodePoolPodNetworkOptionDetails(@Nullable Output<NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs> nodePoolPodNetworkOptionDetails) {
+            $.nodePoolPodNetworkOptionDetails = nodePoolPodNetworkOptionDetails;
+            return this;
+        }
+
+        /**
+         * @param nodePoolPodNetworkOptionDetails (Updatable) The CNI related configuration of pods in the node pool.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nodePoolPodNetworkOptionDetails(NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs nodePoolPodNetworkOptionDetails) {
+            return nodePoolPodNetworkOptionDetails(Output.of(nodePoolPodNetworkOptionDetails));
         }
 
         /**

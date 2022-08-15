@@ -29,6 +29,10 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// Limit the number of requests that should be handled for the specified window using a specfic key.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDeploymentSpecificationRequestPolicyRateLimitingResult> RateLimitings;
+        /// <summary>
+        /// Usage plan policies for this deployment
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDeploymentSpecificationRequestPolicyUsagePlanResult> UsagePlans;
 
         [OutputConstructor]
         private GetDeploymentSpecificationRequestPolicyResult(
@@ -38,12 +42,15 @@ namespace Pulumi.Oci.ApiGateway.Outputs
 
             ImmutableArray<Outputs.GetDeploymentSpecificationRequestPolicyMutualTlResult> mutualTls,
 
-            ImmutableArray<Outputs.GetDeploymentSpecificationRequestPolicyRateLimitingResult> rateLimitings)
+            ImmutableArray<Outputs.GetDeploymentSpecificationRequestPolicyRateLimitingResult> rateLimitings,
+
+            ImmutableArray<Outputs.GetDeploymentSpecificationRequestPolicyUsagePlanResult> usagePlans)
         {
             Authentications = authentications;
             Cors = cors;
             MutualTls = mutualTls;
             RateLimitings = rateLimitings;
+            UsagePlans = usagePlans;
         }
     }
 }

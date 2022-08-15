@@ -97,6 +97,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// The family of the shape used for the DB system.
         /// </summary>
         public readonly string ShapeFamily;
+        /// <summary>
+        /// The shape type for the virtual machine DB system. Shape type is determined by CPU hardware. Valid values are `AMD` and `INTEL`.
+        /// </summary>
+        public readonly string ShapeType;
 
         [OutputConstructor]
         private GetDbSystemShapesDbSystemShapeResult(
@@ -140,7 +144,9 @@ namespace Pulumi.Oci.Database.Outputs
 
             string shape,
 
-            string shapeFamily)
+            string shapeFamily,
+
+            string shapeType)
         {
             AvailableCoreCount = availableCoreCount;
             AvailableCoreCountPerNode = availableCoreCountPerNode;
@@ -163,6 +169,7 @@ namespace Pulumi.Oci.Database.Outputs
             Name = name;
             Shape = shape;
             ShapeFamily = shapeFamily;
+            ShapeType = shapeType;
         }
     }
 }

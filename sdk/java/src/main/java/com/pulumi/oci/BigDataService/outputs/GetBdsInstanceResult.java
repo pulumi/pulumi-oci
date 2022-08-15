@@ -6,6 +6,7 @@ package com.pulumi.oci.BigDataService.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceCloudSqlDetail;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceClusterDetail;
+import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceComputeOnlyWorkerNode;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceMasterNode;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceNetworkConfig;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceNode;
@@ -22,6 +23,11 @@ import java.util.Objects;
 @CustomType
 public final class GetBdsInstanceResult {
     private final String bdsInstanceId;
+    /**
+     * @return pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
+     * 
+     */
+    private final String bootstrapScriptUrl;
     /**
      * @return The information about added Cloud SQL capability
      * 
@@ -44,6 +50,7 @@ public final class GetBdsInstanceResult {
      * 
      */
     private final String compartmentId;
+    private final List<GetBdsInstanceComputeOnlyWorkerNode> computeOnlyWorkerNodes;
     /**
      * @return The user who created the cluster.
      * 
@@ -84,6 +91,7 @@ public final class GetBdsInstanceResult {
      * 
      */
     private final Boolean isSecure;
+    private final String kerberosRealmName;
     private final List<GetBdsInstanceMasterNode> masterNodes;
     /**
      * @return Additional configuration of the user&#39;s network.
@@ -121,12 +129,14 @@ public final class GetBdsInstanceResult {
     @CustomType.Constructor
     private GetBdsInstanceResult(
         @CustomType.Parameter("bdsInstanceId") String bdsInstanceId,
+        @CustomType.Parameter("bootstrapScriptUrl") String bootstrapScriptUrl,
         @CustomType.Parameter("cloudSqlDetails") List<GetBdsInstanceCloudSqlDetail> cloudSqlDetails,
         @CustomType.Parameter("clusterAdminPassword") String clusterAdminPassword,
         @CustomType.Parameter("clusterDetails") List<GetBdsInstanceClusterDetail> clusterDetails,
         @CustomType.Parameter("clusterPublicKey") String clusterPublicKey,
         @CustomType.Parameter("clusterVersion") String clusterVersion,
         @CustomType.Parameter("compartmentId") String compartmentId,
+        @CustomType.Parameter("computeOnlyWorkerNodes") List<GetBdsInstanceComputeOnlyWorkerNode> computeOnlyWorkerNodes,
         @CustomType.Parameter("createdBy") String createdBy,
         @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
         @CustomType.Parameter("displayName") String displayName,
@@ -135,6 +145,7 @@ public final class GetBdsInstanceResult {
         @CustomType.Parameter("isCloudSqlConfigured") Boolean isCloudSqlConfigured,
         @CustomType.Parameter("isHighAvailability") Boolean isHighAvailability,
         @CustomType.Parameter("isSecure") Boolean isSecure,
+        @CustomType.Parameter("kerberosRealmName") String kerberosRealmName,
         @CustomType.Parameter("masterNodes") List<GetBdsInstanceMasterNode> masterNodes,
         @CustomType.Parameter("networkConfigs") List<GetBdsInstanceNetworkConfig> networkConfigs,
         @CustomType.Parameter("nodes") List<GetBdsInstanceNode> nodes,
@@ -145,12 +156,14 @@ public final class GetBdsInstanceResult {
         @CustomType.Parameter("utilNodes") List<GetBdsInstanceUtilNode> utilNodes,
         @CustomType.Parameter("workerNodes") List<GetBdsInstanceWorkerNode> workerNodes) {
         this.bdsInstanceId = bdsInstanceId;
+        this.bootstrapScriptUrl = bootstrapScriptUrl;
         this.cloudSqlDetails = cloudSqlDetails;
         this.clusterAdminPassword = clusterAdminPassword;
         this.clusterDetails = clusterDetails;
         this.clusterPublicKey = clusterPublicKey;
         this.clusterVersion = clusterVersion;
         this.compartmentId = compartmentId;
+        this.computeOnlyWorkerNodes = computeOnlyWorkerNodes;
         this.createdBy = createdBy;
         this.definedTags = definedTags;
         this.displayName = displayName;
@@ -159,6 +172,7 @@ public final class GetBdsInstanceResult {
         this.isCloudSqlConfigured = isCloudSqlConfigured;
         this.isHighAvailability = isHighAvailability;
         this.isSecure = isSecure;
+        this.kerberosRealmName = kerberosRealmName;
         this.masterNodes = masterNodes;
         this.networkConfigs = networkConfigs;
         this.nodes = nodes;
@@ -172,6 +186,13 @@ public final class GetBdsInstanceResult {
 
     public String bdsInstanceId() {
         return this.bdsInstanceId;
+    }
+    /**
+     * @return pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
+     * 
+     */
+    public String bootstrapScriptUrl() {
+        return this.bootstrapScriptUrl;
     }
     /**
      * @return The information about added Cloud SQL capability
@@ -206,6 +227,9 @@ public final class GetBdsInstanceResult {
      */
     public String compartmentId() {
         return this.compartmentId;
+    }
+    public List<GetBdsInstanceComputeOnlyWorkerNode> computeOnlyWorkerNodes() {
+        return this.computeOnlyWorkerNodes;
     }
     /**
      * @return The user who created the cluster.
@@ -262,6 +286,9 @@ public final class GetBdsInstanceResult {
      */
     public Boolean isSecure() {
         return this.isSecure;
+    }
+    public String kerberosRealmName() {
+        return this.kerberosRealmName;
     }
     public List<GetBdsInstanceMasterNode> masterNodes() {
         return this.masterNodes;
@@ -325,12 +352,14 @@ public final class GetBdsInstanceResult {
 
     public static final class Builder {
         private String bdsInstanceId;
+        private String bootstrapScriptUrl;
         private List<GetBdsInstanceCloudSqlDetail> cloudSqlDetails;
         private String clusterAdminPassword;
         private List<GetBdsInstanceClusterDetail> clusterDetails;
         private String clusterPublicKey;
         private String clusterVersion;
         private String compartmentId;
+        private List<GetBdsInstanceComputeOnlyWorkerNode> computeOnlyWorkerNodes;
         private String createdBy;
         private Map<String,Object> definedTags;
         private String displayName;
@@ -339,6 +368,7 @@ public final class GetBdsInstanceResult {
         private Boolean isCloudSqlConfigured;
         private Boolean isHighAvailability;
         private Boolean isSecure;
+        private String kerberosRealmName;
         private List<GetBdsInstanceMasterNode> masterNodes;
         private List<GetBdsInstanceNetworkConfig> networkConfigs;
         private List<GetBdsInstanceNode> nodes;
@@ -356,12 +386,14 @@ public final class GetBdsInstanceResult {
         public Builder(GetBdsInstanceResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bdsInstanceId = defaults.bdsInstanceId;
+    	      this.bootstrapScriptUrl = defaults.bootstrapScriptUrl;
     	      this.cloudSqlDetails = defaults.cloudSqlDetails;
     	      this.clusterAdminPassword = defaults.clusterAdminPassword;
     	      this.clusterDetails = defaults.clusterDetails;
     	      this.clusterPublicKey = defaults.clusterPublicKey;
     	      this.clusterVersion = defaults.clusterVersion;
     	      this.compartmentId = defaults.compartmentId;
+    	      this.computeOnlyWorkerNodes = defaults.computeOnlyWorkerNodes;
     	      this.createdBy = defaults.createdBy;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
@@ -370,6 +402,7 @@ public final class GetBdsInstanceResult {
     	      this.isCloudSqlConfigured = defaults.isCloudSqlConfigured;
     	      this.isHighAvailability = defaults.isHighAvailability;
     	      this.isSecure = defaults.isSecure;
+    	      this.kerberosRealmName = defaults.kerberosRealmName;
     	      this.masterNodes = defaults.masterNodes;
     	      this.networkConfigs = defaults.networkConfigs;
     	      this.nodes = defaults.nodes;
@@ -383,6 +416,10 @@ public final class GetBdsInstanceResult {
 
         public Builder bdsInstanceId(String bdsInstanceId) {
             this.bdsInstanceId = Objects.requireNonNull(bdsInstanceId);
+            return this;
+        }
+        public Builder bootstrapScriptUrl(String bootstrapScriptUrl) {
+            this.bootstrapScriptUrl = Objects.requireNonNull(bootstrapScriptUrl);
             return this;
         }
         public Builder cloudSqlDetails(List<GetBdsInstanceCloudSqlDetail> cloudSqlDetails) {
@@ -415,6 +452,13 @@ public final class GetBdsInstanceResult {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        public Builder computeOnlyWorkerNodes(List<GetBdsInstanceComputeOnlyWorkerNode> computeOnlyWorkerNodes) {
+            this.computeOnlyWorkerNodes = Objects.requireNonNull(computeOnlyWorkerNodes);
+            return this;
+        }
+        public Builder computeOnlyWorkerNodes(GetBdsInstanceComputeOnlyWorkerNode... computeOnlyWorkerNodes) {
+            return computeOnlyWorkerNodes(List.of(computeOnlyWorkerNodes));
+        }
         public Builder createdBy(String createdBy) {
             this.createdBy = Objects.requireNonNull(createdBy);
             return this;
@@ -445,6 +489,10 @@ public final class GetBdsInstanceResult {
         }
         public Builder isSecure(Boolean isSecure) {
             this.isSecure = Objects.requireNonNull(isSecure);
+            return this;
+        }
+        public Builder kerberosRealmName(String kerberosRealmName) {
+            this.kerberosRealmName = Objects.requireNonNull(kerberosRealmName);
             return this;
         }
         public Builder masterNodes(List<GetBdsInstanceMasterNode> masterNodes) {
@@ -498,7 +546,7 @@ public final class GetBdsInstanceResult {
         public Builder workerNodes(GetBdsInstanceWorkerNode... workerNodes) {
             return workerNodes(List.of(workerNodes));
         }        public GetBdsInstanceResult build() {
-            return new GetBdsInstanceResult(bdsInstanceId, cloudSqlDetails, clusterAdminPassword, clusterDetails, clusterPublicKey, clusterVersion, compartmentId, createdBy, definedTags, displayName, freeformTags, id, isCloudSqlConfigured, isHighAvailability, isSecure, masterNodes, networkConfigs, nodes, numberOfNodes, state, timeCreated, timeUpdated, utilNodes, workerNodes);
+            return new GetBdsInstanceResult(bdsInstanceId, bootstrapScriptUrl, cloudSqlDetails, clusterAdminPassword, clusterDetails, clusterPublicKey, clusterVersion, compartmentId, computeOnlyWorkerNodes, createdBy, definedTags, displayName, freeformTags, id, isCloudSqlConfigured, isHighAvailability, isSecure, kerberosRealmName, masterNodes, networkConfigs, nodes, numberOfNodes, state, timeCreated, timeUpdated, utilNodes, workerNodes);
         }
     }
 }

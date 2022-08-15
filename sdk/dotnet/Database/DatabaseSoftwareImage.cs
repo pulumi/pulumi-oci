@@ -130,7 +130,7 @@ namespace Pulumi.Oci.Database
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
-        /// output from lsinventory which will get passed as a string
+        /// The output from the OPatch lsInventory command, which is passed as a string.
         /// </summary>
         [Output("lsInventory")]
         public Output<string> LsInventory { get; private set; } = null!;
@@ -272,7 +272,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? ImageType { get; set; }
 
         /// <summary>
-        /// output from lsinventory which will get passed as a string
+        /// The output from the OPatch lsInventory command, which is passed as a string.
         /// </summary>
         [Input("lsInventory")]
         public Input<string>? LsInventory { get; set; }
@@ -393,7 +393,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? LifecycleDetails { get; set; }
 
         /// <summary>
-        /// output from lsinventory which will get passed as a string
+        /// The output from the OPatch lsInventory command, which is passed as a string.
         /// </summary>
         [Input("lsInventory")]
         public Input<string>? LsInventory { get; set; }

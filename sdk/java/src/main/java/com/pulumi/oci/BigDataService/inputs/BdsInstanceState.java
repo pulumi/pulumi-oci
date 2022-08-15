@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.BigDataService.inputs.BdsInstanceCloudSqlDetailArgs;
 import com.pulumi.oci.BigDataService.inputs.BdsInstanceClusterDetailArgs;
+import com.pulumi.oci.BigDataService.inputs.BdsInstanceComputeOnlyWorkerNodeArgs;
 import com.pulumi.oci.BigDataService.inputs.BdsInstanceMasterNodeArgs;
 import com.pulumi.oci.BigDataService.inputs.BdsInstanceNetworkConfigArgs;
 import com.pulumi.oci.BigDataService.inputs.BdsInstanceNodeArgs;
@@ -28,14 +29,29 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
     public static final BdsInstanceState Empty = new BdsInstanceState();
 
     /**
-     * The information about added Cloud SQL capability
+     * (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
+     * 
+     */
+    @Import(name="bootstrapScriptUrl")
+    private @Nullable Output<String> bootstrapScriptUrl;
+
+    /**
+     * @return (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
+     * 
+     */
+    public Optional<Output<String>> bootstrapScriptUrl() {
+        return Optional.ofNullable(this.bootstrapScriptUrl);
+    }
+
+    /**
+     * -(Optional) The information about added Cloud SQL capability
      * 
      */
     @Import(name="cloudSqlDetails")
     private @Nullable Output<List<BdsInstanceCloudSqlDetailArgs>> cloudSqlDetails;
 
     /**
-     * @return The information about added Cloud SQL capability
+     * @return -(Optional) The information about added Cloud SQL capability
      * 
      */
     public Optional<Output<List<BdsInstanceCloudSqlDetailArgs>>> cloudSqlDetails() {
@@ -43,14 +59,14 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+     * Base-64 encoded password for Cloudera Manager admin user
      * 
      */
     @Import(name="clusterAdminPassword")
     private @Nullable Output<String> clusterAdminPassword;
 
     /**
-     * @return Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+     * @return Base-64 encoded password for Cloudera Manager admin user
      * 
      */
     public Optional<Output<String>> clusterAdminPassword() {
@@ -88,14 +104,14 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Version of the Hadoop distribution.
+     * Version of the Hadoop distribution
      * 
      */
     @Import(name="clusterVersion")
     private @Nullable Output<String> clusterVersion;
 
     /**
-     * @return Version of the Hadoop distribution.
+     * @return Version of the Hadoop distribution
      * 
      */
     public Optional<Output<String>> clusterVersion() {
@@ -103,29 +119,36 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The OCID of the compartment.
+     * (Updatable) The OCID of the compartment
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The OCID of the compartment.
+     * @return (Updatable) The OCID of the compartment
      * 
      */
     public Optional<Output<String>> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
     }
 
+    @Import(name="computeOnlyWorkerNode")
+    private @Nullable Output<BdsInstanceComputeOnlyWorkerNodeArgs> computeOnlyWorkerNode;
+
+    public Optional<Output<BdsInstanceComputeOnlyWorkerNodeArgs>> computeOnlyWorkerNode() {
+        return Optional.ofNullable(this.computeOnlyWorkerNode);
+    }
+
     /**
-     * The user who created the cluster.
+     * The user who created the BDS instance.
      * 
      */
     @Import(name="createdBy")
     private @Nullable Output<String> createdBy;
 
     /**
-     * @return The user who created the cluster.
+     * @return The user who created the BDS instance.
      * 
      */
     public Optional<Output<String>> createdBy() {
@@ -133,14 +156,14 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example, `{&#34;foo-namespace&#34;: {&#34;bar-key&#34;: &#34;value&#34;}}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Import(name="definedTags")
     private @Nullable Output<Map<String,Object>> definedTags;
 
     /**
-     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example, `{&#34;foo-namespace&#34;: {&#34;bar-key&#34;: &#34;value&#34;}}`
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Optional<Output<Map<String,Object>>> definedTags() {
@@ -148,14 +171,14 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Name of the Big Data Service cluster.
+     * (Updatable) Name of the BDS instance
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) Name of the Big Data Service cluster.
+     * @return (Updatable) Name of the BDS instance
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -163,14 +186,14 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Import(name="freeformTags")
     private @Nullable Output<Map<String,Object>> freeformTags;
 
     /**
-     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Optional<Output<Map<String,Object>>> freeformTags() {
@@ -178,14 +201,14 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Boolean flag specifying whether or not Cloud SQL should be configured.
+     * -(Optional) (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
      * 
      */
     @Import(name="isCloudSqlConfigured")
     private @Nullable Output<Boolean> isCloudSqlConfigured;
 
     /**
-     * @return Boolean flag specifying whether or not Cloud SQL should be configured.
+     * @return -(Optional) (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
      * 
      */
     public Optional<Output<Boolean>> isCloudSqlConfigured() {
@@ -193,14 +216,14 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Boolean flag specifying whether or not the cluster is highly available (HA).
+     * Boolean flag specifying whether or not the cluster is HA
      * 
      */
     @Import(name="isHighAvailability")
     private @Nullable Output<Boolean> isHighAvailability;
 
     /**
-     * @return Boolean flag specifying whether or not the cluster is highly available (HA).
+     * @return Boolean flag specifying whether or not the cluster is HA
      * 
      */
     public Optional<Output<Boolean>> isHighAvailability() {
@@ -208,36 +231,59 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Boolean flag specifying whether or not the cluster should be set up as secure.
+     * Boolean flag specifying whether or not the cluster should be setup as secure.
      * 
      */
     @Import(name="isSecure")
     private @Nullable Output<Boolean> isSecure;
 
     /**
-     * @return Boolean flag specifying whether or not the cluster should be set up as secure.
+     * @return Boolean flag specifying whether or not the cluster should be setup as secure.
      * 
      */
     public Optional<Output<Boolean>> isSecure() {
         return Optional.ofNullable(this.isSecure);
     }
 
+    /**
+     * The user-defined kerberos realm name.
+     * 
+     */
+    @Import(name="kerberosRealmName")
+    private @Nullable Output<String> kerberosRealmName;
+
+    /**
+     * @return The user-defined kerberos realm name.
+     * 
+     */
+    public Optional<Output<String>> kerberosRealmName() {
+        return Optional.ofNullable(this.kerberosRealmName);
+    }
+
+    /**
+     * The master node in the BDS instance
+     * 
+     */
     @Import(name="masterNode")
     private @Nullable Output<BdsInstanceMasterNodeArgs> masterNode;
 
+    /**
+     * @return The master node in the BDS instance
+     * 
+     */
     public Optional<Output<BdsInstanceMasterNodeArgs>> masterNode() {
         return Optional.ofNullable(this.masterNode);
     }
 
     /**
-     * Additional configuration of the user&#39;s network.
+     * Additional configuration of customer&#39;s network.
      * 
      */
     @Import(name="networkConfig")
     private @Nullable Output<BdsInstanceNetworkConfigArgs> networkConfig;
 
     /**
-     * @return Additional configuration of the user&#39;s network.
+     * @return Additional configuration of customer&#39;s network.
      * 
      */
     public Optional<Output<BdsInstanceNetworkConfigArgs>> networkConfig() {
@@ -245,14 +291,14 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The list of nodes in the Big Data Service cluster.
+     * The list of nodes in the BDS instance
      * 
      */
     @Import(name="nodes")
     private @Nullable Output<List<BdsInstanceNodeArgs>> nodes;
 
     /**
-     * @return The list of nodes in the Big Data Service cluster.
+     * @return The list of nodes in the BDS instance
      * 
      */
     public Optional<Output<List<BdsInstanceNodeArgs>>> nodes() {
@@ -260,14 +306,14 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The number of nodes that form the cluster.
+     * The amount of worker nodes should be created
      * 
      */
     @Import(name="numberOfNodes")
     private @Nullable Output<Integer> numberOfNodes;
 
     /**
-     * @return The number of nodes that form the cluster.
+     * @return The amount of worker nodes should be created
      * 
      */
     public Optional<Output<Integer>> numberOfNodes() {
@@ -275,14 +321,14 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The state of the cluster.
+     * The state of the BDS instance
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return The state of the cluster.
+     * @return The state of the BDS instance
      * 
      */
     public Optional<Output<String>> state() {
@@ -290,14 +336,14 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+     * The time the BDS instance was created. An RFC3339 formatted datetime string
      * 
      */
     @Import(name="timeCreated")
     private @Nullable Output<String> timeCreated;
 
     /**
-     * @return The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+     * @return The time the BDS instance was created. An RFC3339 formatted datetime string
      * 
      */
     public Optional<Output<String>> timeCreated() {
@@ -305,23 +351,31 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
+     * The time the BDS instance was updated. An RFC3339 formatted datetime string
      * 
      */
     @Import(name="timeUpdated")
     private @Nullable Output<String> timeUpdated;
 
     /**
-     * @return The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
+     * @return The time the BDS instance was updated. An RFC3339 formatted datetime string
      * 
      */
     public Optional<Output<String>> timeUpdated() {
         return Optional.ofNullable(this.timeUpdated);
     }
 
+    /**
+     * The utility node in the BDS instance
+     * 
+     */
     @Import(name="utilNode")
     private @Nullable Output<BdsInstanceUtilNodeArgs> utilNode;
 
+    /**
+     * @return The utility node in the BDS instance
+     * 
+     */
     public Optional<Output<BdsInstanceUtilNodeArgs>> utilNode() {
         return Optional.ofNullable(this.utilNode);
     }
@@ -336,12 +390,14 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
     private BdsInstanceState() {}
 
     private BdsInstanceState(BdsInstanceState $) {
+        this.bootstrapScriptUrl = $.bootstrapScriptUrl;
         this.cloudSqlDetails = $.cloudSqlDetails;
         this.clusterAdminPassword = $.clusterAdminPassword;
         this.clusterDetails = $.clusterDetails;
         this.clusterPublicKey = $.clusterPublicKey;
         this.clusterVersion = $.clusterVersion;
         this.compartmentId = $.compartmentId;
+        this.computeOnlyWorkerNode = $.computeOnlyWorkerNode;
         this.createdBy = $.createdBy;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
@@ -349,6 +405,7 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
         this.isCloudSqlConfigured = $.isCloudSqlConfigured;
         this.isHighAvailability = $.isHighAvailability;
         this.isSecure = $.isSecure;
+        this.kerberosRealmName = $.kerberosRealmName;
         this.masterNode = $.masterNode;
         this.networkConfig = $.networkConfig;
         this.nodes = $.nodes;
@@ -379,7 +436,28 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param cloudSqlDetails The information about added Cloud SQL capability
+         * @param bootstrapScriptUrl (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder bootstrapScriptUrl(@Nullable Output<String> bootstrapScriptUrl) {
+            $.bootstrapScriptUrl = bootstrapScriptUrl;
+            return this;
+        }
+
+        /**
+         * @param bootstrapScriptUrl (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder bootstrapScriptUrl(String bootstrapScriptUrl) {
+            return bootstrapScriptUrl(Output.of(bootstrapScriptUrl));
+        }
+
+        /**
+         * @param cloudSqlDetails -(Optional) The information about added Cloud SQL capability
          * 
          * @return builder
          * 
@@ -390,7 +468,7 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param cloudSqlDetails The information about added Cloud SQL capability
+         * @param cloudSqlDetails -(Optional) The information about added Cloud SQL capability
          * 
          * @return builder
          * 
@@ -400,7 +478,7 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param cloudSqlDetails The information about added Cloud SQL capability
+         * @param cloudSqlDetails -(Optional) The information about added Cloud SQL capability
          * 
          * @return builder
          * 
@@ -410,7 +488,7 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param clusterAdminPassword Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+         * @param clusterAdminPassword Base-64 encoded password for Cloudera Manager admin user
          * 
          * @return builder
          * 
@@ -421,7 +499,7 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param clusterAdminPassword Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+         * @param clusterAdminPassword Base-64 encoded password for Cloudera Manager admin user
          * 
          * @return builder
          * 
@@ -483,7 +561,7 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param clusterVersion Version of the Hadoop distribution.
+         * @param clusterVersion Version of the Hadoop distribution
          * 
          * @return builder
          * 
@@ -494,7 +572,7 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param clusterVersion Version of the Hadoop distribution.
+         * @param clusterVersion Version of the Hadoop distribution
          * 
          * @return builder
          * 
@@ -504,7 +582,7 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment.
+         * @param compartmentId (Updatable) The OCID of the compartment
          * 
          * @return builder
          * 
@@ -515,7 +593,7 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment.
+         * @param compartmentId (Updatable) The OCID of the compartment
          * 
          * @return builder
          * 
@@ -524,8 +602,17 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
             return compartmentId(Output.of(compartmentId));
         }
 
+        public Builder computeOnlyWorkerNode(@Nullable Output<BdsInstanceComputeOnlyWorkerNodeArgs> computeOnlyWorkerNode) {
+            $.computeOnlyWorkerNode = computeOnlyWorkerNode;
+            return this;
+        }
+
+        public Builder computeOnlyWorkerNode(BdsInstanceComputeOnlyWorkerNodeArgs computeOnlyWorkerNode) {
+            return computeOnlyWorkerNode(Output.of(computeOnlyWorkerNode));
+        }
+
         /**
-         * @param createdBy The user who created the cluster.
+         * @param createdBy The user who created the BDS instance.
          * 
          * @return builder
          * 
@@ -536,7 +623,7 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdBy The user who created the cluster.
+         * @param createdBy The user who created the BDS instance.
          * 
          * @return builder
          * 
@@ -546,7 +633,7 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example, `{&#34;foo-namespace&#34;: {&#34;bar-key&#34;: &#34;value&#34;}}`
+         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
          * 
@@ -557,7 +644,7 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example, `{&#34;foo-namespace&#34;: {&#34;bar-key&#34;: &#34;value&#34;}}`
+         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
          * 
@@ -567,7 +654,7 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) Name of the Big Data Service cluster.
+         * @param displayName (Updatable) Name of the BDS instance
          * 
          * @return builder
          * 
@@ -578,7 +665,7 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) Name of the Big Data Service cluster.
+         * @param displayName (Updatable) Name of the BDS instance
          * 
          * @return builder
          * 
@@ -588,7 +675,7 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{&#34;bar-key&#34;: &#34;value&#34;}`
+         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
          * 
@@ -599,7 +686,7 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{&#34;bar-key&#34;: &#34;value&#34;}`
+         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
          * 
@@ -609,7 +696,7 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isCloudSqlConfigured Boolean flag specifying whether or not Cloud SQL should be configured.
+         * @param isCloudSqlConfigured -(Optional) (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
          * 
          * @return builder
          * 
@@ -620,7 +707,7 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isCloudSqlConfigured Boolean flag specifying whether or not Cloud SQL should be configured.
+         * @param isCloudSqlConfigured -(Optional) (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
          * 
          * @return builder
          * 
@@ -630,7 +717,7 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isHighAvailability Boolean flag specifying whether or not the cluster is highly available (HA).
+         * @param isHighAvailability Boolean flag specifying whether or not the cluster is HA
          * 
          * @return builder
          * 
@@ -641,7 +728,7 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isHighAvailability Boolean flag specifying whether or not the cluster is highly available (HA).
+         * @param isHighAvailability Boolean flag specifying whether or not the cluster is HA
          * 
          * @return builder
          * 
@@ -651,7 +738,7 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isSecure Boolean flag specifying whether or not the cluster should be set up as secure.
+         * @param isSecure Boolean flag specifying whether or not the cluster should be setup as secure.
          * 
          * @return builder
          * 
@@ -662,7 +749,7 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isSecure Boolean flag specifying whether or not the cluster should be set up as secure.
+         * @param isSecure Boolean flag specifying whether or not the cluster should be setup as secure.
          * 
          * @return builder
          * 
@@ -671,17 +758,50 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
             return isSecure(Output.of(isSecure));
         }
 
+        /**
+         * @param kerberosRealmName The user-defined kerberos realm name.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder kerberosRealmName(@Nullable Output<String> kerberosRealmName) {
+            $.kerberosRealmName = kerberosRealmName;
+            return this;
+        }
+
+        /**
+         * @param kerberosRealmName The user-defined kerberos realm name.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder kerberosRealmName(String kerberosRealmName) {
+            return kerberosRealmName(Output.of(kerberosRealmName));
+        }
+
+        /**
+         * @param masterNode The master node in the BDS instance
+         * 
+         * @return builder
+         * 
+         */
         public Builder masterNode(@Nullable Output<BdsInstanceMasterNodeArgs> masterNode) {
             $.masterNode = masterNode;
             return this;
         }
 
+        /**
+         * @param masterNode The master node in the BDS instance
+         * 
+         * @return builder
+         * 
+         */
         public Builder masterNode(BdsInstanceMasterNodeArgs masterNode) {
             return masterNode(Output.of(masterNode));
         }
 
         /**
-         * @param networkConfig Additional configuration of the user&#39;s network.
+         * @param networkConfig Additional configuration of customer&#39;s network.
          * 
          * @return builder
          * 
@@ -692,7 +812,7 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param networkConfig Additional configuration of the user&#39;s network.
+         * @param networkConfig Additional configuration of customer&#39;s network.
          * 
          * @return builder
          * 
@@ -702,7 +822,7 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodes The list of nodes in the Big Data Service cluster.
+         * @param nodes The list of nodes in the BDS instance
          * 
          * @return builder
          * 
@@ -713,7 +833,7 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodes The list of nodes in the Big Data Service cluster.
+         * @param nodes The list of nodes in the BDS instance
          * 
          * @return builder
          * 
@@ -723,7 +843,7 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodes The list of nodes in the Big Data Service cluster.
+         * @param nodes The list of nodes in the BDS instance
          * 
          * @return builder
          * 
@@ -733,7 +853,7 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param numberOfNodes The number of nodes that form the cluster.
+         * @param numberOfNodes The amount of worker nodes should be created
          * 
          * @return builder
          * 
@@ -744,7 +864,7 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param numberOfNodes The number of nodes that form the cluster.
+         * @param numberOfNodes The amount of worker nodes should be created
          * 
          * @return builder
          * 
@@ -754,7 +874,7 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param state The state of the cluster.
+         * @param state The state of the BDS instance
          * 
          * @return builder
          * 
@@ -765,7 +885,7 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param state The state of the cluster.
+         * @param state The state of the BDS instance
          * 
          * @return builder
          * 
@@ -775,7 +895,7 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeCreated The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+         * @param timeCreated The time the BDS instance was created. An RFC3339 formatted datetime string
          * 
          * @return builder
          * 
@@ -786,7 +906,7 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeCreated The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+         * @param timeCreated The time the BDS instance was created. An RFC3339 formatted datetime string
          * 
          * @return builder
          * 
@@ -796,7 +916,7 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeUpdated The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
+         * @param timeUpdated The time the BDS instance was updated. An RFC3339 formatted datetime string
          * 
          * @return builder
          * 
@@ -807,7 +927,7 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeUpdated The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
+         * @param timeUpdated The time the BDS instance was updated. An RFC3339 formatted datetime string
          * 
          * @return builder
          * 
@@ -816,11 +936,23 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
             return timeUpdated(Output.of(timeUpdated));
         }
 
+        /**
+         * @param utilNode The utility node in the BDS instance
+         * 
+         * @return builder
+         * 
+         */
         public Builder utilNode(@Nullable Output<BdsInstanceUtilNodeArgs> utilNode) {
             $.utilNode = utilNode;
             return this;
         }
 
+        /**
+         * @param utilNode The utility node in the BDS instance
+         * 
+         * @return builder
+         * 
+         */
         public Builder utilNode(BdsInstanceUtilNodeArgs utilNode) {
             return utilNode(Output.of(utilNode));
         }

@@ -20,10 +20,13 @@ class GetAutonomousDatabaseInstanceWalletManagementResult:
     """
     A collection of values returned by getAutonomousDatabaseInstanceWalletManagement.
     """
-    def __init__(__self__, autonomous_database_id=None, id=None, should_rotate=None, state=None, time_rotated=None):
+    def __init__(__self__, autonomous_database_id=None, grace_period=None, id=None, should_rotate=None, state=None, time_rotated=None):
         if autonomous_database_id and not isinstance(autonomous_database_id, str):
             raise TypeError("Expected argument 'autonomous_database_id' to be a str")
         pulumi.set(__self__, "autonomous_database_id", autonomous_database_id)
+        if grace_period and not isinstance(grace_period, int):
+            raise TypeError("Expected argument 'grace_period' to be a int")
+        pulumi.set(__self__, "grace_period", grace_period)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -44,6 +47,11 @@ class GetAutonomousDatabaseInstanceWalletManagementResult:
         The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "autonomous_database_id")
+
+    @property
+    @pulumi.getter(name="gracePeriod")
+    def grace_period(self) -> int:
+        return pulumi.get(self, "grace_period")
 
     @property
     @pulumi.getter
@@ -82,6 +90,7 @@ class AwaitableGetAutonomousDatabaseInstanceWalletManagementResult(GetAutonomous
             yield self
         return GetAutonomousDatabaseInstanceWalletManagementResult(
             autonomous_database_id=self.autonomous_database_id,
+            grace_period=self.grace_period,
             id=self.id,
             should_rotate=self.should_rotate,
             state=self.state,
@@ -117,6 +126,7 @@ def get_autonomous_database_instance_wallet_management(autonomous_database_id: O
 
     return AwaitableGetAutonomousDatabaseInstanceWalletManagementResult(
         autonomous_database_id=__ret__.autonomous_database_id,
+        grace_period=__ret__.grace_period,
         id=__ret__.id,
         should_rotate=__ret__.should_rotate,
         state=__ret__.state,

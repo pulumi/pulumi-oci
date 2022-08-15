@@ -11,7 +11,12 @@ from .get_custom_table import *
 from .get_custom_tables import *
 from .get_queries import *
 from .get_query import *
+from .get_schedule import *
+from .get_scheduled_run import *
+from .get_scheduled_runs import *
+from .get_schedules import *
 from .query import *
+from .schedule import *
 from .usage import *
 from ._inputs import *
 from . import outputs

@@ -16,14 +16,14 @@ public final class DatasetDatasetSourceDetailsArgs extends com.pulumi.resources.
     public static final DatasetDatasetSourceDetailsArgs Empty = new DatasetDatasetSourceDetailsArgs();
 
     /**
-     * The object storage bucket that contains the dataset data source
+     * The object storage bucket that contains the dataset data source.
      * 
      */
     @Import(name="bucket", required=true)
     private Output<String> bucket;
 
     /**
-     * @return The object storage bucket that contains the dataset data source
+     * @return The object storage bucket that contains the dataset data source.
      * 
      */
     public Output<String> bucket() {
@@ -31,14 +31,14 @@ public final class DatasetDatasetSourceDetailsArgs extends com.pulumi.resources.
     }
 
     /**
-     * Namespace of the bucket that contains the dataset data source
+     * The namespace of the bucket that contains the dataset data source.
      * 
      */
     @Import(name="namespace", required=true)
     private Output<String> namespace;
 
     /**
-     * @return Namespace of the bucket that contains the dataset data source
+     * @return The namespace of the bucket that contains the dataset data source.
      * 
      */
     public Output<String> namespace() {
@@ -46,14 +46,14 @@ public final class DatasetDatasetSourceDetailsArgs extends com.pulumi.resources.
     }
 
     /**
-     * A common path prefix shared by the objects that make up the dataset. Records will not be generated for objects whose name match exactly with prefix.
+     * A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
      * 
      */
     @Import(name="prefix")
     private @Nullable Output<String> prefix;
 
     /**
-     * @return A common path prefix shared by the objects that make up the dataset. Records will not be generated for objects whose name match exactly with prefix.
+     * @return A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
      * 
      */
     public Optional<Output<String>> prefix() {
@@ -61,14 +61,14 @@ public final class DatasetDatasetSourceDetailsArgs extends com.pulumi.resources.
     }
 
     /**
-     * Source type.  OBJECT_STORAGE allows the customer to describe where the dataset is in object storage.
+     * The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
      * 
      */
     @Import(name="sourceType", required=true)
     private Output<String> sourceType;
 
     /**
-     * @return Source type.  OBJECT_STORAGE allows the customer to describe where the dataset is in object storage.
+     * @return The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
      * 
      */
     public Output<String> sourceType() {
@@ -103,7 +103,7 @@ public final class DatasetDatasetSourceDetailsArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param bucket The object storage bucket that contains the dataset data source
+         * @param bucket The object storage bucket that contains the dataset data source.
          * 
          * @return builder
          * 
@@ -114,7 +114,7 @@ public final class DatasetDatasetSourceDetailsArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param bucket The object storage bucket that contains the dataset data source
+         * @param bucket The object storage bucket that contains the dataset data source.
          * 
          * @return builder
          * 
@@ -124,7 +124,7 @@ public final class DatasetDatasetSourceDetailsArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param namespace Namespace of the bucket that contains the dataset data source
+         * @param namespace The namespace of the bucket that contains the dataset data source.
          * 
          * @return builder
          * 
@@ -135,7 +135,7 @@ public final class DatasetDatasetSourceDetailsArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param namespace Namespace of the bucket that contains the dataset data source
+         * @param namespace The namespace of the bucket that contains the dataset data source.
          * 
          * @return builder
          * 
@@ -145,7 +145,7 @@ public final class DatasetDatasetSourceDetailsArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param prefix A common path prefix shared by the objects that make up the dataset. Records will not be generated for objects whose name match exactly with prefix.
+         * @param prefix A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
          * 
          * @return builder
          * 
@@ -156,7 +156,7 @@ public final class DatasetDatasetSourceDetailsArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param prefix A common path prefix shared by the objects that make up the dataset. Records will not be generated for objects whose name match exactly with prefix.
+         * @param prefix A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
          * 
          * @return builder
          * 
@@ -166,7 +166,7 @@ public final class DatasetDatasetSourceDetailsArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param sourceType Source type.  OBJECT_STORAGE allows the customer to describe where the dataset is in object storage.
+         * @param sourceType The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
          * 
          * @return builder
          * 
@@ -177,7 +177,7 @@ public final class DatasetDatasetSourceDetailsArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param sourceType Source type.  OBJECT_STORAGE allows the customer to describe where the dataset is in object storage.
+         * @param sourceType The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
          * 
          * @return builder
          * 

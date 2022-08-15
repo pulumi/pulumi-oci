@@ -7,12 +7,21 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.oci.ResourceManager.inputs.GetPrivateEndpointArgs;
+import com.pulumi.oci.ResourceManager.inputs.GetPrivateEndpointPlainArgs;
+import com.pulumi.oci.ResourceManager.inputs.GetPrivateEndpointReachableIpArgs;
+import com.pulumi.oci.ResourceManager.inputs.GetPrivateEndpointReachableIpPlainArgs;
+import com.pulumi.oci.ResourceManager.inputs.GetPrivateEndpointsArgs;
+import com.pulumi.oci.ResourceManager.inputs.GetPrivateEndpointsPlainArgs;
 import com.pulumi.oci.ResourceManager.inputs.GetStackArgs;
 import com.pulumi.oci.ResourceManager.inputs.GetStackPlainArgs;
 import com.pulumi.oci.ResourceManager.inputs.GetStackTfStateArgs;
 import com.pulumi.oci.ResourceManager.inputs.GetStackTfStatePlainArgs;
 import com.pulumi.oci.ResourceManager.inputs.GetStacksArgs;
 import com.pulumi.oci.ResourceManager.inputs.GetStacksPlainArgs;
+import com.pulumi.oci.ResourceManager.outputs.GetPrivateEndpointReachableIpResult;
+import com.pulumi.oci.ResourceManager.outputs.GetPrivateEndpointResult;
+import com.pulumi.oci.ResourceManager.outputs.GetPrivateEndpointsResult;
 import com.pulumi.oci.ResourceManager.outputs.GetStackResult;
 import com.pulumi.oci.ResourceManager.outputs.GetStackTfStateResult;
 import com.pulumi.oci.ResourceManager.outputs.GetStacksResult;
@@ -20,6 +29,172 @@ import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
 
 public final class ResourceManagerFunctions {
+    /**
+     * This data source provides details about a specific Private Endpoint resource in Oracle Cloud Infrastructure Resource Manager service.
+     * 
+     * Gets the specified private endpoint.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetPrivateEndpointResult> getPrivateEndpoint(GetPrivateEndpointArgs args) {
+        return getPrivateEndpoint(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Private Endpoint resource in Oracle Cloud Infrastructure Resource Manager service.
+     * 
+     * Gets the specified private endpoint.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetPrivateEndpointResult> getPrivateEndpointPlain(GetPrivateEndpointPlainArgs args) {
+        return getPrivateEndpointPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Private Endpoint resource in Oracle Cloud Infrastructure Resource Manager service.
+     * 
+     * Gets the specified private endpoint.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetPrivateEndpointResult> getPrivateEndpoint(GetPrivateEndpointArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ResourceManager/getPrivateEndpoint:getPrivateEndpoint", TypeShape.of(GetPrivateEndpointResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Private Endpoint resource in Oracle Cloud Infrastructure Resource Manager service.
+     * 
+     * Gets the specified private endpoint.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetPrivateEndpointResult> getPrivateEndpointPlain(GetPrivateEndpointPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:ResourceManager/getPrivateEndpoint:getPrivateEndpoint", TypeShape.of(GetPrivateEndpointResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Private Endpoint Reachable Ip resource in Oracle Cloud Infrastructure Resource Manager service.
+     * 
+     * Gets the alternative IP address of the private resource. This IP will be used by Resource Manager Service to connect to the private resource.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetPrivateEndpointReachableIpResult> getPrivateEndpointReachableIp(GetPrivateEndpointReachableIpArgs args) {
+        return getPrivateEndpointReachableIp(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Private Endpoint Reachable Ip resource in Oracle Cloud Infrastructure Resource Manager service.
+     * 
+     * Gets the alternative IP address of the private resource. This IP will be used by Resource Manager Service to connect to the private resource.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetPrivateEndpointReachableIpResult> getPrivateEndpointReachableIpPlain(GetPrivateEndpointReachableIpPlainArgs args) {
+        return getPrivateEndpointReachableIpPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Private Endpoint Reachable Ip resource in Oracle Cloud Infrastructure Resource Manager service.
+     * 
+     * Gets the alternative IP address of the private resource. This IP will be used by Resource Manager Service to connect to the private resource.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetPrivateEndpointReachableIpResult> getPrivateEndpointReachableIp(GetPrivateEndpointReachableIpArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ResourceManager/getPrivateEndpointReachableIp:getPrivateEndpointReachableIp", TypeShape.of(GetPrivateEndpointReachableIpResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Private Endpoint Reachable Ip resource in Oracle Cloud Infrastructure Resource Manager service.
+     * 
+     * Gets the alternative IP address of the private resource. This IP will be used by Resource Manager Service to connect to the private resource.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetPrivateEndpointReachableIpResult> getPrivateEndpointReachableIpPlain(GetPrivateEndpointReachableIpPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:ResourceManager/getPrivateEndpointReachableIp:getPrivateEndpointReachableIp", TypeShape.of(GetPrivateEndpointReachableIpResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Private Endpoints in Oracle Cloud Infrastructure Resource Manager service.
+     * 
+     * Lists private endpoints according to the specified filter.
+     * - For `compartmentId`, lists all private endpoint in the matching compartment.
+     * - For `privateEndpointId`, lists the matching private endpoint.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetPrivateEndpointsResult> getPrivateEndpoints() {
+        return getPrivateEndpoints(GetPrivateEndpointsArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Private Endpoints in Oracle Cloud Infrastructure Resource Manager service.
+     * 
+     * Lists private endpoints according to the specified filter.
+     * - For `compartmentId`, lists all private endpoint in the matching compartment.
+     * - For `privateEndpointId`, lists the matching private endpoint.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetPrivateEndpointsResult> getPrivateEndpointsPlain() {
+        return getPrivateEndpointsPlain(GetPrivateEndpointsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Private Endpoints in Oracle Cloud Infrastructure Resource Manager service.
+     * 
+     * Lists private endpoints according to the specified filter.
+     * - For `compartmentId`, lists all private endpoint in the matching compartment.
+     * - For `privateEndpointId`, lists the matching private endpoint.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetPrivateEndpointsResult> getPrivateEndpoints(GetPrivateEndpointsArgs args) {
+        return getPrivateEndpoints(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Private Endpoints in Oracle Cloud Infrastructure Resource Manager service.
+     * 
+     * Lists private endpoints according to the specified filter.
+     * - For `compartmentId`, lists all private endpoint in the matching compartment.
+     * - For `privateEndpointId`, lists the matching private endpoint.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetPrivateEndpointsResult> getPrivateEndpointsPlain(GetPrivateEndpointsPlainArgs args) {
+        return getPrivateEndpointsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Private Endpoints in Oracle Cloud Infrastructure Resource Manager service.
+     * 
+     * Lists private endpoints according to the specified filter.
+     * - For `compartmentId`, lists all private endpoint in the matching compartment.
+     * - For `privateEndpointId`, lists the matching private endpoint.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetPrivateEndpointsResult> getPrivateEndpoints(GetPrivateEndpointsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ResourceManager/getPrivateEndpoints:getPrivateEndpoints", TypeShape.of(GetPrivateEndpointsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Private Endpoints in Oracle Cloud Infrastructure Resource Manager service.
+     * 
+     * Lists private endpoints according to the specified filter.
+     * - For `compartmentId`, lists all private endpoint in the matching compartment.
+     * - For `privateEndpointId`, lists the matching private endpoint.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetPrivateEndpointsResult> getPrivateEndpointsPlain(GetPrivateEndpointsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:ResourceManager/getPrivateEndpoints:getPrivateEndpoints", TypeShape.of(GetPrivateEndpointsResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * This data source provides details about a specific Stack resource in Oracle Cloud Infrastructure Resource Manager service.
      * 

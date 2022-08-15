@@ -42,6 +42,10 @@ class ManagementAgentPluginList(dict):
             suggest = "plugin_id"
         elif key == "pluginName":
             suggest = "plugin_name"
+        elif key == "pluginStatus":
+            suggest = "plugin_status"
+        elif key == "pluginStatusMessage":
+            suggest = "plugin_status_message"
         elif key == "pluginVersion":
             suggest = "plugin_version"
 
@@ -61,12 +65,16 @@ class ManagementAgentPluginList(dict):
                  plugin_display_name: Optional[str] = None,
                  plugin_id: Optional[str] = None,
                  plugin_name: Optional[str] = None,
+                 plugin_status: Optional[str] = None,
+                 plugin_status_message: Optional[str] = None,
                  plugin_version: Optional[str] = None):
         """
         :param bool is_enabled: flag indicating whether the plugin is in enabled mode or disabled mode.
         :param str plugin_display_name: Management Agent Plugin Identifier, can be renamed
         :param str plugin_id: Plugin Id
         :param str plugin_name: Management Agent Plugin Name
+        :param str plugin_status: Plugin Status
+        :param str plugin_status_message: Status message of the Plugin
         :param str plugin_version: Plugin Version
         """
         if is_enabled is not None:
@@ -77,6 +85,10 @@ class ManagementAgentPluginList(dict):
             pulumi.set(__self__, "plugin_id", plugin_id)
         if plugin_name is not None:
             pulumi.set(__self__, "plugin_name", plugin_name)
+        if plugin_status is not None:
+            pulumi.set(__self__, "plugin_status", plugin_status)
+        if plugin_status_message is not None:
+            pulumi.set(__self__, "plugin_status_message", plugin_status_message)
         if plugin_version is not None:
             pulumi.set(__self__, "plugin_version", plugin_version)
 
@@ -111,6 +123,22 @@ class ManagementAgentPluginList(dict):
         Management Agent Plugin Name
         """
         return pulumi.get(self, "plugin_name")
+
+    @property
+    @pulumi.getter(name="pluginStatus")
+    def plugin_status(self) -> Optional[str]:
+        """
+        Plugin Status
+        """
+        return pulumi.get(self, "plugin_status")
+
+    @property
+    @pulumi.getter(name="pluginStatusMessage")
+    def plugin_status_message(self) -> Optional[str]:
+        """
+        Status message of the Plugin
+        """
+        return pulumi.get(self, "plugin_status_message")
 
     @property
     @pulumi.getter(name="pluginVersion")
@@ -682,18 +710,24 @@ class GetManagementAgentPluginListResult(dict):
                  plugin_display_name: str,
                  plugin_id: str,
                  plugin_name: str,
+                 plugin_status: str,
+                 plugin_status_message: str,
                  plugin_version: str):
         """
         :param bool is_enabled: flag indicating whether the plugin is in enabled mode or disabled mode.
         :param str plugin_display_name: Management Agent Plugin Identifier, can be renamed
         :param str plugin_id: Plugin Id
         :param str plugin_name: Management Agent Plugin Name
+        :param str plugin_status: Plugin Status
+        :param str plugin_status_message: Status message of the Plugin
         :param str plugin_version: Plugin Version
         """
         pulumi.set(__self__, "is_enabled", is_enabled)
         pulumi.set(__self__, "plugin_display_name", plugin_display_name)
         pulumi.set(__self__, "plugin_id", plugin_id)
         pulumi.set(__self__, "plugin_name", plugin_name)
+        pulumi.set(__self__, "plugin_status", plugin_status)
+        pulumi.set(__self__, "plugin_status_message", plugin_status_message)
         pulumi.set(__self__, "plugin_version", plugin_version)
 
     @property
@@ -727,6 +761,22 @@ class GetManagementAgentPluginListResult(dict):
         Management Agent Plugin Name
         """
         return pulumi.get(self, "plugin_name")
+
+    @property
+    @pulumi.getter(name="pluginStatus")
+    def plugin_status(self) -> str:
+        """
+        Plugin Status
+        """
+        return pulumi.get(self, "plugin_status")
+
+    @property
+    @pulumi.getter(name="pluginStatusMessage")
+    def plugin_status_message(self) -> str:
+        """
+        Status message of the Plugin
+        """
+        return pulumi.get(self, "plugin_status_message")
 
     @property
     @pulumi.getter(name="pluginVersion")
@@ -937,7 +987,7 @@ class GetManagementAgentsManagementAgentResult(dict):
         :param bool is_customer_deployed: true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param str platform_name: Platform Name
-        :param str platform_type: Filter to return only results having the particular platform type.
+        :param str platform_type: Array of PlatformTypes to return only results having the particular platform types. Example: ["LINUX"]
         :param str platform_version: Platform Version
         :param Sequence['GetManagementAgentsManagementAgentPluginListArgs'] plugin_lists: list of managementAgentPlugins associated with the agent
         :param str resource_artifact_version: Version of the deployment artifact instantiated by this Management Agent. The format for Standalone resourceMode is YYMMDD.HHMM, and the format for other modes (whose artifacts are based upon Standalone but can advance independently) is YYMMDD.HHMM.VVVVVVVVVVVV. VVVVVVVVVVVV is always a numeric value between 000000000000 and 999999999999
@@ -945,7 +995,7 @@ class GetManagementAgentsManagementAgentResult(dict):
         :param str time_created: The time the Management Agent was created. An RFC3339 formatted datetime string
         :param str time_last_heartbeat: The time the Management Agent has last recorded its health status in telemetry. This value will be null if the agent has not recorded its health status in last 7 days. An RFC3339 formatted datetime string
         :param str time_updated: The time the Management Agent was last updated. An RFC3339 formatted datetime string
-        :param str version: Filter to return only Management Agents having the particular agent version.
+        :param str version: Array of versions to return only Management Agents having the particular agent versions. Example: ["202020.0101","210201.0513"]
         """
         pulumi.set(__self__, "availability_status", availability_status)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -1108,7 +1158,7 @@ class GetManagementAgentsManagementAgentResult(dict):
     @pulumi.getter(name="platformType")
     def platform_type(self) -> str:
         """
-        Filter to return only results having the particular platform type.
+        Array of PlatformTypes to return only results having the particular platform types. Example: ["LINUX"]
         """
         return pulumi.get(self, "platform_type")
 
@@ -1172,7 +1222,7 @@ class GetManagementAgentsManagementAgentResult(dict):
     @pulumi.getter
     def version(self) -> str:
         """
-        Filter to return only Management Agents having the particular agent version.
+        Array of versions to return only Management Agents having the particular agent versions. Example: ["202020.0101","210201.0513"]
         """
         return pulumi.get(self, "version")
 
@@ -1184,18 +1234,24 @@ class GetManagementAgentsManagementAgentPluginListResult(dict):
                  plugin_display_name: str,
                  plugin_id: str,
                  plugin_name: str,
+                 plugin_status: str,
+                 plugin_status_message: str,
                  plugin_version: str):
         """
         :param bool is_enabled: flag indicating whether the plugin is in enabled mode or disabled mode.
         :param str plugin_display_name: Management Agent Plugin Identifier, can be renamed
         :param str plugin_id: Plugin Id
-        :param str plugin_name: Filter to return only Management Agents having the particular Plugin installed. A special pluginName of 'None' can be provided and this will return only Management Agents having no plugin installed.
+        :param str plugin_name: Array of pluginName to return only Management Agents having the particular Plugins installed. A special pluginName of 'None' can be provided and this will return only Management Agents having no plugin installed. Example: ["PluginA"]
+        :param str plugin_status: Plugin Status
+        :param str plugin_status_message: Status message of the Plugin
         :param str plugin_version: Plugin Version
         """
         pulumi.set(__self__, "is_enabled", is_enabled)
         pulumi.set(__self__, "plugin_display_name", plugin_display_name)
         pulumi.set(__self__, "plugin_id", plugin_id)
         pulumi.set(__self__, "plugin_name", plugin_name)
+        pulumi.set(__self__, "plugin_status", plugin_status)
+        pulumi.set(__self__, "plugin_status_message", plugin_status_message)
         pulumi.set(__self__, "plugin_version", plugin_version)
 
     @property
@@ -1226,9 +1282,25 @@ class GetManagementAgentsManagementAgentPluginListResult(dict):
     @pulumi.getter(name="pluginName")
     def plugin_name(self) -> str:
         """
-        Filter to return only Management Agents having the particular Plugin installed. A special pluginName of 'None' can be provided and this will return only Management Agents having no plugin installed.
+        Array of pluginName to return only Management Agents having the particular Plugins installed. A special pluginName of 'None' can be provided and this will return only Management Agents having no plugin installed. Example: ["PluginA"]
         """
         return pulumi.get(self, "plugin_name")
+
+    @property
+    @pulumi.getter(name="pluginStatus")
+    def plugin_status(self) -> str:
+        """
+        Plugin Status
+        """
+        return pulumi.get(self, "plugin_status")
+
+    @property
+    @pulumi.getter(name="pluginStatusMessage")
+    def plugin_status_message(self) -> str:
+        """
+        Status message of the Plugin
+        """
+        return pulumi.get(self, "plugin_status_message")
 
     @property
     @pulumi.getter(name="pluginVersion")

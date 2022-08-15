@@ -153,7 +153,7 @@ class GetMonitorResult:
     @pulumi.getter(name="repeatIntervalInSeconds")
     def repeat_interval_in_seconds(self) -> int:
         """
-        Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds.
+        Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
         """
         return pulumi.get(self, "repeat_interval_in_seconds")
 
@@ -217,7 +217,7 @@ class GetMonitorResult:
     @pulumi.getter(name="timeoutInSeconds")
     def timeout_in_seconds(self) -> int:
         """
-        Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+        Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
         """
         return pulumi.get(self, "timeout_in_seconds")
 
@@ -233,7 +233,7 @@ class GetMonitorResult:
     @pulumi.getter(name="vantagePoints")
     def vantage_points(self) -> Sequence[str]:
         """
-        List of vantage points from where monitor is running.
+        List of public and dedicated vantage points where the monitor is running.
         """
         return pulumi.get(self, "vantage_points")
 

@@ -20,7 +20,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Database Tools Private Endpoint resource in Oracle Cloud Infrastructure Database Tools service.
  * 
- * Creates a new DatabaseToolsPrivateEndpoint.
+ * Creates a new Database Tools private endpoint.
  * 
  * ## Example Usage
  * 
@@ -50,14 +50,14 @@ public class DatabaseToolsPrivateEndpoint extends com.pulumi.resources.CustomRes
         return this.additionalFqdns;
     }
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools private endpoint.
      * 
      */
     @Export(name="compartmentId", type=String.class, parameters={})
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools private endpoint.
      * 
      */
     public Output<String> compartmentId() {
@@ -78,14 +78,14 @@ public class DatabaseToolsPrivateEndpoint extends com.pulumi.resources.CustomRes
         return this.definedTags;
     }
     /**
-     * (Updatable) A description of the DatabaseToolsPrivateEndpoint.
+     * (Updatable) A description of the Database Tools private endpoint.
      * 
      */
     @Export(name="description", type=String.class, parameters={})
     private Output<String> description;
 
     /**
-     * @return (Updatable) A description of the DatabaseToolsPrivateEndpoint.
+     * @return (Updatable) A description of the Database Tools private endpoint.
      * 
      */
     public Output<String> description() {
@@ -120,14 +120,14 @@ public class DatabaseToolsPrivateEndpoint extends com.pulumi.resources.CustomRes
         return this.endpointFqdn;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsEndpointService.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `DatabaseToolsEndpointService`.
      * 
      */
     @Export(name="endpointServiceId", type=String.class, parameters={})
     private Output<String> endpointServiceId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsEndpointService.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `DatabaseToolsEndpointService`.
      * 
      */
     public Output<String> endpointServiceId() {
@@ -204,28 +204,28 @@ public class DatabaseToolsPrivateEndpoint extends com.pulumi.resources.CustomRes
         return this.privateEndpointVnicId;
     }
     /**
-     * Reverse connection configuration details of Private Endpoint.
+     * Reverse connection configuration details of the private endpoint.
      * 
      */
     @Export(name="reverseConnectionConfigurations", type=List.class, parameters={DatabaseToolsPrivateEndpointReverseConnectionConfiguration.class})
     private Output<List<DatabaseToolsPrivateEndpointReverseConnectionConfiguration>> reverseConnectionConfigurations;
 
     /**
-     * @return Reverse connection configuration details of Private Endpoint.
+     * @return Reverse connection configuration details of the private endpoint.
      * 
      */
     public Output<List<DatabaseToolsPrivateEndpointReverseConnectionConfiguration>> reverseConnectionConfigurations() {
         return this.reverseConnectionConfigurations;
     }
     /**
-     * The current state of the DatabaseToolsPrivateEndpoint.
+     * The current state of the Database Tools private endpoint.
      * 
      */
     @Export(name="state", type=String.class, parameters={})
     private Output<String> state;
 
     /**
-     * @return The current state of the DatabaseToolsPrivateEndpoint.
+     * @return The current state of the Database Tools private endpoint.
      * 
      */
     public Output<String> state() {
@@ -260,28 +260,28 @@ public class DatabaseToolsPrivateEndpoint extends com.pulumi.resources.CustomRes
         return this.systemTags;
     }
     /**
-     * The time the DatabaseToolsPrivateEndpoint was created. An RFC3339 formatted datetime string
+     * The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
      * 
      */
     @Export(name="timeCreated", type=String.class, parameters={})
     private Output<String> timeCreated;
 
     /**
-     * @return The time the DatabaseToolsPrivateEndpoint was created. An RFC3339 formatted datetime string
+     * @return The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
      * 
      */
     public Output<String> timeCreated() {
         return this.timeCreated;
     }
     /**
-     * The time the DatabaseToolsPrivateEndpoint was updated. An RFC3339 formatted datetime string
+     * The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
      * 
      */
     @Export(name="timeUpdated", type=String.class, parameters={})
     private Output<String> timeUpdated;
 
     /**
-     * @return The time the DatabaseToolsPrivateEndpoint was updated. An RFC3339 formatted datetime string
+     * @return The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
      * 
      */
     public Output<String> timeUpdated() {

@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DevOps.outputs.BuildRunBuildOutputArtifactOverrideParameter;
 import com.pulumi.oci.DevOps.outputs.BuildRunBuildOutputDeliveredArtifact;
 import com.pulumi.oci.DevOps.outputs.BuildRunBuildOutputExportedVariable;
+import com.pulumi.oci.DevOps.outputs.BuildRunBuildOutputVulnerabilityAuditSummaryCollection;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Nullable;
@@ -28,15 +29,22 @@ public final class BuildRunBuildOutput {
      * 
      */
     private final @Nullable List<BuildRunBuildOutputExportedVariable> exportedVariables;
+    /**
+     * @return List of vulnerability audit summary.
+     * 
+     */
+    private final @Nullable List<BuildRunBuildOutputVulnerabilityAuditSummaryCollection> vulnerabilityAuditSummaryCollections;
 
     @CustomType.Constructor
     private BuildRunBuildOutput(
         @CustomType.Parameter("artifactOverrideParameters") @Nullable List<BuildRunBuildOutputArtifactOverrideParameter> artifactOverrideParameters,
         @CustomType.Parameter("deliveredArtifacts") @Nullable List<BuildRunBuildOutputDeliveredArtifact> deliveredArtifacts,
-        @CustomType.Parameter("exportedVariables") @Nullable List<BuildRunBuildOutputExportedVariable> exportedVariables) {
+        @CustomType.Parameter("exportedVariables") @Nullable List<BuildRunBuildOutputExportedVariable> exportedVariables,
+        @CustomType.Parameter("vulnerabilityAuditSummaryCollections") @Nullable List<BuildRunBuildOutputVulnerabilityAuditSummaryCollection> vulnerabilityAuditSummaryCollections) {
         this.artifactOverrideParameters = artifactOverrideParameters;
         this.deliveredArtifacts = deliveredArtifacts;
         this.exportedVariables = exportedVariables;
+        this.vulnerabilityAuditSummaryCollections = vulnerabilityAuditSummaryCollections;
     }
 
     /**
@@ -60,6 +68,13 @@ public final class BuildRunBuildOutput {
     public List<BuildRunBuildOutputExportedVariable> exportedVariables() {
         return this.exportedVariables == null ? List.of() : this.exportedVariables;
     }
+    /**
+     * @return List of vulnerability audit summary.
+     * 
+     */
+    public List<BuildRunBuildOutputVulnerabilityAuditSummaryCollection> vulnerabilityAuditSummaryCollections() {
+        return this.vulnerabilityAuditSummaryCollections == null ? List.of() : this.vulnerabilityAuditSummaryCollections;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -73,6 +88,7 @@ public final class BuildRunBuildOutput {
         private @Nullable List<BuildRunBuildOutputArtifactOverrideParameter> artifactOverrideParameters;
         private @Nullable List<BuildRunBuildOutputDeliveredArtifact> deliveredArtifacts;
         private @Nullable List<BuildRunBuildOutputExportedVariable> exportedVariables;
+        private @Nullable List<BuildRunBuildOutputVulnerabilityAuditSummaryCollection> vulnerabilityAuditSummaryCollections;
 
         public Builder() {
     	      // Empty
@@ -83,6 +99,7 @@ public final class BuildRunBuildOutput {
     	      this.artifactOverrideParameters = defaults.artifactOverrideParameters;
     	      this.deliveredArtifacts = defaults.deliveredArtifacts;
     	      this.exportedVariables = defaults.exportedVariables;
+    	      this.vulnerabilityAuditSummaryCollections = defaults.vulnerabilityAuditSummaryCollections;
         }
 
         public Builder artifactOverrideParameters(@Nullable List<BuildRunBuildOutputArtifactOverrideParameter> artifactOverrideParameters) {
@@ -105,8 +122,15 @@ public final class BuildRunBuildOutput {
         }
         public Builder exportedVariables(BuildRunBuildOutputExportedVariable... exportedVariables) {
             return exportedVariables(List.of(exportedVariables));
+        }
+        public Builder vulnerabilityAuditSummaryCollections(@Nullable List<BuildRunBuildOutputVulnerabilityAuditSummaryCollection> vulnerabilityAuditSummaryCollections) {
+            this.vulnerabilityAuditSummaryCollections = vulnerabilityAuditSummaryCollections;
+            return this;
+        }
+        public Builder vulnerabilityAuditSummaryCollections(BuildRunBuildOutputVulnerabilityAuditSummaryCollection... vulnerabilityAuditSummaryCollections) {
+            return vulnerabilityAuditSummaryCollections(List.of(vulnerabilityAuditSummaryCollections));
         }        public BuildRunBuildOutput build() {
-            return new BuildRunBuildOutput(artifactOverrideParameters, deliveredArtifacts, exportedVariables);
+            return new BuildRunBuildOutput(artifactOverrideParameters, deliveredArtifacts, exportedVariables, vulnerabilityAuditSummaryCollections);
         }
     }
 }

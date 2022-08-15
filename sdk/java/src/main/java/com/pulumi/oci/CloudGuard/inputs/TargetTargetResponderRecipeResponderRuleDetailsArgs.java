@@ -19,14 +19,14 @@ public final class TargetTargetResponderRecipeResponderRuleDetailsArgs extends c
     public static final TargetTargetResponderRecipeResponderRuleDetailsArgs Empty = new TargetTargetResponderRecipeResponderRuleDetailsArgs();
 
     /**
-     * (Updatable)
+     * (Updatable) Base condition object
      * 
      */
     @Import(name="condition")
     private @Nullable Output<String> condition;
 
     /**
-     * @return (Updatable)
+     * @return (Updatable) Base condition object
      * 
      */
     public Optional<Output<String>> condition() {
@@ -106,7 +106,7 @@ public final class TargetTargetResponderRecipeResponderRuleDetailsArgs extends c
         }
 
         /**
-         * @param condition (Updatable)
+         * @param condition (Updatable) Base condition object
          * 
          * @return builder
          * 
@@ -117,7 +117,7 @@ public final class TargetTargetResponderRecipeResponderRuleDetailsArgs extends c
         }
 
         /**
-         * @param condition (Updatable)
+         * @param condition (Updatable) Base condition object
          * 
          * @return builder
          * 

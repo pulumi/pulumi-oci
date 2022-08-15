@@ -7,7 +7,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Database Tools Endpoint Service resource in Oracle Cloud Infrastructure Database Tools service.
  *
- * Gets a DatabaseToolsEndpointService by identifier
+ * Gets details for the specified Database Tools endpoint service.
  *
  * ## Example Usage
  *
@@ -36,7 +36,7 @@ export function getDatabaseToolsEndpointService(args: GetDatabaseToolsEndpointSe
  */
 export interface GetDatabaseToolsEndpointServiceArgs {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a DatabaseToolsEndpointService.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools Endpoint Service.
      */
     databaseToolsEndpointServiceId: string;
 }
@@ -46,7 +46,7 @@ export interface GetDatabaseToolsEndpointServiceArgs {
  */
 export interface GetDatabaseToolsEndpointServiceResult {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools Endpoint Service.
      */
     readonly compartmentId: string;
     readonly databaseToolsEndpointServiceId: string;
@@ -55,7 +55,7 @@ export interface GetDatabaseToolsEndpointServiceResult {
      */
     readonly definedTags: {[key: string]: any};
     /**
-     * A description of the DatabaseToolsEndpointService.
+     * A description of the Database Tools Endpoint Service.
      */
     readonly description: string;
     /**
@@ -79,7 +79,7 @@ export interface GetDatabaseToolsEndpointServiceResult {
      */
     readonly name: string;
     /**
-     * The current state of the DatabaseToolsEndpointService.
+     * The current state of the Database Tools Endpoint Service.
      */
     readonly state: string;
     /**
@@ -87,11 +87,11 @@ export interface GetDatabaseToolsEndpointServiceResult {
      */
     readonly systemTags: {[key: string]: any};
     /**
-     * The time the DatabaseToolsEndpointService was created. An RFC3339 formatted datetime string
+     * The time the Database Tools Endpoint Service was created. An RFC3339 formatted datetime string
      */
     readonly timeCreated: string;
     /**
-     * The time the DatabaseToolsEndpointService was updated. An RFC3339 formatted datetime string
+     * The time the Database Tools Endpoint Service was updated. An RFC3339 formatted datetime string
      */
     readonly timeUpdated: string;
 }
@@ -105,7 +105,7 @@ export function getDatabaseToolsEndpointServiceOutput(args: GetDatabaseToolsEndp
  */
 export interface GetDatabaseToolsEndpointServiceOutputArgs {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a DatabaseToolsEndpointService.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools Endpoint Service.
      */
     databaseToolsEndpointServiceId: pulumi.Input<string>;
 }

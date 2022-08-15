@@ -21,10 +21,13 @@ class GetBdsInstanceResult:
     """
     A collection of values returned by getBdsInstance.
     """
-    def __init__(__self__, bds_instance_id=None, cloud_sql_details=None, cluster_admin_password=None, cluster_details=None, cluster_public_key=None, cluster_version=None, compartment_id=None, created_by=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, is_cloud_sql_configured=None, is_high_availability=None, is_secure=None, master_nodes=None, network_configs=None, nodes=None, number_of_nodes=None, state=None, time_created=None, time_updated=None, util_nodes=None, worker_nodes=None):
+    def __init__(__self__, bds_instance_id=None, bootstrap_script_url=None, cloud_sql_details=None, cluster_admin_password=None, cluster_details=None, cluster_public_key=None, cluster_version=None, compartment_id=None, compute_only_worker_nodes=None, created_by=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, is_cloud_sql_configured=None, is_high_availability=None, is_secure=None, kerberos_realm_name=None, master_nodes=None, network_configs=None, nodes=None, number_of_nodes=None, state=None, time_created=None, time_updated=None, util_nodes=None, worker_nodes=None):
         if bds_instance_id and not isinstance(bds_instance_id, str):
             raise TypeError("Expected argument 'bds_instance_id' to be a str")
         pulumi.set(__self__, "bds_instance_id", bds_instance_id)
+        if bootstrap_script_url and not isinstance(bootstrap_script_url, str):
+            raise TypeError("Expected argument 'bootstrap_script_url' to be a str")
+        pulumi.set(__self__, "bootstrap_script_url", bootstrap_script_url)
         if cloud_sql_details and not isinstance(cloud_sql_details, list):
             raise TypeError("Expected argument 'cloud_sql_details' to be a list")
         pulumi.set(__self__, "cloud_sql_details", cloud_sql_details)
@@ -43,6 +46,9 @@ class GetBdsInstanceResult:
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
+        if compute_only_worker_nodes and not isinstance(compute_only_worker_nodes, list):
+            raise TypeError("Expected argument 'compute_only_worker_nodes' to be a list")
+        pulumi.set(__self__, "compute_only_worker_nodes", compute_only_worker_nodes)
         if created_by and not isinstance(created_by, str):
             raise TypeError("Expected argument 'created_by' to be a str")
         pulumi.set(__self__, "created_by", created_by)
@@ -67,6 +73,9 @@ class GetBdsInstanceResult:
         if is_secure and not isinstance(is_secure, bool):
             raise TypeError("Expected argument 'is_secure' to be a bool")
         pulumi.set(__self__, "is_secure", is_secure)
+        if kerberos_realm_name and not isinstance(kerberos_realm_name, str):
+            raise TypeError("Expected argument 'kerberos_realm_name' to be a str")
+        pulumi.set(__self__, "kerberos_realm_name", kerberos_realm_name)
         if master_nodes and not isinstance(master_nodes, list):
             raise TypeError("Expected argument 'master_nodes' to be a list")
         pulumi.set(__self__, "master_nodes", master_nodes)
@@ -99,6 +108,14 @@ class GetBdsInstanceResult:
     @pulumi.getter(name="bdsInstanceId")
     def bds_instance_id(self) -> str:
         return pulumi.get(self, "bds_instance_id")
+
+    @property
+    @pulumi.getter(name="bootstrapScriptUrl")
+    def bootstrap_script_url(self) -> str:
+        """
+        pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
+        """
+        return pulumi.get(self, "bootstrap_script_url")
 
     @property
     @pulumi.getter(name="cloudSqlDetails")
@@ -141,6 +158,11 @@ class GetBdsInstanceResult:
         The OCID of the compartment.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="computeOnlyWorkerNodes")
+    def compute_only_worker_nodes(self) -> Sequence['outputs.GetBdsInstanceComputeOnlyWorkerNodeResult']:
+        return pulumi.get(self, "compute_only_worker_nodes")
 
     @property
     @pulumi.getter(name="createdBy")
@@ -205,6 +227,11 @@ class GetBdsInstanceResult:
         Boolean flag specifying whether or not the cluster should be set up as secure.
         """
         return pulumi.get(self, "is_secure")
+
+    @property
+    @pulumi.getter(name="kerberosRealmName")
+    def kerberos_realm_name(self) -> str:
+        return pulumi.get(self, "kerberos_realm_name")
 
     @property
     @pulumi.getter(name="masterNodes")
@@ -277,12 +304,14 @@ class AwaitableGetBdsInstanceResult(GetBdsInstanceResult):
             yield self
         return GetBdsInstanceResult(
             bds_instance_id=self.bds_instance_id,
+            bootstrap_script_url=self.bootstrap_script_url,
             cloud_sql_details=self.cloud_sql_details,
             cluster_admin_password=self.cluster_admin_password,
             cluster_details=self.cluster_details,
             cluster_public_key=self.cluster_public_key,
             cluster_version=self.cluster_version,
             compartment_id=self.compartment_id,
+            compute_only_worker_nodes=self.compute_only_worker_nodes,
             created_by=self.created_by,
             defined_tags=self.defined_tags,
             display_name=self.display_name,
@@ -291,6 +320,7 @@ class AwaitableGetBdsInstanceResult(GetBdsInstanceResult):
             is_cloud_sql_configured=self.is_cloud_sql_configured,
             is_high_availability=self.is_high_availability,
             is_secure=self.is_secure,
+            kerberos_realm_name=self.kerberos_realm_name,
             master_nodes=self.master_nodes,
             network_configs=self.network_configs,
             nodes=self.nodes,
@@ -331,12 +361,14 @@ def get_bds_instance(bds_instance_id: Optional[str] = None,
 
     return AwaitableGetBdsInstanceResult(
         bds_instance_id=__ret__.bds_instance_id,
+        bootstrap_script_url=__ret__.bootstrap_script_url,
         cloud_sql_details=__ret__.cloud_sql_details,
         cluster_admin_password=__ret__.cluster_admin_password,
         cluster_details=__ret__.cluster_details,
         cluster_public_key=__ret__.cluster_public_key,
         cluster_version=__ret__.cluster_version,
         compartment_id=__ret__.compartment_id,
+        compute_only_worker_nodes=__ret__.compute_only_worker_nodes,
         created_by=__ret__.created_by,
         defined_tags=__ret__.defined_tags,
         display_name=__ret__.display_name,
@@ -345,6 +377,7 @@ def get_bds_instance(bds_instance_id: Optional[str] = None,
         is_cloud_sql_configured=__ret__.is_cloud_sql_configured,
         is_high_availability=__ret__.is_high_availability,
         is_secure=__ret__.is_secure,
+        kerberos_realm_name=__ret__.kerberos_realm_name,
         master_nodes=__ret__.master_nodes,
         network_configs=__ret__.network_configs,
         nodes=__ret__.nodes,

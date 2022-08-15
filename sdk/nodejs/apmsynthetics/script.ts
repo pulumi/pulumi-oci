@@ -121,7 +121,7 @@ export class Script extends pulumi.CustomResource {
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
     /**
-     * The time when the script was uploaded.
+     * The time the script was uploaded.
      */
     public /*out*/ readonly timeUploaded!: pulumi.Output<string>;
 
@@ -237,7 +237,7 @@ export interface ScriptState {
      */
     timeUpdated?: pulumi.Input<string>;
     /**
-     * The time when the script was uploaded.
+     * The time the script was uploaded.
      */
     timeUploaded?: pulumi.Input<string>;
 }

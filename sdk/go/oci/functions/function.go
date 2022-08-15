@@ -39,7 +39,11 @@ import (
 // 			FreeformTags: pulumi.AnyMap{
 // 				"Department": pulumi.Any("Finance"),
 // 			},
-// 			ImageDigest:      pulumi.Any(_var.Function_image_digest),
+// 			ImageDigest: pulumi.Any(_var.Function_image_digest),
+// 			ProvisionedConcurrencyConfig: &functions.FunctionProvisionedConcurrencyConfigArgs{
+// 				Strategy: pulumi.Any(_var.Function_provisioned_concurrency_config_strategy),
+// 				Count:    pulumi.Any(_var.Function_provisioned_concurrency_config_count),
+// 			},
 // 			TimeoutInSeconds: pulumi.Any(_var.Function_timeout_in_seconds),
 // 			TraceConfig: &functions.FunctionTraceConfigArgs{
 // 				IsEnabled: pulumi.Any(_var.Function_trace_config_is_enabled),
@@ -83,6 +87,8 @@ type Function struct {
 	InvokeEndpoint pulumi.StringOutput `pulumi:"invokeEndpoint"`
 	// (Updatable) Maximum usable memory for the function (MiB).
 	MemoryInMbs pulumi.StringOutput `pulumi:"memoryInMbs"`
+	// (Updatable) Define the strategy for provisioned concurrency for the function.
+	ProvisionedConcurrencyConfig FunctionProvisionedConcurrencyConfigOutput `pulumi:"provisionedConcurrencyConfig"`
 	// The current state of the function.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
@@ -156,6 +162,8 @@ type functionState struct {
 	InvokeEndpoint *string `pulumi:"invokeEndpoint"`
 	// (Updatable) Maximum usable memory for the function (MiB).
 	MemoryInMbs *string `pulumi:"memoryInMbs"`
+	// (Updatable) Define the strategy for provisioned concurrency for the function.
+	ProvisionedConcurrencyConfig *FunctionProvisionedConcurrencyConfig `pulumi:"provisionedConcurrencyConfig"`
 	// The current state of the function.
 	State *string `pulumi:"state"`
 	// The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
@@ -189,6 +197,8 @@ type FunctionState struct {
 	InvokeEndpoint pulumi.StringPtrInput
 	// (Updatable) Maximum usable memory for the function (MiB).
 	MemoryInMbs pulumi.StringPtrInput
+	// (Updatable) Define the strategy for provisioned concurrency for the function.
+	ProvisionedConcurrencyConfig FunctionProvisionedConcurrencyConfigPtrInput
 	// The current state of the function.
 	State pulumi.StringPtrInput
 	// The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
@@ -222,6 +232,8 @@ type functionArgs struct {
 	ImageDigest *string `pulumi:"imageDigest"`
 	// (Updatable) Maximum usable memory for the function (MiB).
 	MemoryInMbs string `pulumi:"memoryInMbs"`
+	// (Updatable) Define the strategy for provisioned concurrency for the function.
+	ProvisionedConcurrencyConfig *FunctionProvisionedConcurrencyConfig `pulumi:"provisionedConcurrencyConfig"`
 	// (Updatable) Timeout for executions of the function. Value in seconds.
 	TimeoutInSeconds *int `pulumi:"timeoutInSeconds"`
 	// (Updatable) Define the tracing configuration for a function.
@@ -246,6 +258,8 @@ type FunctionArgs struct {
 	ImageDigest pulumi.StringPtrInput
 	// (Updatable) Maximum usable memory for the function (MiB).
 	MemoryInMbs pulumi.StringInput
+	// (Updatable) Define the strategy for provisioned concurrency for the function.
+	ProvisionedConcurrencyConfig FunctionProvisionedConcurrencyConfigPtrInput
 	// (Updatable) Timeout for executions of the function. Value in seconds.
 	TimeoutInSeconds pulumi.IntPtrInput
 	// (Updatable) Define the tracing configuration for a function.

@@ -93,6 +93,9 @@ namespace Pulumi.Oci.Core
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
 
+        [Output("dpdConfigs")]
+        public Output<ImmutableArray<Outputs.IpsecConnectionTunnelManagementDpdConfig>> DpdConfigs { get; private set; } = null!;
+
         [Output("dpdMode")]
         public Output<string> DpdMode { get; private set; } = null!;
 
@@ -241,6 +244,14 @@ namespace Pulumi.Oci.Core
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
+        [Input("dpdConfigs")]
+        private InputList<Inputs.IpsecConnectionTunnelManagementDpdConfigArgs>? _dpdConfigs;
+        public InputList<Inputs.IpsecConnectionTunnelManagementDpdConfigArgs> DpdConfigs
+        {
+            get => _dpdConfigs ?? (_dpdConfigs = new InputList<Inputs.IpsecConnectionTunnelManagementDpdConfigArgs>());
+            set => _dpdConfigs = value;
+        }
+
         /// <summary>
         /// Configuration information used by the encryption domain policy. Required if the tunnel uses POLICY routing.
         /// </summary>
@@ -313,6 +324,14 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
+
+        [Input("dpdConfigs")]
+        private InputList<Inputs.IpsecConnectionTunnelManagementDpdConfigGetArgs>? _dpdConfigs;
+        public InputList<Inputs.IpsecConnectionTunnelManagementDpdConfigGetArgs> DpdConfigs
+        {
+            get => _dpdConfigs ?? (_dpdConfigs = new InputList<Inputs.IpsecConnectionTunnelManagementDpdConfigGetArgs>());
+            set => _dpdConfigs = value;
+        }
 
         [Input("dpdMode")]
         public Input<string>? DpdMode { get; set; }

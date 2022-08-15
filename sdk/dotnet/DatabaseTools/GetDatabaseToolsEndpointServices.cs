@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DatabaseTools
         /// <summary>
         /// This data source provides the list of Database Tools Endpoint Services in Oracle Cloud Infrastructure Database Tools service.
         /// 
-        /// Returns a list of DatabaseToolsEndpointServices.
+        /// Returns a list of Database Tools endpoint services.
         /// 
         /// 
         /// {{% examples %}}
@@ -49,7 +49,7 @@ namespace Pulumi.Oci.DatabaseTools
         /// <summary>
         /// This data source provides the list of Database Tools Endpoint Services in Oracle Cloud Infrastructure Database Tools service.
         /// 
-        /// Returns a list of DatabaseToolsEndpointServices.
+        /// Returns a list of Database Tools endpoint services.
         /// 
         /// 
         /// {{% examples %}}
@@ -92,7 +92,7 @@ namespace Pulumi.Oci.DatabaseTools
         public string CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// A filter to return only resources that match the entire display name given.
+        /// A filter to return only resources that match the entire specified display name.
         /// </summary>
         [Input("displayName")]
         public string? DisplayName { get; set; }
@@ -106,13 +106,13 @@ namespace Pulumi.Oci.DatabaseTools
         }
 
         /// <summary>
-        /// A filter to return only resources that match the entire name given.
+        /// A filter to return only resources that match the entire specified name.
         /// </summary>
         [Input("name")]
         public string? Name { get; set; }
 
         /// <summary>
-        /// A filter to return only resources their lifecycleState matches the given lifecycleState.
+        /// A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
         /// </summary>
         [Input("state")]
         public string? State { get; set; }
@@ -131,7 +131,7 @@ namespace Pulumi.Oci.DatabaseTools
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// A filter to return only resources that match the entire display name given.
+        /// A filter to return only resources that match the entire specified display name.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -145,13 +145,13 @@ namespace Pulumi.Oci.DatabaseTools
         }
 
         /// <summary>
-        /// A filter to return only resources that match the entire name given.
+        /// A filter to return only resources that match the entire specified name.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// A filter to return only resources their lifecycleState matches the given lifecycleState.
+        /// A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -166,7 +166,7 @@ namespace Pulumi.Oci.DatabaseTools
     public sealed class GetDatabaseToolsEndpointServicesResult
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools Endpoint Service.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -187,7 +187,7 @@ namespace Pulumi.Oci.DatabaseTools
         /// </summary>
         public readonly string? Name;
         /// <summary>
-        /// The current state of the DatabaseToolsEndpointService.
+        /// The current state of the Database Tools Endpoint Service.
         /// </summary>
         public readonly string? State;
 

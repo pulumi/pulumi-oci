@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// This data source provides the list of Autonomous Exadata Infrastructure Shapes in Oracle Cloud Infrastructure Database service.
         /// 
-        /// **Deprecated.** 
+        /// **Deprecated.**
         /// 
         /// 
         /// {{% examples %}}
@@ -47,7 +47,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// This data source provides the list of Autonomous Exadata Infrastructure Shapes in Oracle Cloud Infrastructure Database service.
         /// 
-        /// **Deprecated.** 
+        /// **Deprecated.**
         /// 
         /// 
         /// {{% examples %}}

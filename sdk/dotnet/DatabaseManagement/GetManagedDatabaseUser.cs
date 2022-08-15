@@ -187,7 +187,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public readonly string PasswordVersions;
         /// <summary>
-        /// The User resource profile name.
+        /// The profile name of the user.
         /// </summary>
         public readonly string Profile;
         /// <summary>
@@ -215,7 +215,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public readonly string TimeLastLogin;
         /// <summary>
-        /// The date the account was locked if account status was LOCKED.
+        /// The date the account was locked, if the status of the account is LOCKED.
         /// </summary>
         public readonly string TimeLocked;
         /// <summary>

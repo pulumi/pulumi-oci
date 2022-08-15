@@ -20,5 +20,11 @@ from .get_deployment import *
 from .get_deployments import *
 from .get_gateway import *
 from .get_gateways import *
+from .get_subscriber import *
+from .get_subscribers import *
+from .get_usage_plan import *
+from .get_usage_plans import *
+from .subscriber import *
+from .usage_plan import *
 from ._inputs import *
 from . import outputs

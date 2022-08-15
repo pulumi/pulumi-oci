@@ -37,6 +37,18 @@ namespace Pulumi.Oci.ManagementAgent.Inputs
         public Input<string>? PluginName { get; set; }
 
         /// <summary>
+        /// Plugin Status
+        /// </summary>
+        [Input("pluginStatus")]
+        public Input<string>? PluginStatus { get; set; }
+
+        /// <summary>
+        /// Status message of the Plugin
+        /// </summary>
+        [Input("pluginStatusMessage")]
+        public Input<string>? PluginStatusMessage { get; set; }
+
+        /// <summary>
         /// Plugin Version
         /// </summary>
         [Input("pluginVersion")]

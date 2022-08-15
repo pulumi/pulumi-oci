@@ -86,6 +86,8 @@ type LookupExternalNonContainerDatabaseResult struct {
 	NcharacterSet string `pulumi:"ncharacterSet"`
 	// The configuration of Operations Insights for the external database
 	OperationsInsightsConfigs []GetExternalNonContainerDatabaseOperationsInsightsConfig `pulumi:"operationsInsightsConfigs"`
+	// The configuration of Stack Monitoring for the external database.
+	StackMonitoringConfigs []GetExternalNonContainerDatabaseStackMonitoringConfig `pulumi:"stackMonitoringConfigs"`
 	// The current state of the Oracle Cloud Infrastructure external database resource.
 	State string `pulumi:"state"`
 	// The date and time the database was created.
@@ -218,6 +220,13 @@ func (o LookupExternalNonContainerDatabaseResultOutput) OperationsInsightsConfig
 	return o.ApplyT(func(v LookupExternalNonContainerDatabaseResult) []GetExternalNonContainerDatabaseOperationsInsightsConfig {
 		return v.OperationsInsightsConfigs
 	}).(GetExternalNonContainerDatabaseOperationsInsightsConfigArrayOutput)
+}
+
+// The configuration of Stack Monitoring for the external database.
+func (o LookupExternalNonContainerDatabaseResultOutput) StackMonitoringConfigs() GetExternalNonContainerDatabaseStackMonitoringConfigArrayOutput {
+	return o.ApplyT(func(v LookupExternalNonContainerDatabaseResult) []GetExternalNonContainerDatabaseStackMonitoringConfig {
+		return v.StackMonitoringConfigs
+	}).(GetExternalNonContainerDatabaseStackMonitoringConfigArrayOutput)
 }
 
 // The current state of the Oracle Cloud Infrastructure external database resource.

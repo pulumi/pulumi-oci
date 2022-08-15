@@ -14,15 +14,15 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
     public sealed class GetVantagePointItemResult
     {
         /// <summary>
-        /// A filter to return only resources that match the entire display name given.
+        /// A filter to return only the resources that match the entire display name.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// Geographic summary about a vantage point.
+        /// Geographic summary of a vantage point.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetVantagePointItemGeoResult> Geos;
         /// <summary>
-        /// A filter to return only resources that match the entire name given.
+        /// A filter to return only the resources that match the entire name.
         /// </summary>
         public readonly string Name;
 

@@ -11,7 +11,7 @@ import java.util.Objects;
 @CustomType
 public final class AutoScalingConfigurationPolicyRuleMetricThreshold {
     /**
-     * @return (Updatable) This value is the minimum period of time the metric value meets or exceeds the threshold value before the action is triggered. The value is in minutes.
+     * @return (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
      * 
      */
     private final Integer durationInMinutes;
@@ -37,7 +37,7 @@ public final class AutoScalingConfigurationPolicyRuleMetricThreshold {
     }
 
     /**
-     * @return (Updatable) This value is the minimum period of time the metric value meets or exceeds the threshold value before the action is triggered. The value is in minutes.
+     * @return (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
      * 
      */
     public Integer durationInMinutes() {

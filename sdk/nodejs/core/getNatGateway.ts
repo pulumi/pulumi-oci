@@ -79,6 +79,10 @@ export interface GetNatGatewayResult {
      */
     readonly publicIpId: string;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
+     */
+    readonly routeTableId: string;
+    /**
      * The NAT gateway's current state.
      */
     readonly state: string;

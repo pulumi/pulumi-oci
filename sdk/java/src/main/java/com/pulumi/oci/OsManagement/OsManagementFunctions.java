@@ -14,19 +14,34 @@ import com.pulumi.oci.OsManagement.inputs.GetManagedInstanceGroupArgs;
 import com.pulumi.oci.OsManagement.inputs.GetManagedInstanceGroupPlainArgs;
 import com.pulumi.oci.OsManagement.inputs.GetManagedInstanceGroupsArgs;
 import com.pulumi.oci.OsManagement.inputs.GetManagedInstanceGroupsPlainArgs;
+import com.pulumi.oci.OsManagement.inputs.GetManagedInstanceModuleStreamsArgs;
+import com.pulumi.oci.OsManagement.inputs.GetManagedInstanceModuleStreamsPlainArgs;
 import com.pulumi.oci.OsManagement.inputs.GetManagedInstancePlainArgs;
+import com.pulumi.oci.OsManagement.inputs.GetManagedInstanceStreamProfileArgs;
+import com.pulumi.oci.OsManagement.inputs.GetManagedInstanceStreamProfilePlainArgs;
 import com.pulumi.oci.OsManagement.inputs.GetManagedInstancesArgs;
 import com.pulumi.oci.OsManagement.inputs.GetManagedInstancesPlainArgs;
 import com.pulumi.oci.OsManagement.inputs.GetSoftwareSourceArgs;
+import com.pulumi.oci.OsManagement.inputs.GetSoftwareSourceModuleStreamArgs;
+import com.pulumi.oci.OsManagement.inputs.GetSoftwareSourceModuleStreamPlainArgs;
+import com.pulumi.oci.OsManagement.inputs.GetSoftwareSourceModuleStreamProfileArgs;
+import com.pulumi.oci.OsManagement.inputs.GetSoftwareSourceModuleStreamProfilePlainArgs;
 import com.pulumi.oci.OsManagement.inputs.GetSoftwareSourcePlainArgs;
+import com.pulumi.oci.OsManagement.inputs.GetSoftwareSourceStreamProfileArgs;
+import com.pulumi.oci.OsManagement.inputs.GetSoftwareSourceStreamProfilePlainArgs;
 import com.pulumi.oci.OsManagement.inputs.GetSoftwareSourcesArgs;
 import com.pulumi.oci.OsManagement.inputs.GetSoftwareSourcesPlainArgs;
 import com.pulumi.oci.OsManagement.outputs.GetManagedInstanceEventReportResult;
 import com.pulumi.oci.OsManagement.outputs.GetManagedInstanceGroupResult;
 import com.pulumi.oci.OsManagement.outputs.GetManagedInstanceGroupsResult;
+import com.pulumi.oci.OsManagement.outputs.GetManagedInstanceModuleStreamsResult;
 import com.pulumi.oci.OsManagement.outputs.GetManagedInstanceResult;
+import com.pulumi.oci.OsManagement.outputs.GetManagedInstanceStreamProfileResult;
 import com.pulumi.oci.OsManagement.outputs.GetManagedInstancesResult;
+import com.pulumi.oci.OsManagement.outputs.GetSoftwareSourceModuleStreamProfileResult;
+import com.pulumi.oci.OsManagement.outputs.GetSoftwareSourceModuleStreamResult;
 import com.pulumi.oci.OsManagement.outputs.GetSoftwareSourceResult;
+import com.pulumi.oci.OsManagement.outputs.GetSoftwareSourceStreamProfileResult;
 import com.pulumi.oci.OsManagement.outputs.GetSoftwareSourcesResult;
 import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
@@ -209,6 +224,266 @@ public final class OsManagementFunctions {
         return Deployment.getInstance().invokeAsync("oci:OsManagement/getManagedInstanceGroups:getManagedInstanceGroups", TypeShape.of(GetManagedInstanceGroupsResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides the list of Managed Instance Module Streams in Oracle Cloud Infrastructure OS Management service.
+     * 
+     * Retrieve a list of module streams, along with a summary of their
+     * status, from a managed instance.  Filters may be applied to select
+     * a subset of module streams based on the filter criteria.
+     * 
+     * The &#39;moduleName&#39; attribute filters against the name of a module.
+     * It accepts strings of the format &#34;&lt;module&gt;&#34;.  If this attribute
+     * is defined, only streams that belong to the specified module are
+     * included in the result set.  If it is not defined, the request is
+     * not subject to this filter.
+     * 
+     * The &#34;status&#34; attribute filters against the state of a module stream.
+     * Valid values are &#34;ENABLED&#34;, &#34;DISABLED&#34;, and &#34;ACTIVE&#34;.  If the
+     * attribute is set to &#34;ENABLED&#34;, only module streams that are enabled
+     * are included in the result set.  If the attribute is set to &#34;DISABLED&#34;,
+     * only module streams that are not enabled are included in the result
+     * set.  If the attribute is set to &#34;ACTIVE&#34;, only module streams that
+     * are active are included in the result set.  If the attribute is not
+     * defined, the request is not subject to this filter.
+     * 
+     * When sorting by the display name, the result set is sorted first
+     * by the module name and then by the stream name.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetManagedInstanceModuleStreamsResult> getManagedInstanceModuleStreams(GetManagedInstanceModuleStreamsArgs args) {
+        return getManagedInstanceModuleStreams(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Managed Instance Module Streams in Oracle Cloud Infrastructure OS Management service.
+     * 
+     * Retrieve a list of module streams, along with a summary of their
+     * status, from a managed instance.  Filters may be applied to select
+     * a subset of module streams based on the filter criteria.
+     * 
+     * The &#39;moduleName&#39; attribute filters against the name of a module.
+     * It accepts strings of the format &#34;&lt;module&gt;&#34;.  If this attribute
+     * is defined, only streams that belong to the specified module are
+     * included in the result set.  If it is not defined, the request is
+     * not subject to this filter.
+     * 
+     * The &#34;status&#34; attribute filters against the state of a module stream.
+     * Valid values are &#34;ENABLED&#34;, &#34;DISABLED&#34;, and &#34;ACTIVE&#34;.  If the
+     * attribute is set to &#34;ENABLED&#34;, only module streams that are enabled
+     * are included in the result set.  If the attribute is set to &#34;DISABLED&#34;,
+     * only module streams that are not enabled are included in the result
+     * set.  If the attribute is set to &#34;ACTIVE&#34;, only module streams that
+     * are active are included in the result set.  If the attribute is not
+     * defined, the request is not subject to this filter.
+     * 
+     * When sorting by the display name, the result set is sorted first
+     * by the module name and then by the stream name.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetManagedInstanceModuleStreamsResult> getManagedInstanceModuleStreamsPlain(GetManagedInstanceModuleStreamsPlainArgs args) {
+        return getManagedInstanceModuleStreamsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Managed Instance Module Streams in Oracle Cloud Infrastructure OS Management service.
+     * 
+     * Retrieve a list of module streams, along with a summary of their
+     * status, from a managed instance.  Filters may be applied to select
+     * a subset of module streams based on the filter criteria.
+     * 
+     * The &#39;moduleName&#39; attribute filters against the name of a module.
+     * It accepts strings of the format &#34;&lt;module&gt;&#34;.  If this attribute
+     * is defined, only streams that belong to the specified module are
+     * included in the result set.  If it is not defined, the request is
+     * not subject to this filter.
+     * 
+     * The &#34;status&#34; attribute filters against the state of a module stream.
+     * Valid values are &#34;ENABLED&#34;, &#34;DISABLED&#34;, and &#34;ACTIVE&#34;.  If the
+     * attribute is set to &#34;ENABLED&#34;, only module streams that are enabled
+     * are included in the result set.  If the attribute is set to &#34;DISABLED&#34;,
+     * only module streams that are not enabled are included in the result
+     * set.  If the attribute is set to &#34;ACTIVE&#34;, only module streams that
+     * are active are included in the result set.  If the attribute is not
+     * defined, the request is not subject to this filter.
+     * 
+     * When sorting by the display name, the result set is sorted first
+     * by the module name and then by the stream name.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetManagedInstanceModuleStreamsResult> getManagedInstanceModuleStreams(GetManagedInstanceModuleStreamsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:OsManagement/getManagedInstanceModuleStreams:getManagedInstanceModuleStreams", TypeShape.of(GetManagedInstanceModuleStreamsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Instance Module Streams in Oracle Cloud Infrastructure OS Management service.
+     * 
+     * Retrieve a list of module streams, along with a summary of their
+     * status, from a managed instance.  Filters may be applied to select
+     * a subset of module streams based on the filter criteria.
+     * 
+     * The &#39;moduleName&#39; attribute filters against the name of a module.
+     * It accepts strings of the format &#34;&lt;module&gt;&#34;.  If this attribute
+     * is defined, only streams that belong to the specified module are
+     * included in the result set.  If it is not defined, the request is
+     * not subject to this filter.
+     * 
+     * The &#34;status&#34; attribute filters against the state of a module stream.
+     * Valid values are &#34;ENABLED&#34;, &#34;DISABLED&#34;, and &#34;ACTIVE&#34;.  If the
+     * attribute is set to &#34;ENABLED&#34;, only module streams that are enabled
+     * are included in the result set.  If the attribute is set to &#34;DISABLED&#34;,
+     * only module streams that are not enabled are included in the result
+     * set.  If the attribute is set to &#34;ACTIVE&#34;, only module streams that
+     * are active are included in the result set.  If the attribute is not
+     * defined, the request is not subject to this filter.
+     * 
+     * When sorting by the display name, the result set is sorted first
+     * by the module name and then by the stream name.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetManagedInstanceModuleStreamsResult> getManagedInstanceModuleStreamsPlain(GetManagedInstanceModuleStreamsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:OsManagement/getManagedInstanceModuleStreams:getManagedInstanceModuleStreams", TypeShape.of(GetManagedInstanceModuleStreamsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Instance Stream Profiles in Oracle Cloud Infrastructure OS Management service.
+     * 
+     * Retrieve a list of module stream profiles, along with a summary of their
+     * of their status, from a managed instance.  Filters may be applied to
+     * select a subset of profiles based on the filter criteria.
+     * 
+     * The &#34;moduleName&#34;, &#34;streamName&#34;, and &#34;profileName&#34; attributes combine
+     * to form a set of filters on the list of module stream profiles.  If
+     * a &#34;modulName&#34; is provided, only profiles that belong to that module
+     * are returned.  If both a &#34;moduleName&#34; and &#34;streamName&#34; are given,
+     * only profiles belonging to that module stream are returned.  Finally,
+     * if all three are given then only the particular profile indicated
+     * by the triple is returned.  It is not valid to supply a &#34;streamName&#34;
+     * without a &#34;moduleName&#34;.  It is also not valid to supply a &#34;profileName&#34;
+     * without a &#34;streamName&#34;.
+     * 
+     * The &#34;status&#34; attribute filters against the state of a module stream
+     * profile.  Valid values are &#34;INSTALLED&#34; and &#34;AVAILABLE&#34;.  If the
+     * attribute is set to &#34;INSTALLED&#34;, only module stream profiles that
+     * are installed are included in the result set.  If the attribute is
+     * set to &#34;AVAILABLE&#34;, only module stream profiles that are not
+     * installed are included in the result set.  If the attribute is not
+     * defined, the request is not subject to this filter.
+     * 
+     * When sorting by display name, the result set is sorted first by
+     * module name, then by stream name, and finally by profile name.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetManagedInstanceStreamProfileResult> getManagedInstanceStreamProfile(GetManagedInstanceStreamProfileArgs args) {
+        return getManagedInstanceStreamProfile(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Managed Instance Stream Profiles in Oracle Cloud Infrastructure OS Management service.
+     * 
+     * Retrieve a list of module stream profiles, along with a summary of their
+     * of their status, from a managed instance.  Filters may be applied to
+     * select a subset of profiles based on the filter criteria.
+     * 
+     * The &#34;moduleName&#34;, &#34;streamName&#34;, and &#34;profileName&#34; attributes combine
+     * to form a set of filters on the list of module stream profiles.  If
+     * a &#34;modulName&#34; is provided, only profiles that belong to that module
+     * are returned.  If both a &#34;moduleName&#34; and &#34;streamName&#34; are given,
+     * only profiles belonging to that module stream are returned.  Finally,
+     * if all three are given then only the particular profile indicated
+     * by the triple is returned.  It is not valid to supply a &#34;streamName&#34;
+     * without a &#34;moduleName&#34;.  It is also not valid to supply a &#34;profileName&#34;
+     * without a &#34;streamName&#34;.
+     * 
+     * The &#34;status&#34; attribute filters against the state of a module stream
+     * profile.  Valid values are &#34;INSTALLED&#34; and &#34;AVAILABLE&#34;.  If the
+     * attribute is set to &#34;INSTALLED&#34;, only module stream profiles that
+     * are installed are included in the result set.  If the attribute is
+     * set to &#34;AVAILABLE&#34;, only module stream profiles that are not
+     * installed are included in the result set.  If the attribute is not
+     * defined, the request is not subject to this filter.
+     * 
+     * When sorting by display name, the result set is sorted first by
+     * module name, then by stream name, and finally by profile name.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetManagedInstanceStreamProfileResult> getManagedInstanceStreamProfilePlain(GetManagedInstanceStreamProfilePlainArgs args) {
+        return getManagedInstanceStreamProfilePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Managed Instance Stream Profiles in Oracle Cloud Infrastructure OS Management service.
+     * 
+     * Retrieve a list of module stream profiles, along with a summary of their
+     * of their status, from a managed instance.  Filters may be applied to
+     * select a subset of profiles based on the filter criteria.
+     * 
+     * The &#34;moduleName&#34;, &#34;streamName&#34;, and &#34;profileName&#34; attributes combine
+     * to form a set of filters on the list of module stream profiles.  If
+     * a &#34;modulName&#34; is provided, only profiles that belong to that module
+     * are returned.  If both a &#34;moduleName&#34; and &#34;streamName&#34; are given,
+     * only profiles belonging to that module stream are returned.  Finally,
+     * if all three are given then only the particular profile indicated
+     * by the triple is returned.  It is not valid to supply a &#34;streamName&#34;
+     * without a &#34;moduleName&#34;.  It is also not valid to supply a &#34;profileName&#34;
+     * without a &#34;streamName&#34;.
+     * 
+     * The &#34;status&#34; attribute filters against the state of a module stream
+     * profile.  Valid values are &#34;INSTALLED&#34; and &#34;AVAILABLE&#34;.  If the
+     * attribute is set to &#34;INSTALLED&#34;, only module stream profiles that
+     * are installed are included in the result set.  If the attribute is
+     * set to &#34;AVAILABLE&#34;, only module stream profiles that are not
+     * installed are included in the result set.  If the attribute is not
+     * defined, the request is not subject to this filter.
+     * 
+     * When sorting by display name, the result set is sorted first by
+     * module name, then by stream name, and finally by profile name.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetManagedInstanceStreamProfileResult> getManagedInstanceStreamProfile(GetManagedInstanceStreamProfileArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:OsManagement/getManagedInstanceStreamProfile:getManagedInstanceStreamProfile", TypeShape.of(GetManagedInstanceStreamProfileResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Instance Stream Profiles in Oracle Cloud Infrastructure OS Management service.
+     * 
+     * Retrieve a list of module stream profiles, along with a summary of their
+     * of their status, from a managed instance.  Filters may be applied to
+     * select a subset of profiles based on the filter criteria.
+     * 
+     * The &#34;moduleName&#34;, &#34;streamName&#34;, and &#34;profileName&#34; attributes combine
+     * to form a set of filters on the list of module stream profiles.  If
+     * a &#34;modulName&#34; is provided, only profiles that belong to that module
+     * are returned.  If both a &#34;moduleName&#34; and &#34;streamName&#34; are given,
+     * only profiles belonging to that module stream are returned.  Finally,
+     * if all three are given then only the particular profile indicated
+     * by the triple is returned.  It is not valid to supply a &#34;streamName&#34;
+     * without a &#34;moduleName&#34;.  It is also not valid to supply a &#34;profileName&#34;
+     * without a &#34;streamName&#34;.
+     * 
+     * The &#34;status&#34; attribute filters against the state of a module stream
+     * profile.  Valid values are &#34;INSTALLED&#34; and &#34;AVAILABLE&#34;.  If the
+     * attribute is set to &#34;INSTALLED&#34;, only module stream profiles that
+     * are installed are included in the result set.  If the attribute is
+     * set to &#34;AVAILABLE&#34;, only module stream profiles that are not
+     * installed are included in the result set.  If the attribute is not
+     * defined, the request is not subject to this filter.
+     * 
+     * When sorting by display name, the result set is sorted first by
+     * module name, then by stream name, and finally by profile name.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetManagedInstanceStreamProfileResult> getManagedInstanceStreamProfilePlain(GetManagedInstanceStreamProfilePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:OsManagement/getManagedInstanceStreamProfile:getManagedInstanceStreamProfile", TypeShape.of(GetManagedInstanceStreamProfileResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides the list of Managed Instances in Oracle Cloud Infrastructure OS Management service.
      * 
      * Returns a list of all Managed Instances.
@@ -295,6 +570,186 @@ public final class OsManagementFunctions {
      */
     public static CompletableFuture<GetSoftwareSourceResult> getSoftwareSourcePlain(GetSoftwareSourcePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:OsManagement/getSoftwareSource:getSoftwareSource", TypeShape.of(GetSoftwareSourceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Software Source Module Stream resource in Oracle Cloud Infrastructure OS Management service.
+     * 
+     * Retrieve a detailed description of a module stream from a software source.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetSoftwareSourceModuleStreamResult> getSoftwareSourceModuleStream(GetSoftwareSourceModuleStreamArgs args) {
+        return getSoftwareSourceModuleStream(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Software Source Module Stream resource in Oracle Cloud Infrastructure OS Management service.
+     * 
+     * Retrieve a detailed description of a module stream from a software source.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetSoftwareSourceModuleStreamResult> getSoftwareSourceModuleStreamPlain(GetSoftwareSourceModuleStreamPlainArgs args) {
+        return getSoftwareSourceModuleStreamPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Software Source Module Stream resource in Oracle Cloud Infrastructure OS Management service.
+     * 
+     * Retrieve a detailed description of a module stream from a software source.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetSoftwareSourceModuleStreamResult> getSoftwareSourceModuleStream(GetSoftwareSourceModuleStreamArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:OsManagement/getSoftwareSourceModuleStream:getSoftwareSourceModuleStream", TypeShape.of(GetSoftwareSourceModuleStreamResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Software Source Module Stream resource in Oracle Cloud Infrastructure OS Management service.
+     * 
+     * Retrieve a detailed description of a module stream from a software source.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetSoftwareSourceModuleStreamResult> getSoftwareSourceModuleStreamPlain(GetSoftwareSourceModuleStreamPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:OsManagement/getSoftwareSourceModuleStream:getSoftwareSourceModuleStream", TypeShape.of(GetSoftwareSourceModuleStreamResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Software Source Module Stream Profile resource in Oracle Cloud Infrastructure OS Management service.
+     * 
+     * Retrieve a detailed description of a module stream profile from a software source.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetSoftwareSourceModuleStreamProfileResult> getSoftwareSourceModuleStreamProfile(GetSoftwareSourceModuleStreamProfileArgs args) {
+        return getSoftwareSourceModuleStreamProfile(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Software Source Module Stream Profile resource in Oracle Cloud Infrastructure OS Management service.
+     * 
+     * Retrieve a detailed description of a module stream profile from a software source.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetSoftwareSourceModuleStreamProfileResult> getSoftwareSourceModuleStreamProfilePlain(GetSoftwareSourceModuleStreamProfilePlainArgs args) {
+        return getSoftwareSourceModuleStreamProfilePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Software Source Module Stream Profile resource in Oracle Cloud Infrastructure OS Management service.
+     * 
+     * Retrieve a detailed description of a module stream profile from a software source.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetSoftwareSourceModuleStreamProfileResult> getSoftwareSourceModuleStreamProfile(GetSoftwareSourceModuleStreamProfileArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:OsManagement/getSoftwareSourceModuleStreamProfile:getSoftwareSourceModuleStreamProfile", TypeShape.of(GetSoftwareSourceModuleStreamProfileResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Software Source Module Stream Profile resource in Oracle Cloud Infrastructure OS Management service.
+     * 
+     * Retrieve a detailed description of a module stream profile from a software source.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetSoftwareSourceModuleStreamProfileResult> getSoftwareSourceModuleStreamProfilePlain(GetSoftwareSourceModuleStreamProfilePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:OsManagement/getSoftwareSourceModuleStreamProfile:getSoftwareSourceModuleStreamProfile", TypeShape.of(GetSoftwareSourceModuleStreamProfileResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Software Source Stream Profiles in Oracle Cloud Infrastructure OS Management service.
+     * 
+     * Retrieve a list of module stream profiles from a software source.
+     * Filters may be applied to select a subset of module stream profiles
+     * based on the filter criteria.
+     * 
+     * The &#34;moduleName&#34;, &#34;streamName&#34;, and &#34;profileName&#34; attributes combine
+     * to form a set of filters on the list of module stream profiles.  If
+     * a &#34;moduleName&#34; is provided, only profiles that belong to that module
+     * are returned.  If both a &#34;moduleName&#34; and &#34;streamName&#34; are given,
+     * only profiles belonging to that module stream are returned.  Finally,
+     * if all three are given then only the particular profile indicated
+     * by the triple is returned.  It is not valid to supply a &#34;streamName&#34;
+     * without a &#34;moduleName&#34;.  It is also not valid to supply a &#34;profileName&#34;
+     * without a &#34;streamName&#34;.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetSoftwareSourceStreamProfileResult> getSoftwareSourceStreamProfile(GetSoftwareSourceStreamProfileArgs args) {
+        return getSoftwareSourceStreamProfile(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Software Source Stream Profiles in Oracle Cloud Infrastructure OS Management service.
+     * 
+     * Retrieve a list of module stream profiles from a software source.
+     * Filters may be applied to select a subset of module stream profiles
+     * based on the filter criteria.
+     * 
+     * The &#34;moduleName&#34;, &#34;streamName&#34;, and &#34;profileName&#34; attributes combine
+     * to form a set of filters on the list of module stream profiles.  If
+     * a &#34;moduleName&#34; is provided, only profiles that belong to that module
+     * are returned.  If both a &#34;moduleName&#34; and &#34;streamName&#34; are given,
+     * only profiles belonging to that module stream are returned.  Finally,
+     * if all three are given then only the particular profile indicated
+     * by the triple is returned.  It is not valid to supply a &#34;streamName&#34;
+     * without a &#34;moduleName&#34;.  It is also not valid to supply a &#34;profileName&#34;
+     * without a &#34;streamName&#34;.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetSoftwareSourceStreamProfileResult> getSoftwareSourceStreamProfilePlain(GetSoftwareSourceStreamProfilePlainArgs args) {
+        return getSoftwareSourceStreamProfilePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Software Source Stream Profiles in Oracle Cloud Infrastructure OS Management service.
+     * 
+     * Retrieve a list of module stream profiles from a software source.
+     * Filters may be applied to select a subset of module stream profiles
+     * based on the filter criteria.
+     * 
+     * The &#34;moduleName&#34;, &#34;streamName&#34;, and &#34;profileName&#34; attributes combine
+     * to form a set of filters on the list of module stream profiles.  If
+     * a &#34;moduleName&#34; is provided, only profiles that belong to that module
+     * are returned.  If both a &#34;moduleName&#34; and &#34;streamName&#34; are given,
+     * only profiles belonging to that module stream are returned.  Finally,
+     * if all three are given then only the particular profile indicated
+     * by the triple is returned.  It is not valid to supply a &#34;streamName&#34;
+     * without a &#34;moduleName&#34;.  It is also not valid to supply a &#34;profileName&#34;
+     * without a &#34;streamName&#34;.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetSoftwareSourceStreamProfileResult> getSoftwareSourceStreamProfile(GetSoftwareSourceStreamProfileArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:OsManagement/getSoftwareSourceStreamProfile:getSoftwareSourceStreamProfile", TypeShape.of(GetSoftwareSourceStreamProfileResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Software Source Stream Profiles in Oracle Cloud Infrastructure OS Management service.
+     * 
+     * Retrieve a list of module stream profiles from a software source.
+     * Filters may be applied to select a subset of module stream profiles
+     * based on the filter criteria.
+     * 
+     * The &#34;moduleName&#34;, &#34;streamName&#34;, and &#34;profileName&#34; attributes combine
+     * to form a set of filters on the list of module stream profiles.  If
+     * a &#34;moduleName&#34; is provided, only profiles that belong to that module
+     * are returned.  If both a &#34;moduleName&#34; and &#34;streamName&#34; are given,
+     * only profiles belonging to that module stream are returned.  Finally,
+     * if all three are given then only the particular profile indicated
+     * by the triple is returned.  It is not valid to supply a &#34;streamName&#34;
+     * without a &#34;moduleName&#34;.  It is also not valid to supply a &#34;profileName&#34;
+     * without a &#34;streamName&#34;.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetSoftwareSourceStreamProfileResult> getSoftwareSourceStreamProfilePlain(GetSoftwareSourceStreamProfilePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:OsManagement/getSoftwareSourceStreamProfile:getSoftwareSourceStreamProfile", TypeShape.of(GetSoftwareSourceStreamProfileResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Software Sources in Oracle Cloud Infrastructure OS Management service.

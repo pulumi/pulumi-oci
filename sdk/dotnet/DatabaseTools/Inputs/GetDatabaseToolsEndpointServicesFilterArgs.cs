@@ -13,7 +13,7 @@ namespace Pulumi.Oci.DatabaseTools.Inputs
     public sealed class GetDatabaseToolsEndpointServicesFilterInputArgs : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// A filter to return only resources that match the entire name given.
+        /// A filter to return only resources that match the entire specified name.
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;

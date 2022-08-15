@@ -6,6 +6,8 @@ package com.pulumi.oci.Waf.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Waf.inputs.AppFirewallPolicyRequestProtectionRuleArgs;
+import java.lang.Integer;
+import java.lang.String;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -15,6 +17,36 @@ import javax.annotation.Nullable;
 public final class AppFirewallPolicyRequestProtectionArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final AppFirewallPolicyRequestProtectionArgs Empty = new AppFirewallPolicyRequestProtectionArgs();
+
+    /**
+     * (Updatable) References action by name from actions defined in WebAppFirewallPolicy. Executed if HTTP message body size exceeds limit set in field `bodyInspectionSizeLimitInBytes`.
+     * 
+     */
+    @Import(name="bodyInspectionSizeLimitExceededActionName")
+    private @Nullable Output<String> bodyInspectionSizeLimitExceededActionName;
+
+    /**
+     * @return (Updatable) References action by name from actions defined in WebAppFirewallPolicy. Executed if HTTP message body size exceeds limit set in field `bodyInspectionSizeLimitInBytes`.
+     * 
+     */
+    public Optional<Output<String>> bodyInspectionSizeLimitExceededActionName() {
+        return Optional.ofNullable(this.bodyInspectionSizeLimitExceededActionName);
+    }
+
+    /**
+     * (Updatable) Maximum size of inspected HTTP message body in bytes. Actions to take if this limit is exceeded are defined in `bodyInspectionSizeLimitExceededActionName`.
+     * 
+     */
+    @Import(name="bodyInspectionSizeLimitInBytes")
+    private @Nullable Output<Integer> bodyInspectionSizeLimitInBytes;
+
+    /**
+     * @return (Updatable) Maximum size of inspected HTTP message body in bytes. Actions to take if this limit is exceeded are defined in `bodyInspectionSizeLimitExceededActionName`.
+     * 
+     */
+    public Optional<Output<Integer>> bodyInspectionSizeLimitInBytes() {
+        return Optional.ofNullable(this.bodyInspectionSizeLimitInBytes);
+    }
 
     /**
      * (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
@@ -34,6 +66,8 @@ public final class AppFirewallPolicyRequestProtectionArgs extends com.pulumi.res
     private AppFirewallPolicyRequestProtectionArgs() {}
 
     private AppFirewallPolicyRequestProtectionArgs(AppFirewallPolicyRequestProtectionArgs $) {
+        this.bodyInspectionSizeLimitExceededActionName = $.bodyInspectionSizeLimitExceededActionName;
+        this.bodyInspectionSizeLimitInBytes = $.bodyInspectionSizeLimitInBytes;
         this.rules = $.rules;
     }
 
@@ -53,6 +87,48 @@ public final class AppFirewallPolicyRequestProtectionArgs extends com.pulumi.res
 
         public Builder(AppFirewallPolicyRequestProtectionArgs defaults) {
             $ = new AppFirewallPolicyRequestProtectionArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param bodyInspectionSizeLimitExceededActionName (Updatable) References action by name from actions defined in WebAppFirewallPolicy. Executed if HTTP message body size exceeds limit set in field `bodyInspectionSizeLimitInBytes`.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder bodyInspectionSizeLimitExceededActionName(@Nullable Output<String> bodyInspectionSizeLimitExceededActionName) {
+            $.bodyInspectionSizeLimitExceededActionName = bodyInspectionSizeLimitExceededActionName;
+            return this;
+        }
+
+        /**
+         * @param bodyInspectionSizeLimitExceededActionName (Updatable) References action by name from actions defined in WebAppFirewallPolicy. Executed if HTTP message body size exceeds limit set in field `bodyInspectionSizeLimitInBytes`.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder bodyInspectionSizeLimitExceededActionName(String bodyInspectionSizeLimitExceededActionName) {
+            return bodyInspectionSizeLimitExceededActionName(Output.of(bodyInspectionSizeLimitExceededActionName));
+        }
+
+        /**
+         * @param bodyInspectionSizeLimitInBytes (Updatable) Maximum size of inspected HTTP message body in bytes. Actions to take if this limit is exceeded are defined in `bodyInspectionSizeLimitExceededActionName`.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder bodyInspectionSizeLimitInBytes(@Nullable Output<Integer> bodyInspectionSizeLimitInBytes) {
+            $.bodyInspectionSizeLimitInBytes = bodyInspectionSizeLimitInBytes;
+            return this;
+        }
+
+        /**
+         * @param bodyInspectionSizeLimitInBytes (Updatable) Maximum size of inspected HTTP message body in bytes. Actions to take if this limit is exceeded are defined in `bodyInspectionSizeLimitExceededActionName`.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder bodyInspectionSizeLimitInBytes(Integer bodyInspectionSizeLimitInBytes) {
+            return bodyInspectionSizeLimitInBytes(Output.of(bodyInspectionSizeLimitInBytes));
         }
 
         /**

@@ -64,10 +64,12 @@ type LookupAutoScalingConfigurationResult struct {
 	// The unique identifier for the autoscale configuration.
 	Id        string `pulumi:"id"`
 	IsEnabled bool   `pulumi:"isEnabled"`
-	// A node type that is managed by an autoscale configuration. The only supported type is WORKER.
+	// A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
 	NodeType string `pulumi:"nodeType"`
-	// Policy definitions for the autoscale configuration.
+	// This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
 	Policies []GetAutoScalingConfigurationPolicy `pulumi:"policies"`
+	// Details of an autoscale policy.
+	PolicyDetails []GetAutoScalingConfigurationPolicyDetail `pulumi:"policyDetails"`
 	// The state of the autoscale configuration.
 	State string `pulumi:"state"`
 	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
@@ -142,14 +144,21 @@ func (o LookupAutoScalingConfigurationResultOutput) IsEnabled() pulumi.BoolOutpu
 	return o.ApplyT(func(v LookupAutoScalingConfigurationResult) bool { return v.IsEnabled }).(pulumi.BoolOutput)
 }
 
-// A node type that is managed by an autoscale configuration. The only supported type is WORKER.
+// A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
 func (o LookupAutoScalingConfigurationResultOutput) NodeType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutoScalingConfigurationResult) string { return v.NodeType }).(pulumi.StringOutput)
 }
 
-// Policy definitions for the autoscale configuration.
+// This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
 func (o LookupAutoScalingConfigurationResultOutput) Policies() GetAutoScalingConfigurationPolicyArrayOutput {
 	return o.ApplyT(func(v LookupAutoScalingConfigurationResult) []GetAutoScalingConfigurationPolicy { return v.Policies }).(GetAutoScalingConfigurationPolicyArrayOutput)
+}
+
+// Details of an autoscale policy.
+func (o LookupAutoScalingConfigurationResultOutput) PolicyDetails() GetAutoScalingConfigurationPolicyDetailArrayOutput {
+	return o.ApplyT(func(v LookupAutoScalingConfigurationResult) []GetAutoScalingConfigurationPolicyDetail {
+		return v.PolicyDetails
+	}).(GetAutoScalingConfigurationPolicyDetailArrayOutput)
 }
 
 // The state of the autoscale configuration.

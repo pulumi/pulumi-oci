@@ -128,6 +128,7 @@ import (
 // 						Type: pulumi.Any(_var.Registry_folder_data_assets_default_connection_type),
 // 					},
 // 					Description: pulumi.Any(_var.Registry_folder_data_assets_description),
+// 					EndPoints:   _var.Registry_folder_data_assets_end_points,
 // 					ExternalKey: pulumi.Any(_var.Registry_folder_data_assets_external_key),
 // 					Metadata: &dataconnectivity.RegistryFolderDataAssetMetadataArgs{
 // 						Aggregator: &dataconnectivity.RegistryFolderDataAssetMetadataAggregatorArgs{

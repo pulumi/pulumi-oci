@@ -72,9 +72,9 @@ type DataMaskRule struct {
 	DataMaskRuleStatus pulumi.StringOutput `pulumi:"dataMaskRuleStatus"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
-	// The Data Mask Rule description.
+	// The data mask rule description. Avoid entering confidential information.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// (Updatable) Data Mask Rule name
+	// (Updatable) Data mask rule name.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
@@ -146,9 +146,9 @@ type dataMaskRuleState struct {
 	DataMaskRuleStatus *string `pulumi:"dataMaskRuleStatus"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// The Data Mask Rule description.
+	// The data mask rule description. Avoid entering confidential information.
 	Description *string `pulumi:"description"`
-	// (Updatable) Data Mask Rule name
+	// (Updatable) Data mask rule name.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
@@ -177,9 +177,9 @@ type DataMaskRuleState struct {
 	DataMaskRuleStatus pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
-	// The Data Mask Rule description.
+	// The data mask rule description. Avoid entering confidential information.
 	Description pulumi.StringPtrInput
-	// (Updatable) Data Mask Rule name
+	// (Updatable) Data mask rule name.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
@@ -212,9 +212,9 @@ type dataMaskRuleArgs struct {
 	DataMaskRuleStatus *string `pulumi:"dataMaskRuleStatus"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// The Data Mask Rule description.
+	// The data mask rule description. Avoid entering confidential information.
 	Description *string `pulumi:"description"`
-	// (Updatable) Data Mask Rule name
+	// (Updatable) Data mask rule name.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
@@ -236,9 +236,9 @@ type DataMaskRuleArgs struct {
 	DataMaskRuleStatus pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
-	// The Data Mask Rule description.
+	// The data mask rule description. Avoid entering confidential information.
 	Description pulumi.StringPtrInput
-	// (Updatable) Data Mask Rule name
+	// (Updatable) Data mask rule name.
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput

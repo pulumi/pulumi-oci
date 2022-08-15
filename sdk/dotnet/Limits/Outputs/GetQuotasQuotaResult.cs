@@ -33,6 +33,11 @@ namespace Pulumi.Oci.Limits.Outputs
         /// The OCID of the quota.
         /// </summary>
         public readonly string Id;
+        public readonly bool IsLockOverride;
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetQuotasQuotaLockResult> Locks;
         /// <summary>
         /// name
         /// </summary>
@@ -62,6 +67,10 @@ namespace Pulumi.Oci.Limits.Outputs
 
             string id,
 
+            bool isLockOverride,
+
+            ImmutableArray<Outputs.GetQuotasQuotaLockResult> locks,
+
             string name,
 
             string state,
@@ -75,6 +84,8 @@ namespace Pulumi.Oci.Limits.Outputs
             Description = description;
             FreeformTags = freeformTags;
             Id = id;
+            IsLockOverride = isLockOverride;
+            Locks = locks;
             Name = name;
             State = state;
             Statements = statements;

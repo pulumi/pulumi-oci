@@ -114,6 +114,21 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
+     * The character set for the autonomous database.  The default is AL32UTF8. Allowed values for an Autonomous Database on shared infrastructure as as returned by [List Autonomous Database Character Sets](https://www.terraform.io/autonomousDatabaseCharacterSets)
+     * 
+     */
+    @Import(name="characterSet")
+    private @Nullable Output<String> characterSet;
+
+    /**
+     * @return The character set for the autonomous database.  The default is AL32UTF8. Allowed values for an Autonomous Database on shared infrastructure as as returned by [List Autonomous Database Character Sets](https://www.terraform.io/autonomousDatabaseCharacterSets)
+     * 
+     */
+    public Optional<Output<String>> characterSet() {
+        return Optional.ofNullable(this.characterSet);
+    }
+
+    /**
      * The Autonomous Database clone type.
      * 
      */
@@ -437,6 +452,21 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
+     * (Updatable) Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+     * 
+     */
+    @Import(name="isLocalDataGuardEnabled")
+    private @Nullable Output<Boolean> isLocalDataGuardEnabled;
+
+    /**
+     * @return (Updatable) Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+     * 
+     */
+    public Optional<Output<Boolean>> isLocalDataGuardEnabled() {
+        return Optional.ofNullable(this.isLocalDataGuardEnabled);
+    }
+
+    /**
      * (Updatable) Indicates whether the Autonomous Database requires mTLS connections.
      * 
      */
@@ -542,16 +572,31 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-     * * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+     * The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
+     * 
+     */
+    @Import(name="ncharacterSet")
+    private @Nullable Output<String> ncharacterSet;
+
+    /**
+     * @return The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
+     * 
+     */
+    public Optional<Output<String>> ncharacterSet() {
+        return Optional.ofNullable(this.ncharacterSet);
+    }
+
+    /**
+     * (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+     * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      * 
      */
     @Import(name="nsgIds")
     private @Nullable Output<List<String>> nsgIds;
 
     /**
-     * @return (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-     * * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+     * @return (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+     * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      * 
      */
     public Optional<Output<List<String>>> nsgIds() {
@@ -837,6 +882,7 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
         this.autonomousDatabaseBackupId = $.autonomousDatabaseBackupId;
         this.autonomousDatabaseId = $.autonomousDatabaseId;
         this.autonomousMaintenanceScheduleType = $.autonomousMaintenanceScheduleType;
+        this.characterSet = $.characterSet;
         this.cloneType = $.cloneType;
         this.compartmentId = $.compartmentId;
         this.cpuCoreCount = $.cpuCoreCount;
@@ -858,6 +904,7 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
         this.isDataGuardEnabled = $.isDataGuardEnabled;
         this.isDedicated = $.isDedicated;
         this.isFreeTier = $.isFreeTier;
+        this.isLocalDataGuardEnabled = $.isLocalDataGuardEnabled;
         this.isMtlsConnectionRequired = $.isMtlsConnectionRequired;
         this.isPreviewVersionWithServiceTermsAccepted = $.isPreviewVersionWithServiceTermsAccepted;
         this.isRefreshableClone = $.isRefreshableClone;
@@ -865,6 +912,7 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
         this.kmsKeyId = $.kmsKeyId;
         this.licenseModel = $.licenseModel;
         this.maxCpuCoreCount = $.maxCpuCoreCount;
+        this.ncharacterSet = $.ncharacterSet;
         this.nsgIds = $.nsgIds;
         this.ocpuCount = $.ocpuCount;
         this.openMode = $.openMode;
@@ -1028,6 +1076,27 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
          */
         public Builder autonomousMaintenanceScheduleType(String autonomousMaintenanceScheduleType) {
             return autonomousMaintenanceScheduleType(Output.of(autonomousMaintenanceScheduleType));
+        }
+
+        /**
+         * @param characterSet The character set for the autonomous database.  The default is AL32UTF8. Allowed values for an Autonomous Database on shared infrastructure as as returned by [List Autonomous Database Character Sets](https://www.terraform.io/autonomousDatabaseCharacterSets)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder characterSet(@Nullable Output<String> characterSet) {
+            $.characterSet = characterSet;
+            return this;
+        }
+
+        /**
+         * @param characterSet The character set for the autonomous database.  The default is AL32UTF8. Allowed values for an Autonomous Database on shared infrastructure as as returned by [List Autonomous Database Character Sets](https://www.terraform.io/autonomousDatabaseCharacterSets)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder characterSet(String characterSet) {
+            return characterSet(Output.of(characterSet));
         }
 
         /**
@@ -1490,6 +1559,27 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
+         * @param isLocalDataGuardEnabled (Updatable) Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isLocalDataGuardEnabled(@Nullable Output<Boolean> isLocalDataGuardEnabled) {
+            $.isLocalDataGuardEnabled = isLocalDataGuardEnabled;
+            return this;
+        }
+
+        /**
+         * @param isLocalDataGuardEnabled (Updatable) Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isLocalDataGuardEnabled(Boolean isLocalDataGuardEnabled) {
+            return isLocalDataGuardEnabled(Output.of(isLocalDataGuardEnabled));
+        }
+
+        /**
          * @param isMtlsConnectionRequired (Updatable) Indicates whether the Autonomous Database requires mTLS connections.
          * 
          * @return builder
@@ -1637,8 +1727,29 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param nsgIds (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-         * * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+         * @param ncharacterSet The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ncharacterSet(@Nullable Output<String> ncharacterSet) {
+            $.ncharacterSet = ncharacterSet;
+            return this;
+        }
+
+        /**
+         * @param ncharacterSet The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ncharacterSet(String ncharacterSet) {
+            return ncharacterSet(Output.of(ncharacterSet));
+        }
+
+        /**
+         * @param nsgIds (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+         * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
          * 
          * @return builder
          * 
@@ -1649,8 +1760,8 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param nsgIds (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-         * * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+         * @param nsgIds (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+         * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
          * 
          * @return builder
          * 
@@ -1660,8 +1771,8 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param nsgIds (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-         * * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+         * @param nsgIds (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+         * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
          * 
          * @return builder
          * 

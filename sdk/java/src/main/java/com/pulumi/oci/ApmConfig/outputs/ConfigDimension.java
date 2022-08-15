@@ -12,12 +12,12 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ConfigDimension {
     /**
-     * @return (Updatable) The name of the metric
+     * @return (Updatable) The name of the metric. This must be a known metric name.
      * 
      */
     private final @Nullable String name;
     /**
-     * @return (Updatable) Must be NULL at the moment, and &#34;name&#34; must be a known metric.
+     * @return (Updatable) This must not be set.
      * 
      */
     private final @Nullable String valueSource;
@@ -31,14 +31,14 @@ public final class ConfigDimension {
     }
 
     /**
-     * @return (Updatable) The name of the metric
+     * @return (Updatable) The name of the metric. This must be a known metric name.
      * 
      */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
     /**
-     * @return (Updatable) Must be NULL at the moment, and &#34;name&#34; must be a known metric.
+     * @return (Updatable) This must not be set.
      * 
      */
     public Optional<String> valueSource() {

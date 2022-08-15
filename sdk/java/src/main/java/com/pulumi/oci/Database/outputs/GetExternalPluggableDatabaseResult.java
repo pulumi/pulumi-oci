@@ -6,6 +6,7 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Database.outputs.GetExternalPluggableDatabaseDatabaseManagementConfig;
 import com.pulumi.oci.Database.outputs.GetExternalPluggableDatabaseOperationsInsightsConfig;
+import com.pulumi.oci.Database.outputs.GetExternalPluggableDatabaseStackMonitoringConfig;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -106,6 +107,11 @@ public final class GetExternalPluggableDatabaseResult {
      */
     private final String sourceId;
     /**
+     * @return The configuration of Stack Monitoring for the external database.
+     * 
+     */
+    private final List<GetExternalPluggableDatabaseStackMonitoringConfig> stackMonitoringConfigs;
+    /**
      * @return The current state of the Oracle Cloud Infrastructure external database resource.
      * 
      */
@@ -142,6 +148,7 @@ public final class GetExternalPluggableDatabaseResult {
         @CustomType.Parameter("ncharacterSet") String ncharacterSet,
         @CustomType.Parameter("operationsInsightsConfigs") List<GetExternalPluggableDatabaseOperationsInsightsConfig> operationsInsightsConfigs,
         @CustomType.Parameter("sourceId") String sourceId,
+        @CustomType.Parameter("stackMonitoringConfigs") List<GetExternalPluggableDatabaseStackMonitoringConfig> stackMonitoringConfigs,
         @CustomType.Parameter("state") String state,
         @CustomType.Parameter("timeCreated") String timeCreated,
         @CustomType.Parameter("timeZone") String timeZone) {
@@ -164,6 +171,7 @@ public final class GetExternalPluggableDatabaseResult {
         this.ncharacterSet = ncharacterSet;
         this.operationsInsightsConfigs = operationsInsightsConfigs;
         this.sourceId = sourceId;
+        this.stackMonitoringConfigs = stackMonitoringConfigs;
         this.state = state;
         this.timeCreated = timeCreated;
         this.timeZone = timeZone;
@@ -299,6 +307,13 @@ public final class GetExternalPluggableDatabaseResult {
         return this.sourceId;
     }
     /**
+     * @return The configuration of Stack Monitoring for the external database.
+     * 
+     */
+    public List<GetExternalPluggableDatabaseStackMonitoringConfig> stackMonitoringConfigs() {
+        return this.stackMonitoringConfigs;
+    }
+    /**
      * @return The current state of the Oracle Cloud Infrastructure external database resource.
      * 
      */
@@ -348,6 +363,7 @@ public final class GetExternalPluggableDatabaseResult {
         private String ncharacterSet;
         private List<GetExternalPluggableDatabaseOperationsInsightsConfig> operationsInsightsConfigs;
         private String sourceId;
+        private List<GetExternalPluggableDatabaseStackMonitoringConfig> stackMonitoringConfigs;
         private String state;
         private String timeCreated;
         private String timeZone;
@@ -377,6 +393,7 @@ public final class GetExternalPluggableDatabaseResult {
     	      this.ncharacterSet = defaults.ncharacterSet;
     	      this.operationsInsightsConfigs = defaults.operationsInsightsConfigs;
     	      this.sourceId = defaults.sourceId;
+    	      this.stackMonitoringConfigs = defaults.stackMonitoringConfigs;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeZone = defaults.timeZone;
@@ -464,6 +481,13 @@ public final class GetExternalPluggableDatabaseResult {
             this.sourceId = Objects.requireNonNull(sourceId);
             return this;
         }
+        public Builder stackMonitoringConfigs(List<GetExternalPluggableDatabaseStackMonitoringConfig> stackMonitoringConfigs) {
+            this.stackMonitoringConfigs = Objects.requireNonNull(stackMonitoringConfigs);
+            return this;
+        }
+        public Builder stackMonitoringConfigs(GetExternalPluggableDatabaseStackMonitoringConfig... stackMonitoringConfigs) {
+            return stackMonitoringConfigs(List.of(stackMonitoringConfigs));
+        }
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
@@ -476,7 +500,7 @@ public final class GetExternalPluggableDatabaseResult {
             this.timeZone = Objects.requireNonNull(timeZone);
             return this;
         }        public GetExternalPluggableDatabaseResult build() {
-            return new GetExternalPluggableDatabaseResult(characterSet, compartmentId, databaseConfiguration, databaseEdition, databaseManagementConfigs, databaseVersion, dbId, dbPacks, dbUniqueName, definedTags, displayName, externalContainerDatabaseId, externalPluggableDatabaseId, freeformTags, id, lifecycleDetails, ncharacterSet, operationsInsightsConfigs, sourceId, state, timeCreated, timeZone);
+            return new GetExternalPluggableDatabaseResult(characterSet, compartmentId, databaseConfiguration, databaseEdition, databaseManagementConfigs, databaseVersion, dbId, dbPacks, dbUniqueName, definedTags, displayName, externalContainerDatabaseId, externalPluggableDatabaseId, freeformTags, id, lifecycleDetails, ncharacterSet, operationsInsightsConfigs, sourceId, stackMonitoringConfigs, state, timeCreated, timeZone);
         }
     }
 }

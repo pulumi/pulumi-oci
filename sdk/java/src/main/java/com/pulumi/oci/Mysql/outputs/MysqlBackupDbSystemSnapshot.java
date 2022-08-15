@@ -106,7 +106,7 @@ public final class MysqlBackupDbSystemSnapshot {
      */
     private final @Nullable String ipAddress;
     /**
-     * @return If the policy is to enable high availability of the instance, by maintaining secondary/failover capacity as necessary.
+     * @return Specifies if the DB System is highly available.
      * 
      */
     private final @Nullable Boolean isHighlyAvailable;
@@ -313,7 +313,7 @@ public final class MysqlBackupDbSystemSnapshot {
         return Optional.ofNullable(this.ipAddress);
     }
     /**
-     * @return If the policy is to enable high availability of the instance, by maintaining secondary/failover capacity as necessary.
+     * @return Specifies if the DB System is highly available.
      * 
      */
     public Optional<Boolean> isHighlyAvailable() {

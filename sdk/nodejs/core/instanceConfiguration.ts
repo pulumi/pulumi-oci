@@ -118,10 +118,15 @@ import * as utilities from "../utilities";
  *             metadata: _var.instance_configuration_instance_details_launch_details_metadata,
  *             platformConfig: {
  *                 type: _var.instance_configuration_instance_details_launch_details_platform_config_type,
+ *                 areVirtualInstructionsEnabled: _var.instance_configuration_instance_details_launch_details_platform_config_are_virtual_instructions_enabled,
+ *                 isAccessControlServiceEnabled: _var.instance_configuration_instance_details_launch_details_platform_config_is_access_control_service_enabled,
+ *                 isInputOutputMemoryManagementUnitEnabled: _var.instance_configuration_instance_details_launch_details_platform_config_is_input_output_memory_management_unit_enabled,
  *                 isMeasuredBootEnabled: _var.instance_configuration_instance_details_launch_details_platform_config_is_measured_boot_enabled,
  *                 isSecureBootEnabled: _var.instance_configuration_instance_details_launch_details_platform_config_is_secure_boot_enabled,
+ *                 isSymmetricMultiThreadingEnabled: _var.instance_configuration_instance_details_launch_details_platform_config_is_symmetric_multi_threading_enabled,
  *                 isTrustedPlatformModuleEnabled: _var.instance_configuration_instance_details_launch_details_platform_config_is_trusted_platform_module_enabled,
  *                 numaNodesPerSocket: _var.instance_configuration_instance_details_launch_details_platform_config_numa_nodes_per_socket,
+ *                 percentageOfCoresEnabled: _var.instance_configuration_instance_details_launch_details_platform_config_percentage_of_cores_enabled,
  *             },
  *             preemptibleInstanceConfig: {
  *                 preemptionAction: {
@@ -134,12 +139,14 @@ import * as utilities from "../utilities";
  *             shapeConfig: {
  *                 baselineOcpuUtilization: _var.instance_configuration_instance_details_launch_details_shape_config_baseline_ocpu_utilization,
  *                 memoryInGbs: _var.instance_configuration_instance_details_launch_details_shape_config_memory_in_gbs,
+ *                 nvmes: _var.instance_configuration_instance_details_launch_details_shape_config_nvmes,
  *                 ocpus: _var.instance_configuration_instance_details_launch_details_shape_config_ocpus,
  *             },
  *             sourceDetails: {
  *                 sourceType: _var.instance_configuration_instance_details_launch_details_source_details_source_type,
  *                 bootVolumeId: oci_core_boot_volume.test_boot_volume.id,
  *                 bootVolumeSizeInGbs: _var.instance_configuration_instance_details_launch_details_source_details_boot_volume_size_in_gbs,
+ *                 bootVolumeVpusPerGb: _var.instance_configuration_instance_details_launch_details_source_details_boot_volume_vpus_per_gb,
  *                 imageId: oci_core_image.test_image.id,
  *             },
  *         },

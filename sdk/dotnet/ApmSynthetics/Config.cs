@@ -173,7 +173,7 @@ namespace Pulumi.Oci.ApmSynthetics
         public Output<string> MonitorType { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds.
+        /// (Updatable) Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
         /// </summary>
         [Output("repeatIntervalInSeconds")]
         public Output<int> RepeatIntervalInSeconds { get; private set; } = null!;
@@ -221,7 +221,7 @@ namespace Pulumi.Oci.ApmSynthetics
         public Output<string> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+        /// (Updatable) Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
         /// </summary>
         [Output("timeoutInSeconds")]
         public Output<int> TimeoutInSeconds { get; private set; } = null!;
@@ -233,7 +233,7 @@ namespace Pulumi.Oci.ApmSynthetics
         public Output<int> VantagePointCount { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) A list of vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points.
+        /// (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points.
         /// </summary>
         [Output("vantagePoints")]
         public Output<ImmutableArray<string>> VantagePoints { get; private set; } = null!;
@@ -339,7 +339,7 @@ namespace Pulumi.Oci.ApmSynthetics
         public Input<string> MonitorType { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds.
+        /// (Updatable) Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
         /// </summary>
         [Input("repeatIntervalInSeconds", required: true)]
         public Input<int> RepeatIntervalInSeconds { get; set; } = null!;
@@ -381,7 +381,7 @@ namespace Pulumi.Oci.ApmSynthetics
         public Input<string>? Target { get; set; }
 
         /// <summary>
-        /// (Updatable) Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+        /// (Updatable) Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
         /// </summary>
         [Input("timeoutInSeconds")]
         public Input<int>? TimeoutInSeconds { get; set; }
@@ -390,7 +390,7 @@ namespace Pulumi.Oci.ApmSynthetics
         private InputList<string>? _vantagePoints;
 
         /// <summary>
-        /// (Updatable) A list of vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points.
+        /// (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points.
         /// </summary>
         public InputList<string> VantagePoints
         {
@@ -460,7 +460,7 @@ namespace Pulumi.Oci.ApmSynthetics
         public Input<string>? MonitorType { get; set; }
 
         /// <summary>
-        /// (Updatable) Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds.
+        /// (Updatable) Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
         /// </summary>
         [Input("repeatIntervalInSeconds")]
         public Input<int>? RepeatIntervalInSeconds { get; set; }
@@ -514,7 +514,7 @@ namespace Pulumi.Oci.ApmSynthetics
         public Input<string>? TimeUpdated { get; set; }
 
         /// <summary>
-        /// (Updatable) Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+        /// (Updatable) Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
         /// </summary>
         [Input("timeoutInSeconds")]
         public Input<int>? TimeoutInSeconds { get; set; }
@@ -529,7 +529,7 @@ namespace Pulumi.Oci.ApmSynthetics
         private InputList<string>? _vantagePoints;
 
         /// <summary>
-        /// (Updatable) A list of vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points.
+        /// (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points.
         /// </summary>
         public InputList<string> VantagePoints
         {

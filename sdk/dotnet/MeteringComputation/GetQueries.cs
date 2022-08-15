@@ -87,6 +87,10 @@ namespace Pulumi.Oci.MeteringComputation
 
         [Input("filters")]
         private List<Inputs.GetQueriesFilterArgs>? _filters;
+
+        /// <summary>
+        /// The filter object for query usage.
+        /// </summary>
         public List<Inputs.GetQueriesFilterArgs> Filters
         {
             get => _filters ?? (_filters = new List<Inputs.GetQueriesFilterArgs>());
@@ -108,6 +112,10 @@ namespace Pulumi.Oci.MeteringComputation
 
         [Input("filters")]
         private InputList<Inputs.GetQueriesFilterInputArgs>? _filters;
+
+        /// <summary>
+        /// The filter object for query usage.
+        /// </summary>
         public InputList<Inputs.GetQueriesFilterInputArgs> Filters
         {
             get => _filters ?? (_filters = new InputList<Inputs.GetQueriesFilterInputArgs>());
@@ -127,6 +135,9 @@ namespace Pulumi.Oci.MeteringComputation
         /// The compartment OCID.
         /// </summary>
         public readonly string CompartmentId;
+        /// <summary>
+        /// The filter object for query usage.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetQueriesFilterResult> Filters;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.

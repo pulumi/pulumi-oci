@@ -84,6 +84,8 @@ type LookupExternalContainerDatabaseResult struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The national character of the external database.
 	NcharacterSet string `pulumi:"ncharacterSet"`
+	// The configuration of Stack Monitoring for the external database.
+	StackMonitoringConfigs []GetExternalContainerDatabaseStackMonitoringConfig `pulumi:"stackMonitoringConfigs"`
 	// The current state of the Oracle Cloud Infrastructure external database resource.
 	State string `pulumi:"state"`
 	// The date and time the database was created.
@@ -209,6 +211,13 @@ func (o LookupExternalContainerDatabaseResultOutput) LifecycleDetails() pulumi.S
 // The national character of the external database.
 func (o LookupExternalContainerDatabaseResultOutput) NcharacterSet() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExternalContainerDatabaseResult) string { return v.NcharacterSet }).(pulumi.StringOutput)
+}
+
+// The configuration of Stack Monitoring for the external database.
+func (o LookupExternalContainerDatabaseResultOutput) StackMonitoringConfigs() GetExternalContainerDatabaseStackMonitoringConfigArrayOutput {
+	return o.ApplyT(func(v LookupExternalContainerDatabaseResult) []GetExternalContainerDatabaseStackMonitoringConfig {
+		return v.StackMonitoringConfigs
+	}).(GetExternalContainerDatabaseStackMonitoringConfigArrayOutput)
 }
 
 // The current state of the Oracle Cloud Infrastructure external database resource.

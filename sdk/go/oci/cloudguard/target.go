@@ -104,7 +104,7 @@ type Target struct {
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// The target description.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// (Updatable) DetectorTemplate Identifier
+	// (Updatable) DetectorTemplate identifier.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
@@ -118,6 +118,8 @@ type Target struct {
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	// Details specific to the target type.
+	TargetDetails TargetTargetDetailArrayOutput `pulumi:"targetDetails"`
 	// (Updatable) List of detector recipes to associate with target
 	TargetDetectorRecipes TargetTargetDetectorRecipeArrayOutput `pulumi:"targetDetectorRecipes"`
 	// Resource ID which the target uses to monitor
@@ -179,7 +181,7 @@ type targetState struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The target description.
 	Description *string `pulumi:"description"`
-	// (Updatable) DetectorTemplate Identifier
+	// (Updatable) DetectorTemplate identifier.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
@@ -193,6 +195,8 @@ type targetState struct {
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// Details specific to the target type.
+	TargetDetails []TargetTargetDetail `pulumi:"targetDetails"`
 	// (Updatable) List of detector recipes to associate with target
 	TargetDetectorRecipes []TargetTargetDetectorRecipe `pulumi:"targetDetectorRecipes"`
 	// Resource ID which the target uses to monitor
@@ -214,7 +218,7 @@ type TargetState struct {
 	DefinedTags pulumi.MapInput
 	// The target description.
 	Description pulumi.StringPtrInput
-	// (Updatable) DetectorTemplate Identifier
+	// (Updatable) DetectorTemplate identifier.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
@@ -228,6 +232,8 @@ type TargetState struct {
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput
+	// Details specific to the target type.
+	TargetDetails TargetTargetDetailArrayInput
 	// (Updatable) List of detector recipes to associate with target
 	TargetDetectorRecipes TargetTargetDetectorRecipeArrayInput
 	// Resource ID which the target uses to monitor
@@ -253,7 +259,7 @@ type targetArgs struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The target description.
 	Description *string `pulumi:"description"`
-	// (Updatable) DetectorTemplate Identifier
+	// (Updatable) DetectorTemplate identifier.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
@@ -277,7 +283,7 @@ type TargetArgs struct {
 	DefinedTags pulumi.MapInput
 	// The target description.
 	Description pulumi.StringPtrInput
-	// (Updatable) DetectorTemplate Identifier
+	// (Updatable) DetectorTemplate identifier.
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput

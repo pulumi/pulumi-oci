@@ -131,17 +131,23 @@ namespace Pulumi.Oci.Database
         public readonly string ApplyRate;
         public readonly string AvailabilityDomain;
         public readonly ImmutableArray<string> BackupNetworkNsgIds;
+        public readonly int CpuCoreCount;
         public readonly bool CreateAsync;
         public readonly string CreationType;
         public readonly string DataGuardAssociationId;
         public readonly string DatabaseAdminPassword;
+        public readonly ImmutableDictionary<string, object> DatabaseDefinedTags;
+        public readonly ImmutableDictionary<string, object> DatabaseFreeformTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the reporting database.
         /// </summary>
         public readonly string DatabaseId;
         public readonly string DatabaseSoftwareImageId;
+        public readonly ImmutableDictionary<string, object> DbSystemDefinedTags;
+        public readonly ImmutableDictionary<string, object> DbSystemFreeformTags;
         public readonly string DeleteStandbyDbHomeOnDelete;
         public readonly string DisplayName;
+        public readonly ImmutableArray<string> FaultDomains;
         public readonly string Hostname;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Data Guard association.
@@ -151,10 +157,12 @@ namespace Pulumi.Oci.Database
         /// True if active Data Guard is enabled.
         /// </summary>
         public readonly bool IsActiveDataGuardEnabled;
+        public readonly string LicenseModel;
         /// <summary>
         /// Additional information about the current lifecycleState, if available.
         /// </summary>
         public readonly string LifecycleDetails;
+        public readonly int NodeCount;
         public readonly ImmutableArray<string> NsgIds;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer database's Data Guard association.
@@ -179,6 +187,7 @@ namespace Pulumi.Oci.Database
         public readonly string PeerRole;
         public readonly string PeerSidPrefix;
         public readonly string PeerVmClusterId;
+        public readonly string PrivateIp;
         /// <summary>
         /// The protection mode of this Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         /// </summary>
@@ -192,11 +201,13 @@ namespace Pulumi.Oci.Database
         /// The current state of the Data Guard association.
         /// </summary>
         public readonly string State;
+        public readonly string StorageVolumePerformanceMode;
         public readonly string SubnetId;
         /// <summary>
         /// The date and time the Data Guard association was created.
         /// </summary>
         public readonly string TimeCreated;
+        public readonly string TimeZone;
         /// <summary>
         /// The redo transport type used by this Data Guard association.  For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
         /// </summary>
@@ -212,6 +223,8 @@ namespace Pulumi.Oci.Database
 
             ImmutableArray<string> backupNetworkNsgIds,
 
+            int cpuCoreCount,
+
             bool createAsync,
 
             string creationType,
@@ -220,13 +233,23 @@ namespace Pulumi.Oci.Database
 
             string databaseAdminPassword,
 
+            ImmutableDictionary<string, object> databaseDefinedTags,
+
+            ImmutableDictionary<string, object> databaseFreeformTags,
+
             string databaseId,
 
             string databaseSoftwareImageId,
 
+            ImmutableDictionary<string, object> dbSystemDefinedTags,
+
+            ImmutableDictionary<string, object> dbSystemFreeformTags,
+
             string deleteStandbyDbHomeOnDelete,
 
             string displayName,
+
+            ImmutableArray<string> faultDomains,
 
             string hostname,
 
@@ -234,7 +257,11 @@ namespace Pulumi.Oci.Database
 
             bool isActiveDataGuardEnabled,
 
+            string licenseModel,
+
             string lifecycleDetails,
+
+            int nodeCount,
 
             ImmutableArray<string> nsgIds,
 
@@ -254,6 +281,8 @@ namespace Pulumi.Oci.Database
 
             string peerVmClusterId,
 
+            string privateIp,
+
             string protectionMode,
 
             string role,
@@ -262,9 +291,13 @@ namespace Pulumi.Oci.Database
 
             string state,
 
+            string storageVolumePerformanceMode,
+
             string subnetId,
 
             string timeCreated,
+
+            string timeZone,
 
             string transportType)
         {
@@ -272,18 +305,26 @@ namespace Pulumi.Oci.Database
             ApplyRate = applyRate;
             AvailabilityDomain = availabilityDomain;
             BackupNetworkNsgIds = backupNetworkNsgIds;
+            CpuCoreCount = cpuCoreCount;
             CreateAsync = createAsync;
             CreationType = creationType;
             DataGuardAssociationId = dataGuardAssociationId;
             DatabaseAdminPassword = databaseAdminPassword;
+            DatabaseDefinedTags = databaseDefinedTags;
+            DatabaseFreeformTags = databaseFreeformTags;
             DatabaseId = databaseId;
             DatabaseSoftwareImageId = databaseSoftwareImageId;
+            DbSystemDefinedTags = dbSystemDefinedTags;
+            DbSystemFreeformTags = dbSystemFreeformTags;
             DeleteStandbyDbHomeOnDelete = deleteStandbyDbHomeOnDelete;
             DisplayName = displayName;
+            FaultDomains = faultDomains;
             Hostname = hostname;
             Id = id;
             IsActiveDataGuardEnabled = isActiveDataGuardEnabled;
+            LicenseModel = licenseModel;
             LifecycleDetails = lifecycleDetails;
+            NodeCount = nodeCount;
             NsgIds = nsgIds;
             PeerDataGuardAssociationId = peerDataGuardAssociationId;
             PeerDatabaseId = peerDatabaseId;
@@ -293,12 +334,15 @@ namespace Pulumi.Oci.Database
             PeerRole = peerRole;
             PeerSidPrefix = peerSidPrefix;
             PeerVmClusterId = peerVmClusterId;
+            PrivateIp = privateIp;
             ProtectionMode = protectionMode;
             Role = role;
             Shape = shape;
             State = state;
+            StorageVolumePerformanceMode = storageVolumePerformanceMode;
             SubnetId = subnetId;
             TimeCreated = timeCreated;
+            TimeZone = timeZone;
             TransportType = transportType;
         }
     }

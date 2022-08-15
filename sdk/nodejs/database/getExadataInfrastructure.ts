@@ -135,6 +135,10 @@ export interface GetExadataInfrastructureResult {
      */
     readonly infiniBandNetworkCidr: string;
     /**
+     * Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
+     */
+    readonly isCpsOfflineReportEnabled: boolean;
+    /**
      * Additional information about the current lifecycle state.
      */
     readonly lifecycleDetails: string;

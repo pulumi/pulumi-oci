@@ -23,6 +23,7 @@ class DatabaseInsightArgs:
                  database_connection_status_details: Optional[pulumi.Input[str]] = None,
                  database_id: Optional[pulumi.Input[str]] = None,
                  database_resource_type: Optional[pulumi.Input[str]] = None,
+                 dbm_private_endpoint_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  deployment_type: Optional[pulumi.Input[str]] = None,
                  enterprise_manager_bridge_id: Optional[pulumi.Input[str]] = None,
@@ -43,6 +44,7 @@ class DatabaseInsightArgs:
         :param pulumi.Input[str] database_connection_status_details: A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
         :param pulumi.Input[str] database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         :param pulumi.Input[str] database_resource_type: Oracle Cloud Infrastructure database resource type
+        :param pulumi.Input[str] dbm_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint. This field and opsi_private_endpoint_id are mutually exclusive. If DBM private endpoint ID is provided, a new OPSI private endpoint ID will be created.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] deployment_type: Database Deployment Type
         :param pulumi.Input[str] enterprise_manager_bridge_id: OPSI Enterprise Manager Bridge OCID
@@ -68,6 +70,8 @@ class DatabaseInsightArgs:
             pulumi.set(__self__, "database_id", database_id)
         if database_resource_type is not None:
             pulumi.set(__self__, "database_resource_type", database_resource_type)
+        if dbm_private_endpoint_id is not None:
+            pulumi.set(__self__, "dbm_private_endpoint_id", dbm_private_endpoint_id)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if deployment_type is not None:
@@ -184,6 +188,18 @@ class DatabaseInsightArgs:
     @database_resource_type.setter
     def database_resource_type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "database_resource_type", value)
+
+    @property
+    @pulumi.getter(name="dbmPrivateEndpointId")
+    def dbm_private_endpoint_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint. This field and opsi_private_endpoint_id are mutually exclusive. If DBM private endpoint ID is provided, a new OPSI private endpoint ID will be created.
+        """
+        return pulumi.get(self, "dbm_private_endpoint_id")
+
+    @dbm_private_endpoint_id.setter
+    def dbm_private_endpoint_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "dbm_private_endpoint_id", value)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -320,6 +336,7 @@ class _DatabaseInsightState:
                  database_resource_type: Optional[pulumi.Input[str]] = None,
                  database_type: Optional[pulumi.Input[str]] = None,
                  database_version: Optional[pulumi.Input[str]] = None,
+                 dbm_private_endpoint_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  deployment_type: Optional[pulumi.Input[str]] = None,
                  enterprise_manager_bridge_id: Optional[pulumi.Input[str]] = None,
@@ -353,6 +370,7 @@ class _DatabaseInsightState:
         :param pulumi.Input[str] database_resource_type: Oracle Cloud Infrastructure database resource type
         :param pulumi.Input[str] database_type: Operations Insights internal representation of the database type.
         :param pulumi.Input[str] database_version: The version of the database.
+        :param pulumi.Input[str] dbm_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint. This field and opsi_private_endpoint_id are mutually exclusive. If DBM private endpoint ID is provided, a new OPSI private endpoint ID will be created.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] deployment_type: Database Deployment Type
         :param pulumi.Input[str] enterprise_manager_bridge_id: OPSI Enterprise Manager Bridge OCID
@@ -396,6 +414,8 @@ class _DatabaseInsightState:
             pulumi.set(__self__, "database_type", database_type)
         if database_version is not None:
             pulumi.set(__self__, "database_version", database_version)
+        if dbm_private_endpoint_id is not None:
+            pulumi.set(__self__, "dbm_private_endpoint_id", dbm_private_endpoint_id)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if deployment_type is not None:
@@ -568,6 +588,18 @@ class _DatabaseInsightState:
     @database_version.setter
     def database_version(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "database_version", value)
+
+    @property
+    @pulumi.getter(name="dbmPrivateEndpointId")
+    def dbm_private_endpoint_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint. This field and opsi_private_endpoint_id are mutually exclusive. If DBM private endpoint ID is provided, a new OPSI private endpoint ID will be created.
+        """
+        return pulumi.get(self, "dbm_private_endpoint_id")
+
+    @dbm_private_endpoint_id.setter
+    def dbm_private_endpoint_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "dbm_private_endpoint_id", value)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -822,6 +854,7 @@ class DatabaseInsight(pulumi.CustomResource):
                  database_connection_status_details: Optional[pulumi.Input[str]] = None,
                  database_id: Optional[pulumi.Input[str]] = None,
                  database_resource_type: Optional[pulumi.Input[str]] = None,
+                 dbm_private_endpoint_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  deployment_type: Optional[pulumi.Input[str]] = None,
                  enterprise_manager_bridge_id: Optional[pulumi.Input[str]] = None,
@@ -852,6 +885,7 @@ class DatabaseInsight(pulumi.CustomResource):
         :param pulumi.Input[str] database_connection_status_details: A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
         :param pulumi.Input[str] database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         :param pulumi.Input[str] database_resource_type: Oracle Cloud Infrastructure database resource type
+        :param pulumi.Input[str] dbm_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint. This field and opsi_private_endpoint_id are mutually exclusive. If DBM private endpoint ID is provided, a new OPSI private endpoint ID will be created.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] deployment_type: Database Deployment Type
         :param pulumi.Input[str] enterprise_manager_bridge_id: OPSI Enterprise Manager Bridge OCID
@@ -901,6 +935,7 @@ class DatabaseInsight(pulumi.CustomResource):
                  database_connection_status_details: Optional[pulumi.Input[str]] = None,
                  database_id: Optional[pulumi.Input[str]] = None,
                  database_resource_type: Optional[pulumi.Input[str]] = None,
+                 dbm_private_endpoint_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  deployment_type: Optional[pulumi.Input[str]] = None,
                  enterprise_manager_bridge_id: Optional[pulumi.Input[str]] = None,
@@ -933,6 +968,7 @@ class DatabaseInsight(pulumi.CustomResource):
             __props__.__dict__["database_connection_status_details"] = database_connection_status_details
             __props__.__dict__["database_id"] = database_id
             __props__.__dict__["database_resource_type"] = database_resource_type
+            __props__.__dict__["dbm_private_endpoint_id"] = dbm_private_endpoint_id
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["deployment_type"] = deployment_type
             __props__.__dict__["enterprise_manager_bridge_id"] = enterprise_manager_bridge_id
@@ -980,6 +1016,7 @@ class DatabaseInsight(pulumi.CustomResource):
             database_resource_type: Optional[pulumi.Input[str]] = None,
             database_type: Optional[pulumi.Input[str]] = None,
             database_version: Optional[pulumi.Input[str]] = None,
+            dbm_private_endpoint_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             deployment_type: Optional[pulumi.Input[str]] = None,
             enterprise_manager_bridge_id: Optional[pulumi.Input[str]] = None,
@@ -1018,6 +1055,7 @@ class DatabaseInsight(pulumi.CustomResource):
         :param pulumi.Input[str] database_resource_type: Oracle Cloud Infrastructure database resource type
         :param pulumi.Input[str] database_type: Operations Insights internal representation of the database type.
         :param pulumi.Input[str] database_version: The version of the database.
+        :param pulumi.Input[str] dbm_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint. This field and opsi_private_endpoint_id are mutually exclusive. If DBM private endpoint ID is provided, a new OPSI private endpoint ID will be created.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] deployment_type: Database Deployment Type
         :param pulumi.Input[str] enterprise_manager_bridge_id: OPSI Enterprise Manager Bridge OCID
@@ -1054,6 +1092,7 @@ class DatabaseInsight(pulumi.CustomResource):
         __props__.__dict__["database_resource_type"] = database_resource_type
         __props__.__dict__["database_type"] = database_type
         __props__.__dict__["database_version"] = database_version
+        __props__.__dict__["dbm_private_endpoint_id"] = dbm_private_endpoint_id
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["deployment_type"] = deployment_type
         __props__.__dict__["enterprise_manager_bridge_id"] = enterprise_manager_bridge_id
@@ -1163,6 +1202,14 @@ class DatabaseInsight(pulumi.CustomResource):
         The version of the database.
         """
         return pulumi.get(self, "database_version")
+
+    @property
+    @pulumi.getter(name="dbmPrivateEndpointId")
+    def dbm_private_endpoint_id(self) -> pulumi.Output[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint. This field and opsi_private_endpoint_id are mutually exclusive. If DBM private endpoint ID is provided, a new OPSI private endpoint ID will be created.
+        """
+        return pulumi.get(self, "dbm_private_endpoint_id")
 
     @property
     @pulumi.getter(name="definedTags")

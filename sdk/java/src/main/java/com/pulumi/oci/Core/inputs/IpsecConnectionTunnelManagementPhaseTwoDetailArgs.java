@@ -6,6 +6,7 @@ package com.pulumi.oci.Core.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -59,9 +60,9 @@ public final class IpsecConnectionTunnelManagementPhaseTwoDetailArgs extends com
     }
 
     @Import(name="lifetime")
-    private @Nullable Output<String> lifetime;
+    private @Nullable Output<Integer> lifetime;
 
-    public Optional<Output<String>> lifetime() {
+    public Optional<Output<Integer>> lifetime() {
         return Optional.ofNullable(this.lifetime);
     }
 
@@ -189,12 +190,12 @@ public final class IpsecConnectionTunnelManagementPhaseTwoDetailArgs extends com
             return isPfsEnabled(Output.of(isPfsEnabled));
         }
 
-        public Builder lifetime(@Nullable Output<String> lifetime) {
+        public Builder lifetime(@Nullable Output<Integer> lifetime) {
             $.lifetime = lifetime;
             return this;
         }
 
-        public Builder lifetime(String lifetime) {
+        public Builder lifetime(Integer lifetime) {
             return lifetime(Output.of(lifetime));
         }
 

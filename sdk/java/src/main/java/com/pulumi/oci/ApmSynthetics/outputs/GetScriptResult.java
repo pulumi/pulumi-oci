@@ -78,7 +78,7 @@ public final class GetScriptResult {
      */
     private final String timeUpdated;
     /**
-     * @return The time when the script was uploaded.
+     * @return The time the script was uploaded.
      * 
      */
     private final String timeUploaded;
@@ -208,7 +208,7 @@ public final class GetScriptResult {
         return this.timeUpdated;
     }
     /**
-     * @return The time when the script was uploaded.
+     * @return The time the script was uploaded.
      * 
      */
     public String timeUploaded() {

@@ -10,6 +10,103 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+type ClusterClusterPodNetworkOption struct {
+	// The CNI used by the node pools of this cluster
+	CniType string `pulumi:"cniType"`
+}
+
+// ClusterClusterPodNetworkOptionInput is an input type that accepts ClusterClusterPodNetworkOptionArgs and ClusterClusterPodNetworkOptionOutput values.
+// You can construct a concrete instance of `ClusterClusterPodNetworkOptionInput` via:
+//
+//          ClusterClusterPodNetworkOptionArgs{...}
+type ClusterClusterPodNetworkOptionInput interface {
+	pulumi.Input
+
+	ToClusterClusterPodNetworkOptionOutput() ClusterClusterPodNetworkOptionOutput
+	ToClusterClusterPodNetworkOptionOutputWithContext(context.Context) ClusterClusterPodNetworkOptionOutput
+}
+
+type ClusterClusterPodNetworkOptionArgs struct {
+	// The CNI used by the node pools of this cluster
+	CniType pulumi.StringInput `pulumi:"cniType"`
+}
+
+func (ClusterClusterPodNetworkOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterClusterPodNetworkOption)(nil)).Elem()
+}
+
+func (i ClusterClusterPodNetworkOptionArgs) ToClusterClusterPodNetworkOptionOutput() ClusterClusterPodNetworkOptionOutput {
+	return i.ToClusterClusterPodNetworkOptionOutputWithContext(context.Background())
+}
+
+func (i ClusterClusterPodNetworkOptionArgs) ToClusterClusterPodNetworkOptionOutputWithContext(ctx context.Context) ClusterClusterPodNetworkOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterClusterPodNetworkOptionOutput)
+}
+
+// ClusterClusterPodNetworkOptionArrayInput is an input type that accepts ClusterClusterPodNetworkOptionArray and ClusterClusterPodNetworkOptionArrayOutput values.
+// You can construct a concrete instance of `ClusterClusterPodNetworkOptionArrayInput` via:
+//
+//          ClusterClusterPodNetworkOptionArray{ ClusterClusterPodNetworkOptionArgs{...} }
+type ClusterClusterPodNetworkOptionArrayInput interface {
+	pulumi.Input
+
+	ToClusterClusterPodNetworkOptionArrayOutput() ClusterClusterPodNetworkOptionArrayOutput
+	ToClusterClusterPodNetworkOptionArrayOutputWithContext(context.Context) ClusterClusterPodNetworkOptionArrayOutput
+}
+
+type ClusterClusterPodNetworkOptionArray []ClusterClusterPodNetworkOptionInput
+
+func (ClusterClusterPodNetworkOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ClusterClusterPodNetworkOption)(nil)).Elem()
+}
+
+func (i ClusterClusterPodNetworkOptionArray) ToClusterClusterPodNetworkOptionArrayOutput() ClusterClusterPodNetworkOptionArrayOutput {
+	return i.ToClusterClusterPodNetworkOptionArrayOutputWithContext(context.Background())
+}
+
+func (i ClusterClusterPodNetworkOptionArray) ToClusterClusterPodNetworkOptionArrayOutputWithContext(ctx context.Context) ClusterClusterPodNetworkOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterClusterPodNetworkOptionArrayOutput)
+}
+
+type ClusterClusterPodNetworkOptionOutput struct{ *pulumi.OutputState }
+
+func (ClusterClusterPodNetworkOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterClusterPodNetworkOption)(nil)).Elem()
+}
+
+func (o ClusterClusterPodNetworkOptionOutput) ToClusterClusterPodNetworkOptionOutput() ClusterClusterPodNetworkOptionOutput {
+	return o
+}
+
+func (o ClusterClusterPodNetworkOptionOutput) ToClusterClusterPodNetworkOptionOutputWithContext(ctx context.Context) ClusterClusterPodNetworkOptionOutput {
+	return o
+}
+
+// The CNI used by the node pools of this cluster
+func (o ClusterClusterPodNetworkOptionOutput) CniType() pulumi.StringOutput {
+	return o.ApplyT(func(v ClusterClusterPodNetworkOption) string { return v.CniType }).(pulumi.StringOutput)
+}
+
+type ClusterClusterPodNetworkOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (ClusterClusterPodNetworkOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ClusterClusterPodNetworkOption)(nil)).Elem()
+}
+
+func (o ClusterClusterPodNetworkOptionArrayOutput) ToClusterClusterPodNetworkOptionArrayOutput() ClusterClusterPodNetworkOptionArrayOutput {
+	return o
+}
+
+func (o ClusterClusterPodNetworkOptionArrayOutput) ToClusterClusterPodNetworkOptionArrayOutputWithContext(ctx context.Context) ClusterClusterPodNetworkOptionArrayOutput {
+	return o
+}
+
+func (o ClusterClusterPodNetworkOptionArrayOutput) Index(i pulumi.IntInput) ClusterClusterPodNetworkOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ClusterClusterPodNetworkOption {
+		return vs[0].([]ClusterClusterPodNetworkOption)[vs[1].(int)]
+	}).(ClusterClusterPodNetworkOptionOutput)
+}
+
 type ClusterEndpoint struct {
 	// The non-native networking Kubernetes API server endpoint.
 	Kubernetes *string `pulumi:"kubernetes"`
@@ -1855,7 +1952,7 @@ type NodePoolNode struct {
 	PrivateIp *string `pulumi:"privateIp"`
 	// The public IP address of this node.
 	PublicIp *string `pulumi:"publicIp"`
-	// The state of the node.
+	// The state of the nodepool.
 	State *string `pulumi:"state"`
 	// (Updatable) The OCID of the subnet in which to place nodes.
 	SubnetId *string `pulumi:"subnetId"`
@@ -1897,7 +1994,7 @@ type NodePoolNodeArgs struct {
 	PrivateIp pulumi.StringPtrInput `pulumi:"privateIp"`
 	// The public IP address of this node.
 	PublicIp pulumi.StringPtrInput `pulumi:"publicIp"`
-	// The state of the node.
+	// The state of the nodepool.
 	State pulumi.StringPtrInput `pulumi:"state"`
 	// (Updatable) The OCID of the subnet in which to place nodes.
 	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
@@ -2014,7 +2111,7 @@ func (o NodePoolNodeOutput) PublicIp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNode) *string { return v.PublicIp }).(pulumi.StringPtrOutput)
 }
 
-// The state of the node.
+// The state of the nodepool.
 func (o NodePoolNodeOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNode) *string { return v.State }).(pulumi.StringPtrOutput)
 }
@@ -2053,6 +2150,8 @@ type NodePoolNodeConfigDetails struct {
 	IsPvEncryptionInTransitEnabled *bool `pulumi:"isPvEncryptionInTransitEnabled"`
 	// (Updatable) The OCID of the Key Management Service key assigned to the boot volume.
 	KmsKeyId *string `pulumi:"kmsKeyId"`
+	// (Updatable) The CNI related configuration of pods in the node pool.
+	NodePoolPodNetworkOptionDetails *NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails `pulumi:"nodePoolPodNetworkOptionDetails"`
 	// (Updatable) The OCIDs of the Network Security Group(s) to associate nodes for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
 	NsgIds []string `pulumi:"nsgIds"`
 	// (Updatable) The placement configurations for the node pool. Provide one placement configuration for each availability domain in which you intend to launch a node.
@@ -2081,6 +2180,8 @@ type NodePoolNodeConfigDetailsArgs struct {
 	IsPvEncryptionInTransitEnabled pulumi.BoolPtrInput `pulumi:"isPvEncryptionInTransitEnabled"`
 	// (Updatable) The OCID of the Key Management Service key assigned to the boot volume.
 	KmsKeyId pulumi.StringPtrInput `pulumi:"kmsKeyId"`
+	// (Updatable) The CNI related configuration of pods in the node pool.
+	NodePoolPodNetworkOptionDetails NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrInput `pulumi:"nodePoolPodNetworkOptionDetails"`
 	// (Updatable) The OCIDs of the Network Security Group(s) to associate nodes for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// (Updatable) The placement configurations for the node pool. Provide one placement configuration for each availability domain in which you intend to launch a node.
@@ -2186,6 +2287,13 @@ func (o NodePoolNodeConfigDetailsOutput) KmsKeyId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfigDetails) *string { return v.KmsKeyId }).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) The CNI related configuration of pods in the node pool.
+func (o NodePoolNodeConfigDetailsOutput) NodePoolPodNetworkOptionDetails() NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutput {
+	return o.ApplyT(func(v NodePoolNodeConfigDetails) *NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails {
+		return v.NodePoolPodNetworkOptionDetails
+	}).(NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutput)
+}
+
 // (Updatable) The OCIDs of the Network Security Group(s) to associate nodes for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
 func (o NodePoolNodeConfigDetailsOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v NodePoolNodeConfigDetails) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
@@ -2267,6 +2375,16 @@ func (o NodePoolNodeConfigDetailsPtrOutput) KmsKeyId() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) The CNI related configuration of pods in the node pool.
+func (o NodePoolNodeConfigDetailsPtrOutput) NodePoolPodNetworkOptionDetails() NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutput {
+	return o.ApplyT(func(v *NodePoolNodeConfigDetails) *NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails {
+		if v == nil {
+			return nil
+		}
+		return v.NodePoolPodNetworkOptionDetails
+	}).(NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutput)
+}
+
 // (Updatable) The OCIDs of the Network Security Group(s) to associate nodes for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
 func (o NodePoolNodeConfigDetailsPtrOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfigDetails) []string {
@@ -2297,11 +2415,207 @@ func (o NodePoolNodeConfigDetailsPtrOutput) Size() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
+type NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails struct {
+	// (Updatable) The CNI plugin used by this node pool
+	CniType string `pulumi:"cniType"`
+	// (Updatable) The max number of pods per node in the node pool. This value will be limited by the number of VNICs attachable to the node pool shape
+	MaxPodsPerNode *int `pulumi:"maxPodsPerNode"`
+	// (Updatable) The OCIDs of the Network Security Group(s) to associate pods for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+	PodNsgIds []string `pulumi:"podNsgIds"`
+	// (Updatable) The OCIDs of the subnets in which to place pods for this node pool. This can be one of the node pool subnet IDs
+	PodSubnetIds []string `pulumi:"podSubnetIds"`
+}
+
+// NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsInput is an input type that accepts NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs and NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsOutput values.
+// You can construct a concrete instance of `NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsInput` via:
+//
+//          NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs{...}
+type NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsInput interface {
+	pulumi.Input
+
+	ToNodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsOutput() NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsOutput
+	ToNodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsOutputWithContext(context.Context) NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsOutput
+}
+
+type NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs struct {
+	// (Updatable) The CNI plugin used by this node pool
+	CniType pulumi.StringInput `pulumi:"cniType"`
+	// (Updatable) The max number of pods per node in the node pool. This value will be limited by the number of VNICs attachable to the node pool shape
+	MaxPodsPerNode pulumi.IntPtrInput `pulumi:"maxPodsPerNode"`
+	// (Updatable) The OCIDs of the Network Security Group(s) to associate pods for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+	PodNsgIds pulumi.StringArrayInput `pulumi:"podNsgIds"`
+	// (Updatable) The OCIDs of the subnets in which to place pods for this node pool. This can be one of the node pool subnet IDs
+	PodSubnetIds pulumi.StringArrayInput `pulumi:"podSubnetIds"`
+}
+
+func (NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails)(nil)).Elem()
+}
+
+func (i NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs) ToNodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsOutput() NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsOutput {
+	return i.ToNodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsOutputWithContext(context.Background())
+}
+
+func (i NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs) ToNodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsOutputWithContext(ctx context.Context) NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsOutput)
+}
+
+func (i NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs) ToNodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutput() NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutput {
+	return i.ToNodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs) ToNodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutputWithContext(ctx context.Context) NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsOutput).ToNodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutputWithContext(ctx)
+}
+
+// NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrInput is an input type that accepts NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs, NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtr and NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutput values.
+// You can construct a concrete instance of `NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrInput` via:
+//
+//          NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs{...}
+//
+//  or:
+//
+//          nil
+type NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrInput interface {
+	pulumi.Input
+
+	ToNodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutput() NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutput
+	ToNodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutputWithContext(context.Context) NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutput
+}
+
+type nodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrType NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs
+
+func NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtr(v *NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs) NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrInput {
+	return (*nodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrType)(v)
+}
+
+func (*nodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails)(nil)).Elem()
+}
+
+func (i *nodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrType) ToNodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutput() NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutput {
+	return i.ToNodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *nodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrType) ToNodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutputWithContext(ctx context.Context) NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutput)
+}
+
+type NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsOutput struct{ *pulumi.OutputState }
+
+func (NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails)(nil)).Elem()
+}
+
+func (o NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsOutput) ToNodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsOutput() NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsOutput {
+	return o
+}
+
+func (o NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsOutput) ToNodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsOutputWithContext(ctx context.Context) NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsOutput {
+	return o
+}
+
+func (o NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsOutput) ToNodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutput() NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutput {
+	return o.ToNodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsOutput) ToNodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutputWithContext(ctx context.Context) NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails) *NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails {
+		return &v
+	}).(NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutput)
+}
+
+// (Updatable) The CNI plugin used by this node pool
+func (o NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsOutput) CniType() pulumi.StringOutput {
+	return o.ApplyT(func(v NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails) string { return v.CniType }).(pulumi.StringOutput)
+}
+
+// (Updatable) The max number of pods per node in the node pool. This value will be limited by the number of VNICs attachable to the node pool shape
+func (o NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsOutput) MaxPodsPerNode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails) *int { return v.MaxPodsPerNode }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The OCIDs of the Network Security Group(s) to associate pods for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+func (o NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsOutput) PodNsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails) []string { return v.PodNsgIds }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The OCIDs of the subnets in which to place pods for this node pool. This can be one of the node pool subnet IDs
+func (o NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsOutput) PodSubnetIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails) []string { return v.PodSubnetIds }).(pulumi.StringArrayOutput)
+}
+
+type NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails)(nil)).Elem()
+}
+
+func (o NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutput) ToNodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutput() NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutput {
+	return o
+}
+
+func (o NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutput) ToNodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutputWithContext(ctx context.Context) NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutput {
+	return o
+}
+
+func (o NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutput) Elem() NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsOutput {
+	return o.ApplyT(func(v *NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails) NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails {
+		if v != nil {
+			return *v
+		}
+		var ret NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails
+		return ret
+	}).(NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsOutput)
+}
+
+// (Updatable) The CNI plugin used by this node pool
+func (o NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutput) CniType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.CniType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The max number of pods per node in the node pool. This value will be limited by the number of VNICs attachable to the node pool shape
+func (o NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutput) MaxPodsPerNode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MaxPodsPerNode
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The OCIDs of the Network Security Group(s) to associate pods for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+func (o NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutput) PodNsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails) []string {
+		if v == nil {
+			return nil
+		}
+		return v.PodNsgIds
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The OCIDs of the subnets in which to place pods for this node pool. This can be one of the node pool subnet IDs
+func (o NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutput) PodSubnetIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails) []string {
+		if v == nil {
+			return nil
+		}
+		return v.PodSubnetIds
+	}).(pulumi.StringArrayOutput)
+}
+
 type NodePoolNodeConfigDetailsPlacementConfig struct {
 	// (Updatable) The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// (Updatable) The OCID of the compute capacity reservation in which to place the compute instance.
 	CapacityReservationId *string `pulumi:"capacityReservationId"`
+	// (Updatable) A list of fault domains in which to place nodes.
+	FaultDomains []string `pulumi:"faultDomains"`
 	// (Updatable) The OCID of the subnet in which to place nodes.
 	SubnetId string `pulumi:"subnetId"`
 }
@@ -2322,6 +2636,8 @@ type NodePoolNodeConfigDetailsPlacementConfigArgs struct {
 	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
 	// (Updatable) The OCID of the compute capacity reservation in which to place the compute instance.
 	CapacityReservationId pulumi.StringPtrInput `pulumi:"capacityReservationId"`
+	// (Updatable) A list of fault domains in which to place nodes.
+	FaultDomains pulumi.StringArrayInput `pulumi:"faultDomains"`
 	// (Updatable) The OCID of the subnet in which to place nodes.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 }
@@ -2385,6 +2701,11 @@ func (o NodePoolNodeConfigDetailsPlacementConfigOutput) AvailabilityDomain() pul
 // (Updatable) The OCID of the compute capacity reservation in which to place the compute instance.
 func (o NodePoolNodeConfigDetailsPlacementConfigOutput) CapacityReservationId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfigDetailsPlacementConfig) *string { return v.CapacityReservationId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) A list of fault domains in which to place nodes.
+func (o NodePoolNodeConfigDetailsPlacementConfigOutput) FaultDomains() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v NodePoolNodeConfigDetailsPlacementConfig) []string { return v.FaultDomains }).(pulumi.StringArrayOutput)
 }
 
 // (Updatable) The OCID of the subnet in which to place nodes.
@@ -2525,6 +2846,162 @@ func (o NodePoolNodeErrorArrayOutput) Index(i pulumi.IntInput) NodePoolNodeError
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NodePoolNodeError {
 		return vs[0].([]NodePoolNodeError)[vs[1].(int)]
 	}).(NodePoolNodeErrorOutput)
+}
+
+type NodePoolNodeEvictionNodePoolSettings struct {
+	// (Updatable) Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
+	EvictionGraceDuration *string `pulumi:"evictionGraceDuration"`
+	// (Updatable) If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
+	IsForceDeleteAfterGraceDuration *bool `pulumi:"isForceDeleteAfterGraceDuration"`
+}
+
+// NodePoolNodeEvictionNodePoolSettingsInput is an input type that accepts NodePoolNodeEvictionNodePoolSettingsArgs and NodePoolNodeEvictionNodePoolSettingsOutput values.
+// You can construct a concrete instance of `NodePoolNodeEvictionNodePoolSettingsInput` via:
+//
+//          NodePoolNodeEvictionNodePoolSettingsArgs{...}
+type NodePoolNodeEvictionNodePoolSettingsInput interface {
+	pulumi.Input
+
+	ToNodePoolNodeEvictionNodePoolSettingsOutput() NodePoolNodeEvictionNodePoolSettingsOutput
+	ToNodePoolNodeEvictionNodePoolSettingsOutputWithContext(context.Context) NodePoolNodeEvictionNodePoolSettingsOutput
+}
+
+type NodePoolNodeEvictionNodePoolSettingsArgs struct {
+	// (Updatable) Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
+	EvictionGraceDuration pulumi.StringPtrInput `pulumi:"evictionGraceDuration"`
+	// (Updatable) If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
+	IsForceDeleteAfterGraceDuration pulumi.BoolPtrInput `pulumi:"isForceDeleteAfterGraceDuration"`
+}
+
+func (NodePoolNodeEvictionNodePoolSettingsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NodePoolNodeEvictionNodePoolSettings)(nil)).Elem()
+}
+
+func (i NodePoolNodeEvictionNodePoolSettingsArgs) ToNodePoolNodeEvictionNodePoolSettingsOutput() NodePoolNodeEvictionNodePoolSettingsOutput {
+	return i.ToNodePoolNodeEvictionNodePoolSettingsOutputWithContext(context.Background())
+}
+
+func (i NodePoolNodeEvictionNodePoolSettingsArgs) ToNodePoolNodeEvictionNodePoolSettingsOutputWithContext(ctx context.Context) NodePoolNodeEvictionNodePoolSettingsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodeEvictionNodePoolSettingsOutput)
+}
+
+func (i NodePoolNodeEvictionNodePoolSettingsArgs) ToNodePoolNodeEvictionNodePoolSettingsPtrOutput() NodePoolNodeEvictionNodePoolSettingsPtrOutput {
+	return i.ToNodePoolNodeEvictionNodePoolSettingsPtrOutputWithContext(context.Background())
+}
+
+func (i NodePoolNodeEvictionNodePoolSettingsArgs) ToNodePoolNodeEvictionNodePoolSettingsPtrOutputWithContext(ctx context.Context) NodePoolNodeEvictionNodePoolSettingsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodeEvictionNodePoolSettingsOutput).ToNodePoolNodeEvictionNodePoolSettingsPtrOutputWithContext(ctx)
+}
+
+// NodePoolNodeEvictionNodePoolSettingsPtrInput is an input type that accepts NodePoolNodeEvictionNodePoolSettingsArgs, NodePoolNodeEvictionNodePoolSettingsPtr and NodePoolNodeEvictionNodePoolSettingsPtrOutput values.
+// You can construct a concrete instance of `NodePoolNodeEvictionNodePoolSettingsPtrInput` via:
+//
+//          NodePoolNodeEvictionNodePoolSettingsArgs{...}
+//
+//  or:
+//
+//          nil
+type NodePoolNodeEvictionNodePoolSettingsPtrInput interface {
+	pulumi.Input
+
+	ToNodePoolNodeEvictionNodePoolSettingsPtrOutput() NodePoolNodeEvictionNodePoolSettingsPtrOutput
+	ToNodePoolNodeEvictionNodePoolSettingsPtrOutputWithContext(context.Context) NodePoolNodeEvictionNodePoolSettingsPtrOutput
+}
+
+type nodePoolNodeEvictionNodePoolSettingsPtrType NodePoolNodeEvictionNodePoolSettingsArgs
+
+func NodePoolNodeEvictionNodePoolSettingsPtr(v *NodePoolNodeEvictionNodePoolSettingsArgs) NodePoolNodeEvictionNodePoolSettingsPtrInput {
+	return (*nodePoolNodeEvictionNodePoolSettingsPtrType)(v)
+}
+
+func (*nodePoolNodeEvictionNodePoolSettingsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**NodePoolNodeEvictionNodePoolSettings)(nil)).Elem()
+}
+
+func (i *nodePoolNodeEvictionNodePoolSettingsPtrType) ToNodePoolNodeEvictionNodePoolSettingsPtrOutput() NodePoolNodeEvictionNodePoolSettingsPtrOutput {
+	return i.ToNodePoolNodeEvictionNodePoolSettingsPtrOutputWithContext(context.Background())
+}
+
+func (i *nodePoolNodeEvictionNodePoolSettingsPtrType) ToNodePoolNodeEvictionNodePoolSettingsPtrOutputWithContext(ctx context.Context) NodePoolNodeEvictionNodePoolSettingsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodeEvictionNodePoolSettingsPtrOutput)
+}
+
+type NodePoolNodeEvictionNodePoolSettingsOutput struct{ *pulumi.OutputState }
+
+func (NodePoolNodeEvictionNodePoolSettingsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NodePoolNodeEvictionNodePoolSettings)(nil)).Elem()
+}
+
+func (o NodePoolNodeEvictionNodePoolSettingsOutput) ToNodePoolNodeEvictionNodePoolSettingsOutput() NodePoolNodeEvictionNodePoolSettingsOutput {
+	return o
+}
+
+func (o NodePoolNodeEvictionNodePoolSettingsOutput) ToNodePoolNodeEvictionNodePoolSettingsOutputWithContext(ctx context.Context) NodePoolNodeEvictionNodePoolSettingsOutput {
+	return o
+}
+
+func (o NodePoolNodeEvictionNodePoolSettingsOutput) ToNodePoolNodeEvictionNodePoolSettingsPtrOutput() NodePoolNodeEvictionNodePoolSettingsPtrOutput {
+	return o.ToNodePoolNodeEvictionNodePoolSettingsPtrOutputWithContext(context.Background())
+}
+
+func (o NodePoolNodeEvictionNodePoolSettingsOutput) ToNodePoolNodeEvictionNodePoolSettingsPtrOutputWithContext(ctx context.Context) NodePoolNodeEvictionNodePoolSettingsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v NodePoolNodeEvictionNodePoolSettings) *NodePoolNodeEvictionNodePoolSettings {
+		return &v
+	}).(NodePoolNodeEvictionNodePoolSettingsPtrOutput)
+}
+
+// (Updatable) Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
+func (o NodePoolNodeEvictionNodePoolSettingsOutput) EvictionGraceDuration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NodePoolNodeEvictionNodePoolSettings) *string { return v.EvictionGraceDuration }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
+func (o NodePoolNodeEvictionNodePoolSettingsOutput) IsForceDeleteAfterGraceDuration() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v NodePoolNodeEvictionNodePoolSettings) *bool { return v.IsForceDeleteAfterGraceDuration }).(pulumi.BoolPtrOutput)
+}
+
+type NodePoolNodeEvictionNodePoolSettingsPtrOutput struct{ *pulumi.OutputState }
+
+func (NodePoolNodeEvictionNodePoolSettingsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**NodePoolNodeEvictionNodePoolSettings)(nil)).Elem()
+}
+
+func (o NodePoolNodeEvictionNodePoolSettingsPtrOutput) ToNodePoolNodeEvictionNodePoolSettingsPtrOutput() NodePoolNodeEvictionNodePoolSettingsPtrOutput {
+	return o
+}
+
+func (o NodePoolNodeEvictionNodePoolSettingsPtrOutput) ToNodePoolNodeEvictionNodePoolSettingsPtrOutputWithContext(ctx context.Context) NodePoolNodeEvictionNodePoolSettingsPtrOutput {
+	return o
+}
+
+func (o NodePoolNodeEvictionNodePoolSettingsPtrOutput) Elem() NodePoolNodeEvictionNodePoolSettingsOutput {
+	return o.ApplyT(func(v *NodePoolNodeEvictionNodePoolSettings) NodePoolNodeEvictionNodePoolSettings {
+		if v != nil {
+			return *v
+		}
+		var ret NodePoolNodeEvictionNodePoolSettings
+		return ret
+	}).(NodePoolNodeEvictionNodePoolSettingsOutput)
+}
+
+// (Updatable) Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
+func (o NodePoolNodeEvictionNodePoolSettingsPtrOutput) EvictionGraceDuration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NodePoolNodeEvictionNodePoolSettings) *string {
+		if v == nil {
+			return nil
+		}
+		return v.EvictionGraceDuration
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
+func (o NodePoolNodeEvictionNodePoolSettingsPtrOutput) IsForceDeleteAfterGraceDuration() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *NodePoolNodeEvictionNodePoolSettings) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsForceDeleteAfterGraceDuration
+	}).(pulumi.BoolPtrOutput)
 }
 
 type NodePoolNodeShapeConfig struct {
@@ -2973,9 +3450,108 @@ func (o NodePoolNodeSourceDetailsPtrOutput) SourceType() pulumi.StringPtrOutput 
 	}).(pulumi.StringPtrOutput)
 }
 
+type GetClusterOptionClusterPodNetworkOption struct {
+	// The CNI used by the node pools of this cluster
+	CniType string `pulumi:"cniType"`
+}
+
+// GetClusterOptionClusterPodNetworkOptionInput is an input type that accepts GetClusterOptionClusterPodNetworkOptionArgs and GetClusterOptionClusterPodNetworkOptionOutput values.
+// You can construct a concrete instance of `GetClusterOptionClusterPodNetworkOptionInput` via:
+//
+//          GetClusterOptionClusterPodNetworkOptionArgs{...}
+type GetClusterOptionClusterPodNetworkOptionInput interface {
+	pulumi.Input
+
+	ToGetClusterOptionClusterPodNetworkOptionOutput() GetClusterOptionClusterPodNetworkOptionOutput
+	ToGetClusterOptionClusterPodNetworkOptionOutputWithContext(context.Context) GetClusterOptionClusterPodNetworkOptionOutput
+}
+
+type GetClusterOptionClusterPodNetworkOptionArgs struct {
+	// The CNI used by the node pools of this cluster
+	CniType pulumi.StringInput `pulumi:"cniType"`
+}
+
+func (GetClusterOptionClusterPodNetworkOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterOptionClusterPodNetworkOption)(nil)).Elem()
+}
+
+func (i GetClusterOptionClusterPodNetworkOptionArgs) ToGetClusterOptionClusterPodNetworkOptionOutput() GetClusterOptionClusterPodNetworkOptionOutput {
+	return i.ToGetClusterOptionClusterPodNetworkOptionOutputWithContext(context.Background())
+}
+
+func (i GetClusterOptionClusterPodNetworkOptionArgs) ToGetClusterOptionClusterPodNetworkOptionOutputWithContext(ctx context.Context) GetClusterOptionClusterPodNetworkOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterOptionClusterPodNetworkOptionOutput)
+}
+
+// GetClusterOptionClusterPodNetworkOptionArrayInput is an input type that accepts GetClusterOptionClusterPodNetworkOptionArray and GetClusterOptionClusterPodNetworkOptionArrayOutput values.
+// You can construct a concrete instance of `GetClusterOptionClusterPodNetworkOptionArrayInput` via:
+//
+//          GetClusterOptionClusterPodNetworkOptionArray{ GetClusterOptionClusterPodNetworkOptionArgs{...} }
+type GetClusterOptionClusterPodNetworkOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetClusterOptionClusterPodNetworkOptionArrayOutput() GetClusterOptionClusterPodNetworkOptionArrayOutput
+	ToGetClusterOptionClusterPodNetworkOptionArrayOutputWithContext(context.Context) GetClusterOptionClusterPodNetworkOptionArrayOutput
+}
+
+type GetClusterOptionClusterPodNetworkOptionArray []GetClusterOptionClusterPodNetworkOptionInput
+
+func (GetClusterOptionClusterPodNetworkOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterOptionClusterPodNetworkOption)(nil)).Elem()
+}
+
+func (i GetClusterOptionClusterPodNetworkOptionArray) ToGetClusterOptionClusterPodNetworkOptionArrayOutput() GetClusterOptionClusterPodNetworkOptionArrayOutput {
+	return i.ToGetClusterOptionClusterPodNetworkOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetClusterOptionClusterPodNetworkOptionArray) ToGetClusterOptionClusterPodNetworkOptionArrayOutputWithContext(ctx context.Context) GetClusterOptionClusterPodNetworkOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterOptionClusterPodNetworkOptionArrayOutput)
+}
+
+type GetClusterOptionClusterPodNetworkOptionOutput struct{ *pulumi.OutputState }
+
+func (GetClusterOptionClusterPodNetworkOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterOptionClusterPodNetworkOption)(nil)).Elem()
+}
+
+func (o GetClusterOptionClusterPodNetworkOptionOutput) ToGetClusterOptionClusterPodNetworkOptionOutput() GetClusterOptionClusterPodNetworkOptionOutput {
+	return o
+}
+
+func (o GetClusterOptionClusterPodNetworkOptionOutput) ToGetClusterOptionClusterPodNetworkOptionOutputWithContext(ctx context.Context) GetClusterOptionClusterPodNetworkOptionOutput {
+	return o
+}
+
+// The CNI used by the node pools of this cluster
+func (o GetClusterOptionClusterPodNetworkOptionOutput) CniType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterOptionClusterPodNetworkOption) string { return v.CniType }).(pulumi.StringOutput)
+}
+
+type GetClusterOptionClusterPodNetworkOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClusterOptionClusterPodNetworkOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterOptionClusterPodNetworkOption)(nil)).Elem()
+}
+
+func (o GetClusterOptionClusterPodNetworkOptionArrayOutput) ToGetClusterOptionClusterPodNetworkOptionArrayOutput() GetClusterOptionClusterPodNetworkOptionArrayOutput {
+	return o
+}
+
+func (o GetClusterOptionClusterPodNetworkOptionArrayOutput) ToGetClusterOptionClusterPodNetworkOptionArrayOutputWithContext(ctx context.Context) GetClusterOptionClusterPodNetworkOptionArrayOutput {
+	return o
+}
+
+func (o GetClusterOptionClusterPodNetworkOptionArrayOutput) Index(i pulumi.IntInput) GetClusterOptionClusterPodNetworkOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClusterOptionClusterPodNetworkOption {
+		return vs[0].([]GetClusterOptionClusterPodNetworkOption)[vs[1].(int)]
+	}).(GetClusterOptionClusterPodNetworkOptionOutput)
+}
+
 type GetClustersCluster struct {
 	// Available Kubernetes versions to which the clusters masters may be upgraded.
 	AvailableKubernetesUpgrades []string `pulumi:"availableKubernetesUpgrades"`
+	// Available CNIs and network options for existing and new node pools of the cluster
+	ClusterPodNetworkOptions []GetClustersClusterClusterPodNetworkOption `pulumi:"clusterPodNetworkOptions"`
 	// The OCID of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -3022,6 +3598,8 @@ type GetClustersClusterInput interface {
 type GetClustersClusterArgs struct {
 	// Available Kubernetes versions to which the clusters masters may be upgraded.
 	AvailableKubernetesUpgrades pulumi.StringArrayInput `pulumi:"availableKubernetesUpgrades"`
+	// Available CNIs and network options for existing and new node pools of the cluster
+	ClusterPodNetworkOptions GetClustersClusterClusterPodNetworkOptionArrayInput `pulumi:"clusterPodNetworkOptions"`
 	// The OCID of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -3108,6 +3686,13 @@ func (o GetClustersClusterOutput) ToGetClustersClusterOutputWithContext(ctx cont
 // Available Kubernetes versions to which the clusters masters may be upgraded.
 func (o GetClustersClusterOutput) AvailableKubernetesUpgrades() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetClustersCluster) []string { return v.AvailableKubernetesUpgrades }).(pulumi.StringArrayOutput)
+}
+
+// Available CNIs and network options for existing and new node pools of the cluster
+func (o GetClustersClusterOutput) ClusterPodNetworkOptions() GetClustersClusterClusterPodNetworkOptionArrayOutput {
+	return o.ApplyT(func(v GetClustersCluster) []GetClustersClusterClusterPodNetworkOption {
+		return v.ClusterPodNetworkOptions
+	}).(GetClustersClusterClusterPodNetworkOptionArrayOutput)
 }
 
 // The OCID of the compartment.
@@ -3203,6 +3788,103 @@ func (o GetClustersClusterArrayOutput) Index(i pulumi.IntInput) GetClustersClust
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersCluster {
 		return vs[0].([]GetClustersCluster)[vs[1].(int)]
 	}).(GetClustersClusterOutput)
+}
+
+type GetClustersClusterClusterPodNetworkOption struct {
+	// The CNI used by the node pools of this cluster
+	CniType string `pulumi:"cniType"`
+}
+
+// GetClustersClusterClusterPodNetworkOptionInput is an input type that accepts GetClustersClusterClusterPodNetworkOptionArgs and GetClustersClusterClusterPodNetworkOptionOutput values.
+// You can construct a concrete instance of `GetClustersClusterClusterPodNetworkOptionInput` via:
+//
+//          GetClustersClusterClusterPodNetworkOptionArgs{...}
+type GetClustersClusterClusterPodNetworkOptionInput interface {
+	pulumi.Input
+
+	ToGetClustersClusterClusterPodNetworkOptionOutput() GetClustersClusterClusterPodNetworkOptionOutput
+	ToGetClustersClusterClusterPodNetworkOptionOutputWithContext(context.Context) GetClustersClusterClusterPodNetworkOptionOutput
+}
+
+type GetClustersClusterClusterPodNetworkOptionArgs struct {
+	// The CNI used by the node pools of this cluster
+	CniType pulumi.StringInput `pulumi:"cniType"`
+}
+
+func (GetClustersClusterClusterPodNetworkOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersClusterClusterPodNetworkOption)(nil)).Elem()
+}
+
+func (i GetClustersClusterClusterPodNetworkOptionArgs) ToGetClustersClusterClusterPodNetworkOptionOutput() GetClustersClusterClusterPodNetworkOptionOutput {
+	return i.ToGetClustersClusterClusterPodNetworkOptionOutputWithContext(context.Background())
+}
+
+func (i GetClustersClusterClusterPodNetworkOptionArgs) ToGetClustersClusterClusterPodNetworkOptionOutputWithContext(ctx context.Context) GetClustersClusterClusterPodNetworkOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterClusterPodNetworkOptionOutput)
+}
+
+// GetClustersClusterClusterPodNetworkOptionArrayInput is an input type that accepts GetClustersClusterClusterPodNetworkOptionArray and GetClustersClusterClusterPodNetworkOptionArrayOutput values.
+// You can construct a concrete instance of `GetClustersClusterClusterPodNetworkOptionArrayInput` via:
+//
+//          GetClustersClusterClusterPodNetworkOptionArray{ GetClustersClusterClusterPodNetworkOptionArgs{...} }
+type GetClustersClusterClusterPodNetworkOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetClustersClusterClusterPodNetworkOptionArrayOutput() GetClustersClusterClusterPodNetworkOptionArrayOutput
+	ToGetClustersClusterClusterPodNetworkOptionArrayOutputWithContext(context.Context) GetClustersClusterClusterPodNetworkOptionArrayOutput
+}
+
+type GetClustersClusterClusterPodNetworkOptionArray []GetClustersClusterClusterPodNetworkOptionInput
+
+func (GetClustersClusterClusterPodNetworkOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersClusterClusterPodNetworkOption)(nil)).Elem()
+}
+
+func (i GetClustersClusterClusterPodNetworkOptionArray) ToGetClustersClusterClusterPodNetworkOptionArrayOutput() GetClustersClusterClusterPodNetworkOptionArrayOutput {
+	return i.ToGetClustersClusterClusterPodNetworkOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetClustersClusterClusterPodNetworkOptionArray) ToGetClustersClusterClusterPodNetworkOptionArrayOutputWithContext(ctx context.Context) GetClustersClusterClusterPodNetworkOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterClusterPodNetworkOptionArrayOutput)
+}
+
+type GetClustersClusterClusterPodNetworkOptionOutput struct{ *pulumi.OutputState }
+
+func (GetClustersClusterClusterPodNetworkOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersClusterClusterPodNetworkOption)(nil)).Elem()
+}
+
+func (o GetClustersClusterClusterPodNetworkOptionOutput) ToGetClustersClusterClusterPodNetworkOptionOutput() GetClustersClusterClusterPodNetworkOptionOutput {
+	return o
+}
+
+func (o GetClustersClusterClusterPodNetworkOptionOutput) ToGetClustersClusterClusterPodNetworkOptionOutputWithContext(ctx context.Context) GetClustersClusterClusterPodNetworkOptionOutput {
+	return o
+}
+
+// The CNI used by the node pools of this cluster
+func (o GetClustersClusterClusterPodNetworkOptionOutput) CniType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersClusterClusterPodNetworkOption) string { return v.CniType }).(pulumi.StringOutput)
+}
+
+type GetClustersClusterClusterPodNetworkOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClustersClusterClusterPodNetworkOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersClusterClusterPodNetworkOption)(nil)).Elem()
+}
+
+func (o GetClustersClusterClusterPodNetworkOptionArrayOutput) ToGetClustersClusterClusterPodNetworkOptionArrayOutput() GetClustersClusterClusterPodNetworkOptionArrayOutput {
+	return o
+}
+
+func (o GetClustersClusterClusterPodNetworkOptionArrayOutput) ToGetClustersClusterClusterPodNetworkOptionArrayOutputWithContext(ctx context.Context) GetClustersClusterClusterPodNetworkOptionArrayOutput {
+	return o
+}
+
+func (o GetClustersClusterClusterPodNetworkOptionArrayOutput) Index(i pulumi.IntInput) GetClustersClusterClusterPodNetworkOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersClusterClusterPodNetworkOption {
+		return vs[0].([]GetClustersClusterClusterPodNetworkOption)[vs[1].(int)]
+	}).(GetClustersClusterClusterPodNetworkOptionOutput)
 }
 
 type GetClustersClusterEndpoint struct {
@@ -4727,7 +5409,7 @@ type GetNodePoolNode struct {
 	PrivateIp string `pulumi:"privateIp"`
 	// The public IP address of this node.
 	PublicIp string `pulumi:"publicIp"`
-	// The state of the node.
+	// The state of the nodepool.
 	State string `pulumi:"state"`
 	// The OCID of the subnet in which this node is placed.
 	SubnetId string `pulumi:"subnetId"`
@@ -4769,7 +5451,7 @@ type GetNodePoolNodeArgs struct {
 	PrivateIp pulumi.StringInput `pulumi:"privateIp"`
 	// The public IP address of this node.
 	PublicIp pulumi.StringInput `pulumi:"publicIp"`
-	// The state of the node.
+	// The state of the nodepool.
 	State pulumi.StringInput `pulumi:"state"`
 	// The OCID of the subnet in which this node is placed.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
@@ -4886,7 +5568,7 @@ func (o GetNodePoolNodeOutput) PublicIp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolNode) string { return v.PublicIp }).(pulumi.StringOutput)
 }
 
-// The state of the node.
+// The state of the nodepool.
 func (o GetNodePoolNodeOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolNode) string { return v.State }).(pulumi.StringOutput)
 }
@@ -4925,6 +5607,8 @@ type GetNodePoolNodeConfigDetail struct {
 	IsPvEncryptionInTransitEnabled bool `pulumi:"isPvEncryptionInTransitEnabled"`
 	// The OCID of the Key Management Service key assigned to the boot volume.
 	KmsKeyId string `pulumi:"kmsKeyId"`
+	// The CNI related configuration of pods in the node pool.
+	NodePoolPodNetworkOptionDetails []GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail `pulumi:"nodePoolPodNetworkOptionDetails"`
 	// The OCIDs of the Network Security Group(s) to associate nodes for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
 	NsgIds []string `pulumi:"nsgIds"`
 	// The placement configurations for the node pool. Provide one placement configuration for each availability domain in which you intend to launch a node.
@@ -4953,6 +5637,8 @@ type GetNodePoolNodeConfigDetailArgs struct {
 	IsPvEncryptionInTransitEnabled pulumi.BoolInput `pulumi:"isPvEncryptionInTransitEnabled"`
 	// The OCID of the Key Management Service key assigned to the boot volume.
 	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
+	// The CNI related configuration of pods in the node pool.
+	NodePoolPodNetworkOptionDetails GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayInput `pulumi:"nodePoolPodNetworkOptionDetails"`
 	// The OCIDs of the Network Security Group(s) to associate nodes for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// The placement configurations for the node pool. Provide one placement configuration for each availability domain in which you intend to launch a node.
@@ -5032,6 +5718,13 @@ func (o GetNodePoolNodeConfigDetailOutput) KmsKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfigDetail) string { return v.KmsKeyId }).(pulumi.StringOutput)
 }
 
+// The CNI related configuration of pods in the node pool.
+func (o GetNodePoolNodeConfigDetailOutput) NodePoolPodNetworkOptionDetails() GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput {
+	return o.ApplyT(func(v GetNodePoolNodeConfigDetail) []GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail {
+		return v.NodePoolPodNetworkOptionDetails
+	}).(GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput)
+}
+
 // The OCIDs of the Network Security Group(s) to associate nodes for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
 func (o GetNodePoolNodeConfigDetailOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfigDetail) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
@@ -5069,11 +5762,137 @@ func (o GetNodePoolNodeConfigDetailArrayOutput) Index(i pulumi.IntInput) GetNode
 	}).(GetNodePoolNodeConfigDetailOutput)
 }
 
+type GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail struct {
+	// The CNI plugin used by this node pool
+	CniType string `pulumi:"cniType"`
+	// The max number of pods per node in the node pool. This value will be limited by the number of VNICs attachable to the node pool shape
+	MaxPodsPerNode int `pulumi:"maxPodsPerNode"`
+	// The OCIDs of the Network Security Group(s) to associate pods for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+	PodNsgIds []string `pulumi:"podNsgIds"`
+	// The OCIDs of the subnets in which to place pods for this node pool. This can be one of the node pool subnet IDs
+	PodSubnetIds []string `pulumi:"podSubnetIds"`
+}
+
+// GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailInput is an input type that accepts GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArgs and GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput values.
+// You can construct a concrete instance of `GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailInput` via:
+//
+//          GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArgs{...}
+type GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailInput interface {
+	pulumi.Input
+
+	ToGetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput() GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput
+	ToGetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutputWithContext(context.Context) GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput
+}
+
+type GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArgs struct {
+	// The CNI plugin used by this node pool
+	CniType pulumi.StringInput `pulumi:"cniType"`
+	// The max number of pods per node in the node pool. This value will be limited by the number of VNICs attachable to the node pool shape
+	MaxPodsPerNode pulumi.IntInput `pulumi:"maxPodsPerNode"`
+	// The OCIDs of the Network Security Group(s) to associate pods for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+	PodNsgIds pulumi.StringArrayInput `pulumi:"podNsgIds"`
+	// The OCIDs of the subnets in which to place pods for this node pool. This can be one of the node pool subnet IDs
+	PodSubnetIds pulumi.StringArrayInput `pulumi:"podSubnetIds"`
+}
+
+func (GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail)(nil)).Elem()
+}
+
+func (i GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArgs) ToGetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput() GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput {
+	return i.ToGetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutputWithContext(context.Background())
+}
+
+func (i GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArgs) ToGetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutputWithContext(ctx context.Context) GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput)
+}
+
+// GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayInput is an input type that accepts GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArray and GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput values.
+// You can construct a concrete instance of `GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayInput` via:
+//
+//          GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArray{ GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArgs{...} }
+type GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput() GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput
+	ToGetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutputWithContext(context.Context) GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput
+}
+
+type GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArray []GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailInput
+
+func (GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail)(nil)).Elem()
+}
+
+func (i GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArray) ToGetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput() GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput {
+	return i.ToGetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArray) ToGetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutputWithContext(ctx context.Context) GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput)
+}
+
+type GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput struct{ *pulumi.OutputState }
+
+func (GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail)(nil)).Elem()
+}
+
+func (o GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput) ToGetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput() GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput {
+	return o
+}
+
+func (o GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput) ToGetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutputWithContext(ctx context.Context) GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput {
+	return o
+}
+
+// The CNI plugin used by this node pool
+func (o GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput) CniType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail) string { return v.CniType }).(pulumi.StringOutput)
+}
+
+// The max number of pods per node in the node pool. This value will be limited by the number of VNICs attachable to the node pool shape
+func (o GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput) MaxPodsPerNode() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail) int { return v.MaxPodsPerNode }).(pulumi.IntOutput)
+}
+
+// The OCIDs of the Network Security Group(s) to associate pods for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+func (o GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput) PodNsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail) []string { return v.PodNsgIds }).(pulumi.StringArrayOutput)
+}
+
+// The OCIDs of the subnets in which to place pods for this node pool. This can be one of the node pool subnet IDs
+func (o GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput) PodSubnetIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail) []string { return v.PodSubnetIds }).(pulumi.StringArrayOutput)
+}
+
+type GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail)(nil)).Elem()
+}
+
+func (o GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput) ToGetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput() GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput {
+	return o
+}
+
+func (o GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput) ToGetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutputWithContext(ctx context.Context) GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput {
+	return o
+}
+
+func (o GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput) Index(i pulumi.IntInput) GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail {
+		return vs[0].([]GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail)[vs[1].(int)]
+	}).(GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput)
+}
+
 type GetNodePoolNodeConfigDetailPlacementConfig struct {
 	// The name of the availability domain in which this node is placed.
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// The OCID of the compute capacity reservation in which to place the compute instance.
 	CapacityReservationId string `pulumi:"capacityReservationId"`
+	// A list of fault domains in which to place nodes.
+	FaultDomains []string `pulumi:"faultDomains"`
 	// The OCID of the subnet in which this node is placed.
 	SubnetId string `pulumi:"subnetId"`
 }
@@ -5094,6 +5913,8 @@ type GetNodePoolNodeConfigDetailPlacementConfigArgs struct {
 	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
 	// The OCID of the compute capacity reservation in which to place the compute instance.
 	CapacityReservationId pulumi.StringInput `pulumi:"capacityReservationId"`
+	// A list of fault domains in which to place nodes.
+	FaultDomains pulumi.StringArrayInput `pulumi:"faultDomains"`
 	// The OCID of the subnet in which this node is placed.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 }
@@ -5157,6 +5978,11 @@ func (o GetNodePoolNodeConfigDetailPlacementConfigOutput) AvailabilityDomain() p
 // The OCID of the compute capacity reservation in which to place the compute instance.
 func (o GetNodePoolNodeConfigDetailPlacementConfigOutput) CapacityReservationId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfigDetailPlacementConfig) string { return v.CapacityReservationId }).(pulumi.StringOutput)
+}
+
+// A list of fault domains in which to place nodes.
+func (o GetNodePoolNodeConfigDetailPlacementConfigOutput) FaultDomains() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNodePoolNodeConfigDetailPlacementConfig) []string { return v.FaultDomains }).(pulumi.StringArrayOutput)
 }
 
 // The OCID of the subnet in which this node is placed.
@@ -5297,6 +6123,112 @@ func (o GetNodePoolNodeErrorArrayOutput) Index(i pulumi.IntInput) GetNodePoolNod
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolNodeError {
 		return vs[0].([]GetNodePoolNodeError)[vs[1].(int)]
 	}).(GetNodePoolNodeErrorOutput)
+}
+
+type GetNodePoolNodeEvictionNodePoolSetting struct {
+	// Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
+	EvictionGraceDuration string `pulumi:"evictionGraceDuration"`
+	// If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
+	IsForceDeleteAfterGraceDuration bool `pulumi:"isForceDeleteAfterGraceDuration"`
+}
+
+// GetNodePoolNodeEvictionNodePoolSettingInput is an input type that accepts GetNodePoolNodeEvictionNodePoolSettingArgs and GetNodePoolNodeEvictionNodePoolSettingOutput values.
+// You can construct a concrete instance of `GetNodePoolNodeEvictionNodePoolSettingInput` via:
+//
+//          GetNodePoolNodeEvictionNodePoolSettingArgs{...}
+type GetNodePoolNodeEvictionNodePoolSettingInput interface {
+	pulumi.Input
+
+	ToGetNodePoolNodeEvictionNodePoolSettingOutput() GetNodePoolNodeEvictionNodePoolSettingOutput
+	ToGetNodePoolNodeEvictionNodePoolSettingOutputWithContext(context.Context) GetNodePoolNodeEvictionNodePoolSettingOutput
+}
+
+type GetNodePoolNodeEvictionNodePoolSettingArgs struct {
+	// Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
+	EvictionGraceDuration pulumi.StringInput `pulumi:"evictionGraceDuration"`
+	// If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
+	IsForceDeleteAfterGraceDuration pulumi.BoolInput `pulumi:"isForceDeleteAfterGraceDuration"`
+}
+
+func (GetNodePoolNodeEvictionNodePoolSettingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodePoolNodeEvictionNodePoolSetting)(nil)).Elem()
+}
+
+func (i GetNodePoolNodeEvictionNodePoolSettingArgs) ToGetNodePoolNodeEvictionNodePoolSettingOutput() GetNodePoolNodeEvictionNodePoolSettingOutput {
+	return i.ToGetNodePoolNodeEvictionNodePoolSettingOutputWithContext(context.Background())
+}
+
+func (i GetNodePoolNodeEvictionNodePoolSettingArgs) ToGetNodePoolNodeEvictionNodePoolSettingOutputWithContext(ctx context.Context) GetNodePoolNodeEvictionNodePoolSettingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodeEvictionNodePoolSettingOutput)
+}
+
+// GetNodePoolNodeEvictionNodePoolSettingArrayInput is an input type that accepts GetNodePoolNodeEvictionNodePoolSettingArray and GetNodePoolNodeEvictionNodePoolSettingArrayOutput values.
+// You can construct a concrete instance of `GetNodePoolNodeEvictionNodePoolSettingArrayInput` via:
+//
+//          GetNodePoolNodeEvictionNodePoolSettingArray{ GetNodePoolNodeEvictionNodePoolSettingArgs{...} }
+type GetNodePoolNodeEvictionNodePoolSettingArrayInput interface {
+	pulumi.Input
+
+	ToGetNodePoolNodeEvictionNodePoolSettingArrayOutput() GetNodePoolNodeEvictionNodePoolSettingArrayOutput
+	ToGetNodePoolNodeEvictionNodePoolSettingArrayOutputWithContext(context.Context) GetNodePoolNodeEvictionNodePoolSettingArrayOutput
+}
+
+type GetNodePoolNodeEvictionNodePoolSettingArray []GetNodePoolNodeEvictionNodePoolSettingInput
+
+func (GetNodePoolNodeEvictionNodePoolSettingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNodePoolNodeEvictionNodePoolSetting)(nil)).Elem()
+}
+
+func (i GetNodePoolNodeEvictionNodePoolSettingArray) ToGetNodePoolNodeEvictionNodePoolSettingArrayOutput() GetNodePoolNodeEvictionNodePoolSettingArrayOutput {
+	return i.ToGetNodePoolNodeEvictionNodePoolSettingArrayOutputWithContext(context.Background())
+}
+
+func (i GetNodePoolNodeEvictionNodePoolSettingArray) ToGetNodePoolNodeEvictionNodePoolSettingArrayOutputWithContext(ctx context.Context) GetNodePoolNodeEvictionNodePoolSettingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodeEvictionNodePoolSettingArrayOutput)
+}
+
+type GetNodePoolNodeEvictionNodePoolSettingOutput struct{ *pulumi.OutputState }
+
+func (GetNodePoolNodeEvictionNodePoolSettingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodePoolNodeEvictionNodePoolSetting)(nil)).Elem()
+}
+
+func (o GetNodePoolNodeEvictionNodePoolSettingOutput) ToGetNodePoolNodeEvictionNodePoolSettingOutput() GetNodePoolNodeEvictionNodePoolSettingOutput {
+	return o
+}
+
+func (o GetNodePoolNodeEvictionNodePoolSettingOutput) ToGetNodePoolNodeEvictionNodePoolSettingOutputWithContext(ctx context.Context) GetNodePoolNodeEvictionNodePoolSettingOutput {
+	return o
+}
+
+// Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
+func (o GetNodePoolNodeEvictionNodePoolSettingOutput) EvictionGraceDuration() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodePoolNodeEvictionNodePoolSetting) string { return v.EvictionGraceDuration }).(pulumi.StringOutput)
+}
+
+// If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
+func (o GetNodePoolNodeEvictionNodePoolSettingOutput) IsForceDeleteAfterGraceDuration() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNodePoolNodeEvictionNodePoolSetting) bool { return v.IsForceDeleteAfterGraceDuration }).(pulumi.BoolOutput)
+}
+
+type GetNodePoolNodeEvictionNodePoolSettingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNodePoolNodeEvictionNodePoolSettingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNodePoolNodeEvictionNodePoolSetting)(nil)).Elem()
+}
+
+func (o GetNodePoolNodeEvictionNodePoolSettingArrayOutput) ToGetNodePoolNodeEvictionNodePoolSettingArrayOutput() GetNodePoolNodeEvictionNodePoolSettingArrayOutput {
+	return o
+}
+
+func (o GetNodePoolNodeEvictionNodePoolSettingArrayOutput) ToGetNodePoolNodeEvictionNodePoolSettingArrayOutputWithContext(ctx context.Context) GetNodePoolNodeEvictionNodePoolSettingArrayOutput {
+	return o
+}
+
+func (o GetNodePoolNodeEvictionNodePoolSettingArrayOutput) Index(i pulumi.IntInput) GetNodePoolNodeEvictionNodePoolSettingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolNodeEvictionNodePoolSetting {
+		return vs[0].([]GetNodePoolNodeEvictionNodePoolSetting)[vs[1].(int)]
+	}).(GetNodePoolNodeEvictionNodePoolSettingOutput)
 }
 
 type GetNodePoolNodeShapeConfig struct {
@@ -5874,10 +6806,14 @@ type GetNodePoolsNodePool struct {
 	InitialNodeLabels []GetNodePoolsNodePoolInitialNodeLabel `pulumi:"initialNodeLabels"`
 	// The version of Kubernetes this node is running.
 	KubernetesVersion string `pulumi:"kubernetesVersion"`
+	// Details about the state of the node.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The name to filter on.
 	Name string `pulumi:"name"`
 	// The configuration of nodes in the node pool.
 	NodeConfigDetails []GetNodePoolsNodePoolNodeConfigDetail `pulumi:"nodeConfigDetails"`
+	// Node Eviction Details configuration
+	NodeEvictionNodePoolSettings []GetNodePoolsNodePoolNodeEvictionNodePoolSetting `pulumi:"nodeEvictionNodePoolSettings"`
 	// Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
 	//
 	// Deprecated: The 'node_image_id' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.
@@ -5904,6 +6840,8 @@ type GetNodePoolsNodePool struct {
 	QuantityPerSubnet int `pulumi:"quantityPerSubnet"`
 	// The SSH public key on each node in the node pool on launch.
 	SshPublicKey string `pulumi:"sshPublicKey"`
+	// A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
+	State string `pulumi:"state"`
 	// The OCIDs of the subnets in which to place nodes for this node pool.
 	SubnetIds []string `pulumi:"subnetIds"`
 }
@@ -5934,10 +6872,14 @@ type GetNodePoolsNodePoolArgs struct {
 	InitialNodeLabels GetNodePoolsNodePoolInitialNodeLabelArrayInput `pulumi:"initialNodeLabels"`
 	// The version of Kubernetes this node is running.
 	KubernetesVersion pulumi.StringInput `pulumi:"kubernetesVersion"`
+	// Details about the state of the node.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// The name to filter on.
 	Name pulumi.StringInput `pulumi:"name"`
 	// The configuration of nodes in the node pool.
 	NodeConfigDetails GetNodePoolsNodePoolNodeConfigDetailArrayInput `pulumi:"nodeConfigDetails"`
+	// Node Eviction Details configuration
+	NodeEvictionNodePoolSettings GetNodePoolsNodePoolNodeEvictionNodePoolSettingArrayInput `pulumi:"nodeEvictionNodePoolSettings"`
 	// Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
 	//
 	// Deprecated: The 'node_image_id' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.
@@ -5964,6 +6906,8 @@ type GetNodePoolsNodePoolArgs struct {
 	QuantityPerSubnet pulumi.IntInput `pulumi:"quantityPerSubnet"`
 	// The SSH public key on each node in the node pool on launch.
 	SshPublicKey pulumi.StringInput `pulumi:"sshPublicKey"`
+	// A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
+	State pulumi.StringInput `pulumi:"state"`
 	// The OCIDs of the subnets in which to place nodes for this node pool.
 	SubnetIds pulumi.StringArrayInput `pulumi:"subnetIds"`
 }
@@ -6054,6 +6998,11 @@ func (o GetNodePoolsNodePoolOutput) KubernetesVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolsNodePool) string { return v.KubernetesVersion }).(pulumi.StringOutput)
 }
 
+// Details about the state of the node.
+func (o GetNodePoolsNodePoolOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePool) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
 // The name to filter on.
 func (o GetNodePoolsNodePoolOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolsNodePool) string { return v.Name }).(pulumi.StringOutput)
@@ -6062,6 +7011,13 @@ func (o GetNodePoolsNodePoolOutput) Name() pulumi.StringOutput {
 // The configuration of nodes in the node pool.
 func (o GetNodePoolsNodePoolOutput) NodeConfigDetails() GetNodePoolsNodePoolNodeConfigDetailArrayOutput {
 	return o.ApplyT(func(v GetNodePoolsNodePool) []GetNodePoolsNodePoolNodeConfigDetail { return v.NodeConfigDetails }).(GetNodePoolsNodePoolNodeConfigDetailArrayOutput)
+}
+
+// Node Eviction Details configuration
+func (o GetNodePoolsNodePoolOutput) NodeEvictionNodePoolSettings() GetNodePoolsNodePoolNodeEvictionNodePoolSettingArrayOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePool) []GetNodePoolsNodePoolNodeEvictionNodePoolSetting {
+		return v.NodeEvictionNodePoolSettings
+	}).(GetNodePoolsNodePoolNodeEvictionNodePoolSettingArrayOutput)
 }
 
 // Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
@@ -6121,6 +7077,11 @@ func (o GetNodePoolsNodePoolOutput) QuantityPerSubnet() pulumi.IntOutput {
 // The SSH public key on each node in the node pool on launch.
 func (o GetNodePoolsNodePoolOutput) SshPublicKey() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolsNodePool) string { return v.SshPublicKey }).(pulumi.StringOutput)
+}
+
+// A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
+func (o GetNodePoolsNodePoolOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePool) string { return v.State }).(pulumi.StringOutput)
 }
 
 // The OCIDs of the subnets in which to place nodes for this node pool.
@@ -6279,7 +7240,7 @@ type GetNodePoolsNodePoolNode struct {
 	PrivateIp string `pulumi:"privateIp"`
 	// The public IP address of this node.
 	PublicIp string `pulumi:"publicIp"`
-	// The state of the node.
+	// A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
 	State string `pulumi:"state"`
 	// The OCID of the subnet in which this node is placed.
 	SubnetId string `pulumi:"subnetId"`
@@ -6321,7 +7282,7 @@ type GetNodePoolsNodePoolNodeArgs struct {
 	PrivateIp pulumi.StringInput `pulumi:"privateIp"`
 	// The public IP address of this node.
 	PublicIp pulumi.StringInput `pulumi:"publicIp"`
-	// The state of the node.
+	// A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
 	State pulumi.StringInput `pulumi:"state"`
 	// The OCID of the subnet in which this node is placed.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
@@ -6438,7 +7399,7 @@ func (o GetNodePoolsNodePoolNodeOutput) PublicIp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolsNodePoolNode) string { return v.PublicIp }).(pulumi.StringOutput)
 }
 
-// The state of the node.
+// A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
 func (o GetNodePoolsNodePoolNodeOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolsNodePoolNode) string { return v.State }).(pulumi.StringOutput)
 }
@@ -6477,6 +7438,8 @@ type GetNodePoolsNodePoolNodeConfigDetail struct {
 	IsPvEncryptionInTransitEnabled bool `pulumi:"isPvEncryptionInTransitEnabled"`
 	// The OCID of the Key Management Service key assigned to the boot volume.
 	KmsKeyId string `pulumi:"kmsKeyId"`
+	// The CNI related configuration of pods in the node pool.
+	NodePoolPodNetworkOptionDetails []GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail `pulumi:"nodePoolPodNetworkOptionDetails"`
 	// The OCIDs of the Network Security Group(s) to associate nodes for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
 	NsgIds []string `pulumi:"nsgIds"`
 	// The placement configurations for the node pool. Provide one placement configuration for each availability domain in which you intend to launch a node.
@@ -6505,6 +7468,8 @@ type GetNodePoolsNodePoolNodeConfigDetailArgs struct {
 	IsPvEncryptionInTransitEnabled pulumi.BoolInput `pulumi:"isPvEncryptionInTransitEnabled"`
 	// The OCID of the Key Management Service key assigned to the boot volume.
 	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
+	// The CNI related configuration of pods in the node pool.
+	NodePoolPodNetworkOptionDetails GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayInput `pulumi:"nodePoolPodNetworkOptionDetails"`
 	// The OCIDs of the Network Security Group(s) to associate nodes for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// The placement configurations for the node pool. Provide one placement configuration for each availability domain in which you intend to launch a node.
@@ -6584,6 +7549,13 @@ func (o GetNodePoolsNodePoolNodeConfigDetailOutput) KmsKeyId() pulumi.StringOutp
 	return o.ApplyT(func(v GetNodePoolsNodePoolNodeConfigDetail) string { return v.KmsKeyId }).(pulumi.StringOutput)
 }
 
+// The CNI related configuration of pods in the node pool.
+func (o GetNodePoolsNodePoolNodeConfigDetailOutput) NodePoolPodNetworkOptionDetails() GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNodeConfigDetail) []GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail {
+		return v.NodePoolPodNetworkOptionDetails
+	}).(GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput)
+}
+
 // The OCIDs of the Network Security Group(s) to associate nodes for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
 func (o GetNodePoolsNodePoolNodeConfigDetailOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetNodePoolsNodePoolNodeConfigDetail) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
@@ -6621,11 +7593,143 @@ func (o GetNodePoolsNodePoolNodeConfigDetailArrayOutput) Index(i pulumi.IntInput
 	}).(GetNodePoolsNodePoolNodeConfigDetailOutput)
 }
 
+type GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail struct {
+	// The CNI plugin used by this node pool
+	CniType string `pulumi:"cniType"`
+	// The max number of pods per node in the node pool. This value will be limited by the number of VNICs attachable to the node pool shape
+	MaxPodsPerNode int `pulumi:"maxPodsPerNode"`
+	// The OCIDs of the Network Security Group(s) to associate pods for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+	PodNsgIds []string `pulumi:"podNsgIds"`
+	// The OCIDs of the subnets in which to place pods for this node pool. This can be one of the node pool subnet IDs
+	PodSubnetIds []string `pulumi:"podSubnetIds"`
+}
+
+// GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailInput is an input type that accepts GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArgs and GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput values.
+// You can construct a concrete instance of `GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailInput` via:
+//
+//          GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArgs{...}
+type GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailInput interface {
+	pulumi.Input
+
+	ToGetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput() GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput
+	ToGetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutputWithContext(context.Context) GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput
+}
+
+type GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArgs struct {
+	// The CNI plugin used by this node pool
+	CniType pulumi.StringInput `pulumi:"cniType"`
+	// The max number of pods per node in the node pool. This value will be limited by the number of VNICs attachable to the node pool shape
+	MaxPodsPerNode pulumi.IntInput `pulumi:"maxPodsPerNode"`
+	// The OCIDs of the Network Security Group(s) to associate pods for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+	PodNsgIds pulumi.StringArrayInput `pulumi:"podNsgIds"`
+	// The OCIDs of the subnets in which to place pods for this node pool. This can be one of the node pool subnet IDs
+	PodSubnetIds pulumi.StringArrayInput `pulumi:"podSubnetIds"`
+}
+
+func (GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail)(nil)).Elem()
+}
+
+func (i GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArgs) ToGetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput() GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput {
+	return i.ToGetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutputWithContext(context.Background())
+}
+
+func (i GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArgs) ToGetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutputWithContext(ctx context.Context) GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput)
+}
+
+// GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayInput is an input type that accepts GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArray and GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput values.
+// You can construct a concrete instance of `GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayInput` via:
+//
+//          GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArray{ GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArgs{...} }
+type GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput() GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput
+	ToGetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutputWithContext(context.Context) GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput
+}
+
+type GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArray []GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailInput
+
+func (GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail)(nil)).Elem()
+}
+
+func (i GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArray) ToGetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput() GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput {
+	return i.ToGetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArray) ToGetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutputWithContext(ctx context.Context) GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput)
+}
+
+type GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput struct{ *pulumi.OutputState }
+
+func (GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail)(nil)).Elem()
+}
+
+func (o GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput) ToGetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput() GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput {
+	return o
+}
+
+func (o GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput) ToGetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutputWithContext(ctx context.Context) GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput {
+	return o
+}
+
+// The CNI plugin used by this node pool
+func (o GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput) CniType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail) string { return v.CniType }).(pulumi.StringOutput)
+}
+
+// The max number of pods per node in the node pool. This value will be limited by the number of VNICs attachable to the node pool shape
+func (o GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput) MaxPodsPerNode() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail) int {
+		return v.MaxPodsPerNode
+	}).(pulumi.IntOutput)
+}
+
+// The OCIDs of the Network Security Group(s) to associate pods for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+func (o GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput) PodNsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail) []string {
+		return v.PodNsgIds
+	}).(pulumi.StringArrayOutput)
+}
+
+// The OCIDs of the subnets in which to place pods for this node pool. This can be one of the node pool subnet IDs
+func (o GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput) PodSubnetIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail) []string {
+		return v.PodSubnetIds
+	}).(pulumi.StringArrayOutput)
+}
+
+type GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail)(nil)).Elem()
+}
+
+func (o GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput) ToGetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput() GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput {
+	return o
+}
+
+func (o GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput) ToGetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutputWithContext(ctx context.Context) GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput {
+	return o
+}
+
+func (o GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput) Index(i pulumi.IntInput) GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail {
+		return vs[0].([]GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail)[vs[1].(int)]
+	}).(GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput)
+}
+
 type GetNodePoolsNodePoolNodeConfigDetailPlacementConfig struct {
 	// The name of the availability domain in which this node is placed.
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// The OCID of the compute capacity reservation in which to place the compute instance.
 	CapacityReservationId string `pulumi:"capacityReservationId"`
+	// A list of fault domains in which to place nodes.
+	FaultDomains []string `pulumi:"faultDomains"`
 	// The OCID of the subnet in which this node is placed.
 	SubnetId string `pulumi:"subnetId"`
 }
@@ -6646,6 +7750,8 @@ type GetNodePoolsNodePoolNodeConfigDetailPlacementConfigArgs struct {
 	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
 	// The OCID of the compute capacity reservation in which to place the compute instance.
 	CapacityReservationId pulumi.StringInput `pulumi:"capacityReservationId"`
+	// A list of fault domains in which to place nodes.
+	FaultDomains pulumi.StringArrayInput `pulumi:"faultDomains"`
 	// The OCID of the subnet in which this node is placed.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 }
@@ -6709,6 +7815,11 @@ func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigOutput) AvailabilityD
 // The OCID of the compute capacity reservation in which to place the compute instance.
 func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigOutput) CapacityReservationId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolsNodePoolNodeConfigDetailPlacementConfig) string { return v.CapacityReservationId }).(pulumi.StringOutput)
+}
+
+// A list of fault domains in which to place nodes.
+func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigOutput) FaultDomains() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNodeConfigDetailPlacementConfig) []string { return v.FaultDomains }).(pulumi.StringArrayOutput)
 }
 
 // The OCID of the subnet in which this node is placed.
@@ -6849,6 +7960,112 @@ func (o GetNodePoolsNodePoolNodeErrorArrayOutput) Index(i pulumi.IntInput) GetNo
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolsNodePoolNodeError {
 		return vs[0].([]GetNodePoolsNodePoolNodeError)[vs[1].(int)]
 	}).(GetNodePoolsNodePoolNodeErrorOutput)
+}
+
+type GetNodePoolsNodePoolNodeEvictionNodePoolSetting struct {
+	// Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
+	EvictionGraceDuration string `pulumi:"evictionGraceDuration"`
+	// If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
+	IsForceDeleteAfterGraceDuration bool `pulumi:"isForceDeleteAfterGraceDuration"`
+}
+
+// GetNodePoolsNodePoolNodeEvictionNodePoolSettingInput is an input type that accepts GetNodePoolsNodePoolNodeEvictionNodePoolSettingArgs and GetNodePoolsNodePoolNodeEvictionNodePoolSettingOutput values.
+// You can construct a concrete instance of `GetNodePoolsNodePoolNodeEvictionNodePoolSettingInput` via:
+//
+//          GetNodePoolsNodePoolNodeEvictionNodePoolSettingArgs{...}
+type GetNodePoolsNodePoolNodeEvictionNodePoolSettingInput interface {
+	pulumi.Input
+
+	ToGetNodePoolsNodePoolNodeEvictionNodePoolSettingOutput() GetNodePoolsNodePoolNodeEvictionNodePoolSettingOutput
+	ToGetNodePoolsNodePoolNodeEvictionNodePoolSettingOutputWithContext(context.Context) GetNodePoolsNodePoolNodeEvictionNodePoolSettingOutput
+}
+
+type GetNodePoolsNodePoolNodeEvictionNodePoolSettingArgs struct {
+	// Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
+	EvictionGraceDuration pulumi.StringInput `pulumi:"evictionGraceDuration"`
+	// If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
+	IsForceDeleteAfterGraceDuration pulumi.BoolInput `pulumi:"isForceDeleteAfterGraceDuration"`
+}
+
+func (GetNodePoolsNodePoolNodeEvictionNodePoolSettingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodePoolsNodePoolNodeEvictionNodePoolSetting)(nil)).Elem()
+}
+
+func (i GetNodePoolsNodePoolNodeEvictionNodePoolSettingArgs) ToGetNodePoolsNodePoolNodeEvictionNodePoolSettingOutput() GetNodePoolsNodePoolNodeEvictionNodePoolSettingOutput {
+	return i.ToGetNodePoolsNodePoolNodeEvictionNodePoolSettingOutputWithContext(context.Background())
+}
+
+func (i GetNodePoolsNodePoolNodeEvictionNodePoolSettingArgs) ToGetNodePoolsNodePoolNodeEvictionNodePoolSettingOutputWithContext(ctx context.Context) GetNodePoolsNodePoolNodeEvictionNodePoolSettingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodeEvictionNodePoolSettingOutput)
+}
+
+// GetNodePoolsNodePoolNodeEvictionNodePoolSettingArrayInput is an input type that accepts GetNodePoolsNodePoolNodeEvictionNodePoolSettingArray and GetNodePoolsNodePoolNodeEvictionNodePoolSettingArrayOutput values.
+// You can construct a concrete instance of `GetNodePoolsNodePoolNodeEvictionNodePoolSettingArrayInput` via:
+//
+//          GetNodePoolsNodePoolNodeEvictionNodePoolSettingArray{ GetNodePoolsNodePoolNodeEvictionNodePoolSettingArgs{...} }
+type GetNodePoolsNodePoolNodeEvictionNodePoolSettingArrayInput interface {
+	pulumi.Input
+
+	ToGetNodePoolsNodePoolNodeEvictionNodePoolSettingArrayOutput() GetNodePoolsNodePoolNodeEvictionNodePoolSettingArrayOutput
+	ToGetNodePoolsNodePoolNodeEvictionNodePoolSettingArrayOutputWithContext(context.Context) GetNodePoolsNodePoolNodeEvictionNodePoolSettingArrayOutput
+}
+
+type GetNodePoolsNodePoolNodeEvictionNodePoolSettingArray []GetNodePoolsNodePoolNodeEvictionNodePoolSettingInput
+
+func (GetNodePoolsNodePoolNodeEvictionNodePoolSettingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNodePoolsNodePoolNodeEvictionNodePoolSetting)(nil)).Elem()
+}
+
+func (i GetNodePoolsNodePoolNodeEvictionNodePoolSettingArray) ToGetNodePoolsNodePoolNodeEvictionNodePoolSettingArrayOutput() GetNodePoolsNodePoolNodeEvictionNodePoolSettingArrayOutput {
+	return i.ToGetNodePoolsNodePoolNodeEvictionNodePoolSettingArrayOutputWithContext(context.Background())
+}
+
+func (i GetNodePoolsNodePoolNodeEvictionNodePoolSettingArray) ToGetNodePoolsNodePoolNodeEvictionNodePoolSettingArrayOutputWithContext(ctx context.Context) GetNodePoolsNodePoolNodeEvictionNodePoolSettingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodeEvictionNodePoolSettingArrayOutput)
+}
+
+type GetNodePoolsNodePoolNodeEvictionNodePoolSettingOutput struct{ *pulumi.OutputState }
+
+func (GetNodePoolsNodePoolNodeEvictionNodePoolSettingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodePoolsNodePoolNodeEvictionNodePoolSetting)(nil)).Elem()
+}
+
+func (o GetNodePoolsNodePoolNodeEvictionNodePoolSettingOutput) ToGetNodePoolsNodePoolNodeEvictionNodePoolSettingOutput() GetNodePoolsNodePoolNodeEvictionNodePoolSettingOutput {
+	return o
+}
+
+func (o GetNodePoolsNodePoolNodeEvictionNodePoolSettingOutput) ToGetNodePoolsNodePoolNodeEvictionNodePoolSettingOutputWithContext(ctx context.Context) GetNodePoolsNodePoolNodeEvictionNodePoolSettingOutput {
+	return o
+}
+
+// Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
+func (o GetNodePoolsNodePoolNodeEvictionNodePoolSettingOutput) EvictionGraceDuration() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNodeEvictionNodePoolSetting) string { return v.EvictionGraceDuration }).(pulumi.StringOutput)
+}
+
+// If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
+func (o GetNodePoolsNodePoolNodeEvictionNodePoolSettingOutput) IsForceDeleteAfterGraceDuration() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNodeEvictionNodePoolSetting) bool { return v.IsForceDeleteAfterGraceDuration }).(pulumi.BoolOutput)
+}
+
+type GetNodePoolsNodePoolNodeEvictionNodePoolSettingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNodePoolsNodePoolNodeEvictionNodePoolSettingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNodePoolsNodePoolNodeEvictionNodePoolSetting)(nil)).Elem()
+}
+
+func (o GetNodePoolsNodePoolNodeEvictionNodePoolSettingArrayOutput) ToGetNodePoolsNodePoolNodeEvictionNodePoolSettingArrayOutput() GetNodePoolsNodePoolNodeEvictionNodePoolSettingArrayOutput {
+	return o
+}
+
+func (o GetNodePoolsNodePoolNodeEvictionNodePoolSettingArrayOutput) ToGetNodePoolsNodePoolNodeEvictionNodePoolSettingArrayOutputWithContext(ctx context.Context) GetNodePoolsNodePoolNodeEvictionNodePoolSettingArrayOutput {
+	return o
+}
+
+func (o GetNodePoolsNodePoolNodeEvictionNodePoolSettingArrayOutput) Index(i pulumi.IntInput) GetNodePoolsNodePoolNodeEvictionNodePoolSettingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolsNodePoolNodeEvictionNodePoolSetting {
+		return vs[0].([]GetNodePoolsNodePoolNodeEvictionNodePoolSetting)[vs[1].(int)]
+	}).(GetNodePoolsNodePoolNodeEvictionNodePoolSettingOutput)
 }
 
 type GetNodePoolsNodePoolNodeShapeConfig struct {
@@ -8011,6 +9228,8 @@ func (o GetWorkRequestsWorkRequestResourceArrayOutput) Index(i pulumi.IntInput) 
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterClusterPodNetworkOptionInput)(nil)).Elem(), ClusterClusterPodNetworkOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterClusterPodNetworkOptionArrayInput)(nil)).Elem(), ClusterClusterPodNetworkOptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterEndpointInput)(nil)).Elem(), ClusterEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterEndpointArrayInput)(nil)).Elem(), ClusterEndpointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterEndpointConfigInput)(nil)).Elem(), ClusterEndpointConfigArgs{})
@@ -8039,18 +9258,26 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolNodeArrayInput)(nil)).Elem(), NodePoolNodeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolNodeConfigDetailsInput)(nil)).Elem(), NodePoolNodeConfigDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolNodeConfigDetailsPtrInput)(nil)).Elem(), NodePoolNodeConfigDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsInput)(nil)).Elem(), NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrInput)(nil)).Elem(), NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolNodeConfigDetailsPlacementConfigInput)(nil)).Elem(), NodePoolNodeConfigDetailsPlacementConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolNodeConfigDetailsPlacementConfigArrayInput)(nil)).Elem(), NodePoolNodeConfigDetailsPlacementConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolNodeErrorInput)(nil)).Elem(), NodePoolNodeErrorArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolNodeErrorArrayInput)(nil)).Elem(), NodePoolNodeErrorArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolNodeEvictionNodePoolSettingsInput)(nil)).Elem(), NodePoolNodeEvictionNodePoolSettingsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolNodeEvictionNodePoolSettingsPtrInput)(nil)).Elem(), NodePoolNodeEvictionNodePoolSettingsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolNodeShapeConfigInput)(nil)).Elem(), NodePoolNodeShapeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolNodeShapeConfigPtrInput)(nil)).Elem(), NodePoolNodeShapeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolNodeSourceInput)(nil)).Elem(), NodePoolNodeSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolNodeSourceArrayInput)(nil)).Elem(), NodePoolNodeSourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolNodeSourceDetailsInput)(nil)).Elem(), NodePoolNodeSourceDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolNodeSourceDetailsPtrInput)(nil)).Elem(), NodePoolNodeSourceDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterOptionClusterPodNetworkOptionInput)(nil)).Elem(), GetClusterOptionClusterPodNetworkOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterOptionClusterPodNetworkOptionArrayInput)(nil)).Elem(), GetClusterOptionClusterPodNetworkOptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersClusterInput)(nil)).Elem(), GetClustersClusterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersClusterArrayInput)(nil)).Elem(), GetClustersClusterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersClusterClusterPodNetworkOptionInput)(nil)).Elem(), GetClustersClusterClusterPodNetworkOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersClusterClusterPodNetworkOptionArrayInput)(nil)).Elem(), GetClustersClusterClusterPodNetworkOptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersClusterEndpointInput)(nil)).Elem(), GetClustersClusterEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersClusterEndpointArrayInput)(nil)).Elem(), GetClustersClusterEndpointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersClusterEndpointConfigInput)(nil)).Elem(), GetClustersClusterEndpointConfigArgs{})
@@ -8081,10 +9308,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolNodeArrayInput)(nil)).Elem(), GetNodePoolNodeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolNodeConfigDetailInput)(nil)).Elem(), GetNodePoolNodeConfigDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolNodeConfigDetailArrayInput)(nil)).Elem(), GetNodePoolNodeConfigDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailInput)(nil)).Elem(), GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayInput)(nil)).Elem(), GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolNodeConfigDetailPlacementConfigInput)(nil)).Elem(), GetNodePoolNodeConfigDetailPlacementConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolNodeConfigDetailPlacementConfigArrayInput)(nil)).Elem(), GetNodePoolNodeConfigDetailPlacementConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolNodeErrorInput)(nil)).Elem(), GetNodePoolNodeErrorArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolNodeErrorArrayInput)(nil)).Elem(), GetNodePoolNodeErrorArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolNodeEvictionNodePoolSettingInput)(nil)).Elem(), GetNodePoolNodeEvictionNodePoolSettingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolNodeEvictionNodePoolSettingArrayInput)(nil)).Elem(), GetNodePoolNodeEvictionNodePoolSettingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolNodeShapeConfigInput)(nil)).Elem(), GetNodePoolNodeShapeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolNodeShapeConfigArrayInput)(nil)).Elem(), GetNodePoolNodeShapeConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolNodeSourceInput)(nil)).Elem(), GetNodePoolNodeSourceArgs{})
@@ -8103,10 +9334,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolsNodePoolNodeArrayInput)(nil)).Elem(), GetNodePoolsNodePoolNodeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolsNodePoolNodeConfigDetailInput)(nil)).Elem(), GetNodePoolsNodePoolNodeConfigDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolsNodePoolNodeConfigDetailArrayInput)(nil)).Elem(), GetNodePoolsNodePoolNodeConfigDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailInput)(nil)).Elem(), GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayInput)(nil)).Elem(), GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolsNodePoolNodeConfigDetailPlacementConfigInput)(nil)).Elem(), GetNodePoolsNodePoolNodeConfigDetailPlacementConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolsNodePoolNodeConfigDetailPlacementConfigArrayInput)(nil)).Elem(), GetNodePoolsNodePoolNodeConfigDetailPlacementConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolsNodePoolNodeErrorInput)(nil)).Elem(), GetNodePoolsNodePoolNodeErrorArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolsNodePoolNodeErrorArrayInput)(nil)).Elem(), GetNodePoolsNodePoolNodeErrorArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolsNodePoolNodeEvictionNodePoolSettingInput)(nil)).Elem(), GetNodePoolsNodePoolNodeEvictionNodePoolSettingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolsNodePoolNodeEvictionNodePoolSettingArrayInput)(nil)).Elem(), GetNodePoolsNodePoolNodeEvictionNodePoolSettingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolsNodePoolNodeShapeConfigInput)(nil)).Elem(), GetNodePoolsNodePoolNodeShapeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolsNodePoolNodeShapeConfigArrayInput)(nil)).Elem(), GetNodePoolsNodePoolNodeShapeConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolsNodePoolNodeSourceInput)(nil)).Elem(), GetNodePoolsNodePoolNodeSourceArgs{})
@@ -8127,6 +9362,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkRequestsWorkRequestArrayInput)(nil)).Elem(), GetWorkRequestsWorkRequestArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkRequestsWorkRequestResourceInput)(nil)).Elem(), GetWorkRequestsWorkRequestResourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkRequestsWorkRequestResourceArrayInput)(nil)).Elem(), GetWorkRequestsWorkRequestResourceArray{})
+	pulumi.RegisterOutputType(ClusterClusterPodNetworkOptionOutput{})
+	pulumi.RegisterOutputType(ClusterClusterPodNetworkOptionArrayOutput{})
 	pulumi.RegisterOutputType(ClusterEndpointOutput{})
 	pulumi.RegisterOutputType(ClusterEndpointArrayOutput{})
 	pulumi.RegisterOutputType(ClusterEndpointConfigOutput{})
@@ -8155,18 +9392,26 @@ func init() {
 	pulumi.RegisterOutputType(NodePoolNodeArrayOutput{})
 	pulumi.RegisterOutputType(NodePoolNodeConfigDetailsOutput{})
 	pulumi.RegisterOutputType(NodePoolNodeConfigDetailsPtrOutput{})
+	pulumi.RegisterOutputType(NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsOutput{})
+	pulumi.RegisterOutputType(NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutput{})
 	pulumi.RegisterOutputType(NodePoolNodeConfigDetailsPlacementConfigOutput{})
 	pulumi.RegisterOutputType(NodePoolNodeConfigDetailsPlacementConfigArrayOutput{})
 	pulumi.RegisterOutputType(NodePoolNodeErrorOutput{})
 	pulumi.RegisterOutputType(NodePoolNodeErrorArrayOutput{})
+	pulumi.RegisterOutputType(NodePoolNodeEvictionNodePoolSettingsOutput{})
+	pulumi.RegisterOutputType(NodePoolNodeEvictionNodePoolSettingsPtrOutput{})
 	pulumi.RegisterOutputType(NodePoolNodeShapeConfigOutput{})
 	pulumi.RegisterOutputType(NodePoolNodeShapeConfigPtrOutput{})
 	pulumi.RegisterOutputType(NodePoolNodeSourceOutput{})
 	pulumi.RegisterOutputType(NodePoolNodeSourceArrayOutput{})
 	pulumi.RegisterOutputType(NodePoolNodeSourceDetailsOutput{})
 	pulumi.RegisterOutputType(NodePoolNodeSourceDetailsPtrOutput{})
+	pulumi.RegisterOutputType(GetClusterOptionClusterPodNetworkOptionOutput{})
+	pulumi.RegisterOutputType(GetClusterOptionClusterPodNetworkOptionArrayOutput{})
 	pulumi.RegisterOutputType(GetClustersClusterOutput{})
 	pulumi.RegisterOutputType(GetClustersClusterArrayOutput{})
+	pulumi.RegisterOutputType(GetClustersClusterClusterPodNetworkOptionOutput{})
+	pulumi.RegisterOutputType(GetClustersClusterClusterPodNetworkOptionArrayOutput{})
 	pulumi.RegisterOutputType(GetClustersClusterEndpointOutput{})
 	pulumi.RegisterOutputType(GetClustersClusterEndpointArrayOutput{})
 	pulumi.RegisterOutputType(GetClustersClusterEndpointConfigOutput{})
@@ -8197,10 +9442,14 @@ func init() {
 	pulumi.RegisterOutputType(GetNodePoolNodeArrayOutput{})
 	pulumi.RegisterOutputType(GetNodePoolNodeConfigDetailOutput{})
 	pulumi.RegisterOutputType(GetNodePoolNodeConfigDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput{})
+	pulumi.RegisterOutputType(GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetNodePoolNodeConfigDetailPlacementConfigOutput{})
 	pulumi.RegisterOutputType(GetNodePoolNodeConfigDetailPlacementConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetNodePoolNodeErrorOutput{})
 	pulumi.RegisterOutputType(GetNodePoolNodeErrorArrayOutput{})
+	pulumi.RegisterOutputType(GetNodePoolNodeEvictionNodePoolSettingOutput{})
+	pulumi.RegisterOutputType(GetNodePoolNodeEvictionNodePoolSettingArrayOutput{})
 	pulumi.RegisterOutputType(GetNodePoolNodeShapeConfigOutput{})
 	pulumi.RegisterOutputType(GetNodePoolNodeShapeConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetNodePoolNodeSourceOutput{})
@@ -8219,10 +9468,14 @@ func init() {
 	pulumi.RegisterOutputType(GetNodePoolsNodePoolNodeArrayOutput{})
 	pulumi.RegisterOutputType(GetNodePoolsNodePoolNodeConfigDetailOutput{})
 	pulumi.RegisterOutputType(GetNodePoolsNodePoolNodeConfigDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput{})
+	pulumi.RegisterOutputType(GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetNodePoolsNodePoolNodeConfigDetailPlacementConfigOutput{})
 	pulumi.RegisterOutputType(GetNodePoolsNodePoolNodeConfigDetailPlacementConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetNodePoolsNodePoolNodeErrorOutput{})
 	pulumi.RegisterOutputType(GetNodePoolsNodePoolNodeErrorArrayOutput{})
+	pulumi.RegisterOutputType(GetNodePoolsNodePoolNodeEvictionNodePoolSettingOutput{})
+	pulumi.RegisterOutputType(GetNodePoolsNodePoolNodeEvictionNodePoolSettingArrayOutput{})
 	pulumi.RegisterOutputType(GetNodePoolsNodePoolNodeShapeConfigOutput{})
 	pulumi.RegisterOutputType(GetNodePoolsNodePoolNodeShapeConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetNodePoolsNodePoolNodeSourceOutput{})

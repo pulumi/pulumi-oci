@@ -13,6 +13,7 @@ __all__ = [
     'ApplicationImagePolicyConfig',
     'ApplicationImagePolicyConfigKeyDetail',
     'ApplicationTraceConfig',
+    'FunctionProvisionedConcurrencyConfig',
     'FunctionTraceConfig',
     'GetApplicationImagePolicyConfigResult',
     'GetApplicationImagePolicyConfigKeyDetailResult',
@@ -22,9 +23,11 @@ __all__ = [
     'GetApplicationsApplicationImagePolicyConfigKeyDetailResult',
     'GetApplicationsApplicationTraceConfigResult',
     'GetApplicationsFilterResult',
+    'GetFunctionProvisionedConcurrencyConfigResult',
     'GetFunctionTraceConfigResult',
     'GetFunctionsFilterResult',
     'GetFunctionsFunctionResult',
+    'GetFunctionsFunctionProvisionedConcurrencyConfigResult',
     'GetFunctionsFunctionTraceConfigResult',
 ]
 
@@ -160,6 +163,36 @@ class ApplicationTraceConfig(dict):
         (Updatable) Define if tracing is enabled for the resource.
         """
         return pulumi.get(self, "is_enabled")
+
+
+@pulumi.output_type
+class FunctionProvisionedConcurrencyConfig(dict):
+    def __init__(__self__, *,
+                 strategy: str,
+                 count: Optional[int] = None):
+        """
+        :param str strategy: (Updatable) The strategy for provisioned concurrency to be used.
+        :param int count: (Updatable)
+        """
+        pulumi.set(__self__, "strategy", strategy)
+        if count is not None:
+            pulumi.set(__self__, "count", count)
+
+    @property
+    @pulumi.getter
+    def strategy(self) -> str:
+        """
+        (Updatable) The strategy for provisioned concurrency to be used.
+        """
+        return pulumi.get(self, "strategy")
+
+    @property
+    @pulumi.getter
+    def count(self) -> Optional[int]:
+        """
+        (Updatable)
+        """
+        return pulumi.get(self, "count")
 
 
 @pulumi.output_type
@@ -539,6 +572,31 @@ class GetApplicationsFilterResult(dict):
 
 
 @pulumi.output_type
+class GetFunctionProvisionedConcurrencyConfigResult(dict):
+    def __init__(__self__, *,
+                 count: int,
+                 strategy: str):
+        """
+        :param str strategy: The strategy for provisioned concurrency to be used.
+        """
+        pulumi.set(__self__, "count", count)
+        pulumi.set(__self__, "strategy", strategy)
+
+    @property
+    @pulumi.getter
+    def count(self) -> int:
+        return pulumi.get(self, "count")
+
+    @property
+    @pulumi.getter
+    def strategy(self) -> str:
+        """
+        The strategy for provisioned concurrency to be used.
+        """
+        return pulumi.get(self, "strategy")
+
+
+@pulumi.output_type
 class GetFunctionTraceConfigResult(dict):
     def __init__(__self__, *,
                  is_enabled: bool):
@@ -597,6 +655,7 @@ class GetFunctionsFunctionResult(dict):
                  image_digest: str,
                  invoke_endpoint: str,
                  memory_in_mbs: str,
+                 provisioned_concurrency_configs: Sequence['outputs.GetFunctionsFunctionProvisionedConcurrencyConfigResult'],
                  state: str,
                  time_created: str,
                  time_updated: str,
@@ -614,6 +673,7 @@ class GetFunctionsFunctionResult(dict):
         :param str image_digest: The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
         :param str invoke_endpoint: The base https invoke URL to set on a client in order to invoke a function. This URL will never change over the lifetime of the function and can be cached.
         :param str memory_in_mbs: Maximum usable memory for the function (MiB).
+        :param Sequence['GetFunctionsFunctionProvisionedConcurrencyConfigArgs'] provisioned_concurrency_configs: Define the strategy for provisioned concurrency for the function.
         :param str state: A filter to return only functions that match the lifecycle state in this parameter. Example: `Creating`
         :param str time_created: The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
         :param str time_updated: The time the function was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
@@ -631,6 +691,7 @@ class GetFunctionsFunctionResult(dict):
         pulumi.set(__self__, "image_digest", image_digest)
         pulumi.set(__self__, "invoke_endpoint", invoke_endpoint)
         pulumi.set(__self__, "memory_in_mbs", memory_in_mbs)
+        pulumi.set(__self__, "provisioned_concurrency_configs", provisioned_concurrency_configs)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
@@ -726,6 +787,14 @@ class GetFunctionsFunctionResult(dict):
         return pulumi.get(self, "memory_in_mbs")
 
     @property
+    @pulumi.getter(name="provisionedConcurrencyConfigs")
+    def provisioned_concurrency_configs(self) -> Sequence['outputs.GetFunctionsFunctionProvisionedConcurrencyConfigResult']:
+        """
+        Define the strategy for provisioned concurrency for the function.
+        """
+        return pulumi.get(self, "provisioned_concurrency_configs")
+
+    @property
     @pulumi.getter
     def state(self) -> str:
         """
@@ -764,6 +833,31 @@ class GetFunctionsFunctionResult(dict):
         Define the tracing configuration for a function.
         """
         return pulumi.get(self, "trace_configs")
+
+
+@pulumi.output_type
+class GetFunctionsFunctionProvisionedConcurrencyConfigResult(dict):
+    def __init__(__self__, *,
+                 count: int,
+                 strategy: str):
+        """
+        :param str strategy: The strategy for provisioned concurrency to be used.
+        """
+        pulumi.set(__self__, "count", count)
+        pulumi.set(__self__, "strategy", strategy)
+
+    @property
+    @pulumi.getter
+    def count(self) -> int:
+        return pulumi.get(self, "count")
+
+    @property
+    @pulumi.getter
+    def strategy(self) -> str:
+        """
+        The strategy for provisioned concurrency to be used.
+        """
+        return pulumi.get(self, "strategy")
 
 
 @pulumi.output_type

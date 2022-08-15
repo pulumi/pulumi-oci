@@ -26,6 +26,8 @@ __all__ = [
     'BuildRunBuildOutputDeliveredArtifactItem',
     'BuildRunBuildOutputExportedVariable',
     'BuildRunBuildOutputExportedVariableItem',
+    'BuildRunBuildOutputVulnerabilityAuditSummaryCollection',
+    'BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItem',
     'BuildRunBuildRunArguments',
     'BuildRunBuildRunArgumentsItem',
     'BuildRunBuildRunProgress',
@@ -113,6 +115,8 @@ __all__ = [
     'GetBuildRunBuildOutputDeliveredArtifactItemResult',
     'GetBuildRunBuildOutputExportedVariableResult',
     'GetBuildRunBuildOutputExportedVariableItemResult',
+    'GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionResult',
+    'GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemResult',
     'GetBuildRunBuildRunArgumentResult',
     'GetBuildRunBuildRunArgumentItemResult',
     'GetBuildRunBuildRunProgressResult',
@@ -239,6 +243,7 @@ __all__ = [
     'GetProjectsProjectCollectionResult',
     'GetProjectsProjectCollectionItemResult',
     'GetProjectsProjectCollectionItemNotificationConfigResult',
+    'GetRepoFileLineLineResult',
     'GetRepositoriesFilterResult',
     'GetRepositoriesRepositoryCollectionResult',
     'GetRepositoriesRepositoryCollectionItemResult',
@@ -454,7 +459,7 @@ class BuildPipelineStageBuildSourceCollectionItem(dict):
         """
         :param str connection_type: (Updatable) The type of source provider.
         :param str branch: (Updatable) Branch name.
-        :param str connection_id: (Updatable) Connection identifier pertinent to GitHub source provider.
+        :param str connection_id: (Updatable) Connection identifier pertinent to Bitbucket Cloud source provider
         :param str name: (Updatable) Name of the build source. This must be unique within a build source collection. The name can be used by customers to locate the working directory pertinent to this repository.
         :param str repository_id: (Updatable) The DevOps code repository ID.
         :param str repository_url: (Updatable) URL for the repository.
@@ -491,7 +496,7 @@ class BuildPipelineStageBuildSourceCollectionItem(dict):
     @pulumi.getter(name="connectionId")
     def connection_id(self) -> Optional[str]:
         """
-        (Updatable) Connection identifier pertinent to GitHub source provider.
+        (Updatable) Connection identifier pertinent to Bitbucket Cloud source provider
         """
         return pulumi.get(self, "connection_id")
 
@@ -648,6 +653,8 @@ class BuildRunBuildOutput(dict):
             suggest = "delivered_artifacts"
         elif key == "exportedVariables":
             suggest = "exported_variables"
+        elif key == "vulnerabilityAuditSummaryCollections":
+            suggest = "vulnerability_audit_summary_collections"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in BuildRunBuildOutput. Access the value via the '{suggest}' property getter instead.")
@@ -663,11 +670,13 @@ class BuildRunBuildOutput(dict):
     def __init__(__self__, *,
                  artifact_override_parameters: Optional[Sequence['outputs.BuildRunBuildOutputArtifactOverrideParameter']] = None,
                  delivered_artifacts: Optional[Sequence['outputs.BuildRunBuildOutputDeliveredArtifact']] = None,
-                 exported_variables: Optional[Sequence['outputs.BuildRunBuildOutputExportedVariable']] = None):
+                 exported_variables: Optional[Sequence['outputs.BuildRunBuildOutputExportedVariable']] = None,
+                 vulnerability_audit_summary_collections: Optional[Sequence['outputs.BuildRunBuildOutputVulnerabilityAuditSummaryCollection']] = None):
         """
         :param Sequence['BuildRunBuildOutputArtifactOverrideParameterArgs'] artifact_override_parameters: Specifies the list of artifact override arguments at the time of deployment.
         :param Sequence['BuildRunBuildOutputDeliveredArtifactArgs'] delivered_artifacts: Specifies the list of artifacts delivered through the Deliver Artifacts stage.
         :param Sequence['BuildRunBuildOutputExportedVariableArgs'] exported_variables: Specifies list of exported variables.
+        :param Sequence['BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArgs'] vulnerability_audit_summary_collections: List of vulnerability audit summary.
         """
         if artifact_override_parameters is not None:
             pulumi.set(__self__, "artifact_override_parameters", artifact_override_parameters)
@@ -675,6 +684,8 @@ class BuildRunBuildOutput(dict):
             pulumi.set(__self__, "delivered_artifacts", delivered_artifacts)
         if exported_variables is not None:
             pulumi.set(__self__, "exported_variables", exported_variables)
+        if vulnerability_audit_summary_collections is not None:
+            pulumi.set(__self__, "vulnerability_audit_summary_collections", vulnerability_audit_summary_collections)
 
     @property
     @pulumi.getter(name="artifactOverrideParameters")
@@ -699,6 +710,14 @@ class BuildRunBuildOutput(dict):
         Specifies list of exported variables.
         """
         return pulumi.get(self, "exported_variables")
+
+    @property
+    @pulumi.getter(name="vulnerabilityAuditSummaryCollections")
+    def vulnerability_audit_summary_collections(self) -> Optional[Sequence['outputs.BuildRunBuildOutputVulnerabilityAuditSummaryCollection']]:
+        """
+        List of vulnerability audit summary.
+        """
+        return pulumi.get(self, "vulnerability_audit_summary_collections")
 
 
 @pulumi.output_type
@@ -991,6 +1010,89 @@ class BuildRunBuildOutputExportedVariableItem(dict):
         Value of the argument.
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class BuildRunBuildOutputVulnerabilityAuditSummaryCollection(dict):
+    def __init__(__self__, *,
+                 items: Optional[Sequence['outputs.BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItem']] = None):
+        """
+        :param Sequence['BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArgs'] items: List of arguments provided at the time of running the build.
+        """
+        if items is not None:
+            pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Optional[Sequence['outputs.BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItem']]:
+        """
+        List of arguments provided at the time of running the build.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItem(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "buildStageId":
+            suggest = "build_stage_id"
+        elif key == "commitHash":
+            suggest = "commit_hash"
+        elif key == "vulnerabilityAuditId":
+            suggest = "vulnerability_audit_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItem. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItem.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItem.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 build_stage_id: Optional[str] = None,
+                 commit_hash: Optional[str] = None,
+                 vulnerability_audit_id: Optional[str] = None):
+        """
+        :param str build_stage_id: Build stage OCID where scan was configured.
+        :param str commit_hash: Commit hash pertinent to the repository URL and the specified branch.
+        :param str vulnerability_audit_id: The OCID of the vulnerability audit.
+        """
+        if build_stage_id is not None:
+            pulumi.set(__self__, "build_stage_id", build_stage_id)
+        if commit_hash is not None:
+            pulumi.set(__self__, "commit_hash", commit_hash)
+        if vulnerability_audit_id is not None:
+            pulumi.set(__self__, "vulnerability_audit_id", vulnerability_audit_id)
+
+    @property
+    @pulumi.getter(name="buildStageId")
+    def build_stage_id(self) -> Optional[str]:
+        """
+        Build stage OCID where scan was configured.
+        """
+        return pulumi.get(self, "build_stage_id")
+
+    @property
+    @pulumi.getter(name="commitHash")
+    def commit_hash(self) -> Optional[str]:
+        """
+        Commit hash pertinent to the repository URL and the specified branch.
+        """
+        return pulumi.get(self, "commit_hash")
+
+    @property
+    @pulumi.getter(name="vulnerabilityAuditId")
+    def vulnerability_audit_id(self) -> Optional[str]:
+        """
+        The OCID of the vulnerability audit.
+        """
+        return pulumi.get(self, "vulnerability_audit_id")
 
 
 @pulumi.output_type
@@ -1470,6 +1572,8 @@ class DeployArtifactDeployArtifactSource(dict):
             suggest = "deploy_artifact_source_type"
         elif key == "base64encodedContent":
             suggest = "base64encoded_content"
+        elif key == "chartUrl":
+            suggest = "chart_url"
         elif key == "deployArtifactPath":
             suggest = "deploy_artifact_path"
         elif key == "deployArtifactVersion":
@@ -1495,6 +1599,7 @@ class DeployArtifactDeployArtifactSource(dict):
     def __init__(__self__, *,
                  deploy_artifact_source_type: str,
                  base64encoded_content: Optional[str] = None,
+                 chart_url: Optional[str] = None,
                  deploy_artifact_path: Optional[str] = None,
                  deploy_artifact_version: Optional[str] = None,
                  image_digest: Optional[str] = None,
@@ -1502,7 +1607,8 @@ class DeployArtifactDeployArtifactSource(dict):
                  repository_id: Optional[str] = None):
         """
         :param str deploy_artifact_source_type: (Updatable) Specifies types of artifact sources.
-        :param str base64encoded_content: (Updatable) base64 Encoded String
+        :param str base64encoded_content: (Updatable) Specifies content for the inline artifact.
+        :param str chart_url: (Updatable) The URL of an OCIR repository.
         :param str deploy_artifact_path: (Updatable) Specifies the artifact path in the repository.
         :param str deploy_artifact_version: (Updatable) Users can set this as a placeholder value that refers to a pipeline parameter, for example, ${appVersion}.
         :param str image_digest: (Updatable) Specifies image digest for the version of the image.
@@ -1512,6 +1618,8 @@ class DeployArtifactDeployArtifactSource(dict):
         pulumi.set(__self__, "deploy_artifact_source_type", deploy_artifact_source_type)
         if base64encoded_content is not None:
             pulumi.set(__self__, "base64encoded_content", base64encoded_content)
+        if chart_url is not None:
+            pulumi.set(__self__, "chart_url", chart_url)
         if deploy_artifact_path is not None:
             pulumi.set(__self__, "deploy_artifact_path", deploy_artifact_path)
         if deploy_artifact_version is not None:
@@ -1535,9 +1643,17 @@ class DeployArtifactDeployArtifactSource(dict):
     @pulumi.getter(name="base64encodedContent")
     def base64encoded_content(self) -> Optional[str]:
         """
-        (Updatable) base64 Encoded String
+        (Updatable) Specifies content for the inline artifact.
         """
         return pulumi.get(self, "base64encoded_content")
+
+    @property
+    @pulumi.getter(name="chartUrl")
+    def chart_url(self) -> Optional[str]:
+        """
+        (Updatable) The URL of an OCIR repository.
+        """
+        return pulumi.get(self, "chart_url")
 
     @property
     @pulumi.getter(name="deployArtifactPath")
@@ -3564,7 +3680,7 @@ class TriggerActionFilter(dict):
                  events: Optional[Sequence[str]] = None,
                  include: Optional['outputs.TriggerActionFilterInclude'] = None):
         """
-        :param str trigger_source: (Updatable) Source of the trigger. Allowed values are, GITHUB and GITLAB.
+        :param str trigger_source: (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
         :param Sequence[str] events: (Updatable) The events, for example, PUSH, PULL_REQUEST_MERGE.
         :param 'TriggerActionFilterIncludeArgs' include: (Updatable) Attributes to filter DevOps code repository events.
         """
@@ -3578,7 +3694,7 @@ class TriggerActionFilter(dict):
     @pulumi.getter(name="triggerSource")
     def trigger_source(self) -> str:
         """
-        (Updatable) Source of the trigger. Allowed values are, GITHUB and GITLAB.
+        (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
         """
         return pulumi.get(self, "trigger_source")
 
@@ -3772,7 +3888,7 @@ class GetBuildPipelineStageBuildSourceCollectionItemResult(dict):
                  repository_url: str):
         """
         :param str branch: Branch name.
-        :param str connection_id: Connection identifier pertinent to GitHub source provider.
+        :param str connection_id: Connection identifier pertinent to Bitbucket Cloud source provider
         :param str connection_type: The type of source provider.
         :param str name: Name of the build source. This must be unique within a build source collection. The name can be used by customers to locate the working directory pertinent to this repository.
         :param str repository_id: The DevOps code repository ID.
@@ -3797,7 +3913,7 @@ class GetBuildPipelineStageBuildSourceCollectionItemResult(dict):
     @pulumi.getter(name="connectionId")
     def connection_id(self) -> str:
         """
-        Connection identifier pertinent to GitHub source provider.
+        Connection identifier pertinent to Bitbucket Cloud source provider
         """
         return pulumi.get(self, "connection_id")
 
@@ -4275,7 +4391,7 @@ class GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectio
                  repository_url: str):
         """
         :param str branch: Branch name.
-        :param str connection_id: Connection identifier pertinent to GitHub source provider.
+        :param str connection_id: Connection identifier pertinent to Bitbucket Cloud source provider
         :param str connection_type: The type of source provider.
         :param str name: Name of the build source. This must be unique within a build source collection. The name can be used by customers to locate the working directory pertinent to this repository.
         :param str repository_id: The DevOps code repository ID.
@@ -4300,7 +4416,7 @@ class GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectio
     @pulumi.getter(name="connectionId")
     def connection_id(self) -> str:
         """
-        Connection identifier pertinent to GitHub source provider.
+        Connection identifier pertinent to Bitbucket Cloud source provider
         """
         return pulumi.get(self, "connection_id")
 
@@ -4710,15 +4826,18 @@ class GetBuildRunBuildOutputResult(dict):
     def __init__(__self__, *,
                  artifact_override_parameters: Sequence['outputs.GetBuildRunBuildOutputArtifactOverrideParameterResult'],
                  delivered_artifacts: Sequence['outputs.GetBuildRunBuildOutputDeliveredArtifactResult'],
-                 exported_variables: Sequence['outputs.GetBuildRunBuildOutputExportedVariableResult']):
+                 exported_variables: Sequence['outputs.GetBuildRunBuildOutputExportedVariableResult'],
+                 vulnerability_audit_summary_collections: Sequence['outputs.GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionResult']):
         """
         :param Sequence['GetBuildRunBuildOutputArtifactOverrideParameterArgs'] artifact_override_parameters: Specifies the list of artifact override arguments at the time of deployment.
         :param Sequence['GetBuildRunBuildOutputDeliveredArtifactArgs'] delivered_artifacts: Specifies the list of artifacts delivered through the Deliver Artifacts stage.
         :param Sequence['GetBuildRunBuildOutputExportedVariableArgs'] exported_variables: Specifies list of exported variables.
+        :param Sequence['GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionArgs'] vulnerability_audit_summary_collections: List of vulnerability audit summary.
         """
         pulumi.set(__self__, "artifact_override_parameters", artifact_override_parameters)
         pulumi.set(__self__, "delivered_artifacts", delivered_artifacts)
         pulumi.set(__self__, "exported_variables", exported_variables)
+        pulumi.set(__self__, "vulnerability_audit_summary_collections", vulnerability_audit_summary_collections)
 
     @property
     @pulumi.getter(name="artifactOverrideParameters")
@@ -4743,6 +4862,14 @@ class GetBuildRunBuildOutputResult(dict):
         Specifies list of exported variables.
         """
         return pulumi.get(self, "exported_variables")
+
+    @property
+    @pulumi.getter(name="vulnerabilityAuditSummaryCollections")
+    def vulnerability_audit_summary_collections(self) -> Sequence['outputs.GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionResult']:
+        """
+        List of vulnerability audit summary.
+        """
+        return pulumi.get(self, "vulnerability_audit_summary_collections")
 
 
 @pulumi.output_type
@@ -4972,6 +5099,64 @@ class GetBuildRunBuildOutputExportedVariableItemResult(dict):
         Value of the argument.
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemResult']):
+        """
+        :param Sequence['GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArgs'] items: List of exported variables.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemResult']:
+        """
+        List of exported variables.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetBuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 build_stage_id: str,
+                 commit_hash: str,
+                 vulnerability_audit_id: str):
+        """
+        :param str build_stage_id: Build stage OCID where scan was configured.
+        :param str commit_hash: Commit hash pertinent to the repository URL and the specified branch.
+        :param str vulnerability_audit_id: The OCID of the vulnerability audit.
+        """
+        pulumi.set(__self__, "build_stage_id", build_stage_id)
+        pulumi.set(__self__, "commit_hash", commit_hash)
+        pulumi.set(__self__, "vulnerability_audit_id", vulnerability_audit_id)
+
+    @property
+    @pulumi.getter(name="buildStageId")
+    def build_stage_id(self) -> str:
+        """
+        Build stage OCID where scan was configured.
+        """
+        return pulumi.get(self, "build_stage_id")
+
+    @property
+    @pulumi.getter(name="commitHash")
+    def commit_hash(self) -> str:
+        """
+        Commit hash pertinent to the repository URL and the specified branch.
+        """
+        return pulumi.get(self, "commit_hash")
+
+    @property
+    @pulumi.getter(name="vulnerabilityAuditId")
+    def vulnerability_audit_id(self) -> str:
+        """
+        The OCID of the vulnerability audit.
+        """
+        return pulumi.get(self, "vulnerability_audit_id")
 
 
 @pulumi.output_type
@@ -5841,6 +6026,7 @@ class GetConnectionsConnectionCollectionResult(dict):
 class GetConnectionsConnectionCollectionItemResult(dict):
     def __init__(__self__, *,
                  access_token: str,
+                 app_password: str,
                  compartment_id: str,
                  connection_type: str,
                  defined_tags: Mapping[str, Any],
@@ -5852,9 +6038,11 @@ class GetConnectionsConnectionCollectionItemResult(dict):
                  state: str,
                  system_tags: Mapping[str, Any],
                  time_created: str,
-                 time_updated: str):
+                 time_updated: str,
+                 username: str):
         """
         :param str access_token: The OCID of personal access token saved in secret store.
+        :param str app_password: OCID of personal Bitbucket Cloud AppPassword saved in secret store
         :param str compartment_id: The OCID of the compartment in which to list resources.
         :param str connection_type: A filter to return only resources that match the given connection type.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
@@ -5867,8 +6055,10 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time the connection was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param str time_updated: The time the connection was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        :param str username: Public Bitbucket Cloud Username in plain text
         """
         pulumi.set(__self__, "access_token", access_token)
+        pulumi.set(__self__, "app_password", app_password)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "connection_type", connection_type)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -5881,6 +6071,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "username", username)
 
     @property
     @pulumi.getter(name="accessToken")
@@ -5889,6 +6080,14 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         The OCID of personal access token saved in secret store.
         """
         return pulumi.get(self, "access_token")
+
+    @property
+    @pulumi.getter(name="appPassword")
+    def app_password(self) -> str:
+        """
+        OCID of personal Bitbucket Cloud AppPassword saved in secret store
+        """
+        return pulumi.get(self, "app_password")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -5986,6 +6185,14 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         """
         return pulumi.get(self, "time_updated")
 
+    @property
+    @pulumi.getter
+    def username(self) -> str:
+        """
+        Public Bitbucket Cloud Username in plain text
+        """
+        return pulumi.get(self, "username")
+
 
 @pulumi.output_type
 class GetConnectionsFilterResult(dict):
@@ -6018,6 +6225,7 @@ class GetConnectionsFilterResult(dict):
 class GetDeployArtifactDeployArtifactSourceResult(dict):
     def __init__(__self__, *,
                  base64encoded_content: str,
+                 chart_url: str,
                  deploy_artifact_path: str,
                  deploy_artifact_source_type: str,
                  deploy_artifact_version: str,
@@ -6025,7 +6233,8 @@ class GetDeployArtifactDeployArtifactSourceResult(dict):
                  image_uri: str,
                  repository_id: str):
         """
-        :param str base64encoded_content: base64 Encoded String
+        :param str base64encoded_content: Specifies content for the inline artifact.
+        :param str chart_url: The URL of an OCIR repository.
         :param str deploy_artifact_path: Specifies the artifact path in the repository.
         :param str deploy_artifact_source_type: Specifies types of artifact sources.
         :param str deploy_artifact_version: Users can set this as a placeholder value that refers to a pipeline parameter, for example, ${appVersion}.
@@ -6034,6 +6243,7 @@ class GetDeployArtifactDeployArtifactSourceResult(dict):
         :param str repository_id: The OCID of a repository
         """
         pulumi.set(__self__, "base64encoded_content", base64encoded_content)
+        pulumi.set(__self__, "chart_url", chart_url)
         pulumi.set(__self__, "deploy_artifact_path", deploy_artifact_path)
         pulumi.set(__self__, "deploy_artifact_source_type", deploy_artifact_source_type)
         pulumi.set(__self__, "deploy_artifact_version", deploy_artifact_version)
@@ -6045,9 +6255,17 @@ class GetDeployArtifactDeployArtifactSourceResult(dict):
     @pulumi.getter(name="base64encodedContent")
     def base64encoded_content(self) -> str:
         """
-        base64 Encoded String
+        Specifies content for the inline artifact.
         """
         return pulumi.get(self, "base64encoded_content")
+
+    @property
+    @pulumi.getter(name="chartUrl")
+    def chart_url(self) -> str:
+        """
+        The URL of an OCIR repository.
+        """
+        return pulumi.get(self, "chart_url")
 
     @property
     @pulumi.getter(name="deployArtifactPath")
@@ -6286,6 +6504,7 @@ class GetDeployArtifactsDeployArtifactCollectionItemResult(dict):
 class GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceResult(dict):
     def __init__(__self__, *,
                  base64encoded_content: str,
+                 chart_url: str,
                  deploy_artifact_path: str,
                  deploy_artifact_source_type: str,
                  deploy_artifact_version: str,
@@ -6293,7 +6512,8 @@ class GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceResult(d
                  image_uri: str,
                  repository_id: str):
         """
-        :param str base64encoded_content: base64 Encoded String
+        :param str base64encoded_content: Specifies content for the inline artifact.
+        :param str chart_url: The URL of an OCIR repository.
         :param str deploy_artifact_path: Specifies the artifact path in the repository.
         :param str deploy_artifact_source_type: Specifies types of artifact sources.
         :param str deploy_artifact_version: Users can set this as a placeholder value that refers to a pipeline parameter, for example, ${appVersion}.
@@ -6302,6 +6522,7 @@ class GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceResult(d
         :param str repository_id: The OCID of a repository
         """
         pulumi.set(__self__, "base64encoded_content", base64encoded_content)
+        pulumi.set(__self__, "chart_url", chart_url)
         pulumi.set(__self__, "deploy_artifact_path", deploy_artifact_path)
         pulumi.set(__self__, "deploy_artifact_source_type", deploy_artifact_source_type)
         pulumi.set(__self__, "deploy_artifact_version", deploy_artifact_version)
@@ -6313,9 +6534,17 @@ class GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceResult(d
     @pulumi.getter(name="base64encodedContent")
     def base64encoded_content(self) -> str:
         """
-        base64 Encoded String
+        Specifies content for the inline artifact.
         """
         return pulumi.get(self, "base64encoded_content")
+
+    @property
+    @pulumi.getter(name="chartUrl")
+    def chart_url(self) -> str:
+        """
+        The URL of an OCIR repository.
+        """
+        return pulumi.get(self, "chart_url")
 
     @property
     @pulumi.getter(name="deployArtifactPath")
@@ -8151,6 +8380,7 @@ class GetDeployStagesDeployStageCollectionItemResult(dict):
                  function_deploy_environment_id: str,
                  function_timeout_in_seconds: int,
                  green_backend_ips: Sequence['outputs.GetDeployStagesDeployStageCollectionItemGreenBackendIpResult'],
+                 helm_chart_deploy_artifact_id: str,
                  id: str,
                  is_async: bool,
                  is_validation_enabled: bool,
@@ -8165,6 +8395,7 @@ class GetDeployStagesDeployStageCollectionItemResult(dict):
                  oke_cluster_deploy_environment_id: str,
                  production_load_balancer_configs: Sequence['outputs.GetDeployStagesDeployStageCollectionItemProductionLoadBalancerConfigResult'],
                  project_id: str,
+                 release_name: str,
                  rollback_policies: Sequence['outputs.GetDeployStagesDeployStageCollectionItemRollbackPolicyResult'],
                  rollout_policies: Sequence['outputs.GetDeployStagesDeployStageCollectionItemRolloutPolicyResult'],
                  state: str,
@@ -8172,7 +8403,9 @@ class GetDeployStagesDeployStageCollectionItemResult(dict):
                  test_load_balancer_configs: Sequence['outputs.GetDeployStagesDeployStageCollectionItemTestLoadBalancerConfigResult'],
                  time_created: str,
                  time_updated: str,
+                 timeout_in_seconds: int,
                  traffic_shift_target: str,
+                 values_artifact_ids: Sequence[str],
                  wait_criterias: Sequence['outputs.GetDeployStagesDeployStageCollectionItemWaitCriteriaResult']):
         """
         :param Sequence['GetDeployStagesDeployStageCollectionItemApprovalPolicyArgs'] approval_policies: Specifies the approval policy.
@@ -8202,6 +8435,7 @@ class GetDeployStagesDeployStageCollectionItemResult(dict):
         :param str function_deploy_environment_id: Function environment OCID.
         :param int function_timeout_in_seconds: Timeout for execution of the Function. Value in seconds.
         :param Sequence['GetDeployStagesDeployStageCollectionItemGreenBackendIpArgs'] green_backend_ips: Collection of backend environment IP addresses.
+        :param str helm_chart_deploy_artifact_id: Helm chart artifact OCID.
         :param str id: Unique identifier or OCID for listing a single resource by ID.
         :param bool is_async: A boolean flag specifies whether this stage executes asynchronously.
         :param bool is_validation_enabled: A boolean flag specifies whether the invoked function must be validated.
@@ -8216,6 +8450,7 @@ class GetDeployStagesDeployStageCollectionItemResult(dict):
         :param str oke_cluster_deploy_environment_id: Kubernetes cluster environment OCID for deployment.
         :param Sequence['GetDeployStagesDeployStageCollectionItemProductionLoadBalancerConfigArgs'] production_load_balancer_configs: Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
         :param str project_id: The OCID of a project.
+        :param str release_name: Release name of the Helm chart.
         :param Sequence['GetDeployStagesDeployStageCollectionItemRollbackPolicyArgs'] rollback_policies: Specifies the rollback policy. This is initiated on the failure of certain stage types.
         :param Sequence['GetDeployStagesDeployStageCollectionItemRolloutPolicyArgs'] rollout_policies: Description of rollout policy for load balancer traffic shift stage.
         :param str state: A filter to return only deployment stages that matches the given lifecycle state.
@@ -8223,7 +8458,9 @@ class GetDeployStagesDeployStageCollectionItemResult(dict):
         :param Sequence['GetDeployStagesDeployStageCollectionItemTestLoadBalancerConfigArgs'] test_load_balancer_configs: Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
         :param str time_created: Time the deployment stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param str time_updated: Time the deployment stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        :param int timeout_in_seconds: Time to wait for execution of a helm stage. Defaults to 300 seconds.
         :param str traffic_shift_target: Specifies the target or destination backend set.
+        :param Sequence[str] values_artifact_ids: List of values.yaml file artifact OCIDs.
         :param Sequence['GetDeployStagesDeployStageCollectionItemWaitCriteriaArgs'] wait_criterias: Specifies wait criteria for the Wait stage.
         """
         pulumi.set(__self__, "approval_policies", approval_policies)
@@ -8253,6 +8490,7 @@ class GetDeployStagesDeployStageCollectionItemResult(dict):
         pulumi.set(__self__, "function_deploy_environment_id", function_deploy_environment_id)
         pulumi.set(__self__, "function_timeout_in_seconds", function_timeout_in_seconds)
         pulumi.set(__self__, "green_backend_ips", green_backend_ips)
+        pulumi.set(__self__, "helm_chart_deploy_artifact_id", helm_chart_deploy_artifact_id)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_async", is_async)
         pulumi.set(__self__, "is_validation_enabled", is_validation_enabled)
@@ -8267,6 +8505,7 @@ class GetDeployStagesDeployStageCollectionItemResult(dict):
         pulumi.set(__self__, "oke_cluster_deploy_environment_id", oke_cluster_deploy_environment_id)
         pulumi.set(__self__, "production_load_balancer_configs", production_load_balancer_configs)
         pulumi.set(__self__, "project_id", project_id)
+        pulumi.set(__self__, "release_name", release_name)
         pulumi.set(__self__, "rollback_policies", rollback_policies)
         pulumi.set(__self__, "rollout_policies", rollout_policies)
         pulumi.set(__self__, "state", state)
@@ -8274,7 +8513,9 @@ class GetDeployStagesDeployStageCollectionItemResult(dict):
         pulumi.set(__self__, "test_load_balancer_configs", test_load_balancer_configs)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "timeout_in_seconds", timeout_in_seconds)
         pulumi.set(__self__, "traffic_shift_target", traffic_shift_target)
+        pulumi.set(__self__, "values_artifact_ids", values_artifact_ids)
         pulumi.set(__self__, "wait_criterias", wait_criterias)
 
     @property
@@ -8494,6 +8735,14 @@ class GetDeployStagesDeployStageCollectionItemResult(dict):
         return pulumi.get(self, "green_backend_ips")
 
     @property
+    @pulumi.getter(name="helmChartDeployArtifactId")
+    def helm_chart_deploy_artifact_id(self) -> str:
+        """
+        Helm chart artifact OCID.
+        """
+        return pulumi.get(self, "helm_chart_deploy_artifact_id")
+
+    @property
     @pulumi.getter
     def id(self) -> str:
         """
@@ -8606,6 +8855,14 @@ class GetDeployStagesDeployStageCollectionItemResult(dict):
         return pulumi.get(self, "project_id")
 
     @property
+    @pulumi.getter(name="releaseName")
+    def release_name(self) -> str:
+        """
+        Release name of the Helm chart.
+        """
+        return pulumi.get(self, "release_name")
+
+    @property
     @pulumi.getter(name="rollbackPolicies")
     def rollback_policies(self) -> Sequence['outputs.GetDeployStagesDeployStageCollectionItemRollbackPolicyResult']:
         """
@@ -8662,12 +8919,28 @@ class GetDeployStagesDeployStageCollectionItemResult(dict):
         return pulumi.get(self, "time_updated")
 
     @property
+    @pulumi.getter(name="timeoutInSeconds")
+    def timeout_in_seconds(self) -> int:
+        """
+        Time to wait for execution of a helm stage. Defaults to 300 seconds.
+        """
+        return pulumi.get(self, "timeout_in_seconds")
+
+    @property
     @pulumi.getter(name="trafficShiftTarget")
     def traffic_shift_target(self) -> str:
         """
         Specifies the target or destination backend set.
         """
         return pulumi.get(self, "traffic_shift_target")
+
+    @property
+    @pulumi.getter(name="valuesArtifactIds")
+    def values_artifact_ids(self) -> Sequence[str]:
+        """
+        List of values.yaml file artifact OCIDs.
+        """
+        return pulumi.get(self, "values_artifact_ids")
 
     @property
     @pulumi.getter(name="waitCriterias")
@@ -10416,6 +10689,35 @@ class GetProjectsProjectCollectionItemNotificationConfigResult(dict):
         The topic ID for notifications.
         """
         return pulumi.get(self, "topic_id")
+
+
+@pulumi.output_type
+class GetRepoFileLineLineResult(dict):
+    def __init__(__self__, *,
+                 line_content: str,
+                 line_number: int):
+        """
+        :param str line_content: The content of the line.
+        :param int line_number: The line number.
+        """
+        pulumi.set(__self__, "line_content", line_content)
+        pulumi.set(__self__, "line_number", line_number)
+
+    @property
+    @pulumi.getter(name="lineContent")
+    def line_content(self) -> str:
+        """
+        The content of the line.
+        """
+        return pulumi.get(self, "line_content")
+
+    @property
+    @pulumi.getter(name="lineNumber")
+    def line_number(self) -> int:
+        """
+        The line number.
+        """
+        return pulumi.get(self, "line_number")
 
 
 @pulumi.output_type
@@ -12276,7 +12578,7 @@ class GetTriggerActionFilterResult(dict):
         """
         :param Sequence[str] events: The events, for example, PUSH, PULL_REQUEST_MERGE.
         :param Sequence['GetTriggerActionFilterIncludeArgs'] includes: Attributes to filter DevOps code repository events.
-        :param str trigger_source: Source of the trigger. Allowed values are, GITHUB, GITLAB and DEVOPS_CODE_REPOSITORY.
+        :param str trigger_source: Source of the trigger. Allowed values are, GITHUB and GITLAB.
         """
         pulumi.set(__self__, "events", events)
         pulumi.set(__self__, "includes", includes)
@@ -12302,7 +12604,7 @@ class GetTriggerActionFilterResult(dict):
     @pulumi.getter(name="triggerSource")
     def trigger_source(self) -> str:
         """
-        Source of the trigger. Allowed values are, GITHUB, GITLAB and DEVOPS_CODE_REPOSITORY.
+        Source of the trigger. Allowed values are, GITHUB and GITLAB.
         """
         return pulumi.get(self, "trigger_source")
 
@@ -12409,7 +12711,7 @@ class GetTriggersTriggerCollectionItemResult(dict):
         :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time the trigger was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param str time_updated: The time the trigger was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-        :param str trigger_source: Source of the trigger. Allowed values are, GITHUB, GITLAB and DEVOPS_CODE_REPOSITORY.
+        :param str trigger_source: Source of the trigger. Allowed values are, GITHUB and GITLAB.
         :param str trigger_url: The endpoint that listens to trigger events.
         """
         pulumi.set(__self__, "actions", actions)
@@ -12545,7 +12847,7 @@ class GetTriggersTriggerCollectionItemResult(dict):
     @pulumi.getter(name="triggerSource")
     def trigger_source(self) -> str:
         """
-        Source of the trigger. Allowed values are, GITHUB, GITLAB and DEVOPS_CODE_REPOSITORY.
+        Source of the trigger. Allowed values are, GITHUB and GITLAB.
         """
         return pulumi.get(self, "trigger_source")
 
@@ -12607,7 +12909,7 @@ class GetTriggersTriggerCollectionItemActionFilterResult(dict):
         """
         :param Sequence[str] events: The events, for example, PUSH, PULL_REQUEST_MERGE.
         :param Sequence['GetTriggersTriggerCollectionItemActionFilterIncludeArgs'] includes: Attributes to filter DevOps code repository events.
-        :param str trigger_source: Source of the trigger. Allowed values are, GITHUB, GITLAB and DEVOPS_CODE_REPOSITORY.
+        :param str trigger_source: Source of the trigger. Allowed values are, GITHUB and GITLAB.
         """
         pulumi.set(__self__, "events", events)
         pulumi.set(__self__, "includes", includes)
@@ -12633,7 +12935,7 @@ class GetTriggersTriggerCollectionItemActionFilterResult(dict):
     @pulumi.getter(name="triggerSource")
     def trigger_source(self) -> str:
         """
-        Source of the trigger. Allowed values are, GITHUB, GITLAB and DEVOPS_CODE_REPOSITORY.
+        Source of the trigger. Allowed values are, GITHUB and GITLAB.
         """
         return pulumi.get(self, "trigger_source")
 

@@ -47,6 +47,9 @@ class GetQueriesResult:
     @property
     @pulumi.getter
     def filters(self) -> Optional[Sequence['outputs.GetQueriesFilterResult']]:
+        """
+        The filter object for query usage.
+        """
         return pulumi.get(self, "filters")
 
     @property
@@ -97,6 +100,7 @@ def get_queries(compartment_id: Optional[str] = None,
 
 
     :param str compartment_id: The compartment ID in which to list resources.
+    :param Sequence[pulumi.InputType['GetQueriesFilterArgs']] filters: The filter object for query usage.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -134,5 +138,6 @@ def get_queries_output(compartment_id: Optional[pulumi.Input[str]] = None,
 
 
     :param str compartment_id: The compartment ID in which to list resources.
+    :param Sequence[pulumi.InputType['GetQueriesFilterArgs']] filters: The filter object for query usage.
     """
     ...

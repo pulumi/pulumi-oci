@@ -17,14 +17,14 @@ public final class GetRepositoryFileLineArgs extends com.pulumi.resources.Invoke
     public static final GetRepositoryFileLineArgs Empty = new GetRepositoryFileLineArgs();
 
     /**
-     * Path to a file within a repository.
+     * A filter to return file contents of the specified paths.
      * 
      */
     @Import(name="filePath", required=true)
     private Output<String> filePath;
 
     /**
-     * @return Path to a file within a repository.
+     * @return A filter to return file contents of the specified paths.
      * 
      */
     public Output<String> filePath() {
@@ -104,7 +104,7 @@ public final class GetRepositoryFileLineArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param filePath Path to a file within a repository.
+         * @param filePath A filter to return file contents of the specified paths.
          * 
          * @return builder
          * 
@@ -115,7 +115,7 @@ public final class GetRepositoryFileLineArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param filePath Path to a file within a repository.
+         * @param filePath A filter to return file contents of the specified paths.
          * 
          * @return builder
          * 

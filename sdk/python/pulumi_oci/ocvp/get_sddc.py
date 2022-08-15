@@ -21,10 +21,13 @@ class GetSddcResult:
     """
     A collection of values returned by getSddc.
     """
-    def __init__(__self__, actual_esxi_hosts_count=None, compartment_id=None, compute_availability_domain=None, defined_tags=None, display_name=None, esxi_hosts_count=None, freeform_tags=None, hcx_action=None, hcx_fqdn=None, hcx_initial_password=None, hcx_on_prem_key=None, hcx_on_prem_licenses=None, hcx_private_ip_id=None, hcx_vlan_id=None, id=None, initial_sku=None, instance_display_name_prefix=None, is_hcx_enabled=None, is_hcx_enterprise_enabled=None, is_hcx_pending_downgrade=None, is_shielded_instance_enabled=None, nsx_edge_uplink1vlan_id=None, nsx_edge_uplink2vlan_id=None, nsx_edge_uplink_ip_id=None, nsx_edge_vtep_vlan_id=None, nsx_manager_fqdn=None, nsx_manager_initial_password=None, nsx_manager_private_ip_id=None, nsx_manager_username=None, nsx_overlay_segment_name=None, nsx_vtep_vlan_id=None, provisioning_subnet_id=None, provisioning_vlan_id=None, refresh_hcx_license_status=None, replication_vlan_id=None, reserving_hcx_on_premise_license_keys=None, sddc_id=None, ssh_authorized_keys=None, state=None, time_created=None, time_hcx_billing_cycle_end=None, time_hcx_license_status_updated=None, time_updated=None, vcenter_fqdn=None, vcenter_initial_password=None, vcenter_private_ip_id=None, vcenter_username=None, vmotion_vlan_id=None, vmware_software_version=None, vsan_vlan_id=None, vsphere_vlan_id=None, workload_network_cidr=None):
+    def __init__(__self__, actual_esxi_hosts_count=None, capacity_reservation_id=None, compartment_id=None, compute_availability_domain=None, defined_tags=None, display_name=None, esxi_hosts_count=None, freeform_tags=None, hcx_action=None, hcx_fqdn=None, hcx_initial_password=None, hcx_on_prem_key=None, hcx_on_prem_licenses=None, hcx_private_ip_id=None, hcx_vlan_id=None, id=None, initial_host_ocpu_count=None, initial_host_shape_name=None, initial_sku=None, instance_display_name_prefix=None, is_hcx_enabled=None, is_hcx_enterprise_enabled=None, is_hcx_pending_downgrade=None, is_shielded_instance_enabled=None, nsx_edge_uplink1vlan_id=None, nsx_edge_uplink2vlan_id=None, nsx_edge_uplink_ip_id=None, nsx_edge_vtep_vlan_id=None, nsx_manager_fqdn=None, nsx_manager_initial_password=None, nsx_manager_private_ip_id=None, nsx_manager_username=None, nsx_overlay_segment_name=None, nsx_vtep_vlan_id=None, provisioning_subnet_id=None, provisioning_vlan_id=None, refresh_hcx_license_status=None, replication_vlan_id=None, reserving_hcx_on_premise_license_keys=None, sddc_id=None, ssh_authorized_keys=None, state=None, time_created=None, time_hcx_billing_cycle_end=None, time_hcx_license_status_updated=None, time_updated=None, vcenter_fqdn=None, vcenter_initial_password=None, vcenter_private_ip_id=None, vcenter_username=None, vmotion_vlan_id=None, vmware_software_version=None, vsan_vlan_id=None, vsphere_vlan_id=None, workload_network_cidr=None):
         if actual_esxi_hosts_count and not isinstance(actual_esxi_hosts_count, int):
             raise TypeError("Expected argument 'actual_esxi_hosts_count' to be a int")
         pulumi.set(__self__, "actual_esxi_hosts_count", actual_esxi_hosts_count)
+        if capacity_reservation_id and not isinstance(capacity_reservation_id, str):
+            raise TypeError("Expected argument 'capacity_reservation_id' to be a str")
+        pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -67,6 +70,12 @@ class GetSddcResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if initial_host_ocpu_count and not isinstance(initial_host_ocpu_count, float):
+            raise TypeError("Expected argument 'initial_host_ocpu_count' to be a float")
+        pulumi.set(__self__, "initial_host_ocpu_count", initial_host_ocpu_count)
+        if initial_host_shape_name and not isinstance(initial_host_shape_name, str):
+            raise TypeError("Expected argument 'initial_host_shape_name' to be a str")
+        pulumi.set(__self__, "initial_host_shape_name", initial_host_shape_name)
         if initial_sku and not isinstance(initial_sku, str):
             raise TypeError("Expected argument 'initial_sku' to be a str")
         pulumi.set(__self__, "initial_sku", initial_sku)
@@ -188,6 +197,14 @@ class GetSddcResult:
         return pulumi.get(self, "actual_esxi_hosts_count")
 
     @property
+    @pulumi.getter(name="capacityReservationId")
+    def capacity_reservation_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+        """
+        return pulumi.get(self, "capacity_reservation_id")
+
+    @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
@@ -295,6 +312,22 @@ class GetSddcResult:
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="initialHostOcpuCount")
+    def initial_host_ocpu_count(self) -> float:
+        """
+        The initial OCPU count of the SDDC's ESXi hosts.
+        """
+        return pulumi.get(self, "initial_host_ocpu_count")
+
+    @property
+    @pulumi.getter(name="initialHostShapeName")
+    def initial_host_shape_name(self) -> str:
+        """
+        The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+        """
+        return pulumi.get(self, "initial_host_shape_name")
 
     @property
     @pulumi.getter(name="initialSku")
@@ -591,6 +624,7 @@ class AwaitableGetSddcResult(GetSddcResult):
             yield self
         return GetSddcResult(
             actual_esxi_hosts_count=self.actual_esxi_hosts_count,
+            capacity_reservation_id=self.capacity_reservation_id,
             compartment_id=self.compartment_id,
             compute_availability_domain=self.compute_availability_domain,
             defined_tags=self.defined_tags,
@@ -605,6 +639,8 @@ class AwaitableGetSddcResult(GetSddcResult):
             hcx_private_ip_id=self.hcx_private_ip_id,
             hcx_vlan_id=self.hcx_vlan_id,
             id=self.id,
+            initial_host_ocpu_count=self.initial_host_ocpu_count,
+            initial_host_shape_name=self.initial_host_shape_name,
             initial_sku=self.initial_sku,
             instance_display_name_prefix=self.instance_display_name_prefix,
             is_hcx_enabled=self.is_hcx_enabled,
@@ -673,6 +709,7 @@ def get_sddc(sddc_id: Optional[str] = None,
 
     return AwaitableGetSddcResult(
         actual_esxi_hosts_count=__ret__.actual_esxi_hosts_count,
+        capacity_reservation_id=__ret__.capacity_reservation_id,
         compartment_id=__ret__.compartment_id,
         compute_availability_domain=__ret__.compute_availability_domain,
         defined_tags=__ret__.defined_tags,
@@ -687,6 +724,8 @@ def get_sddc(sddc_id: Optional[str] = None,
         hcx_private_ip_id=__ret__.hcx_private_ip_id,
         hcx_vlan_id=__ret__.hcx_vlan_id,
         id=__ret__.id,
+        initial_host_ocpu_count=__ret__.initial_host_ocpu_count,
+        initial_host_shape_name=__ret__.initial_host_shape_name,
         initial_sku=__ret__.initial_sku,
         instance_display_name_prefix=__ret__.instance_display_name_prefix,
         is_hcx_enabled=__ret__.is_hcx_enabled,

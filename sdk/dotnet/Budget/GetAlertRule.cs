@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Budget
         /// <summary>
         /// This data source provides details about a specific Alert Rule resource in Oracle Cloud Infrastructure Budget service.
         /// 
-        /// Gets an Alert Rule for a specified Budget.
+        /// Gets an Alert Rule for a specified budget.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -46,7 +46,7 @@ namespace Pulumi.Oci.Budget
         /// <summary>
         /// This data source provides details about a specific Alert Rule resource in Oracle Cloud Infrastructure Budget service.
         /// 
-        /// Gets an Alert Rule for a specified Budget.
+        /// Gets an Alert Rule for a specified budget.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -80,13 +80,13 @@ namespace Pulumi.Oci.Budget
     public sealed class GetAlertRuleArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The unique Alert Rule OCID
+        /// The unique Alert Rule OCID.
         /// </summary>
         [Input("alertRuleId", required: true)]
         public string AlertRuleId { get; set; } = null!;
 
         /// <summary>
-        /// The unique Budget OCID
+        /// The unique budget OCID.
         /// </summary>
         [Input("budgetId", required: true)]
         public string BudgetId { get; set; } = null!;
@@ -99,13 +99,13 @@ namespace Pulumi.Oci.Budget
     public sealed class GetAlertRuleInvokeArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The unique Alert Rule OCID
+        /// The unique Alert Rule OCID.
         /// </summary>
         [Input("alertRuleId", required: true)]
         public Input<string> AlertRuleId { get; set; } = null!;
 
         /// <summary>
-        /// The unique Budget OCID
+        /// The unique budget OCID.
         /// </summary>
         [Input("budgetId", required: true)]
         public Input<string> BudgetId { get; set; } = null!;
@@ -121,7 +121,7 @@ namespace Pulumi.Oci.Budget
     {
         public readonly string AlertRuleId;
         /// <summary>
-        /// The OCID of the budget
+        /// The OCID of the budget.
         /// </summary>
         public readonly string BudgetId;
         /// <summary>
@@ -133,7 +133,7 @@ namespace Pulumi.Oci.Budget
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// The name of the alert rule.
+        /// The name of the alert rule. Avoid entering confidential information.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
@@ -141,15 +141,15 @@ namespace Pulumi.Oci.Budget
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// The OCID of the alert rule
+        /// The OCID of the alert rule.
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Custom message that will be sent when alert is triggered
+        /// The custom message that will be sent when the alert is triggered.
         /// </summary>
         public readonly string Message;
         /// <summary>
-        /// Delimited list of email addresses to receive the alert when it triggers. Delimiter character can be comma, space, TAB, or semicolon.
+        /// The delimited list of email addresses to receive the alert when it triggers. Delimiter characters can be a comma, space, TAB, or semicolon.
         /// </summary>
         public readonly string Recipients;
         /// <summary>
@@ -157,7 +157,7 @@ namespace Pulumi.Oci.Budget
         /// </summary>
         public readonly string State;
         /// <summary>
-        /// The threshold for triggering the alert. If thresholdType is PERCENTAGE, the maximum value is 10000.
+        /// The threshold for triggering the alert. If the thresholdType is PERCENTAGE, the maximum value is 10000.
         /// </summary>
         public readonly double Threshold;
         /// <summary>
@@ -165,19 +165,19 @@ namespace Pulumi.Oci.Budget
         /// </summary>
         public readonly string ThresholdType;
         /// <summary>
-        /// Time when budget was created
+        /// The time when the budget was created.
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// Time when budget was updated
+        /// The time when the budget was updated.
         /// </summary>
         public readonly string TimeUpdated;
         /// <summary>
-        /// The type of alert. Valid values are ACTUAL (the alert will trigger based on actual usage) or FORECAST (the alert will trigger based on predicted usage).
+        /// The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
         /// </summary>
         public readonly string Type;
         /// <summary>
-        /// Version of the alert rule. Starts from 1 and increments by 1.
+        /// The version of the alert rule. Starts from 1 and increments by 1.
         /// </summary>
         public readonly int Version;
 

@@ -113,7 +113,7 @@ export class VirtualCircuit extends pulumi.CustomResource {
      */
     public readonly bandwidthShapeName!: pulumi.Output<string>;
     /**
-     * (Updatable) Set to ENABLED to activate the bgp session of virtual circuit, DISABLED to deactivate.
+     * (Updatable) Set to `ENABLED` (the default) to activate the BGP session of the virtual circuit, set to `DISABLED` to deactivate the virtual circuit.
      */
     public readonly bgpAdminState!: pulumi.Output<string>;
     /**
@@ -169,7 +169,7 @@ export class VirtualCircuit extends pulumi.CustomResource {
      */
     public readonly ipMtu!: pulumi.Output<string>;
     /**
-     * (Updatable) Set to true to enable BFD for ipv4 Bgp Peering, false to disable. If not set, default is false
+     * (Updatable) Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
      */
     public readonly isBfdEnabled!: pulumi.Output<boolean>;
     /**
@@ -311,7 +311,7 @@ export interface VirtualCircuitState {
      */
     bandwidthShapeName?: pulumi.Input<string>;
     /**
-     * (Updatable) Set to ENABLED to activate the bgp session of virtual circuit, DISABLED to deactivate.
+     * (Updatable) Set to `ENABLED` (the default) to activate the BGP session of the virtual circuit, set to `DISABLED` to deactivate the virtual circuit.
      */
     bgpAdminState?: pulumi.Input<string>;
     /**
@@ -367,7 +367,7 @@ export interface VirtualCircuitState {
      */
     ipMtu?: pulumi.Input<string>;
     /**
-     * (Updatable) Set to true to enable BFD for ipv4 Bgp Peering, false to disable. If not set, default is false
+     * (Updatable) Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
      */
     isBfdEnabled?: pulumi.Input<boolean>;
     /**
@@ -429,7 +429,7 @@ export interface VirtualCircuitArgs {
      */
     bandwidthShapeName?: pulumi.Input<string>;
     /**
-     * (Updatable) Set to ENABLED to activate the bgp session of virtual circuit, DISABLED to deactivate.
+     * (Updatable) Set to `ENABLED` (the default) to activate the BGP session of the virtual circuit, set to `DISABLED` to deactivate the virtual circuit.
      */
     bgpAdminState?: pulumi.Input<string>;
     /**
@@ -471,7 +471,7 @@ export interface VirtualCircuitArgs {
      */
     ipMtu?: pulumi.Input<string>;
     /**
-     * (Updatable) Set to true to enable BFD for ipv4 Bgp Peering, false to disable. If not set, default is false
+     * (Updatable) Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
      */
     isBfdEnabled?: pulumi.Input<boolean>;
     /**

@@ -138,6 +138,7 @@ namespace Pulumi.Oci.DataConnectivity
     ///                         Type = @var.Registry_folder_data_assets_default_connection_type,
     ///                     },
     ///                     Description = @var.Registry_folder_data_assets_description,
+    ///                     EndPoints = @var.Registry_folder_data_assets_end_points,
     ///                     ExternalKey = @var.Registry_folder_data_assets_external_key,
     ///                     Metadata = new Oci.DataConnectivity.Inputs.RegistryFolderDataAssetMetadataArgs
     ///                     {

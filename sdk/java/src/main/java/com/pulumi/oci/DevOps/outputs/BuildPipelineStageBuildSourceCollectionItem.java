@@ -17,7 +17,7 @@ public final class BuildPipelineStageBuildSourceCollectionItem {
      */
     private final @Nullable String branch;
     /**
-     * @return (Updatable) Connection identifier pertinent to GitHub source provider.
+     * @return (Updatable) Connection identifier pertinent to Bitbucket Cloud source provider
      * 
      */
     private final @Nullable String connectionId;
@@ -66,7 +66,7 @@ public final class BuildPipelineStageBuildSourceCollectionItem {
         return Optional.ofNullable(this.branch);
     }
     /**
-     * @return (Updatable) Connection identifier pertinent to GitHub source provider.
+     * @return (Updatable) Connection identifier pertinent to Bitbucket Cloud source provider
      * 
      */
     public Optional<String> connectionId() {

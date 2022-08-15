@@ -18,7 +18,7 @@ namespace Pulumi.Oci.Core.Outputs
         public readonly string? CustomEncryptionAlgorithm;
         public readonly bool? IsCustomPhaseOneConfig;
         public readonly bool? IsIkeEstablished;
-        public readonly string? Lifetime;
+        public readonly int? Lifetime;
         public readonly string? NegotiatedAuthenticationAlgorithm;
         public readonly string? NegotiatedDhGroup;
         public readonly string? NegotiatedEncryptionAlgorithm;
@@ -37,7 +37,7 @@ namespace Pulumi.Oci.Core.Outputs
 
             bool? isIkeEstablished,
 
-            string? lifetime,
+            int? lifetime,
 
             string? negotiatedAuthenticationAlgorithm,
 

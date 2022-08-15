@@ -6,6 +6,7 @@ package com.pulumi.oci.Core.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Core.inputs.IpsecConnectionTunnelManagementBgpSessionInfoArgs;
+import com.pulumi.oci.Core.inputs.IpsecConnectionTunnelManagementDpdConfigArgs;
 import com.pulumi.oci.Core.inputs.IpsecConnectionTunnelManagementEncryptionDomainConfigArgs;
 import com.pulumi.oci.Core.inputs.IpsecConnectionTunnelManagementPhaseOneDetailArgs;
 import com.pulumi.oci.Core.inputs.IpsecConnectionTunnelManagementPhaseTwoDetailArgs;
@@ -79,6 +80,13 @@ public final class IpsecConnectionTunnelManagementState extends com.pulumi.resou
      */
     public Optional<Output<String>> displayName() {
         return Optional.ofNullable(this.displayName);
+    }
+
+    @Import(name="dpdConfigs")
+    private @Nullable Output<List<IpsecConnectionTunnelManagementDpdConfigArgs>> dpdConfigs;
+
+    public Optional<Output<List<IpsecConnectionTunnelManagementDpdConfigArgs>>> dpdConfigs() {
+        return Optional.ofNullable(this.dpdConfigs);
     }
 
     @Import(name="dpdMode")
@@ -295,6 +303,7 @@ public final class IpsecConnectionTunnelManagementState extends com.pulumi.resou
         this.compartmentId = $.compartmentId;
         this.cpeIp = $.cpeIp;
         this.displayName = $.displayName;
+        this.dpdConfigs = $.dpdConfigs;
         this.dpdMode = $.dpdMode;
         this.dpdTimeoutInSec = $.dpdTimeoutInSec;
         this.encryptionDomainConfig = $.encryptionDomainConfig;
@@ -424,6 +433,19 @@ public final class IpsecConnectionTunnelManagementState extends com.pulumi.resou
          */
         public Builder displayName(String displayName) {
             return displayName(Output.of(displayName));
+        }
+
+        public Builder dpdConfigs(@Nullable Output<List<IpsecConnectionTunnelManagementDpdConfigArgs>> dpdConfigs) {
+            $.dpdConfigs = dpdConfigs;
+            return this;
+        }
+
+        public Builder dpdConfigs(List<IpsecConnectionTunnelManagementDpdConfigArgs> dpdConfigs) {
+            return dpdConfigs(Output.of(dpdConfigs));
+        }
+
+        public Builder dpdConfigs(IpsecConnectionTunnelManagementDpdConfigArgs... dpdConfigs) {
+            return dpdConfigs(List.of(dpdConfigs));
         }
 
         public Builder dpdMode(@Nullable Output<String> dpdMode) {

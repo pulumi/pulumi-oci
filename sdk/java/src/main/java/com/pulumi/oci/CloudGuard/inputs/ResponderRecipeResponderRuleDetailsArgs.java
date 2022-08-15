@@ -18,9 +18,17 @@ public final class ResponderRecipeResponderRuleDetailsArgs extends com.pulumi.re
 
     public static final ResponderRecipeResponderRuleDetailsArgs Empty = new ResponderRecipeResponderRuleDetailsArgs();
 
+    /**
+     * Base condition object
+     * 
+     */
     @Import(name="condition")
     private @Nullable Output<String> condition;
 
+    /**
+     * @return Base condition object
+     * 
+     */
     public Optional<Output<String>> condition() {
         return Optional.ofNullable(this.condition);
     }
@@ -97,11 +105,23 @@ public final class ResponderRecipeResponderRuleDetailsArgs extends com.pulumi.re
             $ = new ResponderRecipeResponderRuleDetailsArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param condition Base condition object
+         * 
+         * @return builder
+         * 
+         */
         public Builder condition(@Nullable Output<String> condition) {
             $.condition = condition;
             return this;
         }
 
+        /**
+         * @param condition Base condition object
+         * 
+         * @return builder
+         * 
+         */
         public Builder condition(String condition) {
             return condition(Output.of(condition));
         }

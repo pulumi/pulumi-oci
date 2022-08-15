@@ -21,21 +21,38 @@ import * as utilities from "../utilities";
  *     clusterAdminPassword: _var.auto_scaling_configuration_cluster_admin_password,
  *     isEnabled: _var.auto_scaling_configuration_is_enabled,
  *     nodeType: _var.auto_scaling_configuration_node_type,
- *     policy: {
- *         policyType: _var.auto_scaling_configuration_policy_policy_type,
- *         rules: [{
- *             action: _var.auto_scaling_configuration_policy_rules_action,
+ *     displayName: _var.auto_scaling_configuration_display_name,
+ *     policyDetails: {
+ *         policyType: _var.auto_scaling_configuration_policy_details_policy_type,
+ *         scaleDownConfig: {
+ *             memoryStepSize: _var.auto_scaling_configuration_policy_details_scale_down_config_memory_step_size,
  *             metric: {
- *                 metricType: _var.auto_scaling_configuration_policy_rules_metric_metric_type,
+ *                 metricType: _var.auto_scaling_configuration_policy_details_scale_down_config_metric_metric_type,
  *                 threshold: {
- *                     durationInMinutes: _var.auto_scaling_configuration_policy_rules_metric_threshold_duration_in_minutes,
- *                     operator: _var.auto_scaling_configuration_policy_rules_metric_threshold_operator,
- *                     value: _var.auto_scaling_configuration_policy_rules_metric_threshold_value,
+ *                     durationInMinutes: _var.auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_duration_in_minutes,
+ *                     operator: _var.auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_operator,
+ *                     value: _var.auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_value,
  *                 },
  *             },
- *         }],
+ *             minMemoryPerNode: _var.auto_scaling_configuration_policy_details_scale_down_config_min_memory_per_node,
+ *             minOcpusPerNode: _var.auto_scaling_configuration_policy_details_scale_down_config_min_ocpus_per_node,
+ *             ocpuStepSize: _var.auto_scaling_configuration_policy_details_scale_down_config_ocpu_step_size,
+ *         },
+ *         scaleUpConfig: {
+ *             maxMemoryPerNode: _var.auto_scaling_configuration_policy_details_scale_up_config_max_memory_per_node,
+ *             maxOcpusPerNode: _var.auto_scaling_configuration_policy_details_scale_up_config_max_ocpus_per_node,
+ *             memoryStepSize: _var.auto_scaling_configuration_policy_details_scale_up_config_memory_step_size,
+ *             metric: {
+ *                 metricType: _var.auto_scaling_configuration_policy_details_scale_up_config_metric_metric_type,
+ *                 threshold: {
+ *                     durationInMinutes: _var.auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_duration_in_minutes,
+ *                     operator: _var.auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_operator,
+ *                     value: _var.auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_value,
+ *                 },
+ *             },
+ *             ocpuStepSize: _var.auto_scaling_configuration_policy_details_scale_up_config_ocpu_step_size,
+ *         },
  *     },
- *     displayName: _var.auto_scaling_configuration_display_name,
  * });
  * ```
  *
@@ -92,13 +109,17 @@ export class AutoScalingConfiguration extends pulumi.CustomResource {
      */
     public readonly isEnabled!: pulumi.Output<boolean>;
     /**
-     * A node type that is managed by an autoscale configuration. The only supported type is WORKER.
+     * A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
      */
     public readonly nodeType!: pulumi.Output<string>;
     /**
-     * (Updatable) Policy definitions for the autoscale configuration.
+     * (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
      */
     public readonly policy!: pulumi.Output<outputs.BigDataService.AutoScalingConfigurationPolicy>;
+    /**
+     * (Updatable) Policy definition for the autoscale configuration.
+     */
+    public readonly policyDetails!: pulumi.Output<outputs.BigDataService.AutoScalingConfigurationPolicyDetails>;
     /**
      * The state of the autoscale configuration.
      */
@@ -131,6 +152,7 @@ export class AutoScalingConfiguration extends pulumi.CustomResource {
             resourceInputs["isEnabled"] = state ? state.isEnabled : undefined;
             resourceInputs["nodeType"] = state ? state.nodeType : undefined;
             resourceInputs["policy"] = state ? state.policy : undefined;
+            resourceInputs["policyDetails"] = state ? state.policyDetails : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
@@ -148,15 +170,13 @@ export class AutoScalingConfiguration extends pulumi.CustomResource {
             if ((!args || args.nodeType === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'nodeType'");
             }
-            if ((!args || args.policy === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'policy'");
-            }
             resourceInputs["bdsInstanceId"] = args ? args.bdsInstanceId : undefined;
             resourceInputs["clusterAdminPassword"] = args ? args.clusterAdminPassword : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["isEnabled"] = args ? args.isEnabled : undefined;
             resourceInputs["nodeType"] = args ? args.nodeType : undefined;
             resourceInputs["policy"] = args ? args.policy : undefined;
+            resourceInputs["policyDetails"] = args ? args.policyDetails : undefined;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
@@ -187,13 +207,17 @@ export interface AutoScalingConfigurationState {
      */
     isEnabled?: pulumi.Input<boolean>;
     /**
-     * A node type that is managed by an autoscale configuration. The only supported type is WORKER.
+     * A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
      */
     nodeType?: pulumi.Input<string>;
     /**
-     * (Updatable) Policy definitions for the autoscale configuration.
+     * (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
      */
     policy?: pulumi.Input<inputs.BigDataService.AutoScalingConfigurationPolicy>;
+    /**
+     * (Updatable) Policy definition for the autoscale configuration.
+     */
+    policyDetails?: pulumi.Input<inputs.BigDataService.AutoScalingConfigurationPolicyDetails>;
     /**
      * The state of the autoscale configuration.
      */
@@ -229,11 +253,15 @@ export interface AutoScalingConfigurationArgs {
      */
     isEnabled: pulumi.Input<boolean>;
     /**
-     * A node type that is managed by an autoscale configuration. The only supported type is WORKER.
+     * A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
      */
     nodeType: pulumi.Input<string>;
     /**
-     * (Updatable) Policy definitions for the autoscale configuration.
+     * (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
      */
-    policy: pulumi.Input<inputs.BigDataService.AutoScalingConfigurationPolicy>;
+    policy?: pulumi.Input<inputs.BigDataService.AutoScalingConfigurationPolicy>;
+    /**
+     * (Updatable) Policy definition for the autoscale configuration.
+     */
+    policyDetails?: pulumi.Input<inputs.BigDataService.AutoScalingConfigurationPolicyDetails>;
 }

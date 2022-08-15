@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DataLabellingService.Inputs
         private InputList<Inputs.DatasetLabelSetItemArgs>? _items;
 
         /// <summary>
-        /// An ordered collection of Labels that are unique by name.
+        /// An ordered collection of labels that are unique by name.
         /// </summary>
         public InputList<Inputs.DatasetLabelSetItemArgs> Items
         {

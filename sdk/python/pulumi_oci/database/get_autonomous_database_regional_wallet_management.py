@@ -19,7 +19,10 @@ class GetAutonomousDatabaseRegionalWalletManagementResult:
     """
     A collection of values returned by getAutonomousDatabaseRegionalWalletManagement.
     """
-    def __init__(__self__, id=None, should_rotate=None, state=None, time_rotated=None):
+    def __init__(__self__, grace_period=None, id=None, should_rotate=None, state=None, time_rotated=None):
+        if grace_period and not isinstance(grace_period, int):
+            raise TypeError("Expected argument 'grace_period' to be a int")
+        pulumi.set(__self__, "grace_period", grace_period)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -32,6 +35,11 @@ class GetAutonomousDatabaseRegionalWalletManagementResult:
         if time_rotated and not isinstance(time_rotated, str):
             raise TypeError("Expected argument 'time_rotated' to be a str")
         pulumi.set(__self__, "time_rotated", time_rotated)
+
+    @property
+    @pulumi.getter(name="gracePeriod")
+    def grace_period(self) -> int:
+        return pulumi.get(self, "grace_period")
 
     @property
     @pulumi.getter
@@ -66,6 +74,7 @@ class AwaitableGetAutonomousDatabaseRegionalWalletManagementResult(GetAutonomous
         if False:
             yield self
         return GetAutonomousDatabaseRegionalWalletManagementResult(
+            grace_period=self.grace_period,
             id=self.id,
             should_rotate=self.should_rotate,
             state=self.state,
@@ -95,6 +104,7 @@ def get_autonomous_database_regional_wallet_management(opts: Optional[pulumi.Inv
     __ret__ = pulumi.runtime.invoke('oci:Database/getAutonomousDatabaseRegionalWalletManagement:getAutonomousDatabaseRegionalWalletManagement', __args__, opts=opts, typ=GetAutonomousDatabaseRegionalWalletManagementResult).value
 
     return AwaitableGetAutonomousDatabaseRegionalWalletManagementResult(
+        grace_period=__ret__.grace_period,
         id=__ret__.id,
         should_rotate=__ret__.should_rotate,
         state=__ret__.state,

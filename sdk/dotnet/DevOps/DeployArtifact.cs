@@ -31,6 +31,7 @@ namespace Pulumi.Oci.DevOps
     ///             {
     ///                 DeployArtifactSourceType = @var.Deploy_artifact_deploy_artifact_source_deploy_artifact_source_type,
     ///                 Base64encodedContent = @var.Deploy_artifact_deploy_artifact_source_base64encoded_content,
+    ///                 ChartUrl = @var.Deploy_artifact_deploy_artifact_source_chart_url,
     ///                 DeployArtifactPath = @var.Deploy_artifact_deploy_artifact_source_deploy_artifact_path,
     ///                 DeployArtifactVersion = @var.Deploy_artifact_deploy_artifact_source_deploy_artifact_version,
     ///                 ImageDigest = @var.Deploy_artifact_deploy_artifact_source_image_digest,

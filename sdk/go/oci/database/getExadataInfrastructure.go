@@ -99,6 +99,8 @@ type LookupExadataInfrastructureResult struct {
 	Id string `pulumi:"id"`
 	// The CIDR block for the Exadata InfiniBand interconnect.
 	InfiniBandNetworkCidr string `pulumi:"infiniBandNetworkCidr"`
+	// Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
+	IsCpsOfflineReportEnabled bool `pulumi:"isCpsOfflineReportEnabled"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// A field to capture ‘Maintenance SLO Status’ for the Exadata infrastructure with values ‘OK’, ‘DEGRADED’. Default is ‘OK’ when the infrastructure is provisioned.
@@ -286,6 +288,11 @@ func (o LookupExadataInfrastructureResultOutput) Id() pulumi.StringOutput {
 // The CIDR block for the Exadata InfiniBand interconnect.
 func (o LookupExadataInfrastructureResultOutput) InfiniBandNetworkCidr() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExadataInfrastructureResult) string { return v.InfiniBandNetworkCidr }).(pulumi.StringOutput)
+}
+
+// Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
+func (o LookupExadataInfrastructureResultOutput) IsCpsOfflineReportEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupExadataInfrastructureResult) bool { return v.IsCpsOfflineReportEnabled }).(pulumi.BoolOutput)
 }
 
 // Additional information about the current lifecycle state.

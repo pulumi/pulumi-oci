@@ -49,6 +49,8 @@ import * as utilities from "../utilities";
  *         }],
  *     },
  *     requestProtection: {
+ *         bodyInspectionSizeLimitExceededActionName: _var.web_app_firewall_policy_request_protection_body_inspection_size_limit_exceeded_action_name,
+ *         bodyInspectionSizeLimitInBytes: _var.web_app_firewall_policy_request_protection_body_inspection_size_limit_in_bytes,
  *         rules: [{
  *             actionName: _var.web_app_firewall_policy_request_protection_rules_action_name,
  *             name: _var.web_app_firewall_policy_request_protection_rules_name,
@@ -69,6 +71,7 @@ import * as utilities from "../utilities";
  *             type: _var.web_app_firewall_policy_request_protection_rules_type,
  *             condition: _var.web_app_firewall_policy_request_protection_rules_condition,
  *             conditionLanguage: _var.web_app_firewall_policy_request_protection_rules_condition_language,
+ *             isBodyInspectionEnabled: _var.web_app_firewall_policy_request_protection_rules_is_body_inspection_enabled,
  *             protectionCapabilitySettings: {
  *                 allowedHttpMethods: _var.web_app_firewall_policy_request_protection_rules_protection_capability_settings_allowed_http_methods,
  *                 maxHttpRequestHeaderLength: _var.web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_http_request_header_length,
@@ -123,6 +126,7 @@ import * as utilities from "../utilities";
  *             type: _var.web_app_firewall_policy_response_protection_rules_type,
  *             condition: _var.web_app_firewall_policy_response_protection_rules_condition,
  *             conditionLanguage: _var.web_app_firewall_policy_response_protection_rules_condition_language,
+ *             isBodyInspectionEnabled: _var.web_app_firewall_policy_response_protection_rules_is_body_inspection_enabled,
  *             protectionCapabilitySettings: {
  *                 allowedHttpMethods: _var.web_app_firewall_policy_response_protection_rules_protection_capability_settings_allowed_http_methods,
  *                 maxHttpRequestHeaderLength: _var.web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_http_request_header_length,

@@ -19,7 +19,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) Base condition object
         /// </summary>
         [Input("condition")]
         public Input<string>? Condition { get; set; }

@@ -6,6 +6,7 @@ package com.pulumi.oci.BigDataService;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.BigDataService.inputs.AutoScalingConfigurationPolicyArgs;
+import com.pulumi.oci.BigDataService.inputs.AutoScalingConfigurationPolicyDetailsArgs;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -78,14 +79,14 @@ public final class AutoScalingConfigurationArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * A node type that is managed by an autoscale configuration. The only supported type is WORKER.
+     * A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
      * 
      */
     @Import(name="nodeType", required=true)
     private Output<String> nodeType;
 
     /**
-     * @return A node type that is managed by an autoscale configuration. The only supported type is WORKER.
+     * @return A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
      * 
      */
     public Output<String> nodeType() {
@@ -93,18 +94,33 @@ public final class AutoScalingConfigurationArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * (Updatable) Policy definitions for the autoscale configuration.
+     * (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
      * 
      */
-    @Import(name="policy", required=true)
-    private Output<AutoScalingConfigurationPolicyArgs> policy;
+    @Import(name="policy")
+    private @Nullable Output<AutoScalingConfigurationPolicyArgs> policy;
 
     /**
-     * @return (Updatable) Policy definitions for the autoscale configuration.
+     * @return (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
      * 
      */
-    public Output<AutoScalingConfigurationPolicyArgs> policy() {
-        return this.policy;
+    public Optional<Output<AutoScalingConfigurationPolicyArgs>> policy() {
+        return Optional.ofNullable(this.policy);
+    }
+
+    /**
+     * (Updatable) Policy definition for the autoscale configuration.
+     * 
+     */
+    @Import(name="policyDetails")
+    private @Nullable Output<AutoScalingConfigurationPolicyDetailsArgs> policyDetails;
+
+    /**
+     * @return (Updatable) Policy definition for the autoscale configuration.
+     * 
+     */
+    public Optional<Output<AutoScalingConfigurationPolicyDetailsArgs>> policyDetails() {
+        return Optional.ofNullable(this.policyDetails);
     }
 
     private AutoScalingConfigurationArgs() {}
@@ -116,6 +132,7 @@ public final class AutoScalingConfigurationArgs extends com.pulumi.resources.Res
         this.isEnabled = $.isEnabled;
         this.nodeType = $.nodeType;
         this.policy = $.policy;
+        this.policyDetails = $.policyDetails;
     }
 
     public static Builder builder() {
@@ -221,7 +238,7 @@ public final class AutoScalingConfigurationArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param nodeType A node type that is managed by an autoscale configuration. The only supported type is WORKER.
+         * @param nodeType A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
          * 
          * @return builder
          * 
@@ -232,7 +249,7 @@ public final class AutoScalingConfigurationArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param nodeType A node type that is managed by an autoscale configuration. The only supported type is WORKER.
+         * @param nodeType A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
          * 
          * @return builder
          * 
@@ -242,18 +259,18 @@ public final class AutoScalingConfigurationArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param policy (Updatable) Policy definitions for the autoscale configuration.
+         * @param policy (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
          * 
          * @return builder
          * 
          */
-        public Builder policy(Output<AutoScalingConfigurationPolicyArgs> policy) {
+        public Builder policy(@Nullable Output<AutoScalingConfigurationPolicyArgs> policy) {
             $.policy = policy;
             return this;
         }
 
         /**
-         * @param policy (Updatable) Policy definitions for the autoscale configuration.
+         * @param policy (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
          * 
          * @return builder
          * 
@@ -262,12 +279,32 @@ public final class AutoScalingConfigurationArgs extends com.pulumi.resources.Res
             return policy(Output.of(policy));
         }
 
+        /**
+         * @param policyDetails (Updatable) Policy definition for the autoscale configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder policyDetails(@Nullable Output<AutoScalingConfigurationPolicyDetailsArgs> policyDetails) {
+            $.policyDetails = policyDetails;
+            return this;
+        }
+
+        /**
+         * @param policyDetails (Updatable) Policy definition for the autoscale configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder policyDetails(AutoScalingConfigurationPolicyDetailsArgs policyDetails) {
+            return policyDetails(Output.of(policyDetails));
+        }
+
         public AutoScalingConfigurationArgs build() {
             $.bdsInstanceId = Objects.requireNonNull($.bdsInstanceId, "expected parameter 'bdsInstanceId' to be non-null");
             $.clusterAdminPassword = Objects.requireNonNull($.clusterAdminPassword, "expected parameter 'clusterAdminPassword' to be non-null");
             $.isEnabled = Objects.requireNonNull($.isEnabled, "expected parameter 'isEnabled' to be non-null");
             $.nodeType = Objects.requireNonNull($.nodeType, "expected parameter 'nodeType' to be non-null");
-            $.policy = Objects.requireNonNull($.policy, "expected parameter 'policy' to be non-null");
             return $;
         }
     }

@@ -54,7 +54,7 @@ class GetAlertRulesResult:
     @pulumi.getter(name="budgetId")
     def budget_id(self) -> str:
         """
-        The OCID of the budget
+        The OCID of the budget.
         """
         return pulumi.get(self, "budget_id")
 
@@ -62,7 +62,7 @@ class GetAlertRulesResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        The name of the alert rule.
+        The name of the alert rule. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -110,7 +110,7 @@ def get_alert_rules(budget_id: Optional[str] = None,
     """
     This data source provides the list of Alert Rules in Oracle Cloud Infrastructure Budget service.
 
-    Returns a list of Alert Rules for a specified Budget.
+    Returns a list of Alert Rules for a specified budget.
 
     ## Example Usage
 
@@ -124,8 +124,8 @@ def get_alert_rules(budget_id: Optional[str] = None,
     ```
 
 
-    :param str budget_id: The unique Budget OCID
-    :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+    :param str budget_id: The unique budget OCID.
+    :param str display_name: A user-friendly name. This does not have to be unique, and it's changeable.  Example: `My new resource`
     :param str state: The current state of the resource to filter by.
     """
     __args__ = dict()
@@ -157,7 +157,7 @@ def get_alert_rules_output(budget_id: Optional[pulumi.Input[str]] = None,
     """
     This data source provides the list of Alert Rules in Oracle Cloud Infrastructure Budget service.
 
-    Returns a list of Alert Rules for a specified Budget.
+    Returns a list of Alert Rules for a specified budget.
 
     ## Example Usage
 
@@ -171,8 +171,8 @@ def get_alert_rules_output(budget_id: Optional[pulumi.Input[str]] = None,
     ```
 
 
-    :param str budget_id: The unique Budget OCID
-    :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+    :param str budget_id: The unique budget OCID.
+    :param str display_name: A user-friendly name. This does not have to be unique, and it's changeable.  Example: `My new resource`
     :param str state: The current state of the resource to filter by.
     """
     ...

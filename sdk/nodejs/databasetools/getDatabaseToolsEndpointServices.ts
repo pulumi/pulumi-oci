@@ -8,7 +8,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Database Tools Endpoint Services in Oracle Cloud Infrastructure Database Tools service.
  *
- * Returns a list of DatabaseToolsEndpointServices.
+ * Returns a list of Database Tools endpoint services.
  *
  * ## Example Usage
  *
@@ -48,16 +48,16 @@ export interface GetDatabaseToolsEndpointServicesArgs {
      */
     compartmentId: string;
     /**
-     * A filter to return only resources that match the entire display name given.
+     * A filter to return only resources that match the entire specified display name.
      */
     displayName?: string;
     filters?: inputs.DatabaseTools.GetDatabaseToolsEndpointServicesFilter[];
     /**
-     * A filter to return only resources that match the entire name given.
+     * A filter to return only resources that match the entire specified name.
      */
     name?: string;
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
      */
     state?: string;
 }
@@ -67,7 +67,7 @@ export interface GetDatabaseToolsEndpointServicesArgs {
  */
 export interface GetDatabaseToolsEndpointServicesResult {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools Endpoint Service.
      */
     readonly compartmentId: string;
     /**
@@ -88,7 +88,7 @@ export interface GetDatabaseToolsEndpointServicesResult {
      */
     readonly name?: string;
     /**
-     * The current state of the DatabaseToolsEndpointService.
+     * The current state of the Database Tools Endpoint Service.
      */
     readonly state?: string;
 }
@@ -106,16 +106,16 @@ export interface GetDatabaseToolsEndpointServicesOutputArgs {
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * A filter to return only resources that match the entire display name given.
+     * A filter to return only resources that match the entire specified display name.
      */
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.DatabaseTools.GetDatabaseToolsEndpointServicesFilterArgs>[]>;
     /**
-     * A filter to return only resources that match the entire name given.
+     * A filter to return only resources that match the entire specified name.
      */
     name?: pulumi.Input<string>;
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
      */
     state?: pulumi.Input<string>;
 }

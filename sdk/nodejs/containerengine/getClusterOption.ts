@@ -2,6 +2,7 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import { input as inputs, output as outputs } from "../types";
 import * as utilities from "../utilities";
 
 /**
@@ -52,6 +53,10 @@ export interface GetClusterOptionArgs {
  */
 export interface GetClusterOptionResult {
     readonly clusterOptionId: string;
+    /**
+     * Available CNIs and network options for existing and new node pools of the cluster
+     */
+    readonly clusterPodNetworkOptions: outputs.ContainerEngine.GetClusterOptionClusterPodNetworkOption[];
     readonly compartmentId?: string;
     /**
      * The provider-assigned unique ID for this managed resource.

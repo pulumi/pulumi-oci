@@ -76,7 +76,7 @@ class GetManagedListsResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        ManagedList display name
+        ManagedList display name.
         """
         return pulumi.get(self, "display_name")
 

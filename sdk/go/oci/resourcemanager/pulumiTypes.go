@@ -10,6 +10,424 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+type GetPrivateEndpointsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetPrivateEndpointsFilterInput is an input type that accepts GetPrivateEndpointsFilterArgs and GetPrivateEndpointsFilterOutput values.
+// You can construct a concrete instance of `GetPrivateEndpointsFilterInput` via:
+//
+//          GetPrivateEndpointsFilterArgs{...}
+type GetPrivateEndpointsFilterInput interface {
+	pulumi.Input
+
+	ToGetPrivateEndpointsFilterOutput() GetPrivateEndpointsFilterOutput
+	ToGetPrivateEndpointsFilterOutputWithContext(context.Context) GetPrivateEndpointsFilterOutput
+}
+
+type GetPrivateEndpointsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetPrivateEndpointsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPrivateEndpointsFilter)(nil)).Elem()
+}
+
+func (i GetPrivateEndpointsFilterArgs) ToGetPrivateEndpointsFilterOutput() GetPrivateEndpointsFilterOutput {
+	return i.ToGetPrivateEndpointsFilterOutputWithContext(context.Background())
+}
+
+func (i GetPrivateEndpointsFilterArgs) ToGetPrivateEndpointsFilterOutputWithContext(ctx context.Context) GetPrivateEndpointsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateEndpointsFilterOutput)
+}
+
+// GetPrivateEndpointsFilterArrayInput is an input type that accepts GetPrivateEndpointsFilterArray and GetPrivateEndpointsFilterArrayOutput values.
+// You can construct a concrete instance of `GetPrivateEndpointsFilterArrayInput` via:
+//
+//          GetPrivateEndpointsFilterArray{ GetPrivateEndpointsFilterArgs{...} }
+type GetPrivateEndpointsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetPrivateEndpointsFilterArrayOutput() GetPrivateEndpointsFilterArrayOutput
+	ToGetPrivateEndpointsFilterArrayOutputWithContext(context.Context) GetPrivateEndpointsFilterArrayOutput
+}
+
+type GetPrivateEndpointsFilterArray []GetPrivateEndpointsFilterInput
+
+func (GetPrivateEndpointsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPrivateEndpointsFilter)(nil)).Elem()
+}
+
+func (i GetPrivateEndpointsFilterArray) ToGetPrivateEndpointsFilterArrayOutput() GetPrivateEndpointsFilterArrayOutput {
+	return i.ToGetPrivateEndpointsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetPrivateEndpointsFilterArray) ToGetPrivateEndpointsFilterArrayOutputWithContext(ctx context.Context) GetPrivateEndpointsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateEndpointsFilterArrayOutput)
+}
+
+type GetPrivateEndpointsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetPrivateEndpointsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPrivateEndpointsFilter)(nil)).Elem()
+}
+
+func (o GetPrivateEndpointsFilterOutput) ToGetPrivateEndpointsFilterOutput() GetPrivateEndpointsFilterOutput {
+	return o
+}
+
+func (o GetPrivateEndpointsFilterOutput) ToGetPrivateEndpointsFilterOutputWithContext(ctx context.Context) GetPrivateEndpointsFilterOutput {
+	return o
+}
+
+func (o GetPrivateEndpointsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetPrivateEndpointsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetPrivateEndpointsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetPrivateEndpointsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPrivateEndpointsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPrivateEndpointsFilter)(nil)).Elem()
+}
+
+func (o GetPrivateEndpointsFilterArrayOutput) ToGetPrivateEndpointsFilterArrayOutput() GetPrivateEndpointsFilterArrayOutput {
+	return o
+}
+
+func (o GetPrivateEndpointsFilterArrayOutput) ToGetPrivateEndpointsFilterArrayOutputWithContext(ctx context.Context) GetPrivateEndpointsFilterArrayOutput {
+	return o
+}
+
+func (o GetPrivateEndpointsFilterArrayOutput) Index(i pulumi.IntInput) GetPrivateEndpointsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPrivateEndpointsFilter {
+		return vs[0].([]GetPrivateEndpointsFilter)[vs[1].(int)]
+	}).(GetPrivateEndpointsFilterOutput)
+}
+
+type GetPrivateEndpointsPrivateEndpointCollection struct {
+	Items []GetPrivateEndpointsPrivateEndpointCollectionItem `pulumi:"items"`
+}
+
+// GetPrivateEndpointsPrivateEndpointCollectionInput is an input type that accepts GetPrivateEndpointsPrivateEndpointCollectionArgs and GetPrivateEndpointsPrivateEndpointCollectionOutput values.
+// You can construct a concrete instance of `GetPrivateEndpointsPrivateEndpointCollectionInput` via:
+//
+//          GetPrivateEndpointsPrivateEndpointCollectionArgs{...}
+type GetPrivateEndpointsPrivateEndpointCollectionInput interface {
+	pulumi.Input
+
+	ToGetPrivateEndpointsPrivateEndpointCollectionOutput() GetPrivateEndpointsPrivateEndpointCollectionOutput
+	ToGetPrivateEndpointsPrivateEndpointCollectionOutputWithContext(context.Context) GetPrivateEndpointsPrivateEndpointCollectionOutput
+}
+
+type GetPrivateEndpointsPrivateEndpointCollectionArgs struct {
+	Items GetPrivateEndpointsPrivateEndpointCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetPrivateEndpointsPrivateEndpointCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPrivateEndpointsPrivateEndpointCollection)(nil)).Elem()
+}
+
+func (i GetPrivateEndpointsPrivateEndpointCollectionArgs) ToGetPrivateEndpointsPrivateEndpointCollectionOutput() GetPrivateEndpointsPrivateEndpointCollectionOutput {
+	return i.ToGetPrivateEndpointsPrivateEndpointCollectionOutputWithContext(context.Background())
+}
+
+func (i GetPrivateEndpointsPrivateEndpointCollectionArgs) ToGetPrivateEndpointsPrivateEndpointCollectionOutputWithContext(ctx context.Context) GetPrivateEndpointsPrivateEndpointCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateEndpointsPrivateEndpointCollectionOutput)
+}
+
+// GetPrivateEndpointsPrivateEndpointCollectionArrayInput is an input type that accepts GetPrivateEndpointsPrivateEndpointCollectionArray and GetPrivateEndpointsPrivateEndpointCollectionArrayOutput values.
+// You can construct a concrete instance of `GetPrivateEndpointsPrivateEndpointCollectionArrayInput` via:
+//
+//          GetPrivateEndpointsPrivateEndpointCollectionArray{ GetPrivateEndpointsPrivateEndpointCollectionArgs{...} }
+type GetPrivateEndpointsPrivateEndpointCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetPrivateEndpointsPrivateEndpointCollectionArrayOutput() GetPrivateEndpointsPrivateEndpointCollectionArrayOutput
+	ToGetPrivateEndpointsPrivateEndpointCollectionArrayOutputWithContext(context.Context) GetPrivateEndpointsPrivateEndpointCollectionArrayOutput
+}
+
+type GetPrivateEndpointsPrivateEndpointCollectionArray []GetPrivateEndpointsPrivateEndpointCollectionInput
+
+func (GetPrivateEndpointsPrivateEndpointCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPrivateEndpointsPrivateEndpointCollection)(nil)).Elem()
+}
+
+func (i GetPrivateEndpointsPrivateEndpointCollectionArray) ToGetPrivateEndpointsPrivateEndpointCollectionArrayOutput() GetPrivateEndpointsPrivateEndpointCollectionArrayOutput {
+	return i.ToGetPrivateEndpointsPrivateEndpointCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetPrivateEndpointsPrivateEndpointCollectionArray) ToGetPrivateEndpointsPrivateEndpointCollectionArrayOutputWithContext(ctx context.Context) GetPrivateEndpointsPrivateEndpointCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateEndpointsPrivateEndpointCollectionArrayOutput)
+}
+
+type GetPrivateEndpointsPrivateEndpointCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetPrivateEndpointsPrivateEndpointCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPrivateEndpointsPrivateEndpointCollection)(nil)).Elem()
+}
+
+func (o GetPrivateEndpointsPrivateEndpointCollectionOutput) ToGetPrivateEndpointsPrivateEndpointCollectionOutput() GetPrivateEndpointsPrivateEndpointCollectionOutput {
+	return o
+}
+
+func (o GetPrivateEndpointsPrivateEndpointCollectionOutput) ToGetPrivateEndpointsPrivateEndpointCollectionOutputWithContext(ctx context.Context) GetPrivateEndpointsPrivateEndpointCollectionOutput {
+	return o
+}
+
+func (o GetPrivateEndpointsPrivateEndpointCollectionOutput) Items() GetPrivateEndpointsPrivateEndpointCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollection) []GetPrivateEndpointsPrivateEndpointCollectionItem {
+		return v.Items
+	}).(GetPrivateEndpointsPrivateEndpointCollectionItemArrayOutput)
+}
+
+type GetPrivateEndpointsPrivateEndpointCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPrivateEndpointsPrivateEndpointCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPrivateEndpointsPrivateEndpointCollection)(nil)).Elem()
+}
+
+func (o GetPrivateEndpointsPrivateEndpointCollectionArrayOutput) ToGetPrivateEndpointsPrivateEndpointCollectionArrayOutput() GetPrivateEndpointsPrivateEndpointCollectionArrayOutput {
+	return o
+}
+
+func (o GetPrivateEndpointsPrivateEndpointCollectionArrayOutput) ToGetPrivateEndpointsPrivateEndpointCollectionArrayOutputWithContext(ctx context.Context) GetPrivateEndpointsPrivateEndpointCollectionArrayOutput {
+	return o
+}
+
+func (o GetPrivateEndpointsPrivateEndpointCollectionArrayOutput) Index(i pulumi.IntInput) GetPrivateEndpointsPrivateEndpointCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPrivateEndpointsPrivateEndpointCollection {
+		return vs[0].([]GetPrivateEndpointsPrivateEndpointCollection)[vs[1].(int)]
+	}).(GetPrivateEndpointsPrivateEndpointCollectionOutput)
+}
+
+type GetPrivateEndpointsPrivateEndpointCollectionItem struct {
+	// A filter to return only resources that exist in the compartment, identified by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// Description of the private endpoint. Avoid entering confidential information.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the given display name exactly. Use this filter to list a resource by name. Requires `sortBy` set to `DISPLAYNAME`. Alternatively, when you know the resource OCID, use the related Get operation.
+	DisplayName string `pulumi:"displayName"`
+	// DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
+	DnsZones []string `pulumi:"dnsZones"`
+	// Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the private endpoint details.
+	Id string `pulumi:"id"`
+	// When `true`, allows the private endpoint to be used with a configuration source provider.
+	IsUsedWithConfigurationSourceProvider bool `pulumi:"isUsedWithConfigurationSourceProvider"`
+	// An array of network security groups (NSG) that the customer can optionally provide.
+	NsgIdLists []string `pulumi:"nsgIdLists"`
+	// The source IPs which resource manager service will use to connect to customer's network. Automatically assigned by Resource Manager Service.
+	SourceIps []string `pulumi:"sourceIps"`
+	// The current lifecycle state of the private endpoint.
+	State string `pulumi:"state"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet within the VCN for the private endpoint.
+	SubnetId string `pulumi:"subnetId"`
+	// The date and time at which the private endpoint was created. Format is defined by RFC3339. Example: `2020-11-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+	VcnId string `pulumi:"vcnId"`
+}
+
+// GetPrivateEndpointsPrivateEndpointCollectionItemInput is an input type that accepts GetPrivateEndpointsPrivateEndpointCollectionItemArgs and GetPrivateEndpointsPrivateEndpointCollectionItemOutput values.
+// You can construct a concrete instance of `GetPrivateEndpointsPrivateEndpointCollectionItemInput` via:
+//
+//          GetPrivateEndpointsPrivateEndpointCollectionItemArgs{...}
+type GetPrivateEndpointsPrivateEndpointCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetPrivateEndpointsPrivateEndpointCollectionItemOutput() GetPrivateEndpointsPrivateEndpointCollectionItemOutput
+	ToGetPrivateEndpointsPrivateEndpointCollectionItemOutputWithContext(context.Context) GetPrivateEndpointsPrivateEndpointCollectionItemOutput
+}
+
+type GetPrivateEndpointsPrivateEndpointCollectionItemArgs struct {
+	// A filter to return only resources that exist in the compartment, identified by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// Description of the private endpoint. Avoid entering confidential information.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the given display name exactly. Use this filter to list a resource by name. Requires `sortBy` set to `DISPLAYNAME`. Alternatively, when you know the resource OCID, use the related Get operation.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
+	DnsZones pulumi.StringArrayInput `pulumi:"dnsZones"`
+	// Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the private endpoint details.
+	Id pulumi.StringInput `pulumi:"id"`
+	// When `true`, allows the private endpoint to be used with a configuration source provider.
+	IsUsedWithConfigurationSourceProvider pulumi.BoolInput `pulumi:"isUsedWithConfigurationSourceProvider"`
+	// An array of network security groups (NSG) that the customer can optionally provide.
+	NsgIdLists pulumi.StringArrayInput `pulumi:"nsgIdLists"`
+	// The source IPs which resource manager service will use to connect to customer's network. Automatically assigned by Resource Manager Service.
+	SourceIps pulumi.StringArrayInput `pulumi:"sourceIps"`
+	// The current lifecycle state of the private endpoint.
+	State pulumi.StringInput `pulumi:"state"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet within the VCN for the private endpoint.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// The date and time at which the private endpoint was created. Format is defined by RFC3339. Example: `2020-11-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+	VcnId pulumi.StringInput `pulumi:"vcnId"`
+}
+
+func (GetPrivateEndpointsPrivateEndpointCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPrivateEndpointsPrivateEndpointCollectionItem)(nil)).Elem()
+}
+
+func (i GetPrivateEndpointsPrivateEndpointCollectionItemArgs) ToGetPrivateEndpointsPrivateEndpointCollectionItemOutput() GetPrivateEndpointsPrivateEndpointCollectionItemOutput {
+	return i.ToGetPrivateEndpointsPrivateEndpointCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetPrivateEndpointsPrivateEndpointCollectionItemArgs) ToGetPrivateEndpointsPrivateEndpointCollectionItemOutputWithContext(ctx context.Context) GetPrivateEndpointsPrivateEndpointCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateEndpointsPrivateEndpointCollectionItemOutput)
+}
+
+// GetPrivateEndpointsPrivateEndpointCollectionItemArrayInput is an input type that accepts GetPrivateEndpointsPrivateEndpointCollectionItemArray and GetPrivateEndpointsPrivateEndpointCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetPrivateEndpointsPrivateEndpointCollectionItemArrayInput` via:
+//
+//          GetPrivateEndpointsPrivateEndpointCollectionItemArray{ GetPrivateEndpointsPrivateEndpointCollectionItemArgs{...} }
+type GetPrivateEndpointsPrivateEndpointCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetPrivateEndpointsPrivateEndpointCollectionItemArrayOutput() GetPrivateEndpointsPrivateEndpointCollectionItemArrayOutput
+	ToGetPrivateEndpointsPrivateEndpointCollectionItemArrayOutputWithContext(context.Context) GetPrivateEndpointsPrivateEndpointCollectionItemArrayOutput
+}
+
+type GetPrivateEndpointsPrivateEndpointCollectionItemArray []GetPrivateEndpointsPrivateEndpointCollectionItemInput
+
+func (GetPrivateEndpointsPrivateEndpointCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPrivateEndpointsPrivateEndpointCollectionItem)(nil)).Elem()
+}
+
+func (i GetPrivateEndpointsPrivateEndpointCollectionItemArray) ToGetPrivateEndpointsPrivateEndpointCollectionItemArrayOutput() GetPrivateEndpointsPrivateEndpointCollectionItemArrayOutput {
+	return i.ToGetPrivateEndpointsPrivateEndpointCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetPrivateEndpointsPrivateEndpointCollectionItemArray) ToGetPrivateEndpointsPrivateEndpointCollectionItemArrayOutputWithContext(ctx context.Context) GetPrivateEndpointsPrivateEndpointCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateEndpointsPrivateEndpointCollectionItemArrayOutput)
+}
+
+type GetPrivateEndpointsPrivateEndpointCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetPrivateEndpointsPrivateEndpointCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPrivateEndpointsPrivateEndpointCollectionItem)(nil)).Elem()
+}
+
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) ToGetPrivateEndpointsPrivateEndpointCollectionItemOutput() GetPrivateEndpointsPrivateEndpointCollectionItemOutput {
+	return o
+}
+
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) ToGetPrivateEndpointsPrivateEndpointCollectionItemOutputWithContext(ctx context.Context) GetPrivateEndpointsPrivateEndpointCollectionItemOutput {
+	return o
+}
+
+// A filter to return only resources that exist in the compartment, identified by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// Description of the private endpoint. Avoid entering confidential information.
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given display name exactly. Use this filter to list a resource by name. Requires `sortBy` set to `DISPLAYNAME`. Alternatively, when you know the resource OCID, use the related Get operation.
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) DnsZones() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) []string { return v.DnsZones }).(pulumi.StringArrayOutput)
+}
+
+// Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the private endpoint details.
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// When `true`, allows the private endpoint to be used with a configuration source provider.
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) IsUsedWithConfigurationSourceProvider() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) bool {
+		return v.IsUsedWithConfigurationSourceProvider
+	}).(pulumi.BoolOutput)
+}
+
+// An array of network security groups (NSG) that the customer can optionally provide.
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) NsgIdLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) []string { return v.NsgIdLists }).(pulumi.StringArrayOutput)
+}
+
+// The source IPs which resource manager service will use to connect to customer's network. Automatically assigned by Resource Manager Service.
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) SourceIps() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) []string { return v.SourceIps }).(pulumi.StringArrayOutput)
+}
+
+// The current lifecycle state of the private endpoint.
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet within the VCN for the private endpoint.
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// The date and time at which the private endpoint was created. Format is defined by RFC3339. Example: `2020-11-25T21:10:29.600Z`
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) VcnId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) string { return v.VcnId }).(pulumi.StringOutput)
+}
+
+type GetPrivateEndpointsPrivateEndpointCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPrivateEndpointsPrivateEndpointCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPrivateEndpointsPrivateEndpointCollectionItem)(nil)).Elem()
+}
+
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemArrayOutput) ToGetPrivateEndpointsPrivateEndpointCollectionItemArrayOutput() GetPrivateEndpointsPrivateEndpointCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemArrayOutput) ToGetPrivateEndpointsPrivateEndpointCollectionItemArrayOutputWithContext(ctx context.Context) GetPrivateEndpointsPrivateEndpointCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemArrayOutput) Index(i pulumi.IntInput) GetPrivateEndpointsPrivateEndpointCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPrivateEndpointsPrivateEndpointCollectionItem {
+		return vs[0].([]GetPrivateEndpointsPrivateEndpointCollectionItem)[vs[1].(int)]
+	}).(GetPrivateEndpointsPrivateEndpointCollectionItemOutput)
+}
+
 type GetStackConfigSource struct {
 	ConfigSourceType     string `pulumi:"configSourceType"`
 	WorkingDirectory     string `pulumi:"workingDirectory"`
@@ -456,6 +874,12 @@ func (o GetStacksStackConfigSourceOutput) ZipFileBase64encoded() pulumi.StringOu
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPrivateEndpointsFilterInput)(nil)).Elem(), GetPrivateEndpointsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPrivateEndpointsFilterArrayInput)(nil)).Elem(), GetPrivateEndpointsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPrivateEndpointsPrivateEndpointCollectionInput)(nil)).Elem(), GetPrivateEndpointsPrivateEndpointCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPrivateEndpointsPrivateEndpointCollectionArrayInput)(nil)).Elem(), GetPrivateEndpointsPrivateEndpointCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPrivateEndpointsPrivateEndpointCollectionItemInput)(nil)).Elem(), GetPrivateEndpointsPrivateEndpointCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPrivateEndpointsPrivateEndpointCollectionItemArrayInput)(nil)).Elem(), GetPrivateEndpointsPrivateEndpointCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetStackConfigSourceInput)(nil)).Elem(), GetStackConfigSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetStackConfigSourceArrayInput)(nil)).Elem(), GetStackConfigSourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetStacksFilterInput)(nil)).Elem(), GetStacksFilterArgs{})
@@ -463,6 +887,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetStacksStackInput)(nil)).Elem(), GetStacksStackArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetStacksStackArrayInput)(nil)).Elem(), GetStacksStackArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetStacksStackConfigSourceInput)(nil)).Elem(), GetStacksStackConfigSourceArgs{})
+	pulumi.RegisterOutputType(GetPrivateEndpointsFilterOutput{})
+	pulumi.RegisterOutputType(GetPrivateEndpointsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetPrivateEndpointsPrivateEndpointCollectionOutput{})
+	pulumi.RegisterOutputType(GetPrivateEndpointsPrivateEndpointCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetPrivateEndpointsPrivateEndpointCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetPrivateEndpointsPrivateEndpointCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetStackConfigSourceOutput{})
 	pulumi.RegisterOutputType(GetStackConfigSourceArrayOutput{})
 	pulumi.RegisterOutputType(GetStacksFilterOutput{})

@@ -22,7 +22,7 @@ class GetNodePoolsResult:
     """
     A collection of values returned by getNodePools.
     """
-    def __init__(__self__, cluster_id=None, compartment_id=None, filters=None, id=None, name=None, node_pools=None):
+    def __init__(__self__, cluster_id=None, compartment_id=None, filters=None, id=None, name=None, node_pools=None, states=None):
         if cluster_id and not isinstance(cluster_id, str):
             raise TypeError("Expected argument 'cluster_id' to be a str")
         pulumi.set(__self__, "cluster_id", cluster_id)
@@ -41,6 +41,9 @@ class GetNodePoolsResult:
         if node_pools and not isinstance(node_pools, list):
             raise TypeError("Expected argument 'node_pools' to be a list")
         pulumi.set(__self__, "node_pools", node_pools)
+        if states and not isinstance(states, list):
+            raise TypeError("Expected argument 'states' to be a list")
+        pulumi.set(__self__, "states", states)
 
     @property
     @pulumi.getter(name="clusterId")
@@ -87,6 +90,14 @@ class GetNodePoolsResult:
         """
         return pulumi.get(self, "node_pools")
 
+    @property
+    @pulumi.getter
+    def states(self) -> Optional[Sequence[str]]:
+        """
+        The state of the nodepool.
+        """
+        return pulumi.get(self, "states")
+
 
 class AwaitableGetNodePoolsResult(GetNodePoolsResult):
     # pylint: disable=using-constant-test
@@ -99,13 +110,15 @@ class AwaitableGetNodePoolsResult(GetNodePoolsResult):
             filters=self.filters,
             id=self.id,
             name=self.name,
-            node_pools=self.node_pools)
+            node_pools=self.node_pools,
+            states=self.states)
 
 
 def get_node_pools(cluster_id: Optional[str] = None,
                    compartment_id: Optional[str] = None,
                    filters: Optional[Sequence[pulumi.InputType['GetNodePoolsFilterArgs']]] = None,
                    name: Optional[str] = None,
+                   states: Optional[Sequence[str]] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNodePoolsResult:
     """
     This data source provides the list of Node Pools in Oracle Cloud Infrastructure Container Engine service.
@@ -120,19 +133,22 @@ def get_node_pools(cluster_id: Optional[str] = None,
 
     test_node_pools = oci.ContainerEngine.get_node_pools(compartment_id=var["compartment_id"],
         cluster_id=oci_containerengine_cluster["test_cluster"]["id"],
-        name=var["node_pool_name"])
+        name=var["node_pool_name"],
+        states=var["node_pool_state"])
     ```
 
 
     :param str cluster_id: The OCID of the cluster.
     :param str compartment_id: The OCID of the compartment.
     :param str name: The name to filter on.
+    :param Sequence[str] states: A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
     """
     __args__ = dict()
     __args__['clusterId'] = cluster_id
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
     __args__['name'] = name
+    __args__['states'] = states
     if opts is None:
         opts = pulumi.InvokeOptions()
     if opts.version is None:
@@ -145,7 +161,8 @@ def get_node_pools(cluster_id: Optional[str] = None,
         filters=__ret__.filters,
         id=__ret__.id,
         name=__ret__.name,
-        node_pools=__ret__.node_pools)
+        node_pools=__ret__.node_pools,
+        states=__ret__.states)
 
 
 @_utilities.lift_output_func(get_node_pools)
@@ -153,6 +170,7 @@ def get_node_pools_output(cluster_id: Optional[pulumi.Input[Optional[str]]] = No
                           compartment_id: Optional[pulumi.Input[str]] = None,
                           filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetNodePoolsFilterArgs']]]]] = None,
                           name: Optional[pulumi.Input[Optional[str]]] = None,
+                          states: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNodePoolsResult]:
     """
     This data source provides the list of Node Pools in Oracle Cloud Infrastructure Container Engine service.
@@ -167,12 +185,14 @@ def get_node_pools_output(cluster_id: Optional[pulumi.Input[Optional[str]]] = No
 
     test_node_pools = oci.ContainerEngine.get_node_pools(compartment_id=var["compartment_id"],
         cluster_id=oci_containerengine_cluster["test_cluster"]["id"],
-        name=var["node_pool_name"])
+        name=var["node_pool_name"],
+        states=var["node_pool_state"])
     ```
 
 
     :param str cluster_id: The OCID of the cluster.
     :param str compartment_id: The OCID of the compartment.
     :param str name: The name to filter on.
+    :param Sequence[str] states: A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
     """
     ...

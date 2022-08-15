@@ -33,14 +33,14 @@ public final class GetMonitorsArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * A filter to return only resources that match the entire display name given.
+     * A filter to return only the resources that match the entire display name.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return A filter to return only resources that match the entire display name given.
+     * @return A filter to return only the resources that match the entire display name.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -99,6 +99,21 @@ public final class GetMonitorsArgs extends com.pulumi.resources.InvokeArgs {
         return Optional.ofNullable(this.status);
     }
 
+    /**
+     * The name of the public or dedicated vantage point.
+     * 
+     */
+    @Import(name="vantagePoint")
+    private @Nullable Output<String> vantagePoint;
+
+    /**
+     * @return The name of the public or dedicated vantage point.
+     * 
+     */
+    public Optional<Output<String>> vantagePoint() {
+        return Optional.ofNullable(this.vantagePoint);
+    }
+
     private GetMonitorsArgs() {}
 
     private GetMonitorsArgs(GetMonitorsArgs $) {
@@ -108,6 +123,7 @@ public final class GetMonitorsArgs extends com.pulumi.resources.InvokeArgs {
         this.monitorType = $.monitorType;
         this.scriptId = $.scriptId;
         this.status = $.status;
+        this.vantagePoint = $.vantagePoint;
     }
 
     public static Builder builder() {
@@ -150,7 +166,7 @@ public final class GetMonitorsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param displayName A filter to return only resources that match the entire display name given.
+         * @param displayName A filter to return only the resources that match the entire display name.
          * 
          * @return builder
          * 
@@ -161,7 +177,7 @@ public final class GetMonitorsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param displayName A filter to return only resources that match the entire display name given.
+         * @param displayName A filter to return only the resources that match the entire display name.
          * 
          * @return builder
          * 
@@ -244,6 +260,27 @@ public final class GetMonitorsArgs extends com.pulumi.resources.InvokeArgs {
          */
         public Builder status(String status) {
             return status(Output.of(status));
+        }
+
+        /**
+         * @param vantagePoint The name of the public or dedicated vantage point.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vantagePoint(@Nullable Output<String> vantagePoint) {
+            $.vantagePoint = vantagePoint;
+            return this;
+        }
+
+        /**
+         * @param vantagePoint The name of the public or dedicated vantage point.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vantagePoint(String vantagePoint) {
+            return vantagePoint(Output.of(vantagePoint));
         }
 
         public GetMonitorsArgs build() {

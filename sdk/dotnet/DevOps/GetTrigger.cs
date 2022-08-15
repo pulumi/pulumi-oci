@@ -163,7 +163,7 @@ namespace Pulumi.Oci.DevOps
         public readonly string TimeUpdated;
         public readonly string TriggerId;
         /// <summary>
-        /// Source of the trigger. Allowed values are, GITHUB, GITLAB and DEVOPS_CODE_REPOSITORY.
+        /// Source of the trigger. Allowed values are, GITHUB and GITLAB.
         /// </summary>
         public readonly string TriggerSource;
         /// <summary>

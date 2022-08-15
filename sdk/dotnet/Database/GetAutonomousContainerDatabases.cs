@@ -240,7 +240,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult> AutonomousContainerDatabases;
         /// <summary>
-        /// The OCID of the Autonomous Exadata Infrastructure.
+        /// **No longer used.** For Autonomous Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
         /// </summary>
         public readonly string? AutonomousExadataInfrastructureId;
         /// <summary>

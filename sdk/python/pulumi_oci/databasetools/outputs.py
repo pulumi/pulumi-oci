@@ -255,10 +255,10 @@ class DatabaseToolsConnectionUserPassword(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "valueType":
-            suggest = "value_type"
-        elif key == "secretId":
+        if key == "secretId":
             suggest = "secret_id"
+        elif key == "valueType":
+            suggest = "value_type"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in DatabaseToolsConnectionUserPassword. Access the value via the '{suggest}' property getter instead.")
@@ -272,15 +272,22 @@ class DatabaseToolsConnectionUserPassword(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 value_type: str,
-                 secret_id: Optional[str] = None):
+                 secret_id: str,
+                 value_type: str):
         """
-        :param str value_type: (Updatable) The value type of the user password.
         :param str secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        :param str value_type: (Updatable) The value type of the user password.
         """
+        pulumi.set(__self__, "secret_id", secret_id)
         pulumi.set(__self__, "value_type", value_type)
-        if secret_id is not None:
-            pulumi.set(__self__, "secret_id", secret_id)
+
+    @property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> str:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        """
+        return pulumi.get(self, "secret_id")
 
     @property
     @pulumi.getter(name="valueType")
@@ -289,14 +296,6 @@ class DatabaseToolsConnectionUserPassword(dict):
         (Updatable) The value type of the user password.
         """
         return pulumi.get(self, "value_type")
-
-    @property
-    @pulumi.getter(name="secretId")
-    def secret_id(self) -> Optional[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-        """
-        return pulumi.get(self, "secret_id")
 
 
 @pulumi.output_type
@@ -561,23 +560,23 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemResult(dic
                  user_name: str,
                  user_passwords: Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordResult']):
         """
-        :param Mapping[str, Any] advanced_properties: Advanced connection properties key-value pair (e.g., oracle.net.ssl_server_dn_match).
+        :param Mapping[str, Any] advanced_properties: The advanced connection properties key-value pair (for example, `oracle.net.ssl_server_dn_match`).
         :param str compartment_id: The ID of the compartment in which to list resources.
-        :param str connection_string: Connect descriptor or Easy Connect Naming method to connect to the database.
+        :param str connection_string: The connect descriptor or Easy Connect Naming method used to connect to the database.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str display_name: A filter to return only resources that match the entire display name given.
+        :param str display_name: A filter to return only resources that match the entire specified display name.
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsConnection.
-        :param Sequence['GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreArgs'] key_stores: Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
-        :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param str private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsPrivateEndpoint used to access the database in the Customer VCN.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools connection.
+        :param Sequence['GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreArgs'] key_stores: The Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
+        :param str lifecycle_details: A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
+        :param str private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
         :param Sequence['GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceArgs'] related_resources: A related resource
-        :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+        :param str state: A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
         :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The time the DatabaseToolsConnection was created. An RFC3339 formatted datetime string
-        :param str time_updated: The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string
-        :param str type: A filter to return only resources their endpointServiceId matches the given endpointServiceId.
-        :param str user_name: Database user name.
+        :param str time_created: The time the Database Tools connection was created. An RFC3339 formatted datetime string.
+        :param str time_updated: The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
+        :param str type: A filter to return only resources their type matches the specified type.
+        :param str user_name: The database user name.
         :param Sequence['GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordArgs'] user_passwords: The user password.
         """
         pulumi.set(__self__, "advanced_properties", advanced_properties)
@@ -603,7 +602,7 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemResult(dic
     @pulumi.getter(name="advancedProperties")
     def advanced_properties(self) -> Mapping[str, Any]:
         """
-        Advanced connection properties key-value pair (e.g., oracle.net.ssl_server_dn_match).
+        The advanced connection properties key-value pair (for example, `oracle.net.ssl_server_dn_match`).
         """
         return pulumi.get(self, "advanced_properties")
 
@@ -619,7 +618,7 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemResult(dic
     @pulumi.getter(name="connectionString")
     def connection_string(self) -> str:
         """
-        Connect descriptor or Easy Connect Naming method to connect to the database.
+        The connect descriptor or Easy Connect Naming method used to connect to the database.
         """
         return pulumi.get(self, "connection_string")
 
@@ -635,7 +634,7 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemResult(dic
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        A filter to return only resources that match the entire display name given.
+        A filter to return only resources that match the entire specified display name.
         """
         return pulumi.get(self, "display_name")
 
@@ -651,7 +650,7 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemResult(dic
     @pulumi.getter
     def id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsConnection.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools connection.
         """
         return pulumi.get(self, "id")
 
@@ -659,7 +658,7 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemResult(dic
     @pulumi.getter(name="keyStores")
     def key_stores(self) -> Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreResult']:
         """
-        Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
+        The Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
         """
         return pulumi.get(self, "key_stores")
 
@@ -667,7 +666,7 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemResult(dic
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> str:
         """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
 
@@ -675,7 +674,7 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemResult(dic
     @pulumi.getter(name="privateEndpointId")
     def private_endpoint_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsPrivateEndpoint used to access the database in the Customer VCN.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
         """
         return pulumi.get(self, "private_endpoint_id")
 
@@ -691,7 +690,7 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemResult(dic
     @pulumi.getter
     def state(self) -> str:
         """
-        A filter to return only resources their lifecycleState matches the given lifecycleState.
+        A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
         """
         return pulumi.get(self, "state")
 
@@ -707,7 +706,7 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemResult(dic
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The time the DatabaseToolsConnection was created. An RFC3339 formatted datetime string
+        The time the Database Tools connection was created. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
@@ -715,7 +714,7 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemResult(dic
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
-        The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string
+        The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
 
@@ -723,7 +722,7 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemResult(dic
     @pulumi.getter
     def type(self) -> str:
         """
-        A filter to return only resources their endpointServiceId matches the given endpointServiceId.
+        A filter to return only resources their type matches the specified type.
         """
         return pulumi.get(self, "type")
 
@@ -731,7 +730,7 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemResult(dic
     @pulumi.getter(name="userName")
     def user_name(self) -> str:
         """
-        Database user name.
+        The database user name.
         """
         return pulumi.get(self, "user_name")
 
@@ -957,16 +956,16 @@ class GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem
         """
         :param str compartment_id: The ID of the compartment in which to list resources.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str description: A description of the DatabaseToolsEndpointService.
-        :param str display_name: A filter to return only resources that match the entire display name given.
+        :param str description: A description of the Database Tools Endpoint Service.
+        :param str display_name: A filter to return only resources that match the entire specified display name.
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsEndpointService.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Endpoint Service.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param str name: A filter to return only resources that match the entire name given.
-        :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+        :param str name: A filter to return only resources that match the entire specified name.
+        :param str state: A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
         :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The time the DatabaseToolsEndpointService was created. An RFC3339 formatted datetime string
-        :param str time_updated: The time the DatabaseToolsEndpointService was updated. An RFC3339 formatted datetime string
+        :param str time_created: The time the Database Tools Endpoint Service was created. An RFC3339 formatted datetime string
+        :param str time_updated: The time the Database Tools Endpoint Service was updated. An RFC3339 formatted datetime string
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -1001,7 +1000,7 @@ class GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem
     @pulumi.getter
     def description(self) -> str:
         """
-        A description of the DatabaseToolsEndpointService.
+        A description of the Database Tools Endpoint Service.
         """
         return pulumi.get(self, "description")
 
@@ -1009,7 +1008,7 @@ class GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        A filter to return only resources that match the entire display name given.
+        A filter to return only resources that match the entire specified display name.
         """
         return pulumi.get(self, "display_name")
 
@@ -1025,7 +1024,7 @@ class GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem
     @pulumi.getter
     def id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsEndpointService.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Endpoint Service.
         """
         return pulumi.get(self, "id")
 
@@ -1041,7 +1040,7 @@ class GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem
     @pulumi.getter
     def name(self) -> str:
         """
-        A filter to return only resources that match the entire name given.
+        A filter to return only resources that match the entire specified name.
         """
         return pulumi.get(self, "name")
 
@@ -1049,7 +1048,7 @@ class GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem
     @pulumi.getter
     def state(self) -> str:
         """
-        A filter to return only resources their lifecycleState matches the given lifecycleState.
+        A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
         """
         return pulumi.get(self, "state")
 
@@ -1065,7 +1064,7 @@ class GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The time the DatabaseToolsEndpointService was created. An RFC3339 formatted datetime string
+        The time the Database Tools Endpoint Service was created. An RFC3339 formatted datetime string
         """
         return pulumi.get(self, "time_created")
 
@@ -1073,7 +1072,7 @@ class GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
-        The time the DatabaseToolsEndpointService was updated. An RFC3339 formatted datetime string
+        The time the Database Tools Endpoint Service was updated. An RFC3339 formatted datetime string
         """
         return pulumi.get(self, "time_updated")
 
@@ -1085,7 +1084,7 @@ class GetDatabaseToolsEndpointServicesFilterResult(dict):
                  values: Sequence[str],
                  regex: Optional[bool] = None):
         """
-        :param str name: A filter to return only resources that match the entire name given.
+        :param str name: A filter to return only resources that match the entire specified name.
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
@@ -1096,7 +1095,7 @@ class GetDatabaseToolsEndpointServicesFilterResult(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        A filter to return only resources that match the entire name given.
+        A filter to return only resources that match the entire specified name.
         """
         return pulumi.get(self, "name")
 
@@ -1186,22 +1185,22 @@ class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem
         :param Sequence[str] additional_fqdns: A list of additional FQDNs that can be also be used for the private endpoint.
         :param str compartment_id: The ID of the compartment in which to list resources.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str description: A description of the DatabaseToolsPrivateEndpoint.
-        :param str display_name: A filter to return only resources that match the entire display name given.
+        :param str description: A description of the Database Tools private endpoint.
+        :param str display_name: A filter to return only resources that match the entire specified display name.
         :param str endpoint_fqdn: Then FQDN to use for the private endpoint.
-        :param str endpoint_service_id: A filter to return only resources their type matches the given type.
+        :param str endpoint_service_id: A filter to return only resources their `endpointServiceId` matches the specified `endpointServiceId`.
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsPrivateEndpoint.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param Sequence[str] nsg_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint's VNIC belongs to.  For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
         :param str private_endpoint_ip: The private IP address that represents the access point for the associated endpoint service.
         :param str private_endpoint_vnic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint's VNIC.
-        :param Sequence['GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationArgs'] reverse_connection_configurations: Reverse connection configuration details of Private Endpoint.
-        :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
-        :param str subnet_id: A filter to return only resources their subnetId matches the given subnetId.
+        :param Sequence['GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationArgs'] reverse_connection_configurations: Reverse connection configuration details of the private endpoint.
+        :param str state: A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
+        :param str subnet_id: A filter to return only resources their `subnetId` matches the specified `subnetId`.
         :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The time the DatabaseToolsPrivateEndpoint was created. An RFC3339 formatted datetime string
-        :param str time_updated: The time the DatabaseToolsPrivateEndpoint was updated. An RFC3339 formatted datetime string
+        :param str time_created: The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
+        :param str time_updated: The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
         :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN that the private endpoint belongs to.
         """
         pulumi.set(__self__, "additional_fqdns", additional_fqdns)
@@ -1253,7 +1252,7 @@ class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem
     @pulumi.getter
     def description(self) -> str:
         """
-        A description of the DatabaseToolsPrivateEndpoint.
+        A description of the Database Tools private endpoint.
         """
         return pulumi.get(self, "description")
 
@@ -1261,7 +1260,7 @@ class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        A filter to return only resources that match the entire display name given.
+        A filter to return only resources that match the entire specified display name.
         """
         return pulumi.get(self, "display_name")
 
@@ -1277,7 +1276,7 @@ class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem
     @pulumi.getter(name="endpointServiceId")
     def endpoint_service_id(self) -> str:
         """
-        A filter to return only resources their type matches the given type.
+        A filter to return only resources their `endpointServiceId` matches the specified `endpointServiceId`.
         """
         return pulumi.get(self, "endpoint_service_id")
 
@@ -1293,7 +1292,7 @@ class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem
     @pulumi.getter
     def id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsPrivateEndpoint.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint.
         """
         return pulumi.get(self, "id")
 
@@ -1333,7 +1332,7 @@ class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem
     @pulumi.getter(name="reverseConnectionConfigurations")
     def reverse_connection_configurations(self) -> Sequence['outputs.GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationResult']:
         """
-        Reverse connection configuration details of Private Endpoint.
+        Reverse connection configuration details of the private endpoint.
         """
         return pulumi.get(self, "reverse_connection_configurations")
 
@@ -1341,7 +1340,7 @@ class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem
     @pulumi.getter
     def state(self) -> str:
         """
-        A filter to return only resources their lifecycleState matches the given lifecycleState.
+        A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
         """
         return pulumi.get(self, "state")
 
@@ -1349,7 +1348,7 @@ class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> str:
         """
-        A filter to return only resources their subnetId matches the given subnetId.
+        A filter to return only resources their `subnetId` matches the specified `subnetId`.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -1365,7 +1364,7 @@ class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The time the DatabaseToolsPrivateEndpoint was created. An RFC3339 formatted datetime string
+        The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
         """
         return pulumi.get(self, "time_created")
 
@@ -1373,7 +1372,7 @@ class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
-        The time the DatabaseToolsPrivateEndpoint was updated. An RFC3339 formatted datetime string
+        The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
         """
         return pulumi.get(self, "time_updated")
 

@@ -40,6 +40,11 @@ namespace Pulumi.Oci.Functions
     ///                 { "Department", "Finance" },
     ///             },
     ///             ImageDigest = @var.Function_image_digest,
+    ///             ProvisionedConcurrencyConfig = new Oci.Functions.Inputs.FunctionProvisionedConcurrencyConfigArgs
+    ///             {
+    ///                 Strategy = @var.Function_provisioned_concurrency_config_strategy,
+    ///                 Count = @var.Function_provisioned_concurrency_config_count,
+    ///             },
     ///             TimeoutInSeconds = @var.Function_timeout_in_seconds,
     ///             TraceConfig = new Oci.Functions.Inputs.FunctionTraceConfigArgs
     ///             {
@@ -121,6 +126,12 @@ namespace Pulumi.Oci.Functions
         /// </summary>
         [Output("memoryInMbs")]
         public Output<string> MemoryInMbs { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Define the strategy for provisioned concurrency for the function.
+        /// </summary>
+        [Output("provisionedConcurrencyConfig")]
+        public Output<Outputs.FunctionProvisionedConcurrencyConfig> ProvisionedConcurrencyConfig { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the function.
@@ -265,6 +276,12 @@ namespace Pulumi.Oci.Functions
         public Input<string> MemoryInMbs { get; set; } = null!;
 
         /// <summary>
+        /// (Updatable) Define the strategy for provisioned concurrency for the function.
+        /// </summary>
+        [Input("provisionedConcurrencyConfig")]
+        public Input<Inputs.FunctionProvisionedConcurrencyConfigArgs>? ProvisionedConcurrencyConfig { get; set; }
+
+        /// <summary>
         /// (Updatable) Timeout for executions of the function. Value in seconds.
         /// </summary>
         [Input("timeoutInSeconds")]
@@ -360,6 +377,12 @@ namespace Pulumi.Oci.Functions
         /// </summary>
         [Input("memoryInMbs")]
         public Input<string>? MemoryInMbs { get; set; }
+
+        /// <summary>
+        /// (Updatable) Define the strategy for provisioned concurrency for the function.
+        /// </summary>
+        [Input("provisionedConcurrencyConfig")]
+        public Input<Inputs.FunctionProvisionedConcurrencyConfigGetArgs>? ProvisionedConcurrencyConfig { get; set; }
 
         /// <summary>
         /// The current state of the function.

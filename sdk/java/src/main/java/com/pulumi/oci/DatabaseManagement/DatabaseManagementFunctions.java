@@ -19,7 +19,19 @@ import com.pulumi.oci.DatabaseManagement.inputs.GetJobExecutionsStatusArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetJobExecutionsStatusPlainArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetJobExecutionsStatusesArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetJobExecutionsStatusesPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseAddmTaskArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseAddmTaskPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseAddmTasksArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseAddmTasksPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseAlertLogCountArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseAlertLogCountPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseAlertLogCountsArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseAlertLogCountsPlainArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseAttentionLogCountArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseAttentionLogCountPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseAttentionLogCountsArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseAttentionLogCountsPlainArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseGroupArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseGroupPlainArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseGroupsArgs;
@@ -43,6 +55,10 @@ import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningAdvis
 import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlainArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningSetArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningSetPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningSetsArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningSetsPlainArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserConsumerGroupPrivilegeArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserConsumerGroupPrivilegePlainArgs;
@@ -91,6 +107,12 @@ import com.pulumi.oci.DatabaseManagement.outputs.GetDbManagementPrivateEndpointR
 import com.pulumi.oci.DatabaseManagement.outputs.GetDbManagementPrivateEndpointsResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetJobExecutionsStatusResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetJobExecutionsStatusesResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseAddmTaskResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseAddmTasksResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseAlertLogCountResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseAlertLogCountsResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseAttentionLogCountResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseAttentionLogCountsResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseGroupResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseGroupsResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseResult;
@@ -103,6 +125,8 @@ import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseSqlTuningAdvi
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseSqlTuningAdvisorTasksResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseSqlTuningSetResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseSqlTuningSetsResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseUserConsumerGroupPrivilegeResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseUserConsumerGroupPrivilegesResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseUserDataAccessContainerResult;
@@ -435,6 +459,278 @@ public final class DatabaseManagementFunctions {
      */
     public static CompletableFuture<GetManagedDatabaseResult> getManagedDatabasePlain(GetManagedDatabasePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedDatabase:getManagedDatabase", TypeShape.of(GetManagedDatabaseResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed Database Addm Task resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the metadata for each ADDM task who&#39;s end snapshot time falls within the provided start and end time. Details include
+     * the name of the ADDM task, description, user, status and creation date time.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetManagedDatabaseAddmTaskResult> getManagedDatabaseAddmTask(GetManagedDatabaseAddmTaskArgs args) {
+        return getManagedDatabaseAddmTask(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Managed Database Addm Task resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the metadata for each ADDM task who&#39;s end snapshot time falls within the provided start and end time. Details include
+     * the name of the ADDM task, description, user, status and creation date time.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetManagedDatabaseAddmTaskResult> getManagedDatabaseAddmTaskPlain(GetManagedDatabaseAddmTaskPlainArgs args) {
+        return getManagedDatabaseAddmTaskPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Managed Database Addm Task resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the metadata for each ADDM task who&#39;s end snapshot time falls within the provided start and end time. Details include
+     * the name of the ADDM task, description, user, status and creation date time.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetManagedDatabaseAddmTaskResult> getManagedDatabaseAddmTask(GetManagedDatabaseAddmTaskArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseAddmTask:getManagedDatabaseAddmTask", TypeShape.of(GetManagedDatabaseAddmTaskResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed Database Addm Task resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the metadata for each ADDM task who&#39;s end snapshot time falls within the provided start and end time. Details include
+     * the name of the ADDM task, description, user, status and creation date time.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetManagedDatabaseAddmTaskResult> getManagedDatabaseAddmTaskPlain(GetManagedDatabaseAddmTaskPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedDatabaseAddmTask:getManagedDatabaseAddmTask", TypeShape.of(GetManagedDatabaseAddmTaskResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Database Addm Tasks in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the metadata for each ADDM task who&#39;s end snapshot time falls within the provided start and end time. Details include
+     * the name of the ADDM task, description, user, status and creation date time.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetManagedDatabaseAddmTasksResult> getManagedDatabaseAddmTasks(GetManagedDatabaseAddmTasksArgs args) {
+        return getManagedDatabaseAddmTasks(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Managed Database Addm Tasks in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the metadata for each ADDM task who&#39;s end snapshot time falls within the provided start and end time. Details include
+     * the name of the ADDM task, description, user, status and creation date time.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetManagedDatabaseAddmTasksResult> getManagedDatabaseAddmTasksPlain(GetManagedDatabaseAddmTasksPlainArgs args) {
+        return getManagedDatabaseAddmTasksPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Managed Database Addm Tasks in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the metadata for each ADDM task who&#39;s end snapshot time falls within the provided start and end time. Details include
+     * the name of the ADDM task, description, user, status and creation date time.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetManagedDatabaseAddmTasksResult> getManagedDatabaseAddmTasks(GetManagedDatabaseAddmTasksArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseAddmTasks:getManagedDatabaseAddmTasks", TypeShape.of(GetManagedDatabaseAddmTasksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Database Addm Tasks in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the metadata for each ADDM task who&#39;s end snapshot time falls within the provided start and end time. Details include
+     * the name of the ADDM task, description, user, status and creation date time.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetManagedDatabaseAddmTasksResult> getManagedDatabaseAddmTasksPlain(GetManagedDatabaseAddmTasksPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedDatabaseAddmTasks:getManagedDatabaseAddmTasks", TypeShape.of(GetManagedDatabaseAddmTasksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed Database Alert Log Count resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Get the counts of alert logs for the specified Managed Database.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetManagedDatabaseAlertLogCountResult> getManagedDatabaseAlertLogCount(GetManagedDatabaseAlertLogCountArgs args) {
+        return getManagedDatabaseAlertLogCount(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Managed Database Alert Log Count resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Get the counts of alert logs for the specified Managed Database.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetManagedDatabaseAlertLogCountResult> getManagedDatabaseAlertLogCountPlain(GetManagedDatabaseAlertLogCountPlainArgs args) {
+        return getManagedDatabaseAlertLogCountPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Managed Database Alert Log Count resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Get the counts of alert logs for the specified Managed Database.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetManagedDatabaseAlertLogCountResult> getManagedDatabaseAlertLogCount(GetManagedDatabaseAlertLogCountArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseAlertLogCount:getManagedDatabaseAlertLogCount", TypeShape.of(GetManagedDatabaseAlertLogCountResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed Database Alert Log Count resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Get the counts of alert logs for the specified Managed Database.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetManagedDatabaseAlertLogCountResult> getManagedDatabaseAlertLogCountPlain(GetManagedDatabaseAlertLogCountPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedDatabaseAlertLogCount:getManagedDatabaseAlertLogCount", TypeShape.of(GetManagedDatabaseAlertLogCountResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Database Alert Log Counts in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Get the counts of alert logs for the specified Managed Database.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetManagedDatabaseAlertLogCountsResult> getManagedDatabaseAlertLogCounts(GetManagedDatabaseAlertLogCountsArgs args) {
+        return getManagedDatabaseAlertLogCounts(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Managed Database Alert Log Counts in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Get the counts of alert logs for the specified Managed Database.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetManagedDatabaseAlertLogCountsResult> getManagedDatabaseAlertLogCountsPlain(GetManagedDatabaseAlertLogCountsPlainArgs args) {
+        return getManagedDatabaseAlertLogCountsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Managed Database Alert Log Counts in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Get the counts of alert logs for the specified Managed Database.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetManagedDatabaseAlertLogCountsResult> getManagedDatabaseAlertLogCounts(GetManagedDatabaseAlertLogCountsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseAlertLogCounts:getManagedDatabaseAlertLogCounts", TypeShape.of(GetManagedDatabaseAlertLogCountsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Database Alert Log Counts in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Get the counts of alert logs for the specified Managed Database.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetManagedDatabaseAlertLogCountsResult> getManagedDatabaseAlertLogCountsPlain(GetManagedDatabaseAlertLogCountsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedDatabaseAlertLogCounts:getManagedDatabaseAlertLogCounts", TypeShape.of(GetManagedDatabaseAlertLogCountsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed Database Attention Log Count resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Get the counts of attention logs for the specified Managed Database.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetManagedDatabaseAttentionLogCountResult> getManagedDatabaseAttentionLogCount(GetManagedDatabaseAttentionLogCountArgs args) {
+        return getManagedDatabaseAttentionLogCount(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Managed Database Attention Log Count resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Get the counts of attention logs for the specified Managed Database.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetManagedDatabaseAttentionLogCountResult> getManagedDatabaseAttentionLogCountPlain(GetManagedDatabaseAttentionLogCountPlainArgs args) {
+        return getManagedDatabaseAttentionLogCountPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Managed Database Attention Log Count resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Get the counts of attention logs for the specified Managed Database.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetManagedDatabaseAttentionLogCountResult> getManagedDatabaseAttentionLogCount(GetManagedDatabaseAttentionLogCountArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseAttentionLogCount:getManagedDatabaseAttentionLogCount", TypeShape.of(GetManagedDatabaseAttentionLogCountResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed Database Attention Log Count resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Get the counts of attention logs for the specified Managed Database.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetManagedDatabaseAttentionLogCountResult> getManagedDatabaseAttentionLogCountPlain(GetManagedDatabaseAttentionLogCountPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedDatabaseAttentionLogCount:getManagedDatabaseAttentionLogCount", TypeShape.of(GetManagedDatabaseAttentionLogCountResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Database Attention Log Counts in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Get the counts of attention logs for the specified Managed Database.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetManagedDatabaseAttentionLogCountsResult> getManagedDatabaseAttentionLogCounts(GetManagedDatabaseAttentionLogCountsArgs args) {
+        return getManagedDatabaseAttentionLogCounts(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Managed Database Attention Log Counts in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Get the counts of attention logs for the specified Managed Database.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetManagedDatabaseAttentionLogCountsResult> getManagedDatabaseAttentionLogCountsPlain(GetManagedDatabaseAttentionLogCountsPlainArgs args) {
+        return getManagedDatabaseAttentionLogCountsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Managed Database Attention Log Counts in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Get the counts of attention logs for the specified Managed Database.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetManagedDatabaseAttentionLogCountsResult> getManagedDatabaseAttentionLogCounts(GetManagedDatabaseAttentionLogCountsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseAttentionLogCounts:getManagedDatabaseAttentionLogCounts", TypeShape.of(GetManagedDatabaseAttentionLogCountsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Database Attention Log Counts in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Get the counts of attention logs for the specified Managed Database.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetManagedDatabaseAttentionLogCountsResult> getManagedDatabaseAttentionLogCountsPlain(GetManagedDatabaseAttentionLogCountsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedDatabaseAttentionLogCounts:getManagedDatabaseAttentionLogCounts", TypeShape.of(GetManagedDatabaseAttentionLogCountsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Managed Database Group resource in Oracle Cloud Infrastructure Database Management service.
@@ -947,6 +1243,94 @@ public final class DatabaseManagementFunctions {
      */
     public static CompletableFuture<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult> getManagedDatabaseSqlTuningAdvisorTasksSummaryReportPlain(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksSummaryReport:getManagedDatabaseSqlTuningAdvisorTasksSummaryReport", TypeShape.of(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed Database Sql Tuning Set resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the SQL tuning sets for the specified Managed Database.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetManagedDatabaseSqlTuningSetResult> getManagedDatabaseSqlTuningSet(GetManagedDatabaseSqlTuningSetArgs args) {
+        return getManagedDatabaseSqlTuningSet(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Managed Database Sql Tuning Set resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the SQL tuning sets for the specified Managed Database.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetManagedDatabaseSqlTuningSetResult> getManagedDatabaseSqlTuningSetPlain(GetManagedDatabaseSqlTuningSetPlainArgs args) {
+        return getManagedDatabaseSqlTuningSetPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Managed Database Sql Tuning Set resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the SQL tuning sets for the specified Managed Database.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetManagedDatabaseSqlTuningSetResult> getManagedDatabaseSqlTuningSet(GetManagedDatabaseSqlTuningSetArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseSqlTuningSet:getManagedDatabaseSqlTuningSet", TypeShape.of(GetManagedDatabaseSqlTuningSetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed Database Sql Tuning Set resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the SQL tuning sets for the specified Managed Database.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetManagedDatabaseSqlTuningSetResult> getManagedDatabaseSqlTuningSetPlain(GetManagedDatabaseSqlTuningSetPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedDatabaseSqlTuningSet:getManagedDatabaseSqlTuningSet", TypeShape.of(GetManagedDatabaseSqlTuningSetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Database Sql Tuning Sets in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the SQL tuning sets for the specified Managed Database.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetManagedDatabaseSqlTuningSetsResult> getManagedDatabaseSqlTuningSets(GetManagedDatabaseSqlTuningSetsArgs args) {
+        return getManagedDatabaseSqlTuningSets(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Managed Database Sql Tuning Sets in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the SQL tuning sets for the specified Managed Database.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetManagedDatabaseSqlTuningSetsResult> getManagedDatabaseSqlTuningSetsPlain(GetManagedDatabaseSqlTuningSetsPlainArgs args) {
+        return getManagedDatabaseSqlTuningSetsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Managed Database Sql Tuning Sets in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the SQL tuning sets for the specified Managed Database.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetManagedDatabaseSqlTuningSetsResult> getManagedDatabaseSqlTuningSets(GetManagedDatabaseSqlTuningSetsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseSqlTuningSets:getManagedDatabaseSqlTuningSets", TypeShape.of(GetManagedDatabaseSqlTuningSetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed Database Sql Tuning Sets in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the SQL tuning sets for the specified Managed Database.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetManagedDatabaseSqlTuningSetsResult> getManagedDatabaseSqlTuningSetsPlain(GetManagedDatabaseSqlTuningSetsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedDatabaseSqlTuningSets:getManagedDatabaseSqlTuningSets", TypeShape.of(GetManagedDatabaseSqlTuningSetsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Managed Database User resource in Oracle Cloud Infrastructure Database Management service.

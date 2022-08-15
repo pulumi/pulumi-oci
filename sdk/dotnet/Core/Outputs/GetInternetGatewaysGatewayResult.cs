@@ -38,6 +38,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the Internet Gateway is using.
+        /// </summary>
+        public readonly string RouteTableId;
+        /// <summary>
         /// A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
         /// </summary>
         public readonly string State;
@@ -64,6 +68,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             string id,
 
+            string routeTableId,
+
             string state,
 
             string timeCreated,
@@ -76,6 +82,7 @@ namespace Pulumi.Oci.Core.Outputs
             Enabled = enabled;
             FreeformTags = freeformTags;
             Id = id;
+            RouteTableId = routeTableId;
             State = state;
             TimeCreated = timeCreated;
             VcnId = vcnId;

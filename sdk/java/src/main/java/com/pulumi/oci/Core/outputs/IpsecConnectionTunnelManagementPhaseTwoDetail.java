@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -18,7 +19,7 @@ public final class IpsecConnectionTunnelManagementPhaseTwoDetail {
     private final @Nullable Boolean isCustomPhaseTwoConfig;
     private final @Nullable Boolean isEspEstablished;
     private final @Nullable Boolean isPfsEnabled;
-    private final @Nullable String lifetime;
+    private final @Nullable Integer lifetime;
     private final @Nullable String negotiatedAuthenticationAlgorithm;
     private final @Nullable String negotiatedDhGroup;
     private final @Nullable String negotiatedEncryptionAlgorithm;
@@ -33,7 +34,7 @@ public final class IpsecConnectionTunnelManagementPhaseTwoDetail {
         @CustomType.Parameter("isCustomPhaseTwoConfig") @Nullable Boolean isCustomPhaseTwoConfig,
         @CustomType.Parameter("isEspEstablished") @Nullable Boolean isEspEstablished,
         @CustomType.Parameter("isPfsEnabled") @Nullable Boolean isPfsEnabled,
-        @CustomType.Parameter("lifetime") @Nullable String lifetime,
+        @CustomType.Parameter("lifetime") @Nullable Integer lifetime,
         @CustomType.Parameter("negotiatedAuthenticationAlgorithm") @Nullable String negotiatedAuthenticationAlgorithm,
         @CustomType.Parameter("negotiatedDhGroup") @Nullable String negotiatedDhGroup,
         @CustomType.Parameter("negotiatedEncryptionAlgorithm") @Nullable String negotiatedEncryptionAlgorithm,
@@ -71,7 +72,7 @@ public final class IpsecConnectionTunnelManagementPhaseTwoDetail {
     public Optional<Boolean> isPfsEnabled() {
         return Optional.ofNullable(this.isPfsEnabled);
     }
-    public Optional<String> lifetime() {
+    public Optional<Integer> lifetime() {
         return Optional.ofNullable(this.lifetime);
     }
     public Optional<String> negotiatedAuthenticationAlgorithm() {
@@ -105,7 +106,7 @@ public final class IpsecConnectionTunnelManagementPhaseTwoDetail {
         private @Nullable Boolean isCustomPhaseTwoConfig;
         private @Nullable Boolean isEspEstablished;
         private @Nullable Boolean isPfsEnabled;
-        private @Nullable String lifetime;
+        private @Nullable Integer lifetime;
         private @Nullable String negotiatedAuthenticationAlgorithm;
         private @Nullable String negotiatedDhGroup;
         private @Nullable String negotiatedEncryptionAlgorithm;
@@ -156,7 +157,7 @@ public final class IpsecConnectionTunnelManagementPhaseTwoDetail {
             this.isPfsEnabled = isPfsEnabled;
             return this;
         }
-        public Builder lifetime(@Nullable String lifetime) {
+        public Builder lifetime(@Nullable Integer lifetime) {
             this.lifetime = lifetime;
             return this;
         }

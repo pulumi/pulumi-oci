@@ -92,6 +92,10 @@ export interface GetFunctionResult {
      */
     readonly memoryInMbs: string;
     /**
+     * Define the strategy for provisioned concurrency for the function.
+     */
+    readonly provisionedConcurrencyConfigs: outputs.Functions.GetFunctionProvisionedConcurrencyConfig[];
+    /**
      * The current state of the function.
      */
     readonly state: string;

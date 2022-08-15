@@ -11,7 +11,7 @@ import java.util.Objects;
 @CustomType
 public final class GetDetectorRecipeDetectorRuleCandidateResponderRule {
     /**
-     * @return displayName
+     * @return Display name for DetectorRecipeDetectorRule.
      * 
      */
     private final String displayName;
@@ -37,7 +37,7 @@ public final class GetDetectorRecipeDetectorRuleCandidateResponderRule {
     }
 
     /**
-     * @return displayName
+     * @return Display name for DetectorRecipeDetectorRule.
      * 
      */
     public String displayName() {

@@ -21,5 +21,6 @@ from .get_network_load_balancers_policies import *
 from .get_network_load_balancers_protocols import *
 from .listener import *
 from .network_load_balancer import *
+from .network_load_balancers_backend_sets_unified import *
 from ._inputs import *
 from . import outputs

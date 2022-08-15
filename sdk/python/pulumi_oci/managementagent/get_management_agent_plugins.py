@@ -22,7 +22,10 @@ class GetManagementAgentPluginsResult:
     """
     A collection of values returned by getManagementAgentPlugins.
     """
-    def __init__(__self__, compartment_id=None, display_name=None, filters=None, id=None, management_agent_plugins=None, platform_types=None, state=None):
+    def __init__(__self__, agent_id=None, compartment_id=None, display_name=None, filters=None, id=None, management_agent_plugins=None, platform_types=None, state=None):
+        if agent_id and not isinstance(agent_id, str):
+            raise TypeError("Expected argument 'agent_id' to be a str")
+        pulumi.set(__self__, "agent_id", agent_id)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -44,6 +47,11 @@ class GetManagementAgentPluginsResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+
+    @property
+    @pulumi.getter(name="agentId")
+    def agent_id(self) -> Optional[str]:
+        return pulumi.get(self, "agent_id")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -99,6 +107,7 @@ class AwaitableGetManagementAgentPluginsResult(GetManagementAgentPluginsResult):
         if False:
             yield self
         return GetManagementAgentPluginsResult(
+            agent_id=self.agent_id,
             compartment_id=self.compartment_id,
             display_name=self.display_name,
             filters=self.filters,
@@ -108,7 +117,8 @@ class AwaitableGetManagementAgentPluginsResult(GetManagementAgentPluginsResult):
             state=self.state)
 
 
-def get_management_agent_plugins(compartment_id: Optional[str] = None,
+def get_management_agent_plugins(agent_id: Optional[str] = None,
+                                 compartment_id: Optional[str] = None,
                                  display_name: Optional[str] = None,
                                  filters: Optional[Sequence[pulumi.InputType['GetManagementAgentPluginsFilterArgs']]] = None,
                                  platform_types: Optional[Sequence[str]] = None,
@@ -126,18 +136,21 @@ def get_management_agent_plugins(compartment_id: Optional[str] = None,
     import pulumi_oci as oci
 
     test_management_agent_plugins = oci.ManagementAgent.get_management_agent_plugins(compartment_id=var["compartment_id"],
+        agent_id=var["management_agent_id"],
         display_name=var["management_agent_plugin_display_name"],
         platform_types=var["management_agent_plugin_platform_type"],
         state=var["management_agent_plugin_state"])
     ```
 
 
+    :param str agent_id: The ManagementAgentID of the agent from which the Management Agents to be filtered.
     :param str compartment_id: The OCID of the compartment to which a request will be scoped.
     :param str display_name: Filter to return only Management Agent Plugins having the particular display name.
-    :param Sequence[str] platform_types: Filter to return only results having the particular platform type.
+    :param Sequence[str] platform_types: Array of PlatformTypes to return only results having the particular platform types. Example: ["LINUX"]
     :param str state: Filter to return only Management Agents in the particular lifecycle state.
     """
     __args__ = dict()
+    __args__['agentId'] = agent_id
     __args__['compartmentId'] = compartment_id
     __args__['displayName'] = display_name
     __args__['filters'] = filters
@@ -150,6 +163,7 @@ def get_management_agent_plugins(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ManagementAgent/getManagementAgentPlugins:getManagementAgentPlugins', __args__, opts=opts, typ=GetManagementAgentPluginsResult).value
 
     return AwaitableGetManagementAgentPluginsResult(
+        agent_id=__ret__.agent_id,
         compartment_id=__ret__.compartment_id,
         display_name=__ret__.display_name,
         filters=__ret__.filters,
@@ -160,7 +174,8 @@ def get_management_agent_plugins(compartment_id: Optional[str] = None,
 
 
 @_utilities.lift_output_func(get_management_agent_plugins)
-def get_management_agent_plugins_output(compartment_id: Optional[pulumi.Input[str]] = None,
+def get_management_agent_plugins_output(agent_id: Optional[pulumi.Input[Optional[str]]] = None,
+                                        compartment_id: Optional[pulumi.Input[str]] = None,
                                         display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                         filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetManagementAgentPluginsFilterArgs']]]]] = None,
                                         platform_types: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
@@ -178,15 +193,17 @@ def get_management_agent_plugins_output(compartment_id: Optional[pulumi.Input[st
     import pulumi_oci as oci
 
     test_management_agent_plugins = oci.ManagementAgent.get_management_agent_plugins(compartment_id=var["compartment_id"],
+        agent_id=var["management_agent_id"],
         display_name=var["management_agent_plugin_display_name"],
         platform_types=var["management_agent_plugin_platform_type"],
         state=var["management_agent_plugin_state"])
     ```
 
 
+    :param str agent_id: The ManagementAgentID of the agent from which the Management Agents to be filtered.
     :param str compartment_id: The OCID of the compartment to which a request will be scoped.
     :param str display_name: Filter to return only Management Agent Plugins having the particular display name.
-    :param Sequence[str] platform_types: Filter to return only results having the particular platform type.
+    :param Sequence[str] platform_types: Array of PlatformTypes to return only results having the particular platform types. Example: ["LINUX"]
     :param str state: Filter to return only Management Agents in the particular lifecycle state.
     """
     ...

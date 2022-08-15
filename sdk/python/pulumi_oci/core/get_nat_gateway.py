@@ -20,7 +20,7 @@ class GetNatGatewayResult:
     """
     A collection of values returned by getNatGateway.
     """
-    def __init__(__self__, block_traffic=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, nat_gateway_id=None, nat_ip=None, public_ip_id=None, state=None, time_created=None, vcn_id=None):
+    def __init__(__self__, block_traffic=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, nat_gateway_id=None, nat_ip=None, public_ip_id=None, route_table_id=None, state=None, time_created=None, vcn_id=None):
         if block_traffic and not isinstance(block_traffic, bool):
             raise TypeError("Expected argument 'block_traffic' to be a bool")
         pulumi.set(__self__, "block_traffic", block_traffic)
@@ -48,6 +48,9 @@ class GetNatGatewayResult:
         if public_ip_id and not isinstance(public_ip_id, str):
             raise TypeError("Expected argument 'public_ip_id' to be a str")
         pulumi.set(__self__, "public_ip_id", public_ip_id)
+        if route_table_id and not isinstance(route_table_id, str):
+            raise TypeError("Expected argument 'route_table_id' to be a str")
+        pulumi.set(__self__, "route_table_id", route_table_id)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -128,6 +131,14 @@ class GetNatGatewayResult:
         return pulumi.get(self, "public_ip_id")
 
     @property
+    @pulumi.getter(name="routeTableId")
+    def route_table_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
+        """
+        return pulumi.get(self, "route_table_id")
+
+    @property
     @pulumi.getter
     def state(self) -> str:
         """
@@ -167,6 +178,7 @@ class AwaitableGetNatGatewayResult(GetNatGatewayResult):
             nat_gateway_id=self.nat_gateway_id,
             nat_ip=self.nat_ip,
             public_ip_id=self.public_ip_id,
+            route_table_id=self.route_table_id,
             state=self.state,
             time_created=self.time_created,
             vcn_id=self.vcn_id)
@@ -209,6 +221,7 @@ def get_nat_gateway(nat_gateway_id: Optional[str] = None,
         nat_gateway_id=__ret__.nat_gateway_id,
         nat_ip=__ret__.nat_ip,
         public_ip_id=__ret__.public_ip_id,
+        route_table_id=__ret__.route_table_id,
         state=__ret__.state,
         time_created=__ret__.time_created,
         vcn_id=__ret__.vcn_id)

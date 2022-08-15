@@ -80,7 +80,7 @@ type GetAutonomousContainerDatabasesArgs struct {
 type GetAutonomousContainerDatabasesResult struct {
 	// The list of autonomous_container_databases.
 	AutonomousContainerDatabases []GetAutonomousContainerDatabasesAutonomousContainerDatabase `pulumi:"autonomousContainerDatabases"`
-	// The OCID of the Autonomous Exadata Infrastructure.
+	// **No longer used.** For Autonomous Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
 	AutonomousExadataInfrastructureId *string `pulumi:"autonomousExadataInfrastructureId"`
 	// The OCID of the Autonomous VM Cluster.
 	AutonomousVmClusterId *string `pulumi:"autonomousVmClusterId"`
@@ -165,7 +165,7 @@ func (o GetAutonomousContainerDatabasesResultOutput) AutonomousContainerDatabase
 	}).(GetAutonomousContainerDatabasesAutonomousContainerDatabaseArrayOutput)
 }
 
-// The OCID of the Autonomous Exadata Infrastructure.
+// **No longer used.** For Autonomous Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
 func (o GetAutonomousContainerDatabasesResultOutput) AutonomousExadataInfrastructureId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetAutonomousContainerDatabasesResult) *string { return v.AutonomousExadataInfrastructureId }).(pulumi.StringPtrOutput)
 }

@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Database.VmClusterRemoveVirtualMachineArgs;
 import com.pulumi.oci.Database.inputs.VmClusterRemoveVirtualMachineState;
+import com.pulumi.oci.Database.outputs.VmClusterRemoveVirtualMachineDataCollectionOption;
 import com.pulumi.oci.Database.outputs.VmClusterRemoveVirtualMachineDbServer;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
@@ -65,6 +66,20 @@ public class VmClusterRemoveVirtualMachine extends com.pulumi.resources.CustomRe
      */
     public Output<Integer> cpusEnabled() {
         return this.cpusEnabled;
+    }
+    /**
+     * Indicates user preferences for the various diagnostic collection options for the VM cluster.
+     * 
+     */
+    @Export(name="dataCollectionOptions", type=List.class, parameters={VmClusterRemoveVirtualMachineDataCollectionOption.class})
+    private Output<List<VmClusterRemoveVirtualMachineDataCollectionOption>> dataCollectionOptions;
+
+    /**
+     * @return Indicates user preferences for the various diagnostic collection options for the VM cluster.
+     * 
+     */
+    public Output<List<VmClusterRemoveVirtualMachineDataCollectionOption>> dataCollectionOptions() {
+        return this.dataCollectionOptions;
     }
     /**
      * Size, in terabytes, of the DATA disk group.

@@ -21,7 +21,7 @@ class GetAutoScalingConfigurationResult:
     """
     A collection of values returned by getAutoScalingConfiguration.
     """
-    def __init__(__self__, auto_scaling_configuration_id=None, bds_instance_id=None, cluster_admin_password=None, display_name=None, id=None, is_enabled=None, node_type=None, policies=None, state=None, time_created=None, time_updated=None):
+    def __init__(__self__, auto_scaling_configuration_id=None, bds_instance_id=None, cluster_admin_password=None, display_name=None, id=None, is_enabled=None, node_type=None, policies=None, policy_details=None, state=None, time_created=None, time_updated=None):
         if auto_scaling_configuration_id and not isinstance(auto_scaling_configuration_id, str):
             raise TypeError("Expected argument 'auto_scaling_configuration_id' to be a str")
         pulumi.set(__self__, "auto_scaling_configuration_id", auto_scaling_configuration_id)
@@ -46,6 +46,9 @@ class GetAutoScalingConfigurationResult:
         if policies and not isinstance(policies, list):
             raise TypeError("Expected argument 'policies' to be a list")
         pulumi.set(__self__, "policies", policies)
+        if policy_details and not isinstance(policy_details, list):
+            raise TypeError("Expected argument 'policy_details' to be a list")
+        pulumi.set(__self__, "policy_details", policy_details)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -96,7 +99,7 @@ class GetAutoScalingConfigurationResult:
     @pulumi.getter(name="nodeType")
     def node_type(self) -> str:
         """
-        A node type that is managed by an autoscale configuration. The only supported type is WORKER.
+        A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
         """
         return pulumi.get(self, "node_type")
 
@@ -104,9 +107,17 @@ class GetAutoScalingConfigurationResult:
     @pulumi.getter
     def policies(self) -> Sequence['outputs.GetAutoScalingConfigurationPolicyResult']:
         """
-        Policy definitions for the autoscale configuration.
+        This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
         """
         return pulumi.get(self, "policies")
+
+    @property
+    @pulumi.getter(name="policyDetails")
+    def policy_details(self) -> Sequence['outputs.GetAutoScalingConfigurationPolicyDetailResult']:
+        """
+        Details of an autoscale policy.
+        """
+        return pulumi.get(self, "policy_details")
 
     @property
     @pulumi.getter
@@ -147,6 +158,7 @@ class AwaitableGetAutoScalingConfigurationResult(GetAutoScalingConfigurationResu
             is_enabled=self.is_enabled,
             node_type=self.node_type,
             policies=self.policies,
+            policy_details=self.policy_details,
             state=self.state,
             time_created=self.time_created,
             time_updated=self.time_updated)
@@ -192,6 +204,7 @@ def get_auto_scaling_configuration(auto_scaling_configuration_id: Optional[str] 
         is_enabled=__ret__.is_enabled,
         node_type=__ret__.node_type,
         policies=__ret__.policies,
+        policy_details=__ret__.policy_details,
         state=__ret__.state,
         time_created=__ret__.time_created,
         time_updated=__ret__.time_updated)

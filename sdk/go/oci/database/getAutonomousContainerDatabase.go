@@ -54,12 +54,14 @@ type LookupAutonomousContainerDatabaseArgs struct {
 // A collection of values returned by getAutonomousContainerDatabase.
 type LookupAutonomousContainerDatabaseResult struct {
 	AutonomousContainerDatabaseId string `pulumi:"autonomousContainerDatabaseId"`
-	// The OCID of the Autonomous Exadata Infrastructure.
+	// **No longer used.** For Autonomous Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
 	AutonomousExadataInfrastructureId string `pulumi:"autonomousExadataInfrastructureId"`
 	// The OCID of the Autonomous VM Cluster.
 	AutonomousVmClusterId string `pulumi:"autonomousVmClusterId"`
 	// The availability domain of the Autonomous Container Database.
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
+	AvailableCpus float64 `pulumi:"availableCpus"`
 	// Backup options for the Autonomous Container Database.
 	BackupConfigs []GetAutonomousContainerDatabaseBackupConfig `pulumi:"backupConfigs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
@@ -111,7 +113,11 @@ type LookupAutonomousContainerDatabaseResult struct {
 	PeerCloudAutonomousVmClusterId               string                                                                      `pulumi:"peerCloudAutonomousVmClusterId"`
 	PeerDbUniqueName                             string                                                                      `pulumi:"peerDbUniqueName"`
 	ProtectionMode                               string                                                                      `pulumi:"protectionMode"`
-	// The role of the dataguard enabled Autonomous Container Database.
+	// An array of CPU values that can be used to successfully provision a single Autonomous Database.
+	ProvisionableCpuses []float64 `pulumi:"provisionableCpuses"`
+	// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+	ReclaimableCpus float64 `pulumi:"reclaimableCpus"`
+	// The role of the Autonomous Data Guard-enabled Autonomous Container Database.
 	Role             string `pulumi:"role"`
 	RotateKeyTrigger bool   `pulumi:"rotateKeyTrigger"`
 	// The service level agreement type of the container database. The default is STANDARD.
@@ -122,6 +128,8 @@ type LookupAutonomousContainerDatabaseResult struct {
 	State string `pulumi:"state"`
 	// The date and time the Autonomous Container Database was created.
 	TimeCreated string `pulumi:"timeCreated"`
+	// The number of CPU cores allocated to the Autonomous VM cluster.
+	TotalCpus int `pulumi:"totalCpus"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
 	VaultId string `pulumi:"vaultId"`
 }
@@ -168,7 +176,7 @@ func (o LookupAutonomousContainerDatabaseResultOutput) AutonomousContainerDataba
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.AutonomousContainerDatabaseId }).(pulumi.StringOutput)
 }
 
-// The OCID of the Autonomous Exadata Infrastructure.
+// **No longer used.** For Autonomous Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
 func (o LookupAutonomousContainerDatabaseResultOutput) AutonomousExadataInfrastructureId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.AutonomousExadataInfrastructureId }).(pulumi.StringOutput)
 }
@@ -181,6 +189,11 @@ func (o LookupAutonomousContainerDatabaseResultOutput) AutonomousVmClusterId() p
 // The availability domain of the Autonomous Container Database.
 func (o LookupAutonomousContainerDatabaseResultOutput) AvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+}
+
+// Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
+func (o LookupAutonomousContainerDatabaseResultOutput) AvailableCpus() pulumi.Float64Output {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) float64 { return v.AvailableCpus }).(pulumi.Float64Output)
 }
 
 // Backup options for the Autonomous Container Database.
@@ -341,7 +354,17 @@ func (o LookupAutonomousContainerDatabaseResultOutput) ProtectionMode() pulumi.S
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.ProtectionMode }).(pulumi.StringOutput)
 }
 
-// The role of the dataguard enabled Autonomous Container Database.
+// An array of CPU values that can be used to successfully provision a single Autonomous Database.
+func (o LookupAutonomousContainerDatabaseResultOutput) ProvisionableCpuses() pulumi.Float64ArrayOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) []float64 { return v.ProvisionableCpuses }).(pulumi.Float64ArrayOutput)
+}
+
+// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+func (o LookupAutonomousContainerDatabaseResultOutput) ReclaimableCpus() pulumi.Float64Output {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) float64 { return v.ReclaimableCpus }).(pulumi.Float64Output)
+}
+
+// The role of the Autonomous Data Guard-enabled Autonomous Container Database.
 func (o LookupAutonomousContainerDatabaseResultOutput) Role() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.Role }).(pulumi.StringOutput)
 }
@@ -368,6 +391,11 @@ func (o LookupAutonomousContainerDatabaseResultOutput) State() pulumi.StringOutp
 // The date and time the Autonomous Container Database was created.
 func (o LookupAutonomousContainerDatabaseResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The number of CPU cores allocated to the Autonomous VM cluster.
+func (o LookupAutonomousContainerDatabaseResultOutput) TotalCpus() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) int { return v.TotalCpus }).(pulumi.IntOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).

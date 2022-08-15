@@ -50,14 +50,14 @@ public final class ResponderRecipeArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * (Updatable) ResponderRecipe Description
+     * (Updatable) Responder recipe description.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) ResponderRecipe Description
+     * @return (Updatable) Responder recipe description.
      * 
      */
     public Optional<Output<String>> description() {
@@ -65,14 +65,14 @@ public final class ResponderRecipeArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * (Updatable) ResponderRecipe Display Name
+     * (Updatable) Responder recipe display name.
      * 
      */
     @Import(name="displayName", required=true)
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) ResponderRecipe Display Name
+     * @return (Updatable) Responder recipe display name.
      * 
      */
     public Output<String> displayName() {
@@ -197,7 +197,7 @@ public final class ResponderRecipeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param description (Updatable) ResponderRecipe Description
+         * @param description (Updatable) Responder recipe description.
          * 
          * @return builder
          * 
@@ -208,7 +208,7 @@ public final class ResponderRecipeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param description (Updatable) ResponderRecipe Description
+         * @param description (Updatable) Responder recipe description.
          * 
          * @return builder
          * 
@@ -218,7 +218,7 @@ public final class ResponderRecipeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param displayName (Updatable) ResponderRecipe Display Name
+         * @param displayName (Updatable) Responder recipe display name.
          * 
          * @return builder
          * 
@@ -229,7 +229,7 @@ public final class ResponderRecipeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param displayName (Updatable) ResponderRecipe Display Name
+         * @param displayName (Updatable) Responder recipe display name.
          * 
          * @return builder
          * 

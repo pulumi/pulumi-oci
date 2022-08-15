@@ -38,13 +38,13 @@ namespace Pulumi.Oci.CloudGuard
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) ResponderRecipe Description
+        /// (Updatable) Responder recipe description.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) ResponderRecipe Display Name
+        /// (Updatable) Responder recipe display name.
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
@@ -174,13 +174,13 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
-        /// (Updatable) ResponderRecipe Description
+        /// (Updatable) Responder recipe description.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) ResponderRecipe Display Name
+        /// (Updatable) Responder recipe display name.
         /// </summary>
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
@@ -241,13 +241,13 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
-        /// (Updatable) ResponderRecipe Description
+        /// (Updatable) Responder recipe description.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) ResponderRecipe Display Name
+        /// (Updatable) Responder recipe display name.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }

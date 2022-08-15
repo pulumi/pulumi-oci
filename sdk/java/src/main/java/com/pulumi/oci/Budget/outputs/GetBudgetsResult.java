@@ -20,12 +20,12 @@ public final class GetBudgetsResult {
      */
     private final List<GetBudgetsBudget> budgets;
     /**
-     * @return The OCID of the compartment
+     * @return The OCID of the compartment.
      * 
      */
     private final String compartmentId;
     /**
-     * @return The display name of the budget.
+     * @return The display name of the budget. Avoid entering confidential information.
      * 
      */
     private final @Nullable String displayName;
@@ -72,14 +72,14 @@ public final class GetBudgetsResult {
         return this.budgets;
     }
     /**
-     * @return The OCID of the compartment
+     * @return The OCID of the compartment.
      * 
      */
     public String compartmentId() {
         return this.compartmentId;
     }
     /**
-     * @return The display name of the budget.
+     * @return The display name of the budget. Avoid entering confidential information.
      * 
      */
     public Optional<String> displayName() {

@@ -32,6 +32,11 @@ public final class ExternalDatabaseConnectorConnectionCredentials {
      */
     private final @Nullable String role;
     /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * 
+     */
+    private final @Nullable String sslSecretId;
+    /**
      * @return (Updatable) The username that will be used to connect to the database.
      * 
      */
@@ -43,11 +48,13 @@ public final class ExternalDatabaseConnectorConnectionCredentials {
         @CustomType.Parameter("credentialType") @Nullable String credentialType,
         @CustomType.Parameter("password") @Nullable String password,
         @CustomType.Parameter("role") @Nullable String role,
+        @CustomType.Parameter("sslSecretId") @Nullable String sslSecretId,
         @CustomType.Parameter("username") @Nullable String username) {
         this.credentialName = credentialName;
         this.credentialType = credentialType;
         this.password = password;
         this.role = role;
+        this.sslSecretId = sslSecretId;
         this.username = username;
     }
 
@@ -80,6 +87,13 @@ public final class ExternalDatabaseConnectorConnectionCredentials {
         return Optional.ofNullable(this.role);
     }
     /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * 
+     */
+    public Optional<String> sslSecretId() {
+        return Optional.ofNullable(this.sslSecretId);
+    }
+    /**
      * @return (Updatable) The username that will be used to connect to the database.
      * 
      */
@@ -100,6 +114,7 @@ public final class ExternalDatabaseConnectorConnectionCredentials {
         private @Nullable String credentialType;
         private @Nullable String password;
         private @Nullable String role;
+        private @Nullable String sslSecretId;
         private @Nullable String username;
 
         public Builder() {
@@ -112,6 +127,7 @@ public final class ExternalDatabaseConnectorConnectionCredentials {
     	      this.credentialType = defaults.credentialType;
     	      this.password = defaults.password;
     	      this.role = defaults.role;
+    	      this.sslSecretId = defaults.sslSecretId;
     	      this.username = defaults.username;
         }
 
@@ -131,11 +147,15 @@ public final class ExternalDatabaseConnectorConnectionCredentials {
             this.role = role;
             return this;
         }
+        public Builder sslSecretId(@Nullable String sslSecretId) {
+            this.sslSecretId = sslSecretId;
+            return this;
+        }
         public Builder username(@Nullable String username) {
             this.username = username;
             return this;
         }        public ExternalDatabaseConnectorConnectionCredentials build() {
-            return new ExternalDatabaseConnectorConnectionCredentials(credentialName, credentialType, password, role, username);
+            return new ExternalDatabaseConnectorConnectionCredentials(credentialName, credentialType, password, role, sslSecretId, username);
         }
     }
 }

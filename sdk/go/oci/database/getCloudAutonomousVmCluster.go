@@ -53,11 +53,21 @@ type LookupCloudAutonomousVmClusterArgs struct {
 
 // A collection of values returned by getCloudAutonomousVmCluster.
 type LookupCloudAutonomousVmClusterResult struct {
+	// The data disk group size allocated for Autonomous Databases, in TBs.
+	AutonomousDataStorageSizeInTbs float64 `pulumi:"autonomousDataStorageSizeInTbs"`
 	// The name of the availability domain that the cloud Autonomous VM cluster is located in.
-	AvailabilityDomain         string `pulumi:"availabilityDomain"`
-	CloudAutonomousVmClusterId string `pulumi:"cloudAutonomousVmClusterId"`
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// The data disk group size available for Autonomous Databases, in TBs.
+	AvailableAutonomousDataStorageSizeInTbs float64 `pulumi:"availableAutonomousDataStorageSizeInTbs"`
+	// The number of Autonomous Container Databases that can be created with the currently available local storage.
+	AvailableContainerDatabases int `pulumi:"availableContainerDatabases"`
+	// CPU cores available for allocation to Autonomous Databases.
+	AvailableCpus              float64 `pulumi:"availableCpus"`
+	CloudAutonomousVmClusterId string  `pulumi:"cloudAutonomousVmClusterId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure.
 	CloudExadataInfrastructureId string `pulumi:"cloudExadataInfrastructureId"`
+	// The time zone of the Cloud Autonomous VM Cluster.
+	ClusterTimeZone string `pulumi:"clusterTimeZone"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The number of CPU cores enabled on the cloud Autonomous VM cluster.
@@ -66,6 +76,8 @@ type LookupCloudAutonomousVmClusterResult struct {
 	DataStorageSizeInGb float64 `pulumi:"dataStorageSizeInGb"`
 	// The total data storage allocated, in terabytes (TB).
 	DataStorageSizeInTbs float64 `pulumi:"dataStorageSizeInTbs"`
+	// The local node storage allocated in GBs.
+	DbNodeStorageSizeInGbs int `pulumi:"dbNodeStorageSizeInGbs"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// User defined description of the cloud Autonomous VM cluster.
@@ -88,17 +100,21 @@ type LookupCloudAutonomousVmClusterResult struct {
 	LicenseModel string `pulumi:"licenseModel"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The amount of memory (in GBs) enabled per each OCPU core.
+	MemoryPerOracleComputeUnitInGbs int `pulumi:"memoryPerOracleComputeUnitInGbs"`
 	// The memory allocated in GBs.
 	MemorySizeInGbs int `pulumi:"memorySizeInGbs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
 	NextMaintenanceRunId string `pulumi:"nextMaintenanceRunId"`
 	// The number of database servers in the cloud VM cluster.
 	NodeCount int `pulumi:"nodeCount"`
-	// A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-	// * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
 	NsgIds []string `pulumi:"nsgIds"`
 	// The number of CPU cores enabled on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
-	OcpuCount              float64 `pulumi:"ocpuCount"`
+	OcpuCount float64 `pulumi:"ocpuCount"`
+	// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+	ReclaimableCpus        float64 `pulumi:"reclaimableCpus"`
 	RotateOrdsCertsTrigger bool    `pulumi:"rotateOrdsCertsTrigger"`
 	RotateSslCertsTrigger  bool    `pulumi:"rotateSslCertsTrigger"`
 	// The model name of the Exadata hardware running the cloud Autonomous VM cluster.
@@ -111,6 +127,8 @@ type LookupCloudAutonomousVmClusterResult struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The last date and time that the cloud Autonomous VM cluster was updated.
 	TimeUpdated string `pulumi:"timeUpdated"`
+	// The total number of Autonomous Container Databases that can be created with the allocated local storage.
+	TotalContainerDatabases int `pulumi:"totalContainerDatabases"`
 }
 
 func LookupCloudAutonomousVmClusterOutput(ctx *pulumi.Context, args LookupCloudAutonomousVmClusterOutputArgs, opts ...pulumi.InvokeOption) LookupCloudAutonomousVmClusterResultOutput {
@@ -151,9 +169,29 @@ func (o LookupCloudAutonomousVmClusterResultOutput) ToLookupCloudAutonomousVmClu
 	return o
 }
 
+// The data disk group size allocated for Autonomous Databases, in TBs.
+func (o LookupCloudAutonomousVmClusterResultOutput) AutonomousDataStorageSizeInTbs() pulumi.Float64Output {
+	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) float64 { return v.AutonomousDataStorageSizeInTbs }).(pulumi.Float64Output)
+}
+
 // The name of the availability domain that the cloud Autonomous VM cluster is located in.
 func (o LookupCloudAutonomousVmClusterResultOutput) AvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+}
+
+// The data disk group size available for Autonomous Databases, in TBs.
+func (o LookupCloudAutonomousVmClusterResultOutput) AvailableAutonomousDataStorageSizeInTbs() pulumi.Float64Output {
+	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) float64 { return v.AvailableAutonomousDataStorageSizeInTbs }).(pulumi.Float64Output)
+}
+
+// The number of Autonomous Container Databases that can be created with the currently available local storage.
+func (o LookupCloudAutonomousVmClusterResultOutput) AvailableContainerDatabases() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) int { return v.AvailableContainerDatabases }).(pulumi.IntOutput)
+}
+
+// CPU cores available for allocation to Autonomous Databases.
+func (o LookupCloudAutonomousVmClusterResultOutput) AvailableCpus() pulumi.Float64Output {
+	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) float64 { return v.AvailableCpus }).(pulumi.Float64Output)
 }
 
 func (o LookupCloudAutonomousVmClusterResultOutput) CloudAutonomousVmClusterId() pulumi.StringOutput {
@@ -163,6 +201,11 @@ func (o LookupCloudAutonomousVmClusterResultOutput) CloudAutonomousVmClusterId()
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure.
 func (o LookupCloudAutonomousVmClusterResultOutput) CloudExadataInfrastructureId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) string { return v.CloudExadataInfrastructureId }).(pulumi.StringOutput)
+}
+
+// The time zone of the Cloud Autonomous VM Cluster.
+func (o LookupCloudAutonomousVmClusterResultOutput) ClusterTimeZone() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) string { return v.ClusterTimeZone }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -183,6 +226,11 @@ func (o LookupCloudAutonomousVmClusterResultOutput) DataStorageSizeInGb() pulumi
 // The total data storage allocated, in terabytes (TB).
 func (o LookupCloudAutonomousVmClusterResultOutput) DataStorageSizeInTbs() pulumi.Float64Output {
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) float64 { return v.DataStorageSizeInTbs }).(pulumi.Float64Output)
+}
+
+// The local node storage allocated in GBs.
+func (o LookupCloudAutonomousVmClusterResultOutput) DbNodeStorageSizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) int { return v.DbNodeStorageSizeInGbs }).(pulumi.IntOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -240,6 +288,11 @@ func (o LookupCloudAutonomousVmClusterResultOutput) LifecycleDetails() pulumi.St
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// The amount of memory (in GBs) enabled per each OCPU core.
+func (o LookupCloudAutonomousVmClusterResultOutput) MemoryPerOracleComputeUnitInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) int { return v.MemoryPerOracleComputeUnitInGbs }).(pulumi.IntOutput)
+}
+
 // The memory allocated in GBs.
 func (o LookupCloudAutonomousVmClusterResultOutput) MemorySizeInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) int { return v.MemorySizeInGbs }).(pulumi.IntOutput)
@@ -255,8 +308,8 @@ func (o LookupCloudAutonomousVmClusterResultOutput) NodeCount() pulumi.IntOutput
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) int { return v.NodeCount }).(pulumi.IntOutput)
 }
 
-// A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-// * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
 func (o LookupCloudAutonomousVmClusterResultOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
 }
@@ -264,6 +317,11 @@ func (o LookupCloudAutonomousVmClusterResultOutput) NsgIds() pulumi.StringArrayO
 // The number of CPU cores enabled on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
 func (o LookupCloudAutonomousVmClusterResultOutput) OcpuCount() pulumi.Float64Output {
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) float64 { return v.OcpuCount }).(pulumi.Float64Output)
+}
+
+// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+func (o LookupCloudAutonomousVmClusterResultOutput) ReclaimableCpus() pulumi.Float64Output {
+	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) float64 { return v.ReclaimableCpus }).(pulumi.Float64Output)
 }
 
 func (o LookupCloudAutonomousVmClusterResultOutput) RotateOrdsCertsTrigger() pulumi.BoolOutput {
@@ -297,6 +355,11 @@ func (o LookupCloudAutonomousVmClusterResultOutput) TimeCreated() pulumi.StringO
 // The last date and time that the cloud Autonomous VM cluster was updated.
 func (o LookupCloudAutonomousVmClusterResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The total number of Autonomous Container Databases that can be created with the allocated local storage.
+func (o LookupCloudAutonomousVmClusterResultOutput) TotalContainerDatabases() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) int { return v.TotalContainerDatabases }).(pulumi.IntOutput)
 }
 
 func init() {

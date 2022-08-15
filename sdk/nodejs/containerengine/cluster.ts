@@ -51,6 +51,10 @@ export class Cluster extends pulumi.CustomResource {
      */
     public /*out*/ readonly availableKubernetesUpgrades!: pulumi.Output<string[]>;
     /**
+     * Available CNIs and network options for existing and new node pools of the cluster
+     */
+    public readonly clusterPodNetworkOptions!: pulumi.Output<outputs.ContainerEngine.ClusterClusterPodNetworkOption[]>;
+    /**
      * The OCID of the compartment in which to create the cluster.
      */
     public readonly compartmentId!: pulumi.Output<string>;
@@ -121,6 +125,7 @@ export class Cluster extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as ClusterState | undefined;
             resourceInputs["availableKubernetesUpgrades"] = state ? state.availableKubernetesUpgrades : undefined;
+            resourceInputs["clusterPodNetworkOptions"] = state ? state.clusterPodNetworkOptions : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["endpointConfig"] = state ? state.endpointConfig : undefined;
@@ -146,6 +151,7 @@ export class Cluster extends pulumi.CustomResource {
             if ((!args || args.vcnId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'vcnId'");
             }
+            resourceInputs["clusterPodNetworkOptions"] = args ? args.clusterPodNetworkOptions : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["endpointConfig"] = args ? args.endpointConfig : undefined;
@@ -175,6 +181,10 @@ export interface ClusterState {
      * Available Kubernetes versions to which the clusters masters may be upgraded.
      */
     availableKubernetesUpgrades?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Available CNIs and network options for existing and new node pools of the cluster
+     */
+    clusterPodNetworkOptions?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.ClusterClusterPodNetworkOption>[]>;
     /**
      * The OCID of the compartment in which to create the cluster.
      */
@@ -237,6 +247,10 @@ export interface ClusterState {
  * The set of arguments for constructing a Cluster resource.
  */
 export interface ClusterArgs {
+    /**
+     * Available CNIs and network options for existing and new node pools of the cluster
+     */
+    clusterPodNetworkOptions?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.ClusterClusterPodNetworkOption>[]>;
     /**
      * The OCID of the compartment in which to create the cluster.
      */

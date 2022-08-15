@@ -22,14 +22,14 @@ public final class DatabaseToolsConnectionArgs extends com.pulumi.resources.Reso
     public static final DatabaseToolsConnectionArgs Empty = new DatabaseToolsConnectionArgs();
 
     /**
-     * (Updatable) Advanced connection properties key-value pair (e.g., oracle.net.ssl_server_dn_match).
+     * (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
      * 
      */
     @Import(name="advancedProperties")
     private @Nullable Output<Map<String,Object>> advancedProperties;
 
     /**
-     * @return (Updatable) Advanced connection properties key-value pair (e.g., oracle.net.ssl_server_dn_match).
+     * @return (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
      * 
      */
     public Optional<Output<Map<String,Object>>> advancedProperties() {
@@ -37,14 +37,14 @@ public final class DatabaseToolsConnectionArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
      * 
      */
     public Output<String> compartmentId() {
@@ -52,14 +52,14 @@ public final class DatabaseToolsConnectionArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * (Updatable) Connect descriptor or Easy Connect Naming method to connect to the database.
+     * (Updatable) The connect descriptor or Easy Connect Naming method use to connect to the database.
      * 
      */
     @Import(name="connectionString")
     private @Nullable Output<String> connectionString;
 
     /**
-     * @return (Updatable) Connect descriptor or Easy Connect Naming method to connect to the database.
+     * @return (Updatable) The connect descriptor or Easy Connect Naming method use to connect to the database.
      * 
      */
     public Optional<Output<String>> connectionString() {
@@ -127,14 +127,14 @@ public final class DatabaseToolsConnectionArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsPrivateEndpoint used to access the database in the Customer VCN.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
      * 
      */
     @Import(name="privateEndpointId")
     private @Nullable Output<String> privateEndpointId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsPrivateEndpoint used to access the database in the Customer VCN.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
      * 
      */
     public Optional<Output<String>> privateEndpointId() {
@@ -172,14 +172,14 @@ public final class DatabaseToolsConnectionArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * (Updatable) Database user name.
+     * (Updatable) The database user name.
      * 
      */
     @Import(name="userName")
     private @Nullable Output<String> userName;
 
     /**
-     * @return (Updatable) Database user name.
+     * @return (Updatable) The database user name.
      * 
      */
     public Optional<Output<String>> userName() {
@@ -237,7 +237,7 @@ public final class DatabaseToolsConnectionArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param advancedProperties (Updatable) Advanced connection properties key-value pair (e.g., oracle.net.ssl_server_dn_match).
+         * @param advancedProperties (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
          * 
          * @return builder
          * 
@@ -248,7 +248,7 @@ public final class DatabaseToolsConnectionArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param advancedProperties (Updatable) Advanced connection properties key-value pair (e.g., oracle.net.ssl_server_dn_match).
+         * @param advancedProperties (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
          * 
          * @return builder
          * 
@@ -258,7 +258,7 @@ public final class DatabaseToolsConnectionArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
          * 
          * @return builder
          * 
@@ -269,7 +269,7 @@ public final class DatabaseToolsConnectionArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
          * 
          * @return builder
          * 
@@ -279,7 +279,7 @@ public final class DatabaseToolsConnectionArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param connectionString (Updatable) Connect descriptor or Easy Connect Naming method to connect to the database.
+         * @param connectionString (Updatable) The connect descriptor or Easy Connect Naming method use to connect to the database.
          * 
          * @return builder
          * 
@@ -290,7 +290,7 @@ public final class DatabaseToolsConnectionArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param connectionString (Updatable) Connect descriptor or Easy Connect Naming method to connect to the database.
+         * @param connectionString (Updatable) The connect descriptor or Easy Connect Naming method use to connect to the database.
          * 
          * @return builder
          * 
@@ -394,7 +394,7 @@ public final class DatabaseToolsConnectionArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param privateEndpointId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsPrivateEndpoint used to access the database in the Customer VCN.
+         * @param privateEndpointId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
          * 
          * @return builder
          * 
@@ -405,7 +405,7 @@ public final class DatabaseToolsConnectionArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param privateEndpointId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsPrivateEndpoint used to access the database in the Customer VCN.
+         * @param privateEndpointId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
          * 
          * @return builder
          * 
@@ -457,7 +457,7 @@ public final class DatabaseToolsConnectionArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param userName (Updatable) Database user name.
+         * @param userName (Updatable) The database user name.
          * 
          * @return builder
          * 
@@ -468,7 +468,7 @@ public final class DatabaseToolsConnectionArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param userName (Updatable) Database user name.
+         * @param userName (Updatable) The database user name.
          * 
          * @return builder
          * 

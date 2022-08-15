@@ -20,10 +20,13 @@ class GetConnectionResult:
     """
     A collection of values returned by getConnection.
     """
-    def __init__(__self__, access_token=None, compartment_id=None, connection_id=None, connection_type=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, project_id=None, state=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, access_token=None, app_password=None, compartment_id=None, connection_id=None, connection_type=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, project_id=None, state=None, system_tags=None, time_created=None, time_updated=None, username=None):
         if access_token and not isinstance(access_token, str):
             raise TypeError("Expected argument 'access_token' to be a str")
         pulumi.set(__self__, "access_token", access_token)
+        if app_password and not isinstance(app_password, str):
+            raise TypeError("Expected argument 'app_password' to be a str")
+        pulumi.set(__self__, "app_password", app_password)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -63,6 +66,9 @@ class GetConnectionResult:
         if time_updated and not isinstance(time_updated, str):
             raise TypeError("Expected argument 'time_updated' to be a str")
         pulumi.set(__self__, "time_updated", time_updated)
+        if username and not isinstance(username, str):
+            raise TypeError("Expected argument 'username' to be a str")
+        pulumi.set(__self__, "username", username)
 
     @property
     @pulumi.getter(name="accessToken")
@@ -71,6 +77,14 @@ class GetConnectionResult:
         The OCID of personal access token saved in secret store.
         """
         return pulumi.get(self, "access_token")
+
+    @property
+    @pulumi.getter(name="appPassword")
+    def app_password(self) -> str:
+        """
+        OCID of personal Bitbucket Cloud AppPassword saved in secret store
+        """
+        return pulumi.get(self, "app_password")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -173,6 +187,14 @@ class GetConnectionResult:
         """
         return pulumi.get(self, "time_updated")
 
+    @property
+    @pulumi.getter
+    def username(self) -> str:
+        """
+        Public Bitbucket Cloud Username in plain text
+        """
+        return pulumi.get(self, "username")
+
 
 class AwaitableGetConnectionResult(GetConnectionResult):
     # pylint: disable=using-constant-test
@@ -181,6 +203,7 @@ class AwaitableGetConnectionResult(GetConnectionResult):
             yield self
         return GetConnectionResult(
             access_token=self.access_token,
+            app_password=self.app_password,
             compartment_id=self.compartment_id,
             connection_id=self.connection_id,
             connection_type=self.connection_type,
@@ -193,7 +216,8 @@ class AwaitableGetConnectionResult(GetConnectionResult):
             state=self.state,
             system_tags=self.system_tags,
             time_created=self.time_created,
-            time_updated=self.time_updated)
+            time_updated=self.time_updated,
+            username=self.username)
 
 
 def get_connection(connection_id: Optional[str] = None,
@@ -225,6 +249,7 @@ def get_connection(connection_id: Optional[str] = None,
 
     return AwaitableGetConnectionResult(
         access_token=__ret__.access_token,
+        app_password=__ret__.app_password,
         compartment_id=__ret__.compartment_id,
         connection_id=__ret__.connection_id,
         connection_type=__ret__.connection_type,
@@ -237,7 +262,8 @@ def get_connection(connection_id: Optional[str] = None,
         state=__ret__.state,
         system_tags=__ret__.system_tags,
         time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        time_updated=__ret__.time_updated,
+        username=__ret__.username)
 
 
 @_utilities.lift_output_func(get_connection)

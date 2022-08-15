@@ -46,6 +46,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string PublicIpId;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
+        /// </summary>
+        public readonly string RouteTableId;
+        /// <summary>
         /// A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
         /// </summary>
         public readonly string State;
@@ -76,6 +80,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             string publicIpId,
 
+            string routeTableId,
+
             string state,
 
             string timeCreated,
@@ -90,6 +96,7 @@ namespace Pulumi.Oci.Core.Outputs
             Id = id;
             NatIp = natIp;
             PublicIpId = publicIpId;
+            RouteTableId = routeTableId;
             State = state;
             TimeCreated = timeCreated;
             VcnId = vcnId;

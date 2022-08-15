@@ -21,12 +21,14 @@ export * from "./getNetworkLoadBalancersPolicies";
 export * from "./getNetworkLoadBalancersProtocols";
 export * from "./listener";
 export * from "./networkLoadBalancer";
+export * from "./networkLoadBalancersBackendSetsUnified";
 
 // Import resources to register:
 import { Backend } from "./backend";
 import { BackendSet } from "./backendSet";
 import { Listener } from "./listener";
 import { NetworkLoadBalancer } from "./networkLoadBalancer";
+import { NetworkLoadBalancersBackendSetsUnified } from "./networkLoadBalancersBackendSetsUnified";
 
 const _module = {
     version: utilities.getVersion(),
@@ -40,6 +42,8 @@ const _module = {
                 return new Listener(name, <any>undefined, { urn })
             case "oci:NetworkLoadBalancer/networkLoadBalancer:NetworkLoadBalancer":
                 return new NetworkLoadBalancer(name, <any>undefined, { urn })
+            case "oci:NetworkLoadBalancer/networkLoadBalancersBackendSetsUnified:NetworkLoadBalancersBackendSetsUnified":
+                return new NetworkLoadBalancersBackendSetsUnified(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -49,3 +53,4 @@ pulumi.runtime.registerResourceModule("oci", "NetworkLoadBalancer/backend", _mod
 pulumi.runtime.registerResourceModule("oci", "NetworkLoadBalancer/backendSet", _module)
 pulumi.runtime.registerResourceModule("oci", "NetworkLoadBalancer/listener", _module)
 pulumi.runtime.registerResourceModule("oci", "NetworkLoadBalancer/networkLoadBalancer", _module)
+pulumi.runtime.registerResourceModule("oci", "NetworkLoadBalancer/networkLoadBalancersBackendSetsUnified", _module)

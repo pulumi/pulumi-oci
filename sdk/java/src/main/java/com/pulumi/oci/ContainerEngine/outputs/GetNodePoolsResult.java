@@ -40,6 +40,11 @@ public final class GetNodePoolsResult {
      * 
      */
     private final List<GetNodePoolsNodePool> nodePools;
+    /**
+     * @return The state of the nodepool.
+     * 
+     */
+    private final @Nullable List<String> states;
 
     @CustomType.Constructor
     private GetNodePoolsResult(
@@ -48,13 +53,15 @@ public final class GetNodePoolsResult {
         @CustomType.Parameter("filters") @Nullable List<GetNodePoolsFilter> filters,
         @CustomType.Parameter("id") String id,
         @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("nodePools") List<GetNodePoolsNodePool> nodePools) {
+        @CustomType.Parameter("nodePools") List<GetNodePoolsNodePool> nodePools,
+        @CustomType.Parameter("states") @Nullable List<String> states) {
         this.clusterId = clusterId;
         this.compartmentId = compartmentId;
         this.filters = filters;
         this.id = id;
         this.name = name;
         this.nodePools = nodePools;
+        this.states = states;
     }
 
     /**
@@ -95,6 +102,13 @@ public final class GetNodePoolsResult {
     public List<GetNodePoolsNodePool> nodePools() {
         return this.nodePools;
     }
+    /**
+     * @return The state of the nodepool.
+     * 
+     */
+    public List<String> states() {
+        return this.states == null ? List.of() : this.states;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -111,6 +125,7 @@ public final class GetNodePoolsResult {
         private String id;
         private @Nullable String name;
         private List<GetNodePoolsNodePool> nodePools;
+        private @Nullable List<String> states;
 
         public Builder() {
     	      // Empty
@@ -124,6 +139,7 @@ public final class GetNodePoolsResult {
     	      this.id = defaults.id;
     	      this.name = defaults.name;
     	      this.nodePools = defaults.nodePools;
+    	      this.states = defaults.states;
         }
 
         public Builder clusterId(@Nullable String clusterId) {
@@ -155,8 +171,15 @@ public final class GetNodePoolsResult {
         }
         public Builder nodePools(GetNodePoolsNodePool... nodePools) {
             return nodePools(List.of(nodePools));
+        }
+        public Builder states(@Nullable List<String> states) {
+            this.states = states;
+            return this;
+        }
+        public Builder states(String... states) {
+            return states(List.of(states));
         }        public GetNodePoolsResult build() {
-            return new GetNodePoolsResult(clusterId, compartmentId, filters, id, name, nodePools);
+            return new GetNodePoolsResult(clusterId, compartmentId, filters, id, name, nodePools, states);
         }
     }
 }

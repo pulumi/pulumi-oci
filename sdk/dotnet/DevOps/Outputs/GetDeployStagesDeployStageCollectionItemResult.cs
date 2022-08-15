@@ -122,6 +122,10 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDeployStagesDeployStageCollectionItemGreenBackendIpResult> GreenBackendIps;
         /// <summary>
+        /// Helm chart artifact OCID.
+        /// </summary>
+        public readonly string HelmChartDeployArtifactId;
+        /// <summary>
         /// Unique identifier or OCID for listing a single resource by ID.
         /// </summary>
         public readonly string Id;
@@ -178,6 +182,10 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// </summary>
         public readonly string ProjectId;
         /// <summary>
+        /// Release name of the Helm chart.
+        /// </summary>
+        public readonly string ReleaseName;
+        /// <summary>
         /// Specifies the rollback policy. This is initiated on the failure of certain stage types.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDeployStagesDeployStageCollectionItemRollbackPolicyResult> RollbackPolicies;
@@ -206,9 +214,17 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// </summary>
         public readonly string TimeUpdated;
         /// <summary>
+        /// Time to wait for execution of a helm stage. Defaults to 300 seconds.
+        /// </summary>
+        public readonly int TimeoutInSeconds;
+        /// <summary>
         /// Specifies the target or destination backend set.
         /// </summary>
         public readonly string TrafficShiftTarget;
+        /// <summary>
+        /// List of values.yaml file artifact OCIDs.
+        /// </summary>
+        public readonly ImmutableArray<string> ValuesArtifactIds;
         /// <summary>
         /// Specifies wait criteria for the Wait stage.
         /// </summary>
@@ -270,6 +286,8 @@ namespace Pulumi.Oci.DevOps.Outputs
 
             ImmutableArray<Outputs.GetDeployStagesDeployStageCollectionItemGreenBackendIpResult> greenBackendIps,
 
+            string helmChartDeployArtifactId,
+
             string id,
 
             bool isAsync,
@@ -298,6 +316,8 @@ namespace Pulumi.Oci.DevOps.Outputs
 
             string projectId,
 
+            string releaseName,
+
             ImmutableArray<Outputs.GetDeployStagesDeployStageCollectionItemRollbackPolicyResult> rollbackPolicies,
 
             ImmutableArray<Outputs.GetDeployStagesDeployStageCollectionItemRolloutPolicyResult> rolloutPolicies,
@@ -312,7 +332,11 @@ namespace Pulumi.Oci.DevOps.Outputs
 
             string timeUpdated,
 
+            int timeoutInSeconds,
+
             string trafficShiftTarget,
+
+            ImmutableArray<string> valuesArtifactIds,
 
             ImmutableArray<Outputs.GetDeployStagesDeployStageCollectionItemWaitCriteriaResult> waitCriterias)
         {
@@ -343,6 +367,7 @@ namespace Pulumi.Oci.DevOps.Outputs
             FunctionDeployEnvironmentId = functionDeployEnvironmentId;
             FunctionTimeoutInSeconds = functionTimeoutInSeconds;
             GreenBackendIps = greenBackendIps;
+            HelmChartDeployArtifactId = helmChartDeployArtifactId;
             Id = id;
             IsAsync = isAsync;
             IsValidationEnabled = isValidationEnabled;
@@ -357,6 +382,7 @@ namespace Pulumi.Oci.DevOps.Outputs
             OkeClusterDeployEnvironmentId = okeClusterDeployEnvironmentId;
             ProductionLoadBalancerConfigs = productionLoadBalancerConfigs;
             ProjectId = projectId;
+            ReleaseName = releaseName;
             RollbackPolicies = rollbackPolicies;
             RolloutPolicies = rolloutPolicies;
             State = state;
@@ -364,7 +390,9 @@ namespace Pulumi.Oci.DevOps.Outputs
             TestLoadBalancerConfigs = testLoadBalancerConfigs;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
+            TimeoutInSeconds = timeoutInSeconds;
             TrafficShiftTarget = trafficShiftTarget;
+            ValuesArtifactIds = valuesArtifactIds;
             WaitCriterias = waitCriterias;
         }
     }

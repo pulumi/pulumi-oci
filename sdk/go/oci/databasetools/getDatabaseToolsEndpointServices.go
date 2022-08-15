@@ -12,7 +12,7 @@ import (
 
 // This data source provides the list of Database Tools Endpoint Services in Oracle Cloud Infrastructure Database Tools service.
 //
-// Returns a list of DatabaseToolsEndpointServices.
+// Returns a list of Database Tools endpoint services.
 //
 // ## Example Usage
 //
@@ -52,18 +52,18 @@ func GetDatabaseToolsEndpointServices(ctx *pulumi.Context, args *GetDatabaseTool
 type GetDatabaseToolsEndpointServicesArgs struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
-	// A filter to return only resources that match the entire display name given.
+	// A filter to return only resources that match the entire specified display name.
 	DisplayName *string                                  `pulumi:"displayName"`
 	Filters     []GetDatabaseToolsEndpointServicesFilter `pulumi:"filters"`
-	// A filter to return only resources that match the entire name given.
+	// A filter to return only resources that match the entire specified name.
 	Name *string `pulumi:"name"`
-	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	// A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
 	State *string `pulumi:"state"`
 }
 
 // A collection of values returned by getDatabaseToolsEndpointServices.
 type GetDatabaseToolsEndpointServicesResult struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools Endpoint Service.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The list of database_tools_endpoint_service_collection.
 	DatabaseToolsEndpointServiceCollections []GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollection `pulumi:"databaseToolsEndpointServiceCollections"`
@@ -74,7 +74,7 @@ type GetDatabaseToolsEndpointServicesResult struct {
 	Id string `pulumi:"id"`
 	// A unique, non-changeable resource name.
 	Name *string `pulumi:"name"`
-	// The current state of the DatabaseToolsEndpointService.
+	// The current state of the Database Tools Endpoint Service.
 	State *string `pulumi:"state"`
 }
 
@@ -95,12 +95,12 @@ func GetDatabaseToolsEndpointServicesOutput(ctx *pulumi.Context, args GetDatabas
 type GetDatabaseToolsEndpointServicesOutputArgs struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// A filter to return only resources that match the entire display name given.
+	// A filter to return only resources that match the entire specified display name.
 	DisplayName pulumi.StringPtrInput                            `pulumi:"displayName"`
 	Filters     GetDatabaseToolsEndpointServicesFilterArrayInput `pulumi:"filters"`
-	// A filter to return only resources that match the entire name given.
+	// A filter to return only resources that match the entire specified name.
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	// A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
 	State pulumi.StringPtrInput `pulumi:"state"`
 }
 
@@ -123,7 +123,7 @@ func (o GetDatabaseToolsEndpointServicesResultOutput) ToGetDatabaseToolsEndpoint
 	return o
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools Endpoint Service.
 func (o GetDatabaseToolsEndpointServicesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseToolsEndpointServicesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -156,7 +156,7 @@ func (o GetDatabaseToolsEndpointServicesResultOutput) Name() pulumi.StringPtrOut
 	return o.ApplyT(func(v GetDatabaseToolsEndpointServicesResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// The current state of the DatabaseToolsEndpointService.
+// The current state of the Database Tools Endpoint Service.
 func (o GetDatabaseToolsEndpointServicesResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDatabaseToolsEndpointServicesResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }

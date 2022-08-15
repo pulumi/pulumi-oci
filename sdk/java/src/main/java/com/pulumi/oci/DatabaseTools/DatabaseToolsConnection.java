@@ -22,7 +22,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Database Tools Connection resource in Oracle Cloud Infrastructure Database Tools service.
  * 
- * Creates a new DatabaseToolsConnection.
+ * Creates a new Database Tools connection.
  * 
  * ## Example Usage
  * 
@@ -38,42 +38,42 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:DatabaseTools/databaseToolsConnection:DatabaseToolsConnection")
 public class DatabaseToolsConnection extends com.pulumi.resources.CustomResource {
     /**
-     * (Updatable) Advanced connection properties key-value pair (e.g., oracle.net.ssl_server_dn_match).
+     * (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
      * 
      */
     @Export(name="advancedProperties", type=Map.class, parameters={String.class, Object.class})
     private Output<Map<String,Object>> advancedProperties;
 
     /**
-     * @return (Updatable) Advanced connection properties key-value pair (e.g., oracle.net.ssl_server_dn_match).
+     * @return (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
      * 
      */
     public Output<Map<String,Object>> advancedProperties() {
         return this.advancedProperties;
     }
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
      * 
      */
     @Export(name="compartmentId", type=String.class, parameters={})
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
      * 
      */
     public Output<String> compartmentId() {
         return this.compartmentId;
     }
     /**
-     * (Updatable) Connect descriptor or Easy Connect Naming method to connect to the database.
+     * (Updatable) The connect descriptor or Easy Connect Naming method use to connect to the database.
      * 
      */
     @Export(name="connectionString", type=String.class, parameters={})
     private Output<String> connectionString;
 
     /**
-     * @return (Updatable) Connect descriptor or Easy Connect Naming method to connect to the database.
+     * @return (Updatable) The connect descriptor or Easy Connect Naming method use to connect to the database.
      * 
      */
     public Output<String> connectionString() {
@@ -136,28 +136,28 @@ public class DatabaseToolsConnection extends com.pulumi.resources.CustomResource
         return this.keyStores;
     }
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
      * 
      */
     @Export(name="lifecycleDetails", type=String.class, parameters={})
     private Output<String> lifecycleDetails;
 
     /**
-     * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * @return A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
      * 
      */
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
     }
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsPrivateEndpoint used to access the database in the Customer VCN.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
      * 
      */
     @Export(name="privateEndpointId", type=String.class, parameters={})
     private Output<String> privateEndpointId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsPrivateEndpoint used to access the database in the Customer VCN.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
      * 
      */
     public Output<String> privateEndpointId() {
@@ -178,14 +178,14 @@ public class DatabaseToolsConnection extends com.pulumi.resources.CustomResource
         return this.relatedResource;
     }
     /**
-     * The current state of the DatabaseToolsConnection.
+     * The current state of the Database Tools connection.
      * 
      */
     @Export(name="state", type=String.class, parameters={})
     private Output<String> state;
 
     /**
-     * @return The current state of the DatabaseToolsConnection.
+     * @return The current state of the Database Tools connection.
      * 
      */
     public Output<String> state() {
@@ -206,28 +206,28 @@ public class DatabaseToolsConnection extends com.pulumi.resources.CustomResource
         return this.systemTags;
     }
     /**
-     * The time the DatabaseToolsConnection was created. An RFC3339 formatted datetime string
+     * The time the Database Tools connection was created. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeCreated", type=String.class, parameters={})
     private Output<String> timeCreated;
 
     /**
-     * @return The time the DatabaseToolsConnection was created. An RFC3339 formatted datetime string
+     * @return The time the Database Tools connection was created. An RFC3339 formatted datetime string.
      * 
      */
     public Output<String> timeCreated() {
         return this.timeCreated;
     }
     /**
-     * The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string
+     * The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeUpdated", type=String.class, parameters={})
     private Output<String> timeUpdated;
 
     /**
-     * @return The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string
+     * @return The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
      * 
      */
     public Output<String> timeUpdated() {
@@ -248,14 +248,14 @@ public class DatabaseToolsConnection extends com.pulumi.resources.CustomResource
         return this.type;
     }
     /**
-     * (Updatable) Database user name.
+     * (Updatable) The database user name.
      * 
      */
     @Export(name="userName", type=String.class, parameters={})
     private Output<String> userName;
 
     /**
-     * @return (Updatable) Database user name.
+     * @return (Updatable) The database user name.
      * 
      */
     public Output<String> userName() {

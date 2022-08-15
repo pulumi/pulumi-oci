@@ -18,6 +18,10 @@ public final class GetQueriesResult {
      * 
      */
     private final String compartmentId;
+    /**
+     * @return The filter object for query usage.
+     * 
+     */
     private final @Nullable List<GetQueriesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
@@ -49,6 +53,10 @@ public final class GetQueriesResult {
     public String compartmentId() {
         return this.compartmentId;
     }
+    /**
+     * @return The filter object for query usage.
+     * 
+     */
     public List<GetQueriesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }

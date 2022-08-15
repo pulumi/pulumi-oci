@@ -427,6 +427,20 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
         return this.greenBackendIps;
     }
     /**
+     * (Updatable) Helm chart artifact OCID.
+     * 
+     */
+    @Export(name="helmChartDeployArtifactId", type=String.class, parameters={})
+    private Output<String> helmChartDeployArtifactId;
+
+    /**
+     * @return (Updatable) Helm chart artifact OCID.
+     * 
+     */
+    public Output<String> helmChartDeployArtifactId() {
+        return this.helmChartDeployArtifactId;
+    }
+    /**
      * (Updatable) A boolean flag specifies whether this stage executes asynchronously.
      * 
      */
@@ -581,14 +595,14 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
         return this.okeClusterDeployEnvironmentId;
     }
     /**
-     * Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+     * Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
      * 
      */
     @Export(name="productionLoadBalancerConfig", type=DeployStageProductionLoadBalancerConfig.class, parameters={})
     private Output<DeployStageProductionLoadBalancerConfig> productionLoadBalancerConfig;
 
     /**
-     * @return Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+     * @return Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
      * 
      */
     public Output<DeployStageProductionLoadBalancerConfig> productionLoadBalancerConfig() {
@@ -607,6 +621,20 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      */
     public Output<String> projectId() {
         return this.projectId;
+    }
+    /**
+     * (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
+     * 
+     */
+    @Export(name="releaseName", type=String.class, parameters={})
+    private Output<String> releaseName;
+
+    /**
+     * @return (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
+     * 
+     */
+    public Output<String> releaseName() {
+        return this.releaseName;
     }
     /**
      * (Updatable) Specifies the rollback policy. This is initiated on the failure of certain stage types.
@@ -707,6 +735,20 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
         return this.timeUpdated;
     }
     /**
+     * (Updatable) Time to wait for execution of a helm stage. Defaults to 300 seconds.
+     * 
+     */
+    @Export(name="timeoutInSeconds", type=Integer.class, parameters={})
+    private Output<Integer> timeoutInSeconds;
+
+    /**
+     * @return (Updatable) Time to wait for execution of a helm stage. Defaults to 300 seconds.
+     * 
+     */
+    public Output<Integer> timeoutInSeconds() {
+        return this.timeoutInSeconds;
+    }
+    /**
      * (Updatable) Specifies the target or destination backend set.
      * 
      */
@@ -719,6 +761,20 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      */
     public Output<String> trafficShiftTarget() {
         return this.trafficShiftTarget;
+    }
+    /**
+     * (Updatable) List of values.yaml file artifact OCIDs.
+     * 
+     */
+    @Export(name="valuesArtifactIds", type=List.class, parameters={String.class})
+    private Output<List<String>> valuesArtifactIds;
+
+    /**
+     * @return (Updatable) List of values.yaml file artifact OCIDs.
+     * 
+     */
+    public Output<List<String>> valuesArtifactIds() {
+        return this.valuesArtifactIds;
     }
     /**
      * (Updatable) Specifies wait criteria for the Wait stage.

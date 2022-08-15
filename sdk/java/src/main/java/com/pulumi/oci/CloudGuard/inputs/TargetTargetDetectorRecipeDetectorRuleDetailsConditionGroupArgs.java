@@ -29,14 +29,14 @@ public final class TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupAr
     }
 
     /**
-     * (Updatable)
+     * (Updatable) Base condition object
      * 
      */
     @Import(name="condition", required=true)
     private Output<String> condition;
 
     /**
-     * @return (Updatable)
+     * @return (Updatable) Base condition object
      * 
      */
     public Output<String> condition() {
@@ -90,7 +90,7 @@ public final class TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupAr
         }
 
         /**
-         * @param condition (Updatable)
+         * @param condition (Updatable) Base condition object
          * 
          * @return builder
          * 
@@ -101,7 +101,7 @@ public final class TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupAr
         }
 
         /**
-         * @param condition (Updatable)
+         * @param condition (Updatable) Base condition object
          * 
          * @return builder
          * 

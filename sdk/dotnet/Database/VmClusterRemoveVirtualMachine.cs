@@ -64,6 +64,12 @@ namespace Pulumi.Oci.Database
         public Output<int> CpusEnabled { get; private set; } = null!;
 
         /// <summary>
+        /// Indicates user preferences for the various diagnostic collection options for the VM cluster.
+        /// </summary>
+        [Output("dataCollectionOptions")]
+        public Output<ImmutableArray<Outputs.VmClusterRemoveVirtualMachineDataCollectionOption>> DataCollectionOptions { get; private set; } = null!;
+
+        /// <summary>
         /// Size, in terabytes, of the DATA disk group.
         /// </summary>
         [Output("dataStorageSizeInTbs")]
@@ -277,6 +283,18 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("cpusEnabled")]
         public Input<int>? CpusEnabled { get; set; }
+
+        [Input("dataCollectionOptions")]
+        private InputList<Inputs.VmClusterRemoveVirtualMachineDataCollectionOptionGetArgs>? _dataCollectionOptions;
+
+        /// <summary>
+        /// Indicates user preferences for the various diagnostic collection options for the VM cluster.
+        /// </summary>
+        public InputList<Inputs.VmClusterRemoveVirtualMachineDataCollectionOptionGetArgs> DataCollectionOptions
+        {
+            get => _dataCollectionOptions ?? (_dataCollectionOptions = new InputList<Inputs.VmClusterRemoveVirtualMachineDataCollectionOptionGetArgs>());
+            set => _dataCollectionOptions = value;
+        }
 
         /// <summary>
         /// Size, in terabytes, of the DATA disk group.

@@ -6,6 +6,7 @@ package com.pulumi.oci.Database.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Database.inputs.ExternalContainerDatabaseDatabaseManagementConfigArgs;
+import com.pulumi.oci.Database.inputs.ExternalContainerDatabaseStackMonitoringConfigArgs;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -230,6 +231,21 @@ public final class ExternalContainerDatabaseState extends com.pulumi.resources.R
     }
 
     /**
+     * The configuration of Stack Monitoring for the external database.
+     * 
+     */
+    @Import(name="stackMonitoringConfigs")
+    private @Nullable Output<List<ExternalContainerDatabaseStackMonitoringConfigArgs>> stackMonitoringConfigs;
+
+    /**
+     * @return The configuration of Stack Monitoring for the external database.
+     * 
+     */
+    public Optional<Output<List<ExternalContainerDatabaseStackMonitoringConfigArgs>>> stackMonitoringConfigs() {
+        return Optional.ofNullable(this.stackMonitoringConfigs);
+    }
+
+    /**
      * The current state of the Oracle Cloud Infrastructure external database resource.
      * 
      */
@@ -291,6 +307,7 @@ public final class ExternalContainerDatabaseState extends com.pulumi.resources.R
         this.freeformTags = $.freeformTags;
         this.lifecycleDetails = $.lifecycleDetails;
         this.ncharacterSet = $.ncharacterSet;
+        this.stackMonitoringConfigs = $.stackMonitoringConfigs;
         this.state = $.state;
         this.timeCreated = $.timeCreated;
         this.timeZone = $.timeZone;
@@ -616,6 +633,37 @@ public final class ExternalContainerDatabaseState extends com.pulumi.resources.R
          */
         public Builder ncharacterSet(String ncharacterSet) {
             return ncharacterSet(Output.of(ncharacterSet));
+        }
+
+        /**
+         * @param stackMonitoringConfigs The configuration of Stack Monitoring for the external database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder stackMonitoringConfigs(@Nullable Output<List<ExternalContainerDatabaseStackMonitoringConfigArgs>> stackMonitoringConfigs) {
+            $.stackMonitoringConfigs = stackMonitoringConfigs;
+            return this;
+        }
+
+        /**
+         * @param stackMonitoringConfigs The configuration of Stack Monitoring for the external database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder stackMonitoringConfigs(List<ExternalContainerDatabaseStackMonitoringConfigArgs> stackMonitoringConfigs) {
+            return stackMonitoringConfigs(Output.of(stackMonitoringConfigs));
+        }
+
+        /**
+         * @param stackMonitoringConfigs The configuration of Stack Monitoring for the external database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder stackMonitoringConfigs(ExternalContainerDatabaseStackMonitoringConfigArgs... stackMonitoringConfigs) {
+            return stackMonitoringConfigs(List.of(stackMonitoringConfigs));
         }
 
         /**

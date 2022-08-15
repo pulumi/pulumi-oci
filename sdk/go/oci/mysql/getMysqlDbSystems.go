@@ -80,7 +80,7 @@ type GetMysqlDbSystemsResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The OCID of the Configuration to be used for Instances in this DB System.
 	ConfigurationId *string `pulumi:"configurationId"`
-	// The OCID of the source DB System.
+	// The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
 	DbSystemId *string `pulumi:"dbSystemId"`
 	// The list of db_systems.
 	DbSystems []GetMysqlDbSystemsDbSystem `pulumi:"dbSystems"`
@@ -161,7 +161,7 @@ func (o GetMysqlDbSystemsResultOutput) ConfigurationId() pulumi.StringPtrOutput 
 	return o.ApplyT(func(v GetMysqlDbSystemsResult) *string { return v.ConfigurationId }).(pulumi.StringPtrOutput)
 }
 
-// The OCID of the source DB System.
+// The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
 func (o GetMysqlDbSystemsResultOutput) DbSystemId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsResult) *string { return v.DbSystemId }).(pulumi.StringPtrOutput)
 }

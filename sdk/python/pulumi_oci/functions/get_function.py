@@ -21,7 +21,7 @@ class GetFunctionResult:
     """
     A collection of values returned by getFunction.
     """
-    def __init__(__self__, application_id=None, compartment_id=None, config=None, defined_tags=None, display_name=None, freeform_tags=None, function_id=None, id=None, image=None, image_digest=None, invoke_endpoint=None, memory_in_mbs=None, state=None, time_created=None, time_updated=None, timeout_in_seconds=None, trace_configs=None):
+    def __init__(__self__, application_id=None, compartment_id=None, config=None, defined_tags=None, display_name=None, freeform_tags=None, function_id=None, id=None, image=None, image_digest=None, invoke_endpoint=None, memory_in_mbs=None, provisioned_concurrency_configs=None, state=None, time_created=None, time_updated=None, timeout_in_seconds=None, trace_configs=None):
         if application_id and not isinstance(application_id, str):
             raise TypeError("Expected argument 'application_id' to be a str")
         pulumi.set(__self__, "application_id", application_id)
@@ -58,6 +58,9 @@ class GetFunctionResult:
         if memory_in_mbs and not isinstance(memory_in_mbs, str):
             raise TypeError("Expected argument 'memory_in_mbs' to be a str")
         pulumi.set(__self__, "memory_in_mbs", memory_in_mbs)
+        if provisioned_concurrency_configs and not isinstance(provisioned_concurrency_configs, list):
+            raise TypeError("Expected argument 'provisioned_concurrency_configs' to be a list")
+        pulumi.set(__self__, "provisioned_concurrency_configs", provisioned_concurrency_configs)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -168,6 +171,14 @@ class GetFunctionResult:
         return pulumi.get(self, "memory_in_mbs")
 
     @property
+    @pulumi.getter(name="provisionedConcurrencyConfigs")
+    def provisioned_concurrency_configs(self) -> Sequence['outputs.GetFunctionProvisionedConcurrencyConfigResult']:
+        """
+        Define the strategy for provisioned concurrency for the function.
+        """
+        return pulumi.get(self, "provisioned_concurrency_configs")
+
+    @property
     @pulumi.getter
     def state(self) -> str:
         """
@@ -226,6 +237,7 @@ class AwaitableGetFunctionResult(GetFunctionResult):
             image_digest=self.image_digest,
             invoke_endpoint=self.invoke_endpoint,
             memory_in_mbs=self.memory_in_mbs,
+            provisioned_concurrency_configs=self.provisioned_concurrency_configs,
             state=self.state,
             time_created=self.time_created,
             time_updated=self.time_updated,
@@ -273,6 +285,7 @@ def get_function(function_id: Optional[str] = None,
         image_digest=__ret__.image_digest,
         invoke_endpoint=__ret__.invoke_endpoint,
         memory_in_mbs=__ret__.memory_in_mbs,
+        provisioned_concurrency_configs=__ret__.provisioned_concurrency_configs,
         state=__ret__.state,
         time_created=__ret__.time_created,
         time_updated=__ret__.time_updated,

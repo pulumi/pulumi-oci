@@ -420,15 +420,14 @@ class GetAnalyticsInstancesAnalyticsInstanceResult(dict):
                  freeform_tags: Mapping[str, Any],
                  id: str,
                  idcs_access_token: str,
+                 kms_key_id: str,
                  license_type: str,
                  name: str,
                  network_endpoint_details: Sequence['outputs.GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailResult'],
-                 private_access_channels: Mapping[str, Any],
                  service_url: str,
                  state: str,
                  time_created: str,
-                 time_updated: str,
-                 vanity_url_details: Mapping[str, Any]):
+                 time_updated: str):
         """
         :param Sequence['GetAnalyticsInstancesAnalyticsInstanceCapacityArgs'] capacities: Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
         :param str compartment_id: The OCID of the compartment.
@@ -438,15 +437,14 @@ class GetAnalyticsInstancesAnalyticsInstanceResult(dict):
         :param str feature_set: A filter to only return resources matching the feature set. Values are case-insensitive.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The Virtual Cloud Network OCID.
+        :param str kms_key_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
         :param str license_type: The license used for the service.
         :param str name: A filter to return only resources that match the given name exactly.
         :param Sequence['GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailArgs'] network_endpoint_details: Base representation of a network endpoint.
-        :param Mapping[str, Any] private_access_channels: Map of PrivateAccessChannel unique identifier key as KEY and PrivateAccessChannel Object as VALUE.
         :param str service_url: URL of the Analytics service.
         :param str state: A filter to only return resources matching the lifecycle state. The state value is case-insensitive.
         :param str time_created: The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         :param str time_updated: The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
-        :param Mapping[str, Any] vanity_url_details: Map of VanityUrl unique identifier key as KEY and VanityUrl Object as VALUE.
         """
         pulumi.set(__self__, "capacities", capacities)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -457,15 +455,14 @@ class GetAnalyticsInstancesAnalyticsInstanceResult(dict):
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "idcs_access_token", idcs_access_token)
+        pulumi.set(__self__, "kms_key_id", kms_key_id)
         pulumi.set(__self__, "license_type", license_type)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "network_endpoint_details", network_endpoint_details)
-        pulumi.set(__self__, "private_access_channels", private_access_channels)
         pulumi.set(__self__, "service_url", service_url)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "vanity_url_details", vanity_url_details)
 
     @property
     @pulumi.getter
@@ -537,6 +534,14 @@ class GetAnalyticsInstancesAnalyticsInstanceResult(dict):
         return pulumi.get(self, "idcs_access_token")
 
     @property
+    @pulumi.getter(name="kmsKeyId")
+    def kms_key_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+        """
+        return pulumi.get(self, "kms_key_id")
+
+    @property
     @pulumi.getter(name="licenseType")
     def license_type(self) -> str:
         """
@@ -559,14 +564,6 @@ class GetAnalyticsInstancesAnalyticsInstanceResult(dict):
         Base representation of a network endpoint.
         """
         return pulumi.get(self, "network_endpoint_details")
-
-    @property
-    @pulumi.getter(name="privateAccessChannels")
-    def private_access_channels(self) -> Mapping[str, Any]:
-        """
-        Map of PrivateAccessChannel unique identifier key as KEY and PrivateAccessChannel Object as VALUE.
-        """
-        return pulumi.get(self, "private_access_channels")
 
     @property
     @pulumi.getter(name="serviceUrl")
@@ -599,14 +596,6 @@ class GetAnalyticsInstancesAnalyticsInstanceResult(dict):
         The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
         """
         return pulumi.get(self, "time_updated")
-
-    @property
-    @pulumi.getter(name="vanityUrlDetails")
-    def vanity_url_details(self) -> Mapping[str, Any]:
-        """
-        Map of VanityUrl unique identifier key as KEY and VanityUrl Object as VALUE.
-        """
-        return pulumi.get(self, "vanity_url_details")
 
 
 @pulumi.output_type

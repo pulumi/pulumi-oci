@@ -50,6 +50,10 @@ export interface GetExsiHostResult {
      */
     readonly billingContractEndDate: string;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+     */
+    readonly capacityReservationId: string;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
      */
     readonly compartmentId: string;
@@ -86,6 +90,14 @@ export interface GetExsiHostResult {
      * The date and time when the new esxi host should start billing cycle. [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2021-07-25T21:10:29.600Z`
      */
     readonly gracePeriodEndDate: string;
+    /**
+     * The OCPU count of the ESXi host.
+     */
+    readonly hostOcpuCount: number;
+    /**
+     * The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+     */
+    readonly hostShapeName: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host.
      */

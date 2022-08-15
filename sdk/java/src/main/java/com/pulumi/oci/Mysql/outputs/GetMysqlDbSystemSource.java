@@ -15,6 +15,16 @@ public final class GetMysqlDbSystemSource {
      */
     private final String backupId;
     /**
+     * @return The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
+    private final String dbSystemId;
+    /**
+     * @return The date and time, as per RFC 3339, of the change up to which the new DB System shall be restored to, using a backup and logs from the original DB System. In case no point in time is specified, then this new DB System shall be restored up to the latest change recorded for the original DB System.
+     * 
+     */
+    private final String recoveryPoint;
+    /**
      * @return The specific source identifier.
      * 
      */
@@ -23,8 +33,12 @@ public final class GetMysqlDbSystemSource {
     @CustomType.Constructor
     private GetMysqlDbSystemSource(
         @CustomType.Parameter("backupId") String backupId,
+        @CustomType.Parameter("dbSystemId") String dbSystemId,
+        @CustomType.Parameter("recoveryPoint") String recoveryPoint,
         @CustomType.Parameter("sourceType") String sourceType) {
         this.backupId = backupId;
+        this.dbSystemId = dbSystemId;
+        this.recoveryPoint = recoveryPoint;
         this.sourceType = sourceType;
     }
 
@@ -34,6 +48,20 @@ public final class GetMysqlDbSystemSource {
      */
     public String backupId() {
         return this.backupId;
+    }
+    /**
+     * @return The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
+    public String dbSystemId() {
+        return this.dbSystemId;
+    }
+    /**
+     * @return The date and time, as per RFC 3339, of the change up to which the new DB System shall be restored to, using a backup and logs from the original DB System. In case no point in time is specified, then this new DB System shall be restored up to the latest change recorded for the original DB System.
+     * 
+     */
+    public String recoveryPoint() {
+        return this.recoveryPoint;
     }
     /**
      * @return The specific source identifier.
@@ -53,6 +81,8 @@ public final class GetMysqlDbSystemSource {
 
     public static final class Builder {
         private String backupId;
+        private String dbSystemId;
+        private String recoveryPoint;
         private String sourceType;
 
         public Builder() {
@@ -62,6 +92,8 @@ public final class GetMysqlDbSystemSource {
         public Builder(GetMysqlDbSystemSource defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.backupId = defaults.backupId;
+    	      this.dbSystemId = defaults.dbSystemId;
+    	      this.recoveryPoint = defaults.recoveryPoint;
     	      this.sourceType = defaults.sourceType;
         }
 
@@ -69,11 +101,19 @@ public final class GetMysqlDbSystemSource {
             this.backupId = Objects.requireNonNull(backupId);
             return this;
         }
+        public Builder dbSystemId(String dbSystemId) {
+            this.dbSystemId = Objects.requireNonNull(dbSystemId);
+            return this;
+        }
+        public Builder recoveryPoint(String recoveryPoint) {
+            this.recoveryPoint = Objects.requireNonNull(recoveryPoint);
+            return this;
+        }
         public Builder sourceType(String sourceType) {
             this.sourceType = Objects.requireNonNull(sourceType);
             return this;
         }        public GetMysqlDbSystemSource build() {
-            return new GetMysqlDbSystemSource(backupId, sourceType);
+            return new GetMysqlDbSystemSource(backupId, dbSystemId, recoveryPoint, sourceType);
         }
     }
 }

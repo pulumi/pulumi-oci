@@ -23,6 +23,7 @@ __all__ = [
     'DeploymentSpecificationRequestPoliciesCors',
     'DeploymentSpecificationRequestPoliciesMutualTls',
     'DeploymentSpecificationRequestPoliciesRateLimiting',
+    'DeploymentSpecificationRequestPoliciesUsagePlans',
     'DeploymentSpecificationRoute',
     'DeploymentSpecificationRouteBackend',
     'DeploymentSpecificationRouteBackendHeader',
@@ -66,6 +67,11 @@ __all__ = [
     'GatewayIpAddress',
     'GatewayResponseCacheDetails',
     'GatewayResponseCacheDetailsServer',
+    'SubscriberClient',
+    'UsagePlanEntitlement',
+    'UsagePlanEntitlementQuota',
+    'UsagePlanEntitlementRateLimit',
+    'UsagePlanEntitlementTarget',
     'GetApiDeploymentSpecificationLoggingPolicyResult',
     'GetApiDeploymentSpecificationLoggingPolicyAccessLogResult',
     'GetApiDeploymentSpecificationLoggingPolicyExecutionLogResult',
@@ -77,6 +83,7 @@ __all__ = [
     'GetApiDeploymentSpecificationRequestPolicyCorResult',
     'GetApiDeploymentSpecificationRequestPolicyMutualTlResult',
     'GetApiDeploymentSpecificationRequestPolicyRateLimitingResult',
+    'GetApiDeploymentSpecificationRequestPolicyUsagePlanResult',
     'GetApiDeploymentSpecificationRouteResult',
     'GetApiDeploymentSpecificationRouteBackendResult',
     'GetApiDeploymentSpecificationRouteBackendHeaderResult',
@@ -139,6 +146,7 @@ __all__ = [
     'GetDeploymentSpecificationRequestPolicyCorResult',
     'GetDeploymentSpecificationRequestPolicyMutualTlResult',
     'GetDeploymentSpecificationRequestPolicyRateLimitingResult',
+    'GetDeploymentSpecificationRequestPolicyUsagePlanResult',
     'GetDeploymentSpecificationRouteResult',
     'GetDeploymentSpecificationRouteBackendResult',
     'GetDeploymentSpecificationRouteBackendHeaderResult',
@@ -191,6 +199,7 @@ __all__ = [
     'GetDeploymentsDeploymentCollectionSpecificationRequestPolicyCorResult',
     'GetDeploymentsDeploymentCollectionSpecificationRequestPolicyMutualTlResult',
     'GetDeploymentsDeploymentCollectionSpecificationRequestPolicyRateLimitingResult',
+    'GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanResult',
     'GetDeploymentsDeploymentCollectionSpecificationRouteResult',
     'GetDeploymentsDeploymentCollectionSpecificationRouteBackendResult',
     'GetDeploymentsDeploymentCollectionSpecificationRouteBackendHeaderResult',
@@ -241,6 +250,22 @@ __all__ = [
     'GetGatewaysGatewayCollectionIpAddressResult',
     'GetGatewaysGatewayCollectionResponseCacheDetailResult',
     'GetGatewaysGatewayCollectionResponseCacheDetailServerResult',
+    'GetSubscriberClientResult',
+    'GetSubscribersFilterResult',
+    'GetSubscribersSubscriberCollectionResult',
+    'GetSubscribersSubscriberCollectionItemResult',
+    'GetSubscribersSubscriberCollectionItemClientResult',
+    'GetUsagePlanEntitlementResult',
+    'GetUsagePlanEntitlementQuotaResult',
+    'GetUsagePlanEntitlementRateLimitResult',
+    'GetUsagePlanEntitlementTargetResult',
+    'GetUsagePlansFilterResult',
+    'GetUsagePlansUsagePlanCollectionResult',
+    'GetUsagePlansUsagePlanCollectionItemResult',
+    'GetUsagePlansUsagePlanCollectionItemEntitlementResult',
+    'GetUsagePlansUsagePlanCollectionItemEntitlementQuotaResult',
+    'GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitResult',
+    'GetUsagePlansUsagePlanCollectionItemEntitlementTargetResult',
 ]
 
 @pulumi.output_type
@@ -480,6 +505,8 @@ class DeploymentSpecificationRequestPolicies(dict):
             suggest = "mutual_tls"
         elif key == "rateLimiting":
             suggest = "rate_limiting"
+        elif key == "usagePlans":
+            suggest = "usage_plans"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in DeploymentSpecificationRequestPolicies. Access the value via the '{suggest}' property getter instead.")
@@ -496,12 +523,14 @@ class DeploymentSpecificationRequestPolicies(dict):
                  authentication: Optional['outputs.DeploymentSpecificationRequestPoliciesAuthentication'] = None,
                  cors: Optional['outputs.DeploymentSpecificationRequestPoliciesCors'] = None,
                  mutual_tls: Optional['outputs.DeploymentSpecificationRequestPoliciesMutualTls'] = None,
-                 rate_limiting: Optional['outputs.DeploymentSpecificationRequestPoliciesRateLimiting'] = None):
+                 rate_limiting: Optional['outputs.DeploymentSpecificationRequestPoliciesRateLimiting'] = None,
+                 usage_plans: Optional['outputs.DeploymentSpecificationRequestPoliciesUsagePlans'] = None):
         """
         :param 'DeploymentSpecificationRequestPoliciesAuthenticationArgs' authentication: (Updatable) Information on how to authenticate incoming requests.
         :param 'DeploymentSpecificationRequestPoliciesCorsArgs' cors: (Updatable) Enable CORS (Cross-Origin-Resource-Sharing) request handling.
         :param 'DeploymentSpecificationRequestPoliciesMutualTlsArgs' mutual_tls: (Updatable) Properties used to configure client mTLS verification when API Consumer makes connection to the gateway.
         :param 'DeploymentSpecificationRequestPoliciesRateLimitingArgs' rate_limiting: (Updatable) Limit the number of requests that should be handled for the specified window using a specfic key.
+        :param 'DeploymentSpecificationRequestPoliciesUsagePlansArgs' usage_plans: (Updatable) Usage plan policies for this deployment
         """
         if authentication is not None:
             pulumi.set(__self__, "authentication", authentication)
@@ -511,6 +540,8 @@ class DeploymentSpecificationRequestPolicies(dict):
             pulumi.set(__self__, "mutual_tls", mutual_tls)
         if rate_limiting is not None:
             pulumi.set(__self__, "rate_limiting", rate_limiting)
+        if usage_plans is not None:
+            pulumi.set(__self__, "usage_plans", usage_plans)
 
     @property
     @pulumi.getter
@@ -543,6 +574,14 @@ class DeploymentSpecificationRequestPolicies(dict):
         (Updatable) Limit the number of requests that should be handled for the specified window using a specfic key.
         """
         return pulumi.get(self, "rate_limiting")
+
+    @property
+    @pulumi.getter(name="usagePlans")
+    def usage_plans(self) -> Optional['outputs.DeploymentSpecificationRequestPoliciesUsagePlans']:
+        """
+        (Updatable) Usage plan policies for this deployment
+        """
+        return pulumi.get(self, "usage_plans")
 
 
 @pulumi.output_type
@@ -1191,6 +1230,49 @@ class DeploymentSpecificationRequestPoliciesRateLimiting(dict):
         (Updatable) The key used to group requests together.
         """
         return pulumi.get(self, "rate_key")
+
+
+@pulumi.output_type
+class DeploymentSpecificationRequestPoliciesUsagePlans(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "tokenLocations":
+            suggest = "token_locations"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DeploymentSpecificationRequestPoliciesUsagePlans. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DeploymentSpecificationRequestPoliciesUsagePlans.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DeploymentSpecificationRequestPoliciesUsagePlans.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 token_locations: Sequence[str]):
+        """
+        :param Sequence[str] token_locations: (Updatable) A list of context variables specifying where API tokens may be located in a request. Example locations:
+               * "request.headers[token]"
+               * "request.query[token]"
+               * "request.auth[Token]"
+               * "request.path[TOKEN]"
+        """
+        pulumi.set(__self__, "token_locations", token_locations)
+
+    @property
+    @pulumi.getter(name="tokenLocations")
+    def token_locations(self) -> Sequence[str]:
+        """
+        (Updatable) A list of context variables specifying where API tokens may be located in a request. Example locations:
+        * "request.headers[token]"
+        * "request.query[token]"
+        * "request.auth[Token]"
+        * "request.path[TOKEN]"
+        """
+        return pulumi.get(self, "token_locations")
 
 
 @pulumi.output_type
@@ -3352,6 +3434,252 @@ class GatewayResponseCacheDetailsServer(dict):
 
 
 @pulumi.output_type
+class SubscriberClient(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 token: str):
+        """
+        :param str name: (Updatable) The name of the client. Must be unique within a subscriber.
+        :param str token: (Updatable) The token for the client. Must be unique within a tenancy.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "token", token)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        (Updatable) The name of the client. Must be unique within a subscriber.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def token(self) -> str:
+        """
+        (Updatable) The token for the client. Must be unique within a tenancy.
+        """
+        return pulumi.get(self, "token")
+
+
+@pulumi.output_type
+class UsagePlanEntitlement(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "rateLimit":
+            suggest = "rate_limit"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in UsagePlanEntitlement. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        UsagePlanEntitlement.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        UsagePlanEntitlement.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 name: str,
+                 description: Optional[str] = None,
+                 quota: Optional['outputs.UsagePlanEntitlementQuota'] = None,
+                 rate_limit: Optional['outputs.UsagePlanEntitlementRateLimit'] = None,
+                 targets: Optional[Sequence['outputs.UsagePlanEntitlementTarget']] = None):
+        """
+        :param str name: (Updatable) An entitlement name, unique within a usage plan.
+        :param str description: (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
+        :param 'UsagePlanEntitlementQuotaArgs' quota: (Updatable) Quota policy for a usage plan.
+        :param 'UsagePlanEntitlementRateLimitArgs' rate_limit: (Updatable) Rate-limiting policy for a usage plan.
+        :param Sequence['UsagePlanEntitlementTargetArgs'] targets: (Updatable) A collection of targeted deployments that the entitlement will be applied to.
+        """
+        pulumi.set(__self__, "name", name)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if quota is not None:
+            pulumi.set(__self__, "quota", quota)
+        if rate_limit is not None:
+            pulumi.set(__self__, "rate_limit", rate_limit)
+        if targets is not None:
+            pulumi.set(__self__, "targets", targets)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        (Updatable) An entitlement name, unique within a usage plan.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[str]:
+        """
+        (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def quota(self) -> Optional['outputs.UsagePlanEntitlementQuota']:
+        """
+        (Updatable) Quota policy for a usage plan.
+        """
+        return pulumi.get(self, "quota")
+
+    @property
+    @pulumi.getter(name="rateLimit")
+    def rate_limit(self) -> Optional['outputs.UsagePlanEntitlementRateLimit']:
+        """
+        (Updatable) Rate-limiting policy for a usage plan.
+        """
+        return pulumi.get(self, "rate_limit")
+
+    @property
+    @pulumi.getter
+    def targets(self) -> Optional[Sequence['outputs.UsagePlanEntitlementTarget']]:
+        """
+        (Updatable) A collection of targeted deployments that the entitlement will be applied to.
+        """
+        return pulumi.get(self, "targets")
+
+
+@pulumi.output_type
+class UsagePlanEntitlementQuota(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "operationOnBreach":
+            suggest = "operation_on_breach"
+        elif key == "resetPolicy":
+            suggest = "reset_policy"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in UsagePlanEntitlementQuota. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        UsagePlanEntitlementQuota.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        UsagePlanEntitlementQuota.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 operation_on_breach: str,
+                 reset_policy: str,
+                 unit: str,
+                 value: int):
+        """
+        :param str operation_on_breach: (Updatable) What the usage plan will do when a quota is breached: `REJECT` will allow no further requests `ALLOW` will continue to allow further requests
+        :param str reset_policy: (Updatable) The policy that controls when quotas will reset. Example: `CALENDAR`
+        :param str unit: (Updatable) The unit of time over which rate limits are calculated. Example: `SECOND`
+        :param int value: (Updatable) The number of requests that can be made per time period.
+        """
+        pulumi.set(__self__, "operation_on_breach", operation_on_breach)
+        pulumi.set(__self__, "reset_policy", reset_policy)
+        pulumi.set(__self__, "unit", unit)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter(name="operationOnBreach")
+    def operation_on_breach(self) -> str:
+        """
+        (Updatable) What the usage plan will do when a quota is breached: `REJECT` will allow no further requests `ALLOW` will continue to allow further requests
+        """
+        return pulumi.get(self, "operation_on_breach")
+
+    @property
+    @pulumi.getter(name="resetPolicy")
+    def reset_policy(self) -> str:
+        """
+        (Updatable) The policy that controls when quotas will reset. Example: `CALENDAR`
+        """
+        return pulumi.get(self, "reset_policy")
+
+    @property
+    @pulumi.getter
+    def unit(self) -> str:
+        """
+        (Updatable) The unit of time over which rate limits are calculated. Example: `SECOND`
+        """
+        return pulumi.get(self, "unit")
+
+    @property
+    @pulumi.getter
+    def value(self) -> int:
+        """
+        (Updatable) The number of requests that can be made per time period.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class UsagePlanEntitlementRateLimit(dict):
+    def __init__(__self__, *,
+                 unit: str,
+                 value: int):
+        """
+        :param str unit: (Updatable) The unit of time over which rate limits are calculated. Example: `SECOND`
+        :param int value: (Updatable) The number of requests that can be made per time period.
+        """
+        pulumi.set(__self__, "unit", unit)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def unit(self) -> str:
+        """
+        (Updatable) The unit of time over which rate limits are calculated. Example: `SECOND`
+        """
+        return pulumi.get(self, "unit")
+
+    @property
+    @pulumi.getter
+    def value(self) -> int:
+        """
+        (Updatable) The number of requests that can be made per time period.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class UsagePlanEntitlementTarget(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "deploymentId":
+            suggest = "deployment_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in UsagePlanEntitlementTarget. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        UsagePlanEntitlementTarget.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        UsagePlanEntitlementTarget.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 deployment_id: str):
+        """
+        :param str deployment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a deployment resource.
+        """
+        pulumi.set(__self__, "deployment_id", deployment_id)
+
+    @property
+    @pulumi.getter(name="deploymentId")
+    def deployment_id(self) -> str:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a deployment resource.
+        """
+        return pulumi.get(self, "deployment_id")
+
+
+@pulumi.output_type
 class GetApiDeploymentSpecificationLoggingPolicyResult(dict):
     def __init__(__self__, *,
                  access_logs: Sequence['outputs.GetApiDeploymentSpecificationLoggingPolicyAccessLogResult'],
@@ -3433,17 +3761,20 @@ class GetApiDeploymentSpecificationRequestPolicyResult(dict):
                  authentications: Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyAuthenticationResult'],
                  cors: Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyCorResult'],
                  mutual_tls: Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyMutualTlResult'],
-                 rate_limitings: Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyRateLimitingResult']):
+                 rate_limitings: Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyRateLimitingResult'],
+                 usage_plans: Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyUsagePlanResult']):
         """
         :param Sequence['GetApiDeploymentSpecificationRequestPolicyAuthenticationArgs'] authentications: Information on how to authenticate incoming requests.
         :param Sequence['GetApiDeploymentSpecificationRequestPolicyCorArgs'] cors: Enable CORS (Cross-Origin-Resource-Sharing) request handling.
         :param Sequence['GetApiDeploymentSpecificationRequestPolicyMutualTlArgs'] mutual_tls: Properties used to configure client mTLS verification when API Consumer makes connection to the gateway.
         :param Sequence['GetApiDeploymentSpecificationRequestPolicyRateLimitingArgs'] rate_limitings: Limit the number of requests that should be handled for the specified window using a specfic key.
+        :param Sequence['GetApiDeploymentSpecificationRequestPolicyUsagePlanArgs'] usage_plans: Usage plan policies for this deployment
         """
         pulumi.set(__self__, "authentications", authentications)
         pulumi.set(__self__, "cors", cors)
         pulumi.set(__self__, "mutual_tls", mutual_tls)
         pulumi.set(__self__, "rate_limitings", rate_limitings)
+        pulumi.set(__self__, "usage_plans", usage_plans)
 
     @property
     @pulumi.getter
@@ -3476,6 +3807,14 @@ class GetApiDeploymentSpecificationRequestPolicyResult(dict):
         Limit the number of requests that should be handled for the specified window using a specfic key.
         """
         return pulumi.get(self, "rate_limitings")
+
+    @property
+    @pulumi.getter(name="usagePlans")
+    def usage_plans(self) -> Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyUsagePlanResult']:
+        """
+        Usage plan policies for this deployment
+        """
+        return pulumi.get(self, "usage_plans")
 
 
 @pulumi.output_type
@@ -3943,6 +4282,32 @@ class GetApiDeploymentSpecificationRequestPolicyRateLimitingResult(dict):
         The key used to group requests together.
         """
         return pulumi.get(self, "rate_key")
+
+
+@pulumi.output_type
+class GetApiDeploymentSpecificationRequestPolicyUsagePlanResult(dict):
+    def __init__(__self__, *,
+                 token_locations: Sequence[str]):
+        """
+        :param Sequence[str] token_locations: A list of context variables specifying where API tokens may be located in a request. Example locations:
+               * "request.headers[token]"
+               * "request.query[token]"
+               * "request.auth[Token]"
+               * "request.path[TOKEN]"
+        """
+        pulumi.set(__self__, "token_locations", token_locations)
+
+    @property
+    @pulumi.getter(name="tokenLocations")
+    def token_locations(self) -> Sequence[str]:
+        """
+        A list of context variables specifying where API tokens may be located in a request. Example locations:
+        * "request.headers[token]"
+        * "request.query[token]"
+        * "request.auth[Token]"
+        * "request.path[TOKEN]"
+        """
+        return pulumi.get(self, "token_locations")
 
 
 @pulumi.output_type
@@ -5953,17 +6318,20 @@ class GetDeploymentSpecificationRequestPolicyResult(dict):
                  authentications: Sequence['outputs.GetDeploymentSpecificationRequestPolicyAuthenticationResult'],
                  cors: Sequence['outputs.GetDeploymentSpecificationRequestPolicyCorResult'],
                  mutual_tls: Sequence['outputs.GetDeploymentSpecificationRequestPolicyMutualTlResult'],
-                 rate_limitings: Sequence['outputs.GetDeploymentSpecificationRequestPolicyRateLimitingResult']):
+                 rate_limitings: Sequence['outputs.GetDeploymentSpecificationRequestPolicyRateLimitingResult'],
+                 usage_plans: Sequence['outputs.GetDeploymentSpecificationRequestPolicyUsagePlanResult']):
         """
         :param Sequence['GetDeploymentSpecificationRequestPolicyAuthenticationArgs'] authentications: Information on how to authenticate incoming requests.
         :param Sequence['GetDeploymentSpecificationRequestPolicyCorArgs'] cors: Enable CORS (Cross-Origin-Resource-Sharing) request handling.
         :param Sequence['GetDeploymentSpecificationRequestPolicyMutualTlArgs'] mutual_tls: Properties used to configure client mTLS verification when API Consumer makes connection to the gateway.
         :param Sequence['GetDeploymentSpecificationRequestPolicyRateLimitingArgs'] rate_limitings: Limit the number of requests that should be handled for the specified window using a specfic key.
+        :param Sequence['GetDeploymentSpecificationRequestPolicyUsagePlanArgs'] usage_plans: Usage plan policies for this deployment
         """
         pulumi.set(__self__, "authentications", authentications)
         pulumi.set(__self__, "cors", cors)
         pulumi.set(__self__, "mutual_tls", mutual_tls)
         pulumi.set(__self__, "rate_limitings", rate_limitings)
+        pulumi.set(__self__, "usage_plans", usage_plans)
 
     @property
     @pulumi.getter
@@ -5996,6 +6364,14 @@ class GetDeploymentSpecificationRequestPolicyResult(dict):
         Limit the number of requests that should be handled for the specified window using a specfic key.
         """
         return pulumi.get(self, "rate_limitings")
+
+    @property
+    @pulumi.getter(name="usagePlans")
+    def usage_plans(self) -> Sequence['outputs.GetDeploymentSpecificationRequestPolicyUsagePlanResult']:
+        """
+        Usage plan policies for this deployment
+        """
+        return pulumi.get(self, "usage_plans")
 
 
 @pulumi.output_type
@@ -6463,6 +6839,32 @@ class GetDeploymentSpecificationRequestPolicyRateLimitingResult(dict):
         The key used to group requests together.
         """
         return pulumi.get(self, "rate_key")
+
+
+@pulumi.output_type
+class GetDeploymentSpecificationRequestPolicyUsagePlanResult(dict):
+    def __init__(__self__, *,
+                 token_locations: Sequence[str]):
+        """
+        :param Sequence[str] token_locations: A list of context variables specifying where API tokens may be located in a request. Example locations:
+               * "request.headers[token]"
+               * "request.query[token]"
+               * "request.auth[Token]"
+               * "request.path[TOKEN]"
+        """
+        pulumi.set(__self__, "token_locations", token_locations)
+
+    @property
+    @pulumi.getter(name="tokenLocations")
+    def token_locations(self) -> Sequence[str]:
+        """
+        A list of context variables specifying where API tokens may be located in a request. Example locations:
+        * "request.headers[token]"
+        * "request.query[token]"
+        * "request.auth[Token]"
+        * "request.path[TOKEN]"
+        """
+        return pulumi.get(self, "token_locations")
 
 
 @pulumi.output_type
@@ -8083,17 +8485,20 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyResult(dict):
                  authentications: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationResult'],
                  cors: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyCorResult'],
                  mutual_tls: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyMutualTlResult'],
-                 rate_limitings: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyRateLimitingResult']):
+                 rate_limitings: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyRateLimitingResult'],
+                 usage_plans: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanResult']):
         """
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationArgs'] authentications: Information on how to authenticate incoming requests.
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRequestPolicyCorArgs'] cors: Enable CORS (Cross-Origin-Resource-Sharing) request handling.
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRequestPolicyMutualTlArgs'] mutual_tls: Properties used to configure client mTLS verification when API Consumer makes connection to the gateway.
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRequestPolicyRateLimitingArgs'] rate_limitings: Limit the number of requests that should be handled for the specified window using a specfic key.
+        :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanArgs'] usage_plans: Usage plan policies for this deployment
         """
         pulumi.set(__self__, "authentications", authentications)
         pulumi.set(__self__, "cors", cors)
         pulumi.set(__self__, "mutual_tls", mutual_tls)
         pulumi.set(__self__, "rate_limitings", rate_limitings)
+        pulumi.set(__self__, "usage_plans", usage_plans)
 
     @property
     @pulumi.getter
@@ -8126,6 +8531,14 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyResult(dict):
         Limit the number of requests that should be handled for the specified window using a specfic key.
         """
         return pulumi.get(self, "rate_limitings")
+
+    @property
+    @pulumi.getter(name="usagePlans")
+    def usage_plans(self) -> Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanResult']:
+        """
+        Usage plan policies for this deployment
+        """
+        return pulumi.get(self, "usage_plans")
 
 
 @pulumi.output_type
@@ -8593,6 +9006,32 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyRateLimitingRe
         The key used to group requests together.
         """
         return pulumi.get(self, "rate_key")
+
+
+@pulumi.output_type
+class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanResult(dict):
+    def __init__(__self__, *,
+                 token_locations: Sequence[str]):
+        """
+        :param Sequence[str] token_locations: A list of context variables specifying where API tokens may be located in a request. Example locations:
+               * "request.headers[token]"
+               * "request.query[token]"
+               * "request.auth[Token]"
+               * "request.path[TOKEN]"
+        """
+        pulumi.set(__self__, "token_locations", token_locations)
+
+    @property
+    @pulumi.getter(name="tokenLocations")
+    def token_locations(self) -> Sequence[str]:
+        """
+        A list of context variables specifying where API tokens may be located in a request. Example locations:
+        * "request.headers[token]"
+        * "request.query[token]"
+        * "request.auth[Token]"
+        * "request.path[TOKEN]"
+        """
+        return pulumi.get(self, "token_locations")
 
 
 @pulumi.output_type
@@ -10583,5 +11022,718 @@ class GetGatewaysGatewayCollectionResponseCacheDetailServerResult(dict):
         The port the cache store is exposed on.
         """
         return pulumi.get(self, "port")
+
+
+@pulumi.output_type
+class GetSubscriberClientResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 token: str):
+        """
+        :param str name: The name of the client. Must be unique within a subscriber.
+        :param str token: The token for the client. Must be unique within a tenancy.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "token", token)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The name of the client. Must be unique within a subscriber.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def token(self) -> str:
+        """
+        The token for the client. Must be unique within a tenancy.
+        """
+        return pulumi.get(self, "token")
+
+
+@pulumi.output_type
+class GetSubscribersFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: The name of the client. Must be unique within a subscriber.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The name of the client. Must be unique within a subscriber.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSubscribersSubscriberCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetSubscribersSubscriberCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetSubscribersSubscriberCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetSubscribersSubscriberCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 clients: Sequence['outputs.GetSubscribersSubscriberCollectionItemClientResult'],
+                 compartment_id: str,
+                 defined_tags: Mapping[str, Any],
+                 display_name: str,
+                 freeform_tags: Mapping[str, Any],
+                 id: str,
+                 lifecycle_details: str,
+                 state: str,
+                 time_created: str,
+                 time_updated: str,
+                 usage_plans: Sequence[str]):
+        """
+        :param Sequence['GetSubscribersSubscriberCollectionItemClientArgs'] clients: The clients belonging to this subscriber.
+        :param str compartment_id: The ocid of the compartment in which to list resources.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
+        :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
+        :param str state: A filter to return only resources that match the given lifecycle state. Example: `ACTIVE`
+        :param str time_created: The time this resource was created. An RFC3339 formatted datetime string.
+        :param str time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
+        :param Sequence[str] usage_plans: An array of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of usage plan resources.
+        """
+        pulumi.set(__self__, "clients", clients)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "usage_plans", usage_plans)
+
+    @property
+    @pulumi.getter
+    def clients(self) -> Sequence['outputs.GetSubscribersSubscriberCollectionItemClientResult']:
+        """
+        The clients belonging to this subscriber.
+        """
+        return pulumi.get(self, "clients")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The ocid of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return only resources that match the given lifecycle state. Example: `ACTIVE`
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time this resource was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The time this resource was last updated. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="usagePlans")
+    def usage_plans(self) -> Sequence[str]:
+        """
+        An array of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of usage plan resources.
+        """
+        return pulumi.get(self, "usage_plans")
+
+
+@pulumi.output_type
+class GetSubscribersSubscriberCollectionItemClientResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 token: str):
+        """
+        :param str name: The name of the client. Must be unique within a subscriber.
+        :param str token: The token for the client. Must be unique within a tenancy.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "token", token)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The name of the client. Must be unique within a subscriber.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def token(self) -> str:
+        """
+        The token for the client. Must be unique within a tenancy.
+        """
+        return pulumi.get(self, "token")
+
+
+@pulumi.output_type
+class GetUsagePlanEntitlementResult(dict):
+    def __init__(__self__, *,
+                 description: str,
+                 name: str,
+                 quotas: Sequence['outputs.GetUsagePlanEntitlementQuotaResult'],
+                 rate_limits: Sequence['outputs.GetUsagePlanEntitlementRateLimitResult'],
+                 targets: Sequence['outputs.GetUsagePlanEntitlementTargetResult']):
+        """
+        :param str description: A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
+        :param str name: An entitlement name, unique within a usage plan.
+        :param Sequence['GetUsagePlanEntitlementQuotaArgs'] quotas: Quota policy for a usage plan.
+        :param Sequence['GetUsagePlanEntitlementRateLimitArgs'] rate_limits: Rate-limiting policy for a usage plan.
+        :param Sequence['GetUsagePlanEntitlementTargetArgs'] targets: A collection of targeted deployments that the entitlement will be applied to.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "quotas", quotas)
+        pulumi.set(__self__, "rate_limits", rate_limits)
+        pulumi.set(__self__, "targets", targets)
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        An entitlement name, unique within a usage plan.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def quotas(self) -> Sequence['outputs.GetUsagePlanEntitlementQuotaResult']:
+        """
+        Quota policy for a usage plan.
+        """
+        return pulumi.get(self, "quotas")
+
+    @property
+    @pulumi.getter(name="rateLimits")
+    def rate_limits(self) -> Sequence['outputs.GetUsagePlanEntitlementRateLimitResult']:
+        """
+        Rate-limiting policy for a usage plan.
+        """
+        return pulumi.get(self, "rate_limits")
+
+    @property
+    @pulumi.getter
+    def targets(self) -> Sequence['outputs.GetUsagePlanEntitlementTargetResult']:
+        """
+        A collection of targeted deployments that the entitlement will be applied to.
+        """
+        return pulumi.get(self, "targets")
+
+
+@pulumi.output_type
+class GetUsagePlanEntitlementQuotaResult(dict):
+    def __init__(__self__, *,
+                 operation_on_breach: str,
+                 reset_policy: str,
+                 unit: str,
+                 value: int):
+        """
+        :param str operation_on_breach: What the usage plan will do when a quota is breached: `REJECT` will allow no further requests `ALLOW` will continue to allow further requests
+        :param str reset_policy: The policy that controls when quotas will reset. Example: `CALENDAR`
+        :param str unit: The unit of time over which rate limits are calculated. Example: `SECOND`
+        :param int value: The number of requests that can be made per time period.
+        """
+        pulumi.set(__self__, "operation_on_breach", operation_on_breach)
+        pulumi.set(__self__, "reset_policy", reset_policy)
+        pulumi.set(__self__, "unit", unit)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter(name="operationOnBreach")
+    def operation_on_breach(self) -> str:
+        """
+        What the usage plan will do when a quota is breached: `REJECT` will allow no further requests `ALLOW` will continue to allow further requests
+        """
+        return pulumi.get(self, "operation_on_breach")
+
+    @property
+    @pulumi.getter(name="resetPolicy")
+    def reset_policy(self) -> str:
+        """
+        The policy that controls when quotas will reset. Example: `CALENDAR`
+        """
+        return pulumi.get(self, "reset_policy")
+
+    @property
+    @pulumi.getter
+    def unit(self) -> str:
+        """
+        The unit of time over which rate limits are calculated. Example: `SECOND`
+        """
+        return pulumi.get(self, "unit")
+
+    @property
+    @pulumi.getter
+    def value(self) -> int:
+        """
+        The number of requests that can be made per time period.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetUsagePlanEntitlementRateLimitResult(dict):
+    def __init__(__self__, *,
+                 unit: str,
+                 value: int):
+        """
+        :param str unit: The unit of time over which rate limits are calculated. Example: `SECOND`
+        :param int value: The number of requests that can be made per time period.
+        """
+        pulumi.set(__self__, "unit", unit)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def unit(self) -> str:
+        """
+        The unit of time over which rate limits are calculated. Example: `SECOND`
+        """
+        return pulumi.get(self, "unit")
+
+    @property
+    @pulumi.getter
+    def value(self) -> int:
+        """
+        The number of requests that can be made per time period.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetUsagePlanEntitlementTargetResult(dict):
+    def __init__(__self__, *,
+                 deployment_id: str):
+        """
+        :param str deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a deployment resource.
+        """
+        pulumi.set(__self__, "deployment_id", deployment_id)
+
+    @property
+    @pulumi.getter(name="deploymentId")
+    def deployment_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a deployment resource.
+        """
+        return pulumi.get(self, "deployment_id")
+
+
+@pulumi.output_type
+class GetUsagePlansFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: An entitlement name, unique within a usage plan.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        An entitlement name, unique within a usage plan.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetUsagePlansUsagePlanCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetUsagePlansUsagePlanCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetUsagePlansUsagePlanCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetUsagePlansUsagePlanCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 defined_tags: Mapping[str, Any],
+                 display_name: str,
+                 entitlements: Sequence['outputs.GetUsagePlansUsagePlanCollectionItemEntitlementResult'],
+                 freeform_tags: Mapping[str, Any],
+                 id: str,
+                 lifecycle_details: str,
+                 state: str,
+                 time_created: str,
+                 time_updated: str):
+        """
+        :param str compartment_id: The ocid of the compartment in which to list resources.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+        :param Sequence['GetUsagePlansUsagePlanCollectionItemEntitlementArgs'] entitlements: A collection of entitlements currently assigned to the usage plan.
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a usage plan resource.
+        :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
+        :param str state: A filter to return only resources that match the given lifecycle state. Example: `ACTIVE`
+        :param str time_created: The time this resource was created. An RFC3339 formatted datetime string.
+        :param str time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "entitlements", entitlements)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The ocid of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def entitlements(self) -> Sequence['outputs.GetUsagePlansUsagePlanCollectionItemEntitlementResult']:
+        """
+        A collection of entitlements currently assigned to the usage plan.
+        """
+        return pulumi.get(self, "entitlements")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a usage plan resource.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return only resources that match the given lifecycle state. Example: `ACTIVE`
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time this resource was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The time this resource was last updated. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetUsagePlansUsagePlanCollectionItemEntitlementResult(dict):
+    def __init__(__self__, *,
+                 description: str,
+                 name: str,
+                 quotas: Sequence['outputs.GetUsagePlansUsagePlanCollectionItemEntitlementQuotaResult'],
+                 rate_limits: Sequence['outputs.GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitResult'],
+                 targets: Sequence['outputs.GetUsagePlansUsagePlanCollectionItemEntitlementTargetResult']):
+        """
+        :param str description: A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
+        :param str name: An entitlement name, unique within a usage plan.
+        :param Sequence['GetUsagePlansUsagePlanCollectionItemEntitlementQuotaArgs'] quotas: Quota policy for a usage plan.
+        :param Sequence['GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitArgs'] rate_limits: Rate-limiting policy for a usage plan.
+        :param Sequence['GetUsagePlansUsagePlanCollectionItemEntitlementTargetArgs'] targets: A collection of targeted deployments that the entitlement will be applied to.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "quotas", quotas)
+        pulumi.set(__self__, "rate_limits", rate_limits)
+        pulumi.set(__self__, "targets", targets)
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        An entitlement name, unique within a usage plan.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def quotas(self) -> Sequence['outputs.GetUsagePlansUsagePlanCollectionItemEntitlementQuotaResult']:
+        """
+        Quota policy for a usage plan.
+        """
+        return pulumi.get(self, "quotas")
+
+    @property
+    @pulumi.getter(name="rateLimits")
+    def rate_limits(self) -> Sequence['outputs.GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitResult']:
+        """
+        Rate-limiting policy for a usage plan.
+        """
+        return pulumi.get(self, "rate_limits")
+
+    @property
+    @pulumi.getter
+    def targets(self) -> Sequence['outputs.GetUsagePlansUsagePlanCollectionItemEntitlementTargetResult']:
+        """
+        A collection of targeted deployments that the entitlement will be applied to.
+        """
+        return pulumi.get(self, "targets")
+
+
+@pulumi.output_type
+class GetUsagePlansUsagePlanCollectionItemEntitlementQuotaResult(dict):
+    def __init__(__self__, *,
+                 operation_on_breach: str,
+                 reset_policy: str,
+                 unit: str,
+                 value: int):
+        """
+        :param str operation_on_breach: What the usage plan will do when a quota is breached: `REJECT` will allow no further requests `ALLOW` will continue to allow further requests
+        :param str reset_policy: The policy that controls when quotas will reset. Example: `CALENDAR`
+        :param str unit: The unit of time over which rate limits are calculated. Example: `SECOND`
+        :param int value: The number of requests that can be made per time period.
+        """
+        pulumi.set(__self__, "operation_on_breach", operation_on_breach)
+        pulumi.set(__self__, "reset_policy", reset_policy)
+        pulumi.set(__self__, "unit", unit)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter(name="operationOnBreach")
+    def operation_on_breach(self) -> str:
+        """
+        What the usage plan will do when a quota is breached: `REJECT` will allow no further requests `ALLOW` will continue to allow further requests
+        """
+        return pulumi.get(self, "operation_on_breach")
+
+    @property
+    @pulumi.getter(name="resetPolicy")
+    def reset_policy(self) -> str:
+        """
+        The policy that controls when quotas will reset. Example: `CALENDAR`
+        """
+        return pulumi.get(self, "reset_policy")
+
+    @property
+    @pulumi.getter
+    def unit(self) -> str:
+        """
+        The unit of time over which rate limits are calculated. Example: `SECOND`
+        """
+        return pulumi.get(self, "unit")
+
+    @property
+    @pulumi.getter
+    def value(self) -> int:
+        """
+        The number of requests that can be made per time period.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitResult(dict):
+    def __init__(__self__, *,
+                 unit: str,
+                 value: int):
+        """
+        :param str unit: The unit of time over which rate limits are calculated. Example: `SECOND`
+        :param int value: The number of requests that can be made per time period.
+        """
+        pulumi.set(__self__, "unit", unit)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def unit(self) -> str:
+        """
+        The unit of time over which rate limits are calculated. Example: `SECOND`
+        """
+        return pulumi.get(self, "unit")
+
+    @property
+    @pulumi.getter
+    def value(self) -> int:
+        """
+        The number of requests that can be made per time period.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetUsagePlansUsagePlanCollectionItemEntitlementTargetResult(dict):
+    def __init__(__self__, *,
+                 deployment_id: str):
+        """
+        :param str deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a deployment resource.
+        """
+        pulumi.set(__self__, "deployment_id", deployment_id)
+
+    @property
+    @pulumi.getter(name="deploymentId")
+    def deployment_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a deployment resource.
+        """
+        return pulumi.get(self, "deployment_id")
 
 

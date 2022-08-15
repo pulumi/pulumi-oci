@@ -54,11 +54,11 @@ export class ManagedList extends pulumi.CustomResource {
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * (Updatable) ManagedList description
+     * (Updatable) Managed list description.
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * (Updatable) ManagedList display name
+     * (Updatable) Managed list display name.
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
@@ -176,11 +176,11 @@ export interface ManagedListState {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) ManagedList description
+     * (Updatable) Managed list description.
      */
     description?: pulumi.Input<string>;
     /**
-     * (Updatable) ManagedList display name
+     * (Updatable) Managed list display name.
      */
     displayName?: pulumi.Input<string>;
     /**
@@ -242,11 +242,11 @@ export interface ManagedListArgs {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) ManagedList description
+     * (Updatable) Managed list description.
      */
     description?: pulumi.Input<string>;
     /**
-     * (Updatable) ManagedList display name
+     * (Updatable) Managed list display name.
      */
     displayName: pulumi.Input<string>;
     /**

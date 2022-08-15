@@ -4,8 +4,11 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.DataScience.outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration {
@@ -14,10 +17,18 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
      * 
      */
     private final String instanceShapeName;
+    /**
+     * @return (Updatable) Details for the model-deployment instance shape configuration.
+     * 
+     */
+    private final @Nullable ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails modelDeploymentInstanceShapeConfigDetails;
 
     @CustomType.Constructor
-    private ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration(@CustomType.Parameter("instanceShapeName") String instanceShapeName) {
+    private ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration(
+        @CustomType.Parameter("instanceShapeName") String instanceShapeName,
+        @CustomType.Parameter("modelDeploymentInstanceShapeConfigDetails") @Nullable ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails modelDeploymentInstanceShapeConfigDetails) {
         this.instanceShapeName = instanceShapeName;
+        this.modelDeploymentInstanceShapeConfigDetails = modelDeploymentInstanceShapeConfigDetails;
     }
 
     /**
@@ -26,6 +37,13 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
      */
     public String instanceShapeName() {
         return this.instanceShapeName;
+    }
+    /**
+     * @return (Updatable) Details for the model-deployment instance shape configuration.
+     * 
+     */
+    public Optional<ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails> modelDeploymentInstanceShapeConfigDetails() {
+        return Optional.ofNullable(this.modelDeploymentInstanceShapeConfigDetails);
     }
 
     public static Builder builder() {
@@ -38,6 +56,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
 
     public static final class Builder {
         private String instanceShapeName;
+        private @Nullable ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails modelDeploymentInstanceShapeConfigDetails;
 
         public Builder() {
     	      // Empty
@@ -46,13 +65,18 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
         public Builder(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.instanceShapeName = defaults.instanceShapeName;
+    	      this.modelDeploymentInstanceShapeConfigDetails = defaults.modelDeploymentInstanceShapeConfigDetails;
         }
 
         public Builder instanceShapeName(String instanceShapeName) {
             this.instanceShapeName = Objects.requireNonNull(instanceShapeName);
             return this;
+        }
+        public Builder modelDeploymentInstanceShapeConfigDetails(@Nullable ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails modelDeploymentInstanceShapeConfigDetails) {
+            this.modelDeploymentInstanceShapeConfigDetails = modelDeploymentInstanceShapeConfigDetails;
+            return this;
         }        public ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration build() {
-            return new ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration(instanceShapeName);
+            return new ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration(instanceShapeName, modelDeploymentInstanceShapeConfigDetails);
         }
     }
 }

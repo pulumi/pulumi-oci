@@ -6,6 +6,7 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Database.outputs.GetExternalNonContainerDatabaseDatabaseManagementConfig;
 import com.pulumi.oci.Database.outputs.GetExternalNonContainerDatabaseOperationsInsightsConfig;
+import com.pulumi.oci.Database.outputs.GetExternalNonContainerDatabaseStackMonitoringConfig;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -96,6 +97,11 @@ public final class GetExternalNonContainerDatabaseResult {
      */
     private final List<GetExternalNonContainerDatabaseOperationsInsightsConfig> operationsInsightsConfigs;
     /**
+     * @return The configuration of Stack Monitoring for the external database.
+     * 
+     */
+    private final List<GetExternalNonContainerDatabaseStackMonitoringConfig> stackMonitoringConfigs;
+    /**
      * @return The current state of the Oracle Cloud Infrastructure external database resource.
      * 
      */
@@ -130,6 +136,7 @@ public final class GetExternalNonContainerDatabaseResult {
         @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
         @CustomType.Parameter("ncharacterSet") String ncharacterSet,
         @CustomType.Parameter("operationsInsightsConfigs") List<GetExternalNonContainerDatabaseOperationsInsightsConfig> operationsInsightsConfigs,
+        @CustomType.Parameter("stackMonitoringConfigs") List<GetExternalNonContainerDatabaseStackMonitoringConfig> stackMonitoringConfigs,
         @CustomType.Parameter("state") String state,
         @CustomType.Parameter("timeCreated") String timeCreated,
         @CustomType.Parameter("timeZone") String timeZone) {
@@ -150,6 +157,7 @@ public final class GetExternalNonContainerDatabaseResult {
         this.lifecycleDetails = lifecycleDetails;
         this.ncharacterSet = ncharacterSet;
         this.operationsInsightsConfigs = operationsInsightsConfigs;
+        this.stackMonitoringConfigs = stackMonitoringConfigs;
         this.state = state;
         this.timeCreated = timeCreated;
         this.timeZone = timeZone;
@@ -271,6 +279,13 @@ public final class GetExternalNonContainerDatabaseResult {
         return this.operationsInsightsConfigs;
     }
     /**
+     * @return The configuration of Stack Monitoring for the external database.
+     * 
+     */
+    public List<GetExternalNonContainerDatabaseStackMonitoringConfig> stackMonitoringConfigs() {
+        return this.stackMonitoringConfigs;
+    }
+    /**
      * @return The current state of the Oracle Cloud Infrastructure external database resource.
      * 
      */
@@ -318,6 +333,7 @@ public final class GetExternalNonContainerDatabaseResult {
         private String lifecycleDetails;
         private String ncharacterSet;
         private List<GetExternalNonContainerDatabaseOperationsInsightsConfig> operationsInsightsConfigs;
+        private List<GetExternalNonContainerDatabaseStackMonitoringConfig> stackMonitoringConfigs;
         private String state;
         private String timeCreated;
         private String timeZone;
@@ -345,6 +361,7 @@ public final class GetExternalNonContainerDatabaseResult {
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.ncharacterSet = defaults.ncharacterSet;
     	      this.operationsInsightsConfigs = defaults.operationsInsightsConfigs;
+    	      this.stackMonitoringConfigs = defaults.stackMonitoringConfigs;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeZone = defaults.timeZone;
@@ -424,6 +441,13 @@ public final class GetExternalNonContainerDatabaseResult {
         public Builder operationsInsightsConfigs(GetExternalNonContainerDatabaseOperationsInsightsConfig... operationsInsightsConfigs) {
             return operationsInsightsConfigs(List.of(operationsInsightsConfigs));
         }
+        public Builder stackMonitoringConfigs(List<GetExternalNonContainerDatabaseStackMonitoringConfig> stackMonitoringConfigs) {
+            this.stackMonitoringConfigs = Objects.requireNonNull(stackMonitoringConfigs);
+            return this;
+        }
+        public Builder stackMonitoringConfigs(GetExternalNonContainerDatabaseStackMonitoringConfig... stackMonitoringConfigs) {
+            return stackMonitoringConfigs(List.of(stackMonitoringConfigs));
+        }
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
@@ -436,7 +460,7 @@ public final class GetExternalNonContainerDatabaseResult {
             this.timeZone = Objects.requireNonNull(timeZone);
             return this;
         }        public GetExternalNonContainerDatabaseResult build() {
-            return new GetExternalNonContainerDatabaseResult(characterSet, compartmentId, databaseConfiguration, databaseEdition, databaseManagementConfigs, databaseVersion, dbId, dbPacks, dbUniqueName, definedTags, displayName, externalNonContainerDatabaseId, freeformTags, id, lifecycleDetails, ncharacterSet, operationsInsightsConfigs, state, timeCreated, timeZone);
+            return new GetExternalNonContainerDatabaseResult(characterSet, compartmentId, databaseConfiguration, databaseEdition, databaseManagementConfigs, databaseVersion, dbId, dbPacks, dbUniqueName, definedTags, displayName, externalNonContainerDatabaseId, freeformTags, id, lifecycleDetails, ncharacterSet, operationsInsightsConfigs, stackMonitoringConfigs, state, timeCreated, timeZone);
         }
     }
 }

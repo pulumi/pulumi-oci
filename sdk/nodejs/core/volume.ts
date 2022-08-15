@@ -129,7 +129,7 @@ export class Volume extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume.
+     * (Updatable) Specifies whether the auto-tune performance is enabled for this volume.
      */
     public readonly isAutoTuneEnabled!: pulumi.Output<boolean>;
     /**
@@ -285,7 +285,7 @@ export interface VolumeState {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume.
+     * (Updatable) Specifies whether the auto-tune performance is enabled for this volume.
      */
     isAutoTuneEnabled?: pulumi.Input<boolean>;
     /**
@@ -369,7 +369,7 @@ export interface VolumeArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume.
+     * (Updatable) Specifies whether the auto-tune performance is enabled for this volume.
      */
     isAutoTuneEnabled?: pulumi.Input<boolean>;
     /**

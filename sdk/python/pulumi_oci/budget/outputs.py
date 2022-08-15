@@ -34,21 +34,21 @@ class GetAlertRulesAlertRuleResult(dict):
                  type: str,
                  version: int):
         """
-        :param str budget_id: The unique Budget OCID
+        :param str budget_id: The unique budget OCID.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str description: The description of the alert rule.
-        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+        :param str display_name: A user-friendly name. This does not have to be unique, and it's changeable.  Example: `My new resource`
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param str id: The OCID of the alert rule
-        :param str message: Custom message that will be sent when alert is triggered
-        :param str recipients: Delimited list of email addresses to receive the alert when it triggers. Delimiter character can be comma, space, TAB, or semicolon.
+        :param str id: The OCID of the alert rule.
+        :param str message: The custom message that will be sent when the alert is triggered.
+        :param str recipients: The delimited list of email addresses to receive the alert when it triggers. Delimiter characters can be a comma, space, TAB, or semicolon.
         :param str state: The current state of the resource to filter by.
-        :param float threshold: The threshold for triggering the alert. If thresholdType is PERCENTAGE, the maximum value is 10000.
+        :param float threshold: The threshold for triggering the alert. If the thresholdType is PERCENTAGE, the maximum value is 10000.
         :param str threshold_type: The type of threshold.
-        :param str time_created: Time when budget was created
-        :param str time_updated: Time when budget was updated
-        :param str type: The type of alert. Valid values are ACTUAL (the alert will trigger based on actual usage) or FORECAST (the alert will trigger based on predicted usage).
-        :param int version: Version of the alert rule. Starts from 1 and increments by 1.
+        :param str time_created: The time when the budget was created.
+        :param str time_updated: The time when the budget was updated.
+        :param str type: The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
+        :param int version: The version of the alert rule. Starts from 1 and increments by 1.
         """
         pulumi.set(__self__, "budget_id", budget_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -70,7 +70,7 @@ class GetAlertRulesAlertRuleResult(dict):
     @pulumi.getter(name="budgetId")
     def budget_id(self) -> str:
         """
-        The unique Budget OCID
+        The unique budget OCID.
         """
         return pulumi.get(self, "budget_id")
 
@@ -94,7 +94,7 @@ class GetAlertRulesAlertRuleResult(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+        A user-friendly name. This does not have to be unique, and it's changeable.  Example: `My new resource`
         """
         return pulumi.get(self, "display_name")
 
@@ -110,7 +110,7 @@ class GetAlertRulesAlertRuleResult(dict):
     @pulumi.getter
     def id(self) -> str:
         """
-        The OCID of the alert rule
+        The OCID of the alert rule.
         """
         return pulumi.get(self, "id")
 
@@ -118,7 +118,7 @@ class GetAlertRulesAlertRuleResult(dict):
     @pulumi.getter
     def message(self) -> str:
         """
-        Custom message that will be sent when alert is triggered
+        The custom message that will be sent when the alert is triggered.
         """
         return pulumi.get(self, "message")
 
@@ -126,7 +126,7 @@ class GetAlertRulesAlertRuleResult(dict):
     @pulumi.getter
     def recipients(self) -> str:
         """
-        Delimited list of email addresses to receive the alert when it triggers. Delimiter character can be comma, space, TAB, or semicolon.
+        The delimited list of email addresses to receive the alert when it triggers. Delimiter characters can be a comma, space, TAB, or semicolon.
         """
         return pulumi.get(self, "recipients")
 
@@ -142,7 +142,7 @@ class GetAlertRulesAlertRuleResult(dict):
     @pulumi.getter
     def threshold(self) -> float:
         """
-        The threshold for triggering the alert. If thresholdType is PERCENTAGE, the maximum value is 10000.
+        The threshold for triggering the alert. If the thresholdType is PERCENTAGE, the maximum value is 10000.
         """
         return pulumi.get(self, "threshold")
 
@@ -158,7 +158,7 @@ class GetAlertRulesAlertRuleResult(dict):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        Time when budget was created
+        The time when the budget was created.
         """
         return pulumi.get(self, "time_created")
 
@@ -166,7 +166,7 @@ class GetAlertRulesAlertRuleResult(dict):
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
-        Time when budget was updated
+        The time when the budget was updated.
         """
         return pulumi.get(self, "time_updated")
 
@@ -174,7 +174,7 @@ class GetAlertRulesAlertRuleResult(dict):
     @pulumi.getter
     def type(self) -> str:
         """
-        The type of alert. Valid values are ACTUAL (the alert will trigger based on actual usage) or FORECAST (the alert will trigger based on predicted usage).
+        The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
         """
         return pulumi.get(self, "type")
 
@@ -182,7 +182,7 @@ class GetAlertRulesAlertRuleResult(dict):
     @pulumi.getter
     def version(self) -> int:
         """
-        Version of the alert rule. Starts from 1 and increments by 1.
+        The version of the alert rule. Starts from 1 and increments by 1.
         """
         return pulumi.get(self, "version")
 
@@ -228,6 +228,7 @@ class GetBudgetsBudgetResult(dict):
                  forecasted_spend: float,
                  freeform_tags: Mapping[str, Any],
                  id: str,
+                 processing_period_type: str,
                  reset_period: str,
                  state: str,
                  target_compartment_id: str,
@@ -238,29 +239,30 @@ class GetBudgetsBudgetResult(dict):
                  time_updated: str,
                  version: int):
         """
-        :param float actual_spend: The actual spend in currency for the current budget cycle
-        :param int alert_rule_count: Total number of alert rules in the budget
-        :param int amount: The amount of the budget expressed in the currency of the customer's rate card.
+        :param float actual_spend: The actual spend in currency for the current budget cycle.
+        :param int alert_rule_count: The total number of alert rules in the budget.
+        :param int amount: The amount of the budget, expressed in the currency of the customer's rate card.
         :param int budget_processing_period_start_offset: The number of days offset from the first day of the month, at which the budget processing period starts. In months that have fewer days than this value, processing will begin on the last day of that month. For example, for a value of 12, processing starts every month on the 12th at midnight.
         :param str compartment_id: The ID of the compartment in which to list resources.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str description: The description of the budget.
-        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-        :param float forecasted_spend: The forecasted spend in currency by the end of the current budget cycle
+        :param str display_name: A user-friendly name. This does not have to be unique, and it's changeable.  Example: `My new resource`
+        :param float forecasted_spend: The forecasted spend in currency by the end of the current budget cycle.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param str id: The OCID of the budget
+        :param str id: The OCID of the budget.
+        :param str processing_period_type: The type of the budget processing period. Valid values are INVOICE and MONTH.
         :param str reset_period: The reset period for the budget.
         :param str state: The current state of the resource to filter by.
-        :param str target_compartment_id: This is DEPRECATED. For backwards compatability, the property will be populated when targetType is "COMPARTMENT" AND targets contains EXACT ONE target compartment ocid. For all other scenarios, this property will be left empty.
-        :param str target_type: The type of target to filter by.
+        :param str target_compartment_id: This is DEPRECATED. For backwards compatability, the property is populated when the targetType is "COMPARTMENT", and targets contain the specific target compartment OCID. For all other scenarios, this property will be left empty.
+        :param str target_type: The type of target to filter by:
                * ALL - List all budgets
                * COMPARTMENT - List all budgets with targetType == "COMPARTMENT"
                * TAG - List all budgets with targetType == "TAG"
-        :param Sequence[str] targets: The list of targets on which the budget is applied. If targetType is "COMPARTMENT", targets contains list of compartment OCIDs. If targetType is "TAG", targets contains list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}".
-        :param str time_created: Time that budget was created
-        :param str time_spend_computed: The time that the budget spend was last computed
-        :param str time_updated: Time that budget was updated
-        :param int version: Version of the budget. Starts from 1 and increments by 1.
+        :param Sequence[str] targets: The list of targets on which the budget is applied. If the targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If the targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}".
+        :param str time_created: The time that the budget was created.
+        :param str time_spend_computed: The time that the budget spend was last computed.
+        :param str time_updated: The time that the budget was updated.
+        :param int version: The version of the budget. Starts from 1 and increments by 1.
         """
         pulumi.set(__self__, "actual_spend", actual_spend)
         pulumi.set(__self__, "alert_rule_count", alert_rule_count)
@@ -273,6 +275,7 @@ class GetBudgetsBudgetResult(dict):
         pulumi.set(__self__, "forecasted_spend", forecasted_spend)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "processing_period_type", processing_period_type)
         pulumi.set(__self__, "reset_period", reset_period)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "target_compartment_id", target_compartment_id)
@@ -287,7 +290,7 @@ class GetBudgetsBudgetResult(dict):
     @pulumi.getter(name="actualSpend")
     def actual_spend(self) -> float:
         """
-        The actual spend in currency for the current budget cycle
+        The actual spend in currency for the current budget cycle.
         """
         return pulumi.get(self, "actual_spend")
 
@@ -295,7 +298,7 @@ class GetBudgetsBudgetResult(dict):
     @pulumi.getter(name="alertRuleCount")
     def alert_rule_count(self) -> int:
         """
-        Total number of alert rules in the budget
+        The total number of alert rules in the budget.
         """
         return pulumi.get(self, "alert_rule_count")
 
@@ -303,7 +306,7 @@ class GetBudgetsBudgetResult(dict):
     @pulumi.getter
     def amount(self) -> int:
         """
-        The amount of the budget expressed in the currency of the customer's rate card.
+        The amount of the budget, expressed in the currency of the customer's rate card.
         """
         return pulumi.get(self, "amount")
 
@@ -343,7 +346,7 @@ class GetBudgetsBudgetResult(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+        A user-friendly name. This does not have to be unique, and it's changeable.  Example: `My new resource`
         """
         return pulumi.get(self, "display_name")
 
@@ -351,7 +354,7 @@ class GetBudgetsBudgetResult(dict):
     @pulumi.getter(name="forecastedSpend")
     def forecasted_spend(self) -> float:
         """
-        The forecasted spend in currency by the end of the current budget cycle
+        The forecasted spend in currency by the end of the current budget cycle.
         """
         return pulumi.get(self, "forecasted_spend")
 
@@ -367,9 +370,17 @@ class GetBudgetsBudgetResult(dict):
     @pulumi.getter
     def id(self) -> str:
         """
-        The OCID of the budget
+        The OCID of the budget.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="processingPeriodType")
+    def processing_period_type(self) -> str:
+        """
+        The type of the budget processing period. Valid values are INVOICE and MONTH.
+        """
+        return pulumi.get(self, "processing_period_type")
 
     @property
     @pulumi.getter(name="resetPeriod")
@@ -391,7 +402,7 @@ class GetBudgetsBudgetResult(dict):
     @pulumi.getter(name="targetCompartmentId")
     def target_compartment_id(self) -> str:
         """
-        This is DEPRECATED. For backwards compatability, the property will be populated when targetType is "COMPARTMENT" AND targets contains EXACT ONE target compartment ocid. For all other scenarios, this property will be left empty.
+        This is DEPRECATED. For backwards compatability, the property is populated when the targetType is "COMPARTMENT", and targets contain the specific target compartment OCID. For all other scenarios, this property will be left empty.
         """
         return pulumi.get(self, "target_compartment_id")
 
@@ -399,7 +410,7 @@ class GetBudgetsBudgetResult(dict):
     @pulumi.getter(name="targetType")
     def target_type(self) -> str:
         """
-        The type of target to filter by.
+        The type of target to filter by:
         * ALL - List all budgets
         * COMPARTMENT - List all budgets with targetType == "COMPARTMENT"
         * TAG - List all budgets with targetType == "TAG"
@@ -410,7 +421,7 @@ class GetBudgetsBudgetResult(dict):
     @pulumi.getter
     def targets(self) -> Sequence[str]:
         """
-        The list of targets on which the budget is applied. If targetType is "COMPARTMENT", targets contains list of compartment OCIDs. If targetType is "TAG", targets contains list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}".
+        The list of targets on which the budget is applied. If the targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If the targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}".
         """
         return pulumi.get(self, "targets")
 
@@ -418,7 +429,7 @@ class GetBudgetsBudgetResult(dict):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        Time that budget was created
+        The time that the budget was created.
         """
         return pulumi.get(self, "time_created")
 
@@ -426,7 +437,7 @@ class GetBudgetsBudgetResult(dict):
     @pulumi.getter(name="timeSpendComputed")
     def time_spend_computed(self) -> str:
         """
-        The time that the budget spend was last computed
+        The time that the budget spend was last computed.
         """
         return pulumi.get(self, "time_spend_computed")
 
@@ -434,7 +445,7 @@ class GetBudgetsBudgetResult(dict):
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
-        Time that budget was updated
+        The time that the budget was updated.
         """
         return pulumi.get(self, "time_updated")
 
@@ -442,7 +453,7 @@ class GetBudgetsBudgetResult(dict):
     @pulumi.getter
     def version(self) -> int:
         """
-        Version of the budget. Starts from 1 and increments by 1.
+        The version of the budget. Starts from 1 and increments by 1.
         """
         return pulumi.get(self, "version")
 

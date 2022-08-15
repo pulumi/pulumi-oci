@@ -94,14 +94,14 @@ public final class TargetTargetDetectorRecipeArgs extends com.pulumi.resources.R
     }
 
     /**
-     * (Updatable) DetectorTemplate Identifier
+     * (Updatable) DetectorTemplate identifier.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) DetectorTemplate Identifier
+     * @return (Updatable) DetectorTemplate identifier.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -124,14 +124,14 @@ public final class TargetTargetDetectorRecipeArgs extends com.pulumi.resources.R
     }
 
     /**
-     * Unique identifier of TargetResponderRecipe that is immutable on creation
+     * Unique identifier of TargetResponderRecipe that can&#39;t be changed after creation.
      * 
      */
     @Import(name="id")
     private @Nullable Output<String> id;
 
     /**
-     * @return Unique identifier of TargetResponderRecipe that is immutable on creation
+     * @return Unique identifier of TargetResponderRecipe that can&#39;t be changed after creation.
      * 
      */
     public Optional<Output<String>> id() {
@@ -349,7 +349,7 @@ public final class TargetTargetDetectorRecipeArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param displayName (Updatable) DetectorTemplate Identifier
+         * @param displayName (Updatable) DetectorTemplate identifier.
          * 
          * @return builder
          * 
@@ -360,7 +360,7 @@ public final class TargetTargetDetectorRecipeArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param displayName (Updatable) DetectorTemplate Identifier
+         * @param displayName (Updatable) DetectorTemplate identifier.
          * 
          * @return builder
          * 
@@ -401,7 +401,7 @@ public final class TargetTargetDetectorRecipeArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param id Unique identifier of TargetResponderRecipe that is immutable on creation
+         * @param id Unique identifier of TargetResponderRecipe that can&#39;t be changed after creation.
          * 
          * @return builder
          * 
@@ -412,7 +412,7 @@ public final class TargetTargetDetectorRecipeArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param id Unique identifier of TargetResponderRecipe that is immutable on creation
+         * @param id Unique identifier of TargetResponderRecipe that can&#39;t be changed after creation.
          * 
          * @return builder
          * 

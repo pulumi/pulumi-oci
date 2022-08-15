@@ -14,6 +14,7 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagementAgentPluginsResult {
+    private final @Nullable String agentId;
     private final String compartmentId;
     /**
      * @return Management Agent Plugin Display Name
@@ -40,6 +41,7 @@ public final class GetManagementAgentPluginsResult {
 
     @CustomType.Constructor
     private GetManagementAgentPluginsResult(
+        @CustomType.Parameter("agentId") @Nullable String agentId,
         @CustomType.Parameter("compartmentId") String compartmentId,
         @CustomType.Parameter("displayName") @Nullable String displayName,
         @CustomType.Parameter("filters") @Nullable List<GetManagementAgentPluginsFilter> filters,
@@ -47,6 +49,7 @@ public final class GetManagementAgentPluginsResult {
         @CustomType.Parameter("managementAgentPlugins") List<GetManagementAgentPluginsManagementAgentPlugin> managementAgentPlugins,
         @CustomType.Parameter("platformTypes") @Nullable List<String> platformTypes,
         @CustomType.Parameter("state") @Nullable String state) {
+        this.agentId = agentId;
         this.compartmentId = compartmentId;
         this.displayName = displayName;
         this.filters = filters;
@@ -56,6 +59,9 @@ public final class GetManagementAgentPluginsResult {
         this.state = state;
     }
 
+    public Optional<String> agentId() {
+        return Optional.ofNullable(this.agentId);
+    }
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -103,6 +109,7 @@ public final class GetManagementAgentPluginsResult {
     }
 
     public static final class Builder {
+        private @Nullable String agentId;
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetManagementAgentPluginsFilter> filters;
@@ -117,6 +124,7 @@ public final class GetManagementAgentPluginsResult {
 
         public Builder(GetManagementAgentPluginsResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.agentId = defaults.agentId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.displayName = defaults.displayName;
     	      this.filters = defaults.filters;
@@ -126,6 +134,10 @@ public final class GetManagementAgentPluginsResult {
     	      this.state = defaults.state;
         }
 
+        public Builder agentId(@Nullable String agentId) {
+            this.agentId = agentId;
+            return this;
+        }
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
@@ -163,7 +175,7 @@ public final class GetManagementAgentPluginsResult {
             this.state = state;
             return this;
         }        public GetManagementAgentPluginsResult build() {
-            return new GetManagementAgentPluginsResult(compartmentId, displayName, filters, id, managementAgentPlugins, platformTypes, state);
+            return new GetManagementAgentPluginsResult(agentId, compartmentId, displayName, filters, id, managementAgentPlugins, platformTypes, state);
         }
     }
 }

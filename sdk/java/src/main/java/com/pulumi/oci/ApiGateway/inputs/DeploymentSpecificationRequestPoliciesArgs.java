@@ -9,6 +9,7 @@ import com.pulumi.oci.ApiGateway.inputs.DeploymentSpecificationRequestPoliciesAu
 import com.pulumi.oci.ApiGateway.inputs.DeploymentSpecificationRequestPoliciesCorsArgs;
 import com.pulumi.oci.ApiGateway.inputs.DeploymentSpecificationRequestPoliciesMutualTlsArgs;
 import com.pulumi.oci.ApiGateway.inputs.DeploymentSpecificationRequestPoliciesRateLimitingArgs;
+import com.pulumi.oci.ApiGateway.inputs.DeploymentSpecificationRequestPoliciesUsagePlansArgs;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -78,6 +79,21 @@ public final class DeploymentSpecificationRequestPoliciesArgs extends com.pulumi
         return Optional.ofNullable(this.rateLimiting);
     }
 
+    /**
+     * (Updatable) Usage plan policies for this deployment
+     * 
+     */
+    @Import(name="usagePlans")
+    private @Nullable Output<DeploymentSpecificationRequestPoliciesUsagePlansArgs> usagePlans;
+
+    /**
+     * @return (Updatable) Usage plan policies for this deployment
+     * 
+     */
+    public Optional<Output<DeploymentSpecificationRequestPoliciesUsagePlansArgs>> usagePlans() {
+        return Optional.ofNullable(this.usagePlans);
+    }
+
     private DeploymentSpecificationRequestPoliciesArgs() {}
 
     private DeploymentSpecificationRequestPoliciesArgs(DeploymentSpecificationRequestPoliciesArgs $) {
@@ -85,6 +101,7 @@ public final class DeploymentSpecificationRequestPoliciesArgs extends com.pulumi
         this.cors = $.cors;
         this.mutualTls = $.mutualTls;
         this.rateLimiting = $.rateLimiting;
+        this.usagePlans = $.usagePlans;
     }
 
     public static Builder builder() {
@@ -187,6 +204,27 @@ public final class DeploymentSpecificationRequestPoliciesArgs extends com.pulumi
          */
         public Builder rateLimiting(DeploymentSpecificationRequestPoliciesRateLimitingArgs rateLimiting) {
             return rateLimiting(Output.of(rateLimiting));
+        }
+
+        /**
+         * @param usagePlans (Updatable) Usage plan policies for this deployment
+         * 
+         * @return builder
+         * 
+         */
+        public Builder usagePlans(@Nullable Output<DeploymentSpecificationRequestPoliciesUsagePlansArgs> usagePlans) {
+            $.usagePlans = usagePlans;
+            return this;
+        }
+
+        /**
+         * @param usagePlans (Updatable) Usage plan policies for this deployment
+         * 
+         * @return builder
+         * 
+         */
+        public Builder usagePlans(DeploymentSpecificationRequestPoliciesUsagePlansArgs usagePlans) {
+            return usagePlans(Output.of(usagePlans));
         }
 
         public DeploymentSpecificationRequestPoliciesArgs build() {

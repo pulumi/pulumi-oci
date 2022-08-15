@@ -17,6 +17,9 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// The ID of the compartment in which to list resources.
         /// </summary>
         public readonly string CompartmentId;
+        /// <summary>
+        /// Base condition object
+        /// </summary>
         public readonly string Condition;
 
         [OutputConstructor]

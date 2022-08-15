@@ -135,6 +135,12 @@ namespace Pulumi.Oci.Database
         public Output<string> NcharacterSet { get; private set; } = null!;
 
         /// <summary>
+        /// The configuration of Stack Monitoring for the external database.
+        /// </summary>
+        [Output("stackMonitoringConfigs")]
+        public Output<ImmutableArray<Outputs.ExternalContainerDatabaseStackMonitoringConfig>> StackMonitoringConfigs { get; private set; } = null!;
+
+        /// <summary>
         /// The current state of the Oracle Cloud Infrastructure external database resource.
         /// </summary>
         [Output("state")]
@@ -342,6 +348,18 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("ncharacterSet")]
         public Input<string>? NcharacterSet { get; set; }
+
+        [Input("stackMonitoringConfigs")]
+        private InputList<Inputs.ExternalContainerDatabaseStackMonitoringConfigGetArgs>? _stackMonitoringConfigs;
+
+        /// <summary>
+        /// The configuration of Stack Monitoring for the external database.
+        /// </summary>
+        public InputList<Inputs.ExternalContainerDatabaseStackMonitoringConfigGetArgs> StackMonitoringConfigs
+        {
+            get => _stackMonitoringConfigs ?? (_stackMonitoringConfigs = new InputList<Inputs.ExternalContainerDatabaseStackMonitoringConfigGetArgs>());
+            set => _stackMonitoringConfigs = value;
+        }
 
         /// <summary>
         /// The current state of the Oracle Cloud Infrastructure external database resource.

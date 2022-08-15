@@ -9,6 +9,7 @@ export * from "./appCatalogListingResourceVersionAgreement";
 export * from "./appCatalogSubscription";
 export * from "./bootVolume";
 export * from "./bootVolumeBackup";
+export * from "./captureFilter";
 export * from "./clusterNetwork";
 export * from "./computeCapacityReservation";
 export * from "./computeImageCapabilitySchema";
@@ -46,6 +47,8 @@ export * from "./getBootVolumes";
 export * from "./getByoipAllocatedRanges";
 export * from "./getByoipRange";
 export * from "./getByoipRanges";
+export * from "./getCaptureFilter";
+export * from "./getCaptureFilters";
 export * from "./getClusterNetwork";
 export * from "./getClusterNetworkInstances";
 export * from "./getClusterNetworks";
@@ -164,6 +167,8 @@ export * from "./getVolumeGroupReplica";
 export * from "./getVolumeGroupReplicas";
 export * from "./getVolumeGroups";
 export * from "./getVolumes";
+export * from "./getVtap";
+export * from "./getVtaps";
 export * from "./image";
 export * from "./instance";
 export * from "./instanceConfiguration";
@@ -202,12 +207,14 @@ export * from "./volumeBackupPolicy";
 export * from "./volumeBackupPolicyAssignment";
 export * from "./volumeGroup";
 export * from "./volumeGroupBackup";
+export * from "./vtap";
 
 // Import resources to register:
 import { AppCatalogListingResourceVersionAgreement } from "./appCatalogListingResourceVersionAgreement";
 import { AppCatalogSubscription } from "./appCatalogSubscription";
 import { BootVolume } from "./bootVolume";
 import { BootVolumeBackup } from "./bootVolumeBackup";
+import { CaptureFilter } from "./captureFilter";
 import { ClusterNetwork } from "./clusterNetwork";
 import { ComputeCapacityReservation } from "./computeCapacityReservation";
 import { ComputeImageCapabilitySchema } from "./computeImageCapabilitySchema";
@@ -266,6 +273,7 @@ import { VolumeBackupPolicy } from "./volumeBackupPolicy";
 import { VolumeBackupPolicyAssignment } from "./volumeBackupPolicyAssignment";
 import { VolumeGroup } from "./volumeGroup";
 import { VolumeGroupBackup } from "./volumeGroupBackup";
+import { Vtap } from "./vtap";
 
 const _module = {
     version: utilities.getVersion(),
@@ -279,6 +287,8 @@ const _module = {
                 return new BootVolume(name, <any>undefined, { urn })
             case "oci:Core/bootVolumeBackup:BootVolumeBackup":
                 return new BootVolumeBackup(name, <any>undefined, { urn })
+            case "oci:Core/captureFilter:CaptureFilter":
+                return new CaptureFilter(name, <any>undefined, { urn })
             case "oci:Core/clusterNetwork:ClusterNetwork":
                 return new ClusterNetwork(name, <any>undefined, { urn })
             case "oci:Core/computeCapacityReservation:ComputeCapacityReservation":
@@ -395,6 +405,8 @@ const _module = {
                 return new VolumeGroup(name, <any>undefined, { urn })
             case "oci:Core/volumeGroupBackup:VolumeGroupBackup":
                 return new VolumeGroupBackup(name, <any>undefined, { urn })
+            case "oci:Core/vtap:Vtap":
+                return new Vtap(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -404,6 +416,7 @@ pulumi.runtime.registerResourceModule("oci", "Core/appCatalogListingResourceVers
 pulumi.runtime.registerResourceModule("oci", "Core/appCatalogSubscription", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/bootVolume", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/bootVolumeBackup", _module)
+pulumi.runtime.registerResourceModule("oci", "Core/captureFilter", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/clusterNetwork", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/computeCapacityReservation", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/computeImageCapabilitySchema", _module)
@@ -462,3 +475,4 @@ pulumi.runtime.registerResourceModule("oci", "Core/volumeBackupPolicy", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/volumeBackupPolicyAssignment", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/volumeGroup", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/volumeGroupBackup", _module)
+pulumi.runtime.registerResourceModule("oci", "Core/vtap", _module)

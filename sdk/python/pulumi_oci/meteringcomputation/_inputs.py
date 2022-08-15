@@ -16,12 +16,18 @@ __all__ = [
     'QueryQueryDefinitionReportQueryArgs',
     'QueryQueryDefinitionReportQueryForecastArgs',
     'QueryQueryDefinitionReportQueryGroupByTagArgs',
+    'ScheduleQueryPropertiesArgs',
+    'ScheduleQueryPropertiesDateRangeArgs',
+    'ScheduleQueryPropertiesGroupByTagArgs',
+    'ScheduleResultLocationArgs',
     'UsageForecastArgs',
     'UsageGroupByTagArgs',
     'UsageItemArgs',
     'UsageItemTagArgs',
     'GetCustomTablesFilterArgs',
     'GetQueriesFilterArgs',
+    'GetScheduledRunsFilterArgs',
+    'GetSchedulesFilterArgs',
 ]
 
 @pulumi.input_type
@@ -307,7 +313,7 @@ class QueryQueryDefinitionReportQueryArgs:
         :param pulumi.Input[str] tenant_id: (Updatable) Tenant ID.
         :param pulumi.Input[float] compartment_depth: (Updatable) The compartment depth level.
         :param pulumi.Input[str] date_range_name: (Updatable) The UI date range, for example, LAST_THREE_MONTHS. Conflicts with timeUsageStarted and timeUsageEnded.
-        :param pulumi.Input[str] filter: (Updatable)
+        :param pulumi.Input[str] filter: (Updatable) The filter object for query usage.
         :param pulumi.Input['QueryQueryDefinitionReportQueryForecastArgs'] forecast: (Updatable) Forecast configuration of usage/cost.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] group_bies: (Updatable) Aggregate the result by. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
         :param pulumi.Input[Sequence[pulumi.Input['QueryQueryDefinitionReportQueryGroupByTagArgs']]] group_by_tags: (Updatable) GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
@@ -391,7 +397,7 @@ class QueryQueryDefinitionReportQueryArgs:
     @pulumi.getter
     def filter(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable)
+        (Updatable) The filter object for query usage.
         """
         return pulumi.get(self, "filter")
 
@@ -591,6 +597,327 @@ class QueryQueryDefinitionReportQueryGroupByTagArgs:
     @value.setter
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class ScheduleQueryPropertiesArgs:
+    def __init__(__self__, *,
+                 date_range: pulumi.Input['ScheduleQueryPropertiesDateRangeArgs'],
+                 granularity: pulumi.Input[str],
+                 compartment_depth: Optional[pulumi.Input[float]] = None,
+                 filter: Optional[pulumi.Input[str]] = None,
+                 group_bies: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 group_by_tags: Optional[pulumi.Input[Sequence[pulumi.Input['ScheduleQueryPropertiesGroupByTagArgs']]]] = None,
+                 is_aggregate_by_time: Optional[pulumi.Input[bool]] = None,
+                 query_type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input['ScheduleQueryPropertiesDateRangeArgs'] date_range: Static or dynamic date range `dateRangeType`, which corresponds with type-specific characteristics.
+        :param pulumi.Input[str] granularity: The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.   Allowed values are: DAILY MONTHLY
+        :param pulumi.Input[float] compartment_depth: The depth level of the compartment.
+        :param pulumi.Input[str] filter: The filter object for query usage.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] group_bies: Aggregate the result by. For example: [ "tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName" ]
+        :param pulumi.Input[Sequence[pulumi.Input['ScheduleQueryPropertiesGroupByTagArgs']]] group_by_tags: GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: [ { "namespace": "oracle", "key": "createdBy" ]
+        :param pulumi.Input[bool] is_aggregate_by_time: Specifies whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+        :param pulumi.Input[str] query_type: The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data.  Allowed values are: USAGE COST USAGE_AND_COST
+        """
+        pulumi.set(__self__, "date_range", date_range)
+        pulumi.set(__self__, "granularity", granularity)
+        if compartment_depth is not None:
+            pulumi.set(__self__, "compartment_depth", compartment_depth)
+        if filter is not None:
+            pulumi.set(__self__, "filter", filter)
+        if group_bies is not None:
+            pulumi.set(__self__, "group_bies", group_bies)
+        if group_by_tags is not None:
+            pulumi.set(__self__, "group_by_tags", group_by_tags)
+        if is_aggregate_by_time is not None:
+            pulumi.set(__self__, "is_aggregate_by_time", is_aggregate_by_time)
+        if query_type is not None:
+            pulumi.set(__self__, "query_type", query_type)
+
+    @property
+    @pulumi.getter(name="dateRange")
+    def date_range(self) -> pulumi.Input['ScheduleQueryPropertiesDateRangeArgs']:
+        """
+        Static or dynamic date range `dateRangeType`, which corresponds with type-specific characteristics.
+        """
+        return pulumi.get(self, "date_range")
+
+    @date_range.setter
+    def date_range(self, value: pulumi.Input['ScheduleQueryPropertiesDateRangeArgs']):
+        pulumi.set(self, "date_range", value)
+
+    @property
+    @pulumi.getter
+    def granularity(self) -> pulumi.Input[str]:
+        """
+        The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.   Allowed values are: DAILY MONTHLY
+        """
+        return pulumi.get(self, "granularity")
+
+    @granularity.setter
+    def granularity(self, value: pulumi.Input[str]):
+        pulumi.set(self, "granularity", value)
+
+    @property
+    @pulumi.getter(name="compartmentDepth")
+    def compartment_depth(self) -> Optional[pulumi.Input[float]]:
+        """
+        The depth level of the compartment.
+        """
+        return pulumi.get(self, "compartment_depth")
+
+    @compartment_depth.setter
+    def compartment_depth(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "compartment_depth", value)
+
+    @property
+    @pulumi.getter
+    def filter(self) -> Optional[pulumi.Input[str]]:
+        """
+        The filter object for query usage.
+        """
+        return pulumi.get(self, "filter")
+
+    @filter.setter
+    def filter(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "filter", value)
+
+    @property
+    @pulumi.getter(name="groupBies")
+    def group_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        Aggregate the result by. For example: [ "tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName" ]
+        """
+        return pulumi.get(self, "group_bies")
+
+    @group_bies.setter
+    def group_bies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "group_bies", value)
+
+    @property
+    @pulumi.getter(name="groupByTags")
+    def group_by_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ScheduleQueryPropertiesGroupByTagArgs']]]]:
+        """
+        GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: [ { "namespace": "oracle", "key": "createdBy" ]
+        """
+        return pulumi.get(self, "group_by_tags")
+
+    @group_by_tags.setter
+    def group_by_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ScheduleQueryPropertiesGroupByTagArgs']]]]):
+        pulumi.set(self, "group_by_tags", value)
+
+    @property
+    @pulumi.getter(name="isAggregateByTime")
+    def is_aggregate_by_time(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Specifies whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+        """
+        return pulumi.get(self, "is_aggregate_by_time")
+
+    @is_aggregate_by_time.setter
+    def is_aggregate_by_time(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_aggregate_by_time", value)
+
+    @property
+    @pulumi.getter(name="queryType")
+    def query_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data.  Allowed values are: USAGE COST USAGE_AND_COST
+        """
+        return pulumi.get(self, "query_type")
+
+    @query_type.setter
+    def query_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "query_type", value)
+
+
+@pulumi.input_type
+class ScheduleQueryPropertiesDateRangeArgs:
+    def __init__(__self__, *,
+                 date_range_type: pulumi.Input[str],
+                 dynamic_date_range_type: Optional[pulumi.Input[str]] = None,
+                 time_usage_ended: Optional[pulumi.Input[str]] = None,
+                 time_usage_started: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] date_range_type: Defines whether the schedule date range is STATIC or DYNAMIC
+        :param pulumi.Input[str] time_usage_ended: The usage end time.
+        :param pulumi.Input[str] time_usage_started: The usage start time.
+        """
+        pulumi.set(__self__, "date_range_type", date_range_type)
+        if dynamic_date_range_type is not None:
+            pulumi.set(__self__, "dynamic_date_range_type", dynamic_date_range_type)
+        if time_usage_ended is not None:
+            pulumi.set(__self__, "time_usage_ended", time_usage_ended)
+        if time_usage_started is not None:
+            pulumi.set(__self__, "time_usage_started", time_usage_started)
+
+    @property
+    @pulumi.getter(name="dateRangeType")
+    def date_range_type(self) -> pulumi.Input[str]:
+        """
+        Defines whether the schedule date range is STATIC or DYNAMIC
+        """
+        return pulumi.get(self, "date_range_type")
+
+    @date_range_type.setter
+    def date_range_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "date_range_type", value)
+
+    @property
+    @pulumi.getter(name="dynamicDateRangeType")
+    def dynamic_date_range_type(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "dynamic_date_range_type")
+
+    @dynamic_date_range_type.setter
+    def dynamic_date_range_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "dynamic_date_range_type", value)
+
+    @property
+    @pulumi.getter(name="timeUsageEnded")
+    def time_usage_ended(self) -> Optional[pulumi.Input[str]]:
+        """
+        The usage end time.
+        """
+        return pulumi.get(self, "time_usage_ended")
+
+    @time_usage_ended.setter
+    def time_usage_ended(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_usage_ended", value)
+
+    @property
+    @pulumi.getter(name="timeUsageStarted")
+    def time_usage_started(self) -> Optional[pulumi.Input[str]]:
+        """
+        The usage start time.
+        """
+        return pulumi.get(self, "time_usage_started")
+
+    @time_usage_started.setter
+    def time_usage_started(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_usage_started", value)
+
+
+@pulumi.input_type
+class ScheduleQueryPropertiesGroupByTagArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[str]] = None,
+                 namespace: Optional[pulumi.Input[str]] = None,
+                 value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] key: The tag key.
+        :param pulumi.Input[str] namespace: The namespace needed to determine object storage bucket.
+        :param pulumi.Input[str] value: The tag value.
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[str]]:
+        """
+        The tag key.
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> Optional[pulumi.Input[str]]:
+        """
+        The namespace needed to determine object storage bucket.
+        """
+        return pulumi.get(self, "namespace")
+
+    @namespace.setter
+    def namespace(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "namespace", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        The tag value.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class ScheduleResultLocationArgs:
+    def __init__(__self__, *,
+                 bucket: pulumi.Input[str],
+                 location_type: pulumi.Input[str],
+                 namespace: pulumi.Input[str],
+                 region: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] bucket: The bucket name where usage/cost CSVs will be uploaded
+        :param pulumi.Input[str] location_type: Defines the type of location where the usage/cost CSVs will be stored
+        :param pulumi.Input[str] namespace: The namespace needed to determine object storage bucket.
+        :param pulumi.Input[str] region: The destination Object Store Region specified by customer
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "location_type", location_type)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "region", region)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> pulumi.Input[str]:
+        """
+        The bucket name where usage/cost CSVs will be uploaded
+        """
+        return pulumi.get(self, "bucket")
+
+    @bucket.setter
+    def bucket(self, value: pulumi.Input[str]):
+        pulumi.set(self, "bucket", value)
+
+    @property
+    @pulumi.getter(name="locationType")
+    def location_type(self) -> pulumi.Input[str]:
+        """
+        Defines the type of location where the usage/cost CSVs will be stored
+        """
+        return pulumi.get(self, "location_type")
+
+    @location_type.setter
+    def location_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "location_type", value)
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> pulumi.Input[str]:
+        """
+        The namespace needed to determine object storage bucket.
+        """
+        return pulumi.get(self, "namespace")
+
+    @namespace.setter
+    def namespace(self, value: pulumi.Input[str]):
+        pulumi.set(self, "namespace", value)
+
+    @property
+    @pulumi.getter
+    def region(self) -> pulumi.Input[str]:
+        """
+        The destination Object Store Region specified by customer
+        """
+        return pulumi.get(self, "region")
+
+    @region.setter
+    def region(self, value: pulumi.Input[str]):
+        pulumi.set(self, "region", value)
 
 
 @pulumi.input_type
@@ -1281,6 +1608,90 @@ class GetQueriesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetScheduledRunsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetSchedulesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: Query parameter for filtering by name
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Query parameter for filtering by name
+        """
         return pulumi.get(self, "name")
 
     @name.setter

@@ -86,6 +86,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string SourceId;
         /// <summary>
+        /// The configuration of Stack Monitoring for the external database.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigResult> StackMonitoringConfigs;
+        /// <summary>
         /// A filter to return only resources that match the specified lifecycle state.
         /// </summary>
         public readonly string State;
@@ -136,6 +140,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string sourceId,
 
+            ImmutableArray<Outputs.GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigResult> stackMonitoringConfigs,
+
             string state,
 
             string timeCreated,
@@ -160,6 +166,7 @@ namespace Pulumi.Oci.Database.Outputs
             NcharacterSet = ncharacterSet;
             OperationsInsightsConfigs = operationsInsightsConfigs;
             SourceId = sourceId;
+            StackMonitoringConfigs = stackMonitoringConfigs;
             State = state;
             TimeCreated = timeCreated;
             TimeZone = timeZone;

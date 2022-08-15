@@ -25,6 +25,8 @@ __all__ = [
     'BuildRunBuildOutputDeliveredArtifactItemArgs',
     'BuildRunBuildOutputExportedVariableArgs',
     'BuildRunBuildOutputExportedVariableItemArgs',
+    'BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArgs',
+    'BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArgs',
     'BuildRunBuildRunArgumentsArgs',
     'BuildRunBuildRunArgumentsItemArgs',
     'BuildRunBuildRunProgressArgs',
@@ -256,7 +258,7 @@ class BuildPipelineStageBuildSourceCollectionItemArgs:
         """
         :param pulumi.Input[str] connection_type: (Updatable) The type of source provider.
         :param pulumi.Input[str] branch: (Updatable) Branch name.
-        :param pulumi.Input[str] connection_id: (Updatable) Connection identifier pertinent to GitHub source provider.
+        :param pulumi.Input[str] connection_id: (Updatable) Connection identifier pertinent to Bitbucket Cloud source provider
         :param pulumi.Input[str] name: (Updatable) Name of the build source. This must be unique within a build source collection. The name can be used by customers to locate the working directory pertinent to this repository.
         :param pulumi.Input[str] repository_id: (Updatable) The DevOps code repository ID.
         :param pulumi.Input[str] repository_url: (Updatable) URL for the repository.
@@ -301,7 +303,7 @@ class BuildPipelineStageBuildSourceCollectionItemArgs:
     @pulumi.getter(name="connectionId")
     def connection_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Connection identifier pertinent to GitHub source provider.
+        (Updatable) Connection identifier pertinent to Bitbucket Cloud source provider
         """
         return pulumi.get(self, "connection_id")
 
@@ -450,11 +452,13 @@ class BuildRunBuildOutputArgs:
     def __init__(__self__, *,
                  artifact_override_parameters: Optional[pulumi.Input[Sequence[pulumi.Input['BuildRunBuildOutputArtifactOverrideParameterArgs']]]] = None,
                  delivered_artifacts: Optional[pulumi.Input[Sequence[pulumi.Input['BuildRunBuildOutputDeliveredArtifactArgs']]]] = None,
-                 exported_variables: Optional[pulumi.Input[Sequence[pulumi.Input['BuildRunBuildOutputExportedVariableArgs']]]] = None):
+                 exported_variables: Optional[pulumi.Input[Sequence[pulumi.Input['BuildRunBuildOutputExportedVariableArgs']]]] = None,
+                 vulnerability_audit_summary_collections: Optional[pulumi.Input[Sequence[pulumi.Input['BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArgs']]]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['BuildRunBuildOutputArtifactOverrideParameterArgs']]] artifact_override_parameters: Specifies the list of artifact override arguments at the time of deployment.
         :param pulumi.Input[Sequence[pulumi.Input['BuildRunBuildOutputDeliveredArtifactArgs']]] delivered_artifacts: Specifies the list of artifacts delivered through the Deliver Artifacts stage.
         :param pulumi.Input[Sequence[pulumi.Input['BuildRunBuildOutputExportedVariableArgs']]] exported_variables: Specifies list of exported variables.
+        :param pulumi.Input[Sequence[pulumi.Input['BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArgs']]] vulnerability_audit_summary_collections: List of vulnerability audit summary.
         """
         if artifact_override_parameters is not None:
             pulumi.set(__self__, "artifact_override_parameters", artifact_override_parameters)
@@ -462,6 +466,8 @@ class BuildRunBuildOutputArgs:
             pulumi.set(__self__, "delivered_artifacts", delivered_artifacts)
         if exported_variables is not None:
             pulumi.set(__self__, "exported_variables", exported_variables)
+        if vulnerability_audit_summary_collections is not None:
+            pulumi.set(__self__, "vulnerability_audit_summary_collections", vulnerability_audit_summary_collections)
 
     @property
     @pulumi.getter(name="artifactOverrideParameters")
@@ -498,6 +504,18 @@ class BuildRunBuildOutputArgs:
     @exported_variables.setter
     def exported_variables(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['BuildRunBuildOutputExportedVariableArgs']]]]):
         pulumi.set(self, "exported_variables", value)
+
+    @property
+    @pulumi.getter(name="vulnerabilityAuditSummaryCollections")
+    def vulnerability_audit_summary_collections(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArgs']]]]:
+        """
+        List of vulnerability audit summary.
+        """
+        return pulumi.get(self, "vulnerability_audit_summary_collections")
+
+    @vulnerability_audit_summary_collections.setter
+    def vulnerability_audit_summary_collections(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArgs']]]]):
+        pulumi.set(self, "vulnerability_audit_summary_collections", value)
 
 
 @pulumi.input_type
@@ -812,6 +830,84 @@ class BuildRunBuildOutputExportedVariableItemArgs:
     @value.setter
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArgs:
+    def __init__(__self__, *,
+                 items: Optional[pulumi.Input[Sequence[pulumi.Input['BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArgs']]] items: List of arguments provided at the time of running the build.
+        """
+        if items is not None:
+            pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArgs']]]]:
+        """
+        List of arguments provided at the time of running the build.
+        """
+        return pulumi.get(self, "items")
+
+    @items.setter
+    def items(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArgs']]]]):
+        pulumi.set(self, "items", value)
+
+
+@pulumi.input_type
+class BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArgs:
+    def __init__(__self__, *,
+                 build_stage_id: Optional[pulumi.Input[str]] = None,
+                 commit_hash: Optional[pulumi.Input[str]] = None,
+                 vulnerability_audit_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] build_stage_id: Build stage OCID where scan was configured.
+        :param pulumi.Input[str] commit_hash: Commit hash pertinent to the repository URL and the specified branch.
+        :param pulumi.Input[str] vulnerability_audit_id: The OCID of the vulnerability audit.
+        """
+        if build_stage_id is not None:
+            pulumi.set(__self__, "build_stage_id", build_stage_id)
+        if commit_hash is not None:
+            pulumi.set(__self__, "commit_hash", commit_hash)
+        if vulnerability_audit_id is not None:
+            pulumi.set(__self__, "vulnerability_audit_id", vulnerability_audit_id)
+
+    @property
+    @pulumi.getter(name="buildStageId")
+    def build_stage_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        Build stage OCID where scan was configured.
+        """
+        return pulumi.get(self, "build_stage_id")
+
+    @build_stage_id.setter
+    def build_stage_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "build_stage_id", value)
+
+    @property
+    @pulumi.getter(name="commitHash")
+    def commit_hash(self) -> Optional[pulumi.Input[str]]:
+        """
+        Commit hash pertinent to the repository URL and the specified branch.
+        """
+        return pulumi.get(self, "commit_hash")
+
+    @commit_hash.setter
+    def commit_hash(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "commit_hash", value)
+
+    @property
+    @pulumi.getter(name="vulnerabilityAuditId")
+    def vulnerability_audit_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the vulnerability audit.
+        """
+        return pulumi.get(self, "vulnerability_audit_id")
+
+    @vulnerability_audit_id.setter
+    def vulnerability_audit_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "vulnerability_audit_id", value)
 
 
 @pulumi.input_type
@@ -1244,6 +1340,7 @@ class DeployArtifactDeployArtifactSourceArgs:
     def __init__(__self__, *,
                  deploy_artifact_source_type: pulumi.Input[str],
                  base64encoded_content: Optional[pulumi.Input[str]] = None,
+                 chart_url: Optional[pulumi.Input[str]] = None,
                  deploy_artifact_path: Optional[pulumi.Input[str]] = None,
                  deploy_artifact_version: Optional[pulumi.Input[str]] = None,
                  image_digest: Optional[pulumi.Input[str]] = None,
@@ -1251,7 +1348,8 @@ class DeployArtifactDeployArtifactSourceArgs:
                  repository_id: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] deploy_artifact_source_type: (Updatable) Specifies types of artifact sources.
-        :param pulumi.Input[str] base64encoded_content: (Updatable) base64 Encoded String
+        :param pulumi.Input[str] base64encoded_content: (Updatable) Specifies content for the inline artifact.
+        :param pulumi.Input[str] chart_url: (Updatable) The URL of an OCIR repository.
         :param pulumi.Input[str] deploy_artifact_path: (Updatable) Specifies the artifact path in the repository.
         :param pulumi.Input[str] deploy_artifact_version: (Updatable) Users can set this as a placeholder value that refers to a pipeline parameter, for example, ${appVersion}.
         :param pulumi.Input[str] image_digest: (Updatable) Specifies image digest for the version of the image.
@@ -1261,6 +1359,8 @@ class DeployArtifactDeployArtifactSourceArgs:
         pulumi.set(__self__, "deploy_artifact_source_type", deploy_artifact_source_type)
         if base64encoded_content is not None:
             pulumi.set(__self__, "base64encoded_content", base64encoded_content)
+        if chart_url is not None:
+            pulumi.set(__self__, "chart_url", chart_url)
         if deploy_artifact_path is not None:
             pulumi.set(__self__, "deploy_artifact_path", deploy_artifact_path)
         if deploy_artifact_version is not None:
@@ -1288,13 +1388,25 @@ class DeployArtifactDeployArtifactSourceArgs:
     @pulumi.getter(name="base64encodedContent")
     def base64encoded_content(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) base64 Encoded String
+        (Updatable) Specifies content for the inline artifact.
         """
         return pulumi.get(self, "base64encoded_content")
 
     @base64encoded_content.setter
     def base64encoded_content(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "base64encoded_content", value)
+
+    @property
+    @pulumi.getter(name="chartUrl")
+    def chart_url(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The URL of an OCIR repository.
+        """
+        return pulumi.get(self, "chart_url")
+
+    @chart_url.setter
+    def chart_url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "chart_url", value)
 
     @property
     @pulumi.getter(name="deployArtifactPath")
@@ -3169,7 +3281,7 @@ class TriggerActionFilterArgs:
                  events: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  include: Optional[pulumi.Input['TriggerActionFilterIncludeArgs']] = None):
         """
-        :param pulumi.Input[str] trigger_source: (Updatable) Source of the trigger. Allowed values are, GITHUB and GITLAB.
+        :param pulumi.Input[str] trigger_source: (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] events: (Updatable) The events, for example, PUSH, PULL_REQUEST_MERGE.
         :param pulumi.Input['TriggerActionFilterIncludeArgs'] include: (Updatable) Attributes to filter DevOps code repository events.
         """
@@ -3183,7 +3295,7 @@ class TriggerActionFilterArgs:
     @pulumi.getter(name="triggerSource")
     def trigger_source(self) -> pulumi.Input[str]:
         """
-        (Updatable) Source of the trigger. Allowed values are, GITHUB and GITLAB.
+        (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
         """
         return pulumi.get(self, "trigger_source")
 

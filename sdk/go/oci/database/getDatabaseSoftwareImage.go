@@ -80,7 +80,7 @@ type LookupDatabaseSoftwareImageResult struct {
 	IsUpgradeSupported bool `pulumi:"isUpgradeSupported"`
 	// Detailed message for the lifecycle state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	// output from lsinventory which will get passed as a string
+	// The output from the OPatch lsInventory command, which is passed as a string.
 	LsInventory string `pulumi:"lsInventory"`
 	// The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
 	PatchSet       string `pulumi:"patchSet"`
@@ -198,7 +198,7 @@ func (o LookupDatabaseSoftwareImageResultOutput) LifecycleDetails() pulumi.Strin
 	return o.ApplyT(func(v LookupDatabaseSoftwareImageResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// output from lsinventory which will get passed as a string
+// The output from the OPatch lsInventory command, which is passed as a string.
 func (o LookupDatabaseSoftwareImageResultOutput) LsInventory() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatabaseSoftwareImageResult) string { return v.LsInventory }).(pulumi.StringOutput)
 }

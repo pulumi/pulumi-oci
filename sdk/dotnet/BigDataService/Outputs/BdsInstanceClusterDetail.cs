@@ -13,12 +13,9 @@ namespace Pulumi.Oci.BigDataService.Outputs
     [OutputType]
     public sealed class BdsInstanceClusterDetail
     {
-        /// <summary>
-        /// The URL of Ambari
-        /// </summary>
         public readonly string? AmbariUrl;
         /// <summary>
-        /// Cloud SQL cell version.
+        /// Cloud SQL cell version
         /// </summary>
         public readonly string? BdCellVersion;
         /// <summary>
@@ -26,43 +23,47 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// </summary>
         public readonly string? BdaVersion;
         /// <summary>
-        /// Big Data Manager version installed in the cluster.
+        /// Big Data Manager version installed in the cluster
         /// </summary>
         public readonly string? BdmVersion;
         /// <summary>
-        /// Big Data Service version installed in the cluster.
+        /// Big Data Service version installed in the cluster
         /// </summary>
         public readonly string? BdsVersion;
         /// <summary>
-        /// The URL of Big Data Manager.
+        /// The URL of a Big Data Manager
         /// </summary>
         public readonly string? BigDataManagerUrl;
         /// <summary>
-        /// The URL of Cloudera Manager
+        /// The URL of a Cloudera Manager
         /// </summary>
         public readonly string? ClouderaManagerUrl;
         /// <summary>
-        /// Big Data SQL version.
+        /// Big Data SQL version
         /// </summary>
         public readonly string? CsqlCellVersion;
         /// <summary>
-        /// Cloud SQL query server database version.
+        /// Query Server Database version
         /// </summary>
         public readonly string? DbVersion;
         /// <summary>
-        /// The URL of the Hue server.
+        /// The URL of a Hue Server
         /// </summary>
         public readonly string? HueServerUrl;
         /// <summary>
-        /// Oracle Linux version installed in the cluster.
+        /// The URL of the Jupyterhub.
+        /// </summary>
+        public readonly string? JupyterHubUrl;
+        /// <summary>
+        /// Oracle Linux version installed in the cluster
         /// </summary>
         public readonly string? OsVersion;
         /// <summary>
-        /// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+        /// The time the BDS instance was created. An RFC3339 formatted datetime string
         /// </summary>
         public readonly string? TimeCreated;
         /// <summary>
-        /// The time the cluster was automatically or manually refreshed, shown as an RFC 3339 formatted datetime string.
+        /// The time the BDS instance was automatically, or manually refreshed. An RFC3339 formatted datetime string
         /// </summary>
         public readonly string? TimeRefreshed;
 
@@ -88,6 +89,8 @@ namespace Pulumi.Oci.BigDataService.Outputs
 
             string? hueServerUrl,
 
+            string? jupyterHubUrl,
+
             string? osVersion,
 
             string? timeCreated,
@@ -104,6 +107,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
             CsqlCellVersion = csqlCellVersion;
             DbVersion = dbVersion;
             HueServerUrl = hueServerUrl;
+            JupyterHubUrl = jupyterHubUrl;
             OsVersion = osVersion;
             TimeCreated = timeCreated;
             TimeRefreshed = timeRefreshed;

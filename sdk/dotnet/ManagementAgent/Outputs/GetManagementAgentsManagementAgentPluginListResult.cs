@@ -26,9 +26,17 @@ namespace Pulumi.Oci.ManagementAgent.Outputs
         /// </summary>
         public readonly string PluginId;
         /// <summary>
-        /// Filter to return only Management Agents having the particular Plugin installed. A special pluginName of 'None' can be provided and this will return only Management Agents having no plugin installed.
+        /// Array of pluginName to return only Management Agents having the particular Plugins installed. A special pluginName of 'None' can be provided and this will return only Management Agents having no plugin installed. Example: ["PluginA"]
         /// </summary>
         public readonly string PluginName;
+        /// <summary>
+        /// Plugin Status
+        /// </summary>
+        public readonly string PluginStatus;
+        /// <summary>
+        /// Status message of the Plugin
+        /// </summary>
+        public readonly string PluginStatusMessage;
         /// <summary>
         /// Plugin Version
         /// </summary>
@@ -44,12 +52,18 @@ namespace Pulumi.Oci.ManagementAgent.Outputs
 
             string pluginName,
 
+            string pluginStatus,
+
+            string pluginStatusMessage,
+
             string pluginVersion)
         {
             IsEnabled = isEnabled;
             PluginDisplayName = pluginDisplayName;
             PluginId = pluginId;
             PluginName = pluginName;
+            PluginStatus = pluginStatus;
+            PluginStatusMessage = pluginStatusMessage;
             PluginVersion = pluginVersion;
         }
     }

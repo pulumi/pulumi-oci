@@ -12,14 +12,11 @@ namespace Pulumi.Oci.BigDataService.Inputs
 
     public sealed class BdsInstanceClusterDetailGetArgs : Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// The URL of Ambari
-        /// </summary>
         [Input("ambariUrl")]
         public Input<string>? AmbariUrl { get; set; }
 
         /// <summary>
-        /// Cloud SQL cell version.
+        /// Cloud SQL cell version
         /// </summary>
         [Input("bdCellVersion")]
         public Input<string>? BdCellVersion { get; set; }
@@ -31,61 +28,67 @@ namespace Pulumi.Oci.BigDataService.Inputs
         public Input<string>? BdaVersion { get; set; }
 
         /// <summary>
-        /// Big Data Manager version installed in the cluster.
+        /// Big Data Manager version installed in the cluster
         /// </summary>
         [Input("bdmVersion")]
         public Input<string>? BdmVersion { get; set; }
 
         /// <summary>
-        /// Big Data Service version installed in the cluster.
+        /// Big Data Service version installed in the cluster
         /// </summary>
         [Input("bdsVersion")]
         public Input<string>? BdsVersion { get; set; }
 
         /// <summary>
-        /// The URL of Big Data Manager.
+        /// The URL of a Big Data Manager
         /// </summary>
         [Input("bigDataManagerUrl")]
         public Input<string>? BigDataManagerUrl { get; set; }
 
         /// <summary>
-        /// The URL of Cloudera Manager
+        /// The URL of a Cloudera Manager
         /// </summary>
         [Input("clouderaManagerUrl")]
         public Input<string>? ClouderaManagerUrl { get; set; }
 
         /// <summary>
-        /// Big Data SQL version.
+        /// Big Data SQL version
         /// </summary>
         [Input("csqlCellVersion")]
         public Input<string>? CsqlCellVersion { get; set; }
 
         /// <summary>
-        /// Cloud SQL query server database version.
+        /// Query Server Database version
         /// </summary>
         [Input("dbVersion")]
         public Input<string>? DbVersion { get; set; }
 
         /// <summary>
-        /// The URL of the Hue server.
+        /// The URL of a Hue Server
         /// </summary>
         [Input("hueServerUrl")]
         public Input<string>? HueServerUrl { get; set; }
 
         /// <summary>
-        /// Oracle Linux version installed in the cluster.
+        /// The URL of the Jupyterhub.
+        /// </summary>
+        [Input("jupyterHubUrl")]
+        public Input<string>? JupyterHubUrl { get; set; }
+
+        /// <summary>
+        /// Oracle Linux version installed in the cluster
         /// </summary>
         [Input("osVersion")]
         public Input<string>? OsVersion { get; set; }
 
         /// <summary>
-        /// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+        /// The time the BDS instance was created. An RFC3339 formatted datetime string
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// The time the cluster was automatically or manually refreshed, shown as an RFC 3339 formatted datetime string.
+        /// The time the BDS instance was automatically, or manually refreshed. An RFC3339 formatted datetime string
         /// </summary>
         [Input("timeRefreshed")]
         public Input<string>? TimeRefreshed { get; set; }

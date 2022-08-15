@@ -92,28 +92,28 @@ public class DataMaskRule extends com.pulumi.resources.CustomResource {
         return this.definedTags;
     }
     /**
-     * The Data Mask Rule description.
+     * The data mask rule description. Avoid entering confidential information.
      * 
      */
     @Export(name="description", type=String.class, parameters={})
     private Output<String> description;
 
     /**
-     * @return The Data Mask Rule description.
+     * @return The data mask rule description. Avoid entering confidential information.
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * (Updatable) Data Mask Rule name
+     * (Updatable) Data mask rule name.
      * 
      */
     @Export(name="displayName", type=String.class, parameters={})
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) Data Mask Rule name
+     * @return (Updatable) Data mask rule name.
      * 
      */
     public Output<String> displayName() {

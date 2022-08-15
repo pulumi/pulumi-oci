@@ -434,6 +434,18 @@ class Connector(pulumi.CustomResource):
                     log_group_id=oci_logging_log_group["test_log_group"]["id"],
                     log_id=oci_logging_log["test_log"]["id"],
                 )],
+                monitoring_sources=[oci.sch.ConnectorSourceMonitoringSourceArgs(
+                    compartment_id=var["compartment_id"],
+                    namespace_details=oci.sch.ConnectorSourceMonitoringSourceNamespaceDetailsArgs(
+                        kind=var["service_connector_source_monitoring_sources_namespace_details_kind"],
+                        namespaces=[oci.sch.ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs(
+                            metrics=oci.sch.ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgs(
+                                kind=var["service_connector_source_monitoring_sources_namespace_details_namespaces_metrics_kind"],
+                            ),
+                            namespace=var["service_connector_source_monitoring_sources_namespace_details_namespaces_namespace"],
+                        )],
+                    ),
+                )],
                 stream_id=oci_streaming_stream["test_stream"]["id"],
             ),
             target=oci.sch.ConnectorTargetArgs(
@@ -544,6 +556,18 @@ class Connector(pulumi.CustomResource):
                     compartment_id=var["compartment_id"],
                     log_group_id=oci_logging_log_group["test_log_group"]["id"],
                     log_id=oci_logging_log["test_log"]["id"],
+                )],
+                monitoring_sources=[oci.sch.ConnectorSourceMonitoringSourceArgs(
+                    compartment_id=var["compartment_id"],
+                    namespace_details=oci.sch.ConnectorSourceMonitoringSourceNamespaceDetailsArgs(
+                        kind=var["service_connector_source_monitoring_sources_namespace_details_kind"],
+                        namespaces=[oci.sch.ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs(
+                            metrics=oci.sch.ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgs(
+                                kind=var["service_connector_source_monitoring_sources_namespace_details_namespaces_metrics_kind"],
+                            ),
+                            namespace=var["service_connector_source_monitoring_sources_namespace_details_namespaces_namespace"],
+                        )],
+                    ),
                 )],
                 stream_id=oci_streaming_stream["test_stream"]["id"],
             ),

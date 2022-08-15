@@ -22,6 +22,7 @@ __all__ = [
     'DeploymentSpecificationRequestPoliciesCorsArgs',
     'DeploymentSpecificationRequestPoliciesMutualTlsArgs',
     'DeploymentSpecificationRequestPoliciesRateLimitingArgs',
+    'DeploymentSpecificationRequestPoliciesUsagePlansArgs',
     'DeploymentSpecificationRouteArgs',
     'DeploymentSpecificationRouteBackendArgs',
     'DeploymentSpecificationRouteBackendHeaderArgs',
@@ -65,10 +66,17 @@ __all__ = [
     'GatewayIpAddressArgs',
     'GatewayResponseCacheDetailsArgs',
     'GatewayResponseCacheDetailsServerArgs',
+    'SubscriberClientArgs',
+    'UsagePlanEntitlementArgs',
+    'UsagePlanEntitlementQuotaArgs',
+    'UsagePlanEntitlementRateLimitArgs',
+    'UsagePlanEntitlementTargetArgs',
     'GetApisFilterArgs',
     'GetCertificatesFilterArgs',
     'GetDeploymentsFilterArgs',
     'GetGatewaysFilterArgs',
+    'GetSubscribersFilterArgs',
+    'GetUsagePlansFilterArgs',
 ]
 
 @pulumi.input_type
@@ -271,12 +279,14 @@ class DeploymentSpecificationRequestPoliciesArgs:
                  authentication: Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationArgs']] = None,
                  cors: Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesCorsArgs']] = None,
                  mutual_tls: Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesMutualTlsArgs']] = None,
-                 rate_limiting: Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesRateLimitingArgs']] = None):
+                 rate_limiting: Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesRateLimitingArgs']] = None,
+                 usage_plans: Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesUsagePlansArgs']] = None):
         """
         :param pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationArgs'] authentication: (Updatable) Information on how to authenticate incoming requests.
         :param pulumi.Input['DeploymentSpecificationRequestPoliciesCorsArgs'] cors: (Updatable) Enable CORS (Cross-Origin-Resource-Sharing) request handling.
         :param pulumi.Input['DeploymentSpecificationRequestPoliciesMutualTlsArgs'] mutual_tls: (Updatable) Properties used to configure client mTLS verification when API Consumer makes connection to the gateway.
         :param pulumi.Input['DeploymentSpecificationRequestPoliciesRateLimitingArgs'] rate_limiting: (Updatable) Limit the number of requests that should be handled for the specified window using a specfic key.
+        :param pulumi.Input['DeploymentSpecificationRequestPoliciesUsagePlansArgs'] usage_plans: (Updatable) Usage plan policies for this deployment
         """
         if authentication is not None:
             pulumi.set(__self__, "authentication", authentication)
@@ -286,6 +296,8 @@ class DeploymentSpecificationRequestPoliciesArgs:
             pulumi.set(__self__, "mutual_tls", mutual_tls)
         if rate_limiting is not None:
             pulumi.set(__self__, "rate_limiting", rate_limiting)
+        if usage_plans is not None:
+            pulumi.set(__self__, "usage_plans", usage_plans)
 
     @property
     @pulumi.getter
@@ -334,6 +346,18 @@ class DeploymentSpecificationRequestPoliciesArgs:
     @rate_limiting.setter
     def rate_limiting(self, value: Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesRateLimitingArgs']]):
         pulumi.set(self, "rate_limiting", value)
+
+    @property
+    @pulumi.getter(name="usagePlans")
+    def usage_plans(self) -> Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesUsagePlansArgs']]:
+        """
+        (Updatable) Usage plan policies for this deployment
+        """
+        return pulumi.get(self, "usage_plans")
+
+    @usage_plans.setter
+    def usage_plans(self, value: Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesUsagePlansArgs']]):
+        pulumi.set(self, "usage_plans", value)
 
 
 @pulumi.input_type
@@ -985,6 +1009,36 @@ class DeploymentSpecificationRequestPoliciesRateLimitingArgs:
     @rate_key.setter
     def rate_key(self, value: pulumi.Input[str]):
         pulumi.set(self, "rate_key", value)
+
+
+@pulumi.input_type
+class DeploymentSpecificationRequestPoliciesUsagePlansArgs:
+    def __init__(__self__, *,
+                 token_locations: pulumi.Input[Sequence[pulumi.Input[str]]]):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] token_locations: (Updatable) A list of context variables specifying where API tokens may be located in a request. Example locations:
+               * "request.headers[token]"
+               * "request.query[token]"
+               * "request.auth[Token]"
+               * "request.path[TOKEN]"
+        """
+        pulumi.set(__self__, "token_locations", token_locations)
+
+    @property
+    @pulumi.getter(name="tokenLocations")
+    def token_locations(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
+        """
+        (Updatable) A list of context variables specifying where API tokens may be located in a request. Example locations:
+        * "request.headers[token]"
+        * "request.query[token]"
+        * "request.auth[Token]"
+        * "request.path[TOKEN]"
+        """
+        return pulumi.get(self, "token_locations")
+
+    @token_locations.setter
+    def token_locations(self, value: pulumi.Input[Sequence[pulumi.Input[str]]]):
+        pulumi.set(self, "token_locations", value)
 
 
 @pulumi.input_type
@@ -3073,6 +3127,255 @@ class GatewayResponseCacheDetailsServerArgs:
 
 
 @pulumi.input_type
+class SubscriberClientArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[str],
+                 token: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] name: (Updatable) The name of the client. Must be unique within a subscriber.
+        :param pulumi.Input[str] token: (Updatable) The token for the client. Must be unique within a tenancy.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "token", token)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The name of the client. Must be unique within a subscriber.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def token(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The token for the client. Must be unique within a tenancy.
+        """
+        return pulumi.get(self, "token")
+
+    @token.setter
+    def token(self, value: pulumi.Input[str]):
+        pulumi.set(self, "token", value)
+
+
+@pulumi.input_type
+class UsagePlanEntitlementArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[str],
+                 description: Optional[pulumi.Input[str]] = None,
+                 quota: Optional[pulumi.Input['UsagePlanEntitlementQuotaArgs']] = None,
+                 rate_limit: Optional[pulumi.Input['UsagePlanEntitlementRateLimitArgs']] = None,
+                 targets: Optional[pulumi.Input[Sequence[pulumi.Input['UsagePlanEntitlementTargetArgs']]]] = None):
+        """
+        :param pulumi.Input[str] name: (Updatable) An entitlement name, unique within a usage plan.
+        :param pulumi.Input[str] description: (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
+        :param pulumi.Input['UsagePlanEntitlementQuotaArgs'] quota: (Updatable) Quota policy for a usage plan.
+        :param pulumi.Input['UsagePlanEntitlementRateLimitArgs'] rate_limit: (Updatable) Rate-limiting policy for a usage plan.
+        :param pulumi.Input[Sequence[pulumi.Input['UsagePlanEntitlementTargetArgs']]] targets: (Updatable) A collection of targeted deployments that the entitlement will be applied to.
+        """
+        pulumi.set(__self__, "name", name)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if quota is not None:
+            pulumi.set(__self__, "quota", quota)
+        if rate_limit is not None:
+            pulumi.set(__self__, "rate_limit", rate_limit)
+        if targets is not None:
+            pulumi.set(__self__, "targets", targets)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) An entitlement name, unique within a usage plan.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter
+    def quota(self) -> Optional[pulumi.Input['UsagePlanEntitlementQuotaArgs']]:
+        """
+        (Updatable) Quota policy for a usage plan.
+        """
+        return pulumi.get(self, "quota")
+
+    @quota.setter
+    def quota(self, value: Optional[pulumi.Input['UsagePlanEntitlementQuotaArgs']]):
+        pulumi.set(self, "quota", value)
+
+    @property
+    @pulumi.getter(name="rateLimit")
+    def rate_limit(self) -> Optional[pulumi.Input['UsagePlanEntitlementRateLimitArgs']]:
+        """
+        (Updatable) Rate-limiting policy for a usage plan.
+        """
+        return pulumi.get(self, "rate_limit")
+
+    @rate_limit.setter
+    def rate_limit(self, value: Optional[pulumi.Input['UsagePlanEntitlementRateLimitArgs']]):
+        pulumi.set(self, "rate_limit", value)
+
+    @property
+    @pulumi.getter
+    def targets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['UsagePlanEntitlementTargetArgs']]]]:
+        """
+        (Updatable) A collection of targeted deployments that the entitlement will be applied to.
+        """
+        return pulumi.get(self, "targets")
+
+    @targets.setter
+    def targets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['UsagePlanEntitlementTargetArgs']]]]):
+        pulumi.set(self, "targets", value)
+
+
+@pulumi.input_type
+class UsagePlanEntitlementQuotaArgs:
+    def __init__(__self__, *,
+                 operation_on_breach: pulumi.Input[str],
+                 reset_policy: pulumi.Input[str],
+                 unit: pulumi.Input[str],
+                 value: pulumi.Input[int]):
+        """
+        :param pulumi.Input[str] operation_on_breach: (Updatable) What the usage plan will do when a quota is breached: `REJECT` will allow no further requests `ALLOW` will continue to allow further requests
+        :param pulumi.Input[str] reset_policy: (Updatable) The policy that controls when quotas will reset. Example: `CALENDAR`
+        :param pulumi.Input[str] unit: (Updatable) The unit of time over which rate limits are calculated. Example: `SECOND`
+        :param pulumi.Input[int] value: (Updatable) The number of requests that can be made per time period.
+        """
+        pulumi.set(__self__, "operation_on_breach", operation_on_breach)
+        pulumi.set(__self__, "reset_policy", reset_policy)
+        pulumi.set(__self__, "unit", unit)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter(name="operationOnBreach")
+    def operation_on_breach(self) -> pulumi.Input[str]:
+        """
+        (Updatable) What the usage plan will do when a quota is breached: `REJECT` will allow no further requests `ALLOW` will continue to allow further requests
+        """
+        return pulumi.get(self, "operation_on_breach")
+
+    @operation_on_breach.setter
+    def operation_on_breach(self, value: pulumi.Input[str]):
+        pulumi.set(self, "operation_on_breach", value)
+
+    @property
+    @pulumi.getter(name="resetPolicy")
+    def reset_policy(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The policy that controls when quotas will reset. Example: `CALENDAR`
+        """
+        return pulumi.get(self, "reset_policy")
+
+    @reset_policy.setter
+    def reset_policy(self, value: pulumi.Input[str]):
+        pulumi.set(self, "reset_policy", value)
+
+    @property
+    @pulumi.getter
+    def unit(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The unit of time over which rate limits are calculated. Example: `SECOND`
+        """
+        return pulumi.get(self, "unit")
+
+    @unit.setter
+    def unit(self, value: pulumi.Input[str]):
+        pulumi.set(self, "unit", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[int]:
+        """
+        (Updatable) The number of requests that can be made per time period.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[int]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class UsagePlanEntitlementRateLimitArgs:
+    def __init__(__self__, *,
+                 unit: pulumi.Input[str],
+                 value: pulumi.Input[int]):
+        """
+        :param pulumi.Input[str] unit: (Updatable) The unit of time over which rate limits are calculated. Example: `SECOND`
+        :param pulumi.Input[int] value: (Updatable) The number of requests that can be made per time period.
+        """
+        pulumi.set(__self__, "unit", unit)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def unit(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The unit of time over which rate limits are calculated. Example: `SECOND`
+        """
+        return pulumi.get(self, "unit")
+
+    @unit.setter
+    def unit(self, value: pulumi.Input[str]):
+        pulumi.set(self, "unit", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[int]:
+        """
+        (Updatable) The number of requests that can be made per time period.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[int]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class UsagePlanEntitlementTargetArgs:
+    def __init__(__self__, *,
+                 deployment_id: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] deployment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a deployment resource.
+        """
+        pulumi.set(__self__, "deployment_id", deployment_id)
+
+    @property
+    @pulumi.getter(name="deploymentId")
+    def deployment_id(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a deployment resource.
+        """
+        return pulumi.get(self, "deployment_id")
+
+    @deployment_id.setter
+    def deployment_id(self, value: pulumi.Input[str]):
+        pulumi.set(self, "deployment_id", value)
+
+
+@pulumi.input_type
 class GetApisFilterArgs:
     def __init__(__self__, *,
                  name: str,
@@ -3219,6 +3522,96 @@ class GetGatewaysFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetSubscribersFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: The name of the client. Must be unique within a subscriber.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The name of the client. Must be unique within a subscriber.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetUsagePlansFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: An entitlement name, unique within a usage plan.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        An entitlement name, unique within a usage plan.
+        """
         return pulumi.get(self, "name")
 
     @name.setter

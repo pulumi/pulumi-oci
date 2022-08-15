@@ -54,14 +54,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:Core/bootVolume:BootVolume")
 public class BootVolume extends com.pulumi.resources.CustomResource {
     /**
-     * The number of Volume Performance Units per GB that this volume is effectively tuned to when it&#39;s idle.
+     * The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it&#39;s idle.
      * 
      */
     @Export(name="autoTunedVpusPerGb", type=String.class, parameters={})
     private Output<String> autoTunedVpusPerGb;
 
     /**
-     * @return The number of Volume Performance Units per GB that this volume is effectively tuned to when it&#39;s idle.
+     * @return The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it&#39;s idle.
      * 
      */
     public Output<String> autoTunedVpusPerGb() {

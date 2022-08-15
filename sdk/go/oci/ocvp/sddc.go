@@ -46,6 +46,7 @@ import (
 // 			VmwareSoftwareVersion:     pulumi.Any(_var.Sddc_vmware_software_version),
 // 			VsanVlanId:                pulumi.Any(oci_core_vlan.Test_vsan_vlan.Id),
 // 			VsphereVlanId:             pulumi.Any(oci_core_vlan.Test_vsphere_vlan.Id),
+// 			CapacityReservationId:     pulumi.Any(oci_ocvp_capacity_reservation.Test_capacity_reservation.Id),
 // 			DefinedTags: pulumi.AnyMap{
 // 				"Operations.CostCenter": pulumi.Any("42"),
 // 			},
@@ -55,6 +56,8 @@ import (
 // 			},
 // 			HcxAction:                        pulumi.Any(_var.Hcx_action),
 // 			HcxVlanId:                        pulumi.Any(oci_core_vlan.Test_vlan.Id),
+// 			InitialHostOcpuCount:             pulumi.Any(_var.Sddc_initial_host_ocpu_count),
+// 			InitialHostShapeName:             pulumi.Any(oci_core_shape.Test_shape.Name),
 // 			InitialSku:                       pulumi.Any(_var.Sddc_initial_sku),
 // 			InstanceDisplayNamePrefix:        pulumi.Any(_var.Sddc_instance_display_name_prefix),
 // 			IsHcxEnabled:                     pulumi.Any(_var.Sddc_is_hcx_enabled),
@@ -85,6 +88,8 @@ type Sddc struct {
 
 	// The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC.
 	ActualEsxiHostsCount pulumi.IntOutput `pulumi:"actualEsxiHostsCount"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+	CapacityReservationId pulumi.StringOutput `pulumi:"capacityReservationId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the SDDC.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The availability domain to create the SDDC's ESXi hosts in. For multi-AD SDDC deployment, set to `multi-AD`.
@@ -111,6 +116,10 @@ type Sddc struct {
 	HcxPrivateIpId pulumi.StringOutput `pulumi:"hcxPrivateIpId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the HCX component of the VMware environment. This value is required only when `isHcxEnabled` is true.
 	HcxVlanId pulumi.StringOutput `pulumi:"hcxVlanId"`
+	// The initial OCPU count of the SDDC's ESXi hosts.
+	InitialHostOcpuCount pulumi.Float64Output `pulumi:"initialHostOcpuCount"`
+	// The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+	InitialHostShapeName pulumi.StringOutput `pulumi:"initialHostShapeName"`
 	// The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
 	InitialSku pulumi.StringOutput `pulumi:"initialSku"`
 	// A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
@@ -255,6 +264,8 @@ func GetSddc(ctx *pulumi.Context,
 type sddcState struct {
 	// The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC.
 	ActualEsxiHostsCount *int `pulumi:"actualEsxiHostsCount"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+	CapacityReservationId *string `pulumi:"capacityReservationId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the SDDC.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The availability domain to create the SDDC's ESXi hosts in. For multi-AD SDDC deployment, set to `multi-AD`.
@@ -281,6 +292,10 @@ type sddcState struct {
 	HcxPrivateIpId *string `pulumi:"hcxPrivateIpId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the HCX component of the VMware environment. This value is required only when `isHcxEnabled` is true.
 	HcxVlanId *string `pulumi:"hcxVlanId"`
+	// The initial OCPU count of the SDDC's ESXi hosts.
+	InitialHostOcpuCount *float64 `pulumi:"initialHostOcpuCount"`
+	// The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+	InitialHostShapeName *string `pulumi:"initialHostShapeName"`
 	// The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
 	InitialSku *string `pulumi:"initialSku"`
 	// A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
@@ -358,6 +373,8 @@ type sddcState struct {
 type SddcState struct {
 	// The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC.
 	ActualEsxiHostsCount pulumi.IntPtrInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+	CapacityReservationId pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the SDDC.
 	CompartmentId pulumi.StringPtrInput
 	// The availability domain to create the SDDC's ESXi hosts in. For multi-AD SDDC deployment, set to `multi-AD`.
@@ -384,6 +401,10 @@ type SddcState struct {
 	HcxPrivateIpId pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the HCX component of the VMware environment. This value is required only when `isHcxEnabled` is true.
 	HcxVlanId pulumi.StringPtrInput
+	// The initial OCPU count of the SDDC's ESXi hosts.
+	InitialHostOcpuCount pulumi.Float64PtrInput
+	// The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+	InitialHostShapeName pulumi.StringPtrInput
 	// The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
 	InitialSku pulumi.StringPtrInput
 	// A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
@@ -463,6 +484,8 @@ func (SddcState) ElementType() reflect.Type {
 }
 
 type sddcArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+	CapacityReservationId *string `pulumi:"capacityReservationId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the SDDC.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The availability domain to create the SDDC's ESXi hosts in. For multi-AD SDDC deployment, set to `multi-AD`.
@@ -479,6 +502,10 @@ type sddcArgs struct {
 	HcxAction *string `pulumi:"hcxAction"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the HCX component of the VMware environment. This value is required only when `isHcxEnabled` is true.
 	HcxVlanId *string `pulumi:"hcxVlanId"`
+	// The initial OCPU count of the SDDC's ESXi hosts.
+	InitialHostOcpuCount *float64 `pulumi:"initialHostOcpuCount"`
+	// The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+	InitialHostShapeName *string `pulumi:"initialHostShapeName"`
 	// The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
 	InitialSku *string `pulumi:"initialSku"`
 	// A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
@@ -521,6 +548,8 @@ type sddcArgs struct {
 
 // The set of arguments for constructing a Sddc resource.
 type SddcArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+	CapacityReservationId pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the SDDC.
 	CompartmentId pulumi.StringInput
 	// The availability domain to create the SDDC's ESXi hosts in. For multi-AD SDDC deployment, set to `multi-AD`.
@@ -537,6 +566,10 @@ type SddcArgs struct {
 	HcxAction pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the HCX component of the VMware environment. This value is required only when `isHcxEnabled` is true.
 	HcxVlanId pulumi.StringPtrInput
+	// The initial OCPU count of the SDDC's ESXi hosts.
+	InitialHostOcpuCount pulumi.Float64PtrInput
+	// The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+	InitialHostShapeName pulumi.StringPtrInput
 	// The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
 	InitialSku pulumi.StringPtrInput
 	// A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.

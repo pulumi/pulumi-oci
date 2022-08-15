@@ -6,6 +6,7 @@ package com.pulumi.oci.Core;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Core.inputs.IpsecConnectionTunnelManagementBgpSessionInfoArgs;
+import com.pulumi.oci.Core.inputs.IpsecConnectionTunnelManagementDpdConfigArgs;
 import com.pulumi.oci.Core.inputs.IpsecConnectionTunnelManagementEncryptionDomainConfigArgs;
 import java.lang.String;
 import java.util.List;
@@ -46,6 +47,13 @@ public final class IpsecConnectionTunnelManagementArgs extends com.pulumi.resour
      */
     public Optional<Output<String>> displayName() {
         return Optional.ofNullable(this.displayName);
+    }
+
+    @Import(name="dpdConfigs")
+    private @Nullable Output<List<IpsecConnectionTunnelManagementDpdConfigArgs>> dpdConfigs;
+
+    public Optional<Output<List<IpsecConnectionTunnelManagementDpdConfigArgs>>> dpdConfigs() {
+        return Optional.ofNullable(this.dpdConfigs);
     }
 
     /**
@@ -143,6 +151,7 @@ public final class IpsecConnectionTunnelManagementArgs extends com.pulumi.resour
     private IpsecConnectionTunnelManagementArgs(IpsecConnectionTunnelManagementArgs $) {
         this.bgpSessionInfos = $.bgpSessionInfos;
         this.displayName = $.displayName;
+        this.dpdConfigs = $.dpdConfigs;
         this.encryptionDomainConfig = $.encryptionDomainConfig;
         this.ikeVersion = $.ikeVersion;
         this.ipsecId = $.ipsecId;
@@ -219,6 +228,19 @@ public final class IpsecConnectionTunnelManagementArgs extends com.pulumi.resour
          */
         public Builder displayName(String displayName) {
             return displayName(Output.of(displayName));
+        }
+
+        public Builder dpdConfigs(@Nullable Output<List<IpsecConnectionTunnelManagementDpdConfigArgs>> dpdConfigs) {
+            $.dpdConfigs = dpdConfigs;
+            return this;
+        }
+
+        public Builder dpdConfigs(List<IpsecConnectionTunnelManagementDpdConfigArgs> dpdConfigs) {
+            return dpdConfigs(Output.of(dpdConfigs));
+        }
+
+        public Builder dpdConfigs(IpsecConnectionTunnelManagementDpdConfigArgs... dpdConfigs) {
+            return dpdConfigs(List.of(dpdConfigs));
         }
 
         /**

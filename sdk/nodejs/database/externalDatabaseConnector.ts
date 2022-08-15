@@ -22,6 +22,7 @@ import * as utilities from "../utilities";
  *         credentialType: _var.external_database_connector_connection_credentials_credential_type,
  *         password: _var.external_database_connector_connection_credentials_password,
  *         role: _var.external_database_connector_connection_credentials_role,
+ *         sslSecretId: oci_vault_secret.test_secret.id,
  *         username: _var.external_database_connector_connection_credentials_username,
  *     },
  *     connectionString: {

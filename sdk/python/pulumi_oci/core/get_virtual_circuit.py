@@ -130,7 +130,7 @@ class GetVirtualCircuitResult:
     @pulumi.getter(name="bgpAdminState")
     def bgp_admin_state(self) -> str:
         """
-        Set to ENABLED to activate the  bgp session of virtual circuit, DISABLED to deactivate.
+        Set to `ENABLED` (the default) to activate the BGP session of the virtual circuit, set to `DISABLED` to deactivate the virtual circuit.
         """
         return pulumi.get(self, "bgp_admin_state")
 
@@ -242,7 +242,7 @@ class GetVirtualCircuitResult:
     @pulumi.getter(name="isBfdEnabled")
     def is_bfd_enabled(self) -> bool:
         """
-        Set to true to enable BFD for ipv4 Bgp Peering, false to disable. If not set, default is false
+        Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
         """
         return pulumi.get(self, "is_bfd_enabled")
 

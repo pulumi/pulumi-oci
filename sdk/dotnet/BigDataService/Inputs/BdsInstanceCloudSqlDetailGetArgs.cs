@@ -13,19 +13,19 @@ namespace Pulumi.Oci.BigDataService.Inputs
     public sealed class BdsInstanceCloudSqlDetailGetArgs : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The size of block volume in GB to be attached to a given node. All the details needed for attaching the block volume are managed by service itself.
+        /// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
         /// </summary>
         [Input("blockVolumeSizeInGbs", required: true)]
         public Input<string> BlockVolumeSizeInGbs { get; set; } = null!;
 
         /// <summary>
-        /// IP address of the node.
+        /// IP address of the node
         /// </summary>
         [Input("ipAddress")]
         public Input<string>? IpAddress { get; set; }
 
         /// <summary>
-        /// Boolean flag specifying whether or not Kerberos principals are mapped to database users.
+        /// Boolean flag specifying whether or not are Kerberos principals mapped to database users.
         /// </summary>
         [Input("isKerberosMappedToDatabaseUsers")]
         public Input<bool>? IsKerberosMappedToDatabaseUsers { get; set; }
@@ -34,7 +34,7 @@ namespace Pulumi.Oci.BigDataService.Inputs
         private InputList<Inputs.BdsInstanceCloudSqlDetailKerberosDetailGetArgs>? _kerberosDetails;
 
         /// <summary>
-        /// Details about the Kerberos principals.
+        /// Details about Kerberos principals
         /// </summary>
         public InputList<Inputs.BdsInstanceCloudSqlDetailKerberosDetailGetArgs> KerberosDetails
         {
@@ -43,7 +43,7 @@ namespace Pulumi.Oci.BigDataService.Inputs
         }
 
         /// <summary>
-        /// (Updatable) Shape of the node.
+        /// Shape of the node
         /// </summary>
         [Input("shape", required: true)]
         public Input<string> Shape { get; set; } = null!;

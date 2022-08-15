@@ -77,6 +77,36 @@ public final class ManagementAgentPluginListArgs extends com.pulumi.resources.Re
     }
 
     /**
+     * Plugin Status
+     * 
+     */
+    @Import(name="pluginStatus")
+    private @Nullable Output<String> pluginStatus;
+
+    /**
+     * @return Plugin Status
+     * 
+     */
+    public Optional<Output<String>> pluginStatus() {
+        return Optional.ofNullable(this.pluginStatus);
+    }
+
+    /**
+     * Status message of the Plugin
+     * 
+     */
+    @Import(name="pluginStatusMessage")
+    private @Nullable Output<String> pluginStatusMessage;
+
+    /**
+     * @return Status message of the Plugin
+     * 
+     */
+    public Optional<Output<String>> pluginStatusMessage() {
+        return Optional.ofNullable(this.pluginStatusMessage);
+    }
+
+    /**
      * Plugin Version
      * 
      */
@@ -98,6 +128,8 @@ public final class ManagementAgentPluginListArgs extends com.pulumi.resources.Re
         this.pluginDisplayName = $.pluginDisplayName;
         this.pluginId = $.pluginId;
         this.pluginName = $.pluginName;
+        this.pluginStatus = $.pluginStatus;
+        this.pluginStatusMessage = $.pluginStatusMessage;
         this.pluginVersion = $.pluginVersion;
     }
 
@@ -201,6 +233,48 @@ public final class ManagementAgentPluginListArgs extends com.pulumi.resources.Re
          */
         public Builder pluginName(String pluginName) {
             return pluginName(Output.of(pluginName));
+        }
+
+        /**
+         * @param pluginStatus Plugin Status
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pluginStatus(@Nullable Output<String> pluginStatus) {
+            $.pluginStatus = pluginStatus;
+            return this;
+        }
+
+        /**
+         * @param pluginStatus Plugin Status
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pluginStatus(String pluginStatus) {
+            return pluginStatus(Output.of(pluginStatus));
+        }
+
+        /**
+         * @param pluginStatusMessage Status message of the Plugin
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pluginStatusMessage(@Nullable Output<String> pluginStatusMessage) {
+            $.pluginStatusMessage = pluginStatusMessage;
+            return this;
+        }
+
+        /**
+         * @param pluginStatusMessage Status message of the Plugin
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pluginStatusMessage(String pluginStatusMessage) {
+            return pluginStatusMessage(Output.of(pluginStatusMessage));
         }
 
         /**

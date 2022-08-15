@@ -12,16 +12,14 @@ import (
 
 // This data source provides the list of Budgets in Oracle Cloud Infrastructure Budget service.
 //
-// Gets a list of Budgets in a compartment.
+// Gets a list of budgets in a compartment.
 //
-// By default, ListBudgets returns budgets of 'COMPARTMENT' target type and the budget records with only ONE target compartment OCID.
+// By default, ListBudgets returns budgets of the 'COMPARTMENT' target type, and the budget records with only one target compartment OCID.
 //
-// To list ALL budgets, set the targetType query parameter to ALL.
-// Example:
-//   'targetType=ALL'
+// To list all budgets, set the targetType query parameter to ALL (for example: 'targetType=ALL').
 //
-// Additional targetTypes would be available in future releases. Clients should ignore new targetType
-// or upgrade to latest version of client SDK to handle new targetType.
+// Additional targetTypes would be available in future releases. Clients should ignore new targetTypes,
+// or upgrade to the latest version of the client SDK to handle new targetTypes.
 //
 // ## Example Usage
 //
@@ -61,12 +59,12 @@ func GetBudgets(ctx *pulumi.Context, args *GetBudgetsArgs, opts ...pulumi.Invoke
 type GetBudgetsArgs struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
-	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+	// A user-friendly name. This does not have to be unique, and it's changeable.  Example: `My new resource`
 	DisplayName *string            `pulumi:"displayName"`
 	Filters     []GetBudgetsFilter `pulumi:"filters"`
 	// The current state of the resource to filter by.
 	State *string `pulumi:"state"`
-	// The type of target to filter by.
+	// The type of target to filter by:
 	// * ALL - List all budgets
 	// * COMPARTMENT - List all budgets with targetType == "COMPARTMENT"
 	// * TAG - List all budgets with targetType == "TAG"
@@ -77,9 +75,9 @@ type GetBudgetsArgs struct {
 type GetBudgetsResult struct {
 	// The list of budgets.
 	Budgets []GetBudgetsBudget `pulumi:"budgets"`
-	// The OCID of the compartment
+	// The OCID of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
-	// The display name of the budget.
+	// The display name of the budget. Avoid entering confidential information.
 	DisplayName *string            `pulumi:"displayName"`
 	Filters     []GetBudgetsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
@@ -107,12 +105,12 @@ func GetBudgetsOutput(ctx *pulumi.Context, args GetBudgetsOutputArgs, opts ...pu
 type GetBudgetsOutputArgs struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+	// A user-friendly name. This does not have to be unique, and it's changeable.  Example: `My new resource`
 	DisplayName pulumi.StringPtrInput      `pulumi:"displayName"`
 	Filters     GetBudgetsFilterArrayInput `pulumi:"filters"`
 	// The current state of the resource to filter by.
 	State pulumi.StringPtrInput `pulumi:"state"`
-	// The type of target to filter by.
+	// The type of target to filter by:
 	// * ALL - List all budgets
 	// * COMPARTMENT - List all budgets with targetType == "COMPARTMENT"
 	// * TAG - List all budgets with targetType == "TAG"
@@ -143,12 +141,12 @@ func (o GetBudgetsResultOutput) Budgets() GetBudgetsBudgetArrayOutput {
 	return o.ApplyT(func(v GetBudgetsResult) []GetBudgetsBudget { return v.Budgets }).(GetBudgetsBudgetArrayOutput)
 }
 
-// The OCID of the compartment
+// The OCID of the compartment.
 func (o GetBudgetsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBudgetsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// The display name of the budget.
+// The display name of the budget. Avoid entering confidential information.
 func (o GetBudgetsResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetBudgetsResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }

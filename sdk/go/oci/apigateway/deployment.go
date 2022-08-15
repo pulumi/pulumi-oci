@@ -31,13 +31,6 @@ import (
 // 			CompartmentId: pulumi.Any(_var.Compartment_id),
 // 			GatewayId:     pulumi.Any(oci_apigateway_gateway.Test_gateway.Id),
 // 			PathPrefix:    pulumi.Any(_var.Deployment_path_prefix),
-// 			DefinedTags: pulumi.AnyMap{
-// 				"Operations.CostCenter": pulumi.Any("42"),
-// 			},
-// 			DisplayName: pulumi.Any(_var.Deployment_display_name),
-// 			FreeformTags: pulumi.AnyMap{
-// 				"Department": pulumi.Any("Finance"),
-// 			},
 // 			Specification: &apigateway.DeploymentSpecificationArgs{
 // 				LoggingPolicies: &apigateway.DeploymentSpecificationLoggingPoliciesArgs{
 // 					AccessLog: &apigateway.DeploymentSpecificationLoggingPoliciesAccessLogArgs{
@@ -101,6 +94,9 @@ import (
 // 					RateLimiting: &apigateway.DeploymentSpecificationRequestPoliciesRateLimitingArgs{
 // 						RateInRequestsPerSecond: pulumi.Any(_var.Deployment_specification_request_policies_rate_limiting_rate_in_requests_per_second),
 // 						RateKey:                 pulumi.Any(_var.Deployment_specification_request_policies_rate_limiting_rate_key),
+// 					},
+// 					UsagePlans: &apigateway.DeploymentSpecificationRequestPoliciesUsagePlansArgs{
+// 						TokenLocations: pulumi.Any(_var.Deployment_specification_request_policies_usage_plans_token_locations),
 // 					},
 // 				},
 // 				Routes: apigateway.DeploymentSpecificationRouteArray{
@@ -271,6 +267,13 @@ import (
 // 					},
 // 				},
 // 			},
+// 			DefinedTags: pulumi.AnyMap{
+// 				"Operations.CostCenter": pulumi.Any("42"),
+// 			},
+// 			DisplayName: pulumi.Any(_var.Deployment_display_name),
+// 			FreeformTags: pulumi.AnyMap{
+// 				"Department": pulumi.Any("Finance"),
+// 			},
 // 		})
 // 		if err != nil {
 // 			return err
@@ -331,6 +334,9 @@ func NewDeployment(ctx *pulumi.Context,
 	}
 	if args.PathPrefix == nil {
 		return nil, errors.New("invalid value for required argument 'PathPrefix'")
+	}
+	if args.Specification == nil {
+		return nil, errors.New("invalid value for required argument 'Specification'")
 	}
 	var resource Deployment
 	err := ctx.RegisterResource("oci:ApiGateway/deployment:Deployment", name, args, &resource, opts...)
@@ -425,7 +431,7 @@ type deploymentArgs struct {
 	// A path on which to deploy all routes contained in the API deployment specification. For more information, see [Deploying an API on an API Gateway by Creating an API Deployment](https://docs.cloud.oracle.com/iaas/Content/APIGateway/Tasks/apigatewaycreatingdeployment.htm).
 	PathPrefix string `pulumi:"pathPrefix"`
 	// (Updatable) The logical configuration of the API exposed by a deployment.
-	Specification *DeploymentSpecification `pulumi:"specification"`
+	Specification DeploymentSpecification `pulumi:"specification"`
 }
 
 // The set of arguments for constructing a Deployment resource.
@@ -443,7 +449,7 @@ type DeploymentArgs struct {
 	// A path on which to deploy all routes contained in the API deployment specification. For more information, see [Deploying an API on an API Gateway by Creating an API Deployment](https://docs.cloud.oracle.com/iaas/Content/APIGateway/Tasks/apigatewaycreatingdeployment.htm).
 	PathPrefix pulumi.StringInput
 	// (Updatable) The logical configuration of the API exposed by a deployment.
-	Specification DeploymentSpecificationPtrInput
+	Specification DeploymentSpecificationInput
 }
 
 func (DeploymentArgs) ElementType() reflect.Type {

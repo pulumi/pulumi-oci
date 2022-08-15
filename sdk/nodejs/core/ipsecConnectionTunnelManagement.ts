@@ -93,6 +93,7 @@ export class IpsecConnectionTunnelManagement extends pulumi.CustomResource {
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
     public readonly displayName!: pulumi.Output<string>;
+    public readonly dpdConfigs!: pulumi.Output<outputs.Core.IpsecConnectionTunnelManagementDpdConfig[] | undefined>;
     public /*out*/ readonly dpdMode!: pulumi.Output<string>;
     public /*out*/ readonly dpdTimeoutInSec!: pulumi.Output<number>;
     /**
@@ -161,6 +162,7 @@ export class IpsecConnectionTunnelManagement extends pulumi.CustomResource {
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["cpeIp"] = state ? state.cpeIp : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
+            resourceInputs["dpdConfigs"] = state ? state.dpdConfigs : undefined;
             resourceInputs["dpdMode"] = state ? state.dpdMode : undefined;
             resourceInputs["dpdTimeoutInSec"] = state ? state.dpdTimeoutInSec : undefined;
             resourceInputs["encryptionDomainConfig"] = state ? state.encryptionDomainConfig : undefined;
@@ -191,6 +193,7 @@ export class IpsecConnectionTunnelManagement extends pulumi.CustomResource {
             }
             resourceInputs["bgpSessionInfos"] = args ? args.bgpSessionInfos : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
+            resourceInputs["dpdConfigs"] = args ? args.dpdConfigs : undefined;
             resourceInputs["encryptionDomainConfig"] = args ? args.encryptionDomainConfig : undefined;
             resourceInputs["ikeVersion"] = args ? args.ikeVersion : undefined;
             resourceInputs["ipsecId"] = args ? args.ipsecId : undefined;
@@ -236,6 +239,7 @@ export interface IpsecConnectionTunnelManagementState {
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
     displayName?: pulumi.Input<string>;
+    dpdConfigs?: pulumi.Input<pulumi.Input<inputs.Core.IpsecConnectionTunnelManagementDpdConfig>[]>;
     dpdMode?: pulumi.Input<string>;
     dpdTimeoutInSec?: pulumi.Input<number>;
     /**
@@ -300,6 +304,7 @@ export interface IpsecConnectionTunnelManagementArgs {
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
     displayName?: pulumi.Input<string>;
+    dpdConfigs?: pulumi.Input<pulumi.Input<inputs.Core.IpsecConnectionTunnelManagementDpdConfig>[]>;
     /**
      * Configuration information used by the encryption domain policy. Required if the tunnel uses POLICY routing.
      */

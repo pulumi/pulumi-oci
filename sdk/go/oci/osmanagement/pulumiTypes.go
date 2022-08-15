@@ -1809,6 +1809,397 @@ func (o GetManagedInstanceManagedInstanceGroupArrayOutput) Index(i pulumi.IntInp
 	}).(GetManagedInstanceManagedInstanceGroupOutput)
 }
 
+type GetManagedInstanceModuleStreamsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetManagedInstanceModuleStreamsFilterInput is an input type that accepts GetManagedInstanceModuleStreamsFilterArgs and GetManagedInstanceModuleStreamsFilterOutput values.
+// You can construct a concrete instance of `GetManagedInstanceModuleStreamsFilterInput` via:
+//
+//          GetManagedInstanceModuleStreamsFilterArgs{...}
+type GetManagedInstanceModuleStreamsFilterInput interface {
+	pulumi.Input
+
+	ToGetManagedInstanceModuleStreamsFilterOutput() GetManagedInstanceModuleStreamsFilterOutput
+	ToGetManagedInstanceModuleStreamsFilterOutputWithContext(context.Context) GetManagedInstanceModuleStreamsFilterOutput
+}
+
+type GetManagedInstanceModuleStreamsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetManagedInstanceModuleStreamsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedInstanceModuleStreamsFilter)(nil)).Elem()
+}
+
+func (i GetManagedInstanceModuleStreamsFilterArgs) ToGetManagedInstanceModuleStreamsFilterOutput() GetManagedInstanceModuleStreamsFilterOutput {
+	return i.ToGetManagedInstanceModuleStreamsFilterOutputWithContext(context.Background())
+}
+
+func (i GetManagedInstanceModuleStreamsFilterArgs) ToGetManagedInstanceModuleStreamsFilterOutputWithContext(ctx context.Context) GetManagedInstanceModuleStreamsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceModuleStreamsFilterOutput)
+}
+
+// GetManagedInstanceModuleStreamsFilterArrayInput is an input type that accepts GetManagedInstanceModuleStreamsFilterArray and GetManagedInstanceModuleStreamsFilterArrayOutput values.
+// You can construct a concrete instance of `GetManagedInstanceModuleStreamsFilterArrayInput` via:
+//
+//          GetManagedInstanceModuleStreamsFilterArray{ GetManagedInstanceModuleStreamsFilterArgs{...} }
+type GetManagedInstanceModuleStreamsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedInstanceModuleStreamsFilterArrayOutput() GetManagedInstanceModuleStreamsFilterArrayOutput
+	ToGetManagedInstanceModuleStreamsFilterArrayOutputWithContext(context.Context) GetManagedInstanceModuleStreamsFilterArrayOutput
+}
+
+type GetManagedInstanceModuleStreamsFilterArray []GetManagedInstanceModuleStreamsFilterInput
+
+func (GetManagedInstanceModuleStreamsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedInstanceModuleStreamsFilter)(nil)).Elem()
+}
+
+func (i GetManagedInstanceModuleStreamsFilterArray) ToGetManagedInstanceModuleStreamsFilterArrayOutput() GetManagedInstanceModuleStreamsFilterArrayOutput {
+	return i.ToGetManagedInstanceModuleStreamsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedInstanceModuleStreamsFilterArray) ToGetManagedInstanceModuleStreamsFilterArrayOutputWithContext(ctx context.Context) GetManagedInstanceModuleStreamsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceModuleStreamsFilterArrayOutput)
+}
+
+type GetManagedInstanceModuleStreamsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetManagedInstanceModuleStreamsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedInstanceModuleStreamsFilter)(nil)).Elem()
+}
+
+func (o GetManagedInstanceModuleStreamsFilterOutput) ToGetManagedInstanceModuleStreamsFilterOutput() GetManagedInstanceModuleStreamsFilterOutput {
+	return o
+}
+
+func (o GetManagedInstanceModuleStreamsFilterOutput) ToGetManagedInstanceModuleStreamsFilterOutputWithContext(ctx context.Context) GetManagedInstanceModuleStreamsFilterOutput {
+	return o
+}
+
+func (o GetManagedInstanceModuleStreamsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedInstanceModuleStreamsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetManagedInstanceModuleStreamsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceModuleStreamsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetManagedInstanceModuleStreamsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagedInstanceModuleStreamsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetManagedInstanceModuleStreamsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedInstanceModuleStreamsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedInstanceModuleStreamsFilter)(nil)).Elem()
+}
+
+func (o GetManagedInstanceModuleStreamsFilterArrayOutput) ToGetManagedInstanceModuleStreamsFilterArrayOutput() GetManagedInstanceModuleStreamsFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedInstanceModuleStreamsFilterArrayOutput) ToGetManagedInstanceModuleStreamsFilterArrayOutputWithContext(ctx context.Context) GetManagedInstanceModuleStreamsFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedInstanceModuleStreamsFilterArrayOutput) Index(i pulumi.IntInput) GetManagedInstanceModuleStreamsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedInstanceModuleStreamsFilter {
+		return vs[0].([]GetManagedInstanceModuleStreamsFilter)[vs[1].(int)]
+	}).(GetManagedInstanceModuleStreamsFilterOutput)
+}
+
+type GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance struct {
+	// The name of a module.  This parameter is required if a streamName is specified.
+	ModuleName string `pulumi:"moduleName"`
+	// The set of profiles that the module stream contains.
+	Profiles []GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile `pulumi:"profiles"`
+	// The OCID of the software source that provides this module stream.
+	SoftwareSourceId string `pulumi:"softwareSourceId"`
+	// The status of the stream
+	Status string `pulumi:"status"`
+	// The name of the stream of the containing module.  This parameter is required if a profileName is specified.
+	StreamName string `pulumi:"streamName"`
+	// The date and time of the last status change for this profile, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+	TimeModified string `pulumi:"timeModified"`
+}
+
+// GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceInput is an input type that accepts GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArgs and GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutput values.
+// You can construct a concrete instance of `GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceInput` via:
+//
+//          GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArgs{...}
+type GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceInput interface {
+	pulumi.Input
+
+	ToGetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutput() GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutput
+	ToGetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutputWithContext(context.Context) GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutput
+}
+
+type GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArgs struct {
+	// The name of a module.  This parameter is required if a streamName is specified.
+	ModuleName pulumi.StringInput `pulumi:"moduleName"`
+	// The set of profiles that the module stream contains.
+	Profiles GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArrayInput `pulumi:"profiles"`
+	// The OCID of the software source that provides this module stream.
+	SoftwareSourceId pulumi.StringInput `pulumi:"softwareSourceId"`
+	// The status of the stream
+	Status pulumi.StringInput `pulumi:"status"`
+	// The name of the stream of the containing module.  This parameter is required if a profileName is specified.
+	StreamName pulumi.StringInput `pulumi:"streamName"`
+	// The date and time of the last status change for this profile, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+	TimeModified pulumi.StringInput `pulumi:"timeModified"`
+}
+
+func (GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance)(nil)).Elem()
+}
+
+func (i GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArgs) ToGetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutput() GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutput {
+	return i.ToGetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutputWithContext(context.Background())
+}
+
+func (i GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArgs) ToGetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutputWithContext(ctx context.Context) GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutput)
+}
+
+// GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArrayInput is an input type that accepts GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArray and GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArrayOutput values.
+// You can construct a concrete instance of `GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArrayInput` via:
+//
+//          GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArray{ GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArgs{...} }
+type GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArrayOutput() GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArrayOutput
+	ToGetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArrayOutputWithContext(context.Context) GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArrayOutput
+}
+
+type GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArray []GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceInput
+
+func (GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance)(nil)).Elem()
+}
+
+func (i GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArray) ToGetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArrayOutput() GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArrayOutput {
+	return i.ToGetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArray) ToGetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArrayOutputWithContext(ctx context.Context) GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArrayOutput)
+}
+
+type GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutput struct{ *pulumi.OutputState }
+
+func (GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance)(nil)).Elem()
+}
+
+func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutput) ToGetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutput() GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutput {
+	return o
+}
+
+func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutput) ToGetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutputWithContext(ctx context.Context) GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutput {
+	return o
+}
+
+// The name of a module.  This parameter is required if a streamName is specified.
+func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutput) ModuleName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance) string { return v.ModuleName }).(pulumi.StringOutput)
+}
+
+// The set of profiles that the module stream contains.
+func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutput) Profiles() GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArrayOutput {
+	return o.ApplyT(func(v GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance) []GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile {
+		return v.Profiles
+	}).(GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArrayOutput)
+}
+
+// The OCID of the software source that provides this module stream.
+func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutput) SoftwareSourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance) string { return v.SoftwareSourceId }).(pulumi.StringOutput)
+}
+
+// The status of the stream
+func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// The name of the stream of the containing module.  This parameter is required if a profileName is specified.
+func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutput) StreamName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance) string { return v.StreamName }).(pulumi.StringOutput)
+}
+
+// The date and time of the last status change for this profile, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutput) TimeModified() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance) string { return v.TimeModified }).(pulumi.StringOutput)
+}
+
+type GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance)(nil)).Elem()
+}
+
+func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArrayOutput) ToGetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArrayOutput() GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArrayOutput {
+	return o
+}
+
+func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArrayOutput) ToGetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArrayOutputWithContext(ctx context.Context) GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArrayOutput {
+	return o
+}
+
+func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArrayOutput) Index(i pulumi.IntInput) GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance {
+		return vs[0].([]GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance)[vs[1].(int)]
+	}).(GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutput)
+}
+
+type GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile struct {
+	// The name of a module.  This parameter is required if a streamName is specified.
+	ModuleName string `pulumi:"moduleName"`
+	// The name of the profile
+	ProfileName string `pulumi:"profileName"`
+	// The status of the stream
+	Status string `pulumi:"status"`
+	// The name of the stream of the containing module.  This parameter is required if a profileName is specified.
+	StreamName string `pulumi:"streamName"`
+	// The date and time of the last status change for this profile, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+	TimeModified string `pulumi:"timeModified"`
+}
+
+// GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileInput is an input type that accepts GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArgs and GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutput values.
+// You can construct a concrete instance of `GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileInput` via:
+//
+//          GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArgs{...}
+type GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileInput interface {
+	pulumi.Input
+
+	ToGetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutput() GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutput
+	ToGetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutputWithContext(context.Context) GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutput
+}
+
+type GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArgs struct {
+	// The name of a module.  This parameter is required if a streamName is specified.
+	ModuleName pulumi.StringInput `pulumi:"moduleName"`
+	// The name of the profile
+	ProfileName pulumi.StringInput `pulumi:"profileName"`
+	// The status of the stream
+	Status pulumi.StringInput `pulumi:"status"`
+	// The name of the stream of the containing module.  This parameter is required if a profileName is specified.
+	StreamName pulumi.StringInput `pulumi:"streamName"`
+	// The date and time of the last status change for this profile, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+	TimeModified pulumi.StringInput `pulumi:"timeModified"`
+}
+
+func (GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile)(nil)).Elem()
+}
+
+func (i GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArgs) ToGetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutput() GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutput {
+	return i.ToGetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutputWithContext(context.Background())
+}
+
+func (i GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArgs) ToGetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutputWithContext(ctx context.Context) GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutput)
+}
+
+// GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArrayInput is an input type that accepts GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArray and GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArrayOutput values.
+// You can construct a concrete instance of `GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArrayInput` via:
+//
+//          GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArray{ GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArgs{...} }
+type GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArrayOutput() GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArrayOutput
+	ToGetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArrayOutputWithContext(context.Context) GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArrayOutput
+}
+
+type GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArray []GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileInput
+
+func (GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile)(nil)).Elem()
+}
+
+func (i GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArray) ToGetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArrayOutput() GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArrayOutput {
+	return i.ToGetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArray) ToGetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArrayOutputWithContext(ctx context.Context) GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArrayOutput)
+}
+
+type GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutput struct{ *pulumi.OutputState }
+
+func (GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile)(nil)).Elem()
+}
+
+func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutput) ToGetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutput() GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutput {
+	return o
+}
+
+func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutput) ToGetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutputWithContext(ctx context.Context) GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutput {
+	return o
+}
+
+// The name of a module.  This parameter is required if a streamName is specified.
+func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutput) ModuleName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile) string {
+		return v.ModuleName
+	}).(pulumi.StringOutput)
+}
+
+// The name of the profile
+func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutput) ProfileName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile) string {
+		return v.ProfileName
+	}).(pulumi.StringOutput)
+}
+
+// The status of the stream
+func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// The name of the stream of the containing module.  This parameter is required if a profileName is specified.
+func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutput) StreamName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile) string {
+		return v.StreamName
+	}).(pulumi.StringOutput)
+}
+
+// The date and time of the last status change for this profile, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutput) TimeModified() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile) string {
+		return v.TimeModified
+	}).(pulumi.StringOutput)
+}
+
+type GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile)(nil)).Elem()
+}
+
+func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArrayOutput) ToGetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArrayOutput() GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArrayOutput {
+	return o
+}
+
+func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArrayOutput) ToGetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArrayOutputWithContext(ctx context.Context) GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArrayOutput {
+	return o
+}
+
+func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArrayOutput) Index(i pulumi.IntInput) GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile {
+		return vs[0].([]GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile)[vs[1].(int)]
+	}).(GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutput)
+}
+
 type GetManagedInstanceParentSoftwareSource struct {
 	// software source identifier
 	Id string `pulumi:"id"`
@@ -1913,6 +2304,253 @@ func (o GetManagedInstanceParentSoftwareSourceArrayOutput) Index(i pulumi.IntInp
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedInstanceParentSoftwareSource {
 		return vs[0].([]GetManagedInstanceParentSoftwareSource)[vs[1].(int)]
 	}).(GetManagedInstanceParentSoftwareSourceOutput)
+}
+
+type GetManagedInstanceStreamProfileFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetManagedInstanceStreamProfileFilterInput is an input type that accepts GetManagedInstanceStreamProfileFilterArgs and GetManagedInstanceStreamProfileFilterOutput values.
+// You can construct a concrete instance of `GetManagedInstanceStreamProfileFilterInput` via:
+//
+//          GetManagedInstanceStreamProfileFilterArgs{...}
+type GetManagedInstanceStreamProfileFilterInput interface {
+	pulumi.Input
+
+	ToGetManagedInstanceStreamProfileFilterOutput() GetManagedInstanceStreamProfileFilterOutput
+	ToGetManagedInstanceStreamProfileFilterOutputWithContext(context.Context) GetManagedInstanceStreamProfileFilterOutput
+}
+
+type GetManagedInstanceStreamProfileFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetManagedInstanceStreamProfileFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedInstanceStreamProfileFilter)(nil)).Elem()
+}
+
+func (i GetManagedInstanceStreamProfileFilterArgs) ToGetManagedInstanceStreamProfileFilterOutput() GetManagedInstanceStreamProfileFilterOutput {
+	return i.ToGetManagedInstanceStreamProfileFilterOutputWithContext(context.Background())
+}
+
+func (i GetManagedInstanceStreamProfileFilterArgs) ToGetManagedInstanceStreamProfileFilterOutputWithContext(ctx context.Context) GetManagedInstanceStreamProfileFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceStreamProfileFilterOutput)
+}
+
+// GetManagedInstanceStreamProfileFilterArrayInput is an input type that accepts GetManagedInstanceStreamProfileFilterArray and GetManagedInstanceStreamProfileFilterArrayOutput values.
+// You can construct a concrete instance of `GetManagedInstanceStreamProfileFilterArrayInput` via:
+//
+//          GetManagedInstanceStreamProfileFilterArray{ GetManagedInstanceStreamProfileFilterArgs{...} }
+type GetManagedInstanceStreamProfileFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedInstanceStreamProfileFilterArrayOutput() GetManagedInstanceStreamProfileFilterArrayOutput
+	ToGetManagedInstanceStreamProfileFilterArrayOutputWithContext(context.Context) GetManagedInstanceStreamProfileFilterArrayOutput
+}
+
+type GetManagedInstanceStreamProfileFilterArray []GetManagedInstanceStreamProfileFilterInput
+
+func (GetManagedInstanceStreamProfileFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedInstanceStreamProfileFilter)(nil)).Elem()
+}
+
+func (i GetManagedInstanceStreamProfileFilterArray) ToGetManagedInstanceStreamProfileFilterArrayOutput() GetManagedInstanceStreamProfileFilterArrayOutput {
+	return i.ToGetManagedInstanceStreamProfileFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedInstanceStreamProfileFilterArray) ToGetManagedInstanceStreamProfileFilterArrayOutputWithContext(ctx context.Context) GetManagedInstanceStreamProfileFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceStreamProfileFilterArrayOutput)
+}
+
+type GetManagedInstanceStreamProfileFilterOutput struct{ *pulumi.OutputState }
+
+func (GetManagedInstanceStreamProfileFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedInstanceStreamProfileFilter)(nil)).Elem()
+}
+
+func (o GetManagedInstanceStreamProfileFilterOutput) ToGetManagedInstanceStreamProfileFilterOutput() GetManagedInstanceStreamProfileFilterOutput {
+	return o
+}
+
+func (o GetManagedInstanceStreamProfileFilterOutput) ToGetManagedInstanceStreamProfileFilterOutputWithContext(ctx context.Context) GetManagedInstanceStreamProfileFilterOutput {
+	return o
+}
+
+func (o GetManagedInstanceStreamProfileFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedInstanceStreamProfileFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetManagedInstanceStreamProfileFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceStreamProfileFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetManagedInstanceStreamProfileFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagedInstanceStreamProfileFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetManagedInstanceStreamProfileFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedInstanceStreamProfileFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedInstanceStreamProfileFilter)(nil)).Elem()
+}
+
+func (o GetManagedInstanceStreamProfileFilterArrayOutput) ToGetManagedInstanceStreamProfileFilterArrayOutput() GetManagedInstanceStreamProfileFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedInstanceStreamProfileFilterArrayOutput) ToGetManagedInstanceStreamProfileFilterArrayOutputWithContext(ctx context.Context) GetManagedInstanceStreamProfileFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedInstanceStreamProfileFilterArrayOutput) Index(i pulumi.IntInput) GetManagedInstanceStreamProfileFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedInstanceStreamProfileFilter {
+		return vs[0].([]GetManagedInstanceStreamProfileFilter)[vs[1].(int)]
+	}).(GetManagedInstanceStreamProfileFilterOutput)
+}
+
+type GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance struct {
+	// The name of a module.  This parameter is required if a streamName is specified.
+	ModuleName string `pulumi:"moduleName"`
+	// The name of the profile of the containing module stream
+	ProfileName string `pulumi:"profileName"`
+	// The status of the profile.
+	Status string `pulumi:"status"`
+	// The name of the stream of the containing module.  This parameter is required if a profileName is specified.
+	StreamName string `pulumi:"streamName"`
+	// The date and time of the last status change for this profile, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+	TimeModified string `pulumi:"timeModified"`
+}
+
+// GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceInput is an input type that accepts GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArgs and GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutput values.
+// You can construct a concrete instance of `GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceInput` via:
+//
+//          GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArgs{...}
+type GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceInput interface {
+	pulumi.Input
+
+	ToGetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutput() GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutput
+	ToGetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutputWithContext(context.Context) GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutput
+}
+
+type GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArgs struct {
+	// The name of a module.  This parameter is required if a streamName is specified.
+	ModuleName pulumi.StringInput `pulumi:"moduleName"`
+	// The name of the profile of the containing module stream
+	ProfileName pulumi.StringInput `pulumi:"profileName"`
+	// The status of the profile.
+	Status pulumi.StringInput `pulumi:"status"`
+	// The name of the stream of the containing module.  This parameter is required if a profileName is specified.
+	StreamName pulumi.StringInput `pulumi:"streamName"`
+	// The date and time of the last status change for this profile, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+	TimeModified pulumi.StringInput `pulumi:"timeModified"`
+}
+
+func (GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance)(nil)).Elem()
+}
+
+func (i GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArgs) ToGetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutput() GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutput {
+	return i.ToGetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutputWithContext(context.Background())
+}
+
+func (i GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArgs) ToGetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutputWithContext(ctx context.Context) GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutput)
+}
+
+// GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArrayInput is an input type that accepts GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArray and GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArrayOutput values.
+// You can construct a concrete instance of `GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArrayInput` via:
+//
+//          GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArray{ GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArgs{...} }
+type GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArrayOutput() GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArrayOutput
+	ToGetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArrayOutputWithContext(context.Context) GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArrayOutput
+}
+
+type GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArray []GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceInput
+
+func (GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance)(nil)).Elem()
+}
+
+func (i GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArray) ToGetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArrayOutput() GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArrayOutput {
+	return i.ToGetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArray) ToGetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArrayOutputWithContext(ctx context.Context) GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArrayOutput)
+}
+
+type GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutput struct{ *pulumi.OutputState }
+
+func (GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance)(nil)).Elem()
+}
+
+func (o GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutput) ToGetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutput() GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutput {
+	return o
+}
+
+func (o GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutput) ToGetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutputWithContext(ctx context.Context) GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutput {
+	return o
+}
+
+// The name of a module.  This parameter is required if a streamName is specified.
+func (o GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutput) ModuleName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance) string {
+		return v.ModuleName
+	}).(pulumi.StringOutput)
+}
+
+// The name of the profile of the containing module stream
+func (o GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutput) ProfileName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance) string {
+		return v.ProfileName
+	}).(pulumi.StringOutput)
+}
+
+// The status of the profile.
+func (o GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// The name of the stream of the containing module.  This parameter is required if a profileName is specified.
+func (o GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutput) StreamName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance) string {
+		return v.StreamName
+	}).(pulumi.StringOutput)
+}
+
+// The date and time of the last status change for this profile, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+func (o GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutput) TimeModified() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance) string {
+		return v.TimeModified
+	}).(pulumi.StringOutput)
+}
+
+type GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance)(nil)).Elem()
+}
+
+func (o GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArrayOutput) ToGetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArrayOutput() GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArrayOutput {
+	return o
+}
+
+func (o GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArrayOutput) ToGetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArrayOutputWithContext(ctx context.Context) GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArrayOutput {
+	return o
+}
+
+func (o GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArrayOutput) Index(i pulumi.IntInput) GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance {
+		return vs[0].([]GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance)[vs[1].(int)]
+	}).(GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutput)
 }
 
 type GetManagedInstancesFilter struct {
@@ -2881,6 +3519,227 @@ func (o GetSoftwareSourceAssociatedManagedInstanceArrayOutput) Index(i pulumi.In
 	}).(GetSoftwareSourceAssociatedManagedInstanceOutput)
 }
 
+type GetSoftwareSourceStreamProfileFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSoftwareSourceStreamProfileFilterInput is an input type that accepts GetSoftwareSourceStreamProfileFilterArgs and GetSoftwareSourceStreamProfileFilterOutput values.
+// You can construct a concrete instance of `GetSoftwareSourceStreamProfileFilterInput` via:
+//
+//          GetSoftwareSourceStreamProfileFilterArgs{...}
+type GetSoftwareSourceStreamProfileFilterInput interface {
+	pulumi.Input
+
+	ToGetSoftwareSourceStreamProfileFilterOutput() GetSoftwareSourceStreamProfileFilterOutput
+	ToGetSoftwareSourceStreamProfileFilterOutputWithContext(context.Context) GetSoftwareSourceStreamProfileFilterOutput
+}
+
+type GetSoftwareSourceStreamProfileFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSoftwareSourceStreamProfileFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSoftwareSourceStreamProfileFilter)(nil)).Elem()
+}
+
+func (i GetSoftwareSourceStreamProfileFilterArgs) ToGetSoftwareSourceStreamProfileFilterOutput() GetSoftwareSourceStreamProfileFilterOutput {
+	return i.ToGetSoftwareSourceStreamProfileFilterOutputWithContext(context.Background())
+}
+
+func (i GetSoftwareSourceStreamProfileFilterArgs) ToGetSoftwareSourceStreamProfileFilterOutputWithContext(ctx context.Context) GetSoftwareSourceStreamProfileFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceStreamProfileFilterOutput)
+}
+
+// GetSoftwareSourceStreamProfileFilterArrayInput is an input type that accepts GetSoftwareSourceStreamProfileFilterArray and GetSoftwareSourceStreamProfileFilterArrayOutput values.
+// You can construct a concrete instance of `GetSoftwareSourceStreamProfileFilterArrayInput` via:
+//
+//          GetSoftwareSourceStreamProfileFilterArray{ GetSoftwareSourceStreamProfileFilterArgs{...} }
+type GetSoftwareSourceStreamProfileFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSoftwareSourceStreamProfileFilterArrayOutput() GetSoftwareSourceStreamProfileFilterArrayOutput
+	ToGetSoftwareSourceStreamProfileFilterArrayOutputWithContext(context.Context) GetSoftwareSourceStreamProfileFilterArrayOutput
+}
+
+type GetSoftwareSourceStreamProfileFilterArray []GetSoftwareSourceStreamProfileFilterInput
+
+func (GetSoftwareSourceStreamProfileFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSoftwareSourceStreamProfileFilter)(nil)).Elem()
+}
+
+func (i GetSoftwareSourceStreamProfileFilterArray) ToGetSoftwareSourceStreamProfileFilterArrayOutput() GetSoftwareSourceStreamProfileFilterArrayOutput {
+	return i.ToGetSoftwareSourceStreamProfileFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSoftwareSourceStreamProfileFilterArray) ToGetSoftwareSourceStreamProfileFilterArrayOutputWithContext(ctx context.Context) GetSoftwareSourceStreamProfileFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceStreamProfileFilterArrayOutput)
+}
+
+type GetSoftwareSourceStreamProfileFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSoftwareSourceStreamProfileFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSoftwareSourceStreamProfileFilter)(nil)).Elem()
+}
+
+func (o GetSoftwareSourceStreamProfileFilterOutput) ToGetSoftwareSourceStreamProfileFilterOutput() GetSoftwareSourceStreamProfileFilterOutput {
+	return o
+}
+
+func (o GetSoftwareSourceStreamProfileFilterOutput) ToGetSoftwareSourceStreamProfileFilterOutputWithContext(ctx context.Context) GetSoftwareSourceStreamProfileFilterOutput {
+	return o
+}
+
+func (o GetSoftwareSourceStreamProfileFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSoftwareSourceStreamProfileFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSoftwareSourceStreamProfileFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceStreamProfileFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSoftwareSourceStreamProfileFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSoftwareSourceStreamProfileFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSoftwareSourceStreamProfileFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSoftwareSourceStreamProfileFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSoftwareSourceStreamProfileFilter)(nil)).Elem()
+}
+
+func (o GetSoftwareSourceStreamProfileFilterArrayOutput) ToGetSoftwareSourceStreamProfileFilterArrayOutput() GetSoftwareSourceStreamProfileFilterArrayOutput {
+	return o
+}
+
+func (o GetSoftwareSourceStreamProfileFilterArrayOutput) ToGetSoftwareSourceStreamProfileFilterArrayOutputWithContext(ctx context.Context) GetSoftwareSourceStreamProfileFilterArrayOutput {
+	return o
+}
+
+func (o GetSoftwareSourceStreamProfileFilterArrayOutput) Index(i pulumi.IntInput) GetSoftwareSourceStreamProfileFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSoftwareSourceStreamProfileFilter {
+		return vs[0].([]GetSoftwareSourceStreamProfileFilter)[vs[1].(int)]
+	}).(GetSoftwareSourceStreamProfileFilterOutput)
+}
+
+type GetSoftwareSourceStreamProfileModuleStreamProfile struct {
+	// The name of a module.  This parameter is required if a streamName is specified.
+	ModuleName string `pulumi:"moduleName"`
+	// The name of the profile of the containing module stream
+	ProfileName string `pulumi:"profileName"`
+	// The name of the stream of the containing module.  This parameter is required if a profileName is specified.
+	StreamName string `pulumi:"streamName"`
+}
+
+// GetSoftwareSourceStreamProfileModuleStreamProfileInput is an input type that accepts GetSoftwareSourceStreamProfileModuleStreamProfileArgs and GetSoftwareSourceStreamProfileModuleStreamProfileOutput values.
+// You can construct a concrete instance of `GetSoftwareSourceStreamProfileModuleStreamProfileInput` via:
+//
+//          GetSoftwareSourceStreamProfileModuleStreamProfileArgs{...}
+type GetSoftwareSourceStreamProfileModuleStreamProfileInput interface {
+	pulumi.Input
+
+	ToGetSoftwareSourceStreamProfileModuleStreamProfileOutput() GetSoftwareSourceStreamProfileModuleStreamProfileOutput
+	ToGetSoftwareSourceStreamProfileModuleStreamProfileOutputWithContext(context.Context) GetSoftwareSourceStreamProfileModuleStreamProfileOutput
+}
+
+type GetSoftwareSourceStreamProfileModuleStreamProfileArgs struct {
+	// The name of a module.  This parameter is required if a streamName is specified.
+	ModuleName pulumi.StringInput `pulumi:"moduleName"`
+	// The name of the profile of the containing module stream
+	ProfileName pulumi.StringInput `pulumi:"profileName"`
+	// The name of the stream of the containing module.  This parameter is required if a profileName is specified.
+	StreamName pulumi.StringInput `pulumi:"streamName"`
+}
+
+func (GetSoftwareSourceStreamProfileModuleStreamProfileArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSoftwareSourceStreamProfileModuleStreamProfile)(nil)).Elem()
+}
+
+func (i GetSoftwareSourceStreamProfileModuleStreamProfileArgs) ToGetSoftwareSourceStreamProfileModuleStreamProfileOutput() GetSoftwareSourceStreamProfileModuleStreamProfileOutput {
+	return i.ToGetSoftwareSourceStreamProfileModuleStreamProfileOutputWithContext(context.Background())
+}
+
+func (i GetSoftwareSourceStreamProfileModuleStreamProfileArgs) ToGetSoftwareSourceStreamProfileModuleStreamProfileOutputWithContext(ctx context.Context) GetSoftwareSourceStreamProfileModuleStreamProfileOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceStreamProfileModuleStreamProfileOutput)
+}
+
+// GetSoftwareSourceStreamProfileModuleStreamProfileArrayInput is an input type that accepts GetSoftwareSourceStreamProfileModuleStreamProfileArray and GetSoftwareSourceStreamProfileModuleStreamProfileArrayOutput values.
+// You can construct a concrete instance of `GetSoftwareSourceStreamProfileModuleStreamProfileArrayInput` via:
+//
+//          GetSoftwareSourceStreamProfileModuleStreamProfileArray{ GetSoftwareSourceStreamProfileModuleStreamProfileArgs{...} }
+type GetSoftwareSourceStreamProfileModuleStreamProfileArrayInput interface {
+	pulumi.Input
+
+	ToGetSoftwareSourceStreamProfileModuleStreamProfileArrayOutput() GetSoftwareSourceStreamProfileModuleStreamProfileArrayOutput
+	ToGetSoftwareSourceStreamProfileModuleStreamProfileArrayOutputWithContext(context.Context) GetSoftwareSourceStreamProfileModuleStreamProfileArrayOutput
+}
+
+type GetSoftwareSourceStreamProfileModuleStreamProfileArray []GetSoftwareSourceStreamProfileModuleStreamProfileInput
+
+func (GetSoftwareSourceStreamProfileModuleStreamProfileArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSoftwareSourceStreamProfileModuleStreamProfile)(nil)).Elem()
+}
+
+func (i GetSoftwareSourceStreamProfileModuleStreamProfileArray) ToGetSoftwareSourceStreamProfileModuleStreamProfileArrayOutput() GetSoftwareSourceStreamProfileModuleStreamProfileArrayOutput {
+	return i.ToGetSoftwareSourceStreamProfileModuleStreamProfileArrayOutputWithContext(context.Background())
+}
+
+func (i GetSoftwareSourceStreamProfileModuleStreamProfileArray) ToGetSoftwareSourceStreamProfileModuleStreamProfileArrayOutputWithContext(ctx context.Context) GetSoftwareSourceStreamProfileModuleStreamProfileArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceStreamProfileModuleStreamProfileArrayOutput)
+}
+
+type GetSoftwareSourceStreamProfileModuleStreamProfileOutput struct{ *pulumi.OutputState }
+
+func (GetSoftwareSourceStreamProfileModuleStreamProfileOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSoftwareSourceStreamProfileModuleStreamProfile)(nil)).Elem()
+}
+
+func (o GetSoftwareSourceStreamProfileModuleStreamProfileOutput) ToGetSoftwareSourceStreamProfileModuleStreamProfileOutput() GetSoftwareSourceStreamProfileModuleStreamProfileOutput {
+	return o
+}
+
+func (o GetSoftwareSourceStreamProfileModuleStreamProfileOutput) ToGetSoftwareSourceStreamProfileModuleStreamProfileOutputWithContext(ctx context.Context) GetSoftwareSourceStreamProfileModuleStreamProfileOutput {
+	return o
+}
+
+// The name of a module.  This parameter is required if a streamName is specified.
+func (o GetSoftwareSourceStreamProfileModuleStreamProfileOutput) ModuleName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSoftwareSourceStreamProfileModuleStreamProfile) string { return v.ModuleName }).(pulumi.StringOutput)
+}
+
+// The name of the profile of the containing module stream
+func (o GetSoftwareSourceStreamProfileModuleStreamProfileOutput) ProfileName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSoftwareSourceStreamProfileModuleStreamProfile) string { return v.ProfileName }).(pulumi.StringOutput)
+}
+
+// The name of the stream of the containing module.  This parameter is required if a profileName is specified.
+func (o GetSoftwareSourceStreamProfileModuleStreamProfileOutput) StreamName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSoftwareSourceStreamProfileModuleStreamProfile) string { return v.StreamName }).(pulumi.StringOutput)
+}
+
+type GetSoftwareSourceStreamProfileModuleStreamProfileArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSoftwareSourceStreamProfileModuleStreamProfileArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSoftwareSourceStreamProfileModuleStreamProfile)(nil)).Elem()
+}
+
+func (o GetSoftwareSourceStreamProfileModuleStreamProfileArrayOutput) ToGetSoftwareSourceStreamProfileModuleStreamProfileArrayOutput() GetSoftwareSourceStreamProfileModuleStreamProfileArrayOutput {
+	return o
+}
+
+func (o GetSoftwareSourceStreamProfileModuleStreamProfileArrayOutput) ToGetSoftwareSourceStreamProfileModuleStreamProfileArrayOutputWithContext(ctx context.Context) GetSoftwareSourceStreamProfileModuleStreamProfileArrayOutput {
+	return o
+}
+
+func (o GetSoftwareSourceStreamProfileModuleStreamProfileArrayOutput) Index(i pulumi.IntInput) GetSoftwareSourceStreamProfileModuleStreamProfileOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSoftwareSourceStreamProfileModuleStreamProfile {
+		return vs[0].([]GetSoftwareSourceStreamProfileModuleStreamProfile)[vs[1].(int)]
+	}).(GetSoftwareSourceStreamProfileModuleStreamProfileOutput)
+}
+
 type GetSoftwareSourcesFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -3414,8 +4273,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceArrayInput)(nil)).Elem(), GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedInstanceManagedInstanceGroupInput)(nil)).Elem(), GetManagedInstanceManagedInstanceGroupArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedInstanceManagedInstanceGroupArrayInput)(nil)).Elem(), GetManagedInstanceManagedInstanceGroupArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedInstanceModuleStreamsFilterInput)(nil)).Elem(), GetManagedInstanceModuleStreamsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedInstanceModuleStreamsFilterArrayInput)(nil)).Elem(), GetManagedInstanceModuleStreamsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceInput)(nil)).Elem(), GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArrayInput)(nil)).Elem(), GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileInput)(nil)).Elem(), GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArrayInput)(nil)).Elem(), GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedInstanceParentSoftwareSourceInput)(nil)).Elem(), GetManagedInstanceParentSoftwareSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedInstanceParentSoftwareSourceArrayInput)(nil)).Elem(), GetManagedInstanceParentSoftwareSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedInstanceStreamProfileFilterInput)(nil)).Elem(), GetManagedInstanceStreamProfileFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedInstanceStreamProfileFilterArrayInput)(nil)).Elem(), GetManagedInstanceStreamProfileFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceInput)(nil)).Elem(), GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArrayInput)(nil)).Elem(), GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedInstancesFilterInput)(nil)).Elem(), GetManagedInstancesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedInstancesFilterArrayInput)(nil)).Elem(), GetManagedInstancesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedInstancesManagedInstanceInput)(nil)).Elem(), GetManagedInstancesManagedInstanceArgs{})
@@ -3430,6 +4299,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedInstancesManagedInstanceParentSoftwareSourceArrayInput)(nil)).Elem(), GetManagedInstancesManagedInstanceParentSoftwareSourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSoftwareSourceAssociatedManagedInstanceInput)(nil)).Elem(), GetSoftwareSourceAssociatedManagedInstanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSoftwareSourceAssociatedManagedInstanceArrayInput)(nil)).Elem(), GetSoftwareSourceAssociatedManagedInstanceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSoftwareSourceStreamProfileFilterInput)(nil)).Elem(), GetSoftwareSourceStreamProfileFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSoftwareSourceStreamProfileFilterArrayInput)(nil)).Elem(), GetSoftwareSourceStreamProfileFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSoftwareSourceStreamProfileModuleStreamProfileInput)(nil)).Elem(), GetSoftwareSourceStreamProfileModuleStreamProfileArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSoftwareSourceStreamProfileModuleStreamProfileArrayInput)(nil)).Elem(), GetSoftwareSourceStreamProfileModuleStreamProfileArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSoftwareSourcesFilterInput)(nil)).Elem(), GetSoftwareSourcesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSoftwareSourcesFilterArrayInput)(nil)).Elem(), GetSoftwareSourcesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSoftwareSourcesSoftwareSourceInput)(nil)).Elem(), GetSoftwareSourcesSoftwareSourceArgs{})
@@ -3468,8 +4341,18 @@ func init() {
 	pulumi.RegisterOutputType(GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceArrayOutput{})
 	pulumi.RegisterOutputType(GetManagedInstanceManagedInstanceGroupOutput{})
 	pulumi.RegisterOutputType(GetManagedInstanceManagedInstanceGroupArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedInstanceModuleStreamsFilterOutput{})
+	pulumi.RegisterOutputType(GetManagedInstanceModuleStreamsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutput{})
+	pulumi.RegisterOutputType(GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutput{})
+	pulumi.RegisterOutputType(GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArrayOutput{})
 	pulumi.RegisterOutputType(GetManagedInstanceParentSoftwareSourceOutput{})
 	pulumi.RegisterOutputType(GetManagedInstanceParentSoftwareSourceArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedInstanceStreamProfileFilterOutput{})
+	pulumi.RegisterOutputType(GetManagedInstanceStreamProfileFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutput{})
+	pulumi.RegisterOutputType(GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArrayOutput{})
 	pulumi.RegisterOutputType(GetManagedInstancesFilterOutput{})
 	pulumi.RegisterOutputType(GetManagedInstancesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetManagedInstancesManagedInstanceOutput{})
@@ -3484,6 +4367,10 @@ func init() {
 	pulumi.RegisterOutputType(GetManagedInstancesManagedInstanceParentSoftwareSourceArrayOutput{})
 	pulumi.RegisterOutputType(GetSoftwareSourceAssociatedManagedInstanceOutput{})
 	pulumi.RegisterOutputType(GetSoftwareSourceAssociatedManagedInstanceArrayOutput{})
+	pulumi.RegisterOutputType(GetSoftwareSourceStreamProfileFilterOutput{})
+	pulumi.RegisterOutputType(GetSoftwareSourceStreamProfileFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSoftwareSourceStreamProfileModuleStreamProfileOutput{})
+	pulumi.RegisterOutputType(GetSoftwareSourceStreamProfileModuleStreamProfileArrayOutput{})
 	pulumi.RegisterOutputType(GetSoftwareSourcesFilterOutput{})
 	pulumi.RegisterOutputType(GetSoftwareSourcesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetSoftwareSourcesSoftwareSourceOutput{})

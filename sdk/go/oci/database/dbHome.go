@@ -7,7 +7,6 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pkg/errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -104,7 +103,7 @@ type DbHome struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Details for creating a database.
-	Database DbHomeDatabaseOutput `pulumi:"database"`
+	Database DbHomeDatabasePtrOutput `pulumi:"database"`
 	// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
 	DatabaseSoftwareImageId pulumi.StringOutput `pulumi:"databaseSoftwareImageId"`
 	// The location of the Oracle Database Home.
@@ -143,12 +142,9 @@ type DbHome struct {
 func NewDbHome(ctx *pulumi.Context,
 	name string, args *DbHomeArgs, opts ...pulumi.ResourceOption) (*DbHome, error) {
 	if args == nil {
-		return nil, errors.New("missing one or more required arguments")
+		args = &DbHomeArgs{}
 	}
 
-	if args.Database == nil {
-		return nil, errors.New("invalid value for required argument 'Database'")
-	}
 	var resource DbHome
 	err := ctx.RegisterResource("oci:Database/dbHome:DbHome", name, args, &resource, opts...)
 	if err != nil {
@@ -254,7 +250,7 @@ func (DbHomeState) ElementType() reflect.Type {
 
 type dbHomeArgs struct {
 	// (Updatable) Details for creating a database.
-	Database DbHomeDatabase `pulumi:"database"`
+	Database *DbHomeDatabase `pulumi:"database"`
 	// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
 	DatabaseSoftwareImageId *string `pulumi:"databaseSoftwareImageId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
@@ -282,7 +278,7 @@ type dbHomeArgs struct {
 // The set of arguments for constructing a DbHome resource.
 type DbHomeArgs struct {
 	// (Updatable) Details for creating a database.
-	Database DbHomeDatabaseInput
+	Database DbHomeDatabasePtrInput
 	// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
 	DatabaseSoftwareImageId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.

@@ -6,6 +6,7 @@ package com.pulumi.oci.Sch.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Sch.outputs.ConnectorSourceCursor;
 import com.pulumi.oci.Sch.outputs.ConnectorSourceLogSource;
+import com.pulumi.oci.Sch.outputs.ConnectorSourceMonitoringSource;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -30,6 +31,11 @@ public final class ConnectorSource {
      */
     private final @Nullable List<ConnectorSourceLogSource> logSources;
     /**
+     * @return (Updatable) The list of metric namespaces to retrieve data from.
+     * 
+     */
+    private final @Nullable List<ConnectorSourceMonitoringSource> monitoringSources;
+    /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
      * 
      */
@@ -40,10 +46,12 @@ public final class ConnectorSource {
         @CustomType.Parameter("cursor") @Nullable ConnectorSourceCursor cursor,
         @CustomType.Parameter("kind") String kind,
         @CustomType.Parameter("logSources") @Nullable List<ConnectorSourceLogSource> logSources,
+        @CustomType.Parameter("monitoringSources") @Nullable List<ConnectorSourceMonitoringSource> monitoringSources,
         @CustomType.Parameter("streamId") @Nullable String streamId) {
         this.cursor = cursor;
         this.kind = kind;
         this.logSources = logSources;
+        this.monitoringSources = monitoringSources;
         this.streamId = streamId;
     }
 
@@ -69,6 +77,13 @@ public final class ConnectorSource {
         return this.logSources == null ? List.of() : this.logSources;
     }
     /**
+     * @return (Updatable) The list of metric namespaces to retrieve data from.
+     * 
+     */
+    public List<ConnectorSourceMonitoringSource> monitoringSources() {
+        return this.monitoringSources == null ? List.of() : this.monitoringSources;
+    }
+    /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
      * 
      */
@@ -88,6 +103,7 @@ public final class ConnectorSource {
         private @Nullable ConnectorSourceCursor cursor;
         private String kind;
         private @Nullable List<ConnectorSourceLogSource> logSources;
+        private @Nullable List<ConnectorSourceMonitoringSource> monitoringSources;
         private @Nullable String streamId;
 
         public Builder() {
@@ -99,6 +115,7 @@ public final class ConnectorSource {
     	      this.cursor = defaults.cursor;
     	      this.kind = defaults.kind;
     	      this.logSources = defaults.logSources;
+    	      this.monitoringSources = defaults.monitoringSources;
     	      this.streamId = defaults.streamId;
         }
 
@@ -117,11 +134,18 @@ public final class ConnectorSource {
         public Builder logSources(ConnectorSourceLogSource... logSources) {
             return logSources(List.of(logSources));
         }
+        public Builder monitoringSources(@Nullable List<ConnectorSourceMonitoringSource> monitoringSources) {
+            this.monitoringSources = monitoringSources;
+            return this;
+        }
+        public Builder monitoringSources(ConnectorSourceMonitoringSource... monitoringSources) {
+            return monitoringSources(List.of(monitoringSources));
+        }
         public Builder streamId(@Nullable String streamId) {
             this.streamId = streamId;
             return this;
         }        public ConnectorSource build() {
-            return new ConnectorSource(cursor, kind, logSources, streamId);
+            return new ConnectorSource(cursor, kind, logSources, monitoringSources, streamId);
         }
     }
 }

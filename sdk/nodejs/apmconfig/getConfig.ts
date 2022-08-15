@@ -8,7 +8,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Config resource in Oracle Cloud Infrastructure Apm Config service.
  *
- * Get the configuration of the item identified by the OCID.
+ * Gets the configuration item identified by the OCID.
  *
  * ## Example Usage
  *
@@ -39,11 +39,11 @@ export function getConfig(args: GetConfigArgs, opts?: pulumi.InvokeOptions): Pro
  */
 export interface GetConfigArgs {
     /**
-     * The APM Domain Id the request is intended for.
+     * The APM Domain ID the request is intended for.
      */
     apmDomainId: string;
     /**
-     * The OCID of the ConfiguredItem.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item.
      */
     configId: string;
 }
@@ -55,7 +55,7 @@ export interface GetConfigResult {
     readonly apmDomainId: string;
     readonly configId: string;
     /**
-     * The type of configuration item
+     * The type of configuration item.
      */
     readonly configType: string;
     /**
@@ -63,19 +63,19 @@ export interface GetConfigResult {
      */
     readonly definedTags: {[key: string]: any};
     /**
-     * A description of the metric
+     * A description of the metric.
      */
     readonly description: string;
     /**
-     * A list of dimensions for this metric
+     * A list of dimensions for the metric. This variable should not be used.
      */
     readonly dimensions: outputs.ApmConfig.GetConfigDimension[];
     /**
-     * A user-friendly name that provides a short description this rule.
+     * The name by which a configuration entity is displayed to the end user.
      */
     readonly displayName: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId will be generated when a Span Filter is created.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
      */
     readonly filterId: string;
     /**
@@ -87,15 +87,26 @@ export interface GetConfigResult {
      */
     readonly freeformTags: {[key: string]: any};
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID will be generated when the item is created.
+     * A string that specifies the group that an OPTIONS item belongs to.
+     */
+    readonly group: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
      */
     readonly id: string;
+    /**
+     * The list of metrics in this group.
+     */
     readonly metrics: outputs.ApmConfig.GetConfigMetric[];
     /**
-     * The namespace to write the metrics to
+     * The namespace to which the metrics are published. It must be one of several predefined namespaces.
      */
     readonly namespace: string;
     readonly opcDryRun: string;
+    /**
+     * The options are stored here as JSON.
+     */
+    readonly options: string;
     readonly rules: outputs.ApmConfig.GetConfigRule[];
     /**
      * The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
@@ -116,11 +127,11 @@ export function getConfigOutput(args: GetConfigOutputArgs, opts?: pulumi.InvokeO
  */
 export interface GetConfigOutputArgs {
     /**
-     * The APM Domain Id the request is intended for.
+     * The APM Domain ID the request is intended for.
      */
     apmDomainId: pulumi.Input<string>;
     /**
-     * The OCID of the ConfiguredItem.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item.
      */
     configId: pulumi.Input<string>;
 }

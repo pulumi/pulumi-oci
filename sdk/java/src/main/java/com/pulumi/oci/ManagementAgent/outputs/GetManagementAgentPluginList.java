@@ -31,6 +31,16 @@ public final class GetManagementAgentPluginList {
      */
     private final String pluginName;
     /**
+     * @return Plugin Status
+     * 
+     */
+    private final String pluginStatus;
+    /**
+     * @return Status message of the Plugin
+     * 
+     */
+    private final String pluginStatusMessage;
+    /**
      * @return Plugin Version
      * 
      */
@@ -42,11 +52,15 @@ public final class GetManagementAgentPluginList {
         @CustomType.Parameter("pluginDisplayName") String pluginDisplayName,
         @CustomType.Parameter("pluginId") String pluginId,
         @CustomType.Parameter("pluginName") String pluginName,
+        @CustomType.Parameter("pluginStatus") String pluginStatus,
+        @CustomType.Parameter("pluginStatusMessage") String pluginStatusMessage,
         @CustomType.Parameter("pluginVersion") String pluginVersion) {
         this.isEnabled = isEnabled;
         this.pluginDisplayName = pluginDisplayName;
         this.pluginId = pluginId;
         this.pluginName = pluginName;
+        this.pluginStatus = pluginStatus;
+        this.pluginStatusMessage = pluginStatusMessage;
         this.pluginVersion = pluginVersion;
     }
 
@@ -79,6 +93,20 @@ public final class GetManagementAgentPluginList {
         return this.pluginName;
     }
     /**
+     * @return Plugin Status
+     * 
+     */
+    public String pluginStatus() {
+        return this.pluginStatus;
+    }
+    /**
+     * @return Status message of the Plugin
+     * 
+     */
+    public String pluginStatusMessage() {
+        return this.pluginStatusMessage;
+    }
+    /**
      * @return Plugin Version
      * 
      */
@@ -99,6 +127,8 @@ public final class GetManagementAgentPluginList {
         private String pluginDisplayName;
         private String pluginId;
         private String pluginName;
+        private String pluginStatus;
+        private String pluginStatusMessage;
         private String pluginVersion;
 
         public Builder() {
@@ -111,6 +141,8 @@ public final class GetManagementAgentPluginList {
     	      this.pluginDisplayName = defaults.pluginDisplayName;
     	      this.pluginId = defaults.pluginId;
     	      this.pluginName = defaults.pluginName;
+    	      this.pluginStatus = defaults.pluginStatus;
+    	      this.pluginStatusMessage = defaults.pluginStatusMessage;
     	      this.pluginVersion = defaults.pluginVersion;
         }
 
@@ -130,11 +162,19 @@ public final class GetManagementAgentPluginList {
             this.pluginName = Objects.requireNonNull(pluginName);
             return this;
         }
+        public Builder pluginStatus(String pluginStatus) {
+            this.pluginStatus = Objects.requireNonNull(pluginStatus);
+            return this;
+        }
+        public Builder pluginStatusMessage(String pluginStatusMessage) {
+            this.pluginStatusMessage = Objects.requireNonNull(pluginStatusMessage);
+            return this;
+        }
         public Builder pluginVersion(String pluginVersion) {
             this.pluginVersion = Objects.requireNonNull(pluginVersion);
             return this;
         }        public GetManagementAgentPluginList build() {
-            return new GetManagementAgentPluginList(isEnabled, pluginDisplayName, pluginId, pluginName, pluginVersion);
+            return new GetManagementAgentPluginList(isEnabled, pluginDisplayName, pluginId, pluginName, pluginStatus, pluginStatusMessage, pluginVersion);
         }
     }
 }

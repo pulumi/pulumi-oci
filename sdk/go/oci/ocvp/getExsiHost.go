@@ -55,6 +55,8 @@ type GetExsiHostArgs struct {
 type GetExsiHostResult struct {
 	// Current billing cycle end date. If the value in `currentSku` and `nextSku` are different, the value specified in `nextSku` becomes the new `currentSKU` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
 	BillingContractEndDate string `pulumi:"billingContractEndDate"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+	CapacityReservationId string `pulumi:"capacityReservationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The availability domain of the ESXi host.
@@ -74,6 +76,10 @@ type GetExsiHostResult struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The date and time when the new esxi host should start billing cycle. [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2021-07-25T21:10:29.600Z`
 	GracePeriodEndDate string `pulumi:"gracePeriodEndDate"`
+	// The OCPU count of the ESXi host.
+	HostOcpuCount float64 `pulumi:"hostOcpuCount"`
+	// The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+	HostShapeName string `pulumi:"hostShapeName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host.
 	Id string `pulumi:"id"`
 	// The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
@@ -133,6 +139,11 @@ func (o GetExsiHostResultOutput) BillingContractEndDate() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExsiHostResult) string { return v.BillingContractEndDate }).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+func (o GetExsiHostResultOutput) CapacityReservationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExsiHostResult) string { return v.CapacityReservationId }).(pulumi.StringOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
 func (o GetExsiHostResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExsiHostResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -180,6 +191,16 @@ func (o GetExsiHostResultOutput) FreeformTags() pulumi.MapOutput {
 // The date and time when the new esxi host should start billing cycle. [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2021-07-25T21:10:29.600Z`
 func (o GetExsiHostResultOutput) GracePeriodEndDate() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExsiHostResult) string { return v.GracePeriodEndDate }).(pulumi.StringOutput)
+}
+
+// The OCPU count of the ESXi host.
+func (o GetExsiHostResultOutput) HostOcpuCount() pulumi.Float64Output {
+	return o.ApplyT(func(v GetExsiHostResult) float64 { return v.HostOcpuCount }).(pulumi.Float64Output)
+}
+
+// The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+func (o GetExsiHostResultOutput) HostShapeName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExsiHostResult) string { return v.HostShapeName }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host.

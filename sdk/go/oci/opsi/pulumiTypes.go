@@ -2558,7 +2558,8 @@ type GetDatabaseInsightsDatabaseInsightsCollectionItem struct {
 	// Filter by one or more database type. Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
 	DatabaseType string `pulumi:"databaseType"`
 	// The version of the database.
-	DatabaseVersion string `pulumi:"databaseVersion"`
+	DatabaseVersion      string `pulumi:"databaseVersion"`
+	DbmPrivateEndpointId string `pulumi:"dbmPrivateEndpointId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags    map[string]interface{} `pulumi:"definedTags"`
 	DeploymentType string                 `pulumi:"deploymentType"`
@@ -2635,7 +2636,8 @@ type GetDatabaseInsightsDatabaseInsightsCollectionItemArgs struct {
 	// Filter by one or more database type. Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
 	DatabaseType pulumi.StringInput `pulumi:"databaseType"`
 	// The version of the database.
-	DatabaseVersion pulumi.StringInput `pulumi:"databaseVersion"`
+	DatabaseVersion      pulumi.StringInput `pulumi:"databaseVersion"`
+	DbmPrivateEndpointId pulumi.StringInput `pulumi:"dbmPrivateEndpointId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags    pulumi.MapInput    `pulumi:"definedTags"`
 	DeploymentType pulumi.StringInput `pulumi:"deploymentType"`
@@ -2791,6 +2793,10 @@ func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) DatabaseType() 
 // The version of the database.
 func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) DatabaseVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) string { return v.DatabaseVersion }).(pulumi.StringOutput)
+}
+
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) DbmPrivateEndpointId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) string { return v.DbmPrivateEndpointId }).(pulumi.StringOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`

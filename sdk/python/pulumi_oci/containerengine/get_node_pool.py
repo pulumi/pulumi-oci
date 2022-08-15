@@ -21,7 +21,7 @@ class GetNodePoolResult:
     """
     A collection of values returned by getNodePool.
     """
-    def __init__(__self__, cluster_id=None, compartment_id=None, defined_tags=None, freeform_tags=None, id=None, initial_node_labels=None, kubernetes_version=None, name=None, node_config_details=None, node_image_id=None, node_image_name=None, node_metadata=None, node_pool_id=None, node_shape=None, node_shape_configs=None, node_source_details=None, node_sources=None, nodes=None, quantity_per_subnet=None, ssh_public_key=None, subnet_ids=None):
+    def __init__(__self__, cluster_id=None, compartment_id=None, defined_tags=None, freeform_tags=None, id=None, initial_node_labels=None, kubernetes_version=None, lifecycle_details=None, name=None, node_config_details=None, node_eviction_node_pool_settings=None, node_image_id=None, node_image_name=None, node_metadata=None, node_pool_id=None, node_shape=None, node_shape_configs=None, node_source_details=None, node_sources=None, nodes=None, quantity_per_subnet=None, ssh_public_key=None, state=None, subnet_ids=None):
         if cluster_id and not isinstance(cluster_id, str):
             raise TypeError("Expected argument 'cluster_id' to be a str")
         pulumi.set(__self__, "cluster_id", cluster_id)
@@ -43,12 +43,18 @@ class GetNodePoolResult:
         if kubernetes_version and not isinstance(kubernetes_version, str):
             raise TypeError("Expected argument 'kubernetes_version' to be a str")
         pulumi.set(__self__, "kubernetes_version", kubernetes_version)
+        if lifecycle_details and not isinstance(lifecycle_details, str):
+            raise TypeError("Expected argument 'lifecycle_details' to be a str")
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if name and not isinstance(name, str):
             raise TypeError("Expected argument 'name' to be a str")
         pulumi.set(__self__, "name", name)
         if node_config_details and not isinstance(node_config_details, list):
             raise TypeError("Expected argument 'node_config_details' to be a list")
         pulumi.set(__self__, "node_config_details", node_config_details)
+        if node_eviction_node_pool_settings and not isinstance(node_eviction_node_pool_settings, list):
+            raise TypeError("Expected argument 'node_eviction_node_pool_settings' to be a list")
+        pulumi.set(__self__, "node_eviction_node_pool_settings", node_eviction_node_pool_settings)
         if node_image_id and not isinstance(node_image_id, str):
             raise TypeError("Expected argument 'node_image_id' to be a str")
         if node_image_id is not None:
@@ -90,6 +96,9 @@ class GetNodePoolResult:
         if ssh_public_key and not isinstance(ssh_public_key, str):
             raise TypeError("Expected argument 'ssh_public_key' to be a str")
         pulumi.set(__self__, "ssh_public_key", ssh_public_key)
+        if state and not isinstance(state, str):
+            raise TypeError("Expected argument 'state' to be a str")
+        pulumi.set(__self__, "state", state)
         if subnet_ids and not isinstance(subnet_ids, list):
             raise TypeError("Expected argument 'subnet_ids' to be a list")
         pulumi.set(__self__, "subnet_ids", subnet_ids)
@@ -151,6 +160,14 @@ class GetNodePoolResult:
         return pulumi.get(self, "kubernetes_version")
 
     @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Details about the state of the node.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
     @pulumi.getter
     def name(self) -> str:
         """
@@ -165,6 +182,14 @@ class GetNodePoolResult:
         The configuration of nodes in the node pool.
         """
         return pulumi.get(self, "node_config_details")
+
+    @property
+    @pulumi.getter(name="nodeEvictionNodePoolSettings")
+    def node_eviction_node_pool_settings(self) -> Sequence['outputs.GetNodePoolNodeEvictionNodePoolSettingResult']:
+        """
+        Node Eviction Details configuration
+        """
+        return pulumi.get(self, "node_eviction_node_pool_settings")
 
     @property
     @pulumi.getter(name="nodeImageId")
@@ -255,6 +280,14 @@ class GetNodePoolResult:
         return pulumi.get(self, "ssh_public_key")
 
     @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The state of the nodepool.
+        """
+        return pulumi.get(self, "state")
+
+    @property
     @pulumi.getter(name="subnetIds")
     def subnet_ids(self) -> Sequence[str]:
         """
@@ -276,8 +309,10 @@ class AwaitableGetNodePoolResult(GetNodePoolResult):
             id=self.id,
             initial_node_labels=self.initial_node_labels,
             kubernetes_version=self.kubernetes_version,
+            lifecycle_details=self.lifecycle_details,
             name=self.name,
             node_config_details=self.node_config_details,
+            node_eviction_node_pool_settings=self.node_eviction_node_pool_settings,
             node_image_id=self.node_image_id,
             node_image_name=self.node_image_name,
             node_metadata=self.node_metadata,
@@ -289,6 +324,7 @@ class AwaitableGetNodePoolResult(GetNodePoolResult):
             nodes=self.nodes,
             quantity_per_subnet=self.quantity_per_subnet,
             ssh_public_key=self.ssh_public_key,
+            state=self.state,
             subnet_ids=self.subnet_ids)
 
 
@@ -327,8 +363,10 @@ def get_node_pool(node_pool_id: Optional[str] = None,
         id=__ret__.id,
         initial_node_labels=__ret__.initial_node_labels,
         kubernetes_version=__ret__.kubernetes_version,
+        lifecycle_details=__ret__.lifecycle_details,
         name=__ret__.name,
         node_config_details=__ret__.node_config_details,
+        node_eviction_node_pool_settings=__ret__.node_eviction_node_pool_settings,
         node_image_id=__ret__.node_image_id,
         node_image_name=__ret__.node_image_name,
         node_metadata=__ret__.node_metadata,
@@ -340,6 +378,7 @@ def get_node_pool(node_pool_id: Optional[str] = None,
         nodes=__ret__.nodes,
         quantity_per_subnet=__ret__.quantity_per_subnet,
         ssh_public_key=__ret__.ssh_public_key,
+        state=__ret__.state,
         subnet_ids=__ret__.subnet_ids)
 
 

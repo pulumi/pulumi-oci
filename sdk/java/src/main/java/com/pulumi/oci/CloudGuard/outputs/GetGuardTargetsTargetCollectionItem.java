@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudGuard.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.CloudGuard.outputs.GetGuardTargetsTargetCollectionItemTargetDetail;
 import com.pulumi.oci.CloudGuard.outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipe;
 import com.pulumi.oci.CloudGuard.outputs.GetGuardTargetsTargetCollectionItemTargetResponderRecipe;
 import java.lang.Integer;
@@ -26,7 +27,7 @@ public final class GetGuardTargetsTargetCollectionItem {
      */
     private final Map<String,Object> definedTags;
     /**
-     * @return ResponderRule Description
+     * @return ResponderRule description.
      * 
      */
     private final String description;
@@ -41,7 +42,7 @@ public final class GetGuardTargetsTargetCollectionItem {
      */
     private final Map<String,Object> freeformTags;
     /**
-     * @return Unique identifier of TargetResponderRecipe that is immutable on creation
+     * @return Unique identifier of TargetResponderRecipe that can&#39;t be changed after creation.
      * 
      */
     private final String id;
@@ -70,6 +71,11 @@ public final class GetGuardTargetsTargetCollectionItem {
      * 
      */
     private final Map<String,Object> systemTags;
+    /**
+     * @return Details specific to the target type.
+     * 
+     */
+    private final List<GetGuardTargetsTargetCollectionItemTargetDetail> targetDetails;
     /**
      * @return List of detector recipes associated with target
      * 
@@ -114,6 +120,7 @@ public final class GetGuardTargetsTargetCollectionItem {
         @CustomType.Parameter("recipeCount") Integer recipeCount,
         @CustomType.Parameter("state") String state,
         @CustomType.Parameter("systemTags") Map<String,Object> systemTags,
+        @CustomType.Parameter("targetDetails") List<GetGuardTargetsTargetCollectionItemTargetDetail> targetDetails,
         @CustomType.Parameter("targetDetectorRecipes") List<GetGuardTargetsTargetCollectionItemTargetDetectorRecipe> targetDetectorRecipes,
         @CustomType.Parameter("targetResourceId") String targetResourceId,
         @CustomType.Parameter("targetResourceType") String targetResourceType,
@@ -131,6 +138,7 @@ public final class GetGuardTargetsTargetCollectionItem {
         this.recipeCount = recipeCount;
         this.state = state;
         this.systemTags = systemTags;
+        this.targetDetails = targetDetails;
         this.targetDetectorRecipes = targetDetectorRecipes;
         this.targetResourceId = targetResourceId;
         this.targetResourceType = targetResourceType;
@@ -154,7 +162,7 @@ public final class GetGuardTargetsTargetCollectionItem {
         return this.definedTags;
     }
     /**
-     * @return ResponderRule Description
+     * @return ResponderRule description.
      * 
      */
     public String description() {
@@ -175,7 +183,7 @@ public final class GetGuardTargetsTargetCollectionItem {
         return this.freeformTags;
     }
     /**
-     * @return Unique identifier of TargetResponderRecipe that is immutable on creation
+     * @return Unique identifier of TargetResponderRecipe that can&#39;t be changed after creation.
      * 
      */
     public String id() {
@@ -215,6 +223,13 @@ public final class GetGuardTargetsTargetCollectionItem {
      */
     public Map<String,Object> systemTags() {
         return this.systemTags;
+    }
+    /**
+     * @return Details specific to the target type.
+     * 
+     */
+    public List<GetGuardTargetsTargetCollectionItemTargetDetail> targetDetails() {
+        return this.targetDetails;
     }
     /**
      * @return List of detector recipes associated with target
@@ -279,6 +294,7 @@ public final class GetGuardTargetsTargetCollectionItem {
         private Integer recipeCount;
         private String state;
         private Map<String,Object> systemTags;
+        private List<GetGuardTargetsTargetCollectionItemTargetDetail> targetDetails;
         private List<GetGuardTargetsTargetCollectionItemTargetDetectorRecipe> targetDetectorRecipes;
         private String targetResourceId;
         private String targetResourceType;
@@ -303,6 +319,7 @@ public final class GetGuardTargetsTargetCollectionItem {
     	      this.recipeCount = defaults.recipeCount;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
+    	      this.targetDetails = defaults.targetDetails;
     	      this.targetDetectorRecipes = defaults.targetDetectorRecipes;
     	      this.targetResourceId = defaults.targetResourceId;
     	      this.targetResourceType = defaults.targetResourceType;
@@ -358,6 +375,13 @@ public final class GetGuardTargetsTargetCollectionItem {
             this.systemTags = Objects.requireNonNull(systemTags);
             return this;
         }
+        public Builder targetDetails(List<GetGuardTargetsTargetCollectionItemTargetDetail> targetDetails) {
+            this.targetDetails = Objects.requireNonNull(targetDetails);
+            return this;
+        }
+        public Builder targetDetails(GetGuardTargetsTargetCollectionItemTargetDetail... targetDetails) {
+            return targetDetails(List.of(targetDetails));
+        }
         public Builder targetDetectorRecipes(List<GetGuardTargetsTargetCollectionItemTargetDetectorRecipe> targetDetectorRecipes) {
             this.targetDetectorRecipes = Objects.requireNonNull(targetDetectorRecipes);
             return this;
@@ -388,7 +412,7 @@ public final class GetGuardTargetsTargetCollectionItem {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }        public GetGuardTargetsTargetCollectionItem build() {
-            return new GetGuardTargetsTargetCollectionItem(compartmentId, definedTags, description, displayName, freeformTags, id, inheritedByCompartments, lifecyleDetails, recipeCount, state, systemTags, targetDetectorRecipes, targetResourceId, targetResourceType, targetResponderRecipes, timeCreated, timeUpdated);
+            return new GetGuardTargetsTargetCollectionItem(compartmentId, definedTags, description, displayName, freeformTags, id, inheritedByCompartments, lifecyleDetails, recipeCount, state, systemTags, targetDetails, targetDetectorRecipes, targetResourceId, targetResourceType, targetResponderRecipes, timeCreated, timeUpdated);
         }
     }
 }

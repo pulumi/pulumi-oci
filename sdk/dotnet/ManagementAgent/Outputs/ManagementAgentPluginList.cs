@@ -30,6 +30,14 @@ namespace Pulumi.Oci.ManagementAgent.Outputs
         /// </summary>
         public readonly string? PluginName;
         /// <summary>
+        /// Plugin Status
+        /// </summary>
+        public readonly string? PluginStatus;
+        /// <summary>
+        /// Status message of the Plugin
+        /// </summary>
+        public readonly string? PluginStatusMessage;
+        /// <summary>
         /// Plugin Version
         /// </summary>
         public readonly string? PluginVersion;
@@ -44,12 +52,18 @@ namespace Pulumi.Oci.ManagementAgent.Outputs
 
             string? pluginName,
 
+            string? pluginStatus,
+
+            string? pluginStatusMessage,
+
             string? pluginVersion)
         {
             IsEnabled = isEnabled;
             PluginDisplayName = pluginDisplayName;
             PluginId = pluginId;
             PluginName = pluginName;
+            PluginStatus = pluginStatus;
+            PluginStatusMessage = pluginStatusMessage;
             PluginVersion = pluginVersion;
         }
     }

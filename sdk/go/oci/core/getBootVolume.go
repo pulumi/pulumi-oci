@@ -53,7 +53,7 @@ type LookupBootVolumeArgs struct {
 
 // A collection of values returned by getBootVolume.
 type LookupBootVolumeResult struct {
-	// The number of Volume Performance Units per GB that this volume is effectively tuned to when it's idle.
+	// The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it's idle.
 	AutoTunedVpusPerGb string `pulumi:"autoTunedVpusPerGb"`
 	// The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
@@ -94,7 +94,7 @@ type LookupBootVolumeResult struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The OCID of the source volume group.
 	VolumeGroupId string `pulumi:"volumeGroupId"`
-	// The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+	// The number of volume performance units (VPUs) that will be applied to this boot volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
 	VpusPerGb string `pulumi:"vpusPerGb"`
 }
 
@@ -136,7 +136,7 @@ func (o LookupBootVolumeResultOutput) ToLookupBootVolumeResultOutputWithContext(
 	return o
 }
 
-// The number of Volume Performance Units per GB that this volume is effectively tuned to when it's idle.
+// The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it's idle.
 func (o LookupBootVolumeResultOutput) AutoTunedVpusPerGb() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBootVolumeResult) string { return v.AutoTunedVpusPerGb }).(pulumi.StringOutput)
 }
@@ -243,7 +243,7 @@ func (o LookupBootVolumeResultOutput) VolumeGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBootVolumeResult) string { return v.VolumeGroupId }).(pulumi.StringOutput)
 }
 
-// The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+// The number of volume performance units (VPUs) that will be applied to this boot volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
 func (o LookupBootVolumeResultOutput) VpusPerGb() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBootVolumeResult) string { return v.VpusPerGb }).(pulumi.StringOutput)
 }

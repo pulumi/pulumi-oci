@@ -17,6 +17,7 @@ import com.pulumi.oci.Utilities;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import javax.annotation.Nullable;
 
@@ -79,6 +80,20 @@ public class RegistryDataAsset extends com.pulumi.resources.CustomResource {
      */
     public Output<String> description() {
         return this.description;
+    }
+    /**
+     * (Updatable) The list of endpoints with which this data asset is associated.
+     * 
+     */
+    @Export(name="endPoints", type=List.class, parameters={String.class})
+    private Output<List<String>> endPoints;
+
+    /**
+     * @return (Updatable) The list of endpoints with which this data asset is associated.
+     * 
+     */
+    public Output<List<String>> endPoints() {
+        return this.endPoints;
     }
     /**
      * (Updatable) The external key for the object.

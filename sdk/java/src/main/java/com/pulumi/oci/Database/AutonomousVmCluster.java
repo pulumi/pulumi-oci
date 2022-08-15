@@ -54,6 +54,34 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
         return this.autonomousDataStorageSizeInTbs;
     }
     /**
+     * The data disk group size available for Autonomous Databases, in TBs.
+     * 
+     */
+    @Export(name="availableAutonomousDataStorageSizeInTbs", type=Double.class, parameters={})
+    private Output<Double> availableAutonomousDataStorageSizeInTbs;
+
+    /**
+     * @return The data disk group size available for Autonomous Databases, in TBs.
+     * 
+     */
+    public Output<Double> availableAutonomousDataStorageSizeInTbs() {
+        return this.availableAutonomousDataStorageSizeInTbs;
+    }
+    /**
+     * The number of Autonomous Container Databases that can be created with the currently available local storage.
+     * 
+     */
+    @Export(name="availableContainerDatabases", type=Integer.class, parameters={})
+    private Output<Integer> availableContainerDatabases;
+
+    /**
+     * @return The number of Autonomous Container Databases that can be created with the currently available local storage.
+     * 
+     */
+    public Output<Integer> availableContainerDatabases() {
+        return this.availableContainerDatabases;
+    }
+    /**
      * The numnber of CPU cores available.
      * 
      */
@@ -68,14 +96,14 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
         return this.availableCpus;
     }
     /**
-     * The data storage available in TBs
+     * **Deprecated.** Use `availableAutonomousDataStorageSizeInTBs` for Autonomous Databases&#39; data storage availability in TBs.
      * 
      */
     @Export(name="availableDataStorageSizeInTbs", type=Double.class, parameters={})
     private Output<Double> availableDataStorageSizeInTbs;
 
     /**
-     * @return The data storage available in TBs
+     * @return **Deprecated.** Use `availableAutonomousDataStorageSizeInTBs` for Autonomous Databases&#39; data storage availability in TBs.
      * 
      */
     public Output<Double> availableDataStorageSizeInTbs() {
@@ -352,6 +380,20 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
      */
     public Output<Double> ocpusEnabled() {
         return this.ocpusEnabled;
+    }
+    /**
+     * CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+     * 
+     */
+    @Export(name="reclaimableCpus", type=Integer.class, parameters={})
+    private Output<Integer> reclaimableCpus;
+
+    /**
+     * @return CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+     * 
+     */
+    public Output<Integer> reclaimableCpus() {
+        return this.reclaimableCpus;
     }
     /**
      * The current state of the Autonomous VM cluster.

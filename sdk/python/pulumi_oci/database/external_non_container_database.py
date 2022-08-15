@@ -100,6 +100,7 @@ class _ExternalNonContainerDatabaseState:
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  ncharacter_set: Optional[pulumi.Input[str]] = None,
                  operations_insights_configs: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalNonContainerDatabaseOperationsInsightsConfigArgs']]]] = None,
+                 stack_monitoring_configs: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalNonContainerDatabaseStackMonitoringConfigArgs']]]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_zone: Optional[pulumi.Input[str]] = None):
@@ -120,6 +121,7 @@ class _ExternalNonContainerDatabaseState:
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[str] ncharacter_set: The national character of the external database.
         :param pulumi.Input[Sequence[pulumi.Input['ExternalNonContainerDatabaseOperationsInsightsConfigArgs']]] operations_insights_configs: The configuration of Operations Insights for the external database
+        :param pulumi.Input[Sequence[pulumi.Input['ExternalNonContainerDatabaseStackMonitoringConfigArgs']]] stack_monitoring_configs: The configuration of Stack Monitoring for the external database.
         :param pulumi.Input[str] state: The current state of the Oracle Cloud Infrastructure external database resource.
         :param pulumi.Input[str] time_created: The date and time the database was created.
         :param pulumi.Input[str] time_zone: The time zone of the external database. It is a time zone offset (a character type in the format '[+|-]TZH:TZM') or a time zone region name, depending on how the time zone value was specified when the database was created / last altered.
@@ -154,6 +156,8 @@ class _ExternalNonContainerDatabaseState:
             pulumi.set(__self__, "ncharacter_set", ncharacter_set)
         if operations_insights_configs is not None:
             pulumi.set(__self__, "operations_insights_configs", operations_insights_configs)
+        if stack_monitoring_configs is not None:
+            pulumi.set(__self__, "stack_monitoring_configs", stack_monitoring_configs)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if time_created is not None:
@@ -342,6 +346,18 @@ class _ExternalNonContainerDatabaseState:
         pulumi.set(self, "operations_insights_configs", value)
 
     @property
+    @pulumi.getter(name="stackMonitoringConfigs")
+    def stack_monitoring_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalNonContainerDatabaseStackMonitoringConfigArgs']]]]:
+        """
+        The configuration of Stack Monitoring for the external database.
+        """
+        return pulumi.get(self, "stack_monitoring_configs")
+
+    @stack_monitoring_configs.setter
+    def stack_monitoring_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalNonContainerDatabaseStackMonitoringConfigArgs']]]]):
+        pulumi.set(self, "stack_monitoring_configs", value)
+
+    @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
@@ -507,6 +523,7 @@ class ExternalNonContainerDatabase(pulumi.CustomResource):
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["ncharacter_set"] = None
             __props__.__dict__["operations_insights_configs"] = None
+            __props__.__dict__["stack_monitoring_configs"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_zone"] = None
@@ -535,6 +552,7 @@ class ExternalNonContainerDatabase(pulumi.CustomResource):
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             ncharacter_set: Optional[pulumi.Input[str]] = None,
             operations_insights_configs: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalNonContainerDatabaseOperationsInsightsConfigArgs']]]]] = None,
+            stack_monitoring_configs: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalNonContainerDatabaseStackMonitoringConfigArgs']]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_zone: Optional[pulumi.Input[str]] = None) -> 'ExternalNonContainerDatabase':
@@ -560,6 +578,7 @@ class ExternalNonContainerDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[str] ncharacter_set: The national character of the external database.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalNonContainerDatabaseOperationsInsightsConfigArgs']]]] operations_insights_configs: The configuration of Operations Insights for the external database
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalNonContainerDatabaseStackMonitoringConfigArgs']]]] stack_monitoring_configs: The configuration of Stack Monitoring for the external database.
         :param pulumi.Input[str] state: The current state of the Oracle Cloud Infrastructure external database resource.
         :param pulumi.Input[str] time_created: The date and time the database was created.
         :param pulumi.Input[str] time_zone: The time zone of the external database. It is a time zone offset (a character type in the format '[+|-]TZH:TZM') or a time zone region name, depending on how the time zone value was specified when the database was created / last altered.
@@ -583,6 +602,7 @@ class ExternalNonContainerDatabase(pulumi.CustomResource):
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["ncharacter_set"] = ncharacter_set
         __props__.__dict__["operations_insights_configs"] = operations_insights_configs
+        __props__.__dict__["stack_monitoring_configs"] = stack_monitoring_configs
         __props__.__dict__["state"] = state
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_zone"] = time_zone
@@ -707,6 +727,14 @@ class ExternalNonContainerDatabase(pulumi.CustomResource):
         The configuration of Operations Insights for the external database
         """
         return pulumi.get(self, "operations_insights_configs")
+
+    @property
+    @pulumi.getter(name="stackMonitoringConfigs")
+    def stack_monitoring_configs(self) -> pulumi.Output[Sequence['outputs.ExternalNonContainerDatabaseStackMonitoringConfig']]:
+        """
+        The configuration of Stack Monitoring for the external database.
+        """
+        return pulumi.get(self, "stack_monitoring_configs")
 
     @property
     @pulumi.getter

@@ -24,7 +24,7 @@ import * as utilities from "../utilities";
  *         datasetType: _var.model_training_dataset_dataset_type,
  *         bucket: _var.model_training_dataset_bucket,
  *         datasetId: oci_data_labeling_service_dataset.test_dataset.id,
- *         namespace: _var.model_training_dataset_namespace,
+ *         namespaceName: _var.model_training_dataset_namespace,
  *         object: _var.model_training_dataset_object,
  *     },
  *     definedTags: {
@@ -42,14 +42,14 @@ import * as utilities from "../utilities";
  *         datasetType: _var.model_testing_dataset_dataset_type,
  *         bucket: _var.model_testing_dataset_bucket,
  *         datasetId: oci_data_labeling_service_dataset.test_dataset.id,
- *         namespace: _var.model_testing_dataset_namespace,
+ *         namespaceName: _var.model_testing_dataset_namespace,
  *         object: _var.model_testing_dataset_object,
  *     },
  *     validationDataset: {
  *         datasetType: _var.model_validation_dataset_dataset_type,
  *         bucket: _var.model_validation_dataset_bucket,
  *         datasetId: oci_data_labeling_service_dataset.test_dataset.id,
- *         namespace: _var.model_validation_dataset_namespace,
+ *         namespaceName: _var.model_validation_dataset_namespace,
  *         object: _var.model_validation_dataset_object,
  *     },
  * });

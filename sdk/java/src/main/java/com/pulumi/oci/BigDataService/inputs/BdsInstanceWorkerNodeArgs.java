@@ -5,9 +5,12 @@ package com.pulumi.oci.BigDataService.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.BigDataService.inputs.BdsInstanceWorkerNodeShapeConfigArgs;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class BdsInstanceWorkerNodeArgs extends com.pulumi.resources.ResourceArgs {
@@ -15,14 +18,14 @@ public final class BdsInstanceWorkerNodeArgs extends com.pulumi.resources.Resour
     public static final BdsInstanceWorkerNodeArgs Empty = new BdsInstanceWorkerNodeArgs();
 
     /**
-     * The size of block volume in GB to be attached to a given node. All the details needed for attaching the block volume are managed by service itself.
+     * The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
      * 
      */
     @Import(name="blockVolumeSizeInGbs", required=true)
     private Output<String> blockVolumeSizeInGbs;
 
     /**
-     * @return The size of block volume in GB to be attached to a given node. All the details needed for attaching the block volume are managed by service itself.
+     * @return The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
      * 
      */
     public Output<String> blockVolumeSizeInGbs() {
@@ -30,14 +33,14 @@ public final class BdsInstanceWorkerNodeArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * The number of nodes that form the cluster.
+     * The amount of worker nodes should be created
      * 
      */
     @Import(name="numberOfNodes", required=true)
     private Output<Integer> numberOfNodes;
 
     /**
-     * @return The number of nodes that form the cluster.
+     * @return The amount of worker nodes should be created
      * 
      */
     public Output<Integer> numberOfNodes() {
@@ -45,14 +48,14 @@ public final class BdsInstanceWorkerNodeArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * (Updatable) Shape of the node.
+     * Shape of the node
      * 
      */
     @Import(name="shape", required=true)
     private Output<String> shape;
 
     /**
-     * @return (Updatable) Shape of the node.
+     * @return Shape of the node
      * 
      */
     public Output<String> shape() {
@@ -60,14 +63,29 @@ public final class BdsInstanceWorkerNodeArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * The OCID of the subnet in which the node will be created.
+     * The shape configuration requested for the node.
+     * 
+     */
+    @Import(name="shapeConfig")
+    private @Nullable Output<BdsInstanceWorkerNodeShapeConfigArgs> shapeConfig;
+
+    /**
+     * @return The shape configuration requested for the node.
+     * 
+     */
+    public Optional<Output<BdsInstanceWorkerNodeShapeConfigArgs>> shapeConfig() {
+        return Optional.ofNullable(this.shapeConfig);
+    }
+
+    /**
+     * The OCID of the subnet in which the node should be created
      * 
      */
     @Import(name="subnetId", required=true)
     private Output<String> subnetId;
 
     /**
-     * @return The OCID of the subnet in which the node will be created.
+     * @return The OCID of the subnet in which the node should be created
      * 
      */
     public Output<String> subnetId() {
@@ -80,6 +98,7 @@ public final class BdsInstanceWorkerNodeArgs extends com.pulumi.resources.Resour
         this.blockVolumeSizeInGbs = $.blockVolumeSizeInGbs;
         this.numberOfNodes = $.numberOfNodes;
         this.shape = $.shape;
+        this.shapeConfig = $.shapeConfig;
         this.subnetId = $.subnetId;
     }
 
@@ -102,7 +121,7 @@ public final class BdsInstanceWorkerNodeArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param blockVolumeSizeInGbs The size of block volume in GB to be attached to a given node. All the details needed for attaching the block volume are managed by service itself.
+         * @param blockVolumeSizeInGbs The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
          * 
          * @return builder
          * 
@@ -113,7 +132,7 @@ public final class BdsInstanceWorkerNodeArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param blockVolumeSizeInGbs The size of block volume in GB to be attached to a given node. All the details needed for attaching the block volume are managed by service itself.
+         * @param blockVolumeSizeInGbs The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
          * 
          * @return builder
          * 
@@ -123,7 +142,7 @@ public final class BdsInstanceWorkerNodeArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param numberOfNodes The number of nodes that form the cluster.
+         * @param numberOfNodes The amount of worker nodes should be created
          * 
          * @return builder
          * 
@@ -134,7 +153,7 @@ public final class BdsInstanceWorkerNodeArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param numberOfNodes The number of nodes that form the cluster.
+         * @param numberOfNodes The amount of worker nodes should be created
          * 
          * @return builder
          * 
@@ -144,7 +163,7 @@ public final class BdsInstanceWorkerNodeArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param shape (Updatable) Shape of the node.
+         * @param shape Shape of the node
          * 
          * @return builder
          * 
@@ -155,7 +174,7 @@ public final class BdsInstanceWorkerNodeArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param shape (Updatable) Shape of the node.
+         * @param shape Shape of the node
          * 
          * @return builder
          * 
@@ -165,7 +184,28 @@ public final class BdsInstanceWorkerNodeArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param subnetId The OCID of the subnet in which the node will be created.
+         * @param shapeConfig The shape configuration requested for the node.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shapeConfig(@Nullable Output<BdsInstanceWorkerNodeShapeConfigArgs> shapeConfig) {
+            $.shapeConfig = shapeConfig;
+            return this;
+        }
+
+        /**
+         * @param shapeConfig The shape configuration requested for the node.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shapeConfig(BdsInstanceWorkerNodeShapeConfigArgs shapeConfig) {
+            return shapeConfig(Output.of(shapeConfig));
+        }
+
+        /**
+         * @param subnetId The OCID of the subnet in which the node should be created
          * 
          * @return builder
          * 
@@ -176,7 +216,7 @@ public final class BdsInstanceWorkerNodeArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param subnetId The OCID of the subnet in which the node will be created.
+         * @param subnetId The OCID of the subnet in which the node should be created
          * 
          * @return builder
          * 

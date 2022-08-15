@@ -34,6 +34,7 @@ import (
 // 			Device:                         pulumi.Any(_var.Volume_attachment_device),
 // 			DisplayName:                    pulumi.Any(_var.Volume_attachment_display_name),
 // 			EncryptionInTransitType:        pulumi.Any(_var.Volume_attachment_encryption_in_transit_type),
+// 			IsAgentAutoIscsiLoginEnabled:   pulumi.Any(_var.Volume_attachment_is_agent_auto_iscsi_login_enabled),
 // 			IsPvEncryptionInTransitEnabled: pulumi.Any(_var.Volume_attachment_is_pv_encryption_in_transit_enabled),
 // 			IsReadOnly:                     pulumi.Any(_var.Volume_attachment_is_read_only),
 // 			IsShareable:                    pulumi.Any(_var.Volume_attachment_is_shareable),
@@ -81,6 +82,8 @@ type VolumeAttachment struct {
 	Ipv4 pulumi.StringOutput `pulumi:"ipv4"`
 	// The target volume's iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).  Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`
 	Iqn pulumi.StringOutput `pulumi:"iqn"`
+	// Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
+	IsAgentAutoIscsiLoginEnabled pulumi.BoolOutput `pulumi:"isAgentAutoIscsiLoginEnabled"`
 	// Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.
 	IsMultipath pulumi.BoolOutput `pulumi:"isMultipath"`
 	// Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
@@ -167,6 +170,8 @@ type volumeAttachmentState struct {
 	Ipv4 *string `pulumi:"ipv4"`
 	// The target volume's iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).  Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`
 	Iqn *string `pulumi:"iqn"`
+	// Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
+	IsAgentAutoIscsiLoginEnabled *bool `pulumi:"isAgentAutoIscsiLoginEnabled"`
 	// Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.
 	IsMultipath *bool `pulumi:"isMultipath"`
 	// Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
@@ -216,6 +221,8 @@ type VolumeAttachmentState struct {
 	Ipv4 pulumi.StringPtrInput
 	// The target volume's iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).  Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`
 	Iqn pulumi.StringPtrInput
+	// Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
+	IsAgentAutoIscsiLoginEnabled pulumi.BoolPtrInput
 	// Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.
 	IsMultipath pulumi.BoolPtrInput
 	// Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
@@ -259,6 +266,8 @@ type volumeAttachmentArgs struct {
 	EncryptionInTransitType *string `pulumi:"encryptionInTransitType"`
 	// The OCID of the instance.
 	InstanceId string `pulumi:"instanceId"`
+	// Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
+	IsAgentAutoIscsiLoginEnabled *bool `pulumi:"isAgentAutoIscsiLoginEnabled"`
 	// Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
 	IsPvEncryptionInTransitEnabled *bool `pulumi:"isPvEncryptionInTransitEnabled"`
 	// Whether the attachment was created in read-only mode.
@@ -287,6 +296,8 @@ type VolumeAttachmentArgs struct {
 	EncryptionInTransitType pulumi.StringPtrInput
 	// The OCID of the instance.
 	InstanceId pulumi.StringInput
+	// Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
+	IsAgentAutoIscsiLoginEnabled pulumi.BoolPtrInput
 	// Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
 	IsPvEncryptionInTransitEnabled pulumi.BoolPtrInput
 	// Whether the attachment was created in read-only mode.

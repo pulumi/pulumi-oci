@@ -15,6 +15,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -40,14 +41,14 @@ public class NetworkAddressList extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="addresses", type=List.class, parameters={String.class})
-    private Output<List<String>> addresses;
+    private Output</* @Nullable */ List<String>> addresses;
 
     /**
      * @return (Updatable) A private IP address or CIDR IP address range.
      * 
      */
-    public Output<List<String>> addresses() {
-        return this.addresses;
+    public Output<Optional<List<String>>> addresses() {
+        return Codegen.optional(this.addresses);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

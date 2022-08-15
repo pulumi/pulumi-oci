@@ -21,7 +21,7 @@ class GetRegistryDataAssetResult:
     """
     A collection of values returned by getRegistryDataAsset.
     """
-    def __init__(__self__, asset_properties=None, data_asset_key=None, default_connections=None, description=None, external_key=None, id=None, identifier=None, key=None, metadatas=None, model_type=None, model_version=None, name=None, native_type_systems=None, object_status=None, object_version=None, properties=None, registry_id=None, registry_metadatas=None, type=None):
+    def __init__(__self__, asset_properties=None, data_asset_key=None, default_connections=None, description=None, end_points=None, external_key=None, id=None, identifier=None, key=None, metadatas=None, model_type=None, model_version=None, name=None, native_type_systems=None, object_status=None, object_version=None, properties=None, registry_id=None, registry_metadatas=None, type=None):
         if asset_properties and not isinstance(asset_properties, dict):
             raise TypeError("Expected argument 'asset_properties' to be a dict")
         pulumi.set(__self__, "asset_properties", asset_properties)
@@ -34,6 +34,9 @@ class GetRegistryDataAssetResult:
         if description and not isinstance(description, str):
             raise TypeError("Expected argument 'description' to be a str")
         pulumi.set(__self__, "description", description)
+        if end_points and not isinstance(end_points, list):
+            raise TypeError("Expected argument 'end_points' to be a list")
+        pulumi.set(__self__, "end_points", end_points)
         if external_key and not isinstance(external_key, str):
             raise TypeError("Expected argument 'external_key' to be a str")
         pulumi.set(__self__, "external_key", external_key)
@@ -108,6 +111,14 @@ class GetRegistryDataAssetResult:
         A user defined description for the object.
         """
         return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="endPoints")
+    def end_points(self) -> Sequence[str]:
+        """
+        The list of endpoints with which this data asset is associated.
+        """
+        return pulumi.get(self, "end_points")
 
     @property
     @pulumi.getter(name="externalKey")
@@ -234,6 +245,7 @@ class AwaitableGetRegistryDataAssetResult(GetRegistryDataAssetResult):
             data_asset_key=self.data_asset_key,
             default_connections=self.default_connections,
             description=self.description,
+            end_points=self.end_points,
             external_key=self.external_key,
             id=self.id,
             identifier=self.identifier,
@@ -287,6 +299,7 @@ def get_registry_data_asset(data_asset_key: Optional[str] = None,
         data_asset_key=__ret__.data_asset_key,
         default_connections=__ret__.default_connections,
         description=__ret__.description,
+        end_points=__ret__.end_points,
         external_key=__ret__.external_key,
         id=__ret__.id,
         identifier=__ret__.identifier,

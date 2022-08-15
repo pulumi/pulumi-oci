@@ -112,12 +112,14 @@ import (
 type AutonomousContainerDatabase struct {
 	pulumi.CustomResourceState
 
-	// The OCID of the Autonomous Exadata Infrastructure. Please use cloudAutonomousVmClusterId instead.
+	// **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
 	AutonomousExadataInfrastructureId pulumi.StringOutput `pulumi:"autonomousExadataInfrastructureId"`
 	// The OCID of the Autonomous VM Cluster.
 	AutonomousVmClusterId pulumi.StringOutput `pulumi:"autonomousVmClusterId"`
 	// The availability domain of the Autonomous Container Database.
 	AvailabilityDomain pulumi.StringOutput `pulumi:"availabilityDomain"`
+	// Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
+	AvailableCpus pulumi.Float64Output `pulumi:"availableCpus"`
 	// (Updatable) Backup options for the Autonomous Container Database.
 	BackupConfig AutonomousContainerDatabaseBackupConfigOutput `pulumi:"backupConfig"`
 	// The OCID of the Cloud Autonomous VM Cluster.
@@ -166,7 +168,7 @@ type AutonomousContainerDatabase struct {
 	PeerAutonomousContainerDatabaseCompartmentId pulumi.StringOutput `pulumi:"peerAutonomousContainerDatabaseCompartmentId"`
 	// The display name for the peer Autonomous Container Database.
 	PeerAutonomousContainerDatabaseDisplayName pulumi.StringOutput `pulumi:"peerAutonomousContainerDatabaseDisplayName"`
-	// The OCID of the peer Autonomous Exadata Infrastructure for autonomous dataguard. Please use peerCloudAutonomousVmClusterId instead.
+	// *No longer used.* This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `peerCloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
 	PeerAutonomousExadataInfrastructureId pulumi.StringOutput `pulumi:"peerAutonomousExadataInfrastructureId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous VM cluster for Autonomous Data Guard. Required to enable Data Guard.
 	PeerAutonomousVmClusterId pulumi.StringOutput `pulumi:"peerAutonomousVmClusterId"`
@@ -175,7 +177,11 @@ type AutonomousContainerDatabase struct {
 	PeerDbUniqueName               pulumi.StringOutput `pulumi:"peerDbUniqueName"`
 	// The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
 	ProtectionMode pulumi.StringOutput `pulumi:"protectionMode"`
-	// The role of the dataguard enabled Autonomous Container Database.
+	// An array of CPU values that can be used to successfully provision a single Autonomous Database.
+	ProvisionableCpuses pulumi.Float64ArrayOutput `pulumi:"provisionableCpuses"`
+	// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+	ReclaimableCpus pulumi.Float64Output `pulumi:"reclaimableCpus"`
+	// The role of the Autonomous Data Guard-enabled Autonomous Container Database.
 	Role pulumi.StringOutput `pulumi:"role"`
 	// (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `cloudAutonomousVmClusterId` is set.
 	RotateKeyTrigger pulumi.BoolPtrOutput `pulumi:"rotateKeyTrigger"`
@@ -187,6 +193,8 @@ type AutonomousContainerDatabase struct {
 	State pulumi.StringOutput `pulumi:"state"`
 	// The date and time the Autonomous Container Database was created.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	// The number of CPU cores allocated to the Autonomous VM cluster.
+	TotalCpus pulumi.IntOutput `pulumi:"totalCpus"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
 	VaultId pulumi.StringOutput `pulumi:"vaultId"`
 }
@@ -226,12 +234,14 @@ func GetAutonomousContainerDatabase(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AutonomousContainerDatabase resources.
 type autonomousContainerDatabaseState struct {
-	// The OCID of the Autonomous Exadata Infrastructure. Please use cloudAutonomousVmClusterId instead.
+	// **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
 	AutonomousExadataInfrastructureId *string `pulumi:"autonomousExadataInfrastructureId"`
 	// The OCID of the Autonomous VM Cluster.
 	AutonomousVmClusterId *string `pulumi:"autonomousVmClusterId"`
 	// The availability domain of the Autonomous Container Database.
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
+	// Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
+	AvailableCpus *float64 `pulumi:"availableCpus"`
 	// (Updatable) Backup options for the Autonomous Container Database.
 	BackupConfig *AutonomousContainerDatabaseBackupConfig `pulumi:"backupConfig"`
 	// The OCID of the Cloud Autonomous VM Cluster.
@@ -280,7 +290,7 @@ type autonomousContainerDatabaseState struct {
 	PeerAutonomousContainerDatabaseCompartmentId *string `pulumi:"peerAutonomousContainerDatabaseCompartmentId"`
 	// The display name for the peer Autonomous Container Database.
 	PeerAutonomousContainerDatabaseDisplayName *string `pulumi:"peerAutonomousContainerDatabaseDisplayName"`
-	// The OCID of the peer Autonomous Exadata Infrastructure for autonomous dataguard. Please use peerCloudAutonomousVmClusterId instead.
+	// *No longer used.* This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `peerCloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
 	PeerAutonomousExadataInfrastructureId *string `pulumi:"peerAutonomousExadataInfrastructureId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous VM cluster for Autonomous Data Guard. Required to enable Data Guard.
 	PeerAutonomousVmClusterId *string `pulumi:"peerAutonomousVmClusterId"`
@@ -289,7 +299,11 @@ type autonomousContainerDatabaseState struct {
 	PeerDbUniqueName               *string `pulumi:"peerDbUniqueName"`
 	// The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
 	ProtectionMode *string `pulumi:"protectionMode"`
-	// The role of the dataguard enabled Autonomous Container Database.
+	// An array of CPU values that can be used to successfully provision a single Autonomous Database.
+	ProvisionableCpuses []float64 `pulumi:"provisionableCpuses"`
+	// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+	ReclaimableCpus *float64 `pulumi:"reclaimableCpus"`
+	// The role of the Autonomous Data Guard-enabled Autonomous Container Database.
 	Role *string `pulumi:"role"`
 	// (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `cloudAutonomousVmClusterId` is set.
 	RotateKeyTrigger *bool `pulumi:"rotateKeyTrigger"`
@@ -301,17 +315,21 @@ type autonomousContainerDatabaseState struct {
 	State *string `pulumi:"state"`
 	// The date and time the Autonomous Container Database was created.
 	TimeCreated *string `pulumi:"timeCreated"`
+	// The number of CPU cores allocated to the Autonomous VM cluster.
+	TotalCpus *int `pulumi:"totalCpus"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
 	VaultId *string `pulumi:"vaultId"`
 }
 
 type AutonomousContainerDatabaseState struct {
-	// The OCID of the Autonomous Exadata Infrastructure. Please use cloudAutonomousVmClusterId instead.
+	// **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
 	AutonomousExadataInfrastructureId pulumi.StringPtrInput
 	// The OCID of the Autonomous VM Cluster.
 	AutonomousVmClusterId pulumi.StringPtrInput
 	// The availability domain of the Autonomous Container Database.
 	AvailabilityDomain pulumi.StringPtrInput
+	// Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
+	AvailableCpus pulumi.Float64PtrInput
 	// (Updatable) Backup options for the Autonomous Container Database.
 	BackupConfig AutonomousContainerDatabaseBackupConfigPtrInput
 	// The OCID of the Cloud Autonomous VM Cluster.
@@ -360,7 +378,7 @@ type AutonomousContainerDatabaseState struct {
 	PeerAutonomousContainerDatabaseCompartmentId pulumi.StringPtrInput
 	// The display name for the peer Autonomous Container Database.
 	PeerAutonomousContainerDatabaseDisplayName pulumi.StringPtrInput
-	// The OCID of the peer Autonomous Exadata Infrastructure for autonomous dataguard. Please use peerCloudAutonomousVmClusterId instead.
+	// *No longer used.* This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `peerCloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
 	PeerAutonomousExadataInfrastructureId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous VM cluster for Autonomous Data Guard. Required to enable Data Guard.
 	PeerAutonomousVmClusterId pulumi.StringPtrInput
@@ -369,7 +387,11 @@ type AutonomousContainerDatabaseState struct {
 	PeerDbUniqueName               pulumi.StringPtrInput
 	// The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
 	ProtectionMode pulumi.StringPtrInput
-	// The role of the dataguard enabled Autonomous Container Database.
+	// An array of CPU values that can be used to successfully provision a single Autonomous Database.
+	ProvisionableCpuses pulumi.Float64ArrayInput
+	// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+	ReclaimableCpus pulumi.Float64PtrInput
+	// The role of the Autonomous Data Guard-enabled Autonomous Container Database.
 	Role pulumi.StringPtrInput
 	// (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `cloudAutonomousVmClusterId` is set.
 	RotateKeyTrigger pulumi.BoolPtrInput
@@ -381,6 +403,8 @@ type AutonomousContainerDatabaseState struct {
 	State pulumi.StringPtrInput
 	// The date and time the Autonomous Container Database was created.
 	TimeCreated pulumi.StringPtrInput
+	// The number of CPU cores allocated to the Autonomous VM cluster.
+	TotalCpus pulumi.IntPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
 	VaultId pulumi.StringPtrInput
 }
@@ -390,7 +414,7 @@ func (AutonomousContainerDatabaseState) ElementType() reflect.Type {
 }
 
 type autonomousContainerDatabaseArgs struct {
-	// The OCID of the Autonomous Exadata Infrastructure. Please use cloudAutonomousVmClusterId instead.
+	// **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
 	AutonomousExadataInfrastructureId *string `pulumi:"autonomousExadataInfrastructureId"`
 	// The OCID of the Autonomous VM Cluster.
 	AutonomousVmClusterId *string `pulumi:"autonomousVmClusterId"`
@@ -422,7 +446,7 @@ type autonomousContainerDatabaseArgs struct {
 	PeerAutonomousContainerDatabaseCompartmentId *string `pulumi:"peerAutonomousContainerDatabaseCompartmentId"`
 	// The display name for the peer Autonomous Container Database.
 	PeerAutonomousContainerDatabaseDisplayName *string `pulumi:"peerAutonomousContainerDatabaseDisplayName"`
-	// The OCID of the peer Autonomous Exadata Infrastructure for autonomous dataguard. Please use peerCloudAutonomousVmClusterId instead.
+	// *No longer used.* This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `peerCloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
 	PeerAutonomousExadataInfrastructureId *string `pulumi:"peerAutonomousExadataInfrastructureId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous VM cluster for Autonomous Data Guard. Required to enable Data Guard.
 	PeerAutonomousVmClusterId *string `pulumi:"peerAutonomousVmClusterId"`
@@ -443,7 +467,7 @@ type autonomousContainerDatabaseArgs struct {
 
 // The set of arguments for constructing a AutonomousContainerDatabase resource.
 type AutonomousContainerDatabaseArgs struct {
-	// The OCID of the Autonomous Exadata Infrastructure. Please use cloudAutonomousVmClusterId instead.
+	// **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
 	AutonomousExadataInfrastructureId pulumi.StringPtrInput
 	// The OCID of the Autonomous VM Cluster.
 	AutonomousVmClusterId pulumi.StringPtrInput
@@ -475,7 +499,7 @@ type AutonomousContainerDatabaseArgs struct {
 	PeerAutonomousContainerDatabaseCompartmentId pulumi.StringPtrInput
 	// The display name for the peer Autonomous Container Database.
 	PeerAutonomousContainerDatabaseDisplayName pulumi.StringPtrInput
-	// The OCID of the peer Autonomous Exadata Infrastructure for autonomous dataguard. Please use peerCloudAutonomousVmClusterId instead.
+	// *No longer used.* This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `peerCloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
 	PeerAutonomousExadataInfrastructureId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous VM cluster for Autonomous Data Guard. Required to enable Data Guard.
 	PeerAutonomousVmClusterId pulumi.StringPtrInput

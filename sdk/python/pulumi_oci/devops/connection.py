@@ -13,26 +13,33 @@ __all__ = ['ConnectionArgs', 'Connection']
 @pulumi.input_type
 class ConnectionArgs:
     def __init__(__self__, *,
-                 access_token: pulumi.Input[str],
                  connection_type: pulumi.Input[str],
                  project_id: pulumi.Input[str],
+                 access_token: Optional[pulumi.Input[str]] = None,
+                 app_password: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 username: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Connection resource.
-        :param pulumi.Input[str] access_token: (Updatable) The OCID of personal access token saved in secret store.
         :param pulumi.Input[str] connection_type: (Updatable) The type of connection.
         :param pulumi.Input[str] project_id: The OCID of the DevOps project.
+        :param pulumi.Input[str] access_token: (Updatable) The OCID of personal access token saved in secret store.
+        :param pulumi.Input[str] app_password: (Updatable) OCID of personal Bitbucket Cloud AppPassword saved in secret store
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Optional description about the connection.
         :param pulumi.Input[str] display_name: (Updatable) Optional connection display name. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+        :param pulumi.Input[str] username: (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
         """
-        pulumi.set(__self__, "access_token", access_token)
         pulumi.set(__self__, "connection_type", connection_type)
         pulumi.set(__self__, "project_id", project_id)
+        if access_token is not None:
+            pulumi.set(__self__, "access_token", access_token)
+        if app_password is not None:
+            pulumi.set(__self__, "app_password", app_password)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
@@ -41,18 +48,8 @@ class ConnectionArgs:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
-
-    @property
-    @pulumi.getter(name="accessToken")
-    def access_token(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The OCID of personal access token saved in secret store.
-        """
-        return pulumi.get(self, "access_token")
-
-    @access_token.setter
-    def access_token(self, value: pulumi.Input[str]):
-        pulumi.set(self, "access_token", value)
+        if username is not None:
+            pulumi.set(__self__, "username", username)
 
     @property
     @pulumi.getter(name="connectionType")
@@ -77,6 +74,30 @@ class ConnectionArgs:
     @project_id.setter
     def project_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "project_id", value)
+
+    @property
+    @pulumi.getter(name="accessToken")
+    def access_token(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The OCID of personal access token saved in secret store.
+        """
+        return pulumi.get(self, "access_token")
+
+    @access_token.setter
+    def access_token(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "access_token", value)
+
+    @property
+    @pulumi.getter(name="appPassword")
+    def app_password(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) OCID of personal Bitbucket Cloud AppPassword saved in secret store
+        """
+        return pulumi.get(self, "app_password")
+
+    @app_password.setter
+    def app_password(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "app_password", value)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -126,11 +147,24 @@ class ConnectionArgs:
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "freeform_tags", value)
 
+    @property
+    @pulumi.getter
+    def username(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
+        """
+        return pulumi.get(self, "username")
+
+    @username.setter
+    def username(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "username", value)
+
 
 @pulumi.input_type
 class _ConnectionState:
     def __init__(__self__, *,
                  access_token: Optional[pulumi.Input[str]] = None,
+                 app_password: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  connection_type: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -141,10 +175,12 @@ class _ConnectionState:
                  state: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
-                 time_updated: Optional[pulumi.Input[str]] = None):
+                 time_updated: Optional[pulumi.Input[str]] = None,
+                 username: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Connection resources.
         :param pulumi.Input[str] access_token: (Updatable) The OCID of personal access token saved in secret store.
+        :param pulumi.Input[str] app_password: (Updatable) OCID of personal Bitbucket Cloud AppPassword saved in secret store
         :param pulumi.Input[str] compartment_id: The OCID of the compartment containing the connection.
         :param pulumi.Input[str] connection_type: (Updatable) The type of connection.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
@@ -156,9 +192,12 @@ class _ConnectionState:
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time the connection was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param pulumi.Input[str] time_updated: The time the connection was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        :param pulumi.Input[str] username: (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
         """
         if access_token is not None:
             pulumi.set(__self__, "access_token", access_token)
+        if app_password is not None:
+            pulumi.set(__self__, "app_password", app_password)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if connection_type is not None:
@@ -181,6 +220,8 @@ class _ConnectionState:
             pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
             pulumi.set(__self__, "time_updated", time_updated)
+        if username is not None:
+            pulumi.set(__self__, "username", username)
 
     @property
     @pulumi.getter(name="accessToken")
@@ -193,6 +234,18 @@ class _ConnectionState:
     @access_token.setter
     def access_token(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "access_token", value)
+
+    @property
+    @pulumi.getter(name="appPassword")
+    def app_password(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) OCID of personal Bitbucket Cloud AppPassword saved in secret store
+        """
+        return pulumi.get(self, "app_password")
+
+    @app_password.setter
+    def app_password(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "app_password", value)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -326,6 +379,18 @@ class _ConnectionState:
     def time_updated(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "time_updated", value)
 
+    @property
+    @pulumi.getter
+    def username(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
+        """
+        return pulumi.get(self, "username")
+
+    @username.setter
+    def username(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "username", value)
+
 
 class Connection(pulumi.CustomResource):
     @overload
@@ -333,12 +398,14 @@ class Connection(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  access_token: Optional[pulumi.Input[str]] = None,
+                 app_password: Optional[pulumi.Input[str]] = None,
                  connection_type: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
+                 username: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
         This resource provides the Connection resource in Oracle Cloud Infrastructure Devops service.
@@ -352,9 +419,10 @@ class Connection(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_connection = oci.dev_ops.Connection("testConnection",
-            access_token=var["connection_access_token"],
             connection_type=var["connection_connection_type"],
             project_id=oci_devops_project["test_project"]["id"],
+            access_token=var["connection_access_token"],
+            app_password=var["connection_app_password"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -362,7 +430,8 @@ class Connection(pulumi.CustomResource):
             display_name=var["connection_display_name"],
             freeform_tags={
                 "bar-key": "value",
-            })
+            },
+            username=var["connection_username"])
         ```
 
         ## Import
@@ -376,12 +445,14 @@ class Connection(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] access_token: (Updatable) The OCID of personal access token saved in secret store.
+        :param pulumi.Input[str] app_password: (Updatable) OCID of personal Bitbucket Cloud AppPassword saved in secret store
         :param pulumi.Input[str] connection_type: (Updatable) The type of connection.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Optional description about the connection.
         :param pulumi.Input[str] display_name: (Updatable) Optional connection display name. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] project_id: The OCID of the DevOps project.
+        :param pulumi.Input[str] username: (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
         """
         ...
     @overload
@@ -401,9 +472,10 @@ class Connection(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_connection = oci.dev_ops.Connection("testConnection",
-            access_token=var["connection_access_token"],
             connection_type=var["connection_connection_type"],
             project_id=oci_devops_project["test_project"]["id"],
+            access_token=var["connection_access_token"],
+            app_password=var["connection_app_password"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -411,7 +483,8 @@ class Connection(pulumi.CustomResource):
             display_name=var["connection_display_name"],
             freeform_tags={
                 "bar-key": "value",
-            })
+            },
+            username=var["connection_username"])
         ```
 
         ## Import
@@ -438,12 +511,14 @@ class Connection(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  access_token: Optional[pulumi.Input[str]] = None,
+                 app_password: Optional[pulumi.Input[str]] = None,
                  connection_type: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
+                 username: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         if opts is None:
             opts = pulumi.ResourceOptions()
@@ -456,9 +531,8 @@ class Connection(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = ConnectionArgs.__new__(ConnectionArgs)
 
-            if access_token is None and not opts.urn:
-                raise TypeError("Missing required property 'access_token'")
             __props__.__dict__["access_token"] = access_token
+            __props__.__dict__["app_password"] = app_password
             if connection_type is None and not opts.urn:
                 raise TypeError("Missing required property 'connection_type'")
             __props__.__dict__["connection_type"] = connection_type
@@ -469,6 +543,7 @@ class Connection(pulumi.CustomResource):
             if project_id is None and not opts.urn:
                 raise TypeError("Missing required property 'project_id'")
             __props__.__dict__["project_id"] = project_id
+            __props__.__dict__["username"] = username
             __props__.__dict__["compartment_id"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
@@ -485,6 +560,7 @@ class Connection(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             access_token: Optional[pulumi.Input[str]] = None,
+            app_password: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             connection_type: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -495,7 +571,8 @@ class Connection(pulumi.CustomResource):
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
-            time_updated: Optional[pulumi.Input[str]] = None) -> 'Connection':
+            time_updated: Optional[pulumi.Input[str]] = None,
+            username: Optional[pulumi.Input[str]] = None) -> 'Connection':
         """
         Get an existing Connection resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -504,6 +581,7 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] access_token: (Updatable) The OCID of personal access token saved in secret store.
+        :param pulumi.Input[str] app_password: (Updatable) OCID of personal Bitbucket Cloud AppPassword saved in secret store
         :param pulumi.Input[str] compartment_id: The OCID of the compartment containing the connection.
         :param pulumi.Input[str] connection_type: (Updatable) The type of connection.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
@@ -515,12 +593,14 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time the connection was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param pulumi.Input[str] time_updated: The time the connection was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        :param pulumi.Input[str] username: (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
         __props__ = _ConnectionState.__new__(_ConnectionState)
 
         __props__.__dict__["access_token"] = access_token
+        __props__.__dict__["app_password"] = app_password
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["connection_type"] = connection_type
         __props__.__dict__["defined_tags"] = defined_tags
@@ -532,6 +612,7 @@ class Connection(pulumi.CustomResource):
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
+        __props__.__dict__["username"] = username
         return Connection(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -541,6 +622,14 @@ class Connection(pulumi.CustomResource):
         (Updatable) The OCID of personal access token saved in secret store.
         """
         return pulumi.get(self, "access_token")
+
+    @property
+    @pulumi.getter(name="appPassword")
+    def app_password(self) -> pulumi.Output[str]:
+        """
+        (Updatable) OCID of personal Bitbucket Cloud AppPassword saved in secret store
+        """
+        return pulumi.get(self, "app_password")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -629,4 +718,12 @@ class Connection(pulumi.CustomResource):
         The time the connection was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         """
         return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter
+    def username(self) -> pulumi.Output[str]:
+        """
+        (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
+        """
+        return pulumi.get(self, "username")
 

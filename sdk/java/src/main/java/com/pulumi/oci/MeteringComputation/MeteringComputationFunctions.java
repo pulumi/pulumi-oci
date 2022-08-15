@@ -17,11 +17,23 @@ import com.pulumi.oci.MeteringComputation.inputs.GetQueriesArgs;
 import com.pulumi.oci.MeteringComputation.inputs.GetQueriesPlainArgs;
 import com.pulumi.oci.MeteringComputation.inputs.GetQueryArgs;
 import com.pulumi.oci.MeteringComputation.inputs.GetQueryPlainArgs;
+import com.pulumi.oci.MeteringComputation.inputs.GetScheduleArgs;
+import com.pulumi.oci.MeteringComputation.inputs.GetSchedulePlainArgs;
+import com.pulumi.oci.MeteringComputation.inputs.GetScheduledRunArgs;
+import com.pulumi.oci.MeteringComputation.inputs.GetScheduledRunPlainArgs;
+import com.pulumi.oci.MeteringComputation.inputs.GetScheduledRunsArgs;
+import com.pulumi.oci.MeteringComputation.inputs.GetScheduledRunsPlainArgs;
+import com.pulumi.oci.MeteringComputation.inputs.GetSchedulesArgs;
+import com.pulumi.oci.MeteringComputation.inputs.GetSchedulesPlainArgs;
 import com.pulumi.oci.MeteringComputation.outputs.GetConfigurationResult;
 import com.pulumi.oci.MeteringComputation.outputs.GetCustomTableResult;
 import com.pulumi.oci.MeteringComputation.outputs.GetCustomTablesResult;
 import com.pulumi.oci.MeteringComputation.outputs.GetQueriesResult;
 import com.pulumi.oci.MeteringComputation.outputs.GetQueryResult;
+import com.pulumi.oci.MeteringComputation.outputs.GetScheduleResult;
+import com.pulumi.oci.MeteringComputation.outputs.GetScheduledRunResult;
+import com.pulumi.oci.MeteringComputation.outputs.GetScheduledRunsResult;
+import com.pulumi.oci.MeteringComputation.outputs.GetSchedulesResult;
 import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
 
@@ -245,5 +257,181 @@ public final class MeteringComputationFunctions {
      */
     public static CompletableFuture<GetQueryResult> getQueryPlain(GetQueryPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:MeteringComputation/getQuery:getQuery", TypeShape.of(GetQueryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Schedule resource in Oracle Cloud Infrastructure Metering Computation service.
+     * 
+     * Returns the saved schedule.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetScheduleResult> getSchedule(GetScheduleArgs args) {
+        return getSchedule(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Schedule resource in Oracle Cloud Infrastructure Metering Computation service.
+     * 
+     * Returns the saved schedule.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetScheduleResult> getSchedulePlain(GetSchedulePlainArgs args) {
+        return getSchedulePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Schedule resource in Oracle Cloud Infrastructure Metering Computation service.
+     * 
+     * Returns the saved schedule.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetScheduleResult> getSchedule(GetScheduleArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:MeteringComputation/getSchedule:getSchedule", TypeShape.of(GetScheduleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Schedule resource in Oracle Cloud Infrastructure Metering Computation service.
+     * 
+     * Returns the saved schedule.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetScheduleResult> getSchedulePlain(GetSchedulePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:MeteringComputation/getSchedule:getSchedule", TypeShape.of(GetScheduleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Scheduled Run resource in Oracle Cloud Infrastructure Metering Computation service.
+     * 
+     * Returns the saved schedule run.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetScheduledRunResult> getScheduledRun(GetScheduledRunArgs args) {
+        return getScheduledRun(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Scheduled Run resource in Oracle Cloud Infrastructure Metering Computation service.
+     * 
+     * Returns the saved schedule run.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetScheduledRunResult> getScheduledRunPlain(GetScheduledRunPlainArgs args) {
+        return getScheduledRunPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Scheduled Run resource in Oracle Cloud Infrastructure Metering Computation service.
+     * 
+     * Returns the saved schedule run.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetScheduledRunResult> getScheduledRun(GetScheduledRunArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:MeteringComputation/getScheduledRun:getScheduledRun", TypeShape.of(GetScheduledRunResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Scheduled Run resource in Oracle Cloud Infrastructure Metering Computation service.
+     * 
+     * Returns the saved schedule run.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetScheduledRunResult> getScheduledRunPlain(GetScheduledRunPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:MeteringComputation/getScheduledRun:getScheduledRun", TypeShape.of(GetScheduledRunResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Scheduled Runs in Oracle Cloud Infrastructure Metering Computation service.
+     * 
+     * Returns schedule history list.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetScheduledRunsResult> getScheduledRuns(GetScheduledRunsArgs args) {
+        return getScheduledRuns(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Scheduled Runs in Oracle Cloud Infrastructure Metering Computation service.
+     * 
+     * Returns schedule history list.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetScheduledRunsResult> getScheduledRunsPlain(GetScheduledRunsPlainArgs args) {
+        return getScheduledRunsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Scheduled Runs in Oracle Cloud Infrastructure Metering Computation service.
+     * 
+     * Returns schedule history list.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetScheduledRunsResult> getScheduledRuns(GetScheduledRunsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:MeteringComputation/getScheduledRuns:getScheduledRuns", TypeShape.of(GetScheduledRunsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Scheduled Runs in Oracle Cloud Infrastructure Metering Computation service.
+     * 
+     * Returns schedule history list.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetScheduledRunsResult> getScheduledRunsPlain(GetScheduledRunsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:MeteringComputation/getScheduledRuns:getScheduledRuns", TypeShape.of(GetScheduledRunsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Schedules in Oracle Cloud Infrastructure Metering Computation service.
+     * 
+     * Returns the saved schedule list.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetSchedulesResult> getSchedules(GetSchedulesArgs args) {
+        return getSchedules(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Schedules in Oracle Cloud Infrastructure Metering Computation service.
+     * 
+     * Returns the saved schedule list.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetSchedulesResult> getSchedulesPlain(GetSchedulesPlainArgs args) {
+        return getSchedulesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Schedules in Oracle Cloud Infrastructure Metering Computation service.
+     * 
+     * Returns the saved schedule list.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetSchedulesResult> getSchedules(GetSchedulesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:MeteringComputation/getSchedules:getSchedules", TypeShape.of(GetSchedulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Schedules in Oracle Cloud Infrastructure Metering Computation service.
+     * 
+     * Returns the saved schedule list.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetSchedulesResult> getSchedulesPlain(GetSchedulesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:MeteringComputation/getSchedules:getSchedules", TypeShape.of(GetSchedulesResult.class), args, Utilities.withVersion(options));
     }
 }

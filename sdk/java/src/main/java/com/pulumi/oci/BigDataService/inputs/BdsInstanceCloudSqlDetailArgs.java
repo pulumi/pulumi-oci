@@ -19,14 +19,14 @@ public final class BdsInstanceCloudSqlDetailArgs extends com.pulumi.resources.Re
     public static final BdsInstanceCloudSqlDetailArgs Empty = new BdsInstanceCloudSqlDetailArgs();
 
     /**
-     * The size of block volume in GB to be attached to a given node. All the details needed for attaching the block volume are managed by service itself.
+     * The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
      * 
      */
     @Import(name="blockVolumeSizeInGbs", required=true)
     private Output<String> blockVolumeSizeInGbs;
 
     /**
-     * @return The size of block volume in GB to be attached to a given node. All the details needed for attaching the block volume are managed by service itself.
+     * @return The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
      * 
      */
     public Output<String> blockVolumeSizeInGbs() {
@@ -34,14 +34,14 @@ public final class BdsInstanceCloudSqlDetailArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * IP address of the node.
+     * IP address of the node
      * 
      */
     @Import(name="ipAddress")
     private @Nullable Output<String> ipAddress;
 
     /**
-     * @return IP address of the node.
+     * @return IP address of the node
      * 
      */
     public Optional<Output<String>> ipAddress() {
@@ -49,14 +49,14 @@ public final class BdsInstanceCloudSqlDetailArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * Boolean flag specifying whether or not Kerberos principals are mapped to database users.
+     * Boolean flag specifying whether or not are Kerberos principals mapped to database users.
      * 
      */
     @Import(name="isKerberosMappedToDatabaseUsers")
     private @Nullable Output<Boolean> isKerberosMappedToDatabaseUsers;
 
     /**
-     * @return Boolean flag specifying whether or not Kerberos principals are mapped to database users.
+     * @return Boolean flag specifying whether or not are Kerberos principals mapped to database users.
      * 
      */
     public Optional<Output<Boolean>> isKerberosMappedToDatabaseUsers() {
@@ -64,14 +64,14 @@ public final class BdsInstanceCloudSqlDetailArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * Details about the Kerberos principals.
+     * Details about Kerberos principals
      * 
      */
     @Import(name="kerberosDetails")
     private @Nullable Output<List<BdsInstanceCloudSqlDetailKerberosDetailArgs>> kerberosDetails;
 
     /**
-     * @return Details about the Kerberos principals.
+     * @return Details about Kerberos principals
      * 
      */
     public Optional<Output<List<BdsInstanceCloudSqlDetailKerberosDetailArgs>>> kerberosDetails() {
@@ -79,14 +79,14 @@ public final class BdsInstanceCloudSqlDetailArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * (Updatable) Shape of the node.
+     * Shape of the node
      * 
      */
     @Import(name="shape", required=true)
     private Output<String> shape;
 
     /**
-     * @return (Updatable) Shape of the node.
+     * @return Shape of the node
      * 
      */
     public Output<String> shape() {
@@ -122,7 +122,7 @@ public final class BdsInstanceCloudSqlDetailArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param blockVolumeSizeInGbs The size of block volume in GB to be attached to a given node. All the details needed for attaching the block volume are managed by service itself.
+         * @param blockVolumeSizeInGbs The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
          * 
          * @return builder
          * 
@@ -133,7 +133,7 @@ public final class BdsInstanceCloudSqlDetailArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param blockVolumeSizeInGbs The size of block volume in GB to be attached to a given node. All the details needed for attaching the block volume are managed by service itself.
+         * @param blockVolumeSizeInGbs The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
          * 
          * @return builder
          * 
@@ -143,7 +143,7 @@ public final class BdsInstanceCloudSqlDetailArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param ipAddress IP address of the node.
+         * @param ipAddress IP address of the node
          * 
          * @return builder
          * 
@@ -154,7 +154,7 @@ public final class BdsInstanceCloudSqlDetailArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param ipAddress IP address of the node.
+         * @param ipAddress IP address of the node
          * 
          * @return builder
          * 
@@ -164,7 +164,7 @@ public final class BdsInstanceCloudSqlDetailArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param isKerberosMappedToDatabaseUsers Boolean flag specifying whether or not Kerberos principals are mapped to database users.
+         * @param isKerberosMappedToDatabaseUsers Boolean flag specifying whether or not are Kerberos principals mapped to database users.
          * 
          * @return builder
          * 
@@ -175,7 +175,7 @@ public final class BdsInstanceCloudSqlDetailArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param isKerberosMappedToDatabaseUsers Boolean flag specifying whether or not Kerberos principals are mapped to database users.
+         * @param isKerberosMappedToDatabaseUsers Boolean flag specifying whether or not are Kerberos principals mapped to database users.
          * 
          * @return builder
          * 
@@ -185,7 +185,7 @@ public final class BdsInstanceCloudSqlDetailArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param kerberosDetails Details about the Kerberos principals.
+         * @param kerberosDetails Details about Kerberos principals
          * 
          * @return builder
          * 
@@ -196,7 +196,7 @@ public final class BdsInstanceCloudSqlDetailArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param kerberosDetails Details about the Kerberos principals.
+         * @param kerberosDetails Details about Kerberos principals
          * 
          * @return builder
          * 
@@ -206,7 +206,7 @@ public final class BdsInstanceCloudSqlDetailArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param kerberosDetails Details about the Kerberos principals.
+         * @param kerberosDetails Details about Kerberos principals
          * 
          * @return builder
          * 
@@ -216,7 +216,7 @@ public final class BdsInstanceCloudSqlDetailArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param shape (Updatable) Shape of the node.
+         * @param shape Shape of the node
          * 
          * @return builder
          * 
@@ -227,7 +227,7 @@ public final class BdsInstanceCloudSqlDetailArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param shape (Updatable) Shape of the node.
+         * @param shape Shape of the node
          * 
          * @return builder
          * 

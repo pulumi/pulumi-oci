@@ -12,7 +12,7 @@ import java.util.Objects;
 @CustomType
 public final class GetConfigRule {
     /**
-     * @return A user-friendly name that provides a short description this rule.
+     * @return The name by which a configuration entity is displayed to the end user.
      * 
      */
     private final String displayName;
@@ -22,12 +22,12 @@ public final class GetConfigRule {
      */
     private final String filterText;
     /**
-     * @return If true, the rule will compute the actual Apdex score for spans that have been marked as errors. If false, the rule will always set the Apdex for error spans to frustrating, regardless of the configured thresholds. Default is false.
+     * @return Specifies whether an Apdex score should be computed for error spans. Setting it to &#34;true&#34; means that the Apdex score is computed in the usual way. Setting it to &#34;false&#34; skips the Apdex computation and sets the Apdex score to &#34;frustrating&#34; regardless of the configured thresholds. The default is &#34;false&#34;.
      * 
      */
     private final Boolean isApplyToErrorSpans;
     /**
-     * @return Specifies if the Apdex rule will be computed for spans matching the rule. Can be used to make sure certain spans don&#39;t get an Apdex score. The default is &#34;true&#34;.
+     * @return Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable Apdex score for spans that do not need or require it. The default is &#34;true&#34;.
      * 
      */
     private final Boolean isEnabled;
@@ -37,12 +37,12 @@ public final class GetConfigRule {
      */
     private final Integer priority;
     /**
-     * @return The maximum response time in milliseconds that will be considered satisfactory for the end user.
+     * @return The maximum response time in milliseconds that is considered &#34;satisfactory&#34; for the end user.
      * 
      */
     private final Integer satisfiedResponseTime;
     /**
-     * @return The maximum response time in milliseconds that will be considered tolerable for the end user. Response times beyond this threshold will be considered frustrating. This value cannot be lower than &#34;satisfiedResponseTime&#34;.
+     * @return The maximum response time in milliseconds that is considered &#34;tolerable&#34; for the end user. A response time beyond this threshold is considered &#34;frustrating&#34;. This value cannot be lower than &#34;satisfiedResponseTime&#34;.
      * 
      */
     private final Integer toleratingResponseTime;
@@ -66,7 +66,7 @@ public final class GetConfigRule {
     }
 
     /**
-     * @return A user-friendly name that provides a short description this rule.
+     * @return The name by which a configuration entity is displayed to the end user.
      * 
      */
     public String displayName() {
@@ -80,14 +80,14 @@ public final class GetConfigRule {
         return this.filterText;
     }
     /**
-     * @return If true, the rule will compute the actual Apdex score for spans that have been marked as errors. If false, the rule will always set the Apdex for error spans to frustrating, regardless of the configured thresholds. Default is false.
+     * @return Specifies whether an Apdex score should be computed for error spans. Setting it to &#34;true&#34; means that the Apdex score is computed in the usual way. Setting it to &#34;false&#34; skips the Apdex computation and sets the Apdex score to &#34;frustrating&#34; regardless of the configured thresholds. The default is &#34;false&#34;.
      * 
      */
     public Boolean isApplyToErrorSpans() {
         return this.isApplyToErrorSpans;
     }
     /**
-     * @return Specifies if the Apdex rule will be computed for spans matching the rule. Can be used to make sure certain spans don&#39;t get an Apdex score. The default is &#34;true&#34;.
+     * @return Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable Apdex score for spans that do not need or require it. The default is &#34;true&#34;.
      * 
      */
     public Boolean isEnabled() {
@@ -101,14 +101,14 @@ public final class GetConfigRule {
         return this.priority;
     }
     /**
-     * @return The maximum response time in milliseconds that will be considered satisfactory for the end user.
+     * @return The maximum response time in milliseconds that is considered &#34;satisfactory&#34; for the end user.
      * 
      */
     public Integer satisfiedResponseTime() {
         return this.satisfiedResponseTime;
     }
     /**
-     * @return The maximum response time in milliseconds that will be considered tolerable for the end user. Response times beyond this threshold will be considered frustrating. This value cannot be lower than &#34;satisfiedResponseTime&#34;.
+     * @return The maximum response time in milliseconds that is considered &#34;tolerable&#34; for the end user. A response time beyond this threshold is considered &#34;frustrating&#34;. This value cannot be lower than &#34;satisfiedResponseTime&#34;.
      * 
      */
     public Integer toleratingResponseTime() {

@@ -124,6 +124,21 @@ public final class NatGatewayState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
+     * 
+     */
+    @Import(name="routeTableId")
+    private @Nullable Output<String> routeTableId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
+     * 
+     */
+    public Optional<Output<String>> routeTableId() {
+        return Optional.ofNullable(this.routeTableId);
+    }
+
+    /**
      * The NAT gateway&#39;s current state.
      * 
      */
@@ -178,6 +193,7 @@ public final class NatGatewayState extends com.pulumi.resources.ResourceArgs {
         this.freeformTags = $.freeformTags;
         this.natIp = $.natIp;
         this.publicIpId = $.publicIpId;
+        this.routeTableId = $.routeTableId;
         this.state = $.state;
         this.timeCreated = $.timeCreated;
         this.vcnId = $.vcnId;
@@ -346,6 +362,27 @@ public final class NatGatewayState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder publicIpId(String publicIpId) {
             return publicIpId(Output.of(publicIpId));
+        }
+
+        /**
+         * @param routeTableId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder routeTableId(@Nullable Output<String> routeTableId) {
+            $.routeTableId = routeTableId;
+            return this;
+        }
+
+        /**
+         * @param routeTableId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder routeTableId(String routeTableId) {
+            return routeTableId(Output.of(routeTableId));
         }
 
         /**

@@ -17,11 +17,19 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// (Updatable) The shape used to launch the model deployment instances.
         /// </summary>
         public readonly string InstanceShapeName;
+        /// <summary>
+        /// (Updatable) Details for the model-deployment instance shape configuration.
+        /// </summary>
+        public readonly Outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails? ModelDeploymentInstanceShapeConfigDetails;
 
         [OutputConstructor]
-        private ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration(string instanceShapeName)
+        private ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration(
+            string instanceShapeName,
+
+            Outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails? modelDeploymentInstanceShapeConfigDetails)
         {
             InstanceShapeName = instanceShapeName;
+            ModelDeploymentInstanceShapeConfigDetails = modelDeploymentInstanceShapeConfigDetails;
         }
     }
 }

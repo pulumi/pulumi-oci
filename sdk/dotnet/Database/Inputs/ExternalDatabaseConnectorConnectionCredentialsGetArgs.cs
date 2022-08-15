@@ -37,6 +37,12 @@ namespace Pulumi.Oci.Database.Inputs
         public Input<string>? Role { get; set; }
 
         /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        /// </summary>
+        [Input("sslSecretId")]
+        public Input<string>? SslSecretId { get; set; }
+
+        /// <summary>
         /// (Updatable) The username that will be used to connect to the database.
         /// </summary>
         [Input("username")]

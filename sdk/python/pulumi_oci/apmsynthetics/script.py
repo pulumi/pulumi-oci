@@ -174,7 +174,7 @@ class _ScriptState:
         :param pulumi.Input[Sequence[pulumi.Input['ScriptParameterArgs']]] parameters: (Updatable) List of script parameters. Example: `[{"paramName": "userid", "paramValue":"testuser", "isSecret": false}]`
         :param pulumi.Input[str] time_created: The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         :param pulumi.Input[str] time_updated: The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
-        :param pulumi.Input[str] time_uploaded: The time when the script was uploaded.
+        :param pulumi.Input[str] time_uploaded: The time the script was uploaded.
         """
         if apm_domain_id is not None:
             pulumi.set(__self__, "apm_domain_id", apm_domain_id)
@@ -351,7 +351,7 @@ class _ScriptState:
     @pulumi.getter(name="timeUploaded")
     def time_uploaded(self) -> Optional[pulumi.Input[str]]:
         """
-        The time when the script was uploaded.
+        The time the script was uploaded.
         """
         return pulumi.get(self, "time_uploaded")
 
@@ -565,7 +565,7 @@ class Script(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ScriptParameterArgs']]]] parameters: (Updatable) List of script parameters. Example: `[{"paramName": "userid", "paramValue":"testuser", "isSecret": false}]`
         :param pulumi.Input[str] time_created: The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         :param pulumi.Input[str] time_updated: The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
-        :param pulumi.Input[str] time_uploaded: The time when the script was uploaded.
+        :param pulumi.Input[str] time_uploaded: The time the script was uploaded.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -686,7 +686,7 @@ class Script(pulumi.CustomResource):
     @pulumi.getter(name="timeUploaded")
     def time_uploaded(self) -> pulumi.Output[str]:
         """
-        The time when the script was uploaded.
+        The time the script was uploaded.
         """
         return pulumi.get(self, "time_uploaded")
 

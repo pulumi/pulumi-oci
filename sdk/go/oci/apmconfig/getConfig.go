@@ -12,7 +12,7 @@ import (
 
 // This data source provides details about a specific Config resource in Oracle Cloud Infrastructure Apm Config service.
 //
-// Get the configuration of the item identified by the OCID.
+// Gets the configuration item identified by the OCID.
 //
 // ## Example Usage
 //
@@ -48,9 +48,9 @@ func LookupConfig(ctx *pulumi.Context, args *LookupConfigArgs, opts ...pulumi.In
 
 // A collection of arguments for invoking getConfig.
 type LookupConfigArgs struct {
-	// The APM Domain Id the request is intended for.
+	// The APM Domain ID the request is intended for.
 	ApmDomainId string `pulumi:"apmDomainId"`
-	// The OCID of the ConfiguredItem.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item.
 	ConfigId string `pulumi:"configId"`
 }
 
@@ -58,29 +58,34 @@ type LookupConfigArgs struct {
 type LookupConfigResult struct {
 	ApmDomainId string `pulumi:"apmDomainId"`
 	ConfigId    string `pulumi:"configId"`
-	// The type of configuration item
+	// The type of configuration item.
 	ConfigType string `pulumi:"configType"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// A description of the metric
+	// A description of the metric.
 	Description string `pulumi:"description"`
-	// A list of dimensions for this metric
+	// A list of dimensions for the metric. This variable should not be used.
 	Dimensions []GetConfigDimension `pulumi:"dimensions"`
-	// A user-friendly name that provides a short description this rule.
+	// The name by which a configuration entity is displayed to the end user.
 	DisplayName string `pulumi:"displayName"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId will be generated when a Span Filter is created.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
 	FilterId string `pulumi:"filterId"`
 	// The string that defines the Span Filter expression.
 	FilterText string `pulumi:"filterText"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID will be generated when the item is created.
-	Id      string            `pulumi:"id"`
+	// A string that specifies the group that an OPTIONS item belongs to.
+	Group string `pulumi:"group"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
+	Id string `pulumi:"id"`
+	// The list of metrics in this group.
 	Metrics []GetConfigMetric `pulumi:"metrics"`
-	// The namespace to write the metrics to
-	Namespace string          `pulumi:"namespace"`
-	OpcDryRun string          `pulumi:"opcDryRun"`
-	Rules     []GetConfigRule `pulumi:"rules"`
+	// The namespace to which the metrics are published. It must be one of several predefined namespaces.
+	Namespace string `pulumi:"namespace"`
+	OpcDryRun string `pulumi:"opcDryRun"`
+	// The options are stored here as JSON.
+	Options string          `pulumi:"options"`
+	Rules   []GetConfigRule `pulumi:"rules"`
 	// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
@@ -102,9 +107,9 @@ func LookupConfigOutput(ctx *pulumi.Context, args LookupConfigOutputArgs, opts .
 
 // A collection of arguments for invoking getConfig.
 type LookupConfigOutputArgs struct {
-	// The APM Domain Id the request is intended for.
+	// The APM Domain ID the request is intended for.
 	ApmDomainId pulumi.StringInput `pulumi:"apmDomainId"`
-	// The OCID of the ConfiguredItem.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item.
 	ConfigId pulumi.StringInput `pulumi:"configId"`
 }
 
@@ -135,7 +140,7 @@ func (o LookupConfigResultOutput) ConfigId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConfigResult) string { return v.ConfigId }).(pulumi.StringOutput)
 }
 
-// The type of configuration item
+// The type of configuration item.
 func (o LookupConfigResultOutput) ConfigType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConfigResult) string { return v.ConfigType }).(pulumi.StringOutput)
 }
@@ -145,22 +150,22 @@ func (o LookupConfigResultOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupConfigResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// A description of the metric
+// A description of the metric.
 func (o LookupConfigResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConfigResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// A list of dimensions for this metric
+// A list of dimensions for the metric. This variable should not be used.
 func (o LookupConfigResultOutput) Dimensions() GetConfigDimensionArrayOutput {
 	return o.ApplyT(func(v LookupConfigResult) []GetConfigDimension { return v.Dimensions }).(GetConfigDimensionArrayOutput)
 }
 
-// A user-friendly name that provides a short description this rule.
+// The name by which a configuration entity is displayed to the end user.
 func (o LookupConfigResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConfigResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId will be generated when a Span Filter is created.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
 func (o LookupConfigResultOutput) FilterId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConfigResult) string { return v.FilterId }).(pulumi.StringOutput)
 }
@@ -175,22 +180,33 @@ func (o LookupConfigResultOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupConfigResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID will be generated when the item is created.
+// A string that specifies the group that an OPTIONS item belongs to.
+func (o LookupConfigResultOutput) Group() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConfigResult) string { return v.Group }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
 func (o LookupConfigResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConfigResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// The list of metrics in this group.
 func (o LookupConfigResultOutput) Metrics() GetConfigMetricArrayOutput {
 	return o.ApplyT(func(v LookupConfigResult) []GetConfigMetric { return v.Metrics }).(GetConfigMetricArrayOutput)
 }
 
-// The namespace to write the metrics to
+// The namespace to which the metrics are published. It must be one of several predefined namespaces.
 func (o LookupConfigResultOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConfigResult) string { return v.Namespace }).(pulumi.StringOutput)
 }
 
 func (o LookupConfigResultOutput) OpcDryRun() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConfigResult) string { return v.OpcDryRun }).(pulumi.StringOutput)
+}
+
+// The options are stored here as JSON.
+func (o LookupConfigResultOutput) Options() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConfigResult) string { return v.Options }).(pulumi.StringOutput)
 }
 
 func (o LookupConfigResultOutput) Rules() GetConfigRuleArrayOutput {

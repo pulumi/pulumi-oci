@@ -67,6 +67,12 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<double>? NetworkingBandwidthInGbps { get; set; }
 
         /// <summary>
+        /// (Updatable) The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        /// </summary>
+        [Input("nvmes")]
+        public Input<int>? Nvmes { get; set; }
+
+        /// <summary>
         /// (Updatable) The total number of OCPUs available to the instance.
         /// </summary>
         [Input("ocpus")]

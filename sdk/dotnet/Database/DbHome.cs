@@ -113,7 +113,7 @@ namespace Pulumi.Oci.Database
         /// (Updatable) Details for creating a database.
         /// </summary>
         [Output("database")]
-        public Output<Outputs.DbHomeDatabase> Database { get; private set; } = null!;
+        public Output<Outputs.DbHomeDatabase?> Database { get; private set; } = null!;
 
         /// <summary>
         /// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
@@ -219,7 +219,7 @@ namespace Pulumi.Oci.Database
         /// <param name="name">The unique name of the resource</param>
         /// <param name="args">The arguments used to populate this resource's properties</param>
         /// <param name="options">A bag of options that control this resource's behavior</param>
-        public DbHome(string name, DbHomeArgs args, CustomResourceOptions? options = null)
+        public DbHome(string name, DbHomeArgs? args = null, CustomResourceOptions? options = null)
             : base("oci:Database/dbHome:DbHome", name, args ?? new DbHomeArgs(), MakeResourceOptions(options, ""))
         {
         }
@@ -260,8 +260,8 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// (Updatable) Details for creating a database.
         /// </summary>
-        [Input("database", required: true)]
-        public Input<Inputs.DbHomeDatabaseArgs> Database { get; set; } = null!;
+        [Input("database")]
+        public Input<Inputs.DbHomeDatabaseArgs>? Database { get; set; }
 
         /// <summary>
         /// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)

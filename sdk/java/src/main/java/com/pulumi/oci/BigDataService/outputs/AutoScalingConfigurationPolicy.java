@@ -12,7 +12,7 @@ import java.util.Objects;
 @CustomType
 public final class AutoScalingConfigurationPolicy {
     /**
-     * @return (Updatable) Types of autoscale policies. Options are SCHEDULE-BASED or THRESHOLD-BASED. (Only THRESHOLD-BASED is supported in this release.)
+     * @return Type of autoscaling policy.
      * 
      */
     private final String policyType;
@@ -31,7 +31,7 @@ public final class AutoScalingConfigurationPolicy {
     }
 
     /**
-     * @return (Updatable) Types of autoscale policies. Options are SCHEDULE-BASED or THRESHOLD-BASED. (Only THRESHOLD-BASED is supported in this release.)
+     * @return Type of autoscaling policy.
      * 
      */
     public String policyType() {

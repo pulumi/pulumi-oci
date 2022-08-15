@@ -104,7 +104,7 @@ export interface GetManagedListsResult {
     readonly compartmentId: string;
     readonly compartmentIdInSubtree?: boolean;
     /**
-     * ManagedList display name
+     * ManagedList display name.
      */
     readonly displayName?: string;
     readonly filters?: outputs.CloudGuard.GetManagedListsFilter[];

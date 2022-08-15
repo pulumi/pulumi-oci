@@ -5,6 +5,7 @@ package com.pulumi.oci.ContainerEngine.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
@@ -20,6 +21,11 @@ public final class GetNodePoolNodeConfigDetailPlacementConfig {
      */
     private final String capacityReservationId;
     /**
+     * @return A list of fault domains in which to place nodes.
+     * 
+     */
+    private final List<String> faultDomains;
+    /**
      * @return The OCID of the subnet in which this node is placed.
      * 
      */
@@ -29,9 +35,11 @@ public final class GetNodePoolNodeConfigDetailPlacementConfig {
     private GetNodePoolNodeConfigDetailPlacementConfig(
         @CustomType.Parameter("availabilityDomain") String availabilityDomain,
         @CustomType.Parameter("capacityReservationId") String capacityReservationId,
+        @CustomType.Parameter("faultDomains") List<String> faultDomains,
         @CustomType.Parameter("subnetId") String subnetId) {
         this.availabilityDomain = availabilityDomain;
         this.capacityReservationId = capacityReservationId;
+        this.faultDomains = faultDomains;
         this.subnetId = subnetId;
     }
 
@@ -48,6 +56,13 @@ public final class GetNodePoolNodeConfigDetailPlacementConfig {
      */
     public String capacityReservationId() {
         return this.capacityReservationId;
+    }
+    /**
+     * @return A list of fault domains in which to place nodes.
+     * 
+     */
+    public List<String> faultDomains() {
+        return this.faultDomains;
     }
     /**
      * @return The OCID of the subnet in which this node is placed.
@@ -68,6 +83,7 @@ public final class GetNodePoolNodeConfigDetailPlacementConfig {
     public static final class Builder {
         private String availabilityDomain;
         private String capacityReservationId;
+        private List<String> faultDomains;
         private String subnetId;
 
         public Builder() {
@@ -78,6 +94,7 @@ public final class GetNodePoolNodeConfigDetailPlacementConfig {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.capacityReservationId = defaults.capacityReservationId;
+    	      this.faultDomains = defaults.faultDomains;
     	      this.subnetId = defaults.subnetId;
         }
 
@@ -89,11 +106,18 @@ public final class GetNodePoolNodeConfigDetailPlacementConfig {
             this.capacityReservationId = Objects.requireNonNull(capacityReservationId);
             return this;
         }
+        public Builder faultDomains(List<String> faultDomains) {
+            this.faultDomains = Objects.requireNonNull(faultDomains);
+            return this;
+        }
+        public Builder faultDomains(String... faultDomains) {
+            return faultDomains(List.of(faultDomains));
+        }
         public Builder subnetId(String subnetId) {
             this.subnetId = Objects.requireNonNull(subnetId);
             return this;
         }        public GetNodePoolNodeConfigDetailPlacementConfig build() {
-            return new GetNodePoolNodeConfigDetailPlacementConfig(availabilityDomain, capacityReservationId, subnetId);
+            return new GetNodePoolNodeConfigDetailPlacementConfig(availabilityDomain, capacityReservationId, faultDomains, subnetId);
         }
     }
 }

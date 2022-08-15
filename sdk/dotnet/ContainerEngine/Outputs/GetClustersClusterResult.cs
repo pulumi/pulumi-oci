@@ -18,6 +18,10 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// </summary>
         public readonly ImmutableArray<string> AvailableKubernetesUpgrades;
         /// <summary>
+        /// Available CNIs and network options for existing and new node pools of the cluster
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetClustersClusterClusterPodNetworkOptionResult> ClusterPodNetworkOptions;
+        /// <summary>
         /// The OCID of the compartment.
         /// </summary>
         public readonly string CompartmentId;
@@ -82,6 +86,8 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         private GetClustersClusterResult(
             ImmutableArray<string> availableKubernetesUpgrades,
 
+            ImmutableArray<Outputs.GetClustersClusterClusterPodNetworkOptionResult> clusterPodNetworkOptions,
+
             string compartmentId,
 
             ImmutableDictionary<string, object> definedTags,
@@ -113,6 +119,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
             string vcnId)
         {
             AvailableKubernetesUpgrades = availableKubernetesUpgrades;
+            ClusterPodNetworkOptions = clusterPodNetworkOptions;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
             EndpointConfigs = endpointConfigs;

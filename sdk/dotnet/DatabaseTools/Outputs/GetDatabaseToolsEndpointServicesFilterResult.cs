@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
     public sealed class GetDatabaseToolsEndpointServicesFilterResult
     {
         /// <summary>
-        /// A filter to return only resources that match the entire name given.
+        /// A filter to return only resources that match the entire specified name.
         /// </summary>
         public readonly string Name;
         public readonly bool? Regex;

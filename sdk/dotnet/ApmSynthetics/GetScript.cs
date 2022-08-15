@@ -170,7 +170,7 @@ namespace Pulumi.Oci.ApmSynthetics
         /// </summary>
         public readonly string TimeUpdated;
         /// <summary>
-        /// The time when the script was uploaded.
+        /// The time the script was uploaded.
         /// </summary>
         public readonly string TimeUploaded;
 

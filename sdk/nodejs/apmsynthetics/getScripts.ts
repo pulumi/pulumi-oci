@@ -50,7 +50,7 @@ export interface GetScriptsArgs {
      */
     contentType?: string;
     /**
-     * A filter to return only resources that match the entire display name given.
+     * A filter to return only the resources that match the entire display name.
      */
     displayName?: string;
     filters?: inputs.ApmSynthetics.GetScriptsFilter[];
@@ -97,7 +97,7 @@ export interface GetScriptsOutputArgs {
      */
     contentType?: pulumi.Input<string>;
     /**
-     * A filter to return only resources that match the entire display name given.
+     * A filter to return only the resources that match the entire display name.
      */
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.ApmSynthetics.GetScriptsFilterArgs>[]>;

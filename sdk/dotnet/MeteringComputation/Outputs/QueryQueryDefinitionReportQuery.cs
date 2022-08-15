@@ -22,7 +22,7 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
         /// </summary>
         public readonly string? DateRangeName;
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) The filter object for query usage.
         /// </summary>
         public readonly string? Filter;
         /// <summary>

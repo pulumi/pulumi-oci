@@ -14,7 +14,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
     public sealed class GetDetectorRecipeDetectorRuleCandidateResponderRuleResult
     {
         /// <summary>
-        /// displayName
+        /// Display name for DetectorRecipeDetectorRule.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>

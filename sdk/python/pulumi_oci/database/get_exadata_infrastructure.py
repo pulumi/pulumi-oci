@@ -21,7 +21,7 @@ class GetExadataInfrastructureResult:
     """
     A collection of values returned by getExadataInfrastructure.
     """
-    def __init__(__self__, activated_storage_count=None, activation_file=None, additional_storage_count=None, admin_network_cidr=None, cloud_control_plane_server1=None, cloud_control_plane_server2=None, compartment_id=None, compute_count=None, contacts=None, corporate_proxy=None, cpus_enabled=None, create_async=None, csi_number=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_server_version=None, defined_tags=None, display_name=None, dns_servers=None, exadata_infrastructure_id=None, freeform_tags=None, gateway=None, id=None, infini_band_network_cidr=None, lifecycle_details=None, maintenance_slo_status=None, maintenance_windows=None, max_cpu_count=None, max_data_storage_in_tbs=None, max_db_node_storage_in_gbs=None, max_memory_in_gbs=None, memory_size_in_gbs=None, netmask=None, ntp_servers=None, shape=None, state=None, storage_count=None, storage_server_version=None, time_created=None, time_zone=None):
+    def __init__(__self__, activated_storage_count=None, activation_file=None, additional_storage_count=None, admin_network_cidr=None, cloud_control_plane_server1=None, cloud_control_plane_server2=None, compartment_id=None, compute_count=None, contacts=None, corporate_proxy=None, cpus_enabled=None, create_async=None, csi_number=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_server_version=None, defined_tags=None, display_name=None, dns_servers=None, exadata_infrastructure_id=None, freeform_tags=None, gateway=None, id=None, infini_band_network_cidr=None, is_cps_offline_report_enabled=None, lifecycle_details=None, maintenance_slo_status=None, maintenance_windows=None, max_cpu_count=None, max_data_storage_in_tbs=None, max_db_node_storage_in_gbs=None, max_memory_in_gbs=None, memory_size_in_gbs=None, netmask=None, ntp_servers=None, shape=None, state=None, storage_count=None, storage_server_version=None, time_created=None, time_zone=None):
         if activated_storage_count and not isinstance(activated_storage_count, int):
             raise TypeError("Expected argument 'activated_storage_count' to be a int")
         pulumi.set(__self__, "activated_storage_count", activated_storage_count)
@@ -94,6 +94,9 @@ class GetExadataInfrastructureResult:
         if infini_band_network_cidr and not isinstance(infini_band_network_cidr, str):
             raise TypeError("Expected argument 'infini_band_network_cidr' to be a str")
         pulumi.set(__self__, "infini_band_network_cidr", infini_band_network_cidr)
+        if is_cps_offline_report_enabled and not isinstance(is_cps_offline_report_enabled, bool):
+            raise TypeError("Expected argument 'is_cps_offline_report_enabled' to be a bool")
+        pulumi.set(__self__, "is_cps_offline_report_enabled", is_cps_offline_report_enabled)
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -327,6 +330,14 @@ class GetExadataInfrastructureResult:
         return pulumi.get(self, "infini_band_network_cidr")
 
     @property
+    @pulumi.getter(name="isCpsOfflineReportEnabled")
+    def is_cps_offline_report_enabled(self) -> bool:
+        """
+        Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
+        """
+        return pulumi.get(self, "is_cps_offline_report_enabled")
+
+    @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> str:
         """
@@ -485,6 +496,7 @@ class AwaitableGetExadataInfrastructureResult(GetExadataInfrastructureResult):
             gateway=self.gateway,
             id=self.id,
             infini_band_network_cidr=self.infini_band_network_cidr,
+            is_cps_offline_report_enabled=self.is_cps_offline_report_enabled,
             lifecycle_details=self.lifecycle_details,
             maintenance_slo_status=self.maintenance_slo_status,
             maintenance_windows=self.maintenance_windows,
@@ -556,6 +568,7 @@ def get_exadata_infrastructure(exadata_infrastructure_id: Optional[str] = None,
         gateway=__ret__.gateway,
         id=__ret__.id,
         infini_band_network_cidr=__ret__.infini_band_network_cidr,
+        is_cps_offline_report_enabled=__ret__.is_cps_offline_report_enabled,
         lifecycle_details=__ret__.lifecycle_details,
         maintenance_slo_status=__ret__.maintenance_slo_status,
         maintenance_windows=__ret__.maintenance_windows,

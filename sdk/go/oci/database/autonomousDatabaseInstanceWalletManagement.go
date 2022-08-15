@@ -29,6 +29,7 @@ import (
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		_, err := Database.NewAutonomousDatabaseInstanceWalletManagement(ctx, "testAutonomousDatabaseInstanceWalletManagement", &Database.AutonomousDatabaseInstanceWalletManagementArgs{
 // 			AutonomousDatabaseId: pulumi.Any(oci_database_autonomous_database.Test_autonomous_database.Id),
+// 			GracePeriod:          pulumi.Any(_var.Autonomous_database_instance_wallet_management_grace_period),
 // 			ShouldRotate:         pulumi.Any(_var.Autonomous_database_instance_wallet_management_should_rotate),
 // 		})
 // 		if err != nil {
@@ -47,6 +48,8 @@ type AutonomousDatabaseInstanceWalletManagement struct {
 
 	// (Updatable) The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	AutonomousDatabaseId pulumi.StringOutput `pulumi:"autonomousDatabaseId"`
+	// (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+	GracePeriod pulumi.IntOutput `pulumi:"gracePeriod"`
 	// (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
 	ShouldRotate pulumi.BoolPtrOutput `pulumi:"shouldRotate"`
 	// The current lifecycle state of the Autonomous Database wallet.
@@ -89,6 +92,8 @@ func GetAutonomousDatabaseInstanceWalletManagement(ctx *pulumi.Context,
 type autonomousDatabaseInstanceWalletManagementState struct {
 	// (Updatable) The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	AutonomousDatabaseId *string `pulumi:"autonomousDatabaseId"`
+	// (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+	GracePeriod *int `pulumi:"gracePeriod"`
 	// (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
 	ShouldRotate *bool `pulumi:"shouldRotate"`
 	// The current lifecycle state of the Autonomous Database wallet.
@@ -100,6 +105,8 @@ type autonomousDatabaseInstanceWalletManagementState struct {
 type AutonomousDatabaseInstanceWalletManagementState struct {
 	// (Updatable) The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	AutonomousDatabaseId pulumi.StringPtrInput
+	// (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+	GracePeriod pulumi.IntPtrInput
 	// (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
 	ShouldRotate pulumi.BoolPtrInput
 	// The current lifecycle state of the Autonomous Database wallet.
@@ -115,6 +122,8 @@ func (AutonomousDatabaseInstanceWalletManagementState) ElementType() reflect.Typ
 type autonomousDatabaseInstanceWalletManagementArgs struct {
 	// (Updatable) The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	AutonomousDatabaseId string `pulumi:"autonomousDatabaseId"`
+	// (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+	GracePeriod *int `pulumi:"gracePeriod"`
 	// (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
 	ShouldRotate *bool `pulumi:"shouldRotate"`
 }
@@ -123,6 +132,8 @@ type autonomousDatabaseInstanceWalletManagementArgs struct {
 type AutonomousDatabaseInstanceWalletManagementArgs struct {
 	// (Updatable) The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	AutonomousDatabaseId pulumi.StringInput
+	// (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+	GracePeriod pulumi.IntPtrInput
 	// (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
 	ShouldRotate pulumi.BoolPtrInput
 }

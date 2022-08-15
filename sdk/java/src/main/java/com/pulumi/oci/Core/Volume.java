@@ -174,14 +174,14 @@ public class Volume extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
-     * (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume.
+     * (Updatable) Specifies whether the auto-tune performance is enabled for this volume.
      * 
      */
     @Export(name="isAutoTuneEnabled", type=Boolean.class, parameters={})
     private Output<Boolean> isAutoTuneEnabled;
 
     /**
-     * @return (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume.
+     * @return (Updatable) Specifies whether the auto-tune performance is enabled for this volume.
      * 
      */
     public Output<Boolean> isAutoTuneEnabled() {

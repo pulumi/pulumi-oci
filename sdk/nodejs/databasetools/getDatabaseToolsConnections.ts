@@ -8,7 +8,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Database Tools Connections in Oracle Cloud Infrastructure Database Tools service.
  *
- * Returns a list of DatabaseToolsConnections.
+ * Returns a list of Database Tools connections.
  *
  * ## Example Usage
  *
@@ -48,16 +48,16 @@ export interface GetDatabaseToolsConnectionsArgs {
      */
     compartmentId: string;
     /**
-     * A filter to return only resources that match the entire display name given.
+     * A filter to return only resources that match the entire specified display name.
      */
     displayName?: string;
     filters?: inputs.DatabaseTools.GetDatabaseToolsConnectionsFilter[];
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
      */
     state?: string;
     /**
-     * A filter to return only resources their endpointServiceId matches the given endpointServiceId.
+     * A filter to return only resources their type matches the specified type.
      */
     types?: string[];
 }
@@ -67,7 +67,7 @@ export interface GetDatabaseToolsConnectionsArgs {
  */
 export interface GetDatabaseToolsConnectionsResult {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
      */
     readonly compartmentId: string;
     /**
@@ -84,11 +84,11 @@ export interface GetDatabaseToolsConnectionsResult {
      */
     readonly id: string;
     /**
-     * The current state of the DatabaseToolsConnection.
+     * The current state of the Database Tools connection.
      */
     readonly state?: string;
     /**
-     * The DatabaseToolsConnection type.
+     * The Database Tools connection type.
      */
     readonly types?: string[];
 }
@@ -106,16 +106,16 @@ export interface GetDatabaseToolsConnectionsOutputArgs {
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * A filter to return only resources that match the entire display name given.
+     * A filter to return only resources that match the entire specified display name.
      */
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.DatabaseTools.GetDatabaseToolsConnectionsFilterArgs>[]>;
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
      */
     state?: pulumi.Input<string>;
     /**
-     * A filter to return only resources their endpointServiceId matches the given endpointServiceId.
+     * A filter to return only resources their type matches the specified type.
      */
     types?: pulumi.Input<pulumi.Input<string>[]>;
 }

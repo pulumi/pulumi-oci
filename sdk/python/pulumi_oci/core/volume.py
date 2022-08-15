@@ -39,7 +39,7 @@ class VolumeArgs:
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_auto_tune_enabled: (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume.
+        :param pulumi.Input[bool] is_auto_tune_enabled: (Updatable) Specifies whether the auto-tune performance is enabled for this volume.
         :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of the Key Management key to assign as the master encryption key for the volume.
         :param pulumi.Input[str] size_in_gbs: (Updatable) The size of the volume in GBs.
         :param pulumi.Input[str] size_in_mbs: The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use `size_in_gbs` instead.
@@ -178,7 +178,7 @@ class VolumeArgs:
     @pulumi.getter(name="isAutoTuneEnabled")
     def is_auto_tune_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume.
+        (Updatable) Specifies whether the auto-tune performance is enabled for this volume.
         """
         return pulumi.get(self, "is_auto_tune_enabled")
 
@@ -290,7 +290,7 @@ class _VolumeState:
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_auto_tune_enabled: (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume.
+        :param pulumi.Input[bool] is_auto_tune_enabled: (Updatable) Specifies whether the auto-tune performance is enabled for this volume.
         :param pulumi.Input[bool] is_hydrated: Specifies whether the cloned volume's data has finished copying from the source volume or backup.
         :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of the Key Management key to assign as the master encryption key for the volume.
         :param pulumi.Input[str] size_in_gbs: (Updatable) The size of the volume in GBs.
@@ -460,7 +460,7 @@ class _VolumeState:
     @pulumi.getter(name="isAutoTuneEnabled")
     def is_auto_tune_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume.
+        (Updatable) Specifies whether the auto-tune performance is enabled for this volume.
         """
         return pulumi.get(self, "is_auto_tune_enabled")
 
@@ -687,7 +687,7 @@ class Volume(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_auto_tune_enabled: (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume.
+        :param pulumi.Input[bool] is_auto_tune_enabled: (Updatable) Specifies whether the auto-tune performance is enabled for this volume.
         :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of the Key Management key to assign as the master encryption key for the volume.
         :param pulumi.Input[str] size_in_gbs: (Updatable) The size of the volume in GBs.
         :param pulumi.Input[str] size_in_mbs: The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use `size_in_gbs` instead.
@@ -878,7 +878,7 @@ class Volume(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_auto_tune_enabled: (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume.
+        :param pulumi.Input[bool] is_auto_tune_enabled: (Updatable) Specifies whether the auto-tune performance is enabled for this volume.
         :param pulumi.Input[bool] is_hydrated: Specifies whether the cloned volume's data has finished copying from the source volume or backup.
         :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of the Key Management key to assign as the master encryption key for the volume.
         :param pulumi.Input[str] size_in_gbs: (Updatable) The size of the volume in GBs.
@@ -990,7 +990,7 @@ class Volume(pulumi.CustomResource):
     @pulumi.getter(name="isAutoTuneEnabled")
     def is_auto_tune_enabled(self) -> pulumi.Output[bool]:
         """
-        (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume.
+        (Updatable) Specifies whether the auto-tune performance is enabled for this volume.
         """
         return pulumi.get(self, "is_auto_tune_enabled")
 

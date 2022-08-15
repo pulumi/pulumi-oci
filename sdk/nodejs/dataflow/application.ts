@@ -33,7 +33,15 @@ import * as utilities from "../utilities";
  *         "Operations.CostCenter": "42",
  *     },
  *     description: _var.application_description,
+ *     driverShapeConfig: {
+ *         memoryInGbs: _var.application_driver_shape_config_memory_in_gbs,
+ *         ocpus: _var.application_driver_shape_config_ocpus,
+ *     },
  *     execute: _var.application_execute,
+ *     executorShapeConfig: {
+ *         memoryInGbs: _var.application_executor_shape_config_memory_in_gbs,
+ *         ocpus: _var.application_executor_shape_config_ocpus,
+ *     },
  *     freeformTags: {
  *         Department: "Finance",
  *     },
@@ -122,6 +130,10 @@ export class Application extends pulumi.CustomResource {
      */
     public readonly driverShape!: pulumi.Output<string>;
     /**
+     * (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
+     */
+    public readonly driverShapeConfig!: pulumi.Output<outputs.DataFlow.ApplicationDriverShapeConfig>;
+    /**
      * (Updatable) The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
      */
     public readonly execute!: pulumi.Output<string>;
@@ -129,6 +141,10 @@ export class Application extends pulumi.CustomResource {
      * (Updatable) The VM shape for the executors. Sets the executor cores and memory.
      */
     public readonly executorShape!: pulumi.Output<string>;
+    /**
+     * (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
+     */
+    public readonly executorShapeConfig!: pulumi.Output<outputs.DataFlow.ApplicationExecutorShapeConfig>;
     /**
      * (Updatable) An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      */
@@ -216,8 +232,10 @@ export class Application extends pulumi.CustomResource {
             resourceInputs["description"] = state ? state.description : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["driverShape"] = state ? state.driverShape : undefined;
+            resourceInputs["driverShapeConfig"] = state ? state.driverShapeConfig : undefined;
             resourceInputs["execute"] = state ? state.execute : undefined;
             resourceInputs["executorShape"] = state ? state.executorShape : undefined;
+            resourceInputs["executorShapeConfig"] = state ? state.executorShapeConfig : undefined;
             resourceInputs["fileUri"] = state ? state.fileUri : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["language"] = state ? state.language : undefined;
@@ -269,8 +287,10 @@ export class Application extends pulumi.CustomResource {
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["driverShape"] = args ? args.driverShape : undefined;
+            resourceInputs["driverShapeConfig"] = args ? args.driverShapeConfig : undefined;
             resourceInputs["execute"] = args ? args.execute : undefined;
             resourceInputs["executorShape"] = args ? args.executorShape : undefined;
+            resourceInputs["executorShapeConfig"] = args ? args.executorShapeConfig : undefined;
             resourceInputs["fileUri"] = args ? args.fileUri : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["language"] = args ? args.language : undefined;
@@ -334,6 +354,10 @@ export interface ApplicationState {
      */
     driverShape?: pulumi.Input<string>;
     /**
+     * (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
+     */
+    driverShapeConfig?: pulumi.Input<inputs.DataFlow.ApplicationDriverShapeConfig>;
+    /**
      * (Updatable) The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
      */
     execute?: pulumi.Input<string>;
@@ -341,6 +365,10 @@ export interface ApplicationState {
      * (Updatable) The VM shape for the executors. Sets the executor cores and memory.
      */
     executorShape?: pulumi.Input<string>;
+    /**
+     * (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
+     */
+    executorShapeConfig?: pulumi.Input<inputs.DataFlow.ApplicationExecutorShapeConfig>;
     /**
      * (Updatable) An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      */
@@ -448,6 +476,10 @@ export interface ApplicationArgs {
      */
     driverShape: pulumi.Input<string>;
     /**
+     * (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
+     */
+    driverShapeConfig?: pulumi.Input<inputs.DataFlow.ApplicationDriverShapeConfig>;
+    /**
      * (Updatable) The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
      */
     execute?: pulumi.Input<string>;
@@ -455,6 +487,10 @@ export interface ApplicationArgs {
      * (Updatable) The VM shape for the executors. Sets the executor cores and memory.
      */
     executorShape: pulumi.Input<string>;
+    /**
+     * (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
+     */
+    executorShapeConfig?: pulumi.Input<inputs.DataFlow.ApplicationExecutorShapeConfig>;
     /**
      * (Updatable) An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      */

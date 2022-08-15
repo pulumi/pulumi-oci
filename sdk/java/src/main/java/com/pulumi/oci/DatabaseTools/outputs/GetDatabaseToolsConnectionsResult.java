@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetDatabaseToolsConnectionsResult {
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
      * 
      */
     private final String compartmentId;
@@ -36,12 +36,12 @@ public final class GetDatabaseToolsConnectionsResult {
      */
     private final String id;
     /**
-     * @return The current state of the DatabaseToolsConnection.
+     * @return The current state of the Database Tools connection.
      * 
      */
     private final @Nullable String state;
     /**
-     * @return The DatabaseToolsConnection type.
+     * @return The Database Tools connection type.
      * 
      */
     private final @Nullable List<String> types;
@@ -65,7 +65,7 @@ public final class GetDatabaseToolsConnectionsResult {
     }
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
      * 
      */
     public String compartmentId() {
@@ -96,14 +96,14 @@ public final class GetDatabaseToolsConnectionsResult {
         return this.id;
     }
     /**
-     * @return The current state of the DatabaseToolsConnection.
+     * @return The current state of the Database Tools connection.
      * 
      */
     public Optional<String> state() {
         return Optional.ofNullable(this.state);
     }
     /**
-     * @return The DatabaseToolsConnection type.
+     * @return The Database Tools connection type.
      * 
      */
     public List<String> types() {

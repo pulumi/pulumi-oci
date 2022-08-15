@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Database.inputs.AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs;
 import com.pulumi.oci.Database.inputs.AutonomousVmClusterMaintenanceWindowDetailMonthArgs;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -18,6 +19,13 @@ import javax.annotation.Nullable;
 public final class AutonomousVmClusterMaintenanceWindowDetailArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final AutonomousVmClusterMaintenanceWindowDetailArgs Empty = new AutonomousVmClusterMaintenanceWindowDetailArgs();
+
+    @Import(name="customActionTimeoutInMins")
+    private @Nullable Output<Integer> customActionTimeoutInMins;
+
+    public Optional<Output<Integer>> customActionTimeoutInMins() {
+        return Optional.ofNullable(this.customActionTimeoutInMins);
+    }
 
     /**
      * (Updatable) Days during the week when maintenance should be performed.
@@ -51,6 +59,13 @@ public final class AutonomousVmClusterMaintenanceWindowDetailArgs extends com.pu
         return Optional.ofNullable(this.hoursOfDays);
     }
 
+    @Import(name="isCustomActionTimeoutEnabled")
+    private @Nullable Output<Boolean> isCustomActionTimeoutEnabled;
+
+    public Optional<Output<Boolean>> isCustomActionTimeoutEnabled() {
+        return Optional.ofNullable(this.isCustomActionTimeoutEnabled);
+    }
+
     /**
      * (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
      * 
@@ -79,6 +94,13 @@ public final class AutonomousVmClusterMaintenanceWindowDetailArgs extends com.pu
      */
     public Optional<Output<List<AutonomousVmClusterMaintenanceWindowDetailMonthArgs>>> months() {
         return Optional.ofNullable(this.months);
+    }
+
+    @Import(name="patchingMode")
+    private @Nullable Output<String> patchingMode;
+
+    public Optional<Output<String>> patchingMode() {
+        return Optional.ofNullable(this.patchingMode);
     }
 
     /**
@@ -114,10 +136,13 @@ public final class AutonomousVmClusterMaintenanceWindowDetailArgs extends com.pu
     private AutonomousVmClusterMaintenanceWindowDetailArgs() {}
 
     private AutonomousVmClusterMaintenanceWindowDetailArgs(AutonomousVmClusterMaintenanceWindowDetailArgs $) {
+        this.customActionTimeoutInMins = $.customActionTimeoutInMins;
         this.daysOfWeeks = $.daysOfWeeks;
         this.hoursOfDays = $.hoursOfDays;
+        this.isCustomActionTimeoutEnabled = $.isCustomActionTimeoutEnabled;
         this.leadTimeInWeeks = $.leadTimeInWeeks;
         this.months = $.months;
+        this.patchingMode = $.patchingMode;
         this.preference = $.preference;
         this.weeksOfMonths = $.weeksOfMonths;
     }
@@ -138,6 +163,15 @@ public final class AutonomousVmClusterMaintenanceWindowDetailArgs extends com.pu
 
         public Builder(AutonomousVmClusterMaintenanceWindowDetailArgs defaults) {
             $ = new AutonomousVmClusterMaintenanceWindowDetailArgs(Objects.requireNonNull(defaults));
+        }
+
+        public Builder customActionTimeoutInMins(@Nullable Output<Integer> customActionTimeoutInMins) {
+            $.customActionTimeoutInMins = customActionTimeoutInMins;
+            return this;
+        }
+
+        public Builder customActionTimeoutInMins(Integer customActionTimeoutInMins) {
+            return customActionTimeoutInMins(Output.of(customActionTimeoutInMins));
         }
 
         /**
@@ -205,6 +239,15 @@ public final class AutonomousVmClusterMaintenanceWindowDetailArgs extends com.pu
             return hoursOfDays(List.of(hoursOfDays));
         }
 
+        public Builder isCustomActionTimeoutEnabled(@Nullable Output<Boolean> isCustomActionTimeoutEnabled) {
+            $.isCustomActionTimeoutEnabled = isCustomActionTimeoutEnabled;
+            return this;
+        }
+
+        public Builder isCustomActionTimeoutEnabled(Boolean isCustomActionTimeoutEnabled) {
+            return isCustomActionTimeoutEnabled(Output.of(isCustomActionTimeoutEnabled));
+        }
+
         /**
          * @param leadTimeInWeeks (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
          * 
@@ -255,6 +298,15 @@ public final class AutonomousVmClusterMaintenanceWindowDetailArgs extends com.pu
          */
         public Builder months(AutonomousVmClusterMaintenanceWindowDetailMonthArgs... months) {
             return months(List.of(months));
+        }
+
+        public Builder patchingMode(@Nullable Output<String> patchingMode) {
+            $.patchingMode = patchingMode;
+            return this;
+        }
+
+        public Builder patchingMode(String patchingMode) {
+            return patchingMode(Output.of(patchingMode));
         }
 
         /**

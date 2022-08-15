@@ -55,6 +55,8 @@ type LookupConnectionArgs struct {
 type LookupConnectionResult struct {
 	// The OCID of personal access token saved in secret store.
 	AccessToken string `pulumi:"accessToken"`
+	// OCID of personal Bitbucket Cloud AppPassword saved in secret store
+	AppPassword string `pulumi:"appPassword"`
 	// The OCID of the compartment containing the connection.
 	CompartmentId string `pulumi:"compartmentId"`
 	ConnectionId  string `pulumi:"connectionId"`
@@ -80,6 +82,8 @@ type LookupConnectionResult struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the connection was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeUpdated string `pulumi:"timeUpdated"`
+	// Public Bitbucket Cloud Username in plain text
+	Username string `pulumi:"username"`
 }
 
 func LookupConnectionOutput(ctx *pulumi.Context, args LookupConnectionOutputArgs, opts ...pulumi.InvokeOption) LookupConnectionResultOutput {
@@ -123,6 +127,11 @@ func (o LookupConnectionResultOutput) ToLookupConnectionResultOutputWithContext(
 // The OCID of personal access token saved in secret store.
 func (o LookupConnectionResultOutput) AccessToken() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.AccessToken }).(pulumi.StringOutput)
+}
+
+// OCID of personal Bitbucket Cloud AppPassword saved in secret store
+func (o LookupConnectionResultOutput) AppPassword() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConnectionResult) string { return v.AppPassword }).(pulumi.StringOutput)
 }
 
 // The OCID of the compartment containing the connection.
@@ -187,6 +196,11 @@ func (o LookupConnectionResultOutput) TimeCreated() pulumi.StringOutput {
 // The time the connection was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 func (o LookupConnectionResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// Public Bitbucket Cloud Username in plain text
+func (o LookupConnectionResultOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConnectionResult) string { return v.Username }).(pulumi.StringOutput)
 }
 
 func init() {

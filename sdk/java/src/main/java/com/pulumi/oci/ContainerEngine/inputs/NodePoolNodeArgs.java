@@ -200,14 +200,14 @@ public final class NodePoolNodeArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The state of the node.
+     * The state of the nodepool.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return The state of the node.
+     * @return The state of the nodepool.
      * 
      */
     public Optional<Output<String>> state() {
@@ -529,7 +529,7 @@ public final class NodePoolNodeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param state The state of the node.
+         * @param state The state of the nodepool.
          * 
          * @return builder
          * 
@@ -540,7 +540,7 @@ public final class NodePoolNodeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param state The state of the node.
+         * @param state The state of the nodepool.
          * 
          * @return builder
          * 

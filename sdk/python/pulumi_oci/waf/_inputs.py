@@ -331,12 +331,44 @@ class AppFirewallPolicyRequestAccessControlRuleArgs:
 @pulumi.input_type
 class AppFirewallPolicyRequestProtectionArgs:
     def __init__(__self__, *,
+                 body_inspection_size_limit_exceeded_action_name: Optional[pulumi.Input[str]] = None,
+                 body_inspection_size_limit_in_bytes: Optional[pulumi.Input[int]] = None,
                  rules: Optional[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyRequestProtectionRuleArgs']]]] = None):
         """
+        :param pulumi.Input[str] body_inspection_size_limit_exceeded_action_name: (Updatable) References action by name from actions defined in WebAppFirewallPolicy. Executed if HTTP message body size exceeds limit set in field `bodyInspectionSizeLimitInBytes`.
+        :param pulumi.Input[int] body_inspection_size_limit_in_bytes: (Updatable) Maximum size of inspected HTTP message body in bytes. Actions to take if this limit is exceeded are defined in `bodyInspectionSizeLimitExceededActionName`.
         :param pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyRequestProtectionRuleArgs']]] rules: (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
         """
+        if body_inspection_size_limit_exceeded_action_name is not None:
+            pulumi.set(__self__, "body_inspection_size_limit_exceeded_action_name", body_inspection_size_limit_exceeded_action_name)
+        if body_inspection_size_limit_in_bytes is not None:
+            pulumi.set(__self__, "body_inspection_size_limit_in_bytes", body_inspection_size_limit_in_bytes)
         if rules is not None:
             pulumi.set(__self__, "rules", rules)
+
+    @property
+    @pulumi.getter(name="bodyInspectionSizeLimitExceededActionName")
+    def body_inspection_size_limit_exceeded_action_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) References action by name from actions defined in WebAppFirewallPolicy. Executed if HTTP message body size exceeds limit set in field `bodyInspectionSizeLimitInBytes`.
+        """
+        return pulumi.get(self, "body_inspection_size_limit_exceeded_action_name")
+
+    @body_inspection_size_limit_exceeded_action_name.setter
+    def body_inspection_size_limit_exceeded_action_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "body_inspection_size_limit_exceeded_action_name", value)
+
+    @property
+    @pulumi.getter(name="bodyInspectionSizeLimitInBytes")
+    def body_inspection_size_limit_in_bytes(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Maximum size of inspected HTTP message body in bytes. Actions to take if this limit is exceeded are defined in `bodyInspectionSizeLimitExceededActionName`.
+        """
+        return pulumi.get(self, "body_inspection_size_limit_in_bytes")
+
+    @body_inspection_size_limit_in_bytes.setter
+    def body_inspection_size_limit_in_bytes(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "body_inspection_size_limit_in_bytes", value)
 
     @property
     @pulumi.getter
@@ -360,15 +392,17 @@ class AppFirewallPolicyRequestProtectionRuleArgs:
                  type: pulumi.Input[str],
                  condition: Optional[pulumi.Input[str]] = None,
                  condition_language: Optional[pulumi.Input[str]] = None,
+                 is_body_inspection_enabled: Optional[pulumi.Input[bool]] = None,
                  protection_capability_settings: Optional[pulumi.Input['AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsArgs']] = None):
         """
         :param pulumi.Input[str] action_name: (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
         :param pulumi.Input[str] name: (Updatable) Rule name. Must be unique within the module.
-        :param pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArgs']]] protection_capabilities: (Updatable) An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are executed in order of appearance. The array cannot contain entries with the same pair of capability key and version more than once.
+        :param pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArgs']]] protection_capabilities: (Updatable) An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
         :param pulumi.Input[str] type: (Updatable) Type of WebAppFirewallPolicyRule.
         :param pulumi.Input[str] condition: (Updatable) An expression that determines whether or not the rule action should be executed.
         :param pulumi.Input[str] condition_language: (Updatable) The language used to parse condition from field `condition`. Available languages:
                * **JMESPATH** an extended JMESPath language syntax.
+        :param pulumi.Input[bool] is_body_inspection_enabled: (Updatable) Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
         :param pulumi.Input['AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsArgs'] protection_capability_settings: (Updatable) Settings for protection capabilities
         """
         pulumi.set(__self__, "action_name", action_name)
@@ -379,6 +413,8 @@ class AppFirewallPolicyRequestProtectionRuleArgs:
             pulumi.set(__self__, "condition", condition)
         if condition_language is not None:
             pulumi.set(__self__, "condition_language", condition_language)
+        if is_body_inspection_enabled is not None:
+            pulumi.set(__self__, "is_body_inspection_enabled", is_body_inspection_enabled)
         if protection_capability_settings is not None:
             pulumi.set(__self__, "protection_capability_settings", protection_capability_settings)
 
@@ -410,7 +446,7 @@ class AppFirewallPolicyRequestProtectionRuleArgs:
     @pulumi.getter(name="protectionCapabilities")
     def protection_capabilities(self) -> pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArgs']]]:
         """
-        (Updatable) An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are executed in order of appearance. The array cannot contain entries with the same pair of capability key and version more than once.
+        (Updatable) An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
         """
         return pulumi.get(self, "protection_capabilities")
 
@@ -454,6 +490,18 @@ class AppFirewallPolicyRequestProtectionRuleArgs:
     @condition_language.setter
     def condition_language(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "condition_language", value)
+
+    @property
+    @pulumi.getter(name="isBodyInspectionEnabled")
+    def is_body_inspection_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
+        """
+        return pulumi.get(self, "is_body_inspection_enabled")
+
+    @is_body_inspection_enabled.setter
+    def is_body_inspection_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_body_inspection_enabled", value)
 
     @property
     @pulumi.getter(name="protectionCapabilitySettings")
@@ -1066,15 +1114,17 @@ class AppFirewallPolicyResponseProtectionRuleArgs:
                  type: pulumi.Input[str],
                  condition: Optional[pulumi.Input[str]] = None,
                  condition_language: Optional[pulumi.Input[str]] = None,
+                 is_body_inspection_enabled: Optional[pulumi.Input[bool]] = None,
                  protection_capability_settings: Optional[pulumi.Input['AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsArgs']] = None):
         """
         :param pulumi.Input[str] action_name: (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
         :param pulumi.Input[str] name: (Updatable) Rule name. Must be unique within the module.
-        :param pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArgs']]] protection_capabilities: (Updatable) An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are executed in order of appearance. The array cannot contain entries with the same pair of capability key and version more than once.
+        :param pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArgs']]] protection_capabilities: (Updatable) An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
         :param pulumi.Input[str] type: (Updatable) Type of WebAppFirewallPolicyRule.
         :param pulumi.Input[str] condition: (Updatable) An expression that determines whether or not the rule action should be executed.
         :param pulumi.Input[str] condition_language: (Updatable) The language used to parse condition from field `condition`. Available languages:
                * **JMESPATH** an extended JMESPath language syntax.
+        :param pulumi.Input[bool] is_body_inspection_enabled: (Updatable) Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
         :param pulumi.Input['AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsArgs'] protection_capability_settings: (Updatable) Settings for protection capabilities
         """
         pulumi.set(__self__, "action_name", action_name)
@@ -1085,6 +1135,8 @@ class AppFirewallPolicyResponseProtectionRuleArgs:
             pulumi.set(__self__, "condition", condition)
         if condition_language is not None:
             pulumi.set(__self__, "condition_language", condition_language)
+        if is_body_inspection_enabled is not None:
+            pulumi.set(__self__, "is_body_inspection_enabled", is_body_inspection_enabled)
         if protection_capability_settings is not None:
             pulumi.set(__self__, "protection_capability_settings", protection_capability_settings)
 
@@ -1116,7 +1168,7 @@ class AppFirewallPolicyResponseProtectionRuleArgs:
     @pulumi.getter(name="protectionCapabilities")
     def protection_capabilities(self) -> pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArgs']]]:
         """
-        (Updatable) An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are executed in order of appearance. The array cannot contain entries with the same pair of capability key and version more than once.
+        (Updatable) An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
         """
         return pulumi.get(self, "protection_capabilities")
 
@@ -1160,6 +1212,18 @@ class AppFirewallPolicyResponseProtectionRuleArgs:
     @condition_language.setter
     def condition_language(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "condition_language", value)
+
+    @property
+    @pulumi.getter(name="isBodyInspectionEnabled")
+    def is_body_inspection_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
+        """
+        return pulumi.get(self, "is_body_inspection_enabled")
+
+    @is_body_inspection_enabled.setter
+    def is_body_inspection_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_body_inspection_enabled", value)
 
     @property
     @pulumi.getter(name="protectionCapabilitySettings")

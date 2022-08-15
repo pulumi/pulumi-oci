@@ -102,7 +102,7 @@ type GetAutonomousDatabasesResult struct {
 	Id string `pulumi:"id"`
 	// The infrastructure type this resource belongs to.
 	InfrastructureType *string `pulumi:"infrastructureType"`
-	// Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to  Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+	// **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
 	IsDataGuardEnabled *bool `pulumi:"isDataGuardEnabled"`
 	// Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
 	IsFreeTier *bool `pulumi:"isFreeTier"`
@@ -219,7 +219,7 @@ func (o GetAutonomousDatabasesResultOutput) InfrastructureType() pulumi.StringPt
 	return o.ApplyT(func(v GetAutonomousDatabasesResult) *string { return v.InfrastructureType }).(pulumi.StringPtrOutput)
 }
 
-// Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to  Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+// **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
 func (o GetAutonomousDatabasesResultOutput) IsDataGuardEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GetAutonomousDatabasesResult) *bool { return v.IsDataGuardEnabled }).(pulumi.BoolPtrOutput)
 }

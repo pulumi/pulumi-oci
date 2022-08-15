@@ -13,25 +13,31 @@ namespace Pulumi.Oci.BigDataService.Inputs
     public sealed class BdsInstanceMasterNodeGetArgs : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The size of block volume in GB to be attached to a given node. All the details needed for attaching the block volume are managed by service itself.
+        /// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
         /// </summary>
         [Input("blockVolumeSizeInGbs", required: true)]
         public Input<string> BlockVolumeSizeInGbs { get; set; } = null!;
 
         /// <summary>
-        /// The number of nodes that form the cluster.
+        /// The amount of worker nodes should be created
         /// </summary>
         [Input("numberOfNodes", required: true)]
         public Input<int> NumberOfNodes { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Shape of the node.
+        /// Shape of the node
         /// </summary>
         [Input("shape", required: true)]
         public Input<string> Shape { get; set; } = null!;
 
         /// <summary>
-        /// The OCID of the subnet in which the node will be created.
+        /// The shape configuration requested for the node.
+        /// </summary>
+        [Input("shapeConfig")]
+        public Input<Inputs.BdsInstanceMasterNodeShapeConfigGetArgs>? ShapeConfig { get; set; }
+
+        /// <summary>
+        /// The OCID of the subnet in which the node should be created
         /// </summary>
         [Input("subnetId", required: true)]
         public Input<string> SubnetId { get; set; } = null!;

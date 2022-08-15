@@ -5,6 +5,7 @@ package com.pulumi.oci.CloudGuard.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.CloudGuard.inputs.TargetTargetDetailArgs;
 import com.pulumi.oci.CloudGuard.inputs.TargetTargetDetectorRecipeArgs;
 import com.pulumi.oci.CloudGuard.inputs.TargetTargetResponderRecipeArgs;
 import java.lang.Integer;
@@ -67,14 +68,14 @@ public final class TargetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) DetectorTemplate Identifier
+     * (Updatable) DetectorTemplate identifier.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) DetectorTemplate Identifier
+     * @return (Updatable) DetectorTemplate identifier.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -169,6 +170,21 @@ public final class TargetState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<Map<String,Object>>> systemTags() {
         return Optional.ofNullable(this.systemTags);
+    }
+
+    /**
+     * Details specific to the target type.
+     * 
+     */
+    @Import(name="targetDetails")
+    private @Nullable Output<List<TargetTargetDetailArgs>> targetDetails;
+
+    /**
+     * @return Details specific to the target type.
+     * 
+     */
+    public Optional<Output<List<TargetTargetDetailArgs>>> targetDetails() {
+        return Optional.ofNullable(this.targetDetails);
     }
 
     /**
@@ -274,6 +290,7 @@ public final class TargetState extends com.pulumi.resources.ResourceArgs {
         this.recipeCount = $.recipeCount;
         this.state = $.state;
         this.systemTags = $.systemTags;
+        this.targetDetails = $.targetDetails;
         this.targetDetectorRecipes = $.targetDetectorRecipes;
         this.targetResourceId = $.targetResourceId;
         this.targetResourceType = $.targetResourceType;
@@ -364,7 +381,7 @@ public final class TargetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) DetectorTemplate Identifier
+         * @param displayName (Updatable) DetectorTemplate identifier.
          * 
          * @return builder
          * 
@@ -375,7 +392,7 @@ public final class TargetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) DetectorTemplate Identifier
+         * @param displayName (Updatable) DetectorTemplate identifier.
          * 
          * @return builder
          * 
@@ -518,6 +535,37 @@ public final class TargetState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder systemTags(Map<String,Object> systemTags) {
             return systemTags(Output.of(systemTags));
+        }
+
+        /**
+         * @param targetDetails Details specific to the target type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetDetails(@Nullable Output<List<TargetTargetDetailArgs>> targetDetails) {
+            $.targetDetails = targetDetails;
+            return this;
+        }
+
+        /**
+         * @param targetDetails Details specific to the target type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetDetails(List<TargetTargetDetailArgs> targetDetails) {
+            return targetDetails(Output.of(targetDetails));
+        }
+
+        /**
+         * @param targetDetails Details specific to the target type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetDetails(TargetTargetDetailArgs... targetDetails) {
+            return targetDetails(List.of(targetDetails));
         }
 
         /**

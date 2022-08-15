@@ -15,7 +15,7 @@ public final class TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroup {
      */
     private final String compartmentId;
     /**
-     * @return (Updatable)
+     * @return (Updatable) Base condition object
      * 
      */
     private final String condition;
@@ -36,7 +36,7 @@ public final class TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroup {
         return this.compartmentId;
     }
     /**
-     * @return (Updatable)
+     * @return (Updatable) Base condition object
      * 
      */
     public String condition() {

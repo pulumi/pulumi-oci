@@ -15,17 +15,17 @@ import java.util.Objects;
 @CustomType
 public final class GetBudgetsBudget {
     /**
-     * @return The actual spend in currency for the current budget cycle
+     * @return The actual spend in currency for the current budget cycle.
      * 
      */
     private final Double actualSpend;
     /**
-     * @return Total number of alert rules in the budget
+     * @return The total number of alert rules in the budget.
      * 
      */
     private final Integer alertRuleCount;
     /**
-     * @return The amount of the budget expressed in the currency of the customer&#39;s rate card.
+     * @return The amount of the budget, expressed in the currency of the customer&#39;s rate card.
      * 
      */
     private final Integer amount;
@@ -50,12 +50,12 @@ public final class GetBudgetsBudget {
      */
     private final String description;
     /**
-     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
+     * @return A user-friendly name. This does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
      * 
      */
     private final String displayName;
     /**
-     * @return The forecasted spend in currency by the end of the current budget cycle
+     * @return The forecasted spend in currency by the end of the current budget cycle.
      * 
      */
     private final Double forecastedSpend;
@@ -65,10 +65,15 @@ public final class GetBudgetsBudget {
      */
     private final Map<String,Object> freeformTags;
     /**
-     * @return The OCID of the budget
+     * @return The OCID of the budget.
      * 
      */
     private final String id;
+    /**
+     * @return The type of the budget processing period. Valid values are INVOICE and MONTH.
+     * 
+     */
+    private final String processingPeriodType;
     /**
      * @return The reset period for the budget.
      * 
@@ -80,7 +85,7 @@ public final class GetBudgetsBudget {
      */
     private final String state;
     /**
-     * @return This is DEPRECATED. For backwards compatability, the property will be populated when targetType is &#34;COMPARTMENT&#34; AND targets contains EXACT ONE target compartment ocid. For all other scenarios, this property will be left empty.
+     * @return This is DEPRECATED. For backwards compatability, the property is populated when the targetType is &#34;COMPARTMENT&#34;, and targets contain the specific target compartment OCID. For all other scenarios, this property will be left empty.
      * 
      * @deprecated
      * The &#39;target_compartment_id&#39; field has been deprecated. Please use &#39;target_type&#39; instead.
@@ -89,7 +94,7 @@ public final class GetBudgetsBudget {
     @Deprecated /* The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead. */
     private final String targetCompartmentId;
     /**
-     * @return The type of target to filter by.
+     * @return The type of target to filter by:
      * * ALL - List all budgets
      * * COMPARTMENT - List all budgets with targetType == &#34;COMPARTMENT&#34;
      * * TAG - List all budgets with targetType == &#34;TAG&#34;
@@ -97,27 +102,27 @@ public final class GetBudgetsBudget {
      */
     private final String targetType;
     /**
-     * @return The list of targets on which the budget is applied. If targetType is &#34;COMPARTMENT&#34;, targets contains list of compartment OCIDs. If targetType is &#34;TAG&#34;, targets contains list of cost tracking tag identifiers in the form of &#34;{tagNamespace}.{tagKey}.{tagValue}&#34;.
+     * @return The list of targets on which the budget is applied. If the targetType is &#34;COMPARTMENT&#34;, the targets contain the list of compartment OCIDs. If the targetType is &#34;TAG&#34;, the targets contain the list of cost tracking tag identifiers in the form of &#34;{tagNamespace}.{tagKey}.{tagValue}&#34;.
      * 
      */
     private final List<String> targets;
     /**
-     * @return Time that budget was created
+     * @return The time that the budget was created.
      * 
      */
     private final String timeCreated;
     /**
-     * @return The time that the budget spend was last computed
+     * @return The time that the budget spend was last computed.
      * 
      */
     private final String timeSpendComputed;
     /**
-     * @return Time that budget was updated
+     * @return The time that the budget was updated.
      * 
      */
     private final String timeUpdated;
     /**
-     * @return Version of the budget. Starts from 1 and increments by 1.
+     * @return The version of the budget. Starts from 1 and increments by 1.
      * 
      */
     private final Integer version;
@@ -135,6 +140,7 @@ public final class GetBudgetsBudget {
         @CustomType.Parameter("forecastedSpend") Double forecastedSpend,
         @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
         @CustomType.Parameter("id") String id,
+        @CustomType.Parameter("processingPeriodType") String processingPeriodType,
         @CustomType.Parameter("resetPeriod") String resetPeriod,
         @CustomType.Parameter("state") String state,
         @CustomType.Parameter("targetCompartmentId") String targetCompartmentId,
@@ -155,6 +161,7 @@ public final class GetBudgetsBudget {
         this.forecastedSpend = forecastedSpend;
         this.freeformTags = freeformTags;
         this.id = id;
+        this.processingPeriodType = processingPeriodType;
         this.resetPeriod = resetPeriod;
         this.state = state;
         this.targetCompartmentId = targetCompartmentId;
@@ -167,21 +174,21 @@ public final class GetBudgetsBudget {
     }
 
     /**
-     * @return The actual spend in currency for the current budget cycle
+     * @return The actual spend in currency for the current budget cycle.
      * 
      */
     public Double actualSpend() {
         return this.actualSpend;
     }
     /**
-     * @return Total number of alert rules in the budget
+     * @return The total number of alert rules in the budget.
      * 
      */
     public Integer alertRuleCount() {
         return this.alertRuleCount;
     }
     /**
-     * @return The amount of the budget expressed in the currency of the customer&#39;s rate card.
+     * @return The amount of the budget, expressed in the currency of the customer&#39;s rate card.
      * 
      */
     public Integer amount() {
@@ -216,14 +223,14 @@ public final class GetBudgetsBudget {
         return this.description;
     }
     /**
-     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
+     * @return A user-friendly name. This does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
      * 
      */
     public String displayName() {
         return this.displayName;
     }
     /**
-     * @return The forecasted spend in currency by the end of the current budget cycle
+     * @return The forecasted spend in currency by the end of the current budget cycle.
      * 
      */
     public Double forecastedSpend() {
@@ -237,11 +244,18 @@ public final class GetBudgetsBudget {
         return this.freeformTags;
     }
     /**
-     * @return The OCID of the budget
+     * @return The OCID of the budget.
      * 
      */
     public String id() {
         return this.id;
+    }
+    /**
+     * @return The type of the budget processing period. Valid values are INVOICE and MONTH.
+     * 
+     */
+    public String processingPeriodType() {
+        return this.processingPeriodType;
     }
     /**
      * @return The reset period for the budget.
@@ -258,7 +272,7 @@ public final class GetBudgetsBudget {
         return this.state;
     }
     /**
-     * @return This is DEPRECATED. For backwards compatability, the property will be populated when targetType is &#34;COMPARTMENT&#34; AND targets contains EXACT ONE target compartment ocid. For all other scenarios, this property will be left empty.
+     * @return This is DEPRECATED. For backwards compatability, the property is populated when the targetType is &#34;COMPARTMENT&#34;, and targets contain the specific target compartment OCID. For all other scenarios, this property will be left empty.
      * 
      * @deprecated
      * The &#39;target_compartment_id&#39; field has been deprecated. Please use &#39;target_type&#39; instead.
@@ -269,7 +283,7 @@ public final class GetBudgetsBudget {
         return this.targetCompartmentId;
     }
     /**
-     * @return The type of target to filter by.
+     * @return The type of target to filter by:
      * * ALL - List all budgets
      * * COMPARTMENT - List all budgets with targetType == &#34;COMPARTMENT&#34;
      * * TAG - List all budgets with targetType == &#34;TAG&#34;
@@ -279,35 +293,35 @@ public final class GetBudgetsBudget {
         return this.targetType;
     }
     /**
-     * @return The list of targets on which the budget is applied. If targetType is &#34;COMPARTMENT&#34;, targets contains list of compartment OCIDs. If targetType is &#34;TAG&#34;, targets contains list of cost tracking tag identifiers in the form of &#34;{tagNamespace}.{tagKey}.{tagValue}&#34;.
+     * @return The list of targets on which the budget is applied. If the targetType is &#34;COMPARTMENT&#34;, the targets contain the list of compartment OCIDs. If the targetType is &#34;TAG&#34;, the targets contain the list of cost tracking tag identifiers in the form of &#34;{tagNamespace}.{tagKey}.{tagValue}&#34;.
      * 
      */
     public List<String> targets() {
         return this.targets;
     }
     /**
-     * @return Time that budget was created
+     * @return The time that the budget was created.
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return The time that the budget spend was last computed
+     * @return The time that the budget spend was last computed.
      * 
      */
     public String timeSpendComputed() {
         return this.timeSpendComputed;
     }
     /**
-     * @return Time that budget was updated
+     * @return The time that the budget was updated.
      * 
      */
     public String timeUpdated() {
         return this.timeUpdated;
     }
     /**
-     * @return Version of the budget. Starts from 1 and increments by 1.
+     * @return The version of the budget. Starts from 1 and increments by 1.
      * 
      */
     public Integer version() {
@@ -334,6 +348,7 @@ public final class GetBudgetsBudget {
         private Double forecastedSpend;
         private Map<String,Object> freeformTags;
         private String id;
+        private String processingPeriodType;
         private String resetPeriod;
         private String state;
         private String targetCompartmentId;
@@ -361,6 +376,7 @@ public final class GetBudgetsBudget {
     	      this.forecastedSpend = defaults.forecastedSpend;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.processingPeriodType = defaults.processingPeriodType;
     	      this.resetPeriod = defaults.resetPeriod;
     	      this.state = defaults.state;
     	      this.targetCompartmentId = defaults.targetCompartmentId;
@@ -416,6 +432,10 @@ public final class GetBudgetsBudget {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        public Builder processingPeriodType(String processingPeriodType) {
+            this.processingPeriodType = Objects.requireNonNull(processingPeriodType);
+            return this;
+        }
         public Builder resetPeriod(String resetPeriod) {
             this.resetPeriod = Objects.requireNonNull(resetPeriod);
             return this;
@@ -455,7 +475,7 @@ public final class GetBudgetsBudget {
             this.version = Objects.requireNonNull(version);
             return this;
         }        public GetBudgetsBudget build() {
-            return new GetBudgetsBudget(actualSpend, alertRuleCount, amount, budgetProcessingPeriodStartOffset, compartmentId, definedTags, description, displayName, forecastedSpend, freeformTags, id, resetPeriod, state, targetCompartmentId, targetType, targets, timeCreated, timeSpendComputed, timeUpdated, version);
+            return new GetBudgetsBudget(actualSpend, alertRuleCount, amount, budgetProcessingPeriodStartOffset, compartmentId, definedTags, description, displayName, forecastedSpend, freeformTags, id, processingPeriodType, resetPeriod, state, targetCompartmentId, targetType, targets, timeCreated, timeSpendComputed, timeUpdated, version);
         }
     }
 }

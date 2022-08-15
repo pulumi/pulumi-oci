@@ -86,7 +86,7 @@ namespace Pulumi.Oci.DevOps
     public sealed class GetRepositoryFileLineArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// Path to a file within a repository.
+        /// A filter to return file contents of the specified paths.
         /// </summary>
         [Input("filePath", required: true)]
         public string FilePath { get; set; } = null!;
@@ -117,7 +117,7 @@ namespace Pulumi.Oci.DevOps
     public sealed class GetRepositoryFileLineInvokeArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// Path to a file within a repository.
+        /// A filter to return file contents of the specified paths.
         /// </summary>
         [Input("filePath", required: true)]
         public Input<string> FilePath { get; set; } = null!;

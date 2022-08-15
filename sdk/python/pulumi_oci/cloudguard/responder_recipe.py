@@ -25,10 +25,10 @@ class ResponderRecipeArgs:
         """
         The set of arguments for constructing a ResponderRecipe resource.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier
-        :param pulumi.Input[str] display_name: (Updatable) ResponderRecipe Display Name
+        :param pulumi.Input[str] display_name: (Updatable) Responder recipe display name.
         :param pulumi.Input[str] source_responder_recipe_id: The id of the source responder recipe.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) ResponderRecipe Description
+        :param pulumi.Input[str] description: (Updatable) Responder recipe description.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input['ResponderRecipeResponderRuleArgs']]] responder_rules: (Updatable) Responder Rules to override from source responder recipe
         """
@@ -60,7 +60,7 @@ class ResponderRecipeArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
         """
-        (Updatable) ResponderRecipe Display Name
+        (Updatable) Responder recipe display name.
         """
         return pulumi.get(self, "display_name")
 
@@ -96,7 +96,7 @@ class ResponderRecipeArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) ResponderRecipe Description
+        (Updatable) Responder recipe description.
         """
         return pulumi.get(self, "description")
 
@@ -150,8 +150,8 @@ class _ResponderRecipeState:
         Input properties used for looking up and filtering ResponderRecipe resources.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) ResponderRecipe Description
-        :param pulumi.Input[str] display_name: (Updatable) ResponderRecipe Display Name
+        :param pulumi.Input[str] description: (Updatable) Responder recipe description.
+        :param pulumi.Input[str] display_name: (Updatable) Responder recipe display name.
         :param pulumi.Input[Sequence[pulumi.Input['ResponderRecipeEffectiveResponderRuleArgs']]] effective_responder_rules: List of responder rules associated with the recipe
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -220,7 +220,7 @@ class _ResponderRecipeState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) ResponderRecipe Description
+        (Updatable) Responder recipe description.
         """
         return pulumi.get(self, "description")
 
@@ -232,7 +232,7 @@ class _ResponderRecipeState:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) ResponderRecipe Display Name
+        (Updatable) Responder recipe display name.
         """
         return pulumi.get(self, "display_name")
 
@@ -391,8 +391,8 @@ class ResponderRecipe(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) ResponderRecipe Description
-        :param pulumi.Input[str] display_name: (Updatable) ResponderRecipe Display Name
+        :param pulumi.Input[str] description: (Updatable) Responder recipe description.
+        :param pulumi.Input[str] display_name: (Updatable) Responder recipe display name.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ResponderRecipeResponderRuleArgs']]]] responder_rules: (Updatable) Responder Rules to override from source responder recipe
         :param pulumi.Input[str] source_responder_recipe_id: The id of the source responder recipe.
@@ -503,8 +503,8 @@ class ResponderRecipe(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) ResponderRecipe Description
-        :param pulumi.Input[str] display_name: (Updatable) ResponderRecipe Display Name
+        :param pulumi.Input[str] description: (Updatable) Responder recipe description.
+        :param pulumi.Input[str] display_name: (Updatable) Responder recipe display name.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ResponderRecipeEffectiveResponderRuleArgs']]]] effective_responder_rules: List of responder rules associated with the recipe
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -556,7 +556,7 @@ class ResponderRecipe(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[str]:
         """
-        (Updatable) ResponderRecipe Description
+        (Updatable) Responder recipe description.
         """
         return pulumi.get(self, "description")
 
@@ -564,7 +564,7 @@ class ResponderRecipe(pulumi.CustomResource):
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
         """
-        (Updatable) ResponderRecipe Display Name
+        (Updatable) Responder recipe display name.
         """
         return pulumi.get(self, "display_name")
 

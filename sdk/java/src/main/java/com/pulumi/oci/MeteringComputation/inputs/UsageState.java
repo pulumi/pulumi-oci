@@ -36,9 +36,17 @@ public final class UsageState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.compartmentDepth);
     }
 
+    /**
+     * The filter object for query usage.
+     * 
+     */
     @Import(name="filter")
     private @Nullable Output<String> filter;
 
+    /**
+     * @return The filter object for query usage.
+     * 
+     */
     public Optional<Output<String>> filter() {
         return Optional.ofNullable(this.filter);
     }
@@ -249,11 +257,23 @@ public final class UsageState extends com.pulumi.resources.ResourceArgs {
             return compartmentDepth(Output.of(compartmentDepth));
         }
 
+        /**
+         * @param filter The filter object for query usage.
+         * 
+         * @return builder
+         * 
+         */
         public Builder filter(@Nullable Output<String> filter) {
             $.filter = filter;
             return this;
         }
 
+        /**
+         * @param filter The filter object for query usage.
+         * 
+         * @return builder
+         * 
+         */
         public Builder filter(String filter) {
             return filter(Output.of(filter));
         }

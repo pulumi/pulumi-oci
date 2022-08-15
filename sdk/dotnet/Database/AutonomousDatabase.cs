@@ -92,6 +92,12 @@ namespace Pulumi.Oci.Database
         public Output<ImmutableArray<Outputs.AutonomousDatabaseBackupConfig>> BackupConfigs { get; private set; } = null!;
 
         /// <summary>
+        /// The character set for the autonomous database.  The default is AL32UTF8. Allowed values for an Autonomous Database on shared infrastructure as as returned by [List Autonomous Database Character Sets](https://www.terraform.io/autonomousDatabaseCharacterSets)
+        /// </summary>
+        [Output("characterSet")]
+        public Output<string> CharacterSet { get; private set; } = null!;
+
+        /// <summary>
         /// The Autonomous Database clone type.
         /// </summary>
         [Output("cloneType")]
@@ -252,6 +258,12 @@ namespace Pulumi.Oci.Database
         public Output<bool> IsFreeTier { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        /// </summary>
+        [Output("isLocalDataGuardEnabled")]
+        public Output<bool> IsLocalDataGuardEnabled { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Indicates whether the Autonomous Database requires mTLS connections.
         /// </summary>
         [Output("isMtlsConnectionRequired")]
@@ -280,6 +292,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("isRefreshableClone")]
         public Output<bool> IsRefreshableClone { get; private set; } = null!;
+
+        /// <summary>
+        /// Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        /// </summary>
+        [Output("isRemoteDataGuardEnabled")]
+        public Output<bool> IsRemoteDataGuardEnabled { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) An optional property when enabled triggers the Shrinking of Autonomous Database once. To trigger Shrinking of ADB once again, this flag needs to be disabled and re-enabled again. It should not be passed during create database operation. It is only applicable on shared databases i.e. where `is_dedicated` is false.
@@ -336,6 +354,12 @@ namespace Pulumi.Oci.Database
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
+        /// Autonomous Data Guard standby database details.
+        /// </summary>
+        [Output("localStandbyDbs")]
+        public Output<ImmutableArray<Outputs.AutonomousDatabaseLocalStandbyDb>> LocalStandbyDbs { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
         /// </summary>
         [Output("maxCpuCoreCount")]
@@ -348,8 +372,14 @@ namespace Pulumi.Oci.Database
         public Output<int> MemoryPerOracleComputeUnitInGbs { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        /// * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+        /// The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
+        /// </summary>
+        [Output("ncharacterSet")]
+        public Output<string> NcharacterSet { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+        /// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         /// </summary>
         [Output("nsgIds")]
         public Output<ImmutableArray<string>> NsgIds { get; private set; } = null!;
@@ -403,6 +433,12 @@ namespace Pulumi.Oci.Database
         public Output<string> PrivateEndpointLabel { get; private set; } = null!;
 
         /// <summary>
+        /// An array of CPU values that an Autonomous Database can be scaled to.
+        /// </summary>
+        [Output("provisionableCpuses")]
+        public Output<ImmutableArray<double>> ProvisionableCpuses { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
         /// </summary>
         [Output("refreshableMode")]
@@ -451,7 +487,7 @@ namespace Pulumi.Oci.Database
         public Output<string> SourceId { get; private set; } = null!;
 
         /// <summary>
-        /// Autonomous Data Guard standby database details.
+        /// **Deprecated** Autonomous Data Guard standby database details.
         /// </summary>
         [Output("standbyDbs")]
         public Output<ImmutableArray<Outputs.AutonomousDatabaseStandbyDb>> StandbyDbs { get; private set; } = null!;
@@ -683,6 +719,12 @@ namespace Pulumi.Oci.Database
         public Input<string>? AutonomousMaintenanceScheduleType { get; set; }
 
         /// <summary>
+        /// The character set for the autonomous database.  The default is AL32UTF8. Allowed values for an Autonomous Database on shared infrastructure as as returned by [List Autonomous Database Character Sets](https://www.terraform.io/autonomousDatabaseCharacterSets)
+        /// </summary>
+        [Input("characterSet")]
+        public Input<string>? CharacterSet { get; set; }
+
+        /// <summary>
         /// The Autonomous Database clone type.
         /// </summary>
         [Input("cloneType")]
@@ -831,6 +873,12 @@ namespace Pulumi.Oci.Database
         public Input<bool>? IsFreeTier { get; set; }
 
         /// <summary>
+        /// (Updatable) Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        /// </summary>
+        [Input("isLocalDataGuardEnabled")]
+        public Input<bool>? IsLocalDataGuardEnabled { get; set; }
+
+        /// <summary>
         /// (Updatable) Indicates whether the Autonomous Database requires mTLS connections.
         /// </summary>
         [Input("isMtlsConnectionRequired")]
@@ -872,12 +920,18 @@ namespace Pulumi.Oci.Database
         [Input("maxCpuCoreCount")]
         public Input<int>? MaxCpuCoreCount { get; set; }
 
+        /// <summary>
+        /// The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
+        /// </summary>
+        [Input("ncharacterSet")]
+        public Input<string>? NcharacterSet { get; set; }
+
         [Input("nsgIds")]
         private InputList<string>? _nsgIds;
 
         /// <summary>
-        /// (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        /// * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+        /// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+        /// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         /// </summary>
         public InputList<string> NsgIds
         {
@@ -1103,6 +1157,12 @@ namespace Pulumi.Oci.Database
         }
 
         /// <summary>
+        /// The character set for the autonomous database.  The default is AL32UTF8. Allowed values for an Autonomous Database on shared infrastructure as as returned by [List Autonomous Database Character Sets](https://www.terraform.io/autonomousDatabaseCharacterSets)
+        /// </summary>
+        [Input("characterSet")]
+        public Input<string>? CharacterSet { get; set; }
+
+        /// <summary>
         /// The Autonomous Database clone type.
         /// </summary>
         [Input("cloneType")]
@@ -1293,6 +1353,12 @@ namespace Pulumi.Oci.Database
         public Input<bool>? IsFreeTier { get; set; }
 
         /// <summary>
+        /// (Updatable) Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        /// </summary>
+        [Input("isLocalDataGuardEnabled")]
+        public Input<bool>? IsLocalDataGuardEnabled { get; set; }
+
+        /// <summary>
         /// (Updatable) Indicates whether the Autonomous Database requires mTLS connections.
         /// </summary>
         [Input("isMtlsConnectionRequired")]
@@ -1321,6 +1387,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("isRefreshableClone")]
         public Input<bool>? IsRefreshableClone { get; set; }
+
+        /// <summary>
+        /// Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        /// </summary>
+        [Input("isRemoteDataGuardEnabled")]
+        public Input<bool>? IsRemoteDataGuardEnabled { get; set; }
 
         /// <summary>
         /// (Updatable) An optional property when enabled triggers the Shrinking of Autonomous Database once. To trigger Shrinking of ADB once again, this flag needs to be disabled and re-enabled again. It should not be passed during create database operation. It is only applicable on shared databases i.e. where `is_dedicated` is false.
@@ -1382,6 +1454,18 @@ namespace Pulumi.Oci.Database
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
 
+        [Input("localStandbyDbs")]
+        private InputList<Inputs.AutonomousDatabaseLocalStandbyDbGetArgs>? _localStandbyDbs;
+
+        /// <summary>
+        /// Autonomous Data Guard standby database details.
+        /// </summary>
+        public InputList<Inputs.AutonomousDatabaseLocalStandbyDbGetArgs> LocalStandbyDbs
+        {
+            get => _localStandbyDbs ?? (_localStandbyDbs = new InputList<Inputs.AutonomousDatabaseLocalStandbyDbGetArgs>());
+            set => _localStandbyDbs = value;
+        }
+
         /// <summary>
         /// (Updatable) The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
         /// </summary>
@@ -1394,12 +1478,18 @@ namespace Pulumi.Oci.Database
         [Input("memoryPerOracleComputeUnitInGbs")]
         public Input<int>? MemoryPerOracleComputeUnitInGbs { get; set; }
 
+        /// <summary>
+        /// The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
+        /// </summary>
+        [Input("ncharacterSet")]
+        public Input<string>? NcharacterSet { get; set; }
+
         [Input("nsgIds")]
         private InputList<string>? _nsgIds;
 
         /// <summary>
-        /// (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        /// * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+        /// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+        /// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         /// </summary>
         public InputList<string> NsgIds
         {
@@ -1461,6 +1551,18 @@ namespace Pulumi.Oci.Database
         [Input("privateEndpointLabel")]
         public Input<string>? PrivateEndpointLabel { get; set; }
 
+        [Input("provisionableCpuses")]
+        private InputList<double>? _provisionableCpuses;
+
+        /// <summary>
+        /// An array of CPU values that an Autonomous Database can be scaled to.
+        /// </summary>
+        public InputList<double> ProvisionableCpuses
+        {
+            get => _provisionableCpuses ?? (_provisionableCpuses = new InputList<double>());
+            set => _provisionableCpuses = value;
+        }
+
         /// <summary>
         /// (Updatable) The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
         /// </summary>
@@ -1519,7 +1621,7 @@ namespace Pulumi.Oci.Database
         private InputList<Inputs.AutonomousDatabaseStandbyDbGetArgs>? _standbyDbs;
 
         /// <summary>
-        /// Autonomous Data Guard standby database details.
+        /// **Deprecated** Autonomous Data Guard standby database details.
         /// </summary>
         public InputList<Inputs.AutonomousDatabaseStandbyDbGetArgs> StandbyDbs
         {

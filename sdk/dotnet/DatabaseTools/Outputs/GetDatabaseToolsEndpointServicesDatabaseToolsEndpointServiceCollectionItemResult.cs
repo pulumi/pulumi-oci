@@ -22,11 +22,11 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
         /// <summary>
-        /// A description of the DatabaseToolsEndpointService.
+        /// A description of the Database Tools Endpoint Service.
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// A filter to return only resources that match the entire display name given.
+        /// A filter to return only resources that match the entire specified display name.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
@@ -34,7 +34,7 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsEndpointService.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Endpoint Service.
         /// </summary>
         public readonly string Id;
         /// <summary>
@@ -42,11 +42,11 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// A filter to return only resources that match the entire name given.
+        /// A filter to return only resources that match the entire specified name.
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// A filter to return only resources their lifecycleState matches the given lifecycleState.
+        /// A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
         /// </summary>
         public readonly string State;
         /// <summary>
@@ -54,11 +54,11 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> SystemTags;
         /// <summary>
-        /// The time the DatabaseToolsEndpointService was created. An RFC3339 formatted datetime string
+        /// The time the Database Tools Endpoint Service was created. An RFC3339 formatted datetime string
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The time the DatabaseToolsEndpointService was updated. An RFC3339 formatted datetime string
+        /// The time the Database Tools Endpoint Service was updated. An RFC3339 formatted datetime string
         /// </summary>
         public readonly string TimeUpdated;
 

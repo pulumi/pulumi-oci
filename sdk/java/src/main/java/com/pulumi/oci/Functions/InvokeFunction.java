@@ -64,14 +64,14 @@ public class InvokeFunction extends com.pulumi.resources.CustomResource {
         return this.fnIntent;
     }
     /**
-     * Indicates whether the functions platform should execute the request directly and return the result (&#39;sync&#39;) or whether the platform should enqueue the request for later processing and acknowledge that it has been processed (&#39;detached&#39;).
+     * Indicates whether Oracle Functions should execute the request and return the result (&#39;sync&#39;) of the execution,  or whether Oracle Functions should return as soon as processing has begun (&#39;detached&#39;) and leave result handling to the function.
      * 
      */
     @Export(name="fnInvokeType", type=String.class, parameters={})
     private Output<String> fnInvokeType;
 
     /**
-     * @return Indicates whether the functions platform should execute the request directly and return the result (&#39;sync&#39;) or whether the platform should enqueue the request for later processing and acknowledge that it has been processed (&#39;detached&#39;).
+     * @return Indicates whether Oracle Functions should execute the request and return the result (&#39;sync&#39;) of the execution,  or whether Oracle Functions should return as soon as processing has begun (&#39;detached&#39;) and leave result handling to the function.
      * 
      */
     public Output<String> fnInvokeType() {

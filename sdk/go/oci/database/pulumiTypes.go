@@ -2534,6 +2534,130 @@ func (o AutonomousDatabaseKeyHistoryEntryArrayOutput) Index(i pulumi.IntInput) A
 	}).(AutonomousDatabaseKeyHistoryEntryOutput)
 }
 
+type AutonomousDatabaseLocalStandbyDb struct {
+	// The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
+	LagTimeInSeconds *int `pulumi:"lagTimeInSeconds"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// (Updatable) The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
+	State *string `pulumi:"state"`
+	// The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+	TimeDataGuardRoleChanged *string `pulumi:"timeDataGuardRoleChanged"`
+}
+
+// AutonomousDatabaseLocalStandbyDbInput is an input type that accepts AutonomousDatabaseLocalStandbyDbArgs and AutonomousDatabaseLocalStandbyDbOutput values.
+// You can construct a concrete instance of `AutonomousDatabaseLocalStandbyDbInput` via:
+//
+//          AutonomousDatabaseLocalStandbyDbArgs{...}
+type AutonomousDatabaseLocalStandbyDbInput interface {
+	pulumi.Input
+
+	ToAutonomousDatabaseLocalStandbyDbOutput() AutonomousDatabaseLocalStandbyDbOutput
+	ToAutonomousDatabaseLocalStandbyDbOutputWithContext(context.Context) AutonomousDatabaseLocalStandbyDbOutput
+}
+
+type AutonomousDatabaseLocalStandbyDbArgs struct {
+	// The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
+	LagTimeInSeconds pulumi.IntPtrInput `pulumi:"lagTimeInSeconds"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
+	// (Updatable) The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
+	State pulumi.StringPtrInput `pulumi:"state"`
+	// The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+	TimeDataGuardRoleChanged pulumi.StringPtrInput `pulumi:"timeDataGuardRoleChanged"`
+}
+
+func (AutonomousDatabaseLocalStandbyDbArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AutonomousDatabaseLocalStandbyDb)(nil)).Elem()
+}
+
+func (i AutonomousDatabaseLocalStandbyDbArgs) ToAutonomousDatabaseLocalStandbyDbOutput() AutonomousDatabaseLocalStandbyDbOutput {
+	return i.ToAutonomousDatabaseLocalStandbyDbOutputWithContext(context.Background())
+}
+
+func (i AutonomousDatabaseLocalStandbyDbArgs) ToAutonomousDatabaseLocalStandbyDbOutputWithContext(ctx context.Context) AutonomousDatabaseLocalStandbyDbOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutonomousDatabaseLocalStandbyDbOutput)
+}
+
+// AutonomousDatabaseLocalStandbyDbArrayInput is an input type that accepts AutonomousDatabaseLocalStandbyDbArray and AutonomousDatabaseLocalStandbyDbArrayOutput values.
+// You can construct a concrete instance of `AutonomousDatabaseLocalStandbyDbArrayInput` via:
+//
+//          AutonomousDatabaseLocalStandbyDbArray{ AutonomousDatabaseLocalStandbyDbArgs{...} }
+type AutonomousDatabaseLocalStandbyDbArrayInput interface {
+	pulumi.Input
+
+	ToAutonomousDatabaseLocalStandbyDbArrayOutput() AutonomousDatabaseLocalStandbyDbArrayOutput
+	ToAutonomousDatabaseLocalStandbyDbArrayOutputWithContext(context.Context) AutonomousDatabaseLocalStandbyDbArrayOutput
+}
+
+type AutonomousDatabaseLocalStandbyDbArray []AutonomousDatabaseLocalStandbyDbInput
+
+func (AutonomousDatabaseLocalStandbyDbArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AutonomousDatabaseLocalStandbyDb)(nil)).Elem()
+}
+
+func (i AutonomousDatabaseLocalStandbyDbArray) ToAutonomousDatabaseLocalStandbyDbArrayOutput() AutonomousDatabaseLocalStandbyDbArrayOutput {
+	return i.ToAutonomousDatabaseLocalStandbyDbArrayOutputWithContext(context.Background())
+}
+
+func (i AutonomousDatabaseLocalStandbyDbArray) ToAutonomousDatabaseLocalStandbyDbArrayOutputWithContext(ctx context.Context) AutonomousDatabaseLocalStandbyDbArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutonomousDatabaseLocalStandbyDbArrayOutput)
+}
+
+type AutonomousDatabaseLocalStandbyDbOutput struct{ *pulumi.OutputState }
+
+func (AutonomousDatabaseLocalStandbyDbOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AutonomousDatabaseLocalStandbyDb)(nil)).Elem()
+}
+
+func (o AutonomousDatabaseLocalStandbyDbOutput) ToAutonomousDatabaseLocalStandbyDbOutput() AutonomousDatabaseLocalStandbyDbOutput {
+	return o
+}
+
+func (o AutonomousDatabaseLocalStandbyDbOutput) ToAutonomousDatabaseLocalStandbyDbOutputWithContext(ctx context.Context) AutonomousDatabaseLocalStandbyDbOutput {
+	return o
+}
+
+// The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
+func (o AutonomousDatabaseLocalStandbyDbOutput) LagTimeInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AutonomousDatabaseLocalStandbyDb) *int { return v.LagTimeInSeconds }).(pulumi.IntPtrOutput)
+}
+
+// Additional information about the current lifecycle state.
+func (o AutonomousDatabaseLocalStandbyDbOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AutonomousDatabaseLocalStandbyDb) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
+func (o AutonomousDatabaseLocalStandbyDbOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AutonomousDatabaseLocalStandbyDb) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+// The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+func (o AutonomousDatabaseLocalStandbyDbOutput) TimeDataGuardRoleChanged() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AutonomousDatabaseLocalStandbyDb) *string { return v.TimeDataGuardRoleChanged }).(pulumi.StringPtrOutput)
+}
+
+type AutonomousDatabaseLocalStandbyDbArrayOutput struct{ *pulumi.OutputState }
+
+func (AutonomousDatabaseLocalStandbyDbArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AutonomousDatabaseLocalStandbyDb)(nil)).Elem()
+}
+
+func (o AutonomousDatabaseLocalStandbyDbArrayOutput) ToAutonomousDatabaseLocalStandbyDbArrayOutput() AutonomousDatabaseLocalStandbyDbArrayOutput {
+	return o
+}
+
+func (o AutonomousDatabaseLocalStandbyDbArrayOutput) ToAutonomousDatabaseLocalStandbyDbArrayOutputWithContext(ctx context.Context) AutonomousDatabaseLocalStandbyDbArrayOutput {
+	return o
+}
+
+func (o AutonomousDatabaseLocalStandbyDbArrayOutput) Index(i pulumi.IntInput) AutonomousDatabaseLocalStandbyDbOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AutonomousDatabaseLocalStandbyDb {
+		return vs[0].([]AutonomousDatabaseLocalStandbyDb)[vs[1].(int)]
+	}).(AutonomousDatabaseLocalStandbyDbOutput)
+}
+
 type AutonomousDatabaseScheduledOperation struct {
 	// (Updatable) Day of the week.
 	DayOfWeek AutonomousDatabaseScheduledOperationDayOfWeek `pulumi:"dayOfWeek"`
@@ -3693,15 +3817,18 @@ func (o AutonomousExadataInfrastructureMaintenanceWindowMonthArrayOutput) Index(
 }
 
 type AutonomousVmClusterMaintenanceWindow struct {
+	CustomActionTimeoutInMins *int `pulumi:"customActionTimeoutInMins"`
 	// (Updatable) Days during the week when maintenance should be performed.
 	DaysOfWeeks []AutonomousVmClusterMaintenanceWindowDaysOfWeek `pulumi:"daysOfWeeks"`
 	// (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
 	// * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-	HoursOfDays []int `pulumi:"hoursOfDays"`
+	HoursOfDays                  []int `pulumi:"hoursOfDays"`
+	IsCustomActionTimeoutEnabled *bool `pulumi:"isCustomActionTimeoutEnabled"`
 	// (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
 	LeadTimeInWeeks *int `pulumi:"leadTimeInWeeks"`
 	// (Updatable) Months during the year when maintenance should be performed.
-	Months []AutonomousVmClusterMaintenanceWindowMonth `pulumi:"months"`
+	Months       []AutonomousVmClusterMaintenanceWindowMonth `pulumi:"months"`
+	PatchingMode *string                                     `pulumi:"patchingMode"`
 	// (Updatable) The maintenance window scheduling preference.
 	Preference *string `pulumi:"preference"`
 	// (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
@@ -3720,15 +3847,18 @@ type AutonomousVmClusterMaintenanceWindowInput interface {
 }
 
 type AutonomousVmClusterMaintenanceWindowArgs struct {
+	CustomActionTimeoutInMins pulumi.IntPtrInput `pulumi:"customActionTimeoutInMins"`
 	// (Updatable) Days during the week when maintenance should be performed.
 	DaysOfWeeks AutonomousVmClusterMaintenanceWindowDaysOfWeekArrayInput `pulumi:"daysOfWeeks"`
 	// (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
 	// * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-	HoursOfDays pulumi.IntArrayInput `pulumi:"hoursOfDays"`
+	HoursOfDays                  pulumi.IntArrayInput `pulumi:"hoursOfDays"`
+	IsCustomActionTimeoutEnabled pulumi.BoolPtrInput  `pulumi:"isCustomActionTimeoutEnabled"`
 	// (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
 	LeadTimeInWeeks pulumi.IntPtrInput `pulumi:"leadTimeInWeeks"`
 	// (Updatable) Months during the year when maintenance should be performed.
-	Months AutonomousVmClusterMaintenanceWindowMonthArrayInput `pulumi:"months"`
+	Months       AutonomousVmClusterMaintenanceWindowMonthArrayInput `pulumi:"months"`
+	PatchingMode pulumi.StringPtrInput                               `pulumi:"patchingMode"`
 	// (Updatable) The maintenance window scheduling preference.
 	Preference pulumi.StringPtrInput `pulumi:"preference"`
 	// (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
@@ -3786,6 +3916,10 @@ func (o AutonomousVmClusterMaintenanceWindowOutput) ToAutonomousVmClusterMainten
 	return o
 }
 
+func (o AutonomousVmClusterMaintenanceWindowOutput) CustomActionTimeoutInMins() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AutonomousVmClusterMaintenanceWindow) *int { return v.CustomActionTimeoutInMins }).(pulumi.IntPtrOutput)
+}
+
 // (Updatable) Days during the week when maintenance should be performed.
 func (o AutonomousVmClusterMaintenanceWindowOutput) DaysOfWeeks() AutonomousVmClusterMaintenanceWindowDaysOfWeekArrayOutput {
 	return o.ApplyT(func(v AutonomousVmClusterMaintenanceWindow) []AutonomousVmClusterMaintenanceWindowDaysOfWeek {
@@ -3799,6 +3933,10 @@ func (o AutonomousVmClusterMaintenanceWindowOutput) HoursOfDays() pulumi.IntArra
 	return o.ApplyT(func(v AutonomousVmClusterMaintenanceWindow) []int { return v.HoursOfDays }).(pulumi.IntArrayOutput)
 }
 
+func (o AutonomousVmClusterMaintenanceWindowOutput) IsCustomActionTimeoutEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v AutonomousVmClusterMaintenanceWindow) *bool { return v.IsCustomActionTimeoutEnabled }).(pulumi.BoolPtrOutput)
+}
+
 // (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
 func (o AutonomousVmClusterMaintenanceWindowOutput) LeadTimeInWeeks() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v AutonomousVmClusterMaintenanceWindow) *int { return v.LeadTimeInWeeks }).(pulumi.IntPtrOutput)
@@ -3809,6 +3947,10 @@ func (o AutonomousVmClusterMaintenanceWindowOutput) Months() AutonomousVmCluster
 	return o.ApplyT(func(v AutonomousVmClusterMaintenanceWindow) []AutonomousVmClusterMaintenanceWindowMonth {
 		return v.Months
 	}).(AutonomousVmClusterMaintenanceWindowMonthArrayOutput)
+}
+
+func (o AutonomousVmClusterMaintenanceWindowOutput) PatchingMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AutonomousVmClusterMaintenanceWindow) *string { return v.PatchingMode }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The maintenance window scheduling preference.
@@ -3939,15 +4081,18 @@ func (o AutonomousVmClusterMaintenanceWindowDaysOfWeekArrayOutput) Index(i pulum
 }
 
 type AutonomousVmClusterMaintenanceWindowDetail struct {
+	CustomActionTimeoutInMins *int `pulumi:"customActionTimeoutInMins"`
 	// (Updatable) Days during the week when maintenance should be performed.
 	DaysOfWeeks []AutonomousVmClusterMaintenanceWindowDetailDaysOfWeek `pulumi:"daysOfWeeks"`
 	// (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
 	// * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-	HoursOfDays []int `pulumi:"hoursOfDays"`
+	HoursOfDays                  []int `pulumi:"hoursOfDays"`
+	IsCustomActionTimeoutEnabled *bool `pulumi:"isCustomActionTimeoutEnabled"`
 	// (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
 	LeadTimeInWeeks *int `pulumi:"leadTimeInWeeks"`
 	// (Updatable) Months during the year when maintenance should be performed.
-	Months []AutonomousVmClusterMaintenanceWindowDetailMonth `pulumi:"months"`
+	Months       []AutonomousVmClusterMaintenanceWindowDetailMonth `pulumi:"months"`
+	PatchingMode *string                                           `pulumi:"patchingMode"`
 	// (Updatable) The maintenance window scheduling preference.
 	Preference string `pulumi:"preference"`
 	// (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
@@ -3966,15 +4111,18 @@ type AutonomousVmClusterMaintenanceWindowDetailInput interface {
 }
 
 type AutonomousVmClusterMaintenanceWindowDetailArgs struct {
+	CustomActionTimeoutInMins pulumi.IntPtrInput `pulumi:"customActionTimeoutInMins"`
 	// (Updatable) Days during the week when maintenance should be performed.
 	DaysOfWeeks AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayInput `pulumi:"daysOfWeeks"`
 	// (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
 	// * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-	HoursOfDays pulumi.IntArrayInput `pulumi:"hoursOfDays"`
+	HoursOfDays                  pulumi.IntArrayInput `pulumi:"hoursOfDays"`
+	IsCustomActionTimeoutEnabled pulumi.BoolPtrInput  `pulumi:"isCustomActionTimeoutEnabled"`
 	// (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
 	LeadTimeInWeeks pulumi.IntPtrInput `pulumi:"leadTimeInWeeks"`
 	// (Updatable) Months during the year when maintenance should be performed.
-	Months AutonomousVmClusterMaintenanceWindowDetailMonthArrayInput `pulumi:"months"`
+	Months       AutonomousVmClusterMaintenanceWindowDetailMonthArrayInput `pulumi:"months"`
+	PatchingMode pulumi.StringPtrInput                                     `pulumi:"patchingMode"`
 	// (Updatable) The maintenance window scheduling preference.
 	Preference pulumi.StringInput `pulumi:"preference"`
 	// (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
@@ -4032,6 +4180,10 @@ func (o AutonomousVmClusterMaintenanceWindowDetailOutput) ToAutonomousVmClusterM
 	return o
 }
 
+func (o AutonomousVmClusterMaintenanceWindowDetailOutput) CustomActionTimeoutInMins() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AutonomousVmClusterMaintenanceWindowDetail) *int { return v.CustomActionTimeoutInMins }).(pulumi.IntPtrOutput)
+}
+
 // (Updatable) Days during the week when maintenance should be performed.
 func (o AutonomousVmClusterMaintenanceWindowDetailOutput) DaysOfWeeks() AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput {
 	return o.ApplyT(func(v AutonomousVmClusterMaintenanceWindowDetail) []AutonomousVmClusterMaintenanceWindowDetailDaysOfWeek {
@@ -4045,6 +4197,10 @@ func (o AutonomousVmClusterMaintenanceWindowDetailOutput) HoursOfDays() pulumi.I
 	return o.ApplyT(func(v AutonomousVmClusterMaintenanceWindowDetail) []int { return v.HoursOfDays }).(pulumi.IntArrayOutput)
 }
 
+func (o AutonomousVmClusterMaintenanceWindowDetailOutput) IsCustomActionTimeoutEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v AutonomousVmClusterMaintenanceWindowDetail) *bool { return v.IsCustomActionTimeoutEnabled }).(pulumi.BoolPtrOutput)
+}
+
 // (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
 func (o AutonomousVmClusterMaintenanceWindowDetailOutput) LeadTimeInWeeks() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v AutonomousVmClusterMaintenanceWindowDetail) *int { return v.LeadTimeInWeeks }).(pulumi.IntPtrOutput)
@@ -4055,6 +4211,10 @@ func (o AutonomousVmClusterMaintenanceWindowDetailOutput) Months() AutonomousVmC
 	return o.ApplyT(func(v AutonomousVmClusterMaintenanceWindowDetail) []AutonomousVmClusterMaintenanceWindowDetailMonth {
 		return v.Months
 	}).(AutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput)
+}
+
+func (o AutonomousVmClusterMaintenanceWindowDetailOutput) PatchingMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AutonomousVmClusterMaintenanceWindowDetail) *string { return v.PatchingMode }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The maintenance window scheduling preference.
@@ -5420,6 +5580,143 @@ func (o CloudExadataInfrastructureMaintenanceWindowMonthArrayOutput) Index(i pul
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) CloudExadataInfrastructureMaintenanceWindowMonth {
 		return vs[0].([]CloudExadataInfrastructureMaintenanceWindowMonth)[vs[1].(int)]
 	}).(CloudExadataInfrastructureMaintenanceWindowMonthOutput)
+}
+
+type CloudVmClusterDataCollectionOptions struct {
+	// (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+	IsDiagnosticsEventsEnabled *bool `pulumi:"isDiagnosticsEventsEnabled"`
+}
+
+// CloudVmClusterDataCollectionOptionsInput is an input type that accepts CloudVmClusterDataCollectionOptionsArgs and CloudVmClusterDataCollectionOptionsOutput values.
+// You can construct a concrete instance of `CloudVmClusterDataCollectionOptionsInput` via:
+//
+//          CloudVmClusterDataCollectionOptionsArgs{...}
+type CloudVmClusterDataCollectionOptionsInput interface {
+	pulumi.Input
+
+	ToCloudVmClusterDataCollectionOptionsOutput() CloudVmClusterDataCollectionOptionsOutput
+	ToCloudVmClusterDataCollectionOptionsOutputWithContext(context.Context) CloudVmClusterDataCollectionOptionsOutput
+}
+
+type CloudVmClusterDataCollectionOptionsArgs struct {
+	// (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+	IsDiagnosticsEventsEnabled pulumi.BoolPtrInput `pulumi:"isDiagnosticsEventsEnabled"`
+}
+
+func (CloudVmClusterDataCollectionOptionsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudVmClusterDataCollectionOptions)(nil)).Elem()
+}
+
+func (i CloudVmClusterDataCollectionOptionsArgs) ToCloudVmClusterDataCollectionOptionsOutput() CloudVmClusterDataCollectionOptionsOutput {
+	return i.ToCloudVmClusterDataCollectionOptionsOutputWithContext(context.Background())
+}
+
+func (i CloudVmClusterDataCollectionOptionsArgs) ToCloudVmClusterDataCollectionOptionsOutputWithContext(ctx context.Context) CloudVmClusterDataCollectionOptionsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudVmClusterDataCollectionOptionsOutput)
+}
+
+func (i CloudVmClusterDataCollectionOptionsArgs) ToCloudVmClusterDataCollectionOptionsPtrOutput() CloudVmClusterDataCollectionOptionsPtrOutput {
+	return i.ToCloudVmClusterDataCollectionOptionsPtrOutputWithContext(context.Background())
+}
+
+func (i CloudVmClusterDataCollectionOptionsArgs) ToCloudVmClusterDataCollectionOptionsPtrOutputWithContext(ctx context.Context) CloudVmClusterDataCollectionOptionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudVmClusterDataCollectionOptionsOutput).ToCloudVmClusterDataCollectionOptionsPtrOutputWithContext(ctx)
+}
+
+// CloudVmClusterDataCollectionOptionsPtrInput is an input type that accepts CloudVmClusterDataCollectionOptionsArgs, CloudVmClusterDataCollectionOptionsPtr and CloudVmClusterDataCollectionOptionsPtrOutput values.
+// You can construct a concrete instance of `CloudVmClusterDataCollectionOptionsPtrInput` via:
+//
+//          CloudVmClusterDataCollectionOptionsArgs{...}
+//
+//  or:
+//
+//          nil
+type CloudVmClusterDataCollectionOptionsPtrInput interface {
+	pulumi.Input
+
+	ToCloudVmClusterDataCollectionOptionsPtrOutput() CloudVmClusterDataCollectionOptionsPtrOutput
+	ToCloudVmClusterDataCollectionOptionsPtrOutputWithContext(context.Context) CloudVmClusterDataCollectionOptionsPtrOutput
+}
+
+type cloudVmClusterDataCollectionOptionsPtrType CloudVmClusterDataCollectionOptionsArgs
+
+func CloudVmClusterDataCollectionOptionsPtr(v *CloudVmClusterDataCollectionOptionsArgs) CloudVmClusterDataCollectionOptionsPtrInput {
+	return (*cloudVmClusterDataCollectionOptionsPtrType)(v)
+}
+
+func (*cloudVmClusterDataCollectionOptionsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**CloudVmClusterDataCollectionOptions)(nil)).Elem()
+}
+
+func (i *cloudVmClusterDataCollectionOptionsPtrType) ToCloudVmClusterDataCollectionOptionsPtrOutput() CloudVmClusterDataCollectionOptionsPtrOutput {
+	return i.ToCloudVmClusterDataCollectionOptionsPtrOutputWithContext(context.Background())
+}
+
+func (i *cloudVmClusterDataCollectionOptionsPtrType) ToCloudVmClusterDataCollectionOptionsPtrOutputWithContext(ctx context.Context) CloudVmClusterDataCollectionOptionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudVmClusterDataCollectionOptionsPtrOutput)
+}
+
+type CloudVmClusterDataCollectionOptionsOutput struct{ *pulumi.OutputState }
+
+func (CloudVmClusterDataCollectionOptionsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudVmClusterDataCollectionOptions)(nil)).Elem()
+}
+
+func (o CloudVmClusterDataCollectionOptionsOutput) ToCloudVmClusterDataCollectionOptionsOutput() CloudVmClusterDataCollectionOptionsOutput {
+	return o
+}
+
+func (o CloudVmClusterDataCollectionOptionsOutput) ToCloudVmClusterDataCollectionOptionsOutputWithContext(ctx context.Context) CloudVmClusterDataCollectionOptionsOutput {
+	return o
+}
+
+func (o CloudVmClusterDataCollectionOptionsOutput) ToCloudVmClusterDataCollectionOptionsPtrOutput() CloudVmClusterDataCollectionOptionsPtrOutput {
+	return o.ToCloudVmClusterDataCollectionOptionsPtrOutputWithContext(context.Background())
+}
+
+func (o CloudVmClusterDataCollectionOptionsOutput) ToCloudVmClusterDataCollectionOptionsPtrOutputWithContext(ctx context.Context) CloudVmClusterDataCollectionOptionsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v CloudVmClusterDataCollectionOptions) *CloudVmClusterDataCollectionOptions {
+		return &v
+	}).(CloudVmClusterDataCollectionOptionsPtrOutput)
+}
+
+// (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+func (o CloudVmClusterDataCollectionOptionsOutput) IsDiagnosticsEventsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v CloudVmClusterDataCollectionOptions) *bool { return v.IsDiagnosticsEventsEnabled }).(pulumi.BoolPtrOutput)
+}
+
+type CloudVmClusterDataCollectionOptionsPtrOutput struct{ *pulumi.OutputState }
+
+func (CloudVmClusterDataCollectionOptionsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**CloudVmClusterDataCollectionOptions)(nil)).Elem()
+}
+
+func (o CloudVmClusterDataCollectionOptionsPtrOutput) ToCloudVmClusterDataCollectionOptionsPtrOutput() CloudVmClusterDataCollectionOptionsPtrOutput {
+	return o
+}
+
+func (o CloudVmClusterDataCollectionOptionsPtrOutput) ToCloudVmClusterDataCollectionOptionsPtrOutputWithContext(ctx context.Context) CloudVmClusterDataCollectionOptionsPtrOutput {
+	return o
+}
+
+func (o CloudVmClusterDataCollectionOptionsPtrOutput) Elem() CloudVmClusterDataCollectionOptionsOutput {
+	return o.ApplyT(func(v *CloudVmClusterDataCollectionOptions) CloudVmClusterDataCollectionOptions {
+		if v != nil {
+			return *v
+		}
+		var ret CloudVmClusterDataCollectionOptions
+		return ret
+	}).(CloudVmClusterDataCollectionOptionsOutput)
+}
+
+// (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+func (o CloudVmClusterDataCollectionOptionsPtrOutput) IsDiagnosticsEventsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *CloudVmClusterDataCollectionOptions) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsDiagnosticsEventsEnabled
+	}).(pulumi.BoolPtrOutput)
 }
 
 type CloudVmClusterIormConfigCach struct {
@@ -11178,6 +11475,683 @@ func (o DbSystemMaintenanceWindowMonthArrayOutput) Index(i pulumi.IntInput) DbSy
 	}).(DbSystemMaintenanceWindowMonthOutput)
 }
 
+type DbSystemsUpgradeDbSystemOption struct {
+	// The storage option used in DB system. ASM - Automatic storage management LVM - Logical Volume management
+	StorageManagement *string `pulumi:"storageManagement"`
+}
+
+// DbSystemsUpgradeDbSystemOptionInput is an input type that accepts DbSystemsUpgradeDbSystemOptionArgs and DbSystemsUpgradeDbSystemOptionOutput values.
+// You can construct a concrete instance of `DbSystemsUpgradeDbSystemOptionInput` via:
+//
+//          DbSystemsUpgradeDbSystemOptionArgs{...}
+type DbSystemsUpgradeDbSystemOptionInput interface {
+	pulumi.Input
+
+	ToDbSystemsUpgradeDbSystemOptionOutput() DbSystemsUpgradeDbSystemOptionOutput
+	ToDbSystemsUpgradeDbSystemOptionOutputWithContext(context.Context) DbSystemsUpgradeDbSystemOptionOutput
+}
+
+type DbSystemsUpgradeDbSystemOptionArgs struct {
+	// The storage option used in DB system. ASM - Automatic storage management LVM - Logical Volume management
+	StorageManagement pulumi.StringPtrInput `pulumi:"storageManagement"`
+}
+
+func (DbSystemsUpgradeDbSystemOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DbSystemsUpgradeDbSystemOption)(nil)).Elem()
+}
+
+func (i DbSystemsUpgradeDbSystemOptionArgs) ToDbSystemsUpgradeDbSystemOptionOutput() DbSystemsUpgradeDbSystemOptionOutput {
+	return i.ToDbSystemsUpgradeDbSystemOptionOutputWithContext(context.Background())
+}
+
+func (i DbSystemsUpgradeDbSystemOptionArgs) ToDbSystemsUpgradeDbSystemOptionOutputWithContext(ctx context.Context) DbSystemsUpgradeDbSystemOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbSystemsUpgradeDbSystemOptionOutput)
+}
+
+// DbSystemsUpgradeDbSystemOptionArrayInput is an input type that accepts DbSystemsUpgradeDbSystemOptionArray and DbSystemsUpgradeDbSystemOptionArrayOutput values.
+// You can construct a concrete instance of `DbSystemsUpgradeDbSystemOptionArrayInput` via:
+//
+//          DbSystemsUpgradeDbSystemOptionArray{ DbSystemsUpgradeDbSystemOptionArgs{...} }
+type DbSystemsUpgradeDbSystemOptionArrayInput interface {
+	pulumi.Input
+
+	ToDbSystemsUpgradeDbSystemOptionArrayOutput() DbSystemsUpgradeDbSystemOptionArrayOutput
+	ToDbSystemsUpgradeDbSystemOptionArrayOutputWithContext(context.Context) DbSystemsUpgradeDbSystemOptionArrayOutput
+}
+
+type DbSystemsUpgradeDbSystemOptionArray []DbSystemsUpgradeDbSystemOptionInput
+
+func (DbSystemsUpgradeDbSystemOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DbSystemsUpgradeDbSystemOption)(nil)).Elem()
+}
+
+func (i DbSystemsUpgradeDbSystemOptionArray) ToDbSystemsUpgradeDbSystemOptionArrayOutput() DbSystemsUpgradeDbSystemOptionArrayOutput {
+	return i.ToDbSystemsUpgradeDbSystemOptionArrayOutputWithContext(context.Background())
+}
+
+func (i DbSystemsUpgradeDbSystemOptionArray) ToDbSystemsUpgradeDbSystemOptionArrayOutputWithContext(ctx context.Context) DbSystemsUpgradeDbSystemOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbSystemsUpgradeDbSystemOptionArrayOutput)
+}
+
+type DbSystemsUpgradeDbSystemOptionOutput struct{ *pulumi.OutputState }
+
+func (DbSystemsUpgradeDbSystemOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DbSystemsUpgradeDbSystemOption)(nil)).Elem()
+}
+
+func (o DbSystemsUpgradeDbSystemOptionOutput) ToDbSystemsUpgradeDbSystemOptionOutput() DbSystemsUpgradeDbSystemOptionOutput {
+	return o
+}
+
+func (o DbSystemsUpgradeDbSystemOptionOutput) ToDbSystemsUpgradeDbSystemOptionOutputWithContext(ctx context.Context) DbSystemsUpgradeDbSystemOptionOutput {
+	return o
+}
+
+// The storage option used in DB system. ASM - Automatic storage management LVM - Logical Volume management
+func (o DbSystemsUpgradeDbSystemOptionOutput) StorageManagement() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbSystemsUpgradeDbSystemOption) *string { return v.StorageManagement }).(pulumi.StringPtrOutput)
+}
+
+type DbSystemsUpgradeDbSystemOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (DbSystemsUpgradeDbSystemOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DbSystemsUpgradeDbSystemOption)(nil)).Elem()
+}
+
+func (o DbSystemsUpgradeDbSystemOptionArrayOutput) ToDbSystemsUpgradeDbSystemOptionArrayOutput() DbSystemsUpgradeDbSystemOptionArrayOutput {
+	return o
+}
+
+func (o DbSystemsUpgradeDbSystemOptionArrayOutput) ToDbSystemsUpgradeDbSystemOptionArrayOutputWithContext(ctx context.Context) DbSystemsUpgradeDbSystemOptionArrayOutput {
+	return o
+}
+
+func (o DbSystemsUpgradeDbSystemOptionArrayOutput) Index(i pulumi.IntInput) DbSystemsUpgradeDbSystemOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DbSystemsUpgradeDbSystemOption {
+		return vs[0].([]DbSystemsUpgradeDbSystemOption)[vs[1].(int)]
+	}).(DbSystemsUpgradeDbSystemOptionOutput)
+}
+
+type DbSystemsUpgradeIormConfigCach struct {
+	// An array of IORM settings for all the database in the Exadata DB system.
+	DbPlans []DbSystemsUpgradeIormConfigCachDbPlan `pulumi:"dbPlans"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// The current value for the IORM objective. The default is `AUTO`.
+	Objective *string `pulumi:"objective"`
+	// The current state of the DB system.
+	State *string `pulumi:"state"`
+}
+
+// DbSystemsUpgradeIormConfigCachInput is an input type that accepts DbSystemsUpgradeIormConfigCachArgs and DbSystemsUpgradeIormConfigCachOutput values.
+// You can construct a concrete instance of `DbSystemsUpgradeIormConfigCachInput` via:
+//
+//          DbSystemsUpgradeIormConfigCachArgs{...}
+type DbSystemsUpgradeIormConfigCachInput interface {
+	pulumi.Input
+
+	ToDbSystemsUpgradeIormConfigCachOutput() DbSystemsUpgradeIormConfigCachOutput
+	ToDbSystemsUpgradeIormConfigCachOutputWithContext(context.Context) DbSystemsUpgradeIormConfigCachOutput
+}
+
+type DbSystemsUpgradeIormConfigCachArgs struct {
+	// An array of IORM settings for all the database in the Exadata DB system.
+	DbPlans DbSystemsUpgradeIormConfigCachDbPlanArrayInput `pulumi:"dbPlans"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
+	// The current value for the IORM objective. The default is `AUTO`.
+	Objective pulumi.StringPtrInput `pulumi:"objective"`
+	// The current state of the DB system.
+	State pulumi.StringPtrInput `pulumi:"state"`
+}
+
+func (DbSystemsUpgradeIormConfigCachArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DbSystemsUpgradeIormConfigCach)(nil)).Elem()
+}
+
+func (i DbSystemsUpgradeIormConfigCachArgs) ToDbSystemsUpgradeIormConfigCachOutput() DbSystemsUpgradeIormConfigCachOutput {
+	return i.ToDbSystemsUpgradeIormConfigCachOutputWithContext(context.Background())
+}
+
+func (i DbSystemsUpgradeIormConfigCachArgs) ToDbSystemsUpgradeIormConfigCachOutputWithContext(ctx context.Context) DbSystemsUpgradeIormConfigCachOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbSystemsUpgradeIormConfigCachOutput)
+}
+
+// DbSystemsUpgradeIormConfigCachArrayInput is an input type that accepts DbSystemsUpgradeIormConfigCachArray and DbSystemsUpgradeIormConfigCachArrayOutput values.
+// You can construct a concrete instance of `DbSystemsUpgradeIormConfigCachArrayInput` via:
+//
+//          DbSystemsUpgradeIormConfigCachArray{ DbSystemsUpgradeIormConfigCachArgs{...} }
+type DbSystemsUpgradeIormConfigCachArrayInput interface {
+	pulumi.Input
+
+	ToDbSystemsUpgradeIormConfigCachArrayOutput() DbSystemsUpgradeIormConfigCachArrayOutput
+	ToDbSystemsUpgradeIormConfigCachArrayOutputWithContext(context.Context) DbSystemsUpgradeIormConfigCachArrayOutput
+}
+
+type DbSystemsUpgradeIormConfigCachArray []DbSystemsUpgradeIormConfigCachInput
+
+func (DbSystemsUpgradeIormConfigCachArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DbSystemsUpgradeIormConfigCach)(nil)).Elem()
+}
+
+func (i DbSystemsUpgradeIormConfigCachArray) ToDbSystemsUpgradeIormConfigCachArrayOutput() DbSystemsUpgradeIormConfigCachArrayOutput {
+	return i.ToDbSystemsUpgradeIormConfigCachArrayOutputWithContext(context.Background())
+}
+
+func (i DbSystemsUpgradeIormConfigCachArray) ToDbSystemsUpgradeIormConfigCachArrayOutputWithContext(ctx context.Context) DbSystemsUpgradeIormConfigCachArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbSystemsUpgradeIormConfigCachArrayOutput)
+}
+
+type DbSystemsUpgradeIormConfigCachOutput struct{ *pulumi.OutputState }
+
+func (DbSystemsUpgradeIormConfigCachOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DbSystemsUpgradeIormConfigCach)(nil)).Elem()
+}
+
+func (o DbSystemsUpgradeIormConfigCachOutput) ToDbSystemsUpgradeIormConfigCachOutput() DbSystemsUpgradeIormConfigCachOutput {
+	return o
+}
+
+func (o DbSystemsUpgradeIormConfigCachOutput) ToDbSystemsUpgradeIormConfigCachOutputWithContext(ctx context.Context) DbSystemsUpgradeIormConfigCachOutput {
+	return o
+}
+
+// An array of IORM settings for all the database in the Exadata DB system.
+func (o DbSystemsUpgradeIormConfigCachOutput) DbPlans() DbSystemsUpgradeIormConfigCachDbPlanArrayOutput {
+	return o.ApplyT(func(v DbSystemsUpgradeIormConfigCach) []DbSystemsUpgradeIormConfigCachDbPlan { return v.DbPlans }).(DbSystemsUpgradeIormConfigCachDbPlanArrayOutput)
+}
+
+// Additional information about the current lifecycle state.
+func (o DbSystemsUpgradeIormConfigCachOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbSystemsUpgradeIormConfigCach) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
+}
+
+// The current value for the IORM objective. The default is `AUTO`.
+func (o DbSystemsUpgradeIormConfigCachOutput) Objective() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbSystemsUpgradeIormConfigCach) *string { return v.Objective }).(pulumi.StringPtrOutput)
+}
+
+// The current state of the DB system.
+func (o DbSystemsUpgradeIormConfigCachOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbSystemsUpgradeIormConfigCach) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+type DbSystemsUpgradeIormConfigCachArrayOutput struct{ *pulumi.OutputState }
+
+func (DbSystemsUpgradeIormConfigCachArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DbSystemsUpgradeIormConfigCach)(nil)).Elem()
+}
+
+func (o DbSystemsUpgradeIormConfigCachArrayOutput) ToDbSystemsUpgradeIormConfigCachArrayOutput() DbSystemsUpgradeIormConfigCachArrayOutput {
+	return o
+}
+
+func (o DbSystemsUpgradeIormConfigCachArrayOutput) ToDbSystemsUpgradeIormConfigCachArrayOutputWithContext(ctx context.Context) DbSystemsUpgradeIormConfigCachArrayOutput {
+	return o
+}
+
+func (o DbSystemsUpgradeIormConfigCachArrayOutput) Index(i pulumi.IntInput) DbSystemsUpgradeIormConfigCachOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DbSystemsUpgradeIormConfigCach {
+		return vs[0].([]DbSystemsUpgradeIormConfigCach)[vs[1].(int)]
+	}).(DbSystemsUpgradeIormConfigCachOutput)
+}
+
+type DbSystemsUpgradeIormConfigCachDbPlan struct {
+	// The database name. For the default `DbPlan`, the `dbName` is `default`.
+	DbName *string `pulumi:"dbName"`
+	// The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
+	FlashCacheLimit *string `pulumi:"flashCacheLimit"`
+	// The relative priority of this database.
+	Share *int `pulumi:"share"`
+}
+
+// DbSystemsUpgradeIormConfigCachDbPlanInput is an input type that accepts DbSystemsUpgradeIormConfigCachDbPlanArgs and DbSystemsUpgradeIormConfigCachDbPlanOutput values.
+// You can construct a concrete instance of `DbSystemsUpgradeIormConfigCachDbPlanInput` via:
+//
+//          DbSystemsUpgradeIormConfigCachDbPlanArgs{...}
+type DbSystemsUpgradeIormConfigCachDbPlanInput interface {
+	pulumi.Input
+
+	ToDbSystemsUpgradeIormConfigCachDbPlanOutput() DbSystemsUpgradeIormConfigCachDbPlanOutput
+	ToDbSystemsUpgradeIormConfigCachDbPlanOutputWithContext(context.Context) DbSystemsUpgradeIormConfigCachDbPlanOutput
+}
+
+type DbSystemsUpgradeIormConfigCachDbPlanArgs struct {
+	// The database name. For the default `DbPlan`, the `dbName` is `default`.
+	DbName pulumi.StringPtrInput `pulumi:"dbName"`
+	// The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
+	FlashCacheLimit pulumi.StringPtrInput `pulumi:"flashCacheLimit"`
+	// The relative priority of this database.
+	Share pulumi.IntPtrInput `pulumi:"share"`
+}
+
+func (DbSystemsUpgradeIormConfigCachDbPlanArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DbSystemsUpgradeIormConfigCachDbPlan)(nil)).Elem()
+}
+
+func (i DbSystemsUpgradeIormConfigCachDbPlanArgs) ToDbSystemsUpgradeIormConfigCachDbPlanOutput() DbSystemsUpgradeIormConfigCachDbPlanOutput {
+	return i.ToDbSystemsUpgradeIormConfigCachDbPlanOutputWithContext(context.Background())
+}
+
+func (i DbSystemsUpgradeIormConfigCachDbPlanArgs) ToDbSystemsUpgradeIormConfigCachDbPlanOutputWithContext(ctx context.Context) DbSystemsUpgradeIormConfigCachDbPlanOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbSystemsUpgradeIormConfigCachDbPlanOutput)
+}
+
+// DbSystemsUpgradeIormConfigCachDbPlanArrayInput is an input type that accepts DbSystemsUpgradeIormConfigCachDbPlanArray and DbSystemsUpgradeIormConfigCachDbPlanArrayOutput values.
+// You can construct a concrete instance of `DbSystemsUpgradeIormConfigCachDbPlanArrayInput` via:
+//
+//          DbSystemsUpgradeIormConfigCachDbPlanArray{ DbSystemsUpgradeIormConfigCachDbPlanArgs{...} }
+type DbSystemsUpgradeIormConfigCachDbPlanArrayInput interface {
+	pulumi.Input
+
+	ToDbSystemsUpgradeIormConfigCachDbPlanArrayOutput() DbSystemsUpgradeIormConfigCachDbPlanArrayOutput
+	ToDbSystemsUpgradeIormConfigCachDbPlanArrayOutputWithContext(context.Context) DbSystemsUpgradeIormConfigCachDbPlanArrayOutput
+}
+
+type DbSystemsUpgradeIormConfigCachDbPlanArray []DbSystemsUpgradeIormConfigCachDbPlanInput
+
+func (DbSystemsUpgradeIormConfigCachDbPlanArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DbSystemsUpgradeIormConfigCachDbPlan)(nil)).Elem()
+}
+
+func (i DbSystemsUpgradeIormConfigCachDbPlanArray) ToDbSystemsUpgradeIormConfigCachDbPlanArrayOutput() DbSystemsUpgradeIormConfigCachDbPlanArrayOutput {
+	return i.ToDbSystemsUpgradeIormConfigCachDbPlanArrayOutputWithContext(context.Background())
+}
+
+func (i DbSystemsUpgradeIormConfigCachDbPlanArray) ToDbSystemsUpgradeIormConfigCachDbPlanArrayOutputWithContext(ctx context.Context) DbSystemsUpgradeIormConfigCachDbPlanArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbSystemsUpgradeIormConfigCachDbPlanArrayOutput)
+}
+
+type DbSystemsUpgradeIormConfigCachDbPlanOutput struct{ *pulumi.OutputState }
+
+func (DbSystemsUpgradeIormConfigCachDbPlanOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DbSystemsUpgradeIormConfigCachDbPlan)(nil)).Elem()
+}
+
+func (o DbSystemsUpgradeIormConfigCachDbPlanOutput) ToDbSystemsUpgradeIormConfigCachDbPlanOutput() DbSystemsUpgradeIormConfigCachDbPlanOutput {
+	return o
+}
+
+func (o DbSystemsUpgradeIormConfigCachDbPlanOutput) ToDbSystemsUpgradeIormConfigCachDbPlanOutputWithContext(ctx context.Context) DbSystemsUpgradeIormConfigCachDbPlanOutput {
+	return o
+}
+
+// The database name. For the default `DbPlan`, the `dbName` is `default`.
+func (o DbSystemsUpgradeIormConfigCachDbPlanOutput) DbName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbSystemsUpgradeIormConfigCachDbPlan) *string { return v.DbName }).(pulumi.StringPtrOutput)
+}
+
+// The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
+func (o DbSystemsUpgradeIormConfigCachDbPlanOutput) FlashCacheLimit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbSystemsUpgradeIormConfigCachDbPlan) *string { return v.FlashCacheLimit }).(pulumi.StringPtrOutput)
+}
+
+// The relative priority of this database.
+func (o DbSystemsUpgradeIormConfigCachDbPlanOutput) Share() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DbSystemsUpgradeIormConfigCachDbPlan) *int { return v.Share }).(pulumi.IntPtrOutput)
+}
+
+type DbSystemsUpgradeIormConfigCachDbPlanArrayOutput struct{ *pulumi.OutputState }
+
+func (DbSystemsUpgradeIormConfigCachDbPlanArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DbSystemsUpgradeIormConfigCachDbPlan)(nil)).Elem()
+}
+
+func (o DbSystemsUpgradeIormConfigCachDbPlanArrayOutput) ToDbSystemsUpgradeIormConfigCachDbPlanArrayOutput() DbSystemsUpgradeIormConfigCachDbPlanArrayOutput {
+	return o
+}
+
+func (o DbSystemsUpgradeIormConfigCachDbPlanArrayOutput) ToDbSystemsUpgradeIormConfigCachDbPlanArrayOutputWithContext(ctx context.Context) DbSystemsUpgradeIormConfigCachDbPlanArrayOutput {
+	return o
+}
+
+func (o DbSystemsUpgradeIormConfigCachDbPlanArrayOutput) Index(i pulumi.IntInput) DbSystemsUpgradeIormConfigCachDbPlanOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DbSystemsUpgradeIormConfigCachDbPlan {
+		return vs[0].([]DbSystemsUpgradeIormConfigCachDbPlan)[vs[1].(int)]
+	}).(DbSystemsUpgradeIormConfigCachDbPlanOutput)
+}
+
+type DbSystemsUpgradeMaintenanceWindow struct {
+	// Days during the week when maintenance should be performed.
+	DaysOfWeeks []DbSystemsUpgradeMaintenanceWindowDaysOfWeek `pulumi:"daysOfWeeks"`
+	// The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+	// * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+	HoursOfDays []int `pulumi:"hoursOfDays"`
+	// Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+	LeadTimeInWeeks *int `pulumi:"leadTimeInWeeks"`
+	// Months during the year when maintenance should be performed.
+	Months []DbSystemsUpgradeMaintenanceWindowMonth `pulumi:"months"`
+	// The maintenance window scheduling preference.
+	Preference *string `pulumi:"preference"`
+	// Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+	WeeksOfMonths []int `pulumi:"weeksOfMonths"`
+}
+
+// DbSystemsUpgradeMaintenanceWindowInput is an input type that accepts DbSystemsUpgradeMaintenanceWindowArgs and DbSystemsUpgradeMaintenanceWindowOutput values.
+// You can construct a concrete instance of `DbSystemsUpgradeMaintenanceWindowInput` via:
+//
+//          DbSystemsUpgradeMaintenanceWindowArgs{...}
+type DbSystemsUpgradeMaintenanceWindowInput interface {
+	pulumi.Input
+
+	ToDbSystemsUpgradeMaintenanceWindowOutput() DbSystemsUpgradeMaintenanceWindowOutput
+	ToDbSystemsUpgradeMaintenanceWindowOutputWithContext(context.Context) DbSystemsUpgradeMaintenanceWindowOutput
+}
+
+type DbSystemsUpgradeMaintenanceWindowArgs struct {
+	// Days during the week when maintenance should be performed.
+	DaysOfWeeks DbSystemsUpgradeMaintenanceWindowDaysOfWeekArrayInput `pulumi:"daysOfWeeks"`
+	// The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+	// * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+	HoursOfDays pulumi.IntArrayInput `pulumi:"hoursOfDays"`
+	// Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+	LeadTimeInWeeks pulumi.IntPtrInput `pulumi:"leadTimeInWeeks"`
+	// Months during the year when maintenance should be performed.
+	Months DbSystemsUpgradeMaintenanceWindowMonthArrayInput `pulumi:"months"`
+	// The maintenance window scheduling preference.
+	Preference pulumi.StringPtrInput `pulumi:"preference"`
+	// Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+	WeeksOfMonths pulumi.IntArrayInput `pulumi:"weeksOfMonths"`
+}
+
+func (DbSystemsUpgradeMaintenanceWindowArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DbSystemsUpgradeMaintenanceWindow)(nil)).Elem()
+}
+
+func (i DbSystemsUpgradeMaintenanceWindowArgs) ToDbSystemsUpgradeMaintenanceWindowOutput() DbSystemsUpgradeMaintenanceWindowOutput {
+	return i.ToDbSystemsUpgradeMaintenanceWindowOutputWithContext(context.Background())
+}
+
+func (i DbSystemsUpgradeMaintenanceWindowArgs) ToDbSystemsUpgradeMaintenanceWindowOutputWithContext(ctx context.Context) DbSystemsUpgradeMaintenanceWindowOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbSystemsUpgradeMaintenanceWindowOutput)
+}
+
+// DbSystemsUpgradeMaintenanceWindowArrayInput is an input type that accepts DbSystemsUpgradeMaintenanceWindowArray and DbSystemsUpgradeMaintenanceWindowArrayOutput values.
+// You can construct a concrete instance of `DbSystemsUpgradeMaintenanceWindowArrayInput` via:
+//
+//          DbSystemsUpgradeMaintenanceWindowArray{ DbSystemsUpgradeMaintenanceWindowArgs{...} }
+type DbSystemsUpgradeMaintenanceWindowArrayInput interface {
+	pulumi.Input
+
+	ToDbSystemsUpgradeMaintenanceWindowArrayOutput() DbSystemsUpgradeMaintenanceWindowArrayOutput
+	ToDbSystemsUpgradeMaintenanceWindowArrayOutputWithContext(context.Context) DbSystemsUpgradeMaintenanceWindowArrayOutput
+}
+
+type DbSystemsUpgradeMaintenanceWindowArray []DbSystemsUpgradeMaintenanceWindowInput
+
+func (DbSystemsUpgradeMaintenanceWindowArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DbSystemsUpgradeMaintenanceWindow)(nil)).Elem()
+}
+
+func (i DbSystemsUpgradeMaintenanceWindowArray) ToDbSystemsUpgradeMaintenanceWindowArrayOutput() DbSystemsUpgradeMaintenanceWindowArrayOutput {
+	return i.ToDbSystemsUpgradeMaintenanceWindowArrayOutputWithContext(context.Background())
+}
+
+func (i DbSystemsUpgradeMaintenanceWindowArray) ToDbSystemsUpgradeMaintenanceWindowArrayOutputWithContext(ctx context.Context) DbSystemsUpgradeMaintenanceWindowArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbSystemsUpgradeMaintenanceWindowArrayOutput)
+}
+
+type DbSystemsUpgradeMaintenanceWindowOutput struct{ *pulumi.OutputState }
+
+func (DbSystemsUpgradeMaintenanceWindowOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DbSystemsUpgradeMaintenanceWindow)(nil)).Elem()
+}
+
+func (o DbSystemsUpgradeMaintenanceWindowOutput) ToDbSystemsUpgradeMaintenanceWindowOutput() DbSystemsUpgradeMaintenanceWindowOutput {
+	return o
+}
+
+func (o DbSystemsUpgradeMaintenanceWindowOutput) ToDbSystemsUpgradeMaintenanceWindowOutputWithContext(ctx context.Context) DbSystemsUpgradeMaintenanceWindowOutput {
+	return o
+}
+
+// Days during the week when maintenance should be performed.
+func (o DbSystemsUpgradeMaintenanceWindowOutput) DaysOfWeeks() DbSystemsUpgradeMaintenanceWindowDaysOfWeekArrayOutput {
+	return o.ApplyT(func(v DbSystemsUpgradeMaintenanceWindow) []DbSystemsUpgradeMaintenanceWindowDaysOfWeek {
+		return v.DaysOfWeeks
+	}).(DbSystemsUpgradeMaintenanceWindowDaysOfWeekArrayOutput)
+}
+
+// The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+// * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+func (o DbSystemsUpgradeMaintenanceWindowOutput) HoursOfDays() pulumi.IntArrayOutput {
+	return o.ApplyT(func(v DbSystemsUpgradeMaintenanceWindow) []int { return v.HoursOfDays }).(pulumi.IntArrayOutput)
+}
+
+// Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+func (o DbSystemsUpgradeMaintenanceWindowOutput) LeadTimeInWeeks() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DbSystemsUpgradeMaintenanceWindow) *int { return v.LeadTimeInWeeks }).(pulumi.IntPtrOutput)
+}
+
+// Months during the year when maintenance should be performed.
+func (o DbSystemsUpgradeMaintenanceWindowOutput) Months() DbSystemsUpgradeMaintenanceWindowMonthArrayOutput {
+	return o.ApplyT(func(v DbSystemsUpgradeMaintenanceWindow) []DbSystemsUpgradeMaintenanceWindowMonth { return v.Months }).(DbSystemsUpgradeMaintenanceWindowMonthArrayOutput)
+}
+
+// The maintenance window scheduling preference.
+func (o DbSystemsUpgradeMaintenanceWindowOutput) Preference() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbSystemsUpgradeMaintenanceWindow) *string { return v.Preference }).(pulumi.StringPtrOutput)
+}
+
+// Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+func (o DbSystemsUpgradeMaintenanceWindowOutput) WeeksOfMonths() pulumi.IntArrayOutput {
+	return o.ApplyT(func(v DbSystemsUpgradeMaintenanceWindow) []int { return v.WeeksOfMonths }).(pulumi.IntArrayOutput)
+}
+
+type DbSystemsUpgradeMaintenanceWindowArrayOutput struct{ *pulumi.OutputState }
+
+func (DbSystemsUpgradeMaintenanceWindowArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DbSystemsUpgradeMaintenanceWindow)(nil)).Elem()
+}
+
+func (o DbSystemsUpgradeMaintenanceWindowArrayOutput) ToDbSystemsUpgradeMaintenanceWindowArrayOutput() DbSystemsUpgradeMaintenanceWindowArrayOutput {
+	return o
+}
+
+func (o DbSystemsUpgradeMaintenanceWindowArrayOutput) ToDbSystemsUpgradeMaintenanceWindowArrayOutputWithContext(ctx context.Context) DbSystemsUpgradeMaintenanceWindowArrayOutput {
+	return o
+}
+
+func (o DbSystemsUpgradeMaintenanceWindowArrayOutput) Index(i pulumi.IntInput) DbSystemsUpgradeMaintenanceWindowOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DbSystemsUpgradeMaintenanceWindow {
+		return vs[0].([]DbSystemsUpgradeMaintenanceWindow)[vs[1].(int)]
+	}).(DbSystemsUpgradeMaintenanceWindowOutput)
+}
+
+type DbSystemsUpgradeMaintenanceWindowDaysOfWeek struct {
+	// Name of the month of the year.
+	Name *string `pulumi:"name"`
+}
+
+// DbSystemsUpgradeMaintenanceWindowDaysOfWeekInput is an input type that accepts DbSystemsUpgradeMaintenanceWindowDaysOfWeekArgs and DbSystemsUpgradeMaintenanceWindowDaysOfWeekOutput values.
+// You can construct a concrete instance of `DbSystemsUpgradeMaintenanceWindowDaysOfWeekInput` via:
+//
+//          DbSystemsUpgradeMaintenanceWindowDaysOfWeekArgs{...}
+type DbSystemsUpgradeMaintenanceWindowDaysOfWeekInput interface {
+	pulumi.Input
+
+	ToDbSystemsUpgradeMaintenanceWindowDaysOfWeekOutput() DbSystemsUpgradeMaintenanceWindowDaysOfWeekOutput
+	ToDbSystemsUpgradeMaintenanceWindowDaysOfWeekOutputWithContext(context.Context) DbSystemsUpgradeMaintenanceWindowDaysOfWeekOutput
+}
+
+type DbSystemsUpgradeMaintenanceWindowDaysOfWeekArgs struct {
+	// Name of the month of the year.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+}
+
+func (DbSystemsUpgradeMaintenanceWindowDaysOfWeekArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DbSystemsUpgradeMaintenanceWindowDaysOfWeek)(nil)).Elem()
+}
+
+func (i DbSystemsUpgradeMaintenanceWindowDaysOfWeekArgs) ToDbSystemsUpgradeMaintenanceWindowDaysOfWeekOutput() DbSystemsUpgradeMaintenanceWindowDaysOfWeekOutput {
+	return i.ToDbSystemsUpgradeMaintenanceWindowDaysOfWeekOutputWithContext(context.Background())
+}
+
+func (i DbSystemsUpgradeMaintenanceWindowDaysOfWeekArgs) ToDbSystemsUpgradeMaintenanceWindowDaysOfWeekOutputWithContext(ctx context.Context) DbSystemsUpgradeMaintenanceWindowDaysOfWeekOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbSystemsUpgradeMaintenanceWindowDaysOfWeekOutput)
+}
+
+// DbSystemsUpgradeMaintenanceWindowDaysOfWeekArrayInput is an input type that accepts DbSystemsUpgradeMaintenanceWindowDaysOfWeekArray and DbSystemsUpgradeMaintenanceWindowDaysOfWeekArrayOutput values.
+// You can construct a concrete instance of `DbSystemsUpgradeMaintenanceWindowDaysOfWeekArrayInput` via:
+//
+//          DbSystemsUpgradeMaintenanceWindowDaysOfWeekArray{ DbSystemsUpgradeMaintenanceWindowDaysOfWeekArgs{...} }
+type DbSystemsUpgradeMaintenanceWindowDaysOfWeekArrayInput interface {
+	pulumi.Input
+
+	ToDbSystemsUpgradeMaintenanceWindowDaysOfWeekArrayOutput() DbSystemsUpgradeMaintenanceWindowDaysOfWeekArrayOutput
+	ToDbSystemsUpgradeMaintenanceWindowDaysOfWeekArrayOutputWithContext(context.Context) DbSystemsUpgradeMaintenanceWindowDaysOfWeekArrayOutput
+}
+
+type DbSystemsUpgradeMaintenanceWindowDaysOfWeekArray []DbSystemsUpgradeMaintenanceWindowDaysOfWeekInput
+
+func (DbSystemsUpgradeMaintenanceWindowDaysOfWeekArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DbSystemsUpgradeMaintenanceWindowDaysOfWeek)(nil)).Elem()
+}
+
+func (i DbSystemsUpgradeMaintenanceWindowDaysOfWeekArray) ToDbSystemsUpgradeMaintenanceWindowDaysOfWeekArrayOutput() DbSystemsUpgradeMaintenanceWindowDaysOfWeekArrayOutput {
+	return i.ToDbSystemsUpgradeMaintenanceWindowDaysOfWeekArrayOutputWithContext(context.Background())
+}
+
+func (i DbSystemsUpgradeMaintenanceWindowDaysOfWeekArray) ToDbSystemsUpgradeMaintenanceWindowDaysOfWeekArrayOutputWithContext(ctx context.Context) DbSystemsUpgradeMaintenanceWindowDaysOfWeekArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbSystemsUpgradeMaintenanceWindowDaysOfWeekArrayOutput)
+}
+
+type DbSystemsUpgradeMaintenanceWindowDaysOfWeekOutput struct{ *pulumi.OutputState }
+
+func (DbSystemsUpgradeMaintenanceWindowDaysOfWeekOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DbSystemsUpgradeMaintenanceWindowDaysOfWeek)(nil)).Elem()
+}
+
+func (o DbSystemsUpgradeMaintenanceWindowDaysOfWeekOutput) ToDbSystemsUpgradeMaintenanceWindowDaysOfWeekOutput() DbSystemsUpgradeMaintenanceWindowDaysOfWeekOutput {
+	return o
+}
+
+func (o DbSystemsUpgradeMaintenanceWindowDaysOfWeekOutput) ToDbSystemsUpgradeMaintenanceWindowDaysOfWeekOutputWithContext(ctx context.Context) DbSystemsUpgradeMaintenanceWindowDaysOfWeekOutput {
+	return o
+}
+
+// Name of the month of the year.
+func (o DbSystemsUpgradeMaintenanceWindowDaysOfWeekOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbSystemsUpgradeMaintenanceWindowDaysOfWeek) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+type DbSystemsUpgradeMaintenanceWindowDaysOfWeekArrayOutput struct{ *pulumi.OutputState }
+
+func (DbSystemsUpgradeMaintenanceWindowDaysOfWeekArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DbSystemsUpgradeMaintenanceWindowDaysOfWeek)(nil)).Elem()
+}
+
+func (o DbSystemsUpgradeMaintenanceWindowDaysOfWeekArrayOutput) ToDbSystemsUpgradeMaintenanceWindowDaysOfWeekArrayOutput() DbSystemsUpgradeMaintenanceWindowDaysOfWeekArrayOutput {
+	return o
+}
+
+func (o DbSystemsUpgradeMaintenanceWindowDaysOfWeekArrayOutput) ToDbSystemsUpgradeMaintenanceWindowDaysOfWeekArrayOutputWithContext(ctx context.Context) DbSystemsUpgradeMaintenanceWindowDaysOfWeekArrayOutput {
+	return o
+}
+
+func (o DbSystemsUpgradeMaintenanceWindowDaysOfWeekArrayOutput) Index(i pulumi.IntInput) DbSystemsUpgradeMaintenanceWindowDaysOfWeekOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DbSystemsUpgradeMaintenanceWindowDaysOfWeek {
+		return vs[0].([]DbSystemsUpgradeMaintenanceWindowDaysOfWeek)[vs[1].(int)]
+	}).(DbSystemsUpgradeMaintenanceWindowDaysOfWeekOutput)
+}
+
+type DbSystemsUpgradeMaintenanceWindowMonth struct {
+	// Name of the month of the year.
+	Name *string `pulumi:"name"`
+}
+
+// DbSystemsUpgradeMaintenanceWindowMonthInput is an input type that accepts DbSystemsUpgradeMaintenanceWindowMonthArgs and DbSystemsUpgradeMaintenanceWindowMonthOutput values.
+// You can construct a concrete instance of `DbSystemsUpgradeMaintenanceWindowMonthInput` via:
+//
+//          DbSystemsUpgradeMaintenanceWindowMonthArgs{...}
+type DbSystemsUpgradeMaintenanceWindowMonthInput interface {
+	pulumi.Input
+
+	ToDbSystemsUpgradeMaintenanceWindowMonthOutput() DbSystemsUpgradeMaintenanceWindowMonthOutput
+	ToDbSystemsUpgradeMaintenanceWindowMonthOutputWithContext(context.Context) DbSystemsUpgradeMaintenanceWindowMonthOutput
+}
+
+type DbSystemsUpgradeMaintenanceWindowMonthArgs struct {
+	// Name of the month of the year.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+}
+
+func (DbSystemsUpgradeMaintenanceWindowMonthArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DbSystemsUpgradeMaintenanceWindowMonth)(nil)).Elem()
+}
+
+func (i DbSystemsUpgradeMaintenanceWindowMonthArgs) ToDbSystemsUpgradeMaintenanceWindowMonthOutput() DbSystemsUpgradeMaintenanceWindowMonthOutput {
+	return i.ToDbSystemsUpgradeMaintenanceWindowMonthOutputWithContext(context.Background())
+}
+
+func (i DbSystemsUpgradeMaintenanceWindowMonthArgs) ToDbSystemsUpgradeMaintenanceWindowMonthOutputWithContext(ctx context.Context) DbSystemsUpgradeMaintenanceWindowMonthOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbSystemsUpgradeMaintenanceWindowMonthOutput)
+}
+
+// DbSystemsUpgradeMaintenanceWindowMonthArrayInput is an input type that accepts DbSystemsUpgradeMaintenanceWindowMonthArray and DbSystemsUpgradeMaintenanceWindowMonthArrayOutput values.
+// You can construct a concrete instance of `DbSystemsUpgradeMaintenanceWindowMonthArrayInput` via:
+//
+//          DbSystemsUpgradeMaintenanceWindowMonthArray{ DbSystemsUpgradeMaintenanceWindowMonthArgs{...} }
+type DbSystemsUpgradeMaintenanceWindowMonthArrayInput interface {
+	pulumi.Input
+
+	ToDbSystemsUpgradeMaintenanceWindowMonthArrayOutput() DbSystemsUpgradeMaintenanceWindowMonthArrayOutput
+	ToDbSystemsUpgradeMaintenanceWindowMonthArrayOutputWithContext(context.Context) DbSystemsUpgradeMaintenanceWindowMonthArrayOutput
+}
+
+type DbSystemsUpgradeMaintenanceWindowMonthArray []DbSystemsUpgradeMaintenanceWindowMonthInput
+
+func (DbSystemsUpgradeMaintenanceWindowMonthArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DbSystemsUpgradeMaintenanceWindowMonth)(nil)).Elem()
+}
+
+func (i DbSystemsUpgradeMaintenanceWindowMonthArray) ToDbSystemsUpgradeMaintenanceWindowMonthArrayOutput() DbSystemsUpgradeMaintenanceWindowMonthArrayOutput {
+	return i.ToDbSystemsUpgradeMaintenanceWindowMonthArrayOutputWithContext(context.Background())
+}
+
+func (i DbSystemsUpgradeMaintenanceWindowMonthArray) ToDbSystemsUpgradeMaintenanceWindowMonthArrayOutputWithContext(ctx context.Context) DbSystemsUpgradeMaintenanceWindowMonthArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbSystemsUpgradeMaintenanceWindowMonthArrayOutput)
+}
+
+type DbSystemsUpgradeMaintenanceWindowMonthOutput struct{ *pulumi.OutputState }
+
+func (DbSystemsUpgradeMaintenanceWindowMonthOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DbSystemsUpgradeMaintenanceWindowMonth)(nil)).Elem()
+}
+
+func (o DbSystemsUpgradeMaintenanceWindowMonthOutput) ToDbSystemsUpgradeMaintenanceWindowMonthOutput() DbSystemsUpgradeMaintenanceWindowMonthOutput {
+	return o
+}
+
+func (o DbSystemsUpgradeMaintenanceWindowMonthOutput) ToDbSystemsUpgradeMaintenanceWindowMonthOutputWithContext(ctx context.Context) DbSystemsUpgradeMaintenanceWindowMonthOutput {
+	return o
+}
+
+// Name of the month of the year.
+func (o DbSystemsUpgradeMaintenanceWindowMonthOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbSystemsUpgradeMaintenanceWindowMonth) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+type DbSystemsUpgradeMaintenanceWindowMonthArrayOutput struct{ *pulumi.OutputState }
+
+func (DbSystemsUpgradeMaintenanceWindowMonthArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DbSystemsUpgradeMaintenanceWindowMonth)(nil)).Elem()
+}
+
+func (o DbSystemsUpgradeMaintenanceWindowMonthArrayOutput) ToDbSystemsUpgradeMaintenanceWindowMonthArrayOutput() DbSystemsUpgradeMaintenanceWindowMonthArrayOutput {
+	return o
+}
+
+func (o DbSystemsUpgradeMaintenanceWindowMonthArrayOutput) ToDbSystemsUpgradeMaintenanceWindowMonthArrayOutputWithContext(ctx context.Context) DbSystemsUpgradeMaintenanceWindowMonthArrayOutput {
+	return o
+}
+
+func (o DbSystemsUpgradeMaintenanceWindowMonthArrayOutput) Index(i pulumi.IntInput) DbSystemsUpgradeMaintenanceWindowMonthOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DbSystemsUpgradeMaintenanceWindowMonth {
+		return vs[0].([]DbSystemsUpgradeMaintenanceWindowMonth)[vs[1].(int)]
+	}).(DbSystemsUpgradeMaintenanceWindowMonthOutput)
+}
+
 type ExadataInfrastructureContact struct {
 	// (Updatable) The email for the Exadata Infrastructure contact.
 	Email string `pulumi:"email"`
@@ -12552,6 +13526,112 @@ func (o ExternalContainerDatabaseDatabaseManagementConfigArrayOutput) Index(i pu
 	}).(ExternalContainerDatabaseDatabaseManagementConfigOutput)
 }
 
+type ExternalContainerDatabaseStackMonitoringConfig struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+	StackMonitoringConnectorId *string `pulumi:"stackMonitoringConnectorId"`
+	// The status of Stack Monitoring.
+	StackMonitoringStatus *string `pulumi:"stackMonitoringStatus"`
+}
+
+// ExternalContainerDatabaseStackMonitoringConfigInput is an input type that accepts ExternalContainerDatabaseStackMonitoringConfigArgs and ExternalContainerDatabaseStackMonitoringConfigOutput values.
+// You can construct a concrete instance of `ExternalContainerDatabaseStackMonitoringConfigInput` via:
+//
+//          ExternalContainerDatabaseStackMonitoringConfigArgs{...}
+type ExternalContainerDatabaseStackMonitoringConfigInput interface {
+	pulumi.Input
+
+	ToExternalContainerDatabaseStackMonitoringConfigOutput() ExternalContainerDatabaseStackMonitoringConfigOutput
+	ToExternalContainerDatabaseStackMonitoringConfigOutputWithContext(context.Context) ExternalContainerDatabaseStackMonitoringConfigOutput
+}
+
+type ExternalContainerDatabaseStackMonitoringConfigArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+	StackMonitoringConnectorId pulumi.StringPtrInput `pulumi:"stackMonitoringConnectorId"`
+	// The status of Stack Monitoring.
+	StackMonitoringStatus pulumi.StringPtrInput `pulumi:"stackMonitoringStatus"`
+}
+
+func (ExternalContainerDatabaseStackMonitoringConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ExternalContainerDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (i ExternalContainerDatabaseStackMonitoringConfigArgs) ToExternalContainerDatabaseStackMonitoringConfigOutput() ExternalContainerDatabaseStackMonitoringConfigOutput {
+	return i.ToExternalContainerDatabaseStackMonitoringConfigOutputWithContext(context.Background())
+}
+
+func (i ExternalContainerDatabaseStackMonitoringConfigArgs) ToExternalContainerDatabaseStackMonitoringConfigOutputWithContext(ctx context.Context) ExternalContainerDatabaseStackMonitoringConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ExternalContainerDatabaseStackMonitoringConfigOutput)
+}
+
+// ExternalContainerDatabaseStackMonitoringConfigArrayInput is an input type that accepts ExternalContainerDatabaseStackMonitoringConfigArray and ExternalContainerDatabaseStackMonitoringConfigArrayOutput values.
+// You can construct a concrete instance of `ExternalContainerDatabaseStackMonitoringConfigArrayInput` via:
+//
+//          ExternalContainerDatabaseStackMonitoringConfigArray{ ExternalContainerDatabaseStackMonitoringConfigArgs{...} }
+type ExternalContainerDatabaseStackMonitoringConfigArrayInput interface {
+	pulumi.Input
+
+	ToExternalContainerDatabaseStackMonitoringConfigArrayOutput() ExternalContainerDatabaseStackMonitoringConfigArrayOutput
+	ToExternalContainerDatabaseStackMonitoringConfigArrayOutputWithContext(context.Context) ExternalContainerDatabaseStackMonitoringConfigArrayOutput
+}
+
+type ExternalContainerDatabaseStackMonitoringConfigArray []ExternalContainerDatabaseStackMonitoringConfigInput
+
+func (ExternalContainerDatabaseStackMonitoringConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ExternalContainerDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (i ExternalContainerDatabaseStackMonitoringConfigArray) ToExternalContainerDatabaseStackMonitoringConfigArrayOutput() ExternalContainerDatabaseStackMonitoringConfigArrayOutput {
+	return i.ToExternalContainerDatabaseStackMonitoringConfigArrayOutputWithContext(context.Background())
+}
+
+func (i ExternalContainerDatabaseStackMonitoringConfigArray) ToExternalContainerDatabaseStackMonitoringConfigArrayOutputWithContext(ctx context.Context) ExternalContainerDatabaseStackMonitoringConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ExternalContainerDatabaseStackMonitoringConfigArrayOutput)
+}
+
+type ExternalContainerDatabaseStackMonitoringConfigOutput struct{ *pulumi.OutputState }
+
+func (ExternalContainerDatabaseStackMonitoringConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ExternalContainerDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (o ExternalContainerDatabaseStackMonitoringConfigOutput) ToExternalContainerDatabaseStackMonitoringConfigOutput() ExternalContainerDatabaseStackMonitoringConfigOutput {
+	return o
+}
+
+func (o ExternalContainerDatabaseStackMonitoringConfigOutput) ToExternalContainerDatabaseStackMonitoringConfigOutputWithContext(ctx context.Context) ExternalContainerDatabaseStackMonitoringConfigOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+func (o ExternalContainerDatabaseStackMonitoringConfigOutput) StackMonitoringConnectorId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalContainerDatabaseStackMonitoringConfig) *string { return v.StackMonitoringConnectorId }).(pulumi.StringPtrOutput)
+}
+
+// The status of Stack Monitoring.
+func (o ExternalContainerDatabaseStackMonitoringConfigOutput) StackMonitoringStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalContainerDatabaseStackMonitoringConfig) *string { return v.StackMonitoringStatus }).(pulumi.StringPtrOutput)
+}
+
+type ExternalContainerDatabaseStackMonitoringConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (ExternalContainerDatabaseStackMonitoringConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ExternalContainerDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (o ExternalContainerDatabaseStackMonitoringConfigArrayOutput) ToExternalContainerDatabaseStackMonitoringConfigArrayOutput() ExternalContainerDatabaseStackMonitoringConfigArrayOutput {
+	return o
+}
+
+func (o ExternalContainerDatabaseStackMonitoringConfigArrayOutput) ToExternalContainerDatabaseStackMonitoringConfigArrayOutputWithContext(ctx context.Context) ExternalContainerDatabaseStackMonitoringConfigArrayOutput {
+	return o
+}
+
+func (o ExternalContainerDatabaseStackMonitoringConfigArrayOutput) Index(i pulumi.IntInput) ExternalContainerDatabaseStackMonitoringConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ExternalContainerDatabaseStackMonitoringConfig {
+		return vs[0].([]ExternalContainerDatabaseStackMonitoringConfig)[vs[1].(int)]
+	}).(ExternalContainerDatabaseStackMonitoringConfigOutput)
+}
+
 type ExternalDatabaseConnectorConnectionCredentials struct {
 	// (Updatable) The name of the credential information that used to connect to the database. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
 	CredentialName *string `pulumi:"credentialName"`
@@ -12561,6 +13641,8 @@ type ExternalDatabaseConnectorConnectionCredentials struct {
 	Password *string `pulumi:"password"`
 	// (Updatable) The role of the user that will be connecting to the database.
 	Role *string `pulumi:"role"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+	SslSecretId *string `pulumi:"sslSecretId"`
 	// (Updatable) The username that will be used to connect to the database.
 	Username *string `pulumi:"username"`
 }
@@ -12585,6 +13667,8 @@ type ExternalDatabaseConnectorConnectionCredentialsArgs struct {
 	Password pulumi.StringPtrInput `pulumi:"password"`
 	// (Updatable) The role of the user that will be connecting to the database.
 	Role pulumi.StringPtrInput `pulumi:"role"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+	SslSecretId pulumi.StringPtrInput `pulumi:"sslSecretId"`
 	// (Updatable) The username that will be used to connect to the database.
 	Username pulumi.StringPtrInput `pulumi:"username"`
 }
@@ -12686,6 +13770,11 @@ func (o ExternalDatabaseConnectorConnectionCredentialsOutput) Role() pulumi.Stri
 	return o.ApplyT(func(v ExternalDatabaseConnectorConnectionCredentials) *string { return v.Role }).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+func (o ExternalDatabaseConnectorConnectionCredentialsOutput) SslSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalDatabaseConnectorConnectionCredentials) *string { return v.SslSecretId }).(pulumi.StringPtrOutput)
+}
+
 // (Updatable) The username that will be used to connect to the database.
 func (o ExternalDatabaseConnectorConnectionCredentialsOutput) Username() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ExternalDatabaseConnectorConnectionCredentials) *string { return v.Username }).(pulumi.StringPtrOutput)
@@ -12752,6 +13841,16 @@ func (o ExternalDatabaseConnectorConnectionCredentialsPtrOutput) Role() pulumi.S
 			return nil
 		}
 		return v.Role
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+func (o ExternalDatabaseConnectorConnectionCredentialsPtrOutput) SslSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalDatabaseConnectorConnectionCredentials) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SslSecretId
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -13188,6 +14287,112 @@ func (o ExternalNonContainerDatabaseOperationsInsightsConfigArrayOutput) Index(i
 	}).(ExternalNonContainerDatabaseOperationsInsightsConfigOutput)
 }
 
+type ExternalNonContainerDatabaseStackMonitoringConfig struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+	StackMonitoringConnectorId *string `pulumi:"stackMonitoringConnectorId"`
+	// The status of Stack Monitoring.
+	StackMonitoringStatus *string `pulumi:"stackMonitoringStatus"`
+}
+
+// ExternalNonContainerDatabaseStackMonitoringConfigInput is an input type that accepts ExternalNonContainerDatabaseStackMonitoringConfigArgs and ExternalNonContainerDatabaseStackMonitoringConfigOutput values.
+// You can construct a concrete instance of `ExternalNonContainerDatabaseStackMonitoringConfigInput` via:
+//
+//          ExternalNonContainerDatabaseStackMonitoringConfigArgs{...}
+type ExternalNonContainerDatabaseStackMonitoringConfigInput interface {
+	pulumi.Input
+
+	ToExternalNonContainerDatabaseStackMonitoringConfigOutput() ExternalNonContainerDatabaseStackMonitoringConfigOutput
+	ToExternalNonContainerDatabaseStackMonitoringConfigOutputWithContext(context.Context) ExternalNonContainerDatabaseStackMonitoringConfigOutput
+}
+
+type ExternalNonContainerDatabaseStackMonitoringConfigArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+	StackMonitoringConnectorId pulumi.StringPtrInput `pulumi:"stackMonitoringConnectorId"`
+	// The status of Stack Monitoring.
+	StackMonitoringStatus pulumi.StringPtrInput `pulumi:"stackMonitoringStatus"`
+}
+
+func (ExternalNonContainerDatabaseStackMonitoringConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ExternalNonContainerDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (i ExternalNonContainerDatabaseStackMonitoringConfigArgs) ToExternalNonContainerDatabaseStackMonitoringConfigOutput() ExternalNonContainerDatabaseStackMonitoringConfigOutput {
+	return i.ToExternalNonContainerDatabaseStackMonitoringConfigOutputWithContext(context.Background())
+}
+
+func (i ExternalNonContainerDatabaseStackMonitoringConfigArgs) ToExternalNonContainerDatabaseStackMonitoringConfigOutputWithContext(ctx context.Context) ExternalNonContainerDatabaseStackMonitoringConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ExternalNonContainerDatabaseStackMonitoringConfigOutput)
+}
+
+// ExternalNonContainerDatabaseStackMonitoringConfigArrayInput is an input type that accepts ExternalNonContainerDatabaseStackMonitoringConfigArray and ExternalNonContainerDatabaseStackMonitoringConfigArrayOutput values.
+// You can construct a concrete instance of `ExternalNonContainerDatabaseStackMonitoringConfigArrayInput` via:
+//
+//          ExternalNonContainerDatabaseStackMonitoringConfigArray{ ExternalNonContainerDatabaseStackMonitoringConfigArgs{...} }
+type ExternalNonContainerDatabaseStackMonitoringConfigArrayInput interface {
+	pulumi.Input
+
+	ToExternalNonContainerDatabaseStackMonitoringConfigArrayOutput() ExternalNonContainerDatabaseStackMonitoringConfigArrayOutput
+	ToExternalNonContainerDatabaseStackMonitoringConfigArrayOutputWithContext(context.Context) ExternalNonContainerDatabaseStackMonitoringConfigArrayOutput
+}
+
+type ExternalNonContainerDatabaseStackMonitoringConfigArray []ExternalNonContainerDatabaseStackMonitoringConfigInput
+
+func (ExternalNonContainerDatabaseStackMonitoringConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ExternalNonContainerDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (i ExternalNonContainerDatabaseStackMonitoringConfigArray) ToExternalNonContainerDatabaseStackMonitoringConfigArrayOutput() ExternalNonContainerDatabaseStackMonitoringConfigArrayOutput {
+	return i.ToExternalNonContainerDatabaseStackMonitoringConfigArrayOutputWithContext(context.Background())
+}
+
+func (i ExternalNonContainerDatabaseStackMonitoringConfigArray) ToExternalNonContainerDatabaseStackMonitoringConfigArrayOutputWithContext(ctx context.Context) ExternalNonContainerDatabaseStackMonitoringConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ExternalNonContainerDatabaseStackMonitoringConfigArrayOutput)
+}
+
+type ExternalNonContainerDatabaseStackMonitoringConfigOutput struct{ *pulumi.OutputState }
+
+func (ExternalNonContainerDatabaseStackMonitoringConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ExternalNonContainerDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (o ExternalNonContainerDatabaseStackMonitoringConfigOutput) ToExternalNonContainerDatabaseStackMonitoringConfigOutput() ExternalNonContainerDatabaseStackMonitoringConfigOutput {
+	return o
+}
+
+func (o ExternalNonContainerDatabaseStackMonitoringConfigOutput) ToExternalNonContainerDatabaseStackMonitoringConfigOutputWithContext(ctx context.Context) ExternalNonContainerDatabaseStackMonitoringConfigOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+func (o ExternalNonContainerDatabaseStackMonitoringConfigOutput) StackMonitoringConnectorId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalNonContainerDatabaseStackMonitoringConfig) *string { return v.StackMonitoringConnectorId }).(pulumi.StringPtrOutput)
+}
+
+// The status of Stack Monitoring.
+func (o ExternalNonContainerDatabaseStackMonitoringConfigOutput) StackMonitoringStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalNonContainerDatabaseStackMonitoringConfig) *string { return v.StackMonitoringStatus }).(pulumi.StringPtrOutput)
+}
+
+type ExternalNonContainerDatabaseStackMonitoringConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (ExternalNonContainerDatabaseStackMonitoringConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ExternalNonContainerDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (o ExternalNonContainerDatabaseStackMonitoringConfigArrayOutput) ToExternalNonContainerDatabaseStackMonitoringConfigArrayOutput() ExternalNonContainerDatabaseStackMonitoringConfigArrayOutput {
+	return o
+}
+
+func (o ExternalNonContainerDatabaseStackMonitoringConfigArrayOutput) ToExternalNonContainerDatabaseStackMonitoringConfigArrayOutputWithContext(ctx context.Context) ExternalNonContainerDatabaseStackMonitoringConfigArrayOutput {
+	return o
+}
+
+func (o ExternalNonContainerDatabaseStackMonitoringConfigArrayOutput) Index(i pulumi.IntInput) ExternalNonContainerDatabaseStackMonitoringConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ExternalNonContainerDatabaseStackMonitoringConfig {
+		return vs[0].([]ExternalNonContainerDatabaseStackMonitoringConfig)[vs[1].(int)]
+	}).(ExternalNonContainerDatabaseStackMonitoringConfigOutput)
+}
+
 type ExternalPluggableDatabaseDatabaseManagementConfig struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
 	DatabaseManagementConnectionId *string `pulumi:"databaseManagementConnectionId"`
@@ -13411,6 +14616,112 @@ func (o ExternalPluggableDatabaseOperationsInsightsConfigArrayOutput) Index(i pu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ExternalPluggableDatabaseOperationsInsightsConfig {
 		return vs[0].([]ExternalPluggableDatabaseOperationsInsightsConfig)[vs[1].(int)]
 	}).(ExternalPluggableDatabaseOperationsInsightsConfigOutput)
+}
+
+type ExternalPluggableDatabaseStackMonitoringConfig struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+	StackMonitoringConnectorId *string `pulumi:"stackMonitoringConnectorId"`
+	// The status of Stack Monitoring.
+	StackMonitoringStatus *string `pulumi:"stackMonitoringStatus"`
+}
+
+// ExternalPluggableDatabaseStackMonitoringConfigInput is an input type that accepts ExternalPluggableDatabaseStackMonitoringConfigArgs and ExternalPluggableDatabaseStackMonitoringConfigOutput values.
+// You can construct a concrete instance of `ExternalPluggableDatabaseStackMonitoringConfigInput` via:
+//
+//          ExternalPluggableDatabaseStackMonitoringConfigArgs{...}
+type ExternalPluggableDatabaseStackMonitoringConfigInput interface {
+	pulumi.Input
+
+	ToExternalPluggableDatabaseStackMonitoringConfigOutput() ExternalPluggableDatabaseStackMonitoringConfigOutput
+	ToExternalPluggableDatabaseStackMonitoringConfigOutputWithContext(context.Context) ExternalPluggableDatabaseStackMonitoringConfigOutput
+}
+
+type ExternalPluggableDatabaseStackMonitoringConfigArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+	StackMonitoringConnectorId pulumi.StringPtrInput `pulumi:"stackMonitoringConnectorId"`
+	// The status of Stack Monitoring.
+	StackMonitoringStatus pulumi.StringPtrInput `pulumi:"stackMonitoringStatus"`
+}
+
+func (ExternalPluggableDatabaseStackMonitoringConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ExternalPluggableDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (i ExternalPluggableDatabaseStackMonitoringConfigArgs) ToExternalPluggableDatabaseStackMonitoringConfigOutput() ExternalPluggableDatabaseStackMonitoringConfigOutput {
+	return i.ToExternalPluggableDatabaseStackMonitoringConfigOutputWithContext(context.Background())
+}
+
+func (i ExternalPluggableDatabaseStackMonitoringConfigArgs) ToExternalPluggableDatabaseStackMonitoringConfigOutputWithContext(ctx context.Context) ExternalPluggableDatabaseStackMonitoringConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ExternalPluggableDatabaseStackMonitoringConfigOutput)
+}
+
+// ExternalPluggableDatabaseStackMonitoringConfigArrayInput is an input type that accepts ExternalPluggableDatabaseStackMonitoringConfigArray and ExternalPluggableDatabaseStackMonitoringConfigArrayOutput values.
+// You can construct a concrete instance of `ExternalPluggableDatabaseStackMonitoringConfigArrayInput` via:
+//
+//          ExternalPluggableDatabaseStackMonitoringConfigArray{ ExternalPluggableDatabaseStackMonitoringConfigArgs{...} }
+type ExternalPluggableDatabaseStackMonitoringConfigArrayInput interface {
+	pulumi.Input
+
+	ToExternalPluggableDatabaseStackMonitoringConfigArrayOutput() ExternalPluggableDatabaseStackMonitoringConfigArrayOutput
+	ToExternalPluggableDatabaseStackMonitoringConfigArrayOutputWithContext(context.Context) ExternalPluggableDatabaseStackMonitoringConfigArrayOutput
+}
+
+type ExternalPluggableDatabaseStackMonitoringConfigArray []ExternalPluggableDatabaseStackMonitoringConfigInput
+
+func (ExternalPluggableDatabaseStackMonitoringConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ExternalPluggableDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (i ExternalPluggableDatabaseStackMonitoringConfigArray) ToExternalPluggableDatabaseStackMonitoringConfigArrayOutput() ExternalPluggableDatabaseStackMonitoringConfigArrayOutput {
+	return i.ToExternalPluggableDatabaseStackMonitoringConfigArrayOutputWithContext(context.Background())
+}
+
+func (i ExternalPluggableDatabaseStackMonitoringConfigArray) ToExternalPluggableDatabaseStackMonitoringConfigArrayOutputWithContext(ctx context.Context) ExternalPluggableDatabaseStackMonitoringConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ExternalPluggableDatabaseStackMonitoringConfigArrayOutput)
+}
+
+type ExternalPluggableDatabaseStackMonitoringConfigOutput struct{ *pulumi.OutputState }
+
+func (ExternalPluggableDatabaseStackMonitoringConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ExternalPluggableDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (o ExternalPluggableDatabaseStackMonitoringConfigOutput) ToExternalPluggableDatabaseStackMonitoringConfigOutput() ExternalPluggableDatabaseStackMonitoringConfigOutput {
+	return o
+}
+
+func (o ExternalPluggableDatabaseStackMonitoringConfigOutput) ToExternalPluggableDatabaseStackMonitoringConfigOutputWithContext(ctx context.Context) ExternalPluggableDatabaseStackMonitoringConfigOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+func (o ExternalPluggableDatabaseStackMonitoringConfigOutput) StackMonitoringConnectorId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalPluggableDatabaseStackMonitoringConfig) *string { return v.StackMonitoringConnectorId }).(pulumi.StringPtrOutput)
+}
+
+// The status of Stack Monitoring.
+func (o ExternalPluggableDatabaseStackMonitoringConfigOutput) StackMonitoringStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExternalPluggableDatabaseStackMonitoringConfig) *string { return v.StackMonitoringStatus }).(pulumi.StringPtrOutput)
+}
+
+type ExternalPluggableDatabaseStackMonitoringConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (ExternalPluggableDatabaseStackMonitoringConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ExternalPluggableDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (o ExternalPluggableDatabaseStackMonitoringConfigArrayOutput) ToExternalPluggableDatabaseStackMonitoringConfigArrayOutput() ExternalPluggableDatabaseStackMonitoringConfigArrayOutput {
+	return o
+}
+
+func (o ExternalPluggableDatabaseStackMonitoringConfigArrayOutput) ToExternalPluggableDatabaseStackMonitoringConfigArrayOutputWithContext(ctx context.Context) ExternalPluggableDatabaseStackMonitoringConfigArrayOutput {
+	return o
+}
+
+func (o ExternalPluggableDatabaseStackMonitoringConfigArrayOutput) Index(i pulumi.IntInput) ExternalPluggableDatabaseStackMonitoringConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ExternalPluggableDatabaseStackMonitoringConfig {
+		return vs[0].([]ExternalPluggableDatabaseStackMonitoringConfig)[vs[1].(int)]
+	}).(ExternalPluggableDatabaseStackMonitoringConfigOutput)
 }
 
 type KeyStoreAssociatedDatabase struct {
@@ -14205,6 +15516,103 @@ func (o PluggableDatabasesRemoteCloneConnectionStringArrayOutput) Index(i pulumi
 	}).(PluggableDatabasesRemoteCloneConnectionStringOutput)
 }
 
+type VmClusterAddVirtualNetworkDataCollectionOption struct {
+	// Indicates whether diagnostic collection is enabled for the VM cluster. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+	IsDiagnosticsEventsEnabled *bool `pulumi:"isDiagnosticsEventsEnabled"`
+}
+
+// VmClusterAddVirtualNetworkDataCollectionOptionInput is an input type that accepts VmClusterAddVirtualNetworkDataCollectionOptionArgs and VmClusterAddVirtualNetworkDataCollectionOptionOutput values.
+// You can construct a concrete instance of `VmClusterAddVirtualNetworkDataCollectionOptionInput` via:
+//
+//          VmClusterAddVirtualNetworkDataCollectionOptionArgs{...}
+type VmClusterAddVirtualNetworkDataCollectionOptionInput interface {
+	pulumi.Input
+
+	ToVmClusterAddVirtualNetworkDataCollectionOptionOutput() VmClusterAddVirtualNetworkDataCollectionOptionOutput
+	ToVmClusterAddVirtualNetworkDataCollectionOptionOutputWithContext(context.Context) VmClusterAddVirtualNetworkDataCollectionOptionOutput
+}
+
+type VmClusterAddVirtualNetworkDataCollectionOptionArgs struct {
+	// Indicates whether diagnostic collection is enabled for the VM cluster. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+	IsDiagnosticsEventsEnabled pulumi.BoolPtrInput `pulumi:"isDiagnosticsEventsEnabled"`
+}
+
+func (VmClusterAddVirtualNetworkDataCollectionOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VmClusterAddVirtualNetworkDataCollectionOption)(nil)).Elem()
+}
+
+func (i VmClusterAddVirtualNetworkDataCollectionOptionArgs) ToVmClusterAddVirtualNetworkDataCollectionOptionOutput() VmClusterAddVirtualNetworkDataCollectionOptionOutput {
+	return i.ToVmClusterAddVirtualNetworkDataCollectionOptionOutputWithContext(context.Background())
+}
+
+func (i VmClusterAddVirtualNetworkDataCollectionOptionArgs) ToVmClusterAddVirtualNetworkDataCollectionOptionOutputWithContext(ctx context.Context) VmClusterAddVirtualNetworkDataCollectionOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VmClusterAddVirtualNetworkDataCollectionOptionOutput)
+}
+
+// VmClusterAddVirtualNetworkDataCollectionOptionArrayInput is an input type that accepts VmClusterAddVirtualNetworkDataCollectionOptionArray and VmClusterAddVirtualNetworkDataCollectionOptionArrayOutput values.
+// You can construct a concrete instance of `VmClusterAddVirtualNetworkDataCollectionOptionArrayInput` via:
+//
+//          VmClusterAddVirtualNetworkDataCollectionOptionArray{ VmClusterAddVirtualNetworkDataCollectionOptionArgs{...} }
+type VmClusterAddVirtualNetworkDataCollectionOptionArrayInput interface {
+	pulumi.Input
+
+	ToVmClusterAddVirtualNetworkDataCollectionOptionArrayOutput() VmClusterAddVirtualNetworkDataCollectionOptionArrayOutput
+	ToVmClusterAddVirtualNetworkDataCollectionOptionArrayOutputWithContext(context.Context) VmClusterAddVirtualNetworkDataCollectionOptionArrayOutput
+}
+
+type VmClusterAddVirtualNetworkDataCollectionOptionArray []VmClusterAddVirtualNetworkDataCollectionOptionInput
+
+func (VmClusterAddVirtualNetworkDataCollectionOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VmClusterAddVirtualNetworkDataCollectionOption)(nil)).Elem()
+}
+
+func (i VmClusterAddVirtualNetworkDataCollectionOptionArray) ToVmClusterAddVirtualNetworkDataCollectionOptionArrayOutput() VmClusterAddVirtualNetworkDataCollectionOptionArrayOutput {
+	return i.ToVmClusterAddVirtualNetworkDataCollectionOptionArrayOutputWithContext(context.Background())
+}
+
+func (i VmClusterAddVirtualNetworkDataCollectionOptionArray) ToVmClusterAddVirtualNetworkDataCollectionOptionArrayOutputWithContext(ctx context.Context) VmClusterAddVirtualNetworkDataCollectionOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VmClusterAddVirtualNetworkDataCollectionOptionArrayOutput)
+}
+
+type VmClusterAddVirtualNetworkDataCollectionOptionOutput struct{ *pulumi.OutputState }
+
+func (VmClusterAddVirtualNetworkDataCollectionOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VmClusterAddVirtualNetworkDataCollectionOption)(nil)).Elem()
+}
+
+func (o VmClusterAddVirtualNetworkDataCollectionOptionOutput) ToVmClusterAddVirtualNetworkDataCollectionOptionOutput() VmClusterAddVirtualNetworkDataCollectionOptionOutput {
+	return o
+}
+
+func (o VmClusterAddVirtualNetworkDataCollectionOptionOutput) ToVmClusterAddVirtualNetworkDataCollectionOptionOutputWithContext(ctx context.Context) VmClusterAddVirtualNetworkDataCollectionOptionOutput {
+	return o
+}
+
+// Indicates whether diagnostic collection is enabled for the VM cluster. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+func (o VmClusterAddVirtualNetworkDataCollectionOptionOutput) IsDiagnosticsEventsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v VmClusterAddVirtualNetworkDataCollectionOption) *bool { return v.IsDiagnosticsEventsEnabled }).(pulumi.BoolPtrOutput)
+}
+
+type VmClusterAddVirtualNetworkDataCollectionOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (VmClusterAddVirtualNetworkDataCollectionOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VmClusterAddVirtualNetworkDataCollectionOption)(nil)).Elem()
+}
+
+func (o VmClusterAddVirtualNetworkDataCollectionOptionArrayOutput) ToVmClusterAddVirtualNetworkDataCollectionOptionArrayOutput() VmClusterAddVirtualNetworkDataCollectionOptionArrayOutput {
+	return o
+}
+
+func (o VmClusterAddVirtualNetworkDataCollectionOptionArrayOutput) ToVmClusterAddVirtualNetworkDataCollectionOptionArrayOutputWithContext(ctx context.Context) VmClusterAddVirtualNetworkDataCollectionOptionArrayOutput {
+	return o
+}
+
+func (o VmClusterAddVirtualNetworkDataCollectionOptionArrayOutput) Index(i pulumi.IntInput) VmClusterAddVirtualNetworkDataCollectionOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VmClusterAddVirtualNetworkDataCollectionOption {
+		return vs[0].([]VmClusterAddVirtualNetworkDataCollectionOption)[vs[1].(int)]
+	}).(VmClusterAddVirtualNetworkDataCollectionOptionOutput)
+}
+
 type VmClusterAddVirtualNetworkDbServer struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exacc Db server.
 	DbServerId string `pulumi:"dbServerId"`
@@ -14300,6 +15708,143 @@ func (o VmClusterAddVirtualNetworkDbServerArrayOutput) Index(i pulumi.IntInput) 
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VmClusterAddVirtualNetworkDbServer {
 		return vs[0].([]VmClusterAddVirtualNetworkDbServer)[vs[1].(int)]
 	}).(VmClusterAddVirtualNetworkDbServerOutput)
+}
+
+type VmClusterDataCollectionOptions struct {
+	// (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+	IsDiagnosticsEventsEnabled *bool `pulumi:"isDiagnosticsEventsEnabled"`
+}
+
+// VmClusterDataCollectionOptionsInput is an input type that accepts VmClusterDataCollectionOptionsArgs and VmClusterDataCollectionOptionsOutput values.
+// You can construct a concrete instance of `VmClusterDataCollectionOptionsInput` via:
+//
+//          VmClusterDataCollectionOptionsArgs{...}
+type VmClusterDataCollectionOptionsInput interface {
+	pulumi.Input
+
+	ToVmClusterDataCollectionOptionsOutput() VmClusterDataCollectionOptionsOutput
+	ToVmClusterDataCollectionOptionsOutputWithContext(context.Context) VmClusterDataCollectionOptionsOutput
+}
+
+type VmClusterDataCollectionOptionsArgs struct {
+	// (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+	IsDiagnosticsEventsEnabled pulumi.BoolPtrInput `pulumi:"isDiagnosticsEventsEnabled"`
+}
+
+func (VmClusterDataCollectionOptionsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VmClusterDataCollectionOptions)(nil)).Elem()
+}
+
+func (i VmClusterDataCollectionOptionsArgs) ToVmClusterDataCollectionOptionsOutput() VmClusterDataCollectionOptionsOutput {
+	return i.ToVmClusterDataCollectionOptionsOutputWithContext(context.Background())
+}
+
+func (i VmClusterDataCollectionOptionsArgs) ToVmClusterDataCollectionOptionsOutputWithContext(ctx context.Context) VmClusterDataCollectionOptionsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VmClusterDataCollectionOptionsOutput)
+}
+
+func (i VmClusterDataCollectionOptionsArgs) ToVmClusterDataCollectionOptionsPtrOutput() VmClusterDataCollectionOptionsPtrOutput {
+	return i.ToVmClusterDataCollectionOptionsPtrOutputWithContext(context.Background())
+}
+
+func (i VmClusterDataCollectionOptionsArgs) ToVmClusterDataCollectionOptionsPtrOutputWithContext(ctx context.Context) VmClusterDataCollectionOptionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VmClusterDataCollectionOptionsOutput).ToVmClusterDataCollectionOptionsPtrOutputWithContext(ctx)
+}
+
+// VmClusterDataCollectionOptionsPtrInput is an input type that accepts VmClusterDataCollectionOptionsArgs, VmClusterDataCollectionOptionsPtr and VmClusterDataCollectionOptionsPtrOutput values.
+// You can construct a concrete instance of `VmClusterDataCollectionOptionsPtrInput` via:
+//
+//          VmClusterDataCollectionOptionsArgs{...}
+//
+//  or:
+//
+//          nil
+type VmClusterDataCollectionOptionsPtrInput interface {
+	pulumi.Input
+
+	ToVmClusterDataCollectionOptionsPtrOutput() VmClusterDataCollectionOptionsPtrOutput
+	ToVmClusterDataCollectionOptionsPtrOutputWithContext(context.Context) VmClusterDataCollectionOptionsPtrOutput
+}
+
+type vmClusterDataCollectionOptionsPtrType VmClusterDataCollectionOptionsArgs
+
+func VmClusterDataCollectionOptionsPtr(v *VmClusterDataCollectionOptionsArgs) VmClusterDataCollectionOptionsPtrInput {
+	return (*vmClusterDataCollectionOptionsPtrType)(v)
+}
+
+func (*vmClusterDataCollectionOptionsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**VmClusterDataCollectionOptions)(nil)).Elem()
+}
+
+func (i *vmClusterDataCollectionOptionsPtrType) ToVmClusterDataCollectionOptionsPtrOutput() VmClusterDataCollectionOptionsPtrOutput {
+	return i.ToVmClusterDataCollectionOptionsPtrOutputWithContext(context.Background())
+}
+
+func (i *vmClusterDataCollectionOptionsPtrType) ToVmClusterDataCollectionOptionsPtrOutputWithContext(ctx context.Context) VmClusterDataCollectionOptionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VmClusterDataCollectionOptionsPtrOutput)
+}
+
+type VmClusterDataCollectionOptionsOutput struct{ *pulumi.OutputState }
+
+func (VmClusterDataCollectionOptionsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VmClusterDataCollectionOptions)(nil)).Elem()
+}
+
+func (o VmClusterDataCollectionOptionsOutput) ToVmClusterDataCollectionOptionsOutput() VmClusterDataCollectionOptionsOutput {
+	return o
+}
+
+func (o VmClusterDataCollectionOptionsOutput) ToVmClusterDataCollectionOptionsOutputWithContext(ctx context.Context) VmClusterDataCollectionOptionsOutput {
+	return o
+}
+
+func (o VmClusterDataCollectionOptionsOutput) ToVmClusterDataCollectionOptionsPtrOutput() VmClusterDataCollectionOptionsPtrOutput {
+	return o.ToVmClusterDataCollectionOptionsPtrOutputWithContext(context.Background())
+}
+
+func (o VmClusterDataCollectionOptionsOutput) ToVmClusterDataCollectionOptionsPtrOutputWithContext(ctx context.Context) VmClusterDataCollectionOptionsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v VmClusterDataCollectionOptions) *VmClusterDataCollectionOptions {
+		return &v
+	}).(VmClusterDataCollectionOptionsPtrOutput)
+}
+
+// (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+func (o VmClusterDataCollectionOptionsOutput) IsDiagnosticsEventsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v VmClusterDataCollectionOptions) *bool { return v.IsDiagnosticsEventsEnabled }).(pulumi.BoolPtrOutput)
+}
+
+type VmClusterDataCollectionOptionsPtrOutput struct{ *pulumi.OutputState }
+
+func (VmClusterDataCollectionOptionsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**VmClusterDataCollectionOptions)(nil)).Elem()
+}
+
+func (o VmClusterDataCollectionOptionsPtrOutput) ToVmClusterDataCollectionOptionsPtrOutput() VmClusterDataCollectionOptionsPtrOutput {
+	return o
+}
+
+func (o VmClusterDataCollectionOptionsPtrOutput) ToVmClusterDataCollectionOptionsPtrOutputWithContext(ctx context.Context) VmClusterDataCollectionOptionsPtrOutput {
+	return o
+}
+
+func (o VmClusterDataCollectionOptionsPtrOutput) Elem() VmClusterDataCollectionOptionsOutput {
+	return o.ApplyT(func(v *VmClusterDataCollectionOptions) VmClusterDataCollectionOptions {
+		if v != nil {
+			return *v
+		}
+		var ret VmClusterDataCollectionOptions
+		return ret
+	}).(VmClusterDataCollectionOptionsOutput)
+}
+
+// (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+func (o VmClusterDataCollectionOptionsPtrOutput) IsDiagnosticsEventsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *VmClusterDataCollectionOptions) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsDiagnosticsEventsEnabled
+	}).(pulumi.BoolPtrOutput)
 }
 
 type VmClusterNetworkScan struct {
@@ -14701,6 +16246,103 @@ func (o VmClusterNetworkVmNetworkNodeArrayOutput) Index(i pulumi.IntInput) VmClu
 	}).(VmClusterNetworkVmNetworkNodeOutput)
 }
 
+type VmClusterRemoveVirtualMachineDataCollectionOption struct {
+	// Indicates whether diagnostic collection is enabled for the VM cluster. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+	IsDiagnosticsEventsEnabled *bool `pulumi:"isDiagnosticsEventsEnabled"`
+}
+
+// VmClusterRemoveVirtualMachineDataCollectionOptionInput is an input type that accepts VmClusterRemoveVirtualMachineDataCollectionOptionArgs and VmClusterRemoveVirtualMachineDataCollectionOptionOutput values.
+// You can construct a concrete instance of `VmClusterRemoveVirtualMachineDataCollectionOptionInput` via:
+//
+//          VmClusterRemoveVirtualMachineDataCollectionOptionArgs{...}
+type VmClusterRemoveVirtualMachineDataCollectionOptionInput interface {
+	pulumi.Input
+
+	ToVmClusterRemoveVirtualMachineDataCollectionOptionOutput() VmClusterRemoveVirtualMachineDataCollectionOptionOutput
+	ToVmClusterRemoveVirtualMachineDataCollectionOptionOutputWithContext(context.Context) VmClusterRemoveVirtualMachineDataCollectionOptionOutput
+}
+
+type VmClusterRemoveVirtualMachineDataCollectionOptionArgs struct {
+	// Indicates whether diagnostic collection is enabled for the VM cluster. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+	IsDiagnosticsEventsEnabled pulumi.BoolPtrInput `pulumi:"isDiagnosticsEventsEnabled"`
+}
+
+func (VmClusterRemoveVirtualMachineDataCollectionOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VmClusterRemoveVirtualMachineDataCollectionOption)(nil)).Elem()
+}
+
+func (i VmClusterRemoveVirtualMachineDataCollectionOptionArgs) ToVmClusterRemoveVirtualMachineDataCollectionOptionOutput() VmClusterRemoveVirtualMachineDataCollectionOptionOutput {
+	return i.ToVmClusterRemoveVirtualMachineDataCollectionOptionOutputWithContext(context.Background())
+}
+
+func (i VmClusterRemoveVirtualMachineDataCollectionOptionArgs) ToVmClusterRemoveVirtualMachineDataCollectionOptionOutputWithContext(ctx context.Context) VmClusterRemoveVirtualMachineDataCollectionOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VmClusterRemoveVirtualMachineDataCollectionOptionOutput)
+}
+
+// VmClusterRemoveVirtualMachineDataCollectionOptionArrayInput is an input type that accepts VmClusterRemoveVirtualMachineDataCollectionOptionArray and VmClusterRemoveVirtualMachineDataCollectionOptionArrayOutput values.
+// You can construct a concrete instance of `VmClusterRemoveVirtualMachineDataCollectionOptionArrayInput` via:
+//
+//          VmClusterRemoveVirtualMachineDataCollectionOptionArray{ VmClusterRemoveVirtualMachineDataCollectionOptionArgs{...} }
+type VmClusterRemoveVirtualMachineDataCollectionOptionArrayInput interface {
+	pulumi.Input
+
+	ToVmClusterRemoveVirtualMachineDataCollectionOptionArrayOutput() VmClusterRemoveVirtualMachineDataCollectionOptionArrayOutput
+	ToVmClusterRemoveVirtualMachineDataCollectionOptionArrayOutputWithContext(context.Context) VmClusterRemoveVirtualMachineDataCollectionOptionArrayOutput
+}
+
+type VmClusterRemoveVirtualMachineDataCollectionOptionArray []VmClusterRemoveVirtualMachineDataCollectionOptionInput
+
+func (VmClusterRemoveVirtualMachineDataCollectionOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VmClusterRemoveVirtualMachineDataCollectionOption)(nil)).Elem()
+}
+
+func (i VmClusterRemoveVirtualMachineDataCollectionOptionArray) ToVmClusterRemoveVirtualMachineDataCollectionOptionArrayOutput() VmClusterRemoveVirtualMachineDataCollectionOptionArrayOutput {
+	return i.ToVmClusterRemoveVirtualMachineDataCollectionOptionArrayOutputWithContext(context.Background())
+}
+
+func (i VmClusterRemoveVirtualMachineDataCollectionOptionArray) ToVmClusterRemoveVirtualMachineDataCollectionOptionArrayOutputWithContext(ctx context.Context) VmClusterRemoveVirtualMachineDataCollectionOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VmClusterRemoveVirtualMachineDataCollectionOptionArrayOutput)
+}
+
+type VmClusterRemoveVirtualMachineDataCollectionOptionOutput struct{ *pulumi.OutputState }
+
+func (VmClusterRemoveVirtualMachineDataCollectionOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VmClusterRemoveVirtualMachineDataCollectionOption)(nil)).Elem()
+}
+
+func (o VmClusterRemoveVirtualMachineDataCollectionOptionOutput) ToVmClusterRemoveVirtualMachineDataCollectionOptionOutput() VmClusterRemoveVirtualMachineDataCollectionOptionOutput {
+	return o
+}
+
+func (o VmClusterRemoveVirtualMachineDataCollectionOptionOutput) ToVmClusterRemoveVirtualMachineDataCollectionOptionOutputWithContext(ctx context.Context) VmClusterRemoveVirtualMachineDataCollectionOptionOutput {
+	return o
+}
+
+// Indicates whether diagnostic collection is enabled for the VM cluster. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+func (o VmClusterRemoveVirtualMachineDataCollectionOptionOutput) IsDiagnosticsEventsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v VmClusterRemoveVirtualMachineDataCollectionOption) *bool { return v.IsDiagnosticsEventsEnabled }).(pulumi.BoolPtrOutput)
+}
+
+type VmClusterRemoveVirtualMachineDataCollectionOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (VmClusterRemoveVirtualMachineDataCollectionOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VmClusterRemoveVirtualMachineDataCollectionOption)(nil)).Elem()
+}
+
+func (o VmClusterRemoveVirtualMachineDataCollectionOptionArrayOutput) ToVmClusterRemoveVirtualMachineDataCollectionOptionArrayOutput() VmClusterRemoveVirtualMachineDataCollectionOptionArrayOutput {
+	return o
+}
+
+func (o VmClusterRemoveVirtualMachineDataCollectionOptionArrayOutput) ToVmClusterRemoveVirtualMachineDataCollectionOptionArrayOutputWithContext(ctx context.Context) VmClusterRemoveVirtualMachineDataCollectionOptionArrayOutput {
+	return o
+}
+
+func (o VmClusterRemoveVirtualMachineDataCollectionOptionArrayOutput) Index(i pulumi.IntInput) VmClusterRemoveVirtualMachineDataCollectionOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VmClusterRemoveVirtualMachineDataCollectionOption {
+		return vs[0].([]VmClusterRemoveVirtualMachineDataCollectionOption)[vs[1].(int)]
+	}).(VmClusterRemoveVirtualMachineDataCollectionOptionOutput)
+}
+
 type VmClusterRemoveVirtualMachineDbServer struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exacc Db server.
 	DbServerId string `pulumi:"dbServerId"`
@@ -14796,6 +16438,212 @@ func (o VmClusterRemoveVirtualMachineDbServerArrayOutput) Index(i pulumi.IntInpu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VmClusterRemoveVirtualMachineDbServer {
 		return vs[0].([]VmClusterRemoveVirtualMachineDbServer)[vs[1].(int)]
 	}).(VmClusterRemoveVirtualMachineDbServerOutput)
+}
+
+type GetAutonomousCharacterSetsAutonomousDatabaseCharacterSet struct {
+	// A valid Oracle character set.
+	Name string `pulumi:"name"`
+}
+
+// GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetInput is an input type that accepts GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetArgs and GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetOutput values.
+// You can construct a concrete instance of `GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetInput` via:
+//
+//          GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetArgs{...}
+type GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetInput interface {
+	pulumi.Input
+
+	ToGetAutonomousCharacterSetsAutonomousDatabaseCharacterSetOutput() GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetOutput
+	ToGetAutonomousCharacterSetsAutonomousDatabaseCharacterSetOutputWithContext(context.Context) GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetOutput
+}
+
+type GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetArgs struct {
+	// A valid Oracle character set.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutonomousCharacterSetsAutonomousDatabaseCharacterSet)(nil)).Elem()
+}
+
+func (i GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetArgs) ToGetAutonomousCharacterSetsAutonomousDatabaseCharacterSetOutput() GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetOutput {
+	return i.ToGetAutonomousCharacterSetsAutonomousDatabaseCharacterSetOutputWithContext(context.Background())
+}
+
+func (i GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetArgs) ToGetAutonomousCharacterSetsAutonomousDatabaseCharacterSetOutputWithContext(ctx context.Context) GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetOutput)
+}
+
+// GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetArrayInput is an input type that accepts GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetArray and GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetArrayOutput values.
+// You can construct a concrete instance of `GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetArrayInput` via:
+//
+//          GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetArray{ GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetArgs{...} }
+type GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetArrayInput interface {
+	pulumi.Input
+
+	ToGetAutonomousCharacterSetsAutonomousDatabaseCharacterSetArrayOutput() GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetArrayOutput
+	ToGetAutonomousCharacterSetsAutonomousDatabaseCharacterSetArrayOutputWithContext(context.Context) GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetArrayOutput
+}
+
+type GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetArray []GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetInput
+
+func (GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutonomousCharacterSetsAutonomousDatabaseCharacterSet)(nil)).Elem()
+}
+
+func (i GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetArray) ToGetAutonomousCharacterSetsAutonomousDatabaseCharacterSetArrayOutput() GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetArrayOutput {
+	return i.ToGetAutonomousCharacterSetsAutonomousDatabaseCharacterSetArrayOutputWithContext(context.Background())
+}
+
+func (i GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetArray) ToGetAutonomousCharacterSetsAutonomousDatabaseCharacterSetArrayOutputWithContext(ctx context.Context) GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetArrayOutput)
+}
+
+type GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetOutput struct{ *pulumi.OutputState }
+
+func (GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutonomousCharacterSetsAutonomousDatabaseCharacterSet)(nil)).Elem()
+}
+
+func (o GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetOutput) ToGetAutonomousCharacterSetsAutonomousDatabaseCharacterSetOutput() GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetOutput {
+	return o
+}
+
+func (o GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetOutput) ToGetAutonomousCharacterSetsAutonomousDatabaseCharacterSetOutputWithContext(ctx context.Context) GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetOutput {
+	return o
+}
+
+// A valid Oracle character set.
+func (o GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousCharacterSetsAutonomousDatabaseCharacterSet) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutonomousCharacterSetsAutonomousDatabaseCharacterSet)(nil)).Elem()
+}
+
+func (o GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetArrayOutput) ToGetAutonomousCharacterSetsAutonomousDatabaseCharacterSetArrayOutput() GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetArrayOutput {
+	return o
+}
+
+func (o GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetArrayOutput) ToGetAutonomousCharacterSetsAutonomousDatabaseCharacterSetArrayOutputWithContext(ctx context.Context) GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetArrayOutput {
+	return o
+}
+
+func (o GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetArrayOutput) Index(i pulumi.IntInput) GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutonomousCharacterSetsAutonomousDatabaseCharacterSet {
+		return vs[0].([]GetAutonomousCharacterSetsAutonomousDatabaseCharacterSet)[vs[1].(int)]
+	}).(GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetOutput)
+}
+
+type GetAutonomousCharacterSetsFilter struct {
+	// A valid Oracle character set.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetAutonomousCharacterSetsFilterInput is an input type that accepts GetAutonomousCharacterSetsFilterArgs and GetAutonomousCharacterSetsFilterOutput values.
+// You can construct a concrete instance of `GetAutonomousCharacterSetsFilterInput` via:
+//
+//          GetAutonomousCharacterSetsFilterArgs{...}
+type GetAutonomousCharacterSetsFilterInput interface {
+	pulumi.Input
+
+	ToGetAutonomousCharacterSetsFilterOutput() GetAutonomousCharacterSetsFilterOutput
+	ToGetAutonomousCharacterSetsFilterOutputWithContext(context.Context) GetAutonomousCharacterSetsFilterOutput
+}
+
+type GetAutonomousCharacterSetsFilterArgs struct {
+	// A valid Oracle character set.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetAutonomousCharacterSetsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutonomousCharacterSetsFilter)(nil)).Elem()
+}
+
+func (i GetAutonomousCharacterSetsFilterArgs) ToGetAutonomousCharacterSetsFilterOutput() GetAutonomousCharacterSetsFilterOutput {
+	return i.ToGetAutonomousCharacterSetsFilterOutputWithContext(context.Background())
+}
+
+func (i GetAutonomousCharacterSetsFilterArgs) ToGetAutonomousCharacterSetsFilterOutputWithContext(ctx context.Context) GetAutonomousCharacterSetsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutonomousCharacterSetsFilterOutput)
+}
+
+// GetAutonomousCharacterSetsFilterArrayInput is an input type that accepts GetAutonomousCharacterSetsFilterArray and GetAutonomousCharacterSetsFilterArrayOutput values.
+// You can construct a concrete instance of `GetAutonomousCharacterSetsFilterArrayInput` via:
+//
+//          GetAutonomousCharacterSetsFilterArray{ GetAutonomousCharacterSetsFilterArgs{...} }
+type GetAutonomousCharacterSetsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetAutonomousCharacterSetsFilterArrayOutput() GetAutonomousCharacterSetsFilterArrayOutput
+	ToGetAutonomousCharacterSetsFilterArrayOutputWithContext(context.Context) GetAutonomousCharacterSetsFilterArrayOutput
+}
+
+type GetAutonomousCharacterSetsFilterArray []GetAutonomousCharacterSetsFilterInput
+
+func (GetAutonomousCharacterSetsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutonomousCharacterSetsFilter)(nil)).Elem()
+}
+
+func (i GetAutonomousCharacterSetsFilterArray) ToGetAutonomousCharacterSetsFilterArrayOutput() GetAutonomousCharacterSetsFilterArrayOutput {
+	return i.ToGetAutonomousCharacterSetsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetAutonomousCharacterSetsFilterArray) ToGetAutonomousCharacterSetsFilterArrayOutputWithContext(ctx context.Context) GetAutonomousCharacterSetsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutonomousCharacterSetsFilterArrayOutput)
+}
+
+type GetAutonomousCharacterSetsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetAutonomousCharacterSetsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutonomousCharacterSetsFilter)(nil)).Elem()
+}
+
+func (o GetAutonomousCharacterSetsFilterOutput) ToGetAutonomousCharacterSetsFilterOutput() GetAutonomousCharacterSetsFilterOutput {
+	return o
+}
+
+func (o GetAutonomousCharacterSetsFilterOutput) ToGetAutonomousCharacterSetsFilterOutputWithContext(ctx context.Context) GetAutonomousCharacterSetsFilterOutput {
+	return o
+}
+
+// A valid Oracle character set.
+func (o GetAutonomousCharacterSetsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousCharacterSetsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetAutonomousCharacterSetsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAutonomousCharacterSetsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetAutonomousCharacterSetsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAutonomousCharacterSetsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetAutonomousCharacterSetsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAutonomousCharacterSetsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutonomousCharacterSetsFilter)(nil)).Elem()
+}
+
+func (o GetAutonomousCharacterSetsFilterArrayOutput) ToGetAutonomousCharacterSetsFilterArrayOutput() GetAutonomousCharacterSetsFilterArrayOutput {
+	return o
+}
+
+func (o GetAutonomousCharacterSetsFilterArrayOutput) ToGetAutonomousCharacterSetsFilterArrayOutputWithContext(ctx context.Context) GetAutonomousCharacterSetsFilterArrayOutput {
+	return o
+}
+
+func (o GetAutonomousCharacterSetsFilterArrayOutput) Index(i pulumi.IntInput) GetAutonomousCharacterSetsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutonomousCharacterSetsFilter {
+		return vs[0].([]GetAutonomousCharacterSetsFilter)[vs[1].(int)]
+	}).(GetAutonomousCharacterSetsFilterOutput)
 }
 
 type GetAutonomousContainerDatabaseBackupConfig struct {
@@ -16556,6 +18404,8 @@ type GetAutonomousContainerDatabasesAutonomousContainerDatabase struct {
 	AutonomousVmClusterId string `pulumi:"autonomousVmClusterId"`
 	// A filter to return only resources that match the given availability domain exactly.
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
+	AvailableCpus float64 `pulumi:"availableCpus"`
 	// Backup options for the Autonomous Container Database.
 	BackupConfigs []GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfig `pulumi:"backupConfigs"`
 	// The cloud Autonomous VM Cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -16607,7 +18457,11 @@ type GetAutonomousContainerDatabasesAutonomousContainerDatabase struct {
 	PeerCloudAutonomousVmClusterId               string                                                                                                  `pulumi:"peerCloudAutonomousVmClusterId"`
 	PeerDbUniqueName                             string                                                                                                  `pulumi:"peerDbUniqueName"`
 	ProtectionMode                               string                                                                                                  `pulumi:"protectionMode"`
-	// The role of the dataguard enabled Autonomous Container Database.
+	// An array of CPU values that can be used to successfully provision a single Autonomous Database.
+	ProvisionableCpuses []float64 `pulumi:"provisionableCpuses"`
+	// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+	ReclaimableCpus float64 `pulumi:"reclaimableCpus"`
+	// The role of the Autonomous Data Guard-enabled Autonomous Container Database.
 	Role             string `pulumi:"role"`
 	RotateKeyTrigger bool   `pulumi:"rotateKeyTrigger"`
 	// A filter to return only resources that match the given service level agreement type exactly.
@@ -16618,6 +18472,8 @@ type GetAutonomousContainerDatabasesAutonomousContainerDatabase struct {
 	State string `pulumi:"state"`
 	// The date and time the Autonomous Container Database was created.
 	TimeCreated string `pulumi:"timeCreated"`
+	// The number of CPU cores allocated to the Autonomous VM cluster.
+	TotalCpus int `pulumi:"totalCpus"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
 	VaultId string `pulumi:"vaultId"`
 }
@@ -16640,6 +18496,8 @@ type GetAutonomousContainerDatabasesAutonomousContainerDatabaseArgs struct {
 	AutonomousVmClusterId pulumi.StringInput `pulumi:"autonomousVmClusterId"`
 	// A filter to return only resources that match the given availability domain exactly.
 	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
+	AvailableCpus pulumi.Float64Input `pulumi:"availableCpus"`
 	// Backup options for the Autonomous Container Database.
 	BackupConfigs GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigArrayInput `pulumi:"backupConfigs"`
 	// The cloud Autonomous VM Cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -16691,7 +18549,11 @@ type GetAutonomousContainerDatabasesAutonomousContainerDatabaseArgs struct {
 	PeerCloudAutonomousVmClusterId               pulumi.StringInput                                                                                              `pulumi:"peerCloudAutonomousVmClusterId"`
 	PeerDbUniqueName                             pulumi.StringInput                                                                                              `pulumi:"peerDbUniqueName"`
 	ProtectionMode                               pulumi.StringInput                                                                                              `pulumi:"protectionMode"`
-	// The role of the dataguard enabled Autonomous Container Database.
+	// An array of CPU values that can be used to successfully provision a single Autonomous Database.
+	ProvisionableCpuses pulumi.Float64ArrayInput `pulumi:"provisionableCpuses"`
+	// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+	ReclaimableCpus pulumi.Float64Input `pulumi:"reclaimableCpus"`
+	// The role of the Autonomous Data Guard-enabled Autonomous Container Database.
 	Role             pulumi.StringInput `pulumi:"role"`
 	RotateKeyTrigger pulumi.BoolInput   `pulumi:"rotateKeyTrigger"`
 	// A filter to return only resources that match the given service level agreement type exactly.
@@ -16702,6 +18564,8 @@ type GetAutonomousContainerDatabasesAutonomousContainerDatabaseArgs struct {
 	State pulumi.StringInput `pulumi:"state"`
 	// The date and time the Autonomous Container Database was created.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The number of CPU cores allocated to the Autonomous VM cluster.
+	TotalCpus pulumi.IntInput `pulumi:"totalCpus"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
 	VaultId pulumi.StringInput `pulumi:"vaultId"`
 }
@@ -16774,6 +18638,11 @@ func (o GetAutonomousContainerDatabasesAutonomousContainerDatabaseOutput) Autono
 // A filter to return only resources that match the given availability domain exactly.
 func (o GetAutonomousContainerDatabasesAutonomousContainerDatabaseOutput) AvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutonomousContainerDatabasesAutonomousContainerDatabase) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+}
+
+// Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
+func (o GetAutonomousContainerDatabasesAutonomousContainerDatabaseOutput) AvailableCpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetAutonomousContainerDatabasesAutonomousContainerDatabase) float64 { return v.AvailableCpus }).(pulumi.Float64Output)
 }
 
 // Backup options for the Autonomous Container Database.
@@ -16954,7 +18823,19 @@ func (o GetAutonomousContainerDatabasesAutonomousContainerDatabaseOutput) Protec
 	return o.ApplyT(func(v GetAutonomousContainerDatabasesAutonomousContainerDatabase) string { return v.ProtectionMode }).(pulumi.StringOutput)
 }
 
-// The role of the dataguard enabled Autonomous Container Database.
+// An array of CPU values that can be used to successfully provision a single Autonomous Database.
+func (o GetAutonomousContainerDatabasesAutonomousContainerDatabaseOutput) ProvisionableCpuses() pulumi.Float64ArrayOutput {
+	return o.ApplyT(func(v GetAutonomousContainerDatabasesAutonomousContainerDatabase) []float64 {
+		return v.ProvisionableCpuses
+	}).(pulumi.Float64ArrayOutput)
+}
+
+// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+func (o GetAutonomousContainerDatabasesAutonomousContainerDatabaseOutput) ReclaimableCpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetAutonomousContainerDatabasesAutonomousContainerDatabase) float64 { return v.ReclaimableCpus }).(pulumi.Float64Output)
+}
+
+// The role of the Autonomous Data Guard-enabled Autonomous Container Database.
 func (o GetAutonomousContainerDatabasesAutonomousContainerDatabaseOutput) Role() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutonomousContainerDatabasesAutonomousContainerDatabase) string { return v.Role }).(pulumi.StringOutput)
 }
@@ -16985,6 +18866,11 @@ func (o GetAutonomousContainerDatabasesAutonomousContainerDatabaseOutput) State(
 // The date and time the Autonomous Container Database was created.
 func (o GetAutonomousContainerDatabasesAutonomousContainerDatabaseOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutonomousContainerDatabasesAutonomousContainerDatabase) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The number of CPU cores allocated to the Autonomous VM cluster.
+func (o GetAutonomousContainerDatabasesAutonomousContainerDatabaseOutput) TotalCpus() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutonomousContainerDatabasesAutonomousContainerDatabase) int { return v.TotalCpus }).(pulumi.IntOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
@@ -20395,6 +22281,130 @@ func (o GetAutonomousDatabaseKeyHistoryEntryArrayOutput) Index(i pulumi.IntInput
 	}).(GetAutonomousDatabaseKeyHistoryEntryOutput)
 }
 
+type GetAutonomousDatabaseLocalStandbyDb struct {
+	// The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
+	LagTimeInSeconds int `pulumi:"lagTimeInSeconds"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The current state of the Autonomous Database.
+	State string `pulumi:"state"`
+	// The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+	TimeDataGuardRoleChanged string `pulumi:"timeDataGuardRoleChanged"`
+}
+
+// GetAutonomousDatabaseLocalStandbyDbInput is an input type that accepts GetAutonomousDatabaseLocalStandbyDbArgs and GetAutonomousDatabaseLocalStandbyDbOutput values.
+// You can construct a concrete instance of `GetAutonomousDatabaseLocalStandbyDbInput` via:
+//
+//          GetAutonomousDatabaseLocalStandbyDbArgs{...}
+type GetAutonomousDatabaseLocalStandbyDbInput interface {
+	pulumi.Input
+
+	ToGetAutonomousDatabaseLocalStandbyDbOutput() GetAutonomousDatabaseLocalStandbyDbOutput
+	ToGetAutonomousDatabaseLocalStandbyDbOutputWithContext(context.Context) GetAutonomousDatabaseLocalStandbyDbOutput
+}
+
+type GetAutonomousDatabaseLocalStandbyDbArgs struct {
+	// The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
+	LagTimeInSeconds pulumi.IntInput `pulumi:"lagTimeInSeconds"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The current state of the Autonomous Database.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+	TimeDataGuardRoleChanged pulumi.StringInput `pulumi:"timeDataGuardRoleChanged"`
+}
+
+func (GetAutonomousDatabaseLocalStandbyDbArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutonomousDatabaseLocalStandbyDb)(nil)).Elem()
+}
+
+func (i GetAutonomousDatabaseLocalStandbyDbArgs) ToGetAutonomousDatabaseLocalStandbyDbOutput() GetAutonomousDatabaseLocalStandbyDbOutput {
+	return i.ToGetAutonomousDatabaseLocalStandbyDbOutputWithContext(context.Background())
+}
+
+func (i GetAutonomousDatabaseLocalStandbyDbArgs) ToGetAutonomousDatabaseLocalStandbyDbOutputWithContext(ctx context.Context) GetAutonomousDatabaseLocalStandbyDbOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutonomousDatabaseLocalStandbyDbOutput)
+}
+
+// GetAutonomousDatabaseLocalStandbyDbArrayInput is an input type that accepts GetAutonomousDatabaseLocalStandbyDbArray and GetAutonomousDatabaseLocalStandbyDbArrayOutput values.
+// You can construct a concrete instance of `GetAutonomousDatabaseLocalStandbyDbArrayInput` via:
+//
+//          GetAutonomousDatabaseLocalStandbyDbArray{ GetAutonomousDatabaseLocalStandbyDbArgs{...} }
+type GetAutonomousDatabaseLocalStandbyDbArrayInput interface {
+	pulumi.Input
+
+	ToGetAutonomousDatabaseLocalStandbyDbArrayOutput() GetAutonomousDatabaseLocalStandbyDbArrayOutput
+	ToGetAutonomousDatabaseLocalStandbyDbArrayOutputWithContext(context.Context) GetAutonomousDatabaseLocalStandbyDbArrayOutput
+}
+
+type GetAutonomousDatabaseLocalStandbyDbArray []GetAutonomousDatabaseLocalStandbyDbInput
+
+func (GetAutonomousDatabaseLocalStandbyDbArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutonomousDatabaseLocalStandbyDb)(nil)).Elem()
+}
+
+func (i GetAutonomousDatabaseLocalStandbyDbArray) ToGetAutonomousDatabaseLocalStandbyDbArrayOutput() GetAutonomousDatabaseLocalStandbyDbArrayOutput {
+	return i.ToGetAutonomousDatabaseLocalStandbyDbArrayOutputWithContext(context.Background())
+}
+
+func (i GetAutonomousDatabaseLocalStandbyDbArray) ToGetAutonomousDatabaseLocalStandbyDbArrayOutputWithContext(ctx context.Context) GetAutonomousDatabaseLocalStandbyDbArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutonomousDatabaseLocalStandbyDbArrayOutput)
+}
+
+type GetAutonomousDatabaseLocalStandbyDbOutput struct{ *pulumi.OutputState }
+
+func (GetAutonomousDatabaseLocalStandbyDbOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutonomousDatabaseLocalStandbyDb)(nil)).Elem()
+}
+
+func (o GetAutonomousDatabaseLocalStandbyDbOutput) ToGetAutonomousDatabaseLocalStandbyDbOutput() GetAutonomousDatabaseLocalStandbyDbOutput {
+	return o
+}
+
+func (o GetAutonomousDatabaseLocalStandbyDbOutput) ToGetAutonomousDatabaseLocalStandbyDbOutputWithContext(ctx context.Context) GetAutonomousDatabaseLocalStandbyDbOutput {
+	return o
+}
+
+// The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
+func (o GetAutonomousDatabaseLocalStandbyDbOutput) LagTimeInSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutonomousDatabaseLocalStandbyDb) int { return v.LagTimeInSeconds }).(pulumi.IntOutput)
+}
+
+// Additional information about the current lifecycle state.
+func (o GetAutonomousDatabaseLocalStandbyDbOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabaseLocalStandbyDb) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The current state of the Autonomous Database.
+func (o GetAutonomousDatabaseLocalStandbyDbOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabaseLocalStandbyDb) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+func (o GetAutonomousDatabaseLocalStandbyDbOutput) TimeDataGuardRoleChanged() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabaseLocalStandbyDb) string { return v.TimeDataGuardRoleChanged }).(pulumi.StringOutput)
+}
+
+type GetAutonomousDatabaseLocalStandbyDbArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAutonomousDatabaseLocalStandbyDbArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutonomousDatabaseLocalStandbyDb)(nil)).Elem()
+}
+
+func (o GetAutonomousDatabaseLocalStandbyDbArrayOutput) ToGetAutonomousDatabaseLocalStandbyDbArrayOutput() GetAutonomousDatabaseLocalStandbyDbArrayOutput {
+	return o
+}
+
+func (o GetAutonomousDatabaseLocalStandbyDbArrayOutput) ToGetAutonomousDatabaseLocalStandbyDbArrayOutputWithContext(ctx context.Context) GetAutonomousDatabaseLocalStandbyDbArrayOutput {
+	return o
+}
+
+func (o GetAutonomousDatabaseLocalStandbyDbArrayOutput) Index(i pulumi.IntInput) GetAutonomousDatabaseLocalStandbyDbOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutonomousDatabaseLocalStandbyDb {
+		return vs[0].([]GetAutonomousDatabaseLocalStandbyDb)[vs[1].(int)]
+	}).(GetAutonomousDatabaseLocalStandbyDbOutput)
+}
+
 type GetAutonomousDatabaseScheduledOperation struct {
 	// Day of the week.
 	DayOfWeeks []GetAutonomousDatabaseScheduledOperationDayOfWeek `pulumi:"dayOfWeeks"`
@@ -20752,7 +22762,9 @@ type GetAutonomousDatabasesAutonomousDatabase struct {
 	AvailableUpgradeVersions []string `pulumi:"availableUpgradeVersions"`
 	// Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
 	BackupConfigs []GetAutonomousDatabasesAutonomousDatabaseBackupConfig `pulumi:"backupConfigs"`
-	CloneType     string                                                 `pulumi:"cloneType"`
+	// The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
+	CharacterSet string `pulumi:"characterSet"`
+	CloneType    string `pulumi:"cloneType"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId string `pulumi:"compartmentId"`
 	// The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
@@ -20805,6 +22817,8 @@ type GetAutonomousDatabasesAutonomousDatabase struct {
 	IsDedicated bool `pulumi:"isDedicated"`
 	// Filter on the value of the resource's 'isFreeTier' property. A value of `true` returns only Always Free resources. A value of `false` excludes Always Free resources from the returned results. Omitting this parameter returns both Always Free and paid resources.
 	IsFreeTier bool `pulumi:"isFreeTier"`
+	// Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+	IsLocalDataGuardEnabled bool `pulumi:"isLocalDataGuardEnabled"`
 	// Indicates whether the Autonomous Database requires mTLS connections.
 	IsMtlsConnectionRequired bool `pulumi:"isMtlsConnectionRequired"`
 	// Indicates if the Autonomous Database version is a preview version.
@@ -20814,7 +22828,9 @@ type GetAutonomousDatabasesAutonomousDatabase struct {
 	IsReconnectCloneEnabled bool `pulumi:"isReconnectCloneEnabled"`
 	// Filter on the value of the resource's 'isRefreshableClone' property. A value of `true` returns only refreshable clones. A value of `false` excludes refreshable clones from the returned results. Omitting this parameter returns both refreshable clones and databases that are not refreshable clones.
 	IsRefreshableClone bool `pulumi:"isRefreshableClone"`
-	IsShrinkOnly       bool `pulumi:"isShrinkOnly"`
+	// Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+	IsRemoteDataGuardEnabled bool `pulumi:"isRemoteDataGuardEnabled"`
+	IsShrinkOnly             bool `pulumi:"isShrinkOnly"`
 	// Key History Entry.
 	KeyHistoryEntries []GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntry `pulumi:"keyHistoryEntries"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
@@ -20831,12 +22847,16 @@ type GetAutonomousDatabasesAutonomousDatabase struct {
 	LicenseModel string `pulumi:"licenseModel"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Autonomous Data Guard standby database details.
+	LocalStandbyDbs []GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDb `pulumi:"localStandbyDbs"`
 	// The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
 	MaxCpuCoreCount int `pulumi:"maxCpuCoreCount"`
 	// The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
 	MemoryPerOracleComputeUnitInGbs int `pulumi:"memoryPerOracleComputeUnitInGbs"`
-	// A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-	// * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+	// The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
+	NcharacterSet string `pulumi:"ncharacterSet"`
+	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
 	NsgIds []string `pulumi:"nsgIds"`
 	// The number of OCPU cores to be made available to the database.
 	OcpuCount float64 `pulumi:"ocpuCount"`
@@ -20854,6 +22874,8 @@ type GetAutonomousDatabasesAutonomousDatabase struct {
 	PrivateEndpointIp string `pulumi:"privateEndpointIp"`
 	// The private endpoint label for the resource.
 	PrivateEndpointLabel string `pulumi:"privateEndpointLabel"`
+	// An array of CPU values that an Autonomous Database can be scaled to.
+	ProvisionableCpuses []float64 `pulumi:"provisionableCpuses"`
 	// The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
 	RefreshableMode string `pulumi:"refreshableMode"`
 	// The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
@@ -20868,7 +22890,7 @@ type GetAutonomousDatabasesAutonomousDatabase struct {
 	Source            string `pulumi:"source"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that was cloned to create the current Autonomous Database.
 	SourceId string `pulumi:"sourceId"`
-	// Autonomous Data Guard standby database details.
+	// **Deprecated** Autonomous Data Guard standby database details.
 	StandbyDbs []GetAutonomousDatabasesAutonomousDatabaseStandbyDb `pulumi:"standbyDbs"`
 	// The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
 	StandbyWhitelistedIps []string `pulumi:"standbyWhitelistedIps"`
@@ -20947,7 +22969,9 @@ type GetAutonomousDatabasesAutonomousDatabaseArgs struct {
 	AvailableUpgradeVersions pulumi.StringArrayInput `pulumi:"availableUpgradeVersions"`
 	// Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
 	BackupConfigs GetAutonomousDatabasesAutonomousDatabaseBackupConfigArrayInput `pulumi:"backupConfigs"`
-	CloneType     pulumi.StringInput                                             `pulumi:"cloneType"`
+	// The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
+	CharacterSet pulumi.StringInput `pulumi:"characterSet"`
+	CloneType    pulumi.StringInput `pulumi:"cloneType"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
@@ -21000,6 +23024,8 @@ type GetAutonomousDatabasesAutonomousDatabaseArgs struct {
 	IsDedicated pulumi.BoolInput `pulumi:"isDedicated"`
 	// Filter on the value of the resource's 'isFreeTier' property. A value of `true` returns only Always Free resources. A value of `false` excludes Always Free resources from the returned results. Omitting this parameter returns both Always Free and paid resources.
 	IsFreeTier pulumi.BoolInput `pulumi:"isFreeTier"`
+	// Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+	IsLocalDataGuardEnabled pulumi.BoolInput `pulumi:"isLocalDataGuardEnabled"`
 	// Indicates whether the Autonomous Database requires mTLS connections.
 	IsMtlsConnectionRequired pulumi.BoolInput `pulumi:"isMtlsConnectionRequired"`
 	// Indicates if the Autonomous Database version is a preview version.
@@ -21009,7 +23035,9 @@ type GetAutonomousDatabasesAutonomousDatabaseArgs struct {
 	IsReconnectCloneEnabled pulumi.BoolInput `pulumi:"isReconnectCloneEnabled"`
 	// Filter on the value of the resource's 'isRefreshableClone' property. A value of `true` returns only refreshable clones. A value of `false` excludes refreshable clones from the returned results. Omitting this parameter returns both refreshable clones and databases that are not refreshable clones.
 	IsRefreshableClone pulumi.BoolInput `pulumi:"isRefreshableClone"`
-	IsShrinkOnly       pulumi.BoolInput `pulumi:"isShrinkOnly"`
+	// Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+	IsRemoteDataGuardEnabled pulumi.BoolInput `pulumi:"isRemoteDataGuardEnabled"`
+	IsShrinkOnly             pulumi.BoolInput `pulumi:"isShrinkOnly"`
 	// Key History Entry.
 	KeyHistoryEntries GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntryArrayInput `pulumi:"keyHistoryEntries"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
@@ -21026,12 +23054,16 @@ type GetAutonomousDatabasesAutonomousDatabaseArgs struct {
 	LicenseModel pulumi.StringInput `pulumi:"licenseModel"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Autonomous Data Guard standby database details.
+	LocalStandbyDbs GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArrayInput `pulumi:"localStandbyDbs"`
 	// The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
 	MaxCpuCoreCount pulumi.IntInput `pulumi:"maxCpuCoreCount"`
 	// The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
 	MemoryPerOracleComputeUnitInGbs pulumi.IntInput `pulumi:"memoryPerOracleComputeUnitInGbs"`
-	// A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-	// * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+	// The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
+	NcharacterSet pulumi.StringInput `pulumi:"ncharacterSet"`
+	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// The number of OCPU cores to be made available to the database.
 	OcpuCount pulumi.Float64Input `pulumi:"ocpuCount"`
@@ -21049,6 +23081,8 @@ type GetAutonomousDatabasesAutonomousDatabaseArgs struct {
 	PrivateEndpointIp pulumi.StringInput `pulumi:"privateEndpointIp"`
 	// The private endpoint label for the resource.
 	PrivateEndpointLabel pulumi.StringInput `pulumi:"privateEndpointLabel"`
+	// An array of CPU values that an Autonomous Database can be scaled to.
+	ProvisionableCpuses pulumi.Float64ArrayInput `pulumi:"provisionableCpuses"`
 	// The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
 	RefreshableMode pulumi.StringInput `pulumi:"refreshableMode"`
 	// The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
@@ -21063,7 +23097,7 @@ type GetAutonomousDatabasesAutonomousDatabaseArgs struct {
 	Source            pulumi.StringInput `pulumi:"source"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that was cloned to create the current Autonomous Database.
 	SourceId pulumi.StringInput `pulumi:"sourceId"`
-	// Autonomous Data Guard standby database details.
+	// **Deprecated** Autonomous Data Guard standby database details.
 	StandbyDbs GetAutonomousDatabasesAutonomousDatabaseStandbyDbArrayInput `pulumi:"standbyDbs"`
 	// The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
 	StandbyWhitelistedIps pulumi.StringArrayInput `pulumi:"standbyWhitelistedIps"`
@@ -21218,6 +23252,11 @@ func (o GetAutonomousDatabasesAutonomousDatabaseOutput) BackupConfigs() GetAuton
 	}).(GetAutonomousDatabasesAutonomousDatabaseBackupConfigArrayOutput)
 }
 
+// The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
+func (o GetAutonomousDatabasesAutonomousDatabaseOutput) CharacterSet() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabase) string { return v.CharacterSet }).(pulumi.StringOutput)
+}
+
 func (o GetAutonomousDatabasesAutonomousDatabaseOutput) CloneType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabase) string { return v.CloneType }).(pulumi.StringOutput)
 }
@@ -21358,6 +23397,11 @@ func (o GetAutonomousDatabasesAutonomousDatabaseOutput) IsFreeTier() pulumi.Bool
 	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabase) bool { return v.IsFreeTier }).(pulumi.BoolOutput)
 }
 
+// Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+func (o GetAutonomousDatabasesAutonomousDatabaseOutput) IsLocalDataGuardEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabase) bool { return v.IsLocalDataGuardEnabled }).(pulumi.BoolOutput)
+}
+
 // Indicates whether the Autonomous Database requires mTLS connections.
 func (o GetAutonomousDatabasesAutonomousDatabaseOutput) IsMtlsConnectionRequired() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabase) bool { return v.IsMtlsConnectionRequired }).(pulumi.BoolOutput)
@@ -21382,6 +23426,11 @@ func (o GetAutonomousDatabasesAutonomousDatabaseOutput) IsReconnectCloneEnabled(
 // Filter on the value of the resource's 'isRefreshableClone' property. A value of `true` returns only refreshable clones. A value of `false` excludes refreshable clones from the returned results. Omitting this parameter returns both refreshable clones and databases that are not refreshable clones.
 func (o GetAutonomousDatabasesAutonomousDatabaseOutput) IsRefreshableClone() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabase) bool { return v.IsRefreshableClone }).(pulumi.BoolOutput)
+}
+
+// Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+func (o GetAutonomousDatabasesAutonomousDatabaseOutput) IsRemoteDataGuardEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabase) bool { return v.IsRemoteDataGuardEnabled }).(pulumi.BoolOutput)
 }
 
 func (o GetAutonomousDatabasesAutonomousDatabaseOutput) IsShrinkOnly() pulumi.BoolOutput {
@@ -21430,6 +23479,13 @@ func (o GetAutonomousDatabasesAutonomousDatabaseOutput) LifecycleDetails() pulum
 	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabase) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// Autonomous Data Guard standby database details.
+func (o GetAutonomousDatabasesAutonomousDatabaseOutput) LocalStandbyDbs() GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArrayOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabase) []GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDb {
+		return v.LocalStandbyDbs
+	}).(GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArrayOutput)
+}
+
 // The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
 func (o GetAutonomousDatabasesAutonomousDatabaseOutput) MaxCpuCoreCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabase) int { return v.MaxCpuCoreCount }).(pulumi.IntOutput)
@@ -21440,8 +23496,13 @@ func (o GetAutonomousDatabasesAutonomousDatabaseOutput) MemoryPerOracleComputeUn
 	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabase) int { return v.MemoryPerOracleComputeUnitInGbs }).(pulumi.IntOutput)
 }
 
-// A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-// * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+// The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
+func (o GetAutonomousDatabasesAutonomousDatabaseOutput) NcharacterSet() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabase) string { return v.NcharacterSet }).(pulumi.StringOutput)
+}
+
+// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
 func (o GetAutonomousDatabasesAutonomousDatabaseOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabase) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
 }
@@ -21486,6 +23547,11 @@ func (o GetAutonomousDatabasesAutonomousDatabaseOutput) PrivateEndpointLabel() p
 	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabase) string { return v.PrivateEndpointLabel }).(pulumi.StringOutput)
 }
 
+// An array of CPU values that an Autonomous Database can be scaled to.
+func (o GetAutonomousDatabasesAutonomousDatabaseOutput) ProvisionableCpuses() pulumi.Float64ArrayOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabase) []float64 { return v.ProvisionableCpuses }).(pulumi.Float64ArrayOutput)
+}
+
 // The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
 func (o GetAutonomousDatabasesAutonomousDatabaseOutput) RefreshableMode() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabase) string { return v.RefreshableMode }).(pulumi.StringOutput)
@@ -21526,7 +23592,7 @@ func (o GetAutonomousDatabasesAutonomousDatabaseOutput) SourceId() pulumi.String
 	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabase) string { return v.SourceId }).(pulumi.StringOutput)
 }
 
-// Autonomous Data Guard standby database details.
+// **Deprecated** Autonomous Data Guard standby database details.
 func (o GetAutonomousDatabasesAutonomousDatabaseOutput) StandbyDbs() GetAutonomousDatabasesAutonomousDatabaseStandbyDbArrayOutput {
 	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabase) []GetAutonomousDatabasesAutonomousDatabaseStandbyDb {
 		return v.StandbyDbs
@@ -22542,6 +24608,132 @@ func (o GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntryArrayOutput) Inde
 	}).(GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntryOutput)
 }
 
+type GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDb struct {
+	// The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
+	LagTimeInSeconds int `pulumi:"lagTimeInSeconds"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// A filter to return only resources that match the given lifecycle state exactly.
+	State string `pulumi:"state"`
+	// The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+	TimeDataGuardRoleChanged string `pulumi:"timeDataGuardRoleChanged"`
+}
+
+// GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbInput is an input type that accepts GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArgs and GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbOutput values.
+// You can construct a concrete instance of `GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbInput` via:
+//
+//          GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArgs{...}
+type GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbInput interface {
+	pulumi.Input
+
+	ToGetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbOutput() GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbOutput
+	ToGetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbOutputWithContext(context.Context) GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbOutput
+}
+
+type GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArgs struct {
+	// The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
+	LagTimeInSeconds pulumi.IntInput `pulumi:"lagTimeInSeconds"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// A filter to return only resources that match the given lifecycle state exactly.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+	TimeDataGuardRoleChanged pulumi.StringInput `pulumi:"timeDataGuardRoleChanged"`
+}
+
+func (GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDb)(nil)).Elem()
+}
+
+func (i GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArgs) ToGetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbOutput() GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbOutput {
+	return i.ToGetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbOutputWithContext(context.Background())
+}
+
+func (i GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArgs) ToGetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbOutputWithContext(ctx context.Context) GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbOutput)
+}
+
+// GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArrayInput is an input type that accepts GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArray and GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArrayOutput values.
+// You can construct a concrete instance of `GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArrayInput` via:
+//
+//          GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArray{ GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArgs{...} }
+type GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArrayInput interface {
+	pulumi.Input
+
+	ToGetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArrayOutput() GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArrayOutput
+	ToGetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArrayOutputWithContext(context.Context) GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArrayOutput
+}
+
+type GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArray []GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbInput
+
+func (GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDb)(nil)).Elem()
+}
+
+func (i GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArray) ToGetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArrayOutput() GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArrayOutput {
+	return i.ToGetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArrayOutputWithContext(context.Background())
+}
+
+func (i GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArray) ToGetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArrayOutputWithContext(ctx context.Context) GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArrayOutput)
+}
+
+type GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbOutput struct{ *pulumi.OutputState }
+
+func (GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDb)(nil)).Elem()
+}
+
+func (o GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbOutput) ToGetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbOutput() GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbOutput {
+	return o
+}
+
+func (o GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbOutput) ToGetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbOutputWithContext(ctx context.Context) GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbOutput {
+	return o
+}
+
+// The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
+func (o GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbOutput) LagTimeInSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDb) int { return v.LagTimeInSeconds }).(pulumi.IntOutput)
+}
+
+// Additional information about the current lifecycle state.
+func (o GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDb) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state exactly.
+func (o GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDb) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+func (o GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbOutput) TimeDataGuardRoleChanged() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDb) string {
+		return v.TimeDataGuardRoleChanged
+	}).(pulumi.StringOutput)
+}
+
+type GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDb)(nil)).Elem()
+}
+
+func (o GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArrayOutput) ToGetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArrayOutput() GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArrayOutput {
+	return o
+}
+
+func (o GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArrayOutput) ToGetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArrayOutputWithContext(ctx context.Context) GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArrayOutput {
+	return o
+}
+
+func (o GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArrayOutput) Index(i pulumi.IntInput) GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDb {
+		return vs[0].([]GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDb)[vs[1].(int)]
+	}).(GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbOutput)
+}
+
 type GetAutonomousDatabasesAutonomousDatabaseScheduledOperation struct {
 	// Day of the week.
 	DayOfWeeks []GetAutonomousDatabasesAutonomousDatabaseScheduledOperationDayOfWeek `pulumi:"dayOfWeeks"`
@@ -22897,6 +25089,8 @@ type GetAutonomousDatabasesClonesAutonomousDatabase struct {
 	AvailableUpgradeVersions []string `pulumi:"availableUpgradeVersions"`
 	// Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
 	BackupConfigs []GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfig `pulumi:"backupConfigs"`
+	// The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
+	CharacterSet string `pulumi:"characterSet"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId string `pulumi:"compartmentId"`
 	// The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
@@ -22947,12 +25141,14 @@ type GetAutonomousDatabasesClonesAutonomousDatabase struct {
 	IsAutoScalingEnabled bool `pulumi:"isAutoScalingEnabled"`
 	// Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
 	IsAutoScalingForStorageEnabled bool `pulumi:"isAutoScalingForStorageEnabled"`
-	// Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to  Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+	// **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
 	IsDataGuardEnabled bool `pulumi:"isDataGuardEnabled"`
 	// True if the database uses [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
 	IsDedicated bool `pulumi:"isDedicated"`
 	// Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
 	IsFreeTier bool `pulumi:"isFreeTier"`
+	// Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+	IsLocalDataGuardEnabled bool `pulumi:"isLocalDataGuardEnabled"`
 	// Indicates whether the Autonomous Database requires mTLS connections.
 	IsMtlsConnectionRequired bool `pulumi:"isMtlsConnectionRequired"`
 	// Indicates if the Autonomous Database version is a preview version.
@@ -22961,6 +25157,8 @@ type GetAutonomousDatabasesClonesAutonomousDatabase struct {
 	IsReconnectCloneEnabled bool `pulumi:"isReconnectCloneEnabled"`
 	// Indicates whether the Autonomous Database is a refreshable clone.
 	IsRefreshableClone bool `pulumi:"isRefreshableClone"`
+	// Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+	IsRemoteDataGuardEnabled bool `pulumi:"isRemoteDataGuardEnabled"`
 	// Key History Entry.
 	KeyHistoryEntries []GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntry `pulumi:"keyHistoryEntries"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
@@ -22977,12 +25175,16 @@ type GetAutonomousDatabasesClonesAutonomousDatabase struct {
 	LicenseModel string `pulumi:"licenseModel"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Autonomous Data Guard standby database details.
+	LocalStandbyDbs []GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDb `pulumi:"localStandbyDbs"`
 	// The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
 	MaxCpuCoreCount int `pulumi:"maxCpuCoreCount"`
 	// The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
 	MemoryPerOracleComputeUnitInGbs int `pulumi:"memoryPerOracleComputeUnitInGbs"`
-	// A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-	// * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+	// The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
+	NcharacterSet string `pulumi:"ncharacterSet"`
+	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
 	NsgIds []string `pulumi:"nsgIds"`
 	// The number of OCPU cores to be made available to the database.
 	OcpuCount float64 `pulumi:"ocpuCount"`
@@ -22996,6 +25198,8 @@ type GetAutonomousDatabasesClonesAutonomousDatabase struct {
 	PrivateEndpointIp string `pulumi:"privateEndpointIp"`
 	// The private endpoint label for the resource. Setting this to an empty string, after the private endpoint database gets created, will change the same private endpoint database to the public endpoint database.
 	PrivateEndpointLabel string `pulumi:"privateEndpointLabel"`
+	// An array of CPU values that an Autonomous Database can be scaled to.
+	ProvisionableCpuses []float64 `pulumi:"provisionableCpuses"`
 	// The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
 	RefreshableMode string `pulumi:"refreshableMode"`
 	// The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
@@ -23008,7 +25212,7 @@ type GetAutonomousDatabasesClonesAutonomousDatabase struct {
 	ServiceConsoleUrl string `pulumi:"serviceConsoleUrl"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that was cloned to create the current Autonomous Database.
 	SourceId string `pulumi:"sourceId"`
-	// Autonomous Data Guard standby database details.
+	// **Deprecated** Autonomous Data Guard standby database details.
 	StandbyDbs []GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDb `pulumi:"standbyDbs"`
 	// The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
 	StandbyWhitelistedIps []string `pulumi:"standbyWhitelistedIps"`
@@ -23082,6 +25286,8 @@ type GetAutonomousDatabasesClonesAutonomousDatabaseArgs struct {
 	AvailableUpgradeVersions pulumi.StringArrayInput `pulumi:"availableUpgradeVersions"`
 	// Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
 	BackupConfigs GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfigArrayInput `pulumi:"backupConfigs"`
+	// The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
+	CharacterSet pulumi.StringInput `pulumi:"characterSet"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
@@ -23132,12 +25338,14 @@ type GetAutonomousDatabasesClonesAutonomousDatabaseArgs struct {
 	IsAutoScalingEnabled pulumi.BoolInput `pulumi:"isAutoScalingEnabled"`
 	// Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
 	IsAutoScalingForStorageEnabled pulumi.BoolInput `pulumi:"isAutoScalingForStorageEnabled"`
-	// Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to  Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+	// **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
 	IsDataGuardEnabled pulumi.BoolInput `pulumi:"isDataGuardEnabled"`
 	// True if the database uses [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
 	IsDedicated pulumi.BoolInput `pulumi:"isDedicated"`
 	// Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
 	IsFreeTier pulumi.BoolInput `pulumi:"isFreeTier"`
+	// Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+	IsLocalDataGuardEnabled pulumi.BoolInput `pulumi:"isLocalDataGuardEnabled"`
 	// Indicates whether the Autonomous Database requires mTLS connections.
 	IsMtlsConnectionRequired pulumi.BoolInput `pulumi:"isMtlsConnectionRequired"`
 	// Indicates if the Autonomous Database version is a preview version.
@@ -23146,6 +25354,8 @@ type GetAutonomousDatabasesClonesAutonomousDatabaseArgs struct {
 	IsReconnectCloneEnabled pulumi.BoolInput `pulumi:"isReconnectCloneEnabled"`
 	// Indicates whether the Autonomous Database is a refreshable clone.
 	IsRefreshableClone pulumi.BoolInput `pulumi:"isRefreshableClone"`
+	// Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+	IsRemoteDataGuardEnabled pulumi.BoolInput `pulumi:"isRemoteDataGuardEnabled"`
 	// Key History Entry.
 	KeyHistoryEntries GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntryArrayInput `pulumi:"keyHistoryEntries"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
@@ -23162,12 +25372,16 @@ type GetAutonomousDatabasesClonesAutonomousDatabaseArgs struct {
 	LicenseModel pulumi.StringInput `pulumi:"licenseModel"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Autonomous Data Guard standby database details.
+	LocalStandbyDbs GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArrayInput `pulumi:"localStandbyDbs"`
 	// The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
 	MaxCpuCoreCount pulumi.IntInput `pulumi:"maxCpuCoreCount"`
 	// The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
 	MemoryPerOracleComputeUnitInGbs pulumi.IntInput `pulumi:"memoryPerOracleComputeUnitInGbs"`
-	// A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-	// * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+	// The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
+	NcharacterSet pulumi.StringInput `pulumi:"ncharacterSet"`
+	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// The number of OCPU cores to be made available to the database.
 	OcpuCount pulumi.Float64Input `pulumi:"ocpuCount"`
@@ -23181,6 +25395,8 @@ type GetAutonomousDatabasesClonesAutonomousDatabaseArgs struct {
 	PrivateEndpointIp pulumi.StringInput `pulumi:"privateEndpointIp"`
 	// The private endpoint label for the resource. Setting this to an empty string, after the private endpoint database gets created, will change the same private endpoint database to the public endpoint database.
 	PrivateEndpointLabel pulumi.StringInput `pulumi:"privateEndpointLabel"`
+	// An array of CPU values that an Autonomous Database can be scaled to.
+	ProvisionableCpuses pulumi.Float64ArrayInput `pulumi:"provisionableCpuses"`
 	// The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
 	RefreshableMode pulumi.StringInput `pulumi:"refreshableMode"`
 	// The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
@@ -23193,7 +25409,7 @@ type GetAutonomousDatabasesClonesAutonomousDatabaseArgs struct {
 	ServiceConsoleUrl pulumi.StringInput `pulumi:"serviceConsoleUrl"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that was cloned to create the current Autonomous Database.
 	SourceId pulumi.StringInput `pulumi:"sourceId"`
-	// Autonomous Data Guard standby database details.
+	// **Deprecated** Autonomous Data Guard standby database details.
 	StandbyDbs GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbArrayInput `pulumi:"standbyDbs"`
 	// The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
 	StandbyWhitelistedIps pulumi.StringArrayInput `pulumi:"standbyWhitelistedIps"`
@@ -23338,6 +25554,11 @@ func (o GetAutonomousDatabasesClonesAutonomousDatabaseOutput) BackupConfigs() Ge
 	}).(GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfigArrayOutput)
 }
 
+// The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
+func (o GetAutonomousDatabasesClonesAutonomousDatabaseOutput) CharacterSet() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabase) string { return v.CharacterSet }).(pulumi.StringOutput)
+}
+
 // The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o GetAutonomousDatabasesClonesAutonomousDatabaseOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabase) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -23463,7 +25684,7 @@ func (o GetAutonomousDatabasesClonesAutonomousDatabaseOutput) IsAutoScalingForSt
 	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabase) bool { return v.IsAutoScalingForStorageEnabled }).(pulumi.BoolOutput)
 }
 
-// Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to  Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+// **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
 func (o GetAutonomousDatabasesClonesAutonomousDatabaseOutput) IsDataGuardEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabase) bool { return v.IsDataGuardEnabled }).(pulumi.BoolOutput)
 }
@@ -23476,6 +25697,11 @@ func (o GetAutonomousDatabasesClonesAutonomousDatabaseOutput) IsDedicated() pulu
 // Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
 func (o GetAutonomousDatabasesClonesAutonomousDatabaseOutput) IsFreeTier() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabase) bool { return v.IsFreeTier }).(pulumi.BoolOutput)
+}
+
+// Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+func (o GetAutonomousDatabasesClonesAutonomousDatabaseOutput) IsLocalDataGuardEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabase) bool { return v.IsLocalDataGuardEnabled }).(pulumi.BoolOutput)
 }
 
 // Indicates whether the Autonomous Database requires mTLS connections.
@@ -23496,6 +25722,11 @@ func (o GetAutonomousDatabasesClonesAutonomousDatabaseOutput) IsReconnectCloneEn
 // Indicates whether the Autonomous Database is a refreshable clone.
 func (o GetAutonomousDatabasesClonesAutonomousDatabaseOutput) IsRefreshableClone() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabase) bool { return v.IsRefreshableClone }).(pulumi.BoolOutput)
+}
+
+// Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+func (o GetAutonomousDatabasesClonesAutonomousDatabaseOutput) IsRemoteDataGuardEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabase) bool { return v.IsRemoteDataGuardEnabled }).(pulumi.BoolOutput)
 }
 
 // Key History Entry.
@@ -23540,6 +25771,13 @@ func (o GetAutonomousDatabasesClonesAutonomousDatabaseOutput) LifecycleDetails()
 	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabase) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// Autonomous Data Guard standby database details.
+func (o GetAutonomousDatabasesClonesAutonomousDatabaseOutput) LocalStandbyDbs() GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArrayOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabase) []GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDb {
+		return v.LocalStandbyDbs
+	}).(GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArrayOutput)
+}
+
 // The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
 func (o GetAutonomousDatabasesClonesAutonomousDatabaseOutput) MaxCpuCoreCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabase) int { return v.MaxCpuCoreCount }).(pulumi.IntOutput)
@@ -23550,8 +25788,13 @@ func (o GetAutonomousDatabasesClonesAutonomousDatabaseOutput) MemoryPerOracleCom
 	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabase) int { return v.MemoryPerOracleComputeUnitInGbs }).(pulumi.IntOutput)
 }
 
-// A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-// * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+// The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
+func (o GetAutonomousDatabasesClonesAutonomousDatabaseOutput) NcharacterSet() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabase) string { return v.NcharacterSet }).(pulumi.StringOutput)
+}
+
+// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
 func (o GetAutonomousDatabasesClonesAutonomousDatabaseOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabase) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
 }
@@ -23586,6 +25829,11 @@ func (o GetAutonomousDatabasesClonesAutonomousDatabaseOutput) PrivateEndpointLab
 	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabase) string { return v.PrivateEndpointLabel }).(pulumi.StringOutput)
 }
 
+// An array of CPU values that an Autonomous Database can be scaled to.
+func (o GetAutonomousDatabasesClonesAutonomousDatabaseOutput) ProvisionableCpuses() pulumi.Float64ArrayOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabase) []float64 { return v.ProvisionableCpuses }).(pulumi.Float64ArrayOutput)
+}
+
 // The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
 func (o GetAutonomousDatabasesClonesAutonomousDatabaseOutput) RefreshableMode() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabase) string { return v.RefreshableMode }).(pulumi.StringOutput)
@@ -23618,7 +25866,7 @@ func (o GetAutonomousDatabasesClonesAutonomousDatabaseOutput) SourceId() pulumi.
 	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabase) string { return v.SourceId }).(pulumi.StringOutput)
 }
 
-// Autonomous Data Guard standby database details.
+// **Deprecated** Autonomous Data Guard standby database details.
 func (o GetAutonomousDatabasesClonesAutonomousDatabaseOutput) StandbyDbs() GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbArrayOutput {
 	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabase) []GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDb {
 		return v.StandbyDbs
@@ -24633,6 +26881,132 @@ func (o GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntryArrayOutput
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntry {
 		return vs[0].([]GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntry)[vs[1].(int)]
 	}).(GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntryOutput)
+}
+
+type GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDb struct {
+	// The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
+	LagTimeInSeconds int `pulumi:"lagTimeInSeconds"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// A filter to return only resources that match the given lifecycle state exactly.
+	State string `pulumi:"state"`
+	// The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+	TimeDataGuardRoleChanged string `pulumi:"timeDataGuardRoleChanged"`
+}
+
+// GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbInput is an input type that accepts GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArgs and GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbOutput values.
+// You can construct a concrete instance of `GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbInput` via:
+//
+//          GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArgs{...}
+type GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbInput interface {
+	pulumi.Input
+
+	ToGetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbOutput() GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbOutput
+	ToGetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbOutputWithContext(context.Context) GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbOutput
+}
+
+type GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArgs struct {
+	// The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
+	LagTimeInSeconds pulumi.IntInput `pulumi:"lagTimeInSeconds"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// A filter to return only resources that match the given lifecycle state exactly.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+	TimeDataGuardRoleChanged pulumi.StringInput `pulumi:"timeDataGuardRoleChanged"`
+}
+
+func (GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDb)(nil)).Elem()
+}
+
+func (i GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArgs) ToGetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbOutput() GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbOutput {
+	return i.ToGetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbOutputWithContext(context.Background())
+}
+
+func (i GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArgs) ToGetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbOutputWithContext(ctx context.Context) GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbOutput)
+}
+
+// GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArrayInput is an input type that accepts GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArray and GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArrayOutput values.
+// You can construct a concrete instance of `GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArrayInput` via:
+//
+//          GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArray{ GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArgs{...} }
+type GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArrayInput interface {
+	pulumi.Input
+
+	ToGetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArrayOutput() GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArrayOutput
+	ToGetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArrayOutputWithContext(context.Context) GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArrayOutput
+}
+
+type GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArray []GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbInput
+
+func (GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDb)(nil)).Elem()
+}
+
+func (i GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArray) ToGetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArrayOutput() GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArrayOutput {
+	return i.ToGetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArrayOutputWithContext(context.Background())
+}
+
+func (i GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArray) ToGetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArrayOutputWithContext(ctx context.Context) GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArrayOutput)
+}
+
+type GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbOutput struct{ *pulumi.OutputState }
+
+func (GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDb)(nil)).Elem()
+}
+
+func (o GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbOutput) ToGetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbOutput() GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbOutput {
+	return o
+}
+
+func (o GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbOutput) ToGetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbOutputWithContext(ctx context.Context) GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbOutput {
+	return o
+}
+
+// The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
+func (o GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbOutput) LagTimeInSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDb) int { return v.LagTimeInSeconds }).(pulumi.IntOutput)
+}
+
+// Additional information about the current lifecycle state.
+func (o GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDb) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state exactly.
+func (o GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDb) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+func (o GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbOutput) TimeDataGuardRoleChanged() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDb) string {
+		return v.TimeDataGuardRoleChanged
+	}).(pulumi.StringOutput)
+}
+
+type GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDb)(nil)).Elem()
+}
+
+func (o GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArrayOutput) ToGetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArrayOutput() GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArrayOutput {
+	return o
+}
+
+func (o GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArrayOutput) ToGetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArrayOutputWithContext(ctx context.Context) GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArrayOutput {
+	return o
+}
+
+func (o GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArrayOutput) Index(i pulumi.IntInput) GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDb {
+		return vs[0].([]GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDb)[vs[1].(int)]
+	}).(GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbOutput)
 }
 
 type GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperation struct {
@@ -26862,8 +29236,8 @@ type GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructure struct {
 	MaintenanceWindows []GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindow `pulumi:"maintenanceWindows"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
 	NextMaintenanceRunId string `pulumi:"nextMaintenanceRunId"`
-	// A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-	// * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
 	NsgIds []string `pulumi:"nsgIds"`
 	// The FQDN of the DNS record for the SCAN IP addresses that are associated with the Autonomous Exadata Infrastructure.
 	ScanDnsName string `pulumi:"scanDnsName"`
@@ -26921,8 +29295,8 @@ type GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureArgs stru
 	MaintenanceWindows GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowArrayInput `pulumi:"maintenanceWindows"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
 	NextMaintenanceRunId pulumi.StringInput `pulumi:"nextMaintenanceRunId"`
-	// A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-	// * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// The FQDN of the DNS record for the SCAN IP addresses that are associated with the Autonomous Exadata Infrastructure.
 	ScanDnsName pulumi.StringInput `pulumi:"scanDnsName"`
@@ -27086,8 +29460,8 @@ func (o GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureOutput
 	}).(pulumi.StringOutput)
 }
 
-// A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-// * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
 func (o GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructure) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
 }
@@ -28032,15 +30406,18 @@ func (o GetAutonomousExadataInfrastructuresFilterArrayOutput) Index(i pulumi.Int
 }
 
 type GetAutonomousVmClusterMaintenanceWindow struct {
+	CustomActionTimeoutInMins int `pulumi:"customActionTimeoutInMins"`
 	// Days during the week when maintenance should be performed.
 	DaysOfWeeks []GetAutonomousVmClusterMaintenanceWindowDaysOfWeek `pulumi:"daysOfWeeks"`
 	// The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
 	// * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-	HoursOfDays []int `pulumi:"hoursOfDays"`
+	HoursOfDays                  []int `pulumi:"hoursOfDays"`
+	IsCustomActionTimeoutEnabled bool  `pulumi:"isCustomActionTimeoutEnabled"`
 	// Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
 	LeadTimeInWeeks int `pulumi:"leadTimeInWeeks"`
 	// Months during the year when maintenance should be performed.
-	Months []GetAutonomousVmClusterMaintenanceWindowMonth `pulumi:"months"`
+	Months       []GetAutonomousVmClusterMaintenanceWindowMonth `pulumi:"months"`
+	PatchingMode string                                         `pulumi:"patchingMode"`
 	// The maintenance window scheduling preference.
 	Preference string `pulumi:"preference"`
 	// Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
@@ -28059,15 +30436,18 @@ type GetAutonomousVmClusterMaintenanceWindowInput interface {
 }
 
 type GetAutonomousVmClusterMaintenanceWindowArgs struct {
+	CustomActionTimeoutInMins pulumi.IntInput `pulumi:"customActionTimeoutInMins"`
 	// Days during the week when maintenance should be performed.
 	DaysOfWeeks GetAutonomousVmClusterMaintenanceWindowDaysOfWeekArrayInput `pulumi:"daysOfWeeks"`
 	// The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
 	// * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-	HoursOfDays pulumi.IntArrayInput `pulumi:"hoursOfDays"`
+	HoursOfDays                  pulumi.IntArrayInput `pulumi:"hoursOfDays"`
+	IsCustomActionTimeoutEnabled pulumi.BoolInput     `pulumi:"isCustomActionTimeoutEnabled"`
 	// Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
 	LeadTimeInWeeks pulumi.IntInput `pulumi:"leadTimeInWeeks"`
 	// Months during the year when maintenance should be performed.
-	Months GetAutonomousVmClusterMaintenanceWindowMonthArrayInput `pulumi:"months"`
+	Months       GetAutonomousVmClusterMaintenanceWindowMonthArrayInput `pulumi:"months"`
+	PatchingMode pulumi.StringInput                                     `pulumi:"patchingMode"`
 	// The maintenance window scheduling preference.
 	Preference pulumi.StringInput `pulumi:"preference"`
 	// Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
@@ -28125,6 +30505,10 @@ func (o GetAutonomousVmClusterMaintenanceWindowOutput) ToGetAutonomousVmClusterM
 	return o
 }
 
+func (o GetAutonomousVmClusterMaintenanceWindowOutput) CustomActionTimeoutInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutonomousVmClusterMaintenanceWindow) int { return v.CustomActionTimeoutInMins }).(pulumi.IntOutput)
+}
+
 // Days during the week when maintenance should be performed.
 func (o GetAutonomousVmClusterMaintenanceWindowOutput) DaysOfWeeks() GetAutonomousVmClusterMaintenanceWindowDaysOfWeekArrayOutput {
 	return o.ApplyT(func(v GetAutonomousVmClusterMaintenanceWindow) []GetAutonomousVmClusterMaintenanceWindowDaysOfWeek {
@@ -28138,6 +30522,10 @@ func (o GetAutonomousVmClusterMaintenanceWindowOutput) HoursOfDays() pulumi.IntA
 	return o.ApplyT(func(v GetAutonomousVmClusterMaintenanceWindow) []int { return v.HoursOfDays }).(pulumi.IntArrayOutput)
 }
 
+func (o GetAutonomousVmClusterMaintenanceWindowOutput) IsCustomActionTimeoutEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAutonomousVmClusterMaintenanceWindow) bool { return v.IsCustomActionTimeoutEnabled }).(pulumi.BoolOutput)
+}
+
 // Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
 func (o GetAutonomousVmClusterMaintenanceWindowOutput) LeadTimeInWeeks() pulumi.IntOutput {
 	return o.ApplyT(func(v GetAutonomousVmClusterMaintenanceWindow) int { return v.LeadTimeInWeeks }).(pulumi.IntOutput)
@@ -28148,6 +30536,10 @@ func (o GetAutonomousVmClusterMaintenanceWindowOutput) Months() GetAutonomousVmC
 	return o.ApplyT(func(v GetAutonomousVmClusterMaintenanceWindow) []GetAutonomousVmClusterMaintenanceWindowMonth {
 		return v.Months
 	}).(GetAutonomousVmClusterMaintenanceWindowMonthArrayOutput)
+}
+
+func (o GetAutonomousVmClusterMaintenanceWindowOutput) PatchingMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousVmClusterMaintenanceWindow) string { return v.PatchingMode }).(pulumi.StringOutput)
 }
 
 // The maintenance window scheduling preference.
@@ -28278,15 +30670,18 @@ func (o GetAutonomousVmClusterMaintenanceWindowDaysOfWeekArrayOutput) Index(i pu
 }
 
 type GetAutonomousVmClusterMaintenanceWindowDetail struct {
+	CustomActionTimeoutInMins int `pulumi:"customActionTimeoutInMins"`
 	// Days during the week when maintenance should be performed.
 	DaysOfWeeks []GetAutonomousVmClusterMaintenanceWindowDetailDaysOfWeek `pulumi:"daysOfWeeks"`
 	// The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
 	// * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-	HoursOfDays []int `pulumi:"hoursOfDays"`
+	HoursOfDays                  []int `pulumi:"hoursOfDays"`
+	IsCustomActionTimeoutEnabled bool  `pulumi:"isCustomActionTimeoutEnabled"`
 	// Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
 	LeadTimeInWeeks int `pulumi:"leadTimeInWeeks"`
 	// Months during the year when maintenance should be performed.
-	Months []GetAutonomousVmClusterMaintenanceWindowDetailMonth `pulumi:"months"`
+	Months       []GetAutonomousVmClusterMaintenanceWindowDetailMonth `pulumi:"months"`
+	PatchingMode string                                               `pulumi:"patchingMode"`
 	// The maintenance window scheduling preference.
 	Preference string `pulumi:"preference"`
 	// Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
@@ -28305,15 +30700,18 @@ type GetAutonomousVmClusterMaintenanceWindowDetailInput interface {
 }
 
 type GetAutonomousVmClusterMaintenanceWindowDetailArgs struct {
+	CustomActionTimeoutInMins pulumi.IntInput `pulumi:"customActionTimeoutInMins"`
 	// Days during the week when maintenance should be performed.
 	DaysOfWeeks GetAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayInput `pulumi:"daysOfWeeks"`
 	// The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
 	// * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-	HoursOfDays pulumi.IntArrayInput `pulumi:"hoursOfDays"`
+	HoursOfDays                  pulumi.IntArrayInput `pulumi:"hoursOfDays"`
+	IsCustomActionTimeoutEnabled pulumi.BoolInput     `pulumi:"isCustomActionTimeoutEnabled"`
 	// Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
 	LeadTimeInWeeks pulumi.IntInput `pulumi:"leadTimeInWeeks"`
 	// Months during the year when maintenance should be performed.
-	Months GetAutonomousVmClusterMaintenanceWindowDetailMonthArrayInput `pulumi:"months"`
+	Months       GetAutonomousVmClusterMaintenanceWindowDetailMonthArrayInput `pulumi:"months"`
+	PatchingMode pulumi.StringInput                                           `pulumi:"patchingMode"`
 	// The maintenance window scheduling preference.
 	Preference pulumi.StringInput `pulumi:"preference"`
 	// Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
@@ -28371,6 +30769,10 @@ func (o GetAutonomousVmClusterMaintenanceWindowDetailOutput) ToGetAutonomousVmCl
 	return o
 }
 
+func (o GetAutonomousVmClusterMaintenanceWindowDetailOutput) CustomActionTimeoutInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutonomousVmClusterMaintenanceWindowDetail) int { return v.CustomActionTimeoutInMins }).(pulumi.IntOutput)
+}
+
 // Days during the week when maintenance should be performed.
 func (o GetAutonomousVmClusterMaintenanceWindowDetailOutput) DaysOfWeeks() GetAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput {
 	return o.ApplyT(func(v GetAutonomousVmClusterMaintenanceWindowDetail) []GetAutonomousVmClusterMaintenanceWindowDetailDaysOfWeek {
@@ -28384,6 +30786,10 @@ func (o GetAutonomousVmClusterMaintenanceWindowDetailOutput) HoursOfDays() pulum
 	return o.ApplyT(func(v GetAutonomousVmClusterMaintenanceWindowDetail) []int { return v.HoursOfDays }).(pulumi.IntArrayOutput)
 }
 
+func (o GetAutonomousVmClusterMaintenanceWindowDetailOutput) IsCustomActionTimeoutEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAutonomousVmClusterMaintenanceWindowDetail) bool { return v.IsCustomActionTimeoutEnabled }).(pulumi.BoolOutput)
+}
+
 // Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
 func (o GetAutonomousVmClusterMaintenanceWindowDetailOutput) LeadTimeInWeeks() pulumi.IntOutput {
 	return o.ApplyT(func(v GetAutonomousVmClusterMaintenanceWindowDetail) int { return v.LeadTimeInWeeks }).(pulumi.IntOutput)
@@ -28394,6 +30800,10 @@ func (o GetAutonomousVmClusterMaintenanceWindowDetailOutput) Months() GetAutonom
 	return o.ApplyT(func(v GetAutonomousVmClusterMaintenanceWindowDetail) []GetAutonomousVmClusterMaintenanceWindowDetailMonth {
 		return v.Months
 	}).(GetAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput)
+}
+
+func (o GetAutonomousVmClusterMaintenanceWindowDetailOutput) PatchingMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousVmClusterMaintenanceWindowDetail) string { return v.PatchingMode }).(pulumi.StringOutput)
 }
 
 // The maintenance window scheduling preference.
@@ -28720,9 +31130,13 @@ func (o GetAutonomousVmClusterMaintenanceWindowMonthArrayOutput) Index(i pulumi.
 type GetAutonomousVmClustersAutonomousVmCluster struct {
 	// The data disk group size allocated for Autonomous Databases, in TBs.
 	AutonomousDataStorageSizeInTbs float64 `pulumi:"autonomousDataStorageSizeInTbs"`
+	// The data disk group size available for Autonomous Databases, in TBs.
+	AvailableAutonomousDataStorageSizeInTbs float64 `pulumi:"availableAutonomousDataStorageSizeInTbs"`
+	// The number of Autonomous Container Databases that can be created with the currently available local storage.
+	AvailableContainerDatabases int `pulumi:"availableContainerDatabases"`
 	// The numnber of CPU cores available.
 	AvailableCpus int `pulumi:"availableCpus"`
-	// The data storage available in TBs
+	// **Deprecated.** Use `availableAutonomousDataStorageSizeInTBs` for Autonomous Databases' data storage availability in TBs.
 	AvailableDataStorageSizeInTbs float64 `pulumi:"availableDataStorageSizeInTbs"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId string `pulumi:"compartmentId"`
@@ -28765,6 +31179,8 @@ type GetAutonomousVmClustersAutonomousVmCluster struct {
 	NextMaintenanceRunId string `pulumi:"nextMaintenanceRunId"`
 	// The number of enabled OCPU cores.
 	OcpusEnabled float64 `pulumi:"ocpusEnabled"`
+	// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+	ReclaimableCpus int `pulumi:"reclaimableCpus"`
 	// A filter to return only resources that match the given lifecycle state exactly.
 	State string `pulumi:"state"`
 	// The date and time that the Autonomous VM cluster was created.
@@ -28791,9 +31207,13 @@ type GetAutonomousVmClustersAutonomousVmClusterInput interface {
 type GetAutonomousVmClustersAutonomousVmClusterArgs struct {
 	// The data disk group size allocated for Autonomous Databases, in TBs.
 	AutonomousDataStorageSizeInTbs pulumi.Float64Input `pulumi:"autonomousDataStorageSizeInTbs"`
+	// The data disk group size available for Autonomous Databases, in TBs.
+	AvailableAutonomousDataStorageSizeInTbs pulumi.Float64Input `pulumi:"availableAutonomousDataStorageSizeInTbs"`
+	// The number of Autonomous Container Databases that can be created with the currently available local storage.
+	AvailableContainerDatabases pulumi.IntInput `pulumi:"availableContainerDatabases"`
 	// The numnber of CPU cores available.
 	AvailableCpus pulumi.IntInput `pulumi:"availableCpus"`
-	// The data storage available in TBs
+	// **Deprecated.** Use `availableAutonomousDataStorageSizeInTBs` for Autonomous Databases' data storage availability in TBs.
 	AvailableDataStorageSizeInTbs pulumi.Float64Input `pulumi:"availableDataStorageSizeInTbs"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
@@ -28836,6 +31256,8 @@ type GetAutonomousVmClustersAutonomousVmClusterArgs struct {
 	NextMaintenanceRunId pulumi.StringInput `pulumi:"nextMaintenanceRunId"`
 	// The number of enabled OCPU cores.
 	OcpusEnabled pulumi.Float64Input `pulumi:"ocpusEnabled"`
+	// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+	ReclaimableCpus pulumi.IntInput `pulumi:"reclaimableCpus"`
 	// A filter to return only resources that match the given lifecycle state exactly.
 	State pulumi.StringInput `pulumi:"state"`
 	// The date and time that the Autonomous VM cluster was created.
@@ -28904,12 +31326,24 @@ func (o GetAutonomousVmClustersAutonomousVmClusterOutput) AutonomousDataStorageS
 	return o.ApplyT(func(v GetAutonomousVmClustersAutonomousVmCluster) float64 { return v.AutonomousDataStorageSizeInTbs }).(pulumi.Float64Output)
 }
 
+// The data disk group size available for Autonomous Databases, in TBs.
+func (o GetAutonomousVmClustersAutonomousVmClusterOutput) AvailableAutonomousDataStorageSizeInTbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetAutonomousVmClustersAutonomousVmCluster) float64 {
+		return v.AvailableAutonomousDataStorageSizeInTbs
+	}).(pulumi.Float64Output)
+}
+
+// The number of Autonomous Container Databases that can be created with the currently available local storage.
+func (o GetAutonomousVmClustersAutonomousVmClusterOutput) AvailableContainerDatabases() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutonomousVmClustersAutonomousVmCluster) int { return v.AvailableContainerDatabases }).(pulumi.IntOutput)
+}
+
 // The numnber of CPU cores available.
 func (o GetAutonomousVmClustersAutonomousVmClusterOutput) AvailableCpus() pulumi.IntOutput {
 	return o.ApplyT(func(v GetAutonomousVmClustersAutonomousVmCluster) int { return v.AvailableCpus }).(pulumi.IntOutput)
 }
 
-// The data storage available in TBs
+// **Deprecated.** Use `availableAutonomousDataStorageSizeInTBs` for Autonomous Databases' data storage availability in TBs.
 func (o GetAutonomousVmClustersAutonomousVmClusterOutput) AvailableDataStorageSizeInTbs() pulumi.Float64Output {
 	return o.ApplyT(func(v GetAutonomousVmClustersAutonomousVmCluster) float64 { return v.AvailableDataStorageSizeInTbs }).(pulumi.Float64Output)
 }
@@ -29022,6 +31456,11 @@ func (o GetAutonomousVmClustersAutonomousVmClusterOutput) OcpusEnabled() pulumi.
 	return o.ApplyT(func(v GetAutonomousVmClustersAutonomousVmCluster) float64 { return v.OcpusEnabled }).(pulumi.Float64Output)
 }
 
+// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+func (o GetAutonomousVmClustersAutonomousVmClusterOutput) ReclaimableCpus() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutonomousVmClustersAutonomousVmCluster) int { return v.ReclaimableCpus }).(pulumi.IntOutput)
+}
+
 // A filter to return only resources that match the given lifecycle state exactly.
 func (o GetAutonomousVmClustersAutonomousVmClusterOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutonomousVmClustersAutonomousVmCluster) string { return v.State }).(pulumi.StringOutput)
@@ -29068,15 +31507,18 @@ func (o GetAutonomousVmClustersAutonomousVmClusterArrayOutput) Index(i pulumi.In
 }
 
 type GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindow struct {
+	CustomActionTimeoutInMins int `pulumi:"customActionTimeoutInMins"`
 	// Days during the week when maintenance should be performed.
 	DaysOfWeeks []GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDaysOfWeek `pulumi:"daysOfWeeks"`
 	// The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
 	// * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-	HoursOfDays []int `pulumi:"hoursOfDays"`
+	HoursOfDays                  []int `pulumi:"hoursOfDays"`
+	IsCustomActionTimeoutEnabled bool  `pulumi:"isCustomActionTimeoutEnabled"`
 	// Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
 	LeadTimeInWeeks int `pulumi:"leadTimeInWeeks"`
 	// Months during the year when maintenance should be performed.
-	Months []GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonth `pulumi:"months"`
+	Months       []GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonth `pulumi:"months"`
+	PatchingMode string                                                             `pulumi:"patchingMode"`
 	// The maintenance window scheduling preference.
 	Preference string `pulumi:"preference"`
 	// Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
@@ -29095,15 +31537,18 @@ type GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowInput interface 
 }
 
 type GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowArgs struct {
+	CustomActionTimeoutInMins pulumi.IntInput `pulumi:"customActionTimeoutInMins"`
 	// Days during the week when maintenance should be performed.
 	DaysOfWeeks GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDaysOfWeekArrayInput `pulumi:"daysOfWeeks"`
 	// The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
 	// * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-	HoursOfDays pulumi.IntArrayInput `pulumi:"hoursOfDays"`
+	HoursOfDays                  pulumi.IntArrayInput `pulumi:"hoursOfDays"`
+	IsCustomActionTimeoutEnabled pulumi.BoolInput     `pulumi:"isCustomActionTimeoutEnabled"`
 	// Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
 	LeadTimeInWeeks pulumi.IntInput `pulumi:"leadTimeInWeeks"`
 	// Months during the year when maintenance should be performed.
-	Months GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArrayInput `pulumi:"months"`
+	Months       GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArrayInput `pulumi:"months"`
+	PatchingMode pulumi.StringInput                                                         `pulumi:"patchingMode"`
 	// The maintenance window scheduling preference.
 	Preference pulumi.StringInput `pulumi:"preference"`
 	// Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
@@ -29161,6 +31606,12 @@ func (o GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowOutput) ToGet
 	return o
 }
 
+func (o GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowOutput) CustomActionTimeoutInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindow) int {
+		return v.CustomActionTimeoutInMins
+	}).(pulumi.IntOutput)
+}
+
 // Days during the week when maintenance should be performed.
 func (o GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowOutput) DaysOfWeeks() GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDaysOfWeekArrayOutput {
 	return o.ApplyT(func(v GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindow) []GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDaysOfWeek {
@@ -29174,6 +31625,12 @@ func (o GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowOutput) Hours
 	return o.ApplyT(func(v GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindow) []int { return v.HoursOfDays }).(pulumi.IntArrayOutput)
 }
 
+func (o GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowOutput) IsCustomActionTimeoutEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindow) bool {
+		return v.IsCustomActionTimeoutEnabled
+	}).(pulumi.BoolOutput)
+}
+
 // Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
 func (o GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowOutput) LeadTimeInWeeks() pulumi.IntOutput {
 	return o.ApplyT(func(v GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindow) int { return v.LeadTimeInWeeks }).(pulumi.IntOutput)
@@ -29184,6 +31641,10 @@ func (o GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowOutput) Month
 	return o.ApplyT(func(v GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindow) []GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonth {
 		return v.Months
 	}).(GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthArrayOutput)
+}
+
+func (o GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowOutput) PatchingMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindow) string { return v.PatchingMode }).(pulumi.StringOutput)
 }
 
 // The maintenance window scheduling preference.
@@ -29314,15 +31775,18 @@ func (o GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDaysOfWeekArr
 }
 
 type GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetail struct {
+	CustomActionTimeoutInMins int `pulumi:"customActionTimeoutInMins"`
 	// Days during the week when maintenance should be performed.
 	DaysOfWeeks []GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeek `pulumi:"daysOfWeeks"`
 	// The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
 	// * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-	HoursOfDays []int `pulumi:"hoursOfDays"`
+	HoursOfDays                  []int `pulumi:"hoursOfDays"`
+	IsCustomActionTimeoutEnabled bool  `pulumi:"isCustomActionTimeoutEnabled"`
 	// Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
 	LeadTimeInWeeks int `pulumi:"leadTimeInWeeks"`
 	// Months during the year when maintenance should be performed.
-	Months []GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonth `pulumi:"months"`
+	Months       []GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonth `pulumi:"months"`
+	PatchingMode string                                                                   `pulumi:"patchingMode"`
 	// The maintenance window scheduling preference.
 	Preference string `pulumi:"preference"`
 	// Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
@@ -29341,15 +31805,18 @@ type GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailInput inte
 }
 
 type GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailArgs struct {
+	CustomActionTimeoutInMins pulumi.IntInput `pulumi:"customActionTimeoutInMins"`
 	// Days during the week when maintenance should be performed.
 	DaysOfWeeks GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayInput `pulumi:"daysOfWeeks"`
 	// The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
 	// * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-	HoursOfDays pulumi.IntArrayInput `pulumi:"hoursOfDays"`
+	HoursOfDays                  pulumi.IntArrayInput `pulumi:"hoursOfDays"`
+	IsCustomActionTimeoutEnabled pulumi.BoolInput     `pulumi:"isCustomActionTimeoutEnabled"`
 	// Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
 	LeadTimeInWeeks pulumi.IntInput `pulumi:"leadTimeInWeeks"`
 	// Months during the year when maintenance should be performed.
-	Months GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArrayInput `pulumi:"months"`
+	Months       GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArrayInput `pulumi:"months"`
+	PatchingMode pulumi.StringInput                                                               `pulumi:"patchingMode"`
 	// The maintenance window scheduling preference.
 	Preference pulumi.StringInput `pulumi:"preference"`
 	// Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
@@ -29407,6 +31874,12 @@ func (o GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailOutput)
 	return o
 }
 
+func (o GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailOutput) CustomActionTimeoutInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetail) int {
+		return v.CustomActionTimeoutInMins
+	}).(pulumi.IntOutput)
+}
+
 // Days during the week when maintenance should be performed.
 func (o GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailOutput) DaysOfWeeks() GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput {
 	return o.ApplyT(func(v GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetail) []GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeek {
@@ -29418,6 +31891,12 @@ func (o GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailOutput)
 // * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
 func (o GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailOutput) HoursOfDays() pulumi.IntArrayOutput {
 	return o.ApplyT(func(v GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetail) []int { return v.HoursOfDays }).(pulumi.IntArrayOutput)
+}
+
+func (o GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailOutput) IsCustomActionTimeoutEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetail) bool {
+		return v.IsCustomActionTimeoutEnabled
+	}).(pulumi.BoolOutput)
 }
 
 // Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
@@ -29432,6 +31911,12 @@ func (o GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailOutput)
 	return o.ApplyT(func(v GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetail) []GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonth {
 		return v.Months
 	}).(GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput)
+}
+
+func (o GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailOutput) PatchingMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetail) string {
+		return v.PatchingMode
+	}).(pulumi.StringOutput)
 }
 
 // The maintenance window scheduling preference.
@@ -31024,10 +33509,20 @@ func (o GetBackupsFilterArrayOutput) Index(i pulumi.IntInput) GetBackupsFilterOu
 }
 
 type GetCloudAutonomousVmClustersCloudAutonomousVmCluster struct {
+	// The data disk group size allocated for Autonomous Databases, in TBs.
+	AutonomousDataStorageSizeInTbs float64 `pulumi:"autonomousDataStorageSizeInTbs"`
 	// A filter to return only resources that match the given availability domain exactly.
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// The data disk group size available for Autonomous Databases, in TBs.
+	AvailableAutonomousDataStorageSizeInTbs float64 `pulumi:"availableAutonomousDataStorageSizeInTbs"`
+	// The number of Autonomous Container Databases that can be created with the currently available local storage.
+	AvailableContainerDatabases int `pulumi:"availableContainerDatabases"`
+	// CPU cores available for allocation to Autonomous Databases.
+	AvailableCpus float64 `pulumi:"availableCpus"`
 	// If provided, filters the results for the specified cloud Exadata infrastructure.
 	CloudExadataInfrastructureId string `pulumi:"cloudExadataInfrastructureId"`
+	// The time zone of the Cloud Autonomous VM Cluster.
+	ClusterTimeZone string `pulumi:"clusterTimeZone"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId string `pulumi:"compartmentId"`
 	// The number of CPU cores enabled on the cloud Autonomous VM cluster.
@@ -31036,6 +33531,8 @@ type GetCloudAutonomousVmClustersCloudAutonomousVmCluster struct {
 	DataStorageSizeInGb float64 `pulumi:"dataStorageSizeInGb"`
 	// The total data storage allocated, in terabytes (TB).
 	DataStorageSizeInTbs float64 `pulumi:"dataStorageSizeInTbs"`
+	// The local node storage allocated in GBs.
+	DbNodeStorageSizeInGbs int `pulumi:"dbNodeStorageSizeInGbs"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// User defined description of the cloud Autonomous VM cluster.
@@ -31058,17 +33555,21 @@ type GetCloudAutonomousVmClustersCloudAutonomousVmCluster struct {
 	LicenseModel string `pulumi:"licenseModel"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The amount of memory (in GBs) enabled per each OCPU core.
+	MemoryPerOracleComputeUnitInGbs int `pulumi:"memoryPerOracleComputeUnitInGbs"`
 	// The memory allocated in GBs.
 	MemorySizeInGbs int `pulumi:"memorySizeInGbs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
 	NextMaintenanceRunId string `pulumi:"nextMaintenanceRunId"`
 	// The number of database servers in the cloud VM cluster.
 	NodeCount int `pulumi:"nodeCount"`
-	// A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-	// * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
 	NsgIds []string `pulumi:"nsgIds"`
 	// The number of CPU cores enabled on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
-	OcpuCount              float64 `pulumi:"ocpuCount"`
+	OcpuCount float64 `pulumi:"ocpuCount"`
+	// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+	ReclaimableCpus        float64 `pulumi:"reclaimableCpus"`
 	RotateOrdsCertsTrigger bool    `pulumi:"rotateOrdsCertsTrigger"`
 	RotateSslCertsTrigger  bool    `pulumi:"rotateSslCertsTrigger"`
 	// The model name of the Exadata hardware running the cloud Autonomous VM cluster.
@@ -31081,6 +33582,8 @@ type GetCloudAutonomousVmClustersCloudAutonomousVmCluster struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The last date and time that the cloud Autonomous VM cluster was updated.
 	TimeUpdated string `pulumi:"timeUpdated"`
+	// The total number of Autonomous Container Databases that can be created with the allocated local storage.
+	TotalContainerDatabases int `pulumi:"totalContainerDatabases"`
 }
 
 // GetCloudAutonomousVmClustersCloudAutonomousVmClusterInput is an input type that accepts GetCloudAutonomousVmClustersCloudAutonomousVmClusterArgs and GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput values.
@@ -31095,10 +33598,20 @@ type GetCloudAutonomousVmClustersCloudAutonomousVmClusterInput interface {
 }
 
 type GetCloudAutonomousVmClustersCloudAutonomousVmClusterArgs struct {
+	// The data disk group size allocated for Autonomous Databases, in TBs.
+	AutonomousDataStorageSizeInTbs pulumi.Float64Input `pulumi:"autonomousDataStorageSizeInTbs"`
 	// A filter to return only resources that match the given availability domain exactly.
 	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// The data disk group size available for Autonomous Databases, in TBs.
+	AvailableAutonomousDataStorageSizeInTbs pulumi.Float64Input `pulumi:"availableAutonomousDataStorageSizeInTbs"`
+	// The number of Autonomous Container Databases that can be created with the currently available local storage.
+	AvailableContainerDatabases pulumi.IntInput `pulumi:"availableContainerDatabases"`
+	// CPU cores available for allocation to Autonomous Databases.
+	AvailableCpus pulumi.Float64Input `pulumi:"availableCpus"`
 	// If provided, filters the results for the specified cloud Exadata infrastructure.
 	CloudExadataInfrastructureId pulumi.StringInput `pulumi:"cloudExadataInfrastructureId"`
+	// The time zone of the Cloud Autonomous VM Cluster.
+	ClusterTimeZone pulumi.StringInput `pulumi:"clusterTimeZone"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The number of CPU cores enabled on the cloud Autonomous VM cluster.
@@ -31107,6 +33620,8 @@ type GetCloudAutonomousVmClustersCloudAutonomousVmClusterArgs struct {
 	DataStorageSizeInGb pulumi.Float64Input `pulumi:"dataStorageSizeInGb"`
 	// The total data storage allocated, in terabytes (TB).
 	DataStorageSizeInTbs pulumi.Float64Input `pulumi:"dataStorageSizeInTbs"`
+	// The local node storage allocated in GBs.
+	DbNodeStorageSizeInGbs pulumi.IntInput `pulumi:"dbNodeStorageSizeInGbs"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// User defined description of the cloud Autonomous VM cluster.
@@ -31129,17 +33644,21 @@ type GetCloudAutonomousVmClustersCloudAutonomousVmClusterArgs struct {
 	LicenseModel pulumi.StringInput `pulumi:"licenseModel"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The amount of memory (in GBs) enabled per each OCPU core.
+	MemoryPerOracleComputeUnitInGbs pulumi.IntInput `pulumi:"memoryPerOracleComputeUnitInGbs"`
 	// The memory allocated in GBs.
 	MemorySizeInGbs pulumi.IntInput `pulumi:"memorySizeInGbs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
 	NextMaintenanceRunId pulumi.StringInput `pulumi:"nextMaintenanceRunId"`
 	// The number of database servers in the cloud VM cluster.
 	NodeCount pulumi.IntInput `pulumi:"nodeCount"`
-	// A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-	// * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// The number of CPU cores enabled on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
-	OcpuCount              pulumi.Float64Input `pulumi:"ocpuCount"`
+	OcpuCount pulumi.Float64Input `pulumi:"ocpuCount"`
+	// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+	ReclaimableCpus        pulumi.Float64Input `pulumi:"reclaimableCpus"`
 	RotateOrdsCertsTrigger pulumi.BoolInput    `pulumi:"rotateOrdsCertsTrigger"`
 	RotateSslCertsTrigger  pulumi.BoolInput    `pulumi:"rotateSslCertsTrigger"`
 	// The model name of the Exadata hardware running the cloud Autonomous VM cluster.
@@ -31152,6 +33671,8 @@ type GetCloudAutonomousVmClustersCloudAutonomousVmClusterArgs struct {
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The last date and time that the cloud Autonomous VM cluster was updated.
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The total number of Autonomous Container Databases that can be created with the allocated local storage.
+	TotalContainerDatabases pulumi.IntInput `pulumi:"totalContainerDatabases"`
 }
 
 func (GetCloudAutonomousVmClustersCloudAutonomousVmClusterArgs) ElementType() reflect.Type {
@@ -31205,9 +33726,33 @@ func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) ToGetCloudAu
 	return o
 }
 
+// The data disk group size allocated for Autonomous Databases, in TBs.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) AutonomousDataStorageSizeInTbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) float64 {
+		return v.AutonomousDataStorageSizeInTbs
+	}).(pulumi.Float64Output)
+}
+
 // A filter to return only resources that match the given availability domain exactly.
 func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) AvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+}
+
+// The data disk group size available for Autonomous Databases, in TBs.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) AvailableAutonomousDataStorageSizeInTbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) float64 {
+		return v.AvailableAutonomousDataStorageSizeInTbs
+	}).(pulumi.Float64Output)
+}
+
+// The number of Autonomous Container Databases that can be created with the currently available local storage.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) AvailableContainerDatabases() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) int { return v.AvailableContainerDatabases }).(pulumi.IntOutput)
+}
+
+// CPU cores available for allocation to Autonomous Databases.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) AvailableCpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) float64 { return v.AvailableCpus }).(pulumi.Float64Output)
 }
 
 // If provided, filters the results for the specified cloud Exadata infrastructure.
@@ -31215,6 +33760,11 @@ func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) CloudExadata
 	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) string {
 		return v.CloudExadataInfrastructureId
 	}).(pulumi.StringOutput)
+}
+
+// The time zone of the Cloud Autonomous VM Cluster.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) ClusterTimeZone() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) string { return v.ClusterTimeZone }).(pulumi.StringOutput)
 }
 
 // The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -31235,6 +33785,11 @@ func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) DataStorageS
 // The total data storage allocated, in terabytes (TB).
 func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) DataStorageSizeInTbs() pulumi.Float64Output {
 	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) float64 { return v.DataStorageSizeInTbs }).(pulumi.Float64Output)
+}
+
+// The local node storage allocated in GBs.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) DbNodeStorageSizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) int { return v.DbNodeStorageSizeInGbs }).(pulumi.IntOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -31296,6 +33851,13 @@ func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) LifecycleDet
 	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// The amount of memory (in GBs) enabled per each OCPU core.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) MemoryPerOracleComputeUnitInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) int {
+		return v.MemoryPerOracleComputeUnitInGbs
+	}).(pulumi.IntOutput)
+}
+
 // The memory allocated in GBs.
 func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) MemorySizeInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) int { return v.MemorySizeInGbs }).(pulumi.IntOutput)
@@ -31311,8 +33873,8 @@ func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) NodeCount() 
 	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) int { return v.NodeCount }).(pulumi.IntOutput)
 }
 
-// A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-// * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
 func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
 }
@@ -31320,6 +33882,11 @@ func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) NsgIds() pul
 // The number of CPU cores enabled on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
 func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) OcpuCount() pulumi.Float64Output {
 	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) float64 { return v.OcpuCount }).(pulumi.Float64Output)
+}
+
+// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) ReclaimableCpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) float64 { return v.ReclaimableCpus }).(pulumi.Float64Output)
 }
 
 func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) RotateOrdsCertsTrigger() pulumi.BoolOutput {
@@ -31353,6 +33920,11 @@ func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) TimeCreated(
 // The last date and time that the cloud Autonomous VM cluster was updated.
 func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The total number of Autonomous Container Databases that can be created with the allocated local storage.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) TotalContainerDatabases() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) int { return v.TotalContainerDatabases }).(pulumi.IntOutput)
 }
 
 type GetCloudAutonomousVmClustersCloudAutonomousVmClusterArrayOutput struct{ *pulumi.OutputState }
@@ -32802,6 +35374,103 @@ func (o GetCloudExadataInfrastructuresFilterArrayOutput) Index(i pulumi.IntInput
 	}).(GetCloudExadataInfrastructuresFilterOutput)
 }
 
+type GetCloudVmClusterDataCollectionOption struct {
+	// Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+	IsDiagnosticsEventsEnabled bool `pulumi:"isDiagnosticsEventsEnabled"`
+}
+
+// GetCloudVmClusterDataCollectionOptionInput is an input type that accepts GetCloudVmClusterDataCollectionOptionArgs and GetCloudVmClusterDataCollectionOptionOutput values.
+// You can construct a concrete instance of `GetCloudVmClusterDataCollectionOptionInput` via:
+//
+//          GetCloudVmClusterDataCollectionOptionArgs{...}
+type GetCloudVmClusterDataCollectionOptionInput interface {
+	pulumi.Input
+
+	ToGetCloudVmClusterDataCollectionOptionOutput() GetCloudVmClusterDataCollectionOptionOutput
+	ToGetCloudVmClusterDataCollectionOptionOutputWithContext(context.Context) GetCloudVmClusterDataCollectionOptionOutput
+}
+
+type GetCloudVmClusterDataCollectionOptionArgs struct {
+	// Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+	IsDiagnosticsEventsEnabled pulumi.BoolInput `pulumi:"isDiagnosticsEventsEnabled"`
+}
+
+func (GetCloudVmClusterDataCollectionOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudVmClusterDataCollectionOption)(nil)).Elem()
+}
+
+func (i GetCloudVmClusterDataCollectionOptionArgs) ToGetCloudVmClusterDataCollectionOptionOutput() GetCloudVmClusterDataCollectionOptionOutput {
+	return i.ToGetCloudVmClusterDataCollectionOptionOutputWithContext(context.Background())
+}
+
+func (i GetCloudVmClusterDataCollectionOptionArgs) ToGetCloudVmClusterDataCollectionOptionOutputWithContext(ctx context.Context) GetCloudVmClusterDataCollectionOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudVmClusterDataCollectionOptionOutput)
+}
+
+// GetCloudVmClusterDataCollectionOptionArrayInput is an input type that accepts GetCloudVmClusterDataCollectionOptionArray and GetCloudVmClusterDataCollectionOptionArrayOutput values.
+// You can construct a concrete instance of `GetCloudVmClusterDataCollectionOptionArrayInput` via:
+//
+//          GetCloudVmClusterDataCollectionOptionArray{ GetCloudVmClusterDataCollectionOptionArgs{...} }
+type GetCloudVmClusterDataCollectionOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudVmClusterDataCollectionOptionArrayOutput() GetCloudVmClusterDataCollectionOptionArrayOutput
+	ToGetCloudVmClusterDataCollectionOptionArrayOutputWithContext(context.Context) GetCloudVmClusterDataCollectionOptionArrayOutput
+}
+
+type GetCloudVmClusterDataCollectionOptionArray []GetCloudVmClusterDataCollectionOptionInput
+
+func (GetCloudVmClusterDataCollectionOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudVmClusterDataCollectionOption)(nil)).Elem()
+}
+
+func (i GetCloudVmClusterDataCollectionOptionArray) ToGetCloudVmClusterDataCollectionOptionArrayOutput() GetCloudVmClusterDataCollectionOptionArrayOutput {
+	return i.ToGetCloudVmClusterDataCollectionOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudVmClusterDataCollectionOptionArray) ToGetCloudVmClusterDataCollectionOptionArrayOutputWithContext(ctx context.Context) GetCloudVmClusterDataCollectionOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudVmClusterDataCollectionOptionArrayOutput)
+}
+
+type GetCloudVmClusterDataCollectionOptionOutput struct{ *pulumi.OutputState }
+
+func (GetCloudVmClusterDataCollectionOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudVmClusterDataCollectionOption)(nil)).Elem()
+}
+
+func (o GetCloudVmClusterDataCollectionOptionOutput) ToGetCloudVmClusterDataCollectionOptionOutput() GetCloudVmClusterDataCollectionOptionOutput {
+	return o
+}
+
+func (o GetCloudVmClusterDataCollectionOptionOutput) ToGetCloudVmClusterDataCollectionOptionOutputWithContext(ctx context.Context) GetCloudVmClusterDataCollectionOptionOutput {
+	return o
+}
+
+// Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+func (o GetCloudVmClusterDataCollectionOptionOutput) IsDiagnosticsEventsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCloudVmClusterDataCollectionOption) bool { return v.IsDiagnosticsEventsEnabled }).(pulumi.BoolOutput)
+}
+
+type GetCloudVmClusterDataCollectionOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudVmClusterDataCollectionOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudVmClusterDataCollectionOption)(nil)).Elem()
+}
+
+func (o GetCloudVmClusterDataCollectionOptionArrayOutput) ToGetCloudVmClusterDataCollectionOptionArrayOutput() GetCloudVmClusterDataCollectionOptionArrayOutput {
+	return o
+}
+
+func (o GetCloudVmClusterDataCollectionOptionArrayOutput) ToGetCloudVmClusterDataCollectionOptionArrayOutputWithContext(ctx context.Context) GetCloudVmClusterDataCollectionOptionArrayOutput {
+	return o
+}
+
+func (o GetCloudVmClusterDataCollectionOptionArrayOutput) Index(i pulumi.IntInput) GetCloudVmClusterDataCollectionOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudVmClusterDataCollectionOption {
+		return vs[0].([]GetCloudVmClusterDataCollectionOption)[vs[1].(int)]
+	}).(GetCloudVmClusterDataCollectionOptionOutput)
+}
+
 type GetCloudVmClusterIormConfigCach struct {
 	// An array of IORM settings for all the database in the Exadata DB system.
 	DbPlans []GetCloudVmClusterIormConfigCachDbPlan `pulumi:"dbPlans"`
@@ -33172,6 +35841,8 @@ type GetCloudVmClustersCloudVmCluster struct {
 	// The number of CPU cores enabled on the cloud VM cluster.
 	CpuCoreCount int  `pulumi:"cpuCoreCount"`
 	CreateAsync  bool `pulumi:"createAsync"`
+	// Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+	DataCollectionOptions []GetCloudVmClustersCloudVmClusterDataCollectionOption `pulumi:"dataCollectionOptions"`
 	// The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
 	DataStoragePercentage int `pulumi:"dataStoragePercentage"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -33205,8 +35876,8 @@ type GetCloudVmClustersCloudVmCluster struct {
 	ListenerPort string `pulumi:"listenerPort"`
 	// The number of nodes in the cloud VM cluster.
 	NodeCount int `pulumi:"nodeCount"`
-	// A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-	// * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
 	NsgIds []string `pulumi:"nsgIds"`
 	// The number of OCPU cores to enable on the cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
 	OcpuCount float64 `pulumi:"ocpuCount"`
@@ -33269,6 +35940,8 @@ type GetCloudVmClustersCloudVmClusterArgs struct {
 	// The number of CPU cores enabled on the cloud VM cluster.
 	CpuCoreCount pulumi.IntInput  `pulumi:"cpuCoreCount"`
 	CreateAsync  pulumi.BoolInput `pulumi:"createAsync"`
+	// Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+	DataCollectionOptions GetCloudVmClustersCloudVmClusterDataCollectionOptionArrayInput `pulumi:"dataCollectionOptions"`
 	// The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
 	DataStoragePercentage pulumi.IntInput `pulumi:"dataStoragePercentage"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -33302,8 +35975,8 @@ type GetCloudVmClustersCloudVmClusterArgs struct {
 	ListenerPort pulumi.StringInput `pulumi:"listenerPort"`
 	// The number of nodes in the cloud VM cluster.
 	NodeCount pulumi.IntInput `pulumi:"nodeCount"`
-	// A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-	// * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// The number of OCPU cores to enable on the cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
 	OcpuCount pulumi.Float64Input `pulumi:"ocpuCount"`
@@ -33429,6 +36102,13 @@ func (o GetCloudVmClustersCloudVmClusterOutput) CreateAsync() pulumi.BoolOutput 
 	return o.ApplyT(func(v GetCloudVmClustersCloudVmCluster) bool { return v.CreateAsync }).(pulumi.BoolOutput)
 }
 
+// Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+func (o GetCloudVmClustersCloudVmClusterOutput) DataCollectionOptions() GetCloudVmClustersCloudVmClusterDataCollectionOptionArrayOutput {
+	return o.ApplyT(func(v GetCloudVmClustersCloudVmCluster) []GetCloudVmClustersCloudVmClusterDataCollectionOption {
+		return v.DataCollectionOptions
+	}).(GetCloudVmClustersCloudVmClusterDataCollectionOptionArrayOutput)
+}
+
 // The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
 func (o GetCloudVmClustersCloudVmClusterOutput) DataStoragePercentage() pulumi.IntOutput {
 	return o.ApplyT(func(v GetCloudVmClustersCloudVmCluster) int { return v.DataStoragePercentage }).(pulumi.IntOutput)
@@ -33515,8 +36195,8 @@ func (o GetCloudVmClustersCloudVmClusterOutput) NodeCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetCloudVmClustersCloudVmCluster) int { return v.NodeCount }).(pulumi.IntOutput)
 }
 
-// A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-// * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
 func (o GetCloudVmClustersCloudVmClusterOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetCloudVmClustersCloudVmCluster) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
 }
@@ -33619,6 +36299,103 @@ func (o GetCloudVmClustersCloudVmClusterArrayOutput) Index(i pulumi.IntInput) Ge
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudVmClustersCloudVmCluster {
 		return vs[0].([]GetCloudVmClustersCloudVmCluster)[vs[1].(int)]
 	}).(GetCloudVmClustersCloudVmClusterOutput)
+}
+
+type GetCloudVmClustersCloudVmClusterDataCollectionOption struct {
+	// Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+	IsDiagnosticsEventsEnabled bool `pulumi:"isDiagnosticsEventsEnabled"`
+}
+
+// GetCloudVmClustersCloudVmClusterDataCollectionOptionInput is an input type that accepts GetCloudVmClustersCloudVmClusterDataCollectionOptionArgs and GetCloudVmClustersCloudVmClusterDataCollectionOptionOutput values.
+// You can construct a concrete instance of `GetCloudVmClustersCloudVmClusterDataCollectionOptionInput` via:
+//
+//          GetCloudVmClustersCloudVmClusterDataCollectionOptionArgs{...}
+type GetCloudVmClustersCloudVmClusterDataCollectionOptionInput interface {
+	pulumi.Input
+
+	ToGetCloudVmClustersCloudVmClusterDataCollectionOptionOutput() GetCloudVmClustersCloudVmClusterDataCollectionOptionOutput
+	ToGetCloudVmClustersCloudVmClusterDataCollectionOptionOutputWithContext(context.Context) GetCloudVmClustersCloudVmClusterDataCollectionOptionOutput
+}
+
+type GetCloudVmClustersCloudVmClusterDataCollectionOptionArgs struct {
+	// Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+	IsDiagnosticsEventsEnabled pulumi.BoolInput `pulumi:"isDiagnosticsEventsEnabled"`
+}
+
+func (GetCloudVmClustersCloudVmClusterDataCollectionOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudVmClustersCloudVmClusterDataCollectionOption)(nil)).Elem()
+}
+
+func (i GetCloudVmClustersCloudVmClusterDataCollectionOptionArgs) ToGetCloudVmClustersCloudVmClusterDataCollectionOptionOutput() GetCloudVmClustersCloudVmClusterDataCollectionOptionOutput {
+	return i.ToGetCloudVmClustersCloudVmClusterDataCollectionOptionOutputWithContext(context.Background())
+}
+
+func (i GetCloudVmClustersCloudVmClusterDataCollectionOptionArgs) ToGetCloudVmClustersCloudVmClusterDataCollectionOptionOutputWithContext(ctx context.Context) GetCloudVmClustersCloudVmClusterDataCollectionOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudVmClustersCloudVmClusterDataCollectionOptionOutput)
+}
+
+// GetCloudVmClustersCloudVmClusterDataCollectionOptionArrayInput is an input type that accepts GetCloudVmClustersCloudVmClusterDataCollectionOptionArray and GetCloudVmClustersCloudVmClusterDataCollectionOptionArrayOutput values.
+// You can construct a concrete instance of `GetCloudVmClustersCloudVmClusterDataCollectionOptionArrayInput` via:
+//
+//          GetCloudVmClustersCloudVmClusterDataCollectionOptionArray{ GetCloudVmClustersCloudVmClusterDataCollectionOptionArgs{...} }
+type GetCloudVmClustersCloudVmClusterDataCollectionOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudVmClustersCloudVmClusterDataCollectionOptionArrayOutput() GetCloudVmClustersCloudVmClusterDataCollectionOptionArrayOutput
+	ToGetCloudVmClustersCloudVmClusterDataCollectionOptionArrayOutputWithContext(context.Context) GetCloudVmClustersCloudVmClusterDataCollectionOptionArrayOutput
+}
+
+type GetCloudVmClustersCloudVmClusterDataCollectionOptionArray []GetCloudVmClustersCloudVmClusterDataCollectionOptionInput
+
+func (GetCloudVmClustersCloudVmClusterDataCollectionOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudVmClustersCloudVmClusterDataCollectionOption)(nil)).Elem()
+}
+
+func (i GetCloudVmClustersCloudVmClusterDataCollectionOptionArray) ToGetCloudVmClustersCloudVmClusterDataCollectionOptionArrayOutput() GetCloudVmClustersCloudVmClusterDataCollectionOptionArrayOutput {
+	return i.ToGetCloudVmClustersCloudVmClusterDataCollectionOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudVmClustersCloudVmClusterDataCollectionOptionArray) ToGetCloudVmClustersCloudVmClusterDataCollectionOptionArrayOutputWithContext(ctx context.Context) GetCloudVmClustersCloudVmClusterDataCollectionOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudVmClustersCloudVmClusterDataCollectionOptionArrayOutput)
+}
+
+type GetCloudVmClustersCloudVmClusterDataCollectionOptionOutput struct{ *pulumi.OutputState }
+
+func (GetCloudVmClustersCloudVmClusterDataCollectionOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudVmClustersCloudVmClusterDataCollectionOption)(nil)).Elem()
+}
+
+func (o GetCloudVmClustersCloudVmClusterDataCollectionOptionOutput) ToGetCloudVmClustersCloudVmClusterDataCollectionOptionOutput() GetCloudVmClustersCloudVmClusterDataCollectionOptionOutput {
+	return o
+}
+
+func (o GetCloudVmClustersCloudVmClusterDataCollectionOptionOutput) ToGetCloudVmClustersCloudVmClusterDataCollectionOptionOutputWithContext(ctx context.Context) GetCloudVmClustersCloudVmClusterDataCollectionOptionOutput {
+	return o
+}
+
+// Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+func (o GetCloudVmClustersCloudVmClusterDataCollectionOptionOutput) IsDiagnosticsEventsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCloudVmClustersCloudVmClusterDataCollectionOption) bool { return v.IsDiagnosticsEventsEnabled }).(pulumi.BoolOutput)
+}
+
+type GetCloudVmClustersCloudVmClusterDataCollectionOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudVmClustersCloudVmClusterDataCollectionOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudVmClustersCloudVmClusterDataCollectionOption)(nil)).Elem()
+}
+
+func (o GetCloudVmClustersCloudVmClusterDataCollectionOptionArrayOutput) ToGetCloudVmClustersCloudVmClusterDataCollectionOptionArrayOutput() GetCloudVmClustersCloudVmClusterDataCollectionOptionArrayOutput {
+	return o
+}
+
+func (o GetCloudVmClustersCloudVmClusterDataCollectionOptionArrayOutput) ToGetCloudVmClustersCloudVmClusterDataCollectionOptionArrayOutputWithContext(ctx context.Context) GetCloudVmClustersCloudVmClusterDataCollectionOptionArrayOutput {
+	return o
+}
+
+func (o GetCloudVmClustersCloudVmClusterDataCollectionOptionArrayOutput) Index(i pulumi.IntInput) GetCloudVmClustersCloudVmClusterDataCollectionOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudVmClustersCloudVmClusterDataCollectionOption {
+		return vs[0].([]GetCloudVmClustersCloudVmClusterDataCollectionOption)[vs[1].(int)]
+	}).(GetCloudVmClustersCloudVmClusterDataCollectionOptionOutput)
 }
 
 type GetCloudVmClustersCloudVmClusterIormConfigCach struct {
@@ -33957,24 +36734,32 @@ type GetDataGuardAssociationsDataGuardAssociation struct {
 	// The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `9 seconds`
 	ApplyLag string `pulumi:"applyLag"`
 	// The rate at which redo logs are synced between the associated databases.  Example: `180 Mb per second`
-	ApplyRate             string   `pulumi:"applyRate"`
-	AvailabilityDomain    string   `pulumi:"availabilityDomain"`
-	BackupNetworkNsgIds   []string `pulumi:"backupNetworkNsgIds"`
-	CreateAsync           bool     `pulumi:"createAsync"`
-	CreationType          string   `pulumi:"creationType"`
-	DatabaseAdminPassword string   `pulumi:"databaseAdminPassword"`
+	ApplyRate             string                 `pulumi:"applyRate"`
+	AvailabilityDomain    string                 `pulumi:"availabilityDomain"`
+	BackupNetworkNsgIds   []string               `pulumi:"backupNetworkNsgIds"`
+	CpuCoreCount          int                    `pulumi:"cpuCoreCount"`
+	CreateAsync           bool                   `pulumi:"createAsync"`
+	CreationType          string                 `pulumi:"creationType"`
+	DatabaseAdminPassword string                 `pulumi:"databaseAdminPassword"`
+	DatabaseDefinedTags   map[string]interface{} `pulumi:"databaseDefinedTags"`
+	DatabaseFreeformTags  map[string]interface{} `pulumi:"databaseFreeformTags"`
 	// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	DatabaseId                  string `pulumi:"databaseId"`
-	DatabaseSoftwareImageId     string `pulumi:"databaseSoftwareImageId"`
-	DeleteStandbyDbHomeOnDelete string `pulumi:"deleteStandbyDbHomeOnDelete"`
-	DisplayName                 string `pulumi:"displayName"`
-	Hostname                    string `pulumi:"hostname"`
+	DatabaseId                  string                 `pulumi:"databaseId"`
+	DatabaseSoftwareImageId     string                 `pulumi:"databaseSoftwareImageId"`
+	DbSystemDefinedTags         map[string]interface{} `pulumi:"dbSystemDefinedTags"`
+	DbSystemFreeformTags        map[string]interface{} `pulumi:"dbSystemFreeformTags"`
+	DeleteStandbyDbHomeOnDelete string                 `pulumi:"deleteStandbyDbHomeOnDelete"`
+	DisplayName                 string                 `pulumi:"displayName"`
+	FaultDomains                []string               `pulumi:"faultDomains"`
+	Hostname                    string                 `pulumi:"hostname"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Data Guard association.
 	Id string `pulumi:"id"`
 	// True if active Data Guard is enabled.
-	IsActiveDataGuardEnabled bool `pulumi:"isActiveDataGuardEnabled"`
+	IsActiveDataGuardEnabled bool   `pulumi:"isActiveDataGuardEnabled"`
+	LicenseModel             string `pulumi:"licenseModel"`
 	// Additional information about the current lifecycleState, if available.
 	LifecycleDetails string   `pulumi:"lifecycleDetails"`
+	NodeCount        int      `pulumi:"nodeCount"`
 	NsgIds           []string `pulumi:"nsgIds"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer database's Data Guard association.
 	PeerDataGuardAssociationId string `pulumi:"peerDataGuardAssociationId"`
@@ -33989,16 +36774,19 @@ type GetDataGuardAssociationsDataGuardAssociation struct {
 	PeerRole        string `pulumi:"peerRole"`
 	PeerSidPrefix   string `pulumi:"peerSidPrefix"`
 	PeerVmClusterId string `pulumi:"peerVmClusterId"`
+	PrivateIp       string `pulumi:"privateIp"`
 	// The protection mode of this Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
 	ProtectionMode string `pulumi:"protectionMode"`
 	// The role of the reporting database in this Data Guard association.
 	Role  string `pulumi:"role"`
 	Shape string `pulumi:"shape"`
 	// The current state of the Data Guard association.
-	State    string `pulumi:"state"`
-	SubnetId string `pulumi:"subnetId"`
+	State                        string `pulumi:"state"`
+	StorageVolumePerformanceMode string `pulumi:"storageVolumePerformanceMode"`
+	SubnetId                     string `pulumi:"subnetId"`
 	// The date and time the Data Guard association was created.
 	TimeCreated string `pulumi:"timeCreated"`
+	TimeZone    string `pulumi:"timeZone"`
 	// The redo transport type used by this Data Guard association.  For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
 	TransportType string `pulumi:"transportType"`
 }
@@ -34021,21 +36809,29 @@ type GetDataGuardAssociationsDataGuardAssociationArgs struct {
 	ApplyRate             pulumi.StringInput      `pulumi:"applyRate"`
 	AvailabilityDomain    pulumi.StringInput      `pulumi:"availabilityDomain"`
 	BackupNetworkNsgIds   pulumi.StringArrayInput `pulumi:"backupNetworkNsgIds"`
+	CpuCoreCount          pulumi.IntInput         `pulumi:"cpuCoreCount"`
 	CreateAsync           pulumi.BoolInput        `pulumi:"createAsync"`
 	CreationType          pulumi.StringInput      `pulumi:"creationType"`
 	DatabaseAdminPassword pulumi.StringInput      `pulumi:"databaseAdminPassword"`
+	DatabaseDefinedTags   pulumi.MapInput         `pulumi:"databaseDefinedTags"`
+	DatabaseFreeformTags  pulumi.MapInput         `pulumi:"databaseFreeformTags"`
 	// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	DatabaseId                  pulumi.StringInput `pulumi:"databaseId"`
-	DatabaseSoftwareImageId     pulumi.StringInput `pulumi:"databaseSoftwareImageId"`
-	DeleteStandbyDbHomeOnDelete pulumi.StringInput `pulumi:"deleteStandbyDbHomeOnDelete"`
-	DisplayName                 pulumi.StringInput `pulumi:"displayName"`
-	Hostname                    pulumi.StringInput `pulumi:"hostname"`
+	DatabaseId                  pulumi.StringInput      `pulumi:"databaseId"`
+	DatabaseSoftwareImageId     pulumi.StringInput      `pulumi:"databaseSoftwareImageId"`
+	DbSystemDefinedTags         pulumi.MapInput         `pulumi:"dbSystemDefinedTags"`
+	DbSystemFreeformTags        pulumi.MapInput         `pulumi:"dbSystemFreeformTags"`
+	DeleteStandbyDbHomeOnDelete pulumi.StringInput      `pulumi:"deleteStandbyDbHomeOnDelete"`
+	DisplayName                 pulumi.StringInput      `pulumi:"displayName"`
+	FaultDomains                pulumi.StringArrayInput `pulumi:"faultDomains"`
+	Hostname                    pulumi.StringInput      `pulumi:"hostname"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Data Guard association.
 	Id pulumi.StringInput `pulumi:"id"`
 	// True if active Data Guard is enabled.
-	IsActiveDataGuardEnabled pulumi.BoolInput `pulumi:"isActiveDataGuardEnabled"`
+	IsActiveDataGuardEnabled pulumi.BoolInput   `pulumi:"isActiveDataGuardEnabled"`
+	LicenseModel             pulumi.StringInput `pulumi:"licenseModel"`
 	// Additional information about the current lifecycleState, if available.
 	LifecycleDetails pulumi.StringInput      `pulumi:"lifecycleDetails"`
+	NodeCount        pulumi.IntInput         `pulumi:"nodeCount"`
 	NsgIds           pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer database's Data Guard association.
 	PeerDataGuardAssociationId pulumi.StringInput `pulumi:"peerDataGuardAssociationId"`
@@ -34050,16 +36846,19 @@ type GetDataGuardAssociationsDataGuardAssociationArgs struct {
 	PeerRole        pulumi.StringInput `pulumi:"peerRole"`
 	PeerSidPrefix   pulumi.StringInput `pulumi:"peerSidPrefix"`
 	PeerVmClusterId pulumi.StringInput `pulumi:"peerVmClusterId"`
+	PrivateIp       pulumi.StringInput `pulumi:"privateIp"`
 	// The protection mode of this Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
 	ProtectionMode pulumi.StringInput `pulumi:"protectionMode"`
 	// The role of the reporting database in this Data Guard association.
 	Role  pulumi.StringInput `pulumi:"role"`
 	Shape pulumi.StringInput `pulumi:"shape"`
 	// The current state of the Data Guard association.
-	State    pulumi.StringInput `pulumi:"state"`
-	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	State                        pulumi.StringInput `pulumi:"state"`
+	StorageVolumePerformanceMode pulumi.StringInput `pulumi:"storageVolumePerformanceMode"`
+	SubnetId                     pulumi.StringInput `pulumi:"subnetId"`
 	// The date and time the Data Guard association was created.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeZone    pulumi.StringInput `pulumi:"timeZone"`
 	// The redo transport type used by this Data Guard association.  For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
 	TransportType pulumi.StringInput `pulumi:"transportType"`
 }
@@ -34133,6 +36932,10 @@ func (o GetDataGuardAssociationsDataGuardAssociationOutput) BackupNetworkNsgIds(
 	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) []string { return v.BackupNetworkNsgIds }).(pulumi.StringArrayOutput)
 }
 
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) CpuCoreCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) int { return v.CpuCoreCount }).(pulumi.IntOutput)
+}
+
 func (o GetDataGuardAssociationsDataGuardAssociationOutput) CreateAsync() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) bool { return v.CreateAsync }).(pulumi.BoolOutput)
 }
@@ -34145,6 +36948,18 @@ func (o GetDataGuardAssociationsDataGuardAssociationOutput) DatabaseAdminPasswor
 	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) string { return v.DatabaseAdminPassword }).(pulumi.StringOutput)
 }
 
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) DatabaseDefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) map[string]interface{} {
+		return v.DatabaseDefinedTags
+	}).(pulumi.MapOutput)
+}
+
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) DatabaseFreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) map[string]interface{} {
+		return v.DatabaseFreeformTags
+	}).(pulumi.MapOutput)
+}
+
 // The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o GetDataGuardAssociationsDataGuardAssociationOutput) DatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) string { return v.DatabaseId }).(pulumi.StringOutput)
@@ -34154,12 +36969,28 @@ func (o GetDataGuardAssociationsDataGuardAssociationOutput) DatabaseSoftwareImag
 	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) string { return v.DatabaseSoftwareImageId }).(pulumi.StringOutput)
 }
 
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) DbSystemDefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) map[string]interface{} {
+		return v.DbSystemDefinedTags
+	}).(pulumi.MapOutput)
+}
+
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) DbSystemFreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) map[string]interface{} {
+		return v.DbSystemFreeformTags
+	}).(pulumi.MapOutput)
+}
+
 func (o GetDataGuardAssociationsDataGuardAssociationOutput) DeleteStandbyDbHomeOnDelete() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) string { return v.DeleteStandbyDbHomeOnDelete }).(pulumi.StringOutput)
 }
 
 func (o GetDataGuardAssociationsDataGuardAssociationOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) FaultDomains() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) []string { return v.FaultDomains }).(pulumi.StringArrayOutput)
 }
 
 func (o GetDataGuardAssociationsDataGuardAssociationOutput) Hostname() pulumi.StringOutput {
@@ -34176,9 +37007,17 @@ func (o GetDataGuardAssociationsDataGuardAssociationOutput) IsActiveDataGuardEna
 	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) bool { return v.IsActiveDataGuardEnabled }).(pulumi.BoolOutput)
 }
 
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) LicenseModel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) string { return v.LicenseModel }).(pulumi.StringOutput)
+}
+
 // Additional information about the current lifecycleState, if available.
 func (o GetDataGuardAssociationsDataGuardAssociationOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) NodeCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) int { return v.NodeCount }).(pulumi.IntOutput)
 }
 
 func (o GetDataGuardAssociationsDataGuardAssociationOutput) NsgIds() pulumi.StringArrayOutput {
@@ -34222,6 +37061,10 @@ func (o GetDataGuardAssociationsDataGuardAssociationOutput) PeerVmClusterId() pu
 	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) string { return v.PeerVmClusterId }).(pulumi.StringOutput)
 }
 
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) PrivateIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) string { return v.PrivateIp }).(pulumi.StringOutput)
+}
+
 // The protection mode of this Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
 func (o GetDataGuardAssociationsDataGuardAssociationOutput) ProtectionMode() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) string { return v.ProtectionMode }).(pulumi.StringOutput)
@@ -34241,6 +37084,10 @@ func (o GetDataGuardAssociationsDataGuardAssociationOutput) State() pulumi.Strin
 	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) string { return v.State }).(pulumi.StringOutput)
 }
 
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) StorageVolumePerformanceMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) string { return v.StorageVolumePerformanceMode }).(pulumi.StringOutput)
+}
+
 func (o GetDataGuardAssociationsDataGuardAssociationOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) string { return v.SubnetId }).(pulumi.StringOutput)
 }
@@ -34248,6 +37095,10 @@ func (o GetDataGuardAssociationsDataGuardAssociationOutput) SubnetId() pulumi.St
 // The date and time the Data Guard association was created.
 func (o GetDataGuardAssociationsDataGuardAssociationOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) TimeZone() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) string { return v.TimeZone }).(pulumi.StringOutput)
 }
 
 // The redo transport type used by this Data Guard association.  For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
@@ -35659,7 +38510,7 @@ type GetDatabaseSoftwareImagesDatabaseSoftwareImage struct {
 	IsUpgradeSupported bool `pulumi:"isUpgradeSupported"`
 	// Detailed message for the lifecycle state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	// output from lsinventory which will get passed as a string
+	// The output from the OPatch lsInventory command, which is passed as a string.
 	LsInventory string `pulumi:"lsInventory"`
 	// The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
 	PatchSet       string `pulumi:"patchSet"`
@@ -35708,7 +38559,7 @@ type GetDatabaseSoftwareImagesDatabaseSoftwareImageArgs struct {
 	IsUpgradeSupported pulumi.BoolInput `pulumi:"isUpgradeSupported"`
 	// Detailed message for the lifecycle state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
-	// output from lsinventory which will get passed as a string
+	// The output from the OPatch lsInventory command, which is passed as a string.
 	LsInventory pulumi.StringInput `pulumi:"lsInventory"`
 	// The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
 	PatchSet       pulumi.StringInput `pulumi:"patchSet"`
@@ -35839,7 +38690,7 @@ func (o GetDatabaseSoftwareImagesDatabaseSoftwareImageOutput) LifecycleDetails()
 	return o.ApplyT(func(v GetDatabaseSoftwareImagesDatabaseSoftwareImage) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// output from lsinventory which will get passed as a string
+// The output from the OPatch lsInventory command, which is passed as a string.
 func (o GetDatabaseSoftwareImagesDatabaseSoftwareImageOutput) LsInventory() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseSoftwareImagesDatabaseSoftwareImage) string { return v.LsInventory }).(pulumi.StringOutput)
 }
@@ -40037,7 +42888,7 @@ func (o GetDbNodeConsoleConnectionsFilterArrayOutput) Index(i pulumi.IntInput) G
 type GetDbNodesDbNode struct {
 	// Additional information about the planned maintenance.
 	AdditionalDetails string `pulumi:"additionalDetails"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IP address associated with the database node.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IP address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
 	BackupIpId string `pulumi:"backupIpId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second backup VNIC.
 	BackupVnic2id string `pulumi:"backupVnic2id"`
@@ -40054,7 +42905,7 @@ type GetDbNodesDbNode struct {
 	DbSystemId string `pulumi:"dbSystemId"`
 	// The name of the Fault Domain the instance is contained in.
 	FaultDomain string `pulumi:"faultDomain"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node. Use this OCID with either the  [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
 	HostIpId string `pulumi:"hostIpId"`
 	// The host name for the database node.
 	Hostname string `pulumi:"hostname"`
@@ -40094,7 +42945,7 @@ type GetDbNodesDbNodeInput interface {
 type GetDbNodesDbNodeArgs struct {
 	// Additional information about the planned maintenance.
 	AdditionalDetails pulumi.StringInput `pulumi:"additionalDetails"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IP address associated with the database node.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IP address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
 	BackupIpId pulumi.StringInput `pulumi:"backupIpId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second backup VNIC.
 	BackupVnic2id pulumi.StringInput `pulumi:"backupVnic2id"`
@@ -40111,7 +42962,7 @@ type GetDbNodesDbNodeArgs struct {
 	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
 	// The name of the Fault Domain the instance is contained in.
 	FaultDomain pulumi.StringInput `pulumi:"faultDomain"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node. Use this OCID with either the  [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
 	HostIpId pulumi.StringInput `pulumi:"hostIpId"`
 	// The host name for the database node.
 	Hostname pulumi.StringInput `pulumi:"hostname"`
@@ -40193,7 +43044,7 @@ func (o GetDbNodesDbNodeOutput) AdditionalDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbNodesDbNode) string { return v.AdditionalDetails }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IP address associated with the database node.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IP address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
 func (o GetDbNodesDbNodeOutput) BackupIpId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbNodesDbNode) string { return v.BackupIpId }).(pulumi.StringOutput)
 }
@@ -40237,7 +43088,7 @@ func (o GetDbNodesDbNodeOutput) FaultDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbNodesDbNode) string { return v.FaultDomain }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node. Use this OCID with either the  [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
 func (o GetDbNodesDbNodeOutput) HostIpId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbNodesDbNode) string { return v.HostIpId }).(pulumi.StringOutput)
 }
@@ -41029,6 +43880,363 @@ func (o GetDbServersFilterArrayOutput) Index(i pulumi.IntInput) GetDbServersFilt
 	}).(GetDbServersFilterOutput)
 }
 
+type GetDbSystemComputePerformancesDbSystemComputePerformance struct {
+	// List of Compute performance details for the specified DB system shape.
+	ComputePerformanceLists []GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList `pulumi:"computePerformanceLists"`
+	// The shape of the DB system.
+	Shape string `pulumi:"shape"`
+}
+
+// GetDbSystemComputePerformancesDbSystemComputePerformanceInput is an input type that accepts GetDbSystemComputePerformancesDbSystemComputePerformanceArgs and GetDbSystemComputePerformancesDbSystemComputePerformanceOutput values.
+// You can construct a concrete instance of `GetDbSystemComputePerformancesDbSystemComputePerformanceInput` via:
+//
+//          GetDbSystemComputePerformancesDbSystemComputePerformanceArgs{...}
+type GetDbSystemComputePerformancesDbSystemComputePerformanceInput interface {
+	pulumi.Input
+
+	ToGetDbSystemComputePerformancesDbSystemComputePerformanceOutput() GetDbSystemComputePerformancesDbSystemComputePerformanceOutput
+	ToGetDbSystemComputePerformancesDbSystemComputePerformanceOutputWithContext(context.Context) GetDbSystemComputePerformancesDbSystemComputePerformanceOutput
+}
+
+type GetDbSystemComputePerformancesDbSystemComputePerformanceArgs struct {
+	// List of Compute performance details for the specified DB system shape.
+	ComputePerformanceLists GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayInput `pulumi:"computePerformanceLists"`
+	// The shape of the DB system.
+	Shape pulumi.StringInput `pulumi:"shape"`
+}
+
+func (GetDbSystemComputePerformancesDbSystemComputePerformanceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemComputePerformancesDbSystemComputePerformance)(nil)).Elem()
+}
+
+func (i GetDbSystemComputePerformancesDbSystemComputePerformanceArgs) ToGetDbSystemComputePerformancesDbSystemComputePerformanceOutput() GetDbSystemComputePerformancesDbSystemComputePerformanceOutput {
+	return i.ToGetDbSystemComputePerformancesDbSystemComputePerformanceOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemComputePerformancesDbSystemComputePerformanceArgs) ToGetDbSystemComputePerformancesDbSystemComputePerformanceOutputWithContext(ctx context.Context) GetDbSystemComputePerformancesDbSystemComputePerformanceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemComputePerformancesDbSystemComputePerformanceOutput)
+}
+
+// GetDbSystemComputePerformancesDbSystemComputePerformanceArrayInput is an input type that accepts GetDbSystemComputePerformancesDbSystemComputePerformanceArray and GetDbSystemComputePerformancesDbSystemComputePerformanceArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemComputePerformancesDbSystemComputePerformanceArrayInput` via:
+//
+//          GetDbSystemComputePerformancesDbSystemComputePerformanceArray{ GetDbSystemComputePerformancesDbSystemComputePerformanceArgs{...} }
+type GetDbSystemComputePerformancesDbSystemComputePerformanceArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemComputePerformancesDbSystemComputePerformanceArrayOutput() GetDbSystemComputePerformancesDbSystemComputePerformanceArrayOutput
+	ToGetDbSystemComputePerformancesDbSystemComputePerformanceArrayOutputWithContext(context.Context) GetDbSystemComputePerformancesDbSystemComputePerformanceArrayOutput
+}
+
+type GetDbSystemComputePerformancesDbSystemComputePerformanceArray []GetDbSystemComputePerformancesDbSystemComputePerformanceInput
+
+func (GetDbSystemComputePerformancesDbSystemComputePerformanceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemComputePerformancesDbSystemComputePerformance)(nil)).Elem()
+}
+
+func (i GetDbSystemComputePerformancesDbSystemComputePerformanceArray) ToGetDbSystemComputePerformancesDbSystemComputePerformanceArrayOutput() GetDbSystemComputePerformancesDbSystemComputePerformanceArrayOutput {
+	return i.ToGetDbSystemComputePerformancesDbSystemComputePerformanceArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemComputePerformancesDbSystemComputePerformanceArray) ToGetDbSystemComputePerformancesDbSystemComputePerformanceArrayOutputWithContext(ctx context.Context) GetDbSystemComputePerformancesDbSystemComputePerformanceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemComputePerformancesDbSystemComputePerformanceArrayOutput)
+}
+
+type GetDbSystemComputePerformancesDbSystemComputePerformanceOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemComputePerformancesDbSystemComputePerformanceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemComputePerformancesDbSystemComputePerformance)(nil)).Elem()
+}
+
+func (o GetDbSystemComputePerformancesDbSystemComputePerformanceOutput) ToGetDbSystemComputePerformancesDbSystemComputePerformanceOutput() GetDbSystemComputePerformancesDbSystemComputePerformanceOutput {
+	return o
+}
+
+func (o GetDbSystemComputePerformancesDbSystemComputePerformanceOutput) ToGetDbSystemComputePerformancesDbSystemComputePerformanceOutputWithContext(ctx context.Context) GetDbSystemComputePerformancesDbSystemComputePerformanceOutput {
+	return o
+}
+
+// List of Compute performance details for the specified DB system shape.
+func (o GetDbSystemComputePerformancesDbSystemComputePerformanceOutput) ComputePerformanceLists() GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayOutput {
+	return o.ApplyT(func(v GetDbSystemComputePerformancesDbSystemComputePerformance) []GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList {
+		return v.ComputePerformanceLists
+	}).(GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayOutput)
+}
+
+// The shape of the DB system.
+func (o GetDbSystemComputePerformancesDbSystemComputePerformanceOutput) Shape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemComputePerformancesDbSystemComputePerformance) string { return v.Shape }).(pulumi.StringOutput)
+}
+
+type GetDbSystemComputePerformancesDbSystemComputePerformanceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemComputePerformancesDbSystemComputePerformanceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemComputePerformancesDbSystemComputePerformance)(nil)).Elem()
+}
+
+func (o GetDbSystemComputePerformancesDbSystemComputePerformanceArrayOutput) ToGetDbSystemComputePerformancesDbSystemComputePerformanceArrayOutput() GetDbSystemComputePerformancesDbSystemComputePerformanceArrayOutput {
+	return o
+}
+
+func (o GetDbSystemComputePerformancesDbSystemComputePerformanceArrayOutput) ToGetDbSystemComputePerformancesDbSystemComputePerformanceArrayOutputWithContext(ctx context.Context) GetDbSystemComputePerformancesDbSystemComputePerformanceArrayOutput {
+	return o
+}
+
+func (o GetDbSystemComputePerformancesDbSystemComputePerformanceArrayOutput) Index(i pulumi.IntInput) GetDbSystemComputePerformancesDbSystemComputePerformanceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemComputePerformancesDbSystemComputePerformance {
+		return vs[0].([]GetDbSystemComputePerformancesDbSystemComputePerformance)[vs[1].(int)]
+	}).(GetDbSystemComputePerformancesDbSystemComputePerformanceOutput)
+}
+
+type GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList struct {
+	// The number of OCPU cores available.
+	CpuCoreCount int `pulumi:"cpuCoreCount"`
+	// The amount of memory allocated for the VMDB System.
+	MemoryInGbs float64 `pulumi:"memoryInGbs"`
+	// The network bandwidth of the VMDB system in gbps.
+	NetworkBandwidthInGbps float64 `pulumi:"networkBandwidthInGbps"`
+	// IOPS for the VMDB System.
+	NetworkIops float64 `pulumi:"networkIops"`
+	// Network throughput for the VMDB System.
+	NetworkThroughputInMbps float64 `pulumi:"networkThroughputInMbps"`
+}
+
+// GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListInput is an input type that accepts GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArgs and GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListOutput values.
+// You can construct a concrete instance of `GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListInput` via:
+//
+//          GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArgs{...}
+type GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListInput interface {
+	pulumi.Input
+
+	ToGetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListOutput() GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListOutput
+	ToGetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListOutputWithContext(context.Context) GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListOutput
+}
+
+type GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArgs struct {
+	// The number of OCPU cores available.
+	CpuCoreCount pulumi.IntInput `pulumi:"cpuCoreCount"`
+	// The amount of memory allocated for the VMDB System.
+	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
+	// The network bandwidth of the VMDB system in gbps.
+	NetworkBandwidthInGbps pulumi.Float64Input `pulumi:"networkBandwidthInGbps"`
+	// IOPS for the VMDB System.
+	NetworkIops pulumi.Float64Input `pulumi:"networkIops"`
+	// Network throughput for the VMDB System.
+	NetworkThroughputInMbps pulumi.Float64Input `pulumi:"networkThroughputInMbps"`
+}
+
+func (GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList)(nil)).Elem()
+}
+
+func (i GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArgs) ToGetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListOutput() GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListOutput {
+	return i.ToGetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArgs) ToGetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListOutputWithContext(ctx context.Context) GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListOutput)
+}
+
+// GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayInput is an input type that accepts GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArray and GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayInput` via:
+//
+//          GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArray{ GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArgs{...} }
+type GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayOutput() GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayOutput
+	ToGetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayOutputWithContext(context.Context) GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayOutput
+}
+
+type GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArray []GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListInput
+
+func (GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList)(nil)).Elem()
+}
+
+func (i GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArray) ToGetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayOutput() GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayOutput {
+	return i.ToGetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArray) ToGetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayOutputWithContext(ctx context.Context) GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayOutput)
+}
+
+type GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList)(nil)).Elem()
+}
+
+func (o GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListOutput) ToGetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListOutput() GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListOutput {
+	return o
+}
+
+func (o GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListOutput) ToGetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListOutputWithContext(ctx context.Context) GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListOutput {
+	return o
+}
+
+// The number of OCPU cores available.
+func (o GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListOutput) CpuCoreCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList) int {
+		return v.CpuCoreCount
+	}).(pulumi.IntOutput)
+}
+
+// The amount of memory allocated for the VMDB System.
+func (o GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListOutput) MemoryInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList) float64 {
+		return v.MemoryInGbs
+	}).(pulumi.Float64Output)
+}
+
+// The network bandwidth of the VMDB system in gbps.
+func (o GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListOutput) NetworkBandwidthInGbps() pulumi.Float64Output {
+	return o.ApplyT(func(v GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList) float64 {
+		return v.NetworkBandwidthInGbps
+	}).(pulumi.Float64Output)
+}
+
+// IOPS for the VMDB System.
+func (o GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListOutput) NetworkIops() pulumi.Float64Output {
+	return o.ApplyT(func(v GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList) float64 {
+		return v.NetworkIops
+	}).(pulumi.Float64Output)
+}
+
+// Network throughput for the VMDB System.
+func (o GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListOutput) NetworkThroughputInMbps() pulumi.Float64Output {
+	return o.ApplyT(func(v GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList) float64 {
+		return v.NetworkThroughputInMbps
+	}).(pulumi.Float64Output)
+}
+
+type GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList)(nil)).Elem()
+}
+
+func (o GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayOutput) ToGetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayOutput() GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayOutput {
+	return o
+}
+
+func (o GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayOutput) ToGetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayOutputWithContext(ctx context.Context) GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayOutput {
+	return o
+}
+
+func (o GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayOutput) Index(i pulumi.IntInput) GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList {
+		return vs[0].([]GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList)[vs[1].(int)]
+	}).(GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListOutput)
+}
+
+type GetDbSystemComputePerformancesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDbSystemComputePerformancesFilterInput is an input type that accepts GetDbSystemComputePerformancesFilterArgs and GetDbSystemComputePerformancesFilterOutput values.
+// You can construct a concrete instance of `GetDbSystemComputePerformancesFilterInput` via:
+//
+//          GetDbSystemComputePerformancesFilterArgs{...}
+type GetDbSystemComputePerformancesFilterInput interface {
+	pulumi.Input
+
+	ToGetDbSystemComputePerformancesFilterOutput() GetDbSystemComputePerformancesFilterOutput
+	ToGetDbSystemComputePerformancesFilterOutputWithContext(context.Context) GetDbSystemComputePerformancesFilterOutput
+}
+
+type GetDbSystemComputePerformancesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDbSystemComputePerformancesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemComputePerformancesFilter)(nil)).Elem()
+}
+
+func (i GetDbSystemComputePerformancesFilterArgs) ToGetDbSystemComputePerformancesFilterOutput() GetDbSystemComputePerformancesFilterOutput {
+	return i.ToGetDbSystemComputePerformancesFilterOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemComputePerformancesFilterArgs) ToGetDbSystemComputePerformancesFilterOutputWithContext(ctx context.Context) GetDbSystemComputePerformancesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemComputePerformancesFilterOutput)
+}
+
+// GetDbSystemComputePerformancesFilterArrayInput is an input type that accepts GetDbSystemComputePerformancesFilterArray and GetDbSystemComputePerformancesFilterArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemComputePerformancesFilterArrayInput` via:
+//
+//          GetDbSystemComputePerformancesFilterArray{ GetDbSystemComputePerformancesFilterArgs{...} }
+type GetDbSystemComputePerformancesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemComputePerformancesFilterArrayOutput() GetDbSystemComputePerformancesFilterArrayOutput
+	ToGetDbSystemComputePerformancesFilterArrayOutputWithContext(context.Context) GetDbSystemComputePerformancesFilterArrayOutput
+}
+
+type GetDbSystemComputePerformancesFilterArray []GetDbSystemComputePerformancesFilterInput
+
+func (GetDbSystemComputePerformancesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemComputePerformancesFilter)(nil)).Elem()
+}
+
+func (i GetDbSystemComputePerformancesFilterArray) ToGetDbSystemComputePerformancesFilterArrayOutput() GetDbSystemComputePerformancesFilterArrayOutput {
+	return i.ToGetDbSystemComputePerformancesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemComputePerformancesFilterArray) ToGetDbSystemComputePerformancesFilterArrayOutputWithContext(ctx context.Context) GetDbSystemComputePerformancesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemComputePerformancesFilterArrayOutput)
+}
+
+type GetDbSystemComputePerformancesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemComputePerformancesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemComputePerformancesFilter)(nil)).Elem()
+}
+
+func (o GetDbSystemComputePerformancesFilterOutput) ToGetDbSystemComputePerformancesFilterOutput() GetDbSystemComputePerformancesFilterOutput {
+	return o
+}
+
+func (o GetDbSystemComputePerformancesFilterOutput) ToGetDbSystemComputePerformancesFilterOutputWithContext(ctx context.Context) GetDbSystemComputePerformancesFilterOutput {
+	return o
+}
+
+func (o GetDbSystemComputePerformancesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemComputePerformancesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemComputePerformancesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDbSystemComputePerformancesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDbSystemComputePerformancesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbSystemComputePerformancesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDbSystemComputePerformancesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemComputePerformancesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemComputePerformancesFilter)(nil)).Elem()
+}
+
+func (o GetDbSystemComputePerformancesFilterArrayOutput) ToGetDbSystemComputePerformancesFilterArrayOutput() GetDbSystemComputePerformancesFilterArrayOutput {
+	return o
+}
+
+func (o GetDbSystemComputePerformancesFilterArrayOutput) ToGetDbSystemComputePerformancesFilterArrayOutputWithContext(ctx context.Context) GetDbSystemComputePerformancesFilterArrayOutput {
+	return o
+}
+
+func (o GetDbSystemComputePerformancesFilterArrayOutput) Index(i pulumi.IntInput) GetDbSystemComputePerformancesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemComputePerformancesFilter {
+		return vs[0].([]GetDbSystemComputePerformancesFilter)[vs[1].(int)]
+	}).(GetDbSystemComputePerformancesFilterOutput)
+}
+
 type GetDbSystemHistoryEntriesFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -41597,6 +44805,8 @@ type GetDbSystemShapesDbSystemShape struct {
 	Shape string `pulumi:"shape"`
 	// The family of the shape used for the DB system.
 	ShapeFamily string `pulumi:"shapeFamily"`
+	// The shape type for the virtual machine DB system. Shape type is determined by CPU hardware. Valid values are `AMD` and `INTEL`.
+	ShapeType string `pulumi:"shapeType"`
 }
 
 // GetDbSystemShapesDbSystemShapeInput is an input type that accepts GetDbSystemShapesDbSystemShapeArgs and GetDbSystemShapesDbSystemShapeOutput values.
@@ -41655,6 +44865,8 @@ type GetDbSystemShapesDbSystemShapeArgs struct {
 	Shape pulumi.StringInput `pulumi:"shape"`
 	// The family of the shape used for the DB system.
 	ShapeFamily pulumi.StringInput `pulumi:"shapeFamily"`
+	// The shape type for the virtual machine DB system. Shape type is determined by CPU hardware. Valid values are `AMD` and `INTEL`.
+	ShapeType pulumi.StringInput `pulumi:"shapeType"`
 }
 
 func (GetDbSystemShapesDbSystemShapeArgs) ElementType() reflect.Type {
@@ -41815,6 +45027,11 @@ func (o GetDbSystemShapesDbSystemShapeOutput) ShapeFamily() pulumi.StringOutput 
 	return o.ApplyT(func(v GetDbSystemShapesDbSystemShape) string { return v.ShapeFamily }).(pulumi.StringOutput)
 }
 
+// The shape type for the virtual machine DB system. Shape type is determined by CPU hardware. Valid values are `AMD` and `INTEL`.
+func (o GetDbSystemShapesDbSystemShapeOutput) ShapeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemShapesDbSystemShape) string { return v.ShapeType }).(pulumi.StringOutput)
+}
+
 type GetDbSystemShapesDbSystemShapeArrayOutput struct{ *pulumi.OutputState }
 
 func (GetDbSystemShapesDbSystemShapeArrayOutput) ElementType() reflect.Type {
@@ -41944,6 +45161,913 @@ func (o GetDbSystemShapesFilterArrayOutput) Index(i pulumi.IntInput) GetDbSystem
 	}).(GetDbSystemShapesFilterOutput)
 }
 
+type GetDbSystemStoragePerformancesDbSystemStoragePerformance struct {
+	// List of storage performance for the DATA disks
+	DataStoragePerformanceLists []GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceList `pulumi:"dataStoragePerformanceLists"`
+	// List of storage performance for the RECO disks
+	RecoStoragePerformanceLists []GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceList `pulumi:"recoStoragePerformanceLists"`
+	// Optional. Filters the performance results by shape type.
+	ShapeType string `pulumi:"shapeType"`
+}
+
+// GetDbSystemStoragePerformancesDbSystemStoragePerformanceInput is an input type that accepts GetDbSystemStoragePerformancesDbSystemStoragePerformanceArgs and GetDbSystemStoragePerformancesDbSystemStoragePerformanceOutput values.
+// You can construct a concrete instance of `GetDbSystemStoragePerformancesDbSystemStoragePerformanceInput` via:
+//
+//          GetDbSystemStoragePerformancesDbSystemStoragePerformanceArgs{...}
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceInput interface {
+	pulumi.Input
+
+	ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceOutput
+	ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceOutputWithContext(context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceOutput
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceArgs struct {
+	// List of storage performance for the DATA disks
+	DataStoragePerformanceLists GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayInput `pulumi:"dataStoragePerformanceLists"`
+	// List of storage performance for the RECO disks
+	RecoStoragePerformanceLists GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayInput `pulumi:"recoStoragePerformanceLists"`
+	// Optional. Filters the performance results by shape type.
+	ShapeType pulumi.StringInput `pulumi:"shapeType"`
+}
+
+func (GetDbSystemStoragePerformancesDbSystemStoragePerformanceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformance)(nil)).Elem()
+}
+
+func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceArgs) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceOutput {
+	return i.ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceArgs) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemStoragePerformancesDbSystemStoragePerformanceOutput)
+}
+
+// GetDbSystemStoragePerformancesDbSystemStoragePerformanceArrayInput is an input type that accepts GetDbSystemStoragePerformancesDbSystemStoragePerformanceArray and GetDbSystemStoragePerformancesDbSystemStoragePerformanceArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemStoragePerformancesDbSystemStoragePerformanceArrayInput` via:
+//
+//          GetDbSystemStoragePerformancesDbSystemStoragePerformanceArray{ GetDbSystemStoragePerformancesDbSystemStoragePerformanceArgs{...} }
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceArrayOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceArrayOutput
+	ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceArrayOutputWithContext(context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceArrayOutput
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceArray []GetDbSystemStoragePerformancesDbSystemStoragePerformanceInput
+
+func (GetDbSystemStoragePerformancesDbSystemStoragePerformanceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemStoragePerformancesDbSystemStoragePerformance)(nil)).Elem()
+}
+
+func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceArray) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceArrayOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceArrayOutput {
+	return i.ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceArray) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceArrayOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemStoragePerformancesDbSystemStoragePerformanceArrayOutput)
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemStoragePerformancesDbSystemStoragePerformanceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformance)(nil)).Elem()
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceOutput) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceOutput {
+	return o
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceOutput) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceOutput {
+	return o
+}
+
+// List of storage performance for the DATA disks
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceOutput) DataStoragePerformanceLists() GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayOutput {
+	return o.ApplyT(func(v GetDbSystemStoragePerformancesDbSystemStoragePerformance) []GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceList {
+		return v.DataStoragePerformanceLists
+	}).(GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayOutput)
+}
+
+// List of storage performance for the RECO disks
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceOutput) RecoStoragePerformanceLists() GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayOutput {
+	return o.ApplyT(func(v GetDbSystemStoragePerformancesDbSystemStoragePerformance) []GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceList {
+		return v.RecoStoragePerformanceLists
+	}).(GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayOutput)
+}
+
+// Optional. Filters the performance results by shape type.
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceOutput) ShapeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemStoragePerformancesDbSystemStoragePerformance) string { return v.ShapeType }).(pulumi.StringOutput)
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemStoragePerformancesDbSystemStoragePerformanceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemStoragePerformancesDbSystemStoragePerformance)(nil)).Elem()
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceArrayOutput) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceArrayOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceArrayOutput {
+	return o
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceArrayOutput) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceArrayOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceArrayOutput {
+	return o
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceArrayOutput) Index(i pulumi.IntInput) GetDbSystemStoragePerformancesDbSystemStoragePerformanceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemStoragePerformancesDbSystemStoragePerformance {
+		return vs[0].([]GetDbSystemStoragePerformancesDbSystemStoragePerformance)[vs[1].(int)]
+	}).(GetDbSystemStoragePerformancesDbSystemStoragePerformanceOutput)
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceList struct {
+	// Representation of disk performance detail parameters.
+	BalancedDiskPerformances []GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformance `pulumi:"balancedDiskPerformances"`
+	// Representation of disk performance detail parameters.
+	HighDiskPerformances []GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformance `pulumi:"highDiskPerformances"`
+	// Size in GBs.
+	SizeInGbs int `pulumi:"sizeInGbs"`
+}
+
+// GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListInput is an input type that accepts GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArgs and GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListOutput values.
+// You can construct a concrete instance of `GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListInput` via:
+//
+//          GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArgs{...}
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListInput interface {
+	pulumi.Input
+
+	ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListOutput
+	ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListOutputWithContext(context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListOutput
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArgs struct {
+	// Representation of disk performance detail parameters.
+	BalancedDiskPerformances GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayInput `pulumi:"balancedDiskPerformances"`
+	// Representation of disk performance detail parameters.
+	HighDiskPerformances GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayInput `pulumi:"highDiskPerformances"`
+	// Size in GBs.
+	SizeInGbs pulumi.IntInput `pulumi:"sizeInGbs"`
+}
+
+func (GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceList)(nil)).Elem()
+}
+
+func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArgs) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListOutput {
+	return i.ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArgs) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListOutput)
+}
+
+// GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayInput is an input type that accepts GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArray and GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayInput` via:
+//
+//          GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArray{ GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArgs{...} }
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayOutput
+	ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayOutputWithContext(context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayOutput
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArray []GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListInput
+
+func (GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceList)(nil)).Elem()
+}
+
+func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArray) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayOutput {
+	return i.ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArray) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayOutput)
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceList)(nil)).Elem()
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListOutput) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListOutput {
+	return o
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListOutput) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListOutput {
+	return o
+}
+
+// Representation of disk performance detail parameters.
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListOutput) BalancedDiskPerformances() GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayOutput {
+	return o.ApplyT(func(v GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceList) []GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformance {
+		return v.BalancedDiskPerformances
+	}).(GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayOutput)
+}
+
+// Representation of disk performance detail parameters.
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListOutput) HighDiskPerformances() GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayOutput {
+	return o.ApplyT(func(v GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceList) []GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformance {
+		return v.HighDiskPerformances
+	}).(GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayOutput)
+}
+
+// Size in GBs.
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListOutput) SizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceList) int {
+		return v.SizeInGbs
+	}).(pulumi.IntOutput)
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceList)(nil)).Elem()
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayOutput) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayOutput {
+	return o
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayOutput) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayOutput {
+	return o
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayOutput) Index(i pulumi.IntInput) GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceList {
+		return vs[0].([]GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceList)[vs[1].(int)]
+	}).(GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListOutput)
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformance struct {
+	// Disk IOPS in thousands.
+	DiskIops float64 `pulumi:"diskIops"`
+	// Disk Throughput in Mbps.
+	DiskThroughputInMbps float64 `pulumi:"diskThroughputInMbps"`
+}
+
+// GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceInput is an input type that accepts GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArgs and GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceOutput values.
+// You can construct a concrete instance of `GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceInput` via:
+//
+//          GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArgs{...}
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceInput interface {
+	pulumi.Input
+
+	ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceOutput
+	ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceOutputWithContext(context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceOutput
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArgs struct {
+	// Disk IOPS in thousands.
+	DiskIops pulumi.Float64Input `pulumi:"diskIops"`
+	// Disk Throughput in Mbps.
+	DiskThroughputInMbps pulumi.Float64Input `pulumi:"diskThroughputInMbps"`
+}
+
+func (GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformance)(nil)).Elem()
+}
+
+func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArgs) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceOutput {
+	return i.ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArgs) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceOutput)
+}
+
+// GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayInput is an input type that accepts GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArray and GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayInput` via:
+//
+//          GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArray{ GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArgs{...} }
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayOutput
+	ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayOutputWithContext(context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayOutput
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArray []GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceInput
+
+func (GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformance)(nil)).Elem()
+}
+
+func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArray) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayOutput {
+	return i.ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArray) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayOutput)
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformance)(nil)).Elem()
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceOutput) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceOutput {
+	return o
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceOutput) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceOutput {
+	return o
+}
+
+// Disk IOPS in thousands.
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceOutput) DiskIops() pulumi.Float64Output {
+	return o.ApplyT(func(v GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformance) float64 {
+		return v.DiskIops
+	}).(pulumi.Float64Output)
+}
+
+// Disk Throughput in Mbps.
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceOutput) DiskThroughputInMbps() pulumi.Float64Output {
+	return o.ApplyT(func(v GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformance) float64 {
+		return v.DiskThroughputInMbps
+	}).(pulumi.Float64Output)
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformance)(nil)).Elem()
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayOutput) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayOutput {
+	return o
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayOutput) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayOutput {
+	return o
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayOutput) Index(i pulumi.IntInput) GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformance {
+		return vs[0].([]GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformance)[vs[1].(int)]
+	}).(GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceOutput)
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformance struct {
+	// Disk IOPS in thousands.
+	DiskIops float64 `pulumi:"diskIops"`
+	// Disk Throughput in Mbps.
+	DiskThroughputInMbps float64 `pulumi:"diskThroughputInMbps"`
+}
+
+// GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceInput is an input type that accepts GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArgs and GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceOutput values.
+// You can construct a concrete instance of `GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceInput` via:
+//
+//          GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArgs{...}
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceInput interface {
+	pulumi.Input
+
+	ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceOutput
+	ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceOutputWithContext(context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceOutput
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArgs struct {
+	// Disk IOPS in thousands.
+	DiskIops pulumi.Float64Input `pulumi:"diskIops"`
+	// Disk Throughput in Mbps.
+	DiskThroughputInMbps pulumi.Float64Input `pulumi:"diskThroughputInMbps"`
+}
+
+func (GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformance)(nil)).Elem()
+}
+
+func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArgs) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceOutput {
+	return i.ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArgs) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceOutput)
+}
+
+// GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayInput is an input type that accepts GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArray and GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayInput` via:
+//
+//          GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArray{ GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArgs{...} }
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayOutput
+	ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayOutputWithContext(context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayOutput
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArray []GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceInput
+
+func (GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformance)(nil)).Elem()
+}
+
+func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArray) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayOutput {
+	return i.ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArray) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayOutput)
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformance)(nil)).Elem()
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceOutput) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceOutput {
+	return o
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceOutput) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceOutput {
+	return o
+}
+
+// Disk IOPS in thousands.
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceOutput) DiskIops() pulumi.Float64Output {
+	return o.ApplyT(func(v GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformance) float64 {
+		return v.DiskIops
+	}).(pulumi.Float64Output)
+}
+
+// Disk Throughput in Mbps.
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceOutput) DiskThroughputInMbps() pulumi.Float64Output {
+	return o.ApplyT(func(v GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformance) float64 {
+		return v.DiskThroughputInMbps
+	}).(pulumi.Float64Output)
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformance)(nil)).Elem()
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayOutput) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayOutput {
+	return o
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayOutput) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayOutput {
+	return o
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayOutput) Index(i pulumi.IntInput) GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformance {
+		return vs[0].([]GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformance)[vs[1].(int)]
+	}).(GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceOutput)
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceList struct {
+	// Representation of disk performance detail parameters.
+	BalancedDiskPerformances []GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformance `pulumi:"balancedDiskPerformances"`
+	// Representation of disk performance detail parameters.
+	HighDiskPerformances []GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformance `pulumi:"highDiskPerformances"`
+	// Size in GBs.
+	SizeInGbs int `pulumi:"sizeInGbs"`
+}
+
+// GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListInput is an input type that accepts GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArgs and GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListOutput values.
+// You can construct a concrete instance of `GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListInput` via:
+//
+//          GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArgs{...}
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListInput interface {
+	pulumi.Input
+
+	ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListOutput
+	ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListOutputWithContext(context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListOutput
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArgs struct {
+	// Representation of disk performance detail parameters.
+	BalancedDiskPerformances GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayInput `pulumi:"balancedDiskPerformances"`
+	// Representation of disk performance detail parameters.
+	HighDiskPerformances GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayInput `pulumi:"highDiskPerformances"`
+	// Size in GBs.
+	SizeInGbs pulumi.IntInput `pulumi:"sizeInGbs"`
+}
+
+func (GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceList)(nil)).Elem()
+}
+
+func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArgs) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListOutput {
+	return i.ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArgs) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListOutput)
+}
+
+// GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayInput is an input type that accepts GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArray and GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayInput` via:
+//
+//          GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArray{ GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArgs{...} }
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayOutput
+	ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayOutputWithContext(context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayOutput
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArray []GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListInput
+
+func (GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceList)(nil)).Elem()
+}
+
+func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArray) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayOutput {
+	return i.ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArray) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayOutput)
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceList)(nil)).Elem()
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListOutput) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListOutput {
+	return o
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListOutput) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListOutput {
+	return o
+}
+
+// Representation of disk performance detail parameters.
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListOutput) BalancedDiskPerformances() GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayOutput {
+	return o.ApplyT(func(v GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceList) []GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformance {
+		return v.BalancedDiskPerformances
+	}).(GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayOutput)
+}
+
+// Representation of disk performance detail parameters.
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListOutput) HighDiskPerformances() GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayOutput {
+	return o.ApplyT(func(v GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceList) []GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformance {
+		return v.HighDiskPerformances
+	}).(GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayOutput)
+}
+
+// Size in GBs.
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListOutput) SizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceList) int {
+		return v.SizeInGbs
+	}).(pulumi.IntOutput)
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceList)(nil)).Elem()
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayOutput) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayOutput {
+	return o
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayOutput) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayOutput {
+	return o
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayOutput) Index(i pulumi.IntInput) GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceList {
+		return vs[0].([]GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceList)[vs[1].(int)]
+	}).(GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListOutput)
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformance struct {
+	// Disk IOPS in thousands.
+	DiskIops float64 `pulumi:"diskIops"`
+	// Disk Throughput in Mbps.
+	DiskThroughputInMbps float64 `pulumi:"diskThroughputInMbps"`
+}
+
+// GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceInput is an input type that accepts GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArgs and GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceOutput values.
+// You can construct a concrete instance of `GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceInput` via:
+//
+//          GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArgs{...}
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceInput interface {
+	pulumi.Input
+
+	ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceOutput
+	ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceOutputWithContext(context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceOutput
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArgs struct {
+	// Disk IOPS in thousands.
+	DiskIops pulumi.Float64Input `pulumi:"diskIops"`
+	// Disk Throughput in Mbps.
+	DiskThroughputInMbps pulumi.Float64Input `pulumi:"diskThroughputInMbps"`
+}
+
+func (GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformance)(nil)).Elem()
+}
+
+func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArgs) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceOutput {
+	return i.ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArgs) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceOutput)
+}
+
+// GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayInput is an input type that accepts GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArray and GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayInput` via:
+//
+//          GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArray{ GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArgs{...} }
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayOutput
+	ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayOutputWithContext(context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayOutput
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArray []GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceInput
+
+func (GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformance)(nil)).Elem()
+}
+
+func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArray) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayOutput {
+	return i.ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArray) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayOutput)
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformance)(nil)).Elem()
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceOutput) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceOutput {
+	return o
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceOutput) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceOutput {
+	return o
+}
+
+// Disk IOPS in thousands.
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceOutput) DiskIops() pulumi.Float64Output {
+	return o.ApplyT(func(v GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformance) float64 {
+		return v.DiskIops
+	}).(pulumi.Float64Output)
+}
+
+// Disk Throughput in Mbps.
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceOutput) DiskThroughputInMbps() pulumi.Float64Output {
+	return o.ApplyT(func(v GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformance) float64 {
+		return v.DiskThroughputInMbps
+	}).(pulumi.Float64Output)
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformance)(nil)).Elem()
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayOutput) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayOutput {
+	return o
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayOutput) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayOutput {
+	return o
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayOutput) Index(i pulumi.IntInput) GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformance {
+		return vs[0].([]GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformance)[vs[1].(int)]
+	}).(GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceOutput)
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformance struct {
+	// Disk IOPS in thousands.
+	DiskIops float64 `pulumi:"diskIops"`
+	// Disk Throughput in Mbps.
+	DiskThroughputInMbps float64 `pulumi:"diskThroughputInMbps"`
+}
+
+// GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceInput is an input type that accepts GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArgs and GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceOutput values.
+// You can construct a concrete instance of `GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceInput` via:
+//
+//          GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArgs{...}
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceInput interface {
+	pulumi.Input
+
+	ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceOutput
+	ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceOutputWithContext(context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceOutput
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArgs struct {
+	// Disk IOPS in thousands.
+	DiskIops pulumi.Float64Input `pulumi:"diskIops"`
+	// Disk Throughput in Mbps.
+	DiskThroughputInMbps pulumi.Float64Input `pulumi:"diskThroughputInMbps"`
+}
+
+func (GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformance)(nil)).Elem()
+}
+
+func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArgs) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceOutput {
+	return i.ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArgs) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceOutput)
+}
+
+// GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayInput is an input type that accepts GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArray and GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayInput` via:
+//
+//          GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArray{ GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArgs{...} }
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayOutput
+	ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayOutputWithContext(context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayOutput
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArray []GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceInput
+
+func (GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformance)(nil)).Elem()
+}
+
+func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArray) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayOutput {
+	return i.ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArray) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayOutput)
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformance)(nil)).Elem()
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceOutput) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceOutput {
+	return o
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceOutput) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceOutput {
+	return o
+}
+
+// Disk IOPS in thousands.
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceOutput) DiskIops() pulumi.Float64Output {
+	return o.ApplyT(func(v GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformance) float64 {
+		return v.DiskIops
+	}).(pulumi.Float64Output)
+}
+
+// Disk Throughput in Mbps.
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceOutput) DiskThroughputInMbps() pulumi.Float64Output {
+	return o.ApplyT(func(v GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformance) float64 {
+		return v.DiskThroughputInMbps
+	}).(pulumi.Float64Output)
+}
+
+type GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformance)(nil)).Elem()
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayOutput) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayOutput() GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayOutput {
+	return o
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayOutput) ToGetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayOutput {
+	return o
+}
+
+func (o GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayOutput) Index(i pulumi.IntInput) GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformance {
+		return vs[0].([]GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformance)[vs[1].(int)]
+	}).(GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceOutput)
+}
+
+type GetDbSystemStoragePerformancesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDbSystemStoragePerformancesFilterInput is an input type that accepts GetDbSystemStoragePerformancesFilterArgs and GetDbSystemStoragePerformancesFilterOutput values.
+// You can construct a concrete instance of `GetDbSystemStoragePerformancesFilterInput` via:
+//
+//          GetDbSystemStoragePerformancesFilterArgs{...}
+type GetDbSystemStoragePerformancesFilterInput interface {
+	pulumi.Input
+
+	ToGetDbSystemStoragePerformancesFilterOutput() GetDbSystemStoragePerformancesFilterOutput
+	ToGetDbSystemStoragePerformancesFilterOutputWithContext(context.Context) GetDbSystemStoragePerformancesFilterOutput
+}
+
+type GetDbSystemStoragePerformancesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDbSystemStoragePerformancesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemStoragePerformancesFilter)(nil)).Elem()
+}
+
+func (i GetDbSystemStoragePerformancesFilterArgs) ToGetDbSystemStoragePerformancesFilterOutput() GetDbSystemStoragePerformancesFilterOutput {
+	return i.ToGetDbSystemStoragePerformancesFilterOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemStoragePerformancesFilterArgs) ToGetDbSystemStoragePerformancesFilterOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemStoragePerformancesFilterOutput)
+}
+
+// GetDbSystemStoragePerformancesFilterArrayInput is an input type that accepts GetDbSystemStoragePerformancesFilterArray and GetDbSystemStoragePerformancesFilterArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemStoragePerformancesFilterArrayInput` via:
+//
+//          GetDbSystemStoragePerformancesFilterArray{ GetDbSystemStoragePerformancesFilterArgs{...} }
+type GetDbSystemStoragePerformancesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemStoragePerformancesFilterArrayOutput() GetDbSystemStoragePerformancesFilterArrayOutput
+	ToGetDbSystemStoragePerformancesFilterArrayOutputWithContext(context.Context) GetDbSystemStoragePerformancesFilterArrayOutput
+}
+
+type GetDbSystemStoragePerformancesFilterArray []GetDbSystemStoragePerformancesFilterInput
+
+func (GetDbSystemStoragePerformancesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemStoragePerformancesFilter)(nil)).Elem()
+}
+
+func (i GetDbSystemStoragePerformancesFilterArray) ToGetDbSystemStoragePerformancesFilterArrayOutput() GetDbSystemStoragePerformancesFilterArrayOutput {
+	return i.ToGetDbSystemStoragePerformancesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemStoragePerformancesFilterArray) ToGetDbSystemStoragePerformancesFilterArrayOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemStoragePerformancesFilterArrayOutput)
+}
+
+type GetDbSystemStoragePerformancesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemStoragePerformancesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemStoragePerformancesFilter)(nil)).Elem()
+}
+
+func (o GetDbSystemStoragePerformancesFilterOutput) ToGetDbSystemStoragePerformancesFilterOutput() GetDbSystemStoragePerformancesFilterOutput {
+	return o
+}
+
+func (o GetDbSystemStoragePerformancesFilterOutput) ToGetDbSystemStoragePerformancesFilterOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesFilterOutput {
+	return o
+}
+
+func (o GetDbSystemStoragePerformancesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemStoragePerformancesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemStoragePerformancesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDbSystemStoragePerformancesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDbSystemStoragePerformancesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbSystemStoragePerformancesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDbSystemStoragePerformancesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemStoragePerformancesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemStoragePerformancesFilter)(nil)).Elem()
+}
+
+func (o GetDbSystemStoragePerformancesFilterArrayOutput) ToGetDbSystemStoragePerformancesFilterArrayOutput() GetDbSystemStoragePerformancesFilterArrayOutput {
+	return o
+}
+
+func (o GetDbSystemStoragePerformancesFilterArrayOutput) ToGetDbSystemStoragePerformancesFilterArrayOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesFilterArrayOutput {
+	return o
+}
+
+func (o GetDbSystemStoragePerformancesFilterArrayOutput) Index(i pulumi.IntInput) GetDbSystemStoragePerformancesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemStoragePerformancesFilter {
+		return vs[0].([]GetDbSystemStoragePerformancesFilter)[vs[1].(int)]
+	}).(GetDbSystemStoragePerformancesFilterOutput)
+}
+
 type GetDbSystemsDbSystem struct {
 	// A filter to return only resources that match the given availability domain exactly.
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
@@ -41999,12 +46123,14 @@ type GetDbSystemsDbSystem struct {
 	MaintenanceWindowDetails []GetDbSystemsDbSystemMaintenanceWindowDetail `pulumi:"maintenanceWindowDetails"`
 	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindows []GetDbSystemsDbSystemMaintenanceWindow `pulumi:"maintenanceWindows"`
+	// Memory allocated to the DB system, in gigabytes.
+	MemorySizeInGbs int `pulumi:"memorySizeInGbs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
 	NextMaintenanceRunId string `pulumi:"nextMaintenanceRunId"`
 	// The number of nodes in the DB system. For RAC DB systems, the value is greater than 1.
 	NodeCount int `pulumi:"nodeCount"`
-	// A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-	// * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
 	NsgIds []string `pulumi:"nsgIds"`
 	// The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	PointInTimeDataDiskCloneTimestamp string `pulumi:"pointInTimeDataDiskCloneTimestamp"`
@@ -42030,6 +46156,8 @@ type GetDbSystemsDbSystem struct {
 	SshPublicKeys []string `pulumi:"sshPublicKeys"`
 	// A filter to return only resources that match the given lifecycle state exactly.
 	State string `pulumi:"state"`
+	// The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
+	StorageVolumePerformanceMode string `pulumi:"storageVolumePerformanceMode"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
 	SubnetId string `pulumi:"subnetId"`
 	// The date and time the DB system was created.
@@ -42110,12 +46238,14 @@ type GetDbSystemsDbSystemArgs struct {
 	MaintenanceWindowDetails GetDbSystemsDbSystemMaintenanceWindowDetailArrayInput `pulumi:"maintenanceWindowDetails"`
 	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindows GetDbSystemsDbSystemMaintenanceWindowArrayInput `pulumi:"maintenanceWindows"`
+	// Memory allocated to the DB system, in gigabytes.
+	MemorySizeInGbs pulumi.IntInput `pulumi:"memorySizeInGbs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
 	NextMaintenanceRunId pulumi.StringInput `pulumi:"nextMaintenanceRunId"`
 	// The number of nodes in the DB system. For RAC DB systems, the value is greater than 1.
 	NodeCount pulumi.IntInput `pulumi:"nodeCount"`
-	// A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-	// * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	PointInTimeDataDiskCloneTimestamp pulumi.StringInput `pulumi:"pointInTimeDataDiskCloneTimestamp"`
@@ -42141,6 +46271,8 @@ type GetDbSystemsDbSystemArgs struct {
 	SshPublicKeys pulumi.StringArrayInput `pulumi:"sshPublicKeys"`
 	// A filter to return only resources that match the given lifecycle state exactly.
 	State pulumi.StringInput `pulumi:"state"`
+	// The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
+	StorageVolumePerformanceMode pulumi.StringInput `pulumi:"storageVolumePerformanceMode"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 	// The date and time the DB system was created.
@@ -42349,6 +46481,11 @@ func (o GetDbSystemsDbSystemOutput) MaintenanceWindows() GetDbSystemsDbSystemMai
 	return o.ApplyT(func(v GetDbSystemsDbSystem) []GetDbSystemsDbSystemMaintenanceWindow { return v.MaintenanceWindows }).(GetDbSystemsDbSystemMaintenanceWindowArrayOutput)
 }
 
+// Memory allocated to the DB system, in gigabytes.
+func (o GetDbSystemsDbSystemOutput) MemorySizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) int { return v.MemorySizeInGbs }).(pulumi.IntOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
 func (o GetDbSystemsDbSystemOutput) NextMaintenanceRunId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystem) string { return v.NextMaintenanceRunId }).(pulumi.StringOutput)
@@ -42359,8 +46496,8 @@ func (o GetDbSystemsDbSystemOutput) NodeCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystem) int { return v.NodeCount }).(pulumi.IntOutput)
 }
 
-// A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-// * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
 func (o GetDbSystemsDbSystemOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystem) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
 }
@@ -42423,6 +46560,11 @@ func (o GetDbSystemsDbSystemOutput) SshPublicKeys() pulumi.StringArrayOutput {
 // A filter to return only resources that match the given lifecycle state exactly.
 func (o GetDbSystemsDbSystemOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
+func (o GetDbSystemsDbSystemOutput) StorageVolumePerformanceMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) string { return v.StorageVolumePerformanceMode }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
@@ -44434,6 +48576,283 @@ func (o GetDbSystemsFilterArrayOutput) Index(i pulumi.IntInput) GetDbSystemsFilt
 	}).(GetDbSystemsFilterOutput)
 }
 
+type GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry struct {
+	// The operating system upgrade action.
+	Action string `pulumi:"action"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the upgrade history entry.
+	Id string `pulumi:"id"`
+	// A descriptive text associated with the lifecycleState. Typically contains additional displayable text.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// A valid Oracle Grid Infrastructure (GI) software version.
+	NewGiVersion string `pulumi:"newGiVersion"`
+	// A valid Oracle Grid Infrastructure (GI) software version.
+	OldGiVersion string `pulumi:"oldGiVersion"`
+	// The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
+	SnapshotRetentionPeriodInDays int `pulumi:"snapshotRetentionPeriodInDays"`
+	// A filter to return only upgrade history entries that match the given lifecycle state exactly.
+	State string `pulumi:"state"`
+	// The date and time when the upgrade action completed
+	TimeEnded string `pulumi:"timeEnded"`
+	// The date and time when the upgrade action started.
+	TimeStarted string `pulumi:"timeStarted"`
+}
+
+// GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryInput is an input type that accepts GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArgs and GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput values.
+// You can construct a concrete instance of `GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryInput` via:
+//
+//          GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArgs{...}
+type GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput() GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput
+	ToGetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutputWithContext(context.Context) GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput
+}
+
+type GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArgs struct {
+	// The operating system upgrade action.
+	Action pulumi.StringInput `pulumi:"action"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the upgrade history entry.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A descriptive text associated with the lifecycleState. Typically contains additional displayable text.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// A valid Oracle Grid Infrastructure (GI) software version.
+	NewGiVersion pulumi.StringInput `pulumi:"newGiVersion"`
+	// A valid Oracle Grid Infrastructure (GI) software version.
+	OldGiVersion pulumi.StringInput `pulumi:"oldGiVersion"`
+	// The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
+	SnapshotRetentionPeriodInDays pulumi.IntInput `pulumi:"snapshotRetentionPeriodInDays"`
+	// A filter to return only upgrade history entries that match the given lifecycle state exactly.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time when the upgrade action completed
+	TimeEnded pulumi.StringInput `pulumi:"timeEnded"`
+	// The date and time when the upgrade action started.
+	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+}
+
+func (GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry)(nil)).Elem()
+}
+
+func (i GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArgs) ToGetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput() GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput {
+	return i.ToGetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArgs) ToGetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutputWithContext(ctx context.Context) GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput)
+}
+
+// GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArrayInput is an input type that accepts GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArray and GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArrayInput` via:
+//
+//          GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArray{ GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArgs{...} }
+type GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArrayOutput() GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArrayOutput
+	ToGetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArrayOutputWithContext(context.Context) GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArrayOutput
+}
+
+type GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArray []GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryInput
+
+func (GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry)(nil)).Elem()
+}
+
+func (i GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArray) ToGetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArrayOutput() GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArrayOutput {
+	return i.ToGetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArray) ToGetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArrayOutputWithContext(ctx context.Context) GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArrayOutput)
+}
+
+type GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry)(nil)).Elem()
+}
+
+func (o GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput) ToGetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput() GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput {
+	return o
+}
+
+func (o GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput) ToGetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutputWithContext(ctx context.Context) GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput {
+	return o
+}
+
+// The operating system upgrade action.
+func (o GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput) Action() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry) string { return v.Action }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the upgrade history entry.
+func (o GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A descriptive text associated with the lifecycleState. Typically contains additional displayable text.
+func (o GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// A valid Oracle Grid Infrastructure (GI) software version.
+func (o GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput) NewGiVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry) string { return v.NewGiVersion }).(pulumi.StringOutput)
+}
+
+// A valid Oracle Grid Infrastructure (GI) software version.
+func (o GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput) OldGiVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry) string { return v.OldGiVersion }).(pulumi.StringOutput)
+}
+
+// The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
+func (o GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput) SnapshotRetentionPeriodInDays() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry) int {
+		return v.SnapshotRetentionPeriodInDays
+	}).(pulumi.IntOutput)
+}
+
+// A filter to return only upgrade history entries that match the given lifecycle state exactly.
+func (o GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time when the upgrade action completed
+func (o GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput) TimeEnded() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry) string { return v.TimeEnded }).(pulumi.StringOutput)
+}
+
+// The date and time when the upgrade action started.
+func (o GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput) TimeStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry) string { return v.TimeStarted }).(pulumi.StringOutput)
+}
+
+type GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry)(nil)).Elem()
+}
+
+func (o GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArrayOutput) ToGetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArrayOutput() GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArrayOutput) ToGetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArrayOutputWithContext(ctx context.Context) GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArrayOutput) Index(i pulumi.IntInput) GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry {
+		return vs[0].([]GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry)[vs[1].(int)]
+	}).(GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput)
+}
+
+type GetDbSystemsUpgradeHistoryEntriesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDbSystemsUpgradeHistoryEntriesFilterInput is an input type that accepts GetDbSystemsUpgradeHistoryEntriesFilterArgs and GetDbSystemsUpgradeHistoryEntriesFilterOutput values.
+// You can construct a concrete instance of `GetDbSystemsUpgradeHistoryEntriesFilterInput` via:
+//
+//          GetDbSystemsUpgradeHistoryEntriesFilterArgs{...}
+type GetDbSystemsUpgradeHistoryEntriesFilterInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsUpgradeHistoryEntriesFilterOutput() GetDbSystemsUpgradeHistoryEntriesFilterOutput
+	ToGetDbSystemsUpgradeHistoryEntriesFilterOutputWithContext(context.Context) GetDbSystemsUpgradeHistoryEntriesFilterOutput
+}
+
+type GetDbSystemsUpgradeHistoryEntriesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDbSystemsUpgradeHistoryEntriesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsUpgradeHistoryEntriesFilter)(nil)).Elem()
+}
+
+func (i GetDbSystemsUpgradeHistoryEntriesFilterArgs) ToGetDbSystemsUpgradeHistoryEntriesFilterOutput() GetDbSystemsUpgradeHistoryEntriesFilterOutput {
+	return i.ToGetDbSystemsUpgradeHistoryEntriesFilterOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsUpgradeHistoryEntriesFilterArgs) ToGetDbSystemsUpgradeHistoryEntriesFilterOutputWithContext(ctx context.Context) GetDbSystemsUpgradeHistoryEntriesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsUpgradeHistoryEntriesFilterOutput)
+}
+
+// GetDbSystemsUpgradeHistoryEntriesFilterArrayInput is an input type that accepts GetDbSystemsUpgradeHistoryEntriesFilterArray and GetDbSystemsUpgradeHistoryEntriesFilterArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemsUpgradeHistoryEntriesFilterArrayInput` via:
+//
+//          GetDbSystemsUpgradeHistoryEntriesFilterArray{ GetDbSystemsUpgradeHistoryEntriesFilterArgs{...} }
+type GetDbSystemsUpgradeHistoryEntriesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsUpgradeHistoryEntriesFilterArrayOutput() GetDbSystemsUpgradeHistoryEntriesFilterArrayOutput
+	ToGetDbSystemsUpgradeHistoryEntriesFilterArrayOutputWithContext(context.Context) GetDbSystemsUpgradeHistoryEntriesFilterArrayOutput
+}
+
+type GetDbSystemsUpgradeHistoryEntriesFilterArray []GetDbSystemsUpgradeHistoryEntriesFilterInput
+
+func (GetDbSystemsUpgradeHistoryEntriesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsUpgradeHistoryEntriesFilter)(nil)).Elem()
+}
+
+func (i GetDbSystemsUpgradeHistoryEntriesFilterArray) ToGetDbSystemsUpgradeHistoryEntriesFilterArrayOutput() GetDbSystemsUpgradeHistoryEntriesFilterArrayOutput {
+	return i.ToGetDbSystemsUpgradeHistoryEntriesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsUpgradeHistoryEntriesFilterArray) ToGetDbSystemsUpgradeHistoryEntriesFilterArrayOutputWithContext(ctx context.Context) GetDbSystemsUpgradeHistoryEntriesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsUpgradeHistoryEntriesFilterArrayOutput)
+}
+
+type GetDbSystemsUpgradeHistoryEntriesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsUpgradeHistoryEntriesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsUpgradeHistoryEntriesFilter)(nil)).Elem()
+}
+
+func (o GetDbSystemsUpgradeHistoryEntriesFilterOutput) ToGetDbSystemsUpgradeHistoryEntriesFilterOutput() GetDbSystemsUpgradeHistoryEntriesFilterOutput {
+	return o
+}
+
+func (o GetDbSystemsUpgradeHistoryEntriesFilterOutput) ToGetDbSystemsUpgradeHistoryEntriesFilterOutputWithContext(ctx context.Context) GetDbSystemsUpgradeHistoryEntriesFilterOutput {
+	return o
+}
+
+func (o GetDbSystemsUpgradeHistoryEntriesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsUpgradeHistoryEntriesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemsUpgradeHistoryEntriesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDbSystemsUpgradeHistoryEntriesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDbSystemsUpgradeHistoryEntriesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbSystemsUpgradeHistoryEntriesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDbSystemsUpgradeHistoryEntriesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsUpgradeHistoryEntriesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsUpgradeHistoryEntriesFilter)(nil)).Elem()
+}
+
+func (o GetDbSystemsUpgradeHistoryEntriesFilterArrayOutput) ToGetDbSystemsUpgradeHistoryEntriesFilterArrayOutput() GetDbSystemsUpgradeHistoryEntriesFilterArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsUpgradeHistoryEntriesFilterArrayOutput) ToGetDbSystemsUpgradeHistoryEntriesFilterArrayOutputWithContext(ctx context.Context) GetDbSystemsUpgradeHistoryEntriesFilterArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsUpgradeHistoryEntriesFilterArrayOutput) Index(i pulumi.IntInput) GetDbSystemsUpgradeHistoryEntriesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemsUpgradeHistoryEntriesFilter {
+		return vs[0].([]GetDbSystemsUpgradeHistoryEntriesFilter)[vs[1].(int)]
+	}).(GetDbSystemsUpgradeHistoryEntriesFilterOutput)
+}
+
 type GetDbVersionsDbVersion struct {
 	// True if this version of the Oracle Database software is the latest version for a release.
 	IsLatestForMajorVersion bool `pulumi:"isLatestForMajorVersion"`
@@ -45221,6 +49640,8 @@ type GetExadataInfrastructuresExadataInfrastructure struct {
 	Id string `pulumi:"id"`
 	// The CIDR block for the Exadata InfiniBand interconnect.
 	InfiniBandNetworkCidr string `pulumi:"infiniBandNetworkCidr"`
+	// Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
+	IsCpsOfflineReportEnabled bool `pulumi:"isCpsOfflineReportEnabled"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// A field to capture ‘Maintenance SLO Status’ for the Exadata infrastructure with values ‘OK’, ‘DEGRADED’. Default is ‘OK’ when the infrastructure is provisioned.
@@ -45311,6 +49732,8 @@ type GetExadataInfrastructuresExadataInfrastructureArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// The CIDR block for the Exadata InfiniBand interconnect.
 	InfiniBandNetworkCidr pulumi.StringInput `pulumi:"infiniBandNetworkCidr"`
+	// Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
+	IsCpsOfflineReportEnabled pulumi.BoolInput `pulumi:"isCpsOfflineReportEnabled"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// A field to capture ‘Maintenance SLO Status’ for the Exadata infrastructure with values ‘OK’, ‘DEGRADED’. Default is ‘OK’ when the infrastructure is provisioned.
@@ -45509,6 +49932,11 @@ func (o GetExadataInfrastructuresExadataInfrastructureOutput) Id() pulumi.String
 // The CIDR block for the Exadata InfiniBand interconnect.
 func (o GetExadataInfrastructuresExadataInfrastructureOutput) InfiniBandNetworkCidr() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) string { return v.InfiniBandNetworkCidr }).(pulumi.StringOutput)
+}
+
+// Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) IsCpsOfflineReportEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) bool { return v.IsCpsOfflineReportEnabled }).(pulumi.BoolOutput)
 }
 
 // Additional information about the current lifecycle state.
@@ -46463,6 +50891,112 @@ func (o GetExternalContainerDatabaseDatabaseManagementConfigArrayOutput) Index(i
 	}).(GetExternalContainerDatabaseDatabaseManagementConfigOutput)
 }
 
+type GetExternalContainerDatabaseStackMonitoringConfig struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+	StackMonitoringConnectorId string `pulumi:"stackMonitoringConnectorId"`
+	// The status of Stack Monitoring.
+	StackMonitoringStatus string `pulumi:"stackMonitoringStatus"`
+}
+
+// GetExternalContainerDatabaseStackMonitoringConfigInput is an input type that accepts GetExternalContainerDatabaseStackMonitoringConfigArgs and GetExternalContainerDatabaseStackMonitoringConfigOutput values.
+// You can construct a concrete instance of `GetExternalContainerDatabaseStackMonitoringConfigInput` via:
+//
+//          GetExternalContainerDatabaseStackMonitoringConfigArgs{...}
+type GetExternalContainerDatabaseStackMonitoringConfigInput interface {
+	pulumi.Input
+
+	ToGetExternalContainerDatabaseStackMonitoringConfigOutput() GetExternalContainerDatabaseStackMonitoringConfigOutput
+	ToGetExternalContainerDatabaseStackMonitoringConfigOutputWithContext(context.Context) GetExternalContainerDatabaseStackMonitoringConfigOutput
+}
+
+type GetExternalContainerDatabaseStackMonitoringConfigArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+	StackMonitoringConnectorId pulumi.StringInput `pulumi:"stackMonitoringConnectorId"`
+	// The status of Stack Monitoring.
+	StackMonitoringStatus pulumi.StringInput `pulumi:"stackMonitoringStatus"`
+}
+
+func (GetExternalContainerDatabaseStackMonitoringConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalContainerDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (i GetExternalContainerDatabaseStackMonitoringConfigArgs) ToGetExternalContainerDatabaseStackMonitoringConfigOutput() GetExternalContainerDatabaseStackMonitoringConfigOutput {
+	return i.ToGetExternalContainerDatabaseStackMonitoringConfigOutputWithContext(context.Background())
+}
+
+func (i GetExternalContainerDatabaseStackMonitoringConfigArgs) ToGetExternalContainerDatabaseStackMonitoringConfigOutputWithContext(ctx context.Context) GetExternalContainerDatabaseStackMonitoringConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalContainerDatabaseStackMonitoringConfigOutput)
+}
+
+// GetExternalContainerDatabaseStackMonitoringConfigArrayInput is an input type that accepts GetExternalContainerDatabaseStackMonitoringConfigArray and GetExternalContainerDatabaseStackMonitoringConfigArrayOutput values.
+// You can construct a concrete instance of `GetExternalContainerDatabaseStackMonitoringConfigArrayInput` via:
+//
+//          GetExternalContainerDatabaseStackMonitoringConfigArray{ GetExternalContainerDatabaseStackMonitoringConfigArgs{...} }
+type GetExternalContainerDatabaseStackMonitoringConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalContainerDatabaseStackMonitoringConfigArrayOutput() GetExternalContainerDatabaseStackMonitoringConfigArrayOutput
+	ToGetExternalContainerDatabaseStackMonitoringConfigArrayOutputWithContext(context.Context) GetExternalContainerDatabaseStackMonitoringConfigArrayOutput
+}
+
+type GetExternalContainerDatabaseStackMonitoringConfigArray []GetExternalContainerDatabaseStackMonitoringConfigInput
+
+func (GetExternalContainerDatabaseStackMonitoringConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalContainerDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (i GetExternalContainerDatabaseStackMonitoringConfigArray) ToGetExternalContainerDatabaseStackMonitoringConfigArrayOutput() GetExternalContainerDatabaseStackMonitoringConfigArrayOutput {
+	return i.ToGetExternalContainerDatabaseStackMonitoringConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalContainerDatabaseStackMonitoringConfigArray) ToGetExternalContainerDatabaseStackMonitoringConfigArrayOutputWithContext(ctx context.Context) GetExternalContainerDatabaseStackMonitoringConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalContainerDatabaseStackMonitoringConfigArrayOutput)
+}
+
+type GetExternalContainerDatabaseStackMonitoringConfigOutput struct{ *pulumi.OutputState }
+
+func (GetExternalContainerDatabaseStackMonitoringConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalContainerDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (o GetExternalContainerDatabaseStackMonitoringConfigOutput) ToGetExternalContainerDatabaseStackMonitoringConfigOutput() GetExternalContainerDatabaseStackMonitoringConfigOutput {
+	return o
+}
+
+func (o GetExternalContainerDatabaseStackMonitoringConfigOutput) ToGetExternalContainerDatabaseStackMonitoringConfigOutputWithContext(ctx context.Context) GetExternalContainerDatabaseStackMonitoringConfigOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+func (o GetExternalContainerDatabaseStackMonitoringConfigOutput) StackMonitoringConnectorId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalContainerDatabaseStackMonitoringConfig) string { return v.StackMonitoringConnectorId }).(pulumi.StringOutput)
+}
+
+// The status of Stack Monitoring.
+func (o GetExternalContainerDatabaseStackMonitoringConfigOutput) StackMonitoringStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalContainerDatabaseStackMonitoringConfig) string { return v.StackMonitoringStatus }).(pulumi.StringOutput)
+}
+
+type GetExternalContainerDatabaseStackMonitoringConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalContainerDatabaseStackMonitoringConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalContainerDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (o GetExternalContainerDatabaseStackMonitoringConfigArrayOutput) ToGetExternalContainerDatabaseStackMonitoringConfigArrayOutput() GetExternalContainerDatabaseStackMonitoringConfigArrayOutput {
+	return o
+}
+
+func (o GetExternalContainerDatabaseStackMonitoringConfigArrayOutput) ToGetExternalContainerDatabaseStackMonitoringConfigArrayOutputWithContext(ctx context.Context) GetExternalContainerDatabaseStackMonitoringConfigArrayOutput {
+	return o
+}
+
+func (o GetExternalContainerDatabaseStackMonitoringConfigArrayOutput) Index(i pulumi.IntInput) GetExternalContainerDatabaseStackMonitoringConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalContainerDatabaseStackMonitoringConfig {
+		return vs[0].([]GetExternalContainerDatabaseStackMonitoringConfig)[vs[1].(int)]
+	}).(GetExternalContainerDatabaseStackMonitoringConfigOutput)
+}
+
 type GetExternalContainerDatabasesExternalContainerDatabase struct {
 	// The character set of the external database.
 	CharacterSet string `pulumi:"characterSet"`
@@ -46494,6 +51028,8 @@ type GetExternalContainerDatabasesExternalContainerDatabase struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The national character of the external database.
 	NcharacterSet string `pulumi:"ncharacterSet"`
+	// The configuration of Stack Monitoring for the external database.
+	StackMonitoringConfigs []GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfig `pulumi:"stackMonitoringConfigs"`
 	// A filter to return only resources that match the specified lifecycle state.
 	State string `pulumi:"state"`
 	// The date and time the database was created.
@@ -46544,6 +51080,8 @@ type GetExternalContainerDatabasesExternalContainerDatabaseArgs struct {
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// The national character of the external database.
 	NcharacterSet pulumi.StringInput `pulumi:"ncharacterSet"`
+	// The configuration of Stack Monitoring for the external database.
+	StackMonitoringConfigs GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayInput `pulumi:"stackMonitoringConfigs"`
 	// A filter to return only resources that match the specified lifecycle state.
 	State pulumi.StringInput `pulumi:"state"`
 	// The date and time the database was created.
@@ -46682,6 +51220,13 @@ func (o GetExternalContainerDatabasesExternalContainerDatabaseOutput) LifecycleD
 // The national character of the external database.
 func (o GetExternalContainerDatabasesExternalContainerDatabaseOutput) NcharacterSet() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalContainerDatabasesExternalContainerDatabase) string { return v.NcharacterSet }).(pulumi.StringOutput)
+}
+
+// The configuration of Stack Monitoring for the external database.
+func (o GetExternalContainerDatabasesExternalContainerDatabaseOutput) StackMonitoringConfigs() GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayOutput {
+	return o.ApplyT(func(v GetExternalContainerDatabasesExternalContainerDatabase) []GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfig {
+		return v.StackMonitoringConfigs
+	}).(GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayOutput)
 }
 
 // A filter to return only resources that match the specified lifecycle state.
@@ -46840,6 +51385,116 @@ func (o GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagement
 	}).(GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigOutput)
 }
 
+type GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfig struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+	StackMonitoringConnectorId string `pulumi:"stackMonitoringConnectorId"`
+	// The status of Stack Monitoring.
+	StackMonitoringStatus string `pulumi:"stackMonitoringStatus"`
+}
+
+// GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigInput is an input type that accepts GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArgs and GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigOutput values.
+// You can construct a concrete instance of `GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigInput` via:
+//
+//          GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArgs{...}
+type GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigInput interface {
+	pulumi.Input
+
+	ToGetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigOutput() GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigOutput
+	ToGetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigOutputWithContext(context.Context) GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigOutput
+}
+
+type GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+	StackMonitoringConnectorId pulumi.StringInput `pulumi:"stackMonitoringConnectorId"`
+	// The status of Stack Monitoring.
+	StackMonitoringStatus pulumi.StringInput `pulumi:"stackMonitoringStatus"`
+}
+
+func (GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (i GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArgs) ToGetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigOutput() GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigOutput {
+	return i.ToGetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigOutputWithContext(context.Background())
+}
+
+func (i GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArgs) ToGetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigOutputWithContext(ctx context.Context) GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigOutput)
+}
+
+// GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayInput is an input type that accepts GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArray and GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayOutput values.
+// You can construct a concrete instance of `GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayInput` via:
+//
+//          GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArray{ GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArgs{...} }
+type GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayOutput() GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayOutput
+	ToGetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayOutputWithContext(context.Context) GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayOutput
+}
+
+type GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArray []GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigInput
+
+func (GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (i GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArray) ToGetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayOutput() GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayOutput {
+	return i.ToGetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArray) ToGetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayOutputWithContext(ctx context.Context) GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayOutput)
+}
+
+type GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigOutput struct{ *pulumi.OutputState }
+
+func (GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (o GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigOutput) ToGetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigOutput() GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigOutput {
+	return o
+}
+
+func (o GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigOutput) ToGetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigOutputWithContext(ctx context.Context) GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+func (o GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigOutput) StackMonitoringConnectorId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfig) string {
+		return v.StackMonitoringConnectorId
+	}).(pulumi.StringOutput)
+}
+
+// The status of Stack Monitoring.
+func (o GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigOutput) StackMonitoringStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfig) string {
+		return v.StackMonitoringStatus
+	}).(pulumi.StringOutput)
+}
+
+type GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (o GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayOutput) ToGetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayOutput() GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayOutput {
+	return o
+}
+
+func (o GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayOutput) ToGetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayOutputWithContext(ctx context.Context) GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayOutput {
+	return o
+}
+
+func (o GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayOutput) Index(i pulumi.IntInput) GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfig {
+		return vs[0].([]GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfig)[vs[1].(int)]
+	}).(GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigOutput)
+}
+
 type GetExternalContainerDatabasesFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -46955,6 +51610,8 @@ type GetExternalDatabaseConnectorConnectionCredential struct {
 	Password string `pulumi:"password"`
 	// The role of the user that will be connecting to the database.
 	Role string `pulumi:"role"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+	SslSecretId string `pulumi:"sslSecretId"`
 	// The username that will be used to connect to the database.
 	Username string `pulumi:"username"`
 }
@@ -46979,6 +51636,8 @@ type GetExternalDatabaseConnectorConnectionCredentialArgs struct {
 	Password pulumi.StringInput `pulumi:"password"`
 	// The role of the user that will be connecting to the database.
 	Role pulumi.StringInput `pulumi:"role"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+	SslSecretId pulumi.StringInput `pulumi:"sslSecretId"`
 	// The username that will be used to connect to the database.
 	Username pulumi.StringInput `pulumi:"username"`
 }
@@ -47052,6 +51711,11 @@ func (o GetExternalDatabaseConnectorConnectionCredentialOutput) Password() pulum
 // The role of the user that will be connecting to the database.
 func (o GetExternalDatabaseConnectorConnectionCredentialOutput) Role() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalDatabaseConnectorConnectionCredential) string { return v.Role }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+func (o GetExternalDatabaseConnectorConnectionCredentialOutput) SslSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDatabaseConnectorConnectionCredential) string { return v.SslSecretId }).(pulumi.StringOutput)
 }
 
 // The username that will be used to connect to the database.
@@ -47445,6 +52109,8 @@ type GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredential 
 	Password string `pulumi:"password"`
 	// The role of the user that will be connecting to the database.
 	Role string `pulumi:"role"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+	SslSecretId string `pulumi:"sslSecretId"`
 	// The username that will be used to connect to the database.
 	Username string `pulumi:"username"`
 }
@@ -47469,6 +52135,8 @@ type GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialA
 	Password pulumi.StringInput `pulumi:"password"`
 	// The role of the user that will be connecting to the database.
 	Role pulumi.StringInput `pulumi:"role"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+	SslSecretId pulumi.StringInput `pulumi:"sslSecretId"`
 	// The username that will be used to connect to the database.
 	Username pulumi.StringInput `pulumi:"username"`
 }
@@ -47549,6 +52217,13 @@ func (o GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredenti
 func (o GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialOutput) Role() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredential) string {
 		return v.Role
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+func (o GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialOutput) SslSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredential) string {
+		return v.SslSecretId
 	}).(pulumi.StringOutput)
 }
 
@@ -48044,6 +52719,114 @@ func (o GetExternalNonContainerDatabaseOperationsInsightsConfigArrayOutput) Inde
 	}).(GetExternalNonContainerDatabaseOperationsInsightsConfigOutput)
 }
 
+type GetExternalNonContainerDatabaseStackMonitoringConfig struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+	StackMonitoringConnectorId string `pulumi:"stackMonitoringConnectorId"`
+	// The status of Stack Monitoring.
+	StackMonitoringStatus string `pulumi:"stackMonitoringStatus"`
+}
+
+// GetExternalNonContainerDatabaseStackMonitoringConfigInput is an input type that accepts GetExternalNonContainerDatabaseStackMonitoringConfigArgs and GetExternalNonContainerDatabaseStackMonitoringConfigOutput values.
+// You can construct a concrete instance of `GetExternalNonContainerDatabaseStackMonitoringConfigInput` via:
+//
+//          GetExternalNonContainerDatabaseStackMonitoringConfigArgs{...}
+type GetExternalNonContainerDatabaseStackMonitoringConfigInput interface {
+	pulumi.Input
+
+	ToGetExternalNonContainerDatabaseStackMonitoringConfigOutput() GetExternalNonContainerDatabaseStackMonitoringConfigOutput
+	ToGetExternalNonContainerDatabaseStackMonitoringConfigOutputWithContext(context.Context) GetExternalNonContainerDatabaseStackMonitoringConfigOutput
+}
+
+type GetExternalNonContainerDatabaseStackMonitoringConfigArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+	StackMonitoringConnectorId pulumi.StringInput `pulumi:"stackMonitoringConnectorId"`
+	// The status of Stack Monitoring.
+	StackMonitoringStatus pulumi.StringInput `pulumi:"stackMonitoringStatus"`
+}
+
+func (GetExternalNonContainerDatabaseStackMonitoringConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalNonContainerDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (i GetExternalNonContainerDatabaseStackMonitoringConfigArgs) ToGetExternalNonContainerDatabaseStackMonitoringConfigOutput() GetExternalNonContainerDatabaseStackMonitoringConfigOutput {
+	return i.ToGetExternalNonContainerDatabaseStackMonitoringConfigOutputWithContext(context.Background())
+}
+
+func (i GetExternalNonContainerDatabaseStackMonitoringConfigArgs) ToGetExternalNonContainerDatabaseStackMonitoringConfigOutputWithContext(ctx context.Context) GetExternalNonContainerDatabaseStackMonitoringConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalNonContainerDatabaseStackMonitoringConfigOutput)
+}
+
+// GetExternalNonContainerDatabaseStackMonitoringConfigArrayInput is an input type that accepts GetExternalNonContainerDatabaseStackMonitoringConfigArray and GetExternalNonContainerDatabaseStackMonitoringConfigArrayOutput values.
+// You can construct a concrete instance of `GetExternalNonContainerDatabaseStackMonitoringConfigArrayInput` via:
+//
+//          GetExternalNonContainerDatabaseStackMonitoringConfigArray{ GetExternalNonContainerDatabaseStackMonitoringConfigArgs{...} }
+type GetExternalNonContainerDatabaseStackMonitoringConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalNonContainerDatabaseStackMonitoringConfigArrayOutput() GetExternalNonContainerDatabaseStackMonitoringConfigArrayOutput
+	ToGetExternalNonContainerDatabaseStackMonitoringConfigArrayOutputWithContext(context.Context) GetExternalNonContainerDatabaseStackMonitoringConfigArrayOutput
+}
+
+type GetExternalNonContainerDatabaseStackMonitoringConfigArray []GetExternalNonContainerDatabaseStackMonitoringConfigInput
+
+func (GetExternalNonContainerDatabaseStackMonitoringConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalNonContainerDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (i GetExternalNonContainerDatabaseStackMonitoringConfigArray) ToGetExternalNonContainerDatabaseStackMonitoringConfigArrayOutput() GetExternalNonContainerDatabaseStackMonitoringConfigArrayOutput {
+	return i.ToGetExternalNonContainerDatabaseStackMonitoringConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalNonContainerDatabaseStackMonitoringConfigArray) ToGetExternalNonContainerDatabaseStackMonitoringConfigArrayOutputWithContext(ctx context.Context) GetExternalNonContainerDatabaseStackMonitoringConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalNonContainerDatabaseStackMonitoringConfigArrayOutput)
+}
+
+type GetExternalNonContainerDatabaseStackMonitoringConfigOutput struct{ *pulumi.OutputState }
+
+func (GetExternalNonContainerDatabaseStackMonitoringConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalNonContainerDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (o GetExternalNonContainerDatabaseStackMonitoringConfigOutput) ToGetExternalNonContainerDatabaseStackMonitoringConfigOutput() GetExternalNonContainerDatabaseStackMonitoringConfigOutput {
+	return o
+}
+
+func (o GetExternalNonContainerDatabaseStackMonitoringConfigOutput) ToGetExternalNonContainerDatabaseStackMonitoringConfigOutputWithContext(ctx context.Context) GetExternalNonContainerDatabaseStackMonitoringConfigOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+func (o GetExternalNonContainerDatabaseStackMonitoringConfigOutput) StackMonitoringConnectorId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalNonContainerDatabaseStackMonitoringConfig) string {
+		return v.StackMonitoringConnectorId
+	}).(pulumi.StringOutput)
+}
+
+// The status of Stack Monitoring.
+func (o GetExternalNonContainerDatabaseStackMonitoringConfigOutput) StackMonitoringStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalNonContainerDatabaseStackMonitoringConfig) string { return v.StackMonitoringStatus }).(pulumi.StringOutput)
+}
+
+type GetExternalNonContainerDatabaseStackMonitoringConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalNonContainerDatabaseStackMonitoringConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalNonContainerDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (o GetExternalNonContainerDatabaseStackMonitoringConfigArrayOutput) ToGetExternalNonContainerDatabaseStackMonitoringConfigArrayOutput() GetExternalNonContainerDatabaseStackMonitoringConfigArrayOutput {
+	return o
+}
+
+func (o GetExternalNonContainerDatabaseStackMonitoringConfigArrayOutput) ToGetExternalNonContainerDatabaseStackMonitoringConfigArrayOutputWithContext(ctx context.Context) GetExternalNonContainerDatabaseStackMonitoringConfigArrayOutput {
+	return o
+}
+
+func (o GetExternalNonContainerDatabaseStackMonitoringConfigArrayOutput) Index(i pulumi.IntInput) GetExternalNonContainerDatabaseStackMonitoringConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalNonContainerDatabaseStackMonitoringConfig {
+		return vs[0].([]GetExternalNonContainerDatabaseStackMonitoringConfig)[vs[1].(int)]
+	}).(GetExternalNonContainerDatabaseStackMonitoringConfigOutput)
+}
+
 type GetExternalNonContainerDatabasesExternalNonContainerDatabase struct {
 	// The character set of the external database.
 	CharacterSet string `pulumi:"characterSet"`
@@ -48077,6 +52860,8 @@ type GetExternalNonContainerDatabasesExternalNonContainerDatabase struct {
 	NcharacterSet string `pulumi:"ncharacterSet"`
 	// The configuration of Operations Insights for the external database
 	OperationsInsightsConfigs []GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfig `pulumi:"operationsInsightsConfigs"`
+	// The configuration of Stack Monitoring for the external database.
+	StackMonitoringConfigs []GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfig `pulumi:"stackMonitoringConfigs"`
 	// A filter to return only resources that match the specified lifecycle state.
 	State string `pulumi:"state"`
 	// The date and time the database was created.
@@ -48129,6 +52914,8 @@ type GetExternalNonContainerDatabasesExternalNonContainerDatabaseArgs struct {
 	NcharacterSet pulumi.StringInput `pulumi:"ncharacterSet"`
 	// The configuration of Operations Insights for the external database
 	OperationsInsightsConfigs GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArrayInput `pulumi:"operationsInsightsConfigs"`
+	// The configuration of Stack Monitoring for the external database.
+	StackMonitoringConfigs GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayInput `pulumi:"stackMonitoringConfigs"`
 	// A filter to return only resources that match the specified lifecycle state.
 	State pulumi.StringInput `pulumi:"state"`
 	// The date and time the database was created.
@@ -48276,6 +53063,13 @@ func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseOutput) Oper
 	return o.ApplyT(func(v GetExternalNonContainerDatabasesExternalNonContainerDatabase) []GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfig {
 		return v.OperationsInsightsConfigs
 	}).(GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArrayOutput)
+}
+
+// The configuration of Stack Monitoring for the external database.
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseOutput) StackMonitoringConfigs() GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayOutput {
+	return o.ApplyT(func(v GetExternalNonContainerDatabasesExternalNonContainerDatabase) []GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfig {
+		return v.StackMonitoringConfigs
+	}).(GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayOutput)
 }
 
 // A filter to return only resources that match the specified lifecycle state.
@@ -48542,6 +53336,116 @@ func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsIn
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfig {
 		return vs[0].([]GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfig)[vs[1].(int)]
 	}).(GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigOutput)
+}
+
+type GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfig struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+	StackMonitoringConnectorId string `pulumi:"stackMonitoringConnectorId"`
+	// The status of Stack Monitoring.
+	StackMonitoringStatus string `pulumi:"stackMonitoringStatus"`
+}
+
+// GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigInput is an input type that accepts GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArgs and GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigOutput values.
+// You can construct a concrete instance of `GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigInput` via:
+//
+//          GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArgs{...}
+type GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigInput interface {
+	pulumi.Input
+
+	ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigOutput() GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigOutput
+	ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigOutputWithContext(context.Context) GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigOutput
+}
+
+type GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+	StackMonitoringConnectorId pulumi.StringInput `pulumi:"stackMonitoringConnectorId"`
+	// The status of Stack Monitoring.
+	StackMonitoringStatus pulumi.StringInput `pulumi:"stackMonitoringStatus"`
+}
+
+func (GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (i GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArgs) ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigOutput() GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigOutput {
+	return i.ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigOutputWithContext(context.Background())
+}
+
+func (i GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArgs) ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigOutputWithContext(ctx context.Context) GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigOutput)
+}
+
+// GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayInput is an input type that accepts GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArray and GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayOutput values.
+// You can construct a concrete instance of `GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayInput` via:
+//
+//          GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArray{ GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArgs{...} }
+type GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayOutput() GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayOutput
+	ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayOutputWithContext(context.Context) GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayOutput
+}
+
+type GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArray []GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigInput
+
+func (GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (i GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArray) ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayOutput() GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayOutput {
+	return i.ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArray) ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayOutputWithContext(ctx context.Context) GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayOutput)
+}
+
+type GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigOutput struct{ *pulumi.OutputState }
+
+func (GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigOutput) ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigOutput() GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigOutput {
+	return o
+}
+
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigOutput) ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigOutputWithContext(ctx context.Context) GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigOutput) StackMonitoringConnectorId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfig) string {
+		return v.StackMonitoringConnectorId
+	}).(pulumi.StringOutput)
+}
+
+// The status of Stack Monitoring.
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigOutput) StackMonitoringStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfig) string {
+		return v.StackMonitoringStatus
+	}).(pulumi.StringOutput)
+}
+
+type GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayOutput) ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayOutput() GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayOutput {
+	return o
+}
+
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayOutput) ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayOutputWithContext(ctx context.Context) GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayOutput {
+	return o
+}
+
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayOutput) Index(i pulumi.IntInput) GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfig {
+		return vs[0].([]GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfig)[vs[1].(int)]
+	}).(GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigOutput)
 }
 
 type GetExternalNonContainerDatabasesFilter struct {
@@ -48875,6 +53779,112 @@ func (o GetExternalPluggableDatabaseOperationsInsightsConfigArrayOutput) Index(i
 	}).(GetExternalPluggableDatabaseOperationsInsightsConfigOutput)
 }
 
+type GetExternalPluggableDatabaseStackMonitoringConfig struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+	StackMonitoringConnectorId string `pulumi:"stackMonitoringConnectorId"`
+	// The status of Stack Monitoring.
+	StackMonitoringStatus string `pulumi:"stackMonitoringStatus"`
+}
+
+// GetExternalPluggableDatabaseStackMonitoringConfigInput is an input type that accepts GetExternalPluggableDatabaseStackMonitoringConfigArgs and GetExternalPluggableDatabaseStackMonitoringConfigOutput values.
+// You can construct a concrete instance of `GetExternalPluggableDatabaseStackMonitoringConfigInput` via:
+//
+//          GetExternalPluggableDatabaseStackMonitoringConfigArgs{...}
+type GetExternalPluggableDatabaseStackMonitoringConfigInput interface {
+	pulumi.Input
+
+	ToGetExternalPluggableDatabaseStackMonitoringConfigOutput() GetExternalPluggableDatabaseStackMonitoringConfigOutput
+	ToGetExternalPluggableDatabaseStackMonitoringConfigOutputWithContext(context.Context) GetExternalPluggableDatabaseStackMonitoringConfigOutput
+}
+
+type GetExternalPluggableDatabaseStackMonitoringConfigArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+	StackMonitoringConnectorId pulumi.StringInput `pulumi:"stackMonitoringConnectorId"`
+	// The status of Stack Monitoring.
+	StackMonitoringStatus pulumi.StringInput `pulumi:"stackMonitoringStatus"`
+}
+
+func (GetExternalPluggableDatabaseStackMonitoringConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalPluggableDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (i GetExternalPluggableDatabaseStackMonitoringConfigArgs) ToGetExternalPluggableDatabaseStackMonitoringConfigOutput() GetExternalPluggableDatabaseStackMonitoringConfigOutput {
+	return i.ToGetExternalPluggableDatabaseStackMonitoringConfigOutputWithContext(context.Background())
+}
+
+func (i GetExternalPluggableDatabaseStackMonitoringConfigArgs) ToGetExternalPluggableDatabaseStackMonitoringConfigOutputWithContext(ctx context.Context) GetExternalPluggableDatabaseStackMonitoringConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalPluggableDatabaseStackMonitoringConfigOutput)
+}
+
+// GetExternalPluggableDatabaseStackMonitoringConfigArrayInput is an input type that accepts GetExternalPluggableDatabaseStackMonitoringConfigArray and GetExternalPluggableDatabaseStackMonitoringConfigArrayOutput values.
+// You can construct a concrete instance of `GetExternalPluggableDatabaseStackMonitoringConfigArrayInput` via:
+//
+//          GetExternalPluggableDatabaseStackMonitoringConfigArray{ GetExternalPluggableDatabaseStackMonitoringConfigArgs{...} }
+type GetExternalPluggableDatabaseStackMonitoringConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalPluggableDatabaseStackMonitoringConfigArrayOutput() GetExternalPluggableDatabaseStackMonitoringConfigArrayOutput
+	ToGetExternalPluggableDatabaseStackMonitoringConfigArrayOutputWithContext(context.Context) GetExternalPluggableDatabaseStackMonitoringConfigArrayOutput
+}
+
+type GetExternalPluggableDatabaseStackMonitoringConfigArray []GetExternalPluggableDatabaseStackMonitoringConfigInput
+
+func (GetExternalPluggableDatabaseStackMonitoringConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalPluggableDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (i GetExternalPluggableDatabaseStackMonitoringConfigArray) ToGetExternalPluggableDatabaseStackMonitoringConfigArrayOutput() GetExternalPluggableDatabaseStackMonitoringConfigArrayOutput {
+	return i.ToGetExternalPluggableDatabaseStackMonitoringConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalPluggableDatabaseStackMonitoringConfigArray) ToGetExternalPluggableDatabaseStackMonitoringConfigArrayOutputWithContext(ctx context.Context) GetExternalPluggableDatabaseStackMonitoringConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalPluggableDatabaseStackMonitoringConfigArrayOutput)
+}
+
+type GetExternalPluggableDatabaseStackMonitoringConfigOutput struct{ *pulumi.OutputState }
+
+func (GetExternalPluggableDatabaseStackMonitoringConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalPluggableDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (o GetExternalPluggableDatabaseStackMonitoringConfigOutput) ToGetExternalPluggableDatabaseStackMonitoringConfigOutput() GetExternalPluggableDatabaseStackMonitoringConfigOutput {
+	return o
+}
+
+func (o GetExternalPluggableDatabaseStackMonitoringConfigOutput) ToGetExternalPluggableDatabaseStackMonitoringConfigOutputWithContext(ctx context.Context) GetExternalPluggableDatabaseStackMonitoringConfigOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+func (o GetExternalPluggableDatabaseStackMonitoringConfigOutput) StackMonitoringConnectorId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalPluggableDatabaseStackMonitoringConfig) string { return v.StackMonitoringConnectorId }).(pulumi.StringOutput)
+}
+
+// The status of Stack Monitoring.
+func (o GetExternalPluggableDatabaseStackMonitoringConfigOutput) StackMonitoringStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalPluggableDatabaseStackMonitoringConfig) string { return v.StackMonitoringStatus }).(pulumi.StringOutput)
+}
+
+type GetExternalPluggableDatabaseStackMonitoringConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalPluggableDatabaseStackMonitoringConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalPluggableDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (o GetExternalPluggableDatabaseStackMonitoringConfigArrayOutput) ToGetExternalPluggableDatabaseStackMonitoringConfigArrayOutput() GetExternalPluggableDatabaseStackMonitoringConfigArrayOutput {
+	return o
+}
+
+func (o GetExternalPluggableDatabaseStackMonitoringConfigArrayOutput) ToGetExternalPluggableDatabaseStackMonitoringConfigArrayOutputWithContext(ctx context.Context) GetExternalPluggableDatabaseStackMonitoringConfigArrayOutput {
+	return o
+}
+
+func (o GetExternalPluggableDatabaseStackMonitoringConfigArrayOutput) Index(i pulumi.IntInput) GetExternalPluggableDatabaseStackMonitoringConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalPluggableDatabaseStackMonitoringConfig {
+		return vs[0].([]GetExternalPluggableDatabaseStackMonitoringConfig)[vs[1].(int)]
+	}).(GetExternalPluggableDatabaseStackMonitoringConfigOutput)
+}
+
 type GetExternalPluggableDatabasesExternalPluggableDatabase struct {
 	// The character set of the external database.
 	CharacterSet string `pulumi:"characterSet"`
@@ -48912,6 +53922,8 @@ type GetExternalPluggableDatabasesExternalPluggableDatabase struct {
 	OperationsInsightsConfigs []GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfig `pulumi:"operationsInsightsConfigs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the the non-container database that was converted to a pluggable database to create this resource.
 	SourceId string `pulumi:"sourceId"`
+	// The configuration of Stack Monitoring for the external database.
+	StackMonitoringConfigs []GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig `pulumi:"stackMonitoringConfigs"`
 	// A filter to return only resources that match the specified lifecycle state.
 	State string `pulumi:"state"`
 	// The date and time the database was created.
@@ -48968,6 +53980,8 @@ type GetExternalPluggableDatabasesExternalPluggableDatabaseArgs struct {
 	OperationsInsightsConfigs GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArrayInput `pulumi:"operationsInsightsConfigs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the the non-container database that was converted to a pluggable database to create this resource.
 	SourceId pulumi.StringInput `pulumi:"sourceId"`
+	// The configuration of Stack Monitoring for the external database.
+	StackMonitoringConfigs GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayInput `pulumi:"stackMonitoringConfigs"`
 	// A filter to return only resources that match the specified lifecycle state.
 	State pulumi.StringInput `pulumi:"state"`
 	// The date and time the database was created.
@@ -49125,6 +54139,13 @@ func (o GetExternalPluggableDatabasesExternalPluggableDatabaseOutput) Operations
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the the non-container database that was converted to a pluggable database to create this resource.
 func (o GetExternalPluggableDatabasesExternalPluggableDatabaseOutput) SourceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalPluggableDatabasesExternalPluggableDatabase) string { return v.SourceId }).(pulumi.StringOutput)
+}
+
+// The configuration of Stack Monitoring for the external database.
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseOutput) StackMonitoringConfigs() GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayOutput {
+	return o.ApplyT(func(v GetExternalPluggableDatabasesExternalPluggableDatabase) []GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig {
+		return v.StackMonitoringConfigs
+	}).(GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayOutput)
 }
 
 // A filter to return only resources that match the specified lifecycle state.
@@ -49391,6 +54412,116 @@ func (o GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsights
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfig {
 		return vs[0].([]GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfig)[vs[1].(int)]
 	}).(GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigOutput)
+}
+
+type GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+	StackMonitoringConnectorId string `pulumi:"stackMonitoringConnectorId"`
+	// The status of Stack Monitoring.
+	StackMonitoringStatus string `pulumi:"stackMonitoringStatus"`
+}
+
+// GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigInput is an input type that accepts GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArgs and GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigOutput values.
+// You can construct a concrete instance of `GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigInput` via:
+//
+//          GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArgs{...}
+type GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigInput interface {
+	pulumi.Input
+
+	ToGetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigOutput() GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigOutput
+	ToGetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigOutputWithContext(context.Context) GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigOutput
+}
+
+type GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+	StackMonitoringConnectorId pulumi.StringInput `pulumi:"stackMonitoringConnectorId"`
+	// The status of Stack Monitoring.
+	StackMonitoringStatus pulumi.StringInput `pulumi:"stackMonitoringStatus"`
+}
+
+func (GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (i GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArgs) ToGetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigOutput() GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigOutput {
+	return i.ToGetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigOutputWithContext(context.Background())
+}
+
+func (i GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArgs) ToGetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigOutputWithContext(ctx context.Context) GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigOutput)
+}
+
+// GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayInput is an input type that accepts GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArray and GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayOutput values.
+// You can construct a concrete instance of `GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayInput` via:
+//
+//          GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArray{ GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArgs{...} }
+type GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayOutput() GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayOutput
+	ToGetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayOutputWithContext(context.Context) GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayOutput
+}
+
+type GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArray []GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigInput
+
+func (GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (i GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArray) ToGetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayOutput() GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayOutput {
+	return i.ToGetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArray) ToGetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayOutputWithContext(ctx context.Context) GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayOutput)
+}
+
+type GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigOutput struct{ *pulumi.OutputState }
+
+func (GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigOutput) ToGetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigOutput() GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigOutput {
+	return o
+}
+
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigOutput) ToGetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigOutputWithContext(ctx context.Context) GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigOutput) StackMonitoringConnectorId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig) string {
+		return v.StackMonitoringConnectorId
+	}).(pulumi.StringOutput)
+}
+
+// The status of Stack Monitoring.
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigOutput) StackMonitoringStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig) string {
+		return v.StackMonitoringStatus
+	}).(pulumi.StringOutput)
+}
+
+type GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayOutput) ToGetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayOutput() GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayOutput {
+	return o
+}
+
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayOutput) ToGetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayOutputWithContext(ctx context.Context) GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayOutput {
+	return o
+}
+
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayOutput) Index(i pulumi.IntInput) GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig {
+		return vs[0].([]GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig)[vs[1].(int)]
+	}).(GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigOutput)
 }
 
 type GetExternalPluggableDatabasesFilter struct {
@@ -52071,6 +57202,103 @@ func (o GetPluggableDatabasesPluggableDatabaseConnectionStringArrayOutput) Index
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPluggableDatabasesPluggableDatabaseConnectionString {
 		return vs[0].([]GetPluggableDatabasesPluggableDatabaseConnectionString)[vs[1].(int)]
 	}).(GetPluggableDatabasesPluggableDatabaseConnectionStringOutput)
+}
+
+type GetVmClusterDataCollectionOption struct {
+	// Indicates whether diagnostic collection is enabled for the VM cluster. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+	IsDiagnosticsEventsEnabled bool `pulumi:"isDiagnosticsEventsEnabled"`
+}
+
+// GetVmClusterDataCollectionOptionInput is an input type that accepts GetVmClusterDataCollectionOptionArgs and GetVmClusterDataCollectionOptionOutput values.
+// You can construct a concrete instance of `GetVmClusterDataCollectionOptionInput` via:
+//
+//          GetVmClusterDataCollectionOptionArgs{...}
+type GetVmClusterDataCollectionOptionInput interface {
+	pulumi.Input
+
+	ToGetVmClusterDataCollectionOptionOutput() GetVmClusterDataCollectionOptionOutput
+	ToGetVmClusterDataCollectionOptionOutputWithContext(context.Context) GetVmClusterDataCollectionOptionOutput
+}
+
+type GetVmClusterDataCollectionOptionArgs struct {
+	// Indicates whether diagnostic collection is enabled for the VM cluster. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+	IsDiagnosticsEventsEnabled pulumi.BoolInput `pulumi:"isDiagnosticsEventsEnabled"`
+}
+
+func (GetVmClusterDataCollectionOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterDataCollectionOption)(nil)).Elem()
+}
+
+func (i GetVmClusterDataCollectionOptionArgs) ToGetVmClusterDataCollectionOptionOutput() GetVmClusterDataCollectionOptionOutput {
+	return i.ToGetVmClusterDataCollectionOptionOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterDataCollectionOptionArgs) ToGetVmClusterDataCollectionOptionOutputWithContext(ctx context.Context) GetVmClusterDataCollectionOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterDataCollectionOptionOutput)
+}
+
+// GetVmClusterDataCollectionOptionArrayInput is an input type that accepts GetVmClusterDataCollectionOptionArray and GetVmClusterDataCollectionOptionArrayOutput values.
+// You can construct a concrete instance of `GetVmClusterDataCollectionOptionArrayInput` via:
+//
+//          GetVmClusterDataCollectionOptionArray{ GetVmClusterDataCollectionOptionArgs{...} }
+type GetVmClusterDataCollectionOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetVmClusterDataCollectionOptionArrayOutput() GetVmClusterDataCollectionOptionArrayOutput
+	ToGetVmClusterDataCollectionOptionArrayOutputWithContext(context.Context) GetVmClusterDataCollectionOptionArrayOutput
+}
+
+type GetVmClusterDataCollectionOptionArray []GetVmClusterDataCollectionOptionInput
+
+func (GetVmClusterDataCollectionOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterDataCollectionOption)(nil)).Elem()
+}
+
+func (i GetVmClusterDataCollectionOptionArray) ToGetVmClusterDataCollectionOptionArrayOutput() GetVmClusterDataCollectionOptionArrayOutput {
+	return i.ToGetVmClusterDataCollectionOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterDataCollectionOptionArray) ToGetVmClusterDataCollectionOptionArrayOutputWithContext(ctx context.Context) GetVmClusterDataCollectionOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterDataCollectionOptionArrayOutput)
+}
+
+type GetVmClusterDataCollectionOptionOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterDataCollectionOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterDataCollectionOption)(nil)).Elem()
+}
+
+func (o GetVmClusterDataCollectionOptionOutput) ToGetVmClusterDataCollectionOptionOutput() GetVmClusterDataCollectionOptionOutput {
+	return o
+}
+
+func (o GetVmClusterDataCollectionOptionOutput) ToGetVmClusterDataCollectionOptionOutputWithContext(ctx context.Context) GetVmClusterDataCollectionOptionOutput {
+	return o
+}
+
+// Indicates whether diagnostic collection is enabled for the VM cluster. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+func (o GetVmClusterDataCollectionOptionOutput) IsDiagnosticsEventsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetVmClusterDataCollectionOption) bool { return v.IsDiagnosticsEventsEnabled }).(pulumi.BoolOutput)
+}
+
+type GetVmClusterDataCollectionOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterDataCollectionOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterDataCollectionOption)(nil)).Elem()
+}
+
+func (o GetVmClusterDataCollectionOptionArrayOutput) ToGetVmClusterDataCollectionOptionArrayOutput() GetVmClusterDataCollectionOptionArrayOutput {
+	return o
+}
+
+func (o GetVmClusterDataCollectionOptionArrayOutput) ToGetVmClusterDataCollectionOptionArrayOutputWithContext(ctx context.Context) GetVmClusterDataCollectionOptionArrayOutput {
+	return o
+}
+
+func (o GetVmClusterDataCollectionOptionArrayOutput) Index(i pulumi.IntInput) GetVmClusterDataCollectionOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClusterDataCollectionOption {
+		return vs[0].([]GetVmClusterDataCollectionOption)[vs[1].(int)]
+	}).(GetVmClusterDataCollectionOptionOutput)
 }
 
 type GetVmClusterNetworkScan struct {
@@ -54930,8 +60158,10 @@ type GetVmClustersVmCluster struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	CpuCoreCount  int    `pulumi:"cpuCoreCount"`
 	// The number of enabled CPU cores.
-	CpusEnabled         int     `pulumi:"cpusEnabled"`
-	DataStorageSizeInGb float64 `pulumi:"dataStorageSizeInGb"`
+	CpusEnabled int `pulumi:"cpusEnabled"`
+	// Indicates user preferences for the various diagnostic collection options for the VM cluster.
+	DataCollectionOptions []GetVmClustersVmClusterDataCollectionOption `pulumi:"dataCollectionOptions"`
+	DataStorageSizeInGb   float64                                      `pulumi:"dataStorageSizeInGb"`
 	// Size, in terabytes, of the DATA disk group.
 	DataStorageSizeInTbs float64 `pulumi:"dataStorageSizeInTbs"`
 	// The local node storage allocated in GBs.
@@ -54996,8 +60226,10 @@ type GetVmClustersVmClusterArgs struct {
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	CpuCoreCount  pulumi.IntInput    `pulumi:"cpuCoreCount"`
 	// The number of enabled CPU cores.
-	CpusEnabled         pulumi.IntInput     `pulumi:"cpusEnabled"`
-	DataStorageSizeInGb pulumi.Float64Input `pulumi:"dataStorageSizeInGb"`
+	CpusEnabled pulumi.IntInput `pulumi:"cpusEnabled"`
+	// Indicates user preferences for the various diagnostic collection options for the VM cluster.
+	DataCollectionOptions GetVmClustersVmClusterDataCollectionOptionArrayInput `pulumi:"dataCollectionOptions"`
+	DataStorageSizeInGb   pulumi.Float64Input                                  `pulumi:"dataStorageSizeInGb"`
 	// Size, in terabytes, of the DATA disk group.
 	DataStorageSizeInTbs pulumi.Float64Input `pulumi:"dataStorageSizeInTbs"`
 	// The local node storage allocated in GBs.
@@ -55109,6 +60341,13 @@ func (o GetVmClustersVmClusterOutput) CpuCoreCount() pulumi.IntOutput {
 // The number of enabled CPU cores.
 func (o GetVmClustersVmClusterOutput) CpusEnabled() pulumi.IntOutput {
 	return o.ApplyT(func(v GetVmClustersVmCluster) int { return v.CpusEnabled }).(pulumi.IntOutput)
+}
+
+// Indicates user preferences for the various diagnostic collection options for the VM cluster.
+func (o GetVmClustersVmClusterOutput) DataCollectionOptions() GetVmClustersVmClusterDataCollectionOptionArrayOutput {
+	return o.ApplyT(func(v GetVmClustersVmCluster) []GetVmClustersVmClusterDataCollectionOption {
+		return v.DataCollectionOptions
+	}).(GetVmClustersVmClusterDataCollectionOptionArrayOutput)
 }
 
 func (o GetVmClustersVmClusterOutput) DataStorageSizeInGb() pulumi.Float64Output {
@@ -55253,6 +60492,103 @@ func (o GetVmClustersVmClusterArrayOutput) Index(i pulumi.IntInput) GetVmCluster
 	}).(GetVmClustersVmClusterOutput)
 }
 
+type GetVmClustersVmClusterDataCollectionOption struct {
+	// Indicates whether diagnostic collection is enabled for the VM cluster. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+	IsDiagnosticsEventsEnabled bool `pulumi:"isDiagnosticsEventsEnabled"`
+}
+
+// GetVmClustersVmClusterDataCollectionOptionInput is an input type that accepts GetVmClustersVmClusterDataCollectionOptionArgs and GetVmClustersVmClusterDataCollectionOptionOutput values.
+// You can construct a concrete instance of `GetVmClustersVmClusterDataCollectionOptionInput` via:
+//
+//          GetVmClustersVmClusterDataCollectionOptionArgs{...}
+type GetVmClustersVmClusterDataCollectionOptionInput interface {
+	pulumi.Input
+
+	ToGetVmClustersVmClusterDataCollectionOptionOutput() GetVmClustersVmClusterDataCollectionOptionOutput
+	ToGetVmClustersVmClusterDataCollectionOptionOutputWithContext(context.Context) GetVmClustersVmClusterDataCollectionOptionOutput
+}
+
+type GetVmClustersVmClusterDataCollectionOptionArgs struct {
+	// Indicates whether diagnostic collection is enabled for the VM cluster. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+	IsDiagnosticsEventsEnabled pulumi.BoolInput `pulumi:"isDiagnosticsEventsEnabled"`
+}
+
+func (GetVmClustersVmClusterDataCollectionOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClustersVmClusterDataCollectionOption)(nil)).Elem()
+}
+
+func (i GetVmClustersVmClusterDataCollectionOptionArgs) ToGetVmClustersVmClusterDataCollectionOptionOutput() GetVmClustersVmClusterDataCollectionOptionOutput {
+	return i.ToGetVmClustersVmClusterDataCollectionOptionOutputWithContext(context.Background())
+}
+
+func (i GetVmClustersVmClusterDataCollectionOptionArgs) ToGetVmClustersVmClusterDataCollectionOptionOutputWithContext(ctx context.Context) GetVmClustersVmClusterDataCollectionOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClustersVmClusterDataCollectionOptionOutput)
+}
+
+// GetVmClustersVmClusterDataCollectionOptionArrayInput is an input type that accepts GetVmClustersVmClusterDataCollectionOptionArray and GetVmClustersVmClusterDataCollectionOptionArrayOutput values.
+// You can construct a concrete instance of `GetVmClustersVmClusterDataCollectionOptionArrayInput` via:
+//
+//          GetVmClustersVmClusterDataCollectionOptionArray{ GetVmClustersVmClusterDataCollectionOptionArgs{...} }
+type GetVmClustersVmClusterDataCollectionOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetVmClustersVmClusterDataCollectionOptionArrayOutput() GetVmClustersVmClusterDataCollectionOptionArrayOutput
+	ToGetVmClustersVmClusterDataCollectionOptionArrayOutputWithContext(context.Context) GetVmClustersVmClusterDataCollectionOptionArrayOutput
+}
+
+type GetVmClustersVmClusterDataCollectionOptionArray []GetVmClustersVmClusterDataCollectionOptionInput
+
+func (GetVmClustersVmClusterDataCollectionOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClustersVmClusterDataCollectionOption)(nil)).Elem()
+}
+
+func (i GetVmClustersVmClusterDataCollectionOptionArray) ToGetVmClustersVmClusterDataCollectionOptionArrayOutput() GetVmClustersVmClusterDataCollectionOptionArrayOutput {
+	return i.ToGetVmClustersVmClusterDataCollectionOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetVmClustersVmClusterDataCollectionOptionArray) ToGetVmClustersVmClusterDataCollectionOptionArrayOutputWithContext(ctx context.Context) GetVmClustersVmClusterDataCollectionOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClustersVmClusterDataCollectionOptionArrayOutput)
+}
+
+type GetVmClustersVmClusterDataCollectionOptionOutput struct{ *pulumi.OutputState }
+
+func (GetVmClustersVmClusterDataCollectionOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClustersVmClusterDataCollectionOption)(nil)).Elem()
+}
+
+func (o GetVmClustersVmClusterDataCollectionOptionOutput) ToGetVmClustersVmClusterDataCollectionOptionOutput() GetVmClustersVmClusterDataCollectionOptionOutput {
+	return o
+}
+
+func (o GetVmClustersVmClusterDataCollectionOptionOutput) ToGetVmClustersVmClusterDataCollectionOptionOutputWithContext(ctx context.Context) GetVmClustersVmClusterDataCollectionOptionOutput {
+	return o
+}
+
+// Indicates whether diagnostic collection is enabled for the VM cluster. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+func (o GetVmClustersVmClusterDataCollectionOptionOutput) IsDiagnosticsEventsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetVmClustersVmClusterDataCollectionOption) bool { return v.IsDiagnosticsEventsEnabled }).(pulumi.BoolOutput)
+}
+
+type GetVmClustersVmClusterDataCollectionOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVmClustersVmClusterDataCollectionOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClustersVmClusterDataCollectionOption)(nil)).Elem()
+}
+
+func (o GetVmClustersVmClusterDataCollectionOptionArrayOutput) ToGetVmClustersVmClusterDataCollectionOptionArrayOutput() GetVmClustersVmClusterDataCollectionOptionArrayOutput {
+	return o
+}
+
+func (o GetVmClustersVmClusterDataCollectionOptionArrayOutput) ToGetVmClustersVmClusterDataCollectionOptionArrayOutputWithContext(ctx context.Context) GetVmClustersVmClusterDataCollectionOptionArrayOutput {
+	return o
+}
+
+func (o GetVmClustersVmClusterDataCollectionOptionArrayOutput) Index(i pulumi.IntInput) GetVmClustersVmClusterDataCollectionOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClustersVmClusterDataCollectionOption {
+		return vs[0].([]GetVmClustersVmClusterDataCollectionOption)[vs[1].(int)]
+	}).(GetVmClustersVmClusterDataCollectionOptionOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AutonomousContainerDatabaseBackupConfigInput)(nil)).Elem(), AutonomousContainerDatabaseBackupConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AutonomousContainerDatabaseBackupConfigPtrInput)(nil)).Elem(), AutonomousContainerDatabaseBackupConfigArgs{})
@@ -55290,6 +60626,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AutonomousDatabaseCustomerContactArrayInput)(nil)).Elem(), AutonomousDatabaseCustomerContactArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AutonomousDatabaseKeyHistoryEntryInput)(nil)).Elem(), AutonomousDatabaseKeyHistoryEntryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AutonomousDatabaseKeyHistoryEntryArrayInput)(nil)).Elem(), AutonomousDatabaseKeyHistoryEntryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AutonomousDatabaseLocalStandbyDbInput)(nil)).Elem(), AutonomousDatabaseLocalStandbyDbArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AutonomousDatabaseLocalStandbyDbArrayInput)(nil)).Elem(), AutonomousDatabaseLocalStandbyDbArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AutonomousDatabaseScheduledOperationInput)(nil)).Elem(), AutonomousDatabaseScheduledOperationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AutonomousDatabaseScheduledOperationArrayInput)(nil)).Elem(), AutonomousDatabaseScheduledOperationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AutonomousDatabaseScheduledOperationDayOfWeekInput)(nil)).Elem(), AutonomousDatabaseScheduledOperationDayOfWeekArgs{})
@@ -55333,6 +60671,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayInput)(nil)).Elem(), CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CloudExadataInfrastructureMaintenanceWindowMonthInput)(nil)).Elem(), CloudExadataInfrastructureMaintenanceWindowMonthArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CloudExadataInfrastructureMaintenanceWindowMonthArrayInput)(nil)).Elem(), CloudExadataInfrastructureMaintenanceWindowMonthArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudVmClusterDataCollectionOptionsInput)(nil)).Elem(), CloudVmClusterDataCollectionOptionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudVmClusterDataCollectionOptionsPtrInput)(nil)).Elem(), CloudVmClusterDataCollectionOptionsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CloudVmClusterIormConfigCachInput)(nil)).Elem(), CloudVmClusterIormConfigCachArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CloudVmClusterIormConfigCachArrayInput)(nil)).Elem(), CloudVmClusterIormConfigCachArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CloudVmClusterIormConfigCachDbPlanInput)(nil)).Elem(), CloudVmClusterIormConfigCachDbPlanArgs{})
@@ -55397,6 +60737,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemMaintenanceWindowDetailsMonthArrayInput)(nil)).Elem(), DbSystemMaintenanceWindowDetailsMonthArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemMaintenanceWindowMonthInput)(nil)).Elem(), DbSystemMaintenanceWindowMonthArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemMaintenanceWindowMonthArrayInput)(nil)).Elem(), DbSystemMaintenanceWindowMonthArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemsUpgradeDbSystemOptionInput)(nil)).Elem(), DbSystemsUpgradeDbSystemOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemsUpgradeDbSystemOptionArrayInput)(nil)).Elem(), DbSystemsUpgradeDbSystemOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemsUpgradeIormConfigCachInput)(nil)).Elem(), DbSystemsUpgradeIormConfigCachArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemsUpgradeIormConfigCachArrayInput)(nil)).Elem(), DbSystemsUpgradeIormConfigCachArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemsUpgradeIormConfigCachDbPlanInput)(nil)).Elem(), DbSystemsUpgradeIormConfigCachDbPlanArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemsUpgradeIormConfigCachDbPlanArrayInput)(nil)).Elem(), DbSystemsUpgradeIormConfigCachDbPlanArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemsUpgradeMaintenanceWindowInput)(nil)).Elem(), DbSystemsUpgradeMaintenanceWindowArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemsUpgradeMaintenanceWindowArrayInput)(nil)).Elem(), DbSystemsUpgradeMaintenanceWindowArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemsUpgradeMaintenanceWindowDaysOfWeekInput)(nil)).Elem(), DbSystemsUpgradeMaintenanceWindowDaysOfWeekArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemsUpgradeMaintenanceWindowDaysOfWeekArrayInput)(nil)).Elem(), DbSystemsUpgradeMaintenanceWindowDaysOfWeekArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemsUpgradeMaintenanceWindowMonthInput)(nil)).Elem(), DbSystemsUpgradeMaintenanceWindowMonthArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemsUpgradeMaintenanceWindowMonthArrayInput)(nil)).Elem(), DbSystemsUpgradeMaintenanceWindowMonthArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExadataInfrastructureContactInput)(nil)).Elem(), ExadataInfrastructureContactArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExadataInfrastructureContactArrayInput)(nil)).Elem(), ExadataInfrastructureContactArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExadataInfrastructureMaintenanceWindowInput)(nil)).Elem(), ExadataInfrastructureMaintenanceWindowArgs{})
@@ -55417,6 +60769,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ExadataIormConfigDbPlanArrayInput)(nil)).Elem(), ExadataIormConfigDbPlanArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalContainerDatabaseDatabaseManagementConfigInput)(nil)).Elem(), ExternalContainerDatabaseDatabaseManagementConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalContainerDatabaseDatabaseManagementConfigArrayInput)(nil)).Elem(), ExternalContainerDatabaseDatabaseManagementConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ExternalContainerDatabaseStackMonitoringConfigInput)(nil)).Elem(), ExternalContainerDatabaseStackMonitoringConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ExternalContainerDatabaseStackMonitoringConfigArrayInput)(nil)).Elem(), ExternalContainerDatabaseStackMonitoringConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalDatabaseConnectorConnectionCredentialsInput)(nil)).Elem(), ExternalDatabaseConnectorConnectionCredentialsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalDatabaseConnectorConnectionCredentialsPtrInput)(nil)).Elem(), ExternalDatabaseConnectorConnectionCredentialsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalDatabaseConnectorConnectionStringInput)(nil)).Elem(), ExternalDatabaseConnectorConnectionStringArgs{})
@@ -55425,10 +60779,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalNonContainerDatabaseDatabaseManagementConfigArrayInput)(nil)).Elem(), ExternalNonContainerDatabaseDatabaseManagementConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalNonContainerDatabaseOperationsInsightsConfigInput)(nil)).Elem(), ExternalNonContainerDatabaseOperationsInsightsConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalNonContainerDatabaseOperationsInsightsConfigArrayInput)(nil)).Elem(), ExternalNonContainerDatabaseOperationsInsightsConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ExternalNonContainerDatabaseStackMonitoringConfigInput)(nil)).Elem(), ExternalNonContainerDatabaseStackMonitoringConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ExternalNonContainerDatabaseStackMonitoringConfigArrayInput)(nil)).Elem(), ExternalNonContainerDatabaseStackMonitoringConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalPluggableDatabaseDatabaseManagementConfigInput)(nil)).Elem(), ExternalPluggableDatabaseDatabaseManagementConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalPluggableDatabaseDatabaseManagementConfigArrayInput)(nil)).Elem(), ExternalPluggableDatabaseDatabaseManagementConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalPluggableDatabaseOperationsInsightsConfigInput)(nil)).Elem(), ExternalPluggableDatabaseOperationsInsightsConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExternalPluggableDatabaseOperationsInsightsConfigArrayInput)(nil)).Elem(), ExternalPluggableDatabaseOperationsInsightsConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ExternalPluggableDatabaseStackMonitoringConfigInput)(nil)).Elem(), ExternalPluggableDatabaseStackMonitoringConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ExternalPluggableDatabaseStackMonitoringConfigArrayInput)(nil)).Elem(), ExternalPluggableDatabaseStackMonitoringConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*KeyStoreAssociatedDatabaseInput)(nil)).Elem(), KeyStoreAssociatedDatabaseArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*KeyStoreAssociatedDatabaseArrayInput)(nil)).Elem(), KeyStoreAssociatedDatabaseArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*KeyStoreTypeDetailsInput)(nil)).Elem(), KeyStoreTypeDetailsArgs{})
@@ -55441,16 +60799,26 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*PluggableDatabasesLocalCloneConnectionStringArrayInput)(nil)).Elem(), PluggableDatabasesLocalCloneConnectionStringArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PluggableDatabasesRemoteCloneConnectionStringInput)(nil)).Elem(), PluggableDatabasesRemoteCloneConnectionStringArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PluggableDatabasesRemoteCloneConnectionStringArrayInput)(nil)).Elem(), PluggableDatabasesRemoteCloneConnectionStringArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VmClusterAddVirtualNetworkDataCollectionOptionInput)(nil)).Elem(), VmClusterAddVirtualNetworkDataCollectionOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VmClusterAddVirtualNetworkDataCollectionOptionArrayInput)(nil)).Elem(), VmClusterAddVirtualNetworkDataCollectionOptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VmClusterAddVirtualNetworkDbServerInput)(nil)).Elem(), VmClusterAddVirtualNetworkDbServerArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VmClusterAddVirtualNetworkDbServerArrayInput)(nil)).Elem(), VmClusterAddVirtualNetworkDbServerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VmClusterDataCollectionOptionsInput)(nil)).Elem(), VmClusterDataCollectionOptionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VmClusterDataCollectionOptionsPtrInput)(nil)).Elem(), VmClusterDataCollectionOptionsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VmClusterNetworkScanInput)(nil)).Elem(), VmClusterNetworkScanArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VmClusterNetworkScanArrayInput)(nil)).Elem(), VmClusterNetworkScanArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VmClusterNetworkVmNetworkInput)(nil)).Elem(), VmClusterNetworkVmNetworkArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VmClusterNetworkVmNetworkArrayInput)(nil)).Elem(), VmClusterNetworkVmNetworkArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VmClusterNetworkVmNetworkNodeInput)(nil)).Elem(), VmClusterNetworkVmNetworkNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VmClusterNetworkVmNetworkNodeArrayInput)(nil)).Elem(), VmClusterNetworkVmNetworkNodeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VmClusterRemoveVirtualMachineDataCollectionOptionInput)(nil)).Elem(), VmClusterRemoveVirtualMachineDataCollectionOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VmClusterRemoveVirtualMachineDataCollectionOptionArrayInput)(nil)).Elem(), VmClusterRemoveVirtualMachineDataCollectionOptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VmClusterRemoveVirtualMachineDbServerInput)(nil)).Elem(), VmClusterRemoveVirtualMachineDbServerArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VmClusterRemoveVirtualMachineDbServerArrayInput)(nil)).Elem(), VmClusterRemoveVirtualMachineDbServerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetInput)(nil)).Elem(), GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetArrayInput)(nil)).Elem(), GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousCharacterSetsFilterInput)(nil)).Elem(), GetAutonomousCharacterSetsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousCharacterSetsFilterArrayInput)(nil)).Elem(), GetAutonomousCharacterSetsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousContainerDatabaseBackupConfigInput)(nil)).Elem(), GetAutonomousContainerDatabaseBackupConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousContainerDatabaseBackupConfigArrayInput)(nil)).Elem(), GetAutonomousContainerDatabaseBackupConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousContainerDatabaseBackupConfigBackupDestinationDetailInput)(nil)).Elem(), GetAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs{})
@@ -55529,6 +60897,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabaseDataguardAssociationsFilterArrayInput)(nil)).Elem(), GetAutonomousDatabaseDataguardAssociationsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabaseKeyHistoryEntryInput)(nil)).Elem(), GetAutonomousDatabaseKeyHistoryEntryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabaseKeyHistoryEntryArrayInput)(nil)).Elem(), GetAutonomousDatabaseKeyHistoryEntryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabaseLocalStandbyDbInput)(nil)).Elem(), GetAutonomousDatabaseLocalStandbyDbArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabaseLocalStandbyDbArrayInput)(nil)).Elem(), GetAutonomousDatabaseLocalStandbyDbArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabaseScheduledOperationInput)(nil)).Elem(), GetAutonomousDatabaseScheduledOperationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabaseScheduledOperationArrayInput)(nil)).Elem(), GetAutonomousDatabaseScheduledOperationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabaseScheduledOperationDayOfWeekInput)(nil)).Elem(), GetAutonomousDatabaseScheduledOperationDayOfWeekArgs{})
@@ -55551,6 +60921,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabasesAutonomousDatabaseCustomerContactArrayInput)(nil)).Elem(), GetAutonomousDatabasesAutonomousDatabaseCustomerContactArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntryInput)(nil)).Elem(), GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntryArrayInput)(nil)).Elem(), GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbInput)(nil)).Elem(), GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArrayInput)(nil)).Elem(), GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabasesAutonomousDatabaseScheduledOperationInput)(nil)).Elem(), GetAutonomousDatabasesAutonomousDatabaseScheduledOperationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabasesAutonomousDatabaseScheduledOperationArrayInput)(nil)).Elem(), GetAutonomousDatabasesAutonomousDatabaseScheduledOperationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabasesAutonomousDatabaseScheduledOperationDayOfWeekInput)(nil)).Elem(), GetAutonomousDatabasesAutonomousDatabaseScheduledOperationDayOfWeekArgs{})
@@ -55573,6 +60945,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabasesClonesAutonomousDatabaseCustomerContactArrayInput)(nil)).Elem(), GetAutonomousDatabasesClonesAutonomousDatabaseCustomerContactArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntryInput)(nil)).Elem(), GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntryArrayInput)(nil)).Elem(), GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbInput)(nil)).Elem(), GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArrayInput)(nil)).Elem(), GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationInput)(nil)).Elem(), GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationArrayInput)(nil)).Elem(), GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationDayOfWeekInput)(nil)).Elem(), GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationDayOfWeekArgs{})
@@ -55693,6 +61067,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArrayInput)(nil)).Elem(), GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudExadataInfrastructuresFilterInput)(nil)).Elem(), GetCloudExadataInfrastructuresFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudExadataInfrastructuresFilterArrayInput)(nil)).Elem(), GetCloudExadataInfrastructuresFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClusterDataCollectionOptionInput)(nil)).Elem(), GetCloudVmClusterDataCollectionOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClusterDataCollectionOptionArrayInput)(nil)).Elem(), GetCloudVmClusterDataCollectionOptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClusterIormConfigCachInput)(nil)).Elem(), GetCloudVmClusterIormConfigCachArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClusterIormConfigCachArrayInput)(nil)).Elem(), GetCloudVmClusterIormConfigCachArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClusterIormConfigCachDbPlanInput)(nil)).Elem(), GetCloudVmClusterIormConfigCachDbPlanArgs{})
@@ -55701,6 +61077,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClusterIormConfigDbPlanArrayInput)(nil)).Elem(), GetCloudVmClusterIormConfigDbPlanArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClustersCloudVmClusterInput)(nil)).Elem(), GetCloudVmClustersCloudVmClusterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClustersCloudVmClusterArrayInput)(nil)).Elem(), GetCloudVmClustersCloudVmClusterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClustersCloudVmClusterDataCollectionOptionInput)(nil)).Elem(), GetCloudVmClustersCloudVmClusterDataCollectionOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClustersCloudVmClusterDataCollectionOptionArrayInput)(nil)).Elem(), GetCloudVmClustersCloudVmClusterDataCollectionOptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClustersCloudVmClusterIormConfigCachInput)(nil)).Elem(), GetCloudVmClustersCloudVmClusterIormConfigCachArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClustersCloudVmClusterIormConfigCachArrayInput)(nil)).Elem(), GetCloudVmClustersCloudVmClusterIormConfigCachArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClustersCloudVmClusterIormConfigCachDbPlanInput)(nil)).Elem(), GetCloudVmClustersCloudVmClusterIormConfigCachDbPlanArgs{})
@@ -55799,6 +61177,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbServersDbServerDbServerPatchingDetailArrayInput)(nil)).Elem(), GetDbServersDbServerDbServerPatchingDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbServersFilterInput)(nil)).Elem(), GetDbServersFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbServersFilterArrayInput)(nil)).Elem(), GetDbServersFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemComputePerformancesDbSystemComputePerformanceInput)(nil)).Elem(), GetDbSystemComputePerformancesDbSystemComputePerformanceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemComputePerformancesDbSystemComputePerformanceArrayInput)(nil)).Elem(), GetDbSystemComputePerformancesDbSystemComputePerformanceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListInput)(nil)).Elem(), GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayInput)(nil)).Elem(), GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemComputePerformancesFilterInput)(nil)).Elem(), GetDbSystemComputePerformancesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemComputePerformancesFilterArrayInput)(nil)).Elem(), GetDbSystemComputePerformancesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemHistoryEntriesFilterInput)(nil)).Elem(), GetDbSystemHistoryEntriesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemHistoryEntriesFilterArrayInput)(nil)).Elem(), GetDbSystemHistoryEntriesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemHistoryEntriesPatchHistoryEntryInput)(nil)).Elem(), GetDbSystemHistoryEntriesPatchHistoryEntryArgs{})
@@ -55811,6 +61195,22 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemShapesDbSystemShapeArrayInput)(nil)).Elem(), GetDbSystemShapesDbSystemShapeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemShapesFilterInput)(nil)).Elem(), GetDbSystemShapesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemShapesFilterArrayInput)(nil)).Elem(), GetDbSystemShapesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformanceInput)(nil)).Elem(), GetDbSystemStoragePerformancesDbSystemStoragePerformanceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformanceArrayInput)(nil)).Elem(), GetDbSystemStoragePerformancesDbSystemStoragePerformanceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListInput)(nil)).Elem(), GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayInput)(nil)).Elem(), GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceInput)(nil)).Elem(), GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayInput)(nil)).Elem(), GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceInput)(nil)).Elem(), GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayInput)(nil)).Elem(), GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListInput)(nil)).Elem(), GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayInput)(nil)).Elem(), GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceInput)(nil)).Elem(), GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayInput)(nil)).Elem(), GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceInput)(nil)).Elem(), GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayInput)(nil)).Elem(), GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemStoragePerformancesFilterInput)(nil)).Elem(), GetDbSystemStoragePerformancesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemStoragePerformancesFilterArrayInput)(nil)).Elem(), GetDbSystemStoragePerformancesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemInput)(nil)).Elem(), GetDbSystemsDbSystemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemArrayInput)(nil)).Elem(), GetDbSystemsDbSystemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemDbHomeInput)(nil)).Elem(), GetDbSystemsDbSystemDbHomeArgs{})
@@ -55843,6 +61243,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemMaintenanceWindowMonthArrayInput)(nil)).Elem(), GetDbSystemsDbSystemMaintenanceWindowMonthArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsFilterInput)(nil)).Elem(), GetDbSystemsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsFilterArrayInput)(nil)).Elem(), GetDbSystemsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryInput)(nil)).Elem(), GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArrayInput)(nil)).Elem(), GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsUpgradeHistoryEntriesFilterInput)(nil)).Elem(), GetDbSystemsUpgradeHistoryEntriesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsUpgradeHistoryEntriesFilterArrayInput)(nil)).Elem(), GetDbSystemsUpgradeHistoryEntriesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbVersionsDbVersionInput)(nil)).Elem(), GetDbVersionsDbVersionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbVersionsDbVersionArrayInput)(nil)).Elem(), GetDbVersionsDbVersionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbVersionsFilterInput)(nil)).Elem(), GetDbVersionsFilterArgs{})
@@ -55871,10 +61275,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataIormConfigDbPlanArrayInput)(nil)).Elem(), GetExadataIormConfigDbPlanArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalContainerDatabaseDatabaseManagementConfigInput)(nil)).Elem(), GetExternalContainerDatabaseDatabaseManagementConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalContainerDatabaseDatabaseManagementConfigArrayInput)(nil)).Elem(), GetExternalContainerDatabaseDatabaseManagementConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalContainerDatabaseStackMonitoringConfigInput)(nil)).Elem(), GetExternalContainerDatabaseStackMonitoringConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalContainerDatabaseStackMonitoringConfigArrayInput)(nil)).Elem(), GetExternalContainerDatabaseStackMonitoringConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalContainerDatabasesExternalContainerDatabaseInput)(nil)).Elem(), GetExternalContainerDatabasesExternalContainerDatabaseArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalContainerDatabasesExternalContainerDatabaseArrayInput)(nil)).Elem(), GetExternalContainerDatabasesExternalContainerDatabaseArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigInput)(nil)).Elem(), GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArrayInput)(nil)).Elem(), GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigInput)(nil)).Elem(), GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayInput)(nil)).Elem(), GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalContainerDatabasesFilterInput)(nil)).Elem(), GetExternalContainerDatabasesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalContainerDatabasesFilterArrayInput)(nil)).Elem(), GetExternalContainerDatabasesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDatabaseConnectorConnectionCredentialInput)(nil)).Elem(), GetExternalDatabaseConnectorConnectionCredentialArgs{})
@@ -55893,24 +61301,32 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalNonContainerDatabaseDatabaseManagementConfigArrayInput)(nil)).Elem(), GetExternalNonContainerDatabaseDatabaseManagementConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalNonContainerDatabaseOperationsInsightsConfigInput)(nil)).Elem(), GetExternalNonContainerDatabaseOperationsInsightsConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalNonContainerDatabaseOperationsInsightsConfigArrayInput)(nil)).Elem(), GetExternalNonContainerDatabaseOperationsInsightsConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalNonContainerDatabaseStackMonitoringConfigInput)(nil)).Elem(), GetExternalNonContainerDatabaseStackMonitoringConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalNonContainerDatabaseStackMonitoringConfigArrayInput)(nil)).Elem(), GetExternalNonContainerDatabaseStackMonitoringConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalNonContainerDatabasesExternalNonContainerDatabaseInput)(nil)).Elem(), GetExternalNonContainerDatabasesExternalNonContainerDatabaseArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalNonContainerDatabasesExternalNonContainerDatabaseArrayInput)(nil)).Elem(), GetExternalNonContainerDatabasesExternalNonContainerDatabaseArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigInput)(nil)).Elem(), GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArrayInput)(nil)).Elem(), GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigInput)(nil)).Elem(), GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArrayInput)(nil)).Elem(), GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigInput)(nil)).Elem(), GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayInput)(nil)).Elem(), GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalNonContainerDatabasesFilterInput)(nil)).Elem(), GetExternalNonContainerDatabasesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalNonContainerDatabasesFilterArrayInput)(nil)).Elem(), GetExternalNonContainerDatabasesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalPluggableDatabaseDatabaseManagementConfigInput)(nil)).Elem(), GetExternalPluggableDatabaseDatabaseManagementConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalPluggableDatabaseDatabaseManagementConfigArrayInput)(nil)).Elem(), GetExternalPluggableDatabaseDatabaseManagementConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalPluggableDatabaseOperationsInsightsConfigInput)(nil)).Elem(), GetExternalPluggableDatabaseOperationsInsightsConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalPluggableDatabaseOperationsInsightsConfigArrayInput)(nil)).Elem(), GetExternalPluggableDatabaseOperationsInsightsConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalPluggableDatabaseStackMonitoringConfigInput)(nil)).Elem(), GetExternalPluggableDatabaseStackMonitoringConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalPluggableDatabaseStackMonitoringConfigArrayInput)(nil)).Elem(), GetExternalPluggableDatabaseStackMonitoringConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalPluggableDatabasesExternalPluggableDatabaseInput)(nil)).Elem(), GetExternalPluggableDatabasesExternalPluggableDatabaseArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalPluggableDatabasesExternalPluggableDatabaseArrayInput)(nil)).Elem(), GetExternalPluggableDatabasesExternalPluggableDatabaseArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigInput)(nil)).Elem(), GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArrayInput)(nil)).Elem(), GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigInput)(nil)).Elem(), GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArrayInput)(nil)).Elem(), GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigInput)(nil)).Elem(), GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayInput)(nil)).Elem(), GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalPluggableDatabasesFilterInput)(nil)).Elem(), GetExternalPluggableDatabasesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalPluggableDatabasesFilterArrayInput)(nil)).Elem(), GetExternalPluggableDatabasesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFlexComponentsFilterInput)(nil)).Elem(), GetFlexComponentsFilterArgs{})
@@ -55951,6 +61367,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPluggableDatabasesPluggableDatabaseArrayInput)(nil)).Elem(), GetPluggableDatabasesPluggableDatabaseArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPluggableDatabasesPluggableDatabaseConnectionStringInput)(nil)).Elem(), GetPluggableDatabasesPluggableDatabaseConnectionStringArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPluggableDatabasesPluggableDatabaseConnectionStringArrayInput)(nil)).Elem(), GetPluggableDatabasesPluggableDatabaseConnectionStringArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterDataCollectionOptionInput)(nil)).Elem(), GetVmClusterDataCollectionOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterDataCollectionOptionArrayInput)(nil)).Elem(), GetVmClusterDataCollectionOptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterNetworkScanInput)(nil)).Elem(), GetVmClusterNetworkScanArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterNetworkScanArrayInput)(nil)).Elem(), GetVmClusterNetworkScanArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterNetworkVmNetworkInput)(nil)).Elem(), GetVmClusterNetworkVmNetworkArgs{})
@@ -55995,6 +61413,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersFilterArrayInput)(nil)).Elem(), GetVmClustersFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterInput)(nil)).Elem(), GetVmClustersVmClusterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterArrayInput)(nil)).Elem(), GetVmClustersVmClusterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterDataCollectionOptionInput)(nil)).Elem(), GetVmClustersVmClusterDataCollectionOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterDataCollectionOptionArrayInput)(nil)).Elem(), GetVmClustersVmClusterDataCollectionOptionArray{})
 	pulumi.RegisterOutputType(AutonomousContainerDatabaseBackupConfigOutput{})
 	pulumi.RegisterOutputType(AutonomousContainerDatabaseBackupConfigPtrOutput{})
 	pulumi.RegisterOutputType(AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsOutput{})
@@ -56031,6 +61451,8 @@ func init() {
 	pulumi.RegisterOutputType(AutonomousDatabaseCustomerContactArrayOutput{})
 	pulumi.RegisterOutputType(AutonomousDatabaseKeyHistoryEntryOutput{})
 	pulumi.RegisterOutputType(AutonomousDatabaseKeyHistoryEntryArrayOutput{})
+	pulumi.RegisterOutputType(AutonomousDatabaseLocalStandbyDbOutput{})
+	pulumi.RegisterOutputType(AutonomousDatabaseLocalStandbyDbArrayOutput{})
 	pulumi.RegisterOutputType(AutonomousDatabaseScheduledOperationOutput{})
 	pulumi.RegisterOutputType(AutonomousDatabaseScheduledOperationArrayOutput{})
 	pulumi.RegisterOutputType(AutonomousDatabaseScheduledOperationDayOfWeekOutput{})
@@ -56074,6 +61496,8 @@ func init() {
 	pulumi.RegisterOutputType(CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput{})
 	pulumi.RegisterOutputType(CloudExadataInfrastructureMaintenanceWindowMonthOutput{})
 	pulumi.RegisterOutputType(CloudExadataInfrastructureMaintenanceWindowMonthArrayOutput{})
+	pulumi.RegisterOutputType(CloudVmClusterDataCollectionOptionsOutput{})
+	pulumi.RegisterOutputType(CloudVmClusterDataCollectionOptionsPtrOutput{})
 	pulumi.RegisterOutputType(CloudVmClusterIormConfigCachOutput{})
 	pulumi.RegisterOutputType(CloudVmClusterIormConfigCachArrayOutput{})
 	pulumi.RegisterOutputType(CloudVmClusterIormConfigCachDbPlanOutput{})
@@ -56138,6 +61562,18 @@ func init() {
 	pulumi.RegisterOutputType(DbSystemMaintenanceWindowDetailsMonthArrayOutput{})
 	pulumi.RegisterOutputType(DbSystemMaintenanceWindowMonthOutput{})
 	pulumi.RegisterOutputType(DbSystemMaintenanceWindowMonthArrayOutput{})
+	pulumi.RegisterOutputType(DbSystemsUpgradeDbSystemOptionOutput{})
+	pulumi.RegisterOutputType(DbSystemsUpgradeDbSystemOptionArrayOutput{})
+	pulumi.RegisterOutputType(DbSystemsUpgradeIormConfigCachOutput{})
+	pulumi.RegisterOutputType(DbSystemsUpgradeIormConfigCachArrayOutput{})
+	pulumi.RegisterOutputType(DbSystemsUpgradeIormConfigCachDbPlanOutput{})
+	pulumi.RegisterOutputType(DbSystemsUpgradeIormConfigCachDbPlanArrayOutput{})
+	pulumi.RegisterOutputType(DbSystemsUpgradeMaintenanceWindowOutput{})
+	pulumi.RegisterOutputType(DbSystemsUpgradeMaintenanceWindowArrayOutput{})
+	pulumi.RegisterOutputType(DbSystemsUpgradeMaintenanceWindowDaysOfWeekOutput{})
+	pulumi.RegisterOutputType(DbSystemsUpgradeMaintenanceWindowDaysOfWeekArrayOutput{})
+	pulumi.RegisterOutputType(DbSystemsUpgradeMaintenanceWindowMonthOutput{})
+	pulumi.RegisterOutputType(DbSystemsUpgradeMaintenanceWindowMonthArrayOutput{})
 	pulumi.RegisterOutputType(ExadataInfrastructureContactOutput{})
 	pulumi.RegisterOutputType(ExadataInfrastructureContactArrayOutput{})
 	pulumi.RegisterOutputType(ExadataInfrastructureMaintenanceWindowOutput{})
@@ -56158,6 +61594,8 @@ func init() {
 	pulumi.RegisterOutputType(ExadataIormConfigDbPlanArrayOutput{})
 	pulumi.RegisterOutputType(ExternalContainerDatabaseDatabaseManagementConfigOutput{})
 	pulumi.RegisterOutputType(ExternalContainerDatabaseDatabaseManagementConfigArrayOutput{})
+	pulumi.RegisterOutputType(ExternalContainerDatabaseStackMonitoringConfigOutput{})
+	pulumi.RegisterOutputType(ExternalContainerDatabaseStackMonitoringConfigArrayOutput{})
 	pulumi.RegisterOutputType(ExternalDatabaseConnectorConnectionCredentialsOutput{})
 	pulumi.RegisterOutputType(ExternalDatabaseConnectorConnectionCredentialsPtrOutput{})
 	pulumi.RegisterOutputType(ExternalDatabaseConnectorConnectionStringOutput{})
@@ -56166,10 +61604,14 @@ func init() {
 	pulumi.RegisterOutputType(ExternalNonContainerDatabaseDatabaseManagementConfigArrayOutput{})
 	pulumi.RegisterOutputType(ExternalNonContainerDatabaseOperationsInsightsConfigOutput{})
 	pulumi.RegisterOutputType(ExternalNonContainerDatabaseOperationsInsightsConfigArrayOutput{})
+	pulumi.RegisterOutputType(ExternalNonContainerDatabaseStackMonitoringConfigOutput{})
+	pulumi.RegisterOutputType(ExternalNonContainerDatabaseStackMonitoringConfigArrayOutput{})
 	pulumi.RegisterOutputType(ExternalPluggableDatabaseDatabaseManagementConfigOutput{})
 	pulumi.RegisterOutputType(ExternalPluggableDatabaseDatabaseManagementConfigArrayOutput{})
 	pulumi.RegisterOutputType(ExternalPluggableDatabaseOperationsInsightsConfigOutput{})
 	pulumi.RegisterOutputType(ExternalPluggableDatabaseOperationsInsightsConfigArrayOutput{})
+	pulumi.RegisterOutputType(ExternalPluggableDatabaseStackMonitoringConfigOutput{})
+	pulumi.RegisterOutputType(ExternalPluggableDatabaseStackMonitoringConfigArrayOutput{})
 	pulumi.RegisterOutputType(KeyStoreAssociatedDatabaseOutput{})
 	pulumi.RegisterOutputType(KeyStoreAssociatedDatabaseArrayOutput{})
 	pulumi.RegisterOutputType(KeyStoreTypeDetailsOutput{})
@@ -56182,16 +61624,26 @@ func init() {
 	pulumi.RegisterOutputType(PluggableDatabasesLocalCloneConnectionStringArrayOutput{})
 	pulumi.RegisterOutputType(PluggableDatabasesRemoteCloneConnectionStringOutput{})
 	pulumi.RegisterOutputType(PluggableDatabasesRemoteCloneConnectionStringArrayOutput{})
+	pulumi.RegisterOutputType(VmClusterAddVirtualNetworkDataCollectionOptionOutput{})
+	pulumi.RegisterOutputType(VmClusterAddVirtualNetworkDataCollectionOptionArrayOutput{})
 	pulumi.RegisterOutputType(VmClusterAddVirtualNetworkDbServerOutput{})
 	pulumi.RegisterOutputType(VmClusterAddVirtualNetworkDbServerArrayOutput{})
+	pulumi.RegisterOutputType(VmClusterDataCollectionOptionsOutput{})
+	pulumi.RegisterOutputType(VmClusterDataCollectionOptionsPtrOutput{})
 	pulumi.RegisterOutputType(VmClusterNetworkScanOutput{})
 	pulumi.RegisterOutputType(VmClusterNetworkScanArrayOutput{})
 	pulumi.RegisterOutputType(VmClusterNetworkVmNetworkOutput{})
 	pulumi.RegisterOutputType(VmClusterNetworkVmNetworkArrayOutput{})
 	pulumi.RegisterOutputType(VmClusterNetworkVmNetworkNodeOutput{})
 	pulumi.RegisterOutputType(VmClusterNetworkVmNetworkNodeArrayOutput{})
+	pulumi.RegisterOutputType(VmClusterRemoveVirtualMachineDataCollectionOptionOutput{})
+	pulumi.RegisterOutputType(VmClusterRemoveVirtualMachineDataCollectionOptionArrayOutput{})
 	pulumi.RegisterOutputType(VmClusterRemoveVirtualMachineDbServerOutput{})
 	pulumi.RegisterOutputType(VmClusterRemoveVirtualMachineDbServerArrayOutput{})
+	pulumi.RegisterOutputType(GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetOutput{})
+	pulumi.RegisterOutputType(GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetArrayOutput{})
+	pulumi.RegisterOutputType(GetAutonomousCharacterSetsFilterOutput{})
+	pulumi.RegisterOutputType(GetAutonomousCharacterSetsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetAutonomousContainerDatabaseBackupConfigOutput{})
 	pulumi.RegisterOutputType(GetAutonomousContainerDatabaseBackupConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetAutonomousContainerDatabaseBackupConfigBackupDestinationDetailOutput{})
@@ -56270,6 +61722,8 @@ func init() {
 	pulumi.RegisterOutputType(GetAutonomousDatabaseDataguardAssociationsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetAutonomousDatabaseKeyHistoryEntryOutput{})
 	pulumi.RegisterOutputType(GetAutonomousDatabaseKeyHistoryEntryArrayOutput{})
+	pulumi.RegisterOutputType(GetAutonomousDatabaseLocalStandbyDbOutput{})
+	pulumi.RegisterOutputType(GetAutonomousDatabaseLocalStandbyDbArrayOutput{})
 	pulumi.RegisterOutputType(GetAutonomousDatabaseScheduledOperationOutput{})
 	pulumi.RegisterOutputType(GetAutonomousDatabaseScheduledOperationArrayOutput{})
 	pulumi.RegisterOutputType(GetAutonomousDatabaseScheduledOperationDayOfWeekOutput{})
@@ -56292,6 +61746,8 @@ func init() {
 	pulumi.RegisterOutputType(GetAutonomousDatabasesAutonomousDatabaseCustomerContactArrayOutput{})
 	pulumi.RegisterOutputType(GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntryOutput{})
 	pulumi.RegisterOutputType(GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntryArrayOutput{})
+	pulumi.RegisterOutputType(GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbOutput{})
+	pulumi.RegisterOutputType(GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArrayOutput{})
 	pulumi.RegisterOutputType(GetAutonomousDatabasesAutonomousDatabaseScheduledOperationOutput{})
 	pulumi.RegisterOutputType(GetAutonomousDatabasesAutonomousDatabaseScheduledOperationArrayOutput{})
 	pulumi.RegisterOutputType(GetAutonomousDatabasesAutonomousDatabaseScheduledOperationDayOfWeekOutput{})
@@ -56314,6 +61770,8 @@ func init() {
 	pulumi.RegisterOutputType(GetAutonomousDatabasesClonesAutonomousDatabaseCustomerContactArrayOutput{})
 	pulumi.RegisterOutputType(GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntryOutput{})
 	pulumi.RegisterOutputType(GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntryArrayOutput{})
+	pulumi.RegisterOutputType(GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbOutput{})
+	pulumi.RegisterOutputType(GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArrayOutput{})
 	pulumi.RegisterOutputType(GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationOutput{})
 	pulumi.RegisterOutputType(GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationArrayOutput{})
 	pulumi.RegisterOutputType(GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationDayOfWeekOutput{})
@@ -56434,6 +61892,8 @@ func init() {
 	pulumi.RegisterOutputType(GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArrayOutput{})
 	pulumi.RegisterOutputType(GetCloudExadataInfrastructuresFilterOutput{})
 	pulumi.RegisterOutputType(GetCloudExadataInfrastructuresFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudVmClusterDataCollectionOptionOutput{})
+	pulumi.RegisterOutputType(GetCloudVmClusterDataCollectionOptionArrayOutput{})
 	pulumi.RegisterOutputType(GetCloudVmClusterIormConfigCachOutput{})
 	pulumi.RegisterOutputType(GetCloudVmClusterIormConfigCachArrayOutput{})
 	pulumi.RegisterOutputType(GetCloudVmClusterIormConfigCachDbPlanOutput{})
@@ -56442,6 +61902,8 @@ func init() {
 	pulumi.RegisterOutputType(GetCloudVmClusterIormConfigDbPlanArrayOutput{})
 	pulumi.RegisterOutputType(GetCloudVmClustersCloudVmClusterOutput{})
 	pulumi.RegisterOutputType(GetCloudVmClustersCloudVmClusterArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudVmClustersCloudVmClusterDataCollectionOptionOutput{})
+	pulumi.RegisterOutputType(GetCloudVmClustersCloudVmClusterDataCollectionOptionArrayOutput{})
 	pulumi.RegisterOutputType(GetCloudVmClustersCloudVmClusterIormConfigCachOutput{})
 	pulumi.RegisterOutputType(GetCloudVmClustersCloudVmClusterIormConfigCachArrayOutput{})
 	pulumi.RegisterOutputType(GetCloudVmClustersCloudVmClusterIormConfigCachDbPlanOutput{})
@@ -56540,6 +62002,12 @@ func init() {
 	pulumi.RegisterOutputType(GetDbServersDbServerDbServerPatchingDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetDbServersFilterOutput{})
 	pulumi.RegisterOutputType(GetDbServersFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemComputePerformancesDbSystemComputePerformanceOutput{})
+	pulumi.RegisterOutputType(GetDbSystemComputePerformancesDbSystemComputePerformanceArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListOutput{})
+	pulumi.RegisterOutputType(GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemComputePerformancesFilterOutput{})
+	pulumi.RegisterOutputType(GetDbSystemComputePerformancesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetDbSystemHistoryEntriesFilterOutput{})
 	pulumi.RegisterOutputType(GetDbSystemHistoryEntriesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetDbSystemHistoryEntriesPatchHistoryEntryOutput{})
@@ -56552,6 +62020,22 @@ func init() {
 	pulumi.RegisterOutputType(GetDbSystemShapesDbSystemShapeArrayOutput{})
 	pulumi.RegisterOutputType(GetDbSystemShapesFilterOutput{})
 	pulumi.RegisterOutputType(GetDbSystemShapesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemStoragePerformancesDbSystemStoragePerformanceOutput{})
+	pulumi.RegisterOutputType(GetDbSystemStoragePerformancesDbSystemStoragePerformanceArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListOutput{})
+	pulumi.RegisterOutputType(GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceOutput{})
+	pulumi.RegisterOutputType(GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListBalancedDiskPerformanceArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceOutput{})
+	pulumi.RegisterOutputType(GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListOutput{})
+	pulumi.RegisterOutputType(GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceOutput{})
+	pulumi.RegisterOutputType(GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformanceArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceOutput{})
+	pulumi.RegisterOutputType(GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemStoragePerformancesFilterOutput{})
+	pulumi.RegisterOutputType(GetDbSystemStoragePerformancesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetDbSystemsDbSystemOutput{})
 	pulumi.RegisterOutputType(GetDbSystemsDbSystemArrayOutput{})
 	pulumi.RegisterOutputType(GetDbSystemsDbSystemDbHomeOutput{})
@@ -56584,6 +62068,10 @@ func init() {
 	pulumi.RegisterOutputType(GetDbSystemsDbSystemMaintenanceWindowMonthArrayOutput{})
 	pulumi.RegisterOutputType(GetDbSystemsFilterOutput{})
 	pulumi.RegisterOutputType(GetDbSystemsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsUpgradeHistoryEntriesFilterOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsUpgradeHistoryEntriesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetDbVersionsDbVersionOutput{})
 	pulumi.RegisterOutputType(GetDbVersionsDbVersionArrayOutput{})
 	pulumi.RegisterOutputType(GetDbVersionsFilterOutput{})
@@ -56612,10 +62100,14 @@ func init() {
 	pulumi.RegisterOutputType(GetExadataIormConfigDbPlanArrayOutput{})
 	pulumi.RegisterOutputType(GetExternalContainerDatabaseDatabaseManagementConfigOutput{})
 	pulumi.RegisterOutputType(GetExternalContainerDatabaseDatabaseManagementConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalContainerDatabaseStackMonitoringConfigOutput{})
+	pulumi.RegisterOutputType(GetExternalContainerDatabaseStackMonitoringConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetExternalContainerDatabasesExternalContainerDatabaseOutput{})
 	pulumi.RegisterOutputType(GetExternalContainerDatabasesExternalContainerDatabaseArrayOutput{})
 	pulumi.RegisterOutputType(GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigOutput{})
 	pulumi.RegisterOutputType(GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigOutput{})
+	pulumi.RegisterOutputType(GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetExternalContainerDatabasesFilterOutput{})
 	pulumi.RegisterOutputType(GetExternalContainerDatabasesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetExternalDatabaseConnectorConnectionCredentialOutput{})
@@ -56634,24 +62126,32 @@ func init() {
 	pulumi.RegisterOutputType(GetExternalNonContainerDatabaseDatabaseManagementConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetExternalNonContainerDatabaseOperationsInsightsConfigOutput{})
 	pulumi.RegisterOutputType(GetExternalNonContainerDatabaseOperationsInsightsConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalNonContainerDatabaseStackMonitoringConfigOutput{})
+	pulumi.RegisterOutputType(GetExternalNonContainerDatabaseStackMonitoringConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetExternalNonContainerDatabasesExternalNonContainerDatabaseOutput{})
 	pulumi.RegisterOutputType(GetExternalNonContainerDatabasesExternalNonContainerDatabaseArrayOutput{})
 	pulumi.RegisterOutputType(GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigOutput{})
 	pulumi.RegisterOutputType(GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigOutput{})
 	pulumi.RegisterOutputType(GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigOutput{})
+	pulumi.RegisterOutputType(GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetExternalNonContainerDatabasesFilterOutput{})
 	pulumi.RegisterOutputType(GetExternalNonContainerDatabasesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetExternalPluggableDatabaseDatabaseManagementConfigOutput{})
 	pulumi.RegisterOutputType(GetExternalPluggableDatabaseDatabaseManagementConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetExternalPluggableDatabaseOperationsInsightsConfigOutput{})
 	pulumi.RegisterOutputType(GetExternalPluggableDatabaseOperationsInsightsConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalPluggableDatabaseStackMonitoringConfigOutput{})
+	pulumi.RegisterOutputType(GetExternalPluggableDatabaseStackMonitoringConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetExternalPluggableDatabasesExternalPluggableDatabaseOutput{})
 	pulumi.RegisterOutputType(GetExternalPluggableDatabasesExternalPluggableDatabaseArrayOutput{})
 	pulumi.RegisterOutputType(GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigOutput{})
 	pulumi.RegisterOutputType(GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigOutput{})
 	pulumi.RegisterOutputType(GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigOutput{})
+	pulumi.RegisterOutputType(GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetExternalPluggableDatabasesFilterOutput{})
 	pulumi.RegisterOutputType(GetExternalPluggableDatabasesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetFlexComponentsFilterOutput{})
@@ -56692,6 +62192,8 @@ func init() {
 	pulumi.RegisterOutputType(GetPluggableDatabasesPluggableDatabaseArrayOutput{})
 	pulumi.RegisterOutputType(GetPluggableDatabasesPluggableDatabaseConnectionStringOutput{})
 	pulumi.RegisterOutputType(GetPluggableDatabasesPluggableDatabaseConnectionStringArrayOutput{})
+	pulumi.RegisterOutputType(GetVmClusterDataCollectionOptionOutput{})
+	pulumi.RegisterOutputType(GetVmClusterDataCollectionOptionArrayOutput{})
 	pulumi.RegisterOutputType(GetVmClusterNetworkScanOutput{})
 	pulumi.RegisterOutputType(GetVmClusterNetworkScanArrayOutput{})
 	pulumi.RegisterOutputType(GetVmClusterNetworkVmNetworkOutput{})
@@ -56736,4 +62238,6 @@ func init() {
 	pulumi.RegisterOutputType(GetVmClustersFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetVmClustersVmClusterOutput{})
 	pulumi.RegisterOutputType(GetVmClustersVmClusterArrayOutput{})
+	pulumi.RegisterOutputType(GetVmClustersVmClusterDataCollectionOptionOutput{})
+	pulumi.RegisterOutputType(GetVmClustersVmClusterDataCollectionOptionArrayOutput{})
 }

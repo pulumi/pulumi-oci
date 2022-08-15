@@ -114,6 +114,7 @@ import * as utilities from "../utilities";
  *             type: _var.registry_folder_data_assets_default_connection_type,
  *         },
  *         description: _var.registry_folder_data_assets_description,
+ *         endPoints: _var.registry_folder_data_assets_end_points,
  *         externalKey: _var.registry_folder_data_assets_external_key,
  *         metadata: {
  *             aggregator: {

@@ -4,6 +4,8 @@
 package com.pulumi.oci.Limits.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Limits.outputs.GetQuotaLock;
+import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -37,6 +39,12 @@ public final class GetQuotaResult {
      * 
      */
     private final String id;
+    private final Boolean isLockOverride;
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    private final List<GetQuotaLock> locks;
     /**
      * @return The name you assign to the quota during creation. The name must be unique across all quotas in the tenancy and cannot be changed.
      * 
@@ -66,6 +74,8 @@ public final class GetQuotaResult {
         @CustomType.Parameter("description") String description,
         @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
         @CustomType.Parameter("id") String id,
+        @CustomType.Parameter("isLockOverride") Boolean isLockOverride,
+        @CustomType.Parameter("locks") List<GetQuotaLock> locks,
         @CustomType.Parameter("name") String name,
         @CustomType.Parameter("quotaId") String quotaId,
         @CustomType.Parameter("state") String state,
@@ -76,6 +86,8 @@ public final class GetQuotaResult {
         this.description = description;
         this.freeformTags = freeformTags;
         this.id = id;
+        this.isLockOverride = isLockOverride;
+        this.locks = locks;
         this.name = name;
         this.quotaId = quotaId;
         this.state = state;
@@ -117,6 +129,16 @@ public final class GetQuotaResult {
      */
     public String id() {
         return this.id;
+    }
+    public Boolean isLockOverride() {
+        return this.isLockOverride;
+    }
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public List<GetQuotaLock> locks() {
+        return this.locks;
     }
     /**
      * @return The name you assign to the quota during creation. The name must be unique across all quotas in the tenancy and cannot be changed.
@@ -164,6 +186,8 @@ public final class GetQuotaResult {
         private String description;
         private Map<String,Object> freeformTags;
         private String id;
+        private Boolean isLockOverride;
+        private List<GetQuotaLock> locks;
         private String name;
         private String quotaId;
         private String state;
@@ -181,6 +205,8 @@ public final class GetQuotaResult {
     	      this.description = defaults.description;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.isLockOverride = defaults.isLockOverride;
+    	      this.locks = defaults.locks;
     	      this.name = defaults.name;
     	      this.quotaId = defaults.quotaId;
     	      this.state = defaults.state;
@@ -208,6 +234,17 @@ public final class GetQuotaResult {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        public Builder isLockOverride(Boolean isLockOverride) {
+            this.isLockOverride = Objects.requireNonNull(isLockOverride);
+            return this;
+        }
+        public Builder locks(List<GetQuotaLock> locks) {
+            this.locks = Objects.requireNonNull(locks);
+            return this;
+        }
+        public Builder locks(GetQuotaLock... locks) {
+            return locks(List.of(locks));
+        }
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
@@ -231,7 +268,7 @@ public final class GetQuotaResult {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }        public GetQuotaResult build() {
-            return new GetQuotaResult(compartmentId, definedTags, description, freeformTags, id, name, quotaId, state, statements, timeCreated);
+            return new GetQuotaResult(compartmentId, definedTags, description, freeformTags, id, isLockOverride, locks, name, quotaId, state, statements, timeCreated);
         }
     }
 }

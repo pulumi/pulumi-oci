@@ -49,7 +49,7 @@ class GetDatabaseToolsEndpointServicesResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools Endpoint Service.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -94,7 +94,7 @@ class GetDatabaseToolsEndpointServicesResult:
     @pulumi.getter
     def state(self) -> Optional[str]:
         """
-        The current state of the DatabaseToolsEndpointService.
+        The current state of the Database Tools Endpoint Service.
         """
         return pulumi.get(self, "state")
 
@@ -123,7 +123,7 @@ def get_database_tools_endpoint_services(compartment_id: Optional[str] = None,
     """
     This data source provides the list of Database Tools Endpoint Services in Oracle Cloud Infrastructure Database Tools service.
 
-    Returns a list of DatabaseToolsEndpointServices.
+    Returns a list of Database Tools endpoint services.
 
     ## Example Usage
 
@@ -139,9 +139,9 @@ def get_database_tools_endpoint_services(compartment_id: Optional[str] = None,
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str name: A filter to return only resources that match the entire name given.
-    :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+    :param str display_name: A filter to return only resources that match the entire specified display name.
+    :param str name: A filter to return only resources that match the entire specified name.
+    :param str state: A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -175,7 +175,7 @@ def get_database_tools_endpoint_services_output(compartment_id: Optional[pulumi.
     """
     This data source provides the list of Database Tools Endpoint Services in Oracle Cloud Infrastructure Database Tools service.
 
-    Returns a list of DatabaseToolsEndpointServices.
+    Returns a list of Database Tools endpoint services.
 
     ## Example Usage
 
@@ -191,8 +191,8 @@ def get_database_tools_endpoint_services_output(compartment_id: Optional[pulumi.
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str name: A filter to return only resources that match the entire name given.
-    :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+    :param str display_name: A filter to return only resources that match the entire specified display name.
+    :param str name: A filter to return only resources that match the entire specified name.
+    :param str state: A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
     """
     ...

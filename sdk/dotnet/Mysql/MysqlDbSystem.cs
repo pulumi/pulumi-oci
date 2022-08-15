@@ -43,6 +43,10 @@ namespace Pulumi.Oci.Mysql
     ///                     { "bar-key", "value" },
     ///                 },
     ///                 IsEnabled = @var.Mysql_db_system_backup_policy_is_enabled,
+    ///                 PitrPolicy = new Oci.Mysql.Inputs.MysqlDbSystemBackupPolicyPitrPolicyArgs
+    ///                 {
+    ///                     IsEnabled = @var.Mysql_db_system_backup_policy_pitr_policy_is_enabled,
+    ///                 },
     ///                 RetentionInDays = @var.Mysql_db_system_backup_policy_retention_in_days,
     ///                 WindowStartTime = @var.Mysql_db_system_backup_policy_window_start_time,
     ///             },
@@ -261,6 +265,12 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         [Output("mysqlVersion")]
         public Output<string> MysqlVersion { get; private set; } = null!;
+
+        /// <summary>
+        /// Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
+        /// </summary>
+        [Output("pointInTimeRecoveryDetails")]
+        public Output<ImmutableArray<Outputs.MysqlDbSystemPointInTimeRecoveryDetail>> PointInTimeRecoveryDetails { get; private set; } = null!;
 
         /// <summary>
         /// The port for primary endpoint of the DB System to listen on.
@@ -754,6 +764,18 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         [Input("mysqlVersion")]
         public Input<string>? MysqlVersion { get; set; }
+
+        [Input("pointInTimeRecoveryDetails")]
+        private InputList<Inputs.MysqlDbSystemPointInTimeRecoveryDetailGetArgs>? _pointInTimeRecoveryDetails;
+
+        /// <summary>
+        /// Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
+        /// </summary>
+        public InputList<Inputs.MysqlDbSystemPointInTimeRecoveryDetailGetArgs> PointInTimeRecoveryDetails
+        {
+            get => _pointInTimeRecoveryDetails ?? (_pointInTimeRecoveryDetails = new InputList<Inputs.MysqlDbSystemPointInTimeRecoveryDetailGetArgs>());
+            set => _pointInTimeRecoveryDetails = value;
+        }
 
         /// <summary>
         /// The port for primary endpoint of the DB System to listen on.

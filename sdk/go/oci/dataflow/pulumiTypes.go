@@ -10,6 +10,318 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+type ApplicationDriverShapeConfig struct {
+	// (Updatable) The amount of memory used for the driver or executors.
+	MemoryInGbs *float64 `pulumi:"memoryInGbs"`
+	// (Updatable) The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+	Ocpus *float64 `pulumi:"ocpus"`
+}
+
+// ApplicationDriverShapeConfigInput is an input type that accepts ApplicationDriverShapeConfigArgs and ApplicationDriverShapeConfigOutput values.
+// You can construct a concrete instance of `ApplicationDriverShapeConfigInput` via:
+//
+//          ApplicationDriverShapeConfigArgs{...}
+type ApplicationDriverShapeConfigInput interface {
+	pulumi.Input
+
+	ToApplicationDriverShapeConfigOutput() ApplicationDriverShapeConfigOutput
+	ToApplicationDriverShapeConfigOutputWithContext(context.Context) ApplicationDriverShapeConfigOutput
+}
+
+type ApplicationDriverShapeConfigArgs struct {
+	// (Updatable) The amount of memory used for the driver or executors.
+	MemoryInGbs pulumi.Float64PtrInput `pulumi:"memoryInGbs"`
+	// (Updatable) The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+	Ocpus pulumi.Float64PtrInput `pulumi:"ocpus"`
+}
+
+func (ApplicationDriverShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ApplicationDriverShapeConfig)(nil)).Elem()
+}
+
+func (i ApplicationDriverShapeConfigArgs) ToApplicationDriverShapeConfigOutput() ApplicationDriverShapeConfigOutput {
+	return i.ToApplicationDriverShapeConfigOutputWithContext(context.Background())
+}
+
+func (i ApplicationDriverShapeConfigArgs) ToApplicationDriverShapeConfigOutputWithContext(ctx context.Context) ApplicationDriverShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ApplicationDriverShapeConfigOutput)
+}
+
+func (i ApplicationDriverShapeConfigArgs) ToApplicationDriverShapeConfigPtrOutput() ApplicationDriverShapeConfigPtrOutput {
+	return i.ToApplicationDriverShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (i ApplicationDriverShapeConfigArgs) ToApplicationDriverShapeConfigPtrOutputWithContext(ctx context.Context) ApplicationDriverShapeConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ApplicationDriverShapeConfigOutput).ToApplicationDriverShapeConfigPtrOutputWithContext(ctx)
+}
+
+// ApplicationDriverShapeConfigPtrInput is an input type that accepts ApplicationDriverShapeConfigArgs, ApplicationDriverShapeConfigPtr and ApplicationDriverShapeConfigPtrOutput values.
+// You can construct a concrete instance of `ApplicationDriverShapeConfigPtrInput` via:
+//
+//          ApplicationDriverShapeConfigArgs{...}
+//
+//  or:
+//
+//          nil
+type ApplicationDriverShapeConfigPtrInput interface {
+	pulumi.Input
+
+	ToApplicationDriverShapeConfigPtrOutput() ApplicationDriverShapeConfigPtrOutput
+	ToApplicationDriverShapeConfigPtrOutputWithContext(context.Context) ApplicationDriverShapeConfigPtrOutput
+}
+
+type applicationDriverShapeConfigPtrType ApplicationDriverShapeConfigArgs
+
+func ApplicationDriverShapeConfigPtr(v *ApplicationDriverShapeConfigArgs) ApplicationDriverShapeConfigPtrInput {
+	return (*applicationDriverShapeConfigPtrType)(v)
+}
+
+func (*applicationDriverShapeConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ApplicationDriverShapeConfig)(nil)).Elem()
+}
+
+func (i *applicationDriverShapeConfigPtrType) ToApplicationDriverShapeConfigPtrOutput() ApplicationDriverShapeConfigPtrOutput {
+	return i.ToApplicationDriverShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *applicationDriverShapeConfigPtrType) ToApplicationDriverShapeConfigPtrOutputWithContext(ctx context.Context) ApplicationDriverShapeConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ApplicationDriverShapeConfigPtrOutput)
+}
+
+type ApplicationDriverShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (ApplicationDriverShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ApplicationDriverShapeConfig)(nil)).Elem()
+}
+
+func (o ApplicationDriverShapeConfigOutput) ToApplicationDriverShapeConfigOutput() ApplicationDriverShapeConfigOutput {
+	return o
+}
+
+func (o ApplicationDriverShapeConfigOutput) ToApplicationDriverShapeConfigOutputWithContext(ctx context.Context) ApplicationDriverShapeConfigOutput {
+	return o
+}
+
+func (o ApplicationDriverShapeConfigOutput) ToApplicationDriverShapeConfigPtrOutput() ApplicationDriverShapeConfigPtrOutput {
+	return o.ToApplicationDriverShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (o ApplicationDriverShapeConfigOutput) ToApplicationDriverShapeConfigPtrOutputWithContext(ctx context.Context) ApplicationDriverShapeConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ApplicationDriverShapeConfig) *ApplicationDriverShapeConfig {
+		return &v
+	}).(ApplicationDriverShapeConfigPtrOutput)
+}
+
+// (Updatable) The amount of memory used for the driver or executors.
+func (o ApplicationDriverShapeConfigOutput) MemoryInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v ApplicationDriverShapeConfig) *float64 { return v.MemoryInGbs }).(pulumi.Float64PtrOutput)
+}
+
+// (Updatable) The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+func (o ApplicationDriverShapeConfigOutput) Ocpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v ApplicationDriverShapeConfig) *float64 { return v.Ocpus }).(pulumi.Float64PtrOutput)
+}
+
+type ApplicationDriverShapeConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (ApplicationDriverShapeConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ApplicationDriverShapeConfig)(nil)).Elem()
+}
+
+func (o ApplicationDriverShapeConfigPtrOutput) ToApplicationDriverShapeConfigPtrOutput() ApplicationDriverShapeConfigPtrOutput {
+	return o
+}
+
+func (o ApplicationDriverShapeConfigPtrOutput) ToApplicationDriverShapeConfigPtrOutputWithContext(ctx context.Context) ApplicationDriverShapeConfigPtrOutput {
+	return o
+}
+
+func (o ApplicationDriverShapeConfigPtrOutput) Elem() ApplicationDriverShapeConfigOutput {
+	return o.ApplyT(func(v *ApplicationDriverShapeConfig) ApplicationDriverShapeConfig {
+		if v != nil {
+			return *v
+		}
+		var ret ApplicationDriverShapeConfig
+		return ret
+	}).(ApplicationDriverShapeConfigOutput)
+}
+
+// (Updatable) The amount of memory used for the driver or executors.
+func (o ApplicationDriverShapeConfigPtrOutput) MemoryInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *ApplicationDriverShapeConfig) *float64 {
+		if v == nil {
+			return nil
+		}
+		return v.MemoryInGbs
+	}).(pulumi.Float64PtrOutput)
+}
+
+// (Updatable) The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+func (o ApplicationDriverShapeConfigPtrOutput) Ocpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *ApplicationDriverShapeConfig) *float64 {
+		if v == nil {
+			return nil
+		}
+		return v.Ocpus
+	}).(pulumi.Float64PtrOutput)
+}
+
+type ApplicationExecutorShapeConfig struct {
+	// (Updatable) The amount of memory used for the driver or executors.
+	MemoryInGbs *float64 `pulumi:"memoryInGbs"`
+	// (Updatable) The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+	Ocpus *float64 `pulumi:"ocpus"`
+}
+
+// ApplicationExecutorShapeConfigInput is an input type that accepts ApplicationExecutorShapeConfigArgs and ApplicationExecutorShapeConfigOutput values.
+// You can construct a concrete instance of `ApplicationExecutorShapeConfigInput` via:
+//
+//          ApplicationExecutorShapeConfigArgs{...}
+type ApplicationExecutorShapeConfigInput interface {
+	pulumi.Input
+
+	ToApplicationExecutorShapeConfigOutput() ApplicationExecutorShapeConfigOutput
+	ToApplicationExecutorShapeConfigOutputWithContext(context.Context) ApplicationExecutorShapeConfigOutput
+}
+
+type ApplicationExecutorShapeConfigArgs struct {
+	// (Updatable) The amount of memory used for the driver or executors.
+	MemoryInGbs pulumi.Float64PtrInput `pulumi:"memoryInGbs"`
+	// (Updatable) The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+	Ocpus pulumi.Float64PtrInput `pulumi:"ocpus"`
+}
+
+func (ApplicationExecutorShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ApplicationExecutorShapeConfig)(nil)).Elem()
+}
+
+func (i ApplicationExecutorShapeConfigArgs) ToApplicationExecutorShapeConfigOutput() ApplicationExecutorShapeConfigOutput {
+	return i.ToApplicationExecutorShapeConfigOutputWithContext(context.Background())
+}
+
+func (i ApplicationExecutorShapeConfigArgs) ToApplicationExecutorShapeConfigOutputWithContext(ctx context.Context) ApplicationExecutorShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ApplicationExecutorShapeConfigOutput)
+}
+
+func (i ApplicationExecutorShapeConfigArgs) ToApplicationExecutorShapeConfigPtrOutput() ApplicationExecutorShapeConfigPtrOutput {
+	return i.ToApplicationExecutorShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (i ApplicationExecutorShapeConfigArgs) ToApplicationExecutorShapeConfigPtrOutputWithContext(ctx context.Context) ApplicationExecutorShapeConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ApplicationExecutorShapeConfigOutput).ToApplicationExecutorShapeConfigPtrOutputWithContext(ctx)
+}
+
+// ApplicationExecutorShapeConfigPtrInput is an input type that accepts ApplicationExecutorShapeConfigArgs, ApplicationExecutorShapeConfigPtr and ApplicationExecutorShapeConfigPtrOutput values.
+// You can construct a concrete instance of `ApplicationExecutorShapeConfigPtrInput` via:
+//
+//          ApplicationExecutorShapeConfigArgs{...}
+//
+//  or:
+//
+//          nil
+type ApplicationExecutorShapeConfigPtrInput interface {
+	pulumi.Input
+
+	ToApplicationExecutorShapeConfigPtrOutput() ApplicationExecutorShapeConfigPtrOutput
+	ToApplicationExecutorShapeConfigPtrOutputWithContext(context.Context) ApplicationExecutorShapeConfigPtrOutput
+}
+
+type applicationExecutorShapeConfigPtrType ApplicationExecutorShapeConfigArgs
+
+func ApplicationExecutorShapeConfigPtr(v *ApplicationExecutorShapeConfigArgs) ApplicationExecutorShapeConfigPtrInput {
+	return (*applicationExecutorShapeConfigPtrType)(v)
+}
+
+func (*applicationExecutorShapeConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ApplicationExecutorShapeConfig)(nil)).Elem()
+}
+
+func (i *applicationExecutorShapeConfigPtrType) ToApplicationExecutorShapeConfigPtrOutput() ApplicationExecutorShapeConfigPtrOutput {
+	return i.ToApplicationExecutorShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *applicationExecutorShapeConfigPtrType) ToApplicationExecutorShapeConfigPtrOutputWithContext(ctx context.Context) ApplicationExecutorShapeConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ApplicationExecutorShapeConfigPtrOutput)
+}
+
+type ApplicationExecutorShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (ApplicationExecutorShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ApplicationExecutorShapeConfig)(nil)).Elem()
+}
+
+func (o ApplicationExecutorShapeConfigOutput) ToApplicationExecutorShapeConfigOutput() ApplicationExecutorShapeConfigOutput {
+	return o
+}
+
+func (o ApplicationExecutorShapeConfigOutput) ToApplicationExecutorShapeConfigOutputWithContext(ctx context.Context) ApplicationExecutorShapeConfigOutput {
+	return o
+}
+
+func (o ApplicationExecutorShapeConfigOutput) ToApplicationExecutorShapeConfigPtrOutput() ApplicationExecutorShapeConfigPtrOutput {
+	return o.ToApplicationExecutorShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (o ApplicationExecutorShapeConfigOutput) ToApplicationExecutorShapeConfigPtrOutputWithContext(ctx context.Context) ApplicationExecutorShapeConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ApplicationExecutorShapeConfig) *ApplicationExecutorShapeConfig {
+		return &v
+	}).(ApplicationExecutorShapeConfigPtrOutput)
+}
+
+// (Updatable) The amount of memory used for the driver or executors.
+func (o ApplicationExecutorShapeConfigOutput) MemoryInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v ApplicationExecutorShapeConfig) *float64 { return v.MemoryInGbs }).(pulumi.Float64PtrOutput)
+}
+
+// (Updatable) The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+func (o ApplicationExecutorShapeConfigOutput) Ocpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v ApplicationExecutorShapeConfig) *float64 { return v.Ocpus }).(pulumi.Float64PtrOutput)
+}
+
+type ApplicationExecutorShapeConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (ApplicationExecutorShapeConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ApplicationExecutorShapeConfig)(nil)).Elem()
+}
+
+func (o ApplicationExecutorShapeConfigPtrOutput) ToApplicationExecutorShapeConfigPtrOutput() ApplicationExecutorShapeConfigPtrOutput {
+	return o
+}
+
+func (o ApplicationExecutorShapeConfigPtrOutput) ToApplicationExecutorShapeConfigPtrOutputWithContext(ctx context.Context) ApplicationExecutorShapeConfigPtrOutput {
+	return o
+}
+
+func (o ApplicationExecutorShapeConfigPtrOutput) Elem() ApplicationExecutorShapeConfigOutput {
+	return o.ApplyT(func(v *ApplicationExecutorShapeConfig) ApplicationExecutorShapeConfig {
+		if v != nil {
+			return *v
+		}
+		var ret ApplicationExecutorShapeConfig
+		return ret
+	}).(ApplicationExecutorShapeConfigOutput)
+}
+
+// (Updatable) The amount of memory used for the driver or executors.
+func (o ApplicationExecutorShapeConfigPtrOutput) MemoryInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *ApplicationExecutorShapeConfig) *float64 {
+		if v == nil {
+			return nil
+		}
+		return v.MemoryInGbs
+	}).(pulumi.Float64PtrOutput)
+}
+
+// (Updatable) The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+func (o ApplicationExecutorShapeConfigPtrOutput) Ocpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *ApplicationExecutorShapeConfig) *float64 {
+		if v == nil {
+			return nil
+		}
+		return v.Ocpus
+	}).(pulumi.Float64PtrOutput)
+}
+
 type ApplicationParameter struct {
 	// (Updatable) The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "inputFile"
 	Name string `pulumi:"name"`
@@ -116,6 +428,318 @@ func (o ApplicationParameterArrayOutput) Index(i pulumi.IntInput) ApplicationPar
 	}).(ApplicationParameterOutput)
 }
 
+type InvokeRunDriverShapeConfig struct {
+	// The amount of memory used for the driver or executors.
+	MemoryInGbs *float64 `pulumi:"memoryInGbs"`
+	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+	Ocpus *float64 `pulumi:"ocpus"`
+}
+
+// InvokeRunDriverShapeConfigInput is an input type that accepts InvokeRunDriverShapeConfigArgs and InvokeRunDriverShapeConfigOutput values.
+// You can construct a concrete instance of `InvokeRunDriverShapeConfigInput` via:
+//
+//          InvokeRunDriverShapeConfigArgs{...}
+type InvokeRunDriverShapeConfigInput interface {
+	pulumi.Input
+
+	ToInvokeRunDriverShapeConfigOutput() InvokeRunDriverShapeConfigOutput
+	ToInvokeRunDriverShapeConfigOutputWithContext(context.Context) InvokeRunDriverShapeConfigOutput
+}
+
+type InvokeRunDriverShapeConfigArgs struct {
+	// The amount of memory used for the driver or executors.
+	MemoryInGbs pulumi.Float64PtrInput `pulumi:"memoryInGbs"`
+	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+	Ocpus pulumi.Float64PtrInput `pulumi:"ocpus"`
+}
+
+func (InvokeRunDriverShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InvokeRunDriverShapeConfig)(nil)).Elem()
+}
+
+func (i InvokeRunDriverShapeConfigArgs) ToInvokeRunDriverShapeConfigOutput() InvokeRunDriverShapeConfigOutput {
+	return i.ToInvokeRunDriverShapeConfigOutputWithContext(context.Background())
+}
+
+func (i InvokeRunDriverShapeConfigArgs) ToInvokeRunDriverShapeConfigOutputWithContext(ctx context.Context) InvokeRunDriverShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InvokeRunDriverShapeConfigOutput)
+}
+
+func (i InvokeRunDriverShapeConfigArgs) ToInvokeRunDriverShapeConfigPtrOutput() InvokeRunDriverShapeConfigPtrOutput {
+	return i.ToInvokeRunDriverShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (i InvokeRunDriverShapeConfigArgs) ToInvokeRunDriverShapeConfigPtrOutputWithContext(ctx context.Context) InvokeRunDriverShapeConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InvokeRunDriverShapeConfigOutput).ToInvokeRunDriverShapeConfigPtrOutputWithContext(ctx)
+}
+
+// InvokeRunDriverShapeConfigPtrInput is an input type that accepts InvokeRunDriverShapeConfigArgs, InvokeRunDriverShapeConfigPtr and InvokeRunDriverShapeConfigPtrOutput values.
+// You can construct a concrete instance of `InvokeRunDriverShapeConfigPtrInput` via:
+//
+//          InvokeRunDriverShapeConfigArgs{...}
+//
+//  or:
+//
+//          nil
+type InvokeRunDriverShapeConfigPtrInput interface {
+	pulumi.Input
+
+	ToInvokeRunDriverShapeConfigPtrOutput() InvokeRunDriverShapeConfigPtrOutput
+	ToInvokeRunDriverShapeConfigPtrOutputWithContext(context.Context) InvokeRunDriverShapeConfigPtrOutput
+}
+
+type invokeRunDriverShapeConfigPtrType InvokeRunDriverShapeConfigArgs
+
+func InvokeRunDriverShapeConfigPtr(v *InvokeRunDriverShapeConfigArgs) InvokeRunDriverShapeConfigPtrInput {
+	return (*invokeRunDriverShapeConfigPtrType)(v)
+}
+
+func (*invokeRunDriverShapeConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**InvokeRunDriverShapeConfig)(nil)).Elem()
+}
+
+func (i *invokeRunDriverShapeConfigPtrType) ToInvokeRunDriverShapeConfigPtrOutput() InvokeRunDriverShapeConfigPtrOutput {
+	return i.ToInvokeRunDriverShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *invokeRunDriverShapeConfigPtrType) ToInvokeRunDriverShapeConfigPtrOutputWithContext(ctx context.Context) InvokeRunDriverShapeConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InvokeRunDriverShapeConfigPtrOutput)
+}
+
+type InvokeRunDriverShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (InvokeRunDriverShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InvokeRunDriverShapeConfig)(nil)).Elem()
+}
+
+func (o InvokeRunDriverShapeConfigOutput) ToInvokeRunDriverShapeConfigOutput() InvokeRunDriverShapeConfigOutput {
+	return o
+}
+
+func (o InvokeRunDriverShapeConfigOutput) ToInvokeRunDriverShapeConfigOutputWithContext(ctx context.Context) InvokeRunDriverShapeConfigOutput {
+	return o
+}
+
+func (o InvokeRunDriverShapeConfigOutput) ToInvokeRunDriverShapeConfigPtrOutput() InvokeRunDriverShapeConfigPtrOutput {
+	return o.ToInvokeRunDriverShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (o InvokeRunDriverShapeConfigOutput) ToInvokeRunDriverShapeConfigPtrOutputWithContext(ctx context.Context) InvokeRunDriverShapeConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v InvokeRunDriverShapeConfig) *InvokeRunDriverShapeConfig {
+		return &v
+	}).(InvokeRunDriverShapeConfigPtrOutput)
+}
+
+// The amount of memory used for the driver or executors.
+func (o InvokeRunDriverShapeConfigOutput) MemoryInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v InvokeRunDriverShapeConfig) *float64 { return v.MemoryInGbs }).(pulumi.Float64PtrOutput)
+}
+
+// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+func (o InvokeRunDriverShapeConfigOutput) Ocpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v InvokeRunDriverShapeConfig) *float64 { return v.Ocpus }).(pulumi.Float64PtrOutput)
+}
+
+type InvokeRunDriverShapeConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (InvokeRunDriverShapeConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**InvokeRunDriverShapeConfig)(nil)).Elem()
+}
+
+func (o InvokeRunDriverShapeConfigPtrOutput) ToInvokeRunDriverShapeConfigPtrOutput() InvokeRunDriverShapeConfigPtrOutput {
+	return o
+}
+
+func (o InvokeRunDriverShapeConfigPtrOutput) ToInvokeRunDriverShapeConfigPtrOutputWithContext(ctx context.Context) InvokeRunDriverShapeConfigPtrOutput {
+	return o
+}
+
+func (o InvokeRunDriverShapeConfigPtrOutput) Elem() InvokeRunDriverShapeConfigOutput {
+	return o.ApplyT(func(v *InvokeRunDriverShapeConfig) InvokeRunDriverShapeConfig {
+		if v != nil {
+			return *v
+		}
+		var ret InvokeRunDriverShapeConfig
+		return ret
+	}).(InvokeRunDriverShapeConfigOutput)
+}
+
+// The amount of memory used for the driver or executors.
+func (o InvokeRunDriverShapeConfigPtrOutput) MemoryInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *InvokeRunDriverShapeConfig) *float64 {
+		if v == nil {
+			return nil
+		}
+		return v.MemoryInGbs
+	}).(pulumi.Float64PtrOutput)
+}
+
+// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+func (o InvokeRunDriverShapeConfigPtrOutput) Ocpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *InvokeRunDriverShapeConfig) *float64 {
+		if v == nil {
+			return nil
+		}
+		return v.Ocpus
+	}).(pulumi.Float64PtrOutput)
+}
+
+type InvokeRunExecutorShapeConfig struct {
+	// The amount of memory used for the driver or executors.
+	MemoryInGbs *float64 `pulumi:"memoryInGbs"`
+	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+	Ocpus *float64 `pulumi:"ocpus"`
+}
+
+// InvokeRunExecutorShapeConfigInput is an input type that accepts InvokeRunExecutorShapeConfigArgs and InvokeRunExecutorShapeConfigOutput values.
+// You can construct a concrete instance of `InvokeRunExecutorShapeConfigInput` via:
+//
+//          InvokeRunExecutorShapeConfigArgs{...}
+type InvokeRunExecutorShapeConfigInput interface {
+	pulumi.Input
+
+	ToInvokeRunExecutorShapeConfigOutput() InvokeRunExecutorShapeConfigOutput
+	ToInvokeRunExecutorShapeConfigOutputWithContext(context.Context) InvokeRunExecutorShapeConfigOutput
+}
+
+type InvokeRunExecutorShapeConfigArgs struct {
+	// The amount of memory used for the driver or executors.
+	MemoryInGbs pulumi.Float64PtrInput `pulumi:"memoryInGbs"`
+	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+	Ocpus pulumi.Float64PtrInput `pulumi:"ocpus"`
+}
+
+func (InvokeRunExecutorShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InvokeRunExecutorShapeConfig)(nil)).Elem()
+}
+
+func (i InvokeRunExecutorShapeConfigArgs) ToInvokeRunExecutorShapeConfigOutput() InvokeRunExecutorShapeConfigOutput {
+	return i.ToInvokeRunExecutorShapeConfigOutputWithContext(context.Background())
+}
+
+func (i InvokeRunExecutorShapeConfigArgs) ToInvokeRunExecutorShapeConfigOutputWithContext(ctx context.Context) InvokeRunExecutorShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InvokeRunExecutorShapeConfigOutput)
+}
+
+func (i InvokeRunExecutorShapeConfigArgs) ToInvokeRunExecutorShapeConfigPtrOutput() InvokeRunExecutorShapeConfigPtrOutput {
+	return i.ToInvokeRunExecutorShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (i InvokeRunExecutorShapeConfigArgs) ToInvokeRunExecutorShapeConfigPtrOutputWithContext(ctx context.Context) InvokeRunExecutorShapeConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InvokeRunExecutorShapeConfigOutput).ToInvokeRunExecutorShapeConfigPtrOutputWithContext(ctx)
+}
+
+// InvokeRunExecutorShapeConfigPtrInput is an input type that accepts InvokeRunExecutorShapeConfigArgs, InvokeRunExecutorShapeConfigPtr and InvokeRunExecutorShapeConfigPtrOutput values.
+// You can construct a concrete instance of `InvokeRunExecutorShapeConfigPtrInput` via:
+//
+//          InvokeRunExecutorShapeConfigArgs{...}
+//
+//  or:
+//
+//          nil
+type InvokeRunExecutorShapeConfigPtrInput interface {
+	pulumi.Input
+
+	ToInvokeRunExecutorShapeConfigPtrOutput() InvokeRunExecutorShapeConfigPtrOutput
+	ToInvokeRunExecutorShapeConfigPtrOutputWithContext(context.Context) InvokeRunExecutorShapeConfigPtrOutput
+}
+
+type invokeRunExecutorShapeConfigPtrType InvokeRunExecutorShapeConfigArgs
+
+func InvokeRunExecutorShapeConfigPtr(v *InvokeRunExecutorShapeConfigArgs) InvokeRunExecutorShapeConfigPtrInput {
+	return (*invokeRunExecutorShapeConfigPtrType)(v)
+}
+
+func (*invokeRunExecutorShapeConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**InvokeRunExecutorShapeConfig)(nil)).Elem()
+}
+
+func (i *invokeRunExecutorShapeConfigPtrType) ToInvokeRunExecutorShapeConfigPtrOutput() InvokeRunExecutorShapeConfigPtrOutput {
+	return i.ToInvokeRunExecutorShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *invokeRunExecutorShapeConfigPtrType) ToInvokeRunExecutorShapeConfigPtrOutputWithContext(ctx context.Context) InvokeRunExecutorShapeConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InvokeRunExecutorShapeConfigPtrOutput)
+}
+
+type InvokeRunExecutorShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (InvokeRunExecutorShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InvokeRunExecutorShapeConfig)(nil)).Elem()
+}
+
+func (o InvokeRunExecutorShapeConfigOutput) ToInvokeRunExecutorShapeConfigOutput() InvokeRunExecutorShapeConfigOutput {
+	return o
+}
+
+func (o InvokeRunExecutorShapeConfigOutput) ToInvokeRunExecutorShapeConfigOutputWithContext(ctx context.Context) InvokeRunExecutorShapeConfigOutput {
+	return o
+}
+
+func (o InvokeRunExecutorShapeConfigOutput) ToInvokeRunExecutorShapeConfigPtrOutput() InvokeRunExecutorShapeConfigPtrOutput {
+	return o.ToInvokeRunExecutorShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (o InvokeRunExecutorShapeConfigOutput) ToInvokeRunExecutorShapeConfigPtrOutputWithContext(ctx context.Context) InvokeRunExecutorShapeConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v InvokeRunExecutorShapeConfig) *InvokeRunExecutorShapeConfig {
+		return &v
+	}).(InvokeRunExecutorShapeConfigPtrOutput)
+}
+
+// The amount of memory used for the driver or executors.
+func (o InvokeRunExecutorShapeConfigOutput) MemoryInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v InvokeRunExecutorShapeConfig) *float64 { return v.MemoryInGbs }).(pulumi.Float64PtrOutput)
+}
+
+// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+func (o InvokeRunExecutorShapeConfigOutput) Ocpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v InvokeRunExecutorShapeConfig) *float64 { return v.Ocpus }).(pulumi.Float64PtrOutput)
+}
+
+type InvokeRunExecutorShapeConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (InvokeRunExecutorShapeConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**InvokeRunExecutorShapeConfig)(nil)).Elem()
+}
+
+func (o InvokeRunExecutorShapeConfigPtrOutput) ToInvokeRunExecutorShapeConfigPtrOutput() InvokeRunExecutorShapeConfigPtrOutput {
+	return o
+}
+
+func (o InvokeRunExecutorShapeConfigPtrOutput) ToInvokeRunExecutorShapeConfigPtrOutputWithContext(ctx context.Context) InvokeRunExecutorShapeConfigPtrOutput {
+	return o
+}
+
+func (o InvokeRunExecutorShapeConfigPtrOutput) Elem() InvokeRunExecutorShapeConfigOutput {
+	return o.ApplyT(func(v *InvokeRunExecutorShapeConfig) InvokeRunExecutorShapeConfig {
+		if v != nil {
+			return *v
+		}
+		var ret InvokeRunExecutorShapeConfig
+		return ret
+	}).(InvokeRunExecutorShapeConfigOutput)
+}
+
+// The amount of memory used for the driver or executors.
+func (o InvokeRunExecutorShapeConfigPtrOutput) MemoryInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *InvokeRunExecutorShapeConfig) *float64 {
+		if v == nil {
+			return nil
+		}
+		return v.MemoryInGbs
+	}).(pulumi.Float64PtrOutput)
+}
+
+// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+func (o InvokeRunExecutorShapeConfigPtrOutput) Ocpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *InvokeRunExecutorShapeConfig) *float64 {
+		if v == nil {
+			return nil
+		}
+		return v.Ocpus
+	}).(pulumi.Float64PtrOutput)
+}
+
 type InvokeRunParameter struct {
 	// The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "inputFile"
 	Name string `pulumi:"name"`
@@ -220,6 +844,218 @@ func (o InvokeRunParameterArrayOutput) Index(i pulumi.IntInput) InvokeRunParamet
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) InvokeRunParameter {
 		return vs[0].([]InvokeRunParameter)[vs[1].(int)]
 	}).(InvokeRunParameterOutput)
+}
+
+type GetApplicationDriverShapeConfig struct {
+	// The amount of memory used for the driver or executors.
+	MemoryInGbs float64 `pulumi:"memoryInGbs"`
+	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+	Ocpus float64 `pulumi:"ocpus"`
+}
+
+// GetApplicationDriverShapeConfigInput is an input type that accepts GetApplicationDriverShapeConfigArgs and GetApplicationDriverShapeConfigOutput values.
+// You can construct a concrete instance of `GetApplicationDriverShapeConfigInput` via:
+//
+//          GetApplicationDriverShapeConfigArgs{...}
+type GetApplicationDriverShapeConfigInput interface {
+	pulumi.Input
+
+	ToGetApplicationDriverShapeConfigOutput() GetApplicationDriverShapeConfigOutput
+	ToGetApplicationDriverShapeConfigOutputWithContext(context.Context) GetApplicationDriverShapeConfigOutput
+}
+
+type GetApplicationDriverShapeConfigArgs struct {
+	// The amount of memory used for the driver or executors.
+	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
+	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+}
+
+func (GetApplicationDriverShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApplicationDriverShapeConfig)(nil)).Elem()
+}
+
+func (i GetApplicationDriverShapeConfigArgs) ToGetApplicationDriverShapeConfigOutput() GetApplicationDriverShapeConfigOutput {
+	return i.ToGetApplicationDriverShapeConfigOutputWithContext(context.Background())
+}
+
+func (i GetApplicationDriverShapeConfigArgs) ToGetApplicationDriverShapeConfigOutputWithContext(ctx context.Context) GetApplicationDriverShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationDriverShapeConfigOutput)
+}
+
+// GetApplicationDriverShapeConfigArrayInput is an input type that accepts GetApplicationDriverShapeConfigArray and GetApplicationDriverShapeConfigArrayOutput values.
+// You can construct a concrete instance of `GetApplicationDriverShapeConfigArrayInput` via:
+//
+//          GetApplicationDriverShapeConfigArray{ GetApplicationDriverShapeConfigArgs{...} }
+type GetApplicationDriverShapeConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetApplicationDriverShapeConfigArrayOutput() GetApplicationDriverShapeConfigArrayOutput
+	ToGetApplicationDriverShapeConfigArrayOutputWithContext(context.Context) GetApplicationDriverShapeConfigArrayOutput
+}
+
+type GetApplicationDriverShapeConfigArray []GetApplicationDriverShapeConfigInput
+
+func (GetApplicationDriverShapeConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApplicationDriverShapeConfig)(nil)).Elem()
+}
+
+func (i GetApplicationDriverShapeConfigArray) ToGetApplicationDriverShapeConfigArrayOutput() GetApplicationDriverShapeConfigArrayOutput {
+	return i.ToGetApplicationDriverShapeConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetApplicationDriverShapeConfigArray) ToGetApplicationDriverShapeConfigArrayOutputWithContext(ctx context.Context) GetApplicationDriverShapeConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationDriverShapeConfigArrayOutput)
+}
+
+type GetApplicationDriverShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (GetApplicationDriverShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApplicationDriverShapeConfig)(nil)).Elem()
+}
+
+func (o GetApplicationDriverShapeConfigOutput) ToGetApplicationDriverShapeConfigOutput() GetApplicationDriverShapeConfigOutput {
+	return o
+}
+
+func (o GetApplicationDriverShapeConfigOutput) ToGetApplicationDriverShapeConfigOutputWithContext(ctx context.Context) GetApplicationDriverShapeConfigOutput {
+	return o
+}
+
+// The amount of memory used for the driver or executors.
+func (o GetApplicationDriverShapeConfigOutput) MemoryInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetApplicationDriverShapeConfig) float64 { return v.MemoryInGbs }).(pulumi.Float64Output)
+}
+
+// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+func (o GetApplicationDriverShapeConfigOutput) Ocpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetApplicationDriverShapeConfig) float64 { return v.Ocpus }).(pulumi.Float64Output)
+}
+
+type GetApplicationDriverShapeConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetApplicationDriverShapeConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApplicationDriverShapeConfig)(nil)).Elem()
+}
+
+func (o GetApplicationDriverShapeConfigArrayOutput) ToGetApplicationDriverShapeConfigArrayOutput() GetApplicationDriverShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetApplicationDriverShapeConfigArrayOutput) ToGetApplicationDriverShapeConfigArrayOutputWithContext(ctx context.Context) GetApplicationDriverShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetApplicationDriverShapeConfigArrayOutput) Index(i pulumi.IntInput) GetApplicationDriverShapeConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApplicationDriverShapeConfig {
+		return vs[0].([]GetApplicationDriverShapeConfig)[vs[1].(int)]
+	}).(GetApplicationDriverShapeConfigOutput)
+}
+
+type GetApplicationExecutorShapeConfig struct {
+	// The amount of memory used for the driver or executors.
+	MemoryInGbs float64 `pulumi:"memoryInGbs"`
+	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+	Ocpus float64 `pulumi:"ocpus"`
+}
+
+// GetApplicationExecutorShapeConfigInput is an input type that accepts GetApplicationExecutorShapeConfigArgs and GetApplicationExecutorShapeConfigOutput values.
+// You can construct a concrete instance of `GetApplicationExecutorShapeConfigInput` via:
+//
+//          GetApplicationExecutorShapeConfigArgs{...}
+type GetApplicationExecutorShapeConfigInput interface {
+	pulumi.Input
+
+	ToGetApplicationExecutorShapeConfigOutput() GetApplicationExecutorShapeConfigOutput
+	ToGetApplicationExecutorShapeConfigOutputWithContext(context.Context) GetApplicationExecutorShapeConfigOutput
+}
+
+type GetApplicationExecutorShapeConfigArgs struct {
+	// The amount of memory used for the driver or executors.
+	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
+	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+}
+
+func (GetApplicationExecutorShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApplicationExecutorShapeConfig)(nil)).Elem()
+}
+
+func (i GetApplicationExecutorShapeConfigArgs) ToGetApplicationExecutorShapeConfigOutput() GetApplicationExecutorShapeConfigOutput {
+	return i.ToGetApplicationExecutorShapeConfigOutputWithContext(context.Background())
+}
+
+func (i GetApplicationExecutorShapeConfigArgs) ToGetApplicationExecutorShapeConfigOutputWithContext(ctx context.Context) GetApplicationExecutorShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationExecutorShapeConfigOutput)
+}
+
+// GetApplicationExecutorShapeConfigArrayInput is an input type that accepts GetApplicationExecutorShapeConfigArray and GetApplicationExecutorShapeConfigArrayOutput values.
+// You can construct a concrete instance of `GetApplicationExecutorShapeConfigArrayInput` via:
+//
+//          GetApplicationExecutorShapeConfigArray{ GetApplicationExecutorShapeConfigArgs{...} }
+type GetApplicationExecutorShapeConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetApplicationExecutorShapeConfigArrayOutput() GetApplicationExecutorShapeConfigArrayOutput
+	ToGetApplicationExecutorShapeConfigArrayOutputWithContext(context.Context) GetApplicationExecutorShapeConfigArrayOutput
+}
+
+type GetApplicationExecutorShapeConfigArray []GetApplicationExecutorShapeConfigInput
+
+func (GetApplicationExecutorShapeConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApplicationExecutorShapeConfig)(nil)).Elem()
+}
+
+func (i GetApplicationExecutorShapeConfigArray) ToGetApplicationExecutorShapeConfigArrayOutput() GetApplicationExecutorShapeConfigArrayOutput {
+	return i.ToGetApplicationExecutorShapeConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetApplicationExecutorShapeConfigArray) ToGetApplicationExecutorShapeConfigArrayOutputWithContext(ctx context.Context) GetApplicationExecutorShapeConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationExecutorShapeConfigArrayOutput)
+}
+
+type GetApplicationExecutorShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (GetApplicationExecutorShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApplicationExecutorShapeConfig)(nil)).Elem()
+}
+
+func (o GetApplicationExecutorShapeConfigOutput) ToGetApplicationExecutorShapeConfigOutput() GetApplicationExecutorShapeConfigOutput {
+	return o
+}
+
+func (o GetApplicationExecutorShapeConfigOutput) ToGetApplicationExecutorShapeConfigOutputWithContext(ctx context.Context) GetApplicationExecutorShapeConfigOutput {
+	return o
+}
+
+// The amount of memory used for the driver or executors.
+func (o GetApplicationExecutorShapeConfigOutput) MemoryInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetApplicationExecutorShapeConfig) float64 { return v.MemoryInGbs }).(pulumi.Float64Output)
+}
+
+// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+func (o GetApplicationExecutorShapeConfigOutput) Ocpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetApplicationExecutorShapeConfig) float64 { return v.Ocpus }).(pulumi.Float64Output)
+}
+
+type GetApplicationExecutorShapeConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetApplicationExecutorShapeConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApplicationExecutorShapeConfig)(nil)).Elem()
+}
+
+func (o GetApplicationExecutorShapeConfigArrayOutput) ToGetApplicationExecutorShapeConfigArrayOutput() GetApplicationExecutorShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetApplicationExecutorShapeConfigArrayOutput) ToGetApplicationExecutorShapeConfigArrayOutputWithContext(ctx context.Context) GetApplicationExecutorShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetApplicationExecutorShapeConfigArrayOutput) Index(i pulumi.IntInput) GetApplicationExecutorShapeConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApplicationExecutorShapeConfig {
+		return vs[0].([]GetApplicationExecutorShapeConfig)[vs[1].(int)]
+	}).(GetApplicationExecutorShapeConfigOutput)
 }
 
 type GetApplicationParameter struct {
@@ -347,10 +1183,14 @@ type GetApplicationsApplication struct {
 	DisplayName string `pulumi:"displayName"`
 	// The VM shape for the driver. Sets the driver cores and memory.
 	DriverShape string `pulumi:"driverShape"`
+	// This is used to configure the shape of the driver or executor if a flexible shape is used.
+	DriverShapeConfigs []GetApplicationsApplicationDriverShapeConfig `pulumi:"driverShapeConfigs"`
 	// The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
 	Execute string `pulumi:"execute"`
 	// The VM shape for the executors. Sets the executor cores and memory.
 	ExecutorShape string `pulumi:"executorShape"`
+	// This is used to configure the shape of the driver or executor if a flexible shape is used.
+	ExecutorShapeConfigs []GetApplicationsApplicationExecutorShapeConfig `pulumi:"executorShapeConfigs"`
 	// An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 	FileUri string `pulumi:"fileUri"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -417,10 +1257,14 @@ type GetApplicationsApplicationArgs struct {
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// The VM shape for the driver. Sets the driver cores and memory.
 	DriverShape pulumi.StringInput `pulumi:"driverShape"`
+	// This is used to configure the shape of the driver or executor if a flexible shape is used.
+	DriverShapeConfigs GetApplicationsApplicationDriverShapeConfigArrayInput `pulumi:"driverShapeConfigs"`
 	// The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
 	Execute pulumi.StringInput `pulumi:"execute"`
 	// The VM shape for the executors. Sets the executor cores and memory.
 	ExecutorShape pulumi.StringInput `pulumi:"executorShape"`
+	// This is used to configure the shape of the driver or executor if a flexible shape is used.
+	ExecutorShapeConfigs GetApplicationsApplicationExecutorShapeConfigArrayInput `pulumi:"executorShapeConfigs"`
 	// An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 	FileUri pulumi.StringInput `pulumi:"fileUri"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -553,6 +1397,13 @@ func (o GetApplicationsApplicationOutput) DriverShape() pulumi.StringOutput {
 	return o.ApplyT(func(v GetApplicationsApplication) string { return v.DriverShape }).(pulumi.StringOutput)
 }
 
+// This is used to configure the shape of the driver or executor if a flexible shape is used.
+func (o GetApplicationsApplicationOutput) DriverShapeConfigs() GetApplicationsApplicationDriverShapeConfigArrayOutput {
+	return o.ApplyT(func(v GetApplicationsApplication) []GetApplicationsApplicationDriverShapeConfig {
+		return v.DriverShapeConfigs
+	}).(GetApplicationsApplicationDriverShapeConfigArrayOutput)
+}
+
 // The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
 func (o GetApplicationsApplicationOutput) Execute() pulumi.StringOutput {
 	return o.ApplyT(func(v GetApplicationsApplication) string { return v.Execute }).(pulumi.StringOutput)
@@ -561,6 +1412,13 @@ func (o GetApplicationsApplicationOutput) Execute() pulumi.StringOutput {
 // The VM shape for the executors. Sets the executor cores and memory.
 func (o GetApplicationsApplicationOutput) ExecutorShape() pulumi.StringOutput {
 	return o.ApplyT(func(v GetApplicationsApplication) string { return v.ExecutorShape }).(pulumi.StringOutput)
+}
+
+// This is used to configure the shape of the driver or executor if a flexible shape is used.
+func (o GetApplicationsApplicationOutput) ExecutorShapeConfigs() GetApplicationsApplicationExecutorShapeConfigArrayOutput {
+	return o.ApplyT(func(v GetApplicationsApplication) []GetApplicationsApplicationExecutorShapeConfig {
+		return v.ExecutorShapeConfigs
+	}).(GetApplicationsApplicationExecutorShapeConfigArrayOutput)
 }
 
 // An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
@@ -666,6 +1524,218 @@ func (o GetApplicationsApplicationArrayOutput) Index(i pulumi.IntInput) GetAppli
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApplicationsApplication {
 		return vs[0].([]GetApplicationsApplication)[vs[1].(int)]
 	}).(GetApplicationsApplicationOutput)
+}
+
+type GetApplicationsApplicationDriverShapeConfig struct {
+	// The amount of memory used for the driver or executors.
+	MemoryInGbs float64 `pulumi:"memoryInGbs"`
+	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+	Ocpus float64 `pulumi:"ocpus"`
+}
+
+// GetApplicationsApplicationDriverShapeConfigInput is an input type that accepts GetApplicationsApplicationDriverShapeConfigArgs and GetApplicationsApplicationDriverShapeConfigOutput values.
+// You can construct a concrete instance of `GetApplicationsApplicationDriverShapeConfigInput` via:
+//
+//          GetApplicationsApplicationDriverShapeConfigArgs{...}
+type GetApplicationsApplicationDriverShapeConfigInput interface {
+	pulumi.Input
+
+	ToGetApplicationsApplicationDriverShapeConfigOutput() GetApplicationsApplicationDriverShapeConfigOutput
+	ToGetApplicationsApplicationDriverShapeConfigOutputWithContext(context.Context) GetApplicationsApplicationDriverShapeConfigOutput
+}
+
+type GetApplicationsApplicationDriverShapeConfigArgs struct {
+	// The amount of memory used for the driver or executors.
+	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
+	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+}
+
+func (GetApplicationsApplicationDriverShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApplicationsApplicationDriverShapeConfig)(nil)).Elem()
+}
+
+func (i GetApplicationsApplicationDriverShapeConfigArgs) ToGetApplicationsApplicationDriverShapeConfigOutput() GetApplicationsApplicationDriverShapeConfigOutput {
+	return i.ToGetApplicationsApplicationDriverShapeConfigOutputWithContext(context.Background())
+}
+
+func (i GetApplicationsApplicationDriverShapeConfigArgs) ToGetApplicationsApplicationDriverShapeConfigOutputWithContext(ctx context.Context) GetApplicationsApplicationDriverShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationsApplicationDriverShapeConfigOutput)
+}
+
+// GetApplicationsApplicationDriverShapeConfigArrayInput is an input type that accepts GetApplicationsApplicationDriverShapeConfigArray and GetApplicationsApplicationDriverShapeConfigArrayOutput values.
+// You can construct a concrete instance of `GetApplicationsApplicationDriverShapeConfigArrayInput` via:
+//
+//          GetApplicationsApplicationDriverShapeConfigArray{ GetApplicationsApplicationDriverShapeConfigArgs{...} }
+type GetApplicationsApplicationDriverShapeConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetApplicationsApplicationDriverShapeConfigArrayOutput() GetApplicationsApplicationDriverShapeConfigArrayOutput
+	ToGetApplicationsApplicationDriverShapeConfigArrayOutputWithContext(context.Context) GetApplicationsApplicationDriverShapeConfigArrayOutput
+}
+
+type GetApplicationsApplicationDriverShapeConfigArray []GetApplicationsApplicationDriverShapeConfigInput
+
+func (GetApplicationsApplicationDriverShapeConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApplicationsApplicationDriverShapeConfig)(nil)).Elem()
+}
+
+func (i GetApplicationsApplicationDriverShapeConfigArray) ToGetApplicationsApplicationDriverShapeConfigArrayOutput() GetApplicationsApplicationDriverShapeConfigArrayOutput {
+	return i.ToGetApplicationsApplicationDriverShapeConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetApplicationsApplicationDriverShapeConfigArray) ToGetApplicationsApplicationDriverShapeConfigArrayOutputWithContext(ctx context.Context) GetApplicationsApplicationDriverShapeConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationsApplicationDriverShapeConfigArrayOutput)
+}
+
+type GetApplicationsApplicationDriverShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (GetApplicationsApplicationDriverShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApplicationsApplicationDriverShapeConfig)(nil)).Elem()
+}
+
+func (o GetApplicationsApplicationDriverShapeConfigOutput) ToGetApplicationsApplicationDriverShapeConfigOutput() GetApplicationsApplicationDriverShapeConfigOutput {
+	return o
+}
+
+func (o GetApplicationsApplicationDriverShapeConfigOutput) ToGetApplicationsApplicationDriverShapeConfigOutputWithContext(ctx context.Context) GetApplicationsApplicationDriverShapeConfigOutput {
+	return o
+}
+
+// The amount of memory used for the driver or executors.
+func (o GetApplicationsApplicationDriverShapeConfigOutput) MemoryInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetApplicationsApplicationDriverShapeConfig) float64 { return v.MemoryInGbs }).(pulumi.Float64Output)
+}
+
+// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+func (o GetApplicationsApplicationDriverShapeConfigOutput) Ocpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetApplicationsApplicationDriverShapeConfig) float64 { return v.Ocpus }).(pulumi.Float64Output)
+}
+
+type GetApplicationsApplicationDriverShapeConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetApplicationsApplicationDriverShapeConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApplicationsApplicationDriverShapeConfig)(nil)).Elem()
+}
+
+func (o GetApplicationsApplicationDriverShapeConfigArrayOutput) ToGetApplicationsApplicationDriverShapeConfigArrayOutput() GetApplicationsApplicationDriverShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetApplicationsApplicationDriverShapeConfigArrayOutput) ToGetApplicationsApplicationDriverShapeConfigArrayOutputWithContext(ctx context.Context) GetApplicationsApplicationDriverShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetApplicationsApplicationDriverShapeConfigArrayOutput) Index(i pulumi.IntInput) GetApplicationsApplicationDriverShapeConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApplicationsApplicationDriverShapeConfig {
+		return vs[0].([]GetApplicationsApplicationDriverShapeConfig)[vs[1].(int)]
+	}).(GetApplicationsApplicationDriverShapeConfigOutput)
+}
+
+type GetApplicationsApplicationExecutorShapeConfig struct {
+	// The amount of memory used for the driver or executors.
+	MemoryInGbs float64 `pulumi:"memoryInGbs"`
+	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+	Ocpus float64 `pulumi:"ocpus"`
+}
+
+// GetApplicationsApplicationExecutorShapeConfigInput is an input type that accepts GetApplicationsApplicationExecutorShapeConfigArgs and GetApplicationsApplicationExecutorShapeConfigOutput values.
+// You can construct a concrete instance of `GetApplicationsApplicationExecutorShapeConfigInput` via:
+//
+//          GetApplicationsApplicationExecutorShapeConfigArgs{...}
+type GetApplicationsApplicationExecutorShapeConfigInput interface {
+	pulumi.Input
+
+	ToGetApplicationsApplicationExecutorShapeConfigOutput() GetApplicationsApplicationExecutorShapeConfigOutput
+	ToGetApplicationsApplicationExecutorShapeConfigOutputWithContext(context.Context) GetApplicationsApplicationExecutorShapeConfigOutput
+}
+
+type GetApplicationsApplicationExecutorShapeConfigArgs struct {
+	// The amount of memory used for the driver or executors.
+	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
+	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+}
+
+func (GetApplicationsApplicationExecutorShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApplicationsApplicationExecutorShapeConfig)(nil)).Elem()
+}
+
+func (i GetApplicationsApplicationExecutorShapeConfigArgs) ToGetApplicationsApplicationExecutorShapeConfigOutput() GetApplicationsApplicationExecutorShapeConfigOutput {
+	return i.ToGetApplicationsApplicationExecutorShapeConfigOutputWithContext(context.Background())
+}
+
+func (i GetApplicationsApplicationExecutorShapeConfigArgs) ToGetApplicationsApplicationExecutorShapeConfigOutputWithContext(ctx context.Context) GetApplicationsApplicationExecutorShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationsApplicationExecutorShapeConfigOutput)
+}
+
+// GetApplicationsApplicationExecutorShapeConfigArrayInput is an input type that accepts GetApplicationsApplicationExecutorShapeConfigArray and GetApplicationsApplicationExecutorShapeConfigArrayOutput values.
+// You can construct a concrete instance of `GetApplicationsApplicationExecutorShapeConfigArrayInput` via:
+//
+//          GetApplicationsApplicationExecutorShapeConfigArray{ GetApplicationsApplicationExecutorShapeConfigArgs{...} }
+type GetApplicationsApplicationExecutorShapeConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetApplicationsApplicationExecutorShapeConfigArrayOutput() GetApplicationsApplicationExecutorShapeConfigArrayOutput
+	ToGetApplicationsApplicationExecutorShapeConfigArrayOutputWithContext(context.Context) GetApplicationsApplicationExecutorShapeConfigArrayOutput
+}
+
+type GetApplicationsApplicationExecutorShapeConfigArray []GetApplicationsApplicationExecutorShapeConfigInput
+
+func (GetApplicationsApplicationExecutorShapeConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApplicationsApplicationExecutorShapeConfig)(nil)).Elem()
+}
+
+func (i GetApplicationsApplicationExecutorShapeConfigArray) ToGetApplicationsApplicationExecutorShapeConfigArrayOutput() GetApplicationsApplicationExecutorShapeConfigArrayOutput {
+	return i.ToGetApplicationsApplicationExecutorShapeConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetApplicationsApplicationExecutorShapeConfigArray) ToGetApplicationsApplicationExecutorShapeConfigArrayOutputWithContext(ctx context.Context) GetApplicationsApplicationExecutorShapeConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationsApplicationExecutorShapeConfigArrayOutput)
+}
+
+type GetApplicationsApplicationExecutorShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (GetApplicationsApplicationExecutorShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApplicationsApplicationExecutorShapeConfig)(nil)).Elem()
+}
+
+func (o GetApplicationsApplicationExecutorShapeConfigOutput) ToGetApplicationsApplicationExecutorShapeConfigOutput() GetApplicationsApplicationExecutorShapeConfigOutput {
+	return o
+}
+
+func (o GetApplicationsApplicationExecutorShapeConfigOutput) ToGetApplicationsApplicationExecutorShapeConfigOutputWithContext(ctx context.Context) GetApplicationsApplicationExecutorShapeConfigOutput {
+	return o
+}
+
+// The amount of memory used for the driver or executors.
+func (o GetApplicationsApplicationExecutorShapeConfigOutput) MemoryInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetApplicationsApplicationExecutorShapeConfig) float64 { return v.MemoryInGbs }).(pulumi.Float64Output)
+}
+
+// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+func (o GetApplicationsApplicationExecutorShapeConfigOutput) Ocpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetApplicationsApplicationExecutorShapeConfig) float64 { return v.Ocpus }).(pulumi.Float64Output)
+}
+
+type GetApplicationsApplicationExecutorShapeConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetApplicationsApplicationExecutorShapeConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApplicationsApplicationExecutorShapeConfig)(nil)).Elem()
+}
+
+func (o GetApplicationsApplicationExecutorShapeConfigArrayOutput) ToGetApplicationsApplicationExecutorShapeConfigArrayOutput() GetApplicationsApplicationExecutorShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetApplicationsApplicationExecutorShapeConfigArrayOutput) ToGetApplicationsApplicationExecutorShapeConfigArrayOutputWithContext(ctx context.Context) GetApplicationsApplicationExecutorShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetApplicationsApplicationExecutorShapeConfigArrayOutput) Index(i pulumi.IntInput) GetApplicationsApplicationExecutorShapeConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApplicationsApplicationExecutorShapeConfig {
+		return vs[0].([]GetApplicationsApplicationExecutorShapeConfig)[vs[1].(int)]
+	}).(GetApplicationsApplicationExecutorShapeConfigOutput)
 }
 
 type GetApplicationsApplicationParameter struct {
@@ -881,6 +1951,218 @@ func (o GetApplicationsFilterArrayOutput) Index(i pulumi.IntInput) GetApplicatio
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApplicationsFilter {
 		return vs[0].([]GetApplicationsFilter)[vs[1].(int)]
 	}).(GetApplicationsFilterOutput)
+}
+
+type GetInvokeRunDriverShapeConfig struct {
+	// The amount of memory used for the driver or executors.
+	MemoryInGbs float64 `pulumi:"memoryInGbs"`
+	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+	Ocpus float64 `pulumi:"ocpus"`
+}
+
+// GetInvokeRunDriverShapeConfigInput is an input type that accepts GetInvokeRunDriverShapeConfigArgs and GetInvokeRunDriverShapeConfigOutput values.
+// You can construct a concrete instance of `GetInvokeRunDriverShapeConfigInput` via:
+//
+//          GetInvokeRunDriverShapeConfigArgs{...}
+type GetInvokeRunDriverShapeConfigInput interface {
+	pulumi.Input
+
+	ToGetInvokeRunDriverShapeConfigOutput() GetInvokeRunDriverShapeConfigOutput
+	ToGetInvokeRunDriverShapeConfigOutputWithContext(context.Context) GetInvokeRunDriverShapeConfigOutput
+}
+
+type GetInvokeRunDriverShapeConfigArgs struct {
+	// The amount of memory used for the driver or executors.
+	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
+	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+}
+
+func (GetInvokeRunDriverShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInvokeRunDriverShapeConfig)(nil)).Elem()
+}
+
+func (i GetInvokeRunDriverShapeConfigArgs) ToGetInvokeRunDriverShapeConfigOutput() GetInvokeRunDriverShapeConfigOutput {
+	return i.ToGetInvokeRunDriverShapeConfigOutputWithContext(context.Background())
+}
+
+func (i GetInvokeRunDriverShapeConfigArgs) ToGetInvokeRunDriverShapeConfigOutputWithContext(ctx context.Context) GetInvokeRunDriverShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInvokeRunDriverShapeConfigOutput)
+}
+
+// GetInvokeRunDriverShapeConfigArrayInput is an input type that accepts GetInvokeRunDriverShapeConfigArray and GetInvokeRunDriverShapeConfigArrayOutput values.
+// You can construct a concrete instance of `GetInvokeRunDriverShapeConfigArrayInput` via:
+//
+//          GetInvokeRunDriverShapeConfigArray{ GetInvokeRunDriverShapeConfigArgs{...} }
+type GetInvokeRunDriverShapeConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetInvokeRunDriverShapeConfigArrayOutput() GetInvokeRunDriverShapeConfigArrayOutput
+	ToGetInvokeRunDriverShapeConfigArrayOutputWithContext(context.Context) GetInvokeRunDriverShapeConfigArrayOutput
+}
+
+type GetInvokeRunDriverShapeConfigArray []GetInvokeRunDriverShapeConfigInput
+
+func (GetInvokeRunDriverShapeConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInvokeRunDriverShapeConfig)(nil)).Elem()
+}
+
+func (i GetInvokeRunDriverShapeConfigArray) ToGetInvokeRunDriverShapeConfigArrayOutput() GetInvokeRunDriverShapeConfigArrayOutput {
+	return i.ToGetInvokeRunDriverShapeConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetInvokeRunDriverShapeConfigArray) ToGetInvokeRunDriverShapeConfigArrayOutputWithContext(ctx context.Context) GetInvokeRunDriverShapeConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInvokeRunDriverShapeConfigArrayOutput)
+}
+
+type GetInvokeRunDriverShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (GetInvokeRunDriverShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInvokeRunDriverShapeConfig)(nil)).Elem()
+}
+
+func (o GetInvokeRunDriverShapeConfigOutput) ToGetInvokeRunDriverShapeConfigOutput() GetInvokeRunDriverShapeConfigOutput {
+	return o
+}
+
+func (o GetInvokeRunDriverShapeConfigOutput) ToGetInvokeRunDriverShapeConfigOutputWithContext(ctx context.Context) GetInvokeRunDriverShapeConfigOutput {
+	return o
+}
+
+// The amount of memory used for the driver or executors.
+func (o GetInvokeRunDriverShapeConfigOutput) MemoryInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetInvokeRunDriverShapeConfig) float64 { return v.MemoryInGbs }).(pulumi.Float64Output)
+}
+
+// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+func (o GetInvokeRunDriverShapeConfigOutput) Ocpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetInvokeRunDriverShapeConfig) float64 { return v.Ocpus }).(pulumi.Float64Output)
+}
+
+type GetInvokeRunDriverShapeConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInvokeRunDriverShapeConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInvokeRunDriverShapeConfig)(nil)).Elem()
+}
+
+func (o GetInvokeRunDriverShapeConfigArrayOutput) ToGetInvokeRunDriverShapeConfigArrayOutput() GetInvokeRunDriverShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetInvokeRunDriverShapeConfigArrayOutput) ToGetInvokeRunDriverShapeConfigArrayOutputWithContext(ctx context.Context) GetInvokeRunDriverShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetInvokeRunDriverShapeConfigArrayOutput) Index(i pulumi.IntInput) GetInvokeRunDriverShapeConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInvokeRunDriverShapeConfig {
+		return vs[0].([]GetInvokeRunDriverShapeConfig)[vs[1].(int)]
+	}).(GetInvokeRunDriverShapeConfigOutput)
+}
+
+type GetInvokeRunExecutorShapeConfig struct {
+	// The amount of memory used for the driver or executors.
+	MemoryInGbs float64 `pulumi:"memoryInGbs"`
+	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+	Ocpus float64 `pulumi:"ocpus"`
+}
+
+// GetInvokeRunExecutorShapeConfigInput is an input type that accepts GetInvokeRunExecutorShapeConfigArgs and GetInvokeRunExecutorShapeConfigOutput values.
+// You can construct a concrete instance of `GetInvokeRunExecutorShapeConfigInput` via:
+//
+//          GetInvokeRunExecutorShapeConfigArgs{...}
+type GetInvokeRunExecutorShapeConfigInput interface {
+	pulumi.Input
+
+	ToGetInvokeRunExecutorShapeConfigOutput() GetInvokeRunExecutorShapeConfigOutput
+	ToGetInvokeRunExecutorShapeConfigOutputWithContext(context.Context) GetInvokeRunExecutorShapeConfigOutput
+}
+
+type GetInvokeRunExecutorShapeConfigArgs struct {
+	// The amount of memory used for the driver or executors.
+	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
+	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+}
+
+func (GetInvokeRunExecutorShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInvokeRunExecutorShapeConfig)(nil)).Elem()
+}
+
+func (i GetInvokeRunExecutorShapeConfigArgs) ToGetInvokeRunExecutorShapeConfigOutput() GetInvokeRunExecutorShapeConfigOutput {
+	return i.ToGetInvokeRunExecutorShapeConfigOutputWithContext(context.Background())
+}
+
+func (i GetInvokeRunExecutorShapeConfigArgs) ToGetInvokeRunExecutorShapeConfigOutputWithContext(ctx context.Context) GetInvokeRunExecutorShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInvokeRunExecutorShapeConfigOutput)
+}
+
+// GetInvokeRunExecutorShapeConfigArrayInput is an input type that accepts GetInvokeRunExecutorShapeConfigArray and GetInvokeRunExecutorShapeConfigArrayOutput values.
+// You can construct a concrete instance of `GetInvokeRunExecutorShapeConfigArrayInput` via:
+//
+//          GetInvokeRunExecutorShapeConfigArray{ GetInvokeRunExecutorShapeConfigArgs{...} }
+type GetInvokeRunExecutorShapeConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetInvokeRunExecutorShapeConfigArrayOutput() GetInvokeRunExecutorShapeConfigArrayOutput
+	ToGetInvokeRunExecutorShapeConfigArrayOutputWithContext(context.Context) GetInvokeRunExecutorShapeConfigArrayOutput
+}
+
+type GetInvokeRunExecutorShapeConfigArray []GetInvokeRunExecutorShapeConfigInput
+
+func (GetInvokeRunExecutorShapeConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInvokeRunExecutorShapeConfig)(nil)).Elem()
+}
+
+func (i GetInvokeRunExecutorShapeConfigArray) ToGetInvokeRunExecutorShapeConfigArrayOutput() GetInvokeRunExecutorShapeConfigArrayOutput {
+	return i.ToGetInvokeRunExecutorShapeConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetInvokeRunExecutorShapeConfigArray) ToGetInvokeRunExecutorShapeConfigArrayOutputWithContext(ctx context.Context) GetInvokeRunExecutorShapeConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInvokeRunExecutorShapeConfigArrayOutput)
+}
+
+type GetInvokeRunExecutorShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (GetInvokeRunExecutorShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInvokeRunExecutorShapeConfig)(nil)).Elem()
+}
+
+func (o GetInvokeRunExecutorShapeConfigOutput) ToGetInvokeRunExecutorShapeConfigOutput() GetInvokeRunExecutorShapeConfigOutput {
+	return o
+}
+
+func (o GetInvokeRunExecutorShapeConfigOutput) ToGetInvokeRunExecutorShapeConfigOutputWithContext(ctx context.Context) GetInvokeRunExecutorShapeConfigOutput {
+	return o
+}
+
+// The amount of memory used for the driver or executors.
+func (o GetInvokeRunExecutorShapeConfigOutput) MemoryInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetInvokeRunExecutorShapeConfig) float64 { return v.MemoryInGbs }).(pulumi.Float64Output)
+}
+
+// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+func (o GetInvokeRunExecutorShapeConfigOutput) Ocpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetInvokeRunExecutorShapeConfig) float64 { return v.Ocpus }).(pulumi.Float64Output)
+}
+
+type GetInvokeRunExecutorShapeConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInvokeRunExecutorShapeConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInvokeRunExecutorShapeConfig)(nil)).Elem()
+}
+
+func (o GetInvokeRunExecutorShapeConfigArrayOutput) ToGetInvokeRunExecutorShapeConfigArrayOutput() GetInvokeRunExecutorShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetInvokeRunExecutorShapeConfigArrayOutput) ToGetInvokeRunExecutorShapeConfigArrayOutputWithContext(ctx context.Context) GetInvokeRunExecutorShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetInvokeRunExecutorShapeConfigArrayOutput) Index(i pulumi.IntInput) GetInvokeRunExecutorShapeConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInvokeRunExecutorShapeConfig {
+		return vs[0].([]GetInvokeRunExecutorShapeConfig)[vs[1].(int)]
+	}).(GetInvokeRunExecutorShapeConfigOutput)
 }
 
 type GetInvokeRunParameter struct {
@@ -1122,10 +2404,14 @@ type GetInvokeRunsRun struct {
 	DisplayName string `pulumi:"displayName"`
 	// The VM shape for the driver. Sets the driver cores and memory.
 	DriverShape string `pulumi:"driverShape"`
+	// This is used to configure the shape of the driver or executor if a flexible shape is used.
+	DriverShapeConfigs []GetInvokeRunsRunDriverShapeConfig `pulumi:"driverShapeConfigs"`
 	// The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
 	Execute string `pulumi:"execute"`
 	// The VM shape for the executors. Sets the executor cores and memory.
 	ExecutorShape string `pulumi:"executorShape"`
+	// This is used to configure the shape of the driver or executor if a flexible shape is used.
+	ExecutorShapeConfigs []GetInvokeRunsRunExecutorShapeConfig `pulumi:"executorShapeConfigs"`
 	// An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 	FileUri string `pulumi:"fileUri"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -1213,10 +2499,14 @@ type GetInvokeRunsRunArgs struct {
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// The VM shape for the driver. Sets the driver cores and memory.
 	DriverShape pulumi.StringInput `pulumi:"driverShape"`
+	// This is used to configure the shape of the driver or executor if a flexible shape is used.
+	DriverShapeConfigs GetInvokeRunsRunDriverShapeConfigArrayInput `pulumi:"driverShapeConfigs"`
 	// The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
 	Execute pulumi.StringInput `pulumi:"execute"`
 	// The VM shape for the executors. Sets the executor cores and memory.
 	ExecutorShape pulumi.StringInput `pulumi:"executorShape"`
+	// This is used to configure the shape of the driver or executor if a flexible shape is used.
+	ExecutorShapeConfigs GetInvokeRunsRunExecutorShapeConfigArrayInput `pulumi:"executorShapeConfigs"`
 	// An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 	FileUri pulumi.StringInput `pulumi:"fileUri"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -1379,6 +2669,11 @@ func (o GetInvokeRunsRunOutput) DriverShape() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInvokeRunsRun) string { return v.DriverShape }).(pulumi.StringOutput)
 }
 
+// This is used to configure the shape of the driver or executor if a flexible shape is used.
+func (o GetInvokeRunsRunOutput) DriverShapeConfigs() GetInvokeRunsRunDriverShapeConfigArrayOutput {
+	return o.ApplyT(func(v GetInvokeRunsRun) []GetInvokeRunsRunDriverShapeConfig { return v.DriverShapeConfigs }).(GetInvokeRunsRunDriverShapeConfigArrayOutput)
+}
+
 // The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
 func (o GetInvokeRunsRunOutput) Execute() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInvokeRunsRun) string { return v.Execute }).(pulumi.StringOutput)
@@ -1387,6 +2682,11 @@ func (o GetInvokeRunsRunOutput) Execute() pulumi.StringOutput {
 // The VM shape for the executors. Sets the executor cores and memory.
 func (o GetInvokeRunsRunOutput) ExecutorShape() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInvokeRunsRun) string { return v.ExecutorShape }).(pulumi.StringOutput)
+}
+
+// This is used to configure the shape of the driver or executor if a flexible shape is used.
+func (o GetInvokeRunsRunOutput) ExecutorShapeConfigs() GetInvokeRunsRunExecutorShapeConfigArrayOutput {
+	return o.ApplyT(func(v GetInvokeRunsRun) []GetInvokeRunsRunExecutorShapeConfig { return v.ExecutorShapeConfigs }).(GetInvokeRunsRunExecutorShapeConfigArrayOutput)
 }
 
 // An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
@@ -1532,6 +2832,218 @@ func (o GetInvokeRunsRunArrayOutput) Index(i pulumi.IntInput) GetInvokeRunsRunOu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInvokeRunsRun {
 		return vs[0].([]GetInvokeRunsRun)[vs[1].(int)]
 	}).(GetInvokeRunsRunOutput)
+}
+
+type GetInvokeRunsRunDriverShapeConfig struct {
+	// The amount of memory used for the driver or executors.
+	MemoryInGbs float64 `pulumi:"memoryInGbs"`
+	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+	Ocpus float64 `pulumi:"ocpus"`
+}
+
+// GetInvokeRunsRunDriverShapeConfigInput is an input type that accepts GetInvokeRunsRunDriverShapeConfigArgs and GetInvokeRunsRunDriverShapeConfigOutput values.
+// You can construct a concrete instance of `GetInvokeRunsRunDriverShapeConfigInput` via:
+//
+//          GetInvokeRunsRunDriverShapeConfigArgs{...}
+type GetInvokeRunsRunDriverShapeConfigInput interface {
+	pulumi.Input
+
+	ToGetInvokeRunsRunDriverShapeConfigOutput() GetInvokeRunsRunDriverShapeConfigOutput
+	ToGetInvokeRunsRunDriverShapeConfigOutputWithContext(context.Context) GetInvokeRunsRunDriverShapeConfigOutput
+}
+
+type GetInvokeRunsRunDriverShapeConfigArgs struct {
+	// The amount of memory used for the driver or executors.
+	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
+	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+}
+
+func (GetInvokeRunsRunDriverShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInvokeRunsRunDriverShapeConfig)(nil)).Elem()
+}
+
+func (i GetInvokeRunsRunDriverShapeConfigArgs) ToGetInvokeRunsRunDriverShapeConfigOutput() GetInvokeRunsRunDriverShapeConfigOutput {
+	return i.ToGetInvokeRunsRunDriverShapeConfigOutputWithContext(context.Background())
+}
+
+func (i GetInvokeRunsRunDriverShapeConfigArgs) ToGetInvokeRunsRunDriverShapeConfigOutputWithContext(ctx context.Context) GetInvokeRunsRunDriverShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInvokeRunsRunDriverShapeConfigOutput)
+}
+
+// GetInvokeRunsRunDriverShapeConfigArrayInput is an input type that accepts GetInvokeRunsRunDriverShapeConfigArray and GetInvokeRunsRunDriverShapeConfigArrayOutput values.
+// You can construct a concrete instance of `GetInvokeRunsRunDriverShapeConfigArrayInput` via:
+//
+//          GetInvokeRunsRunDriverShapeConfigArray{ GetInvokeRunsRunDriverShapeConfigArgs{...} }
+type GetInvokeRunsRunDriverShapeConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetInvokeRunsRunDriverShapeConfigArrayOutput() GetInvokeRunsRunDriverShapeConfigArrayOutput
+	ToGetInvokeRunsRunDriverShapeConfigArrayOutputWithContext(context.Context) GetInvokeRunsRunDriverShapeConfigArrayOutput
+}
+
+type GetInvokeRunsRunDriverShapeConfigArray []GetInvokeRunsRunDriverShapeConfigInput
+
+func (GetInvokeRunsRunDriverShapeConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInvokeRunsRunDriverShapeConfig)(nil)).Elem()
+}
+
+func (i GetInvokeRunsRunDriverShapeConfigArray) ToGetInvokeRunsRunDriverShapeConfigArrayOutput() GetInvokeRunsRunDriverShapeConfigArrayOutput {
+	return i.ToGetInvokeRunsRunDriverShapeConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetInvokeRunsRunDriverShapeConfigArray) ToGetInvokeRunsRunDriverShapeConfigArrayOutputWithContext(ctx context.Context) GetInvokeRunsRunDriverShapeConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInvokeRunsRunDriverShapeConfigArrayOutput)
+}
+
+type GetInvokeRunsRunDriverShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (GetInvokeRunsRunDriverShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInvokeRunsRunDriverShapeConfig)(nil)).Elem()
+}
+
+func (o GetInvokeRunsRunDriverShapeConfigOutput) ToGetInvokeRunsRunDriverShapeConfigOutput() GetInvokeRunsRunDriverShapeConfigOutput {
+	return o
+}
+
+func (o GetInvokeRunsRunDriverShapeConfigOutput) ToGetInvokeRunsRunDriverShapeConfigOutputWithContext(ctx context.Context) GetInvokeRunsRunDriverShapeConfigOutput {
+	return o
+}
+
+// The amount of memory used for the driver or executors.
+func (o GetInvokeRunsRunDriverShapeConfigOutput) MemoryInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetInvokeRunsRunDriverShapeConfig) float64 { return v.MemoryInGbs }).(pulumi.Float64Output)
+}
+
+// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+func (o GetInvokeRunsRunDriverShapeConfigOutput) Ocpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetInvokeRunsRunDriverShapeConfig) float64 { return v.Ocpus }).(pulumi.Float64Output)
+}
+
+type GetInvokeRunsRunDriverShapeConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInvokeRunsRunDriverShapeConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInvokeRunsRunDriverShapeConfig)(nil)).Elem()
+}
+
+func (o GetInvokeRunsRunDriverShapeConfigArrayOutput) ToGetInvokeRunsRunDriverShapeConfigArrayOutput() GetInvokeRunsRunDriverShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetInvokeRunsRunDriverShapeConfigArrayOutput) ToGetInvokeRunsRunDriverShapeConfigArrayOutputWithContext(ctx context.Context) GetInvokeRunsRunDriverShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetInvokeRunsRunDriverShapeConfigArrayOutput) Index(i pulumi.IntInput) GetInvokeRunsRunDriverShapeConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInvokeRunsRunDriverShapeConfig {
+		return vs[0].([]GetInvokeRunsRunDriverShapeConfig)[vs[1].(int)]
+	}).(GetInvokeRunsRunDriverShapeConfigOutput)
+}
+
+type GetInvokeRunsRunExecutorShapeConfig struct {
+	// The amount of memory used for the driver or executors.
+	MemoryInGbs float64 `pulumi:"memoryInGbs"`
+	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+	Ocpus float64 `pulumi:"ocpus"`
+}
+
+// GetInvokeRunsRunExecutorShapeConfigInput is an input type that accepts GetInvokeRunsRunExecutorShapeConfigArgs and GetInvokeRunsRunExecutorShapeConfigOutput values.
+// You can construct a concrete instance of `GetInvokeRunsRunExecutorShapeConfigInput` via:
+//
+//          GetInvokeRunsRunExecutorShapeConfigArgs{...}
+type GetInvokeRunsRunExecutorShapeConfigInput interface {
+	pulumi.Input
+
+	ToGetInvokeRunsRunExecutorShapeConfigOutput() GetInvokeRunsRunExecutorShapeConfigOutput
+	ToGetInvokeRunsRunExecutorShapeConfigOutputWithContext(context.Context) GetInvokeRunsRunExecutorShapeConfigOutput
+}
+
+type GetInvokeRunsRunExecutorShapeConfigArgs struct {
+	// The amount of memory used for the driver or executors.
+	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
+	// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+}
+
+func (GetInvokeRunsRunExecutorShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInvokeRunsRunExecutorShapeConfig)(nil)).Elem()
+}
+
+func (i GetInvokeRunsRunExecutorShapeConfigArgs) ToGetInvokeRunsRunExecutorShapeConfigOutput() GetInvokeRunsRunExecutorShapeConfigOutput {
+	return i.ToGetInvokeRunsRunExecutorShapeConfigOutputWithContext(context.Background())
+}
+
+func (i GetInvokeRunsRunExecutorShapeConfigArgs) ToGetInvokeRunsRunExecutorShapeConfigOutputWithContext(ctx context.Context) GetInvokeRunsRunExecutorShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInvokeRunsRunExecutorShapeConfigOutput)
+}
+
+// GetInvokeRunsRunExecutorShapeConfigArrayInput is an input type that accepts GetInvokeRunsRunExecutorShapeConfigArray and GetInvokeRunsRunExecutorShapeConfigArrayOutput values.
+// You can construct a concrete instance of `GetInvokeRunsRunExecutorShapeConfigArrayInput` via:
+//
+//          GetInvokeRunsRunExecutorShapeConfigArray{ GetInvokeRunsRunExecutorShapeConfigArgs{...} }
+type GetInvokeRunsRunExecutorShapeConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetInvokeRunsRunExecutorShapeConfigArrayOutput() GetInvokeRunsRunExecutorShapeConfigArrayOutput
+	ToGetInvokeRunsRunExecutorShapeConfigArrayOutputWithContext(context.Context) GetInvokeRunsRunExecutorShapeConfigArrayOutput
+}
+
+type GetInvokeRunsRunExecutorShapeConfigArray []GetInvokeRunsRunExecutorShapeConfigInput
+
+func (GetInvokeRunsRunExecutorShapeConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInvokeRunsRunExecutorShapeConfig)(nil)).Elem()
+}
+
+func (i GetInvokeRunsRunExecutorShapeConfigArray) ToGetInvokeRunsRunExecutorShapeConfigArrayOutput() GetInvokeRunsRunExecutorShapeConfigArrayOutput {
+	return i.ToGetInvokeRunsRunExecutorShapeConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetInvokeRunsRunExecutorShapeConfigArray) ToGetInvokeRunsRunExecutorShapeConfigArrayOutputWithContext(ctx context.Context) GetInvokeRunsRunExecutorShapeConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInvokeRunsRunExecutorShapeConfigArrayOutput)
+}
+
+type GetInvokeRunsRunExecutorShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (GetInvokeRunsRunExecutorShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInvokeRunsRunExecutorShapeConfig)(nil)).Elem()
+}
+
+func (o GetInvokeRunsRunExecutorShapeConfigOutput) ToGetInvokeRunsRunExecutorShapeConfigOutput() GetInvokeRunsRunExecutorShapeConfigOutput {
+	return o
+}
+
+func (o GetInvokeRunsRunExecutorShapeConfigOutput) ToGetInvokeRunsRunExecutorShapeConfigOutputWithContext(ctx context.Context) GetInvokeRunsRunExecutorShapeConfigOutput {
+	return o
+}
+
+// The amount of memory used for the driver or executors.
+func (o GetInvokeRunsRunExecutorShapeConfigOutput) MemoryInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetInvokeRunsRunExecutorShapeConfig) float64 { return v.MemoryInGbs }).(pulumi.Float64Output)
+}
+
+// The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+func (o GetInvokeRunsRunExecutorShapeConfigOutput) Ocpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetInvokeRunsRunExecutorShapeConfig) float64 { return v.Ocpus }).(pulumi.Float64Output)
+}
+
+type GetInvokeRunsRunExecutorShapeConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInvokeRunsRunExecutorShapeConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInvokeRunsRunExecutorShapeConfig)(nil)).Elem()
+}
+
+func (o GetInvokeRunsRunExecutorShapeConfigArrayOutput) ToGetInvokeRunsRunExecutorShapeConfigArrayOutput() GetInvokeRunsRunExecutorShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetInvokeRunsRunExecutorShapeConfigArrayOutput) ToGetInvokeRunsRunExecutorShapeConfigArrayOutputWithContext(ctx context.Context) GetInvokeRunsRunExecutorShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetInvokeRunsRunExecutorShapeConfigArrayOutput) Index(i pulumi.IntInput) GetInvokeRunsRunExecutorShapeConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInvokeRunsRunExecutorShapeConfig {
+		return vs[0].([]GetInvokeRunsRunExecutorShapeConfig)[vs[1].(int)]
+	}).(GetInvokeRunsRunExecutorShapeConfigOutput)
 }
 
 type GetInvokeRunsRunParameter struct {
@@ -2308,24 +3820,48 @@ func (o GetRunLogsRunLogArrayOutput) Index(i pulumi.IntInput) GetRunLogsRunLogOu
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*ApplicationDriverShapeConfigInput)(nil)).Elem(), ApplicationDriverShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ApplicationDriverShapeConfigPtrInput)(nil)).Elem(), ApplicationDriverShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ApplicationExecutorShapeConfigInput)(nil)).Elem(), ApplicationExecutorShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ApplicationExecutorShapeConfigPtrInput)(nil)).Elem(), ApplicationExecutorShapeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ApplicationParameterInput)(nil)).Elem(), ApplicationParameterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ApplicationParameterArrayInput)(nil)).Elem(), ApplicationParameterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InvokeRunDriverShapeConfigInput)(nil)).Elem(), InvokeRunDriverShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InvokeRunDriverShapeConfigPtrInput)(nil)).Elem(), InvokeRunDriverShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InvokeRunExecutorShapeConfigInput)(nil)).Elem(), InvokeRunExecutorShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InvokeRunExecutorShapeConfigPtrInput)(nil)).Elem(), InvokeRunExecutorShapeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InvokeRunParameterInput)(nil)).Elem(), InvokeRunParameterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InvokeRunParameterArrayInput)(nil)).Elem(), InvokeRunParameterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationDriverShapeConfigInput)(nil)).Elem(), GetApplicationDriverShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationDriverShapeConfigArrayInput)(nil)).Elem(), GetApplicationDriverShapeConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationExecutorShapeConfigInput)(nil)).Elem(), GetApplicationExecutorShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationExecutorShapeConfigArrayInput)(nil)).Elem(), GetApplicationExecutorShapeConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationParameterInput)(nil)).Elem(), GetApplicationParameterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationParameterArrayInput)(nil)).Elem(), GetApplicationParameterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationsApplicationInput)(nil)).Elem(), GetApplicationsApplicationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationsApplicationArrayInput)(nil)).Elem(), GetApplicationsApplicationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationsApplicationDriverShapeConfigInput)(nil)).Elem(), GetApplicationsApplicationDriverShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationsApplicationDriverShapeConfigArrayInput)(nil)).Elem(), GetApplicationsApplicationDriverShapeConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationsApplicationExecutorShapeConfigInput)(nil)).Elem(), GetApplicationsApplicationExecutorShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationsApplicationExecutorShapeConfigArrayInput)(nil)).Elem(), GetApplicationsApplicationExecutorShapeConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationsApplicationParameterInput)(nil)).Elem(), GetApplicationsApplicationParameterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationsApplicationParameterArrayInput)(nil)).Elem(), GetApplicationsApplicationParameterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationsFilterInput)(nil)).Elem(), GetApplicationsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationsFilterArrayInput)(nil)).Elem(), GetApplicationsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInvokeRunDriverShapeConfigInput)(nil)).Elem(), GetInvokeRunDriverShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInvokeRunDriverShapeConfigArrayInput)(nil)).Elem(), GetInvokeRunDriverShapeConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInvokeRunExecutorShapeConfigInput)(nil)).Elem(), GetInvokeRunExecutorShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInvokeRunExecutorShapeConfigArrayInput)(nil)).Elem(), GetInvokeRunExecutorShapeConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInvokeRunParameterInput)(nil)).Elem(), GetInvokeRunParameterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInvokeRunParameterArrayInput)(nil)).Elem(), GetInvokeRunParameterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInvokeRunsFilterInput)(nil)).Elem(), GetInvokeRunsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInvokeRunsFilterArrayInput)(nil)).Elem(), GetInvokeRunsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInvokeRunsRunInput)(nil)).Elem(), GetInvokeRunsRunArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInvokeRunsRunArrayInput)(nil)).Elem(), GetInvokeRunsRunArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInvokeRunsRunDriverShapeConfigInput)(nil)).Elem(), GetInvokeRunsRunDriverShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInvokeRunsRunDriverShapeConfigArrayInput)(nil)).Elem(), GetInvokeRunsRunDriverShapeConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInvokeRunsRunExecutorShapeConfigInput)(nil)).Elem(), GetInvokeRunsRunExecutorShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInvokeRunsRunExecutorShapeConfigArrayInput)(nil)).Elem(), GetInvokeRunsRunExecutorShapeConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInvokeRunsRunParameterInput)(nil)).Elem(), GetInvokeRunsRunParameterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInvokeRunsRunParameterArrayInput)(nil)).Elem(), GetInvokeRunsRunParameterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPrivateEndpointsFilterInput)(nil)).Elem(), GetPrivateEndpointsFilterArgs{})
@@ -2338,24 +3874,48 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRunLogsFilterArrayInput)(nil)).Elem(), GetRunLogsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRunLogsRunLogInput)(nil)).Elem(), GetRunLogsRunLogArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRunLogsRunLogArrayInput)(nil)).Elem(), GetRunLogsRunLogArray{})
+	pulumi.RegisterOutputType(ApplicationDriverShapeConfigOutput{})
+	pulumi.RegisterOutputType(ApplicationDriverShapeConfigPtrOutput{})
+	pulumi.RegisterOutputType(ApplicationExecutorShapeConfigOutput{})
+	pulumi.RegisterOutputType(ApplicationExecutorShapeConfigPtrOutput{})
 	pulumi.RegisterOutputType(ApplicationParameterOutput{})
 	pulumi.RegisterOutputType(ApplicationParameterArrayOutput{})
+	pulumi.RegisterOutputType(InvokeRunDriverShapeConfigOutput{})
+	pulumi.RegisterOutputType(InvokeRunDriverShapeConfigPtrOutput{})
+	pulumi.RegisterOutputType(InvokeRunExecutorShapeConfigOutput{})
+	pulumi.RegisterOutputType(InvokeRunExecutorShapeConfigPtrOutput{})
 	pulumi.RegisterOutputType(InvokeRunParameterOutput{})
 	pulumi.RegisterOutputType(InvokeRunParameterArrayOutput{})
+	pulumi.RegisterOutputType(GetApplicationDriverShapeConfigOutput{})
+	pulumi.RegisterOutputType(GetApplicationDriverShapeConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetApplicationExecutorShapeConfigOutput{})
+	pulumi.RegisterOutputType(GetApplicationExecutorShapeConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetApplicationParameterOutput{})
 	pulumi.RegisterOutputType(GetApplicationParameterArrayOutput{})
 	pulumi.RegisterOutputType(GetApplicationsApplicationOutput{})
 	pulumi.RegisterOutputType(GetApplicationsApplicationArrayOutput{})
+	pulumi.RegisterOutputType(GetApplicationsApplicationDriverShapeConfigOutput{})
+	pulumi.RegisterOutputType(GetApplicationsApplicationDriverShapeConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetApplicationsApplicationExecutorShapeConfigOutput{})
+	pulumi.RegisterOutputType(GetApplicationsApplicationExecutorShapeConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetApplicationsApplicationParameterOutput{})
 	pulumi.RegisterOutputType(GetApplicationsApplicationParameterArrayOutput{})
 	pulumi.RegisterOutputType(GetApplicationsFilterOutput{})
 	pulumi.RegisterOutputType(GetApplicationsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetInvokeRunDriverShapeConfigOutput{})
+	pulumi.RegisterOutputType(GetInvokeRunDriverShapeConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetInvokeRunExecutorShapeConfigOutput{})
+	pulumi.RegisterOutputType(GetInvokeRunExecutorShapeConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetInvokeRunParameterOutput{})
 	pulumi.RegisterOutputType(GetInvokeRunParameterArrayOutput{})
 	pulumi.RegisterOutputType(GetInvokeRunsFilterOutput{})
 	pulumi.RegisterOutputType(GetInvokeRunsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetInvokeRunsRunOutput{})
 	pulumi.RegisterOutputType(GetInvokeRunsRunArrayOutput{})
+	pulumi.RegisterOutputType(GetInvokeRunsRunDriverShapeConfigOutput{})
+	pulumi.RegisterOutputType(GetInvokeRunsRunDriverShapeConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetInvokeRunsRunExecutorShapeConfigOutput{})
+	pulumi.RegisterOutputType(GetInvokeRunsRunExecutorShapeConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetInvokeRunsRunParameterOutput{})
 	pulumi.RegisterOutputType(GetInvokeRunsRunParameterArrayOutput{})
 	pulumi.RegisterOutputType(GetPrivateEndpointsFilterOutput{})

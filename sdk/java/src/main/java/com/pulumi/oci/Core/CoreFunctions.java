@@ -41,6 +41,10 @@ import com.pulumi.oci.Core.inputs.GetByoipRangeArgs;
 import com.pulumi.oci.Core.inputs.GetByoipRangePlainArgs;
 import com.pulumi.oci.Core.inputs.GetByoipRangesArgs;
 import com.pulumi.oci.Core.inputs.GetByoipRangesPlainArgs;
+import com.pulumi.oci.Core.inputs.GetCaptureFilterArgs;
+import com.pulumi.oci.Core.inputs.GetCaptureFilterPlainArgs;
+import com.pulumi.oci.Core.inputs.GetCaptureFiltersArgs;
+import com.pulumi.oci.Core.inputs.GetCaptureFiltersPlainArgs;
 import com.pulumi.oci.Core.inputs.GetClusterNetworkArgs;
 import com.pulumi.oci.Core.inputs.GetClusterNetworkInstancesArgs;
 import com.pulumi.oci.Core.inputs.GetClusterNetworkInstancesPlainArgs;
@@ -275,6 +279,10 @@ import com.pulumi.oci.Core.inputs.GetVolumeGroupsPlainArgs;
 import com.pulumi.oci.Core.inputs.GetVolumePlainArgs;
 import com.pulumi.oci.Core.inputs.GetVolumesArgs;
 import com.pulumi.oci.Core.inputs.GetVolumesPlainArgs;
+import com.pulumi.oci.Core.inputs.GetVtapArgs;
+import com.pulumi.oci.Core.inputs.GetVtapPlainArgs;
+import com.pulumi.oci.Core.inputs.GetVtapsArgs;
+import com.pulumi.oci.Core.inputs.GetVtapsPlainArgs;
 import com.pulumi.oci.Core.outputs.GetAppCatalogListingResourceVersionResult;
 import com.pulumi.oci.Core.outputs.GetAppCatalogListingResourceVersionsResult;
 import com.pulumi.oci.Core.outputs.GetAppCatalogListingResult;
@@ -292,6 +300,8 @@ import com.pulumi.oci.Core.outputs.GetBootVolumesResult;
 import com.pulumi.oci.Core.outputs.GetByoipAllocatedRangesResult;
 import com.pulumi.oci.Core.outputs.GetByoipRangeResult;
 import com.pulumi.oci.Core.outputs.GetByoipRangesResult;
+import com.pulumi.oci.Core.outputs.GetCaptureFilterResult;
+import com.pulumi.oci.Core.outputs.GetCaptureFiltersResult;
 import com.pulumi.oci.Core.outputs.GetClusterNetworkInstancesResult;
 import com.pulumi.oci.Core.outputs.GetClusterNetworkResult;
 import com.pulumi.oci.Core.outputs.GetClusterNetworksResult;
@@ -410,6 +420,8 @@ import com.pulumi.oci.Core.outputs.GetVolumeGroupReplicasResult;
 import com.pulumi.oci.Core.outputs.GetVolumeGroupsResult;
 import com.pulumi.oci.Core.outputs.GetVolumeResult;
 import com.pulumi.oci.Core.outputs.GetVolumesResult;
+import com.pulumi.oci.Core.outputs.GetVtapResult;
+import com.pulumi.oci.Core.outputs.GetVtapsResult;
 import com.pulumi.oci.Utilities;
 import com.pulumi.resources.InvokeArgs;
 import java.util.concurrent.CompletableFuture;
@@ -1160,6 +1172,94 @@ public final class CoreFunctions {
      */
     public static CompletableFuture<GetByoipRangesResult> getByoipRangesPlain(GetByoipRangesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getByoipRanges:getByoipRanges", TypeShape.of(GetByoipRangesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Capture Filter resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets information about the specified VTAP capture filter.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetCaptureFilterResult> getCaptureFilter(GetCaptureFilterArgs args) {
+        return getCaptureFilter(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Capture Filter resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets information about the specified VTAP capture filter.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetCaptureFilterResult> getCaptureFilterPlain(GetCaptureFilterPlainArgs args) {
+        return getCaptureFilterPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Capture Filter resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets information about the specified VTAP capture filter.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetCaptureFilterResult> getCaptureFilter(GetCaptureFilterArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getCaptureFilter:getCaptureFilter", TypeShape.of(GetCaptureFilterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Capture Filter resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets information about the specified VTAP capture filter.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetCaptureFilterResult> getCaptureFilterPlain(GetCaptureFilterPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Core/getCaptureFilter:getCaptureFilter", TypeShape.of(GetCaptureFilterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Capture Filters in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the capture filters in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetCaptureFiltersResult> getCaptureFilters(GetCaptureFiltersArgs args) {
+        return getCaptureFilters(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Capture Filters in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the capture filters in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetCaptureFiltersResult> getCaptureFiltersPlain(GetCaptureFiltersPlainArgs args) {
+        return getCaptureFiltersPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Capture Filters in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the capture filters in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetCaptureFiltersResult> getCaptureFilters(GetCaptureFiltersArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getCaptureFilters:getCaptureFilters", TypeShape.of(GetCaptureFiltersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Capture Filters in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the capture filters in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetCaptureFiltersResult> getCaptureFiltersPlain(GetCaptureFiltersPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Core/getCaptureFilters:getCaptureFilters", TypeShape.of(GetCaptureFiltersResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Cluster Network resource in Oracle Cloud Infrastructure Core service.
@@ -7274,5 +7374,93 @@ public final class CoreFunctions {
      */
     public static CompletableFuture<GetVolumesResult> getVolumesPlain(GetVolumesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getVolumes:getVolumes", TypeShape.of(GetVolumesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Vtap resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the specified `Vtap` resource.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetVtapResult> getVtap(GetVtapArgs args) {
+        return getVtap(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Vtap resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the specified `Vtap` resource.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetVtapResult> getVtapPlain(GetVtapPlainArgs args) {
+        return getVtapPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Vtap resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the specified `Vtap` resource.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetVtapResult> getVtap(GetVtapArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getVtap:getVtap", TypeShape.of(GetVtapResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Vtap resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the specified `Vtap` resource.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetVtapResult> getVtapPlain(GetVtapPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Core/getVtap:getVtap", TypeShape.of(GetVtapResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Vtaps in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the virtual test access points (VTAPs) in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetVtapsResult> getVtaps(GetVtapsArgs args) {
+        return getVtaps(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Vtaps in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the virtual test access points (VTAPs) in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetVtapsResult> getVtapsPlain(GetVtapsPlainArgs args) {
+        return getVtapsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Vtaps in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the virtual test access points (VTAPs) in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetVtapsResult> getVtaps(GetVtapsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getVtaps:getVtaps", TypeShape.of(GetVtapsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Vtaps in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the virtual test access points (VTAPs) in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetVtapsResult> getVtapsPlain(GetVtapsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Core/getVtaps:getVtaps", TypeShape.of(GetVtapsResult.class), args, Utilities.withVersion(options));
     }
 }

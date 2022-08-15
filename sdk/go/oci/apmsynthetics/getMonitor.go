@@ -72,7 +72,7 @@ type GetMonitorResult struct {
 	MonitorId string `pulumi:"monitorId"`
 	// Type of the monitor.
 	MonitorType string `pulumi:"monitorType"`
-	// Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds.
+	// Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
 	RepeatIntervalInSeconds int `pulumi:"repeatIntervalInSeconds"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
 	ScriptId string `pulumi:"scriptId"`
@@ -88,11 +88,11 @@ type GetMonitorResult struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
 	TimeUpdated string `pulumi:"timeUpdated"`
-	// Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+	// Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
 	TimeoutInSeconds int `pulumi:"timeoutInSeconds"`
 	// Number of vantage points where monitor is running.
 	VantagePointCount int `pulumi:"vantagePointCount"`
-	// List of vantage points from where monitor is running.
+	// List of public and dedicated vantage points where the monitor is running.
 	VantagePoints []string `pulumi:"vantagePoints"`
 }
 
@@ -179,7 +179,7 @@ func (o GetMonitorResultOutput) MonitorType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitorResult) string { return v.MonitorType }).(pulumi.StringOutput)
 }
 
-// Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds.
+// Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
 func (o GetMonitorResultOutput) RepeatIntervalInSeconds() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMonitorResult) int { return v.RepeatIntervalInSeconds }).(pulumi.IntOutput)
 }
@@ -219,7 +219,7 @@ func (o GetMonitorResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitorResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+// Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
 func (o GetMonitorResultOutput) TimeoutInSeconds() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMonitorResult) int { return v.TimeoutInSeconds }).(pulumi.IntOutput)
 }
@@ -229,7 +229,7 @@ func (o GetMonitorResultOutput) VantagePointCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMonitorResult) int { return v.VantagePointCount }).(pulumi.IntOutput)
 }
 
-// List of vantage points from where monitor is running.
+// List of public and dedicated vantage points where the monitor is running.
 func (o GetMonitorResultOutput) VantagePoints() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetMonitorResult) []string { return v.VantagePoints }).(pulumi.StringArrayOutput)
 }

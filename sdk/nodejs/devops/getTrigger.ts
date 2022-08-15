@@ -104,7 +104,7 @@ export interface GetTriggerResult {
     readonly timeUpdated: string;
     readonly triggerId: string;
     /**
-     * Source of the trigger. Allowed values are, GITHUB, GITLAB and DEVOPS_CODE_REPOSITORY.
+     * Source of the trigger. Allowed values are, GITHUB and GITLAB.
      */
     readonly triggerSource: string;
     /**

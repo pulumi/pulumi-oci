@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Database.VmClusterArgs;
 import com.pulumi.oci.Database.inputs.VmClusterState;
+import com.pulumi.oci.Database.outputs.VmClusterDataCollectionOptions;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Double;
@@ -70,6 +71,20 @@ public class VmCluster extends com.pulumi.resources.CustomResource {
      */
     public Output<Integer> cpusEnabled() {
         return this.cpusEnabled;
+    }
+    /**
+     * (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster.
+     * 
+     */
+    @Export(name="dataCollectionOptions", type=VmClusterDataCollectionOptions.class, parameters={})
+    private Output<VmClusterDataCollectionOptions> dataCollectionOptions;
+
+    /**
+     * @return (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster.
+     * 
+     */
+    public Output<VmClusterDataCollectionOptions> dataCollectionOptions() {
+        return this.dataCollectionOptions;
     }
     @Export(name="dataStorageSizeInGb", type=Double.class, parameters={})
     private Output<Double> dataStorageSizeInGb;

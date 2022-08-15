@@ -6,6 +6,7 @@ package com.pulumi.oci.Database.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -29,6 +30,21 @@ public final class AutonomousDatabaseInstanceWalletManagementState extends com.p
      */
     public Optional<Output<String>> autonomousDatabaseId() {
         return Optional.ofNullable(this.autonomousDatabaseId);
+    }
+
+    /**
+     * (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+     * 
+     */
+    @Import(name="gracePeriod")
+    private @Nullable Output<Integer> gracePeriod;
+
+    /**
+     * @return (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+     * 
+     */
+    public Optional<Output<Integer>> gracePeriod() {
+        return Optional.ofNullable(this.gracePeriod);
     }
 
     /**
@@ -80,6 +96,7 @@ public final class AutonomousDatabaseInstanceWalletManagementState extends com.p
 
     private AutonomousDatabaseInstanceWalletManagementState(AutonomousDatabaseInstanceWalletManagementState $) {
         this.autonomousDatabaseId = $.autonomousDatabaseId;
+        this.gracePeriod = $.gracePeriod;
         this.shouldRotate = $.shouldRotate;
         this.state = $.state;
         this.timeRotated = $.timeRotated;
@@ -122,6 +139,27 @@ public final class AutonomousDatabaseInstanceWalletManagementState extends com.p
          */
         public Builder autonomousDatabaseId(String autonomousDatabaseId) {
             return autonomousDatabaseId(Output.of(autonomousDatabaseId));
+        }
+
+        /**
+         * @param gracePeriod (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder gracePeriod(@Nullable Output<Integer> gracePeriod) {
+            $.gracePeriod = gracePeriod;
+            return this;
+        }
+
+        /**
+         * @param gracePeriod (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder gracePeriod(Integer gracePeriod) {
+            return gracePeriod(Output.of(gracePeriod));
         }
 
         /**

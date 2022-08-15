@@ -11,6 +11,7 @@ import com.pulumi.oci.Database.ExternalPluggableDatabaseArgs;
 import com.pulumi.oci.Database.inputs.ExternalPluggableDatabaseState;
 import com.pulumi.oci.Database.outputs.ExternalPluggableDatabaseDatabaseManagementConfig;
 import com.pulumi.oci.Database.outputs.ExternalPluggableDatabaseOperationsInsightsConfig;
+import com.pulumi.oci.Database.outputs.ExternalPluggableDatabaseStackMonitoringConfig;
 import com.pulumi.oci.Utilities;
 import java.lang.Object;
 import java.lang.String;
@@ -274,6 +275,20 @@ public class ExternalPluggableDatabase extends com.pulumi.resources.CustomResour
      */
     public Output<String> sourceId() {
         return this.sourceId;
+    }
+    /**
+     * The configuration of Stack Monitoring for the external database.
+     * 
+     */
+    @Export(name="stackMonitoringConfigs", type=List.class, parameters={ExternalPluggableDatabaseStackMonitoringConfig.class})
+    private Output<List<ExternalPluggableDatabaseStackMonitoringConfig>> stackMonitoringConfigs;
+
+    /**
+     * @return The configuration of Stack Monitoring for the external database.
+     * 
+     */
+    public Output<List<ExternalPluggableDatabaseStackMonitoringConfig>> stackMonitoringConfigs() {
+        return this.stackMonitoringConfigs;
     }
     /**
      * The current state of the Oracle Cloud Infrastructure external database resource.

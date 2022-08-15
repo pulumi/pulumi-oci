@@ -62,7 +62,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// </summary>
         public readonly string? PublicIp;
         /// <summary>
-        /// The state of the node.
+        /// The state of the nodepool.
         /// </summary>
         public readonly string? State;
         /// <summary>

@@ -12,7 +12,7 @@ namespace Pulumi.Oci.DatabaseTools
     /// <summary>
     /// This resource provides the Database Tools Private Endpoint resource in Oracle Cloud Infrastructure Database Tools service.
     /// 
-    /// Creates a new DatabaseToolsPrivateEndpoint.
+    /// Creates a new Database Tools private endpoint.
     /// 
     /// ## Example Usage
     /// 
@@ -65,7 +65,7 @@ namespace Pulumi.Oci.DatabaseTools
         public Output<ImmutableArray<string>> AdditionalFqdns { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools private endpoint.
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.DatabaseTools
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) A description of the DatabaseToolsPrivateEndpoint.
+        /// (Updatable) A description of the Database Tools private endpoint.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
@@ -95,7 +95,7 @@ namespace Pulumi.Oci.DatabaseTools
         public Output<string> EndpointFqdn { get; private set; } = null!;
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsEndpointService.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `DatabaseToolsEndpointService`.
         /// </summary>
         [Output("endpointServiceId")]
         public Output<string> EndpointServiceId { get; private set; } = null!;
@@ -131,13 +131,13 @@ namespace Pulumi.Oci.DatabaseTools
         public Output<string> PrivateEndpointVnicId { get; private set; } = null!;
 
         /// <summary>
-        /// Reverse connection configuration details of Private Endpoint.
+        /// Reverse connection configuration details of the private endpoint.
         /// </summary>
         [Output("reverseConnectionConfigurations")]
         public Output<ImmutableArray<Outputs.DatabaseToolsPrivateEndpointReverseConnectionConfiguration>> ReverseConnectionConfigurations { get; private set; } = null!;
 
         /// <summary>
-        /// The current state of the DatabaseToolsPrivateEndpoint.
+        /// The current state of the Database Tools private endpoint.
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
@@ -155,13 +155,13 @@ namespace Pulumi.Oci.DatabaseTools
         public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
 
         /// <summary>
-        /// The time the DatabaseToolsPrivateEndpoint was created. An RFC3339 formatted datetime string
+        /// The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
 
         /// <summary>
-        /// The time the DatabaseToolsPrivateEndpoint was updated. An RFC3339 formatted datetime string
+        /// The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
         /// </summary>
         [Output("timeUpdated")]
         public Output<string> TimeUpdated { get; private set; } = null!;
@@ -219,7 +219,7 @@ namespace Pulumi.Oci.DatabaseTools
     public sealed class DatabaseToolsPrivateEndpointArgs : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools private endpoint.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
@@ -237,7 +237,7 @@ namespace Pulumi.Oci.DatabaseTools
         }
 
         /// <summary>
-        /// (Updatable) A description of the DatabaseToolsPrivateEndpoint.
+        /// (Updatable) A description of the Database Tools private endpoint.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -249,7 +249,7 @@ namespace Pulumi.Oci.DatabaseTools
         public Input<string> DisplayName { get; set; } = null!;
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsEndpointService.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `DatabaseToolsEndpointService`.
         /// </summary>
         [Input("endpointServiceId", required: true)]
         public Input<string> EndpointServiceId { get; set; } = null!;
@@ -310,7 +310,7 @@ namespace Pulumi.Oci.DatabaseTools
         }
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools private endpoint.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -328,7 +328,7 @@ namespace Pulumi.Oci.DatabaseTools
         }
 
         /// <summary>
-        /// (Updatable) A description of the DatabaseToolsPrivateEndpoint.
+        /// (Updatable) A description of the Database Tools private endpoint.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -346,7 +346,7 @@ namespace Pulumi.Oci.DatabaseTools
         public Input<string>? EndpointFqdn { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsEndpointService.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `DatabaseToolsEndpointService`.
         /// </summary>
         [Input("endpointServiceId")]
         public Input<string>? EndpointServiceId { get; set; }
@@ -397,7 +397,7 @@ namespace Pulumi.Oci.DatabaseTools
         private InputList<Inputs.DatabaseToolsPrivateEndpointReverseConnectionConfigurationGetArgs>? _reverseConnectionConfigurations;
 
         /// <summary>
-        /// Reverse connection configuration details of Private Endpoint.
+        /// Reverse connection configuration details of the private endpoint.
         /// </summary>
         public InputList<Inputs.DatabaseToolsPrivateEndpointReverseConnectionConfigurationGetArgs> ReverseConnectionConfigurations
         {
@@ -406,7 +406,7 @@ namespace Pulumi.Oci.DatabaseTools
         }
 
         /// <summary>
-        /// The current state of the DatabaseToolsPrivateEndpoint.
+        /// The current state of the Database Tools private endpoint.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -430,13 +430,13 @@ namespace Pulumi.Oci.DatabaseTools
         }
 
         /// <summary>
-        /// The time the DatabaseToolsPrivateEndpoint was created. An RFC3339 formatted datetime string
+        /// The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// The time the DatabaseToolsPrivateEndpoint was updated. An RFC3339 formatted datetime string
+        /// The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }

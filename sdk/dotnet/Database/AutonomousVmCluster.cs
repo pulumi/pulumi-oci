@@ -90,13 +90,25 @@ namespace Pulumi.Oci.Database
         public Output<double> AutonomousDataStorageSizeInTbs { get; private set; } = null!;
 
         /// <summary>
+        /// The data disk group size available for Autonomous Databases, in TBs.
+        /// </summary>
+        [Output("availableAutonomousDataStorageSizeInTbs")]
+        public Output<double> AvailableAutonomousDataStorageSizeInTbs { get; private set; } = null!;
+
+        /// <summary>
+        /// The number of Autonomous Container Databases that can be created with the currently available local storage.
+        /// </summary>
+        [Output("availableContainerDatabases")]
+        public Output<int> AvailableContainerDatabases { get; private set; } = null!;
+
+        /// <summary>
         /// The numnber of CPU cores available.
         /// </summary>
         [Output("availableCpus")]
         public Output<int> AvailableCpus { get; private set; } = null!;
 
         /// <summary>
-        /// The data storage available in TBs
+        /// **Deprecated.** Use `availableAutonomousDataStorageSizeInTBs` for Autonomous Databases' data storage availability in TBs.
         /// </summary>
         [Output("availableDataStorageSizeInTbs")]
         public Output<double> AvailableDataStorageSizeInTbs { get; private set; } = null!;
@@ -217,6 +229,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("ocpusEnabled")]
         public Output<double> OcpusEnabled { get; private set; } = null!;
+
+        /// <summary>
+        /// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+        /// </summary>
+        [Output("reclaimableCpus")]
+        public Output<int> ReclaimableCpus { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the Autonomous VM cluster.
@@ -410,13 +428,25 @@ namespace Pulumi.Oci.Database
         public Input<double>? AutonomousDataStorageSizeInTbs { get; set; }
 
         /// <summary>
+        /// The data disk group size available for Autonomous Databases, in TBs.
+        /// </summary>
+        [Input("availableAutonomousDataStorageSizeInTbs")]
+        public Input<double>? AvailableAutonomousDataStorageSizeInTbs { get; set; }
+
+        /// <summary>
+        /// The number of Autonomous Container Databases that can be created with the currently available local storage.
+        /// </summary>
+        [Input("availableContainerDatabases")]
+        public Input<int>? AvailableContainerDatabases { get; set; }
+
+        /// <summary>
         /// The numnber of CPU cores available.
         /// </summary>
         [Input("availableCpus")]
         public Input<int>? AvailableCpus { get; set; }
 
         /// <summary>
-        /// The data storage available in TBs
+        /// **Deprecated.** Use `availableAutonomousDataStorageSizeInTBs` for Autonomous Databases' data storage availability in TBs.
         /// </summary>
         [Input("availableDataStorageSizeInTbs")]
         public Input<double>? AvailableDataStorageSizeInTbs { get; set; }
@@ -561,6 +591,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("ocpusEnabled")]
         public Input<double>? OcpusEnabled { get; set; }
+
+        /// <summary>
+        /// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+        /// </summary>
+        [Input("reclaimableCpus")]
+        public Input<int>? ReclaimableCpus { get; set; }
 
         /// <summary>
         /// The current state of the Autonomous VM cluster.

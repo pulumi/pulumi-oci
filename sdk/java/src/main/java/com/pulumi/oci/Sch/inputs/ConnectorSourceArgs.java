@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Sch.inputs.ConnectorSourceCursorArgs;
 import com.pulumi.oci.Sch.inputs.ConnectorSourceLogSourceArgs;
+import com.pulumi.oci.Sch.inputs.ConnectorSourceMonitoringSourceArgs;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -64,6 +65,21 @@ public final class ConnectorSourceArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
+     * (Updatable) The list of metric namespaces to retrieve data from.
+     * 
+     */
+    @Import(name="monitoringSources")
+    private @Nullable Output<List<ConnectorSourceMonitoringSourceArgs>> monitoringSources;
+
+    /**
+     * @return (Updatable) The list of metric namespaces to retrieve data from.
+     * 
+     */
+    public Optional<Output<List<ConnectorSourceMonitoringSourceArgs>>> monitoringSources() {
+        return Optional.ofNullable(this.monitoringSources);
+    }
+
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
      * 
      */
@@ -84,6 +100,7 @@ public final class ConnectorSourceArgs extends com.pulumi.resources.ResourceArgs
         this.cursor = $.cursor;
         this.kind = $.kind;
         this.logSources = $.logSources;
+        this.monitoringSources = $.monitoringSources;
         this.streamId = $.streamId;
     }
 
@@ -176,6 +193,37 @@ public final class ConnectorSourceArgs extends com.pulumi.resources.ResourceArgs
          */
         public Builder logSources(ConnectorSourceLogSourceArgs... logSources) {
             return logSources(List.of(logSources));
+        }
+
+        /**
+         * @param monitoringSources (Updatable) The list of metric namespaces to retrieve data from.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder monitoringSources(@Nullable Output<List<ConnectorSourceMonitoringSourceArgs>> monitoringSources) {
+            $.monitoringSources = monitoringSources;
+            return this;
+        }
+
+        /**
+         * @param monitoringSources (Updatable) The list of metric namespaces to retrieve data from.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder monitoringSources(List<ConnectorSourceMonitoringSourceArgs> monitoringSources) {
+            return monitoringSources(Output.of(monitoringSources));
+        }
+
+        /**
+         * @param monitoringSources (Updatable) The list of metric namespaces to retrieve data from.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder monitoringSources(ConnectorSourceMonitoringSourceArgs... monitoringSources) {
+            return monitoringSources(List.of(monitoringSources));
         }
 
         /**

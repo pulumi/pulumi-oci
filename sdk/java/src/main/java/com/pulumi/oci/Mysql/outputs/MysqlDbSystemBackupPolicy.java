@@ -4,6 +4,7 @@
 package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Mysql.outputs.MysqlDbSystemBackupPolicyPitrPolicy;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
@@ -26,10 +27,15 @@ public final class MysqlDbSystemBackupPolicy {
      */
     private final @Nullable Map<String,Object> freeformTags;
     /**
-     * @return (Updatable) Specifies if automatic backups are enabled.
+     * @return (Updatable) Specifies if PITR is enabled or disabled.
      * 
      */
     private final @Nullable Boolean isEnabled;
+    /**
+     * @return (Updatable) The PITR policy for the DB System.
+     * 
+     */
+    private final @Nullable MysqlDbSystemBackupPolicyPitrPolicy pitrPolicy;
     /**
      * @return (Updatable) Number of days to retain an automatic backup.
      * 
@@ -46,11 +52,13 @@ public final class MysqlDbSystemBackupPolicy {
         @CustomType.Parameter("definedTags") @Nullable Map<String,Object> definedTags,
         @CustomType.Parameter("freeformTags") @Nullable Map<String,Object> freeformTags,
         @CustomType.Parameter("isEnabled") @Nullable Boolean isEnabled,
+        @CustomType.Parameter("pitrPolicy") @Nullable MysqlDbSystemBackupPolicyPitrPolicy pitrPolicy,
         @CustomType.Parameter("retentionInDays") @Nullable Integer retentionInDays,
         @CustomType.Parameter("windowStartTime") @Nullable String windowStartTime) {
         this.definedTags = definedTags;
         this.freeformTags = freeformTags;
         this.isEnabled = isEnabled;
+        this.pitrPolicy = pitrPolicy;
         this.retentionInDays = retentionInDays;
         this.windowStartTime = windowStartTime;
     }
@@ -70,11 +78,18 @@ public final class MysqlDbSystemBackupPolicy {
         return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
-     * @return (Updatable) Specifies if automatic backups are enabled.
+     * @return (Updatable) Specifies if PITR is enabled or disabled.
      * 
      */
     public Optional<Boolean> isEnabled() {
         return Optional.ofNullable(this.isEnabled);
+    }
+    /**
+     * @return (Updatable) The PITR policy for the DB System.
+     * 
+     */
+    public Optional<MysqlDbSystemBackupPolicyPitrPolicy> pitrPolicy() {
+        return Optional.ofNullable(this.pitrPolicy);
     }
     /**
      * @return (Updatable) Number of days to retain an automatic backup.
@@ -103,6 +118,7 @@ public final class MysqlDbSystemBackupPolicy {
         private @Nullable Map<String,Object> definedTags;
         private @Nullable Map<String,Object> freeformTags;
         private @Nullable Boolean isEnabled;
+        private @Nullable MysqlDbSystemBackupPolicyPitrPolicy pitrPolicy;
         private @Nullable Integer retentionInDays;
         private @Nullable String windowStartTime;
 
@@ -115,6 +131,7 @@ public final class MysqlDbSystemBackupPolicy {
     	      this.definedTags = defaults.definedTags;
     	      this.freeformTags = defaults.freeformTags;
     	      this.isEnabled = defaults.isEnabled;
+    	      this.pitrPolicy = defaults.pitrPolicy;
     	      this.retentionInDays = defaults.retentionInDays;
     	      this.windowStartTime = defaults.windowStartTime;
         }
@@ -131,6 +148,10 @@ public final class MysqlDbSystemBackupPolicy {
             this.isEnabled = isEnabled;
             return this;
         }
+        public Builder pitrPolicy(@Nullable MysqlDbSystemBackupPolicyPitrPolicy pitrPolicy) {
+            this.pitrPolicy = pitrPolicy;
+            return this;
+        }
         public Builder retentionInDays(@Nullable Integer retentionInDays) {
             this.retentionInDays = retentionInDays;
             return this;
@@ -139,7 +160,7 @@ public final class MysqlDbSystemBackupPolicy {
             this.windowStartTime = windowStartTime;
             return this;
         }        public MysqlDbSystemBackupPolicy build() {
-            return new MysqlDbSystemBackupPolicy(definedTags, freeformTags, isEnabled, retentionInDays, windowStartTime);
+            return new MysqlDbSystemBackupPolicy(definedTags, freeformTags, isEnabled, pitrPolicy, retentionInDays, windowStartTime);
         }
     }
 }

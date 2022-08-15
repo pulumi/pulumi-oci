@@ -22,6 +22,7 @@ import * as utilities from "../utilities";
  *     monitorType: _var.monitor_monitor_type,
  *     scriptId: oci_apm_synthetics_script.test_script.id,
  *     status: _var.monitor_status,
+ *     vantagePoint: _var.monitor_vantage_point,
  * });
  * ```
  */
@@ -38,6 +39,7 @@ export function getMonitors(args: GetMonitorsArgs, opts?: pulumi.InvokeOptions):
         "monitorType": args.monitorType,
         "scriptId": args.scriptId,
         "status": args.status,
+        "vantagePoint": args.vantagePoint,
     }, opts);
 }
 
@@ -50,7 +52,7 @@ export interface GetMonitorsArgs {
      */
     apmDomainId: string;
     /**
-     * A filter to return only resources that match the entire display name given.
+     * A filter to return only the resources that match the entire display name.
      */
     displayName?: string;
     filters?: inputs.ApmSynthetics.GetMonitorsFilter[];
@@ -66,6 +68,10 @@ export interface GetMonitorsArgs {
      * A filter to return only monitors that match the status given.
      */
     status?: string;
+    /**
+     * The name of the public or dedicated vantage point.
+     */
+    vantagePoint?: string;
 }
 
 /**
@@ -98,6 +104,7 @@ export interface GetMonitorsResult {
      * Enables or disables the monitor.
      */
     readonly status?: string;
+    readonly vantagePoint?: string;
 }
 
 export function getMonitorsOutput(args: GetMonitorsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMonitorsResult> {
@@ -113,7 +120,7 @@ export interface GetMonitorsOutputArgs {
      */
     apmDomainId: pulumi.Input<string>;
     /**
-     * A filter to return only resources that match the entire display name given.
+     * A filter to return only the resources that match the entire display name.
      */
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.ApmSynthetics.GetMonitorsFilterArgs>[]>;
@@ -129,4 +136,8 @@ export interface GetMonitorsOutputArgs {
      * A filter to return only monitors that match the status given.
      */
     status?: pulumi.Input<string>;
+    /**
+     * The name of the public or dedicated vantage point.
+     */
+    vantagePoint?: pulumi.Input<string>;
 }

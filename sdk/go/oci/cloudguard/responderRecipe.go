@@ -29,9 +29,9 @@ type ResponderRecipe struct {
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
-	// (Updatable) ResponderRecipe Description
+	// (Updatable) Responder recipe description.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// (Updatable) ResponderRecipe Display Name
+	// (Updatable) Responder recipe display name.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// List of responder rules associated with the recipe
 	EffectiveResponderRules ResponderRecipeEffectiveResponderRuleArrayOutput `pulumi:"effectiveResponderRules"`
@@ -97,9 +97,9 @@ type responderRecipeState struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// (Updatable) ResponderRecipe Description
+	// (Updatable) Responder recipe description.
 	Description *string `pulumi:"description"`
-	// (Updatable) ResponderRecipe Display Name
+	// (Updatable) Responder recipe display name.
 	DisplayName *string `pulumi:"displayName"`
 	// List of responder rules associated with the recipe
 	EffectiveResponderRules []ResponderRecipeEffectiveResponderRule `pulumi:"effectiveResponderRules"`
@@ -128,9 +128,9 @@ type ResponderRecipeState struct {
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
-	// (Updatable) ResponderRecipe Description
+	// (Updatable) Responder recipe description.
 	Description pulumi.StringPtrInput
-	// (Updatable) ResponderRecipe Display Name
+	// (Updatable) Responder recipe display name.
 	DisplayName pulumi.StringPtrInput
 	// List of responder rules associated with the recipe
 	EffectiveResponderRules ResponderRecipeEffectiveResponderRuleArrayInput
@@ -163,9 +163,9 @@ type responderRecipeArgs struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// (Updatable) ResponderRecipe Description
+	// (Updatable) Responder recipe description.
 	Description *string `pulumi:"description"`
-	// (Updatable) ResponderRecipe Display Name
+	// (Updatable) Responder recipe display name.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
@@ -181,9 +181,9 @@ type ResponderRecipeArgs struct {
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
-	// (Updatable) ResponderRecipe Description
+	// (Updatable) Responder recipe description.
 	Description pulumi.StringPtrInput
-	// (Updatable) ResponderRecipe Display Name
+	// (Updatable) Responder recipe display name.
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput

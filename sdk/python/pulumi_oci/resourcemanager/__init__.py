@@ -5,8 +5,12 @@
 from .. import _utilities
 import typing
 # Export this package's modules as members:
+from .get_private_endpoint import *
+from .get_private_endpoint_reachable_ip import *
+from .get_private_endpoints import *
 from .get_stack import *
 from .get_stack_tf_state import *
 from .get_stacks import *
+from .private_endpoint import *
 from ._inputs import *
 from . import outputs

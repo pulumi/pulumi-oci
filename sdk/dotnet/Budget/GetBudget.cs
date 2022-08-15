@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Budget
         /// <summary>
         /// This data source provides details about a specific Budget resource in Oracle Cloud Infrastructure Budget service.
         /// 
-        /// Gets a Budget by identifier
+        /// Gets a budget by the identifier.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -45,7 +45,7 @@ namespace Pulumi.Oci.Budget
         /// <summary>
         /// This data source provides details about a specific Budget resource in Oracle Cloud Infrastructure Budget service.
         /// 
-        /// Gets a Budget by identifier
+        /// Gets a budget by the identifier.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -78,7 +78,7 @@ namespace Pulumi.Oci.Budget
     public sealed class GetBudgetArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The unique Budget OCID
+        /// The unique budget OCID.
         /// </summary>
         [Input("budgetId", required: true)]
         public string BudgetId { get; set; } = null!;
@@ -91,7 +91,7 @@ namespace Pulumi.Oci.Budget
     public sealed class GetBudgetInvokeArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The unique Budget OCID
+        /// The unique budget OCID.
         /// </summary>
         [Input("budgetId", required: true)]
         public Input<string> BudgetId { get; set; } = null!;
@@ -106,15 +106,15 @@ namespace Pulumi.Oci.Budget
     public sealed class GetBudgetResult
     {
         /// <summary>
-        /// The actual spend in currency for the current budget cycle
+        /// The actual spend in currency for the current budget cycle.
         /// </summary>
         public readonly double ActualSpend;
         /// <summary>
-        /// Total number of alert rules in the budget
+        /// The total number of alert rules in the budget.
         /// </summary>
         public readonly int AlertRuleCount;
         /// <summary>
-        /// The amount of the budget expressed in the currency of the customer's rate card.
+        /// The amount of the budget, expressed in the currency of the customer's rate card.
         /// </summary>
         public readonly int Amount;
         public readonly string BudgetId;
@@ -123,7 +123,7 @@ namespace Pulumi.Oci.Budget
         /// </summary>
         public readonly int BudgetProcessingPeriodStartOffset;
         /// <summary>
-        /// The OCID of the tenancy
+        /// The OCID of the compartment.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -135,11 +135,11 @@ namespace Pulumi.Oci.Budget
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// The display name of the budget.
+        /// The display name of the budget. Avoid entering confidential information.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// The forecasted spend in currency by the end of the current budget cycle
+        /// The forecasted spend in currency by the end of the current budget cycle.
         /// </summary>
         public readonly double ForecastedSpend;
         /// <summary>
@@ -147,9 +147,13 @@ namespace Pulumi.Oci.Budget
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// The OCID of the budget
+        /// The OCID of the budget.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// The type of the budget processing period. Valid values are INVOICE and MONTH.
+        /// </summary>
+        public readonly string ProcessingPeriodType;
         /// <summary>
         /// The reset period for the budget.
         /// </summary>
@@ -159,7 +163,7 @@ namespace Pulumi.Oci.Budget
         /// </summary>
         public readonly string State;
         /// <summary>
-        /// This is DEPRECATED. For backwards compatability, the property will be populated when targetType is "COMPARTMENT" AND targets contains EXACT ONE target compartment ocid. For all other scenarios, this property will be left empty.
+        /// This is DEPRECATED. For backwards compatability, the property is populated when the targetType is "COMPARTMENT", and targets contain the specific target compartment OCID. For all other scenarios, this property will be left empty.
         /// </summary>
         public readonly string TargetCompartmentId;
         /// <summary>
@@ -167,23 +171,23 @@ namespace Pulumi.Oci.Budget
         /// </summary>
         public readonly string TargetType;
         /// <summary>
-        /// The list of targets on which the budget is applied. If targetType is "COMPARTMENT", targets contains list of compartment OCIDs. If targetType is "TAG", targets contains list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}".
+        /// The list of targets on which the budget is applied. If the targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If the targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}".
         /// </summary>
         public readonly ImmutableArray<string> Targets;
         /// <summary>
-        /// Time that budget was created
+        /// The time that the budget was created.
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The time that the budget spend was last computed
+        /// The time that the budget spend was last computed.
         /// </summary>
         public readonly string TimeSpendComputed;
         /// <summary>
-        /// Time that budget was updated
+        /// The time that the budget was updated.
         /// </summary>
         public readonly string TimeUpdated;
         /// <summary>
-        /// Version of the budget. Starts from 1 and increments by 1.
+        /// The version of the budget. Starts from 1 and increments by 1.
         /// </summary>
         public readonly int Version;
 
@@ -212,6 +216,8 @@ namespace Pulumi.Oci.Budget
             ImmutableDictionary<string, object> freeformTags,
 
             string id,
+
+            string processingPeriodType,
 
             string resetPeriod,
 
@@ -243,6 +249,7 @@ namespace Pulumi.Oci.Budget
             ForecastedSpend = forecastedSpend;
             FreeformTags = freeformTags;
             Id = id;
+            ProcessingPeriodType = processingPeriodType;
             ResetPeriod = resetPeriod;
             State = state;
             TargetCompartmentId = targetCompartmentId;

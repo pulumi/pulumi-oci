@@ -76,7 +76,7 @@ public final class NodePoolNode {
      */
     private final @Nullable String publicIp;
     /**
-     * @return The state of the node.
+     * @return The state of the nodepool.
      * 
      */
     private final @Nullable String state;
@@ -203,7 +203,7 @@ public final class NodePoolNode {
         return Optional.ofNullable(this.publicIp);
     }
     /**
-     * @return The state of the node.
+     * @return The state of the nodepool.
      * 
      */
     public Optional<String> state() {

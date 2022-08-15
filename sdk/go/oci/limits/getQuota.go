@@ -62,7 +62,10 @@ type LookupQuotaResult struct {
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the quota.
-	Id string `pulumi:"id"`
+	Id             string `pulumi:"id"`
+	IsLockOverride bool   `pulumi:"isLockOverride"`
+	// Locks associated with this resource.
+	Locks []GetQuotaLock `pulumi:"locks"`
 	// The name you assign to the quota during creation. The name must be unique across all quotas in the tenancy and cannot be changed.
 	Name    string `pulumi:"name"`
 	QuotaId string `pulumi:"quotaId"`
@@ -135,6 +138,15 @@ func (o LookupQuotaResultOutput) FreeformTags() pulumi.MapOutput {
 // The OCID of the quota.
 func (o LookupQuotaResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupQuotaResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o LookupQuotaResultOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupQuotaResult) bool { return v.IsLockOverride }).(pulumi.BoolOutput)
+}
+
+// Locks associated with this resource.
+func (o LookupQuotaResultOutput) Locks() GetQuotaLockArrayOutput {
+	return o.ApplyT(func(v LookupQuotaResult) []GetQuotaLock { return v.Locks }).(GetQuotaLockArrayOutput)
 }
 
 // The name you assign to the quota during creation. The name must be unique across all quotas in the tenancy and cannot be changed.

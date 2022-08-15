@@ -6,6 +6,7 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Database.outputs.GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfig;
 import com.pulumi.oci.Database.outputs.GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfig;
+import com.pulumi.oci.Database.outputs.GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfig;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -95,6 +96,11 @@ public final class GetExternalNonContainerDatabasesExternalNonContainerDatabase 
      */
     private final List<GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfig> operationsInsightsConfigs;
     /**
+     * @return The configuration of Stack Monitoring for the external database.
+     * 
+     */
+    private final List<GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfig> stackMonitoringConfigs;
+    /**
      * @return A filter to return only resources that match the specified lifecycle state.
      * 
      */
@@ -128,6 +134,7 @@ public final class GetExternalNonContainerDatabasesExternalNonContainerDatabase 
         @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
         @CustomType.Parameter("ncharacterSet") String ncharacterSet,
         @CustomType.Parameter("operationsInsightsConfigs") List<GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfig> operationsInsightsConfigs,
+        @CustomType.Parameter("stackMonitoringConfigs") List<GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfig> stackMonitoringConfigs,
         @CustomType.Parameter("state") String state,
         @CustomType.Parameter("timeCreated") String timeCreated,
         @CustomType.Parameter("timeZone") String timeZone) {
@@ -147,6 +154,7 @@ public final class GetExternalNonContainerDatabasesExternalNonContainerDatabase 
         this.lifecycleDetails = lifecycleDetails;
         this.ncharacterSet = ncharacterSet;
         this.operationsInsightsConfigs = operationsInsightsConfigs;
+        this.stackMonitoringConfigs = stackMonitoringConfigs;
         this.state = state;
         this.timeCreated = timeCreated;
         this.timeZone = timeZone;
@@ -265,6 +273,13 @@ public final class GetExternalNonContainerDatabasesExternalNonContainerDatabase 
         return this.operationsInsightsConfigs;
     }
     /**
+     * @return The configuration of Stack Monitoring for the external database.
+     * 
+     */
+    public List<GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfig> stackMonitoringConfigs() {
+        return this.stackMonitoringConfigs;
+    }
+    /**
      * @return A filter to return only resources that match the specified lifecycle state.
      * 
      */
@@ -311,6 +326,7 @@ public final class GetExternalNonContainerDatabasesExternalNonContainerDatabase 
         private String lifecycleDetails;
         private String ncharacterSet;
         private List<GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfig> operationsInsightsConfigs;
+        private List<GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfig> stackMonitoringConfigs;
         private String state;
         private String timeCreated;
         private String timeZone;
@@ -337,6 +353,7 @@ public final class GetExternalNonContainerDatabasesExternalNonContainerDatabase 
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.ncharacterSet = defaults.ncharacterSet;
     	      this.operationsInsightsConfigs = defaults.operationsInsightsConfigs;
+    	      this.stackMonitoringConfigs = defaults.stackMonitoringConfigs;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeZone = defaults.timeZone;
@@ -412,6 +429,13 @@ public final class GetExternalNonContainerDatabasesExternalNonContainerDatabase 
         public Builder operationsInsightsConfigs(GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfig... operationsInsightsConfigs) {
             return operationsInsightsConfigs(List.of(operationsInsightsConfigs));
         }
+        public Builder stackMonitoringConfigs(List<GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfig> stackMonitoringConfigs) {
+            this.stackMonitoringConfigs = Objects.requireNonNull(stackMonitoringConfigs);
+            return this;
+        }
+        public Builder stackMonitoringConfigs(GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfig... stackMonitoringConfigs) {
+            return stackMonitoringConfigs(List.of(stackMonitoringConfigs));
+        }
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
@@ -424,7 +448,7 @@ public final class GetExternalNonContainerDatabasesExternalNonContainerDatabase 
             this.timeZone = Objects.requireNonNull(timeZone);
             return this;
         }        public GetExternalNonContainerDatabasesExternalNonContainerDatabase build() {
-            return new GetExternalNonContainerDatabasesExternalNonContainerDatabase(characterSet, compartmentId, databaseConfiguration, databaseEdition, databaseManagementConfigs, databaseVersion, dbId, dbPacks, dbUniqueName, definedTags, displayName, freeformTags, id, lifecycleDetails, ncharacterSet, operationsInsightsConfigs, state, timeCreated, timeZone);
+            return new GetExternalNonContainerDatabasesExternalNonContainerDatabase(characterSet, compartmentId, databaseConfiguration, databaseEdition, databaseManagementConfigs, databaseVersion, dbId, dbPacks, dbUniqueName, definedTags, displayName, freeformTags, id, lifecycleDetails, ncharacterSet, operationsInsightsConfigs, stackMonitoringConfigs, state, timeCreated, timeZone);
         }
     }
 }

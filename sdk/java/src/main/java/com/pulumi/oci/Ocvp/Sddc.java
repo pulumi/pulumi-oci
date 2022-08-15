@@ -12,6 +12,7 @@ import com.pulumi.oci.Ocvp.inputs.SddcState;
 import com.pulumi.oci.Ocvp.outputs.SddcHcxOnPremLicense;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
+import java.lang.Double;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -56,6 +57,20 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      */
     public Output<Integer> actualEsxiHostsCount() {
         return this.actualEsxiHostsCount;
+    }
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+     * 
+     */
+    @Export(name="capacityReservationId", type=String.class, parameters={})
+    private Output<String> capacityReservationId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+     * 
+     */
+    public Output<String> capacityReservationId() {
+        return this.capacityReservationId;
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the SDDC.
@@ -238,6 +253,34 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      */
     public Output<String> hcxVlanId() {
         return this.hcxVlanId;
+    }
+    /**
+     * The initial OCPU count of the SDDC&#39;s ESXi hosts.
+     * 
+     */
+    @Export(name="initialHostOcpuCount", type=Double.class, parameters={})
+    private Output<Double> initialHostOcpuCount;
+
+    /**
+     * @return The initial OCPU count of the SDDC&#39;s ESXi hosts.
+     * 
+     */
+    public Output<Double> initialHostOcpuCount() {
+        return this.initialHostOcpuCount;
+    }
+    /**
+     * The initial compute shape of the SDDC&#39;s ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+     * 
+     */
+    @Export(name="initialHostShapeName", type=String.class, parameters={})
+    private Output<String> initialHostShapeName;
+
+    /**
+     * @return The initial compute shape of the SDDC&#39;s ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+     * 
+     */
+    public Output<String> initialHostShapeName() {
+        return this.initialHostShapeName;
     }
     /**
      * The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).

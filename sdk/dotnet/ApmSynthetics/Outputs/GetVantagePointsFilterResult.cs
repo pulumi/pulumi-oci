@@ -14,7 +14,7 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
     public sealed class GetVantagePointsFilterResult
     {
         /// <summary>
-        /// A filter to return only resources that match the entire name given.
+        /// A filter to return only the resources that match the entire name.
         /// </summary>
         public readonly string Name;
         public readonly bool? Regex;

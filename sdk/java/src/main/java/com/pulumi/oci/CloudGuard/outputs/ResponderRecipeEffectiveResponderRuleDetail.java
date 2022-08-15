@@ -14,6 +14,10 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class ResponderRecipeEffectiveResponderRuleDetail {
+    /**
+     * @return Base condition object
+     * 
+     */
     private final @Nullable String condition;
     /**
      * @return ResponderRule configurations
@@ -43,6 +47,10 @@ public final class ResponderRecipeEffectiveResponderRuleDetail {
         this.mode = mode;
     }
 
+    /**
+     * @return Base condition object
+     * 
+     */
     public Optional<String> condition() {
         return Optional.ofNullable(this.condition);
     }

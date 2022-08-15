@@ -76,14 +76,14 @@ public final class DrgAttachmentNetworkDetailsArgs extends com.pulumi.resources.
     }
 
     /**
-     * (Updatable) Indicates whether the VCN CIDR(s) or the individual Subnet CIDR(s) are imported from the attachment.  Routes from the VCN Ingress Route Table are always imported. It can be one of these values: `VCN_CIDRS` , `SUBNET_CIDRS`
+     * (Updatable) Indicates whether the VCN CIDRs or the individual subnet CIDRs are imported from the attachment. Routes from the VCN ingress route table are always imported.
      * 
      */
     @Import(name="vcnRouteType")
     private @Nullable Output<String> vcnRouteType;
 
     /**
-     * @return (Updatable) Indicates whether the VCN CIDR(s) or the individual Subnet CIDR(s) are imported from the attachment.  Routes from the VCN Ingress Route Table are always imported. It can be one of these values: `VCN_CIDRS` , `SUBNET_CIDRS`
+     * @return (Updatable) Indicates whether the VCN CIDRs or the individual subnet CIDRs are imported from the attachment. Routes from the VCN ingress route table are always imported.
      * 
      */
     public Optional<Output<String>> vcnRouteType() {
@@ -203,7 +203,7 @@ public final class DrgAttachmentNetworkDetailsArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param vcnRouteType (Updatable) Indicates whether the VCN CIDR(s) or the individual Subnet CIDR(s) are imported from the attachment.  Routes from the VCN Ingress Route Table are always imported. It can be one of these values: `VCN_CIDRS` , `SUBNET_CIDRS`
+         * @param vcnRouteType (Updatable) Indicates whether the VCN CIDRs or the individual subnet CIDRs are imported from the attachment. Routes from the VCN ingress route table are always imported.
          * 
          * @return builder
          * 
@@ -214,7 +214,7 @@ public final class DrgAttachmentNetworkDetailsArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param vcnRouteType (Updatable) Indicates whether the VCN CIDR(s) or the individual Subnet CIDR(s) are imported from the attachment.  Routes from the VCN Ingress Route Table are always imported. It can be one of these values: `VCN_CIDRS` , `SUBNET_CIDRS`
+         * @param vcnRouteType (Updatable) Indicates whether the VCN CIDRs or the individual subnet CIDRs are imported from the attachment. Routes from the VCN ingress route table are always imported.
          * 
          * @return builder
          * 

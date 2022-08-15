@@ -29,6 +29,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &BootVolume{}
 	case "oci:Core/bootVolumeBackup:BootVolumeBackup":
 		r = &BootVolumeBackup{}
+	case "oci:Core/captureFilter:CaptureFilter":
+		r = &CaptureFilter{}
 	case "oci:Core/clusterNetwork:ClusterNetwork":
 		r = &ClusterNetwork{}
 	case "oci:Core/computeCapacityReservation:ComputeCapacityReservation":
@@ -145,6 +147,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &VolumeGroup{}
 	case "oci:Core/volumeGroupBackup:VolumeGroupBackup":
 		r = &VolumeGroupBackup{}
+	case "oci:Core/vtap:Vtap":
+		r = &Vtap{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -176,6 +180,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Core/bootVolumeBackup",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Core/captureFilter",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -466,6 +475,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Core/volumeGroupBackup",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Core/vtap",
 		&module{version},
 	)
 }

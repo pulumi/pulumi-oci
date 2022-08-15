@@ -92,7 +92,7 @@ export interface GetDataMaskRulesArgs {
 export interface GetDataMaskRulesResult {
     readonly accessLevel?: string;
     /**
-     * Compartment Identifier where the resource is created
+     * Compartment Identifier where the resource is created.
      */
     readonly compartmentId: string;
     /**
@@ -104,7 +104,7 @@ export interface GetDataMaskRulesResult {
      */
     readonly dataMaskRuleStatus?: string;
     /**
-     * Data Mask Rule Identifier, can be renamed
+     * Data Mask Rule Identifier, can be renamed.
      */
     readonly displayName?: string;
     readonly filters?: outputs.CloudGuard.GetDataMaskRulesFilter[];

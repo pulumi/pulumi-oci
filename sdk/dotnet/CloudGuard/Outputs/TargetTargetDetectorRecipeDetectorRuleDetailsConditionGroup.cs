@@ -18,7 +18,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) Base condition object
         /// </summary>
         public readonly string Condition;
 

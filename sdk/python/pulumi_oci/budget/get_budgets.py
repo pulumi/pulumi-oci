@@ -57,7 +57,7 @@ class GetBudgetsResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        The OCID of the compartment
+        The OCID of the compartment.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -65,7 +65,7 @@ class GetBudgetsResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        The display name of the budget.
+        The display name of the budget. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -123,16 +123,14 @@ def get_budgets(compartment_id: Optional[str] = None,
     """
     This data source provides the list of Budgets in Oracle Cloud Infrastructure Budget service.
 
-    Gets a list of Budgets in a compartment.
+    Gets a list of budgets in a compartment.
 
-    By default, ListBudgets returns budgets of 'COMPARTMENT' target type and the budget records with only ONE target compartment OCID.
+    By default, ListBudgets returns budgets of the 'COMPARTMENT' target type, and the budget records with only one target compartment OCID.
 
-    To list ALL budgets, set the targetType query parameter to ALL.
-    Example:
-      'targetType=ALL'
+    To list all budgets, set the targetType query parameter to ALL (for example: 'targetType=ALL').
 
-    Additional targetTypes would be available in future releases. Clients should ignore new targetType
-    or upgrade to latest version of client SDK to handle new targetType.
+    Additional targetTypes would be available in future releases. Clients should ignore new targetTypes,
+    or upgrade to the latest version of the client SDK to handle new targetTypes.
 
     ## Example Usage
 
@@ -148,9 +146,9 @@ def get_budgets(compartment_id: Optional[str] = None,
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+    :param str display_name: A user-friendly name. This does not have to be unique, and it's changeable.  Example: `My new resource`
     :param str state: The current state of the resource to filter by.
-    :param str target_type: The type of target to filter by.
+    :param str target_type: The type of target to filter by:
            * ALL - List all budgets
            * COMPARTMENT - List all budgets with targetType == "COMPARTMENT"
            * TAG - List all budgets with targetType == "TAG"
@@ -187,16 +185,14 @@ def get_budgets_output(compartment_id: Optional[pulumi.Input[str]] = None,
     """
     This data source provides the list of Budgets in Oracle Cloud Infrastructure Budget service.
 
-    Gets a list of Budgets in a compartment.
+    Gets a list of budgets in a compartment.
 
-    By default, ListBudgets returns budgets of 'COMPARTMENT' target type and the budget records with only ONE target compartment OCID.
+    By default, ListBudgets returns budgets of the 'COMPARTMENT' target type, and the budget records with only one target compartment OCID.
 
-    To list ALL budgets, set the targetType query parameter to ALL.
-    Example:
-      'targetType=ALL'
+    To list all budgets, set the targetType query parameter to ALL (for example: 'targetType=ALL').
 
-    Additional targetTypes would be available in future releases. Clients should ignore new targetType
-    or upgrade to latest version of client SDK to handle new targetType.
+    Additional targetTypes would be available in future releases. Clients should ignore new targetTypes,
+    or upgrade to the latest version of the client SDK to handle new targetTypes.
 
     ## Example Usage
 
@@ -212,9 +208,9 @@ def get_budgets_output(compartment_id: Optional[pulumi.Input[str]] = None,
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+    :param str display_name: A user-friendly name. This does not have to be unique, and it's changeable.  Example: `My new resource`
     :param str state: The current state of the resource to filter by.
-    :param str target_type: The type of target to filter by.
+    :param str target_type: The type of target to filter by:
            * ALL - List all budgets
            * COMPARTMENT - List all budgets with targetType == "COMPARTMENT"
            * TAG - List all budgets with targetType == "TAG"

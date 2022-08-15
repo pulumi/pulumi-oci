@@ -12,6 +12,7 @@ import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemDeletionPolicy;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemEndpoint;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemHeatWaveCluster;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemMaintenance;
+import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemPointInTimeRecoveryDetail;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemSource;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -71,7 +72,7 @@ public final class GetMysqlDbSystemResult {
      */
     private final Integer dataStorageSizeInGb;
     /**
-     * @return The OCID of the source DB System.
+     * @return The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
      * 
      */
     private final String dbSystemId;
@@ -141,7 +142,7 @@ public final class GetMysqlDbSystemResult {
      */
     private final Boolean isHeatWaveClusterAttached;
     /**
-     * @return If the policy is to enable high availability of the instance, by maintaining secondary/failover capacity as necessary.
+     * @return Specifies if the DB System is highly available.
      * 
      */
     private final Boolean isHighlyAvailable;
@@ -158,12 +159,13 @@ public final class GetMysqlDbSystemResult {
     /**
      * @return Name of the MySQL Version in use for the DB System.
      * 
-     * @deprecated
-     * The &#39;mysql_version&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     */
+    private final String mysqlVersion;
+    /**
+     * @return Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
      * 
      */
-    @Deprecated /* The 'mysql_version' field has been deprecated and may be removed in a future version. Do not use this field. */
-    private final String mysqlVersion;
+    private final List<GetMysqlDbSystemPointInTimeRecoveryDetail> pointInTimeRecoveryDetails;
     /**
      * @return The port for primary endpoint of the DB System to listen on.
      * 
@@ -237,6 +239,7 @@ public final class GetMysqlDbSystemResult {
         @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
         @CustomType.Parameter("maintenances") List<GetMysqlDbSystemMaintenance> maintenances,
         @CustomType.Parameter("mysqlVersion") String mysqlVersion,
+        @CustomType.Parameter("pointInTimeRecoveryDetails") List<GetMysqlDbSystemPointInTimeRecoveryDetail> pointInTimeRecoveryDetails,
         @CustomType.Parameter("port") Integer port,
         @CustomType.Parameter("portX") Integer portX,
         @CustomType.Parameter("shapeName") String shapeName,
@@ -275,6 +278,7 @@ public final class GetMysqlDbSystemResult {
         this.lifecycleDetails = lifecycleDetails;
         this.maintenances = maintenances;
         this.mysqlVersion = mysqlVersion;
+        this.pointInTimeRecoveryDetails = pointInTimeRecoveryDetails;
         this.port = port;
         this.portX = portX;
         this.shapeName = shapeName;
@@ -356,7 +360,7 @@ public final class GetMysqlDbSystemResult {
         return this.dataStorageSizeInGb;
     }
     /**
-     * @return The OCID of the source DB System.
+     * @return The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
      * 
      */
     public String dbSystemId() {
@@ -454,7 +458,7 @@ public final class GetMysqlDbSystemResult {
         return this.isHeatWaveClusterAttached;
     }
     /**
-     * @return If the policy is to enable high availability of the instance, by maintaining secondary/failover capacity as necessary.
+     * @return Specifies if the DB System is highly available.
      * 
      */
     public Boolean isHighlyAvailable() {
@@ -477,13 +481,16 @@ public final class GetMysqlDbSystemResult {
     /**
      * @return Name of the MySQL Version in use for the DB System.
      * 
-     * @deprecated
-     * The &#39;mysql_version&#39; field has been deprecated and may be removed in a future version. Do not use this field.
-     * 
      */
-    @Deprecated /* The 'mysql_version' field has been deprecated and may be removed in a future version. Do not use this field. */
     public String mysqlVersion() {
         return this.mysqlVersion;
+    }
+    /**
+     * @return Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
+     * 
+     */
+    public List<GetMysqlDbSystemPointInTimeRecoveryDetail> pointInTimeRecoveryDetails() {
+        return this.pointInTimeRecoveryDetails;
     }
     /**
      * @return The port for primary endpoint of the DB System to listen on.
@@ -583,6 +590,7 @@ public final class GetMysqlDbSystemResult {
         private String lifecycleDetails;
         private List<GetMysqlDbSystemMaintenance> maintenances;
         private String mysqlVersion;
+        private List<GetMysqlDbSystemPointInTimeRecoveryDetail> pointInTimeRecoveryDetails;
         private Integer port;
         private Integer portX;
         private String shapeName;
@@ -628,6 +636,7 @@ public final class GetMysqlDbSystemResult {
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.maintenances = defaults.maintenances;
     	      this.mysqlVersion = defaults.mysqlVersion;
+    	      this.pointInTimeRecoveryDetails = defaults.pointInTimeRecoveryDetails;
     	      this.port = defaults.port;
     	      this.portX = defaults.portX;
     	      this.shapeName = defaults.shapeName;
@@ -779,6 +788,13 @@ public final class GetMysqlDbSystemResult {
             this.mysqlVersion = Objects.requireNonNull(mysqlVersion);
             return this;
         }
+        public Builder pointInTimeRecoveryDetails(List<GetMysqlDbSystemPointInTimeRecoveryDetail> pointInTimeRecoveryDetails) {
+            this.pointInTimeRecoveryDetails = Objects.requireNonNull(pointInTimeRecoveryDetails);
+            return this;
+        }
+        public Builder pointInTimeRecoveryDetails(GetMysqlDbSystemPointInTimeRecoveryDetail... pointInTimeRecoveryDetails) {
+            return pointInTimeRecoveryDetails(List.of(pointInTimeRecoveryDetails));
+        }
         public Builder port(Integer port) {
             this.port = Objects.requireNonNull(port);
             return this;
@@ -818,7 +834,7 @@ public final class GetMysqlDbSystemResult {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }        public GetMysqlDbSystemResult build() {
-            return new GetMysqlDbSystemResult(adminPassword, adminUsername, analyticsClusters, availabilityDomain, backupPolicies, channels, compartmentId, configurationId, crashRecovery, currentPlacements, dataStorageSizeInGb, dbSystemId, definedTags, deletionPolicies, description, displayName, endpoints, faultDomain, freeformTags, heatWaveClusters, hostnameLabel, id, ipAddress, isAnalyticsClusterAttached, isHeatWaveClusterAttached, isHighlyAvailable, lifecycleDetails, maintenances, mysqlVersion, port, portX, shapeName, shutdownType, sources, state, subnetId, timeCreated, timeUpdated);
+            return new GetMysqlDbSystemResult(adminPassword, adminUsername, analyticsClusters, availabilityDomain, backupPolicies, channels, compartmentId, configurationId, crashRecovery, currentPlacements, dataStorageSizeInGb, dbSystemId, definedTags, deletionPolicies, description, displayName, endpoints, faultDomain, freeformTags, heatWaveClusters, hostnameLabel, id, ipAddress, isAnalyticsClusterAttached, isHeatWaveClusterAttached, isHighlyAvailable, lifecycleDetails, maintenances, mysqlVersion, pointInTimeRecoveryDetails, port, portX, shapeName, shutdownType, sources, state, subnetId, timeCreated, timeUpdated);
         }
     }
 }

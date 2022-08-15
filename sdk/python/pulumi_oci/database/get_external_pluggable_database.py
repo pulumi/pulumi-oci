@@ -21,7 +21,7 @@ class GetExternalPluggableDatabaseResult:
     """
     A collection of values returned by getExternalPluggableDatabase.
     """
-    def __init__(__self__, character_set=None, compartment_id=None, database_configuration=None, database_edition=None, database_management_configs=None, database_version=None, db_id=None, db_packs=None, db_unique_name=None, defined_tags=None, display_name=None, external_container_database_id=None, external_pluggable_database_id=None, freeform_tags=None, id=None, lifecycle_details=None, ncharacter_set=None, operations_insights_configs=None, source_id=None, state=None, time_created=None, time_zone=None):
+    def __init__(__self__, character_set=None, compartment_id=None, database_configuration=None, database_edition=None, database_management_configs=None, database_version=None, db_id=None, db_packs=None, db_unique_name=None, defined_tags=None, display_name=None, external_container_database_id=None, external_pluggable_database_id=None, freeform_tags=None, id=None, lifecycle_details=None, ncharacter_set=None, operations_insights_configs=None, source_id=None, stack_monitoring_configs=None, state=None, time_created=None, time_zone=None):
         if character_set and not isinstance(character_set, str):
             raise TypeError("Expected argument 'character_set' to be a str")
         pulumi.set(__self__, "character_set", character_set)
@@ -79,6 +79,9 @@ class GetExternalPluggableDatabaseResult:
         if source_id and not isinstance(source_id, str):
             raise TypeError("Expected argument 'source_id' to be a str")
         pulumi.set(__self__, "source_id", source_id)
+        if stack_monitoring_configs and not isinstance(stack_monitoring_configs, list):
+            raise TypeError("Expected argument 'stack_monitoring_configs' to be a list")
+        pulumi.set(__self__, "stack_monitoring_configs", stack_monitoring_configs)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -239,6 +242,14 @@ class GetExternalPluggableDatabaseResult:
         return pulumi.get(self, "source_id")
 
     @property
+    @pulumi.getter(name="stackMonitoringConfigs")
+    def stack_monitoring_configs(self) -> Sequence['outputs.GetExternalPluggableDatabaseStackMonitoringConfigResult']:
+        """
+        The configuration of Stack Monitoring for the external database.
+        """
+        return pulumi.get(self, "stack_monitoring_configs")
+
+    @property
     @pulumi.getter
     def state(self) -> str:
         """
@@ -288,6 +299,7 @@ class AwaitableGetExternalPluggableDatabaseResult(GetExternalPluggableDatabaseRe
             ncharacter_set=self.ncharacter_set,
             operations_insights_configs=self.operations_insights_configs,
             source_id=self.source_id,
+            stack_monitoring_configs=self.stack_monitoring_configs,
             state=self.state,
             time_created=self.time_created,
             time_zone=self.time_zone)
@@ -341,6 +353,7 @@ def get_external_pluggable_database(external_pluggable_database_id: Optional[str
         ncharacter_set=__ret__.ncharacter_set,
         operations_insights_configs=__ret__.operations_insights_configs,
         source_id=__ret__.source_id,
+        stack_monitoring_configs=__ret__.stack_monitoring_configs,
         state=__ret__.state,
         time_created=__ret__.time_created,
         time_zone=__ret__.time_zone)

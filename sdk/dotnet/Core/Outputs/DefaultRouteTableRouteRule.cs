@@ -18,6 +18,7 @@ namespace Pulumi.Oci.Core.Outputs
         public readonly string? Destination;
         public readonly string? DestinationType;
         public readonly string NetworkEntityId;
+        public readonly string? RouteType;
 
         [OutputConstructor]
         private DefaultRouteTableRouteRule(
@@ -29,13 +30,16 @@ namespace Pulumi.Oci.Core.Outputs
 
             string? destinationType,
 
-            string networkEntityId)
+            string networkEntityId,
+
+            string? routeType)
         {
             CidrBlock = cidrBlock;
             Description = description;
             Destination = destination;
             DestinationType = destinationType;
             NetworkEntityId = networkEntityId;
+            RouteType = routeType;
         }
     }
 }

@@ -28,7 +28,6 @@ namespace Pulumi.Oci.ContainerEngine
     ///         {
     ///             ClusterId = oci_containerengine_cluster.Test_cluster.Id,
     ///             CompartmentId = @var.Compartment_id,
-    ///             KubernetesVersion = @var.Node_pool_kubernetes_version,
     ///             NodeShape = @var.Node_pool_node_shape,
     ///             DefinedTags = 
     ///             {
@@ -46,6 +45,7 @@ namespace Pulumi.Oci.ContainerEngine
     ///                     Value = @var.Node_pool_initial_node_labels_value,
     ///                 },
     ///             },
+    ///             KubernetesVersion = @var.Node_pool_kubernetes_version,
     ///             NodeConfigDetails = new Oci.ContainerEngine.Inputs.NodePoolNodeConfigDetailsArgs
     ///             {
     ///                 PlacementConfigs = 
@@ -55,11 +55,19 @@ namespace Pulumi.Oci.ContainerEngine
     ///                         AvailabilityDomain = @var.Node_pool_node_config_details_placement_configs_availability_domain,
     ///                         SubnetId = oci_core_subnet.Test_subnet.Id,
     ///                         CapacityReservationId = oci_containerengine_capacity_reservation.Test_capacity_reservation.Id,
+    ///                         FaultDomains = @var.Node_pool_node_config_details_placement_configs_fault_domains,
     ///                     },
     ///                 },
     ///                 Size = @var.Node_pool_node_config_details_size,
     ///                 IsPvEncryptionInTransitEnabled = @var.Node_pool_node_config_details_is_pv_encryption_in_transit_enabled,
     ///                 KmsKeyId = oci_kms_key.Test_key.Id,
+    ///                 NodePoolPodNetworkOptionDetails = new Oci.ContainerEngine.Inputs.NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs
+    ///                 {
+    ///                     CniType = @var.Node_pool_node_config_details_node_pool_pod_network_option_details_cni_type,
+    ///                     MaxPodsPerNode = @var.Node_pool_node_config_details_node_pool_pod_network_option_details_max_pods_per_node,
+    ///                     PodNsgIds = @var.Node_pool_node_config_details_node_pool_pod_network_option_details_pod_nsg_ids,
+    ///                     PodSubnetIds = @var.Node_pool_node_config_details_node_pool_pod_network_option_details_pod_subnet_ids,
+    ///                 },
     ///                 DefinedTags = 
     ///                 {
     ///                     { "Operations.CostCenter", "42" },
@@ -69,6 +77,11 @@ namespace Pulumi.Oci.ContainerEngine
     ///                     { "Department", "Finance" },
     ///                 },
     ///                 NsgIds = @var.Node_pool_node_config_details_nsg_ids,
+    ///             },
+    ///             NodeEvictionNodePoolSettings = new Oci.ContainerEngine.Inputs.NodePoolNodeEvictionNodePoolSettingsArgs
+    ///             {
+    ///                 EvictionGraceDuration = @var.Node_pool_node_eviction_node_pool_settings_eviction_grace_duration,
+    ///                 IsForceDeleteAfterGraceDuration = @var.Node_pool_node_eviction_node_pool_settings_is_force_delete_after_grace_duration,
     ///             },
     ///             NodeImageName = oci_core_image.Test_image.Name,
     ///             NodeMetadata = @var.Node_pool_node_metadata,
@@ -140,6 +153,12 @@ namespace Pulumi.Oci.ContainerEngine
         public Output<string> KubernetesVersion { get; private set; } = null!;
 
         /// <summary>
+        /// Details about the state of the node.
+        /// </summary>
+        [Output("lifecycleDetails")]
+        public Output<string> LifecycleDetails { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The name of the node pool. Avoid entering confidential information.
         /// </summary>
         [Output("name")]
@@ -150,6 +169,12 @@ namespace Pulumi.Oci.ContainerEngine
         /// </summary>
         [Output("nodeConfigDetails")]
         public Output<Outputs.NodePoolNodeConfigDetails> NodeConfigDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Node Eviction Details configuration
+        /// </summary>
+        [Output("nodeEvictionNodePoolSettings")]
+        public Output<Outputs.NodePoolNodeEvictionNodePoolSettings> NodeEvictionNodePoolSettings { get; private set; } = null!;
 
         /// <summary>
         /// Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
@@ -210,6 +235,12 @@ namespace Pulumi.Oci.ContainerEngine
         /// </summary>
         [Output("sshPublicKey")]
         public Output<string> SshPublicKey { get; private set; } = null!;
+
+        /// <summary>
+        /// The state of the nodepool.
+        /// </summary>
+        [Output("state")]
+        public Output<string> State { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
@@ -314,8 +345,8 @@ namespace Pulumi.Oci.ContainerEngine
         /// <summary>
         /// (Updatable) The version of Kubernetes to install on the nodes in the node pool.
         /// </summary>
-        [Input("kubernetesVersion", required: true)]
-        public Input<string> KubernetesVersion { get; set; } = null!;
+        [Input("kubernetesVersion")]
+        public Input<string>? KubernetesVersion { get; set; }
 
         /// <summary>
         /// (Updatable) The name of the node pool. Avoid entering confidential information.
@@ -328,6 +359,12 @@ namespace Pulumi.Oci.ContainerEngine
         /// </summary>
         [Input("nodeConfigDetails")]
         public Input<Inputs.NodePoolNodeConfigDetailsArgs>? NodeConfigDetails { get; set; }
+
+        /// <summary>
+        /// (Updatable) Node Eviction Details configuration
+        /// </summary>
+        [Input("nodeEvictionNodePoolSettings")]
+        public Input<Inputs.NodePoolNodeEvictionNodePoolSettingsArgs>? NodeEvictionNodePoolSettings { get; set; }
 
         /// <summary>
         /// Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
@@ -457,6 +494,12 @@ namespace Pulumi.Oci.ContainerEngine
         public Input<string>? KubernetesVersion { get; set; }
 
         /// <summary>
+        /// Details about the state of the node.
+        /// </summary>
+        [Input("lifecycleDetails")]
+        public Input<string>? LifecycleDetails { get; set; }
+
+        /// <summary>
         /// (Updatable) The name of the node pool. Avoid entering confidential information.
         /// </summary>
         [Input("name")]
@@ -467,6 +510,12 @@ namespace Pulumi.Oci.ContainerEngine
         /// </summary>
         [Input("nodeConfigDetails")]
         public Input<Inputs.NodePoolNodeConfigDetailsGetArgs>? NodeConfigDetails { get; set; }
+
+        /// <summary>
+        /// (Updatable) Node Eviction Details configuration
+        /// </summary>
+        [Input("nodeEvictionNodePoolSettings")]
+        public Input<Inputs.NodePoolNodeEvictionNodePoolSettingsGetArgs>? NodeEvictionNodePoolSettings { get; set; }
 
         /// <summary>
         /// Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
@@ -545,6 +594,12 @@ namespace Pulumi.Oci.ContainerEngine
         /// </summary>
         [Input("sshPublicKey")]
         public Input<string>? SshPublicKey { get; set; }
+
+        /// <summary>
+        /// The state of the nodepool.
+        /// </summary>
+        [Input("state")]
+        public Input<string>? State { get; set; }
 
         [Input("subnetIds")]
         private InputList<string>? _subnetIds;

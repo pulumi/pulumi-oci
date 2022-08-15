@@ -14,9 +14,13 @@ namespace Pulumi.Oci.DevOps.Outputs
     public sealed class GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceResult
     {
         /// <summary>
-        /// base64 Encoded String
+        /// Specifies content for the inline artifact.
         /// </summary>
         public readonly string Base64encodedContent;
+        /// <summary>
+        /// The URL of an OCIR repository.
+        /// </summary>
+        public readonly string ChartUrl;
         /// <summary>
         /// Specifies the artifact path in the repository.
         /// </summary>
@@ -46,6 +50,8 @@ namespace Pulumi.Oci.DevOps.Outputs
         private GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceResult(
             string base64encodedContent,
 
+            string chartUrl,
+
             string deployArtifactPath,
 
             string deployArtifactSourceType,
@@ -59,6 +65,7 @@ namespace Pulumi.Oci.DevOps.Outputs
             string repositoryId)
         {
             Base64encodedContent = base64encodedContent;
+            ChartUrl = chartUrl;
             DeployArtifactPath = deployArtifactPath;
             DeployArtifactSourceType = deployArtifactSourceType;
             DeployArtifactVersion = deployArtifactVersion;

@@ -244,6 +244,8 @@ class AutonomousVmClusterArgs:
 class _AutonomousVmClusterState:
     def __init__(__self__, *,
                  autonomous_data_storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
+                 available_autonomous_data_storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
+                 available_container_databases: Optional[pulumi.Input[int]] = None,
                  available_cpus: Optional[pulumi.Input[int]] = None,
                  available_data_storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
@@ -266,6 +268,7 @@ class _AutonomousVmClusterState:
                  memory_size_in_gbs: Optional[pulumi.Input[int]] = None,
                  next_maintenance_run_id: Optional[pulumi.Input[str]] = None,
                  ocpus_enabled: Optional[pulumi.Input[float]] = None,
+                 reclaimable_cpus: Optional[pulumi.Input[int]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_zone: Optional[pulumi.Input[str]] = None,
@@ -274,8 +277,10 @@ class _AutonomousVmClusterState:
         """
         Input properties used for looking up and filtering AutonomousVmCluster resources.
         :param pulumi.Input[float] autonomous_data_storage_size_in_tbs: The data disk group size to be allocated for Autonomous Databases, in TBs.
+        :param pulumi.Input[float] available_autonomous_data_storage_size_in_tbs: The data disk group size available for Autonomous Databases, in TBs.
+        :param pulumi.Input[int] available_container_databases: The number of Autonomous Container Databases that can be created with the currently available local storage.
         :param pulumi.Input[int] available_cpus: The numnber of CPU cores available.
-        :param pulumi.Input[float] available_data_storage_size_in_tbs: The data storage available in TBs
+        :param pulumi.Input[float] available_data_storage_size_in_tbs: **Deprecated.** Use `availableAutonomousDataStorageSizeInTBs` for Autonomous Databases' data storage availability in TBs.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[int] cpu_core_count_per_node: The number of OCPU cores to enable per VM cluster node.
         :param pulumi.Input[int] cpus_enabled: The number of enabled CPU cores.
@@ -295,6 +300,7 @@ class _AutonomousVmClusterState:
         :param pulumi.Input[int] memory_size_in_gbs: The memory allocated in GBs.
         :param pulumi.Input[str] next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         :param pulumi.Input[float] ocpus_enabled: The number of enabled OCPU cores.
+        :param pulumi.Input[int] reclaimable_cpus: CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
         :param pulumi.Input[str] state: The current state of the Autonomous VM cluster.
         :param pulumi.Input[str] time_created: The date and time that the Autonomous VM cluster was created.
         :param pulumi.Input[str] time_zone: The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
@@ -303,6 +309,10 @@ class _AutonomousVmClusterState:
         """
         if autonomous_data_storage_size_in_tbs is not None:
             pulumi.set(__self__, "autonomous_data_storage_size_in_tbs", autonomous_data_storage_size_in_tbs)
+        if available_autonomous_data_storage_size_in_tbs is not None:
+            pulumi.set(__self__, "available_autonomous_data_storage_size_in_tbs", available_autonomous_data_storage_size_in_tbs)
+        if available_container_databases is not None:
+            pulumi.set(__self__, "available_container_databases", available_container_databases)
         if available_cpus is not None:
             pulumi.set(__self__, "available_cpus", available_cpus)
         if available_data_storage_size_in_tbs is not None:
@@ -347,6 +357,8 @@ class _AutonomousVmClusterState:
             pulumi.set(__self__, "next_maintenance_run_id", next_maintenance_run_id)
         if ocpus_enabled is not None:
             pulumi.set(__self__, "ocpus_enabled", ocpus_enabled)
+        if reclaimable_cpus is not None:
+            pulumi.set(__self__, "reclaimable_cpus", reclaimable_cpus)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if time_created is not None:
@@ -371,6 +383,30 @@ class _AutonomousVmClusterState:
         pulumi.set(self, "autonomous_data_storage_size_in_tbs", value)
 
     @property
+    @pulumi.getter(name="availableAutonomousDataStorageSizeInTbs")
+    def available_autonomous_data_storage_size_in_tbs(self) -> Optional[pulumi.Input[float]]:
+        """
+        The data disk group size available for Autonomous Databases, in TBs.
+        """
+        return pulumi.get(self, "available_autonomous_data_storage_size_in_tbs")
+
+    @available_autonomous_data_storage_size_in_tbs.setter
+    def available_autonomous_data_storage_size_in_tbs(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "available_autonomous_data_storage_size_in_tbs", value)
+
+    @property
+    @pulumi.getter(name="availableContainerDatabases")
+    def available_container_databases(self) -> Optional[pulumi.Input[int]]:
+        """
+        The number of Autonomous Container Databases that can be created with the currently available local storage.
+        """
+        return pulumi.get(self, "available_container_databases")
+
+    @available_container_databases.setter
+    def available_container_databases(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "available_container_databases", value)
+
+    @property
     @pulumi.getter(name="availableCpus")
     def available_cpus(self) -> Optional[pulumi.Input[int]]:
         """
@@ -386,7 +422,7 @@ class _AutonomousVmClusterState:
     @pulumi.getter(name="availableDataStorageSizeInTbs")
     def available_data_storage_size_in_tbs(self) -> Optional[pulumi.Input[float]]:
         """
-        The data storage available in TBs
+        **Deprecated.** Use `availableAutonomousDataStorageSizeInTBs` for Autonomous Databases' data storage availability in TBs.
         """
         return pulumi.get(self, "available_data_storage_size_in_tbs")
 
@@ -630,6 +666,18 @@ class _AutonomousVmClusterState:
     @ocpus_enabled.setter
     def ocpus_enabled(self, value: Optional[pulumi.Input[float]]):
         pulumi.set(self, "ocpus_enabled", value)
+
+    @property
+    @pulumi.getter(name="reclaimableCpus")
+    def reclaimable_cpus(self) -> Optional[pulumi.Input[int]]:
+        """
+        CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+        """
+        return pulumi.get(self, "reclaimable_cpus")
+
+    @reclaimable_cpus.setter
+    def reclaimable_cpus(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "reclaimable_cpus", value)
 
     @property
     @pulumi.getter
@@ -896,6 +944,8 @@ class AutonomousVmCluster(pulumi.CustomResource):
             if vm_cluster_network_id is None and not opts.urn:
                 raise TypeError("Missing required property 'vm_cluster_network_id'")
             __props__.__dict__["vm_cluster_network_id"] = vm_cluster_network_id
+            __props__.__dict__["available_autonomous_data_storage_size_in_tbs"] = None
+            __props__.__dict__["available_container_databases"] = None
             __props__.__dict__["available_cpus"] = None
             __props__.__dict__["available_data_storage_size_in_tbs"] = None
             __props__.__dict__["cpus_enabled"] = None
@@ -908,6 +958,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
             __props__.__dict__["memory_size_in_gbs"] = None
             __props__.__dict__["next_maintenance_run_id"] = None
             __props__.__dict__["ocpus_enabled"] = None
+            __props__.__dict__["reclaimable_cpus"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None
         super(AutonomousVmCluster, __self__).__init__(
@@ -921,6 +972,8 @@ class AutonomousVmCluster(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             autonomous_data_storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
+            available_autonomous_data_storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
+            available_container_databases: Optional[pulumi.Input[int]] = None,
             available_cpus: Optional[pulumi.Input[int]] = None,
             available_data_storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
@@ -943,6 +996,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
             memory_size_in_gbs: Optional[pulumi.Input[int]] = None,
             next_maintenance_run_id: Optional[pulumi.Input[str]] = None,
             ocpus_enabled: Optional[pulumi.Input[float]] = None,
+            reclaimable_cpus: Optional[pulumi.Input[int]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_zone: Optional[pulumi.Input[str]] = None,
@@ -956,8 +1010,10 @@ class AutonomousVmCluster(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[float] autonomous_data_storage_size_in_tbs: The data disk group size to be allocated for Autonomous Databases, in TBs.
+        :param pulumi.Input[float] available_autonomous_data_storage_size_in_tbs: The data disk group size available for Autonomous Databases, in TBs.
+        :param pulumi.Input[int] available_container_databases: The number of Autonomous Container Databases that can be created with the currently available local storage.
         :param pulumi.Input[int] available_cpus: The numnber of CPU cores available.
-        :param pulumi.Input[float] available_data_storage_size_in_tbs: The data storage available in TBs
+        :param pulumi.Input[float] available_data_storage_size_in_tbs: **Deprecated.** Use `availableAutonomousDataStorageSizeInTBs` for Autonomous Databases' data storage availability in TBs.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[int] cpu_core_count_per_node: The number of OCPU cores to enable per VM cluster node.
         :param pulumi.Input[int] cpus_enabled: The number of enabled CPU cores.
@@ -977,6 +1033,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
         :param pulumi.Input[int] memory_size_in_gbs: The memory allocated in GBs.
         :param pulumi.Input[str] next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         :param pulumi.Input[float] ocpus_enabled: The number of enabled OCPU cores.
+        :param pulumi.Input[int] reclaimable_cpus: CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
         :param pulumi.Input[str] state: The current state of the Autonomous VM cluster.
         :param pulumi.Input[str] time_created: The date and time that the Autonomous VM cluster was created.
         :param pulumi.Input[str] time_zone: The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
@@ -988,6 +1045,8 @@ class AutonomousVmCluster(pulumi.CustomResource):
         __props__ = _AutonomousVmClusterState.__new__(_AutonomousVmClusterState)
 
         __props__.__dict__["autonomous_data_storage_size_in_tbs"] = autonomous_data_storage_size_in_tbs
+        __props__.__dict__["available_autonomous_data_storage_size_in_tbs"] = available_autonomous_data_storage_size_in_tbs
+        __props__.__dict__["available_container_databases"] = available_container_databases
         __props__.__dict__["available_cpus"] = available_cpus
         __props__.__dict__["available_data_storage_size_in_tbs"] = available_data_storage_size_in_tbs
         __props__.__dict__["compartment_id"] = compartment_id
@@ -1010,6 +1069,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
         __props__.__dict__["memory_size_in_gbs"] = memory_size_in_gbs
         __props__.__dict__["next_maintenance_run_id"] = next_maintenance_run_id
         __props__.__dict__["ocpus_enabled"] = ocpus_enabled
+        __props__.__dict__["reclaimable_cpus"] = reclaimable_cpus
         __props__.__dict__["state"] = state
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_zone"] = time_zone
@@ -1026,6 +1086,22 @@ class AutonomousVmCluster(pulumi.CustomResource):
         return pulumi.get(self, "autonomous_data_storage_size_in_tbs")
 
     @property
+    @pulumi.getter(name="availableAutonomousDataStorageSizeInTbs")
+    def available_autonomous_data_storage_size_in_tbs(self) -> pulumi.Output[float]:
+        """
+        The data disk group size available for Autonomous Databases, in TBs.
+        """
+        return pulumi.get(self, "available_autonomous_data_storage_size_in_tbs")
+
+    @property
+    @pulumi.getter(name="availableContainerDatabases")
+    def available_container_databases(self) -> pulumi.Output[int]:
+        """
+        The number of Autonomous Container Databases that can be created with the currently available local storage.
+        """
+        return pulumi.get(self, "available_container_databases")
+
+    @property
     @pulumi.getter(name="availableCpus")
     def available_cpus(self) -> pulumi.Output[int]:
         """
@@ -1037,7 +1113,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
     @pulumi.getter(name="availableDataStorageSizeInTbs")
     def available_data_storage_size_in_tbs(self) -> pulumi.Output[float]:
         """
-        The data storage available in TBs
+        **Deprecated.** Use `availableAutonomousDataStorageSizeInTBs` for Autonomous Databases' data storage availability in TBs.
         """
         return pulumi.get(self, "available_data_storage_size_in_tbs")
 
@@ -1197,6 +1273,14 @@ class AutonomousVmCluster(pulumi.CustomResource):
         The number of enabled OCPU cores.
         """
         return pulumi.get(self, "ocpus_enabled")
+
+    @property
+    @pulumi.getter(name="reclaimableCpus")
+    def reclaimable_cpus(self) -> pulumi.Output[int]:
+        """
+        CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+        """
+        return pulumi.get(self, "reclaimable_cpus")
 
     @property
     @pulumi.getter

@@ -8,6 +8,7 @@ import com.pulumi.oci.ApiGateway.outputs.DeploymentSpecificationRequestPoliciesA
 import com.pulumi.oci.ApiGateway.outputs.DeploymentSpecificationRequestPoliciesCors;
 import com.pulumi.oci.ApiGateway.outputs.DeploymentSpecificationRequestPoliciesMutualTls;
 import com.pulumi.oci.ApiGateway.outputs.DeploymentSpecificationRequestPoliciesRateLimiting;
+import com.pulumi.oci.ApiGateway.outputs.DeploymentSpecificationRequestPoliciesUsagePlans;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -34,17 +35,24 @@ public final class DeploymentSpecificationRequestPolicies {
      * 
      */
     private final @Nullable DeploymentSpecificationRequestPoliciesRateLimiting rateLimiting;
+    /**
+     * @return (Updatable) Usage plan policies for this deployment
+     * 
+     */
+    private final @Nullable DeploymentSpecificationRequestPoliciesUsagePlans usagePlans;
 
     @CustomType.Constructor
     private DeploymentSpecificationRequestPolicies(
         @CustomType.Parameter("authentication") @Nullable DeploymentSpecificationRequestPoliciesAuthentication authentication,
         @CustomType.Parameter("cors") @Nullable DeploymentSpecificationRequestPoliciesCors cors,
         @CustomType.Parameter("mutualTls") @Nullable DeploymentSpecificationRequestPoliciesMutualTls mutualTls,
-        @CustomType.Parameter("rateLimiting") @Nullable DeploymentSpecificationRequestPoliciesRateLimiting rateLimiting) {
+        @CustomType.Parameter("rateLimiting") @Nullable DeploymentSpecificationRequestPoliciesRateLimiting rateLimiting,
+        @CustomType.Parameter("usagePlans") @Nullable DeploymentSpecificationRequestPoliciesUsagePlans usagePlans) {
         this.authentication = authentication;
         this.cors = cors;
         this.mutualTls = mutualTls;
         this.rateLimiting = rateLimiting;
+        this.usagePlans = usagePlans;
     }
 
     /**
@@ -75,6 +83,13 @@ public final class DeploymentSpecificationRequestPolicies {
     public Optional<DeploymentSpecificationRequestPoliciesRateLimiting> rateLimiting() {
         return Optional.ofNullable(this.rateLimiting);
     }
+    /**
+     * @return (Updatable) Usage plan policies for this deployment
+     * 
+     */
+    public Optional<DeploymentSpecificationRequestPoliciesUsagePlans> usagePlans() {
+        return Optional.ofNullable(this.usagePlans);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -89,6 +104,7 @@ public final class DeploymentSpecificationRequestPolicies {
         private @Nullable DeploymentSpecificationRequestPoliciesCors cors;
         private @Nullable DeploymentSpecificationRequestPoliciesMutualTls mutualTls;
         private @Nullable DeploymentSpecificationRequestPoliciesRateLimiting rateLimiting;
+        private @Nullable DeploymentSpecificationRequestPoliciesUsagePlans usagePlans;
 
         public Builder() {
     	      // Empty
@@ -100,6 +116,7 @@ public final class DeploymentSpecificationRequestPolicies {
     	      this.cors = defaults.cors;
     	      this.mutualTls = defaults.mutualTls;
     	      this.rateLimiting = defaults.rateLimiting;
+    	      this.usagePlans = defaults.usagePlans;
         }
 
         public Builder authentication(@Nullable DeploymentSpecificationRequestPoliciesAuthentication authentication) {
@@ -117,8 +134,12 @@ public final class DeploymentSpecificationRequestPolicies {
         public Builder rateLimiting(@Nullable DeploymentSpecificationRequestPoliciesRateLimiting rateLimiting) {
             this.rateLimiting = rateLimiting;
             return this;
+        }
+        public Builder usagePlans(@Nullable DeploymentSpecificationRequestPoliciesUsagePlans usagePlans) {
+            this.usagePlans = usagePlans;
+            return this;
         }        public DeploymentSpecificationRequestPolicies build() {
-            return new DeploymentSpecificationRequestPolicies(authentication, cors, mutualTls, rateLimiting);
+            return new DeploymentSpecificationRequestPolicies(authentication, cors, mutualTls, rateLimiting, usagePlans);
         }
     }
 }

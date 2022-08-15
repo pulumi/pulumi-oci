@@ -61,17 +61,23 @@ export interface GetDataGuardAssociationResult {
     readonly applyRate: string;
     readonly availabilityDomain: string;
     readonly backupNetworkNsgIds: string[];
+    readonly cpuCoreCount: number;
     readonly createAsync: boolean;
     readonly creationType: string;
     readonly dataGuardAssociationId: string;
     readonly databaseAdminPassword: string;
+    readonly databaseDefinedTags: {[key: string]: any};
+    readonly databaseFreeformTags: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the reporting database.
      */
     readonly databaseId: string;
     readonly databaseSoftwareImageId: string;
+    readonly dbSystemDefinedTags: {[key: string]: any};
+    readonly dbSystemFreeformTags: {[key: string]: any};
     readonly deleteStandbyDbHomeOnDelete: string;
     readonly displayName: string;
+    readonly faultDomains: string[];
     readonly hostname: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Data Guard association.
@@ -81,10 +87,12 @@ export interface GetDataGuardAssociationResult {
      * True if active Data Guard is enabled.
      */
     readonly isActiveDataGuardEnabled: boolean;
+    readonly licenseModel: string;
     /**
      * Additional information about the current lifecycleState, if available.
      */
     readonly lifecycleDetails: string;
+    readonly nodeCount: number;
     readonly nsgIds: string[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer database's Data Guard association.
@@ -109,6 +117,7 @@ export interface GetDataGuardAssociationResult {
     readonly peerRole: string;
     readonly peerSidPrefix: string;
     readonly peerVmClusterId: string;
+    readonly privateIp: string;
     /**
      * The protection mode of this Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
      */
@@ -122,11 +131,13 @@ export interface GetDataGuardAssociationResult {
      * The current state of the Data Guard association.
      */
     readonly state: string;
+    readonly storageVolumePerformanceMode: string;
     readonly subnetId: string;
     /**
      * The date and time the Data Guard association was created.
      */
     readonly timeCreated: string;
+    readonly timeZone: string;
     /**
      * The redo transport type used by this Data Guard association.  For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
      */

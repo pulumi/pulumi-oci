@@ -26,7 +26,12 @@ __all__ = [
     'GetManagedInstanceGroupsManagedInstanceGroupResult',
     'GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceResult',
     'GetManagedInstanceManagedInstanceGroupResult',
+    'GetManagedInstanceModuleStreamsFilterResult',
+    'GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceResult',
+    'GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileResult',
     'GetManagedInstanceParentSoftwareSourceResult',
+    'GetManagedInstanceStreamProfileFilterResult',
+    'GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceResult',
     'GetManagedInstancesFilterResult',
     'GetManagedInstancesManagedInstanceResult',
     'GetManagedInstancesManagedInstanceAutonomouseResult',
@@ -34,6 +39,8 @@ __all__ = [
     'GetManagedInstancesManagedInstanceManagedInstanceGroupResult',
     'GetManagedInstancesManagedInstanceParentSoftwareSourceResult',
     'GetSoftwareSourceAssociatedManagedInstanceResult',
+    'GetSoftwareSourceStreamProfileFilterResult',
+    'GetSoftwareSourceStreamProfileModuleStreamProfileResult',
     'GetSoftwareSourcesFilterResult',
     'GetSoftwareSourcesSoftwareSourceResult',
     'GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceResult',
@@ -666,6 +673,168 @@ class GetManagedInstanceManagedInstanceGroupResult(dict):
 
 
 @pulumi.output_type
+class GetManagedInstanceModuleStreamsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceResult(dict):
+    def __init__(__self__, *,
+                 module_name: str,
+                 profiles: Sequence['outputs.GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileResult'],
+                 software_source_id: str,
+                 status: str,
+                 stream_name: str,
+                 time_modified: str):
+        """
+        :param str module_name: The name of a module.  This parameter is required if a streamName is specified.
+        :param Sequence['GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArgs'] profiles: The set of profiles that the module stream contains.
+        :param str software_source_id: The OCID of the software source that provides this module stream.
+        :param str status: The status of the stream
+        :param str stream_name: The name of the stream of the containing module.  This parameter is required if a profileName is specified.
+        :param str time_modified: The date and time of the last status change for this profile, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+        """
+        pulumi.set(__self__, "module_name", module_name)
+        pulumi.set(__self__, "profiles", profiles)
+        pulumi.set(__self__, "software_source_id", software_source_id)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "stream_name", stream_name)
+        pulumi.set(__self__, "time_modified", time_modified)
+
+    @property
+    @pulumi.getter(name="moduleName")
+    def module_name(self) -> str:
+        """
+        The name of a module.  This parameter is required if a streamName is specified.
+        """
+        return pulumi.get(self, "module_name")
+
+    @property
+    @pulumi.getter
+    def profiles(self) -> Sequence['outputs.GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileResult']:
+        """
+        The set of profiles that the module stream contains.
+        """
+        return pulumi.get(self, "profiles")
+
+    @property
+    @pulumi.getter(name="softwareSourceId")
+    def software_source_id(self) -> str:
+        """
+        The OCID of the software source that provides this module stream.
+        """
+        return pulumi.get(self, "software_source_id")
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        """
+        The status of the stream
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="streamName")
+    def stream_name(self) -> str:
+        """
+        The name of the stream of the containing module.  This parameter is required if a profileName is specified.
+        """
+        return pulumi.get(self, "stream_name")
+
+    @property
+    @pulumi.getter(name="timeModified")
+    def time_modified(self) -> str:
+        """
+        The date and time of the last status change for this profile, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+        """
+        return pulumi.get(self, "time_modified")
+
+
+@pulumi.output_type
+class GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileResult(dict):
+    def __init__(__self__, *,
+                 module_name: str,
+                 profile_name: str,
+                 status: str,
+                 stream_name: str,
+                 time_modified: str):
+        """
+        :param str module_name: The name of a module.  This parameter is required if a streamName is specified.
+        :param str profile_name: The name of the profile
+        :param str status: The status of the stream
+        :param str stream_name: The name of the stream of the containing module.  This parameter is required if a profileName is specified.
+        :param str time_modified: The date and time of the last status change for this profile, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+        """
+        pulumi.set(__self__, "module_name", module_name)
+        pulumi.set(__self__, "profile_name", profile_name)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "stream_name", stream_name)
+        pulumi.set(__self__, "time_modified", time_modified)
+
+    @property
+    @pulumi.getter(name="moduleName")
+    def module_name(self) -> str:
+        """
+        The name of a module.  This parameter is required if a streamName is specified.
+        """
+        return pulumi.get(self, "module_name")
+
+    @property
+    @pulumi.getter(name="profileName")
+    def profile_name(self) -> str:
+        """
+        The name of the profile
+        """
+        return pulumi.get(self, "profile_name")
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        """
+        The status of the stream
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="streamName")
+    def stream_name(self) -> str:
+        """
+        The name of the stream of the containing module.  This parameter is required if a profileName is specified.
+        """
+        return pulumi.get(self, "stream_name")
+
+    @property
+    @pulumi.getter(name="timeModified")
+    def time_modified(self) -> str:
+        """
+        The date and time of the last status change for this profile, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+        """
+        return pulumi.get(self, "time_modified")
+
+
+@pulumi.output_type
 class GetManagedInstanceParentSoftwareSourceResult(dict):
     def __init__(__self__, *,
                  id: str,
@@ -692,6 +861,95 @@ class GetManagedInstanceParentSoftwareSourceResult(dict):
         software source name
         """
         return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetManagedInstanceStreamProfileFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceResult(dict):
+    def __init__(__self__, *,
+                 module_name: str,
+                 profile_name: str,
+                 status: str,
+                 stream_name: str,
+                 time_modified: str):
+        """
+        :param str module_name: The name of a module.  This parameter is required if a streamName is specified.
+        :param str profile_name: The name of the profile of the containing module stream
+        :param str status: The status of the profile.
+        :param str stream_name: The name of the stream of the containing module.  This parameter is required if a profileName is specified.
+        :param str time_modified: The date and time of the last status change for this profile, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+        """
+        pulumi.set(__self__, "module_name", module_name)
+        pulumi.set(__self__, "profile_name", profile_name)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "stream_name", stream_name)
+        pulumi.set(__self__, "time_modified", time_modified)
+
+    @property
+    @pulumi.getter(name="moduleName")
+    def module_name(self) -> str:
+        """
+        The name of a module.  This parameter is required if a streamName is specified.
+        """
+        return pulumi.get(self, "module_name")
+
+    @property
+    @pulumi.getter(name="profileName")
+    def profile_name(self) -> str:
+        """
+        The name of the profile of the containing module stream
+        """
+        return pulumi.get(self, "profile_name")
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        """
+        The status of the profile.
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="streamName")
+    def stream_name(self) -> str:
+        """
+        The name of the stream of the containing module.  This parameter is required if a profileName is specified.
+        """
+        return pulumi.get(self, "stream_name")
+
+    @property
+    @pulumi.getter(name="timeModified")
+    def time_modified(self) -> str:
+        """
+        The date and time of the last status change for this profile, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+        """
+        return pulumi.get(self, "time_modified")
 
 
 @pulumi.output_type
@@ -1159,6 +1417,73 @@ class GetSoftwareSourceAssociatedManagedInstanceResult(dict):
         OCID for the Software Source
         """
         return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetSoftwareSourceStreamProfileFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSoftwareSourceStreamProfileModuleStreamProfileResult(dict):
+    def __init__(__self__, *,
+                 module_name: str,
+                 profile_name: str,
+                 stream_name: str):
+        """
+        :param str module_name: The name of a module.  This parameter is required if a streamName is specified.
+        :param str profile_name: The name of the profile of the containing module stream
+        :param str stream_name: The name of the stream of the containing module.  This parameter is required if a profileName is specified.
+        """
+        pulumi.set(__self__, "module_name", module_name)
+        pulumi.set(__self__, "profile_name", profile_name)
+        pulumi.set(__self__, "stream_name", stream_name)
+
+    @property
+    @pulumi.getter(name="moduleName")
+    def module_name(self) -> str:
+        """
+        The name of a module.  This parameter is required if a streamName is specified.
+        """
+        return pulumi.get(self, "module_name")
+
+    @property
+    @pulumi.getter(name="profileName")
+    def profile_name(self) -> str:
+        """
+        The name of the profile of the containing module stream
+        """
+        return pulumi.get(self, "profile_name")
+
+    @property
+    @pulumi.getter(name="streamName")
+    def stream_name(self) -> str:
+        """
+        The name of the stream of the containing module.  This parameter is required if a profileName is specified.
+        """
+        return pulumi.get(self, "stream_name")
 
 
 @pulumi.output_type

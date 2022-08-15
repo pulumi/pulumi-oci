@@ -24,6 +24,7 @@ import * as utilities from "../utilities";
  *     },
  *     databaseId: oci_database_database.test_database.id,
  *     databaseResourceType: _var.database_insight_database_resource_type,
+ *     dbmPrivateEndpointId: oci_dataflow_private_endpoint.test_private_endpoint.id,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
@@ -121,6 +122,10 @@ export class DatabaseInsight extends pulumi.CustomResource {
      * The version of the database.
      */
     public /*out*/ readonly databaseVersion!: pulumi.Output<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint. This field and opsiPrivateEndpointId are mutually exclusive. If DBM private endpoint ID is provided, a new OPSI private endpoint ID will be created.
+     */
+    public readonly dbmPrivateEndpointId!: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
@@ -226,6 +231,7 @@ export class DatabaseInsight extends pulumi.CustomResource {
             resourceInputs["databaseResourceType"] = state ? state.databaseResourceType : undefined;
             resourceInputs["databaseType"] = state ? state.databaseType : undefined;
             resourceInputs["databaseVersion"] = state ? state.databaseVersion : undefined;
+            resourceInputs["dbmPrivateEndpointId"] = state ? state.dbmPrivateEndpointId : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["deploymentType"] = state ? state.deploymentType : undefined;
             resourceInputs["enterpriseManagerBridgeId"] = state ? state.enterpriseManagerBridgeId : undefined;
@@ -261,6 +267,7 @@ export class DatabaseInsight extends pulumi.CustomResource {
             resourceInputs["databaseConnectionStatusDetails"] = args ? args.databaseConnectionStatusDetails : undefined;
             resourceInputs["databaseId"] = args ? args.databaseId : undefined;
             resourceInputs["databaseResourceType"] = args ? args.databaseResourceType : undefined;
+            resourceInputs["dbmPrivateEndpointId"] = args ? args.dbmPrivateEndpointId : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["deploymentType"] = args ? args.deploymentType : undefined;
             resourceInputs["enterpriseManagerBridgeId"] = args ? args.enterpriseManagerBridgeId : undefined;
@@ -339,6 +346,10 @@ export interface DatabaseInsightState {
      * The version of the database.
      */
     databaseVersion?: pulumi.Input<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint. This field and opsiPrivateEndpointId are mutually exclusive. If DBM private endpoint ID is provided, a new OPSI private endpoint ID will be created.
+     */
+    dbmPrivateEndpointId?: pulumi.Input<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
@@ -453,6 +464,10 @@ export interface DatabaseInsightArgs {
      * Oracle Cloud Infrastructure database resource type
      */
     databaseResourceType?: pulumi.Input<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint. This field and opsiPrivateEndpointId are mutually exclusive. If DBM private endpoint ID is provided, a new OPSI private endpoint ID will be created.
+     */
+    dbmPrivateEndpointId?: pulumi.Input<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */

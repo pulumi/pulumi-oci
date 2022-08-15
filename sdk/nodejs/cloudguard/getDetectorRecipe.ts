@@ -55,7 +55,7 @@ export interface GetDetectorRecipeResult {
      */
     readonly definedTags: {[key: string]: any};
     /**
-     * Description for DetectorRecipeDetectorRule
+     * Description for DetectorRecipeDetectorRule.
      */
     readonly description: string;
     /**
@@ -68,7 +68,7 @@ export interface GetDetectorRecipeResult {
      */
     readonly detectorRules: outputs.CloudGuard.GetDetectorRecipeDetectorRule[];
     /**
-     * displayName
+     * Display name for DetectorRecipeDetectorRule.
      */
     readonly displayName: string;
     /**

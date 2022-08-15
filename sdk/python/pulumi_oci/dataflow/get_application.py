@@ -21,7 +21,7 @@ class GetApplicationResult:
     """
     A collection of values returned by getApplication.
     """
-    def __init__(__self__, application_id=None, archive_uri=None, arguments=None, class_name=None, compartment_id=None, configuration=None, defined_tags=None, description=None, display_name=None, driver_shape=None, execute=None, executor_shape=None, file_uri=None, freeform_tags=None, id=None, language=None, logs_bucket_uri=None, metastore_id=None, num_executors=None, owner_principal_id=None, owner_user_name=None, parameters=None, private_endpoint_id=None, spark_version=None, state=None, time_created=None, time_updated=None, type=None, warehouse_bucket_uri=None):
+    def __init__(__self__, application_id=None, archive_uri=None, arguments=None, class_name=None, compartment_id=None, configuration=None, defined_tags=None, description=None, display_name=None, driver_shape=None, driver_shape_configs=None, execute=None, executor_shape=None, executor_shape_configs=None, file_uri=None, freeform_tags=None, id=None, language=None, logs_bucket_uri=None, metastore_id=None, num_executors=None, owner_principal_id=None, owner_user_name=None, parameters=None, private_endpoint_id=None, spark_version=None, state=None, time_created=None, time_updated=None, type=None, warehouse_bucket_uri=None):
         if application_id and not isinstance(application_id, str):
             raise TypeError("Expected argument 'application_id' to be a str")
         pulumi.set(__self__, "application_id", application_id)
@@ -52,12 +52,18 @@ class GetApplicationResult:
         if driver_shape and not isinstance(driver_shape, str):
             raise TypeError("Expected argument 'driver_shape' to be a str")
         pulumi.set(__self__, "driver_shape", driver_shape)
+        if driver_shape_configs and not isinstance(driver_shape_configs, list):
+            raise TypeError("Expected argument 'driver_shape_configs' to be a list")
+        pulumi.set(__self__, "driver_shape_configs", driver_shape_configs)
         if execute and not isinstance(execute, str):
             raise TypeError("Expected argument 'execute' to be a str")
         pulumi.set(__self__, "execute", execute)
         if executor_shape and not isinstance(executor_shape, str):
             raise TypeError("Expected argument 'executor_shape' to be a str")
         pulumi.set(__self__, "executor_shape", executor_shape)
+        if executor_shape_configs and not isinstance(executor_shape_configs, list):
+            raise TypeError("Expected argument 'executor_shape_configs' to be a list")
+        pulumi.set(__self__, "executor_shape_configs", executor_shape_configs)
         if file_uri and not isinstance(file_uri, str):
             raise TypeError("Expected argument 'file_uri' to be a str")
         pulumi.set(__self__, "file_uri", file_uri)
@@ -188,6 +194,14 @@ class GetApplicationResult:
         return pulumi.get(self, "driver_shape")
 
     @property
+    @pulumi.getter(name="driverShapeConfigs")
+    def driver_shape_configs(self) -> Sequence['outputs.GetApplicationDriverShapeConfigResult']:
+        """
+        This is used to configure the shape of the driver or executor if a flexible shape is used.
+        """
+        return pulumi.get(self, "driver_shape_configs")
+
+    @property
     @pulumi.getter
     def execute(self) -> str:
         """
@@ -202,6 +216,14 @@ class GetApplicationResult:
         The VM shape for the executors. Sets the executor cores and memory.
         """
         return pulumi.get(self, "executor_shape")
+
+    @property
+    @pulumi.getter(name="executorShapeConfigs")
+    def executor_shape_configs(self) -> Sequence['outputs.GetApplicationExecutorShapeConfigResult']:
+        """
+        This is used to configure the shape of the driver or executor if a flexible shape is used.
+        """
+        return pulumi.get(self, "executor_shape_configs")
 
     @property
     @pulumi.getter(name="fileUri")
@@ -356,8 +378,10 @@ class AwaitableGetApplicationResult(GetApplicationResult):
             description=self.description,
             display_name=self.display_name,
             driver_shape=self.driver_shape,
+            driver_shape_configs=self.driver_shape_configs,
             execute=self.execute,
             executor_shape=self.executor_shape,
+            executor_shape_configs=self.executor_shape_configs,
             file_uri=self.file_uri,
             freeform_tags=self.freeform_tags,
             id=self.id,
@@ -415,8 +439,10 @@ def get_application(application_id: Optional[str] = None,
         description=__ret__.description,
         display_name=__ret__.display_name,
         driver_shape=__ret__.driver_shape,
+        driver_shape_configs=__ret__.driver_shape_configs,
         execute=__ret__.execute,
         executor_shape=__ret__.executor_shape,
+        executor_shape_configs=__ret__.executor_shape_configs,
         file_uri=__ret__.file_uri,
         freeform_tags=__ret__.freeform_tags,
         id=__ret__.id,

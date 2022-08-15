@@ -10,6 +10,7 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Ocvp.EsxiHostArgs;
 import com.pulumi.oci.Ocvp.inputs.EsxiHostState;
 import com.pulumi.oci.Utilities;
+import java.lang.Double;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -49,6 +50,20 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
      */
     public Output<String> billingContractEndDate() {
         return this.billingContractEndDate;
+    }
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+     * 
+     */
+    @Export(name="capacityReservationId", type=String.class, parameters={})
+    private Output<String> capacityReservationId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+     * 
+     */
+    public Output<String> capacityReservationId() {
+        return this.capacityReservationId;
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
@@ -135,14 +150,14 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
         return this.displayName;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be udpated in the newly created Esxi host.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is failed. It is an optional param, when user supplies this param, new Esxi Host will be created to replace the failed one, and failedEsxiHostId field will be udpated in the newly created EsxiHost.
      * 
      */
     @Export(name="failedEsxiHostId", type=String.class, parameters={})
     private Output<String> failedEsxiHostId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be udpated in the newly created Esxi host.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is failed. It is an optional param, when user supplies this param, new Esxi Host will be created to replace the failed one, and failedEsxiHostId field will be udpated in the newly created EsxiHost.
      * 
      */
     public Output<String> failedEsxiHostId() {
@@ -175,6 +190,34 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
      */
     public Output<String> gracePeriodEndDate() {
         return this.gracePeriodEndDate;
+    }
+    /**
+     * The OCPU count of the ESXi host.
+     * 
+     */
+    @Export(name="hostOcpuCount", type=Double.class, parameters={})
+    private Output<Double> hostOcpuCount;
+
+    /**
+     * @return The OCPU count of the ESXi host.
+     * 
+     */
+    public Output<Double> hostOcpuCount() {
+        return this.hostOcpuCount;
+    }
+    /**
+     * The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+     * 
+     */
+    @Export(name="hostShapeName", type=String.class, parameters={})
+    private Output<String> hostShapeName;
+
+    /**
+     * @return The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+     * 
+     */
+    public Output<String> hostShapeName() {
+        return this.hostShapeName;
     }
     /**
      * (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).

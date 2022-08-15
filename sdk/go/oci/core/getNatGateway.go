@@ -70,6 +70,8 @@ type LookupNatGatewayResult struct {
 	NatIp string `pulumi:"natIp"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP address associated with the NAT gateway.
 	PublicIpId string `pulumi:"publicIpId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
+	RouteTableId string `pulumi:"routeTableId"`
 	// The NAT gateway's current state.
 	State string `pulumi:"state"`
 	// The date and time the NAT gateway was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -158,6 +160,11 @@ func (o LookupNatGatewayResultOutput) NatIp() pulumi.StringOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP address associated with the NAT gateway.
 func (o LookupNatGatewayResultOutput) PublicIpId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupNatGatewayResult) string { return v.PublicIpId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
+func (o LookupNatGatewayResultOutput) RouteTableId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupNatGatewayResult) string { return v.RouteTableId }).(pulumi.StringOutput)
 }
 
 // The NAT gateway's current state.

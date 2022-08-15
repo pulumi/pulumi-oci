@@ -80,14 +80,14 @@ public final class DataMaskRuleState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The Data Mask Rule description.
+     * The data mask rule description. Avoid entering confidential information.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return The Data Mask Rule description.
+     * @return The data mask rule description. Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> description() {
@@ -95,14 +95,14 @@ public final class DataMaskRuleState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Data Mask Rule name
+     * (Updatable) Data mask rule name.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) Data Mask Rule name
+     * @return (Updatable) Data mask rule name.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -361,7 +361,7 @@ public final class DataMaskRuleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description The Data Mask Rule description.
+         * @param description The data mask rule description. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -372,7 +372,7 @@ public final class DataMaskRuleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description The Data Mask Rule description.
+         * @param description The data mask rule description. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -382,7 +382,7 @@ public final class DataMaskRuleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) Data Mask Rule name
+         * @param displayName (Updatable) Data mask rule name.
          * 
          * @return builder
          * 
@@ -393,7 +393,7 @@ public final class DataMaskRuleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) Data Mask Rule name
+         * @param displayName (Updatable) Data mask rule name.
          * 
          * @return builder
          * 

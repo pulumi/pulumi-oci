@@ -142,10 +142,15 @@ namespace Pulumi.Oci.Core
     ///             PlatformConfig = new Oci.Core.Inputs.InstancePlatformConfigArgs
     ///             {
     ///                 Type = @var.Instance_platform_config_type,
+    ///                 AreVirtualInstructionsEnabled = @var.Instance_platform_config_are_virtual_instructions_enabled,
+    ///                 IsAccessControlServiceEnabled = @var.Instance_platform_config_is_access_control_service_enabled,
+    ///                 IsInputOutputMemoryManagementUnitEnabled = @var.Instance_platform_config_is_input_output_memory_management_unit_enabled,
     ///                 IsMeasuredBootEnabled = @var.Instance_platform_config_is_measured_boot_enabled,
     ///                 IsSecureBootEnabled = @var.Instance_platform_config_is_secure_boot_enabled,
+    ///                 IsSymmetricMultiThreadingEnabled = @var.Instance_platform_config_is_symmetric_multi_threading_enabled,
     ///                 IsTrustedPlatformModuleEnabled = @var.Instance_platform_config_is_trusted_platform_module_enabled,
     ///                 NumaNodesPerSocket = @var.Instance_platform_config_numa_nodes_per_socket,
+    ///                 PercentageOfCoresEnabled = @var.Instance_platform_config_percentage_of_cores_enabled,
     ///             },
     ///             PreemptibleInstanceConfig = new Oci.Core.Inputs.InstancePreemptibleInstanceConfigArgs
     ///             {
@@ -159,6 +164,7 @@ namespace Pulumi.Oci.Core
     ///             {
     ///                 BaselineOcpuUtilization = @var.Instance_shape_config_baseline_ocpu_utilization,
     ///                 MemoryInGbs = @var.Instance_shape_config_memory_in_gbs,
+    ///                 Nvmes = @var.Instance_shape_config_nvmes,
     ///                 Ocpus = @var.Instance_shape_config_ocpus,
     ///             },
     ///             SourceDetails = new Oci.Core.Inputs.InstanceSourceDetailsArgs
@@ -166,6 +172,7 @@ namespace Pulumi.Oci.Core
     ///                 SourceId = oci_core_image.Test_image.Id,
     ///                 SourceType = "image",
     ///                 BootVolumeSizeInGbs = @var.Instance_source_details_boot_volume_size_in_gbs,
+    ///                 BootVolumeVpusPerGb = @var.Instance_source_details_boot_volume_vpus_per_gb,
     ///                 KmsKeyId = oci_kms_key.Test_key.Id,
     ///             },
     ///             PreserveBootVolume = false,

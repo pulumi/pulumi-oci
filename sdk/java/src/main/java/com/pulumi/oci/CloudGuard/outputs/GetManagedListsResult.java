@@ -23,7 +23,7 @@ public final class GetManagedListsResult {
     private final String compartmentId;
     private final @Nullable Boolean compartmentIdInSubtree;
     /**
-     * @return ManagedList display name
+     * @return ManagedList display name.
      * 
      */
     private final @Nullable String displayName;
@@ -88,7 +88,7 @@ public final class GetManagedListsResult {
         return Optional.ofNullable(this.compartmentIdInSubtree);
     }
     /**
-     * @return ManagedList display name
+     * @return ManagedList display name.
      * 
      */
     public Optional<String> displayName() {

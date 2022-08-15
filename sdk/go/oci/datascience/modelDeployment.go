@@ -34,6 +34,10 @@ import (
 // 				ModelConfigurationDetails: &datascience.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs{
 // 					InstanceConfiguration: &datascience.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs{
 // 						InstanceShapeName: pulumi.Any(oci_core_shape.Test_shape.Name),
+// 						ModelDeploymentInstanceShapeConfigDetails: &datascience.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs{
+// 							MemoryInGbs: pulumi.Any(_var.Model_deployment_model_deployment_configuration_details_model_configuration_details_instance_configuration_model_deployment_instance_shape_config_details_memory_in_gbs),
+// 							Ocpus:       pulumi.Any(_var.Model_deployment_model_deployment_configuration_details_model_configuration_details_instance_configuration_model_deployment_instance_shape_config_details_ocpus),
+// 						},
 // 					},
 // 					ModelId:       pulumi.Any(oci_datascience_model.Test_model.Id),
 // 					BandwidthMbps: pulumi.Any(_var.Model_deployment_model_deployment_configuration_details_model_configuration_details_bandwidth_mbps),

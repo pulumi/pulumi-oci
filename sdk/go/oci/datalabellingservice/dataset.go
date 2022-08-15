@@ -32,6 +32,14 @@ import (
 // 			CompartmentId:    pulumi.Any(_var.Compartment_id),
 // 			DatasetFormatDetails: &datalabellingservice.DatasetDatasetFormatDetailsArgs{
 // 				FormatType: pulumi.Any(_var.Dataset_dataset_format_details_format_type),
+// 				TextFileTypeMetadata: &datalabellingservice.DatasetDatasetFormatDetailsTextFileTypeMetadataArgs{
+// 					ColumnIndex:     pulumi.Any(_var.Dataset_dataset_format_details_text_file_type_metadata_column_index),
+// 					FormatType:      pulumi.Any(_var.Dataset_dataset_format_details_text_file_type_metadata_format_type),
+// 					ColumnDelimiter: pulumi.Any(_var.Dataset_dataset_format_details_text_file_type_metadata_column_delimiter),
+// 					ColumnName:      pulumi.Any(_var.Dataset_dataset_format_details_text_file_type_metadata_column_name),
+// 					EscapeCharacter: pulumi.Any(_var.Dataset_dataset_format_details_text_file_type_metadata_escape_character),
+// 					LineDelimiter:   pulumi.Any(_var.Dataset_dataset_format_details_text_file_type_metadata_line_delimiter),
+// 				},
 // 			},
 // 			DatasetSourceDetails: &datalabellingservice.DatasetDatasetSourceDetailsArgs{
 // 				Bucket:     pulumi.Any(_var.Dataset_dataset_source_details_bucket),
@@ -75,7 +83,7 @@ type Dataset struct {
 	AnnotationFormat pulumi.StringOutput `pulumi:"annotationFormat"`
 	// (Updatable) The OCID of the compartment of the resource.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// Specifies how to process the data. Supported formats include IMAGE and TEXT.
+	// It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
 	DatasetFormatDetails DatasetDatasetFormatDetailsOutput `pulumi:"datasetFormatDetails"`
 	// This allows the customer to specify the source of the dataset.
 	DatasetSourceDetails DatasetDatasetSourceDetailsOutput `pulumi:"datasetSourceDetails"`
@@ -87,11 +95,11 @@ type Dataset struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
-	// Initial Generate Records configuration, generates records from the Dataset's source.
+	// The initial generate records configuration. It generates records from the dataset's source.
 	InitialRecordGenerationConfiguration DatasetInitialRecordGenerationConfigurationOutput `pulumi:"initialRecordGenerationConfiguration"`
-	// An ordered collection of Labels that are unique by name.
+	// An ordered collection of labels that are unique by name.
 	LabelSet DatasetLabelSetOutput `pulumi:"labelSet"`
-	// The labeling instructions for human labelers in rich text format
+	// (Updatable) The labeling instructions for human labelers in rich text format
 	LabelingInstructions pulumi.StringOutput `pulumi:"labelingInstructions"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in FAILED or NEEDS_ATTENTION state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
@@ -151,7 +159,7 @@ type datasetState struct {
 	AnnotationFormat *string `pulumi:"annotationFormat"`
 	// (Updatable) The OCID of the compartment of the resource.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// Specifies how to process the data. Supported formats include IMAGE and TEXT.
+	// It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
 	DatasetFormatDetails *DatasetDatasetFormatDetails `pulumi:"datasetFormatDetails"`
 	// This allows the customer to specify the source of the dataset.
 	DatasetSourceDetails *DatasetDatasetSourceDetails `pulumi:"datasetSourceDetails"`
@@ -163,11 +171,11 @@ type datasetState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// Initial Generate Records configuration, generates records from the Dataset's source.
+	// The initial generate records configuration. It generates records from the dataset's source.
 	InitialRecordGenerationConfiguration *DatasetInitialRecordGenerationConfiguration `pulumi:"initialRecordGenerationConfiguration"`
-	// An ordered collection of Labels that are unique by name.
+	// An ordered collection of labels that are unique by name.
 	LabelSet *DatasetLabelSet `pulumi:"labelSet"`
-	// The labeling instructions for human labelers in rich text format
+	// (Updatable) The labeling instructions for human labelers in rich text format
 	LabelingInstructions *string `pulumi:"labelingInstructions"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in FAILED or NEEDS_ATTENTION state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
@@ -184,7 +192,7 @@ type DatasetState struct {
 	AnnotationFormat pulumi.StringPtrInput
 	// (Updatable) The OCID of the compartment of the resource.
 	CompartmentId pulumi.StringPtrInput
-	// Specifies how to process the data. Supported formats include IMAGE and TEXT.
+	// It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
 	DatasetFormatDetails DatasetDatasetFormatDetailsPtrInput
 	// This allows the customer to specify the source of the dataset.
 	DatasetSourceDetails DatasetDatasetSourceDetailsPtrInput
@@ -196,11 +204,11 @@ type DatasetState struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
-	// Initial Generate Records configuration, generates records from the Dataset's source.
+	// The initial generate records configuration. It generates records from the dataset's source.
 	InitialRecordGenerationConfiguration DatasetInitialRecordGenerationConfigurationPtrInput
-	// An ordered collection of Labels that are unique by name.
+	// An ordered collection of labels that are unique by name.
 	LabelSet DatasetLabelSetPtrInput
-	// The labeling instructions for human labelers in rich text format
+	// (Updatable) The labeling instructions for human labelers in rich text format
 	LabelingInstructions pulumi.StringPtrInput
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in FAILED or NEEDS_ATTENTION state.
 	LifecycleDetails pulumi.StringPtrInput
@@ -221,7 +229,7 @@ type datasetArgs struct {
 	AnnotationFormat string `pulumi:"annotationFormat"`
 	// (Updatable) The OCID of the compartment of the resource.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Specifies how to process the data. Supported formats include IMAGE and TEXT.
+	// It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
 	DatasetFormatDetails DatasetDatasetFormatDetails `pulumi:"datasetFormatDetails"`
 	// This allows the customer to specify the source of the dataset.
 	DatasetSourceDetails DatasetDatasetSourceDetails `pulumi:"datasetSourceDetails"`
@@ -233,11 +241,11 @@ type datasetArgs struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// Initial Generate Records configuration, generates records from the Dataset's source.
+	// The initial generate records configuration. It generates records from the dataset's source.
 	InitialRecordGenerationConfiguration *DatasetInitialRecordGenerationConfiguration `pulumi:"initialRecordGenerationConfiguration"`
-	// An ordered collection of Labels that are unique by name.
+	// An ordered collection of labels that are unique by name.
 	LabelSet DatasetLabelSet `pulumi:"labelSet"`
-	// The labeling instructions for human labelers in rich text format
+	// (Updatable) The labeling instructions for human labelers in rich text format
 	LabelingInstructions *string `pulumi:"labelingInstructions"`
 }
 
@@ -247,7 +255,7 @@ type DatasetArgs struct {
 	AnnotationFormat pulumi.StringInput
 	// (Updatable) The OCID of the compartment of the resource.
 	CompartmentId pulumi.StringInput
-	// Specifies how to process the data. Supported formats include IMAGE and TEXT.
+	// It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
 	DatasetFormatDetails DatasetDatasetFormatDetailsInput
 	// This allows the customer to specify the source of the dataset.
 	DatasetSourceDetails DatasetDatasetSourceDetailsInput
@@ -259,11 +267,11 @@ type DatasetArgs struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
-	// Initial Generate Records configuration, generates records from the Dataset's source.
+	// The initial generate records configuration. It generates records from the dataset's source.
 	InitialRecordGenerationConfiguration DatasetInitialRecordGenerationConfigurationPtrInput
-	// An ordered collection of Labels that are unique by name.
+	// An ordered collection of labels that are unique by name.
 	LabelSet DatasetLabelSetInput
-	// The labeling instructions for human labelers in rich text format
+	// (Updatable) The labeling instructions for human labelers in rich text format
 	LabelingInstructions pulumi.StringPtrInput
 }
 

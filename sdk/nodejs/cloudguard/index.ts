@@ -19,8 +19,16 @@ export * from "./getManagedList";
 export * from "./getManagedLists";
 export * from "./getResponderRecipe";
 export * from "./getResponderRecipes";
+export * from "./getSecurityPolicies";
+export * from "./getSecurityPolicy";
+export * from "./getSecurityRecipe";
+export * from "./getSecurityRecipes";
+export * from "./getSecurityZone";
+export * from "./getSecurityZones";
 export * from "./managedList";
 export * from "./responderRecipe";
+export * from "./securityRecipe";
+export * from "./securityZone";
 export * from "./target";
 
 // Import resources to register:
@@ -29,6 +37,8 @@ import { DataMaskRule } from "./dataMaskRule";
 import { DetectorRecipe } from "./detectorRecipe";
 import { ManagedList } from "./managedList";
 import { ResponderRecipe } from "./responderRecipe";
+import { SecurityRecipe } from "./securityRecipe";
+import { SecurityZone } from "./securityZone";
 import { Target } from "./target";
 
 const _module = {
@@ -45,6 +55,10 @@ const _module = {
                 return new ManagedList(name, <any>undefined, { urn })
             case "oci:CloudGuard/responderRecipe:ResponderRecipe":
                 return new ResponderRecipe(name, <any>undefined, { urn })
+            case "oci:CloudGuard/securityRecipe:SecurityRecipe":
+                return new SecurityRecipe(name, <any>undefined, { urn })
+            case "oci:CloudGuard/securityZone:SecurityZone":
+                return new SecurityZone(name, <any>undefined, { urn })
             case "oci:CloudGuard/target:Target":
                 return new Target(name, <any>undefined, { urn })
             default:
@@ -57,4 +71,6 @@ pulumi.runtime.registerResourceModule("oci", "CloudGuard/dataMaskRule", _module)
 pulumi.runtime.registerResourceModule("oci", "CloudGuard/detectorRecipe", _module)
 pulumi.runtime.registerResourceModule("oci", "CloudGuard/managedList", _module)
 pulumi.runtime.registerResourceModule("oci", "CloudGuard/responderRecipe", _module)
+pulumi.runtime.registerResourceModule("oci", "CloudGuard/securityRecipe", _module)
+pulumi.runtime.registerResourceModule("oci", "CloudGuard/securityZone", _module)
 pulumi.runtime.registerResourceModule("oci", "CloudGuard/target", _module)

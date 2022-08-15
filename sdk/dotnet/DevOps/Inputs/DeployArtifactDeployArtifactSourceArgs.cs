@@ -13,10 +13,16 @@ namespace Pulumi.Oci.DevOps.Inputs
     public sealed class DeployArtifactDeployArtifactSourceArgs : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) base64 Encoded String
+        /// (Updatable) Specifies content for the inline artifact.
         /// </summary>
         [Input("base64encodedContent")]
         public Input<string>? Base64encodedContent { get; set; }
+
+        /// <summary>
+        /// (Updatable) The URL of an OCIR repository.
+        /// </summary>
+        [Input("chartUrl")]
+        public Input<string>? ChartUrl { get; set; }
 
         /// <summary>
         /// (Updatable) Specifies the artifact path in the repository.

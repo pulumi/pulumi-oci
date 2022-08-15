@@ -84,7 +84,7 @@ type DatabaseSoftwareImage struct {
 	IsUpgradeSupported pulumi.BoolOutput `pulumi:"isUpgradeSupported"`
 	// Detailed message for the lifecycle state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
-	// output from lsinventory which will get passed as a string
+	// The output from the OPatch lsInventory command, which is passed as a string.
 	LsInventory pulumi.StringOutput `pulumi:"lsInventory"`
 	// The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
 	PatchSet pulumi.StringOutput `pulumi:"patchSet"`
@@ -155,7 +155,7 @@ type databaseSoftwareImageState struct {
 	IsUpgradeSupported *bool `pulumi:"isUpgradeSupported"`
 	// Detailed message for the lifecycle state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
-	// output from lsinventory which will get passed as a string
+	// The output from the OPatch lsInventory command, which is passed as a string.
 	LsInventory *string `pulumi:"lsInventory"`
 	// The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
 	PatchSet *string `pulumi:"patchSet"`
@@ -192,7 +192,7 @@ type DatabaseSoftwareImageState struct {
 	IsUpgradeSupported pulumi.BoolPtrInput
 	// Detailed message for the lifecycle state.
 	LifecycleDetails pulumi.StringPtrInput
-	// output from lsinventory which will get passed as a string
+	// The output from the OPatch lsInventory command, which is passed as a string.
 	LsInventory pulumi.StringPtrInput
 	// The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
 	PatchSet pulumi.StringPtrInput
@@ -225,7 +225,7 @@ type databaseSoftwareImageArgs struct {
 	ImageShapeFamily *string `pulumi:"imageShapeFamily"`
 	// The type of software image. Can be grid or database.
 	ImageType *string `pulumi:"imageType"`
-	// output from lsinventory which will get passed as a string
+	// The output from the OPatch lsInventory command, which is passed as a string.
 	LsInventory *string `pulumi:"lsInventory"`
 	// The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
 	PatchSet *string `pulumi:"patchSet"`
@@ -251,7 +251,7 @@ type DatabaseSoftwareImageArgs struct {
 	ImageShapeFamily pulumi.StringPtrInput
 	// The type of software image. Can be grid or database.
 	ImageType pulumi.StringPtrInput
-	// output from lsinventory which will get passed as a string
+	// The output from the OPatch lsInventory command, which is passed as a string.
 	LsInventory pulumi.StringPtrInput
 	// The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
 	PatchSet pulumi.StringPtrInput

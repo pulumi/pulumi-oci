@@ -504,6 +504,7 @@ class RegistryFolder(pulumi.CustomResource):
                     type=var["registry_folder_data_assets_default_connection_type"],
                 ),
                 description=var["registry_folder_data_assets_description"],
+                end_points=var["registry_folder_data_assets_end_points"],
                 external_key=var["registry_folder_data_assets_external_key"],
                 metadata=oci.data.connectivity.RegistryFolderDataAssetMetadataArgs(
                     aggregator=oci.data.connectivity.RegistryFolderDataAssetMetadataAggregatorArgs(
@@ -742,6 +743,7 @@ class RegistryFolder(pulumi.CustomResource):
                     type=var["registry_folder_data_assets_default_connection_type"],
                 ),
                 description=var["registry_folder_data_assets_description"],
+                end_points=var["registry_folder_data_assets_end_points"],
                 external_key=var["registry_folder_data_assets_external_key"],
                 metadata=oci.data.connectivity.RegistryFolderDataAssetMetadataArgs(
                     aggregator=oci.data.connectivity.RegistryFolderDataAssetMetadataAggregatorArgs(

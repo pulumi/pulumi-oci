@@ -17,7 +17,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditio
      */
     private final @Nullable String compartmentId;
     /**
-     * @return (Updatable)
+     * @return (Updatable) Base condition object
      * 
      */
     private final @Nullable String condition;
@@ -38,7 +38,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditio
         return Optional.ofNullable(this.compartmentId);
     }
     /**
-     * @return (Updatable)
+     * @return (Updatable) Base condition object
      * 
      */
     public Optional<String> condition() {

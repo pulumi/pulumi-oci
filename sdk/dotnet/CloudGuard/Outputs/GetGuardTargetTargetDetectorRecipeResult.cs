@@ -18,7 +18,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// ResponderRule Description
+        /// ResponderRule description.
         /// </summary>
         public readonly string Description;
         /// <summary>
@@ -34,7 +34,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetGuardTargetTargetDetectorRecipeDetectorRuleResult> DetectorRules;
         /// <summary>
-        /// ResponderRule Display Name
+        /// ResponderRule display name.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
@@ -42,7 +42,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleResult> EffectiveDetectorRules;
         /// <summary>
-        /// Unique identifier of TargetResponderRecipe that is immutable on creation
+        /// Unique identifier of TargetResponderRecipe that can't be changed after creation.
         /// </summary>
         public readonly string Id;
         /// <summary>

@@ -32,6 +32,12 @@ namespace Pulumi.Oci.ContainerEngine
         public Output<ImmutableArray<string>> AvailableKubernetesUpgrades { get; private set; } = null!;
 
         /// <summary>
+        /// Available CNIs and network options for existing and new node pools of the cluster
+        /// </summary>
+        [Output("clusterPodNetworkOptions")]
+        public Output<ImmutableArray<Outputs.ClusterClusterPodNetworkOption>> ClusterPodNetworkOptions { get; private set; } = null!;
+
+        /// <summary>
         /// The OCID of the compartment in which to create the cluster.
         /// </summary>
         [Output("compartmentId")]
@@ -161,6 +167,18 @@ namespace Pulumi.Oci.ContainerEngine
 
     public sealed class ClusterArgs : Pulumi.ResourceArgs
     {
+        [Input("clusterPodNetworkOptions")]
+        private InputList<Inputs.ClusterClusterPodNetworkOptionArgs>? _clusterPodNetworkOptions;
+
+        /// <summary>
+        /// Available CNIs and network options for existing and new node pools of the cluster
+        /// </summary>
+        public InputList<Inputs.ClusterClusterPodNetworkOptionArgs> ClusterPodNetworkOptions
+        {
+            get => _clusterPodNetworkOptions ?? (_clusterPodNetworkOptions = new InputList<Inputs.ClusterClusterPodNetworkOptionArgs>());
+            set => _clusterPodNetworkOptions = value;
+        }
+
         /// <summary>
         /// The OCID of the compartment in which to create the cluster.
         /// </summary>
@@ -250,6 +268,18 @@ namespace Pulumi.Oci.ContainerEngine
         {
             get => _availableKubernetesUpgrades ?? (_availableKubernetesUpgrades = new InputList<string>());
             set => _availableKubernetesUpgrades = value;
+        }
+
+        [Input("clusterPodNetworkOptions")]
+        private InputList<Inputs.ClusterClusterPodNetworkOptionGetArgs>? _clusterPodNetworkOptions;
+
+        /// <summary>
+        /// Available CNIs and network options for existing and new node pools of the cluster
+        /// </summary>
+        public InputList<Inputs.ClusterClusterPodNetworkOptionGetArgs> ClusterPodNetworkOptions
+        {
+            get => _clusterPodNetworkOptions ?? (_clusterPodNetworkOptions = new InputList<Inputs.ClusterClusterPodNetworkOptionGetArgs>());
+            set => _clusterPodNetworkOptions = value;
         }
 
         /// <summary>

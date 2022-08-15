@@ -16,11 +16,13 @@ __all__ = [
     'HeatWaveClusterClusterNodeArgs',
     'MysqlBackupDbSystemSnapshotArgs',
     'MysqlBackupDbSystemSnapshotBackupPolicyArgs',
+    'MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs',
     'MysqlBackupDbSystemSnapshotDeletionPolicyArgs',
     'MysqlBackupDbSystemSnapshotEndpointArgs',
     'MysqlBackupDbSystemSnapshotMaintenanceArgs',
     'MysqlDbSystemAnalyticsClusterArgs',
     'MysqlDbSystemBackupPolicyArgs',
+    'MysqlDbSystemBackupPolicyPitrPolicyArgs',
     'MysqlDbSystemChannelArgs',
     'MysqlDbSystemChannelSourceArgs',
     'MysqlDbSystemChannelSourceSslCaCertificateArgs',
@@ -30,6 +32,7 @@ __all__ = [
     'MysqlDbSystemEndpointArgs',
     'MysqlDbSystemHeatWaveClusterArgs',
     'MysqlDbSystemMaintenanceArgs',
+    'MysqlDbSystemPointInTimeRecoveryDetailArgs',
     'MysqlDbSystemSourceArgs',
     'GetChannelsFilterArgs',
     'GetMysqlBackupsFilterArgs',
@@ -446,7 +449,7 @@ class MysqlBackupDbSystemSnapshotArgs:
         :param pulumi.Input[str] hostname_label: The hostname for the primary endpoint of the DB System. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com"). Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
         :param pulumi.Input[str] id: OCID of the backup itself
         :param pulumi.Input[str] ip_address: The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
-        :param pulumi.Input[bool] is_highly_available: If the policy is to enable high availability of the instance, by maintaining secondary/failover capacity as necessary.
+        :param pulumi.Input[bool] is_highly_available: Specifies if the DB System is highly available.
         :param pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotMaintenanceArgs']]] maintenances: The Maintenance Policy for the DB System.
         :param pulumi.Input[str] mysql_version: The MySQL server version of the DB System used for backup.
         :param pulumi.Input[int] port: The port for primary endpoint of the DB System to listen on.
@@ -711,7 +714,7 @@ class MysqlBackupDbSystemSnapshotArgs:
     @pulumi.getter(name="isHighlyAvailable")
     def is_highly_available(self) -> Optional[pulumi.Input[bool]]:
         """
-        If the policy is to enable high availability of the instance, by maintaining secondary/failover capacity as necessary.
+        Specifies if the DB System is highly available.
         """
         return pulumi.get(self, "is_highly_available")
 
@@ -798,12 +801,14 @@ class MysqlBackupDbSystemSnapshotBackupPolicyArgs:
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_enabled: Optional[pulumi.Input[bool]] = None,
+                 pitr_policies: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs']]]] = None,
                  retention_in_days: Optional[pulumi.Input[int]] = None,
                  window_start_time: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_enabled: If automated backups are enabled or disabled.
+        :param pulumi.Input[bool] is_enabled: Specifies if PITR is enabled or disabled.
+        :param pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs']]] pitr_policies: The PITR policy for the DB System.
         :param pulumi.Input[int] retention_in_days: (Updatable) Number of days to retain this backup.
         :param pulumi.Input[str] window_start_time: The start time of the maintenance window.
         """
@@ -813,6 +818,8 @@ class MysqlBackupDbSystemSnapshotBackupPolicyArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_enabled is not None:
             pulumi.set(__self__, "is_enabled", is_enabled)
+        if pitr_policies is not None:
+            pulumi.set(__self__, "pitr_policies", pitr_policies)
         if retention_in_days is not None:
             pulumi.set(__self__, "retention_in_days", retention_in_days)
         if window_start_time is not None:
@@ -846,13 +853,25 @@ class MysqlBackupDbSystemSnapshotBackupPolicyArgs:
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        If automated backups are enabled or disabled.
+        Specifies if PITR is enabled or disabled.
         """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
     def is_enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_enabled", value)
+
+    @property
+    @pulumi.getter(name="pitrPolicies")
+    def pitr_policies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs']]]]:
+        """
+        The PITR policy for the DB System.
+        """
+        return pulumi.get(self, "pitr_policies")
+
+    @pitr_policies.setter
+    def pitr_policies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs']]]]):
+        pulumi.set(self, "pitr_policies", value)
 
     @property
     @pulumi.getter(name="retentionInDays")
@@ -877,6 +896,29 @@ class MysqlBackupDbSystemSnapshotBackupPolicyArgs:
     @window_start_time.setter
     def window_start_time(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "window_start_time", value)
+
+
+@pulumi.input_type
+class MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs:
+    def __init__(__self__, *,
+                 is_enabled: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[bool] is_enabled: Specifies if PITR is enabled or disabled.
+        """
+        if is_enabled is not None:
+            pulumi.set(__self__, "is_enabled", is_enabled)
+
+    @property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Specifies if PITR is enabled or disabled.
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @is_enabled.setter
+    def is_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_enabled", value)
 
 
 @pulumi.input_type
@@ -1171,12 +1213,14 @@ class MysqlDbSystemBackupPolicyArgs:
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_enabled: Optional[pulumi.Input[bool]] = None,
+                 pitr_policy: Optional[pulumi.Input['MysqlDbSystemBackupPolicyPitrPolicyArgs']] = None,
                  retention_in_days: Optional[pulumi.Input[int]] = None,
                  window_start_time: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_enabled: (Updatable) Specifies if automatic backups are enabled.
+        :param pulumi.Input[bool] is_enabled: (Updatable) Specifies if PITR is enabled or disabled.
+        :param pulumi.Input['MysqlDbSystemBackupPolicyPitrPolicyArgs'] pitr_policy: (Updatable) The PITR policy for the DB System.
         :param pulumi.Input[int] retention_in_days: (Updatable) Number of days to retain an automatic backup.
         :param pulumi.Input[str] window_start_time: (Updatable) The start of the 2 hour maintenance window.
         """
@@ -1186,6 +1230,8 @@ class MysqlDbSystemBackupPolicyArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_enabled is not None:
             pulumi.set(__self__, "is_enabled", is_enabled)
+        if pitr_policy is not None:
+            pulumi.set(__self__, "pitr_policy", pitr_policy)
         if retention_in_days is not None:
             pulumi.set(__self__, "retention_in_days", retention_in_days)
         if window_start_time is not None:
@@ -1219,13 +1265,25 @@ class MysqlDbSystemBackupPolicyArgs:
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Specifies if automatic backups are enabled.
+        (Updatable) Specifies if PITR is enabled or disabled.
         """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
     def is_enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_enabled", value)
+
+    @property
+    @pulumi.getter(name="pitrPolicy")
+    def pitr_policy(self) -> Optional[pulumi.Input['MysqlDbSystemBackupPolicyPitrPolicyArgs']]:
+        """
+        (Updatable) The PITR policy for the DB System.
+        """
+        return pulumi.get(self, "pitr_policy")
+
+    @pitr_policy.setter
+    def pitr_policy(self, value: Optional[pulumi.Input['MysqlDbSystemBackupPolicyPitrPolicyArgs']]):
+        pulumi.set(self, "pitr_policy", value)
 
     @property
     @pulumi.getter(name="retentionInDays")
@@ -1253,6 +1311,29 @@ class MysqlDbSystemBackupPolicyArgs:
 
 
 @pulumi.input_type
+class MysqlDbSystemBackupPolicyPitrPolicyArgs:
+    def __init__(__self__, *,
+                 is_enabled: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[bool] is_enabled: (Updatable) Specifies if PITR is enabled or disabled.
+        """
+        if is_enabled is not None:
+            pulumi.set(__self__, "is_enabled", is_enabled)
+
+    @property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Specifies if PITR is enabled or disabled.
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @is_enabled.setter
+    def is_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_enabled", value)
+
+
+@pulumi.input_type
 class MysqlDbSystemChannelArgs:
     def __init__(__self__, *,
                  compartment_id: Optional[pulumi.Input[str]] = None,
@@ -1273,7 +1354,7 @@ class MysqlDbSystemChannelArgs:
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the DB System. It does not have to be unique.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] id: The OCID of the DB System.
-        :param pulumi.Input[bool] is_enabled: (Updatable) Specifies if automatic backups are enabled.
+        :param pulumi.Input[bool] is_enabled: (Updatable) Specifies if PITR is enabled or disabled.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycleState.
         :param pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemChannelSourceArgs']]] sources: Parameters detailing how to provision the initial data of the system.
         :param pulumi.Input[str] state: (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
@@ -1370,7 +1451,7 @@ class MysqlDbSystemChannelArgs:
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Specifies if automatic backups are enabled.
+        (Updatable) Specifies if PITR is enabled or disabled.
         """
         return pulumi.get(self, "is_enabled")
 
@@ -1603,7 +1684,7 @@ class MysqlDbSystemChannelTargetArgs:
         """
         :param pulumi.Input[str] applier_username: The username for the replication applier of the target MySQL DB System.
         :param pulumi.Input[str] channel_name: The case-insensitive name that identifies the replication channel. Channel names must follow the rules defined for [MySQL identifiers](https://dev.mysql.com/doc/refman/8.0/en/identifiers.html). The names of non-Deleted Channels must be unique for each DB System.
-        :param pulumi.Input[str] db_system_id: The OCID of the source DB System.
+        :param pulumi.Input[str] db_system_id: The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
         :param pulumi.Input[str] target_type: The specific target identifier.
         """
         if applier_username is not None:
@@ -1643,7 +1724,7 @@ class MysqlDbSystemChannelTargetArgs:
     @pulumi.getter(name="dbSystemId")
     def db_system_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The OCID of the source DB System.
+        The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
         """
         return pulumi.get(self, "db_system_id")
 
@@ -1989,17 +2070,64 @@ class MysqlDbSystemMaintenanceArgs:
 
 
 @pulumi.input_type
+class MysqlDbSystemPointInTimeRecoveryDetailArgs:
+    def __init__(__self__, *,
+                 time_earliest_recovery_point: Optional[pulumi.Input[str]] = None,
+                 time_latest_recovery_point: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] time_earliest_recovery_point: Earliest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        :param pulumi.Input[str] time_latest_recovery_point: Latest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        """
+        if time_earliest_recovery_point is not None:
+            pulumi.set(__self__, "time_earliest_recovery_point", time_earliest_recovery_point)
+        if time_latest_recovery_point is not None:
+            pulumi.set(__self__, "time_latest_recovery_point", time_latest_recovery_point)
+
+    @property
+    @pulumi.getter(name="timeEarliestRecoveryPoint")
+    def time_earliest_recovery_point(self) -> Optional[pulumi.Input[str]]:
+        """
+        Earliest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        """
+        return pulumi.get(self, "time_earliest_recovery_point")
+
+    @time_earliest_recovery_point.setter
+    def time_earliest_recovery_point(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_earliest_recovery_point", value)
+
+    @property
+    @pulumi.getter(name="timeLatestRecoveryPoint")
+    def time_latest_recovery_point(self) -> Optional[pulumi.Input[str]]:
+        """
+        Latest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        """
+        return pulumi.get(self, "time_latest_recovery_point")
+
+    @time_latest_recovery_point.setter
+    def time_latest_recovery_point(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_latest_recovery_point", value)
+
+
+@pulumi.input_type
 class MysqlDbSystemSourceArgs:
     def __init__(__self__, *,
                  source_type: pulumi.Input[str],
-                 backup_id: Optional[pulumi.Input[str]] = None):
+                 backup_id: Optional[pulumi.Input[str]] = None,
+                 db_system_id: Optional[pulumi.Input[str]] = None,
+                 recovery_point: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] source_type: The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup.
         :param pulumi.Input[str] backup_id: The OCID of the backup to be used as the source for the new DB System.
+        :param pulumi.Input[str] db_system_id: The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
+        :param pulumi.Input[str] recovery_point: The date and time, as per RFC 3339, of the change up to which the new DB System shall be restored to, using a backup and logs from the original DB System. In case no point in time is specified, then this new DB System shall be restored up to the latest change recorded for the original DB System.
         """
         pulumi.set(__self__, "source_type", source_type)
         if backup_id is not None:
             pulumi.set(__self__, "backup_id", backup_id)
+        if db_system_id is not None:
+            pulumi.set(__self__, "db_system_id", db_system_id)
+        if recovery_point is not None:
+            pulumi.set(__self__, "recovery_point", recovery_point)
 
     @property
     @pulumi.getter(name="sourceType")
@@ -2024,6 +2152,30 @@ class MysqlDbSystemSourceArgs:
     @backup_id.setter
     def backup_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "backup_id", value)
+
+    @property
+    @pulumi.getter(name="dbSystemId")
+    def db_system_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
+        """
+        return pulumi.get(self, "db_system_id")
+
+    @db_system_id.setter
+    def db_system_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "db_system_id", value)
+
+    @property
+    @pulumi.getter(name="recoveryPoint")
+    def recovery_point(self) -> Optional[pulumi.Input[str]]:
+        """
+        The date and time, as per RFC 3339, of the change up to which the new DB System shall be restored to, using a backup and logs from the original DB System. In case no point in time is specified, then this new DB System shall be restored up to the latest change recorded for the original DB System.
+        """
+        return pulumi.get(self, "recovery_point")
+
+    @recovery_point.setter
+    def recovery_point(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "recovery_point", value)
 
 
 @pulumi.input_type

@@ -16,7 +16,7 @@ import java.util.Objects;
 @CustomType
 public final class GetBootVolumeResult {
     /**
-     * @return The number of Volume Performance Units per GB that this volume is effectively tuned to when it&#39;s idle.
+     * @return The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it&#39;s idle.
      * 
      */
     private final String autoTunedVpusPerGb;
@@ -116,7 +116,7 @@ public final class GetBootVolumeResult {
      */
     private final String volumeGroupId;
     /**
-     * @return The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service&#39;s elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+     * @return The number of volume performance units (VPUs) that will be applied to this boot volume per GB, representing the Block Volume service&#39;s elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
      * 
      */
     private final String vpusPerGb;
@@ -172,7 +172,7 @@ public final class GetBootVolumeResult {
     }
 
     /**
-     * @return The number of Volume Performance Units per GB that this volume is effectively tuned to when it&#39;s idle.
+     * @return The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it&#39;s idle.
      * 
      */
     public String autoTunedVpusPerGb() {
@@ -316,7 +316,7 @@ public final class GetBootVolumeResult {
         return this.volumeGroupId;
     }
     /**
-     * @return The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service&#39;s elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+     * @return The number of volume performance units (VPUs) that will be applied to this boot volume per GB, representing the Block Volume service&#39;s elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
      * 
      */
     public String vpusPerGb() {

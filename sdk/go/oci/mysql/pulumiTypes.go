@@ -894,7 +894,7 @@ type MysqlBackupDbSystemSnapshot struct {
 	Id *string `pulumi:"id"`
 	// The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
 	IpAddress *string `pulumi:"ipAddress"`
-	// If the policy is to enable high availability of the instance, by maintaining secondary/failover capacity as necessary.
+	// Specifies if the DB System is highly available.
 	IsHighlyAvailable *bool `pulumi:"isHighlyAvailable"`
 	// The Maintenance Policy for the DB System.
 	Maintenances []MysqlBackupDbSystemSnapshotMaintenance `pulumi:"maintenances"`
@@ -956,7 +956,7 @@ type MysqlBackupDbSystemSnapshotArgs struct {
 	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
 	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
-	// If the policy is to enable high availability of the instance, by maintaining secondary/failover capacity as necessary.
+	// Specifies if the DB System is highly available.
 	IsHighlyAvailable pulumi.BoolPtrInput `pulumi:"isHighlyAvailable"`
 	// The Maintenance Policy for the DB System.
 	Maintenances MysqlBackupDbSystemSnapshotMaintenanceArrayInput `pulumi:"maintenances"`
@@ -1110,7 +1110,7 @@ func (o MysqlBackupDbSystemSnapshotOutput) IpAddress() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MysqlBackupDbSystemSnapshot) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
 }
 
-// If the policy is to enable high availability of the instance, by maintaining secondary/failover capacity as necessary.
+// Specifies if the DB System is highly available.
 func (o MysqlBackupDbSystemSnapshotOutput) IsHighlyAvailable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v MysqlBackupDbSystemSnapshot) *bool { return v.IsHighlyAvailable }).(pulumi.BoolPtrOutput)
 }
@@ -1170,8 +1170,10 @@ type MysqlBackupDbSystemSnapshotBackupPolicy struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// If automated backups are enabled or disabled.
+	// Specifies if PITR is enabled or disabled.
 	IsEnabled *bool `pulumi:"isEnabled"`
+	// The PITR policy for the DB System.
+	PitrPolicies []MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy `pulumi:"pitrPolicies"`
 	// (Updatable) Number of days to retain this backup.
 	RetentionInDays *int `pulumi:"retentionInDays"`
 	// The start time of the maintenance window.
@@ -1194,8 +1196,10 @@ type MysqlBackupDbSystemSnapshotBackupPolicyArgs struct {
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
-	// If automated backups are enabled or disabled.
+	// Specifies if PITR is enabled or disabled.
 	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
+	// The PITR policy for the DB System.
+	PitrPolicies MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayInput `pulumi:"pitrPolicies"`
 	// (Updatable) Number of days to retain this backup.
 	RetentionInDays pulumi.IntPtrInput `pulumi:"retentionInDays"`
 	// The start time of the maintenance window.
@@ -1263,9 +1267,16 @@ func (o MysqlBackupDbSystemSnapshotBackupPolicyOutput) FreeformTags() pulumi.Map
 	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotBackupPolicy) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// If automated backups are enabled or disabled.
+// Specifies if PITR is enabled or disabled.
 func (o MysqlBackupDbSystemSnapshotBackupPolicyOutput) IsEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotBackupPolicy) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
+}
+
+// The PITR policy for the DB System.
+func (o MysqlBackupDbSystemSnapshotBackupPolicyOutput) PitrPolicies() MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotBackupPolicy) []MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy {
+		return v.PitrPolicies
+	}).(MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput)
 }
 
 // (Updatable) Number of days to retain this backup.
@@ -1296,6 +1307,103 @@ func (o MysqlBackupDbSystemSnapshotBackupPolicyArrayOutput) Index(i pulumi.IntIn
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MysqlBackupDbSystemSnapshotBackupPolicy {
 		return vs[0].([]MysqlBackupDbSystemSnapshotBackupPolicy)[vs[1].(int)]
 	}).(MysqlBackupDbSystemSnapshotBackupPolicyOutput)
+}
+
+type MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy struct {
+	// Specifies if PITR is enabled or disabled.
+	IsEnabled *bool `pulumi:"isEnabled"`
+}
+
+// MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyInput is an input type that accepts MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs and MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput values.
+// You can construct a concrete instance of `MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyInput` via:
+//
+//          MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs{...}
+type MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyInput interface {
+	pulumi.Input
+
+	ToMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput() MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput
+	ToMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutputWithContext(context.Context) MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput
+}
+
+type MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs struct {
+	// Specifies if PITR is enabled or disabled.
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
+}
+
+func (MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy)(nil)).Elem()
+}
+
+func (i MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs) ToMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput() MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput {
+	return i.ToMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutputWithContext(context.Background())
+}
+
+func (i MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs) ToMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput)
+}
+
+// MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayInput is an input type that accepts MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArray and MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput values.
+// You can construct a concrete instance of `MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayInput` via:
+//
+//          MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArray{ MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs{...} }
+type MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayInput interface {
+	pulumi.Input
+
+	ToMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput() MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput
+	ToMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutputWithContext(context.Context) MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput
+}
+
+type MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArray []MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyInput
+
+func (MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy)(nil)).Elem()
+}
+
+func (i MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArray) ToMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput() MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput {
+	return i.ToMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutputWithContext(context.Background())
+}
+
+func (i MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArray) ToMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput)
+}
+
+type MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput struct{ *pulumi.OutputState }
+
+func (MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy)(nil)).Elem()
+}
+
+func (o MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput) ToMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput() MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput {
+	return o
+}
+
+func (o MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput) ToMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput {
+	return o
+}
+
+// Specifies if PITR is enabled or disabled.
+func (o MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
+}
+
+type MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput struct{ *pulumi.OutputState }
+
+func (MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy)(nil)).Elem()
+}
+
+func (o MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput) ToMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput() MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput {
+	return o
+}
+
+func (o MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput) ToMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput {
+	return o
+}
+
+func (o MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput) Index(i pulumi.IntInput) MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy {
+		return vs[0].([]MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy)[vs[1].(int)]
+	}).(MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput)
 }
 
 type MysqlBackupDbSystemSnapshotDeletionPolicy struct {
@@ -1802,8 +1910,10 @@ type MysqlDbSystemBackupPolicy struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// (Updatable) Specifies if automatic backups are enabled.
+	// (Updatable) Specifies if PITR is enabled or disabled.
 	IsEnabled *bool `pulumi:"isEnabled"`
+	// (Updatable) The PITR policy for the DB System.
+	PitrPolicy *MysqlDbSystemBackupPolicyPitrPolicy `pulumi:"pitrPolicy"`
 	// (Updatable) Number of days to retain an automatic backup.
 	RetentionInDays *int `pulumi:"retentionInDays"`
 	// (Updatable) The start of the 2 hour maintenance window.
@@ -1826,8 +1936,10 @@ type MysqlDbSystemBackupPolicyArgs struct {
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
-	// (Updatable) Specifies if automatic backups are enabled.
+	// (Updatable) Specifies if PITR is enabled or disabled.
 	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
+	// (Updatable) The PITR policy for the DB System.
+	PitrPolicy MysqlDbSystemBackupPolicyPitrPolicyPtrInput `pulumi:"pitrPolicy"`
 	// (Updatable) Number of days to retain an automatic backup.
 	RetentionInDays pulumi.IntPtrInput `pulumi:"retentionInDays"`
 	// (Updatable) The start of the 2 hour maintenance window.
@@ -1921,9 +2033,14 @@ func (o MysqlDbSystemBackupPolicyOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v MysqlDbSystemBackupPolicy) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// (Updatable) Specifies if automatic backups are enabled.
+// (Updatable) Specifies if PITR is enabled or disabled.
 func (o MysqlDbSystemBackupPolicyOutput) IsEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v MysqlDbSystemBackupPolicy) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The PITR policy for the DB System.
+func (o MysqlDbSystemBackupPolicyOutput) PitrPolicy() MysqlDbSystemBackupPolicyPitrPolicyPtrOutput {
+	return o.ApplyT(func(v MysqlDbSystemBackupPolicy) *MysqlDbSystemBackupPolicyPitrPolicy { return v.PitrPolicy }).(MysqlDbSystemBackupPolicyPitrPolicyPtrOutput)
 }
 
 // (Updatable) Number of days to retain an automatic backup.
@@ -1980,7 +2097,7 @@ func (o MysqlDbSystemBackupPolicyPtrOutput) FreeformTags() pulumi.MapOutput {
 	}).(pulumi.MapOutput)
 }
 
-// (Updatable) Specifies if automatic backups are enabled.
+// (Updatable) Specifies if PITR is enabled or disabled.
 func (o MysqlDbSystemBackupPolicyPtrOutput) IsEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *MysqlDbSystemBackupPolicy) *bool {
 		if v == nil {
@@ -1988,6 +2105,16 @@ func (o MysqlDbSystemBackupPolicyPtrOutput) IsEnabled() pulumi.BoolPtrOutput {
 		}
 		return v.IsEnabled
 	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The PITR policy for the DB System.
+func (o MysqlDbSystemBackupPolicyPtrOutput) PitrPolicy() MysqlDbSystemBackupPolicyPitrPolicyPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystemBackupPolicy) *MysqlDbSystemBackupPolicyPitrPolicy {
+		if v == nil {
+			return nil
+		}
+		return v.PitrPolicy
+	}).(MysqlDbSystemBackupPolicyPitrPolicyPtrOutput)
 }
 
 // (Updatable) Number of days to retain an automatic backup.
@@ -2010,6 +2137,143 @@ func (o MysqlDbSystemBackupPolicyPtrOutput) WindowStartTime() pulumi.StringPtrOu
 	}).(pulumi.StringPtrOutput)
 }
 
+type MysqlDbSystemBackupPolicyPitrPolicy struct {
+	// (Updatable) Specifies if PITR is enabled or disabled.
+	IsEnabled *bool `pulumi:"isEnabled"`
+}
+
+// MysqlDbSystemBackupPolicyPitrPolicyInput is an input type that accepts MysqlDbSystemBackupPolicyPitrPolicyArgs and MysqlDbSystemBackupPolicyPitrPolicyOutput values.
+// You can construct a concrete instance of `MysqlDbSystemBackupPolicyPitrPolicyInput` via:
+//
+//          MysqlDbSystemBackupPolicyPitrPolicyArgs{...}
+type MysqlDbSystemBackupPolicyPitrPolicyInput interface {
+	pulumi.Input
+
+	ToMysqlDbSystemBackupPolicyPitrPolicyOutput() MysqlDbSystemBackupPolicyPitrPolicyOutput
+	ToMysqlDbSystemBackupPolicyPitrPolicyOutputWithContext(context.Context) MysqlDbSystemBackupPolicyPitrPolicyOutput
+}
+
+type MysqlDbSystemBackupPolicyPitrPolicyArgs struct {
+	// (Updatable) Specifies if PITR is enabled or disabled.
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
+}
+
+func (MysqlDbSystemBackupPolicyPitrPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlDbSystemBackupPolicyPitrPolicy)(nil)).Elem()
+}
+
+func (i MysqlDbSystemBackupPolicyPitrPolicyArgs) ToMysqlDbSystemBackupPolicyPitrPolicyOutput() MysqlDbSystemBackupPolicyPitrPolicyOutput {
+	return i.ToMysqlDbSystemBackupPolicyPitrPolicyOutputWithContext(context.Background())
+}
+
+func (i MysqlDbSystemBackupPolicyPitrPolicyArgs) ToMysqlDbSystemBackupPolicyPitrPolicyOutputWithContext(ctx context.Context) MysqlDbSystemBackupPolicyPitrPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemBackupPolicyPitrPolicyOutput)
+}
+
+func (i MysqlDbSystemBackupPolicyPitrPolicyArgs) ToMysqlDbSystemBackupPolicyPitrPolicyPtrOutput() MysqlDbSystemBackupPolicyPitrPolicyPtrOutput {
+	return i.ToMysqlDbSystemBackupPolicyPitrPolicyPtrOutputWithContext(context.Background())
+}
+
+func (i MysqlDbSystemBackupPolicyPitrPolicyArgs) ToMysqlDbSystemBackupPolicyPitrPolicyPtrOutputWithContext(ctx context.Context) MysqlDbSystemBackupPolicyPitrPolicyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemBackupPolicyPitrPolicyOutput).ToMysqlDbSystemBackupPolicyPitrPolicyPtrOutputWithContext(ctx)
+}
+
+// MysqlDbSystemBackupPolicyPitrPolicyPtrInput is an input type that accepts MysqlDbSystemBackupPolicyPitrPolicyArgs, MysqlDbSystemBackupPolicyPitrPolicyPtr and MysqlDbSystemBackupPolicyPitrPolicyPtrOutput values.
+// You can construct a concrete instance of `MysqlDbSystemBackupPolicyPitrPolicyPtrInput` via:
+//
+//          MysqlDbSystemBackupPolicyPitrPolicyArgs{...}
+//
+//  or:
+//
+//          nil
+type MysqlDbSystemBackupPolicyPitrPolicyPtrInput interface {
+	pulumi.Input
+
+	ToMysqlDbSystemBackupPolicyPitrPolicyPtrOutput() MysqlDbSystemBackupPolicyPitrPolicyPtrOutput
+	ToMysqlDbSystemBackupPolicyPitrPolicyPtrOutputWithContext(context.Context) MysqlDbSystemBackupPolicyPitrPolicyPtrOutput
+}
+
+type mysqlDbSystemBackupPolicyPitrPolicyPtrType MysqlDbSystemBackupPolicyPitrPolicyArgs
+
+func MysqlDbSystemBackupPolicyPitrPolicyPtr(v *MysqlDbSystemBackupPolicyPitrPolicyArgs) MysqlDbSystemBackupPolicyPitrPolicyPtrInput {
+	return (*mysqlDbSystemBackupPolicyPitrPolicyPtrType)(v)
+}
+
+func (*mysqlDbSystemBackupPolicyPitrPolicyPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MysqlDbSystemBackupPolicyPitrPolicy)(nil)).Elem()
+}
+
+func (i *mysqlDbSystemBackupPolicyPitrPolicyPtrType) ToMysqlDbSystemBackupPolicyPitrPolicyPtrOutput() MysqlDbSystemBackupPolicyPitrPolicyPtrOutput {
+	return i.ToMysqlDbSystemBackupPolicyPitrPolicyPtrOutputWithContext(context.Background())
+}
+
+func (i *mysqlDbSystemBackupPolicyPitrPolicyPtrType) ToMysqlDbSystemBackupPolicyPitrPolicyPtrOutputWithContext(ctx context.Context) MysqlDbSystemBackupPolicyPitrPolicyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemBackupPolicyPitrPolicyPtrOutput)
+}
+
+type MysqlDbSystemBackupPolicyPitrPolicyOutput struct{ *pulumi.OutputState }
+
+func (MysqlDbSystemBackupPolicyPitrPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlDbSystemBackupPolicyPitrPolicy)(nil)).Elem()
+}
+
+func (o MysqlDbSystemBackupPolicyPitrPolicyOutput) ToMysqlDbSystemBackupPolicyPitrPolicyOutput() MysqlDbSystemBackupPolicyPitrPolicyOutput {
+	return o
+}
+
+func (o MysqlDbSystemBackupPolicyPitrPolicyOutput) ToMysqlDbSystemBackupPolicyPitrPolicyOutputWithContext(ctx context.Context) MysqlDbSystemBackupPolicyPitrPolicyOutput {
+	return o
+}
+
+func (o MysqlDbSystemBackupPolicyPitrPolicyOutput) ToMysqlDbSystemBackupPolicyPitrPolicyPtrOutput() MysqlDbSystemBackupPolicyPitrPolicyPtrOutput {
+	return o.ToMysqlDbSystemBackupPolicyPitrPolicyPtrOutputWithContext(context.Background())
+}
+
+func (o MysqlDbSystemBackupPolicyPitrPolicyOutput) ToMysqlDbSystemBackupPolicyPitrPolicyPtrOutputWithContext(ctx context.Context) MysqlDbSystemBackupPolicyPitrPolicyPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MysqlDbSystemBackupPolicyPitrPolicy) *MysqlDbSystemBackupPolicyPitrPolicy {
+		return &v
+	}).(MysqlDbSystemBackupPolicyPitrPolicyPtrOutput)
+}
+
+// (Updatable) Specifies if PITR is enabled or disabled.
+func (o MysqlDbSystemBackupPolicyPitrPolicyOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MysqlDbSystemBackupPolicyPitrPolicy) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
+}
+
+type MysqlDbSystemBackupPolicyPitrPolicyPtrOutput struct{ *pulumi.OutputState }
+
+func (MysqlDbSystemBackupPolicyPitrPolicyPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MysqlDbSystemBackupPolicyPitrPolicy)(nil)).Elem()
+}
+
+func (o MysqlDbSystemBackupPolicyPitrPolicyPtrOutput) ToMysqlDbSystemBackupPolicyPitrPolicyPtrOutput() MysqlDbSystemBackupPolicyPitrPolicyPtrOutput {
+	return o
+}
+
+func (o MysqlDbSystemBackupPolicyPitrPolicyPtrOutput) ToMysqlDbSystemBackupPolicyPitrPolicyPtrOutputWithContext(ctx context.Context) MysqlDbSystemBackupPolicyPitrPolicyPtrOutput {
+	return o
+}
+
+func (o MysqlDbSystemBackupPolicyPitrPolicyPtrOutput) Elem() MysqlDbSystemBackupPolicyPitrPolicyOutput {
+	return o.ApplyT(func(v *MysqlDbSystemBackupPolicyPitrPolicy) MysqlDbSystemBackupPolicyPitrPolicy {
+		if v != nil {
+			return *v
+		}
+		var ret MysqlDbSystemBackupPolicyPitrPolicy
+		return ret
+	}).(MysqlDbSystemBackupPolicyPitrPolicyOutput)
+}
+
+// (Updatable) Specifies if PITR is enabled or disabled.
+func (o MysqlDbSystemBackupPolicyPitrPolicyPtrOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystemBackupPolicyPitrPolicy) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
 type MysqlDbSystemChannel struct {
 	// The OCID of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
@@ -2021,7 +2285,7 @@ type MysqlDbSystemChannel struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the DB System.
 	Id *string `pulumi:"id"`
-	// (Updatable) Specifies if automatic backups are enabled.
+	// (Updatable) Specifies if PITR is enabled or disabled.
 	IsEnabled *bool `pulumi:"isEnabled"`
 	// Additional information about the current lifecycleState.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
@@ -2059,7 +2323,7 @@ type MysqlDbSystemChannelArgs struct {
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID of the DB System.
 	Id pulumi.StringPtrInput `pulumi:"id"`
-	// (Updatable) Specifies if automatic backups are enabled.
+	// (Updatable) Specifies if PITR is enabled or disabled.
 	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 	// Additional information about the current lifecycleState.
 	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
@@ -2151,7 +2415,7 @@ func (o MysqlDbSystemChannelOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MysqlDbSystemChannel) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Specifies if automatic backups are enabled.
+// (Updatable) Specifies if PITR is enabled or disabled.
 func (o MysqlDbSystemChannelOutput) IsEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v MysqlDbSystemChannel) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
@@ -2461,7 +2725,7 @@ type MysqlDbSystemChannelTarget struct {
 	ApplierUsername *string `pulumi:"applierUsername"`
 	// The case-insensitive name that identifies the replication channel. Channel names must follow the rules defined for [MySQL identifiers](https://dev.mysql.com/doc/refman/8.0/en/identifiers.html). The names of non-Deleted Channels must be unique for each DB System.
 	ChannelName *string `pulumi:"channelName"`
-	// The OCID of the source DB System.
+	// The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
 	DbSystemId *string `pulumi:"dbSystemId"`
 	// The specific target identifier.
 	TargetType *string `pulumi:"targetType"`
@@ -2483,7 +2747,7 @@ type MysqlDbSystemChannelTargetArgs struct {
 	ApplierUsername pulumi.StringPtrInput `pulumi:"applierUsername"`
 	// The case-insensitive name that identifies the replication channel. Channel names must follow the rules defined for [MySQL identifiers](https://dev.mysql.com/doc/refman/8.0/en/identifiers.html). The names of non-Deleted Channels must be unique for each DB System.
 	ChannelName pulumi.StringPtrInput `pulumi:"channelName"`
-	// The OCID of the source DB System.
+	// The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
 	DbSystemId pulumi.StringPtrInput `pulumi:"dbSystemId"`
 	// The specific target identifier.
 	TargetType pulumi.StringPtrInput `pulumi:"targetType"`
@@ -2550,7 +2814,7 @@ func (o MysqlDbSystemChannelTargetOutput) ChannelName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MysqlDbSystemChannelTarget) *string { return v.ChannelName }).(pulumi.StringPtrOutput)
 }
 
-// The OCID of the source DB System.
+// The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
 func (o MysqlDbSystemChannelTargetOutput) DbSystemId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MysqlDbSystemChannelTarget) *string { return v.DbSystemId }).(pulumi.StringPtrOutput)
 }
@@ -3225,9 +3489,119 @@ func (o MysqlDbSystemMaintenancePtrOutput) WindowStartTime() pulumi.StringPtrOut
 	}).(pulumi.StringPtrOutput)
 }
 
+type MysqlDbSystemPointInTimeRecoveryDetail struct {
+	// Earliest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeEarliestRecoveryPoint *string `pulumi:"timeEarliestRecoveryPoint"`
+	// Latest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeLatestRecoveryPoint *string `pulumi:"timeLatestRecoveryPoint"`
+}
+
+// MysqlDbSystemPointInTimeRecoveryDetailInput is an input type that accepts MysqlDbSystemPointInTimeRecoveryDetailArgs and MysqlDbSystemPointInTimeRecoveryDetailOutput values.
+// You can construct a concrete instance of `MysqlDbSystemPointInTimeRecoveryDetailInput` via:
+//
+//          MysqlDbSystemPointInTimeRecoveryDetailArgs{...}
+type MysqlDbSystemPointInTimeRecoveryDetailInput interface {
+	pulumi.Input
+
+	ToMysqlDbSystemPointInTimeRecoveryDetailOutput() MysqlDbSystemPointInTimeRecoveryDetailOutput
+	ToMysqlDbSystemPointInTimeRecoveryDetailOutputWithContext(context.Context) MysqlDbSystemPointInTimeRecoveryDetailOutput
+}
+
+type MysqlDbSystemPointInTimeRecoveryDetailArgs struct {
+	// Earliest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeEarliestRecoveryPoint pulumi.StringPtrInput `pulumi:"timeEarliestRecoveryPoint"`
+	// Latest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeLatestRecoveryPoint pulumi.StringPtrInput `pulumi:"timeLatestRecoveryPoint"`
+}
+
+func (MysqlDbSystemPointInTimeRecoveryDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlDbSystemPointInTimeRecoveryDetail)(nil)).Elem()
+}
+
+func (i MysqlDbSystemPointInTimeRecoveryDetailArgs) ToMysqlDbSystemPointInTimeRecoveryDetailOutput() MysqlDbSystemPointInTimeRecoveryDetailOutput {
+	return i.ToMysqlDbSystemPointInTimeRecoveryDetailOutputWithContext(context.Background())
+}
+
+func (i MysqlDbSystemPointInTimeRecoveryDetailArgs) ToMysqlDbSystemPointInTimeRecoveryDetailOutputWithContext(ctx context.Context) MysqlDbSystemPointInTimeRecoveryDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemPointInTimeRecoveryDetailOutput)
+}
+
+// MysqlDbSystemPointInTimeRecoveryDetailArrayInput is an input type that accepts MysqlDbSystemPointInTimeRecoveryDetailArray and MysqlDbSystemPointInTimeRecoveryDetailArrayOutput values.
+// You can construct a concrete instance of `MysqlDbSystemPointInTimeRecoveryDetailArrayInput` via:
+//
+//          MysqlDbSystemPointInTimeRecoveryDetailArray{ MysqlDbSystemPointInTimeRecoveryDetailArgs{...} }
+type MysqlDbSystemPointInTimeRecoveryDetailArrayInput interface {
+	pulumi.Input
+
+	ToMysqlDbSystemPointInTimeRecoveryDetailArrayOutput() MysqlDbSystemPointInTimeRecoveryDetailArrayOutput
+	ToMysqlDbSystemPointInTimeRecoveryDetailArrayOutputWithContext(context.Context) MysqlDbSystemPointInTimeRecoveryDetailArrayOutput
+}
+
+type MysqlDbSystemPointInTimeRecoveryDetailArray []MysqlDbSystemPointInTimeRecoveryDetailInput
+
+func (MysqlDbSystemPointInTimeRecoveryDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MysqlDbSystemPointInTimeRecoveryDetail)(nil)).Elem()
+}
+
+func (i MysqlDbSystemPointInTimeRecoveryDetailArray) ToMysqlDbSystemPointInTimeRecoveryDetailArrayOutput() MysqlDbSystemPointInTimeRecoveryDetailArrayOutput {
+	return i.ToMysqlDbSystemPointInTimeRecoveryDetailArrayOutputWithContext(context.Background())
+}
+
+func (i MysqlDbSystemPointInTimeRecoveryDetailArray) ToMysqlDbSystemPointInTimeRecoveryDetailArrayOutputWithContext(ctx context.Context) MysqlDbSystemPointInTimeRecoveryDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemPointInTimeRecoveryDetailArrayOutput)
+}
+
+type MysqlDbSystemPointInTimeRecoveryDetailOutput struct{ *pulumi.OutputState }
+
+func (MysqlDbSystemPointInTimeRecoveryDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlDbSystemPointInTimeRecoveryDetail)(nil)).Elem()
+}
+
+func (o MysqlDbSystemPointInTimeRecoveryDetailOutput) ToMysqlDbSystemPointInTimeRecoveryDetailOutput() MysqlDbSystemPointInTimeRecoveryDetailOutput {
+	return o
+}
+
+func (o MysqlDbSystemPointInTimeRecoveryDetailOutput) ToMysqlDbSystemPointInTimeRecoveryDetailOutputWithContext(ctx context.Context) MysqlDbSystemPointInTimeRecoveryDetailOutput {
+	return o
+}
+
+// Earliest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+func (o MysqlDbSystemPointInTimeRecoveryDetailOutput) TimeEarliestRecoveryPoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlDbSystemPointInTimeRecoveryDetail) *string { return v.TimeEarliestRecoveryPoint }).(pulumi.StringPtrOutput)
+}
+
+// Latest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+func (o MysqlDbSystemPointInTimeRecoveryDetailOutput) TimeLatestRecoveryPoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlDbSystemPointInTimeRecoveryDetail) *string { return v.TimeLatestRecoveryPoint }).(pulumi.StringPtrOutput)
+}
+
+type MysqlDbSystemPointInTimeRecoveryDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (MysqlDbSystemPointInTimeRecoveryDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MysqlDbSystemPointInTimeRecoveryDetail)(nil)).Elem()
+}
+
+func (o MysqlDbSystemPointInTimeRecoveryDetailArrayOutput) ToMysqlDbSystemPointInTimeRecoveryDetailArrayOutput() MysqlDbSystemPointInTimeRecoveryDetailArrayOutput {
+	return o
+}
+
+func (o MysqlDbSystemPointInTimeRecoveryDetailArrayOutput) ToMysqlDbSystemPointInTimeRecoveryDetailArrayOutputWithContext(ctx context.Context) MysqlDbSystemPointInTimeRecoveryDetailArrayOutput {
+	return o
+}
+
+func (o MysqlDbSystemPointInTimeRecoveryDetailArrayOutput) Index(i pulumi.IntInput) MysqlDbSystemPointInTimeRecoveryDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MysqlDbSystemPointInTimeRecoveryDetail {
+		return vs[0].([]MysqlDbSystemPointInTimeRecoveryDetail)[vs[1].(int)]
+	}).(MysqlDbSystemPointInTimeRecoveryDetailOutput)
+}
+
 type MysqlDbSystemSource struct {
 	// The OCID of the backup to be used as the source for the new DB System.
 	BackupId *string `pulumi:"backupId"`
+	// The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
+	DbSystemId *string `pulumi:"dbSystemId"`
+	// The date and time, as per RFC 3339, of the change up to which the new DB System shall be restored to, using a backup and logs from the original DB System. In case no point in time is specified, then this new DB System shall be restored up to the latest change recorded for the original DB System.
+	RecoveryPoint *string `pulumi:"recoveryPoint"`
 	// The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup.
 	SourceType string `pulumi:"sourceType"`
 }
@@ -3246,6 +3620,10 @@ type MysqlDbSystemSourceInput interface {
 type MysqlDbSystemSourceArgs struct {
 	// The OCID of the backup to be used as the source for the new DB System.
 	BackupId pulumi.StringPtrInput `pulumi:"backupId"`
+	// The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
+	DbSystemId pulumi.StringPtrInput `pulumi:"dbSystemId"`
+	// The date and time, as per RFC 3339, of the change up to which the new DB System shall be restored to, using a backup and logs from the original DB System. In case no point in time is specified, then this new DB System shall be restored up to the latest change recorded for the original DB System.
+	RecoveryPoint pulumi.StringPtrInput `pulumi:"recoveryPoint"`
 	// The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup.
 	SourceType pulumi.StringInput `pulumi:"sourceType"`
 }
@@ -3332,6 +3710,16 @@ func (o MysqlDbSystemSourceOutput) BackupId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MysqlDbSystemSource) *string { return v.BackupId }).(pulumi.StringPtrOutput)
 }
 
+// The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
+func (o MysqlDbSystemSourceOutput) DbSystemId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlDbSystemSource) *string { return v.DbSystemId }).(pulumi.StringPtrOutput)
+}
+
+// The date and time, as per RFC 3339, of the change up to which the new DB System shall be restored to, using a backup and logs from the original DB System. In case no point in time is specified, then this new DB System shall be restored up to the latest change recorded for the original DB System.
+func (o MysqlDbSystemSourceOutput) RecoveryPoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlDbSystemSource) *string { return v.RecoveryPoint }).(pulumi.StringPtrOutput)
+}
+
 // The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup.
 func (o MysqlDbSystemSourceOutput) SourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v MysqlDbSystemSource) string { return v.SourceType }).(pulumi.StringOutput)
@@ -3368,6 +3756,26 @@ func (o MysqlDbSystemSourcePtrOutput) BackupId() pulumi.StringPtrOutput {
 			return nil
 		}
 		return v.BackupId
+	}).(pulumi.StringPtrOutput)
+}
+
+// The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
+func (o MysqlDbSystemSourcePtrOutput) DbSystemId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystemSource) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DbSystemId
+	}).(pulumi.StringPtrOutput)
+}
+
+// The date and time, as per RFC 3339, of the change up to which the new DB System shall be restored to, using a backup and logs from the original DB System. In case no point in time is specified, then this new DB System shall be restored up to the latest change recorded for the original DB System.
+func (o MysqlDbSystemSourcePtrOutput) RecoveryPoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystemSource) *string {
+		if v == nil {
+			return nil
+		}
+		return v.RecoveryPoint
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -4733,7 +5141,7 @@ type GetMysqlBackupDbSystemSnapshot struct {
 	Id string `pulumi:"id"`
 	// The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
 	IpAddress string `pulumi:"ipAddress"`
-	// If the policy is to enable high availability of the instance, by maintaining secondary/failover capacity as necessary.
+	// Specifies if the DB System is highly available.
 	IsHighlyAvailable bool `pulumi:"isHighlyAvailable"`
 	// The Maintenance Policy for the DB System.
 	Maintenances []GetMysqlBackupDbSystemSnapshotMaintenance `pulumi:"maintenances"`
@@ -4795,7 +5203,7 @@ type GetMysqlBackupDbSystemSnapshotArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
 	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
-	// If the policy is to enable high availability of the instance, by maintaining secondary/failover capacity as necessary.
+	// Specifies if the DB System is highly available.
 	IsHighlyAvailable pulumi.BoolInput `pulumi:"isHighlyAvailable"`
 	// The Maintenance Policy for the DB System.
 	Maintenances GetMysqlBackupDbSystemSnapshotMaintenanceArrayInput `pulumi:"maintenances"`
@@ -4951,7 +5359,7 @@ func (o GetMysqlBackupDbSystemSnapshotOutput) IpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) string { return v.IpAddress }).(pulumi.StringOutput)
 }
 
-// If the policy is to enable high availability of the instance, by maintaining secondary/failover capacity as necessary.
+// Specifies if the DB System is highly available.
 func (o GetMysqlBackupDbSystemSnapshotOutput) IsHighlyAvailable() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) bool { return v.IsHighlyAvailable }).(pulumi.BoolOutput)
 }
@@ -5013,8 +5421,10 @@ type GetMysqlBackupDbSystemSnapshotBackupPolicy struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// If automated backups are enabled or disabled.
+	// Specifies if PITR is enabled or disabled.
 	IsEnabled bool `pulumi:"isEnabled"`
+	// The PITR policy for the DB System.
+	PitrPolicies []GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy `pulumi:"pitrPolicies"`
 	// Number of days to retain this backup.
 	RetentionInDays int `pulumi:"retentionInDays"`
 	// The start time of the maintenance window.
@@ -5037,8 +5447,10 @@ type GetMysqlBackupDbSystemSnapshotBackupPolicyArgs struct {
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
-	// If automated backups are enabled or disabled.
+	// Specifies if PITR is enabled or disabled.
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	// The PITR policy for the DB System.
+	PitrPolicies GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayInput `pulumi:"pitrPolicies"`
 	// Number of days to retain this backup.
 	RetentionInDays pulumi.IntInput `pulumi:"retentionInDays"`
 	// The start time of the maintenance window.
@@ -5106,9 +5518,16 @@ func (o GetMysqlBackupDbSystemSnapshotBackupPolicyOutput) FreeformTags() pulumi.
 	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotBackupPolicy) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// If automated backups are enabled or disabled.
+// Specifies if PITR is enabled or disabled.
 func (o GetMysqlBackupDbSystemSnapshotBackupPolicyOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotBackupPolicy) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+}
+
+// The PITR policy for the DB System.
+func (o GetMysqlBackupDbSystemSnapshotBackupPolicyOutput) PitrPolicies() GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotBackupPolicy) []GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy {
+		return v.PitrPolicies
+	}).(GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput)
 }
 
 // Number of days to retain this backup.
@@ -5139,6 +5558,103 @@ func (o GetMysqlBackupDbSystemSnapshotBackupPolicyArrayOutput) Index(i pulumi.In
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupDbSystemSnapshotBackupPolicy {
 		return vs[0].([]GetMysqlBackupDbSystemSnapshotBackupPolicy)[vs[1].(int)]
 	}).(GetMysqlBackupDbSystemSnapshotBackupPolicyOutput)
+}
+
+type GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy struct {
+	// Specifies if PITR is enabled or disabled.
+	IsEnabled bool `pulumi:"isEnabled"`
+}
+
+// GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyInput is an input type that accepts GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs and GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput values.
+// You can construct a concrete instance of `GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyInput` via:
+//
+//          GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs{...}
+type GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyInput interface {
+	pulumi.Input
+
+	ToGetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput() GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput
+	ToGetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutputWithContext(context.Context) GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput
+}
+
+type GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs struct {
+	// Specifies if PITR is enabled or disabled.
+	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+}
+
+func (GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy)(nil)).Elem()
+}
+
+func (i GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs) ToGetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput() GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput {
+	return i.ToGetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutputWithContext(context.Background())
+}
+
+func (i GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs) ToGetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput)
+}
+
+// GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayInput is an input type that accepts GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArray and GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput values.
+// You can construct a concrete instance of `GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayInput` via:
+//
+//          GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArray{ GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs{...} }
+type GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput() GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput
+	ToGetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutputWithContext(context.Context) GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput
+}
+
+type GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArray []GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyInput
+
+func (GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy)(nil)).Elem()
+}
+
+func (i GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArray) ToGetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput() GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput {
+	return i.ToGetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArray) ToGetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput)
+}
+
+type GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy)(nil)).Elem()
+}
+
+func (o GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput) ToGetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput() GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput {
+	return o
+}
+
+func (o GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput) ToGetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput {
+	return o
+}
+
+// Specifies if PITR is enabled or disabled.
+func (o GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput) IsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+}
+
+type GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy)(nil)).Elem()
+}
+
+func (o GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput) ToGetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput() GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput {
+	return o
+}
+
+func (o GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput) ToGetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput {
+	return o
+}
+
+func (o GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy {
+		return vs[0].([]GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy)[vs[1].(int)]
+	}).(GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput)
 }
 
 type GetMysqlBackupDbSystemSnapshotDeletionPolicy struct {
@@ -5798,7 +6314,7 @@ type GetMysqlBackupsBackupDbSystemSnapshot struct {
 	Id string `pulumi:"id"`
 	// The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
 	IpAddress string `pulumi:"ipAddress"`
-	// If the policy is to enable high availability of the instance, by maintaining secondary/failover capacity as necessary.
+	// Specifies if the DB System is highly available.
 	IsHighlyAvailable bool `pulumi:"isHighlyAvailable"`
 	// The Maintenance Policy for the DB System.
 	Maintenances []GetMysqlBackupsBackupDbSystemSnapshotMaintenance `pulumi:"maintenances"`
@@ -5860,7 +6376,7 @@ type GetMysqlBackupsBackupDbSystemSnapshotArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
 	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
-	// If the policy is to enable high availability of the instance, by maintaining secondary/failover capacity as necessary.
+	// Specifies if the DB System is highly available.
 	IsHighlyAvailable pulumi.BoolInput `pulumi:"isHighlyAvailable"`
 	// The Maintenance Policy for the DB System.
 	Maintenances GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayInput `pulumi:"maintenances"`
@@ -6018,7 +6534,7 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) IpAddress() pulumi.StringOu
 	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) string { return v.IpAddress }).(pulumi.StringOutput)
 }
 
-// If the policy is to enable high availability of the instance, by maintaining secondary/failover capacity as necessary.
+// Specifies if the DB System is highly available.
 func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) IsHighlyAvailable() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) bool { return v.IsHighlyAvailable }).(pulumi.BoolOutput)
 }
@@ -6080,8 +6596,10 @@ type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// If automated backups are enabled or disabled.
+	// Specifies if PITR is enabled or disabled.
 	IsEnabled bool `pulumi:"isEnabled"`
+	// The PITR policy for the DB System.
+	PitrPolicies []GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy `pulumi:"pitrPolicies"`
 	// Number of days to retain this backup.
 	RetentionInDays int `pulumi:"retentionInDays"`
 	// The start time of the maintenance window.
@@ -6104,8 +6622,10 @@ type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArgs struct {
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
-	// If automated backups are enabled or disabled.
+	// Specifies if PITR is enabled or disabled.
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	// The PITR policy for the DB System.
+	PitrPolicies GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayInput `pulumi:"pitrPolicies"`
 	// Number of days to retain this backup.
 	RetentionInDays pulumi.IntInput `pulumi:"retentionInDays"`
 	// The start time of the maintenance window.
@@ -6175,9 +6695,16 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput) FreeformTags() 
 	}).(pulumi.MapOutput)
 }
 
-// If automated backups are enabled or disabled.
+// Specifies if PITR is enabled or disabled.
 func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+}
+
+// The PITR policy for the DB System.
+func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput) PitrPolicies() GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy) []GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy {
+		return v.PitrPolicies
+	}).(GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput)
 }
 
 // Number of days to retain this backup.
@@ -6208,6 +6735,103 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArrayOutput) Index(i pu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy {
 		return vs[0].([]GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy)[vs[1].(int)]
 	}).(GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput)
+}
+
+type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy struct {
+	// Specifies if PITR is enabled or disabled.
+	IsEnabled bool `pulumi:"isEnabled"`
+}
+
+// GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyInput is an input type that accepts GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs and GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput values.
+// You can construct a concrete instance of `GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyInput` via:
+//
+//          GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs{...}
+type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyInput interface {
+	pulumi.Input
+
+	ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput() GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput
+	ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutputWithContext(context.Context) GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput
+}
+
+type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs struct {
+	// Specifies if PITR is enabled or disabled.
+	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+}
+
+func (GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy)(nil)).Elem()
+}
+
+func (i GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs) ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput() GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput {
+	return i.ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutputWithContext(context.Background())
+}
+
+func (i GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs) ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput)
+}
+
+// GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayInput is an input type that accepts GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArray and GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput values.
+// You can construct a concrete instance of `GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayInput` via:
+//
+//          GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArray{ GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs{...} }
+type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput
+	ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutputWithContext(context.Context) GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput
+}
+
+type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArray []GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyInput
+
+func (GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy)(nil)).Elem()
+}
+
+func (i GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArray) ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput {
+	return i.ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArray) ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput)
+}
+
+type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy)(nil)).Elem()
+}
+
+func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput) ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput() GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput {
+	return o
+}
+
+func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput) ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput {
+	return o
+}
+
+// Specifies if PITR is enabled or disabled.
+func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput) IsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+}
+
+type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy)(nil)).Elem()
+}
+
+func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput) ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput {
+	return o
+}
+
+func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput) ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput {
+	return o
+}
+
+func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy {
+		return vs[0].([]GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy)[vs[1].(int)]
+	}).(GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput)
 }
 
 type GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy struct {
@@ -8263,6 +8887,8 @@ type GetMysqlDbSystemBackupPolicy struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Whether the Channel has been enabled by the user.
 	IsEnabled bool `pulumi:"isEnabled"`
+	// The PITR policy for the DB System.
+	PitrPolicies []GetMysqlDbSystemBackupPolicyPitrPolicy `pulumi:"pitrPolicies"`
 	// The number of days automated backups are retained.
 	RetentionInDays int `pulumi:"retentionInDays"`
 	// The start time of the maintenance window.
@@ -8287,6 +8913,8 @@ type GetMysqlDbSystemBackupPolicyArgs struct {
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Whether the Channel has been enabled by the user.
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	// The PITR policy for the DB System.
+	PitrPolicies GetMysqlDbSystemBackupPolicyPitrPolicyArrayInput `pulumi:"pitrPolicies"`
 	// The number of days automated backups are retained.
 	RetentionInDays pulumi.IntInput `pulumi:"retentionInDays"`
 	// The start time of the maintenance window.
@@ -8359,6 +8987,11 @@ func (o GetMysqlDbSystemBackupPolicyOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemBackupPolicy) bool { return v.IsEnabled }).(pulumi.BoolOutput)
 }
 
+// The PITR policy for the DB System.
+func (o GetMysqlDbSystemBackupPolicyOutput) PitrPolicies() GetMysqlDbSystemBackupPolicyPitrPolicyArrayOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemBackupPolicy) []GetMysqlDbSystemBackupPolicyPitrPolicy { return v.PitrPolicies }).(GetMysqlDbSystemBackupPolicyPitrPolicyArrayOutput)
+}
+
 // The number of days automated backups are retained.
 func (o GetMysqlDbSystemBackupPolicyOutput) RetentionInDays() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemBackupPolicy) int { return v.RetentionInDays }).(pulumi.IntOutput)
@@ -8387,6 +9020,103 @@ func (o GetMysqlDbSystemBackupPolicyArrayOutput) Index(i pulumi.IntInput) GetMys
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemBackupPolicy {
 		return vs[0].([]GetMysqlDbSystemBackupPolicy)[vs[1].(int)]
 	}).(GetMysqlDbSystemBackupPolicyOutput)
+}
+
+type GetMysqlDbSystemBackupPolicyPitrPolicy struct {
+	// Whether the Channel has been enabled by the user.
+	IsEnabled bool `pulumi:"isEnabled"`
+}
+
+// GetMysqlDbSystemBackupPolicyPitrPolicyInput is an input type that accepts GetMysqlDbSystemBackupPolicyPitrPolicyArgs and GetMysqlDbSystemBackupPolicyPitrPolicyOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemBackupPolicyPitrPolicyInput` via:
+//
+//          GetMysqlDbSystemBackupPolicyPitrPolicyArgs{...}
+type GetMysqlDbSystemBackupPolicyPitrPolicyInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemBackupPolicyPitrPolicyOutput() GetMysqlDbSystemBackupPolicyPitrPolicyOutput
+	ToGetMysqlDbSystemBackupPolicyPitrPolicyOutputWithContext(context.Context) GetMysqlDbSystemBackupPolicyPitrPolicyOutput
+}
+
+type GetMysqlDbSystemBackupPolicyPitrPolicyArgs struct {
+	// Whether the Channel has been enabled by the user.
+	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+}
+
+func (GetMysqlDbSystemBackupPolicyPitrPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemBackupPolicyPitrPolicy)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemBackupPolicyPitrPolicyArgs) ToGetMysqlDbSystemBackupPolicyPitrPolicyOutput() GetMysqlDbSystemBackupPolicyPitrPolicyOutput {
+	return i.ToGetMysqlDbSystemBackupPolicyPitrPolicyOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemBackupPolicyPitrPolicyArgs) ToGetMysqlDbSystemBackupPolicyPitrPolicyOutputWithContext(ctx context.Context) GetMysqlDbSystemBackupPolicyPitrPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemBackupPolicyPitrPolicyOutput)
+}
+
+// GetMysqlDbSystemBackupPolicyPitrPolicyArrayInput is an input type that accepts GetMysqlDbSystemBackupPolicyPitrPolicyArray and GetMysqlDbSystemBackupPolicyPitrPolicyArrayOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemBackupPolicyPitrPolicyArrayInput` via:
+//
+//          GetMysqlDbSystemBackupPolicyPitrPolicyArray{ GetMysqlDbSystemBackupPolicyPitrPolicyArgs{...} }
+type GetMysqlDbSystemBackupPolicyPitrPolicyArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemBackupPolicyPitrPolicyArrayOutput() GetMysqlDbSystemBackupPolicyPitrPolicyArrayOutput
+	ToGetMysqlDbSystemBackupPolicyPitrPolicyArrayOutputWithContext(context.Context) GetMysqlDbSystemBackupPolicyPitrPolicyArrayOutput
+}
+
+type GetMysqlDbSystemBackupPolicyPitrPolicyArray []GetMysqlDbSystemBackupPolicyPitrPolicyInput
+
+func (GetMysqlDbSystemBackupPolicyPitrPolicyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemBackupPolicyPitrPolicy)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemBackupPolicyPitrPolicyArray) ToGetMysqlDbSystemBackupPolicyPitrPolicyArrayOutput() GetMysqlDbSystemBackupPolicyPitrPolicyArrayOutput {
+	return i.ToGetMysqlDbSystemBackupPolicyPitrPolicyArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemBackupPolicyPitrPolicyArray) ToGetMysqlDbSystemBackupPolicyPitrPolicyArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemBackupPolicyPitrPolicyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemBackupPolicyPitrPolicyArrayOutput)
+}
+
+type GetMysqlDbSystemBackupPolicyPitrPolicyOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemBackupPolicyPitrPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemBackupPolicyPitrPolicy)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemBackupPolicyPitrPolicyOutput) ToGetMysqlDbSystemBackupPolicyPitrPolicyOutput() GetMysqlDbSystemBackupPolicyPitrPolicyOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemBackupPolicyPitrPolicyOutput) ToGetMysqlDbSystemBackupPolicyPitrPolicyOutputWithContext(ctx context.Context) GetMysqlDbSystemBackupPolicyPitrPolicyOutput {
+	return o
+}
+
+// Whether the Channel has been enabled by the user.
+func (o GetMysqlDbSystemBackupPolicyPitrPolicyOutput) IsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemBackupPolicyPitrPolicy) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+}
+
+type GetMysqlDbSystemBackupPolicyPitrPolicyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemBackupPolicyPitrPolicyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemBackupPolicyPitrPolicy)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemBackupPolicyPitrPolicyArrayOutput) ToGetMysqlDbSystemBackupPolicyPitrPolicyArrayOutput() GetMysqlDbSystemBackupPolicyPitrPolicyArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemBackupPolicyPitrPolicyArrayOutput) ToGetMysqlDbSystemBackupPolicyPitrPolicyArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemBackupPolicyPitrPolicyArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemBackupPolicyPitrPolicyArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemBackupPolicyPitrPolicyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemBackupPolicyPitrPolicy {
+		return vs[0].([]GetMysqlDbSystemBackupPolicyPitrPolicy)[vs[1].(int)]
+	}).(GetMysqlDbSystemBackupPolicyPitrPolicyOutput)
 }
 
 type GetMysqlDbSystemChannel struct {
@@ -9561,9 +10291,119 @@ func (o GetMysqlDbSystemMaintenanceArrayOutput) Index(i pulumi.IntInput) GetMysq
 	}).(GetMysqlDbSystemMaintenanceOutput)
 }
 
+type GetMysqlDbSystemPointInTimeRecoveryDetail struct {
+	// Earliest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeEarliestRecoveryPoint string `pulumi:"timeEarliestRecoveryPoint"`
+	// Latest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeLatestRecoveryPoint string `pulumi:"timeLatestRecoveryPoint"`
+}
+
+// GetMysqlDbSystemPointInTimeRecoveryDetailInput is an input type that accepts GetMysqlDbSystemPointInTimeRecoveryDetailArgs and GetMysqlDbSystemPointInTimeRecoveryDetailOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemPointInTimeRecoveryDetailInput` via:
+//
+//          GetMysqlDbSystemPointInTimeRecoveryDetailArgs{...}
+type GetMysqlDbSystemPointInTimeRecoveryDetailInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemPointInTimeRecoveryDetailOutput() GetMysqlDbSystemPointInTimeRecoveryDetailOutput
+	ToGetMysqlDbSystemPointInTimeRecoveryDetailOutputWithContext(context.Context) GetMysqlDbSystemPointInTimeRecoveryDetailOutput
+}
+
+type GetMysqlDbSystemPointInTimeRecoveryDetailArgs struct {
+	// Earliest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeEarliestRecoveryPoint pulumi.StringInput `pulumi:"timeEarliestRecoveryPoint"`
+	// Latest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeLatestRecoveryPoint pulumi.StringInput `pulumi:"timeLatestRecoveryPoint"`
+}
+
+func (GetMysqlDbSystemPointInTimeRecoveryDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemPointInTimeRecoveryDetail)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemPointInTimeRecoveryDetailArgs) ToGetMysqlDbSystemPointInTimeRecoveryDetailOutput() GetMysqlDbSystemPointInTimeRecoveryDetailOutput {
+	return i.ToGetMysqlDbSystemPointInTimeRecoveryDetailOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemPointInTimeRecoveryDetailArgs) ToGetMysqlDbSystemPointInTimeRecoveryDetailOutputWithContext(ctx context.Context) GetMysqlDbSystemPointInTimeRecoveryDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemPointInTimeRecoveryDetailOutput)
+}
+
+// GetMysqlDbSystemPointInTimeRecoveryDetailArrayInput is an input type that accepts GetMysqlDbSystemPointInTimeRecoveryDetailArray and GetMysqlDbSystemPointInTimeRecoveryDetailArrayOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemPointInTimeRecoveryDetailArrayInput` via:
+//
+//          GetMysqlDbSystemPointInTimeRecoveryDetailArray{ GetMysqlDbSystemPointInTimeRecoveryDetailArgs{...} }
+type GetMysqlDbSystemPointInTimeRecoveryDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemPointInTimeRecoveryDetailArrayOutput() GetMysqlDbSystemPointInTimeRecoveryDetailArrayOutput
+	ToGetMysqlDbSystemPointInTimeRecoveryDetailArrayOutputWithContext(context.Context) GetMysqlDbSystemPointInTimeRecoveryDetailArrayOutput
+}
+
+type GetMysqlDbSystemPointInTimeRecoveryDetailArray []GetMysqlDbSystemPointInTimeRecoveryDetailInput
+
+func (GetMysqlDbSystemPointInTimeRecoveryDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemPointInTimeRecoveryDetail)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemPointInTimeRecoveryDetailArray) ToGetMysqlDbSystemPointInTimeRecoveryDetailArrayOutput() GetMysqlDbSystemPointInTimeRecoveryDetailArrayOutput {
+	return i.ToGetMysqlDbSystemPointInTimeRecoveryDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemPointInTimeRecoveryDetailArray) ToGetMysqlDbSystemPointInTimeRecoveryDetailArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemPointInTimeRecoveryDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemPointInTimeRecoveryDetailArrayOutput)
+}
+
+type GetMysqlDbSystemPointInTimeRecoveryDetailOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemPointInTimeRecoveryDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemPointInTimeRecoveryDetail)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemPointInTimeRecoveryDetailOutput) ToGetMysqlDbSystemPointInTimeRecoveryDetailOutput() GetMysqlDbSystemPointInTimeRecoveryDetailOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemPointInTimeRecoveryDetailOutput) ToGetMysqlDbSystemPointInTimeRecoveryDetailOutputWithContext(ctx context.Context) GetMysqlDbSystemPointInTimeRecoveryDetailOutput {
+	return o
+}
+
+// Earliest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+func (o GetMysqlDbSystemPointInTimeRecoveryDetailOutput) TimeEarliestRecoveryPoint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemPointInTimeRecoveryDetail) string { return v.TimeEarliestRecoveryPoint }).(pulumi.StringOutput)
+}
+
+// Latest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+func (o GetMysqlDbSystemPointInTimeRecoveryDetailOutput) TimeLatestRecoveryPoint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemPointInTimeRecoveryDetail) string { return v.TimeLatestRecoveryPoint }).(pulumi.StringOutput)
+}
+
+type GetMysqlDbSystemPointInTimeRecoveryDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemPointInTimeRecoveryDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemPointInTimeRecoveryDetail)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemPointInTimeRecoveryDetailArrayOutput) ToGetMysqlDbSystemPointInTimeRecoveryDetailArrayOutput() GetMysqlDbSystemPointInTimeRecoveryDetailArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemPointInTimeRecoveryDetailArrayOutput) ToGetMysqlDbSystemPointInTimeRecoveryDetailArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemPointInTimeRecoveryDetailArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemPointInTimeRecoveryDetailArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemPointInTimeRecoveryDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemPointInTimeRecoveryDetail {
+		return vs[0].([]GetMysqlDbSystemPointInTimeRecoveryDetail)[vs[1].(int)]
+	}).(GetMysqlDbSystemPointInTimeRecoveryDetailOutput)
+}
+
 type GetMysqlDbSystemSource struct {
 	// The OCID of the backup to be used as the source for the new DB System.
 	BackupId string `pulumi:"backupId"`
+	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	DbSystemId string `pulumi:"dbSystemId"`
+	// The date and time, as per RFC 3339, of the change up to which the new DB System shall be restored to, using a backup and logs from the original DB System. In case no point in time is specified, then this new DB System shall be restored up to the latest change recorded for the original DB System.
+	RecoveryPoint string `pulumi:"recoveryPoint"`
 	// The specific source identifier.
 	SourceType string `pulumi:"sourceType"`
 }
@@ -9582,6 +10422,10 @@ type GetMysqlDbSystemSourceInput interface {
 type GetMysqlDbSystemSourceArgs struct {
 	// The OCID of the backup to be used as the source for the new DB System.
 	BackupId pulumi.StringInput `pulumi:"backupId"`
+	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
+	// The date and time, as per RFC 3339, of the change up to which the new DB System shall be restored to, using a backup and logs from the original DB System. In case no point in time is specified, then this new DB System shall be restored up to the latest change recorded for the original DB System.
+	RecoveryPoint pulumi.StringInput `pulumi:"recoveryPoint"`
 	// The specific source identifier.
 	SourceType pulumi.StringInput `pulumi:"sourceType"`
 }
@@ -9640,6 +10484,16 @@ func (o GetMysqlDbSystemSourceOutput) ToGetMysqlDbSystemSourceOutputWithContext(
 // The OCID of the backup to be used as the source for the new DB System.
 func (o GetMysqlDbSystemSourceOutput) BackupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemSource) string { return v.BackupId }).(pulumi.StringOutput)
+}
+
+// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetMysqlDbSystemSourceOutput) DbSystemId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemSource) string { return v.DbSystemId }).(pulumi.StringOutput)
+}
+
+// The date and time, as per RFC 3339, of the change up to which the new DB System shall be restored to, using a backup and logs from the original DB System. In case no point in time is specified, then this new DB System shall be restored up to the latest change recorded for the original DB System.
+func (o GetMysqlDbSystemSourceOutput) RecoveryPoint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemSource) string { return v.RecoveryPoint }).(pulumi.StringOutput)
 }
 
 // The specific source identifier.
@@ -9714,16 +10568,16 @@ type GetMysqlDbSystemsDbSystem struct {
 	IsAnalyticsClusterAttached bool `pulumi:"isAnalyticsClusterAttached"`
 	// If true, return only DB Systems with a HeatWave cluster attached, if false return only DB Systems with no HeatWave cluster attached. If not present, return all DB Systems.
 	IsHeatWaveClusterAttached bool `pulumi:"isHeatWaveClusterAttached"`
-	// If the policy is to enable high availability of the instance, by maintaining secondary/failover capacity as necessary.
+	// Specifies if the DB System is highly available.
 	IsHighlyAvailable bool `pulumi:"isHighlyAvailable"`
 	// Additional information about the current lifecycleState.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The Maintenance Policy for the DB System.
 	Maintenances []GetMysqlDbSystemsDbSystemMaintenance `pulumi:"maintenances"`
 	// Name of the MySQL Version in use for the DB System.
-	//
-	// Deprecated: The 'mysql_version' field has been deprecated and may be removed in a future version. Do not use this field.
 	MysqlVersion string `pulumi:"mysqlVersion"`
+	// Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
+	PointInTimeRecoveryDetails []GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail `pulumi:"pointInTimeRecoveryDetails"`
 	// The port for primary endpoint of the DB System to listen on.
 	Port int `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
@@ -9801,16 +10655,16 @@ type GetMysqlDbSystemsDbSystemArgs struct {
 	IsAnalyticsClusterAttached pulumi.BoolInput `pulumi:"isAnalyticsClusterAttached"`
 	// If true, return only DB Systems with a HeatWave cluster attached, if false return only DB Systems with no HeatWave cluster attached. If not present, return all DB Systems.
 	IsHeatWaveClusterAttached pulumi.BoolInput `pulumi:"isHeatWaveClusterAttached"`
-	// If the policy is to enable high availability of the instance, by maintaining secondary/failover capacity as necessary.
+	// Specifies if the DB System is highly available.
 	IsHighlyAvailable pulumi.BoolInput `pulumi:"isHighlyAvailable"`
 	// Additional information about the current lifecycleState.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// The Maintenance Policy for the DB System.
 	Maintenances GetMysqlDbSystemsDbSystemMaintenanceArrayInput `pulumi:"maintenances"`
 	// Name of the MySQL Version in use for the DB System.
-	//
-	// Deprecated: The 'mysql_version' field has been deprecated and may be removed in a future version. Do not use this field.
 	MysqlVersion pulumi.StringInput `pulumi:"mysqlVersion"`
+	// Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
+	PointInTimeRecoveryDetails GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayInput `pulumi:"pointInTimeRecoveryDetails"`
 	// The port for primary endpoint of the DB System to listen on.
 	Port pulumi.IntInput `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
@@ -10005,7 +10859,7 @@ func (o GetMysqlDbSystemsDbSystemOutput) IsHeatWaveClusterAttached() pulumi.Bool
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) bool { return v.IsHeatWaveClusterAttached }).(pulumi.BoolOutput)
 }
 
-// If the policy is to enable high availability of the instance, by maintaining secondary/failover capacity as necessary.
+// Specifies if the DB System is highly available.
 func (o GetMysqlDbSystemsDbSystemOutput) IsHighlyAvailable() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) bool { return v.IsHighlyAvailable }).(pulumi.BoolOutput)
 }
@@ -10021,10 +10875,15 @@ func (o GetMysqlDbSystemsDbSystemOutput) Maintenances() GetMysqlDbSystemsDbSyste
 }
 
 // Name of the MySQL Version in use for the DB System.
-//
-// Deprecated: The 'mysql_version' field has been deprecated and may be removed in a future version. Do not use this field.
 func (o GetMysqlDbSystemsDbSystemOutput) MysqlVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) string { return v.MysqlVersion }).(pulumi.StringOutput)
+}
+
+// Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
+func (o GetMysqlDbSystemsDbSystemOutput) PointInTimeRecoveryDetails() GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) []GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail {
+		return v.PointInTimeRecoveryDetails
+	}).(GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayOutput)
 }
 
 // The port for primary endpoint of the DB System to listen on.
@@ -10231,6 +11090,8 @@ type GetMysqlDbSystemsDbSystemBackupPolicy struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Whether the Channel has been enabled by the user.
 	IsEnabled bool `pulumi:"isEnabled"`
+	// The PITR policy for the DB System.
+	PitrPolicies []GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicy `pulumi:"pitrPolicies"`
 	// The number of days automated backups are retained.
 	RetentionInDays int `pulumi:"retentionInDays"`
 	// The start time of the maintenance window.
@@ -10255,6 +11116,8 @@ type GetMysqlDbSystemsDbSystemBackupPolicyArgs struct {
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Whether the Channel has been enabled by the user.
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	// The PITR policy for the DB System.
+	PitrPolicies GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArrayInput `pulumi:"pitrPolicies"`
 	// The number of days automated backups are retained.
 	RetentionInDays pulumi.IntInput `pulumi:"retentionInDays"`
 	// The start time of the maintenance window.
@@ -10327,6 +11190,13 @@ func (o GetMysqlDbSystemsDbSystemBackupPolicyOutput) IsEnabled() pulumi.BoolOutp
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemBackupPolicy) bool { return v.IsEnabled }).(pulumi.BoolOutput)
 }
 
+// The PITR policy for the DB System.
+func (o GetMysqlDbSystemsDbSystemBackupPolicyOutput) PitrPolicies() GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArrayOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemBackupPolicy) []GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicy {
+		return v.PitrPolicies
+	}).(GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArrayOutput)
+}
+
 // The number of days automated backups are retained.
 func (o GetMysqlDbSystemsDbSystemBackupPolicyOutput) RetentionInDays() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemBackupPolicy) int { return v.RetentionInDays }).(pulumi.IntOutput)
@@ -10355,6 +11225,103 @@ func (o GetMysqlDbSystemsDbSystemBackupPolicyArrayOutput) Index(i pulumi.IntInpu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemsDbSystemBackupPolicy {
 		return vs[0].([]GetMysqlDbSystemsDbSystemBackupPolicy)[vs[1].(int)]
 	}).(GetMysqlDbSystemsDbSystemBackupPolicyOutput)
+}
+
+type GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicy struct {
+	// Whether the Channel has been enabled by the user.
+	IsEnabled bool `pulumi:"isEnabled"`
+}
+
+// GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyInput is an input type that accepts GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArgs and GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyInput` via:
+//
+//          GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArgs{...}
+type GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyOutput() GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyOutput
+	ToGetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyOutputWithContext(context.Context) GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyOutput
+}
+
+type GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArgs struct {
+	// Whether the Channel has been enabled by the user.
+	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+}
+
+func (GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicy)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArgs) ToGetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyOutput() GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyOutput {
+	return i.ToGetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArgs) ToGetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyOutput)
+}
+
+// GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArrayInput is an input type that accepts GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArray and GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArrayOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArrayInput` via:
+//
+//          GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArray{ GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArgs{...} }
+type GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArrayOutput() GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArrayOutput
+	ToGetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArrayOutputWithContext(context.Context) GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArrayOutput
+}
+
+type GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArray []GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyInput
+
+func (GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicy)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArray) ToGetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArrayOutput() GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArrayOutput {
+	return i.ToGetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArray) ToGetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArrayOutput)
+}
+
+type GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicy)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyOutput) ToGetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyOutput() GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyOutput) ToGetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyOutput {
+	return o
+}
+
+// Whether the Channel has been enabled by the user.
+func (o GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyOutput) IsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicy) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+}
+
+type GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicy)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArrayOutput) ToGetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArrayOutput() GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArrayOutput) ToGetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicy {
+		return vs[0].([]GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicy)[vs[1].(int)]
+	}).(GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyOutput)
 }
 
 type GetMysqlDbSystemsDbSystemChannel struct {
@@ -11529,9 +12496,119 @@ func (o GetMysqlDbSystemsDbSystemMaintenanceArrayOutput) Index(i pulumi.IntInput
 	}).(GetMysqlDbSystemsDbSystemMaintenanceOutput)
 }
 
+type GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail struct {
+	// Earliest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeEarliestRecoveryPoint string `pulumi:"timeEarliestRecoveryPoint"`
+	// Latest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeLatestRecoveryPoint string `pulumi:"timeLatestRecoveryPoint"`
+}
+
+// GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailInput is an input type that accepts GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArgs and GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailInput` via:
+//
+//          GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArgs{...}
+type GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailOutput() GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailOutput
+	ToGetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailOutputWithContext(context.Context) GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailOutput
+}
+
+type GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArgs struct {
+	// Earliest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeEarliestRecoveryPoint pulumi.StringInput `pulumi:"timeEarliestRecoveryPoint"`
+	// Latest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeLatestRecoveryPoint pulumi.StringInput `pulumi:"timeLatestRecoveryPoint"`
+}
+
+func (GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArgs) ToGetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailOutput() GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailOutput {
+	return i.ToGetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArgs) ToGetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailOutput)
+}
+
+// GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayInput is an input type that accepts GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArray and GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayInput` via:
+//
+//          GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArray{ GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArgs{...} }
+type GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayOutput() GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayOutput
+	ToGetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayOutputWithContext(context.Context) GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayOutput
+}
+
+type GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArray []GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailInput
+
+func (GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArray) ToGetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayOutput() GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayOutput {
+	return i.ToGetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArray) ToGetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayOutput)
+}
+
+type GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailOutput) ToGetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailOutput() GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailOutput) ToGetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailOutput {
+	return o
+}
+
+// Earliest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+func (o GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailOutput) TimeEarliestRecoveryPoint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail) string { return v.TimeEarliestRecoveryPoint }).(pulumi.StringOutput)
+}
+
+// Latest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+func (o GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailOutput) TimeLatestRecoveryPoint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail) string { return v.TimeLatestRecoveryPoint }).(pulumi.StringOutput)
+}
+
+type GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayOutput) ToGetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayOutput() GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayOutput) ToGetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail {
+		return vs[0].([]GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail)[vs[1].(int)]
+	}).(GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailOutput)
+}
+
 type GetMysqlDbSystemsDbSystemSource struct {
 	// The OCID of the backup to be used as the source for the new DB System.
 	BackupId string `pulumi:"backupId"`
+	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	DbSystemId string `pulumi:"dbSystemId"`
+	// The date and time, as per RFC 3339, of the change up to which the new DB System shall be restored to, using a backup and logs from the original DB System. In case no point in time is specified, then this new DB System shall be restored up to the latest change recorded for the original DB System.
+	RecoveryPoint string `pulumi:"recoveryPoint"`
 	// The specific source identifier.
 	SourceType string `pulumi:"sourceType"`
 }
@@ -11550,6 +12627,10 @@ type GetMysqlDbSystemsDbSystemSourceInput interface {
 type GetMysqlDbSystemsDbSystemSourceArgs struct {
 	// The OCID of the backup to be used as the source for the new DB System.
 	BackupId pulumi.StringInput `pulumi:"backupId"`
+	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
+	// The date and time, as per RFC 3339, of the change up to which the new DB System shall be restored to, using a backup and logs from the original DB System. In case no point in time is specified, then this new DB System shall be restored up to the latest change recorded for the original DB System.
+	RecoveryPoint pulumi.StringInput `pulumi:"recoveryPoint"`
 	// The specific source identifier.
 	SourceType pulumi.StringInput `pulumi:"sourceType"`
 }
@@ -11608,6 +12689,16 @@ func (o GetMysqlDbSystemsDbSystemSourceOutput) ToGetMysqlDbSystemsDbSystemSource
 // The OCID of the backup to be used as the source for the new DB System.
 func (o GetMysqlDbSystemsDbSystemSourceOutput) BackupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemSource) string { return v.BackupId }).(pulumi.StringOutput)
+}
+
+// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetMysqlDbSystemsDbSystemSourceOutput) DbSystemId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemSource) string { return v.DbSystemId }).(pulumi.StringOutput)
+}
+
+// The date and time, as per RFC 3339, of the change up to which the new DB System shall be restored to, using a backup and logs from the original DB System. In case no point in time is specified, then this new DB System shall be restored up to the latest change recorded for the original DB System.
+func (o GetMysqlDbSystemsDbSystemSourceOutput) RecoveryPoint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemSource) string { return v.RecoveryPoint }).(pulumi.StringOutput)
 }
 
 // The specific source identifier.
@@ -12307,6 +13398,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotArrayInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotBackupPolicyInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotBackupPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotBackupPolicyArrayInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotBackupPolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotDeletionPolicyInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotDeletionPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotDeletionPolicyArrayInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotDeletionPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotEndpointInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotEndpointArgs{})
@@ -12317,6 +13410,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemAnalyticsClusterArrayInput)(nil)).Elem(), MysqlDbSystemAnalyticsClusterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemBackupPolicyInput)(nil)).Elem(), MysqlDbSystemBackupPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemBackupPolicyPtrInput)(nil)).Elem(), MysqlDbSystemBackupPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemBackupPolicyPitrPolicyInput)(nil)).Elem(), MysqlDbSystemBackupPolicyPitrPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemBackupPolicyPitrPolicyPtrInput)(nil)).Elem(), MysqlDbSystemBackupPolicyPitrPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemChannelInput)(nil)).Elem(), MysqlDbSystemChannelArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemChannelArrayInput)(nil)).Elem(), MysqlDbSystemChannelArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemChannelSourceInput)(nil)).Elem(), MysqlDbSystemChannelSourceArgs{})
@@ -12335,6 +13430,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemHeatWaveClusterArrayInput)(nil)).Elem(), MysqlDbSystemHeatWaveClusterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemMaintenanceInput)(nil)).Elem(), MysqlDbSystemMaintenanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemMaintenancePtrInput)(nil)).Elem(), MysqlDbSystemMaintenanceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemPointInTimeRecoveryDetailInput)(nil)).Elem(), MysqlDbSystemPointInTimeRecoveryDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemPointInTimeRecoveryDetailArrayInput)(nil)).Elem(), MysqlDbSystemPointInTimeRecoveryDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemSourceInput)(nil)).Elem(), MysqlDbSystemSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemSourcePtrInput)(nil)).Elem(), MysqlDbSystemSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAnalyticsClusterClusterNodeInput)(nil)).Elem(), GetAnalyticsClusterClusterNodeArgs{})
@@ -12361,6 +13458,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotArrayInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotBackupPolicyInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotBackupPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotBackupPolicyArrayInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotBackupPolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotDeletionPolicyInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotDeletionPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotDeletionPolicyArrayInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotDeletionPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotEndpointInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotEndpointArgs{})
@@ -12373,6 +13472,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotArrayInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArrayInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotEndpointInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotEndpointArgs{})
@@ -12392,6 +13493,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemAnalyticsClusterArrayInput)(nil)).Elem(), GetMysqlDbSystemAnalyticsClusterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemBackupPolicyInput)(nil)).Elem(), GetMysqlDbSystemBackupPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemBackupPolicyArrayInput)(nil)).Elem(), GetMysqlDbSystemBackupPolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemBackupPolicyPitrPolicyInput)(nil)).Elem(), GetMysqlDbSystemBackupPolicyPitrPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemBackupPolicyPitrPolicyArrayInput)(nil)).Elem(), GetMysqlDbSystemBackupPolicyPitrPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemChannelInput)(nil)).Elem(), GetMysqlDbSystemChannelArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemChannelArrayInput)(nil)).Elem(), GetMysqlDbSystemChannelArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemChannelSourceInput)(nil)).Elem(), GetMysqlDbSystemChannelSourceArgs{})
@@ -12410,6 +13513,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemHeatWaveClusterArrayInput)(nil)).Elem(), GetMysqlDbSystemHeatWaveClusterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemMaintenanceInput)(nil)).Elem(), GetMysqlDbSystemMaintenanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemMaintenanceArrayInput)(nil)).Elem(), GetMysqlDbSystemMaintenanceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemPointInTimeRecoveryDetailInput)(nil)).Elem(), GetMysqlDbSystemPointInTimeRecoveryDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemPointInTimeRecoveryDetailArrayInput)(nil)).Elem(), GetMysqlDbSystemPointInTimeRecoveryDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemSourceInput)(nil)).Elem(), GetMysqlDbSystemSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemSourceArrayInput)(nil)).Elem(), GetMysqlDbSystemSourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemArgs{})
@@ -12418,6 +13523,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemAnalyticsClusterArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemAnalyticsClusterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemBackupPolicyInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemBackupPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemBackupPolicyArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemBackupPolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemChannelInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemChannelArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemChannelArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemChannelArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemChannelSourceInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemChannelSourceArgs{})
@@ -12436,6 +13543,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemHeatWaveClusterArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemHeatWaveClusterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemMaintenanceInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemMaintenanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemMaintenanceArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemMaintenanceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemSourceInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemSourceArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemSourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsFilterInput)(nil)).Elem(), GetMysqlDbSystemsFilterArgs{})
@@ -12464,6 +13573,8 @@ func init() {
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotArrayOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotBackupPolicyOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotBackupPolicyArrayOutput{})
+	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput{})
+	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotDeletionPolicyOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotDeletionPolicyArrayOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotEndpointOutput{})
@@ -12474,6 +13585,8 @@ func init() {
 	pulumi.RegisterOutputType(MysqlDbSystemAnalyticsClusterArrayOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemBackupPolicyOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemBackupPolicyPtrOutput{})
+	pulumi.RegisterOutputType(MysqlDbSystemBackupPolicyPitrPolicyOutput{})
+	pulumi.RegisterOutputType(MysqlDbSystemBackupPolicyPitrPolicyPtrOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemChannelOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemChannelArrayOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemChannelSourceOutput{})
@@ -12492,6 +13605,8 @@ func init() {
 	pulumi.RegisterOutputType(MysqlDbSystemHeatWaveClusterArrayOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemMaintenanceOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemMaintenancePtrOutput{})
+	pulumi.RegisterOutputType(MysqlDbSystemPointInTimeRecoveryDetailOutput{})
+	pulumi.RegisterOutputType(MysqlDbSystemPointInTimeRecoveryDetailArrayOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemSourceOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemSourcePtrOutput{})
 	pulumi.RegisterOutputType(GetAnalyticsClusterClusterNodeOutput{})
@@ -12518,6 +13633,8 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotBackupPolicyOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotBackupPolicyArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput{})
+	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotDeletionPolicyOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotDeletionPolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotEndpointOutput{})
@@ -12530,6 +13647,8 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput{})
+	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput{})
@@ -12549,6 +13668,8 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlDbSystemAnalyticsClusterArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemBackupPolicyOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemBackupPolicyArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemBackupPolicyPitrPolicyOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemBackupPolicyPitrPolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemChannelOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemChannelArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemChannelSourceOutput{})
@@ -12567,6 +13688,8 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlDbSystemHeatWaveClusterArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemMaintenanceOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemMaintenanceArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemPointInTimeRecoveryDetailOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemPointInTimeRecoveryDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemSourceOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemSourceArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemOutput{})
@@ -12575,6 +13698,8 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemAnalyticsClusterArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemBackupPolicyOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemBackupPolicyArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemChannelOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemChannelArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemChannelSourceOutput{})
@@ -12593,6 +13718,8 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemHeatWaveClusterArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemMaintenanceOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemMaintenanceArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemSourceOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemSourceArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsFilterOutput{})

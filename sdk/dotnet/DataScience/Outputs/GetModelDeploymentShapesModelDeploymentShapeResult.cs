@@ -25,6 +25,10 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// The name of the model deployment shape.
         /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// The family that the compute shape belongs to.
+        /// </summary>
+        public readonly string ShapeSeries;
 
         [OutputConstructor]
         private GetModelDeploymentShapesModelDeploymentShapeResult(
@@ -32,11 +36,14 @@ namespace Pulumi.Oci.DataScience.Outputs
 
             int memoryInGbs,
 
-            string name)
+            string name,
+
+            string shapeSeries)
         {
             CoreCount = coreCount;
             MemoryInGbs = memoryInGbs;
             Name = name;
+            ShapeSeries = shapeSeries;
         }
     }
 }

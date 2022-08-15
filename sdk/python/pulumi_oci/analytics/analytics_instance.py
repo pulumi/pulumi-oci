@@ -24,6 +24,7 @@ class AnalyticsInstanceArgs:
                  description: Optional[pulumi.Input[str]] = None,
                  email_notification: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 kms_key_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  network_endpoint_details: Optional[pulumi.Input['AnalyticsInstanceNetworkEndpointDetailsArgs']] = None,
                  state: Optional[pulumi.Input[str]] = None):
@@ -38,6 +39,7 @@ class AnalyticsInstanceArgs:
         :param pulumi.Input[str] description: (Updatable) Optional description.
         :param pulumi.Input[str] email_notification: (Updatable) Email address receiving notifications.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[str] kms_key_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. "") indicates to use Oracle managed default encryption.
         :param pulumi.Input[str] name: The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
         :param pulumi.Input['AnalyticsInstanceNetworkEndpointDetailsArgs'] network_endpoint_details: Base representation of a network endpoint.
         :param pulumi.Input[str] state: (Updatable) The target state for the Analytics Instance. Could be set to `ACTIVE` or `INACTIVE`.
@@ -55,6 +57,8 @@ class AnalyticsInstanceArgs:
             pulumi.set(__self__, "email_notification", email_notification)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if kms_key_id is not None:
+            pulumi.set(__self__, "kms_key_id", kms_key_id)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if network_endpoint_details is not None:
@@ -171,6 +175,18 @@ class AnalyticsInstanceArgs:
         pulumi.set(self, "freeform_tags", value)
 
     @property
+    @pulumi.getter(name="kmsKeyId")
+    def kms_key_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. "") indicates to use Oracle managed default encryption.
+        """
+        return pulumi.get(self, "kms_key_id")
+
+    @kms_key_id.setter
+    def kms_key_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "kms_key_id", value)
+
+    @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
@@ -218,15 +234,14 @@ class _AnalyticsInstanceState:
                  feature_set: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  idcs_access_token: Optional[pulumi.Input[str]] = None,
+                 kms_key_id: Optional[pulumi.Input[str]] = None,
                  license_type: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  network_endpoint_details: Optional[pulumi.Input['AnalyticsInstanceNetworkEndpointDetailsArgs']] = None,
-                 private_access_channels: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  service_url: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
-                 time_updated: Optional[pulumi.Input[str]] = None,
-                 vanity_url_details: Optional[pulumi.Input[Mapping[str, Any]]] = None):
+                 time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AnalyticsInstance resources.
         :param pulumi.Input['AnalyticsInstanceCapacityArgs'] capacity: Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
@@ -237,15 +252,14 @@ class _AnalyticsInstanceState:
         :param pulumi.Input[str] feature_set: Analytics feature set.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] idcs_access_token: IDCS access token identifying a stripe and service administrator user.
+        :param pulumi.Input[str] kms_key_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. "") indicates to use Oracle managed default encryption.
         :param pulumi.Input[str] license_type: (Updatable) The license used for the service.
         :param pulumi.Input[str] name: The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
         :param pulumi.Input['AnalyticsInstanceNetworkEndpointDetailsArgs'] network_endpoint_details: Base representation of a network endpoint.
-        :param pulumi.Input[Mapping[str, Any]] private_access_channels: Map of PrivateAccessChannel unique identifier key as KEY and PrivateAccessChannel Object as VALUE.
         :param pulumi.Input[str] service_url: URL of the Analytics service.
         :param pulumi.Input[str] state: (Updatable) The target state for the Analytics Instance. Could be set to `ACTIVE` or `INACTIVE`.
         :param pulumi.Input[str] time_created: The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[str] time_updated: The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
-        :param pulumi.Input[Mapping[str, Any]] vanity_url_details: Map of VanityUrl unique identifier key as KEY and VanityUrl Object as VALUE.
         """
         if capacity is not None:
             pulumi.set(__self__, "capacity", capacity)
@@ -263,14 +277,14 @@ class _AnalyticsInstanceState:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if idcs_access_token is not None:
             pulumi.set(__self__, "idcs_access_token", idcs_access_token)
+        if kms_key_id is not None:
+            pulumi.set(__self__, "kms_key_id", kms_key_id)
         if license_type is not None:
             pulumi.set(__self__, "license_type", license_type)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if network_endpoint_details is not None:
             pulumi.set(__self__, "network_endpoint_details", network_endpoint_details)
-        if private_access_channels is not None:
-            pulumi.set(__self__, "private_access_channels", private_access_channels)
         if service_url is not None:
             pulumi.set(__self__, "service_url", service_url)
         if state is not None:
@@ -279,8 +293,6 @@ class _AnalyticsInstanceState:
             pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
             pulumi.set(__self__, "time_updated", time_updated)
-        if vanity_url_details is not None:
-            pulumi.set(__self__, "vanity_url_details", vanity_url_details)
 
     @property
     @pulumi.getter
@@ -379,6 +391,18 @@ class _AnalyticsInstanceState:
         pulumi.set(self, "idcs_access_token", value)
 
     @property
+    @pulumi.getter(name="kmsKeyId")
+    def kms_key_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. "") indicates to use Oracle managed default encryption.
+        """
+        return pulumi.get(self, "kms_key_id")
+
+    @kms_key_id.setter
+    def kms_key_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "kms_key_id", value)
+
+    @property
     @pulumi.getter(name="licenseType")
     def license_type(self) -> Optional[pulumi.Input[str]]:
         """
@@ -413,18 +437,6 @@ class _AnalyticsInstanceState:
     @network_endpoint_details.setter
     def network_endpoint_details(self, value: Optional[pulumi.Input['AnalyticsInstanceNetworkEndpointDetailsArgs']]):
         pulumi.set(self, "network_endpoint_details", value)
-
-    @property
-    @pulumi.getter(name="privateAccessChannels")
-    def private_access_channels(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Map of PrivateAccessChannel unique identifier key as KEY and PrivateAccessChannel Object as VALUE.
-        """
-        return pulumi.get(self, "private_access_channels")
-
-    @private_access_channels.setter
-    def private_access_channels(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
-        pulumi.set(self, "private_access_channels", value)
 
     @property
     @pulumi.getter(name="serviceUrl")
@@ -474,18 +486,6 @@ class _AnalyticsInstanceState:
     def time_updated(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "time_updated", value)
 
-    @property
-    @pulumi.getter(name="vanityUrlDetails")
-    def vanity_url_details(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Map of VanityUrl unique identifier key as KEY and VanityUrl Object as VALUE.
-        """
-        return pulumi.get(self, "vanity_url_details")
-
-    @vanity_url_details.setter
-    def vanity_url_details(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
-        pulumi.set(self, "vanity_url_details", value)
-
 
 class AnalyticsInstance(pulumi.CustomResource):
     @overload
@@ -500,6 +500,7 @@ class AnalyticsInstance(pulumi.CustomResource):
                  feature_set: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  idcs_access_token: Optional[pulumi.Input[str]] = None,
+                 kms_key_id: Optional[pulumi.Input[str]] = None,
                  license_type: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  network_endpoint_details: Optional[pulumi.Input[pulumi.InputType['AnalyticsInstanceNetworkEndpointDetailsArgs']]] = None,
@@ -534,6 +535,7 @@ class AnalyticsInstance(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
+            kms_key_id=oci_kms_key["test_key"]["id"],
             network_endpoint_details=oci.analytics.AnalyticsInstanceNetworkEndpointDetailsArgs(
                 network_endpoint_type=var["analytics_instance_network_endpoint_details_network_endpoint_type"],
                 subnet_id=oci_core_subnet["test_subnet"]["id"],
@@ -564,6 +566,7 @@ class AnalyticsInstance(pulumi.CustomResource):
         :param pulumi.Input[str] feature_set: Analytics feature set.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] idcs_access_token: IDCS access token identifying a stripe and service administrator user.
+        :param pulumi.Input[str] kms_key_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. "") indicates to use Oracle managed default encryption.
         :param pulumi.Input[str] license_type: (Updatable) The license used for the service.
         :param pulumi.Input[str] name: The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
         :param pulumi.Input[pulumi.InputType['AnalyticsInstanceNetworkEndpointDetailsArgs']] network_endpoint_details: Base representation of a network endpoint.
@@ -604,6 +607,7 @@ class AnalyticsInstance(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
+            kms_key_id=oci_kms_key["test_key"]["id"],
             network_endpoint_details=oci.analytics.AnalyticsInstanceNetworkEndpointDetailsArgs(
                 network_endpoint_type=var["analytics_instance_network_endpoint_details_network_endpoint_type"],
                 subnet_id=oci_core_subnet["test_subnet"]["id"],
@@ -647,6 +651,7 @@ class AnalyticsInstance(pulumi.CustomResource):
                  feature_set: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  idcs_access_token: Optional[pulumi.Input[str]] = None,
+                 kms_key_id: Optional[pulumi.Input[str]] = None,
                  license_type: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  network_endpoint_details: Optional[pulumi.Input[pulumi.InputType['AnalyticsInstanceNetworkEndpointDetailsArgs']]] = None,
@@ -679,17 +684,16 @@ class AnalyticsInstance(pulumi.CustomResource):
             if idcs_access_token is None and not opts.urn:
                 raise TypeError("Missing required property 'idcs_access_token'")
             __props__.__dict__["idcs_access_token"] = idcs_access_token
+            __props__.__dict__["kms_key_id"] = kms_key_id
             if license_type is None and not opts.urn:
                 raise TypeError("Missing required property 'license_type'")
             __props__.__dict__["license_type"] = license_type
             __props__.__dict__["name"] = name
             __props__.__dict__["network_endpoint_details"] = network_endpoint_details
             __props__.__dict__["state"] = state
-            __props__.__dict__["private_access_channels"] = None
             __props__.__dict__["service_url"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_updated"] = None
-            __props__.__dict__["vanity_url_details"] = None
         super(AnalyticsInstance, __self__).__init__(
             'oci:Analytics/analyticsInstance:AnalyticsInstance',
             resource_name,
@@ -708,15 +712,14 @@ class AnalyticsInstance(pulumi.CustomResource):
             feature_set: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             idcs_access_token: Optional[pulumi.Input[str]] = None,
+            kms_key_id: Optional[pulumi.Input[str]] = None,
             license_type: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
             network_endpoint_details: Optional[pulumi.Input[pulumi.InputType['AnalyticsInstanceNetworkEndpointDetailsArgs']]] = None,
-            private_access_channels: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             service_url: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
-            time_updated: Optional[pulumi.Input[str]] = None,
-            vanity_url_details: Optional[pulumi.Input[Mapping[str, Any]]] = None) -> 'AnalyticsInstance':
+            time_updated: Optional[pulumi.Input[str]] = None) -> 'AnalyticsInstance':
         """
         Get an existing AnalyticsInstance resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -732,15 +735,14 @@ class AnalyticsInstance(pulumi.CustomResource):
         :param pulumi.Input[str] feature_set: Analytics feature set.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] idcs_access_token: IDCS access token identifying a stripe and service administrator user.
+        :param pulumi.Input[str] kms_key_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. "") indicates to use Oracle managed default encryption.
         :param pulumi.Input[str] license_type: (Updatable) The license used for the service.
         :param pulumi.Input[str] name: The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
         :param pulumi.Input[pulumi.InputType['AnalyticsInstanceNetworkEndpointDetailsArgs']] network_endpoint_details: Base representation of a network endpoint.
-        :param pulumi.Input[Mapping[str, Any]] private_access_channels: Map of PrivateAccessChannel unique identifier key as KEY and PrivateAccessChannel Object as VALUE.
         :param pulumi.Input[str] service_url: URL of the Analytics service.
         :param pulumi.Input[str] state: (Updatable) The target state for the Analytics Instance. Could be set to `ACTIVE` or `INACTIVE`.
         :param pulumi.Input[str] time_created: The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[str] time_updated: The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
-        :param pulumi.Input[Mapping[str, Any]] vanity_url_details: Map of VanityUrl unique identifier key as KEY and VanityUrl Object as VALUE.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -754,15 +756,14 @@ class AnalyticsInstance(pulumi.CustomResource):
         __props__.__dict__["feature_set"] = feature_set
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["idcs_access_token"] = idcs_access_token
+        __props__.__dict__["kms_key_id"] = kms_key_id
         __props__.__dict__["license_type"] = license_type
         __props__.__dict__["name"] = name
         __props__.__dict__["network_endpoint_details"] = network_endpoint_details
-        __props__.__dict__["private_access_channels"] = private_access_channels
         __props__.__dict__["service_url"] = service_url
         __props__.__dict__["state"] = state
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
-        __props__.__dict__["vanity_url_details"] = vanity_url_details
         return AnalyticsInstance(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -830,6 +831,14 @@ class AnalyticsInstance(pulumi.CustomResource):
         return pulumi.get(self, "idcs_access_token")
 
     @property
+    @pulumi.getter(name="kmsKeyId")
+    def kms_key_id(self) -> pulumi.Output[Optional[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. "") indicates to use Oracle managed default encryption.
+        """
+        return pulumi.get(self, "kms_key_id")
+
+    @property
     @pulumi.getter(name="licenseType")
     def license_type(self) -> pulumi.Output[str]:
         """
@@ -852,14 +861,6 @@ class AnalyticsInstance(pulumi.CustomResource):
         Base representation of a network endpoint.
         """
         return pulumi.get(self, "network_endpoint_details")
-
-    @property
-    @pulumi.getter(name="privateAccessChannels")
-    def private_access_channels(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Map of PrivateAccessChannel unique identifier key as KEY and PrivateAccessChannel Object as VALUE.
-        """
-        return pulumi.get(self, "private_access_channels")
 
     @property
     @pulumi.getter(name="serviceUrl")
@@ -892,12 +893,4 @@ class AnalyticsInstance(pulumi.CustomResource):
         The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
         """
         return pulumi.get(self, "time_updated")
-
-    @property
-    @pulumi.getter(name="vanityUrlDetails")
-    def vanity_url_details(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Map of VanityUrl unique identifier key as KEY and VanityUrl Object as VALUE.
-        """
-        return pulumi.get(self, "vanity_url_details")
 

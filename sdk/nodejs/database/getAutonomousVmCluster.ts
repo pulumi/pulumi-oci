@@ -52,11 +52,19 @@ export interface GetAutonomousVmClusterResult {
     readonly autonomousDataStorageSizeInTbs: number;
     readonly autonomousVmClusterId: string;
     /**
+     * The data disk group size available for Autonomous Databases, in TBs.
+     */
+    readonly availableAutonomousDataStorageSizeInTbs: number;
+    /**
+     * The number of Autonomous Container Databases that can be created with the currently available local storage.
+     */
+    readonly availableContainerDatabases: number;
+    /**
      * The numnber of CPU cores available.
      */
     readonly availableCpus: number;
     /**
-     * The data storage available in TBs
+     * **Deprecated.** Use `availableAutonomousDataStorageSizeInTBs` for Autonomous Databases' data storage availability in TBs.
      */
     readonly availableDataStorageSizeInTbs: number;
     /**
@@ -140,6 +148,10 @@ export interface GetAutonomousVmClusterResult {
      * The number of enabled OCPU cores.
      */
     readonly ocpusEnabled: number;
+    /**
+     * CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+     */
+    readonly reclaimableCpus: number;
     /**
      * The current state of the Autonomous VM cluster.
      */

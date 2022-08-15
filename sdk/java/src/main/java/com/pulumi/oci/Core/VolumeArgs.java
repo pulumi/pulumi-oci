@@ -142,14 +142,14 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume.
+     * (Updatable) Specifies whether the auto-tune performance is enabled for this volume.
      * 
      */
     @Import(name="isAutoTuneEnabled")
     private @Nullable Output<Boolean> isAutoTuneEnabled;
 
     /**
-     * @return (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume.
+     * @return (Updatable) Specifies whether the auto-tune performance is enabled for this volume.
      * 
      */
     public Optional<Output<Boolean>> isAutoTuneEnabled() {
@@ -459,7 +459,7 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isAutoTuneEnabled (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume.
+         * @param isAutoTuneEnabled (Updatable) Specifies whether the auto-tune performance is enabled for this volume.
          * 
          * @return builder
          * 
@@ -470,7 +470,7 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isAutoTuneEnabled (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume.
+         * @param isAutoTuneEnabled (Updatable) Specifies whether the auto-tune performance is enabled for this volume.
          * 
          * @return builder
          * 

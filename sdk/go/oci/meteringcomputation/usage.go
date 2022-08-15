@@ -65,8 +65,9 @@ type Usage struct {
 	pulumi.CustomResourceState
 
 	// The compartment depth level.
-	CompartmentDepth pulumi.Float64Output   `pulumi:"compartmentDepth"`
-	Filter           pulumi.StringPtrOutput `pulumi:"filter"`
+	CompartmentDepth pulumi.Float64Output `pulumi:"compartmentDepth"`
+	// The filter object for query usage.
+	Filter pulumi.StringPtrOutput `pulumi:"filter"`
 	// Forecast configuration of usage/cost.
 	Forecast UsageForecastOutput `pulumi:"forecast"`
 	// The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
@@ -132,7 +133,8 @@ func GetUsage(ctx *pulumi.Context,
 type usageState struct {
 	// The compartment depth level.
 	CompartmentDepth *float64 `pulumi:"compartmentDepth"`
-	Filter           *string  `pulumi:"filter"`
+	// The filter object for query usage.
+	Filter *string `pulumi:"filter"`
 	// Forecast configuration of usage/cost.
 	Forecast *UsageForecast `pulumi:"forecast"`
 	// The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
@@ -158,7 +160,8 @@ type usageState struct {
 type UsageState struct {
 	// The compartment depth level.
 	CompartmentDepth pulumi.Float64PtrInput
-	Filter           pulumi.StringPtrInput
+	// The filter object for query usage.
+	Filter pulumi.StringPtrInput
 	// Forecast configuration of usage/cost.
 	Forecast UsageForecastPtrInput
 	// The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
@@ -188,7 +191,8 @@ func (UsageState) ElementType() reflect.Type {
 type usageArgs struct {
 	// The compartment depth level.
 	CompartmentDepth *float64 `pulumi:"compartmentDepth"`
-	Filter           *string  `pulumi:"filter"`
+	// The filter object for query usage.
+	Filter *string `pulumi:"filter"`
 	// Forecast configuration of usage/cost.
 	Forecast *UsageForecast `pulumi:"forecast"`
 	// The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
@@ -213,7 +217,8 @@ type usageArgs struct {
 type UsageArgs struct {
 	// The compartment depth level.
 	CompartmentDepth pulumi.Float64PtrInput
-	Filter           pulumi.StringPtrInput
+	// The filter object for query usage.
+	Filter pulumi.StringPtrInput
 	// Forecast configuration of usage/cost.
 	Forecast UsageForecastPtrInput
 	// The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.

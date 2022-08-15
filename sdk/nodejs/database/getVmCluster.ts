@@ -2,6 +2,7 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import { input as inputs, output as outputs } from "../types";
 import * as utilities from "../utilities";
 
 /**
@@ -54,6 +55,10 @@ export interface GetVmClusterResult {
      * The number of enabled CPU cores.
      */
     readonly cpusEnabled: number;
+    /**
+     * Indicates user preferences for the various diagnostic collection options for the VM cluster.
+     */
+    readonly dataCollectionOptions: outputs.Database.GetVmClusterDataCollectionOption[];
     readonly dataStorageSizeInGb: number;
     /**
      * Size, in terabytes, of the DATA disk group.

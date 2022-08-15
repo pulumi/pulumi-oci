@@ -76,6 +76,21 @@ public final class ExternalDatabaseConnectorConnectionCredentialsArgs extends co
     }
 
     /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * 
+     */
+    @Import(name="sslSecretId")
+    private @Nullable Output<String> sslSecretId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * 
+     */
+    public Optional<Output<String>> sslSecretId() {
+        return Optional.ofNullable(this.sslSecretId);
+    }
+
+    /**
      * (Updatable) The username that will be used to connect to the database.
      * 
      */
@@ -97,6 +112,7 @@ public final class ExternalDatabaseConnectorConnectionCredentialsArgs extends co
         this.credentialType = $.credentialType;
         this.password = $.password;
         this.role = $.role;
+        this.sslSecretId = $.sslSecretId;
         this.username = $.username;
     }
 
@@ -200,6 +216,27 @@ public final class ExternalDatabaseConnectorConnectionCredentialsArgs extends co
          */
         public Builder role(String role) {
             return role(Output.of(role));
+        }
+
+        /**
+         * @param sslSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sslSecretId(@Nullable Output<String> sslSecretId) {
+            $.sslSecretId = sslSecretId;
+            return this;
+        }
+
+        /**
+         * @param sslSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sslSecretId(String sslSecretId) {
+            return sslSecretId(Output.of(sslSecretId));
         }
 
         /**

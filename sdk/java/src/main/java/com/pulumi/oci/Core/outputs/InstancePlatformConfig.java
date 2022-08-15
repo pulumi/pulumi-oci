@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -12,6 +13,21 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class InstancePlatformConfig {
+    /**
+     * @return Whether virtualization instructions are available.
+     * 
+     */
+    private final @Nullable Boolean areVirtualInstructionsEnabled;
+    /**
+     * @return Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device passthrough.
+     * 
+     */
+    private final @Nullable Boolean isAccessControlServiceEnabled;
+    /**
+     * @return Whether the input-output memory management unit is enabled.
+     * 
+     */
+    private final @Nullable Boolean isInputOutputMemoryManagementUnitEnabled;
     /**
      * @return Whether the Measured Boot feature is enabled on the instance.
      * 
@@ -23,6 +39,11 @@ public final class InstancePlatformConfig {
      */
     private final @Nullable Boolean isSecureBootEnabled;
     /**
+     * @return Whether symmetric multi-threading is enabled on the instance.
+     * 
+     */
+    private final @Nullable Boolean isSymmetricMultiThreadingEnabled;
+    /**
      * @return Whether the Trusted Platform Module (TPM) is enabled on the instance.
      * 
      */
@@ -33,6 +54,11 @@ public final class InstancePlatformConfig {
      */
     private final @Nullable String numaNodesPerSocket;
     /**
+     * @return The percentage of cores enabled.
+     * 
+     */
+    private final @Nullable Integer percentageOfCoresEnabled;
+    /**
      * @return The type of action to run when the instance is interrupted for eviction.
      * 
      */
@@ -40,18 +66,49 @@ public final class InstancePlatformConfig {
 
     @CustomType.Constructor
     private InstancePlatformConfig(
+        @CustomType.Parameter("areVirtualInstructionsEnabled") @Nullable Boolean areVirtualInstructionsEnabled,
+        @CustomType.Parameter("isAccessControlServiceEnabled") @Nullable Boolean isAccessControlServiceEnabled,
+        @CustomType.Parameter("isInputOutputMemoryManagementUnitEnabled") @Nullable Boolean isInputOutputMemoryManagementUnitEnabled,
         @CustomType.Parameter("isMeasuredBootEnabled") @Nullable Boolean isMeasuredBootEnabled,
         @CustomType.Parameter("isSecureBootEnabled") @Nullable Boolean isSecureBootEnabled,
+        @CustomType.Parameter("isSymmetricMultiThreadingEnabled") @Nullable Boolean isSymmetricMultiThreadingEnabled,
         @CustomType.Parameter("isTrustedPlatformModuleEnabled") @Nullable Boolean isTrustedPlatformModuleEnabled,
         @CustomType.Parameter("numaNodesPerSocket") @Nullable String numaNodesPerSocket,
+        @CustomType.Parameter("percentageOfCoresEnabled") @Nullable Integer percentageOfCoresEnabled,
         @CustomType.Parameter("type") String type) {
+        this.areVirtualInstructionsEnabled = areVirtualInstructionsEnabled;
+        this.isAccessControlServiceEnabled = isAccessControlServiceEnabled;
+        this.isInputOutputMemoryManagementUnitEnabled = isInputOutputMemoryManagementUnitEnabled;
         this.isMeasuredBootEnabled = isMeasuredBootEnabled;
         this.isSecureBootEnabled = isSecureBootEnabled;
+        this.isSymmetricMultiThreadingEnabled = isSymmetricMultiThreadingEnabled;
         this.isTrustedPlatformModuleEnabled = isTrustedPlatformModuleEnabled;
         this.numaNodesPerSocket = numaNodesPerSocket;
+        this.percentageOfCoresEnabled = percentageOfCoresEnabled;
         this.type = type;
     }
 
+    /**
+     * @return Whether virtualization instructions are available.
+     * 
+     */
+    public Optional<Boolean> areVirtualInstructionsEnabled() {
+        return Optional.ofNullable(this.areVirtualInstructionsEnabled);
+    }
+    /**
+     * @return Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device passthrough.
+     * 
+     */
+    public Optional<Boolean> isAccessControlServiceEnabled() {
+        return Optional.ofNullable(this.isAccessControlServiceEnabled);
+    }
+    /**
+     * @return Whether the input-output memory management unit is enabled.
+     * 
+     */
+    public Optional<Boolean> isInputOutputMemoryManagementUnitEnabled() {
+        return Optional.ofNullable(this.isInputOutputMemoryManagementUnitEnabled);
+    }
     /**
      * @return Whether the Measured Boot feature is enabled on the instance.
      * 
@@ -67,6 +124,13 @@ public final class InstancePlatformConfig {
         return Optional.ofNullable(this.isSecureBootEnabled);
     }
     /**
+     * @return Whether symmetric multi-threading is enabled on the instance.
+     * 
+     */
+    public Optional<Boolean> isSymmetricMultiThreadingEnabled() {
+        return Optional.ofNullable(this.isSymmetricMultiThreadingEnabled);
+    }
+    /**
      * @return Whether the Trusted Platform Module (TPM) is enabled on the instance.
      * 
      */
@@ -79,6 +143,13 @@ public final class InstancePlatformConfig {
      */
     public Optional<String> numaNodesPerSocket() {
         return Optional.ofNullable(this.numaNodesPerSocket);
+    }
+    /**
+     * @return The percentage of cores enabled.
+     * 
+     */
+    public Optional<Integer> percentageOfCoresEnabled() {
+        return Optional.ofNullable(this.percentageOfCoresEnabled);
     }
     /**
      * @return The type of action to run when the instance is interrupted for eviction.
@@ -97,10 +168,15 @@ public final class InstancePlatformConfig {
     }
 
     public static final class Builder {
+        private @Nullable Boolean areVirtualInstructionsEnabled;
+        private @Nullable Boolean isAccessControlServiceEnabled;
+        private @Nullable Boolean isInputOutputMemoryManagementUnitEnabled;
         private @Nullable Boolean isMeasuredBootEnabled;
         private @Nullable Boolean isSecureBootEnabled;
+        private @Nullable Boolean isSymmetricMultiThreadingEnabled;
         private @Nullable Boolean isTrustedPlatformModuleEnabled;
         private @Nullable String numaNodesPerSocket;
+        private @Nullable Integer percentageOfCoresEnabled;
         private String type;
 
         public Builder() {
@@ -109,19 +185,40 @@ public final class InstancePlatformConfig {
 
         public Builder(InstancePlatformConfig defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.areVirtualInstructionsEnabled = defaults.areVirtualInstructionsEnabled;
+    	      this.isAccessControlServiceEnabled = defaults.isAccessControlServiceEnabled;
+    	      this.isInputOutputMemoryManagementUnitEnabled = defaults.isInputOutputMemoryManagementUnitEnabled;
     	      this.isMeasuredBootEnabled = defaults.isMeasuredBootEnabled;
     	      this.isSecureBootEnabled = defaults.isSecureBootEnabled;
+    	      this.isSymmetricMultiThreadingEnabled = defaults.isSymmetricMultiThreadingEnabled;
     	      this.isTrustedPlatformModuleEnabled = defaults.isTrustedPlatformModuleEnabled;
     	      this.numaNodesPerSocket = defaults.numaNodesPerSocket;
+    	      this.percentageOfCoresEnabled = defaults.percentageOfCoresEnabled;
     	      this.type = defaults.type;
         }
 
+        public Builder areVirtualInstructionsEnabled(@Nullable Boolean areVirtualInstructionsEnabled) {
+            this.areVirtualInstructionsEnabled = areVirtualInstructionsEnabled;
+            return this;
+        }
+        public Builder isAccessControlServiceEnabled(@Nullable Boolean isAccessControlServiceEnabled) {
+            this.isAccessControlServiceEnabled = isAccessControlServiceEnabled;
+            return this;
+        }
+        public Builder isInputOutputMemoryManagementUnitEnabled(@Nullable Boolean isInputOutputMemoryManagementUnitEnabled) {
+            this.isInputOutputMemoryManagementUnitEnabled = isInputOutputMemoryManagementUnitEnabled;
+            return this;
+        }
         public Builder isMeasuredBootEnabled(@Nullable Boolean isMeasuredBootEnabled) {
             this.isMeasuredBootEnabled = isMeasuredBootEnabled;
             return this;
         }
         public Builder isSecureBootEnabled(@Nullable Boolean isSecureBootEnabled) {
             this.isSecureBootEnabled = isSecureBootEnabled;
+            return this;
+        }
+        public Builder isSymmetricMultiThreadingEnabled(@Nullable Boolean isSymmetricMultiThreadingEnabled) {
+            this.isSymmetricMultiThreadingEnabled = isSymmetricMultiThreadingEnabled;
             return this;
         }
         public Builder isTrustedPlatformModuleEnabled(@Nullable Boolean isTrustedPlatformModuleEnabled) {
@@ -132,11 +229,15 @@ public final class InstancePlatformConfig {
             this.numaNodesPerSocket = numaNodesPerSocket;
             return this;
         }
+        public Builder percentageOfCoresEnabled(@Nullable Integer percentageOfCoresEnabled) {
+            this.percentageOfCoresEnabled = percentageOfCoresEnabled;
+            return this;
+        }
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
         }        public InstancePlatformConfig build() {
-            return new InstancePlatformConfig(isMeasuredBootEnabled, isSecureBootEnabled, isTrustedPlatformModuleEnabled, numaNodesPerSocket, type);
+            return new InstancePlatformConfig(areVirtualInstructionsEnabled, isAccessControlServiceEnabled, isInputOutputMemoryManagementUnitEnabled, isMeasuredBootEnabled, isSecureBootEnabled, isSymmetricMultiThreadingEnabled, isTrustedPlatformModuleEnabled, numaNodesPerSocket, percentageOfCoresEnabled, type);
         }
     }
 }

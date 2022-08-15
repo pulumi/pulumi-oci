@@ -82,7 +82,7 @@ type LookupTriggerResult struct {
 	// The time the trigger was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeUpdated string `pulumi:"timeUpdated"`
 	TriggerId   string `pulumi:"triggerId"`
-	// Source of the trigger. Allowed values are, GITHUB, GITLAB and DEVOPS_CODE_REPOSITORY.
+	// Source of the trigger. Allowed values are, GITHUB and GITLAB.
 	TriggerSource string `pulumi:"triggerSource"`
 	// The endpoint that listens to trigger events.
 	TriggerUrl string `pulumi:"triggerUrl"`
@@ -200,7 +200,7 @@ func (o LookupTriggerResultOutput) TriggerId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupTriggerResult) string { return v.TriggerId }).(pulumi.StringOutput)
 }
 
-// Source of the trigger. Allowed values are, GITHUB, GITLAB and DEVOPS_CODE_REPOSITORY.
+// Source of the trigger. Allowed values are, GITHUB and GITLAB.
 func (o LookupTriggerResultOutput) TriggerSource() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupTriggerResult) string { return v.TriggerSource }).(pulumi.StringOutput)
 }

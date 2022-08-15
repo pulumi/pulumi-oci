@@ -342,6 +342,20 @@ public class ExadataInfrastructure extends com.pulumi.resources.CustomResource {
         return this.infiniBandNetworkCidr;
     }
     /**
+     * (Updatable) Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
+     * 
+     */
+    @Export(name="isCpsOfflineReportEnabled", type=Boolean.class, parameters={})
+    private Output<Boolean> isCpsOfflineReportEnabled;
+
+    /**
+     * @return (Updatable) Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
+     * 
+     */
+    public Output<Boolean> isCpsOfflineReportEnabled() {
+        return this.isCpsOfflineReportEnabled;
+    }
+    /**
      * Additional information about the current lifecycle state.
      * 
      */

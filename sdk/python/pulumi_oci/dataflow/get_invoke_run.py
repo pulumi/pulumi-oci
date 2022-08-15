@@ -21,7 +21,7 @@ class GetInvokeRunResult:
     """
     A collection of values returned by getInvokeRun.
     """
-    def __init__(__self__, application_id=None, archive_uri=None, arguments=None, asynchronous=None, class_name=None, compartment_id=None, configuration=None, data_read_in_bytes=None, data_written_in_bytes=None, defined_tags=None, display_name=None, driver_shape=None, execute=None, executor_shape=None, file_uri=None, freeform_tags=None, id=None, language=None, lifecycle_details=None, logs_bucket_uri=None, metastore_id=None, num_executors=None, opc_request_id=None, owner_principal_id=None, owner_user_name=None, parameters=None, private_endpoint_dns_zones=None, private_endpoint_id=None, private_endpoint_max_host_count=None, private_endpoint_nsg_ids=None, private_endpoint_subnet_id=None, run_duration_in_milliseconds=None, run_id=None, spark_version=None, state=None, time_created=None, time_updated=None, total_ocpu=None, type=None, warehouse_bucket_uri=None):
+    def __init__(__self__, application_id=None, archive_uri=None, arguments=None, asynchronous=None, class_name=None, compartment_id=None, configuration=None, data_read_in_bytes=None, data_written_in_bytes=None, defined_tags=None, display_name=None, driver_shape=None, driver_shape_configs=None, execute=None, executor_shape=None, executor_shape_configs=None, file_uri=None, freeform_tags=None, id=None, language=None, lifecycle_details=None, logs_bucket_uri=None, metastore_id=None, num_executors=None, opc_request_id=None, owner_principal_id=None, owner_user_name=None, parameters=None, private_endpoint_dns_zones=None, private_endpoint_id=None, private_endpoint_max_host_count=None, private_endpoint_nsg_ids=None, private_endpoint_subnet_id=None, run_duration_in_milliseconds=None, run_id=None, spark_version=None, state=None, time_created=None, time_updated=None, total_ocpu=None, type=None, warehouse_bucket_uri=None):
         if application_id and not isinstance(application_id, str):
             raise TypeError("Expected argument 'application_id' to be a str")
         pulumi.set(__self__, "application_id", application_id)
@@ -58,12 +58,18 @@ class GetInvokeRunResult:
         if driver_shape and not isinstance(driver_shape, str):
             raise TypeError("Expected argument 'driver_shape' to be a str")
         pulumi.set(__self__, "driver_shape", driver_shape)
+        if driver_shape_configs and not isinstance(driver_shape_configs, list):
+            raise TypeError("Expected argument 'driver_shape_configs' to be a list")
+        pulumi.set(__self__, "driver_shape_configs", driver_shape_configs)
         if execute and not isinstance(execute, str):
             raise TypeError("Expected argument 'execute' to be a str")
         pulumi.set(__self__, "execute", execute)
         if executor_shape and not isinstance(executor_shape, str):
             raise TypeError("Expected argument 'executor_shape' to be a str")
         pulumi.set(__self__, "executor_shape", executor_shape)
+        if executor_shape_configs and not isinstance(executor_shape_configs, list):
+            raise TypeError("Expected argument 'executor_shape_configs' to be a list")
+        pulumi.set(__self__, "executor_shape_configs", executor_shape_configs)
         if file_uri and not isinstance(file_uri, str):
             raise TypeError("Expected argument 'file_uri' to be a str")
         pulumi.set(__self__, "file_uri", file_uri)
@@ -237,6 +243,14 @@ class GetInvokeRunResult:
         return pulumi.get(self, "driver_shape")
 
     @property
+    @pulumi.getter(name="driverShapeConfigs")
+    def driver_shape_configs(self) -> Sequence['outputs.GetInvokeRunDriverShapeConfigResult']:
+        """
+        This is used to configure the shape of the driver or executor if a flexible shape is used.
+        """
+        return pulumi.get(self, "driver_shape_configs")
+
+    @property
     @pulumi.getter
     def execute(self) -> str:
         """
@@ -251,6 +265,14 @@ class GetInvokeRunResult:
         The VM shape for the executors. Sets the executor cores and memory.
         """
         return pulumi.get(self, "executor_shape")
+
+    @property
+    @pulumi.getter(name="executorShapeConfigs")
+    def executor_shape_configs(self) -> Sequence['outputs.GetInvokeRunExecutorShapeConfigResult']:
+        """
+        This is used to configure the shape of the driver or executor if a flexible shape is used.
+        """
+        return pulumi.get(self, "executor_shape_configs")
 
     @property
     @pulumi.getter(name="fileUri")
@@ -476,8 +498,10 @@ class AwaitableGetInvokeRunResult(GetInvokeRunResult):
             defined_tags=self.defined_tags,
             display_name=self.display_name,
             driver_shape=self.driver_shape,
+            driver_shape_configs=self.driver_shape_configs,
             execute=self.execute,
             executor_shape=self.executor_shape,
+            executor_shape_configs=self.executor_shape_configs,
             file_uri=self.file_uri,
             freeform_tags=self.freeform_tags,
             id=self.id,
@@ -546,8 +570,10 @@ def get_invoke_run(run_id: Optional[str] = None,
         defined_tags=__ret__.defined_tags,
         display_name=__ret__.display_name,
         driver_shape=__ret__.driver_shape,
+        driver_shape_configs=__ret__.driver_shape_configs,
         execute=__ret__.execute,
         executor_shape=__ret__.executor_shape,
+        executor_shape_configs=__ret__.executor_shape_configs,
         file_uri=__ret__.file_uri,
         freeform_tags=__ret__.freeform_tags,
         id=__ret__.id,

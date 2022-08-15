@@ -17,7 +17,7 @@ public final class BdsInstanceCloudSqlDetailKerberosDetail {
      */
     private final @Nullable String keytabFile;
     /**
-     * @return Name of the Kerberos principal.
+     * @return Name of the Kerberos principal
      * 
      */
     private final @Nullable String principalName;
@@ -38,7 +38,7 @@ public final class BdsInstanceCloudSqlDetailKerberosDetail {
         return Optional.ofNullable(this.keytabFile);
     }
     /**
-     * @return Name of the Kerberos principal.
+     * @return Name of the Kerberos principal
      * 
      */
     public Optional<String> principalName() {

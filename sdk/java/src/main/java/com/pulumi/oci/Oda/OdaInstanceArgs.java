@@ -5,6 +5,7 @@ package com.pulumi.oci.Oda;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -78,18 +79,48 @@ public final class OdaInstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Import(name="freeformTags")
     private @Nullable Output<Map<String,Object>> freeformTags;
 
     /**
-     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Optional<Output<Map<String,Object>>> freeformTags() {
         return Optional.ofNullable(this.freeformTags);
+    }
+
+    /**
+     * If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
+     * 
+     */
+    @Import(name="identityDomain")
+    private @Nullable Output<String> identityDomain;
+
+    /**
+     * @return If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
+     * 
+     */
+    public Optional<Output<String>> identityDomain() {
+        return Optional.ofNullable(this.identityDomain);
+    }
+
+    /**
+     * Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
+     * 
+     */
+    @Import(name="isRoleBasedAccess")
+    private @Nullable Output<Boolean> isRoleBasedAccess;
+
+    /**
+     * @return Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
+     * 
+     */
+    public Optional<Output<Boolean>> isRoleBasedAccess() {
+        return Optional.ofNullable(this.isRoleBasedAccess);
     }
 
     /**
@@ -130,6 +161,8 @@ public final class OdaInstanceArgs extends com.pulumi.resources.ResourceArgs {
         this.description = $.description;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.identityDomain = $.identityDomain;
+        this.isRoleBasedAccess = $.isRoleBasedAccess;
         this.shapeName = $.shapeName;
         this.state = $.state;
     }
@@ -237,7 +270,7 @@ public final class OdaInstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
          * 
@@ -248,13 +281,55 @@ public final class OdaInstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
          * 
          */
         public Builder freeformTags(Map<String,Object> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        /**
+         * @param identityDomain If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder identityDomain(@Nullable Output<String> identityDomain) {
+            $.identityDomain = identityDomain;
+            return this;
+        }
+
+        /**
+         * @param identityDomain If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder identityDomain(String identityDomain) {
+            return identityDomain(Output.of(identityDomain));
+        }
+
+        /**
+         * @param isRoleBasedAccess Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isRoleBasedAccess(@Nullable Output<Boolean> isRoleBasedAccess) {
+            $.isRoleBasedAccess = isRoleBasedAccess;
+            return this;
+        }
+
+        /**
+         * @param isRoleBasedAccess Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isRoleBasedAccess(Boolean isRoleBasedAccess) {
+            return isRoleBasedAccess(Output.of(isRoleBasedAccess));
         }
 
         /**

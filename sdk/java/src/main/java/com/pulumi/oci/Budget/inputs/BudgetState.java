@@ -21,14 +21,14 @@ public final class BudgetState extends com.pulumi.resources.ResourceArgs {
     public static final BudgetState Empty = new BudgetState();
 
     /**
-     * The actual spend in currency for the current budget cycle
+     * The actual spend in currency for the current budget cycle.
      * 
      */
     @Import(name="actualSpend")
     private @Nullable Output<Double> actualSpend;
 
     /**
-     * @return The actual spend in currency for the current budget cycle
+     * @return The actual spend in currency for the current budget cycle.
      * 
      */
     public Optional<Output<Double>> actualSpend() {
@@ -36,14 +36,14 @@ public final class BudgetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Total number of alert rules in the budget
+     * The total number of alert rules in the budget.
      * 
      */
     @Import(name="alertRuleCount")
     private @Nullable Output<Integer> alertRuleCount;
 
     /**
-     * @return Total number of alert rules in the budget
+     * @return The total number of alert rules in the budget.
      * 
      */
     public Optional<Output<Integer>> alertRuleCount() {
@@ -81,14 +81,14 @@ public final class BudgetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The OCID of the tenancy
+     * The OCID of the compartment.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return The OCID of the tenancy
+     * @return The OCID of the compartment.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -126,14 +126,14 @@ public final class BudgetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The displayName of the budget.
+     * (Updatable) The displayName of the budget. Avoid entering confidential information.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) The displayName of the budget.
+     * @return (Updatable) The displayName of the budget. Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -141,14 +141,14 @@ public final class BudgetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The forecasted spend in currency by the end of the current budget cycle
+     * The forecasted spend in currency by the end of the current budget cycle.
      * 
      */
     @Import(name="forecastedSpend")
     private @Nullable Output<Double> forecastedSpend;
 
     /**
-     * @return The forecasted spend in currency by the end of the current budget cycle
+     * @return The forecasted spend in currency by the end of the current budget cycle.
      * 
      */
     public Optional<Output<Double>> forecastedSpend() {
@@ -168,6 +168,21 @@ public final class BudgetState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<Map<String,Object>>> freeformTags() {
         return Optional.ofNullable(this.freeformTags);
+    }
+
+    /**
+     * (Updatable) The type of the budget processing period. Valid values are INVOICE and MONTH.
+     * 
+     */
+    @Import(name="processingPeriodType")
+    private @Nullable Output<String> processingPeriodType;
+
+    /**
+     * @return (Updatable) The type of the budget processing period. Valid values are INVOICE and MONTH.
+     * 
+     */
+    public Optional<Output<String>> processingPeriodType() {
+        return Optional.ofNullable(this.processingPeriodType);
     }
 
     /**
@@ -201,7 +216,7 @@ public final class BudgetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * This is DEPRECTAED. Set the target compartment id in targets instead.
+     * This is DEPRECATED. Set the target compartment ID in targets instead.
      * 
      * @deprecated
      * The &#39;target_compartment_id&#39; field has been deprecated. Please use &#39;target_type&#39; instead.
@@ -212,7 +227,7 @@ public final class BudgetState extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<String> targetCompartmentId;
 
     /**
-     * @return This is DEPRECTAED. Set the target compartment id in targets instead.
+     * @return This is DEPRECATED. Set the target compartment ID in targets instead.
      * 
      * @deprecated
      * The &#39;target_compartment_id&#39; field has been deprecated. Please use &#39;target_type&#39; instead.
@@ -239,14 +254,14 @@ public final class BudgetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The list of targets on which the budget is applied. If targetType is &#34;COMPARTMENT&#34;, targets contains list of compartment OCIDs. If targetType is &#34;TAG&#34;, targets contains list of cost tracking tag identifiers in the form of &#34;{tagNamespace}.{tagKey}.{tagValue}&#34;. Curerntly, the array should contain EXACT ONE item.
+     * The list of targets on which the budget is applied. If targetType is &#34;COMPARTMENT&#34;, the targets contain the list of compartment OCIDs. If targetType is &#34;TAG&#34;, the targets contain the list of cost tracking tag identifiers in the form of &#34;{tagNamespace}.{tagKey}.{tagValue}&#34;. Curerntly, the array should contain exactly one item.
      * 
      */
     @Import(name="targets")
     private @Nullable Output<List<String>> targets;
 
     /**
-     * @return The list of targets on which the budget is applied. If targetType is &#34;COMPARTMENT&#34;, targets contains list of compartment OCIDs. If targetType is &#34;TAG&#34;, targets contains list of cost tracking tag identifiers in the form of &#34;{tagNamespace}.{tagKey}.{tagValue}&#34;. Curerntly, the array should contain EXACT ONE item.
+     * @return The list of targets on which the budget is applied. If targetType is &#34;COMPARTMENT&#34;, the targets contain the list of compartment OCIDs. If targetType is &#34;TAG&#34;, the targets contain the list of cost tracking tag identifiers in the form of &#34;{tagNamespace}.{tagKey}.{tagValue}&#34;. Curerntly, the array should contain exactly one item.
      * 
      */
     public Optional<Output<List<String>>> targets() {
@@ -254,14 +269,14 @@ public final class BudgetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Time that budget was created
+     * The time that the budget was created.
      * 
      */
     @Import(name="timeCreated")
     private @Nullable Output<String> timeCreated;
 
     /**
-     * @return Time that budget was created
+     * @return The time that the budget was created.
      * 
      */
     public Optional<Output<String>> timeCreated() {
@@ -269,14 +284,14 @@ public final class BudgetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The time that the budget spend was last computed
+     * The time that the budget spend was last computed.
      * 
      */
     @Import(name="timeSpendComputed")
     private @Nullable Output<String> timeSpendComputed;
 
     /**
-     * @return The time that the budget spend was last computed
+     * @return The time that the budget spend was last computed.
      * 
      */
     public Optional<Output<String>> timeSpendComputed() {
@@ -284,14 +299,14 @@ public final class BudgetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Time that budget was updated
+     * The time that the budget was updated.
      * 
      */
     @Import(name="timeUpdated")
     private @Nullable Output<String> timeUpdated;
 
     /**
-     * @return Time that budget was updated
+     * @return The time that the budget was updated.
      * 
      */
     public Optional<Output<String>> timeUpdated() {
@@ -299,14 +314,14 @@ public final class BudgetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Version of the budget. Starts from 1 and increments by 1.
+     * The version of the budget. Starts from 1 and increments by 1.
      * 
      */
     @Import(name="version")
     private @Nullable Output<Integer> version;
 
     /**
-     * @return Version of the budget. Starts from 1 and increments by 1.
+     * @return The version of the budget. Starts from 1 and increments by 1.
      * 
      */
     public Optional<Output<Integer>> version() {
@@ -326,6 +341,7 @@ public final class BudgetState extends com.pulumi.resources.ResourceArgs {
         this.displayName = $.displayName;
         this.forecastedSpend = $.forecastedSpend;
         this.freeformTags = $.freeformTags;
+        this.processingPeriodType = $.processingPeriodType;
         this.resetPeriod = $.resetPeriod;
         this.state = $.state;
         this.targetCompartmentId = $.targetCompartmentId;
@@ -356,7 +372,7 @@ public final class BudgetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param actualSpend The actual spend in currency for the current budget cycle
+         * @param actualSpend The actual spend in currency for the current budget cycle.
          * 
          * @return builder
          * 
@@ -367,7 +383,7 @@ public final class BudgetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param actualSpend The actual spend in currency for the current budget cycle
+         * @param actualSpend The actual spend in currency for the current budget cycle.
          * 
          * @return builder
          * 
@@ -377,7 +393,7 @@ public final class BudgetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param alertRuleCount Total number of alert rules in the budget
+         * @param alertRuleCount The total number of alert rules in the budget.
          * 
          * @return builder
          * 
@@ -388,7 +404,7 @@ public final class BudgetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param alertRuleCount Total number of alert rules in the budget
+         * @param alertRuleCount The total number of alert rules in the budget.
          * 
          * @return builder
          * 
@@ -440,7 +456,7 @@ public final class BudgetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId The OCID of the tenancy
+         * @param compartmentId The OCID of the compartment.
          * 
          * @return builder
          * 
@@ -451,7 +467,7 @@ public final class BudgetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId The OCID of the tenancy
+         * @param compartmentId The OCID of the compartment.
          * 
          * @return builder
          * 
@@ -503,7 +519,7 @@ public final class BudgetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) The displayName of the budget.
+         * @param displayName (Updatable) The displayName of the budget. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -514,7 +530,7 @@ public final class BudgetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) The displayName of the budget.
+         * @param displayName (Updatable) The displayName of the budget. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -524,7 +540,7 @@ public final class BudgetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param forecastedSpend The forecasted spend in currency by the end of the current budget cycle
+         * @param forecastedSpend The forecasted spend in currency by the end of the current budget cycle.
          * 
          * @return builder
          * 
@@ -535,7 +551,7 @@ public final class BudgetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param forecastedSpend The forecasted spend in currency by the end of the current budget cycle
+         * @param forecastedSpend The forecasted spend in currency by the end of the current budget cycle.
          * 
          * @return builder
          * 
@@ -563,6 +579,27 @@ public final class BudgetState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder freeformTags(Map<String,Object> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        /**
+         * @param processingPeriodType (Updatable) The type of the budget processing period. Valid values are INVOICE and MONTH.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder processingPeriodType(@Nullable Output<String> processingPeriodType) {
+            $.processingPeriodType = processingPeriodType;
+            return this;
+        }
+
+        /**
+         * @param processingPeriodType (Updatable) The type of the budget processing period. Valid values are INVOICE and MONTH.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder processingPeriodType(String processingPeriodType) {
+            return processingPeriodType(Output.of(processingPeriodType));
         }
 
         /**
@@ -608,7 +645,7 @@ public final class BudgetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param targetCompartmentId This is DEPRECTAED. Set the target compartment id in targets instead.
+         * @param targetCompartmentId This is DEPRECATED. Set the target compartment ID in targets instead.
          * 
          * @return builder
          * 
@@ -623,7 +660,7 @@ public final class BudgetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param targetCompartmentId This is DEPRECTAED. Set the target compartment id in targets instead.
+         * @param targetCompartmentId This is DEPRECATED. Set the target compartment ID in targets instead.
          * 
          * @return builder
          * 
@@ -658,7 +695,7 @@ public final class BudgetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param targets The list of targets on which the budget is applied. If targetType is &#34;COMPARTMENT&#34;, targets contains list of compartment OCIDs. If targetType is &#34;TAG&#34;, targets contains list of cost tracking tag identifiers in the form of &#34;{tagNamespace}.{tagKey}.{tagValue}&#34;. Curerntly, the array should contain EXACT ONE item.
+         * @param targets The list of targets on which the budget is applied. If targetType is &#34;COMPARTMENT&#34;, the targets contain the list of compartment OCIDs. If targetType is &#34;TAG&#34;, the targets contain the list of cost tracking tag identifiers in the form of &#34;{tagNamespace}.{tagKey}.{tagValue}&#34;. Curerntly, the array should contain exactly one item.
          * 
          * @return builder
          * 
@@ -669,7 +706,7 @@ public final class BudgetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param targets The list of targets on which the budget is applied. If targetType is &#34;COMPARTMENT&#34;, targets contains list of compartment OCIDs. If targetType is &#34;TAG&#34;, targets contains list of cost tracking tag identifiers in the form of &#34;{tagNamespace}.{tagKey}.{tagValue}&#34;. Curerntly, the array should contain EXACT ONE item.
+         * @param targets The list of targets on which the budget is applied. If targetType is &#34;COMPARTMENT&#34;, the targets contain the list of compartment OCIDs. If targetType is &#34;TAG&#34;, the targets contain the list of cost tracking tag identifiers in the form of &#34;{tagNamespace}.{tagKey}.{tagValue}&#34;. Curerntly, the array should contain exactly one item.
          * 
          * @return builder
          * 
@@ -679,7 +716,7 @@ public final class BudgetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param targets The list of targets on which the budget is applied. If targetType is &#34;COMPARTMENT&#34;, targets contains list of compartment OCIDs. If targetType is &#34;TAG&#34;, targets contains list of cost tracking tag identifiers in the form of &#34;{tagNamespace}.{tagKey}.{tagValue}&#34;. Curerntly, the array should contain EXACT ONE item.
+         * @param targets The list of targets on which the budget is applied. If targetType is &#34;COMPARTMENT&#34;, the targets contain the list of compartment OCIDs. If targetType is &#34;TAG&#34;, the targets contain the list of cost tracking tag identifiers in the form of &#34;{tagNamespace}.{tagKey}.{tagValue}&#34;. Curerntly, the array should contain exactly one item.
          * 
          * @return builder
          * 
@@ -689,7 +726,7 @@ public final class BudgetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeCreated Time that budget was created
+         * @param timeCreated The time that the budget was created.
          * 
          * @return builder
          * 
@@ -700,7 +737,7 @@ public final class BudgetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeCreated Time that budget was created
+         * @param timeCreated The time that the budget was created.
          * 
          * @return builder
          * 
@@ -710,7 +747,7 @@ public final class BudgetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeSpendComputed The time that the budget spend was last computed
+         * @param timeSpendComputed The time that the budget spend was last computed.
          * 
          * @return builder
          * 
@@ -721,7 +758,7 @@ public final class BudgetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeSpendComputed The time that the budget spend was last computed
+         * @param timeSpendComputed The time that the budget spend was last computed.
          * 
          * @return builder
          * 
@@ -731,7 +768,7 @@ public final class BudgetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeUpdated Time that budget was updated
+         * @param timeUpdated The time that the budget was updated.
          * 
          * @return builder
          * 
@@ -742,7 +779,7 @@ public final class BudgetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeUpdated Time that budget was updated
+         * @param timeUpdated The time that the budget was updated.
          * 
          * @return builder
          * 
@@ -752,7 +789,7 @@ public final class BudgetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param version Version of the budget. Starts from 1 and increments by 1.
+         * @param version The version of the budget. Starts from 1 and increments by 1.
          * 
          * @return builder
          * 
@@ -763,7 +800,7 @@ public final class BudgetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param version Version of the budget. Starts from 1 and increments by 1.
+         * @param version The version of the budget. Starts from 1 and increments by 1.
          * 
          * @return builder
          * 

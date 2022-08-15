@@ -12,10 +12,15 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DeployArtifactDeployArtifactSource {
     /**
-     * @return (Updatable) base64 Encoded String
+     * @return (Updatable) Specifies content for the inline artifact.
      * 
      */
     private final @Nullable String base64encodedContent;
+    /**
+     * @return (Updatable) The URL of an OCIR repository.
+     * 
+     */
+    private final @Nullable String chartUrl;
     /**
      * @return (Updatable) Specifies the artifact path in the repository.
      * 
@@ -50,6 +55,7 @@ public final class DeployArtifactDeployArtifactSource {
     @CustomType.Constructor
     private DeployArtifactDeployArtifactSource(
         @CustomType.Parameter("base64encodedContent") @Nullable String base64encodedContent,
+        @CustomType.Parameter("chartUrl") @Nullable String chartUrl,
         @CustomType.Parameter("deployArtifactPath") @Nullable String deployArtifactPath,
         @CustomType.Parameter("deployArtifactSourceType") String deployArtifactSourceType,
         @CustomType.Parameter("deployArtifactVersion") @Nullable String deployArtifactVersion,
@@ -57,6 +63,7 @@ public final class DeployArtifactDeployArtifactSource {
         @CustomType.Parameter("imageUri") @Nullable String imageUri,
         @CustomType.Parameter("repositoryId") @Nullable String repositoryId) {
         this.base64encodedContent = base64encodedContent;
+        this.chartUrl = chartUrl;
         this.deployArtifactPath = deployArtifactPath;
         this.deployArtifactSourceType = deployArtifactSourceType;
         this.deployArtifactVersion = deployArtifactVersion;
@@ -66,11 +73,18 @@ public final class DeployArtifactDeployArtifactSource {
     }
 
     /**
-     * @return (Updatable) base64 Encoded String
+     * @return (Updatable) Specifies content for the inline artifact.
      * 
      */
     public Optional<String> base64encodedContent() {
         return Optional.ofNullable(this.base64encodedContent);
+    }
+    /**
+     * @return (Updatable) The URL of an OCIR repository.
+     * 
+     */
+    public Optional<String> chartUrl() {
+        return Optional.ofNullable(this.chartUrl);
     }
     /**
      * @return (Updatable) Specifies the artifact path in the repository.
@@ -125,6 +139,7 @@ public final class DeployArtifactDeployArtifactSource {
 
     public static final class Builder {
         private @Nullable String base64encodedContent;
+        private @Nullable String chartUrl;
         private @Nullable String deployArtifactPath;
         private String deployArtifactSourceType;
         private @Nullable String deployArtifactVersion;
@@ -139,6 +154,7 @@ public final class DeployArtifactDeployArtifactSource {
         public Builder(DeployArtifactDeployArtifactSource defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.base64encodedContent = defaults.base64encodedContent;
+    	      this.chartUrl = defaults.chartUrl;
     	      this.deployArtifactPath = defaults.deployArtifactPath;
     	      this.deployArtifactSourceType = defaults.deployArtifactSourceType;
     	      this.deployArtifactVersion = defaults.deployArtifactVersion;
@@ -149,6 +165,10 @@ public final class DeployArtifactDeployArtifactSource {
 
         public Builder base64encodedContent(@Nullable String base64encodedContent) {
             this.base64encodedContent = base64encodedContent;
+            return this;
+        }
+        public Builder chartUrl(@Nullable String chartUrl) {
+            this.chartUrl = chartUrl;
             return this;
         }
         public Builder deployArtifactPath(@Nullable String deployArtifactPath) {
@@ -175,7 +195,7 @@ public final class DeployArtifactDeployArtifactSource {
             this.repositoryId = repositoryId;
             return this;
         }        public DeployArtifactDeployArtifactSource build() {
-            return new DeployArtifactDeployArtifactSource(base64encodedContent, deployArtifactPath, deployArtifactSourceType, deployArtifactVersion, imageDigest, imageUri, repositoryId);
+            return new DeployArtifactDeployArtifactSource(base64encodedContent, chartUrl, deployArtifactPath, deployArtifactSourceType, deployArtifactVersion, imageDigest, imageUri, repositoryId);
         }
     }
 }

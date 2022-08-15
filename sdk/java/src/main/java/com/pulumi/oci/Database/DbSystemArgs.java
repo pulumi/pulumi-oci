@@ -99,7 +99,7 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system. The valid values depend on the specified shape:
+     * (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system or AMD VMDB Systems. The valid values depend on the specified shape:
      * * BM.DenseIO1.36 - Specify a multiple of 2, from 2 to 36.
      * * BM.DenseIO2.52 - Specify a multiple of 2, from 2 to 52.
      * * Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
@@ -109,13 +109,14 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
      * * Exadata.Quarter2.92 - Specify a multiple of 2, from 0 to 92.
      * * Exadata.Half2.184 - Specify a multiple of 4, from 0 to 184.
      * * Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
+     * * VM.Standard.E4.Flex - Specify any thing from 1 to 64.
      * 
      */
     @Import(name="cpuCoreCount")
     private @Nullable Output<Integer> cpuCoreCount;
 
     /**
-     * @return (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system. The valid values depend on the specified shape:
+     * @return (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system or AMD VMDB Systems. The valid values depend on the specified shape:
      * * BM.DenseIO1.36 - Specify a multiple of 2, from 2 to 36.
      * * BM.DenseIO2.52 - Specify a multiple of 2, from 2 to 52.
      * * Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
@@ -125,6 +126,7 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
      * * Exadata.Quarter2.92 - Specify a multiple of 2, from 0 to 92.
      * * Exadata.Half2.184 - Specify a multiple of 4, from 0 to 184.
      * * Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
+     * * VM.Standard.E4.Flex - Specify any thing from 1 to 64.
      * 
      */
     public Optional<Output<Integer>> cpuCoreCount() {
@@ -387,16 +389,16 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-     * * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+     * (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+     * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      * 
      */
     @Import(name="nsgIds")
     private @Nullable Output<List<String>> nsgIds;
 
     /**
-     * @return (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-     * * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+     * @return (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+     * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      * 
      */
     public Optional<Output<List<String>>> nsgIds() {
@@ -513,6 +515,21 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
+     * 
+     */
+    @Import(name="storageVolumePerformanceMode")
+    private @Nullable Output<String> storageVolumePerformanceMode;
+
+    /**
+     * @return The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
+     * 
+     */
+    public Optional<Output<String>> storageVolumePerformanceMode() {
+        return Optional.ofNullable(this.storageVolumePerformanceMode);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
      * 
      */
@@ -576,6 +593,7 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
         this.sourceDbSystemId = $.sourceDbSystemId;
         this.sparseDiskgroup = $.sparseDiskgroup;
         this.sshPublicKeys = $.sshPublicKeys;
+        this.storageVolumePerformanceMode = $.storageVolumePerformanceMode;
         this.subnetId = $.subnetId;
         this.timeZone = $.timeZone;
     }
@@ -714,7 +732,7 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param cpuCoreCount (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system. The valid values depend on the specified shape:
+         * @param cpuCoreCount (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system or AMD VMDB Systems. The valid values depend on the specified shape:
          * * BM.DenseIO1.36 - Specify a multiple of 2, from 2 to 36.
          * * BM.DenseIO2.52 - Specify a multiple of 2, from 2 to 52.
          * * Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
@@ -724,6 +742,7 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
          * * Exadata.Quarter2.92 - Specify a multiple of 2, from 0 to 92.
          * * Exadata.Half2.184 - Specify a multiple of 4, from 0 to 184.
          * * Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
+         * * VM.Standard.E4.Flex - Specify any thing from 1 to 64.
          * 
          * @return builder
          * 
@@ -734,7 +753,7 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param cpuCoreCount (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system. The valid values depend on the specified shape:
+         * @param cpuCoreCount (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system or AMD VMDB Systems. The valid values depend on the specified shape:
          * * BM.DenseIO1.36 - Specify a multiple of 2, from 2 to 36.
          * * BM.DenseIO2.52 - Specify a multiple of 2, from 2 to 52.
          * * Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
@@ -744,6 +763,7 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
          * * Exadata.Quarter2.92 - Specify a multiple of 2, from 0 to 92.
          * * Exadata.Half2.184 - Specify a multiple of 4, from 0 to 184.
          * * Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
+         * * VM.Standard.E4.Flex - Specify any thing from 1 to 64.
          * 
          * @return builder
          * 
@@ -1120,8 +1140,8 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nsgIds (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-         * * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+         * @param nsgIds (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+         * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
          * 
          * @return builder
          * 
@@ -1132,8 +1152,8 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nsgIds (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-         * * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+         * @param nsgIds (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+         * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
          * 
          * @return builder
          * 
@@ -1143,8 +1163,8 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nsgIds (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-         * * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+         * @param nsgIds (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+         * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
          * 
          * @return builder
          * 
@@ -1312,6 +1332,27 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder sshPublicKeys(String... sshPublicKeys) {
             return sshPublicKeys(List.of(sshPublicKeys));
+        }
+
+        /**
+         * @param storageVolumePerformanceMode The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder storageVolumePerformanceMode(@Nullable Output<String> storageVolumePerformanceMode) {
+            $.storageVolumePerformanceMode = storageVolumePerformanceMode;
+            return this;
+        }
+
+        /**
+         * @param storageVolumePerformanceMode The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder storageVolumePerformanceMode(String storageVolumePerformanceMode) {
+            return storageVolumePerformanceMode(Output.of(storageVolumePerformanceMode));
         }
 
         /**

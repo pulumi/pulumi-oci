@@ -12,6 +12,10 @@ import java.util.Objects;
 
 @CustomType
 public final class GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetail {
+    /**
+     * @return Base condition object
+     * 
+     */
     private final String condition;
     /**
      * @return ResponderRule configurations
@@ -41,6 +45,10 @@ public final class GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffec
         this.mode = mode;
     }
 
+    /**
+     * @return Base condition object
+     * 
+     */
     public String condition() {
         return this.condition;
     }

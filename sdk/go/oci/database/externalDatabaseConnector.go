@@ -33,6 +33,7 @@ import (
 // 				CredentialType: pulumi.Any(_var.External_database_connector_connection_credentials_credential_type),
 // 				Password:       pulumi.Any(_var.External_database_connector_connection_credentials_password),
 // 				Role:           pulumi.Any(_var.External_database_connector_connection_credentials_role),
+// 				SslSecretId:    pulumi.Any(oci_vault_secret.Test_secret.Id),
 // 				Username:       pulumi.Any(_var.External_database_connector_connection_credentials_username),
 // 			},
 // 			ConnectionString: &database.ExternalDatabaseConnectorConnectionStringArgs{

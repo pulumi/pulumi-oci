@@ -52,6 +52,11 @@ public final class GetSupportedHostShapesItem {
      * 
      */
     private final List<String> supportedSddcTypes;
+    /**
+     * @return The VMware software versions supported by the shape.
+     * 
+     */
+    private final List<String> supportedVmwareSoftwareVersions;
 
     @CustomType.Constructor
     private GetSupportedHostShapesItem(
@@ -62,7 +67,8 @@ public final class GetSupportedHostShapesItem {
         @CustomType.Parameter("shapeFamily") String shapeFamily,
         @CustomType.Parameter("supportedOcpuCounts") List<Double> supportedOcpuCounts,
         @CustomType.Parameter("supportedOperations") List<String> supportedOperations,
-        @CustomType.Parameter("supportedSddcTypes") List<String> supportedSddcTypes) {
+        @CustomType.Parameter("supportedSddcTypes") List<String> supportedSddcTypes,
+        @CustomType.Parameter("supportedVmwareSoftwareVersions") List<String> supportedVmwareSoftwareVersions) {
         this.defaultOcpuCount = defaultOcpuCount;
         this.description = description;
         this.isSupportShieldedInstances = isSupportShieldedInstances;
@@ -71,6 +77,7 @@ public final class GetSupportedHostShapesItem {
         this.supportedOcpuCounts = supportedOcpuCounts;
         this.supportedOperations = supportedOperations;
         this.supportedSddcTypes = supportedSddcTypes;
+        this.supportedVmwareSoftwareVersions = supportedVmwareSoftwareVersions;
     }
 
     /**
@@ -129,6 +136,13 @@ public final class GetSupportedHostShapesItem {
     public List<String> supportedSddcTypes() {
         return this.supportedSddcTypes;
     }
+    /**
+     * @return The VMware software versions supported by the shape.
+     * 
+     */
+    public List<String> supportedVmwareSoftwareVersions() {
+        return this.supportedVmwareSoftwareVersions;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -147,6 +161,7 @@ public final class GetSupportedHostShapesItem {
         private List<Double> supportedOcpuCounts;
         private List<String> supportedOperations;
         private List<String> supportedSddcTypes;
+        private List<String> supportedVmwareSoftwareVersions;
 
         public Builder() {
     	      // Empty
@@ -162,6 +177,7 @@ public final class GetSupportedHostShapesItem {
     	      this.supportedOcpuCounts = defaults.supportedOcpuCounts;
     	      this.supportedOperations = defaults.supportedOperations;
     	      this.supportedSddcTypes = defaults.supportedSddcTypes;
+    	      this.supportedVmwareSoftwareVersions = defaults.supportedVmwareSoftwareVersions;
         }
 
         public Builder defaultOcpuCount(Double defaultOcpuCount) {
@@ -204,8 +220,15 @@ public final class GetSupportedHostShapesItem {
         }
         public Builder supportedSddcTypes(String... supportedSddcTypes) {
             return supportedSddcTypes(List.of(supportedSddcTypes));
+        }
+        public Builder supportedVmwareSoftwareVersions(List<String> supportedVmwareSoftwareVersions) {
+            this.supportedVmwareSoftwareVersions = Objects.requireNonNull(supportedVmwareSoftwareVersions);
+            return this;
+        }
+        public Builder supportedVmwareSoftwareVersions(String... supportedVmwareSoftwareVersions) {
+            return supportedVmwareSoftwareVersions(List.of(supportedVmwareSoftwareVersions));
         }        public GetSupportedHostShapesItem build() {
-            return new GetSupportedHostShapesItem(defaultOcpuCount, description, isSupportShieldedInstances, name, shapeFamily, supportedOcpuCounts, supportedOperations, supportedSddcTypes);
+            return new GetSupportedHostShapesItem(defaultOcpuCount, description, isSupportShieldedInstances, name, shapeFamily, supportedOcpuCounts, supportedOperations, supportedSddcTypes, supportedVmwareSoftwareVersions);
         }
     }
 }

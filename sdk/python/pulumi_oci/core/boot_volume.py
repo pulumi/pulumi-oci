@@ -246,7 +246,7 @@ class _BootVolumeState:
                  vpus_per_gb: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering BootVolume resources.
-        :param pulumi.Input[str] auto_tuned_vpus_per_gb: The number of Volume Performance Units per GB that this volume is effectively tuned to when it's idle.
+        :param pulumi.Input[str] auto_tuned_vpus_per_gb: The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it's idle.
         :param pulumi.Input[str] availability_domain: (Updatable) The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[str] backup_policy_id: If provided, specifies the ID of the boot volume backup policy to assign to the newly created boot volume. If omitted, no policy will be assigned.
         :param pulumi.Input[Sequence[pulumi.Input['BootVolumeBootVolumeReplicaArgs']]] boot_volume_replicas: (Updatable) The list of boot volume replicas to be enabled for this boot volume in the specified destination availability domains.
@@ -316,7 +316,7 @@ class _BootVolumeState:
     @pulumi.getter(name="autoTunedVpusPerGb")
     def auto_tuned_vpus_per_gb(self) -> Optional[pulumi.Input[str]]:
         """
-        The number of Volume Performance Units per GB that this volume is effectively tuned to when it's idle.
+        The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it's idle.
         """
         return pulumi.get(self, "auto_tuned_vpus_per_gb")
 
@@ -826,7 +826,7 @@ class BootVolume(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] auto_tuned_vpus_per_gb: The number of Volume Performance Units per GB that this volume is effectively tuned to when it's idle.
+        :param pulumi.Input[str] auto_tuned_vpus_per_gb: The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it's idle.
         :param pulumi.Input[str] availability_domain: (Updatable) The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[str] backup_policy_id: If provided, specifies the ID of the boot volume backup policy to assign to the newly created boot volume. If omitted, no policy will be assigned.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BootVolumeBootVolumeReplicaArgs']]]] boot_volume_replicas: (Updatable) The list of boot volume replicas to be enabled for this boot volume in the specified destination availability domains.
@@ -877,7 +877,7 @@ class BootVolume(pulumi.CustomResource):
     @pulumi.getter(name="autoTunedVpusPerGb")
     def auto_tuned_vpus_per_gb(self) -> pulumi.Output[str]:
         """
-        The number of Volume Performance Units per GB that this volume is effectively tuned to when it's idle.
+        The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it's idle.
         """
         return pulumi.get(self, "auto_tuned_vpus_per_gb")
 

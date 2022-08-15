@@ -5,6 +5,7 @@ package com.pulumi.oci.BigDataService.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.BigDataService.outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicy;
+import com.pulumi.oci.BigDataService.outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -19,6 +20,7 @@ public final class GetAutoScalingConfigurationsAutoScalingConfiguration {
     private final Boolean isEnabled;
     private final String nodeType;
     private final List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicy> policies;
+    private final List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail> policyDetails;
     private final String state;
     private final String timeCreated;
     private final String timeUpdated;
@@ -32,6 +34,7 @@ public final class GetAutoScalingConfigurationsAutoScalingConfiguration {
         @CustomType.Parameter("isEnabled") Boolean isEnabled,
         @CustomType.Parameter("nodeType") String nodeType,
         @CustomType.Parameter("policies") List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicy> policies,
+        @CustomType.Parameter("policyDetails") List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail> policyDetails,
         @CustomType.Parameter("state") String state,
         @CustomType.Parameter("timeCreated") String timeCreated,
         @CustomType.Parameter("timeUpdated") String timeUpdated) {
@@ -42,6 +45,7 @@ public final class GetAutoScalingConfigurationsAutoScalingConfiguration {
         this.isEnabled = isEnabled;
         this.nodeType = nodeType;
         this.policies = policies;
+        this.policyDetails = policyDetails;
         this.state = state;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
@@ -67,6 +71,9 @@ public final class GetAutoScalingConfigurationsAutoScalingConfiguration {
     }
     public List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicy> policies() {
         return this.policies;
+    }
+    public List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail> policyDetails() {
+        return this.policyDetails;
     }
     public String state() {
         return this.state;
@@ -94,6 +101,7 @@ public final class GetAutoScalingConfigurationsAutoScalingConfiguration {
         private Boolean isEnabled;
         private String nodeType;
         private List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicy> policies;
+        private List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail> policyDetails;
         private String state;
         private String timeCreated;
         private String timeUpdated;
@@ -111,6 +119,7 @@ public final class GetAutoScalingConfigurationsAutoScalingConfiguration {
     	      this.isEnabled = defaults.isEnabled;
     	      this.nodeType = defaults.nodeType;
     	      this.policies = defaults.policies;
+    	      this.policyDetails = defaults.policyDetails;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
@@ -147,6 +156,13 @@ public final class GetAutoScalingConfigurationsAutoScalingConfiguration {
         public Builder policies(GetAutoScalingConfigurationsAutoScalingConfigurationPolicy... policies) {
             return policies(List.of(policies));
         }
+        public Builder policyDetails(List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail> policyDetails) {
+            this.policyDetails = Objects.requireNonNull(policyDetails);
+            return this;
+        }
+        public Builder policyDetails(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail... policyDetails) {
+            return policyDetails(List.of(policyDetails));
+        }
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
@@ -159,7 +175,7 @@ public final class GetAutoScalingConfigurationsAutoScalingConfiguration {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }        public GetAutoScalingConfigurationsAutoScalingConfiguration build() {
-            return new GetAutoScalingConfigurationsAutoScalingConfiguration(bdsInstanceId, clusterAdminPassword, displayName, id, isEnabled, nodeType, policies, state, timeCreated, timeUpdated);
+            return new GetAutoScalingConfigurationsAutoScalingConfiguration(bdsInstanceId, clusterAdminPassword, displayName, id, isEnabled, nodeType, policies, policyDetails, state, timeCreated, timeUpdated);
         }
     }
 }

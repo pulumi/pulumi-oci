@@ -58,14 +58,14 @@ public final class GetResultPlainArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * The result content type zip or raw.
+     * The result content type: zip or raw.
      * 
      */
     @Import(name="resultContentType", required=true)
     private String resultContentType;
 
     /**
-     * @return The result content type zip or raw.
+     * @return The result content type: zip or raw.
      * 
      */
     public String resultContentType() {
@@ -73,14 +73,14 @@ public final class GetResultPlainArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * The result type har, screenshot, log or network.
+     * The result type: har, screenshot, log, or network.
      * 
      */
     @Import(name="resultType", required=true)
     private String resultType;
 
     /**
-     * @return The result type har, screenshot, log or network.
+     * @return The result type: har, screenshot, log, or network.
      * 
      */
     public String resultType() {
@@ -165,7 +165,7 @@ public final class GetResultPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param resultContentType The result content type zip or raw.
+         * @param resultContentType The result content type: zip or raw.
          * 
          * @return builder
          * 
@@ -176,7 +176,7 @@ public final class GetResultPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param resultType The result type har, screenshot, log or network.
+         * @param resultType The result type: har, screenshot, log, or network.
          * 
          * @return builder
          * 

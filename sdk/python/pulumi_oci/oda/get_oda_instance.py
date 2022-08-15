@@ -7,6 +7,7 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
+from . import outputs
 
 __all__ = [
     'GetOdaInstanceResult',
@@ -20,7 +21,13 @@ class GetOdaInstanceResult:
     """
     A collection of values returned by getOdaInstance.
     """
-    def __init__(__self__, compartment_id=None, connector_url=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, lifecycle_sub_state=None, oda_instance_id=None, shape_name=None, state=None, state_message=None, time_created=None, time_updated=None, web_app_url=None):
+    def __init__(__self__, attachment_ids=None, attachment_types=None, compartment_id=None, connector_url=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, identity_app_console_url=None, identity_app_guid=None, identity_domain=None, imported_package_ids=None, imported_package_names=None, is_role_based_access=None, lifecycle_sub_state=None, oda_instance_id=None, restricted_operations=None, shape_name=None, state=None, state_message=None, time_created=None, time_updated=None, web_app_url=None):
+        if attachment_ids and not isinstance(attachment_ids, list):
+            raise TypeError("Expected argument 'attachment_ids' to be a list")
+        pulumi.set(__self__, "attachment_ids", attachment_ids)
+        if attachment_types and not isinstance(attachment_types, list):
+            raise TypeError("Expected argument 'attachment_types' to be a list")
+        pulumi.set(__self__, "attachment_types", attachment_types)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -42,12 +49,33 @@ class GetOdaInstanceResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if identity_app_console_url and not isinstance(identity_app_console_url, str):
+            raise TypeError("Expected argument 'identity_app_console_url' to be a str")
+        pulumi.set(__self__, "identity_app_console_url", identity_app_console_url)
+        if identity_app_guid and not isinstance(identity_app_guid, str):
+            raise TypeError("Expected argument 'identity_app_guid' to be a str")
+        pulumi.set(__self__, "identity_app_guid", identity_app_guid)
+        if identity_domain and not isinstance(identity_domain, str):
+            raise TypeError("Expected argument 'identity_domain' to be a str")
+        pulumi.set(__self__, "identity_domain", identity_domain)
+        if imported_package_ids and not isinstance(imported_package_ids, list):
+            raise TypeError("Expected argument 'imported_package_ids' to be a list")
+        pulumi.set(__self__, "imported_package_ids", imported_package_ids)
+        if imported_package_names and not isinstance(imported_package_names, list):
+            raise TypeError("Expected argument 'imported_package_names' to be a list")
+        pulumi.set(__self__, "imported_package_names", imported_package_names)
+        if is_role_based_access and not isinstance(is_role_based_access, bool):
+            raise TypeError("Expected argument 'is_role_based_access' to be a bool")
+        pulumi.set(__self__, "is_role_based_access", is_role_based_access)
         if lifecycle_sub_state and not isinstance(lifecycle_sub_state, str):
             raise TypeError("Expected argument 'lifecycle_sub_state' to be a str")
         pulumi.set(__self__, "lifecycle_sub_state", lifecycle_sub_state)
         if oda_instance_id and not isinstance(oda_instance_id, str):
             raise TypeError("Expected argument 'oda_instance_id' to be a str")
         pulumi.set(__self__, "oda_instance_id", oda_instance_id)
+        if restricted_operations and not isinstance(restricted_operations, list):
+            raise TypeError("Expected argument 'restricted_operations' to be a list")
+        pulumi.set(__self__, "restricted_operations", restricted_operations)
         if shape_name and not isinstance(shape_name, str):
             raise TypeError("Expected argument 'shape_name' to be a str")
         pulumi.set(__self__, "shape_name", shape_name)
@@ -66,6 +94,22 @@ class GetOdaInstanceResult:
         if web_app_url and not isinstance(web_app_url, str):
             raise TypeError("Expected argument 'web_app_url' to be a str")
         pulumi.set(__self__, "web_app_url", web_app_url)
+
+    @property
+    @pulumi.getter(name="attachmentIds")
+    def attachment_ids(self) -> Sequence[str]:
+        """
+        A list of attachment identifiers for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+        """
+        return pulumi.get(self, "attachment_ids")
+
+    @property
+    @pulumi.getter(name="attachmentTypes")
+    def attachment_types(self) -> Sequence[str]:
+        """
+        A list of attachment types for this instance (if any). Use attachmentIds to get the details of the attachments.
+        """
+        return pulumi.get(self, "attachment_types")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -111,7 +155,7 @@ class GetOdaInstanceResult:
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, Any]:
         """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -122,6 +166,54 @@ class GetOdaInstanceResult:
         Unique immutable identifier that was assigned when the instance was created.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="identityAppConsoleUrl")
+    def identity_app_console_url(self) -> str:
+        """
+        If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.
+        """
+        return pulumi.get(self, "identity_app_console_url")
+
+    @property
+    @pulumi.getter(name="identityAppGuid")
+    def identity_app_guid(self) -> str:
+        """
+        If isRoleBasedAccess is set to true, this property specifies the GUID of the Identity Application instance Digital Assistant has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this Digital Assistant instance for users within the identity domain.
+        """
+        return pulumi.get(self, "identity_app_guid")
+
+    @property
+    @pulumi.getter(name="identityDomain")
+    def identity_domain(self) -> str:
+        """
+        If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
+        """
+        return pulumi.get(self, "identity_domain")
+
+    @property
+    @pulumi.getter(name="importedPackageIds")
+    def imported_package_ids(self) -> Sequence[str]:
+        """
+        A list of package ids imported into this instance (if any). Use GetImportedPackage to get the details of the imported packages.
+        """
+        return pulumi.get(self, "imported_package_ids")
+
+    @property
+    @pulumi.getter(name="importedPackageNames")
+    def imported_package_names(self) -> Sequence[str]:
+        """
+        A list of package names imported into this instance (if any). Use importedPackageIds field to get the details of the imported packages.
+        """
+        return pulumi.get(self, "imported_package_names")
+
+    @property
+    @pulumi.getter(name="isRoleBasedAccess")
+    def is_role_based_access(self) -> bool:
+        """
+        Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
+        """
+        return pulumi.get(self, "is_role_based_access")
 
     @property
     @pulumi.getter(name="lifecycleSubState")
@@ -135,6 +227,14 @@ class GetOdaInstanceResult:
     @pulumi.getter(name="odaInstanceId")
     def oda_instance_id(self) -> str:
         return pulumi.get(self, "oda_instance_id")
+
+    @property
+    @pulumi.getter(name="restrictedOperations")
+    def restricted_operations(self) -> Sequence['outputs.GetOdaInstanceRestrictedOperationResult']:
+        """
+        A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+        """
+        return pulumi.get(self, "restricted_operations")
 
     @property
     @pulumi.getter(name="shapeName")
@@ -191,6 +291,8 @@ class AwaitableGetOdaInstanceResult(GetOdaInstanceResult):
         if False:
             yield self
         return GetOdaInstanceResult(
+            attachment_ids=self.attachment_ids,
+            attachment_types=self.attachment_types,
             compartment_id=self.compartment_id,
             connector_url=self.connector_url,
             defined_tags=self.defined_tags,
@@ -198,8 +300,15 @@ class AwaitableGetOdaInstanceResult(GetOdaInstanceResult):
             display_name=self.display_name,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            identity_app_console_url=self.identity_app_console_url,
+            identity_app_guid=self.identity_app_guid,
+            identity_domain=self.identity_domain,
+            imported_package_ids=self.imported_package_ids,
+            imported_package_names=self.imported_package_names,
+            is_role_based_access=self.is_role_based_access,
             lifecycle_sub_state=self.lifecycle_sub_state,
             oda_instance_id=self.oda_instance_id,
+            restricted_operations=self.restricted_operations,
             shape_name=self.shape_name,
             state=self.state,
             state_message=self.state_message,
@@ -236,6 +345,8 @@ def get_oda_instance(oda_instance_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Oda/getOdaInstance:getOdaInstance', __args__, opts=opts, typ=GetOdaInstanceResult).value
 
     return AwaitableGetOdaInstanceResult(
+        attachment_ids=__ret__.attachment_ids,
+        attachment_types=__ret__.attachment_types,
         compartment_id=__ret__.compartment_id,
         connector_url=__ret__.connector_url,
         defined_tags=__ret__.defined_tags,
@@ -243,8 +354,15 @@ def get_oda_instance(oda_instance_id: Optional[str] = None,
         display_name=__ret__.display_name,
         freeform_tags=__ret__.freeform_tags,
         id=__ret__.id,
+        identity_app_console_url=__ret__.identity_app_console_url,
+        identity_app_guid=__ret__.identity_app_guid,
+        identity_domain=__ret__.identity_domain,
+        imported_package_ids=__ret__.imported_package_ids,
+        imported_package_names=__ret__.imported_package_names,
+        is_role_based_access=__ret__.is_role_based_access,
         lifecycle_sub_state=__ret__.lifecycle_sub_state,
         oda_instance_id=__ret__.oda_instance_id,
+        restricted_operations=__ret__.restricted_operations,
         shape_name=__ret__.shape_name,
         state=__ret__.state,
         state_message=__ret__.state_message,

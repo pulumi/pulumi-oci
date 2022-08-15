@@ -5,6 +5,7 @@ package com.pulumi.oci.BigDataService.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.BigDataService.outputs.GetAutoScalingConfigurationPolicy;
+import com.pulumi.oci.BigDataService.outputs.GetAutoScalingConfigurationPolicyDetail;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -27,15 +28,20 @@ public final class GetAutoScalingConfigurationResult {
     private final String id;
     private final Boolean isEnabled;
     /**
-     * @return A node type that is managed by an autoscale configuration. The only supported type is WORKER.
+     * @return A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
      * 
      */
     private final String nodeType;
     /**
-     * @return Policy definitions for the autoscale configuration.
+     * @return This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
      * 
      */
     private final List<GetAutoScalingConfigurationPolicy> policies;
+    /**
+     * @return Details of an autoscale policy.
+     * 
+     */
+    private final List<GetAutoScalingConfigurationPolicyDetail> policyDetails;
     /**
      * @return The state of the autoscale configuration.
      * 
@@ -62,6 +68,7 @@ public final class GetAutoScalingConfigurationResult {
         @CustomType.Parameter("isEnabled") Boolean isEnabled,
         @CustomType.Parameter("nodeType") String nodeType,
         @CustomType.Parameter("policies") List<GetAutoScalingConfigurationPolicy> policies,
+        @CustomType.Parameter("policyDetails") List<GetAutoScalingConfigurationPolicyDetail> policyDetails,
         @CustomType.Parameter("state") String state,
         @CustomType.Parameter("timeCreated") String timeCreated,
         @CustomType.Parameter("timeUpdated") String timeUpdated) {
@@ -73,6 +80,7 @@ public final class GetAutoScalingConfigurationResult {
         this.isEnabled = isEnabled;
         this.nodeType = nodeType;
         this.policies = policies;
+        this.policyDetails = policyDetails;
         this.state = state;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
@@ -105,18 +113,25 @@ public final class GetAutoScalingConfigurationResult {
         return this.isEnabled;
     }
     /**
-     * @return A node type that is managed by an autoscale configuration. The only supported type is WORKER.
+     * @return A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
      * 
      */
     public String nodeType() {
         return this.nodeType;
     }
     /**
-     * @return Policy definitions for the autoscale configuration.
+     * @return This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
      * 
      */
     public List<GetAutoScalingConfigurationPolicy> policies() {
         return this.policies;
+    }
+    /**
+     * @return Details of an autoscale policy.
+     * 
+     */
+    public List<GetAutoScalingConfigurationPolicyDetail> policyDetails() {
+        return this.policyDetails;
     }
     /**
      * @return The state of the autoscale configuration.
@@ -157,6 +172,7 @@ public final class GetAutoScalingConfigurationResult {
         private Boolean isEnabled;
         private String nodeType;
         private List<GetAutoScalingConfigurationPolicy> policies;
+        private List<GetAutoScalingConfigurationPolicyDetail> policyDetails;
         private String state;
         private String timeCreated;
         private String timeUpdated;
@@ -175,6 +191,7 @@ public final class GetAutoScalingConfigurationResult {
     	      this.isEnabled = defaults.isEnabled;
     	      this.nodeType = defaults.nodeType;
     	      this.policies = defaults.policies;
+    	      this.policyDetails = defaults.policyDetails;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
@@ -215,6 +232,13 @@ public final class GetAutoScalingConfigurationResult {
         public Builder policies(GetAutoScalingConfigurationPolicy... policies) {
             return policies(List.of(policies));
         }
+        public Builder policyDetails(List<GetAutoScalingConfigurationPolicyDetail> policyDetails) {
+            this.policyDetails = Objects.requireNonNull(policyDetails);
+            return this;
+        }
+        public Builder policyDetails(GetAutoScalingConfigurationPolicyDetail... policyDetails) {
+            return policyDetails(List.of(policyDetails));
+        }
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
@@ -227,7 +251,7 @@ public final class GetAutoScalingConfigurationResult {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }        public GetAutoScalingConfigurationResult build() {
-            return new GetAutoScalingConfigurationResult(autoScalingConfigurationId, bdsInstanceId, clusterAdminPassword, displayName, id, isEnabled, nodeType, policies, state, timeCreated, timeUpdated);
+            return new GetAutoScalingConfigurationResult(autoScalingConfigurationId, bdsInstanceId, clusterAdminPassword, displayName, id, isEnabled, nodeType, policies, policyDetails, state, timeCreated, timeUpdated);
         }
     }
 }

@@ -24,6 +24,7 @@ __all__ = [
     'ModelDeploymentModelDeploymentConfigurationDetailsArgs',
     'ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs',
     'ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs',
+    'ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs',
     'ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyArgs',
     'NotebookSessionNotebookSessionConfigDetailsArgs',
     'NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgs',
@@ -889,11 +890,15 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
 @pulumi.input_type
 class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs:
     def __init__(__self__, *,
-                 instance_shape_name: pulumi.Input[str]):
+                 instance_shape_name: pulumi.Input[str],
+                 model_deployment_instance_shape_config_details: Optional[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs']] = None):
         """
         :param pulumi.Input[str] instance_shape_name: (Updatable) The shape used to launch the model deployment instances.
+        :param pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs'] model_deployment_instance_shape_config_details: (Updatable) Details for the model-deployment instance shape configuration.
         """
         pulumi.set(__self__, "instance_shape_name", instance_shape_name)
+        if model_deployment_instance_shape_config_details is not None:
+            pulumi.set(__self__, "model_deployment_instance_shape_config_details", model_deployment_instance_shape_config_details)
 
     @property
     @pulumi.getter(name="instanceShapeName")
@@ -906,6 +911,57 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
     @instance_shape_name.setter
     def instance_shape_name(self, value: pulumi.Input[str]):
         pulumi.set(self, "instance_shape_name", value)
+
+    @property
+    @pulumi.getter(name="modelDeploymentInstanceShapeConfigDetails")
+    def model_deployment_instance_shape_config_details(self) -> Optional[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs']]:
+        """
+        (Updatable) Details for the model-deployment instance shape configuration.
+        """
+        return pulumi.get(self, "model_deployment_instance_shape_config_details")
+
+    @model_deployment_instance_shape_config_details.setter
+    def model_deployment_instance_shape_config_details(self, value: Optional[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs']]):
+        pulumi.set(self, "model_deployment_instance_shape_config_details", value)
+
+
+@pulumi.input_type
+class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs:
+    def __init__(__self__, *,
+                 memory_in_gbs: Optional[pulumi.Input[float]] = None,
+                 ocpus: Optional[pulumi.Input[float]] = None):
+        """
+        :param pulumi.Input[float] memory_in_gbs: (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 and 512 GB and VM.Optimized3.Flex memory range is between 6 and 256 GB.
+        :param pulumi.Input[float] ocpus: (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 and 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
+        """
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
+
+    @property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> Optional[pulumi.Input[float]]:
+        """
+        (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 and 512 GB and VM.Optimized3.Flex memory range is between 6 and 256 GB.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @memory_in_gbs.setter
+    def memory_in_gbs(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "memory_in_gbs", value)
+
+    @property
+    @pulumi.getter
+    def ocpus(self) -> Optional[pulumi.Input[float]]:
+        """
+        (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 and 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
+        """
+        return pulumi.get(self, "ocpus")
+
+    @ocpus.setter
+    def ocpus(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "ocpus", value)
 
 
 @pulumi.input_type

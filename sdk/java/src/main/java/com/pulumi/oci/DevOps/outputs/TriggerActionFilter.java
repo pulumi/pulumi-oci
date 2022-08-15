@@ -24,7 +24,7 @@ public final class TriggerActionFilter {
      */
     private final @Nullable TriggerActionFilterInclude include;
     /**
-     * @return (Updatable) Source of the trigger. Allowed values are, GITHUB and GITLAB.
+     * @return (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
      * 
      */
     private final String triggerSource;
@@ -54,7 +54,7 @@ public final class TriggerActionFilter {
         return Optional.ofNullable(this.include);
     }
     /**
-     * @return (Updatable) Source of the trigger. Allowed values are, GITHUB and GITLAB.
+     * @return (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
      * 
      */
     public String triggerSource() {

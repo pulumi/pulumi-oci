@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
         /// </summary>
-        public readonly string? SecretId;
+        public readonly string SecretId;
         /// <summary>
         /// (Updatable) The value type of the user password.
         /// </summary>
@@ -24,7 +24,7 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
 
         [OutputConstructor]
         private DatabaseToolsConnectionUserPassword(
-            string? secretId,
+            string secretId,
 
             string valueType)
         {

@@ -26,9 +26,10 @@ namespace Pulumi.Oci.DevOps
     ///     {
     ///         var testConnection = new Oci.DevOps.Connection("testConnection", new Oci.DevOps.ConnectionArgs
     ///         {
-    ///             AccessToken = @var.Connection_access_token,
     ///             ConnectionType = @var.Connection_connection_type,
     ///             ProjectId = oci_devops_project.Test_project.Id,
+    ///             AccessToken = @var.Connection_access_token,
+    ///             AppPassword = @var.Connection_app_password,
     ///             DefinedTags = 
     ///             {
     ///                 { "foo-namespace.bar-key", "value" },
@@ -39,6 +40,7 @@ namespace Pulumi.Oci.DevOps
     ///             {
     ///                 { "bar-key", "value" },
     ///             },
+    ///             Username = @var.Connection_username,
     ///         });
     ///     }
     /// 
@@ -61,6 +63,12 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         [Output("accessToken")]
         public Output<string> AccessToken { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) OCID of personal Bitbucket Cloud AppPassword saved in secret store
+        /// </summary>
+        [Output("appPassword")]
+        public Output<string> AppPassword { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the compartment containing the connection.
@@ -128,6 +136,12 @@ namespace Pulumi.Oci.DevOps
         [Output("timeUpdated")]
         public Output<string> TimeUpdated { get; private set; } = null!;
 
+        /// <summary>
+        /// (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
+        /// </summary>
+        [Output("username")]
+        public Output<string> Username { get; private set; } = null!;
+
 
         /// <summary>
         /// Create a Connection resource with the given unique name, arguments, and options.
@@ -177,8 +191,14 @@ namespace Pulumi.Oci.DevOps
         /// <summary>
         /// (Updatable) The OCID of personal access token saved in secret store.
         /// </summary>
-        [Input("accessToken", required: true)]
-        public Input<string> AccessToken { get; set; } = null!;
+        [Input("accessToken")]
+        public Input<string>? AccessToken { get; set; }
+
+        /// <summary>
+        /// (Updatable) OCID of personal Bitbucket Cloud AppPassword saved in secret store
+        /// </summary>
+        [Input("appPassword")]
+        public Input<string>? AppPassword { get; set; }
 
         /// <summary>
         /// (Updatable) The type of connection.
@@ -228,6 +248,12 @@ namespace Pulumi.Oci.DevOps
         [Input("projectId", required: true)]
         public Input<string> ProjectId { get; set; } = null!;
 
+        /// <summary>
+        /// (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
+        /// </summary>
+        [Input("username")]
+        public Input<string>? Username { get; set; }
+
         public ConnectionArgs()
         {
         }
@@ -240,6 +266,12 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         [Input("accessToken")]
         public Input<string>? AccessToken { get; set; }
+
+        /// <summary>
+        /// (Updatable) OCID of personal Bitbucket Cloud AppPassword saved in secret store
+        /// </summary>
+        [Input("appPassword")]
+        public Input<string>? AppPassword { get; set; }
 
         /// <summary>
         /// The OCID of the compartment containing the connection.
@@ -324,6 +356,12 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }
+
+        /// <summary>
+        /// (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
+        /// </summary>
+        [Input("username")]
+        public Input<string>? Username { get; set; }
 
         public ConnectionState()
         {

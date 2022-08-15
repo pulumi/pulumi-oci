@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DatabaseTools
         /// <summary>
         /// This data source provides details about a specific Database Tools Private Endpoint resource in Oracle Cloud Infrastructure Database Tools service.
         /// 
-        /// Gets a DatabaseToolsPrivateEndpoint by identifier
+        /// Gets details of a specified Database Tools private endpoint.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -45,7 +45,7 @@ namespace Pulumi.Oci.DatabaseTools
         /// <summary>
         /// This data source provides details about a specific Database Tools Private Endpoint resource in Oracle Cloud Infrastructure Database Tools service.
         /// 
-        /// Gets a DatabaseToolsPrivateEndpoint by identifier
+        /// Gets details of a specified Database Tools private endpoint.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -78,7 +78,7 @@ namespace Pulumi.Oci.DatabaseTools
     public sealed class GetDatabaseToolsPrivateEndpointArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a DatabaseToolsPrivateEndpoint.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools private endpoint.
         /// </summary>
         [Input("databaseToolsPrivateEndpointId", required: true)]
         public string DatabaseToolsPrivateEndpointId { get; set; } = null!;
@@ -91,7 +91,7 @@ namespace Pulumi.Oci.DatabaseTools
     public sealed class GetDatabaseToolsPrivateEndpointInvokeArgs : Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a DatabaseToolsPrivateEndpoint.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools private endpoint.
         /// </summary>
         [Input("databaseToolsPrivateEndpointId", required: true)]
         public Input<string> DatabaseToolsPrivateEndpointId { get; set; } = null!;
@@ -110,7 +110,7 @@ namespace Pulumi.Oci.DatabaseTools
         /// </summary>
         public readonly ImmutableArray<string> AdditionalFqdns;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools private endpoint.
         /// </summary>
         public readonly string CompartmentId;
         public readonly string DatabaseToolsPrivateEndpointId;
@@ -119,7 +119,7 @@ namespace Pulumi.Oci.DatabaseTools
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
         /// <summary>
-        /// A description of the DatabaseToolsPrivateEndpoint.
+        /// A description of the Database Tools private endpoint.
         /// </summary>
         public readonly string Description;
         /// <summary>
@@ -131,7 +131,7 @@ namespace Pulumi.Oci.DatabaseTools
         /// </summary>
         public readonly string EndpointFqdn;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsEndpointService.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Endpoint Service.
         /// </summary>
         public readonly string EndpointServiceId;
         /// <summary>
@@ -139,7 +139,7 @@ namespace Pulumi.Oci.DatabaseTools
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsPrivateEndpoint.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint.
         /// </summary>
         public readonly string Id;
         /// <summary>
@@ -159,11 +159,11 @@ namespace Pulumi.Oci.DatabaseTools
         /// </summary>
         public readonly string PrivateEndpointVnicId;
         /// <summary>
-        /// Reverse connection configuration details of Private Endpoint.
+        /// Reverse connection configuration details of the private endpoint.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationResult> ReverseConnectionConfigurations;
         /// <summary>
-        /// The current state of the DatabaseToolsPrivateEndpoint.
+        /// The current state of the Database Tools private endpoint.
         /// </summary>
         public readonly string State;
         /// <summary>
@@ -175,11 +175,11 @@ namespace Pulumi.Oci.DatabaseTools
         /// </summary>
         public readonly ImmutableDictionary<string, object> SystemTags;
         /// <summary>
-        /// The time the DatabaseToolsPrivateEndpoint was created. An RFC3339 formatted datetime string
+        /// The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The time the DatabaseToolsPrivateEndpoint was updated. An RFC3339 formatted datetime string
+        /// The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
         /// </summary>
         public readonly string TimeUpdated;
         /// <summary>

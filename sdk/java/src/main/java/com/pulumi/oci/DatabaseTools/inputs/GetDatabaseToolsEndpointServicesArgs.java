@@ -33,14 +33,14 @@ public final class GetDatabaseToolsEndpointServicesArgs extends com.pulumi.resou
     }
 
     /**
-     * A filter to return only resources that match the entire display name given.
+     * A filter to return only resources that match the entire specified display name.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return A filter to return only resources that match the entire display name given.
+     * @return A filter to return only resources that match the entire specified display name.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -55,14 +55,14 @@ public final class GetDatabaseToolsEndpointServicesArgs extends com.pulumi.resou
     }
 
     /**
-     * A filter to return only resources that match the entire name given.
+     * A filter to return only resources that match the entire specified name.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return A filter to return only resources that match the entire name given.
+     * @return A filter to return only resources that match the entire specified name.
      * 
      */
     public Optional<Output<String>> name() {
@@ -70,14 +70,14 @@ public final class GetDatabaseToolsEndpointServicesArgs extends com.pulumi.resou
     }
 
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * @return A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
      * 
      */
     public Optional<Output<String>> state() {
@@ -134,7 +134,7 @@ public final class GetDatabaseToolsEndpointServicesArgs extends com.pulumi.resou
         }
 
         /**
-         * @param displayName A filter to return only resources that match the entire display name given.
+         * @param displayName A filter to return only resources that match the entire specified display name.
          * 
          * @return builder
          * 
@@ -145,7 +145,7 @@ public final class GetDatabaseToolsEndpointServicesArgs extends com.pulumi.resou
         }
 
         /**
-         * @param displayName A filter to return only resources that match the entire display name given.
+         * @param displayName A filter to return only resources that match the entire specified display name.
          * 
          * @return builder
          * 
@@ -168,7 +168,7 @@ public final class GetDatabaseToolsEndpointServicesArgs extends com.pulumi.resou
         }
 
         /**
-         * @param name A filter to return only resources that match the entire name given.
+         * @param name A filter to return only resources that match the entire specified name.
          * 
          * @return builder
          * 
@@ -179,7 +179,7 @@ public final class GetDatabaseToolsEndpointServicesArgs extends com.pulumi.resou
         }
 
         /**
-         * @param name A filter to return only resources that match the entire name given.
+         * @param name A filter to return only resources that match the entire specified name.
          * 
          * @return builder
          * 
@@ -189,7 +189,7 @@ public final class GetDatabaseToolsEndpointServicesArgs extends com.pulumi.resou
         }
 
         /**
-         * @param state A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * @param state A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
          * 
          * @return builder
          * 
@@ -200,7 +200,7 @@ public final class GetDatabaseToolsEndpointServicesArgs extends com.pulumi.resou
         }
 
         /**
-         * @param state A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * @param state A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
          * 
          * @return builder
          * 

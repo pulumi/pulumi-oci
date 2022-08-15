@@ -91,7 +91,7 @@ class GetResponderRecipeResult:
     @pulumi.getter
     def description(self) -> str:
         """
-        ResponderRule Description
+        ResponderRule description.
         """
         return pulumi.get(self, "description")
 
@@ -99,7 +99,7 @@ class GetResponderRecipeResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        ResponderRule Display Name
+        ResponderRule display name.
         """
         return pulumi.get(self, "display_name")
 

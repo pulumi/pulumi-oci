@@ -35,14 +35,14 @@ public final class DatabaseToolsPrivateEndpointState extends com.pulumi.resource
     }
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools private endpoint.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools private endpoint.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -65,14 +65,14 @@ public final class DatabaseToolsPrivateEndpointState extends com.pulumi.resource
     }
 
     /**
-     * (Updatable) A description of the DatabaseToolsPrivateEndpoint.
+     * (Updatable) A description of the Database Tools private endpoint.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) A description of the DatabaseToolsPrivateEndpoint.
+     * @return (Updatable) A description of the Database Tools private endpoint.
      * 
      */
     public Optional<Output<String>> description() {
@@ -110,14 +110,14 @@ public final class DatabaseToolsPrivateEndpointState extends com.pulumi.resource
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsEndpointService.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `DatabaseToolsEndpointService`.
      * 
      */
     @Import(name="endpointServiceId")
     private @Nullable Output<String> endpointServiceId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsEndpointService.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `DatabaseToolsEndpointService`.
      * 
      */
     public Optional<Output<String>> endpointServiceId() {
@@ -200,14 +200,14 @@ public final class DatabaseToolsPrivateEndpointState extends com.pulumi.resource
     }
 
     /**
-     * Reverse connection configuration details of Private Endpoint.
+     * Reverse connection configuration details of the private endpoint.
      * 
      */
     @Import(name="reverseConnectionConfigurations")
     private @Nullable Output<List<DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs>> reverseConnectionConfigurations;
 
     /**
-     * @return Reverse connection configuration details of Private Endpoint.
+     * @return Reverse connection configuration details of the private endpoint.
      * 
      */
     public Optional<Output<List<DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs>>> reverseConnectionConfigurations() {
@@ -215,14 +215,14 @@ public final class DatabaseToolsPrivateEndpointState extends com.pulumi.resource
     }
 
     /**
-     * The current state of the DatabaseToolsPrivateEndpoint.
+     * The current state of the Database Tools private endpoint.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return The current state of the DatabaseToolsPrivateEndpoint.
+     * @return The current state of the Database Tools private endpoint.
      * 
      */
     public Optional<Output<String>> state() {
@@ -260,14 +260,14 @@ public final class DatabaseToolsPrivateEndpointState extends com.pulumi.resource
     }
 
     /**
-     * The time the DatabaseToolsPrivateEndpoint was created. An RFC3339 formatted datetime string
+     * The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
      * 
      */
     @Import(name="timeCreated")
     private @Nullable Output<String> timeCreated;
 
     /**
-     * @return The time the DatabaseToolsPrivateEndpoint was created. An RFC3339 formatted datetime string
+     * @return The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
      * 
      */
     public Optional<Output<String>> timeCreated() {
@@ -275,14 +275,14 @@ public final class DatabaseToolsPrivateEndpointState extends com.pulumi.resource
     }
 
     /**
-     * The time the DatabaseToolsPrivateEndpoint was updated. An RFC3339 formatted datetime string
+     * The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
      * 
      */
     @Import(name="timeUpdated")
     private @Nullable Output<String> timeUpdated;
 
     /**
-     * @return The time the DatabaseToolsPrivateEndpoint was updated. An RFC3339 formatted datetime string
+     * @return The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
      * 
      */
     public Optional<Output<String>> timeUpdated() {
@@ -378,7 +378,7 @@ public final class DatabaseToolsPrivateEndpointState extends com.pulumi.resource
         }
 
         /**
-         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools private endpoint.
          * 
          * @return builder
          * 
@@ -389,7 +389,7 @@ public final class DatabaseToolsPrivateEndpointState extends com.pulumi.resource
         }
 
         /**
-         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools private endpoint.
          * 
          * @return builder
          * 
@@ -420,7 +420,7 @@ public final class DatabaseToolsPrivateEndpointState extends com.pulumi.resource
         }
 
         /**
-         * @param description (Updatable) A description of the DatabaseToolsPrivateEndpoint.
+         * @param description (Updatable) A description of the Database Tools private endpoint.
          * 
          * @return builder
          * 
@@ -431,7 +431,7 @@ public final class DatabaseToolsPrivateEndpointState extends com.pulumi.resource
         }
 
         /**
-         * @param description (Updatable) A description of the DatabaseToolsPrivateEndpoint.
+         * @param description (Updatable) A description of the Database Tools private endpoint.
          * 
          * @return builder
          * 
@@ -483,7 +483,7 @@ public final class DatabaseToolsPrivateEndpointState extends com.pulumi.resource
         }
 
         /**
-         * @param endpointServiceId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsEndpointService.
+         * @param endpointServiceId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `DatabaseToolsEndpointService`.
          * 
          * @return builder
          * 
@@ -494,7 +494,7 @@ public final class DatabaseToolsPrivateEndpointState extends com.pulumi.resource
         }
 
         /**
-         * @param endpointServiceId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsEndpointService.
+         * @param endpointServiceId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `DatabaseToolsEndpointService`.
          * 
          * @return builder
          * 
@@ -619,7 +619,7 @@ public final class DatabaseToolsPrivateEndpointState extends com.pulumi.resource
         }
 
         /**
-         * @param reverseConnectionConfigurations Reverse connection configuration details of Private Endpoint.
+         * @param reverseConnectionConfigurations Reverse connection configuration details of the private endpoint.
          * 
          * @return builder
          * 
@@ -630,7 +630,7 @@ public final class DatabaseToolsPrivateEndpointState extends com.pulumi.resource
         }
 
         /**
-         * @param reverseConnectionConfigurations Reverse connection configuration details of Private Endpoint.
+         * @param reverseConnectionConfigurations Reverse connection configuration details of the private endpoint.
          * 
          * @return builder
          * 
@@ -640,7 +640,7 @@ public final class DatabaseToolsPrivateEndpointState extends com.pulumi.resource
         }
 
         /**
-         * @param reverseConnectionConfigurations Reverse connection configuration details of Private Endpoint.
+         * @param reverseConnectionConfigurations Reverse connection configuration details of the private endpoint.
          * 
          * @return builder
          * 
@@ -650,7 +650,7 @@ public final class DatabaseToolsPrivateEndpointState extends com.pulumi.resource
         }
 
         /**
-         * @param state The current state of the DatabaseToolsPrivateEndpoint.
+         * @param state The current state of the Database Tools private endpoint.
          * 
          * @return builder
          * 
@@ -661,7 +661,7 @@ public final class DatabaseToolsPrivateEndpointState extends com.pulumi.resource
         }
 
         /**
-         * @param state The current state of the DatabaseToolsPrivateEndpoint.
+         * @param state The current state of the Database Tools private endpoint.
          * 
          * @return builder
          * 
@@ -713,7 +713,7 @@ public final class DatabaseToolsPrivateEndpointState extends com.pulumi.resource
         }
 
         /**
-         * @param timeCreated The time the DatabaseToolsPrivateEndpoint was created. An RFC3339 formatted datetime string
+         * @param timeCreated The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
          * 
          * @return builder
          * 
@@ -724,7 +724,7 @@ public final class DatabaseToolsPrivateEndpointState extends com.pulumi.resource
         }
 
         /**
-         * @param timeCreated The time the DatabaseToolsPrivateEndpoint was created. An RFC3339 formatted datetime string
+         * @param timeCreated The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
          * 
          * @return builder
          * 
@@ -734,7 +734,7 @@ public final class DatabaseToolsPrivateEndpointState extends com.pulumi.resource
         }
 
         /**
-         * @param timeUpdated The time the DatabaseToolsPrivateEndpoint was updated. An RFC3339 formatted datetime string
+         * @param timeUpdated The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
          * 
          * @return builder
          * 
@@ -745,7 +745,7 @@ public final class DatabaseToolsPrivateEndpointState extends com.pulumi.resource
         }
 
         /**
-         * @param timeUpdated The time the DatabaseToolsPrivateEndpoint was updated. An RFC3339 formatted datetime string
+         * @param timeUpdated The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
          * 
          * @return builder
          * 

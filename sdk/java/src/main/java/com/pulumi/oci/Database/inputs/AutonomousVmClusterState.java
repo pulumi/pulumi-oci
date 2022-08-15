@@ -39,6 +39,36 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
     }
 
     /**
+     * The data disk group size available for Autonomous Databases, in TBs.
+     * 
+     */
+    @Import(name="availableAutonomousDataStorageSizeInTbs")
+    private @Nullable Output<Double> availableAutonomousDataStorageSizeInTbs;
+
+    /**
+     * @return The data disk group size available for Autonomous Databases, in TBs.
+     * 
+     */
+    public Optional<Output<Double>> availableAutonomousDataStorageSizeInTbs() {
+        return Optional.ofNullable(this.availableAutonomousDataStorageSizeInTbs);
+    }
+
+    /**
+     * The number of Autonomous Container Databases that can be created with the currently available local storage.
+     * 
+     */
+    @Import(name="availableContainerDatabases")
+    private @Nullable Output<Integer> availableContainerDatabases;
+
+    /**
+     * @return The number of Autonomous Container Databases that can be created with the currently available local storage.
+     * 
+     */
+    public Optional<Output<Integer>> availableContainerDatabases() {
+        return Optional.ofNullable(this.availableContainerDatabases);
+    }
+
+    /**
      * The numnber of CPU cores available.
      * 
      */
@@ -54,14 +84,14 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * The data storage available in TBs
+     * **Deprecated.** Use `availableAutonomousDataStorageSizeInTBs` for Autonomous Databases&#39; data storage availability in TBs.
      * 
      */
     @Import(name="availableDataStorageSizeInTbs")
     private @Nullable Output<Double> availableDataStorageSizeInTbs;
 
     /**
-     * @return The data storage available in TBs
+     * @return **Deprecated.** Use `availableAutonomousDataStorageSizeInTBs` for Autonomous Databases&#39; data storage availability in TBs.
      * 
      */
     public Optional<Output<Double>> availableDataStorageSizeInTbs() {
@@ -361,6 +391,21 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
     }
 
     /**
+     * CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+     * 
+     */
+    @Import(name="reclaimableCpus")
+    private @Nullable Output<Integer> reclaimableCpus;
+
+    /**
+     * @return CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+     * 
+     */
+    public Optional<Output<Integer>> reclaimableCpus() {
+        return Optional.ofNullable(this.reclaimableCpus);
+    }
+
+    /**
      * The current state of the Autonomous VM cluster.
      * 
      */
@@ -439,6 +484,8 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
 
     private AutonomousVmClusterState(AutonomousVmClusterState $) {
         this.autonomousDataStorageSizeInTbs = $.autonomousDataStorageSizeInTbs;
+        this.availableAutonomousDataStorageSizeInTbs = $.availableAutonomousDataStorageSizeInTbs;
+        this.availableContainerDatabases = $.availableContainerDatabases;
         this.availableCpus = $.availableCpus;
         this.availableDataStorageSizeInTbs = $.availableDataStorageSizeInTbs;
         this.compartmentId = $.compartmentId;
@@ -461,6 +508,7 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
         this.memorySizeInGbs = $.memorySizeInGbs;
         this.nextMaintenanceRunId = $.nextMaintenanceRunId;
         this.ocpusEnabled = $.ocpusEnabled;
+        this.reclaimableCpus = $.reclaimableCpus;
         this.state = $.state;
         this.timeCreated = $.timeCreated;
         this.timeZone = $.timeZone;
@@ -508,6 +556,48 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
         }
 
         /**
+         * @param availableAutonomousDataStorageSizeInTbs The data disk group size available for Autonomous Databases, in TBs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder availableAutonomousDataStorageSizeInTbs(@Nullable Output<Double> availableAutonomousDataStorageSizeInTbs) {
+            $.availableAutonomousDataStorageSizeInTbs = availableAutonomousDataStorageSizeInTbs;
+            return this;
+        }
+
+        /**
+         * @param availableAutonomousDataStorageSizeInTbs The data disk group size available for Autonomous Databases, in TBs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder availableAutonomousDataStorageSizeInTbs(Double availableAutonomousDataStorageSizeInTbs) {
+            return availableAutonomousDataStorageSizeInTbs(Output.of(availableAutonomousDataStorageSizeInTbs));
+        }
+
+        /**
+         * @param availableContainerDatabases The number of Autonomous Container Databases that can be created with the currently available local storage.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder availableContainerDatabases(@Nullable Output<Integer> availableContainerDatabases) {
+            $.availableContainerDatabases = availableContainerDatabases;
+            return this;
+        }
+
+        /**
+         * @param availableContainerDatabases The number of Autonomous Container Databases that can be created with the currently available local storage.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder availableContainerDatabases(Integer availableContainerDatabases) {
+            return availableContainerDatabases(Output.of(availableContainerDatabases));
+        }
+
+        /**
          * @param availableCpus The numnber of CPU cores available.
          * 
          * @return builder
@@ -529,7 +619,7 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param availableDataStorageSizeInTbs The data storage available in TBs
+         * @param availableDataStorageSizeInTbs **Deprecated.** Use `availableAutonomousDataStorageSizeInTBs` for Autonomous Databases&#39; data storage availability in TBs.
          * 
          * @return builder
          * 
@@ -540,7 +630,7 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param availableDataStorageSizeInTbs The data storage available in TBs
+         * @param availableDataStorageSizeInTbs **Deprecated.** Use `availableAutonomousDataStorageSizeInTBs` for Autonomous Databases&#39; data storage availability in TBs.
          * 
          * @return builder
          * 
@@ -975,6 +1065,27 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
          */
         public Builder ocpusEnabled(Double ocpusEnabled) {
             return ocpusEnabled(Output.of(ocpusEnabled));
+        }
+
+        /**
+         * @param reclaimableCpus CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder reclaimableCpus(@Nullable Output<Integer> reclaimableCpus) {
+            $.reclaimableCpus = reclaimableCpus;
+            return this;
+        }
+
+        /**
+         * @param reclaimableCpus CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder reclaimableCpus(Integer reclaimableCpus) {
+            return reclaimableCpus(Output.of(reclaimableCpus));
         }
 
         /**

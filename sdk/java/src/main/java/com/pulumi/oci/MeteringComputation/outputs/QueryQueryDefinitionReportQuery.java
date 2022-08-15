@@ -27,7 +27,7 @@ public final class QueryQueryDefinitionReportQuery {
      */
     private final @Nullable String dateRangeName;
     /**
-     * @return (Updatable)
+     * @return (Updatable) The filter object for query usage.
      * 
      */
     private final @Nullable String filter;
@@ -120,7 +120,7 @@ public final class QueryQueryDefinitionReportQuery {
         return Optional.ofNullable(this.dateRangeName);
     }
     /**
-     * @return (Updatable)
+     * @return (Updatable) The filter object for query usage.
      * 
      */
     public Optional<String> filter() {

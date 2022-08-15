@@ -13,7 +13,7 @@ import (
 
 // This resource provides the Database Tools Private Endpoint resource in Oracle Cloud Infrastructure Database Tools service.
 //
-// Creates a new DatabaseToolsPrivateEndpoint.
+// Creates a new Database Tools private endpoint.
 //
 // ## Example Usage
 //
@@ -62,17 +62,17 @@ type DatabaseToolsPrivateEndpoint struct {
 
 	// A list of additional FQDNs that can be also be used for the private endpoint.
 	AdditionalFqdns pulumi.StringArrayOutput `pulumi:"additionalFqdns"`
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools private endpoint.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
-	// (Updatable) A description of the DatabaseToolsPrivateEndpoint.
+	// (Updatable) A description of the Database Tools private endpoint.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// Then FQDN to use for the private endpoint.
 	EndpointFqdn pulumi.StringOutput `pulumi:"endpointFqdn"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsEndpointService.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `DatabaseToolsEndpointService`.
 	EndpointServiceId pulumi.StringOutput `pulumi:"endpointServiceId"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
@@ -84,17 +84,17 @@ type DatabaseToolsPrivateEndpoint struct {
 	PrivateEndpointIp pulumi.StringOutput `pulumi:"privateEndpointIp"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint's VNIC.
 	PrivateEndpointVnicId pulumi.StringOutput `pulumi:"privateEndpointVnicId"`
-	// Reverse connection configuration details of Private Endpoint.
+	// Reverse connection configuration details of the private endpoint.
 	ReverseConnectionConfigurations DatabaseToolsPrivateEndpointReverseConnectionConfigurationArrayOutput `pulumi:"reverseConnectionConfigurations"`
-	// The current state of the DatabaseToolsPrivateEndpoint.
+	// The current state of the Database Tools private endpoint.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that the private endpoint belongs to.
 	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
-	// The time the DatabaseToolsPrivateEndpoint was created. An RFC3339 formatted datetime string
+	// The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
-	// The time the DatabaseToolsPrivateEndpoint was updated. An RFC3339 formatted datetime string
+	// The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN that the private endpoint belongs to.
 	VcnId pulumi.StringOutput `pulumi:"vcnId"`
@@ -143,17 +143,17 @@ func GetDatabaseToolsPrivateEndpoint(ctx *pulumi.Context,
 type databaseToolsPrivateEndpointState struct {
 	// A list of additional FQDNs that can be also be used for the private endpoint.
 	AdditionalFqdns []string `pulumi:"additionalFqdns"`
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools private endpoint.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// (Updatable) A description of the DatabaseToolsPrivateEndpoint.
+	// (Updatable) A description of the Database Tools private endpoint.
 	Description *string `pulumi:"description"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// Then FQDN to use for the private endpoint.
 	EndpointFqdn *string `pulumi:"endpointFqdn"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsEndpointService.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `DatabaseToolsEndpointService`.
 	EndpointServiceId *string `pulumi:"endpointServiceId"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
@@ -165,17 +165,17 @@ type databaseToolsPrivateEndpointState struct {
 	PrivateEndpointIp *string `pulumi:"privateEndpointIp"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint's VNIC.
 	PrivateEndpointVnicId *string `pulumi:"privateEndpointVnicId"`
-	// Reverse connection configuration details of Private Endpoint.
+	// Reverse connection configuration details of the private endpoint.
 	ReverseConnectionConfigurations []DatabaseToolsPrivateEndpointReverseConnectionConfiguration `pulumi:"reverseConnectionConfigurations"`
-	// The current state of the DatabaseToolsPrivateEndpoint.
+	// The current state of the Database Tools private endpoint.
 	State *string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that the private endpoint belongs to.
 	SubnetId *string `pulumi:"subnetId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// The time the DatabaseToolsPrivateEndpoint was created. An RFC3339 formatted datetime string
+	// The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
 	TimeCreated *string `pulumi:"timeCreated"`
-	// The time the DatabaseToolsPrivateEndpoint was updated. An RFC3339 formatted datetime string
+	// The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
 	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN that the private endpoint belongs to.
 	VcnId *string `pulumi:"vcnId"`
@@ -184,17 +184,17 @@ type databaseToolsPrivateEndpointState struct {
 type DatabaseToolsPrivateEndpointState struct {
 	// A list of additional FQDNs that can be also be used for the private endpoint.
 	AdditionalFqdns pulumi.StringArrayInput
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools private endpoint.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
-	// (Updatable) A description of the DatabaseToolsPrivateEndpoint.
+	// (Updatable) A description of the Database Tools private endpoint.
 	Description pulumi.StringPtrInput
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// Then FQDN to use for the private endpoint.
 	EndpointFqdn pulumi.StringPtrInput
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsEndpointService.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `DatabaseToolsEndpointService`.
 	EndpointServiceId pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
@@ -206,17 +206,17 @@ type DatabaseToolsPrivateEndpointState struct {
 	PrivateEndpointIp pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint's VNIC.
 	PrivateEndpointVnicId pulumi.StringPtrInput
-	// Reverse connection configuration details of Private Endpoint.
+	// Reverse connection configuration details of the private endpoint.
 	ReverseConnectionConfigurations DatabaseToolsPrivateEndpointReverseConnectionConfigurationArrayInput
-	// The current state of the DatabaseToolsPrivateEndpoint.
+	// The current state of the Database Tools private endpoint.
 	State pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that the private endpoint belongs to.
 	SubnetId pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput
-	// The time the DatabaseToolsPrivateEndpoint was created. An RFC3339 formatted datetime string
+	// The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringPtrInput
-	// The time the DatabaseToolsPrivateEndpoint was updated. An RFC3339 formatted datetime string
+	// The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
 	TimeUpdated pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN that the private endpoint belongs to.
 	VcnId pulumi.StringPtrInput
@@ -227,15 +227,15 @@ func (DatabaseToolsPrivateEndpointState) ElementType() reflect.Type {
 }
 
 type databaseToolsPrivateEndpointArgs struct {
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools private endpoint.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// (Updatable) A description of the DatabaseToolsPrivateEndpoint.
+	// (Updatable) A description of the Database Tools private endpoint.
 	Description *string `pulumi:"description"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsEndpointService.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `DatabaseToolsEndpointService`.
 	EndpointServiceId string `pulumi:"endpointServiceId"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
@@ -249,15 +249,15 @@ type databaseToolsPrivateEndpointArgs struct {
 
 // The set of arguments for constructing a DatabaseToolsPrivateEndpoint resource.
 type DatabaseToolsPrivateEndpointArgs struct {
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools private endpoint.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
-	// (Updatable) A description of the DatabaseToolsPrivateEndpoint.
+	// (Updatable) A description of the Database Tools private endpoint.
 	Description pulumi.StringPtrInput
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringInput
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsEndpointService.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `DatabaseToolsEndpointService`.
 	EndpointServiceId pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput

@@ -71,6 +71,7 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItem {
      * 
      */
     private final String databaseVersion;
+    private final String dbmPrivateEndpointId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
@@ -186,6 +187,7 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItem {
         @CustomType.Parameter("databaseResourceType") String databaseResourceType,
         @CustomType.Parameter("databaseType") String databaseType,
         @CustomType.Parameter("databaseVersion") String databaseVersion,
+        @CustomType.Parameter("dbmPrivateEndpointId") String dbmPrivateEndpointId,
         @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
         @CustomType.Parameter("deploymentType") String deploymentType,
         @CustomType.Parameter("enterpriseManagerBridgeId") String enterpriseManagerBridgeId,
@@ -218,6 +220,7 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItem {
         this.databaseResourceType = databaseResourceType;
         this.databaseType = databaseType;
         this.databaseVersion = databaseVersion;
+        this.dbmPrivateEndpointId = dbmPrivateEndpointId;
         this.definedTags = definedTags;
         this.deploymentType = deploymentType;
         this.enterpriseManagerBridgeId = enterpriseManagerBridgeId;
@@ -317,6 +320,9 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItem {
      */
     public String databaseVersion() {
         return this.databaseVersion;
+    }
+    public String dbmPrivateEndpointId() {
+        return this.dbmPrivateEndpointId;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
@@ -482,6 +488,7 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItem {
         private String databaseResourceType;
         private String databaseType;
         private String databaseVersion;
+        private String dbmPrivateEndpointId;
         private Map<String,Object> definedTags;
         private String deploymentType;
         private String enterpriseManagerBridgeId;
@@ -521,6 +528,7 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItem {
     	      this.databaseResourceType = defaults.databaseResourceType;
     	      this.databaseType = defaults.databaseType;
     	      this.databaseVersion = defaults.databaseVersion;
+    	      this.dbmPrivateEndpointId = defaults.dbmPrivateEndpointId;
     	      this.definedTags = defaults.definedTags;
     	      this.deploymentType = defaults.deploymentType;
     	      this.enterpriseManagerBridgeId = defaults.enterpriseManagerBridgeId;
@@ -595,6 +603,10 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItem {
         }
         public Builder databaseVersion(String databaseVersion) {
             this.databaseVersion = Objects.requireNonNull(databaseVersion);
+            return this;
+        }
+        public Builder dbmPrivateEndpointId(String dbmPrivateEndpointId) {
+            this.dbmPrivateEndpointId = Objects.requireNonNull(dbmPrivateEndpointId);
             return this;
         }
         public Builder definedTags(Map<String,Object> definedTags) {
@@ -681,7 +693,7 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItem {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }        public GetDatabaseInsightsDatabaseInsightsCollectionItem build() {
-            return new GetDatabaseInsightsDatabaseInsightsCollectionItem(compartmentId, connectionCredentialDetails, connectionDetails, credentialDetails, databaseConnectionStatusDetails, databaseDisplayName, databaseId, databaseName, databaseResourceType, databaseType, databaseVersion, definedTags, deploymentType, enterpriseManagerBridgeId, enterpriseManagerEntityDisplayName, enterpriseManagerEntityIdentifier, enterpriseManagerEntityName, enterpriseManagerEntityType, enterpriseManagerIdentifier, entitySource, exadataInsightId, freeformTags, id, lifecycleDetails, opsiPrivateEndpointId, processorCount, serviceName, state, status, systemTags, timeCreated, timeUpdated);
+            return new GetDatabaseInsightsDatabaseInsightsCollectionItem(compartmentId, connectionCredentialDetails, connectionDetails, credentialDetails, databaseConnectionStatusDetails, databaseDisplayName, databaseId, databaseName, databaseResourceType, databaseType, databaseVersion, dbmPrivateEndpointId, definedTags, deploymentType, enterpriseManagerBridgeId, enterpriseManagerEntityDisplayName, enterpriseManagerEntityIdentifier, enterpriseManagerEntityName, enterpriseManagerEntityType, enterpriseManagerIdentifier, entitySource, exadataInsightId, freeformTags, id, lifecycleDetails, opsiPrivateEndpointId, processorCount, serviceName, state, status, systemTags, timeCreated, timeUpdated);
         }
     }
 }

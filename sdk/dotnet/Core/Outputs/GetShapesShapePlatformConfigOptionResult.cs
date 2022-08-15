@@ -14,43 +14,78 @@ namespace Pulumi.Oci.Core.Outputs
     public sealed class GetShapesShapePlatformConfigOptionResult
     {
         /// <summary>
-        /// Available and default options for Measured Boot configuration
+        /// Configuration options for the Access Control Service.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetShapesShapePlatformConfigOptionAccessControlServiceOptionResult> AccessControlServiceOptions;
+        /// <summary>
+        /// Configuration options for the input-output memory management unit.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionResult> InputOutputMemoryManagementUnitOptions;
+        /// <summary>
+        /// Configuration options for the Measured Boot feature.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetShapesShapePlatformConfigOptionMeasuredBootOptionResult> MeasuredBootOptions;
         /// <summary>
-        /// Available and default options for NUMA Nodes Per Socket configuration
+        /// Configuration options for NUMA nodes per socket.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionResult> NumaNodesPerSocketPlatformOptions;
         /// <summary>
-        /// Available and default options for Secure Boot configuration
+        /// Configuration options for the percentage of cores enabled.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionResult> PercentageOfCoresEnabledOptions;
+        /// <summary>
+        /// Configuration options for Secure Boot.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetShapesShapePlatformConfigOptionSecureBootOptionResult> SecureBootOptions;
         /// <summary>
-        /// Available and default options for Trusted Platform Module (TPM) configuration
+        /// Configuration options for symmetric multi-threading.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionResult> SymmetricMultiThreadingOptions;
+        /// <summary>
+        /// Configuration options for the Trusted Platform Module (TPM).
         /// </summary>
         public readonly ImmutableArray<Outputs.GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionResult> TrustedPlatformModuleOptions;
         /// <summary>
-        /// The type of platform being configured. (Supported types=[INTEL_VM, AMD_MILAN_BM, AMD_ROME_BM, INTEL_SKYLAKE_BM])
+        /// The type of platform being configured. (Supported types=[INTEL_VM, AMD_MILAN_BM, AMD_ROME_BM, AMD_ROME_BM_GPU, INTEL_ICELAKE_BM, INTEL_SKYLAKE_BM])
         /// </summary>
         public readonly string Type;
+        /// <summary>
+        /// Configuration options for the virtualization instructions.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetShapesShapePlatformConfigOptionVirtualInstructionsOptionResult> VirtualInstructionsOptions;
 
         [OutputConstructor]
         private GetShapesShapePlatformConfigOptionResult(
+            ImmutableArray<Outputs.GetShapesShapePlatformConfigOptionAccessControlServiceOptionResult> accessControlServiceOptions,
+
+            ImmutableArray<Outputs.GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionResult> inputOutputMemoryManagementUnitOptions,
+
             ImmutableArray<Outputs.GetShapesShapePlatformConfigOptionMeasuredBootOptionResult> measuredBootOptions,
 
             ImmutableArray<Outputs.GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionResult> numaNodesPerSocketPlatformOptions,
 
+            ImmutableArray<Outputs.GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionResult> percentageOfCoresEnabledOptions,
+
             ImmutableArray<Outputs.GetShapesShapePlatformConfigOptionSecureBootOptionResult> secureBootOptions,
+
+            ImmutableArray<Outputs.GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionResult> symmetricMultiThreadingOptions,
 
             ImmutableArray<Outputs.GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionResult> trustedPlatformModuleOptions,
 
-            string type)
+            string type,
+
+            ImmutableArray<Outputs.GetShapesShapePlatformConfigOptionVirtualInstructionsOptionResult> virtualInstructionsOptions)
         {
+            AccessControlServiceOptions = accessControlServiceOptions;
+            InputOutputMemoryManagementUnitOptions = inputOutputMemoryManagementUnitOptions;
             MeasuredBootOptions = measuredBootOptions;
             NumaNodesPerSocketPlatformOptions = numaNodesPerSocketPlatformOptions;
+            PercentageOfCoresEnabledOptions = percentageOfCoresEnabledOptions;
             SecureBootOptions = secureBootOptions;
+            SymmetricMultiThreadingOptions = symmetricMultiThreadingOptions;
             TrustedPlatformModuleOptions = trustedPlatformModuleOptions;
             Type = type;
+            VirtualInstructionsOptions = virtualInstructionsOptions;
         }
     }
 }

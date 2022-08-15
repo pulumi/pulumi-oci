@@ -14,14 +14,14 @@ public final class GetConfigArgs extends com.pulumi.resources.InvokeArgs {
     public static final GetConfigArgs Empty = new GetConfigArgs();
 
     /**
-     * The APM Domain Id the request is intended for.
+     * The APM Domain ID the request is intended for.
      * 
      */
     @Import(name="apmDomainId", required=true)
     private Output<String> apmDomainId;
 
     /**
-     * @return The APM Domain Id the request is intended for.
+     * @return The APM Domain ID the request is intended for.
      * 
      */
     public Output<String> apmDomainId() {
@@ -29,14 +29,14 @@ public final class GetConfigArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * The OCID of the ConfiguredItem.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item.
      * 
      */
     @Import(name="configId", required=true)
     private Output<String> configId;
 
     /**
-     * @return The OCID of the ConfiguredItem.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item.
      * 
      */
     public Output<String> configId() {
@@ -69,7 +69,7 @@ public final class GetConfigArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param apmDomainId The APM Domain Id the request is intended for.
+         * @param apmDomainId The APM Domain ID the request is intended for.
          * 
          * @return builder
          * 
@@ -80,7 +80,7 @@ public final class GetConfigArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param apmDomainId The APM Domain Id the request is intended for.
+         * @param apmDomainId The APM Domain ID the request is intended for.
          * 
          * @return builder
          * 
@@ -90,7 +90,7 @@ public final class GetConfigArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param configId The OCID of the ConfiguredItem.
+         * @param configId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item.
          * 
          * @return builder
          * 
@@ -101,7 +101,7 @@ public final class GetConfigArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param configId The OCID of the ConfiguredItem.
+         * @param configId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item.
          * 
          * @return builder
          * 

@@ -82,9 +82,13 @@ type AutonomousVmCluster struct {
 
 	// The data disk group size to be allocated for Autonomous Databases, in TBs.
 	AutonomousDataStorageSizeInTbs pulumi.Float64Output `pulumi:"autonomousDataStorageSizeInTbs"`
+	// The data disk group size available for Autonomous Databases, in TBs.
+	AvailableAutonomousDataStorageSizeInTbs pulumi.Float64Output `pulumi:"availableAutonomousDataStorageSizeInTbs"`
+	// The number of Autonomous Container Databases that can be created with the currently available local storage.
+	AvailableContainerDatabases pulumi.IntOutput `pulumi:"availableContainerDatabases"`
 	// The numnber of CPU cores available.
 	AvailableCpus pulumi.IntOutput `pulumi:"availableCpus"`
-	// The data storage available in TBs
+	// **Deprecated.** Use `availableAutonomousDataStorageSizeInTBs` for Autonomous Databases' data storage availability in TBs.
 	AvailableDataStorageSizeInTbs pulumi.Float64Output `pulumi:"availableDataStorageSizeInTbs"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
@@ -125,6 +129,8 @@ type AutonomousVmCluster struct {
 	NextMaintenanceRunId pulumi.StringOutput `pulumi:"nextMaintenanceRunId"`
 	// The number of enabled OCPU cores.
 	OcpusEnabled pulumi.Float64Output `pulumi:"ocpusEnabled"`
+	// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+	ReclaimableCpus pulumi.IntOutput `pulumi:"reclaimableCpus"`
 	// The current state of the Autonomous VM cluster.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The date and time that the Autonomous VM cluster was created.
@@ -180,9 +186,13 @@ func GetAutonomousVmCluster(ctx *pulumi.Context,
 type autonomousVmClusterState struct {
 	// The data disk group size to be allocated for Autonomous Databases, in TBs.
 	AutonomousDataStorageSizeInTbs *float64 `pulumi:"autonomousDataStorageSizeInTbs"`
+	// The data disk group size available for Autonomous Databases, in TBs.
+	AvailableAutonomousDataStorageSizeInTbs *float64 `pulumi:"availableAutonomousDataStorageSizeInTbs"`
+	// The number of Autonomous Container Databases that can be created with the currently available local storage.
+	AvailableContainerDatabases *int `pulumi:"availableContainerDatabases"`
 	// The numnber of CPU cores available.
 	AvailableCpus *int `pulumi:"availableCpus"`
-	// The data storage available in TBs
+	// **Deprecated.** Use `availableAutonomousDataStorageSizeInTBs` for Autonomous Databases' data storage availability in TBs.
 	AvailableDataStorageSizeInTbs *float64 `pulumi:"availableDataStorageSizeInTbs"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
@@ -223,6 +233,8 @@ type autonomousVmClusterState struct {
 	NextMaintenanceRunId *string `pulumi:"nextMaintenanceRunId"`
 	// The number of enabled OCPU cores.
 	OcpusEnabled *float64 `pulumi:"ocpusEnabled"`
+	// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+	ReclaimableCpus *int `pulumi:"reclaimableCpus"`
 	// The current state of the Autonomous VM cluster.
 	State *string `pulumi:"state"`
 	// The date and time that the Autonomous VM cluster was created.
@@ -238,9 +250,13 @@ type autonomousVmClusterState struct {
 type AutonomousVmClusterState struct {
 	// The data disk group size to be allocated for Autonomous Databases, in TBs.
 	AutonomousDataStorageSizeInTbs pulumi.Float64PtrInput
+	// The data disk group size available for Autonomous Databases, in TBs.
+	AvailableAutonomousDataStorageSizeInTbs pulumi.Float64PtrInput
+	// The number of Autonomous Container Databases that can be created with the currently available local storage.
+	AvailableContainerDatabases pulumi.IntPtrInput
 	// The numnber of CPU cores available.
 	AvailableCpus pulumi.IntPtrInput
-	// The data storage available in TBs
+	// **Deprecated.** Use `availableAutonomousDataStorageSizeInTBs` for Autonomous Databases' data storage availability in TBs.
 	AvailableDataStorageSizeInTbs pulumi.Float64PtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringPtrInput
@@ -281,6 +297,8 @@ type AutonomousVmClusterState struct {
 	NextMaintenanceRunId pulumi.StringPtrInput
 	// The number of enabled OCPU cores.
 	OcpusEnabled pulumi.Float64PtrInput
+	// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+	ReclaimableCpus pulumi.IntPtrInput
 	// The current state of the Autonomous VM cluster.
 	State pulumi.StringPtrInput
 	// The date and time that the Autonomous VM cluster was created.

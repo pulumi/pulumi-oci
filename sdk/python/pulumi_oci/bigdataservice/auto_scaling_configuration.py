@@ -19,24 +19,29 @@ class AutoScalingConfigurationArgs:
                  cluster_admin_password: pulumi.Input[str],
                  is_enabled: pulumi.Input[bool],
                  node_type: pulumi.Input[str],
-                 policy: pulumi.Input['AutoScalingConfigurationPolicyArgs'],
-                 display_name: Optional[pulumi.Input[str]] = None):
+                 display_name: Optional[pulumi.Input[str]] = None,
+                 policy: Optional[pulumi.Input['AutoScalingConfigurationPolicyArgs']] = None,
+                 policy_details: Optional[pulumi.Input['AutoScalingConfigurationPolicyDetailsArgs']] = None):
         """
         The set of arguments for constructing a AutoScalingConfiguration resource.
         :param pulumi.Input[str] bds_instance_id: The OCID of the cluster.
         :param pulumi.Input[str] cluster_admin_password: (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
         :param pulumi.Input[bool] is_enabled: (Updatable) Whether the autoscale configuration is enabled.
-        :param pulumi.Input[str] node_type: A node type that is managed by an autoscale configuration. The only supported type is WORKER.
-        :param pulumi.Input['AutoScalingConfigurationPolicyArgs'] policy: (Updatable) Policy definitions for the autoscale configuration.
+        :param pulumi.Input[str] node_type: A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
+        :param pulumi.Input['AutoScalingConfigurationPolicyArgs'] policy: (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
+        :param pulumi.Input['AutoScalingConfigurationPolicyDetailsArgs'] policy_details: (Updatable) Policy definition for the autoscale configuration.
         """
         pulumi.set(__self__, "bds_instance_id", bds_instance_id)
         pulumi.set(__self__, "cluster_admin_password", cluster_admin_password)
         pulumi.set(__self__, "is_enabled", is_enabled)
         pulumi.set(__self__, "node_type", node_type)
-        pulumi.set(__self__, "policy", policy)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if policy is not None:
+            pulumi.set(__self__, "policy", policy)
+        if policy_details is not None:
+            pulumi.set(__self__, "policy_details", policy_details)
 
     @property
     @pulumi.getter(name="bdsInstanceId")
@@ -78,25 +83,13 @@ class AutoScalingConfigurationArgs:
     @pulumi.getter(name="nodeType")
     def node_type(self) -> pulumi.Input[str]:
         """
-        A node type that is managed by an autoscale configuration. The only supported type is WORKER.
+        A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
         """
         return pulumi.get(self, "node_type")
 
     @node_type.setter
     def node_type(self, value: pulumi.Input[str]):
         pulumi.set(self, "node_type", value)
-
-    @property
-    @pulumi.getter
-    def policy(self) -> pulumi.Input['AutoScalingConfigurationPolicyArgs']:
-        """
-        (Updatable) Policy definitions for the autoscale configuration.
-        """
-        return pulumi.get(self, "policy")
-
-    @policy.setter
-    def policy(self, value: pulumi.Input['AutoScalingConfigurationPolicyArgs']):
-        pulumi.set(self, "policy", value)
 
     @property
     @pulumi.getter(name="displayName")
@@ -110,6 +103,30 @@ class AutoScalingConfigurationArgs:
     def display_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "display_name", value)
 
+    @property
+    @pulumi.getter
+    def policy(self) -> Optional[pulumi.Input['AutoScalingConfigurationPolicyArgs']]:
+        """
+        (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
+        """
+        return pulumi.get(self, "policy")
+
+    @policy.setter
+    def policy(self, value: Optional[pulumi.Input['AutoScalingConfigurationPolicyArgs']]):
+        pulumi.set(self, "policy", value)
+
+    @property
+    @pulumi.getter(name="policyDetails")
+    def policy_details(self) -> Optional[pulumi.Input['AutoScalingConfigurationPolicyDetailsArgs']]:
+        """
+        (Updatable) Policy definition for the autoscale configuration.
+        """
+        return pulumi.get(self, "policy_details")
+
+    @policy_details.setter
+    def policy_details(self, value: Optional[pulumi.Input['AutoScalingConfigurationPolicyDetailsArgs']]):
+        pulumi.set(self, "policy_details", value)
+
 
 @pulumi.input_type
 class _AutoScalingConfigurationState:
@@ -120,6 +137,7 @@ class _AutoScalingConfigurationState:
                  is_enabled: Optional[pulumi.Input[bool]] = None,
                  node_type: Optional[pulumi.Input[str]] = None,
                  policy: Optional[pulumi.Input['AutoScalingConfigurationPolicyArgs']] = None,
+                 policy_details: Optional[pulumi.Input['AutoScalingConfigurationPolicyDetailsArgs']] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None):
@@ -129,8 +147,9 @@ class _AutoScalingConfigurationState:
         :param pulumi.Input[str] cluster_admin_password: (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
         :param pulumi.Input[bool] is_enabled: (Updatable) Whether the autoscale configuration is enabled.
-        :param pulumi.Input[str] node_type: A node type that is managed by an autoscale configuration. The only supported type is WORKER.
-        :param pulumi.Input['AutoScalingConfigurationPolicyArgs'] policy: (Updatable) Policy definitions for the autoscale configuration.
+        :param pulumi.Input[str] node_type: A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
+        :param pulumi.Input['AutoScalingConfigurationPolicyArgs'] policy: (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
+        :param pulumi.Input['AutoScalingConfigurationPolicyDetailsArgs'] policy_details: (Updatable) Policy definition for the autoscale configuration.
         :param pulumi.Input[str] state: The state of the autoscale configuration.
         :param pulumi.Input[str] time_created: The time the cluster was created, shown as an RFC 3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time the autoscale configuration was updated, shown as an RFC 3339 formatted datetime string.
@@ -147,6 +166,8 @@ class _AutoScalingConfigurationState:
             pulumi.set(__self__, "node_type", node_type)
         if policy is not None:
             pulumi.set(__self__, "policy", policy)
+        if policy_details is not None:
+            pulumi.set(__self__, "policy_details", policy_details)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if time_created is not None:
@@ -206,7 +227,7 @@ class _AutoScalingConfigurationState:
     @pulumi.getter(name="nodeType")
     def node_type(self) -> Optional[pulumi.Input[str]]:
         """
-        A node type that is managed by an autoscale configuration. The only supported type is WORKER.
+        A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
         """
         return pulumi.get(self, "node_type")
 
@@ -218,13 +239,25 @@ class _AutoScalingConfigurationState:
     @pulumi.getter
     def policy(self) -> Optional[pulumi.Input['AutoScalingConfigurationPolicyArgs']]:
         """
-        (Updatable) Policy definitions for the autoscale configuration.
+        (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
         """
         return pulumi.get(self, "policy")
 
     @policy.setter
     def policy(self, value: Optional[pulumi.Input['AutoScalingConfigurationPolicyArgs']]):
         pulumi.set(self, "policy", value)
+
+    @property
+    @pulumi.getter(name="policyDetails")
+    def policy_details(self) -> Optional[pulumi.Input['AutoScalingConfigurationPolicyDetailsArgs']]:
+        """
+        (Updatable) Policy definition for the autoscale configuration.
+        """
+        return pulumi.get(self, "policy_details")
+
+    @policy_details.setter
+    def policy_details(self, value: Optional[pulumi.Input['AutoScalingConfigurationPolicyDetailsArgs']]):
+        pulumi.set(self, "policy_details", value)
 
     @property
     @pulumi.getter
@@ -274,6 +307,7 @@ class AutoScalingConfiguration(pulumi.CustomResource):
                  is_enabled: Optional[pulumi.Input[bool]] = None,
                  node_type: Optional[pulumi.Input[str]] = None,
                  policy: Optional[pulumi.Input[pulumi.InputType['AutoScalingConfigurationPolicyArgs']]] = None,
+                 policy_details: Optional[pulumi.Input[pulumi.InputType['AutoScalingConfigurationPolicyDetailsArgs']]] = None,
                  __props__=None):
         """
         This resource provides the Auto Scaling Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
@@ -291,21 +325,38 @@ class AutoScalingConfiguration(pulumi.CustomResource):
             cluster_admin_password=var["auto_scaling_configuration_cluster_admin_password"],
             is_enabled=var["auto_scaling_configuration_is_enabled"],
             node_type=var["auto_scaling_configuration_node_type"],
-            policy=oci.big.data.service.AutoScalingConfigurationPolicyArgs(
-                policy_type=var["auto_scaling_configuration_policy_policy_type"],
-                rules=[oci.big.data.service.AutoScalingConfigurationPolicyRuleArgs(
-                    action=var["auto_scaling_configuration_policy_rules_action"],
-                    metric=oci.big.data.service.AutoScalingConfigurationPolicyRuleMetricArgs(
-                        metric_type=var["auto_scaling_configuration_policy_rules_metric_metric_type"],
-                        threshold=oci.big.data.service.AutoScalingConfigurationPolicyRuleMetricThresholdArgs(
-                            duration_in_minutes=var["auto_scaling_configuration_policy_rules_metric_threshold_duration_in_minutes"],
-                            operator=var["auto_scaling_configuration_policy_rules_metric_threshold_operator"],
-                            value=var["auto_scaling_configuration_policy_rules_metric_threshold_value"],
+            display_name=var["auto_scaling_configuration_display_name"],
+            policy_details=oci.big.data.service.AutoScalingConfigurationPolicyDetailsArgs(
+                policy_type=var["auto_scaling_configuration_policy_details_policy_type"],
+                scale_down_config=oci.big.data.service.AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs(
+                    memory_step_size=var["auto_scaling_configuration_policy_details_scale_down_config_memory_step_size"],
+                    metric=oci.big.data.service.AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricArgs(
+                        metric_type=var["auto_scaling_configuration_policy_details_scale_down_config_metric_metric_type"],
+                        threshold=oci.big.data.service.AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdArgs(
+                            duration_in_minutes=var["auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_duration_in_minutes"],
+                            operator=var["auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_operator"],
+                            value=var["auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_value"],
                         ),
                     ),
-                )],
-            ),
-            display_name=var["auto_scaling_configuration_display_name"])
+                    min_memory_per_node=var["auto_scaling_configuration_policy_details_scale_down_config_min_memory_per_node"],
+                    min_ocpus_per_node=var["auto_scaling_configuration_policy_details_scale_down_config_min_ocpus_per_node"],
+                    ocpu_step_size=var["auto_scaling_configuration_policy_details_scale_down_config_ocpu_step_size"],
+                ),
+                scale_up_config=oci.big.data.service.AutoScalingConfigurationPolicyDetailsScaleUpConfigArgs(
+                    max_memory_per_node=var["auto_scaling_configuration_policy_details_scale_up_config_max_memory_per_node"],
+                    max_ocpus_per_node=var["auto_scaling_configuration_policy_details_scale_up_config_max_ocpus_per_node"],
+                    memory_step_size=var["auto_scaling_configuration_policy_details_scale_up_config_memory_step_size"],
+                    metric=oci.big.data.service.AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricArgs(
+                        metric_type=var["auto_scaling_configuration_policy_details_scale_up_config_metric_metric_type"],
+                        threshold=oci.big.data.service.AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdArgs(
+                            duration_in_minutes=var["auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_duration_in_minutes"],
+                            operator=var["auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_operator"],
+                            value=var["auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_value"],
+                        ),
+                    ),
+                    ocpu_step_size=var["auto_scaling_configuration_policy_details_scale_up_config_ocpu_step_size"],
+                ),
+            ))
         ```
 
         ## Import
@@ -322,8 +373,9 @@ class AutoScalingConfiguration(pulumi.CustomResource):
         :param pulumi.Input[str] cluster_admin_password: (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
         :param pulumi.Input[bool] is_enabled: (Updatable) Whether the autoscale configuration is enabled.
-        :param pulumi.Input[str] node_type: A node type that is managed by an autoscale configuration. The only supported type is WORKER.
-        :param pulumi.Input[pulumi.InputType['AutoScalingConfigurationPolicyArgs']] policy: (Updatable) Policy definitions for the autoscale configuration.
+        :param pulumi.Input[str] node_type: A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
+        :param pulumi.Input[pulumi.InputType['AutoScalingConfigurationPolicyArgs']] policy: (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
+        :param pulumi.Input[pulumi.InputType['AutoScalingConfigurationPolicyDetailsArgs']] policy_details: (Updatable) Policy definition for the autoscale configuration.
         """
         ...
     @overload
@@ -347,21 +399,38 @@ class AutoScalingConfiguration(pulumi.CustomResource):
             cluster_admin_password=var["auto_scaling_configuration_cluster_admin_password"],
             is_enabled=var["auto_scaling_configuration_is_enabled"],
             node_type=var["auto_scaling_configuration_node_type"],
-            policy=oci.big.data.service.AutoScalingConfigurationPolicyArgs(
-                policy_type=var["auto_scaling_configuration_policy_policy_type"],
-                rules=[oci.big.data.service.AutoScalingConfigurationPolicyRuleArgs(
-                    action=var["auto_scaling_configuration_policy_rules_action"],
-                    metric=oci.big.data.service.AutoScalingConfigurationPolicyRuleMetricArgs(
-                        metric_type=var["auto_scaling_configuration_policy_rules_metric_metric_type"],
-                        threshold=oci.big.data.service.AutoScalingConfigurationPolicyRuleMetricThresholdArgs(
-                            duration_in_minutes=var["auto_scaling_configuration_policy_rules_metric_threshold_duration_in_minutes"],
-                            operator=var["auto_scaling_configuration_policy_rules_metric_threshold_operator"],
-                            value=var["auto_scaling_configuration_policy_rules_metric_threshold_value"],
+            display_name=var["auto_scaling_configuration_display_name"],
+            policy_details=oci.big.data.service.AutoScalingConfigurationPolicyDetailsArgs(
+                policy_type=var["auto_scaling_configuration_policy_details_policy_type"],
+                scale_down_config=oci.big.data.service.AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs(
+                    memory_step_size=var["auto_scaling_configuration_policy_details_scale_down_config_memory_step_size"],
+                    metric=oci.big.data.service.AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricArgs(
+                        metric_type=var["auto_scaling_configuration_policy_details_scale_down_config_metric_metric_type"],
+                        threshold=oci.big.data.service.AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdArgs(
+                            duration_in_minutes=var["auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_duration_in_minutes"],
+                            operator=var["auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_operator"],
+                            value=var["auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_value"],
                         ),
                     ),
-                )],
-            ),
-            display_name=var["auto_scaling_configuration_display_name"])
+                    min_memory_per_node=var["auto_scaling_configuration_policy_details_scale_down_config_min_memory_per_node"],
+                    min_ocpus_per_node=var["auto_scaling_configuration_policy_details_scale_down_config_min_ocpus_per_node"],
+                    ocpu_step_size=var["auto_scaling_configuration_policy_details_scale_down_config_ocpu_step_size"],
+                ),
+                scale_up_config=oci.big.data.service.AutoScalingConfigurationPolicyDetailsScaleUpConfigArgs(
+                    max_memory_per_node=var["auto_scaling_configuration_policy_details_scale_up_config_max_memory_per_node"],
+                    max_ocpus_per_node=var["auto_scaling_configuration_policy_details_scale_up_config_max_ocpus_per_node"],
+                    memory_step_size=var["auto_scaling_configuration_policy_details_scale_up_config_memory_step_size"],
+                    metric=oci.big.data.service.AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricArgs(
+                        metric_type=var["auto_scaling_configuration_policy_details_scale_up_config_metric_metric_type"],
+                        threshold=oci.big.data.service.AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdArgs(
+                            duration_in_minutes=var["auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_duration_in_minutes"],
+                            operator=var["auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_operator"],
+                            value=var["auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_value"],
+                        ),
+                    ),
+                    ocpu_step_size=var["auto_scaling_configuration_policy_details_scale_up_config_ocpu_step_size"],
+                ),
+            ))
         ```
 
         ## Import
@@ -393,6 +462,7 @@ class AutoScalingConfiguration(pulumi.CustomResource):
                  is_enabled: Optional[pulumi.Input[bool]] = None,
                  node_type: Optional[pulumi.Input[str]] = None,
                  policy: Optional[pulumi.Input[pulumi.InputType['AutoScalingConfigurationPolicyArgs']]] = None,
+                 policy_details: Optional[pulumi.Input[pulumi.InputType['AutoScalingConfigurationPolicyDetailsArgs']]] = None,
                  __props__=None):
         if opts is None:
             opts = pulumi.ResourceOptions()
@@ -418,9 +488,8 @@ class AutoScalingConfiguration(pulumi.CustomResource):
             if node_type is None and not opts.urn:
                 raise TypeError("Missing required property 'node_type'")
             __props__.__dict__["node_type"] = node_type
-            if policy is None and not opts.urn:
-                raise TypeError("Missing required property 'policy'")
             __props__.__dict__["policy"] = policy
+            __props__.__dict__["policy_details"] = policy_details
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_updated"] = None
@@ -440,6 +509,7 @@ class AutoScalingConfiguration(pulumi.CustomResource):
             is_enabled: Optional[pulumi.Input[bool]] = None,
             node_type: Optional[pulumi.Input[str]] = None,
             policy: Optional[pulumi.Input[pulumi.InputType['AutoScalingConfigurationPolicyArgs']]] = None,
+            policy_details: Optional[pulumi.Input[pulumi.InputType['AutoScalingConfigurationPolicyDetailsArgs']]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None) -> 'AutoScalingConfiguration':
@@ -454,8 +524,9 @@ class AutoScalingConfiguration(pulumi.CustomResource):
         :param pulumi.Input[str] cluster_admin_password: (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
         :param pulumi.Input[bool] is_enabled: (Updatable) Whether the autoscale configuration is enabled.
-        :param pulumi.Input[str] node_type: A node type that is managed by an autoscale configuration. The only supported type is WORKER.
-        :param pulumi.Input[pulumi.InputType['AutoScalingConfigurationPolicyArgs']] policy: (Updatable) Policy definitions for the autoscale configuration.
+        :param pulumi.Input[str] node_type: A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
+        :param pulumi.Input[pulumi.InputType['AutoScalingConfigurationPolicyArgs']] policy: (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
+        :param pulumi.Input[pulumi.InputType['AutoScalingConfigurationPolicyDetailsArgs']] policy_details: (Updatable) Policy definition for the autoscale configuration.
         :param pulumi.Input[str] state: The state of the autoscale configuration.
         :param pulumi.Input[str] time_created: The time the cluster was created, shown as an RFC 3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time the autoscale configuration was updated, shown as an RFC 3339 formatted datetime string.
@@ -470,6 +541,7 @@ class AutoScalingConfiguration(pulumi.CustomResource):
         __props__.__dict__["is_enabled"] = is_enabled
         __props__.__dict__["node_type"] = node_type
         __props__.__dict__["policy"] = policy
+        __props__.__dict__["policy_details"] = policy_details
         __props__.__dict__["state"] = state
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
@@ -511,7 +583,7 @@ class AutoScalingConfiguration(pulumi.CustomResource):
     @pulumi.getter(name="nodeType")
     def node_type(self) -> pulumi.Output[str]:
         """
-        A node type that is managed by an autoscale configuration. The only supported type is WORKER.
+        A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
         """
         return pulumi.get(self, "node_type")
 
@@ -519,9 +591,17 @@ class AutoScalingConfiguration(pulumi.CustomResource):
     @pulumi.getter
     def policy(self) -> pulumi.Output['outputs.AutoScalingConfigurationPolicy']:
         """
-        (Updatable) Policy definitions for the autoscale configuration.
+        (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
         """
         return pulumi.get(self, "policy")
+
+    @property
+    @pulumi.getter(name="policyDetails")
+    def policy_details(self) -> pulumi.Output['outputs.AutoScalingConfigurationPolicyDetails']:
+        """
+        (Updatable) Policy definition for the autoscale configuration.
+        """
+        return pulumi.get(self, "policy_details")
 
     @property
     @pulumi.getter

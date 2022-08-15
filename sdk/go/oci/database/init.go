@@ -69,6 +69,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &DbNodeConsoleConnection{}
 	case "oci:Database/dbSystem:DbSystem":
 		r = &DbSystem{}
+	case "oci:Database/dbSystemsUpgrade:DbSystemsUpgrade":
+		r = &DbSystemsUpgrade{}
 	case "oci:Database/exadataInfrastructure:ExadataInfrastructure":
 		r = &ExadataInfrastructure{}
 	case "oci:Database/exadataInfrastructureStorage:ExadataInfrastructureStorage":
@@ -79,6 +81,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ExternalContainerDatabase{}
 	case "oci:Database/externalContainerDatabaseManagement:ExternalContainerDatabaseManagement":
 		r = &ExternalContainerDatabaseManagement{}
+	case "oci:Database/externalContainerDatabasesStackMonitoring:ExternalContainerDatabasesStackMonitoring":
+		r = &ExternalContainerDatabasesStackMonitoring{}
 	case "oci:Database/externalDatabaseConnector:ExternalDatabaseConnector":
 		r = &ExternalDatabaseConnector{}
 	case "oci:Database/externalNonContainerDatabase:ExternalNonContainerDatabase":
@@ -87,12 +91,16 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ExternalNonContainerDatabaseManagement{}
 	case "oci:Database/externalNonContainerDatabaseOperationsInsightsManagement:ExternalNonContainerDatabaseOperationsInsightsManagement":
 		r = &ExternalNonContainerDatabaseOperationsInsightsManagement{}
+	case "oci:Database/externalNonContainerDatabasesStackMonitoring:ExternalNonContainerDatabasesStackMonitoring":
+		r = &ExternalNonContainerDatabasesStackMonitoring{}
 	case "oci:Database/externalPluggableDatabase:ExternalPluggableDatabase":
 		r = &ExternalPluggableDatabase{}
 	case "oci:Database/externalPluggableDatabaseManagement:ExternalPluggableDatabaseManagement":
 		r = &ExternalPluggableDatabaseManagement{}
 	case "oci:Database/externalPluggableDatabaseOperationsInsightsManagement:ExternalPluggableDatabaseOperationsInsightsManagement":
 		r = &ExternalPluggableDatabaseOperationsInsightsManagement{}
+	case "oci:Database/externalPluggableDatabasesStackMonitoring:ExternalPluggableDatabasesStackMonitoring":
+		r = &ExternalPluggableDatabasesStackMonitoring{}
 	case "oci:Database/keyStore:KeyStore":
 		r = &KeyStore{}
 	case "oci:Database/maintenanceRun:MaintenanceRun":
@@ -246,6 +254,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
+		"Database/dbSystemsUpgrade",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"Database/exadataInfrastructure",
 		&module{version},
 	)
@@ -271,6 +284,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
+		"Database/externalContainerDatabasesStackMonitoring",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"Database/externalDatabaseConnector",
 		&module{version},
 	)
@@ -291,6 +309,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
+		"Database/externalNonContainerDatabasesStackMonitoring",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"Database/externalPluggableDatabase",
 		&module{version},
 	)
@@ -302,6 +325,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Database/externalPluggableDatabaseOperationsInsightsManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Database/externalPluggableDatabasesStackMonitoring",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

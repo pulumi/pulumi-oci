@@ -12,6 +12,7 @@ import com.pulumi.oci.ContainerEngine.inputs.NodePoolState;
 import com.pulumi.oci.ContainerEngine.outputs.NodePoolInitialNodeLabel;
 import com.pulumi.oci.ContainerEngine.outputs.NodePoolNode;
 import com.pulumi.oci.ContainerEngine.outputs.NodePoolNodeConfigDetails;
+import com.pulumi.oci.ContainerEngine.outputs.NodePoolNodeEvictionNodePoolSettings;
 import com.pulumi.oci.ContainerEngine.outputs.NodePoolNodeShapeConfig;
 import com.pulumi.oci.ContainerEngine.outputs.NodePoolNodeSource;
 import com.pulumi.oci.ContainerEngine.outputs.NodePoolNodeSourceDetails;
@@ -126,6 +127,20 @@ public class NodePool extends com.pulumi.resources.CustomResource {
         return this.kubernetesVersion;
     }
     /**
+     * Details about the state of the node.
+     * 
+     */
+    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    private Output<String> lifecycleDetails;
+
+    /**
+     * @return Details about the state of the node.
+     * 
+     */
+    public Output<String> lifecycleDetails() {
+        return this.lifecycleDetails;
+    }
+    /**
      * (Updatable) The name of the node pool. Avoid entering confidential information.
      * 
      */
@@ -152,6 +167,20 @@ public class NodePool extends com.pulumi.resources.CustomResource {
      */
     public Output<NodePoolNodeConfigDetails> nodeConfigDetails() {
         return this.nodeConfigDetails;
+    }
+    /**
+     * (Updatable) Node Eviction Details configuration
+     * 
+     */
+    @Export(name="nodeEvictionNodePoolSettings", type=NodePoolNodeEvictionNodePoolSettings.class, parameters={})
+    private Output<NodePoolNodeEvictionNodePoolSettings> nodeEvictionNodePoolSettings;
+
+    /**
+     * @return (Updatable) Node Eviction Details configuration
+     * 
+     */
+    public Output<NodePoolNodeEvictionNodePoolSettings> nodeEvictionNodePoolSettings() {
+        return this.nodeEvictionNodePoolSettings;
     }
     /**
      * Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
@@ -300,6 +329,20 @@ public class NodePool extends com.pulumi.resources.CustomResource {
      */
     public Output<String> sshPublicKey() {
         return this.sshPublicKey;
+    }
+    /**
+     * The state of the nodepool.
+     * 
+     */
+    @Export(name="state", type=String.class, parameters={})
+    private Output<String> state;
+
+    /**
+     * @return The state of the nodepool.
+     * 
+     */
+    public Output<String> state() {
+        return this.state;
     }
     /**
      * (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.

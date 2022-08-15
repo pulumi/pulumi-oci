@@ -10,6 +10,7 @@ import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseMaintenance
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseMaintenanceWindowDetail;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig;
 import java.lang.Boolean;
+import java.lang.Double;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -21,7 +22,7 @@ import java.util.Objects;
 public final class GetAutonomousContainerDatabaseResult {
     private final String autonomousContainerDatabaseId;
     /**
-     * @return The OCID of the Autonomous Exadata Infrastructure.
+     * @return **No longer used.** For Autonomous Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
      * 
      */
     private final String autonomousExadataInfrastructureId;
@@ -35,6 +36,11 @@ public final class GetAutonomousContainerDatabaseResult {
      * 
      */
     private final String availabilityDomain;
+    /**
+     * @return Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
+     * 
+     */
+    private final Double availableCpus;
     /**
      * @return Backup options for the Autonomous Container Database.
      * 
@@ -147,7 +153,17 @@ public final class GetAutonomousContainerDatabaseResult {
     private final String peerDbUniqueName;
     private final String protectionMode;
     /**
-     * @return The role of the dataguard enabled Autonomous Container Database.
+     * @return An array of CPU values that can be used to successfully provision a single Autonomous Database.
+     * 
+     */
+    private final List<Double> provisionableCpuses;
+    /**
+     * @return CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+     * 
+     */
+    private final Double reclaimableCpus;
+    /**
+     * @return The role of the Autonomous Data Guard-enabled Autonomous Container Database.
      * 
      */
     private final String role;
@@ -173,6 +189,11 @@ public final class GetAutonomousContainerDatabaseResult {
      */
     private final String timeCreated;
     /**
+     * @return The number of CPU cores allocated to the Autonomous VM cluster.
+     * 
+     */
+    private final Integer totalCpus;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * 
      */
@@ -184,6 +205,7 @@ public final class GetAutonomousContainerDatabaseResult {
         @CustomType.Parameter("autonomousExadataInfrastructureId") String autonomousExadataInfrastructureId,
         @CustomType.Parameter("autonomousVmClusterId") String autonomousVmClusterId,
         @CustomType.Parameter("availabilityDomain") String availabilityDomain,
+        @CustomType.Parameter("availableCpus") Double availableCpus,
         @CustomType.Parameter("backupConfigs") List<GetAutonomousContainerDatabaseBackupConfig> backupConfigs,
         @CustomType.Parameter("cloudAutonomousVmClusterId") String cloudAutonomousVmClusterId,
         @CustomType.Parameter("compartmentId") String compartmentId,
@@ -215,17 +237,21 @@ public final class GetAutonomousContainerDatabaseResult {
         @CustomType.Parameter("peerCloudAutonomousVmClusterId") String peerCloudAutonomousVmClusterId,
         @CustomType.Parameter("peerDbUniqueName") String peerDbUniqueName,
         @CustomType.Parameter("protectionMode") String protectionMode,
+        @CustomType.Parameter("provisionableCpuses") List<Double> provisionableCpuses,
+        @CustomType.Parameter("reclaimableCpus") Double reclaimableCpus,
         @CustomType.Parameter("role") String role,
         @CustomType.Parameter("rotateKeyTrigger") Boolean rotateKeyTrigger,
         @CustomType.Parameter("serviceLevelAgreementType") String serviceLevelAgreementType,
         @CustomType.Parameter("standbyMaintenanceBufferInDays") Integer standbyMaintenanceBufferInDays,
         @CustomType.Parameter("state") String state,
         @CustomType.Parameter("timeCreated") String timeCreated,
+        @CustomType.Parameter("totalCpus") Integer totalCpus,
         @CustomType.Parameter("vaultId") String vaultId) {
         this.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
         this.autonomousExadataInfrastructureId = autonomousExadataInfrastructureId;
         this.autonomousVmClusterId = autonomousVmClusterId;
         this.availabilityDomain = availabilityDomain;
+        this.availableCpus = availableCpus;
         this.backupConfigs = backupConfigs;
         this.cloudAutonomousVmClusterId = cloudAutonomousVmClusterId;
         this.compartmentId = compartmentId;
@@ -257,12 +283,15 @@ public final class GetAutonomousContainerDatabaseResult {
         this.peerCloudAutonomousVmClusterId = peerCloudAutonomousVmClusterId;
         this.peerDbUniqueName = peerDbUniqueName;
         this.protectionMode = protectionMode;
+        this.provisionableCpuses = provisionableCpuses;
+        this.reclaimableCpus = reclaimableCpus;
         this.role = role;
         this.rotateKeyTrigger = rotateKeyTrigger;
         this.serviceLevelAgreementType = serviceLevelAgreementType;
         this.standbyMaintenanceBufferInDays = standbyMaintenanceBufferInDays;
         this.state = state;
         this.timeCreated = timeCreated;
+        this.totalCpus = totalCpus;
         this.vaultId = vaultId;
     }
 
@@ -270,7 +299,7 @@ public final class GetAutonomousContainerDatabaseResult {
         return this.autonomousContainerDatabaseId;
     }
     /**
-     * @return The OCID of the Autonomous Exadata Infrastructure.
+     * @return **No longer used.** For Autonomous Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
      * 
      */
     public String autonomousExadataInfrastructureId() {
@@ -289,6 +318,13 @@ public final class GetAutonomousContainerDatabaseResult {
      */
     public String availabilityDomain() {
         return this.availabilityDomain;
+    }
+    /**
+     * @return Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
+     * 
+     */
+    public Double availableCpus() {
+        return this.availableCpus;
     }
     /**
      * @return Backup options for the Autonomous Container Database.
@@ -464,7 +500,21 @@ public final class GetAutonomousContainerDatabaseResult {
         return this.protectionMode;
     }
     /**
-     * @return The role of the dataguard enabled Autonomous Container Database.
+     * @return An array of CPU values that can be used to successfully provision a single Autonomous Database.
+     * 
+     */
+    public List<Double> provisionableCpuses() {
+        return this.provisionableCpuses;
+    }
+    /**
+     * @return CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+     * 
+     */
+    public Double reclaimableCpus() {
+        return this.reclaimableCpus;
+    }
+    /**
+     * @return The role of the Autonomous Data Guard-enabled Autonomous Container Database.
      * 
      */
     public String role() {
@@ -502,6 +552,13 @@ public final class GetAutonomousContainerDatabaseResult {
         return this.timeCreated;
     }
     /**
+     * @return The number of CPU cores allocated to the Autonomous VM cluster.
+     * 
+     */
+    public Integer totalCpus() {
+        return this.totalCpus;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * 
      */
@@ -522,6 +579,7 @@ public final class GetAutonomousContainerDatabaseResult {
         private String autonomousExadataInfrastructureId;
         private String autonomousVmClusterId;
         private String availabilityDomain;
+        private Double availableCpus;
         private List<GetAutonomousContainerDatabaseBackupConfig> backupConfigs;
         private String cloudAutonomousVmClusterId;
         private String compartmentId;
@@ -553,12 +611,15 @@ public final class GetAutonomousContainerDatabaseResult {
         private String peerCloudAutonomousVmClusterId;
         private String peerDbUniqueName;
         private String protectionMode;
+        private List<Double> provisionableCpuses;
+        private Double reclaimableCpus;
         private String role;
         private Boolean rotateKeyTrigger;
         private String serviceLevelAgreementType;
         private Integer standbyMaintenanceBufferInDays;
         private String state;
         private String timeCreated;
+        private Integer totalCpus;
         private String vaultId;
 
         public Builder() {
@@ -571,6 +632,7 @@ public final class GetAutonomousContainerDatabaseResult {
     	      this.autonomousExadataInfrastructureId = defaults.autonomousExadataInfrastructureId;
     	      this.autonomousVmClusterId = defaults.autonomousVmClusterId;
     	      this.availabilityDomain = defaults.availabilityDomain;
+    	      this.availableCpus = defaults.availableCpus;
     	      this.backupConfigs = defaults.backupConfigs;
     	      this.cloudAutonomousVmClusterId = defaults.cloudAutonomousVmClusterId;
     	      this.compartmentId = defaults.compartmentId;
@@ -602,12 +664,15 @@ public final class GetAutonomousContainerDatabaseResult {
     	      this.peerCloudAutonomousVmClusterId = defaults.peerCloudAutonomousVmClusterId;
     	      this.peerDbUniqueName = defaults.peerDbUniqueName;
     	      this.protectionMode = defaults.protectionMode;
+    	      this.provisionableCpuses = defaults.provisionableCpuses;
+    	      this.reclaimableCpus = defaults.reclaimableCpus;
     	      this.role = defaults.role;
     	      this.rotateKeyTrigger = defaults.rotateKeyTrigger;
     	      this.serviceLevelAgreementType = defaults.serviceLevelAgreementType;
     	      this.standbyMaintenanceBufferInDays = defaults.standbyMaintenanceBufferInDays;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
+    	      this.totalCpus = defaults.totalCpus;
     	      this.vaultId = defaults.vaultId;
         }
 
@@ -625,6 +690,10 @@ public final class GetAutonomousContainerDatabaseResult {
         }
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            return this;
+        }
+        public Builder availableCpus(Double availableCpus) {
+            this.availableCpus = Objects.requireNonNull(availableCpus);
             return this;
         }
         public Builder backupConfigs(List<GetAutonomousContainerDatabaseBackupConfig> backupConfigs) {
@@ -766,6 +835,17 @@ public final class GetAutonomousContainerDatabaseResult {
             this.protectionMode = Objects.requireNonNull(protectionMode);
             return this;
         }
+        public Builder provisionableCpuses(List<Double> provisionableCpuses) {
+            this.provisionableCpuses = Objects.requireNonNull(provisionableCpuses);
+            return this;
+        }
+        public Builder provisionableCpuses(Double... provisionableCpuses) {
+            return provisionableCpuses(List.of(provisionableCpuses));
+        }
+        public Builder reclaimableCpus(Double reclaimableCpus) {
+            this.reclaimableCpus = Objects.requireNonNull(reclaimableCpus);
+            return this;
+        }
         public Builder role(String role) {
             this.role = Objects.requireNonNull(role);
             return this;
@@ -790,11 +870,15 @@ public final class GetAutonomousContainerDatabaseResult {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        public Builder totalCpus(Integer totalCpus) {
+            this.totalCpus = Objects.requireNonNull(totalCpus);
+            return this;
+        }
         public Builder vaultId(String vaultId) {
             this.vaultId = Objects.requireNonNull(vaultId);
             return this;
         }        public GetAutonomousContainerDatabaseResult build() {
-            return new GetAutonomousContainerDatabaseResult(autonomousContainerDatabaseId, autonomousExadataInfrastructureId, autonomousVmClusterId, availabilityDomain, backupConfigs, cloudAutonomousVmClusterId, compartmentId, dbUniqueName, dbVersion, definedTags, displayName, freeformTags, id, infrastructureType, isAutomaticFailoverEnabled, keyHistoryEntries, keyStoreId, keyStoreWalletName, kmsKeyId, lastMaintenanceRunId, lifecycleDetails, maintenanceWindowDetails, maintenanceWindows, memoryPerOracleComputeUnitInGbs, nextMaintenanceRunId, patchId, patchModel, peerAutonomousContainerDatabaseBackupConfigs, peerAutonomousContainerDatabaseCompartmentId, peerAutonomousContainerDatabaseDisplayName, peerAutonomousExadataInfrastructureId, peerAutonomousVmClusterId, peerCloudAutonomousVmClusterId, peerDbUniqueName, protectionMode, role, rotateKeyTrigger, serviceLevelAgreementType, standbyMaintenanceBufferInDays, state, timeCreated, vaultId);
+            return new GetAutonomousContainerDatabaseResult(autonomousContainerDatabaseId, autonomousExadataInfrastructureId, autonomousVmClusterId, availabilityDomain, availableCpus, backupConfigs, cloudAutonomousVmClusterId, compartmentId, dbUniqueName, dbVersion, definedTags, displayName, freeformTags, id, infrastructureType, isAutomaticFailoverEnabled, keyHistoryEntries, keyStoreId, keyStoreWalletName, kmsKeyId, lastMaintenanceRunId, lifecycleDetails, maintenanceWindowDetails, maintenanceWindows, memoryPerOracleComputeUnitInGbs, nextMaintenanceRunId, patchId, patchModel, peerAutonomousContainerDatabaseBackupConfigs, peerAutonomousContainerDatabaseCompartmentId, peerAutonomousContainerDatabaseDisplayName, peerAutonomousExadataInfrastructureId, peerAutonomousVmClusterId, peerCloudAutonomousVmClusterId, peerDbUniqueName, protectionMode, provisionableCpuses, reclaimableCpus, role, rotateKeyTrigger, serviceLevelAgreementType, standbyMaintenanceBufferInDays, state, timeCreated, totalCpus, vaultId);
         }
     }
 }

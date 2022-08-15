@@ -132,11 +132,16 @@ import (
 // 					},
 // 					Metadata: pulumi.Any(_var.Instance_configuration_instance_details_launch_details_metadata),
 // 					PlatformConfig: &core.InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs{
-// 						Type:                           pulumi.Any(_var.Instance_configuration_instance_details_launch_details_platform_config_type),
-// 						IsMeasuredBootEnabled:          pulumi.Any(_var.Instance_configuration_instance_details_launch_details_platform_config_is_measured_boot_enabled),
-// 						IsSecureBootEnabled:            pulumi.Any(_var.Instance_configuration_instance_details_launch_details_platform_config_is_secure_boot_enabled),
-// 						IsTrustedPlatformModuleEnabled: pulumi.Any(_var.Instance_configuration_instance_details_launch_details_platform_config_is_trusted_platform_module_enabled),
-// 						NumaNodesPerSocket:             pulumi.Any(_var.Instance_configuration_instance_details_launch_details_platform_config_numa_nodes_per_socket),
+// 						Type:                                     pulumi.Any(_var.Instance_configuration_instance_details_launch_details_platform_config_type),
+// 						AreVirtualInstructionsEnabled:            pulumi.Any(_var.Instance_configuration_instance_details_launch_details_platform_config_are_virtual_instructions_enabled),
+// 						IsAccessControlServiceEnabled:            pulumi.Any(_var.Instance_configuration_instance_details_launch_details_platform_config_is_access_control_service_enabled),
+// 						IsInputOutputMemoryManagementUnitEnabled: pulumi.Any(_var.Instance_configuration_instance_details_launch_details_platform_config_is_input_output_memory_management_unit_enabled),
+// 						IsMeasuredBootEnabled:                    pulumi.Any(_var.Instance_configuration_instance_details_launch_details_platform_config_is_measured_boot_enabled),
+// 						IsSecureBootEnabled:                      pulumi.Any(_var.Instance_configuration_instance_details_launch_details_platform_config_is_secure_boot_enabled),
+// 						IsSymmetricMultiThreadingEnabled:         pulumi.Any(_var.Instance_configuration_instance_details_launch_details_platform_config_is_symmetric_multi_threading_enabled),
+// 						IsTrustedPlatformModuleEnabled:           pulumi.Any(_var.Instance_configuration_instance_details_launch_details_platform_config_is_trusted_platform_module_enabled),
+// 						NumaNodesPerSocket:                       pulumi.Any(_var.Instance_configuration_instance_details_launch_details_platform_config_numa_nodes_per_socket),
+// 						PercentageOfCoresEnabled:                 pulumi.Any(_var.Instance_configuration_instance_details_launch_details_platform_config_percentage_of_cores_enabled),
 // 					},
 // 					PreemptibleInstanceConfig: &core.InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigArgs{
 // 						PreemptionAction: &core.InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionActionArgs{
@@ -149,12 +154,14 @@ import (
 // 					ShapeConfig: &core.InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigArgs{
 // 						BaselineOcpuUtilization: pulumi.Any(_var.Instance_configuration_instance_details_launch_details_shape_config_baseline_ocpu_utilization),
 // 						MemoryInGbs:             pulumi.Any(_var.Instance_configuration_instance_details_launch_details_shape_config_memory_in_gbs),
+// 						Nvmes:                   pulumi.Any(_var.Instance_configuration_instance_details_launch_details_shape_config_nvmes),
 // 						Ocpus:                   pulumi.Any(_var.Instance_configuration_instance_details_launch_details_shape_config_ocpus),
 // 					},
 // 					SourceDetails: &core.InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsArgs{
 // 						SourceType:          pulumi.Any(_var.Instance_configuration_instance_details_launch_details_source_details_source_type),
 // 						BootVolumeId:        pulumi.Any(oci_core_boot_volume.Test_boot_volume.Id),
 // 						BootVolumeSizeInGbs: pulumi.Any(_var.Instance_configuration_instance_details_launch_details_source_details_boot_volume_size_in_gbs),
+// 						BootVolumeVpusPerGb: pulumi.Any(_var.Instance_configuration_instance_details_launch_details_source_details_boot_volume_vpus_per_gb),
 // 						ImageId:             pulumi.Any(oci_core_image.Test_image.Id),
 // 					},
 // 				},

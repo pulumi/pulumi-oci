@@ -712,7 +712,7 @@ type QueryQueryDefinitionReportQuery struct {
 	CompartmentDepth *float64 `pulumi:"compartmentDepth"`
 	// (Updatable) The UI date range, for example, LAST_THREE_MONTHS. Conflicts with timeUsageStarted and timeUsageEnded.
 	DateRangeName *string `pulumi:"dateRangeName"`
-	// (Updatable)
+	// (Updatable) The filter object for query usage.
 	Filter *string `pulumi:"filter"`
 	// (Updatable) Forecast configuration of usage/cost.
 	Forecast *QueryQueryDefinitionReportQueryForecast `pulumi:"forecast"`
@@ -750,7 +750,7 @@ type QueryQueryDefinitionReportQueryArgs struct {
 	CompartmentDepth pulumi.Float64PtrInput `pulumi:"compartmentDepth"`
 	// (Updatable) The UI date range, for example, LAST_THREE_MONTHS. Conflicts with timeUsageStarted and timeUsageEnded.
 	DateRangeName pulumi.StringPtrInput `pulumi:"dateRangeName"`
-	// (Updatable)
+	// (Updatable) The filter object for query usage.
 	Filter pulumi.StringPtrInput `pulumi:"filter"`
 	// (Updatable) Forecast configuration of usage/cost.
 	Forecast QueryQueryDefinitionReportQueryForecastPtrInput `pulumi:"forecast"`
@@ -859,7 +859,7 @@ func (o QueryQueryDefinitionReportQueryOutput) DateRangeName() pulumi.StringPtrO
 	return o.ApplyT(func(v QueryQueryDefinitionReportQuery) *string { return v.DateRangeName }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable)
+// (Updatable) The filter object for query usage.
 func (o QueryQueryDefinitionReportQueryOutput) Filter() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v QueryQueryDefinitionReportQuery) *string { return v.Filter }).(pulumi.StringPtrOutput)
 }
@@ -955,7 +955,7 @@ func (o QueryQueryDefinitionReportQueryPtrOutput) DateRangeName() pulumi.StringP
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable)
+// (Updatable) The filter object for query usage.
 func (o QueryQueryDefinitionReportQueryPtrOutput) Filter() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *QueryQueryDefinitionReportQuery) *string {
 		if v == nil {
@@ -1343,6 +1343,775 @@ func (o QueryQueryDefinitionReportQueryGroupByTagArrayOutput) Index(i pulumi.Int
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) QueryQueryDefinitionReportQueryGroupByTag {
 		return vs[0].([]QueryQueryDefinitionReportQueryGroupByTag)[vs[1].(int)]
 	}).(QueryQueryDefinitionReportQueryGroupByTagOutput)
+}
+
+type ScheduleQueryProperties struct {
+	// The depth level of the compartment.
+	CompartmentDepth *float64 `pulumi:"compartmentDepth"`
+	// Static or dynamic date range `dateRangeType`, which corresponds with type-specific characteristics.
+	DateRange ScheduleQueryPropertiesDateRange `pulumi:"dateRange"`
+	// The filter object for query usage.
+	Filter *string `pulumi:"filter"`
+	// The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.   Allowed values are: DAILY MONTHLY
+	Granularity string `pulumi:"granularity"`
+	// Aggregate the result by. For example: [ "tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName" ]
+	GroupBies []string `pulumi:"groupBies"`
+	// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: [ { "namespace": "oracle", "key": "createdBy" ]
+	GroupByTags []ScheduleQueryPropertiesGroupByTag `pulumi:"groupByTags"`
+	// Specifies whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+	IsAggregateByTime *bool `pulumi:"isAggregateByTime"`
+	// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data.  Allowed values are: USAGE COST USAGE_AND_COST
+	QueryType *string `pulumi:"queryType"`
+}
+
+// ScheduleQueryPropertiesInput is an input type that accepts ScheduleQueryPropertiesArgs and ScheduleQueryPropertiesOutput values.
+// You can construct a concrete instance of `ScheduleQueryPropertiesInput` via:
+//
+//          ScheduleQueryPropertiesArgs{...}
+type ScheduleQueryPropertiesInput interface {
+	pulumi.Input
+
+	ToScheduleQueryPropertiesOutput() ScheduleQueryPropertiesOutput
+	ToScheduleQueryPropertiesOutputWithContext(context.Context) ScheduleQueryPropertiesOutput
+}
+
+type ScheduleQueryPropertiesArgs struct {
+	// The depth level of the compartment.
+	CompartmentDepth pulumi.Float64PtrInput `pulumi:"compartmentDepth"`
+	// Static or dynamic date range `dateRangeType`, which corresponds with type-specific characteristics.
+	DateRange ScheduleQueryPropertiesDateRangeInput `pulumi:"dateRange"`
+	// The filter object for query usage.
+	Filter pulumi.StringPtrInput `pulumi:"filter"`
+	// The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.   Allowed values are: DAILY MONTHLY
+	Granularity pulumi.StringInput `pulumi:"granularity"`
+	// Aggregate the result by. For example: [ "tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName" ]
+	GroupBies pulumi.StringArrayInput `pulumi:"groupBies"`
+	// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: [ { "namespace": "oracle", "key": "createdBy" ]
+	GroupByTags ScheduleQueryPropertiesGroupByTagArrayInput `pulumi:"groupByTags"`
+	// Specifies whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+	IsAggregateByTime pulumi.BoolPtrInput `pulumi:"isAggregateByTime"`
+	// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data.  Allowed values are: USAGE COST USAGE_AND_COST
+	QueryType pulumi.StringPtrInput `pulumi:"queryType"`
+}
+
+func (ScheduleQueryPropertiesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduleQueryProperties)(nil)).Elem()
+}
+
+func (i ScheduleQueryPropertiesArgs) ToScheduleQueryPropertiesOutput() ScheduleQueryPropertiesOutput {
+	return i.ToScheduleQueryPropertiesOutputWithContext(context.Background())
+}
+
+func (i ScheduleQueryPropertiesArgs) ToScheduleQueryPropertiesOutputWithContext(ctx context.Context) ScheduleQueryPropertiesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleQueryPropertiesOutput)
+}
+
+func (i ScheduleQueryPropertiesArgs) ToScheduleQueryPropertiesPtrOutput() ScheduleQueryPropertiesPtrOutput {
+	return i.ToScheduleQueryPropertiesPtrOutputWithContext(context.Background())
+}
+
+func (i ScheduleQueryPropertiesArgs) ToScheduleQueryPropertiesPtrOutputWithContext(ctx context.Context) ScheduleQueryPropertiesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleQueryPropertiesOutput).ToScheduleQueryPropertiesPtrOutputWithContext(ctx)
+}
+
+// ScheduleQueryPropertiesPtrInput is an input type that accepts ScheduleQueryPropertiesArgs, ScheduleQueryPropertiesPtr and ScheduleQueryPropertiesPtrOutput values.
+// You can construct a concrete instance of `ScheduleQueryPropertiesPtrInput` via:
+//
+//          ScheduleQueryPropertiesArgs{...}
+//
+//  or:
+//
+//          nil
+type ScheduleQueryPropertiesPtrInput interface {
+	pulumi.Input
+
+	ToScheduleQueryPropertiesPtrOutput() ScheduleQueryPropertiesPtrOutput
+	ToScheduleQueryPropertiesPtrOutputWithContext(context.Context) ScheduleQueryPropertiesPtrOutput
+}
+
+type scheduleQueryPropertiesPtrType ScheduleQueryPropertiesArgs
+
+func ScheduleQueryPropertiesPtr(v *ScheduleQueryPropertiesArgs) ScheduleQueryPropertiesPtrInput {
+	return (*scheduleQueryPropertiesPtrType)(v)
+}
+
+func (*scheduleQueryPropertiesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScheduleQueryProperties)(nil)).Elem()
+}
+
+func (i *scheduleQueryPropertiesPtrType) ToScheduleQueryPropertiesPtrOutput() ScheduleQueryPropertiesPtrOutput {
+	return i.ToScheduleQueryPropertiesPtrOutputWithContext(context.Background())
+}
+
+func (i *scheduleQueryPropertiesPtrType) ToScheduleQueryPropertiesPtrOutputWithContext(ctx context.Context) ScheduleQueryPropertiesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleQueryPropertiesPtrOutput)
+}
+
+type ScheduleQueryPropertiesOutput struct{ *pulumi.OutputState }
+
+func (ScheduleQueryPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduleQueryProperties)(nil)).Elem()
+}
+
+func (o ScheduleQueryPropertiesOutput) ToScheduleQueryPropertiesOutput() ScheduleQueryPropertiesOutput {
+	return o
+}
+
+func (o ScheduleQueryPropertiesOutput) ToScheduleQueryPropertiesOutputWithContext(ctx context.Context) ScheduleQueryPropertiesOutput {
+	return o
+}
+
+func (o ScheduleQueryPropertiesOutput) ToScheduleQueryPropertiesPtrOutput() ScheduleQueryPropertiesPtrOutput {
+	return o.ToScheduleQueryPropertiesPtrOutputWithContext(context.Background())
+}
+
+func (o ScheduleQueryPropertiesOutput) ToScheduleQueryPropertiesPtrOutputWithContext(ctx context.Context) ScheduleQueryPropertiesPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ScheduleQueryProperties) *ScheduleQueryProperties {
+		return &v
+	}).(ScheduleQueryPropertiesPtrOutput)
+}
+
+// The depth level of the compartment.
+func (o ScheduleQueryPropertiesOutput) CompartmentDepth() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v ScheduleQueryProperties) *float64 { return v.CompartmentDepth }).(pulumi.Float64PtrOutput)
+}
+
+// Static or dynamic date range `dateRangeType`, which corresponds with type-specific characteristics.
+func (o ScheduleQueryPropertiesOutput) DateRange() ScheduleQueryPropertiesDateRangeOutput {
+	return o.ApplyT(func(v ScheduleQueryProperties) ScheduleQueryPropertiesDateRange { return v.DateRange }).(ScheduleQueryPropertiesDateRangeOutput)
+}
+
+// The filter object for query usage.
+func (o ScheduleQueryPropertiesOutput) Filter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduleQueryProperties) *string { return v.Filter }).(pulumi.StringPtrOutput)
+}
+
+// The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.   Allowed values are: DAILY MONTHLY
+func (o ScheduleQueryPropertiesOutput) Granularity() pulumi.StringOutput {
+	return o.ApplyT(func(v ScheduleQueryProperties) string { return v.Granularity }).(pulumi.StringOutput)
+}
+
+// Aggregate the result by. For example: [ "tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName" ]
+func (o ScheduleQueryPropertiesOutput) GroupBies() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ScheduleQueryProperties) []string { return v.GroupBies }).(pulumi.StringArrayOutput)
+}
+
+// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: [ { "namespace": "oracle", "key": "createdBy" ]
+func (o ScheduleQueryPropertiesOutput) GroupByTags() ScheduleQueryPropertiesGroupByTagArrayOutput {
+	return o.ApplyT(func(v ScheduleQueryProperties) []ScheduleQueryPropertiesGroupByTag { return v.GroupByTags }).(ScheduleQueryPropertiesGroupByTagArrayOutput)
+}
+
+// Specifies whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+func (o ScheduleQueryPropertiesOutput) IsAggregateByTime() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ScheduleQueryProperties) *bool { return v.IsAggregateByTime }).(pulumi.BoolPtrOutput)
+}
+
+// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data.  Allowed values are: USAGE COST USAGE_AND_COST
+func (o ScheduleQueryPropertiesOutput) QueryType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduleQueryProperties) *string { return v.QueryType }).(pulumi.StringPtrOutput)
+}
+
+type ScheduleQueryPropertiesPtrOutput struct{ *pulumi.OutputState }
+
+func (ScheduleQueryPropertiesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScheduleQueryProperties)(nil)).Elem()
+}
+
+func (o ScheduleQueryPropertiesPtrOutput) ToScheduleQueryPropertiesPtrOutput() ScheduleQueryPropertiesPtrOutput {
+	return o
+}
+
+func (o ScheduleQueryPropertiesPtrOutput) ToScheduleQueryPropertiesPtrOutputWithContext(ctx context.Context) ScheduleQueryPropertiesPtrOutput {
+	return o
+}
+
+func (o ScheduleQueryPropertiesPtrOutput) Elem() ScheduleQueryPropertiesOutput {
+	return o.ApplyT(func(v *ScheduleQueryProperties) ScheduleQueryProperties {
+		if v != nil {
+			return *v
+		}
+		var ret ScheduleQueryProperties
+		return ret
+	}).(ScheduleQueryPropertiesOutput)
+}
+
+// The depth level of the compartment.
+func (o ScheduleQueryPropertiesPtrOutput) CompartmentDepth() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *ScheduleQueryProperties) *float64 {
+		if v == nil {
+			return nil
+		}
+		return v.CompartmentDepth
+	}).(pulumi.Float64PtrOutput)
+}
+
+// Static or dynamic date range `dateRangeType`, which corresponds with type-specific characteristics.
+func (o ScheduleQueryPropertiesPtrOutput) DateRange() ScheduleQueryPropertiesDateRangePtrOutput {
+	return o.ApplyT(func(v *ScheduleQueryProperties) *ScheduleQueryPropertiesDateRange {
+		if v == nil {
+			return nil
+		}
+		return &v.DateRange
+	}).(ScheduleQueryPropertiesDateRangePtrOutput)
+}
+
+// The filter object for query usage.
+func (o ScheduleQueryPropertiesPtrOutput) Filter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduleQueryProperties) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Filter
+	}).(pulumi.StringPtrOutput)
+}
+
+// The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.   Allowed values are: DAILY MONTHLY
+func (o ScheduleQueryPropertiesPtrOutput) Granularity() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduleQueryProperties) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Granularity
+	}).(pulumi.StringPtrOutput)
+}
+
+// Aggregate the result by. For example: [ "tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName" ]
+func (o ScheduleQueryPropertiesPtrOutput) GroupBies() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *ScheduleQueryProperties) []string {
+		if v == nil {
+			return nil
+		}
+		return v.GroupBies
+	}).(pulumi.StringArrayOutput)
+}
+
+// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: [ { "namespace": "oracle", "key": "createdBy" ]
+func (o ScheduleQueryPropertiesPtrOutput) GroupByTags() ScheduleQueryPropertiesGroupByTagArrayOutput {
+	return o.ApplyT(func(v *ScheduleQueryProperties) []ScheduleQueryPropertiesGroupByTag {
+		if v == nil {
+			return nil
+		}
+		return v.GroupByTags
+	}).(ScheduleQueryPropertiesGroupByTagArrayOutput)
+}
+
+// Specifies whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+func (o ScheduleQueryPropertiesPtrOutput) IsAggregateByTime() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ScheduleQueryProperties) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsAggregateByTime
+	}).(pulumi.BoolPtrOutput)
+}
+
+// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data.  Allowed values are: USAGE COST USAGE_AND_COST
+func (o ScheduleQueryPropertiesPtrOutput) QueryType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduleQueryProperties) *string {
+		if v == nil {
+			return nil
+		}
+		return v.QueryType
+	}).(pulumi.StringPtrOutput)
+}
+
+type ScheduleQueryPropertiesDateRange struct {
+	// Defines whether the schedule date range is STATIC or DYNAMIC
+	DateRangeType        string  `pulumi:"dateRangeType"`
+	DynamicDateRangeType *string `pulumi:"dynamicDateRangeType"`
+	// The usage end time.
+	TimeUsageEnded *string `pulumi:"timeUsageEnded"`
+	// The usage start time.
+	TimeUsageStarted *string `pulumi:"timeUsageStarted"`
+}
+
+// ScheduleQueryPropertiesDateRangeInput is an input type that accepts ScheduleQueryPropertiesDateRangeArgs and ScheduleQueryPropertiesDateRangeOutput values.
+// You can construct a concrete instance of `ScheduleQueryPropertiesDateRangeInput` via:
+//
+//          ScheduleQueryPropertiesDateRangeArgs{...}
+type ScheduleQueryPropertiesDateRangeInput interface {
+	pulumi.Input
+
+	ToScheduleQueryPropertiesDateRangeOutput() ScheduleQueryPropertiesDateRangeOutput
+	ToScheduleQueryPropertiesDateRangeOutputWithContext(context.Context) ScheduleQueryPropertiesDateRangeOutput
+}
+
+type ScheduleQueryPropertiesDateRangeArgs struct {
+	// Defines whether the schedule date range is STATIC or DYNAMIC
+	DateRangeType        pulumi.StringInput    `pulumi:"dateRangeType"`
+	DynamicDateRangeType pulumi.StringPtrInput `pulumi:"dynamicDateRangeType"`
+	// The usage end time.
+	TimeUsageEnded pulumi.StringPtrInput `pulumi:"timeUsageEnded"`
+	// The usage start time.
+	TimeUsageStarted pulumi.StringPtrInput `pulumi:"timeUsageStarted"`
+}
+
+func (ScheduleQueryPropertiesDateRangeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduleQueryPropertiesDateRange)(nil)).Elem()
+}
+
+func (i ScheduleQueryPropertiesDateRangeArgs) ToScheduleQueryPropertiesDateRangeOutput() ScheduleQueryPropertiesDateRangeOutput {
+	return i.ToScheduleQueryPropertiesDateRangeOutputWithContext(context.Background())
+}
+
+func (i ScheduleQueryPropertiesDateRangeArgs) ToScheduleQueryPropertiesDateRangeOutputWithContext(ctx context.Context) ScheduleQueryPropertiesDateRangeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleQueryPropertiesDateRangeOutput)
+}
+
+func (i ScheduleQueryPropertiesDateRangeArgs) ToScheduleQueryPropertiesDateRangePtrOutput() ScheduleQueryPropertiesDateRangePtrOutput {
+	return i.ToScheduleQueryPropertiesDateRangePtrOutputWithContext(context.Background())
+}
+
+func (i ScheduleQueryPropertiesDateRangeArgs) ToScheduleQueryPropertiesDateRangePtrOutputWithContext(ctx context.Context) ScheduleQueryPropertiesDateRangePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleQueryPropertiesDateRangeOutput).ToScheduleQueryPropertiesDateRangePtrOutputWithContext(ctx)
+}
+
+// ScheduleQueryPropertiesDateRangePtrInput is an input type that accepts ScheduleQueryPropertiesDateRangeArgs, ScheduleQueryPropertiesDateRangePtr and ScheduleQueryPropertiesDateRangePtrOutput values.
+// You can construct a concrete instance of `ScheduleQueryPropertiesDateRangePtrInput` via:
+//
+//          ScheduleQueryPropertiesDateRangeArgs{...}
+//
+//  or:
+//
+//          nil
+type ScheduleQueryPropertiesDateRangePtrInput interface {
+	pulumi.Input
+
+	ToScheduleQueryPropertiesDateRangePtrOutput() ScheduleQueryPropertiesDateRangePtrOutput
+	ToScheduleQueryPropertiesDateRangePtrOutputWithContext(context.Context) ScheduleQueryPropertiesDateRangePtrOutput
+}
+
+type scheduleQueryPropertiesDateRangePtrType ScheduleQueryPropertiesDateRangeArgs
+
+func ScheduleQueryPropertiesDateRangePtr(v *ScheduleQueryPropertiesDateRangeArgs) ScheduleQueryPropertiesDateRangePtrInput {
+	return (*scheduleQueryPropertiesDateRangePtrType)(v)
+}
+
+func (*scheduleQueryPropertiesDateRangePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScheduleQueryPropertiesDateRange)(nil)).Elem()
+}
+
+func (i *scheduleQueryPropertiesDateRangePtrType) ToScheduleQueryPropertiesDateRangePtrOutput() ScheduleQueryPropertiesDateRangePtrOutput {
+	return i.ToScheduleQueryPropertiesDateRangePtrOutputWithContext(context.Background())
+}
+
+func (i *scheduleQueryPropertiesDateRangePtrType) ToScheduleQueryPropertiesDateRangePtrOutputWithContext(ctx context.Context) ScheduleQueryPropertiesDateRangePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleQueryPropertiesDateRangePtrOutput)
+}
+
+type ScheduleQueryPropertiesDateRangeOutput struct{ *pulumi.OutputState }
+
+func (ScheduleQueryPropertiesDateRangeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduleQueryPropertiesDateRange)(nil)).Elem()
+}
+
+func (o ScheduleQueryPropertiesDateRangeOutput) ToScheduleQueryPropertiesDateRangeOutput() ScheduleQueryPropertiesDateRangeOutput {
+	return o
+}
+
+func (o ScheduleQueryPropertiesDateRangeOutput) ToScheduleQueryPropertiesDateRangeOutputWithContext(ctx context.Context) ScheduleQueryPropertiesDateRangeOutput {
+	return o
+}
+
+func (o ScheduleQueryPropertiesDateRangeOutput) ToScheduleQueryPropertiesDateRangePtrOutput() ScheduleQueryPropertiesDateRangePtrOutput {
+	return o.ToScheduleQueryPropertiesDateRangePtrOutputWithContext(context.Background())
+}
+
+func (o ScheduleQueryPropertiesDateRangeOutput) ToScheduleQueryPropertiesDateRangePtrOutputWithContext(ctx context.Context) ScheduleQueryPropertiesDateRangePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ScheduleQueryPropertiesDateRange) *ScheduleQueryPropertiesDateRange {
+		return &v
+	}).(ScheduleQueryPropertiesDateRangePtrOutput)
+}
+
+// Defines whether the schedule date range is STATIC or DYNAMIC
+func (o ScheduleQueryPropertiesDateRangeOutput) DateRangeType() pulumi.StringOutput {
+	return o.ApplyT(func(v ScheduleQueryPropertiesDateRange) string { return v.DateRangeType }).(pulumi.StringOutput)
+}
+
+func (o ScheduleQueryPropertiesDateRangeOutput) DynamicDateRangeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduleQueryPropertiesDateRange) *string { return v.DynamicDateRangeType }).(pulumi.StringPtrOutput)
+}
+
+// The usage end time.
+func (o ScheduleQueryPropertiesDateRangeOutput) TimeUsageEnded() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduleQueryPropertiesDateRange) *string { return v.TimeUsageEnded }).(pulumi.StringPtrOutput)
+}
+
+// The usage start time.
+func (o ScheduleQueryPropertiesDateRangeOutput) TimeUsageStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduleQueryPropertiesDateRange) *string { return v.TimeUsageStarted }).(pulumi.StringPtrOutput)
+}
+
+type ScheduleQueryPropertiesDateRangePtrOutput struct{ *pulumi.OutputState }
+
+func (ScheduleQueryPropertiesDateRangePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScheduleQueryPropertiesDateRange)(nil)).Elem()
+}
+
+func (o ScheduleQueryPropertiesDateRangePtrOutput) ToScheduleQueryPropertiesDateRangePtrOutput() ScheduleQueryPropertiesDateRangePtrOutput {
+	return o
+}
+
+func (o ScheduleQueryPropertiesDateRangePtrOutput) ToScheduleQueryPropertiesDateRangePtrOutputWithContext(ctx context.Context) ScheduleQueryPropertiesDateRangePtrOutput {
+	return o
+}
+
+func (o ScheduleQueryPropertiesDateRangePtrOutput) Elem() ScheduleQueryPropertiesDateRangeOutput {
+	return o.ApplyT(func(v *ScheduleQueryPropertiesDateRange) ScheduleQueryPropertiesDateRange {
+		if v != nil {
+			return *v
+		}
+		var ret ScheduleQueryPropertiesDateRange
+		return ret
+	}).(ScheduleQueryPropertiesDateRangeOutput)
+}
+
+// Defines whether the schedule date range is STATIC or DYNAMIC
+func (o ScheduleQueryPropertiesDateRangePtrOutput) DateRangeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduleQueryPropertiesDateRange) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.DateRangeType
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o ScheduleQueryPropertiesDateRangePtrOutput) DynamicDateRangeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduleQueryPropertiesDateRange) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DynamicDateRangeType
+	}).(pulumi.StringPtrOutput)
+}
+
+// The usage end time.
+func (o ScheduleQueryPropertiesDateRangePtrOutput) TimeUsageEnded() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduleQueryPropertiesDateRange) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TimeUsageEnded
+	}).(pulumi.StringPtrOutput)
+}
+
+// The usage start time.
+func (o ScheduleQueryPropertiesDateRangePtrOutput) TimeUsageStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduleQueryPropertiesDateRange) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TimeUsageStarted
+	}).(pulumi.StringPtrOutput)
+}
+
+type ScheduleQueryPropertiesGroupByTag struct {
+	// The tag key.
+	Key *string `pulumi:"key"`
+	// The namespace needed to determine object storage bucket.
+	Namespace *string `pulumi:"namespace"`
+	// The tag value.
+	Value *string `pulumi:"value"`
+}
+
+// ScheduleQueryPropertiesGroupByTagInput is an input type that accepts ScheduleQueryPropertiesGroupByTagArgs and ScheduleQueryPropertiesGroupByTagOutput values.
+// You can construct a concrete instance of `ScheduleQueryPropertiesGroupByTagInput` via:
+//
+//          ScheduleQueryPropertiesGroupByTagArgs{...}
+type ScheduleQueryPropertiesGroupByTagInput interface {
+	pulumi.Input
+
+	ToScheduleQueryPropertiesGroupByTagOutput() ScheduleQueryPropertiesGroupByTagOutput
+	ToScheduleQueryPropertiesGroupByTagOutputWithContext(context.Context) ScheduleQueryPropertiesGroupByTagOutput
+}
+
+type ScheduleQueryPropertiesGroupByTagArgs struct {
+	// The tag key.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// The namespace needed to determine object storage bucket.
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
+	// The tag value.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (ScheduleQueryPropertiesGroupByTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduleQueryPropertiesGroupByTag)(nil)).Elem()
+}
+
+func (i ScheduleQueryPropertiesGroupByTagArgs) ToScheduleQueryPropertiesGroupByTagOutput() ScheduleQueryPropertiesGroupByTagOutput {
+	return i.ToScheduleQueryPropertiesGroupByTagOutputWithContext(context.Background())
+}
+
+func (i ScheduleQueryPropertiesGroupByTagArgs) ToScheduleQueryPropertiesGroupByTagOutputWithContext(ctx context.Context) ScheduleQueryPropertiesGroupByTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleQueryPropertiesGroupByTagOutput)
+}
+
+// ScheduleQueryPropertiesGroupByTagArrayInput is an input type that accepts ScheduleQueryPropertiesGroupByTagArray and ScheduleQueryPropertiesGroupByTagArrayOutput values.
+// You can construct a concrete instance of `ScheduleQueryPropertiesGroupByTagArrayInput` via:
+//
+//          ScheduleQueryPropertiesGroupByTagArray{ ScheduleQueryPropertiesGroupByTagArgs{...} }
+type ScheduleQueryPropertiesGroupByTagArrayInput interface {
+	pulumi.Input
+
+	ToScheduleQueryPropertiesGroupByTagArrayOutput() ScheduleQueryPropertiesGroupByTagArrayOutput
+	ToScheduleQueryPropertiesGroupByTagArrayOutputWithContext(context.Context) ScheduleQueryPropertiesGroupByTagArrayOutput
+}
+
+type ScheduleQueryPropertiesGroupByTagArray []ScheduleQueryPropertiesGroupByTagInput
+
+func (ScheduleQueryPropertiesGroupByTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ScheduleQueryPropertiesGroupByTag)(nil)).Elem()
+}
+
+func (i ScheduleQueryPropertiesGroupByTagArray) ToScheduleQueryPropertiesGroupByTagArrayOutput() ScheduleQueryPropertiesGroupByTagArrayOutput {
+	return i.ToScheduleQueryPropertiesGroupByTagArrayOutputWithContext(context.Background())
+}
+
+func (i ScheduleQueryPropertiesGroupByTagArray) ToScheduleQueryPropertiesGroupByTagArrayOutputWithContext(ctx context.Context) ScheduleQueryPropertiesGroupByTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleQueryPropertiesGroupByTagArrayOutput)
+}
+
+type ScheduleQueryPropertiesGroupByTagOutput struct{ *pulumi.OutputState }
+
+func (ScheduleQueryPropertiesGroupByTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduleQueryPropertiesGroupByTag)(nil)).Elem()
+}
+
+func (o ScheduleQueryPropertiesGroupByTagOutput) ToScheduleQueryPropertiesGroupByTagOutput() ScheduleQueryPropertiesGroupByTagOutput {
+	return o
+}
+
+func (o ScheduleQueryPropertiesGroupByTagOutput) ToScheduleQueryPropertiesGroupByTagOutputWithContext(ctx context.Context) ScheduleQueryPropertiesGroupByTagOutput {
+	return o
+}
+
+// The tag key.
+func (o ScheduleQueryPropertiesGroupByTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduleQueryPropertiesGroupByTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// The namespace needed to determine object storage bucket.
+func (o ScheduleQueryPropertiesGroupByTagOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduleQueryPropertiesGroupByTag) *string { return v.Namespace }).(pulumi.StringPtrOutput)
+}
+
+// The tag value.
+func (o ScheduleQueryPropertiesGroupByTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduleQueryPropertiesGroupByTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type ScheduleQueryPropertiesGroupByTagArrayOutput struct{ *pulumi.OutputState }
+
+func (ScheduleQueryPropertiesGroupByTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ScheduleQueryPropertiesGroupByTag)(nil)).Elem()
+}
+
+func (o ScheduleQueryPropertiesGroupByTagArrayOutput) ToScheduleQueryPropertiesGroupByTagArrayOutput() ScheduleQueryPropertiesGroupByTagArrayOutput {
+	return o
+}
+
+func (o ScheduleQueryPropertiesGroupByTagArrayOutput) ToScheduleQueryPropertiesGroupByTagArrayOutputWithContext(ctx context.Context) ScheduleQueryPropertiesGroupByTagArrayOutput {
+	return o
+}
+
+func (o ScheduleQueryPropertiesGroupByTagArrayOutput) Index(i pulumi.IntInput) ScheduleQueryPropertiesGroupByTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ScheduleQueryPropertiesGroupByTag {
+		return vs[0].([]ScheduleQueryPropertiesGroupByTag)[vs[1].(int)]
+	}).(ScheduleQueryPropertiesGroupByTagOutput)
+}
+
+type ScheduleResultLocation struct {
+	// The bucket name where usage/cost CSVs will be uploaded
+	Bucket string `pulumi:"bucket"`
+	// Defines the type of location where the usage/cost CSVs will be stored
+	LocationType string `pulumi:"locationType"`
+	// The namespace needed to determine object storage bucket.
+	Namespace string `pulumi:"namespace"`
+	// The destination Object Store Region specified by customer
+	Region string `pulumi:"region"`
+}
+
+// ScheduleResultLocationInput is an input type that accepts ScheduleResultLocationArgs and ScheduleResultLocationOutput values.
+// You can construct a concrete instance of `ScheduleResultLocationInput` via:
+//
+//          ScheduleResultLocationArgs{...}
+type ScheduleResultLocationInput interface {
+	pulumi.Input
+
+	ToScheduleResultLocationOutput() ScheduleResultLocationOutput
+	ToScheduleResultLocationOutputWithContext(context.Context) ScheduleResultLocationOutput
+}
+
+type ScheduleResultLocationArgs struct {
+	// The bucket name where usage/cost CSVs will be uploaded
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// Defines the type of location where the usage/cost CSVs will be stored
+	LocationType pulumi.StringInput `pulumi:"locationType"`
+	// The namespace needed to determine object storage bucket.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The destination Object Store Region specified by customer
+	Region pulumi.StringInput `pulumi:"region"`
+}
+
+func (ScheduleResultLocationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduleResultLocation)(nil)).Elem()
+}
+
+func (i ScheduleResultLocationArgs) ToScheduleResultLocationOutput() ScheduleResultLocationOutput {
+	return i.ToScheduleResultLocationOutputWithContext(context.Background())
+}
+
+func (i ScheduleResultLocationArgs) ToScheduleResultLocationOutputWithContext(ctx context.Context) ScheduleResultLocationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleResultLocationOutput)
+}
+
+func (i ScheduleResultLocationArgs) ToScheduleResultLocationPtrOutput() ScheduleResultLocationPtrOutput {
+	return i.ToScheduleResultLocationPtrOutputWithContext(context.Background())
+}
+
+func (i ScheduleResultLocationArgs) ToScheduleResultLocationPtrOutputWithContext(ctx context.Context) ScheduleResultLocationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleResultLocationOutput).ToScheduleResultLocationPtrOutputWithContext(ctx)
+}
+
+// ScheduleResultLocationPtrInput is an input type that accepts ScheduleResultLocationArgs, ScheduleResultLocationPtr and ScheduleResultLocationPtrOutput values.
+// You can construct a concrete instance of `ScheduleResultLocationPtrInput` via:
+//
+//          ScheduleResultLocationArgs{...}
+//
+//  or:
+//
+//          nil
+type ScheduleResultLocationPtrInput interface {
+	pulumi.Input
+
+	ToScheduleResultLocationPtrOutput() ScheduleResultLocationPtrOutput
+	ToScheduleResultLocationPtrOutputWithContext(context.Context) ScheduleResultLocationPtrOutput
+}
+
+type scheduleResultLocationPtrType ScheduleResultLocationArgs
+
+func ScheduleResultLocationPtr(v *ScheduleResultLocationArgs) ScheduleResultLocationPtrInput {
+	return (*scheduleResultLocationPtrType)(v)
+}
+
+func (*scheduleResultLocationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScheduleResultLocation)(nil)).Elem()
+}
+
+func (i *scheduleResultLocationPtrType) ToScheduleResultLocationPtrOutput() ScheduleResultLocationPtrOutput {
+	return i.ToScheduleResultLocationPtrOutputWithContext(context.Background())
+}
+
+func (i *scheduleResultLocationPtrType) ToScheduleResultLocationPtrOutputWithContext(ctx context.Context) ScheduleResultLocationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleResultLocationPtrOutput)
+}
+
+type ScheduleResultLocationOutput struct{ *pulumi.OutputState }
+
+func (ScheduleResultLocationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduleResultLocation)(nil)).Elem()
+}
+
+func (o ScheduleResultLocationOutput) ToScheduleResultLocationOutput() ScheduleResultLocationOutput {
+	return o
+}
+
+func (o ScheduleResultLocationOutput) ToScheduleResultLocationOutputWithContext(ctx context.Context) ScheduleResultLocationOutput {
+	return o
+}
+
+func (o ScheduleResultLocationOutput) ToScheduleResultLocationPtrOutput() ScheduleResultLocationPtrOutput {
+	return o.ToScheduleResultLocationPtrOutputWithContext(context.Background())
+}
+
+func (o ScheduleResultLocationOutput) ToScheduleResultLocationPtrOutputWithContext(ctx context.Context) ScheduleResultLocationPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ScheduleResultLocation) *ScheduleResultLocation {
+		return &v
+	}).(ScheduleResultLocationPtrOutput)
+}
+
+// The bucket name where usage/cost CSVs will be uploaded
+func (o ScheduleResultLocationOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v ScheduleResultLocation) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// Defines the type of location where the usage/cost CSVs will be stored
+func (o ScheduleResultLocationOutput) LocationType() pulumi.StringOutput {
+	return o.ApplyT(func(v ScheduleResultLocation) string { return v.LocationType }).(pulumi.StringOutput)
+}
+
+// The namespace needed to determine object storage bucket.
+func (o ScheduleResultLocationOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v ScheduleResultLocation) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// The destination Object Store Region specified by customer
+func (o ScheduleResultLocationOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v ScheduleResultLocation) string { return v.Region }).(pulumi.StringOutput)
+}
+
+type ScheduleResultLocationPtrOutput struct{ *pulumi.OutputState }
+
+func (ScheduleResultLocationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScheduleResultLocation)(nil)).Elem()
+}
+
+func (o ScheduleResultLocationPtrOutput) ToScheduleResultLocationPtrOutput() ScheduleResultLocationPtrOutput {
+	return o
+}
+
+func (o ScheduleResultLocationPtrOutput) ToScheduleResultLocationPtrOutputWithContext(ctx context.Context) ScheduleResultLocationPtrOutput {
+	return o
+}
+
+func (o ScheduleResultLocationPtrOutput) Elem() ScheduleResultLocationOutput {
+	return o.ApplyT(func(v *ScheduleResultLocation) ScheduleResultLocation {
+		if v != nil {
+			return *v
+		}
+		var ret ScheduleResultLocation
+		return ret
+	}).(ScheduleResultLocationOutput)
+}
+
+// The bucket name where usage/cost CSVs will be uploaded
+func (o ScheduleResultLocationPtrOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduleResultLocation) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Bucket
+	}).(pulumi.StringPtrOutput)
+}
+
+// Defines the type of location where the usage/cost CSVs will be stored
+func (o ScheduleResultLocationPtrOutput) LocationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduleResultLocation) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.LocationType
+	}).(pulumi.StringPtrOutput)
+}
+
+// The namespace needed to determine object storage bucket.
+func (o ScheduleResultLocationPtrOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduleResultLocation) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Namespace
+	}).(pulumi.StringPtrOutput)
+}
+
+// The destination Object Store Region specified by customer
+func (o ScheduleResultLocationPtrOutput) Region() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduleResultLocation) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Region
+	}).(pulumi.StringPtrOutput)
 }
 
 type UsageForecast struct {
@@ -3607,7 +4376,8 @@ type GetQueriesQueryCollectionItemQueryDefinitionReportQuery struct {
 	CompartmentDepth float64 `pulumi:"compartmentDepth"`
 	// The UI date range, for example, LAST_THREE_MONTHS. Conflicts with timeUsageStarted and timeUsageEnded.
 	DateRangeName string `pulumi:"dateRangeName"`
-	Filter        string `pulumi:"filter"`
+	// The filter object for query usage.
+	Filter string `pulumi:"filter"`
 	// Forecast configuration of usage/cost.
 	Forecasts []GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecast `pulumi:"forecasts"`
 	// The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
@@ -3644,7 +4414,8 @@ type GetQueriesQueryCollectionItemQueryDefinitionReportQueryArgs struct {
 	CompartmentDepth pulumi.Float64Input `pulumi:"compartmentDepth"`
 	// The UI date range, for example, LAST_THREE_MONTHS. Conflicts with timeUsageStarted and timeUsageEnded.
 	DateRangeName pulumi.StringInput `pulumi:"dateRangeName"`
-	Filter        pulumi.StringInput `pulumi:"filter"`
+	// The filter object for query usage.
+	Filter pulumi.StringInput `pulumi:"filter"`
 	// Forecast configuration of usage/cost.
 	Forecasts GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastArrayInput `pulumi:"forecasts"`
 	// The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
@@ -3726,6 +4497,7 @@ func (o GetQueriesQueryCollectionItemQueryDefinitionReportQueryOutput) DateRange
 	return o.ApplyT(func(v GetQueriesQueryCollectionItemQueryDefinitionReportQuery) string { return v.DateRangeName }).(pulumi.StringOutput)
 }
 
+// The filter object for query usage.
 func (o GetQueriesQueryCollectionItemQueryDefinitionReportQueryOutput) Filter() pulumi.StringOutput {
 	return o.ApplyT(func(v GetQueriesQueryCollectionItemQueryDefinitionReportQuery) string { return v.Filter }).(pulumi.StringOutput)
 }
@@ -4268,7 +5040,8 @@ type GetQueryQueryDefinitionReportQuery struct {
 	CompartmentDepth float64 `pulumi:"compartmentDepth"`
 	// The UI date range, for example, LAST_THREE_MONTHS. Conflicts with timeUsageStarted and timeUsageEnded.
 	DateRangeName string `pulumi:"dateRangeName"`
-	Filter        string `pulumi:"filter"`
+	// The filter object for query usage.
+	Filter string `pulumi:"filter"`
 	// Forecast configuration of usage/cost.
 	Forecasts []GetQueryQueryDefinitionReportQueryForecast `pulumi:"forecasts"`
 	// The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
@@ -4305,7 +5078,8 @@ type GetQueryQueryDefinitionReportQueryArgs struct {
 	CompartmentDepth pulumi.Float64Input `pulumi:"compartmentDepth"`
 	// The UI date range, for example, LAST_THREE_MONTHS. Conflicts with timeUsageStarted and timeUsageEnded.
 	DateRangeName pulumi.StringInput `pulumi:"dateRangeName"`
-	Filter        pulumi.StringInput `pulumi:"filter"`
+	// The filter object for query usage.
+	Filter pulumi.StringInput `pulumi:"filter"`
 	// Forecast configuration of usage/cost.
 	Forecasts GetQueryQueryDefinitionReportQueryForecastArrayInput `pulumi:"forecasts"`
 	// The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
@@ -4387,6 +5161,7 @@ func (o GetQueryQueryDefinitionReportQueryOutput) DateRangeName() pulumi.StringO
 	return o.ApplyT(func(v GetQueryQueryDefinitionReportQuery) string { return v.DateRangeName }).(pulumi.StringOutput)
 }
 
+// The filter object for query usage.
 func (o GetQueryQueryDefinitionReportQueryOutput) Filter() pulumi.StringOutput {
 	return o.ApplyT(func(v GetQueryQueryDefinitionReportQuery) string { return v.Filter }).(pulumi.StringOutput)
 }
@@ -4690,6 +5465,1797 @@ func (o GetQueryQueryDefinitionReportQueryGroupByTagArrayOutput) Index(i pulumi.
 	}).(GetQueryQueryDefinitionReportQueryGroupByTagOutput)
 }
 
+type GetScheduleQueryProperty struct {
+	// The depth level of the compartment.
+	CompartmentDepth float64 `pulumi:"compartmentDepth"`
+	// Static or dynamic date range `dateRangeType`, which corresponds with type-specific characteristics.
+	DateRanges []GetScheduleQueryPropertyDateRange `pulumi:"dateRanges"`
+	// The filter object for query usage.
+	Filter string `pulumi:"filter"`
+	// The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.   Allowed values are: DAILY MONTHLY
+	Granularity string `pulumi:"granularity"`
+	// Aggregate the result by. For example: [ "tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName" ]
+	GroupBies []string `pulumi:"groupBies"`
+	// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: [ { "namespace": "oracle", "key": "createdBy" ]
+	GroupByTags []GetScheduleQueryPropertyGroupByTag `pulumi:"groupByTags"`
+	// Specifies whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+	IsAggregateByTime bool `pulumi:"isAggregateByTime"`
+	// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data.  Allowed values are: USAGE COST USAGE_AND_COST
+	QueryType string `pulumi:"queryType"`
+}
+
+// GetScheduleQueryPropertyInput is an input type that accepts GetScheduleQueryPropertyArgs and GetScheduleQueryPropertyOutput values.
+// You can construct a concrete instance of `GetScheduleQueryPropertyInput` via:
+//
+//          GetScheduleQueryPropertyArgs{...}
+type GetScheduleQueryPropertyInput interface {
+	pulumi.Input
+
+	ToGetScheduleQueryPropertyOutput() GetScheduleQueryPropertyOutput
+	ToGetScheduleQueryPropertyOutputWithContext(context.Context) GetScheduleQueryPropertyOutput
+}
+
+type GetScheduleQueryPropertyArgs struct {
+	// The depth level of the compartment.
+	CompartmentDepth pulumi.Float64Input `pulumi:"compartmentDepth"`
+	// Static or dynamic date range `dateRangeType`, which corresponds with type-specific characteristics.
+	DateRanges GetScheduleQueryPropertyDateRangeArrayInput `pulumi:"dateRanges"`
+	// The filter object for query usage.
+	Filter pulumi.StringInput `pulumi:"filter"`
+	// The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.   Allowed values are: DAILY MONTHLY
+	Granularity pulumi.StringInput `pulumi:"granularity"`
+	// Aggregate the result by. For example: [ "tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName" ]
+	GroupBies pulumi.StringArrayInput `pulumi:"groupBies"`
+	// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: [ { "namespace": "oracle", "key": "createdBy" ]
+	GroupByTags GetScheduleQueryPropertyGroupByTagArrayInput `pulumi:"groupByTags"`
+	// Specifies whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+	IsAggregateByTime pulumi.BoolInput `pulumi:"isAggregateByTime"`
+	// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data.  Allowed values are: USAGE COST USAGE_AND_COST
+	QueryType pulumi.StringInput `pulumi:"queryType"`
+}
+
+func (GetScheduleQueryPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduleQueryProperty)(nil)).Elem()
+}
+
+func (i GetScheduleQueryPropertyArgs) ToGetScheduleQueryPropertyOutput() GetScheduleQueryPropertyOutput {
+	return i.ToGetScheduleQueryPropertyOutputWithContext(context.Background())
+}
+
+func (i GetScheduleQueryPropertyArgs) ToGetScheduleQueryPropertyOutputWithContext(ctx context.Context) GetScheduleQueryPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduleQueryPropertyOutput)
+}
+
+// GetScheduleQueryPropertyArrayInput is an input type that accepts GetScheduleQueryPropertyArray and GetScheduleQueryPropertyArrayOutput values.
+// You can construct a concrete instance of `GetScheduleQueryPropertyArrayInput` via:
+//
+//          GetScheduleQueryPropertyArray{ GetScheduleQueryPropertyArgs{...} }
+type GetScheduleQueryPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetScheduleQueryPropertyArrayOutput() GetScheduleQueryPropertyArrayOutput
+	ToGetScheduleQueryPropertyArrayOutputWithContext(context.Context) GetScheduleQueryPropertyArrayOutput
+}
+
+type GetScheduleQueryPropertyArray []GetScheduleQueryPropertyInput
+
+func (GetScheduleQueryPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduleQueryProperty)(nil)).Elem()
+}
+
+func (i GetScheduleQueryPropertyArray) ToGetScheduleQueryPropertyArrayOutput() GetScheduleQueryPropertyArrayOutput {
+	return i.ToGetScheduleQueryPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetScheduleQueryPropertyArray) ToGetScheduleQueryPropertyArrayOutputWithContext(ctx context.Context) GetScheduleQueryPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduleQueryPropertyArrayOutput)
+}
+
+type GetScheduleQueryPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetScheduleQueryPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduleQueryProperty)(nil)).Elem()
+}
+
+func (o GetScheduleQueryPropertyOutput) ToGetScheduleQueryPropertyOutput() GetScheduleQueryPropertyOutput {
+	return o
+}
+
+func (o GetScheduleQueryPropertyOutput) ToGetScheduleQueryPropertyOutputWithContext(ctx context.Context) GetScheduleQueryPropertyOutput {
+	return o
+}
+
+// The depth level of the compartment.
+func (o GetScheduleQueryPropertyOutput) CompartmentDepth() pulumi.Float64Output {
+	return o.ApplyT(func(v GetScheduleQueryProperty) float64 { return v.CompartmentDepth }).(pulumi.Float64Output)
+}
+
+// Static or dynamic date range `dateRangeType`, which corresponds with type-specific characteristics.
+func (o GetScheduleQueryPropertyOutput) DateRanges() GetScheduleQueryPropertyDateRangeArrayOutput {
+	return o.ApplyT(func(v GetScheduleQueryProperty) []GetScheduleQueryPropertyDateRange { return v.DateRanges }).(GetScheduleQueryPropertyDateRangeArrayOutput)
+}
+
+// The filter object for query usage.
+func (o GetScheduleQueryPropertyOutput) Filter() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleQueryProperty) string { return v.Filter }).(pulumi.StringOutput)
+}
+
+// The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.   Allowed values are: DAILY MONTHLY
+func (o GetScheduleQueryPropertyOutput) Granularity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleQueryProperty) string { return v.Granularity }).(pulumi.StringOutput)
+}
+
+// Aggregate the result by. For example: [ "tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName" ]
+func (o GetScheduleQueryPropertyOutput) GroupBies() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetScheduleQueryProperty) []string { return v.GroupBies }).(pulumi.StringArrayOutput)
+}
+
+// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: [ { "namespace": "oracle", "key": "createdBy" ]
+func (o GetScheduleQueryPropertyOutput) GroupByTags() GetScheduleQueryPropertyGroupByTagArrayOutput {
+	return o.ApplyT(func(v GetScheduleQueryProperty) []GetScheduleQueryPropertyGroupByTag { return v.GroupByTags }).(GetScheduleQueryPropertyGroupByTagArrayOutput)
+}
+
+// Specifies whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+func (o GetScheduleQueryPropertyOutput) IsAggregateByTime() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetScheduleQueryProperty) bool { return v.IsAggregateByTime }).(pulumi.BoolOutput)
+}
+
+// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data.  Allowed values are: USAGE COST USAGE_AND_COST
+func (o GetScheduleQueryPropertyOutput) QueryType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleQueryProperty) string { return v.QueryType }).(pulumi.StringOutput)
+}
+
+type GetScheduleQueryPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScheduleQueryPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduleQueryProperty)(nil)).Elem()
+}
+
+func (o GetScheduleQueryPropertyArrayOutput) ToGetScheduleQueryPropertyArrayOutput() GetScheduleQueryPropertyArrayOutput {
+	return o
+}
+
+func (o GetScheduleQueryPropertyArrayOutput) ToGetScheduleQueryPropertyArrayOutputWithContext(ctx context.Context) GetScheduleQueryPropertyArrayOutput {
+	return o
+}
+
+func (o GetScheduleQueryPropertyArrayOutput) Index(i pulumi.IntInput) GetScheduleQueryPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduleQueryProperty {
+		return vs[0].([]GetScheduleQueryProperty)[vs[1].(int)]
+	}).(GetScheduleQueryPropertyOutput)
+}
+
+type GetScheduleQueryPropertyDateRange struct {
+	// Defines whether the schedule date range is STATIC or DYNAMIC
+	DateRangeType        string `pulumi:"dateRangeType"`
+	DynamicDateRangeType string `pulumi:"dynamicDateRangeType"`
+	// The usage end time.
+	TimeUsageEnded string `pulumi:"timeUsageEnded"`
+	// The usage start time.
+	TimeUsageStarted string `pulumi:"timeUsageStarted"`
+}
+
+// GetScheduleQueryPropertyDateRangeInput is an input type that accepts GetScheduleQueryPropertyDateRangeArgs and GetScheduleQueryPropertyDateRangeOutput values.
+// You can construct a concrete instance of `GetScheduleQueryPropertyDateRangeInput` via:
+//
+//          GetScheduleQueryPropertyDateRangeArgs{...}
+type GetScheduleQueryPropertyDateRangeInput interface {
+	pulumi.Input
+
+	ToGetScheduleQueryPropertyDateRangeOutput() GetScheduleQueryPropertyDateRangeOutput
+	ToGetScheduleQueryPropertyDateRangeOutputWithContext(context.Context) GetScheduleQueryPropertyDateRangeOutput
+}
+
+type GetScheduleQueryPropertyDateRangeArgs struct {
+	// Defines whether the schedule date range is STATIC or DYNAMIC
+	DateRangeType        pulumi.StringInput `pulumi:"dateRangeType"`
+	DynamicDateRangeType pulumi.StringInput `pulumi:"dynamicDateRangeType"`
+	// The usage end time.
+	TimeUsageEnded pulumi.StringInput `pulumi:"timeUsageEnded"`
+	// The usage start time.
+	TimeUsageStarted pulumi.StringInput `pulumi:"timeUsageStarted"`
+}
+
+func (GetScheduleQueryPropertyDateRangeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduleQueryPropertyDateRange)(nil)).Elem()
+}
+
+func (i GetScheduleQueryPropertyDateRangeArgs) ToGetScheduleQueryPropertyDateRangeOutput() GetScheduleQueryPropertyDateRangeOutput {
+	return i.ToGetScheduleQueryPropertyDateRangeOutputWithContext(context.Background())
+}
+
+func (i GetScheduleQueryPropertyDateRangeArgs) ToGetScheduleQueryPropertyDateRangeOutputWithContext(ctx context.Context) GetScheduleQueryPropertyDateRangeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduleQueryPropertyDateRangeOutput)
+}
+
+// GetScheduleQueryPropertyDateRangeArrayInput is an input type that accepts GetScheduleQueryPropertyDateRangeArray and GetScheduleQueryPropertyDateRangeArrayOutput values.
+// You can construct a concrete instance of `GetScheduleQueryPropertyDateRangeArrayInput` via:
+//
+//          GetScheduleQueryPropertyDateRangeArray{ GetScheduleQueryPropertyDateRangeArgs{...} }
+type GetScheduleQueryPropertyDateRangeArrayInput interface {
+	pulumi.Input
+
+	ToGetScheduleQueryPropertyDateRangeArrayOutput() GetScheduleQueryPropertyDateRangeArrayOutput
+	ToGetScheduleQueryPropertyDateRangeArrayOutputWithContext(context.Context) GetScheduleQueryPropertyDateRangeArrayOutput
+}
+
+type GetScheduleQueryPropertyDateRangeArray []GetScheduleQueryPropertyDateRangeInput
+
+func (GetScheduleQueryPropertyDateRangeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduleQueryPropertyDateRange)(nil)).Elem()
+}
+
+func (i GetScheduleQueryPropertyDateRangeArray) ToGetScheduleQueryPropertyDateRangeArrayOutput() GetScheduleQueryPropertyDateRangeArrayOutput {
+	return i.ToGetScheduleQueryPropertyDateRangeArrayOutputWithContext(context.Background())
+}
+
+func (i GetScheduleQueryPropertyDateRangeArray) ToGetScheduleQueryPropertyDateRangeArrayOutputWithContext(ctx context.Context) GetScheduleQueryPropertyDateRangeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduleQueryPropertyDateRangeArrayOutput)
+}
+
+type GetScheduleQueryPropertyDateRangeOutput struct{ *pulumi.OutputState }
+
+func (GetScheduleQueryPropertyDateRangeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduleQueryPropertyDateRange)(nil)).Elem()
+}
+
+func (o GetScheduleQueryPropertyDateRangeOutput) ToGetScheduleQueryPropertyDateRangeOutput() GetScheduleQueryPropertyDateRangeOutput {
+	return o
+}
+
+func (o GetScheduleQueryPropertyDateRangeOutput) ToGetScheduleQueryPropertyDateRangeOutputWithContext(ctx context.Context) GetScheduleQueryPropertyDateRangeOutput {
+	return o
+}
+
+// Defines whether the schedule date range is STATIC or DYNAMIC
+func (o GetScheduleQueryPropertyDateRangeOutput) DateRangeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleQueryPropertyDateRange) string { return v.DateRangeType }).(pulumi.StringOutput)
+}
+
+func (o GetScheduleQueryPropertyDateRangeOutput) DynamicDateRangeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleQueryPropertyDateRange) string { return v.DynamicDateRangeType }).(pulumi.StringOutput)
+}
+
+// The usage end time.
+func (o GetScheduleQueryPropertyDateRangeOutput) TimeUsageEnded() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleQueryPropertyDateRange) string { return v.TimeUsageEnded }).(pulumi.StringOutput)
+}
+
+// The usage start time.
+func (o GetScheduleQueryPropertyDateRangeOutput) TimeUsageStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleQueryPropertyDateRange) string { return v.TimeUsageStarted }).(pulumi.StringOutput)
+}
+
+type GetScheduleQueryPropertyDateRangeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScheduleQueryPropertyDateRangeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduleQueryPropertyDateRange)(nil)).Elem()
+}
+
+func (o GetScheduleQueryPropertyDateRangeArrayOutput) ToGetScheduleQueryPropertyDateRangeArrayOutput() GetScheduleQueryPropertyDateRangeArrayOutput {
+	return o
+}
+
+func (o GetScheduleQueryPropertyDateRangeArrayOutput) ToGetScheduleQueryPropertyDateRangeArrayOutputWithContext(ctx context.Context) GetScheduleQueryPropertyDateRangeArrayOutput {
+	return o
+}
+
+func (o GetScheduleQueryPropertyDateRangeArrayOutput) Index(i pulumi.IntInput) GetScheduleQueryPropertyDateRangeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduleQueryPropertyDateRange {
+		return vs[0].([]GetScheduleQueryPropertyDateRange)[vs[1].(int)]
+	}).(GetScheduleQueryPropertyDateRangeOutput)
+}
+
+type GetScheduleQueryPropertyGroupByTag struct {
+	// The tag key.
+	Key string `pulumi:"key"`
+	// The namespace needed to determine object storage bucket.
+	Namespace string `pulumi:"namespace"`
+	// The tag value.
+	Value string `pulumi:"value"`
+}
+
+// GetScheduleQueryPropertyGroupByTagInput is an input type that accepts GetScheduleQueryPropertyGroupByTagArgs and GetScheduleQueryPropertyGroupByTagOutput values.
+// You can construct a concrete instance of `GetScheduleQueryPropertyGroupByTagInput` via:
+//
+//          GetScheduleQueryPropertyGroupByTagArgs{...}
+type GetScheduleQueryPropertyGroupByTagInput interface {
+	pulumi.Input
+
+	ToGetScheduleQueryPropertyGroupByTagOutput() GetScheduleQueryPropertyGroupByTagOutput
+	ToGetScheduleQueryPropertyGroupByTagOutputWithContext(context.Context) GetScheduleQueryPropertyGroupByTagOutput
+}
+
+type GetScheduleQueryPropertyGroupByTagArgs struct {
+	// The tag key.
+	Key pulumi.StringInput `pulumi:"key"`
+	// The namespace needed to determine object storage bucket.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The tag value.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetScheduleQueryPropertyGroupByTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduleQueryPropertyGroupByTag)(nil)).Elem()
+}
+
+func (i GetScheduleQueryPropertyGroupByTagArgs) ToGetScheduleQueryPropertyGroupByTagOutput() GetScheduleQueryPropertyGroupByTagOutput {
+	return i.ToGetScheduleQueryPropertyGroupByTagOutputWithContext(context.Background())
+}
+
+func (i GetScheduleQueryPropertyGroupByTagArgs) ToGetScheduleQueryPropertyGroupByTagOutputWithContext(ctx context.Context) GetScheduleQueryPropertyGroupByTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduleQueryPropertyGroupByTagOutput)
+}
+
+// GetScheduleQueryPropertyGroupByTagArrayInput is an input type that accepts GetScheduleQueryPropertyGroupByTagArray and GetScheduleQueryPropertyGroupByTagArrayOutput values.
+// You can construct a concrete instance of `GetScheduleQueryPropertyGroupByTagArrayInput` via:
+//
+//          GetScheduleQueryPropertyGroupByTagArray{ GetScheduleQueryPropertyGroupByTagArgs{...} }
+type GetScheduleQueryPropertyGroupByTagArrayInput interface {
+	pulumi.Input
+
+	ToGetScheduleQueryPropertyGroupByTagArrayOutput() GetScheduleQueryPropertyGroupByTagArrayOutput
+	ToGetScheduleQueryPropertyGroupByTagArrayOutputWithContext(context.Context) GetScheduleQueryPropertyGroupByTagArrayOutput
+}
+
+type GetScheduleQueryPropertyGroupByTagArray []GetScheduleQueryPropertyGroupByTagInput
+
+func (GetScheduleQueryPropertyGroupByTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduleQueryPropertyGroupByTag)(nil)).Elem()
+}
+
+func (i GetScheduleQueryPropertyGroupByTagArray) ToGetScheduleQueryPropertyGroupByTagArrayOutput() GetScheduleQueryPropertyGroupByTagArrayOutput {
+	return i.ToGetScheduleQueryPropertyGroupByTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetScheduleQueryPropertyGroupByTagArray) ToGetScheduleQueryPropertyGroupByTagArrayOutputWithContext(ctx context.Context) GetScheduleQueryPropertyGroupByTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduleQueryPropertyGroupByTagArrayOutput)
+}
+
+type GetScheduleQueryPropertyGroupByTagOutput struct{ *pulumi.OutputState }
+
+func (GetScheduleQueryPropertyGroupByTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduleQueryPropertyGroupByTag)(nil)).Elem()
+}
+
+func (o GetScheduleQueryPropertyGroupByTagOutput) ToGetScheduleQueryPropertyGroupByTagOutput() GetScheduleQueryPropertyGroupByTagOutput {
+	return o
+}
+
+func (o GetScheduleQueryPropertyGroupByTagOutput) ToGetScheduleQueryPropertyGroupByTagOutputWithContext(ctx context.Context) GetScheduleQueryPropertyGroupByTagOutput {
+	return o
+}
+
+// The tag key.
+func (o GetScheduleQueryPropertyGroupByTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleQueryPropertyGroupByTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// The namespace needed to determine object storage bucket.
+func (o GetScheduleQueryPropertyGroupByTagOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleQueryPropertyGroupByTag) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// The tag value.
+func (o GetScheduleQueryPropertyGroupByTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleQueryPropertyGroupByTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetScheduleQueryPropertyGroupByTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScheduleQueryPropertyGroupByTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduleQueryPropertyGroupByTag)(nil)).Elem()
+}
+
+func (o GetScheduleQueryPropertyGroupByTagArrayOutput) ToGetScheduleQueryPropertyGroupByTagArrayOutput() GetScheduleQueryPropertyGroupByTagArrayOutput {
+	return o
+}
+
+func (o GetScheduleQueryPropertyGroupByTagArrayOutput) ToGetScheduleQueryPropertyGroupByTagArrayOutputWithContext(ctx context.Context) GetScheduleQueryPropertyGroupByTagArrayOutput {
+	return o
+}
+
+func (o GetScheduleQueryPropertyGroupByTagArrayOutput) Index(i pulumi.IntInput) GetScheduleQueryPropertyGroupByTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduleQueryPropertyGroupByTag {
+		return vs[0].([]GetScheduleQueryPropertyGroupByTag)[vs[1].(int)]
+	}).(GetScheduleQueryPropertyGroupByTagOutput)
+}
+
+type GetScheduleResultLocation struct {
+	// The bucket name where usage/cost CSVs will be uploaded
+	Bucket string `pulumi:"bucket"`
+	// Defines the type of location where the usage/cost CSVs will be stored
+	LocationType string `pulumi:"locationType"`
+	// The namespace needed to determine object storage bucket.
+	Namespace string `pulumi:"namespace"`
+	// The destination Object Store Region specified by customer
+	Region string `pulumi:"region"`
+}
+
+// GetScheduleResultLocationInput is an input type that accepts GetScheduleResultLocationArgs and GetScheduleResultLocationOutput values.
+// You can construct a concrete instance of `GetScheduleResultLocationInput` via:
+//
+//          GetScheduleResultLocationArgs{...}
+type GetScheduleResultLocationInput interface {
+	pulumi.Input
+
+	ToGetScheduleResultLocationOutput() GetScheduleResultLocationOutput
+	ToGetScheduleResultLocationOutputWithContext(context.Context) GetScheduleResultLocationOutput
+}
+
+type GetScheduleResultLocationArgs struct {
+	// The bucket name where usage/cost CSVs will be uploaded
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// Defines the type of location where the usage/cost CSVs will be stored
+	LocationType pulumi.StringInput `pulumi:"locationType"`
+	// The namespace needed to determine object storage bucket.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The destination Object Store Region specified by customer
+	Region pulumi.StringInput `pulumi:"region"`
+}
+
+func (GetScheduleResultLocationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduleResultLocation)(nil)).Elem()
+}
+
+func (i GetScheduleResultLocationArgs) ToGetScheduleResultLocationOutput() GetScheduleResultLocationOutput {
+	return i.ToGetScheduleResultLocationOutputWithContext(context.Background())
+}
+
+func (i GetScheduleResultLocationArgs) ToGetScheduleResultLocationOutputWithContext(ctx context.Context) GetScheduleResultLocationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduleResultLocationOutput)
+}
+
+// GetScheduleResultLocationArrayInput is an input type that accepts GetScheduleResultLocationArray and GetScheduleResultLocationArrayOutput values.
+// You can construct a concrete instance of `GetScheduleResultLocationArrayInput` via:
+//
+//          GetScheduleResultLocationArray{ GetScheduleResultLocationArgs{...} }
+type GetScheduleResultLocationArrayInput interface {
+	pulumi.Input
+
+	ToGetScheduleResultLocationArrayOutput() GetScheduleResultLocationArrayOutput
+	ToGetScheduleResultLocationArrayOutputWithContext(context.Context) GetScheduleResultLocationArrayOutput
+}
+
+type GetScheduleResultLocationArray []GetScheduleResultLocationInput
+
+func (GetScheduleResultLocationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduleResultLocation)(nil)).Elem()
+}
+
+func (i GetScheduleResultLocationArray) ToGetScheduleResultLocationArrayOutput() GetScheduleResultLocationArrayOutput {
+	return i.ToGetScheduleResultLocationArrayOutputWithContext(context.Background())
+}
+
+func (i GetScheduleResultLocationArray) ToGetScheduleResultLocationArrayOutputWithContext(ctx context.Context) GetScheduleResultLocationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduleResultLocationArrayOutput)
+}
+
+type GetScheduleResultLocationOutput struct{ *pulumi.OutputState }
+
+func (GetScheduleResultLocationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduleResultLocation)(nil)).Elem()
+}
+
+func (o GetScheduleResultLocationOutput) ToGetScheduleResultLocationOutput() GetScheduleResultLocationOutput {
+	return o
+}
+
+func (o GetScheduleResultLocationOutput) ToGetScheduleResultLocationOutputWithContext(ctx context.Context) GetScheduleResultLocationOutput {
+	return o
+}
+
+// The bucket name where usage/cost CSVs will be uploaded
+func (o GetScheduleResultLocationOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleResultLocation) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// Defines the type of location where the usage/cost CSVs will be stored
+func (o GetScheduleResultLocationOutput) LocationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleResultLocation) string { return v.LocationType }).(pulumi.StringOutput)
+}
+
+// The namespace needed to determine object storage bucket.
+func (o GetScheduleResultLocationOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleResultLocation) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// The destination Object Store Region specified by customer
+func (o GetScheduleResultLocationOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleResultLocation) string { return v.Region }).(pulumi.StringOutput)
+}
+
+type GetScheduleResultLocationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScheduleResultLocationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduleResultLocation)(nil)).Elem()
+}
+
+func (o GetScheduleResultLocationArrayOutput) ToGetScheduleResultLocationArrayOutput() GetScheduleResultLocationArrayOutput {
+	return o
+}
+
+func (o GetScheduleResultLocationArrayOutput) ToGetScheduleResultLocationArrayOutputWithContext(ctx context.Context) GetScheduleResultLocationArrayOutput {
+	return o
+}
+
+func (o GetScheduleResultLocationArrayOutput) Index(i pulumi.IntInput) GetScheduleResultLocationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduleResultLocation {
+		return vs[0].([]GetScheduleResultLocation)[vs[1].(int)]
+	}).(GetScheduleResultLocationOutput)
+}
+
+type GetScheduledRunsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetScheduledRunsFilterInput is an input type that accepts GetScheduledRunsFilterArgs and GetScheduledRunsFilterOutput values.
+// You can construct a concrete instance of `GetScheduledRunsFilterInput` via:
+//
+//          GetScheduledRunsFilterArgs{...}
+type GetScheduledRunsFilterInput interface {
+	pulumi.Input
+
+	ToGetScheduledRunsFilterOutput() GetScheduledRunsFilterOutput
+	ToGetScheduledRunsFilterOutputWithContext(context.Context) GetScheduledRunsFilterOutput
+}
+
+type GetScheduledRunsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetScheduledRunsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledRunsFilter)(nil)).Elem()
+}
+
+func (i GetScheduledRunsFilterArgs) ToGetScheduledRunsFilterOutput() GetScheduledRunsFilterOutput {
+	return i.ToGetScheduledRunsFilterOutputWithContext(context.Background())
+}
+
+func (i GetScheduledRunsFilterArgs) ToGetScheduledRunsFilterOutputWithContext(ctx context.Context) GetScheduledRunsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledRunsFilterOutput)
+}
+
+// GetScheduledRunsFilterArrayInput is an input type that accepts GetScheduledRunsFilterArray and GetScheduledRunsFilterArrayOutput values.
+// You can construct a concrete instance of `GetScheduledRunsFilterArrayInput` via:
+//
+//          GetScheduledRunsFilterArray{ GetScheduledRunsFilterArgs{...} }
+type GetScheduledRunsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetScheduledRunsFilterArrayOutput() GetScheduledRunsFilterArrayOutput
+	ToGetScheduledRunsFilterArrayOutputWithContext(context.Context) GetScheduledRunsFilterArrayOutput
+}
+
+type GetScheduledRunsFilterArray []GetScheduledRunsFilterInput
+
+func (GetScheduledRunsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledRunsFilter)(nil)).Elem()
+}
+
+func (i GetScheduledRunsFilterArray) ToGetScheduledRunsFilterArrayOutput() GetScheduledRunsFilterArrayOutput {
+	return i.ToGetScheduledRunsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetScheduledRunsFilterArray) ToGetScheduledRunsFilterArrayOutputWithContext(ctx context.Context) GetScheduledRunsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledRunsFilterArrayOutput)
+}
+
+type GetScheduledRunsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledRunsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledRunsFilter)(nil)).Elem()
+}
+
+func (o GetScheduledRunsFilterOutput) ToGetScheduledRunsFilterOutput() GetScheduledRunsFilterOutput {
+	return o
+}
+
+func (o GetScheduledRunsFilterOutput) ToGetScheduledRunsFilterOutputWithContext(ctx context.Context) GetScheduledRunsFilterOutput {
+	return o
+}
+
+func (o GetScheduledRunsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledRunsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetScheduledRunsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetScheduledRunsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetScheduledRunsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetScheduledRunsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetScheduledRunsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledRunsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledRunsFilter)(nil)).Elem()
+}
+
+func (o GetScheduledRunsFilterArrayOutput) ToGetScheduledRunsFilterArrayOutput() GetScheduledRunsFilterArrayOutput {
+	return o
+}
+
+func (o GetScheduledRunsFilterArrayOutput) ToGetScheduledRunsFilterArrayOutputWithContext(ctx context.Context) GetScheduledRunsFilterArrayOutput {
+	return o
+}
+
+func (o GetScheduledRunsFilterArrayOutput) Index(i pulumi.IntInput) GetScheduledRunsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduledRunsFilter {
+		return vs[0].([]GetScheduledRunsFilter)[vs[1].(int)]
+	}).(GetScheduledRunsFilterOutput)
+}
+
+type GetScheduledRunsScheduledRunCollection struct {
+	Items []GetScheduledRunsScheduledRunCollectionItem `pulumi:"items"`
+}
+
+// GetScheduledRunsScheduledRunCollectionInput is an input type that accepts GetScheduledRunsScheduledRunCollectionArgs and GetScheduledRunsScheduledRunCollectionOutput values.
+// You can construct a concrete instance of `GetScheduledRunsScheduledRunCollectionInput` via:
+//
+//          GetScheduledRunsScheduledRunCollectionArgs{...}
+type GetScheduledRunsScheduledRunCollectionInput interface {
+	pulumi.Input
+
+	ToGetScheduledRunsScheduledRunCollectionOutput() GetScheduledRunsScheduledRunCollectionOutput
+	ToGetScheduledRunsScheduledRunCollectionOutputWithContext(context.Context) GetScheduledRunsScheduledRunCollectionOutput
+}
+
+type GetScheduledRunsScheduledRunCollectionArgs struct {
+	Items GetScheduledRunsScheduledRunCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetScheduledRunsScheduledRunCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledRunsScheduledRunCollection)(nil)).Elem()
+}
+
+func (i GetScheduledRunsScheduledRunCollectionArgs) ToGetScheduledRunsScheduledRunCollectionOutput() GetScheduledRunsScheduledRunCollectionOutput {
+	return i.ToGetScheduledRunsScheduledRunCollectionOutputWithContext(context.Background())
+}
+
+func (i GetScheduledRunsScheduledRunCollectionArgs) ToGetScheduledRunsScheduledRunCollectionOutputWithContext(ctx context.Context) GetScheduledRunsScheduledRunCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledRunsScheduledRunCollectionOutput)
+}
+
+// GetScheduledRunsScheduledRunCollectionArrayInput is an input type that accepts GetScheduledRunsScheduledRunCollectionArray and GetScheduledRunsScheduledRunCollectionArrayOutput values.
+// You can construct a concrete instance of `GetScheduledRunsScheduledRunCollectionArrayInput` via:
+//
+//          GetScheduledRunsScheduledRunCollectionArray{ GetScheduledRunsScheduledRunCollectionArgs{...} }
+type GetScheduledRunsScheduledRunCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetScheduledRunsScheduledRunCollectionArrayOutput() GetScheduledRunsScheduledRunCollectionArrayOutput
+	ToGetScheduledRunsScheduledRunCollectionArrayOutputWithContext(context.Context) GetScheduledRunsScheduledRunCollectionArrayOutput
+}
+
+type GetScheduledRunsScheduledRunCollectionArray []GetScheduledRunsScheduledRunCollectionInput
+
+func (GetScheduledRunsScheduledRunCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledRunsScheduledRunCollection)(nil)).Elem()
+}
+
+func (i GetScheduledRunsScheduledRunCollectionArray) ToGetScheduledRunsScheduledRunCollectionArrayOutput() GetScheduledRunsScheduledRunCollectionArrayOutput {
+	return i.ToGetScheduledRunsScheduledRunCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetScheduledRunsScheduledRunCollectionArray) ToGetScheduledRunsScheduledRunCollectionArrayOutputWithContext(ctx context.Context) GetScheduledRunsScheduledRunCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledRunsScheduledRunCollectionArrayOutput)
+}
+
+type GetScheduledRunsScheduledRunCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledRunsScheduledRunCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledRunsScheduledRunCollection)(nil)).Elem()
+}
+
+func (o GetScheduledRunsScheduledRunCollectionOutput) ToGetScheduledRunsScheduledRunCollectionOutput() GetScheduledRunsScheduledRunCollectionOutput {
+	return o
+}
+
+func (o GetScheduledRunsScheduledRunCollectionOutput) ToGetScheduledRunsScheduledRunCollectionOutputWithContext(ctx context.Context) GetScheduledRunsScheduledRunCollectionOutput {
+	return o
+}
+
+func (o GetScheduledRunsScheduledRunCollectionOutput) Items() GetScheduledRunsScheduledRunCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetScheduledRunsScheduledRunCollection) []GetScheduledRunsScheduledRunCollectionItem {
+		return v.Items
+	}).(GetScheduledRunsScheduledRunCollectionItemArrayOutput)
+}
+
+type GetScheduledRunsScheduledRunCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledRunsScheduledRunCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledRunsScheduledRunCollection)(nil)).Elem()
+}
+
+func (o GetScheduledRunsScheduledRunCollectionArrayOutput) ToGetScheduledRunsScheduledRunCollectionArrayOutput() GetScheduledRunsScheduledRunCollectionArrayOutput {
+	return o
+}
+
+func (o GetScheduledRunsScheduledRunCollectionArrayOutput) ToGetScheduledRunsScheduledRunCollectionArrayOutputWithContext(ctx context.Context) GetScheduledRunsScheduledRunCollectionArrayOutput {
+	return o
+}
+
+func (o GetScheduledRunsScheduledRunCollectionArrayOutput) Index(i pulumi.IntInput) GetScheduledRunsScheduledRunCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduledRunsScheduledRunCollection {
+		return vs[0].([]GetScheduledRunsScheduledRunCollection)[vs[1].(int)]
+	}).(GetScheduledRunsScheduledRunCollectionOutput)
+}
+
+type GetScheduledRunsScheduledRunCollectionItem struct {
+	// The ocid representing unique shedule run
+	Id string `pulumi:"id"`
+	// Additional details about scheduled run failure
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The unique ID of a schedule.
+	ScheduleId string `pulumi:"scheduleId"`
+	// Specifies if the schedule job was run successfully or not.
+	State string `pulumi:"state"`
+	// The time when schedule started executing
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time when schedule finished executing
+	TimeFinished string `pulumi:"timeFinished"`
+}
+
+// GetScheduledRunsScheduledRunCollectionItemInput is an input type that accepts GetScheduledRunsScheduledRunCollectionItemArgs and GetScheduledRunsScheduledRunCollectionItemOutput values.
+// You can construct a concrete instance of `GetScheduledRunsScheduledRunCollectionItemInput` via:
+//
+//          GetScheduledRunsScheduledRunCollectionItemArgs{...}
+type GetScheduledRunsScheduledRunCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetScheduledRunsScheduledRunCollectionItemOutput() GetScheduledRunsScheduledRunCollectionItemOutput
+	ToGetScheduledRunsScheduledRunCollectionItemOutputWithContext(context.Context) GetScheduledRunsScheduledRunCollectionItemOutput
+}
+
+type GetScheduledRunsScheduledRunCollectionItemArgs struct {
+	// The ocid representing unique shedule run
+	Id pulumi.StringInput `pulumi:"id"`
+	// Additional details about scheduled run failure
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The unique ID of a schedule.
+	ScheduleId pulumi.StringInput `pulumi:"scheduleId"`
+	// Specifies if the schedule job was run successfully or not.
+	State pulumi.StringInput `pulumi:"state"`
+	// The time when schedule started executing
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time when schedule finished executing
+	TimeFinished pulumi.StringInput `pulumi:"timeFinished"`
+}
+
+func (GetScheduledRunsScheduledRunCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledRunsScheduledRunCollectionItem)(nil)).Elem()
+}
+
+func (i GetScheduledRunsScheduledRunCollectionItemArgs) ToGetScheduledRunsScheduledRunCollectionItemOutput() GetScheduledRunsScheduledRunCollectionItemOutput {
+	return i.ToGetScheduledRunsScheduledRunCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetScheduledRunsScheduledRunCollectionItemArgs) ToGetScheduledRunsScheduledRunCollectionItemOutputWithContext(ctx context.Context) GetScheduledRunsScheduledRunCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledRunsScheduledRunCollectionItemOutput)
+}
+
+// GetScheduledRunsScheduledRunCollectionItemArrayInput is an input type that accepts GetScheduledRunsScheduledRunCollectionItemArray and GetScheduledRunsScheduledRunCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetScheduledRunsScheduledRunCollectionItemArrayInput` via:
+//
+//          GetScheduledRunsScheduledRunCollectionItemArray{ GetScheduledRunsScheduledRunCollectionItemArgs{...} }
+type GetScheduledRunsScheduledRunCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetScheduledRunsScheduledRunCollectionItemArrayOutput() GetScheduledRunsScheduledRunCollectionItemArrayOutput
+	ToGetScheduledRunsScheduledRunCollectionItemArrayOutputWithContext(context.Context) GetScheduledRunsScheduledRunCollectionItemArrayOutput
+}
+
+type GetScheduledRunsScheduledRunCollectionItemArray []GetScheduledRunsScheduledRunCollectionItemInput
+
+func (GetScheduledRunsScheduledRunCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledRunsScheduledRunCollectionItem)(nil)).Elem()
+}
+
+func (i GetScheduledRunsScheduledRunCollectionItemArray) ToGetScheduledRunsScheduledRunCollectionItemArrayOutput() GetScheduledRunsScheduledRunCollectionItemArrayOutput {
+	return i.ToGetScheduledRunsScheduledRunCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetScheduledRunsScheduledRunCollectionItemArray) ToGetScheduledRunsScheduledRunCollectionItemArrayOutputWithContext(ctx context.Context) GetScheduledRunsScheduledRunCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledRunsScheduledRunCollectionItemArrayOutput)
+}
+
+type GetScheduledRunsScheduledRunCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledRunsScheduledRunCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledRunsScheduledRunCollectionItem)(nil)).Elem()
+}
+
+func (o GetScheduledRunsScheduledRunCollectionItemOutput) ToGetScheduledRunsScheduledRunCollectionItemOutput() GetScheduledRunsScheduledRunCollectionItemOutput {
+	return o
+}
+
+func (o GetScheduledRunsScheduledRunCollectionItemOutput) ToGetScheduledRunsScheduledRunCollectionItemOutputWithContext(ctx context.Context) GetScheduledRunsScheduledRunCollectionItemOutput {
+	return o
+}
+
+// The ocid representing unique shedule run
+func (o GetScheduledRunsScheduledRunCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledRunsScheduledRunCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Additional details about scheduled run failure
+func (o GetScheduledRunsScheduledRunCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledRunsScheduledRunCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The unique ID of a schedule.
+func (o GetScheduledRunsScheduledRunCollectionItemOutput) ScheduleId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledRunsScheduledRunCollectionItem) string { return v.ScheduleId }).(pulumi.StringOutput)
+}
+
+// Specifies if the schedule job was run successfully or not.
+func (o GetScheduledRunsScheduledRunCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledRunsScheduledRunCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The time when schedule started executing
+func (o GetScheduledRunsScheduledRunCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledRunsScheduledRunCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time when schedule finished executing
+func (o GetScheduledRunsScheduledRunCollectionItemOutput) TimeFinished() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledRunsScheduledRunCollectionItem) string { return v.TimeFinished }).(pulumi.StringOutput)
+}
+
+type GetScheduledRunsScheduledRunCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledRunsScheduledRunCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledRunsScheduledRunCollectionItem)(nil)).Elem()
+}
+
+func (o GetScheduledRunsScheduledRunCollectionItemArrayOutput) ToGetScheduledRunsScheduledRunCollectionItemArrayOutput() GetScheduledRunsScheduledRunCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetScheduledRunsScheduledRunCollectionItemArrayOutput) ToGetScheduledRunsScheduledRunCollectionItemArrayOutputWithContext(ctx context.Context) GetScheduledRunsScheduledRunCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetScheduledRunsScheduledRunCollectionItemArrayOutput) Index(i pulumi.IntInput) GetScheduledRunsScheduledRunCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduledRunsScheduledRunCollectionItem {
+		return vs[0].([]GetScheduledRunsScheduledRunCollectionItem)[vs[1].(int)]
+	}).(GetScheduledRunsScheduledRunCollectionItemOutput)
+}
+
+type GetSchedulesFilter struct {
+	// Query parameter for filtering by name
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSchedulesFilterInput is an input type that accepts GetSchedulesFilterArgs and GetSchedulesFilterOutput values.
+// You can construct a concrete instance of `GetSchedulesFilterInput` via:
+//
+//          GetSchedulesFilterArgs{...}
+type GetSchedulesFilterInput interface {
+	pulumi.Input
+
+	ToGetSchedulesFilterOutput() GetSchedulesFilterOutput
+	ToGetSchedulesFilterOutputWithContext(context.Context) GetSchedulesFilterOutput
+}
+
+type GetSchedulesFilterArgs struct {
+	// Query parameter for filtering by name
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSchedulesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulesFilter)(nil)).Elem()
+}
+
+func (i GetSchedulesFilterArgs) ToGetSchedulesFilterOutput() GetSchedulesFilterOutput {
+	return i.ToGetSchedulesFilterOutputWithContext(context.Background())
+}
+
+func (i GetSchedulesFilterArgs) ToGetSchedulesFilterOutputWithContext(ctx context.Context) GetSchedulesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesFilterOutput)
+}
+
+// GetSchedulesFilterArrayInput is an input type that accepts GetSchedulesFilterArray and GetSchedulesFilterArrayOutput values.
+// You can construct a concrete instance of `GetSchedulesFilterArrayInput` via:
+//
+//          GetSchedulesFilterArray{ GetSchedulesFilterArgs{...} }
+type GetSchedulesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSchedulesFilterArrayOutput() GetSchedulesFilterArrayOutput
+	ToGetSchedulesFilterArrayOutputWithContext(context.Context) GetSchedulesFilterArrayOutput
+}
+
+type GetSchedulesFilterArray []GetSchedulesFilterInput
+
+func (GetSchedulesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulesFilter)(nil)).Elem()
+}
+
+func (i GetSchedulesFilterArray) ToGetSchedulesFilterArrayOutput() GetSchedulesFilterArrayOutput {
+	return i.ToGetSchedulesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSchedulesFilterArray) ToGetSchedulesFilterArrayOutputWithContext(ctx context.Context) GetSchedulesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesFilterArrayOutput)
+}
+
+type GetSchedulesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulesFilter)(nil)).Elem()
+}
+
+func (o GetSchedulesFilterOutput) ToGetSchedulesFilterOutput() GetSchedulesFilterOutput {
+	return o
+}
+
+func (o GetSchedulesFilterOutput) ToGetSchedulesFilterOutputWithContext(ctx context.Context) GetSchedulesFilterOutput {
+	return o
+}
+
+// Query parameter for filtering by name
+func (o GetSchedulesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSchedulesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSchedulesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSchedulesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSchedulesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSchedulesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulesFilter)(nil)).Elem()
+}
+
+func (o GetSchedulesFilterArrayOutput) ToGetSchedulesFilterArrayOutput() GetSchedulesFilterArrayOutput {
+	return o
+}
+
+func (o GetSchedulesFilterArrayOutput) ToGetSchedulesFilterArrayOutputWithContext(ctx context.Context) GetSchedulesFilterArrayOutput {
+	return o
+}
+
+func (o GetSchedulesFilterArrayOutput) Index(i pulumi.IntInput) GetSchedulesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSchedulesFilter {
+		return vs[0].([]GetSchedulesFilter)[vs[1].(int)]
+	}).(GetSchedulesFilterOutput)
+}
+
+type GetSchedulesScheduleCollection struct {
+	Items []GetSchedulesScheduleCollectionItem `pulumi:"items"`
+}
+
+// GetSchedulesScheduleCollectionInput is an input type that accepts GetSchedulesScheduleCollectionArgs and GetSchedulesScheduleCollectionOutput values.
+// You can construct a concrete instance of `GetSchedulesScheduleCollectionInput` via:
+//
+//          GetSchedulesScheduleCollectionArgs{...}
+type GetSchedulesScheduleCollectionInput interface {
+	pulumi.Input
+
+	ToGetSchedulesScheduleCollectionOutput() GetSchedulesScheduleCollectionOutput
+	ToGetSchedulesScheduleCollectionOutputWithContext(context.Context) GetSchedulesScheduleCollectionOutput
+}
+
+type GetSchedulesScheduleCollectionArgs struct {
+	Items GetSchedulesScheduleCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSchedulesScheduleCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulesScheduleCollection)(nil)).Elem()
+}
+
+func (i GetSchedulesScheduleCollectionArgs) ToGetSchedulesScheduleCollectionOutput() GetSchedulesScheduleCollectionOutput {
+	return i.ToGetSchedulesScheduleCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSchedulesScheduleCollectionArgs) ToGetSchedulesScheduleCollectionOutputWithContext(ctx context.Context) GetSchedulesScheduleCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleCollectionOutput)
+}
+
+// GetSchedulesScheduleCollectionArrayInput is an input type that accepts GetSchedulesScheduleCollectionArray and GetSchedulesScheduleCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSchedulesScheduleCollectionArrayInput` via:
+//
+//          GetSchedulesScheduleCollectionArray{ GetSchedulesScheduleCollectionArgs{...} }
+type GetSchedulesScheduleCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSchedulesScheduleCollectionArrayOutput() GetSchedulesScheduleCollectionArrayOutput
+	ToGetSchedulesScheduleCollectionArrayOutputWithContext(context.Context) GetSchedulesScheduleCollectionArrayOutput
+}
+
+type GetSchedulesScheduleCollectionArray []GetSchedulesScheduleCollectionInput
+
+func (GetSchedulesScheduleCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulesScheduleCollection)(nil)).Elem()
+}
+
+func (i GetSchedulesScheduleCollectionArray) ToGetSchedulesScheduleCollectionArrayOutput() GetSchedulesScheduleCollectionArrayOutput {
+	return i.ToGetSchedulesScheduleCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSchedulesScheduleCollectionArray) ToGetSchedulesScheduleCollectionArrayOutputWithContext(ctx context.Context) GetSchedulesScheduleCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleCollectionArrayOutput)
+}
+
+type GetSchedulesScheduleCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulesScheduleCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulesScheduleCollection)(nil)).Elem()
+}
+
+func (o GetSchedulesScheduleCollectionOutput) ToGetSchedulesScheduleCollectionOutput() GetSchedulesScheduleCollectionOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleCollectionOutput) ToGetSchedulesScheduleCollectionOutputWithContext(ctx context.Context) GetSchedulesScheduleCollectionOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleCollectionOutput) Items() GetSchedulesScheduleCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollection) []GetSchedulesScheduleCollectionItem { return v.Items }).(GetSchedulesScheduleCollectionItemArrayOutput)
+}
+
+type GetSchedulesScheduleCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulesScheduleCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulesScheduleCollection)(nil)).Elem()
+}
+
+func (o GetSchedulesScheduleCollectionArrayOutput) ToGetSchedulesScheduleCollectionArrayOutput() GetSchedulesScheduleCollectionArrayOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleCollectionArrayOutput) ToGetSchedulesScheduleCollectionArrayOutputWithContext(ctx context.Context) GetSchedulesScheduleCollectionArrayOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleCollectionArrayOutput) Index(i pulumi.IntInput) GetSchedulesScheduleCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSchedulesScheduleCollection {
+		return vs[0].([]GetSchedulesScheduleCollection)[vs[1].(int)]
+	}).(GetSchedulesScheduleCollectionOutput)
+}
+
+type GetSchedulesScheduleCollectionItem struct {
+	// The compartment ID in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The OCID representing unique shedule
+	Id string `pulumi:"id"`
+	// Query parameter for filtering by name
+	Name string `pulumi:"name"`
+	// The query properties.
+	QueryProperties []GetSchedulesScheduleCollectionItemQueryProperty `pulumi:"queryProperties"`
+	// The location where usage/cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
+	ResultLocations []GetSchedulesScheduleCollectionItemResultLocation `pulumi:"resultLocations"`
+	// In x-obmcs-recurring-time format shown here: https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10 Describes the frequency of when the schedule will be run
+	ScheduleRecurrences string `pulumi:"scheduleRecurrences"`
+	// The lifecycle state of the schedule
+	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// The date and time of when the schedule was created
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time of the first time job execution
+	TimeScheduled string `pulumi:"timeScheduled"`
+}
+
+// GetSchedulesScheduleCollectionItemInput is an input type that accepts GetSchedulesScheduleCollectionItemArgs and GetSchedulesScheduleCollectionItemOutput values.
+// You can construct a concrete instance of `GetSchedulesScheduleCollectionItemInput` via:
+//
+//          GetSchedulesScheduleCollectionItemArgs{...}
+type GetSchedulesScheduleCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSchedulesScheduleCollectionItemOutput() GetSchedulesScheduleCollectionItemOutput
+	ToGetSchedulesScheduleCollectionItemOutputWithContext(context.Context) GetSchedulesScheduleCollectionItemOutput
+}
+
+type GetSchedulesScheduleCollectionItemArgs struct {
+	// The compartment ID in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The OCID representing unique shedule
+	Id pulumi.StringInput `pulumi:"id"`
+	// Query parameter for filtering by name
+	Name pulumi.StringInput `pulumi:"name"`
+	// The query properties.
+	QueryProperties GetSchedulesScheduleCollectionItemQueryPropertyArrayInput `pulumi:"queryProperties"`
+	// The location where usage/cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
+	ResultLocations GetSchedulesScheduleCollectionItemResultLocationArrayInput `pulumi:"resultLocations"`
+	// In x-obmcs-recurring-time format shown here: https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10 Describes the frequency of when the schedule will be run
+	ScheduleRecurrences pulumi.StringInput `pulumi:"scheduleRecurrences"`
+	// The lifecycle state of the schedule
+	State pulumi.StringInput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	// The date and time of when the schedule was created
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time of the first time job execution
+	TimeScheduled pulumi.StringInput `pulumi:"timeScheduled"`
+}
+
+func (GetSchedulesScheduleCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulesScheduleCollectionItem)(nil)).Elem()
+}
+
+func (i GetSchedulesScheduleCollectionItemArgs) ToGetSchedulesScheduleCollectionItemOutput() GetSchedulesScheduleCollectionItemOutput {
+	return i.ToGetSchedulesScheduleCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSchedulesScheduleCollectionItemArgs) ToGetSchedulesScheduleCollectionItemOutputWithContext(ctx context.Context) GetSchedulesScheduleCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleCollectionItemOutput)
+}
+
+// GetSchedulesScheduleCollectionItemArrayInput is an input type that accepts GetSchedulesScheduleCollectionItemArray and GetSchedulesScheduleCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSchedulesScheduleCollectionItemArrayInput` via:
+//
+//          GetSchedulesScheduleCollectionItemArray{ GetSchedulesScheduleCollectionItemArgs{...} }
+type GetSchedulesScheduleCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSchedulesScheduleCollectionItemArrayOutput() GetSchedulesScheduleCollectionItemArrayOutput
+	ToGetSchedulesScheduleCollectionItemArrayOutputWithContext(context.Context) GetSchedulesScheduleCollectionItemArrayOutput
+}
+
+type GetSchedulesScheduleCollectionItemArray []GetSchedulesScheduleCollectionItemInput
+
+func (GetSchedulesScheduleCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulesScheduleCollectionItem)(nil)).Elem()
+}
+
+func (i GetSchedulesScheduleCollectionItemArray) ToGetSchedulesScheduleCollectionItemArrayOutput() GetSchedulesScheduleCollectionItemArrayOutput {
+	return i.ToGetSchedulesScheduleCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSchedulesScheduleCollectionItemArray) ToGetSchedulesScheduleCollectionItemArrayOutputWithContext(ctx context.Context) GetSchedulesScheduleCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleCollectionItemArrayOutput)
+}
+
+type GetSchedulesScheduleCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulesScheduleCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulesScheduleCollectionItem)(nil)).Elem()
+}
+
+func (o GetSchedulesScheduleCollectionItemOutput) ToGetSchedulesScheduleCollectionItemOutput() GetSchedulesScheduleCollectionItemOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleCollectionItemOutput) ToGetSchedulesScheduleCollectionItemOutputWithContext(ctx context.Context) GetSchedulesScheduleCollectionItemOutput {
+	return o
+}
+
+// The compartment ID in which to list resources.
+func (o GetSchedulesScheduleCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetSchedulesScheduleCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+func (o GetSchedulesScheduleCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// The OCID representing unique shedule
+func (o GetSchedulesScheduleCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Query parameter for filtering by name
+func (o GetSchedulesScheduleCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The query properties.
+func (o GetSchedulesScheduleCollectionItemOutput) QueryProperties() GetSchedulesScheduleCollectionItemQueryPropertyArrayOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) []GetSchedulesScheduleCollectionItemQueryProperty {
+		return v.QueryProperties
+	}).(GetSchedulesScheduleCollectionItemQueryPropertyArrayOutput)
+}
+
+// The location where usage/cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
+func (o GetSchedulesScheduleCollectionItemOutput) ResultLocations() GetSchedulesScheduleCollectionItemResultLocationArrayOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) []GetSchedulesScheduleCollectionItemResultLocation {
+		return v.ResultLocations
+	}).(GetSchedulesScheduleCollectionItemResultLocationArrayOutput)
+}
+
+// In x-obmcs-recurring-time format shown here: https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10 Describes the frequency of when the schedule will be run
+func (o GetSchedulesScheduleCollectionItemOutput) ScheduleRecurrences() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) string { return v.ScheduleRecurrences }).(pulumi.StringOutput)
+}
+
+// The lifecycle state of the schedule
+func (o GetSchedulesScheduleCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetSchedulesScheduleCollectionItemOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+}
+
+// The date and time of when the schedule was created
+func (o GetSchedulesScheduleCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time of the first time job execution
+func (o GetSchedulesScheduleCollectionItemOutput) TimeScheduled() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) string { return v.TimeScheduled }).(pulumi.StringOutput)
+}
+
+type GetSchedulesScheduleCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulesScheduleCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulesScheduleCollectionItem)(nil)).Elem()
+}
+
+func (o GetSchedulesScheduleCollectionItemArrayOutput) ToGetSchedulesScheduleCollectionItemArrayOutput() GetSchedulesScheduleCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleCollectionItemArrayOutput) ToGetSchedulesScheduleCollectionItemArrayOutputWithContext(ctx context.Context) GetSchedulesScheduleCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSchedulesScheduleCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSchedulesScheduleCollectionItem {
+		return vs[0].([]GetSchedulesScheduleCollectionItem)[vs[1].(int)]
+	}).(GetSchedulesScheduleCollectionItemOutput)
+}
+
+type GetSchedulesScheduleCollectionItemQueryProperty struct {
+	// The depth level of the compartment.
+	CompartmentDepth float64 `pulumi:"compartmentDepth"`
+	// Static or dynamic date range `dateRangeType`, which corresponds with type-specific characteristics.
+	DateRanges []GetSchedulesScheduleCollectionItemQueryPropertyDateRange `pulumi:"dateRanges"`
+	// The filter object for query usage.
+	Filter string `pulumi:"filter"`
+	// The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.   Allowed values are: DAILY MONTHLY
+	Granularity string `pulumi:"granularity"`
+	// Aggregate the result by. For example: [ "tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName" ]
+	GroupBies []string `pulumi:"groupBies"`
+	// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: [ { "namespace": "oracle", "key": "createdBy" ]
+	GroupByTags []GetSchedulesScheduleCollectionItemQueryPropertyGroupByTag `pulumi:"groupByTags"`
+	// Specifies whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+	IsAggregateByTime bool `pulumi:"isAggregateByTime"`
+	// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data.  Allowed values are: USAGE COST USAGE_AND_COST
+	QueryType string `pulumi:"queryType"`
+}
+
+// GetSchedulesScheduleCollectionItemQueryPropertyInput is an input type that accepts GetSchedulesScheduleCollectionItemQueryPropertyArgs and GetSchedulesScheduleCollectionItemQueryPropertyOutput values.
+// You can construct a concrete instance of `GetSchedulesScheduleCollectionItemQueryPropertyInput` via:
+//
+//          GetSchedulesScheduleCollectionItemQueryPropertyArgs{...}
+type GetSchedulesScheduleCollectionItemQueryPropertyInput interface {
+	pulumi.Input
+
+	ToGetSchedulesScheduleCollectionItemQueryPropertyOutput() GetSchedulesScheduleCollectionItemQueryPropertyOutput
+	ToGetSchedulesScheduleCollectionItemQueryPropertyOutputWithContext(context.Context) GetSchedulesScheduleCollectionItemQueryPropertyOutput
+}
+
+type GetSchedulesScheduleCollectionItemQueryPropertyArgs struct {
+	// The depth level of the compartment.
+	CompartmentDepth pulumi.Float64Input `pulumi:"compartmentDepth"`
+	// Static or dynamic date range `dateRangeType`, which corresponds with type-specific characteristics.
+	DateRanges GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArrayInput `pulumi:"dateRanges"`
+	// The filter object for query usage.
+	Filter pulumi.StringInput `pulumi:"filter"`
+	// The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.   Allowed values are: DAILY MONTHLY
+	Granularity pulumi.StringInput `pulumi:"granularity"`
+	// Aggregate the result by. For example: [ "tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName" ]
+	GroupBies pulumi.StringArrayInput `pulumi:"groupBies"`
+	// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: [ { "namespace": "oracle", "key": "createdBy" ]
+	GroupByTags GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArrayInput `pulumi:"groupByTags"`
+	// Specifies whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+	IsAggregateByTime pulumi.BoolInput `pulumi:"isAggregateByTime"`
+	// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data.  Allowed values are: USAGE COST USAGE_AND_COST
+	QueryType pulumi.StringInput `pulumi:"queryType"`
+}
+
+func (GetSchedulesScheduleCollectionItemQueryPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulesScheduleCollectionItemQueryProperty)(nil)).Elem()
+}
+
+func (i GetSchedulesScheduleCollectionItemQueryPropertyArgs) ToGetSchedulesScheduleCollectionItemQueryPropertyOutput() GetSchedulesScheduleCollectionItemQueryPropertyOutput {
+	return i.ToGetSchedulesScheduleCollectionItemQueryPropertyOutputWithContext(context.Background())
+}
+
+func (i GetSchedulesScheduleCollectionItemQueryPropertyArgs) ToGetSchedulesScheduleCollectionItemQueryPropertyOutputWithContext(ctx context.Context) GetSchedulesScheduleCollectionItemQueryPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleCollectionItemQueryPropertyOutput)
+}
+
+// GetSchedulesScheduleCollectionItemQueryPropertyArrayInput is an input type that accepts GetSchedulesScheduleCollectionItemQueryPropertyArray and GetSchedulesScheduleCollectionItemQueryPropertyArrayOutput values.
+// You can construct a concrete instance of `GetSchedulesScheduleCollectionItemQueryPropertyArrayInput` via:
+//
+//          GetSchedulesScheduleCollectionItemQueryPropertyArray{ GetSchedulesScheduleCollectionItemQueryPropertyArgs{...} }
+type GetSchedulesScheduleCollectionItemQueryPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetSchedulesScheduleCollectionItemQueryPropertyArrayOutput() GetSchedulesScheduleCollectionItemQueryPropertyArrayOutput
+	ToGetSchedulesScheduleCollectionItemQueryPropertyArrayOutputWithContext(context.Context) GetSchedulesScheduleCollectionItemQueryPropertyArrayOutput
+}
+
+type GetSchedulesScheduleCollectionItemQueryPropertyArray []GetSchedulesScheduleCollectionItemQueryPropertyInput
+
+func (GetSchedulesScheduleCollectionItemQueryPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulesScheduleCollectionItemQueryProperty)(nil)).Elem()
+}
+
+func (i GetSchedulesScheduleCollectionItemQueryPropertyArray) ToGetSchedulesScheduleCollectionItemQueryPropertyArrayOutput() GetSchedulesScheduleCollectionItemQueryPropertyArrayOutput {
+	return i.ToGetSchedulesScheduleCollectionItemQueryPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetSchedulesScheduleCollectionItemQueryPropertyArray) ToGetSchedulesScheduleCollectionItemQueryPropertyArrayOutputWithContext(ctx context.Context) GetSchedulesScheduleCollectionItemQueryPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleCollectionItemQueryPropertyArrayOutput)
+}
+
+type GetSchedulesScheduleCollectionItemQueryPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulesScheduleCollectionItemQueryPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulesScheduleCollectionItemQueryProperty)(nil)).Elem()
+}
+
+func (o GetSchedulesScheduleCollectionItemQueryPropertyOutput) ToGetSchedulesScheduleCollectionItemQueryPropertyOutput() GetSchedulesScheduleCollectionItemQueryPropertyOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleCollectionItemQueryPropertyOutput) ToGetSchedulesScheduleCollectionItemQueryPropertyOutputWithContext(ctx context.Context) GetSchedulesScheduleCollectionItemQueryPropertyOutput {
+	return o
+}
+
+// The depth level of the compartment.
+func (o GetSchedulesScheduleCollectionItemQueryPropertyOutput) CompartmentDepth() pulumi.Float64Output {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemQueryProperty) float64 { return v.CompartmentDepth }).(pulumi.Float64Output)
+}
+
+// Static or dynamic date range `dateRangeType`, which corresponds with type-specific characteristics.
+func (o GetSchedulesScheduleCollectionItemQueryPropertyOutput) DateRanges() GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArrayOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemQueryProperty) []GetSchedulesScheduleCollectionItemQueryPropertyDateRange {
+		return v.DateRanges
+	}).(GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArrayOutput)
+}
+
+// The filter object for query usage.
+func (o GetSchedulesScheduleCollectionItemQueryPropertyOutput) Filter() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemQueryProperty) string { return v.Filter }).(pulumi.StringOutput)
+}
+
+// The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.   Allowed values are: DAILY MONTHLY
+func (o GetSchedulesScheduleCollectionItemQueryPropertyOutput) Granularity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemQueryProperty) string { return v.Granularity }).(pulumi.StringOutput)
+}
+
+// Aggregate the result by. For example: [ "tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName" ]
+func (o GetSchedulesScheduleCollectionItemQueryPropertyOutput) GroupBies() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemQueryProperty) []string { return v.GroupBies }).(pulumi.StringArrayOutput)
+}
+
+// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: [ { "namespace": "oracle", "key": "createdBy" ]
+func (o GetSchedulesScheduleCollectionItemQueryPropertyOutput) GroupByTags() GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArrayOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemQueryProperty) []GetSchedulesScheduleCollectionItemQueryPropertyGroupByTag {
+		return v.GroupByTags
+	}).(GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArrayOutput)
+}
+
+// Specifies whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+func (o GetSchedulesScheduleCollectionItemQueryPropertyOutput) IsAggregateByTime() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemQueryProperty) bool { return v.IsAggregateByTime }).(pulumi.BoolOutput)
+}
+
+// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data.  Allowed values are: USAGE COST USAGE_AND_COST
+func (o GetSchedulesScheduleCollectionItemQueryPropertyOutput) QueryType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemQueryProperty) string { return v.QueryType }).(pulumi.StringOutput)
+}
+
+type GetSchedulesScheduleCollectionItemQueryPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulesScheduleCollectionItemQueryPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulesScheduleCollectionItemQueryProperty)(nil)).Elem()
+}
+
+func (o GetSchedulesScheduleCollectionItemQueryPropertyArrayOutput) ToGetSchedulesScheduleCollectionItemQueryPropertyArrayOutput() GetSchedulesScheduleCollectionItemQueryPropertyArrayOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleCollectionItemQueryPropertyArrayOutput) ToGetSchedulesScheduleCollectionItemQueryPropertyArrayOutputWithContext(ctx context.Context) GetSchedulesScheduleCollectionItemQueryPropertyArrayOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleCollectionItemQueryPropertyArrayOutput) Index(i pulumi.IntInput) GetSchedulesScheduleCollectionItemQueryPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSchedulesScheduleCollectionItemQueryProperty {
+		return vs[0].([]GetSchedulesScheduleCollectionItemQueryProperty)[vs[1].(int)]
+	}).(GetSchedulesScheduleCollectionItemQueryPropertyOutput)
+}
+
+type GetSchedulesScheduleCollectionItemQueryPropertyDateRange struct {
+	// Defines whether the schedule date range is STATIC or DYNAMIC
+	DateRangeType        string `pulumi:"dateRangeType"`
+	DynamicDateRangeType string `pulumi:"dynamicDateRangeType"`
+	// The usage end time.
+	TimeUsageEnded string `pulumi:"timeUsageEnded"`
+	// The usage start time.
+	TimeUsageStarted string `pulumi:"timeUsageStarted"`
+}
+
+// GetSchedulesScheduleCollectionItemQueryPropertyDateRangeInput is an input type that accepts GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArgs and GetSchedulesScheduleCollectionItemQueryPropertyDateRangeOutput values.
+// You can construct a concrete instance of `GetSchedulesScheduleCollectionItemQueryPropertyDateRangeInput` via:
+//
+//          GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArgs{...}
+type GetSchedulesScheduleCollectionItemQueryPropertyDateRangeInput interface {
+	pulumi.Input
+
+	ToGetSchedulesScheduleCollectionItemQueryPropertyDateRangeOutput() GetSchedulesScheduleCollectionItemQueryPropertyDateRangeOutput
+	ToGetSchedulesScheduleCollectionItemQueryPropertyDateRangeOutputWithContext(context.Context) GetSchedulesScheduleCollectionItemQueryPropertyDateRangeOutput
+}
+
+type GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArgs struct {
+	// Defines whether the schedule date range is STATIC or DYNAMIC
+	DateRangeType        pulumi.StringInput `pulumi:"dateRangeType"`
+	DynamicDateRangeType pulumi.StringInput `pulumi:"dynamicDateRangeType"`
+	// The usage end time.
+	TimeUsageEnded pulumi.StringInput `pulumi:"timeUsageEnded"`
+	// The usage start time.
+	TimeUsageStarted pulumi.StringInput `pulumi:"timeUsageStarted"`
+}
+
+func (GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulesScheduleCollectionItemQueryPropertyDateRange)(nil)).Elem()
+}
+
+func (i GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArgs) ToGetSchedulesScheduleCollectionItemQueryPropertyDateRangeOutput() GetSchedulesScheduleCollectionItemQueryPropertyDateRangeOutput {
+	return i.ToGetSchedulesScheduleCollectionItemQueryPropertyDateRangeOutputWithContext(context.Background())
+}
+
+func (i GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArgs) ToGetSchedulesScheduleCollectionItemQueryPropertyDateRangeOutputWithContext(ctx context.Context) GetSchedulesScheduleCollectionItemQueryPropertyDateRangeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleCollectionItemQueryPropertyDateRangeOutput)
+}
+
+// GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArrayInput is an input type that accepts GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArray and GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArrayOutput values.
+// You can construct a concrete instance of `GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArrayInput` via:
+//
+//          GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArray{ GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArgs{...} }
+type GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArrayInput interface {
+	pulumi.Input
+
+	ToGetSchedulesScheduleCollectionItemQueryPropertyDateRangeArrayOutput() GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArrayOutput
+	ToGetSchedulesScheduleCollectionItemQueryPropertyDateRangeArrayOutputWithContext(context.Context) GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArrayOutput
+}
+
+type GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArray []GetSchedulesScheduleCollectionItemQueryPropertyDateRangeInput
+
+func (GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulesScheduleCollectionItemQueryPropertyDateRange)(nil)).Elem()
+}
+
+func (i GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArray) ToGetSchedulesScheduleCollectionItemQueryPropertyDateRangeArrayOutput() GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArrayOutput {
+	return i.ToGetSchedulesScheduleCollectionItemQueryPropertyDateRangeArrayOutputWithContext(context.Background())
+}
+
+func (i GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArray) ToGetSchedulesScheduleCollectionItemQueryPropertyDateRangeArrayOutputWithContext(ctx context.Context) GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArrayOutput)
+}
+
+type GetSchedulesScheduleCollectionItemQueryPropertyDateRangeOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulesScheduleCollectionItemQueryPropertyDateRangeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulesScheduleCollectionItemQueryPropertyDateRange)(nil)).Elem()
+}
+
+func (o GetSchedulesScheduleCollectionItemQueryPropertyDateRangeOutput) ToGetSchedulesScheduleCollectionItemQueryPropertyDateRangeOutput() GetSchedulesScheduleCollectionItemQueryPropertyDateRangeOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleCollectionItemQueryPropertyDateRangeOutput) ToGetSchedulesScheduleCollectionItemQueryPropertyDateRangeOutputWithContext(ctx context.Context) GetSchedulesScheduleCollectionItemQueryPropertyDateRangeOutput {
+	return o
+}
+
+// Defines whether the schedule date range is STATIC or DYNAMIC
+func (o GetSchedulesScheduleCollectionItemQueryPropertyDateRangeOutput) DateRangeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemQueryPropertyDateRange) string { return v.DateRangeType }).(pulumi.StringOutput)
+}
+
+func (o GetSchedulesScheduleCollectionItemQueryPropertyDateRangeOutput) DynamicDateRangeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemQueryPropertyDateRange) string { return v.DynamicDateRangeType }).(pulumi.StringOutput)
+}
+
+// The usage end time.
+func (o GetSchedulesScheduleCollectionItemQueryPropertyDateRangeOutput) TimeUsageEnded() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemQueryPropertyDateRange) string { return v.TimeUsageEnded }).(pulumi.StringOutput)
+}
+
+// The usage start time.
+func (o GetSchedulesScheduleCollectionItemQueryPropertyDateRangeOutput) TimeUsageStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemQueryPropertyDateRange) string { return v.TimeUsageStarted }).(pulumi.StringOutput)
+}
+
+type GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulesScheduleCollectionItemQueryPropertyDateRange)(nil)).Elem()
+}
+
+func (o GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArrayOutput) ToGetSchedulesScheduleCollectionItemQueryPropertyDateRangeArrayOutput() GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArrayOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArrayOutput) ToGetSchedulesScheduleCollectionItemQueryPropertyDateRangeArrayOutputWithContext(ctx context.Context) GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArrayOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArrayOutput) Index(i pulumi.IntInput) GetSchedulesScheduleCollectionItemQueryPropertyDateRangeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSchedulesScheduleCollectionItemQueryPropertyDateRange {
+		return vs[0].([]GetSchedulesScheduleCollectionItemQueryPropertyDateRange)[vs[1].(int)]
+	}).(GetSchedulesScheduleCollectionItemQueryPropertyDateRangeOutput)
+}
+
+type GetSchedulesScheduleCollectionItemQueryPropertyGroupByTag struct {
+	// The tag key.
+	Key string `pulumi:"key"`
+	// The namespace needed to determine object storage bucket.
+	Namespace string `pulumi:"namespace"`
+	// The tag value.
+	Value string `pulumi:"value"`
+}
+
+// GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagInput is an input type that accepts GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArgs and GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagOutput values.
+// You can construct a concrete instance of `GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagInput` via:
+//
+//          GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArgs{...}
+type GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagInput interface {
+	pulumi.Input
+
+	ToGetSchedulesScheduleCollectionItemQueryPropertyGroupByTagOutput() GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagOutput
+	ToGetSchedulesScheduleCollectionItemQueryPropertyGroupByTagOutputWithContext(context.Context) GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagOutput
+}
+
+type GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArgs struct {
+	// The tag key.
+	Key pulumi.StringInput `pulumi:"key"`
+	// The namespace needed to determine object storage bucket.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The tag value.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulesScheduleCollectionItemQueryPropertyGroupByTag)(nil)).Elem()
+}
+
+func (i GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArgs) ToGetSchedulesScheduleCollectionItemQueryPropertyGroupByTagOutput() GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagOutput {
+	return i.ToGetSchedulesScheduleCollectionItemQueryPropertyGroupByTagOutputWithContext(context.Background())
+}
+
+func (i GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArgs) ToGetSchedulesScheduleCollectionItemQueryPropertyGroupByTagOutputWithContext(ctx context.Context) GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagOutput)
+}
+
+// GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArrayInput is an input type that accepts GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArray and GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArrayOutput values.
+// You can construct a concrete instance of `GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArrayInput` via:
+//
+//          GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArray{ GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArgs{...} }
+type GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArrayInput interface {
+	pulumi.Input
+
+	ToGetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArrayOutput() GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArrayOutput
+	ToGetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArrayOutputWithContext(context.Context) GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArrayOutput
+}
+
+type GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArray []GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagInput
+
+func (GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulesScheduleCollectionItemQueryPropertyGroupByTag)(nil)).Elem()
+}
+
+func (i GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArray) ToGetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArrayOutput() GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArrayOutput {
+	return i.ToGetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArray) ToGetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArrayOutputWithContext(ctx context.Context) GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArrayOutput)
+}
+
+type GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulesScheduleCollectionItemQueryPropertyGroupByTag)(nil)).Elem()
+}
+
+func (o GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagOutput) ToGetSchedulesScheduleCollectionItemQueryPropertyGroupByTagOutput() GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagOutput) ToGetSchedulesScheduleCollectionItemQueryPropertyGroupByTagOutputWithContext(ctx context.Context) GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagOutput {
+	return o
+}
+
+// The tag key.
+func (o GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemQueryPropertyGroupByTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// The namespace needed to determine object storage bucket.
+func (o GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemQueryPropertyGroupByTag) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// The tag value.
+func (o GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemQueryPropertyGroupByTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulesScheduleCollectionItemQueryPropertyGroupByTag)(nil)).Elem()
+}
+
+func (o GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArrayOutput) ToGetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArrayOutput() GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArrayOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArrayOutput) ToGetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArrayOutputWithContext(ctx context.Context) GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArrayOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArrayOutput) Index(i pulumi.IntInput) GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSchedulesScheduleCollectionItemQueryPropertyGroupByTag {
+		return vs[0].([]GetSchedulesScheduleCollectionItemQueryPropertyGroupByTag)[vs[1].(int)]
+	}).(GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagOutput)
+}
+
+type GetSchedulesScheduleCollectionItemResultLocation struct {
+	// The bucket name where usage/cost CSVs will be uploaded
+	Bucket string `pulumi:"bucket"`
+	// Defines the type of location where the usage/cost CSVs will be stored
+	LocationType string `pulumi:"locationType"`
+	// The namespace needed to determine object storage bucket.
+	Namespace string `pulumi:"namespace"`
+	// The destination Object Store Region specified by customer
+	Region string `pulumi:"region"`
+}
+
+// GetSchedulesScheduleCollectionItemResultLocationInput is an input type that accepts GetSchedulesScheduleCollectionItemResultLocationArgs and GetSchedulesScheduleCollectionItemResultLocationOutput values.
+// You can construct a concrete instance of `GetSchedulesScheduleCollectionItemResultLocationInput` via:
+//
+//          GetSchedulesScheduleCollectionItemResultLocationArgs{...}
+type GetSchedulesScheduleCollectionItemResultLocationInput interface {
+	pulumi.Input
+
+	ToGetSchedulesScheduleCollectionItemResultLocationOutput() GetSchedulesScheduleCollectionItemResultLocationOutput
+	ToGetSchedulesScheduleCollectionItemResultLocationOutputWithContext(context.Context) GetSchedulesScheduleCollectionItemResultLocationOutput
+}
+
+type GetSchedulesScheduleCollectionItemResultLocationArgs struct {
+	// The bucket name where usage/cost CSVs will be uploaded
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// Defines the type of location where the usage/cost CSVs will be stored
+	LocationType pulumi.StringInput `pulumi:"locationType"`
+	// The namespace needed to determine object storage bucket.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The destination Object Store Region specified by customer
+	Region pulumi.StringInput `pulumi:"region"`
+}
+
+func (GetSchedulesScheduleCollectionItemResultLocationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulesScheduleCollectionItemResultLocation)(nil)).Elem()
+}
+
+func (i GetSchedulesScheduleCollectionItemResultLocationArgs) ToGetSchedulesScheduleCollectionItemResultLocationOutput() GetSchedulesScheduleCollectionItemResultLocationOutput {
+	return i.ToGetSchedulesScheduleCollectionItemResultLocationOutputWithContext(context.Background())
+}
+
+func (i GetSchedulesScheduleCollectionItemResultLocationArgs) ToGetSchedulesScheduleCollectionItemResultLocationOutputWithContext(ctx context.Context) GetSchedulesScheduleCollectionItemResultLocationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleCollectionItemResultLocationOutput)
+}
+
+// GetSchedulesScheduleCollectionItemResultLocationArrayInput is an input type that accepts GetSchedulesScheduleCollectionItemResultLocationArray and GetSchedulesScheduleCollectionItemResultLocationArrayOutput values.
+// You can construct a concrete instance of `GetSchedulesScheduleCollectionItemResultLocationArrayInput` via:
+//
+//          GetSchedulesScheduleCollectionItemResultLocationArray{ GetSchedulesScheduleCollectionItemResultLocationArgs{...} }
+type GetSchedulesScheduleCollectionItemResultLocationArrayInput interface {
+	pulumi.Input
+
+	ToGetSchedulesScheduleCollectionItemResultLocationArrayOutput() GetSchedulesScheduleCollectionItemResultLocationArrayOutput
+	ToGetSchedulesScheduleCollectionItemResultLocationArrayOutputWithContext(context.Context) GetSchedulesScheduleCollectionItemResultLocationArrayOutput
+}
+
+type GetSchedulesScheduleCollectionItemResultLocationArray []GetSchedulesScheduleCollectionItemResultLocationInput
+
+func (GetSchedulesScheduleCollectionItemResultLocationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulesScheduleCollectionItemResultLocation)(nil)).Elem()
+}
+
+func (i GetSchedulesScheduleCollectionItemResultLocationArray) ToGetSchedulesScheduleCollectionItemResultLocationArrayOutput() GetSchedulesScheduleCollectionItemResultLocationArrayOutput {
+	return i.ToGetSchedulesScheduleCollectionItemResultLocationArrayOutputWithContext(context.Background())
+}
+
+func (i GetSchedulesScheduleCollectionItemResultLocationArray) ToGetSchedulesScheduleCollectionItemResultLocationArrayOutputWithContext(ctx context.Context) GetSchedulesScheduleCollectionItemResultLocationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSchedulesScheduleCollectionItemResultLocationArrayOutput)
+}
+
+type GetSchedulesScheduleCollectionItemResultLocationOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulesScheduleCollectionItemResultLocationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSchedulesScheduleCollectionItemResultLocation)(nil)).Elem()
+}
+
+func (o GetSchedulesScheduleCollectionItemResultLocationOutput) ToGetSchedulesScheduleCollectionItemResultLocationOutput() GetSchedulesScheduleCollectionItemResultLocationOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleCollectionItemResultLocationOutput) ToGetSchedulesScheduleCollectionItemResultLocationOutputWithContext(ctx context.Context) GetSchedulesScheduleCollectionItemResultLocationOutput {
+	return o
+}
+
+// The bucket name where usage/cost CSVs will be uploaded
+func (o GetSchedulesScheduleCollectionItemResultLocationOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemResultLocation) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// Defines the type of location where the usage/cost CSVs will be stored
+func (o GetSchedulesScheduleCollectionItemResultLocationOutput) LocationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemResultLocation) string { return v.LocationType }).(pulumi.StringOutput)
+}
+
+// The namespace needed to determine object storage bucket.
+func (o GetSchedulesScheduleCollectionItemResultLocationOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemResultLocation) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// The destination Object Store Region specified by customer
+func (o GetSchedulesScheduleCollectionItemResultLocationOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemResultLocation) string { return v.Region }).(pulumi.StringOutput)
+}
+
+type GetSchedulesScheduleCollectionItemResultLocationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSchedulesScheduleCollectionItemResultLocationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSchedulesScheduleCollectionItemResultLocation)(nil)).Elem()
+}
+
+func (o GetSchedulesScheduleCollectionItemResultLocationArrayOutput) ToGetSchedulesScheduleCollectionItemResultLocationArrayOutput() GetSchedulesScheduleCollectionItemResultLocationArrayOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleCollectionItemResultLocationArrayOutput) ToGetSchedulesScheduleCollectionItemResultLocationArrayOutputWithContext(ctx context.Context) GetSchedulesScheduleCollectionItemResultLocationArrayOutput {
+	return o
+}
+
+func (o GetSchedulesScheduleCollectionItemResultLocationArrayOutput) Index(i pulumi.IntInput) GetSchedulesScheduleCollectionItemResultLocationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSchedulesScheduleCollectionItemResultLocation {
+		return vs[0].([]GetSchedulesScheduleCollectionItemResultLocation)[vs[1].(int)]
+	}).(GetSchedulesScheduleCollectionItemResultLocationOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*CustomTableSavedCustomTableInput)(nil)).Elem(), CustomTableSavedCustomTableArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CustomTableSavedCustomTablePtrInput)(nil)).Elem(), CustomTableSavedCustomTableArgs{})
@@ -4705,6 +7271,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*QueryQueryDefinitionReportQueryForecastPtrInput)(nil)).Elem(), QueryQueryDefinitionReportQueryForecastArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*QueryQueryDefinitionReportQueryGroupByTagInput)(nil)).Elem(), QueryQueryDefinitionReportQueryGroupByTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*QueryQueryDefinitionReportQueryGroupByTagArrayInput)(nil)).Elem(), QueryQueryDefinitionReportQueryGroupByTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduleQueryPropertiesInput)(nil)).Elem(), ScheduleQueryPropertiesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduleQueryPropertiesPtrInput)(nil)).Elem(), ScheduleQueryPropertiesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduleQueryPropertiesDateRangeInput)(nil)).Elem(), ScheduleQueryPropertiesDateRangeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduleQueryPropertiesDateRangePtrInput)(nil)).Elem(), ScheduleQueryPropertiesDateRangeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduleQueryPropertiesGroupByTagInput)(nil)).Elem(), ScheduleQueryPropertiesGroupByTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduleQueryPropertiesGroupByTagArrayInput)(nil)).Elem(), ScheduleQueryPropertiesGroupByTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduleResultLocationInput)(nil)).Elem(), ScheduleResultLocationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduleResultLocationPtrInput)(nil)).Elem(), ScheduleResultLocationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*UsageForecastInput)(nil)).Elem(), UsageForecastArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*UsageForecastPtrInput)(nil)).Elem(), UsageForecastArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*UsageGroupByTagInput)(nil)).Elem(), UsageGroupByTagArgs{})
@@ -4755,6 +7329,34 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetQueryQueryDefinitionReportQueryForecastArrayInput)(nil)).Elem(), GetQueryQueryDefinitionReportQueryForecastArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetQueryQueryDefinitionReportQueryGroupByTagInput)(nil)).Elem(), GetQueryQueryDefinitionReportQueryGroupByTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetQueryQueryDefinitionReportQueryGroupByTagArrayInput)(nil)).Elem(), GetQueryQueryDefinitionReportQueryGroupByTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduleQueryPropertyInput)(nil)).Elem(), GetScheduleQueryPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduleQueryPropertyArrayInput)(nil)).Elem(), GetScheduleQueryPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduleQueryPropertyDateRangeInput)(nil)).Elem(), GetScheduleQueryPropertyDateRangeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduleQueryPropertyDateRangeArrayInput)(nil)).Elem(), GetScheduleQueryPropertyDateRangeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduleQueryPropertyGroupByTagInput)(nil)).Elem(), GetScheduleQueryPropertyGroupByTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduleQueryPropertyGroupByTagArrayInput)(nil)).Elem(), GetScheduleQueryPropertyGroupByTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduleResultLocationInput)(nil)).Elem(), GetScheduleResultLocationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduleResultLocationArrayInput)(nil)).Elem(), GetScheduleResultLocationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledRunsFilterInput)(nil)).Elem(), GetScheduledRunsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledRunsFilterArrayInput)(nil)).Elem(), GetScheduledRunsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledRunsScheduledRunCollectionInput)(nil)).Elem(), GetScheduledRunsScheduledRunCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledRunsScheduledRunCollectionArrayInput)(nil)).Elem(), GetScheduledRunsScheduledRunCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledRunsScheduledRunCollectionItemInput)(nil)).Elem(), GetScheduledRunsScheduledRunCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledRunsScheduledRunCollectionItemArrayInput)(nil)).Elem(), GetScheduledRunsScheduledRunCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesFilterInput)(nil)).Elem(), GetSchedulesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesFilterArrayInput)(nil)).Elem(), GetSchedulesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleCollectionInput)(nil)).Elem(), GetSchedulesScheduleCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleCollectionArrayInput)(nil)).Elem(), GetSchedulesScheduleCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleCollectionItemInput)(nil)).Elem(), GetSchedulesScheduleCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleCollectionItemArrayInput)(nil)).Elem(), GetSchedulesScheduleCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleCollectionItemQueryPropertyInput)(nil)).Elem(), GetSchedulesScheduleCollectionItemQueryPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleCollectionItemQueryPropertyArrayInput)(nil)).Elem(), GetSchedulesScheduleCollectionItemQueryPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleCollectionItemQueryPropertyDateRangeInput)(nil)).Elem(), GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArrayInput)(nil)).Elem(), GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagInput)(nil)).Elem(), GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArrayInput)(nil)).Elem(), GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleCollectionItemResultLocationInput)(nil)).Elem(), GetSchedulesScheduleCollectionItemResultLocationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleCollectionItemResultLocationArrayInput)(nil)).Elem(), GetSchedulesScheduleCollectionItemResultLocationArray{})
 	pulumi.RegisterOutputType(CustomTableSavedCustomTableOutput{})
 	pulumi.RegisterOutputType(CustomTableSavedCustomTablePtrOutput{})
 	pulumi.RegisterOutputType(CustomTableSavedCustomTableGroupByTagOutput{})
@@ -4769,6 +7371,14 @@ func init() {
 	pulumi.RegisterOutputType(QueryQueryDefinitionReportQueryForecastPtrOutput{})
 	pulumi.RegisterOutputType(QueryQueryDefinitionReportQueryGroupByTagOutput{})
 	pulumi.RegisterOutputType(QueryQueryDefinitionReportQueryGroupByTagArrayOutput{})
+	pulumi.RegisterOutputType(ScheduleQueryPropertiesOutput{})
+	pulumi.RegisterOutputType(ScheduleQueryPropertiesPtrOutput{})
+	pulumi.RegisterOutputType(ScheduleQueryPropertiesDateRangeOutput{})
+	pulumi.RegisterOutputType(ScheduleQueryPropertiesDateRangePtrOutput{})
+	pulumi.RegisterOutputType(ScheduleQueryPropertiesGroupByTagOutput{})
+	pulumi.RegisterOutputType(ScheduleQueryPropertiesGroupByTagArrayOutput{})
+	pulumi.RegisterOutputType(ScheduleResultLocationOutput{})
+	pulumi.RegisterOutputType(ScheduleResultLocationPtrOutput{})
 	pulumi.RegisterOutputType(UsageForecastOutput{})
 	pulumi.RegisterOutputType(UsageForecastPtrOutput{})
 	pulumi.RegisterOutputType(UsageGroupByTagOutput{})
@@ -4819,4 +7429,32 @@ func init() {
 	pulumi.RegisterOutputType(GetQueryQueryDefinitionReportQueryForecastArrayOutput{})
 	pulumi.RegisterOutputType(GetQueryQueryDefinitionReportQueryGroupByTagOutput{})
 	pulumi.RegisterOutputType(GetQueryQueryDefinitionReportQueryGroupByTagArrayOutput{})
+	pulumi.RegisterOutputType(GetScheduleQueryPropertyOutput{})
+	pulumi.RegisterOutputType(GetScheduleQueryPropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetScheduleQueryPropertyDateRangeOutput{})
+	pulumi.RegisterOutputType(GetScheduleQueryPropertyDateRangeArrayOutput{})
+	pulumi.RegisterOutputType(GetScheduleQueryPropertyGroupByTagOutput{})
+	pulumi.RegisterOutputType(GetScheduleQueryPropertyGroupByTagArrayOutput{})
+	pulumi.RegisterOutputType(GetScheduleResultLocationOutput{})
+	pulumi.RegisterOutputType(GetScheduleResultLocationArrayOutput{})
+	pulumi.RegisterOutputType(GetScheduledRunsFilterOutput{})
+	pulumi.RegisterOutputType(GetScheduledRunsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetScheduledRunsScheduledRunCollectionOutput{})
+	pulumi.RegisterOutputType(GetScheduledRunsScheduledRunCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetScheduledRunsScheduledRunCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetScheduledRunsScheduledRunCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSchedulesFilterOutput{})
+	pulumi.RegisterOutputType(GetSchedulesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSchedulesScheduleCollectionOutput{})
+	pulumi.RegisterOutputType(GetSchedulesScheduleCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSchedulesScheduleCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSchedulesScheduleCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSchedulesScheduleCollectionItemQueryPropertyOutput{})
+	pulumi.RegisterOutputType(GetSchedulesScheduleCollectionItemQueryPropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetSchedulesScheduleCollectionItemQueryPropertyDateRangeOutput{})
+	pulumi.RegisterOutputType(GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArrayOutput{})
+	pulumi.RegisterOutputType(GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagOutput{})
+	pulumi.RegisterOutputType(GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArrayOutput{})
+	pulumi.RegisterOutputType(GetSchedulesScheduleCollectionItemResultLocationOutput{})
+	pulumi.RegisterOutputType(GetSchedulesScheduleCollectionItemResultLocationArrayOutput{})
 }

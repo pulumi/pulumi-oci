@@ -27,11 +27,12 @@ import (
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		_, err := ApmSynthetics.GetMonitors(ctx, &apmsynthetics.GetMonitorsArgs{
-// 			ApmDomainId: oci_apm_synthetics_apm_domain.Test_apm_domain.Id,
-// 			DisplayName: pulumi.StringRef(_var.Monitor_display_name),
-// 			MonitorType: pulumi.StringRef(_var.Monitor_monitor_type),
-// 			ScriptId:    pulumi.StringRef(oci_apm_synthetics_script.Test_script.Id),
-// 			Status:      pulumi.StringRef(_var.Monitor_status),
+// 			ApmDomainId:  oci_apm_synthetics_apm_domain.Test_apm_domain.Id,
+// 			DisplayName:  pulumi.StringRef(_var.Monitor_display_name),
+// 			MonitorType:  pulumi.StringRef(_var.Monitor_monitor_type),
+// 			ScriptId:     pulumi.StringRef(oci_apm_synthetics_script.Test_script.Id),
+// 			Status:       pulumi.StringRef(_var.Monitor_status),
+// 			VantagePoint: pulumi.StringRef(_var.Monitor_vantage_point),
 // 		}, nil)
 // 		if err != nil {
 // 			return err
@@ -53,7 +54,7 @@ func GetMonitors(ctx *pulumi.Context, args *GetMonitorsArgs, opts ...pulumi.Invo
 type GetMonitorsArgs struct {
 	// The APM domain ID the request is intended for.
 	ApmDomainId string `pulumi:"apmDomainId"`
-	// A filter to return only resources that match the entire display name given.
+	// A filter to return only the resources that match the entire display name.
 	DisplayName *string             `pulumi:"displayName"`
 	Filters     []GetMonitorsFilter `pulumi:"filters"`
 	// A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST and REST.
@@ -62,6 +63,8 @@ type GetMonitorsArgs struct {
 	ScriptId *string `pulumi:"scriptId"`
 	// A filter to return only monitors that match the status given.
 	Status *string `pulumi:"status"`
+	// The name of the public or dedicated vantage point.
+	VantagePoint *string `pulumi:"vantagePoint"`
 }
 
 // A collection of values returned by getMonitors.
@@ -79,7 +82,8 @@ type GetMonitorsResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
 	ScriptId *string `pulumi:"scriptId"`
 	// Enables or disables the monitor.
-	Status *string `pulumi:"status"`
+	Status       *string `pulumi:"status"`
+	VantagePoint *string `pulumi:"vantagePoint"`
 }
 
 func GetMonitorsOutput(ctx *pulumi.Context, args GetMonitorsOutputArgs, opts ...pulumi.InvokeOption) GetMonitorsResultOutput {
@@ -99,7 +103,7 @@ func GetMonitorsOutput(ctx *pulumi.Context, args GetMonitorsOutputArgs, opts ...
 type GetMonitorsOutputArgs struct {
 	// The APM domain ID the request is intended for.
 	ApmDomainId pulumi.StringInput `pulumi:"apmDomainId"`
-	// A filter to return only resources that match the entire display name given.
+	// A filter to return only the resources that match the entire display name.
 	DisplayName pulumi.StringPtrInput       `pulumi:"displayName"`
 	Filters     GetMonitorsFilterArrayInput `pulumi:"filters"`
 	// A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST and REST.
@@ -108,6 +112,8 @@ type GetMonitorsOutputArgs struct {
 	ScriptId pulumi.StringPtrInput `pulumi:"scriptId"`
 	// A filter to return only monitors that match the status given.
 	Status pulumi.StringPtrInput `pulumi:"status"`
+	// The name of the public or dedicated vantage point.
+	VantagePoint pulumi.StringPtrInput `pulumi:"vantagePoint"`
 }
 
 func (GetMonitorsOutputArgs) ElementType() reflect.Type {
@@ -165,6 +171,10 @@ func (o GetMonitorsResultOutput) ScriptId() pulumi.StringPtrOutput {
 // Enables or disables the monitor.
 func (o GetMonitorsResultOutput) Status() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetMonitorsResult) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+func (o GetMonitorsResultOutput) VantagePoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorsResult) *string { return v.VantagePoint }).(pulumi.StringPtrOutput)
 }
 
 func init() {

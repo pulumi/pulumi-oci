@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Double;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -23,6 +24,11 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig 
      */
     private final @Nullable Double memoryInGbs;
     /**
+     * @return The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+     * 
+     */
+    private final @Nullable Integer nvmes;
+    /**
      * @return The total number of OCPUs available to the instance.
      * 
      */
@@ -32,9 +38,11 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig 
     private InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig(
         @CustomType.Parameter("baselineOcpuUtilization") @Nullable String baselineOcpuUtilization,
         @CustomType.Parameter("memoryInGbs") @Nullable Double memoryInGbs,
+        @CustomType.Parameter("nvmes") @Nullable Integer nvmes,
         @CustomType.Parameter("ocpus") @Nullable Double ocpus) {
         this.baselineOcpuUtilization = baselineOcpuUtilization;
         this.memoryInGbs = memoryInGbs;
+        this.nvmes = nvmes;
         this.ocpus = ocpus;
     }
 
@@ -51,6 +59,13 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig 
      */
     public Optional<Double> memoryInGbs() {
         return Optional.ofNullable(this.memoryInGbs);
+    }
+    /**
+     * @return The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+     * 
+     */
+    public Optional<Integer> nvmes() {
+        return Optional.ofNullable(this.nvmes);
     }
     /**
      * @return The total number of OCPUs available to the instance.
@@ -71,6 +86,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig 
     public static final class Builder {
         private @Nullable String baselineOcpuUtilization;
         private @Nullable Double memoryInGbs;
+        private @Nullable Integer nvmes;
         private @Nullable Double ocpus;
 
         public Builder() {
@@ -81,6 +97,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig 
     	      Objects.requireNonNull(defaults);
     	      this.baselineOcpuUtilization = defaults.baselineOcpuUtilization;
     	      this.memoryInGbs = defaults.memoryInGbs;
+    	      this.nvmes = defaults.nvmes;
     	      this.ocpus = defaults.ocpus;
         }
 
@@ -92,11 +109,15 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig 
             this.memoryInGbs = memoryInGbs;
             return this;
         }
+        public Builder nvmes(@Nullable Integer nvmes) {
+            this.nvmes = nvmes;
+            return this;
+        }
         public Builder ocpus(@Nullable Double ocpus) {
             this.ocpus = ocpus;
             return this;
         }        public InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig build() {
-            return new InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig(baselineOcpuUtilization, memoryInGbs, ocpus);
+            return new InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig(baselineOcpuUtilization, memoryInGbs, nvmes, ocpus);
         }
     }
 }

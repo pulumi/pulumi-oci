@@ -76,6 +76,8 @@ type LookupFunctionResult struct {
 	InvokeEndpoint string `pulumi:"invokeEndpoint"`
 	// Maximum usable memory for the function (MiB).
 	MemoryInMbs string `pulumi:"memoryInMbs"`
+	// Define the strategy for provisioned concurrency for the function.
+	ProvisionedConcurrencyConfigs []GetFunctionProvisionedConcurrencyConfig `pulumi:"provisionedConcurrencyConfigs"`
 	// The current state of the function.
 	State string `pulumi:"state"`
 	// The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
@@ -183,6 +185,13 @@ func (o LookupFunctionResultOutput) InvokeEndpoint() pulumi.StringOutput {
 // Maximum usable memory for the function (MiB).
 func (o LookupFunctionResultOutput) MemoryInMbs() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFunctionResult) string { return v.MemoryInMbs }).(pulumi.StringOutput)
+}
+
+// Define the strategy for provisioned concurrency for the function.
+func (o LookupFunctionResultOutput) ProvisionedConcurrencyConfigs() GetFunctionProvisionedConcurrencyConfigArrayOutput {
+	return o.ApplyT(func(v LookupFunctionResult) []GetFunctionProvisionedConcurrencyConfig {
+		return v.ProvisionedConcurrencyConfigs
+	}).(GetFunctionProvisionedConcurrencyConfigArrayOutput)
 }
 
 // The current state of the function.

@@ -599,7 +599,7 @@ func (o DatabaseToolsConnectionRelatedResourcePtrOutput) Identifier() pulumi.Str
 
 type DatabaseToolsConnectionUserPassword struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-	SecretId *string `pulumi:"secretId"`
+	SecretId string `pulumi:"secretId"`
 	// (Updatable) The value type of the user password.
 	ValueType string `pulumi:"valueType"`
 }
@@ -617,7 +617,7 @@ type DatabaseToolsConnectionUserPasswordInput interface {
 
 type DatabaseToolsConnectionUserPasswordArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-	SecretId pulumi.StringPtrInput `pulumi:"secretId"`
+	SecretId pulumi.StringInput `pulumi:"secretId"`
 	// (Updatable) The value type of the user password.
 	ValueType pulumi.StringInput `pulumi:"valueType"`
 }
@@ -700,8 +700,8 @@ func (o DatabaseToolsConnectionUserPasswordOutput) ToDatabaseToolsConnectionUser
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-func (o DatabaseToolsConnectionUserPasswordOutput) SecretId() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v DatabaseToolsConnectionUserPassword) *string { return v.SecretId }).(pulumi.StringPtrOutput)
+func (o DatabaseToolsConnectionUserPasswordOutput) SecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v DatabaseToolsConnectionUserPassword) string { return v.SecretId }).(pulumi.StringOutput)
 }
 
 // (Updatable) The value type of the user password.
@@ -739,7 +739,7 @@ func (o DatabaseToolsConnectionUserPasswordPtrOutput) SecretId() pulumi.StringPt
 		if v == nil {
 			return nil
 		}
-		return v.SecretId
+		return &v.SecretId
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -1591,39 +1591,39 @@ func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionArrayOutput)
 }
 
 type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem struct {
-	// Advanced connection properties key-value pair (e.g., oracle.net.ssl_server_dn_match).
+	// The advanced connection properties key-value pair (for example, `oracle.net.ssl_server_dn_match`).
 	AdvancedProperties map[string]interface{} `pulumi:"advancedProperties"`
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Connect descriptor or Easy Connect Naming method to connect to the database.
+	// The connect descriptor or Easy Connect Naming method used to connect to the database.
 	ConnectionString string `pulumi:"connectionString"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// A filter to return only resources that match the entire display name given.
+	// A filter to return only resources that match the entire specified display name.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsConnection.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools connection.
 	Id string `pulumi:"id"`
-	// Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
+	// The Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
 	KeyStores []GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStore `pulumi:"keyStores"`
-	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	// A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsPrivateEndpoint used to access the database in the Customer VCN.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
 	PrivateEndpointId string `pulumi:"privateEndpointId"`
 	// A related resource
 	RelatedResources []GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResource `pulumi:"relatedResources"`
-	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	// A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// The time the DatabaseToolsConnection was created. An RFC3339 formatted datetime string
+	// The time the Database Tools connection was created. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
-	// The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string
+	// The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
 	TimeUpdated string `pulumi:"timeUpdated"`
-	// A filter to return only resources their endpointServiceId matches the given endpointServiceId.
+	// A filter to return only resources their type matches the specified type.
 	Type string `pulumi:"type"`
-	// Database user name.
+	// The database user name.
 	UserName string `pulumi:"userName"`
 	// The user password.
 	UserPasswords []GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPassword `pulumi:"userPasswords"`
@@ -1641,39 +1641,39 @@ type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemInput inter
 }
 
 type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemArgs struct {
-	// Advanced connection properties key-value pair (e.g., oracle.net.ssl_server_dn_match).
+	// The advanced connection properties key-value pair (for example, `oracle.net.ssl_server_dn_match`).
 	AdvancedProperties pulumi.MapInput `pulumi:"advancedProperties"`
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// Connect descriptor or Easy Connect Naming method to connect to the database.
+	// The connect descriptor or Easy Connect Naming method used to connect to the database.
 	ConnectionString pulumi.StringInput `pulumi:"connectionString"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
-	// A filter to return only resources that match the entire display name given.
+	// A filter to return only resources that match the entire specified display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsConnection.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools connection.
 	Id pulumi.StringInput `pulumi:"id"`
-	// Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
+	// The Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
 	KeyStores GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreArrayInput `pulumi:"keyStores"`
-	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	// A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsPrivateEndpoint used to access the database in the Customer VCN.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
 	PrivateEndpointId pulumi.StringInput `pulumi:"privateEndpointId"`
 	// A related resource
 	RelatedResources GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceArrayInput `pulumi:"relatedResources"`
-	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	// A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
-	// The time the DatabaseToolsConnection was created. An RFC3339 formatted datetime string
+	// The time the Database Tools connection was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	// The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string
+	// The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
-	// A filter to return only resources their endpointServiceId matches the given endpointServiceId.
+	// A filter to return only resources their type matches the specified type.
 	Type pulumi.StringInput `pulumi:"type"`
-	// Database user name.
+	// The database user name.
 	UserName pulumi.StringInput `pulumi:"userName"`
 	// The user password.
 	UserPasswords GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordArrayInput `pulumi:"userPasswords"`
@@ -1730,7 +1730,7 @@ func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) 
 	return o
 }
 
-// Advanced connection properties key-value pair (e.g., oracle.net.ssl_server_dn_match).
+// The advanced connection properties key-value pair (for example, `oracle.net.ssl_server_dn_match`).
 func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) AdvancedProperties() pulumi.MapOutput {
 	return o.ApplyT(func(v GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem) map[string]interface{} {
 		return v.AdvancedProperties
@@ -1744,7 +1744,7 @@ func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) 
 	}).(pulumi.StringOutput)
 }
 
-// Connect descriptor or Easy Connect Naming method to connect to the database.
+// The connect descriptor or Easy Connect Naming method used to connect to the database.
 func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) ConnectionString() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem) string {
 		return v.ConnectionString
@@ -1758,7 +1758,7 @@ func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) 
 	}).(pulumi.MapOutput)
 }
 
-// A filter to return only resources that match the entire display name given.
+// A filter to return only resources that match the entire specified display name.
 func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -1770,26 +1770,26 @@ func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) 
 	}).(pulumi.MapOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsConnection.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools connection.
 func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
+// The Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
 func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) KeyStores() GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreArrayOutput {
 	return o.ApplyT(func(v GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem) []GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStore {
 		return v.KeyStores
 	}).(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreArrayOutput)
 }
 
-// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+// A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
 func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem) string {
 		return v.LifecycleDetails
 	}).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsPrivateEndpoint used to access the database in the Customer VCN.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
 func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) PrivateEndpointId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem) string {
 		return v.PrivateEndpointId
@@ -1803,7 +1803,7 @@ func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) 
 	}).(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceArrayOutput)
 }
 
-// A filter to return only resources their lifecycleState matches the given lifecycleState.
+// A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
 func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem) string { return v.State }).(pulumi.StringOutput)
 }
@@ -1815,22 +1815,22 @@ func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) 
 	}).(pulumi.MapOutput)
 }
 
-// The time the DatabaseToolsConnection was created. An RFC3339 formatted datetime string
+// The time the Database Tools connection was created. An RFC3339 formatted datetime string.
 func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string
+// The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
 func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// A filter to return only resources their endpointServiceId matches the given endpointServiceId.
+// A filter to return only resources their type matches the specified type.
 func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem) string { return v.Type }).(pulumi.StringOutput)
 }
 
-// Database user name.
+// The database user name.
 func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) UserName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem) string { return v.UserName }).(pulumi.StringOutput)
 }
@@ -2630,25 +2630,25 @@ type GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem 
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// A description of the DatabaseToolsEndpointService.
+	// A description of the Database Tools Endpoint Service.
 	Description string `pulumi:"description"`
-	// A filter to return only resources that match the entire display name given.
+	// A filter to return only resources that match the entire specified display name.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsEndpointService.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Endpoint Service.
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	// A filter to return only resources that match the entire name given.
+	// A filter to return only resources that match the entire specified name.
 	Name string `pulumi:"name"`
-	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	// A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// The time the DatabaseToolsEndpointService was created. An RFC3339 formatted datetime string
+	// The time the Database Tools Endpoint Service was created. An RFC3339 formatted datetime string
 	TimeCreated string `pulumi:"timeCreated"`
-	// The time the DatabaseToolsEndpointService was updated. An RFC3339 formatted datetime string
+	// The time the Database Tools Endpoint Service was updated. An RFC3339 formatted datetime string
 	TimeUpdated string `pulumi:"timeUpdated"`
 }
 
@@ -2668,25 +2668,25 @@ type GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemA
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
-	// A description of the DatabaseToolsEndpointService.
+	// A description of the Database Tools Endpoint Service.
 	Description pulumi.StringInput `pulumi:"description"`
-	// A filter to return only resources that match the entire display name given.
+	// A filter to return only resources that match the entire specified display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsEndpointService.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Endpoint Service.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
-	// A filter to return only resources that match the entire name given.
+	// A filter to return only resources that match the entire specified name.
 	Name pulumi.StringInput `pulumi:"name"`
-	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	// A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
-	// The time the DatabaseToolsEndpointService was created. An RFC3339 formatted datetime string
+	// The time the Database Tools Endpoint Service was created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	// The time the DatabaseToolsEndpointService was updated. An RFC3339 formatted datetime string
+	// The time the Database Tools Endpoint Service was updated. An RFC3339 formatted datetime string
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
 }
 
@@ -2755,14 +2755,14 @@ func (o GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionIt
 	}).(pulumi.MapOutput)
 }
 
-// A description of the DatabaseToolsEndpointService.
+// A description of the Database Tools Endpoint Service.
 func (o GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem) string {
 		return v.Description
 	}).(pulumi.StringOutput)
 }
 
-// A filter to return only resources that match the entire display name given.
+// A filter to return only resources that match the entire specified display name.
 func (o GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem) string {
 		return v.DisplayName
@@ -2776,7 +2776,7 @@ func (o GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionIt
 	}).(pulumi.MapOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsEndpointService.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Endpoint Service.
 func (o GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -2788,14 +2788,14 @@ func (o GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionIt
 	}).(pulumi.StringOutput)
 }
 
-// A filter to return only resources that match the entire name given.
+// A filter to return only resources that match the entire specified name.
 func (o GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem) string {
 		return v.Name
 	}).(pulumi.StringOutput)
 }
 
-// A filter to return only resources their lifecycleState matches the given lifecycleState.
+// A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
 func (o GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem) string {
 		return v.State
@@ -2809,14 +2809,14 @@ func (o GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionIt
 	}).(pulumi.MapOutput)
 }
 
-// The time the DatabaseToolsEndpointService was created. An RFC3339 formatted datetime string
+// The time the Database Tools Endpoint Service was created. An RFC3339 formatted datetime string
 func (o GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem) string {
 		return v.TimeCreated
 	}).(pulumi.StringOutput)
 }
 
-// The time the DatabaseToolsEndpointService was updated. An RFC3339 formatted datetime string
+// The time the Database Tools Endpoint Service was updated. An RFC3339 formatted datetime string
 func (o GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem) string {
 		return v.TimeUpdated
@@ -2844,7 +2844,7 @@ func (o GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionIt
 }
 
 type GetDatabaseToolsEndpointServicesFilter struct {
-	// A filter to return only resources that match the entire name given.
+	// A filter to return only resources that match the entire specified name.
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
 	Values []string `pulumi:"values"`
@@ -2862,7 +2862,7 @@ type GetDatabaseToolsEndpointServicesFilterInput interface {
 }
 
 type GetDatabaseToolsEndpointServicesFilterArgs struct {
-	// A filter to return only resources that match the entire name given.
+	// A filter to return only resources that match the entire specified name.
 	Name   pulumi.StringInput      `pulumi:"name"`
 	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
 	Values pulumi.StringArrayInput `pulumi:"values"`
@@ -2919,7 +2919,7 @@ func (o GetDatabaseToolsEndpointServicesFilterOutput) ToGetDatabaseToolsEndpoint
 	return o
 }
 
-// A filter to return only resources that match the entire name given.
+// A filter to return only resources that match the entire specified name.
 func (o GetDatabaseToolsEndpointServicesFilterOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseToolsEndpointServicesFilter) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -3253,17 +3253,17 @@ type GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem 
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// A description of the DatabaseToolsPrivateEndpoint.
+	// A description of the Database Tools private endpoint.
 	Description string `pulumi:"description"`
-	// A filter to return only resources that match the entire display name given.
+	// A filter to return only resources that match the entire specified display name.
 	DisplayName string `pulumi:"displayName"`
 	// Then FQDN to use for the private endpoint.
 	EndpointFqdn string `pulumi:"endpointFqdn"`
-	// A filter to return only resources their type matches the given type.
+	// A filter to return only resources their `endpointServiceId` matches the specified `endpointServiceId`.
 	EndpointServiceId string `pulumi:"endpointServiceId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsPrivateEndpoint.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint.
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
@@ -3273,17 +3273,17 @@ type GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem 
 	PrivateEndpointIp string `pulumi:"privateEndpointIp"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint's VNIC.
 	PrivateEndpointVnicId string `pulumi:"privateEndpointVnicId"`
-	// Reverse connection configuration details of Private Endpoint.
+	// Reverse connection configuration details of the private endpoint.
 	ReverseConnectionConfigurations []GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfiguration `pulumi:"reverseConnectionConfigurations"`
-	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	// A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
 	State string `pulumi:"state"`
-	// A filter to return only resources their subnetId matches the given subnetId.
+	// A filter to return only resources their `subnetId` matches the specified `subnetId`.
 	SubnetId string `pulumi:"subnetId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// The time the DatabaseToolsPrivateEndpoint was created. An RFC3339 formatted datetime string
+	// The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
 	TimeCreated string `pulumi:"timeCreated"`
-	// The time the DatabaseToolsPrivateEndpoint was updated. An RFC3339 formatted datetime string
+	// The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN that the private endpoint belongs to.
 	VcnId string `pulumi:"vcnId"`
@@ -3307,17 +3307,17 @@ type GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemA
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
-	// A description of the DatabaseToolsPrivateEndpoint.
+	// A description of the Database Tools private endpoint.
 	Description pulumi.StringInput `pulumi:"description"`
-	// A filter to return only resources that match the entire display name given.
+	// A filter to return only resources that match the entire specified display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Then FQDN to use for the private endpoint.
 	EndpointFqdn pulumi.StringInput `pulumi:"endpointFqdn"`
-	// A filter to return only resources their type matches the given type.
+	// A filter to return only resources their `endpointServiceId` matches the specified `endpointServiceId`.
 	EndpointServiceId pulumi.StringInput `pulumi:"endpointServiceId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsPrivateEndpoint.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
@@ -3327,17 +3327,17 @@ type GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemA
 	PrivateEndpointIp pulumi.StringInput `pulumi:"privateEndpointIp"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint's VNIC.
 	PrivateEndpointVnicId pulumi.StringInput `pulumi:"privateEndpointVnicId"`
-	// Reverse connection configuration details of Private Endpoint.
+	// Reverse connection configuration details of the private endpoint.
 	ReverseConnectionConfigurations GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationArrayInput `pulumi:"reverseConnectionConfigurations"`
-	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	// A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
 	State pulumi.StringInput `pulumi:"state"`
-	// A filter to return only resources their subnetId matches the given subnetId.
+	// A filter to return only resources their `subnetId` matches the specified `subnetId`.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
-	// The time the DatabaseToolsPrivateEndpoint was created. An RFC3339 formatted datetime string
+	// The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	// The time the DatabaseToolsPrivateEndpoint was updated. An RFC3339 formatted datetime string
+	// The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN that the private endpoint belongs to.
 	VcnId pulumi.StringInput `pulumi:"vcnId"`
@@ -3415,14 +3415,14 @@ func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionIt
 	}).(pulumi.MapOutput)
 }
 
-// A description of the DatabaseToolsPrivateEndpoint.
+// A description of the Database Tools private endpoint.
 func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem) string {
 		return v.Description
 	}).(pulumi.StringOutput)
 }
 
-// A filter to return only resources that match the entire display name given.
+// A filter to return only resources that match the entire specified display name.
 func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem) string {
 		return v.DisplayName
@@ -3436,7 +3436,7 @@ func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionIt
 	}).(pulumi.StringOutput)
 }
 
-// A filter to return only resources their type matches the given type.
+// A filter to return only resources their `endpointServiceId` matches the specified `endpointServiceId`.
 func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemOutput) EndpointServiceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem) string {
 		return v.EndpointServiceId
@@ -3450,7 +3450,7 @@ func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionIt
 	}).(pulumi.MapOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsPrivateEndpoint.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint.
 func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -3483,21 +3483,21 @@ func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionIt
 	}).(pulumi.StringOutput)
 }
 
-// Reverse connection configuration details of Private Endpoint.
+// Reverse connection configuration details of the private endpoint.
 func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemOutput) ReverseConnectionConfigurations() GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationArrayOutput {
 	return o.ApplyT(func(v GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem) []GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfiguration {
 		return v.ReverseConnectionConfigurations
 	}).(GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationArrayOutput)
 }
 
-// A filter to return only resources their lifecycleState matches the given lifecycleState.
+// A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
 func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem) string {
 		return v.State
 	}).(pulumi.StringOutput)
 }
 
-// A filter to return only resources their subnetId matches the given subnetId.
+// A filter to return only resources their `subnetId` matches the specified `subnetId`.
 func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem) string {
 		return v.SubnetId
@@ -3511,14 +3511,14 @@ func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionIt
 	}).(pulumi.MapOutput)
 }
 
-// The time the DatabaseToolsPrivateEndpoint was created. An RFC3339 formatted datetime string
+// The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
 func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem) string {
 		return v.TimeCreated
 	}).(pulumi.StringOutput)
 }
 
-// The time the DatabaseToolsPrivateEndpoint was updated. An RFC3339 formatted datetime string
+// The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
 func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem) string {
 		return v.TimeUpdated

@@ -62,7 +62,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// </summary>
         public readonly string PublicIp;
         /// <summary>
-        /// The state of the node.
+        /// A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
         /// </summary>
         public readonly string State;
         /// <summary>

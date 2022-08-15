@@ -63,9 +63,9 @@ type GetDbVersionsArgs struct {
 	IsDatabaseSoftwareImageSupported *bool `pulumi:"isDatabaseSoftwareImageSupported"`
 	// If provided, filters the results to the set of database versions which are supported for Upgrade.
 	IsUpgradeSupported *bool `pulumi:"isUpgradeSupported"`
-	// The DB system storage management option. Used to list database versions available for that storage manager. Valid values are:
-	// * ASM - Automatic storage management
-	// * LVM - Logical volume management
+	// The DB system storage management option. Used to list database versions available for that storage manager. Valid values are `ASM` and `LVM`.
+	// * ASM specifies Oracle Automatic Storage Management
+	// * LVM specifies logical volume manager, sometimes called logical disk manager.
 	StorageManagement *string `pulumi:"storageManagement"`
 }
 
@@ -111,9 +111,9 @@ type GetDbVersionsOutputArgs struct {
 	IsDatabaseSoftwareImageSupported pulumi.BoolPtrInput `pulumi:"isDatabaseSoftwareImageSupported"`
 	// If provided, filters the results to the set of database versions which are supported for Upgrade.
 	IsUpgradeSupported pulumi.BoolPtrInput `pulumi:"isUpgradeSupported"`
-	// The DB system storage management option. Used to list database versions available for that storage manager. Valid values are:
-	// * ASM - Automatic storage management
-	// * LVM - Logical volume management
+	// The DB system storage management option. Used to list database versions available for that storage manager. Valid values are `ASM` and `LVM`.
+	// * ASM specifies Oracle Automatic Storage Management
+	// * LVM specifies logical volume manager, sometimes called logical disk manager.
 	StorageManagement pulumi.StringPtrInput `pulumi:"storageManagement"`
 }
 

@@ -8,7 +8,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Database Tools Private Endpoints in Oracle Cloud Infrastructure Database Tools service.
  *
- * Returns a list of DatabaseToolsPrivateEndpoints.
+ * Returns a list of Database Tools private endpoints.
  *
  * ## Example Usage
  *
@@ -50,20 +50,20 @@ export interface GetDatabaseToolsPrivateEndpointsArgs {
      */
     compartmentId: string;
     /**
-     * A filter to return only resources that match the entire display name given.
+     * A filter to return only resources that match the entire specified display name.
      */
     displayName?: string;
     /**
-     * A filter to return only resources their type matches the given type.
+     * A filter to return only resources their `endpointServiceId` matches the specified `endpointServiceId`.
      */
     endpointServiceId?: string;
     filters?: inputs.DatabaseTools.GetDatabaseToolsPrivateEndpointsFilter[];
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
      */
     state?: string;
     /**
-     * A filter to return only resources their subnetId matches the given subnetId.
+     * A filter to return only resources their `subnetId` matches the specified `subnetId`.
      */
     subnetId?: string;
 }
@@ -73,7 +73,7 @@ export interface GetDatabaseToolsPrivateEndpointsArgs {
  */
 export interface GetDatabaseToolsPrivateEndpointsResult {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools private endpoint.
      */
     readonly compartmentId: string;
     /**
@@ -85,7 +85,7 @@ export interface GetDatabaseToolsPrivateEndpointsResult {
      */
     readonly displayName?: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsEndpointService.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Endpoint Service.
      */
     readonly endpointServiceId?: string;
     readonly filters?: outputs.DatabaseTools.GetDatabaseToolsPrivateEndpointsFilter[];
@@ -94,7 +94,7 @@ export interface GetDatabaseToolsPrivateEndpointsResult {
      */
     readonly id: string;
     /**
-     * The current state of the DatabaseToolsPrivateEndpoint.
+     * The current state of the Database Tools private endpoint.
      */
     readonly state?: string;
     /**
@@ -116,20 +116,20 @@ export interface GetDatabaseToolsPrivateEndpointsOutputArgs {
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * A filter to return only resources that match the entire display name given.
+     * A filter to return only resources that match the entire specified display name.
      */
     displayName?: pulumi.Input<string>;
     /**
-     * A filter to return only resources their type matches the given type.
+     * A filter to return only resources their `endpointServiceId` matches the specified `endpointServiceId`.
      */
     endpointServiceId?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.DatabaseTools.GetDatabaseToolsPrivateEndpointsFilterArgs>[]>;
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
      */
     state?: pulumi.Input<string>;
     /**
-     * A filter to return only resources their subnetId matches the given subnetId.
+     * A filter to return only resources their `subnetId` matches the specified `subnetId`.
      */
     subnetId?: pulumi.Input<string>;
 }

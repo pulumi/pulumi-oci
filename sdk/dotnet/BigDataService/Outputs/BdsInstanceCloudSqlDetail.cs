@@ -14,23 +14,23 @@ namespace Pulumi.Oci.BigDataService.Outputs
     public sealed class BdsInstanceCloudSqlDetail
     {
         /// <summary>
-        /// The size of block volume in GB to be attached to a given node. All the details needed for attaching the block volume are managed by service itself.
+        /// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
         /// </summary>
         public readonly string BlockVolumeSizeInGbs;
         /// <summary>
-        /// IP address of the node.
+        /// IP address of the node
         /// </summary>
         public readonly string? IpAddress;
         /// <summary>
-        /// Boolean flag specifying whether or not Kerberos principals are mapped to database users.
+        /// Boolean flag specifying whether or not are Kerberos principals mapped to database users.
         /// </summary>
         public readonly bool? IsKerberosMappedToDatabaseUsers;
         /// <summary>
-        /// Details about the Kerberos principals.
+        /// Details about Kerberos principals
         /// </summary>
         public readonly ImmutableArray<Outputs.BdsInstanceCloudSqlDetailKerberosDetail> KerberosDetails;
         /// <summary>
-        /// (Updatable) Shape of the node.
+        /// Shape of the node
         /// </summary>
         public readonly string Shape;
 

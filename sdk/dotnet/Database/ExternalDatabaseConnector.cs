@@ -32,6 +32,7 @@ namespace Pulumi.Oci.Database
     ///                 CredentialType = @var.External_database_connector_connection_credentials_credential_type,
     ///                 Password = @var.External_database_connector_connection_credentials_password,
     ///                 Role = @var.External_database_connector_connection_credentials_role,
+    ///                 SslSecretId = oci_vault_secret.Test_secret.Id,
     ///                 Username = @var.External_database_connector_connection_credentials_username,
     ///             },
     ///             ConnectionString = new Oci.Database.Inputs.ExternalDatabaseConnectorConnectionStringArgs

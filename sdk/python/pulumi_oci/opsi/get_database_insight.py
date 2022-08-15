@@ -21,7 +21,7 @@ class GetDatabaseInsightResult:
     """
     A collection of values returned by getDatabaseInsight.
     """
-    def __init__(__self__, compartment_id=None, connection_credential_details=None, connection_details=None, credential_details=None, database_connection_status_details=None, database_display_name=None, database_id=None, database_insight_id=None, database_name=None, database_resource_type=None, database_type=None, database_version=None, defined_tags=None, deployment_type=None, enterprise_manager_bridge_id=None, enterprise_manager_entity_display_name=None, enterprise_manager_entity_identifier=None, enterprise_manager_entity_name=None, enterprise_manager_entity_type=None, enterprise_manager_identifier=None, entity_source=None, exadata_insight_id=None, freeform_tags=None, id=None, lifecycle_details=None, opsi_private_endpoint_id=None, processor_count=None, service_name=None, state=None, status=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, connection_credential_details=None, connection_details=None, credential_details=None, database_connection_status_details=None, database_display_name=None, database_id=None, database_insight_id=None, database_name=None, database_resource_type=None, database_type=None, database_version=None, dbm_private_endpoint_id=None, defined_tags=None, deployment_type=None, enterprise_manager_bridge_id=None, enterprise_manager_entity_display_name=None, enterprise_manager_entity_identifier=None, enterprise_manager_entity_name=None, enterprise_manager_entity_type=None, enterprise_manager_identifier=None, entity_source=None, exadata_insight_id=None, freeform_tags=None, id=None, lifecycle_details=None, opsi_private_endpoint_id=None, processor_count=None, service_name=None, state=None, status=None, system_tags=None, time_created=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -58,6 +58,9 @@ class GetDatabaseInsightResult:
         if database_version and not isinstance(database_version, str):
             raise TypeError("Expected argument 'database_version' to be a str")
         pulumi.set(__self__, "database_version", database_version)
+        if dbm_private_endpoint_id and not isinstance(dbm_private_endpoint_id, str):
+            raise TypeError("Expected argument 'dbm_private_endpoint_id' to be a str")
+        pulumi.set(__self__, "dbm_private_endpoint_id", dbm_private_endpoint_id)
         if defined_tags and not isinstance(defined_tags, dict):
             raise TypeError("Expected argument 'defined_tags' to be a dict")
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -214,6 +217,11 @@ class GetDatabaseInsightResult:
         The version of the database.
         """
         return pulumi.get(self, "database_version")
+
+    @property
+    @pulumi.getter(name="dbmPrivateEndpointId")
+    def dbm_private_endpoint_id(self) -> str:
+        return pulumi.get(self, "dbm_private_endpoint_id")
 
     @property
     @pulumi.getter(name="definedTags")
@@ -399,6 +407,7 @@ class AwaitableGetDatabaseInsightResult(GetDatabaseInsightResult):
             database_resource_type=self.database_resource_type,
             database_type=self.database_type,
             database_version=self.database_version,
+            dbm_private_endpoint_id=self.dbm_private_endpoint_id,
             defined_tags=self.defined_tags,
             deployment_type=self.deployment_type,
             enterprise_manager_bridge_id=self.enterprise_manager_bridge_id,
@@ -462,6 +471,7 @@ def get_database_insight(database_insight_id: Optional[str] = None,
         database_resource_type=__ret__.database_resource_type,
         database_type=__ret__.database_type,
         database_version=__ret__.database_version,
+        dbm_private_endpoint_id=__ret__.dbm_private_endpoint_id,
         defined_tags=__ret__.defined_tags,
         deployment_type=__ret__.deployment_type,
         enterprise_manager_bridge_id=__ret__.enterprise_manager_bridge_id,

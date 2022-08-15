@@ -11,12 +11,12 @@ import java.util.Objects;
 @CustomType
 public final class GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOption {
     /**
-     * @return Possible boolean values indicating whether Trusted Platform Module (TPM) can be enabled or disabled
+     * @return Whether virtualization instructions can be enabled.
      * 
      */
     private final List<String> allowedValues;
     /**
-     * @return Indicates the default NUMA Nodes Per Socket configuration
+     * @return The default percentage of cores enabled.
      * 
      */
     private final String defaultValue;
@@ -30,14 +30,14 @@ public final class GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformO
     }
 
     /**
-     * @return Possible boolean values indicating whether Trusted Platform Module (TPM) can be enabled or disabled
+     * @return Whether virtualization instructions can be enabled.
      * 
      */
     public List<String> allowedValues() {
         return this.allowedValues;
     }
     /**
-     * @return Indicates the default NUMA Nodes Per Socket configuration
+     * @return The default percentage of cores enabled.
      * 
      */
     public String defaultValue() {

@@ -5,6 +5,7 @@ package com.pulumi.oci.ContainerEngine.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.ContainerEngine.inputs.ClusterClusterPodNetworkOptionArgs;
 import com.pulumi.oci.ContainerEngine.inputs.ClusterEndpointArgs;
 import com.pulumi.oci.ContainerEngine.inputs.ClusterEndpointConfigArgs;
 import com.pulumi.oci.ContainerEngine.inputs.ClusterImagePolicyConfigArgs;
@@ -36,6 +37,21 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<List<String>>> availableKubernetesUpgrades() {
         return Optional.ofNullable(this.availableKubernetesUpgrades);
+    }
+
+    /**
+     * Available CNIs and network options for existing and new node pools of the cluster
+     * 
+     */
+    @Import(name="clusterPodNetworkOptions")
+    private @Nullable Output<List<ClusterClusterPodNetworkOptionArgs>> clusterPodNetworkOptions;
+
+    /**
+     * @return Available CNIs and network options for existing and new node pools of the cluster
+     * 
+     */
+    public Optional<Output<List<ClusterClusterPodNetworkOptionArgs>>> clusterPodNetworkOptions() {
+        return Optional.ofNullable(this.clusterPodNetworkOptions);
     }
 
     /**
@@ -252,6 +268,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
 
     private ClusterState(ClusterState $) {
         this.availableKubernetesUpgrades = $.availableKubernetesUpgrades;
+        this.clusterPodNetworkOptions = $.clusterPodNetworkOptions;
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
         this.endpointConfig = $.endpointConfig;
@@ -315,6 +332,37 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder availableKubernetesUpgrades(String... availableKubernetesUpgrades) {
             return availableKubernetesUpgrades(List.of(availableKubernetesUpgrades));
+        }
+
+        /**
+         * @param clusterPodNetworkOptions Available CNIs and network options for existing and new node pools of the cluster
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterPodNetworkOptions(@Nullable Output<List<ClusterClusterPodNetworkOptionArgs>> clusterPodNetworkOptions) {
+            $.clusterPodNetworkOptions = clusterPodNetworkOptions;
+            return this;
+        }
+
+        /**
+         * @param clusterPodNetworkOptions Available CNIs and network options for existing and new node pools of the cluster
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterPodNetworkOptions(List<ClusterClusterPodNetworkOptionArgs> clusterPodNetworkOptions) {
+            return clusterPodNetworkOptions(Output.of(clusterPodNetworkOptions));
+        }
+
+        /**
+         * @param clusterPodNetworkOptions Available CNIs and network options for existing and new node pools of the cluster
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterPodNetworkOptions(ClusterClusterPodNetworkOptionArgs... clusterPodNetworkOptions) {
+            return clusterPodNetworkOptions(List.of(clusterPodNetworkOptions));
         }
 
         /**

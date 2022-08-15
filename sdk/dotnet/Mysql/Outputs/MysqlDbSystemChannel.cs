@@ -34,7 +34,7 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly string? Id;
         /// <summary>
-        /// (Updatable) Specifies if automatic backups are enabled.
+        /// (Updatable) Specifies if PITR is enabled or disabled.
         /// </summary>
         public readonly bool? IsEnabled;
         /// <summary>

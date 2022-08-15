@@ -14,14 +14,14 @@ public final class GetDatabaseToolsPrivateEndpointArgs extends com.pulumi.resour
     public static final GetDatabaseToolsPrivateEndpointArgs Empty = new GetDatabaseToolsPrivateEndpointArgs();
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a DatabaseToolsPrivateEndpoint.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools private endpoint.
      * 
      */
     @Import(name="databaseToolsPrivateEndpointId", required=true)
     private Output<String> databaseToolsPrivateEndpointId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a DatabaseToolsPrivateEndpoint.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools private endpoint.
      * 
      */
     public Output<String> databaseToolsPrivateEndpointId() {
@@ -53,7 +53,7 @@ public final class GetDatabaseToolsPrivateEndpointArgs extends com.pulumi.resour
         }
 
         /**
-         * @param databaseToolsPrivateEndpointId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a DatabaseToolsPrivateEndpoint.
+         * @param databaseToolsPrivateEndpointId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools private endpoint.
          * 
          * @return builder
          * 
@@ -64,7 +64,7 @@ public final class GetDatabaseToolsPrivateEndpointArgs extends com.pulumi.resour
         }
 
         /**
-         * @param databaseToolsPrivateEndpointId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a DatabaseToolsPrivateEndpoint.
+         * @param databaseToolsPrivateEndpointId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools private endpoint.
          * 
          * @return builder
          * 

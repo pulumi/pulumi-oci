@@ -24,9 +24,9 @@ class ManagedListArgs:
         """
         The set of arguments for constructing a ManagedList resource.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier
-        :param pulumi.Input[str] display_name: (Updatable) ManagedList display name
+        :param pulumi.Input[str] display_name: (Updatable) Managed list display name.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) ManagedList description
+        :param pulumi.Input[str] description: (Updatable) Managed list description.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] list_items: (Updatable) List of ManagedListItem
         :param pulumi.Input[str] list_type: type of the list
@@ -63,7 +63,7 @@ class ManagedListArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
         """
-        (Updatable) ManagedList display name
+        (Updatable) Managed list display name.
         """
         return pulumi.get(self, "display_name")
 
@@ -87,7 +87,7 @@ class ManagedListArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) ManagedList description
+        (Updatable) Managed list description.
         """
         return pulumi.get(self, "description")
 
@@ -166,8 +166,8 @@ class _ManagedListState:
         Input properties used for looking up and filtering ManagedList resources.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) ManagedList description
-        :param pulumi.Input[str] display_name: (Updatable) ManagedList display name
+        :param pulumi.Input[str] description: (Updatable) Managed list description.
+        :param pulumi.Input[str] display_name: (Updatable) Managed list display name.
         :param pulumi.Input[str] feed_provider: provider of the feed
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_editable: If this list is editable or not
@@ -239,7 +239,7 @@ class _ManagedListState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) ManagedList description
+        (Updatable) Managed list description.
         """
         return pulumi.get(self, "description")
 
@@ -251,7 +251,7 @@ class _ManagedListState:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) ManagedList display name
+        (Updatable) Managed list display name.
         """
         return pulumi.get(self, "display_name")
 
@@ -423,8 +423,8 @@ class ManagedList(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) ManagedList description
-        :param pulumi.Input[str] display_name: (Updatable) ManagedList display name
+        :param pulumi.Input[str] description: (Updatable) Managed list description.
+        :param pulumi.Input[str] display_name: (Updatable) Managed list display name.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] list_items: (Updatable) List of ManagedListItem
         :param pulumi.Input[str] list_type: type of the list
@@ -537,8 +537,8 @@ class ManagedList(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) ManagedList description
-        :param pulumi.Input[str] display_name: (Updatable) ManagedList display name
+        :param pulumi.Input[str] description: (Updatable) Managed list description.
+        :param pulumi.Input[str] display_name: (Updatable) Managed list display name.
         :param pulumi.Input[str] feed_provider: provider of the feed
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_editable: If this list is editable or not
@@ -592,7 +592,7 @@ class ManagedList(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[str]:
         """
-        (Updatable) ManagedList description
+        (Updatable) Managed list description.
         """
         return pulumi.get(self, "description")
 
@@ -600,7 +600,7 @@ class ManagedList(pulumi.CustomResource):
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
         """
-        (Updatable) ManagedList display name
+        (Updatable) Managed list display name.
         """
         return pulumi.get(self, "display_name")
 

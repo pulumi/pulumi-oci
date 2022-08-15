@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.CloudGuard.TargetArgs;
 import com.pulumi.oci.CloudGuard.inputs.TargetState;
+import com.pulumi.oci.CloudGuard.outputs.TargetTargetDetail;
 import com.pulumi.oci.CloudGuard.outputs.TargetTargetDetectorRecipe;
 import com.pulumi.oci.CloudGuard.outputs.TargetTargetResponderRecipe;
 import com.pulumi.oci.Utilities;
@@ -80,14 +81,14 @@ public class Target extends com.pulumi.resources.CustomResource {
         return this.description;
     }
     /**
-     * (Updatable) DetectorTemplate Identifier
+     * (Updatable) DetectorTemplate identifier.
      * 
      */
     @Export(name="displayName", type=String.class, parameters={})
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) DetectorTemplate Identifier
+     * @return (Updatable) DetectorTemplate identifier.
      * 
      */
     public Output<String> displayName() {
@@ -176,6 +177,20 @@ public class Target extends com.pulumi.resources.CustomResource {
      */
     public Output<Map<String,Object>> systemTags() {
         return this.systemTags;
+    }
+    /**
+     * Details specific to the target type.
+     * 
+     */
+    @Export(name="targetDetails", type=List.class, parameters={TargetTargetDetail.class})
+    private Output<List<TargetTargetDetail>> targetDetails;
+
+    /**
+     * @return Details specific to the target type.
+     * 
+     */
+    public Output<List<TargetTargetDetail>> targetDetails() {
+        return this.targetDetails;
     }
     /**
      * (Updatable) List of detector recipes to associate with target

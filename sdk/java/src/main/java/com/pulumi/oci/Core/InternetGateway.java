@@ -123,6 +123,20 @@ public class InternetGateway extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the Internet Gateway is using.
+     * 
+     */
+    @Export(name="routeTableId", type=String.class, parameters={})
+    private Output<String> routeTableId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the Internet Gateway is using.
+     * 
+     */
+    public Output<String> routeTableId() {
+        return this.routeTableId;
+    }
+    /**
      * The internet gateway&#39;s current state.
      * 
      */

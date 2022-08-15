@@ -11,6 +11,7 @@ import com.pulumi.oci.Database.ExternalNonContainerDatabaseArgs;
 import com.pulumi.oci.Database.inputs.ExternalNonContainerDatabaseState;
 import com.pulumi.oci.Database.outputs.ExternalNonContainerDatabaseDatabaseManagementConfig;
 import com.pulumi.oci.Database.outputs.ExternalNonContainerDatabaseOperationsInsightsConfig;
+import com.pulumi.oci.Database.outputs.ExternalNonContainerDatabaseStackMonitoringConfig;
 import com.pulumi.oci.Utilities;
 import java.lang.Object;
 import java.lang.String;
@@ -245,6 +246,20 @@ public class ExternalNonContainerDatabase extends com.pulumi.resources.CustomRes
      */
     public Output<List<ExternalNonContainerDatabaseOperationsInsightsConfig>> operationsInsightsConfigs() {
         return this.operationsInsightsConfigs;
+    }
+    /**
+     * The configuration of Stack Monitoring for the external database.
+     * 
+     */
+    @Export(name="stackMonitoringConfigs", type=List.class, parameters={ExternalNonContainerDatabaseStackMonitoringConfig.class})
+    private Output<List<ExternalNonContainerDatabaseStackMonitoringConfig>> stackMonitoringConfigs;
+
+    /**
+     * @return The configuration of Stack Monitoring for the external database.
+     * 
+     */
+    public Output<List<ExternalNonContainerDatabaseStackMonitoringConfig>> stackMonitoringConfigs() {
+        return this.stackMonitoringConfigs;
     }
     /**
      * The current state of the Oracle Cloud Infrastructure external database resource.

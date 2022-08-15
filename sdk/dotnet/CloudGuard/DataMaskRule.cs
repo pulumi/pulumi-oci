@@ -88,13 +88,13 @@ namespace Pulumi.Oci.CloudGuard
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
-        /// The Data Mask Rule description.
+        /// The data mask rule description. Avoid entering confidential information.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Data Mask Rule name
+        /// (Updatable) Data mask rule name.
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
@@ -230,13 +230,13 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
-        /// The Data Mask Rule description.
+        /// The data mask rule description. Avoid entering confidential information.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) Data Mask Rule name
+        /// (Updatable) Data mask rule name.
         /// </summary>
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
@@ -315,13 +315,13 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
-        /// The Data Mask Rule description.
+        /// The data mask rule description. Avoid entering confidential information.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) Data Mask Rule name
+        /// (Updatable) Data mask rule name.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }

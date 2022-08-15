@@ -12,6 +12,7 @@ __all__ = [
     'ApplicationImagePolicyConfigArgs',
     'ApplicationImagePolicyConfigKeyDetailArgs',
     'ApplicationTraceConfigArgs',
+    'FunctionProvisionedConcurrencyConfigArgs',
     'FunctionTraceConfigArgs',
     'GetApplicationsFilterArgs',
     'GetFunctionsFilterArgs',
@@ -114,6 +115,44 @@ class ApplicationTraceConfigArgs:
     @is_enabled.setter
     def is_enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_enabled", value)
+
+
+@pulumi.input_type
+class FunctionProvisionedConcurrencyConfigArgs:
+    def __init__(__self__, *,
+                 strategy: pulumi.Input[str],
+                 count: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[str] strategy: (Updatable) The strategy for provisioned concurrency to be used.
+        :param pulumi.Input[int] count: (Updatable)
+        """
+        pulumi.set(__self__, "strategy", strategy)
+        if count is not None:
+            pulumi.set(__self__, "count", count)
+
+    @property
+    @pulumi.getter
+    def strategy(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The strategy for provisioned concurrency to be used.
+        """
+        return pulumi.get(self, "strategy")
+
+    @strategy.setter
+    def strategy(self, value: pulumi.Input[str]):
+        pulumi.set(self, "strategy", value)
+
+    @property
+    @pulumi.getter
+    def count(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable)
+        """
+        return pulumi.get(self, "count")
+
+    @count.setter
+    def count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "count", value)
 
 
 @pulumi.input_type

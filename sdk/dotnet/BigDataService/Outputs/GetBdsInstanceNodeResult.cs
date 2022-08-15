@@ -46,9 +46,17 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// </summary>
         public readonly string IpAddress;
         /// <summary>
+        /// The total amount of memory available to the node, in gigabytes.
+        /// </summary>
+        public readonly int MemoryInGbs;
+        /// <summary>
         /// Cluster node type.
         /// </summary>
         public readonly string NodeType;
+        /// <summary>
+        /// The total number of OCPUs available to the node.
+        /// </summary>
+        public readonly int Ocpus;
         /// <summary>
         /// Shape of the node.
         /// </summary>
@@ -88,7 +96,11 @@ namespace Pulumi.Oci.BigDataService.Outputs
 
             string ipAddress,
 
+            int memoryInGbs,
+
             string nodeType,
+
+            int ocpus,
 
             string shape,
 
@@ -108,7 +120,9 @@ namespace Pulumi.Oci.BigDataService.Outputs
             ImageId = imageId;
             InstanceId = instanceId;
             IpAddress = ipAddress;
+            MemoryInGbs = memoryInGbs;
             NodeType = nodeType;
+            Ocpus = ocpus;
             Shape = shape;
             SshFingerprint = sshFingerprint;
             State = state;

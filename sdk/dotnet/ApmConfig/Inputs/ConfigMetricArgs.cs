@@ -13,25 +13,25 @@ namespace Pulumi.Oci.ApmConfig.Inputs
     public sealed class ConfigMetricArgs : Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) A description of the metric
+        /// (Updatable) A description of the metric.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) The name of the metric
+        /// (Updatable) The name of the metric. This must be a known metric name.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// (Updatable) The unit of the metric
+        /// (Updatable) The unit of the metric.
         /// </summary>
         [Input("unit")]
         public Input<string>? Unit { get; set; }
 
         /// <summary>
-        /// (Updatable) Must be NULL at the moment, and "name" must be a known metric.
+        /// (Updatable) This must not be set.
         /// </summary>
         [Input("valueSource")]
         public Input<string>? ValueSource { get; set; }

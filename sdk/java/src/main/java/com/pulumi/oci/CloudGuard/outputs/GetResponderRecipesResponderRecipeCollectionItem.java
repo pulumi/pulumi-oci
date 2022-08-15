@@ -25,7 +25,7 @@ public final class GetResponderRecipesResponderRecipeCollectionItem {
      */
     private final Map<String,Object> definedTags;
     /**
-     * @return ResponderRule Description
+     * @return ResponderRule description.
      * 
      */
     private final String description;
@@ -139,7 +139,7 @@ public final class GetResponderRecipesResponderRecipeCollectionItem {
         return this.definedTags;
     }
     /**
-     * @return ResponderRule Description
+     * @return ResponderRule description.
      * 
      */
     public String description() {

@@ -13,7 +13,7 @@ import (
 
 // This resource provides the Database Tools Connection resource in Oracle Cloud Infrastructure Database Tools service.
 //
-// Creates a new DatabaseToolsConnection.
+// Creates a new Database Tools connection.
 //
 // ## Example Usage
 //
@@ -59,8 +59,8 @@ import (
 // 			},
 // 			UserName: pulumi.Any(oci_identity_user.Test_user.Name),
 // 			UserPassword: &databasetools.DatabaseToolsConnectionUserPasswordArgs{
-// 				ValueType: pulumi.Any(_var.Database_tools_connection_user_password_value_type),
 // 				SecretId:  pulumi.Any(oci_vault_secret.Test_secret.Id),
+// 				ValueType: pulumi.Any(_var.Database_tools_connection_user_password_value_type),
 // 			},
 // 		})
 // 		if err != nil {
@@ -81,11 +81,11 @@ import (
 type DatabaseToolsConnection struct {
 	pulumi.CustomResourceState
 
-	// (Updatable) Advanced connection properties key-value pair (e.g., oracle.net.ssl_server_dn_match).
+	// (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
 	AdvancedProperties pulumi.MapOutput `pulumi:"advancedProperties"`
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// (Updatable) Connect descriptor or Easy Connect Naming method to connect to the database.
+	// (Updatable) The connect descriptor or Easy Connect Naming method use to connect to the database.
 	ConnectionString pulumi.StringOutput `pulumi:"connectionString"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
@@ -95,23 +95,23 @@ type DatabaseToolsConnection struct {
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
 	KeyStores DatabaseToolsConnectionKeyStoreArrayOutput `pulumi:"keyStores"`
-	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	// A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsPrivateEndpoint used to access the database in the Customer VCN.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
 	PrivateEndpointId pulumi.StringOutput `pulumi:"privateEndpointId"`
 	// (Updatable) The related resource
 	RelatedResource DatabaseToolsConnectionRelatedResourceOutput `pulumi:"relatedResource"`
-	// The current state of the DatabaseToolsConnection.
+	// The current state of the Database Tools connection.
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
-	// The time the DatabaseToolsConnection was created. An RFC3339 formatted datetime string
+	// The time the Database Tools connection was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
-	// The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string
+	// The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 	// (Updatable) The DatabaseToolsConnection type.
 	Type pulumi.StringOutput `pulumi:"type"`
-	// (Updatable) Database user name.
+	// (Updatable) The database user name.
 	UserName pulumi.StringOutput `pulumi:"userName"`
 	// (Updatable) The user password.
 	UserPassword DatabaseToolsConnectionUserPasswordOutput `pulumi:"userPassword"`
@@ -155,11 +155,11 @@ func GetDatabaseToolsConnection(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering DatabaseToolsConnection resources.
 type databaseToolsConnectionState struct {
-	// (Updatable) Advanced connection properties key-value pair (e.g., oracle.net.ssl_server_dn_match).
+	// (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
 	AdvancedProperties map[string]interface{} `pulumi:"advancedProperties"`
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// (Updatable) Connect descriptor or Easy Connect Naming method to connect to the database.
+	// (Updatable) The connect descriptor or Easy Connect Naming method use to connect to the database.
 	ConnectionString *string `pulumi:"connectionString"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -169,34 +169,34 @@ type databaseToolsConnectionState struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
 	KeyStores []DatabaseToolsConnectionKeyStore `pulumi:"keyStores"`
-	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	// A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsPrivateEndpoint used to access the database in the Customer VCN.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
 	PrivateEndpointId *string `pulumi:"privateEndpointId"`
 	// (Updatable) The related resource
 	RelatedResource *DatabaseToolsConnectionRelatedResource `pulumi:"relatedResource"`
-	// The current state of the DatabaseToolsConnection.
+	// The current state of the Database Tools connection.
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// The time the DatabaseToolsConnection was created. An RFC3339 formatted datetime string
+	// The time the Database Tools connection was created. An RFC3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
-	// The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string
+	// The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
 	TimeUpdated *string `pulumi:"timeUpdated"`
 	// (Updatable) The DatabaseToolsConnection type.
 	Type *string `pulumi:"type"`
-	// (Updatable) Database user name.
+	// (Updatable) The database user name.
 	UserName *string `pulumi:"userName"`
 	// (Updatable) The user password.
 	UserPassword *DatabaseToolsConnectionUserPassword `pulumi:"userPassword"`
 }
 
 type DatabaseToolsConnectionState struct {
-	// (Updatable) Advanced connection properties key-value pair (e.g., oracle.net.ssl_server_dn_match).
+	// (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
 	AdvancedProperties pulumi.MapInput
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
 	CompartmentId pulumi.StringPtrInput
-	// (Updatable) Connect descriptor or Easy Connect Naming method to connect to the database.
+	// (Updatable) The connect descriptor or Easy Connect Naming method use to connect to the database.
 	ConnectionString pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
@@ -206,23 +206,23 @@ type DatabaseToolsConnectionState struct {
 	FreeformTags pulumi.MapInput
 	// (Updatable) Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
 	KeyStores DatabaseToolsConnectionKeyStoreArrayInput
-	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	// A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails pulumi.StringPtrInput
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsPrivateEndpoint used to access the database in the Customer VCN.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
 	PrivateEndpointId pulumi.StringPtrInput
 	// (Updatable) The related resource
 	RelatedResource DatabaseToolsConnectionRelatedResourcePtrInput
-	// The current state of the DatabaseToolsConnection.
+	// The current state of the Database Tools connection.
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput
-	// The time the DatabaseToolsConnection was created. An RFC3339 formatted datetime string
+	// The time the Database Tools connection was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
-	// The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string
+	// The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringPtrInput
 	// (Updatable) The DatabaseToolsConnection type.
 	Type pulumi.StringPtrInput
-	// (Updatable) Database user name.
+	// (Updatable) The database user name.
 	UserName pulumi.StringPtrInput
 	// (Updatable) The user password.
 	UserPassword DatabaseToolsConnectionUserPasswordPtrInput
@@ -233,11 +233,11 @@ func (DatabaseToolsConnectionState) ElementType() reflect.Type {
 }
 
 type databaseToolsConnectionArgs struct {
-	// (Updatable) Advanced connection properties key-value pair (e.g., oracle.net.ssl_server_dn_match).
+	// (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
 	AdvancedProperties map[string]interface{} `pulumi:"advancedProperties"`
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
 	CompartmentId string `pulumi:"compartmentId"`
-	// (Updatable) Connect descriptor or Easy Connect Naming method to connect to the database.
+	// (Updatable) The connect descriptor or Easy Connect Naming method use to connect to the database.
 	ConnectionString *string `pulumi:"connectionString"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -247,13 +247,13 @@ type databaseToolsConnectionArgs struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
 	KeyStores []DatabaseToolsConnectionKeyStore `pulumi:"keyStores"`
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsPrivateEndpoint used to access the database in the Customer VCN.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
 	PrivateEndpointId *string `pulumi:"privateEndpointId"`
 	// (Updatable) The related resource
 	RelatedResource *DatabaseToolsConnectionRelatedResource `pulumi:"relatedResource"`
 	// (Updatable) The DatabaseToolsConnection type.
 	Type string `pulumi:"type"`
-	// (Updatable) Database user name.
+	// (Updatable) The database user name.
 	UserName *string `pulumi:"userName"`
 	// (Updatable) The user password.
 	UserPassword *DatabaseToolsConnectionUserPassword `pulumi:"userPassword"`
@@ -261,11 +261,11 @@ type databaseToolsConnectionArgs struct {
 
 // The set of arguments for constructing a DatabaseToolsConnection resource.
 type DatabaseToolsConnectionArgs struct {
-	// (Updatable) Advanced connection properties key-value pair (e.g., oracle.net.ssl_server_dn_match).
+	// (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
 	AdvancedProperties pulumi.MapInput
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the containing Compartment.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
 	CompartmentId pulumi.StringInput
-	// (Updatable) Connect descriptor or Easy Connect Naming method to connect to the database.
+	// (Updatable) The connect descriptor or Easy Connect Naming method use to connect to the database.
 	ConnectionString pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
@@ -275,13 +275,13 @@ type DatabaseToolsConnectionArgs struct {
 	FreeformTags pulumi.MapInput
 	// (Updatable) Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
 	KeyStores DatabaseToolsConnectionKeyStoreArrayInput
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsPrivateEndpoint used to access the database in the Customer VCN.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
 	PrivateEndpointId pulumi.StringPtrInput
 	// (Updatable) The related resource
 	RelatedResource DatabaseToolsConnectionRelatedResourcePtrInput
 	// (Updatable) The DatabaseToolsConnection type.
 	Type pulumi.StringInput
-	// (Updatable) Database user name.
+	// (Updatable) The database user name.
 	UserName pulumi.StringPtrInput
 	// (Updatable) The user password.
 	UserPassword DatabaseToolsConnectionUserPasswordPtrInput

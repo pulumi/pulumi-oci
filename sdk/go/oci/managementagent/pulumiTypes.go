@@ -19,6 +19,10 @@ type ManagementAgentPluginList struct {
 	PluginId *string `pulumi:"pluginId"`
 	// Management Agent Plugin Name
 	PluginName *string `pulumi:"pluginName"`
+	// Plugin Status
+	PluginStatus *string `pulumi:"pluginStatus"`
+	// Status message of the Plugin
+	PluginStatusMessage *string `pulumi:"pluginStatusMessage"`
 	// Plugin Version
 	PluginVersion *string `pulumi:"pluginVersion"`
 }
@@ -43,6 +47,10 @@ type ManagementAgentPluginListArgs struct {
 	PluginId pulumi.StringPtrInput `pulumi:"pluginId"`
 	// Management Agent Plugin Name
 	PluginName pulumi.StringPtrInput `pulumi:"pluginName"`
+	// Plugin Status
+	PluginStatus pulumi.StringPtrInput `pulumi:"pluginStatus"`
+	// Status message of the Plugin
+	PluginStatusMessage pulumi.StringPtrInput `pulumi:"pluginStatusMessage"`
 	// Plugin Version
 	PluginVersion pulumi.StringPtrInput `pulumi:"pluginVersion"`
 }
@@ -116,6 +124,16 @@ func (o ManagementAgentPluginListOutput) PluginId() pulumi.StringPtrOutput {
 // Management Agent Plugin Name
 func (o ManagementAgentPluginListOutput) PluginName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ManagementAgentPluginList) *string { return v.PluginName }).(pulumi.StringPtrOutput)
+}
+
+// Plugin Status
+func (o ManagementAgentPluginListOutput) PluginStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementAgentPluginList) *string { return v.PluginStatus }).(pulumi.StringPtrOutput)
+}
+
+// Status message of the Plugin
+func (o ManagementAgentPluginListOutput) PluginStatusMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementAgentPluginList) *string { return v.PluginStatusMessage }).(pulumi.StringPtrOutput)
 }
 
 // Plugin Version
@@ -1437,6 +1455,10 @@ type GetManagementAgentPluginList struct {
 	PluginId string `pulumi:"pluginId"`
 	// Management Agent Plugin Name
 	PluginName string `pulumi:"pluginName"`
+	// Plugin Status
+	PluginStatus string `pulumi:"pluginStatus"`
+	// Status message of the Plugin
+	PluginStatusMessage string `pulumi:"pluginStatusMessage"`
 	// Plugin Version
 	PluginVersion string `pulumi:"pluginVersion"`
 }
@@ -1461,6 +1483,10 @@ type GetManagementAgentPluginListArgs struct {
 	PluginId pulumi.StringInput `pulumi:"pluginId"`
 	// Management Agent Plugin Name
 	PluginName pulumi.StringInput `pulumi:"pluginName"`
+	// Plugin Status
+	PluginStatus pulumi.StringInput `pulumi:"pluginStatus"`
+	// Status message of the Plugin
+	PluginStatusMessage pulumi.StringInput `pulumi:"pluginStatusMessage"`
 	// Plugin Version
 	PluginVersion pulumi.StringInput `pulumi:"pluginVersion"`
 }
@@ -1534,6 +1560,16 @@ func (o GetManagementAgentPluginListOutput) PluginId() pulumi.StringOutput {
 // Management Agent Plugin Name
 func (o GetManagementAgentPluginListOutput) PluginName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagementAgentPluginList) string { return v.PluginName }).(pulumi.StringOutput)
+}
+
+// Plugin Status
+func (o GetManagementAgentPluginListOutput) PluginStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentPluginList) string { return v.PluginStatus }).(pulumi.StringOutput)
+}
+
+// Status message of the Plugin
+func (o GetManagementAgentPluginListOutput) PluginStatusMessage() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentPluginList) string { return v.PluginStatusMessage }).(pulumi.StringOutput)
 }
 
 // Plugin Version
@@ -1969,7 +2005,7 @@ type GetManagementAgentsManagementAgent struct {
 	ManagedAgentId   string `pulumi:"managedAgentId"`
 	// Platform Name
 	PlatformName string `pulumi:"platformName"`
-	// Filter to return only results having the particular platform type.
+	// Array of PlatformTypes to return only results having the particular platform types. Example: ["LINUX"]
 	PlatformType string `pulumi:"platformType"`
 	// Platform Version
 	PlatformVersion string `pulumi:"platformVersion"`
@@ -1985,7 +2021,7 @@ type GetManagementAgentsManagementAgent struct {
 	TimeLastHeartbeat string `pulumi:"timeLastHeartbeat"`
 	// The time the Management Agent was last updated. An RFC3339 formatted datetime string
 	TimeUpdated string `pulumi:"timeUpdated"`
-	// Filter to return only Management Agents having the particular agent version.
+	// Array of versions to return only Management Agents having the particular agent versions. Example: ["202020.0101","210201.0513"]
 	Version string `pulumi:"version"`
 }
 
@@ -2033,7 +2069,7 @@ type GetManagementAgentsManagementAgentArgs struct {
 	ManagedAgentId   pulumi.StringInput `pulumi:"managedAgentId"`
 	// Platform Name
 	PlatformName pulumi.StringInput `pulumi:"platformName"`
-	// Filter to return only results having the particular platform type.
+	// Array of PlatformTypes to return only results having the particular platform types. Example: ["LINUX"]
 	PlatformType pulumi.StringInput `pulumi:"platformType"`
 	// Platform Version
 	PlatformVersion pulumi.StringInput `pulumi:"platformVersion"`
@@ -2049,7 +2085,7 @@ type GetManagementAgentsManagementAgentArgs struct {
 	TimeLastHeartbeat pulumi.StringInput `pulumi:"timeLastHeartbeat"`
 	// The time the Management Agent was last updated. An RFC3339 formatted datetime string
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
-	// Filter to return only Management Agents having the particular agent version.
+	// Array of versions to return only Management Agents having the particular agent versions. Example: ["202020.0101","210201.0513"]
 	Version pulumi.StringInput `pulumi:"version"`
 }
 
@@ -2187,7 +2223,7 @@ func (o GetManagementAgentsManagementAgentOutput) PlatformName() pulumi.StringOu
 	return o.ApplyT(func(v GetManagementAgentsManagementAgent) string { return v.PlatformName }).(pulumi.StringOutput)
 }
 
-// Filter to return only results having the particular platform type.
+// Array of PlatformTypes to return only results having the particular platform types. Example: ["LINUX"]
 func (o GetManagementAgentsManagementAgentOutput) PlatformType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagementAgentsManagementAgent) string { return v.PlatformType }).(pulumi.StringOutput)
 }
@@ -2229,7 +2265,7 @@ func (o GetManagementAgentsManagementAgentOutput) TimeUpdated() pulumi.StringOut
 	return o.ApplyT(func(v GetManagementAgentsManagementAgent) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// Filter to return only Management Agents having the particular agent version.
+// Array of versions to return only Management Agents having the particular agent versions. Example: ["202020.0101","210201.0513"]
 func (o GetManagementAgentsManagementAgentOutput) Version() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagementAgentsManagementAgent) string { return v.Version }).(pulumi.StringOutput)
 }
@@ -2261,8 +2297,12 @@ type GetManagementAgentsManagementAgentPluginList struct {
 	PluginDisplayName string `pulumi:"pluginDisplayName"`
 	// Plugin Id
 	PluginId string `pulumi:"pluginId"`
-	// Filter to return only Management Agents having the particular Plugin installed. A special pluginName of 'None' can be provided and this will return only Management Agents having no plugin installed.
+	// Array of pluginName to return only Management Agents having the particular Plugins installed. A special pluginName of 'None' can be provided and this will return only Management Agents having no plugin installed. Example: ["PluginA"]
 	PluginName string `pulumi:"pluginName"`
+	// Plugin Status
+	PluginStatus string `pulumi:"pluginStatus"`
+	// Status message of the Plugin
+	PluginStatusMessage string `pulumi:"pluginStatusMessage"`
 	// Plugin Version
 	PluginVersion string `pulumi:"pluginVersion"`
 }
@@ -2285,8 +2325,12 @@ type GetManagementAgentsManagementAgentPluginListArgs struct {
 	PluginDisplayName pulumi.StringInput `pulumi:"pluginDisplayName"`
 	// Plugin Id
 	PluginId pulumi.StringInput `pulumi:"pluginId"`
-	// Filter to return only Management Agents having the particular Plugin installed. A special pluginName of 'None' can be provided and this will return only Management Agents having no plugin installed.
+	// Array of pluginName to return only Management Agents having the particular Plugins installed. A special pluginName of 'None' can be provided and this will return only Management Agents having no plugin installed. Example: ["PluginA"]
 	PluginName pulumi.StringInput `pulumi:"pluginName"`
+	// Plugin Status
+	PluginStatus pulumi.StringInput `pulumi:"pluginStatus"`
+	// Status message of the Plugin
+	PluginStatusMessage pulumi.StringInput `pulumi:"pluginStatusMessage"`
 	// Plugin Version
 	PluginVersion pulumi.StringInput `pulumi:"pluginVersion"`
 }
@@ -2357,9 +2401,19 @@ func (o GetManagementAgentsManagementAgentPluginListOutput) PluginId() pulumi.St
 	return o.ApplyT(func(v GetManagementAgentsManagementAgentPluginList) string { return v.PluginId }).(pulumi.StringOutput)
 }
 
-// Filter to return only Management Agents having the particular Plugin installed. A special pluginName of 'None' can be provided and this will return only Management Agents having no plugin installed.
+// Array of pluginName to return only Management Agents having the particular Plugins installed. A special pluginName of 'None' can be provided and this will return only Management Agents having no plugin installed. Example: ["PluginA"]
 func (o GetManagementAgentsManagementAgentPluginListOutput) PluginName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagementAgentsManagementAgentPluginList) string { return v.PluginName }).(pulumi.StringOutput)
+}
+
+// Plugin Status
+func (o GetManagementAgentsManagementAgentPluginListOutput) PluginStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgentPluginList) string { return v.PluginStatus }).(pulumi.StringOutput)
+}
+
+// Status message of the Plugin
+func (o GetManagementAgentsManagementAgentPluginListOutput) PluginStatusMessage() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgentPluginList) string { return v.PluginStatusMessage }).(pulumi.StringOutput)
 }
 
 // Plugin Version

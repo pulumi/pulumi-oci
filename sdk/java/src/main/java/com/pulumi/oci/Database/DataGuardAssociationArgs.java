@@ -6,8 +6,11 @@ package com.pulumi.oci.Database;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Boolean;
+import java.lang.Integer;
+import java.lang.Object;
 import java.lang.String;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -45,6 +48,21 @@ public final class DataGuardAssociationArgs extends com.pulumi.resources.Resourc
      */
     public Optional<Output<List<String>>> backupNetworkNsgIds() {
         return Optional.ofNullable(this.backupNetworkNsgIds);
+    }
+
+    /**
+     * The number of OCPU cores available for AMD-based virtual machine DB systems.
+     * 
+     */
+    @Import(name="cpuCoreCount")
+    private @Nullable Output<Integer> cpuCoreCount;
+
+    /**
+     * @return The number of OCPU cores available for AMD-based virtual machine DB systems.
+     * 
+     */
+    public Optional<Output<Integer>> cpuCoreCount() {
+        return Optional.ofNullable(this.cpuCoreCount);
     }
 
     @Import(name="createAsync")
@@ -85,6 +103,36 @@ public final class DataGuardAssociationArgs extends com.pulumi.resources.Resourc
     }
 
     /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    @Import(name="databaseDefinedTags")
+    private @Nullable Output<Map<String,Object>> databaseDefinedTags;
+
+    /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    public Optional<Output<Map<String,Object>>> databaseDefinedTags() {
+        return Optional.ofNullable(this.databaseDefinedTags);
+    }
+
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    @Import(name="databaseFreeformTags")
+    private @Nullable Output<Map<String,Object>> databaseFreeformTags;
+
+    /**
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    public Optional<Output<Map<String,Object>>> databaseFreeformTags() {
+        return Optional.ofNullable(this.databaseFreeformTags);
+    }
+
+    /**
      * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
@@ -114,6 +162,36 @@ public final class DataGuardAssociationArgs extends com.pulumi.resources.Resourc
         return Optional.ofNullable(this.databaseSoftwareImageId);
     }
 
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    @Import(name="dbSystemDefinedTags")
+    private @Nullable Output<Map<String,Object>> dbSystemDefinedTags;
+
+    /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    public Optional<Output<Map<String,Object>>> dbSystemDefinedTags() {
+        return Optional.ofNullable(this.dbSystemDefinedTags);
+    }
+
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    @Import(name="dbSystemFreeformTags")
+    private @Nullable Output<Map<String,Object>> dbSystemFreeformTags;
+
+    /**
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    public Optional<Output<Map<String,Object>>> dbSystemFreeformTags() {
+        return Optional.ofNullable(this.dbSystemFreeformTags);
+    }
+
     @Import(name="deleteStandbyDbHomeOnDelete", required=true)
     private Output<String> deleteStandbyDbHomeOnDelete;
 
@@ -134,6 +212,21 @@ public final class DataGuardAssociationArgs extends com.pulumi.resources.Resourc
      */
     public Optional<Output<String>> displayName() {
         return Optional.ofNullable(this.displayName);
+    }
+
+    /**
+     * A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
+     * 
+     */
+    @Import(name="faultDomains")
+    private @Nullable Output<List<String>> faultDomains;
+
+    /**
+     * @return A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
+     * 
+     */
+    public Optional<Output<List<String>>> faultDomains() {
+        return Optional.ofNullable(this.faultDomains);
     }
 
     /**
@@ -167,16 +260,46 @@ public final class DataGuardAssociationArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-     * * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+     * The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED.
+     * 
+     */
+    @Import(name="licenseModel")
+    private @Nullable Output<String> licenseModel;
+
+    /**
+     * @return The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED.
+     * 
+     */
+    public Optional<Output<String>> licenseModel() {
+        return Optional.ofNullable(this.licenseModel);
+    }
+
+    /**
+     * The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
+     * 
+     */
+    @Import(name="nodeCount")
+    private @Nullable Output<Integer> nodeCount;
+
+    /**
+     * @return The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
+     * 
+     */
+    public Optional<Output<Integer>> nodeCount() {
+        return Optional.ofNullable(this.nodeCount);
+    }
+
+    /**
+     * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+     * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      * 
      */
     @Import(name="nsgIds")
     private @Nullable Output<List<String>> nsgIds;
 
     /**
-     * @return A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-     * * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+     * @return The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+     * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      * 
      */
     public Optional<Output<List<String>>> nsgIds() {
@@ -259,6 +382,21 @@ public final class DataGuardAssociationArgs extends com.pulumi.resources.Resourc
     }
 
     /**
+     * The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
+     * 
+     */
+    @Import(name="privateIp")
+    private @Nullable Output<String> privateIp;
+
+    /**
+     * @return The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
+     * 
+     */
+    public Optional<Output<String>> privateIp() {
+        return Optional.ofNullable(this.privateIp);
+    }
+
+    /**
      * (Updatable) The protection mode to set up between the primary and standby databases. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
      * 
      */
@@ -289,6 +427,21 @@ public final class DataGuardAssociationArgs extends com.pulumi.resources.Resourc
     }
 
     /**
+     * The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
+     * 
+     */
+    @Import(name="storageVolumePerformanceMode")
+    private @Nullable Output<String> storageVolumePerformanceMode;
+
+    /**
+     * @return The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
+     * 
+     */
+    public Optional<Output<String>> storageVolumePerformanceMode() {
+        return Optional.ofNullable(this.storageVolumePerformanceMode);
+    }
+
+    /**
      * The OCID of the subnet the DB system is associated with. **Subnet Restrictions:**
      * * For 1- and 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.16.16/28
      * 
@@ -303,6 +456,21 @@ public final class DataGuardAssociationArgs extends com.pulumi.resources.Resourc
      */
     public Optional<Output<String>> subnetId() {
         return Optional.ofNullable(this.subnetId);
+    }
+
+    /**
+     * The time zone of the dataguard standby DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+     * 
+     */
+    @Import(name="timeZone")
+    private @Nullable Output<String> timeZone;
+
+    /**
+     * @return The time zone of the dataguard standby DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+     * 
+     */
+    public Optional<Output<String>> timeZone() {
+        return Optional.ofNullable(this.timeZone);
     }
 
     /**
@@ -331,24 +499,35 @@ public final class DataGuardAssociationArgs extends com.pulumi.resources.Resourc
     private DataGuardAssociationArgs(DataGuardAssociationArgs $) {
         this.availabilityDomain = $.availabilityDomain;
         this.backupNetworkNsgIds = $.backupNetworkNsgIds;
+        this.cpuCoreCount = $.cpuCoreCount;
         this.createAsync = $.createAsync;
         this.creationType = $.creationType;
         this.databaseAdminPassword = $.databaseAdminPassword;
+        this.databaseDefinedTags = $.databaseDefinedTags;
+        this.databaseFreeformTags = $.databaseFreeformTags;
         this.databaseId = $.databaseId;
         this.databaseSoftwareImageId = $.databaseSoftwareImageId;
+        this.dbSystemDefinedTags = $.dbSystemDefinedTags;
+        this.dbSystemFreeformTags = $.dbSystemFreeformTags;
         this.deleteStandbyDbHomeOnDelete = $.deleteStandbyDbHomeOnDelete;
         this.displayName = $.displayName;
+        this.faultDomains = $.faultDomains;
         this.hostname = $.hostname;
         this.isActiveDataGuardEnabled = $.isActiveDataGuardEnabled;
+        this.licenseModel = $.licenseModel;
+        this.nodeCount = $.nodeCount;
         this.nsgIds = $.nsgIds;
         this.peerDbHomeId = $.peerDbHomeId;
         this.peerDbSystemId = $.peerDbSystemId;
         this.peerDbUniqueName = $.peerDbUniqueName;
         this.peerSidPrefix = $.peerSidPrefix;
         this.peerVmClusterId = $.peerVmClusterId;
+        this.privateIp = $.privateIp;
         this.protectionMode = $.protectionMode;
         this.shape = $.shape;
+        this.storageVolumePerformanceMode = $.storageVolumePerformanceMode;
         this.subnetId = $.subnetId;
+        this.timeZone = $.timeZone;
         this.transportType = $.transportType;
     }
 
@@ -422,6 +601,27 @@ public final class DataGuardAssociationArgs extends com.pulumi.resources.Resourc
             return backupNetworkNsgIds(List.of(backupNetworkNsgIds));
         }
 
+        /**
+         * @param cpuCoreCount The number of OCPU cores available for AMD-based virtual machine DB systems.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder cpuCoreCount(@Nullable Output<Integer> cpuCoreCount) {
+            $.cpuCoreCount = cpuCoreCount;
+            return this;
+        }
+
+        /**
+         * @param cpuCoreCount The number of OCPU cores available for AMD-based virtual machine DB systems.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder cpuCoreCount(Integer cpuCoreCount) {
+            return cpuCoreCount(Output.of(cpuCoreCount));
+        }
+
         public Builder createAsync(@Nullable Output<Boolean> createAsync) {
             $.createAsync = createAsync;
             return this;
@@ -474,6 +674,48 @@ public final class DataGuardAssociationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
+         * @param databaseDefinedTags Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseDefinedTags(@Nullable Output<Map<String,Object>> databaseDefinedTags) {
+            $.databaseDefinedTags = databaseDefinedTags;
+            return this;
+        }
+
+        /**
+         * @param databaseDefinedTags Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseDefinedTags(Map<String,Object> databaseDefinedTags) {
+            return databaseDefinedTags(Output.of(databaseDefinedTags));
+        }
+
+        /**
+         * @param databaseFreeformTags Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseFreeformTags(@Nullable Output<Map<String,Object>> databaseFreeformTags) {
+            $.databaseFreeformTags = databaseFreeformTags;
+            return this;
+        }
+
+        /**
+         * @param databaseFreeformTags Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseFreeformTags(Map<String,Object> databaseFreeformTags) {
+            return databaseFreeformTags(Output.of(databaseFreeformTags));
+        }
+
+        /**
          * @param databaseId The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
@@ -515,6 +757,48 @@ public final class DataGuardAssociationArgs extends com.pulumi.resources.Resourc
             return databaseSoftwareImageId(Output.of(databaseSoftwareImageId));
         }
 
+        /**
+         * @param dbSystemDefinedTags Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbSystemDefinedTags(@Nullable Output<Map<String,Object>> dbSystemDefinedTags) {
+            $.dbSystemDefinedTags = dbSystemDefinedTags;
+            return this;
+        }
+
+        /**
+         * @param dbSystemDefinedTags Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbSystemDefinedTags(Map<String,Object> dbSystemDefinedTags) {
+            return dbSystemDefinedTags(Output.of(dbSystemDefinedTags));
+        }
+
+        /**
+         * @param dbSystemFreeformTags Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbSystemFreeformTags(@Nullable Output<Map<String,Object>> dbSystemFreeformTags) {
+            $.dbSystemFreeformTags = dbSystemFreeformTags;
+            return this;
+        }
+
+        /**
+         * @param dbSystemFreeformTags Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbSystemFreeformTags(Map<String,Object> dbSystemFreeformTags) {
+            return dbSystemFreeformTags(Output.of(dbSystemFreeformTags));
+        }
+
         public Builder deleteStandbyDbHomeOnDelete(Output<String> deleteStandbyDbHomeOnDelete) {
             $.deleteStandbyDbHomeOnDelete = deleteStandbyDbHomeOnDelete;
             return this;
@@ -543,6 +827,37 @@ public final class DataGuardAssociationArgs extends com.pulumi.resources.Resourc
          */
         public Builder displayName(String displayName) {
             return displayName(Output.of(displayName));
+        }
+
+        /**
+         * @param faultDomains A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder faultDomains(@Nullable Output<List<String>> faultDomains) {
+            $.faultDomains = faultDomains;
+            return this;
+        }
+
+        /**
+         * @param faultDomains A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder faultDomains(List<String> faultDomains) {
+            return faultDomains(Output.of(faultDomains));
+        }
+
+        /**
+         * @param faultDomains A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder faultDomains(String... faultDomains) {
+            return faultDomains(List.of(faultDomains));
         }
 
         /**
@@ -588,8 +903,50 @@ public final class DataGuardAssociationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param nsgIds A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-         * * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+         * @param licenseModel The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder licenseModel(@Nullable Output<String> licenseModel) {
+            $.licenseModel = licenseModel;
+            return this;
+        }
+
+        /**
+         * @param licenseModel The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder licenseModel(String licenseModel) {
+            return licenseModel(Output.of(licenseModel));
+        }
+
+        /**
+         * @param nodeCount The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nodeCount(@Nullable Output<Integer> nodeCount) {
+            $.nodeCount = nodeCount;
+            return this;
+        }
+
+        /**
+         * @param nodeCount The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nodeCount(Integer nodeCount) {
+            return nodeCount(Output.of(nodeCount));
+        }
+
+        /**
+         * @param nsgIds The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+         * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
          * 
          * @return builder
          * 
@@ -600,8 +957,8 @@ public final class DataGuardAssociationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param nsgIds A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-         * * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+         * @param nsgIds The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+         * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
          * 
          * @return builder
          * 
@@ -611,8 +968,8 @@ public final class DataGuardAssociationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param nsgIds A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-         * * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+         * @param nsgIds The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+         * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
          * 
          * @return builder
          * 
@@ -727,6 +1084,27 @@ public final class DataGuardAssociationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
+         * @param privateIp The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder privateIp(@Nullable Output<String> privateIp) {
+            $.privateIp = privateIp;
+            return this;
+        }
+
+        /**
+         * @param privateIp The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder privateIp(String privateIp) {
+            return privateIp(Output.of(privateIp));
+        }
+
+        /**
          * @param protectionMode (Updatable) The protection mode to set up between the primary and standby databases. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
          * 
          * @return builder
@@ -769,6 +1147,27 @@ public final class DataGuardAssociationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
+         * @param storageVolumePerformanceMode The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder storageVolumePerformanceMode(@Nullable Output<String> storageVolumePerformanceMode) {
+            $.storageVolumePerformanceMode = storageVolumePerformanceMode;
+            return this;
+        }
+
+        /**
+         * @param storageVolumePerformanceMode The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder storageVolumePerformanceMode(String storageVolumePerformanceMode) {
+            return storageVolumePerformanceMode(Output.of(storageVolumePerformanceMode));
+        }
+
+        /**
          * @param subnetId The OCID of the subnet the DB system is associated with. **Subnet Restrictions:**
          * * For 1- and 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.16.16/28
          * 
@@ -789,6 +1188,27 @@ public final class DataGuardAssociationArgs extends com.pulumi.resources.Resourc
          */
         public Builder subnetId(String subnetId) {
             return subnetId(Output.of(subnetId));
+        }
+
+        /**
+         * @param timeZone The time zone of the dataguard standby DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeZone(@Nullable Output<String> timeZone) {
+            $.timeZone = timeZone;
+            return this;
+        }
+
+        /**
+         * @param timeZone The time zone of the dataguard standby DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeZone(String timeZone) {
+            return timeZone(Output.of(timeZone));
         }
 
         /**

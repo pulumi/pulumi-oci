@@ -78,14 +78,14 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
     }
 
     /**
-     * (Updatable) DetectorTemplate Identifier
+     * (Updatable) DetectorTemplate identifier.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) DetectorTemplate Identifier
+     * @return (Updatable) DetectorTemplate identifier.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -343,7 +343,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
         }
 
         /**
-         * @param displayName (Updatable) DetectorTemplate Identifier
+         * @param displayName (Updatable) DetectorTemplate identifier.
          * 
          * @return builder
          * 
@@ -354,7 +354,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
         }
 
         /**
-         * @param displayName (Updatable) DetectorTemplate Identifier
+         * @param displayName (Updatable) DetectorTemplate identifier.
          * 
          * @return builder
          * 

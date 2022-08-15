@@ -60,6 +60,7 @@ class ModelTestingDataset(dict):
         :param str dataset_type: Type of the Dataset.
         :param str bucket: The name of the ObjectStorage bucket that contains the input data file.
         :param str dataset_id: The OCID of the Data Science Labeling Dataset.
+        :param str namespace_name: The namespace name of the ObjectStorage bucket that contains the input data file.
         :param str object: The object name of the input data file.
         """
         pulumi.set(__self__, "dataset_type", dataset_type)
@@ -99,6 +100,9 @@ class ModelTestingDataset(dict):
     @property
     @pulumi.getter(name="namespaceName")
     def namespace_name(self) -> Optional[str]:
+        """
+        The namespace name of the ObjectStorage bucket that contains the input data file.
+        """
         return pulumi.get(self, "namespace_name")
 
     @property
@@ -143,6 +147,7 @@ class ModelTrainingDataset(dict):
         :param str dataset_type: Type of the Dataset.
         :param str bucket: The name of the ObjectStorage bucket that contains the input data file.
         :param str dataset_id: The OCID of the Data Science Labeling Dataset.
+        :param str namespace_name: The namespace name of the ObjectStorage bucket that contains the input data file.
         :param str object: The object name of the input data file.
         """
         pulumi.set(__self__, "dataset_type", dataset_type)
@@ -182,6 +187,9 @@ class ModelTrainingDataset(dict):
     @property
     @pulumi.getter(name="namespaceName")
     def namespace_name(self) -> Optional[str]:
+        """
+        The namespace name of the ObjectStorage bucket that contains the input data file.
+        """
         return pulumi.get(self, "namespace_name")
 
     @property
@@ -226,6 +234,7 @@ class ModelValidationDataset(dict):
         :param str dataset_type: Type of the Dataset.
         :param str bucket: The name of the ObjectStorage bucket that contains the input data file.
         :param str dataset_id: The OCID of the Data Science Labeling Dataset.
+        :param str namespace_name: The namespace name of the ObjectStorage bucket that contains the input data file.
         :param str object: The object name of the input data file.
         """
         pulumi.set(__self__, "dataset_type", dataset_type)
@@ -265,6 +274,9 @@ class ModelValidationDataset(dict):
     @property
     @pulumi.getter(name="namespaceName")
     def namespace_name(self) -> Optional[str]:
+        """
+        The namespace name of the ObjectStorage bucket that contains the input data file.
+        """
         return pulumi.get(self, "namespace_name")
 
     @property
@@ -288,6 +300,7 @@ class GetModelTestingDatasetResult(dict):
         :param str bucket: The name of the ObjectStorage bucket that contains the input data file.
         :param str dataset_id: The OCID of the Data Science Labeling Dataset.
         :param str dataset_type: Type of the Dataset.
+        :param str namespace_name: The namespace name of the ObjectStorage bucket that contains the input data file.
         :param str object: The object name of the input data file.
         """
         pulumi.set(__self__, "bucket", bucket)
@@ -323,6 +336,9 @@ class GetModelTestingDatasetResult(dict):
     @property
     @pulumi.getter(name="namespaceName")
     def namespace_name(self) -> str:
+        """
+        The namespace name of the ObjectStorage bucket that contains the input data file.
+        """
         return pulumi.get(self, "namespace_name")
 
     @property
@@ -346,6 +362,7 @@ class GetModelTrainingDatasetResult(dict):
         :param str bucket: The name of the ObjectStorage bucket that contains the input data file.
         :param str dataset_id: The OCID of the Data Science Labeling Dataset.
         :param str dataset_type: Type of the Dataset.
+        :param str namespace_name: The namespace name of the ObjectStorage bucket that contains the input data file.
         :param str object: The object name of the input data file.
         """
         pulumi.set(__self__, "bucket", bucket)
@@ -381,6 +398,9 @@ class GetModelTrainingDatasetResult(dict):
     @property
     @pulumi.getter(name="namespaceName")
     def namespace_name(self) -> str:
+        """
+        The namespace name of the ObjectStorage bucket that contains the input data file.
+        """
         return pulumi.get(self, "namespace_name")
 
     @property
@@ -404,6 +424,7 @@ class GetModelValidationDatasetResult(dict):
         :param str bucket: The name of the ObjectStorage bucket that contains the input data file.
         :param str dataset_id: The OCID of the Data Science Labeling Dataset.
         :param str dataset_type: Type of the Dataset.
+        :param str namespace_name: The namespace name of the ObjectStorage bucket that contains the input data file.
         :param str object: The object name of the input data file.
         """
         pulumi.set(__self__, "bucket", bucket)
@@ -439,6 +460,9 @@ class GetModelValidationDatasetResult(dict):
     @property
     @pulumi.getter(name="namespaceName")
     def namespace_name(self) -> str:
+        """
+        The namespace name of the ObjectStorage bucket that contains the input data file.
+        """
         return pulumi.get(self, "namespace_name")
 
     @property

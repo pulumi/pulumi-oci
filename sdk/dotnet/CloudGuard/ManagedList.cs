@@ -38,13 +38,13 @@ namespace Pulumi.Oci.CloudGuard
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) ManagedList description
+        /// (Updatable) Managed list description.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) ManagedList display name
+        /// (Updatable) Managed list display name.
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
@@ -180,13 +180,13 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
-        /// (Updatable) ManagedList description
+        /// (Updatable) Managed list description.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) ManagedList display name
+        /// (Updatable) Managed list display name.
         /// </summary>
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
@@ -253,13 +253,13 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
-        /// (Updatable) ManagedList description
+        /// (Updatable) Managed list description.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) ManagedList display name
+        /// (Updatable) Managed list display name.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }

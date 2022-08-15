@@ -139,6 +139,10 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public readonly string PublicIpId;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
+        /// </summary>
+        public readonly string RouteTableId;
+        /// <summary>
         /// The NAT gateway's current state.
         /// </summary>
         public readonly string State;
@@ -171,6 +175,8 @@ namespace Pulumi.Oci.Core
 
             string publicIpId,
 
+            string routeTableId,
+
             string state,
 
             string timeCreated,
@@ -186,6 +192,7 @@ namespace Pulumi.Oci.Core
             NatGatewayId = natGatewayId;
             NatIp = natIp;
             PublicIpId = publicIpId;
+            RouteTableId = routeTableId;
             State = state;
             TimeCreated = timeCreated;
             VcnId = vcnId;

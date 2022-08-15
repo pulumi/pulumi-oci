@@ -10,6 +10,7 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'ClusterClusterPodNetworkOption',
     'ClusterEndpoint',
     'ClusterEndpointConfig',
     'ClusterImagePolicyConfig',
@@ -24,12 +25,16 @@ __all__ = [
     'NodePoolInitialNodeLabel',
     'NodePoolNode',
     'NodePoolNodeConfigDetails',
+    'NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails',
     'NodePoolNodeConfigDetailsPlacementConfig',
     'NodePoolNodeError',
+    'NodePoolNodeEvictionNodePoolSettings',
     'NodePoolNodeShapeConfig',
     'NodePoolNodeSource',
     'NodePoolNodeSourceDetails',
+    'GetClusterOptionClusterPodNetworkOptionResult',
     'GetClustersClusterResult',
+    'GetClustersClusterClusterPodNetworkOptionResult',
     'GetClustersClusterEndpointResult',
     'GetClustersClusterEndpointConfigResult',
     'GetClustersClusterImagePolicyConfigResult',
@@ -45,8 +50,10 @@ __all__ = [
     'GetNodePoolInitialNodeLabelResult',
     'GetNodePoolNodeResult',
     'GetNodePoolNodeConfigDetailResult',
+    'GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailResult',
     'GetNodePoolNodeConfigDetailPlacementConfigResult',
     'GetNodePoolNodeErrorResult',
+    'GetNodePoolNodeEvictionNodePoolSettingResult',
     'GetNodePoolNodeShapeConfigResult',
     'GetNodePoolNodeSourceResult',
     'GetNodePoolNodeSourceDetailResult',
@@ -56,8 +63,10 @@ __all__ = [
     'GetNodePoolsNodePoolInitialNodeLabelResult',
     'GetNodePoolsNodePoolNodeResult',
     'GetNodePoolsNodePoolNodeConfigDetailResult',
+    'GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailResult',
     'GetNodePoolsNodePoolNodeConfigDetailPlacementConfigResult',
     'GetNodePoolsNodePoolNodeErrorResult',
+    'GetNodePoolsNodePoolNodeEvictionNodePoolSettingResult',
     'GetNodePoolsNodePoolNodeShapeConfigResult',
     'GetNodePoolsNodePoolNodeSourceResult',
     'GetNodePoolsNodePoolNodeSourceDetailResult',
@@ -69,6 +78,41 @@ __all__ = [
     'GetWorkRequestsWorkRequestResult',
     'GetWorkRequestsWorkRequestResourceResult',
 ]
+
+@pulumi.output_type
+class ClusterClusterPodNetworkOption(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "cniType":
+            suggest = "cni_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ClusterClusterPodNetworkOption. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ClusterClusterPodNetworkOption.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ClusterClusterPodNetworkOption.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 cni_type: str):
+        """
+        :param str cni_type: The CNI used by the node pools of this cluster
+        """
+        pulumi.set(__self__, "cni_type", cni_type)
+
+    @property
+    @pulumi.getter(name="cniType")
+    def cni_type(self) -> str:
+        """
+        The CNI used by the node pools of this cluster
+        """
+        return pulumi.get(self, "cni_type")
+
 
 @pulumi.output_type
 class ClusterEndpoint(dict):
@@ -881,7 +925,7 @@ class NodePoolNode(dict):
         :param str node_pool_id: The OCID of the node pool to which this node belongs.
         :param str private_ip: The private IP address of this node.
         :param str public_ip: The public IP address of this node.
-        :param str state: The state of the node.
+        :param str state: The state of the nodepool.
         :param str subnet_id: (Updatable) The OCID of the subnet in which to place nodes.
         """
         if availability_domain is not None:
@@ -1013,7 +1057,7 @@ class NodePoolNode(dict):
     @pulumi.getter
     def state(self) -> Optional[str]:
         """
-        The state of the node.
+        The state of the nodepool.
         """
         return pulumi.get(self, "state")
 
@@ -1041,6 +1085,8 @@ class NodePoolNodeConfigDetails(dict):
             suggest = "is_pv_encryption_in_transit_enabled"
         elif key == "kmsKeyId":
             suggest = "kms_key_id"
+        elif key == "nodePoolPodNetworkOptionDetails":
+            suggest = "node_pool_pod_network_option_details"
         elif key == "nsgIds":
             suggest = "nsg_ids"
 
@@ -1062,6 +1108,7 @@ class NodePoolNodeConfigDetails(dict):
                  freeform_tags: Optional[Mapping[str, Any]] = None,
                  is_pv_encryption_in_transit_enabled: Optional[bool] = None,
                  kms_key_id: Optional[str] = None,
+                 node_pool_pod_network_option_details: Optional['outputs.NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails'] = None,
                  nsg_ids: Optional[Sequence[str]] = None):
         """
         :param Sequence['NodePoolNodeConfigDetailsPlacementConfigArgs'] placement_configs: (Updatable) The placement configurations for the node pool. Provide one placement configuration for each availability domain in which you intend to launch a node.
@@ -1070,6 +1117,7 @@ class NodePoolNodeConfigDetails(dict):
         :param Mapping[str, Any] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param bool is_pv_encryption_in_transit_enabled: (Updatable) Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. The default value is false.
         :param str kms_key_id: (Updatable) The OCID of the Key Management Service key assigned to the boot volume.
+        :param 'NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs' node_pool_pod_network_option_details: (Updatable) The CNI related configuration of pods in the node pool.
         :param Sequence[str] nsg_ids: (Updatable) The OCIDs of the Network Security Group(s) to associate nodes for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
         """
         pulumi.set(__self__, "placement_configs", placement_configs)
@@ -1082,6 +1130,8 @@ class NodePoolNodeConfigDetails(dict):
             pulumi.set(__self__, "is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
         if kms_key_id is not None:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
+        if node_pool_pod_network_option_details is not None:
+            pulumi.set(__self__, "node_pool_pod_network_option_details", node_pool_pod_network_option_details)
         if nsg_ids is not None:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
 
@@ -1134,12 +1184,97 @@ class NodePoolNodeConfigDetails(dict):
         return pulumi.get(self, "kms_key_id")
 
     @property
+    @pulumi.getter(name="nodePoolPodNetworkOptionDetails")
+    def node_pool_pod_network_option_details(self) -> Optional['outputs.NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails']:
+        """
+        (Updatable) The CNI related configuration of pods in the node pool.
+        """
+        return pulumi.get(self, "node_pool_pod_network_option_details")
+
+    @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Optional[Sequence[str]]:
         """
         (Updatable) The OCIDs of the Network Security Group(s) to associate nodes for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
         """
         return pulumi.get(self, "nsg_ids")
+
+
+@pulumi.output_type
+class NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "cniType":
+            suggest = "cni_type"
+        elif key == "maxPodsPerNode":
+            suggest = "max_pods_per_node"
+        elif key == "podNsgIds":
+            suggest = "pod_nsg_ids"
+        elif key == "podSubnetIds":
+            suggest = "pod_subnet_ids"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 cni_type: str,
+                 max_pods_per_node: Optional[int] = None,
+                 pod_nsg_ids: Optional[Sequence[str]] = None,
+                 pod_subnet_ids: Optional[Sequence[str]] = None):
+        """
+        :param str cni_type: (Updatable) The CNI plugin used by this node pool
+        :param int max_pods_per_node: (Updatable) The max number of pods per node in the node pool. This value will be limited by the number of VNICs attachable to the node pool shape
+        :param Sequence[str] pod_nsg_ids: (Updatable) The OCIDs of the Network Security Group(s) to associate pods for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+        :param Sequence[str] pod_subnet_ids: (Updatable) The OCIDs of the subnets in which to place pods for this node pool. This can be one of the node pool subnet IDs
+        """
+        pulumi.set(__self__, "cni_type", cni_type)
+        if max_pods_per_node is not None:
+            pulumi.set(__self__, "max_pods_per_node", max_pods_per_node)
+        if pod_nsg_ids is not None:
+            pulumi.set(__self__, "pod_nsg_ids", pod_nsg_ids)
+        if pod_subnet_ids is not None:
+            pulumi.set(__self__, "pod_subnet_ids", pod_subnet_ids)
+
+    @property
+    @pulumi.getter(name="cniType")
+    def cni_type(self) -> str:
+        """
+        (Updatable) The CNI plugin used by this node pool
+        """
+        return pulumi.get(self, "cni_type")
+
+    @property
+    @pulumi.getter(name="maxPodsPerNode")
+    def max_pods_per_node(self) -> Optional[int]:
+        """
+        (Updatable) The max number of pods per node in the node pool. This value will be limited by the number of VNICs attachable to the node pool shape
+        """
+        return pulumi.get(self, "max_pods_per_node")
+
+    @property
+    @pulumi.getter(name="podNsgIds")
+    def pod_nsg_ids(self) -> Optional[Sequence[str]]:
+        """
+        (Updatable) The OCIDs of the Network Security Group(s) to associate pods for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+        """
+        return pulumi.get(self, "pod_nsg_ids")
+
+    @property
+    @pulumi.getter(name="podSubnetIds")
+    def pod_subnet_ids(self) -> Optional[Sequence[str]]:
+        """
+        (Updatable) The OCIDs of the subnets in which to place pods for this node pool. This can be one of the node pool subnet IDs
+        """
+        return pulumi.get(self, "pod_subnet_ids")
 
 
 @pulumi.output_type
@@ -1153,6 +1288,8 @@ class NodePoolNodeConfigDetailsPlacementConfig(dict):
             suggest = "subnet_id"
         elif key == "capacityReservationId":
             suggest = "capacity_reservation_id"
+        elif key == "faultDomains":
+            suggest = "fault_domains"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in NodePoolNodeConfigDetailsPlacementConfig. Access the value via the '{suggest}' property getter instead.")
@@ -1168,16 +1305,20 @@ class NodePoolNodeConfigDetailsPlacementConfig(dict):
     def __init__(__self__, *,
                  availability_domain: str,
                  subnet_id: str,
-                 capacity_reservation_id: Optional[str] = None):
+                 capacity_reservation_id: Optional[str] = None,
+                 fault_domains: Optional[Sequence[str]] = None):
         """
         :param str availability_domain: (Updatable) The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
         :param str subnet_id: (Updatable) The OCID of the subnet in which to place nodes.
         :param str capacity_reservation_id: (Updatable) The OCID of the compute capacity reservation in which to place the compute instance.
+        :param Sequence[str] fault_domains: (Updatable) A list of fault domains in which to place nodes.
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "subnet_id", subnet_id)
         if capacity_reservation_id is not None:
             pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
+        if fault_domains is not None:
+            pulumi.set(__self__, "fault_domains", fault_domains)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -1202,6 +1343,14 @@ class NodePoolNodeConfigDetailsPlacementConfig(dict):
         (Updatable) The OCID of the compute capacity reservation in which to place the compute instance.
         """
         return pulumi.get(self, "capacity_reservation_id")
+
+    @property
+    @pulumi.getter(name="faultDomains")
+    def fault_domains(self) -> Optional[Sequence[str]]:
+        """
+        (Updatable) A list of fault domains in which to place nodes.
+        """
+        return pulumi.get(self, "fault_domains")
 
 
 @pulumi.output_type
@@ -1245,6 +1394,56 @@ class NodePoolNodeError(dict):
         The status of the HTTP response encountered in the upstream error.
         """
         return pulumi.get(self, "status")
+
+
+@pulumi.output_type
+class NodePoolNodeEvictionNodePoolSettings(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "evictionGraceDuration":
+            suggest = "eviction_grace_duration"
+        elif key == "isForceDeleteAfterGraceDuration":
+            suggest = "is_force_delete_after_grace_duration"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in NodePoolNodeEvictionNodePoolSettings. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        NodePoolNodeEvictionNodePoolSettings.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        NodePoolNodeEvictionNodePoolSettings.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 eviction_grace_duration: Optional[str] = None,
+                 is_force_delete_after_grace_duration: Optional[bool] = None):
+        """
+        :param str eviction_grace_duration: (Updatable) Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
+        :param bool is_force_delete_after_grace_duration: (Updatable) If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
+        """
+        if eviction_grace_duration is not None:
+            pulumi.set(__self__, "eviction_grace_duration", eviction_grace_duration)
+        if is_force_delete_after_grace_duration is not None:
+            pulumi.set(__self__, "is_force_delete_after_grace_duration", is_force_delete_after_grace_duration)
+
+    @property
+    @pulumi.getter(name="evictionGraceDuration")
+    def eviction_grace_duration(self) -> Optional[str]:
+        """
+        (Updatable) Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
+        """
+        return pulumi.get(self, "eviction_grace_duration")
+
+    @property
+    @pulumi.getter(name="isForceDeleteAfterGraceDuration")
+    def is_force_delete_after_grace_duration(self) -> Optional[bool]:
+        """
+        (Updatable) If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
+        """
+        return pulumi.get(self, "is_force_delete_after_grace_duration")
 
 
 @pulumi.output_type
@@ -1422,9 +1621,28 @@ class NodePoolNodeSourceDetails(dict):
 
 
 @pulumi.output_type
+class GetClusterOptionClusterPodNetworkOptionResult(dict):
+    def __init__(__self__, *,
+                 cni_type: str):
+        """
+        :param str cni_type: The CNI used by the node pools of this cluster
+        """
+        pulumi.set(__self__, "cni_type", cni_type)
+
+    @property
+    @pulumi.getter(name="cniType")
+    def cni_type(self) -> str:
+        """
+        The CNI used by the node pools of this cluster
+        """
+        return pulumi.get(self, "cni_type")
+
+
+@pulumi.output_type
 class GetClustersClusterResult(dict):
     def __init__(__self__, *,
                  available_kubernetes_upgrades: Sequence[str],
+                 cluster_pod_network_options: Sequence['outputs.GetClustersClusterClusterPodNetworkOptionResult'],
                  compartment_id: str,
                  defined_tags: Mapping[str, Any],
                  endpoint_configs: Sequence['outputs.GetClustersClusterEndpointConfigResult'],
@@ -1442,6 +1660,7 @@ class GetClustersClusterResult(dict):
                  vcn_id: str):
         """
         :param Sequence[str] available_kubernetes_upgrades: Available Kubernetes versions to which the clusters masters may be upgraded.
+        :param Sequence['GetClustersClusterClusterPodNetworkOptionArgs'] cluster_pod_network_options: Available CNIs and network options for existing and new node pools of the cluster
         :param str compartment_id: The OCID of the compartment.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param Sequence['GetClustersClusterEndpointConfigArgs'] endpoint_configs: The network configuration for access to the Cluster control plane.
@@ -1459,6 +1678,7 @@ class GetClustersClusterResult(dict):
         :param str vcn_id: The OCID of the virtual cloud network (VCN) in which the cluster exists.
         """
         pulumi.set(__self__, "available_kubernetes_upgrades", available_kubernetes_upgrades)
+        pulumi.set(__self__, "cluster_pod_network_options", cluster_pod_network_options)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "endpoint_configs", endpoint_configs)
@@ -1482,6 +1702,14 @@ class GetClustersClusterResult(dict):
         Available Kubernetes versions to which the clusters masters may be upgraded.
         """
         return pulumi.get(self, "available_kubernetes_upgrades")
+
+    @property
+    @pulumi.getter(name="clusterPodNetworkOptions")
+    def cluster_pod_network_options(self) -> Sequence['outputs.GetClustersClusterClusterPodNetworkOptionResult']:
+        """
+        Available CNIs and network options for existing and new node pools of the cluster
+        """
+        return pulumi.get(self, "cluster_pod_network_options")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -1602,6 +1830,24 @@ class GetClustersClusterResult(dict):
         The OCID of the virtual cloud network (VCN) in which the cluster exists.
         """
         return pulumi.get(self, "vcn_id")
+
+
+@pulumi.output_type
+class GetClustersClusterClusterPodNetworkOptionResult(dict):
+    def __init__(__self__, *,
+                 cni_type: str):
+        """
+        :param str cni_type: The CNI used by the node pools of this cluster
+        """
+        pulumi.set(__self__, "cni_type", cni_type)
+
+    @property
+    @pulumi.getter(name="cniType")
+    def cni_type(self) -> str:
+        """
+        The CNI used by the node pools of this cluster
+        """
+        return pulumi.get(self, "cni_type")
 
 
 @pulumi.output_type
@@ -2147,7 +2393,7 @@ class GetNodePoolNodeResult(dict):
         :param str node_pool_id: The OCID of the node pool.
         :param str private_ip: The private IP address of this node.
         :param str public_ip: The public IP address of this node.
-        :param str state: The state of the node.
+        :param str state: The state of the nodepool.
         :param str subnet_id: The OCID of the subnet in which this node is placed.
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -2265,7 +2511,7 @@ class GetNodePoolNodeResult(dict):
     @pulumi.getter
     def state(self) -> str:
         """
-        The state of the node.
+        The state of the nodepool.
         """
         return pulumi.get(self, "state")
 
@@ -2285,6 +2531,7 @@ class GetNodePoolNodeConfigDetailResult(dict):
                  freeform_tags: Mapping[str, Any],
                  is_pv_encryption_in_transit_enabled: bool,
                  kms_key_id: str,
+                 node_pool_pod_network_option_details: Sequence['outputs.GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailResult'],
                  nsg_ids: Sequence[str],
                  placement_configs: Sequence['outputs.GetNodePoolNodeConfigDetailPlacementConfigResult'],
                  size: int):
@@ -2293,6 +2540,7 @@ class GetNodePoolNodeConfigDetailResult(dict):
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param bool is_pv_encryption_in_transit_enabled: Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. The default value is false.
         :param str kms_key_id: The OCID of the Key Management Service key assigned to the boot volume.
+        :param Sequence['GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArgs'] node_pool_pod_network_option_details: The CNI related configuration of pods in the node pool.
         :param Sequence[str] nsg_ids: The OCIDs of the Network Security Group(s) to associate nodes for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
         :param Sequence['GetNodePoolNodeConfigDetailPlacementConfigArgs'] placement_configs: The placement configurations for the node pool. Provide one placement configuration for each availability domain in which you intend to launch a node.
         :param int size: The number of nodes in the node pool.
@@ -2301,6 +2549,7 @@ class GetNodePoolNodeConfigDetailResult(dict):
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
         pulumi.set(__self__, "kms_key_id", kms_key_id)
+        pulumi.set(__self__, "node_pool_pod_network_option_details", node_pool_pod_network_option_details)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "placement_configs", placement_configs)
         pulumi.set(__self__, "size", size)
@@ -2338,6 +2587,14 @@ class GetNodePoolNodeConfigDetailResult(dict):
         return pulumi.get(self, "kms_key_id")
 
     @property
+    @pulumi.getter(name="nodePoolPodNetworkOptionDetails")
+    def node_pool_pod_network_option_details(self) -> Sequence['outputs.GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailResult']:
+        """
+        The CNI related configuration of pods in the node pool.
+        """
+        return pulumi.get(self, "node_pool_pod_network_option_details")
+
+    @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Sequence[str]:
         """
@@ -2363,18 +2620,72 @@ class GetNodePoolNodeConfigDetailResult(dict):
 
 
 @pulumi.output_type
+class GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailResult(dict):
+    def __init__(__self__, *,
+                 cni_type: str,
+                 max_pods_per_node: int,
+                 pod_nsg_ids: Sequence[str],
+                 pod_subnet_ids: Sequence[str]):
+        """
+        :param str cni_type: The CNI plugin used by this node pool
+        :param int max_pods_per_node: The max number of pods per node in the node pool. This value will be limited by the number of VNICs attachable to the node pool shape
+        :param Sequence[str] pod_nsg_ids: The OCIDs of the Network Security Group(s) to associate pods for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+        :param Sequence[str] pod_subnet_ids: The OCIDs of the subnets in which to place pods for this node pool. This can be one of the node pool subnet IDs
+        """
+        pulumi.set(__self__, "cni_type", cni_type)
+        pulumi.set(__self__, "max_pods_per_node", max_pods_per_node)
+        pulumi.set(__self__, "pod_nsg_ids", pod_nsg_ids)
+        pulumi.set(__self__, "pod_subnet_ids", pod_subnet_ids)
+
+    @property
+    @pulumi.getter(name="cniType")
+    def cni_type(self) -> str:
+        """
+        The CNI plugin used by this node pool
+        """
+        return pulumi.get(self, "cni_type")
+
+    @property
+    @pulumi.getter(name="maxPodsPerNode")
+    def max_pods_per_node(self) -> int:
+        """
+        The max number of pods per node in the node pool. This value will be limited by the number of VNICs attachable to the node pool shape
+        """
+        return pulumi.get(self, "max_pods_per_node")
+
+    @property
+    @pulumi.getter(name="podNsgIds")
+    def pod_nsg_ids(self) -> Sequence[str]:
+        """
+        The OCIDs of the Network Security Group(s) to associate pods for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+        """
+        return pulumi.get(self, "pod_nsg_ids")
+
+    @property
+    @pulumi.getter(name="podSubnetIds")
+    def pod_subnet_ids(self) -> Sequence[str]:
+        """
+        The OCIDs of the subnets in which to place pods for this node pool. This can be one of the node pool subnet IDs
+        """
+        return pulumi.get(self, "pod_subnet_ids")
+
+
+@pulumi.output_type
 class GetNodePoolNodeConfigDetailPlacementConfigResult(dict):
     def __init__(__self__, *,
                  availability_domain: str,
                  capacity_reservation_id: str,
+                 fault_domains: Sequence[str],
                  subnet_id: str):
         """
         :param str availability_domain: The name of the availability domain in which this node is placed.
         :param str capacity_reservation_id: The OCID of the compute capacity reservation in which to place the compute instance.
+        :param Sequence[str] fault_domains: A list of fault domains in which to place nodes.
         :param str subnet_id: The OCID of the subnet in which this node is placed.
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
+        pulumi.set(__self__, "fault_domains", fault_domains)
         pulumi.set(__self__, "subnet_id", subnet_id)
 
     @property
@@ -2392,6 +2703,14 @@ class GetNodePoolNodeConfigDetailPlacementConfigResult(dict):
         The OCID of the compute capacity reservation in which to place the compute instance.
         """
         return pulumi.get(self, "capacity_reservation_id")
+
+    @property
+    @pulumi.getter(name="faultDomains")
+    def fault_domains(self) -> Sequence[str]:
+        """
+        A list of fault domains in which to place nodes.
+        """
+        return pulumi.get(self, "fault_domains")
 
     @property
     @pulumi.getter(name="subnetId")
@@ -2440,6 +2759,35 @@ class GetNodePoolNodeErrorResult(dict):
         The status of the HTTP response encountered in the upstream error.
         """
         return pulumi.get(self, "status")
+
+
+@pulumi.output_type
+class GetNodePoolNodeEvictionNodePoolSettingResult(dict):
+    def __init__(__self__, *,
+                 eviction_grace_duration: str,
+                 is_force_delete_after_grace_duration: bool):
+        """
+        :param str eviction_grace_duration: Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
+        :param bool is_force_delete_after_grace_duration: If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
+        """
+        pulumi.set(__self__, "eviction_grace_duration", eviction_grace_duration)
+        pulumi.set(__self__, "is_force_delete_after_grace_duration", is_force_delete_after_grace_duration)
+
+    @property
+    @pulumi.getter(name="evictionGraceDuration")
+    def eviction_grace_duration(self) -> str:
+        """
+        Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
+        """
+        return pulumi.get(self, "eviction_grace_duration")
+
+    @property
+    @pulumi.getter(name="isForceDeleteAfterGraceDuration")
+    def is_force_delete_after_grace_duration(self) -> bool:
+        """
+        If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
+        """
+        return pulumi.get(self, "is_force_delete_after_grace_duration")
 
 
 @pulumi.output_type
@@ -2634,8 +2982,10 @@ class GetNodePoolsNodePoolResult(dict):
                  id: str,
                  initial_node_labels: Sequence['outputs.GetNodePoolsNodePoolInitialNodeLabelResult'],
                  kubernetes_version: str,
+                 lifecycle_details: str,
                  name: str,
                  node_config_details: Sequence['outputs.GetNodePoolsNodePoolNodeConfigDetailResult'],
+                 node_eviction_node_pool_settings: Sequence['outputs.GetNodePoolsNodePoolNodeEvictionNodePoolSettingResult'],
                  node_image_id: str,
                  node_image_name: str,
                  node_metadata: Mapping[str, Any],
@@ -2647,6 +2997,7 @@ class GetNodePoolsNodePoolResult(dict):
                  nodes: Sequence['outputs.GetNodePoolsNodePoolNodeResult'],
                  quantity_per_subnet: int,
                  ssh_public_key: str,
+                 state: str,
                  subnet_ids: Sequence[str]):
         """
         :param str cluster_id: The OCID of the cluster.
@@ -2656,8 +3007,10 @@ class GetNodePoolsNodePoolResult(dict):
         :param str id: The OCID of the compute instance backing this node.
         :param Sequence['GetNodePoolsNodePoolInitialNodeLabelArgs'] initial_node_labels: A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
         :param str kubernetes_version: The version of Kubernetes this node is running.
+        :param str lifecycle_details: Details about the state of the node.
         :param str name: The name to filter on.
         :param Sequence['GetNodePoolsNodePoolNodeConfigDetailArgs'] node_config_details: The configuration of nodes in the node pool.
+        :param Sequence['GetNodePoolsNodePoolNodeEvictionNodePoolSettingArgs'] node_eviction_node_pool_settings: Node Eviction Details configuration
         :param str node_image_id: Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
         :param str node_image_name: Deprecated. see `nodeSource`. The name of the image running on the nodes in the node pool.
         :param Mapping[str, Any] node_metadata: A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
@@ -2669,6 +3022,7 @@ class GetNodePoolsNodePoolResult(dict):
         :param Sequence['GetNodePoolsNodePoolNodeArgs'] nodes: The nodes in the node pool.
         :param int quantity_per_subnet: The number of nodes in each subnet.
         :param str ssh_public_key: The SSH public key on each node in the node pool on launch.
+        :param str state: A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
         :param Sequence[str] subnet_ids: The OCIDs of the subnets in which to place nodes for this node pool.
         """
         pulumi.set(__self__, "cluster_id", cluster_id)
@@ -2678,8 +3032,10 @@ class GetNodePoolsNodePoolResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "initial_node_labels", initial_node_labels)
         pulumi.set(__self__, "kubernetes_version", kubernetes_version)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "node_config_details", node_config_details)
+        pulumi.set(__self__, "node_eviction_node_pool_settings", node_eviction_node_pool_settings)
         pulumi.set(__self__, "node_image_id", node_image_id)
         pulumi.set(__self__, "node_image_name", node_image_name)
         pulumi.set(__self__, "node_metadata", node_metadata)
@@ -2691,6 +3047,7 @@ class GetNodePoolsNodePoolResult(dict):
         pulumi.set(__self__, "nodes", nodes)
         pulumi.set(__self__, "quantity_per_subnet", quantity_per_subnet)
         pulumi.set(__self__, "ssh_public_key", ssh_public_key)
+        pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "subnet_ids", subnet_ids)
 
     @property
@@ -2750,6 +3107,14 @@ class GetNodePoolsNodePoolResult(dict):
         return pulumi.get(self, "kubernetes_version")
 
     @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Details about the state of the node.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
     @pulumi.getter
     def name(self) -> str:
         """
@@ -2764,6 +3129,14 @@ class GetNodePoolsNodePoolResult(dict):
         The configuration of nodes in the node pool.
         """
         return pulumi.get(self, "node_config_details")
+
+    @property
+    @pulumi.getter(name="nodeEvictionNodePoolSettings")
+    def node_eviction_node_pool_settings(self) -> Sequence['outputs.GetNodePoolsNodePoolNodeEvictionNodePoolSettingResult']:
+        """
+        Node Eviction Details configuration
+        """
+        return pulumi.get(self, "node_eviction_node_pool_settings")
 
     @property
     @pulumi.getter(name="nodeImageId")
@@ -2854,6 +3227,14 @@ class GetNodePoolsNodePoolResult(dict):
         return pulumi.get(self, "ssh_public_key")
 
     @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
+        """
+        return pulumi.get(self, "state")
+
+    @property
     @pulumi.getter(name="subnetIds")
     def subnet_ids(self) -> Sequence[str]:
         """
@@ -2921,7 +3302,7 @@ class GetNodePoolsNodePoolNodeResult(dict):
         :param str node_pool_id: The OCID of the node pool to which this node belongs.
         :param str private_ip: The private IP address of this node.
         :param str public_ip: The public IP address of this node.
-        :param str state: The state of the node.
+        :param str state: A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
         :param str subnet_id: The OCID of the subnet in which this node is placed.
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -3039,7 +3420,7 @@ class GetNodePoolsNodePoolNodeResult(dict):
     @pulumi.getter
     def state(self) -> str:
         """
-        The state of the node.
+        A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
         """
         return pulumi.get(self, "state")
 
@@ -3059,6 +3440,7 @@ class GetNodePoolsNodePoolNodeConfigDetailResult(dict):
                  freeform_tags: Mapping[str, Any],
                  is_pv_encryption_in_transit_enabled: bool,
                  kms_key_id: str,
+                 node_pool_pod_network_option_details: Sequence['outputs.GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailResult'],
                  nsg_ids: Sequence[str],
                  placement_configs: Sequence['outputs.GetNodePoolsNodePoolNodeConfigDetailPlacementConfigResult'],
                  size: int):
@@ -3067,6 +3449,7 @@ class GetNodePoolsNodePoolNodeConfigDetailResult(dict):
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param bool is_pv_encryption_in_transit_enabled: Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. The default value is false.
         :param str kms_key_id: The OCID of the Key Management Service key assigned to the boot volume.
+        :param Sequence['GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArgs'] node_pool_pod_network_option_details: The CNI related configuration of pods in the node pool.
         :param Sequence[str] nsg_ids: The OCIDs of the Network Security Group(s) to associate nodes for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
         :param Sequence['GetNodePoolsNodePoolNodeConfigDetailPlacementConfigArgs'] placement_configs: The placement configurations for the node pool. Provide one placement configuration for each availability domain in which you intend to launch a node.
         :param int size: The number of nodes in the node pool.
@@ -3075,6 +3458,7 @@ class GetNodePoolsNodePoolNodeConfigDetailResult(dict):
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
         pulumi.set(__self__, "kms_key_id", kms_key_id)
+        pulumi.set(__self__, "node_pool_pod_network_option_details", node_pool_pod_network_option_details)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "placement_configs", placement_configs)
         pulumi.set(__self__, "size", size)
@@ -3112,6 +3496,14 @@ class GetNodePoolsNodePoolNodeConfigDetailResult(dict):
         return pulumi.get(self, "kms_key_id")
 
     @property
+    @pulumi.getter(name="nodePoolPodNetworkOptionDetails")
+    def node_pool_pod_network_option_details(self) -> Sequence['outputs.GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailResult']:
+        """
+        The CNI related configuration of pods in the node pool.
+        """
+        return pulumi.get(self, "node_pool_pod_network_option_details")
+
+    @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Sequence[str]:
         """
@@ -3137,18 +3529,72 @@ class GetNodePoolsNodePoolNodeConfigDetailResult(dict):
 
 
 @pulumi.output_type
+class GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailResult(dict):
+    def __init__(__self__, *,
+                 cni_type: str,
+                 max_pods_per_node: int,
+                 pod_nsg_ids: Sequence[str],
+                 pod_subnet_ids: Sequence[str]):
+        """
+        :param str cni_type: The CNI plugin used by this node pool
+        :param int max_pods_per_node: The max number of pods per node in the node pool. This value will be limited by the number of VNICs attachable to the node pool shape
+        :param Sequence[str] pod_nsg_ids: The OCIDs of the Network Security Group(s) to associate pods for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+        :param Sequence[str] pod_subnet_ids: The OCIDs of the subnets in which to place pods for this node pool. This can be one of the node pool subnet IDs
+        """
+        pulumi.set(__self__, "cni_type", cni_type)
+        pulumi.set(__self__, "max_pods_per_node", max_pods_per_node)
+        pulumi.set(__self__, "pod_nsg_ids", pod_nsg_ids)
+        pulumi.set(__self__, "pod_subnet_ids", pod_subnet_ids)
+
+    @property
+    @pulumi.getter(name="cniType")
+    def cni_type(self) -> str:
+        """
+        The CNI plugin used by this node pool
+        """
+        return pulumi.get(self, "cni_type")
+
+    @property
+    @pulumi.getter(name="maxPodsPerNode")
+    def max_pods_per_node(self) -> int:
+        """
+        The max number of pods per node in the node pool. This value will be limited by the number of VNICs attachable to the node pool shape
+        """
+        return pulumi.get(self, "max_pods_per_node")
+
+    @property
+    @pulumi.getter(name="podNsgIds")
+    def pod_nsg_ids(self) -> Sequence[str]:
+        """
+        The OCIDs of the Network Security Group(s) to associate pods for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+        """
+        return pulumi.get(self, "pod_nsg_ids")
+
+    @property
+    @pulumi.getter(name="podSubnetIds")
+    def pod_subnet_ids(self) -> Sequence[str]:
+        """
+        The OCIDs of the subnets in which to place pods for this node pool. This can be one of the node pool subnet IDs
+        """
+        return pulumi.get(self, "pod_subnet_ids")
+
+
+@pulumi.output_type
 class GetNodePoolsNodePoolNodeConfigDetailPlacementConfigResult(dict):
     def __init__(__self__, *,
                  availability_domain: str,
                  capacity_reservation_id: str,
+                 fault_domains: Sequence[str],
                  subnet_id: str):
         """
         :param str availability_domain: The name of the availability domain in which this node is placed.
         :param str capacity_reservation_id: The OCID of the compute capacity reservation in which to place the compute instance.
+        :param Sequence[str] fault_domains: A list of fault domains in which to place nodes.
         :param str subnet_id: The OCID of the subnet in which this node is placed.
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
+        pulumi.set(__self__, "fault_domains", fault_domains)
         pulumi.set(__self__, "subnet_id", subnet_id)
 
     @property
@@ -3166,6 +3612,14 @@ class GetNodePoolsNodePoolNodeConfigDetailPlacementConfigResult(dict):
         The OCID of the compute capacity reservation in which to place the compute instance.
         """
         return pulumi.get(self, "capacity_reservation_id")
+
+    @property
+    @pulumi.getter(name="faultDomains")
+    def fault_domains(self) -> Sequence[str]:
+        """
+        A list of fault domains in which to place nodes.
+        """
+        return pulumi.get(self, "fault_domains")
 
     @property
     @pulumi.getter(name="subnetId")
@@ -3214,6 +3668,35 @@ class GetNodePoolsNodePoolNodeErrorResult(dict):
         The status of the HTTP response encountered in the upstream error.
         """
         return pulumi.get(self, "status")
+
+
+@pulumi.output_type
+class GetNodePoolsNodePoolNodeEvictionNodePoolSettingResult(dict):
+    def __init__(__self__, *,
+                 eviction_grace_duration: str,
+                 is_force_delete_after_grace_duration: bool):
+        """
+        :param str eviction_grace_duration: Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
+        :param bool is_force_delete_after_grace_duration: If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
+        """
+        pulumi.set(__self__, "eviction_grace_duration", eviction_grace_duration)
+        pulumi.set(__self__, "is_force_delete_after_grace_duration", is_force_delete_after_grace_duration)
+
+    @property
+    @pulumi.getter(name="evictionGraceDuration")
+    def eviction_grace_duration(self) -> str:
+        """
+        Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
+        """
+        return pulumi.get(self, "eviction_grace_duration")
+
+    @property
+    @pulumi.getter(name="isForceDeleteAfterGraceDuration")
+    def is_force_delete_after_grace_duration(self) -> bool:
+        """
+        If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
+        """
+        return pulumi.get(self, "is_force_delete_after_grace_duration")
 
 
 @pulumi.output_type

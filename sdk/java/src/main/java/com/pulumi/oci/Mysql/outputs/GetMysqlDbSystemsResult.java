@@ -26,7 +26,7 @@ public final class GetMysqlDbSystemsResult {
      */
     private final @Nullable String configurationId;
     /**
-     * @return The OCID of the source DB System.
+     * @return The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
      * 
      */
     private final @Nullable String dbSystemId;
@@ -104,7 +104,7 @@ public final class GetMysqlDbSystemsResult {
         return Optional.ofNullable(this.configurationId);
     }
     /**
-     * @return The OCID of the source DB System.
+     * @return The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
      * 
      */
     public Optional<String> dbSystemId() {

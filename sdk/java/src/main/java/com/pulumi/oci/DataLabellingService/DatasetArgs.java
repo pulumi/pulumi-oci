@@ -52,14 +52,14 @@ public final class DatasetArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Specifies how to process the data. Supported formats include IMAGE and TEXT.
+     * It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
      * 
      */
     @Import(name="datasetFormatDetails", required=true)
     private Output<DatasetDatasetFormatDetailsArgs> datasetFormatDetails;
 
     /**
-     * @return Specifies how to process the data. Supported formats include IMAGE and TEXT.
+     * @return It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
      * 
      */
     public Output<DatasetDatasetFormatDetailsArgs> datasetFormatDetails() {
@@ -142,14 +142,14 @@ public final class DatasetArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Initial Generate Records configuration, generates records from the Dataset&#39;s source.
+     * The initial generate records configuration. It generates records from the dataset&#39;s source.
      * 
      */
     @Import(name="initialRecordGenerationConfiguration")
     private @Nullable Output<DatasetInitialRecordGenerationConfigurationArgs> initialRecordGenerationConfiguration;
 
     /**
-     * @return Initial Generate Records configuration, generates records from the Dataset&#39;s source.
+     * @return The initial generate records configuration. It generates records from the dataset&#39;s source.
      * 
      */
     public Optional<Output<DatasetInitialRecordGenerationConfigurationArgs>> initialRecordGenerationConfiguration() {
@@ -157,14 +157,14 @@ public final class DatasetArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * An ordered collection of Labels that are unique by name.
+     * An ordered collection of labels that are unique by name.
      * 
      */
     @Import(name="labelSet", required=true)
     private Output<DatasetLabelSetArgs> labelSet;
 
     /**
-     * @return An ordered collection of Labels that are unique by name.
+     * @return An ordered collection of labels that are unique by name.
      * 
      */
     public Output<DatasetLabelSetArgs> labelSet() {
@@ -172,14 +172,14 @@ public final class DatasetArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The labeling instructions for human labelers in rich text format
+     * (Updatable) The labeling instructions for human labelers in rich text format
      * 
      */
     @Import(name="labelingInstructions")
     private @Nullable Output<String> labelingInstructions;
 
     /**
-     * @return The labeling instructions for human labelers in rich text format
+     * @return (Updatable) The labeling instructions for human labelers in rich text format
      * 
      */
     public Optional<Output<String>> labelingInstructions() {
@@ -263,7 +263,7 @@ public final class DatasetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param datasetFormatDetails Specifies how to process the data. Supported formats include IMAGE and TEXT.
+         * @param datasetFormatDetails It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
          * 
          * @return builder
          * 
@@ -274,7 +274,7 @@ public final class DatasetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param datasetFormatDetails Specifies how to process the data. Supported formats include IMAGE and TEXT.
+         * @param datasetFormatDetails It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
          * 
          * @return builder
          * 
@@ -389,7 +389,7 @@ public final class DatasetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param initialRecordGenerationConfiguration Initial Generate Records configuration, generates records from the Dataset&#39;s source.
+         * @param initialRecordGenerationConfiguration The initial generate records configuration. It generates records from the dataset&#39;s source.
          * 
          * @return builder
          * 
@@ -400,7 +400,7 @@ public final class DatasetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param initialRecordGenerationConfiguration Initial Generate Records configuration, generates records from the Dataset&#39;s source.
+         * @param initialRecordGenerationConfiguration The initial generate records configuration. It generates records from the dataset&#39;s source.
          * 
          * @return builder
          * 
@@ -410,7 +410,7 @@ public final class DatasetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param labelSet An ordered collection of Labels that are unique by name.
+         * @param labelSet An ordered collection of labels that are unique by name.
          * 
          * @return builder
          * 
@@ -421,7 +421,7 @@ public final class DatasetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param labelSet An ordered collection of Labels that are unique by name.
+         * @param labelSet An ordered collection of labels that are unique by name.
          * 
          * @return builder
          * 
@@ -431,7 +431,7 @@ public final class DatasetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param labelingInstructions The labeling instructions for human labelers in rich text format
+         * @param labelingInstructions (Updatable) The labeling instructions for human labelers in rich text format
          * 
          * @return builder
          * 
@@ -442,7 +442,7 @@ public final class DatasetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param labelingInstructions The labeling instructions for human labelers in rich text format
+         * @param labelingInstructions (Updatable) The labeling instructions for human labelers in rich text format
          * 
          * @return builder
          * 

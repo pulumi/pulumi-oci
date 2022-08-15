@@ -13,7 +13,7 @@ import (
 
 // This resource provides the Budget resource in Oracle Cloud Infrastructure Budget service.
 //
-// Creates a new Budget.
+// Creates a new budget.
 //
 // ## Example Usage
 //
@@ -40,9 +40,10 @@ import (
 // 			FreeformTags: pulumi.AnyMap{
 // 				"Department": pulumi.Any("Finance"),
 // 			},
-// 			TargetCompartmentId: pulumi.Any(oci_identity_compartment.Test_compartment.Id),
-// 			TargetType:          pulumi.Any(_var.Budget_target_type),
-// 			Targets:             pulumi.Any(_var.Budget_targets),
+// 			ProcessingPeriodType: pulumi.Any(_var.Budget_processing_period_type),
+// 			TargetCompartmentId:  pulumi.Any(oci_identity_compartment.Test_compartment.Id),
+// 			TargetType:           pulumi.Any(_var.Budget_target_type),
+// 			Targets:              pulumi.Any(_var.Budget_targets),
 // 		})
 // 		if err != nil {
 // 			return err
@@ -62,45 +63,47 @@ import (
 type Budget struct {
 	pulumi.CustomResourceState
 
-	// The actual spend in currency for the current budget cycle
+	// The actual spend in currency for the current budget cycle.
 	ActualSpend pulumi.Float64Output `pulumi:"actualSpend"`
-	// Total number of alert rules in the budget
+	// The total number of alert rules in the budget.
 	AlertRuleCount pulumi.IntOutput `pulumi:"alertRuleCount"`
 	// (Updatable) The amount of the budget expressed as a whole number in the currency of the customer's rate card.
 	Amount pulumi.IntOutput `pulumi:"amount"`
 	// (Updatable) The number of days offset from the first day of the month, at which the budget processing period starts. In months that have fewer days than this value, processing will begin on the last day of that month. For example, for a value of 12, processing starts every month on the 12th at midnight.
 	BudgetProcessingPeriodStartOffset pulumi.IntOutput `pulumi:"budgetProcessingPeriodStartOffset"`
-	// The OCID of the tenancy
+	// The OCID of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) The description of the budget.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// (Updatable) The displayName of the budget.
+	// (Updatable) The displayName of the budget. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
-	// The forecasted spend in currency by the end of the current budget cycle
+	// The forecasted spend in currency by the end of the current budget cycle.
 	ForecastedSpend pulumi.Float64Output `pulumi:"forecastedSpend"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	// (Updatable) The type of the budget processing period. Valid values are INVOICE and MONTH.
+	ProcessingPeriodType pulumi.StringOutput `pulumi:"processingPeriodType"`
 	// (Updatable) The reset period for the budget. Valid value is MONTHLY.
 	ResetPeriod pulumi.StringOutput `pulumi:"resetPeriod"`
 	// The current state of the budget.
 	State pulumi.StringOutput `pulumi:"state"`
-	// This is DEPRECTAED. Set the target compartment id in targets instead.
+	// This is DEPRECATED. Set the target compartment ID in targets instead.
 	//
 	// Deprecated: The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead.
 	TargetCompartmentId pulumi.StringOutput `pulumi:"targetCompartmentId"`
 	// The type of target on which the budget is applied.
 	TargetType pulumi.StringOutput `pulumi:"targetType"`
-	// The list of targets on which the budget is applied. If targetType is "COMPARTMENT", targets contains list of compartment OCIDs. If targetType is "TAG", targets contains list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain EXACT ONE item.
+	// The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item.
 	Targets pulumi.StringArrayOutput `pulumi:"targets"`
-	// Time that budget was created
+	// The time that the budget was created.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
-	// The time that the budget spend was last computed
+	// The time that the budget spend was last computed.
 	TimeSpendComputed pulumi.StringOutput `pulumi:"timeSpendComputed"`
-	// Time that budget was updated
+	// The time that the budget was updated.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
-	// Version of the budget. Starts from 1 and increments by 1.
+	// The version of the budget. Starts from 1 and increments by 1.
 	Version pulumi.IntOutput `pulumi:"version"`
 }
 
@@ -142,88 +145,92 @@ func GetBudget(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Budget resources.
 type budgetState struct {
-	// The actual spend in currency for the current budget cycle
+	// The actual spend in currency for the current budget cycle.
 	ActualSpend *float64 `pulumi:"actualSpend"`
-	// Total number of alert rules in the budget
+	// The total number of alert rules in the budget.
 	AlertRuleCount *int `pulumi:"alertRuleCount"`
 	// (Updatable) The amount of the budget expressed as a whole number in the currency of the customer's rate card.
 	Amount *int `pulumi:"amount"`
 	// (Updatable) The number of days offset from the first day of the month, at which the budget processing period starts. In months that have fewer days than this value, processing will begin on the last day of that month. For example, for a value of 12, processing starts every month on the 12th at midnight.
 	BudgetProcessingPeriodStartOffset *int `pulumi:"budgetProcessingPeriodStartOffset"`
-	// The OCID of the tenancy
+	// The OCID of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) The description of the budget.
 	Description *string `pulumi:"description"`
-	// (Updatable) The displayName of the budget.
+	// (Updatable) The displayName of the budget. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
-	// The forecasted spend in currency by the end of the current budget cycle
+	// The forecasted spend in currency by the end of the current budget cycle.
 	ForecastedSpend *float64 `pulumi:"forecastedSpend"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// (Updatable) The type of the budget processing period. Valid values are INVOICE and MONTH.
+	ProcessingPeriodType *string `pulumi:"processingPeriodType"`
 	// (Updatable) The reset period for the budget. Valid value is MONTHLY.
 	ResetPeriod *string `pulumi:"resetPeriod"`
 	// The current state of the budget.
 	State *string `pulumi:"state"`
-	// This is DEPRECTAED. Set the target compartment id in targets instead.
+	// This is DEPRECATED. Set the target compartment ID in targets instead.
 	//
 	// Deprecated: The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead.
 	TargetCompartmentId *string `pulumi:"targetCompartmentId"`
 	// The type of target on which the budget is applied.
 	TargetType *string `pulumi:"targetType"`
-	// The list of targets on which the budget is applied. If targetType is "COMPARTMENT", targets contains list of compartment OCIDs. If targetType is "TAG", targets contains list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain EXACT ONE item.
+	// The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item.
 	Targets []string `pulumi:"targets"`
-	// Time that budget was created
+	// The time that the budget was created.
 	TimeCreated *string `pulumi:"timeCreated"`
-	// The time that the budget spend was last computed
+	// The time that the budget spend was last computed.
 	TimeSpendComputed *string `pulumi:"timeSpendComputed"`
-	// Time that budget was updated
+	// The time that the budget was updated.
 	TimeUpdated *string `pulumi:"timeUpdated"`
-	// Version of the budget. Starts from 1 and increments by 1.
+	// The version of the budget. Starts from 1 and increments by 1.
 	Version *int `pulumi:"version"`
 }
 
 type BudgetState struct {
-	// The actual spend in currency for the current budget cycle
+	// The actual spend in currency for the current budget cycle.
 	ActualSpend pulumi.Float64PtrInput
-	// Total number of alert rules in the budget
+	// The total number of alert rules in the budget.
 	AlertRuleCount pulumi.IntPtrInput
 	// (Updatable) The amount of the budget expressed as a whole number in the currency of the customer's rate card.
 	Amount pulumi.IntPtrInput
 	// (Updatable) The number of days offset from the first day of the month, at which the budget processing period starts. In months that have fewer days than this value, processing will begin on the last day of that month. For example, for a value of 12, processing starts every month on the 12th at midnight.
 	BudgetProcessingPeriodStartOffset pulumi.IntPtrInput
-	// The OCID of the tenancy
+	// The OCID of the compartment.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput
 	// (Updatable) The description of the budget.
 	Description pulumi.StringPtrInput
-	// (Updatable) The displayName of the budget.
+	// (Updatable) The displayName of the budget. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
-	// The forecasted spend in currency by the end of the current budget cycle
+	// The forecasted spend in currency by the end of the current budget cycle.
 	ForecastedSpend pulumi.Float64PtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
+	// (Updatable) The type of the budget processing period. Valid values are INVOICE and MONTH.
+	ProcessingPeriodType pulumi.StringPtrInput
 	// (Updatable) The reset period for the budget. Valid value is MONTHLY.
 	ResetPeriod pulumi.StringPtrInput
 	// The current state of the budget.
 	State pulumi.StringPtrInput
-	// This is DEPRECTAED. Set the target compartment id in targets instead.
+	// This is DEPRECATED. Set the target compartment ID in targets instead.
 	//
 	// Deprecated: The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead.
 	TargetCompartmentId pulumi.StringPtrInput
 	// The type of target on which the budget is applied.
 	TargetType pulumi.StringPtrInput
-	// The list of targets on which the budget is applied. If targetType is "COMPARTMENT", targets contains list of compartment OCIDs. If targetType is "TAG", targets contains list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain EXACT ONE item.
+	// The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item.
 	Targets pulumi.StringArrayInput
-	// Time that budget was created
+	// The time that the budget was created.
 	TimeCreated pulumi.StringPtrInput
-	// The time that the budget spend was last computed
+	// The time that the budget spend was last computed.
 	TimeSpendComputed pulumi.StringPtrInput
-	// Time that budget was updated
+	// The time that the budget was updated.
 	TimeUpdated pulumi.StringPtrInput
-	// Version of the budget. Starts from 1 and increments by 1.
+	// The version of the budget. Starts from 1 and increments by 1.
 	Version pulumi.IntPtrInput
 }
 
@@ -236,25 +243,27 @@ type budgetArgs struct {
 	Amount int `pulumi:"amount"`
 	// (Updatable) The number of days offset from the first day of the month, at which the budget processing period starts. In months that have fewer days than this value, processing will begin on the last day of that month. For example, for a value of 12, processing starts every month on the 12th at midnight.
 	BudgetProcessingPeriodStartOffset *int `pulumi:"budgetProcessingPeriodStartOffset"`
-	// The OCID of the tenancy
+	// The OCID of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) The description of the budget.
 	Description *string `pulumi:"description"`
-	// (Updatable) The displayName of the budget.
+	// (Updatable) The displayName of the budget. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// (Updatable) The type of the budget processing period. Valid values are INVOICE and MONTH.
+	ProcessingPeriodType *string `pulumi:"processingPeriodType"`
 	// (Updatable) The reset period for the budget. Valid value is MONTHLY.
 	ResetPeriod string `pulumi:"resetPeriod"`
-	// This is DEPRECTAED. Set the target compartment id in targets instead.
+	// This is DEPRECATED. Set the target compartment ID in targets instead.
 	//
 	// Deprecated: The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead.
 	TargetCompartmentId *string `pulumi:"targetCompartmentId"`
 	// The type of target on which the budget is applied.
 	TargetType *string `pulumi:"targetType"`
-	// The list of targets on which the budget is applied. If targetType is "COMPARTMENT", targets contains list of compartment OCIDs. If targetType is "TAG", targets contains list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain EXACT ONE item.
+	// The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item.
 	Targets []string `pulumi:"targets"`
 }
 
@@ -264,25 +273,27 @@ type BudgetArgs struct {
 	Amount pulumi.IntInput
 	// (Updatable) The number of days offset from the first day of the month, at which the budget processing period starts. In months that have fewer days than this value, processing will begin on the last day of that month. For example, for a value of 12, processing starts every month on the 12th at midnight.
 	BudgetProcessingPeriodStartOffset pulumi.IntPtrInput
-	// The OCID of the tenancy
+	// The OCID of the compartment.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput
 	// (Updatable) The description of the budget.
 	Description pulumi.StringPtrInput
-	// (Updatable) The displayName of the budget.
+	// (Updatable) The displayName of the budget. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
+	// (Updatable) The type of the budget processing period. Valid values are INVOICE and MONTH.
+	ProcessingPeriodType pulumi.StringPtrInput
 	// (Updatable) The reset period for the budget. Valid value is MONTHLY.
 	ResetPeriod pulumi.StringInput
-	// This is DEPRECTAED. Set the target compartment id in targets instead.
+	// This is DEPRECATED. Set the target compartment ID in targets instead.
 	//
 	// Deprecated: The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead.
 	TargetCompartmentId pulumi.StringPtrInput
 	// The type of target on which the budget is applied.
 	TargetType pulumi.StringPtrInput
-	// The list of targets on which the budget is applied. If targetType is "COMPARTMENT", targets contains list of compartment OCIDs. If targetType is "TAG", targets contains list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain EXACT ONE item.
+	// The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item.
 	Targets pulumi.StringArrayInput
 }
 

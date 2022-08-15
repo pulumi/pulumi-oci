@@ -57,6 +57,7 @@ import (
 // 			FreeformTags: pulumi.AnyMap{
 // 				"Department": pulumi.Any("Finance"),
 // 			},
+// 			IsCpsOfflineReportEnabled: pulumi.Any(_var.Exadata_infrastructure_is_cps_offline_report_enabled),
 // 			MaintenanceWindow: &database.ExadataInfrastructureMaintenanceWindowArgs{
 // 				Preference:                pulumi.Any(_var.Exadata_infrastructure_maintenance_window_preference),
 // 				CustomActionTimeoutInMins: pulumi.Any(_var.Exadata_infrastructure_maintenance_window_custom_action_timeout_in_mins),
@@ -139,6 +140,8 @@ type ExadataInfrastructure struct {
 	Gateway pulumi.StringOutput `pulumi:"gateway"`
 	// (Updatable) The CIDR block for the Exadata InfiniBand interconnect.
 	InfiniBandNetworkCidr pulumi.StringOutput `pulumi:"infiniBandNetworkCidr"`
+	// (Updatable) Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
+	IsCpsOfflineReportEnabled pulumi.BoolOutput `pulumi:"isCpsOfflineReportEnabled"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// A field to capture ‘Maintenance SLO Status’ for the Exadata infrastructure with values ‘OK’, ‘DEGRADED’. Default is ‘OK’ when the infrastructure is provisioned.
@@ -281,6 +284,8 @@ type exadataInfrastructureState struct {
 	Gateway *string `pulumi:"gateway"`
 	// (Updatable) The CIDR block for the Exadata InfiniBand interconnect.
 	InfiniBandNetworkCidr *string `pulumi:"infiniBandNetworkCidr"`
+	// (Updatable) Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
+	IsCpsOfflineReportEnabled *bool `pulumi:"isCpsOfflineReportEnabled"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// A field to capture ‘Maintenance SLO Status’ for the Exadata infrastructure with values ‘OK’, ‘DEGRADED’. Default is ‘OK’ when the infrastructure is provisioned.
@@ -359,6 +364,8 @@ type ExadataInfrastructureState struct {
 	Gateway pulumi.StringPtrInput
 	// (Updatable) The CIDR block for the Exadata InfiniBand interconnect.
 	InfiniBandNetworkCidr pulumi.StringPtrInput
+	// (Updatable) Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
+	IsCpsOfflineReportEnabled pulumi.BoolPtrInput
 	// Additional information about the current lifecycle state.
 	LifecycleDetails pulumi.StringPtrInput
 	// A field to capture ‘Maintenance SLO Status’ for the Exadata infrastructure with values ‘OK’, ‘DEGRADED’. Default is ‘OK’ when the infrastructure is provisioned.
@@ -429,6 +436,8 @@ type exadataInfrastructureArgs struct {
 	Gateway string `pulumi:"gateway"`
 	// (Updatable) The CIDR block for the Exadata InfiniBand interconnect.
 	InfiniBandNetworkCidr string `pulumi:"infiniBandNetworkCidr"`
+	// (Updatable) Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
+	IsCpsOfflineReportEnabled *bool `pulumi:"isCpsOfflineReportEnabled"`
 	// (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindow *ExadataInfrastructureMaintenanceWindow `pulumi:"maintenanceWindow"`
 	// (Updatable) The netmask for the control plane network.
@@ -476,6 +485,8 @@ type ExadataInfrastructureArgs struct {
 	Gateway pulumi.StringInput
 	// (Updatable) The CIDR block for the Exadata InfiniBand interconnect.
 	InfiniBandNetworkCidr pulumi.StringInput
+	// (Updatable) Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
+	IsCpsOfflineReportEnabled pulumi.BoolPtrInput
 	// (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindow ExadataInfrastructureMaintenanceWindowPtrInput
 	// (Updatable) The netmask for the control plane network.

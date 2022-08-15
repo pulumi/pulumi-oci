@@ -31,6 +31,36 @@ public final class MysqlDbSystemSourceArgs extends com.pulumi.resources.Resource
     }
 
     /**
+     * The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
+     * 
+     */
+    @Import(name="dbSystemId")
+    private @Nullable Output<String> dbSystemId;
+
+    /**
+     * @return The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
+     * 
+     */
+    public Optional<Output<String>> dbSystemId() {
+        return Optional.ofNullable(this.dbSystemId);
+    }
+
+    /**
+     * The date and time, as per RFC 3339, of the change up to which the new DB System shall be restored to, using a backup and logs from the original DB System. In case no point in time is specified, then this new DB System shall be restored up to the latest change recorded for the original DB System.
+     * 
+     */
+    @Import(name="recoveryPoint")
+    private @Nullable Output<String> recoveryPoint;
+
+    /**
+     * @return The date and time, as per RFC 3339, of the change up to which the new DB System shall be restored to, using a backup and logs from the original DB System. In case no point in time is specified, then this new DB System shall be restored up to the latest change recorded for the original DB System.
+     * 
+     */
+    public Optional<Output<String>> recoveryPoint() {
+        return Optional.ofNullable(this.recoveryPoint);
+    }
+
+    /**
      * The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup.
      * 
      */
@@ -49,6 +79,8 @@ public final class MysqlDbSystemSourceArgs extends com.pulumi.resources.Resource
 
     private MysqlDbSystemSourceArgs(MysqlDbSystemSourceArgs $) {
         this.backupId = $.backupId;
+        this.dbSystemId = $.dbSystemId;
+        this.recoveryPoint = $.recoveryPoint;
         this.sourceType = $.sourceType;
     }
 
@@ -89,6 +121,48 @@ public final class MysqlDbSystemSourceArgs extends com.pulumi.resources.Resource
          */
         public Builder backupId(String backupId) {
             return backupId(Output.of(backupId));
+        }
+
+        /**
+         * @param dbSystemId The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbSystemId(@Nullable Output<String> dbSystemId) {
+            $.dbSystemId = dbSystemId;
+            return this;
+        }
+
+        /**
+         * @param dbSystemId The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbSystemId(String dbSystemId) {
+            return dbSystemId(Output.of(dbSystemId));
+        }
+
+        /**
+         * @param recoveryPoint The date and time, as per RFC 3339, of the change up to which the new DB System shall be restored to, using a backup and logs from the original DB System. In case no point in time is specified, then this new DB System shall be restored up to the latest change recorded for the original DB System.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder recoveryPoint(@Nullable Output<String> recoveryPoint) {
+            $.recoveryPoint = recoveryPoint;
+            return this;
+        }
+
+        /**
+         * @param recoveryPoint The date and time, as per RFC 3339, of the change up to which the new DB System shall be restored to, using a backup and logs from the original DB System. In case no point in time is specified, then this new DB System shall be restored up to the latest change recorded for the original DB System.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder recoveryPoint(String recoveryPoint) {
+            return recoveryPoint(Output.of(recoveryPoint));
         }
 
         /**

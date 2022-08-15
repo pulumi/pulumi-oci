@@ -140,6 +140,21 @@ public final class AnalyticsInstanceArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. &#34;&#34;) indicates to use Oracle managed default encryption.
+     * 
+     */
+    @Import(name="kmsKeyId")
+    private @Nullable Output<String> kmsKeyId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. &#34;&#34;) indicates to use Oracle managed default encryption.
+     * 
+     */
+    public Optional<Output<String>> kmsKeyId() {
+        return Optional.ofNullable(this.kmsKeyId);
+    }
+
+    /**
      * (Updatable) The license used for the service.
      * 
      */
@@ -210,6 +225,7 @@ public final class AnalyticsInstanceArgs extends com.pulumi.resources.ResourceAr
         this.featureSet = $.featureSet;
         this.freeformTags = $.freeformTags;
         this.idcsAccessToken = $.idcsAccessToken;
+        this.kmsKeyId = $.kmsKeyId;
         this.licenseType = $.licenseType;
         this.name = $.name;
         this.networkEndpointDetails = $.networkEndpointDetails;
@@ -400,6 +416,27 @@ public final class AnalyticsInstanceArgs extends com.pulumi.resources.ResourceAr
          */
         public Builder idcsAccessToken(String idcsAccessToken) {
             return idcsAccessToken(Output.of(idcsAccessToken));
+        }
+
+        /**
+         * @param kmsKeyId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. &#34;&#34;) indicates to use Oracle managed default encryption.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder kmsKeyId(@Nullable Output<String> kmsKeyId) {
+            $.kmsKeyId = kmsKeyId;
+            return this;
+        }
+
+        /**
+         * @param kmsKeyId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. &#34;&#34;) indicates to use Oracle managed default encryption.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder kmsKeyId(String kmsKeyId) {
+            return kmsKeyId(Output.of(kmsKeyId));
         }
 
         /**

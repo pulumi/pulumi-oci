@@ -41,6 +41,7 @@ class DeployStageArgs:
                  function_deploy_environment_id: Optional[pulumi.Input[str]] = None,
                  function_timeout_in_seconds: Optional[pulumi.Input[int]] = None,
                  green_backend_ips: Optional[pulumi.Input['DeployStageGreenBackendIpsArgs']] = None,
+                 helm_chart_deploy_artifact_id: Optional[pulumi.Input[str]] = None,
                  is_async: Optional[pulumi.Input[bool]] = None,
                  is_validation_enabled: Optional[pulumi.Input[bool]] = None,
                  kubernetes_manifest_deploy_artifact_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -52,10 +53,13 @@ class DeployStageArgs:
                  oke_canary_traffic_shift_deploy_stage_id: Optional[pulumi.Input[str]] = None,
                  oke_cluster_deploy_environment_id: Optional[pulumi.Input[str]] = None,
                  production_load_balancer_config: Optional[pulumi.Input['DeployStageProductionLoadBalancerConfigArgs']] = None,
+                 release_name: Optional[pulumi.Input[str]] = None,
                  rollback_policy: Optional[pulumi.Input['DeployStageRollbackPolicyArgs']] = None,
                  rollout_policy: Optional[pulumi.Input['DeployStageRolloutPolicyArgs']] = None,
                  test_load_balancer_config: Optional[pulumi.Input['DeployStageTestLoadBalancerConfigArgs']] = None,
+                 timeout_in_seconds: Optional[pulumi.Input[int]] = None,
                  traffic_shift_target: Optional[pulumi.Input[str]] = None,
+                 values_artifact_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  wait_criteria: Optional[pulumi.Input['DeployStageWaitCriteriaArgs']] = None):
         """
         The set of arguments for constructing a DeployStage resource.
@@ -85,6 +89,7 @@ class DeployStageArgs:
         :param pulumi.Input[str] function_deploy_environment_id: (Updatable) Function environment OCID.
         :param pulumi.Input[int] function_timeout_in_seconds: (Updatable) Timeout for execution of the Function. Value in seconds.
         :param pulumi.Input['DeployStageGreenBackendIpsArgs'] green_backend_ips: (Updatable) Collection of backend environment IP addresses.
+        :param pulumi.Input[str] helm_chart_deploy_artifact_id: (Updatable) Helm chart artifact OCID.
         :param pulumi.Input[bool] is_async: (Updatable) A boolean flag specifies whether this stage executes asynchronously.
         :param pulumi.Input[bool] is_validation_enabled: (Updatable) A boolean flag specifies whether the invoked function should be validated.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] kubernetes_manifest_deploy_artifact_ids: (Updatable) List of Kubernetes manifest artifact OCIDs.
@@ -95,11 +100,14 @@ class DeployStageArgs:
         :param pulumi.Input[str] oke_canary_deploy_stage_id: The OCID of an upstream OKE canary deployment stage in this pipeline.
         :param pulumi.Input[str] oke_canary_traffic_shift_deploy_stage_id: The OCID of an upstream OKE canary deployment traffic shift stage in this pipeline.
         :param pulumi.Input[str] oke_cluster_deploy_environment_id: (Updatable) Kubernetes cluster environment OCID for deployment.
-        :param pulumi.Input['DeployStageProductionLoadBalancerConfigArgs'] production_load_balancer_config: Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+        :param pulumi.Input['DeployStageProductionLoadBalancerConfigArgs'] production_load_balancer_config: Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
+        :param pulumi.Input[str] release_name: (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
         :param pulumi.Input['DeployStageRollbackPolicyArgs'] rollback_policy: (Updatable) Specifies the rollback policy. This is initiated on the failure of certain stage types.
         :param pulumi.Input['DeployStageRolloutPolicyArgs'] rollout_policy: (Updatable) Description of rollout policy for load balancer traffic shift stage.
         :param pulumi.Input['DeployStageTestLoadBalancerConfigArgs'] test_load_balancer_config: (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+        :param pulumi.Input[int] timeout_in_seconds: (Updatable) Time to wait for execution of a helm stage. Defaults to 300 seconds.
         :param pulumi.Input[str] traffic_shift_target: (Updatable) Specifies the target or destination backend set.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] values_artifact_ids: (Updatable) List of values.yaml file artifact OCIDs.
         :param pulumi.Input['DeployStageWaitCriteriaArgs'] wait_criteria: (Updatable) Specifies wait criteria for the Wait stage.
         """
         pulumi.set(__self__, "deploy_pipeline_id", deploy_pipeline_id)
@@ -151,6 +159,8 @@ class DeployStageArgs:
             pulumi.set(__self__, "function_timeout_in_seconds", function_timeout_in_seconds)
         if green_backend_ips is not None:
             pulumi.set(__self__, "green_backend_ips", green_backend_ips)
+        if helm_chart_deploy_artifact_id is not None:
+            pulumi.set(__self__, "helm_chart_deploy_artifact_id", helm_chart_deploy_artifact_id)
         if is_async is not None:
             pulumi.set(__self__, "is_async", is_async)
         if is_validation_enabled is not None:
@@ -173,14 +183,20 @@ class DeployStageArgs:
             pulumi.set(__self__, "oke_cluster_deploy_environment_id", oke_cluster_deploy_environment_id)
         if production_load_balancer_config is not None:
             pulumi.set(__self__, "production_load_balancer_config", production_load_balancer_config)
+        if release_name is not None:
+            pulumi.set(__self__, "release_name", release_name)
         if rollback_policy is not None:
             pulumi.set(__self__, "rollback_policy", rollback_policy)
         if rollout_policy is not None:
             pulumi.set(__self__, "rollout_policy", rollout_policy)
         if test_load_balancer_config is not None:
             pulumi.set(__self__, "test_load_balancer_config", test_load_balancer_config)
+        if timeout_in_seconds is not None:
+            pulumi.set(__self__, "timeout_in_seconds", timeout_in_seconds)
         if traffic_shift_target is not None:
             pulumi.set(__self__, "traffic_shift_target", traffic_shift_target)
+        if values_artifact_ids is not None:
+            pulumi.set(__self__, "values_artifact_ids", values_artifact_ids)
         if wait_criteria is not None:
             pulumi.set(__self__, "wait_criteria", wait_criteria)
 
@@ -497,6 +513,18 @@ class DeployStageArgs:
         pulumi.set(self, "green_backend_ips", value)
 
     @property
+    @pulumi.getter(name="helmChartDeployArtifactId")
+    def helm_chart_deploy_artifact_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Helm chart artifact OCID.
+        """
+        return pulumi.get(self, "helm_chart_deploy_artifact_id")
+
+    @helm_chart_deploy_artifact_id.setter
+    def helm_chart_deploy_artifact_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "helm_chart_deploy_artifact_id", value)
+
+    @property
     @pulumi.getter(name="isAsync")
     def is_async(self) -> Optional[pulumi.Input[bool]]:
         """
@@ -620,13 +648,25 @@ class DeployStageArgs:
     @pulumi.getter(name="productionLoadBalancerConfig")
     def production_load_balancer_config(self) -> Optional[pulumi.Input['DeployStageProductionLoadBalancerConfigArgs']]:
         """
-        Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+        Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
         """
         return pulumi.get(self, "production_load_balancer_config")
 
     @production_load_balancer_config.setter
     def production_load_balancer_config(self, value: Optional[pulumi.Input['DeployStageProductionLoadBalancerConfigArgs']]):
         pulumi.set(self, "production_load_balancer_config", value)
+
+    @property
+    @pulumi.getter(name="releaseName")
+    def release_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
+        """
+        return pulumi.get(self, "release_name")
+
+    @release_name.setter
+    def release_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "release_name", value)
 
     @property
     @pulumi.getter(name="rollbackPolicy")
@@ -665,6 +705,18 @@ class DeployStageArgs:
         pulumi.set(self, "test_load_balancer_config", value)
 
     @property
+    @pulumi.getter(name="timeoutInSeconds")
+    def timeout_in_seconds(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Time to wait for execution of a helm stage. Defaults to 300 seconds.
+        """
+        return pulumi.get(self, "timeout_in_seconds")
+
+    @timeout_in_seconds.setter
+    def timeout_in_seconds(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "timeout_in_seconds", value)
+
+    @property
     @pulumi.getter(name="trafficShiftTarget")
     def traffic_shift_target(self) -> Optional[pulumi.Input[str]]:
         """
@@ -675,6 +727,18 @@ class DeployStageArgs:
     @traffic_shift_target.setter
     def traffic_shift_target(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "traffic_shift_target", value)
+
+    @property
+    @pulumi.getter(name="valuesArtifactIds")
+    def values_artifact_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) List of values.yaml file artifact OCIDs.
+        """
+        return pulumi.get(self, "values_artifact_ids")
+
+    @values_artifact_ids.setter
+    def values_artifact_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "values_artifact_ids", value)
 
     @property
     @pulumi.getter(name="waitCriteria")
@@ -719,6 +783,7 @@ class _DeployStageState:
                  function_deploy_environment_id: Optional[pulumi.Input[str]] = None,
                  function_timeout_in_seconds: Optional[pulumi.Input[int]] = None,
                  green_backend_ips: Optional[pulumi.Input['DeployStageGreenBackendIpsArgs']] = None,
+                 helm_chart_deploy_artifact_id: Optional[pulumi.Input[str]] = None,
                  is_async: Optional[pulumi.Input[bool]] = None,
                  is_validation_enabled: Optional[pulumi.Input[bool]] = None,
                  kubernetes_manifest_deploy_artifact_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -732,6 +797,7 @@ class _DeployStageState:
                  oke_cluster_deploy_environment_id: Optional[pulumi.Input[str]] = None,
                  production_load_balancer_config: Optional[pulumi.Input['DeployStageProductionLoadBalancerConfigArgs']] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
+                 release_name: Optional[pulumi.Input[str]] = None,
                  rollback_policy: Optional[pulumi.Input['DeployStageRollbackPolicyArgs']] = None,
                  rollout_policy: Optional[pulumi.Input['DeployStageRolloutPolicyArgs']] = None,
                  state: Optional[pulumi.Input[str]] = None,
@@ -739,7 +805,9 @@ class _DeployStageState:
                  test_load_balancer_config: Optional[pulumi.Input['DeployStageTestLoadBalancerConfigArgs']] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None,
+                 timeout_in_seconds: Optional[pulumi.Input[int]] = None,
                  traffic_shift_target: Optional[pulumi.Input[str]] = None,
+                 values_artifact_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  wait_criteria: Optional[pulumi.Input['DeployStageWaitCriteriaArgs']] = None):
         """
         Input properties used for looking up and filtering DeployStage resources.
@@ -770,6 +838,7 @@ class _DeployStageState:
         :param pulumi.Input[str] function_deploy_environment_id: (Updatable) Function environment OCID.
         :param pulumi.Input[int] function_timeout_in_seconds: (Updatable) Timeout for execution of the Function. Value in seconds.
         :param pulumi.Input['DeployStageGreenBackendIpsArgs'] green_backend_ips: (Updatable) Collection of backend environment IP addresses.
+        :param pulumi.Input[str] helm_chart_deploy_artifact_id: (Updatable) Helm chart artifact OCID.
         :param pulumi.Input[bool] is_async: (Updatable) A boolean flag specifies whether this stage executes asynchronously.
         :param pulumi.Input[bool] is_validation_enabled: (Updatable) A boolean flag specifies whether the invoked function should be validated.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] kubernetes_manifest_deploy_artifact_ids: (Updatable) List of Kubernetes manifest artifact OCIDs.
@@ -781,8 +850,9 @@ class _DeployStageState:
         :param pulumi.Input[str] oke_canary_deploy_stage_id: The OCID of an upstream OKE canary deployment stage in this pipeline.
         :param pulumi.Input[str] oke_canary_traffic_shift_deploy_stage_id: The OCID of an upstream OKE canary deployment traffic shift stage in this pipeline.
         :param pulumi.Input[str] oke_cluster_deploy_environment_id: (Updatable) Kubernetes cluster environment OCID for deployment.
-        :param pulumi.Input['DeployStageProductionLoadBalancerConfigArgs'] production_load_balancer_config: Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+        :param pulumi.Input['DeployStageProductionLoadBalancerConfigArgs'] production_load_balancer_config: Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
         :param pulumi.Input[str] project_id: The OCID of a project.
+        :param pulumi.Input[str] release_name: (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
         :param pulumi.Input['DeployStageRollbackPolicyArgs'] rollback_policy: (Updatable) Specifies the rollback policy. This is initiated on the failure of certain stage types.
         :param pulumi.Input['DeployStageRolloutPolicyArgs'] rollout_policy: (Updatable) Description of rollout policy for load balancer traffic shift stage.
         :param pulumi.Input[str] state: The current state of the deployment stage.
@@ -790,7 +860,9 @@ class _DeployStageState:
         :param pulumi.Input['DeployStageTestLoadBalancerConfigArgs'] test_load_balancer_config: (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
         :param pulumi.Input[str] time_created: Time the deployment stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param pulumi.Input[str] time_updated: Time the deployment stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        :param pulumi.Input[int] timeout_in_seconds: (Updatable) Time to wait for execution of a helm stage. Defaults to 300 seconds.
         :param pulumi.Input[str] traffic_shift_target: (Updatable) Specifies the target or destination backend set.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] values_artifact_ids: (Updatable) List of values.yaml file artifact OCIDs.
         :param pulumi.Input['DeployStageWaitCriteriaArgs'] wait_criteria: (Updatable) Specifies wait criteria for the Wait stage.
         """
         if approval_policy is not None:
@@ -847,6 +919,8 @@ class _DeployStageState:
             pulumi.set(__self__, "function_timeout_in_seconds", function_timeout_in_seconds)
         if green_backend_ips is not None:
             pulumi.set(__self__, "green_backend_ips", green_backend_ips)
+        if helm_chart_deploy_artifact_id is not None:
+            pulumi.set(__self__, "helm_chart_deploy_artifact_id", helm_chart_deploy_artifact_id)
         if is_async is not None:
             pulumi.set(__self__, "is_async", is_async)
         if is_validation_enabled is not None:
@@ -873,6 +947,8 @@ class _DeployStageState:
             pulumi.set(__self__, "production_load_balancer_config", production_load_balancer_config)
         if project_id is not None:
             pulumi.set(__self__, "project_id", project_id)
+        if release_name is not None:
+            pulumi.set(__self__, "release_name", release_name)
         if rollback_policy is not None:
             pulumi.set(__self__, "rollback_policy", rollback_policy)
         if rollout_policy is not None:
@@ -887,8 +963,12 @@ class _DeployStageState:
             pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
             pulumi.set(__self__, "time_updated", time_updated)
+        if timeout_in_seconds is not None:
+            pulumi.set(__self__, "timeout_in_seconds", timeout_in_seconds)
         if traffic_shift_target is not None:
             pulumi.set(__self__, "traffic_shift_target", traffic_shift_target)
+        if values_artifact_ids is not None:
+            pulumi.set(__self__, "values_artifact_ids", values_artifact_ids)
         if wait_criteria is not None:
             pulumi.set(__self__, "wait_criteria", wait_criteria)
 
@@ -1217,6 +1297,18 @@ class _DeployStageState:
         pulumi.set(self, "green_backend_ips", value)
 
     @property
+    @pulumi.getter(name="helmChartDeployArtifactId")
+    def helm_chart_deploy_artifact_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Helm chart artifact OCID.
+        """
+        return pulumi.get(self, "helm_chart_deploy_artifact_id")
+
+    @helm_chart_deploy_artifact_id.setter
+    def helm_chart_deploy_artifact_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "helm_chart_deploy_artifact_id", value)
+
+    @property
     @pulumi.getter(name="isAsync")
     def is_async(self) -> Optional[pulumi.Input[bool]]:
         """
@@ -1352,7 +1444,7 @@ class _DeployStageState:
     @pulumi.getter(name="productionLoadBalancerConfig")
     def production_load_balancer_config(self) -> Optional[pulumi.Input['DeployStageProductionLoadBalancerConfigArgs']]:
         """
-        Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+        Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
         """
         return pulumi.get(self, "production_load_balancer_config")
 
@@ -1371,6 +1463,18 @@ class _DeployStageState:
     @project_id.setter
     def project_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "project_id", value)
+
+    @property
+    @pulumi.getter(name="releaseName")
+    def release_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
+        """
+        return pulumi.get(self, "release_name")
+
+    @release_name.setter
+    def release_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "release_name", value)
 
     @property
     @pulumi.getter(name="rollbackPolicy")
@@ -1457,6 +1561,18 @@ class _DeployStageState:
         pulumi.set(self, "time_updated", value)
 
     @property
+    @pulumi.getter(name="timeoutInSeconds")
+    def timeout_in_seconds(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Time to wait for execution of a helm stage. Defaults to 300 seconds.
+        """
+        return pulumi.get(self, "timeout_in_seconds")
+
+    @timeout_in_seconds.setter
+    def timeout_in_seconds(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "timeout_in_seconds", value)
+
+    @property
     @pulumi.getter(name="trafficShiftTarget")
     def traffic_shift_target(self) -> Optional[pulumi.Input[str]]:
         """
@@ -1467,6 +1583,18 @@ class _DeployStageState:
     @traffic_shift_target.setter
     def traffic_shift_target(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "traffic_shift_target", value)
+
+    @property
+    @pulumi.getter(name="valuesArtifactIds")
+    def values_artifact_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) List of values.yaml file artifact OCIDs.
+        """
+        return pulumi.get(self, "values_artifact_ids")
+
+    @values_artifact_ids.setter
+    def values_artifact_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "values_artifact_ids", value)
 
     @property
     @pulumi.getter(name="waitCriteria")
@@ -1512,6 +1640,7 @@ class DeployStage(pulumi.CustomResource):
                  function_deploy_environment_id: Optional[pulumi.Input[str]] = None,
                  function_timeout_in_seconds: Optional[pulumi.Input[int]] = None,
                  green_backend_ips: Optional[pulumi.Input[pulumi.InputType['DeployStageGreenBackendIpsArgs']]] = None,
+                 helm_chart_deploy_artifact_id: Optional[pulumi.Input[str]] = None,
                  is_async: Optional[pulumi.Input[bool]] = None,
                  is_validation_enabled: Optional[pulumi.Input[bool]] = None,
                  kubernetes_manifest_deploy_artifact_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -1523,10 +1652,13 @@ class DeployStage(pulumi.CustomResource):
                  oke_canary_traffic_shift_deploy_stage_id: Optional[pulumi.Input[str]] = None,
                  oke_cluster_deploy_environment_id: Optional[pulumi.Input[str]] = None,
                  production_load_balancer_config: Optional[pulumi.Input[pulumi.InputType['DeployStageProductionLoadBalancerConfigArgs']]] = None,
+                 release_name: Optional[pulumi.Input[str]] = None,
                  rollback_policy: Optional[pulumi.Input[pulumi.InputType['DeployStageRollbackPolicyArgs']]] = None,
                  rollout_policy: Optional[pulumi.Input[pulumi.InputType['DeployStageRolloutPolicyArgs']]] = None,
                  test_load_balancer_config: Optional[pulumi.Input[pulumi.InputType['DeployStageTestLoadBalancerConfigArgs']]] = None,
+                 timeout_in_seconds: Optional[pulumi.Input[int]] = None,
                  traffic_shift_target: Optional[pulumi.Input[str]] = None,
+                 values_artifact_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  wait_criteria: Optional[pulumi.Input[pulumi.InputType['DeployStageWaitCriteriaArgs']]] = None,
                  __props__=None):
         """
@@ -1570,6 +1702,7 @@ class DeployStage(pulumi.CustomResource):
         :param pulumi.Input[str] function_deploy_environment_id: (Updatable) Function environment OCID.
         :param pulumi.Input[int] function_timeout_in_seconds: (Updatable) Timeout for execution of the Function. Value in seconds.
         :param pulumi.Input[pulumi.InputType['DeployStageGreenBackendIpsArgs']] green_backend_ips: (Updatable) Collection of backend environment IP addresses.
+        :param pulumi.Input[str] helm_chart_deploy_artifact_id: (Updatable) Helm chart artifact OCID.
         :param pulumi.Input[bool] is_async: (Updatable) A boolean flag specifies whether this stage executes asynchronously.
         :param pulumi.Input[bool] is_validation_enabled: (Updatable) A boolean flag specifies whether the invoked function should be validated.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] kubernetes_manifest_deploy_artifact_ids: (Updatable) List of Kubernetes manifest artifact OCIDs.
@@ -1580,11 +1713,14 @@ class DeployStage(pulumi.CustomResource):
         :param pulumi.Input[str] oke_canary_deploy_stage_id: The OCID of an upstream OKE canary deployment stage in this pipeline.
         :param pulumi.Input[str] oke_canary_traffic_shift_deploy_stage_id: The OCID of an upstream OKE canary deployment traffic shift stage in this pipeline.
         :param pulumi.Input[str] oke_cluster_deploy_environment_id: (Updatable) Kubernetes cluster environment OCID for deployment.
-        :param pulumi.Input[pulumi.InputType['DeployStageProductionLoadBalancerConfigArgs']] production_load_balancer_config: Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+        :param pulumi.Input[pulumi.InputType['DeployStageProductionLoadBalancerConfigArgs']] production_load_balancer_config: Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
+        :param pulumi.Input[str] release_name: (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
         :param pulumi.Input[pulumi.InputType['DeployStageRollbackPolicyArgs']] rollback_policy: (Updatable) Specifies the rollback policy. This is initiated on the failure of certain stage types.
         :param pulumi.Input[pulumi.InputType['DeployStageRolloutPolicyArgs']] rollout_policy: (Updatable) Description of rollout policy for load balancer traffic shift stage.
         :param pulumi.Input[pulumi.InputType['DeployStageTestLoadBalancerConfigArgs']] test_load_balancer_config: (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+        :param pulumi.Input[int] timeout_in_seconds: (Updatable) Time to wait for execution of a helm stage. Defaults to 300 seconds.
         :param pulumi.Input[str] traffic_shift_target: (Updatable) Specifies the target or destination backend set.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] values_artifact_ids: (Updatable) List of values.yaml file artifact OCIDs.
         :param pulumi.Input[pulumi.InputType['DeployStageWaitCriteriaArgs']] wait_criteria: (Updatable) Specifies wait criteria for the Wait stage.
         """
         ...
@@ -1647,6 +1783,7 @@ class DeployStage(pulumi.CustomResource):
                  function_deploy_environment_id: Optional[pulumi.Input[str]] = None,
                  function_timeout_in_seconds: Optional[pulumi.Input[int]] = None,
                  green_backend_ips: Optional[pulumi.Input[pulumi.InputType['DeployStageGreenBackendIpsArgs']]] = None,
+                 helm_chart_deploy_artifact_id: Optional[pulumi.Input[str]] = None,
                  is_async: Optional[pulumi.Input[bool]] = None,
                  is_validation_enabled: Optional[pulumi.Input[bool]] = None,
                  kubernetes_manifest_deploy_artifact_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -1658,10 +1795,13 @@ class DeployStage(pulumi.CustomResource):
                  oke_canary_traffic_shift_deploy_stage_id: Optional[pulumi.Input[str]] = None,
                  oke_cluster_deploy_environment_id: Optional[pulumi.Input[str]] = None,
                  production_load_balancer_config: Optional[pulumi.Input[pulumi.InputType['DeployStageProductionLoadBalancerConfigArgs']]] = None,
+                 release_name: Optional[pulumi.Input[str]] = None,
                  rollback_policy: Optional[pulumi.Input[pulumi.InputType['DeployStageRollbackPolicyArgs']]] = None,
                  rollout_policy: Optional[pulumi.Input[pulumi.InputType['DeployStageRolloutPolicyArgs']]] = None,
                  test_load_balancer_config: Optional[pulumi.Input[pulumi.InputType['DeployStageTestLoadBalancerConfigArgs']]] = None,
+                 timeout_in_seconds: Optional[pulumi.Input[int]] = None,
                  traffic_shift_target: Optional[pulumi.Input[str]] = None,
+                 values_artifact_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  wait_criteria: Optional[pulumi.Input[pulumi.InputType['DeployStageWaitCriteriaArgs']]] = None,
                  __props__=None):
         if opts is None:
@@ -1707,6 +1847,7 @@ class DeployStage(pulumi.CustomResource):
             __props__.__dict__["function_deploy_environment_id"] = function_deploy_environment_id
             __props__.__dict__["function_timeout_in_seconds"] = function_timeout_in_seconds
             __props__.__dict__["green_backend_ips"] = green_backend_ips
+            __props__.__dict__["helm_chart_deploy_artifact_id"] = helm_chart_deploy_artifact_id
             __props__.__dict__["is_async"] = is_async
             __props__.__dict__["is_validation_enabled"] = is_validation_enabled
             __props__.__dict__["kubernetes_manifest_deploy_artifact_ids"] = kubernetes_manifest_deploy_artifact_ids
@@ -1718,10 +1859,13 @@ class DeployStage(pulumi.CustomResource):
             __props__.__dict__["oke_canary_traffic_shift_deploy_stage_id"] = oke_canary_traffic_shift_deploy_stage_id
             __props__.__dict__["oke_cluster_deploy_environment_id"] = oke_cluster_deploy_environment_id
             __props__.__dict__["production_load_balancer_config"] = production_load_balancer_config
+            __props__.__dict__["release_name"] = release_name
             __props__.__dict__["rollback_policy"] = rollback_policy
             __props__.__dict__["rollout_policy"] = rollout_policy
             __props__.__dict__["test_load_balancer_config"] = test_load_balancer_config
+            __props__.__dict__["timeout_in_seconds"] = timeout_in_seconds
             __props__.__dict__["traffic_shift_target"] = traffic_shift_target
+            __props__.__dict__["values_artifact_ids"] = values_artifact_ids
             __props__.__dict__["wait_criteria"] = wait_criteria
             __props__.__dict__["compartment_id"] = None
             __props__.__dict__["lifecycle_details"] = None
@@ -1767,6 +1911,7 @@ class DeployStage(pulumi.CustomResource):
             function_deploy_environment_id: Optional[pulumi.Input[str]] = None,
             function_timeout_in_seconds: Optional[pulumi.Input[int]] = None,
             green_backend_ips: Optional[pulumi.Input[pulumi.InputType['DeployStageGreenBackendIpsArgs']]] = None,
+            helm_chart_deploy_artifact_id: Optional[pulumi.Input[str]] = None,
             is_async: Optional[pulumi.Input[bool]] = None,
             is_validation_enabled: Optional[pulumi.Input[bool]] = None,
             kubernetes_manifest_deploy_artifact_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -1780,6 +1925,7 @@ class DeployStage(pulumi.CustomResource):
             oke_cluster_deploy_environment_id: Optional[pulumi.Input[str]] = None,
             production_load_balancer_config: Optional[pulumi.Input[pulumi.InputType['DeployStageProductionLoadBalancerConfigArgs']]] = None,
             project_id: Optional[pulumi.Input[str]] = None,
+            release_name: Optional[pulumi.Input[str]] = None,
             rollback_policy: Optional[pulumi.Input[pulumi.InputType['DeployStageRollbackPolicyArgs']]] = None,
             rollout_policy: Optional[pulumi.Input[pulumi.InputType['DeployStageRolloutPolicyArgs']]] = None,
             state: Optional[pulumi.Input[str]] = None,
@@ -1787,7 +1933,9 @@ class DeployStage(pulumi.CustomResource):
             test_load_balancer_config: Optional[pulumi.Input[pulumi.InputType['DeployStageTestLoadBalancerConfigArgs']]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None,
+            timeout_in_seconds: Optional[pulumi.Input[int]] = None,
             traffic_shift_target: Optional[pulumi.Input[str]] = None,
+            values_artifact_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             wait_criteria: Optional[pulumi.Input[pulumi.InputType['DeployStageWaitCriteriaArgs']]] = None) -> 'DeployStage':
         """
         Get an existing DeployStage resource's state with the given name, id, and optional extra
@@ -1823,6 +1971,7 @@ class DeployStage(pulumi.CustomResource):
         :param pulumi.Input[str] function_deploy_environment_id: (Updatable) Function environment OCID.
         :param pulumi.Input[int] function_timeout_in_seconds: (Updatable) Timeout for execution of the Function. Value in seconds.
         :param pulumi.Input[pulumi.InputType['DeployStageGreenBackendIpsArgs']] green_backend_ips: (Updatable) Collection of backend environment IP addresses.
+        :param pulumi.Input[str] helm_chart_deploy_artifact_id: (Updatable) Helm chart artifact OCID.
         :param pulumi.Input[bool] is_async: (Updatable) A boolean flag specifies whether this stage executes asynchronously.
         :param pulumi.Input[bool] is_validation_enabled: (Updatable) A boolean flag specifies whether the invoked function should be validated.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] kubernetes_manifest_deploy_artifact_ids: (Updatable) List of Kubernetes manifest artifact OCIDs.
@@ -1834,8 +1983,9 @@ class DeployStage(pulumi.CustomResource):
         :param pulumi.Input[str] oke_canary_deploy_stage_id: The OCID of an upstream OKE canary deployment stage in this pipeline.
         :param pulumi.Input[str] oke_canary_traffic_shift_deploy_stage_id: The OCID of an upstream OKE canary deployment traffic shift stage in this pipeline.
         :param pulumi.Input[str] oke_cluster_deploy_environment_id: (Updatable) Kubernetes cluster environment OCID for deployment.
-        :param pulumi.Input[pulumi.InputType['DeployStageProductionLoadBalancerConfigArgs']] production_load_balancer_config: Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+        :param pulumi.Input[pulumi.InputType['DeployStageProductionLoadBalancerConfigArgs']] production_load_balancer_config: Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
         :param pulumi.Input[str] project_id: The OCID of a project.
+        :param pulumi.Input[str] release_name: (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
         :param pulumi.Input[pulumi.InputType['DeployStageRollbackPolicyArgs']] rollback_policy: (Updatable) Specifies the rollback policy. This is initiated on the failure of certain stage types.
         :param pulumi.Input[pulumi.InputType['DeployStageRolloutPolicyArgs']] rollout_policy: (Updatable) Description of rollout policy for load balancer traffic shift stage.
         :param pulumi.Input[str] state: The current state of the deployment stage.
@@ -1843,7 +1993,9 @@ class DeployStage(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['DeployStageTestLoadBalancerConfigArgs']] test_load_balancer_config: (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
         :param pulumi.Input[str] time_created: Time the deployment stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param pulumi.Input[str] time_updated: Time the deployment stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        :param pulumi.Input[int] timeout_in_seconds: (Updatable) Time to wait for execution of a helm stage. Defaults to 300 seconds.
         :param pulumi.Input[str] traffic_shift_target: (Updatable) Specifies the target or destination backend set.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] values_artifact_ids: (Updatable) List of values.yaml file artifact OCIDs.
         :param pulumi.Input[pulumi.InputType['DeployStageWaitCriteriaArgs']] wait_criteria: (Updatable) Specifies wait criteria for the Wait stage.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -1877,6 +2029,7 @@ class DeployStage(pulumi.CustomResource):
         __props__.__dict__["function_deploy_environment_id"] = function_deploy_environment_id
         __props__.__dict__["function_timeout_in_seconds"] = function_timeout_in_seconds
         __props__.__dict__["green_backend_ips"] = green_backend_ips
+        __props__.__dict__["helm_chart_deploy_artifact_id"] = helm_chart_deploy_artifact_id
         __props__.__dict__["is_async"] = is_async
         __props__.__dict__["is_validation_enabled"] = is_validation_enabled
         __props__.__dict__["kubernetes_manifest_deploy_artifact_ids"] = kubernetes_manifest_deploy_artifact_ids
@@ -1890,6 +2043,7 @@ class DeployStage(pulumi.CustomResource):
         __props__.__dict__["oke_cluster_deploy_environment_id"] = oke_cluster_deploy_environment_id
         __props__.__dict__["production_load_balancer_config"] = production_load_balancer_config
         __props__.__dict__["project_id"] = project_id
+        __props__.__dict__["release_name"] = release_name
         __props__.__dict__["rollback_policy"] = rollback_policy
         __props__.__dict__["rollout_policy"] = rollout_policy
         __props__.__dict__["state"] = state
@@ -1897,7 +2051,9 @@ class DeployStage(pulumi.CustomResource):
         __props__.__dict__["test_load_balancer_config"] = test_load_balancer_config
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
+        __props__.__dict__["timeout_in_seconds"] = timeout_in_seconds
         __props__.__dict__["traffic_shift_target"] = traffic_shift_target
+        __props__.__dict__["values_artifact_ids"] = values_artifact_ids
         __props__.__dict__["wait_criteria"] = wait_criteria
         return DeployStage(resource_name, opts=opts, __props__=__props__)
 
@@ -2118,6 +2274,14 @@ class DeployStage(pulumi.CustomResource):
         return pulumi.get(self, "green_backend_ips")
 
     @property
+    @pulumi.getter(name="helmChartDeployArtifactId")
+    def helm_chart_deploy_artifact_id(self) -> pulumi.Output[str]:
+        """
+        (Updatable) Helm chart artifact OCID.
+        """
+        return pulumi.get(self, "helm_chart_deploy_artifact_id")
+
+    @property
     @pulumi.getter(name="isAsync")
     def is_async(self) -> pulumi.Output[bool]:
         """
@@ -2209,7 +2373,7 @@ class DeployStage(pulumi.CustomResource):
     @pulumi.getter(name="productionLoadBalancerConfig")
     def production_load_balancer_config(self) -> pulumi.Output['outputs.DeployStageProductionLoadBalancerConfig']:
         """
-        Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
+        Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
         """
         return pulumi.get(self, "production_load_balancer_config")
 
@@ -2220,6 +2384,14 @@ class DeployStage(pulumi.CustomResource):
         The OCID of a project.
         """
         return pulumi.get(self, "project_id")
+
+    @property
+    @pulumi.getter(name="releaseName")
+    def release_name(self) -> pulumi.Output[str]:
+        """
+        (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
+        """
+        return pulumi.get(self, "release_name")
 
     @property
     @pulumi.getter(name="rollbackPolicy")
@@ -2278,12 +2450,28 @@ class DeployStage(pulumi.CustomResource):
         return pulumi.get(self, "time_updated")
 
     @property
+    @pulumi.getter(name="timeoutInSeconds")
+    def timeout_in_seconds(self) -> pulumi.Output[int]:
+        """
+        (Updatable) Time to wait for execution of a helm stage. Defaults to 300 seconds.
+        """
+        return pulumi.get(self, "timeout_in_seconds")
+
+    @property
     @pulumi.getter(name="trafficShiftTarget")
     def traffic_shift_target(self) -> pulumi.Output[str]:
         """
         (Updatable) Specifies the target or destination backend set.
         """
         return pulumi.get(self, "traffic_shift_target")
+
+    @property
+    @pulumi.getter(name="valuesArtifactIds")
+    def values_artifact_ids(self) -> pulumi.Output[Sequence[str]]:
+        """
+        (Updatable) List of values.yaml file artifact OCIDs.
+        """
+        return pulumi.get(self, "values_artifact_ids")
 
     @property
     @pulumi.getter(name="waitCriteria")

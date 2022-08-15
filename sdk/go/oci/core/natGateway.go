@@ -39,7 +39,8 @@ import (
 // 			FreeformTags: pulumi.AnyMap{
 // 				"Department": pulumi.Any("Finance"),
 // 			},
-// 			PublicIpId: pulumi.Any(oci_core_public_ip.Test_public_ip.Id),
+// 			PublicIpId:   pulumi.Any(oci_core_public_ip.Test_public_ip.Id),
+// 			RouteTableId: pulumi.Any(oci_core_route_table.Test_route_table.Id),
 // 		})
 // 		if err != nil {
 // 			return err
@@ -73,6 +74,8 @@ type NatGateway struct {
 	NatIp pulumi.StringOutput `pulumi:"natIp"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP address associated with the NAT gateway.
 	PublicIpId pulumi.StringOutput `pulumi:"publicIpId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
+	RouteTableId pulumi.StringOutput `pulumi:"routeTableId"`
 	// The NAT gateway's current state.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The date and time the NAT gateway was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -130,6 +133,8 @@ type natGatewayState struct {
 	NatIp *string `pulumi:"natIp"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP address associated with the NAT gateway.
 	PublicIpId *string `pulumi:"publicIpId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
+	RouteTableId *string `pulumi:"routeTableId"`
 	// The NAT gateway's current state.
 	State *string `pulumi:"state"`
 	// The date and time the NAT gateway was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -153,6 +158,8 @@ type NatGatewayState struct {
 	NatIp pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP address associated with the NAT gateway.
 	PublicIpId pulumi.StringPtrInput
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
+	RouteTableId pulumi.StringPtrInput
 	// The NAT gateway's current state.
 	State pulumi.StringPtrInput
 	// The date and time the NAT gateway was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -178,6 +185,8 @@ type natGatewayArgs struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP address associated with the NAT gateway.
 	PublicIpId *string `pulumi:"publicIpId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
+	RouteTableId *string `pulumi:"routeTableId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the gateway belongs to.
 	VcnId string `pulumi:"vcnId"`
 }
@@ -196,6 +205,8 @@ type NatGatewayArgs struct {
 	FreeformTags pulumi.MapInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP address associated with the NAT gateway.
 	PublicIpId pulumi.StringPtrInput
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
+	RouteTableId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the gateway belongs to.
 	VcnId pulumi.StringInput
 }

@@ -796,6 +796,474 @@ func (o NetworkLoadBalancerReservedIpArrayOutput) Index(i pulumi.IntInput) Netwo
 	}).(NetworkLoadBalancerReservedIpOutput)
 }
 
+type NetworkLoadBalancersBackendSetsUnifiedBackend struct {
+	// (Updatable) The IP address of the backend server.  Example: `10.0.0.3`
+	IpAddress *string `pulumi:"ipAddress"`
+	// (Updatable) Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
+	IsBackup *bool `pulumi:"isBackup"`
+	// (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no  incoming traffic.  Example: `false`
+	IsDrain *bool `pulumi:"isDrain"`
+	// (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
+	IsOffline *bool `pulumi:"isOffline"`
+	// A user-friendly name for the backend set that must be unique and cannot be changed.
+	Name *string `pulumi:"name"`
+	// (Updatable) The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
+	Port int `pulumi:"port"`
+	// (Updatable) The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
+	TargetId *string `pulumi:"targetId"`
+	// (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+	Weight *int `pulumi:"weight"`
+}
+
+// NetworkLoadBalancersBackendSetsUnifiedBackendInput is an input type that accepts NetworkLoadBalancersBackendSetsUnifiedBackendArgs and NetworkLoadBalancersBackendSetsUnifiedBackendOutput values.
+// You can construct a concrete instance of `NetworkLoadBalancersBackendSetsUnifiedBackendInput` via:
+//
+//          NetworkLoadBalancersBackendSetsUnifiedBackendArgs{...}
+type NetworkLoadBalancersBackendSetsUnifiedBackendInput interface {
+	pulumi.Input
+
+	ToNetworkLoadBalancersBackendSetsUnifiedBackendOutput() NetworkLoadBalancersBackendSetsUnifiedBackendOutput
+	ToNetworkLoadBalancersBackendSetsUnifiedBackendOutputWithContext(context.Context) NetworkLoadBalancersBackendSetsUnifiedBackendOutput
+}
+
+type NetworkLoadBalancersBackendSetsUnifiedBackendArgs struct {
+	// (Updatable) The IP address of the backend server.  Example: `10.0.0.3`
+	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
+	// (Updatable) Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
+	IsBackup pulumi.BoolPtrInput `pulumi:"isBackup"`
+	// (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no  incoming traffic.  Example: `false`
+	IsDrain pulumi.BoolPtrInput `pulumi:"isDrain"`
+	// (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
+	IsOffline pulumi.BoolPtrInput `pulumi:"isOffline"`
+	// A user-friendly name for the backend set that must be unique and cannot be changed.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// (Updatable) The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
+	Port pulumi.IntInput `pulumi:"port"`
+	// (Updatable) The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
+	TargetId pulumi.StringPtrInput `pulumi:"targetId"`
+	// (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+	Weight pulumi.IntPtrInput `pulumi:"weight"`
+}
+
+func (NetworkLoadBalancersBackendSetsUnifiedBackendArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NetworkLoadBalancersBackendSetsUnifiedBackend)(nil)).Elem()
+}
+
+func (i NetworkLoadBalancersBackendSetsUnifiedBackendArgs) ToNetworkLoadBalancersBackendSetsUnifiedBackendOutput() NetworkLoadBalancersBackendSetsUnifiedBackendOutput {
+	return i.ToNetworkLoadBalancersBackendSetsUnifiedBackendOutputWithContext(context.Background())
+}
+
+func (i NetworkLoadBalancersBackendSetsUnifiedBackendArgs) ToNetworkLoadBalancersBackendSetsUnifiedBackendOutputWithContext(ctx context.Context) NetworkLoadBalancersBackendSetsUnifiedBackendOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NetworkLoadBalancersBackendSetsUnifiedBackendOutput)
+}
+
+// NetworkLoadBalancersBackendSetsUnifiedBackendArrayInput is an input type that accepts NetworkLoadBalancersBackendSetsUnifiedBackendArray and NetworkLoadBalancersBackendSetsUnifiedBackendArrayOutput values.
+// You can construct a concrete instance of `NetworkLoadBalancersBackendSetsUnifiedBackendArrayInput` via:
+//
+//          NetworkLoadBalancersBackendSetsUnifiedBackendArray{ NetworkLoadBalancersBackendSetsUnifiedBackendArgs{...} }
+type NetworkLoadBalancersBackendSetsUnifiedBackendArrayInput interface {
+	pulumi.Input
+
+	ToNetworkLoadBalancersBackendSetsUnifiedBackendArrayOutput() NetworkLoadBalancersBackendSetsUnifiedBackendArrayOutput
+	ToNetworkLoadBalancersBackendSetsUnifiedBackendArrayOutputWithContext(context.Context) NetworkLoadBalancersBackendSetsUnifiedBackendArrayOutput
+}
+
+type NetworkLoadBalancersBackendSetsUnifiedBackendArray []NetworkLoadBalancersBackendSetsUnifiedBackendInput
+
+func (NetworkLoadBalancersBackendSetsUnifiedBackendArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NetworkLoadBalancersBackendSetsUnifiedBackend)(nil)).Elem()
+}
+
+func (i NetworkLoadBalancersBackendSetsUnifiedBackendArray) ToNetworkLoadBalancersBackendSetsUnifiedBackendArrayOutput() NetworkLoadBalancersBackendSetsUnifiedBackendArrayOutput {
+	return i.ToNetworkLoadBalancersBackendSetsUnifiedBackendArrayOutputWithContext(context.Background())
+}
+
+func (i NetworkLoadBalancersBackendSetsUnifiedBackendArray) ToNetworkLoadBalancersBackendSetsUnifiedBackendArrayOutputWithContext(ctx context.Context) NetworkLoadBalancersBackendSetsUnifiedBackendArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NetworkLoadBalancersBackendSetsUnifiedBackendArrayOutput)
+}
+
+type NetworkLoadBalancersBackendSetsUnifiedBackendOutput struct{ *pulumi.OutputState }
+
+func (NetworkLoadBalancersBackendSetsUnifiedBackendOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NetworkLoadBalancersBackendSetsUnifiedBackend)(nil)).Elem()
+}
+
+func (o NetworkLoadBalancersBackendSetsUnifiedBackendOutput) ToNetworkLoadBalancersBackendSetsUnifiedBackendOutput() NetworkLoadBalancersBackendSetsUnifiedBackendOutput {
+	return o
+}
+
+func (o NetworkLoadBalancersBackendSetsUnifiedBackendOutput) ToNetworkLoadBalancersBackendSetsUnifiedBackendOutputWithContext(ctx context.Context) NetworkLoadBalancersBackendSetsUnifiedBackendOutput {
+	return o
+}
+
+// (Updatable) The IP address of the backend server.  Example: `10.0.0.3`
+func (o NetworkLoadBalancersBackendSetsUnifiedBackendOutput) IpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NetworkLoadBalancersBackendSetsUnifiedBackend) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
+func (o NetworkLoadBalancersBackendSetsUnifiedBackendOutput) IsBackup() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v NetworkLoadBalancersBackendSetsUnifiedBackend) *bool { return v.IsBackup }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no  incoming traffic.  Example: `false`
+func (o NetworkLoadBalancersBackendSetsUnifiedBackendOutput) IsDrain() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v NetworkLoadBalancersBackendSetsUnifiedBackend) *bool { return v.IsDrain }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
+func (o NetworkLoadBalancersBackendSetsUnifiedBackendOutput) IsOffline() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v NetworkLoadBalancersBackendSetsUnifiedBackend) *bool { return v.IsOffline }).(pulumi.BoolPtrOutput)
+}
+
+// A user-friendly name for the backend set that must be unique and cannot be changed.
+func (o NetworkLoadBalancersBackendSetsUnifiedBackendOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NetworkLoadBalancersBackendSetsUnifiedBackend) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
+func (o NetworkLoadBalancersBackendSetsUnifiedBackendOutput) Port() pulumi.IntOutput {
+	return o.ApplyT(func(v NetworkLoadBalancersBackendSetsUnifiedBackend) int { return v.Port }).(pulumi.IntOutput)
+}
+
+// (Updatable) The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
+func (o NetworkLoadBalancersBackendSetsUnifiedBackendOutput) TargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NetworkLoadBalancersBackendSetsUnifiedBackend) *string { return v.TargetId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+func (o NetworkLoadBalancersBackendSetsUnifiedBackendOutput) Weight() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v NetworkLoadBalancersBackendSetsUnifiedBackend) *int { return v.Weight }).(pulumi.IntPtrOutput)
+}
+
+type NetworkLoadBalancersBackendSetsUnifiedBackendArrayOutput struct{ *pulumi.OutputState }
+
+func (NetworkLoadBalancersBackendSetsUnifiedBackendArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NetworkLoadBalancersBackendSetsUnifiedBackend)(nil)).Elem()
+}
+
+func (o NetworkLoadBalancersBackendSetsUnifiedBackendArrayOutput) ToNetworkLoadBalancersBackendSetsUnifiedBackendArrayOutput() NetworkLoadBalancersBackendSetsUnifiedBackendArrayOutput {
+	return o
+}
+
+func (o NetworkLoadBalancersBackendSetsUnifiedBackendArrayOutput) ToNetworkLoadBalancersBackendSetsUnifiedBackendArrayOutputWithContext(ctx context.Context) NetworkLoadBalancersBackendSetsUnifiedBackendArrayOutput {
+	return o
+}
+
+func (o NetworkLoadBalancersBackendSetsUnifiedBackendArrayOutput) Index(i pulumi.IntInput) NetworkLoadBalancersBackendSetsUnifiedBackendOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NetworkLoadBalancersBackendSetsUnifiedBackend {
+		return vs[0].([]NetworkLoadBalancersBackendSetsUnifiedBackend)[vs[1].(int)]
+	}).(NetworkLoadBalancersBackendSetsUnifiedBackendOutput)
+}
+
+type NetworkLoadBalancersBackendSetsUnifiedHealthChecker struct {
+	// (Updatable) The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
+	IntervalInMillis *int `pulumi:"intervalInMillis"`
+	// (Updatable) The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
+	Port *int `pulumi:"port"`
+	// (Updatable) The protocol the health check must use; either HTTP or HTTPS, or UDP or TCP.  Example: `HTTP`
+	Protocol string `pulumi:"protocol"`
+	// (Updatable) Base64 encoded pattern to be sent as UDP or TCP health check probe.
+	RequestData *string `pulumi:"requestData"`
+	// (Updatable) A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|\s)*$`
+	ResponseBodyRegex *string `pulumi:"responseBodyRegex"`
+	// (Updatable) Base64 encoded pattern to be validated as UDP or TCP health check probe response.
+	ResponseData *string `pulumi:"responseData"`
+	// (Updatable) The number of retries to attempt before a backend server is considered "unhealthy". This number also applies when recovering a server to the "healthy" state. The default value is 3.  Example: `3`
+	Retries *int `pulumi:"retries"`
+	// (Updatable) The status code a healthy backend server should return. If you configure the health check policy to use the HTTP protocol, then you can use common HTTP status codes such as "200".  Example: `200`
+	ReturnCode *int `pulumi:"returnCode"`
+	// (Updatable) The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply returns within this timeout period. The default value is 3000 (3 seconds).  Example: `3000`
+	TimeoutInMillis *int `pulumi:"timeoutInMillis"`
+	// (Updatable) The path against which to run the health check.  Example: `/healthcheck`
+	UrlPath *string `pulumi:"urlPath"`
+}
+
+// NetworkLoadBalancersBackendSetsUnifiedHealthCheckerInput is an input type that accepts NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs and NetworkLoadBalancersBackendSetsUnifiedHealthCheckerOutput values.
+// You can construct a concrete instance of `NetworkLoadBalancersBackendSetsUnifiedHealthCheckerInput` via:
+//
+//          NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs{...}
+type NetworkLoadBalancersBackendSetsUnifiedHealthCheckerInput interface {
+	pulumi.Input
+
+	ToNetworkLoadBalancersBackendSetsUnifiedHealthCheckerOutput() NetworkLoadBalancersBackendSetsUnifiedHealthCheckerOutput
+	ToNetworkLoadBalancersBackendSetsUnifiedHealthCheckerOutputWithContext(context.Context) NetworkLoadBalancersBackendSetsUnifiedHealthCheckerOutput
+}
+
+type NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs struct {
+	// (Updatable) The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
+	IntervalInMillis pulumi.IntPtrInput `pulumi:"intervalInMillis"`
+	// (Updatable) The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
+	Port pulumi.IntPtrInput `pulumi:"port"`
+	// (Updatable) The protocol the health check must use; either HTTP or HTTPS, or UDP or TCP.  Example: `HTTP`
+	Protocol pulumi.StringInput `pulumi:"protocol"`
+	// (Updatable) Base64 encoded pattern to be sent as UDP or TCP health check probe.
+	RequestData pulumi.StringPtrInput `pulumi:"requestData"`
+	// (Updatable) A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|\s)*$`
+	ResponseBodyRegex pulumi.StringPtrInput `pulumi:"responseBodyRegex"`
+	// (Updatable) Base64 encoded pattern to be validated as UDP or TCP health check probe response.
+	ResponseData pulumi.StringPtrInput `pulumi:"responseData"`
+	// (Updatable) The number of retries to attempt before a backend server is considered "unhealthy". This number also applies when recovering a server to the "healthy" state. The default value is 3.  Example: `3`
+	Retries pulumi.IntPtrInput `pulumi:"retries"`
+	// (Updatable) The status code a healthy backend server should return. If you configure the health check policy to use the HTTP protocol, then you can use common HTTP status codes such as "200".  Example: `200`
+	ReturnCode pulumi.IntPtrInput `pulumi:"returnCode"`
+	// (Updatable) The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply returns within this timeout period. The default value is 3000 (3 seconds).  Example: `3000`
+	TimeoutInMillis pulumi.IntPtrInput `pulumi:"timeoutInMillis"`
+	// (Updatable) The path against which to run the health check.  Example: `/healthcheck`
+	UrlPath pulumi.StringPtrInput `pulumi:"urlPath"`
+}
+
+func (NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NetworkLoadBalancersBackendSetsUnifiedHealthChecker)(nil)).Elem()
+}
+
+func (i NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs) ToNetworkLoadBalancersBackendSetsUnifiedHealthCheckerOutput() NetworkLoadBalancersBackendSetsUnifiedHealthCheckerOutput {
+	return i.ToNetworkLoadBalancersBackendSetsUnifiedHealthCheckerOutputWithContext(context.Background())
+}
+
+func (i NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs) ToNetworkLoadBalancersBackendSetsUnifiedHealthCheckerOutputWithContext(ctx context.Context) NetworkLoadBalancersBackendSetsUnifiedHealthCheckerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NetworkLoadBalancersBackendSetsUnifiedHealthCheckerOutput)
+}
+
+func (i NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs) ToNetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutput() NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutput {
+	return i.ToNetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutputWithContext(context.Background())
+}
+
+func (i NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs) ToNetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutputWithContext(ctx context.Context) NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NetworkLoadBalancersBackendSetsUnifiedHealthCheckerOutput).ToNetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutputWithContext(ctx)
+}
+
+// NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrInput is an input type that accepts NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs, NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtr and NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutput values.
+// You can construct a concrete instance of `NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrInput` via:
+//
+//          NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs{...}
+//
+//  or:
+//
+//          nil
+type NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrInput interface {
+	pulumi.Input
+
+	ToNetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutput() NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutput
+	ToNetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutputWithContext(context.Context) NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutput
+}
+
+type networkLoadBalancersBackendSetsUnifiedHealthCheckerPtrType NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs
+
+func NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtr(v *NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs) NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrInput {
+	return (*networkLoadBalancersBackendSetsUnifiedHealthCheckerPtrType)(v)
+}
+
+func (*networkLoadBalancersBackendSetsUnifiedHealthCheckerPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**NetworkLoadBalancersBackendSetsUnifiedHealthChecker)(nil)).Elem()
+}
+
+func (i *networkLoadBalancersBackendSetsUnifiedHealthCheckerPtrType) ToNetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutput() NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutput {
+	return i.ToNetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutputWithContext(context.Background())
+}
+
+func (i *networkLoadBalancersBackendSetsUnifiedHealthCheckerPtrType) ToNetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutputWithContext(ctx context.Context) NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutput)
+}
+
+type NetworkLoadBalancersBackendSetsUnifiedHealthCheckerOutput struct{ *pulumi.OutputState }
+
+func (NetworkLoadBalancersBackendSetsUnifiedHealthCheckerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NetworkLoadBalancersBackendSetsUnifiedHealthChecker)(nil)).Elem()
+}
+
+func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerOutput) ToNetworkLoadBalancersBackendSetsUnifiedHealthCheckerOutput() NetworkLoadBalancersBackendSetsUnifiedHealthCheckerOutput {
+	return o
+}
+
+func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerOutput) ToNetworkLoadBalancersBackendSetsUnifiedHealthCheckerOutputWithContext(ctx context.Context) NetworkLoadBalancersBackendSetsUnifiedHealthCheckerOutput {
+	return o
+}
+
+func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerOutput) ToNetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutput() NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutput {
+	return o.ToNetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutputWithContext(context.Background())
+}
+
+func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerOutput) ToNetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutputWithContext(ctx context.Context) NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v NetworkLoadBalancersBackendSetsUnifiedHealthChecker) *NetworkLoadBalancersBackendSetsUnifiedHealthChecker {
+		return &v
+	}).(NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutput)
+}
+
+// (Updatable) The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
+func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerOutput) IntervalInMillis() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v NetworkLoadBalancersBackendSetsUnifiedHealthChecker) *int { return v.IntervalInMillis }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
+func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v NetworkLoadBalancersBackendSetsUnifiedHealthChecker) *int { return v.Port }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The protocol the health check must use; either HTTP or HTTPS, or UDP or TCP.  Example: `HTTP`
+func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerOutput) Protocol() pulumi.StringOutput {
+	return o.ApplyT(func(v NetworkLoadBalancersBackendSetsUnifiedHealthChecker) string { return v.Protocol }).(pulumi.StringOutput)
+}
+
+// (Updatable) Base64 encoded pattern to be sent as UDP or TCP health check probe.
+func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerOutput) RequestData() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NetworkLoadBalancersBackendSetsUnifiedHealthChecker) *string { return v.RequestData }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|\s)*$`
+func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerOutput) ResponseBodyRegex() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NetworkLoadBalancersBackendSetsUnifiedHealthChecker) *string { return v.ResponseBodyRegex }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Base64 encoded pattern to be validated as UDP or TCP health check probe response.
+func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerOutput) ResponseData() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NetworkLoadBalancersBackendSetsUnifiedHealthChecker) *string { return v.ResponseData }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The number of retries to attempt before a backend server is considered "unhealthy". This number also applies when recovering a server to the "healthy" state. The default value is 3.  Example: `3`
+func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerOutput) Retries() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v NetworkLoadBalancersBackendSetsUnifiedHealthChecker) *int { return v.Retries }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The status code a healthy backend server should return. If you configure the health check policy to use the HTTP protocol, then you can use common HTTP status codes such as "200".  Example: `200`
+func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerOutput) ReturnCode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v NetworkLoadBalancersBackendSetsUnifiedHealthChecker) *int { return v.ReturnCode }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply returns within this timeout period. The default value is 3000 (3 seconds).  Example: `3000`
+func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerOutput) TimeoutInMillis() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v NetworkLoadBalancersBackendSetsUnifiedHealthChecker) *int { return v.TimeoutInMillis }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The path against which to run the health check.  Example: `/healthcheck`
+func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerOutput) UrlPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NetworkLoadBalancersBackendSetsUnifiedHealthChecker) *string { return v.UrlPath }).(pulumi.StringPtrOutput)
+}
+
+type NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutput struct{ *pulumi.OutputState }
+
+func (NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**NetworkLoadBalancersBackendSetsUnifiedHealthChecker)(nil)).Elem()
+}
+
+func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutput) ToNetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutput() NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutput {
+	return o
+}
+
+func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutput) ToNetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutputWithContext(ctx context.Context) NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutput {
+	return o
+}
+
+func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutput) Elem() NetworkLoadBalancersBackendSetsUnifiedHealthCheckerOutput {
+	return o.ApplyT(func(v *NetworkLoadBalancersBackendSetsUnifiedHealthChecker) NetworkLoadBalancersBackendSetsUnifiedHealthChecker {
+		if v != nil {
+			return *v
+		}
+		var ret NetworkLoadBalancersBackendSetsUnifiedHealthChecker
+		return ret
+	}).(NetworkLoadBalancersBackendSetsUnifiedHealthCheckerOutput)
+}
+
+// (Updatable) The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
+func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutput) IntervalInMillis() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *NetworkLoadBalancersBackendSetsUnifiedHealthChecker) *int {
+		if v == nil {
+			return nil
+		}
+		return v.IntervalInMillis
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
+func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *NetworkLoadBalancersBackendSetsUnifiedHealthChecker) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Port
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The protocol the health check must use; either HTTP or HTTPS, or UDP or TCP.  Example: `HTTP`
+func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkLoadBalancersBackendSetsUnifiedHealthChecker) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Protocol
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Base64 encoded pattern to be sent as UDP or TCP health check probe.
+func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutput) RequestData() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkLoadBalancersBackendSetsUnifiedHealthChecker) *string {
+		if v == nil {
+			return nil
+		}
+		return v.RequestData
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|\s)*$`
+func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutput) ResponseBodyRegex() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkLoadBalancersBackendSetsUnifiedHealthChecker) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ResponseBodyRegex
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Base64 encoded pattern to be validated as UDP or TCP health check probe response.
+func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutput) ResponseData() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkLoadBalancersBackendSetsUnifiedHealthChecker) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ResponseData
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The number of retries to attempt before a backend server is considered "unhealthy". This number also applies when recovering a server to the "healthy" state. The default value is 3.  Example: `3`
+func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutput) Retries() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *NetworkLoadBalancersBackendSetsUnifiedHealthChecker) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Retries
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The status code a healthy backend server should return. If you configure the health check policy to use the HTTP protocol, then you can use common HTTP status codes such as "200".  Example: `200`
+func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutput) ReturnCode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *NetworkLoadBalancersBackendSetsUnifiedHealthChecker) *int {
+		if v == nil {
+			return nil
+		}
+		return v.ReturnCode
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply returns within this timeout period. The default value is 3000 (3 seconds).  Example: `3000`
+func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutput) TimeoutInMillis() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *NetworkLoadBalancersBackendSetsUnifiedHealthChecker) *int {
+		if v == nil {
+			return nil
+		}
+		return v.TimeoutInMillis
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The path against which to run the health check.  Example: `/healthcheck`
+func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutput) UrlPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkLoadBalancersBackendSetsUnifiedHealthChecker) *string {
+		if v == nil {
+			return nil
+		}
+		return v.UrlPath
+	}).(pulumi.StringPtrOutput)
+}
+
 type GetBackendHealthHealthCheckResult struct {
 	// The result of the most recent health check.
 	HealthCheckStatus string `pulumi:"healthCheckStatus"`
@@ -4198,6 +4666,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*NetworkLoadBalancerIpAddressReservedIpArrayInput)(nil)).Elem(), NetworkLoadBalancerIpAddressReservedIpArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NetworkLoadBalancerReservedIpInput)(nil)).Elem(), NetworkLoadBalancerReservedIpArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NetworkLoadBalancerReservedIpArrayInput)(nil)).Elem(), NetworkLoadBalancerReservedIpArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NetworkLoadBalancersBackendSetsUnifiedBackendInput)(nil)).Elem(), NetworkLoadBalancersBackendSetsUnifiedBackendArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NetworkLoadBalancersBackendSetsUnifiedBackendArrayInput)(nil)).Elem(), NetworkLoadBalancersBackendSetsUnifiedBackendArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NetworkLoadBalancersBackendSetsUnifiedHealthCheckerInput)(nil)).Elem(), NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrInput)(nil)).Elem(), NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBackendHealthHealthCheckResultInput)(nil)).Elem(), GetBackendHealthHealthCheckResultArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBackendHealthHealthCheckResultArrayInput)(nil)).Elem(), GetBackendHealthHealthCheckResultArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBackendSetBackendInput)(nil)).Elem(), GetBackendSetBackendArgs{})
@@ -4262,6 +4734,10 @@ func init() {
 	pulumi.RegisterOutputType(NetworkLoadBalancerIpAddressReservedIpArrayOutput{})
 	pulumi.RegisterOutputType(NetworkLoadBalancerReservedIpOutput{})
 	pulumi.RegisterOutputType(NetworkLoadBalancerReservedIpArrayOutput{})
+	pulumi.RegisterOutputType(NetworkLoadBalancersBackendSetsUnifiedBackendOutput{})
+	pulumi.RegisterOutputType(NetworkLoadBalancersBackendSetsUnifiedBackendArrayOutput{})
+	pulumi.RegisterOutputType(NetworkLoadBalancersBackendSetsUnifiedHealthCheckerOutput{})
+	pulumi.RegisterOutputType(NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutput{})
 	pulumi.RegisterOutputType(GetBackendHealthHealthCheckResultOutput{})
 	pulumi.RegisterOutputType(GetBackendHealthHealthCheckResultArrayOutput{})
 	pulumi.RegisterOutputType(GetBackendSetBackendOutput{})

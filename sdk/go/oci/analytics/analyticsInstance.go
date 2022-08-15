@@ -45,6 +45,7 @@ import (
 // 			FreeformTags: pulumi.AnyMap{
 // 				"Department": pulumi.Any("Finance"),
 // 			},
+// 			KmsKeyId: pulumi.Any(oci_kms_key.Test_key.Id),
 // 			NetworkEndpointDetails: &analytics.AnalyticsInstanceNetworkEndpointDetailsArgs{
 // 				NetworkEndpointType: pulumi.Any(_var.Analytics_instance_network_endpoint_details_network_endpoint_type),
 // 				SubnetId:            pulumi.Any(oci_core_subnet.Test_subnet.Id),
@@ -92,14 +93,14 @@ type AnalyticsInstance struct {
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// IDCS access token identifying a stripe and service administrator user.
 	IdcsAccessToken pulumi.StringOutput `pulumi:"idcsAccessToken"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. "") indicates to use Oracle managed default encryption.
+	KmsKeyId pulumi.StringPtrOutput `pulumi:"kmsKeyId"`
 	// (Updatable) The license used for the service.
 	LicenseType pulumi.StringOutput `pulumi:"licenseType"`
 	// The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// Base representation of a network endpoint.
 	NetworkEndpointDetails AnalyticsInstanceNetworkEndpointDetailsOutput `pulumi:"networkEndpointDetails"`
-	// Map of PrivateAccessChannel unique identifier key as KEY and PrivateAccessChannel Object as VALUE.
-	PrivateAccessChannels pulumi.MapOutput `pulumi:"privateAccessChannels"`
 	// URL of the Analytics service.
 	ServiceUrl pulumi.StringOutput `pulumi:"serviceUrl"`
 	// (Updatable) The target state for the Analytics Instance. Could be set to `ACTIVE` or `INACTIVE`.
@@ -108,8 +109,6 @@ type AnalyticsInstance struct {
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
-	// Map of VanityUrl unique identifier key as KEY and VanityUrl Object as VALUE.
-	VanityUrlDetails pulumi.MapOutput `pulumi:"vanityUrlDetails"`
 }
 
 // NewAnalyticsInstance registers a new resource with the given unique name, arguments, and options.
@@ -172,14 +171,14 @@ type analyticsInstanceState struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// IDCS access token identifying a stripe and service administrator user.
 	IdcsAccessToken *string `pulumi:"idcsAccessToken"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. "") indicates to use Oracle managed default encryption.
+	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// (Updatable) The license used for the service.
 	LicenseType *string `pulumi:"licenseType"`
 	// The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
 	Name *string `pulumi:"name"`
 	// Base representation of a network endpoint.
 	NetworkEndpointDetails *AnalyticsInstanceNetworkEndpointDetails `pulumi:"networkEndpointDetails"`
-	// Map of PrivateAccessChannel unique identifier key as KEY and PrivateAccessChannel Object as VALUE.
-	PrivateAccessChannels map[string]interface{} `pulumi:"privateAccessChannels"`
 	// URL of the Analytics service.
 	ServiceUrl *string `pulumi:"serviceUrl"`
 	// (Updatable) The target state for the Analytics Instance. Could be set to `ACTIVE` or `INACTIVE`.
@@ -188,8 +187,6 @@ type analyticsInstanceState struct {
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
 	TimeUpdated *string `pulumi:"timeUpdated"`
-	// Map of VanityUrl unique identifier key as KEY and VanityUrl Object as VALUE.
-	VanityUrlDetails map[string]interface{} `pulumi:"vanityUrlDetails"`
 }
 
 type AnalyticsInstanceState struct {
@@ -209,14 +206,14 @@ type AnalyticsInstanceState struct {
 	FreeformTags pulumi.MapInput
 	// IDCS access token identifying a stripe and service administrator user.
 	IdcsAccessToken pulumi.StringPtrInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. "") indicates to use Oracle managed default encryption.
+	KmsKeyId pulumi.StringPtrInput
 	// (Updatable) The license used for the service.
 	LicenseType pulumi.StringPtrInput
 	// The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
 	Name pulumi.StringPtrInput
 	// Base representation of a network endpoint.
 	NetworkEndpointDetails AnalyticsInstanceNetworkEndpointDetailsPtrInput
-	// Map of PrivateAccessChannel unique identifier key as KEY and PrivateAccessChannel Object as VALUE.
-	PrivateAccessChannels pulumi.MapInput
 	// URL of the Analytics service.
 	ServiceUrl pulumi.StringPtrInput
 	// (Updatable) The target state for the Analytics Instance. Could be set to `ACTIVE` or `INACTIVE`.
@@ -225,8 +222,6 @@ type AnalyticsInstanceState struct {
 	TimeCreated pulumi.StringPtrInput
 	// The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
 	TimeUpdated pulumi.StringPtrInput
-	// Map of VanityUrl unique identifier key as KEY and VanityUrl Object as VALUE.
-	VanityUrlDetails pulumi.MapInput
 }
 
 func (AnalyticsInstanceState) ElementType() reflect.Type {
@@ -250,6 +245,8 @@ type analyticsInstanceArgs struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// IDCS access token identifying a stripe and service administrator user.
 	IdcsAccessToken string `pulumi:"idcsAccessToken"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. "") indicates to use Oracle managed default encryption.
+	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// (Updatable) The license used for the service.
 	LicenseType string `pulumi:"licenseType"`
 	// The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
@@ -278,6 +275,8 @@ type AnalyticsInstanceArgs struct {
 	FreeformTags pulumi.MapInput
 	// IDCS access token identifying a stripe and service administrator user.
 	IdcsAccessToken pulumi.StringInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. "") indicates to use Oracle managed default encryption.
+	KmsKeyId pulumi.StringPtrInput
 	// (Updatable) The license used for the service.
 	LicenseType pulumi.StringInput
 	// The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.

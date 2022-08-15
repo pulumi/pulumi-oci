@@ -92,6 +92,10 @@ export interface GetInvokeRunResult {
      */
     readonly driverShape: string;
     /**
+     * This is used to configure the shape of the driver or executor if a flexible shape is used.
+     */
+    readonly driverShapeConfigs: outputs.DataFlow.GetInvokeRunDriverShapeConfig[];
+    /**
      * The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
      */
     readonly execute: string;
@@ -99,6 +103,10 @@ export interface GetInvokeRunResult {
      * The VM shape for the executors. Sets the executor cores and memory.
      */
     readonly executorShape: string;
+    /**
+     * This is used to configure the shape of the driver or executor if a flexible shape is used.
+     */
+    readonly executorShapeConfigs: outputs.DataFlow.GetInvokeRunExecutorShapeConfig[];
     /**
      * An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      */

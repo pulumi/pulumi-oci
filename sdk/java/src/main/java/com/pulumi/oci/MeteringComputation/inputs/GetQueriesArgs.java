@@ -32,9 +32,17 @@ public final class GetQueriesArgs extends com.pulumi.resources.InvokeArgs {
         return this.compartmentId;
     }
 
+    /**
+     * The filter object for query usage.
+     * 
+     */
     @Import(name="filters")
     private @Nullable Output<List<GetQueriesFilterArgs>> filters;
 
+    /**
+     * @return The filter object for query usage.
+     * 
+     */
     public Optional<Output<List<GetQueriesFilterArgs>>> filters() {
         return Optional.ofNullable(this.filters);
     }
@@ -85,15 +93,33 @@ public final class GetQueriesArgs extends com.pulumi.resources.InvokeArgs {
             return compartmentId(Output.of(compartmentId));
         }
 
+        /**
+         * @param filters The filter object for query usage.
+         * 
+         * @return builder
+         * 
+         */
         public Builder filters(@Nullable Output<List<GetQueriesFilterArgs>> filters) {
             $.filters = filters;
             return this;
         }
 
+        /**
+         * @param filters The filter object for query usage.
+         * 
+         * @return builder
+         * 
+         */
         public Builder filters(List<GetQueriesFilterArgs> filters) {
             return filters(Output.of(filters));
         }
 
+        /**
+         * @param filters The filter object for query usage.
+         * 
+         * @return builder
+         * 
+         */
         public Builder filters(GetQueriesFilterArgs... filters) {
             return filters(List.of(filters));
         }

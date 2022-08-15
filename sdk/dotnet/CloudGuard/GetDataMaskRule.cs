@@ -106,7 +106,7 @@ namespace Pulumi.Oci.CloudGuard
     public sealed class GetDataMaskRuleResult
     {
         /// <summary>
-        /// Compartment Identifier where the resource is created
+        /// Compartment Identifier where the resource is created.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -127,7 +127,7 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// Data Mask Rule Identifier, can be renamed
+        /// Data Mask Rule Identifier, can be renamed.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>

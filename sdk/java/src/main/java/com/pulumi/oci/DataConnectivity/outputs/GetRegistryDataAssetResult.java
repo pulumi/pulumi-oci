@@ -34,6 +34,11 @@ public final class GetRegistryDataAssetResult {
      */
     private final String description;
     /**
+     * @return The list of endpoints with which this data asset is associated.
+     * 
+     */
+    private final List<String> endPoints;
+    /**
      * @return The external key for the object.
      * 
      */
@@ -107,6 +112,7 @@ public final class GetRegistryDataAssetResult {
         @CustomType.Parameter("dataAssetKey") String dataAssetKey,
         @CustomType.Parameter("defaultConnections") List<GetRegistryDataAssetDefaultConnection> defaultConnections,
         @CustomType.Parameter("description") String description,
+        @CustomType.Parameter("endPoints") List<String> endPoints,
         @CustomType.Parameter("externalKey") String externalKey,
         @CustomType.Parameter("id") String id,
         @CustomType.Parameter("identifier") String identifier,
@@ -126,6 +132,7 @@ public final class GetRegistryDataAssetResult {
         this.dataAssetKey = dataAssetKey;
         this.defaultConnections = defaultConnections;
         this.description = description;
+        this.endPoints = endPoints;
         this.externalKey = externalKey;
         this.id = id;
         this.identifier = identifier;
@@ -166,6 +173,13 @@ public final class GetRegistryDataAssetResult {
      */
     public String description() {
         return this.description;
+    }
+    /**
+     * @return The list of endpoints with which this data asset is associated.
+     * 
+     */
+    public List<String> endPoints() {
+        return this.endPoints;
     }
     /**
      * @return The external key for the object.
@@ -278,6 +292,7 @@ public final class GetRegistryDataAssetResult {
         private String dataAssetKey;
         private List<GetRegistryDataAssetDefaultConnection> defaultConnections;
         private String description;
+        private List<String> endPoints;
         private String externalKey;
         private String id;
         private String identifier;
@@ -304,6 +319,7 @@ public final class GetRegistryDataAssetResult {
     	      this.dataAssetKey = defaults.dataAssetKey;
     	      this.defaultConnections = defaults.defaultConnections;
     	      this.description = defaults.description;
+    	      this.endPoints = defaults.endPoints;
     	      this.externalKey = defaults.externalKey;
     	      this.id = defaults.id;
     	      this.identifier = defaults.identifier;
@@ -339,6 +355,13 @@ public final class GetRegistryDataAssetResult {
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
+        }
+        public Builder endPoints(List<String> endPoints) {
+            this.endPoints = Objects.requireNonNull(endPoints);
+            return this;
+        }
+        public Builder endPoints(String... endPoints) {
+            return endPoints(List.of(endPoints));
         }
         public Builder externalKey(String externalKey) {
             this.externalKey = Objects.requireNonNull(externalKey);
@@ -409,7 +432,7 @@ public final class GetRegistryDataAssetResult {
             this.type = Objects.requireNonNull(type);
             return this;
         }        public GetRegistryDataAssetResult build() {
-            return new GetRegistryDataAssetResult(assetProperties, dataAssetKey, defaultConnections, description, externalKey, id, identifier, key, metadatas, modelType, modelVersion, name, nativeTypeSystems, objectStatus, objectVersion, properties, registryId, registryMetadatas, type);
+            return new GetRegistryDataAssetResult(assetProperties, dataAssetKey, defaultConnections, description, endPoints, externalKey, id, identifier, key, metadatas, modelType, modelVersion, name, nativeTypeSystems, objectStatus, objectVersion, properties, registryId, registryMetadatas, type);
         }
     }
 }

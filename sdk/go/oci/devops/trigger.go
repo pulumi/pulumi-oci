@@ -98,7 +98,7 @@ type Trigger struct {
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the trigger was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
-	// (Updatable) Source of the trigger. Allowed values are, GITHUB and GITLAB.
+	// (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
 	TriggerSource pulumi.StringOutput `pulumi:"triggerSource"`
 	// The endpoint that listens to trigger events.
 	TriggerUrl pulumi.StringOutput `pulumi:"triggerUrl"`
@@ -168,7 +168,7 @@ type triggerState struct {
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the trigger was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeUpdated *string `pulumi:"timeUpdated"`
-	// (Updatable) Source of the trigger. Allowed values are, GITHUB and GITLAB.
+	// (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
 	TriggerSource *string `pulumi:"triggerSource"`
 	// The endpoint that listens to trigger events.
 	TriggerUrl *string `pulumi:"triggerUrl"`
@@ -201,7 +201,7 @@ type TriggerState struct {
 	TimeCreated pulumi.StringPtrInput
 	// The time the trigger was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeUpdated pulumi.StringPtrInput
-	// (Updatable) Source of the trigger. Allowed values are, GITHUB and GITLAB.
+	// (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
 	TriggerSource pulumi.StringPtrInput
 	// The endpoint that listens to trigger events.
 	TriggerUrl pulumi.StringPtrInput
@@ -226,7 +226,7 @@ type triggerArgs struct {
 	ProjectId string `pulumi:"projectId"`
 	// (Updatable) The OCID of the DevOps code repository.
 	RepositoryId *string `pulumi:"repositoryId"`
-	// (Updatable) Source of the trigger. Allowed values are, GITHUB and GITLAB.
+	// (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
 	TriggerSource string `pulumi:"triggerSource"`
 }
 
@@ -246,7 +246,7 @@ type TriggerArgs struct {
 	ProjectId pulumi.StringInput
 	// (Updatable) The OCID of the DevOps code repository.
 	RepositoryId pulumi.StringPtrInput
-	// (Updatable) Source of the trigger. Allowed values are, GITHUB and GITLAB.
+	// (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
 	TriggerSource pulumi.StringInput
 }
 

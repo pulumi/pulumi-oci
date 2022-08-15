@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 
@@ -15,6 +16,7 @@ public final class GetAutonomousDatabaseInstanceWalletManagementResult {
      * 
      */
     private final String autonomousDatabaseId;
+    private final Integer gracePeriod;
     private final String id;
     /**
      * @return Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
@@ -35,11 +37,13 @@ public final class GetAutonomousDatabaseInstanceWalletManagementResult {
     @CustomType.Constructor
     private GetAutonomousDatabaseInstanceWalletManagementResult(
         @CustomType.Parameter("autonomousDatabaseId") String autonomousDatabaseId,
+        @CustomType.Parameter("gracePeriod") Integer gracePeriod,
         @CustomType.Parameter("id") String id,
         @CustomType.Parameter("shouldRotate") Boolean shouldRotate,
         @CustomType.Parameter("state") String state,
         @CustomType.Parameter("timeRotated") String timeRotated) {
         this.autonomousDatabaseId = autonomousDatabaseId;
+        this.gracePeriod = gracePeriod;
         this.id = id;
         this.shouldRotate = shouldRotate;
         this.state = state;
@@ -52,6 +56,9 @@ public final class GetAutonomousDatabaseInstanceWalletManagementResult {
      */
     public String autonomousDatabaseId() {
         return this.autonomousDatabaseId;
+    }
+    public Integer gracePeriod() {
+        return this.gracePeriod;
     }
     public String id() {
         return this.id;
@@ -88,6 +95,7 @@ public final class GetAutonomousDatabaseInstanceWalletManagementResult {
 
     public static final class Builder {
         private String autonomousDatabaseId;
+        private Integer gracePeriod;
         private String id;
         private Boolean shouldRotate;
         private String state;
@@ -100,6 +108,7 @@ public final class GetAutonomousDatabaseInstanceWalletManagementResult {
         public Builder(GetAutonomousDatabaseInstanceWalletManagementResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.autonomousDatabaseId = defaults.autonomousDatabaseId;
+    	      this.gracePeriod = defaults.gracePeriod;
     	      this.id = defaults.id;
     	      this.shouldRotate = defaults.shouldRotate;
     	      this.state = defaults.state;
@@ -108,6 +117,10 @@ public final class GetAutonomousDatabaseInstanceWalletManagementResult {
 
         public Builder autonomousDatabaseId(String autonomousDatabaseId) {
             this.autonomousDatabaseId = Objects.requireNonNull(autonomousDatabaseId);
+            return this;
+        }
+        public Builder gracePeriod(Integer gracePeriod) {
+            this.gracePeriod = Objects.requireNonNull(gracePeriod);
             return this;
         }
         public Builder id(String id) {
@@ -126,7 +139,7 @@ public final class GetAutonomousDatabaseInstanceWalletManagementResult {
             this.timeRotated = Objects.requireNonNull(timeRotated);
             return this;
         }        public GetAutonomousDatabaseInstanceWalletManagementResult build() {
-            return new GetAutonomousDatabaseInstanceWalletManagementResult(autonomousDatabaseId, id, shouldRotate, state, timeRotated);
+            return new GetAutonomousDatabaseInstanceWalletManagementResult(autonomousDatabaseId, gracePeriod, id, shouldRotate, state, timeRotated);
         }
     }
 }

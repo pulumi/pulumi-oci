@@ -91,7 +91,7 @@ public final class GetManagedDatabaseUserResult {
      */
     private final String passwordVersions;
     /**
-     * @return The User resource profile name.
+     * @return The profile name of the user.
      * 
      */
     private final String profile;
@@ -126,7 +126,7 @@ public final class GetManagedDatabaseUserResult {
      */
     private final String timeLastLogin;
     /**
-     * @return The date the account was locked if account status was LOCKED.
+     * @return The date the account was locked, if the status of the account is LOCKED.
      * 
      */
     private final String timeLocked;
@@ -311,7 +311,7 @@ public final class GetManagedDatabaseUserResult {
         return this.passwordVersions;
     }
     /**
-     * @return The User resource profile name.
+     * @return The profile name of the user.
      * 
      */
     public String profile() {
@@ -360,7 +360,7 @@ public final class GetManagedDatabaseUserResult {
         return this.timeLastLogin;
     }
     /**
-     * @return The date the account was locked if account status was LOCKED.
+     * @return The date the account was locked, if the status of the account is LOCKED.
      * 
      */
     public String timeLocked() {

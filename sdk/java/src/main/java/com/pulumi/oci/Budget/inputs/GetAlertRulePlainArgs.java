@@ -13,14 +13,14 @@ public final class GetAlertRulePlainArgs extends com.pulumi.resources.InvokeArgs
     public static final GetAlertRulePlainArgs Empty = new GetAlertRulePlainArgs();
 
     /**
-     * The unique Alert Rule OCID
+     * The unique Alert Rule OCID.
      * 
      */
     @Import(name="alertRuleId", required=true)
     private String alertRuleId;
 
     /**
-     * @return The unique Alert Rule OCID
+     * @return The unique Alert Rule OCID.
      * 
      */
     public String alertRuleId() {
@@ -28,14 +28,14 @@ public final class GetAlertRulePlainArgs extends com.pulumi.resources.InvokeArgs
     }
 
     /**
-     * The unique Budget OCID
+     * The unique budget OCID.
      * 
      */
     @Import(name="budgetId", required=true)
     private String budgetId;
 
     /**
-     * @return The unique Budget OCID
+     * @return The unique budget OCID.
      * 
      */
     public String budgetId() {
@@ -68,7 +68,7 @@ public final class GetAlertRulePlainArgs extends com.pulumi.resources.InvokeArgs
         }
 
         /**
-         * @param alertRuleId The unique Alert Rule OCID
+         * @param alertRuleId The unique Alert Rule OCID.
          * 
          * @return builder
          * 
@@ -79,7 +79,7 @@ public final class GetAlertRulePlainArgs extends com.pulumi.resources.InvokeArgs
         }
 
         /**
-         * @param budgetId The unique Budget OCID
+         * @param budgetId The unique budget OCID.
          * 
          * @return builder
          * 
